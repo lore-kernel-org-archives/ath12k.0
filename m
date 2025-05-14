@@ -4,81 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3E27C3ABD9
-	for <ath12k@archiver.kernel.org>; Wed, 14 May 2025 08:50:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B34CC3ABD8
+	for <ath12k@archiver.kernel.org>; Wed, 14 May 2025 14:30:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=ygo7k8d6JwsMrEClCbXp2IEmRywBO78qRRF7rR/o4X8=; b=1YXAHOvj/baJznnXIIFadl3RJ7
-	fhvnEZHRmTtGIhI3G8w/4tulpk+kYG5GBxVmWBJrGVn8SUlZB0Ebj6t3DAlnaexTyb5ISck8R2hqA
-	MquT09BAHh1SGNrR4AzC0WevNpbZXiHZ1JgRofo2Uq4Q7/XOukM7a6ZI/nSmcn7g91Q19ZskSN58p
-	wo+vHrYsK0gxDX02OfiXNeElBvGRdvzX0rg30EOVNZnlmocVvBgTSjJRKkUO0lKQQazGK51PJ72iT
-	QYnxnJFQCZGP/VoCvBrKUEGh07qiZfRLI67/Ibx6Emgjy351yq5bEVhdu05QF67RuQZ/lZ7CxsR19
-	mbRPLyOw==;
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=6uM1re45O2wIlVIo/3+whtmMgKvQ4h1XZxYqjCsQfmE=; b=gw82jVk5xPTOnl5Ig1WebXrPlO
+	+4TOHeZXYd56zAHpqVzecv9ud0BQKlHPmt5zstb5pIlf0MJOr6x29TlveivSscG/IbZEl3lbn+Gi6
+	brpUgx5Lvl0EE7o0O7tMM87rpt6R50ILvIEOWVcEPKBgoNSKp++HJEkwFjr2caXtvWlK5JwK6r+Bz
+	hn0cbJtzlT5E7LpcDILqMlC+Q7KjcOUWAsSfLyZfm9RxtvmlSLlpsTZkGDEEJLwNSXerPGujgRm3e
+	HIfsO1maXto4GT+H9RPQVz/cY1isPlD5SyocL8+IuVI7igwHdwTnmmr3UET1pw/VfWEWoWb/ujA1/
+	fk3r9ADA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uF7ou-0000000EZ4J-2CTM;
-	Wed, 14 May 2025 08:50:32 +0000
-Received: from sender3-pp-f112.zoho.com ([136.143.184.112])
+	id 1uFD7s-0000000FQ0p-43KS;
+	Wed, 14 May 2025 14:30:28 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uF7Gw-0000000ESiF-1VUQ;
-	Wed, 14 May 2025 08:15:27 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1747210508; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=D33frOUMAShEQNZNZHtZP445EW2RIE7OdbthJTechBAvR8iDWPLk8WNEJ2QosLow1Nd5QNvA8P/KnGyDJp2tiT7BXCcUQ3uug6XAyITyC/evtVDkHmHAA7edWt4zpKXD2Kdkzay4JQ41efoCBA8f5me55KHEoNxU8yvQvwJ8/xA=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1747210508; h=Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=ygo7k8d6JwsMrEClCbXp2IEmRywBO78qRRF7rR/o4X8=; 
-	b=jtLdU1TTrgFHrbJTYjWmrAHr55DI9aRJsVR5oe27N9L8zpQHpottSGic7EfuHNkFs/7p/hZAuIiBT/cxzLD6cBL+D9gf9xGDW4mmkvQ4aMfSmSPlIBEUpSX61m3ZY//6v7k/BFN3UHQ9TA/W6n/45PsegWAbDNfJmJvCCRdh1oI=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=usama.anjum@collabora.com;
-	dmarc=pass header.from=<usama.anjum@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1747210508;
-	s=zohomail; d=collabora.com; i=usama.anjum@collabora.com;
-	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-ID:MIME-Version:Content-Transfer-Encoding:Message-Id:Reply-To;
-	bh=ygo7k8d6JwsMrEClCbXp2IEmRywBO78qRRF7rR/o4X8=;
-	b=X2VuvMPoID6gL17tg0ks6xv9gg0V/fg5W6+bjfNa6kINtZSDWxNb+xk0AcEGq2Q9
-	Rw0GSzSw0H/8/Xcg4qJY8joULzSyaAyJqDDckhv/pqoj/4wBt8G3Zpf0ENgnp3tsl9/
-	3w5nA7caHNpHnPx0WHce4patsYOfhGmU+tfsDVnY=
-Received: by mx.zohomail.com with SMTPS id 1747210506299890.9401616256808;
-	Wed, 14 May 2025 01:15:06 -0700 (PDT)
-From: Muhammad Usama Anjum <usama.anjum@collabora.com>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
-	Youssef Samir <quic_yabdulra@quicinc.com>,
-	Matthew Leung <quic_mattleun@quicinc.com>,
-	Muhammad Usama Anjum <usama.anjum@collabora.com>,
-	Yan Zhen <yanzhen@vivo.com>,
-	Alex Elder <elder@kernel.org>,
-	Kunwu Chan <chentao@kylinos.cn>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Jacek Lawrynowicz <jacek.lawrynowicz@linux.intel.com>,
-	"Dr. David Alan Gilbert" <linux@treblig.org>
-Cc: kernel@collabora.com,
-	sebastian.reichel@collabora.com,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	Baochen Qiang <quic_bqiang@quicinc.com>,
-	mhi@lists.linux.dev,
-	linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-wireless@vger.kernel.org,
-	ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org
-Subject: [PATCH v5] bus: mhi: host: don't free bhie tables during suspend/hibernation
-Date: Wed, 14 May 2025 13:14:25 +0500
-Message-ID: <20250514081447.279981-1-usama.anjum@collabora.com>
-X-Mailer: git-send-email 2.43.0
+	id 1uFCSY-0000000FFbV-19g8
+	for ath12k@lists.infradead.org;
+	Wed, 14 May 2025 13:47:47 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54EAuw9g015222
+	for <ath12k@lists.infradead.org>; Wed, 14 May 2025 13:47:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	6uM1re45O2wIlVIo/3+whtmMgKvQ4h1XZxYqjCsQfmE=; b=Mc4TGqMht/PxOfg6
+	hA0BbEeadgia23CK8qnHA4hWxlKGTCqwQTgvPoDCIj+lVQ3cx/4A9Zk+UbCU4nDc
+	KnRY+qJUPw1piR25whN/k19lK4Xsp8yGncvnboctU2OXa1mcRVCKccahtRpYjDgF
+	uSA3tj8rRLeMB+sqsDExor1IczvedCknyEtdy1rKYGAveqZEMklTSN5Eg7ipxd+J
+	+GTgFO51G+PeYEYU5+urmBg6AgxMutw4+tTmKpF38RUdnk5RfWtRggFQ2bbrYufq
+	nG1T0t2gK2w17agcqtUaM1Tx+Xe3oRd6eeY0qlAuXC7ofLzmwksGqV1ZEVI550f+
+	zNentQ==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46mbcr2s6y-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 14 May 2025 13:47:44 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-22fdf1d9fcaso26446155ad.0
+        for <ath12k@lists.infradead.org>; Wed, 14 May 2025 06:47:43 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747230462; x=1747835262;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=6uM1re45O2wIlVIo/3+whtmMgKvQ4h1XZxYqjCsQfmE=;
+        b=JozOMwXQMle5ehFPtmjawPCiylbTAUaFdaXmmAMsGLnvB6t2kKZmWLVtY4yVFiNfFr
+         Sp9IHiXY4vRI+w92uGcM9FFuZREreKoKttqE5WZ5Tz06w3NvdsXxHiYQzQTgu9lwoh4Z
+         4X40Zw1BlFWOdo5qRi3A1+MeXBj1Nn1UkVC91IgozsJv2BXGbL1rEp1D9XGSGxK7DJgT
+         h0r0XZHsjmFJWZJv1BTGbBQd8JhEoucJjR8t1EYzR+pCHJoNzwsqsDsasZG74CiPKkmm
+         tdP1K4rV2SUPZodzZ6TpOS5QG1YvaWPJ8ZpwEqKLqiHztL0kqPPVQIBdEA4mJFcbM2pM
+         6QTQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUV+RRha+TCiWXZI2ovSBzl2DtxcIcI0Q3NKASisyl4oHCLz5cnBWEWaO7G4oh4WgBoVQ6XeYw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx2Rn6uaf1hsFoNMsIPV+VB8KYu89Ex3Ud5cZElbSouWuQ51cjw
+	X4Dq2fmRIoN9reWSBa4WmErNgClJBCpfFNWnNSmGsjRn5VdUL4Z4wU4q99OS6sxcmA6+UuW+eCt
+	UoJEjFbqy4BivzJnW+F1S3nZLnKmzfNjqLT/Pi+GQhe+zOz0pbb7m2EKRHwD937JaOm2f
+X-Gm-Gg: ASbGncseXjInwZfO4MNbo7WyRiNjitGNy8wsDNjBu1vD523GXuNIaRnTDAGWAkKP7zP
+	MeLpKqc+XRcyeE+J9pt33pNNNME+cWV9CU3v/zMNbKsLeSgS8U+dVrps2I6AWMYeXb1Km/lkwDL
+	aQN4XZu94n3FkSU6WArl8OMZFqbwgGIat7A+S659AwXfypqWMMWLzmoeV4wyg7haRFIw3XhCCPt
+	J7pzmHxV1l5wjf9wlFsKdotFcRNwVpb8thkZjS3WVI+Nbjjn5YQbuOstWdrjXzeFFwW9cbznN+Y
+	YeUEQsqjlvmOUolhd3Jqag2slgTRmoP3kcbR+ivl0HGIki9ozjaRKwQm2HStWRiaJo4=
+X-Received: by 2002:a17:902:e54d:b0:220:ec62:7dc8 with SMTP id d9443c01a7336-231980c96c6mr44309755ad.2.1747230462452;
+        Wed, 14 May 2025 06:47:42 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG/Q3uPk/QbEWBOrhtr8PGNViB3LeyTkN11JRz2Zas4K7fDvgwbiBIbe9b160thz6soF12WTA==
+X-Received: by 2002:a17:902:e54d:b0:220:ec62:7dc8 with SMTP id d9443c01a7336-231980c96c6mr44309435ad.2.1747230462023;
+        Wed, 14 May 2025 06:47:42 -0700 (PDT)
+Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22fc753fe13sm98929455ad.14.2025.05.14.06.47.41
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 14 May 2025 06:47:41 -0700 (PDT)
+Message-ID: <ff4e8d8e-5835-4200-a479-baa0e44478f0@oss.qualcomm.com>
+Date: Wed, 14 May 2025 06:47:40 -0700
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-ZohoMailClient: External
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next] wifi: ath12k: Fix scan initiation failure
+ handling
+To: Vignesh C <quic_vignc@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250512065849.2833232-1-quic_vignc@quicinc.com>
+ <52ff43fc-160c-4efe-ba9e-42a0c838fb3d@oss.qualcomm.com>
+ <f0c8009a-829a-43f3-be03-c6b2a0b67883@quicinc.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <f0c8009a-829a-43f3-be03-c6b2a0b67883@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: O6vDKWl7eeGOSGSS895pkEfvGUq4OijT
+X-Authority-Analysis: v=2.4 cv=Auju3P9P c=1 sm=1 tr=0 ts=68249f00 cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8 a=nJ64htB4QhkbdbSvBzUA:9
+ a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-GUID: O6vDKWl7eeGOSGSS895pkEfvGUq4OijT
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE0MDEyMiBTYWx0ZWRfX8OlqsZuj596v
+ zfFbiCD5P1qxNUqk3HHWwgPidmRdlphK1U95HTByi22bdntsXgTK66nsi9T+QqzteJSlenYeI2w
+ OUMo5H8ZbaJhIi1dxJhsHuPFmiAF//pnfnhosM+yESVt49n3a26ZQszEXKEwijD1e1+UrCM9Li7
+ A+9yg44SqGF9uWifh1rgUcTu5Y9tJV7Hwm94v38kaGS37TskoUua59GNmFbkgwYpD6F4ip7yeYM
+ tkVMB5fv5JHLGRbAtAGEbXP5QjzZF0WoDKobKddWw4l5Dv9kuZOyD2HhlytDDRnJY1xZm4gwqe/
+ tH/4nJ8KoRxtDXBQvi3HdvmnwFrlRBW5fx4576O51u4EzNTMr3O45r21/mRJZFWW2LIRLva5+sn
+ /U9u3tpcWEmxHy3g9y0MoMI06dcbNZfg1brgT+kHDezxODYDnfDc2cKkLeNgXClhEC5VItmr
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-14_04,2025-05-14_03,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0 clxscore=1015 spamscore=0 impostorscore=0 lowpriorityscore=0
+ malwarescore=0 mlxscore=0 adultscore=0 priorityscore=1501 mlxlogscore=999
+ phishscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505070000
+ definitions=main-2505140122
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_011526_502127_550C7F7C 
-X-CRM114-Status: GOOD (  22.97  )
+X-CRM114-CacheID: sfid-20250514_064746_434837_362921EC 
+X-CRM114-Status: GOOD (  12.85  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,244 +131,39 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Fix dma_direct_alloc() failure at resume time during bhie_table
-allocation because of memory pressure. There is a report where at
-resume time, the memory from the dma doesn't get allocated and MHI
-fails to re-initialize.
+On 5/14/2025 4:48 AM, Vignesh C wrote:
+> 
+> 
+> On 5/13/2025 3:25 AM, Jeff Johnson wrote:
+>> On 5/11/2025 11:58 PM, Vignesh C wrote:
+>>> During a code review, it is observed that in the scenario
+>>> where scan initiation fails, the current code schedules the
+>>> ar->scan.timeout workqueue which is not necessary.
+>>
+>> Are there any user-visible effects?
+>>
+> 
+> When MAC debug is enabled, the message 'mac scan started' is displayed, which is misleading in scan start failure scenario. Additionally, a scan timeout work-queue is scheduled to attempt aborting the scan, which is unnecessary in such cases.
 
-To fix it, don't free the memory at power down during suspend /
-hibernation. Instead, use the same allocated memory again after every
-resume / hibernation. This patch has been tested with resume and
-hibernation both.
+Since there are no stability issues this is not a candidate for backporting
 
-There are two allocations of bhie; rddm and fbc. Optimize both of those
-allocations. The rddm is of constant size for a given hardware. While
-the fbc_image size depends on the firmware. If the firmware changes,
-we'll free and allocate new memory for it. This patch is moticated from
-the ath12k [1] and ath11k [2] patches. They don't free the memory and
-reuse the same memory if new size is same. The firmware caching hasn't
-been implemented for the drivers other than the nouveau. (The changing
-of firmware isn't tested/supported for wireless drivers. But let's
-follow the example patches here.)
+> 
+>>>
+>>> In the scan initiation failure scenario, exit the code instead
+>>> of scheduling the ar->scan.timeout workqueue.
+>>>
+>>> Compile tested only.
+>>>
+>>> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+>>
+>> If there are no user-visible effects then I'll drop the Fixes tag since there
+>> is no reason to backport this to stable kernel versions.
+>>
+> 
+> Kindly refer the above comment and please let me know the next steps.
 
-[1] https://lore.kernel.org/all/20240419034034.2842-1-quic_bqiang@quicinc.com/
-[2] https://lore.kernel.org/all/20220506141448.10340-1-quic_akolli@quicinc.com/
+There are no actions required on your part.
 
-Tested-on: WCN6855 WLAN.HSP.1.1-03926.13-QCAHSPSWPL_V2_SILICONZ_CE-2.52297.6
-Tested-on: WCN7850 hw2.0 WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Acked-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Tested-by: Baochen Qiang <quic_bqiang@quicinc.com>
-Signed-off-by: Muhammad Usama Anjum <usama.anjum@collabora.com>
----
-Changes since v1:
-- Don't free bhie tables during suspend/hibernation only
-- Handle fbc_image changed size correctly
-- Remove fbc_image getting set to NULL in *free_bhie_table()
-
-Changes since v2:
-- Remove the new mhi_partial_unprepare_after_power_down() and instead
-  update mhi_power_down_keep_dev() to use
-  mhi_power_down_unprepare_keep_dev() as suggested by Mani
-- Update all users of this API such as ath12k (previously only ath11k
-  was updated)
-- Define prev_fw_sz in docs
-- Do better alignment of comments
-
-Changes since v3:
-- Fix state machine of ath12k by setting ATH12K_MHI_DEINIT with
-  ATH12K_MHI_POWER_OFF_KEEP_DEV state (Thanks Sebastian for testing and
-  finding the problem)
-- Use static with mhi_power_down_unprepare_keep_dev()
-- Remove crash log as it was showing that kworker wasn't able to
-  allocate memory.
-
-Changes since v4:
-- Update desctiption
-- Use __mhi_power_down_unprepare_keep_dev() in
-  mhi_unprepare_after_power_down()
-
-This patch doesn't have fixes tag as we are avoiding error in case of
-memory pressure. We are just making this driver more robust by not
-freeing the memory and using the same after resuming.
----
- drivers/bus/mhi/host/boot.c           | 15 +++++++++++----
- drivers/bus/mhi/host/init.c           | 18 ++++++++++++------
- drivers/bus/mhi/host/internal.h       |  2 ++
- drivers/bus/mhi/host/pm.c             |  1 +
- drivers/net/wireless/ath/ath11k/mhi.c |  8 ++++----
- drivers/net/wireless/ath/ath12k/mhi.c | 14 ++++++++++----
- include/linux/mhi.h                   |  2 ++
- 7 files changed, 42 insertions(+), 18 deletions(-)
-
-diff --git a/drivers/bus/mhi/host/boot.c b/drivers/bus/mhi/host/boot.c
-index efa3b6dddf4d2..bc8459798bbee 100644
---- a/drivers/bus/mhi/host/boot.c
-+++ b/drivers/bus/mhi/host/boot.c
-@@ -584,10 +584,17 @@ void mhi_fw_load_handler(struct mhi_controller *mhi_cntrl)
- 	 * device transitioning into MHI READY state
- 	 */
- 	if (fw_load_type == MHI_FW_LOAD_FBC) {
--		ret = mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->fbc_image, fw_sz);
--		if (ret) {
--			release_firmware(firmware);
--			goto error_fw_load;
-+		if (mhi_cntrl->fbc_image && fw_sz != mhi_cntrl->prev_fw_sz) {
-+			mhi_free_bhie_table(mhi_cntrl, mhi_cntrl->fbc_image);
-+			mhi_cntrl->fbc_image = NULL;
-+		}
-+		if (!mhi_cntrl->fbc_image) {
-+			ret = mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->fbc_image, fw_sz);
-+			if (ret) {
-+				release_firmware(firmware);
-+				goto error_fw_load;
-+			}
-+			mhi_cntrl->prev_fw_sz = fw_sz;
- 		}
- 
- 		/* Load the firmware into BHIE vec table */
-diff --git a/drivers/bus/mhi/host/init.c b/drivers/bus/mhi/host/init.c
-index 13e7a55f54ff4..8419ea8a5419b 100644
---- a/drivers/bus/mhi/host/init.c
-+++ b/drivers/bus/mhi/host/init.c
-@@ -1173,8 +1173,9 @@ int mhi_prepare_for_power_up(struct mhi_controller *mhi_cntrl)
- 		/*
- 		 * Allocate RDDM table for debugging purpose if specified
- 		 */
--		mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->rddm_image,
--				     mhi_cntrl->rddm_size);
-+		if (!mhi_cntrl->rddm_image)
-+			mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->rddm_image,
-+					     mhi_cntrl->rddm_size);
- 		if (mhi_cntrl->rddm_image) {
- 			ret = mhi_rddm_prepare(mhi_cntrl,
- 					       mhi_cntrl->rddm_image);
-@@ -1200,6 +1201,14 @@ int mhi_prepare_for_power_up(struct mhi_controller *mhi_cntrl)
- }
- EXPORT_SYMBOL_GPL(mhi_prepare_for_power_up);
- 
-+void __mhi_unprepare_keep_dev(struct mhi_controller *mhi_cntrl)
-+{
-+	mhi_cntrl->bhi = NULL;
-+	mhi_cntrl->bhie = NULL;
-+
-+	mhi_deinit_dev_ctxt(mhi_cntrl);
-+}
-+
- void mhi_unprepare_after_power_down(struct mhi_controller *mhi_cntrl)
- {
- 	if (mhi_cntrl->fbc_image) {
-@@ -1212,10 +1221,7 @@ void mhi_unprepare_after_power_down(struct mhi_controller *mhi_cntrl)
- 		mhi_cntrl->rddm_image = NULL;
- 	}
- 
--	mhi_cntrl->bhi = NULL;
--	mhi_cntrl->bhie = NULL;
--
--	mhi_deinit_dev_ctxt(mhi_cntrl);
-+	__mhi_unprepare_keep_dev(mhi_cntrl);
- }
- EXPORT_SYMBOL_GPL(mhi_unprepare_after_power_down);
- 
-diff --git a/drivers/bus/mhi/host/internal.h b/drivers/bus/mhi/host/internal.h
-index ce566f7d2e924..41b3fb835880b 100644
---- a/drivers/bus/mhi/host/internal.h
-+++ b/drivers/bus/mhi/host/internal.h
-@@ -427,4 +427,6 @@ void mhi_unmap_single_no_bb(struct mhi_controller *mhi_cntrl,
- void mhi_unmap_single_use_bb(struct mhi_controller *mhi_cntrl,
- 			     struct mhi_buf_info *buf_info);
- 
-+void __mhi_unprepare_keep_dev(struct mhi_controller *mhi_cntrl);
-+
- #endif /* _MHI_INT_H */
-diff --git a/drivers/bus/mhi/host/pm.c b/drivers/bus/mhi/host/pm.c
-index e6c3ff62bab1d..c2c09c308b9b7 100644
---- a/drivers/bus/mhi/host/pm.c
-+++ b/drivers/bus/mhi/host/pm.c
-@@ -1263,6 +1263,7 @@ void mhi_power_down_keep_dev(struct mhi_controller *mhi_cntrl,
- 			       bool graceful)
- {
- 	__mhi_power_down(mhi_cntrl, graceful, false);
-+	__mhi_unprepare_keep_dev(mhi_cntrl);
- }
- EXPORT_SYMBOL_GPL(mhi_power_down_keep_dev);
- 
-diff --git a/drivers/net/wireless/ath/ath11k/mhi.c b/drivers/net/wireless/ath/ath11k/mhi.c
-index acd76e9392d31..c5dc776b23643 100644
---- a/drivers/net/wireless/ath/ath11k/mhi.c
-+++ b/drivers/net/wireless/ath/ath11k/mhi.c
-@@ -460,12 +460,12 @@ void ath11k_mhi_stop(struct ath11k_pci *ab_pci, bool is_suspend)
- 	 * workaround, otherwise ath11k_core_resume() will timeout
- 	 * during resume.
- 	 */
--	if (is_suspend)
-+	if (is_suspend) {
- 		mhi_power_down_keep_dev(ab_pci->mhi_ctrl, true);
--	else
-+	} else {
- 		mhi_power_down(ab_pci->mhi_ctrl, true);
--
--	mhi_unprepare_after_power_down(ab_pci->mhi_ctrl);
-+		mhi_unprepare_after_power_down(ab_pci->mhi_ctrl);
-+	}
- }
- 
- int ath11k_mhi_suspend(struct ath11k_pci *ab_pci)
-diff --git a/drivers/net/wireless/ath/ath12k/mhi.c b/drivers/net/wireless/ath/ath12k/mhi.c
-index 08f44baf182a5..3af524ccf4a5a 100644
---- a/drivers/net/wireless/ath/ath12k/mhi.c
-+++ b/drivers/net/wireless/ath/ath12k/mhi.c
-@@ -601,6 +601,12 @@ static int ath12k_mhi_set_state(struct ath12k_pci *ab_pci,
- 
- 	ath12k_mhi_set_state_bit(ab_pci, mhi_state);
- 
-+	/* mhi_power_down_keep_dev() has been updated to DEINIT without
-+	 * freeing bhie tables
-+	 */
-+	if (mhi_state == ATH12K_MHI_POWER_OFF_KEEP_DEV)
-+		ath12k_mhi_set_state_bit(ab_pci, ATH12K_MHI_DEINIT);
-+
- 	return 0;
- 
- out:
-@@ -635,12 +641,12 @@ void ath12k_mhi_stop(struct ath12k_pci *ab_pci, bool is_suspend)
- 	 * workaround, otherwise ath12k_core_resume() will timeout
- 	 * during resume.
- 	 */
--	if (is_suspend)
-+	if (is_suspend) {
- 		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_POWER_OFF_KEEP_DEV);
--	else
-+	} else {
- 		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_POWER_OFF);
--
--	ath12k_mhi_set_state(ab_pci, ATH12K_MHI_DEINIT);
-+		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_DEINIT);
-+	}
- }
- 
- void ath12k_mhi_suspend(struct ath12k_pci *ab_pci)
-diff --git a/include/linux/mhi.h b/include/linux/mhi.h
-index dd372b0123a6d..6fd218a877855 100644
---- a/include/linux/mhi.h
-+++ b/include/linux/mhi.h
-@@ -306,6 +306,7 @@ struct mhi_controller_config {
-  *           if fw_image is NULL and fbc_download is true (optional)
-  * @fw_sz: Firmware image data size for normal booting, used only if fw_image
-  *         is NULL and fbc_download is true (optional)
-+ * @prev_fw_sz: Previous firmware image data size, when fbc_download is true
-  * @edl_image: Firmware image name for emergency download mode (optional)
-  * @rddm_size: RAM dump size that host should allocate for debugging purpose
-  * @sbl_size: SBL image size downloaded through BHIe (optional)
-@@ -382,6 +383,7 @@ struct mhi_controller {
- 	const char *fw_image;
- 	const u8 *fw_data;
- 	size_t fw_sz;
-+	size_t prev_fw_sz;
- 	const char *edl_image;
- 	size_t rddm_size;
- 	size_t sbl_size;
--- 
-2.43.0
-
+I've made the change in the pending branch:
+https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=4545ccf7efbd97566eb6d98738013bb6d72ced05
 
