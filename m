@@ -4,71 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59543C3ABC9
-	for <ath12k@archiver.kernel.org>; Thu, 15 May 2025 12:46:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13C6DC2D0CD
+	for <ath12k@archiver.kernel.org>; Thu, 15 May 2025 14:37:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=TqyfRhmdztqUVZuvB7CZWiUpCT9sdON1Q9XYxqwHuyU=; b=UxPE+ofdYA6+L3vV6H+1POizq6
-	9jrYejtEtlZtNAvhyFBgqD2Ov7xUnD7JEwJyWPlBlWnHJDBrXc+PzlqBJ7OBJGC7CmvEYFeEKX61o
-	QIBbCWMG16a6tXfiQCe9av0hRoI5dtGUbjh98gAKT34YuY0RK9fPC56kJB9Lgd4xKNlzlGteuSNT5
-	5M6G+xEuP7HHARmt15Lw+VkASTzIYAwoTAlcdCfdPFbb3dl3sp4CwSjaEKE56s9xz75yZpft9MKl9
-	FXyBSNR0kggl1a8aICvPcguJ2rbDGFtva/eUs7D/m/4v2Ox9ugvNYQj1OOzwNMtDKfH4vkiSAKkB4
-	qBupgrng==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=oo2iRKVm1IIkM8VCXT+97aSCM+vMFIU8Nd4I7xZhjAU=; b=ELLgkCNKN2EkIfK3Anqf81wJTW
+	D0+zsYebK2FrBU55JDw/SVZmdC0zcjXSxYu/muzMWc/+dWyCISRLE1l4KyqW3g8xpFNJ1LgGATKCC
+	edxguKYibv5wat2oTsiMpTfsXTf7hlPRI4M0WcqdVESqfYcRZxYb4kMOv4Ob2IAFK6zctv0axgLMo
+	FjrYPIhr64bpRLKehvRabhV4g0Lv2xGPB+xRuNzP8dTGM4bjK2UAZy6w7HrJgrub+9hPjPn9Qd3p4
+	H2ieOzg+OscbPxUWg+pTs//kNYSlhFlpqAKIQPjTtLnNcp3hIsFU9CbnVXtY4i0PlhLRBgvjvwWKk
+	tfge6v7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFXyi-00000000bgG-46Px;
-	Thu, 15 May 2025 12:46:24 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	id 1uFZhy-00000000u9K-3NZr;
+	Thu, 15 May 2025 14:37:14 +0000
+Received: from mail11.truemail.it ([217.194.8.81])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFXw4-00000000b1P-3qg5
+	id 1uFZUP-00000000sBl-1Qyo
 	for ath12k@lists.infradead.org;
-	Thu, 15 May 2025 12:43:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1747313021; x=1778849021;
-  h=date:from:to:cc:subject:message-id;
-  bh=wqJTo99F+iI3oRMc3/HM8AB5LKCG5zKsds3oeimQzGA=;
-  b=fGYu1HqF6WN1i4mGe6gk0KWjGeANDa6ZoqQXP6znw6bn2m0XU3D97eOm
-   K5KlPmbelx1WMXfYIADqLAxe2XmEml9ckuOes5TY1k2lV8io9tnJRBIVv
-   N5/KlQpWfNyuneaGnQ3IYh6h+vo9AYD3Hpd7/gjfQ0IM4HhbwylFdoOKb
-   29wBqMB83ZeXS3VWhFpXzhTx3vRWy8MiP8DberkSGeOoKNt+WM2noy3d/
-   ail9kM0RsbY/YUiElXa0bLIL1dkRmYvOuODPP8PQ+ZHN6AHQ4epA74J9h
-   lEOEnmyAVgtJootbf8uk2SGR2R1wBPQVGiTvOdI1hcWhKdXvPWQA3DG54
-   g==;
-X-CSE-ConnectionGUID: UB65p3ZjSny8+c4S1kchhw==
-X-CSE-MsgGUID: 0D0YkvW2T+2xZbiYb9cwpw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11434"; a="48930448"
-X-IronPort-AV: E=Sophos;i="6.15,291,1739865600"; 
-   d="scan'208";a="48930448"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 May 2025 05:43:40 -0700
-X-CSE-ConnectionGUID: rC1vsdS/Ts+bpssdPSa7ZA==
-X-CSE-MsgGUID: FgOHU0CzTwih7KezKUh7ug==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.15,291,1739865600"; 
-   d="scan'208";a="143126663"
-Received: from lkp-server01.sh.intel.com (HELO 1992f890471c) ([10.239.97.150])
-  by orviesa003.jf.intel.com with ESMTP; 15 May 2025 05:43:39 -0700
-Received: from kbuild by 1992f890471c with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uFXw0-000INv-1W;
-	Thu, 15 May 2025 12:43:36 +0000
-Date: Thu, 15 May 2025 20:43:35 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master-pending] BUILD SUCCESS
- 262410b82adaae553de0e4a66ce71859aeb6d263
-Message-ID: <202505152025.dpkP1Ral-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Thu, 15 May 2025 14:23:15 +0000
+Received: from francesco-nb (93-49-2-63.ip317.fastwebnet.it [93.49.2.63])
+	by mail11.truemail.it (Postfix) with ESMTPA id 9E60721ECB;
+	Thu, 15 May 2025 16:23:09 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dolcini.it;
+	s=default; t=1747318989;
+	bh=oo2iRKVm1IIkM8VCXT+97aSCM+vMFIU8Nd4I7xZhjAU=; h=From:To:Subject;
+	b=Cy9SzCiHcYS43AI/FCDXrrMGHoaPKOjyrxQro4WtKGis49v1Krd3oAjf5e9/yEwhh
+	 AHpFhDgsj48O/fBL8Jz2IIOUxiJtBk6yXiJpno/dZilngABD+KapRKDMg6jGJE9IIl
+	 Xi7VLtI7auvO/D/k4XJt/GmMawNCgtuo5KBujL4G4W1E8OjB9JFh6IchkOkQAZDcrD
+	 ks3SMcEek5AMOKcJZXODKpNGw7LJ1PDAdLGvOHjLLFUtiwsq5wy5LnCurA1FiIq1F0
+	 P+xNBqP7ea/Qd7ZkHLEvRuOb8hdtEddVhP5Aj+KsE8lkFFSdYzqb33P59pLBSk0XHZ
+	 XgDpr1Cp5QB2Q==
+Date: Thu, 15 May 2025 16:23:05 +0200
+From: Francesco Dolcini <francesco@dolcini.it>
+To: Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: Parth Panchoil <parth105105@gmail.com>,
+	"ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
+Subject: Re: wifi: ath12k: start-up crash with WCN7850 hw2.0 on TI AM69-SK
+ board
+Message-ID: <20250515142305.GA74294@francesco-nb>
+References: <86899b2235a59c9134603beebe08f2bb0b244ea0.camel@gmail.com>
+ <a15a1557-e5fb-404c-9031-21efbaa7e679@quicinc.com>
+ <c710004338102c19e5c05fb03d3256ccbdabd5f7.camel@toradex.com>
+ <afe586a1acf458edcfe7cf76f4dcfa8b18ad716a.camel@gmail.com>
+ <28b5436a-556b-4b0e-a66c-eec453f4f5b8@quicinc.com>
+ <6aa877c8-322d-44eb-a8ca-5d00ffa63d8f@quicinc.com>
+ <479bd0f6ef7fbb5f0e0d0d8f71a804002e6b5f6b.camel@gmail.com>
+ <6ee296a1-1cb9-4187-9c74-222bea54843b@quicinc.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <6ee296a1-1cb9-4187-9c74-222bea54843b@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250515_054340_990042_DBD604EE 
-X-CRM114-Status: UNSURE (   3.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250515_072313_972431_5E700970 
+X-CRM114-Status: GOOD (  12.78  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,137 +77,44 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
-branch HEAD: 262410b82adaae553de0e4a66ce71859aeb6d263  Merge branch 'pending' into main-pending
+Hello,
 
-elapsed time: 1297m
+On Tue, May 06, 2025 at 01:56:11PM +0800, Baochen Qiang wrote:
+> On 4/30/2025 8:50 PM, Parth Panchoil wrote:
+> > On Wed, 2025-02-19 at 18:18 +0800, Baochen Qiang wrote:
+> >> On 2/5/2025 10:20 AM, Baochen Qiang wrote:
+> >>> On 1/27/2025 10:01 PM, Parth Panchoil wrote:
+> >>>> I am currently debugging the ath12k_pci_enable_ltssm start up
+> >>>> crash/bug
+> >>>> with the mainline kernel on my system and would like to share my
+> >>>> observations so far:
+> >>>>
+> >>>> The ath12k mainline driver gets stuck at this specific line: 
+> >>>> https://github.com/torvalds/linux/blob/9c5968db9e625019a0ee5226c7eebef5519d366a/drivers/net/wireless/ath/ath12k/pci.c#L295
+> >>>> in the ath12k_pci_enable_ltssm  which attempts to read
+> >>>> GCC_GCC_PCIE_HOT_RST, particularly
+> >>>> https://github.com/torvalds/linux/blob/9c5968db9e625019a0ee5226c7eebef5519d366a/drivers/net/wireless/ath/ath12k/pci.c#L1209
 
-configs tested: 117
-configs skipped: 1
+...
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+> >>
+> >> -#define GCC_GCC_PCIE_HOT_RST                   0x1e38338
+> >> +#define GCC_GCC_PCIE_HOT_RST                   0x1e40304
 
-tested configs:
-alpha                             allnoconfig    gcc-14.2.0
-alpha                            allyesconfig    gcc-14.2.0
-arc                              allmodconfig    gcc-14.2.0
-arc                               allnoconfig    gcc-14.2.0
-arc                              allyesconfig    gcc-14.2.0
-arc                   randconfig-001-20250514    gcc-13.3.0
-arc                   randconfig-001-20250515    gcc-12.4.0
-arc                   randconfig-002-20250514    gcc-14.2.0
-arc                   randconfig-002-20250515    gcc-14.2.0
-arm                              allmodconfig    gcc-14.2.0
-arm                               allnoconfig    clang-21
-arm                              allyesconfig    gcc-14.2.0
-arm                   randconfig-001-20250514    clang-21
-arm                   randconfig-001-20250515    clang-21
-arm                   randconfig-002-20250514    clang-21
-arm                   randconfig-002-20250515    gcc-8.5.0
-arm                   randconfig-003-20250514    gcc-7.5.0
-arm                   randconfig-003-20250515    gcc-8.5.0
-arm                   randconfig-004-20250514    gcc-7.5.0
-arm                   randconfig-004-20250515    clang-21
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-14.2.0
-arm64                 randconfig-001-20250514    clang-17
-arm64                 randconfig-001-20250515    clang-21
-arm64                 randconfig-002-20250514    gcc-5.5.0
-arm64                 randconfig-002-20250515    clang-21
-arm64                 randconfig-003-20250514    gcc-5.5.0
-arm64                 randconfig-003-20250515    clang-20
-arm64                 randconfig-004-20250514    clang-21
-arm64                 randconfig-004-20250515    gcc-6.5.0
-csky                              allnoconfig    gcc-14.2.0
-csky                  randconfig-001-20250515    gcc-14.2.0
-csky                  randconfig-002-20250515    gcc-14.2.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-hexagon               randconfig-001-20250515    clang-16
-hexagon               randconfig-002-20250515    clang-21
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250514    clang-20
-i386        buildonly-randconfig-002-20250514    gcc-12
-i386        buildonly-randconfig-003-20250514    clang-20
-i386        buildonly-randconfig-004-20250514    clang-20
-i386        buildonly-randconfig-005-20250514    gcc-12
-i386        buildonly-randconfig-006-20250514    gcc-12
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    gcc-14.2.0
-loongarch                         allnoconfig    gcc-14.2.0
-loongarch             randconfig-001-20250515    gcc-12.4.0
-loongarch             randconfig-002-20250515    gcc-14.2.0
-m68k                             allmodconfig    gcc-14.2.0
-m68k                              allnoconfig    gcc-14.2.0
-m68k                             allyesconfig    gcc-14.2.0
-microblaze                       allmodconfig    gcc-14.2.0
-microblaze                        allnoconfig    gcc-14.2.0
-microblaze                       allyesconfig    gcc-14.2.0
-mips                              allnoconfig    gcc-14.2.0
-nios2                             allnoconfig    gcc-14.2.0
-nios2                 randconfig-001-20250515    gcc-12.4.0
-nios2                 randconfig-002-20250515    gcc-6.5.0
-openrisc                          allnoconfig    gcc-14.2.0
-openrisc                         allyesconfig    gcc-14.2.0
-parisc                           allmodconfig    gcc-14.2.0
-parisc                            allnoconfig    gcc-14.2.0
-parisc                           allyesconfig    gcc-14.2.0
-parisc                randconfig-001-20250515    gcc-13.3.0
-parisc                randconfig-002-20250515    gcc-13.3.0
-powerpc                          allmodconfig    gcc-14.2.0
-powerpc                           allnoconfig    gcc-14.2.0
-powerpc                          allyesconfig    clang-21
-powerpc               randconfig-001-20250515    gcc-8.5.0
-powerpc               randconfig-002-20250515    gcc-6.5.0
-powerpc               randconfig-003-20250515    clang-21
-powerpc64             randconfig-001-20250515    clang-21
-powerpc64             randconfig-002-20250515    gcc-8.5.0
-powerpc64             randconfig-003-20250515    clang-21
-riscv                            allmodconfig    clang-21
-riscv                             allnoconfig    gcc-14.2.0
-riscv                            allyesconfig    clang-16
-riscv                 randconfig-001-20250515    gcc-8.5.0
-riscv                 randconfig-002-20250515    gcc-14.2.0
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-21
-s390                             allyesconfig    gcc-14.2.0
-s390                  randconfig-001-20250515    clang-21
-s390                  randconfig-002-20250515    gcc-9.3.0
-sh                               allmodconfig    gcc-14.2.0
-sh                                allnoconfig    gcc-14.2.0
-sh                               allyesconfig    gcc-14.2.0
-sh                    randconfig-001-20250515    gcc-14.2.0
-sh                    randconfig-002-20250515    gcc-10.5.0
-sparc                            allmodconfig    gcc-14.2.0
-sparc                             allnoconfig    gcc-14.2.0
-sparc                 randconfig-001-20250515    gcc-6.5.0
-sparc                 randconfig-002-20250515    gcc-10.3.0
-sparc64               randconfig-001-20250515    gcc-9.3.0
-sparc64               randconfig-002-20250515    gcc-9.3.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-um                    randconfig-001-20250515    gcc-12
-um                    randconfig-002-20250515    clang-21
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250515    clang-20
-x86_64      buildonly-randconfig-002-20250515    clang-20
-x86_64      buildonly-randconfig-003-20250515    clang-20
-x86_64      buildonly-randconfig-004-20250515    clang-20
-x86_64      buildonly-randconfig-005-20250515    clang-20
-x86_64      buildonly-randconfig-006-20250515    gcc-12
-x86_64                              defconfig    gcc-11
-x86_64                          rhel-9.4-rust    clang-18
-xtensa                            allnoconfig    gcc-14.2.0
-xtensa                randconfig-001-20250515    gcc-14.2.0
-xtensa                randconfig-002-20250515    gcc-13.3.0
+...
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+> 
+> GCC_GCC_PCIE_HOT_RST is wrongly defined, normally this should not cause any critical
+> issue, because IMO the RC is expected to return 0xffffffff when accessing a non-exist
+> register. However in your case kernel crashes, so seems RC does not behave well, maybe not
+> following spec?
+> 
+> anyway I will submit a patch to fix it.
+
+Any update on this? I can easily submit a patch myself, just let me
+know. Because of this bug we have a crash that is preventing us to use
+the device.
+
+Francesco
+
 
