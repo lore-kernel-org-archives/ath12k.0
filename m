@@ -4,91 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F9F1C2D0CD
-	for <ath12k@archiver.kernel.org>; Thu, 15 May 2025 17:47:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73D55C2D0CD
+	for <ath12k@archiver.kernel.org>; Thu, 15 May 2025 18:20:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jjXmds9B96aBr6ogrQKAZuZXba2WoK836krNGCvL05I=; b=YidFEBTH9eNzEmtOwi83Qt2lVh
-	hAk2AhFX4NhFSZokm+9nwM+5110k/vVC+KJ2T/LIVx4cyoOd2+WLGjmSNT0TgF1lH1RoxQyjCA3wX
-	D+3Du0cIRoI7EaW85OTdfnwCNCriiDmhvfke1GQQ1fUD7ZmIlvDEwvzEPBM87Wtrpj7RcF7Pb4keb
-	u9bekdoflW2DNSHpHCt4ODzrrbDn9dVMsIUFrRv0W6YE3wh1vrd68Z7unfhzv+R9xFZEVwQwwfIKe
-	uOYshbQX1DMAWy1ZA2c4Zyng6iGBFDiDBnblZypUsBQ5widBtRsYKjN+ggfpliNtfV37STSxwbdx3
-	rQKFsBLw==;
+	bh=/T0gQauXa/ft2ZHRp8KMQbczqbe7LRrSucsbMP5v/Ok=; b=dQZwqsHOxYQRUtJsT1pfKrqm/m
+	3i8sJ8lqOI5x3kjPrdZWLR0L85HKKL7TJcNI4PMN6vyi6C43KOa/YhjEzkVSRKCEM+31+ynfabqjz
+	jCPdHRh+q0U/aG6eRoAU6nvA+PyMGeRNZBFD8trJOVe8M2KWuXWY1GUEzqhQJynnydsjAoMufEPxq
+	+WutZAAotvot25yES+UTMa25ng8Pq4b/fH17QzIvyocoq5IyPu/ifEgU9AuGiShkgnPwR/xhuKNQj
+	RQ5OQQKpbVcGYPMCthOEBIkB5Ywl8SRCrw869FxbSlyL6y10d9FvXtfBS1ABv1U6kiOMMLGhZJY6w
+	+jhZ+clg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFcgF-00000001T8l-0Vbw;
-	Thu, 15 May 2025 17:47:39 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1uFdBv-00000001Wss-0Y6x;
+	Thu, 15 May 2025 18:20:23 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFcgC-00000001T7S-2I4V
+	id 1uFdBs-00000001WsS-1siz
 	for ath12k@lists.infradead.org;
-	Thu, 15 May 2025 17:47:38 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-441d1ed82dbso12315995e9.0
-        for <ath12k@lists.infradead.org>; Thu, 15 May 2025 10:47:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1747331254; x=1747936054; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=jjXmds9B96aBr6ogrQKAZuZXba2WoK836krNGCvL05I=;
-        b=K4hG3iams/eyvk8EbGYNXKIhrfBqDH5uF1g6MFS5BVpf9XBPlA09XsN76H/vsd41/U
-         N5jEBGg1etJP9/t+L3T9ReCygjh5wNf/L3lf3oqrf5BcHph2we0f05vbk3DOzf8ekiFy
-         yaZreJ5TSzMwCUEiBc1cqYgz6KSPafFX5YZdk1JHD02tJ1CtTlLIi1FPsYWtYg8I5i4s
-         ZCvFQ23ldZUfr6hbWJweti+olE5x8IvrXvaBbjYGDiPQ9pxysrO0HkZa71nkNTtJPNfQ
-         WoqCOO2v4a1i+LwG6NDDHNNAOZ4cRmCBM7fOoIpa1jqrLAeek32npDfLnEqj6V3FKX3C
-         xDKA==
+	Thu, 15 May 2025 18:20:21 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54FEFEs4024609
+	for <ath12k@lists.infradead.org>; Thu, 15 May 2025 18:20:19 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	/T0gQauXa/ft2ZHRp8KMQbczqbe7LRrSucsbMP5v/Ok=; b=ix+Vd4W6VBnu2XFg
+	0D28g9knno1jndoegUxnC3cpex01RYPBDcGqQ83lQ6c46fDzMIrhJm130ev+3K24
+	VSY7l/l02P1183K2oQWcNddELtAVps02oJbZ9XhEDT+A83PEvZk1KvIYqR1PGYgP
+	z0vymjp3P7ycwBOIOxV4ZZLKLReq0eAHS3OPxShzDT3Q3dQpaTScAQDttQWabvpf
+	8fm2q4N/LXW77uq7A+HjXHLrNTrWaMoatZlOD8BfwJR6TuZw3xB8eomi2+Na/542
+	GE2QsdjlTjO/h0aNAD10JzLU6vYINOZJZOxWv2ScuhPzPtjw/Hl0IwEJiQINOjxH
+	L8FTuw==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46mbcny937-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 15 May 2025 18:20:19 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-22fc829046fso11716675ad.2
+        for <ath12k@lists.infradead.org>; Thu, 15 May 2025 11:20:19 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747331254; x=1747936054;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=jjXmds9B96aBr6ogrQKAZuZXba2WoK836krNGCvL05I=;
-        b=OAsdTXJ6nkBz8U1qy8doMNncEIp1Fu5ru3ZP5XNugwqIJdiZvVHJAbFRIsseJPoNT1
-         G9u/IuehDO3lDt+pLeJ3YmdCuUUjLhExAeWvjefvMgKuc0uvlGiREU3IvXPCeGo4kBVV
-         Kn6qJ5Upetgs/TmUqyWhcVSWJXuX/jqDJCAC7h894OwiG+IypefCwTdJjwHnFR5xrijA
-         IKCPHoa7PerO6qq5htxek9BrsRlRkkMO6b8u6dzOgl5pBpqWPdfTNt+O2n/VAZKI1aIf
-         pXvpdTrUA3IqQexDS7UkFlTcBQD4Y/Yhkwi0uyTpDf36dQikjm9Y9rqCsmZbd7TFFSm/
-         LavA==
-X-Forwarded-Encrypted: i=1; AJvYcCUQrQSs0Lp5tpqOtPHDyIwwxNzXChyWL+6hVj5Yt3j+r6ZBTsYN9MP7YoC/clKK/LKUA24vn7Q=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yya5WMKuhsLah1bIQqvwdB62Uo7Tlf6y+nxg0SQN6JoHMMwVswv
-	myESFhhuNKURK8xo/9KY5TLXw1H0ju5hclkBiwJE/fUQPMNwP+SWUaV8W4OLfvWe5NzZKmpgbN5
-	9WKUUHecwFGZy+00runFuWLLu750eVj8=
-X-Gm-Gg: ASbGncsbcR846toNyzwUEe0AoJdySR2hXPIU3eFy7Ye7IWMWj13ulukp9nJw/Fb+grq
-	up8F9IiJrbLxf5yTIl4D92BeR7exhHWuLwpnV658JS6vWnNbf/DORR7TThIsiaOt1I6HCUqKojM
-	xWzzw8Xy8wI1+pn/Lo1W93pCoG7sMtiWIKZJstqwIkyA==
-X-Google-Smtp-Source: AGHT+IFQN+7saLjJ+/ftN5Ugn+WEZF8lVEW6W4SGTsDcY1fb/+b3Tk5Gks1Wo3CUjzgJg/s1PKWUcIoAitk9gkhLI84=
-X-Received: by 2002:a05:600c:c87:b0:442:d9f2:c74e with SMTP id
- 5b1f17b1804b1-442fd660763mr4237385e9.23.1747331254173; Thu, 15 May 2025
- 10:47:34 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1747333218; x=1747938018;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=/T0gQauXa/ft2ZHRp8KMQbczqbe7LRrSucsbMP5v/Ok=;
+        b=H2qAOFGimPk/KgNHuN2DZbzMF8YrrEVQV7M8IW+U19BORZ368eQqISjaz4D1voPM/9
+         mKEQ802gjmP9rwwJy09Ku9LBlaTVyR8004hg02kCVgzIz3NGoPFGiQ40LVI60Zgz8Kgz
+         1+xyVGaQY3bO9M9Z4S4ZPogeY7iSQwJLj7MkC/xFvdiK7V9zPTCLoG3KwRgyJNMfgRCL
+         H576DPbteBzmLRpKM+O1IWX/+f5fnnfX4n2KHVkAlHf4vWnItujN8GyDdPBv+g8bvgGL
+         +ttgs/6rriv/32S1UaiVlzZfkBB9PhN3ajK7vbWTdUaiw/1qL8arQEuKELhw+j7h6NF3
+         yYXw==
+X-Forwarded-Encrypted: i=1; AJvYcCXNKr1KyJBmzK6t8e5HDLlQr3C06weWlr75G/RJqSRDZOF0UZ9TLgAdmV8pmkAYqrQeTSNFwC8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzAorNuCMypwTq9zGXJveWvJBWsuMa7c3z6K+5O3VrAsF7EXH92
+	XP9nq94WRItrsf5RLaI4KU4zyMnbq12SM5/q9Ml9iV5PRPnjrwX3dRm2jaHU9unanR1teGXvvfG
+	QbH0eCZkdQkYmCI9gNwR8B0hdQJX3SM8oRpbUw4pnNb076DIMGhiNFaedku1OQfgj
+X-Gm-Gg: ASbGnctMuHzUgGxX9dp6I0JfZHPMArUTCnjBD2gLDYSSGCepfznGZm66q8WVc8eNSYa
+	F3xYk1FeElE374FBNNn+0iAq2P52yVfVoULP1AuMLhVY4Z/ERFmB8WRkthPOrN7GlDbS5nVFDyi
+	BgDjD1wj5o+N8405NImn/gbQg8XZixEEbX2ELN4h2Zvo0FAzXtUSwxpy79GdLNvSNLcaqk/cOuI
+	xUyMjGFz4P6wjVude+OwKo0maSg7j0/JMvIHb13soU2h3aAyhsA89HRUf4SeUOpyGtJjPeAso7Q
+	ONLGGzoHn2jqZAraWBU1d7nhbOOFvYYdi+BBB7vonYiNO7G4Hye2JJPFhFIzzVMmDmQ=
+X-Received: by 2002:a17:903:4b4b:b0:22e:6bb1:f717 with SMTP id d9443c01a7336-231d452da38mr7361055ad.41.1747333218485;
+        Thu, 15 May 2025 11:20:18 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEx5bYF/rzLIsywGqbz8vScGQIyVSypJBLovdyWgpilULyiGbEcK0yTCLXsjJbs14FK7DiA6g==
+X-Received: by 2002:a17:903:4b4b:b0:22e:6bb1:f717 with SMTP id d9443c01a7336-231d452da38mr7360665ad.41.1747333217949;
+        Thu, 15 May 2025 11:20:17 -0700 (PDT)
+Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-231d4e97db8sm822345ad.110.2025.05.15.11.20.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 15 May 2025 11:20:17 -0700 (PDT)
+Message-ID: <ad255f5e-d1be-42e0-83ca-40fdc4eb25a4@oss.qualcomm.com>
+Date: Thu, 15 May 2025 11:20:16 -0700
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ath12k: No 6GHz Wireless found
+To: Walt Holman <waltholman09@gmail.com>,
+        Kang Yang <quic_kangyang@quicinc.com>
+Cc: linux-wireless@vger.kernel.org,
+        "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
 References: <CAMb39_ngQs8=FUML5QXMh2RmEZBZ2NwUHefhGoTkGtHat+KWJA@mail.gmail.com>
- <dc0abf98-862b-47f5-ae71-749c68cffc73@quicinc.com> <CAMb39_kUUv24q6QUq9B9+TEUMrUhu12-8WJadzB53nMPhcAZSQ@mail.gmail.com>
- <ef81db9e-99cb-4802-b17f-94eb623a8b32@quicinc.com> <CAMb39_m+4dNBDbkZmn-rDA7T+u84y-dx1jSfmPNWnse=R1=gCw@mail.gmail.com>
- <18788f02-e374-4aa6-ac4a-fd53bc93754c@quicinc.com> <CAMb39_=G_TEL1pbeF_PAZLQh-JOFcncSfqZChPmEj63NjsEOLA@mail.gmail.com>
- <16ccbe02-b315-40d1-8600-232b592d4dd6@quicinc.com> <CAMb39_n4tyrzS=-j0L+ekJVer=KiZyDYFhMqrrcpr9py_itU9w@mail.gmail.com>
- <0933d8d6-5b72-40df-95f8-69f6fbbdfde7@oss.qualcomm.com> <CAMb39_nHO_TbHPQawdLVY8nt3yt4wDuEHyEuzMa-p5Ab1n94sA@mail.gmail.com>
+ <ef81db9e-99cb-4802-b17f-94eb623a8b32@quicinc.com>
+ <CAMb39_m+4dNBDbkZmn-rDA7T+u84y-dx1jSfmPNWnse=R1=gCw@mail.gmail.com>
+ <18788f02-e374-4aa6-ac4a-fd53bc93754c@quicinc.com>
+ <CAMb39_=G_TEL1pbeF_PAZLQh-JOFcncSfqZChPmEj63NjsEOLA@mail.gmail.com>
+ <16ccbe02-b315-40d1-8600-232b592d4dd6@quicinc.com>
+ <CAMb39_n4tyrzS=-j0L+ekJVer=KiZyDYFhMqrrcpr9py_itU9w@mail.gmail.com>
+ <0933d8d6-5b72-40df-95f8-69f6fbbdfde7@oss.qualcomm.com>
+ <CAMb39_nHO_TbHPQawdLVY8nt3yt4wDuEHyEuzMa-p5Ab1n94sA@mail.gmail.com>
  <CAMb39_nQ-uyKAqCz1HEUDt5qjszbhzf3oikVcvzHcVwt4_qt=A@mail.gmail.com>
  <CAMb39_n89hBL_GvfXb7Jw9h5-h-+Qg-3GyqvpahL7MT5ewpvJw@mail.gmail.com>
  <CAMb39_=YPYg0q7Lf0sMgTx5QwKOqcyJrZR7kTspyXEDa6qz9Bw@mail.gmail.com>
- <e9da4ad5-52cb-416d-991a-259140469e2c@oss.qualcomm.com> <87774003-d0a5-4408-b710-20bd3c194cec@quicinc.com>
-In-Reply-To: <87774003-d0a5-4408-b710-20bd3c194cec@quicinc.com>
-From: Walt Holman <waltholman09@gmail.com>
-Date: Thu, 15 May 2025 12:47:21 -0500
-X-Gm-Features: AX0GCFscgEl_5F2yhI4enYr8Bx0B6p14PTcdtItzbk2hH6NEK2DzyNgEIGuFR8c
-Message-ID: <CAMb39_ntK9Zv3pOuMSza5hRfs_KZBhya=GAPnpBWjN2wZDst9w@mail.gmail.com>
-Subject: Re: ath12k: No 6GHz Wireless found
-To: Kang Yang <quic_kangyang@quicinc.com>
-Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, linux-wireless@vger.kernel.org, 
-	"ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+ <e9da4ad5-52cb-416d-991a-259140469e2c@oss.qualcomm.com>
+ <87774003-d0a5-4408-b710-20bd3c194cec@quicinc.com>
+ <CAMb39_ntK9Zv3pOuMSza5hRfs_KZBhya=GAPnpBWjN2wZDst9w@mail.gmail.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <CAMb39_ntK9Zv3pOuMSza5hRfs_KZBhya=GAPnpBWjN2wZDst9w@mail.gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: p_b8cKCmCMTayAM5BIkgvvIB-DS1smsK
+X-Authority-Analysis: v=2.4 cv=D8dHKuRj c=1 sm=1 tr=0 ts=68263063 cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
+ a=bC-a23v3AAAA:8 a=3HcdUk5iCOaaV_Z1s7AA:9 a=QEXdDO2ut3YA:10 a=-FEs8UIgK8oA:10
+ a=GvdueXVYPmCkWapjIL-Q:22 a=FO4_E8m0qiDe52t0p3_H:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE1MDE4MSBTYWx0ZWRfXzQBPunfMJvAO
+ OchDftAojW1CCCeJWijQcqfl9Bhug48oySqfWMuDm+QbmQRndnm6Dp3qx2KgDyeyduQhLU3ykri
+ t0XpethZqHr5coqSH48CNkmDUqYZURyU8n0PptbiIFfWKQbBzSY0VnRPQZGOlHNAGEWIxtohsfQ
+ 8VYjtlycGf8pP2ELri3j7si62yXhc1vFxAoPr9G2kVHoNXS2QgjIQHxhffepxo107mt/KFfNZ7/
+ v87eZbqoaVE20NGz2Gjp4wWtkCbh8r3haXBNrmHcr/a8jidRtzMqDTJ4yY17QIQjjUbNEPYv9oH
+ hoijTxvPZ5WQStHFBh8x120JUacwuUVXXLLq2mpZg8QOs/wIVrkwyi2DvvK77rToXjYByskcYRd
+ wnzCWq8hg9qIvjqD99igwHostx71pTknw+E44UEnrg9k3f2z86gV4JClR2rTStaJvTCgAfq/
+X-Proofpoint-GUID: p_b8cKCmCMTayAM5BIkgvvIB-DS1smsK
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-15_08,2025-05-15_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxlogscore=752 spamscore=0 impostorscore=0 bulkscore=0 priorityscore=1501
+ suspectscore=0 malwarescore=0 mlxscore=0 adultscore=0 phishscore=0
+ clxscore=1015 lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505070000 definitions=main-2505150181
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250515_104736_593768_670A9B26 
-X-CRM114-Status: GOOD (  42.76  )
+X-CRM114-CacheID: sfid-20250515_112020_496674_F2B9A895 
+X-CRM114-Status: GOOD (  11.57  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,367 +145,18 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, May 15, 2025 at 4:22=E2=80=AFAM Kang Yang <quic_kangyang@quicinc.co=
-m> wrote:
->
->
->
-> On 5/15/2025 4:12 PM, Kang Yang wrote:
-> >
-> > On 4/20/2025 11:18 PM, Walt Holman wrote:
-> >> On Fri, Apr 18, 2025 at 4:18=E2=80=AFPM Walt Holman <waltholman09@gmai=
-l.com>
-> >> wrote:
-> >>> On Tue, Apr 15, 2025 at 4:23=E2=80=AFPM Walt Holman <waltholman09@gma=
-il.com>
-> >>> wrote:
-> >>>> On Thu, Apr 10, 2025 at 10:32=E2=80=AFAM Walt Holman
-> >>>> <waltholman09@gmail.com> wrote:
-> >>>>> On Thu, Apr 10, 2025 at 3:26=E2=80=AFAM Kang Yang
-> >>>>> <kang.yang@oss.qualcomm.com> wrote:
-> >>>>>>
-> >>>>>>
-> >>>>>> On 4/10/2025 3:37 AM, Walt Holman wrote:
-> >>>>>>> On Tue, Apr 8, 2025 at 4:17=E2=80=AFAM Kang Yang
-> >>>>>>> <quic_kangyang@quicinc.com> wrote:
-> >>>>>>>>
-> >>>>>>>>
-> >>>>>>>> On 4/8/2025 1:49 AM, Walt Holman wrote:
-> >>>>>>>>> Attached is a small packet capture where I did an 'iw wlp99s0
-> >>>>>>>>> scan'
-> >>>>>>>>> and also deactivated and reactivated wireless while the scan wa=
-s
-> >>>>>>>>> ongoing. Hopefully there's something interesting for you in the=
-re.
-> >>>>>>>>> Also, I've take 3 screenshots showing the configs of the
-> >>>>>>>>> wireless AP
-> >>>>>>>>> for the 6ghz network. The first screen is just the definition
-> >>>>>>>>> of the
-> >>>>>>>>> network. No advanced settings are used. The 2nd screen shows th=
-e
-> >>>>>>>>> channels and radio enabled. The 3rd screen has the advanced
-> >>>>>>>>> (professional) settings for the network. I believe I changed
-> >>>>>>>>> 'Agile
-> >>>>>>>>> Multiband' to enabled, but other settings are their defaults. H=
-ope
-> >>>>>>>>> some of this helps. Let me know if you need anything else. Than=
-ks,
-> >>>>>>>>>
-> >>>>>>>> Your packets are Ethernet packets. I need wireless packets.
-> >>>>>>>>
-> >>>>>>>>
-> >>>>>>>> Not sure if you know how to add a seperate monitor interface to
-> >>>>>>>> capture
-> >>>>>>>> 6 G channels' packet on your AP(you can google for specific
-> >>>>>>>> command).
-> >>>>>>>>
-> >>>>>>>>
-> >>>>>>>> Also, please capture firmware log:
-> >>>>>>>>
-> >>>>>>>> 1. sudo apt install trace-cmd
-> >>>>>>>> 2. sudo trace-cmd record -e ath12k_wmi_diag
-> >>>>>>>> 3. run test
-> >>>>>>>> 4. "ctrl c" to stop recording:
-> >>>>>>>> Hit Ctrl^C to stop recording
-> >>>>>>>> ^CCPU0 data recorded at offset=3D0xdf5000
-> >>>>>>>>        2605056 bytes in size
-> >>>>>>>> Then share the trace.dat to us.
-> >>>>>>>>
-> >>>>>>>> So you need to:
-> >>>>>>>> 1. try to capture wireless packets.
-> >>>>>>>> 2. capture firmware log(trade.data).
-> >>>>>>>> 3. save kernel/wpa_supplicant/iw logs.
-> >>>>>>>>
-> >>>>>>>>
-> >>>>>>>>
-> >>>>>>>>
-> >>>>>>>>
-> >>>>>>>>> -Walt
-> >>>>>>>>>
-> >>>>>>>>> On Sun, Apr 6, 2025 at 8:58=E2=80=AFPM Kang Yang
-> >>>>>>>>> <quic_kangyang@quicinc.com> wrote:
-> >>>>>>>>>>
-> >>>>>>>>>>
-> >>>>>>>>>> On 4/4/2025 12:04 AM, Walt Holman wrote:
-> >>>>>>>>>>> On Thu, Apr 3, 2025 at 3:20=E2=80=AFAM Kang Yang
-> >>>>>>>>>>> <quic_kangyang@quicinc.com> wrote:
-> >>>>>>>>>>>>
-> >>>>>>>>>>>>
-> >>>>>>>>>>>> On 4/3/2025 1:48 AM, Walt Holman wrote:
-> >>>>>>>>>>>>> On Tue, Apr 1, 2025 at 9:48=E2=80=AFPM Kang Yang
-> >>>>>>>>>>>>> <quic_kangyang@quicinc.com> wrote:
-> >>>>>>>>>>>>>> Test on 6.14.0-rc5-wt-ath+, with the firmware you used.
-> >>>>>>>>>>>>>> I can get 6 GHz AP and connect to it.
-> >>>>>>>>>>>>>>
-> >>>>>>>>>>>>>> ath12k_pci 0000:03:00.0: fw_version 0x100301e1
-> >>>>>>>>>>>>>> fw_build_timestamp
-> >>>>>>>>>>>>>> 2023-12-06 04:05 fw_build_id
-> >>>>>>>>>>>>>> QC_IMAGE_VERSION_STRING=3DWLAN.HMT.1.0.c5-00481-
-> >>>>>>>>>>>>>> QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> >>>>>>>>>>>>>>
-> >>>>>>>>>>>>>> yk@yk-Mayan:~$ sudo iw wls1 scan | tee iw_scan.log:
-> >>>>>>>>>>>>>> BSS 62:03:7f:12:64:64(on wls1) -- associated
-> >>>>>>>>>>>>>>               TSF: 606308271476 usec (7d, 00:25:08)
-> >>>>>>>>>>>>>>               freq: 6275
-> >>>>>>>>>>>>>>               beacon interval: 100 TUs
-> >>>>>>>>>>>>>>               capability: ESS Privacy SpectrumMgmt
-> >>>>>>>>>>>>>> ShortSlotTime (0x0511)
-> >>>>>>>>>>>>>>               signal: -17.00 dBm
-> >>>>>>>>>>>>>>               last seen: 52 ms ago
-> >>>>>>>>>>>>>>               Information elements from Probe Response fra=
-me:
-> >>>>>>>>>>>>>>               SSID: MLO-KANG-6G
-> >>>>>>>>>>>>>> and other 6 GHz APs:
-> >>>>>>>>>>>>>>              SSID: 6G-gxia
-> >>>>>>>>>>>>>>              SSID: NETGEAR97-6G
-> >>>>>>>>>>>>>>              =E2=80=A6=E2=80=A6
-> >>>>>>>>>>>>>>
-> >>>>>>>>>>>>>>
-> >>>>>>>>>>>>>> kernel log:
-> >>>>>>>>>>>>>> [88158.033218] wls1: Inserted STA 62:03:7f:12:64:64
-> >>>>>>>>>>>>>> [88158.033232] wls1: authenticate with 62:03:7f:12:64:64
-> >>>>>>>>>>>>>> (local
-> >>>>>>>>>>>>>> address=3D00:03:7f:37:12:54)
-> >>>>>>>>>>>>>> [88158.033242] wls1: send auth to 62:03:7f:12:64:64 (try 1=
-/3)
-> >>>>>>>>>>>>>> [88158.041895] wls1: authenticated
-> >>>>>>>>>>>>>> [88158.041914] wls1: moving STA 62:03:7f:12:64:64 to state=
- 2
-> >>>>>>>>>>>>>> [88158.044291] wls1: determined local STA to be EHT, BW
-> >>>>>>>>>>>>>> limited to 320 MHz
-> >>>>>>>>>>>>>> [88158.045719] wls1: associate with 62:03:7f:12:64:64 (try
-> >>>>>>>>>>>>>> 1/3)
-> >>>>>>>>>>>>>> [88158.067045] wls1: RX AssocResp from 62:03:7f:12:64:64
-> >>>>>>>>>>>>>> (capab=3D0x511
-> >>>>>>>>>>>>>> status=3D0 aid=3D4)
-> >>>>>>>>>>>>>> [88158.089090] wls1: associated
-> >>>>>>>>>>>>>>
-> >>>>>>>>>>>>>> I can even connect to it by Ubuntu GUI.
-> >>>>>>>>>>>>>>
-> >>>>>>>>>>>>>> Can you update to 6.14.0-rc5-wt-ath+ and have a retry?
-> >>>>>>>>>>>>>> Also please make
-> >>>>>>>>>>>>>> sure that your wpa_supplicant/iw support 6 GHz(or directly
-> >>>>>>>>>>>>>> update to the
-> >>>>>>>>>>>>>> latest version).
-> >>>>>>>>>>>>>>
-> >>>>>>>>>>>>>> If you still cannot find 6 GHz AP, you can set debug_mask
-> >>>>>>>>>>>>>> to 0xffffffff
-> >>>>>>>>>>>>>> to get ath12k logs. Then give it to us.
-> >>>>>>>>>>>>>>
-> >>>>>>>>>>>>>>
-> >>>>>>>>>>>>>>> -Walt
-> >>>>>>>>>>>>>>>
-> >>>>>>>>>>>>> OK, I retested with the wt-ath 033125 tagged build. This
-> >>>>>>>>>>>>> included the
-> >>>>>>>>>>>>> patch the Jeff suggested I try, but the rest of the tree
-> >>>>>>>>>>>>> was clean.
-> >>>>>>>>>>>>> Still no 6ghz Wifi. I'm attaching a log file of the boot
-> >>>>>>>>>>>>> and first few
-> >>>>>>>>>>>>> seconds with the debug mask turned on. I noticed that if I
-> >>>>>>>>>>>>> rmmod the
-> >>>>>>>>>>>>> module and then modprobe it, it complains about not finding
-> >>>>>>>>>>>>> firmware-2.bin, however, I thought that was only for the
-> >>>>>>>>>>>>> qcn based
-> >>>>>>>>>>>>> chip? The HW info from dmesg looks like this:
-> >>>>>>>>>>>>>
-> >>>>>>>>>>>> I cannot find this tag...
-> >>>>>>>>>>>>
-> >>>>>>>>>>>>
-> >>>>>>>>>>>>      From the log, the 6 GHz channel should work. When scan
-> >>>>>>>>>>>> is triggered, FW
-> >>>>>>>>>>>> shall send probe req on these channels. If AP send probe
-> >>>>>>>>>>>> resp, station
-> >>>>>>>>>>>> shall find the AP.
-> >>>>>>>>>>>>
-> >>>>>>>>>>>>
-> >>>>>>>>>>>>
-> >>>>>>>>>>>>
-> >>>>>>>>>>>>> [    6.070282] ath12k_pci 0000:63:00.0: BAR 0 [mem
-> >>>>>>>>>>>>> 0xdd800000-0xdd9fffff 64bit]: assigned
-> >>>>>>>>>>>>> [    6.070310] ath12k_pci 0000:63:00.0: enabling device
-> >>>>>>>>>>>>> (0000 -> 0002)
-> >>>>>>>>>>>>> [    6.071249] ath12k_pci 0000:63:00.0: MSI vectors: 16
-> >>>>>>>>>>>>> [    6.071254] ath12k_pci 0000:63:00.0: Hardware name:
-> >>>>>>>>>>>>> wcn7850 hw2.0
-> >>>>>>>>>>>>> [    6.596331] ath12k_pci 0000:63:00.0: qmi dma allocation
-> >>>>>>>>>>>>> failed
-> >>>>>>>>>>>>> (7077888 B type 1), will try later with sma
-> >>>>>>>>>>>>> ll size
-> >>>>>>>>>>>>> [    6.604041] ath12k_pci 0000:63:00.0: chip_id 0x2
-> >>>>>>>>>>>>> chip_family 0x4
-> >>>>>>>>>>>>> board_id 0xff soc_id 0x40170200
-> >>>>>>>>>>>>> [    6.604044] ath12k_pci 0000:63:00.0: fw_version 0x100301=
-e1
-> >>>>>>>>>>>>> fw_build_timestamp 2023-12-06 04:05 fw_build_id
-> >>>>>>>>>>>>> QC_IMAGE_VERSION_STRING=3DWLAN.HMT.1.0.c5-00481-
-> >>>>>>>>>>>>> QCAHMTSWPL_V1.0_V2.0_SILICONZ-
-> >>>>>>>>>>>>>
-> >>>>>>>>>>>>> Also, I noticed when looking through the debug logs there
-> >>>>>>>>>>>>> are the
-> >>>>>>>>>>>>> occasional WARNING statements from a BUG it appears. They
-> >>>>>>>>>>>>> trace back
-> >>>>>>>>>>>>> to the mac.c file inside the ath12k code. There should be
-> >>>>>>>>>>>>> some in the
-> >>>>>>>>>>>>> debug log that's attached. Let me know if I can do anything
-> >>>>>>>>>>>>> else.
-> >>>>>>>>>>>>> Thanks,
-> >>>>>>>>>>>>>
-> >>>>>>>>>>>>
-> >>>>>>>>>>>> I have never seen this warning on my upstream setup...Not
-> >>>>>>>>>>>> sure if you
-> >>>>>>>>>>>> have changed anything or using the correct code base.
-> >>>>>>>>>>>>
-> >>>>>>>>>>>> Jeff merged this patch-set into ath-202504021602. Can you
-> >>>>>>>>>>>> try on this
-> >>>>>>>>>>>> branch?
-> >>>>>>>>>>>>
-> >>>>>>>>>>>> git clone https://git.kernel.org/pub/scm/linux/kernel/git/
-> >>>>>>>>>>>> ath/ath.git/
-> >>>>>>>>>>>> git pull
-> >>>>>>>>>>>> git reset --hard ath-202504021602
-> >>>>>>>>>>>> compile and install...
-> >>>>>>>>>>>>
-> >>>>>>>>>>>> Also make sure that the firmware you used is from the same
-> >>>>>>>>>>>> folder, don't
-> >>>>>>>>>>>> mix with other folders:
-> >>>>>>>>>>>> linux-firmware/ath12k/WCN7850/hw2.0
-> >>>>>>>>>>>>
-> >>>>>>>>>>>> 1. rmmod/insmod(debug_mask=3D0xffff)
-> >>>>>>>>>>>> 2. iw reg get
-> >>>>>>>>>>>> 3. iw reg set US
-> >>>>>>>>>>>> 4. iw xxx scan
-> >>>>>>>>>>>> wait and collect logs.
-> >>>>>>>>>>>>
-> >>>>>>>>>>>> don't do anything else.
-> >>>>>>>>>>>>
-> >>>>>>>>>>>>
-> >>>>>>>>>>>> Also, can you show me your AP configuration.
-> >>>>>>>>>>>> If you have another 6 GHz AP, you can have a try(better
-> >>>>>>>>>>>> different brands).
-> >>>>>>>>>>>>
-> >>>>>>>>>> Thanks for testing.
-> >>>>>>>>>>
-> >>>>>>>>>> Could you share your AP configuration?
-> >>>>>>>>>>
-> >>>>>>>>>>
-> >>>>>>>>>>>> If you have sniffer, could please capture packets during
-> >>>>>>>>>>>> testing?
-> >>>>>>>>>>
-> >>>>>>>>>> Can you capture packets during the testing? I need to check
-> >>>>>>>>>> probe req
-> >>>>>>>>>> and probe resp.
-> >>>>>>>>>>
-> >>>>>>>>>>>> Thanks!
-> >>>>>>>>>>>>
-> >>>>>>>>>>>>> -Walt
-> >>>>>>>>>>> OK, I cloned and built the kernel based on your instructions
-> >>>>>>>>>>> in your
-> >>>>>>>>>>> last email. Originally, the result was identical to my last
-> >>>>>>>>>>> email,
-> >>>>>>>>>>> including the WARNINGS. The .config I use is configured for a
-> >>>>>>>>>>> fully RT
-> >>>>>>>>>>> PREEMPT kernel, which I wondered if that was why I was
-> >>>>>>>>>>> receiving the
-> >>>>>>>>>>> WARNING. So I configured it as a Low Latency PREEMPT Desktop
-> >>>>>>>>>>> without
-> >>>>>>>>>>> the RT_PREEMPT and that eliminated the WARNING. However,
-> >>>>>>>>>>> still no 6Ghz
-> >>>>>>>>>>> networks. The firmware I'm using is straight from kernel.org
-> >>>>>>>>>>> GIT and I
-> >>>>>>>>>>> do a 'make install; make dedup' to install it. I believe it
-> >>>>>>>>>>> should be
-> >>>>>>>>>>> good. Attached is the latest log file.
-> >>>>>>>>>>>
-> >>>>>>>>>>> -Walt
-> >>>>>>>
-> >>>>>>> Sorry for the top-post earlier. I can't figure out how to capture
-> >>>>>>> the
-> >>>>>>> wireless packets as my chip/driver combo doesn't support monitor
-> >>>>>>> mode.
-> >>>>>> Your AP also cannot capture wireless packets?
-> >>>>>> log in AP by usbserial or ssh.
-> >>>>>> Try to enter command line. use iw command to create monitor
-> >>>>>> interface.
-> >>>>>> Then use tcpdump to capture packets.
-> >>>>>>
-> >>>>>>> I've attached a tarball that contains the trace data and addition=
-al
-> >>>>>>> firmware logs from the kernel.log file. Anything else you need, j=
-ust
-> >>>>>>> ask. Thanks for your help,
-> >>>>>>
-> >>>>>> Your AP mac address?
-> >>>>>> Need it to help check the fw log.
-> >>>>>>
-> >>>>>>
-> >>>>>>> -Walt
-> >>>>> Sorry, the AP doesn't have tcpdump available on it. Also, this is a
-> >>>>> mesh setup with 3 nodes total. The main AP and 2 mesh nodes. I'm
-> >>>>> within 10 feet of one of the nodes and it's MAC for the wireless 6g=
-hz
-> >>>>> network is: 10:7C:61:6F:2A:CA
-> >>>>>
-> >>>>> -Walt
-> >>>> The other 2 node 6ghz mac addresses are:
-> >>>> 10:7C:61:6F:1F:11   - Router
-> >>>> 10:7C:61:6F:32:92   - Node
-> >>>>
-> >>>> The first MAC address I gave you earlier was a node located
-> >>>> approximately 5 feet from where the laptop is.
-> >>>>
-> >>>> -Walt
-> >>> Well, I'm running into a brick wall it seems trying to get 6Ghz
-> >>> enabled on this. I tried the ath-next-20250418 tag just now and still
-> >>> don't see or connect to my 6Ghz network. I applied the patches in:
-> >>> https://lore.kernel.org/linux-wireless/20250418-ath12k-6g-lp-vlp-
-> >>> v1-0-c869c86cad60@quicinc.com/T/#t
-> >>>
-> >>> hoping that would help, but alas, no 6Ghz networks. I see that MLO an=
-d
-> >>> other nice fixes are coming in 6.16, but without 6Ghz, they'll do me
-> >>> no good. I'm really wondering if it's a firmware issue that excludes
-> >>> my chip or something. Again, anything I can do to help, let me know.
-> >>> Thanks,
-> >>>
-> >>> -Walt
-> >> Well, I used the swiss army tools to look at the firmware, and my chip
-> >> is listed in the firmware, so it's not excluded or anything. Really
-> >> puzzlling issue as my other two laptops connect to the 6Ghz network
-> >> just fine, and this laptop does in Windows, just not in Linux. I
-> >> really don't use Windows at all though, so that does me no good.
-> >>
-> >> This laptop used to connect to the 6Ghz network around the Sep. - Oct.
-> >> 2024 timeframe. Something has changed and now it doesn't. I'm going to
-> >> boot off a live image of Ubuntu 24.10 and see if I can see the
-> >> network. It was always hit or miss so we'll see.
-> >> -Walt
-> >
-> >
-> > Can you find 6 GHz AP now?
-> >
->
-> Our firmware team said you station device sent the probe request but
-> didn't receive the probe resp or beacon.
->
-> Since your current configuration is single 6 GHz AP. Could you change
-> your AP configuration to 6 GHz + 2/5 GHz to have a retry?
->
-I adedd another network with 2.4 / 5 / 6Ghz settings and still only
-connect to the 5Ghz network portion. This is verified through wavemon
-and the AP. I saw some patches recently to address 6 Ghz operatoins in
-various modes (https://lore.kernel.org/linux-wireless/1692f2f8-c77e-87ce-db=
-70-00b4d9fc7c95@oss.qualcomm.com/),
-but the patch doesn't apply cleanly to current or ath-pending. Don't
-know that it would help, but it seemed interesting.
+On 5/15/2025 10:47 AM, Walt Holman wrote:
+> I adedd another network with 2.4 / 5 / 6Ghz settings and still only
+> connect to the 5Ghz network portion. This is verified through wavemon
+> and the AP. I saw some patches recently to address 6 Ghz operatoins in
+> various modes (https://lore.kernel.org/linux-wireless/1692f2f8-c77e-87ce-db70-00b4d9fc7c95@oss.qualcomm.com/),
+> but the patch doesn't apply cleanly to current or ath-pending. Don't
+> know that it would help, but it seemed interesting.
 
-When I went back to the older kernel / distro I still could not see
-the 6 Ghz band nor connect to it. I think something has changed on the
-AP as well, as this used to work intermittently. I think I have
-mentioned this before, but I have a dual-boot setup on this laptop and
-in Windows 11, it does see and connect to the 6 Ghz band and MLO works
-as well. Also, I have about 5 other devices (phones and laptops) that
-can all connect to the 6 Ghz band. I think it's a combination of the
-AP and the driver / firmware.
+That series is already part of the pending branch, hence why it doesn't apply
+cleanly. So ideally you could test with that branch, but there are some other
+issues in that branch that are still being resolved, see:
+https://msgid.link/7db2e4b5-377c-4d3b-b51f-290accc9ddd9@oss.qualcomm.com
 
--Walt
+/jeff
 
