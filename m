@@ -4,120 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3691C3ABD8
-	for <ath12k@archiver.kernel.org>; Wed, 14 May 2025 16:19:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDD37C54754
+	for <ath12k@archiver.kernel.org>; Thu, 15 May 2025 06:49:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ubla14EFZ75kAo6reUTBKgpqY8L7jrsDmwk3M6LY9Qw=; b=PtRNQM4Qbkp4MauTBS/hCU88VZ
-	S50Y5k90mSmpgz6OgTs8fKP1sM3zIrIYcw35d0CTDR0/xgRyO6PAbF1pdZqOZ9LfMDv8WBBt8Bshv
-	a/9Sw8jJmOzvPKdgMyOvknCEk+51ePqjC52MTN4GLu39m0ZXkb8ONsm68Cp6pPEmbuD/shL7Lp72X
-	4n4fk7DqsHT2D5G86AbMWXOyXyl3//DtL0I8XjK9J60V9ZgEUrBdESfUj5afrfL5fQMaYgkleOGmb
-	1/TtJFmHkswg+Rz4NphzJcG+RurVCwtmZK7fwG3YJ6WpqdeIJkwED+h6ptYakGSFNDySAUWIVrV95
-	5htG25rg==;
+	bh=7nhmmA1XvEaEKRzp943p1FAzDW4rYuXS1qZxO1y4fc8=; b=cogbe2TNGZKbUXvT2Iznxp4S2p
+	n/MpRX8cLFgyQjjp15VGuLZ2Nbbe1tlEtgItmUrsGm2OwMSzMJ/oxuZV+qnUzswDfXYXdyhillsYP
+	26/tmv3XLde40JaVV/J++aOWMRw6pYi6/esnF0hux4Q02sHvjMEINCxnP3kh1ABWXnsFh7p1qBoaH
+	Aj9SMSx1Q0fmH0nlgOl6zxDeLv6VnKcHnWUUZKVGC+SCz9Mkm1FsTw/bZJAmrEqdhJt4S6N5Pxse/
+	ECOKQJbyFqGzzMtgrnJmO9UC31PtjIjODKPGiRvfm9wSMliy1ET6C7+ZINuvavjY8H+eTnFeuHMM2
+	x92ixCbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFEp9-0000000FirC-1YfH;
-	Wed, 14 May 2025 16:19:15 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uFSP7-0000000HBsC-2O4z;
+	Thu, 15 May 2025 06:49:17 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFDUr-0000000FU6L-2Jza
+	id 1uFSB6-0000000HA4J-1sgG
 	for ath12k@lists.infradead.org;
-	Wed, 14 May 2025 14:54:14 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54EAvL4t003537
-	for <ath12k@lists.infradead.org>; Wed, 14 May 2025 14:54:12 GMT
+	Thu, 15 May 2025 06:34:50 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54EKPA9r013086
+	for <ath12k@lists.infradead.org>; Thu, 15 May 2025 06:34:45 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Ubla14EFZ75kAo6reUTBKgpqY8L7jrsDmwk3M6LY9Qw=; b=gVZraC9fkrMNsYwv
-	XB+C+SrbMJm62vcw0DIIMWZVHZMWnSnYoSuM8mq9DhQDfm11vUdx8jRbh4glulOO
-	NBO3WBFo95xiMruE+dWSApUZrfw3LUVsSgGOBBG8SmF+riuBv78PiftfBBQvD/d5
-	uLTsj5nkRK2rHPW58Z4ZdtEMry2T9RPdPfEdpzWSrivJFcKXyF3RC40cq2uUPSeQ
-	GAOnVfAtBzFmerJZCNaYMGU5GCOXqKk32mMJrpGMwJM9HKYT5vh6sc/cC5Zb9CGc
-	oACUAlLdR0hN6aWEWvxq5cC9HPoUFvKs4f0UKZzeXMMaFw4aNiT+MkqTIZnSVe6V
-	nzXBEQ==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46mbcrb0ue-1
+	7nhmmA1XvEaEKRzp943p1FAzDW4rYuXS1qZxO1y4fc8=; b=lFwVPcqvTrd6OBMs
+	H3XpviNGwnnIXJeE/1bAW0wMYNc8GQZiBj+IZlGLyKu0+ICBD7iiHAHA6hq7SBZT
+	gZ9uq1mYOlsTvaDJPhfxyZbArPwbGVdfsg1NRfeH/R9+yeA9dMJ5CJkh1A6fu1Dc
+	KBLBDNeooOjlLdwmZbudZnHgUJlwJUFE3F50TW08YlxsyTKZ+JK9aERFSzX4uEwI
+	bdzCgMSgEJ3FRVev4afA7mWnMnzWXJ8m3A3l0WkhVizhRNGuurLMaf0bYxPkVtNK
+	Jtg3z+7+Fx8Tw0iKZ9MVU85Zg2UXKT53YZTBL65+PEv+LpPPn2OdGYY46ugBAv63
+	bRzlJQ==
+Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46mbcmn6ss-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 14 May 2025 14:54:12 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-22e7f041997so106390825ad.3
-        for <ath12k@lists.infradead.org>; Wed, 14 May 2025 07:54:12 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 15 May 2025 06:34:45 +0000 (GMT)
+Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-741a845cab2so877243b3a.0
+        for <ath12k@lists.infradead.org>; Wed, 14 May 2025 23:34:45 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747234451; x=1747839251;
-        h=content-transfer-encoding:in-reply-to:content-language:from
+        d=1e100.net; s=20230601; t=1747290884; x=1747895684;
+        h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Ubla14EFZ75kAo6reUTBKgpqY8L7jrsDmwk3M6LY9Qw=;
-        b=dwRn6u37nZSw9FCWiJ3skfXOIGXNdLWNbu2tgm/4enK6coTVXRi+1Uk1yqe+kgvJ5/
-         2M4JuVfGSoaZ6WTqX7wX+WDIMGk4u0Dl50aEYtCQt4UOxVHFFDKCnoJWi+9dMcggJMgd
-         YNDHY9vlH1+9Z1iGxjlJXnhI9D9CooUcvLFQKp+Dr/P45RFckytJOx2xI9T7mC37rYkD
-         al1lFAszZZAIvPtfIpNAD5LQwKEi9/tjeQuk3+eJ25MWoc29joMYAEnHAxyEMX/kinLm
-         bhwz6eJ27OUMI9NAlNEZJYDWzR12Nlhgya4FyCbJRhVlRK3zOANiHkyIZM4jgY/Lohke
-         V+Nw==
-X-Forwarded-Encrypted: i=1; AJvYcCWfwA3tzNziHFrfxrMXc1xE1EZH2+zFNgx0TuswmzUnpVy3a1SZTck/Z5jU1s9lesMLLLNAr+Q=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxMEIjVtlvH5oWdW6XwdhZBnZ4HZFQ0/3wmn4QQQAAL86F7j1o4
-	j6YHMUPwj6OxR6+nH9fqGbzkighg3q8PkzxwvBnlsRZ8Ty3w6+sDpyY767Elm5XQ31hD1oqhDic
-	9xV6vvcgc3s+gR5BjzrLIiW0u85YF01NMhVlLLfrSaI7oxb4oJFk096i3B8MH
-X-Gm-Gg: ASbGncuwED1rzlQpxqNeYy2fipIBfM2UYoHp3nhfNJdv9CA5hT8EtkoyxMc56xuYrXl
-	3pLDl3Z8rx5maX/fBV1n4uc98Io+pJYH/WxdEnWKxQ0BPT9f/OhLBHRwsJuu0Dhst7oD0m7d5uj
-	zKd2VrRnZw3hbEyY1HdLkssoNQOn+Opu/wGrHM8H/LT3A7vmFr6x2no+mN8y5TIN45S+tyIphA6
-	bu+8eV2tkc33Ju4NxmwsM7ViIVK9U0LJbfXMsbGeCNOuRE9yNxWgF6rEcPeJ9cvdZIQabLunhad
-	3dp5LOTabGYpTTpcQPVdWYcWWW8G2wWV7cTgx6X3o6RzocFsIzTLkZrHITMUqI0qF1s=
-X-Received: by 2002:a17:903:249:b0:22f:b6cc:421e with SMTP id d9443c01a7336-231980e9ee0mr46371315ad.26.1747234451128;
-        Wed, 14 May 2025 07:54:11 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFf51n5xxel4Kkz+hXWn3/vNgrHbBHm9zcFw/64vGwwR6SqqOIfA2MvUphdORO3KOUUfVWlrg==
-X-Received: by 2002:a17:903:249:b0:22f:b6cc:421e with SMTP id d9443c01a7336-231980e9ee0mr46370985ad.26.1747234450708;
-        Wed, 14 May 2025 07:54:10 -0700 (PDT)
-Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22fc7540c8csm101163475ad.5.2025.05.14.07.54.09
+        bh=7nhmmA1XvEaEKRzp943p1FAzDW4rYuXS1qZxO1y4fc8=;
+        b=lWQ615KYKXEs729TD2+541ois28VPunw9YrKsWs246eypkkB2zJHK/0UWdzIW39NNW
+         peYArw49e3Nl2VArStSnbA84y0G4Z2p1oQPHzlDe2RFWOotLyUSnImDkynIsEpiVILVs
+         miXZLDnLknge9MQUlc8/nit8NR24ZXETqN/gCE5+wCMwkrpRVUeJFhu+ifpeYmp6cfJi
+         cMz2ZevbiBlJpGt9Rm5Lm4N8Q9Eua6np5gCtK0EessUptai9Vun12IotUdKzbSqxxT2f
+         Qedb5A5H53/kmo+JsOL026sGRACN26oY5fJITOUO2e94aCncI7k4trxW75bnz02YayAu
+         tsqQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWS4QYtD12dNahkD4VlrcbMnW0lslCJjcwt/5GjI1d/IpSv3zxKSM1kDcP/WoN/NLJVn4Qf6JQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxOolAtLEjc2NCUW++3WQB9BhiiJVLeKxwZ1vprF/CNJVk0SPlq
+	J2U8EM6ZgbyQ+OQr+SVsqpmCQeZJ9gFdXCpHfW8gZeaszzheHqR7AfbLdG5SIOrCYaA2Bknz51J
+	awOWMWYsOdxGNBXd851yuGEACc6hmHvtfN/e4U7vlcnJJMsQBWCTy30YcCtDS
+X-Gm-Gg: ASbGncvVfCIJyRsCRVHNDniXO/dQLJSImrw1QRZwXzjoSMzFcEP0CmYI6n3TKPVndk1
+	po9ut5J8TGuX5UCWZ+/EiCjQgy9yZflplGDhos87gPPKTgDN21p/lzqecqm3MPvvh392k5AtuzY
+	x9gPgNitlL2uDJgcVO7US0FfapuM6u9Uubg9n6l9fsFunV8Z01xwfubJ56OPGT4GNjYPcrQv16C
+	mzo38uj/LvUpRrlDuJ9zFzmkosWZGfoZ0y6FBnFZRuKuwqI5nAyqUVNPbvOg/Bu46/u+YMyLvrA
+	kB1fhO8V1rDWb3U1hRm1ULZS+uUoTQEmn/8n0BS3Rdx+5c93kXfMPT9H9G+jno3U/yxMXBEOSQ=
+	=
+X-Received: by 2002:a05:6a00:1941:b0:740:9e87:9625 with SMTP id d2e1a72fcca58-742984c1549mr2265709b3a.4.1747290883669;
+        Wed, 14 May 2025 23:34:43 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHr9HOu//sfc7uf6w//YCDUtcHLX/6lc12BRjbEaxudXLKi6jJoPFBgS+NUWaUQEBurxEOYKA==
+X-Received: by 2002:a05:6a00:1941:b0:740:9e87:9625 with SMTP id d2e1a72fcca58-742984c1549mr2265571b3a.4.1747290882025;
+        Wed, 14 May 2025 23:34:42 -0700 (PDT)
+Received: from [10.133.33.17] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-74237704025sm10997427b3a.13.2025.05.14.23.34.40
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 14 May 2025 07:54:10 -0700 (PDT)
-Message-ID: <5d61a6b8-e259-4683-94a8-911dcf2b9e81@oss.qualcomm.com>
-Date: Wed, 14 May 2025 07:54:09 -0700
+        Wed, 14 May 2025 23:34:41 -0700 (PDT)
+Message-ID: <7db2e4b5-377c-4d3b-b51f-290accc9ddd9@oss.qualcomm.com>
+Date: Thu, 15 May 2025 14:34:39 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V13 6/9] wifi: ath12k: add support for setting fixed HE
- rate/GI/LTF
-To: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
-        ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Muna Sinada <quic_msinada@quicinc.com>
-References: <20250418174818.3336510-1-quic_pradeepc@quicinc.com>
- <20250418174818.3336510-7-quic_pradeepc@quicinc.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next v2] wifi: ath12k: combine channel list for
+ split-phy devices in single-wiphy
+To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
+        ath12k@lists.infradead.org,
+        Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        aditya.kumar.singh@oss.qualcomm.com
+Cc: linux-wireless@vger.kernel.org
+References: <20250506105624.466019-1-rameshkumar.sundaram@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20250418174818.3336510-7-quic_pradeepc@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
+From: Kang Yang <kang.yang@oss.qualcomm.com>
+In-Reply-To: <20250506105624.466019-1-rameshkumar.sundaram@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: g8DPf9JWsvM5TreFKsMkTzdiLIgmRVkA
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE0MDEzMyBTYWx0ZWRfX89go+fCgvWGc
- mFqf/hM+wa2kEaOPkln5eUrLO/TP43ux/SvUOJfmod1YEIFNaI1c/n4U6MbCrnKMJW3LM1CwNrd
- 6xeufi7I5Ze9PUEDhokukrvj1XyIAC2DLAOo7iASJoGc7OQV+jbCFhs4zetwSRJT4Z0XT3sSm3R
- 0ymoD437dB8ZaeOgrBAtsSCRcw2Po7km5iZ979ay3+aqGsxb2r/kN42qHqquz89nlwJrkhttWfz
- 63fqTlp30t5RNQrbOrbziCUrtM7eManCYlPk8ar6McsrAWldKZHoBJOYZDQb3t9NOZ8ARHzXqmz
- kRN9jcIFTzDa9IGDW11yc2NFKXztB+VDELF/9L8Sv3bl+/n2TouaWw4lIQFyy+1aS5dakpdYB8P
- haEbpNISH1zil9aW5rO5J4TFF1n/X05RwDzG0mC6KHp/wk5uw8eLgG3Vvv96EQso3ja8IXDl
-X-Authority-Analysis: v=2.4 cv=K7UiHzWI c=1 sm=1 tr=0 ts=6824ae94 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=l8VUrehaPOb5hxZ9740A:9
- a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: g8DPf9JWsvM5TreFKsMkTzdiLIgmRVkA
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE1MDA2MiBTYWx0ZWRfX6kywylVqWkA5
+ 9PM6BihEOITY+v9zdmz6ys4+79M5CkOKPmGj/Gf/CGBRySioX/2Xxcx5PzLHMpW1ETg7tl1D29o
+ /8WJmOSa8XzXyhmmp8e9GkTM1gkHD1iqF8/XayUq6eEjMEzNZcWCVXvHqNx1+4YGHkGW7+B8cko
+ DUhB7Occ8i3tq43KcvMXnS/N4iblzq93vGNPNHnYt26Da42Eo/NrZP82C3aSdQclmJhO7G3Nl4Y
+ nRDiz5vGwJIgfwSH4mOA/Y6dCdEgT17q/KweFDAxD6dsYVKU1RuyAQtEtr/gPUf8eayU2wtKxEx
+ nnq+IBrA6jRrif+ObQpjbzdwjSQnVMLKUcrlWbIK5xlh4hdKM+j2CxfGQ18uJJVDK8U0gPYNvWO
+ 9hSiZEZaBhgNyRxTj9y1BTrncpd8Rk7g85SSumAKHZ6ocq7RpJI6e/p3OEeVKrMtBH5HejpC
+X-Authority-Analysis: v=2.4 cv=G5scE8k5 c=1 sm=1 tr=0 ts=68258b05 cx=c_pps
+ a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
+ a=rz7yrZg-k9xSqkJEgisA:9 a=QEXdDO2ut3YA:10 a=OpyuDcXvxspvyRM73sMx:22
+X-Proofpoint-GUID: r_lGO8GkTnLYgjn57h53L_PRYawoG9Ii
+X-Proofpoint-ORIG-GUID: r_lGO8GkTnLYgjn57h53L_PRYawoG9Ii
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-14_04,2025-05-14_03,2025-02-21_01
+ definitions=2025-05-15_02,2025-05-14_03,2025-02-21_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 priorityscore=1501 mlxscore=0 suspectscore=0 malwarescore=0
- phishscore=0 mlxlogscore=989 clxscore=1015 bulkscore=0 impostorscore=0
- lowpriorityscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ priorityscore=1501 mlxlogscore=999 clxscore=1015 phishscore=0 bulkscore=0
+ suspectscore=0 spamscore=0 impostorscore=0 lowpriorityscore=0 mlxscore=0
+ malwarescore=0 adultscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505070000
- definitions=main-2505140133
+ definitions=main-2505150062
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_075413_711750_8EA659C4 
-X-CRM114-Status: UNSURE (   9.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250514_233448_519922_AF68EBD3 
+X-CRM114-Status: GOOD (  36.75  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,19 +133,308 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/18/2025 10:48 AM, Pradeep Kumar Chitrapu wrote:
-> Add support to set fixed HE rate/GI/LTF values using nl80211.
-> Reuse parts of the existing code path already used for HT/VHT
-> to implement the new helpers symmetrically, similar to how
-> HT/VHT is handled.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Co-developed-by: Muna Sinada <quic_msinada@quicinc.com>
-> Signed-off-by: Muna Sinada <quic_msinada@quicinc.com>
-> Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 
-Internal testing revealed interop issues with this patch, so this series is
-being dropped for now.
+
+On 5/6/2025 6:56 PM, Rameshkumar Sundaram wrote:
+> When two split-phy devices that support overlapping frequency ranges within
+> the same band are grouped into an ath12k hardware (HW) setup, they share a
+> common wiphy instance. Consequently, the channel list (wiphy->bands[])
+> becomes unified across all associated radios (ar).
+> 
+> For reference, the devices are:
+> 2.4 GHz + 5 GHz Low Band
+> 5 GHz High Band + 6 GHz
+> 
+> The first radio probed within the 5 GHz range (say 5 GHz Low Band) updates
+> its sband reference (&ar->mac.sbands[NL80211_BAND_5GHZ]) within
+> wiphy->bands[]. However, when the second 5 GHz radio (5 GHz High Band) is
+> probed, it replaces the existing wiphy->bands[] entry with its own sub-band
+> reference. As a result, wiphy->bands[] always reflects the channel list
+> from the most recently probed radio in that band, restricting supported
+> channels to those within its specific range for upper-layer.
+> 
+> Fix this by updating the wiphy->bands[] to just enable the channels of
+> current radio when there exist a radio which already has set it.
+> This will make sure wiphy->bands[] holds reference of first radio which
+> got probed in 5 GHz band and subsequent radio just updates the channel list
+> in the same address space.
+> 
+> Since same sband memory space is shared between radios of a band, while
+> determining the allowed frequency range of radio, its frequency limits
+> (ar->freq_range.start_freq, end_freq) should be used.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+
+
+Offline sync with aditya:
+
+This patch and patch [1][2] will make WCN7850 update regulatory rules 
+and trigger scan incorrectly.
+
+They are based on the design that one chip only supports one band.
+
+This design will limit WCN7850 to one band.
+During init, WCN7850 will be limited to one band(such as 5G band) due to 
+patch[1]. Then will only update 5G regulatory rules and trigger 5G scan.
+If manually set country code by "iw reg set XX", WCN7850 will be limited 
+to 2G band due to patch[2]. Then similar issue will happen.
+
+
+If QCN supports multi bands like WCN i think you will have the same problem.
+
+WIN team needs to figure a new design for this issue to support multi 
+bands on one chip too.
+
+
+
+[1] 
+https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=b7544de8a2984e61b95c58c1c6c1e8ce659b1021
+[2] 
+https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=13324cecbb2c390a11f1fbfe87f3a5e62d6e4591
+
+
+
+> 
+> Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+> ---
+> 
+> *v2:
+>    - Fixed frequency conversion from KHZ to MHZ in freq_to_idx()
+> 
+> ---
+>   drivers/net/wireless/ath/ath12k/mac.c | 93 +++++++++++++++++++++++++--
+>   drivers/net/wireless/ath/ath12k/reg.c | 13 ++++
+>   drivers/net/wireless/ath/ath12k/wmi.c |  9 ++-
+>   3 files changed, 109 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 4dae941c9615..23cbf348e836 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -4131,8 +4131,9 @@ ath12k_mac_select_scan_device(struct ieee80211_hw *hw,
+>   		band = NL80211_BAND_6GHZ;
+>   
+>   	for_each_ar(ah, ar, i) {
+> -		/* TODO 5 GHz low high split changes */
+> -		if (ar->mac.sbands[band].channels)
+> +		if (ar->mac.sbands[band].channels &&
+> +		    center_freq >= KHZ_TO_MHZ(ar->freq_range.start_freq) &&
+> +		    center_freq <= KHZ_TO_MHZ(ar->freq_range.end_freq))
+
+
+Though WCN7850 won't reach here, but this is also not good for those 
+chips who support multi bands.
+
+
+>   			return ar;
+>   	}
+>   
+> @@ -10925,6 +10926,32 @@ static u32 ath12k_get_phy_id(struct ath12k *ar, u32 band)
+>   	return 0;
+>   }
+>   
+> +static int ath12k_mac_update_band(struct ath12k *ar,
+> +				  struct ieee80211_supported_band *orig_band,
+> +				  struct ieee80211_supported_band *new_band)
+> +{
+> +	int i;
+> +
+> +	if (!orig_band || !new_band)
+> +		return -EINVAL;
+> +
+> +	if (orig_band->band != new_band->band)
+> +		return -EINVAL;
+> +
+> +	for (i = 0; i < new_band->n_channels; i++) {
+> +		if (new_band->channels[i].flags & IEEE80211_CHAN_DISABLED)
+> +			continue;
+> +		/* An enabled channel in new_band should not be already enabled
+> +		 * in the orig_band
+> +		 */
+> +		if (WARN_ON(!(orig_band->channels[i].flags &
+> +			      IEEE80211_CHAN_DISABLED)))
+> +			return -EINVAL;
+> +		orig_band->channels[i].flags &= ~IEEE80211_CHAN_DISABLED;
+> +	}
+> +	return 0;
+> +}
+> +
+>   static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+>   					   u32 supported_bands,
+>   					   struct ieee80211_supported_band *bands[])
+> @@ -10935,6 +10962,7 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+>   	u32 phy_id, freq_low, freq_high;
+>   	struct ath12k_hw *ah = ar->ah;
+>   	void *channels;
+> +	int ret;
+>   
+>   	BUILD_BUG_ON((ARRAY_SIZE(ath12k_2ghz_channels) +
+>   		      ARRAY_SIZE(ath12k_5ghz_channels) +
+> @@ -10956,7 +10984,6 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+>   		band->channels = channels;
+>   		band->n_bitrates = ath12k_g_rates_size;
+>   		band->bitrates = ath12k_g_rates;
+> -		bands[NL80211_BAND_2GHZ] = band;
+>   
+>   		if (ab->hw_params->single_pdev_only) {
+>   			phy_id = ath12k_get_phy_id(ar, WMI_HOST_WLAN_2GHZ_CAP);
+> @@ -10973,6 +11000,22 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+>   					  reg_cap->high_2ghz_chan);
+>   
+>   		ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+> +
+> +		if (!bands[NL80211_BAND_2GHZ]) {
+> +			bands[NL80211_BAND_2GHZ] = band;
+> +		} else {
+> +			/* Split mac in same band under same wiphy */
+> +			ret = ath12k_mac_update_band(ar, bands[NL80211_BAND_2GHZ], band);
+> +			if (ret) {
+> +				kfree(channels);
+> +				band->channels = NULL;
+> +				return ret;
+> +			}
+> +			ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac pdev %u identified as 2 GHz split mac with start freq %d end freq %d",
+> +				   ar->pdev->pdev_id,
+> +				   KHZ_TO_MHZ(ar->freq_range.start_freq),
+> +				   KHZ_TO_MHZ(ar->freq_range.end_freq));
+> +		}
+>   	}
+>   
+>   	if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP) {
+> @@ -10991,7 +11034,6 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+>   			band->channels = channels;
+>   			band->n_bitrates = ath12k_a_rates_size;
+>   			band->bitrates = ath12k_a_rates;
+> -			bands[NL80211_BAND_6GHZ] = band;
+>   
+>   			freq_low = max(reg_cap->low_5ghz_chan,
+>   				       ab->reg_freq_6ghz.start_freq);
+> @@ -11004,6 +11046,26 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+>   
+>   			ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+>   			ah->use_6ghz_regd = true;
+> +
+> +			if (!bands[NL80211_BAND_6GHZ]) {
+> +				bands[NL80211_BAND_6GHZ] = band;
+> +			} else {
+> +				/* Split mac in same band under same wiphy */
+> +				ret = ath12k_mac_update_band(ar,
+> +							     bands[NL80211_BAND_6GHZ],
+> +							     band);
+> +				if (ret) {
+> +					kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
+> +					ar->mac.sbands[NL80211_BAND_2GHZ].channels = NULL;
+> +					kfree(channels);
+> +					band->channels = NULL;
+> +					return ret;
+> +				}
+> +				ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac pdev %u identified as 6 GHz split mac with start freq %d end freq %d",
+> +					   ar->pdev->pdev_id,
+> +					   KHZ_TO_MHZ(ar->freq_range.start_freq),
+> +					   KHZ_TO_MHZ(ar->freq_range.end_freq));
+> +			}
+>   		}
+>   
+>   		if (reg_cap->low_5ghz_chan < ATH12K_MIN_6GHZ_FREQ) {
+> @@ -11022,7 +11084,6 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+>   			band->channels = channels;
+>   			band->n_bitrates = ath12k_a_rates_size;
+>   			band->bitrates = ath12k_a_rates;
+> -			bands[NL80211_BAND_5GHZ] = band;
+>   
+>   			if (ab->hw_params->single_pdev_only) {
+>   				phy_id = ath12k_get_phy_id(ar, WMI_HOST_WLAN_5GHZ_CAP);
+> @@ -11039,6 +11100,28 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+>   						  reg_cap->high_5ghz_chan);
+>   
+>   			ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+> +
+> +			if (!bands[NL80211_BAND_5GHZ]) {
+> +				bands[NL80211_BAND_5GHZ] = band;
+> +			} else {
+> +				/* Split mac in same band under same wiphy */
+> +				ret = ath12k_mac_update_band(ar,
+> +							     bands[NL80211_BAND_5GHZ],
+> +							     band);
+> +				if (ret) {
+> +					kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
+> +					ar->mac.sbands[NL80211_BAND_2GHZ].channels = NULL;
+> +					kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
+> +					ar->mac.sbands[NL80211_BAND_2GHZ].channels = NULL;
+> +					kfree(channels);
+> +					band->channels = NULL;
+> +					return ret;
+> +				}
+> +				ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac pdev %u identified as 5 GHz split mac with start freq %d end freq %d",
+> +					   ar->pdev->pdev_id,
+> +					   KHZ_TO_MHZ(ar->freq_range.start_freq),
+> +					   KHZ_TO_MHZ(ar->freq_range.end_freq));
+> +			}
+>   		}
+>   	}
+>   
+> diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+> index 7048834e0d14..5c577188fa74 100644
+> --- a/drivers/net/wireless/ath/ath12k/reg.c
+> +++ b/drivers/net/wireless/ath/ath12k/reg.c
+> @@ -176,6 +176,12 @@ int ath12k_reg_update_chan_list(struct ath12k *ar, bool wait)
+>   			if (bands[band]->channels[i].flags &
+>   			    IEEE80211_CHAN_DISABLED)
+>   				continue;
+> +			/* Skip Channels that are not in current radio's range */
+> +			if (bands[band]->channels[i].center_freq <
+> +			    KHZ_TO_MHZ(ar->freq_range.start_freq) ||
+> +			    bands[band]->channels[i].center_freq >
+> +			    KHZ_TO_MHZ(ar->freq_range.end_freq))
+> +				continue;
+
+Here will make WCN7850 only updates one band's channel list.
+
+>   
+>   			num_channels++;
+>   		}
+> @@ -204,6 +210,13 @@ int ath12k_reg_update_chan_list(struct ath12k *ar, bool wait)
+>   			if (channel->flags & IEEE80211_CHAN_DISABLED)
+>   				continue;
+>   
+> +			/* Skip Channels that are not in current radio's range */
+> +			if (bands[band]->channels[i].center_freq <
+> +			    KHZ_TO_MHZ(ar->freq_range.start_freq) ||
+> +			    bands[band]->channels[i].center_freq >
+> +			    KHZ_TO_MHZ(ar->freq_range.end_freq))
+> +				continue;
+
+
+Here will make WCN7850 only updates one band's channel list.
+
+
+> +
+>   			/* TODO: Set to true/false based on some condition? */
+>   			ch->allow_ht = true;
+>   			ch->allow_vht = true;
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+> index ea303dca38b5..dfd36491c024 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+> @@ -5887,9 +5887,16 @@ static int freq_to_idx(struct ath12k *ar, int freq)
+>   		if (!sband)
+>   			continue;
+>   
+> -		for (ch = 0; ch < sband->n_channels; ch++, idx++)
+> +		for (ch = 0; ch < sband->n_channels; ch++, idx++) {
+> +			if (sband->channels[ch].center_freq <
+> +			    KHZ_TO_MHZ(ar->freq_range.start_freq) ||
+> +			    sband->channels[ch].center_freq >
+> +			    KHZ_TO_MHZ(ar->freq_range.end_freq))
+> +				continue;
+> +
+>   			if (sband->channels[ch].center_freq == freq)
+>   				goto exit;
+> +		}
+>   	}
+>   
+>   exit:
+> 
+> base-commit: 21346cd925c2567d5f56cdb1421c94815ac10221
 
 
