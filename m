@@ -4,65 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13C6DC2D0CD
-	for <ath12k@archiver.kernel.org>; Thu, 15 May 2025 14:37:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E94D2C3ABC9
+	for <ath12k@archiver.kernel.org>; Thu, 15 May 2025 15:18:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=oo2iRKVm1IIkM8VCXT+97aSCM+vMFIU8Nd4I7xZhjAU=; b=ELLgkCNKN2EkIfK3Anqf81wJTW
-	D0+zsYebK2FrBU55JDw/SVZmdC0zcjXSxYu/muzMWc/+dWyCISRLE1l4KyqW3g8xpFNJ1LgGATKCC
-	edxguKYibv5wat2oTsiMpTfsXTf7hlPRI4M0WcqdVESqfYcRZxYb4kMOv4Ob2IAFK6zctv0axgLMo
-	FjrYPIhr64bpRLKehvRabhV4g0Lv2xGPB+xRuNzP8dTGM4bjK2UAZy6w7HrJgrub+9hPjPn9Qd3p4
-	H2ieOzg+OscbPxUWg+pTs//kNYSlhFlpqAKIQPjTtLnNcp3hIsFU9CbnVXtY4i0PlhLRBgvjvwWKk
-	tfge6v7g==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=3P8CLDeltIo0+iTTIWGAl8KWPV52JS71G4alnu1e76w=; b=3DLgP6rdqLZuPpS8wSH5FxZT6j
+	KqLyNnTfHzHL8bHPH9e7QhPMapaopdXmC3E0VLRBNoP5O2QQaCoOSth/hJ+NvFruM56mFT7xq0wpG
+	tzuSfiatL7UiZEyPfM+XrScTzC1C2AgVrbJlr9tl6qyNRdYaMWwmj71k6EVR9kMGLu2laEIrisbVv
+	la9djL9QHKs8kOH1v+Bc6PipPG66xY9+A5bZRd0Ecp5gNVVqqHw4fwm+kIriyadBEuPhzgEQD66SH
+	IT0IHOgymBlkPCyjgm7cvwTwcO5LW0xtA5x+FlyUFaF1zLgtt5kjcfbCDpj+vS/KUNnz6ecHF8xoe
+	GKRgrMuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFZhy-00000000u9K-3NZr;
-	Thu, 15 May 2025 14:37:14 +0000
-Received: from mail11.truemail.it ([217.194.8.81])
+	id 1uFaLx-000000011uD-2pv1;
+	Thu, 15 May 2025 15:18:33 +0000
+Received: from mgamail.intel.com ([198.175.65.14])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFZUP-00000000sBl-1Qyo
+	id 1uFaKM-000000011fh-1ycQ
 	for ath12k@lists.infradead.org;
-	Thu, 15 May 2025 14:23:15 +0000
-Received: from francesco-nb (93-49-2-63.ip317.fastwebnet.it [93.49.2.63])
-	by mail11.truemail.it (Postfix) with ESMTPA id 9E60721ECB;
-	Thu, 15 May 2025 16:23:09 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dolcini.it;
-	s=default; t=1747318989;
-	bh=oo2iRKVm1IIkM8VCXT+97aSCM+vMFIU8Nd4I7xZhjAU=; h=From:To:Subject;
-	b=Cy9SzCiHcYS43AI/FCDXrrMGHoaPKOjyrxQro4WtKGis49v1Krd3oAjf5e9/yEwhh
-	 AHpFhDgsj48O/fBL8Jz2IIOUxiJtBk6yXiJpno/dZilngABD+KapRKDMg6jGJE9IIl
-	 Xi7VLtI7auvO/D/k4XJt/GmMawNCgtuo5KBujL4G4W1E8OjB9JFh6IchkOkQAZDcrD
-	 ks3SMcEek5AMOKcJZXODKpNGw7LJ1PDAdLGvOHjLLFUtiwsq5wy5LnCurA1FiIq1F0
-	 P+xNBqP7ea/Qd7ZkHLEvRuOb8hdtEddVhP5Aj+KsE8lkFFSdYzqb33P59pLBSk0XHZ
-	 XgDpr1Cp5QB2Q==
-Date: Thu, 15 May 2025 16:23:05 +0200
-From: Francesco Dolcini <francesco@dolcini.it>
-To: Baochen Qiang <quic_bqiang@quicinc.com>
-Cc: Parth Panchoil <parth105105@gmail.com>,
-	"ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
-Subject: Re: wifi: ath12k: start-up crash with WCN7850 hw2.0 on TI AM69-SK
- board
-Message-ID: <20250515142305.GA74294@francesco-nb>
-References: <86899b2235a59c9134603beebe08f2bb0b244ea0.camel@gmail.com>
- <a15a1557-e5fb-404c-9031-21efbaa7e679@quicinc.com>
- <c710004338102c19e5c05fb03d3256ccbdabd5f7.camel@toradex.com>
- <afe586a1acf458edcfe7cf76f4dcfa8b18ad716a.camel@gmail.com>
- <28b5436a-556b-4b0e-a66c-eec453f4f5b8@quicinc.com>
- <6aa877c8-322d-44eb-a8ca-5d00ffa63d8f@quicinc.com>
- <479bd0f6ef7fbb5f0e0d0d8f71a804002e6b5f6b.camel@gmail.com>
- <6ee296a1-1cb9-4187-9c74-222bea54843b@quicinc.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <6ee296a1-1cb9-4187-9c74-222bea54843b@quicinc.com>
+	Thu, 15 May 2025 15:16:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1747322214; x=1778858214;
+  h=date:from:to:cc:subject:message-id;
+  bh=QoVV+7mqoP9RL+Ckp/6lFTqEsYZMngS1MX/WuTwKVaU=;
+  b=hH9oNWYQXHBT9+6U1afb02sM0PirPlGBv9dVm5PeSXXBeueh001sAaqS
+   tQZuLy1kwfE79IJMSAWKpnjgfX25GWsXWS7intHyOtJ5/TkDy9VF3N6Qz
+   CKj1PkBSJLQ7XFRKOTSWCCP2dEJxySgo382bsAfKhQlvZRMOniMNUOpe+
+   k9OHB+sxZtitNXBIOrAnGm+7F0bgdwRhNaOHzBTfQpibGZoiQQPnoLLAd
+   mj/nIDCr3TOUsAYhppz2vNGOFY3cDwg/BNXehK7tOiPEvQ3nc2H//zXud
+   cQ6bIS9otTdNkgVUOMs0LDU2zO/+02poqYPSpHEvS4OrQ85UIkv2thWbb
+   A==;
+X-CSE-ConnectionGUID: 3tlqH7ItSy+iQ7gfYHcIAg==
+X-CSE-MsgGUID: 9DEFCubzTuqiZfn6zlCxYA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11434"; a="53079256"
+X-IronPort-AV: E=Sophos;i="6.15,291,1739865600"; 
+   d="scan'208";a="53079256"
+Received: from fmviesa009.fm.intel.com ([10.60.135.149])
+  by orvoesa106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 May 2025 08:16:53 -0700
+X-CSE-ConnectionGUID: vuISaX6+Th+027yilYI5IQ==
+X-CSE-MsgGUID: UQaouxz8QfyO8ZR3IvsDCw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.15,291,1739865600"; 
+   d="scan'208";a="139404863"
+Received: from lkp-server01.sh.intel.com (HELO 1992f890471c) ([10.239.97.150])
+  by fmviesa009.fm.intel.com with ESMTP; 15 May 2025 08:16:52 -0700
+Received: from kbuild by 1992f890471c with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1uFaKI-000IUR-13;
+	Thu, 15 May 2025 15:16:50 +0000
+Date: Thu, 15 May 2025 23:16:29 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:pending] BUILD SUCCESS
+ 3c1cb82a87243f8d53d436008993bff9d16f90ba
+Message-ID: <202505152319.IG5Lm6gW-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250515_072313_972431_5E700970 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20250515_081654_552039_48B5C233 
+X-CRM114-Status: UNSURE (   3.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,44 +83,139 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello,
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: 3c1cb82a87243f8d53d436008993bff9d16f90ba  wifi: ath12k: Fix scan initiation failure handling
 
-On Tue, May 06, 2025 at 01:56:11PM +0800, Baochen Qiang wrote:
-> On 4/30/2025 8:50 PM, Parth Panchoil wrote:
-> > On Wed, 2025-02-19 at 18:18 +0800, Baochen Qiang wrote:
-> >> On 2/5/2025 10:20 AM, Baochen Qiang wrote:
-> >>> On 1/27/2025 10:01 PM, Parth Panchoil wrote:
-> >>>> I am currently debugging the ath12k_pci_enable_ltssm start up
-> >>>> crash/bug
-> >>>> with the mainline kernel on my system and would like to share my
-> >>>> observations so far:
-> >>>>
-> >>>> The ath12k mainline driver gets stuck at this specific line: 
-> >>>> https://github.com/torvalds/linux/blob/9c5968db9e625019a0ee5226c7eebef5519d366a/drivers/net/wireless/ath/ath12k/pci.c#L295
-> >>>> in the ath12k_pci_enable_ltssm  which attempts to read
-> >>>> GCC_GCC_PCIE_HOT_RST, particularly
-> >>>> https://github.com/torvalds/linux/blob/9c5968db9e625019a0ee5226c7eebef5519d366a/drivers/net/wireless/ath/ath12k/pci.c#L1209
+elapsed time: 1449m
 
-...
+configs tested: 119
+configs skipped: 4
 
-> >>
-> >> -#define GCC_GCC_PCIE_HOT_RST                   0x1e38338
-> >> +#define GCC_GCC_PCIE_HOT_RST                   0x1e40304
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-...
+tested configs:
+alpha                             allnoconfig    gcc-14.2.0
+alpha                            allyesconfig    gcc-14.2.0
+arc                              allmodconfig    gcc-14.2.0
+arc                               allnoconfig    gcc-14.2.0
+arc                              allyesconfig    gcc-14.2.0
+arc                      axs103_smp_defconfig    gcc-14.2.0
+arc                   randconfig-001-20250514    gcc-13.3.0
+arc                   randconfig-002-20250514    gcc-14.2.0
+arm                               allnoconfig    clang-21
+arm                          collie_defconfig    gcc-14.2.0
+arm                          pxa910_defconfig    gcc-14.2.0
+arm                   randconfig-001-20250514    clang-21
+arm                   randconfig-002-20250514    clang-21
+arm                   randconfig-003-20250514    gcc-7.5.0
+arm                   randconfig-004-20250514    gcc-7.5.0
+arm                         socfpga_defconfig    gcc-14.2.0
+arm64                             allnoconfig    gcc-14.2.0
+arm64                 randconfig-001-20250514    clang-17
+arm64                 randconfig-002-20250514    gcc-5.5.0
+arm64                 randconfig-003-20250514    gcc-5.5.0
+arm64                 randconfig-004-20250514    clang-21
+csky                              allnoconfig    gcc-14.2.0
+csky                  randconfig-001-20250515    gcc-14.2.0
+csky                  randconfig-002-20250515    gcc-14.2.0
+hexagon                          allmodconfig    clang-17
+hexagon                           allnoconfig    clang-21
+hexagon                          allyesconfig    clang-21
+hexagon               randconfig-001-20250515    clang-16
+hexagon               randconfig-002-20250515    clang-21
+i386                             allmodconfig    gcc-12
+i386                              allnoconfig    gcc-12
+i386                             allyesconfig    gcc-12
+i386        buildonly-randconfig-001-20250514    clang-20
+i386        buildonly-randconfig-002-20250514    gcc-12
+i386        buildonly-randconfig-003-20250514    clang-20
+i386        buildonly-randconfig-004-20250514    clang-20
+i386        buildonly-randconfig-005-20250514    gcc-12
+i386        buildonly-randconfig-006-20250514    gcc-12
+i386                                defconfig    clang-20
+loongarch                        allmodconfig    gcc-14.2.0
+loongarch                         allnoconfig    gcc-14.2.0
+loongarch             randconfig-001-20250515    gcc-12.4.0
+loongarch             randconfig-002-20250515    gcc-14.2.0
+m68k                             allmodconfig    gcc-14.2.0
+m68k                              allnoconfig    gcc-14.2.0
+m68k                             allyesconfig    gcc-14.2.0
+m68k                          hp300_defconfig    gcc-14.2.0
+microblaze                       allmodconfig    gcc-14.2.0
+microblaze                        allnoconfig    gcc-14.2.0
+microblaze                       allyesconfig    gcc-14.2.0
+mips                              allnoconfig    gcc-14.2.0
+mips                          eyeq5_defconfig    gcc-14.2.0
+mips                           ip32_defconfig    clang-21
+mips                        vocore2_defconfig    clang-21
+nios2                             allnoconfig    gcc-14.2.0
+nios2                 randconfig-001-20250515    gcc-12.4.0
+nios2                 randconfig-002-20250515    gcc-6.5.0
+openrisc                          allnoconfig    gcc-14.2.0
+openrisc                         allyesconfig    gcc-14.2.0
+openrisc                            defconfig    gcc-14.2.0
+parisc                           allmodconfig    gcc-14.2.0
+parisc                            allnoconfig    gcc-14.2.0
+parisc                           allyesconfig    gcc-14.2.0
+parisc                              defconfig    gcc-14.2.0
+parisc                randconfig-001-20250515    gcc-13.3.0
+parisc                randconfig-002-20250515    gcc-13.3.0
+powerpc                          allmodconfig    gcc-14.2.0
+powerpc                           allnoconfig    gcc-14.2.0
+powerpc                          allyesconfig    clang-21
+powerpc                     mpc5200_defconfig    clang-21
+powerpc               randconfig-001-20250515    gcc-8.5.0
+powerpc               randconfig-002-20250515    gcc-6.5.0
+powerpc               randconfig-003-20250515    clang-21
+powerpc64             randconfig-001-20250515    clang-21
+powerpc64             randconfig-002-20250515    gcc-8.5.0
+powerpc64             randconfig-003-20250515    clang-21
+riscv                            allmodconfig    clang-21
+riscv                             allnoconfig    gcc-14.2.0
+riscv                            allyesconfig    clang-16
+riscv                 randconfig-001-20250515    gcc-8.5.0
+riscv                 randconfig-002-20250515    gcc-14.2.0
+s390                             alldefconfig    gcc-14.2.0
+s390                             allmodconfig    clang-18
+s390                              allnoconfig    clang-21
+s390                             allyesconfig    gcc-14.2.0
+s390                  randconfig-001-20250515    clang-21
+s390                  randconfig-002-20250515    gcc-9.3.0
+sh                               allmodconfig    gcc-14.2.0
+sh                                allnoconfig    gcc-14.2.0
+sh                               allyesconfig    gcc-14.2.0
+sh                ecovec24-romimage_defconfig    gcc-14.2.0
+sh                    randconfig-001-20250515    gcc-14.2.0
+sh                    randconfig-002-20250515    gcc-10.5.0
+sh                   secureedge5410_defconfig    gcc-14.2.0
+sparc                            allmodconfig    gcc-14.2.0
+sparc                             allnoconfig    gcc-14.2.0
+sparc                 randconfig-001-20250515    gcc-6.5.0
+sparc                 randconfig-002-20250515    gcc-10.3.0
+sparc64               randconfig-001-20250515    gcc-9.3.0
+sparc64               randconfig-002-20250515    gcc-9.3.0
+um                               allmodconfig    clang-19
+um                                allnoconfig    clang-21
+um                               allyesconfig    gcc-12
+um                    randconfig-001-20250515    gcc-12
+um                    randconfig-002-20250515    clang-21
+x86_64                            allnoconfig    clang-20
+x86_64                           allyesconfig    clang-20
+x86_64      buildonly-randconfig-001-20250514    clang-20
+x86_64      buildonly-randconfig-002-20250514    gcc-12
+x86_64      buildonly-randconfig-003-20250514    gcc-12
+x86_64      buildonly-randconfig-004-20250514    gcc-12
+x86_64      buildonly-randconfig-005-20250514    clang-20
+x86_64      buildonly-randconfig-006-20250514    gcc-12
+x86_64                              defconfig    gcc-11
+x86_64                          rhel-9.4-rust    clang-18
+xtensa                            allnoconfig    gcc-14.2.0
+xtensa                randconfig-001-20250515    gcc-14.2.0
+xtensa                randconfig-002-20250515    gcc-13.3.0
+xtensa                         virt_defconfig    gcc-14.2.0
 
-> 
-> GCC_GCC_PCIE_HOT_RST is wrongly defined, normally this should not cause any critical
-> issue, because IMO the RC is expected to return 0xffffffff when accessing a non-exist
-> register. However in your case kernel crashes, so seems RC does not behave well, maybe not
-> following spec?
-> 
-> anyway I will submit a patch to fix it.
-
-Any update on this? I can easily submit a patch myself, just let me
-know. Because of this bug we have a crash that is preventing us to use
-the device.
-
-Francesco
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
