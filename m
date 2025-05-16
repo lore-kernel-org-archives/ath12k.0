@@ -4,119 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE6D2C3ABDD
-	for <ath12k@archiver.kernel.org>; Fri, 16 May 2025 19:40:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F873C5475C
+	for <ath12k@archiver.kernel.org>; Fri, 16 May 2025 19:40:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5G7ksd0wXjHCiCnsoecac/SagfBtut8BWKbVXx39nk4=; b=wCTlnzP7wzUIdvCL4EarMCtONF
-	DKUcFcv45IDBkBPuxPRzQ4lcNCIwV5Y/aApvhKWH5NiPtl5ii1BYLdMAmwQTWI17SGg3Fa8UlMLC8
-	7gOKD07JPHGqFVb6Te9jgbbsFS+QTe9hbJnaLiRAdIuzahWPBRiuuAtKJLRu3OvzoLydRKRlXUGL0
-	j44P38vjX+USzTgjGlrnyF1Rhc7LJJrHQV99oCsthe8XZqPEmaTNDxopkFimVRmzxAjvCCJvi3MMx
-	Z6H7VVKXPvppelmh/K9NsoxWdzNkyV0ljQyXIphHB4yj6n66kB0KsK9o4e/p3Thbmt5AZz80BJ7sS
-	CGHEPVng==;
+	bh=+b4mipyrCPJdbvZfzWGaBRvV6xkj/kt8pxJ9PRpOlqg=; b=tm8qx4AHhDIxTDY1pOwVz/ubp8
+	/4N7LmF/Qdf5EsA+AAh6Non/+voZCnqaoLdWyRu9GA5+gCVeg4iGaErJWx/nRs4rUOkO8QGBORgbB
+	BPxb/c0ciIhYYiliW8j150b5V9qlGdDhxjt83P/RreczGx0gEqwzrQgWZa40dHFr0w1KDZ1RReJBc
+	PVoXlx9FD/qCtF3EHeA42VIruo6w1acC4HwngNyauIs7NAAdkuUDiW+0ustuIqVn2L0PQogvkgjC7
+	8jUw8a6Ytc3ug6lVjIqvrdSWnAqN6pS1BYhTSbfyIFCZDB4fRGPGvkiBmYLlt7EJsT8sqL9HQxLhP
+	jyNo/U2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uG0v5-00000004Tqw-2V5g;
-	Fri, 16 May 2025 19:40:35 +0000
+	id 1uG0v7-00000004TtO-002u;
+	Fri, 16 May 2025 19:40:37 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uG0v1-00000004Tnt-3TBy
+	id 1uG0v3-00000004Tp9-10Ic
 	for ath12k@lists.infradead.org;
-	Fri, 16 May 2025 19:40:33 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54GGsSRE030457
-	for <ath12k@lists.infradead.org>; Fri, 16 May 2025 19:40:31 GMT
+	Fri, 16 May 2025 19:40:34 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54GBRdZT022995
+	for <ath12k@lists.infradead.org>; Fri, 16 May 2025 19:40:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	5G7ksd0wXjHCiCnsoecac/SagfBtut8BWKbVXx39nk4=; b=LpsgOArL4Lh2Kiok
-	Pznd+NmIR5t0OhXFEhtzsRUOFmjpHtiPDE3whGT7OW4CwxUebgIqmnvDnSYtzfMY
-	GbB8+jl0Chffpd81txe+KbFv1FG3bg/r1F0sxOgWJlK1ABCZ8fIU/bbtgEVAiGD4
-	qh7YCqNJEVsufgpDJKUXzFi40agAo69W6ItEIjt1PYeOzn4o7PlsecHJyeT7I5md
-	tWXhSlCLSOPDX+yhC02jZVhIL6BnvEWH7B2Zn0PTEbQayHgWEfX61/VM0dZ/muDe
-	NsAfFfeLDAFFFBUQNXXqjXJkS0mB4JgHc8OhYhrpGr+jOEUmzlOG3sWKzdpOecfO
-	3ya4dA==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46p997gbr8-1
+	+b4mipyrCPJdbvZfzWGaBRvV6xkj/kt8pxJ9PRpOlqg=; b=jumLbjB4Dh5rqC56
+	AvPctt3LkJIU2iYtkhAZSRChledLzMtkohfUMIfHxjs+gW6YhlsTreuGHYsATchj
+	rMW6TWFGqwG7bBlH9jqBtyHqoxQwuodJy1rBzSPn5w//RBl/3PrnU2ZpYe+tsgl4
+	1dZWxuXJBlAz5mt/9Rox5sXNNbilvscd2P3o/XC6N9sRzvSHe812AOPz68usu9nM
+	lVe62L5J2hpwbOAHVEYbaJ9MzyFFlTp6UC3U6Tr8J3nUBqrQE6yIM58RwLtysT4T
+	GgjwsJk+1pqli92iILz/IyFN/Q0SLjDH5kKGVMslpihQt29DE+QBacHkPm7dh+Df
+	uEK5qQ==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46p4gq99n5-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 16 May 2025 19:40:31 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-22e7e097ef7so20954315ad.2
-        for <ath12k@lists.infradead.org>; Fri, 16 May 2025 12:40:31 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 16 May 2025 19:40:32 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-22e5cd14e48so21697105ad.2
+        for <ath12k@lists.infradead.org>; Fri, 16 May 2025 12:40:32 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747424430; x=1748029230;
+        d=1e100.net; s=20230601; t=1747424432; x=1748029232;
         h=content-transfer-encoding:mime-version:date:message-id:subject
          :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=5G7ksd0wXjHCiCnsoecac/SagfBtut8BWKbVXx39nk4=;
-        b=js30YA+qtKLuRKw356R6LR6t535R+ansge8s0gCQI/R72ajQkyFHldUKHsCHMYEQ2F
-         hnkaptHixF5szl7O7F2qkF2YhfSDjNSwK8e4/XRCpz34eTNdnpM382hl8kB08xEhMbE1
-         O3Ho51dxqq6xbAO+KZpurv7BUo46WeuNQQ8NZulFCey3J0IodoGDBAkuNfVyPXVzdUTT
-         5x2AI5RDXoMv91c7VqbVhEoqSdZZlJid4xJvMbrMOjfM1fldl/VwnDxo7DjAwMkbKFvu
-         eUhAY+L+gF30pJPQFekVEyOWDKOVTwSFAi8xhZqRpXsVCVBbeEOcNPwXGzvfNhLOXTI6
-         djOg==
-X-Forwarded-Encrypted: i=1; AJvYcCV6q3iA99zM/RPPaBVj+fczOWvumcnpBnJx8UZAY7VcOW1ADczYCqRdtoyI5dtZezY9+m6ohF4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw/gcXscfMWNAl90DHcCfELZgSpDTuMmw8Larol4mEiWgkAV23L
-	3xV9o5MnseTwh3gPq7nlXc6j4jQztpk86jcQ0+FWJKEmPvgAP6xwYmh6BdkbGX0fpIhcoahh5bw
-	TZ+G5WrC0LBPELkjU6A6x8dDzScsQThgNfKJjPg+e2Jl0/mAO/dw0qiyeiJqrO+Kv4eotsYTU
-X-Gm-Gg: ASbGnctgX5yzaU7FjrtCc3TBUc9Q+LA/qLjageZTzlOFziWdS6KNwcT1YQS9F+cNW8P
-	NbKdyuU1FbloXep+zZo0DxJdmhnG5ECJAfNCM7E+PEPZvzdO20zIpBkoxEA+Vx+SKuDf1Udt2OF
-	1ncP6j04K1PP6cYbzR2Gue9S+EO/wip1IfZrw1rS4H8N41ahfD67HM0Usx7TPSDoaCDCZYAJxod
-	u4Ch/OcThbmOcVQq2l2RBDWvraSh1foqQw3X2DFOhw1UY3XNpEb/jE6XttivcHLzc7/M9iroDG2
-	RPgXWLnjJpffkURvN4DbP+7C3m5hAu8APAIPM2TWjOmQE1FP
-X-Received: by 2002:a17:902:f54a:b0:231:b7a6:df1a with SMTP id d9443c01a7336-231de3ba25fmr45392875ad.50.1747424430249;
-        Fri, 16 May 2025 12:40:30 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFqVFV7Kgb6vfQ/FeDrtMUl3/8u4tdcjBCZnmJAEL8s50lZlgCge7RMn6WiFDEbR5w5NzOCcQ==
-X-Received: by 2002:a17:902:f54a:b0:231:b7a6:df1a with SMTP id d9443c01a7336-231de3ba25fmr45392675ad.50.1747424429850;
-        Fri, 16 May 2025 12:40:29 -0700 (PDT)
+        bh=+b4mipyrCPJdbvZfzWGaBRvV6xkj/kt8pxJ9PRpOlqg=;
+        b=iaIWEb+bkoROqtfoIKwwiQBhwL9BtwERFj4AKN5n5PebspHA/6VfFAVkwNBAnDbWyF
+         8R8I5t/YLS8bFzT4x5LOqe3P4q12riBSOfTYtSMjNXRgCkE1vAzoLozHKt0lL9syIBuk
+         YrzoeeFNDFHf6C62LOGuRD207MMguAkZfedpWDp+QuVPNcs7HnlQ4RQkH4jJl28ja3ZY
+         6NvPIDCUmHVlZeas34+mplGyhqIfa3Ry1ZGxa5q8liBykd/6VeHTS61Lm8HoESCjtAw1
+         QWCu65f0I/6q7C+hd2T/i4ufgXmDPCo62N0Tr7tqnc3qPUeBKB7eHx4odRMdBoGoWIGT
+         i2yA==
+X-Gm-Message-State: AOJu0YzA7FQqQ2mUJSFedTeUeFuCPkUN2iXmBo+eKSShW8GK0a0WMP+3
+	GKg0Ugc12jYyRO1AoEOLIQDHRgVhydD0NjmFHFDFDJX9qtvRj+xWvBxr0jaQmZIl1D78m+MKF5w
+	n//WJrasWZR+MKcZulNM/+3IwySHst0KEgZPXaFe3qVEeig9j3M89GCP68oG9AAfW
+X-Gm-Gg: ASbGncv35lR4wVi2vkwHZ3djIssao5Bf453CgU4dQxfB7blgbMNtG18jbtKTS6FiH7T
+	tY2L2N2QFf0AaMsKSBMCap51ukyFakPru30mfy9A8UsnLiHYw0vMsgPpNmRN1pdY4pafibBeDYP
+	1x5ev6aCQYY7hXXOTzBDjzuvVTdjeIgeC2dpuk/EKWPf9zQoa6TeekNqN12TVuIAG6F+oOyHMuW
+	fleVJxxK+60Py5PZ24VzcGnJIDA2pJgJjR6Zondf5yG+wenrYyR5dwpwPkyKGqtCpRZIJDeIPkz
+	YgQj6AzTWNXk7Kkf6F9eGYjrpegZssnKBPLBMZqd0mFIqC1W
+X-Received: by 2002:a17:902:e78b:b0:223:fbc7:25f4 with SMTP id d9443c01a7336-231d44e641fmr61831665ad.14.1747424431757;
+        Fri, 16 May 2025 12:40:31 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEM762pA60yK/Pp86FVSbdlfl+30uTirqh9IDypL27MMC7XJvAErYG0SFmv7Lc8RLcGCQU/sg==
+X-Received: by 2002:a17:902:e78b:b0:223:fbc7:25f4 with SMTP id d9443c01a7336-231d44e641fmr61831335ad.14.1747424431344;
+        Fri, 16 May 2025 12:40:31 -0700 (PDT)
 Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-231d4e97798sm17955255ad.147.2025.05.16.12.40.29
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-231d4e97798sm17955255ad.147.2025.05.16.12.40.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 16 May 2025 12:40:29 -0700 (PDT)
+        Fri, 16 May 2025 12:40:31 -0700 (PDT)
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: Johannes Berg <johannes@sipsolutions.net>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        Baochen Qiang <quic_bqiang@quicinc.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-In-Reply-To: <20250418-ath12k-6g-lp-vlp-v1-0-c869c86cad60@quicinc.com>
-References: <20250418-ath12k-6g-lp-vlp-v1-0-c869c86cad60@quicinc.com>
-Subject: Re: [PATCH ath-next 00/15] wifi: ath12k: add support for 6 GHz
- station for various modes : LPI, SP and VLP
-Message-Id: <174742442913.3316767.4054734425093603053.b4-ty@oss.qualcomm.com>
-Date: Fri, 16 May 2025 12:40:29 -0700
+To: ath12k@lists.infradead.org, Kang Yang <kang.yang@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20250421023444.1778-1-kang.yang@oss.qualcomm.com>
+References: <20250421023444.1778-1-kang.yang@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next 00/13] wifi: ath12k: add monitor mode support
+ for WCN7850
+Message-Id: <174742443073.3316767.14591077884677831955.b4-ty@oss.qualcomm.com>
+Date: Fri, 16 May 2025 12:40:30 -0700
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.0
-X-Authority-Analysis: v=2.4 cv=U7uSDfru c=1 sm=1 tr=0 ts=682794af cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=EUspDBNiAAAA:8 a=kn8lAQMWUTpYvoNR6e0A:9
- a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE2MDE5MyBTYWx0ZWRfX+NvgalEyWWWi
- iMmPFBOs7EeVj9ZXQs3ylht0SWwQ9PLcD3uAj/QktTACQeMwfNR+9LtZlmI1GzKF6E1Fo+ulzmv
- DxJhKnIFEOiCTr88l8HccNo3MO9TZQu/z0tDVNs5YukgqParIXk3VgaJtSvCvr4p4Vsm7MyLrAw
- ulZtJCQqSAvr7ZKGuQytFoubp8ed7b8qur367Z9s79Ipxx8mGIf+PVaVp7GJ2IwoezTzQSpPGes
- 9Wb314Y8mInzf4iIlYYvQCISTNzaSmpmwsvS5hiXPD4TIWCGmTW7q3lnItOZ2YYcK5y2pZXvo+y
- e11bvsinnmy0ByQUeFH/syqWEFesh0ieQxMp0lv46TaLlhS9zQhB0uo5yQDvwgfy+7X+uYp0GSd
- aWACJxGZ0A0qORCm3Kl6ScHhVDkJOCiMzWuZV2wmxIOt2nexoy/i8KXDTHPblf+PHFAaBhQb
-X-Proofpoint-GUID: mlGEv7LDVxadjBe_wki1fPNdEHPDZNrq
-X-Proofpoint-ORIG-GUID: mlGEv7LDVxadjBe_wki1fPNdEHPDZNrq
+X-Proofpoint-ORIG-GUID: Tp8Y-uALQLbxvdFyXwnVO-t7dZ1mqLl5
+X-Authority-Analysis: v=2.4 cv=KulN2XWN c=1 sm=1 tr=0 ts=682794b0 cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=EUspDBNiAAAA:8 a=B1sZM3WIyRSAwYCktj8A:9
+ a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE2MDE5MiBTYWx0ZWRfX4leRtEri0vs9
+ l9qiTIlesQruAMU/EflAbw3/gfQYSmKrUSGW7vsB0nK5cAyAVWl/7Catox0HHNknRqvGVdZSyo0
+ Yi7IE9IwV7qtpjfZbm4DxDjhlfkVIK0LPX1jUDbsoBA0F/HVBGucMJU8hkG2Z1xzEdY3adsPAqO
+ 5bPm7x404JnUDxdc6Wi85+M+NTLFaSZ9dD/Of/maa0S1Jsyd1nlvVmHgy7t8RqCu2d6QvWm/GQ4
+ 834GLa0PovOY5GbDmFoy6HhWONlUwckIq7KYyH1saSRlpeZsR8/HpQ5CT/JMCDN607lzNhxRCO5
+ MhHYSJ74VijV31OrW43MrMkPP/iEYe1/gvLqA+CjwW3mJpg4fWjkgoghUqiyS4mWS4k/XEudzPR
+ IYmWmrDhtj5rXRlTZgbQjJWr7rJ4ctLsiOqhZ3yx0SpSR1jlJ4etD5YlCNENzdxEYBH4XFFv
+X-Proofpoint-GUID: Tp8Y-uALQLbxvdFyXwnVO-t7dZ1mqLl5
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-05-16_06,2025-05-16_03,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 mlxscore=0 bulkscore=0 spamscore=0 phishscore=0
- impostorscore=0 priorityscore=1501 adultscore=0 mlxlogscore=999 clxscore=1015
- lowpriorityscore=0 malwarescore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505070000 definitions=main-2505160193
+ spamscore=0 mlxscore=0 suspectscore=0 adultscore=0 priorityscore=1501
+ mlxlogscore=999 clxscore=1015 bulkscore=0 lowpriorityscore=0 phishscore=0
+ impostorscore=0 malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505070000
+ definitions=main-2505160192
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250516_124031_873374_9841EA99 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20250516_124033_286557_ED31D8C8 
+X-CRM114-Status: GOOD (  10.38  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,52 +128,59 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 18 Apr 2025 10:55:33 +0800, Baochen Qiang wrote:
-> Currently for 6 GHz reg rules from WMI_REG_CHAN_LIST_CC_EXT_EVENTID event,
-> host chooses low power indoor type rule regardless of interface type or AP's
-> power type, which is not correct. This series change to choose proper rule
-> based on interface type and AP's power type.
+On Mon, 21 Apr 2025 10:34:31 +0800, Kang Yang wrote:
+> Currently, monitor mode is not support on WCN7850. Thus add ring
+> configuration, interrupt configuration and ring process function to
+> support it.
 > 
-> When connecting to a 6 GHz AP, currently host sends power settings to firmware
-> over WMI_PDEV_PARAM_TXPOWER_LIMIT2G/WMI_PDEV_PARAM_TXPOWER_LIMIT5G commands.
-> Actually there is a new command WMI_VDEV_SET_TPC_POWER_CMDID with which host
-> can send more detailed parameter than with those two. So add support for this
-> interface.
+> Kang Yang (13):
+>   wifi: ath12k: parse msdu_end tlv in
+>     ath12k_dp_mon_rx_parse_status_tlv()
+>   wifi: ath12k: avoid call ath12k_dp_mon_parse_rx_dest_tlv() for WCN7850
+>   wifi: ath12k: add srng config template for mon status ring
+>   wifi: ath12k: add ring config for monitor mode on WCN7850
+>   wifi: ath12k: add interrupt configuration for mon status ring
+>   wifi: ath12k: add monitor mode handler by monitor status ring
+>     interrupt
+>   wifi: ath12k: add support to reap and process monitor status ring
+>   wifi: ath12k: fix macro definition HAL_RX_MSDU_PKT_LENGTH_GET
+>   wifi: ath12k: use ath12k_buffer_addr in
+>     ath12k_dp_rx_link_desc_return()
+>   wifi: ath12k: add support to reap and process mon dest ring
+>   wifi: ath12k: init monitor parameters for WCN7850
+>   wifi: ath12k: use different packet offset for WCN7850
+>   wifi: ath12k: enable monitor mode for WCN7850
 > 
 > [...]
 
 Applied, thanks!
 
-[01/15] wifi: ath12k: fix a possible dead lock caused by ab->base_lock
-        commit: ef115c265a21e3c11deee7f73bd1061775a7bf20
-[02/15] wifi: ath12k: refactor ath12k_reg_chan_list_event()
-        commit: 9e8e55c5832d4f905d7ca306f976669d523e9ff2
-[03/15] wifi: ath12k: refactor ath12k_reg_build_regd()
-        commit: c96bce15c568fdb8edd29b35aeb0f20c2524108c
-[04/15] wifi: ath12k: add support to select 6 GHz regulatory type
-        commit: fafa6ff0823b79bfe4d1950e7bd51bb1c6dd49cf
-[05/15] wifi: ath12k: move reg info handling outside
-        commit: 75639b743515537b6ee56bb89c857aaf8726713a
-[06/15] wifi: ath12k: store reg info for later use
-        commit: eaa027a1d83f87c83f0b4138ca2427875a21b446
-[07/15] wifi: ath12k: determine interface mode in _op_add_interface()
-        commit: ee2fc1f7347e8393b94d35a0d2b9d24920c9b24f
-[08/15] wifi: ath12k: update regulatory rules when interface added
-        commit: 4c546023d71a2b175ae7dd17b42efcd5a832a1ca
-[09/15] wifi: ath12k: update regulatory rules when connection established
-        commit: 7ed3e88664e328bb7cda5e71568b83426b3f3289
-[10/15] wifi: ath12k: save power spectral density(PSD) of regulatory rule
-        commit: d6b11d0ddadb9e7addd0f582f31ae8e6c256ba9d
-[11/15] wifi: ath12k: add parse of transmit power envelope element
-        commit: cccbb9d0dd6ab9e3353066217e9ab5b44bd761d3
-[12/15] wifi: ath12k: save max transmit power in vdev start response event from firmware
-        commit: b0501a0ee772222e3a7fa5c94eb7c6b16fe20610
-[13/15] wifi: ath12k: fill parameters for vdev set TPC power WMI command
-        commit: aeda163bb0c7b9fc58bdd6ae90c0eef4f4050b7b
-[14/15] wifi: ath12k: add handler for WMI_VDEV_SET_TPC_POWER_CMDID
-        commit: 9a9e8ea7f6d31351039343e9e3b1927c61a2ccc3
-[15/15] wifi: ath12k: use WMI_VDEV_SET_TPC_POWER_CMDID when EXT_TPC_REG_SUPPORT for 6 GHz
-        commit: 29cb3d26d01c275ea652010cc62f324793e34a31
+[01/13] wifi: ath12k: parse msdu_end tlv in ath12k_dp_mon_rx_parse_status_tlv()
+        commit: 07a273d1e6f4b1aa537a4028b5b0ee0022cc16ec
+[02/13] wifi: ath12k: avoid call ath12k_dp_mon_parse_rx_dest_tlv() for WCN7850
+        commit: 5887ffb18703cd64afcc2f6364a5db11ce2751c3
+[03/13] wifi: ath12k: add srng config template for mon status ring
+        commit: c703c6acd6672a3f7005d76ff53f8ab04ad6c90e
+[04/13] wifi: ath12k: add ring config for monitor mode on WCN7850
+        commit: 4cd8b48f5d88ca0006952de93583ff827cbdd33c
+[05/13] wifi: ath12k: add interrupt configuration for mon status ring
+        commit: 18d26d156c22a914e9d461d0305a8448841b31fd
+[06/13] wifi: ath12k: add monitor mode handler by monitor status ring interrupt
+        commit: 5f15468f5fd3353dc012bcecfa0de2b9390db572
+[07/13] wifi: ath12k: add support to reap and process monitor status ring
+        commit: 78d3d907d0f1c7c0df866876e9e551cf22d5aafb
+[08/13] wifi: ath12k: fix macro definition HAL_RX_MSDU_PKT_LENGTH_GET
+        commit: a69bbf89d751ba2d6da21d773c4e29c91c5e53c4
+[09/13] wifi: ath12k: use ath12k_buffer_addr in ath12k_dp_rx_link_desc_return()
+        commit: ac885978a5ab49809784b3ad20b4cbf7f14c664a
+[10/13] wifi: ath12k: add support to reap and process mon dest ring
+        commit: 72bfbf19b7da6edc6db1d8ea81751ee6d31fe2f2
+[11/13] wifi: ath12k: init monitor parameters for WCN7850
+        commit: f4dd79e9b5d3cae04e166186e7b325453cdbaf7e
+[12/13] wifi: ath12k: use different packet offset for WCN7850
+        commit: 1cf514fdc7904e0a29d694487e0c36d3595e3717
+[13/13] wifi: ath12k: enable monitor mode for WCN7850
+        commit: 6c262794ad9dba9ad23224d002e1ba5451f71fa3
 
 Best regards,
 -- 
