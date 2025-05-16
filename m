@@ -4,108 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE257C2D0CD
-	for <ath12k@archiver.kernel.org>; Fri, 16 May 2025 01:36:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 969F3C2D0CD
+	for <ath12k@archiver.kernel.org>; Fri, 16 May 2025 01:41:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tMSRgH2O3frOvbt/bM3caFSTUMq1rcGXUVoL5oW2+H8=; b=1xSusaAn+z2jtzD+cF8jynA0XX
-	PBR8rQ44obOZuXU/bV6hgb3Ee50Fm+mb3E1PLSHrukNjTVviIyD4uKokKI5ZBQapRopPG7BLHOOFD
-	/SYHWKymdkPo7BmE2M+vViI/SMY32+KynyO+vck1396+xwoA/hBvFyphVHuZsOpA3I+F0YRQbF3SP
-	y9NBsYljWwndMy/GpEqISyanlyARV4fM5EaCF3ibCgGpaRT7aWfdznGOWlAHxlhGX0sWF+Vftmukt
-	XQ5Wk1WNqLwDY41qNENndmqS7NJltl3Hn3rQvFuAW2FMSPHgnaAY2N1+nRt+UIj+5neDx1azOrXy8
-	S85OHZnw==;
+	bh=bzLU//hazvehJfCvYNnFDyFFPBzU0y3HrBrW+PhSbw4=; b=DFv49K5+kU7YAMwew0kOv0Bu15
+	OkwEH+BWQl1cEK56mPUoDVZ/ToWRAYGv1iG25Z0/ws0ODIm/HP7dXujkP/id77KoqWQZem5DEyvPf
+	2Q95xBUAZdoXWCttf5KNBtKDo1gKwpqrlQgZhrszJ0qrldxDVcAAYREo43LL0I0zg19kPF4ld+ioV
+	wxJYMEYia4HdPpuSSuoOtP06sg0eHxDuczei1mB96OAZ5ifcH2seliMLnzEHbLooRbEmzN8O7C+IS
+	0QMMq8R27+emi7805VJJSuY1SFTGKVabvoojiSrKFHzk9FHXBOZKAvGDolT3WpgVRpX3wyvJ9EzIL
+	hV0XJ5SA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFk0M-00000002DXK-25dm;
-	Fri, 16 May 2025 01:36:54 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uFk5B-00000002Dwd-119T;
+	Fri, 16 May 2025 01:41:53 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFk0J-00000002DWf-2gFF
+	id 1uFk58-00000002DvZ-0Y2M
 	for ath12k@lists.infradead.org;
-	Fri, 16 May 2025 01:36:53 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54FEFI6E031498;
-	Fri, 16 May 2025 01:36:45 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	tMSRgH2O3frOvbt/bM3caFSTUMq1rcGXUVoL5oW2+H8=; b=g/bFnMq8lpdz58n2
-	QUXu61M45BptPyWUHvkbJJ1mLqhN0NsaMX5BvneECMeb2ouU4/JexEX+zFpb3jZh
-	JecJ5E6dz0juy45eg1+jkdcbf9jPfg/vCiw7Kf9oKclmU7mPxV3LL1sTqaYmk1iJ
-	c72bIYAQBSUrV0JXlRdxq0zYcXE0oQVZUKeAc1FIHSto0MIeas68lUM95gE3jQh1
-	2V+RQVDAlRJQIhb+EwJgG4GvDvvWopfD+TNFvdD0EzzdbN5HNaTdXZcgW+U2ieho
-	/LDm8kTTK5f4ghDbZWXwbggByptHOELAIuXJTvkr9Qek/MOePJrQiQrvfbXFD6Kn
-	TEcj7Q==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46mbcr806w-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 16 May 2025 01:36:45 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54G1aiSL028496
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 16 May 2025 01:36:44 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 15 May
- 2025 18:36:42 -0700
-Message-ID: <e85a632a-93f7-41a1-975c-e9117c3f7d60@quicinc.com>
-Date: Fri, 16 May 2025 09:36:39 +0800
+	Fri, 16 May 2025 01:41:51 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-442eb5d143eso14662885e9.0
+        for <ath12k@lists.infradead.org>; Thu, 15 May 2025 18:41:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1747359707; x=1747964507; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=bzLU//hazvehJfCvYNnFDyFFPBzU0y3HrBrW+PhSbw4=;
+        b=EVu/jQFbmbjl0yOTjFNoKERKFQJ7RpCUpKsw5edvcEjfVfywNfmPJLg+RnuMWLjyLQ
+         qoe0/RlRpu8okkK0imRvtG9ytwhvKiN1+FCIfAX2aJ5pyjCth1eLfUtt/04IXKqe5aln
+         07C5nEbvjfDO1aBoLQnVv3Hi9FgZDCcPFXKT425dGjRXSRhTCvKh3Xc2BKUyU0q9EHvt
+         GQ6FlTXUB+amPliKVfj+FfvM2FFWaCGIz8SM+SEeBYcTNWeu6dUApqc1/iEa8EBrx0M6
+         rom/aY3rpC+RYcMtPqAm80ys9Dncwjn+Ac7MnmI9VQoDaV6RNJ6P9dTnzBZ4sUZ5IdlL
+         7ipw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747359707; x=1747964507;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=bzLU//hazvehJfCvYNnFDyFFPBzU0y3HrBrW+PhSbw4=;
+        b=Me3WUEue+g3oxci3Hbg4MnqIzgMU9LFRv/ZBWYYy/cGdZ44TIACjU0VehH84tjElS2
+         OQTZXvRDCqbGQP42nU7K0KDCmO3tBgaKO18IF3JYZXhn3u6Pp4+m+SC0EG4K9sAhzE8n
+         kg7hbiQS9YS7p3hqBZpa9hhJ33XZMMs4JUXMOHOzfX8KyaHeCl5ZOIiu2A5gjsZ4gSFf
+         k61APpJOw3A/u1R0TAojrab1M7J0ceDQe0ZbqeUpRNQHxIl7zY0RtgJorRpQHQz1FGEX
+         x6AMMJapLh5XoAX/eLBS3pH24c4Z1b9E7qIZyP2VvWiXHlr2DKFvoqQu5M4CKZkvBxVL
+         19OA==
+X-Gm-Message-State: AOJu0YyVskjbl7gZpLsE+8VN6MBfYE8gM5s46o75b6oA00qSdYUqH9RF
+	mRm0sI7sAVgF4mhmdPICk55C71gOzt4LYM9Q/6jhvsSWe6cqdONMxTgzlnAyyq4euC0mdtRZfrn
+	8KkrRi1JaGtgfbtXzhs/k1oHhhZAZ3p7LBHRpIhY=
+X-Gm-Gg: ASbGncsPHXZSTt2P65efRee61sHv1XrFS/5L97x8DRtbNxKWU7Pr9B7pzmghwwVig7C
+	q6IKAmGF8y+YbFRhncQcQbY8VB40ydcpzx9mqXLruwD0rw9/BdGqjlnWGqkjyn71jqRLvrcam6k
+	AB9cY+ZRWBTi0h2SdSXxf4LB8iEUKzJqyDQA==
+X-Google-Smtp-Source: AGHT+IHaUHcmH8ho7dH6/4gFpiYW/415TByirNBwm1AzHPkSjsjsF14RA8fxgm5gj7S9cF1ZHSWVKg1HoJFgkW3a5cw=
+X-Received: by 2002:a05:600c:348f:b0:43c:fe5e:f03b with SMTP id
+ 5b1f17b1804b1-442fd672537mr14566775e9.30.1747359707192; Thu, 15 May 2025
+ 18:41:47 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: wifi: ath12k: start-up crash with WCN7850 hw2.0 on TI AM69-SK
- board
-To: Francesco Dolcini <francesco@dolcini.it>
-CC: Parth Panchoil <parth105105@gmail.com>,
-        "ath12k@lists.infradead.org"
-	<ath12k@lists.infradead.org>
-References: <86899b2235a59c9134603beebe08f2bb0b244ea0.camel@gmail.com>
- <a15a1557-e5fb-404c-9031-21efbaa7e679@quicinc.com>
- <c710004338102c19e5c05fb03d3256ccbdabd5f7.camel@toradex.com>
- <afe586a1acf458edcfe7cf76f4dcfa8b18ad716a.camel@gmail.com>
- <28b5436a-556b-4b0e-a66c-eec453f4f5b8@quicinc.com>
- <6aa877c8-322d-44eb-a8ca-5d00ffa63d8f@quicinc.com>
- <479bd0f6ef7fbb5f0e0d0d8f71a804002e6b5f6b.camel@gmail.com>
- <6ee296a1-1cb9-4187-9c74-222bea54843b@quicinc.com>
- <20250515142305.GA74294@francesco-nb>
-Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <20250515142305.GA74294@francesco-nb>
+References: <CAKyS+Cbdy25Y2ii+=DLA1EWkvCySYEOmSkBrrcHhy5mXGJ5ksQ@mail.gmail.com>
+ <1747054535.59hkitnoow40o44g@mailapp03.register.com> <CAKyS+CbUeRgwv=cjp7Y_ngP9HMDn1BjmqfKENaPGSAtA6vYpqA@mail.gmail.com>
+ <1747142618.erfw9u56sgw080w8@mailapp03.register.com>
+In-Reply-To: <1747142618.erfw9u56sgw080w8@mailapp03.register.com>
+From: SIDIQ BAKTI <sidiqbakti@gmail.com>
+Date: Fri, 16 May 2025 08:41:36 +0700
+X-Gm-Features: AX0GCFuvZw74z1oLimg5amtCdURbMII7ZkVyYDNQ8xdtgPPzYhobs1l8yTmlVjM
+Message-ID: <CAKyS+Ca5te1MdAAD+zar6zeiFfx1pv=2zHbieSgKZP5LgXwrYw@mail.gmail.com>
+Subject: Re: Missing board ID 4634 in board-2.bin for QCN9274
+To: pgupta@hindutool.com
+Cc: ath12k@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: O2skDLvnN0yeW2xt8pS3zdycN-3YCZnp
-X-Authority-Analysis: v=2.4 cv=Auju3P9P c=1 sm=1 tr=0 ts=682696ad cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=NEAV23lmAAAA:8
- a=wTQQdTw2f6IIqK0SLMAA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
-X-Proofpoint-GUID: O2skDLvnN0yeW2xt8pS3zdycN-3YCZnp
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE2MDAxMiBTYWx0ZWRfX9PlpBI5G1hHW
- 9ot9/7dy0m9fuG+0HZlMasDWunAePsfZg7RRYEEoYzlkQHzSR+DifSnthF1gNq4tHRZkmREt+hP
- qH0/VgP4KnE0T5IfyuML+3OW+jXrl501nEKoMBB1BVdy/WKmyi0rgGvfCd33NhI8IoUAZaQ/vgB
- hj7nqXEJTErRW+PcA7kk8BF/UUPTrFqyp+f8KcXn8bEPrTe7D+ZHjMzvJVVQ3Xw4lR7mrs/bPPE
- KfGMMESuFJEU2yDvxUHM2+OI/Sl1cKXQDNQCDOUDLCM8zH0Yoxjq6c4sNPBaOtT0s0WhNRW+F7g
- Dm7Ba3QAsNSRJnF1elLnojkK5Bnh1BDRngsAVnQYVJ/3eBNc7ivMcLmN+yXiASbJog+DOa+7/RZ
- vV03CmRkB61yy4ZVHM1706z1eS4q8duaw6sBCEAAQJjpp4pCVjIs9FbhXo7ekkqqx4Rc3cop
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-15_11,2025-05-15_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 clxscore=1011 spamscore=0 impostorscore=0 lowpriorityscore=0
- malwarescore=0 mlxscore=0 adultscore=0 priorityscore=1501 mlxlogscore=652
- phishscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505070000
- definitions=main-2505160012
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250515_183651_848998_FF3671C1 
-X-CRM114-Status: GOOD (  15.17  )
+X-CRM114-CacheID: sfid-20250515_184150_171865_7FC630E6 
+X-CRM114-Status: GOOD (  35.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,52 +94,240 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Hi all,
+Just a quick follow-up on the QCN9274 (Compex WLE7002E25) issue I
+posted earlier, where board data fails to load due to missing entries
+in board-2.bin.
+
+I contacted Compex directly to inquire about support or firmware, but
+unfortunately they stated they do not provide technical support for
+modules used outside of commercial or project-based applications, as
+this was purchased for personal/hobby use.
+
+Thanks again for all the work on ath12k!
+
+Best regards,
+Siddiq
+sidiqbakti@gmail.com
 
 
-On 5/15/2025 10:23 PM, Francesco Dolcini wrote:
-> Hello,
-> 
-> On Tue, May 06, 2025 at 01:56:11PM +0800, Baochen Qiang wrote:
->> On 4/30/2025 8:50 PM, Parth Panchoil wrote:
->>> On Wed, 2025-02-19 at 18:18 +0800, Baochen Qiang wrote:
->>>> On 2/5/2025 10:20 AM, Baochen Qiang wrote:
->>>>> On 1/27/2025 10:01 PM, Parth Panchoil wrote:
->>>>>> I am currently debugging the ath12k_pci_enable_ltssm start up
->>>>>> crash/bug
->>>>>> with the mainline kernel on my system and would like to share my
->>>>>> observations so far:
->>>>>>
->>>>>> The ath12k mainline driver gets stuck at this specific line: 
->>>>>> https://github.com/torvalds/linux/blob/9c5968db9e625019a0ee5226c7eebef5519d366a/drivers/net/wireless/ath/ath12k/pci.c#L295
->>>>>> in the ath12k_pci_enable_ltssm  which attempts to read
->>>>>> GCC_GCC_PCIE_HOT_RST, particularly
->>>>>> https://github.com/torvalds/linux/blob/9c5968db9e625019a0ee5226c7eebef5519d366a/drivers/net/wireless/ath/ath12k/pci.c#L1209
-> 
-> ...
-> 
->>>>
->>>> -#define GCC_GCC_PCIE_HOT_RST                   0x1e38338
->>>> +#define GCC_GCC_PCIE_HOT_RST                   0x1e40304
-> 
-> ...
-> 
->>
->> GCC_GCC_PCIE_HOT_RST is wrongly defined, normally this should not cause any critical
->> issue, because IMO the RC is expected to return 0xffffffff when accessing a non-exist
->> register. However in your case kernel crashes, so seems RC does not behave well, maybe not
->> following spec?
->>
->> anyway I will submit a patch to fix it.
-> 
-> Any update on this? I can easily submit a patch myself, just let me
-> know. Because of this bug we have a crash that is preventing us to use
-> the device.
-> 
-
-The patch has been submitted for internal review. Will make it public available once
-approved internally.
-
-> Francesco
-> 
-
+Pada Sel, 13 Mei 2025 pukul 20.23 pgupta@hindutool.com
+<pgupta@hindutool.com> menulis:
+>
+> Wonderful!
+>
+>
+> Prashant
+>
+>
+>
+> On Tue, 13 May 2025 19:27:26 +0700, SIDIQ BAKTI <sidiqbakti@gmail.com> wr=
+ote:
+>
+> >> Hi all
+> >>
+> >> Just wanted to follow up =E2=80=94 I had contacted Compex for support =
+but
+> >> haven=E2=80=99t received a reply yet. Thankfully, Matt shared a modifi=
+ed
+> >> board-2.bin with the proper board ID (4634), and it worked perfectly
+> >> on my setup.
+> >> As I'm based in Indonesia, returning the module to Singapore wasn=E2=
+=80=99t
+> >> really a feasible option =E2=80=94 so this fix was a huge help.
+> >>
+> >> Wireless is now fully functional using:
+> >> - board-2.bin from Matt
+> >> Firmware from:
+> >> - WLAN.WBE.1.3.1-00217-QCAHKSWPL_SILICONZ-1
+> >> (https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/blob/ma=
+in/QCN9274/hw2.0/1.3.1/WLAN.WBE.1.3.1-00217-QCAHKSWPL_SILICONZ-1/firmware-2=
+.bin)
+> >>
+> >> System log shows the card initializing correctly, and both 2.4GHz and
+> >> 5GHz radios are operational.
+> >>
+> >> [ 0.562172] pcieport 0002:20:00.0: AER: enabled with IRQ 32
+> >> [ 6.823914] ath12k_pci 0002:21:00.0: BAR 0: assigned [mem
+> >> 0xf0200000-0xf03fffff 64bit]
+> >> [ 6.824656] ath12k_pci 0002:21:00.0: BAR 0: error updating
+> >> (0xf0200004 !=3D 0xffffffff)
+> >> [ 6.825402] ath12k_pci 0002:21:00.0: enabling device (0000 -> 0002)
+> >> [ 6.826550] ath12k_pci 0002:21:00.0: MSI vectors: 16
+> >> [ 6.827017] ath12k_pci 0002:21:00.0: Hardware name: qcn9274 hw2.0
+> >> [ 7.667959] ath12k_pci 0002:21:00.0: qmi dma allocation failed
+> >> (29360128 B type 1), will try later with small size
+> >> [ 7.686944] ath12k_pci 0002:21:00.0: memory type 10 not supported
+> >> [ 7.693387] ath12k_pci 0002:21:00.0: chip_id 0x0 chip_family 0xb
+> >> board_id 0x121a soc_id 0x401a2200
+> >> [ 7.694215] ath12k_pci 0002:21:00.0: fw_version 0x131800d9
+> >> fw_build_timestamp 2025-03-16 15:58 fw_build_id
+> >> QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.3.1-00217-QCAHKSWPL_SILICONZ-1
+> >> [ 10.663409] ath12k_pci 0002:21:00.0: Invalid module id 2
+> >> [ 10.664037] ath12k_pci 0002:21:00.0: failed to parse tlv -22
+> >> root@LoliskWrt:~# lspci
+> >> 0002:20:00.0 PCI bridge: Rockchip Electronics Co., Ltd RK3568 Remote
+> >> Signal Processor (rev 01)
+> >> 0002:21:00.0 Network controller: Qualcomm Technologies, Inc
+> >> QCN62xx/92xx Wireless Network Adapter (rev 01)
+> >> phy#2
+> >> Interface phy2-ap0
+> >> .......
+> >> ssid ImmortalWrt_5G
+> >> type AP
+> >> channel 149 (5745 MHz), width: 80 MHz, center1: 5775 MHz
+> >> txpower 10.00 dBm
+> >> .......
+> >> phy#1
+> >> Interface phy1-ap0
+> >> .......
+> >> ssid ImmortalWrt
+> >> type AP
+> >> channel 1 (2412 MHz), width: 20 MHz, center1: 2412 MHz
+> >> txpower 10.00 dBm
+> >> .......
+> >> root@LoliskWrt:~# iw dev phy2-ap0 station dump
+> >> Station cc:47:40:xx:xx:xx (on phy2-ap0)
+> >> root@LoliskWrt:~# iw dev phy1-ap0 station dump
+> >> Station 4a:3f:0b:xx:xx:xx (on phy1-ap0)
+> >>
+> >>
+> >> Thanks again to everyone involved, and especially to Matt for
+> >> providing the working board file!
+> >>
+> >> Best regards,
+> >> Siddiq
+> >>
+> >>
+> >>
+> >>
+> >> Pada Sen, 12 Mei 2025 pukul 19.55 pgupta@hindutool.com
+> >> menulis:
+> >> >
+> >> > You may need to contact Compex. I have three boards each are single =
+band (6, 5, 2.4) in order for linux to recognize, the required re-programmi=
+ng. There is also a software solution with a new .bin file they have, but I=
+ opted for hardcoding and sent the modules back to them. I would reach our =
+to their support.
+> >> >
+> >> >
+> >> > Hope this helps someone,
+> >> >
+> >> > Prashant
+> >> >
+> >> >
+> >> >
+> >> > On Mon, 12 May 2025 17:29:20 +0700, SIDIQ BAKTI wrote:
+> >> >
+> >> > >> Hi ath12k devs,
+> >> > >>
+> >> > >> I'm having an issue with chip ID 4634 which is currently not list=
+ed in
+> >> > >> board-2.bin.
+> >> > >>
+> >> > >> I recently purchased a WLE7002E25 board from Complex, which uses =
+the
+> >> > >> QCN9274 chip in a DBDC configuration with a diplexer. I initially
+> >> > >> assumed the chip ID would be the same as other QCN9274 variants, =
+but
+> >> > >> it turns out mine uses a higher board ID (4634), whereas the late=
+st
+> >> > >> board-2.bin only includes IDs up to 4121.
+> >> > >>
+> >> > >> This setup is mainly for hobby purposes. Here are the specs of my=
+ platform:
+> >> > >>
+> >> > >> **Board**: Photonicat (Ariaboard)
+> >> > >> - Rockchip RK3568
+> >> > >> - 4GB LPDDR4 / 64GB eMMC
+> >> > >> - Renesas RA2E1 Cortex-M23 ultra-low power MCU
+> >> > >> - Dual M.2 (B+E Key) PCIe via converter to mPCIe
+> >> > >>
+> >> > >> **OS:**
+> >> > >> - ImmortalWrt SNAPSHOT r33919-09241815a1
+> >> > >> - Kernel: 6.6.87
+> >> > >> - Unpatched, using latest firmware from [CodeLinaro ath12k-firmwa=
+re
+> >> > >> repo](https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware=
+)
+> >> > >>
+> >> > >> in the dmesg logs
+> >> > >>
+> >> > >> root@LoliskWrt:~# uname -a
+> >> > >> Linux LoliskWrt 6.6.87 #0 SMP Thu May 1 14:33:10 2025 aarch64 GNU=
+/Linux
+> >> > >> root@LoliskWrt:~# lspci -mnn
+> >> > >> 0002:20:00.0 "PCI bridge [0604]" "Rockchip Electronics Co., Ltd
+> >> > >> [1d87]" "RK3568 Remote Signal Processor [3566]" -r01 -p00 "" ""
+> >> > >> 0002:21:00.0 "Network controller [0280]" "Qualcomm Technologies, =
+Inc
+> >> > >> [17cb]" "QCN62xx/92xx Wireless Network Adapter [1109]" -r01 -p00
+> >> > >> "Qualcomm Technologies, Inc [17cb]" "QCN62xx/92xx Wireless Networ=
+k
+> >> > >> Adapter [1109]"
+> >> > >> root@LoliskWrt:~# find /lib/firmware/ath12k/ -type f | xargs md5s=
+um
+> >> > >> 25e7a02febd6d419594d074f8d5d6788 /lib/firmware/ath12k/QCN9274/hw2=
+.0/board-2.bin
+> >> > >> 3616c32d0e0b8c131b3e0e42e030d82d
+> >> > >> /lib/firmware/ath12k/QCN9274/hw2.0/firmware-2.bin
+> >> > >> 08e77df7b9ab5e4c78bfee1c9f025672 /lib/firmware/ath12k/QCN9274/hw2=
+.0/Notice.txt
+> >> > >> root@LoliskWrt:~# dmesg | grep ath12k
+> >> > >> [ 6.822644] ath12k_pci 0002:21:00.0: BAR 0: assigned [mem
+> >> > >> 0xf0200000-0xf03fffff 64bit]
+> >> > >> [ 6.824009] ath12k_pci 0002:21:00.0: MSI vectors: 16
+> >> > >> [ 6.824482] ath12k_pci 0002:21:00.0: Hardware name: qcn9274 hw2.0
+> >> > >> [ 7.638688] ath12k_pci 0002:21:00.0: qmi dma allocation failed
+> >> > >> (29360128 B type 1), will try later with small size
+> >> > >> [ 7.659500] ath12k_pci 0002:21:00.0: memory type 10 not supported
+> >> > >> [ 7.665751] ath12k_pci 0002:21:00.0: chip_id 0x0 chip_family 0xb
+> >> > >> board_id 0x121a soc_id 0x401a2200
+> >> > >> [ 7.666595] ath12k_pci 0002:21:00.0: fw_version 0x141580c7
+> >> > >> fw_build_timestamp 2024-11-11 11:03 fw_build_id
+> >> > >> QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ=
+-1
+> >> > >> [ 7.697939] ath12k_pci 0002:21:00.0: failed to fetch board data f=
+or
+> >> > >> bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D4634 from
+> >> > >> ath12k/QCN9274/hw2.0/board-2.bin
+> >> > >> [ 7.699116] ath12k_pci 0002:21:00.0: failed to fetch board data f=
+or
+> >> > >> bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D255 from
+> >> > >> ath12k/QCN9274/hw2.0/board-2.bin
+> >> > >> [ 7.700276] ath12k_pci 0002:21:00.0: failed to fetch board.bin fr=
+om
+> >> > >> QCN9274/hw2.0
+> >> > >> [ 7.700940] ath12k_pci 0002:21:00.0: qmi failed to load bdf:
+> >> > >> [ 7.701442] ath12k_pci 0002:21:00.0: qmi failed to load board dat=
+a file:-12
+> >> > >>
+> >> > >>
+> >> > >> forget the QMI dma, can skip =F0=9F=98=85
+> >> > >>
+> >> > >> i already tested using this latest firmware
+> >> > >> https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware
+> >> > >> but still can't find the ID,
+> >> > >> I tried modifying `board-2.bin` on `board.json` by mapping 4634 t=
+o
+> >> > >> 4121 (closest match) just to test:
+> >> > >>
+> >> > >> {
+> >> > >> "names": [ "bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D4634" ],
+> >> > >> "data": "bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D4121.bin"
+> >> > >> }
+> >> > >>
+> >> > >> This made the device show up in iw dev, but instead of showing 2.=
+4GHz
+> >> > >> and 5GHz, it shows two 5GHz interfaces. So clearly it's the wrong
+> >> > >> board file.
+> >> > >>
+> >> > >> Would it be possible to add support for board ID 4634 to board-2.=
+bin?
+> >> > >>
+> >> > >> Happy to provide further logs or test patches if needed.
+> >> > >>
+> >> > >> Thanks in advance =F0=9F=99=8F
+> >> > >> Regards,
+> >> > >> Siddiq
 
