@@ -4,82 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 969F3C2D0CD
-	for <ath12k@archiver.kernel.org>; Fri, 16 May 2025 01:41:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28373C2D0CD
+	for <ath12k@archiver.kernel.org>; Fri, 16 May 2025 03:08:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bzLU//hazvehJfCvYNnFDyFFPBzU0y3HrBrW+PhSbw4=; b=DFv49K5+kU7YAMwew0kOv0Bu15
-	OkwEH+BWQl1cEK56mPUoDVZ/ToWRAYGv1iG25Z0/ws0ODIm/HP7dXujkP/id77KoqWQZem5DEyvPf
-	2Q95xBUAZdoXWCttf5KNBtKDo1gKwpqrlQgZhrszJ0qrldxDVcAAYREo43LL0I0zg19kPF4ld+ioV
-	wxJYMEYia4HdPpuSSuoOtP06sg0eHxDuczei1mB96OAZ5ifcH2seliMLnzEHbLooRbEmzN8O7C+IS
-	0QMMq8R27+emi7805VJJSuY1SFTGKVabvoojiSrKFHzk9FHXBOZKAvGDolT3WpgVRpX3wyvJ9EzIL
-	hV0XJ5SA==;
+	bh=VxdUjkoWg0DojGWA+PPfagOIjqUo9Dx7feFUjjQEQoc=; b=g6R6xeE+XWr6uloqtgud3/lyjT
+	O62P2Ak7p4I0fst4ogWYPLF/TStvV8Ns203bQl0CfrzBxNKTiV1UeEuwa2fwEb2TyXks8RvT3fh8M
+	d1yo1i4EejBWbx22abwI5cUnZhTpItznVGiHcQN7uvv0xaotyPkt+OGE3Cz9PHXoyTSLTrNhtN+hJ
+	3zAA1zbZgeYRQbHzNNYnGaEyfJPKvcyREFgIkbKJbCV2Jvjgt2u3V1pB5F1GlyLmLuVHtYYzkTh8n
+	pVcKwz9iPBo98tGWmVIlfRo4U+2OXsHdTrTcGZSxW5e79x5mK99eQzRzTMk4BP0EUCGprSozvOuSz
+	uJASjXGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFk5B-00000002Dwd-119T;
-	Fri, 16 May 2025 01:41:53 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	id 1uFlQa-00000002LS8-3WIk;
+	Fri, 16 May 2025 03:08:04 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFk58-00000002DvZ-0Y2M
+	id 1uFlQZ-00000002LRD-1nsi
+	for ath12k@bombadil.infradead.org;
+	Fri, 16 May 2025 03:08:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=VxdUjkoWg0DojGWA+PPfagOIjqUo9Dx7feFUjjQEQoc=; b=g3eMwht5msLKthW8rmt7pUC9yc
+	j07H54YdzAgEjIpH+kCDI6AYBwMpMKetAEacCZ11++9YbuHFuAho/CW1ywKuAkOHwuL5UsHy60wBl
+	2LWrVKi5n5vUxlu4NWdHvwFwcGE7R+LHeppJThJ8+q845rCM7sUR16hZdJuA3Z2yMxTC5va+ZE9j6
+	QN5rN+/n1evgdbhD+mJ3WKYP5+26tTUDFI+1cwN8h8GfImI4P74Z8eM8RWy38+mEnydygnnbtVLR7
+	/Ih/v+l4B1umjX8f7cs8ZLtc2EFLlb4afOG2CW8zr0tX7v36M94Gwvuva04Pr9uT0+XLjWtoUAClv
+	wTkNQO+Q==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by desiato.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
+	id 1uFlPL-000000001Wr-1mZd
 	for ath12k@lists.infradead.org;
-	Fri, 16 May 2025 01:41:51 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-442eb5d143eso14662885e9.0
-        for <ath12k@lists.infradead.org>; Thu, 15 May 2025 18:41:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1747359707; x=1747964507; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=bzLU//hazvehJfCvYNnFDyFFPBzU0y3HrBrW+PhSbw4=;
-        b=EVu/jQFbmbjl0yOTjFNoKERKFQJ7RpCUpKsw5edvcEjfVfywNfmPJLg+RnuMWLjyLQ
-         qoe0/RlRpu8okkK0imRvtG9ytwhvKiN1+FCIfAX2aJ5pyjCth1eLfUtt/04IXKqe5aln
-         07C5nEbvjfDO1aBoLQnVv3Hi9FgZDCcPFXKT425dGjRXSRhTCvKh3Xc2BKUyU0q9EHvt
-         GQ6FlTXUB+amPliKVfj+FfvM2FFWaCGIz8SM+SEeBYcTNWeu6dUApqc1/iEa8EBrx0M6
-         rom/aY3rpC+RYcMtPqAm80ys9Dncwjn+Ac7MnmI9VQoDaV6RNJ6P9dTnzBZ4sUZ5IdlL
-         7ipw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747359707; x=1747964507;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=bzLU//hazvehJfCvYNnFDyFFPBzU0y3HrBrW+PhSbw4=;
-        b=Me3WUEue+g3oxci3Hbg4MnqIzgMU9LFRv/ZBWYYy/cGdZ44TIACjU0VehH84tjElS2
-         OQTZXvRDCqbGQP42nU7K0KDCmO3tBgaKO18IF3JYZXhn3u6Pp4+m+SC0EG4K9sAhzE8n
-         kg7hbiQS9YS7p3hqBZpa9hhJ33XZMMs4JUXMOHOzfX8KyaHeCl5ZOIiu2A5gjsZ4gSFf
-         k61APpJOw3A/u1R0TAojrab1M7J0ceDQe0ZbqeUpRNQHxIl7zY0RtgJorRpQHQz1FGEX
-         x6AMMJapLh5XoAX/eLBS3pH24c4Z1b9E7qIZyP2VvWiXHlr2DKFvoqQu5M4CKZkvBxVL
-         19OA==
-X-Gm-Message-State: AOJu0YyVskjbl7gZpLsE+8VN6MBfYE8gM5s46o75b6oA00qSdYUqH9RF
-	mRm0sI7sAVgF4mhmdPICk55C71gOzt4LYM9Q/6jhvsSWe6cqdONMxTgzlnAyyq4euC0mdtRZfrn
-	8KkrRi1JaGtgfbtXzhs/k1oHhhZAZ3p7LBHRpIhY=
-X-Gm-Gg: ASbGncsPHXZSTt2P65efRee61sHv1XrFS/5L97x8DRtbNxKWU7Pr9B7pzmghwwVig7C
-	q6IKAmGF8y+YbFRhncQcQbY8VB40ydcpzx9mqXLruwD0rw9/BdGqjlnWGqkjyn71jqRLvrcam6k
-	AB9cY+ZRWBTi0h2SdSXxf4LB8iEUKzJqyDQA==
-X-Google-Smtp-Source: AGHT+IHaUHcmH8ho7dH6/4gFpiYW/415TByirNBwm1AzHPkSjsjsF14RA8fxgm5gj7S9cF1ZHSWVKg1HoJFgkW3a5cw=
-X-Received: by 2002:a05:600c:348f:b0:43c:fe5e:f03b with SMTP id
- 5b1f17b1804b1-442fd672537mr14566775e9.30.1747359707192; Thu, 15 May 2025
- 18:41:47 -0700 (PDT)
+	Fri, 16 May 2025 03:08:01 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54G35XaZ014970;
+	Fri, 16 May 2025 03:06:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	VxdUjkoWg0DojGWA+PPfagOIjqUo9Dx7feFUjjQEQoc=; b=j8pZYseNdfVMtNG1
+	bU0tA8hI9GERqYZwwaNFFqpAEO5hsroi6SgCml5fkmhM4a04y71+oVh4phYi1T4C
+	hevrFdAFnmnyYjjVXePO5pS6kfl1d5w3nczLp1k2lmav0yA4PjAF+qpPIZdLCw2F
+	Fp4fnJoDG/QNYdNBWoyb0GFWRFBRUPX2jhdI26hsGQM8OUbpDDgjKBgmNW6oEEEE
+	Idaze6F+ic2viPRBQ9/QVtOlvXkoe9j8EHjTfuU9DwF78yvSHpykVtwkDRxWEXZk
+	2nGg6j/bzYQuG+VXPHrs6BlPGnCT0gOwHOeA+YfLP8G0y4CHutf8CIyX1qoxi4R8
+	nbxLVg==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46mbcpgg6h-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 16 May 2025 03:06:37 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54G36akB014343
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 16 May 2025 03:06:36 GMT
+Received: from [10.133.33.17] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 15 May
+ 2025 20:06:34 -0700
+Message-ID: <c7c0dfd4-bda9-4a63-84f9-a47b716c6ddd@quicinc.com>
+Date: Fri, 16 May 2025 11:06:32 +0800
 MIME-Version: 1.0
-References: <CAKyS+Cbdy25Y2ii+=DLA1EWkvCySYEOmSkBrrcHhy5mXGJ5ksQ@mail.gmail.com>
- <1747054535.59hkitnoow40o44g@mailapp03.register.com> <CAKyS+CbUeRgwv=cjp7Y_ngP9HMDn1BjmqfKENaPGSAtA6vYpqA@mail.gmail.com>
- <1747142618.erfw9u56sgw080w8@mailapp03.register.com>
-In-Reply-To: <1747142618.erfw9u56sgw080w8@mailapp03.register.com>
-From: SIDIQ BAKTI <sidiqbakti@gmail.com>
-Date: Fri, 16 May 2025 08:41:36 +0700
-X-Gm-Features: AX0GCFuvZw74z1oLimg5amtCdURbMII7ZkVyYDNQ8xdtgPPzYhobs1l8yTmlVjM
-Message-ID: <CAKyS+Ca5te1MdAAD+zar6zeiFfx1pv=2zHbieSgKZP5LgXwrYw@mail.gmail.com>
-Subject: Re: Missing board ID 4634 in board-2.bin for QCN9274
-To: pgupta@hindutool.com
-Cc: ath12k@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+User-Agent: Mozilla Thunderbird
+Subject: Re: ath12k: No 6GHz Wireless found
+To: Walt Holman <waltholman09@gmail.com>
+CC: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        <linux-wireless@vger.kernel.org>,
+        "ath12k@lists.infradead.org"
+	<ath12k@lists.infradead.org>
+References: <CAMb39_ngQs8=FUML5QXMh2RmEZBZ2NwUHefhGoTkGtHat+KWJA@mail.gmail.com>
+ <ef81db9e-99cb-4802-b17f-94eb623a8b32@quicinc.com>
+ <CAMb39_m+4dNBDbkZmn-rDA7T+u84y-dx1jSfmPNWnse=R1=gCw@mail.gmail.com>
+ <18788f02-e374-4aa6-ac4a-fd53bc93754c@quicinc.com>
+ <CAMb39_=G_TEL1pbeF_PAZLQh-JOFcncSfqZChPmEj63NjsEOLA@mail.gmail.com>
+ <16ccbe02-b315-40d1-8600-232b592d4dd6@quicinc.com>
+ <CAMb39_n4tyrzS=-j0L+ekJVer=KiZyDYFhMqrrcpr9py_itU9w@mail.gmail.com>
+ <0933d8d6-5b72-40df-95f8-69f6fbbdfde7@oss.qualcomm.com>
+ <CAMb39_nHO_TbHPQawdLVY8nt3yt4wDuEHyEuzMa-p5Ab1n94sA@mail.gmail.com>
+ <CAMb39_nQ-uyKAqCz1HEUDt5qjszbhzf3oikVcvzHcVwt4_qt=A@mail.gmail.com>
+ <CAMb39_n89hBL_GvfXb7Jw9h5-h-+Qg-3GyqvpahL7MT5ewpvJw@mail.gmail.com>
+ <CAMb39_=YPYg0q7Lf0sMgTx5QwKOqcyJrZR7kTspyXEDa6qz9Bw@mail.gmail.com>
+ <e9da4ad5-52cb-416d-991a-259140469e2c@oss.qualcomm.com>
+ <87774003-d0a5-4408-b710-20bd3c194cec@quicinc.com>
+ <CAMb39_ntK9Zv3pOuMSza5hRfs_KZBhya=GAPnpBWjN2wZDst9w@mail.gmail.com>
+Content-Language: en-US
+From: Kang Yang <quic_kangyang@quicinc.com>
+In-Reply-To: <CAMb39_ntK9Zv3pOuMSza5hRfs_KZBhya=GAPnpBWjN2wZDst9w@mail.gmail.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: VWlItNhB3Yf7x--xA51kiHoVKQgbwFS4
+X-Proofpoint-ORIG-GUID: VWlItNhB3Yf7x--xA51kiHoVKQgbwFS4
+X-Authority-Analysis: v=2.4 cv=cO7gskeN c=1 sm=1 tr=0 ts=6826abbd cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8
+ a=EUspDBNiAAAA:8 a=COk6AnOGAAAA:8 a=pGLkceISAAAA:8 a=shOuBkENQKgmeFDWlrkA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE2MDAyNiBTYWx0ZWRfXxOdszGzX2a2s
+ TBDPztnTiFPgcvuDfR/nbKvF3pEyHNYujmvkJEAtnQd9P704SDpJ0VILEgF3SEHminHO0ECP3Jn
+ UcTwGYlo1sLlnm7JIpXhyL2JI5uRbPJixOU0r7khfIJ7CXjSb9HpyFhgavmVYr3H0WbpMrLGMWH
+ HbBpikSvwpn5A4PbjH4Zf11/VtUNza7EvYUeCUAr3EviBFSw+QsfQFkpjKRcj4WZ2+zEH6qj1ot
+ gfScq4eZJSdm+iM28yYYufzRSRCDspgndMQCVuMEvS1hNCGHhnnm8E2Ho19A7pG4UruK08Z8BKI
+ PCscEfYpTdShT+9RzMTIlV+M5lCfSzbFD50uOIp3LvoXLNAJByOEX5HVTYwxZ34QOBr4DQF8S7s
+ inJsnqmbhLg82/2luAEzxckXULgecyTGFFCnZmxxIfVCgOK7JPC3R8hwIWTMyscor+zETCI0
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-16_01,2025-05-15_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxlogscore=999 spamscore=0 suspectscore=0 phishscore=0 lowpriorityscore=0
+ adultscore=0 bulkscore=0 malwarescore=0 impostorscore=0 clxscore=1015
+ priorityscore=1501 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505070000
+ definitions=main-2505160026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250515_184150_171865_7FC630E6 
-X-CRM114-Status: GOOD (  35.62  )
+X-CRM114-CacheID: sfid-20250516_040736_216563_CA3BCFD0 
+X-CRM114-Status: GOOD (  23.26  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,240 +142,367 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi all,
-Just a quick follow-up on the QCN9274 (Compex WLE7002E25) issue I
-posted earlier, where board data fails to load due to missing entries
-in board-2.bin.
-
-I contacted Compex directly to inquire about support or firmware, but
-unfortunately they stated they do not provide technical support for
-modules used outside of commercial or project-based applications, as
-this was purchased for personal/hobby use.
-
-Thanks again for all the work on ath12k!
-
-Best regards,
-Siddiq
-sidiqbakti@gmail.com
 
 
-Pada Sel, 13 Mei 2025 pukul 20.23 pgupta@hindutool.com
-<pgupta@hindutool.com> menulis:
->
-> Wonderful!
->
->
-> Prashant
->
->
->
-> On Tue, 13 May 2025 19:27:26 +0700, SIDIQ BAKTI <sidiqbakti@gmail.com> wr=
-ote:
->
-> >> Hi all
-> >>
-> >> Just wanted to follow up =E2=80=94 I had contacted Compex for support =
-but
-> >> haven=E2=80=99t received a reply yet. Thankfully, Matt shared a modifi=
-ed
-> >> board-2.bin with the proper board ID (4634), and it worked perfectly
-> >> on my setup.
-> >> As I'm based in Indonesia, returning the module to Singapore wasn=E2=
-=80=99t
-> >> really a feasible option =E2=80=94 so this fix was a huge help.
-> >>
-> >> Wireless is now fully functional using:
-> >> - board-2.bin from Matt
-> >> Firmware from:
-> >> - WLAN.WBE.1.3.1-00217-QCAHKSWPL_SILICONZ-1
-> >> (https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/blob/ma=
-in/QCN9274/hw2.0/1.3.1/WLAN.WBE.1.3.1-00217-QCAHKSWPL_SILICONZ-1/firmware-2=
-.bin)
-> >>
-> >> System log shows the card initializing correctly, and both 2.4GHz and
-> >> 5GHz radios are operational.
-> >>
-> >> [ 0.562172] pcieport 0002:20:00.0: AER: enabled with IRQ 32
-> >> [ 6.823914] ath12k_pci 0002:21:00.0: BAR 0: assigned [mem
-> >> 0xf0200000-0xf03fffff 64bit]
-> >> [ 6.824656] ath12k_pci 0002:21:00.0: BAR 0: error updating
-> >> (0xf0200004 !=3D 0xffffffff)
-> >> [ 6.825402] ath12k_pci 0002:21:00.0: enabling device (0000 -> 0002)
-> >> [ 6.826550] ath12k_pci 0002:21:00.0: MSI vectors: 16
-> >> [ 6.827017] ath12k_pci 0002:21:00.0: Hardware name: qcn9274 hw2.0
-> >> [ 7.667959] ath12k_pci 0002:21:00.0: qmi dma allocation failed
-> >> (29360128 B type 1), will try later with small size
-> >> [ 7.686944] ath12k_pci 0002:21:00.0: memory type 10 not supported
-> >> [ 7.693387] ath12k_pci 0002:21:00.0: chip_id 0x0 chip_family 0xb
-> >> board_id 0x121a soc_id 0x401a2200
-> >> [ 7.694215] ath12k_pci 0002:21:00.0: fw_version 0x131800d9
-> >> fw_build_timestamp 2025-03-16 15:58 fw_build_id
-> >> QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.3.1-00217-QCAHKSWPL_SILICONZ-1
-> >> [ 10.663409] ath12k_pci 0002:21:00.0: Invalid module id 2
-> >> [ 10.664037] ath12k_pci 0002:21:00.0: failed to parse tlv -22
-> >> root@LoliskWrt:~# lspci
-> >> 0002:20:00.0 PCI bridge: Rockchip Electronics Co., Ltd RK3568 Remote
-> >> Signal Processor (rev 01)
-> >> 0002:21:00.0 Network controller: Qualcomm Technologies, Inc
-> >> QCN62xx/92xx Wireless Network Adapter (rev 01)
-> >> phy#2
-> >> Interface phy2-ap0
-> >> .......
-> >> ssid ImmortalWrt_5G
-> >> type AP
-> >> channel 149 (5745 MHz), width: 80 MHz, center1: 5775 MHz
-> >> txpower 10.00 dBm
-> >> .......
-> >> phy#1
-> >> Interface phy1-ap0
-> >> .......
-> >> ssid ImmortalWrt
-> >> type AP
-> >> channel 1 (2412 MHz), width: 20 MHz, center1: 2412 MHz
-> >> txpower 10.00 dBm
-> >> .......
-> >> root@LoliskWrt:~# iw dev phy2-ap0 station dump
-> >> Station cc:47:40:xx:xx:xx (on phy2-ap0)
-> >> root@LoliskWrt:~# iw dev phy1-ap0 station dump
-> >> Station 4a:3f:0b:xx:xx:xx (on phy1-ap0)
-> >>
-> >>
-> >> Thanks again to everyone involved, and especially to Matt for
-> >> providing the working board file!
-> >>
-> >> Best regards,
-> >> Siddiq
-> >>
-> >>
-> >>
-> >>
-> >> Pada Sen, 12 Mei 2025 pukul 19.55 pgupta@hindutool.com
-> >> menulis:
-> >> >
-> >> > You may need to contact Compex. I have three boards each are single =
-band (6, 5, 2.4) in order for linux to recognize, the required re-programmi=
-ng. There is also a software solution with a new .bin file they have, but I=
- opted for hardcoding and sent the modules back to them. I would reach our =
-to their support.
-> >> >
-> >> >
-> >> > Hope this helps someone,
-> >> >
-> >> > Prashant
-> >> >
-> >> >
-> >> >
-> >> > On Mon, 12 May 2025 17:29:20 +0700, SIDIQ BAKTI wrote:
-> >> >
-> >> > >> Hi ath12k devs,
-> >> > >>
-> >> > >> I'm having an issue with chip ID 4634 which is currently not list=
-ed in
-> >> > >> board-2.bin.
-> >> > >>
-> >> > >> I recently purchased a WLE7002E25 board from Complex, which uses =
-the
-> >> > >> QCN9274 chip in a DBDC configuration with a diplexer. I initially
-> >> > >> assumed the chip ID would be the same as other QCN9274 variants, =
-but
-> >> > >> it turns out mine uses a higher board ID (4634), whereas the late=
-st
-> >> > >> board-2.bin only includes IDs up to 4121.
-> >> > >>
-> >> > >> This setup is mainly for hobby purposes. Here are the specs of my=
- platform:
-> >> > >>
-> >> > >> **Board**: Photonicat (Ariaboard)
-> >> > >> - Rockchip RK3568
-> >> > >> - 4GB LPDDR4 / 64GB eMMC
-> >> > >> - Renesas RA2E1 Cortex-M23 ultra-low power MCU
-> >> > >> - Dual M.2 (B+E Key) PCIe via converter to mPCIe
-> >> > >>
-> >> > >> **OS:**
-> >> > >> - ImmortalWrt SNAPSHOT r33919-09241815a1
-> >> > >> - Kernel: 6.6.87
-> >> > >> - Unpatched, using latest firmware from [CodeLinaro ath12k-firmwa=
-re
-> >> > >> repo](https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware=
-)
-> >> > >>
-> >> > >> in the dmesg logs
-> >> > >>
-> >> > >> root@LoliskWrt:~# uname -a
-> >> > >> Linux LoliskWrt 6.6.87 #0 SMP Thu May 1 14:33:10 2025 aarch64 GNU=
-/Linux
-> >> > >> root@LoliskWrt:~# lspci -mnn
-> >> > >> 0002:20:00.0 "PCI bridge [0604]" "Rockchip Electronics Co., Ltd
-> >> > >> [1d87]" "RK3568 Remote Signal Processor [3566]" -r01 -p00 "" ""
-> >> > >> 0002:21:00.0 "Network controller [0280]" "Qualcomm Technologies, =
-Inc
-> >> > >> [17cb]" "QCN62xx/92xx Wireless Network Adapter [1109]" -r01 -p00
-> >> > >> "Qualcomm Technologies, Inc [17cb]" "QCN62xx/92xx Wireless Networ=
-k
-> >> > >> Adapter [1109]"
-> >> > >> root@LoliskWrt:~# find /lib/firmware/ath12k/ -type f | xargs md5s=
-um
-> >> > >> 25e7a02febd6d419594d074f8d5d6788 /lib/firmware/ath12k/QCN9274/hw2=
-.0/board-2.bin
-> >> > >> 3616c32d0e0b8c131b3e0e42e030d82d
-> >> > >> /lib/firmware/ath12k/QCN9274/hw2.0/firmware-2.bin
-> >> > >> 08e77df7b9ab5e4c78bfee1c9f025672 /lib/firmware/ath12k/QCN9274/hw2=
-.0/Notice.txt
-> >> > >> root@LoliskWrt:~# dmesg | grep ath12k
-> >> > >> [ 6.822644] ath12k_pci 0002:21:00.0: BAR 0: assigned [mem
-> >> > >> 0xf0200000-0xf03fffff 64bit]
-> >> > >> [ 6.824009] ath12k_pci 0002:21:00.0: MSI vectors: 16
-> >> > >> [ 6.824482] ath12k_pci 0002:21:00.0: Hardware name: qcn9274 hw2.0
-> >> > >> [ 7.638688] ath12k_pci 0002:21:00.0: qmi dma allocation failed
-> >> > >> (29360128 B type 1), will try later with small size
-> >> > >> [ 7.659500] ath12k_pci 0002:21:00.0: memory type 10 not supported
-> >> > >> [ 7.665751] ath12k_pci 0002:21:00.0: chip_id 0x0 chip_family 0xb
-> >> > >> board_id 0x121a soc_id 0x401a2200
-> >> > >> [ 7.666595] ath12k_pci 0002:21:00.0: fw_version 0x141580c7
-> >> > >> fw_build_timestamp 2024-11-11 11:03 fw_build_id
-> >> > >> QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ=
--1
-> >> > >> [ 7.697939] ath12k_pci 0002:21:00.0: failed to fetch board data f=
-or
-> >> > >> bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D4634 from
-> >> > >> ath12k/QCN9274/hw2.0/board-2.bin
-> >> > >> [ 7.699116] ath12k_pci 0002:21:00.0: failed to fetch board data f=
-or
-> >> > >> bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D255 from
-> >> > >> ath12k/QCN9274/hw2.0/board-2.bin
-> >> > >> [ 7.700276] ath12k_pci 0002:21:00.0: failed to fetch board.bin fr=
-om
-> >> > >> QCN9274/hw2.0
-> >> > >> [ 7.700940] ath12k_pci 0002:21:00.0: qmi failed to load bdf:
-> >> > >> [ 7.701442] ath12k_pci 0002:21:00.0: qmi failed to load board dat=
-a file:-12
-> >> > >>
-> >> > >>
-> >> > >> forget the QMI dma, can skip =F0=9F=98=85
-> >> > >>
-> >> > >> i already tested using this latest firmware
-> >> > >> https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware
-> >> > >> but still can't find the ID,
-> >> > >> I tried modifying `board-2.bin` on `board.json` by mapping 4634 t=
-o
-> >> > >> 4121 (closest match) just to test:
-> >> > >>
-> >> > >> {
-> >> > >> "names": [ "bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D4634" ],
-> >> > >> "data": "bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D4121.bin"
-> >> > >> }
-> >> > >>
-> >> > >> This made the device show up in iw dev, but instead of showing 2.=
-4GHz
-> >> > >> and 5GHz, it shows two 5GHz interfaces. So clearly it's the wrong
-> >> > >> board file.
-> >> > >>
-> >> > >> Would it be possible to add support for board ID 4634 to board-2.=
-bin?
-> >> > >>
-> >> > >> Happy to provide further logs or test patches if needed.
-> >> > >>
-> >> > >> Thanks in advance =F0=9F=99=8F
-> >> > >> Regards,
-> >> > >> Siddiq
+On 5/16/2025 1:47 AM, Walt Holman wrote:
+> On Thu, May 15, 2025 at 4:22 AM Kang Yang <quic_kangyang@quicinc.com> wrote:
+>>
+>>
+>>
+>> On 5/15/2025 4:12 PM, Kang Yang wrote:
+>>>
+>>> On 4/20/2025 11:18 PM, Walt Holman wrote:
+>>>> On Fri, Apr 18, 2025 at 4:18 PM Walt Holman <waltholman09@gmail.com>
+>>>> wrote:
+>>>>> On Tue, Apr 15, 2025 at 4:23 PM Walt Holman <waltholman09@gmail.com>
+>>>>> wrote:
+>>>>>> On Thu, Apr 10, 2025 at 10:32 AM Walt Holman
+>>>>>> <waltholman09@gmail.com> wrote:
+>>>>>>> On Thu, Apr 10, 2025 at 3:26 AM Kang Yang
+>>>>>>> <kang.yang@oss.qualcomm.com> wrote:
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> On 4/10/2025 3:37 AM, Walt Holman wrote:
+>>>>>>>>> On Tue, Apr 8, 2025 at 4:17 AM Kang Yang
+>>>>>>>>> <quic_kangyang@quicinc.com> wrote:
+>>>>>>>>>>
+>>>>>>>>>>
+>>>>>>>>>> On 4/8/2025 1:49 AM, Walt Holman wrote:
+>>>>>>>>>>> Attached is a small packet capture where I did an 'iw wlp99s0
+>>>>>>>>>>> scan'
+>>>>>>>>>>> and also deactivated and reactivated wireless while the scan was
+>>>>>>>>>>> ongoing. Hopefully there's something interesting for you in there.
+>>>>>>>>>>> Also, I've take 3 screenshots showing the configs of the
+>>>>>>>>>>> wireless AP
+>>>>>>>>>>> for the 6ghz network. The first screen is just the definition
+>>>>>>>>>>> of the
+>>>>>>>>>>> network. No advanced settings are used. The 2nd screen shows the
+>>>>>>>>>>> channels and radio enabled. The 3rd screen has the advanced
+>>>>>>>>>>> (professional) settings for the network. I believe I changed
+>>>>>>>>>>> 'Agile
+>>>>>>>>>>> Multiband' to enabled, but other settings are their defaults. Hope
+>>>>>>>>>>> some of this helps. Let me know if you need anything else. Thanks,
+>>>>>>>>>>>
+>>>>>>>>>> Your packets are Ethernet packets. I need wireless packets.
+>>>>>>>>>>
+>>>>>>>>>>
+>>>>>>>>>> Not sure if you know how to add a seperate monitor interface to
+>>>>>>>>>> capture
+>>>>>>>>>> 6 G channels' packet on your AP(you can google for specific
+>>>>>>>>>> command).
+>>>>>>>>>>
+>>>>>>>>>>
+>>>>>>>>>> Also, please capture firmware log:
+>>>>>>>>>>
+>>>>>>>>>> 1. sudo apt install trace-cmd
+>>>>>>>>>> 2. sudo trace-cmd record -e ath12k_wmi_diag
+>>>>>>>>>> 3. run test
+>>>>>>>>>> 4. "ctrl c" to stop recording:
+>>>>>>>>>> Hit Ctrl^C to stop recording
+>>>>>>>>>> ^CCPU0 data recorded at offset=0xdf5000
+>>>>>>>>>>         2605056 bytes in size
+>>>>>>>>>> Then share the trace.dat to us.
+>>>>>>>>>>
+>>>>>>>>>> So you need to:
+>>>>>>>>>> 1. try to capture wireless packets.
+>>>>>>>>>> 2. capture firmware log(trade.data).
+>>>>>>>>>> 3. save kernel/wpa_supplicant/iw logs.
+>>>>>>>>>>
+>>>>>>>>>>
+>>>>>>>>>>
+>>>>>>>>>>
+>>>>>>>>>>
+>>>>>>>>>>> -Walt
+>>>>>>>>>>>
+>>>>>>>>>>> On Sun, Apr 6, 2025 at 8:58 PM Kang Yang
+>>>>>>>>>>> <quic_kangyang@quicinc.com> wrote:
+>>>>>>>>>>>>
+>>>>>>>>>>>>
+>>>>>>>>>>>> On 4/4/2025 12:04 AM, Walt Holman wrote:
+>>>>>>>>>>>>> On Thu, Apr 3, 2025 at 3:20 AM Kang Yang
+>>>>>>>>>>>>> <quic_kangyang@quicinc.com> wrote:
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> On 4/3/2025 1:48 AM, Walt Holman wrote:
+>>>>>>>>>>>>>>> On Tue, Apr 1, 2025 at 9:48 PM Kang Yang
+>>>>>>>>>>>>>>> <quic_kangyang@quicinc.com> wrote:
+>>>>>>>>>>>>>>>> Test on 6.14.0-rc5-wt-ath+, with the firmware you used.
+>>>>>>>>>>>>>>>> I can get 6 GHz AP and connect to it.
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>> ath12k_pci 0000:03:00.0: fw_version 0x100301e1
+>>>>>>>>>>>>>>>> fw_build_timestamp
+>>>>>>>>>>>>>>>> 2023-12-06 04:05 fw_build_id
+>>>>>>>>>>>>>>>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-
+>>>>>>>>>>>>>>>> QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>> yk@yk-Mayan:~$ sudo iw wls1 scan | tee iw_scan.log:
+>>>>>>>>>>>>>>>> BSS 62:03:7f:12:64:64(on wls1) -- associated
+>>>>>>>>>>>>>>>>                TSF: 606308271476 usec (7d, 00:25:08)
+>>>>>>>>>>>>>>>>                freq: 6275
+>>>>>>>>>>>>>>>>                beacon interval: 100 TUs
+>>>>>>>>>>>>>>>>                capability: ESS Privacy SpectrumMgmt
+>>>>>>>>>>>>>>>> ShortSlotTime (0x0511)
+>>>>>>>>>>>>>>>>                signal: -17.00 dBm
+>>>>>>>>>>>>>>>>                last seen: 52 ms ago
+>>>>>>>>>>>>>>>>                Information elements from Probe Response frame:
+>>>>>>>>>>>>>>>>                SSID: MLO-KANG-6G
+>>>>>>>>>>>>>>>> and other 6 GHz APs:
+>>>>>>>>>>>>>>>>               SSID: 6G-gxia
+>>>>>>>>>>>>>>>>               SSID: NETGEAR97-6G
+>>>>>>>>>>>>>>>>               ……
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>> kernel log:
+>>>>>>>>>>>>>>>> [88158.033218] wls1: Inserted STA 62:03:7f:12:64:64
+>>>>>>>>>>>>>>>> [88158.033232] wls1: authenticate with 62:03:7f:12:64:64
+>>>>>>>>>>>>>>>> (local
+>>>>>>>>>>>>>>>> address=00:03:7f:37:12:54)
+>>>>>>>>>>>>>>>> [88158.033242] wls1: send auth to 62:03:7f:12:64:64 (try 1/3)
+>>>>>>>>>>>>>>>> [88158.041895] wls1: authenticated
+>>>>>>>>>>>>>>>> [88158.041914] wls1: moving STA 62:03:7f:12:64:64 to state 2
+>>>>>>>>>>>>>>>> [88158.044291] wls1: determined local STA to be EHT, BW
+>>>>>>>>>>>>>>>> limited to 320 MHz
+>>>>>>>>>>>>>>>> [88158.045719] wls1: associate with 62:03:7f:12:64:64 (try
+>>>>>>>>>>>>>>>> 1/3)
+>>>>>>>>>>>>>>>> [88158.067045] wls1: RX AssocResp from 62:03:7f:12:64:64
+>>>>>>>>>>>>>>>> (capab=0x511
+>>>>>>>>>>>>>>>> status=0 aid=4)
+>>>>>>>>>>>>>>>> [88158.089090] wls1: associated
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>> I can even connect to it by Ubuntu GUI.
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>> Can you update to 6.14.0-rc5-wt-ath+ and have a retry?
+>>>>>>>>>>>>>>>> Also please make
+>>>>>>>>>>>>>>>> sure that your wpa_supplicant/iw support 6 GHz(or directly
+>>>>>>>>>>>>>>>> update to the
+>>>>>>>>>>>>>>>> latest version).
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>> If you still cannot find 6 GHz AP, you can set debug_mask
+>>>>>>>>>>>>>>>> to 0xffffffff
+>>>>>>>>>>>>>>>> to get ath12k logs. Then give it to us.
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>> -Walt
+>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> OK, I retested with the wt-ath 033125 tagged build. This
+>>>>>>>>>>>>>>> included the
+>>>>>>>>>>>>>>> patch the Jeff suggested I try, but the rest of the tree
+>>>>>>>>>>>>>>> was clean.
+>>>>>>>>>>>>>>> Still no 6ghz Wifi. I'm attaching a log file of the boot
+>>>>>>>>>>>>>>> and first few
+>>>>>>>>>>>>>>> seconds with the debug mask turned on. I noticed that if I
+>>>>>>>>>>>>>>> rmmod the
+>>>>>>>>>>>>>>> module and then modprobe it, it complains about not finding
+>>>>>>>>>>>>>>> firmware-2.bin, however, I thought that was only for the
+>>>>>>>>>>>>>>> qcn based
+>>>>>>>>>>>>>>> chip? The HW info from dmesg looks like this:
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> I cannot find this tag...
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>       From the log, the 6 GHz channel should work. When scan
+>>>>>>>>>>>>>> is triggered, FW
+>>>>>>>>>>>>>> shall send probe req on these channels. If AP send probe
+>>>>>>>>>>>>>> resp, station
+>>>>>>>>>>>>>> shall find the AP.
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> [    6.070282] ath12k_pci 0000:63:00.0: BAR 0 [mem
+>>>>>>>>>>>>>>> 0xdd800000-0xdd9fffff 64bit]: assigned
+>>>>>>>>>>>>>>> [    6.070310] ath12k_pci 0000:63:00.0: enabling device
+>>>>>>>>>>>>>>> (0000 -> 0002)
+>>>>>>>>>>>>>>> [    6.071249] ath12k_pci 0000:63:00.0: MSI vectors: 16
+>>>>>>>>>>>>>>> [    6.071254] ath12k_pci 0000:63:00.0: Hardware name:
+>>>>>>>>>>>>>>> wcn7850 hw2.0
+>>>>>>>>>>>>>>> [    6.596331] ath12k_pci 0000:63:00.0: qmi dma allocation
+>>>>>>>>>>>>>>> failed
+>>>>>>>>>>>>>>> (7077888 B type 1), will try later with sma
+>>>>>>>>>>>>>>> ll size
+>>>>>>>>>>>>>>> [    6.604041] ath12k_pci 0000:63:00.0: chip_id 0x2
+>>>>>>>>>>>>>>> chip_family 0x4
+>>>>>>>>>>>>>>> board_id 0xff soc_id 0x40170200
+>>>>>>>>>>>>>>> [    6.604044] ath12k_pci 0000:63:00.0: fw_version 0x100301e1
+>>>>>>>>>>>>>>> fw_build_timestamp 2023-12-06 04:05 fw_build_id
+>>>>>>>>>>>>>>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-
+>>>>>>>>>>>>>>> QCAHMTSWPL_V1.0_V2.0_SILICONZ-
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> Also, I noticed when looking through the debug logs there
+>>>>>>>>>>>>>>> are the
+>>>>>>>>>>>>>>> occasional WARNING statements from a BUG it appears. They
+>>>>>>>>>>>>>>> trace back
+>>>>>>>>>>>>>>> to the mac.c file inside the ath12k code. There should be
+>>>>>>>>>>>>>>> some in the
+>>>>>>>>>>>>>>> debug log that's attached. Let me know if I can do anything
+>>>>>>>>>>>>>>> else.
+>>>>>>>>>>>>>>> Thanks,
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> I have never seen this warning on my upstream setup...Not
+>>>>>>>>>>>>>> sure if you
+>>>>>>>>>>>>>> have changed anything or using the correct code base.
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> Jeff merged this patch-set into ath-202504021602. Can you
+>>>>>>>>>>>>>> try on this
+>>>>>>>>>>>>>> branch?
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> git clone https://git.kernel.org/pub/scm/linux/kernel/git/
+>>>>>>>>>>>>>> ath/ath.git/
+>>>>>>>>>>>>>> git pull
+>>>>>>>>>>>>>> git reset --hard ath-202504021602
+>>>>>>>>>>>>>> compile and install...
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> Also make sure that the firmware you used is from the same
+>>>>>>>>>>>>>> folder, don't
+>>>>>>>>>>>>>> mix with other folders:
+>>>>>>>>>>>>>> linux-firmware/ath12k/WCN7850/hw2.0
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> 1. rmmod/insmod(debug_mask=0xffff)
+>>>>>>>>>>>>>> 2. iw reg get
+>>>>>>>>>>>>>> 3. iw reg set US
+>>>>>>>>>>>>>> 4. iw xxx scan
+>>>>>>>>>>>>>> wait and collect logs.
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> don't do anything else.
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> Also, can you show me your AP configuration.
+>>>>>>>>>>>>>> If you have another 6 GHz AP, you can have a try(better
+>>>>>>>>>>>>>> different brands).
+>>>>>>>>>>>>>>
+>>>>>>>>>>>> Thanks for testing.
+>>>>>>>>>>>>
+>>>>>>>>>>>> Could you share your AP configuration?
+>>>>>>>>>>>>
+>>>>>>>>>>>>
+>>>>>>>>>>>>>> If you have sniffer, could please capture packets during
+>>>>>>>>>>>>>> testing?
+>>>>>>>>>>>>
+>>>>>>>>>>>> Can you capture packets during the testing? I need to check
+>>>>>>>>>>>> probe req
+>>>>>>>>>>>> and probe resp.
+>>>>>>>>>>>>
+>>>>>>>>>>>>>> Thanks!
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> -Walt
+>>>>>>>>>>>>> OK, I cloned and built the kernel based on your instructions
+>>>>>>>>>>>>> in your
+>>>>>>>>>>>>> last email. Originally, the result was identical to my last
+>>>>>>>>>>>>> email,
+>>>>>>>>>>>>> including the WARNINGS. The .config I use is configured for a
+>>>>>>>>>>>>> fully RT
+>>>>>>>>>>>>> PREEMPT kernel, which I wondered if that was why I was
+>>>>>>>>>>>>> receiving the
+>>>>>>>>>>>>> WARNING. So I configured it as a Low Latency PREEMPT Desktop
+>>>>>>>>>>>>> without
+>>>>>>>>>>>>> the RT_PREEMPT and that eliminated the WARNING. However,
+>>>>>>>>>>>>> still no 6Ghz
+>>>>>>>>>>>>> networks. The firmware I'm using is straight from kernel.org
+>>>>>>>>>>>>> GIT and I
+>>>>>>>>>>>>> do a 'make install; make dedup' to install it. I believe it
+>>>>>>>>>>>>> should be
+>>>>>>>>>>>>> good. Attached is the latest log file.
+>>>>>>>>>>>>>
+>>>>>>>>>>>>> -Walt
+>>>>>>>>>
+>>>>>>>>> Sorry for the top-post earlier. I can't figure out how to capture
+>>>>>>>>> the
+>>>>>>>>> wireless packets as my chip/driver combo doesn't support monitor
+>>>>>>>>> mode.
+>>>>>>>> Your AP also cannot capture wireless packets?
+>>>>>>>> log in AP by usbserial or ssh.
+>>>>>>>> Try to enter command line. use iw command to create monitor
+>>>>>>>> interface.
+>>>>>>>> Then use tcpdump to capture packets.
+>>>>>>>>
+>>>>>>>>> I've attached a tarball that contains the trace data and additional
+>>>>>>>>> firmware logs from the kernel.log file. Anything else you need, just
+>>>>>>>>> ask. Thanks for your help,
+>>>>>>>>
+>>>>>>>> Your AP mac address?
+>>>>>>>> Need it to help check the fw log.
+>>>>>>>>
+>>>>>>>>
+>>>>>>>>> -Walt
+>>>>>>> Sorry, the AP doesn't have tcpdump available on it. Also, this is a
+>>>>>>> mesh setup with 3 nodes total. The main AP and 2 mesh nodes. I'm
+>>>>>>> within 10 feet of one of the nodes and it's MAC for the wireless 6ghz
+>>>>>>> network is: 10:7C:61:6F:2A:CA
+>>>>>>>
+>>>>>>> -Walt
+>>>>>> The other 2 node 6ghz mac addresses are:
+>>>>>> 10:7C:61:6F:1F:11   - Router
+>>>>>> 10:7C:61:6F:32:92   - Node
+>>>>>>
+>>>>>> The first MAC address I gave you earlier was a node located
+>>>>>> approximately 5 feet from where the laptop is.
+>>>>>>
+>>>>>> -Walt
+>>>>> Well, I'm running into a brick wall it seems trying to get 6Ghz
+>>>>> enabled on this. I tried the ath-next-20250418 tag just now and still
+>>>>> don't see or connect to my 6Ghz network. I applied the patches in:
+>>>>> https://lore.kernel.org/linux-wireless/20250418-ath12k-6g-lp-vlp-
+>>>>> v1-0-c869c86cad60@quicinc.com/T/#t
+>>>>>
+>>>>> hoping that would help, but alas, no 6Ghz networks. I see that MLO and
+>>>>> other nice fixes are coming in 6.16, but without 6Ghz, they'll do me
+>>>>> no good. I'm really wondering if it's a firmware issue that excludes
+>>>>> my chip or something. Again, anything I can do to help, let me know.
+>>>>> Thanks,
+>>>>>
+>>>>> -Walt
+>>>> Well, I used the swiss army tools to look at the firmware, and my chip
+>>>> is listed in the firmware, so it's not excluded or anything. Really
+>>>> puzzlling issue as my other two laptops connect to the 6Ghz network
+>>>> just fine, and this laptop does in Windows, just not in Linux. I
+>>>> really don't use Windows at all though, so that does me no good.
+>>>>
+>>>> This laptop used to connect to the 6Ghz network around the Sep. - Oct.
+>>>> 2024 timeframe. Something has changed and now it doesn't. I'm going to
+>>>> boot off a live image of Ubuntu 24.10 and see if I can see the
+>>>> network. It was always hit or miss so we'll see.
+>>>> -Walt
+>>>
+>>>
+>>> Can you find 6 GHz AP now?
+>>>
+>>
+>> Our firmware team said you station device sent the probe request but
+>> didn't receive the probe resp or beacon.
+>>
+>> Since your current configuration is single 6 GHz AP. Could you change
+>> your AP configuration to 6 GHz + 2/5 GHz to have a retry?
+>>
+> I adedd another network with 2.4 / 5 / 6Ghz settings and still only
+> connect to the 5Ghz network portion. This is verified through wavemon
+> and the AP. I saw some patches recently to address 6 Ghz operatoins in
+> various modes (https://lore.kernel.org/linux-wireless/1692f2f8-c77e-87ce-db70-00b4d9fc7c95@oss.qualcomm.com/),
+> but the patch doesn't apply cleanly to current or ath-pending. Don't
+> know that it would help, but it seemed interesting.
+> 
+> When I went back to the older kernel / distro I still could not see
+> the 6 Ghz band nor connect to it. I think something has changed on the
+> AP as well, as this used to work intermittently. I think I have
+> mentioned this before, but I have a dual-boot setup on this laptop and
+> in Windows 11, it does see and connect to the 6 Ghz band and MLO works
+> as well. Also, I have about 5 other devices (phones and laptops) that
+> can all connect to the 6 Ghz band. I think it's a combination of the
+> AP and the driver / firmware.
+
+
+
+
+Do you have another WCN7850?
+Our monitor mode is now in pending branch, and one fix is coming so that 
+you can use WCN7850 to capture 6 GHz management packects. So that our 
+firmware team can do further research.
+
+
+
+
+> 
+> -Walt
+> 
+
 
