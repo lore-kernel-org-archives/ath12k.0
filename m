@@ -4,122 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6E07C5479B
-	for <ath12k@archiver.kernel.org>; Mon, 19 May 2025 18:20:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BF68C3ABDD
+	for <ath12k@archiver.kernel.org>; Tue, 20 May 2025 04:37:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/iqUYcQ/ZKzUE0OzM5wAJzodMofqq4SZ0eyOXeP5OsI=; b=LNkN9jcsQ7bhBdlnrk8GYqUgIT
-	YLTnT8W8PCgKgoCEVR+XV4KM9elmUfASU3eSVMfKYIkvU65uaqYm+rNC0wjMyDvpsFDglay6RdmQn
-	dJhxtEphVSgU3/kns4l+GbIc76biBG/o3nlSJmfT3sFbAmLVXjO93qw4j+7Lydsvge77JQA5I4Lvr
-	o23tHPDDRCSMZ8ZbkJPt/kyycK3lnkplLtSDJa2uXTd2qnA4dICkMuAMYd0Szyq+bXvooN8mko5ZO
-	0HSXjppqarQ6qaq0BSlil1i3Q/97OvO/xwefsQmbJTbVbGuefvmLLQupRFLZ+i5SIOq78BLs0WdL8
-	oRi2gy+w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=awwojNaNrXyiw5s74gkw/0TBIsrjT+fryKobFxMVZAU=; b=vUE3dxQAFqBMzlotVDmLVQiy77
+	MHCsMjnYL9L+3KFfl332ZQl//kZ+i4qfyAbf3K0qkT57KJjHqiZFVXwFbgieq1ma8Dt90vEHL8uaQ
+	8noTiokuzb+4cvOnT3wUwIncBsOB2dLJLMdAEbSj6QuBnFtPLQpFmTIzp6Mo9ijpWkp5RcoHZ5Ghf
+	KqmhXIkI2fjaDZwQMQI54Tsx3NSb9SYHTSUvpvdvUnCEZFWVclczY/RUua+17Hc65ezztP/BI4zTH
+	mQc7roC5nhyi2LzyRXFPm93aP6CiCjZ87vzDDYoPBatafHjuKgaTWMV/sRXeSdAc39TCQJ1cXHYoT
+	vjlMbzNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uH56c-0000000A7kL-1Y0Y;
-	Mon, 19 May 2025 18:20:54 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uHEj1-0000000BV3z-3uCG;
+	Tue, 20 May 2025 04:37:11 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uH4az-0000000A0wj-1oaR
+	id 1uHEiz-0000000BV2Z-0Nvb
 	for ath12k@lists.infradead.org;
-	Mon, 19 May 2025 17:48:15 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54J9a9GP030161
-	for <ath12k@lists.infradead.org>; Mon, 19 May 2025 17:48:13 GMT
+	Tue, 20 May 2025 04:37:10 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54K3m2LW021268
+	for <ath12k@lists.infradead.org>; Tue, 20 May 2025 04:37:06 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	/iqUYcQ/ZKzUE0OzM5wAJzodMofqq4SZ0eyOXeP5OsI=; b=nBAZIacEk1H+H/rM
-	JhG2yO5ZBzJOpq7N5vO+eS8FI4zCu3ZVE1z3+ia5nfBp+7qBE7kwfBknYowPhouK
-	ajPXRi0mJq97G6IjQJwhDRDxVxgiJpbNog01EZdV0xw3DcPfxFVp6aCDl8uLTPEK
-	Lnf3iDrcKEZi3tPLCpXo5tTQRG0zfEBm12PskkkxZLHOa2srcOKujig6i1kKD7dk
-	0oLsG/vMfG8BkrSDbicX4NJeYPPu0P7oqMMdhjDef7InmhiZ1gkho8Q89IG/MpOZ
-	Hi4qsSXIMIy9JEasvSl0y1lcU3hfMYU84INVMYEAGZZshUhC9kuA1maawSYF0ZIN
-	Fl0SRQ==
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=awwojNaNrXyiw5s74gkw/0
+	TBIsrjT+fryKobFxMVZAU=; b=UAyPToM7bIn7t18+Iz095PGhXjCA7lT4yVZZzW
+	mIzSvqJDSW/GVDg/r9EZLzZQrG1wfTuFXH3b+8oQu1MjsfEbtKjQXgNCpUTLf7eb
+	YaUK9E3vMY9oGYKbEmF+Z40XqltkeML+OXNhQ5JUxP4CTxBWAFY7vGRGfFPoJgu8
+	1c94a69Dn4RvMkenhYskSB5kDRwmvxBXlhNsb1L66zsYklsLqM5GBDZx1W26QJKC
+	/ywxycnh0t9nhIrwEp5zF23Xx7CE0ruqU2XpYQ9BFIB4ubq846OZtGhPQiFFfnan
+	l8ZXu7QiCG6dMDjYchnZyentvglgeIVDw+JAeY7nby4+lKTw==
 Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46pkr9w677-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46r6vysrca-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 19 May 2025 17:48:13 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-231de0e1ca3so27095075ad.0
-        for <ath12k@lists.infradead.org>; Mon, 19 May 2025 10:48:12 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 20 May 2025 04:37:06 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-23206c06d29so16530985ad.0
+        for <ath12k@lists.infradead.org>; Mon, 19 May 2025 21:37:06 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747676892; x=1748281692;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=/iqUYcQ/ZKzUE0OzM5wAJzodMofqq4SZ0eyOXeP5OsI=;
-        b=nIr6IUevWl6EQaEBg+mjv+TLnLmHJTaZXRLxPRKOdXPVc3NsNkBFnl4ZmfLsoaM4zz
-         0qosupIo/5AwKZhVZDXmyVhjbNK2Vvx6bFCb5s/UND8Yl9js3srnEr4jb7VYuBFLh40S
-         UJlJKvsyyfk/w7Hzlpg9DgmYH36SnNcZNO6FV+jLyxGDmJiBiKatrnARIvo/dQ8iQ+xi
-         /Raj4oGxTPtg9lnLZqZL8zyrbDyR77h7aFV1Yng+s2oBiybTx+RXZxlVMgixCDsjWNkq
-         Lzi+jQM+7kkv6tnVRSzG+JzIwqJeMA5Q2ANcSlD/dAn7CEk05f1PV0IIQrlBt0q/w1vb
-         zjPg==
-X-Forwarded-Encrypted: i=1; AJvYcCWDWvx1sycxr9CfFdT5DbJMv8XzIhzJxchG1lAKKEW5b89126EfYt7pKqcxFdyCAJ7UH/NUWJU=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyj3Avbv5XQaUE2QeO9hyFY9VDBNYQdSOV5Ngbvklzb/KxhpKWl
-	1ySX8vJaNkec5MWMzRxcpy1ciQU+FfTYGH2VWcpR42jQnXRVhlxZsSfMy+bKWgHU9du/yX4y1wa
-	BJIETzU4bvEo0usLwaa6shkpgqy0rcJGO7d5jqQwd8ISIPQhPKCm8j52vwKrjSWt1
-X-Gm-Gg: ASbGncuXxmtmydb+62qbhofs1el8jGp13QCK3fZ4euBTIxnmn827DwdLULjFx6xGDjN
-	qJfHGtl3PoIk5LJQsXSi6A2oxFVYRFboV6r8yZinGTgmv/w814xy+n0Hoa6hdMUGbbzPxXElkGc
-	2w6SBxiG0+XrnrftkWzMdjxeuSQt8pZsMHdXHLd8l2K6EiO60W8OOEq127yBFD5nXaiGFiuhE23
-	+wd9yn487TpXQBaxjnIHKT+bZHg7ZZyolDTQ74SgKBX+624SDKq9Y/wpNvGvn5IJRVI8qS6SGsf
-	U2LMM7NC1rS36tFjVRuMGDoC7XGP+Cae4Kl24K9ge58hNHCT
-X-Received: by 2002:a17:902:da86:b0:22e:50f2:1451 with SMTP id d9443c01a7336-231d459a6f7mr183152725ad.37.1747676892205;
-        Mon, 19 May 2025 10:48:12 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEkfT627Sx+Y3lijWGrgnOM4K80G49i9mNQuYpNlnrPDaKycAmPH3/wNvhLyeyCLDdXtTPxaA==
-X-Received: by 2002:a17:902:da86:b0:22e:50f2:1451 with SMTP id d9443c01a7336-231d459a6f7mr183152505ad.37.1747676891821;
-        Mon, 19 May 2025 10:48:11 -0700 (PDT)
-Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-231d4afe8b0sm62651425ad.89.2025.05.19.10.48.10
+        d=1e100.net; s=20230601; t=1747715825; x=1748320625;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=awwojNaNrXyiw5s74gkw/0TBIsrjT+fryKobFxMVZAU=;
+        b=CXpsB0RwlO2ERuXxErZY3hX6MTKvGwWw/iEK65UKCnduszbsmMWH9ycvQph57kV8w/
+         aV/jf7+45lEaKRcWxEJ73UOq2gG2701QZ/btTEsR5wrsoMPJ/OBK3h6a6gjj5kZh0DJ4
+         zgzVHQOozIOHgAPWp5R2fjrqK2d0LTJkNkL20XGVmWJPHEKAm61+QUoWjpf3Do/Vulq/
+         0USTvi3lMlqsrtVXkWrgPVe7RuFWhSmjANQFkMdDuh/jikYnUj5aJxdtqfO/6IQNwzmn
+         j4razcA7WEKn4CBF546U5S/JwZUU81vWbHBl7+zyOLJgYbe0PJTXCvozhtgYh5IBTkqb
+         TxFA==
+X-Forwarded-Encrypted: i=1; AJvYcCUQbO4lgADz4X5/8fQNZnN05iqB3nO75vBIBglSRE65SpbF0ZbzFObF0/hLIHNXtG0qk+yhplo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyJWLifEnpfbpWvuWKdh2YDWo/dkCNBn1c3LyVXIp9cfzYZ1+Po
+	V4XypJ7HmzdZWL9Cpt6z4CnPeCUeRWz090mBkdHDuSvkLHDlQU6sehK6faQeskAIbeQgJY7WddW
+	TYXEF3cKixUP1ihBHayPijdYmokn6GatxoI5mBb3JytDQH78Coi6trHWEmnkCsPrI
+X-Gm-Gg: ASbGnctprZKMQawqJ+80jCkz+p5aVN2FvMtr5PNTlZ9vLMq/+A6yFYw2twX7QvzI01C
+	PPa/Kt+Uuqo+/nSJa6sVi7d/i1JNmnarAEfYXsQACzCDg9/fhNYoyJkz1Bq3bU1shExF7xpURJi
+	ZCtiKfgqr6EIHjt/bJ5qAGiYu6HYQk5wpE1VP9zu2CSEvFvwYBKTlMxWtaSrvL6jWvF6ZovRyZL
+	fAqNYhrBcSTxN2BE2ALR8U5La4G9Bx9h2D4lG2AtXCBi25HiwJ7hKkIrNkwMD+DEb0kKjb/k1oQ
+	M6+xJsO0+QP1LjIFEDziIWtr0CAUfqGGfaTIq9xx8+YIy1B/H75t7NgFsv+1Xms6DrBbRPEqW8l
+	TqZxr790C7TpE5nK8S1fHebmqThhUgkFHH/SX
+X-Received: by 2002:a17:903:41d0:b0:231:c86b:ff77 with SMTP id d9443c01a7336-231d43cd9b2mr208070485ad.26.1747715824845;
+        Mon, 19 May 2025 21:37:04 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHt7ORIP0yCt6qLypNPPfXeVFvBW/v9IliwSoKvZIBmJS5PZ+67wJGNjBRQ+fK3mLegQIqhhA==
+X-Received: by 2002:a17:903:41d0:b0:231:c86b:ff77 with SMTP id d9443c01a7336-231d43cd9b2mr208070235ad.26.1747715824423;
+        Mon, 19 May 2025 21:37:04 -0700 (PDT)
+Received: from hu-adisi-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-231d4adba91sm68395295ad.54.2025.05.19.21.37.01
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 19 May 2025 10:48:11 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: Jeff Johnson <jjohnson@kernel.org>,
-        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
-        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-        Mahendran P <quic_mahep@quicinc.com>,
-        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org, P Praneesh <praneesh.p@oss.qualcomm.com>
-In-Reply-To: <20250507-fw-stats-mem-leak-v1-1-8d4d1d8ec0e8@quicinc.com>
-References: <20250507-fw-stats-mem-leak-v1-1-8d4d1d8ec0e8@quicinc.com>
-Subject: Re: [PATCH ath-next] wifi: ath12k: fix memory leak in WMI firmware
- stats
-Message-Id: <174767689082.2567051.3798725859514530074.b4-ty@oss.qualcomm.com>
-Date: Mon, 19 May 2025 10:48:10 -0700
+        Mon, 19 May 2025 21:37:03 -0700 (PDT)
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Date: Tue, 20 May 2025 10:06:52 +0530
+Subject: [PATCH ath-next] wifi: ath12k: fix mac pdev frequency range update
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.0
-X-Proofpoint-GUID: GD0-uFEOXc7IBr2kD7wDfvkDTLOjZa8C
-X-Proofpoint-ORIG-GUID: GD0-uFEOXc7IBr2kD7wDfvkDTLOjZa8C
-X-Authority-Analysis: v=2.4 cv=DdAXqutW c=1 sm=1 tr=0 ts=682b6edd cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=EUspDBNiAAAA:8 a=D1emlATrmXGj1goK3P4A:9
+Message-Id: <20250520-fix_freq_range_update-v1-1-e061fd147b87@oss.qualcomm.com>
+X-B4-Tracking: v=1; b=H4sIAOMGLGgC/x2MUQ5AMBAFryL7rUnbILiKSNOy2J9iWyIRd1c+J
+ 2/e3BCQCQO02Q2MJwVafQKVZzAs1s8oaEwMWupSllqKiS4zMe6Gv9Uc22gjCj24unKFcqqpIH0
+ 3xiT+3Q5sXITHK0L/PC9CUJv1cQAAAA==
+X-Change-ID: 20250520-fix_freq_range_update-2cb86b41b196
+To: Jeff Johnson <jjohnson@kernel.org>, Rajat Soni <quic_rajson@quicinc.com>,
+        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+X-Mailer: b4 0.14.2
+X-Authority-Analysis: v=2.4 cv=NfHm13D4 c=1 sm=1 tr=0 ts=682c06f2 cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=EUspDBNiAAAA:8 a=QKJL3u4FREtiCmV0lJIA:9
  a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE5MDE2NSBTYWx0ZWRfXyFnrFw+DnhEt
- ip6pEzmZIey7xVx1eF5U1sEccEbnIvrgnXDBBDm/VQnL82ebWMmXcEjRxKm3GZBGai/6ise2tVZ
- 51ZedMRnAtSXFFwmdrcJ9QMJEbgwgbu7ffMs3lcOwj4ObEzEVGY1+zPGUOP+2gyVQCadm3Eu2dV
- 59e1CgXcjIsCExRUaZvKx9cuf6qJ95EAPfIcpnVoAYHQSEwuyN3dJjhQYeO9OeHThgMnsQR7rtt
- cWKzLOtoBUCD2crRLfbAlX7Jmn3YQqqvqkeROkbPTNkQSuCgkyljdO1jCCggh2igr+5T4WSizhw
- CH089rY8FBVia/ZSQDM+seYsJ6PRDESqprsiD5BVjoVJsJ3fYPji54sOLWBxVY2uFvcM/blh0i3
- PrcmXlOcViHtDRatduICclYPSownThFKajk2rkHruym4VM/zUJIngW2ce+qwPAjhiRz1GDdE
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIwMDAzNSBTYWx0ZWRfX1fp4UGg/8R1R
+ I4hZ6w+CooeJevXYjoYT0uhBleQreHM8qFXDHMtl93TTJkTv52SBYlEyV6DHxvuCCx9IRPhB36G
+ aR4/OI4SMvv68FeevPDrZwk5+5e3iipOBlFZnuAO5jzW7iQJV0pdTKNey8Yya3BhCgQhWsnXBjo
+ BooI74kMfi9D58oYBB70J7L19biTnqv+tS3QRYJAzzea+4IUFrXKloS0ZuWPdlA6zWl0QCIpdil
+ dmhiEfFcoc1lAd9s56THCI4BldKqrYAHoDnxnq3+YIth/Dh8hNZx26bBxxqP9SYdxTaISUDo9Bn
+ i73BjATQdvQet2IwquX5UE+XS+MA0+PZu80zOww6Q2QRiRjJwqA84d6ai7EfYlbBBgEYk45Cmpm
+ lbpmwiYMRLUzpWIOlnhoxBiOSVPWar6Wb0geVXRFm4HjgjCMKBon5W1L5JEVMKk3WT8gtKAT
+X-Proofpoint-ORIG-GUID: XhtYcDDTiPe30PC4X745wUxNs5pbM7Sd
+X-Proofpoint-GUID: XhtYcDDTiPe30PC4X745wUxNs5pbM7Sd
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-19_07,2025-05-16_03,2025-03-28_01
+ definitions=2025-05-20_02,2025-05-16_03,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxlogscore=959 clxscore=1015 phishscore=0 adultscore=0 mlxscore=0
- spamscore=0 malwarescore=0 suspectscore=0 priorityscore=1501 bulkscore=0
- impostorscore=0 lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505070000 definitions=main-2505190165
+ bulkscore=0 clxscore=1015 priorityscore=1501 spamscore=0 lowpriorityscore=0
+ phishscore=0 mlxlogscore=999 impostorscore=0 malwarescore=0 mlxscore=0
+ suspectscore=0 adultscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505070000
+ definitions=main-2505200035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250519_104813_478773_8500AF4E 
-X-CRM114-Status: UNSURE (   8.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250519_213709_259047_9024A590 
+X-CRM114-Status: GOOD (  20.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,44 +133,142 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+The current implementation of per-pdev frequency range updates assumes that
+each pdev supports only a single band. As a result in ath12k_regd_update(),
+bands are handled using an if-else structure, which limits updates to only
+one of the band per pdev. This assumption does not hold for all chipsets.
+For example, the WCN7850 supports multiple bands within a single pdev.
 
-On Wed, 07 May 2025 22:41:19 +0530, Raj Kumar Bhagat wrote:
-> Memory allocated for firmware pdev, vdev and beacon statistics
-> are not released during rmmod. Below kmemleak trace is seen for this
-> memory leak:
-> 
-> unreferenced object 0xffff8e76aebdfa00 (size 256):
->   comm "softirq", pid 0, jiffies 4299272453
->   hex dump (first 32 bytes):
->     28 19 71 c3 76 8e ff ff 28 19 71 c3 76 8e ff ff  (.q.v...(.q.v...
->     9f ff ff ff f4 d4 03 00 aa 88 09 00 bd 40 23 00  .............@#.
->   backtrace (crc dfe1b440):
->     __kmalloc_cache_noprof+0x2b0/0x370
->     ath12k_wmi_tlv_fw_stats_data_parse.isra.0+0x44e/0x730 [ath12k]
->     ath12k_wmi_tlv_iter+0x5e/0x140 [ath12k]
->     ath12k_update_stats_event+0x85/0x300 [ath12k]
->     ath12k_wmi_op_rx+0x624/0xd70 [ath12k]
->     ath12k_htc_rx_completion_handler+0x1f4/0x330 [ath12k]
->     ath12k_ce_recv_process_cb+0x218/0x300 [ath12k]
->     ath12k_pci_ce_workqueue+0x1b/0x30 [ath12k]
->     process_one_work+0x219/0x680
->     bh_worker+0x198/0x1f0
->     tasklet_action+0x13/0x30
->     handle_softirqs+0xca/0x460
->     __irq_exit_rcu+0xbe/0x110
->     irq_exit_rcu+0x9/0x30
->     common_interrupt+0xa7/0xc0
->     asm_common_interrupt+0x26/0x40
-> 
-> [...]
+Hence to accommodate such cases, update the logic to account for all band
+cases by handling each band in a separate if conditions instead of the
+previous if-else structure.
 
-Applied, thanks!
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
-[1/1] wifi: ath12k: fix memory leak in WMI firmware stats
-      commit: 246eb353fbe9136ab3dd2ef979764a13984989e2
+Fixes: 13324cecbb2c ("wifi: ath12k: Update frequency range if reg rules changes")
+Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 16 ++++++++--
+ drivers/net/wireless/ath/ath12k/reg.c | 56 +++++++++++++++++------------------
+ 2 files changed, 42 insertions(+), 30 deletions(-)
 
-Best regards,
--- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index fa39537fa4ce8a4a2aad5aff87868aeaecd73565..64500b04675dbeb1cdf52b3fa77f4d831f43103e 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -11353,8 +11353,20 @@ void ath12k_mac_update_freq_range(struct ath12k *ar,
+ 	if (!(freq_low && freq_high))
+ 		return;
+ 
+-	ar->freq_range.start_freq = MHZ_TO_KHZ(freq_low);
+-	ar->freq_range.end_freq = MHZ_TO_KHZ(freq_high);
++	if (ar->freq_range.start_freq || ar->freq_range.end_freq) {
++		ar->freq_range.start_freq = min(ar->freq_range.start_freq,
++						MHZ_TO_KHZ(freq_low));
++		ar->freq_range.end_freq = max(ar->freq_range.end_freq,
++					      MHZ_TO_KHZ(freq_high));
++	} else {
++		ar->freq_range.start_freq = MHZ_TO_KHZ(freq_low);
++		ar->freq_range.end_freq = MHZ_TO_KHZ(freq_high);
++	}
++
++	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
++		   "mac pdev %u freq limit updated. New range %u->%u MHz\n",
++		   ar->pdev->pdev_id, KHZ_TO_MHZ(ar->freq_range.start_freq),
++		   KHZ_TO_MHZ(ar->freq_range.end_freq));
+ }
+ 
+ static void ath12k_mac_update_ch_list(struct ath12k *ar,
+diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+index 62936d518b1d767a198958150a13bb9ac8b73009..fb8b07c95355c4683c514c2d62624feafedcf1f3 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.c
++++ b/drivers/net/wireless/ath/ath12k/reg.c
+@@ -265,8 +265,8 @@ static void ath12k_copy_regd(struct ieee80211_regdomain *regd_orig,
+ 
+ int ath12k_regd_update(struct ath12k *ar, bool init)
+ {
+-	u32 phy_id, freq_low = 0, freq_high = 0, supported_bands, band;
+ 	struct ath12k_wmi_hal_reg_capabilities_ext_arg *reg_cap;
++	u32 phy_id, freq_low, freq_high, supported_bands;
+ 	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
+ 	struct ieee80211_hw *hw = ah->hw;
+ 	struct ieee80211_regdomain *regd, *regd_copy = NULL;
+@@ -276,45 +276,45 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
+ 	ab = ar->ab;
+ 
+ 	supported_bands = ar->pdev->cap.supported_bands;
+-	if (supported_bands & WMI_HOST_WLAN_2GHZ_CAP) {
+-		band = NL80211_BAND_2GHZ;
+-	} else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && !ar->supports_6ghz) {
+-		band = NL80211_BAND_5GHZ;
+-	} else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+-		band = NL80211_BAND_6GHZ;
+-	} else {
+-		/* This condition is not expected.
+-		 */
+-		WARN_ON(1);
+-		ret = -EINVAL;
+-		goto err;
+-	}
+-
+ 	reg_cap = &ab->hal_reg_cap[ar->pdev_idx];
+ 
+-	if (ab->hw_params->single_pdev_only && !ar->supports_6ghz) {
+-		phy_id = ar->pdev->cap.band[band].phy_id;
+-		reg_cap = &ab->hal_reg_cap[phy_id];
+-	}
+-
+ 	/* Possible that due to reg change, current limits for supported
+-	 * frequency changed. Update that
++	 * frequency changed. Update it. As a first step, reset the
++	 * previous values and then compute and set the new values.
+ 	 */
++	ar->freq_range.start_freq = 0;
++	ar->freq_range.end_freq = 0;
++
+ 	if (supported_bands & WMI_HOST_WLAN_2GHZ_CAP) {
++		if (ab->hw_params->single_pdev_only) {
++			phy_id = ar->pdev->cap.band[WMI_HOST_WLAN_2GHZ_CAP].phy_id;
++			reg_cap = &ab->hal_reg_cap[phy_id];
++		}
++
+ 		freq_low = max(reg_cap->low_2ghz_chan, ab->reg_freq_2ghz.start_freq);
+ 		freq_high = min(reg_cap->high_2ghz_chan, ab->reg_freq_2ghz.end_freq);
+-	} else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && !ar->supports_6ghz) {
++
++		ath12k_mac_update_freq_range(ar, freq_low, freq_high);
++	}
++
++	if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && !ar->supports_6ghz) {
++		if (ab->hw_params->single_pdev_only) {
++			phy_id = ar->pdev->cap.band[WMI_HOST_WLAN_5GHZ_CAP].phy_id;
++			reg_cap = &ab->hal_reg_cap[phy_id];
++		}
++
+ 		freq_low = max(reg_cap->low_5ghz_chan, ab->reg_freq_5ghz.start_freq);
+ 		freq_high = min(reg_cap->high_5ghz_chan, ab->reg_freq_5ghz.end_freq);
+-	} else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+-		freq_low = max(reg_cap->low_5ghz_chan, ab->reg_freq_6ghz.start_freq);
+-		freq_high = min(reg_cap->high_5ghz_chan, ab->reg_freq_6ghz.end_freq);
++
++		ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+ 	}
+ 
+-	ath12k_mac_update_freq_range(ar, freq_low, freq_high);
++	if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
++		freq_low = max(reg_cap->low_5ghz_chan, ab->reg_freq_6ghz.start_freq);
++		freq_high = min(reg_cap->high_5ghz_chan, ab->reg_freq_6ghz.end_freq);
+ 
+-	ath12k_dbg(ab, ATH12K_DBG_REG, "pdev %u reg updated freq limits %u->%u MHz\n",
+-		   ar->pdev->pdev_id, freq_low, freq_high);
++		ath12k_mac_update_freq_range(ar, freq_low, freq_high);
++	}
+ 
+ 	/* If one of the radios within ah has already updated the regd for
+ 	 * the wiphy, then avoid setting regd again
+
+---
+base-commit: 0b7122d5c6a84dd18d2ebffbcc46db835f24628f
+change-id: 20250520-fix_freq_range_update-2cb86b41b196
 
 
