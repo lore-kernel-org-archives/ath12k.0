@@ -4,122 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 904E9C54E65
-	for <ath12k@archiver.kernel.org>; Wed, 21 May 2025 21:05:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC418C54E90
+	for <ath12k@archiver.kernel.org>; Wed, 21 May 2025 21:38:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=n8pfrRmMMPxVsgesSad2JR7BoMNnIt88nEFw4z/RGv4=; b=IJd8HE2mBoE9x441znzbA6SUgp
-	/CX47iZqi1ngzzUMbwdXQoNP05Jza5zoJdz+Wr5kTaG91EbUwm9ZrPokHzim5G9NVnMijyQ/75Csp
-	N7qVO4uCTUxuiT1VqVe72UIRbcTz+02oBDqsi75XXiZpQ0Eu0ThPlrJrUKVfUwVGamUSyFEMkGkDE
-	+0831cwXfOqJOsoqiHxhbJAJOVHsUrTNUb2CJB+Bb2hr88cK6dC+dzQhHah4Je8cflGpCQ00VhUf2
-	kbgWvLy/SIQD3bQLB7sfFtT98P8GQtviSTnQWWnLxuB0tsLQ2lB8gENIfgnqYF63Cfq7lviacrq9q
-	yr7XM7dg==;
+	bh=R1Z32RllxbUKuIbL9LvRcxRwJygw/y4QtcfDtXHpIpM=; b=RrYtSlkJb1PQAtFZQQAGfz5Sl3
+	sDeoaXXE2aQI/ERDZAT1V1n3dYobi4Mi2teN0N+7eCxWceWPNZL8dRRFAOYO9ruO61lr6kfzbJwtt
+	73LjGKkR2/+71I9i2qKHa59I5ouugw8btJGQb4ISGZMU38CsoGSSZGeNJte36l6F82rTkcmfqNooi
+	xAFytwQwY8oxPcrCWKPzeKSe+gvrinGIGNMdmHIN9fEywnUYnXjqGJEUqrcwcsNodekpo0775StdJ
+	bzLBiRWbKRw8XESnfbfOEkZv8ZQxZQ/pWXPrkK28OEP0vjD3xeXYrpC6MbxUmC3oKGvT9LQR/CdVN
+	JmcdZlOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHqcX-0000000Gq6S-0AMx;
-	Wed, 21 May 2025 21:05:01 +0000
+	id 1uHr9N-0000000GsJV-2yAC;
+	Wed, 21 May 2025 21:38:57 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHqcU-0000000Gq68-0RtU
+	id 1uHr9K-0000000GsJ0-2tpp
 	for ath12k@lists.infradead.org;
-	Wed, 21 May 2025 21:04:59 +0000
+	Wed, 21 May 2025 21:38:56 +0000
 Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54LIi9bk000862
-	for <ath12k@lists.infradead.org>; Wed, 21 May 2025 21:04:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54LJgw3m025025;
+	Wed, 21 May 2025 21:38:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	n8pfrRmMMPxVsgesSad2JR7BoMNnIt88nEFw4z/RGv4=; b=MxOxmSmhhtc76zDd
-	VKjuwHqbDF6Uin5xc7s6h6CGg8yQ60YMNrG1K2NzR8FRMlF4iUgesDqiSXtjMtL3
-	SLgI52SSqY0+qCSVE6CkV03TWvjS2zDeAuUeUGxejWd2eZwr7ecvidDbizLx8CSW
-	bioeiRTAHUpBAF2tfdZYf9hvPLSKrzbvuhc0pFH756KVCLDR1B6tonfuEYATlaND
-	f+G54wYaGpxRRLjim5DdvUbMV8ahL0zglUFGunzIddfyZVEmC5+D3tsTMvse3F/o
-	aRndXbL546InDhxrXekGM48/U5smAIv+gbVjOOqwzRwlnEkXyH4qBz1yJV2ZFJHf
-	8oTjRg==
-Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46rwf6v5wj-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 21 May 2025 21:04:55 +0000 (GMT)
-Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-7391d68617cso6229440b3a.0
-        for <ath12k@lists.infradead.org>; Wed, 21 May 2025 14:04:55 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747861494; x=1748466294;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=n8pfrRmMMPxVsgesSad2JR7BoMNnIt88nEFw4z/RGv4=;
-        b=py5O5RXlW1K0Gq5Me3P5ArGy1xu2sL38dY3noP+V452y1FXwvd8QXN5bo2nh+ELJbP
-         qavI50lDz0k/jP6LyXLUpAAtvgvuSPlSJO2TUCWCxD3n8FL99/cLIJSlXCzAcpd1P4+t
-         tLo8ifmTd2ujO9BjQTj82b7XUZAfP1uUZob40H5CBa1joTmXeGf255EqqNRuvsUNC3BI
-         yklBm20kVuq4MNBdruMM1dI4NrQiccNrmVPjTt3IOiglOboLI88M0IgRzwDhSpqNT5uK
-         m1AT4MaAIKRlEUmHSz7G6gFN9yJMXeeKlAYiQLxISSQwCchVISDi+h1grQ4Xs1Fe12hR
-         rhEw==
-X-Forwarded-Encrypted: i=1; AJvYcCXROxwE/Ydo9AxQ1pv1MjUXYpzy7UfdGYjli+nAo+9wYPpGr36MEVNRz64/NpAtAJ1vZXjaBzE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwVgqtPCQ1mVUd6VFJeSUFZ8sulg1WgDpYnNXOPT+JmMKDhfjc9
-	nlgAvVC7ncVaLf8vJPGOg7+26Vopl7R6F0iusZkBbdTmQ8IX8oBy2xQxXVgmMeZZTz/oVE7V0hN
-	bnOMnIZEGp69eF6anbH6304ry/priMbBn4CVhLUoVkLNeyViwmlnH6u1XOuX8PsKQ
-X-Gm-Gg: ASbGncvK4kvDsWjVMu7CF1cvbkKbsdYOXtF2iRTqPEk+4K/qdPnJ+AQ2KC2suM9KrLy
-	K9HSo8fnGbU2wHPBhAxUqLQf7Em9GIdmwHLHkWza1SLADPm8IYYWs2gg+BCShzf84U3nJldK8wX
-	tYBcXTekjXazaZJomkDy3HvQ6gaRwtH1MftWu29gWdUFS/zWzdhQu87Nry93WExn0LpHV0TEd9z
-	NPIFCAC1/hFtiCZjrEMhFGhcZ8KU/ELwJY6IZBZbDUnYT5Er8kLP6XiYvlyCAIGu8/rh/0IWX0L
-	z7nBQ1+EWHc5jrO5vmlXgg61x/aJ+JaMZ2cRAvzpNKjfz3fZ
-X-Received: by 2002:a05:6a20:6f96:b0:1f3:26ae:7792 with SMTP id adf61e73a8af0-2165f87234fmr31590432637.18.1747861494492;
-        Wed, 21 May 2025 14:04:54 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHwyz7dPN3iVMEKuZm00Xxt7WNxKbvIPZRXOMsuu9ovK+uJlYmywLQxhYU5YAUcR5aa5ssk/g==
-X-Received: by 2002:a05:6a20:6f96:b0:1f3:26ae:7792 with SMTP id adf61e73a8af0-2165f87234fmr31590380637.18.1747861494053;
-        Wed, 21 May 2025 14:04:54 -0700 (PDT)
-Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-742a982b7f3sm10057303b3a.87.2025.05.21.14.04.53
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 May 2025 14:04:53 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: Jeff Johnson <jjohnson@kernel.org>, Kang Yang <quic_kangyang@quicinc.com>,
-        Wen Gong <quic_wgong@quicinc.com>,
-        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-        Baochen Qiang <quic_bqiang@quicinc.com>,
-        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-In-Reply-To: <20250521-ath12k-fix-ah-regd_updated-v1-0-9737de5bf98e@oss.qualcomm.com>
-References: <20250521-ath12k-fix-ah-regd_updated-v1-0-9737de5bf98e@oss.qualcomm.com>
-Subject: Re: [PATCH ath-next 0/3] wifi: ath12k: fix several regdomain
- update issues
-Message-Id: <174786149316.3123854.11064222745292053302.b4-ty@oss.qualcomm.com>
-Date: Wed, 21 May 2025 14:04:53 -0700
+	R1Z32RllxbUKuIbL9LvRcxRwJygw/y4QtcfDtXHpIpM=; b=lFRQvaq96a4gPFpJ
+	FC0MheLfWbeE2bTgcS69pr3KW1qKdeK99ZvoQheIrv9qSHCSAPuLSgF2AK7DF1p2
+	EBFqbebbn9bDTnBKqF7mFi688FG7JTV1g2ZQOpequU1yVFpfAZopkHROBazEDLLE
+	gO3si4x0SUFFdc1mO8MKlWfHDobnln215qOrgo4bv3zIm06fxV2ZP2eVFkpOEWW+
+	Tn4gF2Fy5M9RdSPv7pIzQOrQvi3AsmmvWck7Aytf2Fjjq6aGEc1R4pV2Oa8EYpnw
+	Z96ehS+LozmAyVIQDe8SmkUtFIUvf5U+BUIUMt9K38OyIerV5j6WWlvouC0J7ABO
+	g8ZYBA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46rwf6v82y-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 21 May 2025 21:38:52 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54LLcgln004519
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 21 May 2025 21:38:42 GMT
+Received: from [10.227.105.53] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 21 May
+ 2025 14:38:41 -0700
+Message-ID: <c21146ef-3cf6-4d8e-a32d-8479e4d96f3b@quicinc.com>
+Date: Wed, 21 May 2025 14:38:40 -0700
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V13 8/9] wifi: ath12k: add support for 160 MHz bandwidth
+To: Nicolas Escande <nico.escande@gmail.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>,
+        Jeff Johnson <quic_jjohnson@quicinc.com>
+References: <20250418174818.3336510-1-quic_pradeepc@quicinc.com>
+ <20250418174818.3336510-9-quic_pradeepc@quicinc.com>
+ <DA08F3TG062A.151WKWWF5OPL0@gmail.com>
+Content-Language: en-US
+From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+In-Reply-To: <DA08F3TG062A.151WKWWF5OPL0@gmail.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.0
-X-Proofpoint-GUID: LWRlxKg3V_AtUikha100OYwRWXOzMZNO
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIxMDIwOSBTYWx0ZWRfXxzgny2B5eR5S
- U8ANqDNrUV9CShJFtrxcqrrfX6s8IPW88fdj3Z1OgmGp1MGiXyGYdHfTZvRYyi3RJuxTV2DlHOk
- nInIh46VTSwWWvGq/SLve/E08iNSAPAXwaGjsOITXYnI9tjdmjCLOH6Aj1H5EfWasKyqAIgi/X7
- rgwxfMG2q0WOf8v1mIR9irKqkf+NgFwp43XF9spKLFB6QJyR6M2WCOwj/Skghlv55thMqq3zBCv
- m2t18LBS6ElZzbtWRiPqU6LKG72jMCHpdbpANXazKTcZiMHx9jdm6xkVmnmZX5+MGQH3xj8dzxz
- CqlNM5vfuaSu64+rKhlZYlTj+RuP4LNpMRiyrSHatCkqId5wBO6uZ8T/vBcqLoAHLmsrVSMX0pP
- 1T7mY1y9O4bJc9gbzCzdcuf0cuw0ws5tXVsbWha0tM48gSJ9gnH10k65EQHeBZ0jEfbsKIka
-X-Authority-Analysis: v=2.4 cv=fZOty1QF c=1 sm=1 tr=0 ts=682e3ff7 cx=c_pps
- a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=EUspDBNiAAAA:8 a=qE4HOfYLDg8APkTHxjoA:9
- a=QEXdDO2ut3YA:10 a=IoOABgeZipijB_acs4fv:22
-X-Proofpoint-ORIG-GUID: LWRlxKg3V_AtUikha100OYwRWXOzMZNO
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: TJvUE4Kj7QXixkhm7Oq0vi-3piDk4L4K
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIxMDIxNSBTYWx0ZWRfX+F+dYzgvoK19
+ +aLYWIdfHcCjVytLhCNVI1LMP18Zx+nhGKqENLpHrtyLF0OViWEFmSpr0zqG//MSYkdMnK5m30s
+ ipLKFEeKNQ5h0EF072CruMGpJsq0JIzOFCvSTl5+r7Za+ANAZwyzJLoj34kr4wTN97q4QIKueEl
+ ffcggjTJrr04thY2iBT+5IQNivQdVOVWbhSTwIlczNfNTuB0K6SW0nJjqYzp9d+BB6cPBJQ0h/t
+ Acs2e5fWYLd2SPX4RMzse6GYxw9LKgLtU3MD3YPs1O46JGABSy1lZe00pM9c5TnMTdOl6Eqc//N
+ BPJWQDMQVg015RQfHNPQglwLyUwE5WKNQSQaOTvTI7kEZL+5wFVus2mZyTVi6W0SzEW0c4AWG08
+ 95QlDPWtHe/15AwhiVJGYlTPvLi+kZEMRgwbrYIAoWwvWthz/OnmOVcb2vJv5UJ/AA/DlLOf
+X-Authority-Analysis: v=2.4 cv=fZOty1QF c=1 sm=1 tr=0 ts=682e47ec cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8
+ a=B5O5ry5ejk7m3CeyslEA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: TJvUE4Kj7QXixkhm7Oq0vi-3piDk4L4K
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-05-21_07,2025-05-20_03,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 mlxscore=0 adultscore=0 spamscore=0 bulkscore=0 suspectscore=0
+ clxscore=1011 mlxscore=0 adultscore=0 spamscore=0 bulkscore=0 suspectscore=0
  malwarescore=0 priorityscore=1501 impostorscore=0 mlxlogscore=999
  lowpriorityscore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a
  authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505160000 definitions=main-2505210209
+ engine=8.19.0-2505160000 definitions=main-2505210215
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250521_140458_285189_AD966BA6 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250521_143854_864363_13AB116E 
+X-CRM114-Status: GOOD (  26.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,28 +113,128 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 21 May 2025 22:29:28 +0530, Aditya Kumar Singh wrote:
-> Following commit 4c546023d71a ("wifi: ath12k: update regulatory rules when
-> interface added"), the WCN7850 fails to connect to a 6 GHz AP due to
-> ah->regd_updated not being reset. This issue is addressed in patch 1.
-> 
-> For the same reason, regulatory domain updates also fail during interface
-> addition and connection establishment. These issues are resolved in
-> patches 2 and 3, respectively.
-> 
+
+On 5/19/2025 8:11 AM, Nicolas Escande wrote:
+> On Fri Apr 18, 2025 at 7:48 PM CEST, Pradeep Kumar Chitrapu wrote:
+>> Add support to configure maximum NSS in 160 MHz bandwidth.
+>> Firmware advertises support for handling NSS ratio information
+>> as a part of service ready ext event using nss_ratio_enabled
+>> flag. Save this information in ath12k_pdev_cap to calculate
+>> NSS ratio.
+>>
+>> Additionally, reorder the code by moving
+>> ath12k_peer_assoc_h_phymode() before ath12k_peer_assoc_h_vht()
+>> to ensure that arg->peer_phymode correctly reflects the bandwidth
+>> in the max NSS calculation.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>>
+>> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
+>> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+>> Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+>> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 > [...]
+> 
+> Hello,
+> 
+> With this patch set we sometimes see the following warning shortly followed by a
+> firmware crash on QCN9274 running WLAN.WBE.1.3.1-00218-QCAHKSWPL_SILICONZ-1
+> 
+> [  242.416516] ------------[ cut here ]------------
+> [  242.423608] WARNING: CPU: 2 PID: 1427 at drivers/net/wireless/ath/ath12k/mac.c:3224 ath12k_peer_assoc_h_phymode+0xd4/0x800 [ath12k]
+> [  242.428475] Modules linked in: dvb_usb_af9035 dvb_usb_dib0700 dib0070 dib7000m dibx000_common at24 ath12k qmi_helpers nf_nat_sip nf_conntrack_sip dwc3_qcom nf_nat_pptp nf_conntrack_pptp ipq_lpass
+> [  242.444176] CPU: 2 UID: 0 PID: 1427 Comm: memcheck-arm64- Not tainted 6.13.0-02013-gd424b7b9a373-dirty #140
+> [  242.466407] Hardware name: XXX (DT)
+> [  242.476124] pstate: 60000005 (nZCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+> [  242.480639] pc : ath12k_peer_assoc_h_phymode+0xd4/0x800 [ath12k]
+> [  242.487584] lr : ath12k_peer_assoc_h_phymode+0x540/0x800 [ath12k]
+> [  242.493834] sp : ffffffc08588b4b0
+> [  242.499820] x29: ffffffc08588b4b0 x28: 0000000000000008 x27: ffffff802781bb60
+> [  242.503123] x26: ffffff802cfa9af0 x25: ffffff802781bb60 x24: ffffff8016f38be0
+> [  242.510241] x23: ffffff802cfa9fb0 x22: ffffff802781bce0 x21: ffffff802d50dc00
+> [  242.517360] x20: ffffff8016f38be0 x19: ffffff802781bce0 x18: ffffffffffffffff
+> [  242.524477] x17: 30363120726f6620 x16: 6f666e6920797469 x15: 6c69626170616320
+> [  242.531595] x14: 5948502054485620 x13: 0000000000000001 x12: 0000000000000060
+> [  242.538714] x11: ffffffc08126c6b0 x10: 0000000000000274 x9 : ffffffc08010468c
+> [  242.545832] x8 : 00000000ffffdfff x7 : 00000000ffffe000 x6 : 0000000000000001
+> [  242.552949] x5 : 0000000000000000 x4 : 0000000000000000 x3 : 0000000000000000
+> [  242.560067] x2 : ffffff80bff6de70 x1 : ffffff80bff640c8 x0 : 0000000000000021
+> [  242.567186] Call trace:
+> [  242.574299]  ath12k_peer_assoc_h_phymode+0xd4/0x800 [ath12k] (P)
+> [  242.576560]  ath12k_peer_assoc_prepare+0x5d4/0x1608 [ath12k]
+> [  242.582809]  ath12k_mac_op_sta_state+0x1f4/0x1100 [ath12k]
+> [  242.588451]  drv_sta_state+0xa0/0x5e0
+> [  242.593745]  _sta_info_move_state+0x20c/0x4b8
+> [  242.597477]  sta_info_move_state+0x18/0x28
+> [  242.601817]  sta_apply_auth_flags.isra.0+0x190/0x1c0
+> [  242.605812]  sta_apply_parameters+0x240/0x5e0
+> [  242.610933]  ieee80211_change_station+0x164/0x200
+> [  242.615187]  nl80211_set_station+0x3bc/0x520
+> [  242.619874]  genl_family_rcv_msg_doit+0xbc/0x128
+> [  242.624215]  genl_rcv_msg+0x1c0/0x260
+> [  242.628815]  netlink_rcv_skb+0x40/0x100
+> [  242.632373]  genl_rcv+0x3c/0x60
+> [  242.636018]  netlink_unicast+0x2d8/0x338
+> [  242.639144]  netlink_sendmsg+0x158/0x398
+> [  242.643311]  ____sys_sendmsg+0x104/0x290
+> [  242.647217]  ___sys_sendmsg+0x70/0xa0
+> [  242.651123]  __sys_sendmsg+0x64/0xb0
+> [  242.654682]  __arm64_sys_sendmsg+0x28/0x38
+> [  242.658329]  do_el0_svc+0x70/0x100
+> [  242.662234]  el0_svc+0x18/0x60
+> [  242.665619]  el0t_64_sync_handler+0x104/0x130
+> [  242.668659]  el0t_64_sync+0x154/0x158
+> [  242.673086] ---[ end trace 0000000000000000 ]---
+> 
+> It's probably there since v1 of thies series but I just finally got to the
+> bottom of this now and I've tracked it down to the following hunk:
+> 
+>> @@ -2822,11 +2883,12 @@ static enum wmi_phy_mode ath12k_mac_get_phymode_vht(struct ath12k *ar,
+>>   						    struct ieee80211_link_sta *link_sta)
+>>   {
+>>   	if (link_sta->bandwidth == IEEE80211_STA_RX_BW_160) {
+>> -		if (link_sta->vht_cap.cap & IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160MHZ)
+>> +		if (link_sta->vht_cap.cap & (IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160MHZ |
+>> +		    IEEE80211_VHT_CAP_EXT_NSS_BW_MASK))
+>>   			return MODE_11AC_VHT160;
+>>   
+>>   		/* not sure if this is a valid case? */
+>> -		return MODE_11AC_VHT160;
+>> +		return MODE_UNKNOWN;
+>>   	}
+>>   
+>>   	if (link_sta->bandwidth == IEEE80211_STA_RX_BW_80)
+> 
+> Which led me to understand that a sta that supports both VHT 160 and 80+80 ie
+> IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160_80PLUS80MHZ will end up with a phy mode
+> MODE_UNKNOWN send to the firmware. Which I guess is the reason of the crash.
+> 
+> I understand that VHT 80+80 is not supported by this chipset, but shouldn't we
+> just allow the sta to connect using VHT 160 right ? Something like this maybe ?
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 048d62a48c88..d3a87af076e7 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -3041,7 +3041,7 @@ static enum wmi_phy_mode ath12k_mac_get_phymode_vht(struct ath12k *ar,
+>   						    struct ieee80211_link_sta *link_sta)
+>   {
+>   	if (link_sta->bandwidth == IEEE80211_STA_RX_BW_160) {
+> -		if (link_sta->vht_cap.cap & (IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160MHZ |
+> +		if (link_sta->vht_cap.cap & (IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_MASK |
+>   		    IEEE80211_VHT_CAP_EXT_NSS_BW_MASK))
+>   			return MODE_11AC_VHT160;
+Thanks Nicolas,
 
-Applied, thanks!
-
-[1/3] wifi: ath12k: fix regdomain update failure after 11D scan completes
-      commit: d662c14a51910ba0ad66afd248b601ba30b9f7f1
-[2/3] wifi: ath12k: fix regdomain update failure when adding interface
-      commit: 37e775a0a9d79a031d28d9e21480f99f448e9215
-[3/3] wifi: ath12k: fix regdomain update failure when connection establishes
-      commit: 886bb3624e4c9914a943b63fcfdf30b8d2f2b66e
-
-Best regards,
--- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-
+I believe IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160_80PLUS80MHZ mean only 
+80PLUS80 not both 160 and 80PLUS80 and STA must set 
+IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160MHZ flags for indicating 160 MHz 
+support. Please correct me if my understanding is correct. However I 
+agree that we must allow STA to connect irrespective of which flag STA 
+sets as long as bandwidth is 160MHz. I see ath10k and ath11k also allows 
+this by setting default phymode of MODE_11AC_VHT160 for BW 
+==IEEE80211_STA_RX_BW_160 case.
+I will make this change in next revision.
+Thanks
+Pradeep
 
