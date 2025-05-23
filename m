@@ -4,87 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81EDBC3DA6D
-	for <ath12k@archiver.kernel.org>; Fri, 23 May 2025 08:45:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AAE6C54F30
+	for <ath12k@archiver.kernel.org>; Fri, 23 May 2025 14:42:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=le694XSYWE6RVk/YVetm5E7FCuIzvCIq7P47IsPfytE=; b=Ckbqnxx8Qf/rpNADf4dWzYezgf
-	jpKMmF3dxxAZRiNxiAy/4gjD/5+KaWyF/o0wdefyOZaAlnbh1MZtT0G46tyCdPotxdqmDNUCsBuAv
-	CznsugMwBDzLyVrvKmChFDrblWXMKRQIKu+9I/E0XJUhnf93as43MhLBnWyVVCRgU/i9ZzibVvkfo
-	i5UmvfwCCBbtZBCciG26ouWCrGd5kYgsSBduWwJW9FYtA9Gj7s0+8dqV0FCdGIPN5kvmimF/Mo/Wm
-	cAXYR6ILmpcHphT8OxxQngscNl5mSTcntOM4llnNmC3L4UYGbNo0gYTT6to+IAKhrTzoMUCXHS6YN
-	vRCeMJ7Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=5WZKHVX1SoX76iCdr9eUwSznmo4DZk0Nvw57g9VWXTs=; b=FYNbxjrPhPr7Frbd7bTx43/sx4
+	cusvg9vNdlTbDlZc5K7sar9dYZI35tkpxMFVxqxfvTnwfLFVgf8pyybdSLNfBu3HnZGOzEfMjh8ex
+	uwi8z+zPsWDO39S1Ovpn+6exP0LJQsJIQd+S/S+rdt/EiLj1fcfXnC0mjFxI4dQBZxB+Cp/GkmsRu
+	1CEB0k3Vq3cdbWYwvbCBGCSAfHGqgwvoMcV2ECkzbnBXHJtfAeC1NQvuj4E/NWoKm6PfXa0iQm+Uv
+	WvWrXNe1PEan3lRUM5Uye8yrpF3eV4F30B+mZ2hW7shxOOxjdf3bkPxZyVOT5IRS/5u06h1k2Bm+n
+	GGTYGrfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uIO1d-00000003Ko2-13zZ;
-	Fri, 23 May 2025 08:45:09 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1uITbn-000000046e0-3Jhu;
+	Fri, 23 May 2025 14:42:51 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uINoZ-00000003JMi-1mh0
+	id 1uISlC-00000004134-09mX
 	for ath12k@lists.infradead.org;
-	Fri, 23 May 2025 08:31:40 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3a36abf5df9so442476f8f.0
-        for <ath12k@lists.infradead.org>; Fri, 23 May 2025 01:31:39 -0700 (PDT)
+	Fri, 23 May 2025 13:48:31 +0000
+Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-442ec3ce724so76201245e9.0
+        for <ath12k@lists.infradead.org>; Fri, 23 May 2025 06:48:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1747989098; x=1748593898; darn=lists.infradead.org;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=le694XSYWE6RVk/YVetm5E7FCuIzvCIq7P47IsPfytE=;
-        b=RUiDbd1SOZxzPKUVxB/3Zwh71Ljj4hTklcakpDitOgMaR250TEC6ZGu8ezSZT76w2S
-         Fc1SVtylGsZoGWTX7VxIegkvKlrcgAC72DTp095yKGDz/uIgcWAlK1x6W3VrWu/m6PoG
-         uePG6C1dF2vL5citWiW7rJZA2NkiZcPBRz23jRH/n73iV+7KllaOXg3Tjy7ciTImZhIs
-         EN3oG63HZTSPGRNuVPYtYcREvQI6YjrFcMWsJUWUVPRXG4QN9Py0JpujurQZ5Cdfy27o
-         Nn5LHMA/wCUyMh4oaUWg56RmPSkaJA56lg+f4PEVKcuH71rwajYDUMOYC3uaCCL3HUWW
-         KmUQ==
+        d=gmail.com; s=20230601; t=1748008108; x=1748612908; darn=lists.infradead.org;
+        h=mime-version:user-agent:content-transfer-encoding:references
+         :in-reply-to:date:cc:to:from:subject:message-id:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=5WZKHVX1SoX76iCdr9eUwSznmo4DZk0Nvw57g9VWXTs=;
+        b=LnFm7Q6hcU2Dwcn0E/0NMUo+9aS0iMgdLzzQK7mGvlbGPaUV6PO6GkmD5iSIdrhJDF
+         62rx0xbXefU4YETTaILYXNfQyobqU3ZbiVuVzbXDMM0/FBOvN/hkvNDUIGTRSxCM2bPl
+         uRKYgblUqJg5n+lWP70OaESDc4toC9x6jXcdCuctIJAPd0Ig1vNDoxGuYUb6xuy06Vrf
+         MZWoXlY5bF9iu3rj7VjHHJ6r1Bm23NR07mUf0hZQfYPW8yVW/3uLsFyAurlttcN3jjdz
+         h4dWvp5oDAn7GBrfDGA7WLZoghd8K1uWD9MzW3EoKgjKG36c/LslIRfEnGgDLa2QPPH7
+         sX9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747989098; x=1748593898;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=le694XSYWE6RVk/YVetm5E7FCuIzvCIq7P47IsPfytE=;
-        b=hBlovVZs9Q61Rx/tsnlBpWcy/kiVykhE53ESwb7JoyIi8TZILgE6oa1pIBbKiXpjB8
-         ppEbZulfT5MSXSgfN/U15AoRFylwPShwEYC+MAAxsqmhvL+pBWynkGjTmGXUy7ZLf+eV
-         igyAWJA61zfoSdaIFhztHkm5BEHtsjEM7erpUEZnnXVFVvoc2teGsMUj9aEZfnIq5dXF
-         PEyWKSMZsFtqgckHKL7mk7Flbe2qKNqSFYt7WWc8ML+I2F/XFizXp+b2UFuItSRTZ6tb
-         DRLIUt1wGDO8PpjDMNvvan6P/iz7bfpU9UNJKTDcLR49f8KEV7IUZMenlnp52f0Jhjmr
-         MfcQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVmouvgtzvX7zNZ1wZyD3tuVZygPAS1dcLNzg/v0HrA+OzT7bpP+QhTiOySiOTSWAwQPpH2oaA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwjWUlGompf4crmURrncgor1/7quHh239/7o14W9VJVHhEIkfG8
-	fLGlf+NJWDk2WdjmTVvLYC7g/c1OPObbWgGUUz/BreO0BxYv3VOOurXM4UatfBAG71w=
-X-Gm-Gg: ASbGncvvzR2zbMTv4gXruBMA44ci5Lzy1yLcrYgsY9qaEwQVuaRL0JUdL/kXB77x3+P
-	gIp8WZXuFUxgcZD9yaV/f1Y0gJAQFBec4Nr/gCQnYk+14QEqKyCEPYTyj9iq/mQ0nCksXSnVJYN
-	PpwjHw+2vMGOe/B4v3oF9Hc7Qrlq2QwekUJMvAbz7z2BhQS1eQ2xcqRPdJ6hdmYVAz4q/fgUr0z
-	/pUJ6Y0OYFLbLQD0RgnvW2X1gvEiWS08NDjb7QAxuEcUBr/ROPL2srrBFDIlbY3yQi5Po1ve2G1
-	LQ81v8Cx0Iabla0wPaJsUJZTVKC4UnLnmZusy/KY1qF+DwtEjz8/TgsY
-X-Google-Smtp-Source: AGHT+IEHiJg8FtJaRq9Kty0uh+3w1R54P+fvdmmVAyRZ2+UDfrkkVE/zSADNB2Bm3QdDJFAxAdqEvg==
-X-Received: by 2002:a5d:64cd:0:b0:3a3:6d25:b8e2 with SMTP id ffacd0b85a97d-3a4c14ea5a0mr2267830f8f.6.1747989097564;
-        Fri, 23 May 2025 01:31:37 -0700 (PDT)
-Received: from localhost ([196.207.164.177])
-        by smtp.gmail.com with UTF8SMTPSA id 5b1f17b1804b1-447f78b0acasm129176085e9.31.2025.05.23.01.31.36
+        d=1e100.net; s=20230601; t=1748008108; x=1748612908;
+        h=mime-version:user-agent:content-transfer-encoding:references
+         :in-reply-to:date:cc:to:from:subject:message-id:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=5WZKHVX1SoX76iCdr9eUwSznmo4DZk0Nvw57g9VWXTs=;
+        b=dw+Kj7bTVU/c0415mzpEY2gQho3mIe06ssKYqEXot1gAcwOwx9bIuckS6gLOLCkf18
+         XbqUTeRYvs0KNXvULFtfwrLo0hk0ZG3avMzcpPxijBbbMXpvvyCPvr3vKHvkxmZxASqN
+         EbHxkZTaSZs1D96DA9/cZX/QDhTWIFe1zdmDWI8cGda28Hq3Km0dc2vLX7PS8lFb/Xmw
+         S0hki6mo6+3gkO4ujcA2G/zCFdCx1Sf6talOpITzytsjkol7J+K0Yz8mQDSVyGG74Vs2
+         gqHd1M372yf2Xxds9uIoOjjl3JGgw8ytOxCzVqhRZF55AmonI5a1A0gbvInxZTpJ2bv1
+         Us0A==
+X-Forwarded-Encrypted: i=1; AJvYcCWQYr+2BFuZw8B3ShoDndIrFKqpBbJ8Iy3fo3lGRbcy7g0OFKL0YS+jlTXiGP/akYjhxSe49vU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyymqZbwU/5uuteGv1g9WIz91DYkIUbai8Te+b+eV+zrVQtA6ak
+	TnRysZLPHzErskjmcMBV4rrUI03obyloSZuGLc+FupJGZKvsZwipx3HS
+X-Gm-Gg: ASbGncugtEY/GiNCF2Wn/GvEfnIQOMH7B/BIeDy+0v2hEmX1Hz+abAQbGqw9rxJ8heJ
+	c2u89mLzrZAyZ71XgZtlevIuS9IAwrl2lzVV41Y1/jgp9WFIerpxigB7GaKOKRVgrcTGw7LXxyH
+	fkLPBa3VuzeSum+d7O4AOv0Jn5SaX+/OEVp9l05tcFokzmPZxJ5MfdgkIMt5AU82irEm3JSpU1o
+	tMDb7SZtHsG0NOLTEra8YsYqifCyHhY9hqAbW96A1yIRzA+m6JsYBkEnom4rHI5SAu2+NDyoDCj
+	cHQoUh2WY7rNwLO7WtzeVIWpRi3IR7wGIgfihcFNaOqZAMVuyG75hjZVcBakcJOQC5O3FxrNVPJ
+	EOi5XGgH9NEcRqtP+uh57qS8nMVxALfdHZmPWr/ACbu0/qK0vIY6ooQ2Ap+DSwig=
+X-Google-Smtp-Source: AGHT+IHCHWgzs6ok+9oUDkNDixpXJM3owBcKd/3Mx5okhrSd+/1j2ORV0V99xgFBPmR9KO9HsFGkBA==
+X-Received: by 2002:a05:6000:188c:b0:3a3:79cb:8b14 with SMTP id ffacd0b85a97d-3a379cb8e37mr14344708f8f.33.1748008107615;
+        Fri, 23 May 2025 06:48:27 -0700 (PDT)
+Received: from dominikat-nb.corp.toradex.com (248.201.173.83.static.wline.lns.sme.cust.swisscom.ch. [83.173.201.248])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a3648baa6asm24418561f8f.91.2025.05.23.06.48.26
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 23 May 2025 01:31:37 -0700 (PDT)
-Date: Fri, 23 May 2025 11:31:34 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: oe-kbuild@lists.linux.dev, Baochen Qiang <quic_bqiang@quicinc.com>
-Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
-	Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
-	ath12k@lists.infradead.org,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Subject: [ath:pending-deferred 25/61]
- drivers/net/wireless/ath/ath12k/mac.c:10069 ath12k_mac_fill_reg_tpc_info()
- error: uninitialized symbol 'eirp_power'.
-Message-ID: <202505180927.tbNWr3vE-lkp@intel.com>
+        Fri, 23 May 2025 06:48:27 -0700 (PDT)
+Message-ID: <91bc6f30004f80feb193a24292f841ee88d48504.camel@gmail.com>
+Subject: Re: [PATCH ath-next] wifi: ath12k: fix GCC_GCC_PCIE_HOT_RST
+ definition for WCN7850
+From: Parth Panchoil <parth105105@gmail.com>
+To: Baochen Qiang <quic_bqiang@quicinc.com>, Jeff Johnson
+ <jjohnson@kernel.org>,  Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
+ Wen Gong <quic_wgong@quicinc.com>, Vasanthakumar Thiagarajan
+ <quic_vthiagar@quicinc.com>, Bhagavathi Perumal S
+ <quic_bperumal@quicinc.com>,  P Praneesh <quic_ppranees@quicinc.com>
+Cc: Sriram R <quic_srirrama@quicinc.com>, linux-wireless@vger.kernel.org, 
+	ath12k@lists.infradead.org, linux-kernel@vger.kernel.org, Francesco Dolcini
+	 <francesco@dolcini.it>
+Date: Fri, 23 May 2025 15:48:26 +0200
+In-Reply-To: <20250523-ath12k-wrong-global-reset-addr-v1-1-3b06eb556196@quicinc.com>
+References: <20250523-ath12k-wrong-global-reset-addr-v1-1-3b06eb556196@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.44.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250523_013139_470981_D4371B09 
-X-CRM114-Status: UNSURE (   7.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250523_064830_078873_FDA14246 
+X-CRM114-Status: GOOD (  19.40  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,203 +105,183 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending-deferred
-head:   52c1e49f8c69a630f3dbe7dd79c52979cdad19d2
-commit: aeda163bb0c7b9fc58bdd6ae90c0eef4f4050b7b [25/61] wifi: ath12k: fill parameters for vdev set TPC power WMI command
-config: x86_64-randconfig-161-20250518 (https://download.01.org/0day-ci/archive/20250518/202505180927.tbNWr3vE-lkp@intel.com/config)
-compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
+Thanks Baochen for the patch.=20
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-| Closes: https://lore.kernel.org/r/202505180927.tbNWr3vE-lkp@intel.com/
+This patch fixes a bug in older kernels, so it should be backported.
+Minor correction needed on the reported tag.
+Tested on TI AM69 SK board with SX-PCEBE (WCN7850) Wi-Fi module and did
+not observe the reported crash anymore.
 
-New smatch warnings:
-drivers/net/wireless/ath/ath12k/mac.c:10069 ath12k_mac_fill_reg_tpc_info() error: uninitialized symbol 'eirp_power'.
+Cc: stable@vger.kernel.org
+Reported-by: Parth Pancholi <parth.pancholi@toradex.com>
+Tested-by: Parth Pancholi <parth.pancholi@toradex.com>
 
-vim +/eirp_power +10069 drivers/net/wireless/ath/ath12k/mac.c
+Regards,
+Parth P
 
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9902  void ath12k_mac_fill_reg_tpc_info(struct ath12k *ar,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9903  				  struct ath12k_link_vif *arvif,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9904  				  struct ieee80211_chanctx_conf *ctx)
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9905  {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9906  	struct ath12k_base *ab = ar->ab;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9907  	struct ath12k_reg_tpc_power_info *reg_tpc_info = &arvif->reg_tpc_info;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9908  	struct ieee80211_bss_conf *bss_conf = ath12k_mac_get_link_bss_conf(arvif);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9909  	struct ieee80211_channel *chan, *temp_chan;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9910  	u8 pwr_lvl_idx, num_pwr_levels, pwr_reduction;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9911  	bool is_psd_power = false, is_tpe_present = false;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9912  	s8 max_tx_power[ATH12K_NUM_PWR_LEVELS],
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9913  		psd_power, tx_power, eirp_power;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9914  	u16 start_freq, center_freq;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9915  
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9916  	chan = ctx->def.chan;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9917  	start_freq = ath12k_mac_get_6ghz_start_frequency(&ctx->def);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9918  	pwr_reduction = bss_conf->pwr_reduction;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9919  
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9920  	if (arvif->reg_tpc_info.num_pwr_levels) {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9921  		is_tpe_present = true;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9922  		num_pwr_levels = arvif->reg_tpc_info.num_pwr_levels;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9923  	} else {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9924  		num_pwr_levels = ath12k_mac_get_num_pwr_levels(&ctx->def);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9925  	}
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9926  
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9927  	for (pwr_lvl_idx = 0; pwr_lvl_idx < num_pwr_levels; pwr_lvl_idx++) {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9928  		/* STA received TPE IE*/
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9929  		if (is_tpe_present) {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9930  			/* local power is PSD power*/
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9931  			if (chan->flags & IEEE80211_CHAN_PSD) {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9932  				/* Connecting AP is psd power */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9933  				if (reg_tpc_info->is_psd_power) {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9934  					is_psd_power = true;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9935  					ath12k_mac_get_psd_channel(ar, 20,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9936  								   &start_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9937  								   &center_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9938  								   pwr_lvl_idx,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9939  								   &temp_chan,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9940  								   &tx_power);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9941  					psd_power = temp_chan->psd;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9942  					eirp_power = tx_power;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9943  					max_tx_power[pwr_lvl_idx] =
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9944  						min_t(s8,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9945  						      psd_power,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9946  						      reg_tpc_info->tpe[pwr_lvl_idx]);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9947  				/* Connecting AP is not psd power */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9948  				} else {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9949  					ath12k_mac_get_eirp_power(ar,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9950  								  &start_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9951  								  &center_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9952  								  pwr_lvl_idx,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9953  								  &temp_chan,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9954  								  &ctx->def,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9955  								  &tx_power);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9956  					psd_power = temp_chan->psd;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9957  					/* convert psd power to EIRP power based
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9958  					 * on channel width
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9959  					 */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9960  					tx_power =
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9961  						min_t(s8, tx_power,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9962  						      psd_power + 13 + pwr_lvl_idx * 3);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9963  					max_tx_power[pwr_lvl_idx] =
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9964  						min_t(s8,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9965  						      tx_power,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9966  						      reg_tpc_info->tpe[pwr_lvl_idx]);
-
-eirp_power is not set on this else path.
-
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9967  				}
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9968  			/* local power is not PSD power */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9969  			} else {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9970  				/* Connecting AP is psd power */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9971  				if (reg_tpc_info->is_psd_power) {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9972  					is_psd_power = true;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9973  					ath12k_mac_get_psd_channel(ar, 20,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9974  								   &start_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9975  								   &center_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9976  								   pwr_lvl_idx,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9977  								   &temp_chan,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9978  								   &tx_power);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9979  					eirp_power = tx_power;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9980  					max_tx_power[pwr_lvl_idx] =
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9981  						reg_tpc_info->tpe[pwr_lvl_idx];
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9982  				/* Connecting AP is not psd power */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9983  				} else {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9984  					ath12k_mac_get_eirp_power(ar,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9985  								  &start_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9986  								  &center_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9987  								  pwr_lvl_idx,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9988  								  &temp_chan,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9989  								  &ctx->def,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9990  								  &tx_power);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9991  					max_tx_power[pwr_lvl_idx] =
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9992  						min_t(s8,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9993  						      tx_power,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9994  						      reg_tpc_info->tpe[pwr_lvl_idx]);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9995  				}
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9996  			}
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9997  		/* STA not received TPE IE */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9998  		} else {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18   9999  			/* local power is PSD power*/
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10000  			if (chan->flags & IEEE80211_CHAN_PSD) {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10001  				is_psd_power = true;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10002  				ath12k_mac_get_psd_channel(ar, 20,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10003  							   &start_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10004  							   &center_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10005  							   pwr_lvl_idx,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10006  							   &temp_chan,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10007  							   &tx_power);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10008  				psd_power = temp_chan->psd;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10009  				eirp_power = tx_power;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10010  				max_tx_power[pwr_lvl_idx] = psd_power;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10011  			} else {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10012  				ath12k_mac_get_eirp_power(ar,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10013  							  &start_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10014  							  &center_freq,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10015  							  pwr_lvl_idx,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10016  							  &temp_chan,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10017  							  &ctx->def,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10018  							  &tx_power);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10019  				max_tx_power[pwr_lvl_idx] = tx_power;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10020  			}
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10021  		}
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10022  
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10023  		if (is_psd_power) {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10024  			/* If AP local power constraint is present */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10025  			if (pwr_reduction)
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10026  				eirp_power = eirp_power - pwr_reduction;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10027  
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10028  			/* If firmware updated max tx power is non zero, then take
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10029  			 * the min of firmware updated ap tx power
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10030  			 * and max power derived from above mentioned parameters.
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10031  			 */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10032  			ath12k_dbg(ab, ATH12K_DBG_MAC,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10033  				   "eirp power : %d firmware report power : %d\n",
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10034  				   eirp_power, ar->max_allowed_tx_power);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10035  			/* Firmware reports lower max_allowed_tx_power during vdev
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10036  			 * start response. In case of 6 GHz, firmware is not aware
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10037  			 * of EIRP power unless driver sets EIRP power through WMI
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10038  			 * TPC command. So radio which does not support idle power
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10039  			 * save can set maximum calculated EIRP power directly to
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10040  			 * firmware through TPC command without min comparison with
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10041  			 * vdev start response's max_allowed_tx_power.
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10042  			 */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10043  			if (ar->max_allowed_tx_power && ab->hw_params->idle_ps)
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10044  				eirp_power = min_t(s8,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10045  						   eirp_power,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10046  						   ar->max_allowed_tx_power);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10047  		} else {
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10048  			/* If AP local power constraint is present */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10049  			if (pwr_reduction)
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10050  				max_tx_power[pwr_lvl_idx] =
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10051  					max_tx_power[pwr_lvl_idx] - pwr_reduction;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10052  			/* If firmware updated max tx power is non zero, then take
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10053  			 * the min of firmware updated ap tx power
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10054  			 * and max power derived from above mentioned parameters.
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10055  			 */
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10056  			if (ar->max_allowed_tx_power && ab->hw_params->idle_ps)
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10057  				max_tx_power[pwr_lvl_idx] =
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10058  					min_t(s8,
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10059  					      max_tx_power[pwr_lvl_idx],
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10060  					      ar->max_allowed_tx_power);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10061  		}
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10062  		reg_tpc_info->chan_power_info[pwr_lvl_idx].chan_cfreq = center_freq;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10063  		reg_tpc_info->chan_power_info[pwr_lvl_idx].tx_power =
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10064  			max_tx_power[pwr_lvl_idx];
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10065  	}
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10066  
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10067  	reg_tpc_info->num_pwr_levels = num_pwr_levels;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10068  	reg_tpc_info->is_psd_power = is_psd_power;
-aeda163bb0c7b9 Baochen Qiang 2025-04-18 @10069  	reg_tpc_info->eirp_power = eirp_power;
-                                                                                   ^^^^^^^^^^
-warning.
-
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10070  	reg_tpc_info->ap_power_type =
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10071  		ath12k_reg_ap_pwr_convert(bss_conf->power_type);
-aeda163bb0c7b9 Baochen Qiang 2025-04-18  10072  }
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+> GCC_GCC_PCIE_HOT_RST is wrongly defined for WCN7850, causing kernel
+> crash
+> on some specific platforms.
+>=20
+> Since this register is divergent for WCN7850 and QCN9274, move it to
+> register table to allow different definitions. Then correct the
+> register
+> address for WCN7850 to fix this issue.
+>=20
+> Note IPQ5332 is not affected as it is not PCIe based device.
+>=20
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-
+> QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>=20
+> Reported-by: Parth Panchoil <parth105105@gmail.com>
+> Closes:
+> https://lore.kernel.org/all/86899b2235a59c9134603beebe08f2bb0b244ea0.came=
+l@gmail.com
+> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7
+> devices")
+> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+> ---
+> ---
+> =C2=A0drivers/net/wireless/ath/ath12k/hw.c=C2=A0 | 6 ++++++
+> =C2=A0drivers/net/wireless/ath/ath12k/hw.h=C2=A0 | 2 ++
+> =C2=A0drivers/net/wireless/ath/ath12k/pci.c | 6 +++---
+> =C2=A0drivers/net/wireless/ath/ath12k/pci.h | 4 +++-
+> =C2=A04 files changed, 14 insertions(+), 4 deletions(-)
+>=20
+> diff --git a/drivers/net/wireless/ath/ath12k/hw.c
+> b/drivers/net/wireless/ath/ath12k/hw.c
+> index
+> 7e2cf0fb2085ab014fc14a5c81074802674b154e..8254dc10b53bbfb54a44c7ff2f7
+> 05c72461d1031 100644
+> --- a/drivers/net/wireless/ath/ath12k/hw.c
+> +++ b/drivers/net/wireless/ath/ath12k/hw.c
+> @@ -951,6 +951,8 @@ static const struct ath12k_hw_regs
+> qcn9274_v1_regs =3D {
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.hal_umac_ce0_dest_reg_ba=
+se =3D 0x01b81000,
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.hal_umac_ce1_src_reg_bas=
+e =3D 0x01b82000,
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.hal_umac_ce1_dest_reg_ba=
+se =3D 0x01b83000,
+> +
+> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.gcc_gcc_pcie_hot_rst =3D 0x1e=
+38338,
+> =C2=A0};
+> =C2=A0
+> =C2=A0static const struct ath12k_hw_regs qcn9274_v2_regs =3D {
+> @@ -1042,6 +1044,8 @@ static const struct ath12k_hw_regs
+> qcn9274_v2_regs =3D {
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.hal_umac_ce0_dest_reg_ba=
+se =3D 0x01b81000,
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.hal_umac_ce1_src_reg_bas=
+e =3D 0x01b82000,
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.hal_umac_ce1_dest_reg_ba=
+se =3D 0x01b83000,
+> +
+> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.gcc_gcc_pcie_hot_rst =3D 0x1e=
+38338,
+> =C2=A0};
+> =C2=A0
+> =C2=A0static const struct ath12k_hw_regs ipq5332_regs =3D {
+> @@ -1215,6 +1219,8 @@ static const struct ath12k_hw_regs wcn7850_regs
+> =3D {
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.hal_umac_ce0_dest_reg_ba=
+se =3D 0x01b81000,
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.hal_umac_ce1_src_reg_bas=
+e =3D 0x01b82000,
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.hal_umac_ce1_dest_reg_ba=
+se =3D 0x01b83000,
+> +
+> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0.gcc_gcc_pcie_hot_rst =3D 0x1e=
+40304,
+> =C2=A0};
+> =C2=A0
+> =C2=A0static const struct ath12k_hw_hal_params
+> ath12k_hw_hal_params_qcn9274 =3D {
+> diff --git a/drivers/net/wireless/ath/ath12k/hw.h
+> b/drivers/net/wireless/ath/ath12k/hw.h
+> index
+> 0fbc17649df463334aa0ebb3da407115985335ca..0a75bc5abfa2410ab3c7b6ce038
+> f4d5f6445ecf9 100644
+> --- a/drivers/net/wireless/ath/ath12k/hw.h
+> +++ b/drivers/net/wireless/ath/ath12k/hw.h
+> @@ -375,6 +375,8 @@ struct ath12k_hw_regs {
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0u32 hal_reo_cmd_ring_base=
+;
+> =C2=A0
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0u32 hal_reo_status_ring_b=
+ase;
+> +
+> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0u32 gcc_gcc_pcie_hot_rst;
+> =C2=A0};
+> =C2=A0
+> =C2=A0static inline const char *ath12k_bd_ie_type_str(enum
+> ath12k_bd_ie_type type)
+> diff --git a/drivers/net/wireless/ath/ath12k/pci.c
+> b/drivers/net/wireless/ath/ath12k/pci.c
+> index
+> 489d546390fcdab8f615cc9184006a958d9f140a..1f3cfd9b89fdcfd84731ec90c9c
+> 678b0c477a2af 100644
+> --- a/drivers/net/wireless/ath/ath12k/pci.c
+> +++ b/drivers/net/wireless/ath/ath12k/pci.c
+> @@ -292,10 +292,10 @@ static void ath12k_pci_enable_ltssm(struct
+> ath12k_base *ab)
+> =C2=A0
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0ath12k_dbg(ab, ATH12K_DBG=
+_PCI, "pci ltssm 0x%x\n", val);
+> =C2=A0
+> -=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0val =3D ath12k_pci_read32(ab, =
+GCC_GCC_PCIE_HOT_RST);
+> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0val =3D ath12k_pci_read32(ab, =
+GCC_GCC_PCIE_HOT_RST(ab));
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0val |=3D GCC_GCC_PCIE_HOT=
+_RST_VAL;
+> -=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0ath12k_pci_write32(ab, GCC_GCC=
+_PCIE_HOT_RST, val);
+> -=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0val =3D ath12k_pci_read32(ab, =
+GCC_GCC_PCIE_HOT_RST);
+> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0ath12k_pci_write32(ab, GCC_GCC=
+_PCIE_HOT_RST(ab), val);
+> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0val =3D ath12k_pci_read32(ab, =
+GCC_GCC_PCIE_HOT_RST(ab));
+> =C2=A0
+> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0ath12k_dbg(ab, ATH12K_DBG=
+_PCI, "pci pcie_hot_rst 0x%x\n",
+> val);
+> =C2=A0
+> diff --git a/drivers/net/wireless/ath/ath12k/pci.h
+> b/drivers/net/wireless/ath/ath12k/pci.h
+> index
+> 0b4c459d6d8eabb0773162e6bb3ca666c0a8f15a..d1ec8aad7f6c3b6f5cbdf8ce57a
+> 4106733686521 100644
+> --- a/drivers/net/wireless/ath/ath12k/pci.h
+> +++ b/drivers/net/wireless/ath/ath12k/pci.h
+> @@ -28,7 +28,9 @@
+> =C2=A0#define PCIE_PCIE_PARF_LTSSM=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+0x1e081b0
+> =C2=A0#define PARM_LTSSM_VALUE=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A00x111
+> =C2=A0
+> -#define GCC_GCC_PCIE_HOT_RST=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A00x1=
+e38338
+> +#define GCC_GCC_PCIE_HOT_RST(ab) \
+> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0((ab)->hw_params->regs->gcc_gc=
+c_pcie_hot_rst)
+> +
+> =C2=A0#define GCC_GCC_PCIE_HOT_RST_VAL=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A00x10
+> =C2=A0
+> =C2=A0#define PCIE_PCIE_INT_ALL_CLEAR=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A00x1e08228
+>=20
+> ---
+> base-commit: 3d933084a072fd5fb5da54c06a017abc0412c86f
+> change-id: 20250506-ath12k-wrong-global-reset-addr-b75ddc6e7850
+>=20
+> Best regards,
 
 
