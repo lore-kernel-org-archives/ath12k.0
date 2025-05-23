@@ -4,71 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DB1DC54E65
-	for <ath12k@archiver.kernel.org>; Thu, 22 May 2025 19:37:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B67E5C54ED0
+	for <ath12k@archiver.kernel.org>; Fri, 23 May 2025 02:13:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=mL7J3p6aKzU3PDlxVdzcb7ORruz3jSdxBKqCRAsu4NY=; b=vXDJLB2x52P/tqpomnZxGyaw6W
-	txAxQBCiY4CD8/dDJvQgQmsfv2GRUm3XVETI48vyBEoPgXBTrkydryR9c7JOEQ89IAC+XqFVVYUwd
-	bBrWqpK8KvsWdy72S+5L1xmyfUQU5/p9/6H0z2R9t2RB10llBaQki437OBLRg8FQVYFbbAgrDYXzv
-	G5sLqwh0U/9C6VmchfLwg7J6WyMTqMYhv886VLhqxXDYua3PRIfF3vekRt7IMmahn4tf0zZcXTMOr
-	kojmMgQMEgvZGBbK+7/8hX3gbY3OUC4iDXFKgCzMtPrzr5MVAMi7wbkNBSjo1QCa90r+tBVYMKHim
-	/+68QPzQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ioXdnb65F/w76PtlhT5k3aOQnHgYN9UbFkE0OGJFPzA=; b=IjVki2wzjpGCm0cpPMNeOzYeJc
+	nZJpNQJ0BnswxoW14Sfs4Qbmgo7/cEvHKoHiGNte4U8TUD+D/BWN7iq9NdWFxA2tGx3S9NbsY1D7j
+	6AGT6C1qt0mQnENxXe980QSEDwR2lYXXgyZbv2wI4SKrnoN+06rbfjrGIlgvO+HOID6ZAE3ItKB5i
+	jH9Ym2V6bMXhvm6aglTpdHjWCiF8JzpgzIxo+K2B9jXy1xytuK20jP0MmSF9DUMOoDckPn8ZnJ+VU
+	xSekqtRHe04YqLMZ8tJFXSZmTj2I7KX8kpXswnpZRvjIEQbi1ZV32/NlWCgLmipJNDiReqnQXis2Q
+	5Hbmfxrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uIBjN-000000022We-040H;
-	Thu, 22 May 2025 19:37:29 +0000
-Received: from mgamail.intel.com ([192.198.163.10])
+	id 1uIHuE-00000002kQ5-1RaQ;
+	Fri, 23 May 2025 02:13:06 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uIBjK-000000022Vr-3T77
+	id 1uIHu8-00000002kPD-3A2L
 	for ath12k@lists.infradead.org;
-	Thu, 22 May 2025 19:37:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1747942647; x=1779478647;
-  h=date:from:to:cc:subject:message-id;
-  bh=4WGVgoNi+N4TUOrSTrvY4H/kC2aaI9VwAH7/En/u90Y=;
-  b=XTSiwZiffO98RJa77sJjWUoj+/XTB2MTK+67UyUBw+skjDaSkFD5Haop
-   YQ1BHTsLfxRIQ2pt/D0wLKAd8kzuaHF04MYU7Nsd8z0tTdGpb0szRvgzf
-   BfILtESRZvxhT+c4rskdYxrkFmZaPlMJ9bAOSM0i2lHijrWR18OMa6X3O
-   g4eZ0sXCzfo5wCOOsfzE70Zb+bVVLGL3Lv0M+d4dSvWoQr9NRdzZFM58e
-   MEA/iwCW0DEpNeWBo9Wp3itcTW+svvceyZzERs4WC1+e3Yzq34yYniu+v
-   yhI85IsG5aYusU3CC0eUOk/J7Xg8HnPwSw0SLWMw6GBpIf/b1GsSmsDJn
-   g==;
-X-CSE-ConnectionGUID: kxaLGfIuQBOaclzESyKq4A==
-X-CSE-MsgGUID: nc2iustrSkCcpDj/wybOWA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11441"; a="61344804"
-X-IronPort-AV: E=Sophos;i="6.15,306,1739865600"; 
-   d="scan'208";a="61344804"
-Received: from fmviesa007.fm.intel.com ([10.60.135.147])
-  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 May 2025 12:37:21 -0700
-X-CSE-ConnectionGUID: sNjQ5rDkQKu58D6U5PaM1g==
-X-CSE-MsgGUID: DdDa8WgfQ1qOki2cq8xJyQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.15,306,1739865600"; 
-   d="scan'208";a="140804549"
-Received: from lkp-server01.sh.intel.com (HELO 1992f890471c) ([10.239.97.150])
-  by fmviesa007.fm.intel.com with ESMTP; 22 May 2025 12:37:20 -0700
-Received: from kbuild by 1992f890471c with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uIBjC-000PeA-1P;
-	Thu, 22 May 2025 19:37:18 +0000
-Date: Fri, 23 May 2025 03:36:28 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master-pending] BUILD SUCCESS
- 246a8b69befa985e51c676c965f15e06bbc14ce6
-Message-ID: <202505230318.R2L32TlG-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Fri, 23 May 2025 02:13:04 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54MIFP0o015209;
+	Fri, 23 May 2025 02:12:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	ioXdnb65F/w76PtlhT5k3aOQnHgYN9UbFkE0OGJFPzA=; b=O9oLyfTNgCzbdxRb
+	WxN2QC8/5jC2ij/+oJXU2iVPacGZUTuG3HBJsC9WtudabeFHOqISnc7d3ZpcCecl
+	yDqOANP7xZuWGsEi/SYPFoXFm2Uav6xKaBJgLlT9Wqo54TxTTZIpO07eZoKLMeQL
+	E/AN47f950YvpkxnbImygDQxeHgFhLMb2isDW49rX3cqgY5Qb0ynl/oI8s/t6K3q
+	Fs8oSFuSpu7Fpndredu/sWUljteUAUf8mpDeyBtu6reTGUtIvp/Iat3Nh3VGPOcP
+	3R6l6EP803EfsfN7Q0IRbdA6F2Ao/ALBapp2EzcQE2vc1G5+1WQP7YLTrRA5sSsN
+	XqMT8w==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46rwf9g4y4-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 23 May 2025 02:12:57 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54N2CuA6010974
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 23 May 2025 02:12:56 GMT
+Received: from [10.133.33.71] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 22 May
+ 2025 19:12:55 -0700
+Message-ID: <be026084-0906-4609-9e00-8b1fa6808eb3@quicinc.com>
+Date: Fri, 23 May 2025 10:12:52 +0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ath12k: No 6GHz Wireless found
+To: Walt Holman <waltholman09@gmail.com>
+CC: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        <linux-wireless@vger.kernel.org>,
+        "ath12k@lists.infradead.org"
+	<ath12k@lists.infradead.org>
+References: <CAMb39_ngQs8=FUML5QXMh2RmEZBZ2NwUHefhGoTkGtHat+KWJA@mail.gmail.com>
+ <16ccbe02-b315-40d1-8600-232b592d4dd6@quicinc.com>
+ <CAMb39_n4tyrzS=-j0L+ekJVer=KiZyDYFhMqrrcpr9py_itU9w@mail.gmail.com>
+ <0933d8d6-5b72-40df-95f8-69f6fbbdfde7@oss.qualcomm.com>
+ <CAMb39_nHO_TbHPQawdLVY8nt3yt4wDuEHyEuzMa-p5Ab1n94sA@mail.gmail.com>
+ <CAMb39_nQ-uyKAqCz1HEUDt5qjszbhzf3oikVcvzHcVwt4_qt=A@mail.gmail.com>
+ <CAMb39_n89hBL_GvfXb7Jw9h5-h-+Qg-3GyqvpahL7MT5ewpvJw@mail.gmail.com>
+ <CAMb39_=YPYg0q7Lf0sMgTx5QwKOqcyJrZR7kTspyXEDa6qz9Bw@mail.gmail.com>
+ <e9da4ad5-52cb-416d-991a-259140469e2c@oss.qualcomm.com>
+ <87774003-d0a5-4408-b710-20bd3c194cec@quicinc.com>
+ <CAMb39_ntK9Zv3pOuMSza5hRfs_KZBhya=GAPnpBWjN2wZDst9w@mail.gmail.com>
+ <c7c0dfd4-bda9-4a63-84f9-a47b716c6ddd@quicinc.com>
+ <CAMb39_k6bkaU9ED+iUVFT33e3S1UU+U49bYpp-qyFW-wjSd4RQ@mail.gmail.com>
+ <d432fd29-316a-4ba8-aefa-eb4c22482e34@quicinc.com>
+ <CAMb39_mSN_HQ+78NVzVWSDaY4c2Lv1Xb1prnmV177Fn9H6WEVw@mail.gmail.com>
+Content-Language: en-US
+From: Kang Yang <quic_kangyang@quicinc.com>
+In-Reply-To: <CAMb39_mSN_HQ+78NVzVWSDaY4c2Lv1Xb1prnmV177Fn9H6WEVw@mail.gmail.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: HtEx5Q61UnlwmuCJjXnzngf9V6DGHrYf
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIzMDAxOCBTYWx0ZWRfXyOwmOqdQE+0N
+ hwhwWsCybO2hmQDJjt7QTI36UD8BlEubbWC9aCLUsApOlucdtl0W5elc+Zf80uLus+OTBSlRoQu
+ EciQv2tjXBoMOyVBQ3PjXz1m6Y2hmWJ5H8EOrU0wAkIXt/JoWAjPN/BBNQ+BJEPz2Cl0DtIi/vo
+ +rJ4WlQzyIcYeWs6F3i/C1QF8aWzaOa+NIhq+pPx2awOxjzAdeBpQOIglrJiBjeGsNYMM9+JDw1
+ SqzFVSWaaLJdbunsQmzMV+SDX1mH3dLN+5fXJZPQnvVx4Rrc2XVLwt2iwLoiFEC3EX0MXJNAZ2C
+ MhY1E+z12b4qywtDAeiD4T2hBirmUA0Emyu9E1AUWaIqUe4WolN7HnvWEK4lKWhy4k3swyfgfLf
+ FW3rFf9uX4rJMz/lAg/Wjj0JiVd6BbDp56qndLiYNOO14yhvirPte1O3ZRnNzP8XPzGQhee2
+X-Authority-Analysis: v=2.4 cv=GawXnRXL c=1 sm=1 tr=0 ts=682fd9a9 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8
+ a=EUspDBNiAAAA:8 a=COk6AnOGAAAA:8 a=pGLkceISAAAA:8 a=zwkdvbmWE112ZJLr-WwA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: HtEx5Q61UnlwmuCJjXnzngf9V6DGHrYf
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-23_01,2025-05-22_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxscore=0 mlxlogscore=999 lowpriorityscore=0 impostorscore=0
+ priorityscore=1501 clxscore=1015 malwarescore=0 phishscore=0 bulkscore=0
+ spamscore=0 suspectscore=0 adultscore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505160000 definitions=main-2505230018
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250522_123726_876855_B1B7020C 
-X-CRM114-Status: UNSURE (   3.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250522_191300_928241_259BB068 
+X-CRM114-Status: GOOD (  21.17  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,150 +127,438 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
-branch HEAD: 246a8b69befa985e51c676c965f15e06bbc14ce6  Merge branch 'pending' into main-pending
 
-elapsed time: 1451m
 
-configs tested: 130
-configs skipped: 2
+On 5/23/2025 1:48 AM, Walt Holman wrote:
+> On Wed, May 21, 2025 at 1:07 AM Kang Yang <quic_kangyang@quicinc.com> wrote:
+>>
+>>
+>>
+>> On 5/21/2025 1:05 PM, Walt Holman wrote:
+>>> On Thu, May 15, 2025 at 10:06 PM Kang Yang <quic_kangyang@quicinc.com> wrote:
+>>>>
+>>>>
+>>>>
+>>>> On 5/16/2025 1:47 AM, Walt Holman wrote:
+>>>>> On Thu, May 15, 2025 at 4:22 AM Kang Yang <quic_kangyang@quicinc.com> wrote:
+>>>>>>
+>>>>>>
+>>>>>>
+>>>>>> On 5/15/2025 4:12 PM, Kang Yang wrote:
+>>>>>>>
+>>>>>>> On 4/20/2025 11:18 PM, Walt Holman wrote:
+>>>>>>>> On Fri, Apr 18, 2025 at 4:18 PM Walt Holman <waltholman09@gmail.com>
+>>>>>>>> wrote:
+>>>>>>>>> On Tue, Apr 15, 2025 at 4:23 PM Walt Holman <waltholman09@gmail.com>
+>>>>>>>>> wrote:
+>>>>>>>>>> On Thu, Apr 10, 2025 at 10:32 AM Walt Holman
+>>>>>>>>>> <waltholman09@gmail.com> wrote:
+>>>>>>>>>>> On Thu, Apr 10, 2025 at 3:26 AM Kang Yang
+>>>>>>>>>>> <kang.yang@oss.qualcomm.com> wrote:
+>>>>>>>>>>>>
+>>>>>>>>>>>>
+>>>>>>>>>>>> On 4/10/2025 3:37 AM, Walt Holman wrote:
+>>>>>>>>>>>>> On Tue, Apr 8, 2025 at 4:17 AM Kang Yang
+>>>>>>>>>>>>> <quic_kangyang@quicinc.com> wrote:
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> On 4/8/2025 1:49 AM, Walt Holman wrote:
+>>>>>>>>>>>>>>> Attached is a small packet capture where I did an 'iw wlp99s0
+>>>>>>>>>>>>>>> scan'
+>>>>>>>>>>>>>>> and also deactivated and reactivated wireless while the scan was
+>>>>>>>>>>>>>>> ongoing. Hopefully there's something interesting for you in there.
+>>>>>>>>>>>>>>> Also, I've take 3 screenshots showing the configs of the
+>>>>>>>>>>>>>>> wireless AP
+>>>>>>>>>>>>>>> for the 6ghz network. The first screen is just the definition
+>>>>>>>>>>>>>>> of the
+>>>>>>>>>>>>>>> network. No advanced settings are used. The 2nd screen shows the
+>>>>>>>>>>>>>>> channels and radio enabled. The 3rd screen has the advanced
+>>>>>>>>>>>>>>> (professional) settings for the network. I believe I changed
+>>>>>>>>>>>>>>> 'Agile
+>>>>>>>>>>>>>>> Multiband' to enabled, but other settings are their defaults. Hope
+>>>>>>>>>>>>>>> some of this helps. Let me know if you need anything else. Thanks,
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> Your packets are Ethernet packets. I need wireless packets.
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> Not sure if you know how to add a seperate monitor interface to
+>>>>>>>>>>>>>> capture
+>>>>>>>>>>>>>> 6 G channels' packet on your AP(you can google for specific
+>>>>>>>>>>>>>> command).
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> Also, please capture firmware log:
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> 1. sudo apt install trace-cmd
+>>>>>>>>>>>>>> 2. sudo trace-cmd record -e ath12k_wmi_diag
+>>>>>>>>>>>>>> 3. run test
+>>>>>>>>>>>>>> 4. "ctrl c" to stop recording:
+>>>>>>>>>>>>>> Hit Ctrl^C to stop recording
+>>>>>>>>>>>>>> ^CCPU0 data recorded at offset=0xdf5000
+>>>>>>>>>>>>>>           2605056 bytes in size
+>>>>>>>>>>>>>> Then share the trace.dat to us.
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> So you need to:
+>>>>>>>>>>>>>> 1. try to capture wireless packets.
+>>>>>>>>>>>>>> 2. capture firmware log(trade.data).
+>>>>>>>>>>>>>> 3. save kernel/wpa_supplicant/iw logs.
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> -Walt
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> On Sun, Apr 6, 2025 at 8:58 PM Kang Yang
+>>>>>>>>>>>>>>> <quic_kangyang@quicinc.com> wrote:
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>> On 4/4/2025 12:04 AM, Walt Holman wrote:
+>>>>>>>>>>>>>>>>> On Thu, Apr 3, 2025 at 3:20 AM Kang Yang
+>>>>>>>>>>>>>>>>> <quic_kangyang@quicinc.com> wrote:
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> On 4/3/2025 1:48 AM, Walt Holman wrote:
+>>>>>>>>>>>>>>>>>>> On Tue, Apr 1, 2025 at 9:48 PM Kang Yang
+>>>>>>>>>>>>>>>>>>> <quic_kangyang@quicinc.com> wrote:
+>>>>>>>>>>>>>>>>>>>> Test on 6.14.0-rc5-wt-ath+, with the firmware you used.
+>>>>>>>>>>>>>>>>>>>> I can get 6 GHz AP and connect to it.
+>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>> ath12k_pci 0000:03:00.0: fw_version 0x100301e1
+>>>>>>>>>>>>>>>>>>>> fw_build_timestamp
+>>>>>>>>>>>>>>>>>>>> 2023-12-06 04:05 fw_build_id
+>>>>>>>>>>>>>>>>>>>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-
+>>>>>>>>>>>>>>>>>>>> QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>> yk@yk-Mayan:~$ sudo iw wls1 scan | tee iw_scan.log:
+>>>>>>>>>>>>>>>>>>>> BSS 62:03:7f:12:64:64(on wls1) -- associated
+>>>>>>>>>>>>>>>>>>>>                  TSF: 606308271476 usec (7d, 00:25:08)
+>>>>>>>>>>>>>>>>>>>>                  freq: 6275
+>>>>>>>>>>>>>>>>>>>>                  beacon interval: 100 TUs
+>>>>>>>>>>>>>>>>>>>>                  capability: ESS Privacy SpectrumMgmt
+>>>>>>>>>>>>>>>>>>>> ShortSlotTime (0x0511)
+>>>>>>>>>>>>>>>>>>>>                  signal: -17.00 dBm
+>>>>>>>>>>>>>>>>>>>>                  last seen: 52 ms ago
+>>>>>>>>>>>>>>>>>>>>                  Information elements from Probe Response frame:
+>>>>>>>>>>>>>>>>>>>>                  SSID: MLO-KANG-6G
+>>>>>>>>>>>>>>>>>>>> and other 6 GHz APs:
+>>>>>>>>>>>>>>>>>>>>                 SSID: 6G-gxia
+>>>>>>>>>>>>>>>>>>>>                 SSID: NETGEAR97-6G
+>>>>>>>>>>>>>>>>>>>>                 ……
+>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>> kernel log:
+>>>>>>>>>>>>>>>>>>>> [88158.033218] wls1: Inserted STA 62:03:7f:12:64:64
+>>>>>>>>>>>>>>>>>>>> [88158.033232] wls1: authenticate with 62:03:7f:12:64:64
+>>>>>>>>>>>>>>>>>>>> (local
+>>>>>>>>>>>>>>>>>>>> address=00:03:7f:37:12:54)
+>>>>>>>>>>>>>>>>>>>> [88158.033242] wls1: send auth to 62:03:7f:12:64:64 (try 1/3)
+>>>>>>>>>>>>>>>>>>>> [88158.041895] wls1: authenticated
+>>>>>>>>>>>>>>>>>>>> [88158.041914] wls1: moving STA 62:03:7f:12:64:64 to state 2
+>>>>>>>>>>>>>>>>>>>> [88158.044291] wls1: determined local STA to be EHT, BW
+>>>>>>>>>>>>>>>>>>>> limited to 320 MHz
+>>>>>>>>>>>>>>>>>>>> [88158.045719] wls1: associate with 62:03:7f:12:64:64 (try
+>>>>>>>>>>>>>>>>>>>> 1/3)
+>>>>>>>>>>>>>>>>>>>> [88158.067045] wls1: RX AssocResp from 62:03:7f:12:64:64
+>>>>>>>>>>>>>>>>>>>> (capab=0x511
+>>>>>>>>>>>>>>>>>>>> status=0 aid=4)
+>>>>>>>>>>>>>>>>>>>> [88158.089090] wls1: associated
+>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>> I can even connect to it by Ubuntu GUI.
+>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>> Can you update to 6.14.0-rc5-wt-ath+ and have a retry?
+>>>>>>>>>>>>>>>>>>>> Also please make
+>>>>>>>>>>>>>>>>>>>> sure that your wpa_supplicant/iw support 6 GHz(or directly
+>>>>>>>>>>>>>>>>>>>> update to the
+>>>>>>>>>>>>>>>>>>>> latest version).
+>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>> If you still cannot find 6 GHz AP, you can set debug_mask
+>>>>>>>>>>>>>>>>>>>> to 0xffffffff
+>>>>>>>>>>>>>>>>>>>> to get ath12k logs. Then give it to us.
+>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>> -Walt
+>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>> OK, I retested with the wt-ath 033125 tagged build. This
+>>>>>>>>>>>>>>>>>>> included the
+>>>>>>>>>>>>>>>>>>> patch the Jeff suggested I try, but the rest of the tree
+>>>>>>>>>>>>>>>>>>> was clean.
+>>>>>>>>>>>>>>>>>>> Still no 6ghz Wifi. I'm attaching a log file of the boot
+>>>>>>>>>>>>>>>>>>> and first few
+>>>>>>>>>>>>>>>>>>> seconds with the debug mask turned on. I noticed that if I
+>>>>>>>>>>>>>>>>>>> rmmod the
+>>>>>>>>>>>>>>>>>>> module and then modprobe it, it complains about not finding
+>>>>>>>>>>>>>>>>>>> firmware-2.bin, however, I thought that was only for the
+>>>>>>>>>>>>>>>>>>> qcn based
+>>>>>>>>>>>>>>>>>>> chip? The HW info from dmesg looks like this:
+>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> I cannot find this tag...
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>         From the log, the 6 GHz channel should work. When scan
+>>>>>>>>>>>>>>>>>> is triggered, FW
+>>>>>>>>>>>>>>>>>> shall send probe req on these channels. If AP send probe
+>>>>>>>>>>>>>>>>>> resp, station
+>>>>>>>>>>>>>>>>>> shall find the AP.
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>> [    6.070282] ath12k_pci 0000:63:00.0: BAR 0 [mem
+>>>>>>>>>>>>>>>>>>> 0xdd800000-0xdd9fffff 64bit]: assigned
+>>>>>>>>>>>>>>>>>>> [    6.070310] ath12k_pci 0000:63:00.0: enabling device
+>>>>>>>>>>>>>>>>>>> (0000 -> 0002)
+>>>>>>>>>>>>>>>>>>> [    6.071249] ath12k_pci 0000:63:00.0: MSI vectors: 16
+>>>>>>>>>>>>>>>>>>> [    6.071254] ath12k_pci 0000:63:00.0: Hardware name:
+>>>>>>>>>>>>>>>>>>> wcn7850 hw2.0
+>>>>>>>>>>>>>>>>>>> [    6.596331] ath12k_pci 0000:63:00.0: qmi dma allocation
+>>>>>>>>>>>>>>>>>>> failed
+>>>>>>>>>>>>>>>>>>> (7077888 B type 1), will try later with sma
+>>>>>>>>>>>>>>>>>>> ll size
+>>>>>>>>>>>>>>>>>>> [    6.604041] ath12k_pci 0000:63:00.0: chip_id 0x2
+>>>>>>>>>>>>>>>>>>> chip_family 0x4
+>>>>>>>>>>>>>>>>>>> board_id 0xff soc_id 0x40170200
+>>>>>>>>>>>>>>>>>>> [    6.604044] ath12k_pci 0000:63:00.0: fw_version 0x100301e1
+>>>>>>>>>>>>>>>>>>> fw_build_timestamp 2023-12-06 04:05 fw_build_id
+>>>>>>>>>>>>>>>>>>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-
+>>>>>>>>>>>>>>>>>>> QCAHMTSWPL_V1.0_V2.0_SILICONZ-
+>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>> Also, I noticed when looking through the debug logs there
+>>>>>>>>>>>>>>>>>>> are the
+>>>>>>>>>>>>>>>>>>> occasional WARNING statements from a BUG it appears. They
+>>>>>>>>>>>>>>>>>>> trace back
+>>>>>>>>>>>>>>>>>>> to the mac.c file inside the ath12k code. There should be
+>>>>>>>>>>>>>>>>>>> some in the
+>>>>>>>>>>>>>>>>>>> debug log that's attached. Let me know if I can do anything
+>>>>>>>>>>>>>>>>>>> else.
+>>>>>>>>>>>>>>>>>>> Thanks,
+>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> I have never seen this warning on my upstream setup...Not
+>>>>>>>>>>>>>>>>>> sure if you
+>>>>>>>>>>>>>>>>>> have changed anything or using the correct code base.
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> Jeff merged this patch-set into ath-202504021602. Can you
+>>>>>>>>>>>>>>>>>> try on this
+>>>>>>>>>>>>>>>>>> branch?
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> git clone https://git.kernel.org/pub/scm/linux/kernel/git/
+>>>>>>>>>>>>>>>>>> ath/ath.git/
+>>>>>>>>>>>>>>>>>> git pull
+>>>>>>>>>>>>>>>>>> git reset --hard ath-202504021602
+>>>>>>>>>>>>>>>>>> compile and install...
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> Also make sure that the firmware you used is from the same
+>>>>>>>>>>>>>>>>>> folder, don't
+>>>>>>>>>>>>>>>>>> mix with other folders:
+>>>>>>>>>>>>>>>>>> linux-firmware/ath12k/WCN7850/hw2.0
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> 1. rmmod/insmod(debug_mask=0xffff)
+>>>>>>>>>>>>>>>>>> 2. iw reg get
+>>>>>>>>>>>>>>>>>> 3. iw reg set US
+>>>>>>>>>>>>>>>>>> 4. iw xxx scan
+>>>>>>>>>>>>>>>>>> wait and collect logs.
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> don't do anything else.
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> Also, can you show me your AP configuration.
+>>>>>>>>>>>>>>>>>> If you have another 6 GHz AP, you can have a try(better
+>>>>>>>>>>>>>>>>>> different brands).
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>> Thanks for testing.
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>> Could you share your AP configuration?
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> If you have sniffer, could please capture packets during
+>>>>>>>>>>>>>>>>>> testing?
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>> Can you capture packets during the testing? I need to check
+>>>>>>>>>>>>>>>> probe req
+>>>>>>>>>>>>>>>> and probe resp.
+>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>> Thanks!
+>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>> -Walt
+>>>>>>>>>>>>>>>>> OK, I cloned and built the kernel based on your instructions
+>>>>>>>>>>>>>>>>> in your
+>>>>>>>>>>>>>>>>> last email. Originally, the result was identical to my last
+>>>>>>>>>>>>>>>>> email,
+>>>>>>>>>>>>>>>>> including the WARNINGS. The .config I use is configured for a
+>>>>>>>>>>>>>>>>> fully RT
+>>>>>>>>>>>>>>>>> PREEMPT kernel, which I wondered if that was why I was
+>>>>>>>>>>>>>>>>> receiving the
+>>>>>>>>>>>>>>>>> WARNING. So I configured it as a Low Latency PREEMPT Desktop
+>>>>>>>>>>>>>>>>> without
+>>>>>>>>>>>>>>>>> the RT_PREEMPT and that eliminated the WARNING. However,
+>>>>>>>>>>>>>>>>> still no 6Ghz
+>>>>>>>>>>>>>>>>> networks. The firmware I'm using is straight from kernel.org
+>>>>>>>>>>>>>>>>> GIT and I
+>>>>>>>>>>>>>>>>> do a 'make install; make dedup' to install it. I believe it
+>>>>>>>>>>>>>>>>> should be
+>>>>>>>>>>>>>>>>> good. Attached is the latest log file.
+>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>> -Walt
+>>>>>>>>>>>>>
+>>>>>>>>>>>>> Sorry for the top-post earlier. I can't figure out how to capture
+>>>>>>>>>>>>> the
+>>>>>>>>>>>>> wireless packets as my chip/driver combo doesn't support monitor
+>>>>>>>>>>>>> mode.
+>>>>>>>>>>>> Your AP also cannot capture wireless packets?
+>>>>>>>>>>>> log in AP by usbserial or ssh.
+>>>>>>>>>>>> Try to enter command line. use iw command to create monitor
+>>>>>>>>>>>> interface.
+>>>>>>>>>>>> Then use tcpdump to capture packets.
+>>>>>>>>>>>>
+>>>>>>>>>>>>> I've attached a tarball that contains the trace data and additional
+>>>>>>>>>>>>> firmware logs from the kernel.log file. Anything else you need, just
+>>>>>>>>>>>>> ask. Thanks for your help,
+>>>>>>>>>>>>
+>>>>>>>>>>>> Your AP mac address?
+>>>>>>>>>>>> Need it to help check the fw log.
+>>>>>>>>>>>>
+>>>>>>>>>>>>
+>>>>>>>>>>>>> -Walt
+>>>>>>>>>>> Sorry, the AP doesn't have tcpdump available on it. Also, this is a
+>>>>>>>>>>> mesh setup with 3 nodes total. The main AP and 2 mesh nodes. I'm
+>>>>>>>>>>> within 10 feet of one of the nodes and it's MAC for the wireless 6ghz
+>>>>>>>>>>> network is: 10:7C:61:6F:2A:CA
+>>>>>>>>>>>
+>>>>>>>>>>> -Walt
+>>>>>>>>>> The other 2 node 6ghz mac addresses are:
+>>>>>>>>>> 10:7C:61:6F:1F:11   - Router
+>>>>>>>>>> 10:7C:61:6F:32:92   - Node
+>>>>>>>>>>
+>>>>>>>>>> The first MAC address I gave you earlier was a node located
+>>>>>>>>>> approximately 5 feet from where the laptop is.
+>>>>>>>>>>
+>>>>>>>>>> -Walt
+>>>>>>>>> Well, I'm running into a brick wall it seems trying to get 6Ghz
+>>>>>>>>> enabled on this. I tried the ath-next-20250418 tag just now and still
+>>>>>>>>> don't see or connect to my 6Ghz network. I applied the patches in:
+>>>>>>>>> https://lore.kernel.org/linux-wireless/20250418-ath12k-6g-lp-vlp-
+>>>>>>>>> v1-0-c869c86cad60@quicinc.com/T/#t
+>>>>>>>>>
+>>>>>>>>> hoping that would help, but alas, no 6Ghz networks. I see that MLO and
+>>>>>>>>> other nice fixes are coming in 6.16, but without 6Ghz, they'll do me
+>>>>>>>>> no good. I'm really wondering if it's a firmware issue that excludes
+>>>>>>>>> my chip or something. Again, anything I can do to help, let me know.
+>>>>>>>>> Thanks,
+>>>>>>>>>
+>>>>>>>>> -Walt
+>>>>>>>> Well, I used the swiss army tools to look at the firmware, and my chip
+>>>>>>>> is listed in the firmware, so it's not excluded or anything. Really
+>>>>>>>> puzzlling issue as my other two laptops connect to the 6Ghz network
+>>>>>>>> just fine, and this laptop does in Windows, just not in Linux. I
+>>>>>>>> really don't use Windows at all though, so that does me no good.
+>>>>>>>>
+>>>>>>>> This laptop used to connect to the 6Ghz network around the Sep. - Oct.
+>>>>>>>> 2024 timeframe. Something has changed and now it doesn't. I'm going to
+>>>>>>>> boot off a live image of Ubuntu 24.10 and see if I can see the
+>>>>>>>> network. It was always hit or miss so we'll see.
+>>>>>>>> -Walt
+>>>>>>>
+>>>>>>>
+>>>>>>> Can you find 6 GHz AP now?
+>>>>>>>
+>>>>>>
+>>>>>> Our firmware team said you station device sent the probe request but
+>>>>>> didn't receive the probe resp or beacon.
+>>>>>>
+>>>>>> Since your current configuration is single 6 GHz AP. Could you change
+>>>>>> your AP configuration to 6 GHz + 2/5 GHz to have a retry?
+>>>>>>
+>>>>> I adedd another network with 2.4 / 5 / 6Ghz settings and still only
+>>>>> connect to the 5Ghz network portion. This is verified through wavemon
+>>>>> and the AP. I saw some patches recently to address 6 Ghz operatoins in
+>>>>> various modes (https://lore.kernel.org/linux-wireless/1692f2f8-c77e-87ce-db70-00b4d9fc7c95@oss.qualcomm.com/),
+>>>>> but the patch doesn't apply cleanly to current or ath-pending. Don't
+>>>>> know that it would help, but it seemed interesting.
+>>>>>
+>>>>> When I went back to the older kernel / distro I still could not see
+>>>>> the 6 Ghz band nor connect to it. I think something has changed on the
+>>>>> AP as well, as this used to work intermittently. I think I have
+>>>>> mentioned this before, but I have a dual-boot setup on this laptop and
+>>>>> in Windows 11, it does see and connect to the 6 Ghz band and MLO works
+>>>>> as well. Also, I have about 5 other devices (phones and laptops) that
+>>>>> can all connect to the 6 Ghz band. I think it's a combination of the
+>>>>> AP and the driver / firmware.
+>>>>
+>>>>
+>>>>
+>>>>
+>>>> Do you have another WCN7850?
+>>>> Our monitor mode is now in pending branch, and one fix is coming so that
+>>>> you can use WCN7850 to capture 6 GHz management packects. So that our
+>>>> firmware team can do further research.
+>>>
+>>> I've successfully put the wifi into monitor mode and captured some
+>>> traffic. I used freq. 6615, which is the frequency my Holman-6G runs
+>>> at with a width of 320Mhz. I can see beacons and other wifi related
+>>> traffic, however, I did not have an encryption key set, so any traffic
+>>> should still be encrypted. Hopefully the beacons and other things
+>>> help.
+>>> I took a chance that the patches were ready and used the most recent
+>>> tag: ath-pending-202505201841 and it appeared to work OK. Let me know
+>>> if this helps and if you need anything else. Thanks,
+>>
+>>
+>> This is what we needed.
+>>
+>> But i didn't see probe req in this file.
+>> Not sure if you didn't run the test?
+>>
+>> Can you put this monitor mode device between your test station device
+>> and AP device(Try to ensure that it is on the connection line between
+>> the two device), then start the full test?
+>> Remember run "iw reg set US" before connecting step.
+>>
+>>
+>> Also, please provide us the host/firmware log and the packets.
+>> All logs/packets come from the same test, will make it easier for our
+>> firmware team to debug.
+>> 🙂
+> 
+> OK, I think I've got something here and I hope it's useful. I did a
+> packet capture of the wifi traffic on Freq. 6615 @ 160Mhz from another
+> host and then loaded the ath12k module on the problem host and logged
+> it all. The wifi adapter for the ath12k is a Quectel model. Also, I
+> shut off both mesh nodes so that only the AP was running to ensure we
+> were on the same node. 
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+This is great, thanks.
 
-tested configs:
-alpha                             allnoconfig    gcc-14.2.0
-alpha                            allyesconfig    gcc-14.2.0
-arc                              allmodconfig    gcc-14.2.0
-arc                               allnoconfig    gcc-14.2.0
-arc                              allyesconfig    gcc-14.2.0
-arc                   randconfig-001-20250522    gcc-15.1.0
-arc                   randconfig-002-20250522    gcc-15.1.0
-arm                              allmodconfig    gcc-14.2.0
-arm                               allnoconfig    clang-21
-arm                              allyesconfig    gcc-14.2.0
-arm                            dove_defconfig    gcc-14.2.0
-arm                      integrator_defconfig    clang-21
-arm                      jornada720_defconfig    clang-21
-arm                            mmp2_defconfig    gcc-14.2.0
-arm                            mps2_defconfig    clang-21
-arm                             mxs_defconfig    clang-21
-arm                   randconfig-001-20250522    clang-21
-arm                   randconfig-002-20250522    clang-21
-arm                   randconfig-003-20250522    clang-18
-arm                   randconfig-004-20250522    gcc-7.5.0
-arm                         s5pv210_defconfig    gcc-14.2.0
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-14.2.0
-arm64                 randconfig-001-20250522    clang-21
-arm64                 randconfig-002-20250522    gcc-7.5.0
-arm64                 randconfig-003-20250522    clang-21
-arm64                 randconfig-004-20250522    gcc-5.5.0
-csky                              allnoconfig    gcc-14.2.0
-csky                  randconfig-001-20250522    gcc-15.1.0
-csky                  randconfig-002-20250522    gcc-15.1.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-hexagon               randconfig-001-20250522    clang-17
-hexagon               randconfig-002-20250522    clang-21
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250522    clang-20
-i386        buildonly-randconfig-002-20250522    gcc-12
-i386        buildonly-randconfig-003-20250522    gcc-12
-i386        buildonly-randconfig-004-20250522    gcc-12
-i386        buildonly-randconfig-005-20250522    gcc-12
-i386        buildonly-randconfig-006-20250522    clang-20
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    gcc-14.2.0
-loongarch                         allnoconfig    gcc-14.2.0
-loongarch             randconfig-001-20250522    gcc-15.1.0
-loongarch             randconfig-002-20250522    gcc-15.1.0
-m68k                             allmodconfig    gcc-14.2.0
-m68k                              allnoconfig    gcc-14.2.0
-m68k                             allyesconfig    gcc-14.2.0
-m68k                         amcore_defconfig    gcc-14.2.0
-m68k                         apollo_defconfig    gcc-14.2.0
-microblaze                       allmodconfig    gcc-14.2.0
-microblaze                        allnoconfig    gcc-14.2.0
-microblaze                       allyesconfig    gcc-14.2.0
-microblaze                      mmu_defconfig    gcc-14.2.0
-mips                              allnoconfig    gcc-14.2.0
-mips                        bcm47xx_defconfig    clang-18
-mips                      bmips_stb_defconfig    clang-21
-nios2                             allnoconfig    gcc-14.2.0
-nios2                 randconfig-001-20250522    gcc-9.3.0
-nios2                 randconfig-002-20250522    gcc-9.3.0
-openrisc                          allnoconfig    gcc-14.2.0
-openrisc                         allyesconfig    gcc-14.2.0
-openrisc                            defconfig    gcc-14.2.0
-parisc                           allmodconfig    gcc-14.2.0
-parisc                            allnoconfig    gcc-14.2.0
-parisc                           allyesconfig    gcc-14.2.0
-parisc                              defconfig    gcc-14.2.0
-parisc                randconfig-001-20250522    gcc-6.5.0
-parisc                randconfig-002-20250522    gcc-12.4.0
-powerpc                          allmodconfig    gcc-14.2.0
-powerpc                           allnoconfig    gcc-14.2.0
-powerpc                          allyesconfig    clang-21
-powerpc                      katmai_defconfig    clang-21
-powerpc                      mgcoge_defconfig    clang-21
-powerpc               randconfig-001-20250522    gcc-9.3.0
-powerpc               randconfig-002-20250522    clang-21
-powerpc               randconfig-003-20250522    gcc-7.5.0
-powerpc64             randconfig-001-20250522    clang-21
-powerpc64             randconfig-002-20250522    gcc-10.5.0
-powerpc64             randconfig-003-20250522    gcc-7.5.0
-riscv                             allnoconfig    gcc-14.2.0
-riscv                               defconfig    clang-21
-riscv                 randconfig-001-20250522    gcc-9.3.0
-riscv                 randconfig-002-20250522    clang-18
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-21
-s390                             allyesconfig    gcc-14.2.0
-s390                                defconfig    clang-21
-s390                  randconfig-001-20250522    clang-19
-s390                  randconfig-002-20250522    clang-18
-sh                               allmodconfig    gcc-14.2.0
-sh                                allnoconfig    gcc-14.2.0
-sh                               allyesconfig    gcc-14.2.0
-sh                                  defconfig    gcc-14.2.0
-sh                         ecovec24_defconfig    gcc-14.2.0
-sh                            hp6xx_defconfig    gcc-14.2.0
-sh                 kfr2r09-romimage_defconfig    gcc-14.2.0
-sh                    randconfig-001-20250522    gcc-13.3.0
-sh                    randconfig-002-20250522    gcc-13.3.0
-sh                           se7343_defconfig    gcc-14.2.0
-sh                   sh7724_generic_defconfig    gcc-14.2.0
-sparc                            allmodconfig    gcc-14.2.0
-sparc                             allnoconfig    gcc-14.2.0
-sparc                 randconfig-001-20250522    gcc-14.2.0
-sparc                 randconfig-002-20250522    gcc-6.5.0
-sparc64               randconfig-001-20250522    gcc-14.2.0
-sparc64               randconfig-002-20250522    gcc-12.4.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-um                    randconfig-001-20250522    gcc-12
-um                    randconfig-002-20250522    gcc-12
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250522    clang-20
-x86_64      buildonly-randconfig-002-20250522    gcc-12
-x86_64      buildonly-randconfig-003-20250522    gcc-12
-x86_64      buildonly-randconfig-004-20250522    gcc-12
-x86_64      buildonly-randconfig-005-20250522    gcc-12
-x86_64      buildonly-randconfig-006-20250522    gcc-12
-x86_64                              defconfig    gcc-11
-x86_64                          rhel-9.4-rust    clang-18
-xtensa                            allnoconfig    gcc-14.2.0
-xtensa                randconfig-001-20250522    gcc-14.2.0
-xtensa                randconfig-002-20250522    gcc-10.5.0
-xtensa                    xip_kc705_defconfig    gcc-14.2.0
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+> Please let me know if you need anything else. I
+> did see some packets from the ath12k module in the source field of the
+> capture so hopefully this  helps.
+
+Oh... you missed the firmware log.
+
+1. sudo apt install trace-cmd
+2. sudo trace-cmd record -e ath12k_wmi_diag
+3. run test
+4. "ctrl c" to stop recording:
+Hit Ctrl^C to stop recording
+^CCPU0 data recorded at offset=0xdf5000
+     2605056 bytes in size
+Then share the trace.dat to us.
+
+So you need to:
+1. try to capture wireless packets.
+2. capture firmware log(trade.data).
+
+
+Total three files:
+trace.dat, kernel.log, wifi-capture.pcapng
+🙂It's a little complicated, but they are necessary, thanks.
+
+
+
+
+
+> 
+> -Walt
+
 
