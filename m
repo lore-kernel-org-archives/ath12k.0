@@ -4,111 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59882C54ED0
-	for <ath12k@archiver.kernel.org>; Fri, 23 May 2025 02:23:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28079C3DA6D
+	for <ath12k@archiver.kernel.org>; Fri, 23 May 2025 03:49:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:Message-ID:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Qm/zpUE17rTqamHO4SZcJ5Lmb1rLzay2FNmK5jqLorc=; b=goL/BI6u079X8PzTWf0wNyMvpv
-	bbzklUlVWkqLwxr+aiyKtV6inOYlnrnGg5sxgbHiGYvQxKJ/29XEK2dz8f3RkOqXKk+T2fSgyv/ru
-	9QdvJIJbsWaYjpGpeYk83lyg3MYV+hVgSnQP6FPm8QsTPPLhsJrWrSGAIDCQfKsbYmo/1n3VR6KWZ
-	OeFx6sRKbrgs1GGblXQUaSI6rvKt4M/2bgmnTD01MKJNezbI/5GF8NU1JgSLkB9Ajni0RZMrf/ttq
-	5Vowi72IkqU2ng1Zbnh5vxJMfCzpJ8MUH0SFdj3XFen9pT2pXA5zC+hALTMXKwo7btLOaf6Bf4nlC
-	zQHxOUSQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:
+	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OfeUh3XK3R9ZHXa3B1r4fWEB94jyHEkaJCKDeK6h0gA=; b=Devpq3ugUQ/1Dl
+	j3d8WiWzUl42xXwRAwgEDZkdcFQ2eKmwNw42sntZT7q6Dk7OSB4uvDsZWxhJOOC2hyn2zTEqIO/cO
+	3Ble8YKNjyyzKNa+SMf6gRGRGtysYBOCrv/R5RsrCCgBTGQp9KfpTPbih1lVBCD5Szb/CBhgiAo0I
+	Zh9iaahF0Y8TusPEZOcFQ/lGaA0J04j21e0sFbWy5HP4lRcL8w3anlhVYiQuKGJvPOVOa34qNOCoP
+	1PxpX7fC+YJpg5NveCaj/C1ntG51tkGvkY4EuDOnOYFxVkFuJEZgucA4pmdqRQwyDs+6Fwos3zzZ3
+	X/Kz+vWJ+ZZbV7onFHVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uII4Z-00000002kzY-40B3;
-	Fri, 23 May 2025 02:23:47 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uIJPS-00000002rCo-3ISV;
+	Fri, 23 May 2025 03:49:26 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uII4X-00000002kz7-2qQC
+	id 1uIJPP-00000002rBC-0lWq
 	for ath12k@lists.infradead.org;
-	Fri, 23 May 2025 02:23:47 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54MFjkWi006644;
-	Fri, 23 May 2025 02:23:42 GMT
+	Fri, 23 May 2025 03:49:25 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54MHWmt4000836;
+	Fri, 23 May 2025 03:49:19 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=Qm/zpUE17rTqamHO4SZcJ5
-	Lmb1rLzay2FNmK5jqLorc=; b=K0X98YdgG1/vOH0ZzsNivGpAuOIyBe5XNJ9ueX
-	dS39vMV4rS6qd7zLPlaHi69SSrPG/HtUwWVt02R2cQPh1JjWWZK0FTFI0RwK09zv
-	jOU2xl2+Jim5LB2QcyY53ADooVS2Gw6t6BMLyznC8nVaRWY869ySMICGjU462jkF
-	1U+FSy2V9uVTf0ngR7H6U0L0Xftr4VbgNfHSjIZHeuvdm/ANJk9gN6wurL0INZSl
-	MnLOtdOHgaPOxf2CeAiEAO0PWajH9tF0qipQ808AGx34rVLjWbhvRCuUJ/spzCDs
-	lNMWbvDzSNllqlgp9GruH/vm7ug6FuLx6yjEGt6kSZ9EwBEQ==
+	:mime-version:subject:to; s=qcppdkim1; bh=OfeUh3XK3R9ZHXa3B1r4fW
+	EB94jyHEkaJCKDeK6h0gA=; b=J+8sT9vXjL60AADivQxwsGF6Nyb8s1q4hTevEY
+	qp+w0EEKlNOw4c2HE88FYhAZB/p/ptnedOdlQrZsDr/wb3ZcKwCP7V15t3UffY3e
+	AGwhz1Csa8IO8iBAY7TEaZjfQ2/ulo5a+OgWjEcCZ8z1g8rzR6ipcpjb5kvcGNki
+	h9Ay3M1Jy1zWKngpjnO2cAYjh5Y8NBdeEigxRZdoTPqwfgSjv99a1xJNnCUVsS6P
+	xuXQl3f4NtNMCQUwJs0TvWfC+SZgIZR4w6IS8WVIaR6OXo/P/1rkocUr9lhepu2x
+	Im8LVeFYdvKif6W1LIjurC3QiMvcJUczgcwMks7oGSrtKkUQ==
 Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46rwf0rf17-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46rwf70bqe-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 May 2025 02:23:41 +0000 (GMT)
+	Fri, 23 May 2025 03:49:19 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54N2Nfpx027952
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54N3nIcd016066
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 May 2025 02:23:41 GMT
+	Fri, 23 May 2025 03:49:18 GMT
 Received: from [127.0.1.1] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 22 May
- 2025 19:23:38 -0700
+ 2025 20:49:16 -0700
 From: Baochen Qiang <quic_bqiang@quicinc.com>
-Date: Fri, 23 May 2025 10:23:05 +0800
-Subject: [PATCH ath-next] wifi: ath12k: fix GCC_GCC_PCIE_HOT_RST definition
- for WCN7850
+Subject: [PATCH ath-next 0/2] wifi: ath12k: install pairwise key first
+Date: Fri, 23 May 2025 11:49:00 +0800
+Message-ID: <20250523-ath12k-unicast-key-first-v1-0-f53c3880e6d8@quicinc.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20250523-ath12k-wrong-global-reset-addr-v1-1-3b06eb556196@quicinc.com>
-X-B4-Tracking: v=1; b=H4sIAAjcL2gC/43NzQ7CIBAE4FdpOLsGUPrjyfcwHii7bYkKCrXWN
- H13sSc96XEymW8mFilYimyXTSzQYKP1LgWxypjptGsJLKbMJJeKK56D7jshT/AI3rXQnn2tzxA
- oUg8aMUBdKESTU1EqzhJyDdTYcTk4sLQFR2PPjqnpbOx9eC7Pg1j6f08GAQIUaV2XBSGi3N/u1
- lhn1sZfFnyQH6CofoLyDVaaN7XBakubb3Ce5xcaWwZqKQEAAA==
-X-Change-ID: 20250506-ath12k-wrong-global-reset-addr-b75ddc6e7850
-To: Jeff Johnson <jjohnson@kernel.org>,
-        Pradeep Kumar Chitrapu
-	<quic_pradeepc@quicinc.com>,
-        Wen Gong <quic_wgong@quicinc.com>,
-        "Vasanthakumar Thiagarajan" <quic_vthiagar@quicinc.com>,
-        Bhagavathi Perumal S
-	<quic_bperumal@quicinc.com>,
-        P Praneesh <quic_ppranees@quicinc.com>
-CC: Sriram R <quic_srirrama@quicinc.com>, <linux-wireless@vger.kernel.org>,
-        <ath12k@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        Parth Panchoil
-	<parth105105@gmail.com>,
+X-B4-Tracking: v=1; b=H4sIACzwL2gC/4WNQQ6CMBBFr0Jm7Zh2oCKuvIdhgWWQCbFoWwiEc
+ HcbLuDu/7z89zcI7IUD3LINPM8SZHSp6FMGtm/ci1Ha1IEUGVUQYRN7TQNOTmwTIg68Yic+pcp
+ yce3KqnxqA2n+8dzJcqgfkFboeIlQJ9JLiKNfj885P/h//ZyjQqVbqvhCrTH6/p3EirNnO76h3
+ vf9B/9vYkvMAAAA
+X-Change-ID: 20250422-ath12k-unicast-key-first-9ce48f797b15
+To: Jeff Johnson <jjohnson@kernel.org>
+CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>,
         Baochen Qiang <quic_bqiang@quicinc.com>
 X-Mailer: b4 0.14.2
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: FafOzhXsl19cEKoVXck6HQSpZUDIBrgb
-X-Authority-Analysis: v=2.4 cv=J/Sq7BnS c=1 sm=1 tr=0 ts=682fdc2d cx=c_pps
+X-Proofpoint-GUID: xjZU0ygqEljs5k0EB-YfKlfYi-pvRECH
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIzMDAzMyBTYWx0ZWRfX+IB2gTbEz8ir
+ u0cthQh1ri0G/y2c4Q2sSP5JCvuj5paSRtu37kt5gp6BCUGvDmbIv2qBWHfH9UArNxDeA4U8Mx1
+ /zMWOs4r7oKuMou08R2iqLi8JVPTYh8dejClhQjC7V6ShwClqdwLILJhUacgnmEkTHlhoMe1LFh
+ LhvJxdT/fDuslTY19eukuS9ygbPn5RgJzvz+IiBUL99KxdvtnXz63m0QsVIEYuyEvAg9EvaZuat
+ 8DP1v2taZOOkRRo9SA+l03spyW33tt03HoY2hIcnDLItkwwn70v3/YP4HPw/vSwcP6n3neMsmhp
+ EoGyI+PmrKuR58Xkb99Jm+JAHBdbPlaA5OMHZMKMSbtPLWpa3j0pTr0AQNSLjeWhkeDd5V3jhJ3
+ I22EuBqyyUBI6QbW1cCXlyXThHRbvRq+XRjZwWqAsRP1Ce/kdPVff1PUBLB/UiHon+xhRP4L
+X-Authority-Analysis: v=2.4 cv=fZOty1QF c=1 sm=1 tr=0 ts=682ff03f cx=c_pps
  a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8
- a=pGLkceISAAAA:8 a=COk6AnOGAAAA:8 a=C5NdG746629Tomd590AA:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: FafOzhXsl19cEKoVXck6HQSpZUDIBrgb
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIzMDAyMCBTYWx0ZWRfX5fk2eVBKVSAF
- 8kqriWm0Os1kST5k02lw1RVHoXeUdHYHYwc3GwGmAXJpq205ad55DbAb4e2iP3lTbL8MnbCRu0Q
- D8sxrQ/bZGDJIFmkb7BmJB8pcv4JBzVOvsaNf8+RclBVwp60wR7qaVe0XgIa+CNN4WqKjVl+82A
- e9XRfyg7Jq2URKzIF1KojhoJTcJGiwyw3XJb2V5T4gvtIsW6+8CY9FRT5nCovzZhUNazfH9zrnh
- WcXjZOgqk4xns+Hn5nJsyswTdnFhqFPlikRcEWYJJtLRT4uJuvZsSQZ6KZZsQA5niM2XcphAheh
- wlJVyLDt1zOWwI3DXgRNkAR7c+wOR6IinDsnDZkriNp51xszRMoo85Xs4+cIjtvb5vC4LhvfBP5
- UQMxALY6MSpfGYy9VoCUOOzmQzSXgVrqf/px2u9CRRvDePkjpzULylr/1ZJCMe8Um38yWFGc
+ a=UqCG9HQmAAAA:8 a=COk6AnOGAAAA:8 a=IPQRWuV9YlEYq9QDH4wA:9 a=QEXdDO2ut3YA:10
+ a=zZCYzV9kfG8A:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: xjZU0ygqEljs5k0EB-YfKlfYi-pvRECH
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-23_01,2025-05-22_01,2025-03-28_01
+ definitions=2025-05-23_02,2025-05-22_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxscore=0 clxscore=1015 mlxlogscore=695 suspectscore=0 spamscore=0
- priorityscore=1501 bulkscore=0 phishscore=0 impostorscore=0
- lowpriorityscore=0 malwarescore=0 adultscore=0 classifier=spam authscore=0
- authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505160000 definitions=main-2505230020
+ clxscore=1015 mlxscore=0 adultscore=0 spamscore=0 bulkscore=0 suspectscore=0
+ malwarescore=0 priorityscore=1501 impostorscore=0 mlxlogscore=724
+ lowpriorityscore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505160000 definitions=main-2505230033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250522_192345_732597_751FD61C 
-X-CRM114-Status: GOOD (  14.26  )
+X-CRM114-CacheID: sfid-20250522_204923_356587_7A7A4310 
+X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,110 +114,29 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-GCC_GCC_PCIE_HOT_RST is wrongly defined for WCN7850, causing kernel crash
-on some specific platforms.
+We got report that WCN7850 is not working with IWD [1][2]. Debug
+shows the reason is that IWD installs group key before pairwise
+key, which goes against WCN7850's firmware.
 
-Since this register is divergent for WCN7850 and QCN9274, move it to
-register table to allow different definitions. Then correct the register
-address for WCN7850 to fix this issue.
+Reorder key install to workaround this.
 
-Note IPQ5332 is not affected as it is not PCIe based device.
+[1] https://bugzilla.kernel.org/show_bug.cgi?id=218733
+[2] https://lore.kernel.org/all/AS8P190MB12051DDBD84CD88E71C40AD7873F2@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Reported-by: Parth Panchoil <parth105105@gmail.com>
-Closes: https://lore.kernel.org/all/86899b2235a59c9134603beebe08f2bb0b244ea0.camel@gmail.com
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 ---
 ---
- drivers/net/wireless/ath/ath12k/hw.c  | 6 ++++++
- drivers/net/wireless/ath/ath12k/hw.h  | 2 ++
- drivers/net/wireless/ath/ath12k/pci.c | 6 +++---
- drivers/net/wireless/ath/ath12k/pci.h | 4 +++-
- 4 files changed, 14 insertions(+), 4 deletions(-)
+Baochen Qiang (2):
+      wifi: ath12k: avoid bit operation on key flags
+      wifi: ath12k: install pairwise key first
 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index 7e2cf0fb2085ab014fc14a5c81074802674b154e..8254dc10b53bbfb54a44c7ff2f705c72461d1031 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -951,6 +951,8 @@ static const struct ath12k_hw_regs qcn9274_v1_regs = {
- 	.hal_umac_ce0_dest_reg_base = 0x01b81000,
- 	.hal_umac_ce1_src_reg_base = 0x01b82000,
- 	.hal_umac_ce1_dest_reg_base = 0x01b83000,
-+
-+	.gcc_gcc_pcie_hot_rst = 0x1e38338,
- };
- 
- static const struct ath12k_hw_regs qcn9274_v2_regs = {
-@@ -1042,6 +1044,8 @@ static const struct ath12k_hw_regs qcn9274_v2_regs = {
- 	.hal_umac_ce0_dest_reg_base = 0x01b81000,
- 	.hal_umac_ce1_src_reg_base = 0x01b82000,
- 	.hal_umac_ce1_dest_reg_base = 0x01b83000,
-+
-+	.gcc_gcc_pcie_hot_rst = 0x1e38338,
- };
- 
- static const struct ath12k_hw_regs ipq5332_regs = {
-@@ -1215,6 +1219,8 @@ static const struct ath12k_hw_regs wcn7850_regs = {
- 	.hal_umac_ce0_dest_reg_base = 0x01b81000,
- 	.hal_umac_ce1_src_reg_base = 0x01b82000,
- 	.hal_umac_ce1_dest_reg_base = 0x01b83000,
-+
-+	.gcc_gcc_pcie_hot_rst = 0x1e40304,
- };
- 
- static const struct ath12k_hw_hal_params ath12k_hw_hal_params_qcn9274 = {
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index 0fbc17649df463334aa0ebb3da407115985335ca..0a75bc5abfa2410ab3c7b6ce038f4d5f6445ecf9 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -375,6 +375,8 @@ struct ath12k_hw_regs {
- 	u32 hal_reo_cmd_ring_base;
- 
- 	u32 hal_reo_status_ring_base;
-+
-+	u32 gcc_gcc_pcie_hot_rst;
- };
- 
- static inline const char *ath12k_bd_ie_type_str(enum ath12k_bd_ie_type type)
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 489d546390fcdab8f615cc9184006a958d9f140a..1f3cfd9b89fdcfd84731ec90c9c678b0c477a2af 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -292,10 +292,10 @@ static void ath12k_pci_enable_ltssm(struct ath12k_base *ab)
- 
- 	ath12k_dbg(ab, ATH12K_DBG_PCI, "pci ltssm 0x%x\n", val);
- 
--	val = ath12k_pci_read32(ab, GCC_GCC_PCIE_HOT_RST);
-+	val = ath12k_pci_read32(ab, GCC_GCC_PCIE_HOT_RST(ab));
- 	val |= GCC_GCC_PCIE_HOT_RST_VAL;
--	ath12k_pci_write32(ab, GCC_GCC_PCIE_HOT_RST, val);
--	val = ath12k_pci_read32(ab, GCC_GCC_PCIE_HOT_RST);
-+	ath12k_pci_write32(ab, GCC_GCC_PCIE_HOT_RST(ab), val);
-+	val = ath12k_pci_read32(ab, GCC_GCC_PCIE_HOT_RST(ab));
- 
- 	ath12k_dbg(ab, ATH12K_DBG_PCI, "pci pcie_hot_rst 0x%x\n", val);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-index 0b4c459d6d8eabb0773162e6bb3ca666c0a8f15a..d1ec8aad7f6c3b6f5cbdf8ce57a4106733686521 100644
---- a/drivers/net/wireless/ath/ath12k/pci.h
-+++ b/drivers/net/wireless/ath/ath12k/pci.h
-@@ -28,7 +28,9 @@
- #define PCIE_PCIE_PARF_LTSSM			0x1e081b0
- #define PARM_LTSSM_VALUE			0x111
- 
--#define GCC_GCC_PCIE_HOT_RST			0x1e38338
-+#define GCC_GCC_PCIE_HOT_RST(ab) \
-+	((ab)->hw_params->regs->gcc_gcc_pcie_hot_rst)
-+
- #define GCC_GCC_PCIE_HOT_RST_VAL		0x10
- 
- #define PCIE_PCIE_INT_ALL_CLEAR			0x1e08228
-
+ drivers/net/wireless/ath/ath12k/core.h |  4 ++
+ drivers/net/wireless/ath/ath12k/mac.c  | 80 ++++++++++++++++++++++++++++++----
+ drivers/net/wireless/ath/ath12k/wmi.h  |  1 +
+ 3 files changed, 76 insertions(+), 9 deletions(-)
 ---
 base-commit: 3d933084a072fd5fb5da54c06a017abc0412c86f
-change-id: 20250506-ath12k-wrong-global-reset-addr-b75ddc6e7850
+change-id: 20250422-ath12k-unicast-key-first-9ce48f797b15
 
 Best regards,
 -- 
