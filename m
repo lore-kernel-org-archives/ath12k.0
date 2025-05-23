@@ -4,99 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C94CC54ED0
-	for <ath12k@archiver.kernel.org>; Fri, 23 May 2025 03:49:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5C7EC54F32
+	for <ath12k@archiver.kernel.org>; Fri, 23 May 2025 08:45:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
-	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=EFhnzja1lN7ubOuZj4j/MRchltTHdJqE/HzNH29dwI8=; b=UrrX2OHBXThy3gSsv8epvCtB0X
-	wE1SpPrRiByuGkteNvikkrK2j4woksBKTAsodabJdZAVj7Jq2zotcwN1Krhjo1/Qply5g8ZxfIl8J
-	KM/c+rYg8R3xzEpaDllg2x10InIn0t3ADusvQ01X3cIpJCwOSSo3LkiVv8hgp2nxPmQjqvLJrzzgm
-	5C5owFYbt5Edlagjs/JmPiYJSEuaQ+YMYgV0UnRJveZp7Ti7qnA508xl9hbgG/lA5OlHX+s8moNUh
-	Fp5U3XlvdT98JmovHlr4kxfXUOrMrfVkM5ED2FB5RZBOaSBlnmycJJIXFhfLFXzu37xdnnztKX6y5
-	cIlh+qyw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=0hzu/331svahbTes/8aRYkVNN0812xz1z5KDadrw01g=; b=n1oh1DyiTcWlATzhSY5lqHHVfW
+	k1kxtuQrwUqeayCU+PVIEavRi27aBsb9o0gO65hODwW3ww6JBgdWOkz9qUrRAnmu/p7UzWmrJiYSf
+	xGSsfLuoTz3qL0ESxuBFmHwzhkMJQi9j3EJZgqJOOOaw2g4cK6rwJlLq8s01FqRGHzEGrBDelAQ/Z
+	Oyp84P+/hitDZQ/xlAIR1Qw/pnASYQtE9Gq1k4Ebbf2It3L3dyolcz/RoUZFVQOmFB1VdUyPWcMHj
+	NcCaSCrYG0XTGS3h9idhDLR++Zjcf0RQG46ZyWlFURDH0PblKKsr8/T3XievLpTbJss0yH8kxt8GD
+	AcSV9CxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uIJPU-00000002rEP-3wIY;
-	Fri, 23 May 2025 03:49:28 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uIO1c-00000003Kmp-2Hdb;
+	Fri, 23 May 2025 08:45:08 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uIJPS-00000002rCT-0lSh
+	id 1uINn6-00000003J9l-2VGu
 	for ath12k@lists.infradead.org;
-	Fri, 23 May 2025 03:49:27 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54MJCsTj015696;
-	Fri, 23 May 2025 03:49:23 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	EFhnzja1lN7ubOuZj4j/MRchltTHdJqE/HzNH29dwI8=; b=GcF1KitbpYIaXLkx
-	MS4aAV4m33X7BB/aDqrXDrGP1x659fz+MfvA4v/zWl58oud3gnsosuGBNvAINjGv
-	j7Y8dYCMGi5o4SOXq4m8sH8jbc9BuQkAxvjsMnxfJK8md0+kQUzIvHZIVLH0tIx5
-	2NdDAez9SWVMXREp9EqOSXWD5Ia8kT4qgeE8fUvedn9gTBFHcmpGYM1oR28bxmvo
-	MP9ZiJ5HU5hE1fjRDdIyBpBllQabzL+hs5o4hwdUrmCS6e2eULKyLtX2Nm3EuzW2
-	Qy6uH8bESoBOd8F6D3LZhmKEiibdjKxSRPtB2wt/UeK742DZriMMmsUD4aksLp1O
-	sl9HBQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46s95tptu7-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 May 2025 03:49:22 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54N3nLt2000582
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 May 2025 03:49:21 GMT
-Received: from [127.0.1.1] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 22 May
- 2025 20:49:20 -0700
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-Date: Fri, 23 May 2025 11:49:02 +0800
-Subject: [PATCH ath-next 2/2] wifi: ath12k: install pairwise key first
+	Fri, 23 May 2025 08:30:09 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-442f9043f56so52000895e9.0
+        for <ath12k@lists.infradead.org>; Fri, 23 May 2025 01:30:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1747989006; x=1748593806; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=0hzu/331svahbTes/8aRYkVNN0812xz1z5KDadrw01g=;
+        b=e3SuCGvuYVRdbIAvWV6v4mcyR3j/RTnaQwp4WUqUbcKl9PciDzDeyCS+EzomAZ7PA3
+         XmQmJNU7MHbUqRiPM62KPQgVab6udaYtF64FgLnKWjrWATWH1+gsZ9zfU9+Dvyz723TY
+         kJYz5ihI9ALrsV4aSjeXW31Kl2PEeGFep90Rg47fOEVkA6ev1ZlUbJS6nFiBRj/IC/WT
+         rSYPVu3pFxwHJV0fQb9AF5fQ8OA1kZOMD6zJb9epIL2TR4KDQv4LSXQqviqh3hUu32Wz
+         iZbAYTqc0RIWrJy0KpXlu+1r29Y4EJuNunHCSHrKiBSX4kNgD4vG7YEmqnVRo0xdiwXF
+         6ekA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747989006; x=1748593806;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=0hzu/331svahbTes/8aRYkVNN0812xz1z5KDadrw01g=;
+        b=jPG4t9+Qv0aoJlR1fnMC3hQla7aeoyHdhh2LtK4O5YS8EYYS7qO9TkX1iJgw3SkfnN
+         TIZWMHRniJYLmymazM7t6jTUYuUsJkbcYs+EVQc2DOVmerZ2us7utWPcjjcPe0913SKS
+         tC0n1zaA16ODj0ZhehlLzkWePJcIUZA0zQHeOrwMKaf7X9Z3COYnTNboqwFD+BdMtbnG
+         x4Lj5evnJDRb51hTiyS90zU/ymxPTqN/ayIlsHpBWXyRMXns58xJr53uBIGLB3K8YYX6
+         jVyBCRRK+15B0cM+gAEIGc4M2UCMuojkPN79OZkuaPNCBoeXTNbEqyyFl8P+qBZEoNJ2
+         5+BA==
+X-Forwarded-Encrypted: i=1; AJvYcCUDf0cuC0D27MsppcAn7HqGog/dM1SSqbTjvHtNGICfOpM7RYUyUc5N6deCaanoM6DkKQIJuvo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwY7uEN2oDEb1V+WK3OhS6V4lguLvsrbfR3wk7rw5NH+OqtfR14
+	oBe/gSEMpnaj7jE+Nf07331qscq3Y1UPehL5SaErc/DaKSpUrzBJCn5E13IaaLuZn/A=
+X-Gm-Gg: ASbGncu5gq/7gf/IR9wf0ksUfUWSGXv8U8IPuwsJ0P4xwuffwpO0jimGNSeP34IQdH8
+	GzDY+jldUmSc7hktwnhwPWecGIzKCG7VG/dHUmEdvY7/4bAVoOb1PzH4wbFxLIYUIDCx6k9Q7fe
+	/qPNKOD2AvtWRZV+ADFKOUIxduKlcWgvZHuRh+lAlUovPuQQgOXiI3gnXxEpKsqmYYrzB35RZfH
+	mszXTDeg4E/G9mGmdhGxVjGl+txJT7kZU6G2YV9/HC70XqScMrYre0rE8Bsq/AYGCm3U2NLkEyp
+	/4TMI5DQd++qXUcYLipUbN1W+Q8kAEtTCja8vgbPL3Zbixp88e9PxVn2
+X-Google-Smtp-Source: AGHT+IE06BDQgHT8K2b8PLVbznX7v0nJNrz2nHMEuKTcFYYfVpza79W+ry5W8H8nR5LU1oDBKpzmDw==
+X-Received: by 2002:a5d:64c4:0:b0:3a0:b565:f1ea with SMTP id ffacd0b85a97d-3a4c1faad0dmr3219661f8f.5.1747989006250;
+        Fri, 23 May 2025 01:30:06 -0700 (PDT)
+Received: from localhost ([196.207.164.177])
+        by smtp.gmail.com with UTF8SMTPSA id ffacd0b85a97d-3a35ca8874bsm26117801f8f.67.2025.05.23.01.30.05
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 23 May 2025 01:30:05 -0700 (PDT)
+Date: Fri, 23 May 2025 11:30:02 +0300
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: oe-kbuild@lists.linux.dev, Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
+	Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
+	ath12k@lists.infradead.org,
+	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Subject: [ath:pending-deferred 23/61]
+ drivers/net/wireless/ath/ath12k/mac.c:9812 ath12k_mac_parse_tx_pwr_env()
+ error: buffer overflow 'local_non_psd->power' 5 <= 15
+Message-ID: <202505180703.Kr9OfQRP-lkp@intel.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-ID: <20250523-ath12k-unicast-key-first-v1-2-f53c3880e6d8@quicinc.com>
-References: <20250523-ath12k-unicast-key-first-v1-0-f53c3880e6d8@quicinc.com>
-In-Reply-To: <20250523-ath12k-unicast-key-first-v1-0-f53c3880e6d8@quicinc.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>,
-        Baochen Qiang <quic_bqiang@quicinc.com>
-X-Mailer: b4 0.14.2
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=QKBoRhLL c=1 sm=1 tr=0 ts=682ff042 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8
- a=UqCG9HQmAAAA:8 a=COk6AnOGAAAA:8 a=bwSFjXmOb-h8CDtPQtgA:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: Nyt7i0q_--JRkmTrTp3ljZvmrh-Gynsc
-X-Proofpoint-GUID: Nyt7i0q_--JRkmTrTp3ljZvmrh-Gynsc
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIzMDAzMyBTYWx0ZWRfX+bFKZHyb6VDG
- 5Jf9/4tBIaI4+v3BThc16X0PhRqLI/pH2oaIC6BlV64WDo016scJQlFXv+0mdvgPsX9Ywufs/B0
- mnaSfN7MU3+ZTAVtUuLKfzgJ8S8RharkVHgRT8Q1BHOKThEAZGbSRWqZ5+MGMoc+IfJvkiIA9o1
- b6uFvI6+euRZ8Chsj3wH4bhfjb99ilhz43ty+IJYvbHCo7kBjWUlx2Xs/mHx072HiiC3Tw72iCr
- oXe5OCZDkzSFzuQ1ldZ34CeK6W4n8Wc/AjFM0ke1vNdojJ8TvDaXbLF2TsiixbHITrJsy7W079L
- A/xg4ugYcQjAJcTPIUQp+GX9H+nxZchr88dJDcG56V/6eABn/HI5FGMvmzn0ZHZkh35mvgsRe2i
- xtE7G0qTKC0WswYBXqMzr01ISlxfrnppuG2+hmSLl1rU4lzvu5NMNInOsU3y05j+UclNhDOS
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-23_02,2025-05-22_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxscore=0 spamscore=0 clxscore=1015 phishscore=0 lowpriorityscore=0
- adultscore=0 mlxlogscore=999 suspectscore=0 bulkscore=0 impostorscore=0
- priorityscore=1501 malwarescore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505160000 definitions=main-2505230033
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250522_204926_345671_6AB53CB0 
-X-CRM114-Status: GOOD (  18.35  )
+X-CRM114-CacheID: sfid-20250523_013008_648949_C982B63E 
+X-CRM114-Status: UNSURE (   6.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,173 +99,53 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-As station, WCN7850 firmware requires pairwise key to be installed before
-group key. Currently host does not care about this, so it is up to kernel
-or userspace to decide which one will be installed first. In case above
-requirement is not met, WCN7850 firmware's EAPOL station machine is messed
-up, and finally connection fails [1].
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending-deferred
+head:   52c1e49f8c69a630f3dbe7dd79c52979cdad19d2
+commit: cccbb9d0dd6ab9e3353066217e9ab5b44bd761d3 [23/61] wifi: ath12k: add parse of transmit power envelope element
+config: x86_64-randconfig-161-20250518 (https://download.01.org/0day-ci/archive/20250518/202505180703.Kr9OfQRP-lkp@intel.com/config)
+compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
 
-Reorder key install for station interface in that case: this is done by
-caching group key first; Later when pairwise key arrives, both can be
-installed in required order.
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+| Closes: https://lore.kernel.org/r/202505180703.Kr9OfQRP-lkp@intel.com/
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00217-QCAHKSWPL_SILICONZ-1
+New smatch warnings:
+drivers/net/wireless/ath/ath12k/mac.c:9812 ath12k_mac_parse_tx_pwr_env() error: buffer overflow 'local_non_psd->power' 5 <= 15
+drivers/net/wireless/ath/ath12k/mac.c:9812 ath12k_mac_parse_tx_pwr_env() error: buffer overflow 'local_non_psd->power' 5 <= 15
+drivers/net/wireless/ath/ath12k/mac.c:9812 ath12k_mac_parse_tx_pwr_env() error: buffer overflow 'reg_non_psd->power' 5 <= 15
+drivers/net/wireless/ath/ath12k/mac.c:9812 ath12k_mac_parse_tx_pwr_env() error: buffer overflow 'reg_non_psd->power' 5 <= 15
 
-Closes: https://bugzilla.kernel.org/show_bug.cgi?id=218733
-Link: https://lore.kernel.org/all/AS8P190MB12051DDBD84CD88E71C40AD7873F2@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM # [1]
-Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.h |  4 ++
- drivers/net/wireless/ath/ath12k/mac.c  | 76 ++++++++++++++++++++++++++++++----
- drivers/net/wireless/ath/ath12k/wmi.h  |  1 +
- 3 files changed, 74 insertions(+), 7 deletions(-)
+vim +9812 drivers/net/wireless/ath/ath12k/mac.c
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 941db6e49d6eaeb03783f7714d433259d887820b..eeaaa0616e48c3cf34f2769a1979e2f67888ac25 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -345,6 +345,10 @@ struct ath12k_link_vif {
- 	bool is_sta_assoc_link;
- 
- 	struct ath12k_reg_tpc_power_info reg_tpc_info;
-+
-+	bool group_key_valid;
-+	struct wmi_vdev_install_key_arg group_key;
-+	bool pairwise_key_done;
- };
- 
- struct ath12k_vif {
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index eb3c6d10e116b098d44cd94ba8e0257a77b54af8..05a17ad2eaeea00c938b16d22fb8e7605dfb4007 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -4731,14 +4731,13 @@ static int ath12k_install_key(struct ath12k_link_vif *arvif,
- 		.key_len = key->keylen,
- 		.key_data = key->key,
- 		.key_flags = flags,
-+		.ieee80211_key_cipher = key->cipher,
- 		.macaddr = macaddr,
- 	};
- 	struct ath12k_vif *ahvif = arvif->ahvif;
- 
- 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
- 
--	reinit_completion(&ar->install_key_done);
--
- 	if (test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags))
- 		return 0;
- 
-@@ -4747,7 +4746,7 @@ static int ath12k_install_key(struct ath12k_link_vif *arvif,
- 		/* arg.key_cipher = WMI_CIPHER_NONE; */
- 		arg.key_len = 0;
- 		arg.key_data = NULL;
--		goto install;
-+		goto check_order;
- 	}
- 
- 	switch (key->cipher) {
-@@ -4775,19 +4774,82 @@ static int ath12k_install_key(struct ath12k_link_vif *arvif,
- 		key->flags |= IEEE80211_KEY_FLAG_GENERATE_IV |
- 			      IEEE80211_KEY_FLAG_RESERVE_TAILROOM;
- 
-+check_order:
-+	if (ahvif->vdev_type == WMI_VDEV_TYPE_STA &&
-+	    arg.key_flags == WMI_KEY_GROUP) {
-+		if (cmd == SET_KEY) {
-+			if (arvif->pairwise_key_done) {
-+				ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
-+					   "vdev %u pairwise key done, go install group key\n",
-+					   arg.vdev_id);
-+				goto install;
-+			} else {
-+				/* WCN7850 firmware requires pairwise key to be installed
-+				 * before group key. In case group key comes first, cache
-+				 * it and return. Will revisit it once pairwise key gets
-+				 * installed.
-+				 */
-+				arvif->group_key = arg;
-+				arvif->group_key_valid = true;
-+				ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
-+					   "vdev %u group key before pairwise key, cache and skip\n",
-+					   arg.vdev_id);
-+
-+				ret = 0;
-+				goto out;
-+			}
-+		} else {
-+			arvif->group_key_valid = false;
-+		}
-+	}
-+
- install:
--	ret = ath12k_wmi_vdev_install_key(arvif->ar, &arg);
-+	reinit_completion(&ar->install_key_done);
- 
-+	ret = ath12k_wmi_vdev_install_key(arvif->ar, &arg);
- 	if (ret)
- 		return ret;
- 
- 	if (!wait_for_completion_timeout(&ar->install_key_done, 1 * HZ))
- 		return -ETIMEDOUT;
- 
--	if (ether_addr_equal(macaddr, arvif->bssid))
--		ahvif->key_cipher = key->cipher;
-+	if (ether_addr_equal(arg.macaddr, arvif->bssid))
-+		ahvif->key_cipher = arg.ieee80211_key_cipher;
-+
-+	if (ar->install_key_status) {
-+		ret = -EINVAL;
-+		goto out;
-+	}
-+
-+	if (ahvif->vdev_type == WMI_VDEV_TYPE_STA &&
-+	    arg.key_flags == WMI_KEY_PAIRWISE) {
-+		if (cmd == SET_KEY) {
-+			arvif->pairwise_key_done = true;
-+			if (arvif->group_key_valid) {
-+				/* Install cached GTK */
-+				arvif->group_key_valid = false;
-+				arg = arvif->group_key;
-+				ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
-+					   "vdev %u pairwise key done, group key ready, go install\n",
-+					   arg.vdev_id);
-+				goto install;
-+			}
-+		} else {
-+			arvif->pairwise_key_done = false;
-+		}
-+	}
-+
-+out:
-+	if (ret) {
-+		/* In case of failure userspace may not do DISABLE_KEY
-+		 * but triggers re-connection directly, so manually reset
-+		 * status here.
-+		 */
-+		arvif->group_key_valid = false;
-+		arvif->pairwise_key_done = false;
-+	}
- 
--	return ar->install_key_status ? -EINVAL : 0;
-+	return ret;
- }
- 
- static int ath12k_clear_peer_keys(struct ath12k_link_vif *arvif,
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index ac18f75e04492b62594acb159e3b43b81bd6c392..63302302cf87058a87ba99c294810823f714779b 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -3746,6 +3746,7 @@ struct wmi_vdev_install_key_arg {
- 	u32 key_idx;
- 	u32 key_flags;
- 	u32 key_cipher;
-+	u32 ieee80211_key_cipher;
- 	u32 key_len;
- 	u32 key_txmic_len;
- 	u32 key_rxmic_len;
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9802  	} else {
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9803  		tpc_info->is_psd_power = false;
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9804  		tpc_info->eirp_power = 0;
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9805  
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9806  		tpc_info->num_pwr_levels = max(local_non_psd->count,
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9807  					       reg_non_psd->count);
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9808  		if (tpc_info->num_pwr_levels > ATH12K_NUM_PWR_LEVELS)
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9809  			tpc_info->num_pwr_levels = ATH12K_NUM_PWR_LEVELS;
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tpc_info->num_pwr_levels can be ATH12K_NUM_PWR_LEVELS (16).
+
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9810  
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9811  		for (i = 0; i < tpc_info->num_pwr_levels; i++) {
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18 @9812  			tpc_info->tpe[i] = min(local_non_psd->power[i],
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9813  					       reg_non_psd->power[i]) / 2;
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^
+So i can be 15 but there are only 5 elements in the array.
+
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9814  			ath12k_dbg(ab, ATH12K_DBG_MAC,
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9815  				   "non PSD power[%d] : %d\n",
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9816  				   i, tpc_info->tpe[i]);
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9817  		}
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9818  	}
+cccbb9d0dd6ab9 Baochen Qiang 2025-04-18  9819  }
 
 -- 
-2.34.1
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 
