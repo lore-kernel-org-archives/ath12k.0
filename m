@@ -4,97 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD4FAC54FB3
-	for <ath12k@archiver.kernel.org>; Mon, 26 May 2025 03:47:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13DADC54FB3
+	for <ath12k@archiver.kernel.org>; Mon, 26 May 2025 11:35:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=cKRV5GKyuP23Y3M9k0BT2svzLUAessr9qg1Tki7V058=; b=eeEk8KYjtn9XPjzty1pgcdKj5S
-	1IkXG26e8IWLiABHRVWO1S0OFUqNFrCT1P/DbTkTATfCnRV0bPhg3Vy/V+PZq3kNPd+bm4pDI+OpU
-	N/odIo8De7W5CPHGKIEhFbUAlCVC2x9LwgKQaIuqQnrMhABtcqt6uuVtceJMjAi3ANv9NapgrOtfF
-	ySpS4lLo0uYiZiIAwLUu0cGJSN4fSt5H1uxzSTy5hwASBD0ojtmoTqEuIsOY/HTFFBPPdcMw01nRb
-	JmmNxbYTPUma7tmHwD3aRKOPajYtIrGw3i8AG8fbsRgoMfWZY1Gh7M+qlHmR7HUZC4vdgPk081fzH
-	oBuBfBxw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=p2BddTyHG9Uw/IHh1D/1cAmtTnsv3is0bt3XJGih1cc=; b=1BY21bLfSi+5+HHodWuDSKe532
+	vi1HPpbayEYrGx+mx7zAiI1e0siu+I1ThQ0tCE7JiplmwJg2EFkMsZb9JsRyOrpMbndpg6jioaXoK
+	GtpH371fmsMfpl2YwoH2UgmJ2FMwfGUjhSma4RNm4z1JV2Q5yUWY7L+kagVZ9szH9af7PrMrfl57P
+	n0vD5vITnyZlV9Z7bTdcp9mIr0IceeT6kB8M3Udbfmc2qKXS9UI8i78J0hLXSIBNA9GiObhTyhODP
+	nXlRIp8EberEQpoVqbb7c8n/WEgh0zGcOWiU4bXzckhIV6FzWUvCC0issGhs1oHDNA6nPI+1SBU9g
+	O/n0aYFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJOoS-000000081cw-16Ci;
-	Mon, 26 May 2025 03:47:44 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uJW6k-00000008iB3-2vnm;
+	Mon, 26 May 2025 11:35:06 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJOoP-000000081cO-2ehd
+	id 1uJW6i-00000008iAh-0jf9
 	for ath12k@lists.infradead.org;
-	Mon, 26 May 2025 03:47:42 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54PNo5Bc007771;
-	Mon, 26 May 2025 03:47:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=cKRV5GKyuP23Y3M9k0BT2s
-	vzLUAessr9qg1Tki7V058=; b=DbYNA2K6351IrXC8Mt7KDWNbOvCfaGKtZ920Uq
-	JLwMxC6S0rB15+Wc+6dFYf+cVhlDBjnRBWrzDDtCSDtxQMe2H7RO9RmXkbpCfRaB
-	hQbQI6VCBWVhzOV4jt3fKR0BtNzEVSwb8amv5IqJqPS+oY/FtBBDTRaY/o+6Madk
-	lbmVsbkaiQd5O4ndV/ZKzuoOcSFNPssV/YmVuX5G32qBIbpWmPQ/3FqOERiQ6X3P
-	3VD9D4bImkBsE/vB5pHUEj/uISC2d0Lepeq+DPQPdzadoW9avATeSw9YsxtgwWdi
-	yMwlPtrRawe5wvmHG9YwGBmNW3wWyBEJOQkAcByo0BL5anqA==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46u6b5jvje-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 26 May 2025 03:47:39 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54Q3ldRx016814
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 26 May 2025 03:47:39 GMT
-Received: from hu-sarishar-blr.qualcomm.com (10.80.80.8) by
- nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 25 May 2025 20:47:37 -0700
-From: Sarika Sharma <quic_sarishar@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Kathirvel
-	<quic_kathirve@quicinc.com>,
-        Sarika Sharma <quic_sarishar@quicinc.com>
-Subject: [PATCH ath-next] wifi: ath12k: Decrement TID on RX peer frag setup error handling
-Date: Mon, 26 May 2025 09:17:13 +0530
-Message-ID: <20250526034713.712592-1-quic_sarishar@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Mon, 26 May 2025 11:35:05 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id B3FCDA4E466;
+	Mon, 26 May 2025 11:35:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EB06BC4CEE7;
+	Mon, 26 May 2025 11:35:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1748259302;
+	bh=5SkZ27MFt+s5gbVQg3eH6ITCcs8U+KTTQskKya4Ci2M=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=gG1noKS+2rYdiUxvikU5MDWDqnSdzxnC9pj6g76zAGYnk1dcH6cnfbBUQgOsDClG+
+	 GUpED1jEpKKy5Te/ypi2RuF822sr2UMZX50rQRtwMktVq8Vqcj9Bjz0s4uPhX1JMSf
+	 Jo4fIK1u2alLzFlyrie5kSUgfwgVwtS4K25V1aGH6IIYKEUmGmA2XEjYxD2/1FsfHk
+	 yXqubXIUIXoXcRXZ2AEFBWiOxX8DeXGI14kqOrW04n+pU+MoXURCJM7DcMdrMQAYAd
+	 uy/yRH4aR8OzcuaiXIky6inPYCq4VcYdM6fvZc8ReXgddoXcwS6QbjqkItVNpXCpTU
+	 5Bvzd3q9bASjg==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan@kernel.org>)
+	id 1uJW6g-000000000GJ-1m26;
+	Mon, 26 May 2025 13:35:03 +0200
+Date: Mon, 26 May 2025 13:35:02 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Remi Pommarel <repk@triplefau.lt>
+Cc: Johan Hovold <johan+linaro@kernel.org>,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Miaoqing Pan <quic_miaoqing@quicinc.com>,
+	Steev Klimaszewski <steev@kali.org>,
+	Clayton Craft <clayton@craftyguy.net>,
+	Jens Glathe <jens.glathe@oldschoolsolutions.biz>,
+	Nicolas Escande <nico.escande@gmail.com>,
+	ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: Re: [PATCH] wifi: ath12k: fix ring-buffer corruption
+Message-ID: <aDRR5oYBU0Z-DaWr@hovoldconsulting.com>
+References: <20250321095219.19369-1-johan+linaro@kernel.org>
+ <aC8-mUinxA6y688X@pilgrim>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=ZcodNtVA c=1 sm=1 tr=0 ts=6833e45b cx=c_pps
- a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=GEpy-HfZoHoA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=C3E12wa_uFYmd_9f3VUA:9
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI2MDAyOCBTYWx0ZWRfXyeyqLkUYgsKc
- ufE+dTar19ok2HfyMLf5zvahcponN8GMkFp3tX9TyVnOIRxxpq05BI0z7m26p79vyooHWxBglCH
- LWtbbC306UIKKo1BiC5Jg0UE2ghC3qr2PzF2hxXenbhx/S0vPmV2PAoZWsaXRlHa4BzSablvFEV
- z4fYnRAMO2TkLr1QhbeCmnA49MLk4ir1YxJF5UHd1MABF8GT9kWpYknXQ1tYRmN+lb4lgXU4oBy
- 9rZQEnreHcEVLBjjkdi5Ae2+Ss0wxLHwax/c1udcgFdroXj9ICowbzjggPnHXkk3cU1utcgK9a6
- dnKIBeshsim0HqEJnLS5QMCmdIrr1Sz0l+isYYWc16S/mFhQQS8mB0GKLzQH/ybiCcO8OkyrvcG
- R4nRs6vdf0079bOWmMxhCc4774Fa4eOcqoOesGj85ffyEVrBbWNNuuegYQu9LtFk0HtfxZ8K
-X-Proofpoint-GUID: V23L18Z-8ub8mD2g8DhyQZyfb0OvQqEF
-X-Proofpoint-ORIG-GUID: V23L18Z-8ub8mD2g8DhyQZyfb0OvQqEF
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-26_02,2025-05-22_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 malwarescore=0 mlxlogscore=662 bulkscore=0 priorityscore=1501
- spamscore=0 clxscore=1015 suspectscore=0 lowpriorityscore=0 phishscore=0
- impostorscore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
- definitions=main-2505260028
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <aC8-mUinxA6y688X@pilgrim>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250525_204741_709308_2DC56560 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250526_043504_358772_68E7BC56 
+X-CRM114-Status: GOOD (  31.61  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,39 +83,98 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+On Thu, May 22, 2025 at 05:11:21PM +0200, Remi Pommarel wrote:
+> On Fri, Mar 21, 2025 at 10:52:19AM +0100, Johan Hovold wrote:
+> > Users of the Lenovo ThinkPad X13s have reported that Wi-Fi sometimes
+> > breaks and the log fills up with errors like:
+> > 
+> >     ath11k_pci 0006:01:00.0: HTC Rx: insufficient length, got 1484, expected 1492
+> >     ath11k_pci 0006:01:00.0: HTC Rx: insufficient length, got 1460, expected 1484
+> > 
+> > which based on a quick look at the ath11k driver seemed to indicate some
+> > kind of ring-buffer corruption.
+> > 
+> > Miaoqing Pan tracked it down to the host seeing the updated destination
+> > ring head pointer before the updated descriptor, and the error handling
+> > for that in turn leaves the ring buffer in an inconsistent state.
+> > 
+> > While this has not yet been observed with ath12k, the ring-buffer
+> > implementation is very similar to the ath11k one and it suffers from the
+> > same bugs.
 
-Currently, TID is not decremented before peer cleanup, during error
-handling path of ath12k_dp_rx_peer_frag_setup(). This could lead to
-out-of-bounds access in peer->rx_tid[].
+> > Note that the READ_ONCE() are only needed to avoid compiler mischief in
+> > case the ring-buffer helpers are ever inlined.
 
-Hence, add a decrement operation for TID, before peer cleanup to
-ensures proper cleanup and prevents out-of-bounds access issues when
-the RX peer frag setup fails.
+> > @@ -343,11 +343,10 @@ static int ath12k_ce_completed_recv_next(struct ath12k_ce_pipe *pipe,
+> >  		goto err;
+> >  	}
+> >  
+> > +	/* Make sure descriptor is read after the head pointer. */
+> > +	dma_rmb();
+> > +
+> 
+> That does not seem to be the only place descriptor is read just after
+> the head pointer, ath12k_dp_rx_process{,err,reo_status,wbm_err} seem to
+> also suffer the same sickness.
 
-Found during code review. Compile tested only.
+Indeed, I only started with the corruption issues that users were
+reporting (with ath11k) and was gonna follow up with further fixes once
+the initial ones were merged (and when I could find more time).
 
-Signed-off-by: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
-Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp.c | 1 +
- 1 file changed, 1 insertion(+)
+> Why not move the dma_rmb() in ath12k_hal_srng_access_begin() as below,
+> that would look to me as a good place to do it.
+> 
+> @@ -2133,6 +2133,9 @@ void ath12k_hal_srng_access_begin(struct
+> ath12k_base *ab, struct hal_srng *srng)
+>                         *(volatile u32 *)srng->u.src_ring.tp_addr;
+>         else
+>                 srng->u.dst_ring.cached_hp = *srng->u.dst_ring.hp_addr;
+> +
+> +       /* Make sure descriptors are read after the head pointer. */
+> +       dma_rmb();
+>  }
+> 
+> This should ensure the issue does not happen anywhere not just for
+> ath12k_ce_recv_process_cb().
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 6317c6d4c043..c6b10acb643e 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -84,6 +84,7 @@ int ath12k_dp_peer_setup(struct ath12k *ar, int vdev_id, const u8 *addr)
- 	ret = ath12k_dp_rx_peer_frag_setup(ar, addr, vdev_id);
- 	if (ret) {
- 		ath12k_warn(ab, "failed to setup rx defrag context\n");
-+		tid--;
- 		goto peer_clean;
- 	}
- 
+We only need the read barrier for dest rings so the barrier would go in
+the else branch, but I prefer keeping it in the caller so that it is
+more obvious when it is needed and so that we can skip the barrier when
+the ring is empty (e.g. as done above).
 
-base-commit: 3d933084a072fd5fb5da54c06a017abc0412c86f
--- 
-2.34.1
+I've gone through and reviewed the remaining call sites now and will
+send a follow-on fix for them.
 
+> Note that ath12k_hal_srng_dst_get_next_entry() does not need a barrier
+> as it uses cached_hp from ath12k_hal_srng_access_begin().
+
+Yeah, it's only needed before accessing the descriptor fields.
+
+> > @@ -1962,7 +1962,7 @@ u32 ath12k_hal_ce_dst_status_get_length(struct hal_ce_srng_dst_status_desc *desc
+> >  {
+> >  	u32 len;
+> >  
+> > -	len = le32_get_bits(desc->flags, HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
+> > +	len = le32_get_bits(READ_ONCE(desc->flags), HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
+> >  	desc->flags &= ~cpu_to_le32(HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
+> >  
+> >  	return len;
+> > @@ -2132,7 +2132,7 @@ void ath12k_hal_srng_access_begin(struct ath12k_base *ab, struct hal_srng *srng)
+> >  		srng->u.src_ring.cached_tp =
+> >  			*(volatile u32 *)srng->u.src_ring.tp_addr;
+> >  	else
+> > -		srng->u.dst_ring.cached_hp = *srng->u.dst_ring.hp_addr;
+> > +		srng->u.dst_ring.cached_hp = READ_ONCE(*srng->u.dst_ring.hp_addr);
+> 
+> dma_rmb() acting also as a compiler barrier why the need for both
+> READ_ONCE() ?
+
+Yeah, I was being overly cautious here and it should be fine with plain
+accesses when reading the descriptor after the barrier, but the memory
+model seems to require READ_ONCE() when fetching the head pointer.
+Currently, hp_addr is marked as volatile so READ_ONCE() could be
+dropped for that reason, but I'd rather keep it here explicitly (e.g. in
+case someone decides to drop the volatile).
+
+Johan
 
