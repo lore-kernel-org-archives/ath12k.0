@@ -4,70 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CFD3C54ED1
-	for <ath12k@archiver.kernel.org>; Sat, 24 May 2025 19:46:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD4FAC54FB3
+	for <ath12k@archiver.kernel.org>; Mon, 26 May 2025 03:47:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=fwDXOXhZPt7g1HzTTZUmQWsWljg1HVgJMix+C4TTEF4=; b=Bkpg2mq7DEbrLz833GjnMMlTaA
-	h9/h6iqhiTZgF2l7t3JUJvBAb/NEfVm2PyGYoi2UwN3X2aTZs4KMBFhOSRcpANynRSDCpJ0hKJaoQ
-	+4N24YXPIGcosHLweMOQ6n7L8Wh70lJa2t4mDibkwADaWoVOT30Jhn+lGw8bR9RRjxbSZ2/8DVY0u
-	zquenZWrffSIc5KCSZmOo/eX3WpbYqKBM8tx5i4TF2yqtXp/ltkZGKJThbzqqlHGyjwjaVLhBRmK7
-	MP+q4N5gk2T/YGYtnw0pfahXJu02jRfhy5nb2baei8q1jRhGhyzrRcdo9uHCUcgLVpYso9lBBSQIM
-	PqucSpBg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=cKRV5GKyuP23Y3M9k0BT2svzLUAessr9qg1Tki7V058=; b=eeEk8KYjtn9XPjzty1pgcdKj5S
+	1IkXG26e8IWLiABHRVWO1S0OFUqNFrCT1P/DbTkTATfCnRV0bPhg3Vy/V+PZq3kNPd+bm4pDI+OpU
+	N/odIo8De7W5CPHGKIEhFbUAlCVC2x9LwgKQaIuqQnrMhABtcqt6uuVtceJMjAi3ANv9NapgrOtfF
+	ySpS4lLo0uYiZiIAwLUu0cGJSN4fSt5H1uxzSTy5hwASBD0ojtmoTqEuIsOY/HTFFBPPdcMw01nRb
+	JmmNxbYTPUma7tmHwD3aRKOPajYtIrGw3i8AG8fbsRgoMfWZY1Gh7M+qlHmR7HUZC4vdgPk081fzH
+	oBuBfBxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uIupN-00000006Cxp-2d7M;
-	Sat, 24 May 2025 19:46:41 +0000
-Received: from mgamail.intel.com ([198.175.65.14])
+	id 1uJOoS-000000081cw-16Ci;
+	Mon, 26 May 2025 03:47:44 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uIupK-00000006CwM-1OUY
+	id 1uJOoP-000000081cO-2ehd
 	for ath12k@lists.infradead.org;
-	Sat, 24 May 2025 19:46:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1748115998; x=1779651998;
-  h=date:from:to:cc:subject:message-id;
-  bh=QLq7X76AnmhOd7vxIUoBhljiBxg5HJFpTLeN+/mnu/4=;
-  b=lUSGI+JsqQHmvUYRpy1jWGsBYgUIl10vLrXwp2BbkWxPDxJ2bRg5oLqS
-   i8ZAcOY+ve/LhCrV/jcOiaiOvXsCxoWMCvbvLmPXEhDeSR3vMboadlH0S
-   kwZiwNJyxNFMgzoktID7lLjcecdjekINGoGDwc9X/+hMvKbG+rrLwm8Y+
-   1IGLTs8MkphfpDVjGCp8gSbvsL3wnAXOF1O4p/KPFPtNcXUpyRgdV2FYf
-   YlaGjbJkDFolwGVKgGYAHhq1M/ArN8bbWo2ATdnaaEBgJXB/aLzm9Erx/
-   voCaqmyENgVb23UwheL4sD0yZ8ogYdRbj8j8Cl3PT0d9f/O6+1zvBKxz9
-   w==;
-X-CSE-ConnectionGUID: qwveW1rlQMWhqLhMLNHFTg==
-X-CSE-MsgGUID: I5VQWoCCRTeZpIXEGHuMAA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11443"; a="53945713"
-X-IronPort-AV: E=Sophos;i="6.15,311,1739865600"; 
-   d="scan'208";a="53945713"
-Received: from orviesa006.jf.intel.com ([10.64.159.146])
-  by orvoesa106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 May 2025 12:46:31 -0700
-X-CSE-ConnectionGUID: O5PEfeK3RmSg0ogHOsEQ8w==
-X-CSE-MsgGUID: KjcmTMzKRQedBfZ/YiAeUw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.15,311,1739865600"; 
-   d="scan'208";a="141552287"
-Received: from lkp-server01.sh.intel.com (HELO 1992f890471c) ([10.239.97.150])
-  by orviesa006.jf.intel.com with ESMTP; 24 May 2025 12:46:30 -0700
-Received: from kbuild by 1992f890471c with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uIup9-000RQu-2w;
-	Sat, 24 May 2025 19:46:27 +0000
-Date: Sun, 25 May 2025 03:46:24 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:ath12k-ng] BUILD SUCCESS WITH WARNING
- 5bac8411df2e147f11875a88c4d6c36fcedd27df
-Message-ID: <202505250308.gx0BKaNK-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Mon, 26 May 2025 03:47:42 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54PNo5Bc007771;
+	Mon, 26 May 2025 03:47:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=cKRV5GKyuP23Y3M9k0BT2s
+	vzLUAessr9qg1Tki7V058=; b=DbYNA2K6351IrXC8Mt7KDWNbOvCfaGKtZ920Uq
+	JLwMxC6S0rB15+Wc+6dFYf+cVhlDBjnRBWrzDDtCSDtxQMe2H7RO9RmXkbpCfRaB
+	hQbQI6VCBWVhzOV4jt3fKR0BtNzEVSwb8amv5IqJqPS+oY/FtBBDTRaY/o+6Madk
+	lbmVsbkaiQd5O4ndV/ZKzuoOcSFNPssV/YmVuX5G32qBIbpWmPQ/3FqOERiQ6X3P
+	3VD9D4bImkBsE/vB5pHUEj/uISC2d0Lepeq+DPQPdzadoW9avATeSw9YsxtgwWdi
+	yMwlPtrRawe5wvmHG9YwGBmNW3wWyBEJOQkAcByo0BL5anqA==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46u6b5jvje-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 26 May 2025 03:47:39 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54Q3ldRx016814
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 26 May 2025 03:47:39 GMT
+Received: from hu-sarishar-blr.qualcomm.com (10.80.80.8) by
+ nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Sun, 25 May 2025 20:47:37 -0700
+From: Sarika Sharma <quic_sarishar@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Karthikeyan Kathirvel
+	<quic_kathirve@quicinc.com>,
+        Sarika Sharma <quic_sarishar@quicinc.com>
+Subject: [PATCH ath-next] wifi: ath12k: Decrement TID on RX peer frag setup error handling
+Date: Mon, 26 May 2025 09:17:13 +0530
+Message-ID: <20250526034713.712592-1-quic_sarishar@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=ZcodNtVA c=1 sm=1 tr=0 ts=6833e45b cx=c_pps
+ a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=GEpy-HfZoHoA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=C3E12wa_uFYmd_9f3VUA:9
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI2MDAyOCBTYWx0ZWRfXyeyqLkUYgsKc
+ ufE+dTar19ok2HfyMLf5zvahcponN8GMkFp3tX9TyVnOIRxxpq05BI0z7m26p79vyooHWxBglCH
+ LWtbbC306UIKKo1BiC5Jg0UE2ghC3qr2PzF2hxXenbhx/S0vPmV2PAoZWsaXRlHa4BzSablvFEV
+ z4fYnRAMO2TkLr1QhbeCmnA49MLk4ir1YxJF5UHd1MABF8GT9kWpYknXQ1tYRmN+lb4lgXU4oBy
+ 9rZQEnreHcEVLBjjkdi5Ae2+Ss0wxLHwax/c1udcgFdroXj9ICowbzjggPnHXkk3cU1utcgK9a6
+ dnKIBeshsim0HqEJnLS5QMCmdIrr1Sz0l+isYYWc16S/mFhQQS8mB0GKLzQH/ybiCcO8OkyrvcG
+ R4nRs6vdf0079bOWmMxhCc4774Fa4eOcqoOesGj85ffyEVrBbWNNuuegYQu9LtFk0HtfxZ8K
+X-Proofpoint-GUID: V23L18Z-8ub8mD2g8DhyQZyfb0OvQqEF
+X-Proofpoint-ORIG-GUID: V23L18Z-8ub8mD2g8DhyQZyfb0OvQqEF
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-26_02,2025-05-22_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 malwarescore=0 mlxlogscore=662 bulkscore=0 priorityscore=1501
+ spamscore=0 clxscore=1015 suspectscore=0 lowpriorityscore=0 phishscore=0
+ impostorscore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
+ definitions=main-2505260028
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250524_124638_446944_82B0E458 
-X-CRM114-Status: UNSURE (   2.63  )
+X-CRM114-CacheID: sfid-20250525_204741_709308_2DC56560 
+X-CRM114-Status: UNSURE (   9.64  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -83,204 +109,39 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-ng
-branch HEAD: 5bac8411df2e147f11875a88c4d6c36fcedd27df  wifi: ath12k: Use dp objects in performance critical paths
+From: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
 
-Warning (recently discovered and may have been fixed):
+Currently, TID is not decremented before peer cleanup, during error
+handling path of ath12k_dp_rx_peer_frag_setup(). This could lead to
+out-of-bounds access in peer->rx_tid[].
 
-    https://lore.kernel.org/oe-kbuild-all/202505240842.3pOJN2OV-lkp@intel.com
+Hence, add a decrement operation for TID, before peer cleanup to
+ensures proper cleanup and prevents out-of-bounds access issues when
+the RX peer frag setup fails.
 
-    drivers/net/wireless/ath/ath12k/dp_htt.c:192:24: warning: variable 'sta' set but not used [-Wunused-but-set-variable]
-    drivers/net/wireless/ath/ath12k/dp_htt.c:192:31: warning: variable 'sta' set but not used [-Wunused-but-set-variable]
+Found during code review. Compile tested only.
 
-Warning ids grouped by kconfigs:
+Signed-off-by: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/dp.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-recent_errors
-|-- alpha-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- alpha-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- arc-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- arc-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- arm-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- arm-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- arm64-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- i386-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- i386-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- loongarch-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- loongarch-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- microblaze-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- microblaze-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- mips-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- mips-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- openrisc-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- parisc-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- parisc-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- powerpc-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- powerpc-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- riscv-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- riscv-allyesconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- sparc-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-|-- x86_64-allmodconfig
-|   `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
-`-- x86_64-allyesconfig
-    `-- drivers-net-wireless-ath-ath12k-dp_htt.c:warning:variable-sta-set-but-not-used
+diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+index 6317c6d4c043..c6b10acb643e 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.c
++++ b/drivers/net/wireless/ath/ath12k/dp.c
+@@ -84,6 +84,7 @@ int ath12k_dp_peer_setup(struct ath12k *ar, int vdev_id, const u8 *addr)
+ 	ret = ath12k_dp_rx_peer_frag_setup(ar, addr, vdev_id);
+ 	if (ret) {
+ 		ath12k_warn(ab, "failed to setup rx defrag context\n");
++		tid--;
+ 		goto peer_clean;
+ 	}
+ 
 
-elapsed time: 1425m
+base-commit: 3d933084a072fd5fb5da54c06a017abc0412c86f
+-- 
+2.34.1
 
-configs tested: 126
-configs skipped: 3
-
-tested configs:
-alpha                             allnoconfig    gcc-14.2.0
-alpha                            allyesconfig    gcc-14.2.0
-alpha                               defconfig    gcc-14.2.0
-arc                              allmodconfig    gcc-14.2.0
-arc                               allnoconfig    gcc-14.2.0
-arc                              allyesconfig    gcc-14.2.0
-arc                                 defconfig    gcc-14.2.0
-arc                        nsim_700_defconfig    gcc-14.2.0
-arc                        nsimosci_defconfig    gcc-14.2.0
-arc                   randconfig-001-20250524    gcc-15.1.0
-arc                   randconfig-002-20250524    gcc-15.1.0
-arm                              allmodconfig    gcc-14.2.0
-arm                               allnoconfig    clang-21
-arm                              allyesconfig    gcc-14.2.0
-arm                            dove_defconfig    gcc-14.2.0
-arm                   milbeaut_m10v_defconfig    clang-19
-arm                         nhk8815_defconfig    clang-21
-arm                            qcom_defconfig    clang-21
-arm                   randconfig-001-20250524    gcc-7.5.0
-arm                   randconfig-002-20250524    gcc-7.5.0
-arm                   randconfig-003-20250524    clang-20
-arm                   randconfig-004-20250524    gcc-7.5.0
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-14.2.0
-arm64                 randconfig-001-20250524    gcc-5.5.0
-arm64                 randconfig-002-20250524    gcc-7.5.0
-arm64                 randconfig-003-20250524    clang-19
-arm64                 randconfig-004-20250524    gcc-7.5.0
-csky                              allnoconfig    gcc-14.2.0
-csky                  randconfig-001-20250524    gcc-11.5.0
-csky                  randconfig-002-20250524    gcc-9.3.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-hexagon               randconfig-001-20250524    clang-21
-hexagon               randconfig-002-20250524    clang-21
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250524    clang-20
-i386        buildonly-randconfig-002-20250524    gcc-12
-i386        buildonly-randconfig-003-20250524    gcc-12
-i386        buildonly-randconfig-004-20250524    gcc-12
-i386        buildonly-randconfig-005-20250524    clang-20
-i386        buildonly-randconfig-006-20250524    clang-20
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    gcc-14.2.0
-loongarch                         allnoconfig    gcc-14.2.0
-loongarch             randconfig-001-20250524    gcc-13.3.0
-loongarch             randconfig-002-20250524    gcc-15.1.0
-m68k                             allmodconfig    gcc-14.2.0
-m68k                              allnoconfig    gcc-14.2.0
-m68k                             allyesconfig    gcc-14.2.0
-m68k                          atari_defconfig    gcc-14.2.0
-microblaze                       allmodconfig    gcc-14.2.0
-microblaze                        allnoconfig    gcc-14.2.0
-microblaze                       allyesconfig    gcc-14.2.0
-mips                              allnoconfig    gcc-14.2.0
-mips                        bcm47xx_defconfig    clang-18
-nios2                             allnoconfig    gcc-14.2.0
-nios2                 randconfig-001-20250524    gcc-13.3.0
-nios2                 randconfig-002-20250524    gcc-9.3.0
-openrisc                          allnoconfig    gcc-14.2.0
-openrisc                         allyesconfig    gcc-14.2.0
-openrisc                            defconfig    gcc-14.2.0
-parisc                           allmodconfig    gcc-14.2.0
-parisc                            allnoconfig    gcc-14.2.0
-parisc                           allyesconfig    gcc-14.2.0
-parisc                              defconfig    gcc-14.2.0
-parisc                randconfig-001-20250524    gcc-6.5.0
-parisc                randconfig-002-20250524    gcc-8.5.0
-powerpc                          allmodconfig    gcc-14.2.0
-powerpc                           allnoconfig    gcc-14.2.0
-powerpc                          allyesconfig    clang-21
-powerpc                   bluestone_defconfig    clang-21
-powerpc                        cell_defconfig    gcc-14.2.0
-powerpc                 mpc832x_rdb_defconfig    gcc-14.2.0
-powerpc                      pasemi_defconfig    clang-21
-powerpc                      pcm030_defconfig    clang-21
-powerpc                         ps3_defconfig    gcc-14.2.0
-powerpc               randconfig-001-20250524    gcc-5.5.0
-powerpc               randconfig-002-20250524    gcc-7.5.0
-powerpc               randconfig-003-20250524    clang-21
-powerpc64             randconfig-001-20250524    gcc-7.5.0
-powerpc64             randconfig-002-20250524    gcc-10.5.0
-powerpc64             randconfig-003-20250524    clang-21
-riscv                            allmodconfig    clang-21
-riscv                             allnoconfig    gcc-14.2.0
-riscv                            allyesconfig    clang-16
-riscv                 randconfig-001-20250524    clang-21
-riscv                 randconfig-002-20250524    gcc-9.3.0
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-21
-s390                             allyesconfig    gcc-14.2.0
-s390                                defconfig    clang-21
-s390                  randconfig-001-20250524    clang-17
-s390                  randconfig-002-20250524    gcc-8.5.0
-sh                               allmodconfig    gcc-14.2.0
-sh                                allnoconfig    gcc-14.2.0
-sh                               allyesconfig    gcc-14.2.0
-sh                    randconfig-001-20250524    gcc-13.3.0
-sh                    randconfig-002-20250524    gcc-7.5.0
-sparc                            allmodconfig    gcc-14.2.0
-sparc                             allnoconfig    gcc-14.2.0
-sparc                 randconfig-001-20250524    gcc-6.5.0
-sparc                 randconfig-002-20250524    gcc-6.5.0
-sparc64               randconfig-001-20250524    gcc-8.5.0
-sparc64               randconfig-002-20250524    gcc-6.5.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-um                    randconfig-001-20250524    gcc-12
-um                    randconfig-002-20250524    clang-21
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250524    gcc-12
-x86_64      buildonly-randconfig-002-20250524    gcc-12
-x86_64      buildonly-randconfig-003-20250524    gcc-12
-x86_64      buildonly-randconfig-004-20250524    gcc-12
-x86_64      buildonly-randconfig-005-20250524    gcc-11
-x86_64      buildonly-randconfig-006-20250524    clang-20
-x86_64                              defconfig    gcc-11
-x86_64                          rhel-9.4-rust    clang-18
-xtensa                            allnoconfig    gcc-14.2.0
-xtensa                randconfig-001-20250524    gcc-8.5.0
-xtensa                randconfig-002-20250524    gcc-8.5.0
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
