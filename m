@@ -4,81 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B546EC54FB3
-	for <ath12k@archiver.kernel.org>; Mon, 26 May 2025 13:07:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2874FC5AE59
+	for <ath12k@archiver.kernel.org>; Tue, 27 May 2025 01:10:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=SCQX/iHwVwMSyQkT6uzynKqPiPAsHTR2j6atuwHYfoU=; b=M4RqDUmZvp/1swmtXHxNV/0ZW1
-	53XYUsZODjG7ZLwaH3pJ3yYEr/eY8+9a2qstANG+PuaQfblctsIc4sEia7yoE8I96Z07CagUYMG8t
-	fBcQ3Wt9mVfw0BcZBTFtIZDEmwV8htIxq3nqUxeUNHx4OuHGBBbZKsur2X8V7y5u75BOKpDZ0f+hb
-	KlggZvy185BSc8u+j30mEr2NYISg0WiMzavHvbzPdTy7ZigIBgPqFLDg9TNGm7p0m8gi5U9W0LNVv
-	WIujWRlIBfGB3eb1aCdD0kulNHSVQiT5S/vhKeLRhooM7LfLy3VxK9Z6Wo8jRHLP3J3IBKzueUfZ6
-	PLGXUOLg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:Subject:
+	Message-ID:Date:From:MIME-Version:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=jdlPmmDOMV6rAp43aqNAuv5l/hzz021OXxP1u3LOxbE=; b=a+sQXN9+aZFypUuTBtJVAsuPFX
+	cgJlsab8KLAkrD+GG890b7nrXrCFB1fbcppQaummjGxq+6nolxwgCbQ5VQRrxizHRpFpn0A4CuhRk
+	ov0/CeYQ0dC+ZVfj9ekO+nqbqmRA6LPRIBZGA47dAg9hTS+ZMptuInnKqUZyBC6zn5NMQzfM8Edpd
+	iL8/ePTqWa7Lwk/m107ELY4lL6YtyvNHbEWfiC1MiUsdS9gZ6xapZJwQE9JQyEdKFJ1TtN20b4lL9
+	M3ncytySTAmAD9YNyE7GeQwFI9mFmJJgp+z/PcJyBUpRaBSvmE1+ISJzQkTuLHKfieZscpXDr+y26
+	KB3Fm1+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJXYX-00000008rYD-1cur;
-	Mon, 26 May 2025 13:07:53 +0000
-Received: from e2i340.smtp2go.com ([103.2.141.84])
+	id 1uJipw-00000009h80-36zm;
+	Tue, 27 May 2025 01:10:36 +0000
+Received: from mail-yb1-xb29.google.com ([2607:f8b0:4864:20::b29])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJXYU-00000008rXq-1gyI
+	id 1uJipu-00000009h7Y-3cbp
 	for ath12k@lists.infradead.org;
-	Mon, 26 May 2025 13:07:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=smtpservice.net; s=maxzs0.a1-4.dyn; x=1748265768; h=Feedback-ID:
-	X-Smtpcorp-Track:Message-ID:Subject:To:From:Date:Reply-To:Sender:
-	List-Unsubscribe:List-Unsubscribe-Post;
-	bh=SCQX/iHwVwMSyQkT6uzynKqPiPAsHTR2j6atuwHYfoU=; b=lXHNImCwGybRFZb5MOOprhb3vS
-	kQAyxphMMqmFnJgn+5NJzBD6l8nvZJnuugAWoweY6x7U1EGKM+3ftgKnku62AevPi9OMRCnnOh18O
-	CLn0OEkVg49BJFXqN7pfxC9mR7jul0QDkSIyygnXdhtoDIrX7GyP/rLwItnov6YTcwEkPn9knvc2q
-	ugaYYXrOxhnyJSfZRZDtQSpt42KTW5RLBNC7rb9rwSo4+dJwPgFSHiJINS2urytl+LNoFVHxlKBmY
-	co81T7Xoksk3cUZMsLKWgAUJoD1XD0PBFZM12OIGyKogEoJgfWpJjnbX4NpKL5QPNW2wCcvEq6uAl
-	z94r0zng==;
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=triplefau.lt;
- i=@triplefau.lt; q=dns/txt; s=s510616; t=1748264868; h=from : subject
- : to : message-id : date;
- bh=SCQX/iHwVwMSyQkT6uzynKqPiPAsHTR2j6atuwHYfoU=;
- b=CCtVwGvARUA+I2vUe1sKaIkepjp0hsG+Hz8rGdXA7db6Hi/P8zBU3upW0UZkBPV0rNLYb
- UhCdmCv8MCivzZ54pgDu15jZXE2mbHGyJQM0qYq2pYpB+FyiW3XXhFFK6dq3C/qKFM4DkdA
- THCYhrdyR4AZMlj3om6e8a8TirmVzLS8kiewQx0HYRBGqWUSWkgBAfXmdRf/iuVmTrWOFRf
- +xLV9/cIk5EfMXb186pTMP95oa8jEAiuEc1h+4S8cYYWnPRmsWalBY/2hBf/YqkR4xuWAO0
- QUgSkHPho/6Vxut8oBix9FdrtLlux61QPdnRDcH7hrus1eRmlceQny7VJYlQ==
-Received: from [10.172.233.45] (helo=SmtpCorp) by smtpcorp.com with esmtpsa
- (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
- (Exim 4.94.2-S2G) (envelope-from <repk@triplefau.lt>)
- id 1uJXXn-TRk1Hq-CS; Mon, 26 May 2025 13:07:07 +0000
-Received: from [10.12.239.196] (helo=localhost) by smtpcorp.com with esmtpsa
- (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
- (Exim 4.97.1-S2G) (envelope-from <repk@triplefau.lt>)
- id 1uJXXn-AIkwcC8xzUn-GnHM; Mon, 26 May 2025 13:07:07 +0000
-Date: Mon, 26 May 2025 14:58:51 +0200
-From: Remi Pommarel <repk@triplefau.lt>
-To: Johan Hovold <johan@kernel.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
- Miaoqing Pan <quic_miaoqing@quicinc.com>,
- Steev Klimaszewski <steev@kali.org>, Clayton Craft <clayton@craftyguy.net>,
- Jens Glathe <jens.glathe@oldschoolsolutions.biz>,
- Nicolas Escande <nico.escande@gmail.com>,
- ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org
-Subject: Re: [PATCH] wifi: ath12k: fix ring-buffer corruption
-Message-ID: <aDRli6uIbnuQK3nN@pilgrim>
-References: <20250321095219.19369-1-johan+linaro@kernel.org>
- <aC8-mUinxA6y688X@pilgrim> <aDRR5oYBU0Z-DaWr@hovoldconsulting.com>
+	Tue, 27 May 2025 01:10:36 +0000
+Received: by mail-yb1-xb29.google.com with SMTP id 3f1490d57ef6-e7c5d470a8bso2103896276.0
+        for <ath12k@lists.infradead.org>; Mon, 26 May 2025 18:10:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1748308233; x=1748913033; darn=lists.infradead.org;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=jdlPmmDOMV6rAp43aqNAuv5l/hzz021OXxP1u3LOxbE=;
+        b=eLx+7/sxeU8x1STgyHLvnKzcihNI+CULMOUT5tXO8nKHvMwt8gN8q08+DHuJ4uKwMa
+         AxB9sE2SHxu8dbwHunGSdChvvevrdhMHAFQD96XwJ9W//A06EY5hUSBf/bTo5dzrgVi1
+         N2/tJy+/65UdKLCnR4TR3oavppZdw8pjL5PXmOq7qp8KrexWoBYMCxvt5+qpvawVMr68
+         mY/2yBS8uRhnv8fxcQK0ZccNDsJomV2FkhDV7deg9/wTHFT2OBku47nqm7B3/dJlc8hT
+         t0Bijt4XRbikW1OKLUBBRc4W0jPnNhQHMm7QZ4BSFtwTfFM8ekoGIiVIp4Nk8b9QeaPd
+         M5Eg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1748308233; x=1748913033;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=jdlPmmDOMV6rAp43aqNAuv5l/hzz021OXxP1u3LOxbE=;
+        b=F70UrEjDgWw6q0l38UC0/WAoyahjEcOAnkbrwVD8g78MjVrgdwhgMKbyv/kmoaahJF
+         5FbPSd0ryLLvveUWoI0+5UHQ29zorqEOuHIeLu70O5hSJmNPDsrdGVPdk/UwvoR/IeDK
+         FnfvsJZSFvymIncdSu3PlF3XCbL5zIAlhZm0BY05f2ktVhCd6i0ZoD7F5JajGdLw4p1q
+         Aq8BNVQXAIEBGvi3ztTsECv32Fnds3KS3N69/E1oHSyMewbYGUwppj3JsCrPAE6JRaa8
+         8r3bTut1Vqm4kg+e8qP69337Vz3OY+5R4TpUETsvkmg5LRfVUMl8Wk7q+yg61rwAfVhR
+         UAEQ==
+X-Gm-Message-State: AOJu0YwmtvLWWbLFc9ouFK+rBp2Y/C2ztEWUxbMqhgCie4XmGQruJ6Vr
+	No4tOavab9km+GtnptoRAT82UngsyhRNhsM+1BohmThvAI/595yGtfOjafYUOEpuvjUHwUi9D6o
+	JWtMFeOImXYF0NQ2T9VS4XiCqPdHYmiqyGtPv
+X-Gm-Gg: ASbGncud/XDH5pBArHZ/kJ7AGQLYDNmwo6LQHe6tQN28lPPdY5/oA2c0YqFoM4vqQv1
+	gPxEZ7hby7T28DqkajZmmjllKQH5uYiteqpGbcRs0VvazmOczeY55Gy/rEJql10wcimgl4OgHNX
+	PpreVNutb7FcwszgHPgVM4a4Bit5JCLa0S
+X-Google-Smtp-Source: AGHT+IHN7V+ceMNCJKVUlUFLCoHVrOliOK+NfN0Rr6eHuHcG+M3zrQiXE6otgD1F3w46drlynoqjPerywKo2kIEU6X4=
+X-Received: by 2002:a05:6902:188c:b0:e7d:5e41:a8ba with SMTP id
+ 3f1490d57ef6-e7d91a2a204mr11367091276.34.1748308232714; Mon, 26 May 2025
+ 18:10:32 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <aDRR5oYBU0Z-DaWr@hovoldconsulting.com>
-X-Smtpcorp-Track: etJ8ewEP5cF0.nODmAECzhLvm.QXwcqwSfK8h
-Feedback-ID: 510616m:510616apGKSTK:510616sQ6vhuulVJ
-X-Report-Abuse: Please forward a copy of this message, including all headers,
- to <abuse-report@smtp2go.com>
+From: Doug Brewer <brewer.doug@gmail.com>
+Date: Tue, 27 May 2025 09:10:21 +0800
+X-Gm-Features: AX0GCFtNVdJKEoYbJZQ3d9nvewQInwDHNHGiPh4MK81FkB0PtYEkjZMx9CrnckI
+Message-ID: <CAG0V13S+c14OD7MCMYaSFzWS2ZnPz2BnPfMo1MY-YZmmHX6qRw@mail.gmail.com>
+Subject: WCN7850 problem on Linux kernel 6.15
+To: ath12k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250526_060750_887501_128658C3 
-X-CRM114-Status: GOOD (  42.31  )
+X-CRM114-CacheID: sfid-20250526_181034_911288_DF165D26 
+X-CRM114-Status: UNSURE (   4.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,120 +87,38 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 26, 2025 at 01:35:02PM +0200, Johan Hovold wrote:
-> On Thu, May 22, 2025 at 05:11:21PM +0200, Remi Pommarel wrote:
-> > On Fri, Mar 21, 2025 at 10:52:19AM +0100, Johan Hovold wrote:
-> > > Users of the Lenovo ThinkPad X13s have reported that Wi-Fi sometimes
-> > > breaks and the log fills up with errors like:
-> > > 
-> > >     ath11k_pci 0006:01:00.0: HTC Rx: insufficient length, got 1484, expected 1492
-> > >     ath11k_pci 0006:01:00.0: HTC Rx: insufficient length, got 1460, expected 1484
-> > > 
-> > > which based on a quick look at the ath11k driver seemed to indicate some
-> > > kind of ring-buffer corruption.
-> > > 
-> > > Miaoqing Pan tracked it down to the host seeing the updated destination
-> > > ring head pointer before the updated descriptor, and the error handling
-> > > for that in turn leaves the ring buffer in an inconsistent state.
-> > > 
-> > > While this has not yet been observed with ath12k, the ring-buffer
-> > > implementation is very similar to the ath11k one and it suffers from the
-> > > same bugs.
-> 
-> > > Note that the READ_ONCE() are only needed to avoid compiler mischief in
-> > > case the ring-buffer helpers are ever inlined.
-> 
-> > > @@ -343,11 +343,10 @@ static int ath12k_ce_completed_recv_next(struct ath12k_ce_pipe *pipe,
-> > >  		goto err;
-> > >  	}
-> > >  
-> > > +	/* Make sure descriptor is read after the head pointer. */
-> > > +	dma_rmb();
-> > > +
-> > 
-> > That does not seem to be the only place descriptor is read just after
-> > the head pointer, ath12k_dp_rx_process{,err,reo_status,wbm_err} seem to
-> > also suffer the same sickness.
-> 
-> Indeed, I only started with the corruption issues that users were
-> reporting (with ath11k) and was gonna follow up with further fixes once
-> the initial ones were merged (and when I could find more time).
-> 
-> > Why not move the dma_rmb() in ath12k_hal_srng_access_begin() as below,
-> > that would look to me as a good place to do it.
-> > 
-> > @@ -2133,6 +2133,9 @@ void ath12k_hal_srng_access_begin(struct
-> > ath12k_base *ab, struct hal_srng *srng)
-> >                         *(volatile u32 *)srng->u.src_ring.tp_addr;
-> >         else
-> >                 srng->u.dst_ring.cached_hp = *srng->u.dst_ring.hp_addr;
-> > +
-> > +       /* Make sure descriptors are read after the head pointer. */
-> > +       dma_rmb();
-> >  }
-> > 
-> > This should ensure the issue does not happen anywhere not just for
-> > ath12k_ce_recv_process_cb().
-> 
-> We only need the read barrier for dest rings so the barrier would go in
-> the else branch, but I prefer keeping it in the caller so that it is
-> more obvious when it is needed and so that we can skip the barrier when
-> the ring is empty (e.g. as done above).
+Hello,
 
-Thanks for taking time to clarify this.
-
-Yes I messed up doing the patch by hand sorry, internally I test with
-the dma_rmb() in the else part. I tend to prefer having it in
-ath12k_hal_srng_access_begin() as caller does not have to take care of
-the barrier itself. Which for me seems a little bit risky if further
-refactoring (or adding other ring processing) is done in the future;
-the barrier could easily be forgotten don't you think ?
-
-> 
-> I've gone through and reviewed the remaining call sites now and will
-> send a follow-on fix for them.
-> 
-> > Note that ath12k_hal_srng_dst_get_next_entry() does not need a barrier
-> > as it uses cached_hp from ath12k_hal_srng_access_begin().
-> 
-> Yeah, it's only needed before accessing the descriptor fields.
-> 
-> > > @@ -1962,7 +1962,7 @@ u32 ath12k_hal_ce_dst_status_get_length(struct hal_ce_srng_dst_status_desc *desc
-> > >  {
-> > >  	u32 len;
-> > >  
-> > > -	len = le32_get_bits(desc->flags, HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
-> > > +	len = le32_get_bits(READ_ONCE(desc->flags), HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
-> > >  	desc->flags &= ~cpu_to_le32(HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
-> > >  
-> > >  	return len;
-> > > @@ -2132,7 +2132,7 @@ void ath12k_hal_srng_access_begin(struct ath12k_base *ab, struct hal_srng *srng)
-> > >  		srng->u.src_ring.cached_tp =
-> > >  			*(volatile u32 *)srng->u.src_ring.tp_addr;
-> > >  	else
-> > > -		srng->u.dst_ring.cached_hp = *srng->u.dst_ring.hp_addr;
-> > > +		srng->u.dst_ring.cached_hp = READ_ONCE(*srng->u.dst_ring.hp_addr);
-> > 
-> > dma_rmb() acting also as a compiler barrier why the need for both
-> > READ_ONCE() ?
-> 
-> Yeah, I was being overly cautious here and it should be fine with plain
-> accesses when reading the descriptor after the barrier, but the memory
-> model seems to require READ_ONCE() when fetching the head pointer.
-> Currently, hp_addr is marked as volatile so READ_ONCE() could be
-> dropped for that reason, but I'd rather keep it here explicitly (e.g. in
-> case someone decides to drop the volatile).
-
-Yes actually after more thinking, the READ_ONCE for fetching hp does make
-sense and is also in the patch I am currently testing.
-
-Also for source rings don't we need a dma_wmb()/WRITE_ONCE before
-modifying the tail pointer (see ath12k_hal_srng_access_end()) for quite
-the same reason (updates of the descriptor have to be visible before
-write to tail pointer) ?
-
-Thanks
-
--- 
-Remi
+After upgrading to kernel 6.15, my ath12k failed to start:ath12k_pci
+0000:03:00.0: BAR 0 [mem 0xdf000000-0xdf1fffff 64bit]: assigned
+ath12k_pci 0000:03:00.0: enabling device (0000 -> 0002)
+ath12k_pci 0000:03:00.0: MSI vectors: 16
+ath12k_pci 0000:03:00.0: Hardware name: wcn7850 hw2.0
+NET: Registered PF_QIPCRTR protocol family
+pcieport 0000:00:1d.0: AER: Multiple Uncorrectable (Non-Fatal) error message rec
+eived from 0000:00:1d.0
+pcieport 0000:00:1d.0: PCIe Bus Error: severity=Uncorrectable (Non-Fatal), type=
+Transaction Layer, (Completer ID)
+pcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=00008000/00010000
+pcieport 0000:00:1d.0:    [15] CmpltAbrt              (First)
+pcieport 0000:00:1d.0: AER:   TLP Header: 0x00000000 0x00000000 0x00000000 0x000
+00000
+mhi mhi0: Requested to power ON
+mhi mhi0: Power on setup success
+mhi mhi0: Wait for device to enter SBL or Mission mode
+ath12k_pci 0000:03:00.0: AER: can't recover (no error_detected callback)
+pcieport 0000:00:1d.0: AER: device recovery failed
+ath12k_pci 0000:03:00.0: qmi dma allocation failed (7012352 B type 1),
+will try later with small size
+ath12k_pci 0000:03:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff
+soc_id 0x40170200
+ath12k_pci 0000:03:00.0: fw_version 0x1108811c fw_build_timestamp 2025-05-17 00:
+21 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V
+2.0_SILICONZ-3
+ath12k_pci 0000:03:00.0: ignore reset dev flags 0x200
+ath12k_pci 0000:03:00.0: failed to receive wmi unified ready event: -110
+ath12k_pci 0000:03:00.0: failed to start core: -110
+failed to send QMI message
+ath12k_pci 0000:03:00.0: qmi failed to send mode request, mode: 4, err = -5
+ath12k_pci 0000:03:00.0: qmi failed to send wlan mode off
 
