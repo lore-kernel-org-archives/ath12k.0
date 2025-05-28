@@ -4,121 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8D6BC5B54E
-	for <ath12k@archiver.kernel.org>; Wed, 28 May 2025 11:24:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC5A0C5AD49
+	for <ath12k@archiver.kernel.org>; Wed, 28 May 2025 12:55:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
-	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=c6aM7WJ6bbAAgKf+qbF5aXJsLwsNSN7sBgN05z3YZ6E=; b=ckjsjjB4rBk96OaIWGfeuKz7/i
-	28BxA79MOujUV/xhMYYm9AiFkAevO3wvrEBNEG+Uc9zwzr5ZaSB9YlkOtICmgMgLv337Y2dnIff94
-	RclVlRPG+xrFE68L23KAJ8ZL03orJil1wrpnJWH1DeMdrRH67a/USAV4aROjN6dv0un9gfjPIK71v
-	E9J8EvqbCsJiOr4d/kiV9ZkJPoi9NF89OdAJG0fGRN6n0Y4tDDo+51qS6vNjYNZrM1DidPf6Kssx/
-	WhBFrmza2dCcveD1rjJm0+JkNvGJKpor6TuQdf+5KPjC2onh2baj4PCiUI2zgtmN+61o0d/NIbLrf
-	dOdcURWA==;
+	bh=mATwyIXbgdYua6fYdzPoX+zuXNfrwPwM4o1LooIQr3U=; b=NJrLyoh93tt4EQSJfRRMb9mBoV
+	jMqr1MtWOg2iBZxWQG0WCKB6iVgeMdnqneSCE646IlDZe7pqIPzJn0SV1VvGUTHSgTqQf5NhioCgd
+	tOCUGtj7jIBiDqL1BebiJkFWBIMarRHFfIA3JCGC+aMScTQcGiD/WGuEqJ9SUAnO4VJR1Ul7QrMCW
+	5WJNR70xJThirZowmBCO5RooUgls4WZD0dk+jBxBmdyQa830aJNAlMA2yPGIaoeaxheXttGROKs5R
+	+HF3GwDlou8PY/qnim0Rll7hJjac0VGFkFjy8V0vKgarxU28sy72XXcBkODNPlTLgtZIjh205K5Sy
+	kBIBhRyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKEtm-0000000CyHl-2xAg;
-	Wed, 28 May 2025 11:24:42 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uKGJj-0000000DB7F-2Q3C;
+	Wed, 28 May 2025 12:55:35 +0000
+Received: from mail-yb1-xb31.google.com ([2607:f8b0:4864:20::b31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKEtX-0000000CyEo-1ftj
+	id 1uKGJh-0000000DB6R-0336
 	for ath12k@lists.infradead.org;
-	Wed, 28 May 2025 11:24:28 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54S9hNTC009567
-	for <ath12k@lists.infradead.org>; Wed, 28 May 2025 11:24:26 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	c6aM7WJ6bbAAgKf+qbF5aXJsLwsNSN7sBgN05z3YZ6E=; b=XMewpPd22mtVCp8G
-	dzG2e9Z0C8mgTNg+B/T3/6x2g64S00h27M2kEJ+ltooJlW2fj2IyP9QCo1WIKA0l
-	Q/i5AJbAfsgouRYpp4aXkMNwDnSubkzkz4n5klSwQCWUHgCQWkFiLLch84zPflIJ
-	B5UpMZ2X6BOirW5gD0t3Vaa+fnxqvlDCMlsRI1VvOwxN8PXvVWKxhmJNmwdYU58Z
-	+tNnGvf1wO/QXVqAyftHUgdXi8Zqx/uqNZV9CnrlxIxdRz1/xP57JnPpYWRSeMCp
-	ctUlh6wM88J1ifUpQUHWpKOuXA7Cx0OrE32ELdF9AdGDDyAKkBxtEzzLDsad1fGt
-	crzetw==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46x03mr7qy-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 28 May 2025 11:24:26 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-b2c38df7ed2so2090909a12.3
-        for <ath12k@lists.infradead.org>; Wed, 28 May 2025 04:24:26 -0700 (PDT)
+	Wed, 28 May 2025 12:55:34 +0000
+Received: by mail-yb1-xb31.google.com with SMTP id 3f1490d57ef6-e7dc89108bfso1475211276.3
+        for <ath12k@lists.infradead.org>; Wed, 28 May 2025 05:55:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1748436932; x=1749041732; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=mATwyIXbgdYua6fYdzPoX+zuXNfrwPwM4o1LooIQr3U=;
+        b=dloRbPCfvcUzwg1ciTVCz4/D84Mlvew7joNIbomiEnmgdMziKwgQfxwsY8k8rFvBXH
+         NTZ6uawqReB89raBjEcH4WwVrww8q2a8Aow+nVg7qPBXL5PGOG4pxCaZ7x0/J2RerM2K
+         6zCWMd/lZtcMmvuX4mqVejqI8+H6Rz63OL2NSD7/EqDOPtSzAd9SlXptmcg9qhSGR2vn
+         9SEVTdrmoKX6fwkHbWdgW/ki3MLa7bLb7Jo0aqJhuCgbiMHe7P6PQyLT2ApYYT1e6y9Q
+         TEkO+xEw7vULIwVRCCHr9cyZK2dXqcRaviVBXjXqG6M+60GgAB+1Z/CYGsxJB5yRf5ZL
+         YKIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748431465; x=1749036265;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+        d=1e100.net; s=20230601; t=1748436932; x=1749041732;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=c6aM7WJ6bbAAgKf+qbF5aXJsLwsNSN7sBgN05z3YZ6E=;
-        b=umSkX2xSyUijNd0d80w0Cvtj20VNh62iT3a87VgeBzkx7eAnUgO+PxVkxvqEHXynHO
-         yA8qeD8A0DxahVSagP3UWaSryEZx5n1Ra/TbsgEEC49dB/DPEnQrzl/jmka+eaBf4yKy
-         X+nij0PPCVBUYx66gysB0tSAS4xMphGk81gzkSn6sgdgVpfPPtE01jAhkbR52gR+N03h
-         g93cb4m4fvFZ24cgLFYcEM21H0hLyzjZLfLcsdWCaRIDxmLX6PeIJarF4cMxJG9ZNhz2
-         +NbDp0TBJyrDwIUD1si6hOa7W92NZoVC12WAGPdjnwCHSnEKdlWSFp6yQ5XjrvlfHPfp
-         WcLw==
-X-Forwarded-Encrypted: i=1; AJvYcCUYlyVX7mmlMVYkYmGRhMq8p3RPtwmHeXFr54B5oqqpNTvgJTAUZVrCbTSRsNqVHDP1eTIcZT0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwQD8gljtWqtHA21/8w3sQg8P9MHXrJjpv79T0yLsRO2WjovPgY
-	y1EIVwSIuQfS4tX63QgKbaLU2MBeCi9AghIHvxdRoKSSGLGQQS+nFy8IsFy5lhl5ocloorUad/Q
-	Z6cnW8sisJzY/84bOATsKOaZI3KaSUJZfK7DSVTx8PZyOL9D/skGyKw/MbIjlTn0K
-X-Gm-Gg: ASbGnctKP6xynOSVXN3TaGH19TYwzTwPOK5yrWeNln23uo9O+1ewyqvSmz4twz/CmXB
-	iX0zq1soSndAjhHe8uZMq4W50YVu70EsaHEhwPNqa1IG6NSICaerO0BkHw9UPfwCobAF93k5UxX
-	bKgzW4sWlKK6zWoQyCnvsQDfVneoOx1wz43+NB2zbNxw8LEfh/+afl5ICl1+GVWWDstRTBSkGpc
-	/TvUl0ug5cEjsNXq/ocyrk8twGF86RimWJ17F2hWY3yHLGwS41iWFvoRONnqJu8mIdVpmmxGtLM
-	8n9MfkFfZCrnASi9MPi1NJpE0xuY36lji/ovguVzJeCAR+5s88+Po6PdDb7w6c7EJUhA0B6sMca
-	Qy05+qd5qCLPJvYIHfy7m1bkuq1t87iotedcT
-X-Received: by 2002:a17:90b:33cc:b0:2fe:8282:cb9d with SMTP id 98e67ed59e1d1-311100da6acmr24059548a91.28.1748431464799;
-        Wed, 28 May 2025 04:24:24 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHYQkdCLHGDGzXmFuRyTueS+eLR+h+ITlJR4vzTTCJx1bCvNNmc74AQv9AprFZgGuC+FEkPJw==
-X-Received: by 2002:a17:90b:33cc:b0:2fe:8282:cb9d with SMTP id 98e67ed59e1d1-311100da6acmr24059513a91.28.1748431464289;
-        Wed, 28 May 2025 04:24:24 -0700 (PDT)
-Received: from hu-adisi-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-311e9b668ffsm954665a91.20.2025.05.28.04.24.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 28 May 2025 04:24:23 -0700 (PDT)
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Date: Wed, 28 May 2025 16:54:00 +0530
-Subject: [PATCH ath-next 1/2] wifi: ath12k: handle WMI event for real noise
- floor calculation
+        bh=mATwyIXbgdYua6fYdzPoX+zuXNfrwPwM4o1LooIQr3U=;
+        b=Eek0J4b8gtccKcA96ahF/hoXAHyvX2s87GYkwdD8aXryihkWwi1zMCmpOP9hJ0k5iL
+         5+IjkJCCddapdfpAdUFeiJD1Rao2c8gyTnlDWTW6JJXZHCljToZW1SqROiEFIcF3e2RY
+         AjneEg34YYibr/pxZ+91Ebt5oDjUxPsDBdSMNkRmY+40bk2XN92uo+QQT/DVgN4LKjx0
+         PffBcvmTx3otMGcDgLROC/Xgj1dP1/8aaLwnjNOVybAWgkh+EFjk1y31ZfWf6CdIIowX
+         X8Tr9FEJx7E2hcjuiKmsXNyYzmYMVEOb5KOgw2L6jM27ltM+KOvlqmDSrs63pfOHKcjQ
+         sXaw==
+X-Gm-Message-State: AOJu0YwYosteP5CkqvuQUOFusuqoLdAKp8QkzLAD3rztZu8SNeqwqoqR
+	PWLV/FBGD+oPhE9/51BRntnmL4M4C5qD6MVcVsdL9kUSLIfg1rLgUQKfxHDLesJ6oAay2hCir5J
+	7Q+5+XqkFtIKH9U7ejpKKywT4iDOZLTrhANgf
+X-Gm-Gg: ASbGncuBv2MRPaz/jKqBmCTjadRJa9fy0dltnMtxPu0iReRdxBXn3iI3/zmzSh5Yp6w
+	TJAwT+repdJ/FfbSm7LypexXperi93ZLmhzUdpKTp/FZFJ74hkWurmgUjyf2XvlK7/WeNqGRYup
+	zRux6naYfIxYpthksO8F9TVVgGLxUSQvjQqg==
+X-Google-Smtp-Source: AGHT+IH4iksCzr9711IjPS7A1j8DusLWZVKEZiWJNVzXgvorlt5D/Qfc4JOlymBpkLQZEeweErMpYgJvZJgpfQxSpFM=
+X-Received: by 2002:a05:6902:1b10:b0:e7d:6b43:2446 with SMTP id
+ 3f1490d57ef6-e7f5ddcf700mr2380252276.10.1748436931906; Wed, 28 May 2025
+ 05:55:31 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20250528-support_real_noise_floor-v1-1-04507bd3bc76@oss.qualcomm.com>
-References: <20250528-support_real_noise_floor-v1-0-04507bd3bc76@oss.qualcomm.com>
-In-Reply-To: <20250528-support_real_noise_floor-v1-0-04507bd3bc76@oss.qualcomm.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org,
-        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
-        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Proofpoint-GUID: lgjW4JDyNxWuR7h6fe4NsUUf1e0rCIpe
-X-Authority-Analysis: v=2.4 cv=FuAF/3rq c=1 sm=1 tr=0 ts=6836f26a cx=c_pps
- a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8
- a=Ep9LWTjdhutGVinXlyQA:9 a=QEXdDO2ut3YA:10 a=_Vgx9l1VpLgwpw_dHYaR:22
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: lgjW4JDyNxWuR7h6fe4NsUUf1e0rCIpe
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI4MDA5OSBTYWx0ZWRfX6MnwjOCYp3Fe
- JpFbNbh0d0/XLVB/BFEyez5PhmI6mibjYpYk5XoHaVOkwDLqnGAHffX+/6wTQNbQyzgG7aSPMhX
- reXofAu/IPejtV1YhpyyEjMNl396qASVBv3HQvI8/bRHOthC4ZEBs1F8PELPgtKY0UdWyjRmCw2
- D78nuYV5Pbcvrzacn44nr9qz+9SceVINaS9o4UvHq7BLNqTWr9ZAT9n8olqPzlfXfzdYG/sGnPI
- Npr68RRYzrxAQ48omnRUxivwav951iaeOnMHhEqJ0BNE5yOMhVzQmpVLa/9oP1w7DnAkIGwHW7C
- 3U6q9zPzh8dbrHdQFYrFKshPdm7NR+yhx3U33hezFgQapU8hp5jG40z1XNaApRzrltYuvvv7glQ
- nqSFbcbvvRDaCUxwbvEKZwElBxHfWQQ4oFJLB+3HjHHxNYKpYLY/74UppWC4encGHmJq3s19
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-28_05,2025-05-27_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 adultscore=0 mlxlogscore=999 mlxscore=0 impostorscore=0
- bulkscore=0 spamscore=0 phishscore=0 priorityscore=1501 lowpriorityscore=0
- clxscore=1015 malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
- definitions=main-2505280099
+References: <CAG0V13S+c14OD7MCMYaSFzWS2ZnPz2BnPfMo1MY-YZmmHX6qRw@mail.gmail.com>
+ <CAG0V13SVbBuNXytgW5_NfxKc5T=E+SGScf+Q_ctS5hAeRYgoQg@mail.gmail.com>
+ <9e5fb196-fd6d-4fdf-b970-e239bf1a682b@quicinc.com> <CAG0V13RrWkD=Qu74JNNJQNAPA_JC1HORf_cy9s+a60Bm=BsNag@mail.gmail.com>
+ <d8d6327b-3f33-4f1f-8369-db516573eb8c@quicinc.com>
+In-Reply-To: <d8d6327b-3f33-4f1f-8369-db516573eb8c@quicinc.com>
+From: Doug Brewer <brewer.doug@gmail.com>
+Date: Wed, 28 May 2025 20:55:20 +0800
+X-Gm-Features: AX0GCFtrwailbyraS2MjUmy8Om3sdWDjakBRK94xCy5TDrWqHy59xRjlh-K92j0
+Message-ID: <CAG0V13STa+zO2JJyB8+t8Qr-Y3yOa96EEhUAYHbJhraKz3bj7A@mail.gmail.com>
+Subject: Re: WCN7850 problem on Linux kernel 6.15
+To: Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: ath12k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250528_042427_573500_C3323164 
-X-CRM114-Status: GOOD (  27.44  )
+X-CRM114-CacheID: sfid-20250528_055533_061087_D3F89E8D 
+X-CRM114-Status: GOOD (  19.38  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,409 +95,165 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+On Wed, May 28, 2025 at 4:02=E2=80=AFPM Baochen Qiang <quic_bqiang@quicinc.=
+com> wrote:
+>
+>
+>
+> On 5/28/2025 3:29 PM, Doug Brewer wrote:
+> > On Wed, May 28, 2025 at 1:16=E2=80=AFPM Baochen Qiang <quic_bqiang@quic=
+inc.com> wrote:
+> >>
+> >>
+> >>
+> >> On 5/27/2025 11:00 AM, Doug Brewer wrote:
+> >>> On Tue, May 27, 2025 at 9:10=E2=80=AFAM Doug Brewer wrote:
+> >>>>
+> >>>> Hello,
+> >>>>
+> >>>> After upgrading to kernel 6.15, my ath12k failed to start:ath12k_pci
+> >>
+> >> Is this mainline kernel or stable kernel?
+> >
+> > It's stable kernel:
+> > https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.tar.xz
+> >
+> >>>> 0000:03:00.0: BAR 0 [mem 0xdf000000-0xdf1fffff 64bit]: assigned
+> >>>> ath12k_pci 0000:03:00.0: enabling device (0000 -> 0002)
+> >>>> ath12k_pci 0000:03:00.0: MSI vectors: 16
+> >>>> ath12k_pci 0000:03:00.0: Hardware name: wcn7850 hw2.0
+> >>>> NET: Registered PF_QIPCRTR protocol family
+> >>>> pcieport 0000:00:1d.0: AER: Multiple Uncorrectable (Non-Fatal) error=
+ message rec
+> >>>> eived from 0000:00:1d.0
+> >>>> pcieport 0000:00:1d.0: PCIe Bus Error: severity=3DUncorrectable (Non=
+-Fatal), type=3D
+> >>>> Transaction Layer, (Completer ID)
+> >>>> pcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=3D0000=
+8000/00010000
+> >>>> pcieport 0000:00:1d.0:    [15] CmpltAbrt              (First)
+> >>>> pcieport 0000:00:1d.0: AER:   TLP Header: 0x00000000 0x00000000 0x00=
+000000 0x000
+> >>>> 00000
+> >>
+> >> Strange there is AER error? Is 0000:00:1d.0 upstream port of WLAN targ=
+et? I guess not
+> >> because 8086:9d18 seems like an Intel device?
+> >
+> > Appending =E2=80=98pcie_aspm=3Doff=E2=80=99 to the kernel command line =
+will eliminate that error.
+> >
+> >> Can you share lspci log:
+> >>
+> >> lspci -tv
+> >
+> > -[0000:00]-+-00.0  Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen=
+ Core Pro
+> > cessor Host Bridge/DRAM Registers
+> >           +-02.0  Intel Corporation Skylake GT2 [HD Graphics 520]
+> >           +-08.0  Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6=
+th/7th/8
+> > th Gen Core Processor Gaussian Mixture Model
+> >           +-14.0  Intel Corporation Sunrise Point-LP USB 3.0 xHCI Contr=
+oller
+> >           +-16.0  Intel Corporation Sunrise Point-LP CSME HECI #1
+> >           +-17.0  Intel Corporation Sunrise Point-LP SATA Controller [A=
+HCI mode]
+> >           +-1c.0-[01]--
+> >           +-1c.5-[02]----00.0  Intel Corporation I210 Gigabit Network C=
+onnection
+> >           +-1d.0-[03]----00.0  Qualcomm Technologies, Inc WCN785x Wi-Fi=
+ 7(802.1
+> > 1be) 320MHz 2x2 [FastConnect 7800]
+> >           +-1e.0  Intel Corporation Sunrise Point-LP Serial IO UART Con=
+troller
+> > #0
+> >           +-1e.6  Intel Corporation Sunrise Point-LP Secure Digital IO
+> > Controller
+> >           +-1f.0  Intel Corporation Sunrise Point-LP LPC Controller
+> >           +-1f.2  Intel Corporation Sunrise Point-LP PMC
+> >           +-1f.3  Intel Corporation Sunrise Point-LP HD Audio
+> >           +-1f.4  Intel Corporation Sunrise Point-LP SMBus
+> >           \-1f.6  Intel Corporation Ethernet Connection I219-LM
+> >
+> >
+> >>>> mhi mhi0: Requested to power ON
+> >>>> mhi mhi0: Power on setup success
+> >>>> mhi mhi0: Wait for device to enter SBL or Mission mode
+> >>>> ath12k_pci 0000:03:00.0: AER: can't recover (no error_detected callb=
+ack)
+> >>>> pcieport 0000:00:1d.0: AER: device recovery failed
+> >>>> ath12k_pci 0000:03:00.0: qmi dma allocation failed (7012352 B type 1=
+),
+> >>>> will try later with small size
+> >>>> ath12k_pci 0000:03:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff
+> >>>> soc_id 0x40170200
+> >>>> ath12k_pci 0000:03:00.0: fw_version 0x1108811c fw_build_timestamp 20=
+25-05-17 00:
+> >>>> 21 fw_build_id QC_IMAGE_VERSION_STRING=3DWLAN.HMT.1.1.c5-00284.1-QCA=
+HMTSWPL_V1.0_V
+> >>>> 2.0_SILICONZ-3
+> >>>> ath12k_pci 0000:03:00.0: ignore reset dev flags 0x200
+> >>>> ath12k_pci 0000:03:00.0: failed to receive wmi unified ready event: =
+-110
+> >>>> ath12k_pci 0000:03:00.0: failed to start core: -110
+> >>>> failed to send QMI message
+> >>>> ath12k_pci 0000:03:00.0: qmi failed to send mode request, mode: 4, e=
+rr =3D -5
+> >>>> ath12k_pci 0000:03:00.0: qmi failed to send wlan mode off
+> >>>
+> >>> Tested on same machine with kernel 6.14.8, ath12k works:
+> >>
+> >> This seem like stable kernel, can you try latest mainline kernel?
+> >>
+> >> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/
+> >>
+> >> or latest ath tree?
+> >>
+> >> https://web.git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/
+> >
+> > OK, will try mailine kernel, thanks.
+>
+> Please also try latest ath tree if issue still seen with mainline kernel.
 
-At present, the ATH12K_DEFAULT_NOISE_FLOOR (-95) is used to calculate RSSI
-value, providing an estimated noise floor value. Consequently, the RSSI
-value is also approximate. This works but however, using actual noise floor
-value will enable the reporting of the true RSSI value.
+Both mainline and stable kernels have the same error.
+Switched to ath.git, my ath12k works.
 
-The firmware possesses the necessary data to determine the actual noise
-floor. This data is provided to the host via the WMI event
-WMI_PDEV_RSSI_DBM_CONVERSION_PARAMS_INFO_EVENTID, which includes the
-runtime parameters needed for calculating the real noise floor in dBm. This
-event is triggered by the firmware during channel changes, temperature
-offset adjustments, and hardware chainmask modifications. The individual
-TLVs may not always be present in each event. For instance, temperature
-information might only appear if there is a change in offset due to
-temperature variation.
+Seems to me that both mainline and stable kernels have fallout.
 
-Add support to handle and parse this WMI event. Use the received values to
-calculate and store the noise floor value.
-
-A subsequent change will use this noise floor value in the actual RSSI
-calculation.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Co-developed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/core.h |  17 +++
- drivers/net/wireless/ath/ath12k/mac.c  |   4 +
- drivers/net/wireless/ath/ath12k/wmi.c  | 226 +++++++++++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h  |  42 ++++++
- 4 files changed, 289 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 941db6e49d6eaeb03783f7714d433259d887820b..c98193413d2283f0fa7c5cf6a5e4fbe82c928c31 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -665,6 +665,15 @@ struct ath12k_per_peer_tx_stats {
- 	bool is_ampdu;
- };
- 
-+struct ath12k_pdev_rssi_offsets {
-+	s32 temp_offset;
-+	s8 min_nf_dbm;
-+	/* Cache the sum here to avoid calculating it every time in hot path
-+	 * noise_floor = min_nf_dbm + temp_offset
-+	 */
-+	s32 noise_floor;
-+};
-+
- #define ATH12K_FLUSH_TIMEOUT (5 * HZ)
- #define ATH12K_VDEV_DELETE_TIMEOUT_HZ (5 * HZ)
- 
-@@ -814,6 +823,7 @@ struct ath12k {
- 	unsigned long last_tx_power_update;
- 
- 	s8 max_allowed_tx_power;
-+	struct ath12k_pdev_rssi_offsets rssi_info;
- };
- 
- struct ath12k_hw {
-@@ -1454,4 +1464,11 @@ static inline struct ath12k_base *ath12k_ag_to_ab(struct ath12k_hw_group *ag,
- 	return ag->ab[device_id];
- }
- 
-+static inline s32 ath12k_pdev_get_noise_floor(struct ath12k *ar)
-+{
-+	lockdep_assert_held(&ar->data_lock);
-+
-+	return ar->rssi_info.noise_floor;
-+}
-+
- #endif /* _CORE_H_ */
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 88b59f3ff87af8b48cb3fafcd364fd9ced4ff197..8ff470749f14545d1c726cc1dc26880e129277fa 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -11898,6 +11898,10 @@ static int ath12k_mac_setup_register(struct ath12k *ar,
- 	ar->max_num_stations = ath12k_core_get_max_station_per_radio(ar->ab);
- 	ar->max_num_peers = ath12k_core_get_max_peers_per_radio(ar->ab);
- 
-+	ar->rssi_info.min_nf_dbm = ATH12K_DEFAULT_NOISE_FLOOR;
-+	ar->rssi_info.temp_offset = 0;
-+	ar->rssi_info.noise_floor = ar->rssi_info.min_nf_dbm + ar->rssi_info.temp_offset;
-+
- 	return 0;
- }
- 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 60e2444fe08cefa39ae218d07eb9736d2a0c982b..e07f1e46ba418a0583a0feaa711ada7b6cd193e2 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -8711,6 +8711,229 @@ static void ath12k_wmi_process_tpc_stats(struct ath12k_base *ab,
- }
- #endif
- 
-+static int
-+ath12k_wmi_rssi_dbm_conv_info_evt_subtlv_parser(struct ath12k_base *ab,
-+						u16 tag, u16 len,
-+						const void *ptr, void *data)
-+{
-+	const struct ath12k_wmi_rssi_dbm_conv_temp_info_params *temp_info;
-+	const struct ath12k_wmi_rssi_dbm_conv_info_params *param_info;
-+	struct ath12k_wmi_rssi_dbm_conv_info_arg *rssi_info = data;
-+	struct ath12k_wmi_rssi_dbm_conv_param_arg param_arg;
-+	s32 nf_hw_dbm[ATH12K_MAX_NUM_NF_HW_DBM];
-+	u8 num_20mhz_segments;
-+	s8 min_nf, *nf_ptr;
-+	int i, j;
-+
-+	switch (tag) {
-+	case WMI_TAG_RSSI_DBM_CONVERSION_PARAMS_INFO:
-+		if (len < sizeof(*param_info)) {
-+			ath12k_warn(ab,
-+				    "RSSI dbm conv subtlv 0x%x invalid len %d rcvd",
-+				    tag, len);
-+			return -EINVAL;
-+		}
-+
-+		param_info = ptr;
-+
-+		param_arg.curr_bw = le32_to_cpu(param_info->curr_bw);
-+		param_arg.curr_rx_chainmask = le32_to_cpu(param_info->curr_rx_chainmask);
-+
-+		/* The received array is actually a 2D byte-array for per chain,
-+		 * per 20MHz subband. Convert to 2D byte-array
-+		 */
-+		nf_ptr = &param_arg.nf_hw_dbm[0][0];
-+
-+		for (i = 0; i < ATH12K_MAX_NUM_NF_HW_DBM; i++) {
-+			nf_hw_dbm[i] = a_sle32_to_cpu(param_info->nf_hw_dbm[i]);
-+
-+			for (j = 0; j < 4; j++) {
-+				*nf_ptr = (nf_hw_dbm[i] >> (j * 8)) & 0xFF;
-+				nf_ptr++;
-+			}
-+		}
-+
-+		switch (param_arg.curr_bw) {
-+		case WMI_CHAN_WIDTH_20:
-+			num_20mhz_segments = 1;
-+			break;
-+		case WMI_CHAN_WIDTH_40:
-+			num_20mhz_segments = 2;
-+			break;
-+		case WMI_CHAN_WIDTH_80:
-+			num_20mhz_segments = 4;
-+			break;
-+		case WMI_CHAN_WIDTH_160:
-+			num_20mhz_segments = 8;
-+			break;
-+		case WMI_CHAN_WIDTH_320:
-+			num_20mhz_segments = 16;
-+			break;
-+		default:
-+			ath12k_warn(ab, "Invalid current bandwidth %d in RSSI dbm event",
-+				    param_arg.curr_bw);
-+			/* In error case, still consider the primary 20 MHz segment since
-+			 * that would be much better than instead of dropping the whole
-+			 * event
-+			 */
-+			num_20mhz_segments = 1;
-+		}
-+
-+		min_nf = ATH12K_DEFAULT_NOISE_FLOOR;
-+
-+		for (i = 0; i < ATH12K_MAX_NUM_ANTENNA; i++) {
-+			if (!(param_arg.curr_rx_chainmask & BIT(i)))
-+				continue;
-+
-+			for (j = 0; j < num_20mhz_segments; j++) {
-+				if (param_arg.nf_hw_dbm[i][j] < min_nf)
-+					min_nf = param_arg.nf_hw_dbm[i][j];
-+			}
-+		}
-+
-+		rssi_info->min_nf_dbm = min_nf;
-+		rssi_info->nf_dbm_present = true;
-+		break;
-+	case WMI_TAG_RSSI_DBM_CONVERSION_TEMP_OFFSET_INFO:
-+		if (len < sizeof(*temp_info)) {
-+			ath12k_warn(ab,
-+				    "RSSI dbm conv subtlv 0x%x invalid len %d rcvd",
-+				    tag, len);
-+			return -EINVAL;
-+		}
-+
-+		temp_info = ptr;
-+		rssi_info->temp_offset = a_sle32_to_cpu(temp_info->offset);
-+		rssi_info->temp_offset_present = true;
-+		break;
-+	default:
-+		ath12k_dbg(ab, ATH12K_DBG_WMI,
-+			   "Unknown subtlv 0x%x in RSSI dbm conversion event\n", tag);
-+	}
-+
-+	return 0;
-+}
-+
-+static int
-+ath12k_wmi_rssi_dbm_conv_info_event_parser(struct ath12k_base *ab,
-+					   u16 tag, u16 len,
-+					   const void *ptr, void *data)
-+{
-+	int ret = 0;
-+
-+	switch (tag) {
-+	case WMI_TAG_RSSI_DBM_CONVERSION_PARAMS_INFO_FIXED_PARAM:
-+		/* Fixed param is already processed*/
-+		break;
-+	case WMI_TAG_ARRAY_STRUCT:
-+		/* len 0 is expected for array of struct when there
-+		 * is no content of that type inside that tlv
-+		 */
-+		if (len == 0)
-+			return 0;
-+
-+		ret = ath12k_wmi_tlv_iter(ab, ptr, len,
-+					  ath12k_wmi_rssi_dbm_conv_info_evt_subtlv_parser,
-+					  data);
-+		break;
-+	default:
-+		ath12k_dbg(ab, ATH12K_DBG_WMI,
-+			   "Received invalid tag 0x%x for RSSI dbm conv info event\n",
-+			   tag);
-+		break;
-+	}
-+
-+	return ret;
-+}
-+
-+static int
-+ath12k_wmi_rssi_dbm_conv_info_process_fixed_param(struct ath12k_base *ab, u8 *ptr,
-+						  size_t len, int *pdev_id)
-+{
-+	struct ath12k_wmi_rssi_dbm_conv_info_fixed_params *fixed_param;
-+	const struct wmi_tlv *tlv;
-+	u16 tlv_tag;
-+
-+	if (len < (sizeof(*fixed_param) + TLV_HDR_SIZE)) {
-+		ath12k_warn(ab, "invalid RSSI dbm conv event size %zu\n", len);
-+		return -EINVAL;
-+	}
-+
-+	tlv = (struct wmi_tlv *)ptr;
-+	tlv_tag = le32_get_bits(tlv->header, WMI_TLV_TAG);
-+	ptr += sizeof(*tlv);
-+
-+	if (tlv_tag != WMI_TAG_RSSI_DBM_CONVERSION_PARAMS_INFO_FIXED_PARAM) {
-+		ath12k_warn(ab, "RSSI dbm conv event received without fixed param tlv\n");
-+		return -EINVAL;
-+	}
-+
-+	fixed_param = (struct ath12k_wmi_rssi_dbm_conv_info_fixed_params *)ptr;
-+	*pdev_id = le32_to_cpu(fixed_param->pdev_id);
-+
-+	return 0;
-+}
-+
-+static void
-+ath12k_wmi_update_rssi_offsets(struct ath12k *ar,
-+			       struct ath12k_wmi_rssi_dbm_conv_info_arg *rssi_info)
-+{
-+	struct ath12k_pdev_rssi_offsets *info = &ar->rssi_info;
-+
-+	lockdep_assert_held(&ar->data_lock);
-+
-+	if (rssi_info->temp_offset_present)
-+		info->temp_offset = rssi_info->temp_offset;
-+
-+	if (rssi_info->nf_dbm_present)
-+		info->min_nf_dbm = rssi_info->min_nf_dbm;
-+
-+	info->noise_floor = info->min_nf_dbm + info->temp_offset;
-+}
-+
-+static void
-+ath12k_wmi_rssi_dbm_conversion_params_info_event(struct ath12k_base *ab,
-+						 struct sk_buff *skb)
-+{
-+	struct ath12k_wmi_rssi_dbm_conv_info_arg rssi_info;
-+	struct ath12k *ar;
-+	s32 noise_floor;
-+	u32 pdev_id;
-+	int ret;
-+
-+	ret = ath12k_wmi_rssi_dbm_conv_info_process_fixed_param(ab, skb->data, skb->len,
-+								&pdev_id);
-+	if (ret) {
-+		ath12k_warn(ab, "failed to parse fixed param in RSSI dbm conv event: %d\n",
-+			    ret);
-+		return;
-+	}
-+
-+	rcu_read_lock();
-+	ar = ath12k_mac_get_ar_by_pdev_id(ab, pdev_id);
-+	/* If pdev is not active, ignore the event */
-+	if (!ar)
-+		goto out_unlock;
-+
-+	ret = ath12k_wmi_tlv_iter(ab, skb->data, skb->len,
-+				  ath12k_wmi_rssi_dbm_conv_info_event_parser,
-+				  &rssi_info);
-+	if (ret) {
-+		ath12k_warn(ab, "unable to parse RSSI dbm conversion event\n");
-+		goto out_unlock;
-+	}
-+
-+	spin_lock_bh(&ar->data_lock);
-+	ath12k_wmi_update_rssi_offsets(ar, &rssi_info);
-+	noise_floor = ath12k_pdev_get_noise_floor(ar);
-+	spin_unlock_bh(&ar->data_lock);
-+
-+	ath12k_dbg(ab, ATH12K_DBG_WMI,
-+		   "RSSI noise floor updated, new value is %d dbm\n", noise_floor);
-+out_unlock:
-+	rcu_read_unlock();
-+}
-+
- static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
- {
- 	struct wmi_cmd_hdr *cmd_hdr;
-@@ -8842,6 +9065,9 @@ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
- 	case WMI_11D_NEW_COUNTRY_EVENTID:
- 		ath12k_reg_11d_new_cc_event(ab, skb);
- 		break;
-+	case WMI_PDEV_RSSI_DBM_CONVERSION_PARAMS_INFO_EVENTID:
-+		ath12k_wmi_rssi_dbm_conversion_params_info_event(ab, skb);
-+		break;
- 	/* add Unsupported events (rare) here */
- 	case WMI_TBTTOFFSET_EXT_UPDATE_EVENTID:
- 	case WMI_PEER_OPER_MODE_CHANGE_EVENTID:
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index ac18f75e04492b62594acb159e3b43b81bd6c392..f0da8bc76390be85a5ba2f79bbbddf07eb465f73 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -734,6 +734,8 @@ enum wmi_tlv_event_id {
- 	WMI_SERVICE_READY_EXT2_EVENTID,
- 	WMI_PDEV_GET_HALPHY_CAL_STATUS_EVENTID =
- 					WMI_SERVICE_READY_EXT2_EVENTID + 4,
-+	WMI_PDEV_RSSI_DBM_CONVERSION_PARAMS_INFO_EVENTID =
-+				WMI_PDEV_GET_HALPHY_CAL_STATUS_EVENTID + 5,
- 	WMI_VDEV_START_RESP_EVENTID = WMI_TLV_CMD(WMI_GRP_VDEV),
- 	WMI_VDEV_STOPPED_EVENTID,
- 	WMI_VDEV_INSTALL_KEY_COMPLETE_EVENTID,
-@@ -1991,6 +1993,9 @@ enum wmi_tlv_tag {
- 	WMI_TAG_PDEV_SET_BIOS_SAR_TABLE_CMD = 0x3D8,
- 	WMI_TAG_PDEV_SET_BIOS_GEO_TABLE_CMD = 0x3D9,
- 	WMI_TAG_PDEV_SET_BIOS_INTERFACE_CMD = 0x3FB,
-+	WMI_TAG_RSSI_DBM_CONVERSION_PARAMS_INFO_FIXED_PARAM = 0x427,
-+	WMI_TAG_RSSI_DBM_CONVERSION_PARAMS_INFO,
-+	WMI_TAG_RSSI_DBM_CONVERSION_TEMP_OFFSET_INFO,
- 	WMI_TAG_HALPHY_CTRL_PATH_CMD_FIXED_PARAM = 0x442,
- 	WMI_TAG_HALPHY_CTRL_PATH_EVENT_FIXED_PARAM,
- 	WMI_TAG_MAX
-@@ -5997,6 +6002,43 @@ struct wmi_vdev_set_tpc_power_cmd {
- 	 */
- } __packed;
- 
-+#define ATH12K_MAX_20MHZ_SEGMENTS	16
-+#define ATH12K_MAX_NUM_ANTENNA		8
-+#define ATH12K_MAX_NUM_NF_HW_DBM	32
-+
-+struct ath12k_wmi_rssi_dbm_conv_info_fixed_params {
-+	__le32 pdev_id;
-+} __packed;
-+
-+struct ath12k_wmi_rssi_dbm_conv_info_params {
-+	__le32 curr_bw;
-+	__le32 curr_rx_chainmask;
-+	__le32 xbar_config;
-+	a_sle32 xlna_bypass_offset;
-+	a_sle32 xlna_bypass_threshold;
-+	a_sle32 nf_hw_dbm[ATH12K_MAX_NUM_NF_HW_DBM];
-+} __packed;
-+
-+struct ath12k_wmi_rssi_dbm_conv_temp_info_params {
-+	a_sle32 offset;
-+} __packed;
-+
-+struct ath12k_wmi_rssi_dbm_conv_param_arg {
-+	u32 curr_bw;
-+	u32 curr_rx_chainmask;
-+	u32 xbar_config;
-+	s32 xlna_bypass_offset;
-+	s32 xlna_bypass_threshold;
-+	s8 nf_hw_dbm[ATH12K_MAX_NUM_ANTENNA][ATH12K_MAX_20MHZ_SEGMENTS];
-+};
-+
-+struct ath12k_wmi_rssi_dbm_conv_info_arg {
-+	bool temp_offset_present;
-+	s32 temp_offset;
-+	bool nf_dbm_present;
-+	s8 min_nf_dbm;
-+};
-+
- void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
- 			     struct ath12k_wmi_resource_config_arg *config);
- void ath12k_wmi_init_wcn7850(struct ath12k_base *ab,
-
--- 
-2.34.1
-
+> >>> ath12k_pci 0000:03:00.0: BAR 0 [mem 0xdf000000-0xdf1fffff 64bit]: ass=
+igned
+> >>> ath12k_pci 0000:03:00.0: enabling device (0000 -> 0002)
+> >>> ath12k_pci 0000:03:00.0: MSI vectors: 16
+> >>> ath12k_pci 0000:03:00.0: Hardware name: wcn7850 hw2.0
+> >>> pcieport 0000:00:1d.0: AER: Multiple Uncorrectable (Non-Fatal) error =
+message rec
+> >>> eived from 0000:00:1d.0
+> >>> pcieport 0000:00:1d.0: PCIe Bus Error: severity=3DUncorrectable (Non-=
+Fatal), type=3D
+> >>> Transaction Layer, (Completer ID)
+> >>> pcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=3D00008=
+000/00010000
+> >>> pcieport 0000:00:1d.0:    [15] CmpltAbrt              (First)
+> >>> pcieport 0000:00:1d.0: AER:   TLP Header: 0x00000000 0x00000000
+> >>> 0x00000000 0x00000000
+> >>> mhi mhi0: Requested to power ON
+> >>> mhi mhi0: Power on setup success
+> >>> mhi mhi0: Wait for device to enter SBL or Mission mode
+> >>> ath12k_pci 0000:03:00.0: AER: can't recover (no error_detected callba=
+ck)
+> >>> pcieport 0000:00:1d.0: AER: device recovery failed
+> >>> ath12k_pci 0000:03:00.0: qmi dma allocation failed (7012352 B type 1)=
+,
+> >>> will try later with small size
+> >>> ath12k_pci 0000:03:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff
+> >>> soc_id 0x40170200
+> >>> ath12k_pci 0000:03:00.0: fw_version 0x1108811c fw_build_timestamp 202=
+5-05-17 00:
+> >>> 21 fw_build_id QC_IMAGE_VERSION_STRING=3DWLAN.HMT.1.1.c5-00284.1-QCAH=
+MTSWPL_V1.0_V
+> >>> 2.0_SILICONZ-3
+> >>>
+> >>
+>
 
