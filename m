@@ -4,120 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82EACC5AD49
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8D6BC5B54E
 	for <ath12k@archiver.kernel.org>; Wed, 28 May 2025 11:24:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
+	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9OaIR/JgCGry6K2mLBsDcRBp3ny/e1tbKsimDqc/P5Q=; b=3qvd52cF7B0xKt
-	gn61rkALEhyu/J7tJALYh7Job9pGPlg3tjaYQwt26SP8g1ESrG/+bme8iTvGgnj1cakU2nXG0EyTG
-	yCaEXezJ5j1wyL4HE0MUt7hZX+WdLWRbMK9MrXj1dSHSC9+iE6l5HcuWMp/yITL+MM7MrggOAA1r5
-	gsgf+JkafZZDsmEJl0ho987+Ru/Fb6AqZwU4lea4MlR2b7tNbu1YSK3iq2KVgoaq+6jL1XFT3X6BL
-	tQYFsaj0jVJuOlM3l7z+Zmw6R21AVpDNIJTlV4fr2XfXZ5uOWi6qBNsBgNB6Z33iad/yHr3/NeffT
-	+pMvCfbRJqZjmksZvaQQ==;
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=c6aM7WJ6bbAAgKf+qbF5aXJsLwsNSN7sBgN05z3YZ6E=; b=ckjsjjB4rBk96OaIWGfeuKz7/i
+	28BxA79MOujUV/xhMYYm9AiFkAevO3wvrEBNEG+Uc9zwzr5ZaSB9YlkOtICmgMgLv337Y2dnIff94
+	RclVlRPG+xrFE68L23KAJ8ZL03orJil1wrpnJWH1DeMdrRH67a/USAV4aROjN6dv0un9gfjPIK71v
+	E9J8EvqbCsJiOr4d/kiV9ZkJPoi9NF89OdAJG0fGRN6n0Y4tDDo+51qS6vNjYNZrM1DidPf6Kssx/
+	WhBFrmza2dCcveD1rjJm0+JkNvGJKpor6TuQdf+5KPjC2onh2baj4PCiUI2zgtmN+61o0d/NIbLrf
+	dOdcURWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKEtm-0000000CyHR-11lL;
+	id 1uKEtm-0000000CyHl-2xAg;
 	Wed, 28 May 2025 11:24:42 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKEtU-0000000CyES-1ZXX
+	id 1uKEtX-0000000CyEo-1ftj
 	for ath12k@lists.infradead.org;
-	Wed, 28 May 2025 11:24:25 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54SAKDDk005108
-	for <ath12k@lists.infradead.org>; Wed, 28 May 2025 11:24:23 GMT
+	Wed, 28 May 2025 11:24:28 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54S9hNTC009567
+	for <ath12k@lists.infradead.org>; Wed, 28 May 2025 11:24:26 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=9OaIR/JgCGry6K2mLBsDcR
-	Bp3ny/e1tbKsimDqc/P5Q=; b=jPW272rxOWAFGjUDZ6W+I6VCbZTymA/xhJ80Su
-	5a8sk3mk4m3KHfbXGqpcalRRpW4pLhgqkK0qa3dCeJj98r1d7Ny57iblbpK4I9tw
-	IYPylnUKNd4dEvF+Lcr9fdScRwJf1OiAGhkDdcIg+v/UFwUUzF1X8oC3H3zqqFhi
-	Du1Xtq0WDEtWjPmzeSfVXDSCstO/k1EMo+MUtP0JYLybg0q33QPbM+pmqffQhzuP
-	ehe4MKZr2o/qRfD0NbOUJDO5RzY/z5UnnEGtFpNRGidMJXR6sMqQ/bYiTs+m0/q+
-	B2hdAxyo3XE+4UPARzA0p1A5WBUjTEhr6XYl11SHmVt6PAJQ==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46u79pa2j8-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	c6aM7WJ6bbAAgKf+qbF5aXJsLwsNSN7sBgN05z3YZ6E=; b=XMewpPd22mtVCp8G
+	dzG2e9Z0C8mgTNg+B/T3/6x2g64S00h27M2kEJ+ltooJlW2fj2IyP9QCo1WIKA0l
+	Q/i5AJbAfsgouRYpp4aXkMNwDnSubkzkz4n5klSwQCWUHgCQWkFiLLch84zPflIJ
+	B5UpMZ2X6BOirW5gD0t3Vaa+fnxqvlDCMlsRI1VvOwxN8PXvVWKxhmJNmwdYU58Z
+	+tNnGvf1wO/QXVqAyftHUgdXi8Zqx/uqNZV9CnrlxIxdRz1/xP57JnPpYWRSeMCp
+	ctUlh6wM88J1ifUpQUHWpKOuXA7Cx0OrE32ELdF9AdGDDyAKkBxtEzzLDsad1fGt
+	crzetw==
+Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46x03mr7qy-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 28 May 2025 11:24:23 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-310a0668968so4092321a91.0
-        for <ath12k@lists.infradead.org>; Wed, 28 May 2025 04:24:23 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 28 May 2025 11:24:26 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-b2c38df7ed2so2090909a12.3
+        for <ath12k@lists.infradead.org>; Wed, 28 May 2025 04:24:26 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748431462; x=1749036262;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=9OaIR/JgCGry6K2mLBsDcRBp3ny/e1tbKsimDqc/P5Q=;
-        b=LQSHcInRrO3a6MC04JrJjhx/c4TaScnaU4C0LkDAwiEgSD8+apVkBBDrkRwLbVQFKB
-         szgC9iTGMu79p0WrM3jTQBg9DnJfWbbEp9NNWFisYeqq/h23LglN0f/VDHf7/PzRzSVe
-         5zCiZINr44cjhRJmNWiJh2CAeHJBNETKCD7byHbYlagThh9rcQBSw9PmdfQri+yCGdOC
-         qhlkSDs0n90wLFmlP4yFrjQs1Cy03up5izlU8ioVhYrEPbSqBc511EYABFF+Sn2vOYfV
-         vA5lxtzhUqA6SjvRxHiibUcSHTKGDkQFL66e+F8qC+q1h6RJ/LwXDQcTlS+otJdodFHm
-         k1Rg==
-X-Forwarded-Encrypted: i=1; AJvYcCW48Eb+JvDb7FM5vvvOP2Rpz0zBbMtcUtf5pxjK7/ffEWRXq8IKB0Nj6Tb4WJG1wMBbtq1Yhfo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyaHWzpK33oc/i6e+NWemE6bOdQFBGHSF7QG3dobnGk0YNjTKw/
-	q2xql9cXSqfoXbEMRxYU3v9SnWHPaG9PF7CGt3YKgsdz+JbUcig9thiRF9n1XV49oOS8vu0cb9O
-	g/PRiqOp6G61LjhXKJuKf7hZvnRjalVfAsLkjEOmt8BZJzwltr+xgMn7OWqQvYgzM
-X-Gm-Gg: ASbGncuVzu6fmD0xnJBp1ITTrFnkfJQmH6iszM1ucZZruGf74IJ53KgOScM4i4uPk2M
-	EF31nOjhYQ3UXZfVIPXfYAU3iG7LHDs9Bz53H6d1xWHDFbAlc7HTz75MIzpCtyd7okf4tvjM1Pm
-	bnY/O5is9GL0rF0waaO6+Yu48T066i7SlQWkMb0q4qheeD8CtGK5eIypgMfFJcNcNm/LvisepOZ
-	I8Bpq5eiUjpyZOF2IbntiX+Mmf+X1dmrhNXlnsGd/vlAXOQ0SCXgkRf0tzgrWawh/yQ/8vyAR1o
-	mnDbL32S9crQfEebRiUZZflADGPDOKlxm5Sd4F+8vgGdNtMiUJcexLY9Ev/FDYXo+wShSixpE8u
-	r77pnv4Wwo5TV5gOGdPWQQxvc0bPKWlKViTPa
-X-Received: by 2002:a17:90b:3911:b0:311:f30b:c18 with SMTP id 98e67ed59e1d1-311f30b0ff9mr1919585a91.4.1748431462437;
-        Wed, 28 May 2025 04:24:22 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGT2k6BW8Nw88MJooxw2RTEDAtCcWs25yiA/HlrYnpjr7dK3nH9uZma9yPDliobnauzqCuwkQ==
-X-Received: by 2002:a17:90b:3911:b0:311:f30b:c18 with SMTP id 98e67ed59e1d1-311f30b0ff9mr1919559a91.4.1748431462029;
-        Wed, 28 May 2025 04:24:22 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1748431465; x=1749036265;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=c6aM7WJ6bbAAgKf+qbF5aXJsLwsNSN7sBgN05z3YZ6E=;
+        b=umSkX2xSyUijNd0d80w0Cvtj20VNh62iT3a87VgeBzkx7eAnUgO+PxVkxvqEHXynHO
+         yA8qeD8A0DxahVSagP3UWaSryEZx5n1Ra/TbsgEEC49dB/DPEnQrzl/jmka+eaBf4yKy
+         X+nij0PPCVBUYx66gysB0tSAS4xMphGk81gzkSn6sgdgVpfPPtE01jAhkbR52gR+N03h
+         g93cb4m4fvFZ24cgLFYcEM21H0hLyzjZLfLcsdWCaRIDxmLX6PeIJarF4cMxJG9ZNhz2
+         +NbDp0TBJyrDwIUD1si6hOa7W92NZoVC12WAGPdjnwCHSnEKdlWSFp6yQ5XjrvlfHPfp
+         WcLw==
+X-Forwarded-Encrypted: i=1; AJvYcCUYlyVX7mmlMVYkYmGRhMq8p3RPtwmHeXFr54B5oqqpNTvgJTAUZVrCbTSRsNqVHDP1eTIcZT0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwQD8gljtWqtHA21/8w3sQg8P9MHXrJjpv79T0yLsRO2WjovPgY
+	y1EIVwSIuQfS4tX63QgKbaLU2MBeCi9AghIHvxdRoKSSGLGQQS+nFy8IsFy5lhl5ocloorUad/Q
+	Z6cnW8sisJzY/84bOATsKOaZI3KaSUJZfK7DSVTx8PZyOL9D/skGyKw/MbIjlTn0K
+X-Gm-Gg: ASbGnctKP6xynOSVXN3TaGH19TYwzTwPOK5yrWeNln23uo9O+1ewyqvSmz4twz/CmXB
+	iX0zq1soSndAjhHe8uZMq4W50YVu70EsaHEhwPNqa1IG6NSICaerO0BkHw9UPfwCobAF93k5UxX
+	bKgzW4sWlKK6zWoQyCnvsQDfVneoOx1wz43+NB2zbNxw8LEfh/+afl5ICl1+GVWWDstRTBSkGpc
+	/TvUl0ug5cEjsNXq/ocyrk8twGF86RimWJ17F2hWY3yHLGwS41iWFvoRONnqJu8mIdVpmmxGtLM
+	8n9MfkFfZCrnASi9MPi1NJpE0xuY36lji/ovguVzJeCAR+5s88+Po6PdDb7w6c7EJUhA0B6sMca
+	Qy05+qd5qCLPJvYIHfy7m1bkuq1t87iotedcT
+X-Received: by 2002:a17:90b:33cc:b0:2fe:8282:cb9d with SMTP id 98e67ed59e1d1-311100da6acmr24059548a91.28.1748431464799;
+        Wed, 28 May 2025 04:24:24 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHYQkdCLHGDGzXmFuRyTueS+eLR+h+ITlJR4vzTTCJx1bCvNNmc74AQv9AprFZgGuC+FEkPJw==
+X-Received: by 2002:a17:90b:33cc:b0:2fe:8282:cb9d with SMTP id 98e67ed59e1d1-311100da6acmr24059513a91.28.1748431464289;
+        Wed, 28 May 2025 04:24:24 -0700 (PDT)
 Received: from hu-adisi-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-311e9b668ffsm954665a91.20.2025.05.28.04.24.20
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-311e9b668ffsm954665a91.20.2025.05.28.04.24.22
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 28 May 2025 04:24:21 -0700 (PDT)
+        Wed, 28 May 2025 04:24:23 -0700 (PDT)
 From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Subject: [PATCH ath-next 0/2] wifi: ath12k: use real noise floor value
-Date: Wed, 28 May 2025 16:53:59 +0530
-Message-Id: <20250528-support_real_noise_floor-v1-0-04507bd3bc76@oss.qualcomm.com>
+Date: Wed, 28 May 2025 16:54:00 +0530
+Subject: [PATCH ath-next 1/2] wifi: ath12k: handle WMI event for real noise
+ floor calculation
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-B4-Tracking: v=1; b=H4sIAE/yNmgC/x2NUQrDIBAFrxL2u4JRDE2vUopIsqkLwZXVlpTg3
- Wv7OTzmzQkFhbDAbThB8E2FOHUYLwMsMaQnKlo7g9HGaTdaVV45s1QvGHafmAr6bWcWZbSbr9N
- sp2W10PUsuNHxv75DqFElPCo8+hKpVJbPr9la+wLFfiAkgwAAAA==
-X-Change-ID: 20250513-support_real_noise_floor-205986936cd3
+Message-Id: <20250528-support_real_noise_floor-v1-1-04507bd3bc76@oss.qualcomm.com>
+References: <20250528-support_real_noise_floor-v1-0-04507bd3bc76@oss.qualcomm.com>
+In-Reply-To: <20250528-support_real_noise_floor-v1-0-04507bd3bc76@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         linux-kernel@vger.kernel.org,
         Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
         Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Proofpoint-GUID: G_0weywpArtCKFL2SKgpVHZjdL5EDog9
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI4MDEwMCBTYWx0ZWRfX0tSvMKNG0QLC
- IfHo2VeMsbwWjVxJm9cbX9cWEjvLInkqzwzgAPMMeZTGcHgg6+KwbeV9UrxDuAv7KFu099Kf6vk
- r00jzFmccFW8feoQ3pu5125Wsfbe+GMstxriR3vbb7T9Adv1vREVucfa/9mfneTAHisBxtZktEU
- +RyBrVANuBh6CFGTHuDPIKXDiYciQZU6eym6bEssxb0ZmBUUTqWwPpRUNFsvBgYHWERKGlkz/Io
- k8v6tK7J77iY6uKQ8K/7wi4m1ydlNKfhspEyr5kr47U0PY1OOTi/DegWdvWTcixZmi0kDUOAcMK
- XsUEAH8MjFNCDqDCKZ/q09ctKJOPF71Z7WvbcTfxgxZYhP0W4iQqWYbzti77J71SNAt6MfAMwE2
- 96hQBk5ka9cIfe78tdIrRpdsTtBaldMl/FOsXSCn/4+jm2lweEe8EaYMRMzrx22qWE8oPZ/B
-X-Authority-Analysis: v=2.4 cv=HNnDFptv c=1 sm=1 tr=0 ts=6836f267 cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=oo-PE9G31wNHbytkz5MA:9
- a=QEXdDO2ut3YA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
-X-Proofpoint-ORIG-GUID: G_0weywpArtCKFL2SKgpVHZjdL5EDog9
+X-Proofpoint-GUID: lgjW4JDyNxWuR7h6fe4NsUUf1e0rCIpe
+X-Authority-Analysis: v=2.4 cv=FuAF/3rq c=1 sm=1 tr=0 ts=6836f26a cx=c_pps
+ a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8
+ a=Ep9LWTjdhutGVinXlyQA:9 a=QEXdDO2ut3YA:10 a=_Vgx9l1VpLgwpw_dHYaR:22
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: lgjW4JDyNxWuR7h6fe4NsUUf1e0rCIpe
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI4MDA5OSBTYWx0ZWRfX6MnwjOCYp3Fe
+ JpFbNbh0d0/XLVB/BFEyez5PhmI6mibjYpYk5XoHaVOkwDLqnGAHffX+/6wTQNbQyzgG7aSPMhX
+ reXofAu/IPejtV1YhpyyEjMNl396qASVBv3HQvI8/bRHOthC4ZEBs1F8PELPgtKY0UdWyjRmCw2
+ D78nuYV5Pbcvrzacn44nr9qz+9SceVINaS9o4UvHq7BLNqTWr9ZAT9n8olqPzlfXfzdYG/sGnPI
+ Npr68RRYzrxAQ48omnRUxivwav951iaeOnMHhEqJ0BNE5yOMhVzQmpVLa/9oP1w7DnAkIGwHW7C
+ 3U6q9zPzh8dbrHdQFYrFKshPdm7NR+yhx3U33hezFgQapU8hp5jG40z1XNaApRzrltYuvvv7glQ
+ nqSFbcbvvRDaCUxwbvEKZwElBxHfWQQ4oFJLB+3HjHHxNYKpYLY/74UppWC4encGHmJq3s19
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-05-28_05,2025-05-27_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 suspectscore=0 malwarescore=0 lowpriorityscore=0 adultscore=0
- priorityscore=1501 mlxlogscore=999 phishscore=0 mlxscore=0 spamscore=0
- bulkscore=0 impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ suspectscore=0 adultscore=0 mlxlogscore=999 mlxscore=0 impostorscore=0
+ bulkscore=0 spamscore=0 phishscore=0 priorityscore=1501 lowpriorityscore=0
+ clxscore=1015 malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
- definitions=main-2505280100
+ definitions=main-2505280099
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250528_042424_430165_E2CD42A4 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20250528_042427_573500_C3323164 
+X-CRM114-Status: GOOD (  27.44  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,6 +133,8 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+
 At present, the ATH12K_DEFAULT_NOISE_FLOOR (-95) is used to calculate RSSI
 value, providing an estimated noise floor value. Consequently, the RSSI
 value is also approximate. This works but however, using actual noise floor
@@ -142,25 +145,397 @@ floor. This data is provided to the host via the WMI event
 WMI_PDEV_RSSI_DBM_CONVERSION_PARAMS_INFO_EVENTID, which includes the
 runtime parameters needed for calculating the real noise floor in dBm. This
 event is triggered by the firmware during channel changes, temperature
-offset adjustments, and hardware chainmask modifications.
+offset adjustments, and hardware chainmask modifications. The individual
+TLVs may not always be present in each event. For instance, temperature
+information might only appear if there is a change in offset due to
+temperature variation.
 
 Add support to handle and parse this WMI event. Use the received values to
-calculate and store the noise floor value and use at the required places.
+calculate and store the noise floor value.
 
----
-Raj Kumar Bhagat (2):
-      wifi: ath12k: handle WMI event for real noise floor calculation
-      wifi: ath12k: use real noise floor instead of default value
+A subsequent change will use this noise floor value in the actual RSSI
+calculation.
 
- drivers/net/wireless/ath/ath12k/core.h   |  17 +++
- drivers/net/wireless/ath/ath12k/dp_mon.c |   7 +-
- drivers/net/wireless/ath/ath12k/dp_tx.c  |  20 ++-
- drivers/net/wireless/ath/ath12k/mac.c    |  14 +-
- drivers/net/wireless/ath/ath12k/wmi.c    | 233 ++++++++++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/wmi.h    |  42 ++++++
- 6 files changed, 324 insertions(+), 9 deletions(-)
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Co-developed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 ---
-base-commit: 3d933084a072fd5fb5da54c06a017abc0412c86f
-change-id: 20250513-support_real_noise_floor-205986936cd3
+ drivers/net/wireless/ath/ath12k/core.h |  17 +++
+ drivers/net/wireless/ath/ath12k/mac.c  |   4 +
+ drivers/net/wireless/ath/ath12k/wmi.c  | 226 +++++++++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h  |  42 ++++++
+ 4 files changed, 289 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 941db6e49d6eaeb03783f7714d433259d887820b..c98193413d2283f0fa7c5cf6a5e4fbe82c928c31 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -665,6 +665,15 @@ struct ath12k_per_peer_tx_stats {
+ 	bool is_ampdu;
+ };
+ 
++struct ath12k_pdev_rssi_offsets {
++	s32 temp_offset;
++	s8 min_nf_dbm;
++	/* Cache the sum here to avoid calculating it every time in hot path
++	 * noise_floor = min_nf_dbm + temp_offset
++	 */
++	s32 noise_floor;
++};
++
+ #define ATH12K_FLUSH_TIMEOUT (5 * HZ)
+ #define ATH12K_VDEV_DELETE_TIMEOUT_HZ (5 * HZ)
+ 
+@@ -814,6 +823,7 @@ struct ath12k {
+ 	unsigned long last_tx_power_update;
+ 
+ 	s8 max_allowed_tx_power;
++	struct ath12k_pdev_rssi_offsets rssi_info;
+ };
+ 
+ struct ath12k_hw {
+@@ -1454,4 +1464,11 @@ static inline struct ath12k_base *ath12k_ag_to_ab(struct ath12k_hw_group *ag,
+ 	return ag->ab[device_id];
+ }
+ 
++static inline s32 ath12k_pdev_get_noise_floor(struct ath12k *ar)
++{
++	lockdep_assert_held(&ar->data_lock);
++
++	return ar->rssi_info.noise_floor;
++}
++
+ #endif /* _CORE_H_ */
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 88b59f3ff87af8b48cb3fafcd364fd9ced4ff197..8ff470749f14545d1c726cc1dc26880e129277fa 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -11898,6 +11898,10 @@ static int ath12k_mac_setup_register(struct ath12k *ar,
+ 	ar->max_num_stations = ath12k_core_get_max_station_per_radio(ar->ab);
+ 	ar->max_num_peers = ath12k_core_get_max_peers_per_radio(ar->ab);
+ 
++	ar->rssi_info.min_nf_dbm = ATH12K_DEFAULT_NOISE_FLOOR;
++	ar->rssi_info.temp_offset = 0;
++	ar->rssi_info.noise_floor = ar->rssi_info.min_nf_dbm + ar->rssi_info.temp_offset;
++
+ 	return 0;
+ }
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 60e2444fe08cefa39ae218d07eb9736d2a0c982b..e07f1e46ba418a0583a0feaa711ada7b6cd193e2 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -8711,6 +8711,229 @@ static void ath12k_wmi_process_tpc_stats(struct ath12k_base *ab,
+ }
+ #endif
+ 
++static int
++ath12k_wmi_rssi_dbm_conv_info_evt_subtlv_parser(struct ath12k_base *ab,
++						u16 tag, u16 len,
++						const void *ptr, void *data)
++{
++	const struct ath12k_wmi_rssi_dbm_conv_temp_info_params *temp_info;
++	const struct ath12k_wmi_rssi_dbm_conv_info_params *param_info;
++	struct ath12k_wmi_rssi_dbm_conv_info_arg *rssi_info = data;
++	struct ath12k_wmi_rssi_dbm_conv_param_arg param_arg;
++	s32 nf_hw_dbm[ATH12K_MAX_NUM_NF_HW_DBM];
++	u8 num_20mhz_segments;
++	s8 min_nf, *nf_ptr;
++	int i, j;
++
++	switch (tag) {
++	case WMI_TAG_RSSI_DBM_CONVERSION_PARAMS_INFO:
++		if (len < sizeof(*param_info)) {
++			ath12k_warn(ab,
++				    "RSSI dbm conv subtlv 0x%x invalid len %d rcvd",
++				    tag, len);
++			return -EINVAL;
++		}
++
++		param_info = ptr;
++
++		param_arg.curr_bw = le32_to_cpu(param_info->curr_bw);
++		param_arg.curr_rx_chainmask = le32_to_cpu(param_info->curr_rx_chainmask);
++
++		/* The received array is actually a 2D byte-array for per chain,
++		 * per 20MHz subband. Convert to 2D byte-array
++		 */
++		nf_ptr = &param_arg.nf_hw_dbm[0][0];
++
++		for (i = 0; i < ATH12K_MAX_NUM_NF_HW_DBM; i++) {
++			nf_hw_dbm[i] = a_sle32_to_cpu(param_info->nf_hw_dbm[i]);
++
++			for (j = 0; j < 4; j++) {
++				*nf_ptr = (nf_hw_dbm[i] >> (j * 8)) & 0xFF;
++				nf_ptr++;
++			}
++		}
++
++		switch (param_arg.curr_bw) {
++		case WMI_CHAN_WIDTH_20:
++			num_20mhz_segments = 1;
++			break;
++		case WMI_CHAN_WIDTH_40:
++			num_20mhz_segments = 2;
++			break;
++		case WMI_CHAN_WIDTH_80:
++			num_20mhz_segments = 4;
++			break;
++		case WMI_CHAN_WIDTH_160:
++			num_20mhz_segments = 8;
++			break;
++		case WMI_CHAN_WIDTH_320:
++			num_20mhz_segments = 16;
++			break;
++		default:
++			ath12k_warn(ab, "Invalid current bandwidth %d in RSSI dbm event",
++				    param_arg.curr_bw);
++			/* In error case, still consider the primary 20 MHz segment since
++			 * that would be much better than instead of dropping the whole
++			 * event
++			 */
++			num_20mhz_segments = 1;
++		}
++
++		min_nf = ATH12K_DEFAULT_NOISE_FLOOR;
++
++		for (i = 0; i < ATH12K_MAX_NUM_ANTENNA; i++) {
++			if (!(param_arg.curr_rx_chainmask & BIT(i)))
++				continue;
++
++			for (j = 0; j < num_20mhz_segments; j++) {
++				if (param_arg.nf_hw_dbm[i][j] < min_nf)
++					min_nf = param_arg.nf_hw_dbm[i][j];
++			}
++		}
++
++		rssi_info->min_nf_dbm = min_nf;
++		rssi_info->nf_dbm_present = true;
++		break;
++	case WMI_TAG_RSSI_DBM_CONVERSION_TEMP_OFFSET_INFO:
++		if (len < sizeof(*temp_info)) {
++			ath12k_warn(ab,
++				    "RSSI dbm conv subtlv 0x%x invalid len %d rcvd",
++				    tag, len);
++			return -EINVAL;
++		}
++
++		temp_info = ptr;
++		rssi_info->temp_offset = a_sle32_to_cpu(temp_info->offset);
++		rssi_info->temp_offset_present = true;
++		break;
++	default:
++		ath12k_dbg(ab, ATH12K_DBG_WMI,
++			   "Unknown subtlv 0x%x in RSSI dbm conversion event\n", tag);
++	}
++
++	return 0;
++}
++
++static int
++ath12k_wmi_rssi_dbm_conv_info_event_parser(struct ath12k_base *ab,
++					   u16 tag, u16 len,
++					   const void *ptr, void *data)
++{
++	int ret = 0;
++
++	switch (tag) {
++	case WMI_TAG_RSSI_DBM_CONVERSION_PARAMS_INFO_FIXED_PARAM:
++		/* Fixed param is already processed*/
++		break;
++	case WMI_TAG_ARRAY_STRUCT:
++		/* len 0 is expected for array of struct when there
++		 * is no content of that type inside that tlv
++		 */
++		if (len == 0)
++			return 0;
++
++		ret = ath12k_wmi_tlv_iter(ab, ptr, len,
++					  ath12k_wmi_rssi_dbm_conv_info_evt_subtlv_parser,
++					  data);
++		break;
++	default:
++		ath12k_dbg(ab, ATH12K_DBG_WMI,
++			   "Received invalid tag 0x%x for RSSI dbm conv info event\n",
++			   tag);
++		break;
++	}
++
++	return ret;
++}
++
++static int
++ath12k_wmi_rssi_dbm_conv_info_process_fixed_param(struct ath12k_base *ab, u8 *ptr,
++						  size_t len, int *pdev_id)
++{
++	struct ath12k_wmi_rssi_dbm_conv_info_fixed_params *fixed_param;
++	const struct wmi_tlv *tlv;
++	u16 tlv_tag;
++
++	if (len < (sizeof(*fixed_param) + TLV_HDR_SIZE)) {
++		ath12k_warn(ab, "invalid RSSI dbm conv event size %zu\n", len);
++		return -EINVAL;
++	}
++
++	tlv = (struct wmi_tlv *)ptr;
++	tlv_tag = le32_get_bits(tlv->header, WMI_TLV_TAG);
++	ptr += sizeof(*tlv);
++
++	if (tlv_tag != WMI_TAG_RSSI_DBM_CONVERSION_PARAMS_INFO_FIXED_PARAM) {
++		ath12k_warn(ab, "RSSI dbm conv event received without fixed param tlv\n");
++		return -EINVAL;
++	}
++
++	fixed_param = (struct ath12k_wmi_rssi_dbm_conv_info_fixed_params *)ptr;
++	*pdev_id = le32_to_cpu(fixed_param->pdev_id);
++
++	return 0;
++}
++
++static void
++ath12k_wmi_update_rssi_offsets(struct ath12k *ar,
++			       struct ath12k_wmi_rssi_dbm_conv_info_arg *rssi_info)
++{
++	struct ath12k_pdev_rssi_offsets *info = &ar->rssi_info;
++
++	lockdep_assert_held(&ar->data_lock);
++
++	if (rssi_info->temp_offset_present)
++		info->temp_offset = rssi_info->temp_offset;
++
++	if (rssi_info->nf_dbm_present)
++		info->min_nf_dbm = rssi_info->min_nf_dbm;
++
++	info->noise_floor = info->min_nf_dbm + info->temp_offset;
++}
++
++static void
++ath12k_wmi_rssi_dbm_conversion_params_info_event(struct ath12k_base *ab,
++						 struct sk_buff *skb)
++{
++	struct ath12k_wmi_rssi_dbm_conv_info_arg rssi_info;
++	struct ath12k *ar;
++	s32 noise_floor;
++	u32 pdev_id;
++	int ret;
++
++	ret = ath12k_wmi_rssi_dbm_conv_info_process_fixed_param(ab, skb->data, skb->len,
++								&pdev_id);
++	if (ret) {
++		ath12k_warn(ab, "failed to parse fixed param in RSSI dbm conv event: %d\n",
++			    ret);
++		return;
++	}
++
++	rcu_read_lock();
++	ar = ath12k_mac_get_ar_by_pdev_id(ab, pdev_id);
++	/* If pdev is not active, ignore the event */
++	if (!ar)
++		goto out_unlock;
++
++	ret = ath12k_wmi_tlv_iter(ab, skb->data, skb->len,
++				  ath12k_wmi_rssi_dbm_conv_info_event_parser,
++				  &rssi_info);
++	if (ret) {
++		ath12k_warn(ab, "unable to parse RSSI dbm conversion event\n");
++		goto out_unlock;
++	}
++
++	spin_lock_bh(&ar->data_lock);
++	ath12k_wmi_update_rssi_offsets(ar, &rssi_info);
++	noise_floor = ath12k_pdev_get_noise_floor(ar);
++	spin_unlock_bh(&ar->data_lock);
++
++	ath12k_dbg(ab, ATH12K_DBG_WMI,
++		   "RSSI noise floor updated, new value is %d dbm\n", noise_floor);
++out_unlock:
++	rcu_read_unlock();
++}
++
+ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+ {
+ 	struct wmi_cmd_hdr *cmd_hdr;
+@@ -8842,6 +9065,9 @@ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+ 	case WMI_11D_NEW_COUNTRY_EVENTID:
+ 		ath12k_reg_11d_new_cc_event(ab, skb);
+ 		break;
++	case WMI_PDEV_RSSI_DBM_CONVERSION_PARAMS_INFO_EVENTID:
++		ath12k_wmi_rssi_dbm_conversion_params_info_event(ab, skb);
++		break;
+ 	/* add Unsupported events (rare) here */
+ 	case WMI_TBTTOFFSET_EXT_UPDATE_EVENTID:
+ 	case WMI_PEER_OPER_MODE_CHANGE_EVENTID:
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index ac18f75e04492b62594acb159e3b43b81bd6c392..f0da8bc76390be85a5ba2f79bbbddf07eb465f73 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -734,6 +734,8 @@ enum wmi_tlv_event_id {
+ 	WMI_SERVICE_READY_EXT2_EVENTID,
+ 	WMI_PDEV_GET_HALPHY_CAL_STATUS_EVENTID =
+ 					WMI_SERVICE_READY_EXT2_EVENTID + 4,
++	WMI_PDEV_RSSI_DBM_CONVERSION_PARAMS_INFO_EVENTID =
++				WMI_PDEV_GET_HALPHY_CAL_STATUS_EVENTID + 5,
+ 	WMI_VDEV_START_RESP_EVENTID = WMI_TLV_CMD(WMI_GRP_VDEV),
+ 	WMI_VDEV_STOPPED_EVENTID,
+ 	WMI_VDEV_INSTALL_KEY_COMPLETE_EVENTID,
+@@ -1991,6 +1993,9 @@ enum wmi_tlv_tag {
+ 	WMI_TAG_PDEV_SET_BIOS_SAR_TABLE_CMD = 0x3D8,
+ 	WMI_TAG_PDEV_SET_BIOS_GEO_TABLE_CMD = 0x3D9,
+ 	WMI_TAG_PDEV_SET_BIOS_INTERFACE_CMD = 0x3FB,
++	WMI_TAG_RSSI_DBM_CONVERSION_PARAMS_INFO_FIXED_PARAM = 0x427,
++	WMI_TAG_RSSI_DBM_CONVERSION_PARAMS_INFO,
++	WMI_TAG_RSSI_DBM_CONVERSION_TEMP_OFFSET_INFO,
+ 	WMI_TAG_HALPHY_CTRL_PATH_CMD_FIXED_PARAM = 0x442,
+ 	WMI_TAG_HALPHY_CTRL_PATH_EVENT_FIXED_PARAM,
+ 	WMI_TAG_MAX
+@@ -5997,6 +6002,43 @@ struct wmi_vdev_set_tpc_power_cmd {
+ 	 */
+ } __packed;
+ 
++#define ATH12K_MAX_20MHZ_SEGMENTS	16
++#define ATH12K_MAX_NUM_ANTENNA		8
++#define ATH12K_MAX_NUM_NF_HW_DBM	32
++
++struct ath12k_wmi_rssi_dbm_conv_info_fixed_params {
++	__le32 pdev_id;
++} __packed;
++
++struct ath12k_wmi_rssi_dbm_conv_info_params {
++	__le32 curr_bw;
++	__le32 curr_rx_chainmask;
++	__le32 xbar_config;
++	a_sle32 xlna_bypass_offset;
++	a_sle32 xlna_bypass_threshold;
++	a_sle32 nf_hw_dbm[ATH12K_MAX_NUM_NF_HW_DBM];
++} __packed;
++
++struct ath12k_wmi_rssi_dbm_conv_temp_info_params {
++	a_sle32 offset;
++} __packed;
++
++struct ath12k_wmi_rssi_dbm_conv_param_arg {
++	u32 curr_bw;
++	u32 curr_rx_chainmask;
++	u32 xbar_config;
++	s32 xlna_bypass_offset;
++	s32 xlna_bypass_threshold;
++	s8 nf_hw_dbm[ATH12K_MAX_NUM_ANTENNA][ATH12K_MAX_20MHZ_SEGMENTS];
++};
++
++struct ath12k_wmi_rssi_dbm_conv_info_arg {
++	bool temp_offset_present;
++	s32 temp_offset;
++	bool nf_dbm_present;
++	s8 min_nf_dbm;
++};
++
+ void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
+ 			     struct ath12k_wmi_resource_config_arg *config);
+ void ath12k_wmi_init_wcn7850(struct ath12k_base *ab,
+
+-- 
+2.34.1
 
 
