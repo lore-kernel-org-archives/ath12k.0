@@ -4,106 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BB01C5AE59
-	for <ath12k@archiver.kernel.org>; Thu, 29 May 2025 05:34:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0AF3C54FB3
+	for <ath12k@archiver.kernel.org>; Thu, 29 May 2025 07:05:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:CC:To:From:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MdY4MB3VAoRavsezOHlmgQ+jh1slO6eTpEX6mGgvIgQ=; b=ru7NbcAyVBffLw5Q34eqvx+3X7
-	Vn9IU4Rq6kPFE2sXgRaGMY+zVr4JfEA2F6I2rps/9mjOfhEWme7yCNL7YTSZ6LH/mYql4bHpbK2KS
-	lMk2+bbCGQFahf5X8fm9mzwE4FIi+KvnrzDk7/Sp0ssw8Qa4qhloC+OKPMBMUvfoO43qBimQtPf1f
-	pDuD06zi92B34m9G6Bf4SyTeUsNdKDEQw97OKGxYuiAFrPWq8+SNwIFZOfEe4sEYF5PH6LnhWWefq
-	5oamReMg0FU3oQmqTQ13JNYw9vLQUB9tUtPmrWHDgbrSXR2XV8pP+MmnWXE0fOt+uU/fFm0Qkhscr
-	fTO9OD6g==;
+	bh=jiQPMLcyp6CcimQJDB0RRZSI8Qyp2370DI7mXdMiwRg=; b=1WqewuW1FjmBCYk19jxisVYbfI
+	/teYB0g4lbp75xixVnWzvhSqBZCve5bvahmZXuaa/pHBN+dcvCN1deomxEFnufAn0cmQeCMiu2dgU
+	+nT9xh8ReohuUxDirzEXt9W6/nSvkfs2gvPFl2nM5IYcd++4dG5dRCyG2F/OPJibrWKW41uEPYMlR
+	rqa4bYsXsFOKqMuFANhPiEMH865b9kwe++AYzM67QUKFXu33PpcnOhiFLq6D1+KWGxb1Zw7KP2nTA
+	VuyczFi7GOGUVdxPOBemuUkE4IyrSNt9bG/ZFxm+H6yhodh5AlbESUzalX9x1p9dodpnfeiSbcAi9
+	8yezSb6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKVun-0000000Ez6f-0Ax9;
-	Thu, 29 May 2025 05:34:53 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uKXK5-0000000F9ov-2dBI;
+	Thu, 29 May 2025 07:05:05 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKVuk-0000000Ez6G-2Jil
+	id 1uKXFF-0000000F9Hj-1nSY
 	for ath12k@lists.infradead.org;
-	Thu, 29 May 2025 05:34:51 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54T39kUQ028914;
-	Thu, 29 May 2025 05:34:49 GMT
+	Thu, 29 May 2025 07:00:06 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54T5Jj3t024456;
+	Thu, 29 May 2025 07:00:03 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	MdY4MB3VAoRavsezOHlmgQ+jh1slO6eTpEX6mGgvIgQ=; b=BcCme99iBoPSlLmT
-	Z/eWsk0XeNJUfiFeN5RcI6fnfc8V15hA16HJhjDr+AhaAY4Wc0zXQ2+6V0mySBk6
-	T5LoALP2mj7Hnr3SgbNVG+0TH5qwhwXGugkNIr3EjZQ8tIHc5Xd6NgcnLaMwM8Rp
-	wzpdLQ7BavLcTnZ0a5SMnJSTWbn1f6itWwv08Eegy07+zoPLyj+GOWGgfLF8hBDB
-	kwMEm/TbsZUIQ0adTt8OGQO7iOnhIvPJAF9a2ZYKB8NGx4Ki+M4LQlYA3kn38ZXl
-	E5ungjd83X0oReKnMe0oKQzHFs3xko6WUNdwh8LBdw+Rg6NSU1w2L7uXK/oDHFz5
-	OB7WDw==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46whuf4xrp-1
+	jiQPMLcyp6CcimQJDB0RRZSI8Qyp2370DI7mXdMiwRg=; b=ltBlCnEzjA9durb/
+	aSf6CjWKvKOFFStZ43j8rKOo5P364wQaNRawnmZSdZ9SBwG1lnMVWTn4+S/hYRRm
+	9CIPoVSr/bzfoi30wJ8rzHb+cWLz7et5yeaiyxygdwUSu+RpzMq4hwa90U/LpIh/
+	HSr0Op8m9u7d4Xio/2Mm1D+mxqiCxEMBSHwpjHteU4piPI9hjlGsrOhiYvRTqjZo
+	4+owlXe7DK/IswMSyLe+PPX1SAhSWDfg3FibXWVuX0fTz2o6EQ8uModwi8wS7DCx
+	Gv0ornrQRTqwMry6sD9mmG791WedWFohOfOjAPbpxBzGG4dzIED/6u6mP/2UpZp2
+	sIHg8g==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46u549mrf2-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 29 May 2025 05:34:48 +0000 (GMT)
+	Thu, 29 May 2025 07:00:03 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54T5YmT5010262
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54T7011K007090
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 29 May 2025 05:34:48 GMT
-Received: from [10.253.34.147] (10.80.80.8) by nalasex01a.na.qualcomm.com
+	Thu, 29 May 2025 07:00:02 GMT
+Received: from [10.50.38.53] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 28 May
- 2025 22:34:47 -0700
-Message-ID: <4023c749-b8ec-4f24-ba83-353a2feb59a9@quicinc.com>
-Date: Thu, 29 May 2025 13:34:43 +0800
+ 2025 23:59:59 -0700
+Message-ID: <17747983-05c4-4666-9422-2eef8426311b@quicinc.com>
+Date: Thu, 29 May 2025 12:29:56 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: WCN7850 problem on Linux kernel 6.15
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-To: Doug Brewer <brewer.doug@gmail.com>
-CC: <ath12k@lists.infradead.org>
-References: <CAG0V13S+c14OD7MCMYaSFzWS2ZnPz2BnPfMo1MY-YZmmHX6qRw@mail.gmail.com>
- <CAG0V13SVbBuNXytgW5_NfxKc5T=E+SGScf+Q_ctS5hAeRYgoQg@mail.gmail.com>
- <9e5fb196-fd6d-4fdf-b970-e239bf1a682b@quicinc.com>
- <CAG0V13RrWkD=Qu74JNNJQNAPA_JC1HORf_cy9s+a60Bm=BsNag@mail.gmail.com>
- <d8d6327b-3f33-4f1f-8369-db516573eb8c@quicinc.com>
- <CAG0V13STa+zO2JJyB8+t8Qr-Y3yOa96EEhUAYHbJhraKz3bj7A@mail.gmail.com>
- <e10d6afe-b7ca-425b-99df-5c178a76fca1@quicinc.com>
- <CAG0V13RcrgZ0O2w4cVD-yq2o029bwiEuhLYGAt0n-80hqaCwdQ@mail.gmail.com>
- <ec205009-30d7-4be3-9909-6e86698a5f9d@quicinc.com>
+Subject: Re: [PATCH V13 4/9] wifi: ath12k: generate rx and tx mcs maps for
+ supported HE mcs
+To: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Muna Sinada <quic_msinada@quicinc.com>,
+        Jeff Johnson <quic_jjohnson@quicinc.com>
+References: <20250418174818.3336510-1-quic_pradeepc@quicinc.com>
+ <20250418174818.3336510-5-quic_pradeepc@quicinc.com>
 Content-Language: en-US
-In-Reply-To: <ec205009-30d7-4be3-9909-6e86698a5f9d@quicinc.com>
+From: Uraj Sasan <quic_usasan@quicinc.com>
+In-Reply-To: <20250418174818.3336510-5-quic_pradeepc@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=OslPyz/t c=1 sm=1 tr=0 ts=6837f1f8 cx=c_pps
+X-Proofpoint-GUID: bM43bygD5GaVgo9Cwj9Uy3KrSKyimlOQ
+X-Authority-Analysis: v=2.4 cv=E9nNpbdl c=1 sm=1 tr=0 ts=683805f3 cx=c_pps
  a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8
- a=COk6AnOGAAAA:8 a=7frjN84EICG_6SkVl7MA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: _kqkJD0S4hXOnsgz42Qu11Lge-2uBMz4
-X-Proofpoint-GUID: _kqkJD0S4hXOnsgz42Qu11Lge-2uBMz4
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI5MDA1MyBTYWx0ZWRfXw733DOFO5hU9
- uOeCvkLp+rfP0oYzSg/nyOohcV7DS126Abn7j9mc/rs74m0Gwapy7CG4XJ9rfeOaH6xEKT/euwD
- fGl/z9tzq3XAHA2x0pJAmv41BjfAyNwoSIIfIGan9HbuM+vWyX4DrLQEIi7PPsknPxMlz/XV1Bk
- kucVxL12vLc7dWbfhGVH9hQlrEQKCkb2CAqSDCJjBBCilKNEKTF8XPaAtjXP68OkOtgCT09q0Zs
- FZM9aM7HED742rOSAD8VDEpKN20ORfLkXlucCpW6wtTcKQlcMTKODyk4Pq3WlJ1ZFOQsBnt1Skv
- xgxSeGxH/HH1iO0z862ss/x3mBkDR4M5RRLSE/FStLSqb8BnMKYEwcAjBStuKfvATaA9z3+wFLH
- LVNMTrwrf15UmjZZLyek0r60OkL5jQMtkWhVPP7zR3TPy2FwkF8AxKkiMWKEO6pOFwV2PkJD
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8
+ a=pEvFgt6wzKLrZD5As20A:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI5MDA2OCBTYWx0ZWRfX+HWc/0jkxClQ
+ BNO1a0v79+3mo1R3KGtEe1BXGSGjU/yfLKalGWhkZpN2tKl6txNBkv1EHqEut/qnmchniDDPE7x
+ 6AjIHmvlaPr/Rrr+YuyXD23LZ3RDRvVtOVH3n3pbROkXEtJM1qnCVpBQSJ8U0BzZwi5yanDYDWR
+ 5DzADq3iDK77Xg0wtL/uTafGWFWdEjwugrwx9s9Em6s74oUzJ6bYHjjMFB/p59vlBjJwfj53FY0
+ ctgqhJ8mZ24x/RdFIDkB6tLcDF1e7y3R31qYaJTzctjLDOnPhl9Wz59SI8E6Hiij8X4v/FLqsT3
+ qrjpCx0ROPT3JLLbk3ZiUmZ/N33jKkLPPMxCxkV5HzmweORyjBQmfozCJURLMoscjRr4Qq79Vqp
+ ubr9+VN/wN0tC+JvG6oWSrTtzzDEQYn965Cpf7zr0F9cLZ/1v8C67ClON1ZEL+lE13FBVvX4
+X-Proofpoint-ORIG-GUID: bM43bygD5GaVgo9Cwj9Uy3KrSKyimlOQ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-29_02,2025-05-27_01,2025-03-28_01
+ definitions=2025-05-29_03,2025-05-27_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 phishscore=0 mlxlogscore=999 adultscore=0 malwarescore=0
- bulkscore=0 priorityscore=1501 clxscore=1015 mlxscore=0 lowpriorityscore=0
- spamscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ mlxscore=0 mlxlogscore=999 spamscore=0 malwarescore=0 priorityscore=1501
+ adultscore=0 phishscore=0 impostorscore=0 lowpriorityscore=0 suspectscore=0
+ clxscore=1011 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
- definitions=main-2505290053
+ definitions=main-2505290068
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250528_223450_599081_68EB3FE4 
-X-CRM114-Status: GOOD (  15.62  )
+X-CRM114-CacheID: sfid-20250529_000005_617942_0BCEEFD1 
+X-CRM114-Status: GOOD (  20.28  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,164 +114,100 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
+On 4/18/2025 11:18 PM, Pradeep Kumar Chitrapu wrote:
+> Generate rx and tx mcs maps in ath12k_mac_set_hemcsmap() based
+> on number of supported tx/rx chains and set them in supported
+> mcs/nss for HE capabilities.
+>
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>
+> Co-developed-by: Muna Sinada <quic_msinada@quicinc.com>
+> Signed-off-by: Muna Sinada <quic_msinada@quicinc.com>
+> Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/mac.c | 40 ++++++++++++++++++++-------
+>  1 file changed, 30 insertions(+), 10 deletions(-)
+>
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 30c7d5770ef6..178c89029922 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -6947,20 +6947,40 @@ static __le16 ath12k_mac_setup_he_6ghz_cap(struct ath12k_pdev_cap *pcap,
+>  	return cpu_to_le16(bcap->he_6ghz_capa);
+>  }
+>  
+> -static void ath12k_mac_set_hemcsmap(struct ath12k_band_cap *band_cap,
+> +static void ath12k_mac_set_hemcsmap(struct ath12k *ar,
+> +				    struct ath12k_pdev_cap *cap,
+>  				    struct ieee80211_sta_he_cap *he_cap)
+>  {
+>  	struct ieee80211_he_mcs_nss_supp *mcs_nss = &he_cap->he_mcs_nss_supp;
+> +	u16 txmcs_map, rxmcs_map;
+> +	u32 i;
+> +
+> +	rxmcs_map = 0;
+> +	txmcs_map = 0;
+> +	for (i = 0; i < 8; i++) {
+> +		if (i < ar->num_tx_chains &&
+> +		    (ar->cfg_tx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
+> +			txmcs_map |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
+> +		else
+> +			txmcs_map |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
+> +
+> +		if (i < ar->num_rx_chains &&
+> +		    (ar->cfg_rx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
 
-On 5/29/2025 1:27 PM, Baochen Qiang wrote:
-> 
-> 
-> On 5/29/2025 8:30 AM, Doug Brewer wrote:
->> On Wed, May 28, 2025 at 10:36 PM Baochen Qiang <quic_bqiang@quicinc.com> wrote:
->>>
->>>
->>>
->>> On 5/28/2025 8:55 PM, Doug Brewer wrote:
->>>> On Wed, May 28, 2025 at 4:02 PM Baochen Qiang <quic_bqiang@quicinc.com> wrote:
->>>>>
->>>>>
->>>>>
->>>>> On 5/28/2025 3:29 PM, Doug Brewer wrote:
->>>>>> On Wed, May 28, 2025 at 1:16 PM Baochen Qiang <quic_bqiang@quicinc.com> wrote:
->>>>>>>
->>>>>>>
->>>>>>>
->>>>>>> On 5/27/2025 11:00 AM, Doug Brewer wrote:
->>>>>>>> On Tue, May 27, 2025 at 9:10 AM Doug Brewer wrote:
->>>>>>>>>
->>>>>>>>> Hello,
->>>>>>>>>
->>>>>>>>> After upgrading to kernel 6.15, my ath12k failed to start:ath12k_pci
->>>>>>>
->>>>>>> Is this mainline kernel or stable kernel?
->>>>>>
->>>>>> It's stable kernel:
->>>>>> https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.tar.xz
->>>>>>
->>>>>>>>> 0000:03:00.0: BAR 0 [mem 0xdf000000-0xdf1fffff 64bit]: assigned
->>>>>>>>> ath12k_pci 0000:03:00.0: enabling device (0000 -> 0002)
->>>>>>>>> ath12k_pci 0000:03:00.0: MSI vectors: 16
->>>>>>>>> ath12k_pci 0000:03:00.0: Hardware name: wcn7850 hw2.0
->>>>>>>>> NET: Registered PF_QIPCRTR protocol family
->>>>>>>>> pcieport 0000:00:1d.0: AER: Multiple Uncorrectable (Non-Fatal) error message rec
->>>>>>>>> eived from 0000:00:1d.0
->>>>>>>>> pcieport 0000:00:1d.0: PCIe Bus Error: severity=Uncorrectable (Non-Fatal), type=
->>>>>>>>> Transaction Layer, (Completer ID)
->>>>>>>>> pcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=00008000/00010000
->>>>>>>>> pcieport 0000:00:1d.0:    [15] CmpltAbrt              (First)
->>>>>>>>> pcieport 0000:00:1d.0: AER:   TLP Header: 0x00000000 0x00000000 0x00000000 0x000
->>>>>>>>> 00000
->>>>>>>
->>>>>>> Strange there is AER error? Is 0000:00:1d.0 upstream port of WLAN target? I guess not
->>>>>>> because 8086:9d18 seems like an Intel device?
->>>>>>
->>>>>> Appending ‘pcie_aspm=off’ to the kernel command line will eliminate that error.
->>>>>>
->>>>>>> Can you share lspci log:
->>>>>>>
->>>>>>> lspci -tv
->>>>>>
->>>>>> -[0000:00]-+-00.0  Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Pro
->>>>>> cessor Host Bridge/DRAM Registers
->>>>>>           +-02.0  Intel Corporation Skylake GT2 [HD Graphics 520]
->>>>>>           +-08.0  Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8
->>>>>> th Gen Core Processor Gaussian Mixture Model
->>>>>>           +-14.0  Intel Corporation Sunrise Point-LP USB 3.0 xHCI Controller
->>>>>>           +-16.0  Intel Corporation Sunrise Point-LP CSME HECI #1
->>>>>>           +-17.0  Intel Corporation Sunrise Point-LP SATA Controller [AHCI mode]
->>>>>>           +-1c.0-[01]--
->>>>>>           +-1c.5-[02]----00.0  Intel Corporation I210 Gigabit Network Connection
->>>>>>           +-1d.0-[03]----00.0  Qualcomm Technologies, Inc WCN785x Wi-Fi 7(802.1
->>>>>> 1be) 320MHz 2x2 [FastConnect 7800]
->>>>>>           +-1e.0  Intel Corporation Sunrise Point-LP Serial IO UART Controller
->>>>>> #0
->>>>>>           +-1e.6  Intel Corporation Sunrise Point-LP Secure Digital IO
->>>>>> Controller
->>>>>>           +-1f.0  Intel Corporation Sunrise Point-LP LPC Controller
->>>>>>           +-1f.2  Intel Corporation Sunrise Point-LP PMC
->>>>>>           +-1f.3  Intel Corporation Sunrise Point-LP HD Audio
->>>>>>           +-1f.4  Intel Corporation Sunrise Point-LP SMBus
->>>>>>           \-1f.6  Intel Corporation Ethernet Connection I219-LM
->>>>>>
->>>>>>
->>>>>>>>> mhi mhi0: Requested to power ON
->>>>>>>>> mhi mhi0: Power on setup success
->>>>>>>>> mhi mhi0: Wait for device to enter SBL or Mission mode
->>>>>>>>> ath12k_pci 0000:03:00.0: AER: can't recover (no error_detected callback)
->>>>>>>>> pcieport 0000:00:1d.0: AER: device recovery failed
->>>>>>>>> ath12k_pci 0000:03:00.0: qmi dma allocation failed (7012352 B type 1),
->>>>>>>>> will try later with small size
->>>>>>>>> ath12k_pci 0000:03:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff
->>>>>>>>> soc_id 0x40170200
->>>>>>>>> ath12k_pci 0000:03:00.0: fw_version 0x1108811c fw_build_timestamp 2025-05-17 00:
->>>>>>>>> 21 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V
->>>>>>>>> 2.0_SILICONZ-3
->>>>>>>>> ath12k_pci 0000:03:00.0: ignore reset dev flags 0x200
->>>>>>>>> ath12k_pci 0000:03:00.0: failed to receive wmi unified ready event: -110
->>>>>>>>> ath12k_pci 0000:03:00.0: failed to start core: -110
->>>>>>>>> failed to send QMI message
->>>>>>>>> ath12k_pci 0000:03:00.0: qmi failed to send mode request, mode: 4, err = -5
->>>>>>>>> ath12k_pci 0000:03:00.0: qmi failed to send wlan mode off
->>>>>>>>
->>>>>>>> Tested on same machine with kernel 6.14.8, ath12k works:
->>>>>>>
->>>>>>> This seem like stable kernel, can you try latest mainline kernel?
->>>>>>>
->>>>>>> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/
->>>>>>>
->>>>>>> or latest ath tree?
->>>>>>>
->>>>>>> https://web.git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/
->>>>>>
->>>>>> OK, will try mailine kernel, thanks.
->>>>>
->>>>> Please also try latest ath tree if issue still seen with mainline kernel.
->>>>
->>>> Both mainline and stable kernels have the same error.
->>>> Switched to ath.git, my ath12k works.
->>>>
->>>> Seems to me that both mainline and stable kernels have fallout.
->>>
->>> Great. So seems some fixes/update not landing in mainline/stable yet.
->>
->> It's not good that ath12k is broken on the stable kernel 6.15.
->> Do you know which fixes haven't landed yet?
->> I'd be happy to help test them, thanks.
-> 
-> Pease pick below series and try
-> 
-> https://lore.kernel.org/linux-wireless/20250409-ath12k-wcn7850-mlo-support-v2-0-3801132ca2c3@quicinc.com/
+I could see the changes are already in external review but wanted to post it internally,
 
-forget to mention that there would be conflicts when applying but they are trivial so
-guess you can handle it.
+Shouldn't this be cap->rx_chain_mask_shift ?
 
-Anyway please let me know if any help you need.
+*"i < ar->num_tx_chains and i < ar->num_rx_chains "*, this is issue since the value of ar->num_tx_chains is not the max supported by the hw always,
+but it gets updated later also via iw phy set antenna command and if user provides any value from 0-15 we will have
+issue. E.g if the value are non continues 1's eg 4 , 5, 6 it will fail and set the VHT/HT/EHT caps to disabled state,
+and only 1,3,7,15 would work correctly.
 
-> 
-> 
->>
->>>>>>>> ath12k_pci 0000:03:00.0: BAR 0 [mem 0xdf000000-0xdf1fffff 64bit]: assigned
->>>>>>>> ath12k_pci 0000:03:00.0: enabling device (0000 -> 0002)
->>>>>>>> ath12k_pci 0000:03:00.0: MSI vectors: 16
->>>>>>>> ath12k_pci 0000:03:00.0: Hardware name: wcn7850 hw2.0
->>>>>>>> pcieport 0000:00:1d.0: AER: Multiple Uncorrectable (Non-Fatal) error message rec
->>>>>>>> eived from 0000:00:1d.0
->>>>>>>> pcieport 0000:00:1d.0: PCIe Bus Error: severity=Uncorrectable (Non-Fatal), type=
->>>>>>>> Transaction Layer, (Completer ID)
->>>>>>>> pcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=00008000/00010000
->>>>>>>> pcieport 0000:00:1d.0:    [15] CmpltAbrt              (First)
->>>>>>>> pcieport 0000:00:1d.0: AER:   TLP Header: 0x00000000 0x00000000
->>>>>>>> 0x00000000 0x00000000
->>>>>>>> mhi mhi0: Requested to power ON
->>>>>>>> mhi mhi0: Power on setup success
->>>>>>>> mhi mhi0: Wait for device to enter SBL or Mission mode
->>>>>>>> ath12k_pci 0000:03:00.0: AER: can't recover (no error_detected callback)
->>>>>>>> pcieport 0000:00:1d.0: AER: device recovery failed
->>>>>>>> ath12k_pci 0000:03:00.0: qmi dma allocation failed (7012352 B type 1),
->>>>>>>> will try later with small size
->>>>>>>> ath12k_pci 0000:03:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff
->>>>>>>> soc_id 0x40170200
->>>>>>>> ath12k_pci 0000:03:00.0: fw_version 0x1108811c fw_build_timestamp 2025-05-17 00:
->>>>>>>> 21 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V
->>>>>>>> 2.0_SILICONZ-3
-> 
-> 
-
+> +			rxmcs_map |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
+> +		else
+> +			rxmcs_map |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
+> +	}
+>  
+> -	mcs_nss->rx_mcs_80 = cpu_to_le16(band_cap->he_mcs & 0xffff);
+> -	mcs_nss->tx_mcs_80 = cpu_to_le16(band_cap->he_mcs & 0xffff);
+> -	mcs_nss->rx_mcs_160 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+> -	mcs_nss->tx_mcs_160 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+> -	mcs_nss->rx_mcs_80p80 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+> -	mcs_nss->tx_mcs_80p80 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+> +	mcs_nss->rx_mcs_80 = cpu_to_le16(rxmcs_map & 0xffff);
+> +	mcs_nss->tx_mcs_80 = cpu_to_le16(txmcs_map & 0xffff);
+> +	mcs_nss->rx_mcs_160 = cpu_to_le16(rxmcs_map & 0xffff);
+> +	mcs_nss->tx_mcs_160 = cpu_to_le16(txmcs_map & 0xffff);
+> +	mcs_nss->rx_mcs_80p80 = cpu_to_le16(rxmcs_map & 0xffff);
+> +	mcs_nss->tx_mcs_80p80 = cpu_to_le16(txmcs_map & 0xffff);
+>  }
+>  
+> -static void ath12k_mac_copy_he_cap(struct ath12k_band_cap *band_cap,
+> +static void ath12k_mac_copy_he_cap(struct ath12k *ar,
+> +				   struct ath12k_band_cap *band_cap,
+>  				   int iftype, u8 num_tx_chains,
+>  				   struct ieee80211_sta_he_cap *he_cap)
+>  {
+> @@ -7004,7 +7024,7 @@ static void ath12k_mac_copy_he_cap(struct ath12k_band_cap *band_cap,
+>  		break;
+>  	}
+>  
+> -	ath12k_mac_set_hemcsmap(band_cap, he_cap);
+> +	ath12k_mac_set_hemcsmap(ar, &ar->pdev->cap, he_cap);
+>  	memset(he_cap->ppe_thres, 0, sizeof(he_cap->ppe_thres));
+>  	if (he_cap_elem->phy_cap_info[6] &
+>  	    IEEE80211_HE_PHY_CAP6_PPE_THRESHOLD_PRESENT)
+> @@ -7194,7 +7214,7 @@ static int ath12k_mac_copy_sband_iftype_data(struct ath12k *ar,
+>  
+>  		data[idx].types_mask = BIT(i);
+>  
+> -		ath12k_mac_copy_he_cap(band_cap, i, ar->num_tx_chains, he_cap);
+> +		ath12k_mac_copy_he_cap(ar, band_cap, i, ar->num_tx_chains, he_cap);
+>  		if (band == NL80211_BAND_6GHZ) {
+>  			data[idx].he_6ghz_capa.capa =
+>  				ath12k_mac_setup_he_6ghz_cap(cap, band_cap);
 
