@@ -4,147 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 329E9C54FB3
-	for <ath12k@archiver.kernel.org>; Sun,  1 Jun 2025 08:54:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D367C54FB3
+	for <ath12k@archiver.kernel.org>; Sun,  1 Jun 2025 19:52:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:Subject:From:To:Date:Message-ID:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=B3jf47nA1FgESkmGu+7Ej3lBs8fHUYkldef1NcPCDZ8=; b=vwfRdbzSaV47GH
-	6eZ4UP/zKygABpfaTUZhFXGrJ30k50Jixq+cIUvisDgN00su+344EFCJH20tV2eKaoBTFrB50NxVy
-	YRDiFGsm5z1Gl2lHeqTrnpJstPANk1PXowYgu4Ity3fl/WAWWRTf+NUXZ3vEJNoj4+YkZCQ9e1wxz
-	GysSIxxHkBzzLpmAGcesYPPCd97MmRw1ayDaSVYOf0Ldl9tM6Hm/eBcnRCWmmodrjRONsjlo++WNd
-	IoN5y3Vh+75PRbFk3r43G8oJ7n9GfJoIYgo3lqPLADm+fi5mjntxVdVfvEh6B9Fdq/5Yb1uGvQP3L
-	L94geeDie/yg8uELQzSA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:To:
+	References:Date:Subject:Mime-Version:Content-Transfer-Encoding:Content-Type:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=MBeIHaDULsbEMOZHOTVRhAiulkv2aETfSRrssxGFRk4=; b=lMTXJA74NcHb6KycX8yNxs7Bvc
+	dPpZaxnLx+GICfG85na7WtaFdVbSglgo/1kCkI0QpuaXKbZsTRHy5Q7Y8EbK4zFqVKkur9DbY3LLD
+	CUe/Irt3pKSTiA/xytqbW9/u1ZkQFQsINn4/KgJWZq3UlRFroIzxrDqVrdHv/u/1600DqfeXpl6US
+	e/LQdAruAbgyi6YCihxCksTBohPTPnw/FNGewogpg/vQ0TiM6OC7nhHthfQQTXq5jWjbFd9VtTw9K
+	owJ1Uqa7S27QF9a+TAoOyWMqDjHbGJO76ovV1wXsCZN8p+iYhNuFDsbSFGQPuT0xqoU0CmmxxXl7/
+	nUVh7Qnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uLeSE-000000054Z0-3QxF;
-	Sun, 01 Jun 2025 08:54:06 +0000
-Received: from mail-vi1eur05olkn2080d.outbound.protection.outlook.com ([2a01:111:f403:2e13::80d] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1uLojK-00000005uUV-2ozz;
+	Sun, 01 Jun 2025 19:52:26 +0000
+Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uLeSB-000000054Yc-31ik
+	id 1uLojH-00000005uUA-43ti
 	for ath12k@lists.infradead.org;
-	Sun, 01 Jun 2025 08:54:04 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=TsSLCQ63uCRMtzQp4YHzsucP8tBgmv81hZCLTnoLBbAxjszwH2xZjwEmXLOS8Aem0AOUkjAjL0DaV8tBG72R5PEWT9ZwKp+V76DVi5+EwhPwSlZwMMU3kIMHcUZ3YMRHY3Pz3MR30JId4m5cV2hCC49gW0GppU9PdP3VMaeY9b1YxU5UohvInvE4htfvfO7aJDmPS7NuOEdXcEc1hAy+lIsl7GOuXjf0kx9r4SyEQmwUqOgH/MKC2M2AMZgJNX0L3cGxgp14NlK8Iw+4qx44Pk9xjkTqfS3lGjmOkUz7GnGxBEXnbVvyXZiEGCOgHyOmT5gLyylNJqKJ0waBbkURLw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=B3jf47nA1FgESkmGu+7Ej3lBs8fHUYkldef1NcPCDZ8=;
- b=CneRaCiS81sbPU0eTK1DLZjDLQkB/F8GZaR8+Wot6KEpgw/w0b6hGg9PsYu29UWkEAUPjJEq7DKpplnnRQN1mHcVGH4fzoJIB27Y17M8Q1jXEURRORydLLEB+XHPBZFmLaxn6IQ3YLrDd5D6oqXZ8VOBEYphbCwzg4aZcPKotxr4mc/ezGbFTJ9fpng9ImBvwC764dGQGI6YO8FdhuFdNpLdI8rDu2OUV12NK3+2f/Nf/FDuXck4MVe8kP7EMQM1vJ520ATCGx9uwyei443WHz0pP8UG9gdgYZXZpQzsKgvC34vzKcO+CEpWSqDe6i1XhdQkBzaXLt8v4Tox1P3kXg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=LIVE.FR; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=B3jf47nA1FgESkmGu+7Ej3lBs8fHUYkldef1NcPCDZ8=;
- b=GEf1kztkVyE8fgq5F9BU3im82Tqk3HcUdLGjIqhB+/CMV8z5wqZf+3phbANZ4e1iRwH2IXRrIFttqRUkeCWM3vFOV2t4XCyZSd7TnIs7ro6y/X6YxV2nmgERq5albTcqXpOBcp8pfgIzlWgooLN/uMDMQHA7G6IH0ojlC6dVpUuvJXRUoOne0GVrdiUYsgjhCVZDf/12j4z0iod2Grclk982Q92iImEvVBn++z+iit+WZy4G4CfWISVMHC+pKyDin9yrtTkm4k4U4g/mVI/xFlsLWAGBmJwO+tFkphyAI7tISsACiDgpugOpUP24MAftxk7PIqXGYcx06oWAll1YCQ==
-Received: from AS8P190MB1205.EURP190.PROD.OUTLOOK.COM (2603:10a6:20b:2eb::9)
- by AS8P190MB1255.EURP190.PROD.OUTLOOK.COM (2603:10a6:20b:2e5::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.36; Sun, 1 Jun
- 2025 08:53:55 +0000
-Received: from AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
- ([fe80::ac68:f0d0:92de:6d99]) by AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
- ([fe80::ac68:f0d0:92de:6d99%3]) with mapi id 15.20.8769.037; Sun, 1 Jun 2025
- 08:53:55 +0000
-Message-ID: <AS8P190MB120575BBB25FCE697CD7D4988763A@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
-Date: Sun, 1 Jun 2025 10:53:46 +0200
-User-Agent: Thunderbird Daily
+	Sun, 01 Jun 2025 19:52:25 +0000
+Received: by mail-ed1-x534.google.com with SMTP id 4fb4d7f45d1cf-604b9c53f6fso7417955a12.2
+        for <ath12k@lists.infradead.org>; Sun, 01 Jun 2025 12:52:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1748807542; x=1749412342; darn=lists.infradead.org;
+        h=message-id:in-reply-to:to:references:date:subject:mime-version
+         :content-transfer-encoding:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=MBeIHaDULsbEMOZHOTVRhAiulkv2aETfSRrssxGFRk4=;
+        b=NH3H9rqFG/MM2MpXMntkyaf8mh4q+FDgDcTHtACo1lpySO1ssWNWdeJnhcU6OTTNNu
+         SJqDY69SLjzYftWR99fAhLf0PDtRg517132tFsX3+0VEh/BQt6IXx7odHas9aDwa1kTt
+         YTuD76x5hPWkBLl36Ap33as/XNhNoJmpky5tQ8zehD6t6JxIRJjNXTFofUP1lJ1kzPF1
+         LolIMm8YdGuFRxd0MLbNK+6Ya2ScZvsLLxZDQSWJxf7AoCy8FRed0ZGiR0Z0SDzruqgT
+         B8XgdC6wXhr6EaazjJy3rxH8zNfRCWCQDFXHtuA+NOjzjMJkdwy+943obt28oPfVB6/k
+         G/Sw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1748807542; x=1749412342;
+        h=message-id:in-reply-to:to:references:date:subject:mime-version
+         :content-transfer-encoding:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=MBeIHaDULsbEMOZHOTVRhAiulkv2aETfSRrssxGFRk4=;
+        b=JInsOFEf0M5+HXkrJYDixYDHwJB5Bjz/FMntMoQsIhq+tk6UT7rvUXaBDTHKIgExWV
+         BIGNf2ukQFOvVXAE6PwDqkxNd8qnKbM0OGpGCU4Ld3C91q4hTrNJkj5IG/i3zeuAB8pR
+         jbGeweah5uu7IOnJ3Odih4OiHqgd26VIbS6yqIaMsQ9jAWuGbF/kDHUsgA2LZUdu5Gyf
+         /Q8ZevwjgoZ/CMWaRNLTmBHl01uFUsqg44vIeyIjptoMPA4S/Cjhccq5WLf7BfZfWw5h
+         wblXtXJnOAjHSEINvpqvIELdZ6gcrCCIus5cWiSrxQ05bXUmfGSkHTM2M+cdTniH3fp3
+         6BRg==
+X-Gm-Message-State: AOJu0Yzb3lEXLkVjrbeA/anSw+k84zTgd2ivCR39ZJ6cpPsTUsc11X5O
+	pX0lZffl6cNw0FPqNCD9TKkqNrc7OsmsYJi1022RKX3H1vyHql7IobReu+8rdw==
+X-Gm-Gg: ASbGncu/ysdQdNDgCNf/btjWZOKDlaqipwTmRP6MDhAHDFhao0Y4zUYEi6XLknsn6fT
+	cJkgMXraIP+okuv8tKyGdmLk4iLnbeOOvzjud6fC0HI2a0lhhTZ77tZFEZCn9NUG+Wv5VntVcT8
+	C/w/WP+WJmUq1mCJeOh0DwXktnhvpmzyKGBC6R5yJkIxAn9ZZhlVRWe6mOwtGjDb3ZGXHZiH42g
+	bEBRpNarKryYE4Dt8/y7Y+rA+7wCNwTtmo7ovnTF5swQuL08g8ntXbWYsM2bbZDM9azltRx4hsr
+	tQxWYPnqF/2JIcDlqO7YuV5W5FhkCpvoIwzybpjrhJbTlw1PkDHIgWZzdfiG2iZZLJnUwqRsZ0G
+	tRoIiAAmthSM+lq335Fw4xFNoLYH0IvBn5EK0bpDrPFHHqNtctec=
+X-Google-Smtp-Source: AGHT+IFTIvElD5xcdISgc8x4S25MN4+Svp4S5TEVKDxF6ah4QAjJUiv+7oCUc/nZ7oaT3czA4gekEg==
+X-Received: by 2002:a17:907:3cc9:b0:ad8:a115:d53f with SMTP id a640c23a62f3a-adb323054edmr1053671466b.40.1748807541582;
+        Sun, 01 Jun 2025 12:52:21 -0700 (PDT)
+Received: from smtpclient.apple (142-252-142-46.pool.kielnet.net. [46.142.252.142])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ada5d7febffsm685329966b.2.2025.06.01.12.52.20
+        for <ath12k@lists.infradead.org>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 01 Jun 2025 12:52:20 -0700 (PDT)
+From: Benjamin Eggerstedt <benjamin.eggerstedt@gmail.com>
+Content-Type: text/plain;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.600.51.1.1\))
+Subject: Re: wifi: ath12k: Attempting MLO with main (6.15.rc7) for NCM865 /
+ WCN7850 in station mode leads to crash/backtrace
+Date: Sun, 1 Jun 2025 21:52:09 +0200
+References: <BF352E86-5EC1-4FB0-8901-B62B6E400489@gmail.com>
 To: ath12k@lists.infradead.org
-Content-Language: en-US
-From: g <gregoire.s93@live.fr>
-Subject: High CPU usage from NetworkManager with QCNCM865 (WCN7850)
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
-X-ClientProxiedBy: PA7P264CA0236.FRAP264.PROD.OUTLOOK.COM
- (2603:10a6:102:372::7) To AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
- (2603:10a6:20b:2eb::9)
-X-Microsoft-Original-Message-ID: <211c66ef-6054-467c-ae05-444c941927e0@live.fr>
-MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS8P190MB1205:EE_|AS8P190MB1255:EE_
-X-MS-Office365-Filtering-Correlation-Id: bb076d67-bf6e-419f-6bd3-08dda0e9d594
-X-Microsoft-Antispam: BCL:0;ARA:14566002|461199028|6090799003|15080799009|19110799006|7092599006|8022599003|12121999007|8060799009|5072599009|1602099012|4302099013|440099028|3412199025|10035399007;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?L2VHSDN1eGwvYi9HODNxNlNDOWV6dE9NelpLempPV0hTdis3NlNsdE9Ca2dM?=
- =?utf-8?B?Tm1pT3laRUJiRWV2aWhORndqZ1lHek4wazRxYVFibVJNbnpFSkczQ2daU01R?=
- =?utf-8?B?VGhBczFmWnE2THhqR1cvS1pPMHdqSi9CNzhhc3ZVeG5UYXR5a2tWM2p1eWxR?=
- =?utf-8?B?Z05mbThJL2hNWVpvWGJGSUdVcUs3b3NZVHl2djJQTkdPVGk1SU9OL0xFOUJk?=
- =?utf-8?B?SUFRS1lJdzZHMlZqVTliRjc2Nzd3UXpuSG1kTzJqQnM4TW1mRzBhMERTUk8x?=
- =?utf-8?B?N0tJQUIrMVBnSjlWYzVHQS9XM3Q4UmNBU0YyaER3bWZqdDR4T3M4U2tHTHBH?=
- =?utf-8?B?Z0dDTURvbjNjUWJuaEo5TWZaenVEekZrOG1zODVhY1dxMG1LYlJLRWhFRHFU?=
- =?utf-8?B?NmRhVmJucE8yL2hBUmtRNkxWVGFrRk1hY1RNM0lvOWs3bEhuQ3pIM2p4T3RN?=
- =?utf-8?B?V0tlWm5OTC9VT1ZBamx3aWg1WGJDKzEvYnNDSFB1Tk9VVmRmWlBGWHN6cDRx?=
- =?utf-8?B?bHZmZWJnRWpKcXpmS1NlTTlUZTFDSEMyQ0dab0NYRmdDRVRpUms2Mmo0RWZm?=
- =?utf-8?B?aGo4OGZ3d2MrUUU1dk1uQ1QrZUJTeFVsY0hndmM2NXY4dURsSmc3UGpSMkFW?=
- =?utf-8?B?bHMyczZuTVM0eHdmWVo3Q0NGZ2lvMlZsZjlFRXk0RzNJRVNBSlVOcjVYZkZM?=
- =?utf-8?B?YUNPaE1WaXVYZW9XR3dqSzRiTXpNcTFHeHlLZExIWkluc0NtVHlXbGd1YTY0?=
- =?utf-8?B?UnZFWi9LN3cwNUlsN1N5RkIvU2VqcFNpamNJd2lhejNocXNPRk1oWS9yRjcz?=
- =?utf-8?B?MlVxTWVYRVNwRTZqSjVBWXo3cVhoVWR0RHdTWTdWMFlHanJRMHRUaVVMQWNl?=
- =?utf-8?B?NXUyWDI5T1RwVUF4djlGRjd4Q0RyU21sa1g2NVlOMUdONHZ0Mm9qdVhwSjhs?=
- =?utf-8?B?Vk9VWFQ2Yis3QVJkajR6V3JxNWhIMVREL0d2aTZPa1Fqb1hMZzNZaDJxZlFD?=
- =?utf-8?B?Zi9pV1N2R2o4QUJtNUtCZU9jZEM0WkUyZGhFYUFKVVNOTjNtK1NsVk80YUFx?=
- =?utf-8?B?NWJhV1JVVXp3T2kzM25GN1o1bW4zQmtsbnhvN21QOTR2VVZBVUZ4NGE3WHRk?=
- =?utf-8?B?bktIaTFHZ2NlT1M1Nk9qQ0VFMzgxQzB2NU5BeXd0dTJkenc5aE0rWGtEbmU1?=
- =?utf-8?B?MnJqcXd2TTRCalp2Mkx4TExxKy9HV3ZMN2tpRU8wbkxubEMvdWppS0VmbER6?=
- =?utf-8?B?VjlQTnl2Um52N1FBZWNaVWhmYkpaSTI2Mk5oNEhWRUdoMjFVTHd1WlJiQnhn?=
- =?utf-8?B?dXpBaEZkKzgyWXhQYzdwVk5hczdVZjd1V21XaVNVd2hGWmIyUThCK0lMeXRH?=
- =?utf-8?B?a09zbEZ1WkJPNHplU2dxVmkvWWR0Mnh6MGtyTEdPb2RXclZYcXhWZE9qK3Rn?=
- =?utf-8?B?T0YvZkN1bktMVHpuR0FvSDBDdk5saEhyeW5tamlpUGpuMUthTUlLckxQbzZi?=
- =?utf-8?B?SlB0SFdsYjl4WVRNV2VQNDY4WGVGbmgvd2NNUkJLQ1c1UllQUHVPeUtGbENP?=
- =?utf-8?B?VExFVllVRTRmQWx5cGJENVNhTWtqaEllQVpnb2RwSzBBMWhaVnNySjkxRG02?=
- =?utf-8?B?OWxVYmRnM01mN3hxRDNGdW1tTXdKQlBOR3hLNHk5ZTA3WjJWY0U5WDMwWFQw?=
- =?utf-8?B?K210T0NGck5pU0h6c21JT0dsaWxMWU1kOHZYRTRtamJxSmxscFp5cjgvL1Rx?=
- =?utf-8?B?Y2pNTDVsckVQQmhUTzZtcFBJY3NpeEJhdWgwTUVDZ2tIOXluS0lzcnRqaFZK?=
- =?utf-8?B?bnlHeCtTdFExVWI2MjY3RlZ5Q2loMnI5MGJDSVJnZmttazFzMUNjbjY0NFNX?=
- =?utf-8?Q?HjdrPh3Ut0ImJ?=
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ZldEYXZBN1hzYW9SMEdxVitrRGtoNlBaNDRlS0lLaDV4bmMrcXBlcUExZVFP?=
- =?utf-8?B?NHBBZ2xhS2R6azZIdjd5ZnFnSTZJbHpWeVlOekJTYzFXSG1nT1dBSFJUcjlD?=
- =?utf-8?B?Y1gzNGp3R1Eyc2pGWElCYjRsbFVxVmtrSC8vOVNVekQvWkZuZENEckZqYzJG?=
- =?utf-8?B?M2FkcnYvMm9HelB6NUdUVHZoM1ZRWEFlS1FQUklrN0dRY08vUkMvcjNOSDJh?=
- =?utf-8?B?NitzNzA2K1RiNzc0YlZoNjRkcVVoNkpubUdmaTFxa1lHd09BeG9PZW1Idngx?=
- =?utf-8?B?Mlhxc2pDM3k1Qmh3Q0pHbHo2RlZGRTRsTFgvSW9od2FvV0lzdHRrK0ViSkJ4?=
- =?utf-8?B?WVhUNVlEVHJkTmZ1N3dhQW9IeDNaVzFMMjB6Y0hkWm9mdTJ2YnNSY0ZuSEtu?=
- =?utf-8?B?U2RqSjR3QllpV0RmZzJNT05VRVduUCthWjhQSlFrZXpZMmtGQ0VTNTFaaEI4?=
- =?utf-8?B?Q1dvaFlOanVyOXBHMkZCUUFhTXIrcE9lNW56cXNjUWdRWGVveGNNM0p2R1Vq?=
- =?utf-8?B?WUx2c1MrSjNqcXRQTGlhWVhhTjNLaHRmUEVmU1pXUE9OVG54SVI4aE5hYWVK?=
- =?utf-8?B?M3NDSDhTK2V1MWZFTTRXMmhmcXR6QU4vWXU3MXBCTDZhZTlTQVRzdXM0UkZh?=
- =?utf-8?B?SWhOWkpkWjJ0cWZJMlZxWk54ajJPUmtDSmh0bDdsNlV3a1dCaFRaL0drVmxM?=
- =?utf-8?B?SkhMNzFIZ05sOG02dG9SalI1MXVodUJISEZRVWliMEQrQzJEL3FiZndzT0R2?=
- =?utf-8?B?QWNUbC9KM1BzUlN3Z3ZuQnY4MmZESTBsK0kzTFZSRzZrUE1iSUhUaXQ5V2NG?=
- =?utf-8?B?YUcyc25YSU13NlBSWFpBbnIzaFJYdTljZytiQWMweUFWeENFR21xYjVSMHlH?=
- =?utf-8?B?TWsxditrclRUYk96UkhxRExIVC8yejZuWURydGpxSUViUFFXcW56ZlVKczdP?=
- =?utf-8?B?RzcrTEVFMTl6Y2VNUE5ENlcyQ1p3UFpJdkpQZzRKbEZxVTZLUDNsL2ZleDNV?=
- =?utf-8?B?SUE5NVBkSUJtaVlRbUFPaGRabkxmRkFJZ01KdWFvRnhpQysvUjZBYmtoemxZ?=
- =?utf-8?B?RmdRZWN0NS9iYjcxVGNQTmRHaE9GeVZpN0owZHpGR09tQzZwQ2hIQnY3K3B2?=
- =?utf-8?B?RHJOM3RNeTBPelNoQi9yL0xua1cycUtNMGVmcmFVMnByb0U0cTU3S2VEM3NO?=
- =?utf-8?B?QWtIOTFKRFo2R0dIOEVQY1RacTlzNVJnUXFNRG9KYmVPQ3BiRGJRM1lETzNZ?=
- =?utf-8?B?R00wVktRZ25tR0drZ203K2Q4T1NoVzdacVNKcW9aMzlPdGZZTmV2VEZuNkZI?=
- =?utf-8?B?b25TTTBUcjNnWEZKOE1OMEhBN1VzMXU0Tnk0MGxudEM1TVJDeUpDTVJOTEhm?=
- =?utf-8?B?Mkp1RThZNmF0WE9kRkt1Y0p5dVlORUIzdnRlUlNxQ0duSVArcE9iUE1iSEhS?=
- =?utf-8?B?WHdtMkRHZ0JNYndGemdqck5RVGxwS0k4S0RadmxWVlJ0N2YzYmg2UytzYXY3?=
- =?utf-8?B?OVl2YXVrNGU4cklpczU2QnpNMmZSZUllZjVEUVlTOXVRTlI4UGw2cUxwZ2dr?=
- =?utf-8?B?MldYUkl2OGF0SjdlSU9IMytLNllsaytEVFNtSTZNTFFUcVk5MFpGOEhjWmth?=
- =?utf-8?B?NHhqaEhpZzR4L0dZT3pmdkxzM0ZkUUpnc01sbEJhMXJPN1RtQy92c2xnRXlJ?=
- =?utf-8?B?TjFZRndWVzhkUEhiU3I2TEplRitPWncvcW5pbUtJRWhDSk1Xb044eVcrWElV?=
- =?utf-8?Q?z6LMDVY1o0cdb/Gfo8=3D?=
-X-OriginatorOrg: sct-15-20-8534-20-msonline-outlook-e6540.templateTenant
-X-MS-Exchange-CrossTenant-Network-Message-Id: bb076d67-bf6e-419f-6bd3-08dda0e9d594
-X-MS-Exchange-CrossTenant-AuthSource: AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Jun 2025 08:53:55.3525
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8P190MB1255
+In-Reply-To: <BF352E86-5EC1-4FB0-8901-B62B6E400489@gmail.com>
+Message-Id: <78C6533F-E0F0-4961-9FC6-089F76BB59F1@gmail.com>
+X-Mailer: Apple Mail (2.3826.600.51.1.1)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250601_015403_779009_0A6AD7A8 
-X-CRM114-Status: UNSURE (   7.36  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250601_125224_019791_9946607D 
+X-CRM114-Status: GOOD (  14.12  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,96 +99,271 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi, I'm experiencing a reproducible issue with the ath12k driver when 
-using a QCNCM865 Wi-Fi card based on the WCN7850 chipset.
+Hi,
 
-After boot, everything works normally, NetworkManager shows 0-3% CPU 
-usage. However, if I toggle Wi-Fi off and on (using rfkill block/unblock 
-wlan), NetworkManager begins consuming 100% of a CPU core and stays at 
-full usage indefinitely, until Wi-Fi is turned off again. This is fully 
-reproducible on my system.
+I have the following update for you:
 
-There are no relevant logs in `journalctl -u NetworkManager`, and the 
-memory usage remains low. Only one thread in NetworkManager is affected. 
-Disabling Wi-Fi immediately returns CPU usage to 0%.
+a)
+- The vanilla v6.15 kernel works with the patch provided by Doug Brewer =
+here: https://0x0.st/s/yfQHTDVDbzo7M5b6dHswjg/83Xm.15 via =
+https://lore.kernel.org/ath12k/CAG0V13QTtGLvqELd90WzV1FF0jgSmA92nkrYR6KL=3D=
+L1w3mAEYQ@mail.gmail.com/T/#mcc446a505a73a095197bfe8984cde9b875f016ec=20
+- The vanilla v6.15 kernel gets a MLO connection but lost the ability to =
+see 6 GHz, so MLO is limited to band 2.4 + 5 GHz
+- The vanilla v6.15 kernel suffers the same PCI errors as the ath-kernel =
+(but it doesn=E2=80=99t lock-up/freeze, when connecting to the wireless)
 
-Here is my system info:
+Jun 01 20:48:14 debian kernel: ath12k_pci 0000:03:00.0: BAR 0 [mem =
+0xf7000000-0xf71fffff 64bit]: assigned
+Jun 01 20:48:14 debian kernel: ath12k_pci 0000:03:00.0: enabling device =
+(0000 -> 0002)
+Jun 01 20:48:14 debian kernel: ath12k_pci 0000:03:00.0: MSI vectors: 16
+Jun 01 20:48:14 debian kernel: ath12k_pci 0000:03:00.0: Hardware name: =
+wcn7850 hw2.0
+Jun 01 20:48:14 debian kernel: NET: Registered PF_QIPCRTR protocol =
+family
+Jun 01 20:48:14 debian kernel: pcieport 0000:00:1b.4: AER: Multiple =
+Uncorrectable (Non-Fatal) error message received from 0000:00:1b.4
+Jun 01 20:48:14 debian kernel: pcieport 0000:00:1b.4: PCIe Bus Error: =
+severity=3DUncorrectable (Non-Fatal), type=3DTransaction Layer, =
+(Completer ID)
+Jun 01 20:48:14 debian kernel: pcieport 0000:00:1b.4:   device =
+[8086:a2eb] error status/mask=3D00008000/00010000
+Jun 01 20:48:14 debian kernel: pcieport 0000:00:1b.4:    [15] CmpltAbrt  =
+            (First)
+Jun 01 20:48:14 debian kernel: pcieport 0000:00:1b.4: AER:   TLP Header: =
+0x00000000 0x00000000 0x00000000 0x00000000
+Jun 01 20:48:14 debian kernel: mhi mhi0: Requested to power ON
+Jun 01 20:48:14 debian kernel: mhi mhi0: Power on setup success
+Jun 01 20:48:14 debian kernel: mhi mhi0: Wait for device to enter SBL or =
+Mission mode
+...
+Jun 01 20:48:14 debian kernel: ath12k_pci 0000:03:00.0: AER: can't =
+recover (no error_detected callback)
+Jun 01 20:48:14 debian kernel: pcieport 0000:00:1b.4: AER: device =
+recovery failed
+Jun 01 20:48:14 debian kernel: ath12k_pci 0000:03:00.0: qmi dma =
+allocation failed (7012352 B type 1), will try later with small size
+Jun 01 20:48:14 debian kernel: ath12k_pci 0000:03:00.0: chip_id 0x2 =
+chip_family 0x4 board_id 0xff soc_id 0x40170200
+Jun 01 20:48:14 debian kernel: ath12k_pci 0000:03:00.0: fw_version =
+0x1108811c fw_build_timestamp 2025-05-17 00:21 fw_build_id =
+QC_IMAGE_VERSION_STRING=3DWLAN.HMT.1.1.c5-00284.1-QCAHMTS>
+Jun 01 20:48:14 debian kernel: r8169 0000:06:00.0: Unable to load =
+firmware rtl_nic/rtl8168h-2.fw (-2)
+Jun 01 20:48:15 debian kernel: Generic FE-GE Realtek PHY r8169-0-600:00: =
+attached PHY driver (mii_bus:phy_addr=3Dr8169-0-600:00, irq=3DMAC)
+Jun 01 20:48:15 debian kernel: r8169 0000:06:00.0 enp6s0: Link is Down
+Jun 01 20:48:15 debian kernel: ath12k_pci 0000:03:00.0 wlp3s0: renamed =
+from wlan0
+...
+Jun 01 20:52:18 debian kernel: wlp3s0: authenticate with =
+88:3c:93:01:ce:40 (local address=3Df6:05:44:0b:76:f7)
+Jun 01 20:52:18 debian kernel: wlp3s0: send auth to 88:3c:93:01:ce:40 =
+(try 1/3)
+Jun 01 20:52:18 debian kernel: wlp3s0: authenticate with =
+88:3c:93:01:ce:40 (local address=3Df6:05:44:0b:76:f7)
+Jun 01 20:52:18 debian kernel: wlp3s0: send auth to 88:3c:93:01:ce:40 =
+(try 1/3)
+Jun 01 20:52:18 debian kernel: wlp3s0: authenticated
+Jun 01 20:52:18 debian kernel: wlp3s0: associate with 88:3c:93:01:ce:40 =
+(try 1/3)
+Jun 01 20:52:18 debian kernel: wlp3s0: RX AssocResp from =
+88:3c:93:01:ce:40 (capab=3D0x511 status=3D0 aid=3D4)
+Jun 01 20:52:18 debian kernel: wlp3s0: [link 0] local address =
+ea:30:57:8e:3e:0e, AP link address 88:3c:93:01:ce:40
+Jun 01 20:52:18 debian kernel: wlp3s0: [link 1] local address =
+f6:05:44:0b:76:f7, AP link address 88:3c:93:01:ce:50 (assoc)
+Jun 01 20:52:18 debian kernel: wlp3s0: associated
+Jun 01 20:52:18 debian kernel: wlp3s0: Limiting TX power to 30 (30 - 0) =
+dBm as advertised by 88:3c:93:01:ce:50
+Jun 01 20:53:41 debian kernel: wlp3s0: deauthenticating from =
+88:3c:93:01:ce:40 by local choice (Reason: 3=3DDEAUTH_LEAVING)
+Jun 01 20:56:06 debian kernel: wlp3s0: authenticate with =
+88:3c:93:01:ce:40 (local address=3D4e:48:ef:30:ed:17)
+Jun 01 20:56:06 debian kernel: wlp3s0: send auth to 88:3c:93:01:ce:40 =
+(try 1/3)
+Jun 01 20:56:06 debian kernel: wlp3s0: authenticate with =
+88:3c:93:01:ce:40 (local address=3D4e:48:ef:30:ed:17)
+Jun 01 20:56:06 debian kernel: wlp3s0: send auth to 88:3c:93:01:ce:40 =
+(try 1/3)
+Jun 01 20:56:06 debian kernel: wlp3s0: authenticated
+Jun 01 20:56:06 debian kernel: wlp3s0: associate with 88:3c:93:01:ce:40 =
+(try 1/3)
+Jun 01 20:56:06 debian kernel: wlp3s0: RX AssocResp from =
+88:3c:93:01:ce:40 (capab=3D0x511 status=3D0 aid=3D4)
+Jun 01 20:56:06 debian kernel: wlp3s0: [link 0] local address =
+ca:a7:b2:c3:ce:ee, AP link address 88:3c:93:01:ce:40
+Jun 01 20:56:06 debian kernel: wlp3s0: [link 1] local address =
+4e:48:ef:30:ed:17, AP link address 88:3c:93:01:ce:50 (assoc)
+Jun 01 20:56:06 debian kernel: wlp3s0: associated
+Jun 01 20:56:06 debian kernel: wlp3s0: Limiting TX power to 30 (30 - 0) =
+dBm as advertised by 88:3c:93:01:ce:50
+Jun 01 21:23:43 debian kernel: wlp3s0: deauthenticating from =
+88:3c:93:01:ce:40 by local choice (Reason: 3=3DDEAUTH_LEAVING)
+Jun 01 21:23:43 debian kernel: ath12k_pci 0000:03:00.0: failed to send =
+HAL_REO_CMD_FLUSH_CACHE, tid 14 (-105)
+Jun 01 21:23:43 debian kernel: ath12k_pci 0000:03:00.0: failed to send =
+HAL_REO_CMD_FLUSH_CACHE cmd, tid 16 (-105)
 
-- Wi-Fi card: QCNCM865 (WCN7850)
-- Distro: Arch Linux
-- Kernel: linux 6.16 latest commit from torvald's tree : 
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7d4e49a77d9930c69751b9192448fda6ff9100f1
-- Firmware version: 
-WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3 (I also tried 
-the old firmware, same issue)
+$ lspci -tv
+-[0000:00]-+-00.0  Intel Corporation 8th Gen Core 4-core Desktop =
+Processor Host Bridge/DRAM Registers [Coffee Lake S]
+           +-02.0  Intel Corporation CoffeeLake-S GT2 [UHD Graphics 630]
+           +-08.0  Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / =
+6th/7th/8th Gen Core Processor Gaussian Mixture Model
+           +-14.0  Intel Corporation 200 Series/Z370 Chipset Family USB =
+3.0 xHCI Controller
+           +-16.0  Intel Corporation 200 Series PCH CSME HECI #1
+           +-17.0  Intel Corporation 200 Series PCH SATA controller =
+[AHCI mode]
+           +-1b.0-[01]--
+           +-1b.3-[02]--
+           +-1b.4-[03]----00.0  Qualcomm Technologies, Inc WCN785x Wi-Fi =
+7(802.11be) 320MHz 2x2 [FastConnect 7800]
+           +-1c.0-[04]--
+           +-1c.3-[05]--
+           +-1c.4-[06]----00.0  Realtek Semiconductor Co., Ltd. =
+RTL8111/8168/8211/8411 PCI Express Gigabit Ethernet Controller
+           +-1c.5-[07]--
+           +-1c.6-[08]--
+           +-1c.7-[09]--
+           +-1d.0-[0a]----00.0  Lite-On IT Corp. / Plextor M6e PCI =
+Express SSD [Marvell 88SS9183]
+           +-1f.0  Intel Corporation Device a2cc
+           +-1f.2  Intel Corporation 200 Series/Z370 Chipset Family =
+Power Management Controller
+           +-1f.3  Intel Corporation 200 Series PCH HD Audio
+           \-1f.4  Intel Corporation 200 Series/Z370 Chipset Family =
+SMBus Controller
 
-Relevant dmesg output:
+$ lspci -vvv
 
-[    5.705423] ath12k_pci 0000:c0:00.0: BAR 0 [mem 0xb0600000-0xb07fffff 
-64bit]: assigned
-[    5.705440] ath12k_pci 0000:c0:00.0: enabling device (0000 -> 0002)
-[    5.705877] ath12k_pci 0000:c0:00.0: MSI vectors: 16
-[    5.705887] ath12k_pci 0000:c0:00.0: Hardware name: wcn7850 hw2.0
-[    6.230762] ath12k_pci 0000:c0:00.0: chip_id 0x2 chip_family 0x4 
-board_id 0xff soc_id 0x40170200
-[    6.230774] ath12k_pci 0000:c0:00.0: fw_version 0x1108811c 
-fw_build_timestamp 2025-05-17 00:21 fw_build_id 
-QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3 
+03:00.0 Network controller: Qualcomm Technologies, Inc WCN785x Wi-Fi =
+7(802.11be) 320MHz 2x2 [FastConnect 7800] (rev 01)
+	Subsystem: Quectel Wireless Solutions Co., Ltd. Device 8000
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- =
+ParErr- Stepping- SERR- FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=3Dfast >TAbort+ =
+<TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0, Cache Line Size: 64 bytes
+	Interrupt: pin ? routed to IRQ 139
+	Region 0: Memory at f7000000 (64-bit, non-prefetchable) =
+[size=3D2M]
+	Capabilities: [40] Power Management version 3
+		Flags: PMEClk- DSI- D1- D2- AuxCurrent=3D0mA =
+PME(D0+,D1-,D2-,D3hot+,D3cold+)
+		Status: D0 NoSoftRst+ PME-Enable- DSel=3D0 DScale=3D0 =
+PME-
+	Capabilities: [50] MSI: Enable+ Count=3D16/32 Maskable+ 64bit-
+		Address: fee00618  Data: 0000
+		Masking: ffff8000  Pending: 00000000
+	Capabilities: [70] Express (v2) Endpoint, IntMsgNum 0
+		DevCap:	MaxPayload 128 bytes, PhantFunc 0, Latency L0s =
+unlimited, L1 unlimited
+			ExtTag- AttnBtn- AttnInd- PwrInd- RBE+ FLReset- =
+SlotPowerLimit 25W TEE-IO-
+		DevCtl:	CorrErr+ NonFatalErr+ FatalErr+ UnsupReq+
+			RlxdOrd+ ExtTag- PhantFunc- AuxPwr- NoSnoop+
+			MaxPayload 128 bytes, MaxReadReq 512 bytes
+		DevSta:	CorrErr- NonFatalErr- FatalErr- UnsupReq- =
+AuxPwr+ TransPend-
+		LnkCap:	Port #0, Speed 8GT/s, Width x2, ASPM L0s L1, =
+Exit Latency L0s <1us, L1 <64us
+			ClockPM- Surprise- LLActRep- BwNot- ASPMOptComp+
+		LnkCtl:	ASPM Disabled; RCB 64 bytes, LnkDisable- =
+CommClk+
+			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
+		LnkSta:	Speed 8GT/s, Width x1 (downgraded)
+			TrErr- Train- SlotClk+ DLActive- BWMgmt- =
+ABWMgmt-
+		DevCap2: Completion Timeout: Range ABCD, TimeoutDis+ =
+NROPrPrP- LTR+
+			 10BitTagComp- 10BitTagReq- OBFF Not Supported, =
+ExtFmt- EETLPPrefix-
+			 EmergencyPowerReduction Not Supported, =
+EmergencyPowerReductionInit-
+			 FRS- TPHComp+ ExtTPHComp-
+			 AtomicOpsCap: 32bit- 64bit- 128bitCAS-
+		DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis-
+			 AtomicOpsCtl: ReqEn-
+			 IDOReq- IDOCompl- LTR+ =
+EmergencyPowerReductionReq-
+			 10BitTagReq- OBFF Disabled, EETLPPrefixBlk-
+		LnkCap2: Supported Link Speeds: 2.5-8GT/s, Crosslink- =
+Retimer- 2Retimers- DRS-
+		LnkCtl2: Target Link Speed: 8GT/s, EnterCompliance- =
+SpeedDis-
+			 Transmit Margin: Normal Operating Range, =
+EnterModifiedCompliance- ComplianceSOS-
+			 Compliance Preset/De-emphasis: -6dB =
+de-emphasis, 0dB preshoot
+		LnkSta2: Current De-emphasis Level: -6dB, =
+EqualizationComplete+ EqualizationPhase1+
+			 EqualizationPhase2+ EqualizationPhase3+ =
+LinkEqualizationRequest-
+			 Retimer- 2Retimers- CrosslinkRes: unsupported
+	Capabilities: [100 v2] Advanced Error Reporting
+		UESta:	DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- =
+UnxCmplt- RxOF- MalfTLP-
+			ECRC- UnsupReq- ACSViol- UncorrIntErr- =
+BlockedTLP- AtomicOpBlocked- TLPBlockedErr-
+			PoisonTLPBlocked- DMWrReqBlocked- IDECheck- =
+MisIDETLP- PCRC_CHECK- TLPXlatBlocked-
+		UEMsk:	DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- =
+UnxCmplt- RxOF- MalfTLP-
+			ECRC- UnsupReq- ACSViol- UncorrIntErr+ =
+BlockedTLP- AtomicOpBlocked- TLPBlockedErr-
+			PoisonTLPBlocked- DMWrReqBlocked- IDECheck- =
+MisIDETLP- PCRC_CHECK- TLPXlatBlocked-
+		UESvrt:	DLP+ SDES+ TLP- FCP+ CmpltTO- CmpltAbrt- =
+UnxCmplt- RxOF+ MalfTLP+
+			ECRC- UnsupReq- ACSViol- UncorrIntErr+ =
+BlockedTLP- AtomicOpBlocked- TLPBlockedErr-
+			PoisonTLPBlocked- DMWrReqBlocked- IDECheck- =
+MisIDETLP- PCRC_CHECK- TLPXlatBlocked-
+		CESta:	RxErr- BadTLP- BadDLLP- Rollover- Timeout- =
+AdvNonFatalErr- CorrIntErr- HeaderOF-
+		CEMsk:	RxErr- BadTLP- BadDLLP- Rollover- Timeout- =
+AdvNonFatalErr+ CorrIntErr+ HeaderOF+
+		AERCap:	First Error Pointer: 00, ECRCGenCap+ ECRCGenEn- =
+ECRCChkCap+ ECRCChkEn-
+			MultHdrRecCap- MultHdrRecEn- TLPPfxPres- =
+HdrLogCap-
+		HeaderLog: 00000000 00000000 00000000 00000000
+	Capabilities: [148 v1] Secondary PCI Express
+		LnkCtl3: LnkEquIntrruptEn- PerformEqu-
+		LaneErrStat: 0
+	Capabilities: [158 v1] Transaction Processing Hints
+		No steering table available
+	Capabilities: [1e4 v1] Latency Tolerance Reporting
+		Max snoop latency: 3145728ns
+		Max no snoop latency: 3145728ns
+	Capabilities: [1ec v1] L1 PM Substates
+		L1SubCap: PCI-PM_L1.2+ PCI-PM_L1.1+ ASPM_L1.2+ =
+ASPM_L1.1+ L1_PM_Substates+
+			  PortCommonModeRestoreTime=3D70us =
+PortTPowerOnTime=3D0us
+		L1SubCtl1: PCI-PM_L1.2- PCI-PM_L1.1- ASPM_L1.2- =
+ASPM_L1.1-
+			   T_CommonMode=3D0us LTR1.2_Threshold=3D0ns
+		L1SubCtl2: T_PwrOn=3D44us
+	Kernel driver in use: ath12k_pci
+	Kernel modules: ath12k
 
-[    6.231110] ath12k_pci 0000:c0:00.0: failed to get ACPI BDF EXT: 0
-[   14.038268] ath12k_pci 0000:c0:00.0: Failed to set the requested 
-Country regulatory setting
-[   14.038525] ath12k_pci 0000:c0:00.0: Failed to set the requested 
-Country regulatory setting
-[  194.622322] ath12k_pci 0000:c0:00.0: failed to enqueue rx buf: -28
-[ 1400.638540] ath12k_pci 0000:c0:00.0: failed to enqueue rx buf: -28
+b)
+- The crash/backtrace is limited to the kernels that originate from =
+https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git=20
+- I remember that I suffered the same crash (the system simply entirely =
+freezes) when attempting to use an Intel BE200
+- The issue remained the same with wpa_supplicant =
+v2.12-devel-hostap_2_11-873-gb01c4843b
+- I=E2=80=99m happy to provide any logs or try things from the =
+ath-branches, if you tell me what you need or want me to test
 
-<info>  [1748767795.5349] policy: set 'REDACTED' (wlan0) as default for 
-IPv4 routing and DNS
-<info>  [1748767801.5408] device (wlan0): state change: ip-config -> 
-ip-check (reason 'none', managed-type: 'full')
-<info>  [1748767801.5420] device (wlan0): state change: ip-check -> 
-secondaries (reason 'none', managed-type: 'full')
-<info>  [1748767801.5421] device (wlan0): state change: secondaries -> 
-activated (reason 'none', managed-type: 'full')
-<info>  [1748767801.5423] manager: NetworkManager state is now 
-CONNECTED_SITE
-<info>  [1748767801.5424] device (wlan0): Activation: successful, device 
-activated.
-<info>  [1748767804.6745] manager: NetworkManager state is now 
-CONNECTED_GLOBAL
-<info>  [1748767804.6842] dhcp6 (wlan0): activation: beginning 
-transaction (timeout in 45 seconds)
-<info>  [1748767804.6846] policy: set 'REDACTED' (wlan0) as default for 
-IPv6 routing and DNS
-<info>  [1748767804.6940] dhcp6 (wlan0): state changed new lease
+Thanks,
+Regards,
+Benny
 
-event: disconnect-info, reason: 3
-event: state, old: connected, new: disconnected
-event: state, old: disconnected, new: autoconnect_quick
-event: state, old: autoconnect_quick, new: autoconnect_full
-Received error during CMD_TRIGGER_SCAN: Network is down (100)
-event: state, old: disconnected, new: autoconnect_quick
-event: connect-info, ssid: REDACTED, bss: RE:DA:CT:ED, signal: -22, 
-load: 5/255
-event: state, old: autoconnect_quick, new: connecting (auto)
-event: state, old: connecting (auto), new: connected
-
-
-Additional notes:
-
-- The issue only occurs after toggling Wi-Fi; it does not happen 
-immediately after boot.
-- Disabling Wi-Fi instantly stops the CPU usage spike.
-- No errors are visible in NetworkManager logs, but it clearly enters a 
-tight loop after Wi-Fi state changes.
-- I suspect this might be a bug in ath12k or its interaction with iwd or 
-NetworkManager, possibly related to buffer handling or background scanning.
-
-Please let me know if there's anything I can do to help debug this, I 
-can provide more logs, test patches, or try different firmware versions 
-if needed.
-
-Thanks
 
 
