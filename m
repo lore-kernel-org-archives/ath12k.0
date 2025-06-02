@@ -4,92 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53DE5C54FB3
-	for <ath12k@archiver.kernel.org>; Mon,  2 Jun 2025 09:05:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2EF76C5AD49
+	for <ath12k@archiver.kernel.org>; Mon,  2 Jun 2025 17:29:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
-	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
-	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=UOf+PkyA5GgMoeVaDLySq++0gYfNwU+cfdIdrQGlBDk=; b=hfHudqq8haCH7KajhiQOVL1OgL
-	hHAnqQtaE0/s1sUKNtSdcxxHRBaEbQh6AYqambO57qVrCXTFM6z/+TQGQ+10iQL/p7gv13hQ/ktOv
-	a9xw7hmS+RJsk7QYBnLXXSyvf5izp9mhITTnEiUiDxxg8MzAawauGwBkJh4zyqs6k/EcqI6KaXEwL
-	igkthZZMjZXRMrRqOsL/6tPUi6mjQgeY//9R794d3JNwyc/GVEBDu8DUpKJAmTQch3IZIM/qNUeDl
-	LadCiu4YCDJ6lWuxBXyRZOWy4JkOwTrFLtw6p34LRS2xjSYkWOwL/w4ycsK44C1iSFjuQk4L7MUea
-	83xoEYvA==;
+	bh=yk6rWolYJemBdD6MBou1f4X5j8FMZQ78Fl2r0hRpViA=; b=jzfqSK3RgPbbl2hN1jIuDvYcAj
+	JtRc0XiAFps6TtdTIafi32MZI5SoykvfGbBJDKCUe2mnqEdcrBQg3bABDGKiqLH7UMNg0TT5GQVq4
+	UW7VhWUViuDMoADBiAtfqeUynZVc82nceK9OVdoU/dDtDpfnRgKBjPJEEV99WnLfw8+kwHjeB75dW
+	/3OlFqu1wYKtzOVAT2/bKFeayv1pCr6bjL9FQrCOQ9xkmin9WfBOSTlYOFncSvqd19RvGdwmK42Fz
+	U0rSAM0DGpPQcDdvWWOi/FGzp3sTsOtQGk/RndXXJr9K9ttpF2CxZxS+yl0N8IGzAKFyGJc06jV4w
+	mbQMN9Eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uM16j-000000072p0-045R;
-	Mon, 02 Jun 2025 09:05:25 +0000
-Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
+	id 1uM8yN-0000000821L-3JlU;
+	Mon, 02 Jun 2025 17:29:19 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uM16g-000000072oR-2w8G
+	id 1uM8yK-000000081ys-2AkY
 	for ath12k@lists.infradead.org;
-	Mon, 02 Jun 2025 09:05:23 +0000
-Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-450cd6b511cso24349305e9.2
-        for <ath12k@lists.infradead.org>; Mon, 02 Jun 2025 02:05:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1748855121; x=1749459921; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=UOf+PkyA5GgMoeVaDLySq++0gYfNwU+cfdIdrQGlBDk=;
-        b=SJ67Pulaayp9qmGD3GQgutEwc7ZXQTAdpUkWbAtRs8yr1qx+o9Jg+YWadGIQL02/LC
-         2v5gvjeTxIPxAW2cpGwZWn0kNzgleS3xiup5sIY6zRXvWaiSkMVE73eYlvO2s5K17wN0
-         VOh6kg3Ba5LIwzQ8i89ydq855qvPwj0N8YbqLpif77vHMfRCc3kUSafcFE6jyVtRp5A+
-         yLT7AlDeEEy/c0lfry+wWEpXwUFNhPUcrg3P4JxGgYnEZwlrEianMNAkLndQUR07JDAS
-         ontX1kq7/9HzrpPMC3KCKvs2jOx5fMPrbMUf0hTZsNQ+BfEyqdfm3/EX8221m/Hkl37n
-         Prbg==
+	Mon, 02 Jun 2025 17:29:18 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 552HJjY0007552
+	for <ath12k@lists.infradead.org>; Mon, 2 Jun 2025 17:29:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	yk6rWolYJemBdD6MBou1f4X5j8FMZQ78Fl2r0hRpViA=; b=d0ZI9LcxWQwGVjb5
+	ZzxayO9vhGgOSityP5EMUhE2bOQ2Ag8vVmpYtp7TCPYVtIV96VNbCr5XucsYBc5O
+	2oYDSW3n1+q/lark50T9nlm63fKkrotNQ24z8jm5IajeoPhoJ29zsereTylHwr6V
+	gDXc2RprcKuj9o/v2Q603bu8nCir4MEwgYQQ339f68vkdS4jsV9z4is6v98VdLwh
+	vXN0k/gFVwdet/jwxIsvNLuDzWXdKPcX9THq/pRsIJnTZ7bAlB7abGwUS6w2sJG8
+	OKwacRnSHDyXWhEt85cRu48A8N0HCvJcSZ6cqhFbytcMDzJDukJ6qkFk6NTqQGS4
+	Kd3GHA==
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 471g8t80pb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 02 Jun 2025 17:29:14 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-3119ba092aeso7479705a91.1
+        for <ath12k@lists.infradead.org>; Mon, 02 Jun 2025 10:29:14 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748855121; x=1749459921;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=UOf+PkyA5GgMoeVaDLySq++0gYfNwU+cfdIdrQGlBDk=;
-        b=uhphxg+SvuCwkcY4+OxIVaK7klRDGKN4TKwg25v+I6F+em30no+3YgTgwOUAwpWYnY
-         mUpTyXhm9W7oMdTx/w3atO1vOeWsbSv0TTpmC5a+QFSusm/9HQQxaSbeUYBmIDyRNaf0
-         2Dyyfuhakq9w7G/D21NcgkB2UJIt9XKYsZAH5yypTUPPYQiFZIAHiH2g7R2aIoEDK7DO
-         I0N1r40KpTuhMMngpVzw1t54pK2rGuLE/rsb4j/08ISQmcZ5EU8T/rVWaAA7BMsYEcNC
-         q8vK53eVRp2sQjfF7JTQ/o6zr/XkXATOhL4TAqaR4GeWc+nkWLtQAhIoxhEhfTqfTWMA
-         Irfw==
-X-Forwarded-Encrypted: i=1; AJvYcCWLbp6F8R24hpU6BjRjPjc+M7wXwCO8mMeKRF9YeL5Pzr+mItTDLVxrXxgUszzyLmDvcDXYJxE=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy9dmDIaOgt4H9GOecuFFvnsTue2jUgYq2u1Co+OrMVxBGG+53D
-	eETa9Gz1JY4XbO6RqPRWtkij/YtPz6xguxxVA9jYroDumYb78WnauOOW
-X-Gm-Gg: ASbGncswDZKREap0FfBfHA8776jdWavCVj+h68Vzus3k6QdKKH7L+xsCCRzCcrvK3p2
-	8ySUeYZAA1PQ7WP4I8s+9RjvKVoqwlyb186geJ40MxaKz2NLUM1b+i+rnBLQUfKOqrd6x9pR3M+
-	F5w6iTC18iUGWeVK/uUKMy+gH0EFy2YtbC3fKOB0F6of6Ps+lhx32Qn/CJ1VWXUqL+ye/NjRdBf
-	HXJvcFmc8y1VysYCUR4A49ZRVh2gHb21RwnlPtMGQpM6Y2bsdczpScB+XCI1/qiClvZLi1MTc7p
-	no0kuHLkJPSON89J9Ls+fxdY3nWKQ4aqErJmcGwtEK4ZNWAwSbfyujavFsZ334+ohfkkQw==
-X-Google-Smtp-Source: AGHT+IGuYWcDUv4A6KOpnkgns5eFzZREoCd+HqPrUTZjIoaRW2oxarhH3bJFNmGlcRQWXrWQyeSOMg==
-X-Received: by 2002:a05:600c:4d82:b0:450:d6d4:9627 with SMTP id 5b1f17b1804b1-450d6d49672mr64727295e9.29.1748855120699;
-        Mon, 02 Jun 2025 02:05:20 -0700 (PDT)
-Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-450d7fb0654sm114324955e9.21.2025.06.02.02.05.20
+        d=1e100.net; s=20230601; t=1748885353; x=1749490153;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=yk6rWolYJemBdD6MBou1f4X5j8FMZQ78Fl2r0hRpViA=;
+        b=ugi2GnAtz1cS5R2yhOhurQMSMKxTaZAB0r8jb8oxsfCSOnDhMU5EDYdR3QDUQ6y8xw
+         Ng7P5dQt4qN/+Ga1qNsOcmtmIAVQHT18mHo1gJVOhGKtC5tiMcwgsynnGVG5YVaiRhCf
+         G9l0Ul6DjK00CZbSdqNos1zC9J0st7h8nQD6M45TrUTedVN6IGVLoilxkCwC+PuRShla
+         iC1yanr5HRI7VaI1kD+RrowcqVkOWo4GWFPxJ2+LLm8PmEq/nlW5k+4VnOPm+N/7CssX
+         AvefRyr1MHKw3K4bDDL4ZTljnEkcutiMsMFgpzHmX1hagMrO6u1NqQNXnZ10+CeVgL4c
+         YRaw==
+X-Forwarded-Encrypted: i=1; AJvYcCVcNxXNQQWmYkHIAv2WCSi5RlyXY0fzUDREX+qgx37SYsnMor5YND3BHPROHopDAf1vZ/wdsG4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yztoj4neAwgS2r5kL+TQsq62BjQIPoSXg6CreCM8PE8TqVupSuV
+	FyU3lq89X53IFT0jFiKiE1g2V9ZYd17BXaa9bXZxm8uePNXB5hhaC1mpQFOolQUlQ8caCPQ+5bQ
+	3o08P5tnB2uUXh7T5t1NqHGkolVMl59QMHZVMITWHzKKdH2YHy+QX3TxLc3SFDT1WxcQsn1BP
+X-Gm-Gg: ASbGncvk6ouxNTTzPAYFZ6T0WvkmtFk3uoKDkOSLWV5c2zmS/uNt/LP/C5WG2/vHXbs
+	RVYfaFKSLXRtG5wRrjS1/BJEKa0gJZ2LMrPfy7vJaliWVX5t+fFwT16fZ6Zrds6oVhmyWi94+bc
+	5cU9B5yNsHkrRRKtF6jnW5Ey4qVB7rcLLLXrVKriRJDXkx+mlQ+6hkWNYgCraDLGrcrn3DEErj7
+	YmdHt2bfPrNPUmIEjFCQVrUzyj4syH9QEtfdipgJRCw9H5du5S1rzZO/Cc4d49v+Y6deMhoIE7q
+	QVUxH3+b2INeLwDuHF/V2lk9HTblaKdvPdLte2gcQgfuwIBud7Efz5iK8IfFW8cnikCmtw3KKXn
+	3wZ5/eFf4mdyQpY94a0X+r+WV
+X-Received: by 2002:a17:90b:2f0f:b0:2f4:4003:f3ea with SMTP id 98e67ed59e1d1-312504538f3mr18840624a91.33.1748885352938;
+        Mon, 02 Jun 2025 10:29:12 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEfUrJsmpLDb7QMJI1xGYYommWJtFioQaO7nwSCM0daCXy1FJ1+DBp4tUsZwOFxjlScDulTyA==
+X-Received: by 2002:a17:90b:2f0f:b0:2f4:4003:f3ea with SMTP id 98e67ed59e1d1-312504538f3mr18840587a91.33.1748885352449;
+        Mon, 02 Jun 2025 10:29:12 -0700 (PDT)
+Received: from ?IPV6:2409:4072:6d38:213a:f95d:ad03:27f3:e9a5? ([2409:4072:6d38:213a:f95d:ad03:27f3:e9a5])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3124e3c13ffsm5828869a91.41.2025.06.02.10.29.10
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 02 Jun 2025 02:05:20 -0700 (PDT)
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
-Date: Mon, 02 Jun 2025 11:05:19 +0200
-Message-Id: <DABXEETZP415.3EDDINBHDH42A@gmail.com>
-Cc: <linux-wireless@vger.kernel.org>, "P Praneesh"
- <quic_ppranees@quicinc.com>, "Jeff Johnson" <quic_jjohnson@quicinc.com>
-Subject: Re: [PATCH V13 8/9] wifi: ath12k: add support for 160 MHz bandwidth
-From: "Nicolas Escande" <nico.escande@gmail.com>
-To: "Pradeep Kumar Chitrapu" <quic_pradeepc@quicinc.com>,
- <ath12k@lists.infradead.org>
-X-Mailer: aerc 0.20.1-0-g2ecb8770224a
-References: <20250418174818.3336510-1-quic_pradeepc@quicinc.com>
- <20250418174818.3336510-9-quic_pradeepc@quicinc.com>
- <DA08F3TG062A.151WKWWF5OPL0@gmail.com>
- <c21146ef-3cf6-4d8e-a32d-8479e4d96f3b@quicinc.com>
- <DA2JV34RZGAQ.24P9Y3C865UHN@gmail.com>
- <b7d500e3-445e-455d-a74f-4ec3c7f3fde3@quicinc.com>
-In-Reply-To: <b7d500e3-445e-455d-a74f-4ec3c7f3fde3@quicinc.com>
+        Mon, 02 Jun 2025 10:29:12 -0700 (PDT)
+Message-ID: <3290279e-c577-5c05-1f4b-ffb3078d004f@oss.qualcomm.com>
+Date: Mon, 2 Jun 2025 22:59:08 +0530
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH ath-next v2] wifi: ath12k: disable pdev for non supported
+ country
+Content-Language: en-US
+To: Muna Sinada <muna.sinada@oss.qualcomm.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Karthik M <quic_karm@quicinc.com>
+References: <20250506214930.3561348-1-muna.sinada@oss.qualcomm.com>
+From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+In-Reply-To: <20250506214930.3561348-1-muna.sinada@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjAyMDE0MyBTYWx0ZWRfXxNWodxT2/yL1
+ dNN6//Fd9uylD+FC+IwVywbyT1AEaK9PLGmZTxIz6+nC069WsjnqT/pMl+OmoneRFkNBUr3U6tk
+ BEw3dmVz33g5B9As+Jsb6bC4/8lhpKXZJAvPx2sJnxWkbIzwrgCiv7sVMWuYff0tL5k5QPFHWGi
+ 5hON/hIIPXkn41fsYZgYsPTwRB0uldCSP/H/9cSaKhjOhkT8aTDhKbdRm9gK7VUgZ0Ay/sBvJnE
+ F6di6u9CrKbxtbvW2Lr9L+zRnPR41J0PIUSCKZzDeXjuHUslVrQOyC8Dr4SfTyDiXg/CqBPcWpz
+ bVIhrbvnULFRxpqtBktRbEPWMXZmlHQRo0dKf0Gq/fTZKFxDhZfQll95mqoyyQ=
+X-Proofpoint-ORIG-GUID: 9lNRC-pMZX386wER66-VUBQ4oSGR8WVg
+X-Authority-Analysis: v=2.4 cv=OuxPyz/t c=1 sm=1 tr=0 ts=683ddf6a cx=c_pps
+ a=vVfyC5vLCtgYJKYeQD43oA==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
+ a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=j1_G22Jgsno5ajverhEA:9
+ a=QEXdDO2ut3YA:10 a=rl5im9kqc5Lf4LNbBjHf:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: 9lNRC-pMZX386wER66-VUBQ4oSGR8WVg
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-02_07,2025-06-02_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 bulkscore=0 malwarescore=0 mlxlogscore=663 lowpriorityscore=0
+ spamscore=0 mlxscore=0 suspectscore=0 adultscore=0 classifier=spam
+ authscore=0 authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2506020143
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250602_020522_739732_F62DA5F6 
-X-CRM114-Status: GOOD (  16.47  )
+X-CRM114-CacheID: sfid-20250602_102916_693941_9B25D274 
+X-CRM114-Status: GOOD (  11.37  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,67 +129,24 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed May 28, 2025 at 8:16 PM CEST, Pradeep Kumar Chitrapu wrote:
->
->
-> On 5/22/2025 1:34 AM, Nicolas Escande wrote:
->> On Wed May 21, 2025 at 11:38 PM CEST, Pradeep Kumar Chitrapu wrote:
->> [...]
->>> Thanks Nicolas,
->>>
->>> I believe IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160_80PLUS80MHZ mean only
->>> 80PLUS80 not both 160 and 80PLUS80 and STA must set
->>> IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160MHZ flags for indicating 160 MHz
->>> support. Please correct me if my understanding is correct. However I
->>> agree that we must allow STA to connect irrespective of which flag STA
->>> sets as long as bandwidth is 160MHz. I see ath10k and ath11k also allow=
-s
->>> this by setting default phymode of MODE_11AC_VHT160 for BW
->>> =3D=3DIEEE80211_STA_RX_BW_160 case.
->>> I will make this change in next revision.
->>> Thanks
->>> Pradeep
->>=20
->> Hello Pradeep,
->>=20
->> Well this is quite unclear for me maybe Johannes or someone more aware o=
-f the
->> evolutions of the standard could shime in.
->>=20
->>  From what I've gathered:
->>    - the naming IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160_80PLUS80MHZ implie=
-s both
->>      which points it was the case when added
->>    - and the original 802.11ac-2013 Table 8-183v states:
->> 	Set to 0 if the STA does not support either 160 or 80+80 MHz.
->> 	Set to 1 if the STA supports 160 MHz.
->> 	Set to 2 if the STA supports 160 MHz and 80+80 MHz.
->> 	The value 3 is reserved.
->>=20
->> Things get complicated after:
->>   - later versions like 802.11-2020 have deprecated value 2 in favor of =
-the new
->>     Extendeed NSS BW feature
->>   - Table 9-272 still implies both 160 & 80+80
->>   - Table 11-23 & Table 11-24 implies only 80+80 but both talk about the
->>     'VHT Operation' Channel Width field and not the 'VHT Capabilities' S=
-upported
->>     Channel Width. And thoses had different values even in the first AC =
-amendment
->>=20
->> So it feels like when no Extended NSS BW Support is used (first gen AC d=
-evices),
->> IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160_80PLUS80MHZ really means both 160 =
-& 80+80
-> Thanks Nicolas for detailed response.
-> Request you to kindly review V14 series and let me know if it works?
->
-> Thanks
-> Pradeep
 
-Hello Pradeep,
 
-Yes your new version fixes the problem for me.
+On 5/7/2025 3:19 AM, Muna Sinada wrote:
+> From: Karthik M <quic_karm@quicinc.com>
+> 
+> In MLO configuration, ath12k_mac_radio_start() iterates through all
+> the radios and makes the ar state 'ON'. Even though some bands are
+> not supported in certain countries, ath12k_reg_update_chan_list()
+> tries to update the channel list for all the active pdevs and ends
+> up in the warn_on for non-supported band.
+> 
+> To prevent this, disable the pdev when the number of channels across
+> all bands supported by the pdev is zero for a particular country.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Karthik M <quic_karm@quicinc.com>
+> Signed-off-by: Muna Sinada <muna.sinada@oss.qualcomm.com>
 
-Thanks
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
