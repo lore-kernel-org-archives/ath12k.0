@@ -4,95 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BCE4C5AE59
-	for <ath12k@archiver.kernel.org>; Tue,  3 Jun 2025 06:35:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98DC9C5AD49
+	for <ath12k@archiver.kernel.org>; Tue,  3 Jun 2025 07:39:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=lrXGLpxbMpg9M848+0eqf0Z7DtxFtlAewM8dywzs/gQ=; b=aca0E3ze41LBX9IzUW/FklabqZ
-	Z7ohwWnRDPDtk0lCYqR7XVPAJJbLwbuwDLZ4eC9qSvhWLswu6jwARovfAqzjB2INZoNl3S253DKH9
-	+bvQAMAYC/PXH0of3cINGfJFWVNiIq/PYHePOW45cP+WAZRe1kOUJ0+UiqoqZv4aJA4mtXHzreQD1
-	3ye7d4N4oehEXkqPYQWc7vjAVPxrm3Vt3396Vr6M8eBYe3120TOb2l5zB6IRPi5CGKEMTU9WbTHHl
-	jFNn7CFmW2C5jkNzlfF8hjiRp3pjGAKQZU+5pNKPXdI2qUzoIl4mqLFObht5ZYUHUI5Aq9IV7mELp
-	EEMqJbFg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:References:To:From:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=2BWZNGPJOWlHzKILSvmV9Q7kH/ybABFKZ6Wme6g2VbY=; b=1PJzBHGqVaEPg+sF08q0O1pVVD
+	7uONjn1igGdu6G8J/0cr8819JGqgi9wBqR42X9SxIyV0vTebBtfPuYaYCXohBPfDkPIemNgFVD/N8
+	WCJIFawlCwIuuivDRG8PWmUqBDOcJWQjM3HUC7GQ97m6qh3mpJlxMdM80cVF9VrSwObtXUeVSYmOV
+	bdjN/jRHcMLAiorovYV5whbNTGbCUszIePch3eb0Rh9MObnaLvSlpVyKiGs9hIGWefGOtcXvl7Pcm
+	j7xqtiCTP14STs0kfI4a6JRT97gotQxB3YadCCrtiUQOPxnLNsfWuN+LWUzbXzDoJip8MHDh9eeMR
+	LGB/tyuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMLFR-00000009yuk-2jZ9;
-	Tue, 03 Jun 2025 06:35:45 +0000
+	id 1uMMEt-0000000AAU4-1TrM;
+	Tue, 03 Jun 2025 07:39:15 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMLFO-00000009ytj-1yqT
+	id 1uMMEq-0000000AATT-38El
 	for ath12k@lists.infradead.org;
-	Tue, 03 Jun 2025 06:35:43 +0000
+	Tue, 03 Jun 2025 07:39:14 +0000
 Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 552HK2TU007769;
-	Tue, 3 Jun 2025 06:35:39 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5536gUYP007730;
+	Tue, 3 Jun 2025 07:39:11 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=lrXGLpxbMpg9M848+0eqf0
-	Z7DtxFtlAewM8dywzs/gQ=; b=HPqqPh7rrowbJTxkQBPR9k0FQ1fwoS+L9g/vrr
-	YjzbK+rcr7yDY7319R80/8hreq2GTINEmR+0aZWsbqbVF7mqY/lOIN2rBwCi4N5p
-	bueiH3MOHZws+LugSCcXJtIA8390Lk/fuTCuPf8o//NhOmlDG1i4Nqd4FvnOXY2G
-	wU0C0F8z3StHR5+xdcQG0jjQbfLgIo3wkvKwSgdngUQ4qtW1h4rW43W7FB1lhgkC
-	LYvLST0t9MrvDCMBirzfjehPDrqLiwNaIyZpxPAbn5bo4nb1RUOI1xdoHsVnAMo+
-	0e4dFFo3ckQfQE6mGDCrBAnrePHml3OuEQSvWJbPae6/+szg==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 471g8yhjj3-1
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	2BWZNGPJOWlHzKILSvmV9Q7kH/ybABFKZ6Wme6g2VbY=; b=hc5CxzPVqQ5MEHsh
+	hxXDTK8Oe18Exru+f9aBjsdhgXjMSBqSDpLI5OGyr+VY6XeXh7gYdHmc57w3NSGx
+	Q/LIqX+lDj4zFjidVmf7TaQbxgqevupZSXX87qZwWNeTInqHdGr5iNHaq27ZKHSu
+	d1GKjACoWW8s2aDWVjRkmF/1MDheJWJAUZN9Ng6rh7ZBTwPqzUNWdUerb7kWh52O
+	XpCNsv95MehSiD0BIq6KIPrYNU79JxpkpY9Sp+hEN56FkodmcxOTO5ubTYCQcadU
+	2Im1zuVFc3SHvnTAxWyFhVNwMZRx/thLJ2iexv/pIOJ++PPxFqBUyyRIC2bfRNJR
+	bp2J2Q==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 471g8yhqwt-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 03 Jun 2025 06:35:39 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5536Zcb3030859
+	Tue, 03 Jun 2025 07:39:10 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5537d9SU009441
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 3 Jun 2025 06:35:38 GMT
-Received: from hu-sarishar-blr.qualcomm.com (10.80.80.8) by
- nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 2 Jun 2025 23:35:36 -0700
-From: Sarika Sharma <quic_sarishar@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Sarika Sharma
-	<quic_sarishar@quicinc.com>
-Subject: [PATCH ath-next] wifi: ath12k: Add memset and update default rate value in wmi tx completion
-Date: Tue, 3 Jun 2025 12:05:12 +0530
-Message-ID: <20250603063512.1887652-1-quic_sarishar@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Tue, 3 Jun 2025 07:39:09 GMT
+Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 3 Jun 2025
+ 00:39:08 -0700
+Message-ID: <e8232a3d-6fbe-44da-aea5-769fc06c22cb@quicinc.com>
+Date: Tue, 3 Jun 2025 15:39:04 +0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: wifi: ath12k: Attempting MLO with main (6.15.rc7) for NCM865 /
+ WCN7850 in station mode leads to crash/backtrace
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+To: Benjamin Eggerstedt <benjamin.eggerstedt@gmail.com>,
+        <ath12k@lists.infradead.org>
+References: <BF352E86-5EC1-4FB0-8901-B62B6E400489@gmail.com>
+ <78C6533F-E0F0-4961-9FC6-089F76BB59F1@gmail.com>
+ <c6b01333-8437-4200-a66b-d678991c426e@quicinc.com>
+Content-Language: en-US
+In-Reply-To: <c6b01333-8437-4200-a66b-d678991c426e@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjAzMDA1NSBTYWx0ZWRfX3q6HNCJ/qgJN
- 6KcvVdwFkcxd2lxPQzvkOdjrdAELCm004r++5i/KAXfTJBjDZoujGzrykXRwiS8Cvu97K1OJejW
- 7gIlWfeNvfuIUf3EhoKlzSP0obD5fPE0yti6dXvUEzuYjNDjkSmjRmQb9Bf3CXUJPjU4RErcWc4
- jo9RDfOYtuhIKntr2m+GD4OPZrgmUKOHBrjXrB6YznsloOpkq3A9bA60lKWeXQBHGpBteW3SJPL
- e2SeTQ6RoAefdNJz1/dzknWsxyjZ9Y79euRaOc185/N0zc/HxZN5aA5jVp45o+MqKfdivrDqTBV
- tqqSBnh+ntvMFtpeX7OQoHfyxP22P82dXF9GJvFYJp54bTu/0xjkYLh4B4SZ2WF6OYBAoXquXzV
- 4tjq3V0t1WcIkdRCvYQr2sU9Ysy7tuGprFwQFKvJTUbh5CXrIoNTexZ0tdG5H8cRtHOB/y31
-X-Proofpoint-ORIG-GUID: 1GrK_f2ZYYLJjKZBdEl9w-dkSvOVjCrz
-X-Proofpoint-GUID: 1GrK_f2ZYYLJjKZBdEl9w-dkSvOVjCrz
-X-Authority-Analysis: v=2.4 cv=T/uMT+KQ c=1 sm=1 tr=0 ts=683e97bb cx=c_pps
- a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=GEpy-HfZoHoA:10 a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8 a=J6ZGN57qR9n7gPSFk8cA:9
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjAzMDA2NSBTYWx0ZWRfX0hhoAMEQLjL1
+ 9s+NV0/0uBXUDPkRKEe9efkBwmFrBEFToR9nr4yuXwBqljxE1fNfgh05bRj1YoSoReJHQsDxV1y
+ aZR2cZt4fMkb2I6ad11f8IRnqOdMRPebWTabogO2nuaHLyESaOdeZihiZjEH91RAZ2gA3Gb5oQC
+ MFXGDdgcD/axeqVxQ4tiwc8KzI6WIrrFi4zMTawBBYO00NxH4dn+j654ghQxOEYK0/VVoolbmSc
+ BYIUKKcCMSg+QnmwuKXAjNk21Q3clYIotDH2Pedj4xFUjsOlHPv9vHEP18okxa3m6QqXXABwArH
+ y54doNZa5RIGOLE7LanCRTRbwI0b5LEW0asUBCqqSJpUsMj7AAtlXTyolpad12DaybiEkvieSpS
+ pM63Mq5CapplfhjEmrc69L3SqyEjdx4ybAhJcAjs1wa9dsnQu/ns+kOcV3ccOKDl8TjRznK3
+X-Proofpoint-ORIG-GUID: MeFvrS8FZQs3uIWDiPQVHf2haELUUAGx
+X-Proofpoint-GUID: MeFvrS8FZQs3uIWDiPQVHf2haELUUAGx
+X-Authority-Analysis: v=2.4 cv=T/uMT+KQ c=1 sm=1 tr=0 ts=683ea69f cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=VwQbUJbxAAAA:8
+ a=COk6AnOGAAAA:8 a=v5EjKPavRdAgh5Q0G_8A:9 a=QEXdDO2ut3YA:10
  a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-06-03_01,2025-06-02_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxlogscore=999 suspectscore=0 impostorscore=0 mlxscore=0 bulkscore=0
+ mlxlogscore=866 suspectscore=0 impostorscore=0 mlxscore=0 bulkscore=0
  lowpriorityscore=0 clxscore=1015 spamscore=0 malwarescore=0 phishscore=0
  adultscore=0 priorityscore=1501 classifier=spam authscore=0 authtc=n/a
  authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2506030055
+ engine=8.19.0-2505280000 definitions=main-2506030065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250602_233542_632725_CF858B6D 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20250603_003912_920885_81783CB3 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,50 +114,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-When both AP/STA and monitor interfaces are enabled, ieee80211_tx_status()
-is invoked from two paths: the TX completion handler for data frames
-and the WMI TX completion handler for management frames.
-In the data path, the skb->cb is properly zeroed using memset, but in
-the WMI path, this step is missing.
 
-As a result, mac80211 encountered uninitialized (junk) values in
-skb->cb when generating the radiotap header for monitor mode, leading
-to invalid radiotap lengths.
 
-Hence, explicitly zero the status field in the skb->cb using memset
-in WMI TX completion path to ensure consistent and correct behavior
-during WMI tx completion path.
+On 6/3/2025 11:01 AM, Baochen Qiang wrote:
+>> - The vanilla v6.15 kernel gets a MLO connection but lost the ability to see 6 GHz, so MLO is limited to band 2.4 + 5 GHz
+> This is a known iusse and the fix has landed in latest mianline kernel, could you have a try?
+> 
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?
+> id=d662c14a51910ba0ad66afd248b601ba30b9f7f1
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?
+> id=37e775a0a9d79a031d28d9e21480f99f448e9215
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?
+> id=886bb3624e4c9914a943b63fcfdf30b8d2f2b66e
 
-Additionally, set info->status.rates[0].idx = -1 to indicate that
-no valid rate information is available, avoiding misinterpretation of
-garbage values.
+Forget to say, WCN7850 firmware support no more than 2 links in an MLO connection.
+Currently host does not limit on the number of MLO links, that said, with above 3 patches
+applied you will see all 3 links, and then a firmware crash is expected. Well... there
+might be resulting kernel crash as well.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+We have a series pending review which add limit on the number of links could be finally
+established:
 
-Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/wmi.c | 5 +++++
- 1 file changed, 5 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 60e2444fe08c..3688a75b0a60 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -5606,6 +5606,11 @@ static int wmi_process_mgmt_tx_comp(struct ath12k *ar, u32 desc_id,
- 	dma_unmap_single(ar->ab->dev, skb_cb->paddr, msdu->len, DMA_TO_DEVICE);
- 
- 	info = IEEE80211_SKB_CB(msdu);
-+	memset(&info->status, 0, sizeof(info->status));
-+
-+	/* skip tx rate update from ieee80211_status*/
-+	info->status.rates[0].idx = -1;
-+
- 	if ((!(info->flags & IEEE80211_TX_CTL_NO_ACK)) && !status)
- 		info->flags |= IEEE80211_TX_STAT_ACK;
- 
-
-base-commit: f8bead2c1ef18efc47e495bc800aa7af740eda80
--- 
-2.34.1
+https://patchwork.kernel.org/project/linux-wireless/cover/20250522-ath12k-sbs-dbs-v1-0-54a29e7a3a88@quicinc.com/
 
 
