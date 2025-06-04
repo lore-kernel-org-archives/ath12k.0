@@ -4,56 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F249C5AE59
-	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 01:59:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69C1DC5AE59
+	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 02:01:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Z8u5/wYyYoU9eTc0h7xuatZWAtfrpOhGM7yP7kt3TuI=; b=GPLRdAQwXh5CnJ4SRwZ9SXFdU3
-	BBiciTh5+OAwC4fttqnpZk5O5g+gaX73dZ4x51fVQXe/jPXgNziCsnVm1ZkPMw2ZSxDaJ4anH8CAH
-	P9ve32GOK8ep4sDsuBy/Ib2pj5C4Y/h2N6niFpJd1lEkEtY8yzZp5V1hiGNZ1jSPaGWXUNeRXN0Sy
-	V9w8NQV+V9/+TC82UTFvpJ4zVRGtFSPWbosmdhQdOOcHOVwfr80oB1SyZhlXpAM6vvIQ8t35e+Msa
-	sYNYh66WGDsaGPpoXdg85AB3ospo/x+pitRXe3CBMFL/LKcF9SlIVNk7yK3g2iC0o+ej7ZkArs1p9
-	uO3jhh3A==;
+	bh=g5LR+hVQCBJO0O2U99YQ7WdCDgRl8VME2BoHUymTfGU=; b=reREUHY4lRUdZ9HYTO1g5fBjZj
+	7mwLzC/ZVY+lQeIFq7YIjd+GfRcuvVV8reSyFkm25lSbla8blGV9EDJO8M/63U1hUrh1IjnxgjlmE
+	Qhznd2khTdVFTRd4RaIc3pnORkmlohvw/dK4q2fF71slAfhsZD7TLhk3ZiK+qbtVXwWdrBX7GpJb1
+	jGl6G2yFLX9Z1t6R/qwxY6Iyh2XQYMFzPyX61BS+NmN9ThXx+8fpJPSjGq2Av6gwCkev8G+/zQc1N
+	oSRtquLYbIwKmHCarUs79XuLu/B5rdoSNHk5EheX7FpHs292lBSv3KZh9C5KlbHgv+duS7br7X1l9
+	IA/MjBEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMdPr-0000000CGIP-0yCq;
-	Wed, 04 Jun 2025 01:59:43 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uMdRx-0000000CGZo-0gJJ;
+	Wed, 04 Jun 2025 02:01:53 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcSd-0000000C7eY-3h1v
+	id 1uMcT3-0000000C7hr-1DKR
 	for ath12k@lists.infradead.org;
-	Wed, 04 Jun 2025 00:58:31 +0000
+	Wed, 04 Jun 2025 00:58:58 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4266F6112E;
-	Wed,  4 Jun 2025 00:58:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AFBFFC4CEEF;
-	Wed,  4 Jun 2025 00:58:29 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 040AF4A4C0;
+	Wed,  4 Jun 2025 00:58:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7B86C4CEF3;
+	Wed,  4 Jun 2025 00:58:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748998711;
-	bh=bEBlKAxr1/heIYPmrRfexDAWioqzN+eFFf7aOpHC6j0=;
+	s=k20201202; t=1748998736;
+	bh=qu8ZpozExl08qP3xK4+hHn21qz11XlWdOYePU30oZL8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=tu3hXuWyOHTT2Ax9inxC4F8m2MymCIGj8oDpl0nUCfez26THxUxORj8BXAXyA+JfR
-	 ny5U0ja986x4ek3b5p+Y05XfRMGFJPJAXCPOnzwp0jljeRDldnejNbA+ntw2J/qx15
-	 ZGVoLiyQhxl+nUqYtP/9lwCnqKdrIS+8HJV2CHckKGMRBcq/dAJ0QGpem8WCMgFMw/
-	 U0ud15HEcyn0cGwbt1Z4vROU5rqBSgiKGj7uoqaWYKiBCH3LbLucqy5HOn9CI3hdw4
-	 bGaNNH2RAwQ+hZvT5UUNTzc2FJ7e85DBnIPILGaNJxLSA7ku+vHO/+2+996cMTU3UI
-	 Ab9Sg/S7UA76g==
+	b=ZAAQ4RhkI+g+XeFCrB82SshdNhSAt+lSYITc3QJPI9k86KV9/KQZH4A/GB9yavBhc
+	 TVRz8Dw3ts3CRbq+hUrMse2ccmYVYKpZr7Fdj9nlsBU7gwC3Urgkdj0t0LXkmPmgkf
+	 8mpZXrITkmT9ZoLyBLZF6HtK7eVxPw9qyBzbP7k4e8z2JJEhViGeSXwWi0f1ADeXbT
+	 Zuibw44FISHpgPwAyxCL6W12nRqKx1XoIHIjEDKosZ/6Z8fi6KZ0Tqh4zTPl8SZpk4
+	 wwT93muQJTNHt71HmtUIrlvMlD9/dttzL95MJ/od15Xg2t3DtwHZ4Fng9hKAPD7hPv
+	 tczwEwIZKx3fQ==
 From: Sasha Levin <sashal@kernel.org>
 To: patches@lists.linux.dev,
 	stable@vger.kernel.org
-Cc: Baochen Qiang <quic_bqiang@quicinc.com>,
+Cc: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
+	Roopni Devanathan <quic_rdevanat@quicinc.com>,
+	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+	Ping-Ke Shih <pkshih@realtek.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.14 086/108] wifi: ath12k: make assoc link associate first
-Date: Tue,  3 Jun 2025 20:55:09 -0400
-Message-Id: <20250604005531.4178547-86-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.14 101/108] wifi: ath12k: Fix incorrect rates sent to firmware
+Date: Tue,  3 Jun 2025 20:55:24 -0400
+Message-Id: <20250604005531.4178547-101-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250604005531.4178547-1-sashal@kernel.org>
 References: <20250604005531.4178547-1-sashal@kernel.org>
@@ -62,6 +65,9 @@ X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.14.9
 Content-Transfer-Encoding: 8bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250603_175857_375136_F91BA679 
+X-CRM114-Status: GOOD (  16.43  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,129 +82,111 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Baochen Qiang <quic_bqiang@quicinc.com>
+From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 
-[ Upstream commit ead6d41116b81098061c878d9bfc0b1a6c629090 ]
+[ Upstream commit cb1790249361ba9396b06b1af2500147e6e42e5e ]
 
-In MLO scenario WCN7850 firmware requests the assoc link to associate
-before any other links. However currently in
-ath12k_mac_op_vif_cfg_changed() we are doing association in an ascending
-order of link id. If the assoc link does not get assigned the smallest
-id, a non-assoc link gets associated first and firmware crashes.
+Before firmware assert, if there is a station interface in the device
+which is not associated with an AP, the basic rates are set to zero.
+Following this, during firmware recovery, when basic rates are zero,
+ath12k driver is sending invalid rate codes, which are negative values,
+to firmware. This results in firmware assert.
 
-Change to do association for the assoc link first.
+Fix this by checking if rate codes are valid, before sending them
+to the firmware.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00209-QCAHKSWPL_SILICONZ-1
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
-Link: https://patch.msgid.link/20250409-ath12k-wcn7850-mlo-support-v2-5-3801132ca2c3@quicinc.com
+Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Reviewed-by: Ping-Ke Shih <pkshih@realtek.com>
+Link: https://patch.msgid.link/20250320112426.1956961-1-quic_rdevanat@quicinc.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
 
-**YES** This commit should be backported to stable kernel trees. Here's
-my detailed analysis: ## Critical Bug Fix Analysis ### The Problem The
-commit fixes a **critical firmware crash** in MLO (Multi-Link Operation)
-scenarios for WCN7850 hardware. The commit message clearly states: - "If
-the assoc link does not get assigned the smallest id, a non-assoc link
-gets associated first and **firmware crashes**" - This indicates a
-severe user-affecting bug that causes complete driver/firmware failure
-### Code Analysis - What's Being Fixed **Before the fix:** The original
-code processed MLO links in ascending link ID order: ```c
-for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) { //
-Process any link first, potentially non-assoc links ath12k_bss_assoc(ar,
-arvif, info); } ``` **After the fix:** The new code ensures the
-association link is processed first: ```c if (vif->cfg.assoc) { //
-FIRST: Handle the assoc link specifically arvif =
-wiphy_dereference(hw->wiphy, ahvif->link[ahsta->assoc_link_id]);
-ath12k_bss_assoc(ar, arvif, info); // THEN: Handle remaining links,
-excluding assoc link links &= ~BIT(ahsta->assoc_link_id);
-for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
-ath12k_bss_assoc(ar, arvif, info); } } ``` ### Why This Qualifies for
-Stable Backporting 1. **Fixes User-Affecting Bug**: Firmware crashes
-directly impact users by causing connection failures and system
-instability. 2. **Critical Hardware Support**: The fix affects WCN7850
-and QCN9274 hardware which are actively used Wi-Fi 7 chips in current
-devices. 3. **Small, Contained Fix**: The change is minimal - just
-reordering the association sequence. It doesn't introduce new features
-or architectural changes. 4. **MLO is Production Ready**: MLO (Multi-
-Link Operation) is part of the Wi-Fi 7 standard and is being deployed in
-production devices. 5. **Firmware Dependency**: The commit addresses a
-strict firmware requirement that "requests the assoc link to associate
-before any other links" - this is a hardware/firmware constraint, not a
-driver preference. 6. **Low Regression Risk**: - The fix only changes
-the order of operations - It maintains the same logic but ensures
-correct sequencing - The exclusion of the assoc link (`links &=
-~BIT(ahsta->assoc_link_id)`) prevents double-processing ### Context from
-Similar Commits All the provided similar commits were marked "NO" for
-backporting because they were either: - Adding new MLO
-features/functionality - Implementing new capabilities - Making
-architectural changes This commit is fundamentally different - it's
-fixing a **firmware crash bug** in existing MLO functionality. ###
-Hardware Impact The fix specifically mentions testing on: - WCN7850
-hw2.0 PCI (two different firmware versions) - QCN9274 hw2.0 PCI These
-are current-generation Wi-Fi 7 chipsets actively deployed in consumer
-and enterprise devices. ### Conclusion This commit fixes a critical
-firmware crash that affects users of Wi-Fi 7 devices with MLO
-capability. The fix is small, targeted, and addresses a fundamental
-firmware requirement. It meets all criteria for stable backporting:
-important bug fix, minimal risk, contained change, and affects hardware
-in active use.
+**YES** This commit should be backported to stable kernel trees. ##
+Analysis This commit fixes a critical bug that causes firmware crashes
+during firmware recovery scenarios, making it an important candidate for
+stable backporting. ### Issue Analysis **The Problem:** The commit
+addresses a scenario where during firmware recovery, when a station
+interface exists but is not associated with an AP, the `basic_rates`
+field becomes zero. The original code uses `ffs(bss_conf->basic_rates) -
+1` to calculate the basic rate index, which produces a negative value
+(-1) when `basic_rates` is zero, since `ffs(0)` returns 0. **Code
+Changes Analysis:** 1. **In `ath12k_recalculate_mgmt_rate()`:** ```c -
+basic_rate_idx = ffs(bss_conf->basic_rates) - 1; + if
+(bss_conf->basic_rates) + basic_rate_idx = __ffs(bss_conf->basic_rates);
++ else + basic_rate_idx = 0; ``` 2. **In
+`ath12k_mac_bss_info_changed()`:** ```c - if (mcast_rate > 0) + if
+(mcast_rate > 0) { rateidx = mcast_rate - 1; - else - rateidx =
+ffs(info->basic_rates) - 1; + } else { + if (info->basic_rates) +
+rateidx = __ffs(info->basic_rates); + else + rateidx = 0; + } ``` ###
+Why This Should Be Backported **1. Firmware Crash Prevention:** The
+commit directly prevents firmware crashes by ensuring invalid rate codes
+(negative values) are never sent to firmware. This is a critical
+stability fix. **2. Small and Contained Fix:** The changes are minimal
+and focused - just adding proper validation for the `basic_rates` field
+before using it in rate calculations. The fix doesn't introduce new
+features or architectural changes. **3. Common Scenario Impact:** The
+issue occurs during firmware recovery when station interfaces exist but
+aren't associated - a scenario that can happen during normal operation,
+especially in environments with frequent disconnections or recovery
+events. **4. Consistent with Stable Tree Criteria:** - Fixes an
+important bug affecting users (firmware crashes) - Changes are minimal
+and low-risk - No new functionality introduced - Confined to the ath12k
+subsystem **5. Similarity to Backported Commits:** This fix follows the
+same pattern as the historical examples that were backported (marked
+"YES"): - Similar Commit #1: Fixed incorrect multicast/broadcast rate
+setting that caused broken mesh paths - Similar Commit #3: Fixed invalid
+AMPDU factor calculation - Similar Commit #4: Fixed failed frame
+transmission handling to prevent metric calculation issues - Similar
+Commit #5: Fixed firmware crash due to invalid peer NSS values **6. Low
+Regression Risk:** The fix uses safe fallback behavior (defaulting to
+rate index 0) when `basic_rates` is zero, which is much safer than
+sending negative rate codes to firmware. The commit addresses a clear
+bug that causes firmware stability issues in a common operational
+scenario, with a minimal and safe fix that follows established patterns
+for stable tree inclusion.
 
- drivers/net/wireless/ath/ath12k/mac.c | 31 +++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ drivers/net/wireless/ath/ath12k/mac.c | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 5f6d9896ef613..06b2baccd1335 100644
+index 06b2baccd1335..b06836525e2c4 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3499,6 +3499,8 @@ static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
- 	unsigned long links = ahvif->links_map;
- 	struct ieee80211_bss_conf *info;
- 	struct ath12k_link_vif *arvif;
-+	struct ieee80211_sta *sta;
-+	struct ath12k_sta *ahsta;
- 	struct ath12k *ar;
- 	u8 link_id;
- 
-@@ -3511,6 +3513,35 @@ static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
+@@ -3413,7 +3413,10 @@ static void ath12k_recalculate_mgmt_rate(struct ath12k *ar,
  	}
  
- 	if (changed & BSS_CHANGED_ASSOC) {
-+		if (vif->cfg.assoc) {
-+			/* only in station mode we can get here, so it's safe
-+			 * to use ap_addr
-+			 */
-+			rcu_read_lock();
-+			sta = ieee80211_find_sta(vif, vif->cfg.ap_addr);
-+			if (!sta) {
-+				rcu_read_unlock();
-+				WARN_ONCE(1, "failed to find sta with addr %pM\n",
-+					  vif->cfg.ap_addr);
-+				return;
-+			}
-+
-+			ahsta = ath12k_sta_to_ahsta(sta);
-+			arvif = wiphy_dereference(hw->wiphy,
-+						  ahvif->link[ahsta->assoc_link_id]);
-+			rcu_read_unlock();
-+
-+			ar = arvif->ar;
-+			/* there is no reason for which an assoc link's
-+			 * bss info does not exist
-+			 */
-+			info = ath12k_mac_get_link_bss_conf(arvif);
-+			ath12k_bss_assoc(ar, arvif, info);
-+
-+			/* exclude assoc link as it is done above */
-+			links &= ~BIT(ahsta->assoc_link_id);
+ 	sband = hw->wiphy->bands[def->chan->band];
+-	basic_rate_idx = ffs(bss_conf->basic_rates) - 1;
++	if (bss_conf->basic_rates)
++		basic_rate_idx = __ffs(bss_conf->basic_rates);
++	else
++		basic_rate_idx = 0;
+ 	bitrate = sband->bitrates[basic_rate_idx].bitrate;
+ 
+ 	hw_rate_code = ath12k_mac_get_rate_hw_value(bitrate);
+@@ -3811,10 +3814,14 @@ static void ath12k_mac_bss_info_changed(struct ath12k *ar,
+ 		band = def.chan->band;
+ 		mcast_rate = info->mcast_rate[band];
+ 
+-		if (mcast_rate > 0)
++		if (mcast_rate > 0) {
+ 			rateidx = mcast_rate - 1;
+-		else
+-			rateidx = ffs(info->basic_rates) - 1;
++		} else {
++			if (info->basic_rates)
++				rateidx = __ffs(info->basic_rates);
++			else
++				rateidx = 0;
 +		}
-+
- 		for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
- 			arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
- 			if (!arvif || !arvif->ar)
+ 
+ 		if (ar->pdev->cap.supported_bands & WMI_HOST_WLAN_5G_CAP)
+ 			rateidx += ATH12K_MAC_FIRST_OFDM_RATE_IDX;
 -- 
 2.39.5
 
