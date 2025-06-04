@@ -4,69 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 454BCC61CE8
-	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 14:45:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF5F7C5B543
+	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 17:33:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=33tsyg+dXWEo0LFYTuDFyRt32PbWiYsGz1lOf/KOw08=; b=yYWfZp6TiDHCK9WHdwOm+q8kMH
-	2DIRLfzpzzQh8vCIkkEZti58qXXOI4a5zysVfGu9vMNoPSnhky9rP8uO8h7SKrbFKC9dFGcZMbjFI
-	OknymxwZMdTcrYrMIXm/oyM8SAXs64JZ4tQ2cJiP6ak+valnngVNls9FtG1DG4g7UujjsEEDfprfQ
-	eBEvX6yIfcp4zdEWWoMXm0FHwfP01xgdK2Og3u16pN4dEEQcPBWMHD0mgq+VHBSiqVXZUcE/ieGC9
-	462gKdlSt4ih1+sC6odnR1pul7Fs30VfBgKujiv/Yt10ZWMLYQGCbK2zJSxA4ax9YjmaTG3OKhV9j
-	qv9Y7qJA==;
+	bh=M6QfFKXaIaqfEd/FkWiKq/aVwS4rH4eHPaNClleRyo8=; b=yt197Kjgj9Q0BjhyrDXSWBsAfq
+	kFZw/h7Yrk8KAN638OPEnAwToBIhqFkMeXCF7yLXUwXIaLGm7k4ReyFjT5/RvbNGmB8XMbrM20jnx
+	90xTy9+7fbaoQcQqXus0NOoc7dZ8m8yodmfXxEYYyMfshlw54pehSLTUu9XuLeQVoa30sYBTxL4Ld
+	CgFD8VK8P7zJjvO/d1+Iz+mKuhqrW0s5GwcZxtoSDpGFDcqjNytQUHW5MMYWe8lShgPny5+Gd81iV
+	Z7FvtkwvXV1f6AqyycXGzGgH/setDqD7j3LdXbgzUQG+zeSSH3GoE0svgJk2/QcqQEbaDdWrroyv3
+	3kMTVQ8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMpNK-0000000Dc2f-09qE;
-	Wed, 04 Jun 2025 14:45:54 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1uMrzD-0000000DwyU-2pKU;
+	Wed, 04 Jun 2025 17:33:11 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMpNG-0000000DbzG-0db9
+	id 1uMrwq-0000000Dwle-00RC
 	for ath12k@lists.infradead.org;
-	Wed, 04 Jun 2025 14:45:52 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 74004A50628;
-	Wed,  4 Jun 2025 14:45:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1E2ABC4CEF1;
-	Wed,  4 Jun 2025 14:45:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749048349;
-	bh=AahTbiL0j1lHqgp6tMq8JeHQ5K8h8e6zfnJJYbWsUc0=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=bHv8TzxaZHukiEWdht1QcuRlHO9xmK/M+5GLLPyEstC2Ehyn++Usz8tx2FV+mpjG2
-	 pXjvObsHHKorU8W6CbN1kGvZUi1Z+7Ca+bqSJQBBF+ZuvwwgexQhA9wi/zoSn1Fq8l
-	 Nw12m1EGo6aFwPdBtLI7LaAiPafjAgw6ihZo38dYkyH4aI3JjO2cseTSyDE3vujzBY
-	 nK+s0LzaLKlEmdqBPKpsGp+8sgySANx3/FEhDOmslVL6MLYTR78ymUNI6IA57rTDXs
-	 0sGtzvH5Ih1CroG5x+HEZUu5peIjVsE7P/i0C8XXeREs/rGW5etxoFbTHOdXkwNyWy
-	 VRqWXddF2Qbbg==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1uMpND-000000007OY-0oJh;
-	Wed, 04 Jun 2025 16:45:47 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Miaoqing Pan <quic_miaoqing@quicinc.com>,
-	Remi Pommarel <repk@triplefau.lt>,
-	Baochen Qiang <quic_bqiang@quicinc.com>,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>,
-	stable@vger.kernel.org
-Subject: [PATCH v2 1/4] wifi: ath12k: fix dest ring-buffer corruption
-Date: Wed,  4 Jun 2025 16:45:06 +0200
-Message-ID: <20250604144509.28374-2-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.49.0
-In-Reply-To: <20250604144509.28374-1-johan+linaro@kernel.org>
-References: <20250604144509.28374-1-johan+linaro@kernel.org>
+	Wed, 04 Jun 2025 17:30:45 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5549eDdN016027
+	for <ath12k@lists.infradead.org>; Wed, 4 Jun 2025 17:30:43 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	M6QfFKXaIaqfEd/FkWiKq/aVwS4rH4eHPaNClleRyo8=; b=D6Z8updlxsb3HFG4
+	WKtQaDqfNAr6yC+zBMcBaJ1ar3YR65j+cK9scRCzzB6oYefJ0IyDOVzZX5Lrq1vb
+	gn2uxS6JiejrUgFhklNQkszz3VQLNFNtV+bknXNvAZShAeI0jcMAbJPTUcqoZxkv
+	bQmMzCoLdrqxPvrrecaqCJpdNdcTLXBxq5j08WY2+jN4YkcAsRbuAXBGDWXPRX+X
+	qxVcKCZoaHOYxy9XaLunQGvUVaNQtqwcMSJg3s4bc0Ru4YwlD1DQH7Et9Vk8UAAI
+	gJ4OgtXnJFMxFE6iq2TrZnVccQgDaVOZQeNU1oZrOQG6BIPnCreFhTHpkrr4dj0w
+	8tr68Q==
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 472be82k6m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 04 Jun 2025 17:30:43 +0000 (GMT)
+Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b26e120e300so34792a12.1
+        for <ath12k@lists.infradead.org>; Wed, 04 Jun 2025 10:30:43 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749058242; x=1749663042;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=M6QfFKXaIaqfEd/FkWiKq/aVwS4rH4eHPaNClleRyo8=;
+        b=GPYKlXl4fPjqOMRurZP1xVwCD5ZJQC4RyIN4ttGTAklSF9vvCtivuhQyy5DAuQ28Mt
+         UXAv98iLxofiFNnEs+Lu+95v/gSdcZgTgm7ymHM2b5ty8s6QEBn8KEpSSH92JTqMZrcD
+         58EOV9acnXO5MyvWI8HJY4BQzutGjafjaKKlkpHCzSA0thCDWo1dxghIDWnLbFt5q1qN
+         WBrrRhocZmBBSXC7IU6N2FD7R7dFTjHTHayH4c1fiYHIC6EgucgSSNEQr9SOKdnm9lVs
+         DAk5bSSrVLupaiw5aQ6DKoxSk1GLaSkXroOlpZ8dXJuougY2/ZqGlbfVjDWsC1H8SzdF
+         E5Tw==
+X-Forwarded-Encrypted: i=1; AJvYcCXickNj74zA9dewR792O9sKah3c/BROveMRM7nLC7k4SRDRFHAknEY7u8f1ff+8dy5wdBll0ek=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzNHh0tSv/t8X32mkS5+EUo/YLWiDTwWswj+mCOavKRmk30PmlV
+	SJ5S4IRkG3n/7xzF2eJfvYFC57DagG34S+7P2dns955Hdyt8E0q5NCTFIRcsdL32FJasKa18pgc
+	h66HFfv9bOtUBnmERXtEq64VwADriIpSWOUy3S3GZSrjmH3WQa1cX8f7RkBT44Ms5
+X-Gm-Gg: ASbGncu+QHl7lZ9j81Fup3oBSJeEO14eOvFd//ikDuZVVCv/JBZGPNZYFGlsDardx/9
+	yi8MOuu1aYH+BIE8LLgJgSe52uaEEnf7f7/gNXGnLnHRiWVoWymbuB968pXE8KgwJa/xKEGWJYh
+	ISkJtiedcTq2iB8vLVEZFCR/dbEFHA0YU/t5Aq5Gc+LAvLILrvtgqhDVWaAzFEYn6+fAu7yEBBR
+	txKKxD8xNFkMdtC+VBgOwwPxrEM1pniXID0IABSn5oTiDA34kNie8KCwvq1lw9XRYvBWUUA3kVb
+	TdpW3OPz6hjS9VM6bQEL9+Iz8Rh8qCmov/2MC7bf+9zuh0oGH6nRvRamsenOvNaclqU=
+X-Received: by 2002:a05:6a21:648f:b0:21c:fa68:b457 with SMTP id adf61e73a8af0-21d22c6d975mr5964069637.22.1749058242198;
+        Wed, 04 Jun 2025 10:30:42 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE912qLDr9L5IkdgKjb517k46WEvSgY7TJ2XqRQ5es0xea+pGkbn1tThWjp+5oOBCAedAJytg==
+X-Received: by 2002:a05:6a21:648f:b0:21c:fa68:b457 with SMTP id adf61e73a8af0-21d22c6d975mr5964014637.22.1749058241756;
+        Wed, 04 Jun 2025 10:30:41 -0700 (PDT)
+Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7480375b520sm3006149b3a.107.2025.06.04.10.30.41
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 04 Jun 2025 10:30:41 -0700 (PDT)
+Message-ID: <ae1215c7-5ea6-447c-8c07-5667e13dae89@oss.qualcomm.com>
+Date: Wed, 4 Jun 2025 10:30:40 -0700
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: ath12k: big endian bringup
+To: Alexander Wilhelm <alexander.wilhelm@westermo.com>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+References: <aD8HK4Iagc99skN5@FUE-ALEWI-WINX>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <aD8HK4Iagc99skN5@FUE-ALEWI-WINX>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Authority-Analysis: v=2.4 cv=bNYWIO+Z c=1 sm=1 tr=0 ts=684082c3 cx=c_pps
+ a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=CLgnCW3GpZf6G4-LuiIA:9
+ a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
+X-Proofpoint-GUID: zQqW7nVqMJ0eyKrMwgfR31Vog088KRie
+X-Proofpoint-ORIG-GUID: zQqW7nVqMJ0eyKrMwgfR31Vog088KRie
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjA0MDEzNSBTYWx0ZWRfX5Cdw4euUwRVU
+ dqYpCQYAVGS8Z7zkLpkxIwDIQ7JuZYKE6AheAC0JnR/7GUjsTT1xCNUrlWIpbEH8HtwusZ562y3
+ c8Unjiyv/cBMbZSt/Gi9H1Or0KPAgEvxOYNNc7qsbOrrj5OvNYnoLpqT576aThJpr6ZNv+BzV7u
+ +cKIAjPr7qwnFRmFd5DUGPeWiDrFAq0tokeTFEpCDgFktAdhOnJ04A8/q+/JwO3N+RfX2RacYnb
+ IjXnZHTVZH6OT3aX7xnur1LnRKe6pQqYi/fpOy8DscSUr+1aWMg5lcaNcIH0Ypk6vcZM+T4Fp3s
+ 1EcrBiWdh8+QxcmKFTkhL4JQhMNOqVTO0NXWnYLV8N97s1iOJVHM/oOip3eZJZcEaWhlFVtWokQ
+ t2TPqX5r0d8FAGhe7X8TcfDCuZ0lj5n1qUiEYcTJw5PhHPATC5UuPEP4/VCI6CGrQKdjpU61
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-04_04,2025-06-03_02,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 malwarescore=0 phishscore=0 priorityscore=1501
+ suspectscore=0 mlxscore=0 impostorscore=0 spamscore=0 clxscore=1015
+ mlxlogscore=999 adultscore=0 bulkscore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2506040135
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250604_074550_331861_4265F280 
-X-CRM114-Status: GOOD (  12.95  )
+X-CRM114-CacheID: sfid-20250604_103044_092675_986929DB 
+X-CRM114-Status: GOOD (  20.90  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,75 +129,32 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add the missing memory barrier to make sure that destination ring
-descriptors are read after the head pointers to avoid using stale data
-on weakly ordered architectures like aarch64.
+On 6/3/2025 7:31 AM, Alexander Wilhelm wrote:
+> Hello devs,
+> 
+> I need help to bring up the QCN9274 with ath12k driver on big endian PowerPC
+> platform. I've already found some issues and fixed the MHI start procedure [1]
+> and QMI conversion [2]. Furthermore I added some endianness fixes on 'qmi.c'
+> file and could successfully transfer the firmware and boardfile to the wireless
+> module. But the firmware does not start properly.
+> 
+> I'm trying to analyze the error and don't fully understand what is happening.
+> While 'ath12k_htc_connect_service' I expect a successful response from
+> 'ath12k_htc_send', but the connection then is timeout. It seems that I should
+> receive a message with length of 20 and at least I get one. But then the driver
+> remains endless in the 'ath12k_ce_recv_process_cb' and I always get a message of
+> length 0 from the 'ath12k_hal_ce_dst_status_get_length' until RCU stall happens.
+> 
+> More interesting is the 'CE_ATTR_BYTE_SWAP_DATA' from ath11k, that is still used
+> in ath12k code, but HAL structures now are swapped in driver itself at the same
+> time. Is that correct?
 
-The barrier is added to the ath12k_hal_srng_access_begin() helper for
-symmetry with follow-on fixes for source ring buffer corruption which
-will add barriers to ath12k_hal_srng_access_end().
+That does NOT sound correct.
+What happens if you unconditionally keep the BYTE_SWAP flag disabled?
 
-Note that this may fix the empty descriptor issue recently worked around
-by commit 51ad34a47e9f ("wifi: ath12k: Add drop descriptor handling for
-monitor ring").
+Note that to date the ath12k driver has not been tested internally on a big
+endian host. But your message at least has folks talking about it now...
 
-Tested-on: WCN7850 hw2.0 WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Cc: stable@vger.kernel.org	# 6.3
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/net/wireless/ath/ath12k/ce.c  |  3 ---
- drivers/net/wireless/ath/ath12k/hal.c | 17 ++++++++++++++---
- 2 files changed, 14 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/ce.c b/drivers/net/wireless/ath/ath12k/ce.c
-index 740586fe49d1..b66d23d6b2bd 100644
---- a/drivers/net/wireless/ath/ath12k/ce.c
-+++ b/drivers/net/wireless/ath/ath12k/ce.c
-@@ -343,9 +343,6 @@ static int ath12k_ce_completed_recv_next(struct ath12k_ce_pipe *pipe,
- 		goto err;
- 	}
- 
--	/* Make sure descriptor is read after the head pointer. */
--	dma_rmb();
--
- 	*nbytes = ath12k_hal_ce_dst_status_get_length(desc);
- 
- 	*skb = pipe->dest_ring->skb[sw_index];
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index 91d5126ca149..9eea13ed5565 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -2126,13 +2126,24 @@ void *ath12k_hal_srng_src_get_next_reaped(struct ath12k_base *ab,
- 
- void ath12k_hal_srng_access_begin(struct ath12k_base *ab, struct hal_srng *srng)
- {
-+	u32 hp;
-+
- 	lockdep_assert_held(&srng->lock);
- 
--	if (srng->ring_dir == HAL_SRNG_DIR_SRC)
-+	if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
- 		srng->u.src_ring.cached_tp =
- 			*(volatile u32 *)srng->u.src_ring.tp_addr;
--	else
--		srng->u.dst_ring.cached_hp = READ_ONCE(*srng->u.dst_ring.hp_addr);
-+	} else {
-+		hp = READ_ONCE(*srng->u.dst_ring.hp_addr);
-+
-+		if (hp != srng->u.dst_ring.cached_hp) {
-+			srng->u.dst_ring.cached_hp = hp;
-+			/* Make sure descriptor is read after the head
-+			 * pointer.
-+			 */
-+			dma_rmb();
-+		}
-+	}
- }
- 
- /* Update cached ring head/tail pointers to HW. ath12k_hal_srng_access_begin()
--- 
-2.49.0
+/jeff
 
 
