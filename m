@@ -4,59 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29D1AC61CE7
-	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 02:01:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46514C5B559
+	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 02:01:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YNJsY6tlWGTOpRx0kcITN28M8ilEeTO0aeghjgpZb3o=; b=tufb7M6S6C6dolSXgu2w7xuFHy
-	dg+MbAPyksc+xlH5DwluyihgvFS15fIgeRz+kluYUkS3C/hHg+kfkrals3IQ4LlSFotS/yqNNY8pH
-	8myYES8DsQ71+IUutM/jyyI2DktiCMe+oQk8P2vGb71mPrlHqWkoB1gcNpYuTqwl6cGTCuQDDUMMX
-	NJJHtdrBrK9I35UTyNQC7zaNStGfh+HmUwqpN9ccZkc9LLyZoQbsFv8IrvB6HeiDc2gEi7/m7S0XS
-	AVP7fZLFhnQypF9G3pEuWYZ7rjivCzjCnFlp0qlcIYnfNshcMixuvNpyx07s0EGeHxHkjziUyW5KS
-	z8SFlW7w==;
+	bh=QPm2o1HFRN9LunraDjFx4FxYIEJ+aS6cGLPdC4moFy8=; b=0/dNKkru0oUGHpxqIBDIKIOCvf
+	gAHdhko1HgD+3ROlvyNLJjV5e66RllfTlEDWJ7fUaeffQ44mnGp1aaXeFcaP8D9J/YdRN1fjUu+jf
+	EYsAO/PfvEJqsM47DVKAAdXxbUb4dzZ98LiHMEh8IHhjOIv/+RHkXTqV3wbGcMfYKe+B5oaFI57cn
+	fQU2Yfl5BJDEIxtNAkDt47mJ9g9q/4IsiTo22Y7MQtO6Qyp8lMKaUcrt5xHiGt9QBT/QxGZukbJ9F
+	Zh+pEEvtc+hFKQfw5FQUAGodFTvcywofE9/NnpyTmWz+yxU+pTPqdeSnIHlR1Q21WaXVTBThD+ipp
+	EPHdV/9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMdRy-0000000CGay-3iCA;
+	id 1uMdRx-0000000CGaP-4BxV;
 	Wed, 04 Jun 2025 02:01:54 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcTA-0000000C7jE-2bTs
+	id 1uMcT6-0000000C7iV-36dE
 	for ath12k@lists.infradead.org;
-	Wed, 04 Jun 2025 00:59:06 +0000
+	Wed, 04 Jun 2025 00:59:02 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id EAE57A4FE5C;
-	Wed,  4 Jun 2025 00:59:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D562C4CEEF;
-	Wed,  4 Jun 2025 00:59:02 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7E612437E6;
+	Wed,  4 Jun 2025 00:59:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4235AC4CEF3;
+	Wed,  4 Jun 2025 00:58:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748998743;
-	bh=GGdZyVX0V+7vWW+Zdhvke55vJjkda8KHsemqE9wIkBc=;
+	s=k20201202; t=1748998740;
+	bh=zemsLguPAb7fCtLEDOcp1Rg6535WxhNw5HNB5S54dKQ=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=gD9AStEG0u8z2s2dd7AX6JHtph3Pq9LxVaE3TYPBp3ZeyQ6kRstrHD6aqIn+tnFnd
-	 C1PP234LFxl018e9abx8xP6KDlwR8mqmfuWZr64kXw5fVzQnZPVQUhfHi7MMCdGDTN
-	 WRER1mDg+l63d5oYyxt4pkMQl8fE0nLcfooOWD0+KmrwClz638+VouNEi3X0xwDlpJ
-	 +2U+Vfe6H6+cuqfH4l7ndcduz8zO1CgFvY0PMJ4b9Cm64U85BaERAv5n4ifSGFsvlw
-	 jICkPdV1884otDiDPmDT0L0skYVryKKorRwhulIznGmbm6MJzjul6B2pdJmA+9biJc
-	 AaQ1WNgaJiduQ==
+	b=EMwPVVxRFDSXJMEl4mFJW6sKP0nd+YCDJzhce8rIIceKuNyMLzUvH/SftHg/+zopo
+	 fOyVDemwQXjgRvU0rdvT2JFTzft74SaVAcwP2AdvwK5WvGpGEIFu4bn9P+IIFRZ+1a
+	 o46ALuWlZNKT982MXT7iEctxLdmey3V2+ojYIEkABF0ny6wtJzCuYBLBraEKO76zNa
+	 /fXQUCtPiATE0Bo6cMSQxjVinfqt1TeyOn03tT+zP8vussgtQOWReNb1Row0a8+GqG
+	 h628B8vgukyDXv+GRTkLmnpnAJ3YGWYxq2/wA6jY0OX6OeML7zICxNBmmK+SZ3jLWI
+	 oEMX//HNpaozQ==
 From: Sasha Levin <sashal@kernel.org>
 To: patches@lists.linux.dev,
 	stable@vger.kernel.org
-Cc: Hari Chandrakanthan <quic_haric@quicinc.com>,
-	Nicolas Escande <nico.escande@gmail.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+Cc: Sidhanta Sahu <sidhanta.sahu@oss.qualcomm.com>,
+	Muna Sinada <muna.sinada@oss.qualcomm.com>,
+	Mahendran P <quic_mahep@quicinc.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.14 105/108] wifi: ath12k: fix link valid field initialization in the monitor Rx
-Date: Tue,  3 Jun 2025 20:55:28 -0400
-Message-Id: <20250604005531.4178547-105-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.14 103/108] wifi: ath12k: Fix memory leak due to multiple rx_stats allocation
+Date: Tue,  3 Jun 2025 20:55:26 -0400
+Message-Id: <20250604005531.4178547-103-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250604005531.4178547-1-sashal@kernel.org>
 References: <20250604005531.4178547-1-sashal@kernel.org>
@@ -67,8 +66,8 @@ X-stable-base: Linux 6.14.9
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250603_175904_804918_19699AB5 
-X-CRM114-Status: GOOD (  15.23  )
+X-CRM114-CacheID: sfid-20250603_175900_822121_71B148DF 
+X-CRM114-Status: GOOD (  18.81  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,91 +82,111 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Hari Chandrakanthan <quic_haric@quicinc.com>
+From: Sidhanta Sahu <sidhanta.sahu@oss.qualcomm.com>
 
-[ Upstream commit 2826139f9295821fe2b049318a1cc057ec003131 ]
+[ Upstream commit c426497fa2055c8005196922e7d29c41d7e0948a ]
 
-Currently, the link_valid field is not initialized in the monitor Rx path.
-This can result in random values for the link_valid and link_id leads to
-undefined behaviour in mac80211. Therefore, initialize the link_valid
-field in the monitor Rx path.
+rx_stats for each arsta is allocated when adding a station.
+arsta->rx_stats will be freed when a station is removed.
+
+Redundant allocations are occurring when the same station is added
+multiple times. This causes ath12k_mac_station_add() to be called
+multiple times, and rx_stats is allocated each time. As a result there
+is memory leaks.
+
+Prevent multiple allocations of rx_stats when ath12k_mac_station_add()
+is called repeatedly by checking if rx_stats is already allocated
+before allocating again. Allocate arsta->rx_stats if arsta->rx_stats
+is NULL respectively.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Hari Chandrakanthan <quic_haric@quicinc.com>
-Tested-by: Nicolas Escande <nico.escande@gmail.com>
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Link: https://patch.msgid.link/20250324062518.2752822-2-quic_periyasa@quicinc.com
+Signed-off-by: Sidhanta Sahu <sidhanta.sahu@oss.qualcomm.com>
+Signed-off-by: Muna Sinada <muna.sinada@oss.qualcomm.com>
+Reviewed-by: Mahendran P <quic_mahep@quicinc.com>
+Link: https://patch.msgid.link/20250326213538.2214194-1-muna.sinada@oss.qualcomm.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
 
-Based on my analysis of the commit and the code context, here is my
-assessment: **YES** This commit should be backported to stable kernel
-trees. Here's my extensive analysis: ## Technical Analysis **Code Change
-Impact:** The commit adds a single line `status->link_valid = 0;` at the
-beginning of the `ath12k_dp_mon_rx_deliver_msdu()` function in the
-monitor Rx path. This initializes the `link_valid` field in the
-`ieee80211_rx_status` structure before any subsequent processing. **Root
-Cause and Problem:** 1. **Uninitialized Memory Issue**: The
-`ieee80211_rx_status` structure contains the `link_valid` field (1 bit)
-and `link_id` field (4 bits) that were not being initialized in the
-monitor Rx path. 2. **Undefined Behavior**: Without initialization,
-these fields contain random stack memory values, which can cause
-unpredictable behavior in mac80211 when it processes received frames. 3.
-**MLO Context**: The `link_valid` and `link_id` fields are specifically
-used for Multi-Link Operation (MLO) in WiFi 7, where mac80211 needs to
-know which link a frame was received on. ## Why This Should Be
-Backported **1. Bug Fix Nature:** - This is clearly a bug fix that
-addresses undefined behavior caused by uninitialized fields - The commit
-message explicitly states this fixes "undefined behaviour in mac80211" -
-Similar to reference commit #2 (which was backported) that fixed
-uninitialized variables **2. User Impact:** - Uninitialized fields can
-cause mac80211 to make incorrect decisions about packet processing - May
-lead to packet drops, incorrect link handling, or other unpredictable
-wireless behavior - Monitor mode is commonly used by network analysis
-tools, making this user-facing **3. Risk Assessment:** - **Very Low
-Risk**: The change is minimal (single line initialization) - **No Side
-Effects**: Setting `link_valid = 0` is the correct default for monitor
-mode - **Safe Change**: Only affects the monitor Rx path, doesn't change
-core functionality **4. Code Pattern Consistency:** Looking at the
-regular Rx path in `dp_rx.c`, I can see the same pattern: ```c if
-(pubsta && pubsta->valid_links) { status->link_valid = 1;
-status->link_id = peer->link_id; } ``` The monitor path was missing the
-corresponding initialization, creating an inconsistency where: - Regular
-Rx path: Properly sets `link_valid = 1` when appropriate - Monitor Rx
-path: Left `link_valid` uninitialized (now fixed to `link_valid = 0`)
-**5. Containment:** - Change is confined to a single function in the
-monitor path - No architectural changes or new feature additions -
-Follows established kernel practices for field initialization **6.
-Stable Tree Criteria Match:** - ✅ Important bug fix (undefined behavior)
-- ✅ Minimal risk of regression - ✅ Small, contained change - ✅ No new
-features - ✅ Affects user-facing functionality (monitor mode) **7.
-Reference Precedent:** This follows the same pattern as the backported
-commit #2 which fixed uninitialized variables and commit #3 which fixed
-incorrect field usage, both of which were deemed suitable for
-backporting. The commit properly addresses a real bug that could affect
-users of monitor mode with ath12k WiFi 7 devices, with virtually no risk
-of introducing regressions.
+**YES** This commit should be backported to stable kernel trees. Here's
+my extensive analysis: ## Analysis of the Commit ### 1. Nature of the
+Bug Fix This commit fixes a **memory leak** in the ath12k WiFi driver.
+The specific issue is that `rx_stats` memory is allocated every time
+`ath12k_mac_station_add()` is called, but when the same station is added
+multiple times, it creates redundant allocations without freeing the
+previous allocation, leading to memory leaks. ### 2. Code Changes
+Analysis The fix is **minimal and surgical**: **Before the fix:** ```c
+arsta->rx_stats = kzalloc(sizeof(*arsta->rx_stats), GFP_KERNEL); if
+(!arsta->rx_stats) { ret = -ENOMEM; goto dec_num_station; } ``` **After
+the fix:** ```c if (!arsta->rx_stats) { arsta->rx_stats =
+kzalloc(sizeof(*arsta->rx_stats), GFP_KERNEL); if (!arsta->rx_stats) {
+ret = -ENOMEM; goto dec_num_station; } } ``` The change simply adds a
+NULL check before allocation, ensuring memory is only allocated if
+`arsta->rx_stats` is NULL. ### 3. Risk Assessment - **Low Risk**: The
+change is a simple conditional check that prevents redundant allocations
+- **No Architectural Changes**: The fix doesn't alter any fundamental
+driver behavior or data structures - **Contained**: The change is
+localized to a single function and doesn't affect other subsystems -
+**No New Features**: This is purely a bugfix with no new functionality
+### 4. Comparison with Similar Commits Looking at the provided similar
+commits, this follows the exact same pattern as **approved backport
+candidates**: - **Similar Commit #2 (YES)**: "Fix memory leak in rx_desc
+and tx_desc" - Similar memory leak fix - **Similar Commit #3 (YES)**:
+"fix tx_stats memory leak" - Identical pattern fixing stats memory leak
+in ath10k - **Similar Commit #4 (YES)**: "fix memory leak in WMI
+firmware stats" - Memory leak fix in ath11k - **Similar Commit #5
+(YES)**: "fix memory leak in ath12k_dp_rx_peer_frag_setup()" - Memory
+leak fix in ath12k All these approved commits share the same
+characteristics: - Fix memory leaks in wireless drivers - Make minimal,
+surgical changes - Have low regression risk - Address real user-
+affecting bugs ### 5. User Impact Memory leaks can cause: - System
+memory exhaustion over time - Degraded system performance - Potential
+system instability in resource-constrained environments - Affects users
+with ath12k hardware (QCN9274, WCN7850 as mentioned in testing) ### 6.
+Testing Evidence The commit includes comprehensive testing on real
+hardware: - QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+- WCN7850 hw2.0 PCI
+WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3 ### 7. Stable Tree
+Compliance This commit perfectly fits stable tree criteria: - ✅ Fixes an
+important bug (memory leak) - ✅ No new features introduced - ✅ No
+architectural changes - ✅ Minimal risk of regression - ✅ Confined to a
+specific driver subsystem - ✅ Clear, well-documented fix ### 8. Code
+Context Verification From examining the kernel tree, I confirmed: - The
+function `ath12k_mac_station_add()` can indeed be called multiple times
+(from state transitions and link assignment) - Proper error handling
+exists with `kfree(arsta->rx_stats)` in the cleanup paths - The fix
+addresses a real scenario where station addition can happen multiple
+times This is a textbook example of a commit that should be backported:
+it fixes a real memory leak bug with a minimal, low-risk change that
+follows established patterns for successful backports in the wireless
+subsystem.
 
- drivers/net/wireless/ath/ath12k/dp_mon.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/net/wireless/ath/ath12k/mac.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 8737dc8fea354..05a9cd21b5dc3 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -1019,6 +1019,8 @@ static void ath12k_dp_mon_rx_deliver_msdu(struct ath12k *ar, struct napi_struct
- 	bool is_mcbc = rxcb->is_mcbc;
- 	bool is_eapol_tkip = rxcb->is_eapol;
- 
-+	status->link_valid = 0;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index b06836525e2c4..cb807061fe11f 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -5457,10 +5457,13 @@ static int ath12k_mac_station_add(struct ath12k *ar,
+ 			    ar->max_num_stations);
+ 		goto exit;
+ 	}
+-	arsta->rx_stats = kzalloc(sizeof(*arsta->rx_stats), GFP_KERNEL);
 +
- 	if ((status->encoding == RX_ENC_HE) && !(status->flag & RX_FLAG_RADIOTAP_HE) &&
- 	    !(status->flag & RX_FLAG_SKIP_MONITOR)) {
- 		he = skb_push(msdu, sizeof(known));
+ 	if (!arsta->rx_stats) {
+-		ret = -ENOMEM;
+-		goto dec_num_station;
++		arsta->rx_stats = kzalloc(sizeof(*arsta->rx_stats), GFP_KERNEL);
++		if (!arsta->rx_stats) {
++			ret = -ENOMEM;
++			goto dec_num_station;
++		}
+ 	}
+ 
+ 	peer_param.vdev_id = arvif->vdev_id;
 -- 
 2.39.5
 
