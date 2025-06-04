@@ -4,59 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B5F0C5AD49
-	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 02:30:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84948C61CE5
+	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 02:30:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=P+lwaIVqC2r1BX5ffpAvGl0ZZL2aAr7bdit4RNLZQXg=; b=Ykw8taM41OzJno+eWI1MB0oqbX
-	NhrhYPciFPS5CUoAuqTPvGCT6sfUFg2EpnOgKQPWFMhVk/7gsYO8Tdy2lc5M/wb7YVclUBdNLMM2p
-	4SvM2uusfYQemUAXzcbNNGNki8tdl7nQ40OYVecanHBzV22trpKVow75iPKmCcaxmbO9bt4x2aipK
-	FfmpdL76lKQderjeyrTVwMRBppoUPgLlzYrq7ukaExMAmtAaDlYi3xNTNV44NvEjWpCJsmuAFjYmc
-	LB02j0rcYjLh9djBDT4bNKd02v3dQuT9ZTsJ8AxolN9xR0n/AX1NVp7N8MidISY5vo92dsn+pV05P
-	dUKUnf8A==;
+	bh=k2DzYPQjxjc9AKIdEKfSTTdu0sQ5BTx9n3/glWUTrTo=; b=RnN4/Eun7xhJnT4pXbIChfAzxL
+	ZTJU4jdTa6myYwu8nTg1E1VeK2RCV5cOjoQDjJvuuExEB/vYEs7PKtbvMOOsRCuwWOyQAM/TMywWv
+	gw2TAsCLMSJrXPmvaD26UZXjB/wPOCdFkWqD46l3nN1uq1I2DQ0jVIa3Gg8L9EI6Py5VKVLQThFjo
+	adCdV9eGliFdTtp/ryEo4ZQecP+cMNs7qa5goAX9HyEDCCwq//8zHlcyobNQnat3fB/HqBvsNEHMf
+	UPGXHpLCuUB9VsYEGTK2lMUazCd39N7GZjzq+3AN69oE+Pk4TlwBKcMlQI1QmhwDwvBHk7feXCeK6
+	AMrgC5Mg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMdtg-0000000CK2v-1XdC;
-	Wed, 04 Jun 2025 02:30:32 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1uMdth-0000000CK3g-13pw;
+	Wed, 04 Jun 2025 02:30:33 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcW3-0000000C8FW-3ir9
+	id 1uMcW6-0000000C8G2-3Jzn
 	for ath12k@lists.infradead.org;
-	Wed, 04 Jun 2025 01:02:05 +0000
+	Wed, 04 Jun 2025 01:02:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 22D4EA4FC1C;
-	Wed,  4 Jun 2025 01:02:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 940A6C4CEEF;
-	Wed,  4 Jun 2025 01:02:01 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 29461629DE;
+	Wed,  4 Jun 2025 01:02:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9D2EC4CEF1;
+	Wed,  4 Jun 2025 01:02:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748998922;
-	bh=zW6ehYUThzTgGHATntbrFZmi/BBo5vdryCvXSmXyzIM=;
+	s=k20201202; t=1748998925;
+	bh=qQlleLWJuK3TuXQoJeTGRAHgPjVPr/RlI00AaTH+Slo=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=sVCH36BM6n4n62u/VwC074Tujspad7VydFIPua5ZbYSDQLV6MONCuX1ZZGmqrlWcs
-	 wIP/HFRfNSI5RS2XblESEXnfIJldkwCLwcmvrEfK/dS6SpNBD7zsKE7Yvk2c83jDAx
-	 8Bj1HH3u0aNK0Sw2SejidpDJ93kkHrIGj3F78CwWGk78qp5qYx8X7A7Ly/ekMiyFx9
-	 WKCwfGLlB1M3glEjYOmDl9RWC56jYaP8pklvssW9hsoUlrrx1Lkug7t7VDnmwhKvOd
-	 2DuIllaFkO1emSwT7TH7KLiVB3DT58nxQbUpgWCr19TCfYw8baiJ1AFntoarzeQr6H
-	 OambrhGT+B01w==
+	b=rG4TcDCqe8OpIDFwwbHG5tDaKEwNQUm41X/kKs72/JW86VGsBnn94mfkq9jrpA7tk
+	 pRPZQRaCMLIQtw7WzpKqSCUcF1KjBcHEcrlv4B1qlTYR4qzGHuAB6ZocUFlrZkIi0A
+	 si1DAx7wFB/McKZXJAl74muokG64sqMdRXaeWPZmbsvz09jgIMQwrvcIOoVUNZjrY1
+	 5pYVnM2kzHuZcjkgLx8wDknUZXP01fnTiASeIAp6buvo/7Elk73gEw3+OJ8VbZ4aHR
+	 +8jjcDCCyptmTlAwpe2hOFDKd4xAqKfoH5MbwRh4OD6PWLNgin5WacuwLzDbE1XQgL
+	 KldiUi39tJpeg==
 From: Sasha Levin <sashal@kernel.org>
 To: patches@lists.linux.dev,
 	stable@vger.kernel.org
-Cc: Hari Chandrakanthan <quic_haric@quicinc.com>,
-	Nicolas Escande <nico.escande@gmail.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+Cc: Suraj P Kizhakkethil <quic_surapk@quicinc.com>,
+	Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.12 90/93] wifi: ath12k: fix link valid field initialization in the monitor Rx
-Date: Tue,  3 Jun 2025 20:59:16 -0400
-Message-Id: <20250604005919.4191884-90-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.12 92/93] wifi: ath12k: Pass correct values of center freq1 and center freq2 for 160 MHz
+Date: Tue,  3 Jun 2025 20:59:18 -0400
+Message-Id: <20250604005919.4191884-92-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250604005919.4191884-1-sashal@kernel.org>
 References: <20250604005919.4191884-1-sashal@kernel.org>
@@ -66,9 +64,6 @@ X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.12.31
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250603_180204_065745_C374A2F4 
-X-CRM114-Status: GOOD (  15.13  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,91 +78,113 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Hari Chandrakanthan <quic_haric@quicinc.com>
+From: Suraj P Kizhakkethil <quic_surapk@quicinc.com>
 
-[ Upstream commit 2826139f9295821fe2b049318a1cc057ec003131 ]
+[ Upstream commit b1b01e46a3db5ad44d1e4691ba37c1e0832cd5cf ]
 
-Currently, the link_valid field is not initialized in the monitor Rx path.
-This can result in random values for the link_valid and link_id leads to
-undefined behaviour in mac80211. Therefore, initialize the link_valid
-field in the monitor Rx path.
+Currently, for 160 MHz bandwidth, center frequency1 and
+center frequency2 are not passed correctly to the firmware.
+Set center frequency1 as the center frequency
+of the primary 80 MHz channel segment and center frequency2 as
+the center frequency of the 160 MHz channel and pass the values
+to the firmware.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Hari Chandrakanthan <quic_haric@quicinc.com>
-Tested-by: Nicolas Escande <nico.escande@gmail.com>
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Link: https://patch.msgid.link/20250324062518.2752822-2-quic_periyasa@quicinc.com
+Signed-off-by: Suraj P Kizhakkethil <quic_surapk@quicinc.com>
+Reviewed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Link: https://patch.msgid.link/20250304095315.3050325-2-quic_surapk@quicinc.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
 
-Based on my analysis of the commit and the code context, here is my
-assessment: **YES** This commit should be backported to stable kernel
-trees. Here's my extensive analysis: ## Technical Analysis **Code Change
-Impact:** The commit adds a single line `status->link_valid = 0;` at the
-beginning of the `ath12k_dp_mon_rx_deliver_msdu()` function in the
-monitor Rx path. This initializes the `link_valid` field in the
-`ieee80211_rx_status` structure before any subsequent processing. **Root
-Cause and Problem:** 1. **Uninitialized Memory Issue**: The
-`ieee80211_rx_status` structure contains the `link_valid` field (1 bit)
-and `link_id` field (4 bits) that were not being initialized in the
-monitor Rx path. 2. **Undefined Behavior**: Without initialization,
-these fields contain random stack memory values, which can cause
-unpredictable behavior in mac80211 when it processes received frames. 3.
-**MLO Context**: The `link_valid` and `link_id` fields are specifically
-used for Multi-Link Operation (MLO) in WiFi 7, where mac80211 needs to
-know which link a frame was received on. ## Why This Should Be
-Backported **1. Bug Fix Nature:** - This is clearly a bug fix that
-addresses undefined behavior caused by uninitialized fields - The commit
-message explicitly states this fixes "undefined behaviour in mac80211" -
-Similar to reference commit #2 (which was backported) that fixed
-uninitialized variables **2. User Impact:** - Uninitialized fields can
-cause mac80211 to make incorrect decisions about packet processing - May
-lead to packet drops, incorrect link handling, or other unpredictable
-wireless behavior - Monitor mode is commonly used by network analysis
-tools, making this user-facing **3. Risk Assessment:** - **Very Low
-Risk**: The change is minimal (single line initialization) - **No Side
-Effects**: Setting `link_valid = 0` is the correct default for monitor
-mode - **Safe Change**: Only affects the monitor Rx path, doesn't change
-core functionality **4. Code Pattern Consistency:** Looking at the
-regular Rx path in `dp_rx.c`, I can see the same pattern: ```c if
-(pubsta && pubsta->valid_links) { status->link_valid = 1;
-status->link_id = peer->link_id; } ``` The monitor path was missing the
-corresponding initialization, creating an inconsistency where: - Regular
-Rx path: Properly sets `link_valid = 1` when appropriate - Monitor Rx
-path: Left `link_valid` uninitialized (now fixed to `link_valid = 0`)
-**5. Containment:** - Change is confined to a single function in the
-monitor path - No architectural changes or new feature additions -
-Follows established kernel practices for field initialization **6.
-Stable Tree Criteria Match:** - ✅ Important bug fix (undefined behavior)
-- ✅ Minimal risk of regression - ✅ Small, contained change - ✅ No new
-features - ✅ Affects user-facing functionality (monitor mode) **7.
-Reference Precedent:** This follows the same pattern as the backported
-commit #2 which fixed uninitialized variables and commit #3 which fixed
-incorrect field usage, both of which were deemed suitable for
-backporting. The commit properly addresses a real bug that could affect
-users of monitor mode with ath12k WiFi 7 devices, with virtually no risk
-of introducing regressions.
+Based on my thorough analysis, here is my assessment: **YES** This
+commit should be backported to stable kernel trees for the following
+reasons: ## Analysis of the Code Changes The commit fixes a critical bug
+in the 160 MHz channel frequency handling for the ath12k driver
+(Qualcomm Wi-Fi 7 devices). The specific issues being corrected are: ###
+1. **Incorrect center frequency calculation for 160 MHz EHT channels**
+**Before the fix**: The code only handled `MODE_11AC_VHT80_80` for dual-
+band scenarios but completely ignored `MODE_11BE_EHT160` (Wi-Fi 7's 160
+MHz mode). This meant: - `chan->band_center_freq1` was incorrectly set
+to the original `arg->band_center_freq1` - `chan->band_center_freq2` was
+set to 0, providing no information about the 160 MHz channel structure
+**After the fix**: For `MODE_11BE_EHT160`, the code now correctly: -
+Sets `chan->band_center_freq1` to the center of the primary 80 MHz
+segment (±40 MHz from control channel) - Sets `chan->band_center_freq2`
+to the center of the entire 160 MHz channel - Follows the exact same
+pattern already established and proven in ath11k driver for
+`MODE_11AX_HE160` ### 2. **Follows established precedent from ath11k**
+The ath11k driver (lines 851-860 in
+`/home/sasha/linux/drivers/net/wireless/ath/ath11k/wmi.c`) already
+implements this exact logic for `MODE_11AX_HE160`: ```c if
+(arg->channel.mode == MODE_11AX_HE160) { if (arg->channel.freq >
+arg->channel.band_center_freq1) chan->band_center_freq1 = center_freq1 +
+40; else chan->band_center_freq1 = center_freq1 - 40;
+chan->band_center_freq2 = arg->channel.band_center_freq1; } ``` The
+ath12k fix implements identical logic for `MODE_11BE_EHT160`, ensuring
+consistency across the ath driver family. ### 3. **Impact on Users**
+Without this fix, 160 MHz channels on Wi-Fi 7 devices would not work
+correctly because: - The firmware receives incorrect channel center
+frequency information - This could lead to improper channel selection,
+interference, or complete failure to establish 160 MHz connections -
+Users with QCN9274 (and similar) devices would experience degraded Wi-Fi
+7 performance ### 4. **Meets Stable Backport Criteria** ✅ **Fixes
+important functionality**: 160 MHz operation is a key Wi-Fi 7 feature ✅
+**Small, contained change**: Only affects one function, adds clear
+conditional logic ✅ **Low regression risk**: Follows proven pattern from
+ath11k, only changes previously broken path ✅ **Clear side effects**:
+None beyond fixing the intended issue ✅ **Well-tested**: Commit includes
+"Tested-on: QCN9274 hw2.0" with specific firmware version ### 5.
+**Driver Maturity Context** ATH12K is the Wi-Fi 7 driver for
+current/recent Qualcomm chipsets. While newer than ath11k, it supports
+hardware that users actively deploy. The 160 MHz functionality is
+critical for achieving the high throughput promised by Wi-Fi 7. ### 6.
+**Comparison with Similar Commits** This commit closely resembles
+**Similar Commit #2** (marked YES for backport) which also fixed
+frequency calculation issues in ath12k for 6 GHz operation. Both
+commits: - Fix critical frequency/channel handling bugs - Have minimal
+code changes with low regression risk - Include proper testing
+validation - Address functionality that affects real user deployments
+The fix is essential for proper Wi-Fi 7 160 MHz operation and should be
+backported to ensure users with ath12k-supported hardware can fully
+utilize their devices' capabilities.
 
- drivers/net/wireless/ath/ath12k/dp_mon.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/net/wireless/ath/ath12k/wmi.c | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 6a88745369447..7bfd323cdf244 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -1080,6 +1080,8 @@ static void ath12k_dp_mon_rx_deliver_msdu(struct ath12k *ar, struct napi_struct
- 	bool is_mcbc = rxcb->is_mcbc;
- 	bool is_eapol_tkip = rxcb->is_eapol;
- 
-+	status->link_valid = 0;
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index b45126a184930..9436e7e1ec1f6 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -980,14 +980,24 @@ int ath12k_wmi_vdev_down(struct ath12k *ar, u8 vdev_id)
+ static void ath12k_wmi_put_wmi_channel(struct ath12k_wmi_channel_params *chan,
+ 				       struct wmi_vdev_start_req_arg *arg)
+ {
++	u32 center_freq1 = arg->band_center_freq1;
 +
- 	if ((status->encoding == RX_ENC_HE) && !(status->flag & RX_FLAG_RADIOTAP_HE) &&
- 	    !(status->flag & RX_FLAG_SKIP_MONITOR)) {
- 		he = skb_push(msdu, sizeof(known));
+ 	memset(chan, 0, sizeof(*chan));
+ 
+ 	chan->mhz = cpu_to_le32(arg->freq);
+-	chan->band_center_freq1 = cpu_to_le32(arg->band_center_freq1);
+-	if (arg->mode == MODE_11AC_VHT80_80)
++	chan->band_center_freq1 = cpu_to_le32(center_freq1);
++	if (arg->mode == MODE_11BE_EHT160) {
++		if (arg->freq > center_freq1)
++			chan->band_center_freq1 = cpu_to_le32(center_freq1 + 40);
++		else
++			chan->band_center_freq1 = cpu_to_le32(center_freq1 - 40);
++
++		chan->band_center_freq2 = cpu_to_le32(center_freq1);
++	} else if (arg->mode == MODE_11BE_EHT80_80) {
+ 		chan->band_center_freq2 = cpu_to_le32(arg->band_center_freq2);
+-	else
++	} else {
+ 		chan->band_center_freq2 = 0;
++	}
+ 
+ 	chan->info |= le32_encode_bits(arg->mode, WMI_CHAN_INFO_MODE);
+ 	if (arg->passive)
 -- 
 2.39.5
 
