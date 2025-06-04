@@ -4,57 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C9C8C5AE59
-	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 02:50:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A50FBC5AD49
+	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 02:52:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KbdltJ1qgYFfCwNGb9p8hf3PS5PmsEn0ZIKgtiRc8mk=; b=YZKRwBRx1JT9HB3eCfbJCahJFd
-	1ZyGTRU15Kos5oRWzp6RvW1NdGfQjpdbZ25S0E3BEN+UClLBvWnSuRkawWXOvKF+DxO8jHNknZTq1
-	8Txsx73seLOubg3NU0ATRTWoWvkBIW+XUOJ1L7Ux7/WF41Ve7LDPW4Cn2+FASRFbk0QIkluzwQ5C+
-	CDvHDRIvf/lph8ey57xyBxU2KuWjZiTJQPOjYfSzUQpmWlXZKuAhElIR6wu/iVdUIuzrWVBJ0Rh82
-	qQ0zEUM1UDqaBZASWXjEHvNprCOfvNHtFomUHWlwjBtIMMY0QL6M0uIW9lxbbSuWsQMGhaYFao0zb
-	fWsQdb5w==;
+	bh=f/hitUT486dGD/SkFLhpOmSfv01wLQHzVoU+nn0el+c=; b=t6iKK78anjJpTdMnd8ZhZOWF9k
+	NCjuzW79leFiPKivZVoQU+a4LD5dTyqLRhrarBM4XjF6t9Y8C3iIwFQIUwGzJWxbWxquHLzWElMHY
+	8GDhx6uDgPJJ6RvsYLcNxYPbpnXjFd0+ClqJbsIyK63uuKcM269KlVsk3SGbIMCaF9fdjbaPV0H+L
+	uIvRbYzCSeAUOdPat5NorqN9iI9uZYobsjgliHA9FeACAWi4IZLsj8kyU94eyDCgjWoTyPsnLHwkY
+	LQySRI8sKd1IE+1n4xGiBPpnmdjyRVop3DUU7N+g+/T0OB6BhC+ql0pBkihtZqQ8st6Lv1nyK/Jm0
+	kWJL8Ucw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMeCu-0000000CM3F-3T93;
-	Wed, 04 Jun 2025 02:50:24 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1uMeF3-0000000CMPW-1kf8;
+	Wed, 04 Jun 2025 02:52:37 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcXd-0000000C8Yn-0rds
+	id 1uMcXx-0000000C8b6-0LBF
 	for ath12k@lists.infradead.org;
-	Wed, 04 Jun 2025 01:03:42 +0000
+	Wed, 04 Jun 2025 01:04:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 7E6B2A4FE56;
-	Wed,  4 Jun 2025 01:03:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 20737C4CEEF;
-	Wed,  4 Jun 2025 01:03:39 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 81C23629E7;
+	Wed,  4 Jun 2025 01:04:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F1B89C4CEF1;
+	Wed,  4 Jun 2025 01:03:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748999020;
-	bh=gQsi7uJuPWprSZxlwpBa7F/YxdRAe2vZsfcQDwr8L7c=;
+	s=k20201202; t=1748999040;
+	bh=Hk1M88m9ulqr2UOUxPK5AyrP3Jw9ei/XLLUfhKJwLW8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=pavlyEDzk9K7g9BONDNoDtHxCahtCocOaisJp2w4biVJ165eKu2lw5xwcddDK/LXK
-	 AW+7ZFXPv180G4afsrbAaUnjfkCYDIIC4+VLbeNx4Nm3sUrdR1jVma2ZebmxkTIuFC
-	 edeZhX1APnJ7fyXJkBequA4IX2w25UpT9r5paW3bDk4R7eyJqtRFbBm3Zg0XbRmZAy
-	 hEE1TvDB9bv4zjd/4xULskTzIYFfcY99s5pJcyiJALz3JYrZh9Rc3tfRONf6Bz36cQ
-	 Ra0WAV79jqPluU1eB22wIhkL0HUfej9I+Dd7TocTarfwf8WDrHqZ/9ZrX40+RbFPBK
-	 MuDgc06p9sS9w==
+	b=gp3NSkTSHNjRiADoa52S67UcdDXlUgYHc5nqxgjV5TAOyieqNbT3yTfNaEixK1rjH
+	 V+/paxi+eGOdKa8nV00akgtl1K03jnNN+za88TPEQT4Noo/QHwmytEzpoMQyi+6B/u
+	 KD7r/DI+Hx4T8n+95dPxIwxLPM80mybtzZjFcA1mskZ7YDV2TBgJOCHgkGSJO3LQc3
+	 heSodenseU7Odv+PFtdKpO3y5fZb4VW29RGJCPZWqhJhQ3GPm6I1d6H44OxU0bIkwy
+	 OO7COBYNtkyTBEw0qCc8G2xdTzhIK58YzGx4k+5Jp1l/alSHIFicn0WWvTod9jNdaZ
+	 q2hBblim3TfGQ==
 From: Sasha Levin <sashal@kernel.org>
 To: patches@lists.linux.dev,
 	stable@vger.kernel.org
-Cc: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
+Cc: Hari Chandrakanthan <quic_haric@quicinc.com>,
+	Nicolas Escande <nico.escande@gmail.com>,
 	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.6 49/62] wifi: ath12k: fix failed to set mhi state error during reboot with hardware grouping
-Date: Tue,  3 Jun 2025 21:02:00 -0400
-Message-Id: <20250604010213.3462-49-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.6 60/62] wifi: ath12k: fix link valid field initialization in the monitor Rx
+Date: Tue,  3 Jun 2025 21:02:11 -0400
+Message-Id: <20250604010213.3462-60-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250604010213.3462-1-sashal@kernel.org>
 References: <20250604010213.3462-1-sashal@kernel.org>
@@ -62,10 +64,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.6.92
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250603_180341_387107_C041153A 
-X-CRM114-Status: GOOD (  17.70  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,103 +80,91 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+From: Hari Chandrakanthan <quic_haric@quicinc.com>
 
-[ Upstream commit dce7aec6b1f74b0a46b901ab8de1f7bd0515f733 ]
+[ Upstream commit 2826139f9295821fe2b049318a1cc057ec003131 ]
 
-With hardware grouping, during reboot, whenever a device is removed, it
-powers down itself and all its partner devices in the same group. Now this
-is done by all devices and hence there is multiple power down for devices
-and hence the following error messages can be seen:
-
-ath12k_pci 0002:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
-ath12k_pci 0002:01:00.0: failed to set mhi state: POWER_OFF(3)
-ath12k_pci 0002:01:00.0: failed to set mhi state DEINIT(1) in current mhi state (0x0)
-ath12k_pci 0002:01:00.0: failed to set mhi state: DEINIT(1)
-ath12k_pci 0003:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
-ath12k_pci 0003:01:00.0: failed to set mhi state: POWER_OFF(3)
-ath12k_pci 0003:01:00.0: failed to set mhi state DEINIT(1) in current mhi state (0x0)
-ath12k_pci 0003:01:00.0: failed to set mhi state: DEINIT(1)
-ath12k_pci 0004:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
-ath12k_pci 0004:01:00.0: failed to set mhi state: POWER_OFF(3)
-
-To prevent this, check if the ATH12K_PCI_FLAG_INIT_DONE flag is already
-set before powering down. If it is set, it indicates that another partner
-device has already performed the power down, and this device can skip this
-step.
+Currently, the link_valid field is not initialized in the monitor Rx path.
+This can result in random values for the link_valid and link_id leads to
+undefined behaviour in mac80211. Therefore, initialize the link_valid
+field in the monitor Rx path.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Signed-off-by: Hari Chandrakanthan <quic_haric@quicinc.com>
+Tested-by: Nicolas Escande <nico.escande@gmail.com>
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Link: https://patch.msgid.link/20250408-fix_reboot_issues_with_hw_grouping-v4-3-95e7bf048595@oss.qualcomm.com
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Link: https://patch.msgid.link/20250324062518.2752822-2-quic_periyasa@quicinc.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
 
-Based on my analysis of the commit and the surrounding kernel code, here
-is my assessment: **YES** This commit should be backported to stable
-kernel trees. ## Detailed Analysis **The Bug Being Fixed:** The commit
-addresses a specific issue with hardware grouping in ath12k WiFi devices
-where multiple power-down operations during reboot cause MHI (Modem Host
-Interface) state transition errors. The error messages show failed
-attempts to set MHI state to POWER_OFF(3) and DEINIT(1) when the current
-state is already 0x0, indicating the device has already been powered
-down. **Code Changes Analysis:** The fix is extremely minimal and
-surgical - it adds only 3 lines of code: ```c if
-(!test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags)) return; ``` This
-check is added at the beginning of `ath12k_pci_power_down()` function at
-line 1491-1492. The logic is sound: 1. **ATH12K_PCI_FLAG_INIT_DONE**
-flag is set in `ath12k_pci_start()` (line 1170) when the device is
-properly initialized 2. **The flag is cleared** in
-`ath12k_pci_power_down()` (line 1500) after successful power down 3.
-**The new check** prevents redundant power-down operations by returning
-early if the flag is already cleared (meaning device was already powered
-down) **Why This Qualifies for Backporting:** 1. **Clear Bug Fix**: The
-commit directly addresses user-visible error messages during system
-reboot - a clear operational issue affecting stability. 2. **Minimal
-Risk**: The change is extremely contained (3 lines) and only affects the
-power-down path. It doesn't introduce new functionality or architectural
-changes. 3. **Hardware-Specific Issue**: This affects specific WiFi
-hardware (QCN9274, WCN7850) that users may have in stable kernel
-configurations. 4. **Similar Pattern**: Looking at the similar commits,
-commit #2 (ath11k IRQ affinity fix) and commit #4 (MHI PCI shutdown
-callback) were both marked as YES for backporting. They share similar
-characteristics: - Small, targeted fixes - Address shutdown/reboot
-issues - Minimal code changes - Clear problem resolution 5. **Race
-Condition Fix**: This addresses a race condition where multiple devices
-in a hardware group try to power down simultaneously, which is a classic
-stability issue suitable for stable trees. 6. **Low Regression Risk**:
-The change only adds an early return condition based on an existing flag
-that's already used throughout the codebase for the same purpose -
-tracking initialization state. **Supporting Evidence from Code:** - The
-`ATH12K_PCI_FLAG_INIT_DONE` flag is already used consistently throughout
-the driver to track device state - The MHI error handling code shows
-these are expected error paths that should be avoided (lines 529, 607 in
-mhi.c) - The commit includes proper testing on multiple hardware
-variants This is a textbook example of a stable-tree appropriate fix:
-small, targeted, fixes a clear user-impacting bug, with minimal
-regression risk.
+Based on my analysis of the commit and the code context, here is my
+assessment: **YES** This commit should be backported to stable kernel
+trees. Here's my extensive analysis: ## Technical Analysis **Code Change
+Impact:** The commit adds a single line `status->link_valid = 0;` at the
+beginning of the `ath12k_dp_mon_rx_deliver_msdu()` function in the
+monitor Rx path. This initializes the `link_valid` field in the
+`ieee80211_rx_status` structure before any subsequent processing. **Root
+Cause and Problem:** 1. **Uninitialized Memory Issue**: The
+`ieee80211_rx_status` structure contains the `link_valid` field (1 bit)
+and `link_id` field (4 bits) that were not being initialized in the
+monitor Rx path. 2. **Undefined Behavior**: Without initialization,
+these fields contain random stack memory values, which can cause
+unpredictable behavior in mac80211 when it processes received frames. 3.
+**MLO Context**: The `link_valid` and `link_id` fields are specifically
+used for Multi-Link Operation (MLO) in WiFi 7, where mac80211 needs to
+know which link a frame was received on. ## Why This Should Be
+Backported **1. Bug Fix Nature:** - This is clearly a bug fix that
+addresses undefined behavior caused by uninitialized fields - The commit
+message explicitly states this fixes "undefined behaviour in mac80211" -
+Similar to reference commit #2 (which was backported) that fixed
+uninitialized variables **2. User Impact:** - Uninitialized fields can
+cause mac80211 to make incorrect decisions about packet processing - May
+lead to packet drops, incorrect link handling, or other unpredictable
+wireless behavior - Monitor mode is commonly used by network analysis
+tools, making this user-facing **3. Risk Assessment:** - **Very Low
+Risk**: The change is minimal (single line initialization) - **No Side
+Effects**: Setting `link_valid = 0` is the correct default for monitor
+mode - **Safe Change**: Only affects the monitor Rx path, doesn't change
+core functionality **4. Code Pattern Consistency:** Looking at the
+regular Rx path in `dp_rx.c`, I can see the same pattern: ```c if
+(pubsta && pubsta->valid_links) { status->link_valid = 1;
+status->link_id = peer->link_id; } ``` The monitor path was missing the
+corresponding initialization, creating an inconsistency where: - Regular
+Rx path: Properly sets `link_valid = 1` when appropriate - Monitor Rx
+path: Left `link_valid` uninitialized (now fixed to `link_valid = 0`)
+**5. Containment:** - Change is confined to a single function in the
+monitor path - No architectural changes or new feature additions -
+Follows established kernel practices for field initialization **6.
+Stable Tree Criteria Match:** - ✅ Important bug fix (undefined behavior)
+- ✅ Minimal risk of regression - ✅ Small, contained change - ✅ No new
+features - ✅ Affects user-facing functionality (monitor mode) **7.
+Reference Precedent:** This follows the same pattern as the backported
+commit #2 which fixed uninitialized variables and commit #3 which fixed
+incorrect field usage, both of which were deemed suitable for
+backporting. The commit properly addresses a real bug that could affect
+users of monitor mode with ath12k WiFi 7 devices, with virtually no risk
+of introducing regressions.
 
- drivers/net/wireless/ath/ath12k/pci.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 041a9602f0e15..c10430616d3f7 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1146,6 +1146,9 @@ void ath12k_pci_power_down(struct ath12k_base *ab)
- {
- 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index 35f22a4a16cf2..69bf75ebd7518 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -1077,6 +1077,8 @@ static void ath12k_dp_mon_rx_deliver_msdu(struct ath12k *ar, struct napi_struct
+ 	bool is_mcbc = rxcb->is_mcbc;
+ 	bool is_eapol_tkip = rxcb->is_eapol;
  
-+	if (!test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags))
-+		return;
++	status->link_valid = 0;
 +
- 	/* restore aspm in case firmware bootup fails */
- 	ath12k_pci_aspm_restore(ab_pci);
- 
+ 	if ((status->encoding == RX_ENC_HE) && !(status->flag & RX_FLAG_RADIOTAP_HE) &&
+ 	    !(status->flag & RX_FLAG_SKIP_MONITOR)) {
+ 		he = skb_push(msdu, sizeof(known));
 -- 
 2.39.5
 
