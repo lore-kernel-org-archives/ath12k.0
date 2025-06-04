@@ -4,71 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D9ABC5B549
-	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 13:31:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A10FBC5B543
+	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 14:45:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=lVzope0BgRLgA0kAk/IvueVcZPCbM4VIkuvu3kSAZIQ=; b=5A312cy4zrZTkEptjShUY2klGe
-	frALH2J+ebORzjJxbTC306Ezqm3tqhwY+Hx6oEj5zAxeEyIWbOlhu2jpIBv0S4nwwXZwB9BriJTcx
-	2zRcbODZJAHXf9kFNHdkDnRNfNl+0Cr+wzGHeCCtSaa54gGm96Grn7msJtbB8rSAcgAJQUUXdJUXE
-	Y5IZdtsoaZqo7RjEoAyoDAkmCOVAF6Pyv3SRYTDUr6HbtOvA+dbhwSCQSXAkdfvkMOimGDGsEchHG
-	F6aVPCW9ymz1wAh5lOuB2s9oLs6/nviTCuJynMmGFLR1aWpHdwcfeCnyn1UErd/JbkClqhB7ynt5W
-	hqBAJpUw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=xEl4oLT0KrGbc8PXpcSR67dgBqeV1aKOv/aMPtqZaV8=; b=A4TjY6lK7FBK56DuW5jaR8CVnZ
+	fv2gru4aMEikUsfRLtyD/B83ef80YVkMN8Y6VJjemuqUa+IFnyGJX+B9DXDnNbe9xydxLfpao8p4m
+	Y1zID9pkLx688/y3ofLvhbIklCe0wnyqz6dHXRQzIwRW7fNhiaxcJ05hR6ARnM0Dknw47+hYZueRJ
+	VmOVoZHMqC5NwuLuHENRS4u+BqAPVVM2tiJQrFbTRtiaL7EcDEo+Grtcns0kQe69v3qdUvL+pPoZn
+	ghQISXaKk5s4rV9BgYjHitJiLVIhuktg57jEC2bjKuQ7kq2eajAxOekTTZyGrqn1J7FXh+S1bLSLj
+	LEIf47Dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMoD9-0000000DSRy-4BRs;
-	Wed, 04 Jun 2025 13:31:20 +0000
-Received: from mgamail.intel.com ([198.175.65.10])
+	id 1uMpNI-0000000Dc14-1aQs;
+	Wed, 04 Jun 2025 14:45:52 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMoD7-0000000DSRd-31XD
+	id 1uMpNF-0000000DbzF-3MDR
 	for ath12k@lists.infradead.org;
-	Wed, 04 Jun 2025 13:31:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1749043878; x=1780579878;
-  h=date:from:to:cc:subject:message-id;
-  bh=J4BnxE86a4Bkm4i0gU2sFXonuqeUaRqk2mj1/g3M/OQ=;
-  b=Etr4HgmSsu8usO8qwxA/xXD+38Yky7VEv8RaQaoM9q/S09S9GNl3dkBb
-   AYQiinKYWjUE5vFCN9LOI3OzrTZnKH5q+C7U6M4ZdxPgTVdnojPOZbrvO
-   J/fotGNIBIdwbeGEsCt9jNGiZABeauKKEjPS9+PZUy4tUazUrjCdgyjTZ
-   JBQSMczWSdwmVDp/4jtyJYTjzBcb4HB/B36OOWnrdRbofGFi+QvTRGwIR
-   yA/OX/6JZ2A6hy3XLSuhgGi0sWB5dMWkwZGDYr+F+jdrYnksGjxm7y8Uj
-   c+hoLXEWgFKpDaMbKM5TkwRYRJxtiw1NAA1xk8k6rM2BttC0FAhknN900
-   Q==;
-X-CSE-ConnectionGUID: sYUJ26dYSby7l/kawKYadA==
-X-CSE-MsgGUID: 1JhzIoujTcej/+FDCZU+rg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11454"; a="68561119"
-X-IronPort-AV: E=Sophos;i="6.16,209,1744095600"; 
-   d="scan'208";a="68561119"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Jun 2025 06:31:17 -0700
-X-CSE-ConnectionGUID: c0xaSx/eRYqFjtix0sJ+Kw==
-X-CSE-MsgGUID: 043KJR2vQna4F0B+xuk5UQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,209,1744095600"; 
-   d="scan'208";a="149024287"
-Received: from lkp-server01.sh.intel.com (HELO e8142ee1dce2) ([10.239.97.150])
-  by fmviesa003.fm.intel.com with ESMTP; 04 Jun 2025 06:30:52 -0700
-Received: from kbuild by e8142ee1dce2 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uMoCg-00039p-1a;
-	Wed, 04 Jun 2025 13:30:50 +0000
-Date: Wed, 04 Jun 2025 21:30:29 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master] BUILD SUCCESS
- c3910de7bab78afbc106206aed5ec8e79458fbee
-Message-ID: <202506042119.Wmi0XCmV-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Wed, 04 Jun 2025 14:45:50 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 725814A872;
+	Wed,  4 Jun 2025 14:45:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5051CC4CEF2;
+	Wed,  4 Jun 2025 14:45:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1749048349;
+	bh=w++DUul6WcS0rSeeNY1gMqZO7ksu6qS8oACYN9qdE9g=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=IkrLm8KyEgBIdcnPkUh6cZBTFEjtbBHQX++sOEqB/pzXthf3AHJqb/zAXTT8E/Lgd
+	 pI8TfaFYm3T8ElVMgZ+DWjX87LuF0790VA9kIVn3+e8RtTP4zIl0jtjkd03W5jWIEB
+	 ikt5zblFvelL8rd8/sBkuOitWX/M4BN5nLHA5Z8y3ep1RKTiG3GihM54cF/6FSdpRG
+	 ugPZbiMhztgLJJnqY6WlD2rimfEAQqGwDOpQk3ucXncIcrtprdkqFaeLQwi9a4Z0Q5
+	 zBiyfpShGcoreRT+lkGwjIkn6gGTZ2Ila/eL8apzfzrsZWmsO7AojJMPd0KTyUf6l9
+	 6071CGX5zPpLw==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1uMpND-000000007Of-1tJZ;
+	Wed, 04 Jun 2025 16:45:47 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: Miaoqing Pan <quic_miaoqing@quicinc.com>,
+	Remi Pommarel <repk@triplefau.lt>,
+	Baochen Qiang <quic_bqiang@quicinc.com>,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>,
+	stable@vger.kernel.org
+Subject: [PATCH v2 4/4] wifi: ath12k: fix dest ring-buffer corruption when ring is full
+Date: Wed,  4 Jun 2025 16:45:09 +0200
+Message-ID: <20250604144509.28374-5-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.49.0
+In-Reply-To: <20250604144509.28374-1-johan+linaro@kernel.org>
+References: <20250604144509.28374-1-johan+linaro@kernel.org>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250604_063117_834082_24FF7A2F 
-X-CRM114-Status: UNSURE (   3.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250604_074549_858888_97C78B42 
+X-CRM114-Status: GOOD (  11.04  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,55 +81,57 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-branch HEAD: c3910de7bab78afbc106206aed5ec8e79458fbee  Add localversion-wireless-testing-ath
+Add the missing memory barriers to make sure that destination ring
+descriptors are read before updating the tail pointer (and passing
+ownership to the device) to avoid memory corruption on weakly ordered
+architectures like aarch64 when the ring is full.
 
-elapsed time: 1230m
+Tested-on: WCN7850 hw2.0 WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-configs tested: 35
-configs skipped: 1
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Cc: stable@vger.kernel.org      # 6.3
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/net/wireless/ath/ath12k/hal.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
+index 1e2d13cc2d19..4da354e86a75 100644
+--- a/drivers/net/wireless/ath/ath12k/hal.c
++++ b/drivers/net/wireless/ath/ath12k/hal.c
+@@ -2153,7 +2153,6 @@ void ath12k_hal_srng_access_end(struct ath12k_base *ab, struct hal_srng *srng)
+ {
+ 	lockdep_assert_held(&srng->lock);
+ 
+-	/* TODO: See if we need a write memory barrier here */
+ 	if (srng->flags & HAL_SRNG_FLAGS_LMAC_RING) {
+ 		/* For LMAC rings, ring pointer updates are done through FW and
+ 		 * hence written to a shared memory location that is read by FW
+@@ -2168,7 +2167,11 @@ void ath12k_hal_srng_access_end(struct ath12k_base *ab, struct hal_srng *srng)
+ 			WRITE_ONCE(*srng->u.src_ring.hp_addr, srng->u.src_ring.hp);
+ 		} else {
+ 			srng->u.dst_ring.last_hp = *srng->u.dst_ring.hp_addr;
+-			*srng->u.dst_ring.tp_addr = srng->u.dst_ring.tp;
++			/* Make sure descriptor is read before updating the
++			 * tail pointer.
++			 */
++			dma_mb();
++			WRITE_ONCE(*srng->u.dst_ring.tp_addr, srng->u.dst_ring.tp);
+ 		}
+ 	} else {
+ 		if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
+@@ -2184,6 +2187,10 @@ void ath12k_hal_srng_access_end(struct ath12k_base *ab, struct hal_srng *srng)
+ 					   srng->u.src_ring.hp);
+ 		} else {
+ 			srng->u.dst_ring.last_hp = *srng->u.dst_ring.hp_addr;
++			/* Make sure descriptor is read before updating the
++			 * tail pointer.
++			 */
++			mb();
+ 			ath12k_hif_write32(ab,
+ 					   (unsigned long)srng->u.dst_ring.tp_addr -
+ 					   (unsigned long)ab->mem,
+-- 
+2.49.0
 
-tested configs:
-alpha        allyesconfig    gcc-15.1.0
-arc          allmodconfig    gcc-15.1.0
-arc          allyesconfig    gcc-15.1.0
-arm          allmodconfig    gcc-15.1.0
-arm          allyesconfig    gcc-15.1.0
-arm64        allmodconfig    clang-19
-hexagon      allmodconfig    clang-17
-hexagon      allyesconfig    clang-21
-i386         allmodconfig    gcc-12
-i386          allnoconfig    gcc-12
-i386         allyesconfig    gcc-12
-i386            defconfig    clang-20
-loongarch    allmodconfig    gcc-15.1.0
-m68k         allmodconfig    gcc-15.1.0
-m68k         allyesconfig    gcc-15.1.0
-microblaze   allmodconfig    gcc-15.1.0
-microblaze   allyesconfig    gcc-15.1.0
-openrisc     allyesconfig    gcc-15.1.0
-parisc       allmodconfig    gcc-15.1.0
-parisc       allyesconfig    gcc-15.1.0
-powerpc      allmodconfig    gcc-15.1.0
-powerpc      allyesconfig    clang-21
-riscv        allmodconfig    clang-21
-riscv        allyesconfig    clang-16
-s390         allmodconfig    clang-18
-s390         allyesconfig    gcc-15.1.0
-sh           allmodconfig    gcc-15.1.0
-sh           allyesconfig    gcc-15.1.0
-sparc        allmodconfig    gcc-15.1.0
-um           allmodconfig    clang-19
-um           allyesconfig    gcc-12
-x86_64        allnoconfig    clang-20
-x86_64       allyesconfig    clang-20
-x86_64          defconfig    gcc-11
-x86_64      rhel-9.4-rust    clang-18
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
