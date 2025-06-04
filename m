@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49099C5AD49
-	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 01:26:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9544FC61CE5
+	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 01:26:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=S++TOSjfk84ML4hiSiZM5bvCoc4Y+z0HKa8I4FBsDaQ=; b=s9IkR8Pk/9UcsHKye7nxFwNZxM
-	sjutZcdO1RAgoHMFHDNR3BT+4u9YXiKYOS8FvfOQne0XC9hF8BalWM+QnvnB7jeG8l8lBuXYY9ZWi
-	vsDR6upjEgLJVDeXRWzktJzXBOr1twt0Y7HTDYp1xekjHIQ7c+SIquG16BYh99m2xvsvAvfdFLH+7
-	9UvaADheMNrzRZkk+LEJQieI2YhO3Hl6xkZ/bTvfhCvdB4yHLF7eMpRbj3jxPOQT/5bC1jQlxFRiF
-	QCSbBZ8eQvT1byVYqytC/RAIO7u1xTmoevtUbhEsOMKEM6Qa2w11cy+J97nSDy/TSnwqg+ka0Ui9d
-	W5EikydQ==;
+	bh=pN53OcebMTlselKQuJVKcOtM6pNAaXvi+AmpJu42Oxs=; b=OTgvk7JwDOpfKsojtpjzB+xUo4
+	4Tc/WG6ErUVtlnBIVWHJAA1Bw0gVDuNMlACqV9QqqTGhsxFcMchzjO3PSeGA/7ZN3MLldb+FRjAvl
+	dI0/flRGXkFh4RjDPGLg6fzrYSGsMQbnYH9C4sQFBg/jSddbLaOUZvxqQhrvuQ/uy6/DoCGsruYQ0
+	SRjd0g/Zhf23SMwzrPnrZzrHSNwFzf+M8M0pnjIGd7hoqVvlJzjEhkQ5ZiaTBtmLLPJrG+WrzVq8l
+	EBq44Xf4st4Oi0Z1EbdFSBqH2ZT4j1i303wzwyQKO5wZuAAkHZ/JNP6T2SLQqPcGLx4PQ1bFmIgVU
+	Bz5xq19A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcth-0000000CBxz-06oY;
-	Wed, 04 Jun 2025 01:26:29 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1uMcti-0000000CBym-1LPo;
+	Wed, 04 Jun 2025 01:26:30 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcOg-0000000C6rA-42D8
+	id 1uMcOv-0000000C6th-18AD
 	for ath12k@lists.infradead.org;
-	Wed, 04 Jun 2025 00:54:28 +0000
+	Wed, 04 Jun 2025 00:54:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 826685C47F2;
-	Wed,  4 Jun 2025 00:52:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0A961C4CEEF;
-	Wed,  4 Jun 2025 00:54:24 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id A62195C4860;
+	Wed,  4 Jun 2025 00:52:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 28303C4CEED;
+	Wed,  4 Jun 2025 00:54:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748998466;
-	bh=BCcC57+dqDciWDbsBV/NOWhRK6dchWeScDoaZk+X3aw=;
+	s=k20201202; t=1748998480;
+	bh=i0LoT/tdV9mWrlIs6mmhkFRgcXM7CsPWQQFdlc/rZws=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=GjQ+yP41pfnhJU1ybgNEOSj3ukfwzr37qfXqbcd45UJxHPH+hUuhFwEpfX39rBU7v
-	 XoASk4OkdgHRTY4m8G5UStAy+ex6y/xbNrr7La23Hm3vMBGwHCdZ14hEdxZlDxrk2d
-	 gSnZoDNkWT4R0JLQaLEUCXSQNMXfjoa93cVxbw5PUlUNnVJFywLmRnzJ/saNolt3s+
-	 qjoePXYnxPgJesP6YLTktHIBUoW+RvkDmWm2gSwKvmHc1EMeA/Z/K5JFT83p+EmOnn
-	 UbJrNfaV0nz+AmCWFHwXSJ1YHrTzXweEko+4fOYFqKq6SoTW5uhcxuA+yyYFhCk0UD
-	 L9eJDIiZGT9tg==
+	b=tjtbqmvjM/9OUuqg8ChWqB3bAb27UIXkoTUC8s/N+dG448HT8H0ZReH/uSVykJbj9
+	 sBSh94C7LIfXPf5zsLnughHR5WNYhaXhmPdpeAq076ZNTztK0ujgluQHK3/nG+yXnM
+	 m1509B043cLkPLcSp+TY+cMfgiw4hRKI/Ok8+syGPtIRRIozbI86lsZm9NEMVKp3Tl
+	 EOeLrjyAUiJBBoIXcSdjHdCnJWb/ppS05UD1JnRWp/TAWhu9liDLmqIs0gXaw9rsAt
+	 v0M3YZofhYn2MLN01Hu7T3O8jtrb1A4tVegmSbMeBvOXWlhpoFgx8ZTEw258huF3V0
+	 weuHk6ip03WuQ==
 From: Sasha Levin <sashal@kernel.org>
 To: patches@lists.linux.dev,
 	stable@vger.kernel.org
-Cc: Sarika Sharma <quic_sarishar@quicinc.com>,
+Cc: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
 	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.15 090/118] wifi: ath12k: correctly handle mcast packets for clients
-Date: Tue,  3 Jun 2025 20:50:21 -0400
-Message-Id: <20250604005049.4147522-90-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.15 098/118] wifi: ath12k: fix failed to set mhi state error during reboot with hardware grouping
+Date: Tue,  3 Jun 2025 20:50:29 -0400
+Message-Id: <20250604005049.4147522-98-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250604005049.4147522-1-sashal@kernel.org>
 References: <20250604005049.4147522-1-sashal@kernel.org>
@@ -62,11 +62,10 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.15
-Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250603_175427_094977_294B52CD 
-X-CRM114-Status: GOOD (  18.63  )
+X-CRM114-CacheID: sfid-20250603_175441_394508_DB3DDC69 
+X-CRM114-Status: GOOD (  17.70  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,144 +80,103 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sarika Sharma <quic_sarishar@quicinc.com>
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 
-[ Upstream commit 4541b0c8c3c1b85564971d497224e57cf8076a02 ]
+[ Upstream commit dce7aec6b1f74b0a46b901ab8de1f7bd0515f733 ]
 
-Currently, RX is_mcbc bit is set for packets sent from client as
-destination address (DA) is multicast/broadcast address, but packets
-are actually unicast as receiver address (RA) is not multicast address.
-Hence, packets are not handled properly due to this is_mcbc bit.
+With hardware grouping, during reboot, whenever a device is removed, it
+powers down itself and all its partner devices in the same group. Now this
+is done by all devices and hence there is multiple power down for devices
+and hence the following error messages can be seen:
 
-Therefore, reset the is_mcbc bit if interface type is AP.
+ath12k_pci 0002:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
+ath12k_pci 0002:01:00.0: failed to set mhi state: POWER_OFF(3)
+ath12k_pci 0002:01:00.0: failed to set mhi state DEINIT(1) in current mhi state (0x0)
+ath12k_pci 0002:01:00.0: failed to set mhi state: DEINIT(1)
+ath12k_pci 0003:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
+ath12k_pci 0003:01:00.0: failed to set mhi state: POWER_OFF(3)
+ath12k_pci 0003:01:00.0: failed to set mhi state DEINIT(1) in current mhi state (0x0)
+ath12k_pci 0003:01:00.0: failed to set mhi state: DEINIT(1)
+ath12k_pci 0004:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
+ath12k_pci 0004:01:00.0: failed to set mhi state: POWER_OFF(3)
 
+To prevent this, check if the ATH12K_PCI_FLAG_INIT_DONE flag is already
+set before powering down. If it is set, it indicates that another partner
+device has already performed the power down, and this device can skip this
+step.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
+Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Link: https://patch.msgid.link/20250411061523.859387-3-quic_sarishar@quicinc.com
+Link: https://patch.msgid.link/20250408-fix_reboot_issues_with_hw_grouping-v4-3-95e7bf048595@oss.qualcomm.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
 
-**YES** This commit should be backported to stable kernel trees. Here's
-my extensive analysis: ## Bug Analysis **Root Cause**: The commit fixes
-a critical packet handling issue where multicast/broadcast packets from
-clients to an AP are incorrectly marked as multicast (is_mcbc=true)
-based on the destination address (DA) being multicast, even though they
-are actually unicast packets since the receiver address (RA) is not
-multicast. **Impact**: This causes legitimate unicast packets to be
-mishandled, potentially leading to: - Incorrect encryption handling
-(using group keys instead of unicast keys) - Packet drops or processing
-errors - Connectivity issues for clients connected to AP ## Code Changes
-Analysis The fix involves three key changes: 1. **New peer field
-(`peer.h:65`)**: Adds `bool ucast_ra_only` field to track when a peer
-should only receive unicast packets 2. **Peer initialization
-(`peer.c:386-387`)**: Sets `peer->ucast_ra_only = true` for AP interface
-types, indicating that packets to/from AP clients should be treated as
-unicast 3. **Runtime correction (`dp_rx.c:2328-2331`)**: Adds logic to
-reset the is_mcbc bit when a peer has `ucast_ra_only=true`: ```c /bin
-/bin.usr-is-merged /boot /dev /etc /home /init /lib /lib.usr-is-merged
-/lib64 /lost+found /media /mnt /opt /proc /root /run /sbin /sbin.usr-is-
-merged /snap /srv /sys /tmp /usr /var resetting mcbc bit because mcbc
-packets are unicast capability_test capability_test.c
-f2fs_folio_analysis.md ipv4_multipath_analysis.md
-ipv6_route_allocation_rcu_analysis.md ixgbe_e610_set_phys_id_analysis.md
-linux lpfc_timeout_analysis.md mac80211_mlo_mbssid_analysis.md
-pfcp_driver_historical_analysis.md rtl_bb_delay_analysis.md
-rtw89_mlo_analysis.md tcp_multipath_load_balance_analysis.md
-test_unaligned_diff test_unaligned_diff.c type_size_check
-type_size_check.c veth_driver_analysis.md
-wifi_mlo_mbssid_tx_link_id_analysis.md packets only for AP as STA sends
-unicast packets. linux/ rxcb->is_mcbc = rxcb->is_mcbc &&
-!peer->ucast_ra_only; ``` ## Backport Suitability Assessment **✅ Fixes
-Important Bug**: This addresses a real packet handling issue that
-affects AP functionality and client connectivity. **✅ Small and
-Contained**: The fix is minimal - adds one field and a simple boolean
-logic correction. Total change is ~10 lines. **✅ Low Regression Risk**:
-- Only affects AP mode (`NL80211_IFTYPE_AP`) - Uses conservative
-approach (resets mcbc bit only when appropriate) - No architectural
-changes **✅ Clear Side Effects**: The change is isolated to
-multicast/broadcast packet classification logic and doesn't touch other
-subsystems. **✅ Subsystem Confined**: Changes are entirely within the
-ath12k Wi-Fi driver's receive path. ## Comparison with Similar Commits
-This commit closely matches **Similar Commit #1** and **Similar Commit
-#3** (both marked YES for backporting): - Fixes multicast/broadcast
-packet handling issues in ath12k - Small, targeted fixes with clear bug
-descriptions - Hardware-specific corrections for packet classification -
-Similar code patterns and impact scope The commit follows the same
-pattern as other successful ath12k multicast fixes that were deemed
-suitable for stable backporting. ## Conclusion This is a classic stable
-tree candidate: it fixes a real user-impacting bug with a minimal, low-
-risk change that's confined to a single driver subsystem. The fix
-addresses incorrect packet classification that could cause connectivity
-issues in AP mode.
+Based on my analysis of the commit and the surrounding kernel code, here
+is my assessment: **YES** This commit should be backported to stable
+kernel trees. ## Detailed Analysis **The Bug Being Fixed:** The commit
+addresses a specific issue with hardware grouping in ath12k WiFi devices
+where multiple power-down operations during reboot cause MHI (Modem Host
+Interface) state transition errors. The error messages show failed
+attempts to set MHI state to POWER_OFF(3) and DEINIT(1) when the current
+state is already 0x0, indicating the device has already been powered
+down. **Code Changes Analysis:** The fix is extremely minimal and
+surgical - it adds only 3 lines of code: ```c if
+(!test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags)) return; ``` This
+check is added at the beginning of `ath12k_pci_power_down()` function at
+line 1491-1492. The logic is sound: 1. **ATH12K_PCI_FLAG_INIT_DONE**
+flag is set in `ath12k_pci_start()` (line 1170) when the device is
+properly initialized 2. **The flag is cleared** in
+`ath12k_pci_power_down()` (line 1500) after successful power down 3.
+**The new check** prevents redundant power-down operations by returning
+early if the flag is already cleared (meaning device was already powered
+down) **Why This Qualifies for Backporting:** 1. **Clear Bug Fix**: The
+commit directly addresses user-visible error messages during system
+reboot - a clear operational issue affecting stability. 2. **Minimal
+Risk**: The change is extremely contained (3 lines) and only affects the
+power-down path. It doesn't introduce new functionality or architectural
+changes. 3. **Hardware-Specific Issue**: This affects specific WiFi
+hardware (QCN9274, WCN7850) that users may have in stable kernel
+configurations. 4. **Similar Pattern**: Looking at the similar commits,
+commit #2 (ath11k IRQ affinity fix) and commit #4 (MHI PCI shutdown
+callback) were both marked as YES for backporting. They share similar
+characteristics: - Small, targeted fixes - Address shutdown/reboot
+issues - Minimal code changes - Clear problem resolution 5. **Race
+Condition Fix**: This addresses a race condition where multiple devices
+in a hardware group try to power down simultaneously, which is a classic
+stability issue suitable for stable trees. 6. **Low Regression Risk**:
+The change only adds an early return condition based on an existing flag
+that's already used throughout the codebase for the same purpose -
+tracking initialization state. **Supporting Evidence from Code:** - The
+`ATH12K_PCI_FLAG_INIT_DONE` flag is already used consistently throughout
+the driver to track device state - The MHI error handling code shows
+these are expected error paths that should be avoided (lines 529, 607 in
+mhi.c) - The commit includes proper testing on multiple hardware
+variants This is a textbook example of a stable-tree appropriate fix:
+small, targeted, fixes a clear user-impacting bug, with minimal
+regression risk.
 
- drivers/net/wireless/ath/ath12k/dp_rx.c | 5 +++++
- drivers/net/wireless/ath/ath12k/peer.c  | 5 ++++-
- drivers/net/wireless/ath/ath12k/peer.h  | 3 ++-
- 3 files changed, 11 insertions(+), 2 deletions(-)
+ drivers/net/wireless/ath/ath12k/pci.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 75bf4211ad422..fd5e9ab9dbe81 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -2277,6 +2277,11 @@ static void ath12k_dp_rx_h_mpdu(struct ath12k *ar,
- 	spin_lock_bh(&ar->ab->base_lock);
- 	peer = ath12k_dp_rx_h_find_peer(ar->ab, msdu);
- 	if (peer) {
-+		/* resetting mcbc bit because mcbc packets are unicast
-+		 * packets only for AP as STA sends unicast packets.
-+		 */
-+		rxcb->is_mcbc = rxcb->is_mcbc && !peer->ucast_ra_only;
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index b474696ac6d8c..c9588b8df51ae 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -1491,6 +1491,9 @@ void ath12k_pci_power_down(struct ath12k_base *ab, bool is_suspend)
+ {
+ 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
+ 
++	if (!test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags))
++		return;
 +
- 		if (rxcb->is_mcbc)
- 			enctype = peer->sec_type_grp;
- 		else
-diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
-index 792cca8a3fb1b..ec7236bbccc0f 100644
---- a/drivers/net/wireless/ath/ath12k/peer.c
-+++ b/drivers/net/wireless/ath/ath12k/peer.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2022, 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
+ 	/* restore aspm in case firmware bootup fails */
+ 	ath12k_pci_aspm_restore(ab_pci);
  
- #include "core.h"
-@@ -383,6 +383,9 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
- 		arvif->ast_idx = peer->hw_peer_id;
- 	}
- 
-+	if (vif->type == NL80211_IFTYPE_AP)
-+		peer->ucast_ra_only = true;
-+
- 	if (sta) {
- 		ahsta = ath12k_sta_to_ahsta(sta);
- 		arsta = wiphy_dereference(ath12k_ar_to_hw(ar)->wiphy,
-diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
-index 5870ee11a8c7e..f3a5e054d2b55 100644
---- a/drivers/net/wireless/ath/ath12k/peer.h
-+++ b/drivers/net/wireless/ath/ath12k/peer.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_PEER_H
-@@ -62,6 +62,7 @@ struct ath12k_peer {
- 
- 	/* for reference to ath12k_link_sta */
- 	u8 link_id;
-+	bool ucast_ra_only;
- };
- 
- struct ath12k_ml_peer {
 -- 
 2.39.5
 
