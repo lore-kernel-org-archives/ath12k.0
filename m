@@ -4,58 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D234AC5AD49
-	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 02:01:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29D1AC61CE7
+	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 02:01:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cWJZtyxtZt4ESLprcEcE9ASVpMdpJI8aVRtNXmGM6eU=; b=Y7lzyEhKMIYIafnzNW8aKsIivW
-	8P1i1yGWkEG1BHs2gjfyAWc37LkwT7ZWTC49x8hrGHcBLHRkDdldZnQql6cVqrHdvYHRDBkM0K6O/
-	tEN+NFSLw1PkJUa8ERzdyj9lFygyGavX8qRI2D4KCe6iKC0C4lvXGOnraAV7Gvi1aIC1IsTTKRn0s
-	jbA36PhF7KP/T2dr+ixWRpKTzW/21oTlLyIOe/uxxyZqA2GOhNPbdzM8AhpDbnuT83wNfx4U7WL8Y
-	Gy/e/q3YXSUl44GWzhEAr0B9ZgVsdHiHpaTE1FYa8Za+bSlgfLBIhtPp4onl2VqHqCKDo/d2FH1UX
-	6TltTnBw==;
+	bh=YNJsY6tlWGTOpRx0kcITN28M8ilEeTO0aeghjgpZb3o=; b=tufb7M6S6C6dolSXgu2w7xuFHy
+	dg+MbAPyksc+xlH5DwluyihgvFS15fIgeRz+kluYUkS3C/hHg+kfkrals3IQ4LlSFotS/yqNNY8pH
+	8myYES8DsQ71+IUutM/jyyI2DktiCMe+oQk8P2vGb71mPrlHqWkoB1gcNpYuTqwl6cGTCuQDDUMMX
+	NJJHtdrBrK9I35UTyNQC7zaNStGfh+HmUwqpN9ccZkc9LLyZoQbsFv8IrvB6HeiDc2gEi7/m7S0XS
+	AVP7fZLFhnQypF9G3pEuWYZ7rjivCzjCnFlp0qlcIYnfNshcMixuvNpyx07s0EGeHxHkjziUyW5KS
+	z8SFlW7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMdRx-0000000CGZy-2Omr;
-	Wed, 04 Jun 2025 02:01:53 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uMdRy-0000000CGay-3iCA;
+	Wed, 04 Jun 2025 02:01:54 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcT5-0000000C7iB-3BYl
+	id 1uMcTA-0000000C7jE-2bTs
 	for ath12k@lists.infradead.org;
-	Wed, 04 Jun 2025 00:58:59 +0000
+	Wed, 04 Jun 2025 00:59:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2272C60008;
-	Wed,  4 Jun 2025 00:58:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B59B8C4CEED;
-	Wed,  4 Jun 2025 00:58:57 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id EAE57A4FE5C;
+	Wed,  4 Jun 2025 00:59:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D562C4CEEF;
+	Wed,  4 Jun 2025 00:59:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748998738;
-	bh=R4AXArGgkBB6bm9OCbCAf1hTi+Y225WLUU2GgmWqtC0=;
+	s=k20201202; t=1748998743;
+	bh=GGdZyVX0V+7vWW+Zdhvke55vJjkda8KHsemqE9wIkBc=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=jbi/adP2gqTsCVSekyqfkjTrbQzFXN4JJE20pEyH6G6ADyiu9V37415EvcWJLk1Zn
-	 YTj2+woicr2xZIyadvNLb3G0SsqFQyANYMzuAn8KWm4f/QQbU0uZmNaMFhA2Y3GMgk
-	 /kpX2V16wAdf2GsnX1+41LPx3Odx4yzS24Rj2BsgfdlCL/iMQDFrBqAD3OZhKga2LX
-	 uwfwT2yKBAYHKQjFwbyxlDoUpmARTwCkIksYuimwvHr0OunlZmskdhIUqwD4HwvPun
-	 cfhjLrpFXXF27YCFZjk7WS5p3wbDqAdZwjziKUkBf7anOmY6d6TnJLtruUQt4RLjKs
-	 NNYsAf6dAiMeQ==
+	b=gD9AStEG0u8z2s2dd7AX6JHtph3Pq9LxVaE3TYPBp3ZeyQ6kRstrHD6aqIn+tnFnd
+	 C1PP234LFxl018e9abx8xP6KDlwR8mqmfuWZr64kXw5fVzQnZPVQUhfHi7MMCdGDTN
+	 WRER1mDg+l63d5oYyxt4pkMQl8fE0nLcfooOWD0+KmrwClz638+VouNEi3X0xwDlpJ
+	 +2U+Vfe6H6+cuqfH4l7ndcduz8zO1CgFvY0PMJ4b9Cm64U85BaERAv5n4ifSGFsvlw
+	 jICkPdV1884otDiDPmDT0L0skYVryKKorRwhulIznGmbm6MJzjul6B2pdJmA+9biJc
+	 AaQ1WNgaJiduQ==
 From: Sasha Levin <sashal@kernel.org>
 To: patches@lists.linux.dev,
 	stable@vger.kernel.org
-Cc: Sriram R <quic_srirrama@quicinc.com>,
-	Nithyanantham Paramasivam <quic_nithp@quicinc.com>,
+Cc: Hari Chandrakanthan <quic_haric@quicinc.com>,
+	Nicolas Escande <nico.escande@gmail.com>,
 	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.14 102/108] wifi: ath12k: Fix the enabling of REO queue lookup table feature
-Date: Tue,  3 Jun 2025 20:55:25 -0400
-Message-Id: <20250604005531.4178547-102-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.14 105/108] wifi: ath12k: fix link valid field initialization in the monitor Rx
+Date: Tue,  3 Jun 2025 20:55:28 -0400
+Message-Id: <20250604005531.4178547-105-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250604005531.4178547-1-sashal@kernel.org>
 References: <20250604005531.4178547-1-sashal@kernel.org>
@@ -63,7 +64,11 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.14.9
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250603_175904_804918_19699AB5 
+X-CRM114-Status: GOOD (  15.23  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,351 +83,91 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sriram R <quic_srirrama@quicinc.com>
+From: Hari Chandrakanthan <quic_haric@quicinc.com>
 
-[ Upstream commit 0bbcd42b15fa730f393a01bc818802d9f0b04197 ]
+[ Upstream commit 2826139f9295821fe2b049318a1cc057ec003131 ]
 
-Instead of storing the REO queue address inside peer entries, REO
-hardware module prefers them to be stored in SRAM which could be
-directly accessed by REO using peer_ID/TID based lookup table
-mechanism.
-
-Fix the enabling of the REO queue lookup table(LUT) feature by
-configuring the LUT address information in the REO hardware register
-and setting the host service flags.
+Currently, the link_valid field is not initialized in the monitor Rx path.
+This can result in random values for the link_valid and link_id leads to
+undefined behaviour in mac80211. Therefore, initialize the link_valid
+field in the monitor Rx path.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-Signed-off-by: Nithyanantham Paramasivam <quic_nithp@quicinc.com>
+Signed-off-by: Hari Chandrakanthan <quic_haric@quicinc.com>
+Tested-by: Nicolas Escande <nico.escande@gmail.com>
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Link: https://patch.msgid.link/20250402152529.1649402-2-quic_nithp@quicinc.com
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Link: https://patch.msgid.link/20250324062518.2752822-2-quic_periyasa@quicinc.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
 
-**YES** This commit should be backported to stable kernel trees. Here's
-my detailed analysis: ## This is a Clear Bug Fix, Not a Feature
-Implementation ### Evidence from Code Analysis: **1. Infrastructure
-Already Existed:** - The `reoq_lut_support` field was already defined
-and set to `true` for QCN9274 hardware in `hw.c` - Data structures for
-`dp->reoq_lut` and `dp->ml_reoq_lut` were already present in `dp.h` -
-Register definitions like `HAL_REO1_QDESC_LUT_BASE0/1` and
-`HAL_REO_QDESC_ADDR_READ_LUT_ENABLE` were already defined - Memory
-allocation code for these structures already existed **2. Specific
-Issues Being Fixed:** **Missing Hardware Register Programming:** The key
-fix is in `ath12k_dp_reoq_lut_setup()` where it adds proper register
-configuration: ```c ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG +
-HAL_REO1_QDESC_LUT_BASE0(ab), dp->reoq_lut.paddr >> 8);
-ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG +
-HAL_REO1_QDESC_ADDR(ab), val | HAL_REO_QDESC_ADDR_READ_LUT_ENABLE); ```
-**Missing Host Service Flag:** The WMI initialization was missing the
-flag to inform firmware: ```c if (ab->hw_params->reoq_lut_support)
-wmi_cfg->host_service_flags |= cpu_to_le32(1 <<
-WMI_RSRC_CFG_HOST_SVC_FLAG_REO_QREF_SUPPORT_BIT); ``` **3. Memory
-Alignment Fix:** The changes to use `vaddr_unaligned`/`paddr_unaligned`
-with `PTR_ALIGN()` fix a critical hardware requirement where the LUT
-must be 256-byte aligned (`HAL_REO_QLUT_ADDR_ALIGN`). **4. Runtime Logic
-Fix:** In `dp_rx.c`, the code now correctly chooses between peer
-metadata and physical address based on `reoq_lut_support`: ```c if
-(ab->hw_params->reoq_lut_support) { reo_ent_ring->queue_addr_lo =
-reo_dest_ring->rx_mpdu_info.peer_meta_data; } else {
-reo_ent_ring->queue_addr_lo = cpu_to_le32(lower_32_bits(rx_tid->paddr));
-} ``` ### Why This Qualifies for Backporting: 1. **Important Bugfix:**
-The REO lookup table feature is critical for WiFi performance - it
-allows hardware to directly access queue descriptors instead of storing
-them in peer entries 2. **Small and Contained:** The changes are
-localized to the ath12k driver and follow established patterns 3. **No
-Architectural Changes:** This doesn't introduce new APIs or change
-driver architecture 4. **Hardware-Specific:** Fixes functionality that
-was supposed to work on QCN9274 hardware but was silently broken 5.
-**Minimal Risk:** The changes only affect the specific code path when
-`reoq_lut_support` is enabled ### Comparison to Similar Commits: This is
-very similar to the "YES" example (#2: "wifi: ath12k: fix firmware crash
-during reo reinject") which also fixed REO-related functionality. Both
-address hardware register programming issues in the REO subsystem that
-could cause silent failures or crashes. The commit properly fixes broken
-functionality that users of QCN9274 hardware would expect to work,
-making it an excellent candidate for stable tree backporting.
+Based on my analysis of the commit and the code context, here is my
+assessment: **YES** This commit should be backported to stable kernel
+trees. Here's my extensive analysis: ## Technical Analysis **Code Change
+Impact:** The commit adds a single line `status->link_valid = 0;` at the
+beginning of the `ath12k_dp_mon_rx_deliver_msdu()` function in the
+monitor Rx path. This initializes the `link_valid` field in the
+`ieee80211_rx_status` structure before any subsequent processing. **Root
+Cause and Problem:** 1. **Uninitialized Memory Issue**: The
+`ieee80211_rx_status` structure contains the `link_valid` field (1 bit)
+and `link_id` field (4 bits) that were not being initialized in the
+monitor Rx path. 2. **Undefined Behavior**: Without initialization,
+these fields contain random stack memory values, which can cause
+unpredictable behavior in mac80211 when it processes received frames. 3.
+**MLO Context**: The `link_valid` and `link_id` fields are specifically
+used for Multi-Link Operation (MLO) in WiFi 7, where mac80211 needs to
+know which link a frame was received on. ## Why This Should Be
+Backported **1. Bug Fix Nature:** - This is clearly a bug fix that
+addresses undefined behavior caused by uninitialized fields - The commit
+message explicitly states this fixes "undefined behaviour in mac80211" -
+Similar to reference commit #2 (which was backported) that fixed
+uninitialized variables **2. User Impact:** - Uninitialized fields can
+cause mac80211 to make incorrect decisions about packet processing - May
+lead to packet drops, incorrect link handling, or other unpredictable
+wireless behavior - Monitor mode is commonly used by network analysis
+tools, making this user-facing **3. Risk Assessment:** - **Very Low
+Risk**: The change is minimal (single line initialization) - **No Side
+Effects**: Setting `link_valid = 0` is the correct default for monitor
+mode - **Safe Change**: Only affects the monitor Rx path, doesn't change
+core functionality **4. Code Pattern Consistency:** Looking at the
+regular Rx path in `dp_rx.c`, I can see the same pattern: ```c if
+(pubsta && pubsta->valid_links) { status->link_valid = 1;
+status->link_id = peer->link_id; } ``` The monitor path was missing the
+corresponding initialization, creating an inconsistency where: - Regular
+Rx path: Properly sets `link_valid = 1` when appropriate - Monitor Rx
+path: Left `link_valid` uninitialized (now fixed to `link_valid = 0`)
+**5. Containment:** - Change is confined to a single function in the
+monitor path - No architectural changes or new feature additions -
+Follows established kernel practices for field initialization **6.
+Stable Tree Criteria Match:** - ✅ Important bug fix (undefined behavior)
+- ✅ Minimal risk of regression - ✅ Small, contained change - ✅ No new
+features - ✅ Affects user-facing functionality (monitor mode) **7.
+Reference Precedent:** This follows the same pattern as the backported
+commit #2 which fixed uninitialized variables and commit #3 which fixed
+incorrect field usage, both of which were deemed suitable for
+backporting. The commit properly addresses a real bug that could affect
+users of monitor mode with ath12k WiFi 7 devices, with virtually no risk
+of introducing regressions.
 
- drivers/net/wireless/ath/ath12k/dp.c    | 77 +++++++++++++++++--------
- drivers/net/wireless/ath/ath12k/dp.h    |  5 +-
- drivers/net/wireless/ath/ath12k/dp_rx.c | 10 +++-
- drivers/net/wireless/ath/ath12k/hal.h   |  6 ++
- drivers/net/wireless/ath/ath12k/hw.c    |  2 +
- drivers/net/wireless/ath/ath12k/hw.h    |  3 +
- drivers/net/wireless/ath/ath12k/wmi.c   |  8 ++-
- drivers/net/wireless/ath/ath12k/wmi.h   |  1 +
- 8 files changed, 83 insertions(+), 29 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 9e5a4e75f2f62..e4778bc1e32ae 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -1261,22 +1261,24 @@ static void ath12k_dp_reoq_lut_cleanup(struct ath12k_base *ab)
- 	if (!ab->hw_params->reoq_lut_support)
- 		return;
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index 8737dc8fea354..05a9cd21b5dc3 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -1019,6 +1019,8 @@ static void ath12k_dp_mon_rx_deliver_msdu(struct ath12k *ar, struct napi_struct
+ 	bool is_mcbc = rxcb->is_mcbc;
+ 	bool is_eapol_tkip = rxcb->is_eapol;
  
--	if (dp->reoq_lut.vaddr) {
-+	if (dp->reoq_lut.vaddr_unaligned) {
- 		ath12k_hif_write32(ab,
- 				   HAL_SEQ_WCSS_UMAC_REO_REG +
- 				   HAL_REO1_QDESC_LUT_BASE0(ab), 0);
--		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
--				  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
--		dp->reoq_lut.vaddr = NULL;
-+		dma_free_coherent(ab->dev, dp->reoq_lut.size,
-+				  dp->reoq_lut.vaddr_unaligned,
-+				  dp->reoq_lut.paddr_unaligned);
-+		dp->reoq_lut.vaddr_unaligned = NULL;
- 	}
- 
--	if (dp->ml_reoq_lut.vaddr) {
-+	if (dp->ml_reoq_lut.vaddr_unaligned) {
- 		ath12k_hif_write32(ab,
- 				   HAL_SEQ_WCSS_UMAC_REO_REG +
- 				   HAL_REO1_QDESC_LUT_BASE1(ab), 0);
--		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
--				  dp->ml_reoq_lut.vaddr, dp->ml_reoq_lut.paddr);
--		dp->ml_reoq_lut.vaddr = NULL;
-+		dma_free_coherent(ab->dev, dp->ml_reoq_lut.size,
-+				  dp->ml_reoq_lut.vaddr_unaligned,
-+				  dp->ml_reoq_lut.paddr_unaligned);
-+		dp->ml_reoq_lut.vaddr_unaligned = NULL;
- 	}
- }
- 
-@@ -1605,39 +1607,66 @@ static int ath12k_dp_cc_init(struct ath12k_base *ab)
- 	return ret;
- }
- 
-+static int ath12k_dp_alloc_reoq_lut(struct ath12k_base *ab,
-+				    struct ath12k_reo_q_addr_lut *lut)
-+{
-+	lut->size =  DP_REOQ_LUT_SIZE + HAL_REO_QLUT_ADDR_ALIGN - 1;
-+	lut->vaddr_unaligned = dma_alloc_coherent(ab->dev, lut->size,
-+						  &lut->paddr_unaligned,
-+						  GFP_KERNEL | __GFP_ZERO);
-+	if (!lut->vaddr_unaligned)
-+		return -ENOMEM;
++	status->link_valid = 0;
 +
-+	lut->vaddr = PTR_ALIGN(lut->vaddr_unaligned, HAL_REO_QLUT_ADDR_ALIGN);
-+	lut->paddr = lut->paddr_unaligned +
-+		     ((unsigned long)lut->vaddr - (unsigned long)lut->vaddr_unaligned);
-+	return 0;
-+}
-+
- static int ath12k_dp_reoq_lut_setup(struct ath12k_base *ab)
- {
- 	struct ath12k_dp *dp = &ab->dp;
-+	u32 val;
-+	int ret;
- 
- 	if (!ab->hw_params->reoq_lut_support)
- 		return 0;
- 
--	dp->reoq_lut.vaddr = dma_alloc_coherent(ab->dev,
--						DP_REOQ_LUT_SIZE,
--						&dp->reoq_lut.paddr,
--						GFP_KERNEL | __GFP_ZERO);
--	if (!dp->reoq_lut.vaddr) {
-+	ret = ath12k_dp_alloc_reoq_lut(ab, &dp->reoq_lut);
-+	if (ret) {
- 		ath12k_warn(ab, "failed to allocate memory for reoq table");
--		return -ENOMEM;
-+		return ret;
- 	}
- 
--	dp->ml_reoq_lut.vaddr = dma_alloc_coherent(ab->dev,
--						   DP_REOQ_LUT_SIZE,
--						   &dp->ml_reoq_lut.paddr,
--						   GFP_KERNEL | __GFP_ZERO);
--	if (!dp->ml_reoq_lut.vaddr) {
-+	ret = ath12k_dp_alloc_reoq_lut(ab, &dp->ml_reoq_lut);
-+	if (ret) {
- 		ath12k_warn(ab, "failed to allocate memory for ML reoq table");
--		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
--				  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
--		dp->reoq_lut.vaddr = NULL;
--		return -ENOMEM;
-+		dma_free_coherent(ab->dev, dp->reoq_lut.size,
-+				  dp->reoq_lut.vaddr_unaligned,
-+				  dp->reoq_lut.paddr_unaligned);
-+		dp->reoq_lut.vaddr_unaligned = NULL;
-+		return ret;
- 	}
- 
-+	/* Bits in the register have address [39:8] LUT base address to be
-+	 * allocated such that LSBs are assumed to be zero. Also, current
-+	 * design supports paddr upto 4 GB max hence it fits in 32 bit register only
-+	 */
-+
- 	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE0(ab),
--			   dp->reoq_lut.paddr);
-+			   dp->reoq_lut.paddr >> 8);
-+
- 	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE1(ab),
- 			   dp->ml_reoq_lut.paddr >> 8);
- 
-+	val = ath12k_hif_read32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_ADDR(ab));
-+
-+	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_ADDR(ab),
-+			   val | HAL_REO_QDESC_ADDR_READ_LUT_ENABLE);
-+
-+	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_MAX_PEERID(ab),
-+			   HAL_REO_QDESC_MAX_PEERID);
-+
- 	return 0;
- }
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 7ac3143de0168..e8950a23ad4ab 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -310,8 +310,11 @@ struct ath12k_reo_queue_ref {
- } __packed;
- 
- struct ath12k_reo_q_addr_lut {
--	dma_addr_t paddr;
-+	u32 *vaddr_unaligned;
- 	u32 *vaddr;
-+	dma_addr_t paddr_unaligned;
-+	dma_addr_t paddr;
-+	u32 size;
- };
- 
- struct ath12k_dp {
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index cfa96c6216177..3ba603e06816b 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -3247,8 +3247,14 @@ static int ath12k_dp_rx_h_defrag_reo_reinject(struct ath12k *ar,
- 	reo_ent_ring->rx_mpdu_info.peer_meta_data =
- 		reo_dest_ring->rx_mpdu_info.peer_meta_data;
- 
--	reo_ent_ring->queue_addr_lo = cpu_to_le32(lower_32_bits(rx_tid->paddr));
--	queue_addr_hi = upper_32_bits(rx_tid->paddr);
-+	if (ab->hw_params->reoq_lut_support) {
-+		reo_ent_ring->queue_addr_lo = reo_dest_ring->rx_mpdu_info.peer_meta_data;
-+		queue_addr_hi = 0;
-+	} else {
-+		reo_ent_ring->queue_addr_lo = cpu_to_le32(lower_32_bits(rx_tid->paddr));
-+		queue_addr_hi = upper_32_bits(rx_tid->paddr);
-+	}
-+
- 	reo_ent_ring->info0 = le32_encode_bits(queue_addr_hi,
- 					       HAL_REO_ENTR_RING_INFO0_QUEUE_ADDR_HI) |
- 			      le32_encode_bits(dst_ind,
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 94e2e87359583..54a248d252415 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -21,6 +21,7 @@ struct ath12k_base;
- #define HAL_MAX_AVAIL_BLK_RES			3
- 
- #define HAL_RING_BASE_ALIGN	8
-+#define HAL_REO_QLUT_ADDR_ALIGN 256
- 
- #define HAL_WBM_IDLE_SCATTER_BUF_SIZE_MAX	32704
- /* TODO: Check with hw team on the supported scatter buf size */
-@@ -39,6 +40,7 @@ struct ath12k_base;
- #define HAL_OFFSET_FROM_HP_TO_TP		4
- 
- #define HAL_SHADOW_REG(x) (HAL_SHADOW_BASE_ADDR + (4 * (x)))
-+#define HAL_REO_QDESC_MAX_PEERID		8191
- 
- /* WCSS Relative address */
- #define HAL_SEQ_WCSS_UMAC_OFFSET		0x00a00000
-@@ -132,6 +134,8 @@ struct ath12k_base;
- #define HAL_REO1_DEST_RING_CTRL_IX_1		0x00000008
- #define HAL_REO1_DEST_RING_CTRL_IX_2		0x0000000c
- #define HAL_REO1_DEST_RING_CTRL_IX_3		0x00000010
-+#define HAL_REO1_QDESC_ADDR(ab)		((ab)->hw_params->regs->hal_reo1_qdesc_addr)
-+#define HAL_REO1_QDESC_MAX_PEERID(ab)	((ab)->hw_params->regs->hal_reo1_qdesc_max_peerid)
- #define HAL_REO1_SW_COOKIE_CFG0(ab)	((ab)->hw_params->regs->hal_reo1_sw_cookie_cfg0)
- #define HAL_REO1_SW_COOKIE_CFG1(ab)	((ab)->hw_params->regs->hal_reo1_sw_cookie_cfg1)
- #define HAL_REO1_QDESC_LUT_BASE0(ab)	((ab)->hw_params->regs->hal_reo1_qdesc_lut_base0)
-@@ -319,6 +323,8 @@ struct ath12k_base;
- #define HAL_REO1_SW_COOKIE_CFG_ALIGN			BIT(18)
- #define HAL_REO1_SW_COOKIE_CFG_ENABLE			BIT(19)
- #define HAL_REO1_SW_COOKIE_CFG_GLOBAL_ENABLE		BIT(20)
-+#define HAL_REO_QDESC_ADDR_READ_LUT_ENABLE		BIT(7)
-+#define HAL_REO_QDESC_ADDR_READ_CLEAR_QDESC_ARRAY	BIT(6)
- 
- /* CE ring bit field mask and shift */
- #define HAL_CE_DST_R0_DEST_CTRL_MAX_LEN			GENMASK(15, 0)
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index b7b583fadb5ac..115635cdacc8a 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -730,6 +730,8 @@ static const struct ath12k_hw_regs qcn9274_v2_regs = {
- 	.hal_reo1_sw_cookie_cfg1 = 0x00000070,
- 	.hal_reo1_qdesc_lut_base0 = 0x00000074,
- 	.hal_reo1_qdesc_lut_base1 = 0x00000078,
-+	.hal_reo1_qdesc_addr = 0x0000007c,
-+	.hal_reo1_qdesc_max_peerid = 0x00000088,
- 	.hal_reo1_ring_base_lsb = 0x00000500,
- 	.hal_reo1_ring_base_msb = 0x00000504,
- 	.hal_reo1_ring_id = 0x00000508,
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index 8d52182e28aef..7122cab2864ad 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -296,6 +296,9 @@ struct ath12k_hw_regs {
- 
- 	u32 hal_tcl_status_ring_base_lsb;
- 
-+	u32 hal_reo1_qdesc_addr;
-+	u32 hal_reo1_qdesc_max_peerid;
-+
- 	u32 hal_wbm_idle_ring_base_lsb;
- 	u32 hal_wbm_idle_ring_misc_addr;
- 	u32 hal_wbm_r0_idle_list_cntl_addr;
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index d9ad70e46f7d8..de7e3e74d8c26 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -3605,7 +3605,8 @@ ath12k_fill_band_to_mac_param(struct ath12k_base  *soc,
- }
- 
- static void
--ath12k_wmi_copy_resource_config(struct ath12k_wmi_resource_config_params *wmi_cfg,
-+ath12k_wmi_copy_resource_config(struct ath12k_base *ab,
-+				struct ath12k_wmi_resource_config_params *wmi_cfg,
- 				struct ath12k_wmi_resource_config_arg *tg_cfg)
- {
- 	wmi_cfg->num_vdevs = cpu_to_le32(tg_cfg->num_vdevs);
-@@ -3672,6 +3673,9 @@ ath12k_wmi_copy_resource_config(struct ath12k_wmi_resource_config_params *wmi_cf
- 					   WMI_RSRC_CFG_FLAGS2_RX_PEER_METADATA_VERSION);
- 	wmi_cfg->host_service_flags = cpu_to_le32(tg_cfg->is_reg_cc_ext_event_supported <<
- 				WMI_RSRC_CFG_HOST_SVC_FLAG_REG_CC_EXT_SUPPORT_BIT);
-+	if (ab->hw_params->reoq_lut_support)
-+		wmi_cfg->host_service_flags |=
-+			cpu_to_le32(1 << WMI_RSRC_CFG_HOST_SVC_FLAG_REO_QREF_SUPPORT_BIT);
- 	wmi_cfg->ema_max_vap_cnt = cpu_to_le32(tg_cfg->ema_max_vap_cnt);
- 	wmi_cfg->ema_max_profile_period = cpu_to_le32(tg_cfg->ema_max_profile_period);
- 	wmi_cfg->flags2 |= cpu_to_le32(WMI_RSRC_CFG_FLAGS2_CALC_NEXT_DTIM_COUNT_SET);
-@@ -3712,7 +3716,7 @@ static int ath12k_init_cmd_send(struct ath12k_wmi_pdev *wmi,
- 	ptr = skb->data + sizeof(*cmd);
- 	cfg = ptr;
- 
--	ath12k_wmi_copy_resource_config(cfg, &arg->res_cfg);
-+	ath12k_wmi_copy_resource_config(ab, cfg, &arg->res_cfg);
- 
- 	cfg->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_RESOURCE_CONFIG,
- 						 sizeof(*cfg));
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 45fe699ce8a5d..c6036b978f135 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2445,6 +2445,7 @@ struct wmi_init_cmd {
- } __packed;
- 
- #define WMI_RSRC_CFG_HOST_SVC_FLAG_REG_CC_EXT_SUPPORT_BIT 4
-+#define WMI_RSRC_CFG_HOST_SVC_FLAG_REO_QREF_SUPPORT_BIT   12
- #define WMI_RSRC_CFG_FLAGS2_RX_PEER_METADATA_VERSION		GENMASK(5, 4)
- #define WMI_RSRC_CFG_FLAG1_BSS_CHANNEL_INFO_64	BIT(5)
- #define WMI_RSRC_CFG_FLAGS2_CALC_NEXT_DTIM_COUNT_SET      BIT(9)
+ 	if ((status->encoding == RX_ENC_HE) && !(status->flag & RX_FLAG_RADIOTAP_HE) &&
+ 	    !(status->flag & RX_FLAG_SKIP_MONITOR)) {
+ 		he = skb_push(msdu, sizeof(known));
 -- 
 2.39.5
 
