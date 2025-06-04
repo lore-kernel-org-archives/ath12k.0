@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9544FC61CE5
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22387C5B559
 	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 01:26:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,49 +12,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pN53OcebMTlselKQuJVKcOtM6pNAaXvi+AmpJu42Oxs=; b=OTgvk7JwDOpfKsojtpjzB+xUo4
-	4Tc/WG6ErUVtlnBIVWHJAA1Bw0gVDuNMlACqV9QqqTGhsxFcMchzjO3PSeGA/7ZN3MLldb+FRjAvl
-	dI0/flRGXkFh4RjDPGLg6fzrYSGsMQbnYH9C4sQFBg/jSddbLaOUZvxqQhrvuQ/uy6/DoCGsruYQ0
-	SRjd0g/Zhf23SMwzrPnrZzrHSNwFzf+M8M0pnjIGd7hoqVvlJzjEhkQ5ZiaTBtmLLPJrG+WrzVq8l
-	EBq44Xf4st4Oi0Z1EbdFSBqH2ZT4j1i303wzwyQKO5wZuAAkHZ/JNP6T2SLQqPcGLx4PQ1bFmIgVU
-	Bz5xq19A==;
+	bh=JoBsAZDNM/d4cLJNDNo0CfmwnQQXDbtHhtC9OqryW28=; b=T0D+NEmrXdR+GmkjpbwdyO3NiZ
+	p0vzVD20twUXf4Y4a0Ndd2FQ8tx6UNqkG9HDHkwoB9AyXH2BjMwFumX1rnycwqU0j+U4gMfRx890h
+	qZ8+BwYkywmbvuMmbe7jn+YkUjuzcp2kgPnl4rrLcDOhxfSGuDU4JgXBEPYax+xMBcYpuS4cdYcgv
+	mI7UeGRaPiD5ikK6JCSLD8li4rqP0ZGSXHoDTGzO3EpnFv7xhXSrgWz2YRnebev9hWMgIICX17WKI
+	KlpgduEvwxVGPoEK2MSZ0J3lfOlohfJf0LZl5cZ4vhmvoEMRTTfRIUxCudlNU066UC85EREBY7N0r
+	kBSeIBDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcti-0000000CBym-1LPo;
-	Wed, 04 Jun 2025 01:26:30 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uMcth-0000000CByU-3ien;
+	Wed, 04 Jun 2025 01:26:29 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcOv-0000000C6th-18AD
+	id 1uMcOq-0000000C6su-2k5T
 	for ath12k@lists.infradead.org;
-	Wed, 04 Jun 2025 00:54:42 +0000
+	Wed, 04 Jun 2025 00:54:36 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A62195C4860;
-	Wed,  4 Jun 2025 00:52:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 28303C4CEED;
-	Wed,  4 Jun 2025 00:54:39 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 0C76F6112E;
+	Wed,  4 Jun 2025 00:54:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C24C2C4CEED;
+	Wed,  4 Jun 2025 00:54:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748998480;
-	bh=i0LoT/tdV9mWrlIs6mmhkFRgcXM7CsPWQQFdlc/rZws=;
+	s=k20201202; t=1748998475;
+	bh=tFGsvqvech7ksg56U9qoYPE0d2lElABxTC1KWEKJhGY=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=tjtbqmvjM/9OUuqg8ChWqB3bAb27UIXkoTUC8s/N+dG448HT8H0ZReH/uSVykJbj9
-	 sBSh94C7LIfXPf5zsLnughHR5WNYhaXhmPdpeAq076ZNTztK0ujgluQHK3/nG+yXnM
-	 m1509B043cLkPLcSp+TY+cMfgiw4hRKI/Ok8+syGPtIRRIozbI86lsZm9NEMVKp3Tl
-	 EOeLrjyAUiJBBoIXcSdjHdCnJWb/ppS05UD1JnRWp/TAWhu9liDLmqIs0gXaw9rsAt
-	 v0M3YZofhYn2MLN01Hu7T3O8jtrb1A4tVegmSbMeBvOXWlhpoFgx8ZTEw258huF3V0
-	 weuHk6ip03WuQ==
+	b=rA18Fqv4rK3j09osWtaynikIQQQ4wAUhz8o4WawjYAITOX3VFEF688aar7cSbjISM
+	 iIYEYaksyLC0mstFr8ozTiQzzSb74DLyZn+VfqrSWmpZSnTEW5WprJeDn0H5sp32u3
+	 1O5NgUipnw7FAS1NZqRT+ZtgD2jVTFbznM4J2BQwfAMXIGwEQLTC1pBFSYK4CVcq7C
+	 qPMrIYiziAHJ85PceK65I0JE+lfcM/qmia0vusCtlA5K13GlHQqW4qyHwMnjrDwdPM
+	 LDHOagRTRv5UogpBqcuZKmPLd1f25ndrswtWUehHTbIP44ZwXF/Jjba/NF8DIT4+t5
+	 EynsOMPdX/+OA==
 From: Sasha Levin <sashal@kernel.org>
 To: patches@lists.linux.dev,
 	stable@vger.kernel.org
-Cc: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+Cc: Baochen Qiang <quic_bqiang@quicinc.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.15 098/118] wifi: ath12k: fix failed to set mhi state error during reboot with hardware grouping
-Date: Tue,  3 Jun 2025 20:50:29 -0400
-Message-Id: <20250604005049.4147522-98-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.15 095/118] wifi: ath12k: make assoc link associate first
+Date: Tue,  3 Jun 2025 20:50:26 -0400
+Message-Id: <20250604005049.4147522-95-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250604005049.4147522-1-sashal@kernel.org>
 References: <20250604005049.4147522-1-sashal@kernel.org>
@@ -63,9 +62,6 @@ X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.15
 Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250603_175441_394508_DB3DDC69 
-X-CRM114-Status: GOOD (  17.70  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,103 +76,129 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+From: Baochen Qiang <quic_bqiang@quicinc.com>
 
-[ Upstream commit dce7aec6b1f74b0a46b901ab8de1f7bd0515f733 ]
+[ Upstream commit ead6d41116b81098061c878d9bfc0b1a6c629090 ]
 
-With hardware grouping, during reboot, whenever a device is removed, it
-powers down itself and all its partner devices in the same group. Now this
-is done by all devices and hence there is multiple power down for devices
-and hence the following error messages can be seen:
+In MLO scenario WCN7850 firmware requests the assoc link to associate
+before any other links. However currently in
+ath12k_mac_op_vif_cfg_changed() we are doing association in an ascending
+order of link id. If the assoc link does not get assigned the smallest
+id, a non-assoc link gets associated first and firmware crashes.
 
-ath12k_pci 0002:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
-ath12k_pci 0002:01:00.0: failed to set mhi state: POWER_OFF(3)
-ath12k_pci 0002:01:00.0: failed to set mhi state DEINIT(1) in current mhi state (0x0)
-ath12k_pci 0002:01:00.0: failed to set mhi state: DEINIT(1)
-ath12k_pci 0003:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
-ath12k_pci 0003:01:00.0: failed to set mhi state: POWER_OFF(3)
-ath12k_pci 0003:01:00.0: failed to set mhi state DEINIT(1) in current mhi state (0x0)
-ath12k_pci 0003:01:00.0: failed to set mhi state: DEINIT(1)
-ath12k_pci 0004:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
-ath12k_pci 0004:01:00.0: failed to set mhi state: POWER_OFF(3)
+Change to do association for the assoc link first.
 
-To prevent this, check if the ATH12K_PCI_FLAG_INIT_DONE flag is already
-set before powering down. If it is set, it indicates that another partner
-device has already performed the power down, and this device can skip this
-step.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00209-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Link: https://patch.msgid.link/20250408-fix_reboot_issues_with_hw_grouping-v4-3-95e7bf048595@oss.qualcomm.com
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Link: https://patch.msgid.link/20250409-ath12k-wcn7850-mlo-support-v2-5-3801132ca2c3@quicinc.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
 
-Based on my analysis of the commit and the surrounding kernel code, here
-is my assessment: **YES** This commit should be backported to stable
-kernel trees. ## Detailed Analysis **The Bug Being Fixed:** The commit
-addresses a specific issue with hardware grouping in ath12k WiFi devices
-where multiple power-down operations during reboot cause MHI (Modem Host
-Interface) state transition errors. The error messages show failed
-attempts to set MHI state to POWER_OFF(3) and DEINIT(1) when the current
-state is already 0x0, indicating the device has already been powered
-down. **Code Changes Analysis:** The fix is extremely minimal and
-surgical - it adds only 3 lines of code: ```c if
-(!test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags)) return; ``` This
-check is added at the beginning of `ath12k_pci_power_down()` function at
-line 1491-1492. The logic is sound: 1. **ATH12K_PCI_FLAG_INIT_DONE**
-flag is set in `ath12k_pci_start()` (line 1170) when the device is
-properly initialized 2. **The flag is cleared** in
-`ath12k_pci_power_down()` (line 1500) after successful power down 3.
-**The new check** prevents redundant power-down operations by returning
-early if the flag is already cleared (meaning device was already powered
-down) **Why This Qualifies for Backporting:** 1. **Clear Bug Fix**: The
-commit directly addresses user-visible error messages during system
-reboot - a clear operational issue affecting stability. 2. **Minimal
-Risk**: The change is extremely contained (3 lines) and only affects the
-power-down path. It doesn't introduce new functionality or architectural
-changes. 3. **Hardware-Specific Issue**: This affects specific WiFi
-hardware (QCN9274, WCN7850) that users may have in stable kernel
-configurations. 4. **Similar Pattern**: Looking at the similar commits,
-commit #2 (ath11k IRQ affinity fix) and commit #4 (MHI PCI shutdown
-callback) were both marked as YES for backporting. They share similar
-characteristics: - Small, targeted fixes - Address shutdown/reboot
-issues - Minimal code changes - Clear problem resolution 5. **Race
-Condition Fix**: This addresses a race condition where multiple devices
-in a hardware group try to power down simultaneously, which is a classic
-stability issue suitable for stable trees. 6. **Low Regression Risk**:
-The change only adds an early return condition based on an existing flag
-that's already used throughout the codebase for the same purpose -
-tracking initialization state. **Supporting Evidence from Code:** - The
-`ATH12K_PCI_FLAG_INIT_DONE` flag is already used consistently throughout
-the driver to track device state - The MHI error handling code shows
-these are expected error paths that should be avoided (lines 529, 607 in
-mhi.c) - The commit includes proper testing on multiple hardware
-variants This is a textbook example of a stable-tree appropriate fix:
-small, targeted, fixes a clear user-impacting bug, with minimal
-regression risk.
+**YES** This commit should be backported to stable kernel trees. Here's
+my detailed analysis: ## Critical Bug Fix Analysis ### The Problem The
+commit fixes a **critical firmware crash** in MLO (Multi-Link Operation)
+scenarios for WCN7850 hardware. The commit message clearly states: - "If
+the assoc link does not get assigned the smallest id, a non-assoc link
+gets associated first and **firmware crashes**" - This indicates a
+severe user-affecting bug that causes complete driver/firmware failure
+### Code Analysis - What's Being Fixed **Before the fix:** The original
+code processed MLO links in ascending link ID order: ```c
+for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) { //
+Process any link first, potentially non-assoc links ath12k_bss_assoc(ar,
+arvif, info); } ``` **After the fix:** The new code ensures the
+association link is processed first: ```c if (vif->cfg.assoc) { //
+FIRST: Handle the assoc link specifically arvif =
+wiphy_dereference(hw->wiphy, ahvif->link[ahsta->assoc_link_id]);
+ath12k_bss_assoc(ar, arvif, info); // THEN: Handle remaining links,
+excluding assoc link links &= ~BIT(ahsta->assoc_link_id);
+for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
+ath12k_bss_assoc(ar, arvif, info); } } ``` ### Why This Qualifies for
+Stable Backporting 1. **Fixes User-Affecting Bug**: Firmware crashes
+directly impact users by causing connection failures and system
+instability. 2. **Critical Hardware Support**: The fix affects WCN7850
+and QCN9274 hardware which are actively used Wi-Fi 7 chips in current
+devices. 3. **Small, Contained Fix**: The change is minimal - just
+reordering the association sequence. It doesn't introduce new features
+or architectural changes. 4. **MLO is Production Ready**: MLO (Multi-
+Link Operation) is part of the Wi-Fi 7 standard and is being deployed in
+production devices. 5. **Firmware Dependency**: The commit addresses a
+strict firmware requirement that "requests the assoc link to associate
+before any other links" - this is a hardware/firmware constraint, not a
+driver preference. 6. **Low Regression Risk**: - The fix only changes
+the order of operations - It maintains the same logic but ensures
+correct sequencing - The exclusion of the assoc link (`links &=
+~BIT(ahsta->assoc_link_id)`) prevents double-processing ### Context from
+Similar Commits All the provided similar commits were marked "NO" for
+backporting because they were either: - Adding new MLO
+features/functionality - Implementing new capabilities - Making
+architectural changes This commit is fundamentally different - it's
+fixing a **firmware crash bug** in existing MLO functionality. ###
+Hardware Impact The fix specifically mentions testing on: - WCN7850
+hw2.0 PCI (two different firmware versions) - QCN9274 hw2.0 PCI These
+are current-generation Wi-Fi 7 chipsets actively deployed in consumer
+and enterprise devices. ### Conclusion This commit fixes a critical
+firmware crash that affects users of Wi-Fi 7 devices with MLO
+capability. The fix is small, targeted, and addresses a fundamental
+firmware requirement. It meets all criteria for stable backporting:
+important bug fix, minimal risk, contained change, and affects hardware
+in active use.
 
- drivers/net/wireless/ath/ath12k/pci.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/net/wireless/ath/ath12k/mac.c | 31 +++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index b474696ac6d8c..c9588b8df51ae 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1491,6 +1491,9 @@ void ath12k_pci_power_down(struct ath12k_base *ab, bool is_suspend)
- {
- 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index dfa05f0ee6c9f..3d925f208176b 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -3702,6 +3702,8 @@ static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
+ 	unsigned long links = ahvif->links_map;
+ 	struct ieee80211_bss_conf *info;
+ 	struct ath12k_link_vif *arvif;
++	struct ieee80211_sta *sta;
++	struct ath12k_sta *ahsta;
+ 	struct ath12k *ar;
+ 	u8 link_id;
  
-+	if (!test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags))
-+		return;
+@@ -3714,6 +3716,35 @@ static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
+ 	}
+ 
+ 	if (changed & BSS_CHANGED_ASSOC) {
++		if (vif->cfg.assoc) {
++			/* only in station mode we can get here, so it's safe
++			 * to use ap_addr
++			 */
++			rcu_read_lock();
++			sta = ieee80211_find_sta(vif, vif->cfg.ap_addr);
++			if (!sta) {
++				rcu_read_unlock();
++				WARN_ONCE(1, "failed to find sta with addr %pM\n",
++					  vif->cfg.ap_addr);
++				return;
++			}
 +
- 	/* restore aspm in case firmware bootup fails */
- 	ath12k_pci_aspm_restore(ab_pci);
- 
++			ahsta = ath12k_sta_to_ahsta(sta);
++			arvif = wiphy_dereference(hw->wiphy,
++						  ahvif->link[ahsta->assoc_link_id]);
++			rcu_read_unlock();
++
++			ar = arvif->ar;
++			/* there is no reason for which an assoc link's
++			 * bss info does not exist
++			 */
++			info = ath12k_mac_get_link_bss_conf(arvif);
++			ath12k_bss_assoc(ar, arvif, info);
++
++			/* exclude assoc link as it is done above */
++			links &= ~BIT(ahsta->assoc_link_id);
++		}
++
+ 		for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
+ 			arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
+ 			if (!arvif || !arvif->ar)
 -- 
 2.39.5
 
