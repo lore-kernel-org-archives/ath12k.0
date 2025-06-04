@@ -4,58 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94A4AC61CE8
-	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 01:28:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F5A6C5AD49
+	for <ath12k@archiver.kernel.org>; Wed,  4 Jun 2025 01:28:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QkOkeORxOvVF3nBcHZ7WVp3gNQ/wOEbvRCVKygSc9jg=; b=p+uRdqdxFVdcjMLyOt6YRX9Z8O
-	uUdtDA5KTwocKghbilh/44EPV0thi8gDDvhAUGT2wwVjyhLDzVkHHvb0FNuc/5h6Jpt7DXWhN3Yms
-	j0yRqrIeGZ9AOAqeMx1XRQqQUDEeqt1PbUKZdbuDyCCE9ezd3x6fp7X+TIn7Mxtg+CZ/1Y6PHgqAP
-	frsgqf+85dW98hUtmGb4bkAfVIGO5W9VTiyg+eIkgmNyPrCttzDg5xOqOThaKZ9WDmbsgaK3jb3CU
-	rf/f89tDjb1VIQvbH+m+vt3KiJQhz6uX8gmHXCv7jXfUPNwaC9ki5OMclzgpXzz3yO3g0urDtGd6o
-	YBtrBO3A==;
+	bh=QZLmk2bbdSglzD3G1ZnAQO06GFQWV2g8hITA5/s+9rU=; b=sLqINji0oFpnaoc7wWcRrppl6d
+	hV4UEiFrD54DvdtQsV1C5B0ZeD9Q3h+GvQs9Jl3EVIbKkT0ZvN3ps4nGwGAoncadqLDqNob0Zuq5Q
+	orKxgcnbYeX00c5MbHbdg1mfP66i2zkg8YI1+LY/yTLl6/8VYb9+ZeIkPDfOmR88WiIgrSfl8MITF
+	OweQozrgVIe12jjyf6zBsYEnQ3zIA3WWcQv/JNdueEqsxNXw+jcWFOThie/0DFmXlzHc5QorbRIxk
+	ykRyZsGLXI9bkD9acohnQsUIURFN4nWbZxbRrfkx2tFy7FqkusBAemy3vQf1RpazSpODYf8vWJELD
+	LpYT4Mpw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcvr-0000000CCTc-1C8n;
+	id 1uMcvr-0000000CCU4-31Hk;
 	Wed, 04 Jun 2025 01:28:43 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMcPT-0000000C6zs-2TUK
+	id 1uMcPV-0000000C70Y-0vrC
 	for ath12k@lists.infradead.org;
-	Wed, 04 Jun 2025 00:55:16 +0000
+	Wed, 04 Jun 2025 00:55:18 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 359855C4A27;
-	Wed,  4 Jun 2025 00:52:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B0A6C4CEED;
-	Wed,  4 Jun 2025 00:55:13 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 84D7EA4FE56;
+	Wed,  4 Jun 2025 00:55:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 302A3C4CEEF;
+	Wed,  4 Jun 2025 00:55:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748998514;
-	bh=EanskMLqP4uD36AYGAXSC9mpFv4vywrsCHgNk4iilsY=;
+	s=k20201202; t=1748998516;
+	bh=iFWkzu/v13LyrpSQiH2eXoJ/PixX7jUQAjB88vYiMlk=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=C2T78sw/0KXqvxTij8AUYDdAc8yxD4G3+aZM3kA0cYNnnHgV0c3k035ik+2iB1Ned
-	 I2+wSwz7EpxV0K+Sxo2uEmvXf/G4Cql3EQEXPSzJYFHzg1li7MvMTPfthcXrYGbxwO
-	 VxaA3+NLjcsl1KsMUA4Apieyxr+MhQCfTUnDa7Xq3QhOEftFds+o7Y1OYlpeRzOeWG
-	 mEu4xw88jLST2Ta8hBxDUERLfa04tAAph2p/8ZrrFvmSUBoWl/lwOxqNptwd7cUrJX
-	 OnP8WLTmdF9Eq1iNZZMp1fUiOJo0nMrXNTb47hNlOzTQzyjQJqHAViVCED53mh0s16
-	 +xEJwD491CKpA==
+	b=K+rep7PaeWvmB/R58mlFw1gjaU7954a77uLB388xubhK/F88uiXwsiMKxqknXAS/v
+	 U0HWQ+o0PSDulp8legmKTo5WV6CgX/edShYPazDAjfbbnKRvNaQ1BAaGIem2L53UNE
+	 Og234m3v7Rm4BDRdop2tl111bsHdr/05XFG5q/mflh+1gO3KZcO/3Z1yvJvLg6fQen
+	 hgp4Zfd6TueN99jFFVNIZkZxQElBMc4LFFBAkxIUMFlgNIaXrBYkAs5dHl+UA/LM8z
+	 qi5C9X9kwxKFKdoao7snLX1W3AWH+Kd5R1YCvSXuhN+Kir18RB4T/OUjqXfx+d/6PD
+	 77rmWDwQnoCRA==
 From: Sasha Levin <sashal@kernel.org>
 To: patches@lists.linux.dev,
 	stable@vger.kernel.org
-Cc: Balamurugan S <quic_bselvara@quicinc.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-	Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
+Cc: Suraj P Kizhakkethil <quic_surapk@quicinc.com>,
+	Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.15 116/118] wifi: ath12k: fix incorrect CE addresses
-Date: Tue,  3 Jun 2025 20:50:47 -0400
-Message-Id: <20250604005049.4147522-116-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.15 117/118] wifi: ath12k: Pass correct values of center freq1 and center freq2 for 160 MHz
+Date: Tue,  3 Jun 2025 20:50:48 -0400
+Message-Id: <20250604005049.4147522-117-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250604005049.4147522-1-sashal@kernel.org>
 References: <20250604005049.4147522-1-sashal@kernel.org>
@@ -66,8 +65,8 @@ X-stable-base: Linux 6.15
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250603_175515_719363_A0AEBE99 
-X-CRM114-Status: GOOD (  16.08  )
+X-CRM114-CacheID: sfid-20250603_175517_405066_126B54FA 
+X-CRM114-Status: GOOD (  17.23  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,102 +81,113 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Balamurugan S <quic_bselvara@quicinc.com>
+From: Suraj P Kizhakkethil <quic_surapk@quicinc.com>
 
-[ Upstream commit 60031d9c3589c7983fd1deb4a4c0bebf0929890e ]
+[ Upstream commit b1b01e46a3db5ad44d1e4691ba37c1e0832cd5cf ]
 
-In the current ath12k implementation, the CE addresses
-CE_HOST_IE_ADDRESS and CE_HOST_IE_2_ADDRESS are incorrect. These
-values were inherited from ath11k, but ath12k does not currently use
-them.
+Currently, for 160 MHz bandwidth, center frequency1 and
+center frequency2 are not passed correctly to the firmware.
+Set center frequency1 as the center frequency
+of the primary 80 MHz channel segment and center frequency2 as
+the center frequency of the 160 MHz channel and pass the values
+to the firmware.
 
-However, the Ath12k AHB support relies on these addresses. Therefore,
-correct the CE addresses for ath12k.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
-Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Link: https://patch.msgid.link/20250321-ath12k-ahb-v12-2-bb389ed76ae5@quicinc.com
+Signed-off-by: Suraj P Kizhakkethil <quic_surapk@quicinc.com>
+Reviewed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Link: https://patch.msgid.link/20250304095315.3050325-2-quic_surapk@quicinc.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
 
-**YES** ## Analysis and Recommendation This commit should be backported
-to stable kernel trees. Here's my detailed analysis: ### **Nature of the
-Bug** This is a **critical hardware register address bug** in the ath12k
-WiFi driver. The commit fixes two important Copy Engine (CE) register
-addresses: - `CE_HOST_IE_ADDRESS`: Changed from `0x00A1803C` to
-`0x75804C` - `CE_HOST_IE_2_ADDRESS`: Changed from `0x00A18040` to
-`0x758050` ### **Impact and Severity** **1. Critical Hardware
-Functionality** These CE addresses control interrupt enable/disable
-operations for Copy Engine rings, which are fundamental to WiFi
-communication between host and firmware. Incorrect addresses would
-cause: - Failed interrupt enable/disable operations - Potential missed
-interrupts leading to stuck CE rings - System hangs or communication
-failures with firmware **2. Affects Real Hardware** The commit message
-explicitly mentions testing on real hardware: - **IPQ5332 hw1.0 AHB**
-(currently deployed) - **QCN9274 hw2.0 PCI** (reference testing) **3.
-AHB Device Support** These addresses are specifically used by AHB (AMBA
-High-performance Bus) devices in functions like
-`ath12k_ahb_ce_irq_enable()` and `ath12k_ahb_ce_irq_disable()`. IPQ5332
-is the primary AHB device currently supported. ### **Comparison with
-Historical Patterns** Looking at the similar commits provided: -
-**Similar Commits #1 & #2** (both marked YES): Fixed DMA address type
-issues in ath12k/ath11k CE rings to prevent future 36-bit DMA addressing
-problems - **Similar Commits #3 & #4** (both marked NO): Added new CE
-configurations for new device support (feature additions) This commit
-follows the pattern of commits #1 and #2 - fixing existing incorrect
-definitions that could cause hardware functionality issues. ### **Stable
-Tree Criteria Alignment** **✓ Fixes Important Bug**: Incorrect hardware
-register addresses affecting real deployed devices **✓ Small and
-Contained**: Only changes two #define values in a header file **✓
-Minimal Risk**: Simple address corrections with no architectural changes
-**✓ No New Features**: Pure bug fix, not adding functionality **✓ Clear
-Side Effects**: Limited to CE interrupt handling, well-understood impact
-### **Risk Assessment** **Very Low Risk**: - Changes only constant
-definitions in a header file - No algorithm or logic changes - Well-
-tested on actual hardware as mentioned in commit message - Fixes latent
-but critical hardware addressing bug **High Benefit**: - Ensures correct
-hardware register access for AHB devices - Prevents potential system
-failures or communication issues - Critical for proper IPQ5332 (and
-future AHB device) functionality ### **Conclusion** This is a textbook
-example of a commit that should be backported: it fixes a critical
-hardware addressing bug with minimal risk and clear benefit. The
-incorrect CE addresses could cause serious functionality issues for AHB-
-based ath12k devices, particularly the IPQ5332 which is already
-deployed. The fix is small, contained, and has been tested on real
-hardware.
+Based on my thorough analysis, here is my assessment: **YES** This
+commit should be backported to stable kernel trees for the following
+reasons: ## Analysis of the Code Changes The commit fixes a critical bug
+in the 160 MHz channel frequency handling for the ath12k driver
+(Qualcomm Wi-Fi 7 devices). The specific issues being corrected are: ###
+1. **Incorrect center frequency calculation for 160 MHz EHT channels**
+**Before the fix**: The code only handled `MODE_11AC_VHT80_80` for dual-
+band scenarios but completely ignored `MODE_11BE_EHT160` (Wi-Fi 7's 160
+MHz mode). This meant: - `chan->band_center_freq1` was incorrectly set
+to the original `arg->band_center_freq1` - `chan->band_center_freq2` was
+set to 0, providing no information about the 160 MHz channel structure
+**After the fix**: For `MODE_11BE_EHT160`, the code now correctly: -
+Sets `chan->band_center_freq1` to the center of the primary 80 MHz
+segment (±40 MHz from control channel) - Sets `chan->band_center_freq2`
+to the center of the entire 160 MHz channel - Follows the exact same
+pattern already established and proven in ath11k driver for
+`MODE_11AX_HE160` ### 2. **Follows established precedent from ath11k**
+The ath11k driver (lines 851-860 in
+`/home/sasha/linux/drivers/net/wireless/ath/ath11k/wmi.c`) already
+implements this exact logic for `MODE_11AX_HE160`: ```c if
+(arg->channel.mode == MODE_11AX_HE160) { if (arg->channel.freq >
+arg->channel.band_center_freq1) chan->band_center_freq1 = center_freq1 +
+40; else chan->band_center_freq1 = center_freq1 - 40;
+chan->band_center_freq2 = arg->channel.band_center_freq1; } ``` The
+ath12k fix implements identical logic for `MODE_11BE_EHT160`, ensuring
+consistency across the ath driver family. ### 3. **Impact on Users**
+Without this fix, 160 MHz channels on Wi-Fi 7 devices would not work
+correctly because: - The firmware receives incorrect channel center
+frequency information - This could lead to improper channel selection,
+interference, or complete failure to establish 160 MHz connections -
+Users with QCN9274 (and similar) devices would experience degraded Wi-Fi
+7 performance ### 4. **Meets Stable Backport Criteria** ✅ **Fixes
+important functionality**: 160 MHz operation is a key Wi-Fi 7 feature ✅
+**Small, contained change**: Only affects one function, adds clear
+conditional logic ✅ **Low regression risk**: Follows proven pattern from
+ath11k, only changes previously broken path ✅ **Clear side effects**:
+None beyond fixing the intended issue ✅ **Well-tested**: Commit includes
+"Tested-on: QCN9274 hw2.0" with specific firmware version ### 5.
+**Driver Maturity Context** ATH12K is the Wi-Fi 7 driver for
+current/recent Qualcomm chipsets. While newer than ath11k, it supports
+hardware that users actively deploy. The 160 MHz functionality is
+critical for achieving the high throughput promised by Wi-Fi 7. ### 6.
+**Comparison with Similar Commits** This commit closely resembles
+**Similar Commit #2** (marked YES for backport) which also fixed
+frequency calculation issues in ath12k for 6 GHz operation. Both
+commits: - Fix critical frequency/channel handling bugs - Have minimal
+code changes with low regression risk - Include proper testing
+validation - Address functionality that affects real user deployments
+The fix is essential for proper Wi-Fi 7 160 MHz operation and should be
+backported to ensure users with ath12k-supported hardware can fully
+utilize their devices' capabilities.
 
- drivers/net/wireless/ath/ath12k/ce.h | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/net/wireless/ath/ath12k/wmi.c | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/ce.h b/drivers/net/wireless/ath/ath12k/ce.h
-index 1a14b9fb86b88..f85188af5de2f 100644
---- a/drivers/net/wireless/ath/ath12k/ce.h
-+++ b/drivers/net/wireless/ath/ath12k/ce.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2022, 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 14550a1d6edb7..8501c28275fb6 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -1037,14 +1037,24 @@ int ath12k_wmi_vdev_down(struct ath12k *ar, u8 vdev_id)
+ static void ath12k_wmi_put_wmi_channel(struct ath12k_wmi_channel_params *chan,
+ 				       struct wmi_vdev_start_req_arg *arg)
+ {
++	u32 center_freq1 = arg->band_center_freq1;
++
+ 	memset(chan, 0, sizeof(*chan));
  
- #ifndef ATH12K_CE_H
-@@ -39,8 +39,8 @@
- #define PIPEDIR_INOUT_H2H	4 /* bidirectional, host to host */
+ 	chan->mhz = cpu_to_le32(arg->freq);
+-	chan->band_center_freq1 = cpu_to_le32(arg->band_center_freq1);
+-	if (arg->mode == MODE_11AC_VHT80_80)
++	chan->band_center_freq1 = cpu_to_le32(center_freq1);
++	if (arg->mode == MODE_11BE_EHT160) {
++		if (arg->freq > center_freq1)
++			chan->band_center_freq1 = cpu_to_le32(center_freq1 + 40);
++		else
++			chan->band_center_freq1 = cpu_to_le32(center_freq1 - 40);
++
++		chan->band_center_freq2 = cpu_to_le32(center_freq1);
++	} else if (arg->mode == MODE_11BE_EHT80_80) {
+ 		chan->band_center_freq2 = cpu_to_le32(arg->band_center_freq2);
+-	else
++	} else {
+ 		chan->band_center_freq2 = 0;
++	}
  
- /* CE address/mask */
--#define CE_HOST_IE_ADDRESS	0x00A1803C
--#define CE_HOST_IE_2_ADDRESS	0x00A18040
-+#define CE_HOST_IE_ADDRESS	0x75804C
-+#define CE_HOST_IE_2_ADDRESS	0x758050
- #define CE_HOST_IE_3_ADDRESS	CE_HOST_IE_ADDRESS
- 
- #define CE_HOST_IE_3_SHIFT	0xC
+ 	chan->info |= le32_encode_bits(arg->mode, WMI_CHAN_INFO_MODE);
+ 	if (arg->passive)
 -- 
 2.39.5
 
