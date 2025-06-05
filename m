@@ -4,182 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9B65C5B543
-	for <ath12k@archiver.kernel.org>; Thu,  5 Jun 2025 06:25:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5733C5AE59
+	for <ath12k@archiver.kernel.org>; Thu,  5 Jun 2025 08:28:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:
-	Content-Type:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Y1Poc+gzKd0fno8hnRARucW0LAq05peb3gGh0QuMAug=; b=vB2xKeefA6/UTlOMhRnKBP+OuL
-	BcnkJVAYF3sSjUQviWIiqAyMXdbpHlBWRKOM0rkIUMh/iX6WidlN2tSxt1sAeKN6k3FOJYqtG2KAv
-	GT/jRXAQI9n5pabbxwdTg1S7ok2dC6LOsS/s+y3n1M6UkJ4h/TXlbdPCLMPh15x0FKFbJ1ZjbA2DI
-	FLGDtMJHyIIQ0O0+bNFDXZB+n9B2tRz5A8t6KasoP2+yNds4beMwi/DJNuaoH2HiMyAPfsntiKmiM
-	YifraDrz0GrewmF9dLMTNnyn5g8Hphh0f4k+6yp8MOnh8rqCKObYHJXsnEyT1zynaszULAZFxWa4x
-	vbxn53Qw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=7AgNGohyuHwznRb/NWY98uyYm0XW6Bli7qL1fCuFkEY=; b=jIfsI9P62yQ6TemNoWgkOQZo4H
+	IRQlp/uvxCUpJPVNDL2JSh8ZC4pz3HvVX8H6xbbPMZksC4viq3xw9ndA3fS7xK4txWxG6M87fqK+u
+	R3wpW59NLo+AawiI0oCHRLJ8XGVtqXg0xTjVy53pUru3F/WPdcKs0MWKM354M62QDhKv66NEKdgT9
+	eGr3f9/mwoRDZjOif+unyekivEdrDWqElneNKncrPABXUuUMH0YXMaLNOwBxVmVoOM3xkDn1PbNla
+	LeO/qa9Y7utIYbw/ZFJ9wmI1qzrCdc4VFscMqv9MiYv5BXtQFY/zfl0TNZ1kgBVZbPZyH4VlZaRvz
+	uMW7nxGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uN42N-0000000EqtH-2k7R;
-	Thu, 05 Jun 2025 06:25:15 +0000
-Received: from mx08-0057a101.pphosted.com ([185.183.31.45])
+	id 1uN5xF-0000000F3ou-2Hi7;
+	Thu, 05 Jun 2025 08:28:05 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uN41L-0000000Eqnm-3FlP
+	id 1uN5vN-0000000F3kZ-1Tlw
+	for ath12k@bombadil.infradead.org;
+	Thu, 05 Jun 2025 08:26:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=7AgNGohyuHwznRb/NWY98uyYm0XW6Bli7qL1fCuFkEY=; b=NzAej2c7tW7Bs2sxgc0mHyZCIT
+	cpBZLfjTJPjyiAOMkZFk9OB+RkTRn+tUIrqprAWLXjod6iA3fJp8+T8UNu0ftycSCk6au+z7jWnBh
+	K8cBxRoQWU4RJeJQI0htbcuAu4KQqKzU9HExjvQfDkFfJgobGE5gf61sfl0XKfG7fn93LpHGauCeH
+	Er01et66A0UhRs3LO9M3cDCksjqlLS9JuSs8SygtEgN3YgHXxE1bkPedBQwwxh0TtsLScqZScL2Xw
+	eTLFa25dvO9z3RctmZDz/MJRKmTx/R+nMD0WKQaQq7UuZxskafgcvpXfiJqXCLFErrPVFbePjgl4G
+	qC5btBig==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uN5vK-000000017R7-1MAd
 	for ath12k@lists.infradead.org;
-	Thu, 05 Jun 2025 06:24:17 +0000
-Received: from pps.filterd (m0214196.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5554Dj7S031649;
-	Thu, 5 Jun 2025 08:23:55 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=270620241; bh=Y1Poc+gzKd0fno8hnRARucW0
-	LAq05peb3gGh0QuMAug=; b=v2g90GYfHAspme3dJS29Ib9bhsM3Q+ZgIIsLxW7b
-	xr+i8KgT6xqCBjcrnNQjDx3IEozqu9g04scmXwjraMRZJmfeUWMGs53U4EEYPBBD
-	KvJZbzJdToGr04D0fkV1bcOBzStkZn+fTCsAONav0ykmfprolmJkqJi7q87laIZz
-	EZNdg09CWiZ941ifPpTkcRDbWDikTCmnDKVvxxfKSHGNtWe63ayhDB5z0vlAdqhL
-	lVOnbA25J1bcjcmVAGwJWecakpKwsSnhYcbTLyP/STgHIzEniSewV0/gJZZrRPoV
-	ZNiCHlwF0LEZAPqhGhx6Hi6T7+y8vnQ9//x9K5BMYPFn+g==
-Received: from eur02-vi1-obe.outbound.protection.outlook.com (mail-vi1eur02on2111.outbound.protection.outlook.com [40.107.241.111])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 471kn3aeta-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 05 Jun 2025 08:23:55 +0200 (MEST)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=lllikeX0wnYMmRHP2iVhJQU4mIy8psWUYLgEx55bRl4bI5SH8cg9JNdRKUXWQ+1c1I8z5/YIUemnLd3Ypmw6fA+9fS5bhOnU4mUq5RmNi/TxrwBtU7OlaD+ueRUMSE0T4FZFLlE6sIdjIap9sWB1aFygOYI0fCpoPInwOchtpUuDcjl+J6wq/elHwxBmWPqoNeYJCvxgGldS6qGGRkM2SNIFrOlvMN9neyp235nwJKwWSfdL2Ouq0JicxAoSYVDDTy84VPBrFvwEGATe/nckvWqKFmoT3RJM9Gh7ll13WQdNSM5N5QGD9zb6HfJAoarBE6WtXUtiGFrlZA//3wUHOA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Y1Poc+gzKd0fno8hnRARucW0LAq05peb3gGh0QuMAug=;
- b=mQGC2loGBTibfV6G+vhiA9kcXPSWLQ4ZaosuLGH1UvO4GzIZ3t9PAjSKJOz1j5UMNMKrg4puEU9LPQBsSzKr7ePl1kGBSmU2dijT641Bo/sJ8mwC1cyYC7Ff5NjtP5GpI+1jLGYkSjDqBB/ydx4VpFM4ZW7WGgq8dlaukWhPSz4DIBGgajfwe4z7H0zUyUfONin0IMImctj7uzRBqnUx3cIHrDKam+v6hA64MoBxF4sIzKYG/8xWW4BpFPWLhCZGKvgMRdX4cGujn7P/zjkjwf0v0NvF3Jkl4YazTJx2ODthH9MpjhSfWZytR/dG+pOVV+BAwFHyOggRavGctc7sYQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
- dkim=pass header.d=westermo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=beijerelectronicsab.onmicrosoft.com;
- s=selector1-beijerelectronicsab-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Y1Poc+gzKd0fno8hnRARucW0LAq05peb3gGh0QuMAug=;
- b=dRdV5Cy1VhpFLtvKxGMVK7MBLlbob7S8BgF/GAd57IWWXG+s9xm0XblIRgC/3a8HURgs0UnS/KvBBMi7Y7q+OS2ZjPMUIyfJHqrKkxCubKVQrjDRwtEhLexkCI2sfAIWPt0oWlg8j0CtRo1AVaMwbwCysSQUywWz5jXeQDa5LOQ=
-Received: from AS8P192MB2240.EURP192.PROD.OUTLOOK.COM (2603:10a6:20b:63a::18)
- by GV1P192MB1690.EURP192.PROD.OUTLOOK.COM (2603:10a6:150:62::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8792.34; Thu, 5 Jun
- 2025 06:23:51 +0000
-Received: from AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
- ([fe80::bee5:29b7:49f2:cf70]) by AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
- ([fe80::bee5:29b7:49f2:cf70%4]) with mapi id 15.20.8813.020; Thu, 5 Jun 2025
- 06:23:51 +0000
-Date: Thu, 5 Jun 2025 08:23:40 +0200
-From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
-        ath12k@lists.infradead.org
-Subject: Re: ath12k: big endian bringup
-Message-ID: <aEE37D3hvlJmcN5E@FUE-ALEWI-WINX>
-References: <aD8HK4Iagc99skN5@FUE-ALEWI-WINX>
- <ae1215c7-5ea6-447c-8c07-5667e13dae89@oss.qualcomm.com>
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <ae1215c7-5ea6-447c-8c07-5667e13dae89@oss.qualcomm.com>
-User-Agent: Mutt/2.1.4 (2021-12-11)
-X-ClientProxiedBy: GVZP280CA0014.SWEP280.PROD.OUTLOOK.COM
- (2603:10a6:150:272::7) To AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
- (2603:10a6:20b:63a::18)
+	Thu, 05 Jun 2025 08:26:08 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 554NfEDK015941
+	for <ath12k@lists.infradead.org>; Thu, 5 Jun 2025 08:25:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=7AgNGohyuHwznRb/NWY98uyYm0XW6Bli7qL
+	1fCuFkEY=; b=pRh4mVcxHICD+/ZTShxmDKiaz9ZG06pSp3nR5C6XzBnLTHul/1c
+	z79lozKuPGRrfzDh+OWiijZzEIjiAOyV+2/0mjCxt8IhgzLkvunLrJCTihXhbWdI
+	oaC1bUS3X1Pkf+F/hd8s20k9hIf5k8qET6BfZKe78AaQZq5AAW186QahKk/MqM1f
+	VAfaFWMhTYb7kO/ooK6QOQ3fkVmN2/SRhv6P8zicPqXYKgLHuYQ8FLo6iSxgIiAw
+	e5eHFKUtIY5Zsb7S3av136rj7sPSDDOY0ZViBH/a7PbXgrPRSnUDF+3Wjck1IDZC
+	Bocr/mQKWm1P3Ar4W0PDSqcqvRnk+jhbycA==
+Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 471sfuyg77-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 05 Jun 2025 08:25:59 +0000 (GMT)
+Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-6fad9167e4cso14669116d6.1
+        for <ath12k@lists.infradead.org>; Thu, 05 Jun 2025 01:25:59 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749111958; x=1749716758;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=7AgNGohyuHwznRb/NWY98uyYm0XW6Bli7qL1fCuFkEY=;
+        b=Z6a6/3BMKc0f/FN61L3Dv37VPVRNp32m+DFigFNUqhh7eIGZOnLrjUHerkIslI4Igr
+         d5ZyY15KhhTFCN+YJqdmdCohRfvPRtdr94mM3sA3CP1gn8VsUipp6mgjG00enCtiNz5j
+         o/VZ2JDs/+DaD+7ksKFYLEh4I1q2n1fo2LWLsKezJhIbF5OKo2ZDDR1JJZa0Bv6op+ej
+         okw1o3vyWMT/0b2zGAwttxFWupP+B72z8z8Mo1iIhTsP6JGNEAusT3iRqEvmvJa6w3tH
+         N90zrZKLUUB98hOvckxWNNuwA2Qxirug0NQJIwj4Nu4X52bAsHNXDyUsH+Z1EYmS1YLh
+         luSw==
+X-Gm-Message-State: AOJu0Yx+qYXrmLjF+joXHqmpOVxW7Zkr8fAOFMOYYwhjBmwk/OyJePRE
+	EaHjv79ssonT/8sedtsb/T+Qq0SZHVjo4pNy29WwokIFev8jz0mbuS5+Vo6sJLPmODDBq/a3Mhf
+	O8n9XyzGrSDhAm8S65Ngb7tsEAnpbufmn2G2qchIN9AuXzOP37VQf0OxIclr+0L04FcqFzBVv
+X-Gm-Gg: ASbGnctQ/pkaL4udUOQdDLC24m4xFQipOCFZMC5rPBSzBFAM6YSev8IbkhDUDkzrZaw
+	1GWBsJs+QEf+lKDa4zLcM++n8lEUi1O/uvmydBSKXZmGYg4WItml2I3/UpqiZ6P+mOQRVPq46WP
+	5AWeSwbHNq3DfOM1hb+Y9p7QRPl+ph7QHDZA1pQca3kk9blnBNMLTlNUIsQQbOlSlj85Ft1qk4Z
+	QZNPDUm2TWyXPlFJpVF0ZLEckVY6wkiEU+UN8Ufhnj0xWnZCeGjvq0hm3ABZs7yfD+CeGu6Pe0h
+	0p2eQRWdNH5ZGLD0d1chTsExiAMgHlxs6Mtwzk/uPlotsPU4VmbU0i2+AVmXtXBJihuu1Df+Ce/
+	3Sfp+4NiSj1B5s3ALyx6uj3R57A==
+X-Received: by 2002:a05:622a:5c1a:b0:476:b7cf:4d42 with SMTP id d75a77b69052e-4a5a587c55dmr99223791cf.27.1749111947183;
+        Thu, 05 Jun 2025 01:25:47 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHRqtPuFK4ho1ynltyfx5bNwh0w/3ERQTIA0dkvc1RaATudlWxbd+u6Idl3pyqpaU0h9uwmig==
+X-Received: by 2002:a17:902:e741:b0:234:eb6:a35d with SMTP id d9443c01a7336-235e11ebd84mr81677345ad.27.1749111935399;
+        Thu, 05 Jun 2025 01:25:35 -0700 (PDT)
+Received: from QCOM-kZLYnuwaz1.na.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23506cd34f9sm114984925ad.157.2025.06.05.01.25.34
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 05 Jun 2025 01:25:35 -0700 (PDT)
+From: Kang Yang <kang.yang@oss.qualcomm.com>
+To: ath12k@lists.infradead.org, kang.yang@oss.qualcomm.com
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH ath-next] wifi: ath12k: update channel list in worker when wait flag is set
+Date: Thu,  5 Jun 2025 16:25:28 +0800
+Message-ID: <20250605082528.701-1-kang.yang@oss.qualcomm.com>
+X-Mailer: git-send-email 2.49.0.windows.1
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS8P192MB2240:EE_|GV1P192MB1690:EE_
-X-MS-Office365-Filtering-Correlation-Id: 752b05ef-f30a-4665-26f7-08dda3f989b6
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?h3rqALoYYi3jtlwEZbU67eTRJEqOvYwwrbMsz0V0d2Ya22SZdiTEZpqe2ex7?=
- =?us-ascii?Q?5jRj8PmXTeYPN+KutZNnE+UNkmwp+rvi6JIThC4R91cZUHVYVL7sxM4gALlg?=
- =?us-ascii?Q?W5LZSpUGUMYmkIOQDtyiRxFREaw6WBKV5CXkjK5BsSLtizH7Em+jwyGNqB3F?=
- =?us-ascii?Q?Sozx7N8qb69p1Vi452+EC5Dl10s821DOGkjqWLYq04kZFbPoAepTqQ5cSnSg?=
- =?us-ascii?Q?4XLGuEUjV1iaEa9zPX5lYmkMcF/TWvMgrB7b6x1NGhdwhy8aG2q066cls1fn?=
- =?us-ascii?Q?xSviS9TcxFJPk1jt1nz0RWOCSQlHK1LVhzKNwf/NXrmJJUCoFBQPOAs2sQwH?=
- =?us-ascii?Q?hHi6ZOMqwUmk1S/bZdk5XJMdSJ+/hQd41jQogvrU+u6Q9yheIGZjGv1p9QFS?=
- =?us-ascii?Q?EF0Vy4xkN99gXDWiHIrr1kvMvX2dtNhkECck9qgLFAl5KVgKHNRTZYBy0k68?=
- =?us-ascii?Q?cJJpieKTpAxqbzeO+l9ZuxdoKAe3/K5Zg2/6d6rFKJajQKKdaBeE0/9S/8yY?=
- =?us-ascii?Q?wCaHZUBL7oJFUfXTUiNqi1yifxwiiuZKyDZm4GgxYCXOC6A+UsaBZpVL7g2b?=
- =?us-ascii?Q?KYFXorklj9edIPGB51lNU8iuqV8Own2ADzkQ57O0SmSReL/sjetqrOsirzgo?=
- =?us-ascii?Q?hJoaEgghKr8YJITCXORTPGuQpmChdAPUp5Rnsz06SzOGjsU8/QZQ5z1cZ7ke?=
- =?us-ascii?Q?XLA9ABSZB17U40gsg9P2elpsbSjNUxK8SB9PyQPN3A8/c9HuqCJ/SCcl5ilA?=
- =?us-ascii?Q?zPAnY0wtp5LCrJBtC8cAcCI4FMDfmi+4seXnV11wl9UKUdANCwY2vIHUlBpp?=
- =?us-ascii?Q?WP4PCNOutzuh0vn9FXr1ERkREw6FLbEQldmn0CJrupTEGaMYA3cFaHu2SF9Q?=
- =?us-ascii?Q?4Mo6KM4l8JCS00d2WZer8MPxSaKILQVJnaNwtIGWT+/sfabfioq9jKaXVpld?=
- =?us-ascii?Q?KTwIt2qQdHWm/rFaIUtVnsGmQeJrVRPwl17uHeec7lXI8Q4f6YYLsrx6R0DT?=
- =?us-ascii?Q?tcRKbwr/dRh+R8tTTj0/ICiFOXG90WnGaC/9iKR327U6z9+WL3NIIaslBrGF?=
- =?us-ascii?Q?wmfEYCGh2cm858nRodhVDV5dxDVDmV8nzMANFwqVyS12NVJVvZXmo0+q6GU1?=
- =?us-ascii?Q?Piz23lN4s7YdIGHalqONh1F5508LBIZBp/WRkx9QeZ1Ek8UdumvGyJ7LWq0G?=
- =?us-ascii?Q?Tpvak/a2F+FZFFe+kRybJIffWa76d4HN7Ri4VX4k7MkReYBDSioHB7eZPOQE?=
- =?us-ascii?Q?E31Avxg7zgpIJgR3HUAY6lsm+FWCefTb6ES7SR0L2cJkWstv483U2rixgmq3?=
- =?us-ascii?Q?vEt4M50FCh2BW1btj0fxCFYnS07dvJkH6UsnUSmyRPEuI4PrjqAu4O2ocry/?=
- =?us-ascii?Q?mwh/akJgdFZBt5A1H3pEIeRimz+mxBCkSsaNv/Q3tChDIJUMeOhIKmWRIhNh?=
- =?us-ascii?Q?HUATkWeHI8g=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8P192MB2240.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ihJ7IdGYPzzf4sbhPLgcX2tWKFf3MYc1CIG2Q+84Br2eBorcIUWu/dUCY9wY?=
- =?us-ascii?Q?7MMlcPIXnWgVkKzpl40/2KezN3VZtu89fDgGxWhSzab3Lvsmi/z87ezeOSOm?=
- =?us-ascii?Q?4KGs1OBDilLb6UDfzr0M/rJed1grs3QyBGnsZuP+PzmQ1DVVST/rXqxANKch?=
- =?us-ascii?Q?7lo2RqkgIDTbqnp52oC+OV/mGVecNviC62wWnKrNrtL9ozMru0Ojrzl2fxpe?=
- =?us-ascii?Q?FRlc9tx7+EpMtP157bsNhrVUboICmYg4FOASGAel3k4BXo+4i2dr3YDfTnrn?=
- =?us-ascii?Q?YTaAC5/uS74PzX7LhTCWuPWKNHmpKtU/DQ5wSLR3pMkQV+A4ejihoWKqzlAz?=
- =?us-ascii?Q?IaTh2iT0fbXaashLVZ5Q9PYtByzL/mVqbjRSPb3+ktCLM2Fi+aECx4yFYWX/?=
- =?us-ascii?Q?UOB68oCViOhAypfgna4dT09ItaiXyCg/2JUYZYFHKSLpz9Hgz0Qpic4ap411?=
- =?us-ascii?Q?HdQFRx57/DP1frQntaem+eaKePa+rMD/WET9vTRG3Q6U2bBGA+KNOFhyxWIm?=
- =?us-ascii?Q?oM8om09sAMIurPdWONcCM4er3iAy8vb6DZA6EQatzmwRvoU7sslDvfgVR8zn?=
- =?us-ascii?Q?G4hcyzy4PZsMT7NrqkSGVrlakWsQUkewNdTtwzzZzUG2pPdq2Kuw7y3qdK1e?=
- =?us-ascii?Q?ncsvWA8QahXW7NCBD8GxKDNI1fhQ92/6APygM+ZeU/z1yWk9WmiERA1SWqft?=
- =?us-ascii?Q?kJ3hOtz9/MYDi/7k6O0UkAaQKx+FKe8eB+HLBbMV4aY5ASMV6SEF/HxwJ7TM?=
- =?us-ascii?Q?6ULUDRNUS+t25QOAYAh+0WPXyyxddISTxCwMpo8ZHPYxUJxwCqAv+yVspdS2?=
- =?us-ascii?Q?gdrXhUNu7jcIGuIc5AjVM6Ut3ySTjUAJD+MdIhhRvEtCl88sSWINKdhrcS8+?=
- =?us-ascii?Q?ynPyQVt9fpAKYwcLue/OWYIAYIjfhG32277/s6IS7vjnFd6jUf+VVYfBXsbI?=
- =?us-ascii?Q?l5mZh54FOGgUC1W56wScXJ9T4ODAyT5PzbRLFzFcVxSMGhyaYkhaFrNt9Zqe?=
- =?us-ascii?Q?59jcOHKD9bdmlb/JwbogeUMi4Jdd2U05fkQP48d9SbXKSFf3zJbJif0OYEWD?=
- =?us-ascii?Q?m4MCet3TMJTYof291QwG7uG7OlQ/h+RhhJKQZ7OD+Ew8t5gy5QijhQGHlHRs?=
- =?us-ascii?Q?5WtTDILh+pCHC/p3941JaVTRbblamBHaTRSebiIL0foMlALRSDWURV9qlEiF?=
- =?us-ascii?Q?pDkogT9qtXkxjm4x/DPMR9IUPvFsx/SXXH+73YZXfx2u9XZzaSJm2LmCbkdX?=
- =?us-ascii?Q?3zxBTYG5NIcppAVHwx9z/gM276ZG60tMGjLGKztXvDTjZyBsLKuzX5Yk6V7q?=
- =?us-ascii?Q?lUjPpY0Qm/cQtyAYo/Pn367XVtNo2JOUCN7xmH0XbetPIQx5k9wOkl9jC6FA?=
- =?us-ascii?Q?iArzsCoTPKjt/FOcJarAuRJMpJUEtCwvTfMryzKB50RLUhxpwdLavfyv+h8e?=
- =?us-ascii?Q?f3Vb+D6dwMYsEE/s4HukNeyT6atP4qqu9oafcxsHPwVlZY84SbqdkpYxAkC7?=
- =?us-ascii?Q?hhQr9aZazkJ2OD5BK7QZb0iWNkdnqcAUFG+dwUmJml17w/sglFSLTD2eYIL1?=
- =?us-ascii?Q?+5uzcNaRJcmL5jdbmuJRwvLpECxvnie8eUJb086D?=
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: 4JgYoyPzbXq+n0eUHTQ9w2cvvUoNDRITEXqcX/4ifm5Kx/xGo64N4KeR0r8Gxw65kYEhZjOYA+aerArDlX3d/ilfWq5YnmX7/60C4hiU/5ntdcV4LVx7/dNMObDkPbL4NF7nNkDkd6/PkcuD+F34OX0QoYYkoWlr9RBjT51sf6UhjC6zmlq8uqxfDAbbeOAaBdkFjN6RjBKTC1yG/OoCzIxJhabOR7q57ET6EaL4tnQnZ1i1dbzMcRi5vE9EhUzm3ncfxb8cYpJoLsob9zgBi8JhHl/VbA2s/0HmeNMlgt0VSyDRIqzr2cEHCD5NOADBMtXOlbUbAIiVxxT/2oaLhkn3Yt2XVLIZt3Jf119weqLbUCbQ5sfGU9m7WOm7Si8yaQvqHzlUTNmeRlzoRlQTLwD6Fr5TBgDb3B7rOT/2U7gxjXOyE7mzSzpBWHOIZZX9xOlx3slq2LuXm/6kubyFgKiRkbdCxEM3S+qJFpma6Ty0dABpZlH3AeQUQpQfqvFn3Pidf5V6Rf6jO9ERkoLA3PCF+7p5IP/evNva5rLsAGPsaM7uSdhia+UQu711ZP2Nmr/txilGG2ZrMomewEJjzXWqNBpwPA0KZ2T+vvnXAjq5BoYTJvyNegei7lUYp2z6
-X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 752b05ef-f30a-4665-26f7-08dda3f989b6
-X-MS-Exchange-CrossTenant-AuthSource: AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2025 06:23:51.0771
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: CgN/mlRv2yXWDhqOipYbfpPe69KcVRB+xfmkms7gPihg2tWZ53Ai44lU2bD78pszYx9C58sbNvG0AsvzJU9pMg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1P192MB1690
-X-MS-Exchange-CrossPremises-AuthSource: AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 14
-X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
-X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
-X-OrganizationHeadersPreserved: GV1P192MB1690.EURP192.PROD.OUTLOOK.COM
-X-Authority-Analysis: v=2.4 cv=IrYecK/g c=1 sm=1 tr=0 ts=684137fb cx=c_pps a=Ai8SrW5E0xaLXO3EKqmJtQ==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19 a=wKuvFiaSGQ0qltdbU6+NXLB8nM8=:19 a=Ol13hO9ccFRV9qXi2t6ftBPywas=:19
- a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=6IFa9wvqVegA:10 a=8gLI3H-aZtYA:10 a=VhEJW8w1d6CAEVDqSv0A:9 a=CjuIK1q_8ugA:10
-X-Proofpoint-GUID: NaWgfvEdYS5YYXeDHjr4Z9wsSl7L4avS
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjA1MDA1NSBTYWx0ZWRfX9fPHTIGxBFMy CQ9RkyFbLSygKv0ZqySgFvtJdEPD6ztRb0cTmeIToCURfJ1OcmbC4j+jcqz1GoVrLVfzqIKIDEl CrwdDtHDhoNowZ9fNEpbltzaAP2hV8JsPTmbUcH+4bnKsqLeWZjhmo07PyIbW0TNneOjHcF9UiT
- uexNFkHchqdwEQYs3OirKv6J9ZxzqMa+zMDB4U3bYAXiRrh8foN/YKUObYqBnI2zJI7RLMIGg70 4yVzvknzVMZg44RfNhw3ePRhCki7YnD5h/jfPeXqa5h1XBdE7BE3m+nY+m/+B1MdoR7a8awg4Yq vWajUz4hHYrUfILE1NJ316slLECPiB9tXlbDMqJBBVXsLhQp+jvF74lPgfBLYA+5OJ0G5sov03q
- 4EAG2nuPrVOwAHUyOzXJhz9B0w48FBV9ubBn4e/Uh1HuA7oCTS1lHWBWafJel8xWI1GBhKm2
-X-Proofpoint-ORIG-GUID: NaWgfvEdYS5YYXeDHjr4Z9wsSl7L4avS
+Content-Transfer-Encoding: 8bit
+X-Authority-Analysis: v=2.4 cv=CY8I5Krl c=1 sm=1 tr=0 ts=68415497 cx=c_pps
+ a=UgVkIMxJMSkC9lv97toC5g==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=JRbU3RNS0gVZ2NvkieAA:9
+ a=1HOtulTD9v-eNWfpl4qZ:22
+X-Proofpoint-ORIG-GUID: gY3BtWMfyezSK9VTGh-0SklhDaPHqjzy
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjA1MDA3MyBTYWx0ZWRfX+k38ECrrop4F
+ ehzZS2vnmSfzyOqxRJ0A/alL8hyDJtUvHorCS5/gLQTOZlG7yFJN/LKtYrz2TBulgDDmVNnXD9o
+ lfs0ujE16aze7oItaIdJJHD7vqt3M92ulPkpnNM1isIhPUsoblckL1FV7rjWPKnGCxoD4/gp1tr
+ CYInX3gsKpcHcF5N7WLo6xP76ag4FoFRs0sgfvAHa71gjclGQ5f3a2mWLmHAPeXgAjZJoVjlqoU
+ ABLnVxHiTgZIM/CYh3SyAr0BEokzmPvp+6UZz8u2aE377gmmaTDShjAVLHvffVyLd9VeSBAJWNk
+ dCg22iqmBTiLA8AZZgYm3P9PDjFlNi9y9jMubpijkOQR9AFqnx1fv34eBAXK32WyaolSwcOkjg3
+ DkTxgmI5ajbItkBIYIFOyyX5sEeeXn6dMIwozZiwDptTpX7sVyas1pekMu3dQXnekQv09YkM
+X-Proofpoint-GUID: gY3BtWMfyezSK9VTGh-0SklhDaPHqjzy
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-05_02,2025-06-03_02,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 mlxscore=0 adultscore=0 bulkscore=0 suspectscore=0
+ malwarescore=0 clxscore=1015 lowpriorityscore=0 spamscore=0 impostorscore=0
+ phishscore=0 mlxlogscore=999 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2506050073
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250604_232412_113703_BF29BAA8 
-X-CRM114-Status: GOOD (  25.54  )
+X-CRM114-CacheID: sfid-20250605_092606_628634_A84915EF 
+X-CRM114-Status: GOOD (  19.81  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -194,57 +138,259 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Am Wed, Jun 04, 2025 at 10:30:40AM -0700 schrieb Jeff Johnson:
-> On 6/3/2025 7:31 AM, Alexander Wilhelm wrote:
-> > Hello devs,
-> > 
-> > I need help to bring up the QCN9274 with ath12k driver on big endian PowerPC
-> > platform. I've already found some issues and fixed the MHI start procedure [1]
-> > and QMI conversion [2]. Furthermore I added some endianness fixes on 'qmi.c'
-> > file and could successfully transfer the firmware and boardfile to the wireless
-> > module. But the firmware does not start properly.
-> > 
-> > I'm trying to analyze the error and don't fully understand what is happening.
-> > While 'ath12k_htc_connect_service' I expect a successful response from
-> > 'ath12k_htc_send', but the connection then is timeout. It seems that I should
-> > receive a message with length of 20 and at least I get one. But then the driver
-> > remains endless in the 'ath12k_ce_recv_process_cb' and I always get a message of
-> > length 0 from the 'ath12k_hal_ce_dst_status_get_length' until RCU stall happens.
-> > 
-> > More interesting is the 'CE_ATTR_BYTE_SWAP_DATA' from ath11k, that is still used
-> > in ath12k code, but HAL structures now are swapped in driver itself at the same
-> > time. Is that correct?
-> 
-> That does NOT sound correct.
-> What happens if you unconditionally keep the BYTE_SWAP flag disabled?
+With previous patch [1], ath12k_reg_update_chan_list() will be called
+during reg_process_self_managed_hint().
 
-Hi Jeff,
+reg_process_self_managed_hint() will hold rtnl_lock all the time.
+But ath12k_reg_update_chan_list() may increase the occupation time of
+rtnl_lock, because when wait flag is set, wait_for_completion_timeout()
+will be called during 11d/hw scan.
 
-I tried to do so, but nothing changed. I will verify whether big endian platform
-sets the 'CE_ATTR_BYTE_SWAP_DATA' bit inside of 'attr_flags' at all.
+Should minimize the occupation time of rtnl_lock as much as possible
+to avoid interfering with rest of the system. So move the update channel
+list operation to a new worker, so that wait_for_completion_timeout()
+won't be called with the rtnl_lock held.
 
-    ath12k_pci 0002:01:00.0: rx ce pipe 1 len 20
-    ath12k_pci 0002:01:00.0: Target ready! transmit resources: 4 size:4096
-    ath12k_pci 0002:01:00.0: boot htc service HTT Data does not allocate target credits
-    ath12k_pci 0002:01:00.0: Service connect timeout
-    ath12k_pci 0002:01:00.0: failed to connect to HTT: -110
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-But I found the problem for the above log in HAL. I set the '__le32' type for
-the 'ht_addr' and 'hp_addr' from 'struct hal_srng.dst_ring' and 'struct
-hal_srng.src_ring'. Now I am one step further and have some capabilities issue.
-By the way, maybe you can help me here. The function
-'ath12k_pull_mac_phy_cap_svc_ready_ext' differs now from the respective one in
-ath11k to overcome the endianness problem. But the following lines are
-questionable:
+Fixes: f335295aa29c ("wifi: ath12k: avoid deadlock during regulatory update in ath12k_regd_update()") #[1]
+Signed-off-by: Kang Yang <kang.yang@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/core.c |  1 +
+ drivers/net/wireless/ath/ath12k/core.h |  4 +-
+ drivers/net/wireless/ath/ath12k/mac.c  | 13 ++++
+ drivers/net/wireless/ath/ath12k/reg.c  | 85 ++++++++++++++++++--------
+ drivers/net/wireless/ath/ath12k/reg.h  |  1 +
+ drivers/net/wireless/ath/ath12k/wmi.h  |  1 +
+ 6 files changed, 78 insertions(+), 27 deletions(-)
 
-    cap_band->he_cap_info[0] = le32_to_cpu(mac_caps->he_cap_info_2g);
-    cap_band->he_cap_info[1] = le32_to_cpu(mac_caps->he_cap_info_2g_ext);
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 31d851d8e688..745bd9aaf79d 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -1407,6 +1407,7 @@ void ath12k_core_halt(struct ath12k *ar)
+ 	ath12k_mac_peer_cleanup_all(ar);
+ 	cancel_delayed_work_sync(&ar->scan.timeout);
+ 	cancel_work_sync(&ar->regd_update_work);
++	cancel_work_sync(&ar->regd_channel_update_work);
+ 	cancel_work_sync(&ab->rfkill_work);
+ 	cancel_work_sync(&ab->update_11d_work);
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 941db6e49d6e..6c55d065dd3a 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -712,7 +712,7 @@ struct ath12k {
+ 
+ 	/* protects the radio specific data like debug stats, ppdu_stats_info stats,
+ 	 * vdev_stop_status info, scan data, ath12k_sta info, ath12k_link_vif info,
+-	 * channel context data, survey info, test mode data.
++	 * channel context data, survey info, test mode data, regd_channel_update_queue.
+ 	 */
+ 	spinlock_t data_lock;
+ 
+@@ -771,6 +771,8 @@ struct ath12k {
+ 	struct completion bss_survey_done;
+ 
+ 	struct work_struct regd_update_work;
++	struct work_struct regd_channel_update_work;
++	struct list_head regd_channel_update_queue;
+ 
+ 	struct wiphy_work wmi_mgmt_tx_work;
+ 	struct sk_buff_head wmi_mgmt_tx_queue;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 88b59f3ff87a..5e5cb9b56aa4 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -7940,6 +7940,7 @@ static void ath12k_mac_stop(struct ath12k *ar)
+ {
+ 	struct ath12k_hw *ah = ar->ah;
+ 	struct htt_ppdu_stats_info *ppdu_stats, *tmp;
++	struct ath12k_wmi_scan_chan_list_arg *arg;
+ 	int ret;
+ 
+ 	lockdep_assert_held(&ah->hw_mutex);
+@@ -7954,6 +7955,7 @@ static void ath12k_mac_stop(struct ath12k *ar)
+ 
+ 	cancel_delayed_work_sync(&ar->scan.timeout);
+ 	wiphy_work_cancel(ath12k_ar_to_hw(ar)->wiphy, &ar->scan.vdev_clean_wk);
++	cancel_work_sync(&ar->regd_channel_update_work);
+ 	cancel_work_sync(&ar->regd_update_work);
+ 	cancel_work_sync(&ar->ab->rfkill_work);
+ 	cancel_work_sync(&ar->ab->update_11d_work);
+@@ -7961,10 +7963,18 @@ static void ath12k_mac_stop(struct ath12k *ar)
+ 	complete(&ar->completed_11d_scan);
+ 
+ 	spin_lock_bh(&ar->data_lock);
++
+ 	list_for_each_entry_safe(ppdu_stats, tmp, &ar->ppdu_stats_info, list) {
+ 		list_del(&ppdu_stats->list);
+ 		kfree(ppdu_stats);
+ 	}
++
++	while ((arg = list_first_entry_or_null(&ar->regd_channel_update_queue,
++					       struct ath12k_wmi_scan_chan_list_arg,
++					       list))) {
++		list_del(&arg->list);
++		kfree(arg);
++	}
+ 	spin_unlock_bh(&ar->data_lock);
+ 
+ 	rcu_assign_pointer(ar->ab->pdevs_active[ar->pdev_idx], NULL);
+@@ -11858,6 +11868,7 @@ static void ath12k_mac_hw_unregister(struct ath12k_hw *ah)
+ 	int i;
+ 
+ 	for_each_ar(ah, ar, i) {
++		cancel_work_sync(&ar->regd_channel_update_work);
+ 		cancel_work_sync(&ar->regd_update_work);
+ 		ath12k_debugfs_unregister(ar);
+ 		ath12k_fw_stats_reset(ar);
+@@ -12218,6 +12229,8 @@ static void ath12k_mac_setup(struct ath12k *ar)
+ 
+ 	INIT_DELAYED_WORK(&ar->scan.timeout, ath12k_scan_timeout_work);
+ 	wiphy_work_init(&ar->scan.vdev_clean_wk, ath12k_scan_vdev_clean_work);
++	INIT_WORK(&ar->regd_channel_update_work, ath12k_regd_update_chan_list_work);
++	INIT_LIST_HEAD(&ar->regd_channel_update_queue);
+ 	INIT_WORK(&ar->regd_update_work, ath12k_regd_update_work);
+ 
+ 	wiphy_work_init(&ar->wmi_mgmt_tx_work, ath12k_mgmt_over_wmi_tx_work);
+diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+index 2598b39d5d7e..0fc7f209956d 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.c
++++ b/drivers/net/wireless/ath/ath12k/reg.c
+@@ -137,32 +137,7 @@ int ath12k_reg_update_chan_list(struct ath12k *ar, bool wait)
+ 	struct ath12k_wmi_channel_arg *ch;
+ 	enum nl80211_band band;
+ 	int num_channels = 0;
+-	int i, ret, left;
+-
+-	if (wait && ar->state_11d == ATH12K_11D_RUNNING) {
+-		left = wait_for_completion_timeout(&ar->completed_11d_scan,
+-						   ATH12K_SCAN_TIMEOUT_HZ);
+-		if (!left) {
+-			ath12k_dbg(ar->ab, ATH12K_DBG_REG,
+-				   "failed to receive 11d scan complete: timed out\n");
+-			ar->state_11d = ATH12K_11D_IDLE;
+-		}
+-		ath12k_dbg(ar->ab, ATH12K_DBG_REG,
+-			   "reg 11d scan wait left time %d\n", left);
+-	}
+-
+-	if (wait &&
+-	    (ar->scan.state == ATH12K_SCAN_STARTING ||
+-	    ar->scan.state == ATH12K_SCAN_RUNNING)) {
+-		left = wait_for_completion_timeout(&ar->scan.completed,
+-						   ATH12K_SCAN_TIMEOUT_HZ);
+-		if (!left)
+-			ath12k_dbg(ar->ab, ATH12K_DBG_REG,
+-				   "failed to receive hw scan complete: timed out\n");
+-
+-		ath12k_dbg(ar->ab, ATH12K_DBG_REG,
+-			   "reg hw scan wait left time %d\n", left);
+-	}
++	int i, ret = 0;
+ 
+ 	if (ar->ah->state == ATH12K_HW_STATE_RESTARTING)
+ 		return 0;
+@@ -244,6 +219,16 @@ int ath12k_reg_update_chan_list(struct ath12k *ar, bool wait)
+ 		}
+ 	}
+ 
++	if (wait) {
++		spin_lock_bh(&ar->data_lock);
++		list_add_tail(&arg->list, &ar->regd_channel_update_queue);
++		spin_unlock_bh(&ar->data_lock);
++
++		queue_work(ar->ab->workqueue, &ar->regd_channel_update_work);
++
++		return 0;
++	}
++
+ 	ret = ath12k_wmi_send_scan_chan_list_cmd(ar, arg);
+ 	kfree(arg);
+ 
+@@ -764,6 +749,54 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 	return new_regd;
+ }
+ 
++void ath12k_regd_update_chan_list_work(struct work_struct *work)
++{
++	struct ath12k *ar = container_of(work, struct ath12k,
++					 regd_channel_update_work);
++	struct ath12k_wmi_scan_chan_list_arg *arg;
++	struct list_head local_update_list;
++	int left;
++
++	INIT_LIST_HEAD(&local_update_list);
++
++	spin_lock_bh(&ar->data_lock);
++	list_splice_tail_init(&ar->regd_channel_update_queue, &local_update_list);
++	spin_unlock_bh(&ar->data_lock);
++
++	while ((arg = list_first_entry_or_null(&local_update_list,
++					       struct ath12k_wmi_scan_chan_list_arg,
++					       list))) {
++		if (ar->state_11d != ATH12K_11D_IDLE) {
++			left = wait_for_completion_timeout(&ar->completed_11d_scan,
++							   ATH12K_SCAN_TIMEOUT_HZ);
++			if (!left) {
++				ath12k_dbg(ar->ab, ATH12K_DBG_REG,
++					   "failed to receive 11d scan complete: timed out\n");
++				ar->state_11d = ATH12K_11D_IDLE;
++			}
++
++			ath12k_dbg(ar->ab, ATH12K_DBG_REG,
++				   "reg 11d scan wait left time %d\n", left);
++		}
++
++		if ((ar->scan.state == ATH12K_SCAN_STARTING ||
++		     ar->scan.state == ATH12K_SCAN_RUNNING)) {
++			left = wait_for_completion_timeout(&ar->scan.completed,
++							   ATH12K_SCAN_TIMEOUT_HZ);
++			if (!left)
++				ath12k_dbg(ar->ab, ATH12K_DBG_REG,
++					   "failed to receive hw scan complete: timed out\n");
++
++			ath12k_dbg(ar->ab, ATH12K_DBG_REG,
++				   "reg hw scan wait left time %d\n", left);
++		}
++
++		ath12k_wmi_send_scan_chan_list_cmd(ar, arg);
++		list_del(&arg->list);
++		kfree(arg);
++	}
++}
++
+ void ath12k_regd_update_work(struct work_struct *work)
+ {
+ 	struct ath12k *ar = container_of(work, struct ath12k,
+diff --git a/drivers/net/wireless/ath/ath12k/reg.h b/drivers/net/wireless/ath/ath12k/reg.h
+index 8af8e9ba462e..0aeba06182c5 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.h
++++ b/drivers/net/wireless/ath/ath12k/reg.h
+@@ -113,6 +113,7 @@ int ath12k_reg_handle_chan_list(struct ath12k_base *ab,
+ 				struct ath12k_reg_info *reg_info,
+ 				enum wmi_vdev_type vdev_type,
+ 				enum ieee80211_ap_reg_power power_type);
++void ath12k_regd_update_chan_list_work(struct work_struct *work);
+ enum wmi_reg_6g_ap_type
+ ath12k_reg_ap_pwr_convert(enum ieee80211_ap_reg_power power_type);
+ enum ath12k_reg_status ath12k_reg_validate_reg_info(struct ath12k_base *ab,
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index ac18f75e0449..07423ce43a85 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -3934,6 +3934,7 @@ struct wmi_stop_scan_cmd {
+ } __packed;
+ 
+ struct ath12k_wmi_scan_chan_list_arg {
++	struct list_head list;
+ 	u32 pdev_id;
+ 	u16 nallchans;
+ 	struct ath12k_wmi_channel_arg channel[];
 
-The same for 5G and 6G frequency bands. But it seems that the usespace requires
-here '__le16' instead of '__le32' ones. Can you verify that? Or maybe I
-misunderstood something.
+base-commit: c3910de7bab78afbc106206aed5ec8e79458fbee
+-- 
+2.34.1
 
-
-Best regards
-Alexander Wilhelm
 
