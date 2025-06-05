@@ -4,107 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7481CC5AE59
-	for <ath12k@archiver.kernel.org>; Thu,  5 Jun 2025 10:50:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D650C5B543
+	for <ath12k@archiver.kernel.org>; Thu,  5 Jun 2025 11:15:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1Nu48KAOTUJB110jqb0YRD3nekgoGR2DuxLGlevIej0=; b=Mkq7KPY2EZqoalon4y2cWJrYpc
-	trLfv91/i8vYlggUkM3TYHJ9iBwE4mTfvqJy0/to1TEqqG/o1c8OdIHJ6LbPozqt+KMZM2laUqBdt
-	4PgHUq5l46FtitQ7qDHutlPV/m4uUAQnNok4IiV6ML0Fy7sCcOUl9+TldRtTYc1x2F/jFWT3sxfis
-	P1uOtThuSamuIaXrh1E15GpBBRtrLjtl/YReEgI0J9ZX0zA8Fd2mJWZy8orG+dWcHRZftCsYmBpeW
-	cWRd3khaEuoNnmhZ1GU9pY/EkrZfxrUyeHx2YNUU/FLWdNOcUweCSmVsuAQwL3pSDLQM+kte9SdIj
-	j1DDa71w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=HP4mpf5qFs3VmTWKaemle5/xTcF+RZM19n0D47GEj1Q=; b=pDOlmrquZUBPhWLla/OY085X4j
+	GUkmnafS1KGNhoe4kofIRG447r2VWk5ZMH0GTKgtrFJUd3AoPTi84dcAayqpMKJ4bX1eXYOy/6f6i
+	dCmNxVZyFZKzX3Pozu1ezi9keGy1SsA1HUHJld81kmfODoE/6FiCfq8vWeELiVmelMLbtZ4j6fYCz
+	Ug04MlVsIh+QELeZ0zpAvAE1D2KQjlRHcDGJ2JKQQaYbjPM/EFEvFxOI+vM5Z690qz6fQE+uLzuRz
+	AAxsqE/P79EI1zGEOKMSs32DWVqT/NHAyjwwAoT0FgKny7MOJmvtNIl2jxpFy4SmjasoBlamAQPmc
+	aKFRwuXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uN8B7-0000000FIQv-0j8y;
-	Thu, 05 Jun 2025 10:50:33 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uN8Yx-0000000FLD5-3oSR;
+	Thu, 05 Jun 2025 11:15:11 +0000
+Received: from mgamail.intel.com ([198.175.65.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uN8AO-0000000FI7u-2hER
+	id 1uN8E6-0000000FJLH-3MC8
 	for ath12k@lists.infradead.org;
-	Thu, 05 Jun 2025 10:49:50 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 555AE7fS011697;
-	Thu, 5 Jun 2025 10:49:44 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	1Nu48KAOTUJB110jqb0YRD3nekgoGR2DuxLGlevIej0=; b=GvGRPep9awRZkHig
-	yQ3MSVtCSS0VBY3QTPBNOjs2mvjz37OV3eEeqUajbvPKZ5qmJR2KcZ0CW6EeTe6c
-	l9XNgAw3MdQy/ilPhs+YLsu3eRk1Z3WjL1ku+xt8ewrqOD4k61P+yzKpu9mmiSt9
-	2e4cxBnql0JhYbDEQ58UdjndT7i1HnyWuBXbh2HnmSoPK9VTONucFPQwFF3zPGbQ
-	gvuqjCkl7YVgXX5axhtvuQedDSbcGf1hkIKsjeHmJTsl6c6hVN1hidXLUwyv60SH
-	JCRpuJGQI3EAjDkjkY74HBK1jLXAvnyUB5GqEnKlC/bULzum9zfFDzywxDd2i2pW
-	YTAMDQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47202wen8r-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 05 Jun 2025 10:49:44 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 555AnhDS000699
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 5 Jun 2025 10:49:43 GMT
-Received: from [10.253.10.58] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 5 Jun 2025
- 03:49:40 -0700
-Message-ID: <ed06d62a-4b98-443a-a2ed-c92058bb521a@quicinc.com>
-Date: Thu, 5 Jun 2025 18:49:37 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/4] wifi: ath12k: fix dest ring-buffer corruption
-To: Johan Hovold <johan@kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
-CC: Johan Hovold <johan+linaro@kernel.org>,
-        Jeff Johnson
-	<jjohnson@kernel.org>,
-        Miaoqing Pan <quic_miaoqing@quicinc.com>,
-        "Remi
- Pommarel" <repk@triplefau.lt>, <linux-wireless@vger.kernel.org>,
-        <ath12k@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <stable@vger.kernel.org>
-References: <20250604144509.28374-1-johan+linaro@kernel.org>
- <20250604144509.28374-2-johan+linaro@kernel.org>
- <6f3eb9fa-617e-4434-8fc4-33dd92c4bdd2@quicinc.com>
- <aEFqsghEuJc3xxlU@hovoldconsulting.com>
-Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <aEFqsghEuJc3xxlU@hovoldconsulting.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: QWF4qvpqRSQead5CaefYpnkqDX2ylmKx
-X-Proofpoint-GUID: QWF4qvpqRSQead5CaefYpnkqDX2ylmKx
-X-Authority-Analysis: v=2.4 cv=Y/D4sgeN c=1 sm=1 tr=0 ts=68417648 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10
- a=5WrX-GbsLVy5X1M0D7oA:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjA1MDA5NCBTYWx0ZWRfX2yo99HAX7Ce/
- dpCDtf1K5s4ubhPzf493z2ZSfHa9aq6AXiM2g2X9kNLCFoIzJ1kk3Y/zIAnVBX5RoqS1modMcXK
- hRtp1h8Ht1QkaNRaDMc1BOPIHwZcin5nqLxBRXrS60muGyfUN2MBbTzF/HaUAR1kEz1EFEMuh3D
- FTKpki/psNFH7uezpaxcS86kDxIgtnWzFhGjtclYl5FNRGNVUDatHBIIZDz5i7ZZ2Kq6V6zV4qp
- V92cUeIlOw71AFENCO+xYe+VaoeBD2p35J6g4gIzpT9prKtu7VNVTEWkm3XZVydXnTznVYE1OGH
- d9LNyNElr/N1RR0SfDWYBP9z9wE6LvkrCmvCcXSdNJWrYU+2N1WftVG6lMYj/9S1GIaAVplIhqU
- 3yef5zZvr5YVFh2xpyYPgZyhZp6lEONTCJM2eD/SlfPiTCFn/tjlAKNQNAnYgc/bldWZi9/f
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-06-05_02,2025-06-03_02,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 priorityscore=1501 spamscore=0 adultscore=0 impostorscore=0
- lowpriorityscore=0 phishscore=0 mlxscore=0 mlxlogscore=999 malwarescore=0
- bulkscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2506050094
+	Thu, 05 Jun 2025 10:53:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1749120819; x=1780656819;
+  h=date:from:to:cc:subject:message-id;
+  bh=N7YCFOprqLcdxifv3A5kKXyME0FmF48Tx+p2lCpIObE=;
+  b=UwvqliRrK5PvjgFD5/bvDdcqnwfIK7Zmi+AFjuPht2CaNLaBtDHiGYJC
+   7blpGXGBmL28PYOjf6WmB7LARgqeAm0hsWAjQq7LWlvmrsY9p1Ws9BERq
+   H27/CTOf+uaQSbReYKNK5cIBN20eousJmoCCrhjP2PWwz64qQDzeDKEV4
+   gSmdCbZuVEWKmHLyfKDj5GWOj1qM4ezBfPOqeF94mRwQUtsToGoUefJ5F
+   zrlRovnG2/weHTZ0a3mo3Ia+KTEBBDhYctP3epXmnK7tK65Xq1pK+Z4Gq
+   3/cqbQ/UO62Jc/CbqDDTPtsnSCIOhLFZSgSWDciW79u6BSCINpNt1IeDt
+   w==;
+X-CSE-ConnectionGUID: 47BRzbuyQDmC1cPALiECKQ==
+X-CSE-MsgGUID: PbvrrOQqSUCf1ydEEZJ38g==
+X-IronPort-AV: E=McAfee;i="6800,10657,11454"; a="68674054"
+X-IronPort-AV: E=Sophos;i="6.16,211,1744095600"; 
+   d="scan'208";a="68674054"
+Received: from fmviesa003.fm.intel.com ([10.60.135.143])
+  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Jun 2025 03:53:38 -0700
+X-CSE-ConnectionGUID: 3Lje5N+nSzWM/4IZeQdi9w==
+X-CSE-MsgGUID: BGho8ocPSiOrhZZ+M3Y64w==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,211,1744095600"; 
+   d="scan'208";a="149312511"
+Received: from lkp-server01.sh.intel.com (HELO e8142ee1dce2) ([10.239.97.150])
+  by fmviesa003.fm.intel.com with ESMTP; 05 Jun 2025 03:53:35 -0700
+Received: from kbuild by e8142ee1dce2 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1uN8Dz-00040z-1z;
+	Thu, 05 Jun 2025 10:53:31 +0000
+Date: Thu, 05 Jun 2025 18:53:00 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:master-pending] BUILD SUCCESS
+ e95f224cf911d5fc7a929a9814049210f7c79a88
+Message-ID: <202506051847.lY15E5UZ-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250605_034948_850845_F9D979E7 
-X-CRM114-Status: GOOD (  26.02  )
+X-CRM114-CacheID: sfid-20250605_035338_923744_BE104D43 
+X-CRM114-Status: UNSURE (   3.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,99 +83,221 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
+branch HEAD: e95f224cf911d5fc7a929a9814049210f7c79a88  Merge branch 'pending' into main-pending
 
+elapsed time: 722m
 
-On 6/5/2025 6:00 PM, Johan Hovold wrote:
-> On Thu, Jun 05, 2025 at 04:41:32PM +0800, Baochen Qiang wrote:
->> On 6/4/2025 10:45 PM, Johan Hovold wrote:
->>> Add the missing memory barrier to make sure that destination ring
->>> descriptors are read after the head pointers to avoid using stale data
->>> on weakly ordered architectures like aarch64.
->>>
->>> The barrier is added to the ath12k_hal_srng_access_begin() helper for
->>> symmetry with follow-on fixes for source ring buffer corruption which
->>> will add barriers to ath12k_hal_srng_access_end().
->>>
->>> Note that this may fix the empty descriptor issue recently worked around
->>> by commit 51ad34a47e9f ("wifi: ath12k: Add drop descriptor handling for
->>> monitor ring").
->>
->> why? I would expect drunk cookies are valid in case of HAL_MON_DEST_INFO0_EMPTY_DESC,
->> rather than anything caused by reordering.
-> 
-> Based on a quick look it seemed like this could possibly fall in the
-> same category as some of the other workarounds I've spotted while
-> looking into these ordering issues (e.g. f9fff67d2d7c ("wifi: ath11k:
-> Fix SKB corruption in REO destination ring")).
-> 
-> If you say this one is clearly unrelated, I'll drop the comment.
+configs tested: 201
+configs skipped: 4
 
-Praneesh, could you comment here since you made that change?
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-> 
->>> @@ -343,9 +343,6 @@ static int ath12k_ce_completed_recv_next(struct ath12k_ce_pipe *pipe,
->>>  		goto err;
->>>  	}
->>>  
->>> -	/* Make sure descriptor is read after the head pointer. */
->>> -	dma_rmb();
->>> -
->>>  	*nbytes = ath12k_hal_ce_dst_status_get_length(desc);
->>>  
->>>  	*skb = pipe->dest_ring->skb[sw_index];
->>> diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
->>> index 91d5126ca149..9eea13ed5565 100644
->>> --- a/drivers/net/wireless/ath/ath12k/hal.c
->>> +++ b/drivers/net/wireless/ath/ath12k/hal.c
->>> @@ -2126,13 +2126,24 @@ void *ath12k_hal_srng_src_get_next_reaped(struct ath12k_base *ab,
->>>  
->>>  void ath12k_hal_srng_access_begin(struct ath12k_base *ab, struct hal_srng *srng)
->>>  {
->>> +	u32 hp;
->>> +
->>>  	lockdep_assert_held(&srng->lock);
->>>  
->>> -	if (srng->ring_dir == HAL_SRNG_DIR_SRC)
->>> +	if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
->>>  		srng->u.src_ring.cached_tp =
->>>  			*(volatile u32 *)srng->u.src_ring.tp_addr;
->>> -	else
->>> -		srng->u.dst_ring.cached_hp = READ_ONCE(*srng->u.dst_ring.hp_addr);
->>> +	} else {
->>> +		hp = READ_ONCE(*srng->u.dst_ring.hp_addr);
->>> +
->>> +		if (hp != srng->u.dst_ring.cached_hp) {
->>
->> This consumes additional CPU cycles in hot path, which is a concern to me.
->>
->> Based on that, I prefer the v1 implementation.
-> 
-> The conditional avoids a memory barrier in case the ring is empty, so
-> for all callers but ath12k_ce_completed_recv_next() it's an improvement
-> over v1 in that sense.
-> 
-> I could make the barrier unconditional, which will only add one barrier
-> to ath12k_ce_completed_recv_next() in case the ring is empty compared to
-> v1. Perhaps that's a good compromise if you worry about the extra
-> comparison?
+tested configs:
+alpha                             allnoconfig    gcc-15.1.0
+alpha                            allyesconfig    clang-19
+alpha                            allyesconfig    gcc-15.1.0
+alpha                               defconfig    gcc-15.1.0
+arc                              allmodconfig    clang-19
+arc                               allnoconfig    gcc-15.1.0
+arc                              allyesconfig    clang-19
+arc                                 defconfig    gcc-15.1.0
+arc                   randconfig-001-20250605    clang-21
+arc                   randconfig-001-20250605    gcc-15.1.0
+arc                   randconfig-002-20250605    clang-21
+arc                   randconfig-002-20250605    gcc-15.1.0
+arm                              allmodconfig    clang-19
+arm                               allnoconfig    clang-21
+arm                               allnoconfig    gcc-15.1.0
+arm                              allyesconfig    clang-19
+arm                     davinci_all_defconfig    gcc-15.1.0
+arm                                 defconfig    gcc-15.1.0
+arm                          gemini_defconfig    gcc-15.1.0
+arm                      integrator_defconfig    gcc-15.1.0
+arm                         lpc18xx_defconfig    clang-21
+arm                   randconfig-001-20250605    clang-21
+arm                   randconfig-002-20250605    clang-17
+arm                   randconfig-002-20250605    clang-21
+arm                   randconfig-003-20250605    clang-21
+arm                   randconfig-004-20250605    clang-21
+arm                        spear6xx_defconfig    clang-21
+arm64                            allmodconfig    clang-19
+arm64                             allnoconfig    gcc-15.1.0
+arm64                               defconfig    gcc-15.1.0
+arm64                 randconfig-001-20250605    clang-21
+arm64                 randconfig-002-20250605    clang-21
+arm64                 randconfig-003-20250605    clang-21
+arm64                 randconfig-004-20250605    clang-21
+csky                              allnoconfig    gcc-15.1.0
+csky                                defconfig    gcc-15.1.0
+csky                  randconfig-001-20250605    gcc-10.5.0
+csky                  randconfig-002-20250605    gcc-15.1.0
+hexagon                          allmodconfig    clang-17
+hexagon                          allmodconfig    clang-19
+hexagon                           allnoconfig    clang-21
+hexagon                           allnoconfig    gcc-15.1.0
+hexagon                          allyesconfig    clang-19
+hexagon                          allyesconfig    clang-21
+hexagon                             defconfig    gcc-15.1.0
+hexagon               randconfig-001-20250605    clang-21
+hexagon               randconfig-002-20250605    clang-20
+i386                             allmodconfig    clang-20
+i386                              allnoconfig    clang-20
+i386                             allyesconfig    clang-20
+i386        buildonly-randconfig-001-20250605    clang-20
+i386        buildonly-randconfig-001-20250605    gcc-12
+i386        buildonly-randconfig-002-20250605    clang-20
+i386        buildonly-randconfig-003-20250605    clang-20
+i386        buildonly-randconfig-003-20250605    gcc-12
+i386        buildonly-randconfig-004-20250605    clang-20
+i386        buildonly-randconfig-005-20250605    clang-20
+i386        buildonly-randconfig-006-20250605    clang-20
+i386        buildonly-randconfig-006-20250605    gcc-11
+i386                                defconfig    clang-20
+i386                  randconfig-001-20250605    clang-20
+i386                  randconfig-002-20250605    clang-20
+i386                  randconfig-003-20250605    clang-20
+i386                  randconfig-004-20250605    clang-20
+i386                  randconfig-005-20250605    clang-20
+i386                  randconfig-006-20250605    clang-20
+i386                  randconfig-007-20250605    clang-20
+i386                  randconfig-011-20250605    clang-20
+i386                  randconfig-012-20250605    clang-20
+i386                  randconfig-013-20250605    clang-20
+i386                  randconfig-014-20250605    clang-20
+i386                  randconfig-015-20250605    clang-20
+i386                  randconfig-016-20250605    clang-20
+i386                  randconfig-017-20250605    clang-20
+loongarch                        allmodconfig    gcc-15.1.0
+loongarch                         allnoconfig    gcc-15.1.0
+loongarch                           defconfig    gcc-15.1.0
+loongarch             randconfig-001-20250605    gcc-12.4.0
+loongarch             randconfig-002-20250605    gcc-15.1.0
+m68k                             allmodconfig    gcc-15.1.0
+m68k                              allnoconfig    gcc-15.1.0
+m68k                             allyesconfig    gcc-15.1.0
+m68k                                defconfig    gcc-15.1.0
+microblaze                       allmodconfig    gcc-15.1.0
+microblaze                        allnoconfig    gcc-15.1.0
+microblaze                       allyesconfig    gcc-15.1.0
+microblaze                          defconfig    gcc-15.1.0
+mips                              allnoconfig    gcc-15.1.0
+mips                           gcw0_defconfig    clang-21
+mips                           ip22_defconfig    gcc-15.1.0
+nios2                             allnoconfig    gcc-14.2.0
+nios2                             allnoconfig    gcc-15.1.0
+nios2                               defconfig    gcc-15.1.0
+nios2                 randconfig-001-20250605    gcc-14.2.0
+nios2                 randconfig-002-20250605    gcc-11.5.0
+openrisc                          allnoconfig    clang-21
+openrisc                         allyesconfig    gcc-15.1.0
+openrisc                            defconfig    gcc-12
+parisc                           allmodconfig    gcc-15.1.0
+parisc                            allnoconfig    clang-21
+parisc                           allyesconfig    gcc-15.1.0
+parisc                              defconfig    gcc-12
+parisc                randconfig-001-20250605    gcc-9.3.0
+parisc                randconfig-002-20250605    gcc-11.5.0
+parisc64                            defconfig    gcc-15.1.0
+powerpc                          allmodconfig    gcc-15.1.0
+powerpc                           allnoconfig    clang-21
+powerpc                          allyesconfig    gcc-15.1.0
+powerpc                      bamboo_defconfig    gcc-15.1.0
+powerpc                    gamecube_defconfig    clang-21
+powerpc               randconfig-001-20250605    clang-21
+powerpc               randconfig-002-20250605    clang-21
+powerpc               randconfig-003-20250605    clang-21
+powerpc64             randconfig-001-20250605    clang-18
+powerpc64             randconfig-002-20250605    clang-21
+powerpc64             randconfig-003-20250605    clang-21
+riscv                            allmodconfig    gcc-15.1.0
+riscv                             allnoconfig    clang-21
+riscv                            allyesconfig    gcc-15.1.0
+riscv                               defconfig    gcc-12
+riscv                 randconfig-001-20250605    clang-21
+riscv                 randconfig-002-20250605    clang-21
+s390                             allmodconfig    clang-18
+s390                              allnoconfig    clang-21
+s390                             allyesconfig    gcc-15.1.0
+s390                                defconfig    gcc-12
+s390                  randconfig-001-20250605    clang-21
+s390                  randconfig-002-20250605    clang-21
+sh                               allmodconfig    gcc-15.1.0
+sh                                allnoconfig    gcc-15.1.0
+sh                               allyesconfig    gcc-15.1.0
+sh                         ap325rxa_defconfig    gcc-15.1.0
+sh                                  defconfig    gcc-12
+sh                               j2_defconfig    gcc-15.1.0
+sh                          landisk_defconfig    clang-21
+sh                    randconfig-001-20250605    clang-21
+sh                    randconfig-001-20250605    gcc-12.4.0
+sh                    randconfig-002-20250605    clang-21
+sh                    randconfig-002-20250605    gcc-12.4.0
+sh                          rsk7201_defconfig    clang-21
+sh                          rsk7269_defconfig    clang-21
+sh                  sh7785lcr_32bit_defconfig    gcc-15.1.0
+sparc                            allmodconfig    gcc-15.1.0
+sparc                             allnoconfig    gcc-15.1.0
+sparc                 randconfig-001-20250605    clang-21
+sparc                 randconfig-001-20250605    gcc-11.5.0
+sparc                 randconfig-002-20250605    clang-21
+sparc                 randconfig-002-20250605    gcc-7.5.0
+sparc64                             defconfig    gcc-12
+sparc64               randconfig-001-20250605    clang-21
+sparc64               randconfig-001-20250605    gcc-12.4.0
+sparc64               randconfig-002-20250605    clang-21
+sparc64               randconfig-002-20250605    gcc-15.1.0
+um                               allmodconfig    clang-19
+um                                allnoconfig    clang-21
+um                               allyesconfig    clang-19
+um                               allyesconfig    gcc-12
+um                                  defconfig    gcc-12
+um                             i386_defconfig    gcc-12
+um                    randconfig-001-20250605    clang-21
+um                    randconfig-002-20250605    clang-21
+um                           x86_64_defconfig    gcc-12
+x86_64                            allnoconfig    clang-20
+x86_64                           allyesconfig    clang-20
+x86_64      buildonly-randconfig-001-20250605    clang-20
+x86_64      buildonly-randconfig-002-20250605    clang-20
+x86_64      buildonly-randconfig-002-20250605    gcc-12
+x86_64      buildonly-randconfig-003-20250605    clang-20
+x86_64      buildonly-randconfig-004-20250605    clang-20
+x86_64      buildonly-randconfig-005-20250605    clang-20
+x86_64      buildonly-randconfig-005-20250605    gcc-12
+x86_64      buildonly-randconfig-006-20250605    clang-20
+x86_64                              defconfig    clang-20
+x86_64                                  kexec    clang-20
+x86_64                randconfig-001-20250605    gcc-12
+x86_64                randconfig-002-20250605    gcc-12
+x86_64                randconfig-003-20250605    gcc-12
+x86_64                randconfig-004-20250605    gcc-12
+x86_64                randconfig-005-20250605    gcc-12
+x86_64                randconfig-006-20250605    gcc-12
+x86_64                randconfig-007-20250605    gcc-12
+x86_64                randconfig-008-20250605    gcc-12
+x86_64                randconfig-071-20250605    clang-20
+x86_64                randconfig-072-20250605    clang-20
+x86_64                randconfig-073-20250605    clang-20
+x86_64                randconfig-074-20250605    clang-20
+x86_64                randconfig-075-20250605    clang-20
+x86_64                randconfig-076-20250605    clang-20
+x86_64                randconfig-077-20250605    clang-20
+x86_64                randconfig-078-20250605    clang-20
+x86_64                               rhel-9.4    clang-20
+x86_64                           rhel-9.4-bpf    gcc-12
+x86_64                         rhel-9.4-kunit    gcc-12
+x86_64                           rhel-9.4-ltp    gcc-12
+x86_64                          rhel-9.4-rust    clang-20
+xtensa                            allnoconfig    gcc-15.1.0
+xtensa                randconfig-001-20250605    clang-21
+xtensa                randconfig-001-20250605    gcc-7.5.0
+xtensa                randconfig-002-20250605    clang-21
+xtensa                randconfig-002-20250605    gcc-12.4.0
+xtensa                    xip_kc705_defconfig    clang-21
 
-I guess the unconditional barrier also has impact on performance? If so I am not sure
-which one is better then ...
-
-Let's just keep it as is and see what others think.
-
-> 
-> I very much want to avoid having both explicit barriers in the caller
-> and barriers in the hal end() helper. I think it should be either or.
->  
->>> +			srng->u.dst_ring.cached_hp = hp;
->>> +			/* Make sure descriptor is read after the head
->>> +			 * pointer.
->>> +			 */
->>> +			dma_rmb();
->>> +		}
->>> +	}
-> 
-> Johan
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
