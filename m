@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C457FC71149
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45831C71144
 	for <ath12k@archiver.kernel.org>; Thu, 12 Jun 2025 02:49:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,54 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=eiLd07SJCxjZopKuS4ArzooclGq9tE02D1+OJO7qByQ=; b=UhsbYCUWG5UVcc+Zm5WdNC6vfu
-	+1Wb6lZXC8e6jhpaLtbSTubD/alvqOghMCsOckgo49BfY+sMnANB7q2O4grdhmkxozGR92JboMzVO
-	x66Se/OSwVjr3BCk3JOoKNO9WN/4Vs5PWlBDI08JFpHOVYvr2+xg2dKo7kvADhrkgnmyk5sxr0+ik
-	RmXSitp9A/LxMSDH0uHC4vHLaSVQbSpX/bLexzGPtDbYfkQD6XEZP3qdUEYhax25z0I8+F2guQvQE
-	jxWnkYpVtwQ/7VMr7bc5b/BeqiREFwEu16TAlpR0mHDwkb2pNB2NKehVSXhkXpyt2MYF7dMcP6ST6
-	+RpFFLkQ==;
+	bh=S9pVwJ+1y6kZ2fG9YatLdeD61USRI/vjDQt86SR00a8=; b=xU68aj/ah5EVE+OehSfnQbanKh
+	toQTzBD4m+uceNJXfs1EoN6cjfZAYbYEbN0ghYIMNUQ3trqorHIqoGMl+C58woo5N/f4fkq1T9ypc
+	HUibP2zsnfqbktK83ybJDCNFeXTkeWCDhH/PmN9QzBdoYueP2PK51THKux7/UrcPQWDDFfA2zlFlq
+	7GMgJEHaMfK3pzhptUJQ/tsNmJQJwAsCjvr9L2hb5tn7Kxz93kaNuFSs7s/llf1s/HP/snRDTxu+A
+	ZYfwo083pXlMw4ymWeAjfNC8R2eANy8+EtsKk7wP4FdoXrIZECy+OTM32ukZy45toQuUpmC2P+tkW
+	lfWNVArg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPY0S-0000000C168-2AaN;
-	Thu, 12 Jun 2025 02:49:32 +0000
+	id 1uPY0R-0000000C15l-4BEp;
+	Thu, 12 Jun 2025 02:49:31 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPWne-0000000BslZ-0YG6
+	id 1uPWnc-0000000Bsku-0aTE
 	for ath12k@lists.infradead.org;
-	Thu, 12 Jun 2025 01:32:15 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55BK880f002374;
-	Thu, 12 Jun 2025 01:32:11 GMT
+	Thu, 12 Jun 2025 01:32:13 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55BJM6uh027397;
+	Thu, 12 Jun 2025 01:32:09 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	eiLd07SJCxjZopKuS4ArzooclGq9tE02D1+OJO7qByQ=; b=oqxfdpYR3R5DvdBs
-	dL7suAVTiDyUSpESYQvdH4UOe2CvIpfGeA12cbR5v0crR6wv9S+ew0L0f5Uq4yfV
-	+/vliMNyYc8gU2qfSUYw5r2fQWrfrW6YMvBGd8wFhxnZ7EuYumNGsBNUyWpYWl5q
-	dcXs8IshDOMKqeZ1ckqzyNNNiXu6tyZoAdUHLgH7uDJomtTfMwUTgkEqmPXQuSTZ
-	m+aNs5sYSzU6ow4oLuvek0M/niZaH2b7JSYteicAObF5pDdTYhHHu+zvCZkHpPYL
-	aw0WtxenpE6NgcATrm3aPD5GXVwUgtt2SVa67+NH2M6XzgdxvdgJPsPze/u2GrLx
-	GI8GYg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 474dgxy3cr-1
+	S9pVwJ+1y6kZ2fG9YatLdeD61USRI/vjDQt86SR00a8=; b=jZW2LfTHeir9l0WS
+	wPfaiK03W67D7PZrJQQmiYMv0NGPrUU9oY2X3cQQOXyWIOHYGz3X111ZxVO8zvqg
+	YP/Cno6lerCEEZTbCnYN+vQ4Iq1FQ2Pc9lequlHg/pRt9R5LPqI0pRj3fPtjBccI
+	QShLh9jYvgWALZvBsJzHZy1EfRY5DUaKuTkKj2Q1BRp/HCsghwlfNAt9MzorKsvT
+	evmZbCu+c6D3a/sDkRexEYoF0xCPPdVcVmjgCG3i6jOb6T6c+f5FLBrV1/keIWjY
+	NVmHhUvItPGnsJckSt9dlZm+N+c1zgpYQbginchml+i23pFE2UFKgbzr+0kghaSF
+	1IDf1g==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 476jrhdtca-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 12 Jun 2025 01:32:11 +0000 (GMT)
+	Thu, 12 Jun 2025 01:32:09 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55C1WA77014395
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55C1W8BS014969
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 12 Jun 2025 01:32:10 GMT
+	Thu, 12 Jun 2025 01:32:08 GMT
 Received: from [127.0.1.1] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 11 Jun
- 2025 18:32:08 -0700
+ 2025 18:32:06 -0700
 From: Baochen Qiang <quic_bqiang@quicinc.com>
-Date: Thu, 12 Jun 2025 09:31:52 +0800
-Subject: [PATCH ath-current 4/4] wifi: ath12k: don't wait when there is no
- vdev started
+Date: Thu, 12 Jun 2025 09:31:51 +0800
+Subject: [PATCH ath-current 3/4] wifi: ath12k: don't use static variables
+ in ath12k_wmi_fw_stats_process()
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20250612-ath12k-fw-fixes-v1-4-12f594f3b857@quicinc.com>
+Message-ID: <20250612-ath12k-fw-fixes-v1-3-12f594f3b857@quicinc.com>
 References: <20250612-ath12k-fw-fixes-v1-0-12f594f3b857@quicinc.com>
 In-Reply-To: <20250612-ath12k-fw-fixes-v1-0-12f594f3b857@quicinc.com>
 To: Jeff Johnson <jjohnson@kernel.org>,
@@ -77,32 +77,31 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: G3xTwWwCMzPHJg20oIZc-V-RCnUtMHky
-X-Authority-Analysis: v=2.4 cv=HMbDFptv c=1 sm=1 tr=0 ts=684a2e1b cx=c_pps
+X-Authority-Analysis: v=2.4 cv=EovSrTcA c=1 sm=1 tr=0 ts=684a2e19 cx=c_pps
  a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=zPWCEbQWmxFCawYx:21 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10
- a=COk6AnOGAAAA:8 a=LKi86vrQLEXAMEGEImwA:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: G3xTwWwCMzPHJg20oIZc-V-RCnUtMHky
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjEyMDAxMCBTYWx0ZWRfX2zCZL5Opj+Zg
- PSAimMoy6ITBV+BnO1IzcNo3KGgWzaPkk0mB7hob5ALdCUC/sRGypoRWFLeRvh6+3XKetXJRHdG
- 5MGiI5Mh5d2gf9tEf5Tv5GzFnhiQSoCrwEN4W3InItpZLBK6GAK7TRT6fN0/LEVnp2hB1szSgVJ
- cVOy/vWtG+A1nVRiVpmWqyr1ffrZ0P3nW+5662EpQKh8HTlt2LurOi1Am0VtD2PNNaENi1bpQCa
- TX/3eSps1ANsib0NGB1qRScmkDIVDHi3h3lkV3MgfUBqi24D4YRjpIYfdWK9MR55A8kscde+SNX
- uqElAGqMHr0QUD0TpfiC7ZxqPqbMcNvwe9MZKJHQ5bXvLOEaoVloX6uh7IW6tiC9WpDISiVO/Om
- B7zRs2uDholfwpFAqeXsNwLpN4ZnblsMzgfayyedj/VmGaL3PkBfITB4yHr276MmWtjUHbqi
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8
+ a=2UppwYiRmKxTrJ6QviAA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: 0Luo3K5GE9CSdmj6fF0BbttEyoPKnVey
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjEyMDAxMCBTYWx0ZWRfXwrMmy11vT2F2
+ 6ENLVayLXxAEv54c2ssLXFo7m5h8O4RX1gvA1mG+7naM+P/wbni+0pkBWZboNQ2qGw4l1XFEOOY
+ UswO+ob76CdcgVtOn3yUwn/6JGv14doiZi/tbwf/jP/m9mFuCRxHBJ7g93tLdRN6p7WV1c0aS+V
+ cd2gpX4S7sCQ8w6UT3uoy/uSAEOPQReHBlIgtJVQgzP5afjr9iWQF00rboWPmfLMGYszN8Nq+6J
+ j46mVKfya4GL22QJ/zaCPEV3Orf40EU2CTDp4N0zJogvz/DDgxi8OSABnxtyEuSakwzN8Y/5WVP
+ EbgQaScb0TOiNItD0f4kyV3TuzOFIcnUTx5qtILznQQoKYfbgTPrdisTA1RwHP0NI796DjHhaYU
+ Hix7fQVq6/0ySX246pLZzeODLRiAkmT39LWE6+bXJLFhfbOfZw0TaElTjuw4qzNAmvSZlfgm
+X-Proofpoint-GUID: 0Luo3K5GE9CSdmj6fF0BbttEyoPKnVey
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-06-12_01,2025-06-10_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 mlxlogscore=999 priorityscore=1501 impostorscore=0
- suspectscore=0 malwarescore=0 phishscore=0 spamscore=0 lowpriorityscore=0
- adultscore=0 mlxscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2506120010
+ impostorscore=0 spamscore=0 suspectscore=0 priorityscore=1501 mlxlogscore=999
+ mlxscore=0 clxscore=1015 malwarescore=0 adultscore=0 lowpriorityscore=0
+ phishscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2506120010
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250611_183214_291025_7563BA26 
-X-CRM114-Status: GOOD (  12.28  )
+X-CRM114-CacheID: sfid-20250611_183212_304736_51A4DEF0 
+X-CRM114-Status: GOOD (  15.51  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,22 +116,22 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-For WMI_REQUEST_VDEV_STAT request, firmware might split response into
-multiple events dut to buffer limit, hence currently in
-ath12k_wmi_fw_stats_process() host waits until all events received. In
-case there is no vdev started, this results in that below condition
-would never get satisfied
+Currently ath12k_wmi_fw_stats_process() is using static variables to count
+firmware stat events. Taking num_vdev as an example, if for whatever
+reason (say ar->num_started_vdevs is 0 or firmware bug etc.) the following
+condition
 
-	((++ar->fw_stats.num_vdev_recvd) == total_vdevs_started)
+	(++num_vdev) == total_vdevs_started
 
-consequently the requestor would be blocked until time out.
+is not met, is_end is not set thus num_vdev won't be cleared. Next time
+when firmware stats is requested again, even if everything is working
+fine, failure is expected due to the condition above will never be
+satisfied.
 
-The same applies to WMI_REQUEST_BCN_STAT request as well due to:
+The same applies to num_bcn as well.
 
-	((++ar->fw_stats.num_bcn_recvd) == ar->num_started_vdevs)
-
-Change to check the number of started vdev first: if it is zero, finish
-directly; if not, follow the old way.
+Change to use non-static counters and reset them each time before firmware
+stats is requested.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 Tested-on: QCN9274 hw2.0 WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
@@ -140,44 +139,86 @@ Tested-on: QCN9274 hw2.0 WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
 Fixes: e367c924768b ("wifi: ath12k: Request vdev stats from firmware")
 Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c | 10 +++++++---
- 1 file changed, 7 insertions(+), 3 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c |  2 ++
+ drivers/net/wireless/ath/ath12k/core.h |  2 ++
+ drivers/net/wireless/ath/ath12k/wmi.c  | 14 +++++---------
+ 3 files changed, 9 insertions(+), 9 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index fbc62209086fe5fde007193755f6116bfa72ab77..89ae80934b3048f850939c25c160af0e2d05b8e2 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -1230,6 +1230,8 @@ void ath12k_fw_stats_reset(struct ath12k *ar)
+ {
+ 	spin_lock_bh(&ar->data_lock);
+ 	ath12k_fw_stats_free(&ar->fw_stats);
++	ar->fw_stats.num_vdev_recvd = 0;
++	ar->fw_stats.num_bcn_recvd = 0;
+ 	spin_unlock_bh(&ar->data_lock);
+ }
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index c9584c4d85fd77150ff30af6d406dadbd87a8050..df5f4a934d8da7f15107d6a4bdeb3b21a421a514 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -626,6 +626,8 @@ struct ath12k_fw_stats {
+ 	struct list_head pdevs;
+ 	struct list_head vdevs;
+ 	struct list_head bcn;
++	u32 num_vdev_recvd;
++	u32 num_bcn_recvd;
+ };
+ 
+ struct ath12k_dbg_htt_stats {
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index dc6a2ad63663d988e495b115a1fc24a6408df600..bd04dd98f5f47a4a7d773d3b707a7e53b8f9b29e 100644
+index 1e6074456725f45c2bab69aa43ae4ff0b9ce5e8f..dc6a2ad63663d988e495b115a1fc24a6408df600 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.c
 +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -7631,7 +7631,7 @@ static void ath12k_wmi_fw_stats_process(struct ath12k *ar,
- {
+@@ -7632,7 +7632,6 @@ static void ath12k_wmi_fw_stats_process(struct ath12k *ar,
  	struct ath12k_base *ab = ar->ab;
  	struct ath12k_pdev *pdev;
--	bool is_end;
-+	bool is_end = true;
+ 	bool is_end;
+-	static unsigned int num_vdev, num_bcn;
  	size_t total_vdevs_started = 0;
  	int i;
  
-@@ -7651,7 +7651,9 @@ static void ath12k_wmi_fw_stats_process(struct ath12k *ar,
+@@ -7652,15 +7651,14 @@ static void ath12k_wmi_fw_stats_process(struct ath12k *ar,
  		}
  		rcu_read_unlock();
  
--		is_end = ((++ar->fw_stats.num_vdev_recvd) == total_vdevs_started);
-+		if (total_vdevs_started)
-+			is_end = ((++ar->fw_stats.num_vdev_recvd) ==
-+				  total_vdevs_started);
+-		is_end = ((++num_vdev) == total_vdevs_started);
++		is_end = ((++ar->fw_stats.num_vdev_recvd) == total_vdevs_started);
  
  		list_splice_tail_init(&stats->vdevs,
  				      &ar->fw_stats.vdevs);
-@@ -7670,7 +7672,9 @@ static void ath12k_wmi_fw_stats_process(struct ath12k *ar,
+ 
+-		if (is_end) {
++		if (is_end)
+ 			complete(&ar->fw_stats_done);
+-			num_vdev = 0;
+-		}
++
+ 		return;
+ 	}
+ 
+@@ -7672,15 +7670,13 @@ static void ath12k_wmi_fw_stats_process(struct ath12k *ar,
  		/* Mark end until we reached the count of all started VDEVs
  		 * within the PDEV
  		 */
--		is_end = ((++ar->fw_stats.num_bcn_recvd) == ar->num_started_vdevs);
-+		if (ar->num_started_vdevs)
-+			is_end = ((++ar->fw_stats.num_bcn_recvd) ==
-+				  ar->num_started_vdevs);
+-		is_end = ((++num_bcn) == ar->num_started_vdevs);
++		is_end = ((++ar->fw_stats.num_bcn_recvd) == ar->num_started_vdevs);
  
  		list_splice_tail_init(&stats->bcn,
  				      &ar->fw_stats.bcn);
+ 
+-		if (is_end) {
++		if (is_end)
+ 			complete(&ar->fw_stats_done);
+-			num_bcn = 0;
+-		}
+ 	}
+ }
+ 
 
 -- 
 2.34.1
