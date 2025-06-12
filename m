@@ -4,145 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 080E3C71136
-	for <ath12k@archiver.kernel.org>; Thu, 12 Jun 2025 13:19:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EE15C71136
+	for <ath12k@archiver.kernel.org>; Thu, 12 Jun 2025 13:19:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-Type:
-	Content-Transfer-Encoding:Message-Id:Date:Subject:Cc:To:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=0aSGe54uF7ffWncFONY8hul3imYDwDU4gPRRoPq9vVk=; b=z7ZFPF2ea3iSD+AgOT0uN/Z7+p
-	BRRTmlguTcaXeDiSGiorxLzHIF9nf4XV3tmtwoWFHolumvAT+7DN+JJpbgz1LEWiapNyNDdEPQWd4
-	MOP7vFRNRqpLTTuiSV7l7N/nCoTsQUfxECn3RlisrwH4QbRJdUhsz2OxdzXG9T7095ROBGrYdNEXB
-	iBGcQSr+fgSZqyD9IWEAVmmaiqv3X3k050xFza4LN1ShMtc36cGgcxizC9yD1GGQ9PE7l1ZkapnJ1
-	P9TZvdYo+Jf0hD5dqUT/e7LPgpLtVSyPdRp+E76apeSAfnH1FdcO49IbWwLL8ceB61vECcwLH+RBJ
-	+c/OWyVA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=tRlSqXWvhEswQjV14frkTWdUGfsegC+OB/RG0k7MWyE=; b=rLCnQiVfn/VDnG/o8n582dSb7m
+	eYIuULWiTNkk85wEzR9hZrce++45j5pSIEzy6yt/t88L7dEoDK2t5XXzpTFLaSOknrweawH5BseNJ
+	u+L8WslitNAZd3Eqlpy2fUrY9D8X/1uaglf+MGUWW8tXe08OGxzvGiCzBSVybtwGH9XfUI59Vn2Ze
+	3/hr7qAUG6mTYNRlYmdAf2r7yV3v1S+Lpf5EnOrSnJTI7AMAr4tVd1XNDgrGQ/lqYsrLM37/0nvwU
+	UBYcyfYVY2kfRb/fVHEQC/eEdzzN99bGLHLiXekd9v5Bbdi+5YkaPEjvDbuD/zGpVSqVHsNBrizKG
+	3InzD/oA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPhpv-0000000DN7C-0Gn3;
-	Thu, 12 Jun 2025 13:19:19 +0000
-Received: from mail-koreacentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c40f::7] helo=SEYPR02CU001.outbound.protection.outlook.com)
+	id 1uPhqO-0000000DO2v-33Z5;
+	Thu, 12 Jun 2025 13:19:48 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPfqD-0000000D6g8-1nSC
+	id 1uPgOQ-0000000DBTD-0xEf
 	for ath12k@lists.infradead.org;
-	Thu, 12 Jun 2025 11:11:30 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=NyM3h2qx1lxGyULsE4JeFfaDOqtlFG0TZYV3PjCGM97DGsF0miai/Gy5D+n9ulr4e+rtB0u5WMzATSwDupAtZpiBFYRyfuprdHW4m2/nWTtPBJvxJtdIqZEUmLNRCGpK/kqaDgNE9sHZanY1K3STGzVL5a6m/2KTLorLuf9hr1o/Ak7J7k8/9SNjTNo6Asvm7u4fp4d05AIdOi/0bG11vf3dsvLekxa9955nlNw5blIKESWDLgxBc7bLSnrJRV0tJ0CD6M6QmJF663+BpKseDcFP/QrTqpESxraTn2dk2lgsnNYxzvAV2ul/1jF3Jkrh5suYHYB0bzXg/qsSdVWu8Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=0aSGe54uF7ffWncFONY8hul3imYDwDU4gPRRoPq9vVk=;
- b=f7775VaKAksYIVS3DSIc7v1Yr+1JWqPIzovql+loffvmmFr93hyubU8xqduhwC9N98+vyLZz9wSaqzsMmdhKx0DQLbIO5fZq52Jvvc28s+MIqA+cKTkmzpEBZcZcvfigzAqbbsyaTSwA56Qq4FZdG4RxhaA1Q8cH+j5oUIvwX79HWkxVYy39012ttcjYOxjZvvypt3g7pNmDTDZSKCQXviUVZJLx5y/JeFHJhkD9hEJ/i2aiC+hZY93zpl5wkv6RksRv8AAGrMIJrPxDSCwkcC+FB5gDmq9Wk4TxQ2v1gKu1N9TNi3VqyjDCC88IJXjdgh6snqcGPh1TplSgtjbtXQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=vivo.com; dmarc=pass action=none header.from=vivo.com;
- dkim=pass header.d=vivo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vivo.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0aSGe54uF7ffWncFONY8hul3imYDwDU4gPRRoPq9vVk=;
- b=HzRvlTxqTBfh7rh8j5fyM5bvKlLQVHy6kzuXR+rKS5l58mDDNbaLi+kCGmKI13P4hARFolx8u17vPakDj1TKhZSi6F3zbVvYcQlMA0t6RRfLhmpwqJadS3Tk6Fb4va/eBBG6wKZX7MigbPh9pGLM1bFYwxY4USwNKk5IYYRAIfORBNG97K1ydVfDrapGKkkUsMMo4vFB8pdtI719bHs5bmVz+EQy7pjlOHoXx6ZcbnXkf25O8EspoG0sq7rOThAiNr96CBMA3Zw/m4IziW4KYwpe93Ulm5p3xwERFLCETPbYCt6AiecgAuc7XdWjEaS9mQnSEacnuUkHTHYvfzjE6Q==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=vivo.com;
-Received: from SG2PR06MB4802.apcprd06.prod.outlook.com (2603:1096:4:169::8) by
- TY0PR06MB5354.apcprd06.prod.outlook.com (2603:1096:400:214::6) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.8835.22; Thu, 12 Jun 2025 11:11:03 +0000
-Received: from SG2PR06MB4802.apcprd06.prod.outlook.com
- ([fe80::685f:929d:f06c:a349]) by SG2PR06MB4802.apcprd06.prod.outlook.com
- ([fe80::685f:929d:f06c:a349%3]) with mapi id 15.20.8813.024; Thu, 12 Jun 2025
- 11:11:03 +0000
-From: Yuesong Li <liyuesong@vivo.com>
-To: Jeff Johnson <jjohnson@kernel.org>,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: opensource.kernel@vivo.com,
-	Yuesong Li <liyuesong@vivo.com>
-Subject: [PATCH ath-next v1] wifi: ath12k: convert to use secs_to_jiffies
-Date: Thu, 12 Jun 2025 19:10:46 +0800
-Message-Id: <20250612111046.94743-1-liyuesong@vivo.com>
+	Thu, 12 Jun 2025 11:46:51 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55C8DjTr013459;
+	Thu, 12 Jun 2025 11:46:49 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=tRlSqXWvhEswQjV14frkTW
+	dUGfsegC+OB/RG0k7MWyE=; b=ALhpjvX00RNejqzOWvMlMB89bActYjXItDzaDv
+	Z8IaYEEo3benw5Jqd8H/JpcWlC/eEbxoJNUJmhwY0ygj2IVoZdcmA3YLuzWDek7y
+	rl3I/I46ux6x7emQo2RJlwKVI3J9NKUUxzj/R0X1ukCC69M4gjDKh6CgvFUsGov7
+	Cf5/X7wbLcmym9LYvaCSjPw5QczlNuZwWvhWDOcZKFLdEigeHL0z+DiYzyLQbsLO
+	EPY8Cp7l4ZmCtleUSyxN7CeRBcaN8NPpJ16vHc2O2uWCTdyX7TCiZAZ7lPxrtWKa
+	WkmxU90uMgEuSg6usdLxlciD/kUoWGjebT0sRvLMXUUO4Rrw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 476fmng0aq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 12 Jun 2025 11:46:48 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55CBkcOt025976
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 12 Jun 2025 11:46:38 GMT
+Received: from hu-ssreeela-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 12 Jun 2025 04:46:36 -0700
+From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Sivashankari Madhavan
+	<quic_sivamadh@quicinc.com>,
+        Sowmiya Sree Elavalagan
+	<quic_ssreeela@quicinc.com>
+Subject: [PATCH ath-next v2] wifi: ath12k: support average ack rssi in station dump
+Date: Thu, 12 Jun 2025 17:16:20 +0530
+Message-ID: <20250612114620.1055840-1-quic_ssreeela@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
-X-ClientProxiedBy: TYCPR01CA0106.jpnprd01.prod.outlook.com
- (2603:1096:405:4::22) To SG2PR06MB4802.apcprd06.prod.outlook.com
- (2603:1096:4:169::8)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SG2PR06MB4802:EE_|TY0PR06MB5354:EE_
-X-MS-Office365-Filtering-Correlation-Id: 520fedee-9aff-4c03-9233-08dda9a1d18d
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|1800799024|52116014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Gb45diyeEc+1yNCoK1I2V6NdFCSAZG7z8Ry17xy9oEUff9hOEq16yrLHo/P1?=
- =?us-ascii?Q?uMsEx4vKemFQforEZ6bWg2pPEpX4zIyL9mWgiIHIz8Psw0o9t9++mDA3MLvd?=
- =?us-ascii?Q?QmTIWIC4UlD87brNEOI7OkWsl0/ezu77FMKHci1Xb7OCBribI09wHImNOe63?=
- =?us-ascii?Q?0vKPmC7CY89ZzeH5Bb/IOMdNo1/JThN/PEP6cu3/8miJ4kyyoOQJErDlM6Sl?=
- =?us-ascii?Q?6Kh3StRKM9s8groluEEgcRioLDafX0vGNzdc0Ro7955qCo1SriEXp9Vk5zNq?=
- =?us-ascii?Q?B3HcL5bGhu3rKk2QMVPjVWHqvMgRICcVE2c21V3gxeCdhTEQodzPEsYGtklv?=
- =?us-ascii?Q?ufjtVSMjW5mRs6DD1czeebM8AldpuVpO/qrmNyDdL5bZCI9WPdzh1gYcVBF7?=
- =?us-ascii?Q?DoVgHY9hVjnfZM7hU+8xmgMspz8Bbb8LfamniJrZ6QSLCDifq9YVSqABhwAw?=
- =?us-ascii?Q?270qTtBBUgu4uQDX/V9DQf7dzLcWjBzrpjVUl7i7uqlZVm8Cu0YoT+RegkG5?=
- =?us-ascii?Q?Sa9268bIOMrSahVPY/AB1D+dWRNZMkaT5QvEKApZ5kKnRPpSyTPCNfqOllDz?=
- =?us-ascii?Q?a0T5bPcHC8i0zVbo+DghWXBZz7lUHZd/aTOzTNcQ0YwbteKaHpPdDHn1k2fx?=
- =?us-ascii?Q?w9hsDm9T23bogtZF2YtLz0x4g80wBWH+h+JGX7ul2ZyD1Qfqe3rgzY37Lg+0?=
- =?us-ascii?Q?DsJZPDhn1kl3VLmsxIoNM1oiajS//7QAjVZbqM7Y/bW5EWR44FdOckeC/MUx?=
- =?us-ascii?Q?xIhAlk+P8rhpX0NVON7mgfNoYKlhrVGoqiPnm8aVZxqydGSTsbtuxnkj+XA8?=
- =?us-ascii?Q?wbJpuy1aSvsFGTw4mIEzKer5KlOA2Gh84JZ8IlMK14TsDlqPNrmGLEHWXfL7?=
- =?us-ascii?Q?YCEag9i2+qWhTmGJTFiK76SL++O4zHLRkH4Te5NQgLdFOClgQpEsUiTXiJo5?=
- =?us-ascii?Q?AFpDVZLAAVEl2zOpgz3FC7Bk4jT4XsWv2A0vF5qhlvdXD9v4A/iuERAcCaKC?=
- =?us-ascii?Q?2Czmh5IyTHQvmypaobjCSOO2bRrCOqvA2/oC0mVYHJCW5msvNCnhAWJ/Kuir?=
- =?us-ascii?Q?fNcjkidbB1X3RyksgvKFZL6XaaqkQWiAZ6qFHZ8RITzuOmWFsMAlIJqwJNKs?=
- =?us-ascii?Q?jB3wBswP809Ilzx0ekb+ya2BroVhctuvz+yfaPPUkU/idzzRY5oIX7xyq8Ll?=
- =?us-ascii?Q?3hPZLslPssAGlm2TpNVPDNTqZCf9GZTh/a1IyY1WwXQR7Snetqep2xbilVcH?=
- =?us-ascii?Q?rTjEU1+ucXjM3Jq595ANGNNqka/4mjDN5KfAtsNfSkdQlTiLEUyJMrMWpoOr?=
- =?us-ascii?Q?TOPy6rnvAdhPd3d+8wCTGwHGezWzYv0lS7u2X4xpL+3N7XBySuNCz7WnYrJk?=
- =?us-ascii?Q?rdqkrQnvujC3QHB2DkVcNmvQFMxG1kGRAerSW1/+8plEu2rXVVIWIsAheAH/?=
- =?us-ascii?Q?rKWyqTkibom6KdD4VoT1be2w1SILg7smrgvkmXCXNvkzXiIMSYMKBQ=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SG2PR06MB4802.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(52116014)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?HjzkSZ1Ii8Yacdc2RQKBvgrLsUFb6mAW2LAzO6YT/BB9SO+Wbv3JIfeeI4j6?=
- =?us-ascii?Q?CZLvG2VmdwLJk/Q5R3wfV2/xJKeiufFWYxzkNEUpQG8pVOosH/VYtqWnicZ3?=
- =?us-ascii?Q?LWIt8vhxpxrt0u23rVCZAcwFYsyWYB2wZMys7V+M4gSi0PDfqGsWBMtKaamE?=
- =?us-ascii?Q?LPcj23n2tPM7CGSUv7xoP0NCTCoKHiAjGBD8SMH5I82c5xY7gAbMmLBOKv18?=
- =?us-ascii?Q?XGeiRd3ShXqKUNqydBJ0l4agJOeigGAX0icyrdor13RQ7sBWqmf7ioOOvQM7?=
- =?us-ascii?Q?QaksFhN0X1GRYJscVc0MLJBcCFvg/qcdAnkD4pmaSdurSt89UPdVmOYTKu3H?=
- =?us-ascii?Q?nxtx/crcnZ9sJ/D/GbDt/REPR4sonSq/MYQ3WtWWUWMSLO/TkA7gJ01Pd5We?=
- =?us-ascii?Q?mEjZnGZHTRgvWnoillsJ0JEAPUqqCbiVzr9LQACyTgbP03uyaFk2Q0cI0w1y?=
- =?us-ascii?Q?sduUVKZHy27qMOM5rawr0CkgytttPMlfY9DzN0Ytdnh+A5522knjUMHUFEnK?=
- =?us-ascii?Q?y10Qw3odqRnkn/gyo1K3Ny1nEGNuulttflsPUKZVlTfXdWwL4mK3ESVR4aIu?=
- =?us-ascii?Q?nm98DPnzRMCrVSrKUGC5RSr2/IhYEFnfklHbgmbSCo3KnYUEc3mGuxXmNZZg?=
- =?us-ascii?Q?PQVhL6FxvtiTyISYPmyuklriNEirfT+3QquOSZw76JtE/SXG5SXhdfrMMw5c?=
- =?us-ascii?Q?H3Ks5M8M1dSBwYxxRb2nGy3MOh8Iw5H04U0QH5szSmgYBHngEJYHHrTAZf0v?=
- =?us-ascii?Q?5cUnV0bfOOc7y53O5plCXQidHiPLxqeQSRShdf+APq/RwywT3/BTyWrJlr+h?=
- =?us-ascii?Q?nEvR5QQs+30V1hppPwuFqqW8SlFaCKRPOAUxq2Df7ilGlNr5s8Dee+MOh4og?=
- =?us-ascii?Q?P/oP6z/6DGIssM8uPHQYq+R1LlBaVhz6+W8sudfnVxDvd60XWvDAa0YxRX55?=
- =?us-ascii?Q?HKNsvoBe+G3UtKyw4TQyaMmfL5NJPF5rCzh0CNUSdP87fPw5eauMkX4ePPD4?=
- =?us-ascii?Q?04i/dbp6L+3d18UN5KprEzKD+a4uRGNwJmSZvrviFJYjA43z/mxubVwtAXOV?=
- =?us-ascii?Q?W8JYkCBAQ9LMeSJOaXcLwyD/GLJjQlw2Iu+twYysxJ3nHE6hWKvQpTn62A7g?=
- =?us-ascii?Q?JOGpddl4JN2J6MmE7yv+wdyTtsPiXcqRuB6qBqj888xNvsBJVU+UkyvBL+ju?=
- =?us-ascii?Q?7U41Xh9QiTfpZkOe9Qv4lWUKq/J0j1659GhWsq6kZHEnC9x8M2lUukz2MNeJ?=
- =?us-ascii?Q?K6e614rYnLioakyF1BJJb0eOvArbNjAlMMcDKSut8bRBOoH6KNjZ18OiKm9H?=
- =?us-ascii?Q?qNI6aak8+NMCFbpdA+bYiVQnsKq8DWNNiMKy7GQa9TDFaVXNkh4qvw/QulSi?=
- =?us-ascii?Q?IaHMdJtQIVBgxYpJGMW7yDgO0Kj22UwwuhRpnFFmtsTorECdE9fw6aypO9b3?=
- =?us-ascii?Q?3SthGiwWigO5pipb88Qm+SxNgHZA9xQXe7KDtj9C4X9HMes3nJX0/l+eQe9k?=
- =?us-ascii?Q?c/Cdr2dQzfE7hLN5EoP5+QogGRbjHY2oIRTI5uVCC5AH7k4G8CxKn+tYMUTW?=
- =?us-ascii?Q?oi6Eg1ruHFokREeX3xr1NrZXvv51ydtwAYhpA/Rg?=
-X-OriginatorOrg: vivo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 520fedee-9aff-4c03-9233-08dda9a1d18d
-X-MS-Exchange-CrossTenant-AuthSource: SG2PR06MB4802.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Jun 2025 11:11:02.9796
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 923e42dc-48d5-4cbe-b582-1a797a6412ed
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: UW9I0gSIUSa8UYxfU1VGNfsJxbzxX0iSLE5TMEvD2NttUz/k+d0VnDKmGqw3Lq+l6Z72VPh6vT3IMd61F9z6Gw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY0PR06MB5354
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: -V-jY0sGEMaTeZ4XrwNJf6rSfVNDbVXI
+X-Proofpoint-GUID: -V-jY0sGEMaTeZ4XrwNJf6rSfVNDbVXI
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjEyMDA4OSBTYWx0ZWRfX3mAOCRiXcQaG
+ ZBTxrCw22W7+zhK2LRdfP+dpn8ZHbBfgQ2/HWp9NJHX37XiTiHckCdu5KDkQBD4TKL+FVwMifQU
+ Rb3/qiwXcQi+fepvKElY1GKaDwlIFhver1KvSYqix/whvCDGKGyJlGKcU6VSOyFNC6sEWEEyKFG
+ iqt6F5nd0Z74RW3/YNnaUbgFQJxULoaawBTG6099uWIdKCdQzg7Qw/0fTUzKaxOImxWrr+4V4WM
+ MV2aWA0HPqhuBKhE4Si+j8k2+d7DbFiXiO0kKV8Saol9KVvYFLNH0Zt18uAF/3mkNBHqeD68zRy
+ 7Pn/RLNDDUYy8zGkZ51FVbQhmuds1LfgWge7MG0JOe9L/jpAjBtlVfKczvTI3frfQqW9Rp4W5Sv
+ W5EComm3PQPhaoe2MmZ5kwVyfDVDFBcegKBlI6jC9aB3RwCgqZMsQX+rgXDem5Josua3hZ9Y
+X-Authority-Analysis: v=2.4 cv=K8wiHzWI c=1 sm=1 tr=0 ts=684abe29 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8 a=cKTmG8GoOr_ubyX9ojwA:9
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-12_08,2025-06-10_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1011 mlxscore=0 mlxlogscore=999 phishscore=0 lowpriorityscore=0
+ malwarescore=0 adultscore=0 bulkscore=0 spamscore=0 impostorscore=0
+ priorityscore=1501 suspectscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2506120089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_041129_467729_500BC28E 
-X-CRM114-Status: UNSURE (   8.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250612_044650_270551_EC9CE7A5 
+X-CRM114-Status: GOOD (  15.38  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,28 +109,158 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Since secs_to_jiffies()(commit:b35108a51cf7) has been introduced, we can
-use it to avoid scaling the time to msec.
+From: Sivashankari Madhavan <quic_sivamadh@quicinc.com>
 
-Signed-off-by: Yuesong Li <liyuesong@vivo.com>
+Currently, the ACK RSSI value is not shown in station dump. Enable WMI
+resource flag for ACK RSSI in WMI INIT command to add ACK RSSI value in
+management TX completion event from WMI. Update ACK RSSI value obtained
+in management and data frame completion path to ieee80211_tx_info. Also
+advertise NL80211_EXT_FEATURE_ACK_SIGNAL_SUPPORT flag during hardware
+register to mac80211 layer so that ACK RSSI is added to station dump
+message.
+
+Example output :
+Station 00:03:7f:01:5c:4b (on wlp88s0)
+        inactive time:  46584 ms
+        rx bytes:       955
+        rx packets:     10
+        tx bytes:       769
+        tx packets:     6
+        tx retries:     81
+        tx failed:      0
+        rx drop misc:   0
+        signal:         -39 dBm
+        signal avg:     -40 dBm
+        tx bitrate:     6.0 MBit/s
+        tx duration:    1185 us
+        rx bitrate:     309.7 MBit/s 40MHz HE-MCS 6 HE-NSS 2 HE-GI 0 HE-DCM 0
+        rx duration:    0 us
+        last ack signal:-41 dBm
+        avg ack signal: -40 dBm
+        authorized:     yes
+        authenticated:  yes
+	.......
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Sivashankari Madhavan <quic_sivamadh@quicinc.com>
+Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+v2:- Rebased
 
+---
+ drivers/net/wireless/ath/ath12k/dp_tx.c |  3 +++
+ drivers/net/wireless/ath/ath12k/mac.c   |  1 +
+ drivers/net/wireless/ath/ath12k/wmi.c   | 15 +++++++++++----
+ drivers/net/wireless/ath/ath12k/wmi.h   |  3 +++
+ 4 files changed, 18 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index b6816b6c2c04..f65814deebf7 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -890,6 +890,9 @@ static void ath12k_dp_tx_status_parse(struct ath12k_base *ab,
+ 
+ 	ts->peer_id = le32_get_bits(desc->info3, HAL_WBM_COMPL_TX_INFO3_PEER_ID);
+ 
++	ts->ack_rssi = le32_get_bits(desc->info2,
++				     HAL_WBM_COMPL_TX_INFO2_ACK_FRAME_RSSI);
++
+ 	if (info0 & HAL_TX_RATE_STATS_INFO0_VALID) {
+ 		ts->pkt_type = u32_get_bits(info0, HAL_TX_RATE_STATS_INFO0_PKT_TYPE);
+ 		ts->mcs = u32_get_bits(info0, HAL_TX_RATE_STATS_INFO0_MCS);
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 88b59f3ff87a..1ba2701393b2 100644
+index 88b59f3ff87a..c307d6fe5e80 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -4373,7 +4373,7 @@ int ath12k_mac_get_fw_stats(struct ath12k *ar,
- 	 * received 'update stats' event, we keep a 3 seconds timeout in case,
- 	 * fw_stats_done is not marked yet
- 	 */
--	timeout = jiffies + msecs_to_jiffies(3 * 1000);
-+	timeout = jiffies + secs_to_jiffies(3);
- 	ath12k_fw_stats_reset(ar);
+@@ -12071,6 +12071,7 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
  
- 	reinit_completion(&ar->fw_stats_complete);
+ 	wiphy_ext_feature_set(wiphy, NL80211_EXT_FEATURE_CQM_RSSI_LIST);
+ 	wiphy_ext_feature_set(wiphy, NL80211_EXT_FEATURE_STA_TX_PWR);
++	wiphy_ext_feature_set(wiphy, NL80211_EXT_FEATURE_ACK_SIGNAL_SUPPORT);
+ 
+ 	wiphy->cipher_suites = cipher_suites;
+ 	wiphy->n_cipher_suites = ARRAY_SIZE(cipher_suites);
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 60e2444fe08c..1a238ef36a72 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -3875,7 +3875,8 @@ ath12k_wmi_copy_resource_config(struct ath12k_base *ab,
+ 	wmi_cfg->max_bssid_rx_filters = cpu_to_le32(tg_cfg->max_bssid_rx_filters);
+ 	wmi_cfg->use_pdev_id = cpu_to_le32(tg_cfg->use_pdev_id);
+ 	wmi_cfg->flag1 = cpu_to_le32(tg_cfg->atf_config |
+-				     WMI_RSRC_CFG_FLAG1_BSS_CHANNEL_INFO_64);
++				     WMI_RSRC_CFG_FLAG1_BSS_CHANNEL_INFO_64 |
++				     WMI_RSRC_CFG_FLAG1_ACK_RSSI);
+ 	wmi_cfg->peer_map_unmap_version = cpu_to_le32(tg_cfg->peer_map_unmap_version);
+ 	wmi_cfg->sched_params = cpu_to_le32(tg_cfg->sched_params);
+ 	wmi_cfg->twt_ap_pdev_count = cpu_to_le32(tg_cfg->twt_ap_pdev_count);
+@@ -5582,7 +5583,7 @@ static int ath12k_pull_mgmt_rx_params_tlv(struct ath12k_base *ab,
+ }
+ 
+ static int wmi_process_mgmt_tx_comp(struct ath12k *ar, u32 desc_id,
+-				    u32 status)
++				    u32 status, u32 ack_rssi)
+ {
+ 	struct sk_buff *msdu;
+ 	struct ieee80211_tx_info *info;
+@@ -5606,8 +5607,11 @@ static int wmi_process_mgmt_tx_comp(struct ath12k *ar, u32 desc_id,
+ 	dma_unmap_single(ar->ab->dev, skb_cb->paddr, msdu->len, DMA_TO_DEVICE);
+ 
+ 	info = IEEE80211_SKB_CB(msdu);
+-	if ((!(info->flags & IEEE80211_TX_CTL_NO_ACK)) && !status)
++	if ((!(info->flags & IEEE80211_TX_CTL_NO_ACK)) && !status) {
+ 		info->flags |= IEEE80211_TX_STAT_ACK;
++		info->status.ack_signal = ack_rssi;
++		info->status.flags |= IEEE80211_TX_STATUS_ACK_SIGNAL_VALID;
++	}
+ 
+ 	if ((info->flags & IEEE80211_TX_CTL_NO_ACK) && !status)
+ 		info->flags |= IEEE80211_TX_STAT_NOACK_TRANSMITTED;
+@@ -5651,6 +5655,8 @@ static int ath12k_pull_mgmt_tx_compl_param_tlv(struct ath12k_base *ab,
+ 	param->pdev_id = ev->pdev_id;
+ 	param->desc_id = ev->desc_id;
+ 	param->status = ev->status;
++	param->ppdu_id = ev->ppdu_id;
++	param->ack_rssi = ev->ack_rssi;
+ 
+ 	kfree(tb);
+ 	return 0;
+@@ -6552,7 +6558,8 @@ static void ath12k_mgmt_tx_compl_event(struct ath12k_base *ab, struct sk_buff *s
+ 	}
+ 
+ 	wmi_process_mgmt_tx_comp(ar, le32_to_cpu(tx_compl_param.desc_id),
+-				 le32_to_cpu(tx_compl_param.status));
++				 le32_to_cpu(tx_compl_param.status),
++				 le32_to_cpu(tx_compl_param.ack_rssi));
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_MGMT,
+ 		   "mgmt tx compl ev pdev_id %d, desc_id %d, status %d",
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index ac18f75e0449..49010367dc06 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -2486,6 +2486,7 @@ struct wmi_init_cmd {
+ #define WMI_RSRC_CFG_FLAGS2_RX_PEER_METADATA_VERSION		GENMASK(5, 4)
+ #define WMI_RSRC_CFG_FLAG1_BSS_CHANNEL_INFO_64	BIT(5)
+ #define WMI_RSRC_CFG_FLAGS2_CALC_NEXT_DTIM_COUNT_SET      BIT(9)
++#define WMI_RSRC_CFG_FLAG1_ACK_RSSI	BIT(18)
+ 
+ struct ath12k_wmi_resource_config_params {
+ 	__le32 tlv_header;
+@@ -4445,6 +4446,8 @@ struct wmi_mgmt_tx_compl_event {
+ 	__le32 desc_id;
+ 	__le32 status;
+ 	__le32 pdev_id;
++	__le32 ppdu_id;
++	__le32 ack_rssi;
+ } __packed;
+ 
+ struct wmi_scan_event {
+
+base-commit: 9f92c4a01c5268f57fa19dd7cbcb1f59b0e66da6
 -- 
-2.34.1
+2.25.1
 
 
