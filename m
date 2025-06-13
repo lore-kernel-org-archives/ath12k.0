@@ -4,82 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE9AFC71135
-	for <ath12k@archiver.kernel.org>; Fri, 13 Jun 2025 11:35:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E94CC71148
+	for <ath12k@archiver.kernel.org>; Fri, 13 Jun 2025 20:56:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:Cc:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=63O4HhVlmCIQH37e2yHnmXGKXhP1A6hZ3WnVeHzeLEY=; b=4bCstabdyjsK4PdID66UlMNW2+
-	B1cwRQzejB08xrouwiFaiCawwIvPhdc78gCwhoZwrn2Le0MeuPMZydb1QT2fLqMNWpC6sK+gZmbPV
-	FDHEIf5ny/tuiU9a3ElupkktmVIwDtIKpNiGdFgXCfZaXQAcvu6/MmawpKvuVJv0syDviHP2fy5/N
-	3lJnKbK4LD8H12Wo8hBRdcfZ8+MBncN9LsjPw/URiaex2UvOupcBMDOyBCpPCWh2T0wIW+R/RBV2M
-	NUjfKf8HSgmU6lHGBDojaPK9kMm6kwvdvHHNW5NCVi5hv5+SBt/jOslgkdN3UJZ5kZ4BKv5dILhPj
-	U2mSVLvA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=mnZ11eH3VoBumzIQ1X856A9tUK8utDRfN2ofHHPe5UE=; b=m5/rppXb3zKiHjuY+lr/PTDfKt
+	wdqUexL5K0fC5SUR5qiiQSnZFLEXAZcPEjZ9TQHeE1X7SvDqMZ0FhOLXtlzXSYKhSoY4LvTchZyxg
+	hihovfg1rCwMcFVooBBnkcbg6UtxmvHLtYFrpVYdeDwb8k0iwMouJn+opw3JMFHwDyCZ1HyJi1vTq
+	WVDfIr1ZH8lVCwfK6XkAw3MZNpPWSUarMxiGbPBahXuaot2RuVosZye2tqvqcfJka5bj2ewHC56iz
+	CRwdX4dliIZGumJYqxMOCjc/VfiZqdiXP1Ac6gwNPQOAYuONhufV14jdEqPO7HWR/ddEdQdBFEU1Y
+	Lw5HMf5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ2gq-0000000GEEz-2fcA;
-	Fri, 13 Jun 2025 11:35:20 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1uQBSJ-000000002mV-0g1t;
+	Fri, 13 Jun 2025 20:56:55 +0000
+Received: from mgamail.intel.com ([198.175.65.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ2gQ-0000000GE8K-0g55;
-	Fri, 13 Jun 2025 11:34:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1749814474; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=lETLoGB93kdeds4S0KtNgOM7REQiwh+NZ6/JULXJtNWu0wDh7njH+EAT21aIV0vuQZBgZL6HhZL4qjblaCJJms7usXnNucSq6ioJtIRNjT9eEctgPyUG1Wd7dbpxaZasVZszsHIlNh4DLEm0BzZ37fHfFGceOU/LKs8iM0ABrTw=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1749814474; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=63O4HhVlmCIQH37e2yHnmXGKXhP1A6hZ3WnVeHzeLEY=; 
-	b=kMZGZWpT0GGC+aDITWLFTMZkO6X0afeAstC8/ug09xlUzVnHv5bfYJHm8LqcdKp2SWXr5pSNumIC/Zza/QdMmDVqhj7haDn1ojsa8ucnNtgfYU1vN1oMTjRwTuqgwHsW5lDBu72GxB4jj8xfbEIqaAH0oL6WGks2uBj+btQmkqI=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=usama.anjum@collabora.com;
-	dmarc=pass header.from=<usama.anjum@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749814474;
-	s=zohomail; d=collabora.com; i=usama.anjum@collabora.com;
-	h=Message-ID:Date:Date:MIME-Version:Cc:Cc:Subject:Subject:To:To:References:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
-	bh=63O4HhVlmCIQH37e2yHnmXGKXhP1A6hZ3WnVeHzeLEY=;
-	b=U19sVfz6Zbmlpv0eumTx1fIYHMVk7lX/xpIlvbmK7WXwJQbF8yOpD64+dbqp7Ib/
-	Gt3+S9ia5k/c/e30enP+saH+RNyJHoB0/39CvJEu5Pm0szVrVZVSQ1VdPW+aD+fOe12
-	/6zI5fopVgzD3SIYhrF1pyvafdR+9Vb6r/7P35Io=
-Received: by mx.zohomail.com with SMTPS id 174981447219438.66651306626147;
-	Fri, 13 Jun 2025 04:34:32 -0700 (PDT)
-Message-ID: <73496f2a-ae0d-42c8-8013-9e157177c477@collabora.com>
-Date: Fri, 13 Jun 2025 16:34:20 +0500
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Cc: usama.anjum@collabora.com, kernel@collabora.com,
- sebastian.reichel@collabora.com, Jeff Johnson
- <jeff.johnson@oss.qualcomm.com>, Baochen Qiang <quic_bqiang@quicinc.com>,
- Sumit Garg <sumit.garg@kernel.org>, mhi@lists.linux.dev,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
- ath12k@lists.infradead.org, Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
- Jeff Johnson <jjohnson@kernel.org>,
- Jacek Lawrynowicz <jacek.lawrynowicz@linux.intel.com>,
- Youssef Samir <quic_yabdulra@quicinc.com>,
- Matthew Leung <quic_mattleun@quicinc.com>,
- Carl Vanderlip <quic_carlv@quicinc.com>,
- "Dr. David Alan Gilbert" <linux@treblig.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Troy Hanson <quic_thanson@quicinc.com>, Alex Elder <elder@kernel.org>,
- Yan Zhen <yanzhen@vivo.com>, Kunwu Chan <chentao@kylinos.cn>
-Subject: Re: [PATCH v6] bus: mhi: host: don't free bhie tables during
- suspend/hibernation
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-References: <20250516184952.878726-1-usama.anjum@collabora.com>
- <819f15f9-1b16-4b96-8273-3f95c1e071bb@collabora.com>
-Content-Language: en-US
-From: Muhammad Usama Anjum <usama.anjum@collabora.com>
-In-Reply-To: <819f15f9-1b16-4b96-8273-3f95c1e071bb@collabora.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-ZohoMailClient: External
+	id 1uQBRm-000000002lh-1xqb
+	for ath12k@lists.infradead.org;
+	Fri, 13 Jun 2025 20:56:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1749848182; x=1781384182;
+  h=date:from:to:cc:subject:message-id;
+  bh=9vnWkvfIvxhk+XgvdFdndli9DADzHU5RjJT8llrpn8I=;
+  b=crcWPeQ93l7ItMkXPgnQE88zZ3uefRW+AG+sssirAH/j6jC/dicfQWSu
+   m/5gu2XLYqflfwy9T5LB5lK63YMfa/tpaOdxOSqub0XjI9u0Y12X9/JRG
+   HCR9SLJW/fcinGJ6DspJ6gZZ/VCqB9Gk2YV5xILuTyS2PJ51t13gTF1zo
+   VlaZXx1QzxkKcWJeQAdcGklVivNhWwOixVl8H/m58TsOI/0ppMVtsJ8q+
+   mlNsDP7g+qnYKbZwRFUw44TOe/4fsLnLY7/PPwBHe0bWb8+AC80J+Yzt5
+   0M5GRq5qA4NFN4BUmNOKhKdY5kmENvuyKGrjWkbqPY49PVi9RdhqCb9Ox
+   Q==;
+X-CSE-ConnectionGUID: Tnk3I5w0T0edi03UdKSWqQ==
+X-CSE-MsgGUID: foqNgvccSsagKBsTi0z+5w==
+X-IronPort-AV: E=McAfee;i="6800,10657,11463"; a="55750223"
+X-IronPort-AV: E=Sophos;i="6.16,234,1744095600"; 
+   d="scan'208";a="55750223"
+Received: from orviesa002.jf.intel.com ([10.64.159.142])
+  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Jun 2025 13:56:18 -0700
+X-CSE-ConnectionGUID: 2sqWKL4NRwu2PMyZeyU5Iw==
+X-CSE-MsgGUID: SF5o0oIBQ7eCYQ9sF/bC7Q==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,234,1744095600"; 
+   d="scan'208";a="178814022"
+Received: from lkp-server01.sh.intel.com (HELO e8142ee1dce2) ([10.239.97.150])
+  by orviesa002.jf.intel.com with ESMTP; 13 Jun 2025 13:56:17 -0700
+Received: from kbuild by e8142ee1dce2 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1uQBRe-000D02-2T;
+	Fri, 13 Jun 2025 20:56:14 +0000
+Date: Sat, 14 Jun 2025 04:56:05 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:master] BUILD SUCCESS
+ 7fb79ce2693c94f8f74bf62ad25a97e4b61721b8
+Message-ID: <202506140455.H3ezcAqD-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_043454_278289_3596E50E 
-X-CRM114-Status: GOOD (  26.18  )
+X-CRM114-CacheID: sfid-20250613_135622_569864_47EA989E 
+X-CRM114-Status: UNSURE (   3.77  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,261 +83,153 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
+branch HEAD: 7fb79ce2693c94f8f74bf62ad25a97e4b61721b8  Add localversion-wireless-testing-ath
 
-Reminder
+elapsed time: 1449m
 
-On 5/28/25 10:25 AM, Muhammad Usama Anjum wrote:
-> Soft reminder
-> 
-> On 5/16/25 11:49 PM, Muhammad Usama Anjum wrote:
->> Fix dma_direct_alloc() failure at resume time during bhie_table
->> allocation because of memory pressure. There is a report where at
->> resume time, the memory from the dma doesn't get allocated and MHI
->> fails to re-initialize.
->>
->> To fix it, don't free the memory at power down during suspend /
->> hibernation. Instead, use the same allocated memory again after every
->> resume / hibernation. This patch has been tested with resume and
->> hibernation both.
->>
->> Optimize the rddm and fbc bhie allocations. The rddm is of constant
->> size for a given hardware. While the fbc_image size depends on the
->> firmware. If the firmware changes, we'll free and allocate new memory
->> for it. This patch is motivated from the ath12k [1] and ath11k [2]
->> patches. They don't free the memory and reuse the same memory if new
->> size is same. The firmware caching hasn't been implemented for the
->> drivers other than in the nouveau. (The changing of firmware isn't
->> tested/supported for wireless drivers. But let's follow the example
->> patches here.)
->>
->> [1] https://lore.kernel.org/all/20240419034034.2842-1-quic_bqiang@quicinc.com/
->> [2] https://lore.kernel.org/all/20220506141448.10340-1-quic_akolli@quicinc.com/
->>
->> Tested-on: WCN6855 WLAN.HSP.1.1-03926.13-QCAHSPSWPL_V2_SILICONZ_CE-2.52297.6
->> Tested-on: WCN7850 hw2.0 WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>
->> Acked-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
->> Tested-by: Baochen Qiang <quic_bqiang@quicinc.com>
->> Signed-off-by: Muhammad Usama Anjum <usama.anjum@collabora.com>
->> ---
->> Changes since v1:
->> - Don't free bhie tables during suspend/hibernation only
->> - Handle fbc_image changed size correctly
->> - Remove fbc_image getting set to NULL in *free_bhie_table()
->>
->> Changes since v2:
->> - Remove the new mhi_partial_unprepare_after_power_down() and instead
->>   update mhi_power_down_keep_dev() to use
->>   mhi_power_down_unprepare_keep_dev() as suggested by Mani
->> - Update all users of this API such as ath12k (previously only ath11k
->>   was updated)
->> - Define prev_fw_sz in docs
->> - Do better alignment of comments
->>
->> Changes since v3:
->> - Fix state machine of ath12k by setting ATH12K_MHI_DEINIT with
->>   ATH12K_MHI_POWER_OFF_KEEP_DEV state (Thanks Sebastian for testing and
->>   finding the problem)
->> - Use static with mhi_power_down_unprepare_keep_dev()
->> - Remove crash log as it was showing that kworker wasn't able to
->>   allocate memory.
->>
->> Changes since v4:
->> - Update description
->> - Use __mhi_power_down_unprepare_keep_dev() in
->>   mhi_unprepare_after_power_down()
->>
->> Changes since v5:
->> - Update description to don't give an impression that all bhie
->>   allocations are being fixed. mhi_load_image_bhie() doesn't require
->>   this optimization.
->>
->> This patch doesn't have fixes tag as we are avoiding error in case of
->> memory pressure. We are just making this driver more robust by not
->> freeing the memory and using the same after resuming.
->> ---
->>  drivers/bus/mhi/host/boot.c           | 15 +++++++++++----
->>  drivers/bus/mhi/host/init.c           | 18 ++++++++++++------
->>  drivers/bus/mhi/host/internal.h       |  2 ++
->>  drivers/bus/mhi/host/pm.c             |  1 +
->>  drivers/net/wireless/ath/ath11k/mhi.c |  8 ++++----
->>  drivers/net/wireless/ath/ath12k/mhi.c | 14 ++++++++++----
->>  include/linux/mhi.h                   |  2 ++
->>  7 files changed, 42 insertions(+), 18 deletions(-)
->>
->> diff --git a/drivers/bus/mhi/host/boot.c b/drivers/bus/mhi/host/boot.c
->> index efa3b6dddf4d2..bc8459798bbee 100644
->> --- a/drivers/bus/mhi/host/boot.c
->> +++ b/drivers/bus/mhi/host/boot.c
->> @@ -584,10 +584,17 @@ void mhi_fw_load_handler(struct mhi_controller *mhi_cntrl)
->>  	 * device transitioning into MHI READY state
->>  	 */
->>  	if (fw_load_type == MHI_FW_LOAD_FBC) {
->> -		ret = mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->fbc_image, fw_sz);
->> -		if (ret) {
->> -			release_firmware(firmware);
->> -			goto error_fw_load;
->> +		if (mhi_cntrl->fbc_image && fw_sz != mhi_cntrl->prev_fw_sz) {
->> +			mhi_free_bhie_table(mhi_cntrl, mhi_cntrl->fbc_image);
->> +			mhi_cntrl->fbc_image = NULL;
->> +		}
->> +		if (!mhi_cntrl->fbc_image) {
->> +			ret = mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->fbc_image, fw_sz);
->> +			if (ret) {
->> +				release_firmware(firmware);
->> +				goto error_fw_load;
->> +			}
->> +			mhi_cntrl->prev_fw_sz = fw_sz;
->>  		}
->>  
->>  		/* Load the firmware into BHIE vec table */
->> diff --git a/drivers/bus/mhi/host/init.c b/drivers/bus/mhi/host/init.c
->> index 13e7a55f54ff4..8419ea8a5419b 100644
->> --- a/drivers/bus/mhi/host/init.c
->> +++ b/drivers/bus/mhi/host/init.c
->> @@ -1173,8 +1173,9 @@ int mhi_prepare_for_power_up(struct mhi_controller *mhi_cntrl)
->>  		/*
->>  		 * Allocate RDDM table for debugging purpose if specified
->>  		 */
->> -		mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->rddm_image,
->> -				     mhi_cntrl->rddm_size);
->> +		if (!mhi_cntrl->rddm_image)
->> +			mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->rddm_image,
->> +					     mhi_cntrl->rddm_size);
->>  		if (mhi_cntrl->rddm_image) {
->>  			ret = mhi_rddm_prepare(mhi_cntrl,
->>  					       mhi_cntrl->rddm_image);
->> @@ -1200,6 +1201,14 @@ int mhi_prepare_for_power_up(struct mhi_controller *mhi_cntrl)
->>  }
->>  EXPORT_SYMBOL_GPL(mhi_prepare_for_power_up);
->>  
->> +void __mhi_unprepare_keep_dev(struct mhi_controller *mhi_cntrl)
->> +{
->> +	mhi_cntrl->bhi = NULL;
->> +	mhi_cntrl->bhie = NULL;
->> +
->> +	mhi_deinit_dev_ctxt(mhi_cntrl);
->> +}
->> +
->>  void mhi_unprepare_after_power_down(struct mhi_controller *mhi_cntrl)
->>  {
->>  	if (mhi_cntrl->fbc_image) {
->> @@ -1212,10 +1221,7 @@ void mhi_unprepare_after_power_down(struct mhi_controller *mhi_cntrl)
->>  		mhi_cntrl->rddm_image = NULL;
->>  	}
->>  
->> -	mhi_cntrl->bhi = NULL;
->> -	mhi_cntrl->bhie = NULL;
->> -
->> -	mhi_deinit_dev_ctxt(mhi_cntrl);
->> +	__mhi_unprepare_keep_dev(mhi_cntrl);
->>  }
->>  EXPORT_SYMBOL_GPL(mhi_unprepare_after_power_down);
->>  
->> diff --git a/drivers/bus/mhi/host/internal.h b/drivers/bus/mhi/host/internal.h
->> index ce566f7d2e924..41b3fb835880b 100644
->> --- a/drivers/bus/mhi/host/internal.h
->> +++ b/drivers/bus/mhi/host/internal.h
->> @@ -427,4 +427,6 @@ void mhi_unmap_single_no_bb(struct mhi_controller *mhi_cntrl,
->>  void mhi_unmap_single_use_bb(struct mhi_controller *mhi_cntrl,
->>  			     struct mhi_buf_info *buf_info);
->>  
->> +void __mhi_unprepare_keep_dev(struct mhi_controller *mhi_cntrl);
->> +
->>  #endif /* _MHI_INT_H */
->> diff --git a/drivers/bus/mhi/host/pm.c b/drivers/bus/mhi/host/pm.c
->> index e6c3ff62bab1d..c2c09c308b9b7 100644
->> --- a/drivers/bus/mhi/host/pm.c
->> +++ b/drivers/bus/mhi/host/pm.c
->> @@ -1263,6 +1263,7 @@ void mhi_power_down_keep_dev(struct mhi_controller *mhi_cntrl,
->>  			       bool graceful)
->>  {
->>  	__mhi_power_down(mhi_cntrl, graceful, false);
->> +	__mhi_unprepare_keep_dev(mhi_cntrl);
->>  }
->>  EXPORT_SYMBOL_GPL(mhi_power_down_keep_dev);
->>  
->> diff --git a/drivers/net/wireless/ath/ath11k/mhi.c b/drivers/net/wireless/ath/ath11k/mhi.c
->> index acd76e9392d31..c5dc776b23643 100644
->> --- a/drivers/net/wireless/ath/ath11k/mhi.c
->> +++ b/drivers/net/wireless/ath/ath11k/mhi.c
->> @@ -460,12 +460,12 @@ void ath11k_mhi_stop(struct ath11k_pci *ab_pci, bool is_suspend)
->>  	 * workaround, otherwise ath11k_core_resume() will timeout
->>  	 * during resume.
->>  	 */
->> -	if (is_suspend)
->> +	if (is_suspend) {
->>  		mhi_power_down_keep_dev(ab_pci->mhi_ctrl, true);
->> -	else
->> +	} else {
->>  		mhi_power_down(ab_pci->mhi_ctrl, true);
->> -
->> -	mhi_unprepare_after_power_down(ab_pci->mhi_ctrl);
->> +		mhi_unprepare_after_power_down(ab_pci->mhi_ctrl);
->> +	}
->>  }
->>  
->>  int ath11k_mhi_suspend(struct ath11k_pci *ab_pci)
->> diff --git a/drivers/net/wireless/ath/ath12k/mhi.c b/drivers/net/wireless/ath/ath12k/mhi.c
->> index 08f44baf182a5..3af524ccf4a5a 100644
->> --- a/drivers/net/wireless/ath/ath12k/mhi.c
->> +++ b/drivers/net/wireless/ath/ath12k/mhi.c
->> @@ -601,6 +601,12 @@ static int ath12k_mhi_set_state(struct ath12k_pci *ab_pci,
->>  
->>  	ath12k_mhi_set_state_bit(ab_pci, mhi_state);
->>  
->> +	/* mhi_power_down_keep_dev() has been updated to DEINIT without
->> +	 * freeing bhie tables
->> +	 */
->> +	if (mhi_state == ATH12K_MHI_POWER_OFF_KEEP_DEV)
->> +		ath12k_mhi_set_state_bit(ab_pci, ATH12K_MHI_DEINIT);
->> +
->>  	return 0;
->>  
->>  out:
->> @@ -635,12 +641,12 @@ void ath12k_mhi_stop(struct ath12k_pci *ab_pci, bool is_suspend)
->>  	 * workaround, otherwise ath12k_core_resume() will timeout
->>  	 * during resume.
->>  	 */
->> -	if (is_suspend)
->> +	if (is_suspend) {
->>  		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_POWER_OFF_KEEP_DEV);
->> -	else
->> +	} else {
->>  		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_POWER_OFF);
->> -
->> -	ath12k_mhi_set_state(ab_pci, ATH12K_MHI_DEINIT);
->> +		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_DEINIT);
->> +	}
->>  }
->>  
->>  void ath12k_mhi_suspend(struct ath12k_pci *ab_pci)
->> diff --git a/include/linux/mhi.h b/include/linux/mhi.h
->> index dd372b0123a6d..6fd218a877855 100644
->> --- a/include/linux/mhi.h
->> +++ b/include/linux/mhi.h
->> @@ -306,6 +306,7 @@ struct mhi_controller_config {
->>   *           if fw_image is NULL and fbc_download is true (optional)
->>   * @fw_sz: Firmware image data size for normal booting, used only if fw_image
->>   *         is NULL and fbc_download is true (optional)
->> + * @prev_fw_sz: Previous firmware image data size, when fbc_download is true
->>   * @edl_image: Firmware image name for emergency download mode (optional)
->>   * @rddm_size: RAM dump size that host should allocate for debugging purpose
->>   * @sbl_size: SBL image size downloaded through BHIe (optional)
->> @@ -382,6 +383,7 @@ struct mhi_controller {
->>  	const char *fw_image;
->>  	const u8 *fw_data;
->>  	size_t fw_sz;
->> +	size_t prev_fw_sz;
->>  	const char *edl_image;
->>  	size_t rddm_size;
->>  	size_t sbl_size;
-> 
-> 
+configs tested: 133
+configs skipped: 5
 
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
--- 
-Regards,
-Usama
+tested configs:
+alpha                             allnoconfig    gcc-15.1.0
+alpha                            allyesconfig    gcc-15.1.0
+arc                              allmodconfig    gcc-15.1.0
+arc                               allnoconfig    gcc-15.1.0
+arc                              allyesconfig    gcc-15.1.0
+arc                          axs103_defconfig    gcc-15.1.0
+arc                   randconfig-001-20250613    gcc-12.4.0
+arc                   randconfig-002-20250613    gcc-12.4.0
+arm                              allmodconfig    gcc-15.1.0
+arm                               allnoconfig    clang-21
+arm                              allyesconfig    gcc-15.1.0
+arm                       aspeed_g5_defconfig    gcc-15.1.0
+arm                          collie_defconfig    gcc-15.1.0
+arm                      footbridge_defconfig    clang-17
+arm                        multi_v7_defconfig    gcc-15.1.0
+arm                          pxa3xx_defconfig    clang-21
+arm                   randconfig-001-20250613    clang-21
+arm                   randconfig-002-20250613    clang-20
+arm                   randconfig-003-20250613    gcc-8.5.0
+arm                   randconfig-004-20250613    clang-21
+arm                             rpc_defconfig    clang-18
+arm                         s5pv210_defconfig    gcc-15.1.0
+arm64                            allmodconfig    clang-19
+arm64                             allnoconfig    gcc-15.1.0
+arm64                 randconfig-001-20250613    gcc-15.1.0
+arm64                 randconfig-002-20250613    clang-21
+arm64                 randconfig-003-20250613    clang-21
+arm64                 randconfig-004-20250613    gcc-15.1.0
+csky                              allnoconfig    gcc-15.1.0
+csky                                defconfig    gcc-15.1.0
+csky                  randconfig-001-20250613    gcc-15.1.0
+csky                  randconfig-002-20250613    gcc-15.1.0
+hexagon                          allmodconfig    clang-17
+hexagon                           allnoconfig    clang-21
+hexagon                          allyesconfig    clang-21
+hexagon               randconfig-001-20250613    clang-21
+hexagon               randconfig-002-20250613    clang-21
+i386                             allmodconfig    gcc-12
+i386                              allnoconfig    gcc-12
+i386                             allyesconfig    gcc-12
+i386        buildonly-randconfig-001-20250613    gcc-12
+i386        buildonly-randconfig-002-20250613    gcc-11
+i386        buildonly-randconfig-003-20250613    gcc-12
+i386        buildonly-randconfig-004-20250613    clang-20
+i386        buildonly-randconfig-005-20250613    clang-20
+i386        buildonly-randconfig-006-20250613    gcc-12
+i386                                defconfig    clang-20
+loongarch                        allmodconfig    gcc-15.1.0
+loongarch                         allnoconfig    gcc-15.1.0
+loongarch             randconfig-001-20250613    gcc-15.1.0
+loongarch             randconfig-002-20250613    gcc-15.1.0
+m68k                             allmodconfig    gcc-15.1.0
+m68k                              allnoconfig    gcc-15.1.0
+m68k                             allyesconfig    gcc-15.1.0
+m68k                          amiga_defconfig    gcc-15.1.0
+m68k                       bvme6000_defconfig    gcc-15.1.0
+microblaze                       allmodconfig    gcc-15.1.0
+microblaze                        allnoconfig    gcc-15.1.0
+microblaze                       allyesconfig    gcc-15.1.0
+mips                              allnoconfig    gcc-15.1.0
+mips                  cavium_octeon_defconfig    gcc-15.1.0
+mips                           ip30_defconfig    gcc-15.1.0
+mips                       rbtx49xx_defconfig    gcc-15.1.0
+nios2                         3c120_defconfig    gcc-14.2.0
+nios2                             allnoconfig    gcc-14.2.0
+nios2                 randconfig-001-20250613    gcc-11.5.0
+nios2                 randconfig-002-20250613    gcc-11.5.0
+openrisc                          allnoconfig    gcc-15.1.0
+openrisc                         allyesconfig    gcc-15.1.0
+openrisc                            defconfig    gcc-15.1.0
+parisc                           allmodconfig    gcc-15.1.0
+parisc                            allnoconfig    gcc-15.1.0
+parisc                           allyesconfig    gcc-15.1.0
+parisc                              defconfig    gcc-15.1.0
+parisc                generic-32bit_defconfig    gcc-15.1.0
+parisc                randconfig-001-20250613    gcc-8.5.0
+parisc                randconfig-002-20250613    gcc-13.3.0
+powerpc                          allmodconfig    gcc-15.1.0
+powerpc                           allnoconfig    gcc-15.1.0
+powerpc                          allyesconfig    clang-21
+powerpc               randconfig-001-20250613    clang-21
+powerpc               randconfig-002-20250613    gcc-8.5.0
+powerpc               randconfig-003-20250613    gcc-9.3.0
+powerpc64             randconfig-001-20250613    gcc-8.5.0
+powerpc64             randconfig-002-20250613    gcc-8.5.0
+powerpc64             randconfig-003-20250613    gcc-10.5.0
+riscv                            allmodconfig    clang-21
+riscv                             allnoconfig    gcc-15.1.0
+riscv                               defconfig    clang-21
+riscv                 randconfig-001-20250613    gcc-8.5.0
+riscv                 randconfig-002-20250613    clang-21
+s390                             allmodconfig    clang-18
+s390                              allnoconfig    clang-21
+s390                             allyesconfig    gcc-15.1.0
+s390                                defconfig    clang-21
+s390                  randconfig-001-20250613    clang-21
+s390                  randconfig-002-20250613    clang-21
+sh                               allmodconfig    gcc-15.1.0
+sh                                allnoconfig    gcc-15.1.0
+sh                               allyesconfig    gcc-15.1.0
+sh                                  defconfig    gcc-15.1.0
+sh                          r7785rp_defconfig    gcc-15.1.0
+sh                    randconfig-001-20250613    gcc-15.1.0
+sh                    randconfig-002-20250613    gcc-15.1.0
+sh                           se7722_defconfig    gcc-15.1.0
+sparc                            allmodconfig    gcc-15.1.0
+sparc                             allnoconfig    gcc-15.1.0
+sparc                 randconfig-001-20250613    gcc-10.3.0
+sparc                 randconfig-002-20250613    gcc-13.3.0
+sparc64                             defconfig    gcc-15.1.0
+sparc64               randconfig-001-20250613    gcc-15.1.0
+sparc64               randconfig-002-20250613    gcc-8.5.0
+um                               allmodconfig    clang-19
+um                                allnoconfig    clang-21
+um                               allyesconfig    gcc-12
+um                                  defconfig    clang-21
+um                             i386_defconfig    gcc-12
+um                    randconfig-001-20250613    gcc-12
+um                    randconfig-002-20250613    gcc-12
+um                           x86_64_defconfig    clang-21
+x86_64                            allnoconfig    clang-20
+x86_64                           allyesconfig    clang-20
+x86_64      buildonly-randconfig-001-20250613    clang-20
+x86_64      buildonly-randconfig-002-20250613    gcc-12
+x86_64      buildonly-randconfig-003-20250613    gcc-12
+x86_64      buildonly-randconfig-004-20250613    gcc-12
+x86_64      buildonly-randconfig-005-20250613    clang-20
+x86_64      buildonly-randconfig-006-20250613    gcc-12
+x86_64                              defconfig    gcc-11
+x86_64                          rhel-9.4-rust    clang-18
+xtensa                            allnoconfig    gcc-15.1.0
+xtensa                randconfig-001-20250613    gcc-8.5.0
+xtensa                randconfig-002-20250613    gcc-15.1.0
+
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
