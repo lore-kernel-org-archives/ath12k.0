@@ -4,66 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC41DC71136
-	for <ath12k@archiver.kernel.org>; Tue, 17 Jun 2025 18:13:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AACCBC71136
+	for <ath12k@archiver.kernel.org>; Tue, 17 Jun 2025 23:32:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Subject:From:To:MIME-Version:Date:Message-ID:Reply-To:Cc:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=3u4qLKfb397aX1P24I5aGQfLrhnWGivekUrKmYfnFEI=; b=0Te+DMCrS4/hYxUjXGYqro2IhB
-	hvAiXq1E2244/+pAQLsp2Tjevs+apPwwt3puSO6+i6zGql5DpSUWxJIfm9UDilwJRhIk50iTFtp/p
-	l63UMzk2fwFecPOWycc1/3V+FsBgdwND6NN+o8sed9y+P+O+qr5gXQhzsYGKW/O3XruVNR4xTTCLm
-	PLroi+qijcdi7QNQhg8epByZmiYmpyww+cLvLoo6TFVh5oRGCp4w996oTYkywcp3JuHElDP2jpiz+
-	flSWSw2Uj1f4J9TYvY37Xi9F2K7kJLAB9AcM+yXS/DsOPY2+HEqzngNJk9XLphhzgGC6RXDNmNIA6
-	Nu8/soxQ==;
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=dODIc8OFkSO8WoD+zVzC4mGUSGgBpu7XdBLKDQWE4A8=; b=xmP/PvVGioA8E2Q/XlDQ6X/dsb
+	p3uieCyoFjPgq7B/2LQTkLi8KqqbvpA2tL8Lj5pGZ7kQyF91rLsAQfCa2OJOdb1yScNMpW1lFVDDO
+	NXKYZRA3r+fJUYUb9Of7CV958z0DEYTbq7jUPFPQ/V3/brLT6QEaCZQYU2bp3l+4SIcNUdjW17jTR
+	OZ3Y4IV2XoEUcw8sbc+QTPIEoeDOgTteJBSRkt8+9AeI1RreAxewjykhIgAyayX+NLrvOsxil+4t1
+	7pZ/N6sk8u8ug9QEpIhfywaEIRv1jYZpbysYfekXfcjPopCIQRU+YtmMuQrluayYwScuy4hbIyKFM
+	XqHyD2Fg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRaoH-000000087if-1yJl;
-	Tue, 17 Jun 2025 18:13:25 +0000
-Received: from dispatch1-us1.ppe-hosted.com ([148.163.129.52])
+	id 1uRfnH-00000008cki-1Rdh;
+	Tue, 17 Jun 2025 23:32:43 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRaoE-000000087i5-1yWc
+	id 1uRfmv-00000008cho-2qgd
 	for ath12k@lists.infradead.org;
-	Tue, 17 Jun 2025 18:13:23 +0000
-X-Virus-Scanned: Proofpoint Essentials engine
-Received: from mail3.candelatech.com (mail.candelatech.com [208.74.158.173])
-	by mx1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTP id A58C410008D
-	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 18:13:19 +0000 (UTC)
-Received: from [192.168.100.159] (unknown [50.251.239.81])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
-	(No client certificate requested)
-	by mail3.candelatech.com (Postfix) with ESMTPSA id B640B13C2B0
-	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 11:13:18 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com B640B13C2B0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
-	s=default; t=1750183998;
-	bh=a+3ebFaGV8MKJwgrGdDENjf/U2827zKk5/GeBIPfL7Q=;
-	h=Date:To:From:Subject:From;
-	b=PkubJB6o1AW30+byo1zQbtq7Uvw3oDyaiZXo0+GTuM6xKZZKN7bsg8W1fWjxMzzOd
-	 rGB0JkkLxp28vzE/kI6o+s2id4OQ7QS/6g2OfKo1707wHE1e3DEk6Jk+9B4OPwL2I/
-	 PAF6eS+Ja5XYrV0u7PxgoVQDnAbGaRsWhd2ZFtEs=
-Message-ID: <27b1829e-f033-d2dd-26b2-a47c2bfd9594@candelatech.com>
-Date: Tue, 17 Jun 2025 11:13:17 -0700
+	Tue, 17 Jun 2025 23:32:22 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55HMxDfV019929
+	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 23:32:21 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	dODIc8OFkSO8WoD+zVzC4mGUSGgBpu7XdBLKDQWE4A8=; b=OH02isDSDD8gvmKN
+	GZrwiHPWVfxFJ9KSdroBV6FJwAT21NS9c5E7anB7usEcDX6tpTQWsCeU7QMH4Dwf
+	iOw6zjuUz6CggRwKW2e3hYanSR9E78e+1xrcojr+Ki6yu6C2FaR/UQVDHEDxrT+G
+	X9+V7y5rf4YFJUp9QVpmVNdUfEQgB/h2b1CR2ceORUsfBNIOmrevw+gnOOCuz2a/
+	ARVGSC+YyWJgJNG9UfJ8qtpHr3K4l8eJYC8AssNCawZQcGjxCaS2WsaMgDDJi4+S
+	EE6RmSDMkJ6JfgJf4+togpmcrwe4lAW9bQ9RKvGgqb6J2PdPnVzi9RsiJVs38vUc
+	iZ6rTA==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4791hfj5fd-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 23:32:21 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b31831b0335so4536621a12.3
+        for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 16:32:21 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750203140; x=1750807940;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=dODIc8OFkSO8WoD+zVzC4mGUSGgBpu7XdBLKDQWE4A8=;
+        b=AB1iaObq6BXAX/E6GxB9qTN8vf4ym/JulXR691uwTQ2aWMw3Dn+74041icT8Y36XrY
+         M0a5SReoRhicsZP7tWOQmrOp64qIMCSGCOBz386GO3SuqAAfNnqjARJcgrEEjp/oavHh
+         xjSgKLkeL/6v3xk4HSVdBKPF089FKOS1Cj36euNBriZH/2g8qZaY+kYvRR40Q3WBzVxN
+         cU6VvKmdvUrdnPMDk1t2xtTzkjOmq6nGvoUvsGTfmXNTcPxoSz/kzq97t+jjqK467RSw
+         fqQC/U/a49sKRqueBTF7wo8wCaOvMD7e5qJgT5qU4Opb4YAPtw27Lp8BNVbKg4jMec2B
+         aojg==
+X-Forwarded-Encrypted: i=1; AJvYcCVi4wVZIfAOOLgq9LVlOD0P/W07ZXUtCmy81gpdXrg6TZGeG0CwKDS3Dok0EoxjvRr40wNrDTQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwmVuiMYDRec1Oy2ivlYac4499frDgX89BjhyZjXvLgnDetZuvy
+	zDuq/Ov1/2H+JZfncyU6UBBhjoUTIFGNO2UFfkJoQwBWUqn8hWB+0BzGkszkZv7s+OT7iG3DCwc
+	E1GPqfMb+rGeb3eCurIIeGN16QBTR8Q69T6HcPEzRFPVZmEGAO+mS+oesaizYGemt
+X-Gm-Gg: ASbGncsW9RzOlMxyGQNHb+opWIzxX/0rRqFVpT8fWGziEKgMz5ae3eNYQP/wkeN1o3u
+	uOikug0QaMr5cjhskgnMpt0h1y6R/OlpGt65MDdUmP2B1wa4tXqotQuUTfbsapjy0bT5yIi9BxC
+	KHZ2X3zaxFWNNTjc/UMG3IhOIBqjcVqeZXGVkwy/WRGRaVQ0o1mk/IB+4LKjmtxuC2/xrkwM3E0
+	WITpGSNM0cENhMUAq8Qi+SRnU+hf8GJzWCUe4IxnEXTkMqjyFuLVoz+H8d5+FUS6WZXjOqkTgQZ
+	LC0zrbuzltPcvnBtN29BJkp9zY5LNtdmHlNUAEuCxNpEKYQhcvY8gQi0oK0=
+X-Received: by 2002:a17:90b:17c5:b0:310:cea4:e3b9 with SMTP id 98e67ed59e1d1-313f1d2d2efmr19221090a91.34.1750203140278;
+        Tue, 17 Jun 2025 16:32:20 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFkZl7s1slbbiEI7nNWQRSVCNx06U+xoTDxO2I1beV25xpGDydiPIMLlLVlSbnf7tvxYkQIbg==
+X-Received: by 2002:a17:90b:17c5:b0:310:cea4:e3b9 with SMTP id 98e67ed59e1d1-313f1d2d2efmr19221052a91.34.1750203139809;
+        Tue, 17 Jun 2025 16:32:19 -0700 (PDT)
+Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-313c19b84e5sm12731527a91.2.2025.06.17.16.32.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 17 Jun 2025 16:32:19 -0700 (PDT)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: Jeff Johnson <jjohnson@kernel.org>,
+        Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+In-Reply-To: <20250522-ath12k-sbs-dbs-v1-0-54a29e7a3a88@quicinc.com>
+References: <20250522-ath12k-sbs-dbs-v1-0-54a29e7a3a88@quicinc.com>
+Subject: Re: [PATCH ath-next 0/6] wifi: ath12k: handle link select and
+ inactivate
+Message-Id: <175020313899.3793705.13608281635495302018.b4-ty@oss.qualcomm.com>
+Date: Tue, 17 Jun 2025 16:32:18 -0700
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-To: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
-Content-Language: en-US
-From: Ben Greear <greearb@candelatech.com>
-Subject: MLMR support in ath12k
-Organization: Candela Technologies
-Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-MDID: 1750184000-7UaLoYV7fB4j
-X-PPE-STACK: {"stack":"us5"}
-X-MDID-O: us5;ut7;1750184000;7UaLoYV7fB4j;<greearb@candelatech.com>;5bad664179c033c86d3002bbc8bae2aa
-X-PPE-TRUSTED: V=1;DIR=OUT;
+X-Mailer: b4 0.14.2
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE3MDE5MiBTYWx0ZWRfXyAx+HLmWoLPq
+ mA6+zEK4mP/Sq2YyiqF11LKMR59+Sl60QS8x9a9HWoYzOpOD5DQ+wg2aPn+VG0ih27IYMQhwKyR
+ MS8+EWcyoaoMmtlNY1lJZU2oJNaIPdU56AC8SMiU3vmXjxeh7uww2oVRc6B4wUbSTVrLphwajW0
+ iB9cnHMmM4HBiE47VA3F11zopdGOqhoAvViedcE2SP0orwJoX1by6SWx1b4oFD2LI4pjEmPJTKk
+ 6YKltMU+WgjfyXH0oicPJ8o2br+fbs5VQfJmvY7lO4w2DbcYLEA2RqaStrzHF2iRpjbAPcDUy/R
+ U42biuzDKkcrqETcNO3Ctp5pFvwlJHwxrt6qEa2AByiGK6DHaGhm5yPAGjJt4R1IpaPcvmFG6VB
+ SCh69sS2bJZkw7Sspum7gmm9MNG2CootQ8Dgknmm2PyRWaEJjGlfwgr+dQB2sM5JfjOYGC5I
+X-Authority-Analysis: v=2.4 cv=VvEjA/2n c=1 sm=1 tr=0 ts=6851fb05 cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=KkTelb30UcioZhBSqh4A:9
+ a=QEXdDO2ut3YA:10 a=bFCP_H2QrGi7Okbo017w:22
+X-Proofpoint-GUID: LEzGNa-sfWPyVRCs7TqyZFKo_YGIKeCm
+X-Proofpoint-ORIG-GUID: LEzGNa-sfWPyVRCs7TqyZFKo_YGIKeCm
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-17_09,2025-06-13_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 mlxscore=0 lowpriorityscore=0 spamscore=0 mlxlogscore=916
+ malwarescore=0 impostorscore=0 clxscore=1015 bulkscore=0 suspectscore=0
+ priorityscore=1501 phishscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2506170192
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_111322_550115_0ACFE369 
-X-CRM114-Status: UNSURE (   6.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250617_163221_725240_2A002373 
+X-CRM114-Status: GOOD (  10.00  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,16 +130,37 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello,
 
-Are there any known-working ath12k pcie radios (from Compex, for instance?)
-that support station MLMR in upstream kernel? (Having to add some findable out-of-tree
-patches is fine, we can deal with that).
+On Thu, 22 May 2025 16:54:09 +0800, Baochen Qiang wrote:
+> Currently host activate all useful links:
+> 
+> 	ieee80211_set_active_links(vif, ieee80211_vif_usable_links(vif))
+> 
+> this leads to 2 issues:
+> 
+> 1#: If 2 links are created/activated on the same device, and both channels
+> used by them fall on the same hardware MAC, throughput would be lower
+> compared with even one link due to MAC switching between them.
+> 
+> [...]
 
-Thanks,
-Ben
+Applied, thanks!
+
+[1/6] wifi: ath12k: parse and save hardware mode info from WMI_SERVICE_READY_EXT_EVENTID event for later use
+      commit: 062ade23991e556a14bbb27c1cf873c34dbd9d28
+[2/6] wifi: ath12k: parse and save sbs_lower_band_end_freq from WMI_SERVICE_READY_EXT2_EVENTID event
+      commit: 241d130f1419fd99923d99aff6e40490a4c34d93
+[3/6] wifi: ath12k: update freq range for each hardware mode
+      commit: e47b11e3bd34177af6669ef0945eb23dd4da3bcb
+[4/6] wifi: ath12k: support WMI_MLO_LINK_SET_ACTIVE_CMDID command
+      commit: c36f2cd628f9df6ffb19c23eedaa666440b8f5c5
+[5/6] wifi: ath12k: update link active in case two links fall on the same MAC
+      commit: 2296038fd35a6e57af77496affe9044293ed2947
+[6/6] wifi: ath12k: don't activate more links than firmware supports
+      commit: d9dbc6b8b94ab41fb8b9dbb5a7be024029d46309
+
+Best regards,
 -- 
-Ben Greear <greearb@candelatech.com>
-Candela Technologies Inc  http://www.candelatech.com
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
 
