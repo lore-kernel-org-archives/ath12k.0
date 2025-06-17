@@ -4,122 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09EB0C71155
-	for <ath12k@archiver.kernel.org>; Tue, 17 Jun 2025 03:36:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE2E0C7115D
+	for <ath12k@archiver.kernel.org>; Tue, 17 Jun 2025 04:22:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=SXaiysyC/M+/tDpGKqLEbinKnxqzYegzIqQucICqSuk=; b=2Y35Cl1R76UqmnFUWCvfMpplol
-	Os5gVHojd2zpCWEM4G5GnxaGSrcbZVmFZO8WabZ3qDn55fMXD45nBVMQfR4IID8o3tHrOTQbvK5kc
-	yfdzYfyeFIcQFtu6v/AO54zSufg+1UPFSzL6I6+1T/UqmtFjohsVA9CqTxWLcxv2/Br76ISKumZDs
-	pzCPKO2UqmIn5UD4GdnmsMh7JBEzPXiWfn9mCNsFNxFh/N0R0ptruhzMkOdePXFCg/GSHbs8jjFiS
-	/S7BGBQHbOec5xWaojgd7HNjPNJ7vTms98mUA/cBnKDiIfwQvRPnMXr/ZurnMRdPKDeuInmlRRnjA
-	B2oDUNXQ==;
+	bh=TFtHlomxUhb+fVN6uvypKjU5ZiAYfyZWZ4BPYNO8LPk=; b=me7eI1oiHBzHZxbZPx6EiKkls+
+	GeTDohtkEJmAiSSkm6+pNQT+BSyADQggkB9iqrPbtGT2uy5pqSGkEOWluqkIdOieYgnMP6jEZfx8E
+	MnkAlXjlO78FUO71dho9BzI3uwG+5CL7HMv1vXCyTeWB1vdLeUcWUTigQgFyMx5Jx0ngxxA3v16sK
+	punsuKVFkIFCwAJUqBhQSEpjxuFbXKh1Z0DGN+ZqhZZhSkETw/3sqW06jdlh49tE4SdXqCV1/ybm0
+	h/BQxi2S3bKIzYOzkVIAvh7BqIuGHNCSnAt+IY+iFzmrF+MuuOzskbMtIqcR4ZkXCoXGDKxP9jbMh
+	D7gefybw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRN7M-000000066ta-2IW1;
-	Tue, 17 Jun 2025 03:36:12 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uRNq5-000000069HJ-1Rqt;
+	Tue, 17 Jun 2025 04:22:25 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRN7I-000000066tG-07OD
+	id 1uRNq1-000000069Gk-1frS
 	for ath12k@lists.infradead.org;
-	Tue, 17 Jun 2025 03:36:11 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55GH51xW005319
-	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 03:36:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	Tue, 17 Jun 2025 04:22:22 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55GI2up9005767;
+	Tue, 17 Jun 2025 04:22:19 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=SXaiysyC/M+/tDpGKqLEbi
-	nKnxqzYegzIqQucICqSuk=; b=FO3C1lS8x/gja3snDKyAey/S7EZk3Y4I7V3Qn8
-	SK7GcLHrkvVE9egepyeFKTRX7U4FIY7XVbYyDrKYMSxOYj+RPH0svVGFh+JyDOhe
-	wnG3q1Sy6lUkohWROBWrEErCC9KsEON7Qk+WIzD1SKJH6fEtKPWedPqHevc1ACdK
-	h16Jo/NSSQqgE4x8E83wYhbl/lSqHiQ4UqFHBEIzCPTBFfGRO6HlQFpSfwP1YuJC
-	yE52MgDZNJZQxrIX5q4pdbpV30wyRX/SIglt/FCXfmgNjM8Y1XirbLFTgVwlCEz0
-	X9Kj725JJgUtYKVm99tYo3/9BHIvOeQ9pO4zYZNtu52Ts/uw==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ag232umx-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 03:36:06 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-3132c8437ffso6090114a91.1
-        for <ath12k@lists.infradead.org>; Mon, 16 Jun 2025 20:36:06 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750131365; x=1750736165;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=SXaiysyC/M+/tDpGKqLEbinKnxqzYegzIqQucICqSuk=;
-        b=Fz/3ryWsyPPPTVflez/ur+TRy6lyBpP4snlpDimCcMmJ4uxeRvuiHn3NCoe36JKGIP
-         jytto7fzU1e6xMXrBCTgekzYD0qTAMj+GILQTLU5ckEMKLNzLg1pDVW6fXHn7khNzfYs
-         jy0PADT/yH/QhZDdU+QryKblair6OaiUZmK9njVSSUs9njk9PKObeMk49oKj6GJFir7q
-         gwIMJ2FioprOBKWxxZf9u7e6zu39F2goSN9Owh4EAsKqTtGugf4YV4u/16TZudg92Qli
-         s/6X1mny0Us1vIXZbc4f+0Ovo/9UBDzW3J67T9swR1RQMnkQI4VtrUa9qwT7+blGl3q3
-         Rsuw==
-X-Forwarded-Encrypted: i=1; AJvYcCUrsb3vU88LoIcx0/O3ogIjnHOF1V3qRrk9/2GhfRitgq+pvq03ZLTOkA/x1cNMgcE9ML+5Sug=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzZ4VVZf5tgHpBQR2uLOofonaa1auBvmAujJ2ZK9+L1GiVepbKi
-	cIVn+kZuLeRlQxquCDIyf6alPq04gl3JgUewrn2sE4uKNqF+vDC5uJdlR6calGEoCqQ04zUy4+b
-	Vjf/4ZcNzSib2Vi4kt3hi5m/x2PtpM2F2GrvEM8zupO8ccrP/DOxB6Exs/cy30eh7TDzIaJzW
-X-Gm-Gg: ASbGncuJCovhqh6qdzdtc8fgxGSm7GBrY6w3JoPlPnFnTT+bWAlrm0GM9PE/F91g2cP
-	vQeRV8T0kK2Sl522Q3XmNNT43ZduIXrG3FqnLpbU+PZ/+HqVBWsn7yZyYXXWoMla7cNXz0g3sng
-	P1sBSExciddOWeLUiaiguEtJ3eN8KOw1euKoZ/IyvP4Uu+Clv3SeguQrAfvGQkEX0a8fci6ipkv
-	7VwNk9UoZXRMjcieRQWr5dwr7UYBc2o1UAAT8zFT/hZZ1XjFOz5JvIwPPBV9aFmey2Q3GDul9MV
-	NxdJWiu+40TzjhfheYSYCSAzLoQOKwHdcXuDpHeTT187HWlPCQyK72pYoXDYxQM1gU1pd4xqQ9f
-	m9/0TdqX0or+Z/J+4rs28eZjAwYzocA52+FHIYW2BuiM7K7U=
-X-Received: by 2002:a17:90b:4e90:b0:312:f88d:260b with SMTP id 98e67ed59e1d1-313f1c07f88mr20268769a91.14.1750131364617;
-        Mon, 16 Jun 2025 20:36:04 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IH8F9gocBMZScl0mlUsjSwGe6dHuZffl7cW0gp2NR649XWeFN4k80zvim3Vf1qS+FoYNQ95Ew==
-X-Received: by 2002:a17:90b:4e90:b0:312:f88d:260b with SMTP id 98e67ed59e1d1-313f1c07f88mr20268699a91.14.1750131364049;
-        Mon, 16 Jun 2025 20:36:04 -0700 (PDT)
-Received: from hu-adisi-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2365d8a1fa0sm69273695ad.86.2025.06.16.20.36.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Jun 2025 20:36:03 -0700 (PDT)
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Date: Tue, 17 Jun 2025 09:05:59 +0530
-Subject: [PATCH ath-next v2] wifi: ath12k: handle regulatory hints during
- mac registration
+	:mime-version:subject:to; s=qcppdkim1; bh=TFtHlomxUhb+fVN6uvypKj
+	U5ZiAYfyZWZ4BPYNO8LPk=; b=FB9gXlzJlV+eflAsv7VXmw2xM+fQQSFjdA5Vv5
+	eMXhbq9NeDsJJXKowve6WnYugLSXHgdHQvwjEz+ZFn5djkLe/EQl1kB7xiiHtRmX
+	7lV8NKpVTqEYLSbcjJVOfbyg81oZdEZeIJXkTpeMmz7r1LCtf6QFoIFem0gRnU3x
+	QMHMH1roEcuHT6ECKJPgWO5RmNG5kG5JDOfxpzhB4/SmQ6hKeqAywO/6OWFXF09U
+	9EOPzUWJrWJcqAq/5iY+MZUchzpr0d7A2vDVIqSfS6iFKXqbpkfqp8/p+bgRdEyv
+	8ad58UOjJI1mF0qYGruSZzWP16ZOGDPECk9BNcr3b97CX/Tw==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4791hcxtha-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 17 Jun 2025 04:22:18 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55H4MIuY028867
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 17 Jun 2025 04:22:18 GMT
+Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1748.10; Mon, 16 Jun 2025 21:22:16 -0700
+From: Roopni Devanathan <quic_rdevanat@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Saleemuddin Shaik
+	<quic_saleemud@quicinc.com>,
+        Roopni Devanathan <quic_rdevanat@quicinc.com>
+Subject: [PATCH ath-next] wifi: ath12k: Add support for transmit histogram stats
+Date: Tue, 17 Jun 2025 09:51:41 +0530
+Message-ID: <20250617042141.215540-1-quic_rdevanat@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20250617-handle_user_regd_update_hints_during_insmod-v2-1-10a6a48efe81@oss.qualcomm.com>
-X-B4-Tracking: v=1; b=H4sIAJ7iUGgC/6WQwW7DIAyGX6XiPCogAZKd9h5ThWhsEqQGOkiiV
- lXefSSXHbYd1l0s2b/8f7/9IBmTx0xeDw+ScPHZx1Aa8XIg3WBDj9RD6YlgQjIpBC1DuKCZy55
- J2IOZr2AnNIMPUzYwJx9640MeI9BadJojalc1ihTHa0LnbzvtndhpoAFvEzkVZfB5ium+x1j4r
- j9FXDjltLHONiAr3bT2LeZ8/JjtpYvjeCxly7FbK/6EtdTqDMwpOCP7br1dsoh/pBcFUUNTO+Y
- k007/gqi+EIrzvyGq7UFtCxI7BNe6HxDrun4CJfPahRgCAAA=
-X-Change-ID: 20250522-handle_user_regd_update_hints_during_insmod-42c71ee7f386
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org,
-        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Proofpoint-ORIG-GUID: SR-xnNwNLvB3dvhlbeJQhZgTRkn5p-so
-X-Authority-Analysis: v=2.4 cv=edY9f6EH c=1 sm=1 tr=0 ts=6850e2a6 cx=c_pps
- a=RP+M6JBNLl+fLTcSJhASfg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=cjyl3gcxlCMcS8tmzmQA:9
- a=QEXdDO2ut3YA:10 a=iS9zxrgQBfv6-_F4QbHw:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE3MDAyOSBTYWx0ZWRfX58/p/VryN3tw
- xOGhD0FWT1J7t/zD1wqyizMp+1/pU+/5btqF2x8+SzX8v3n3xVZjRY0zcwOwauNkYJ783KKNNrY
- 1Ri2k1BKtjIFcaOIbSC4c/GkivbcFFgl1gEyJXKmTLtYEcIgWYxz1e/W2a6To/XmkzyQEiR48ee
- QGNbdhhkE3GilyNq0N+hjk7CEMKOVuyLnI9oxkyNMrohHJH7u+yCfOiGUiqP8zxiDXszy8MJWuj
- BubGGgCt3OAVTZqjJhcApVJ0aHuFNZXHM00Qx70azgHkTo1jkvW5C7VlPcplMzHTA1I5KAermXK
- OPgtlrjNZZb0mBFKIqm4GxBFccaJmhVxF2SFtYmm2C8Q+mS+knCd5Aqpz8jCk00+ItTaAm0oL3c
- ZF+wnbwXiWUXk6j/UviexQURihJ5GFXwm9x0BHU/CBP16DSDqXGdskHodNNHZuaAyY8gbZ3k
-X-Proofpoint-GUID: SR-xnNwNLvB3dvhlbeJQhZgTRkn5p-so
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE3MDAzNCBTYWx0ZWRfXw+r0ao7QjUac
+ 1LjvDUxLiWIP3/7jcdWkyOYTNP7zDilBjvTPz9uzVxapqJgEA7HwtETi2qT+Od0+kDNfxsGQcAn
+ znv9Cl6W+xqRBsKglzOnvhpGPy1TiinRZKDeDbOLZcdxn63Qk3Q3POGU/3fCKJBQ243Z0b2D9aE
+ WhZlPzdekkm9LFUFaz9mcDqbG8wVB9KD612ANajAkuMwfmJDCI5/WHsB7iSjOFip0VIvnwj3p1r
+ k0ZBBCrbd6Fztj+9jzDT/61Da1Qfzg9CdfGSYUTlRPWszYYA14MFO1ags+MyoZ1iHmwwfc/q3k5
+ WgJYymoB7LVjrxK2872FCGKqHGcn9aLVigBVorh+VFdwnOWhBmfJvXY0+/L+h4WOKhGt9elx7oL
+ Roc7Az46vgYmUSV8ULEEzO/lTsjZKIaOkU/TaTvyo4H6icLePSqld4KPamYKmcGRioVZ8N6k
+X-Authority-Analysis: v=2.4 cv=PtaTbxM3 c=1 sm=1 tr=0 ts=6850ed7b cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8 a=7xaFyXMt0exzL7mAYkQA:9
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: wSRmgSfF8H0-Ie6vlXV0cbMV2nGfdYBU
+X-Proofpoint-GUID: wSRmgSfF8H0-Ie6vlXV0cbMV2nGfdYBU
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-06-17_01,2025-06-13_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 priorityscore=1501 suspectscore=0 spamscore=0 bulkscore=0
- impostorscore=0 mlxscore=0 clxscore=1015 mlxlogscore=999 malwarescore=0
- phishscore=0 adultscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2506170029
+ bulkscore=0 clxscore=1011 mlxlogscore=999 suspectscore=0 malwarescore=0
+ lowpriorityscore=0 impostorscore=0 adultscore=0 spamscore=0
+ priorityscore=1501 phishscore=0 mlxscore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2506170034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250616_203608_258241_EAE68EE9 
-X-CRM114-Status: GOOD (  27.21  )
+X-CRM114-CacheID: sfid-20250616_212221_481992_73F52F1D 
+X-CRM114-Status: GOOD (  13.50  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,245 +108,145 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-If a regulatory notification is there in the system while the hardware is
-being registered, it attempts to set the new regulatory country. However,
-ath12k currently boots with a default country derived from the BDF. If this
-default country differs from the one provided in the notification, a race
-condition can occur while updating the regulatory information back to
-userspace. This potentially leads to driver having the incorrect regulatory
-applied.
+From: Saleemuddin Shaik <quic_saleemud@quicinc.com>
 
-For example, suppose the regulatory domain for France (FR) is already
-applied, and then the driver is loaded with a BDF that has the United
-States (US) country programmed. When the driver finishes loading, the
-regulatory domain shown in phyX still reflects the US regulatory settings.
-This is incorrect, as the driver had already received a notification for
-FR during hardware registration, but failed to process it properly due to
-the race condition.
+Add support for transmit histogram stats under HTT stats type 9. These
+stats give information about drop count, MCS drop rate, histogram
+count, etc.
 
-The race condition exists during driver initialization and hardware
-registration:
-- On driver load, the firmware sends BDF-based country regulatory rules,
-  which are stored in default_regd via ath12k_reg_handle_chan_list().
+Note: WCN7850 firmware version -
+WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3 does not support tag
+HTT_STATS_TX_PDEV_HISTOGRAM_STATS_TAG(144), currently.
 
-- During hardware registration, a regulatory notification is triggered
-  through:
-    ath12k_mac_hw_register()
-      -> ieee80211_register_hw()
-        -> wiphy_register()
-          -> wiphy_regulatory_register()
-            -> reg_call_notifier()
+Sample output:
+echo 9 > /sys/kernel/debug/ath12k/pci-0000\:58\:00.0/mac0/htt_stats_type
+cat /sys/kernel/debug/ath12k/pci-0000\:58\:00.0/mac0/htt_stats
+...
+low_latency_rate_cnt =  0
+su_burst_rate_drop_cnt = 0
+su_burst_rate_drop_fail_cnt = 0
+rate_retry_mcs_drop_cnt = 0
 
-  This sends a country code to the firmware, which responds with updated
-  regulatory rules.
-
-- After registration, ath12k_mac_hw_register() calls ath12k_regd_update(),
-  which copies default_regd and passes it to the upper layers.
-
-The race occurs between the firmware's response and the execution of
-ath12k_regd_update(). If the firmware's new rules are processed before the
-update call, the correct values are used. Otherwise, outdated boot-time
-country settings are exposed to userspace.
-
-To resolve this issue, introduce a completion mechanism within the hardware
-group (ah). Trigger this completion whenever a regulatory change is
-requested from the firmware. Then, in ath12k_regd_update(), wait for the
-firmware to complete its regulatory processing before proceeding with the
-update.
-
-This ensures that during driver load, the default country is processed
-first. However, before ath12k_regd_update() is called, the new regulatory
-notification will have already been received by the driver. As a result, it
-will wait for the firmware's regulatory processing to complete, and only
-the final, correct regulatory domain will be updated to userspace.
+PER_HISTOGRAM_STATS
+mcs_drop_rate =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
+per_histogram_count =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0,
+11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0,
+21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0,
+31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0, 38:0, 39:0, 40:0,
+41:0, 42:0, 43:0, 44:0, 45:0, 46:0, 47:0, 48:0, 49:0, 50:0,
+51:0, 52:0, 53:0, 54:0, 55:0, 56:0, 57:0, 58:0, 59:0, 60:0,
+61:0, 62:0, 63:0, 64:0, 65:0, 66:0, 67:0, 68:0, 69:0, 70:0,
+71:0, 72:0, 73:0, 74:0, 75:0, 76:0, 77:0, 78:0, 79:0, 80:0,
+81:0, 82:0, 83:0, 84:0, 85:0, 86:0, 87:0, 88:0, 89:0, 90:0,
+91:0, 92:0, 93:0, 94:0, 95:0, 96:0, 97:0, 98:0, 99:0, 100:0
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Signed-off-by: Saleemuddin Shaik <quic_saleemud@quicinc.com>
+Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
 ---
-Changes in v2:
-- Fixed uninitialed variable usage warnings (detected by clang)
----
- drivers/net/wireless/ath/ath12k/core.c |  4 ++++
- drivers/net/wireless/ath/ath12k/core.h |  1 +
- drivers/net/wireless/ath/ath12k/mac.c  | 15 +++++++++++++++
- drivers/net/wireless/ath/ath12k/reg.c  | 12 ++++++++++++
- drivers/net/wireless/ath/ath12k/reg.h  |  2 ++
- drivers/net/wireless/ath/ath12k/wmi.c  | 17 +++++++++++++++--
- 6 files changed, 49 insertions(+), 2 deletions(-)
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 36 ++++++++++++++++++-
+ .../wireless/ath/ath12k/debugfs_htt_stats.h   | 16 +++++++++
+ 2 files changed, 51 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index ebc0560d40e3419130e4caf01c9b91bd9affb3bd..9c18a706dc3ae3b8c5b95d8575e778c8a9c898ba 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1470,6 +1470,7 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
- 			complete(&ar->vdev_setup_done);
- 			complete(&ar->vdev_delete_done);
- 			complete(&ar->bss_survey_done);
-+			complete(&ar->regd_update_completed);
- 
- 			wake_up(&ar->dp.tx_empty_waitq);
- 			idr_for_each(&ar->txmgmt_idr,
-@@ -1509,6 +1510,9 @@ static void ath12k_update_11d(struct work_struct *work)
- 		ar = pdev->ar;
- 
- 		memcpy(&ar->alpha2, &arg.alpha2, 2);
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+index aeaf970339d4..c1da0ac682c3 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+@@ -4720,7 +4720,38 @@ ath12k_htt_print_tx_pdev_rate_stats_tlv(const void *tag_buf, u16 tag_len,
+ 	len += print_array_to_buf(buf, len, "tx_pream", htt_stats_buf->tx_pream,
+ 				  ATH12K_HTT_TX_PDEV_STATS_NUM_PREAMBLE_TYPES, "\n");
+ 	len += print_array_to_buf(buf, len, "tx_dcm", htt_stats_buf->tx_dcm,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_DCM_COUNTERS, "\n");
++				  ATH12K_HTT_TX_PDEV_STATS_NUM_DCM_COUNTERS, "\n\n");
 +
-+		reinit_completion(&ar->regd_update_completed);
++	stats_req->buf_len = len;
++}
 +
- 		ret = ath12k_wmi_send_set_current_country_cmd(ar, &arg);
- 		if (ret)
- 			ath12k_warn(ar->ab,
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 941db6e49d6eaeb03783f7714d433259d887820b..329f3e490a713b179413f73a4024448aedc363fd 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -804,6 +804,7 @@ struct ath12k {
- 	enum ath12k_11d_state state_11d;
- 	u8 alpha2[REG_ALPHA2_LEN];
- 	bool regdom_set_by_user;
-+	struct completion regd_update_completed;
- 
- 	struct completion fw_stats_complete;
- 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 88b59f3ff87af8b48cb3fafcd364fd9ced4ff197..ef2e8398cbe8723c020aff03da5db7fa7fb2245e 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10900,6 +10900,7 @@ ath12k_mac_op_reconfig_complete(struct ieee80211_hw *hw,
- 			struct wmi_set_current_country_arg arg = {};
- 
- 			memcpy(&arg.alpha2, ar->alpha2, 2);
-+			reinit_completion(&ar->regd_update_completed);
- 			ath12k_wmi_send_set_current_country_cmd(ar, &arg);
- 		}
- 
-@@ -12116,6 +12117,16 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 		goto err_cleanup_if_combs;
- 	}
- 
-+	/* Boot-time regulatory updates have already been processed.
-+	 * Mark them as complete now, because after registration,
-+	 * cfg80211 will notify us again if there are any pending hints.
-+	 * We need to wait for those hints to be processed, so it's
-+	 * important to mark the boot-time updates as complete before
-+	 * proceeding with registration.
-+	 */
-+	for_each_ar(ah, ar, i)
-+		complete(&ar->regd_update_completed);
++static inline void
++ath12k_htt_print_histogram_stats_tlv(const void *tag_buf, u16 tag_len,
++				     struct debug_htt_stats_req *stats_req)
++{
++	const struct ath12k_htt_tx_histogram_stats_tlv *stats_buf = tag_buf;
++	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
++	u32 len = stats_req->buf_len;
++	u8 *buf = stats_req->buf;
 +
- 	ret = ieee80211_register_hw(hw);
- 	if (ret) {
- 		ath12k_err(ab, "ieee80211 registration failed: %d\n", ret);
-@@ -12143,6 +12154,9 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 
- 			memcpy(&current_cc.alpha2, ab->new_alpha2, 2);
- 			memcpy(&ar->alpha2, ab->new_alpha2, 2);
++	if (tag_len < sizeof(*stats_buf))
++		return;
 +
-+			reinit_completion(&ar->regd_update_completed);
++	len += scnprintf(buf + len, buf_len - len, "low_latency_rate_cnt =  %u\n",
++			 le32_to_cpu(stats_buf->low_latency_rate_cnt));
++	len += scnprintf(buf + len, buf_len - len, "su_burst_rate_drop_cnt = %u\n",
++			 le32_to_cpu(stats_buf->su_burst_rate_drop_cnt));
++	len += scnprintf(buf + len, buf_len - len, "su_burst_rate_drop_fail_cnt = %u\n",
++			 le32_to_cpu(stats_buf->su_burst_rate_drop_fail_cnt));
++	len += scnprintf(buf + len, buf_len - len, "rate_retry_mcs_drop_cnt = %u\n",
++			 le32_to_cpu(stats_buf->rate_retry_mcs_drop_cnt));
 +
- 			ret = ath12k_wmi_send_set_current_country_cmd(ar, &current_cc);
- 			if (ret)
- 				ath12k_warn(ar->ab,
-@@ -12215,6 +12229,7 @@ static void ath12k_mac_setup(struct ath12k *ar)
- 	init_completion(&ar->scan.on_channel);
- 	init_completion(&ar->mlo_setup_done);
- 	init_completion(&ar->completed_11d_scan);
-+	init_completion(&ar->regd_update_completed);
++	len += scnprintf(buf + len, buf_len - len, "\nPER_HISTOGRAM_STATS\n");
++	len += print_array_to_buf(buf, len, "mcs_drop_rate", stats_buf->mcs_drop_rate,
++				  ATH12K_HTT_TX_PDEV_STATS_NUM_MCS_DROP_COUNTERS, "\n");
++	len += print_array_to_buf(buf, len, "per_histogram_count",
++				  stats_buf->per_histogram_cnt,
++				  ATH12K_HTT_TX_PDEV_STATS_NUM_PER_COUNTERS, "\n\n");
  
- 	INIT_DELAYED_WORK(&ar->scan.timeout, ath12k_scan_timeout_work);
- 	wiphy_work_init(&ar->scan.vdev_clean_wk, ath12k_scan_vdev_clean_work);
-diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index 2598b39d5d7ee9b24ad8ed5d6de1bc5bbc6554e0..079dcb6d83df4eb487fb0dbf4088fb8cacca8f6e 100644
---- a/drivers/net/wireless/ath/ath12k/reg.c
-+++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -102,6 +102,8 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
- 
- 	/* Send the reg change request to all the radios */
- 	for_each_ar(ah, ar, i) {
-+		reinit_completion(&ar->regd_update_completed);
-+
- 		if (ar->ab->hw_params->current_cc_support) {
- 			memcpy(&current_arg.alpha2, request->alpha2, 2);
- 			memcpy(&ar->alpha2, &current_arg.alpha2, 2);
-@@ -272,9 +274,19 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 	struct ieee80211_regdomain *regd, *regd_copy = NULL;
- 	int ret, regd_len, pdev_id;
- 	struct ath12k_base *ab;
-+	long time_left;
- 
- 	ab = ar->ab;
- 
-+	time_left = wait_for_completion_timeout(&ar->regd_update_completed,
-+						ATH12K_REG_UPDATE_TIMEOUT_HZ);
-+	if (time_left == 0) {
-+		ath12k_warn(ab, "Timeout while waiting for regulatory update");
-+		/* Even though timeout has occurred, still continue since at least boot
-+		 * time data would be there to process
-+		 */
-+	}
-+
- 	supported_bands = ar->pdev->cap.supported_bands;
- 	reg_cap = &ab->hal_reg_cap[ar->pdev_idx];
- 
-diff --git a/drivers/net/wireless/ath/ath12k/reg.h b/drivers/net/wireless/ath/ath12k/reg.h
-index 8af8e9ba462e90db3eb137885d0acd4b1cb2286e..fb508302c7f0f1fea2588ad4cf9d813da574d06b 100644
---- a/drivers/net/wireless/ath/ath12k/reg.h
-+++ b/drivers/net/wireless/ath/ath12k/reg.h
-@@ -13,6 +13,8 @@
- struct ath12k_base;
- struct ath12k;
- 
-+#define ATH12K_REG_UPDATE_TIMEOUT_HZ	(3 * HZ)
-+
- #define ATH12K_2GHZ_MAX_FREQUENCY	2495
- #define ATH12K_5GHZ_MAX_FREQUENCY	5920
- 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 60e2444fe08cefa39ae218d07eb9736d2a0c982b..db839fc835816c9a2d03d194547af506760f6c81 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -6143,7 +6143,8 @@ static void ath12k_wmi_htc_tx_complete(struct ath12k_base *ab,
- static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *skb)
- {
- 	struct ath12k_reg_info *reg_info;
--	u8 pdev_idx;
-+	struct ath12k *ar = NULL;
-+	u8 pdev_idx = 255;
- 	int ret;
- 
- 	reg_info = kzalloc(sizeof(*reg_info), GFP_ATOMIC);
-@@ -6198,7 +6199,7 @@ static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *sk
- 	kfree(reg_info);
- 
- 	if (ret == ATH12K_REG_STATUS_VALID)
--		return ret;
-+		goto out;
- 
- fallback:
- 	/* Fallback to older reg (by sending previous country setting
-@@ -6212,6 +6213,18 @@ static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *sk
- 	WARN_ON(1);
- 
- out:
-+	/* In some error cases, even a valid pdev_idx might not be available */
-+	if (pdev_idx != 255)
-+		ar = ab->pdevs[pdev_idx].ar;
-+
-+	/* During the boot-time update, 'ar' might not be allocated,
-+	 * so the completion cannot be marked at that point.
-+	 * This boot-time update is handled in ath12k_mac_hw_register()
-+	 * before registering the hardware.
-+	 */
-+	if (ar)
-+		complete(&ar->regd_update_completed);
-+
- 	return ret;
+ 	stats_req->buf_len = len;
  }
+@@ -5277,6 +5308,9 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
+ 	case HTT_STATS_TX_PDEV_RATE_STATS_TAG:
+ 		ath12k_htt_print_tx_pdev_rate_stats_tlv(tag_buf, len, stats_req);
+ 		break;
++	case HTT_STATS_TX_PDEV_HISTOGRAM_STATS_TAG:
++		ath12k_htt_print_histogram_stats_tlv(tag_buf, len, stats_req);
++		break;
+ 	case HTT_STATS_RX_PDEV_RATE_STATS_TAG:
+ 		ath12k_htt_print_rx_pdev_rate_stats_tlv(tag_buf, len, stats_req);
+ 		break;
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
+index c2a02cf8a38b..5fc5d8c00355 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
+@@ -237,6 +237,7 @@ enum ath12k_dbg_htt_tlv_tag {
+ 	HTT_STATS_TX_SELFGEN_BE_ERR_STATS_TAG		= 137,
+ 	HTT_STATS_TX_SELFGEN_BE_STATS_TAG		= 138,
+ 	HTT_STATS_TX_SELFGEN_BE_SCHED_STATUS_STATS_TAG	= 139,
++	HTT_STATS_TX_PDEV_HISTOGRAM_STATS_TAG		= 144,
+ 	HTT_STATS_TXBF_OFDMA_AX_NDPA_STATS_TAG		= 147,
+ 	HTT_STATS_TXBF_OFDMA_AX_NDP_STATS_TAG		= 148,
+ 	HTT_STATS_TXBF_OFDMA_AX_BRP_STATS_TAG		= 149,
+@@ -418,6 +419,12 @@ struct ath12k_htt_tx_pdev_mu_ppdu_dist_stats_tlv {
+ #define ATH12K_HTT_TX_PDEV_STATS_NUM_EXTRA_MCS_COUNTERS   2
+ #define ATH12K_HTT_TX_PDEV_STATS_NUM_EXTRA2_MCS_COUNTERS  2
+ #define ATH12K_HTT_TX_PDEV_STATS_NUM_11AX_TRIGGER_TYPES   6
++#define ATH12K_HTT_TX_PDEV_STATS_NUM_PER_COUNTERS	  101
++
++#define ATH12K_HTT_TX_PDEV_STATS_NUM_MCS_DROP_COUNTERS \
++	(ATH12K_HTT_TX_PDEV_STATS_NUM_MCS_COUNTERS + \
++	 ATH12K_HTT_TX_PDEV_STATS_NUM_EXTRA_MCS_COUNTERS + \
++	 ATH12K_HTT_TX_PDEV_STATS_NUM_EXTRA2_MCS_COUNTERS)
  
+ struct ath12k_htt_tx_pdev_rate_stats_tlv {
+ 	__le32 mac_id_word;
+@@ -472,6 +479,15 @@ struct ath12k_htt_tx_pdev_rate_stats_tlv {
+ 	__le32 tx_bw_320mhz;
+ };
+ 
++struct ath12k_htt_tx_histogram_stats_tlv {
++	__le32 rate_retry_mcs_drop_cnt;
++	__le32 mcs_drop_rate[ATH12K_HTT_TX_PDEV_STATS_NUM_MCS_DROP_COUNTERS];
++	__le32 per_histogram_cnt[ATH12K_HTT_TX_PDEV_STATS_NUM_PER_COUNTERS];
++	__le32 low_latency_rate_cnt;
++	__le32 su_burst_rate_drop_cnt;
++	__le32 su_burst_rate_drop_fail_cnt;
++};
++
+ #define ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_CCK_STATS		4
+ #define ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_OFDM_STATS		8
+ #define ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS		12
 
----
 base-commit: 7fb79ce2693c94f8f74bf62ad25a97e4b61721b8
-change-id: 20250522-handle_user_regd_update_hints_during_insmod-42c71ee7f386
+-- 
+2.25.1
 
 
