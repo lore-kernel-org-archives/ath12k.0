@@ -4,118 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95963C7115F
-	for <ath12k@archiver.kernel.org>; Tue, 17 Jun 2025 17:13:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC41DC71136
+	for <ath12k@archiver.kernel.org>; Tue, 17 Jun 2025 18:13:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+7OGmGpdvF+qEviVeVrWV/kac47I6U3U5/16oRtFhks=; b=KC/cGWMijUC9k81bU7cxcFhl/M
-	bZxcc6N2pG39LfQRX1G65Gv7QRFU9SIqWLxFJ9UZWQNMCjYzS/qkIu6K9hMss04d581zaOA7eXfKK
-	1fRXcCbG5hCWwNDOs91andWw6L9a6YJdt80joiFKdH03cOxDrXc/WEOamN2/6JFFToyrC5nm+1dme
-	scrLQOTVu148trh74SpmykBWrf6SgzC7ZdQz3FyFoqJFnz0wdoewAIk5hiOc7TKerKw9R3WOsRij1
-	i+j5XkFtMrpvD9mVfE37S4qxgJpps1tDgRcKeY3zVtQFE6nXvJ05wi7xjR/ynSsQlZWSnF9hQIJJV
-	O7wUz+Cg==;
+	Content-Type:Subject:From:To:MIME-Version:Date:Message-ID:Reply-To:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=3u4qLKfb397aX1P24I5aGQfLrhnWGivekUrKmYfnFEI=; b=0Te+DMCrS4/hYxUjXGYqro2IhB
+	hvAiXq1E2244/+pAQLsp2Tjevs+apPwwt3puSO6+i6zGql5DpSUWxJIfm9UDilwJRhIk50iTFtp/p
+	l63UMzk2fwFecPOWycc1/3V+FsBgdwND6NN+o8sed9y+P+O+qr5gXQhzsYGKW/O3XruVNR4xTTCLm
+	PLroi+qijcdi7QNQhg8epByZmiYmpyww+cLvLoo6TFVh5oRGCp4w996oTYkywcp3JuHElDP2jpiz+
+	flSWSw2Uj1f4J9TYvY37Xi9F2K7kJLAB9AcM+yXS/DsOPY2+HEqzngNJk9XLphhzgGC6RXDNmNIA6
+	Nu8/soxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRZrr-000000080k2-1AMT;
-	Tue, 17 Jun 2025 17:13:03 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uRaoH-000000087if-1yJl;
+	Tue, 17 Jun 2025 18:13:25 +0000
+Received: from dispatch1-us1.ppe-hosted.com ([148.163.129.52])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRZKS-00000007tlq-0f2D
+	id 1uRaoE-000000087i5-1yWc
 	for ath12k@lists.infradead.org;
-	Tue, 17 Jun 2025 16:38:33 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55HD92R6026338
-	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 16:38:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+7OGmGpdvF+qEviVeVrWV/kac47I6U3U5/16oRtFhks=; b=nYz01sqBmekgo1M6
-	yJn5/qrHHI9mpTrtoZq09qPOSYd/mCQ134McU6bzpzExB0z1rwcx46DMr5DIFH0D
-	FtcVyfK4kNBdN+bvohUB9p/IuNayvAMYZPm3YR7u8KJBjQh6ND/O7yOjRxnaQ+uY
-	ylyCJGYHc3n0LBkeElBgacnFMwAtNDhHlSvd7Q13TGC9ZoY8wCYqko31gNwKLo1H
-	47smMC9D/430N8AyJCkwkYRcLSn8OVnQhcpCueChS3u6rhWMb8nTkUc0Zf3bPP//
-	0AKmqla1pjnmNAvmRZcV6XgdOfV/j4eFuZ9hgS28IFZ8d0Vn7fs9T1gt9a3RUNuJ
-	8QDCtA==
-Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4791hfh5fg-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 16:38:31 +0000 (GMT)
-Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-748764d84feso8086612b3a.2
-        for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 09:38:31 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750178310; x=1750783110;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=+7OGmGpdvF+qEviVeVrWV/kac47I6U3U5/16oRtFhks=;
-        b=aNb5FM8NeNW5nr9QkdCt7hnlYfF/zHlzfaGyAYiMrGNraVpo9fuJ/9jH5bFbZ1PMOO
-         P1YjagZSKGd/DmLjAlencvk8fo7Du7Cd2PzutMb40MSe9ma4eFDHrBIVjhLkQSkNHqe8
-         ffxWgHmXFx2VFT4n3zQS3f3LlJ87zT/C3fqhEM0XGoUnYAaQGoOERdBJOGZCzfM8c+Hh
-         LjLk1qo+1L8dBQc5GOs1FOPrc8jvq/bohWIMffWrnSilnFx9s5ouxP36wYhpETLGV+OY
-         KvNplZsl4gsB0nm1bddxu0pKSP+uBKOtawRU0kH5x0CVBlcNRrgHQG7EO04CuVI+siaT
-         oVAw==
-X-Gm-Message-State: AOJu0YwwcUK0hiSEtxzGNtJTGJwwn9fiNTpPKFR5EPN2eQg4aoMaWbhn
-	0HQyPJ4Z+GFc6JaGbbAVWRzpmq2P7wmtVdD8/y18hcj0qYoE2S8y6rQv+ejSHYIY5RRpjydVS3c
-	+Zfi7aVfYcZLyt9GvYsY+DxnHQ2SFU2AQ9dtFx/JCbimfYaMSiVmvq8wxd+5tNKFW0fZhi5lo
-X-Gm-Gg: ASbGncvPVU2ZXR2NPCcqPXs35ep0i6cQMnZNYkoJD9ofimh+GoEirCjoekcb7i0X0mt
-	QyiUyJbju+UFEIbwsni9iCPAC/qnySnM55APYWsmSYQC92cV+xB7Z3vyE32plSiaCmxnYatmWIn
-	ZIf/GZ6P94QLRQqOhpScJnHbzYLdEpilGczsKj2g6LQXeuty6bW4aBObpDK0zPR2NK6ZwcXTpFO
-	GYgrWTv4CZclHLq809MfEgbANIktxgVSha1uD2lsH4IwfXtdQ0xPeXTpYiuuhZEW9XVDwo5vTfx
-	ulcyUDgd2IoBS/3pucVuTYWRZwRaqH4QfhzdgwdiU4lN8U3qDKicvJyZXKhkqzyyASlimbGZGae
-	7jVB6FJ3wRdlYnfg=
-X-Received: by 2002:a05:6a00:14cd:b0:748:4652:bff4 with SMTP id d2e1a72fcca58-7489cfcb16amr18730440b3a.13.1750178310060;
-        Tue, 17 Jun 2025 09:38:30 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF2hu6ziKMb+46PhKkOTmrCbrON41+eSFTPnodVUx4lLRh4ASU8DKdDm3GLLpountd7Hx8Hrw==
-X-Received: by 2002:a05:6a00:14cd:b0:748:4652:bff4 with SMTP id d2e1a72fcca58-7489cfcb16amr18730343b3a.13.1750178309523;
-        Tue, 17 Jun 2025 09:38:29 -0700 (PDT)
-Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-748900074f1sm9388829b3a.67.2025.06.17.09.38.28
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 17 Jun 2025 09:38:29 -0700 (PDT)
-Message-ID: <527e2914-abd2-44cb-b2b1-5a6ed2792fc1@oss.qualcomm.com>
-Date: Tue, 17 Jun 2025 09:38:28 -0700
+	Tue, 17 Jun 2025 18:13:23 +0000
+X-Virus-Scanned: Proofpoint Essentials engine
+Received: from mail3.candelatech.com (mail.candelatech.com [208.74.158.173])
+	by mx1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTP id A58C410008D
+	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 18:13:19 +0000 (UTC)
+Received: from [192.168.100.159] (unknown [50.251.239.81])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	by mail3.candelatech.com (Postfix) with ESMTPSA id B640B13C2B0
+	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 11:13:18 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com B640B13C2B0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
+	s=default; t=1750183998;
+	bh=a+3ebFaGV8MKJwgrGdDENjf/U2827zKk5/GeBIPfL7Q=;
+	h=Date:To:From:Subject:From;
+	b=PkubJB6o1AW30+byo1zQbtq7Uvw3oDyaiZXo0+GTuM6xKZZKN7bsg8W1fWjxMzzOd
+	 rGB0JkkLxp28vzE/kI6o+s2id4OQ7QS/6g2OfKo1707wHE1e3DEk6Jk+9B4OPwL2I/
+	 PAF6eS+Ja5XYrV0u7PxgoVQDnAbGaRsWhd2ZFtEs=
+Message-ID: <27b1829e-f033-d2dd-26b2-a47c2bfd9594@candelatech.com>
+Date: Tue, 17 Jun 2025 11:13:17 -0700
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next] wifi: ath12k: Add support for transmit histogram
- stats
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250617042141.215540-1-quic_rdevanat@quicinc.com>
- <0c226bfb-6e0e-4569-89a1-9450cdc038d5@quicinc.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+To: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
 Content-Language: en-US
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-In-Reply-To: <0c226bfb-6e0e-4569-89a1-9450cdc038d5@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
+From: Ben Greear <greearb@candelatech.com>
+Subject: MLMR support in ath12k
+Organization: Candela Technologies
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE3MDEzMSBTYWx0ZWRfX2PA+oZeRSTTm
- glnsw6O1ML7YgaoxLZGop9VUwjEE6H977jHzN3mNCkq4xDPzgfFwG0Utt8cAp23qUOoCn96gEQG
- pvSD3/t19Kz6guaZEHO3SplNMVzXwmU/TI3vDUEx2kvTl3xcrTxIgUjKZYlQcR/2dDPE+PUhrIp
- sf3aRwPkabLoJUsNOk9TnQ7XarUYYO+h4VCgiaqp2j37bclhFohs0wlsmmsLs0eQqY/d3+8dZOa
- A0/t5Fc8f/sug8gDOaOmc7mEHXJ6UO/mj1Nlwqxn7l/gcpnxoNseSIeZ/wCflb/5CyAsioL4BpO
- s2k6QZ587tDPFToTgrkAYomQdbOHILpZt+8F9fGciKsvPNi8P1Kx31g59AhwE/YQ+xv4GJFMLZF
- VEcPZ6Ig3CqhMbnYDNrsosVp0yshysEWhjmiqCXFlHt/7L3xqCI/D1rK7rriVbipg2lcMb15
-X-Authority-Analysis: v=2.4 cv=VvEjA/2n c=1 sm=1 tr=0 ts=68519a07 cx=c_pps
- a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=e70TP3dOR9hTogukJ0528Q==:17
- a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=fErHcR0BBo8NarzEaYoA:9
- a=QEXdDO2ut3YA:10 a=OpyuDcXvxspvyRM73sMx:22
-X-Proofpoint-GUID: sG6wsRP8KkspICYmWkTMKhs8WDV2_PYh
-X-Proofpoint-ORIG-GUID: sG6wsRP8KkspICYmWkTMKhs8WDV2_PYh
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-06-17_07,2025-06-13_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 mlxscore=0 lowpriorityscore=0 spamscore=0 mlxlogscore=779
- malwarescore=0 impostorscore=0 clxscore=1015 bulkscore=0 suspectscore=0
- priorityscore=1501 phishscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2506170131
+X-MDID: 1750184000-7UaLoYV7fB4j
+X-PPE-STACK: {"stack":"us5"}
+X-MDID-O: us5;ut7;1750184000;7UaLoYV7fB4j;<greearb@candelatech.com>;5bad664179c033c86d3002bbc8bae2aa
+X-PPE-TRUSTED: V=1;DIR=OUT;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_093832_232193_81E3BA9D 
-X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-CacheID: sfid-20250617_111322_550115_0ACFE369 
+X-CRM114-Status: UNSURE (   6.40  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -131,12 +78,16 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/17/2025 4:15 AM, Roopni Devanathan wrote:
->> +static inline void
-> 
-> Please kindly ignore this patch, as there is 'inline' keyword usage in function
-> definition. It is caught by wifibot and reported as error. I'll post a v2 of
-> this patch with 'inline' keyword removed.
+Hello,
 
-I've updated my workflow to check for this as well
+Are there any known-working ath12k pcie radios (from Compex, for instance?)
+that support station MLMR in upstream kernel? (Having to add some findable out-of-tree
+patches is fine, we can deal with that).
+
+Thanks,
+Ben
+-- 
+Ben Greear <greearb@candelatech.com>
+Candela Technologies Inc  http://www.candelatech.com
+
 
