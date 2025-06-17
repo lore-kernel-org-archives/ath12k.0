@@ -4,96 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7CADC71157
-	for <ath12k@archiver.kernel.org>; Tue, 17 Jun 2025 11:22:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5753EC71157
+	for <ath12k@archiver.kernel.org>; Tue, 17 Jun 2025 15:16:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=fZEJ1YoW34s+5f12xSDDnyA4iYVdxuW2oCK8xwV/2Yo=; b=y//4CC4t7PO8KJJQRJar0wjg35
-	PU9D+wiGpHE0KIND+NEdAIJ2Lhxa+4A0KX/Vy3qEz102znxU+DX2JTbAl49fdGY8r72GEEbEF22+8
-	3JsgNJ7+/nS+QK8AY6//ZFzWEyj2rsHxfttS9tJE8UaR/3ctL/Ew8xtOOMtEcP4ATZubM5OhaSlZj
-	M58hTfb1LNrddMVl7N3493jk+6S/3fCPJO25aZ3ManBOfAngiOdfqhWokQVhBp/tGGNJR1bO5PE/i
-	7/o7Y/jWRWEIm0lgf3R5b4kCkB3rg3gBJ9qmnhHaIhr8ly/bQTF3vMV2Ubfv01YMSkDHYbRyKRbKL
-	JyEF+ACA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=nysOwYF+hR26j+HKNLN4aGaa8udN6foCr+/NVyt1WUY=; b=c87fV12hrAPcXeGIUuNeEhnXiE
+	1OB/xgATl+Za43wISJ5gZyCzSQPWZe8Sr3lGFDgJHb5KKNqL9v4l2tZ7QQ0ltfcYOgAk7YQ/tLzCe
+	5ud6R0RL9UuSYxm4viHOOK32yCidgi6EoRbMYN13WItVBAFirOq0JH7EU79htrZ3cw0ztUl7JRTpm
+	XBNG8UIM4526r+O8OmJ6eervF3UqM5XF4ch/OXZ/8Yk2L0BXZoQn69m5Xed2xVKMvb6qqmc/tzTEz
+	w8gdy0bLwRSNMVJb01Rz/ktPNT/7CdYpcN/zF+88MGJBPGxKFoqed9ffPy30+w5XFGLXBhKxexelc
+	QrboLZOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRUOD-000000071gJ-1zas;
-	Tue, 17 Jun 2025 11:22:05 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uRY2r-00000007iTj-0Kw9;
+	Tue, 17 Jun 2025 15:16:17 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRUOA-000000071fp-37lU
+	id 1uRXAn-00000007Wd4-2tTZ
 	for ath12k@lists.infradead.org;
-	Tue, 17 Jun 2025 11:22:03 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55H7sLZI018553;
-	Tue, 17 Jun 2025 11:22:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=fZEJ1YoW34s+5f12xSDDny
-	A4iYVdxuW2oCK8xwV/2Yo=; b=H/v7irp5CKl7ax/t5/7A9Kzuxjj61kpeo982BX
-	q8+oMQbkxSsZGa0giNc613tS/uPWNJJiV/fK0rX+6piAw+VFaNm3Xwkm5ZHg+GNb
-	klXcPSaOnOPZaeHWX6HKmP5w/8wBnAWf5K5FCOvESh8VxlJFCTrTK5dyYYm+f0fv
-	PNjBwrwAT8tqJU7GvyAUiYluwxw3Soi5rAege4r/EM++XBrZ/Lz5U4lQ7UbBIPM/
-	Y3WO4eA+M3QAc+IO2IWn24Sy8z58+Ocu/FUwBZcNyGlEVlZbQWm21sMi+5stQy21
-	CXqymJ4rH/ohKTihmAQ8ellmOvtAA2u4DUaVf/9kCytCEDsw==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4791hfg65k-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 17 Jun 2025 11:22:02 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55HBM10p009819
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 17 Jun 2025 11:22:01 GMT
-Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.10; Tue, 17 Jun 2025 04:21:59 -0700
-From: Roopni Devanathan <quic_rdevanat@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Saleemuddin Shaik
-	<quic_saleemud@quicinc.com>,
-        Roopni Devanathan <quic_rdevanat@quicinc.com>
-Subject: [PATCH ath-next v2] wifi: ath12k: Add support for transmit histogram stats
-Date: Tue, 17 Jun 2025 16:51:39 +0530
-Message-ID: <20250617112139.865788-1-quic_rdevanat@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Tue, 17 Jun 2025 14:20:27 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55HE8DJR028159
+	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 14:20:23 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	nysOwYF+hR26j+HKNLN4aGaa8udN6foCr+/NVyt1WUY=; b=gQDuEwvICC+IEjwK
+	gBGCkBbM7hFAvorU/6LBr6CCWmmA3RqrSkeKtzGuYjq6ArKM8Ko4rNFwkt5l/KEQ
+	kHmY4y0Ne0reCWVSXMkibrPvohdRnhykM4tj4tzfIOjzr7Rrsk41TmWu0meuDGJB
+	Km7q6UFn0JRDSZoufbi6zfJ2aRYJcI1CMFp+C+0rMj2f6sYTZNcpUQJdd2lvKVdd
+	dAWpFy1OOCEJqG0zxAcdk+s4e03dkHYgMAgcZwYUNBLbkaaiW9Rr8RLa+4ukds7X
+	5cmIBGCsNffQ9AFQtn0XkY6t1Sh3xTgFWM4sSXZ305xuwiJ8FEp7U6hu3qqsK3f/
+	J9kXEg==
+Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4791f78kgm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 14:20:23 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-b0f807421c9so3720546a12.0
+        for <ath12k@lists.infradead.org>; Tue, 17 Jun 2025 07:20:23 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750170022; x=1750774822;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=nysOwYF+hR26j+HKNLN4aGaa8udN6foCr+/NVyt1WUY=;
+        b=xAGOoP106XzZpxOncBzxXexwKgGBg8Hx6sUXpDs+l1L0SocTT1GV6mWNVDXjOwo8Ca
+         P8ktPs00EqYDLVSvbL1WEYa5UTOkgl9JK6pUU9w6NOB63R0ie9zw6LvI81dCdvuyhb7m
+         dTGB6vjYS5+CR9sAUqZQMhOlSPjpnbCaPLcCSSwebxEGv9z9qL2um5dnoczgaTeeLEIh
+         WqB9bKbYUbOIRSXF4QDL0qR29HuMWDjxlKoLm1vkDNk1E1Les9bYiELDPg2P9qFr7dw0
+         1bZWM1DMO3gElrh2Wj0UYSNbtbBsQjG/70vQhSVSyNkEvewI6+6uH3ZvwAIdlVyXLEG1
+         S2cQ==
+X-Forwarded-Encrypted: i=1; AJvYcCW2YJuoFb5ENelhiqwZh8hvthyvtC9LcBAXO/9jGHDN/97Jvy5LT6wQwD3pTdQVuq/VNawrNQc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwnnoYouB6sQ4p323mkzw6afnFz6svsaihca7hkynTSe/2U4ixk
+	rW6PmZd13CaQ0o05PNW4vTDYrsYJFMGknsmI+QL4BfqZbbGV/ssLBrLFKYzFENl9pkRCH1vj4VW
+	Xt/5P0fnh2Z2ygPaGOdwgcbklqtXlRZ+5UVdUAbXT9qDU+quBSp/hmH/X5KpC27v7
+X-Gm-Gg: ASbGnctoTbZkJ7/Wu8MJJkfpkaT3R5zb9SfGMKVG2EG5JZ3M4+7EVubwL2ZP1U9ALxE
+	ZE65EB1PiBBFO58g+M0aB9+6DXmbtEBZnGO56cykLFoZSUoHtNbaEqmrlDCfgRR/HuYyzUKDFgF
+	yqsKmVBgd3KLZ3uvi83DtsNzR8fdaQRpYeMZRLrcOo6TqlgaJrVFW/+VwSSV1oZ5GvtJEB83osz
+	/RUzKr/UcNGrNUyDE1SyToQl8cgnR0j4eSNmdMOF9GmvWc7/AlAbI/uCMZn63WI8ojVUcgLoV2X
+	GSaPrWbnTzfJoOG+PSGjMBZMvkZDnPFvgKlJqxwo4wyuaVwZ7/kDyCQuYb3cdDH8/0AAQ6HR4oC
+	CCHYZxtLpC1/kcuo=
+X-Received: by 2002:a05:6a20:cd92:b0:21f:8a8a:f752 with SMTP id adf61e73a8af0-21fbd57d944mr22928264637.32.1750170022054;
+        Tue, 17 Jun 2025 07:20:22 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHNdSNGIkCsBR6QkDn6e19pl4RibzbG1sb7JhCOWjIgRkawLMpYuPPWaNCUaYnHs/bzJ7SnrQ==
+X-Received: by 2002:a05:6a20:cd92:b0:21f:8a8a:f752 with SMTP id adf61e73a8af0-21fbd57d944mr22928208637.32.1750170021608;
+        Tue, 17 Jun 2025 07:20:21 -0700 (PDT)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b2fe168c8f7sm7440935a12.65.2025.06.17.07.20.20
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 17 Jun 2025 07:20:21 -0700 (PDT)
+Message-ID: <a0f11976-3324-434e-abdd-51394423affc@oss.qualcomm.com>
+Date: Tue, 17 Jun 2025 07:20:20 -0700
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE3MDA5MSBTYWx0ZWRfXxhkmnGUuPT8+
- FXAsdasZFBR+ylP2Q/3TNv2JXF9Zm5afHZXD/qudyibLMU0UOFZnbrmWn1nwpgBt/baiMncTb5g
- aYm7DKlY5p3bM5HWewQmsF6GsI7gOsvnHoEcr3cZ5uEwpIRnefpD8/4q8f3Qk9EXMABn7zQ0zA+
- BLRtGEcp1ztevz5dw8oyAc3cUF5i1y8DjwLrA1Fq6M+dAow1UBnpb8c1zUTq4n4o0r9u57G1ZG/
- oQcljH9qN4t8AwWZ5T1Q7pxwp4uB4cLCPWZ53Xpy2JFqlHdY4BcdfHzIc7nVtGd+kJ7TQYSO2d7
- iMEqHhky75MiyLH/8PCinQW/XwamUqbZOx0co7KuPg4y2BDmDXcWvlC+JEseZRHso1JI+2+BxYI
- EjxpqyqvpoJG0r/njC51+aLxF+90iqEaLSGda6w8MT44yKEPtU2KXxtODK5kC/cttM7CjseL
-X-Authority-Analysis: v=2.4 cv=VvEjA/2n c=1 sm=1 tr=0 ts=68514fda cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8 a=7xaFyXMt0exzL7mAYkQA:9
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: IT9KXInntEo1fD9Dx-FJ5VwsVtvLtpfz
-X-Proofpoint-ORIG-GUID: IT9KXInntEo1fD9Dx-FJ5VwsVtvLtpfz
+User-Agent: Mozilla Thunderbird
+Subject: Re: High CPU usage from NetworkManager with QCNCM865 (WCN7850)
+To: Baochen Qiang <quic_bqiang@quicinc.com>, g <gregoire.s93@live.fr>,
+        ath12k@lists.infradead.org
+References: <87c2388b-67c3-450f-8257-38855aba0da5@oss.qualcomm.com>
+ <AS8P190MB1205381CAC703C21F90D115F8771A@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
+ <8e0de439-8593-4000-bf36-ef31fb2fd7bc@quicinc.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <8e0de439-8593-4000-bf36-ef31fb2fd7bc@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE3MDExMiBTYWx0ZWRfX5DdYEt2P84Ct
+ cKS1Ee8N7HpCBk2pwJVwivXcQgcWIbLlZ0Yv5njUqbjyRv72QlfOaxE3m7XqiIRRMo8f1C5Q83m
+ viTi3dsR/KHLoUvJZmSUy5k8endwkM8JA1+mPGr9Vp9VkkQlALmneZu9ylisRlKd6zWGmk59thA
+ jS8Fqe5yRxhUJ01y6sVZEILuXzbSFWYAgOwJjK3+n94L6Pk/mOTwU2P4TaX/rhPr8HPXITut7wI
+ aDm532jIT0lhm8EJ7LquyhH3sRuW8NO1eHuJEBcgFk9+R0pSFo3rkFWkCFl+ABRHneDkcze33j8
+ 2MzinSf2ghky+NWj4hAOiIDgCXFXJXHgxmg+Ok2I/MpOvsI4Zh3gcRQ2/Fd7Oci+N0i5XNutBI4
+ x1JYuKEcngM4xPuO1p7G0WOyTKcNeapd6MO7psvci5L+VObqblHnGetppZn3ASXrCW/HdC0c
+X-Proofpoint-GUID: Kn8i6XyoSVnFilJciyewqEsW4kY5bZWw
+X-Proofpoint-ORIG-GUID: Kn8i6XyoSVnFilJciyewqEsW4kY5bZWw
+X-Authority-Analysis: v=2.4 cv=FrIF/3rq c=1 sm=1 tr=0 ts=685179a7 cx=c_pps
+ a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=e70TP3dOR9hTogukJ0528Q==:17
+ a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
+ a=COk6AnOGAAAA:8 a=ohGsJu0LNLhKWa8t5OkA:9 a=QEXdDO2ut3YA:10
+ a=_Vgx9l1VpLgwpw_dHYaR:22 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-06-17_04,2025-06-13_01,2025-03-28_01
+ definitions=2025-06-17_06,2025-06-13_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 mlxscore=0 lowpriorityscore=0 spamscore=0 mlxlogscore=999
- malwarescore=0 impostorscore=0 clxscore=1015 bulkscore=0 suspectscore=0
- priorityscore=1501 phishscore=0 classifier=spam authscore=0 authtc=n/a
+ clxscore=1015 suspectscore=0 spamscore=0 priorityscore=1501
+ lowpriorityscore=0 adultscore=0 mlxlogscore=347 bulkscore=0 impostorscore=0
+ malwarescore=0 phishscore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a
  authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2506170091
+ engine=8.19.0-2505280000 definitions=main-2506170112
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_042202_794011_B39DF384 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20250617_072025_855323_C5F8A435 
+X-CRM114-Status: GOOD (  10.90  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,149 +132,31 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Saleemuddin Shaik <quic_saleemud@quicinc.com>
+On 6/15/2025 7:10 PM, Baochen Qiang wrote:
+> 
+> 
+> On 6/15/2025 4:28 PM, g wrote:
+>> Thanks, but this patch doesn't seem to solve the problem.
+> 
+> Could you merge below two series/patches and try again?
+> 
+> 1#
+> https://patchwork.kernel.org/project/linux-wireless/patch/20250609-ath12k-fw-stats-done-v1-1-2b3624656697@oss.qualcomm.com/
+> 
+> 2#
+> https://patchwork.kernel.org/project/linux-wireless/cover/20250612-ath12k-fw-fixes-v1-0-12f594f3b857@quicinc.com/
 
-Add support for transmit histogram stats under HTT stats type 9. These
-stats give information about drop count, MCS drop rate, histogram
-count, etc.
+Alternately, please try tag ath-pending-202506171413 from the ath tree:
+git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git
 
-Note: WCN7850 firmware version -
-WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3 does not support tag
-HTT_STATS_TX_PDEV_HISTOGRAM_STATS_TAG(144), currently.
+That has several ath12k fix that I'm about to push for the next -rc.
 
-Sample output:
-echo 9 > /sys/kernel/debug/ath12k/pci-0000\:58\:00.0/mac0/htt_stats_type
-cat /sys/kernel/debug/ath12k/pci-0000\:58\:00.0/mac0/htt_stats
-...
-low_latency_rate_cnt =  0
-su_burst_rate_drop_cnt = 0
-su_burst_rate_drop_fail_cnt = 0
-rate_retry_mcs_drop_cnt = 0
+One of the patches currently has the tag:
+Reported-by: g <gregoire.s93@live.fr>
 
-PER_HISTOGRAM_STATS
-mcs_drop_rate =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-per_histogram_count =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0,
-11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0,
-21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0,
-31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0, 38:0, 39:0, 40:0,
-41:0, 42:0, 43:0, 44:0, 45:0, 46:0, 47:0, 48:0, 49:0, 50:0,
-51:0, 52:0, 53:0, 54:0, 55:0, 56:0, 57:0, 58:0, 59:0, 60:0,
-61:0, 62:0, 63:0, 64:0, 65:0, 66:0, 67:0, 68:0, 69:0, 70:0,
-71:0, 72:0, 73:0, 74:0, 75:0, 76:0, 77:0, 78:0, 79:0, 80:0,
-81:0, 82:0, 83:0, 84:0, 85:0, 86:0, 87:0, 88:0, 89:0, 90:0,
-91:0, 92:0, 93:0, 94:0, 95:0, 96:0, 97:0, 98:0, 99:0, 100:0
+That was the "From" of your e-mail that reported the problem.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+If you want me to change that to your full name, let me know what name to use.
 
-Signed-off-by: Saleemuddin Shaik <quic_saleemud@quicinc.com>
-Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
----
-v2:
- - Removed 'inline' keyword from function definition to resolve wifibot
-   error.
----
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 36 ++++++++++++++++++-
- .../wireless/ath/ath12k/debugfs_htt_stats.h   | 16 +++++++++
- 2 files changed, 51 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index aeaf970339d4..0da6c91dd314 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -4720,7 +4720,38 @@ ath12k_htt_print_tx_pdev_rate_stats_tlv(const void *tag_buf, u16 tag_len,
- 	len += print_array_to_buf(buf, len, "tx_pream", htt_stats_buf->tx_pream,
- 				  ATH12K_HTT_TX_PDEV_STATS_NUM_PREAMBLE_TYPES, "\n");
- 	len += print_array_to_buf(buf, len, "tx_dcm", htt_stats_buf->tx_dcm,
--				  ATH12K_HTT_TX_PDEV_STATS_NUM_DCM_COUNTERS, "\n");
-+				  ATH12K_HTT_TX_PDEV_STATS_NUM_DCM_COUNTERS, "\n\n");
-+
-+	stats_req->buf_len = len;
-+}
-+
-+static void
-+ath12k_htt_print_histogram_stats_tlv(const void *tag_buf, u16 tag_len,
-+				     struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_tx_histogram_stats_tlv *stats_buf = tag_buf;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u32 len = stats_req->buf_len;
-+	u8 *buf = stats_req->buf;
-+
-+	if (tag_len < sizeof(*stats_buf))
-+		return;
-+
-+	len += scnprintf(buf + len, buf_len - len, "low_latency_rate_cnt =  %u\n",
-+			 le32_to_cpu(stats_buf->low_latency_rate_cnt));
-+	len += scnprintf(buf + len, buf_len - len, "su_burst_rate_drop_cnt = %u\n",
-+			 le32_to_cpu(stats_buf->su_burst_rate_drop_cnt));
-+	len += scnprintf(buf + len, buf_len - len, "su_burst_rate_drop_fail_cnt = %u\n",
-+			 le32_to_cpu(stats_buf->su_burst_rate_drop_fail_cnt));
-+	len += scnprintf(buf + len, buf_len - len, "rate_retry_mcs_drop_cnt = %u\n",
-+			 le32_to_cpu(stats_buf->rate_retry_mcs_drop_cnt));
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nPER_HISTOGRAM_STATS\n");
-+	len += print_array_to_buf(buf, len, "mcs_drop_rate", stats_buf->mcs_drop_rate,
-+				  ATH12K_HTT_TX_PDEV_STATS_NUM_MCS_DROP_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "per_histogram_count",
-+				  stats_buf->per_histogram_cnt,
-+				  ATH12K_HTT_TX_PDEV_STATS_NUM_PER_COUNTERS, "\n\n");
- 
- 	stats_req->buf_len = len;
- }
-@@ -5277,6 +5308,9 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 	case HTT_STATS_TX_PDEV_RATE_STATS_TAG:
- 		ath12k_htt_print_tx_pdev_rate_stats_tlv(tag_buf, len, stats_req);
- 		break;
-+	case HTT_STATS_TX_PDEV_HISTOGRAM_STATS_TAG:
-+		ath12k_htt_print_histogram_stats_tlv(tag_buf, len, stats_req);
-+		break;
- 	case HTT_STATS_RX_PDEV_RATE_STATS_TAG:
- 		ath12k_htt_print_rx_pdev_rate_stats_tlv(tag_buf, len, stats_req);
- 		break;
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-index c2a02cf8a38b..5fc5d8c00355 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-@@ -237,6 +237,7 @@ enum ath12k_dbg_htt_tlv_tag {
- 	HTT_STATS_TX_SELFGEN_BE_ERR_STATS_TAG		= 137,
- 	HTT_STATS_TX_SELFGEN_BE_STATS_TAG		= 138,
- 	HTT_STATS_TX_SELFGEN_BE_SCHED_STATUS_STATS_TAG	= 139,
-+	HTT_STATS_TX_PDEV_HISTOGRAM_STATS_TAG		= 144,
- 	HTT_STATS_TXBF_OFDMA_AX_NDPA_STATS_TAG		= 147,
- 	HTT_STATS_TXBF_OFDMA_AX_NDP_STATS_TAG		= 148,
- 	HTT_STATS_TXBF_OFDMA_AX_BRP_STATS_TAG		= 149,
-@@ -418,6 +419,12 @@ struct ath12k_htt_tx_pdev_mu_ppdu_dist_stats_tlv {
- #define ATH12K_HTT_TX_PDEV_STATS_NUM_EXTRA_MCS_COUNTERS   2
- #define ATH12K_HTT_TX_PDEV_STATS_NUM_EXTRA2_MCS_COUNTERS  2
- #define ATH12K_HTT_TX_PDEV_STATS_NUM_11AX_TRIGGER_TYPES   6
-+#define ATH12K_HTT_TX_PDEV_STATS_NUM_PER_COUNTERS	  101
-+
-+#define ATH12K_HTT_TX_PDEV_STATS_NUM_MCS_DROP_COUNTERS \
-+	(ATH12K_HTT_TX_PDEV_STATS_NUM_MCS_COUNTERS + \
-+	 ATH12K_HTT_TX_PDEV_STATS_NUM_EXTRA_MCS_COUNTERS + \
-+	 ATH12K_HTT_TX_PDEV_STATS_NUM_EXTRA2_MCS_COUNTERS)
- 
- struct ath12k_htt_tx_pdev_rate_stats_tlv {
- 	__le32 mac_id_word;
-@@ -472,6 +479,15 @@ struct ath12k_htt_tx_pdev_rate_stats_tlv {
- 	__le32 tx_bw_320mhz;
- };
- 
-+struct ath12k_htt_tx_histogram_stats_tlv {
-+	__le32 rate_retry_mcs_drop_cnt;
-+	__le32 mcs_drop_rate[ATH12K_HTT_TX_PDEV_STATS_NUM_MCS_DROP_COUNTERS];
-+	__le32 per_histogram_cnt[ATH12K_HTT_TX_PDEV_STATS_NUM_PER_COUNTERS];
-+	__le32 low_latency_rate_cnt;
-+	__le32 su_burst_rate_drop_cnt;
-+	__le32 su_burst_rate_drop_fail_cnt;
-+};
-+
- #define ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_CCK_STATS		4
- #define ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_OFDM_STATS		8
- #define ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS		12
-
-base-commit: 7fb79ce2693c94f8f74bf62ad25a97e4b61721b8
--- 
-2.25.1
-
+/jeff
 
