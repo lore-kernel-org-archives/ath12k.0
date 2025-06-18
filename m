@@ -4,71 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6639BC7115A
-	for <ath12k@archiver.kernel.org>; Wed, 18 Jun 2025 17:14:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F44AC71157
+	for <ath12k@archiver.kernel.org>; Wed, 18 Jun 2025 19:41:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=2xjZEsBXdZqQCqitWUA6F38whb9B+mnCTBnmw1NWmWs=; b=FC0w6TlxVsuwV/vqn6FGNjRYpy
-	WRJrNPIYaMJz0/lqwNOduaAJ/12EqLV2oESHaSRU7AnBEZINHNkbQbnknVZjyoFzLSKeCeWQ1rM/C
-	G87i6Uqc57xn0luY7+7q7IX6mO19P/VgthF0sXC9SmOEPatw5ktzy0q+zPsUiZTlULpZAhhGg5y85
-	vicQcvUCKq/X2fvKB50YbkVYCApBrY8+RiuUDb2KZX/RtvSWaAI5VfnFNPiNYEaEReeo3/SmHVNOi
-	t/5qI1h+zyMZ1X1+iODFXfLfaYiRurn56kGp1E06FIzia70RSsNyAj+T2n1eRR3ghZtng6xdPJW0P
-	hBVJp2bQ==;
+	bh=Kx8HdG18VyDKXxGTrwIZhfVXBtWZ0wXzBh0CGv9KtfQ=; b=txYseEo9VQTPgVdPKUaujwAXO0
+	ShCmcm3b3n5ducRAMahEr/QSL7+p9d0mWXKbWOFeaLGlmONTRTmikjA8PZ6YDBLCTwlZGySGo9F4h
+	zn4pAhb8kf7RUtLUAm4xuuL97+XH4Xjp413bvtwW2jPgdXOf6bcBqjXhNhUxDcaUL3jmzL6DU3/PV
+	IbXLNu1Y2+opth4ETSEuVhW4fiy6WsVTz8SiJMinJ43wGBLFHjBS5QzPmzeAOJQG0UcpchwW85TH9
+	HztGZHxfSmJZSGrFhnihGE+ekDdNXgp93P4u728jkmF7PVMIkNYgTnjwHpLS3FjtggvIDQSBJjLHx
+	BMUF14QA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRwN2-0000000Ap1T-0fDE;
-	Wed, 18 Jun 2025 17:14:44 +0000
-Received: from mgamail.intel.com ([192.198.163.13])
+	id 1uRyfL-0000000BEeN-2l9R;
+	Wed, 18 Jun 2025 19:41:47 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRv1C-0000000Adq8-0FAx
+	id 1uRxxx-0000000B83w-2YQj
 	for ath12k@lists.infradead.org;
-	Wed, 18 Jun 2025 15:48:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1750261686; x=1781797686;
-  h=date:from:to:cc:subject:message-id;
-  bh=fCD68rYYUxHcGV+kNNnWOjkmrHxNYC19htFtc48hP2k=;
-  b=ZDtoaQ21RWoKe229pE2eRSBrcAsZeirQ5xp012m31oAbNkwyIeeAlzvI
-   xseTcMQANAmpWhXKfcYLSyGAFdpgo0yO96pM68FNm5lg1FQwdoqWQi/Qt
-   C/iep5swQRRglgfC8giCHJ0eJ0FJUkEuhbvT8KBVFVq3KOrPBjai2dqc5
-   4xvJ8odn+6u+SsrClf5GggzhBLoqjLpE3Ase+XPjelIcVsZlp4XoNvltC
-   YBKWF9c9WXibDcvPfrUhjMEQlSIISQV9pMUtaq6cIKUi5AhEcfJXJkbMj
-   5+yFDvFTGEKxyKTm+u1LdTX94KNAectq3bCXVCQE0MmP30QaO6vE7HON+
-   A==;
-X-CSE-ConnectionGUID: 1wePtVGPSQO3W41YY2gq7A==
-X-CSE-MsgGUID: HqV0hF47SGiIhUcCmCCR4w==
-X-IronPort-AV: E=McAfee;i="6800,10657,11468"; a="55107479"
-X-IronPort-AV: E=Sophos;i="6.16,246,1744095600"; 
-   d="scan'208";a="55107479"
-Received: from fmviesa008.fm.intel.com ([10.60.135.148])
-  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Jun 2025 08:48:02 -0700
-X-CSE-ConnectionGUID: NmzX5xzwQA2W9XXoNI4pRg==
-X-CSE-MsgGUID: mRuOfLu8SvqQbt3x2P6z2g==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,246,1744095600"; 
-   d="scan'208";a="150222119"
-Received: from lkp-server01.sh.intel.com (HELO e8142ee1dce2) ([10.239.97.150])
-  by fmviesa008.fm.intel.com with ESMTP; 18 Jun 2025 08:48:01 -0700
-Received: from kbuild by e8142ee1dce2 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uRv15-000Jws-1D;
-	Wed, 18 Jun 2025 15:47:59 +0000
-Date: Wed, 18 Jun 2025 23:47:25 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master-pending] BUILD SUCCESS
- e7175865d7d597b2191ab839c5bc8094fc774959
-Message-ID: <202506182314.drDXh2Fs-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Wed, 18 Jun 2025 18:56:59 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55IIYjLY020826
+	for <ath12k@lists.infradead.org>; Wed, 18 Jun 2025 18:56:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=Kx8HdG18VyDKXxGTrwIZhfVXBtWZ0wXzBh0
+	CGv9KtfQ=; b=Sdpnz0nFoLlZoLjk5gmobP2vDasjPWgR25MWMxgIt3j6h5ffKgW
+	4887MyJorwMz3Gc9lk7h9QQpzlNPKThHvnXNJ9sVwIMu53cHbuCUJfxYuHWv8SPD
+	5B06wLL8LKN3+nY21a4nBJiY4FVzcOMDKS/NVeuuQKhUQKPh59FraLlHZLaCItJM
+	vhOp6sKpjeprSNGOnFFU2kvx5xO/60MzkXfhfrvQdZzHN+IA1OjKCjYj6FL61TW+
+	JgFZir1n5pZEy8BnrEsc1z0RrOCyA+e0JLhfg+0uq2kYHoyROPEn3TdFoBhtK6/I
+	mwqK9A5BIPweSsOViw8KBF0KpGHDmf+y9sA==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4791h9d9br-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 18 Jun 2025 18:56:55 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-234f1acc707so159075ad.3
+        for <ath12k@lists.infradead.org>; Wed, 18 Jun 2025 11:56:54 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750273014; x=1750877814;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Kx8HdG18VyDKXxGTrwIZhfVXBtWZ0wXzBh0CGv9KtfQ=;
+        b=crNuAfIQtacXV6uS1oytt/stZiWm3aRtzWtTVheGGMEx+Ow8kxxjEu2iD8Sq1xVJqi
+         cg4fTmiNxdJgJF6ZhGWSADCOKKeRC8gao/Mj5ocZApYG7dIXK5O+3TclANXOgOXAJyyE
+         1tk5DOlGvmUjDGQ+GPcBQ0zGOkJxrPr3pEkUVLqM8AwZ8R5upBXJPGj/Qtx9pMvuxQ5g
+         t4cisJKp6doSc0I50lFPAs7NRqAcb6GJebE+AXKa9/brgKLvM/T45XI3fNoG9EtmsXa6
+         YwR8lb29a+cil05QsE8BMEkXm7cTiByHfUb8uV48l+Q3VaZr/FAtRQ63CwDxiwuZvAnX
+         lOOA==
+X-Gm-Message-State: AOJu0YxoSA3AYE378H1ft+qXLfRi8o9LEAp7j5Kp1H2MAjstEZ14F5Yt
+	OLRGB46n5GKp4yfq3/oCoHbCbxf6Jx8FMipAOkaUXTjeslbMBB/v8UDzDJRDtHoaFsu8QtLfqU8
+	TMttvBy+k2lOTgWM4rgZskM2URXokadLHBN/TSWyGTpXy6EaDQrDN2kG5y8+yAT//0zqNezjD
+X-Gm-Gg: ASbGncvNu9P9YuDW4p937yg1zcCHv8fEk6YDTe3Wek260P8o2XZ80Fd5C99mAxaeJNk
+	9cHV7O4E/pdDdDGVXPrCRqd+RRO4ktsW81Rs67Jnhdf/l5F5pyPGvKaBvZj4WUPihgz7BmOhfPK
+	IAEBw6+Qp7XeBK0q8JJWooWxDolp69Y5JBYLEvmLLHTAENpUPiSFNp446/Xks5FeGzl8U4pI1zh
+	+jBVWZ4YNHhFC3TBntDPco2gKJwotxsSe8wjOx/mICOcH+3b3vXtrSXt4jEM+84v+VNI9s3A5WO
+	CnXWgulrIfgx1z0nNJVT8Ie6hBM3zjjqV4aP1q4xn2kU5TtQh7/aiRtzQd1j5x05+MjIh3xBnxe
+	ZqqrHZAAccuthtaxDIzAtENNbkCvNacOyN5XrFae3lWzsfFqUdjM=
+X-Received: by 2002:a17:903:1b0c:b0:234:ba37:879e with SMTP id d9443c01a7336-2366b3c3c7cmr296753185ad.38.1750273013618;
+        Wed, 18 Jun 2025 11:56:53 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IF18Jiq7IRmgSlgVAZg7mArKxxi+Si93V0vX3POGyss1Ij62DBzXhixoYtE3oKcfMqpWtXBEw==
+X-Received: by 2002:a17:903:1b0c:b0:234:ba37:879e with SMTP id d9443c01a7336-2366b3c3c7cmr296752875ad.38.1750273013183;
+        Wed, 18 Jun 2025 11:56:53 -0700 (PDT)
+Received: from hu-ramess-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2365e0cffe6sm103589305ad.245.2025.06.18.11.56.51
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 18 Jun 2025 11:56:52 -0700 (PDT)
+From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Subject: [PATCH ath-next] wifi: ath12k: Avoid accessing uninitialized arvif->ar during beacon miss
+Date: Thu, 19 Jun 2025 00:26:35 +0530
+Message-Id: <20250618185635.750470-1-rameshkumar.sundaram@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-ORIG-GUID: svrMf3SihqZa9Nz-z8A0lC4nAhhamXLT
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE4MDE2MiBTYWx0ZWRfX2/26fL83yP3D
+ pSkYczQI5c7TsO+mbw5ixJb7RQNE15p2/9L1e4NL1k6sCSIfb/pbYMWhcb8uKj6keTHAmASJIrm
+ vAaGKBx/ThffI2rAJ7Jr86BsX7e84CjK2IF8dn59JmSsysmLciqZth3D7tpmFQYiWws7oT46NMG
+ U1crkO+PZJMcGssOBZTExPXc7OzsUBdnremv/tG4fvtQrK/JQTpdBUzwE7Tfwn812fYTc38o0QT
+ anYFIgPsPVXtpkmNh9vv5N5SDuld6nPbks/cthDCORM7vnx6ylATsjAjqSBHfjPxjOC1wWq58b0
+ pXZycP/o0SP8hV6lkYnPNfT/JhXD51/pbFhg4y71FdMTxo7rbp1pUrUDorsh+Z64BZzd+wpLqhu
+ T3iE0VERk5H0f4JZm4356/VnAT6hBco7/xkvoihvUnONjBxaVPNVO9tFG9EHK7yVjDC8eG7R
+X-Authority-Analysis: v=2.4 cv=UL/dHDfy c=1 sm=1 tr=0 ts=68530bf7 cx=c_pps
+ a=cmESyDAEBpBGqyK7t0alAg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=oDydKND7yF-1bX00yyYA:9
+ a=1OuFwYUASf3TG4hYMiVC:22
+X-Proofpoint-GUID: svrMf3SihqZa9Nz-z8A0lC4nAhhamXLT
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-18_05,2025-06-18_03,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxscore=0 clxscore=1015 suspectscore=0 priorityscore=1501 adultscore=0
+ lowpriorityscore=0 bulkscore=0 spamscore=0 phishscore=0 mlxlogscore=999
+ malwarescore=0 impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2506180162
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250618_084806_108833_5F9F107F 
-X-CRM114-Status: UNSURE (   4.09  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250618_115657_787184_CE5D2C27 
+X-CRM114-Status: GOOD (  17.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,155 +124,143 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
-branch HEAD: e7175865d7d597b2191ab839c5bc8094fc774959  Merge branch 'pending' into main-pending
+During beacon miss handling, ath12k driver iterates over active virtual
+interfaces (vifs) and attempts to access the radio object (ar) via
+arvif->deflink->ar.
 
-elapsed time: 1449m
+However, after commit aa80f12f3bed ("wifi: ath12k: defer vdev creation for
+MLO"), arvif is linked to a radio only after vdev creation, typically when
+a channel is assigned or a scan is requested.
+For P2P capable devices, a default P2P interface is created by
+wpa_supplicant along with regular station interfaces, these serve as dummy
+interfaces for P2P-capable stations, lack an associated netdev and initiate
+frequent scans to discover neighbor p2p devices. When a scan is initiated
+on such P2P vifs, driver selects destination radio (ar) based on scan
+frequency, creates a scan vdev, and attaches arvif to the radio. Once the
+scan completes or is aborted, the scan vdev is deleted, detaching arvif
+from the radio and leaving arvif->ar uninitialized.
 
-configs tested: 135
-configs skipped: 5
+While handling beacon miss for station interfaces, P2P interface is also
+encountered in the vif iteration and ath12k_mac_handle_beacon_miss_iter()
+tries to dereference the uninitialized arvif->deflink->ar.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+Fix this by verifying that vdev is created for the arvif before accessing
+its ar during beacon miss handling and similar vif iterator callbacks.
 
-tested configs:
-alpha                             allnoconfig    gcc-15.1.0
-alpha                            allyesconfig    gcc-15.1.0
-arc                              allmodconfig    gcc-15.1.0
-arc                               allnoconfig    gcc-15.1.0
-arc                              allyesconfig    gcc-15.1.0
-arc                   randconfig-001-20250618    gcc-11.5.0
-arc                   randconfig-002-20250618    gcc-15.1.0
-arm                              allmodconfig    gcc-15.1.0
-arm                               allnoconfig    clang-21
-arm                              allyesconfig    gcc-15.1.0
-arm                            hisi_defconfig    gcc-15.1.0
-arm                         lpc32xx_defconfig    clang-17
-arm                        neponset_defconfig    gcc-15.1.0
-arm                          pxa3xx_defconfig    clang-21
-arm                   randconfig-001-20250618    gcc-15.1.0
-arm                   randconfig-002-20250618    gcc-10.5.0
-arm                   randconfig-003-20250618    clang-21
-arm                   randconfig-004-20250618    gcc-11.5.0
-arm                       spear13xx_defconfig    gcc-15.1.0
-arm                        vexpress_defconfig    gcc-15.1.0
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-15.1.0
-arm64                 randconfig-001-20250618    clang-21
-arm64                 randconfig-002-20250618    clang-21
-arm64                 randconfig-003-20250618    gcc-14.3.0
-arm64                 randconfig-004-20250618    clang-16
-csky                              allnoconfig    gcc-15.1.0
-csky                  randconfig-001-20250618    gcc-13.3.0
-csky                  randconfig-002-20250618    gcc-15.1.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-hexagon               randconfig-001-20250618    clang-19
-hexagon               randconfig-002-20250618    clang-16
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250618    clang-20
-i386        buildonly-randconfig-002-20250618    gcc-12
-i386        buildonly-randconfig-003-20250618    clang-20
-i386        buildonly-randconfig-004-20250618    clang-20
-i386        buildonly-randconfig-005-20250618    clang-20
-i386        buildonly-randconfig-006-20250618    clang-20
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    gcc-15.1.0
-loongarch                         allnoconfig    gcc-15.1.0
-loongarch             randconfig-001-20250618    gcc-15.1.0
-loongarch             randconfig-002-20250618    gcc-15.1.0
-m68k                             allmodconfig    gcc-15.1.0
-m68k                              allnoconfig    gcc-15.1.0
-m68k                             allyesconfig    gcc-15.1.0
-m68k                       m5208evb_defconfig    gcc-15.1.0
-m68k                          sun3x_defconfig    gcc-15.1.0
-microblaze                       alldefconfig    gcc-15.1.0
-microblaze                       allmodconfig    gcc-15.1.0
-microblaze                        allnoconfig    gcc-15.1.0
-microblaze                       allyesconfig    gcc-15.1.0
-mips                              allnoconfig    gcc-15.1.0
-mips                         db1xxx_defconfig    clang-21
-mips                           ip30_defconfig    gcc-15.1.0
-nios2                            alldefconfig    gcc-14.2.0
-nios2                             allnoconfig    gcc-14.2.0
-nios2                 randconfig-001-20250618    gcc-11.5.0
-nios2                 randconfig-002-20250618    gcc-8.5.0
-openrisc                          allnoconfig    gcc-15.1.0
-openrisc                         allyesconfig    gcc-15.1.0
-openrisc                            defconfig    gcc-15.1.0
-openrisc                       virt_defconfig    gcc-15.1.0
-parisc                           allmodconfig    gcc-15.1.0
-parisc                            allnoconfig    gcc-15.1.0
-parisc                           allyesconfig    gcc-15.1.0
-parisc                              defconfig    gcc-15.1.0
-parisc                randconfig-001-20250618    gcc-10.5.0
-parisc                randconfig-002-20250618    gcc-8.5.0
-powerpc                          allmodconfig    gcc-15.1.0
-powerpc                           allnoconfig    gcc-15.1.0
-powerpc                          allyesconfig    clang-21
-powerpc                      arches_defconfig    gcc-15.1.0
-powerpc               randconfig-001-20250618    gcc-8.5.0
-powerpc               randconfig-002-20250618    clang-19
-powerpc               randconfig-003-20250618    clang-21
-powerpc                     tqm8560_defconfig    gcc-15.1.0
-powerpc64             randconfig-001-20250618    gcc-8.5.0
-powerpc64             randconfig-002-20250618    clang-21
-powerpc64             randconfig-003-20250618    gcc-15.1.0
-riscv                            allmodconfig    clang-21
-riscv                             allnoconfig    gcc-15.1.0
-riscv                            allyesconfig    clang-16
-riscv                               defconfig    clang-21
-riscv                    nommu_k210_defconfig    clang-21
-riscv                 randconfig-001-20250618    clang-20
-riscv                 randconfig-002-20250618    clang-21
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-21
-s390                             allyesconfig    gcc-15.1.0
-s390                                defconfig    clang-21
-s390                  randconfig-001-20250618    gcc-8.5.0
-s390                  randconfig-002-20250618    gcc-15.1.0
-sh                               allmodconfig    gcc-15.1.0
-sh                                allnoconfig    gcc-15.1.0
-sh                               allyesconfig    gcc-15.1.0
-sh                                  defconfig    gcc-15.1.0
-sh                    randconfig-001-20250618    gcc-15.1.0
-sh                    randconfig-002-20250618    gcc-15.1.0
-sh                          sdk7780_defconfig    gcc-15.1.0
-sh                           se7724_defconfig    gcc-15.1.0
-sh                           sh2007_defconfig    gcc-15.1.0
-sparc                            allmodconfig    gcc-15.1.0
-sparc                             allnoconfig    gcc-15.1.0
-sparc                 randconfig-001-20250618    gcc-8.5.0
-sparc                 randconfig-002-20250618    gcc-13.3.0
-sparc64                             defconfig    gcc-15.1.0
-sparc64               randconfig-001-20250618    gcc-13.3.0
-sparc64               randconfig-002-20250618    gcc-8.5.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-um                                  defconfig    clang-21
-um                             i386_defconfig    gcc-12
-um                    randconfig-001-20250618    clang-21
-um                    randconfig-002-20250618    clang-21
-um                           x86_64_defconfig    clang-21
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250618    clang-20
-x86_64      buildonly-randconfig-002-20250618    clang-20
-x86_64      buildonly-randconfig-003-20250618    gcc-12
-x86_64      buildonly-randconfig-004-20250618    clang-20
-x86_64      buildonly-randconfig-005-20250618    clang-20
-x86_64      buildonly-randconfig-006-20250618    gcc-12
-x86_64                              defconfig    gcc-11
-x86_64                          rhel-9.4-rust    clang-18
-xtensa                            allnoconfig    gcc-15.1.0
-xtensa                randconfig-001-20250618    gcc-13.3.0
-xtensa                randconfig-002-20250618    gcc-11.5.0
+==========================================================================
+ wlp6s0: detected beacon loss from AP (missed 7 beacons) - probing
+ KASAN: null-ptr-deref in range [0x0000000000000010-0x0000000000000017]
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+ CPU: 5 UID: 0 PID: 0 Comm: swapper/5 Not tainted 6.16.0-rc1-wt-ath+ #2 PREEMPT(full)
+ RIP: 0010:ath12k_mac_handle_beacon_miss_iter+0xb5/0x1a0 [ath12k]
+ Call Trace:
+  __iterate_interfaces+0x11a/0x410 [mac80211]
+  ieee80211_iterate_active_interfaces_atomic+0x61/0x140 [mac80211]
+  ath12k_mac_handle_beacon_miss+0xa1/0xf0 [ath12k]
+  ath12k_roam_event+0x393/0x560 [ath12k]
+  ath12k_wmi_op_rx+0x1486/0x28c0 [ath12k]
+  ath12k_htc_process_trailer.isra.0+0x2fb/0x620 [ath12k]
+  ath12k_htc_rx_completion_handler+0x448/0x830 [ath12k]
+  ath12k_ce_recv_process_cb+0x549/0x9e0 [ath12k]
+  ath12k_ce_per_engine_service+0xbe/0xf0 [ath12k]
+  ath12k_pci_ce_workqueue+0x69/0x120 [ath12k]
+  process_one_work+0xe3a/0x1430
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Fixes: aa80f12f3bed ("wifi: ath12k: defer vdev creation for MLO")
+Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 15 +++++++++------
+ drivers/net/wireless/ath/ath12k/p2p.c |  3 ++-
+ 2 files changed, 11 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 59ec422992d3..5be7b79db341 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -693,6 +693,9 @@ static void ath12k_get_arvif_iter(void *data, u8 *mac,
+ 		if (WARN_ON(!arvif))
+ 			continue;
+ 
++		if (!arvif->is_created)
++			continue;
++
+ 		if (arvif->vdev_id == arvif_iter->vdev_id &&
+ 		    arvif->ar == arvif_iter->ar) {
+ 			arvif_iter->arvif = arvif;
+@@ -1755,7 +1758,7 @@ static void ath12k_mac_handle_beacon_iter(void *data, u8 *mac,
+ 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+ 	struct ath12k_link_vif *arvif = &ahvif->deflink;
+ 
+-	if (vif->type != NL80211_IFTYPE_STATION)
++	if (vif->type != NL80211_IFTYPE_STATION || !arvif->is_created)
+ 		return;
+ 
+ 	if (!ether_addr_equal(mgmt->bssid, vif->bss_conf.bssid))
+@@ -1778,16 +1781,16 @@ static void ath12k_mac_handle_beacon_miss_iter(void *data, u8 *mac,
+ 	u32 *vdev_id = data;
+ 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+ 	struct ath12k_link_vif *arvif = &ahvif->deflink;
+-	struct ath12k *ar = arvif->ar;
+-	struct ieee80211_hw *hw = ath12k_ar_to_hw(ar);
++	struct ieee80211_hw *hw;
+ 
+-	if (arvif->vdev_id != *vdev_id)
++	if (!arvif->is_created || arvif->vdev_id != *vdev_id)
+ 		return;
+ 
+ 	if (!arvif->is_up)
+ 		return;
+ 
+ 	ieee80211_beacon_loss(vif);
++	hw = ath12k_ar_to_hw(arvif->ar);
+ 
+ 	/* Firmware doesn't report beacon loss events repeatedly. If AP probe
+ 	 * (done by mac80211) succeeds but beacons do not resume then it
+@@ -9818,7 +9821,7 @@ ath12k_mac_change_chanctx_cnt_iter(void *data, u8 *mac,
+ 		if (WARN_ON(!arvif))
+ 			continue;
+ 
+-		if (arvif->ar != arg->ar)
++		if (!arvif->is_created || arvif->ar != arg->ar)
+ 			continue;
+ 
+ 		link_conf = wiphy_dereference(ahvif->ah->hw->wiphy,
+@@ -9853,7 +9856,7 @@ ath12k_mac_change_chanctx_fill_iter(void *data, u8 *mac,
+ 		if (WARN_ON(!arvif))
+ 			continue;
+ 
+-		if (arvif->ar != arg->ar)
++		if (!arvif->is_created || arvif->ar != arg->ar)
+ 			continue;
+ 
+ 		link_conf = wiphy_dereference(ahvif->ah->hw->wiphy,
+diff --git a/drivers/net/wireless/ath/ath12k/p2p.c b/drivers/net/wireless/ath/ath12k/p2p.c
+index 84cccf7d91e7..59589748f1a8 100644
+--- a/drivers/net/wireless/ath/ath12k/p2p.c
++++ b/drivers/net/wireless/ath/ath12k/p2p.c
+@@ -1,6 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+  */
+ 
+ #include <net/mac80211.h>
+@@ -124,7 +125,7 @@ static void ath12k_p2p_noa_update_vdev_iter(void *data, u8 *mac,
+ 
+ 	WARN_ON(!rcu_read_lock_any_held());
+ 	arvif = &ahvif->deflink;
+-	if (arvif->ar != arg->ar || arvif->vdev_id != arg->vdev_id)
++	if (!arvif->is_created || arvif->ar != arg->ar || arvif->vdev_id != arg->vdev_id)
+ 		return;
+ 
+ 	ath12k_p2p_noa_update(arvif, arg->noa);
+
+base-commit: ede00d893af8a50412c3b93067322d27fb8ee97d
+-- 
+2.34.1
+
 
