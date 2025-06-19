@@ -4,112 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F44AC71157
-	for <ath12k@archiver.kernel.org>; Wed, 18 Jun 2025 19:41:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9D3AC71159
+	for <ath12k@archiver.kernel.org>; Thu, 19 Jun 2025 06:37:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Kx8HdG18VyDKXxGTrwIZhfVXBtWZ0wXzBh0CGv9KtfQ=; b=txYseEo9VQTPgVdPKUaujwAXO0
-	ShCmcm3b3n5ducRAMahEr/QSL7+p9d0mWXKbWOFeaLGlmONTRTmikjA8PZ6YDBLCTwlZGySGo9F4h
-	zn4pAhb8kf7RUtLUAm4xuuL97+XH4Xjp413bvtwW2jPgdXOf6bcBqjXhNhUxDcaUL3jmzL6DU3/PV
-	IbXLNu1Y2+opth4ETSEuVhW4fiy6WsVTz8SiJMinJ43wGBLFHjBS5QzPmzeAOJQG0UcpchwW85TH9
-	HztGZHxfSmJZSGrFhnihGE+ekDdNXgp93P4u728jkmF7PVMIkNYgTnjwHpLS3FjtggvIDQSBJjLHx
-	BMUF14QA==;
+	bh=umzCRoR01fg0vFmZRQ6LHdJQxvnj7oMRkWMaP6uHyMY=; b=LWKrOOtg5SxAdE94STaLxXx7Vv
+	fcvVTVLuWDWHm/rj007h+iObAjNJtOfHUkU+NtOGJFWUDKzM+ZQBeccGHyVtKc9qp1vKAHsIbwzj0
+	UOrIfTdXrQfdcitQdD7BZc17hWObW+QvTINnz8cZxSRTFbNwlUC+irmx2WiQU3Lg1xOvVSv6r7ohQ
+	xfp/vvng5/v7rCTU6IHwGD4WBHx37hnGqGNf/cmnZ1O0orFFfVxC97QHuBoi9wQpxymZ2Ly0PiBgl
+	CcZFRX5rBb120odBNhAKJL8gj2q71zj01xDYus/YPdRKwQtxFIxMXpYhcOdMIl+kgcmNWNCB1Eyce
+	eTq2NsIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRyfL-0000000BEeN-2l9R;
-	Wed, 18 Jun 2025 19:41:47 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uS8tU-0000000CAOr-2vbR;
+	Thu, 19 Jun 2025 06:37:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRxxx-0000000B83w-2YQj
+	id 1uS8Q8-0000000C7oh-2HSU
 	for ath12k@lists.infradead.org;
-	Wed, 18 Jun 2025 18:56:59 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55IIYjLY020826
-	for <ath12k@lists.infradead.org>; Wed, 18 Jun 2025 18:56:55 GMT
+	Thu, 19 Jun 2025 06:06:45 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55J2FB13007549;
+	Thu, 19 Jun 2025 06:06:43 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=Kx8HdG18VyDKXxGTrwIZhfVXBtWZ0wXzBh0
-	CGv9KtfQ=; b=Sdpnz0nFoLlZoLjk5gmobP2vDasjPWgR25MWMxgIt3j6h5ffKgW
-	4887MyJorwMz3Gc9lk7h9QQpzlNPKThHvnXNJ9sVwIMu53cHbuCUJfxYuHWv8SPD
-	5B06wLL8LKN3+nY21a4nBJiY4FVzcOMDKS/NVeuuQKhUQKPh59FraLlHZLaCItJM
-	vhOp6sKpjeprSNGOnFFU2kvx5xO/60MzkXfhfrvQdZzHN+IA1OjKCjYj6FL61TW+
-	JgFZir1n5pZEy8BnrEsc1z0RrOCyA+e0JLhfg+0uq2kYHoyROPEn3TdFoBhtK6/I
-	mwqK9A5BIPweSsOViw8KBF0KpGHDmf+y9sA==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4791h9d9br-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 18 Jun 2025 18:56:55 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-234f1acc707so159075ad.3
-        for <ath12k@lists.infradead.org>; Wed, 18 Jun 2025 11:56:54 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750273014; x=1750877814;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Kx8HdG18VyDKXxGTrwIZhfVXBtWZ0wXzBh0CGv9KtfQ=;
-        b=crNuAfIQtacXV6uS1oytt/stZiWm3aRtzWtTVheGGMEx+Ow8kxxjEu2iD8Sq1xVJqi
-         cg4fTmiNxdJgJF6ZhGWSADCOKKeRC8gao/Mj5ocZApYG7dIXK5O+3TclANXOgOXAJyyE
-         1tk5DOlGvmUjDGQ+GPcBQ0zGOkJxrPr3pEkUVLqM8AwZ8R5upBXJPGj/Qtx9pMvuxQ5g
-         t4cisJKp6doSc0I50lFPAs7NRqAcb6GJebE+AXKa9/brgKLvM/T45XI3fNoG9EtmsXa6
-         YwR8lb29a+cil05QsE8BMEkXm7cTiByHfUb8uV48l+Q3VaZr/FAtRQ63CwDxiwuZvAnX
-         lOOA==
-X-Gm-Message-State: AOJu0YxoSA3AYE378H1ft+qXLfRi8o9LEAp7j5Kp1H2MAjstEZ14F5Yt
-	OLRGB46n5GKp4yfq3/oCoHbCbxf6Jx8FMipAOkaUXTjeslbMBB/v8UDzDJRDtHoaFsu8QtLfqU8
-	TMttvBy+k2lOTgWM4rgZskM2URXokadLHBN/TSWyGTpXy6EaDQrDN2kG5y8+yAT//0zqNezjD
-X-Gm-Gg: ASbGncvNu9P9YuDW4p937yg1zcCHv8fEk6YDTe3Wek260P8o2XZ80Fd5C99mAxaeJNk
-	9cHV7O4E/pdDdDGVXPrCRqd+RRO4ktsW81Rs67Jnhdf/l5F5pyPGvKaBvZj4WUPihgz7BmOhfPK
-	IAEBw6+Qp7XeBK0q8JJWooWxDolp69Y5JBYLEvmLLHTAENpUPiSFNp446/Xks5FeGzl8U4pI1zh
-	+jBVWZ4YNHhFC3TBntDPco2gKJwotxsSe8wjOx/mICOcH+3b3vXtrSXt4jEM+84v+VNI9s3A5WO
-	CnXWgulrIfgx1z0nNJVT8Ie6hBM3zjjqV4aP1q4xn2kU5TtQh7/aiRtzQd1j5x05+MjIh3xBnxe
-	ZqqrHZAAccuthtaxDIzAtENNbkCvNacOyN5XrFae3lWzsfFqUdjM=
-X-Received: by 2002:a17:903:1b0c:b0:234:ba37:879e with SMTP id d9443c01a7336-2366b3c3c7cmr296753185ad.38.1750273013618;
-        Wed, 18 Jun 2025 11:56:53 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF18Jiq7IRmgSlgVAZg7mArKxxi+Si93V0vX3POGyss1Ij62DBzXhixoYtE3oKcfMqpWtXBEw==
-X-Received: by 2002:a17:903:1b0c:b0:234:ba37:879e with SMTP id d9443c01a7336-2366b3c3c7cmr296752875ad.38.1750273013183;
-        Wed, 18 Jun 2025 11:56:53 -0700 (PDT)
-Received: from hu-ramess-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2365e0cffe6sm103589305ad.245.2025.06.18.11.56.51
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 18 Jun 2025 11:56:52 -0700 (PDT)
-From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+	:subject:to; s=qcppdkim1; bh=umzCRoR01fg0vFmZRQ6LHdJQxvnj7oMRkWM
+	aP6uHyMY=; b=WhIl/T0/RWPBF0PKXCCZLk0ipihnBiMHE/lzs9c6ylu71I8yxs2
+	3zDsHY2RR5y5oqNw5CPqhOGcl/W7KXc43l5CeO86O0yzktnQUyput5AahVARSGVw
+	tHEW9rAp/Nvke9pC5T2Qk4Ab5M2/ccvxrz6yButH0TA3Y8g9kPCRhrFmPR/7wbsY
+	MxwNvnYGdFLUrf1EELk3kfK2tSYfSllW+rlGit4x9M+UAKNMm9+A7MOzC7zIp2Aa
+	sHl37dPfBwQOAp58XpbhMiUPxpEvSaFrdjyGrmMTbTpEimOX5pX8bDBoT+IzRD93
+	Js9k4zgrrsi/7z0LkyIaQoZpYAkBQHGbMvQ==
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47c9krrh85-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 19 Jun 2025 06:06:43 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 55J66dMV022893;
+	Thu, 19 Jun 2025 06:06:39 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 479k1h46ja-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 19 Jun 2025 06:06:39 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 55J66dwr022888;
+	Thu, 19 Jun 2025 06:06:39 GMT
+Received: from hu-devc-blr-u22-a.qualcomm.com (hu-tamizhr-blr.qualcomm.com [10.190.110.180])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 55J66dH9022887
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 19 Jun 2025 06:06:39 +0000
+Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 380741)
+	id 30E0C41106; Thu, 19 Jun 2025 11:36:38 +0530 (+0530)
+From: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
-        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Subject: [PATCH ath-next] wifi: ath12k: Avoid accessing uninitialized arvif->ar during beacon miss
-Date: Thu, 19 Jun 2025 00:26:35 +0530
-Message-Id: <20250618185635.750470-1-rameshkumar.sundaram@oss.qualcomm.com>
+        Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
+Subject: [PATCH ath-next] wifi: ath12k: Use spinlock when reading stats from arsta
+Date: Thu, 19 Jun 2025 11:36:30 +0530
+Message-Id: <20250619060630.4179796-1-tamizh.raja@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: svrMf3SihqZa9Nz-z8A0lC4nAhhamXLT
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE4MDE2MiBTYWx0ZWRfX2/26fL83yP3D
- pSkYczQI5c7TsO+mbw5ixJb7RQNE15p2/9L1e4NL1k6sCSIfb/pbYMWhcb8uKj6keTHAmASJIrm
- vAaGKBx/ThffI2rAJ7Jr86BsX7e84CjK2IF8dn59JmSsysmLciqZth3D7tpmFQYiWws7oT46NMG
- U1crkO+PZJMcGssOBZTExPXc7OzsUBdnremv/tG4fvtQrK/JQTpdBUzwE7Tfwn812fYTc38o0QT
- anYFIgPsPVXtpkmNh9vv5N5SDuld6nPbks/cthDCORM7vnx6ylATsjAjqSBHfjPxjOC1wWq58b0
- pXZycP/o0SP8hV6lkYnPNfT/JhXD51/pbFhg4y71FdMTxo7rbp1pUrUDorsh+Z64BZzd+wpLqhu
- T3iE0VERk5H0f4JZm4356/VnAT6hBco7/xkvoihvUnONjBxaVPNVO9tFG9EHK7yVjDC8eG7R
-X-Authority-Analysis: v=2.4 cv=UL/dHDfy c=1 sm=1 tr=0 ts=68530bf7 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=oDydKND7yF-1bX00yyYA:9
- a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-GUID: svrMf3SihqZa9Nz-z8A0lC4nAhhamXLT
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: fjbpimjy-Le0bHUSPCpT2DVYrq2DfdYQ
+X-Authority-Analysis: v=2.4 cv=UPTdHDfy c=1 sm=1 tr=0 ts=6853a8f3 cx=c_pps
+ a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=iZCChBz09MV8xfH4l50A:9
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE5MDA1MCBTYWx0ZWRfXx47ZEobGs3jG
+ zxKA4FDEXzAUJGsF2rcfmjhX2XFHTZyo01Q/RN9BxGulHhpkeSVQ07id2vU+8U6soKsOoZZijdP
+ Kckw/iQ6E1hvA5Quq5aX+Ehp4muitlEwTBPJ5Enrrj+xSEzOAjp+yYDFmYXEPNJVPwut9qQQWcp
+ /khis/zhB+w2J08VUeja7JHQsn81bxQIrwNc5kgFwwAvU29Vz2PPa6qj/QcaGLAg4d6TzacKUPn
+ ZQohZGp3ssXMyPVvDKWDxToI1r6DFioDk0a72zgiRswPQT7UdEYIF+hqQ3YstcPWUoICZtfKt1w
+ q6T938ci3PUHVEQDjXhQA2gWA+TZ0Aqk2lEtbQ86u9ZeX46ABCtfz4ZCNlnMtMgpWEp8+wADtGI
+ oDYPOlyp7kNcGhUZIlGqA65dbtV6uIs6dkRjcF9e9O6jI9R/svIrMhNLQwgVcfn1NnQVHEhW
+X-Proofpoint-ORIG-GUID: fjbpimjy-Le0bHUSPCpT2DVYrq2DfdYQ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-06-18_05,2025-06-18_03,2025-03-28_01
+ definitions=2025-06-19_02,2025-06-18_03,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxscore=0 clxscore=1015 suspectscore=0 priorityscore=1501 adultscore=0
- lowpriorityscore=0 bulkscore=0 spamscore=0 phishscore=0 mlxlogscore=999
- malwarescore=0 impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ clxscore=1015 malwarescore=0 impostorscore=0 spamscore=0 lowpriorityscore=0
+ phishscore=0 mlxscore=0 mlxlogscore=999 priorityscore=1501 suspectscore=0
+ adultscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2506180162
+ definitions=main-2506190050
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250618_115657_787184_CE5D2C27 
-X-CRM114-Status: GOOD (  17.62  )
+X-CRM114-CacheID: sfid-20250618_230644_585696_D2A15ECE 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,142 +112,60 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-During beacon miss handling, ath12k driver iterates over active virtual
-interfaces (vifs) and attempts to access the radio object (ar) via
-arvif->deflink->ar.
+The ab->base_lock spinlock is being used while updating the arsta
+TX rate statistics and other fields like rssi/rx/tx_duration.
+But these fields are accessed in ath12k_mac_op_sta_statistics()
+without any lock protection, which can lead to reading incorrect or
+partially updated values.
 
-However, after commit aa80f12f3bed ("wifi: ath12k: defer vdev creation for
-MLO"), arvif is linked to a radio only after vdev creation, typically when
-a channel is assigned or a scan is requested.
-For P2P capable devices, a default P2P interface is created by
-wpa_supplicant along with regular station interfaces, these serve as dummy
-interfaces for P2P-capable stations, lack an associated netdev and initiate
-frequent scans to discover neighbor p2p devices. When a scan is initiated
-on such P2P vifs, driver selects destination radio (ar) based on scan
-frequency, creates a scan vdev, and attaches arvif to the radio. Once the
-scan completes or is aborted, the scan vdev is deleted, detaching arvif
-from the radio and leaving arvif->ar uninitialized.
+To prevent this race condition and avoid the inconsistency, the same
+spinlock should also be used when accessing these statistics in
+ath12k_mac_op_sta_statistics()
 
-While handling beacon miss for station interfaces, P2P interface is also
-encountered in the vif iteration and ath12k_mac_handle_beacon_miss_iter()
-tries to dereference the uninitialized arvif->deflink->ar.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
-Fix this by verifying that vdev is created for the arvif before accessing
-its ar during beacon miss handling and similar vif iterator callbacks.
-
-==========================================================================
- wlp6s0: detected beacon loss from AP (missed 7 beacons) - probing
- KASAN: null-ptr-deref in range [0x0000000000000010-0x0000000000000017]
-
- CPU: 5 UID: 0 PID: 0 Comm: swapper/5 Not tainted 6.16.0-rc1-wt-ath+ #2 PREEMPT(full)
- RIP: 0010:ath12k_mac_handle_beacon_miss_iter+0xb5/0x1a0 [ath12k]
- Call Trace:
-  __iterate_interfaces+0x11a/0x410 [mac80211]
-  ieee80211_iterate_active_interfaces_atomic+0x61/0x140 [mac80211]
-  ath12k_mac_handle_beacon_miss+0xa1/0xf0 [ath12k]
-  ath12k_roam_event+0x393/0x560 [ath12k]
-  ath12k_wmi_op_rx+0x1486/0x28c0 [ath12k]
-  ath12k_htc_process_trailer.isra.0+0x2fb/0x620 [ath12k]
-  ath12k_htc_rx_completion_handler+0x448/0x830 [ath12k]
-  ath12k_ce_recv_process_cb+0x549/0x9e0 [ath12k]
-  ath12k_ce_per_engine_service+0xbe/0xf0 [ath12k]
-  ath12k_pci_ce_workqueue+0x69/0x120 [ath12k]
-  process_one_work+0xe3a/0x1430
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Fixes: aa80f12f3bed ("wifi: ath12k: defer vdev creation for MLO")
-Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Signed-off-by: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 15 +++++++++------
- drivers/net/wireless/ath/ath12k/p2p.c |  3 ++-
- 2 files changed, 11 insertions(+), 7 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 2 ++
+ drivers/net/wireless/ath/ath12k/wmi.c | 2 ++
+ 2 files changed, 4 insertions(+)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 59ec422992d3..5be7b79db341 100644
+index 88b59f3ff87a..9b117d9af27b 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -693,6 +693,9 @@ static void ath12k_get_arvif_iter(void *data, u8 *mac,
- 		if (WARN_ON(!arvif))
- 			continue;
+@@ -11056,6 +11056,7 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
+ 	db2dbm = test_bit(WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT,
+ 			  ar->ab->wmi_ab.svc_map);
  
-+		if (!arvif->is_created)
-+			continue;
-+
- 		if (arvif->vdev_id == arvif_iter->vdev_id &&
- 		    arvif->ar == arvif_iter->ar) {
- 			arvif_iter->arvif = arvif;
-@@ -1755,7 +1758,7 @@ static void ath12k_mac_handle_beacon_iter(void *data, u8 *mac,
- 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
- 	struct ath12k_link_vif *arvif = &ahvif->deflink;
++	spin_lock_bh(&ar->ab->base_lock);
+ 	sinfo->rx_duration = arsta->rx_duration;
+ 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_RX_DURATION);
  
--	if (vif->type != NL80211_IFTYPE_STATION)
-+	if (vif->type != NL80211_IFTYPE_STATION || !arvif->is_created)
- 		return;
+@@ -11097,6 +11098,7 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
+ 	}
  
- 	if (!ether_addr_equal(mgmt->bssid, vif->bss_conf.bssid))
-@@ -1778,16 +1781,16 @@ static void ath12k_mac_handle_beacon_miss_iter(void *data, u8 *mac,
- 	u32 *vdev_id = data;
- 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
- 	struct ath12k_link_vif *arvif = &ahvif->deflink;
--	struct ath12k *ar = arvif->ar;
--	struct ieee80211_hw *hw = ath12k_ar_to_hw(ar);
-+	struct ieee80211_hw *hw;
+ 	sinfo->signal_avg = ewma_avg_rssi_read(&arsta->avg_rssi);
++	spin_unlock_bh(&ar->ab->base_lock);
  
--	if (arvif->vdev_id != *vdev_id)
-+	if (!arvif->is_created || arvif->vdev_id != *vdev_id)
- 		return;
- 
- 	if (!arvif->is_up)
- 		return;
- 
- 	ieee80211_beacon_loss(vif);
-+	hw = ath12k_ar_to_hw(arvif->ar);
- 
- 	/* Firmware doesn't report beacon loss events repeatedly. If AP probe
- 	 * (done by mac80211) succeeds but beacons do not resume then it
-@@ -9818,7 +9821,7 @@ ath12k_mac_change_chanctx_cnt_iter(void *data, u8 *mac,
- 		if (WARN_ON(!arvif))
- 			continue;
- 
--		if (arvif->ar != arg->ar)
-+		if (!arvif->is_created || arvif->ar != arg->ar)
- 			continue;
- 
- 		link_conf = wiphy_dereference(ahvif->ah->hw->wiphy,
-@@ -9853,7 +9856,7 @@ ath12k_mac_change_chanctx_fill_iter(void *data, u8 *mac,
- 		if (WARN_ON(!arvif))
- 			continue;
- 
--		if (arvif->ar != arg->ar)
-+		if (!arvif->is_created || arvif->ar != arg->ar)
- 			continue;
- 
- 		link_conf = wiphy_dereference(ahvif->ah->hw->wiphy,
-diff --git a/drivers/net/wireless/ath/ath12k/p2p.c b/drivers/net/wireless/ath/ath12k/p2p.c
-index 84cccf7d91e7..59589748f1a8 100644
---- a/drivers/net/wireless/ath/ath12k/p2p.c
-+++ b/drivers/net/wireless/ath/ath12k/p2p.c
-@@ -1,6 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  */
- 
- #include <net/mac80211.h>
-@@ -124,7 +125,7 @@ static void ath12k_p2p_noa_update_vdev_iter(void *data, u8 *mac,
- 
- 	WARN_ON(!rcu_read_lock_any_held());
- 	arvif = &ahvif->deflink;
--	if (arvif->ar != arg->ar || arvif->vdev_id != arg->vdev_id)
-+	if (!arvif->is_created || arvif->ar != arg->ar || arvif->vdev_id != arg->vdev_id)
- 		return;
- 
- 	ath12k_p2p_noa_update(arvif, arg->noa);
+ 	if (!db2dbm)
+ 		sinfo->signal_avg += ATH12K_DEFAULT_NOISE_FLOOR;
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 60e2444fe08c..d7f438f41823 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -7524,7 +7524,9 @@ static int ath12k_wmi_tlv_fw_stats_data_parse(struct ath12k_base *ab,
+ 			if (sta) {
+ 				ahsta = ath12k_sta_to_ahsta(sta);
+ 				arsta = &ahsta->deflink;
++				spin_lock_bh(&ab->base_lock);
+ 				arsta->rssi_beacon = le32_to_cpu(src->beacon_snr);
++				spin_unlock_bh(&ab->base_lock);
+ 				ath12k_dbg(ab, ATH12K_DBG_WMI,
+ 					   "wmi stats vdev id %d snr %d\n",
+ 					   src->vdev_id, src->beacon_snr);
 
-base-commit: ede00d893af8a50412c3b93067322d27fb8ee97d
+base-commit: 535de528015b56e34a40a8e1eb1629fadf809a84
 -- 
 2.34.1
 
