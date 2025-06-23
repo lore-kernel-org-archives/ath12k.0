@@ -4,121 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 309A4C77B7C
-	for <ath12k@archiver.kernel.org>; Mon, 23 Jun 2025 19:42:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 271FEC7EE2A
+	for <ath12k@archiver.kernel.org>; Mon, 23 Jun 2025 19:42:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
-	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=D0xc5B1dmQMrYzjp5kHT/ahKsRBCmqQIBDX+3aVHJVI=; b=NhgCfIpOysAdFkIfZfEDm8ex78
-	WRpWgPPEwbQWgODvEjnqAndSEPZijGef6CJN7xpCOjER76JwCZMWCzQZCgxHFvxr41rdEaXmXEzkW
-	1fNzveX/YK/b6Qk/03TNy+yAJYz2xjOzZBTaABkbSZyBwv0vl0Y7LHnRZyxpawy0SdaKV966EdCNS
-	OisGeU8c5DLH/iL+zPSR8G6B9hIFHeFfX2yZ89DxLuZofR7ERG0cGkZEdLw8kIxIwoTvyqklSJEcB
-	nidYohugZV06+gUTT/WpsSFA0AP+DRjFnQXhigbH+qwfsccKBu89YE7rOO1I+uR3UU/jXMkmkG5b0
-	joVsLf5Q==;
+	bh=tYYI1PSVSslndP+Y1vEtSWhPe5cDz1pruNBScyDqPIM=; b=rKu8+eoSGHGpcUb1nfgITaAlix
+	+rs1P+FFpC6I2XVgseq6Eaa3Fu0X8i0RPWvDCpABm/4Ne2yM7w9UaFpgff1QsjBJKhEm8Cv4sQp7S
+	LKMWDk223KxtHqrHQmRW06O2/4u1JVvJOBhjI8TxloNda271A7e/Ot1vc/uikIO7R2vv2MUSZTaGy
+	m4sfDrAtraSIWLu9fgj4hBEUU4i0mW/xMT9IAgX9XydHYDBsuh0hHiHhLcKIwmnyP8bt6ERDOPJ4N
+	RZcpvKgBAzPpVKE/wC9pXjpjCBIxItlP5CUdPk/bcwesXz6Fan/jJ48uh+kRSWyjali+FNwBNOsIw
+	/wZT9oHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTn3Z-00000003pSd-3f38;
-	Mon, 23 Jun 2025 19:42:17 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uTn3a-00000003pU7-3M5Z;
+	Mon, 23 Jun 2025 19:42:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTjQK-00000003J4A-42Y1
+	id 1uTjSE-00000003JW4-2m8Z
 	for ath12k@lists.infradead.org;
-	Mon, 23 Jun 2025 15:49:34 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55NBvFdP029965
-	for <ath12k@lists.infradead.org>; Mon, 23 Jun 2025 15:49:32 GMT
+	Mon, 23 Jun 2025 15:51:31 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55N9U1Pc021986
+	for <ath12k@lists.infradead.org>; Mon, 23 Jun 2025 15:51:30 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	D0xc5B1dmQMrYzjp5kHT/ahKsRBCmqQIBDX+3aVHJVI=; b=Arymc6hdDH7Ws1Y6
-	D8vfc5YW+HBa2BNjO/S/nib68UG/wJSaUdtYYuDsQ7FaJCtvC5SKPP5RQl2YbOT/
-	2CBxq8uspWxgCi661kkJt1tgdDUFxkAwK7mH7UrYU9mnWK6v0d4VQvWVDF2qKFcB
-	DWpkWBC0PrUxsfXtXpgYrCnrHiwM9EGOK6Ia9gYDkyprbiBPYo/3hnHXfvAvFyDL
-	nrmw+gsBIFiC1cmz0cYIGn3lhiOf+8i4+3//FPlNe9asM+J7IgkuzwxGdixQrw5y
-	50qJQBY84g7PMpCcX8/dGg89adLugMBMZ6NuMTMh11+3PfoCxXqAwXnD6FczBOFv
-	YDfjiw==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ey7k1ynk-1
+	tYYI1PSVSslndP+Y1vEtSWhPe5cDz1pruNBScyDqPIM=; b=pivD3wi+mToh+Aj4
+	iusKU7MzEl1DNzvcwUV9uWR9giA/Uh4clsHW2ze/6FeHCN7H0NuWti5nsNw0VLB3
+	JL2BBbjd6H/7iMzJfzCs2dGHh8Fr1Y22bXa90iOa4iyLj3Z/ESJzteuuAS5lifM5
+	1AG4gil4mmdm76m7GKQ6bUeUHiOHeC+FwBGLZGM/cqfqNksyZj5YbJzgMjGOmyMy
+	2sQuVLcTHdh3nLZsr1TRMFf2F8i1LXUxhbX/A0x0TU0/brfVFDD5Qtv9+bt5bCL7
+	e6FCSgjvI5rPKtRp/zkuWiL0zWY2jPRsczMBxc8wmMG9Q/KcNKoPjqJ2s2lfd/UR
+	7nW+Yw==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47f4b3s2wk-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 23 Jun 2025 15:49:32 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-23638e1605dso30426725ad.0
-        for <ath12k@lists.infradead.org>; Mon, 23 Jun 2025 08:49:31 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 23 Jun 2025 15:51:30 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b2eb60594e8so2778065a12.1
+        for <ath12k@lists.infradead.org>; Mon, 23 Jun 2025 08:51:30 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750693771; x=1751298571;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=D0xc5B1dmQMrYzjp5kHT/ahKsRBCmqQIBDX+3aVHJVI=;
-        b=B5+nLh15q8ZLY10syWOdJmyU4rLEaYEpFO+SAreoX02jJi4hfEdTzhBxBNpRLEvUkg
-         7bOf5+szgxz4vNjwgZbhv/t1XyqBxnuvsV5MppPfoBxXPNv076y/s/HbTSqRNAtCnNf7
-         4LNLWdU0g4HEL3cMGGNp5o0fEPdKzpVQgpeNULup1A1u3+JWqUiLa6CXO5MOn8kqsPHH
-         v85ygJiZ++FRvFRMEXTJYE0qBM6Q43jsZZMRrqleQpS3R5t9Ms38xMeCZU+uHt3uH64p
-         kRVpAfwBwkFC1tFgqaHjAfVgVmq4AUyPTUpdfpdYNTUyW9XooAXLQbcc98FdoHDjo7Lp
-         Mdtw==
-X-Forwarded-Encrypted: i=1; AJvYcCVMvQol+MxthJVwYqQCgpp4LgYAEJXQPC6D74ioHSqK5LyLlgRiIQMmUTS52+FzWwalcruOU6E=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzkQyOT8bxs7rFvXRblMfr3jCQBTK24ItFPbEOL3wzqqA32cQek
-	2vy0Bl+advQTOTomaa3px4KmCd2otQ6HpUD2Cf86eZG3a0EJ3DJAHeSG4rUno77M315vRMydiOK
-	28nRxiNy/LkWbmH2IZAgIOlCNvaui/OI7nN/Gjcf+2QAcGDbfGrUPeNato6weathV
-X-Gm-Gg: ASbGncv5RLNIbHChzOeOCfoVP0fYMrp6Amumk7/TU7CGITMYmKCXQnwBZFqi8uu2j57
-	fX2HpiANYeg7FSuQsdmwBqs4MU2h5XSrxDFpgVrp2RMRLLWrtRdezXG2RBGwrHeqKD/poyFmjp1
-	ZCzwuQY5Wxqm9RZKQjQprImRoV7d+Bm5fPsesjRY0sv1FDlNdUBTybUIziX42Zn2PASAuGuPDjt
-	cUUPnXAhgtdiz3bGu3GPX7kUhyR6zNkc0RPBmjtXEehwYXICLI5z+Ozp+uJJ+VE0cO+0imycpDc
-	RiiGN4oeim//HGIFL8cp7frNxCtp5xpgOemL+2isHWHsUDDhLp6+HRMe/4WnEOYe5Vo+J0ps1w3
-	kAzwYFsJZbLCaN3AKCDfqtUUTmoOrKkpcYzNZU/SVb8PZVYA=
-X-Received: by 2002:a17:903:1d2:b0:234:8e78:ce8a with SMTP id d9443c01a7336-237d9bb2b45mr209283005ad.48.1750693770745;
-        Mon, 23 Jun 2025 08:49:30 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IH/6xqaX+BTZg41zs8bgt2qgojwCFHTDBY2za2TYlYnIBcnVh8Z6hoZlQZo1/2VWIvERScK3A==
-X-Received: by 2002:a17:903:1d2:b0:234:8e78:ce8a with SMTP id d9443c01a7336-237d9bb2b45mr209282615ad.48.1750693770294;
-        Mon, 23 Jun 2025 08:49:30 -0700 (PDT)
-Received: from hu-adisi-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-237d83f14a2sm88447095ad.80.2025.06.23.08.49.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Jun 2025 08:49:30 -0700 (PDT)
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Date: Mon, 23 Jun 2025 21:19:10 +0530
-Subject: [PATCH ath-next v2 2/2] wifi: ath12k: use real noise floor instead
- of default value
+        d=1e100.net; s=20230601; t=1750693889; x=1751298689;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=tYYI1PSVSslndP+Y1vEtSWhPe5cDz1pruNBScyDqPIM=;
+        b=mewIaKEtsN3jsC5jUeD2ivh9Rmm7JLlMKJnIfNC/y12KFLEt0YDhbdDqmXtbc0+FTh
+         L7xfgJ/aEw5jD3oopj9V+uGeN8iwCanjoSKQNzZ6udNLq6U1wg692JEKbgJHOYMbjXi0
+         jm+PTifDavpSGNuZBo1p177T6TpArLQ5RwT7cg2U/4FsAEGNSIqGaAole6bvM0uxiTBY
+         dVmRzuhjcAYSkG9NGp8/aoWrM3zt9ZUJ9vQwhNeCzf4AlKtdShwNCRcNM4SrMshXXc6k
+         absgpR7R3DTmijl40vzrrnwrhHHD91jRXfhHpBwNYvzdx4qA4LiM6WdSAPshiFVtwjON
+         5nTw==
+X-Forwarded-Encrypted: i=1; AJvYcCUfVJY0Iy87aGzPEFJ6ii1DfkFCDm470VBmCnTwhV0EzcVuv0zIrtLqN3vUEseSfaXl3Mq9Bbg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy4cQw+n5I18mesJnsO4SEVJAk6gU50HHcyrb8Rzmmo6fm92dwy
+	uTm0MvCmcJJMdrIu50kg53vDEKXcTaszOOuf7j9vx+lBdEXVyoP8mopSjz5JIJPOCHKHDjVVar7
+	6sEJ2xEulGCzCi/wpgQUeqPush/IrCoRXTcQzfFLIIEgqMEugTtaoUBtgS1gg2Bmd
+X-Gm-Gg: ASbGncuZzbbaAZZkHNk4q2DKaWUk2uFI5d+9OGNqrhz+0yR/w+7Ha0elcUseMXqR7Hr
+	IOQua7foWuQEid/zL/Tg2Zcul03k4hNU1uqSPV0Uy84W3D0KsNSzUvtJNU7NNgTJYIazYzBpxwR
+	G5xFb4YaRyNTZNW0UrIG3qfEj6iv4hXq5QMa1R8FDSiqBwN6AMOhp3C8ZNHDel2th6aYToaEobr
+	O6J18yfBIs/yiKrW2zfrpidsxbOJ/jOC3FlWSNhsvxTDCZPeVv1M4NRem4TZ1hE2yqEZbijLySl
+	zCxxe2c7grrrTTlqTRyLNpvJvelsq48XSYzpdaddVoHaFsPRVv200bVVpRR5rg==
+X-Received: by 2002:a05:6a20:3d1a:b0:218:5954:128c with SMTP id adf61e73a8af0-22026f666ecmr17570754637.21.1750693889166;
+        Mon, 23 Jun 2025 08:51:29 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFTB8GCNbc/2fzaaqVs5wa367l84r5Matp1+jHk+iiUoxVmPBfLwYPyatl5Ffn2X2iX0KN87Q==
+X-Received: by 2002:a05:6a20:3d1a:b0:218:5954:128c with SMTP id adf61e73a8af0-22026f666ecmr17570718637.21.1750693888678;
+        Mon, 23 Jun 2025 08:51:28 -0700 (PDT)
+Received: from [192.168.29.88] ([49.37.214.199])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7490a62633fsm8440158b3a.84.2025.06.23.08.51.26
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 23 Jun 2025 08:51:28 -0700 (PDT)
+Message-ID: <8e774154-1594-452c-858a-e16376dee09d@oss.qualcomm.com>
+Date: Mon, 23 Jun 2025 21:21:24 +0530
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20250623-support_real_noise_floor-v2-2-974bbafa317e@oss.qualcomm.com>
-References: <20250623-support_real_noise_floor-v2-0-974bbafa317e@oss.qualcomm.com>
-In-Reply-To: <20250623-support_real_noise_floor-v2-0-974bbafa317e@oss.qualcomm.com>
-To: Jeff Johnson <jjohnson@kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: use real noise floor value
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         linux-kernel@vger.kernel.org,
-        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
-        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Authority-Analysis: v=2.4 cv=YoEPR5YX c=1 sm=1 tr=0 ts=6859778c cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8
- a=14mRfNIsjSzQyU8rJgwA:9 a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: K0hjNyMTQRxTuQ_gg0kb1jZEC_P--fcc
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjIzMDA5NSBTYWx0ZWRfXx/p0/YQspX+7
- UUQf6Hpla8arMMjmJPB+YJ+cBI3ZxHgoXelSXetTDXyTnpTtn/oD6TS1HR93kTcm/6F9KW88VaW
- +r1Hk3ElXg45TYB4/VpMXmP06BOf/ETnApsjycaXpsz/qi4QAf0ACyDLg3JiwmvvyUhDjFS86+D
- 7Zu38n7FnyvAy3aUTDjap6LNA7ku4UJE3HUcCg36p6RKtVDGN0WkNMqFdVnBQToP/tHxnaWZ/Gw
- 56wyXAm0iO0f4aYf7Xyzo2bBoozT2vcKdDRHs/0pPvmG42N0KNwFPdlisHGJWFf3ejupHYITI3j
- 8kF2jV4Bk5/9zFczWR5P+qc1dzkeVu8A1LrdyYllvhq4SGzjPQfvV0WAYAWIeBlqp7JpFqDsGY+
- jAILJtzIoUIex2yIfdPLFiaTjQMHLV+3Apun/0TZOG336HhJueq5WCRvqLo04DELgqrswbgs
-X-Proofpoint-GUID: K0hjNyMTQRxTuQ_gg0kb1jZEC_P--fcc
+        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+References: <20250528-support_real_noise_floor-v1-0-04507bd3bc76@oss.qualcomm.com>
+ <500a10c9-c56e-4192-818e-8e07ef6c51f4@oss.qualcomm.com>
+Content-Language: en-US
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+In-Reply-To: <500a10c9-c56e-4192-818e-8e07ef6c51f4@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjIzMDA5NiBTYWx0ZWRfXxvMbm9bHpHS9
+ W/pE0lUJ7tabVO8VQMmVNTSlR/PgNz/pI9NIc2uGxMukyv0qdkOBS8yjt8uSZklvE+4TM1+95cb
+ qov3EJODd/R/qRWbfrOYu9b/gftrPyel1ESQimzVfHsUh1ajwyzXY9xip/o9PRWXyWNZRFhn71S
+ QjnbzrmuwoeByooHRDruv+gQManarp3f0bkvlMcWvZrjbbOam2LMQ3nbtCg5kDZEnq4JP+h5bVd
+ xZ+UMOO9ScG68+mXHoGaI84R4dipSXkJUwLvA9SW+2aIK154zIpScrG3ivATliqhjOpDCfAhptX
+ KEx0XUAtedACWyRVCdpGMP1wRiBJrya8sT+JYl9kpHeaVdTcu5NcQCSiMeh/qJm6qQHLXIWbOYX
+ bNAghxqLTnIP+b1/XgvoKbiGqITbkDUuA9vSaEySjlVLHzcgIzrkGkwBlXK5mbEW7zxYD56S
+X-Proofpoint-ORIG-GUID: 822JWaXjUMN9WRuLuHRkAP2vFE4SwZ8S
+X-Proofpoint-GUID: 822JWaXjUMN9WRuLuHRkAP2vFE4SwZ8S
+X-Authority-Analysis: v=2.4 cv=A8BsP7WG c=1 sm=1 tr=0 ts=68597802 cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=wMrS+Y4uhDqG1CA/WHymIw==:17
+ a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=eRXGc6zcnUY8UlbqGOwA:9
+ a=QEXdDO2ut3YA:10 a=bFCP_H2QrGi7Okbo017w:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
  definitions=2025-06-23_04,2025-06-23_06,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 priorityscore=1501 mlxscore=0 adultscore=0 suspectscore=0
- malwarescore=0 mlxlogscore=999 spamscore=0 bulkscore=0 lowpriorityscore=0
- impostorscore=0 clxscore=1015 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2506230095
+ lowpriorityscore=0 mlxlogscore=999 malwarescore=0 spamscore=0 bulkscore=0
+ phishscore=0 adultscore=0 impostorscore=0 suspectscore=0 mlxscore=0
+ clxscore=1015 priorityscore=1501 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2506230096
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250623_084933_137949_E85E8F4D 
-X-CRM114-Status: GOOD (  17.35  )
+X-CRM114-CacheID: sfid-20250623_085130_708196_83F5D5FB 
+X-CRM114-Status: GOOD (  17.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,162 +132,59 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+On 6/23/2025 8:30 PM, Jeff Johnson wrote:
+> On 5/28/2025 4:23 AM, Aditya Kumar Singh wrote:
+>> At present, the ATH12K_DEFAULT_NOISE_FLOOR (-95) is used to calculate RSSI
+>> value, providing an estimated noise floor value. Consequently, the RSSI
+>> value is also approximate. This works but however, using actual noise floor
+>> value will enable the reporting of the true RSSI value.
+>>
+>> The firmware possesses the necessary data to determine the actual noise
+>> floor. This data is provided to the host via the WMI event
+>> WMI_PDEV_RSSI_DBM_CONVERSION_PARAMS_INFO_EVENTID, which includes the
+>> runtime parameters needed for calculating the real noise floor in dBm. This
+>> event is triggered by the firmware during channel changes, temperature
+>> offset adjustments, and hardware chainmask modifications.
+>>
+>> Add support to handle and parse this WMI event. Use the received values to
+>> calculate and store the noise floor value and use at the required places.
+>>
+>> ---
+>> Raj Kumar Bhagat (2):
+>>        wifi: ath12k: handle WMI event for real noise floor calculation
+>>        wifi: ath12k: use real noise floor instead of default value
+>>
+>>   drivers/net/wireless/ath/ath12k/core.h   |  17 +++
+>>   drivers/net/wireless/ath/ath12k/dp_mon.c |   7 +-
+>>   drivers/net/wireless/ath/ath12k/dp_tx.c  |  20 ++-
+>>   drivers/net/wireless/ath/ath12k/mac.c    |  14 +-
+>>   drivers/net/wireless/ath/ath12k/wmi.c    | 233 ++++++++++++++++++++++++++++++-
+>>   drivers/net/wireless/ath/ath12k/wmi.h    |  42 ++++++
+>>   6 files changed, 324 insertions(+), 9 deletions(-)
+>> ---
+>> base-commit: 3d933084a072fd5fb5da54c06a017abc0412c86f
+>> change-id: 20250513-support_real_noise_floor-205986936cd3
+> 
+> This series no longer applies cleanly on ath/main, please rebase
+> 
+> Applying: wifi: ath12k: handle WMI event for real noise floor calculation
+> Using index info to reconstruct a base tree...
+> M       drivers/net/wireless/ath/ath12k/core.h
+> M       drivers/net/wireless/ath/ath12k/mac.c
+> M       drivers/net/wireless/ath/ath12k/wmi.c
+> M       drivers/net/wireless/ath/ath12k/wmi.h
+> Falling back to patching base and 3-way merge...
+> Auto-merging drivers/net/wireless/ath/ath12k/wmi.h
+> CONFLICT (content): Merge conflict in drivers/net/wireless/ath/ath12k/wmi.h
+> Auto-merging drivers/net/wireless/ath/ath12k/wmi.c
+> Auto-merging drivers/net/wireless/ath/ath12k/mac.c
+> Auto-merging drivers/net/wireless/ath/ath12k/core.h
+> Recorded preimage for 'drivers/net/wireless/ath/ath12k/wmi.h'
+> error: Failed to merge in the changes.
+> Patch failed at 0001 wifi: ath12k: handle WMI event for real noise floor calculation
 
-ATH12K_DEFAULT_NOISE_FLOOR represents the approximate noise floor value
-which is used for RSSI calculation. Commit "wifi: ath12k: handle WMI event
-for real noise floor calculation" added support to get the real noise floor
-value from the firmware. Add changes to use the real value now instead of
-the default one.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Co-developed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/dp_mon.c |  7 ++++++-
- drivers/net/wireless/ath/ath12k/dp_tx.c  | 20 ++++++++++++++++----
- drivers/net/wireless/ath/ath12k/mac.c    | 10 +++++++---
- drivers/net/wireless/ath/ath12k/wmi.c    |  7 ++++++-
- 4 files changed, 35 insertions(+), 9 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 91f4e3aff74c3804188af69fd9bb81103dc88175..b408103fe9d4703c44a0fde456b71bb7aaf6420c 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -2146,10 +2146,15 @@ static void ath12k_dp_mon_update_radiotap(struct ath12k *ar,
- 					  struct ieee80211_rx_status *rxs)
- {
- 	struct ieee80211_supported_band *sband;
-+	s32 noise_floor;
- 	u8 *ptr = NULL;
- 
-+	spin_lock_bh(&ar->data_lock);
-+	noise_floor = ath12k_pdev_get_noise_floor(ar);
-+	spin_unlock_bh(&ar->data_lock);
-+
- 	rxs->flag |= RX_FLAG_MACTIME_START;
--	rxs->signal = ppduinfo->rssi_comb + ATH12K_DEFAULT_NOISE_FLOOR;
-+	rxs->signal = ppduinfo->rssi_comb + noise_floor;
- 	rxs->nss = ppduinfo->nss + 1;
- 
- 	if (ppduinfo->userstats[ppduinfo->userid].ampdu_present) {
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 075912eacfaab520e0ed0041b330096c830ae8a0..ca3d97043da04ceb2be5d3823e36b755b837a1ff 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -553,6 +553,7 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
- 	struct ath12k_vif *ahvif;
- 	struct ath12k *ar;
- 	struct sk_buff *msdu = desc_params->skb;
-+	s32 noise_floor;
- 
- 	skb_cb = ATH12K_SKB_CB(msdu);
- 	info = IEEE80211_SKB_CB(msdu);
-@@ -591,8 +592,13 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
- 			info->status.ack_signal = ts->ack_rssi;
- 
- 			if (!test_bit(WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT,
--				      ab->wmi_ab.svc_map))
--				info->status.ack_signal += ATH12K_DEFAULT_NOISE_FLOOR;
-+				      ab->wmi_ab.svc_map)) {
-+				spin_lock_bh(&ar->data_lock);
-+				noise_floor = ath12k_pdev_get_noise_floor(ar);
-+				spin_unlock_bh(&ar->data_lock);
-+
-+				info->status.ack_signal += noise_floor;
-+			}
- 
- 			info->status.flags = IEEE80211_TX_STATUS_ACK_SIGNAL_VALID;
- 		} else {
-@@ -774,6 +780,7 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
- 	struct ieee80211_vif *vif;
- 	struct ath12k_vif *ahvif;
- 	struct sk_buff *msdu = desc_params->skb;
-+	s32 noise_floor;
- 
- 	if (WARN_ON_ONCE(ts->buf_rel_source != HAL_WBM_REL_SRC_MODULE_TQM)) {
- 		/* Must not happen */
-@@ -826,8 +833,13 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
- 			info->status.ack_signal = ts->ack_rssi;
- 
- 			if (!test_bit(WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT,
--				      ab->wmi_ab.svc_map))
--				info->status.ack_signal += ATH12K_DEFAULT_NOISE_FLOOR;
-+				      ab->wmi_ab.svc_map)) {
-+				spin_lock_bh(&ar->data_lock);
-+				noise_floor = ath12k_pdev_get_noise_floor(ar);
-+				spin_unlock_bh(&ar->data_lock);
-+
-+				info->status.ack_signal += noise_floor;
-+			}
- 
- 			info->status.flags = IEEE80211_TX_STATUS_ACK_SIGNAL_VALID;
- 		}
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 6ee1113aafcfc0873b8e6997951c8f53f9ccbbd9..ee05e9b8f193cade74b435d1c1a71207493061cf 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -11586,8 +11586,8 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(sta);
- 	struct ath12k_fw_stats_req_params params = {};
- 	struct ath12k_link_sta *arsta;
-+	s8 signal, noise_floor;
- 	struct ath12k *ar;
--	s8 signal;
- 	bool db2dbm;
- 
- 	lockdep_assert_wiphy(hw->wiphy);
-@@ -11635,15 +11635,19 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 	    !(ath12k_mac_get_fw_stats(ar, &params)))
- 		signal = arsta->rssi_beacon;
- 
-+	spin_lock_bh(&ar->data_lock);
-+	noise_floor = ath12k_pdev_get_noise_floor(ar);
-+	spin_unlock_bh(&ar->data_lock);
-+
- 	if (signal) {
--		sinfo->signal = db2dbm ? signal : signal + ATH12K_DEFAULT_NOISE_FLOOR;
-+		sinfo->signal = db2dbm ? signal : signal + noise_floor;
- 		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
- 	}
- 
- 	sinfo->signal_avg = ewma_avg_rssi_read(&arsta->avg_rssi);
- 
- 	if (!db2dbm)
--		sinfo->signal_avg += ATH12K_DEFAULT_NOISE_FLOOR;
-+		sinfo->signal_avg += noise_floor;
- 
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL_AVG);
- }
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 3ec58feab7559e3fcd1cb9891a8ebc0084264334..37ac921fb7da701a9faa6e9a93a73be5303e01fc 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -6981,6 +6981,7 @@ static void ath12k_mgmt_rx_event(struct ath12k_base *ab, struct sk_buff *skb)
- 	struct ieee80211_hdr *hdr;
- 	u16 fc;
- 	struct ieee80211_supported_band *sband;
-+	s32 noise_floor;
- 
- 	if (ath12k_pull_mgmt_rx_params_tlv(ab, skb, &rx_ev) != 0) {
- 		ath12k_warn(ab, "failed to extract mgmt rx event");
-@@ -7042,7 +7043,11 @@ static void ath12k_mgmt_rx_event(struct ath12k_base *ab, struct sk_buff *skb)
- 		status->freq = ieee80211_channel_to_frequency(rx_ev.channel,
- 							      status->band);
- 
--	status->signal = rx_ev.snr + ATH12K_DEFAULT_NOISE_FLOOR;
-+	spin_lock_bh(&ar->data_lock);
-+	noise_floor = ath12k_pdev_get_noise_floor(ar);
-+	spin_unlock_bh(&ar->data_lock);
-+
-+	status->signal = rx_ev.snr + noise_floor;
- 	status->rate_idx = ath12k_mac_bitrate_to_idx(sband, rx_ev.rate / 100);
- 
- 	hdr = (struct ieee80211_hdr *)skb->data;
+Done. Rolled out the rebased next version.
 
 -- 
-2.34.1
-
+Aditya
 
