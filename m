@@ -4,100 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B827EC7115B
-	for <ath12k@archiver.kernel.org>; Mon, 23 Jun 2025 04:38:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3DAFC7115D
+	for <ath12k@archiver.kernel.org>; Mon, 23 Jun 2025 05:06:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YTIZyQE9IAo85GBT9lARo+AsW2dcsyItZ4EVdUevqIo=; b=MeZ1QJopxsYuRhrxqRgPEN8G10
-	rNWuZTRQAL4Ry5IE5MToylRhEfmHscv3PxS5/cx0y7wAACKW5MRE7vRsTXmd3Vv+iHCqtQ9HhOM94
-	9AZ+lOzrJmggBL6YhEbYo5pfzdfGrVD8itFYn9uBwQgiKMECfAG6OAV5iJ9Hl9YYh1cuGhPYH/J52
-	nk5y2SGEovpOL5hnsfAIXzIYtvENPZHBOpWTiJBw2c0q4n/hsDKHHxOkivHbX2QBzkTptZiVdSTXr
-	TYjyobqJr9EICexuQ5CPksua96f2P4Xri9ExOxpIW0N5e4dveq3m/xR3fs+nu/BrLZ+oTVkG33TYE
-	B0hhlX5Q==;
+	bh=HHHKEzD0T9H274180tE+Ev/54hv7g8GD5RyGX8mAz+s=; b=ACvIIkJ7juNSWO3S56woIsm7fX
+	sEHfGMUAcqwO+5ZTPCY/CTpxha0rvKkn1CTX0EsMgCsfbvV1GrE7/sCpd+gG08LntN8Tp1LBKDdXx
+	Tr8BqUYTYD8ey0jyEz/FevFtTuy+enYj0r+ZL51dTjY18h1F7v/kCrfAgqrYYH8LzXLGwXaFTG0Zf
+	DN0LEVYZ1evVJBkMGE1DgxCN02iI5oeDA2ZR3CpK5QsEkBXMGS/GIWcTguBQa9Ro0K+T0G8cxDrXB
+	lZLpk0HJvxO/GV15D04s+QiBaCW7XmK4hx7u7FN4UDgZUC77jPaD+epiLTZZI2KZGLOoIUNdK3ubk
+	iRSO2lcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTYwV-00000001Yjr-1hNV;
-	Mon, 23 Jun 2025 04:38:03 +0000
+	id 1uTZNs-00000001af7-28Rm;
+	Mon, 23 Jun 2025 05:06:20 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTYwS-00000001YjZ-47Jg
+	id 1uTZNp-00000001aeo-44Xo
 	for ath12k@lists.infradead.org;
-	Mon, 23 Jun 2025 04:38:02 +0000
+	Mon, 23 Jun 2025 05:06:19 +0000
 Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55MNWCWY030575;
-	Mon, 23 Jun 2025 04:37:59 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55MNYO9p000857
+	for <ath12k@lists.infradead.org>; Mon, 23 Jun 2025 05:06:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	YTIZyQE9IAo85GBT9lARo+AsW2dcsyItZ4EVdUevqIo=; b=FF/XGpgAcJJJBV6a
-	XXl71DNWobNV6UyjC5ehtxdsnhoezk73l7WXGHsa0SNCXHVzF6UEk4PtJd4t+IiK
-	NgLYfjp7IWJfzwaDOs94uB87N74cLoeKEJXIzVyFiPNOCOwutjcP1slDo4mojHpy
-	sk/fOgXbc9xpH0MEbAJQg4Dhj97j6aF3yAW2EJZc8VsK5ZZ3XmqV4UuVfC6gePaT
-	EOO+qsM9froZPIpU0O5CkeXSPCba5OKw+O10fIGJ7iZje3Y+2iUD2ZaxxEoHuU6j
-	b2sIubhZbgwtW1C1fA2zvtJIPGTtcUDe9v/cmOhJxEFWA71Yss6v4ICOrsai3g36
-	RxV+4g==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ege0s5nd-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Jun 2025 04:37:59 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55N4bwPj009388
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Jun 2025 04:37:58 GMT
-Received: from [10.216.31.112] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 22 Jun
- 2025 21:37:57 -0700
-Message-ID: <0e884c63-5c74-95c9-ae65-6fe8dc2cce2c@quicinc.com>
-Date: Mon, 23 Jun 2025 10:07:54 +0530
+	HHHKEzD0T9H274180tE+Ev/54hv7g8GD5RyGX8mAz+s=; b=C1oaQRNLRMUbuf05
+	hZnRYh721SNeWykQgYgy7my6PFBu4+C4lUFbESQjIytk1uSGktpAzK4ziOwR+LM2
+	5NNlcTdfrgYpicieYEd1SBXXjjp+TcKa9/lO82ZhGpG9DPFF9CMr7mDQC916HIJC
+	+ikpal5oBi2nOjW7zIVB1Yi8dFnwVvfwFwKCFuaK5VOBQ4JzbR6AjbmMxsy4Aa9t
+	x52Jbs6rhl9SGKQ9cc9W9m9CYLoIu8cCAvgFBDAef9L9TKuUZMXUk1SIKrxj4APP
+	MZ0GDrZ8jK04R5WblSgaYRuv6NO5M0gE4sQnVs8X/KJ2yzkusux0RMJqwS+Zoz4c
+	e4FfWQ==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ege0s7ce-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 23 Jun 2025 05:06:15 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2369dd58602so32623475ad.1
+        for <ath12k@lists.infradead.org>; Sun, 22 Jun 2025 22:06:15 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750655174; x=1751259974;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=HHHKEzD0T9H274180tE+Ev/54hv7g8GD5RyGX8mAz+s=;
+        b=ryR9WaMwD00r/BlkvhAVwI42fJJbtomZS4ABKFeVZnCTMctbkdSWwobWa9F35ahKX0
+         Z9TTHObRSMbR+wwBfbJaP13Do+ag4KK/AeZE0SibsrIOkP+uWpo7iH1yTCfkKQF00VyC
+         dcn5nrT/ikGaMlFUAKhwhJZMtAhfxVecIslJ044sOX8DG9ezgft+KSes/Xfri6QmOZYd
+         NXsTYC0LHIYmd7m7KKekr24t/5go7sHjYJzzPyGG9TDurEeEazQebDfM58DISsAg+Vae
+         plJKixcPXA+fwDDmi45OArNSO6HD8XcC65gFw9+rjDYaZsEqyPmatfFHNUYyWqqtMT+o
+         L0Eg==
+X-Forwarded-Encrypted: i=1; AJvYcCV6cKgaqViSaGhKPdPr/XlRSG209XG/4VPP+NJ7Ijo1vcE7sp2ch3MZQj7vubtla31oWthgRRw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwfH14wnmscRm8YH0O0/BHmo2i/xeDohWiGAMCzCXrekaVsH9y4
+	2Ywk1qjS2PEaIUcDq3qhzyZdx7UDroqoKfF1lKw8ebT+57fYYsFfnLWbSB7+DXuhgRiArLIC3rO
+	C2SLuJ6d2CmZ/E7PtaktRxaqI4R55M6QqahvQdVYg8l0SsWvgINEzz5cvnqEp3+8d
+X-Gm-Gg: ASbGncsqaNFC5LGTssCUIH0kDNvukgg+vHfHIPcmjTWB0DDaIy6cB8+kSpZsWFjbbav
+	+FOJfEWuWRic23ebQKtH93S+yqo03mySek5kx36/0ZgknkjMeJLKAboQc0vQns3PO7Y+GJ7azt9
+	Pjhc/l2bFHjTzE95G59lImJ97LkD+bd/+BoXjmqSaJn92gWJ1Cb1y5Lqn69hVSGvz+BkjJUVEIF
+	ixIHfVbLR3UpRxVhYuUh6BCEUjcyF8y/GOrGaJriHwCV0tqs+AcRdDEAuQrjPa6jnWmp5wgBHAf
+	Clk2GyEdLoCJ4cdUpN5z3txcfXvSglMbBjVjg9vnuRblugL04LMLo2j4ZYO8VR6Z
+X-Received: by 2002:a17:903:2352:b0:234:8a4a:adac with SMTP id d9443c01a7336-237d9917e65mr175914715ad.20.1750655174381;
+        Sun, 22 Jun 2025 22:06:14 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHzfCzPkULBvTu5UVkzfKO8ULI2opQNw6M9UtFT2I6KagHFiNF6gmspvSk4m3deWwoomCzOWw==
+X-Received: by 2002:a17:903:2352:b0:234:8a4a:adac with SMTP id d9443c01a7336-237d9917e65mr175914445ad.20.1750655173942;
+        Sun, 22 Jun 2025 22:06:13 -0700 (PDT)
+Received: from [10.152.204.0] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-237d8610ac2sm74285735ad.135.2025.06.22.22.06.12
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 22 Jun 2025 22:06:13 -0700 (PDT)
+Message-ID: <ae7eaaf5-cde4-4676-b28f-61e43cd3e757@oss.qualcomm.com>
+Date: Mon, 23 Jun 2025 10:36:10 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.13.0
-Subject: Re: [PATCH ath-next] wifi: ath12k: Pass ab pointer directly to
- ath12k_dp_tx_get_encap_type()
+Subject: Re: [PATCH ath-next] wifi: ath12k: remove monitor handling from
+ ath12k_dp_rx_deliver_msdu()
 Content-Language: en-US
-To: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20250606044936.3989400-1-tamizh.raja@oss.qualcomm.com>
-From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
-In-Reply-To: <20250606044936.3989400-1-tamizh.raja@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
+To: P Praneesh <praneesh.p@oss.qualcomm.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250605054438.1855365-1-praneesh.p@oss.qualcomm.com>
+From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+In-Reply-To: <20250605054438.1855365-1-praneesh.p@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 7k5vuOEOHCA9VidKzFnBuBp83ZHWjtPO
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjIzMDAyNSBTYWx0ZWRfX6yKt9lEIAMbw
- qQMhCCnuyARfhI4PXaM4YjaT0C0p/yuxDa+FXZ16EE+QS/7gKhqIz+CtxXQRfaM9154KQKOP03B
- 9SWDAxFFAXBv9uf1FaWQKOZAXxjEKguoefvZj29pPUOLkIAmWoy7FCM0SptgXPNESfCDoPDZR95
- YdbqdqcfdYpS4cSYH/8y3zE3o1wFsSiilLr6WcvvLwn81wNg85wuzTamL/Jj3A6/+E/0TnfT3JD
- kqMyFxxJnFUbNs/QjNlWUlLBTKFLJ+IFcz2Z94YwFAmhBkqYxvkd9Hnvg3lof0UvSN19SxjaYTH
- 1ip7P9CejbN0cFDResODTSnSzTA1NvFyvePLsZvvGMq7hT2XRyDDvRk+G+4VIcIuOIO9c3QBOq+
- NljfWzvaL0KeXSo6RujOoocXG6rVlO7/IAwDNoGxKazoJXcxh9JMqlkKnUe/MhX0daXdPsIx
-X-Authority-Analysis: v=2.4 cv=CesI5Krl c=1 sm=1 tr=0 ts=6858da27 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8
- a=pPNxntyw70oWO60yalIA:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-GUID: 7k5vuOEOHCA9VidKzFnBuBp83ZHWjtPO
+X-Proofpoint-ORIG-GUID: gSTWJ2YRfvbBVbfQD-oc595bpTymzNeP
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjIzMDAyOCBTYWx0ZWRfX7VV5vYPU7Czv
+ ANA9bui+tsftyyx9RSFaA+kqeJ2b+4/Iaq9VKCop4xw23Igj1SPCwGBoJalH01HZHjcadmdj9WC
+ ZQT2f6QBCGbN//X59HZZssd09VkcUMMGb5WD1GwHxlZZa6reJEc9pvBxGtt9TJ4yAebrNPb+Uk4
+ rxkqD4rgRWeIq+4dDuebHlgpGl005jrOSiv2KX556xkWfajikKidIV67ORrczEY3hTnayTo4BFN
+ yL9+PC0cqIv9TaiMTx9OsDfQ6Sgzu96yB6lbs/a6Um5lT5Ozli9h2wNtmr3rBwBOUU7MrIWN8qd
+ N5oh24hhARpB6wNzYIVV5w1W6/xnHUhYadhqDfeFDweguVDcswKn2hWp29kX6iYtWJge76p5WRE
+ ZkxVwoC2Ghr9NlVimkJDVShlh5cQlioyiaovEFeECMW1iUzJingl1prvTfzA2sfwD7Dz1Scd
+X-Authority-Analysis: v=2.4 cv=CesI5Krl c=1 sm=1 tr=0 ts=6858e0c7 cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+ a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=NwdkJL6YhdxGdXyF1vkA:9
+ a=QEXdDO2ut3YA:10 a=zZCYzV9kfG8A:10 a=GvdueXVYPmCkWapjIL-Q:22
+X-Proofpoint-GUID: gSTWJ2YRfvbBVbfQD-oc595bpTymzNeP
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-06-23_01,2025-06-20_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  lowpriorityscore=0 phishscore=0 clxscore=1015 spamscore=0 adultscore=0
- mlxlogscore=823 suspectscore=0 malwarescore=0 priorityscore=1501
+ mlxlogscore=809 suspectscore=0 malwarescore=0 priorityscore=1501
  impostorscore=0 mlxscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a
  authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2506230025
+ engine=8.19.0-2505280000 definitions=main-2506230028
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250622_213801_153399_9276FD8A 
-X-CRM114-Status: UNSURE (   8.58  )
+X-CRM114-CacheID: sfid-20250622_220618_142619_15CC93B6 
+X-CRM114-Status: UNSURE (   8.57  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -115,32 +133,20 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 6/6/2025 10:19 AM, Tamizh Chelvam Raja wrote:
-> In ath12k_dp_tx_get_encap_type(), the arvif parameter is only used to
-> retrieve the ab pointer. In vdev delete sequence the arvif->ar could
-> become NULL and that would trigger kernel panic.
-> Since the caller ath12k_dp_tx() already has a valid ab pointer, pass it
-> directly to avoid panic and unnecessary dereferencing.
-> 
-> PC points to "ath12k_dp_tx+0x228/0x988 [ath12k]"
-> LR points to "ath12k_dp_tx+0xc8/0x988 [ath12k]".
-> The Backtrace obtained is as follows:
-> ath12k_dp_tx+0x228/0x988 [ath12k]
-> ath12k_mac_tx_check_max_limit+0x608/0x920 [ath12k]
-> ieee80211_process_measurement_req+0x320/0x348 [mac80211]
-> ieee80211_tx_dequeue+0x9ac/0x1518 [mac80211]
-> ieee80211_tx_dequeue+0xb14/0x1518 [mac80211]
-> ieee80211_tx_prepare_skb+0x224/0x254 [mac80211]
-> ieee80211_xmit+0xec/0x100 [mac80211]
-> __ieee80211_subif_start_xmit+0xc50/0xf40 [mac80211]
-> ieee80211_subif_start_xmit+0x2e8/0x308 [mac80211]
-> netdev_start_xmit+0x150/0x18c
-> dev_hard_start_xmit+0x74/0xc0
+On 6/5/2025 11:14 AM, P Praneesh wrote:
+> ath12k_dp_rx_deliver_msdu() currently includes logic related to
+> monitor mode handling. This code was inherited from the ath11k driver,
+> where a single rx handler was used for both regular and monitor mode
+> packets. In ath12k, however, monitor mode packets are handled separately
+> via ath12k_dp_mon_rx_deliver_msdu(), which contains all the necessary
+> monitor-specific logic. Therefore, monitor-related checks and operations
+> in ath12k_dp_rx_deliver_msdu() are no longer needed. Remove this dead code
+> to simplify the rx path and avoid unnecessary per-packet checks.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 > 
-> Fixes: e93bbd65547e ("wifi: ath12k: fix packets are sent in native wifi mode while we set raw mode")
-> Signed-off-by: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
+> Signed-off-by: P Praneesh <praneesh.p@oss.qualcomm.com>
 
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
