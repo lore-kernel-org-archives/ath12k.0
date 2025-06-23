@@ -4,68 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D99F9C7115B
-	for <ath12k@archiver.kernel.org>; Mon, 23 Jun 2025 04:17:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3ED24C7115B
+	for <ath12k@archiver.kernel.org>; Mon, 23 Jun 2025 04:19:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1X+5oS7cexX+bxXLJeAB2eaYu59G2fHCkaLDIk3njgs=; b=VHGIQhiei/iPSG1kNJblIzXAwR
-	5m3O1xNkP+zOblAzX5RKxAUDQn3f1NJisTfO+Q5AEIyeBV2SOGlcvhaBjrUgs7FxImNEAChUPUV8D
-	bg8LDJtPF1YBYRdUAw9XIgsCfXTCq1SCEecqmcGBce+mo4RIiHLzXr/bGMeEeg5ktNKIFh3NDdExp
-	14DQNrH3ZDpNtRYQOr6XHa0ueimIPzhTCR/lxv09UF86tQUXzY+cSrgmWWPzMg1zuTHfQiWaXYeTU
-	KdGsrwDdhMT2w64jxRgXZ7sfpOMPsU9khtDb727+YJwSZ5ayJy4Vrq37SpuL04hEC6u8oLOaKiure
-	ZFnkoqYw==;
+	bh=oL6nG8GOX8cSTgKalYLdEe0t5pO20ymiGwKegnv5//M=; b=HFnq1zlIEoQo/GsYPsWCxlr29p
+	NyqKfokmzkzz53moOcN0V2Jkwkm5UpZPINDvy3+cbjqNOcZK9GFNkkh63AmidsAMpYUjxE8FDNgPF
+	FU32GlqeWAMOcbsk31Owswj4h50P1Q0mieGf2pVfJIgqigrTnuuHDcWuM0PRKAUVtjagnkE6+lpgJ
+	y+gfPulpylkWSp9mr8D9FxP/YkqL3rZL677baGGtHoV5gWcdSDx/uo/tTkrwAvFMLoRc6ruSQvTMU
+	sSPFiJ4vUTERR2fmJRhhm05n5ZS0lDh5/2dbfecw5LVOhuwrzjSXrPZHwAzXXWHifWmhKot24EAid
+	P+IViyCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTYd4-00000001Xox-2EYg;
-	Mon, 23 Jun 2025 04:17:58 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uTYeB-00000001Xwc-00nS;
+	Mon, 23 Jun 2025 04:19:07 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTYd2-00000001Xob-1cpi
+	id 1uTYe8-00000001XwI-3Gco
 	for ath12k@lists.infradead.org;
-	Mon, 23 Jun 2025 04:17:57 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55N29BEg021739;
-	Mon, 23 Jun 2025 04:17:54 GMT
+	Mon, 23 Jun 2025 04:19:05 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55MNJECI012662;
+	Mon, 23 Jun 2025 04:19:04 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	1X+5oS7cexX+bxXLJeAB2eaYu59G2fHCkaLDIk3njgs=; b=QYqG3oFVfxCco0t6
-	0vHvPsVr8dYh5Av2ztNFVFqZ1PF59C6kTOFzxvDr8dYeKkfTOxO+FkgFkoe1xMfx
-	jLq70BavBA0M1X6BbwNEwemmJHHHjQcZoMK8G821Ph8SApVzZuH1dz8SFil0DSiB
-	sAvIRKQl+uiWppa6gyqAJwDXQLimjTDZZ9mqqQHILUs/UVOTjv2YmrceDKiXMePQ
-	nLqdCaQqA4PauQoPGL7yNUC4QzN0K/vYQAUZrtc6yfGMbnt+cikFY3/f47ZArfxf
-	ABrE31j+alFwaCuExoW/BycrCRk36y6ukR8caeIjzs4DuSmX10jnkHE+e3h7I1F8
-	ZlXicg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ewv787j6-1
+	oL6nG8GOX8cSTgKalYLdEe0t5pO20ymiGwKegnv5//M=; b=HuSINB3TjyObcyuR
+	RcmZZe2p1YEZNx5eT8Xk3zpXQsmFYyrJ/2qfVdbgTc5Tl9ozTgFoqusKAR8ZUq73
+	mZ9QaAPqToCVIHLx7oX3aBW4Gvf2cv0xUuwmSfGr3V/+Vt0wmlzY1AoSmcRIQjFv
+	FwsQzS6tIS7OKoN1wPw0lZLHaih/DW2rz6/CI9ONfgn05NoBgNjLbFc0rqVUEsmS
+	5llilajrTEEym6aaTiL5yaaehwvss00gz2Rf9eaQF9LJR0+i8V9VU9nEkgq+8/kJ
+	6XmpQQEOD31L/P0MZcH0Ikt+vA3nDVXd5l6kw5kX9GHZX9ebQy4viL0zafqPHyse
+	9ruPZg==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47eud08ehx-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Jun 2025 04:17:54 +0000 (GMT)
+	Mon, 23 Jun 2025 04:19:04 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55N4HrPQ027137
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55N4J3h6020701
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Jun 2025 04:17:53 GMT
+	Mon, 23 Jun 2025 04:19:03 GMT
 Received: from [10.216.31.112] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 22 Jun
- 2025 21:17:52 -0700
-Message-ID: <405d254c-9a92-e269-b819-b14d0485da00@quicinc.com>
-Date: Mon, 23 Jun 2025 09:47:49 +0530
+ 2025 21:19:01 -0700
+Message-ID: <783d66a9-1d06-a068-7650-2a58c4023164@quicinc.com>
+Date: Mon, 23 Jun 2025 09:48:58 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.13.0
-Subject: Re: [PATCH ath-next] wifi: ath12k: Avoid accessing uninitialized
- arvif->ar during beacon miss
+Subject: Re: [PATCH ath-next] wifi: ath12k: Decrement TID on RX peer frag
+ setup error handling
 Content-Language: en-US
-To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20250618185635.750470-1-rameshkumar.sundaram@oss.qualcomm.com>
+To: Sarika Sharma <quic_sarishar@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Karthikeyan Kathirvel
+	<quic_kathirve@quicinc.com>
+References: <20250526034713.712592-1-quic_sarishar@quicinc.com>
 From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
-In-Reply-To: <20250618185635.750470-1-rameshkumar.sundaram@oss.qualcomm.com>
+In-Reply-To: <20250526034713.712592-1-quic_sarishar@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
@@ -73,31 +74,33 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: emgimUg36FjeOfj0YR97EXtekqzDavo9
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjIzMDAyMiBTYWx0ZWRfX6fss7J/JN+sd
- pMtrHQ8r2W8W8x0d7EvHk/A3VGo80NcTKiQb4PGTy82dfNK9dBJa+h//NbSNY+bjPVEkMNO6LiH
- Yw6jod13uOLCyKKuhqhnQxxA/27E2wd/OG9AAncf2DswmlWW5k3IqCJOMObht3/8Y7+BqVj0NcJ
- NOp1XijJ+K91+uD0gDhCEkQfAd0Km3QSHqXj4P3RDYNfXuGa3q+wWcwLyoa0pyFa5V7wzEUmO8e
- gV5XSmLTajv5duLSYijhx5G39eDkw5ZObG31oNvsOqIUiHyFc4d0wbMPoh70JjM7+DPSnTKUHGa
- DWGYtSOKcV/Q+BMiPZYZo0gh2zLt1C82BHGbYF8LlEclH4FieD6gCipl1ba9TT+TCd16H91vG1h
- ZrllDR17kuXHdzrgEmunj/QPdtTMT7iLcNGKwUpJJEZ79+KvysJ7A1R86CKvurgeIa/29q88
-X-Proofpoint-ORIG-GUID: emgimUg36FjeOfj0YR97EXtekqzDavo9
-X-Authority-Analysis: v=2.4 cv=NtfRc9dJ c=1 sm=1 tr=0 ts=6858d572 cx=c_pps
+X-Proofpoint-GUID: 75mA3c7xbhm0reUAnqyphYI6b-_hxOg-
+X-Proofpoint-ORIG-GUID: 75mA3c7xbhm0reUAnqyphYI6b-_hxOg-
+X-Authority-Analysis: v=2.4 cv=eco9f6EH c=1 sm=1 tr=0 ts=6858d5b8 cx=c_pps
  a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8
- a=ndFkImpZcDCW1Fv5VC8A:9 a=QEXdDO2ut3YA:10
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8
+ a=EUspDBNiAAAA:8 a=BsdNM8JOicQgXtT25-8A:9 a=QEXdDO2ut3YA:10 a=zZCYzV9kfG8A:10
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjIzMDAyMiBTYWx0ZWRfXwDN2mCqFGKIO
+ Icu1ocds0JBkS2Q6vx5Tc8uotjgTeB8wo8XtdUbBLCiFm5wL5fSAFibVOpWDhAuKiUgKz7cPsPu
+ rKEjDKm/pfEdzSBTBjSCi4g+N3QNTJwLQjHcLb82oWGg9Q4yBVXKDk4v9y14q/2bG1K+D1hFyUA
+ L75WACoNCLsp5a5NwwmkHnq7Iu3YKliJjd+5ku5ELNKAMCgP0MWukd1ioQUSOtxb9nXu8yKBywg
+ 6qXTEUoqGWnMXkZhcYgPf+mHG5qEckFCQZrqc03+lKQoRJw6HEVAPJ59siIPThy9VZUc8bywpIT
+ Vj3lnvAOJ/jHBNh3V4Tuucd/ALNt9AneZ1MkWoCHfUg/KGQUq1K/W/QRWSlaoGjcexg1nDqIT/Q
+ 9Jbf0ysjaZV8QLQ9g2g24bpZvKsqtyAEX6hBwn5vtDaO6rV0PDGC2VYANiR6QA8uhl1hW03h
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-06-23_01,2025-06-20_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxlogscore=999 spamscore=0 phishscore=0 suspectscore=0 impostorscore=0
- priorityscore=1501 mlxscore=0 adultscore=0 lowpriorityscore=0 clxscore=1015
- bulkscore=0 malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ mlxscore=0 suspectscore=0 adultscore=0 clxscore=1015 mlxlogscore=513
+ priorityscore=1501 phishscore=0 lowpriorityscore=0 spamscore=0 bulkscore=0
+ malwarescore=0 impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
  definitions=main-2506230022
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250622_211756_555569_E017DB06 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20250622_211904_824157_CFD21F0B 
+X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,54 +117,21 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 6/19/2025 12:26 AM, Rameshkumar Sundaram wrote:
-> During beacon miss handling, ath12k driver iterates over active virtual
-> interfaces (vifs) and attempts to access the radio object (ar) via
-> arvif->deflink->ar.
+On 5/26/2025 9:17 AM, Sarika Sharma wrote:
+> From: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
 > 
-> However, after commit aa80f12f3bed ("wifi: ath12k: defer vdev creation for
-> MLO"), arvif is linked to a radio only after vdev creation, typically when
-> a channel is assigned or a scan is requested.
-> For P2P capable devices, a default P2P interface is created by
-> wpa_supplicant along with regular station interfaces, these serve as dummy
-> interfaces for P2P-capable stations, lack an associated netdev and initiate
-> frequent scans to discover neighbor p2p devices. When a scan is initiated
-> on such P2P vifs, driver selects destination radio (ar) based on scan
-> frequency, creates a scan vdev, and attaches arvif to the radio. Once the
-> scan completes or is aborted, the scan vdev is deleted, detaching arvif
-> from the radio and leaving arvif->ar uninitialized.
+> Currently, TID is not decremented before peer cleanup, during error
+> handling path of ath12k_dp_rx_peer_frag_setup(). This could lead to
+> out-of-bounds access in peer->rx_tid[].
 > 
-> While handling beacon miss for station interfaces, P2P interface is also
-> encountered in the vif iteration and ath12k_mac_handle_beacon_miss_iter()
-> tries to dereference the uninitialized arvif->deflink->ar.
+> Hence, add a decrement operation for TID, before peer cleanup to
+> ensures proper cleanup and prevents out-of-bounds access issues when
+> the RX peer frag setup fails.
 > 
-> Fix this by verifying that vdev is created for the arvif before accessing
-> its ar during beacon miss handling and similar vif iterator callbacks.
+> Found during code review. Compile tested only.
 > 
-> ==========================================================================
->   wlp6s0: detected beacon loss from AP (missed 7 beacons) - probing
->   KASAN: null-ptr-deref in range [0x0000000000000010-0x0000000000000017]
-> 
->   CPU: 5 UID: 0 PID: 0 Comm: swapper/5 Not tainted 6.16.0-rc1-wt-ath+ #2 PREEMPT(full)
->   RIP: 0010:ath12k_mac_handle_beacon_miss_iter+0xb5/0x1a0 [ath12k]
->   Call Trace:
->    __iterate_interfaces+0x11a/0x410 [mac80211]
->    ieee80211_iterate_active_interfaces_atomic+0x61/0x140 [mac80211]
->    ath12k_mac_handle_beacon_miss+0xa1/0xf0 [ath12k]
->    ath12k_roam_event+0x393/0x560 [ath12k]
->    ath12k_wmi_op_rx+0x1486/0x28c0 [ath12k]
->    ath12k_htc_process_trailer.isra.0+0x2fb/0x620 [ath12k]
->    ath12k_htc_rx_completion_handler+0x448/0x830 [ath12k]
->    ath12k_ce_recv_process_cb+0x549/0x9e0 [ath12k]
->    ath12k_ce_per_engine_service+0xbe/0xf0 [ath12k]
->    ath12k_pci_ce_workqueue+0x69/0x120 [ath12k]
->    process_one_work+0xe3a/0x1430
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Fixes: aa80f12f3bed ("wifi: ath12k: defer vdev creation for MLO")
-> Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+> Signed-off-by: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+> Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
 
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
