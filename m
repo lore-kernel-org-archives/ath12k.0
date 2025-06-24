@@ -4,81 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F20AC7EE30
-	for <ath12k@archiver.kernel.org>; Tue, 24 Jun 2025 19:55:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92BB5C77B7C
+	for <ath12k@archiver.kernel.org>; Tue, 24 Jun 2025 19:55:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=H81KJDxnvk8MLP9fd6usStsOVCgvFGkQ9vXSXSAgBOc=; b=bXKhp8cYrCzSHKCd7e305vPDs6
-	JLWZAVoQxicDdVU97TzwytK5LdkXZGS9rFGb6jxMm2GQeZiElKDrPUiD/wf1buHM60R1Jy93xTOrt
-	QNTIEYOWthpVGBplfHPD6ffGQwRKK6uhVgR/b8PkvKyc+BqTs1wJ3q/R1lWP3kURwBg9bPDyPNOYC
-	37K/ijNN/nBHwebUECQ4Z0Iu52J80mqO9DgxberFadMzBGTTKtov/C9iT1s2dAKIqZJOmIgeK6Dqn
-	dZIbko6T+cD3inPoY/bqBLdEy46CqVEfelo1u5XG7X83+9D80LbINEmkHJNfoqw+kbdSQ/vkwZy2M
-	Bcnwrf2A==;
+	bh=tyJRjp2BC+daF8rBAqDwQ0jizpuQHWR1yMahxWZ+7VU=; b=GbvqiIR06Qar8wIlh+qfNWa/07
+	KmRX7Ruh98S380VBNjCNe3Qg58w5FzD8C35p9AYsOvaWr9k24H5zW6lIrBgQkHFD98rWavIAgO8ti
+	Y0dYEIF4zrSHpysG72CXsjXYaFDqW99DKu386LMRjh4lvmz0BJ06OXxmuQDg30J2AcXqNnqejxxYg
+	PKQzpT2cwJNLDG6Y/0AyndUCW6h0VyWiPcFYzB6ngnejv7Fyld8PDGkif0XZlvwz5HOZYDxStfEV/
+	JOnoxGG1dVqLjqSMJk22caVbJDER50BCJe2BHHWt4Wmy5zgU5h9OW7pygIUkz5iGfA1+ydCCawcd7
+	4ertrDZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uU9jy-00000006gg3-2rov;
-	Tue, 24 Jun 2025 19:55:34 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uU9jz-00000006giE-40Vd;
+	Tue, 24 Jun 2025 19:55:35 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uU7PT-00000006NlY-1U6V
+	id 1uU7TT-00000006Nxu-3fUe
+	for ath12k@bombadil.infradead.org;
+	Tue, 24 Jun 2025 17:30:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=tyJRjp2BC+daF8rBAqDwQ0jizpuQHWR1yMahxWZ+7VU=; b=eF/XstJrWDD2KAv3I3sR0br3ok
+	FwVY2p64TdpH+9MFAZ8w3syjRSXByyb4Fn33KyayLUBqMXEAWSQM8ObAytY/mWY6JhvYxv9WrQMla
+	KEFNhJjUGpsnWNEkmzERCJMLBSpG7BKMB2bk9hxRfr1D6sX1OLx5jJNKMxYN86k4OgYB6ZMIue6kq
+	EH8+JnnRjPfs3pkN7gybF77vbiapk2yMerw5BOpnOs3zeU2+SgEOP0Og/GN0UZx5ZzUEmVAARNFuQ
+	HgehWGW7lqGphDvy1aJfhkFyMahbZf1b/y8bII86C2AaOnea8N0QdMppmwiY24Hu19m04+mHq1RtM
+	dIMiSDpA==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uU7TP-00000005Wae-47mx
 	for ath12k@lists.infradead.org;
-	Tue, 24 Jun 2025 17:26:17 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55OFbQkD019166
-	for <ath12k@lists.infradead.org>; Tue, 24 Jun 2025 17:26:13 GMT
+	Tue, 24 Jun 2025 17:30:22 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55OFKJgh032648
+	for <ath12k@lists.infradead.org>; Tue, 24 Jun 2025 17:30:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	H81KJDxnvk8MLP9fd6usStsOVCgvFGkQ9vXSXSAgBOc=; b=iLjDCPE85hZUmA0J
-	uGmXfPria38knNTGYg4X6sGKJzcjyXpCjaDcMZCwXjAx756NH8ArLfjIh+bVZS++
-	gxOqL1j24TinnuPCJr+rcmQqoO0B/2ueIXgfsR2d1JgnRbY4eY5Z1UOzhKwhYwDk
-	mOyyPVoI/oq/mRqU4GUCbvBjGM6FgQ0zwbB6mQ3vRYywG+h3uuLXr+CN6VmKwfrG
-	u3qXRxyLo0KOIdO68v0xgUvA6u+pvWC5O8aRnTttAqEwJ3aO8unUG4MV/yYniAUq
-	qbYHlpUkonFdAaO7C7wbsM3uFERuo2nnd3kOqaKezGQa+OCy9c4tHxy5wToLUyLa
-	euFvQQ==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47fdfwubs4-1
+	tyJRjp2BC+daF8rBAqDwQ0jizpuQHWR1yMahxWZ+7VU=; b=EUlp7UfwxE9aREU9
+	OtGgKAwrLHK/xXRfOyDYCJGAML8fR2XG8AjtOACJ2vOihqo3bRSBXh7H3WZXJJ6n
+	5a3WHI2crNL85cK5AUAX4+L24h6arIPA7qM27V0ld9nmNhXX1vvkX0jR7FniPUGh
+	BoybdN58JdHfEOaJCDHU/sIw7JmMV7dFMreXghVaHq0AcRFxYtLs4UqXBttNInYy
+	DeajbIsjDLdUrPQkI6eRFOGU3zWlm2Wr+6uzMtu9ItupW6EXsEQbxBoF0RQqxrzm
+	yVKJWVLXTvuGDF/w2UtRW24+7HMlz+W64p3HFHQr5cJ+DwxCEI5OEI6eWlF1eZaK
+	fOhHmA==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ec267c3b-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 24 Jun 2025 17:26:13 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-235f77f86f6so56123085ad.2
-        for <ath12k@lists.infradead.org>; Tue, 24 Jun 2025 10:26:13 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 24 Jun 2025 17:30:16 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b31bd4c3359so3588252a12.3
+        for <ath12k@lists.infradead.org>; Tue, 24 Jun 2025 10:30:16 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750785972; x=1751390772;
+        d=1e100.net; s=20230601; t=1750786215; x=1751391015;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=H81KJDxnvk8MLP9fd6usStsOVCgvFGkQ9vXSXSAgBOc=;
-        b=N0jqzdbXGP9RxjE79zKByKDGVCRElEcjxRqbDSQNaq2VTaZD+7XfAw6k3BzbXBW2Ma
-         krtFWEhlwmxGDPiMe8wlnAMJuOVQl5ZbgRoS6gDHpLU/+igpqlyHFYfIMRXOBEbHIb3k
-         vyjzkgX/Mt3oQKNLRVgDgvLDUoVm0/LwWFEGgjeHbyJ81kXB5yk+gaeqHUDvdY5BVdHt
-         YIoG6AnbIZTz8fHTALZiF0VquA2GLVaN3ekZbt6YPdkCJgrnVgOdDfwu56g9fZY1Wzxg
-         NDIIHjzY4gOSxUfR1E5ytfEbcw8irBwldC7WQI3IOExoL6tGEJgKik/QAHOMf7GFgOiz
-         BQiA==
-X-Forwarded-Encrypted: i=1; AJvYcCXx3EuadPHx/0elDzQ/tYfOJ0ltm/ppyLW0N860Ycft4QqD4DYnrLoxxU0+wkCggaBe7zG93GM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxyCvf+3Lv7oENy9DOobEyTATbwyELEfA22esFYedtIdeGCnr2w
-	OyW2qwyoVD27PoYaPY/sSUNizY9iVBslJPh0IbUfnnYFQPhpwnWwPoLQkpcNoUHHJopsNyK8fKU
-	vcbK4orSSuCkha25DS0Fw1kcGRJwL9haDyKPyPXSX9rDF81dhsV/TXa5BUeQM7t5I
-X-Gm-Gg: ASbGncs7CEGTGKZZ8NIRXGLowyh7WsvfQprSha5FbkaHGWj0KuMKbpHNrgj7w3rJPxF
-	fyLaTLN+5T0+w6EFdA15txAP4pajsjHDIBZQN3vcSvT8DiyiZgT+/GRtA1hXlUqBLnH1u7fp7ox
-	7on0WjtJZNgR1jWl4qpHU8qy/PW8MlzS3ndAvmz9hSCF8bKwRM396xlJtYFQ4KZScPDvQnqP1ht
-	VHW2HqeSnSY2UyhYsC4OtWtucsHvB7/NVwu5Gogbvm52NTijugq6TRlYP/7EksibAS4tna9zyMA
-	ALogilJQJVtWLIa3ppPQUpYlIoXe0X7HC3U9ywVnID4kLRq5GryC14G6zAnZgUJy6q57rJ5ajbO
-	+rEHq0kC9W6TDZzg=
-X-Received: by 2002:a17:90b:1d8d:b0:312:1ae9:153a with SMTP id 98e67ed59e1d1-3159d8d6852mr24567641a91.25.1750785971906;
-        Tue, 24 Jun 2025 10:26:11 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IETairooMDzC3XVhPtfXlzqNuXuLeX56ohzqzwK4jWFu2BzVK3o1ztV+39tfeed69Z0UQeInQ==
-X-Received: by 2002:a17:90b:1d8d:b0:312:1ae9:153a with SMTP id 98e67ed59e1d1-3159d8d6852mr24567607a91.25.1750785971401;
-        Tue, 24 Jun 2025 10:26:11 -0700 (PDT)
+        bh=tyJRjp2BC+daF8rBAqDwQ0jizpuQHWR1yMahxWZ+7VU=;
+        b=iya/Y8conu6+2uIiAovKiF0U5A/TQE+mbGKv1w2fKRcPz2Ts52IFcw2DVSQlngPSHk
+         Kmtk9KNLO98XuCkhODYSrGNFdKYA9d8bGRTb5aQpQPEJ+lvX5s6QiP+Gue/sjfP+1t/z
+         ct2MG0v3uncdi/irtkzBEC306rLRbq89oEoQSQ/IvolJu5zj3Rxyf6Bl1jJ3YMWQKUJ2
+         A0GUouM8JvSyWyH+WmLstkLOKBv4ZTm+2NBNy9TD4Nl19atxs5W6jt9Si23xKe9Eodw3
+         7QgT2dh7sOzN+95+vPZhSSFrcBEDMOdFKJxLYAklppS6pXT8alqEIDWADDO4Rn8e3iPM
+         ddhQ==
+X-Forwarded-Encrypted: i=1; AJvYcCV2OHJTUgC75DH82NSbzmO0HAvTS8WuRTK6XsAGrA86s/bCphZJuhcVcfkWuze2/hFHSws9Bz8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzAqVcIJCxpCnCVWUUbBDqwHWMXGBtR7oYZ/GORBBduZP72HpNw
+	/mDzPbCbxq++WdZN5VhdR/aCEVBySNcZLmmks+cmFWvMOHds8wCn0rEPtvrbpzK73Kf2qv83vdS
+	m/M4z2Y1p3QLos9h6XyIjRwxQnn4ufyEmfelEo0/18yZvRqk6iHqAddP6g9KHA50p
+X-Gm-Gg: ASbGncvtFvg0TqMlXBECmM1W/Yx0rwUnGz4Knbl9cyljtq/0sn5mzUS5umzEqgqCelu
+	xzv8LpxN6d/OQK/4Rg7QlkSz642KyVCZmh6Ur7Psc/BqQnWyQDQ8ffhI37hcArdW+qd2D6ae8+V
+	wW69mHsxr1nopW6BWi7NNeiQDoyN8CYXX2Em0ARzvZLHmDTfJlbNTWIFSd/+IJw3DQomyw5oLbw
+	RXPE0g1O2ai32uHhApkukHA6KKnblq7n7Bzy6S5tYp2ovEPn0DPAbRmLNzp0a1R0OKPEoce+cOM
+	/rg4ExOXaqlQwfn9IbeKGB1bngHXIuXJcxQTo+itaDu+5eeeibwZhifNpwUzbw+uqilhWW95Amp
+	/5bnMRrZafVErLXQ=
+X-Received: by 2002:a05:6a00:1817:b0:742:a77b:8c4 with SMTP id d2e1a72fcca58-7490d758681mr31303378b3a.3.1750786215211;
+        Tue, 24 Jun 2025 10:30:15 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IES7z9d8vjW9wocOUQHzjnQCbI9qB8j++QdFNu9+XZhCz61AqzxPaefqRHEfG8CpjKAP1LyRA==
+X-Received: by 2002:a05:6a00:1817:b0:742:a77b:8c4 with SMTP id d2e1a72fcca58-7490d758681mr31303304b3a.3.1750786214605;
+        Tue, 24 Jun 2025 10:30:14 -0700 (PDT)
 Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3158a331983sm13248029a91.47.2025.06.24.10.26.10
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-749c882cc78sm2265801b3a.87.2025.06.24.10.30.13
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 24 Jun 2025 10:26:11 -0700 (PDT)
-Message-ID: <58fa9f69-2525-4c6a-acc8-571b20a4646f@oss.qualcomm.com>
-Date: Tue, 24 Jun 2025 10:26:10 -0700
+        Tue, 24 Jun 2025 10:30:14 -0700 (PDT)
+Message-ID: <14928304-c4f3-49d1-8a9e-d018ac699e90@oss.qualcomm.com>
+Date: Tue, 24 Jun 2025 10:30:13 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH] ath12k: add module param to control MSI mode and address
@@ -91,31 +106,32 @@ Content-Language: en-US
 In-Reply-To: <20250624165031.58616-1-govind.sk85@gmail.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: EVSjvQTjn1_S7bvFnwnRVoXAERC4TjId
-X-Proofpoint-ORIG-GUID: EVSjvQTjn1_S7bvFnwnRVoXAERC4TjId
-X-Authority-Analysis: v=2.4 cv=MtZS63ae c=1 sm=1 tr=0 ts=685adfb5 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=e70TP3dOR9hTogukJ0528Q==:17
- a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=pGLkceISAAAA:8 a=usLT_vtIx6HESW-Kn04A:9
- a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI0MDE0NCBTYWx0ZWRfX+9agduRlfKzh
- d6iueiOFkoweH5BPVis/TitEcORqvVkpsPg6BcAYOU5xDnrFzFpL3Fv4gFTYa8PnNmykl+afKaX
- eOAsbTntswDJzMX5MZEf/YGxU4x27+lx5SZFaFjlt2IE2+TyBZqPrT7tdTvbDi4pU1fnntT36lF
- d5CT5UZyBR2jX+SA6fhtDgBNV8wbwasmwL/xNiGbFPCgECcA4OpXx+pS7HXud0owERHXNAD/8DY
- Cz/Al3SkIBtBBC1gi0/Z9x+bTXhKedWJxDg3aisamjYipmbCDldh8u/QbENReTiPQQ2gZHrD60P
- mTHvJt66T1lNR53yjI8iPBBcTcjurmdup7mTQKbtrjUatEEf2ZDkAY9jbZagPL8XsgH7qfhGoCQ
- XBzX+UJuMcMNmXZUOuDoOmJkXz7RUe2QN02avwY/jj4WXOffD1qEj0SplZSUFD9yxQIaoXRt
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI0MDE0NCBTYWx0ZWRfXx3vBEsAmb2yU
+ mXSwiloeI+DbyR+udOZOZTlNAcuBmK9WrxAWiN4mL+ajZGnMMsHeDDHc7pYrke2sQ55iC6SqfCA
+ 1byaGG5EXBErjlN3IQc7lstPtQaDiclGyGmymakz+ye60cbqGI6qhiB7nppP4V4Ih36mtFGwTUj
+ D63h64BP2YKnmFv5i3TyjHZikLzj8U8b+2AOhd1FweiyYA3E01WhA8ktTImnRdIDHFiaMYcVqbu
+ bdGveO9vgaVH1l9YvS4x3Puu0dnglsxS4HWDUYKpaMiTyFCY0Yp7tfwSyoTAs1JyAgA5wCxR/b5
+ F7ieM+q62bRSA2jGonjee9FFJyVQQCLfZ1taye8QXEnfOa6jDWv8wP9cf+w47EvYWR1A1ke3oxt
+ uGqWKZSTm/vPVudaapZfwu8erTCstqOh/YgKayzwAN60JdSQj1L3tMpej5iNCQn5/DzcHY84
+X-Authority-Analysis: v=2.4 cv=XPQwSRhE c=1 sm=1 tr=0 ts=685ae0a8 cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=e70TP3dOR9hTogukJ0528Q==:17
+ a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=VwQbUJbxAAAA:8 a=oBaBJG5FjUdcDCMQZ_8A:9
+ a=QEXdDO2ut3YA:10 a=bFCP_H2QrGi7Okbo017w:22
+X-Proofpoint-GUID: 2M50Yjy9FV_VxKVcxuypBCP_ImjP4GKU
+X-Proofpoint-ORIG-GUID: 2M50Yjy9FV_VxKVcxuypBCP_ImjP4GKU
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
  definitions=2025-06-24_06,2025-06-23_07,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 impostorscore=0 suspectscore=0 adultscore=0 phishscore=0
- mlxlogscore=999 spamscore=0 malwarescore=0 priorityscore=1501
- lowpriorityscore=0 clxscore=1015 mlxscore=0 classifier=spam authscore=0
- authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ lowpriorityscore=0 impostorscore=0 clxscore=1015 suspectscore=0 mlxscore=0
+ spamscore=0 phishscore=0 malwarescore=0 mlxlogscore=844 bulkscore=0
+ priorityscore=1501 adultscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
  engine=8.19.0-2505280000 definitions=main-2506240144
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250624_102615_532449_0BB67F0B 
-X-CRM114-Status: GOOD (  26.41  )
+X-CRM114-CacheID: sfid-20250624_183020_478117_EFCD92EF 
+X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,121 +146,6 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/24/2025 9:50 AM, Govind Singh wrote:
-> This patch adds two module parameters to the ath12k PCI driver.
-
-Please use imperative voice.
-And it is preferential to first describe the problem, and then describe the
-proposed solution.
-
-> 
->  - ath12k_msi_mode: Allows selecting the MSI allocation mode.
->    * 0 = multi-vector MSI (default)
->    * 1 = single-vector MSI
-> 
->  - ath12k_32bit_msi: Forces the use of 32-bit MSI addressing
->    by setting pdev->no_64bit_msi = 1 before IRQ vector allocation.
-> 
-> These options are useful for working around hardware or platform
-> limitations(ex:  i.MX 8M Plus) where 64-bit MSI or multi-vector MSI
-> allocations fails or cause stability issues.
-
-So there is no way to detect this?
-
-> 
-> The original MSI allocation logic remains unchanged unless the
-> parameters are explicitly set via modprobe or kernel boot options.
-> 
-> Tested-on: QCN9274 hw2.0 WLAN.WBE.1.4.1-00103-QCAHKSWPL_SILICONZ-1 with
->            i.MX 8M Plus SOC
-
-Don't split tags, and need a blank line after Tested-on since it is an
-ath-only tag, not an upstream tag
-
-> Signed-off-by: Govind Singh <govind.sk85@gmail.com>
-> ---
->  drivers/net/wireless/ath/ath12k/pci.c | 25 +++++++++++++++++++++----
->  drivers/net/wireless/ath/ath12k/pci.h |  5 +++++
->  2 files changed, 26 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-> index 1f3cfd9b89fd..4f58cb1e03f6 100644
-> --- a/drivers/net/wireless/ath/ath12k/pci.c
-> +++ b/drivers/net/wireless/ath/ath12k/pci.c
-> @@ -45,6 +45,14 @@
->  #define DOMAIN_NUMBER_MASK		GENMASK(7, 4)
->  #define BUS_NUMBER_MASK			GENMASK(3, 0)
->  
-> +int ath12k_msi_mode;
-
-should be static, make W=1 reports:
-drivers/net/wireless/ath/ath12k/pci.c:48:5: warning: symbol 'ath12k_msi_mode'
-was not declared. Should it be static?
-
-> +module_param(ath12k_msi_mode, int, 0644);
-
-why is this writable via sysfs?
-
-> +MODULE_PARM_DESC(ath12k_msi_mode, "MSI mode: 0 = multi-vector (default), 1 = single-vector");
-> +
-> +bool ath12k_32bit_msi;
-
-should be static, make W=1 reports:
-drivers/net/wireless/ath/ath12k/pci.c:52:6: warning: symbol 'ath12k_32bit_msi'
-was not declared. Should it be static?
-
-> +module_param(ath12k_32bit_msi, bool, 0644);
-
-why is this writable via sysfs?
-
-> +MODULE_PARM_DESC(ath12k_32bit_msi, "Force 32-bit MSI addressing");
-> +
->  static const struct pci_device_id ath12k_pci_id_table[] = {
->  	{ PCI_VDEVICE(QCOM, QCN9274_DEVICE_ID) },
->  	{ PCI_VDEVICE(QCOM, WCN7850_DEVICE_ID) },
-> @@ -773,10 +781,19 @@ static int ath12k_pci_msi_alloc(struct ath12k_pci *ab_pci)
->  	int num_vectors;
->  	int ret;
->  
-> -	num_vectors = pci_alloc_irq_vectors(ab_pci->pdev,
-> -					    msi_config->total_vectors,
-> -					    msi_config->total_vectors,
-> -					    PCI_IRQ_MSI);
-> +	/* Set 32-bit MSI flag early if requested */
-> +	if (ath12k_32bit_msi)
-> +		ab_pci->pdev->no_64bit_msi = 1;
-> +
-> +	/* Force single MSI mode if requested */
-> +	if (ath12k_msi_mode == ATH12K_MSI_VEC_SINGLE) {
-> +		num_vectors = -EINVAL; /* Force fallback path */
-> +	} else {
-> +		num_vectors = pci_alloc_irq_vectors(ab_pci->pdev,
-> +						    msi_config->total_vectors,
-> +						    msi_config->total_vectors,
-> +						    PCI_IRQ_MSI);
-> +	}
->  
->  	if (num_vectors == msi_config->total_vectors) {
->  		set_bit(ATH12K_PCI_FLAG_MULTI_MSI_VECTORS, &ab_pci->flags);
-> diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-> index d1ec8aad7f6c..4fa8bb619cd9 100644
-> --- a/drivers/net/wireless/ath/ath12k/pci.h
-> +++ b/drivers/net/wireless/ath/ath12k/pci.h
-> @@ -92,6 +92,11 @@ enum ath12k_pci_flags {
->  	ATH12K_PCI_FLAG_MULTI_MSI_VECTORS,
->  };
->  
-> +enum ath12k_msi_mode {
-> +	ATH12K_MSI_VEC_AUTO = 0,
-> +	ATH12K_MSI_VEC_SINGLE = 1,
-> +};
-
-I'd put this in pci.c since this is not part of an external driver interface
-to pci.c
-
-> +
->  struct ath12k_pci_ops {
->  	int (*wakeup)(struct ath12k_base *ab);
->  	void (*release)(struct ath12k_base *ab);
-
+In addition to my previous comments I now see the Bugzilla record, so you
+should add the tag Closes: https://bugzilla.kernel.org/show_bug.cgi?id=220190
 
