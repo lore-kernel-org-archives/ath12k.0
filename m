@@ -4,88 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0537FC7EE3A
-	for <ath12k@archiver.kernel.org>; Tue, 24 Jun 2025 22:14:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EB22C7EE32
+	for <ath12k@archiver.kernel.org>; Tue, 24 Jun 2025 22:14:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:
-	Content-Transfer-Encoding:Cc:Date:In-Reply-To:From:Subject:Mime-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=63USy0k4rZWxEk52jxI2cfx+TXLEiL7Fq2mfBYY5CuY=; b=j7Ayjvmkyz9xt2gl8H5oFXRC9Q
-	JvgzqqiYA23HwpjOYhq7ABMOTFSwqvRhaaIG34iA+zAjGd2cR0QvKYGVXNuAc2xi8rI7GW0WSzury
-	06tUrWNNWiJ5/OFohIWXctbPyw6YCc1RQm/HBG4b3bdV+se1oGUZOZK4fNq/thMXtEhXLnuM6BIov
-	U0TjoCo+lAKbiNKo9PNFDScGmNSD3MTCvJtUi03mUpcMiaA2FwLmFdr70jefv2DL1AgEHRLLrB9ux
-	1mG91iLzSD21jEYnZaj5XuPlRpokQoVgWm697hiCBVLnkVgVMO5hduxv2xFPUswG4nSA+0oPyYqZj
-	8Sz5cK4A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=9xRteoTjzUcVi04t/BSk3tzWA8ELu4+eFjSMTL0TuzI=; b=pZpkDgkja4yHgwC/WxZK60dWEh
+	vYjF74915kflftv79eYdcJVhuINieApGaJGPLlXtUk+sly4aTBBwyvjB3cmjay2XfR/KIqKbPoMBu
+	XlKkYBHy+syp+O0hIBM3YSta82sIVVam3TikzBMrx2Rk8dhR0cbCuBP8CY9upDfZVZJ5RDFUYWRlC
+	YgRhvo17sHdOx+3KpQbAcCBLBdvT75ImRAbxBo0M9at3TislBTaBZb5vDH8gbZo4GyYeYABGEK2Us
+	qWCcBTSKf1Vfqri0U4EI9ROPpRRnnhnlQ1/LkaLM0cTt857I7z9Lsq3ANUYzM3qdeNFwZ2bH/Lpp6
+	02zbDghg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUBuE-00000006xMX-33sF;
-	Tue, 24 Jun 2025 22:14:18 +0000
-Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
+	id 1uUBuJ-00000006xTt-3YEF;
+	Tue, 24 Jun 2025 22:14:23 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUAC7-00000006kvK-1qXr
+	id 1uUAiD-00000006p6J-3txL
 	for ath12k@lists.infradead.org;
-	Tue, 24 Jun 2025 20:24:40 +0000
-Received: by mail-ej1-x634.google.com with SMTP id a640c23a62f3a-ad1b94382b8so169827966b.0
-        for <ath12k@lists.infradead.org>; Tue, 24 Jun 2025 13:24:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1750796677; x=1751401477; darn=lists.infradead.org;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=63USy0k4rZWxEk52jxI2cfx+TXLEiL7Fq2mfBYY5CuY=;
-        b=dFknynMD3spiQ7ZojVJK+uOXfooDTDOZMEIx5eT5pCximJcIHQY8Y/fYo/EZv72haY
-         oONFqupd+7ljyjehv+KeD2BSKc2IEATwFhFo6T0eD/lVOZCEh4z0qxIsPUKaZIoG0TrH
-         IUDz+/nEMKNz6CYH4hO93ym9rEr8psuAx9OYqIoFADh6+Bghx271KRNEvcPU+jqK1gS3
-         xg3w0A5VaDO+FZgVkRFOBqdvFmg1C6BqX40zwSMw4tNdp82V9JQ1lXWHXKsmQt3mf4NG
-         /hnmjVivCII5KM3TlXNmsPc4KZfU7J7E3S8KPAMDMfAu78EyLK3w8KDiBI3PZad4rf3O
-         6HXg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750796677; x=1751401477;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=63USy0k4rZWxEk52jxI2cfx+TXLEiL7Fq2mfBYY5CuY=;
-        b=tZeyuBRDWiOhQmzERyYUv8sqAtpsA5KjAFAAjjVXfsUsFNaFTbNLmi3j1mPSpgtllO
-         wuECYfetd4XwHBQMxdTsuOgXRDcZSGuWmrrvXTDcOcbakpYUu5qh6+tUmFlLu1bLaWY8
-         uZYlOOD2uw8XfyFAcSsbO0PgPwmrm07O5DHV4tGm1j4IR/Azes5tXubYxqGN1CujmnWk
-         tavLeAl23DJsKNZmgokGAwxCkYdjoz6l5YQuvXmXFPeetgTRaPRZzTYP+EbfBCYHgBcU
-         6U9Ie5ojt7tFGvbbdarBvHxGtJar0OnngToQCqWGQePiUcHj03w6m/EWY7dijG4QagyP
-         AtnQ==
-X-Gm-Message-State: AOJu0YyQ0in80+a2VxYSSZ4Hywcz+uBnlqb34L8KOF+DoUbKeqrZ3zLh
-	S2PeWRv7VT8bdbgWx4o5q6O3wA0D3+EpYvtGowJsjfXtVfVlm+xXlmSs
-X-Gm-Gg: ASbGncuKDys78bRKQ0BzLSTBf12DfooP2fz5xxVyF3ts/rWPCkYJ++2zUTn/hwDedd4
-	XoQMSICZWF+WKt3/YBx3qwYIM3DKbUOjzp3g04VFkIj50vwlFpyHjHbp2UM3z6b/bmEBOVPrMg0
-	jOJIue99jHLD4TpimBqAvWjBvpScndVlTc4T8AJFIAepoSNSqZfF74nzs8Ezb7QzFg4xXIbazLM
-	1tQYQl9fFrm9FNW1OOxBicirG+sHtYJvqKNNTthQ5SmnoeIrurM3yUgHPirF4NynzyC2ChKc2jR
-	U2xJHG5m5lXNY4VV9uVYFpSI7YYpJZTVva/x0kuhCE/QZ95Vf4Qr4m3vKho3KGsiWTqQYC9tsFL
-	dGti8VUaUQA5Sc+zefQsNdGUAbymfnQQ2dEb8cHTOHo7gppj6gg==
-X-Google-Smtp-Source: AGHT+IGHcpROFlsCD6PLF5NT2RH3S/Gu8pnude2InN2RawwD2NE4toKcfWr+CDihtJUm+rKfFWlrGA==
-X-Received: by 2002:a17:906:6a12:b0:ae0:a1c2:262e with SMTP id a640c23a62f3a-ae0bea2e0c8mr59203466b.50.1750796677150;
-        Tue, 24 Jun 2025 13:24:37 -0700 (PDT)
-Received: from smtpclient.apple (201-252-142-46.pool.kielnet.net. [46.142.252.201])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae054080e28sm928151566b.73.2025.06.24.13.24.36
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 24 Jun 2025 13:24:36 -0700 (PDT)
-Content-Type: text/plain;
-	charset=utf-8
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.600.51.1.1\))
-Subject: Re: wifi: ath12k: Attempting MLO with main (6.15.rc7) for NCM865 /
- WCN7850 in station mode leads to crash/backtrace
-From: Benjamin Eggerstedt <benjamin.eggerstedt@gmail.com>
-In-Reply-To: <81d2794c-ac3f-4917-9267-af91afd4baa2@oss.qualcomm.com>
-Date: Tue, 24 Jun 2025 22:24:25 +0200
-Cc: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
-Content-Transfer-Encoding: quoted-printable
-Message-Id: <F8842C33-E474-40F1-8E47-CD1CDF9782BF@gmail.com>
-References: <81d2794c-ac3f-4917-9267-af91afd4baa2@oss.qualcomm.com>
-To: Lingbo Kong <lingbo.kong@oss.qualcomm.com>
-X-Mailer: Apple Mail (2.3826.600.51.1.1)
+	Tue, 24 Jun 2025 20:57:51 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55OGA8mo028706;
+	Tue, 24 Jun 2025 20:57:48 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=9xRteoTjzUcVi04t/BSk3t
+	zWA8ELu4+eFjSMTL0TuzI=; b=KMJGfJBEscXxYRp84To5S1EAxZ6NKtE1BCnzxx
+	hIpzvEbdeZ+azRpF5ALvG/eIv6HRlFL5SVcaau8ZAw8zFKiVIUXqCTD372GVKMWv
+	71KUBPIe9HGCTcOWAeSJ3CMmjHe2Hkl8pzaHUf0E1JQoBj6X9NZVOHGNxmB8nk2Q
+	Z7NX9gSrNDf/7G4ZmY4+XfiYF4+eo8atvoEBb4+UAP6yX1NoJ3Zn97dkhfib2y6Q
+	n61isGoQ8JcJmCspo9VhU2ivYupi/bpU/nAoby1KKT+6JZouSrw5813zPayVHuGQ
+	oWBafbf8MC/+FIf9TDdU9mbyMUzWfd9zMTbc0HWWGA8Y6gcg==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47esa4pv5s-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 24 Jun 2025 20:57:47 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55OKvkvU024973
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 24 Jun 2025 20:57:46 GMT
+Received: from hu-rchoodam-lv.qualcomm.com (10.49.16.6) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 24 Jun 2025 13:57:46 -0700
+From: Ramanathan Choodamani <quic_rchoodam@quicinc.com>
+To: <linux-wireless@vger.kernel.org>
+CC: <netdev@vger.kernel.org>, <ath12k@lists.infradead.org>,
+        <quic_rchoodam@quicinc.com>
+Subject: [DESIGN RFC] wifi: Robust AV streaming Design Proposal for AP
+Date: Tue, 24 Jun 2025 13:57:16 -0700
+Message-ID: <20250624205716.1052329-1-quic_rchoodam@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=eLYTjGp1 c=1 sm=1 tr=0 ts=685b114b cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=3H110R4YSZwA:10 a=6IFa9wvqVegA:10 a=4kHizUjBS_yDJ6wPv5oA:9
+ a=ziixI6HZIonXVpGN:21 a=3ZKOabzyN94A:10
+X-Proofpoint-GUID: c8sy9uJaatHYBzbhWzIdhez6rEI5XpHo
+X-Proofpoint-ORIG-GUID: c8sy9uJaatHYBzbhWzIdhez6rEI5XpHo
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI0MDE2NyBTYWx0ZWRfX8dTL7MC0CgIA
+ QqRagRMGkPjPN9hcN0xJ5XmbYrsI4dsiR3L7vWR7pdDWDQSGT1ziPMJV0MqW7w1fzXwKiXD8Ucn
+ YrMryjQrdV6X4+pZoMmsCNwIK8wL4k/FciD+lI//fnShuIoitTHeuczJQEYa/l4W459yFyVyZxZ
+ z8kXVBbU94tMbeq0b4U6NOgjgjv7oLh1WbrN7Zcmqfd9Gaf07d7Fq+gp8uq77iox9B+eTBH6ctD
+ 3fG2qoj9MMAwYLcwN+Q6a84Jh0bEIX7Y2yC6kQHLE3dBb/5cs93p/FaRE2AxIFjma8/7vcS8cAg
+ +TJFPYILSEBYSgHGF+MHhAAvrakkiJcjAoOXL1WDFN2beCXCh74eiLaqgGOaFVgNMeEo+V1JUVL
+ d57aZNJpt1q6OTS97LCgx1ZLCIIBYD+tqtNNwX2zs0MlC6wmZSOeoXeBAAVlMnSTELRxkeXA
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-06-24_06,2025-06-23_07,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 priorityscore=1501 mlxscore=0 clxscore=1011 mlxlogscore=999
+ suspectscore=0 bulkscore=0 impostorscore=0 lowpriorityscore=0 malwarescore=0
+ adultscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2506240167
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250624_132439_484559_837AE7E3 
-X-CRM114-Status: UNSURE (   8.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250624_135750_007045_41087C4C 
+X-CRM114-Status: GOOD (  19.19  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,92 +106,633 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Dear Lingbo & team,
+===================================
+Robust AV streaming protocols - QoS
+===================================
 
-> > Should I see EMLSR support?
-> > I noticed that =E2=80=9Ciw=E2=80=9D output no longer has a TX nor RX =
-Rate:
+The Robust AV stream protocols are mobile centric protocols - meaning they
+are initiated by a non-AP STA to the AP. These protocols are implemented
+at the Access Point (AP) to classify packets sent to the non-AP STA which requests
+classification using action frames. The non-AP STA initiates Robust AV streaming
+action frames requesting for specific classification for the IP packets
+destined to the non-AP STA from the AP. These parameters can be negotiated by both
+AP and non-AP STA.
 
-Indeed I can see the TX and RX rate again with the patches you kindly =
-suggested.
-The signal at -128 dBm would still be incorrect.
-I still cannot see support for EMLSR, although the corresponding patches =
-are part of v6.16.rc1 (ath-current-20250617)
+Upon successful handshake, The AP classifies incoming individually addressed MSDUs
+(Mac Service Data Unit) based upon parameters provided by the non-AP STA or
+notifies the non-AP STA to transmit MSDUs with preferred parameters based upon
+what was exchanged.
 
-debadm@debian:~$ sudo iw dev wlp3s0 station dump Station
-Station 88:3c:93:01:ce:40 (on wlp3s0)
-	inactive time:	22360 ms
-	rx bytes:	2533534
-	rx packets:	9680
-	tx bytes:	4459
-	tx packets:	37
-	tx retries:	0
-	tx failed:	0
-	beacon loss:	0
-	beacon rx:	0
-	rx drop misc:	15
-	signal:  	-128 dBm
-	signal avg:	0 dBm
-	beacon signal avg:	0 dBm
-	tx bitrate:	1441.1 MBit/s 80MHz EHT-MCS 13 EHT-NSS 2 EHT-GI =
-0
-	tx duration:	0 us
-	rx bitrate:	960.7 MBit/s 80MHz EHT-MCS 9 EHT-NSS 2 EHT-GI 0
-	rx duration:	0 us
-	authorized:	yes
-	authenticated:	yes
-	associated:	yes
-	preamble:	long
-	WMM/WME:	yes
-	MFP:		yes
-	TDLS peer:	no
-	DTIM period:	0
-	beacon interval:0
-	connected time:	505 seconds
-	associated at [boottime]:	161.391s
-	associated at:	1750795842112 ms
-	current time:	1750796347204 ms
+Robust AV streaming improves AV (Audio and Video) streaming performance when
+using IEEE Std 802.11 for consumer and enterprise applications.
 
-Corresponding output from AP side (5 GHz in this association).
-Please note how EMLSR is still being reported as =E2=80=9CNo=E2=80=9D.
+Let's look at the Robust AV streaming protocols which are implemented as a
+part of this design.
 
-=3D=3D=3D=3D STA Info =46rom Link: ath101 =3D=3D=3D=3D=3D=3D=3D
-ADDR               AID CHAN TXRATE RXRATE RSSI MINRSSI MAXRSSI IDLE  =
-TXSEQ  RXSEQ  CAPS XCAPS ACAPS     ERP    STATE MAXRATE(DOT11) HTCAPS   =
-VHTCAPS ASSOCTIME    IEs   MODE RXNSS TXNSS                   PSMODE
-b6:b9:b8:5a:a2:05    4  100 960M   1441M  -29     -36     -22   11      =
-0   65535     P  EWBQ NULL    0          b        1441200           =
-AWRSM          1gGTRs 00:08:15     RSN WME IEEE80211_MODE_11BEA_EHT80  2 =
-2   0 =20
-     =20
- RSSI is combined over chains in dBm
- Minimum Tx Power		: 0
- Maximum Tx Power		: 30
- HT Capability			: Yes
- VHT Capability			: Yes
- MU capable			: Yes
- SNR				: 66
- Operating band			: 5GHz
- Current Operating class	: 128
- Supported Operating classes	: 81  83  84  115  116  117  118  119  =
-120  121  122  123  124  125  126  127  128  131  132  133  134  137  =
-130  128  135  133=20
- Supported Rates(Mbps)		: 6  9  12  18  24  36  48  54=20
- Max STA phymode		: IEEE80211_MODE_11BEA_EHT80=20
- MLO				: Yes=20
- MLD Addr			: 50:cf:14:8e:e3:d1=20
- Num Partner links		: 2=20
-       Partner link 0: ADDR :f2:0a:ab:8a:78:12, Link ID: 0 Bridge link: =
-0=20
-       Partner link 1: ADDR :da:8a:5e:b9:f8:69, Link ID: 2 Bridge link: =
-0=20
- EMLSR capable			: No=20
- EMLMR capable			: No=20
- STR capable			: Yes=20
+1. Robust AV streaming protocols - A bird's eye view
+=====================================================
 
-Thanks,
-Regards,
-Benny
+	1.1. Stream Classification Service or SCS
+	------------------------------------------
+
+		In SCS - the non-AP STA specifies what level of classification it
+		expects from the AP beforehand, by specifying these things explicitly
+		in the Robust AV action frame:
+
+		1. Traffic tuple parameters - The description of traffic that has to be
+		classified by the AP
+		2. QoS characteristics -  How the classification has to be done
+		3. UP value to set
+
+		SCS can be also used for Uplink traffic classification.
+		The AP fetches the UL data from non-AP STA by transmitting the
+		trigger frames containing RU allocation for non-AP STA with
+		Preferred AC field equivalent to the UP value specified during handshake.
+
+		Once accepted, the AP uses 2. and 3. to classify the traffic
+		matching the exact parameters as 1.
+
+	1.2. Mirrored Stream Classification Service or M-SCS
+	-----------------------------------------------------
+
+		In the mirrored SCS as well, the non-AP STA does not specify
+		the actual traffic to be classified as a part of the action
+		frame.
+
+		Instead, the AP is expected to monitor the uplink flow sent
+		by the non-AP STA and use the same UP of the uplink flow, for the DL
+		traffic if the DL flow is the "mirrored version" of the previously
+		received UL flow.
 
 
+For more details on the protocol aspects, refer to Section 3. first
+which talks about the protocol in detail.
+For design, refer directly to the next Section 2.
+
+
+2. Design Proposal
+===================
+
+	2.1. Overview
+	-------------
+                 ┌─────────────────────────────────┐                                   
+     MLME        │                                 │ N/W provisioning                  
+ QoS Provisioning│           hostapd    ┌─────────┐┼────────────────┐                  
+ QoS accounting  │                      │libnftnl ││                │                  
+                 └────┬─────────────────└──▲──────┘┘                │                  
+ user space           │                    │                        │                  
+                      │                    │                        │                  
+        ──────────────┼────────────────────┼────────────────        │                  
+                ┌─────┼────────────────────┼─────────┐              │                  
+ kernel space   │ ┌───▼────────────────────┴──────┐  │              │                  
+                │ │        nl80211/cfg80211       │  │              │                  
+                │ │                               │  │   ┌──────────▼────────┐         
+                │ └───┬────────────────────▲──────┘  │   │                   │         
+                │     │                    │         │   │                   │         
+                │ ┌───▼────────────────────┼──────┐  │   │     netfilter     │         
+                │ │           mac80211            │  │   │                   │         
+                │ │                               │  │   │                   │         
+                │ └───┬────────────────────▲──────┘  │   │                   │         
+                │     │                    │         │   └───────────────────┘         
+                │ ┌───▼────────────────────┼──────┐  │                                 
+                │ │                               │  │                                 
+                │ │                               │  │                                 
+Resource alloc  │ │           WLAN drv            │  │ Flow monitoring for new Rx flows
+HW programming  │ │                               │  │ Sending flow info to hostapd    
+                │ │                               │  │                                 
+                │ │                               │  │                                 
+                │ │                               │  │                                 
+                │ └───┬────────────────────▲──────┘  │                                 
+                │     │                    │         │                                 
+                └─────┼────────────────────┼─────────┘                                 
+                ┌─────▼────────────────────┼─────────┐                                 
+                │                                    │                                 
+                │             Hardware               │                                 
+                │                                    │                                 
+                └────────────────────────────────────┘                                 
+
+
+	2.2. Control Path (MSCS/SCS)
+	----------------------------
+
+		The control path for the QoS management could be handled in the user space
+		- hostapd.
+		The kernel layers - cfg80211 and mac80211 could pass the required information
+		to the WLAN driver to program the underlying Firmware/Hardware
+		to achieve the expected prioritization.
+
+		(A) Hostapd
+		------------
+			2.2.1 - Capabilities advertisement
+			----------------------------------
+
+				The MSCS/SCS Capabilities Advertisement in beacon, probe
+				response and assoc response frames will be done at hostapd.
+
+			2.1.2 - Protocol Parsing
+			------------------------
+
+				The support to receive, parse, process MSCS and SCS request
+				action frames from non-AP STA will be done at hostapd.
+				The NL cmd NL80211_CMD_QOS_MGMT is used to send the parsed
+				SCS/MSCS descriptor data (Dialog token, QM type, Mac addr,
+				QM ID, QM Request type, TCLAS element, QoS Parameters,
+				TCLAS mask) to the kernel from hostapd.
+
+				Driver will advertise its capability to hostapd whether it
+				requires TCLAS rule provisioning in NFT to be carried out by
+				hostapd or it can take care of handling/provisioning the
+				networking rules.
+
+				The support to send MSCS, SCS response to non-AP STA will also be
+				done at hostapd.
+
+				IEEE Std 802.11-2024 Section 9.6.18 defines how the
+				Robust AV streaming action frames look like.
+
+				IEEE Std 802.11-2024 Section 9.4.2.120 specifies
+				the details of an SCS descriptor
+
+				IEEE Std 802.11-2024 Section 9.4.2.242 specifies the
+				details of an MSCS descriptor.
+
+			2.1.3 - QoS Provisioning
+			-------------------------
+
+				Hostapd extracts the QoS parameters from SCS/MSCS request, and
+				sends the parameters via NL80211 command (NL80211_CMD_QOS_MGMT).
+
+			2.1.4 - Networking Provisioning
+			-------------------------------
+				Hostapd if required and as indicated by the WLAN driver
+				capabilities, would add rules in the netfilter subsystem
+				via libnftables, such that flows matching the TCLAS
+				parameters are marked with certain meta data using skb->mark
+				to assist in prioritization in the MSDU processing in the WLAN
+				driver data path.
+
+				In MSCS, hostapd will receive the Rx flow tuple from WLAN
+				driver using NL80211 command (NL80211_CMD_QOS_MGMT) and then
+				make a decision to install an nftable rule in the netfilter
+				subsystem based on MSCS parameters exchanged
+				during handshake.
+
+				The WLAN driver will be responsible for classifying the
+				new flow received and parse the tuple information from the MSDU
+				and use the framework to send event to hostapd. For
+				identifying a new flow, the WLAN driver can make use of
+				any HW offload assist features it supports, as maintaining
+				flow information in software on a per-packet basis will be
+				expensive for flow classification.
+
+			2.1.5 - Flow cleanup and Rule teardown
+			--------------------------------------
+
+				During scenarios, where non-AP STA sends a Request to delete/teardown
+				a session, the hostapd will be responsible for notifying
+				netfilter and the driver to remove the rules and associated
+				context.
+
+				The support to send unsolicited response to non-AP STA for rule
+				deletion or session teardown will also be present in hostapd,
+				after which hostapd will clean-up it's context and also notify
+				to WLAN driver and netfilter.
+
+			2.1.6. QoS Accounting
+			----------------------
+
+				Hostapd will maintain information per non-AP STA for the different
+				active QoS request.
+
+			2.1.7. User space cli commands (Proposed commands)
+			--------------------------------------------------
+
+				2.1.7.1. Config option to set MSCS/SCS during bring-up
+				------------------------------------------------------
+
+					MSCS and SCS features will be enabled during AP bring up.
+					The options "mscs" and "scs" will be added to the hostapd
+					config file.
+					mscs=<0/1>
+					scs=<0/1>;
+					where 0 - disable, 1 - enable.
+
+					Since these options are enabled only during bring up, they
+					will continue to remain enabled during the lifetime of the
+					BSS.
+
+					Once these features are enabled during bring up,
+					AP starts advertising MSCS and SCS capabilities in it's beacon,
+					probe response and assoc response frames.
+					The non-AP STA seeing these frames, realizes AP supports these
+					protocols and then sends the action frames.
+					If the AP does not support these protocols, then the AP
+					shall discard these action frames/descriptor elements sent by
+					non-AP STA.
+
+				2.1.7.2. User cli commands to send unsolicitied MSCS/SCS response
+				-----------------------------------------------------------------
+
+					The commands to set unsolicited response from hostapd will be
+					as follows:
+
+					To send unsolicited MSCS response:
+
+						hostapd_cli -i <interface> send_unsolicited_mscs_resp
+						<peer_macaddr> <status_code>
+
+					To send unsolicited SCS response:
+
+						hostapd_cli -i <interface> send_unsolicited_scs_resp
+						<peer_macaddr> --scsid <scsid> <status_code>
+
+					The unsolicited Robust AV responses
+					(SCS and MSCS responses) are sent by AP to a non-AP STA to
+					either teardown an MSCS session or terminate a SCS based
+					rule for reasons like TCLAS_PROCESSING_TERMINATED when the
+					AP is no longer able to classify the traffic with the
+					specified QoS parameters.
+
+					The AP should send Action frames with SCS/MSCS response
+					to non-AP STA with the status code specified in the user
+					command cli.
+
+		(B) cfg80211
+		-------------
+
+			The cfg80211 layer receives the  NL(NL80211_CMD_QOS_MGMT), parses
+			the parameters and passes further down into the mac80211 layer.
+
+		(C) mac80211
+		-------------
+
+			The mac80211 calls into the WLAN driver with the QoS and
+			networking parameters.
+
+		(D) WLAN driver
+		-----------------
+
+			The WLAN driver receives the QoS characteristics and the
+			TCLAS elements and can do the required resource allocation and
+			the Firmware(FW)/Hardware(HW) programming based on the underlying HW
+			capabilities.
+
+	2.3 - Data Path (MSCS/SCS) - done at WLAN driver
+	--------------------------------------------------
+                                           3. Hostapd provisions the rule to NFT
+                     ┌─────────────────────────────────┐
+                     │                                 │ N/W provisioning
+                     │           hostapd    ┌─────────┐┼────────────────────────┐
+                     │                      │libnftnl ││                        │
+                     └──────────────────────└──▲──────┘┘                        │
+     user space                                │                                │
+            ───────────────────────────────────┼────────────────                │
+                    ┌──────────────────────────┼─────────┐                      │
+                    │                          │         │ 4.                   │
+     kernel space   │ ┌────────────────────────┴──────┐  │ NFT updates skb->mark│
+                    │ │        nl80211/cfg80211       │  │ while adding the rule│
+                    │ │                               │  │   ┌──────────────────┼──┐
+                    │ └────────────────────────▲──────┘  │   │                  │  │
+                    │                          │         │   │                  │  │
+                    │ ┌────────────────────────┼──────┐  │   │  Linux N/W stack │  │
+                    │ │           mac80211            ◄──┼───┼                  │  │
+                    │ │                               │  │   │       ┌──────────▼─┐│
+                    │ └───┬────────────────────▲──────┘  │   │       │netfilter   ││
+5. The DL packet    │     │                    │         │   └───────└────────────┘┘
+ comes with         │ ┌───▼────────────────────┼──────┐  │
+ skb->mark          │ │                               │  │
+ which is used      │ │                               │  │
+ for classification │ │           WLAN drv            │  │2.
+ along with         │ │                               │  │Driver then programs the rule to hostapd
+ stored QoS         │ │                               │  │using NL80211
+ params at the      │ │                               │  │
+ driver             │ │                               │  │1.
+                    │ └───┬────────────────────▲──────┘  │For MSCS flows, driver learns a new rx flow
+                    │     │                    │         │using HW assist
+                    └─────┼────────────────────┼─────────┘
+                    ┌─────▼────────────────────┼─────────┐
+                    │                                    │
+                    │            Hardware                │
+                    │                                    │
+                    └────────────────────────────────────┘
+
+		* The Datapath decision making logic for the QoS features
+		would be handled in the WLAN driver.
+
+		* In MSCS, Driver will be responsible to track all the uplink flows
+		for a non-AP STA with MSCS session, based on
+		TCLAS mask and should prioritize the corresponding downlink flows.
+
+		* For prioritization in DL for MSCS, the driver should notify hostapd
+		using NL80211 framework (via mac80211, cfg80211) to program the
+		netfilter rules, when a new Rx uplink flow is received.
+
+		* As mentioned in Section 2.1.4., In MSCS  hostapd receives the
+		Rx flow tuple from the driver via NL80211_CMD_QOS_MGMT,
+		then decides whether to install an nftables rule in netfilter
+		based on MSCS handshake parameters.
+
+		* Based on the QoS parameters maintained at the driver, and the
+		skb->mark as received in the flows and the QoS parameter requirements
+		should be met as specified in the request.
+
+		* Maintain telemetry for active SCS/MSCS requests per non-AP STA for
+		debug purposes.
+
+		Considering a lot of Hardware(HW) and Firmware(FW) assists would be required
+		for the following, it would be appropriate to implement the
+		Datapath in the specific WLAN drivers.
+
+		The WLAN driver responsibilities are as follows:
+		1. Learning all Rx flows in the uplink for MSCS clients
+		2. Prioritizing downlink flow with stringent latency KPI for AR/VR and
+		gaming use cases
+		3. In cases where vendor HW have offloads for such use cases,
+		where the HW can prioritize by just programming the TCLAS elements
+		and mapping the relevant QoS characteristics
+
+
+3. Additional details - Protocol overview
+=========================================
+
+	3.1. What exists today in mac80211? - DSCP-UP mapping and QoS Map set
+	---------------------------------------------------------------------
+
+		An Access Point supporting QoS Management keeps a default DSCP-UP mapping
+		table (RFC 8325) to map a DSCP (IP packet header field) to a specific User
+		Priority value in the QoS-Control field of the IEEE-802.11 header.
+		When DSCP-UP mapping is enabled, The Access point uses this table and
+		assigns UP of the IP packets sent it to its associated non-AP STAs
+		based on the DSCP marking.
+
+		The AP even has a provision to configure a specific DSCP-UP mapping using
+		QoS Map set (instead of using the default table). When this QoS Map is
+		configured, the AP sends a QoS Map Configure frame containing this
+		QoS Map element to it's associated non-AP STAs that indicate support for
+		QoS Map. The AP then shall use this table instead of the default one
+		for mapping UPs of the IP packets.
+
+		The implementation to use DSCP-UP mapping table exists in mac80211
+		datapath today.
+
+
+	3.2. Robust AV streaming Features: A closer view
+	---------------------------------------------------
+
+		Reference: IEEE Std 802.11-2024
+		Section 11.25
+
+		3.2.1. SCS - Protocol details
+		------------------------------
+
+			Refer to IEEE Std 802.11-2024 Section 11.25.2 SCS Procedures
+			(Stream Classification Service) for more details.
+
+			A non-AP STA can request SCS by sending an SCS Request frame with a
+			Descriptor element marked as “Add” or “Change”.
+
+			The non-AP STA specifies the below elements in the SCS descriptor
+			in the SCS request action frame.
+
+			Downlink (DL) SCS:
+			   - Either the UP (User Priority) (or TID) alone or additionally a
+				set of QoS characteristics(eg: Service Interval, Delay bound,
+				Throughput) with TID.
+
+			   - TCLAS (Traffic Classifier) element (eg: Type 4 - Source IP,
+			Destination IP, Protocol, Source Port, Destination Port).
+			These parameters define how MSDUs are classified and prioritized.
+			The AP prioritizes the flow (as identified by TCLAS elements)
+			in the Downlink Tx Direction.
+
+			Uplink (UL) SCS:
+			   - Set of QoS characteristics for uplink prioritization.
+
+			   - No Intra access category and no TCLAS element is present in
+				the request frame.
+
+			The QoS parameters are programmed in AP to fetch the UL data from
+			non-AP STA by transmitting the trigger frames.
+
+			The AP can choose to accept or decline the request sent by the
+			non-AP STA.
+			Once accepted, for DL, the AP will classify the downlink packets
+			matching that TCLAS element traffic parameters and set the
+			TID value for the DL traffic flow to prioritize.
+
+			For UL, AP will start sending trigger frames to station based on the
+			QoS parameter values.
+
+			3.2.1.1. Protocol handshake diagram
+			-------------------------------------
+
+┌─────────────────┐                                                                              ┌─────────────────┐ 
+│                 │                                                                              │                 │ 
+│      AP         │                                                                              │       STA       │ 
+│                 │                                                                              │                 │ 
+│                 │                                                                              │                 │ 
+└──────┬──────────┘                                                                              └────────┬────────┘ 
+       │      ┌───────────┌──────────┌──────────┌──────────────────────────────────┌───────────────┐      │          
+       │      │Robust AV  │          │ Intra-   │         TCLAS element            │               │      │          
+       │      │           │ SCSID = 1│ Acces    │type = 4, mask = 01011111         │     QoS       │      │          
+       │      │ SCS.req   │          │ category │params = {v=4,sip=192.168.1.100,  │               │      │          
+       │      │           │          │          │          dip=192.168.1.107,      │characteristics│      │          
+       │      │           │          │ UP = 6   │          sp=5400, dp=10400,      │  (Optional)   │      │          
+       │      │           │          │(Optional)│          proto=tcp}  (optional)  │               │      │          
+       │      └───────────└──────────└──────────└──────────────────────────────────└───────────────┘      │          
+       │◄─────────────────────────────────────────────────────────────────────────────────────────────────┼          
+       │                                      SCS Request                                                 │          
+       │                                                                                                  │          
+       │                                                                                                  │          
+       │                                                                                                  │          
+       │                                                                                                  │          
+       │                                                                                                  │          
+       │                                                                                                  │          
+       │       ┌───────────┌──────────────┐                                                               │          
+       │       │           │              │                                                               │          
+       │       │ Robust AV │  SCSID = 1   │                                                               │          
+       │       │           │              │                                                               │          
+       │       │ SCS.resp  │ Status = OK  │                                                               │          
+       │       │           │              │                                                               │          
+       │       │           │              │                                                               │          
+       │       └───────────└──────────────┘                                                               │          
+       │                                                                                                  │          
+       ┼──────────────────────────────────────────────────────────────────────────────────────────────────►          
+       │                                      SCS Response                                                │          
+       │                                                                                                  │          
+       │                                                                                                  │          
+       │                                                                                                  │          
+       │                                                                                                  │          
+
+
+			3.2.1.2. DL traffic classification using SCS handshake params
+			-------------------------------------------------------------
+
+┌────────────────────┐                                                     ┌────────────────────┐
+│                    │                                                     │                    │
+│        AP          │                                                     │        STA         │
+│                    │                                                     │                    │
+│                    │                                                     │                    │
+└─────────┬──────────┘                                                     └──────────┬─────────┘
+          │                        DOWNLINK CLASSIFIED TRAFFIC                        │
+          ┼───────────────────────────────────────────────────────────────────────────►
+          │         ┌─────────────────────────────────────────────────────┐           │
+          │         │mac hdr           mac_addr = sta macaddr             │           │
+          │         │                  up = 6                             │           │
+          │         ┌─────────────────────────────────────────────────────┐           │
+          │         │ipv4 hdr                                             │           │
+          │         │     v = 4                      dscp = X             │           │
+          │         │     sip = 192.168.1.100                             │           │
+          │         │     dip = 192.168.1.107                             │           │
+          │         │     proto = tcp                                     │           │
+          │         ┌─────────────────────────────────────────────────────┐           │
+          │         │tcp hdr                                              │           │
+          │         │      sp = 5400                                      │           │
+          │         │      dp = 10400                                     │           │
+          │         ┌─────────────────────────────────────────────────────┐           │
+          │         │                                                     │           │
+          │         │                                                     │           │
+          │         │payload                                              │           │
+          │         │                                                     │           │
+          │         └─────────────────────────────────────────────────────┘           │
+          │                                                                           │
+          │                                                                           │
+          │                                                                           │
+          │                                                                           │
+          │                                                                           │
+          │                                                                           │
+          │                                                                           │
+          │                                                                           │
+          │                                                                           │
+          │                                                                           │
+
+
+		3.2.2. Mirrored SCS - Protocol details
+		-------------------------------------
+
+			Refer to IEEE Std 802.11-2024 Section 11.25.3 MSCS procedures
+			(Mirrored Stream Classification Service) for more details
+
+
+			Initially, the non-AP STA specifies the UP(User Priority)(or TID)
+			and the TCLAS(Traffic Classifier) mask for prioritization via
+			action frames.
+
+			The TCLAS mask element consists of Classifier mask which specifies
+			what params to compare with the UL traffic received while
+			classifying the DL traffic.
+
+			The AP checks the Rx Uplink flow from the non-AP STA matching the
+			classifier mask and classifies the mirrored flow (by reversing
+			the 5 tuple of the flow as seen in
+			uplink) in the downlink direction with the TID of received Rx flow.
+
+			3.2.2.1. Protocol Handshake diagram
+			-----------------------------------
+
+┌─────────────────┐                                                                   ┌──────────────┐
+│                 │                                                                   │              │
+│      AP         │                                                                   │       STA    │
+│                 │                                                                   │              │
+│                 │                                                                   │              │
+└──────┬──────────┘                                        TCLAS Mask element         └────────┬─────┘
+       │      ┌──────────┌──────────────────────────┌──────────────────────────┐               │      
+       │      │Robust AV │ User priority bitmap =   │                          │               │      
+       │      │          │  1111 0000               │  type = 4                │               │      
+       │      │MSCS.req  │                          │                          │               │      
+       │      │          │ User priority limit = 7  │  mask = 0101 1111        │               │      
+       │      │          │                          │                          │               │      
+       │      │          │ Stream timeout = 60000 TU│                          │               │      
+       │      └──────────└──────────────────────────└──────────────────────────┘               │      
+       │◄──────────────────────────────────────────────────────────────────────────────────────┼      
+       │                          MSCS Request                                                 │      
+       │                                                                                       │      
+       │                                                                                       │      
+       │                                                                                       │      
+       │                                                                                       │      
+       │                                                                                       │      
+       │                                                                                       │      
+       │       ┌───────────┌──────────────┐                                                    │      
+       │       │           │              │                                                    │      
+       │       │ Robust AV │ Dialog token │                                                    │      
+       │       │           │              │                                                    │      
+       │       │MSCS.resp  │ Status = OK  │                                                    │      
+       │       │           │              │                                                    │      
+       │       │           │              │                                                    │      
+       │       └───────────└──────────────┘                                                    │      
+       │                                                                                       │      
+       ┼───────────────────────────────────────────────────────────────────────────────────────►      
+       │                              MSCS Response                                            │      
+       │                                                                                       │      
+       │                                                                                       │      
+       │                                                                                       │      
+       │                                                                                       │      
+       │                                                                                       │      
+       └                                                                                       ┘      
+
+
+
+			3.2.2.2. DL traffic classification using MSCS
+			---------------------------------------------
+
+       ┌────────────────────┐                                                     ┌────────────────────┐
+       │                    │                                                     │                    │
+       │        AP          │                                                     │        STA         │
+       │                    │                                                     │                    │
+       │                    │                                                     │                    │
+       └─────────┬──────────┘                                                     └──────────┬─────────┘
+                 │                          UPLINK TRAFFIC                                   │          
+                 │◄──────────────────────────────────────────────────────────────────────────┼          
+                 │         ┌─────────────────────────────────────────────────────┐           │          
+                 │         │mac hdr           mac_addr = ap  macaddr             │           │          
+                 │         │                  up = 6                             │           │          
+                 │         ┌─────────────────────────────────────────────────────┐           │          
+                 │         │ipv4 hdr                                             │           │          
+                 │         │     v = 4                      dscp = 30            │           │          
+                 │         │     sip = 192.168.1.107                             │           │          
+                 │         │     dip = 192.168.1.100                             │           │          
+                 │         │     proto = tcp                                     │           │          
+                 │         ┌─────────────────────────────────────────────────────┐           │          
+                 │         │tcp hdr                                              │           │          
+                 │         │      sp = 10400                                     │           │          
+                 │         │      dp = 5400                                      │           │          
+                 │         ┌─────────────────────────────────────────────────────┐           │          
+                 │         │                                                     │           │          
+                 │         │                                                     │           │          
+                 │         │payload                                              │           │          
+                 │         │                                                     │           │          
+                 │         └─────────────────────────────────────────────────────┘           │          
+                 │                                                                           │          
+                 │                                                                           │          
+                 │                      DOWNLINK CLASSIFIED TRAFFIC                          │          
+      ─────────► ├───────────────────────────────────────────────────────────────────────────►          
+                 │         ┌─────────────────────────────────────────────────────┐           │          
+AP sets the      │         │mac hdr           mac_addr = sta macaddr             │           │          
+same TID         │         │                  up = 6                             │           │          
+for the mirrored │         ┌─────────────────────────────────────────────────────┐           │
+DL flow          │         │ipv4 hdr                                             │           │          
+The tuple params │         │     v = 4                      dscp = X             │           │          
+of DL traffic    │         │     sip = 192.168.1.100                             │           │          
+are the exact    │         │     dip = 192.168.1.107                             │           │          
+mirrored values  │         │     proto = tcp                                     │           │          
+of the UL traffic│         ┌─────────────────────────────────────────────────────┐           │          
+which was recvd  │         │tcp hdr                                              │           │          
+                 │         │      sp = 5400                                      │           │          
+                 │         │      dp = 10400                                     │           │          
+                 │         ┌─────────────────────────────────────────────────────┐           │          
+                 │         │                                                     │           │          
+                 │         │                                                     │           │          
+                 │         │payload                                              │           │          
+                 │         │                                                     │           │          
+                 │         └─────────────────────────────────────────────────────┘           │          
+                 │                                                                           │          
+                 │                                                                           │          
+                 │                                                                           │          
+                 ┘                                                                           │          
+
+
+
+Public comments on this proposal are welcomed.
+
+/ram
 
