@@ -4,71 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 996F4C7EE33
-	for <ath12k@archiver.kernel.org>; Tue, 24 Jun 2025 19:54:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB53AC77B7F
+	for <ath12k@archiver.kernel.org>; Tue, 24 Jun 2025 19:55:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=CIC6F2TgBTiUQosur3Gy/0wuMc5QfoQv/wFdQbYOcn0=; b=ziyJio4aP7ACGX4xVNXBrXtCGi
-	P3JIv2M54tn/Gm+2B+P+TIvN5hyVsofQvfyi9eqhhgW6sUJmQjzMQ94DeenC0+HTdWA7NqOIhivLz
-	lbDToGRxfhszEqCo4ElYpc1shiBVXcYEgeCguc5MbD3pFrEa1T94TTrfFDN/VqgLTi2xl6086YiIX
-	Q3+riKa1V2JBD/A/Yx3zEsneCA6pRVS/NazU+UgHI0+yyEX7AFmsbPJPM0W/7hqKvxzHL02v+i2bN
-	/SP9wNgt0exS/uSv47a0JvXQC4kgMwQKo3teOWF75LpYaQaiCm7hYPKzWxQ6tlpzNVuJSRWo5a7i6
-	U+UbTJPQ==;
+	bh=iHFqrr/kNilRxKIzI+lsKlq6Egg4F7XUceUPXNKtTSQ=; b=dj/O/4vZoeY74zgZ7XC/RPjjSN
+	kqOLOhpcX7xS9SIedApl9f5+2e17ZrPvCUU1wiDIOJ8MjkEOp/mAqtCsY6ZpqrLlyUVG9TzD5+S9i
+	g2obrgXDIiOqBjkPU3LIMYpcl38SqtDEBEaRw7t22Ct7+66ti+gOYXivRb6gh6COuRtpSgsFwe6TX
+	O67WFKujqrtLqWNQq4Ze73MlxlMhZhl4spEeScKF0zJhjew8swUvGcQzwBIHEtvFHfgH3hvTFJqrN
+	TiYDmAiCdzlHQyq38NBQqw9JNuFYvzuuXlybMaWDmpUBsBHzdAzUaiHzK9cHw5oAKlc6OF6w/WYad
+	gZHiB5SA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uU9jE-00000006fRk-0lOA;
-	Tue, 24 Jun 2025 19:54:48 +0000
-Received: from mgamail.intel.com ([192.198.163.15])
+	id 1uU9jm-00000006gKA-0WU8;
+	Tue, 24 Jun 2025 19:55:22 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uU69o-00000006EhO-05JK
+	id 1uU6rI-00000006JWM-44nn
 	for ath12k@lists.infradead.org;
-	Tue, 24 Jun 2025 16:06:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1750781160; x=1782317160;
-  h=date:from:to:cc:subject:message-id;
-  bh=T33YhHkp10K1XddWL2h1HTEC9YYZKGHaoD9tqgyHUOY=;
-  b=n7/U+TortZe41zucP3nUkSlnx8Yl9MY6/pdk43Kb++hK1S3sGiJWQHQz
-   ZCZ9p8RynunRNjzY5pLo5HsebPsDcb9yLxZDymT4/yBWh9DkJO+P7nx7O
-   khylmckT4b56abJfnctnxm75pQeeKCRO/wif0FdzUJSi0avaalFw6IMKl
-   KoJcblQFZhovFxP/tyj4aVMrU6nij0Yf/i5XALGrUtmKswho9TaQs2lbL
-   jtjYAbAnfto++E7LGbgZnNpSoCa+McGV38nPJzcey3AH/+NxTqDq4mK0K
-   N7j9ZiQa6S7CCKIc5CZBIFI/FIpXpDjmpR+qy8PeQ5FIK8f/N0FEpCynZ
-   A==;
-X-CSE-ConnectionGUID: pMjOb28yRay26eWAGnX9CA==
-X-CSE-MsgGUID: xE9rqrrITryTuddnvigwPw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11474"; a="53167470"
-X-IronPort-AV: E=Sophos;i="6.16,262,1744095600"; 
-   d="scan'208";a="53167470"
-Received: from fmviesa007.fm.intel.com ([10.60.135.147])
-  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Jun 2025 09:05:57 -0700
-X-CSE-ConnectionGUID: 2YId8Bb3TWW2s4IMfohdWw==
-X-CSE-MsgGUID: bgbuVawsQBm6H/mjGqg5Nw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,262,1744095600"; 
-   d="scan'208";a="151561331"
-Received: from lkp-server01.sh.intel.com (HELO e8142ee1dce2) ([10.239.97.150])
-  by fmviesa007.fm.intel.com with ESMTP; 24 Jun 2025 09:05:39 -0700
-Received: from kbuild by e8142ee1dce2 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uU69R-000SIw-0H;
-	Tue, 24 Jun 2025 16:05:37 +0000
-Date: Wed, 25 Jun 2025 00:05:32 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master] BUILD SUCCESS
- e9efdcce074c55be396ca45add336121549bdcbc
-Message-ID: <202506250022.HZYb5FKm-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Tue, 24 Jun 2025 16:50:58 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-4537deebb01so5657575e9.0
+        for <ath12k@lists.infradead.org>; Tue, 24 Jun 2025 09:50:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1750783855; x=1751388655; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=iHFqrr/kNilRxKIzI+lsKlq6Egg4F7XUceUPXNKtTSQ=;
+        b=LzFt2HlBlfzP9HS0lNtKReR88keLTXmQTcE04NO/Zu9ad66OMCSRJLD1xX/I3N3Wo7
+         Siz38xXxmW6qIeo5ELkEPErS3soiM+TY4FftZrBk5zMXQlnsjn09z9nGnOg1Xo/7PRkL
+         piiLbGszAqbUklxqYCTGHcMpc+j26Po0YdvY1FASg6qEi9lrP2ng+UPVPnR0AtYoMDTY
+         Ir4Q4ZkxB7jlIjKd9v0lbwtby38t/0e2QAPeVGrRmz4/mPCdvRSy1M6k7wzLABhW6f9s
+         vCbVdFLnQGmf5gtoX5+vPVomWn30F3+jcCNK7MI1jmVn8XFT79PRFNh60qqjjFNE5og+
+         XLog==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750783855; x=1751388655;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=iHFqrr/kNilRxKIzI+lsKlq6Egg4F7XUceUPXNKtTSQ=;
+        b=Y94kiprKFbQu/A4A+GlqCHdHDyw7PiyV3ny+VrmLnDPTTQ/eSJR8AK1NBSEAuNiFtA
+         TlVUtd568ki8GRFAULAfbWPK3FGpr4LvIIA2rTCDBOWG7ByTgMVAvYm+ZncGBt99pVSc
+         IJo6KuDPjGyluNIWm1UdquK4RCgUD2ummpQit/K3pHjHLN1X8iMhKFWIMeXC3FSxKmvE
+         4I8fqhOUNJpzs3bE1fetCoGD05eblOnjZcEFjHczHUe3M5vh1Tv1lNOu5w4Q3e2XA0ML
+         +hrNcoyxPWUwyEysprisN5oWroQ0eu3xBK5Diou3D2HsXxlmSMQ3H4LVOjcbfA8SVlbi
+         2L0Q==
+X-Gm-Message-State: AOJu0YwB3wBNfI1EJs1p5dnL9s2b3M+z18JKFLp+yNDwtrvgKewdy5O/
+	O+rD46GTLdUhGEDXbVOPkUfVCMLuTr70MA9QUW2qu5ftUb+rYVHWNFcfHeK7hU860mDTBQ==
+X-Gm-Gg: ASbGnctm2dAkbzexszbLdVIHB9NUH4RzUdEwDc6W1VXJVfP1sNuiR23TrI7LgXc2KWm
+	O48K4lnRwB+7/ghPDXlKBLaBU2dhrTrAIRbKeu/QkFpdrnTsdDlZBde/CRPHjmsQGkzXuhxiVmC
+	IdglP4KRXC3euKcwLdLgxV+vG+yiHy1sGTgNJmS1QRr/1p7ulXN6h0xOtHsQ2pO50f6N6QjU4Bu
+	8gJwdH5P5dP029NH5rdU3Oa0jBbRtpCNPe/v3H9Hiro//bT7+XsmkfFnd2mOwWrX9YieWL6HRbo
+	b5vGRDt0bB+vDHiPnzlfIlZcASUWIOp38pGSPBQCocJz4RCwk9oE/ApVS4Y5RLIi2iFu3KVAxTy
+	ocXnfPZ+UUuLtI5L0ZxE78JT1OV4=
+X-Google-Smtp-Source: AGHT+IFwQc4zbsyjGnbBX2eygzyIbIn2JHqWT8OfveOdOyrkeTPZP3hcBq0rOTK6GxlfyWpx9ffnVg==
+X-Received: by 2002:a05:600c:45cb:b0:43d:17f1:2640 with SMTP id 5b1f17b1804b1-453656c2c49mr150048265e9.26.1750783854821;
+        Tue, 24 Jun 2025 09:50:54 -0700 (PDT)
+Received: from govindsingh-ThinkPad-P1-Gen-3.tii.local ([2001:8f8:1d0a:b6eb:5d08:e639:26e7:bf0])
+        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-45369eae840sm120723675e9.38.2025.06.24.09.50.53
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 24 Jun 2025 09:50:54 -0700 (PDT)
+From: Govind Singh <govind.sk85@gmail.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+	Govind Singh <govind.sk85@gmail.com>
+Subject: [PATCH] ath12k: add module param to control MSI mode and address width
+Date: Tue, 24 Jun 2025 20:50:31 +0400
+Message-Id: <20250624165031.58616-1-govind.sk85@gmail.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250624_090600_074470_F915EAA5 
-X-CRM114-Status: UNSURE (   3.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250624_095057_016028_952E45BF 
+X-CRM114-Status: GOOD (  14.75  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,74 +94,90 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-branch HEAD: e9efdcce074c55be396ca45add336121549bdcbc  Add localversion-wireless-testing-ath
+This patch adds two module parameters to the ath12k PCI driver.
 
-elapsed time: 1455m
+ - ath12k_msi_mode: Allows selecting the MSI allocation mode.
+   * 0 = multi-vector MSI (default)
+   * 1 = single-vector MSI
 
-configs tested: 54
-configs skipped: 1
+ - ath12k_32bit_msi: Forces the use of 32-bit MSI addressing
+   by setting pdev->no_64bit_msi = 1 before IRQ vector allocation.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+These options are useful for working around hardware or platform
+limitations(ex:  i.MX 8M Plus) where 64-bit MSI or multi-vector MSI
+allocations fails or cause stability issues.
 
-tested configs:
-alpha                             allnoconfig    gcc-15.1.0
-alpha                            allyesconfig    gcc-15.1.0
-arc                               allnoconfig    gcc-15.1.0
-arc                   randconfig-001-20250624    gcc-12.4.0
-arc                   randconfig-002-20250624    gcc-8.5.0
-arm                               allnoconfig    clang-21
-arm                   randconfig-001-20250624    gcc-13.3.0
-arm                   randconfig-002-20250624    gcc-8.5.0
-arm                   randconfig-003-20250624    gcc-12.4.0
-arm                   randconfig-004-20250624    clang-17
-arm64                             allnoconfig    gcc-15.1.0
-arm64                 randconfig-001-20250624    clang-21
-arm64                 randconfig-002-20250624    gcc-10.5.0
-arm64                 randconfig-003-20250624    clang-21
-arm64                 randconfig-004-20250624    clang-21
-csky                              allnoconfig    gcc-15.1.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-i386        buildonly-randconfig-001-20250624    clang-20
-i386        buildonly-randconfig-002-20250624    gcc-12
-i386        buildonly-randconfig-003-20250624    clang-20
-i386        buildonly-randconfig-004-20250624    clang-20
-i386        buildonly-randconfig-005-20250624    clang-20
-i386        buildonly-randconfig-006-20250624    gcc-12
-loongarch                         allnoconfig    gcc-15.1.0
-m68k                              allnoconfig    gcc-15.1.0
-microblaze                        allnoconfig    gcc-15.1.0
-mips                              allnoconfig    gcc-15.1.0
-nios2                             allnoconfig    gcc-14.2.0
-openrisc                          allnoconfig    gcc-15.1.0
-parisc                            allnoconfig    gcc-15.1.0
-powerpc                           allnoconfig    gcc-15.1.0
-riscv                             allnoconfig    gcc-15.1.0
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-21
-s390                             allyesconfig    gcc-15.1.0
-sh                               allmodconfig    gcc-15.1.0
-sh                                allnoconfig    gcc-15.1.0
-sh                               allyesconfig    gcc-15.1.0
-sparc                            allmodconfig    gcc-15.1.0
-sparc                             allnoconfig    gcc-15.1.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-x86_64                            allnoconfig    clang-20
-x86_64      buildonly-randconfig-001-20250624    clang-20
-x86_64      buildonly-randconfig-002-20250624    gcc-12
-x86_64      buildonly-randconfig-003-20250624    clang-20
-x86_64      buildonly-randconfig-004-20250624    clang-20
-x86_64      buildonly-randconfig-005-20250624    clang-20
-x86_64      buildonly-randconfig-006-20250624    gcc-12
-x86_64                              defconfig    gcc-11
-xtensa                            allnoconfig    gcc-15.1.0
+The original MSI allocation logic remains unchanged unless the
+parameters are explicitly set via modprobe or kernel boot options.
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Tested-on: QCN9274 hw2.0 WLAN.WBE.1.4.1-00103-QCAHKSWPL_SILICONZ-1 with
+           i.MX 8M Plus SOC
+Signed-off-by: Govind Singh <govind.sk85@gmail.com>
+---
+ drivers/net/wireless/ath/ath12k/pci.c | 25 +++++++++++++++++++++----
+ drivers/net/wireless/ath/ath12k/pci.h |  5 +++++
+ 2 files changed, 26 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index 1f3cfd9b89fd..4f58cb1e03f6 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -45,6 +45,14 @@
+ #define DOMAIN_NUMBER_MASK		GENMASK(7, 4)
+ #define BUS_NUMBER_MASK			GENMASK(3, 0)
+ 
++int ath12k_msi_mode;
++module_param(ath12k_msi_mode, int, 0644);
++MODULE_PARM_DESC(ath12k_msi_mode, "MSI mode: 0 = multi-vector (default), 1 = single-vector");
++
++bool ath12k_32bit_msi;
++module_param(ath12k_32bit_msi, bool, 0644);
++MODULE_PARM_DESC(ath12k_32bit_msi, "Force 32-bit MSI addressing");
++
+ static const struct pci_device_id ath12k_pci_id_table[] = {
+ 	{ PCI_VDEVICE(QCOM, QCN9274_DEVICE_ID) },
+ 	{ PCI_VDEVICE(QCOM, WCN7850_DEVICE_ID) },
+@@ -773,10 +781,19 @@ static int ath12k_pci_msi_alloc(struct ath12k_pci *ab_pci)
+ 	int num_vectors;
+ 	int ret;
+ 
+-	num_vectors = pci_alloc_irq_vectors(ab_pci->pdev,
+-					    msi_config->total_vectors,
+-					    msi_config->total_vectors,
+-					    PCI_IRQ_MSI);
++	/* Set 32-bit MSI flag early if requested */
++	if (ath12k_32bit_msi)
++		ab_pci->pdev->no_64bit_msi = 1;
++
++	/* Force single MSI mode if requested */
++	if (ath12k_msi_mode == ATH12K_MSI_VEC_SINGLE) {
++		num_vectors = -EINVAL; /* Force fallback path */
++	} else {
++		num_vectors = pci_alloc_irq_vectors(ab_pci->pdev,
++						    msi_config->total_vectors,
++						    msi_config->total_vectors,
++						    PCI_IRQ_MSI);
++	}
+ 
+ 	if (num_vectors == msi_config->total_vectors) {
+ 		set_bit(ATH12K_PCI_FLAG_MULTI_MSI_VECTORS, &ab_pci->flags);
+diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
+index d1ec8aad7f6c..4fa8bb619cd9 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.h
++++ b/drivers/net/wireless/ath/ath12k/pci.h
+@@ -92,6 +92,11 @@ enum ath12k_pci_flags {
+ 	ATH12K_PCI_FLAG_MULTI_MSI_VECTORS,
+ };
+ 
++enum ath12k_msi_mode {
++	ATH12K_MSI_VEC_AUTO = 0,
++	ATH12K_MSI_VEC_SINGLE = 1,
++};
++
+ struct ath12k_pci_ops {
+ 	int (*wakeup)(struct ath12k_base *ab);
+ 	void (*release)(struct ath12k_base *ab);
+-- 
+2.34.1
+
 
