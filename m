@@ -4,71 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 941DFC7EE31
-	for <ath12k@archiver.kernel.org>; Thu, 26 Jun 2025 17:40:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D8BFC7EE31
+	for <ath12k@archiver.kernel.org>; Thu, 26 Jun 2025 18:09:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:Cc:To:From:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ecYgXEsH7M5ZozoPfYHUQqxlKMweMDt5KaU45qVQwDM=; b=rY5jcMsFhLfOqa3xUhYGL+l9lM
-	PRsc+67XZZRSc7TDHj9YbZ9VKjCw1WKM3hBy/UXuGT/hECJEjeUQcpeIqofgXKPUw6xDI0NjZ0JtQ
-	tgPSPtCoD8WuGxW5z1n1YM1UpifIPXOpbHDtIUkRE/3Yu6UKtYkttoFodMxim/+d0x5J2cjgzcsia
-	EmjwpAslGUXdU0d7Uw4J98o5NtNBhEvEi6HXvcwhkGzHWDbJjmmWrpypC62eU7v225SJDybPtrZ/U
-	VLdTHEU8VT9uveiMBEG7CR41iqocho4dU6p7FtI+Zqgw6zs7REIblpnWAqs0kiGugTqLULn3KopaS
-	KYKdcVDA==;
+	bh=Dg0mBkYT+QP2ktU/kqKfkv3uIhcvoU3fAutbeg0ijN4=; b=OHbOIuR/hBbY3bYiiLQA1OFdgl
+	0s7WWgdFPIBI3tL5jxkF3MRklh0fGwXkP0misHEM9dwBxgwRfa9TOi6/HvGeP7CI+GcCfWiZzce8r
+	wvgf7EAOBw03eM9+Tox1DzXflhmIPbZ1HFuntR1AsAjLn3Sy/7Mkw50ztAfoduX9rLni3iLRwRQ+j
+	TJygy7g4N9TNTdG0VlLncMQpvBB9XkXy9Flip3S6nqWIAdDgHxEsDE+uyHIar2SgK+ZvXt7fqAke8
+	qcVZP7BaeCPDEtyPvjF6/weNWSk4SwFfVZaikad167ZcvvfyTN1OQA/aMO8pQ+F2TleHa2ddB51ek
+	2IMmx2Mg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUqaF-0000000CNtr-1UJ3;
-	Thu, 26 Jun 2025 17:40:23 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1uUr1w-0000000CQW9-0UIq;
+	Thu, 26 Jun 2025 18:09:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUqaC-0000000CNtM-2muX;
-	Thu, 26 Jun 2025 17:40:21 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1750959595; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=Mmb+f4ZWCUo9GBSmRldzmeJLMUdYDwzTZhy2HScX/XjewpqkPiL02caw56hcIiETnOBZLx6FOzC9T1vID61RI4AqMHVhtYDJ3P8XjZCDKl9EUBj4HUcYGSNgrsCNkgPhcA4Mia42ZYtrNcy/6cDihYuAAKS1MVdoQ+HNTwYNmfc=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1750959595; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=ecYgXEsH7M5ZozoPfYHUQqxlKMweMDt5KaU45qVQwDM=; 
-	b=jZdljkBNAfewjMdXoSWqevLj/i6uKXJSK54w03Tg4EeFaJKeqFi3X/6Z+zJmhJ82LrvigWBOq484OzwVscMPhY34NLkjcMM0UCwEgCYPKhkCctNp0h/LSJC7xZwSuqFAhd+MDluIK9XqxaDlu25geR6vFEsVKDyy1HYVTmPe02c=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=usama.anjum@collabora.com;
-	dmarc=pass header.from=<usama.anjum@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750959595;
-	s=zohomail; d=collabora.com; i=usama.anjum@collabora.com;
-	h=Message-ID:Date:Date:MIME-Version:Subject:Subject:From:From:To:To:Cc:Cc:References:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
-	bh=ecYgXEsH7M5ZozoPfYHUQqxlKMweMDt5KaU45qVQwDM=;
-	b=AX6ZuC3DutekJ1wSPD0J63Ol97yR27H6irJ3YO2TxLQA7WAlj3H1AuLOHfNnz6s8
-	pF/dXI3D+2iH9X19XUZfs72AyIKOjEciS1IX2Kc9We4oCrC2cOC9ej4lwG3mZTJDRYr
-	Bd2FjheyVRpD8uB/pdbfNNUU2ganW23lBaGui3Ic=
-Received: by mx.zohomail.com with SMTPS id 1750959592998994.6843598636191;
-	Thu, 26 Jun 2025 10:39:52 -0700 (PDT)
-Message-ID: <63fee713-34f0-4c76-bd38-8f2fc095849f@collabora.com>
-Date: Thu, 26 Jun 2025 22:39:45 +0500
+	id 1uUq1d-0000000CL2A-1vpU
+	for ath12k@lists.infradead.org;
+	Thu, 26 Jun 2025 17:04:38 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55Q9VPXH002543;
+	Thu, 26 Jun 2025 17:04:36 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Dg0mBkYT+QP2ktU/kqKfkv3uIhcvoU3fAutbeg0ijN4=; b=Sa780RSlVRtRsngO
+	hHieL4QDCkPzzDvhoxe6ajZfx/fMDF5qe6j0h4oxGM9NpjpbvEPjVuaWAtMt03fH
+	NYWmUS1RxKFUFi6fkHHHF/mHP7Vu4l+XPCmhrPPa43/7HLe0I+5j0b2OWCDg1AJF
+	w0/Jfy1OfMMjoHVRs9LONNiBYKhs632qiVzsA6w9P6rbVRxik6VsJBpY/RVNcdPb
+	PDgQlxZn6rTxlWrELKIxOt8+wcuZmIMgDSUiP5wZMmqCrQ1AjcFbbxmBEzw9+Hh8
+	PHxQ0dg4pjCqMKoHQqTKqSUUyTmTxSsB6Q8pa45aGUzgHL03VQhUpTxbfRnyUA+p
+	3fgn4A==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47emcmwu20-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 26 Jun 2025 17:04:36 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55QH4ZQe003555
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 26 Jun 2025 17:04:35 GMT
+Received: from [10.216.56.23] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Thu, 26 Jun
+ 2025 10:04:33 -0700
+Message-ID: <3580ebae-c37f-566a-c60c-d7d38869d055@quicinc.com>
+Date: Thu, 26 Jun 2025 22:34:27 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [Bug Report] mhi: ath11k: dma_alloc_coherent() failures during
- resume
-From: Muhammad Usama Anjum <usama.anjum@collabora.com>
-To: Manivannan Sadhasivam <mani@kernel.org>,
- Jeff Johnson <jjohnson@kernel.org>, quic_bqiang@quicinc.com,
- jeff.hugo@oss.qualcomm.com
-Cc: mhi@lists.linux.dev, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, ath11k@lists.infradead.org,
- linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
- sumit.garg@kernel.org
-References: <ead32f5b-730a-4b81-b38f-93d822f990c6@collabora.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH ath-next] wifi: ath12k: Add memset and update default rate
+ value in wmi tx completion
 Content-Language: en-US
-In-Reply-To: <ead32f5b-730a-4b81-b38f-93d822f990c6@collabora.com>
-Content-Type: text/plain; charset=UTF-8
+To: Sarika Sharma <quic_sarishar@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20250603063512.1887652-1-quic_sarishar@quicinc.com>
+From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
+In-Reply-To: <20250603063512.1887652-1-quic_sarishar@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
-X-ZohoMailClient: External
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: pGkOC5BTLJC6EhKer9jkK44YYblPMhps
+X-Proofpoint-ORIG-GUID: pGkOC5BTLJC6EhKer9jkK44YYblPMhps
+X-Authority-Analysis: v=2.4 cv=J+eq7BnS c=1 sm=1 tr=0 ts=685d7da4 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8
+ a=EUspDBNiAAAA:8 a=Z5984wXlbp5v_7kiN_0A:9 a=QEXdDO2ut3YA:10
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI2MDE0NSBTYWx0ZWRfX/fJsR+zy0lxZ
+ fAYjLwU60oEqjJf6i0Bu/pXL0bwqeqHMpWdT2JRkU8r7NabBm03iP/q+5wEm70QPWrA063OBYNf
+ bwQ1ZwhczKR8u3PBAhyuNSFtwZiPF7mffDpO2Xfp+c9jmB+DsWRDBY7fVAl/bqWtIkI+8wVwJOI
+ 5gNQmkScdhsTx6HcXGgZnxwFSl5XXfA2z1vkIlw7aBZ0izw88LeIx+BedL3Pehoi1VOMa1PpTbs
+ zrtqDJG1xe5mtmIGFc6k23qx3RhuQUQi5AkujLpB6cxVhRWC5crbIP7rIUL2eG+xXopT6dQ0dVc
+ 6sYQf2i+X+avtaa1IDys7ClBZooblQojSNO9tJijF8+keLwW4/8I8JmkKFqdFYTOtp9iGA5yA7B
+ huB0pjx36orIKnCRu8953pHU3nh86y52Id+D2ynIv+FCyUBMzAOcn4YqInWfZwlVCbKBp+nx
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-06-26_06,2025-06-26_05,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0 mlxlogscore=821 adultscore=0 impostorscore=0 clxscore=1015
+ spamscore=0 malwarescore=0 phishscore=0 priorityscore=1501 suspectscore=0
+ mlxscore=0 lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2506260145
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250626_104020_774392_8B52DC6E 
-X-CRM114-Status: GOOD (  16.74  )
+X-CRM114-CacheID: sfid-20250626_100437_523660_B6111F6D 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,85 +113,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
 
-I'm trying to understand ath11k_core_reconfigure_on_crash(). It seems after
-every suspend/hibernate cycle, the hal and dp specifically are de-initialized
-and initialized again to have clean state again to start working with firmware.
-When there's memory pressure, driver isn't able to get the free-ed dma memory
-area again.
 
-The name of the function, ath11k_core_reconfigure_on_crash() suggests that we
-are recovering from crash and that's why all of the states of different
-components are being allocated cleanly from the start. But we aren't resuming
-from crash, instead we are resuming from suspend which was handled by the driver
-itself. So this state cleanup must have been done by the suspend handler.
+On 6/3/2025 12:05 PM, Sarika Sharma wrote:
+> When both AP/STA and monitor interfaces are enabled, ieee80211_tx_status()
+> is invoked from two paths: the TX completion handler for data frames
+> and the WMI TX completion handler for management frames.
+> In the data path, the skb->cb is properly zeroed using memset, but in
+> the WMI path, this step is missing.
+> 
+> As a result, mac80211 encountered uninitialized (junk) values in
+> skb->cb when generating the radiotap header for monitor mode, leading
+> to invalid radiotap lengths.
+> 
+> Hence, explicitly zero the status field in the skb->cb using memset
+> in WMI TX completion path to ensure consistent and correct behavior
+> during WMI tx completion path.
+> 
+> Additionally, set info->status.rates[0].idx = -1 to indicate that
+> no valid rate information is available, avoiding misinterpretation of
+> garbage values.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
 
-Any pointers on how to avoid going through deinit-init cycle of whole objects
-every time?
-
-Thanks,
-Usama
-
-On 6/19/25 3:27 PM, Muhammad Usama Anjum wrote:
-> Hi,
-> 
-> When there is memory pressure during resume and no DMA memory is available,
-> the ath11k driver fails to resume. The driver currently frees its DMA memory
-> during suspend or hibernate, and attempts to re-allocate it during resume.
-> However, if the DMA memory has been consumed by other software in the
-> meantime, these allocations can fail, leading to critical failures in the WiFi
-> driver.
-> 
-> Although I have recently fixed several instances to ensure DMA memory is not
-> freed once allocated, we continue to receive reports of failures. I was
-> preparing to submit a patch for the another case, but this issue cannot be
-> fully resolved as long as even one DMA allocation remains in the resume path.
-> 
-> The following functions are allocating dma memory in resume path:
-> 
-> <function> <size> <index>
-> mhi_init_dev_ctxt dma_alloc_coherent(5632)
-> mhi_init_dev_ctxt dma_alloc_coherent(88)
-> mhi_alloc_aligned_ring dma_alloc_coherent(1023)
-> mhi_alloc_aligned_ring dma_alloc_coherent(8191)
-> mhi_init_dev_ctxt dma_alloc_coherent(44)
-> mhi_alloc_aligned_ring dma_alloc_coherent(4095)
-> mhi_alloc_aligned_ring dma_alloc_coherent(2047)
-> mhi_alloc_aligned_ring dma_alloc_coherent(2047)
-> ath11k_hal_alloc_cont_rdp dma_alloc_coherent(688)
-> [ath11k_hal_alloc_cont_wrp dma_alloc_coherent(180)
-> ath11k_dp_srng_setup dma_alloc_coherent(262143)
-> ath11k_dp_link_desc_bank_alloc dma_alloc_coherent(2097152) 0
-> ath11k_dp_link_desc_bank_alloc dma_alloc_coherent(2097152) 1
-> ath11k_dp_link_desc_bank_alloc dma_alloc_coherent(384) 2
-> ath11k_dp_srng_setup dma_alloc_coherent(2055)
-> ath11k_dp_srng_setup dma_alloc_coherent(1031)
-> ath11k_dp_srng_setup dma_alloc_coherent(1159)
-> ath11k_dp_srng_setup dma_alloc_coherent(16391)
-> ath11k_dp_srng_setup dma_alloc_coherent(1048583)
-> ath11k_dp_srng_setup dma_alloc_coherent(1031)
-> ath11k_dp_srng_setup dma_alloc_coherent(32775)
-> ath11k_dp_srng_setup dma_alloc_coherent(8199)
-> ath11k_dp_srng_setup dma_alloc_coherent(10247)
-> ath11k_dp_srng_setup dma_alloc_coherent(212999)
-> ath11k_dp_srng_setup dma_alloc_coherent(131079)
-> ath11k_dp_srng_setup dma_alloc_coherent(131079)
-> ath11k_dp_srng_setup dma_alloc_coherent(131079)
-> ath11k_dp_srng_setup dma_alloc_coherent(131079)
-> ath11k_dp_srng_setup dma_alloc_coherent(32775)
-> ath11k_dp_srng_setup dma_alloc_coherent(8199)
-> ath11k_dp_srng_setup dma_alloc_coherent(8199)
-> ath11k_dp_srng_setup dma_alloc_coherent(32775)
-> ath11k_dp_srng_setup dma_alloc_coherent(32775)
-> ath11k_dp_srng_setup dma_alloc_coherent(8199)
-> ath11k_dp_srng_setup dma_alloc_coherent(8199)
-> 
-> Let's discuss the general possible solution for this. I'm sure a lot
-> of other drivers would be facing the same kind of issues. What can be
-> general approach to solve this problem.
-> 
-> Regards,
-> Muhammad Usama Anjum
-
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
