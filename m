@@ -4,135 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 302C9C7EE31
-	for <ath12k@archiver.kernel.org>; Thu, 26 Jun 2025 16:59:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E17C4C7EE30
+	for <ath12k@archiver.kernel.org>; Thu, 26 Jun 2025 17:01:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IFPPqTu7MXA+vyY2s6jE+8VmboVurKBM4dXe7ELAAi4=; b=JwcDrnCcYJ8Shpngtdi7IOytpy
-	2eC9At9u/9dZQ8DasEbz8EHbcGa8Vw6u/Fd9o7B1qW/OCEp8n1blWggM0TPssEeklFFKpdXzW/O7h
-	j5gpInCF1eJLxDl1mUvhHZyhLEBHgc9VlzWwfvUaG4ewBRkWjbj5NH9cUxR5tl9NLyuki7hh+XUoC
-	kkPCCoHMUVr7caWXJjtg3WNJCBpaDHxAKnAFMqH2XZNDkGsm8h2hCd2ubt2UqFJhl4qVgo+KfRBVH
-	QXgb+2L+TJQ7oAz4TSxs8VIoEf2NUr5JYD2vE28F3ul8s4OMpa6Juo+JCIjOTdw1Sxntr47p9INpv
-	dzmGnPog==;
+	bh=CF3WGzhE+aCOxzpXb8QO3q3tol1cNtQp1vp+qcU6LNc=; b=XNtaMa2OmenIbWti2HZSYlGkMd
+	4DyHj04ISGG4/2sWxtbMP1wWaqrP/e72LOsgovUfAKWr/UUyOD2AoqtD+FZ0VvBN0WTTRmRRGlwP4
+	YQrpNKdgriUmFshe6NkMCeOepVmV1uqJtN5htb9B1VheQozHsjudk/19ZFHxcC+wgVLFRNzpIrQJ9
+	ikqPFrjdOo/Zmibrg06ptcG8pQ0T82P5mnQip07PEUUAHne0hmpC/5lHVi2p9Nyg8K3UPHcQT3Nno
+	rXAFOV7fmgifxCj2bDRqFqOns8Hd3enZYs1UE1Al4PmjdFnbnkEpWV/MnQreqeIrvPoxyqoTyeJ1b
+	gi/aMLGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUpwJ-0000000CKZc-3RP3;
-	Thu, 26 Jun 2025 16:59:07 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uUpyc-0000000CKtW-2omk;
+	Thu, 26 Jun 2025 17:01:30 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUpwI-0000000CKZC-1wch
-	for ath12k@bombadil.infradead.org;
-	Thu, 26 Jun 2025 16:59:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=IFPPqTu7MXA+vyY2s6jE+8VmboVurKBM4dXe7ELAAi4=; b=qU9hAhXAx6lzMsZxWgSuSGOcxO
-	So5TvvRK8SjsdU3hhBeW5b0MJpjTtvi8cJ7IMO4NVWBGiGR13YvNCNbYDDEkE8mOuFJkOAaiGohJh
-	v0shmedjaSRxkeVe8DpzgajD3zb/0UmwGanzJZ8o1OvjoYbj3Ce86RlkRxMTbUQGG9cHRbx6eWfAr
-	ILZeCHYRcbIc4J/vYrThOD581BHXRRv8aQ94KU2UrQKrnMUcNmPYpBHyRtK6D3Pj42UjROe6HdZzV
-	xM1Sn6VIWHi/8RuTMdc914Hw5MYCi3LKXAPIuHVwwHff5dMkH6dlbIaJQnAbPHaDoW9KmS5suuH0h
-	HGlBKkXA==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUpwE-00000006AGC-2rXP
+	id 1uUpyZ-0000000CKt8-3Z39
 	for ath12k@lists.infradead.org;
-	Thu, 26 Jun 2025 16:59:05 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55QA0Ovj008315
-	for <ath12k@lists.infradead.org>; Thu, 26 Jun 2025 16:58:58 GMT
+	Thu, 26 Jun 2025 17:01:28 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55Q9N28x029548
+	for <ath12k@lists.infradead.org>; Thu, 26 Jun 2025 17:01:27 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IFPPqTu7MXA+vyY2s6jE+8VmboVurKBM4dXe7ELAAi4=; b=f8deDrJ0pdWBJwzu
-	KRooBqZTRkvta3YcV7jEhkrDITXu/O9awSvIhho4e3PcsDq5gKOk8aNE0Ti/jVnC
-	Az6bAgBjyoyom0ZkFORwQ+hG5qDcG7eHFZRsQybx435lb1OrQaZIvwRzKpci9Ds1
-	b1Lv16j6xO83WFO/7mdNanU51UJTDFhwC389RE4BIKAzR5NnJ4QQG6gSgzlxht5r
-	FMBEJ01LMfIxIBxqCh3yNJlgn0IWEvKCD64B8wxj8KbIGB4EN6+LjgF37rxiP/aj
-	xGeLQWC+dkTTmLroyVQSbA2piM1gHLexnO3d77YwkOk5GSF/eXwxFAv/mz3h4HW+
-	SlATZw==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47fbhqtgg8-1
+	CF3WGzhE+aCOxzpXb8QO3q3tol1cNtQp1vp+qcU6LNc=; b=faIyVdJB75ifZji7
+	lbGf14agWJm2nRxVllGH5IcZ3X2Kjvx2IIDoQZRwbFO7JFK7aBkF7dS4ukxUaWkl
+	SC/vBA/gNCMlI1ag1PyCeYR7/3yEoQewzrBgr5ehTt6krfdPoqT6rPXap1X+SC10
+	IcOSDn+kVPOq+BMf7Av7ITevNVrpbfxcBTb2rwCfUxpCzKoI4g+oY5OqD77lsQGS
+	6T2seFU01EngZD07aWVVytwNyEEPpBLOFVlBAEhImB6jC44QPaX5/2M9oqjH8kqu
+	FXfMY+1WVt+nkXN9m0x6d/UZlVrdz+tlX1oVaOVF/036Fw+F/Qgm3PO94gNEnrdK
+	cRXsUw==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47esa4wbse-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 26 Jun 2025 16:58:57 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-31202bbaafaso1146984a91.1
-        for <ath12k@lists.infradead.org>; Thu, 26 Jun 2025 09:58:57 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 26 Jun 2025 17:01:27 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-b2f103f6074so785858a12.3
+        for <ath12k@lists.infradead.org>; Thu, 26 Jun 2025 10:01:26 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750957136; x=1751561936;
+        d=1e100.net; s=20230601; t=1750957286; x=1751562086;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=IFPPqTu7MXA+vyY2s6jE+8VmboVurKBM4dXe7ELAAi4=;
-        b=Wf6ZMkZ7kWQf7Qlae7ua5TAcSBM6DnEn4jrt5Oecu9AABtxKrCrh6SDz96F9ZPrurn
-         BiJVz0dtiphI7OvENNWTmDCdw8TltBbI+Kjlgd5Y3n+OfEJG9xA8NhmRdeDFJusoEUkW
-         jtOs/WF5etdgjhmja7FEDVAC3anBliO23mLwHve3FYFV5DBpH/wswCAJQ+5IFaYuwSVf
-         EaD0vDuMA4FdJiHYlaSrUJq+jH+96dxp00TV668mbv7pJfW3ANTRAY95lsibHiBYyE0d
-         qKmGmpp14f4C1KkY3bZLQQmaCxAJX0d1vIX1jpMf7jhhjZnXzI8usKqbGsLASg1T7oZy
-         pjPw==
-X-Forwarded-Encrypted: i=1; AJvYcCWlG7uvSxeITl9S/G4W4W+9Y3x6HFGGKGnCgbd08JJzLGes5oT+cnVEM679HIbrxizkvYEvibE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxRzGxqf3/A4SUIJ+F/PaGZnm+el5pZvRssHeHHpOQ9UVKyepDy
-	dqB53WRgecPNZTMTR9weIfx7AyuUZAnddxbeTKpE2UcVyvjwyZsQqlxLTR4H22G4k7hcWmlQ/zc
-	ZtQT+eZyOtj44mxTLO023y0aNc4fj4tTA+XnV0t5SX5KfewbpCG/qgtk85/WQsNNf
-X-Gm-Gg: ASbGnctLONqPPC8bX2fBn8ENHFz8+mWN6Vd5kwz94ozpo1+yPtDvueDRy6AWn60NRRD
-	YTqoDdMqFx3Znqz1O1ukXSQAbTCvWP7vRc3gNU14YrxiJqYHOhKs9O+9BoLwBIKchTWULU8yvBc
-	b/Q8fEM/EQ92/5cTMRZ53peayLf0HSYDNgMzrIu+1RTjkR4QQ27IfjMQdjHYJHnlXE0KYg2CPi/
-	hQhh2lem5Bk4s2cx1Ju1K2W31G88I1SqZ8UCZwqFen2jazgAA3isZxUtzTQ+IO5j5o2GkjwoDSx
-	WPLr9+VMTHooI/l+I430YeswBdIkrvVBBBd0g8HG57BIA/EB6fOBWQqiSCdu4x2nGuiBxiw=
-X-Received: by 2002:a17:90b:582c:b0:313:1a8c:c2d3 with SMTP id 98e67ed59e1d1-315f26896dfmr9569156a91.22.1750957136303;
-        Thu, 26 Jun 2025 09:58:56 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGDpfopUuG4hU2Yb0y46Ll3Pqz+c1+9LjOPXninqakgris97nlpW0Y2qwrsu8JaSPMiEtOk7g==
-X-Received: by 2002:a17:90b:582c:b0:313:1a8c:c2d3 with SMTP id 98e67ed59e1d1-315f26896dfmr9569125a91.22.1750957135783;
-        Thu, 26 Jun 2025 09:58:55 -0700 (PDT)
+        bh=CF3WGzhE+aCOxzpXb8QO3q3tol1cNtQp1vp+qcU6LNc=;
+        b=eMIpztSFki9TCdpCaOyvXv4Y2OxBWQctXNEfQ+f+uLmLvn8j7mn4aiihyGL+ACVWV0
+         9fuBE9P9CctrH0Kfo0dR7UZ+yN+UyY89ZwfmgJuNczlk3LQrzCmOQxBTi7rYO1feuEZX
+         DgGJ7GJr0npADMLgKXld+rMuHVJRgewUZCTh7MT63k+7U5g+OP2tRoOH0rtdrr7x+8P9
+         tNc8871TvJyZ2pY9NA1LuN5yrMSrT6ChE2G4A+Vrv7rKA//3rqU4l1a2AVWL1Zt6GhfO
+         nxvQZsqF8okO9rfaGTVS1TcLCBCTOCOcecoQ4OEWGZBGiz+0P1tTgRaKR0bpJplQDcAt
+         0MqA==
+X-Forwarded-Encrypted: i=1; AJvYcCU+FXh163gP+Nbpk1zyjh/P/pT7ExN/hX3gqSwS311Fk3TbvWktuZscggCImARLWc18jn1V904=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwFw8CSsCe02Wxn0cTNFwLwhaLdFz2+FxP6oHIHLS+R9HPzbYqD
+	VyhXrLOeT3+m2KuWfl9tr8qajGgF+v43R23rNh1Ff+3ZFe4ZODQa5fWgpAIsRjnoaMhOp59ZA7D
+	ssqXL5Fuo+doOx6BJ9E/1nS3Zjv9irtIveorYPKETdJxvIl0PeZm4ydaET05T/euw
+X-Gm-Gg: ASbGncvkuTPL/FHufi64E6qPiQbd6B25oMLWxnSfMPhX27QaStFVFrlE/rGZmSV73Pv
+	Ru1Mj+z99Je7ImvCi0XPPiWcB07+Bn20kjSh58jJ7X46+w/CAqUvsUiQEVaUBbt0We/y6+Iqjdf
+	ZRvTW9LmLF0WjfEkElxROT3iKbAOolSFc80jEzJiQq/no8U9v4oZlgb4yLSN4L0WRVMfKjLIb9N
+	HPBDg5ZAXeyi04no6luk9u7Q7QYa+7mxtkREpd1D42vfo877dhgWAPSDKGNehdZRSyb8S+iqQzA
+	pVNuAMssnqfvR97phNRPU8U1IiCal/Fltm/CgNU/EWMCMvy2/HDpg1QTZ7S5rZK9EjAB/yo=
+X-Received: by 2002:a17:902:e54b:b0:234:9068:ed99 with SMTP id d9443c01a7336-23ac468217cmr676365ad.24.1750957285886;
+        Thu, 26 Jun 2025 10:01:25 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG6zvnpbhFjoE8MY0MbGluoHDEzdXqP7vAxIz1miQ05PBrQaeoc1+PwDSFkBzn09LhcY+DT+A==
+X-Received: by 2002:a17:902:e54b:b0:234:9068:ed99 with SMTP id d9443c01a7336-23ac468217cmr674475ad.24.1750957284149;
+        Thu, 26 Jun 2025 10:01:24 -0700 (PDT)
 Received: from [192.168.225.142] ([157.49.255.122])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-315f5428ae2sm4932845a91.28.2025.06.26.09.58.53
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23abe430ba2sm2342015ad.207.2025.06.26.10.01.22
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 26 Jun 2025 09:58:55 -0700 (PDT)
-Message-ID: <27c788ee-b12d-cfe6-3543-f320c4b7fd72@oss.qualcomm.com>
-Date: Thu, 26 Jun 2025 22:28:51 +0530
+        Thu, 26 Jun 2025 10:01:23 -0700 (PDT)
+Message-ID: <c10cdc33-14ad-abb0-1765-2f27dee55595@oss.qualcomm.com>
+Date: Thu, 26 Jun 2025 22:31:20 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.13.0
-Subject: Re: [PATCH ath-next v2 0/2] wifi: ath12k: use real noise floor value
+Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: Fix station association with
+ Non-TX BSS
 Content-Language: en-US
-To: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
-        Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org,
-        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-References: <20250623-support_real_noise_floor-v2-0-974bbafa317e@oss.qualcomm.com>
+To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250530035615.3178480-1-rameshkumar.sundaram@oss.qualcomm.com>
 From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <20250623-support_real_noise_floor-v2-0-974bbafa317e@oss.qualcomm.com>
+In-Reply-To: <20250530035615.3178480-1-rameshkumar.sundaram@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: D_CRMLqWEJpNwgf_K0XmsY0npWJ4HbSy
-X-Authority-Analysis: v=2.4 cv=Id+HWXqa c=1 sm=1 tr=0 ts=685d7c51 cx=c_pps
- a=RP+M6JBNLl+fLTcSJhASfg==:117 a=/xG1ZwzdjF5UbGEDupzz2A==:17
- a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
- a=-iIeHy2jdy7NZ5vI0E0A:9 a=QEXdDO2ut3YA:10 a=iS9zxrgQBfv6-_F4QbHw:22
-X-Proofpoint-GUID: D_CRMLqWEJpNwgf_K0XmsY0npWJ4HbSy
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI2MDE0MyBTYWx0ZWRfXyBGsldiAlHGC
- 6GZHd2L8nhuoQHgWZ54iBE80sbp+yIaoIadAoaqsB1DdOfqbaZv63Sx/KiUSmc4RAgxrea+YPis
- 7epJ/uVAV5mMael+APoKAp6UiZmpXORDGe1gm8//s4iHkDG/39EdYrDVVOTq3aViVYZACbfzzoU
- ixms23GDM98v2RS3jIaUTet70EPBu2NS1Vad6JeRuRq+Kg/upi7UqP2zi4vfwyJ5d3Vs90bd3hD
- SkiFsYCY7nwtI+Wunwa2RXv47jyMRpesqwxHw533b6/HdYR9oipIVgG+ubHhJjZJdwoE5j6Uwpe
- /zaVOlnlKgOgl4pmnmx6BmMr3qbHg0FoxtwqkXRwzAfVphJuRC5ayEtStBZIk4bPZ8SXbtBr2tt
- 0mEMtedcoGRaBSKeut3GAaG+WqNlLzRbGEOcIIGk2yUtB0AzN9sIvmWn5FNTQSzM2X9mKrql
+X-Authority-Analysis: v=2.4 cv=eLYTjGp1 c=1 sm=1 tr=0 ts=685d7ce7 cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=/xG1ZwzdjF5UbGEDupzz2A==:17
+ a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=5MRXV6a3SOdtvRoyAP8A:9
+ a=QEXdDO2ut3YA:10 a=3WC7DwWrALyhR5TkjVHa:22
+X-Proofpoint-GUID: n0jWGwTsDgn1GGi-Yha5AHkFw8BvvMUF
+X-Proofpoint-ORIG-GUID: n0jWGwTsDgn1GGi-Yha5AHkFw8BvvMUF
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI2MDE0NSBTYWx0ZWRfX/jgiMdDgEhvX
+ CrMOjzbzaSNcYdXlqZruPWp2nwiTpj2MNXF27tDELY5bLvcOhZDPETtOi8+O3Mn61vR8C5mhNyg
+ Oie/deZp3fXSWtMgpeiDL8bvlNsWc2lysfS5KLZMf7taRFIrsdqWjv2POlLckXPvI0zpDjpIj1v
+ dYG3GsRIvuDP8WsHpFP/l1WhG65uMnLeg5WQH+0Wm+vZtvdRZk1RsquHnSIdAc848E2zt5C09Gi
+ 7hzsSpDL7DQ4veJ9mSqCahQGlv4IikdVM69WOVxdt9/a3vvB0G3c/6ao4W863oqik1Xvg8CW1Y2
+ 19i29SYlwafPUtxIWOTiOm1yck5QkmcP9VrFSSH0g4xU7MbJKjSnTsxqhpgsOA9k4ufcu4aRxTk
+ KtA7JOLtJsYblsfE1n3zqzj34Pnmb4Ere2/pVaLLpuNN/5ZriDD3/E4JfOuRJy6Sc7+yoMwC
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
  definitions=2025-06-26_06,2025-06-26_05,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 priorityscore=1501 mlxlogscore=999 phishscore=0 bulkscore=0
- clxscore=1015 impostorscore=0 mlxscore=0 lowpriorityscore=0 malwarescore=0
- suspectscore=0 adultscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ phishscore=0 priorityscore=1501 mlxscore=0 clxscore=1015 mlxlogscore=831
+ suspectscore=0 bulkscore=0 impostorscore=0 lowpriorityscore=0 malwarescore=0
+ adultscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2506260143
+ definitions=main-2506260145
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250626_175903_138046_C9547FAF 
-X-CRM114-Status: GOOD (  16.21  )
+X-CRM114-CacheID: sfid-20250626_100127_898331_2CD053DF 
+X-CRM114-Status: GOOD (  10.99  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,39 +133,25 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 6/23/2025 9:19 PM, Aditya Kumar Singh wrote:
-> At present, the ATH12K_DEFAULT_NOISE_FLOOR (-95) is used to calculate RSSI
-> value, providing an estimated noise floor value. Consequently, the RSSI
-> value is also approximate. This works but however, using actual noise floor
-> value will enable the reporting of the true RSSI value.
+On 5/30/2025 9:26 AM, Rameshkumar Sundaram wrote:
+> Currently, ath12k Station fails to associate to non-transmitting BSS of a
+> Multiple BSS set as the scan results from mac80211 does not have
+> information about the non-transmitting BSSes. Fix this by advertising
+> driver's MBSSID capability.
+> Also once STA associates to a Non-Transmitted BSS, instruct the firmware
+> to keep track the Non-Tx Profile's presence in the MBSSID beacon
+> transmitted by the Transmitting BSS.
 > 
-> The firmware possesses the necessary data to determine the actual noise
-> floor. This data is provided to the host via the WMI event
-> WMI_PDEV_RSSI_DBM_CONVERSION_PARAMS_INFO_EVENTID, which includes the
-> runtime parameters needed for calculating the real noise floor in dBm. This
-> event is triggered by the firmware during channel changes, temperature
-> offset adjustments, and hardware chainmask modifications.
+> Hari Chandrakanthan (1):
+>    wifi: ath12k: Fix station association with MBSSID Non-TX BSS
 > 
-> Add support to handle and parse this WMI event. Use the received values to
-> calculate and store the noise floor value and use at the required places.
+> Rameshkumar Sundaram (1):
+>    wifi: ath12k: Fix beacon reception for sta associated to Non-TX AP
 > 
-> ---
-> Changes in v2:
-> - Rebased to latest main. Simple conflict was only in wmi.h. No other changes.
-> - Link to v1: https://lore.kernel.org/r/20250528-support_real_noise_floor-v1-0-04507bd3bc76@oss.qualcomm.com
+>   drivers/net/wireless/ath/ath12k/mac.c | 57 ++++++++++++++++++---------
+>   1 file changed, 38 insertions(+), 19 deletions(-)
 > 
-> ---
-> Raj Kumar Bhagat (2):
->        wifi: ath12k: handle WMI event for real noise floor calculation
->        wifi: ath12k: use real noise floor instead of default value
 > 
->   drivers/net/wireless/ath/ath12k/core.h   |  17 +++
->   drivers/net/wireless/ath/ath12k/dp_mon.c |   7 +-
->   drivers/net/wireless/ath/ath12k/dp_tx.c  |  20 ++-
->   drivers/net/wireless/ath/ath12k/mac.c    |  14 +-
->   drivers/net/wireless/ath/ath12k/wmi.c    | 233 ++++++++++++++++++++++++++++++-
->   drivers/net/wireless/ath/ath12k/wmi.h    |  42 ++++++
->   6 files changed, 324 insertions(+), 9 deletions(-)
 
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
