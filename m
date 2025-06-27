@@ -4,121 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D304C7EE2A
-	for <ath12k@archiver.kernel.org>; Fri, 27 Jun 2025 19:05:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90E61C77B7F
+	for <ath12k@archiver.kernel.org>; Fri, 27 Jun 2025 19:40:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7K3dz0RHRwog01/5OhJi5jfcUQuZLwHGDzYJ92Dzlow=; b=wDTfogZuWPuof9tkokktXReA3C
-	ttbZHIDsxO3+eBJtLzJULnoSpTAER7JA726LPazDnquF3ljMAY2VoiFJLihRi3sPy81HXmZtXV+SD
-	p6VnrEDBBokn9dVx6MXCFW8x/guk0Fi+5u+72agPk7fHXvBlAIHyCTDAFswQ8V0gjGt5YcLfQOFNc
-	8uSRd4wsuTStnVKOCMNM/Ag0diHQSU+EUA3DofRZmXbDZTVqBJYFTulRL/yEo57PO3WnOtGA3ePF7
-	dlOE8mRDIskROhzJSqMnS7Q2yDjk9cFNJjec6hA4EUEv3vUD7vnGkW2gLDTIfbKbWbyi5fX0jtQH8
-	GQTt55fg==;
+	Content-Type:MIME-Version:Message-ID:Subject:From:To:Date:Reply-To:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=XiwfjDlNhCnzn40R9UKeB75Ac8R3+fSNwGUvakt5NL8=; b=LGlobsPW5eJjGqbZTC7lzs8/EI
+	eGGW1YoWguITj1xa/NSaI+cJEB5YchI1+nFaWRwYURGWB0qWI7lFkKta/YKc0LhfjFXZ2kN32K8qI
+	uwq7qbC3PXHPPGNuMjpvyLRE3TA4QywPeSr60EhGLYJBIKSTkYVUA09qj768X8TNMenKvTfY/d5ZH
+	fWA85lvfR+gedvqkRLvbbeLRyCBXLVaQfBT5RMlqsMx1Jq5HtpN3rAEvWOn70y5yphH1yxPPJLQR7
+	3aI3sy1QYQrTlJchC2QrVldmxl7JUbAb2cXJOEfmpUB160gg/I6SkS7vl+3+1wCVxyvrt1+6OwcCn
+	IxXGAsfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uVENt-0000000FZZ6-2iyv;
-	Fri, 27 Jun 2025 19:05:13 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uVEvt-0000000FfQy-1SAz;
+	Fri, 27 Jun 2025 19:40:21 +0000
+Received: from mail-4322.protonmail.ch ([185.70.43.22])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uVDPR-0000000FTIQ-2q2H
+	id 1uVEbk-0000000FcR9-027O
 	for ath12k@lists.infradead.org;
-	Fri, 27 Jun 2025 18:02:46 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55RCM6i7012525
-	for <ath12k@lists.infradead.org>; Fri, 27 Jun 2025 18:02:45 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	7K3dz0RHRwog01/5OhJi5jfcUQuZLwHGDzYJ92Dzlow=; b=g3NEW2b0bFIfBcyC
-	mGcLZ0xUBLf4+Da1X7MTnb1+BsglquiOBXcG48LA4YA6Ba24qIhbGyencYdunnOi
-	K7U5QQgmxAdoHBIiUgLulYL9llvhfB+bvh3OMSBcbCwIKFKXaZ32FU6TUGk1YBKk
-	3+PH0VpOlw+gnBDBI3GhFnHZ5yOmkwY+3CXgcrrXoFUu1eimTaw2yorYCU3XJIqb
-	mfDax1Giklbr/xjd2VWGYp5M0S/RExWybMKoAJPfYCVmVb4nmx2j7fksY5NU7JRg
-	d/DT4r28f4D7wXCVcVgTbffWMuy9pKpJWUWD+S5Qb0DcK504eOoUmqqKBceONBKT
-	tP+isA==
-Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47f4b47jyh-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 27 Jun 2025 18:02:45 +0000 (GMT)
-Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b321087b1cdso230872a12.2
-        for <ath12k@lists.infradead.org>; Fri, 27 Jun 2025 11:02:45 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751047364; x=1751652164;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=7K3dz0RHRwog01/5OhJi5jfcUQuZLwHGDzYJ92Dzlow=;
-        b=GcSwiS2uPmpEuK2JrB3V+K84yXjezX3X0IM0sdU3YOLy54DuFNpn9OSOSbY+olJy/o
-         mR32318kgfi/ZQa72kPc7tmSlxUNrvA30dF4aqdvp0hM2Q45SFaGhKCAlZcQb9kxW/f8
-         9iC12/hyQwWlGi74nzd6vZA3uOzZAbodOmPlzob4+7bwj9Xuat5o0gORRcs79PBj62s7
-         F0ZyfEedDLrpBMfMrTez0KejXSFOYAaY5CUYaaitq81k5z8qO5qfdWh+KaZQN6YIpU8n
-         11N2tYRPDVtTXXZNNbqu/lb6EXR9kN0wUoCk9/osx57XE4AJMyLPSHGzD4eBku6dK1SM
-         0bwg==
-X-Forwarded-Encrypted: i=1; AJvYcCXe2/iIGc1dT94HJi74UBKyuJgoIOTLSiJwetblzyuzrkzeoaBc6LW/HO6mNBp2sPI+53zS4zg=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxa0m/i9GbhwPR84L/3NLcIkLlQE1IFaQJEXWF0rh6oIQE7QM20
-	7P4hYagPQbHpkNc8amBq/U0hcp0kkf7qFSM/3nVBH62vc6gyoBSrGYzdPZNhV3m0gGlUlu8XbNs
-	QZFfdT2JKd7cXiN5j8fHMYB8tGimaRgqAXxEKgdVT4HNL+euuFJV8BbaxmxPO+Ux5
-X-Gm-Gg: ASbGncsma7VlMWLNbTIyNglgQ4+9GGqgdV24e3wpQEaNVdpyudvHTAdgolCtEjravUe
-	HcMBJ6frTRSjUlKKs4yEFWOYHqWNKai7X0Av9x7KoB6xbfLekt6SgDvhTMDuCBpwUXJ6pfgwXAn
-	gW8Hu/UsT+U9iyeHm+mamlVlSFQI/UijBBpGgIoVmC/2hChS4LufXSwF8f7E84Gd3Mwhv422TvE
-	IKaAgUWdshw2DxAlxsF1tk5eQpBBXjYrSS8+OSTEmTNqe58Gt6SqEQ5pBch/DnyfFh6UrA0rBan
-	ucKNgfkfVmkwxdVs8tYZLUEdJHwjXT5icDTcPYerL3KzZOy1SfdG5f+Y8Sr9XEKwYsCAbm5STaU
-	es/ojm2n5e+QQuLo=
-X-Received: by 2002:a17:90b:3d87:b0:311:9e59:7aba with SMTP id 98e67ed59e1d1-318c8ecd027mr6489714a91.2.1751047361907;
-        Fri, 27 Jun 2025 11:02:41 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IG4o+Zl6QsXsdfBN7hrGiRGlLA6WRZLfmh7CC7eb/MtvMgcOsqRL+ouKIiVZVN9U4e8XHCtuQ==
-X-Received: by 2002:a17:90b:3d87:b0:311:9e59:7aba with SMTP id 98e67ed59e1d1-318c8ecd027mr6489669a91.2.1751047361456;
-        Fri, 27 Jun 2025 11:02:41 -0700 (PDT)
-Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-315f5427099sm7491870a91.29.2025.06.27.11.02.40
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 27 Jun 2025 11:02:41 -0700 (PDT)
-Message-ID: <9c4be921-930d-4be3-b231-f7a45908b774@oss.qualcomm.com>
-Date: Fri, 27 Jun 2025 11:02:39 -0700
+	Fri, 27 Jun 2025 19:19:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail; t=1751051970; x=1751311170;
+	bh=XiwfjDlNhCnzn40R9UKeB75Ac8R3+fSNwGUvakt5NL8=;
+	h=Date:To:From:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
+	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
+	b=MOAyjngB2cKD2s+XN8cRXURGY5qQR3CHMa94vzhEdgYvKJq55AG5pxCn/c6LqzNuZ
+	 7PJOqGeYLoDT6yypzkevfKisNjusnB+5sgH4PYMa/5sRRyU69QHXF2PiY3YZ7k6HAZ
+	 cOX7zRcd6QrMDAXjrc2b1jFdibzOQuPI4mp2lShfy8vED4v3lregiHPOwn5aCTE/8a
+	 lHXJnKTaeTDcUWkbrKSCliMsaLVsLzHqvBxQRc19Y1PuBp//6WO0IIKzpBJum6UXVy
+	 co155zd9Ugo/D5YH7GtEeo4lKBUe4w82ZKFF0yfwpjJkrmi+gjcHhN4kK2G5j8aMWq
+	 Emad823po/viA==
+Date: Fri, 27 Jun 2025 19:19:26 +0000
+To: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
+From: Janek <janekkw@proton.me>
+Subject: 6GHz issue QCNCM865 (WCN7850) firmware
+Message-ID: <l262t2ImXM_3Szbm3CnRu6PnXIAgw32DZBoz-Oai5GGVy-GbMqeAQLGO8Uu1PU4do9tMF0kpAZ3GFk40Nnq2fPjj2hVwCDmEuao3Xfqq6nQ=@proton.me>
+Feedback-ID: 113248985:user:proton
+X-Pm-Message-ID: a7369dec5f388f7a5d63eca80461d8f45ec285e4
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-current] wifi: ath12k: fix timeout while waiting for
- regulatory update during interface creation
-To: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org, Kang Yang <kang.yang@oss.qualcomm.com>
-References: <20250626-fix_timeout_during_interface_creation-v1-1-90a7fdc222d4@oss.qualcomm.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20250626-fix_timeout_during_interface_creation-v1-1-90a7fdc222d4@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI3MDE0NSBTYWx0ZWRfX2SGSm6/ZdFo8
- CX/4v1AS+B/7sOGaBS6eyH3ugKl0xCf+vdT/ExJo6rSIaGinApPGd8jZ+c2stJYSUMbNpQd1y0Q
- MXLiVUrQvuS90u2z6JIFgwy/ifAkybhIoNxqAN/CnVufHk0K3qs5tW7jf14UoDCISZZwIhe9WYD
- 5pSEm8R32s0TnXzdYule47nFwKsDgffhBuQYcZzwdCLP/nDhEfEcxa3n2K2fRWKCcFSWQcT46xn
- 8IFcvOkTmJt7mv6G9GOtPC2iZuxNgeD/8riZKX+ntZtqfOoq0rM1LazGHJyOHiRxJz1FSFxcJ/3
- doypRS1trVV9S/2vFIXS9OvNA4AxoN+atxIygIjlfQDkeFyFmYefkrapO7Raam7SoSmXIeTUoxK
- 69n2+fN5NI/JrjHIw6wDRsbkpLhAVtnqBmZV1Wq5FVNUSeNIfixmfbMQkUCKoAJ9+o2LIjKa
-X-Proofpoint-ORIG-GUID: l6xzt3qYwptm44UcCtyMmTBwfF89ICiF
-X-Proofpoint-GUID: l6xzt3qYwptm44UcCtyMmTBwfF89ICiF
-X-Authority-Analysis: v=2.4 cv=A8BsP7WG c=1 sm=1 tr=0 ts=685edcc5 cx=c_pps
- a=rz3CxIlbcmazkYymdCej/Q==:117 a=e70TP3dOR9hTogukJ0528Q==:17
- a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=Cu1Hzb5Yk4M5GyBUqqUA:9
- a=QEXdDO2ut3YA:10 a=bFCP_H2QrGi7Okbo017w:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-06-27_05,2025-06-26_05,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 mlxlogscore=755 malwarescore=0 spamscore=0 bulkscore=0
- phishscore=0 adultscore=0 impostorscore=0 suspectscore=0 mlxscore=0
- clxscore=1015 priorityscore=1501 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2506270145
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250627_110245_724175_776042CC 
-X-CRM114-Status: UNSURE (   7.73  )
+X-CRM114-CacheID: sfid-20250627_121932_633407_EFEFB8C9 
+X-CRM114-Status: UNSURE (   7.01  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -134,10 +66,68 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-FYI this should have been tagged for -next instead of -current since the patch
-being fixed is only in -next
+Hi,
 
-I'm in the process of picking this up now
+Yesterday, I noticed that I could not "see" or connect to any 6GHz SSID/AP.=
+ After some checking, I noticed that my WiFi card was stuck with the reg co=
+untry 00, as below:
 
-/jeff
+$ iw reg get
+global
+country PL: DFS-ETSI
+=09(2400 - 2483 @ 40), (N/A, 20), (N/A)
+=09(5150 - 5250 @ 80), (N/A, 23), (N/A), NO-OUTDOOR, AUTO-BW
+=09(5250 - 5350 @ 80), (N/A, 20), (0 ms), NO-OUTDOOR, DFS, AUTO-BW
+=09(5470 - 5725 @ 160), (N/A, 26), (0 ms), DFS
+=09(5725 - 5875 @ 80), (N/A, 13), (N/A)
+=09(5945 - 6425 @ 320), (N/A, 23), (N/A), NO-OUTDOOR
+=09(57000 - 66000 @ 2160), (N/A, 40), (N/A)
+
+phy#0 (self-managed)
+country 00: DFS-UNSET
+=09(2402 - 2472 @ 40), (N/A, 20), (N/A)
+=09(2457 - 2482 @ 20), (N/A, 20), (N/A), PASSIVE-SCAN
+=09(5170 - 5330 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+=09(5490 - 5730 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+=09(5735 - 5895 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+
+
+I'm not sure what caused this, but I suspect that is the firmware that was =
+updated on last Sunday, as part of the Fedora 42 package named atheros-firm=
+ware-20250613-1.fc42 (WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ=
+-3).
+
+I've tried reverting the kernel to 6.14.9 (that I was running before the 6.=
+15.3), it did not help, after manually downloading and installing the previ=
+ous known good firmware, I got it to connect to 6GHz networks (both ax and =
+be).
+
+Currently installed firmware: atheros-firmware-20250410-1.fc42 (WLAN.HMT.1.=
+0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3) 6GHz working.
+
+My system details
+WiFi card: QCNCM865 (WCN7850)
+Distro: Fedora 42
+Kernel: 6.15.3 from Fedora
+Affected firmware: WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3 =
+(from Fedora package atheros-firmware-20250613-1.fc42)
+
+related dmesg output:
+[    5.082826] ath12k_pci 0000:01:00.0: BAR 0 [mem 0x90600000-0x907fffff 64=
+bit]: assigned
+[    5.082844] ath12k_pci 0000:01:00.0: enabling device (0000 -> 0002)
+[    5.083105] ath12k_pci 0000:01:00.0: MSI vectors: 16
+[    5.083110] ath12k_pci 0000:01:00.0: Hardware name: wcn7850 hw2.0
+[    5.733493] ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4 board_i=
+d 0xff soc_id 0x40170200
+[    5.733499] ath12k_pci 0000:01:00.0: fw_version 0x1108811c fw_build_time=
+stamp 2025-05-17 00:21 fw_build_id QC_IMAGE_VERSION_STRING=3DWLAN.HMT.1.1.c=
+5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+[    5.733744] ath12k_pci 0000:01:00.0: failed to get ACPI BDF EXT: 0
+[    5.958726] ath12k_pci 0000:01:00.0 wlp1s0: renamed from wlan0
+
+Let me know if there is any other info that I could get from my machine.
+
+Thanks in advance,
+Janek
 
