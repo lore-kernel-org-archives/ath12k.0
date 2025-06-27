@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22B2EC83026
-	for <ath12k@archiver.kernel.org>; Fri, 27 Jun 2025 19:04:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AF4FC83000
+	for <ath12k@archiver.kernel.org>; Fri, 27 Jun 2025 19:04:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=g74W+beY9CGq+iUK3VAs/kTVKLXW+6UXX+en9u6MogQ=; b=v2tvFm9mMLwzB8aPNG3cv5XCN9
-	RPesotx6m2AJd15N3S1lx2ap6wGRi7xeOj8vG75NFYvn4w3UigOsUAUhj1UOdryDMPUd2DitQ8FMr
-	XQNYPBqaiTYZjT7xkHz90d47G8/xAxwLq4vK0bAdRVJR8lp4SUdZrWXIifgSPYTIptwOH6glVp/zV
-	OlYQdXYGoyrVfWob0gVvF8bGHZF8deO3c0LVreh36EX/vb3VS/LBlW+TE4jcODR3R1+zFu2kCXipv
-	APtXgj1FpR8QCX6QGp2jGU6IObDBxA2h+pnxd4/12F6kmznfBbPUR9jlIRKMr9RmvDO+HiRcRJl4l
-	UPBkJs/Q==;
+	bh=IMX5iqv49jmVH6zQwpJ08384zI60U8x4L5xRLE5vCTY=; b=xipcVF1D6tyh7b3ODv31iLm9gF
+	PWnnghBzg+pKCu5X5FuoeQryZPq3nthp0nbKtQn/5j7IY0mgoOZuT8iHLs6pe9t1Tm6q3WkVoFgHL
+	NIfixGERTuvh/aIXLjIoJi9+1HptQ0/ALqugB1xVpsb9f+fG+p0/VlPpsqUdfbRb9YYQrLATkdl6m
+	SluBZclq5EDhaavkxYIib4IIvFMgRzLb5ISJ+gOf0TAFTYq0bOZqml2WetMIkSVy2R06JNYATStHS
+	w9nBS3RJnRk/VhhPt8n4mSW9tn33JX6ERa8y66XNbqxzzSfrTSC2VSNrIeUt83E5DfzYwnXMZ1ZXg
+	2KLULWcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uVEMy-0000000FY8x-3gNm;
+	id 1uVEMy-0000000FY8a-1bWZ;
 	Fri, 27 Jun 2025 19:04:16 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uVCPv-0000000FLU8-1Buk
+	id 1uVCPu-0000000FLTn-41Q2
 	for ath12k@lists.infradead.org;
 	Fri, 27 Jun 2025 16:59:12 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55RBxmU1001166;
-	Fri, 27 Jun 2025 16:59:11 GMT
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55RBVXqn028766;
+	Fri, 27 Jun 2025 16:59:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	g74W+beY9CGq+iUK3VAs/kTVKLXW+6UXX+en9u6MogQ=; b=JNrNzLc7/T79dLte
-	htdvzMXBbK97MyPrYp2FiaE9Ynjfj24/2C0wotpKkbJCiaFfKAWtIo/xSevtqGXH
-	bQIXeFlWWWjZfVkbYOG6Y8siBRXZ/jl26woOC39pn4hVnb92GoZ6hF33YbO5bnV6
-	JCwv1mWVUUEXlni2zmrX2IvNu7kjqbv3n2rOFe3pe4woPn4KL+L7doCg9nLo0hrC
-	YVzdyY5F2G6Fn1+UMRlZkdsj6BVWWBf1EbIs6bkEu0/r05OkoN/GBd+aJRCXSbJF
-	Apy0AXYxEMzKAbIiR/uTmwWXh/mZMGFsR6PPwxlz8WU398ezU2RGlfpLgMXaDZEz
-	eHYAGQ==
+	IMX5iqv49jmVH6zQwpJ08384zI60U8x4L5xRLE5vCTY=; b=pvdZEkT+De6rFxHL
+	pzcEYWiUDxU8z/c1ydF/rTcdJbS+hVngUsxmmgCFbfqPw9vEkd85yncdlSABIMaF
+	I4odjeYaF35Mhecqjkivjw5fF2UsBP1I7zQJickPI/AtwVpAfU79NK0KlLyCLFiN
+	GTG2jBWsGGck/utnzzUKPwZ8zSYMF8fIstdlwk6NBckcuOLHpB8KmE7M5FDMoxvv
+	sd41Aln4ZxG87acjecSXKEqe816XoEx3JKhldiihfYrokFN1H2xtD6dbGY8egX+X
+	+ThW6b2070jA+Z+8OpMCse0XzZO2pjV682MB0Yd9fS0xHSS6mjxOItXd5PeVoAbH
+	b87Wrg==
 Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47g7tdhhsu-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47hkpbj73w-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 27 Jun 2025 16:59:10 +0000 (GMT)
+	Fri, 27 Jun 2025 16:59:09 +0000 (GMT)
 Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55RGxAfm023943
+	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 55RGx8KS023882
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 27 Jun 2025 16:59:10 GMT
+	Fri, 27 Jun 2025 16:59:08 GMT
 Received: from hu-sarishar-blr.qualcomm.com (10.80.80.8) by
  nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.10; Fri, 27 Jun 2025 09:59:08 -0700
+ 15.2.1748.10; Fri, 27 Jun 2025 09:59:07 -0700
 From: Sarika Sharma <quic_sarishar@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Sarika Sharma
 	<quic_sarishar@quicinc.com>
-Subject: [PATCH ath-next v6 2/5] wifi: ath12k: add link support for multi-link in arsta
-Date: Fri, 27 Jun 2025 22:28:45 +0530
-Message-ID: <20250627165848.3178339-3-quic_sarishar@quicinc.com>
+Subject: [PATCH ath-next v6 1/5] wifi: ath12k: fill link station statistics for MLO
+Date: Fri, 27 Jun 2025 22:28:44 +0530
+Message-ID: <20250627165848.3178339-2-quic_sarishar@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250627165848.3178339-1-quic_sarishar@quicinc.com>
 References: <20250627165848.3178339-1-quic_sarishar@quicinc.com>
@@ -71,31 +71,31 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01c.na.qualcomm.com (10.45.79.139)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=CPYqXQrD c=1 sm=1 tr=0 ts=685ecdde cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI3MDEzNyBTYWx0ZWRfX1QItwoIEc6cI
+ Hx1mf7VQ/f/jL4CXWMW+qsAgQdgCNnyare9q8AIQ1kJpIffg45bQNKAi2kt5kL1lk62TsWbfPrU
+ xehtshORQntWSD8KpO1T3iedsqgAITzGSXma2/DYyh530xlBW7aFt1gFihrtTT9APx5IO8+aGu5
+ REKJigpK0Vao7e8qdaviHm2bLfGRTz6mDc1nspHRXQCB1KGqc6lDIS7L8YIPMAZImXiNJcRh6Rr
+ yWfUpIpc9fMi2wJM6AGafLCmzm7SMjkR9Jw1amedicSePIzNpN3Dz6KMLvbwcuiwhFq7HNgah3d
+ 0ucJM18i8K6h4JXmSBIkNzeY2qHJOZ4VkH+2/NsrVf+INVI3balfRtTBCxSZIu8+OsJakBKeDyf
+ 1JKfJk9ZHnvPlvifDZwyzxTziwafGj6A8iCokOMdXLmPu5VtfpndWs1j5jmKq0Dfu9f/l7oT
+X-Proofpoint-GUID: 0YUEww5tkoMwxD8GK5JyWZVTFPJKeVGX
+X-Authority-Analysis: v=2.4 cv=AY2xH2XG c=1 sm=1 tr=0 ts=685ecddd cx=c_pps
  a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=GEpy-HfZoHoA:10 a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8 a=lHz-9wWWAAlisZ7QqxgA:9
+ a=GEpy-HfZoHoA:10 a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8 a=pS3n3Mt4l41vp9au72QA:9
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI3MDEzNyBTYWx0ZWRfXzgl2S1MOk5s9
- ALRVBeMUttEyJTFTfX3nkYUEFby+Ax4DKPLuh29HE0h7NdxNfAxBKRkWGpU5LlYscoEkjHoWNer
- 1lD/M//OobsXJUMAoVlGLVIqhmIg85NTX+243xeAaaOTOcWnLrB6aYXI5XhNCQs+s0CgTbsLEQ8
- hElg1tsdYZjtL7Shtil1iuCETEkxpfCdy4ScwlOTBvdhVZF1Flj6Z+R2l+DxtfWfie2a1iLk4Nc
- R9MSYae7t+0mNgs5P4t6huzve8UsRq6colN0XuUTyyzylxhWGh63MeNKm2r39WQh0PZZeoE/gDE
- CaPR3BabR/HIn5xzYa75aDNIrS/LECRtnBu+f3n18RWfyGemEJpTPP4FXq272bmm22Hf7K/Vij6
- T4HkSuVwVg6Y2KxYEndft8pywf0heJSdmFaOqHFsZLrwO/T+UI25LYqi801nFfqORNnzbWWY
-X-Proofpoint-GUID: 0yKunWB_FHYuuOSVvpu64AU1PJIdWvLf
-X-Proofpoint-ORIG-GUID: 0yKunWB_FHYuuOSVvpu64AU1PJIdWvLf
+X-Proofpoint-ORIG-GUID: 0YUEww5tkoMwxD8GK5JyWZVTFPJKeVGX
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
  definitions=2025-06-27_05,2025-06-26_05,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 phishscore=0 mlxlogscore=910 lowpriorityscore=0 malwarescore=0
- impostorscore=0 suspectscore=0 clxscore=1015 spamscore=0 priorityscore=1501
- adultscore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ bulkscore=0 priorityscore=1501 mlxscore=0 mlxlogscore=999 phishscore=0
+ malwarescore=0 lowpriorityscore=0 spamscore=0 adultscore=0 impostorscore=0
+ clxscore=1015 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
  definitions=main-2506270137
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250627_095911_325248_DBC84F55 
-X-CRM114-Status: GOOD (  15.83  )
+X-CRM114-CacheID: sfid-20250627_095911_123185_BF5AA184 
+X-CRM114-Status: GOOD (  12.99  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,142 +110,115 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, statistics in arsta are updated at deflink for both non-ML
-and multi-link(ML) station. Link statistics are not updated for
-multi-link operation(MLO).
+Introduce ath12k_mac_op_link_sta_statistics(), to report link level
+station statistics for MLO. The link_station_info structure is filled
+from arsta and arsta is fetch from corresponding ahsta->link[link_id].
 
-Hence, add support to correctly obtain the link ID if the peer is ML,
-fetch the arsta from the appropriate link ID, and update the
-statistics in the corresponding arsta.
+Therefore, this will be helpful to check the link related statistics.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_mon.c | 22 ++++++++++++++------
- drivers/net/wireless/ath/ath12k/dp_rx.c  | 11 +++++-----
- drivers/net/wireless/ath/ath12k/peer.h   | 26 ++++++++++++++++++++++++
- 3 files changed, 48 insertions(+), 11 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 78 +++++++++++++++++++++++++++
+ 1 file changed, 78 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 91f4e3aff74c..6a0915a0c7aa 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -3610,7 +3610,6 @@ ath12k_dp_mon_rx_update_user_stats(struct ath12k *ar,
- 				   struct hal_rx_mon_ppdu_info *ppdu_info,
- 				   u32 uid)
- {
--	struct ath12k_sta *ahsta;
- 	struct ath12k_link_sta *arsta;
- 	struct ath12k_rx_peer_stats *rx_stats = NULL;
- 	struct hal_rx_user_status *user_stats = &ppdu_info->userstats[uid];
-@@ -3628,8 +3627,13 @@ ath12k_dp_mon_rx_update_user_stats(struct ath12k *ar,
- 		return;
- 	}
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 32519666632d..ec03d4470085 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -11652,6 +11652,83 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
+ 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL_AVG);
+ }
  
--	ahsta = ath12k_sta_to_ahsta(peer->sta);
--	arsta = &ahsta->deflink;
-+	arsta = ath12k_peer_get_link_sta(ar->ab, peer);
-+	if (!arsta) {
-+		ath12k_warn(ar->ab, "link sta not found on peer %pM id %d\n",
-+			    peer->addr, peer->peer_id);
-+		return;
-+	}
-+
- 	arsta->rssi_comb = ppdu_info->rssi_comb;
- 	ewma_avg_rssi_add(&arsta->avg_rssi, ppdu_info->rssi_comb);
- 	rx_stats = arsta->rx_stats;
-@@ -3742,7 +3746,6 @@ int ath12k_dp_mon_srng_process(struct ath12k *ar, int *budget,
- 	struct dp_srng *mon_dst_ring;
- 	struct hal_srng *srng;
- 	struct dp_rxdma_mon_ring *buf_ring;
--	struct ath12k_sta *ahsta = NULL;
- 	struct ath12k_link_sta *arsta;
- 	struct ath12k_peer *peer;
- 	struct sk_buff_head skb_list;
-@@ -3868,8 +3871,15 @@ int ath12k_dp_mon_srng_process(struct ath12k *ar, int *budget,
- 		}
- 
- 		if (ppdu_info->reception_type == HAL_RX_RECEPTION_TYPE_SU) {
--			ahsta = ath12k_sta_to_ahsta(peer->sta);
--			arsta = &ahsta->deflink;
-+			arsta = ath12k_peer_get_link_sta(ar->ab, peer);
-+			if (!arsta) {
-+				ath12k_warn(ar->ab, "link sta not found on peer %pM id %d\n",
-+					    peer->addr, peer->peer_id);
-+				spin_unlock_bh(&ab->base_lock);
-+				rcu_read_unlock();
-+				dev_kfree_skb_any(skb);
-+				continue;
-+			}
- 			ath12k_dp_mon_rx_update_peer_su_stats(ar, arsta,
- 							      ppdu_info);
- 		} else if ((ppdu_info->fc_valid) &&
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 420a9b161f4a..f0cfe03d74b6 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -1417,8 +1417,6 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
- {
- 	struct ath12k_base *ab = ar->ab;
- 	struct ath12k_peer *peer;
--	struct ieee80211_sta *sta;
--	struct ath12k_sta *ahsta;
- 	struct ath12k_link_sta *arsta;
- 	struct htt_ppdu_stats_user_rate *user_rate;
- 	struct ath12k_per_peer_tx_stats *peer_stats = &ar->peer_tx_stats;
-@@ -1499,9 +1497,12 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
- 		return;
- 	}
- 
--	sta = peer->sta;
--	ahsta = ath12k_sta_to_ahsta(sta);
--	arsta = &ahsta->deflink;
-+	arsta = ath12k_peer_get_link_sta(ab, peer);
-+	if (!arsta) {
-+		spin_unlock_bh(&ab->base_lock);
-+		rcu_read_unlock();
-+		return;
-+	}
- 
- 	memset(&arsta->txrate, 0, sizeof(arsta->txrate));
- 
-diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
-index f3a5e054d2b5..92c4988df2f1 100644
---- a/drivers/net/wireless/ath/ath12k/peer.h
-+++ b/drivers/net/wireless/ath/ath12k/peer.h
-@@ -91,5 +91,31 @@ struct ath12k_peer *ath12k_peer_find_by_ast(struct ath12k_base *ab, int ast_hash
- int ath12k_peer_ml_create(struct ath12k_hw *ah, struct ieee80211_sta *sta);
- int ath12k_peer_ml_delete(struct ath12k_hw *ah, struct ieee80211_sta *sta);
- int ath12k_peer_mlo_link_peers_delete(struct ath12k_vif *ahvif, struct ath12k_sta *ahsta);
-+static inline
-+struct ath12k_link_sta *ath12k_peer_get_link_sta(struct ath12k_base *ab,
-+						 struct ath12k_peer *peer)
++static void ath12k_mac_op_link_sta_statistics(struct ieee80211_hw *hw,
++					      struct ieee80211_vif *vif,
++					      struct ieee80211_link_sta *link_sta,
++					      struct link_station_info *link_sinfo)
 +{
-+	struct ath12k_sta *ahsta;
++	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(link_sta->sta);
++	struct ath12k_fw_stats_req_params params = {};
 +	struct ath12k_link_sta *arsta;
++	struct ath12k *ar;
++	s8 signal;
++	bool db2dbm;
 +
-+	if (!peer->sta)
-+		return NULL;
++	lockdep_assert_wiphy(hw->wiphy);
 +
-+	ahsta = ath12k_sta_to_ahsta(peer->sta);
-+	if (peer->ml_id & ATH12K_PEER_ML_ID_VALID) {
-+		if (!(ahsta->links_map & BIT(peer->link_id))) {
-+			ath12k_warn(ab, "peer %pM id %d link_id %d can't found in STA link_map 0x%x\n",
-+				    peer->addr, peer->peer_id, peer->link_id,
-+				    ahsta->links_map);
-+			return NULL;
++	arsta = wiphy_dereference(hw->wiphy, ahsta->link[link_sta->link_id]);
++
++	if (!arsta)
++		return;
++
++	ar = ath12k_get_ar_by_vif(hw, vif, arsta->link_id);
++	if (!ar)
++		return;
++
++	db2dbm = test_bit(WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT,
++			  ar->ab->wmi_ab.svc_map);
++
++	link_sinfo->rx_duration = arsta->rx_duration;
++	link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_RX_DURATION);
++
++	link_sinfo->tx_duration = arsta->tx_duration;
++	link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_DURATION);
++
++	if (arsta->txrate.legacy || arsta->txrate.nss) {
++		if (arsta->txrate.legacy) {
++			link_sinfo->txrate.legacy = arsta->txrate.legacy;
++		} else {
++			link_sinfo->txrate.mcs = arsta->txrate.mcs;
++			link_sinfo->txrate.nss = arsta->txrate.nss;
++			link_sinfo->txrate.bw = arsta->txrate.bw;
++			link_sinfo->txrate.he_gi = arsta->txrate.he_gi;
++			link_sinfo->txrate.he_dcm = arsta->txrate.he_dcm;
++			link_sinfo->txrate.he_ru_alloc =
++				arsta->txrate.he_ru_alloc;
++			link_sinfo->txrate.eht_gi = arsta->txrate.eht_gi;
++			link_sinfo->txrate.eht_ru_alloc =
++				arsta->txrate.eht_ru_alloc;
 +		}
-+		arsta = rcu_dereference(ahsta->link[peer->link_id]);
-+		if (!arsta)
-+			return NULL;
-+	} else {
-+		arsta =  &ahsta->deflink;
++		link_sinfo->txrate.flags = arsta->txrate.flags;
++		link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
 +	}
-+	return arsta;
++
++	/* TODO: Use real NF instead of default one. */
++	signal = arsta->rssi_comb;
++
++	params.pdev_id = ar->pdev->pdev_id;
++	params.vdev_id = 0;
++	params.stats_id = WMI_REQUEST_VDEV_STAT;
++
++	if (!signal &&
++	    ahsta->ahvif->vdev_type == WMI_VDEV_TYPE_STA &&
++	    !(ath12k_mac_get_fw_stats(ar, &params)))
++		signal = arsta->rssi_beacon;
++
++	if (signal) {
++		link_sinfo->signal =
++			db2dbm ? signal : signal + ATH12K_DEFAULT_NOISE_FLOOR;
++		link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
++	}
++
++	link_sinfo->signal_avg = ewma_avg_rssi_read(&arsta->avg_rssi);
++
++	if (!db2dbm)
++		link_sinfo->signal_avg += ATH12K_DEFAULT_NOISE_FLOOR;
++
++	link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL_AVG);
 +}
- 
- #endif /* _PEER_H_ */
++
+ static int ath12k_mac_op_cancel_remain_on_channel(struct ieee80211_hw *hw,
+ 						  struct ieee80211_vif *vif)
+ {
+@@ -11887,6 +11964,7 @@ static const struct ieee80211_ops ath12k_ops = {
+ 	.get_survey			= ath12k_mac_op_get_survey,
+ 	.flush				= ath12k_mac_op_flush,
+ 	.sta_statistics			= ath12k_mac_op_sta_statistics,
++	.link_sta_statistics		= ath12k_mac_op_link_sta_statistics,
+ 	.remain_on_channel              = ath12k_mac_op_remain_on_channel,
+ 	.cancel_remain_on_channel       = ath12k_mac_op_cancel_remain_on_channel,
+ 	.change_sta_links               = ath12k_mac_op_change_sta_links,
 -- 
 2.34.1
 
