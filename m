@@ -4,61 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B211C77B7F
-	for <ath12k@archiver.kernel.org>; Fri, 27 Jun 2025 07:39:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19F91C77B7F
+	for <ath12k@archiver.kernel.org>; Fri, 27 Jun 2025 11:54:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=AsEzakBRDLkZgYC+lEoUV93l7SAqKHuw1tQ0f4cycrw=; b=MMmurv8HTtV01O6d4OhdetuTlg
-	tXTpGJbWiZgeKLRCoxBxMDxpdDVb5geR1rR6clcJd4wLsauTv5eUs2SOtQPuFKuYUVD971X8/lIT0
-	f/pbL6Yo4+N8lg1QtT0D8sDi9vqkrbLupKgd8SmI0DwX2+/eN5VzEniwqopShH+mbUxoWHrtpnExS
-	prjCP5pQpJV9JgjZ0BS7s/HBaRVOD3AqPKiNab99YIzuSIWv/6YyNLwwteeWshB5J6NRKCi54pkEN
-	/dyERPNZAeXWGc/So1peVmCeV4BQy0ZDkZmBZrwCgFcuXxNBCCwqDqNlC8NMWBv+2CvRF/8kaRKjP
-	b90O/aMA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=kecgRD7j3uCLg6GXbiUJq8Ia38Zv08YXs38qUfSIWOs=; b=GhkIRH6RsiMc+C/hS4KT0IN2Id
+	PbL2uhkFWnXEfEAgsR5Mqy3dEvUJt4DH4z/e3jPwa9O5uh+Nij9pPiD7b4OsP3FTPPGWoRKxbSyxO
+	/9kbNZUhy5I7z41ZGuVUqLaBXT88lJ8/qVD424hDTco1QybZF9yGupuRh8Kq3Yi3i3PxFiybpFgtw
+	hrU6SZJ5/BKWcD+AkZgPYvBQXGUrC+C5xDxPMDHin6nj9tDILGA9YRn26zFQkEs6oBNuhyMPiml0L
+	S6FCiz9omyxrBOWHGT0YUD4+gtQWVIm4fZMTvPQppanTOuBLi35Pu6O5O0teQ8mCQtnmVeGkqFEAM
+	vZ5ZVUPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uV3gd-0000000Dqch-10YX;
-	Fri, 27 Jun 2025 07:39:51 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	id 1uV7ei-0000000EYxX-3PgN;
+	Fri, 27 Jun 2025 11:54:08 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uV3Rk-0000000DovT-4907
-	for ath12k@lists.infradead.org;
-	Fri, 27 Jun 2025 07:24:30 +0000
+	id 1uV6Gb-0000000EGXo-2XOE
+	for ath12k@bombadil.infradead.org;
+	Fri, 27 Jun 2025 10:25:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=AsEzakBRDLkZgYC+lEoUV93l7SAqKHuw1tQ0f4cycrw=;
-	t=1751009064; x=1752218664; b=pK2fc0yP1RcL/tJXB7qTvEJxl0JQbVqHN4wObIegJTpCbf/
-	MDARbtbdBKjO6JaPe5DrgMW9Dh/sx/oysyu43ENPqlZ3LZ0+o9fBbHnk5LcalfJjcPiXhv4lOakGo
-	rAXBXqgFoPdIB94fv5fRDO47Vu719CIjerxQvlgWHd7t5ewxev0yiQFW4Tqu0dGZIlqPhh8dJ///0
-	CjzzdB9Qx458R2/hfBXWjMFX/GKXMjD8CrQhB0j9XH8YfLTugqu9Z08sz4EF0GCA5yVvmUQIVGeDI
-	Qs4bnJhN38lICzB4IUPCkEmmiNTRsJowBKGEy/y+1t2PFQ3MBei065zjL40LY9Yg==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1uV3RX-0000000DHPF-2FKr;
-	Fri, 27 Jun 2025 09:24:16 +0200
-Message-ID: <ffc40c71b73eb1366435c09bd5cc25dd9e128c72.camel@sipsolutions.net>
-Subject: Re: [DESIGN RFC] wifi: Robust AV streaming Design Proposal for AP
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Ramanathan Choodamani <quic_rchoodam@quicinc.com>, 
-	linux-wireless@vger.kernel.org
-Cc: netdev@vger.kernel.org, ath12k@lists.infradead.org
-Date: Fri, 27 Jun 2025 09:24:14 +0200
-In-Reply-To: <20250624205716.1052329-1-quic_rchoodam@quicinc.com>
-References: <20250624205716.1052329-1-quic_rchoodam@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: base64
-User-Agent: Evolution 3.56.2 (3.56.2-1.fc42) 
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=kecgRD7j3uCLg6GXbiUJq8Ia38Zv08YXs38qUfSIWOs=; b=EkmWFHslgXf1AYUPWNdxJOR2on
+	cKtybnwaFyX20an9LitBamajg93UDYDP6Dbad5uSntUAuDyXv+loIZyxpuJdeZ+4j7//ps/oY7+yX
+	hA3zPcCjnEAG4dt2m86B1gsy4406LOGau5tREszNe5IVRoQw7EYF7UMpdFJo+MZDDv2iZJ74yuHVc
+	601XHfim8EnrZBKPJlNnbY071jsfWuz5tKldKSe58AKAoUjP1sSVI7/g1eUP3T+NJy18BfNNPQYh5
+	LfzM0k38OBN93kCtVrntyVfPjOE7P1nwNJbqH0PfQ0cVs8egq8hcXMAp2yk6IsO1hBsJtnXxR+8uX
+	zojutMJQ==;
+Received: from foss.arm.com ([217.140.110.172])
+	by desiato.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uV6GV-00000006IB5-0Zzl
+	for ath12k@lists.infradead.org;
+	Fri, 27 Jun 2025 10:25:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 452A31A00;
+	Fri, 27 Jun 2025 03:24:40 -0700 (PDT)
+Received: from [10.57.30.59] (unknown [10.57.30.59])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A88C33F58B;
+	Fri, 27 Jun 2025 03:24:55 -0700 (PDT)
+Message-ID: <fd3bd8b1-4108-445a-b65f-4769d73e6e63@arm.com>
+Date: Fri, 27 Jun 2025 11:24:53 +0100
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+User-Agent: Mozilla Thunderbird
+Subject: Re: ath12k_pci errors and loss of connectivity in 6.12.y branch
+To: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+ Matt Mower <mowerm@gmail.com>, Jeff Johnson <jjohnson@kernel.org>,
+ will@kernel.org, joro@8bytes.org, Hegde Vasant <Vasant.Hegde@amd.com>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+ 1107521@bugs.debian.org, iommu@lists.linux.dev
+References: <CAPDiVH8gaBH6o_OY-zUWYpDbj5mhiqmofKGb71gLgHOi4vA=Vw@mail.gmail.com>
+ <0ba2176e-3339-4a8b-850a-ca5643939c8b@oss.qualcomm.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Content-Language: en-GB
+In-Reply-To: <0ba2176e-3339-4a8b-850a-ca5643939c8b@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250627_002429_403267_E880A2B9 
-X-CRM114-Status: GOOD (  26.64  )
+X-CRM114-CacheID: sfid-20250627_112503_934707_10963030 
+X-CRM114-Status: GOOD (  22.44  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,145 +82,75 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-SGksCgooV2l0aCBteSBjZmc4MDIxMS9tYWM4MDIxMSBtYWludGFpbmVyIGhhdCBvbikKCj4gCQkJ
-Mi4xLjMgLSBRb1MgUHJvdmlzaW9uaW5nCj4gCQkJLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+
-IAo+IAkJCQlIb3N0YXBkIGV4dHJhY3RzIHRoZSBRb1MgcGFyYW1ldGVycyBmcm9tIFNDUy9NU0NT
-IHJlcXVlc3QsIGFuZAo+IAkJCQlzZW5kcyB0aGUgcGFyYW1ldGVycyB2aWEgTkw4MDIxMSBjb21t
-YW5kIChOTDgwMjExX0NNRF9RT1NfTUdNVCkuCgpEbyB5b3UgaGF2ZSBhbnkgaWRlYSB5ZXQgd2hh
-dCB0aGF0IHdvdWxkIGVudGFpbD8gSSdtIHRoaW5raW5nIGl0IHdvdWxkCmFsc28gbmVlZCBhZGQv
-cmVtb3ZlLCBwZXJoYXBzLCBhbmQgc29tZSBraW5kIG9mIGxpZmV0aW1lIHRyYWNraW5nIG9uIHRo
-ZQpzdGF0aW9uPwoKPiAKPiAJCQkyLjEuNCAtIE5ldHdvcmtpbmcgUHJvdmlzaW9uaW5nCj4gCQkJ
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+IAkJCQlIb3N0YXBkIGlmIHJlcXVpcmVk
-IGFuZCBhcyBpbmRpY2F0ZWQgYnkgdGhlIFdMQU4gZHJpdmVyCj4gCQkJCWNhcGFiaWxpdGllcywg
-d291bGQgYWRkIHJ1bGVzIGluIHRoZSBuZXRmaWx0ZXIgc3Vic3lzdGVtCj4gCQkJCXZpYSBsaWJu
-ZnRhYmxlcywgc3VjaCB0aGF0IGZsb3dzIG1hdGNoaW5nIHRoZSBUQ0xBUwo+IAkJCQlwYXJhbWV0
-ZXJzIGFyZSBtYXJrZWQgd2l0aCBjZXJ0YWluIG1ldGEgZGF0YSB1c2luZyBza2ItPm1hcmsKPiAJ
-CQkJdG8gYXNzaXN0IGluIHByaW9yaXRpemF0aW9uIGluIHRoZSBNU0RVIHByb2Nlc3NpbmcgaW4g
-dGhlIFdMQU4KPiAJCQkJZHJpdmVyIGRhdGEgcGF0aC4KPiAKPiAJCQkJSW4gTVNDUywgaG9zdGFw
-ZCB3aWxsIHJlY2VpdmUgdGhlIFJ4IGZsb3cgdHVwbGUgZnJvbSBXTEFOCj4gCQkJCWRyaXZlciB1
-c2luZyBOTDgwMjExIGNvbW1hbmQgKE5MODAyMTFfQ01EX1FPU19NR01UKSBhbmQgdGhlbgo+IAkJ
-CQltYWtlIGEgZGVjaXNpb24gdG8gaW5zdGFsbCBhbiBuZnRhYmxlIHJ1bGUgaW4gdGhlIG5ldGZp
-bHRlcgo+IAkJCQlzdWJzeXN0ZW0gYmFzZWQgb24gTVNDUyBwYXJhbWV0ZXJzIGV4Y2hhbmdlZAo+
-IAkJCQlkdXJpbmcgaGFuZHNoYWtlLgo+IAo+IAkJCQlUaGUgV0xBTiBkcml2ZXIgd2lsbCBiZSBy
-ZXNwb25zaWJsZSBmb3IgY2xhc3NpZnlpbmcgdGhlCj4gCQkJCW5ldyBmbG93IHJlY2VpdmVkIGFu
-ZCBwYXJzZSB0aGUgdHVwbGUgaW5mb3JtYXRpb24gZnJvbSB0aGUgTVNEVQo+IAkJCQlhbmQgdXNl
-IHRoZSBmcmFtZXdvcmsgdG8gc2VuZCBldmVudCB0byBob3N0YXBkLiBGb3IKPiAJCQkJaWRlbnRp
-ZnlpbmcgYSBuZXcgZmxvdywgdGhlIFdMQU4gZHJpdmVyIGNhbiBtYWtlIHVzZSBvZgo+IAkJCQlh
-bnkgSFcgb2ZmbG9hZCBhc3Npc3QgZmVhdHVyZXMgaXQgc3VwcG9ydHMsIGFzIG1haW50YWluaW5n
-Cj4gCQkJCWZsb3cgaW5mb3JtYXRpb24gaW4gc29mdHdhcmUgb24gYSBwZXItcGFja2V0IGJhc2lz
-IHdpbGwgYmUKPiAJCQkJZXhwZW5zaXZlIGZvciBmbG93IGNsYXNzaWZpY2F0aW9uLgoKSG93IHdv
-dWxkIHRoZSBjbGFzc2lmaWNhdGlvbiBwcm9wYWdhdGUgdGhyb3VnaCB0aGUgbGF5ZXJzPwoKPiAJ
-CShCKSBjZmc4MDIxMQo+IAkJLS0tLS0tLS0tLS0tLQo+IAo+IAkJCVRoZSBjZmc4MDIxMSBsYXll
-ciByZWNlaXZlcyB0aGUgIE5MKE5MODAyMTFfQ01EX1FPU19NR01UKSwgcGFyc2VzCj4gCQkJdGhl
-IHBhcmFtZXRlcnMgYW5kIHBhc3NlcyBmdXJ0aGVyIGRvd24gaW50byB0aGUgbWFjODAyMTEgbGF5
-ZXIuCj4gCj4gCQkoQykgbWFjODAyMTEKPiAJCS0tLS0tLS0tLS0tLS0KPiAKPiAJCQlUaGUgbWFj
-ODAyMTEgY2FsbHMgaW50byB0aGUgV0xBTiBkcml2ZXIgd2l0aCB0aGUgUW9TIGFuZAo+IAkJCW5l
-dHdvcmtpbmcgcGFyYW1ldGVycy4KPiAKPiAJCShEKSBXTEFOIGRyaXZlcgo+IAkJLS0tLS0tLS0t
-LS0tLS0tLS0KPiAKPiAJCQlUaGUgV0xBTiBkcml2ZXIgcmVjZWl2ZXMgdGhlIFFvUyBjaGFyYWN0
-ZXJpc3RpY3MgYW5kIHRoZQo+IAkJCVRDTEFTIGVsZW1lbnRzIGFuZCBjYW4gZG8gdGhlIHJlcXVp
-cmVkIHJlc291cmNlIGFsbG9jYXRpb24gYW5kCj4gCQkJdGhlIEZpcm13YXJlKEZXKS9IYXJkd2Fy
-ZShIVykgcHJvZ3JhbW1pbmcgYmFzZWQgb24gdGhlIHVuZGVybHlpbmcgSFcKPiAJCQljYXBhYmls
-aXRpZXMuCgpXaXRob3V0IHJlYWxseSBnb2luZyBpbnRvIHRoZSBhY3R1YWwgaW1wbGVtZW50YXRp
-b24sIHN0cnVjdHVyYWxseSwgd2hhdAp3b3VsZCB0aGlzIGNvbnRhaW4/IEFuZCBhcmNoaXRlY3R1
-cmFsbHksIGlzIGl0IHJlYWxseSBqdXN0IG9uZSBzZXQgb2YKcGFyYW1ldGVycz8gSXQgd291bGQg
-c2VlbSB0byBiZSBtb3JlIHNwZWNpZmljLCBsaWtlIGZvciBhIGdpdmVuIHN0YXRpb24/Cgo+IAky
-LjMgLSBEYXRhIFBhdGggKE1TQ1MvU0NTKSAtIGRvbmUgYXQgV0xBTiBkcml2ZXIKPiAJLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KPiAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMy4gSG9zdGFwZCBwcm92aXNpb25zIHRo
-ZSBydWxlIHRvIE5GVAo+ICAgICAgICAgICAgICAgICAgICAgIOKUjOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkAo+ICAgICAgICAgICAgICAgICAgICAgIOKUgiAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiBOL1cgcHJvdmlzaW9uaW5nCj4gICAg
-ICAgICAgICAgICAgICAgICAg4pSCICAgICAgICAgICBob3N0YXBkICAgIOKUjOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUkOKUvOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkAo+ICAgICAgICAgICAgICAg
-ICAgICAgIOKUgiAgICAgICAgICAgICAgICAgICAgICDilIJsaWJuZnRubCDilILilIIgICAgICAg
-ICAgICAgICAgICAgICAgICDilIIKPiAgICAgICAgICAgICAgICAgICAgICDilJTilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lJTilIDilIDilrLilIDilIDilIDilIDilIDilIDilJjilJggICAgICAgICAgICAgICAgICAgICAg
-ICDilIIKPiAgICAgIHVzZXIgc3BhY2UgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKU
-giAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCj4gICAgICAgICAgICAg4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pS84pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAICAgICAgICAgICAgICAgIOKUggo+
-ICAgICAgICAgICAgICAgICAgICAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pS84pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSQICAgICAgICAgICAgICAgICAgICAgIOKUggo+ICAgICAgICAg
-ICAgICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICDilIIgICAgICAgICDilIIg
-NC4gICAgICAgICAgICAgICAgICAg4pSCCj4gICAgICBrZXJuZWwgc3BhY2UgICDilIIg4pSM4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pS04pSA4pSA4pSA4pSA4pSA4pSA4pSQICDilIIgTkZUIHVwZGF0ZXMgc2ti
-LT5tYXJr4pSCCj4gICAgICAgICAgICAgICAgICAgICDilIIg4pSCICAgICAgICBubDgwMjExL2Nm
-ZzgwMjExICAgICAgIOKUgiAg4pSCIHdoaWxlIGFkZGluZyB0aGUgcnVsZeKUggo+ICAgICAgICAg
-ICAgICAgICAgICAg4pSCIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIgIOKU
-giAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUvOKUgOKUgOKUkAo+ICAgICAgICAgICAgICAgICAgICAg4pSCIOKUlOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKWsuKUgOKUgOKUgOKUgOKUgOKUgOKUmCAg4pSCICAg4pSCICAgICAgICAgICAgICAgICAg
-4pSCICDilIIKPiAgICAgICAgICAgICAgICAgICAgIOKUgiAgICAgICAgICAgICAgICAgICAgICAg
-ICAg4pSCICAgICAgICAg4pSCICAg4pSCICAgICAgICAgICAgICAgICAg4pSCICDilIIKPiAgICAg
-ICAgICAgICAgICAgICAgIOKUgiDilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilLzilIDilIDilIDilIDilIDi
-lIDilJAgIOKUgiAgIOKUgiAgTGludXggTi9XIHN0YWNrIOKUgiAg4pSCCj4gICAgICAgICAgICAg
-ICAgICAgICDilIIg4pSCICAgICAgICAgICBtYWM4MDIxMSAgICAgICAgICAgIOKXhOKUgOKUgOKU
-vOKUgOKUgOKUgOKUvCAgICAgICAgICAgICAgICAgIOKUgiAg4pSCCj4gICAgICAgICAgICAgICAg
-ICAgICDilIIg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAg4pSCICAg4pSC
-ICAgICAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKWvOKUgOKUkOKUggo+ICAg
-ICAgICAgICAgICAgICAgICAg4pSCIOKUlOKUgOKUgOKUgOKUrOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKWsuKUgOKUgOKUgOKUgOKU
-gOKUgOKUmCAg4pSCICAg4pSCICAgICAgIOKUgm5ldGZpbHRlciAgIOKUguKUggo+IDUuIFRoZSBE
-TCBwYWNrZXQgICAg4pSCICAgICDilIIgICAgICAgICAgICAgICAgICAgIOKUgiAgICAgICAgIOKU
-giAgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUmOKUmAo+ICBjb21lcyB3aXRoICAgICAgICAg4pSCIOKUjOKUgOKUgOKUgOKW
-vOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUvOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAg4pSCCj4gIHNrYi0+bWFyayAgICAgICAgICDi
-lIIg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAg4pSCCj4gIHdoaWNoIGlz
-IHVzZWQgICAgICDilIIg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAg4pSC
-Cj4gIGZvciBjbGFzc2lmaWNhdGlvbiDilIIg4pSCICAgICAgICAgICBXTEFOIGRydiAgICAgICAg
-ICAgIOKUgiAg4pSCMi4KPiAgYWxvbmcgd2l0aCAgICAgICAgIOKUgiDilIIgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAg4pSCICDilIJEcml2ZXIgdGhlbiBwcm9ncmFtcyB0aGUgcnVsZSB0
-byBob3N0YXBkCj4gIHN0b3JlZCBRb1MgICAgICAgICDilIIg4pSCICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgIOKUgiAg4pSCdXNpbmcgTkw4MDIxMQo+ICBwYXJhbXMgYXQgdGhlICAgICAg
-4pSCIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIgIOKUggo+ICBkcml2ZXIg
-ICAgICAgICAgICAg4pSCIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIgIOKU
-gjEuCj4gICAgICAgICAgICAgICAgICAgICDilIIg4pSU4pSA4pSA4pSA4pSs4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pay4pSA4pSA
-4pSA4pSA4pSA4pSA4pSYICDilIJGb3IgTVNDUyBmbG93cywgZHJpdmVyIGxlYXJucyBhIG5ldyBy
-eCBmbG93Cj4gICAgICAgICAgICAgICAgICAgICDilIIgICAgIOKUgiAgICAgICAgICAgICAgICAg
-ICAg4pSCICAgICAgICAg4pSCdXNpbmcgSFcgYXNzaXN0Cj4gICAgICAgICAgICAgICAgICAgICDi
-lJTilIDilIDilIDilIDilIDilLzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilIDilLzilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgK
-PiAgICAgICAgICAgICAgICAgICAgIOKUjOKUgOKUgOKUgOKUgOKUgOKWvOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUvOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUkAo+ICAgICAgICAgICAgICAgICAgICAg4pSCICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCj4gICAgICAgICAgICAgICAgICAgICDilIIg
-ICAgICAgICAgICBIYXJkd2FyZSAgICAgICAgICAgICAgICDilIIKPiAgICAgICAgICAgICAgICAg
-ICAgIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggo+ICAgICAgICAg
-ICAgICAgICAgICAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSYCgpUZXJtaW5vbG9neSB3aXNlLCAiZHJpdmVyIHRoZW4gcHJvZ3JhbXMgdGhl
-IHJ1bGUgdG8gaG9zdGFwZCIgc2VlbXMgLi4uCmNvbmZ1c2luZy4gSXQncyBtb3JlIGxpa2UgIm5v
-dGlmaWVzIGhvc3RhcGQgb2YgdGhlIG5ldyBmbG93IiBvciBzbz8KCj4gCQkqIFRoZSBEYXRhcGF0
-aCBkZWNpc2lvbiBtYWtpbmcgbG9naWMgZm9yIHRoZSBRb1MgZmVhdHVyZXMKPiAJCXdvdWxkIGJl
-IGhhbmRsZWQgaW4gdGhlIFdMQU4gZHJpdmVyLgoKV2hhdCBkZWNpc2lvbiBtYWtpbmcgbG9naWMg
-aXMgZXZlbiBpbiB0aGUgZGF0YXBhdGg/Cgo+IAkJKiBJbiBNU0NTLCBEcml2ZXIgd2lsbCBiZSBy
-ZXNwb25zaWJsZSB0byB0cmFjayBhbGwgdGhlIHVwbGluayBmbG93cwo+IAkJZm9yIGEgbm9uLUFQ
-IFNUQSB3aXRoIE1TQ1Mgc2Vzc2lvbiwgYmFzZWQgb24KPiAJCVRDTEFTIG1hc2sgYW5kIHNob3Vs
-ZCBwcmlvcml0aXplIHRoZSBjb3JyZXNwb25kaW5nIGRvd25saW5rIGZsb3dzLgo+IAo+IAkJKiBG
-b3IgcHJpb3JpdGl6YXRpb24gaW4gREwgZm9yIE1TQ1MsIHRoZSBkcml2ZXIgc2hvdWxkIG5vdGlm
-eSBob3N0YXBkCj4gCQl1c2luZyBOTDgwMjExIGZyYW1ld29yayAodmlhIG1hYzgwMjExLCBjZmc4
-MDIxMSkgdG8gcHJvZ3JhbSB0aGUKPiAJCW5ldGZpbHRlciBydWxlcywgd2hlbiBhIG5ldyBSeCB1
-cGxpbmsgZmxvdyBpcyByZWNlaXZlZC4KCkhlcmUgSSBkb24ndCBmb2xsb3cgLSBJIGNhbiBzZWUg
-aG93IHVwbGluayBuZWVkcyB0aGUgZHJpdmVyIHRvCnBhcnNlL2NsYXNzaWZ5IHRoZSBmbG93IGFu
-ZCB0ZWxsIGhvc3RhcGQgYWJvdXQgdGhlIG1hcmsgb3Igc28sIGJ1dCBvbiBETAp0aGUgd2hvbGUg
-dGhpbmcgc3RhcnRzIGF0IGhpZ2hlciBsYXllcnMsIG5vPwoKPiAJCSogQXMgbWVudGlvbmVkIGlu
-IFNlY3Rpb24gMi4xLjQuLCBJbiBNU0NTICBob3N0YXBkIHJlY2VpdmVzIHRoZQo+IAkJUnggZmxv
-dyB0dXBsZSBmcm9tIHRoZSBkcml2ZXIgdmlhIE5MODAyMTFfQ01EX1FPU19NR01ULAo+IAkJdGhl
-biBkZWNpZGVzIHdoZXRoZXIgdG8gaW5zdGFsbCBhbiBuZnRhYmxlcyBydWxlIGluIG5ldGZpbHRl
-cgo+IAkJYmFzZWQgb24gTVNDUyBoYW5kc2hha2UgcGFyYW1ldGVycy4KCkZvciBhbiB1cGxpbmsg
-ZmxvdywgSSdtIG5vdCBldmVuIHN1cmUgd2hhdCBuZXRmaWx0ZXIgcnVsZXMgbmVlZCB0byBiZQp0
-aGVyZSBiZSBhdCBhbGw/IE9uY2UgYSBwYWNrZXQgaXMgcmVjZWl2ZWQsIGl0J3MgZWZmZWN0aXZl
-bHkgZ2FtZSBvdmVyCmZvciBjbGFzc2lmaWNhdGlvbiAvIGFpciBjb21wZXRpdGlvbiAvIGV0Yy4g
-bm8/Cgpqb2hhbm5lcwo=
++Vasant
+
+On 2025-06-27 6:39 am, Baochen Qiang wrote:
+> [+ IOMMU list]
+> 
+> On 6/27/2025 12:21 AM, Matt Mower wrote:
+>> Dear maintainer,
+>>
+>> I have been experiencing lost network connection with the ath12k_pci driver
+>> in the linux-6.12.y kernel branch. Often, when the issue occurs, the
+>> network does not recover until I reboot the computer. A full report of the
+>> errors I encounter, the symptoms that arise, and several dmesg attachments
+>> are in https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1107521 . I have
+>> attached a dmesg from 6.12.34 for convenience. The short summary is:
+>>
+>> 1. I started noticing log lines like the following soon after boot when I
+>> updated from 6.12.22 to 6.12.27. After these events occur, the network goes
+>> down and often does not come back up.
+>>     ath12k_pci 0000:c2:00.0: AMD-Vi: Event logged [IO_PAGE_FAULT
+>> domain=0x0010 address=0xfea00000 flags=0x0020]
+>> 2. I was able to reproduce this issue very rarely in 6.12.12 and 6.12.22.
+>> The issue always occurs soon after boot in 6.12.27, 6.12.30, 6.12.33, and
+>> 6.12.34.
+>> 3. I have not reproduced the issue in 6.15.2 or 6.15.3.
+>> 4. In some cases, when shutting down the computer, a kernel bug caused my
+>> computer to hang. I haven't determined whether this is related to the issue
+>> above or an independent issue. Search the bug report
+>> for PXL_20250611_140820085.jpg to see a picture of the kernel bug on my
+>> laptop screen.
+>> 5. I have tested two firmware versions:
+>>     a. fw_version 0x1108811c fw_build_timestamp 2025-05-17 00:21 fw_build_id
+>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>     b. fw_version 0x100301e1 fw_build_timestamp 2023-12-06 04:05 fw_build_id
+>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>
+>> Thanks,
+>> Matt
+>>
+> 
+> I had a quick test with 6.12.27 kernel on both my Intel desktop and AMD RD but didn't hit
+> the issue. And I am using WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3.
+> 
+> As mentioned in the Debian bug report, since reverting ath12k patches does not fix this
+> issue, maybe it comes from the IOMMU subsystem?
+
+Faults are usually still indicative of the client driver/subsystem doing 
+something not quite right - racily performing dma_unmap before the 
+device has actually finished making accesses; mapping the wrong size 
+such that the device accesses off the end of the mapping (this can often 
+run into another valid mapping so not necessarily fault); mapping the 
+wrong DMA direction such that the device then tries to write to a 
+read-only page. However I suppose it's not impossible that some fix to 
+amd-iommu in that period might have changed its behaviour in a way that 
+exacerbates things - Vasant, does this strike a chord with anything 
+you're aware of?
+
+A couple more things I'd try on the ath12k side: firstly, boot with 
+"iommu.strict=1" and see if that makes the faults any more 
+frequent/reproducible; if a fault is fairly easily reproducible, then 
+use the DMA API and/or IOMMU API tracepoints to compare the fault 
+address to prior DMA mapping activity - that can usually reveal the 
+nature of the bug enough to then know what to go looking for.
+
+I wouldn't put much significance in whatever happens *after* the fault - 
+presumably the driver is assuming the blocked DMA write has completed, 
+so then goes on to read some incomplete descriptor as if it were valid, 
+and thus may fall over in all manner of entertaining ways on bogus data.
+
+Thanks,
+Robin.
 
 
