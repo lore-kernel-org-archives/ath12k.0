@@ -4,65 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF2B4C8302D
-	for <ath12k@archiver.kernel.org>; Mon, 30 Jun 2025 13:26:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2A01C8302D
+	for <ath12k@archiver.kernel.org>; Mon, 30 Jun 2025 18:43:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zYe4cjPabOuRUub+QHwJtNEwLEuE25UXE6C1ayUhmVU=; b=TjkABlsmRnvaU4Drax5i8Jw/0a
-	2IetE34XHcdrUJEe5SvKEsawzA21rkZmT39YkxU5Y3UbMEormaANToCQmYjNqbnA1hQqatF1R9sTu
-	sdH/6xLTyIacA1rqgg0yi1FlqQ9jGZiumRxJo28/Ovo+fWQoWKEJbgfOxPIn8n+Ty/SMIc3rZmLRx
-	IDEUFQWZR52ft//ovalR0R0P8Mzl288f8bIohFTFjG7r//ORg0LiqIJbuew7VbIYiJhpISwmSPdM5
-	xvaNUMvjOl2D9lBG/F29MH9wiLsehTpc3nYrHAnTpwlPeSSs6ZqtMrK1GIrMPxn21ZCrNkEcglibh
-	pvcp50Ow==;
+	bh=HXSC48WED9cdU0+IHwHkwwQRBJ5tbpCyurGpgENaj7I=; b=hbpSD9dDa2n9etHzssi5lkaMcO
+	eYgD4RTdGKSR5i1so+G8KdbM/8bstvRgrK3H0xYR8gkmFF6bsZFXIAf7OhlWNYIhMalDyjFOOnvkK
+	c8kHiy9jbbDPxHa27TFuBNdfjxIv8uTttBOOvhxMk++7PSQsjvsU+kl5gzqiBXHtZ81uFX0SEEX6J
+	m012N8LPLwlA1wQzTEAKSmrq8JmA/Qnnl1rOQTRG8jfPbv+0hbFl9NQcip/ajcQVXb/UpPHtLcAdn
+	tOrWMSHmoH3aAY73ZlE4QadWDElsU3gY9ZmQ/dFq1U/LHNlZVhS5uxTg4tsdHCCEFlwL09ZZZcvZ3
+	cBqTENDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWEWq-00000002Mwh-2SOl;
-	Mon, 30 Jun 2025 13:26:36 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	id 1uWJTT-00000003Dnn-2VX4;
+	Mon, 30 Jun 2025 18:43:27 +0000
+Received: from mgamail.intel.com ([192.198.163.8])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWERj-00000002MAW-2DCn
+	id 1uWJTQ-00000003Dn5-2onY
 	for ath12k@lists.infradead.org;
-	Mon, 30 Jun 2025 13:21:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=zYe4cjPabOuRUub+QHwJtNEwLEuE25UXE6C1ayUhmVU=;
-	t=1751289679; x=1752499279; b=dS7daHgRsf9v+Zeh90Bor8jYIpzg9MkaFOix1f9dmrMebeI
-	baq3Ae8/ALfLOxjZQrltc8rb6Qv5jOX5ncXG7tKVeVPaw85iE9DD4JIi2sk7KtmHsDxHTaMuu+RWm
-	QIbry6YOiLqAJI6hqvWeyyVjPXmCzouSRrqKqD9Yz54up+xrKZwnaYf7XMBpIgxd4C34yf11mNlHQ
-	v8srracgYQxpn4ZIbc4F69jhBka1eV4/JcfkMlEzu4F5SP3afnOBdKbkUc+v+aogzc+YjYP6LiRHO
-	a81qQrCH+0aY9CDEXk4zwon0ZOfzcf7wurilTODl0KDhihOqEhODD4nkKKN87Hdw==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1uWERf-00000001LGD-2l9m;
-	Mon, 30 Jun 2025 15:21:15 +0200
-Message-ID: <61d6cdebee2c89e5d2d93d3297c94051efb70790.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next 0/3] wifi: Preamble puncturing support for
- mesh
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Ramasamy Kaliappan <ramasamy.kaliappan@oss.qualcomm.com>, 
-	ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Ramasamy Kaliappan
-	 <rkaliapp@qti.qualcomm.com>
-Date: Mon, 30 Jun 2025 15:21:14 +0200
-In-Reply-To: <21b7d547-b550-23a9-3bff-1f1787e307a8@oss.qualcomm.com>
-References: <20250609001048.2263586-1-ramasamy.kaliappan@oss.qualcomm.com>
-	 <a8ff80ff5a811a09cf5556e20c7232eb1e201c2b.camel@sipsolutions.net>
-	 <21b7d547-b550-23a9-3bff-1f1787e307a8@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.56.2 (3.56.2-1.fc42) 
+	Mon, 30 Jun 2025 18:43:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1751309005; x=1782845005;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=e9L2Or2Z+AWl0PzpMP/E7A3kcDY9LygJW2AF7pQN8bw=;
+  b=T+pHjuRs27calX7mlPIXwM56+dnWKguoXrl1P4hdpbY1bsDsW2AAsS3/
+   +NbL+60TXAe1c/arcYgQz8DC1mWNApxKni8v1jpi2XexYAAPIGWMfkmmH
+   vqLiMUNIaelp9+E20WP+lFc71Vq5A7PfMVJgVs8ajm/sh4P7n18mr4Fh1
+   AWM3oNwjuyalfiX+mW30x4zCK1ISB2W+1Ma6TGIa1iIurOTkyUKjJs/ZN
+   3hz5smhME/jVmNWotiixpxMef0EuAWHEeWmf+N3wsapDKildh2Nl9FZhP
+   nLT7+rxhdLPY9KOhq2AomGJ3aktS8SLm1NPF+K7/zleYJ1wO3MMzBv32l
+   w==;
+X-CSE-ConnectionGUID: Y2Xbu6JiQNCnIbIOmokojw==
+X-CSE-MsgGUID: q9DEQ66ZRPy+ZAhiSCVHGQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11480"; a="71112256"
+X-IronPort-AV: E=Sophos;i="6.16,278,1744095600"; 
+   d="scan'208";a="71112256"
+Received: from orviesa006.jf.intel.com ([10.64.159.146])
+  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Jun 2025 11:43:21 -0700
+X-CSE-ConnectionGUID: 8zfLGR6RQj2x1iOIOjPbCg==
+X-CSE-MsgGUID: tQ+X3+5WTM6pCoOTWO29LA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,278,1744095600"; 
+   d="scan'208";a="153016837"
+Received: from lkp-server01.sh.intel.com (HELO e8142ee1dce2) ([10.239.97.150])
+  by orviesa006.jf.intel.com with ESMTP; 30 Jun 2025 11:43:20 -0700
+Received: from kbuild by e8142ee1dce2 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1uWJTJ-000ZGo-0G;
+	Mon, 30 Jun 2025 18:43:17 +0000
+Date: Tue, 1 Jul 2025 02:43:07 +0800
+From: kernel test robot <lkp@intel.com>
+To: Govind Singh <govind.sk85@gmail.com>, ath12k@lists.infradead.org
+Cc: oe-kbuild-all@lists.linux.dev, linux-wireless@vger.kernel.org,
+	Govind Singh <govind.sk85@gmail.com>
+Subject: Re: [PATCH] ath12k: add module param to control MSI mode and address
+ width
+Message-ID: <202507010226.p5NvqJE6-lkp@intel.com>
+References: <20250624165031.58616-1-govind.sk85@gmail.com>
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20250624165031.58616-1-govind.sk85@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250630_062119_565166_602D6BAD 
-X-CRM114-Status: GOOD (  24.07  )
+X-CRM114-CacheID: sfid-20250630_114324_754461_D168E566 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,65 +89,41 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2025-06-27 at 19:49 +0530, Ramasamy Kaliappan wrote:
-> > I ... don't really understand how this is supposed to work.
-> >=20
-> > Say, for the sake of simplicity, we have an 80 MHz channel, the lowest
-> > channel is the control channel (so puncturing 0x1 is invalid). Possible
-> > puncturing values are 0x2, 0x4 and 0x8.
-> >=20
-> > If locally we have 0x2, that means (I assume, since that's how chandef
-> > is meant to work) CCA and RX is always on the control channel and upper
-> > 40 MHz parts. If you're now going to transmit to a station that has
-> > puncturing 0x8, you didn't do CCA on the 0x2 subchannel, but ...
-> > transmit anyway?
-> >=20
-> Yes,we do not transmit blindly to mesh peers with different puncturing.
-> Before initiating transmission, the driver computes the intersection of=
-=20
-> the local and peer puncturing bitmaps to determine the set of valid sub=
-=20
-> channels.
+Hi Govind,
 
-Hm, I guess that's fair, but why not do that in mac80211 instead, that'd
-be simpler and far more obvious/safe?
+kernel test robot noticed the following build warnings:
 
-Also, clearly your driver _doesn't_ do what you say "the driver" does,
-if anything it magically and "undocumentedly" happens in firmware.
+[auto build test WARNING on ath/ath-next]
+[also build test WARNING on wireless/main wireless-next/main linus/master v6.16-rc4 next-20250630]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-> > I mean, maybe this could work if the remote puncturing is a superset of
-> > the local puncturing? But just blindly doing it the way it appears to b=
-e
-> > done in this patchset seems ... questionable at best?
-> >=20
-> > Can you explain more how this is even supposed to work?
-> >=20
-> When associating with a mesh peer, the mesh peer's puncture pattern is=
-=20
-> shared with the driver. The driver evaluates the intersection of this=20
-> bitmap with local pattern.
+url:    https://github.com/intel-lab-lkp/linux/commits/Govind-Singh/ath12k-add-module-param-to-control-MSI-mode-and-address-width/20250625-005348
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath-next
+patch link:    https://lore.kernel.org/r/20250624165031.58616-1-govind.sk85%40gmail.com
+patch subject: [PATCH] ath12k: add module param to control MSI mode and address width
+config: sparc-randconfig-r112-20250630 (https://download.01.org/0day-ci/archive/20250701/202507010226.p5NvqJE6-lkp@intel.com/config)
+compiler: sparc-linux-gcc (GCC) 12.4.0
+reproduce: (https://download.01.org/0day-ci/archive/20250701/202507010226.p5NvqJE6-lkp@intel.com/reproduce)
 
-Could also be done in mac80211, I guess.
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202507010226.p5NvqJE6-lkp@intel.com/
 
-> if the resulting pattern corresponds to valid transmission bandwidth,=20
-> the valid subchannels used for transmission.
->=20
-> If the resulting pattern does not support a valid bandwidth, the driver=
-=20
-> falls back to using only the primary 20 MHz control channel for=20
-> transmission.
+sparse warnings: (new ones prefixed by >>)
+>> drivers/net/wireless/ath/ath12k/pci.c:52:6: sparse: sparse: symbol 'ath12k_32bit_msi' was not declared. Should it be static?
 
-Right.
+vim +/ath12k_32bit_msi +52 drivers/net/wireless/ath/ath12k/pci.c
 
-I also note that there's not even any definition where the puncturing
-pattern is rooted ... is it relative to the local chandef? Relative to
-the peer's chandef? Clearly not even that is documented. What happens if
-the bitmap changes? Why does userspace track it rather than mac80211,
-which has the beacon of the peer and handles CSA, so what happens with
-puncturing in CSA?
+    51	
+  > 52	bool ath12k_32bit_msi;
+    53	module_param(ath12k_32bit_msi, bool, 0644);
+    54	MODULE_PARM_DESC(ath12k_32bit_msi, "Force 32-bit MSI addressing");
+    55	
 
-Did you think about any of these questions, or are you just using me as
-a design tool? ;-)
-
-johannes
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
