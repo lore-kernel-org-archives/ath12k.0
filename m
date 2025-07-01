@@ -4,119 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8E49C7EE30
-	for <ath12k@archiver.kernel.org>; Tue,  1 Jul 2025 19:05:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFA65C7EE30
+	for <ath12k@archiver.kernel.org>; Tue,  1 Jul 2025 19:55:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mLKwVrPy8P5xsiw/HOitfvrBYE0u4Z+NAYr1E1YeUXg=; b=15zt2SR9MBKxGgz5aiOtlYrIyC
-	nE2x3NlIV+b0i9Fm+oStCLyY2rht2YHs46ScnrpBtsk7btKPTT8waL7yQt0le8kYcaHixWrF6Eg90
-	1ZkT6QQQ+pwI2JSkNYWP/6pVBtTw3z1lB95OgQBf1efxMnQnXhvnG4B+6lGrCJfAYGRE4N3O2bLv2
-	fuOiNNM3eXRYXb3LYUihpRd1DMnsCzdhXMcx+/DhBX21yaBEI9GwcBXidLLYMYCoYLzKTgVwB3cOy
-	oEYc/vQnUCSPxdQxIjmUSskS/Thbkh5LHQ7tBRcVjnYx43ODXqJ0NcSakvZCxttP0StQu/mZDG0qN
-	UPrG4LKw==;
+	bh=xyX7q+Nr/jJb1oSpjbVoinC5EgqNbE1uHVbMdELnyLo=; b=slRpS0muBqJRpc15eHXQcSXXLQ
+	evJQ/RMBzb4+3yHI50Qs0lSEG+zkp77eHEH3Xskp4eUCFWjqGRJ8/RFZw91NI4CxIaeyKPXKoQHZd
+	FGThmR9qp6Gsep3BH2163tUAPPpS1pVNOQ+YvN2oRdW8SN17aDlq2cuBEiPePoKv3kLqqmLl3D8px
+	o/xed6/uoWQ202jd175dJk2P7mDxwXMYdSjiVf3pEhVO3eMH4hH0DXcFJZl26AiHFtA+URZzdWbqg
+	dOA5RQ4kEbOG+uQD5/gnXPtBDyvDuBu+b8+EVu7Vh79PeK9tEUB4F+Wd7T1pz9pCHDlIOvMrfgcsn
+	qASxNraw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWgI2-00000006QhD-279W;
-	Tue, 01 Jul 2025 19:05:10 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uWh4i-00000006Vp1-2zZ3;
+	Tue, 01 Jul 2025 19:55:28 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWeW3-00000006BeZ-1SXn
+	id 1uWggl-00000006Tcx-2IFA
 	for ath12k@lists.infradead.org;
-	Tue, 01 Jul 2025 17:11:32 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 561Gg52o028616
-	for <ath12k@lists.infradead.org>; Tue, 1 Jul 2025 17:11:30 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	Tue, 01 Jul 2025 19:30:45 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 561HUMLk018912;
+	Tue, 1 Jul 2025 19:30:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	mLKwVrPy8P5xsiw/HOitfvrBYE0u4Z+NAYr1E1YeUXg=; b=BvDhCxycOvs406Hg
-	XKSEt+OM/Xz7LknUhbQI5bZ4r+eL4AwoFQpnQuSL3z+2ploryyB1qjSHXxwE4Yxm
-	xbu05lxB1sVqj9vbKM7pcnrxkqEBKMhVhEKaTcTt4gRtyo1U4TMdPglAJYMakgMQ
-	hnt4Xnq1EC8a4NRRUljZAmmPIcpjB4UO1CBK8WdYe6YE+BI9YP55V2y5iuEAaev/
-	KZ+FuAPcvOGPbSgrRDcBDY+mnInUtyalJWS0DSAZB3lvxQCFV7GqbnFDD6ZPfy42
-	LBwTaT4dyWM6k7VHJWj8vXLQVTB6IwHwvpM2DNTpgKNdUX4sCuk6q057Pw2NOi2S
-	vkYx3g==
-Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47j7bvspv7-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 01 Jul 2025 17:11:30 +0000 (GMT)
-Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b34ca003f1cso2641229a12.2
-        for <ath12k@lists.infradead.org>; Tue, 01 Jul 2025 10:11:30 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751389889; x=1751994689;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=mLKwVrPy8P5xsiw/HOitfvrBYE0u4Z+NAYr1E1YeUXg=;
-        b=mC6NSJeA47nbXXSy+OcIdG9YMG6cMJBayZ0p8isw2PIoqMEUVCJDYPkQ/j9K8eG6L0
-         yPqwCQqmf43AW010pWIGFMZ04FHoIpc4u8FRYx7IjzkvSbL2Xug+ihwqGZmEPtWsa1Ue
-         NUyNbDIdyf4zowtwzIG3lqK1ZQi8YznTuu2DyiVOQB/Rd2qYbfv4n4S7YhbmgHoYzzrE
-         OnT8qAmabZ2k8JRaFcYEBlG/FzDO4gZvmsMNyTAWlJUpATi8L9uhht2PLzfePJ8rp48C
-         h5gszF9uORuScgzMYAC9n05taq4CPRUo5nls6+l6gs9NKdJdUy7uCjXqL7GXKh8K6WKP
-         c92g==
-X-Forwarded-Encrypted: i=1; AJvYcCWfgvy9Pmw1DVxKTrGG2bcL7wnq3jqRFnUTG32wQoC+dus1AVHCPLzOCtObHP3L8saptwkXaxM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzFhSl9jLxtS6W+JNUhbcgQymW0YZOR3j6YHus1WdUv+I98Q/uj
-	ET5Q4z3u7wHdEb3dMiqsHwHrQv+MWzQtJIMZ/p2osKTvO8/Ygqab6LKpXCzHR0wC3koYerOkAQb
-	ce9CrDfyJAZXbbU5NWQv6ORrEdZh6jFcAJ5RG1X4Ox42Esiurtp+I0o5jLii91DxWpPUmRPhf
-X-Gm-Gg: ASbGncs/SoMcwcpPjFyOqq6zLzKqCqkLGatvAST/MJ2+sKCrVi54PgICtIikqjQWVg3
-	D7bkNICJcHN0eKe+AlddHEpfG30HmikoGGdKioWUq+R6UbpGiPasf0ChqcnhU7js89Bh++qSO/Y
-	R1qdpR0E8Qn3y3vQy3glglltaQou0ek85m9MVi6MjP0wOhSP9iZ0fUCPThDFSisiE/91CKbulr5
-	Z2JWDFWGFJwmt08/6UaODV3tIg6H2Y9OwI1o4AsoPniBHiBvHkC3Xnq+gFG0ys74kr71M9hnjXe
-	xLu4RcqXtrVchG3ivSExnGGtc4Ki+6bKQpmXizFmLuZzBhqSFP+oTfLf2uhzYR6ZIsj1abkjNwA
-	aWNNCpP/FGdVPKeg=
-X-Received: by 2002:a17:903:284:b0:22d:b243:2fee with SMTP id d9443c01a7336-23ac43d3211mr254109285ad.13.1751389888910;
-        Tue, 01 Jul 2025 10:11:28 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IE1X6qVKPWmnadI+fNItnBMIaARjs/GLjlFIwWamaa1inE9HiS3RpXyTjkCNyG2A8IQ9wooCw==
-X-Received: by 2002:a17:903:284:b0:22d:b243:2fee with SMTP id d9443c01a7336-23ac43d3211mr254108685ad.13.1751389888273;
-        Tue, 01 Jul 2025 10:11:28 -0700 (PDT)
-Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23acb3ce960sm110348185ad.250.2025.07.01.10.11.27
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 01 Jul 2025 10:11:27 -0700 (PDT)
-Message-ID: <a6e82fa5-8094-4ae2-b6f1-53b6e6c13e4e@oss.qualcomm.com>
-Date: Tue, 1 Jul 2025 10:11:26 -0700
+	xyX7q+Nr/jJb1oSpjbVoinC5EgqNbE1uHVbMdELnyLo=; b=VWatGXw018XVthuy
+	SImDSgNRYb3MQnQ7C24Q/XpceQ9w2t6nJk7aGZW3EpfOEGR62JVkKy9L1+uLisjB
+	w1uVuSVcooBmuGMuXMMSu/E81catj6lBb0fymm39dAF4WEbRMmvXdpDUCiBYX69R
+	rHwXJwPlwfWl13ru8jp3QPbvbgjKsP8+g+ePnmSAKdt+pKQ0elsQvtAa7Ah3NF1E
+	8gnQ/e+Tgg/gko8Em19IYyZsd4jnXACvnvnz5ZsiVlmHUtTKnxzCP5CG252rwNFo
+	nI/DkfEzQ4aH10m+HssryJl1KUFRxOLeyve9pMlQKcnPBEdy1i7Uz/kXsCP1JbTu
+	hsK/tw==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47j8fxj574-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 01 Jul 2025 19:30:41 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 561JUeBZ006410
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 1 Jul 2025 19:30:40 GMT
+Received: from [10.110.78.36] (10.80.80.8) by nasanex01b.na.qualcomm.com
+ (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Tue, 1 Jul
+ 2025 12:30:39 -0700
+Message-ID: <f71dfcd6-361f-4e6c-9941-599d600cb1af@quicinc.com>
+Date: Tue, 1 Jul 2025 12:30:36 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next V15 0/9] wifi: ath12k: add MU-MIMO and 160 MHz
- bandwidth support
-To: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
-        ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250701010408.1257201-1-quic_pradeepc@quicinc.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Subject: Re: [DESIGN RFC] wifi: Robust AV streaming Design Proposal for AP
+To: Johannes Berg <johannes@sipsolutions.net>,
+        <linux-wireless@vger.kernel.org>
+CC: <netdev@vger.kernel.org>, <ath12k@lists.infradead.org>
+References: <20250624205716.1052329-1-quic_rchoodam@quicinc.com>
+ <ffc40c71b73eb1366435c09bd5cc25dd9e128c72.camel@sipsolutions.net>
 Content-Language: en-US
-In-Reply-To: <20250701010408.1257201-1-quic_pradeepc@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: vMH2u3RZb5se7aZQl81cBv3L8Td0uwWB
-X-Authority-Analysis: v=2.4 cv=RJCzH5i+ c=1 sm=1 tr=0 ts=686416c2 cx=c_pps
- a=rz3CxIlbcmazkYymdCej/Q==:117 a=e70TP3dOR9hTogukJ0528Q==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=MeVQk6Yvlubu_z84HK4A:9
- a=QEXdDO2ut3YA:10 a=bFCP_H2QrGi7Okbo017w:22
-X-Proofpoint-ORIG-GUID: vMH2u3RZb5se7aZQl81cBv3L8Td0uwWB
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzAxMDExNyBTYWx0ZWRfX48AE6VRaU2CH
- m15lCoNqmHL3zLfFStouWg1AK9LuuuMQ0UYA7QUPIcJFbDLtHYrVZr/v1ZIcu1V+r56p8vOdewF
- d40/jgCUXbPvXlmcDajY/c/bA6ur5bMyA1rRr6tof7cDwbn7/8VckBF2es0g5BCgQqZGwSFUplf
- c3T7G8gst2Tm1ZnaQjdD9xtcRGbALA9/IVfdfng9PWXho8jsK5NZ4QTWr2O8Ru9yhz3bVTizrmr
- sUEu8Lxk54WXmTY6JKdynYRtBk1caFmA8lYAVgMAt4VZWBi5kjMBFNygCIGr5Sh/5wG7VQ/M+Ct
- OFlVMHwpbb/1xOSH3WhhS3syBQz8MZNsInV9DALbIRd+RRk+YQw0I0IEGwidKfyPIaE0BGVTfCD
- KQxXjLPQShTOI9MhRNxWQ5B9B1/tDg43cqe6iESUYz2JYOyEMOq2xNbpjd/sEWVh1AbBeu4e
+From: Ramanathan Choodamani <quic_rchoodam@quicinc.com>
+In-Reply-To: <ffc40c71b73eb1366435c09bd5cc25dd9e128c72.camel@sipsolutions.net>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzAxMDEzNSBTYWx0ZWRfX2+o+XXbVkCMe
+ EgZI3Otm+LDtrDgqnDwUJhxoQYqOFmM3dYNeYT8ZYOvu/3p6KApWQuFLMnqkaPM3p9wjSUzldBO
+ GxxB1LhsFYL66CmfJm2ZxyvpxsWteb7VIkCQEM3DU28HX9WHEmgI7wirDnvJ6/MAwIVavw5sELu
+ Kkm3p3s3spaQAJahYXY3E6nwaXTkn6RivXNSGS8vRmU2rJBKVbme5qo4tm3O3OL1yK1K+P9hTZ4
+ 97RqMZ2FCSCz29P1FrbEwMKBidTa05Uy5/w7xc/pUze7/TwSnqffoerNU9mQsoanItAzSHOXum1
+ HpstWrwTA7bugL80fTbNxTMOOIpmbaEhUrgzfrEpE2T9mSSD9TBbAqvwlqj3HiWgY5OOsoRQBZR
+ IDpXV+3+NyPeRVaCFsXwvSrYxxI0rHBVQSj6/wZzKPgnOTCeFYa0CPUeovfFgu99+P6gf5xL
+X-Proofpoint-GUID: 92y1Mzj2TN4ZIP3Rd1YoQKB1F7wcF27a
+X-Proofpoint-ORIG-GUID: 92y1Mzj2TN4ZIP3Rd1YoQKB1F7wcF27a
+X-Authority-Analysis: v=2.4 cv=TqPmhCXh c=1 sm=1 tr=0 ts=68643761 cx=c_pps
+ a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10
+ a=gN6Rxxx1YiIuJ-qI2BQA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
  definitions=2025-07-01_02,2025-06-27_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 impostorscore=0 priorityscore=1501 mlxlogscore=999 adultscore=0
- malwarescore=0 clxscore=1015 lowpriorityscore=0 mlxscore=0 phishscore=0
- bulkscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ priorityscore=1501 bulkscore=0 mlxlogscore=999 suspectscore=0 adultscore=0
+ phishscore=0 malwarescore=0 clxscore=1011 lowpriorityscore=0 mlxscore=0
+ impostorscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507010117
+ definitions=main-2507010135
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_101131_399561_0027B5F3 
-X-CRM114-Status: GOOD (  25.57  )
+X-CRM114-CacheID: sfid-20250701_123043_736420_B8E28243 
+X-CRM114-Status: GOOD (  40.70  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,105 +111,264 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/30/2025 6:03 PM, Pradeep Kumar Chitrapu wrote:
->   Add support for
-> 1. enabling MU-MIMO in HE and EHT modes from hardware
-> 2. setting fixed HE rate/GI/LTF
-> 3. 160 MHz bandwidth in HE mode
-> 4. extended NSS bandwidth support
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> changes in v15:
->  - rebased the series after merge conflicts reported
->  patch 4/9:
->  - change the fix to apply for all modes except STA mode as
->    WCN7850 expect it same as before.
-> 
-> changes in v14:
->  patch 6/9:
->  - cap max_nss using ar->num_tx_chains to fix interop issue caused due
->    to sending nss value 4 when firmware only supports nss value 2.
->  patch 8/9:
->  - Set the default return value to MODE_11AC_VHT160 for 160 MHz
->    to allow STA to connect to the AP even if it does not
->    explicitly indicate 160 MHz bandwidth support.
-> 
-> changes in v13:
->  - rebase
-> 
-> changes in v12:
->  - rebase
-> 
-> changes in v11:
->  patch 1/9:
->   - fix return values in ath12k_mac_set_he_txbf_conf() and
->     ath12k_mac_vif_recalc_sta_he_txbf()
->  patch 6/9:
->   - fix missing he_mcs initialization in ath12k_mac_init_arvif()
-> 
-> changes in v10:
->  patch 6/9:
->   - use ath12k_ahsta_to_sta()
->   - fix rcu_dereference warning in ath12k_mac_set_bitrate_mask_iter()
->   - change return type for ath12k_mac_validate_fixed_rate_settings()
->   - improve readability by adhering to nl80211 definitions of GI
->     NL80211_TXRATE_DEFAULT_GI. Introduce ath12k_mac_nlgi_to_wmigi()
->     for conversion.
->  patch 7/9:
->   - do not change default MODE_11AC_VHT160 in
->     ath12k_mac_get_phymode_vht() as it breaks clients which do not
->     set VHT_CAP_SUPP_CHAN_WIDTH_160MHZ.
->  patch 8/9:
->   - Use IEEE80211_VHT_CAP_EXT_NSS_BW_MASK along with
->     IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160MHZ for determining VHT160
->     phymode.
-> 
-> changes in v9: rebase on top of master branch with mlo changes
->  patch 1/9 and 2/9:
->   - fetch link_conf using ath12k_mac_get_link_bss_conf()
->     instead of arvif->vif->bss_conf before mlo
->  patch 6/9
->   - fetch mcs/nss values from sta->link[] instead of sta->deflink
->   - fix spelling of 'incompatibility'
->  patch 8/9
->   - replace sta->deflink.addr with arsta->addr in
->     ath12k_peer_assoc_h_vht
->  patch 9/9
->   - replace sta->deflink.rx_nss with link_sta->rx_nss
-> 
-> changes in v8:
->  - rebase and resolve KASAN warnings reported by Jeff in v7, in patch 6/9.
-> 
-> Pradeep Kumar Chitrapu (9):
->   wifi: ath12k: push HE MU-MIMO params to hardware
->   wifi: ath12k: push EHT MU-MIMO params to hardware
->   wifi: ath12k: move HE MCS mapper to a separate function
->   wifi: ath12k: generate rx and tx mcs maps for supported HE mcs
->   wifi: ath12k: fix TX and RX MCS rate configurations in HE mode
->   wifi: ath12k: add support for setting fixed HE rate/GI/LTF
->   wifi: ath12k: clean up 80P80 support
->   wifi: ath12k: add support for 160 MHz bandwidth
->   wifi: ath12k: add extended NSS bandwidth support for 160 MHz
-> 
->  drivers/net/wireless/ath/ath12k/core.h |    2 +
->  drivers/net/wireless/ath/ath12k/mac.c  | 1144 ++++++++++++++++++++----
->  drivers/net/wireless/ath/ath12k/mac.h  |   17 +
->  drivers/net/wireless/ath/ath12k/wmi.c  |   28 +-
->  drivers/net/wireless/ath/ath12k/wmi.h  |  100 ++-
->  5 files changed, 1069 insertions(+), 222 deletions(-)
-> 
-> 
-> base-commit: c256a94d1b1b15109740306f7f2a7c2173e12072
 
-Since there are lingering questions about the 5/9 patch I plan to take 1-4,6-9
 
-Given that there is ongoing discussion about the 5/9 patch logic in the
-context of the ath11k driver, this patch can be posted again separately when
-the discussions have concluded and the correct interpretation by firmware is
-clear across all chipsets and interface types.
+On 6/27/2025 12:24 AM, Johannes Berg wrote:
+> Hi,
+> 
+> (With my cfg80211/mac80211 maintainer hat on)
+> 
+>> 			2.1.3 - QoS Provisioning
+>> 			-------------------------
+>>
+>> 				Hostapd extracts the QoS parameters from SCS/MSCS request, and
+>> 				sends the parameters via NL80211 command (NL80211_CMD_QOS_MGMT).
+> 
+> Do you have any idea yet what that would entail? I'm thinking it would
+> also need add/remove, perhaps, and some kind of lifetime tracking on the
+> station?
+> 
+Yes you're right Johannes! The hostapd will maintain a per-STA based database of 
+each and every param within a request received.
 
-/jeff
+If a request to ADD is received with SCS/MSCS params, the hostapd maintains them 
+on a sta_info struct per STA (that sent the request)and then sends them to the 
+driver via NL80211 framework. 
 
+If a new request is sent to modify/delete the params, the hostapd 
+modifies/deletes them within STA struct and then conveys the same to 
+the driver.
+>>
+>> 			2.1.4 - Networking Provisioning
+>> 			-------------------------------
+>> 				Hostapd if required and as indicated by the WLAN driver
+>> 				capabilities, would add rules in the netfilter subsystem
+>> 				via libnftables, such that flows matching the TCLAS
+>> 				parameters are marked with certain meta data using skb->mark
+>> 				to assist in prioritization in the MSDU processing in the WLAN
+>> 				driver data path.
+>>
+>> 				In MSCS, hostapd will receive the Rx flow tuple from WLAN
+>> 				driver using NL80211 command (NL80211_CMD_QOS_MGMT) and then
+>> 				make a decision to install an nftable rule in the netfilter
+>> 				subsystem based on MSCS parameters exchanged
+>> 				during handshake.
+>>
+>> 				The WLAN driver will be responsible for classifying the
+>> 				new flow received and parse the tuple information from the MSDU
+>> 				and use the framework to send event to hostapd. For
+>> 				identifying a new flow, the WLAN driver can make use of
+>> 				any HW offload assist features it supports, as maintaining
+>> 				flow information in software on a per-packet basis will be
+>> 				expensive for flow classification.
+> 
+> How would the classification propagate through the layers?
+> 
+The classification happens for the DL packets as mentioned in the RFC. 
+Here's a short description on how it happens:
+
+(Refer to the diagram added at the start of Section 2.3 - 
+Data Path (MSCS/SCS) - done at WLAN driver).
+
+1. The rule match happens at NFT for DL packet arriving from the 
+network stack.
+
+2. NFT looks at the skb->mark to see if any special provisioning is done.
+
+3. Since the rule was indeed provisioned by hostapd to the NFT, skb->mark 
+will have classification details (whether the packet has to be 
+classified or not).
+
+4. The NFT gives this packet to the network stack which then gives it 
+to the WLAN driver via mac80211 (mac80211 uses drv_tx() to send to 
+WLAN driver).
+
+The mac80211 layer will just pass this packet to the WLAN driver.
+
+5. Since the classification is done at the WLAN driver, it looks at 
+the skb->mark and then decides how to classify the packet using the 
+initially passed on params from hostapd when it received the request 
+from STA.
+
+>> 		(B) cfg80211
+>> 		-------------
+>>
+>> 			The cfg80211 layer receives the  NL(NL80211_CMD_QOS_MGMT), parses
+>> 			the parameters and passes further down into the mac80211 layer.
+>>
+>> 		(C) mac80211
+>> 		-------------
+>>
+>> 			The mac80211 calls into the WLAN driver with the QoS and
+>> 			networking parameters.
+>>
+>> 		(D) WLAN driver
+>> 		-----------------
+>>
+>> 			The WLAN driver receives the QoS characteristics and the
+>> 			TCLAS elements and can do the required resource allocation and
+>> 			the Firmware(FW)/Hardware(HW) programming based on the underlying HW
+>> 			capabilities.
+> 
+> Without really going into the actual implementation, structurally, what
+> would this contain? And architecturally, is it really just one set of
+> parameters? It would seem to be more specific, like for a given station?
+> 
+The WLAN Driver maintains a peer STA database having the QoS params that 
+hostapd sends.
+
+This structure will be looking something like this:
+struct qm_params {
+      	struct tclas_params tclas_tuple[]; //the actual tclas element 
+					     sent by STA in request.
+
+	struct qos_characteristics qos_info[]; //The QoS characteristics 
+						info sent by STA.
+
+	u8 tid;
+	u8 tclas_mask;
+	..
+	..
+};
+This structure will be stored inside a STA.
+Every new request having new tclas_tuple/qos_info will be stored in 
+this struct.
+
+>> 	2.3 - Data Path (MSCS/SCS) - done at WLAN driver
+>> 	--------------------------------------------------
+>>                                            3. Hostapd provisions the rule to NFT
+>>                      ┌─────────────────────────────────┐
+>>                      │                                 │ N/W provisioning
+>>                      │           hostapd    ┌─────────┐┼────────────────────────┐
+>>                      │                      │libnftnl ││                        │
+>>                      └──────────────────────└──▲──────┘┘                        │
+>>      user space                                │                                │
+>>             ───────────────────────────────────┼────────────────                │
+>>                     ┌──────────────────────────┼─────────┐                      │
+>>                     │                          │         │ 4.                   │
+>>      kernel space   │ ┌────────────────────────┴──────┐  │ NFT updates skb->mark│
+>>                     │ │        nl80211/cfg80211       │  │ while adding the rule│
+>>                     │ │                               │  │   ┌──────────────────┼──┐
+>>                     │ └────────────────────────▲──────┘  │   │                  │  │
+>>                     │                          │         │   │                  │  │
+>>                     │ ┌────────────────────────┼──────┐  │   │  Linux N/W stack │  │
+>>                     │ │           mac80211            ◄──┼───┼                  │  │
+>>                     │ │                               │  │   │       ┌──────────▼─┐│
+>>                     │ └───┬────────────────────▲──────┘  │   │       │netfilter   ││
+>> 5. The DL packet    │     │                    │         │   └───────└────────────┘┘
+>>  comes with         │ ┌───▼────────────────────┼──────┐  │
+>>  skb->mark          │ │                               │  │
+>>  which is used      │ │                               │  │
+>>  for classification │ │           WLAN drv            │  │2.
+>>  along with         │ │                               │  │Driver then programs the rule to hostapd
+>>  stored QoS         │ │                               │  │using NL80211
+>>  params at the      │ │                               │  │
+>>  driver             │ │                               │  │1.
+>>                     │ └───┬────────────────────▲──────┘  │For MSCS flows, driver learns a new rx flow
+>>                     │     │                    │         │using HW assist
+>>                     └─────┼────────────────────┼─────────┘
+>>                     ┌─────▼────────────────────┼─────────┐
+>>                     │                                    │
+>>                     │            Hardware                │
+>>                     │                                    │
+>>                     └────────────────────────────────────┘
+> 
+> Terminology wise, "driver then programs the rule to hostapd" seems ...
+> confusing. It's more like "notifies hostapd of the new flow" or so?
+> 
+Yes you're right! In addition to this, few more details:
+The step 1. and 2. from the diagram are only for MSCS protocol (not for SCS).
+
+The MSCS protocol relies on Rx packets from STA to AP, since it does
+not specify any traffic tuple info in the MSCS request, unlike SCS.
+(For understanding the difference, refer to protocol handshake diagrams
+in Section 3.2.1.1 & 3.2.2.1)
+
+So when an Rx packet is received, Driver learns whether it is a new flow
+using HW assist. It then extracts the tuple info (src_ip, dst_ip ...)
+from the msdu and then informs hostapd to create a rule in NFT.
+
+>> 		* The Datapath decision making logic for the QoS features
+>> 		would be handled in the WLAN driver.
+> 
+> What decision making logic is even in the datapath?
+> 
+I think, the explanation is same as what I described above (the step-by-step flow)
+For MSCS, more details below.
+
+>> 		* In MSCS, Driver will be responsible to track all the uplink flows
+>> 		for a non-AP STA with MSCS session, based on
+>> 		TCLAS mask and should prioritize the corresponding downlink flows.
+>>
+>> 		* For prioritization in DL for MSCS, the driver should notify hostapd
+>> 		using NL80211 framework (via mac80211, cfg80211) to program the
+>> 		netfilter rules, when a new Rx uplink flow is received.
+> 
+> Here I don't follow - I can see how uplink needs the driver to
+> parse/classify the flow and tell hostapd about the mark or so, but on DL
+> the whole thing starts at higher layers, no?
+> 
+Please refer to my response below, for your last query:
+
+>> 		* As mentioned in Section 2.1.4., In MSCS  hostapd receives the
+>> 		Rx flow tuple from the driver via NL80211_CMD_QOS_MGMT,
+>> 		then decides whether to install an nftables rule in netfilter
+>> 		based on MSCS handshake parameters.
+> 
+> For an uplink flow, I'm not even sure what netfilter rules need to be
+> there be at all? Once a packet is received, it's effectively game over
+> for classification / air competition / etc. no?
+> 
+> johannes
+
+The MSCS protocol relies on Rx packets from STA to AP, since it does
+not specify any traffic tuple info in the MSCS request, unlike SCS.
+
+So, the driver, even if it extracts the tuple info from the Rx MSDU, it
+informs the hostapd with the reverse of this tuple info (because,
+the reverse of this UL flow, will be the DL flow - hence the name
+Mirrored SCS)
+
+Eg. if src_ip = 192.168.1.10 and dst_ip = 192.168.1.20 in a Rx MSDU
+then the response sent from AP to STA i.e the Tx MSDU will be this:
+src_ip = (dst_ip of Rx MSDU) = 192.168.1.20 and dst_ip = (src_ip
+of Rx MSDU) = 192.168.1.10
+
+Let's take one more example:
+Driver receives an Rx UDP traffic packet with these tuple params:
+driver extracted rx_msdu_params = {
+	sip = 192.168.1.10
+	dip = 192.168.1.20
+	sport = 50103
+	dport = 50102
+	proto = udp
+	dscp = 30
+	tid = 4
+};
+
+The driver notifies the hostapd to program the reverse of this
+flow to NFT (so that when DL packet arrives with the programmed
+rule, it will be classified with same tid as Uplink)
+
+driver programmed mirrored_msdu_params = {
+	sip = 192.168.1.20
+	dip = 192.168.1.10
+	sport = 50102
+	dport = 50103
+	proto = udp
+	dscp = 30
+	tid = 4
+};
+
+
+So driver notifies the mirror(extracted Rx tuple info) to hostapd, which
+then programs the rule to NFT for DL classification.
+So when NFT rule match happens for DL, it will be sent with
+same tid as Rx (in this example, dl_tid = 4)
+
+You can also refer to IEEE Std 802.11-2024 Section 11.25.3.
+
+Hope this clarifies.
+
+/ram
 
