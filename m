@@ -4,71 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2264DC83038
-	for <ath12k@archiver.kernel.org>; Tue,  1 Jul 2025 15:29:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD9EDC7EE30
+	for <ath12k@archiver.kernel.org>; Tue,  1 Jul 2025 15:46:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=e922qDlC5yeOk3YNdp2nw/CsxMNC/XiJ59Z+Msnq5DI=; b=qVVqmVUZoTZqq0mKuEd0zFE4VD
-	9arPpO3T+1TiqjrTCHPkTVGRlxXS6NusdjxhB+8IsGMg6lh1YG+gBOadj99YlinvPjRzKivX0JC0V
-	eUCVUqLYMF+0gZVu8kORbLeUFsnuC9S4I9+rBG6QUAKUMsbm/5jczkqZZmnLrBkIwlXg0W6FzPEGl
-	hAKOZXo2thPTUsEo0Spboh08B6AxMpxFAKSkTNz1MfQfkdqEI8xzYf59sySZZ76HdVOXaQjs2dFWT
-	0v1GaxRRcDa56GYThbgzQKAbijxVTWP3CKGvxp5bgqlp+9ky3/l+peo7YkVSgmY4ZUxEIlrPaTEiu
-	eqtQmuAg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=tgnGXO5mVXv4W41CoK3qPyYC7jj18Qv5JpQI/3D5uMw=; b=vi0RmcYFB7YPrddcsF/R4BvSnZ
+	QtFV3mAsUtCgh4dUqlcCJE7Bh1WXS2PHZeLQgA8BM86e0Fj5Qxe4HbU9QCUD06rF/e1m3A8xC8qQG
+	YCzCbx7Ngi9/NAfcCXeIzqB1UCdwQnDebWcYrmjRyqBMqNOhGnmiEPQzPDwPXKUGPNY/rfUJAEZfn
+	SMAasqISCgWTSXHAW2cP22Ig+Oh4wdBEKx79xlGBt3JBjaURzYMXUUoNnbWBRxQoVJ6pSHa6XxqEA
+	8DcKZud5DSWgRHhVAGbzMWeDw9PsSLtJhSKXwvnTVHQqsf6pM6Ji9SpVOsSYX1W2FzgiylF0/9coA
+	Mof8GCPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWcvS-00000005tIC-3clW;
-	Tue, 01 Jul 2025 15:29:38 +0000
-Received: from mgamail.intel.com ([198.175.65.9])
+	id 1uWdBc-00000005vqc-2L5N;
+	Tue, 01 Jul 2025 15:46:20 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWbNl-00000005aJ2-3RRF
+	id 1uWbW8-00000005cG3-0T4s
 	for ath12k@lists.infradead.org;
-	Tue, 01 Jul 2025 13:50:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1751377845; x=1782913845;
-  h=date:from:to:cc:subject:message-id;
-  bh=PBKoWTsFZTZzk+1bhMcZ4ljFuZI6vZLBx9x8hpT3KwI=;
-  b=SGuxC6BBCFuseQY1EIci4nuyUBo3RiDqPh7498scABJsGdlSmaHp0X89
-   6E9mIc5XsxhY1WFHq8zLqaENjECxxMqHY1aQrRsn2ZrNlDwojkBO9widB
-   NU6p7i8aH180/baUI0+RAp1dgU9OBJWtS7VDZMk9cjxGK4ZME3wy0OXso
-   +VVGmTZSghyG++U/Cp5VLcEWaPJqtAgX3QyeWjuFGiK0nblrM8F0qajoT
-   Ed5eswKF9AIX8UoUO5rBzshMTP0BkVKPZlf0nGwdL4EhRatcLSR4tskY5
-   dgMHjsNKBnPEQRhd9Xmldpvr6v+R21r4G1DXJWRTYlSQRRzCpqsfGbs2/
-   g==;
-X-CSE-ConnectionGUID: qkMu3x6zR8S+KprashydKw==
-X-CSE-MsgGUID: 1zuIvslzSJeYp5TLRgFnow==
-X-IronPort-AV: E=McAfee;i="6800,10657,11481"; a="76192154"
-X-IronPort-AV: E=Sophos;i="6.16,279,1744095600"; 
-   d="scan'208";a="76192154"
-Received: from orviesa005.jf.intel.com ([10.64.159.145])
-  by orvoesa101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Jul 2025 06:50:45 -0700
-X-CSE-ConnectionGUID: kBjIvpJwRmuzqt2nVbJZ3A==
-X-CSE-MsgGUID: T7I/DpvjRF6q7Kp3gva3jg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,279,1744095600"; 
-   d="scan'208";a="159488927"
-Received: from lkp-server01.sh.intel.com (HELO e8142ee1dce2) ([10.239.97.150])
-  by orviesa005.jf.intel.com with ESMTP; 01 Jul 2025 06:50:44 -0700
-Received: from kbuild by e8142ee1dce2 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uWbNh-000aEE-2z;
-	Tue, 01 Jul 2025 13:50:41 +0000
-Date: Tue, 01 Jul 2025 21:50:00 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:pending] BUILD SUCCESS
- c256a94d1b1b15109740306f7f2a7c2173e12072
-Message-ID: <202507012150.9pbG5cX6-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Tue, 01 Jul 2025 13:59:25 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5619qTn5024791;
+	Tue, 1 Jul 2025 13:59:22 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=tgnGXO5mVXv4W41CoK3qPy
+	YC7jj18Qv5JpQI/3D5uMw=; b=L6c1rOrv02uvzwiBDJEnaa4EV1JKKrUGg0OqKm
+	jOGuCuMxNpBM7USNXe10U2DztNQFUGRWE6GAWQH/EnEMom36lZJiIW67etlOJf0p
+	D654aU3oUavO1qGnE8SWOYIlMErpEqMvwV62d2d5bpxzhk94xzdiXrsLudxbFIk2
+	d+YsgtRJYVmc12MLvOQJsiZiNk7kF6NB5CD1X19zwKT6sicV2ZtjMTNp5tQapqSb
+	Y0qTB4774Sc923QQW73HzJUB4Ej0+Tl7KiiQ+MPEPXBGdJ1mqPEBRKKLJ1To43F+
+	P31f5f9TO9off/5tLkLKROWL4emoQ1L5qrepyNoClmDT4lzw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47j8s9h45m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 01 Jul 2025 13:59:21 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 561DxKFF011230
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 1 Jul 2025 13:59:20 GMT
+Received: from hu-amitajit-blr.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1748.10; Tue, 1 Jul 2025 06:59:18 -0700
+From: Amith A <quic_amitajit@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_amitajit@quicinc.com>,
+        "Harshitha
+ Prem" <quic_hprem@quicinc.com>
+Subject: [PATCH ath-next] wifi: ath12k: update unsupported bandwidth flags in reg rules
+Date: Tue, 1 Jul 2025 19:29:02 +0530
+Message-ID: <20250701135902.722851-1-quic_amitajit@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=H/Pbw/Yi c=1 sm=1 tr=0 ts=6863e9b9 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=Wb1JkmetP80A:10 a=COk6AnOGAAAA:8 a=JJRAa57BN1ypBt8jVJsA:9
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: MwO1rAJHIIzGSBxJSTFe1ExT-F-pNJ3t
+X-Proofpoint-GUID: MwO1rAJHIIzGSBxJSTFe1ExT-F-pNJ3t
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzAxMDA5MCBTYWx0ZWRfX0Ynemoq62M/x
+ dM9LluZv1Lo0y8tyDhEY2A1K2BXphEFns6MV8rdDb9oxvA//+xds9w/Hc2NCtPTZgdDbOoY6pj3
+ jDqIZEF3yuL6wD2q+T0ZDqrxEZRLAxdTG6OefFulMeu8hudofRcnzcgg/8HdaC9f61Hg/xeNbx0
+ uGcYd1Blc2JJl8rRdVEtZkoFAxCH2TMW7iF7pQfJZH39kacURB/AacMyPDkD1AYK4PWngJVtZTS
+ LWFR+ckr9otxyA3k9ARggBtp7+Rpb9ufYbo20mQjOTYklrXMvShLRNaXYbq8cw54QRBQuZ8Kt2L
+ TfjbanK2FP/PwkBpA3LTw5UklKbueLDoUzNOtcMG0DjUXIBzV6ny+wEwTD97myeeWyGOaPiE+D7
+ oaRzgvrBweBaJGwKuUzdz5sUEgs1RHMeSUnfKak8UXghn4VoE08lt+LPDKLUvLyCZYAXdOhs
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-07-01_02,2025-06-27_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 malwarescore=0 suspectscore=0 mlxlogscore=999
+ priorityscore=1501 clxscore=1011 mlxscore=0 lowpriorityscore=0 spamscore=0
+ adultscore=0 bulkscore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2507010090
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_065045_900912_CED32B37 
-X-CRM114-Status: UNSURE (   4.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250701_065924_271440_E78C2BCF 
+X-CRM114-Status: GOOD (  15.60  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,154 +107,95 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
-branch HEAD: c256a94d1b1b15109740306f7f2a7c2173e12072  wifi: ath10k: shutdown driver when hardware is unreliable
+From: Harshitha Prem <quic_hprem@quicinc.com>
 
-elapsed time: 1309m
+The maximum bandwidth an interface can operate in is defined by the
+configured country. However, currently, it is able to operate in
+bandwidths greater than the allowed bandwidth. For example,
+the Central African Republic (CF) supports a maximum bandwidth of 40 MHz
+in both the 2 GHz and 5 GHz bands, but an interface is still able to
+operate in bandwidths higher than 40 MHz. This issue arises because the
+regulatory rules in the regd are not updated with these restrictions
+received from firmware on the maximum bandwidth.
 
-configs tested: 134
-configs skipped: 7
+Hence, update the regulatory rules with unsupported bandwidth flags based
+on the maximum bandwidth to ensure compliance with country-specific
+regulations.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-tested configs:
-alpha                            alldefconfig    gcc-15.1.0
-alpha                             allnoconfig    gcc-15.1.0
-alpha                            allyesconfig    gcc-15.1.0
-arc                              allmodconfig    gcc-15.1.0
-arc                               allnoconfig    gcc-15.1.0
-arc                              allyesconfig    gcc-15.1.0
-arc                   randconfig-001-20250701    gcc-13.3.0
-arc                   randconfig-002-20250701    gcc-15.1.0
-arm                              allmodconfig    gcc-15.1.0
-arm                               allnoconfig    clang-21
-arm                              allyesconfig    gcc-15.1.0
-arm                   randconfig-001-20250701    clang-17
-arm                   randconfig-002-20250701    gcc-8.5.0
-arm                   randconfig-003-20250701    clang-21
-arm                   randconfig-004-20250701    clang-21
-arm                         vf610m4_defconfig    gcc-15.1.0
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-15.1.0
-arm64                 randconfig-001-20250701    clang-21
-arm64                 randconfig-002-20250701    gcc-15.1.0
-arm64                 randconfig-003-20250701    clang-18
-arm64                 randconfig-004-20250701    gcc-8.5.0
-csky                              allnoconfig    gcc-15.1.0
-csky                  randconfig-001-20250701    gcc-11.5.0
-csky                  randconfig-002-20250701    gcc-10.5.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-hexagon               randconfig-001-20250701    clang-21
-hexagon               randconfig-002-20250701    clang-21
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250701    gcc-12
-i386        buildonly-randconfig-002-20250701    gcc-12
-i386        buildonly-randconfig-003-20250701    gcc-12
-i386        buildonly-randconfig-004-20250701    gcc-12
-i386        buildonly-randconfig-005-20250701    gcc-12
-i386        buildonly-randconfig-006-20250701    clang-20
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    gcc-15.1.0
-loongarch                         allnoconfig    gcc-15.1.0
-loongarch             randconfig-001-20250701    gcc-13.3.0
-loongarch             randconfig-002-20250701    gcc-15.1.0
-m68k                             allmodconfig    gcc-15.1.0
-m68k                              allnoconfig    gcc-15.1.0
-m68k                             allyesconfig    gcc-15.1.0
-m68k                        m5307c3_defconfig    gcc-15.1.0
-m68k                           sun3_defconfig    gcc-15.1.0
-microblaze                       allmodconfig    gcc-15.1.0
-microblaze                        allnoconfig    gcc-15.1.0
-microblaze                       allyesconfig    gcc-15.1.0
-mips                              allnoconfig    gcc-15.1.0
-mips                          eyeq6_defconfig    clang-21
-mips                           ip27_defconfig    gcc-15.1.0
-nios2                             allnoconfig    gcc-14.2.0
-nios2                 randconfig-001-20250701    gcc-14.2.0
-nios2                 randconfig-002-20250701    gcc-13.3.0
-openrisc                          allnoconfig    gcc-15.1.0
-openrisc                         allyesconfig    gcc-15.1.0
-parisc                           allmodconfig    gcc-15.1.0
-parisc                            allnoconfig    gcc-15.1.0
-parisc                           allyesconfig    gcc-15.1.0
-parisc                randconfig-001-20250701    gcc-14.3.0
-parisc                randconfig-002-20250701    gcc-10.5.0
-parisc64                         alldefconfig    gcc-15.1.0
-powerpc                    adder875_defconfig    gcc-15.1.0
-powerpc                          allmodconfig    gcc-15.1.0
-powerpc                           allnoconfig    gcc-15.1.0
-powerpc                          allyesconfig    clang-21
-powerpc                 mpc8315_rdb_defconfig    clang-21
-powerpc                    mvme5100_defconfig    gcc-15.1.0
-powerpc               randconfig-001-20250701    gcc-13.3.0
-powerpc               randconfig-002-20250701    clang-21
-powerpc               randconfig-003-20250701    clang-21
-powerpc                     tqm8540_defconfig    gcc-15.1.0
-powerpc64                        alldefconfig    clang-21
-powerpc64             randconfig-001-20250701    clang-21
-powerpc64             randconfig-002-20250701    clang-21
-powerpc64             randconfig-003-20250701    gcc-10.5.0
-riscv                            allmodconfig    clang-21
-riscv                             allnoconfig    gcc-15.1.0
-riscv                            allyesconfig    clang-16
-riscv                    nommu_virt_defconfig    clang-21
-riscv                 randconfig-001-20250701    gcc-14.3.0
-riscv                 randconfig-002-20250701    gcc-10.5.0
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-21
-s390                             allyesconfig    gcc-15.1.0
-s390                          debug_defconfig    gcc-15.1.0
-s390                  randconfig-001-20250701    gcc-9.3.0
-s390                  randconfig-002-20250701    clang-17
-sh                               allmodconfig    gcc-15.1.0
-sh                                allnoconfig    gcc-15.1.0
-sh                               allyesconfig    gcc-15.1.0
-sh                         apsh4a3a_defconfig    gcc-15.1.0
-sh                         ecovec24_defconfig    gcc-15.1.0
-sh                             espt_defconfig    gcc-15.1.0
-sh                    randconfig-001-20250701    gcc-15.1.0
-sh                    randconfig-002-20250701    gcc-13.3.0
-sh                          sdk7786_defconfig    gcc-15.1.0
-sh                           se7343_defconfig    gcc-15.1.0
-sh                   secureedge5410_defconfig    gcc-15.1.0
-sh                             sh03_defconfig    gcc-15.1.0
-sh                        sh7757lcr_defconfig    gcc-15.1.0
-sh                  sh7785lcr_32bit_defconfig    gcc-15.1.0
-sh                            titan_defconfig    gcc-15.1.0
-sparc                            allmodconfig    gcc-15.1.0
-sparc                             allnoconfig    gcc-15.1.0
-sparc                 randconfig-001-20250701    gcc-10.3.0
-sparc                 randconfig-002-20250701    gcc-15.1.0
-sparc64               randconfig-001-20250701    gcc-8.5.0
-sparc64               randconfig-002-20250701    gcc-12.4.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-um                    randconfig-001-20250701    gcc-12
-um                    randconfig-002-20250701    gcc-12
-um                           x86_64_defconfig    clang-21
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250701    gcc-12
-x86_64      buildonly-randconfig-002-20250701    gcc-12
-x86_64      buildonly-randconfig-003-20250701    gcc-12
-x86_64      buildonly-randconfig-004-20250701    gcc-12
-x86_64      buildonly-randconfig-005-20250701    clang-20
-x86_64      buildonly-randconfig-006-20250701    clang-20
-x86_64                              defconfig    gcc-11
-x86_64                          rhel-9.4-rust    clang-18
-xtensa                            allnoconfig    gcc-15.1.0
-xtensa                  nommu_kc705_defconfig    gcc-15.1.0
-xtensa                randconfig-001-20250701    gcc-15.1.0
-xtensa                randconfig-002-20250701    gcc-13.3.0
-xtensa                         virt_defconfig    gcc-15.1.0
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
+Signed-off-by: Amith A <quic_amitajit@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/reg.c | 31 ++++++++++++++++++++++++---
+ 1 file changed, 28 insertions(+), 3 deletions(-)
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+index 96254d6fc675..7898f6981e5a 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.c
++++ b/drivers/net/wireless/ath/ath12k/reg.c
+@@ -426,6 +426,29 @@ ath12k_map_fw_dfs_region(enum ath12k_dfs_region dfs_region)
+ 	}
+ }
+ 
++static u32 ath12k_get_bw_reg_flags(u16 max_bw)
++{
++	switch (max_bw) {
++	case 20:
++		return NL80211_RRF_NO_HT40 |
++			NL80211_RRF_NO_80MHZ |
++			NL80211_RRF_NO_160MHZ |
++			NL80211_RRF_NO_320MHZ;
++	case 40:
++		return NL80211_RRF_NO_80MHZ |
++			NL80211_RRF_NO_160MHZ |
++			NL80211_RRF_NO_320MHZ;
++	case 80:
++		return NL80211_RRF_NO_160MHZ |
++			NL80211_RRF_NO_320MHZ;
++	case 160:
++		return NL80211_RRF_NO_320MHZ;
++	case 320:
++	default:
++		return 0;
++	}
++}
++
+ static u32 ath12k_map_fw_reg_flags(u16 reg_flags)
+ {
+ 	u32 flags = 0;
+@@ -704,7 +727,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 			reg_rule = reg_info->reg_rules_2g_ptr + i;
+ 			max_bw = min_t(u16, reg_rule->max_bw,
+ 				       reg_info->max_bw_2g);
+-			flags = 0;
++			flags = ath12k_get_bw_reg_flags(reg_info->max_bw_2g);
+ 			ath12k_reg_update_freq_range(&ab->reg_freq_2ghz, reg_rule);
+ 		} else if (reg_info->num_5g_reg_rules &&
+ 			   (j < reg_info->num_5g_reg_rules)) {
+@@ -718,13 +741,15 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 			 * BW correction if required and applies flags as
+ 			 * per other BW rule flags we pass from here
+ 			 */
+-			flags = NL80211_RRF_AUTO_BW;
++			flags = NL80211_RRF_AUTO_BW |
++				ath12k_get_bw_reg_flags(reg_info->max_bw_5g);
+ 			ath12k_reg_update_freq_range(&ab->reg_freq_5ghz, reg_rule);
+ 		} else if (reg_info->is_ext_reg_event && reg_6ghz_number &&
+ 			   (k < reg_6ghz_number)) {
+ 			reg_rule = reg_rule_6ghz + k++;
+ 			max_bw = min_t(u16, reg_rule->max_bw, max_bw_6ghz);
+-			flags = NL80211_RRF_AUTO_BW;
++			flags = NL80211_RRF_AUTO_BW |
++				ath12k_get_bw_reg_flags(max_bw_6ghz);
+ 			if (reg_rule->psd_flag)
+ 				flags |= NL80211_RRF_PSD;
+ 			ath12k_reg_update_freq_range(&ab->reg_freq_6ghz, reg_rule);
+
+base-commit: 6e17bbb5a86e6c68d65e38dfc850699e7a0706cb
+-- 
+2.34.1
+
 
