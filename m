@@ -4,135 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C82BC8302F
-	for <ath12k@archiver.kernel.org>; Tue,  1 Jul 2025 10:05:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39FBDC7EE30
+	for <ath12k@archiver.kernel.org>; Tue,  1 Jul 2025 11:04:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=u8cpz7rgprMP7hZA4IHxthfcErK4vgLbtp2Dp6ZD2ps=; b=I6VXQupF/u3sc2ukL3yGHU4pP0
-	CnWm9AM4terdNOtqLpgi92K23I5Cm/ZNBf/1hTaj6i8xS0Ta4im3kkh640J6+R8mbvgtphhhoqiie
-	UqEqGFcmlM9CedBKxZgX+udmUd20ge9RTVPkUfDT1eShM7SfAW1DPN6MnqfBFD1eAz56p/CeuI8Fw
-	5gzaA8sz7N6MX8myo5KmnSxGPOCIpJGtmzE7pQ8aXX34XKNLdXQUhAEppfBoKjYTlW6jWonSZGnAm
-	izmhd0qfR6pxKsYAKPcVAnToXY+87y+R+LRYFIiW88KXm7Z/8fZ+xr7suGG08GOUy3gOEfKDDMKbJ
-	aI3eK3yA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ulT/Nqfbytz71cdnz+Y/4xe8c9g5ccEFbDzWFeRuMKI=; b=28Ch0wp15Ilfz97E8iEtopjAUC
+	qtupDMMcMUDjTOF+SU0zfTrUe0xWeGgEnM03JIX0t8ghJlyhnQuAwCLqWNkbL1n/Au6Ie1aYSgcSa
+	PgVq4KJijVEJQTRPXL3S82yJp2JzdRN04gLtwr18Jekqi2ltmxFg3HRRz5MmseG4m1VX2eZSH2SYb
+	F5ucZSrDG5K1oJG7dNhaB5dlRhPUosp+99HGs/WvseOMndSvKU4LTCKeICoLK9Vhtc9iXFOqH+KDR
+	9QC49Bli5GEo6tSfxwmcmh5IKO3+GEMKERmSDTHYz4rGH838zUdfjYtvLyynBhmCI301LzM/Ux2F5
+	0XdoX0xA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWXsC-00000004gju-0Phr;
-	Tue, 01 Jul 2025 10:05:56 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uWYmh-00000004pCB-3tga;
+	Tue, 01 Jul 2025 11:04:19 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWWkr-00000004VSj-2BbQ
-	for ath12k@bombadil.infradead.org;
-	Tue, 01 Jul 2025 08:54:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=u8cpz7rgprMP7hZA4IHxthfcErK4vgLbtp2Dp6ZD2ps=; b=VCjsra/tXzB7fEL6A2bgx2TX7t
-	B5c3jk/bP/xqYIKRRbXymz9GpiWvNxzWfBrjDUz58mLhXgeP+bkkSDY7w+tvEI72bcnnOaXkO5OEv
-	k2DBa/5rt7W+dfChFc2syAD1qebOk5f7nVqVh1ZGFzMZdtES5KsTHcFHb8w/mu7LB6RoEq+hkCo0S
-	o4AkVff4JR0zX2KxsNfoiBO3h1H5B1eoUMeFNF8t0jN8XEEWG88BzFzGRui0+MGr+RTdifuNU0q1A
-	LBRLoTstNHbQVyU7WNxNaJLtxszEc+CdCBvRSUNI8SZhaE6vm0Fn60IRuC6OjQAWTMIZzooRsDgUy
-	+Y06CEOg==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWWko-000000070HS-1cmu
+	id 1uWYiK-00000004ofI-1JFC
 	for ath12k@lists.infradead.org;
-	Tue, 01 Jul 2025 08:54:16 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5613TGZ9008152
-	for <ath12k@lists.infradead.org>; Tue, 1 Jul 2025 08:53:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	Tue, 01 Jul 2025 10:59:49 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5619wVPp032396;
+	Tue, 1 Jul 2025 10:59:48 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	u8cpz7rgprMP7hZA4IHxthfcErK4vgLbtp2Dp6ZD2ps=; b=CaXyzlEDHvLPluGd
-	3VBJQdIvLQiwGTV9IeSPxrU7Pg6uruOV3NVF0+Wtd5uc9QdZ2ZN9q3lbVFQMqQmG
-	wwnebIDbUnRdU5Rwu8U2RcVsjIuFs4ApRG0qv7/A5SPTJ2Jal/doDM7UZU1rqM6P
-	UCuG9Sx87lNGDZT3onWUDojXY8b253E7zt1r8OJjlN7vFs4bff6LGET+wR5WtkTk
-	SIKDVTk0eujm5MEYufKksDOhrW4PmOTLS0vBTMCDOs36Nfr6kmZ88TPBNZquQJZ9
-	ZHRAfdsiljJBe0X+574Bg6Da6rViFkE6nDGjiFpAJeIiSdiya+yNLJsOEm5O8CnM
-	1GdSrw==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47kkfmvm69-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 01 Jul 2025 08:53:36 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-311ef4fb5eeso4452906a91.1
-        for <ath12k@lists.infradead.org>; Tue, 01 Jul 2025 01:53:35 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751360011; x=1751964811;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=u8cpz7rgprMP7hZA4IHxthfcErK4vgLbtp2Dp6ZD2ps=;
-        b=GnQNpuo95Z1qRYek2JX8AkiaeyT9NjxkiS6R8kwFl+WCRStBRFT/SPRayTr/cdfwMw
-         bDNbRvO2r4uKM7a2Qbjm8uQtEGf0Yw4X9W49VQzs+qaOu0z8GnBV9ZA+z8xQxv5cNncW
-         sGVsR7TECtLzA4NT2gC0RTdcdHj2N8qp2+FVTnffldELr7tkqRFYM/5sLggZIe4CrT9h
-         6KjJAMOKlEUCWJYZfdSHLFCvLOXztac1K7a8thWZuH+v3eZCXUdB7Iy4ypdkAQ1Ndf0f
-         oafN/CK47kcNbbf92PWL5uPPW/ec7utCeF7WFIpzFtq2eKzA82QJyS/y74bu64TRJPCV
-         Zkig==
-X-Forwarded-Encrypted: i=1; AJvYcCW4sf4hcE3dHl+6nJccwQorqk+toeOFBmrfG+4QpGUHHbim84urx66fLk989OP2LCZ8+etsLx4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw7cr2HpRAGVMVXcIrkxS7kQC+ynvICfkHTu+CtWsNpIaRDpPuc
-	LJybI05ntvLrDOuMNvF+4QdbnZJ0FOiposYXr6V0l9RTJxrYp46GaPPtN1ikMygdrYNkmZEBo4C
-	GJ0nPzFbVJgCNOPiaoTWZpR0aMS7d2/MVSlzsSUq2RtzwuQUDajeZ/i0CSUsgi4Cz
-X-Gm-Gg: ASbGncsfWmw1Y/55Yms0uPMvAOXTyXyZlLz+GQyQcFVCjYmjEinnzOdOMu2PTChb0gi
-	9iy7IuDXY2lNPwFr139CewBg/paZmzXLn3mzw4u4lh1VwXf8QZy0fLDvPXtfXzhqv1d7JYCN9MC
-	Gfr0Fo4RjlgqCwoDV2HOXON+xSdZjzu5VMy1+wwMyGR/FKkKr9ER44uAKIZlOmg6FmhFdBFY2KM
-	geo+NqzaTj4pjlhCsoa692SnAOWZzOvFoWlcyp/CPTnf3o4UTDAvnS3N6UOGei4AJs+HemNwuBl
-	1B17DfOJsJW/w8SW5Zdk8KkeZOdQ87Mx9CYZ5ETJfUgmMxUJqAc+tmtL2TW8Robv
-X-Received: by 2002:a17:90b:48c8:b0:30e:3737:7c87 with SMTP id 98e67ed59e1d1-31939af5b45mr3772078a91.5.1751360010803;
-        Tue, 01 Jul 2025 01:53:30 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFmnbWPYGt0KeI6QrAPCAElYm+GGTe0Qewz+4tB+SrNzfve8F4I+IFLU+0mP3gyDUT2xyyI3Q==
-X-Received: by 2002:a17:90b:48c8:b0:30e:3737:7c87 with SMTP id 98e67ed59e1d1-31939af5b45mr3772034a91.5.1751360010253;
-        Tue, 01 Jul 2025 01:53:30 -0700 (PDT)
-Received: from [10.152.204.0] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-315f539e862sm15071725a91.16.2025.07.01.01.53.28
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 01 Jul 2025 01:53:30 -0700 (PDT)
-Message-ID: <b1ebb2b4-8083-0b13-81ee-5aaa9a7e8a07@oss.qualcomm.com>
-Date: Tue, 1 Jul 2025 14:23:26 +0530
+	ulT/Nqfbytz71cdnz+Y/4xe8c9g5ccEFbDzWFeRuMKI=; b=R+9trM/EOyuF7fmu
+	bHccK/8l5QKhZ6lj0IZNObW6vOGmnXXWxzRGJs9WeUYFiFTkz3Bmot0RZKVKXpPL
+	a1dxLsCtDElPUc3IF9lFAQHiFZ1xG5J/sVbH1pefNlVBhCV8bmNYCSrht748omZ1
+	J9n9ZHiDlvIqTqN51nR3KiUAGcwGOssxCdy+qDXLllCdd5MfP/oa0Ur9boqIbgvv
+	hHG87WMzliuwGKYN+oGZgJ5prEwj6udlGHkySzOCeXBSsWblFUEOljjGFhUIHJF7
+	UMbrXMGGDhklzuFiWRRboTmzDpXSM/m9zIcBVCVMp7iECUoeOLxAjDHuEllArrtz
+	ivHzGg==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47j63k8nys-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 01 Jul 2025 10:59:47 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 561AxkV8021831
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 1 Jul 2025 10:59:46 GMT
+Received: from hu-sarishar-blr.qualcomm.com (10.80.80.8) by
+ nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1748.10; Tue, 1 Jul 2025 03:59:45 -0700
+From: Sarika Sharma <quic_sarishar@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Sarika Sharma
+	<quic_sarishar@quicinc.com>
+Subject: [PATCH ath-next v8 1/5] wifi: ath12k: fill link station statistics for MLO
+Date: Tue, 1 Jul 2025 16:29:23 +0530
+Message-ID: <20250701105927.803342-2-quic_sarishar@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250701105927.803342-1-quic_sarishar@quicinc.com>
+References: <20250701105927.803342-1-quic_sarishar@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH ath-next] wifi: ath12k: Add num_stations counter for each
- interface
-Content-Language: en-US
-To: Roopni Devanathan <quic_rdevanat@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-References: <20250630044531.3490058-1-quic_rdevanat@quicinc.com>
-From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <20250630044531.3490058-1-quic_rdevanat@quicinc.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: e_TPNW5oW4lPO7-rZiB3oyPqUuNHs5e_
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzAxMDA1MSBTYWx0ZWRfX0dqOz6pWozOn
- zMjUyvMUD7iGBvRhLZsQ6QLN5jSU6EQDw9+VPmkm0+4T0T60ePF0EK1DSjAWtKjlY3tXmu1aIFK
- xLo2/Yi3Xt9hRMQXxseUzOofsnPLJT3ay4NvdNlRXFsrjdrh73vF0Kngb24QaTpVu7n5kDEfFPo
- R0yTQW74ifoKjdMbXCSZ9feBTK8lenoOPImHveJ6gp19SVoPOQTa6gd6lyhA3TyOppOtG19QREv
- tIDXiBCvfOJA6eiaKZIDcLsAwJJz9pNn7e+3ckswCjahtoUcgKKsT51Tlc+KKsCxDbMDa6w5St0
- /KLHhgaXPBB1zp0ThH7OogLlbpO8IxcNRlUjV93kjBT0zbhXPubmbdQakr2QT6sD7wWwmG6fiz0
- EKNH+Tv653J1kFpjRLl5xfH2nr04Jgpz4WgKkRfOvRew+mcRL/rNb9FXfRt0JO0f32n3vMyb
-X-Authority-Analysis: v=2.4 cv=L9sdQ/T8 c=1 sm=1 tr=0 ts=6863a212 cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=COk6AnOGAAAA:8
- a=1wtqsGCssgQoBpRYdnoA:9 a=QEXdDO2ut3YA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=ZKfXmW7b c=1 sm=1 tr=0 ts=6863bfa3 cx=c_pps
+ a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=GEpy-HfZoHoA:10 a=Wb1JkmetP80A:10 a=COk6AnOGAAAA:8 a=pS3n3Mt4l41vp9au72QA:9
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: e_TPNW5oW4lPO7-rZiB3oyPqUuNHs5e_
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzAxMDA2NiBTYWx0ZWRfX/tPlCNxsFSzH
+ xuN0/6/+7yFvLiqQZIBkKe/4Z9BgAu+U639fRWWw8CRumLvdccdvlXOzJTqS3V5vkEJphBz6/rb
+ spR8/ij+8vA5HqkPBV8DdcFIfHFJnk8rcfknWULpzJD9sPiiVFLDAUJyh6FK3A6LUNrv5nXMRUQ
+ GnmglYpCdn4AMWYkMAepggqAYw9QiKsGwHCX+gJy4/zimZOmt4DUyQmiQoK5kK/XAprnF2vkhGT
+ ZSDHKMrn7nciV1nBz3VMSRYPtpvDK3ZHkdBinro3Z4sfHmlqybIE81t5IvNT/VGWgRDcq/uH69J
+ kXVxMfrY92de9DyerxWLMdLbFhUz1c/SyDMohSkx/oydjHTNT2V94kKL2q0ecfiqSAHnaEdoAxJ
+ LtgGbyYgrFd3Ke7aW5ocuURp31dYmm+jpEsWbkZ2OBZURTp+LRd4ysY1UgQWOhbIhRm6rUDu
+X-Proofpoint-ORIG-GUID: JUITCk0Dt0IXS5ow8zkW5IBpb-UEyzqO
+X-Proofpoint-GUID: JUITCk0Dt0IXS5ow8zkW5IBpb-UEyzqO
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-07-01_01,2025-06-27_01,2025-03-28_01
+ definitions=2025-07-01_02,2025-06-27_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 spamscore=0 phishscore=0 impostorscore=0 priorityscore=1501
- malwarescore=0 lowpriorityscore=0 adultscore=0 suspectscore=0 mlxlogscore=915
- bulkscore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507010051
+ adultscore=0 mlxscore=0 mlxlogscore=999 spamscore=0 suspectscore=0
+ bulkscore=0 priorityscore=1501 lowpriorityscore=0 phishscore=0
+ impostorscore=0 malwarescore=0 clxscore=1015 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2507010066
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_095414_760352_269C177E 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20250701_035948_349042_FB9DEC7E 
+X-CRM114-Status: GOOD (  13.53  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,24 +110,116 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Introduce ath12k_mac_op_link_sta_statistics(), to report link level
+station statistics for MLO. The link_station_info structure is filled
+from arsta and arsta is fetch from corresponding ahsta->link[link_id].
 
+Therefore, this will be helpful to check the link related statistics.
 
-On 6/30/2025 10:15 AM, Roopni Devanathan wrote:
-> From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-> 
-> Currently, ath12k driver maintains a counter to store the number of
-> stations connected to each radio. However, at certain times like
-> debugging, it is useful to know number of stations connected to any
-> one of the interface in that radio.
-> 
-> Add support to maintain a counter for number of stations connected to
-> each interface.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 78 +++++++++++++++++++++++++++
+ 1 file changed, 78 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 71e07c546a2d..8aa74c9171f8 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -11686,6 +11686,83 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
+ 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL_AVG);
+ }
+ 
++static void ath12k_mac_op_link_sta_statistics(struct ieee80211_hw *hw,
++					      struct ieee80211_vif *vif,
++					      struct ieee80211_link_sta *link_sta,
++					      struct link_station_info *link_sinfo)
++{
++	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(link_sta->sta);
++	struct ath12k_fw_stats_req_params params = {};
++	struct ath12k_link_sta *arsta;
++	struct ath12k *ar;
++	s8 signal;
++	bool db2dbm;
++
++	lockdep_assert_wiphy(hw->wiphy);
++
++	arsta = wiphy_dereference(hw->wiphy, ahsta->link[link_sta->link_id]);
++
++	if (!arsta)
++		return;
++
++	ar = ath12k_get_ar_by_vif(hw, vif, arsta->link_id);
++	if (!ar)
++		return;
++
++	db2dbm = test_bit(WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT,
++			  ar->ab->wmi_ab.svc_map);
++
++	link_sinfo->rx_duration = arsta->rx_duration;
++	link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_RX_DURATION);
++
++	link_sinfo->tx_duration = arsta->tx_duration;
++	link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_DURATION);
++
++	if (arsta->txrate.legacy || arsta->txrate.nss) {
++		if (arsta->txrate.legacy) {
++			link_sinfo->txrate.legacy = arsta->txrate.legacy;
++		} else {
++			link_sinfo->txrate.mcs = arsta->txrate.mcs;
++			link_sinfo->txrate.nss = arsta->txrate.nss;
++			link_sinfo->txrate.bw = arsta->txrate.bw;
++			link_sinfo->txrate.he_gi = arsta->txrate.he_gi;
++			link_sinfo->txrate.he_dcm = arsta->txrate.he_dcm;
++			link_sinfo->txrate.he_ru_alloc =
++				arsta->txrate.he_ru_alloc;
++			link_sinfo->txrate.eht_gi = arsta->txrate.eht_gi;
++			link_sinfo->txrate.eht_ru_alloc =
++				arsta->txrate.eht_ru_alloc;
++		}
++		link_sinfo->txrate.flags = arsta->txrate.flags;
++		link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
++	}
++
++	/* TODO: Use real NF instead of default one. */
++	signal = arsta->rssi_comb;
++
++	params.pdev_id = ar->pdev->pdev_id;
++	params.vdev_id = 0;
++	params.stats_id = WMI_REQUEST_VDEV_STAT;
++
++	if (!signal &&
++	    ahsta->ahvif->vdev_type == WMI_VDEV_TYPE_STA &&
++	    !(ath12k_mac_get_fw_stats(ar, &params)))
++		signal = arsta->rssi_beacon;
++
++	if (signal) {
++		link_sinfo->signal =
++			db2dbm ? signal : signal + ATH12K_DEFAULT_NOISE_FLOOR;
++		link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
++	}
++
++	link_sinfo->signal_avg = ewma_avg_rssi_read(&arsta->avg_rssi);
++
++	if (!db2dbm)
++		link_sinfo->signal_avg += ATH12K_DEFAULT_NOISE_FLOOR;
++
++	link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL_AVG);
++}
++
+ static int ath12k_mac_op_cancel_remain_on_channel(struct ieee80211_hw *hw,
+ 						  struct ieee80211_vif *vif)
+ {
+@@ -11921,6 +11998,7 @@ static const struct ieee80211_ops ath12k_ops = {
+ 	.get_survey			= ath12k_mac_op_get_survey,
+ 	.flush				= ath12k_mac_op_flush,
+ 	.sta_statistics			= ath12k_mac_op_sta_statistics,
++	.link_sta_statistics		= ath12k_mac_op_link_sta_statistics,
+ 	.remain_on_channel              = ath12k_mac_op_remain_on_channel,
+ 	.cancel_remain_on_channel       = ath12k_mac_op_cancel_remain_on_channel,
+ 	.change_sta_links               = ath12k_mac_op_change_sta_links,
+-- 
+2.34.1
+
 
