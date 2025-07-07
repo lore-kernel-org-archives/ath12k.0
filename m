@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DA16C71130
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC531C83030
 	for <ath12k@archiver.kernel.org>; Mon,  7 Jul 2025 22:36:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,107 +12,110 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9kObBHOTy4GemSrwADqjuQYpPPym9U0e2cueEvewwqA=; b=VGX6hqUSKcaHes/K0ViuN/XCdD
-	/PTLmxw2pjarsdmmO78QTtYSpG9scvY6khbW+P3CM8SQdwPmlDov/dJWmxiEuTO5eF1uQZ8fISeUQ
-	8OKZD3q9Jw/89AcbdoB7GZgu8pEyM60vqkTg23pTZWs4o7KQU2+k+x0wVYlo8yXL8mDbkqb0RcVvT
-	QZNikvfuE84U3CmNO1rPMGXQCCXW4Yr/hpgVrojb4m4F3TpF3wEptykpCcBeSNtW/Dyx5uh2gV45s
-	jvK8EV8H0o7sTtESEdINu6TaK2D9uLAF+ErfynlKQ6P2tUxEpqA3iP1TNmBH9I0E5ReLFy74Dhdo4
-	YL3ba3BA==;
+	bh=58sLsyVBxSODICZUsU9uTkMyvgRokbpHZA7Sf2AjOd0=; b=bV0nR6ofjiuzKXhJ8PUzuo/jAG
+	xRflps+g6jVNGkR/lHNnXb4RUnRRfkQQvv6KmEuUle/46XFDn8vtvXhxPa0Q87OVXoXuZYBRif6A5
+	hV++GlIweNTwMUxmVCHvxhhEbWa3GRiScbslvUpNWairj2Eifrewvrm0UyMdjih5sgGQLPvf+8qdC
+	4WfF/KtzPduKJsooYvTmka/mdjbwCNsitKdoOfQPFx4z9+7Hxv1pTq/aCrLgS9o5XGzcrogXtm1xY
+	rxPQWHceOIzS4UPvROepkuyl9Jx61VCI0T8B8XvgCxNqJDZ3sVTIY9XJPf+DUtsZbekukhs1mj8iq
+	4xRbOBRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uYuRn-00000003ifM-0pFz;
+	id 1uYuRn-00000003ifi-2Zts;
 	Mon, 07 Jul 2025 22:36:27 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uYuRk-00000003idp-1Ftn
+	id 1uYuRk-00000003ie4-3XMO
 	for ath12k@lists.infradead.org;
-	Mon, 07 Jul 2025 22:36:25 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 567K26YY027231
-	for <ath12k@lists.infradead.org>; Mon, 7 Jul 2025 22:36:23 GMT
+	Mon, 07 Jul 2025 22:36:26 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 567J9VG0009670
+	for <ath12k@lists.infradead.org>; Mon, 7 Jul 2025 22:36:24 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	9kObBHOTy4GemSrwADqjuQYpPPym9U0e2cueEvewwqA=; b=dAH8uzZoSsbI5yBM
-	li4RLnOkYtr0PyMckS7IACh6Y+ygocCtb/zaRBCXSBhA7mU0Yeomt0knFEJhzp9C
-	v+3HpSavpoIRRWjhq8QBWvJXP0FemWlCTiDS2cKcqFD5KJ4zlRGTpphrgAUur+Up
-	30+sbE7W2SYXHQky0PRtQx5pwbAHeeKOSb5jiQLCg0L9FbZ5jUrwYD+k7qCqTA4u
-	bZ8quy9D6P8oKR16RY0GoqEXRObmeMWZB5RaMKEYCRmfRMqeIWPoQR0UAycRzf75
-	/5aL0E03xcplKkbgZONE8Ty5AE53gPKso4cp46B12hbsrqOYRANb1JQe4rFsT3Yw
-	oi0XbQ==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47pu2b138s-1
+	58sLsyVBxSODICZUsU9uTkMyvgRokbpHZA7Sf2AjOd0=; b=BhmZIHvw63tpvk/8
+	QpeKBX5hTMzaabOhnxdkJjDkNVtM50WxVy3aGR5SKBcG83JFBPg3XSwCDME169Z3
+	i7nsETj4OGz+5Wqi2aVerkRTkgo12QXYXGln08SQMzc/2g5x4Ij+ulkF5MasdbJL
+	a+GdJVrHBWU8uSHx7y3jZvjLqZw6SrRgk0IWwnQYh3yeHZW8mNlVjWteD5H4Cd9e
+	+Lhz6KV4F7TUgVHcWHtjWiiOy1BDNIWvXJ2WrzdYJ/L0YfKNElt4WOCEBho5t9VY
+	Td/UkHQlEmz6TY3tjsr8SDoyuCJfxnA98OadwMBx0w61sJfJ6QN0szGnu04r8enn
+	Xz+64w==
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47pvtkgpc9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 07 Jul 2025 22:36:23 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2369261224bso42001595ad.0
-        for <ath12k@lists.infradead.org>; Mon, 07 Jul 2025 15:36:22 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 07 Jul 2025 22:36:24 +0000 (GMT)
+Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-74943a7cd9aso5623195b3a.3
+        for <ath12k@lists.infradead.org>; Mon, 07 Jul 2025 15:36:23 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751927782; x=1752532582;
+        d=1e100.net; s=20230601; t=1751927783; x=1752532583;
         h=content-transfer-encoding:mime-version:date:message-id:subject
          :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=9kObBHOTy4GemSrwADqjuQYpPPym9U0e2cueEvewwqA=;
-        b=IodTkq+NYhiJHKSgpbgChVmeIA1S+tHytsJI01OMX8XVajvRxVOMPwFEs+57XqBBMu
-         vEu+90qXxbW4nbm5Sg9C4on8t1I8CXnvOWwS6B7NBSUB4x8lDw4ZnsivonhBXbXFo+2G
-         dA5c4QRkRoCwfsoZIdUrI9JdMK0ITs7vh9mwVaf6DnQr5iI8F3p6GT5ljq6HPl9+b/U+
-         5QZ8C/+zDOgsZunbPpJ2YBa0LSTU+eIlWh2VqIYc+eYG/6K5ilbg8bAVK0yU1GrLltL7
-         GyT+Vy80otgwYiCvLfl2ngn0JGqTmKrvwtsoN5vVWXyen0SBW44JoTHPpTP1wf72eCeh
-         lDRw==
-X-Gm-Message-State: AOJu0YyhBOSrMwwlVejuTEvUOQmVjQxipVE/35Bin1Ru6RGB5oN5JMCu
-	5znJIu6FCNdEbFvX9N3w+aMUZ7d+WEqJjfqus1ZWOzNe74IHC/MnpEBv55JQ5CmoKK3eYillQ9q
-	gLsl+p+8SKmvCs7TX65aWoStXAh0D/ifO78AimcYwYFSVWQuY4lHlat63UYcwOArW
-X-Gm-Gg: ASbGncvcaw1KufX7h3ldZn+/k4Nv4LbUCjzzNIOnQL1jgA/TDrsqNnzpY/bx/0M+4NS
-	ib3Ld+IsxoKVy0chZf+Qjw3AViKTujQmNB4v2Yp+U3a3ww85QyFnfeYdQsenlbtxW4I0KFSyOjC
-	g18V63cJnhg+u6MdbPVYNz7C+bT3IZq2w4iON2NF5l6rV0tOEbvswtOlA3ZciQYRHh42DkeLbKY
-	pLX3ca5Rpi3DiujyxnObTwT6fpmDYxT2Ca8PAxKwlN78C0lSua8q1odWX9bsm47A/pR9kH2dZMs
-	5w7g+xFVB2JjTR9vrHsgjhoBZqYk0EYqeLsv3walBoElu+5s7RlXMg+/Jjs=
-X-Received: by 2002:a17:903:2343:b0:235:f45f:ed55 with SMTP id d9443c01a7336-23c87470019mr251805915ad.1.1751927781855;
-        Mon, 07 Jul 2025 15:36:21 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGW1Bef0ceUwQpnhYjXdX6dtTGeppIizcEogBC6WZz0uiIFGUyIDjkxNhouugTUww4w3XZDJg==
-X-Received: by 2002:a17:903:2343:b0:235:f45f:ed55 with SMTP id d9443c01a7336-23c87470019mr251805535ad.1.1751927781443;
-        Mon, 07 Jul 2025 15:36:21 -0700 (PDT)
+        bh=58sLsyVBxSODICZUsU9uTkMyvgRokbpHZA7Sf2AjOd0=;
+        b=Quv3eFCBEZ47qPr5yqO9i8uotIz21+pes1RMLa19ADjLjbPSsGzDHO84BB5hoiQD+8
+         ycIEsxtPqLpmek1rl4AJPnlnQ/I9ke6XbEynHSjsgaS5ywVlhtASg9z+MULJwJMzGHgs
+         3ygiDAYtlBqmb0TQY/48h1fMU0HgsfWz4FpTMyKWVrmQMSYERLBVhPEiCnFjrHJ/oJxA
+         GfdIDgCSamlzhhCrhPzWuWqQ/zzeBJpRpOTlkvfx5s6MzzbaO6wOBhRhC1sszwPP0UQ6
+         ua8SW19zCxT5T1REDA4fFKlwcl+A5aEC+ikxj5ITCci49zPNiQCwazAHNmOT3RwbiAlI
+         +WtA==
+X-Forwarded-Encrypted: i=1; AJvYcCUlHtCOUOAqzA20FrpctwT/W12SM9K6sPagU5X/2XX+7S/xdNI6xJWiBIMabX61yNGx4h2bJaA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzCNS9bveJr8ojM1M7wIILIbGsRXGW8/60cQvk+xILlXszmHlbu
+	ycW2FPGKdyAzhu8+q9dhZAXkuebgpzFDCUBQzKjXWCjb8ZNtC3IQ5/8XTKQxbx2/rDDEsjA6tEc
+	he7EZxNwvF1oP3hnVQYfeJXqHedDf/AVa0znYcALkwSd+Pa+lKOrDqhzd8QoRObl3cxIbmBiw
+X-Gm-Gg: ASbGncsNNR1+1kvPGbWdqXj5R+XbfOiZ15OeUTLNCkLqCb15830DS8GZRvx2EFb0bm2
+	XpyiPldlIQFUGb8WlnyPOLaEgdkpp7H2y3vrlgyIwPyhFmdkj+qgo8/gSwGHq3J9UzzETjjAjXh
+	HPTLXgQ/TFXqrzoiVBGsma7112mLN8XoqQspQ2TdqjVROPP+SUYYX4jBDiFMQkDR5E8UG32VjIF
+	MvTcXFLrwSXDFVMs7IRVl+CrvjDrmWIlbwtN/48dX1H48vsMkYHvBqMSVcDbcD2VKNwsnNomWpv
+	cBJsaecmNBb3GPkm7CeCtD4gEUbCzQULL5+MHJuitqTGcvndHU5rDaH9pK0=
+X-Received: by 2002:a05:6a00:2354:b0:73f:f816:dd78 with SMTP id d2e1a72fcca58-74ce8ab166amr21446831b3a.15.1751927782732;
+        Mon, 07 Jul 2025 15:36:22 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGwBqL+fxR/ucQx5k8AE51TsXkHh05PJEkfhYYKNNad+uzcD6SMzfUayMwxjD5BCxoUPKNXaA==
+X-Received: by 2002:a05:6a00:2354:b0:73f:f816:dd78 with SMTP id d2e1a72fcca58-74ce8ab166amr21446812b3a.15.1751927782351;
+        Mon, 07 Jul 2025 15:36:22 -0700 (PDT)
 Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b38ee6358edsm9668064a12.58.2025.07.07.15.36.20
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b38ee6358edsm9668064a12.58.2025.07.07.15.36.21
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
         Mon, 07 Jul 2025 15:36:21 -0700 (PDT)
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: ath12k@lists.infradead.org, Sarika Sharma <quic_sarishar@quicinc.com>
-Cc: linux-wireless@vger.kernel.org
-In-Reply-To: <20250701105927.803342-1-quic_sarishar@quicinc.com>
-References: <20250701105927.803342-1-quic_sarishar@quicinc.com>
-Subject: Re: [PATCH ath-next v8 0/5] wifi: ath12k: add support to fill link
- statistics of multi-link station
-Message-Id: <175192778075.314276.9132568715963228413.b4-ty@oss.qualcomm.com>
-Date: Mon, 07 Jul 2025 15:36:20 -0700
+To: Jeff Johnson <jjohnson@kernel.org>,
+        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+In-Reply-To: <20250630-support-for-tx-power-insertion-v1-0-77f45484d5bb@oss.qualcomm.com>
+References: <20250630-support-for-tx-power-insertion-v1-0-77f45484d5bb@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: add support for Tx Power
+ insertion
+Message-Id: <175192778158.314276.5668474308481760371.b4-ty@oss.qualcomm.com>
+Date: Mon, 07 Jul 2025 15:36:21 -0700
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.2
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzA3MDE1NiBTYWx0ZWRfX3Xcbv+EnDPcs
- serpsWmpb6nZ4dUz7karDoIXOH71qs0ZHf67KNhDtZbNl+WWA9umBtpf/1UbfyDGW0ElDLGpF/9
- 3KUsMsnC7A65CEFV62Rn45RB37/tFP/cDLx0114Y7xp2VChKciy+83nNU8RGI/NIBMeFKQTK5Ii
- JX6ev+GUKNtNYfdhGZEfJDYq2M2SUB/JhoI6TN1bpj8dl9o3Ub3JNpO8nwsn9d9uy3Ttc+iXbR/
- kI9wVzL/h0TAVZEDPUgJ+pep66n2pwxX1uam1i+8L6JHj5hjWTXXrGVPX7t8QuCBEb2cRp5GYkM
- Kxt+eczq+QAzIjP3jkPLCg9iPrKBODwhLiJsXZXovppVhdU56qk09hs/2h6OLUWkp0lBcJazdkZ
- sveqQnnTaJnP/LSWY9SNLWieTJHs2fajIwyC2do62NnFMfHsQCpImSWuV3HwxZgWGbKP1QlR
-X-Proofpoint-ORIG-GUID: OF6AIooDXXiCieV2rZuleN7uqntzgx7x
-X-Proofpoint-GUID: OF6AIooDXXiCieV2rZuleN7uqntzgx7x
-X-Authority-Analysis: v=2.4 cv=erTfzppX c=1 sm=1 tr=0 ts=686c4be7 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=zQT3B7j2P7N7IL7r6JwA:9
- a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzA3MDE1NiBTYWx0ZWRfXy/UrTe+XnlsT
+ Jg0Qeguv7PfsHuFD7HURQ6Iw6wUWYmsy33bP9SLPZlq0qBuNArVhqQrCfLFwHHj/w/m4WLV1Mc2
+ wTcshbSDAh4nRThubjCHkUkMN6dfW7hnjJOGsWoQinmCmrhvDLYCyvg0mZm/eyfqj3KTSOwXuaf
+ o+IygjVNwJDvZub25Pv4+GYOFpGEgRolalyweNiyLBSZl9ois5x7wPw3WJDm+di+PNwU9lkueG4
+ ibSpNSd9Ns9eD5bpdzCCchI4mIV1FPtLapccjunmiumUx5j2jwRMbG5xZhiMB3f8AHyQKTK/CPm
+ x6kYAe4FseT4RkKEQNGAnRwgwYptNgTe4HmYq0+sX4c0BOmatEpT/t2SyHY7JFMdV6BmkYpUqU9
+ 5pK4d3cPjly61bICHh6oZewKc0+58Ar0uCTy/Z8f+0v4MJ7KGW2HpgGxqi/Pbwacyf0BGuva
+X-Authority-Analysis: v=2.4 cv=Vq0jA/2n c=1 sm=1 tr=0 ts=686c4be8 cx=c_pps
+ a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=bhy6XtatztNBMhLyL1sA:9
+ a=QEXdDO2ut3YA:10 a=IoOABgeZipijB_acs4fv:22
+X-Proofpoint-ORIG-GUID: H6kCBGW7ADrdpI96EM0Jmi7PINHiao-N
+X-Proofpoint-GUID: H6kCBGW7ADrdpI96EM0Jmi7PINHiao-N
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
  definitions=2025-07-07_06,2025-07-07_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxscore=0 clxscore=1015 impostorscore=0 spamscore=0 priorityscore=1501
- mlxlogscore=799 bulkscore=0 adultscore=0 malwarescore=0 phishscore=0
- lowpriorityscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a
+ spamscore=0 adultscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0
+ clxscore=1015 mlxscore=0 malwarescore=0 mlxlogscore=999 impostorscore=0
+ suspectscore=0 priorityscore=1501 classifier=spam authscore=0 authtc=n/a
  authcc= route=outbound adjust=0 reason=mlx scancount=1
  engine=8.19.0-2505280000 definitions=main-2507070156
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250707_153624_475018_738FDE2E 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20250707_153624_887484_E3260266 
+X-CRM114-Status: GOOD (  11.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,30 +131,24 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 01 Jul 2025 16:29:22 +0530, Sarika Sharma wrote:
-> Currently, station statistics are filled at deflink for both non-ML and
-> multi-link(ML) station.
+On Mon, 30 Jun 2025 09:45:14 +0530, Aditya Kumar Singh wrote:
+> For certain action frames like the TPC Report IE in the spectrum management
+> TPC Report action frame, and in the Radio Measurement Link Measurement
+> Report action frame there is a requirement to fill in the current
+> and max Tx power of the device in the packet.
 > 
-> Hence, add support to fill station statistics for the corresponding
-> link of station.
-> 
-> V8:
->  - Remove unnecessary initialization of bool is_ofdma.
+> Add support to populate these fields in the relevant packets. Advertise
+> this capability from the driver using the feature flag
+> NL80211_FEATURE_TX_POWER_INSERTION.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/5] wifi: ath12k: fill link station statistics for MLO
-      commit: ebebe66ec208d37e3368b91e2033907cb5140821
-[2/5] wifi: ath12k: add link support for multi-link in arsta
-      commit: 3b8aa249d0fce93590888a6ed3d22b458091ecb9
-[3/5] wifi: ath12k: add EHT support for TX rate
-      commit: ebde0514b4f4e78b5f9629179ca947d98b77da15
-[4/5] wifi: ath12k: correctly update bw for ofdma packets
-      commit: e0618fca1af294f2e52ec3545d76ee5d937c177e
-[5/5] wifi: ath12k: fetch tx_retry and tx_failed from htt_ppdu_stats_user_cmpltn_common_tlv
-      commit: a0b963e1da5bff03a43c87b96ae3c0ed78a11960
+[1/2] wifi: ath12k: add support for Tx Power insertion in RRM action frame
+      commit: d45d015448fcfbb5dde7c09f2b0dffe5d689e6ca
+[2/2] wifi: ath12k: advertise NL80211_FEATURE_TX_POWER_INSERTION support
+      commit: 93a1cdb9cd94c7b8a2aac33e4b13ca61d712f5eb
 
 Best regards,
 -- 
