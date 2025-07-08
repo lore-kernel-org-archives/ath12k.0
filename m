@@ -4,101 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF2A1C71130
-	for <ath12k@archiver.kernel.org>; Tue,  8 Jul 2025 05:09:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CCD9C8303C
+	for <ath12k@archiver.kernel.org>; Tue,  8 Jul 2025 07:38:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To
+	:From:Subject:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6nO29YvvxA3g37DZV759dO0hrJDh4lNF+Inrkz+JgWc=; b=ij2z5Hb915RoGoFJniMJ/Y6OJx
-	NcLIXei+YiyLqkqf6UpV+TC2en78o7qZLATpyBW68N03O3fUhv2RkqItW5SUSCuMaR81KMUgp23lq
-	NAbGbh2TmFjT3fsy7Usz3gOkVPFKkeChriDhxfM22nWzDvK/ceo+8w2hguhjr1f3tKAYee5FojG3o
-	T+zym1aFlD1i3mcxRX/Rg6XsAKJQgNJ4poNl+0jntMFuGjmAkG9s6Er90UXreCwOiAVj+ue8YS9d6
-	eIpw4oQh3oGEJTnqPcwkv8LC4wz+spkSantOzvI6T6HiaEORIVNN0HjK6onHhc60NdsTKFGdW5bzR
-	blXGjB4Q==;
+	bh=jNVCTZGIclUua5aJFaelM1CN9lMCU6duySJ0T/o5KMs=; b=KD0qgdd78aRCZ6D7mVegddBju4
+	bi4FFHJpMU8Aodsk/nCBKW/l/l8v38N9fg4iO+99DZ20p4OgRwk85IQHeDfbFaz+qB0grNjeA21dV
+	6x8dHBzykNI0Q6/gU4hDnpcFqzY34JZVFhiYPB3T3bcjFnWd7YBINDmhlJIvrJGlZOjun17TkLIgb
+	oKJQ+ldx/srEtX5mpbMKoFBRq/8WAO5tJOj+yTKdGejdmAC6EIpLdsyFUqbCDJPCqvG35r9vdyOC6
+	RuTyr4NX4gi4LstIbZZh/AH+mErQswJoaZD/S5a0te50Hya+2RnUk6ZCEHkq+naRbRNsVidhstlSF
+	xoxU6K+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZ0aD-00000004IUy-1YAD;
-	Tue, 08 Jul 2025 05:09:33 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uZ2uO-00000004b9a-0nSS;
+	Tue, 08 Jul 2025 07:38:32 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZ0aA-00000004IUf-2RQw
+	id 1uZ2sr-00000004ay7-1pnn
 	for ath12k@lists.infradead.org;
-	Tue, 08 Jul 2025 05:09:32 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 567KSNQK006944;
-	Tue, 8 Jul 2025 05:09:30 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	6nO29YvvxA3g37DZV759dO0hrJDh4lNF+Inrkz+JgWc=; b=GDdw5m1sHeLhIhui
-	uZmpOM2+4YhkKMWWBc1qfUuJusuIuNBx3ZT28PxMgbdUXrsUubY5zt63k/iO9RZ9
-	E3SizuUuVsSqtMxvdybUCuDh1rZc/ILykNM5JNIDRkvwO25CzRizLz+izjUVd/jp
-	bMM51QyqyuqSEC9YHtwqm3619beYPpVhcFZXopdqIOpXVPYtjz9J7ufo6Wbj9zQM
-	rbOvliG22JTf2DGS4qn3PExAQ61itCkD6eysMg06rW5wQaLkfF/DT/kbxcxzBa/s
-	U1zBESMRt7ht/xICulCkhMRRu0eyJipd6vZVfchKYP0clQTmBcMO1Qznu3hpuimt
-	Xiu3rQ==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47pu0wamde-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 08 Jul 2025 05:09:29 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 56859SxW019630
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 8 Jul 2025 05:09:28 GMT
-Received: from [10.216.52.3] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Mon, 7 Jul
- 2025 22:09:27 -0700
-Message-ID: <3298c943-c26a-848c-0606-915295241f86@quicinc.com>
-Date: Tue, 8 Jul 2025 10:39:21 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH ath-next v2] wifi: ath12k: allow beacon protection keys to
- be installed in hardware
-Content-Language: en-US
-To: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20250604101620.2948103-1-karthikeyan.kathirvel@oss.qualcomm.com>
-From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
-In-Reply-To: <20250604101620.2948103-1-karthikeyan.kathirvel@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: Ny80kNnzNPWP8Nbex1HB_LaSnTT_nwT0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzA4MDAzNyBTYWx0ZWRfX2CI4vO8w4gDS
- XQrgcELS6l+lw/By6s8Q7lCs3e8QdXzIEoOyVdDTrQw4Ex82TRZsv2sRoTpE9XLvcBtwBXuQVrO
- b7R2eJoA/+EGq/dCscw53FWMJwdlwU5+mNaabeJ5zP/X5DzHtnIvOn4FNBKqk02vxRxHOmc6juT
- NM8cmggZcjx+svq46p+WiEDyIP24krLuy7LDbp3Wg11CINbOC66bVcCYb8ZtEPaV7vn+w+JRBk4
- 95OS/eyuXCyJCuS86BxYOxzbMVYb7QgulC+Jp8AAdyuP7KQl0RZXEuYl447ItDvNUIDDjlNkLyN
- 5VBcsnkN8dKB8Qxg21tm+ghs47LOcsAthE94BW0fSNw7XF1j6taLtMfn1D1G40ywW4jsuYznVHb
- 63KRZO16vamy44dojLw8/P0LDQdemts6xtAwFijImEA9lkAn/mAl0+IiZHEuTDepTOthUr8C
-X-Authority-Analysis: v=2.4 cv=Rd2QC0tv c=1 sm=1 tr=0 ts=686ca809 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8
- a=pyrcEYqWyCnS-5z31K8A:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-GUID: Ny80kNnzNPWP8Nbex1HB_LaSnTT_nwT0
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-07-08_01,2025-07-07_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 suspectscore=0 mlxscore=0 malwarescore=0 lowpriorityscore=0
- mlxlogscore=773 impostorscore=0 spamscore=0 phishscore=0 priorityscore=1501
- adultscore=0 clxscore=1015 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507080037
+	Tue, 08 Jul 2025 07:36:59 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-450cf0120cdso34298005e9.2
+        for <ath12k@lists.infradead.org>; Tue, 08 Jul 2025 00:36:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1751960215; x=1752565015; darn=lists.infradead.org;
+        h=in-reply-to:references:cc:to:from:subject:message-id:date
+         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=jNVCTZGIclUua5aJFaelM1CN9lMCU6duySJ0T/o5KMs=;
+        b=dlTlz0dyN6dgWDcGaEFpmh2xUYL754XDFA5UTH8knLlD//ozgGEDvaIYgoZctYIPde
+         TNJ4VrlC9q/pj4DPezpW3Q0+vW5aGj6B3CElsDFach55WUy4htoVPfcnpMSsECXPDNlZ
+         9YD82zhaK4VPzLnZuhf1+9sp3nZnKA34jJum6ypbga37kk4v0kOu4CpKgZ1UCuH5cnjG
+         iltvshtiXbz8qplE8AluqEt42tb3dgrYGTaIMCtX29b+hMt7oKC95Ys0pgJaO6fl9hAn
+         Ykv/QTeme3Ziu4687N7tjwcuKBp5SOrj2S/a+0kYMOJY2YFSu9fJOmXKcL2XBI9tduDg
+         /Lng==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1751960215; x=1752565015;
+        h=in-reply-to:references:cc:to:from:subject:message-id:date
+         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=jNVCTZGIclUua5aJFaelM1CN9lMCU6duySJ0T/o5KMs=;
+        b=SAOPP9DyqG/7ljIOAS+Vt9NFxRVHgX2Vy+b/GQ50+3ADt7h7ZgnwBJSIOpZ3r7hCMs
+         gjTINmRd0xP4CbPwtahD8P23jYWgchp9V5FL7zH9X5vwMyGyQvQ7+eYc/DtTKnquRsjO
+         j6eXuCdqkfyJ0MBaL9UNwvLQSRRBtknrdYTkdOOMqcrlShvc3pk4qDr1Oycf23Hzltqv
+         cphDgGOqulOOXAX4vUW3MoJ3SrZn/2RTX6q5Pa9fGcpYfOcakEqGiN2xtNzJ12aZRiSU
+         ZrMdBQWzL7gCWMXEKp4QGNZOfn5k9Lob51WJtziTbq8PUnGD4JU6HuAHduk+MSaDoddo
+         h8pQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWQV3/WHEURb3AKNj3cXxYYXu2ERa2Csdpl4bR3giy2okIxJxY7y+y3kelezS83iTUU+mr8AI4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw3HAt64QCjgKagaHluEiy0FnkDk/D7D7olzSNKAvKKNu5btuFL
+	ZK9dh3Z1QdyIbXruHCjHCdW6A+XRVlik5nxCyvQC1+HW7D9Ge/7lzlWv
+X-Gm-Gg: ASbGncugCSDwTkrKImWeRsXe4xg0Q7OO91uhkQ/L0xroO85RhvpGF1UnwZtZLDXaIsJ
+	ebNMApc7m306pjNkZtYi7yQzUp+iLJ+3TO1E9gVa44nut2HPulrBTnsq7qK0Sz5bfC9bXgPpNSd
+	QEMg8sKoJFTDEaKKTLAbIw/soFi4uJwiYiamUUsxExwK499epIA0OQlyqDAkBtHkH1hDV59Rwlu
+	G0GFsxfBsZqPbnHSs72K6bHJTU8kNHVAVwagu18YMBRHBmFl0fsVo52wkUxf/vntqerEQuacGvK
+	FfUI5OFobrUvW1kZ6MWMvZbfBa0FYSJ+tCb6Jo9jqst5pNujSu+kW/CDO3tzslsTk09vRppMofF
+	dh3hXzcQQsA2OiNQ=
+X-Google-Smtp-Source: AGHT+IGbc5m/A/lUy6Z44xUNmJwgghVuoXq9qnyycnPtnXCB49G3ggRKXYqVhqCYFLBssz+XP3iupA==
+X-Received: by 2002:a05:6000:420d:b0:3a3:7baf:f06a with SMTP id ffacd0b85a97d-3b497029578mr11689711f8f.37.1751960215112;
+        Tue, 08 Jul 2025 00:36:55 -0700 (PDT)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-454cdb31d21sm10726945e9.1.2025.07.08.00.36.54
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 08 Jul 2025 00:36:54 -0700 (PDT)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Tue, 08 Jul 2025 09:36:54 +0200
+Message-Id: <DB6I2BHTWU0B.1SV9BIHX8WRZY@gmail.com>
+Subject: Re: [PATCH ath-next v2] wifi: ath12k: support average ack rssi in
+ station dump
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Jeff Johnson" <jeff.johnson@oss.qualcomm.com>, "Sowmiya Sree
+ Elavalagan" <quic_ssreeela@quicinc.com>, <ath12k@lists.infradead.org>
+Cc: <linux-wireless@vger.kernel.org>, "Sivashankari Madhavan"
+ <quic_sivamadh@quicinc.com>
+X-Mailer: aerc 0.20.1-0-g2ecb8770224a-dirty
+References: <20250612114620.1055840-1-quic_ssreeela@quicinc.com>
+ <DAKJLG9RLFCQ.3H8XQHL8ZY3GT@gmail.com>
+ <10d52ab4-a0cd-445f-a23d-9396904b10df@oss.qualcomm.com>
+In-Reply-To: <10d52ab4-a0cd-445f-a23d-9396904b10df@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250707_220930_897086_9A4E9D05 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250708_003657_476980_5AFF7535 
+X-CRM114-Status: GOOD (  12.12  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,24 +103,69 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On Mon Jul 7, 2025 at 9:05 PM CEST, Jeff Johnson wrote:
+> On 6/12/2025 5:10 AM, Nicolas Escande wrote:
+>> On Thu Jun 12, 2025 at 1:46 PM CEST, Sowmiya Sree Elavalagan wrote:
+>>> From: Sivashankari Madhavan <quic_sivamadh@quicinc.com>
+>>>
+>>> Currently, the ACK RSSI value is not shown in station dump. Enable WMI
+>>> resource flag for ACK RSSI in WMI INIT command to add ACK RSSI value in
+>>> management TX completion event from WMI. Update ACK RSSI value obtained
+>>> in management and data frame completion path to ieee80211_tx_info. Also
+>>> advertise NL80211_EXT_FEATURE_ACK_SIGNAL_SUPPORT flag during hardware
+>>> register to mac80211 layer so that ACK RSSI is added to station dump
+>>> message.
+>>>
+>>> Example output :
+>>> Station 00:03:7f:01:5c:4b (on wlp88s0)
+>>>         inactive time:  46584 ms
+>>>         rx bytes:       955
+>>>         rx packets:     10
+>>>         tx bytes:       769
+>>>         tx packets:     6
+>>>         tx retries:     81
+>>>         tx failed:      0
+>>>         rx drop misc:   0
+>>>         signal:         -39 dBm
+>>>         signal avg:     -40 dBm
+>>>         tx bitrate:     6.0 MBit/s
+>>>         tx duration:    1185 us
+>>>         rx bitrate:     309.7 MBit/s 40MHz HE-MCS 6 HE-NSS 2 HE-GI 0 HE=
+-DCM 0
+>>>         rx duration:    0 us
+>>>         last ack signal:-41 dBm
+>>>         avg ack signal: -40 dBm
+>>>         authorized:     yes
+>>>         authenticated:  yes
+>>> 	.......
+>>>
+>>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+>>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0=
+_SILICONZ-3
+>>>
+>>> Signed-off-by: Sivashankari Madhavan <quic_sivamadh@quicinc.com>
+>>> Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+>> [...]
+>>> @@ -5651,6 +5655,8 @@ static int ath12k_pull_mgmt_tx_compl_param_tlv(st=
+ruct ath12k_base *ab,
+>>>  	param->pdev_id =3D ev->pdev_id;
+>>>  	param->desc_id =3D ev->desc_id;
+>>>  	param->status =3D ev->status;
+>>> +	param->ppdu_id =3D ev->ppdu_id;
+>> Hello,
+>> It seems this ppdu_id is retrieved from frimware but not used in this pa=
+tchset
+>> Is this by design ?
+>
+> I'm guessing it is for completeness (parse all members even if they aren'=
+t
+> used). Do you think this is a problem?
 
+Not at all from my standpoint, but I just want to make sure this was by des=
+ign
+and not a telltail of a missing patch.
 
-On 6/4/2025 3:46 PM, Karthikeyan Kathirvel wrote:
-> Install beacon protection keys in hardware for AP modes only if hardware
-> supports it, as indicated by the WMI service bit
-> WMI_TLV_SERVICE_BEACON_PROTECTION_SUPPORT. Allow keyidx up to 7, since
-> beacon protection uses keyidx 6 and 7.
-> 
-> Control this feature by setting bit 0 of feature_enable_bitmap when sending
-> the WMI_BCN_TMPL_CMDID command to firmware.
-> 
-> Check for the beacon protection enabled bit in both tx and non-tx profiles
-> for MBSSID cases. If set in either profile, enable the beacon protection
-> feature in firmware for transmitted vif.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>
+>
+> /jeff
 
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
