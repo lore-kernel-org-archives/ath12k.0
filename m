@@ -4,71 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74CFBC8303C
-	for <ath12k@archiver.kernel.org>; Tue,  8 Jul 2025 23:31:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BA85C83F03
+	for <ath12k@archiver.kernel.org>; Wed,  9 Jul 2025 11:32:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=4fKX4APpiYPJznK7N1wJJBe5hVtaxhhZ9AEa9DQmixE=; b=fMskj6bw6CM02tBMnhpNBa0f4y
-	9D4UWCpBDS4LcC9feiekRbQANCqIxBfZGGNPvIKHN5CezMcJsnEbv0V3Aeu3TH2T7l9gx9AeKUjoL
-	ifUn3vj6X7TygoPzvNpipQrBjX/KMxRdGWAYndTig/pM8O9VnMqXLSJIClf3LvIVtR5WbLKrwfbN8
-	60Z0qVgy/YGEh/8sjXXLzfvuftlUC+S69DgnUvnAf80rzErSU0FNEdDvBSCSsRGph22tAVbtWi3my
-	M7mRHOAYPnRgchdt/KaI7lZtrT4q1lh0QcAE9aZxLshZdLiekbBi6/VbjsWVzO4M8fvgxMoGl4QfZ
-	SA+DKMQQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=sN5kSzrQQWZGXR5xtpzPMPoQQW+Iuy/wmw/1sYAsetQ=; b=lOjKGn5yF8b/dvjCVSoJKidSgQ
+	6DPxoKAFoYZsu69HrEmzzSnhc8SDGDHWDV6uPqjvOVI7MKeOHVWfbBgHhzd3Q6QuTv5nZWZQPR1m7
+	64VXy6621TIVndnbe8Qvmpe/aCwmrloXSR+qKh6achNE/+nd+Ww00mFnrAb5lLMkIySNudS1Gz5zy
+	vYaU+uBQLjTV1UAemHzKH1sZ6ihkKJ/ijZoTRM/bvP+fgIcrqsKNSejNiZyJieF6D80ZfaS4mhMnA
+	/G0f9/5Oj/ygdq69urmSW7S8YMgLbPdww0/if1+DcoA2nrTvTBfnyCQ41EZy1m3cR7aHaQqLmZM/u
+	7je8SGjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZHmL-00000006twG-3vNo;
-	Tue, 08 Jul 2025 23:31:13 +0000
-Received: from mgamail.intel.com ([198.175.65.21])
+	id 1uZT2B-00000008VhF-3NmB;
+	Wed, 09 Jul 2025 11:32:19 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZHmJ-00000006tvy-1FJL
+	id 1uZRX6-00000008CAE-0eGg
 	for ath12k@lists.infradead.org;
-	Tue, 08 Jul 2025 23:31:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1752017471; x=1783553471;
-  h=date:from:to:cc:subject:message-id;
-  bh=qnpajWtYHGVC2Wy7RrB78BdRmFqX53sDJGl0WsTVSZU=;
-  b=bTQg8LYyF7dg5oSGS9xWmvaUPcXT6b20f9hd184qn2MsALP0PHUdSMM6
-   RnNfh291A5I7t/5WI5NBxmSW3hshiLWC6/74SNxqkVEkty8JG1GmvnHNT
-   Sw5WmT3maakIGByN6gFnL95alofoYGQEt+Ihd4urrfTZ3KQ+XFmxyBNSQ
-   ag9Cv+b/aPSIYOfHRlvObVA3e77TArBOL2jijdNXQlcDXbkRLI/2JTNWC
-   W10XBFDb1V+TWuhrSSq1VpdZLn/KjaM3PY2g6AkK64qHcPoBTsnphqKMl
-   A54qSfVjgUYvg1tHJV4TbRvh2YwcUrucfhTbJAtB8WofDTUsCfKvuDMbh
-   Q==;
-X-CSE-ConnectionGUID: dEXAwEwVRvOuE+deIbHyvQ==
-X-CSE-MsgGUID: Dsttq+C2RciQonKB4YEIZQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11487"; a="54153222"
-X-IronPort-AV: E=Sophos;i="6.16,298,1744095600"; 
-   d="scan'208";a="54153222"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Jul 2025 16:31:11 -0700
-X-CSE-ConnectionGUID: mZIjhmYNSa+yHv76E6QeUA==
-X-CSE-MsgGUID: iA3q9HgIQ1u7KXhwLs3rLw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,298,1744095600"; 
-   d="scan'208";a="155707140"
-Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
-  by fmviesa006.fm.intel.com with ESMTP; 08 Jul 2025 16:31:09 -0700
-Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uZHmF-0002rr-0I;
-	Tue, 08 Jul 2025 23:31:07 +0000
-Date: Wed, 09 Jul 2025 07:31:05 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master] BUILD SUCCESS
- 45bbd91fc41b7cb6319e45e6fd732c5c8a0c44e3
-Message-ID: <202507090752.8nBU89Wi-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Wed, 09 Jul 2025 09:56:09 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5697jhGw010137;
+	Wed, 9 Jul 2025 09:56:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	sN5kSzrQQWZGXR5xtpzPMPoQQW+Iuy/wmw/1sYAsetQ=; b=iYq/vskrEfYnbb2W
+	XoGx4hckt0l+31mHa12tlF1b61EDIdhEpHCOPoGmvW6ZQ56DJFZ7T5ZEzu60T0ru
+	WHwXZV2uRIRQPYV7Gft2PMY7tf6KGh21FUXYdkQa1zm4r1ssAjJj8nSReh8YwWBH
+	6262qqJzvuM4CwGMI2Ehdabw1o0kNf80uSU5Ht6M6KInY/R5iaeV+MkwOV7E9BL/
+	ojMfIK1x//Cy8QtzKH061w3qdmfQK3eD1blD03u5oZaoWwSyjgQWC/lZj0Amahl0
+	Y3DbL6dddOmni+tdO5uYD8jbvRy3e6Xt+/iQyZN9MG1V1IhZb4StJVyhAGWdCoEa
+	4r99Nw==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47smafgd1w-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 09 Jul 2025 09:56:05 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5699u4IC006298
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 9 Jul 2025 09:56:04 GMT
+Received: from [10.110.15.206] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Wed, 9 Jul
+ 2025 02:56:02 -0700
+Message-ID: <18cadaf7-5d0f-49d0-a9de-d237eef52e1f@quicinc.com>
+Date: Wed, 9 Jul 2025 15:25:52 +0530
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next] wifi: ath12k: Add support to enqueue management
+ frame at MLD level
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>
+References: <20250703051711.2839934-1-quic_rdevanat@quicinc.com>
+ <d2d8778d-a39f-445c-8d08-8759c1aee07f@oss.qualcomm.com>
+Content-Language: en-US
+From: Roopni Devanathan <quic_rdevanat@quicinc.com>
+In-Reply-To: <d2d8778d-a39f-445c-8d08-8759c1aee07f@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=ZJ/XmW7b c=1 sm=1 tr=0 ts=686e3cb5 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=COk6AnOGAAAA:8
+ a=BhiHL6Vfu_Ttk14HBKcA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: vaUAooN6rlPdXFmOGh67O7S5MI6YwFOL
+X-Proofpoint-GUID: vaUAooN6rlPdXFmOGh67O7S5MI6YwFOL
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzA5MDA4OSBTYWx0ZWRfX1d0DkWAbG/ju
+ 6ChqeUY4aVwKmDHPkrDOO1iXwSmb2s+lye8MRDg+RfGBFbGVXgbCb4fNH+3T3xDzaAK/i9+eyhF
+ sYLN9pe/ZXDMUkQ3osS6h/1WOoDj1C1SCOVAxVbs/+xzh9mL8ULp7SBEMpmO4CUoxefg5cGrqcP
+ hIhqgfv0g/kXKXLr0w14uq7/ybteLiKwTpc2npvT+nI6FRNtFFzH+ic8UylO+WDbOiOn9Bdz7Av
+ +UP8mq19Yu5RLBjuQmvwmHu51V72yHhn0waRxlfdfSabAeXcxjzm6ZdRF1W7sHinNRqN8OPEPjx
+ msFTL+0UHi0OsA79aZ4nNmvKm7J+jQIsoA4Zd/umd2wjSe7xCcTR2rnEZjt42Z9x3mc9EuGJ6xj
+ 1hYUeViAlAjkl7WLUiqdTyve2nxXL29AShmwFcUfQaCbYbjzNLfg8ce1MC2+5gtC23YzIS07
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-07-09_02,2025-07-08_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxlogscore=828 impostorscore=0 spamscore=0 adultscore=0 clxscore=1015
+ bulkscore=0 phishscore=0 priorityscore=1501 mlxscore=0 lowpriorityscore=0
+ suspectscore=0 malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2507090089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250708_163111_402472_F8D96F59 
-X-CRM114-Status: UNSURE (   3.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250709_025608_313154_86FD9289 
+X-CRM114-Status: GOOD (  16.84  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,157 +111,60 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-branch HEAD: 45bbd91fc41b7cb6319e45e6fd732c5c8a0c44e3  Add localversion-wireless-testing-ath
 
-elapsed time: 1453m
-
-configs tested: 137
-configs skipped: 4
-
-The following configs have been built successfully.
-More configs may be tested in the coming days.
-
-tested configs:
-alpha                            alldefconfig    gcc-15.1.0
-alpha                             allnoconfig    gcc-15.1.0
-alpha                            allyesconfig    gcc-15.1.0
-alpha                               defconfig    gcc-15.1.0
-arc                              allmodconfig    gcc-15.1.0
-arc                               allnoconfig    gcc-15.1.0
-arc                              allyesconfig    gcc-15.1.0
-arc                                 defconfig    gcc-15.1.0
-arc                 nsimosci_hs_smp_defconfig    gcc-15.1.0
-arc                   randconfig-001-20250708    gcc-13.4.0
-arc                   randconfig-002-20250708    gcc-8.5.0
-arc                    vdk_hs38_smp_defconfig    gcc-15.1.0
-arm                              allmodconfig    gcc-15.1.0
-arm                               allnoconfig    clang-21
-arm                              allyesconfig    gcc-15.1.0
-arm                          gemini_defconfig    clang-20
-arm                           h3600_defconfig    gcc-15.1.0
-arm                   randconfig-001-20250708    clang-21
-arm                   randconfig-002-20250708    clang-17
-arm                   randconfig-003-20250708    gcc-10.5.0
-arm                   randconfig-004-20250708    clang-21
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-15.1.0
-arm64                 randconfig-001-20250708    gcc-9.5.0
-arm64                 randconfig-002-20250708    clang-19
-arm64                 randconfig-003-20250708    clang-21
-arm64                 randconfig-004-20250708    gcc-8.5.0
-csky                              allnoconfig    gcc-15.1.0
-csky                  randconfig-001-20250708    gcc-13.4.0
-csky                  randconfig-002-20250708    gcc-15.1.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-hexagon               randconfig-001-20250708    clang-21
-hexagon               randconfig-002-20250708    clang-21
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250708    clang-20
-i386        buildonly-randconfig-002-20250708    clang-20
-i386        buildonly-randconfig-003-20250708    clang-20
-i386        buildonly-randconfig-004-20250708    gcc-12
-i386        buildonly-randconfig-005-20250708    clang-20
-i386        buildonly-randconfig-006-20250708    clang-20
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    clang-19
-loongarch                         allnoconfig    clang-21
-loongarch             randconfig-001-20250708    clang-21
-loongarch             randconfig-002-20250708    clang-21
-m68k                             allmodconfig    gcc-15.1.0
-m68k                              allnoconfig    gcc-15.1.0
-m68k                             allyesconfig    gcc-15.1.0
-m68k                          atari_defconfig    gcc-15.1.0
-m68k                        mvme16x_defconfig    gcc-15.1.0
-microblaze                       allmodconfig    gcc-15.1.0
-microblaze                        allnoconfig    gcc-15.1.0
-microblaze                       allyesconfig    gcc-15.1.0
-microblaze                          defconfig    gcc-15.1.0
-mips                              allnoconfig    gcc-15.1.0
-mips                          ath25_defconfig    clang-21
-nios2                         10m50_defconfig    gcc-14.2.0
-nios2                             allnoconfig    gcc-14.2.0
-nios2                               defconfig    gcc-14.2.0
-nios2                 randconfig-001-20250708    gcc-8.5.0
-nios2                 randconfig-002-20250708    gcc-8.5.0
-openrisc                          allnoconfig    gcc-15.1.0
-openrisc                         allyesconfig    gcc-15.1.0
-openrisc                            defconfig    gcc-15.1.0
-parisc                           allmodconfig    gcc-15.1.0
-parisc                            allnoconfig    gcc-15.1.0
-parisc                           allyesconfig    gcc-15.1.0
-parisc                              defconfig    gcc-15.1.0
-parisc                randconfig-001-20250708    gcc-9.3.0
-parisc                randconfig-002-20250708    gcc-14.3.0
-parisc64                            defconfig    gcc-15.1.0
-powerpc                          allmodconfig    gcc-15.1.0
-powerpc                           allnoconfig    gcc-15.1.0
-powerpc                          allyesconfig    clang-21
-powerpc                    gamecube_defconfig    clang-21
-powerpc                         ps3_defconfig    gcc-15.1.0
-powerpc               randconfig-001-20250708    gcc-8.5.0
-powerpc               randconfig-002-20250708    clang-19
-powerpc               randconfig-003-20250708    clang-21
-powerpc                     tqm5200_defconfig    gcc-15.1.0
-powerpc                     tqm8540_defconfig    gcc-15.1.0
-powerpc64             randconfig-001-20250708    clang-21
-powerpc64             randconfig-002-20250708    clang-21
-powerpc64             randconfig-003-20250708    clang-21
-riscv                            allmodconfig    clang-21
-riscv                             allnoconfig    gcc-15.1.0
-riscv                            allyesconfig    clang-16
-riscv                               defconfig    clang-21
-riscv                 randconfig-001-20250708    clang-16
-riscv                 randconfig-002-20250708    gcc-11.5.0
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-21
-s390                             allyesconfig    gcc-15.1.0
-s390                                defconfig    clang-21
-s390                  randconfig-001-20250708    gcc-14.3.0
-s390                  randconfig-002-20250708    gcc-9.3.0
-sh                               allmodconfig    gcc-15.1.0
-sh                                allnoconfig    gcc-15.1.0
-sh                               allyesconfig    gcc-15.1.0
-sh                                  defconfig    gcc-15.1.0
-sh                          polaris_defconfig    gcc-15.1.0
-sh                    randconfig-001-20250708    gcc-11.5.0
-sh                    randconfig-002-20250708    gcc-15.1.0
-sh                        sh7763rdp_defconfig    gcc-15.1.0
-sparc                            allmodconfig    gcc-15.1.0
-sparc                             allnoconfig    gcc-15.1.0
-sparc                               defconfig    gcc-15.1.0
-sparc                 randconfig-001-20250708    gcc-13.4.0
-sparc                 randconfig-002-20250708    gcc-13.4.0
-sparc64                             defconfig    clang-20
-sparc64               randconfig-001-20250708    clang-21
-sparc64               randconfig-002-20250708    gcc-15.1.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-um                                  defconfig    clang-21
-um                             i386_defconfig    gcc-12
-um                    randconfig-001-20250708    clang-21
-um                    randconfig-002-20250708    clang-17
-um                           x86_64_defconfig    clang-21
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250708    gcc-12
-x86_64      buildonly-randconfig-002-20250708    gcc-12
-x86_64      buildonly-randconfig-003-20250708    clang-20
-x86_64      buildonly-randconfig-004-20250708    gcc-12
-x86_64      buildonly-randconfig-005-20250708    clang-20
-x86_64      buildonly-randconfig-006-20250708    clang-20
-x86_64                              defconfig    gcc-11
-x86_64                          rhel-9.4-rust    clang-20
-xtensa                            allnoconfig    gcc-15.1.0
-xtensa                randconfig-001-20250708    gcc-8.5.0
-xtensa                randconfig-002-20250708    gcc-9.3.0
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+On 7/8/2025 9:37 PM, Jeff Johnson wrote:
+> On 7/2/2025 10:17 PM, Roopni Devanathan wrote:
+>> From: Sriram R <quic_srirrama@quicinc.com>
+>>
+>> A multi-link client can use any link for transmissions. It can decide to
+>> put one link in power save mode for longer periods while listening on the
+>> other links as per MLD listen interval. Unicast management frames sent to
+>> that link station might get dropped if that link station is in power save
+>> mode or inactive. In such cases, firmware can take decision on which link
+>> to use.
+>>
+>> Allow the firmware to decide on which link management frame should be
+>> sent on, by filling the hardware link with maximum value of u32, so that
+>> the firmware will not have a specific link to transmit data on and so
+>> the management frames will be link agnostic. For QCN devices, all action
+>> frames are marked as link agnostic. For WCN devices, if the device is
+>> configured as an AP, then all frames other than probe response frames,
+>> authentication frames, association response frames, re-association response
+>> frames and ADDBA request frames are marked as link agnostic and if the
+>> device is configured as a station, then all frames other than probe request
+>> frames, authentication frames and ADDBA request frames are marked as link
+>> agnostic.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>
+>> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+>> Co-developed-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+>> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+>> ---
+>>   drivers/net/wireless/ath/ath12k/core.h |  1 +
+>>   drivers/net/wireless/ath/ath12k/hw.c   | 55 +++++++++++++++++++++++++
+>>   drivers/net/wireless/ath/ath12k/hw.h   |  2 +
+>>   drivers/net/wireless/ath/ath12k/mac.c  |  5 ++-
+>>   drivers/net/wireless/ath/ath12k/peer.c |  2 +-
+>>   drivers/net/wireless/ath/ath12k/peer.h |  1 +
+>>   drivers/net/wireless/ath/ath12k/wmi.c  | 56 ++++++++++++++++++++++++--
+>>   drivers/net/wireless/ath/ath12k/wmi.h  | 16 +++++++-
+>>   8 files changed, 130 insertions(+), 8 deletions(-)
+> This no longer applies cleanly to ath/main, please rebase
+>
+> Applying: wifi: ath12k: Add support to enqueue management frame at MLD level
+> Using index info to reconstruct a base tree...
+> M       drivers/net/wireless/ath/ath12k/core.h
+> M       drivers/net/wireless/ath/ath12k/mac.c
+> M       drivers/net/wireless/ath/ath12k/peer.h
+> Falling back to patching base and 3-way merge...
+> Auto-merging drivers/net/wireless/ath/ath12k/peer.h
+> CONFLICT (content): Merge conflict in drivers/net/wireless/ath/ath12k/peer.h
+> Auto-merging drivers/net/wireless/ath/ath12k/mac.c
+> Auto-merging drivers/net/wireless/ath/ath12k/core.h
+> Recorded preimage for 'drivers/net/wireless/ath/ath12k/peer.h'
+> error: Failed to merge in the changes.
+> Patch failed at 0001 wifi: ath12k: Add support to enqueue management frame at MLD level
+Sure I'll send a re-based version.
 
