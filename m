@@ -4,116 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F4076C83F23
-	for <ath12k@archiver.kernel.org>; Thu, 10 Jul 2025 17:29:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15096C83F1A
+	for <ath12k@archiver.kernel.org>; Fri, 11 Jul 2025 03:54:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nO9/J2g6MEXYXBGRQgoDLyZy3d95jgA0xWAndv6yaRc=; b=bHP2zpNjWyicvfuUTxJNI5EZfB
-	UiQHN5Gx40GjwkP6v/MYD9wFD4IJwlrGnns6tbPNRPjTv6CgSMwHKCWoGNvN7FhUPAs4k87IhHhWX
-	7wWtz+IGkKyY2wAno7JWHlIsCZP7T31yhYfLBtpIg8BoOFeDubbnpdG23/b+tfMSh9tldgRGZaOCF
-	ZhJfAUgWnTCDTBafR3TNnJb7oV+UZ2Xk3MJgtYj5XcrhjeDRa9r1H/jaIFEJ6omtPhTXGtYWNNYYx
-	25/H33CUptrRlM5XJZkqcN0mwbx4lEXW9OGtKKE0pu/XPXIAtl7EgwDn8gQbcKk2l+dr4ftWGpm0f
-	nYtgr3vg==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=0rDiNYqRIxxdKLlgResYs6wz+SsoXhWzio/nAwtikfg=; b=LNBJ1NQJGbXlhK65jC8054Fl/5
+	1TXpVwyKl7Z0+UP1lMakZAflHDhmeOHJMTsntME8c2LgnKpKeaKWksyVvxSqX3W7FNMe0mQUSUtDe
+	18j8gq2RQhVppSQez5bPFvW7qwvUTOYBK8pdGY9kz3BCYLtNN8wsTwlpZH6i3DDj2/ULgcZITOfSL
+	KqzhNDO8AGGcCsibuk1dteeG2kiw+lL2oqryTHQtiP6v524gnqD+8R3yb9LI/cpPHCd3+ZSCTQNtd
+	v5GXMYY9zZ5RxMNDFIiUSClcKAZwG9xdp81442t2C9RGnC+faZzJZc1TJ7Z7MiXwWkwijbJHHBQB0
+	orHXy2+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZv55-0000000CaKh-36T6;
-	Thu, 10 Jul 2025 17:29:11 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1ua4qF-0000000Dc4V-2xtf;
+	Fri, 11 Jul 2025 03:54:31 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZsNm-0000000C8Of-2gKE
+	id 1ua4qC-0000000Dc48-3kbv
 	for ath12k@lists.infradead.org;
-	Thu, 10 Jul 2025 14:36:19 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56A9MJXB002667
-	for <ath12k@lists.infradead.org>; Thu, 10 Jul 2025 14:36:17 GMT
+	Fri, 11 Jul 2025 03:54:30 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56B1X9r2008013
+	for <ath12k@lists.infradead.org>; Fri, 11 Jul 2025 03:54:26 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	nO9/J2g6MEXYXBGRQgoDLyZy3d95jgA0xWAndv6yaRc=; b=GWhUMruBiDabRrcV
-	4vNvWAzfTjX1Vod/RSFK/rX+bFIFbMaW8KwC7nvr4pXyydJVP/0zTYs4n3Qz7lV0
-	5t8Q4pWOjHCU1X9+lfBYY5hEgA2exH7XQ50tvWk/4NGJP7mr0svYhDFO6ZulfJKK
-	wm/qjvyy0+03qCz8qGO2uoQ4F3LAU5QlaKtIUgkdyEQ3BhPIkJK/3HU9uGCR7W7c
-	acb8Uzb8HSW1tmJ1liBBRXR65TViTSdxPZRvCRPtuG0MeAgxQNlaibzGkaA2d8YA
-	oH0z4VRuj1EgzfwrcrE/m42YltI78V1bPzvoKhk6vVg99BZCr6l2p70NoXwL6FaB
-	nrok+Q==
-Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47pu2bgjbw-1
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=0rDiNYqRIxxdKLlgResYs6wz+SsoXhWzio/
+	nAwtikfg=; b=oHKJlgjoWq7lJ2VQlvWT5VcNHa75uy0NhyWOfUO/urWka1geMxs
+	rGte/2TBpNEqobc+lP4AOFEvjotZIvciTyqRjAxzpmGTG/RgcWrKZBHJYnkeXWcu
+	GHrA+LRL0l95yTN2lNTKuZXfCjHqxXC95Ys9Y5MZg3R6D5NeyebLDH3zzKOpDCLA
+	SycMOEGlsKXSoKbivfl5c+cYJMZHBLKQv+ddrLScILexfV9xb06KqqENZ1U94l+P
+	ygg0DsHQpCLwxr03OehLyLEhDat0yD+SIY/dPlZ36MS5XjmQT003GSU0e0gY+tnl
+	hAiOOjHZoF4LKIUMEIcPd1LoS65RdUUDuvA==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47smcg76n1-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 10 Jul 2025 14:36:17 +0000 (GMT)
-Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b39280167fdso965328a12.0
-        for <ath12k@lists.infradead.org>; Thu, 10 Jul 2025 07:36:17 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 11 Jul 2025 03:54:26 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2369dd58602so16721805ad.1
+        for <ath12k@lists.infradead.org>; Thu, 10 Jul 2025 20:54:26 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752158176; x=1752762976;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=nO9/J2g6MEXYXBGRQgoDLyZy3d95jgA0xWAndv6yaRc=;
-        b=vqf/WjGmg+R6ym9zKFU6oyAqXxu2DFSfcjkeCj0ECe1TaAVcUieSeJ1f4JFnDEYfiW
-         GIPxRDEBwWPQsTfqbL1s3rzKLu7awwVNVrKt3g1zQBLu/I2EPwjUhfmB3MpKQUXxFZcC
-         m5vUZ4qReRkt3+QmjfvsFGL0YqFGVjRSFBfvyZ8ZmI/HuoFEHTL0yukbkqfU6stcHsgT
-         JDiNaAyupGxY7MQ+BeR3UxcHeQty0PB2s3ddbMguewpCnw04oJLuCPOYBc464yH1G4Up
-         egsWSJvR7zCE5XRAf0yNj428DJ27KfSBITD0MEo5j+B14xbB9ArLzY372kg7jGPx9Hs8
-         D9/w==
-X-Gm-Message-State: AOJu0Yy6X9lz5xEQ2W6W2mTBWDA9TVZXavj0fTJrnZLHtTqIOeLbYv2W
-	BhrV3y1XC/1HRdMJxK4+eYPnbbKYJAIZiRZIDz50vt7JhUnReHl2bS4FVKudKrb5KDYi1yOhy5X
-	999stPvtyn0vuMgUA3BFoS0GCKYXhkKCurwpoZ8aac9zL0eHuo8siR/OWU9VDB4511wUJtKFg
-X-Gm-Gg: ASbGncuE+yR04zOxkKQ/CfiGZdv0ziOZRppKhm6KMBzXK6KLRxJxa38jLlHUqrOCvK5
-	ivvskMEtm9AS6eIMtbmHZBzL/h/8utIAKHIABg+Z3JixHyrwM7C1wq7M8XbruEKRiuao8l+vWXL
-	1lPS4tvb20wQ/Bzh9/q0b4QAK3YWmrPQoltaScWuoHP0R2796+A7pYdJhDjUWwMCoU9slMCAoyt
-	tWG7Eot9Gt8XzqT07qwLPVcW2PlxK+yDguaVX1N7jq19k6dNkJFu0UNvOp0paXZ+Oi5TTT/PuwB
-	//3y7uY3IspcA1dDREVOiHsVDNJfdRMHvblzVTou3vY+8StFHGpzc/D08kE=
-X-Received: by 2002:a17:903:2f8b:b0:234:a139:1210 with SMTP id d9443c01a7336-23ddb324c2bmr103419345ad.53.1752158176156;
-        Thu, 10 Jul 2025 07:36:16 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IE1Zokh1fcL5c3QnWz/baL6/aPcJgSi60yGHw9IN+krJB3T51qEgd3aFnlsdF9pQ7bhT65Zxw==
-X-Received: by 2002:a17:903:2f8b:b0:234:a139:1210 with SMTP id d9443c01a7336-23ddb324c2bmr103418695ad.53.1752158175401;
-        Thu, 10 Jul 2025 07:36:15 -0700 (PDT)
-Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23de4359a86sm23758055ad.210.2025.07.10.07.36.14
+        d=1e100.net; s=20230601; t=1752206065; x=1752810865;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=0rDiNYqRIxxdKLlgResYs6wz+SsoXhWzio/nAwtikfg=;
+        b=wZQfNaoFSEliEh1e/2anXWU0lZupbhnFkIhA7HDkKaLqOy/0BUHgpHiqy3Gw2wiSIK
+         1Sw8gaauFsNBxp7jcn7+EZQcOvCKNRy6pqtjdjhZiuO3eQnhe/SgaXqtTqUlLaIQJjR9
+         Bo/01hsPWtq0GXgP6g8eP8imlx1hqj+uthi49Q+3X6YByYcNAO/vwMT+7S7FOGMLYqog
+         y6bbckPiFMLlqVJpnCk1wulke5e1jN5v4EFdbJKG5pWAOLUdcdMRGOegkDcSAbORy46p
+         yp4oTzU9iyvsIZTYFTDRupzGHadyclVAB5K8HGaMPxV6vDvvE4QZdx1fVGePyaPhmvEv
+         JCsg==
+X-Gm-Message-State: AOJu0YyKgVPY7R6cnIrt2m6TajEcQlAiP7wsfdxw9X7MDdjXqnz6+VUU
+	bdd0GeGzBUaejOyqQSdXlpo0XP2Xz9tlrC8ef0IgMGsvsvrscGtXFH+KxjNuVLgittPH9V7EnQr
+	7YEsnP/tLWgnXHGK5TG6/NkDXA0Su1kbVTqKfE7fQ1o/RhOKa/gzN5iGpoekZ0oKqOFaX6STb
+X-Gm-Gg: ASbGncvnBnfcIkt24f+TDp+h6GahEB7f2fKYD4wCbU86epa5oh+6BRvHnXaYmG7nrpW
+	pPv/WUfgHuCGG7EdyuBnaG9wQfy7QECWxlIs9z0gSIztubzuD7dz9j5Vl0GcvB6JmHzioSZXb70
+	YSR3knFbnk40urTe3v9SVO0ub2t4ldhZz8hVw/GpTapSXE9R5YcgtMOlTCDYprPhRmqWZM2s4mB
+	8Uf5J8iqmIvPD4Van061mU7QjzyvYHxoeyafWhXQ7lcY0sdMDcXwYVxrtWpPytraxvRyHAXPVh8
+	/HslA0hxF2RXijH/nFOtLd+PAh6cgYHJCdmm76ksgKhcppgxrVcltTXxkD6NrbV1eljRENSOYZ4
+	7d2sLfpTWojxNOb5XNilhTNvXMbYRdYAi02BXnYVKDNiCun7nYcw9x0nmZl4aWBk=
+X-Received: by 2002:a17:902:db0d:b0:232:59b:58fe with SMTP id d9443c01a7336-23dee188917mr27510915ad.1.1752206065232;
+        Thu, 10 Jul 2025 20:54:25 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHyl6CXQ0tPOFGk7bRBeDKH7D1Us/qoeAmGvTAxvCVFhFU5ynuL7qB0MY/R1EA6oPs6a/HUxg==
+X-Received: by 2002:a17:902:db0d:b0:232:59b:58fe with SMTP id d9443c01a7336-23dee188917mr27510625ad.1.1752206064807;
+        Thu, 10 Jul 2025 20:54:24 -0700 (PDT)
+Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23de4287217sm34793605ad.9.2025.07.10.20.54.23
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 10 Jul 2025 07:36:14 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: ath12k@lists.infradead.org,
-        Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org
-In-Reply-To: <20250604101620.2948103-1-karthikeyan.kathirvel@oss.qualcomm.com>
-References: <20250604101620.2948103-1-karthikeyan.kathirvel@oss.qualcomm.com>
-Subject: Re: [PATCH ath-next v2] wifi: ath12k: allow beacon protection keys
- to be installed in hardware
-Message-Id: <175215817445.507672.4103011704261170558.b4-ty@oss.qualcomm.com>
-Date: Thu, 10 Jul 2025 07:36:14 -0700
+        Thu, 10 Jul 2025 20:54:24 -0700 (PDT)
+From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+Subject: [PATCH ath-next] wifi: ath12k: Use HTT_TCL_METADATA_VER_V1 in FTM mode
+Date: Fri, 11 Jul 2025 09:24:20 +0530
+Message-Id: <20250711035420.1509029-1-aaradhana.sahu@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.2
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzEwMDEyNCBTYWx0ZWRfX7yO3GbPNZ38U
- a63i9/QF8ua65p/QgjymvHognCgWDUWPngWLzh8LSEBD9pNo0642kq7526HnCIccCJ3VCJBJcn/
- i8wD3veMlamXEyHStcNwTFfs+Hwsnr/yj3cLk7ZLo1JvAIvkwm/F3F5RC0ZYyib/VUyLmHNx2xX
- RIAUXD9rz8488s1NGMBxENLLDcuL6o739eOhKLkk0jx9t0CB6oC6nE+MKIsSjq/B7nVNet+BbII
- BTSpPYrVDHArQhVnIu8Zaq7XU+rkjqZnkYtXhQxNvFQfWq4TYvj2jypCan62C4oqXhdMaovwHJl
- kajSTgUXAFFBu0zusqgmSBVpyNRibQlCTMMm74ex7BtMBkr/ULEeQ6DZv4xnphd15o6z2MfTapC
- rJBtlqrAPXGNP4ehitmMET17u2HpSLJPlhlMP9bknX2niiFH/XmbL8EsjCrGRxobdZG90B6C
-X-Proofpoint-ORIG-GUID: Ne7RZyHHvGejhpXOBZWhpsPIbWlYtO2H
-X-Proofpoint-GUID: Ne7RZyHHvGejhpXOBZWhpsPIbWlYtO2H
-X-Authority-Analysis: v=2.4 cv=erTfzppX c=1 sm=1 tr=0 ts=686fcfe1 cx=c_pps
- a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=jPXFS5PPpB_IzyrbQoAA:9
- a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
+Content-Transfer-Encoding: 8bit
+X-Authority-Analysis: v=2.4 cv=P7o6hjAu c=1 sm=1 tr=0 ts=68708af2 cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=EiwlDgHpknFOdVPVacUA:9
+ a=GvdueXVYPmCkWapjIL-Q:22
+X-Proofpoint-ORIG-GUID: 1OG9meHuJH9uDo49Kli0uIaid6iPK1ZE
+X-Proofpoint-GUID: 1OG9meHuJH9uDo49Kli0uIaid6iPK1ZE
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzExMDAyNSBTYWx0ZWRfX34fhYCp0azF1
+ tRP6TAQxHU2fXx7PixgCAdiHeuQjNVb78ec9ke13EN5nNGIDSFzreewdNXh1SmGJ769Uub1G3rj
+ wWTAt5OekafH/2b/8888W8P4YMYXGoljDhaYbisYdFmcTZ1iDtnkaqN3xtVda++UekIrKwuWNN7
+ 7Sub06oeIPtKOmpPKq3wm2HG9YboCrVSwKGi/Xb+gX4dqx780mcaxCyFgUQGwoUr8z4vgveXENo
+ xZaFWGba4Z0FYXt3FD88ZBHJqR3LGpOk5QHqUA+Rpq6sieWap+slLvS2H8jfiEUp89rAHI0cRj5
+ 8fjnTWMv2owG59DalCSwGNkYki/ZW3jTsLfvl2YpahMnyvH2MRg6jtcx2c/QqmieVF6XW3CHuPw
+ fFuxxx3Plk7taU10WvozbnLwqq8CpjcciX0eKANE1wC8pAVdM4afiaXuOqLZZ6+QFTs6V0Kq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-07-10_03,2025-07-09_01,2025-03-28_01
+ definitions=2025-07-11_01,2025-07-09_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxscore=0 clxscore=1015 impostorscore=0 spamscore=0 priorityscore=1501
- mlxlogscore=958 bulkscore=0 adultscore=0 malwarescore=0 phishscore=0
- lowpriorityscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2507100124
+ impostorscore=0 priorityscore=1501 phishscore=0 bulkscore=0 mlxscore=0
+ malwarescore=0 spamscore=0 lowpriorityscore=0 suspectscore=0 clxscore=1015
+ adultscore=0 mlxlogscore=999 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2507110025
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250710_073618_796900_C2510998 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20250710_205428_943941_9B68FC0A 
+X-CRM114-Status: GOOD (  13.81  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,25 +124,71 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Currently host sends HTT_TCL_METADATA_VER_V2 to the firmware
+regardless of the operating mode (Mission or FTM).
 
-On Wed, 04 Jun 2025 15:46:20 +0530, Karthikeyan Kathirvel wrote:
-> Install beacon protection keys in hardware for AP modes only if hardware
-> supports it, as indicated by the WMI service bit
-> WMI_TLV_SERVICE_BEACON_PROTECTION_SUPPORT. Allow keyidx up to 7, since
-> beacon protection uses keyidx 6 and 7.
-> 
-> Control this feature by setting bit 0 of feature_enable_bitmap when sending
-> the WMI_BCN_TMPL_CMDID command to firmware.
-> 
-> [...]
+Firmware expects additional software information (like peer ID, vdev
+ID, and link ID) in Tx packets when HTT_TCL_METADATA_VER_V2 is set.
+However, in FTM (Factory Test Mode) mode, no vdev is created on the
+host side (this is expected). As a result, the firmware fails to find
+the expected vdev during packet processing and ends up dropping
+packets.
 
-Applied, thanks!
+To fix this, send HTT_TCL_METADATA_VER_V1 in FTM mode because FTM
+mode doesn't support HTT_TCL_METADATA_VER_V2.
 
-[1/1] wifi: ath12k: allow beacon protection keys to be installed in hardware
-      commit: 27ba973caaf85ff3a2a23eca33d6dc9b4fe405e8
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
 
-Best regards,
+Fixes: 5d964966bd3f ("wifi: ath12k: Update HTT_TCL_METADATA version and bit mask definitions")
+Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/dp.h    | 1 +
+ drivers/net/wireless/ath/ath12k/dp_tx.c | 5 ++++-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+index 6df07b23b705..03cafd745c0f 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.h
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -469,6 +469,7 @@ enum htt_h2t_msg_type {
+ };
+ 
+ #define HTT_VER_REQ_INFO_MSG_ID		GENMASK(7, 0)
++#define HTT_OPTION_TCL_METADATA_VER_V1 1
+ #define HTT_OPTION_TCL_METADATA_VER_V2	2
+ #define HTT_OPTION_TAG			GENMASK(7, 0)
+ #define HTT_OPTION_LEN			GENMASK(15, 8)
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index 1fa37cda1046..f568ea16eed8 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -1194,6 +1194,7 @@ int ath12k_dp_tx_htt_h2t_ver_req_msg(struct ath12k_base *ab)
+ 	struct sk_buff *skb;
+ 	struct htt_ver_req_cmd *cmd;
+ 	int len = sizeof(*cmd);
++	u32 metadata_version;
+ 	int ret;
+ 
+ 	init_completion(&dp->htt_tgt_version_received);
+@@ -1206,12 +1207,14 @@ int ath12k_dp_tx_htt_h2t_ver_req_msg(struct ath12k_base *ab)
+ 	cmd = (struct htt_ver_req_cmd *)skb->data;
+ 	cmd->ver_reg_info = le32_encode_bits(HTT_H2T_MSG_TYPE_VERSION_REQ,
+ 					     HTT_OPTION_TAG);
++	metadata_version = ath12k_ftm_mode ? HTT_OPTION_TCL_METADATA_VER_V1 :
++			   HTT_OPTION_TCL_METADATA_VER_V2;
+ 
+ 	cmd->tcl_metadata_version = le32_encode_bits(HTT_TAG_TCL_METADATA_VERSION,
+ 						     HTT_OPTION_TAG) |
+ 				    le32_encode_bits(HTT_TCL_METADATA_VER_SZ,
+ 						     HTT_OPTION_LEN) |
+-				    le32_encode_bits(HTT_OPTION_TCL_METADATA_VER_V2,
++				    le32_encode_bits(metadata_version,
+ 						     HTT_OPTION_VALUE);
+ 
+ 	ret = ath12k_htc_send(&ab->htc, dp->eid, skb);
+
+base-commit: 3a6df1678acc3687d49ce94e23df7b6a289f27f9
 -- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+2.34.1
 
 
