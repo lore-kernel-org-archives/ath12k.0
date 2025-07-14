@@ -4,116 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D47F0C83F21
-	for <ath12k@archiver.kernel.org>; Mon, 14 Jul 2025 15:08:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B54AC83F1A
+	for <ath12k@archiver.kernel.org>; Mon, 14 Jul 2025 15:08:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=rN3xI+b2jQb0LT3/s36eZ2egfjGu+f/4HTByzPiJLj0=; b=wsOA/QgLC5UiZpe6agvXggD9jz
-	OfeYgSnz27oSCT9V8Glvd5Ec+UfX14sOfvLN7kgW4Zwh2JABzqQocdAnzqjzm9Ey9UTloExGAHmEa
-	sBtyjCCEOwm2bsZGmV1f7SeE0+bZGnB7fvrvV4SbanvbJRajBcZZ1CTOCBOG82VLo6AcMd+tVhtcR
-	JvMSloymXVS9PVxLyYUl4KRLROvL+w+AKuExqKEZLCloU6YkNyC/BLUnUSIY5+oKIbnn1Isu5BR76
-	1koYmkgOKITNsl5wcJp7SSpe9Np+WE66UNfVSexrr0Pj7g2s2am967zz57fdMzU1wklyzheomVJy1
-	jc8lU1og==;
+	bh=FLctuXiHSBcuYBm1XwBnz0H12VzIyMQ+L/Z0NIan27c=; b=PsmEbi505Uqt2Qdhhn5Y5I2zgF
+	bT91x9Ld3Q2Ldfc8+MAAUVpr9sAJrDW6fmXXpGL/espotKhe6ok7Z+XYxHoRHV8a2yrOp/Zf0a/AN
+	HCyPcAfjSJQ+QReZgAH7jP1LrfcnypjGChfwArzxo9ZPcVve3PwlP2KN27yeTG8wcC0f75dTil1Al
+	VH23swKJyU60HtSYxeFtb3I+m/aUFJrByHYx+0dUbxYT17I0SwEap9EfTtJ8jbs9lIzg5DVStYjmX
+	Px/0i8NkErFO0PgGnFn1CawcabUG6o1GwJ2ufZnFlFq/GebEFHcIWStID3/biBaMgA2auGl91ibrH
+	1PwBYUhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubKnV-00000002ZwA-04Sp;
-	Mon, 14 Jul 2025 15:08:53 +0000
+	id 1ubKnZ-00000002a29-2b6C;
+	Mon, 14 Jul 2025 15:08:57 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubKH5-00000002UmR-1gPD
+	id 1ubKHB-00000002Uon-2gm3
 	for ath12k@lists.infradead.org;
-	Mon, 14 Jul 2025 14:35:24 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56E8lptN016104
-	for <ath12k@lists.infradead.org>; Mon, 14 Jul 2025 14:35:23 GMT
+	Mon, 14 Jul 2025 14:35:30 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56EBgIef003143
+	for <ath12k@lists.infradead.org>; Mon, 14 Jul 2025 14:35:29 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	rN3xI+b2jQb0LT3/s36eZ2egfjGu+f/4HTByzPiJLj0=; b=RH/jC2akp9/04loj
-	rWB/OqxDPo4yJOUbazoble4MWsmKlNuWc0CzKYvhIaN5w+oX63RxIP8vprEvddTW
-	hbptpdvVzkNRW5Fy+ovBdxUN6/I80ZlFcMvBF8rtvzYj0nQYz6Ywi2cyfK5MaQ6W
-	Wgvg/ysSdLw2oaVlmguh508im0uKUPuQYPAyqQFKSmQ5ZN2U7Hs7mkMWsQ6cY7Nw
-	4V/JSyH/TOPvMg3pPwO1iuIdDG7CceJFVWg8QelSZ/SsXyVe8w78gO/qJ9vhrtpu
-	1L98ekWmEAeALRu4dSxLmAyrY6qioBkqHO/F9cAZedhk7Qcy1JiNp/KS6MrJRyt+
-	ThyA6A==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47v56a3gc0-1
+	FLctuXiHSBcuYBm1XwBnz0H12VzIyMQ+L/Z0NIan27c=; b=M+bVfy5zH0j69J8P
+	kb+WY9NvEx5KHa3YNLzkHFCDXiHv61PdArn4AUMn9sbsm6AQSFknt9lZd2LPiPHX
+	Xy6cMbFllE8Q8V7ngi4DeEUhBEk6lY3IF5LG7rrAi9wmeiJ2PqvJPSSQC8DNI4Mz
+	fuFulOPbKPvg7PGG9LkjxsEo05MlqoSND4oKGZRRRtHdTEkPzZN1R4oOyuZ3bsdD
+	QDNTJlekMh+Nir0aGOofpVfX7g98m7XUfsQULRO+DQl4oaPtwEH5TCQoLnIH4A7v
+	zmWg/cGvzIyfciNFns9NYhXJRutRIFK3Lsfeuth27pSUlH5zApS3CWyUJESF+tJg
+	TsOGDw==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47vvb0sgjd-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 14 Jul 2025 14:35:22 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2355651d204so43509645ad.2
-        for <ath12k@lists.infradead.org>; Mon, 14 Jul 2025 07:35:22 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 14 Jul 2025 14:35:29 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-237f8d64263so44979225ad.1
+        for <ath12k@lists.infradead.org>; Mon, 14 Jul 2025 07:35:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752503716; x=1753108516;
+        d=1e100.net; s=20230601; t=1752503715; x=1753108515;
         h=content-transfer-encoding:mime-version:date:message-id:subject
          :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=rN3xI+b2jQb0LT3/s36eZ2egfjGu+f/4HTByzPiJLj0=;
-        b=NhaBXG6rnjyFZSACrFPkLgrOoq9ptAePBLIgJ2B+hrIJhpTgSrWA96Z79UoKjJuh5a
-         rOobSElrz/QWFJNe4sao/bKEyn+YcRt3+Q6wl5/UcdDa491ip5btjXjKU0fYseyrKyHS
-         3zmW6TtIMoUeb3GoSINKNAvBCWqfEc3j9Ijyv0FJmVFDhk0Ctf1Ljx4v6XcM4JRWTpOo
-         dQBh+WAQoUdo9+23/8MePYv3SxQacDu2Qiyoxpz/8IX35bgijf5ZMAo/kKgZQXJxNR7n
-         GNFqI8LBUeVyhXLoLH2MN0Tpp4cwoZub/atoUwD40F5yhviZphXZvj4yoBBBvykgeJxx
-         zHhw==
-X-Gm-Message-State: AOJu0YwqCcSixSAHImZgGo/WbsDpwxUa/z9dIRHXq8yOXe91nMNMWstE
-	oupXd6B8ETmIsOpLXQiRICLLE2Qph+iozzWRPqE2aXps7V6Qnb68mF1GoEoO7BzSIsCTIOhqv9y
-	HySU/FhPdKB3H7LEIDnnpaFItYBq4qlG47fSeURITTXGp44X5OyjzfhYBwXywixGMkEi0VGah
-X-Gm-Gg: ASbGncsLb05cmd9bLwepqO6IcrXW1cdzLYUB1oBV1u4ieUIc2tmoM1E2d1/GWwQkrq2
-	8wTwdYq6KiQgnh4HGQ934eBYXj1+s/Ob52Dt9Iwk+UsAptZdvMGWf+Dbg3GXAa2+BlKtv3Dy3MJ
-	iziGR1T6kBPzajS0dxJtjGHFILrb1bbpAXuBMQ6zxid/s/ltMBpYnk2zkvVyCO5KiSARFep+EVh
-	ircvagZBnokdAcFinYTNOPAkzmrN16L93gsTGyYV1w5iFUXv8HD7HnJDxfVNrsjcD+NFftbnA8a
-	mgn6NGLMu3spCso3fKhdUl3EhK8hRIe4oVCw/Klez3WZ+P4xqemS9vXxoWu6Sp5H/nXyM8n9YO3
-	X
-X-Received: by 2002:a17:902:f603:b0:234:d292:be7f with SMTP id d9443c01a7336-23dede7d45dmr179425365ad.31.1752503715833;
-        Mon, 14 Jul 2025 07:35:15 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGe0JsKnhzgQMV0HTKNkoIOJWCm4t2UqcNbD2jbln+6oqnUb0KMlhnhxmEtmpq7iTEOsr3aZw==
-X-Received: by 2002:a17:902:f603:b0:234:d292:be7f with SMTP id d9443c01a7336-23dede7d45dmr179425015ad.31.1752503715222;
-        Mon, 14 Jul 2025 07:35:15 -0700 (PDT)
-Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23de4331900sm92953295ad.150.2025.07.14.07.35.14
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        bh=FLctuXiHSBcuYBm1XwBnz0H12VzIyMQ+L/Z0NIan27c=;
+        b=JV7OxeMqGbtoKznUI30WVAgLgrZvb1WoGTbgKKDgeVfelsY143OKExxi86ywd8Obwq
+         Md5TpNqiStu6kodVzfauSV7uhm/BcT371cZZJ4Oaag+OO3cnuSH8c1eOcJuoEdTS3HTb
+         7fwbF0JMmKQFyaeKnwPRvgGIXg4tRPlVZiBNk5+T2aNPVApyejRu7ts0LVEK4SIVJYPz
+         9bj9SkJ+d3XP6k5yoXVPysOXxMpBBtYqlSyn2U0kgV33BjVFN1MECtLBFVYYwv3PHgS6
+         kkzSR3oiS7pCPTIukoYi3oBlzblgudMbK8uSdWWx1UGjBn5+VUGb6PjwT4NeIEUFJAVt
+         IGJA==
+X-Gm-Message-State: AOJu0Ywwgio6KKhFQcwOU3mEZ+uuy89KD9yBL2Hl/PZAIVqgs/Eeq1sG
+	QNk0GdetB5I/oGTK4sQRFsjuko62h5kfa8xEtwZuxd6Wn3znv9txBvcqSmcy2HfBKXthC4f+cos
+	12skt+tHQK3+2gqx8ozmXnP6+xO/YmmZKnQZ900bN8Hv4QViqb/cMhTFvi9msxP8VUQU3+P1q
+X-Gm-Gg: ASbGncsgHP+cznZgzXEyTe2bOFCUfvV/d2iKuIEGxaxp2wD+c+Y3gI5O5ysYa7cFGgl
+	BpXcgGcLa290+Eh+flrav44ke1NQZQcOTaTHfWhye8Dw9XaDNwn5wtXRcvB/ow3G7qqgWPQiVnt
+	BtIJzKpUZbRqxZ7d0kkPSXIXIhfYvRhH4laJxoovU/7yeKXPnezVRJHcq2WYZ3OeCeWCmyAH6QD
+	BGEV5Qa74VhdfsVhtw9ih7XTTMpL8cZAyVHn9WOoifRW4ucTrMrCG+9TbTYV00ZVhHfB20LtgkN
+	nsD7SiQlCfqDSl+GXCl3iZczCFzlrjnWbTlNexSKcqoIXbI0gsT45ez93RkyNm1HVe7f84Xa2ZF
+	l
+X-Received: by 2002:a17:903:a8f:b0:223:7006:4db2 with SMTP id d9443c01a7336-23df08e5749mr158408175ad.31.1752503714753;
         Mon, 14 Jul 2025 07:35:14 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFi5rD+uOGDiBjwM/aLthago/gBGI6moarVWfChK08r17vdvcrpihfhmsyUMHK8aZkVLWP7pg==
+X-Received: by 2002:a17:903:a8f:b0:223:7006:4db2 with SMTP id d9443c01a7336-23df08e5749mr158407845ad.31.1752503714301;
+        Mon, 14 Jul 2025 07:35:14 -0700 (PDT)
+Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23de4331900sm92953295ad.150.2025.07.14.07.35.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 14 Jul 2025 07:35:13 -0700 (PDT)
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: ath12k@lists.infradead.org, Roopni Devanathan <quic_rdevanat@quicinc.com>
-Cc: linux-wireless@vger.kernel.org, Sriram R <quic_srirrama@quicinc.com>
-In-Reply-To: <20250711091704.3704379-1-quic_rdevanat@quicinc.com>
-References: <20250711091704.3704379-1-quic_rdevanat@quicinc.com>
-Subject: Re: [PATCH v3] wifi: ath12k: Add support to enqueue management
- frame at MLD level
-Message-Id: <175250371444.2067518.17555745608400098717.b4-ty@oss.qualcomm.com>
-Date: Mon, 14 Jul 2025 07:35:14 -0700
+To: ath12k@lists.infradead.org,
+        Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20250708181102.4111054-1-aaradhana.sahu@oss.qualcomm.com>
+References: <20250708181102.4111054-1-aaradhana.sahu@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next 0/4] wifi: ath12k: Add low-memory profile
+ support for QCN9274
+Message-Id: <175250371354.2067518.12210451739869139013.b4-ty@oss.qualcomm.com>
+Date: Mon, 14 Jul 2025 07:35:13 -0700
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.2
-X-Proofpoint-ORIG-GUID: CdUsKzsWECCmyiinfATy8incewQG7Lgj
-X-Authority-Analysis: v=2.4 cv=X7BSKHTe c=1 sm=1 tr=0 ts=687515aa cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=KBP__w1C_Dc6RnaA_GkA:9
- a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-GUID: CdUsKzsWECCmyiinfATy8incewQG7Lgj
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE0MDA4NiBTYWx0ZWRfX7H6Bxw71qAR5
- tNoRSkKNfIvGEJY76rGktT8PQ6TM1Vspg9A571lTbgaQnrM7LCwpSBLJPGRcU07F4XsQsiUg17l
- ywoQubLumiATvJy446h+3GfRK2nrJnikid6jBkoJ9AEkEzGRkCRn2lIFyneWtHdAxxPHIhAz5dP
- +32aRjsYZcmZD729rIRcfWeETMC0D9Bs3e1/Zj9XMhMlh8L/yXVnupbc3yN2UzSBJAH1KLc6QCM
- gA3gnbUzQkwMehTEbL/Go8O1DJZLo402PR9Ghc8vu0EvKAAqO1uQPE/j9YmnPv+7+O025KUPpPQ
- F+5G1NRFWkQtcbBq0W92a4BZQe1i1v3Rw3LQGban5d3LtQRibUwmAXcJLnHgbrB43Wg5lDPCDkC
- FaapDMf9lrn2L4W04IMkFUdEYDnodWaFNkRDIhI7WCtf5t+EvsckvKUdsJhDv7h/0vh/CYAS
+X-Proofpoint-ORIG-GUID: ZWgnYdIkEpOuZ1PFIpjFWzNCLYE-D1xJ
+X-Authority-Analysis: v=2.4 cv=B8e50PtM c=1 sm=1 tr=0 ts=687515b1 cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=RSy2FYVPLGd-QfB_Y74A:9
+ a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-GUID: ZWgnYdIkEpOuZ1PFIpjFWzNCLYE-D1xJ
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE0MDA4NiBTYWx0ZWRfX9srjW2tBEgi9
+ ZxX/vBDUWoI+09lEZcosq2HixoOe1OqRHFcYbJQGk13eep0u5x4xuM8Fh+IQ9a2UBHpQro5YqzB
+ CsSin2xFT1JFkyCfbznl1bSO5LvpxLnwSmrFVyFKOV+xpxIG4cO2DRYQR7ulGOLmg1SJD6vQjLe
+ //ZAyOhgKyGD3EB8uKGegswmaGqz8YweILzM2+9itQe3KdoLgIhvIYE7THQg8yr/3A5GPJK0Unr
+ n5iBkm5ggOD9MhCs6peFKJQyLPc7rYjlJ1MhE3VAEciVftrAvbu+rF+ZAq2VBGkOykl7FQ1tD13
+ N3yOPgss8CYQ8o09uRWia+a0YmOunZbVJ4qBaXBBbJEYuC4qKgBLkOcJEuMnpMfjwwztvoO67GK
+ p7sfMiMWciOtHUIKXfozwXc/Bz72wmqb2gB3xwbcUrl024r5L4pE8jMwErCWTYfY1G8xk3QT
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
  definitions=2025-07-14_01,2025-07-14_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 adultscore=0 mlxlogscore=918 suspectscore=0 phishscore=0
- impostorscore=0 clxscore=1015 malwarescore=0 mlxscore=0 lowpriorityscore=0
- spamscore=0 priorityscore=1501 classifier=spam authscore=0 authtc=n/a authcc=
+ mlxlogscore=782 bulkscore=0 clxscore=1015 lowpriorityscore=0 malwarescore=0
+ phishscore=0 priorityscore=1501 impostorscore=0 mlxscore=0 suspectscore=0
+ adultscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
  definitions=main-2507140086
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250714_073523_463078_3C9BBB06 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20250714_073529_688307_CDBD83D9 
+X-CRM114-Status: GOOD (  11.35  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,20 +130,26 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 11 Jul 2025 14:47:04 +0530, Roopni Devanathan wrote:
-> A multi-link client can use any link for transmissions. It can decide to
-> put one link in power save mode for longer periods while listening on the
-> other links as per MLD listen interval. Unicast management frames sent to
-> that link station might get dropped if that link station is in power save
-> mode or inactive. In such cases, firmware can take decision on which link
-> to use.
+On Tue, 08 Jul 2025 23:40:58 +0530, Aaradhana Sahu wrote:
+> The ath12k driver currently assumes availability of ample DDR memory
+> and configures internal buffers and descriptors accordingly.
+> 
+> Introduce support for a low-memory profile to optimize memory usage in
+> constrained environments. This mode is useful in scenarios where
+> memory constraints are a concern.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] wifi: ath12k: Add support to enqueue management frame at MLD level
-      commit: 9d2abd4162fca8a1eb46f664268dffad35c8ad20
+[1/4] wifi: ath12k: Add a table of parameters entries impacting memory consumption
+      commit: defae535dd63b1eb78ba87d5b8c0b4fb5418fe0c
+[2/4] wifi: ath12k: Remove redundant TID calculation for QCN9274
+      commit: d11d81c46987720e022dd4008d4d1f1f63312e3e
+[3/4] wifi: ath12k: Refactor macros to use memory profile-based values
+      commit: 6397b92bbb00f7cda024056c8c8a10594a27ccaa
+[4/4] wifi: ath12k: Enable memory profile selection for QCN9274
+      commit: 545b669403d72cc4a1cf5d93b3fce0b6a85833f7
 
 Best regards,
 -- 
