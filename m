@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04C6EC83F17
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93E94C83F37
 	for <ath12k@archiver.kernel.org>; Tue, 15 Jul 2025 19:19:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,109 +12,111 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=n83EQ6KplxBdN8niFuzxAF76NZhTqT2FpXssYODZebc=; b=SrzPGoEqWkqU4r2mRpv3ZZVlSJ
-	q/88KRQ/eir4dzBPlM2Kki2YCbPYibkiS10sZuHUW9neNre6SiUKhb8H0SDKvBRmhQCNUv5adPV3h
-	RU+KqazE678YKCbLCK4rP+h1/7JV0kUK1s8qI6i5fKBafCawrcuc5zYRzH94RGjLfxwNPV3FMsaoQ
-	zsqCzWnfOr83l1U0uCiRmqfU3dJBsABZT/c0YcQHiW9IuzAQgrRgwVdhKB4LjYfAm2l/GxdACueN0
-	8+saQWyuGr0k4LeybQTKpCCS9SQ4k2m0tMxx5cdni9DZD9hMtaRRl+e7Q172RDkYFTqk8lO0/f/rG
-	nBuryEBg==;
+	bh=mk/I29S/oFEoqtLU3bTKX52ZMG1AMTJAoA9iVUvagVw=; b=H1TH0zGzzXjzjLrNswAt8u9Wap
+	M7TOLlYH9C6HfArmCZINmSpUQp5slpD1mpU+mEmwqVOA8JCabtyINQENnKLQvOqvhXVmVy8xGMMNp
+	DOsoNaipMqWuPAiltLIL+bELDNJs/5D98oFOsyB41qo2Wt7Qczq0k0881qBnXHmJOj/4znS0hRx9/
+	rOS2JiIGYcwD7nycn8j05gmX+yht5L8N7CCCREdfzWZ02JINgC2btLlV+ZE6YxSuy8Cp0bjdpPZz7
+	BobPSh14YTRh9xfGVcD/bbK69w5RRgAMbUQzl59rmA++Pw2qNTkAq1rPWZLvUtAUBWuPRhqLT3aJ5
+	+Z76R8jw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ublBU-000000061ST-2zxW;
-	Tue, 15 Jul 2025 19:19:24 +0000
+	id 1ublBV-000000061TO-1IoQ;
+	Tue, 15 Jul 2025 19:19:25 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubiRr-00000005jtw-42YO
+	id 1ubiRu-00000005juM-0geI
 	for ath12k@lists.infradead.org;
-	Tue, 15 Jul 2025 16:24:09 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56FGDgW3025524
-	for <ath12k@lists.infradead.org>; Tue, 15 Jul 2025 16:24:07 GMT
+	Tue, 15 Jul 2025 16:24:11 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56FGDSg9014577
+	for <ath12k@lists.infradead.org>; Tue, 15 Jul 2025 16:24:09 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	n83EQ6KplxBdN8niFuzxAF76NZhTqT2FpXssYODZebc=; b=Ajk7F4MsTpPv28NI
-	EKNfV3u7ji1pukri8imGRTnpfTrtxHCNfRt8D4ZXwnbfstmWj1nlaIHB2EHBhKYd
-	sTZFdAnwl0Q2C1Ed5SEUbFTz4UXoGjoTHJw1Wp4M6DTzL6fmsOrNnK1iMmt4qio1
-	Pc/2LacsFH6ComtRsrJgkaSqiSwl5jU5GYEmlJbFIZJI7zSFOXMO/JcuE4YQsgAp
-	geK+orQ6D2bXm1uegFJAut9GA0PXQEuhGtfGoXjl3J9kBVShE+5jPaCC9ljyenGO
-	DVX5JWnFp+4vY1OuwmDkIT1OO6Lvh5IOuOjGK9IHg/azeF6Yz8qc5GOC/epfNHz4
-	dbOssQ==
-Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47w5dpbu45-1
+	mk/I29S/oFEoqtLU3bTKX52ZMG1AMTJAoA9iVUvagVw=; b=Vt3ZOzzjjI9YESZF
+	9kwbCMW2PbIlu7UHN+CuiykqkVaIenmbMbM1OEMnEO92Z8+yJxCK4Eo9YFthFKqu
+	oeULqdP8JstMaGvtMN5EaOE/m4Rzrj555UQ/YiLYhvFjXc6Q5azUOQt1+T/lQPTG
+	DzqvmcuSlv1Mtw2vrkKD9bVV+8eIwgZJvNmXFwtfPyQ/6gksiwJUTm+HOXTPLqVl
+	gP/BTTY6V9BJRUwuSZ5CYXw0RTq8UZ/2AkUs4VVwzMWWtjbi/CJ8MkkC2T2dgZea
+	NF5X+xXCFtyEV5GXE6E+5uM1XgtmvppIIW+6cWLsQsX4o+L8UbSKSM/OlaDvKxne
+	QvbolA==
+Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47w5dyktaf-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 15 Jul 2025 16:24:07 +0000 (GMT)
-Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b34abbcdcf3so4215462a12.1
-        for <ath12k@lists.infradead.org>; Tue, 15 Jul 2025 09:24:07 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 15 Jul 2025 16:24:09 +0000 (GMT)
+Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-748f13ef248so5318160b3a.3
+        for <ath12k@lists.infradead.org>; Tue, 15 Jul 2025 09:24:09 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752596647; x=1753201447;
+        d=1e100.net; s=20230601; t=1752596648; x=1753201448;
         h=content-transfer-encoding:mime-version:date:message-id:subject
          :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=n83EQ6KplxBdN8niFuzxAF76NZhTqT2FpXssYODZebc=;
-        b=wMxfMBP688f53gLnLrTX25N0Tt7ZNns+WPZH6VP550nGCrOIPoU2Z6Zsy4i+JLrPpd
-         +78+s9o3iyVI6DK2wZFlyH7VrTU4iiutt3MyGvBh+7WsWHpFKgRwQuysxEXr1ZsoyieQ
-         NRZjqllAwDZi6vZWI2ni786IM+r5AOhP+uKWRukYrGuHSmGEJ0buh1p2yERCDw/7tn+L
-         y4FtNesd4GCmsDj7OYo7DnsKksvHYMRqreEDEEss4wtXig0hC+Swjs/NAk5ypXjy8TYF
-         CaEkHYfC0rJPoYUa1lZcsLt5oOSrNXDIyO5gA6fcktlJAZ+ci7HRJIH2+ieSBPMRzrKN
-         txVQ==
-X-Gm-Message-State: AOJu0Yy243aM2GwfsHIM2ori8WGqqrZfdpjfVlEO5ahdzASXxiwouhBG
-	chWszWermFfV2Z2YgzUO79QOVmcJBUOwNVMssaC2hEKTUHAbM0m8Vwbo4yPE9EfNbQS2Ouc3IA4
-	AJHQflk9aC28BkHwswXnbLrbAxv+ZlyOQsWlLIdg5l4yNUv8pPFS4teBRuieqxx5S
-X-Gm-Gg: ASbGnctNlIz06sa1m78r5vbDUkSHbFvNif3Kk1kHUVzbOHmjnxjCPaUgSOw2br8N1IA
-	qarFBg8b0oGolgeCZCJc80HW7kCC9NoOQa4Easx5oh586WdeB4G0FQScO8o7tdcl3wd6tcL/PLY
-	LxMOhNPqpnpYDANvBGx42QOlcGcMSyglnx5Gl8wdSGrbovcs8EUgSHTM3xaI3B22XoQ7g1E2tqJ
-	3qRVLO+jhecVQQ2+PYkeaDdTtWKGgOuhQLNboLB93xwW7cRdgZZgPMk/0DJN62TB011FKFfrrde
-	KAK6nyRaOSVbunkvZMvQDAZ1KL4/mu8f7Z5hWfw1jY5s3IYIE+i+rX33npHhMpT4G72y3TBIpnn
-	m
-X-Received: by 2002:a05:6a21:329b:b0:237:c17f:9813 with SMTP id adf61e73a8af0-237c17f98ffmr383770637.28.1752596646666;
-        Tue, 15 Jul 2025 09:24:06 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IG9yxvqSV+l3b7v266rmFhGhvhLcbbc/QTVLpv+MDVZbF7ryPH1BRcAqtw3C6RkWgrW/KDJrQ==
-X-Received: by 2002:a05:6a21:329b:b0:237:c17f:9813 with SMTP id adf61e73a8af0-237c17f98ffmr383741637.28.1752596646210;
-        Tue, 15 Jul 2025 09:24:06 -0700 (PDT)
+        bh=mk/I29S/oFEoqtLU3bTKX52ZMG1AMTJAoA9iVUvagVw=;
+        b=OfVdc3GsU5hh0DvcS9DHQnkiL5lVdtyGoS5O8egZz4ON992kbKvi7PazwEVZ71GTSp
+         KNGsbqquRIOew7plp5j8B402sG9DJ5fRoKciehtkbcjsr70uCc4Sb5/Z67eLpPn7LL6G
+         qQUs2iRjJqE1S8zIVpQFOdwT7rVjuKsXS2lFxgczdDN12w8S9zXUAVWQ098QxwQhoaZd
+         cK0c9HND5nk2Wv9C1lMHPD9WDejePGLjnCj7/PTlDJe7ijbN1nsYvvs/ivqeZOYBOtSe
+         eJ5SI6/yVimhE/UAr9+wbCL6n/CLiDSH1MP3DrAk2PCfeNYqFFqSu1HVTN38MoszjkWg
+         0zQQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWw7Ti14+0dulGnLVdjlQ9YhNmEeVoufXfz7rYnPURVL4i6SfEZVUIgTNsAJCmX34xcjrJeY6I=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyzrtlv0GpxyWyYAoHtLE2CkLjBK/KMvOcVd+7H6F5WO0bQBfFW
+	0EMllcU3O/gxVuzQtzEIvdBLwwP9eMw7Cg3U4LnTPBHfNQqCtEiuMfmDCtYz5l7YwShGy3Wh/0w
+	LDqH7ECW+IYxjqNK/ZPRg9WvfXWq5Fb/OEHxD29CgAS8/g0GQIIhHu3vIAKqp1dvFskQ7g65a
+X-Gm-Gg: ASbGncv6H1dfOMLineeRB6xncvCXydNFN5tXE4iWa5tkky6jdfwDOQeXboBcAK6uqoz
+	6LfpA7hDZJolm9gh05vL2oB8xTZpjuzdBJpRWyoFpLS0VWowM6UuR3aGpX42kmyab031NJNdRSU
+	Y59c00i9DUnR9lVEGges2qiNBmp5btuO4pTPflU33c9LjqEI+IedAQzIu0fl2ZJBZ4X/u3ltdBy
+	hvcmTNGl/Yxe8El+eA48hZEroWq/7OC9Lac6R2Sjv/9RZQXiE/uGDUds5Hszsuasw5tdQzPQJk1
+	L1vD1So6ZG58wAFQWfEbN4SzupGORrBnbQ69rAaQFPOo/kHUmpG1DYWC/GKANRCLxdpA8UkoDFy
+	g
+X-Received: by 2002:a05:6a00:2d0f:b0:748:9d26:bb0a with SMTP id d2e1a72fcca58-74ee274ca3amr23360039b3a.18.1752596648474;
+        Tue, 15 Jul 2025 09:24:08 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFO5K/Ti2kibTcVezSPr/Btb6+QkxnAHpHBFdUk6OSkSLttpdbpfSEnYCz3S+XnOjsEPhkUyQ==
+X-Received: by 2002:a05:6a00:2d0f:b0:748:9d26:bb0a with SMTP id d2e1a72fcca58-74ee274ca3amr23360011b3a.18.1752596647922;
+        Tue, 15 Jul 2025 09:24:07 -0700 (PDT)
 Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-74eb9f1b715sm12815373b3a.93.2025.07.15.09.24.04
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-74eb9f1b715sm12815373b3a.93.2025.07.15.09.24.06
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 15 Jul 2025 09:24:05 -0700 (PDT)
+        Tue, 15 Jul 2025 09:24:06 -0700 (PDT)
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: ath12k@lists.infradead.org,
-        Nagarajan Maran <nagarajan.maran@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, Sriram R <quic_srirrama@quicinc.com>
-In-Reply-To: <20250714111438.1134438-1-nagarajan.maran@oss.qualcomm.com>
-References: <20250714111438.1134438-1-nagarajan.maran@oss.qualcomm.com>
-Subject: Re: [PATCH ath-next v2] wifi: ath12k: Validate peer_id before
- searching for peer
-Message-Id: <175259664470.3448282.10740985705944149227.b4-ty@oss.qualcomm.com>
-Date: Tue, 15 Jul 2025 09:24:04 -0700
+To: Jeff Johnson <jjohnson@kernel.org>,
+        Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org, kernel test robot <lkp@intel.com>
+In-Reply-To: <20250715-ath12k-unneed-semicolon-v1-1-9972fd4cef07@oss.qualcomm.com>
+References: <20250715-ath12k-unneed-semicolon-v1-1-9972fd4cef07@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next] wifi: ath12k: remove unneeded semicolon in
+ ath12k_mac_parse_tx_pwr_env()
+Message-Id: <175259664635.3448282.2749790548342441986.b4-ty@oss.qualcomm.com>
+Date: Tue, 15 Jul 2025 09:24:06 -0700
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.2
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE1MDE1MCBTYWx0ZWRfX31IoAV3fdfvt
- k8YBTkobKx8W8EegAtFpuFQ7tqtLXcZ5lLLIC2eV6cLzxYm4168+aT8pO61BVSh8N1aorEoIy31
- X1HvLs/RKt6jS/fjAlvyK7cqtyDn0TMAk7S2gu88bi3fy1FAbQX3JTv0EttbCsVZsEcBy7Fs1At
- b329Vf+Iv/WXYIuF9qHsjuYglXdmHC1YIy4TPhZC49wve66j6uq0WSmJ9KN9O75nwII+Q2KevTv
- Wk1rVfzMhKR6a5VY/16QEQZT7wLuQpESDBb99wMIkopCANGt5klKw2UEM1KWEkds4Uj0ldc7Zll
- Up4g88PDvbs7yUd/NUkSZ+3c+xDcrxd5zjVgZXYt0Ezch6+EnN4BEgtdhi3BdTcFqFaR2YCxJGi
- 8+fdnJGXRCoKnxqkoFn70i+durgNHcomSzdyLLaJCOo/iLxzArNEXs81nwfq5oq4wchwTI6u
-X-Proofpoint-GUID: vtPKgMlTfHK30csycc-Tb4pd6CjD6q87
-X-Proofpoint-ORIG-GUID: vtPKgMlTfHK30csycc-Tb4pd6CjD6q87
-X-Authority-Analysis: v=2.4 cv=Y+r4sgeN c=1 sm=1 tr=0 ts=687680a7 cx=c_pps
- a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=o3kOZhjVV3aoIho8ZNQA:9
- a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
+X-Proofpoint-ORIG-GUID: Exp9dFKgLXoblXAUSi5xVzrYLS7dV6iI
+X-Authority-Analysis: v=2.4 cv=RtXFLDmK c=1 sm=1 tr=0 ts=687680a9 cx=c_pps
+ a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=J17AwlqV-Ij9UdG5oKoA:9
+ a=QEXdDO2ut3YA:10 a=OpyuDcXvxspvyRM73sMx:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE1MDE1MCBTYWx0ZWRfX26D3iXwOsm+8
+ YlWo2TfLVHjEEdo25uzUXrMqd+4cP0LmaJ88GGyyPbjpTat6VgYazp7e2n95RMvexVgk8y5yiQl
+ uamLXalWFHqQcLY1L9aoqhY6zN7plPtMl42uLCJ4+ttL6QWx9zI0tp+6hwENG8L8EyaCE1xOr59
+ GLYANFXAaXvl0LR9T8O06/NZTqstqnMNZqsncQo6FAfPk62ciK1N80iZ8h3SBRY1I7WlGumuoqQ
+ p6Ocvfs5cINKx2kyJtnYZjgBbQQDUx0qfiRSh33LFXQbvUY6tWYFaQjMZLi7fsWpjZyBLMIUQYQ
+ 8P0G3ua/IktwE8E9CHeWdSCzMSvjsbcQMmZGxh84uD4Yl5z49LHCjwEoenYTriYQ6lFADwNNGp4
+ FOpxT0RzG+mO94dnJB5Yin5QCHMGFhMOoiZG5hQ1eb/yxKTDEQ/72yzyVeMgwhq/tV0PrQue
+X-Proofpoint-GUID: Exp9dFKgLXoblXAUSi5xVzrYLS7dV6iI
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-07-15_04,2025-07-15_02,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 mlxlogscore=659 phishscore=0 malwarescore=0 priorityscore=1501
- adultscore=0 impostorscore=0 mlxscore=0 suspectscore=0 lowpriorityscore=0
- bulkscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507150150
+ adultscore=0 mlxscore=0 bulkscore=0 suspectscore=0 lowpriorityscore=0
+ impostorscore=0 malwarescore=0 clxscore=1015 mlxlogscore=919
+ priorityscore=1501 phishscore=0 spamscore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2507150150
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250715_092408_009521_B1A7F5FA 
-X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-CacheID: sfid-20250715_092410_211734_A581F8F2 
+X-CRM114-Status: UNSURE (   8.30  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -131,20 +133,21 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 14 Jul 2025 16:44:38 +0530, Nagarajan Maran wrote:
-> In RX WBM error path, error packet is received with invalid
-> peer_id (0x3FFF) as there is no peer associated with that packet.
-> However, this invalid peer_id coincides with the ML peer_id valid
-> bit mask, causing an unnecessary search in the ML peer list.
+On Tue, 15 Jul 2025 10:07:35 +0800, Baochen Qiang wrote:
+> Kernel bot warns about this unneeded semicolon:
 > 
-> Prevent searching the peer list for invalid peer_id and return NULL.
+> 	drivers/net/wireless/ath/ath12k/mac.c:9785:2-3: Unneeded semicolon
+> 
+> Remove it.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] wifi: ath12k: Validate peer_id before searching for peer
-      commit: 136aad17e14250c815dcfc2e3cf9926e763b7436
+[1/1] wifi: ath12k: remove unneeded semicolon in ath12k_mac_parse_tx_pwr_env()
+      commit: 8ac2a383d4ce9e6229494c2a36df876800e6750e
 
 Best regards,
 -- 
