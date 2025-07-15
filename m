@@ -4,71 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E406C83F1D
-	for <ath12k@archiver.kernel.org>; Tue, 15 Jul 2025 04:31:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 355D3C83F17
+	for <ath12k@archiver.kernel.org>; Tue, 15 Jul 2025 04:36:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=WpK8TLb9juv3lVYEizJAY0I5k//OAEoGrIafd/CIRu4=; b=emEWFwt5m384PLzgzsqhJbZmfX
-	RsYpwYbZYt6TdeBs55IKV40/66jyIEzbNrHGRwPrg54g/Dck7D4BFyMJy1nxrA7hNr+ukkyg3Q0RS
-	U8fO0s1NWKMeWjZDW65sTR3np9Rr9jv/bx2m/Z9H+vwrzYFM6qvxiZuyuzzkxjg4t025nHSsModRC
-	mcji8dVgNlSBPn0PTvd1x2pJIAQe+7pHWPh9Ya9bup7EVfX5Zzjlm1G+7zg5zuFx1ZuWACa9LRUa1
-	puNYSTuwovldHZfLuXPyyij/HPH3x2f6qogdxwIY1HWbE6U6WDrPAblrR46Rk7k3ue3q6VgFgLNPy
-	7/1ilHQA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Q0SYM23ez6BMlTZ2VmSmgWyo5BcS7W8ns6wALwTeU0c=; b=L4DG9z54TBwzZv4OshLAWEIZts
+	HML/iqpp/mc3whPHADFOoVgKK9/RqHb33ciTHGcoXyYlyiGMOFShR6zfXUYmhSQ13dZ08lyJ8B3/q
+	poClQ+6kEjpvtBOw71ZowvRB7MJ9aW2bdT9hVNOO4umIrOa/eMCoG/LY5p0Z6Yd4tOZQopU7mkRDY
+	807nj+Wbxqf3EiTsUKT/1zyF17BHiYb9w6jKTKbzwXZ65Ak7tRzzXsnZ9gqd1daep3FSwGDMX4ADS
+	L63oIe6HHCF8jMlKOzfAhnQKN0qTMlca9oV924swrR82Z8pzGIOZdPyFMcw1hLb3Mtt8qLD591zQN
+	LQ7XuSeA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubXJr-000000040eQ-3t2j;
-	Tue, 15 Jul 2025 04:31:07 +0000
-Received: from mgamail.intel.com ([198.175.65.12])
+	id 1ubXOh-000000041Dt-3dL2;
+	Tue, 15 Jul 2025 04:36:07 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubWj3-00000003wca-2mNF
+	id 1ubWrw-00000003xaZ-2CNO
 	for ath12k@lists.infradead.org;
-	Tue, 15 Jul 2025 03:53:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1752551586; x=1784087586;
-  h=date:from:to:cc:subject:message-id;
-  bh=zSkflH7vFfhzuJ243PUWdpYG817EywtIa9X972zq150=;
-  b=G6sZEoSKrVpuSndLE+cEgAxUpyFOocPsJ04rHvjRqk/3fy6luWoSJo4u
-   eKfgHt9NEYP+BxzLMp35Frl7arpLpvS6u5CvMYH2WuMH7rwVnTCnAwAZ4
-   t14YiQV/OitqasgjZo7z1qnGZcv9cwHFCYStQeqchSjT8PO7iYWjNjPZN
-   5zVRJpNpI+Ilhe+82oRjy8/PTyBGg3yl727LZg/7YUjI+tv+h9DFeWri/
-   HhUMcFb/yz9oJD/UcnYwIe7YEcw3uobXNwcWmACKJ05g8+z6SpQsulfX4
-   QyUdGY/4KEsLw30Ywxalag3oC1YBF9EFvj9ZqWQc07o4TZjwnOa6Y/qpJ
-   w==;
-X-CSE-ConnectionGUID: OV3X+rUuQ8OYNYfgSlQjng==
-X-CSE-MsgGUID: SISvtFRtT2G3Pw4rSaFjug==
-X-IronPort-AV: E=McAfee;i="6800,10657,11491"; a="66207534"
-X-IronPort-AV: E=Sophos;i="6.16,312,1744095600"; 
-   d="scan'208";a="66207534"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by orvoesa104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jul 2025 20:53:04 -0700
-X-CSE-ConnectionGUID: WsuUpl0ORxaPT9HaL5+dnw==
-X-CSE-MsgGUID: NRdaCsIIS/ufcFaADSpvWQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,312,1744095600"; 
-   d="scan'208";a="161424512"
-Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
-  by orviesa003.jf.intel.com with ESMTP; 14 Jul 2025 20:53:03 -0700
-Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1ubWix-0009cR-38;
-	Tue, 15 Jul 2025 03:52:59 +0000
-Date: Tue, 15 Jul 2025 11:52:10 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:for-next] BUILD SUCCESS
- 9d2abd4162fca8a1eb46f664268dffad35c8ad20
-Message-ID: <202507151157.oz4J1O94-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Tue, 15 Jul 2025 04:02:17 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 32BB0444DA;
+	Tue, 15 Jul 2025 04:02:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E05AFC4CEE3;
+	Tue, 15 Jul 2025 04:02:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1752552136;
+	bh=XTpTiYZCt+831D8WJ+GyCYjH/IxQRruB1cTTUcZo054=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=g9hfz6KULY0Fap/fLlLOyRyIzj1Nakml0N8IWzcDYZXAhYbIWyUEubLZC7UwkF/Z2
+	 Q6quDzNAJgUiG0z6HmPtLEuYL62Kdl4HTAs1t5XvnvRwsnHilPrNLcyibFVGi0JXWY
+	 Jd59fRfZ4tyEblo4wBLXnPhFS3Zk4uOoss6IkeGXX/Llf7u6Kj7ntsr2YioodItpCe
+	 KbUFOUMT76nuXnhhUrRLuTIUOPzNSZ17Mh1/zDItfUfzpMeL1WJi0rV16NoZoR5Ofg
+	 j7x3eWdNBsJ4EDhnvydnCOIKjQy68PjiCUZGHeYmLYkqEpvwNVYUJT0Bvg1q8Hp69y
+	 6nqsL1nGSth/g==
+Date: Mon, 14 Jul 2025 23:02:15 -0500
+From: Rob Herring <robh@kernel.org>
+To: =?iso-8859-1?B?Suly9G1l?= de Bretagne <jerome.debretagne@gmail.com>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Dale Whinham <daleyo@gmail.com>,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+	linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
+	ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Lingbo Kong <quic_lingbok@quicinc.com>
+Subject: Re: [PATCH 7/9 RFC] dt-bindings: wireless: ath12k: Add
+ disable-rfkill property
+Message-ID: <20250715040215.GA20887-robh@kernel.org>
+References: <20250714173554.14223-1-daleyo@gmail.com>
+ <20250714173554.14223-8-daleyo@gmail.com>
+ <prrra3lon2p4pugkgeytf5ow5wls62lfdnwcdykztw3qzwity2@d26aqh6wdyln>
+ <CA+kEDGFR3FB=ead50kFBAL23-1dXo-LOMqhT7f=WecNMf_MaNg@mail.gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <CA+kEDGFR3FB=ead50kFBAL23-1dXo-LOMqhT7f=WecNMf_MaNg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250714_205305_793894_5E43A4AD 
-X-CRM114-Status: UNSURE (   3.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250714_210216_584661_FE7C9A77 
+X-CRM114-Status: GOOD (  19.23  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,125 +84,57 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-next
-branch HEAD: 9d2abd4162fca8a1eb46f664268dffad35c8ad20  wifi: ath12k: Add support to enqueue management frame at MLD level
+On Tue, Jul 15, 2025 at 01:26:48AM +0200, Jérôme de Bretagne wrote:
+> On Mon. Jul 15, 2025 at 00:33, Dmitry Baryshkov
+> <dmitry.baryshkov@oss.qualcomm.com> wrote :
+> >
+> > On Mon, Jul 14, 2025 at 06:35:43PM +0100, Dale Whinham wrote:
+> > > From: Jérôme de Bretagne <jerome.debretagne@gmail.com>
+> > >
+> > > Document the disable-rfkill property.
+> >
+> > Why? What does it mean? Why are you describing Linux driver firmware in
+> > the DT?
+> 
+> rfkill should be disabled according to the Surface Pro 11's DSDT.
+> 
+> https://lore.kernel.org/all/20250113074810.29729-3-quic_lingbok@quicinc.com/
+> has added support to read the ACPI bitflag when ACPI is supported.
+> 
+> The idea was to expose one specific feature (DISABLE_RFKILL_BIT) for
+> devices described with a DT, so that the feature can be disabled.
 
-elapsed time: 745m
+The commit msg should answer all this. That was the purpose of the 
+questions.
 
-configs tested: 105
-configs skipped: 4
+Assuming it belongs in DT, why is this ath12k specific? Could be for any 
+wireless chip...
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
-
-tested configs:
-alpha                             allnoconfig    gcc-15.1.0
-alpha                            allyesconfig    gcc-15.1.0
-arc                              allmodconfig    gcc-15.1.0
-arc                               allnoconfig    gcc-15.1.0
-arc                              allyesconfig    gcc-15.1.0
-arc                   randconfig-001-20250715    gcc-8.5.0
-arc                   randconfig-002-20250715    gcc-11.5.0
-arm                              allmodconfig    gcc-15.1.0
-arm                               allnoconfig    clang-21
-arm                              allyesconfig    gcc-15.1.0
-arm                   randconfig-001-20250715    clang-21
-arm                   randconfig-002-20250715    gcc-10.5.0
-arm                   randconfig-003-20250715    clang-21
-arm                   randconfig-004-20250715    gcc-12.4.0
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-15.1.0
-arm64                 randconfig-001-20250715    clang-16
-arm64                 randconfig-002-20250715    gcc-12.3.0
-arm64                 randconfig-003-20250715    gcc-8.5.0
-arm64                 randconfig-004-20250715    clang-21
-csky                              allnoconfig    gcc-15.1.0
-csky                  randconfig-001-20250715    gcc-9.3.0
-csky                  randconfig-002-20250715    gcc-12.4.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-hexagon               randconfig-001-20250715    clang-18
-hexagon               randconfig-002-20250715    clang-21
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250715    gcc-12
-i386        buildonly-randconfig-002-20250715    gcc-12
-i386        buildonly-randconfig-003-20250715    gcc-12
-i386        buildonly-randconfig-004-20250715    clang-20
-i386        buildonly-randconfig-005-20250715    clang-20
-i386        buildonly-randconfig-006-20250715    clang-20
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    clang-19
-loongarch                         allnoconfig    clang-21
-loongarch             randconfig-001-20250715    clang-21
-loongarch             randconfig-002-20250715    gcc-15.1.0
-m68k                             allmodconfig    gcc-15.1.0
-m68k                             allyesconfig    gcc-15.1.0
-microblaze                       allmodconfig    gcc-15.1.0
-microblaze                       allyesconfig    gcc-15.1.0
-microblaze                          defconfig    gcc-15.1.0
-nios2                               defconfig    gcc-14.2.0
-nios2                 randconfig-001-20250715    gcc-11.5.0
-nios2                 randconfig-002-20250715    gcc-8.5.0
-openrisc                          allnoconfig    gcc-15.1.0
-openrisc                         allyesconfig    gcc-15.1.0
-parisc                           allmodconfig    gcc-15.1.0
-parisc                            allnoconfig    gcc-15.1.0
-parisc                           allyesconfig    gcc-15.1.0
-parisc                              defconfig    gcc-15.1.0
-parisc                randconfig-001-20250715    gcc-10.5.0
-parisc                randconfig-002-20250715    gcc-9.3.0
-parisc64                            defconfig    gcc-15.1.0
-powerpc                          allmodconfig    gcc-15.1.0
-powerpc                           allnoconfig    gcc-15.1.0
-powerpc                          allyesconfig    clang-21
-powerpc               randconfig-001-20250715    clang-21
-powerpc               randconfig-002-20250715    clang-21
-powerpc               randconfig-003-20250715    gcc-8.5.0
-powerpc64             randconfig-001-20250715    clang-21
-powerpc64             randconfig-002-20250715    gcc-8.5.0
-powerpc64             randconfig-003-20250715    clang-17
-riscv                            allmodconfig    clang-21
-riscv                             allnoconfig    gcc-15.1.0
-riscv                            allyesconfig    clang-16
-riscv                 randconfig-001-20250715    clang-21
-riscv                 randconfig-002-20250715    clang-21
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-21
-s390                             allyesconfig    gcc-15.1.0
-s390                  randconfig-001-20250715    gcc-8.5.0
-s390                  randconfig-002-20250715    gcc-12.4.0
-sh                               allmodconfig    gcc-15.1.0
-sh                               allyesconfig    gcc-15.1.0
-sh                    randconfig-001-20250715    gcc-11.5.0
-sh                    randconfig-002-20250715    gcc-15.1.0
-sparc                            allmodconfig    gcc-15.1.0
-sparc                               defconfig    gcc-15.1.0
-sparc                 randconfig-001-20250715    gcc-8.5.0
-sparc                 randconfig-002-20250715    gcc-8.5.0
-sparc64               randconfig-001-20250715    clang-20
-sparc64               randconfig-002-20250715    gcc-8.5.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-um                    randconfig-001-20250715    gcc-12
-um                    randconfig-002-20250715    gcc-12
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250715    clang-20
-x86_64      buildonly-randconfig-002-20250715    gcc-12
-x86_64      buildonly-randconfig-003-20250715    gcc-12
-x86_64      buildonly-randconfig-004-20250715    gcc-11
-x86_64      buildonly-randconfig-005-20250715    gcc-12
-x86_64      buildonly-randconfig-006-20250715    gcc-12
-x86_64                              defconfig    gcc-11
-x86_64                          rhel-9.4-rust    clang-20
-xtensa                randconfig-001-20250715    gcc-8.5.0
-xtensa                randconfig-002-20250715    gcc-14.3.0
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+> > > Signed-off-by: Jérôme de Bretagne <jerome.debretagne@gmail.com>
+> > > Signed-off-by: Dale Whinham <daleyo@gmail.com>
+> > > ---
+> > >  .../devicetree/bindings/net/wireless/qcom,ath12k.yaml          | 3 +++
+> > >  1 file changed, 3 insertions(+)
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+> > > index 9e557cb838c7..f15b630fb034 100644
+> > > --- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+> > > +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+> > > @@ -48,6 +48,9 @@ properties:
+> > >    vddpcie1p8-supply:
+> > >      description: VDD_PCIE_1P8 supply regulator handle
+> > >
+> > > +  disable-rfkill:
+> > > +    type: boolean
+> > > +
+> > >  required:
+> > >    - compatible
+> > >    - reg
+> > > --
+> > > 2.50.1
+> > >
+> >
+> > --
+> > With best wishes
+> > Dmitry
 
