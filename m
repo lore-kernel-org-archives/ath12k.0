@@ -4,52 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6253C83F35
-	for <ath12k@archiver.kernel.org>; Wed, 16 Jul 2025 07:51:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59A3DC83F36
+	for <ath12k@archiver.kernel.org>; Wed, 16 Jul 2025 07:51:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-Type:
-	Content-Transfer-Encoding:Message-Id:Date:Subject:Cc:To:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=YzaI96ShlJH+PVtvKAz5G40BbTtCyBTwyrhZ7BFwnmM=; b=uvvh+92O7lnCw2wNskRcIhNcPC
-	B/2hZaU8GxfdjGdmlfVArdFpPphCXAujcSWxfuWsc0wXoJ6SbDPpVBf1JfaJo1oA1+9pM5ss9dbYb
-	bEU9uOybbRM3xHGwOb5YGqEI7NojEe/ErjONyCFGUxj7UfhWmS+9Z1ffJZzjzxG1HYHxS8u562vkp
-	de/5heiE/KrfEHlz5aR3WO8bTSwSHnIxlDMxLfQteBtfmCMIz4I+u47Q0/gtF4yQHFUZxduQtnQpc
-	SY4g/YCLqp31ARFtvaArj2pO+WBgo1s+cqqoTOOOgzIJQK3cnAbsxAUbeoBjK13geQeoz6/1dXKfz
-	1rW9EasA==;
+	Content-Transfer-Encoding:References:In-Reply-To:Message-Id:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=WMixVzblsg7zo/PyBGVFv4L2PCWzV4jtjoeKM6QmVOQ=; b=xaBAuoQnZfrnWwTYNTEynPr/GW
+	vwewDd3u9LAqREbb9ixEZ/90DnRu1d8phDWpiwpZbWyfcQZ9+0P8IKLccI+iCfDiVqwM+husdy5Eg
+	UDcx/NVm/c6lJjtIqTNR87XV4yV0y8Ztho7wktU36weqGjxLdIrBaozqJhouaJue8KVr9Sp4fZJt/
+	c+osgncB2OXxMyb4b6s5pqnN35klz349WlXtXt/vRrkHRZ63G8WMLCy6Jzpj3IdRpRsTLa/MVZPvc
+	AyHEsd8DpWmn9vGlRmRUoOMfnTZc3wZf2Wy0s9TicibJT+7lhVEdmvLZPLRUO/gq2B+RccB2whPHQ
+	+78BjV/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubwvN-0000000746M-15BS;
-	Wed, 16 Jul 2025 07:51:33 +0000
-Received: from mx07-0057a101.pphosted.com ([205.220.184.10])
+	id 1ubwvO-0000000747b-0GVy;
+	Wed, 16 Jul 2025 07:51:34 +0000
+Received: from mx08-0057a101.pphosted.com ([185.183.31.45])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubwvJ-0000000740h-08BL
+	id 1ubwvJ-00000007415-0RzL
 	for ath12k@lists.infradead.org;
 	Wed, 16 Jul 2025 07:51:30 +0000
-Received: from pps.filterd (m0214197.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.8/8.18.1.8) with ESMTP id 56G6bfO31892067;
-	Wed, 16 Jul 2025 09:51:17 +0200
+Received: from pps.filterd (m0214196.ppops.net [127.0.0.1])
+	by mx07-0057a101.pphosted.com (8.18.1.8/8.18.1.8) with ESMTP id 56G5t3Uk2228410;
+	Wed, 16 Jul 2025 09:51:24 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=270620241; bh=YzaI96ShlJH+PVtvKAz5G4
-	0BbTtCyBTwyrhZ7BFwnmM=; b=mqRMGCxJnV+yIqB5Q7CKrDojEz0zNdDE4BHPd6
-	dP9Q8ItA55GbEWTQ+qb1wKT121wqE72XEN0q2/U4h/PGJjAqqSFjaYhXcnC3m1/D
-	LV3fOi/OgsItJIHCo33wYRjCdTFi6uCDlSR/IDnQoXVl0wcNpi+DooIlDMFskToB
-	Nmw8k6YxbRDUvEO+sy4gBV19SqcPxOQOuPoLGfcUvycksydInxdLHehANCptjv7I
-	cCohlkcmdF8pMYpTfGVs1rnDRxsKqktQ+14mbVOh25kxRZbYucn81gyLU5eAyxum
-	CE1KfeL+ZYiagw8FYwtV95uaJ3Dzj2Y905+uuKkdLY5WizFg==
-Received: from eur02-db5-obe.outbound.protection.outlook.com (mail-db5eur02on2099.outbound.protection.outlook.com [40.107.249.99])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 47w5js9rdt-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=270620241; bh=
+	WMixVzblsg7zo/PyBGVFv4L2PCWzV4jtjoeKM6QmVOQ=; b=TFMwmJKTlt5C20br
+	ZdlmHUD3IpvruR/TB3FbCHq4U0rjFMK6KG/rjcK9I/jz0ZGMaoOoZI9JG24uw6VB
+	FG4EysKFlFoMFbmmWJ9+qbG2r73WFQIamO7QvFv21zNAfPpZsKKs8Hq+US2G3i73
+	RmrnGxvHt9MImer1L8ZhVd+In1TDEkawY7oZsCR8X2YXmylzsCbOSMQ8XItZRXMV
+	isPJTApOp8riAlS4V/UBx3xV2+PzTKSPGRYHOzXt+FEWcvKH62BR6Rn/W+CPI+eS
+	nkoi0S0ngSdL0HuR3coz87J/GK1dd6/jiwyzrOjdF4Neigv+xE7jAjriav5fDwUw
+	7TWT2A==
+Received: from eur03-dba-obe.outbound.protection.outlook.com (mail-dbaeur03on2120.outbound.protection.outlook.com [40.107.104.120])
+	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 47ut22b7ne-1
 	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Wed, 16 Jul 2025 09:51:16 +0200 (MEST)
+	Wed, 16 Jul 2025 09:51:23 +0200 (MEST)
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Fskp/Wewob1PNsGzqj+8WnAiI7s8mIjR1CFFXsj2pFu35qVjY+IDg3JkYUHobwSIow0LC12dhkItCGhnp9bhswiON7rjeZ2VLFXjpGjbb8yJ98lXZFNm0ZIdtpOu3IhBweFqe0TLmBKBaNZPZnBHUmITe5hmsoLSkiGB9houmy9j8c9UOHLxiirbISSLpyW97mSbBAx0v74W1kxnmDXEohZQ4ipWI6nIC8IP00eh0g1oemaacF5HJ7BD/BaW/Kn8Zorg9DX/QRZnXarYmlt0xX/EKVgEDycxQHNzOFeOrc/c7RAv75NfbuVUNg3gc1setESU0k/V645kHUUAGG2+4g==
+ b=t1SuzfC+JuzBQlxGi+2HMMJkVCB628y5UsBf4kyGNxknVcX6MPCJuFsJXq6SY+jd/LOF7BQknZcWH2zNd7oVxGykn84c5iMCm+aTG5+m4kdgiBatzUPB8z9bOPBadX1Mh8oBHkxS3HMIuaOfyf+Op/xoKa2uQ1yU+rBPifTgXxipj+msGnGIphhS9Xqf7kbkKgFakc8aOLQiLjJOx7/vFBKvcAzO6xOPAxF9PbcmkEp0JCzFiJ0L8naj5zp6WCWNNhJlxmjvG/Ct7vh4rOYPvXa6RnIp42mJTfP3NBAg4Z86CYImH6czBSdq/1rYlpV42N1leG0442wFKqbr7Ij7Cg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=YzaI96ShlJH+PVtvKAz5G40BbTtCyBTwyrhZ7BFwnmM=;
- b=JvQuHcu+hGQ+vDneiK2yncKcdy32/Sx++v74+0V0aSTEFD1QoprcRj34cYYiejd7e8SHf6iBUib54Yu63BtZsYwDr+pATwCnuU5gE5xp7atjIHWomo6a5n6ShLxkaSThld06FTc3EEso34o+3BJM+oVmMr2DQLQvsg4yzhC3yl5bwUkxaHUX4huvOVEoZv6ZbDvM8UPUVzPVT89EzUOArSBLq2G/TdetGAs18HUwVkn5XXszGovrb2ZDS8i9u5HhNidDk2bi6r15YApLlWnZh4Tdu10TOak+M0HJGhA3mZTgPyBQVUyvfRV7JhkDy0zm46a3Eg2L/HVZBx3sREfCqg==
+ bh=WMixVzblsg7zo/PyBGVFv4L2PCWzV4jtjoeKM6QmVOQ=;
+ b=k0WsJudhU0t14ScRv4zyNwbEhJoWCf8RI+V/TDMSyQvz+5NjH5eN7U42zzdQNwoUkLpewa2NVwpjZjijCyl3oJw2O+3l6W9dq4l9ppvqdZ+IjMgZIC7tr1MCqJp0jPkgrY9yccpclpWx0lwQnlaCw0O6Kyzy4XryXmqNvDqyy3qXXR9rz0tpHCqU+4r7MFDGsfkvTyqLMPQUppSjoR9cbjL5iXTmEfmrHkSndTGU5kNQW7D9Hg/sFg1Zef7vqTTBMUAj/GV9JZSl9rsRJfQhr+UNV9XlALcskhdSuG1NaRheo09j3hnXD24BtYbPT+4VmdguBCsp7l7TUUgzXzLK5w==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
  dkim=pass header.d=westermo.com; arc=none
@@ -57,104 +58,106 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=beijerelectronicsab.onmicrosoft.com;
  s=selector1-beijerelectronicsab-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YzaI96ShlJH+PVtvKAz5G40BbTtCyBTwyrhZ7BFwnmM=;
- b=of5hD7UeJqcRH3qbAKfFPSbDwZM8SdxWo7VWx2DUp/HTBrwjnWo5Qmpt2RYrd1ijmIQ99pvzqlWlrDA8+vJUwgXR878cFDhVT4Kk2i2UY4AKFRmOfGAPZUoEZ4JXrz1Sjgu+6iG6cru+pwsk13Dqieh9PNqV5FZgUsAN5qL04Rk=
+ bh=WMixVzblsg7zo/PyBGVFv4L2PCWzV4jtjoeKM6QmVOQ=;
+ b=mmsMnPl49nw5jHdRTl7olQo155HV0XJ+xNBvYcKJlZjjLiuBeP+Yw4tbbFd/MAFpM/+rwRtR0qgHWnAovrKckIU3dM6bOSmxWIG8SrbL0Cs9QbfSIiNno9QtAb7WUTs/DyzUzc4AYoO2+gtbbP28BSKy5gq8Q2j11NqoqYoEm0M=
 Received: from AS8P192MB2240.EURP192.PROD.OUTLOOK.COM (2603:10a6:20b:63a::18)
  by GVXP192MB1853.EURP192.PROD.OUTLOOK.COM (2603:10a6:150:1::14) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8922.32; Wed, 16 Jul
- 2025 07:51:07 +0000
+ 2025 07:51:21 +0000
 Received: from AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
  ([fe80::f6d5:55ee:51e7:b13a]) by AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
  ([fe80::f6d5:55ee:51e7:b13a%4]) with mapi id 15.20.8922.028; Wed, 16 Jul 2025
- 07:51:07 +0000
+ 07:51:21 +0000
 From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
 To: Jeff Johnson <jjohnson@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-Subject: [PATCH 00/11] wifi: ath12k: Fix endianness handling in QMI
-Date: Wed, 16 Jul 2025 09:50:49 +0200
-Message-Id: <20250716075100.1447352-1-alexander.wilhelm@westermo.com>
+Subject: [PATCH 07/11] wifi: ath12k: fix endianness handling in QMI bdf download
+Date: Wed, 16 Jul 2025 09:50:56 +0200
+Message-Id: <20250716075100.1447352-8-alexander.wilhelm@westermo.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250716075100.1447352-1-alexander.wilhelm@westermo.com>
+References: <20250716075100.1447352-1-alexander.wilhelm@westermo.com>
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
-X-ClientProxiedBy: HE1PR0102CA0054.eurprd01.prod.exchangelabs.com
- (2603:10a6:7:7d::31) To AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
+X-ClientProxiedBy: HE1PR0102CA0019.eurprd01.prod.exchangelabs.com
+ (2603:10a6:7:14::32) To AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
  (2603:10a6:20b:63a::18)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AS8P192MB2240:EE_|GVXP192MB1853:EE_
-X-MS-Office365-Filtering-Correlation-Id: ff861c83-ee70-4a28-7e96-08ddc43d85c2
+X-MS-Office365-Filtering-Correlation-Id: 694ea6e1-f573-4887-98cb-08ddc43d8df8
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?8umVH5B9kKCCwNRYU6mYcybbOCvR/ITPS0xDWXFji2Bka+k7uxch4tUZxE0v?=
- =?us-ascii?Q?ac6g4uAw/2Kjr7d8MuJkG+WjFZRIvK/mKvqC1M3AfjgZBEsjP1yEm+u0ucw2?=
- =?us-ascii?Q?0bQCAGgchLKO6oF4xWCSc8+z6L/hkABMDJebopElyKNe9JXW1XFyHxzm72Od?=
- =?us-ascii?Q?t+Rcv2yL0Am5HEZT+/ZAsiNS/CKejap07jhtFZZS1kMPbIbUZLjZwP0PVguG?=
- =?us-ascii?Q?iAFgcBXLq+rirlGR5vgcBJ/HVlEw+M6o0ivBgnit66uu5YZoc6B3PCMQU7vo?=
- =?us-ascii?Q?JIAeDNok/G7RniPtFTdnAnV8SiBXvxNBoGZEbinNx7Q0BRBM3FyUUgnkl00H?=
- =?us-ascii?Q?KRgWqg5VcHqRYoFf0HVk3cdqggZRLb54s7FclCDGzc7Kem1BNdfqcJryLC3e?=
- =?us-ascii?Q?ifNXJFpIOwUU6/9Fz5tNbiViIwS3hRTt54eNRc6UPH+tQL41hz8U9x90pRd2?=
- =?us-ascii?Q?evLPr2xe7kVXGrx/pEK9amJ+gQfijGTpoTDZirHiPw6PDoySeL1ANAjV2EnI?=
- =?us-ascii?Q?EZTM2QLBLHMfFgO4drKyfzxftLvq+mWjOh+XTsfLHmHjaG18dTpB8JVDm886?=
- =?us-ascii?Q?+HpMQFl8wz+eKjgKjY1+rkU+Fh2rsu1wJG6HrZEyD/P+nvHzAdzaYNQD7eWX?=
- =?us-ascii?Q?VmOE0qceFgOnYVGp/wGwHtQPuZ14BMmGk++/EC7MnROujuQUqm0bHytibian?=
- =?us-ascii?Q?HXVdj83fs6eF8PmbjCkXevfBkGs/1PY79lp06i5fX9QSZahZLmnnihnF1ZYX?=
- =?us-ascii?Q?47j1jWbUYveKq5cNRLjsiX2lRmOr2KHOiJScmHUL5ggYCzbrR5qwJdVlxxwm?=
- =?us-ascii?Q?jfyPgBTN4RuXVgKAP9EoDrshb6RexopAyh9zqq7Zvnnh8lldwCNcO4ZY4csi?=
- =?us-ascii?Q?BWsLi6fOn5I2uorP87w1cqLh2paW6UZt6+v+uGodtU9bE6RILOHS63IGurJv?=
- =?us-ascii?Q?lneu2necxJqk444SRfxMUAqt3UnfkntLMJCjiiZ0l3Ug1wG4ArQac+m4/g5A?=
- =?us-ascii?Q?1DPwVW/VF2VJJ/iZdLwXGNAFC3BaPAdA/0L1+ly3fBuW5RghnVfBp91Q9S8c?=
- =?us-ascii?Q?V+BOCSYxcszVj9P7JSCM2cnMM5dVXV/DR0DnZ+nXgXLoWn3BKTNLtxB7Pdi9?=
- =?us-ascii?Q?yNxVVQSdMi39JRPZLFGIc0FtYQIlIlS+DVhCwP667pffjK79OCaJdkuSCZvu?=
- =?us-ascii?Q?XiQLFPIQOC5l83puTPM0ivn2gPNvQibeJX+H7P754SSg0Z66Wfgm5aiJ9ldA?=
- =?us-ascii?Q?wLv0J/kbErQ/zfb0bBNVEq/+SZZcWdItsnah4Lf6u08XLJsubD+21SWIw2j2?=
- =?us-ascii?Q?e0NEBzPEIkrxqAynufWFhkbYimmqwbMomFqqr7aADeT5K8pzGEEkuIT2AMUM?=
- =?us-ascii?Q?bbbK1a8mEsuIYbSfSymXpKHM/cte+aqLdi0x2Z/KC7cSZbuz1RjRfT5coMrQ?=
- =?us-ascii?Q?oqm5ygz3B3g=3D?=
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?EzJ0XDtCS0OHpCgmL7Y9uDELQ26Uy1UcG0c3X1HoDeBa4pgG1/vd8oeYBA2n?=
+ =?us-ascii?Q?Gts8i/UDWqGi4SRLnLE2klY4ApVetb0AnsvvHB1iKTrkIvVoKZNpGMIsaJd/?=
+ =?us-ascii?Q?53XL/9rSG5+xpr7G/YGP7DarrMRKjr4J3gjNoe95cYHIr6o5tncxz78ZaMyN?=
+ =?us-ascii?Q?SNYh1m5xtMXqm9eznYz/+MeQvZZaC4+GaUF6Njy+Uv9R0d/2f0QMQrhb8YPW?=
+ =?us-ascii?Q?E3pEZ+lO3Sr6UBOKr70Q6Gbv+KK0yJ05XbkwJZUyn96tOGSyqHpyuQKogjDb?=
+ =?us-ascii?Q?iTDGAmVXZlOIyNKuhASL/MPrqrwxLusbCdakwdZh2SIQpEZi89O3srKK5ALY?=
+ =?us-ascii?Q?TPYdYPxLHn30tI+J+CsHPr/oYJ+nqVJ7onM0/EAIdDwrdOdHWDfZFOtoebyP?=
+ =?us-ascii?Q?Cvg5R962POb33633fGj4m8P8gwzB6HL657h+Ryjf8UGre/ARWl0o/xdqmuGX?=
+ =?us-ascii?Q?QoWPBtTBbJDgdQ2b28ie/F8L9rRLhwN7qK7QmrZyQJbrf1Zvjh0zgHh2Pd/C?=
+ =?us-ascii?Q?7B2sFbiP6LOCaMuSZGDmt66cjATT6TcCuAigW/0Lp7vHVqxNeFMEkS+KG3UF?=
+ =?us-ascii?Q?JpTMfvlGL5YJ5XqRMxeeJzai2c5V+xprrLjM9pI4wrwwm4KRCH5SDbPcy4AJ?=
+ =?us-ascii?Q?r8aXG4bPXMP48ex5C5k0WOr7DbX6UtdU1FtJAaEE+hrfbd4b4jZTW32hEahW?=
+ =?us-ascii?Q?uKUDKqR5kfGppdmeA9FyEdHa6nAk8iOGBI6j/iDtY47lmOh/eX3DygyDTeBU?=
+ =?us-ascii?Q?LWS61ke/dPNTQKe0eQOScfjiModBd2xuy9FB6MUwKKbyPS7XK6fJ0ttYXlpu?=
+ =?us-ascii?Q?H3wO2DUPNsbm8FxLB72CDrhgeyHafKRhXyPbQnyD1M8zJ07eCOs+6s48MOAC?=
+ =?us-ascii?Q?cB+k80ZK2XEvOssRUwgx14iwBp2mzuPzKrRNJeNRjjskP7tv1EyjECFfmb5K?=
+ =?us-ascii?Q?trcsdV61iBvcFEXWpiPP+SmlMbpZQgOiUKiLSvAp5bzSXsy4w5wuHMqQmoP0?=
+ =?us-ascii?Q?6O6QyKmANbeWWmi2pR7FCA9umUkLzrnwRjQA4FQ/IjLGUjSs+8p/b5mbDaFp?=
+ =?us-ascii?Q?HHqRly8e9A5Ku3PTyodddBn9ws4l+3pGi7HMfdodtyuG/0hPV31uqpodFo8E?=
+ =?us-ascii?Q?uSOw682L2GNs5LwXl0F9Hc1R2RRn5+A7TaUGte8l1vror6hFbACw8aKkLZ6x?=
+ =?us-ascii?Q?9Ni0V0Gn3QlOW/Cz2cGZuuDQ+XmcTJD/VHTFCjm+06sctTtVHWM9rPz8pR7i?=
+ =?us-ascii?Q?QX6vkeqsxD/D06DLgfKrWhNZVKTzPvFkX+zKYn+wajgIrXvAqYheqMxVZaU7?=
+ =?us-ascii?Q?SsoUJ6rqUCG2OaJu7wGJvs81BREMr6iIyQLfFca5XBbN1dHpjpQPZKaAiWPM?=
+ =?us-ascii?Q?pxkG2Kqme/OARtv2jVMr/fA2V+RhlSmWjtd5sJvs/ioKU7kpla+H4bUCM/YG?=
+ =?us-ascii?Q?jtOMMy56Dos=3D?=
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8P192MB2240.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014);DIR:OUT;SFP:1102;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?dNUVE+FSBrVF/85QjDpN3/NnwWJxBbq0/C5YwTDnQSfpXSuvJZTAepqV3Bi7?=
- =?us-ascii?Q?Zu4Ku7L5qNe1KnDqY/7yLmOppcn0G3gp+hZecWqV8ezmKAT1I/GNCGtaP1Ao?=
- =?us-ascii?Q?mwke9d4037a2sSES6azHifWzhQnplrVONmWVjRuMPFyD3mIcb9JgMARrUZzS?=
- =?us-ascii?Q?v0elmnR0aeGnTdd2Y+Wwq0l0LjYPihSweXTwR5yX19SOWl/FkTlohmbOyHr5?=
- =?us-ascii?Q?HyF0qWhcoUX2H3X4m7zW+ohCzV3usvZ2mfK9JeSGhhce594C32LFejDE8OzI?=
- =?us-ascii?Q?4u/2E14TFZOs3fo0uCvsIa1eAtm0DVd4dIh+Wc3piQtFt3KKVI66/4WSMPAj?=
- =?us-ascii?Q?iiZoans0TCyHpOZA40xl6/VDqMNn0li1HFE4H9X7rkbocwnIS4ZLCAa2ntm/?=
- =?us-ascii?Q?BljYYf70uTrf8gwOlK0PKqAmD9QcrjMtVViqyhDnA9Ha+hm8xgH4dHTkjalN?=
- =?us-ascii?Q?by/fkGJ1CqNufUFVk21XDjHY48bYprHKMKKlPIlZ8p60r9XKqDK9QHICcgxC?=
- =?us-ascii?Q?UBnlupknNU1umpsMa7+JgWhK+TjZ643jatoa1Ke43mTRcj+zbhaqHOK9ITF2?=
- =?us-ascii?Q?IUsHmahSGDCEstHYjRyqYQl3RD5xTcjmXes5dFXBUVn17U+ulIX9TvMUDdaM?=
- =?us-ascii?Q?mRcE8e1F+TEh3ntyOdHqQgjcCqXeOe56VXKcxZLSGeUGruxqWgGI92c0V/ef?=
- =?us-ascii?Q?B7pyFFe5Qdg7rfqAPWrYD089isGm68t2s472z404oKyBOy3ZRySHfySSm9W8?=
- =?us-ascii?Q?nyOjnPCsjntpXYH8mg4DE1E4UMzgsWcfoX8KSvcUS1a6ZIpyuV+tCTt48x3Z?=
- =?us-ascii?Q?c6NmOduLascpJ1r9PJLr7fnvS1CJRUbCyy8+B99WMq/3FrRfmlkqvKbyi3cf?=
- =?us-ascii?Q?zg+B6smaDeqgW34xr30CzmZQTF8grO2Y8yMTUCXmo0PN8upxn1D8IHoGzHg7?=
- =?us-ascii?Q?o/EVGJviOVibOZo6gNsm5qkShOjtYX+Eu1fumqBZiS9P9SLRJ9MHe71uuo3V?=
- =?us-ascii?Q?BqXt0LCmu0md9FIgEnsIxSozNQHXJNBXRS7V2d4MhIyCl1kjLPcII+td98dF?=
- =?us-ascii?Q?aZHOEqYzUY6ESapTjxdVJjopV8QvBwaIl1DjguAG9E3D+ZojCSh/AjdGmfVN?=
- =?us-ascii?Q?ZwXSIJi7DDVKLUDWoMm/89xzg3E6wbSeu31R5cepNW9IvkZegsnzZSNbtfy5?=
- =?us-ascii?Q?P/+GiJPe1joti9uTm/aUCj6aqsjkVvLTgzZntKp4yqMyDAnKBxM3HZFoesrS?=
- =?us-ascii?Q?CktALvfpqCEa0ffRWUZN2aGIJ9VBAMsPmm3RGGOLYQI3cvxXzTrv/1YIjwvj?=
- =?us-ascii?Q?KaAh0sQzoE2Vtguj8cl22VJvPVZ098Bu1RolytzxG+C2JZbvKEAVsGXSjLXz?=
- =?us-ascii?Q?xYyZ/Txnw5uHvTzmt9tDQTzYUXtnAY6aJLLluiAaLgB/VqBWtuv5aallniSn?=
- =?us-ascii?Q?MswR2+9diXaD+pJMdrMLtPWOruG5wPHWw8FRmE5Jp1EQ66WyJYpVf/0GEuGB?=
- =?us-ascii?Q?cgO/VriheG7/QwHLWu5IsjX1+qZHGwPaCh6W3teUYlXC9mQPvGu/+XRAedae?=
- =?us-ascii?Q?Nr6RY9efSWnycr6icBqv0oP+3eMIiVMw05/+uFZ4?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?f0X6ipMKg4nwIVFHieLCFb9tHz/Y1LKDldZBSy03/DjgSKhfNtPkuMHhbzT2?=
+ =?us-ascii?Q?IVI6WxoUk+rJCw1WS5CFsBEONIuxSsUh0Y5J43YBcrB1+iHr55R67IeqKmE5?=
+ =?us-ascii?Q?5VD2TVI8+RT+/DUi+I0Heaswr1UNW6BsXuzeGfq0f/O58MJPQXMOda25I5Qb?=
+ =?us-ascii?Q?BIIgzRV068iuMRw6/HhKS7zbr2aFJLmA2igeaUdjPTjcnRVczBx5b76r6Qqs?=
+ =?us-ascii?Q?DcUIo+/Z6v2S+AkrfcZ2+C4MokrVTemb9GyQX+QzMVx6DfXDqUWPAS/Xzhh+?=
+ =?us-ascii?Q?fdefszepYEdnSb4NXkAOSg2zVPZdWpI45Mi80DEY0HzVfziIYTiMkUXQ+C/k?=
+ =?us-ascii?Q?jt1CYGCEky0FBZm4XLsu2ru7Y8hy7mZ6YnEdKG4fJQJkT4tX+K3SpTpGGJe2?=
+ =?us-ascii?Q?G8fSQzPAl+8dZUJx5oQZ3gFurCdeYdHZw/7sNSk8ZXM+U7HbCralqPFj60IN?=
+ =?us-ascii?Q?27vfGyHkTRhoyymIANOoAqzXI6Z2XJ935g9DQsRVuJ9NjL7vdA0t6NEosyME?=
+ =?us-ascii?Q?Ju/B5OBikNLV7TwlLxgWCFngYuV2el0LkpxpJhIg9OV2aOuaI/711o5Fo32d?=
+ =?us-ascii?Q?1HergqhLKhp8+SV1rYdk+F3gpGVzr94LmoVbijtzFonZ7fCv51ahPXCdD+xP?=
+ =?us-ascii?Q?hRutub4j16it+wpE/hWFjXeHJi/dYTsv1EQ4RdUU1NBpJTphlAiva3AtdP5k?=
+ =?us-ascii?Q?cnrPPA0K/SdnHNOAXzVy/6x8m8NleJubIZoPdLkzHkPv2s/V3nQEyzYF9F3u?=
+ =?us-ascii?Q?WtjG7zNMNIdWtY5UD3AiwURO4GUSVrxUx2qadrH5A9s/DWfLIyqKsV3I+GqC?=
+ =?us-ascii?Q?PvpCz/5L4qiVL/LH5SrJvbqny+q9L71idw2fni36G+eNwAMOxFQ+hZtGg7Uo?=
+ =?us-ascii?Q?T6l8k+yCWln5HpDh0zACiPcpoQpqcVGnplvj71mtEx4hnglO3zNardlEM+GV?=
+ =?us-ascii?Q?0ToI4iOJiHBoBsj4VPJfnWp1wSLG7TbrQeukhnozJnUHit+YlQwYoE+usniw?=
+ =?us-ascii?Q?n+noGNGI9pBo6gT/meyXaK0DLB/bWqw0nV582FvQVwZ2zQiwUrGFG+o9DvtZ?=
+ =?us-ascii?Q?GZkN9cyDLjuMjiaUL5H0uiPk68PUouj/xIItjNXC1R9LSnl06A0+Io0/im8j?=
+ =?us-ascii?Q?ZCGnCEFCyM8QRo71qUjtvKmBBIPdethUJatWQwVCfvFfT2OsbcW6Vjp9YZK5?=
+ =?us-ascii?Q?H1iKUdcC33jPCAoneRHiMLYMQDueAv15cBu1qLMecol9B7Ogm9/2TNXmLBL4?=
+ =?us-ascii?Q?fu3EOaGbI+mHeSHYMKmLKemZpFHnAKxt/9oMBypTJ4lTaO8Obw1dlkbszfuX?=
+ =?us-ascii?Q?fSOsJxkd3W1hd50zBZnTdluLwyhTuOO6cbnuoUuRcvpICI823DkjDPOm1EWq?=
+ =?us-ascii?Q?ehX2K5x7mQRkzZlCi3u2LthWztp5qMa3CbiHz8Vh5L7JYZQuoCKXWEPXZgQM?=
+ =?us-ascii?Q?+bUJupJWENrSyxHjsWZZSCQeigj++AWKuwtqK50Nsr9K41h9AqcmxqZeGGgT?=
+ =?us-ascii?Q?XCNFwDDZhOlzf3N8I9r62+QltLhos5CeLxFPBxrUD/pQ1gxXoAHrCPH582B6?=
+ =?us-ascii?Q?iqhLqp1U2aahUgF9T6qDQgYIPdYoxUnhxC21pNhQ?=
 X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: KKrzmitCP5SNTgyyQC3iB84BmE2b8K/L+TC4cdYKhM1k7y6lBGr6c5m0eoxOCIg3h5V9mRdZOkIYN5CahQdOa16sRjn6HvCuTAtcaRtOvxOKGw1qALdMf6+h/vF6xFeMnykTo5J10ycjThVIY0W+Tx+W6TlKKdJwklQ7UGIbP5tGCiMyXJZeBHtVt/ROswoEjxG8RoTAetFBmNapvzceEML5/n8nwzQt7mg+UHgPIRD796GDpODN+ShtGqn6Expo25Km8qEtf2PwdrtS4e2NOanVOC7Q839erw1NhHn/w0xUW4Fun9SyEvt0/NJb/FPkp+BN39hCrBSVnkCPPmPK/KpK7MJZUsI7MBZr+s8Q/mREB/Pr2G7RuibBXK3b02yg5OgJ5IiywY7enZFSdsaoV9U9Qfcnf1voBhWzgRPqNRV/hJh06HewH+gztYfWRrafjW53mh3Ey2Mh2dVYvuRn7YVZpJv8A1wFriXmyGvSoxQ8Z+qDEspkpCxVkKfaMAh5W4CLQWubPtntyQjauKLq9cZkBNcKSV9FO6DkJZM5vGbmnQ/14y8y60sKPyjY4tmbSiC0p7YZ16MnvREq16XGokweWoGvUc3QnzGf5OuH8ixKz3VDk4RGWcATid3dCxJG
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: 0g2mDc92xF0snj2lv9jIOFuy/jWXCZx6NDL44PJjf1aGby1AnvzHzN/Ehu8I/ZhQh0Hq4320OWS+ScCD04/OzWWZLFI2xdKFwoxEJbg5+Ooykp7VGsXI+j8FOtKOKDuRr49VprSFJl1H2g2TaaY4jLi0BrlQTKYgkl7z5vZedYJr9F/StgtYhpH4NiH0ZsZl62GSyaMJ35jdI5Nfue6WujNoiaptt8oo+z0QkWG8tU1SKXAh4UbjXsE5sMEqa8ztwZHAtZTbDzqFiq7TROd3OXGFkLCP1S4uIAcI5rTXpR6prtAfIwQchXnmc8N2jenv6g93u79ozzRXtsfyV5QWVumKqqeB15gOOsDpTjkux5ni4t2wyYsNJChcnh5r+PLu2+i2KmxSj1rBV2wXPd1QZKmJhAZYjYhTada9C6+f2zmn1hAqSyAmOlmW/Azd8CIRHPjF/oFil1Ro+u6FKk1yJERqLDptvR9/OTFzg55GEEAceb5OWj1JEs9IJSOcBYoq/AIrto/Kq/xqc75WV6wtrf5NZdyBXr2uzKzqCGYg89RSON1H01Pkq02cUDm26rG83C+eXgLUuyvjgW8ciK+Rk3UgQa1Z/B2/DzRkttD+C4/D2+6t71aK+93K5GCizKUR
 X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ff861c83-ee70-4a28-7e96-08ddc43d85c2
+X-MS-Exchange-CrossTenant-Network-Message-Id: 694ea6e1-f573-4887-98cb-08ddc43d8df8
 X-MS-Exchange-CrossTenant-AuthSource: AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jul 2025 07:51:07.4052
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jul 2025 07:51:21.1491
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: X297gvkXHGy6BYSYPNAz54lABoks0ofz50o0cjSaqL5lA+I6rpjqjuhqLGRPGX94kqYsNU8G9A5bk/M44H+bHg==
+X-MS-Exchange-CrossTenant-UserPrincipalName: hlCVP9S5H6irvgQjKGMMYe1L4uN0m5+n/JdCHFxvHOuoyBMvHQR/6wVhGPwgFAen4VuYe/ClNq9x9ajt173z/A==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXP192MB1853
 X-MS-Exchange-CrossPremises-AuthSource: AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
 X-MS-Exchange-CrossPremises-AuthAs: Internal
@@ -168,24 +171,24 @@ X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:
 X-MS-Exchange-CrossPremises-SCL: 1
 X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
 X-OrganizationHeadersPreserved: GVXP192MB1853.EURP192.PROD.OUTLOOK.COM
-X-Proofpoint-ORIG-GUID: 20nJxlpTEc3nZWMRhvzXGpKtIwMB9bdK
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE0MDEwMiBTYWx0ZWRfX/9vzDox3vf/K
- fbp+z3i0fUDR9KpQoZWaBG5CD2Uyenn1fe3tOsJcTmQVeeuUqLsnOlvuK4H98KEwYh8kEHa+lJS
- 8/ugAlyRTl2jBYw1AFMifgjVhE6/ILaxGn7YKgGqde6LSCgoE6SOiEPNlYv/WdlDIoxhWhpIZ0p
- pvJOpVHKKq3IcSO2d8xonx2JNtmTQZlmNzlOHh8zXYrFiQsn2qSAZDBhw9y4SDyUy/4wXGcXVxE
- JM3sP1PoOTFLH8tGepMEvyRv1b1dqImLFBa+/5HMazzOuEHh5SBa2pmvfXG9wzDwZfDW9vLw58r
- 0vGQug2PKcgqnJ/rsam8jL/NYFERahOeZ9JWqwAJlbULr78rjeFxR2c0EZ3Co16Mv6TWzVTMk1c
- MnFZMdPC
-X-Proofpoint-GUID: 20nJxlpTEc3nZWMRhvzXGpKtIwMB9bdK
-X-Authority-Analysis: v=2.4 cv=Nf3m13D4 c=1 sm=1 tr=0 ts=687759f4 cx=c_pps
- a=yiq0MvgY0icrkiP31sBlkw==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzEyMDExNiBTYWx0ZWRfX1LMyYy23hFkY
+ ujzqSfBdp6yIlObnvJROHa1LbtZjlQBdJ70nNNwnrCLb4vQ45JyxXZAvtVyS1LJjjoScXJHFJsD
+ ipRfw8c9zt0iVFnOfQb9dRkPuY4NMg1I/ObTVn+O8m+1wQ5K4AKq66PzmmjoTDloIe72Ohdic8C
+ EeqmDHrxbQQMtL4coawzEGgZz8XKetkAiUVrJ2l3MNQk7hd43aHetnrcZqMynOi7qYtJy1iISAw
+ 9JfcM1hN//V5xz5k4ZSokLSoUBmA7I9vsBMFi0KJqW2z9y+63aKaSZsKusw69R2mTX+0eHDGbe9
+ YvFfGy4GO7LzJjzl4cjSo3/5TXs37DFmUsJC5N/3Uk+JDiZ33mDD5Pz0vjEj8CEut0leLKXlOrn
+ NqPcZ7jG
+X-Proofpoint-GUID: Ggpl5zNpcuCr_2QSWO9hHy8dH8PcWbIB
+X-Proofpoint-ORIG-GUID: Ggpl5zNpcuCr_2QSWO9hHy8dH8PcWbIB
+X-Authority-Analysis: v=2.4 cv=NOrV+16g c=1 sm=1 tr=0 ts=687759fc cx=c_pps
+ a=1T+Jk3iLsGfRLyt5uBfG9w==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
  a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19 a=wKuvFiaSGQ0qltdbU6+NXLB8nM8=:19
  a=Ol13hO9ccFRV9qXi2t6ftBPywas=:19 a=xqWC_Br6kY4A:10 a=Wb1JkmetP80A:10
- a=8gLI3H-aZtYA:10 a=Yd8HllbCdjvYV8kqp-4A:9
+ a=8gLI3H-aZtYA:10 a=N9GNhs4bAAAA:8 a=J49g4d0EefnLm9aTGK4A:9
+ a=PZhj9NlD-CKO8hVp7yCs:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250716_005129_381163_A47EE1BC 
-X-CRM114-Status: UNSURE (   5.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250716_005129_433790_B91773CE 
+X-CRM114-Status: GOOD (  12.22  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -200,81 +203,91 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Fix endianness handling in QMI firmware transfer on big-endian
-platforms. Without this fix, the firmware download fails due to
-misinterpreted data structures exchanged between the host and the
-wireless module.
+Ensure proper endianness support for big-endian platforms by correcting
+data types in the QMI board data file download request message. Add
+missing byte swaps wherever this structure is accessed or modified.
 
-The issue occurs during early bring-up on big endian systems, where QMI
-messages are not correctly parsed by the driver, leading to failed
-initialization sequences. Ensure all relevant fields are properly
-converted between CPU and little-endian format in request and response
-messages, as expected by the firmware. Attached logs showing the failure
-before the fix:
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Signed-off-by: Alexander Wilhelm <alexander.wilhelm@westermo.com>
+---
+ drivers/net/wireless/ath/ath12k/qmi.c | 18 +++++++++---------
+ drivers/net/wireless/ath/ath12k/qmi.h |  8 ++++----
+ 2 files changed, 13 insertions(+), 13 deletions(-)
 
-    ath12k_pci 0001:01:00.0: BAR 0: assigned [mem 0xc00000000-0xc001fffff 64bit]
-    ath12k_pci 0001:01:00.0: boot pci_mem 0xcd4148e9
-    ath12k_pci 0001:01:00.0: pci probe 17cb:1109 17cb:1109
-    ath12k_pci 0001:01:00.0: pci tcsr_soc_hw_version major 2 minor 0
-    ath12k_pci 0001:01:00.0: request MSI one vector
-    ath12k_pci 0001:01:00.0: MSI vectors: 1
-    ath12k_pci 0001:01:00.0: msi base data is 0
-    ath12k_pci 0001:01:00.0: Hardware name: qcn9274 hw2.0
-    ath12k_pci 0001:01:00.0: boot firmware request ath12k/QCN9274/hw2.0/firmware-2.bin size 15134776
-    ath12k_pci 0001:01:00.0: found fw timestamp 1722934582
-    ath12k_pci 0001:01:00.0: found m3 image ie (421880 B)
-    ath12k_pci 0001:01:00.0: found fw image ie (7229440 B)
-    ath12k_pci 0001:01:00.0: found dualmac fw image ie (7483392 B)
-    ath12k_pci 0001:01:00.0: found firmware features ie (1 B)
-    ath12k_pci 0001:01:00.0: features
-    ath12k_pci 0001:01:00.0: using fw api 2
-    ath12k_pci 0001:01:00.0: dualmac fw selected for board id: 1005
-    ath12k_pci 0001:01:00.0: Assign MSI to user: MHI, num_vectors: 3, user_base_data: 0, base_vector: 0
-    ath12k_pci 0001:01:00.0: Number of assigned MSI for MHI is 3, base vector is 0
-    ath12k_pci 0001:01:00.0: Assign MSI to user: CE, num_vectors: 1, user_base_data: 0, base_vector: 0
-    ath12k_pci 0001:01:00.0: Assign MSI to user: DP, num_vectors: 1, user_base_data: 0, base_vector: 0
-    ath12k_pci 0001:01:00.0: irq:18 group:0
-    ath12k_pci 0001:01:00.0: irq:18 group:1
-    ath12k_pci 0001:01:00.0: irq:18 group:2
-    ath12k_pci 0001:01:00.0: irq:18 group:3
-    ath12k_pci 0001:01:00.0: irq:18 group:4
-    ath12k_pci 0001:01:00.0: irq:18 group:5
-    ath12k_pci 0001:01:00.0: irq:18 group:6
-    ath12k_pci 0001:01:00.0: irq:18 group:7
-    ath12k_pci 0001:01:00.0: pci after request_irq msi_ep_base_data 0
-    ath12k_pci 0001:01:00.0: cookie:0x0
-    ath12k_pci 0001:01:00.0: WLAON_WARM_SW_ENTRY 0x2
-    ath12k_pci 0001:01:00.0: WLAON_WARM_SW_ENTRY 0x2
-    ath12k_pci 0001:01:00.0: soc reset cause:0
-    ath12k_pci 0001:01:00.0: MHISTATUS 0xff04
-    ath12k_pci 0001:01:00.0: pci link_ctl 0x0000 L0s 0 L1 0
-    ath12k_pci 0001:01:00.0: pci reg 0x3164 instance 0x11 read val 0x11
-    ath12k_pci 0001:01:00.0: setting mhi state: INIT(0)
-    ath12k_pci 0001:01:00.0: setting mhi state: POWER_ON(2)
-    ath12k_pci 0001:01:00.0: mhi notify status reason UNKNOWN
-    ath12k_pci 0001:01:00.0: mhi notify status reason MHI_CB_EE_MISSION_MODE
-    ath12k_pci 0001:01:00.0: qmi wifi fw qmi service connected
-    ath12k_pci 0001:01:00.0: phy capability resp valid 1 num_phy 2 valid 1 board_id 84934656 valid 1 single_chip_mlo_support 0
-    ath12k_pci 0001:01:00.0: intra device MLO is disabled hence skip QMI MLO cap
-
-Alexander Wilhelm (11):
-  wifi: ath12k: fix endianness handling in QMI host capability request
-  wifi: ath12k: fix endianness handling in QMI phy capability response
-  wifi: ath12k: fix endianness handling in QMI firmware indication
-  wifi: ath12k: fix endianness handling in QMI firmware memory indication
-  wifi: ath12k: fix endianness handling in QMI respond firmware memory
-  wifi: ath12k: fix endianness handling in QMI firmware capabilities
-  wifi: ath12k: fix endianness handling in QMI bdf download
-  wifi: ath12k: fix endianness handling in QMI firmware m3 info
-  wifi: ath12k: fix endianness handling in QMI firmware wlan mode
-  wifi: ath12k: fix endianness handling in QMI wlan configuration
-  wifi: ath12k: fix endianness handling in QMI response
-
- drivers/net/wireless/ath/ath12k/qmi.c | 149 ++++++++++++++------------
- drivers/net/wireless/ath/ath12k/qmi.h | 106 +++++++++---------
- include/linux/soc/qcom/qmi.h          |   4 +-
- 3 files changed, 136 insertions(+), 123 deletions(-)
-
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index 0bcfb9281d01..d18ffb86f7bc 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -2934,9 +2934,9 @@ static int ath12k_qmi_load_file_target_mem(struct ath12k_base *ab,
+ 	while (remaining) {
+ 		req->valid = 1;
+ 		req->file_id_valid = 1;
+-		req->file_id = ab->qmi.target.board_id;
++		req->file_id = cpu_to_le32(ab->qmi.target.board_id);
+ 		req->total_size_valid = 1;
+-		req->total_size = remaining;
++		req->total_size = cpu_to_le32(remaining);
+ 		req->seg_id_valid = 1;
+ 		req->data_valid = 1;
+ 		req->bdf_type = type;
+@@ -2945,18 +2945,18 @@ static int ath12k_qmi_load_file_target_mem(struct ath12k_base *ab,
+ 		req->end = 0;
+ 
+ 		if (remaining > QMI_WLANFW_MAX_DATA_SIZE_V01) {
+-			req->data_len = QMI_WLANFW_MAX_DATA_SIZE_V01;
++			req->data_len = cpu_to_le32(QMI_WLANFW_MAX_DATA_SIZE_V01);
+ 		} else {
+-			req->data_len = remaining;
++			req->data_len = cpu_to_le32(remaining);
+ 			req->end = 1;
+ 		}
+ 
+ 		if (type == ATH12K_QMI_FILE_TYPE_EEPROM) {
+ 			req->data_valid = 0;
+ 			req->end = 1;
+-			req->data_len = ATH12K_QMI_MAX_BDF_FILE_NAME_SIZE;
++			req->data_len = cpu_to_le32(ATH12K_QMI_MAX_BDF_FILE_NAME_SIZE);
+ 		} else {
+-			memcpy(req->data, temp, req->data_len);
++			memcpy(req->data, temp, le32_to_cpu(req->data_len));
+ 		}
+ 
+ 		ret = qmi_txn_init(&ab->qmi.handle, &txn,
+@@ -2991,9 +2991,9 @@ static int ath12k_qmi_load_file_target_mem(struct ath12k_base *ab,
+ 		if (type == ATH12K_QMI_FILE_TYPE_EEPROM) {
+ 			remaining = 0;
+ 		} else {
+-			remaining -= req->data_len;
+-			temp += req->data_len;
+-			req->seg_id++;
++			remaining -= le32_to_cpu(req->data_len);
++			temp += le32_to_cpu(req->data_len);
++			req->seg_id += cpu_to_le32(1);
+ 			ath12k_dbg(ab, ATH12K_DBG_QMI,
+ 				   "qmi bdf download request remaining %i\n",
+ 				   remaining);
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
+index 114324157e84..a48850ec0296 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.h
++++ b/drivers/net/wireless/ath/ath12k/qmi.h
+@@ -504,13 +504,13 @@ struct qmi_wlanfw_cap_req_msg_v01 {
+ struct qmi_wlanfw_bdf_download_req_msg_v01 {
+ 	u8 valid;
+ 	u8 file_id_valid;
+-	enum qmi_wlanfw_cal_temp_id_enum_v01 file_id;
++	__le32 file_id;
+ 	u8 total_size_valid;
+-	u32 total_size;
++	__le32 total_size;
+ 	u8 seg_id_valid;
+-	u32 seg_id;
++	__le32 seg_id;
+ 	u8 data_valid;
+-	u32 data_len;
++	__le32 data_len;
+ 	u8 data[QMI_WLANFW_MAX_DATA_SIZE_V01];
+ 	u8 end_valid;
+ 	u8 end;
 -- 
 2.34.1
 
