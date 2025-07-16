@@ -4,53 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9278C83F27
-	for <ath12k@archiver.kernel.org>; Wed, 16 Jul 2025 07:51:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6253C83F35
+	for <ath12k@archiver.kernel.org>; Wed, 16 Jul 2025 07:51:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-Type:
-	Content-Transfer-Encoding:References:In-Reply-To:Message-Id:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nEkmMF699rVALbJBpgYAWNIrWaqpJ/kyJY09PT68QY4=; b=DfPnQeazVZpnx9hZBsyk6xzZ9/
-	RIWUQoxz0WIvAJcmjeY14tfLr5yeMerFhx+YhUTnuJceYyAGUh/5m1YXlxr9CpEtiv47sthfgZpsx
-	OmqdcZ/WA6MPsjzBuP9izS8bGYdmQ7xXutDWXDUFE1zNn1bCBwVOoX2RMykc+rkdegs/K7Vcz4D9J
-	7wyhtjPD6B8ljjP/L32F/1RsGJrT49BQSD0Z1l/Q6PJiV3kPRyIivSLi6Hhm6wIikgA9M2IW4h8L9
-	ulPqNnjKJBMYzRvldgdlo2ydqZECgwsIAHEU6aRG6kLs9DMAVs6oG51qqe3ET7/yqY9ZdZsYK3vJv
-	xXJJpxsw==;
+	Content-Transfer-Encoding:Message-Id:Date:Subject:Cc:To:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=YzaI96ShlJH+PVtvKAz5G40BbTtCyBTwyrhZ7BFwnmM=; b=uvvh+92O7lnCw2wNskRcIhNcPC
+	B/2hZaU8GxfdjGdmlfVArdFpPphCXAujcSWxfuWsc0wXoJ6SbDPpVBf1JfaJo1oA1+9pM5ss9dbYb
+	bEU9uOybbRM3xHGwOb5YGqEI7NojEe/ErjONyCFGUxj7UfhWmS+9Z1ffJZzjzxG1HYHxS8u562vkp
+	de/5heiE/KrfEHlz5aR3WO8bTSwSHnIxlDMxLfQteBtfmCMIz4I+u47Q0/gtF4yQHFUZxduQtnQpc
+	SY4g/YCLqp31ARFtvaArj2pO+WBgo1s+cqqoTOOOgzIJQK3cnAbsxAUbeoBjK13geQeoz6/1dXKfz
+	1rW9EasA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubwvL-0000000744r-2ag5;
-	Wed, 16 Jul 2025 07:51:31 +0000
-Received: from mx08-0057a101.pphosted.com ([185.183.31.45])
+	id 1ubwvN-0000000746M-15BS;
+	Wed, 16 Jul 2025 07:51:33 +0000
+Received: from mx07-0057a101.pphosted.com ([205.220.184.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubwvI-0000000740c-0CZ9
+	id 1ubwvJ-0000000740h-08BL
 	for ath12k@lists.infradead.org;
 	Wed, 16 Jul 2025 07:51:30 +0000
-Received: from pps.filterd (m0214196.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.8/8.18.1.8) with ESMTP id 56G6XnWA2292231;
-	Wed, 16 Jul 2025 09:51:12 +0200
+Received: from pps.filterd (m0214197.ppops.net [127.0.0.1])
+	by mx07-0057a101.pphosted.com (8.18.1.8/8.18.1.8) with ESMTP id 56G6bfO31892067;
+	Wed, 16 Jul 2025 09:51:17 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=270620241; bh=
-	nEkmMF699rVALbJBpgYAWNIrWaqpJ/kyJY09PT68QY4=; b=RQzWmoMYmXUgKzYl
-	nLbbxl8AZ3y2XLj7vT/8DvUUPLjoq/NpKpzYN619naU/5oj+6L+0LU7htFv0eQW7
-	/HApSvwS9wE3XnCG2dmw2Aajc2Uf9W5RAJkcbKE5QmrIJrNI0AbH3eJnaqt44zW5
-	TJikbsfHZ0QSS2e2k28LGuR6l23yniHG4dd1Lo4iFUn4E3dxno7agC+KNgqSVGv3
-	dYt6XYjH9fkWy1V0F2m+R5s9EUmAAyTq0EvrZIMo9LpazA7ZAcgA12O4koAIntLt
-	095yPDyzU+ebhMD5piC6urPe9zR+T0hLGNzWbk9ZAancvyUEizb2HaygS5ErMzlu
-	00MB+Q==
-Received: from eur02-db5-obe.outbound.protection.outlook.com (mail-db5eur02on2102.outbound.protection.outlook.com [40.107.249.102])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 47ut22b7n8-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=270620241; bh=YzaI96ShlJH+PVtvKAz5G4
+	0BbTtCyBTwyrhZ7BFwnmM=; b=mqRMGCxJnV+yIqB5Q7CKrDojEz0zNdDE4BHPd6
+	dP9Q8ItA55GbEWTQ+qb1wKT121wqE72XEN0q2/U4h/PGJjAqqSFjaYhXcnC3m1/D
+	LV3fOi/OgsItJIHCo33wYRjCdTFi6uCDlSR/IDnQoXVl0wcNpi+DooIlDMFskToB
+	Nmw8k6YxbRDUvEO+sy4gBV19SqcPxOQOuPoLGfcUvycksydInxdLHehANCptjv7I
+	cCohlkcmdF8pMYpTfGVs1rnDRxsKqktQ+14mbVOh25kxRZbYucn81gyLU5eAyxum
+	CE1KfeL+ZYiagw8FYwtV95uaJ3Dzj2Y905+uuKkdLY5WizFg==
+Received: from eur02-db5-obe.outbound.protection.outlook.com (mail-db5eur02on2099.outbound.protection.outlook.com [40.107.249.99])
+	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 47w5js9rdt-1
 	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Wed, 16 Jul 2025 09:51:12 +0200 (MEST)
+	Wed, 16 Jul 2025 09:51:16 +0200 (MEST)
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=We2PXRsQZyjQOCjB1IEOsjIEl03YQ8GtWSkDN3MIhFiLwKHcCBoDL4fUrfGnUOgi0FYMGuqSC7oZR3nYdeXC34C+1F7DQT2P/u8DhteWZtF24h/jYBoOMFgxM62iZYFOLZAqrZo0CtKN8ER/CY/R8yZkZQEL9FYxqeggNBPW94QGU+xOyZbchDZKNc+cXbHbyaUk5qeGGyNw8F9oSTX3+/NT55WnWJWcdvwR9PD5gVQpi8Apii5jofsALTvDSvTZKjSAmYrNTIj6aA7kbMajKoQAtEyQN5GCk32W1/XBm+kOSaYYjbYtunV9QhOzJo9mh+gt47NSJCbaSsitzE/kkw==
+ b=Fskp/Wewob1PNsGzqj+8WnAiI7s8mIjR1CFFXsj2pFu35qVjY+IDg3JkYUHobwSIow0LC12dhkItCGhnp9bhswiON7rjeZ2VLFXjpGjbb8yJ98lXZFNm0ZIdtpOu3IhBweFqe0TLmBKBaNZPZnBHUmITe5hmsoLSkiGB9houmy9j8c9UOHLxiirbISSLpyW97mSbBAx0v74W1kxnmDXEohZQ4ipWI6nIC8IP00eh0g1oemaacF5HJ7BD/BaW/Kn8Zorg9DX/QRZnXarYmlt0xX/EKVgEDycxQHNzOFeOrc/c7RAv75NfbuVUNg3gc1setESU0k/V645kHUUAGG2+4g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=nEkmMF699rVALbJBpgYAWNIrWaqpJ/kyJY09PT68QY4=;
- b=hp3B5pbbCpyvre4bNfHxQfuwWH6DiYoWYyCGnn/gTyNcMH38DrlwtZS6mlQG1TjKs12+S5EUyM+7E5UBnwToGdJZzpkJ8jnO6ue1+s4igYDdiqG4X+8ueWfuTL0Bv0tkeqIa0Cf3eVtSrzk7rxJh7ApFUTM3CoAc21z/hyv13PwEQpV7T463tWE78nkVxP0SFlulps/bbjfoUHABuKtLkEezCJ4MBs9JYaNwIHTM2w5BfcsJGvODVfskjR6XG8nxdlTCxfdpNEe+2+q6rDfiOmoyWQSi68Zlzz7Hze0NCk+amxsJYflYAXKoAZlvFDnj6hO6RIXAlrCLyyoNBeuUcQ==
+ bh=YzaI96ShlJH+PVtvKAz5G40BbTtCyBTwyrhZ7BFwnmM=;
+ b=JvQuHcu+hGQ+vDneiK2yncKcdy32/Sx++v74+0V0aSTEFD1QoprcRj34cYYiejd7e8SHf6iBUib54Yu63BtZsYwDr+pATwCnuU5gE5xp7atjIHWomo6a5n6ShLxkaSThld06FTc3EEso34o+3BJM+oVmMr2DQLQvsg4yzhC3yl5bwUkxaHUX4huvOVEoZv6ZbDvM8UPUVzPVT89EzUOArSBLq2G/TdetGAs18HUwVkn5XXszGovrb2ZDS8i9u5HhNidDk2bi6r15YApLlWnZh4Tdu10TOak+M0HJGhA3mZTgPyBQVUyvfRV7JhkDy0zm46a3Eg2L/HVZBx3sREfCqg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
  dkim=pass header.d=westermo.com; arc=none
@@ -58,106 +57,104 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=beijerelectronicsab.onmicrosoft.com;
  s=selector1-beijerelectronicsab-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nEkmMF699rVALbJBpgYAWNIrWaqpJ/kyJY09PT68QY4=;
- b=hfHXmYBNF7qsF3qAwgMa6210Rqf1ugrqOctkxFrKI5rmy1aZYf/sW0r4lEh/FkUHYUo+lJiwLQBvdRLqWVvUDPLXssT3tK8yVl/sVQ+R9Pe0uZkK4lr6BpASDvRUp9ONWFKovPr+8/kH1Ccf1uTZCcreRArWl5rTT3TRgWE46g0=
+ bh=YzaI96ShlJH+PVtvKAz5G40BbTtCyBTwyrhZ7BFwnmM=;
+ b=of5hD7UeJqcRH3qbAKfFPSbDwZM8SdxWo7VWx2DUp/HTBrwjnWo5Qmpt2RYrd1ijmIQ99pvzqlWlrDA8+vJUwgXR878cFDhVT4Kk2i2UY4AKFRmOfGAPZUoEZ4JXrz1Sjgu+6iG6cru+pwsk13Dqieh9PNqV5FZgUsAN5qL04Rk=
 Received: from AS8P192MB2240.EURP192.PROD.OUTLOOK.COM (2603:10a6:20b:63a::18)
  by GVXP192MB1853.EURP192.PROD.OUTLOOK.COM (2603:10a6:150:1::14) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8922.32; Wed, 16 Jul
- 2025 07:51:09 +0000
+ 2025 07:51:07 +0000
 Received: from AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
  ([fe80::f6d5:55ee:51e7:b13a]) by AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
  ([fe80::f6d5:55ee:51e7:b13a%4]) with mapi id 15.20.8922.028; Wed, 16 Jul 2025
- 07:51:09 +0000
+ 07:51:07 +0000
 From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
 To: Jeff Johnson <jjohnson@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-Subject: [PATCH 01/11] wifi: ath12k: fix endianness handling in QMI host capability request
-Date: Wed, 16 Jul 2025 09:50:50 +0200
-Message-Id: <20250716075100.1447352-2-alexander.wilhelm@westermo.com>
+Subject: [PATCH 00/11] wifi: ath12k: Fix endianness handling in QMI
+Date: Wed, 16 Jul 2025 09:50:49 +0200
+Message-Id: <20250716075100.1447352-1-alexander.wilhelm@westermo.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250716075100.1447352-1-alexander.wilhelm@westermo.com>
-References: <20250716075100.1447352-1-alexander.wilhelm@westermo.com>
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
-X-ClientProxiedBy: HE1PR0102CA0030.eurprd01.prod.exchangelabs.com
- (2603:10a6:7:14::43) To AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
+X-ClientProxiedBy: HE1PR0102CA0054.eurprd01.prod.exchangelabs.com
+ (2603:10a6:7:7d::31) To AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
  (2603:10a6:20b:63a::18)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AS8P192MB2240:EE_|GVXP192MB1853:EE_
-X-MS-Office365-Filtering-Correlation-Id: 82825dbb-74c4-4376-36b7-08ddc43d8713
+X-MS-Office365-Filtering-Correlation-Id: ff861c83-ee70-4a28-7e96-08ddc43d85c2
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?g6EFFpeCBIHp+48ar3JdRzBExds/y3yEmJ/ZvNQlgTkjaC3sJwFh+lOZEaCH?=
- =?us-ascii?Q?M0W7nRkzwx5w02Yqfl9f7NkA3AB1Cnun+gbw8gKNbEriIm9whPhzdZk6XUw3?=
- =?us-ascii?Q?do9cTFhd+u/gl81LWgeMw7OM0tQJ7s07XDHM2dUV5iqAQF69WprXodeRcdmU?=
- =?us-ascii?Q?SMl7gyubQPv5al4u8f5IUSPAjP0151qbKotDk0SKonfQvUuVtv8Xkw19BjJN?=
- =?us-ascii?Q?3OQMU8faeCB2MvnoSeD7UxEBtqL0A1Fqsrzq5y0B3brGd2cXDzsAAHymBsSW?=
- =?us-ascii?Q?XrJ7VSYhKbR4kC2jw7+bH+h12PIfZ1S0Y8deNcSoKabhD7a7TY4cO4dw7W5j?=
- =?us-ascii?Q?bRAOvkbziOOd8K5XSQPODDIMtNVL4kRorbUleEFuiAleoOFhZzeej7pPktmI?=
- =?us-ascii?Q?W+lHHLCHnUyiidTnCFYxjY9dPkkbj31DHT2kW5pCfkkYMRFrE2coF0CCLORP?=
- =?us-ascii?Q?BqIU2SknSpo353LsKwLG45U4/cZndXbxJgbOLuAQGhISVraC1gf6HchcC1Nf?=
- =?us-ascii?Q?GXO/Dt3eBOkGKex1KcNSLBJjluvWrb2baVscLLJQixQd0armdaQ3sV/LqwCQ?=
- =?us-ascii?Q?UgIGapvcs9LqlYdLN92dsJfWGd2XKlA+mFavvSzpCKfprUQBjnHHceMsalWy?=
- =?us-ascii?Q?KiytNBmpOuVOj4o1+j7gvgDx/lAhMUncvDHa1pLu3tTfHRlDdGV2P+qtEd8q?=
- =?us-ascii?Q?o/pggTEaV4MWuR6LOS/GiRFEFwuceH+ihe/6whciDbsmeuIOY9okg7td1H5J?=
- =?us-ascii?Q?hW4SgvkyuGMCzHoGSoy5sPZZBoOaom+WMEezvO7TxlHbek7Wxd/829Yzvofk?=
- =?us-ascii?Q?VzX9wDGvr3M6pIcq7ZTbKL/CTSGEadtzr0Z9ndMB0KPuDPS0FaEFIqa3KnPS?=
- =?us-ascii?Q?J2qsYyx38m886RVGpKqeR6sNf6FzaKKScqNMhRUrZ3s1crQUDZm2IrUNnY17?=
- =?us-ascii?Q?xzTN/z4sKx3bIDQ20kRp7tOAYL+7QAg/ADF4wZGn+0FZmnv1mS806O9+vcwX?=
- =?us-ascii?Q?0w4QU2sVg9U6mKjl/mqDn4P0OjP4tcU5E0NCx5VSDxzT22bL7WfAss2duFqH?=
- =?us-ascii?Q?z40KVgQ4DsaLNWPkVSfGHAS0g26ii6qgC8/xNgvg8Ux+Vij00Obp5XW0DYMm?=
- =?us-ascii?Q?YyxgdtMHItaXXdIvETeEe2IRNyaeiVowocDHo0dMnBudL5CUqiVEpR1DczED?=
- =?us-ascii?Q?fW6I3Up4dFpu7Q/lnJ6kPI1yuKVfH+qwGCisZK1CTX9gNMT3Z4sNFX2QF2ch?=
- =?us-ascii?Q?Trh/Xh+ALDCZQLeQeD2EyohX+s/une5dVN/5LNSHEpYnC06tkwgN8ffSf+qq?=
- =?us-ascii?Q?7ZnN6XQhXqdWN6/WLpYOSoW1wSnD9aCNVt9hqFligZ2dJKrY3JaqCFSVt3zo?=
- =?us-ascii?Q?6tvhjfocVP77gygi6oq6gZOVMSVLtDoTsGPsgC0diPZ4QSR7KaoR+7guGqjH?=
- =?us-ascii?Q?sO0nKKAUo/M=3D?=
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?8umVH5B9kKCCwNRYU6mYcybbOCvR/ITPS0xDWXFji2Bka+k7uxch4tUZxE0v?=
+ =?us-ascii?Q?ac6g4uAw/2Kjr7d8MuJkG+WjFZRIvK/mKvqC1M3AfjgZBEsjP1yEm+u0ucw2?=
+ =?us-ascii?Q?0bQCAGgchLKO6oF4xWCSc8+z6L/hkABMDJebopElyKNe9JXW1XFyHxzm72Od?=
+ =?us-ascii?Q?t+Rcv2yL0Am5HEZT+/ZAsiNS/CKejap07jhtFZZS1kMPbIbUZLjZwP0PVguG?=
+ =?us-ascii?Q?iAFgcBXLq+rirlGR5vgcBJ/HVlEw+M6o0ivBgnit66uu5YZoc6B3PCMQU7vo?=
+ =?us-ascii?Q?JIAeDNok/G7RniPtFTdnAnV8SiBXvxNBoGZEbinNx7Q0BRBM3FyUUgnkl00H?=
+ =?us-ascii?Q?KRgWqg5VcHqRYoFf0HVk3cdqggZRLb54s7FclCDGzc7Kem1BNdfqcJryLC3e?=
+ =?us-ascii?Q?ifNXJFpIOwUU6/9Fz5tNbiViIwS3hRTt54eNRc6UPH+tQL41hz8U9x90pRd2?=
+ =?us-ascii?Q?evLPr2xe7kVXGrx/pEK9amJ+gQfijGTpoTDZirHiPw6PDoySeL1ANAjV2EnI?=
+ =?us-ascii?Q?EZTM2QLBLHMfFgO4drKyfzxftLvq+mWjOh+XTsfLHmHjaG18dTpB8JVDm886?=
+ =?us-ascii?Q?+HpMQFl8wz+eKjgKjY1+rkU+Fh2rsu1wJG6HrZEyD/P+nvHzAdzaYNQD7eWX?=
+ =?us-ascii?Q?VmOE0qceFgOnYVGp/wGwHtQPuZ14BMmGk++/EC7MnROujuQUqm0bHytibian?=
+ =?us-ascii?Q?HXVdj83fs6eF8PmbjCkXevfBkGs/1PY79lp06i5fX9QSZahZLmnnihnF1ZYX?=
+ =?us-ascii?Q?47j1jWbUYveKq5cNRLjsiX2lRmOr2KHOiJScmHUL5ggYCzbrR5qwJdVlxxwm?=
+ =?us-ascii?Q?jfyPgBTN4RuXVgKAP9EoDrshb6RexopAyh9zqq7Zvnnh8lldwCNcO4ZY4csi?=
+ =?us-ascii?Q?BWsLi6fOn5I2uorP87w1cqLh2paW6UZt6+v+uGodtU9bE6RILOHS63IGurJv?=
+ =?us-ascii?Q?lneu2necxJqk444SRfxMUAqt3UnfkntLMJCjiiZ0l3Ug1wG4ArQac+m4/g5A?=
+ =?us-ascii?Q?1DPwVW/VF2VJJ/iZdLwXGNAFC3BaPAdA/0L1+ly3fBuW5RghnVfBp91Q9S8c?=
+ =?us-ascii?Q?V+BOCSYxcszVj9P7JSCM2cnMM5dVXV/DR0DnZ+nXgXLoWn3BKTNLtxB7Pdi9?=
+ =?us-ascii?Q?yNxVVQSdMi39JRPZLFGIc0FtYQIlIlS+DVhCwP667pffjK79OCaJdkuSCZvu?=
+ =?us-ascii?Q?XiQLFPIQOC5l83puTPM0ivn2gPNvQibeJX+H7P754SSg0Z66Wfgm5aiJ9ldA?=
+ =?us-ascii?Q?wLv0J/kbErQ/zfb0bBNVEq/+SZZcWdItsnah4Lf6u08XLJsubD+21SWIw2j2?=
+ =?us-ascii?Q?e0NEBzPEIkrxqAynufWFhkbYimmqwbMomFqqr7aADeT5K8pzGEEkuIT2AMUM?=
+ =?us-ascii?Q?bbbK1a8mEsuIYbSfSymXpKHM/cte+aqLdi0x2Z/KC7cSZbuz1RjRfT5coMrQ?=
+ =?us-ascii?Q?oqm5ygz3B3g=3D?=
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8P192MB2240.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014);DIR:OUT;SFP:1102;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?skmOpJidFV0gSw5plWcMCQXMPU4AxC67f5sz17UwRsjcHf+yTCha6wqMjzLN?=
- =?us-ascii?Q?9d4sQWBxsZ46LYZ8yJiki0gGYMxCSAIkwLAbAZu1fizoDtVOQTaqaWowBeqo?=
- =?us-ascii?Q?4+OPc3Kyc/ovIPHJ+kHYnM03O0GZ6Z7Uji3+s1lHEKIuXk/dFlOdJNJo3jGv?=
- =?us-ascii?Q?LSatbEcgcLRAki/Xx7Tu+2vmGR+bvsUXK9FtpkFT4gVPkWVlOrDkW3w3kglt?=
- =?us-ascii?Q?BPeV3SkaTXcnol+4ZhG4SWoGRvXmtU7YW4w84mAppqZbEPhu1eBonFzPU2Ks?=
- =?us-ascii?Q?qkf1k3zz7MPSSGo7SHpxr6epBWsW7Da4sB5qPhOm5Vlt7qijfYo7Zkyq8wiW?=
- =?us-ascii?Q?l+4QFWvyxTn5lSjGIpFq3dy8QvcNVGRDdVJZ79PJFn5PK8eo+qtCL8aP5kZL?=
- =?us-ascii?Q?i7wuRjk9P1sYQHzl5+UCwXmhrOJxtQ9UU/FxL3MNZ/trPZHZH9THgOQCGCKL?=
- =?us-ascii?Q?MvZvJIGrCQBhKlWXyCRUWgyO6C6mhfO7Lld6NUfW3UUSsYjuTW5bV0QDATeE?=
- =?us-ascii?Q?sfQOp/AAh36Kb+ufoxOVNps8o3ojNV+paFxX7n9Wd8meJPpServA0begKxjZ?=
- =?us-ascii?Q?JKxOkKWuAWwWgLGstDv9TyxbYw9sV5zCL3Uv33N1UWmIc/+FNMEKpwGGgcsy?=
- =?us-ascii?Q?NC7KdM+VDmL+VAtLnp30Bdym/o8q+H4dL6MKVfWI+p9tIAouislF/BHXrfHz?=
- =?us-ascii?Q?STd9Qr18R2e49L2As9SRoEg7R/55CkoYeclcrYmOqK871Mh6tYcJqSi5z2F/?=
- =?us-ascii?Q?yKFi/JPD6qeMKdvY4mhLHK78StaKwH6lfWQbTyuWLNwQ1YeQmkiD7olxT8Sc?=
- =?us-ascii?Q?HLHqKXq7YLCspFOe4s3LWoU+ut9RmtxtKnqECJtV1N+cBnUqATifTIK0n6pq?=
- =?us-ascii?Q?Yx6wqP6CEQ1XP+G0InGMhu2aqQ/QJiTsnINoVNpa/2yhgFQ8AQfQv08tqGoj?=
- =?us-ascii?Q?ewcr/cD+p4hmd4FWsl3MFqaPu49x86RK1z0ueQOCZadxWYu+JgF7tsSEwXeh?=
- =?us-ascii?Q?K9aMdcMG9+Wx1SSO9SKzhz3ZhwZlZ6+UtaXFWc1wR9V7UXxCYrOv8hG9Nft8?=
- =?us-ascii?Q?dxu3A2Mxi7yvGh/7ev+0lUobGniDIUXcSd3kKSV3876yAvX0KjGU3Z5pMxtH?=
- =?us-ascii?Q?fhFuM3XhPFEoODgEHOLW3AuAlLrFLK88oo9XNRMd0cgGkHdt7EJ08zsdGXci?=
- =?us-ascii?Q?3ptPB+wuFFobFenaVgAiNj5UBXtgCtZuAZtT33FwNjKseYo/yF7IAIGaj1dp?=
- =?us-ascii?Q?aFqKmLePEmDCFzU5ZZlIgqeeeGMj/GXtco97nHjioGdMetLMlH1o/EN76Ocp?=
- =?us-ascii?Q?Cm2ptmJVyEWk5FjV8MTTk7hu7Df7TOIuH0Mamnm/RqIdBAUN0FuxI1lIckPJ?=
- =?us-ascii?Q?3WC5QdyHFgrcog+83FiMpKGT0RDIv4ewKokYHqqUN3AJwgp1z79QCAceBIO/?=
- =?us-ascii?Q?K3CU6NeGAssQewsKhmRDSC4NMfsqM/fxPusXRZHJlaOlZHzcWlySO9rjF7H2?=
- =?us-ascii?Q?ZburvVzOV1WCKlkGKuTFNPgYzBZNDNpovMlcIigUN55zgcw/M5iofh8Q4agE?=
- =?us-ascii?Q?DP7z+kioX8DAP464LB1NM2pluB5aAEe5PeYzRkgE?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?dNUVE+FSBrVF/85QjDpN3/NnwWJxBbq0/C5YwTDnQSfpXSuvJZTAepqV3Bi7?=
+ =?us-ascii?Q?Zu4Ku7L5qNe1KnDqY/7yLmOppcn0G3gp+hZecWqV8ezmKAT1I/GNCGtaP1Ao?=
+ =?us-ascii?Q?mwke9d4037a2sSES6azHifWzhQnplrVONmWVjRuMPFyD3mIcb9JgMARrUZzS?=
+ =?us-ascii?Q?v0elmnR0aeGnTdd2Y+Wwq0l0LjYPihSweXTwR5yX19SOWl/FkTlohmbOyHr5?=
+ =?us-ascii?Q?HyF0qWhcoUX2H3X4m7zW+ohCzV3usvZ2mfK9JeSGhhce594C32LFejDE8OzI?=
+ =?us-ascii?Q?4u/2E14TFZOs3fo0uCvsIa1eAtm0DVd4dIh+Wc3piQtFt3KKVI66/4WSMPAj?=
+ =?us-ascii?Q?iiZoans0TCyHpOZA40xl6/VDqMNn0li1HFE4H9X7rkbocwnIS4ZLCAa2ntm/?=
+ =?us-ascii?Q?BljYYf70uTrf8gwOlK0PKqAmD9QcrjMtVViqyhDnA9Ha+hm8xgH4dHTkjalN?=
+ =?us-ascii?Q?by/fkGJ1CqNufUFVk21XDjHY48bYprHKMKKlPIlZ8p60r9XKqDK9QHICcgxC?=
+ =?us-ascii?Q?UBnlupknNU1umpsMa7+JgWhK+TjZ643jatoa1Ke43mTRcj+zbhaqHOK9ITF2?=
+ =?us-ascii?Q?IUsHmahSGDCEstHYjRyqYQl3RD5xTcjmXes5dFXBUVn17U+ulIX9TvMUDdaM?=
+ =?us-ascii?Q?mRcE8e1F+TEh3ntyOdHqQgjcCqXeOe56VXKcxZLSGeUGruxqWgGI92c0V/ef?=
+ =?us-ascii?Q?B7pyFFe5Qdg7rfqAPWrYD089isGm68t2s472z404oKyBOy3ZRySHfySSm9W8?=
+ =?us-ascii?Q?nyOjnPCsjntpXYH8mg4DE1E4UMzgsWcfoX8KSvcUS1a6ZIpyuV+tCTt48x3Z?=
+ =?us-ascii?Q?c6NmOduLascpJ1r9PJLr7fnvS1CJRUbCyy8+B99WMq/3FrRfmlkqvKbyi3cf?=
+ =?us-ascii?Q?zg+B6smaDeqgW34xr30CzmZQTF8grO2Y8yMTUCXmo0PN8upxn1D8IHoGzHg7?=
+ =?us-ascii?Q?o/EVGJviOVibOZo6gNsm5qkShOjtYX+Eu1fumqBZiS9P9SLRJ9MHe71uuo3V?=
+ =?us-ascii?Q?BqXt0LCmu0md9FIgEnsIxSozNQHXJNBXRS7V2d4MhIyCl1kjLPcII+td98dF?=
+ =?us-ascii?Q?aZHOEqYzUY6ESapTjxdVJjopV8QvBwaIl1DjguAG9E3D+ZojCSh/AjdGmfVN?=
+ =?us-ascii?Q?ZwXSIJi7DDVKLUDWoMm/89xzg3E6wbSeu31R5cepNW9IvkZegsnzZSNbtfy5?=
+ =?us-ascii?Q?P/+GiJPe1joti9uTm/aUCj6aqsjkVvLTgzZntKp4yqMyDAnKBxM3HZFoesrS?=
+ =?us-ascii?Q?CktALvfpqCEa0ffRWUZN2aGIJ9VBAMsPmm3RGGOLYQI3cvxXzTrv/1YIjwvj?=
+ =?us-ascii?Q?KaAh0sQzoE2Vtguj8cl22VJvPVZ098Bu1RolytzxG+C2JZbvKEAVsGXSjLXz?=
+ =?us-ascii?Q?xYyZ/Txnw5uHvTzmt9tDQTzYUXtnAY6aJLLluiAaLgB/VqBWtuv5aallniSn?=
+ =?us-ascii?Q?MswR2+9diXaD+pJMdrMLtPWOruG5wPHWw8FRmE5Jp1EQ66WyJYpVf/0GEuGB?=
+ =?us-ascii?Q?cgO/VriheG7/QwHLWu5IsjX1+qZHGwPaCh6W3teUYlXC9mQPvGu/+XRAedae?=
+ =?us-ascii?Q?Nr6RY9efSWnycr6icBqv0oP+3eMIiVMw05/+uFZ4?=
 X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: zw3e3QoqeAHEylteQBEF9AUNDav3SlU1Bc1FG3vLtjV7JA0NK3b91ZEA+20VObwqEMDcJizrxvjX0O/VAs94guK+191iGvlMfGNZSoHqW1mNI0TpcFJyChWGeoSmY/QU2EsZ6Bh5flC4ULYdjOo6XBslXvri59xParwYaVdT1B4np3eId3tLtAF2ni5bS+AWgiy42reMRUuW/V3dJ8bbw56+x9fcCGOJ3ef4UArDaSapyxVz26hnGAqKIxxbvEGLNyAU/lDJ66Bdk4vfkwxPhToZtNNowdQDBuSidj3Pry0g+GbTicfNKO46AUulTq3aXXcKnJDjcWHO9ZRLduOMYVqpEThbpYoWOJVO3FZVXS+qLd+ib0LLFFgvi2ZXSCTia5Gk0RZeqAGnPWpseSctjiusx1Du+6TegpTkaYK16Tx/YvqCQRddvkahezNZcPxnAYf3AzhnFVgMUV5WQgBdgA1/7Xbg8LZlHIEAHe4X6xOxwiVWbcmnJ4bZfdvS+egsGoZM/he/09YoHl+gJFZkGihT92KkAPGd/jnqDspPI6/ncBSVHfZLNqhefJR+IpFV8p/yJ46BSxrRwUaWLNh4hapumwQFvTxZc0BUdwhE7DliU8HSnBrD5PxWxr6XsTP2
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: KKrzmitCP5SNTgyyQC3iB84BmE2b8K/L+TC4cdYKhM1k7y6lBGr6c5m0eoxOCIg3h5V9mRdZOkIYN5CahQdOa16sRjn6HvCuTAtcaRtOvxOKGw1qALdMf6+h/vF6xFeMnykTo5J10ycjThVIY0W+Tx+W6TlKKdJwklQ7UGIbP5tGCiMyXJZeBHtVt/ROswoEjxG8RoTAetFBmNapvzceEML5/n8nwzQt7mg+UHgPIRD796GDpODN+ShtGqn6Expo25Km8qEtf2PwdrtS4e2NOanVOC7Q839erw1NhHn/w0xUW4Fun9SyEvt0/NJb/FPkp+BN39hCrBSVnkCPPmPK/KpK7MJZUsI7MBZr+s8Q/mREB/Pr2G7RuibBXK3b02yg5OgJ5IiywY7enZFSdsaoV9U9Qfcnf1voBhWzgRPqNRV/hJh06HewH+gztYfWRrafjW53mh3Ey2Mh2dVYvuRn7YVZpJv8A1wFriXmyGvSoxQ8Z+qDEspkpCxVkKfaMAh5W4CLQWubPtntyQjauKLq9cZkBNcKSV9FO6DkJZM5vGbmnQ/14y8y60sKPyjY4tmbSiC0p7YZ16MnvREq16XGokweWoGvUc3QnzGf5OuH8ixKz3VDk4RGWcATid3dCxJG
 X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 82825dbb-74c4-4376-36b7-08ddc43d8713
+X-MS-Exchange-CrossTenant-Network-Message-Id: ff861c83-ee70-4a28-7e96-08ddc43d85c2
 X-MS-Exchange-CrossTenant-AuthSource: AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jul 2025 07:51:09.5628
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jul 2025 07:51:07.4052
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: VFRnodXts+0ObbrVYrXyD3XxPg5oWuuJLSIWH7va2iikU64J/sLiBof8w8jnFmN2BREDRHEwkrYtb013nxudQA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: X297gvkXHGy6BYSYPNAz54lABoks0ofz50o0cjSaqL5lA+I6rpjqjuhqLGRPGX94kqYsNU8G9A5bk/M44H+bHg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXP192MB1853
 X-MS-Exchange-CrossPremises-AuthSource: AS8P192MB2240.EURP192.PROD.OUTLOOK.COM
 X-MS-Exchange-CrossPremises-AuthAs: Internal
@@ -171,24 +168,24 @@ X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:
 X-MS-Exchange-CrossPremises-SCL: 1
 X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
 X-OrganizationHeadersPreserved: GVXP192MB1853.EURP192.PROD.OUTLOOK.COM
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzEyMDExNiBTYWx0ZWRfX6kqKbxTSYbC4
- 6xZKeSG3ncMQJxAr3P+hvuJaqugMYAMZqOzlVqwlBz15eOTXeBMsW1CrfG2Fm6mKxcyIjYlx20Q
- lduCOe3memxMCYQvVxT4Cw/Nh9UegCFmG+KS0VTNFgiywGdO3j2JsQl/29RPTLkKwQCX8XEdXOF
- DALK2ggUGUpiS8zFWo5GclhVQ6PjOLpOObFkkLhXnaNAWTi6uUL0MVzbpWfRTy5pBQd8NFDMl+f
- +k4AR+iPBwzrLrherHV8hcUApPCK/Fw1fTUSbHW5EYref1RoLcJNniLrm8IqRdLTALeEVUPSOrW
- yYKthEWo6qbGb7x0J/99lNBSagqn644mNXJjL5p2rjd9PI4TZdjfB3xK7yAV2Q4YNxOTNpq+nFl
- 5e4RF2oK
-X-Proofpoint-GUID: bYcTCcbEQRr0x5DySYFSWaRxQH5_W-8u
-X-Proofpoint-ORIG-GUID: bYcTCcbEQRr0x5DySYFSWaRxQH5_W-8u
-X-Authority-Analysis: v=2.4 cv=NOrV+16g c=1 sm=1 tr=0 ts=687759f0 cx=c_pps
- a=lAFVUdC4KqDR+XbUfoMjaA==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
+X-Proofpoint-ORIG-GUID: 20nJxlpTEc3nZWMRhvzXGpKtIwMB9bdK
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE0MDEwMiBTYWx0ZWRfX/9vzDox3vf/K
+ fbp+z3i0fUDR9KpQoZWaBG5CD2Uyenn1fe3tOsJcTmQVeeuUqLsnOlvuK4H98KEwYh8kEHa+lJS
+ 8/ugAlyRTl2jBYw1AFMifgjVhE6/ILaxGn7YKgGqde6LSCgoE6SOiEPNlYv/WdlDIoxhWhpIZ0p
+ pvJOpVHKKq3IcSO2d8xonx2JNtmTQZlmNzlOHh8zXYrFiQsn2qSAZDBhw9y4SDyUy/4wXGcXVxE
+ JM3sP1PoOTFLH8tGepMEvyRv1b1dqImLFBa+/5HMazzOuEHh5SBa2pmvfXG9wzDwZfDW9vLw58r
+ 0vGQug2PKcgqnJ/rsam8jL/NYFERahOeZ9JWqwAJlbULr78rjeFxR2c0EZ3Co16Mv6TWzVTMk1c
+ MnFZMdPC
+X-Proofpoint-GUID: 20nJxlpTEc3nZWMRhvzXGpKtIwMB9bdK
+X-Authority-Analysis: v=2.4 cv=Nf3m13D4 c=1 sm=1 tr=0 ts=687759f4 cx=c_pps
+ a=yiq0MvgY0icrkiP31sBlkw==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
  a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19 a=wKuvFiaSGQ0qltdbU6+NXLB8nM8=:19
  a=Ol13hO9ccFRV9qXi2t6ftBPywas=:19 a=xqWC_Br6kY4A:10 a=Wb1JkmetP80A:10
- a=8gLI3H-aZtYA:10 a=N9GNhs4bAAAA:8 a=g2gty-AKM3KxiX33rxwA:9
- a=PZhj9NlD-CKO8hVp7yCs:22
+ a=8gLI3H-aZtYA:10 a=Yd8HllbCdjvYV8kqp-4A:9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250716_005128_358485_869FFE99 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20250716_005129_381163_A47EE1BC 
+X-CRM114-Status: UNSURE (   5.23  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -203,128 +200,81 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Ensure proper endianness support for big-endian platforms by correcting
-data types in the QMI host capability request message and its associated
-structures. Add missing byte swaps wherever these structures are
-accessed or modified.
+Fix endianness handling in QMI firmware transfer on big-endian
+platforms. Without this fix, the firmware download fails due to
+misinterpreted data structures exchanged between the host and the
+wireless module.
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Signed-off-by: Alexander Wilhelm <alexander.wilhelm@westermo.com>
----
- drivers/net/wireless/ath/ath12k/qmi.c |  9 +++++----
- drivers/net/wireless/ath/ath12k/qmi.h | 24 ++++++++++++------------
- 2 files changed, 17 insertions(+), 16 deletions(-)
+The issue occurs during early bring-up on big endian systems, where QMI
+messages are not correctly parsed by the driver, leading to failed
+initialization sequences. Ensure all relevant fields are properly
+converted between CPU and little-endian format in request and response
+messages, as expected by the firmware. Attached logs showing the failure
+before the fix:
 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 7c611a1fd6d0..2287ed87dae8 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -2073,14 +2073,14 @@ static int ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
- 	req->mlo_capable_valid = 1;
- 	req->mlo_capable = 1;
- 	req->mlo_chip_id_valid = 1;
--	req->mlo_chip_id = ab->device_id;
-+	req->mlo_chip_id = cpu_to_le16(ab->device_id);
- 	req->mlo_group_id_valid = 1;
- 	req->mlo_group_id = ag->id;
- 	req->max_mlo_peer_valid = 1;
- 	/* Max peer number generally won't change for the same device
- 	 * but needs to be synced with host driver.
- 	 */
--	req->max_mlo_peer = ab->hw_params->max_mlo_peer;
-+	req->max_mlo_peer = cpu_to_le16(ab->hw_params->max_mlo_peer);
- 	req->mlo_num_chips_valid = 1;
- 	req->mlo_num_chips = ag->num_devices;
- 
-@@ -2164,7 +2164,7 @@ int ath12k_qmi_host_cap_send(struct ath12k_base *ab)
- 	int ret = 0;
- 
- 	req.num_clients_valid = 1;
--	req.num_clients = 1;
-+	req.num_clients = cpu_to_le32(1);
- 	req.mem_cfg_mode = ab->qmi.target_mem_mode;
- 	req.mem_cfg_mode_valid = 1;
- 	req.bdf_support_valid = 1;
-@@ -2182,7 +2182,8 @@ int ath12k_qmi_host_cap_send(struct ath12k_base *ab)
- 
- 	if (ab->hw_params->qmi_cnss_feature_bitmap) {
- 		req.feature_list_valid = 1;
--		req.feature_list = ab->hw_params->qmi_cnss_feature_bitmap;
-+		req.feature_list =
-+			cpu_to_le64(ab->hw_params->qmi_cnss_feature_bitmap);
- 	}
- 
- 	/* BRINGUP: here we are piggybacking a lot of stuff using
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
-index abdaade3b542..ed7808fe2b71 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.h
-+++ b/drivers/net/wireless/ath/ath12k/qmi.h
-@@ -164,8 +164,8 @@ struct ath12k_qmi {
- #define QMI_WLANFW_MAX_HOST_DDR_RANGE_SIZE_V01		3
- 
- struct qmi_wlanfw_host_ddr_range {
--	u64 start;
--	u64 size;
-+	__le64 start;
-+	__le64 size;
- };
- 
- enum ath12k_qmi_target_mem {
-@@ -205,12 +205,12 @@ enum ath12k_qmi_cnss_feature {
- 
- struct qmi_wlanfw_host_cap_req_msg_v01 {
- 	u8 num_clients_valid;
--	u32 num_clients;
-+	__le32 num_clients;
- 	u8 wake_msi_valid;
--	u32 wake_msi;
-+	__le32 wake_msi;
- 	u8 gpios_valid;
--	u32 gpios_len;
--	u32 gpios[QMI_WLFW_MAX_NUM_GPIO_V01];
-+	__le32 gpios_len;
-+	__le32 gpios[QMI_WLFW_MAX_NUM_GPIO_V01];
- 	u8 nm_modem_valid;
- 	u8 nm_modem;
- 	u8 bdf_support_valid;
-@@ -228,31 +228,31 @@ struct qmi_wlanfw_host_cap_req_msg_v01 {
- 	u8 cal_done_valid;
- 	u8 cal_done;
- 	u8 mem_bucket_valid;
--	u32 mem_bucket;
-+	__le32 mem_bucket;
- 	u8 mem_cfg_mode_valid;
- 	u8 mem_cfg_mode;
- 	u8 cal_duration_valid;
--	u16 cal_duraiton;
-+	__le16 cal_duraiton;
- 	u8 platform_name_valid;
- 	char platform_name[QMI_WLANFW_MAX_PLATFORM_NAME_LEN_V01 + 1];
- 	u8 ddr_range_valid;
- 	struct qmi_wlanfw_host_ddr_range ddr_range[QMI_WLANFW_MAX_HOST_DDR_RANGE_SIZE_V01];
- 	u8 host_build_type_valid;
--	enum qmi_wlanfw_host_build_type host_build_type;
-+	__le32 host_build_type;
- 	u8 mlo_capable_valid;
- 	u8 mlo_capable;
- 	u8 mlo_chip_id_valid;
--	u16 mlo_chip_id;
-+	__le16 mlo_chip_id;
- 	u8 mlo_group_id_valid;
- 	u8 mlo_group_id;
- 	u8 max_mlo_peer_valid;
--	u16 max_mlo_peer;
-+	__le16 max_mlo_peer;
- 	u8 mlo_num_chips_valid;
- 	u8 mlo_num_chips;
- 	u8 mlo_chip_info_valid;
- 	struct wlfw_host_mlo_chip_info_s_v01 mlo_chip_info[QMI_WLFW_MAX_NUM_MLO_CHIPS_V01];
- 	u8 feature_list_valid;
--	u64 feature_list;
-+	__le64 feature_list;
- 
- };
- 
+    ath12k_pci 0001:01:00.0: BAR 0: assigned [mem 0xc00000000-0xc001fffff 64bit]
+    ath12k_pci 0001:01:00.0: boot pci_mem 0xcd4148e9
+    ath12k_pci 0001:01:00.0: pci probe 17cb:1109 17cb:1109
+    ath12k_pci 0001:01:00.0: pci tcsr_soc_hw_version major 2 minor 0
+    ath12k_pci 0001:01:00.0: request MSI one vector
+    ath12k_pci 0001:01:00.0: MSI vectors: 1
+    ath12k_pci 0001:01:00.0: msi base data is 0
+    ath12k_pci 0001:01:00.0: Hardware name: qcn9274 hw2.0
+    ath12k_pci 0001:01:00.0: boot firmware request ath12k/QCN9274/hw2.0/firmware-2.bin size 15134776
+    ath12k_pci 0001:01:00.0: found fw timestamp 1722934582
+    ath12k_pci 0001:01:00.0: found m3 image ie (421880 B)
+    ath12k_pci 0001:01:00.0: found fw image ie (7229440 B)
+    ath12k_pci 0001:01:00.0: found dualmac fw image ie (7483392 B)
+    ath12k_pci 0001:01:00.0: found firmware features ie (1 B)
+    ath12k_pci 0001:01:00.0: features
+    ath12k_pci 0001:01:00.0: using fw api 2
+    ath12k_pci 0001:01:00.0: dualmac fw selected for board id: 1005
+    ath12k_pci 0001:01:00.0: Assign MSI to user: MHI, num_vectors: 3, user_base_data: 0, base_vector: 0
+    ath12k_pci 0001:01:00.0: Number of assigned MSI for MHI is 3, base vector is 0
+    ath12k_pci 0001:01:00.0: Assign MSI to user: CE, num_vectors: 1, user_base_data: 0, base_vector: 0
+    ath12k_pci 0001:01:00.0: Assign MSI to user: DP, num_vectors: 1, user_base_data: 0, base_vector: 0
+    ath12k_pci 0001:01:00.0: irq:18 group:0
+    ath12k_pci 0001:01:00.0: irq:18 group:1
+    ath12k_pci 0001:01:00.0: irq:18 group:2
+    ath12k_pci 0001:01:00.0: irq:18 group:3
+    ath12k_pci 0001:01:00.0: irq:18 group:4
+    ath12k_pci 0001:01:00.0: irq:18 group:5
+    ath12k_pci 0001:01:00.0: irq:18 group:6
+    ath12k_pci 0001:01:00.0: irq:18 group:7
+    ath12k_pci 0001:01:00.0: pci after request_irq msi_ep_base_data 0
+    ath12k_pci 0001:01:00.0: cookie:0x0
+    ath12k_pci 0001:01:00.0: WLAON_WARM_SW_ENTRY 0x2
+    ath12k_pci 0001:01:00.0: WLAON_WARM_SW_ENTRY 0x2
+    ath12k_pci 0001:01:00.0: soc reset cause:0
+    ath12k_pci 0001:01:00.0: MHISTATUS 0xff04
+    ath12k_pci 0001:01:00.0: pci link_ctl 0x0000 L0s 0 L1 0
+    ath12k_pci 0001:01:00.0: pci reg 0x3164 instance 0x11 read val 0x11
+    ath12k_pci 0001:01:00.0: setting mhi state: INIT(0)
+    ath12k_pci 0001:01:00.0: setting mhi state: POWER_ON(2)
+    ath12k_pci 0001:01:00.0: mhi notify status reason UNKNOWN
+    ath12k_pci 0001:01:00.0: mhi notify status reason MHI_CB_EE_MISSION_MODE
+    ath12k_pci 0001:01:00.0: qmi wifi fw qmi service connected
+    ath12k_pci 0001:01:00.0: phy capability resp valid 1 num_phy 2 valid 1 board_id 84934656 valid 1 single_chip_mlo_support 0
+    ath12k_pci 0001:01:00.0: intra device MLO is disabled hence skip QMI MLO cap
+
+Alexander Wilhelm (11):
+  wifi: ath12k: fix endianness handling in QMI host capability request
+  wifi: ath12k: fix endianness handling in QMI phy capability response
+  wifi: ath12k: fix endianness handling in QMI firmware indication
+  wifi: ath12k: fix endianness handling in QMI firmware memory indication
+  wifi: ath12k: fix endianness handling in QMI respond firmware memory
+  wifi: ath12k: fix endianness handling in QMI firmware capabilities
+  wifi: ath12k: fix endianness handling in QMI bdf download
+  wifi: ath12k: fix endianness handling in QMI firmware m3 info
+  wifi: ath12k: fix endianness handling in QMI firmware wlan mode
+  wifi: ath12k: fix endianness handling in QMI wlan configuration
+  wifi: ath12k: fix endianness handling in QMI response
+
+ drivers/net/wireless/ath/ath12k/qmi.c | 149 ++++++++++++++------------
+ drivers/net/wireless/ath/ath12k/qmi.h | 106 +++++++++---------
+ include/linux/soc/qcom/qmi.h          |   4 +-
+ 3 files changed, 136 insertions(+), 123 deletions(-)
+
 -- 
 2.34.1
 
