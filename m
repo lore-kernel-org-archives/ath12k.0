@@ -4,97 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9BE8C83F1A
-	for <ath12k@archiver.kernel.org>; Thu, 17 Jul 2025 19:05:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B539C83F1A
+	for <ath12k@archiver.kernel.org>; Thu, 17 Jul 2025 19:31:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Subject:From:To
-	:MIME-Version:Date:Message-ID:Reply-To:Cc:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=dSXu/2v898K59P4Y9kjCadrXr6rdXFbxtjxpqQnv7Lo=; b=l7ZEmbNpksm1K8wO0n6h1bdCau
-	vERnIWhPKNdNeCOXzU/6VYebZ4g/jIZ/yiHbYKKuKeb8kX2Q7T2d4oyQsaVsCcK5TCpZkmJpBMQjw
-	HN21MsYMiix9bR7NBnY3E5NyBBb1KqcbqEc6CQ0z+RfPG1fz7UlWyRkqaz3qxg2s6Xq85Md7u5O/O
-	DAcl2w58YbowTTPQ58miHlnymwPFq7AL4qXd9yDqsiQ2HgtALa0sz65CNpfjbYnmtvJLP8XCYCFpZ
-	EHtmQup+Ejge2ph4abLptyALI9YigLwLWle8ikEeQl9ngNDyXbLmtsIGxq9XgU5dOSNidPC0A/KDF
-	E+T+aung==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=4uJWuwaN1IaLIIUw7T3J37Yd0Y7a6HEarJ4jcO9Xlzc=; b=16GhU9lp/PPtf1NcV4EZkt8Ztq
+	zM8mLsxOZi8gGydlqUCF9pVrOWHMv5hdRLMBDuEhgSRWpI+EHmldx7Sceq4Hu0LtK5q1bgwcXyl+A
+	GveOhjLjghnK2lQcokQoUKJF8DGL51tZSn465J79VRTp6hWIxF8EvGcw9iUX2h2mUSPcKd4dUoc40
+	hgaNXIqIpaf82sohw9lliQvb0Q6thIHzwlWCkfhdfU8xbO7Z/tGCSRUggQDxLnho+4/9daGeCIQdZ
+	5pU0nNpBVolJ8YMU7ss9FvdZ+S/LOSF3MQUunf+QNEs1rKQwE6k0Z1lD/M3qAXoxp5LgMeEiTj9Rs
+	PQc+vkoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucTva-0000000Ay0f-1euA;
-	Thu, 17 Jul 2025 19:05:58 +0000
-Received: from ionic.de ([2001:41d0:700:3394:1::2] helo=mail.ionic.de)
+	id 1ucUKZ-0000000B1HN-3VUw;
+	Thu, 17 Jul 2025 19:31:47 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucTvX-0000000Ay0G-1xSw
+	id 1ucU7B-0000000AzFs-2iJH
 	for ath12k@lists.infradead.org;
-	Thu, 17 Jul 2025 19:05:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ionic.de; s=default;
-	t=1752779150; bh=dSXu/2v898K59P4Y9kjCadrXr6rdXFbxtjxpqQnv7Lo=;
-	h=Date:To:From:Subject:From;
-	b=QZxOOJZZYZwqoSz2Gj6ftB32usR7Op6G9IWPU6Hdlw1sAWyd0/VgBlkH4kPRyyhod
-	 XGI1FpXoTcmyOiKgQBta3cpTReWvj8h7U5z0IhGb9dhC+5KFINT1Eu57P66T1GwW/N
-	 0S1NIIHcJRuD4Yf7+CpqPsG5kwk+ZlwkexQIxM98=
-Received: from [172.24.215.49] (unknown [185.102.219.57])
-	by mail.ionic.de (Postfix) with ESMTPSA id ED985148096F
-	for <ath12k@lists.infradead.org>; Thu, 17 Jul 2025 21:05:49 +0200 (CEST)
-Message-ID: <485f4924-3bed-41eb-8ca1-5d1ccb615ce3@ionic.de>
-Date: Thu, 17 Jul 2025 21:05:49 +0200
+	Thu, 17 Jul 2025 19:18:00 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56HCNN94032408
+	for <ath12k@lists.infradead.org>; Thu, 17 Jul 2025 19:17:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	4uJWuwaN1IaLIIUw7T3J37Yd0Y7a6HEarJ4jcO9Xlzc=; b=ncTU2kJtFotGJ31t
+	kIzgJxpFWEtb91eY4Clx6TQvDu3GnMXNgk7EMwkq72rr6bcnXN6zb+tvi7h1aqdn
+	osT4KEGV5HlueyDEnv6CnNqzvMmPGJhaWjcfAw3AYcc9OtHOPKrib6Y6/4hxgM/i
+	fjLKO9ao22uEcybVtLyh61ynhdJTJS9XpSBmqNwLBvyn4HwCPWZDr/3mqs3ztk8z
+	0+k0eBHJG2ZXcro7/zwrhJgqYxSteqYdFjWfeCxCA3kODS9WvwHTyYOXmgRXJMfP
+	bnEVsirTShFjeU01QqvTNX06F57dhY4C55BJBq1++ZaTlL5CTg3+QJemK/PBwb6M
+	sLpfbw==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ug3893dh-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 17 Jul 2025 19:17:55 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2363bb41664so10418295ad.0
+        for <ath12k@lists.infradead.org>; Thu, 17 Jul 2025 12:17:54 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752779874; x=1753384674;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=4uJWuwaN1IaLIIUw7T3J37Yd0Y7a6HEarJ4jcO9Xlzc=;
+        b=VnMIff5zjrRDZRbCK4GOazZbu2ecCW/+ELiu3YcwyWDOnBrxRCBq0SH4tlhsctHBu1
+         HotvA3iMg6OlG+5Ridc1mUCN1F377qp0XDDoeuWWMMoZwUNI2Tcx+8rTlTSCpvTTp4Kb
+         2/Qc+xu48VRbglat4CNy0Hioinpfovgg4C4K6CD/2z2wqp1QI/pHiIiBXvNiOc1j8cwz
+         kXkIudAxzEDWQ2csyxVSsDjFwKLuI2K3RUk02nORoOA9Q5L0oux5WHxG1+XOwz5YXykp
+         nnXbH3ykuY4/YvBiph8I5+Alk1znjyagIG2QKpm/PEF1HQaPOwGeXI/la5xMrcPuO5Ns
+         s6ZQ==
+X-Forwarded-Encrypted: i=1; AJvYcCW5vWMTG1ZO9fvlxi7CNKBb53fxLOrWvvTw0He//piVIw82RN3oJHcfccqRHj82CslL41rbqGs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzmUKAudmi5cP3LWeyz/MCYRauQQKGayikGKGo1cn6ekX5vMZDO
+	L2MAr0MiHHuD++V/HYxTRQZEaIH6H8qZo1J0HRVKsv4k2HcDPjTuYotkN1Dsehi6JN1NHUGRcwD
+	PoXoqjAH32w1hzQ4SaRq74BxQgE2T1ibJguTNKnEpyVgk3BY28gxg/sWmCbAhpqyCDWca6kJg
+X-Gm-Gg: ASbGnctyAufDo1+5CafApWGZMvJSaUDNHhara+QdBGca7rOx9Ncd1hOEmtzVH4+IFbK
+	qKHbdEB9VhevVu12487FwmSuwlEQ7EwfpXtffazqYbM/HAlDGustzi0nvThb5xYq/4rvLZbnRY1
+	vwY8jXTknAgmjT+B6z2d94y0yfcWmWJMVNMMdIcfCmlBJYhtOQl8Hm56kEuNdahv8TARgmPnrUA
+	ElCejwyn3iUwhCxjfJtTFbopNi6oyHeQ2mRDSePOO1ClqU1DulM5U3+NJY5P3I/w8fq0q/F8ant
+	fjdJ+Vpvxmu0SacipEiFFkjZ7h+80E+6n9+n7qZFpwiO4RCBg2wwyp/NWFGACUrhsLBqvXmEI66
+	AFzibh+Z4186F6Cd4lYsr/CDMZK7TiuYC
+X-Received: by 2002:a17:903:278c:b0:215:b1e3:c051 with SMTP id d9443c01a7336-23e2f6da4c2mr48772885ad.11.1752779873585;
+        Thu, 17 Jul 2025 12:17:53 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHuNoQczB5IQKlU6siCZe1+Zz9I6QEdOCpCVaugCs+MMAIeAdOa80iqgQseH1oB3KYUChXTiA==
+X-Received: by 2002:a17:903:278c:b0:215:b1e3:c051 with SMTP id d9443c01a7336-23e2f6da4c2mr48772565ad.11.1752779873060;
+        Thu, 17 Jul 2025 12:17:53 -0700 (PDT)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23e3b60e9c0sm184525ad.55.2025.07.17.12.17.52
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 17 Jul 2025 12:17:52 -0700 (PDT)
+Message-ID: <047cc072-ed79-48cb-8869-fe72a5d7703c@oss.qualcomm.com>
+Date: Thu, 17 Jul 2025 12:17:51 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
+Subject: Re: WCN7850: DFS broken since 176f3009ae598d0523b2
+To: Mihai Moldovan <ionic@ionic.de>, ath12k@lists.infradead.org
+References: <485f4924-3bed-41eb-8ca1-5d1ccb615ce3@ionic.de>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-To: ath12k@lists.infradead.org
-From: Mihai Moldovan <ionic@ionic.de>
-Subject: WCN7850: DFS broken since 176f3009ae598d0523b2
-Autocrypt: addr=ionic@ionic.de; keydata=
- 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
- S0VlnF9z
-Content-Type: multipart/signed; micalg=pgp-sha256;
- protocol="application/pgp-signature";
- boundary="------------SZfEis1bh4LiHTPq6NDrb60k"
+In-Reply-To: <485f4924-3bed-41eb-8ca1-5d1ccb615ce3@ionic.de>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE3MDE3MSBTYWx0ZWRfXx19YXbs6pRc4
+ NXVO0mnTNDKT/odRahoad5XMaJMVmrKyAdIdPsqJ1TGY6g2ConavRbHwZN8LNBq5xmJNdVu3Ab+
+ muQel35aZbgBbBB8r/ZeIXzfalQDOAYIIMvQ6HxDbLvBxPB3R4yf9yHBJ4Onbc1P9UUuX6z1YN6
+ KQwA4HltxOsiWt3Omkonwq4A3Ej+EKwo066bck5gyUgkTlKnpyx0G0ttnEaDuNvtuG1kSLGcosL
+ XtMmlyFH+MqbPBc5C0dlA1BwGPiZkVSbnbS6P6uX8kXE/lzrGO/B3lb4RWH7Pyda7P3DlEI5HiS
+ UjHAFJ22Op2IWzFnROXnwGfOvHYz1UvEsIWH0idJVPNlrJtzV//e/OiOJnHCopzgVeUQKUdRT9L
+ mnLhlwRhEDwrLT/lEsmWNQs8unmII689+SOWAN3ZYjNdE4EFdspQLLN5Ry1OgZIdcxGWkimY
+X-Proofpoint-GUID: __zVrn5nxMdQafqwQXcaHuJ90b6wBMFK
+X-Authority-Analysis: v=2.4 cv=SZT3duRu c=1 sm=1 tr=0 ts=68794c63 cx=c_pps
+ a=cmESyDAEBpBGqyK7t0alAg==:117 a=e70TP3dOR9hTogukJ0528Q==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=bC-a23v3AAAA:8 a=COk6AnOGAAAA:8
+ a=VwQbUJbxAAAA:8 a=NcPmVzIFaDIWLVLsTNUA:9 a=QEXdDO2ut3YA:10 a=eNH5niYpQkIA:10
+ a=1OuFwYUASf3TG4hYMiVC:22 a=FO4_E8m0qiDe52t0p3_H:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: __zVrn5nxMdQafqwQXcaHuJ90b6wBMFK
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-07-17_03,2025-07-17_02,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 mlxlogscore=999 mlxscore=0 priorityscore=1501
+ lowpriorityscore=0 bulkscore=0 adultscore=0 impostorscore=0 malwarescore=0
+ phishscore=0 spamscore=0 suspectscore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2507170171
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250717_120556_012207_A4AA5D15 
-X-CRM114-Status: UNSURE (   8.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250717_121757_805786_7A882C12 
+X-CRM114-Status: GOOD (  18.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,65 +129,39 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---------------SZfEis1bh4LiHTPq6NDrb60k
-Content-Type: multipart/mixed; boundary="------------9G5vpe6ubh8apEcAJ0f8ofId";
- protected-headers="v1"
-From: Mihai Moldovan <ionic@ionic.de>
-To: ath12k@lists.infradead.org
-Message-ID: <485f4924-3bed-41eb-8ca1-5d1ccb615ce3@ionic.de>
-Subject: WCN7850: DFS broken since 176f3009ae598d0523b2
+On 7/17/2025 12:05 PM, Mihai Moldovan wrote:
+> Hi
+> 
+> 
+> In 176f3009ae598d0523b267db319fe16f69577231[0], radar detect widths were removed 
+> for single pdev devices, fully disabling DFS on WCN7850.
+> 
+> I do understand that running DFS on two channels simultaneously is (currently?) 
+> not supported, but this effectively breaks operations on all DFS channels, even 
+> though only one is being used.
+> 
+> 
+> I've tried re-enabling the radar detect widths, but that only lead to an 
+> ieee80211 subsystem error (which I haven't further debugged) and made the card 
+> unusable because booting it up failed, which required a full power shutdown of 
+> the machine to reset it from this broken state (literally disconnecting power 
+> physically for a few moments).
+> 
+> Setting num_different_channels to 1 for single pdev devices and re-enabling the 
+> radar detect widths works to re-enable DFS, but naturally that disables MLO.
+> 
+> I'm probably fine with not having MLO capabilities (at least currently), but 
+> having to modify the source code to get DFS support back certainly isn't ideal.
+> 
+> Are there any plans to fix DFS support for single pdev devices?
+> 
+> 
+> Mihai
+> 
+> [0] 
+> https://patch.msgid.link/20250409-ath12k-wcn7850-mlo-support-v2-9-3801132ca2c3@quicinc.com
 
---------------9G5vpe6ubh8apEcAJ0f8ofId
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: base64
+Can you please open a ticket in Bugzilla so this can be tracked?
 
-SGkNCg0KDQpJbiAxNzZmMzAwOWFlNTk4ZDA1MjNiMjY3ZGIzMTlmZTE2ZjY5NTc3MjMxWzBd
-LCByYWRhciBkZXRlY3Qgd2lkdGhzIHdlcmUgcmVtb3ZlZCANCmZvciBzaW5nbGUgcGRldiBk
-ZXZpY2VzLCBmdWxseSBkaXNhYmxpbmcgREZTIG9uIFdDTjc4NTAuDQoNCkkgZG8gdW5kZXJz
-dGFuZCB0aGF0IHJ1bm5pbmcgREZTIG9uIHR3byBjaGFubmVscyBzaW11bHRhbmVvdXNseSBp
-cyAoY3VycmVudGx5PykgDQpub3Qgc3VwcG9ydGVkLCBidXQgdGhpcyBlZmZlY3RpdmVseSBi
-cmVha3Mgb3BlcmF0aW9ucyBvbiBhbGwgREZTIGNoYW5uZWxzLCBldmVuIA0KdGhvdWdoIG9u
-bHkgb25lIGlzIGJlaW5nIHVzZWQuDQoNCg0KSSd2ZSB0cmllZCByZS1lbmFibGluZyB0aGUg
-cmFkYXIgZGV0ZWN0IHdpZHRocywgYnV0IHRoYXQgb25seSBsZWFkIHRvIGFuIA0KaWVlZTgw
-MjExIHN1YnN5c3RlbSBlcnJvciAod2hpY2ggSSBoYXZlbid0IGZ1cnRoZXIgZGVidWdnZWQp
-IGFuZCBtYWRlIHRoZSBjYXJkIA0KdW51c2FibGUgYmVjYXVzZSBib290aW5nIGl0IHVwIGZh
-aWxlZCwgd2hpY2ggcmVxdWlyZWQgYSBmdWxsIHBvd2VyIHNodXRkb3duIG9mIA0KdGhlIG1h
-Y2hpbmUgdG8gcmVzZXQgaXQgZnJvbSB0aGlzIGJyb2tlbiBzdGF0ZSAobGl0ZXJhbGx5IGRp
-c2Nvbm5lY3RpbmcgcG93ZXIgDQpwaHlzaWNhbGx5IGZvciBhIGZldyBtb21lbnRzKS4NCg0K
-U2V0dGluZyBudW1fZGlmZmVyZW50X2NoYW5uZWxzIHRvIDEgZm9yIHNpbmdsZSBwZGV2IGRl
-dmljZXMgYW5kIHJlLWVuYWJsaW5nIHRoZSANCnJhZGFyIGRldGVjdCB3aWR0aHMgd29ya3Mg
-dG8gcmUtZW5hYmxlIERGUywgYnV0IG5hdHVyYWxseSB0aGF0IGRpc2FibGVzIE1MTy4NCg0K
-SSdtIHByb2JhYmx5IGZpbmUgd2l0aCBub3QgaGF2aW5nIE1MTyBjYXBhYmlsaXRpZXMgKGF0
-IGxlYXN0IGN1cnJlbnRseSksIGJ1dCANCmhhdmluZyB0byBtb2RpZnkgdGhlIHNvdXJjZSBj
-b2RlIHRvIGdldCBERlMgc3VwcG9ydCBiYWNrIGNlcnRhaW5seSBpc24ndCBpZGVhbC4NCg0K
-QXJlIHRoZXJlIGFueSBwbGFucyB0byBmaXggREZTIHN1cHBvcnQgZm9yIHNpbmdsZSBwZGV2
-IGRldmljZXM/DQoNCg0KTWloYWkNCg0KWzBdIA0KaHR0cHM6Ly9wYXRjaC5tc2dpZC5saW5r
-LzIwMjUwNDA5LWF0aDEyay13Y243ODUwLW1sby1zdXBwb3J0LXYyLTktMzgwMTEzMmNhMmMz
-QHF1aWNpbmMuY29tDQo=
-
---------------9G5vpe6ubh8apEcAJ0f8ofId--
-
---------------SZfEis1bh4LiHTPq6NDrb60k
-Content-Type: application/pgp-signature; name="OpenPGP_signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="OpenPGP_signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-wsF5BAABCAAjFiEEbhHQj3UzgcdE8cg8H9Yu2W4lOocFAmh5SY0FAwAAAAAACgkQH9Yu2W4lOodA
-Ug/9E+igU6XG/3ziQkhzpCILfiTiMTJ8fS4egUEfSuBee7t4xxRjHbXvFlfafoKTE5waPkOWJMpz
-n/Io/EMikvxIp0UZPrbO5YvA1GADZ2p1ZhM4G2DQPmizVt+BPDRlycSfKItvGjb/RzQC4iL8cUU0
-dwtX7PFx6xrDa2p+l9gcvV0SBjHj5db8dFDDBu0oejJOwkydwmj6JNKFd2wFPfy3Fe91TV4NA5r4
-wpPNcRQSaQp9WqER5AGm7zFiLIweeuBQnHVdXesK+j9XHy0QcUrkIxsyQCzCikYuXRbTsbGYcHhZ
-hzhyrE2mI2ciEKBRzsH8iVqCaK5vWGFwOhU39WD+dJ1QUPCyvRZmSlLvlDz2jFT3g5osK6CDPPNe
-7MQlZwh7/1xmCaqYtRqibkQcXhGcSblG5W3dGKcr4IKrRQWftKALGlms3CVnaECV2W9ZdtlAQ7Ba
-wNV5BZVIi0ZzExNvZDNp1cYQZ1nbT7Xt21UvCkSd9uNCfAXo7Vu5mpGWRbCS1JFRdNIOD92jGh4X
-A6mczvBIsHTF4QA9g58Zt3sKF7ZG17T5jUThQxEQO/RSqdsvoLggHm6k2LFYiuK++SaliFTDobSl
-FJ0U8mHy/pRmCN3zaCnoPuB0iwThGigHyWB/sDhBxYF0JSZQTkOStd94C7Fwdq09UHE0KFWeqE38
-PIY=
-=/x7B
------END PGP SIGNATURE-----
-
---------------SZfEis1bh4LiHTPq6NDrb60k--
+https://wireless.docs.kernel.org/en/latest/en/users/drivers/ath12k/bugreport.html
 
