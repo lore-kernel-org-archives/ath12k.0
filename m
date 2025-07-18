@@ -4,125 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31025C83F17
-	for <ath12k@archiver.kernel.org>; Fri, 18 Jul 2025 14:05:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9148C83F1A
+	for <ath12k@archiver.kernel.org>; Fri, 18 Jul 2025 14:07:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=P5dVwGg7k/V3B5EcnOn+3OotY9camqoCaUdc8gx4guI=; b=RV9MkULpkEDp8lUvhtLr0q73BT
-	UxZ1FaFw00dsaRX5TkFLhQH6gTibSIP3O17Kbe95/lh9xiGGFORdYGhKZxXRUbSMbFFcEFz+CHmzD
-	dZNjvsqQfa4ljfY+hPFrKcLhWh9MlL7urqslFSa8SPcPd5dv48thNtDQgynh/A6aQvWWmPPn2pRaj
-	R7TYQ8mT77wmtIfbMzS65Rkjk+Q5ekaBSlpxw26AWU/H1+UV5RQOYKFjbz5rHuYhk2fifOnh+icIn
-	gcvLR6Qp/+zoFVpS2qmdpxdJjT6sLRqWa1sbiBkXncOtAKA5YHC99zqwIVvDSa1qjsl5NSenmu3qb
-	dZyJjPRA==;
+	bh=Zyq4Rp8MOZR1xUO79/KSeqlBWH+OdAsga8pf0MgHcCE=; b=3NzcDDa2JrlQCWmAtv4PXSh/46
+	vNqknPzKProh7jiixKEAp7Dj2gzseRt/ou+NLsKYIHljuXRMXPZkzZWkLT3Jx26n2SRg1makXkPoZ
+	ENoNLc4fG17aMGUHatLE4MQojRwUmu6Oob3+yz3/cmMWYyeakxEonzVdsOhzEql+9pDeAtTQDMPhA
+	ca8MD71eVsppjC81psjy9tufTpC8xcGRwYTPrUShz1F2OPkyeqza2oaCh0Xx38Svald9XKifjgVTF
+	ORWIw4gmdjwXgDdmLC7RuXvvR0x58USDLaCkR2ZEWwHoob5REPzFT04Ne+XViL9ss90T7d1shymyq
+	B7qs/Sxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uclhv-0000000ClCu-3tJj;
-	Fri, 18 Jul 2025 14:05:03 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uclkN-0000000ClWw-2yMq;
+	Fri, 18 Jul 2025 14:07:35 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uclYe-0000000Cjqx-01Sl
+	id 1ucliY-0000000ClL5-1Fii
 	for ath12k@lists.infradead.org;
-	Fri, 18 Jul 2025 13:55:29 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56I7ue5R028071
-	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 13:55:27 GMT
+	Fri, 18 Jul 2025 14:05:43 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56I8JMP6025190
+	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 14:05:41 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	P5dVwGg7k/V3B5EcnOn+3OotY9camqoCaUdc8gx4guI=; b=I/AMT58uIXI0oiOw
-	STO29vzgMdf6dymZtKynzl4+BHPSgLHKqdWA7TVLqRkodv2T80v9H8wwrMa1dpeN
-	QwMHre2koZI/rWovRm3eeYkzY437Sd+ZUHsuamLa4AL0f+dR2wcK9HGBk7GZUIJp
-	8lPw4nP7h5cMjNU1KvErKsqXap4N2iphrnOVPZYZlYnElcoqPFR+iUAmttFUBGhs
-	GmpLcYzRDhMKXhp7l+8pp/5apCyxCfU+LZDgcDQppY5IKlXLn5BFj6uWijIhNzSR
-	yq4QQbf35MYWBbpEQemMNnD0Sc6LiZBG5mHqmkAVY1JF9+xYXBaetyOd85ql1hmu
-	W3J3Vg==
-Received: from mail-oo1-f70.google.com (mail-oo1-f70.google.com [209.85.161.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47wnh6407t-1
+	Zyq4Rp8MOZR1xUO79/KSeqlBWH+OdAsga8pf0MgHcCE=; b=QxBhxMdKYH6lcQh5
+	9hUs87g7JS2E9s+/MN8hC5D/YfjH3V6rZDN6RR9FnOYBN0xb3pcwBhplrJbF3oC9
+	ehNb9SgrB+w9yKM3qrWR1k79euMWD+xuDBk1oeZHVRK7yYrSMtl1bv+dCYRtrMOX
+	LU5Nd0H7tmpeDOlS/y6H3F16jG1Pq4ponW7BBO6F6k1gddr61BqAZjxwz1np0tjA
+	exSDTE/961+DI4cVNrTu1mqRGOqg0VBuUFl752yAVsOOT0XZmPT0gnGOoBxm9na/
+	2loD1/jWtogUSrrtbSzB+EqFz74u5aNBCngU2Tgzcy2JdIPVEuRmQVDTB/LxRHQl
+	GIiyEA==
+Received: from mail-io1-f69.google.com (mail-io1-f69.google.com [209.85.166.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47xbsqg0c2-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 13:55:27 +0000 (GMT)
-Received: by mail-oo1-f70.google.com with SMTP id 006d021491bc7-6159da59a76so105357eaf.2
-        for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 06:55:27 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 14:05:41 +0000 (GMT)
+Received: by mail-io1-f69.google.com with SMTP id ca18e2360f4ac-87b89891d5dso324732939f.0
+        for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 07:05:40 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752846926; x=1753451726;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=P5dVwGg7k/V3B5EcnOn+3OotY9camqoCaUdc8gx4guI=;
-        b=ZNkuYbf0DgzOmdbJc/md+nJCZ/YvDTsyFJip/Z9NXfALKyfIoBPB1MTP+wkk8ZqWfX
-         Z3/4ne1hQHH/D8b/JB9C1HVeiVz1Iba0SK0obx80rbEx6ot9MEMQvEO3lUvdynX9yEr3
-         L9Sn9OBMsRr/MhgqRExRbVf8lrYpD06Y3FUToKZzvp0w0VRJAL71DkdCl7qvDQxB5Gi/
-         yu7R1xQ8L3oQoTk0uLzfnsgSRdKNmI+kAQ6vvXGl/PGC18SLt/c7rTvIl93F7Z8M2rk4
-         1FyYKUxE9xOsW4oc4uXaF+ql2VQigpP4qNVMb8TefJIcnh1VTQTunCNs9xjFVDZq/at5
-         U5dA==
-X-Gm-Message-State: AOJu0YyuUWlfLvoVQPnAp34Kf9WHC83TBGJwzHAu/P33zUkyp7CE2bec
-	pJniorCNWdDcJrFb0uvZsNLZSeL61yCv6yBeHUCQo229+gDFbOK46zdQzHmBNwxrG7dMlA1W3pH
-	XOBHjzV2KdbvmeZ3A7o2WCVyL8riPgBGKQWV7yTF9H8L3vs/eUn1kIstTtZktq7VN
-X-Gm-Gg: ASbGncuLIMB9CVNPPPYfnD106knvplJD5AXmP+2j8yW9r3z2bhdHwOjKzbFfhUfUE5x
-	wFymnr10bzx6zxf+L+LLlQyEbdGSalPtU1y11Z9Qs9NSLvmBfmG4Upj+3Pri08ECDcY01Tk/evH
-	mp49NqxH/sOAGyldp6uCOyfGBZwNgVaVF0ve7eRGBRbMBF8NH8jhkaUaa+KbkGs2EuFKzUQil4I
-	HANe07aZvOJNPOGZhGh4smrcZb5OasW05XYRsr+R6ILLsqu53Axv9S26qzWZH+/T+naNPRlBpjP
-	4EkSblBnDLXojSRWgcPAqisM5GcLyfEiPXOg+lIUVMD0IPeZ/IKX+2dqOMXcXqxAX7nfpUxiHdC
-	YA0jflMQwLgDTCpBLpk/YAgYg+wfGYngi
-X-Received: by 2002:a05:6870:b906:b0:2ea:6f56:5c1d with SMTP id 586e51a60fabf-2ffb1eb547amr8793142fac.0.1752846925986;
-        Fri, 18 Jul 2025 06:55:25 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEjAMr+J1DWlVlDBeNSf1/DmoGEqOIuzNZhHtUY3MLDIOyJxJXvuIaP+NvfaD3RFPdEhLsjOQ==
-X-Received: by 2002:a05:6870:b906:b0:2ea:6f56:5c1d with SMTP id 586e51a60fabf-2ffb1eb547amr8793112fac.0.1752846925176;
-        Fri, 18 Jul 2025 06:55:25 -0700 (PDT)
-Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-3010179137asm679621fac.8.2025.07.18.06.55.24
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 18 Jul 2025 06:55:24 -0700 (PDT)
-Message-ID: <429a1fbc-dd2f-4c9b-b8da-73cee76e6732@oss.qualcomm.com>
-Date: Fri, 18 Jul 2025 06:55:23 -0700
+        d=1e100.net; s=20230601; t=1752847540; x=1753452340;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Zyq4Rp8MOZR1xUO79/KSeqlBWH+OdAsga8pf0MgHcCE=;
+        b=Hh9Xna99vpjKQwm9RszwU8LklpyaAYkSobpJZ8Jqoz9O2atb93BPSbYbJusnx/IRki
+         apzHWLadvCNr+08KxFEsJI9NpN+/0fAoJT5A5OSv5b8EKsQYuRb4fmG1RAiwVMAPkoGy
+         vDCBgHu+U0m/s6OAl2w3a+N2eHLRbS1sChic4+LuYSEpGd1x1CDRyz1IZpE7Va2jihuh
+         rKt8VQxR6IaikGyLre2/A6hJ8B+Tnoqg1+l2xAxuTMwOpBNEZFR3IBQ1nPjQHZzvn6Dg
+         j8tShhYtWbOaogfKzyQIi5Qnf8msANJEuY4wBz5HuH0Uxw8qlBERudxjDFOXXbqZL8gY
+         C8Qw==
+X-Forwarded-Encrypted: i=1; AJvYcCWhs5fx9BMvFyNN5hW8LQOw1TlQvrAiNWfOsEqsNo1ftNjm7ujAuF88v0+IEVtzLqIiRaOPAmc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzEsl75OmCg7r5IOjoK11owGXyq9N7DqJ/fRhdrKK1dVQReVKyb
+	gGkRWHZrxSgjsI9TWPeC0NUilpgux3oW6F41kbgmS1Ng/G3jGYzX3BRE2JgQ/SrJ/5/wK1wk9Ac
+	kzl/qfp9kD+VikVYvL1/QJzlSPYbAROecuKrFud18B+SBRH7GxLUDXM8DhHojXjtlODjUmP6+9l
+	anhWwk1jfRyUOTEXP9La46G8sJIVeglpmUeyo/yUo=
+X-Gm-Gg: ASbGnctpaDA7QKdUS+9USglRCKq0XYced74DcdVPi0HbbA5KbXfN/yW79HCZz+2St76
+	Y01WJxj3rEoAjH/GK/SP52GeDkl0p9aKIZAn3g/UdJIPkD6n1BSm+z7W+bOqDve8r+yoM/QhykY
+	4xcokpSKMz2D0ucChjk8c8+A==
+X-Received: by 2002:a05:6e02:3981:b0:3df:5309:e962 with SMTP id e9e14a558f8ab-3e282485392mr125888795ab.19.1752847540028;
+        Fri, 18 Jul 2025 07:05:40 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHDBjf/hyYGNpctV3HuOKDAPCV8KQACEaP6/w9zosmIlpfDEwcddo1LgpYxZfWgabOw/WiBaSq3a/Sq0j4X5/I=
+X-Received: by 2002:a05:6e02:3981:b0:3df:5309:e962 with SMTP id
+ e9e14a558f8ab-3e282485392mr125888505ab.19.1752847539496; Fri, 18 Jul 2025
+ 07:05:39 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v2 2/3] wifi: ath12k: Fix TX status reporting to
- mac80211 when offload is enabled
-To: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>,
-        Ping-Ke Shih <pkshih@realtek.com>
-Cc: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>,
-        "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
 References: <20250718025513.32982-1-nithyanantham.paramasivam@oss.qualcomm.com>
  <20250718025513.32982-3-nithyanantham.paramasivam@oss.qualcomm.com>
- <1ae4000edd954cf492e95bdb059c89b2@realtek.com>
- <CAD1Z1JK1wnCTeObYAHALkxDVFm0kx=7r4urtA4S0XorLNOPKfg@mail.gmail.com>
- <7859082aeea642e2a3fa3a2829404b55@realtek.com>
- <CAD1Z1J+M2342-fsyc--MB+K4cd16v-csMKd38Vjm4FSdvatEnQ@mail.gmail.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <CAD1Z1J+M2342-fsyc--MB+K4cd16v-csMKd38Vjm4FSdvatEnQ@mail.gmail.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=dKimmPZb c=1 sm=1 tr=0 ts=687a524f cx=c_pps
- a=lkkFf9KBb43tY3aOjL++dA==:117 a=e70TP3dOR9hTogukJ0528Q==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=n9Sqmae0AAAA:8 a=EUspDBNiAAAA:8
- a=oF63wo3pCtCFGqcOxokA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=k4UEASGLJojhI9HsvVT1:22 a=UmAUUZEt6-oIqEbegvw9:22
-X-Proofpoint-GUID: hjVR3THKaDfuTqbMpyL02G9I5Gciqr78
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE4MDEwNyBTYWx0ZWRfX/17xxye3MwHd
- 1dMWuczDayrMIfFI2nZ3ZrrIsqq7vDBdaPS5aHB08euULQqHdrc4NU8p3Z6fFjJbAkTjxgE00jX
- V+J6f9O171j4BAWAolbKdwVxmy5//O0frc+xkjv6CTGwccdiScyM+07RblYCuawoy9li2V5xP19
- iJX2PYN2w/OUs+e6m5QzApatX45fclng4ddtEPQka3/pHpulDDCIz3V2o25nvAvnDM4DPh4bAkq
- +Fo67s6TbyZA4+91bGeISdaJMHF/wOA7SF5yM/eXYQlOzKQtgDdViFebabtbluQedIBzfNp8rmZ
- mM/dB3V2p/xT9NWxN0ZLLQPz7EYRDJBN2eC+qTRK22lo/Z/4ins2u1K71JRiqMjSLBpWe4dXlQM
- QsjftEAr66JTZEQOiiicSCqzaPTmN6s6Yf43rbVcpDO/2KtSJ1R16I4gng/t6sdfDbFpAYp9
-X-Proofpoint-ORIG-GUID: hjVR3THKaDfuTqbMpyL02G9I5Gciqr78
+ <1ae4000edd954cf492e95bdb059c89b2@realtek.com> <CAD1Z1JK1wnCTeObYAHALkxDVFm0kx=7r4urtA4S0XorLNOPKfg@mail.gmail.com>
+ <7859082aeea642e2a3fa3a2829404b55@realtek.com> <CAD1Z1J+M2342-fsyc--MB+K4cd16v-csMKd38Vjm4FSdvatEnQ@mail.gmail.com>
+ <429a1fbc-dd2f-4c9b-b8da-73cee76e6732@oss.qualcomm.com>
+In-Reply-To: <429a1fbc-dd2f-4c9b-b8da-73cee76e6732@oss.qualcomm.com>
+From: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
+Date: Fri, 18 Jul 2025 19:35:26 +0530
+X-Gm-Features: Ac12FXzYvmrXYQpDYnGfSjgnISwRZX6ZUSyJWa8g4lZokl2wGknXr63MC9Jz8G4
+Message-ID: <CAD1Z1JKSMqRRMKXEL2RUA2AKdP_FyExZ6U8XAz60aXB=B7iVhA@mail.gmail.com>
+Subject: Re: [PATCH ath-next v2 2/3] wifi: ath12k: Fix TX status reporting to
+ mac80211 when offload is enabled
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Ping-Ke Shih <pkshih@realtek.com>,
+        "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>,
+        "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-Authority-Analysis: v=2.4 cv=ad1hnQot c=1 sm=1 tr=0 ts=687a54b5 cx=c_pps
+ a=7F85Ct0dzgNClt63SJIU8Q==:117 a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10
+ a=EUspDBNiAAAA:8 a=n9Sqmae0AAAA:8 a=s4K1LNoi-mhgWz5-MRgA:9 a=QEXdDO2ut3YA:10
+ a=LKR0efx6xuerLj5D82wC:22 a=UmAUUZEt6-oIqEbegvw9:22
+X-Proofpoint-ORIG-GUID: 72TIQOaJr6oh4zIzYaIybo22nolZyWaW
+X-Proofpoint-GUID: 72TIQOaJr6oh4zIzYaIybo22nolZyWaW
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE4MDEwOCBTYWx0ZWRfX+A9PqorpmD4Z
+ nxiXeS5ynggpCiJMRyhH85qdImwebe0jt/Kz78LdMY4g/P0jWSARlecyzT3GUrZGrowagJWncKf
+ P43mgp93lzuPS3GZ1BNro3caEbsYnxqLlRI1RH8CXNL7earNV2z4rcIfc4Pn0tRX1qOk7ORjiMq
+ LiOsnxQ3EUFVbZMbcwHmWQkDI1H1LHzIUUPDQqcSSzCeavdTO3vEFVjQbDMw1+e6Ok68lNJAuiz
+ lB/+FNOF9Zhqh+nblZ+4DW7V61FmPMqZqTCv6AHDiGNKnM7wfsvjLaFIITYmqeKTZfuZ0XKitsr
+ yBtUMlzdLdj8ATLIxtepjB30lDzVVtNMdBmrM7alhk60+8Yw6BOPNgsAp3OtbLgNeG7zEAoAqL4
+ PF6b4NeL7eaT9nbN9GdYJUtSSy/pIwXXWWwIz8auMF0Av6y+KiQnnsvNaewOOpuGBPfia1jy
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-07-18_03,2025-07-17_02,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 clxscore=1015 mlxlogscore=849 mlxscore=0 spamscore=0
- adultscore=0 impostorscore=0 priorityscore=1501 suspectscore=0 bulkscore=0
- phishscore=0 lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a
+ adultscore=0 bulkscore=0 mlxlogscore=944 suspectscore=0 spamscore=0
+ malwarescore=0 phishscore=0 mlxscore=0 lowpriorityscore=0 clxscore=1015
+ priorityscore=1501 impostorscore=0 classifier=spam authscore=0 authtc=n/a
  authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2507180107
+ engine=8.19.0-2505280000 definitions=main-2507180108
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250718_065528_068353_5BA64EBD 
-X-CRM114-Status: GOOD (  15.78  )
+X-CRM114-CacheID: sfid-20250718_070542_455936_9B4308AC 
+X-CRM114-Status: GOOD (  20.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,35 +130,49 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 7/18/2025 6:47 AM, Nithyanantham Paramasivam wrote:
-> On Fri, Jul 18, 2025 at 7:01 PM Ping-Ke Shih <pkshih@realtek.com> wrote:
->>
->>
->> Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com> wrote:
->>> On Fri, Jul 18, 2025 at 2:45 PM Ping-Ke Shih <pkshih@realtek.com> wrote:
->>>>
->>>>> @@ -578,6 +579,8 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
->>>>>         struct ath12k *ar;
->>>>>         struct sk_buff *msdu = desc_params->skb;
->>>>>         s32 noise_floor;
->>>>> +       struct ieee80211_tx_status status = { 0 };
->>>>
->>>> With '= {}', no matter how the struct changes, you don't need to change the
->>>> code accordingly.
->>>>
->>>
->>> Both ={} and = {0} achieve the same result, right?
->>
->> Yes.
->>
->> However, in some cases, it might cause compiler error. But I forgot the cases,
->> even I can't reproduce the error now. Sorry for the noise.
->>
-> No worries at all. If you happen to recall the scenario later, I’d be
-> curious to know. For now, since we have been following the same style,
-> we'll continue with it.
-> 
+On Fri, Jul 18, 2025 at 7:25=E2=80=AFPM Jeff Johnson
+<jeff.johnson@oss.qualcomm.com> wrote:
+>
+> On 7/18/2025 6:47 AM, Nithyanantham Paramasivam wrote:
+> > On Fri, Jul 18, 2025 at 7:01=E2=80=AFPM Ping-Ke Shih <pkshih@realtek.co=
+m> wrote:
+> >>
+> >>
+> >> Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>=
+ wrote:
+> >>> On Fri, Jul 18, 2025 at 2:45=E2=80=AFPM Ping-Ke Shih <pkshih@realtek.=
+com> wrote:
+> >>>>
+> >>>>> @@ -578,6 +579,8 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_=
+base *ab,
+> >>>>>         struct ath12k *ar;
+> >>>>>         struct sk_buff *msdu =3D desc_params->skb;
+> >>>>>         s32 noise_floor;
+> >>>>> +       struct ieee80211_tx_status status =3D { 0 };
+> >>>>
+> >>>> With '=3D {}', no matter how the struct changes, you don't need to c=
+hange the
+> >>>> code accordingly.
+> >>>>
+> >>>
+> >>> Both =3D{} and =3D {0} achieve the same result, right?
+> >>
+> >> Yes.
+> >>
+> >> However, in some cases, it might cause compiler error. But I forgot th=
+e cases,
+> >> even I can't reproduce the error now. Sorry for the noise.
+> >>
+> > No worries at all. If you happen to recall the scenario later, I=E2=80=
+=99d be
+> > curious to know. For now, since we have been following the same style,
+> > we'll continue with it.
+> >
+>
+> {} is preferable to { 0 } since the 2nd one causes a compilation failure =
+if
+> the first member of the struct is not a scalar
 
-{} is preferable to { 0 } since the 2nd one causes a compilation failure if
-the first member of the struct is not a scalar
+Thanks for the clarification! I=E2=80=99ll follow the same approach going
+forward. I=E2=80=99ll make the change and update the code accordingly.
 
