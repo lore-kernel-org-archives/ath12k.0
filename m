@@ -4,109 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A7BEC83F1A
-	for <ath12k@archiver.kernel.org>; Fri, 18 Jul 2025 02:55:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5092C83F22
+	for <ath12k@archiver.kernel.org>; Fri, 18 Jul 2025 02:55:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:
-	To:From:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=mRzmcWz7R+mLeW6KePbkFbqE+CyDHllGwyZr73meTP8=; b=TpXvJRscjs4WwD3XSUv+TAhXEi
-	orCmzXENS48jZ9ZmCBH195PYx01u7yQ1dAdhb/DIwTRjNSkc+q2B93eOQIgo5F5as60XjmY24uWhz
-	ADZMPIYNsuf5whHkaBfAFS8+8qs4ixAK92uWYaDMQlVb2FyHLW17UpRhBi4dulpK1/eH0NnM7Awl+
-	ZygcgzOtTsww/uhwwq/wPLMLtXYdAx6+/msBfpASDlQJ58kxjtCmNQqwvZ4um57+sEPXf65MCOV6D
-	VG26X9gpmp5+WXBYYWmyDjsZozps9/TpBCCcJOq04JnUYdpG+/wJyION1rc2XaKI5jlND673e7tG/
-	BwHzYXbQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:MIME-Version:Content-Type:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ZAfqWAgTVp/NnDNsyZslnXqzroALmVm6Sk3ncdH7uvs=; b=w2bPLtAEumjGTWQmbQlwsb24/a
+	QwyWlZmB6d5gPaBrdrsKUZ/5IAWn/UylC2GRdC4sHcaPoImoGurOH9jSKJXP0zOQg8xjp5WoEUR/K
+	Tv3LOlL2jadM0KSc2h1hmlL8ZxhpUhxPpJCbgrqdDuXy0rYDJ+sMrxB880IIFb4bCdZyyRY99/LwQ
+	aTORN+HirpXjhukOHYUhqQRZxOYPZEXZtqJgjhsu2+u3fMF68/6ttD4+1jiZRKL/sD1dTgMW+3uzC
+	Hs0/TY6vPX5jpk4tL1LuWl91IBDveH0UqxBfWSQ75WEFFgu81Z54AhJ1Tq/POD+kQ6aF9CGZvkYZW
+	bY9kQLOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucbG2-0000000BZ9v-3k4C;
+	id 1ucbG2-0000000BZ9j-229y;
 	Fri, 18 Jul 2025 02:55:34 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucbFz-0000000BZ8Q-23iy
+	id 1ucbFz-0000000BZ8R-1idm
 	for ath12k@lists.infradead.org;
-	Fri, 18 Jul 2025 02:55:33 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56HLDDcC025369
-	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 02:55:28 GMT
+	Fri, 18 Jul 2025 02:55:32 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56HJoY8w020653
+	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 02:55:29 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:date:from:message-id:subject:to; s=qcppdkim1; bh=mRzmcWz7R+mL
-	eW6KePbkFbqE+CyDHllGwyZr73meTP8=; b=JSYrzEazvtdBzRWq2ccTV0cgkwRC
-	HZ7DrLL5xrn0Xt7RZY1Fp71k/Hfk2Uodj6Mf7qB+h5pzmzRJ+s8VyC44Za0wG7mH
-	+KsYIFTlLkQl7of8lJIg0UU6B3yUSNcqLK7KpqQjh+b/g3Whsx30TkN8ZWJ9oqri
-	4sfYNlwFLErPR4ekvXbVHkD2oBduK5qTkmvXSCfk4fYh+WtOpleNNjbmshzpCQeK
-	EjjKjPTtao3AYnABNSjYU+NLd0qEGaBXrc436wfh6tqmbzipU3qQFMo7A1KKJdGb
-	UvY5WdHtl2l1Yjf7WkBGdJDQRz3MCGy8EzXnDrheHYc1eG6+TTT0hdl/tQ==
+	cc:date:from:in-reply-to:message-id:references:subject:to; s=
+	qcppdkim1; bh=ZAfqWAgTVp/NnDNsyZslnXqzroALmVm6Sk3ncdH7uvs=; b=KZ
+	Ah9+0kGR5mGrTpYUE6j1e5ZiHHHk2lvUeVPK3Dn6BAnYbm/toyDvUzbGr7Mdfh7+
+	DQWVFQn3e3zu+0PUNWcfgLiLZmaS1XyAq1/Zh+AKWFt39KP2JbY2hYGLoPaE96bi
+	19i8HSIdtM7Vv9EVYL+ZKelyn2JvgzdiNMIJ/WLRpuYn23UB6/jE5MpcRi+40NGm
+	Z/AFp3JrI5Njbm69lST+3x0XLdZFBWqdCBR3l5BdfceCE75yXaS7p8igq9zIoMxI
+	jyGOjXg0yPQK7+jBr4NZQkKRyqwMnA5f6b05CKKoOpm+2ThFVXjMVcvtyXW5cORg
+	MPmqAvkUelC6IlPqYayw==
 Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47xbsqe3f3-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47w5dpn07p-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 02:55:27 +0000 (GMT)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-74d12fa4619so1528773b3a.0
-        for <ath12k@lists.infradead.org>; Thu, 17 Jul 2025 19:55:27 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 02:55:29 +0000 (GMT)
+Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-74ea7007866so1564846b3a.2
+        for <ath12k@lists.infradead.org>; Thu, 17 Jul 2025 19:55:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752807326; x=1753412126;
-        h=message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=mRzmcWz7R+mLeW6KePbkFbqE+CyDHllGwyZr73meTP8=;
-        b=aYbyGmMnmaeZNw2qG0TNCBDLD81MNv2v0/2N8OFaBQjlnJ8WOyBWtKH5+TAkLuqE3i
-         tbp0To03jXwVBdPvlg72eKDkh/XcnngCwBxgecs4EJ6EN5uC8PetwWj0oUoU5bUrg+GD
-         bPM6KjcZLi7hUbHNKo6bu9rI+5aqcpqxgg6jTfezta8gkExCDyd/+2dZFvah50tN13s8
-         qPg/tqUpB4qK+6G+kQkCo2VWQ6frg/KTi12dMcMNLy3OgD+3vaA+8bSGfdpfbCrkQIoj
-         LmxqxzkfZO8C6zMFQ4OGUazeXdQDzdVFA9DKQLQnxPm3OpdS8YMRRxLvThR2LlgYOATo
-         G2nQ==
-X-Gm-Message-State: AOJu0Yxx/2i8q+v9tozYJNuGrs4PSGTSCYiMj/kXfQAXXYJbYn42jGuz
-	9+GZ1n9IlqVFcs7Cj7LrvTMbOZg3gNV/KkdjPLmUHsuRAaqhj19ynoIGjxtK8i6sO/07NbPd95u
-	CIdsdu8Ta4ETfZqGKWrvhXId31jrJk+NyfRdJtKksE/0HsqfVJ2gGE5vKmv5HLv3FQpg/UCyB
-X-Gm-Gg: ASbGncuYF/QWG+C1amo9TpvYOmwGrWjU+pgaCdK8dtEgCz1wi+BazFY8IEEseZbHo5S
-	I+NWKysTerkNmSY4GBKgr8VTcUJzeWfWYfLmQWIE7KH7O0L+JC6CD4KfHLSYWnnwOXEh0ZmcDNp
-	s8IDM5x4FKys2STvCUF0r37I17qn1K05HFXFNCm+ZS4xmtTIwUwodnrFC1dBf+JbHyNTB8KrBrZ
-	jOtSKaEtP0YjBG2znmSKvD3fgNj/t/zSBQUVldnexSaU50QKH1UnrDftkINnj5KILCto/aCdJAs
-	m0yjbtJe2ApORd/2zqg2QhRlUfWgUN2D+BKBFIRbhXXfMM9s6LC98nbyUC1gV/fhQZPtpASsitq
-	jh/HutJk2nVRTEyEdn6Xl2+P8LjoPr/o6nyiE7VshoPUmdNHXjm59n3f050gqTNaJSztpu1ffCg
+        d=1e100.net; s=20230601; t=1752807328; x=1753412128;
+        h=references:in-reply-to:message-id:date:subject:cc:to:from
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ZAfqWAgTVp/NnDNsyZslnXqzroALmVm6Sk3ncdH7uvs=;
+        b=vJCliw1rdNjA+d9WgYvy6beEvtN7ilEf38VIV/VbtrxbQvoGmKPQa1RlcDKhTBSlZM
+         AsWHkPX/F2yV7eFtWTu9kfbykL1X6F0wBH+LxdEghArc+pTE6Boc5xKfGROPxj0Q9zeF
+         B+WaY+4HE4uXWhCthL32NhQLfjvkQ6mEWIsgWbCkHXH3PUmYU2d38IShpe2YQ/hFnPWp
+         k907YKWgj/mcSY2b2cPmalZEZ9unjvkrWFN3v1LgP9rDroGCojzuZZ3/CvBE6WpdCyTs
+         9ouJBcWzTJCOkls4KW+K+/KGYO/Z+KpXjCK+rqt9lSS457cfdKwvGou70dzVHJZ6KxD5
+         aUhA==
+X-Gm-Message-State: AOJu0Yx0UkgpRIOvPgjcJ5SiGa9ZdGpb/CIPeuUh9ehlaLWwWQnnfs+h
+	EArLW5vMGiiWztZ56gqs0SLV+ZzSJs1mrG85e7K0SIWF048Zx3WLC44GhsTI7NRnahwfgb/vYLz
+	17oiwEMwoXw5WH7N/9Eahqq0Zh3A0fsQ8XZF0Q/hoYb+gPiacoo6f+lFnQVassJaCXbbI3WKl
+X-Gm-Gg: ASbGnctj4iDVazz2ysh3Q5C2MJODu4KGDdcQ7owgsrELSdCGGzaRgmhabi8Sjb5RCXF
+	VJpd/7Ng/cnxyG4rBUznOkyrtAUb6CKodOqAWrQkfovqLTqKPV95twzwPpnkPJH6EAg02pNu2B7
+	xu3zkWetdR+YMfGzJXCXAjGoh8TLasTKEOj6CNHPaZLtiHaS14PHum/tTRlwvDLduq0uR8jYsLx
+	cRRxfz3USwp0IhWXThx2aNkhJ9oPimwLhPI4wCHDC72sBjoIpiqjTY1xD9VU6vn0c4yT6G1Z/ac
+	QwlRapy+W18arycjyJAM7zAdUM3f8qdupAv79R/AQQ/NM/CrUsv1Xo95gY1I4Qw+OL1btEqiNWU
+	1Z66M1UD8duAgNYaNoq7GGu05VVGeJOPxz7pWGVvhX54PSan2yzXOhNgCAGsqxgarcyKucf/JTA
 	==
-X-Received: by 2002:a05:6a00:4642:b0:747:ab61:e4fa with SMTP id d2e1a72fcca58-759ad4012efmr1623652b3a.14.1752807326368;
-        Thu, 17 Jul 2025 19:55:26 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFvfOSBqPPcq0Kq8bI80tZsHjU/F3kMUGLuQZu9TUFeQgRVXxb+GPqY2FCFWtTaRGqr3eHcvA==
-X-Received: by 2002:a05:6a00:4642:b0:747:ab61:e4fa with SMTP id d2e1a72fcca58-759ad4012efmr1623628b3a.14.1752807325907;
-        Thu, 17 Jul 2025 19:55:25 -0700 (PDT)
+X-Received: by 2002:a05:6a00:2384:b0:73e:23be:11fc with SMTP id d2e1a72fcca58-75725088c14mr10625306b3a.22.1752807328404;
+        Thu, 17 Jul 2025 19:55:28 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFJaxGMSo85A75leA05HTzStwaZIG0R5PNPtoGxVpVxbJnlscIkYklP+7z+1XlAhEFv9TfflA==
+X-Received: by 2002:a05:6a00:2384:b0:73e:23be:11fc with SMTP id d2e1a72fcca58-75725088c14mr10625277b3a.22.1752807327830;
+        Thu, 17 Jul 2025 19:55:27 -0700 (PDT)
 Received: from hu-nithp-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-759cbc68095sm255334b3a.139.2025.07.17.19.55.24
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-759cbc68095sm255334b3a.139.2025.07.17.19.55.26
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 17 Jul 2025 19:55:25 -0700 (PDT)
+        Thu, 17 Jul 2025 19:55:27 -0700 (PDT)
 From: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
         Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
-Subject: [PATCH ath-next v2 0/3] wifi: ath12k: Add 802.11 encap/decap offload support 
-Date: Fri, 18 Jul 2025 08:25:10 +0530
-Message-Id: <20250718025513.32982-1-nithyanantham.paramasivam@oss.qualcomm.com>
+Subject: [PATCH ath-next v2 1/3] wifi: ath12k: Fix the handling of TX packets in Ethernet mode
+Date: Fri, 18 Jul 2025 08:25:11 +0530
+Message-Id: <20250718025513.32982-2-nithyanantham.paramasivam@oss.qualcomm.com>
 X-Mailer: git-send-email 2.17.1
-X-Authority-Analysis: v=2.4 cv=ad1hnQot c=1 sm=1 tr=0 ts=6879b7a0 cx=c_pps
+In-Reply-To: <20250718025513.32982-1-nithyanantham.paramasivam@oss.qualcomm.com>
+References: <20250718025513.32982-1-nithyanantham.paramasivam@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE4MDAyMSBTYWx0ZWRfX60OWIVN7KRU1
+ pdG5zQPj7oivDPumIOHXTgQoB3GURmCLnk0W078gkLwZ4QVX8shllwSHwspU9PW/lYi6RyEWnv+
+ IlHRowG+sxnOb6yDrixLaCd4JWJhPoJ8lznnhWCt34tupB1qwDbjCWCvtIDt1tpQi+7vsXM6FAV
+ gJzpnGOKQstOWvcSYch91KyniciDVLJkBgufIlw8cZv8AZHLynnDaA23vJoif4uBzEooAnp5kvs
+ IOppT3RH2nV7qQqBmL39ijcXiS4QEjHEuBI/F/JtZyR5qGHs704CuZJ5ZfxgpETQhrpvbl4GGBe
+ 90PDW3Q8abU84OLRj4WxW7WhC2+nOnBjrv+JnccVjWiOs3vpfwyvxG4fbVZRnOvtMv9Ox8JRbK6
+ tSwEFDZr49tDYusDF0QqnrxSkD9c8XvYpv6vzIQKSzYhWCIFE/N5GfAp9mT/KuhWktNc0cjM
+X-Proofpoint-GUID: zmi4YyxfvsWo_KopT2njCxrrA8pZmY2u
+X-Proofpoint-ORIG-GUID: zmi4YyxfvsWo_KopT2njCxrrA8pZmY2u
+X-Authority-Analysis: v=2.4 cv=Y+r4sgeN c=1 sm=1 tr=0 ts=6879b7a1 cx=c_pps
  a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=Wb1JkmetP80A:10 a=87EwTfTGHB7IU8INq4wA:9 a=zc0IvFSfCIW2DFIPzwfm:22
-X-Proofpoint-ORIG-GUID: -ETEB-PoqklaFvYejjB31yTJhLYD7Abp
-X-Proofpoint-GUID: -ETEB-PoqklaFvYejjB31yTJhLYD7Abp
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE4MDAyMiBTYWx0ZWRfX0nGkVl0VJBkm
- 08WKj07pr9qhbrtR3TCTsg9l1eqJKBNt1hrI27qyfI6B6UsfpC3kB0YnqjUj4B+3R6P4zx/sAJC
- ANMn/6h2lkGgfdMXoc7EMKhvU3zXxgXRFjSx7XEPDIXibRvrGgdBuJsZl/PPlH7TijzoalJxuFr
- ozCwqCSBAsJkbwS74SQiseaVSwzPkl2ILZovKnuaW4XSqvsAGrz0u4NAvQ4w3iL+YLnwCXmvx5t
- E7t4bE3jdTIIReDWhobQfdfrVcemr2aAX7ItfE/8plTuLJoOUL/PciETAXA43AGx5c46Igsz8T9
- MJtJ0nWk8YXDRav4kp2YDsPhIdAS9a2evYj24xlwSmKaEqMiL2txtTSP4q03kF/PqGaF0U6FDzl
- /FhHf9ugmJXNIJEtbLS5R3ONUQb8TZANhcIbhm/ix1/lZGFSUIWYVGLzbu57E1YhkxcSjBar
+ a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=vl7YvmKCL5Z24jtCxAEA:9
+ a=zc0IvFSfCIW2DFIPzwfm:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-07-18_01,2025-07-17_02,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 bulkscore=0 mlxlogscore=947 suspectscore=0 spamscore=0
- malwarescore=0 phishscore=0 mlxscore=0 lowpriorityscore=0 clxscore=1015
- priorityscore=1501 impostorscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2507180022
+ clxscore=1015 mlxlogscore=999 phishscore=0 malwarescore=0 priorityscore=1501
+ adultscore=0 impostorscore=0 mlxscore=0 suspectscore=0 lowpriorityscore=0
+ bulkscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2507180021
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250717_195531_644092_C18F60EA 
-X-CRM114-Status: UNSURE (   9.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250717_195531_456296_DBB3F9F5 
+X-CRM114-Status: GOOD (  17.40  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,34 +124,102 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the mac80211 layer handles construction and parsing
-of 802.11 headers during packet transmission and reception.
-Offloading encapsulation and decapsulation to hardware can
-significantly enhance performance. This can be achieved by
-having the driver advertise hardware support to mac80211 to
-bypass 802.11 header processing
+Currently, in the transmit (TX) direction, EAPOL, QoS NULL,
+and multicast frames are sent in native Wi-Fi (802.11) format.
+However, when the virtual interface is configured in Ethernet
+mode, transmission fails for packets enqueued in native Wi-fi format.
 
-v1 -> v2:
-- Rebased on ToT
-- Firmware service bit check added for EAPOL ETH offload support
-- skb free handled in tx completion station negetive case
+To address this issue, the firmware should be instructed to
+treat these packets as RAW type packets, ensuring proper
+handling even when the interface operates in Ethernet mode.
 
-Nithyanantham Paramasivam (3):
-  wifi: ath12k: Fix the handling of TX packets in Ethernet mode
-  wifi: ath12k: Fix TX status reporting to mac80211 when offload is
-    enabled
-  wifi: ath12k: Advertise encapsulation/decapsulation offload support to
-    mac80211
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00217-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
- drivers/net/wireless/ath/ath12k/dp_tx.c | 102 +++++++++++++++++++++---
- drivers/net/wireless/ath/ath12k/mac.c   |   6 ++
- drivers/net/wireless/ath/ath12k/wmi.h   |   1 +
- 3 files changed, 98 insertions(+), 11 deletions(-)
+Signed-off-by: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/dp_tx.c | 38 ++++++++++++++++++++-----
+ drivers/net/wireless/ath/ath12k/mac.c   |  1 +
+ 2 files changed, 32 insertions(+), 7 deletions(-)
 
-
-base-commit: 45bbd91fc41b7cb6319e45e6fd732c5c8a0c44e3
-prerequisite-patch-id: 1d3bf121aa8bf03dd29436bd0df63de74f753027
-prerequisite-patch-id: 0847395767a6f49458db6b857a9be81d12dc534c
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index 1fa37cda1046..e8d3bcc90a2d 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -244,6 +244,8 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 	bool msdu_ext_desc = false;
+ 	bool add_htt_metadata = false;
+ 	u32 iova_mask = ab->hw_params->iova_mask;
++	bool is_diff_encap = false;
++	bool is_null_frame = false;
+ 
+ 	if (test_bit(ATH12K_FLAG_CRASH_FLUSH, &ar->ab->dev_flags))
+ 		return -ESHUTDOWN;
+@@ -334,7 +336,19 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 
+ 	switch (ti.encap_type) {
+ 	case HAL_TCL_ENCAP_TYPE_NATIVE_WIFI:
+-		ath12k_dp_tx_encap_nwifi(skb);
++		is_null_frame = ieee80211_is_nullfunc(hdr->frame_control);
++		if (ahvif->vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED) {
++			if (skb->protocol == cpu_to_be16(ETH_P_PAE) || is_null_frame)
++				is_diff_encap = true;
++
++			/* Firmware expects msdu ext descriptor for nwifi/raw packets
++			 * received in ETH mode. Without this, observed tx fail for
++			 * Multicast packets in ETH mode.
++			 */
++			msdu_ext_desc = true;
++		} else {
++			ath12k_dp_tx_encap_nwifi(skb);
++		}
+ 		break;
+ 	case HAL_TCL_ENCAP_TYPE_RAW:
+ 		if (!test_bit(ATH12K_FLAG_RAW_MODE, &ab->dev_flags)) {
+@@ -378,15 +392,25 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 		goto fail_remove_tx_buf;
+ 	}
+ 
+-	if (!test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags) &&
+-	    !(skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) &&
+-	    !(skb_cb->flags & ATH12K_SKB_CIPHER_SET) &&
+-	    ieee80211_has_protected(hdr->frame_control)) {
+-		/* Add metadata for sw encrypted vlan group traffic */
++	if ((!test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags) &&
++	     !(skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) &&
++	     !(skb_cb->flags & ATH12K_SKB_CIPHER_SET) &&
++	     ieee80211_has_protected(hdr->frame_control)) ||
++	     is_diff_encap) {
++		/* Firmware is not expecting meta data for qos null
++		 * nwifi packet received in ETH encap mode.
++		 */
++		if (is_null_frame && msdu_ext_desc)
++			goto skip_htt_meta;
++
++		/* Add metadata for sw encrypted vlan group traffic
++		 * and EAPOL nwifi packet received in ETH encap mode.
++		 */
+ 		add_htt_metadata = true;
+ 		msdu_ext_desc = true;
+-		ti.flags0 |= u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_TO_FW);
+ 		ti.meta_data_flags |= HTT_TCL_META_DATA_VALID_HTT;
++skip_htt_meta:
++		ti.flags0 |= u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_TO_FW);
+ 		ti.encap_type = HAL_TCL_ENCAP_TYPE_RAW;
+ 		ti.encrypt_type = HAL_ENCRYPT_TYPE_OPEN;
+ 	}
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 42eb9e8e14d1..3a33eccc0d1d 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -8869,6 +8869,7 @@ static void ath12k_mac_op_tx(struct ieee80211_hw *hw,
+ 		is_dvlan = true;
+ 
+ 	if (!vif->valid_links || !is_mcast || is_dvlan ||
++	    (skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) ||
+ 	    test_bit(ATH12K_FLAG_RAW_MODE, &ar->ab->dev_flags)) {
+ 		ret = ath12k_dp_tx(ar, arvif, skb, false, 0, is_mcast);
+ 		if (unlikely(ret)) {
 -- 
 2.17.1
 
