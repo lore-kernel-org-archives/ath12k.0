@@ -4,120 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B146FC83F17
-	for <ath12k@archiver.kernel.org>; Fri, 18 Jul 2025 16:39:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF67EC83F17
+	for <ath12k@archiver.kernel.org>; Fri, 18 Jul 2025 16:46:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/yh0gYO/fyXW+8lHXO7cK/ry70PjDM7Fy75uaOFuFZw=; b=NzCNPkp9EaB+eiagXrUC6Q73Ff
-	5AvHGYBhliRycLrGFKNu0GKU5hoXKJnw9sbor4rp+4HDOeLao886Ga9wEltRMyAysbp1T6Tz9L8Rn
-	SFUQaTD8tQhPnDg3T9MozOrvr/1OWW+doWth6redCIJ1NlTJ1hI32cj/tinnOoqyF13GduENAgoyU
-	zeX+oaGqqTBw3+94p+ZYNI/Ssz5VMtFUg9Vk7cei9pWSZfW9MsCPccdFeYZ/0AK4q1EaQCRZdPgfO
-	sCmmVVGUpy5tCXQHIlzTQB6749aV4lR7BgtZWnnAFcqcQEGEHkdBvEi+4BlfZL+9o73Z6p2TI63CM
-	+c33w1Cg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=dCEM8aWN+j09CDRWVG7/dnusk4+88HZYwOw99R8RwOY=; b=H113io8cNvv0zi
+	2rVxM5YyJulsUtPHru0IzlfA8CRy/r4zfAvo4SpEaak5gX1noE0glsGq78RXCxpYjINrRvn2/oBUe
+	+AoXTqG+1+AmXFQz42vV8fdY+glE4zrTzYkEKvcDIbkl4wGwcnMjq6tLx6GY0Qy4k2beDxynZ+FNj
+	DHmsDSB/MJ1tS9dxEFNVQCCZ6QVH19k3KanFf37i4953Jxx0C26rJACYeKkfzGe8Ezd9X6UyKQvT3
+	GiieBRFKOyjLN4IowZMQSGaX1Fl0uqsHhfDvwgNU4MjDR1hPTCzlbUrPDnmSMm++i9PwRRF7uqi9S
+	tUr4FCVVdKm5O23SC6ng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uco78-0000000D7Ym-1zL8;
-	Fri, 18 Jul 2025 16:39:14 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1ucoES-0000000D90z-1rqR;
+	Fri, 18 Jul 2025 16:46:48 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucngD-0000000D3Ae-2H8f
-	for ath12k@lists.infradead.org;
-	Fri, 18 Jul 2025 16:11:27 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56IECrdj022239
-	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 16:11:25 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	/yh0gYO/fyXW+8lHXO7cK/ry70PjDM7Fy75uaOFuFZw=; b=MMJk15T+P+ORY+m4
-	9gvnQxlPfKBWL/a7kicjMN8qRhaBDnlCUizNIAUrNT9vpfwkxj4bVBgvC//PLvIM
-	iqhz4jlGGedRycuVI0bEdpXwI2tKs2ySPAZclKXoX7OgotuIuWzyV1Lm5PmVibti
-	rh6SykQBBt1hND8TyOINvso9B8Li3oTR9OeXJP3FlGl5yf4K39jGxg9Zqu74g9La
-	K2CrrwxtU8BVb55XdsY0zHjUTjCCwAEVU0eD5bc8YGFXpk1X71mUyTrHmPDnKo+d
-	ZofL4j7AGOrkwdQn1WsJ0sV4focyOptL8yI/XvJoR5H6B2pZelt3dCP4kBGnrQCT
-	49okSw==
-Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47wqsyc79v-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 16:11:24 +0000 (GMT)
-Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-74943a7cd9aso3422601b3a.3
-        for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 09:11:24 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752855083; x=1753459883;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=/yh0gYO/fyXW+8lHXO7cK/ry70PjDM7Fy75uaOFuFZw=;
-        b=wNf5jqtoe0WVZvRvB54kQnO1+ZCfqr/zTlzJ5Wz7njmeXk0oconasIAyaf8V8NpJ+d
-         S9kNl0xAcrrrmehLyM4SeUOkegRo14b8Z1b4Ykd4J5TfAVhFOstVcDNJCdmHztxLI1ML
-         KamrBR2jygj6MQzxz4E8xGZSiJrzlIaJkOgLsL48qoPAjoF4b3NjbsnIjsneYut60Z42
-         7E9W0MF/skiVAtk6rMSgDVKYzSMmtYuglrJjqLHvC2QIbPOcRrajx7S5Z6wkkpZFKfCI
-         eMh+2EHFp7iXW/Y6TvfWb6IQe9M3+RITrfZ9ES5ufJsJ2vVQaH1G5I/SZ/QPThptoDBZ
-         NftA==
-X-Forwarded-Encrypted: i=1; AJvYcCXQKl3QnfFyY1h6NSVmmDlC+19M6X8oGEOSN5Rd3olgEk/aun3luGasU4Bso8Vi7T/PdovdZA8=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yym3UdNXOybSqzKcavAgKUv7YthgB+4t6TS34HzL5+EK3vRzOni
-	OpDaeM+tDIDGkWurnqo2uNcHmUL5F/aSuYaaLxC4T8g9nk4hV33XnjL0QhJpyNUx5/di+oFKqEE
-	MdAKQPqLzIvcXOry8bKfZU8maHJehaOCZbLB46Zz4y38r50vcjSrEd+NIqQuq9BPQehh/KhY4
-X-Gm-Gg: ASbGncu9Li+NLcNhKE6MZkv6wdSWADLmSGm2ARK+UmW60h60OrQeA0V6JDfRq1WrHWA
-	kdV/LdqCJCsh6HiCuy0jsRFriZ5HV3vuNXy7r3TsSE8iSMzht6yOg1HI/PsoGw5gbHVryxgAF1q
-	ELeocJ5sZ0sbK+ww8DTCJciqJuz55LXnwE2EzBIFL1aJMnQEtVYuCngyIz5Smh1Sv+yTA4wefCK
-	xe4fZSzJhPDifHAYlkESiVQUqWl77+UxrjkJvC3XyrttwDZFIX5cb3+1P3pf8CS5HvtGWp/Is5n
-	hI7ys8orDFNvBm8sjkL0gpX7UOvZcMPDzsMbdqw1bnBzqN1ZIRfVfDj4nxP4sSELcIQV2d2ovnH
-	kcrHoh6bBVrmz
-X-Received: by 2002:a05:6a21:33aa:b0:220:8ce7:d6b8 with SMTP id adf61e73a8af0-23813764a2fmr19137515637.37.1752855083515;
-        Fri, 18 Jul 2025 09:11:23 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGmXTvgcSZDj426oraVut1Ek6ZJdA4/CWhZ+n/mZw+J85k6n+n2IXVsGC/8zZ0DxyAVfSfg7w==
-X-Received: by 2002:a05:6a21:33aa:b0:220:8ce7:d6b8 with SMTP id adf61e73a8af0-23813764a2fmr19137477637.37.1752855083130;
-        Fri, 18 Jul 2025 09:11:23 -0700 (PDT)
-Received: from [192.168.225.142] ([157.49.211.252])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-759c84e2444sm1503913b3a.25.2025.07.18.09.11.20
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 18 Jul 2025 09:11:22 -0700 (PDT)
-Message-ID: <62660c3c-30c9-8635-b5b8-3972b723610e@oss.qualcomm.com>
-Date: Fri, 18 Jul 2025 21:41:18 +0530
+	id 1ucnuO-0000000D5OB-2DyE;
+	Fri, 18 Jul 2025 16:26:05 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id E949540BD3;
+	Fri, 18 Jul 2025 16:26:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 812F3C4CEEB;
+	Fri, 18 Jul 2025 16:26:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1752855963;
+	bh=aXCC6a0BRcLONBCEG+qLtT+Rm3FPzL7V91riur1H9Xg=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=VitDl0P293UBhnBWTfwW9kVJK0g1L/RqqX2mGlwmW2JmETRPxtereKE2Vuq0LK+EG
+	 bf8x/QDXwtgdesGEGkf9l3+tOv/u5eMPMLfDd5Jm8tmNgi/l9dkuuL+h79ov7lthlp
+	 UFI2NSU7GD4fAKI/DAVKgV5+ZvEGjKu37s3kDh3BO2tZWRiDjhL2lKGk1Q0vG+z9uf
+	 wI7zXsu3ola9AnO/2kZYI7KblB/WNrwX/y89x0GMfAWLCxdr3YZUcYLqkv2y4YdPhH
+	 a+Wk/8evsszEwS9hOiOwuRm74mqj4lvhO6udfWVIb4fa6/y07B1q7rkveAwQJ6a9dO
+	 Qcy/kMyM8zjbQ==
+Date: Fri, 18 Jul 2025 11:26:00 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+	manivannan.sadhasivam@oss.qualcomm.com,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Nirmal Patel <nirmal.patel@linux.intel.com>,
+	Jonathan Derrick <jonathan.derrick@linux.dev>,
+	linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+	ath12k@lists.infradead.org, ath11k@lists.infradead.org,
+	ath10k@lists.infradead.org, ilpo.jarvinen@linux.intel.com,
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+	Qiang Yu <qiang.yu@oss.qualcomm.com>
+Subject: Re: [PATCH 4/6] wifi: ath12k: Use pci_{enable/disable}_link_state()
+ APIs to enable/disable ASPM states
+Message-ID: <20250718162600.GA2700538@bhelgaas>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH ath-next v2 0/3] wifi: ath12k: Add 802.11 encap/decap
- offload support
-Content-Language: en-US
-To: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>,
-        ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250718025513.32982-1-nithyanantham.paramasivam@oss.qualcomm.com>
-From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <20250718025513.32982-1-nithyanantham.paramasivam@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE4MDEyNiBTYWx0ZWRfX+Ht6QkZGsNkt
- 0oRZGgxCKLZLwmuzM059gSZ2bj76Rtz1FoNr0fbtq0vubVv8O/aN636GyprgGM8vDK3cZgGDAAI
- X8cZuvYhj4kgi2po39difU+eEJc5W8lCmnnxgoy0sBrMrnglemsrB/2cdHjVBtZkbSaajY7WVDp
- lSLSrQVlqa/0PFIzNWjMZqhbpSCuIYYQ6hAflmVsPWQCvtKzc3D8g+NNsIlxZV/hLLmBBReMB7e
- bogxoukyiunhQRCoqu0nDh+9SyBwkwpcjqdCR2th9Tey/UHFwSgQx7kit6N7CfQ9jROmouRiipU
- h9Gk6qMw1SoC2jvDly/qWMgFUh0kaZL047xP0shhjP0ou1pEw8PavZNiVuXwKHE/TtRAkGyJ/hx
- XkOja075fCJks4ePxoZfE8OMiNZnsmrLaCmk87BLsVB9c3Y5mHXFQ0cl+XEAhThMbhFZwRw4
-X-Proofpoint-GUID: cOhgiZP8-n9-hlqjR4qfVgrggp-H2-wW
-X-Proofpoint-ORIG-GUID: cOhgiZP8-n9-hlqjR4qfVgrggp-H2-wW
-X-Authority-Analysis: v=2.4 cv=McZsu4/f c=1 sm=1 tr=0 ts=687a722c cx=c_pps
- a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=rmBo/+S5hedwIG+s4KM8eg==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=hQefTeRL-RgvZKPZHv8A:9
- a=QEXdDO2ut3YA:10 a=OpyuDcXvxspvyRM73sMx:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-07-18_03,2025-07-17_02,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 mlxlogscore=988 impostorscore=0 mlxscore=0 phishscore=0
- adultscore=0 lowpriorityscore=0 bulkscore=0 clxscore=1015 suspectscore=0
- spamscore=0 priorityscore=1501 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507180126
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <wkapzhyr6hzp5az4jae3y5c77c3fg4uwrmyyipbq4uosamcivq@z7nv6w7nbyrp>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250718_091125_612497_C25B6FCE 
-X-CRM114-Status: GOOD (  11.78  )
+X-CRM114-CacheID: sfid-20250718_092604_617775_13551233 
+X-CRM114-Status: GOOD (  47.85  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,32 +82,157 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-
-On 7/18/2025 8:25 AM, Nithyanantham Paramasivam wrote:
-> Currently, the mac80211 layer handles construction and parsing
-> of 802.11 headers during packet transmission and reception.
-> Offloading encapsulation and decapsulation to hardware can
-> significantly enhance performance. This can be achieved by
-> having the driver advertise hardware support to mac80211 to
-> bypass 802.11 header processing
+On Fri, Jul 18, 2025 at 05:19:28PM +0530, Manivannan Sadhasivam wrote:
+> On Fri, Jul 18, 2025 at 07:05:03PM GMT, Baochen Qiang wrote:
+> > On 7/18/2025 6:20 PM, Manivannan Sadhasivam wrote:
+> > > On Fri, Jul 18, 2025 at 01:27:27PM GMT, Manivannan Sadhasivam wrote:
+> > >> On Fri, Jul 18, 2025 at 10:05:02AM GMT, Baochen Qiang wrote:
+> > >>> On 7/17/2025 7:29 PM, Manivannan Sadhasivam wrote:
+> > >>>> On Thu, Jul 17, 2025 at 06:46:12PM GMT, Baochen Qiang wrote:
+> > >>>>> On 7/17/2025 6:31 PM, Manivannan Sadhasivam wrote:
+> > >>>>>> On Thu, Jul 17, 2025 at 05:24:13PM GMT, Baochen Qiang wrote:
+> > >>>>>>
+> > >>>>>> [...]
+> > >>>>>>
+> > >>>>>>>> @@ -16,6 +16,8 @@
+> > >>>>>>>>  #include "mhi.h"
+> > >>>>>>>>  #include "debug.h"
+> > >>>>>>>>  
+> > >>>>>>>> +#include "../ath.h"
+> > >>>>>>>> +
+> > >>>>>>>>  #define ATH12K_PCI_BAR_NUM		0
+> > >>>>>>>>  #define ATH12K_PCI_DMA_MASK		36
+> > >>>>>>>>  
+> > >>>>>>>> @@ -928,8 +930,7 @@ static void ath12k_pci_aspm_disable(struct ath12k_pci *ab_pci)
+> > >>>>>>>>  		   u16_get_bits(ab_pci->link_ctl, PCI_EXP_LNKCTL_ASPM_L1));
+> > >>>>>>>>  
+> > >>>>>>>>  	/* disable L0s and L1 */
+> > >>>>>>>> -	pcie_capability_clear_word(ab_pci->pdev, PCI_EXP_LNKCTL,
+> > >>>>>>>> -				   PCI_EXP_LNKCTL_ASPMC);
+> > >>>>>>>> +	pci_disable_link_state(ab_pci->pdev, PCIE_LINK_STATE_L0S | PCIE_LINK_STATE_L1);
+> > >>>>>>>
+> > >>>>>>> Not always, but sometimes seems the 'disable' does not work:
+> > >>>>>>>
+> > >>>>>>> [  279.920507] ath12k_pci_power_up 1475: link_ctl 0x43 //before disable
+> > >>>>>>> [  279.920539] ath12k_pci_power_up 1482: link_ctl 0x43 //after disable
+> > >>>>>>>
+> > >>>>>>>
+> > >>>>>>>>  
+> > >>>>>>>>  	set_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags);
+> > >>>>>>>>  }
+> > >>>>>>>> @@ -958,10 +959,7 @@ static void ath12k_pci_aspm_restore(struct ath12k_pci *ab_pci)
+> > >>>>>>>>  {
+> > >>>>>>>>  	if (ab_pci->ab->hw_params->supports_aspm &&
+> > >>>>>>>>  	    test_and_clear_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags))
+> > >>>>>>>> -		pcie_capability_clear_and_set_word(ab_pci->pdev, PCI_EXP_LNKCTL,
+> > >>>>>>>> -						   PCI_EXP_LNKCTL_ASPMC,
+> > >>>>>>>> -						   ab_pci->link_ctl &
+> > >>>>>>>> -						   PCI_EXP_LNKCTL_ASPMC);
+> > >>>>>>>> +		pci_enable_link_state(ab_pci->pdev, ath_pci_aspm_state(ab_pci->link_ctl));
+> > >>>>>>>
+> > >>>>>>> always, the 'enable' is not working:
+> > >>>>>>>
+> > >>>>>>> [  280.561762] ath12k_pci_start 1180: link_ctl 0x43 //before restore
+> > >>>>>>> [  280.561809] ath12k_pci_start 1185: link_ctl 0x42 //after restore
+> > >>>>>>>
+> > >>>>>>
+> > >>>>>> Interesting! I applied your diff and I never see this issue so far (across 10+
+> > >>>>>> reboots):
+> > >>>>>
+> > >>>>> I was not testing reboot. Here is what I am doing:
+> > >>>>>
+> > >>>>> step1: rmmod ath12k
+> > >>>>> step2: force LinkCtrl using setpci (make sure it is 0x43, which seems more likely to see
+> > >>>>> the issue)
+> > >>>>>
+> > >>>>> 	sudo setpci -s 02:00.0 0x80.B=0x43
+> > >>>>>
+> > >>>>> step3: insmod ath12k and check linkctrl
+> > >>>>>
+> > >>>>
+> > >>>> So I did the same and got:
+> > >>>>
+> > >>>> [ 3283.363569] ath12k_pci_power_up 1475: link_ctl 0x43
+> > >>>> [ 3283.363769] ath12k_pci_power_up 1480: link_ctl 0x40
+> > >>>> [ 3284.007661] ath12k_pci_start 1180: link_ctl 0x40
+> > >>>> [ 3284.007826] ath12k_pci_start 1185: link_ctl 0x42
+> > >>>>
+> > >>>> My host machine is Qcom based Thinkpad T14s and it doesn't
+> > >>>> support L0s. So that's why the lnkctl value once enabled
+> > >>>> becomes 0x42. This is exactly the reason why the drivers
+> > >>>> should not muck around LNKCTL register manually.
+> > >>>
+> > >>> Thanks, then the 0x43 -> 0x40 -> 0x40 -> 0x42 sequence should
+> > >>> not be a concern. But still the random 0x43 -> 0x43 -> 0x43 ->
+> > >>> 0x42 sequence seems problematic.
+> > >>>
+> > >>> How many iterations have you done with above steps? From my
+> > >>> side it seems random so better to do some stress test.
+> > >>>
+> > >>
+> > >> So I ran the modprobe for about 50 times on the Intel NUC that
+> > >> has QCA6390, but didn't spot the disparity. This is the script
+> > >> I used:
+> > >>
+> > >> for i in {1..50} ;do echo "Loop $i"; sudo setpci -s 01:00.0 0x80.B=0x43;\
+> > >> sudo modprobe -r ath11k_pci; sleep 1; sudo modprobe ath11k_pci; sleep 1;done
+> > >>
+> > >> And I always got:
+> > >>
+> > >> [ 5862.388083] ath11k_pci_aspm_disable: 609 lnkctrl: 0x43
+> > >> [ 5862.388124] ath11k_pci_aspm_disable: 614 lnkctrl: 0x40
+> > >> [ 5862.876291] ath11k_pci_start: 880 lnkctrl: 0x40
+> > >> [ 5862.876346] ath11k_pci_start: 886 lnkctrl: 0x42
+> > >>
+> > >> Also no AER messages. TBH, I'm not sure how you were able to
+> > >> see the random issues with these APIs. That looks like a race,
+> > >> which is scary.
+> > >>
+> > >> I do not want to ignore your scenario, but would like to
+> > >> reproduce and get to the bottom of it.
+> > > 
+> > > I synced with Baochen internally and able to repro the issue.
+> > > Ths issue is due to hand modifying the LNKCTL register from
+> > > userspace. The PCI core maintains the ASPM state internally and
+> > > uses it to change the state when the
+> > > pci_{enable/disable}_link_state*() APIs are called.
+> > > 
+> > > So if the userspace or a client driver modifies the LNKCTL
+> > > register manually, it makes the PCI cached ASPM states invalid.
+> > > So while this series fixes the driver from doing that, nothing
+> > > prevents userspace from doing so using 'setpci' and other tools.
+> > > Userspace should only use sysfs attributes to change the state
+> > > and avoid modifying the PCI registers when the PCI core is
+> > > controlling the device.  So this is the reason behind the
+> > > errantic behavior of the API and it is not due to the issue with
+> > > the API or the PCI core.
+> > 
+> > IMO we can not rely on userspace doing what or not doing what, or
+> > on how it is doing, right? So can we fix PCI core to avoid this?
 > 
-> v1 -> v2:
-> - Rebased on ToT
-> - Firmware service bit check added for EAPOL ETH offload support
-> - skb free handled in tx completion station negetive case
+> I'm not sure it is possible to *fix* the PCI core here. Since the
+> PCI core gives userspace access to the entire config space of the
+> device, the userspace reads/writes to any of the registers it want.
+> So unless the config space access if forbidden if a driver is bound
+> to the device, it is inevitable. And then there is also /dev/mem...
 > 
-> Nithyanantham Paramasivam (3):
->    wifi: ath12k: Fix the handling of TX packets in Ethernet mode
->    wifi: ath12k: Fix TX status reporting to mac80211 when offload is
->      enabled
->    wifi: ath12k: Advertise encapsulation/decapsulation offload support to
->      mac80211
+> Interestingly, there is an API available for this purpose:
+> pci_request_config_region_exclusive(), but it is used only by the
+> AMD arch driver to prevent userspace from writing to the entire
+> config space of the device.
 > 
->   drivers/net/wireless/ath/ath12k/dp_tx.c | 102 +++++++++++++++++++++---
->   drivers/net/wireless/ath/ath12k/mac.c   |   6 ++
->   drivers/net/wireless/ath/ath12k/wmi.h   |   1 +
->   3 files changed, 98 insertions(+), 11 deletions(-)
+> Maybe it makes sense to use something like this to prevent the
+> userspace access to the entire config space if the driver is bind to
+> the device.
 
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+I'm not really a fan of pci_request_config_region_exclusive() because
+it's such a singleton thing.  I don't like to be one of only a few
+users of an interface.
+
+Linux has a long tradition of allowing root users to shoot themselves
+in the foot, and setpci is very useful as a debugging tool.  Maybe
+tainting the kernel for config writes from userspace, and possibly
+even a WARN_ONCE() at the time, would be a compromise.
+
+Bjorn
 
