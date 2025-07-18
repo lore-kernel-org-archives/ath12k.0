@@ -4,65 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 984B4C83F17
-	for <ath12k@archiver.kernel.org>; Fri, 18 Jul 2025 08:31:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F5ACC83F17
+	for <ath12k@archiver.kernel.org>; Fri, 18 Jul 2025 10:49:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zJqOFe2CgaH2ecQ8zz1AuLsic5CxaqyXX/GfZpNicYk=; b=dKCUGmJsFKHpNqKGRqCBF0YDEB
-	9nBvsVm0RAlx79HQLSZoSS+jnpYNvjT6sWRAmXIadv4X22kblDc1eHAacZgaAtNjNiMnpqQfB3j6V
-	7emH5yEvf2uymBdbyx4skZPbGD7tIIgIKbury+yRuhfEZmIO1VoBlVHhtKTj5wjMT0JOJnhGCrd7P
-	uCMolNRefQdbTZBqj+6pj9+alBM+D7PTS/qjEGbc83djilnqsqyUCwvIoCXwAJ5pe7tHC2/Jf/0GA
-	gpU8Ih6nQO8mEPibqe4yl6XgXigrOxZqrGS/HPfI9YU1GEldn0J+wYG5jBdTwUkP6z6EbAqwiUP3s
-	lT9SgVJw==;
+	bh=MyfJfcbslc0gdI0p8OXo3Uqt45uock2f13v/oikHNx0=; b=mTtVEnncGC1O6Tg3qyBEMYpezn
+	PDYSU59k0PU537K4HLJe+RFAELfQehCFAUnPv1IduSv+VVf0tb2I1SeZOUtEXsYpNpAA1R9OVodvb
+	/ZxXnUYlgNDEVgwDnx8HPIAQaMwZKNK0VqaMjVam+ecFAPcY9sIXAOgPWZYjucLOFEpPFbRwWQG17
+	DuDhRqkZSKEShL/qbeafQn2bYX0RyGlOIsLAXylRHd6eKryg9ijaeS6lOYFKu+jFkPoch5wVbdZq6
+	dtZkrq97R2t0rMLUgCQF873s4eVMgUBjas4N3OQh0btY8mndJzdWrBniBEb3LXAW0RxtVzGtz95Wr
+	JxdNjkTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucgVU-0000000C35Z-1TPD;
-	Fri, 18 Jul 2025 08:31:52 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1ucieo-0000000CLgQ-0NzE;
+	Fri, 18 Jul 2025 10:49:38 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucgMl-0000000C16z-1KVd;
-	Fri, 18 Jul 2025 08:22:51 +0000
+	id 1uciCN-0000000CHjZ-1tfe;
+	Fri, 18 Jul 2025 10:20:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6202F601D3;
-	Fri, 18 Jul 2025 08:22:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 932EDC4CEEB;
-	Fri, 18 Jul 2025 08:22:43 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id CC6BA5C5445;
+	Fri, 18 Jul 2025 10:20:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9827C4CEEB;
+	Fri, 18 Jul 2025 10:20:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752826970;
-	bh=z5KNAGaRerNRfrRdPCcQhDWkKsZXPm2DXDaxH9H3vvQ=;
+	s=k20201202; t=1752834014;
+	bh=+5ibE7W/5saHgifi0etEPnKSgL+kf0dniPuKyO3xXDc=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=V1LiG4EtgUquwegtaP21V96JiM91EimYonVpNyZ68vf61y50YazEGAe0Uk6MLz2jv
-	 rNb3dk0D9LdJvlJkU1Tdz98CprGT8Lhp5CLdiGhGIp4/YjqIIpUJOnlfoSqmjEh38b
-	 /feyqSI9foeASF24oeyqSWcW6SCPzlE/UVzx9vZQURHRgKPbGKjHfHJ805uVmQsc/J
-	 w9om6bk8ZPfmx6DSOhtYPeIo0BwBUCII9TM80Et2dwB3232G5vSlPbGrskRqoRIZNO
-	 xGWt9xlVtNvx8nLn8aRjngVk4i4828tYfnJBPMb2nmmb3O7kzoc58bOV2I4Uig89LI
-	 PunDn+ZGp24ZA==
-Date: Fri, 18 Jul 2025 13:52:38 +0530
+	b=iuSlBAGv+ZcdD3mBcvVOK3pWxBQHS5Cf3X5tUUogmfSgNJPbcxpxwPTbALmSV5hzZ
+	 JKWjAkKaGm0nkRbz3yBvGd1aiVCmsawQkCOJ+mxCb81TSSP2WesMvpISYpv/nqs6l3
+	 yjOlzFXchTxybbRIkvE3tVlrWqfopsMvXyhyqqpWLn/5f6qBSThEGEjmXHfW/xTJ0+
+	 j/xPjyf/azbwtxaQBr6+2BxYR1MAFK2Us6QoB9+LQZKrUKJwmAhynws3owTORgr9MV
+	 Ejmff87hbc2Sc783ZqcHr7C1wjRjIeLIRvr3lIL5rla9Egp5MK9MpE1lcBSZj0VEss
+	 KWedwqYlyG7jQ==
+Date: Fri, 18 Jul 2025 15:50:02 +0530
 From: Manivannan Sadhasivam <mani@kernel.org>
-To: kernel test robot <lkp@intel.com>
-Cc: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>, 
+To: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Cc: manivannan.sadhasivam@oss.qualcomm.com, 
 	Jeff Johnson <jjohnson@kernel.org>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
 	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Bjorn Helgaas <helgaas@kernel.org>, Nirmal Patel <nirmal.patel@linux.intel.com>, 
-	Jonathan Derrick <jonathan.derrick@linux.dev>, oe-kbuild-all@lists.linux.dev, linux-wireless@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, ath12k@lists.infradead.org, ath11k@lists.infradead.org, 
-	ath10k@lists.infradead.org, ilpo.jarvinen@linux.intel.com, linux-arm-msm@vger.kernel.org, 
+	Bjorn Helgaas <bhelgaas@google.com>, Nirmal Patel <nirmal.patel@linux.intel.com>, 
+	Jonathan Derrick <jonathan.derrick@linux.dev>, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	ath12k@lists.infradead.org, ath11k@lists.infradead.org, ath10k@lists.infradead.org, 
+	Bjorn Helgaas <helgaas@kernel.org>, ilpo.jarvinen@linux.intel.com, linux-arm-msm@vger.kernel.org, 
 	linux-pci@vger.kernel.org, Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, 
 	Qiang Yu <qiang.yu@oss.qualcomm.com>
 Subject: Re: [PATCH 4/6] wifi: ath12k: Use pci_{enable/disable}_link_state()
  APIs to enable/disable ASPM states
-Message-ID: <2jf772wl5qz65verutcpogvs6a7jmxbuvrhgdbpfestf5qxqqt@z223vpbn262p>
-References: <20250716-ath-aspm-fix-v1-4-dd3e62c1b692@oss.qualcomm.com>
- <202507171411.xOxUslAs-lkp@intel.com>
+Message-ID: <otdgyzdymraa3f33vyb445kmssi3mqf5z2mw7w5pib4q4sb7vz@qbrzvrojqji3>
+References: <20250716-ath-aspm-fix-v1-0-dd3e62c1b692@oss.qualcomm.com>
+ <20250716-ath-aspm-fix-v1-4-dd3e62c1b692@oss.qualcomm.com>
+ <38ace6a3-d594-4438-a193-cf730a7b87d6@oss.qualcomm.com>
+ <wyqtr3tz3k2zdf62kgtcepf3sedm7z7wacv27visl2xsrqspmq@wi4fgef2mn2m>
+ <03806d02-1cfc-4db2-8b63-c1e51f5456e2@oss.qualcomm.com>
+ <o2gqqty6lakc4iw7vems2dejh6prjyl746gnq4gny4sxdxl65v@zmqse3244afv>
+ <1db7c119-882f-4184-9ca4-9dbe5a49cb16@oss.qualcomm.com>
+ <gx5gruyhrhwhvwkiqlkp2bggqd4oqe4quvqiiphfzolhjtzun6@okogvabkqah3>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: 8bit
-In-Reply-To: <202507171411.xOxUslAs-lkp@intel.com>
+In-Reply-To: <gx5gruyhrhwhvwkiqlkp2bggqd4oqe4quvqiiphfzolhjtzun6@okogvabkqah3>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250718_032015_575985_F4DAC756 
+X-CRM114-Status: GOOD (  30.86  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,115 +86,127 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 17, 2025 at 02:59:26PM GMT, kernel test robot wrote:
-> Hi Manivannan,
+On Fri, Jul 18, 2025 at 01:27:27PM GMT, Manivannan Sadhasivam wrote:
+> On Fri, Jul 18, 2025 at 10:05:02AM GMT, Baochen Qiang wrote:
+> > 
+> > 
+> > On 7/17/2025 7:29 PM, Manivannan Sadhasivam wrote:
+> > > On Thu, Jul 17, 2025 at 06:46:12PM GMT, Baochen Qiang wrote:
+> > >>
+> > >>
+> > >> On 7/17/2025 6:31 PM, Manivannan Sadhasivam wrote:
+> > >>> On Thu, Jul 17, 2025 at 05:24:13PM GMT, Baochen Qiang wrote:
+> > >>>
+> > >>> [...]
+> > >>>
+> > >>>>> @@ -16,6 +16,8 @@
+> > >>>>>  #include "mhi.h"
+> > >>>>>  #include "debug.h"
+> > >>>>>  
+> > >>>>> +#include "../ath.h"
+> > >>>>> +
+> > >>>>>  #define ATH12K_PCI_BAR_NUM		0
+> > >>>>>  #define ATH12K_PCI_DMA_MASK		36
+> > >>>>>  
+> > >>>>> @@ -928,8 +930,7 @@ static void ath12k_pci_aspm_disable(struct ath12k_pci *ab_pci)
+> > >>>>>  		   u16_get_bits(ab_pci->link_ctl, PCI_EXP_LNKCTL_ASPM_L1));
+> > >>>>>  
+> > >>>>>  	/* disable L0s and L1 */
+> > >>>>> -	pcie_capability_clear_word(ab_pci->pdev, PCI_EXP_LNKCTL,
+> > >>>>> -				   PCI_EXP_LNKCTL_ASPMC);
+> > >>>>> +	pci_disable_link_state(ab_pci->pdev, PCIE_LINK_STATE_L0S | PCIE_LINK_STATE_L1);
+> > >>>>
+> > >>>> Not always, but sometimes seems the 'disable' does not work:
+> > >>>>
+> > >>>> [  279.920507] ath12k_pci_power_up 1475: link_ctl 0x43 //before disable
+> > >>>> [  279.920539] ath12k_pci_power_up 1482: link_ctl 0x43 //after disable
+> > >>>>
+> > >>>>
+> > >>>>>  
+> > >>>>>  	set_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags);
+> > >>>>>  }
+> > >>>>> @@ -958,10 +959,7 @@ static void ath12k_pci_aspm_restore(struct ath12k_pci *ab_pci)
+> > >>>>>  {
+> > >>>>>  	if (ab_pci->ab->hw_params->supports_aspm &&
+> > >>>>>  	    test_and_clear_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags))
+> > >>>>> -		pcie_capability_clear_and_set_word(ab_pci->pdev, PCI_EXP_LNKCTL,
+> > >>>>> -						   PCI_EXP_LNKCTL_ASPMC,
+> > >>>>> -						   ab_pci->link_ctl &
+> > >>>>> -						   PCI_EXP_LNKCTL_ASPMC);
+> > >>>>> +		pci_enable_link_state(ab_pci->pdev, ath_pci_aspm_state(ab_pci->link_ctl));
+> > >>>>
+> > >>>> always, the 'enable' is not working:
+> > >>>>
+> > >>>> [  280.561762] ath12k_pci_start 1180: link_ctl 0x43 //before restore
+> > >>>> [  280.561809] ath12k_pci_start 1185: link_ctl 0x42 //after restore
+> > >>>>
+> > >>>
+> > >>> Interesting! I applied your diff and I never see this issue so far (across 10+
+> > >>> reboots):
+> > >>
+> > >> I was not testing reboot. Here is what I am doing:
+> > >>
+> > >> step1: rmmod ath12k
+> > >> step2: force LinkCtrl using setpci (make sure it is 0x43, which seems more likely to see
+> > >> the issue)
+> > >>
+> > >> 	sudo setpci -s 02:00.0 0x80.B=0x43
+> > >>
+> > >> step3: insmod ath12k and check linkctrl
+> > >>
+> > > 
+> > > So I did the same and got:
+> > > 
+> > > [ 3283.363569] ath12k_pci_power_up 1475: link_ctl 0x43
+> > > [ 3283.363769] ath12k_pci_power_up 1480: link_ctl 0x40
+> > > [ 3284.007661] ath12k_pci_start 1180: link_ctl 0x40
+> > > [ 3284.007826] ath12k_pci_start 1185: link_ctl 0x42
+> > > 
+> > > My host machine is Qcom based Thinkpad T14s and it doesn't support L0s. So
+> > > that's why the lnkctl value once enabled becomes 0x42. This is exactly the
+> > > reason why the drivers should not muck around LNKCTL register manually.
+> > 
+> > Thanks, then the 0x43 -> 0x40 -> 0x40 -> 0x42 sequence should not be a concern. But still
+> > the random 0x43 -> 0x43 -> 0x43 -> 0x42 sequence seems problematic.
+> > 
+> > How many iterations have you done with above steps? From my side it seems random so better
+> > to do some stress test.
+> > 
 > 
-> kernel test robot noticed the following build errors:
+> So I ran the modprobe for about 50 times on the Intel NUC that has QCA6390, but
+> didn't spot the disparity. This is the script I used:
 > 
-> [auto build test ERROR on 19272b37aa4f83ca52bdf9c16d5d81bdd1354494]
+> for i in {1..50} ;do echo "Loop $i"; sudo setpci -s 01:00.0 0x80.B=0x43;\
+> sudo modprobe -r ath11k_pci; sleep 1; sudo modprobe ath11k_pci; sleep 1;done
 > 
-> url:    https://github.com/intel-lab-lkp/linux/commits/Manivannan-Sadhasivam-via-B4-Relay/PCI-ASPM-Fix-the-behavior-of-pci_enable_link_state-APIs/20250716-205857
-> base:   19272b37aa4f83ca52bdf9c16d5d81bdd1354494
-> patch link:    https://lore.kernel.org/r/20250716-ath-aspm-fix-v1-4-dd3e62c1b692%40oss.qualcomm.com
-> patch subject: [PATCH 4/6] wifi: ath12k: Use pci_{enable/disable}_link_state() APIs to enable/disable ASPM states
-> config: m68k-allmodconfig (https://download.01.org/0day-ci/archive/20250717/202507171411.xOxUslAs-lkp@intel.com/config)
-> compiler: m68k-linux-gcc (GCC) 15.1.0
-> reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250717/202507171411.xOxUslAs-lkp@intel.com/reproduce)
+> And I always got:
 > 
-> If you fix the issue in a separate patch/commit (i.e. not just a new version of
-> the same patch/commit), kindly add following tags
-> | Reported-by: kernel test robot <lkp@intel.com>
-> | Closes: https://lore.kernel.org/oe-kbuild-all/202507171411.xOxUslAs-lkp@intel.com/
+> [ 5862.388083] ath11k_pci_aspm_disable: 609 lnkctrl: 0x43
+> [ 5862.388124] ath11k_pci_aspm_disable: 614 lnkctrl: 0x40
+> [ 5862.876291] ath11k_pci_start: 880 lnkctrl: 0x40
+> [ 5862.876346] ath11k_pci_start: 886 lnkctrl: 0x42
 > 
-> All errors (new ones prefixed by >>):
+> Also no AER messages. TBH, I'm not sure how you were able to see the random
+> issues with these APIs. That looks like a race, which is scary.
 > 
->    In file included from drivers/net/wireless/ath/main.c:22:
->    drivers/net/wireless/ath/ath.h: In function 'ath_pci_aspm_state':
-> >> drivers/net/wireless/ath/ath.h:346:26: error: 'PCIE_LINK_STATE_L0S' undeclared (first use in this function)
->      346 |                 state |= PCIE_LINK_STATE_L0S;
->          |                          ^~~~~~~~~~~~~~~~~~~
+> I do not want to ignore your scenario, but would like to reproduce and get to
+> the bottom of it.
+> 
 
-Ok, this is an issue in the PCI header. The CONFIG_PCI symbol wraps the ASPM
-definitions also. In this config, CONFIG_PCI is unset, so it triggered the
-undeclared definition error.
+I synced with Baochen internally and able to repro the issue. Ths issue is due
+to hand modifying the LNKCTL register from userspace. The PCI core maintains
+the ASPM state internally and uses it to change the state when the
+pci_{enable/disable}_link_state*() APIs are called.
 
-I will add a patch to move all definitions out of the CONFIG_PCI guard. It is
-supposed to wrap only the function definitions/declarations.
+So if the userspace or a client driver modifies the LNKCTL register manually, it
+makes the PCI cached ASPM states invalid. So while this series fixes the driver
+from doing that, nothing prevents userspace from doing so using 'setpci' and
+other tools. Userspace should only use sysfs attributes to change the state and
+avoid modifying the PCI registers when the PCI core is controlling the device.
+So this is the reason behind the errantic behavior of the API and it is not due
+to the issue with the API or the PCI core.
 
 - Mani
-
->    drivers/net/wireless/ath/ath.h:346:26: note: each undeclared identifier is reported only once for each function it appears in
-> >> drivers/net/wireless/ath/ath.h:348:26: error: 'PCIE_LINK_STATE_L1' undeclared (first use in this function)
->      348 |                 state |= PCIE_LINK_STATE_L1;
->          |                          ^~~~~~~~~~~~~~~~~~
-> --
->    In file included from drivers/net/wireless/ath/ath9k/common.h:19,
->                     from drivers/net/wireless/ath/ath9k/ath9k.h:29,
->                     from drivers/net/wireless/ath/ath9k/beacon.c:18:
->    drivers/net/wireless/ath/ath9k/../ath.h: In function 'ath_pci_aspm_state':
-> >> drivers/net/wireless/ath/ath9k/../ath.h:346:26: error: 'PCIE_LINK_STATE_L0S' undeclared (first use in this function)
->      346 |                 state |= PCIE_LINK_STATE_L0S;
->          |                          ^~~~~~~~~~~~~~~~~~~
->    drivers/net/wireless/ath/ath9k/../ath.h:346:26: note: each undeclared identifier is reported only once for each function it appears in
-> >> drivers/net/wireless/ath/ath9k/../ath.h:348:26: error: 'PCIE_LINK_STATE_L1' undeclared (first use in this function)
->      348 |                 state |= PCIE_LINK_STATE_L1;
->          |                          ^~~~~~~~~~~~~~~~~~
-> --
->    In file included from drivers/net/wireless/ath/carl9170/../regd.h:23,
->                     from drivers/net/wireless/ath/carl9170/carl9170.h:61,
->                     from drivers/net/wireless/ath/carl9170/main.c:47:
->    drivers/net/wireless/ath/carl9170/../ath.h: In function 'ath_pci_aspm_state':
-> >> drivers/net/wireless/ath/carl9170/../ath.h:346:26: error: 'PCIE_LINK_STATE_L0S' undeclared (first use in this function)
->      346 |                 state |= PCIE_LINK_STATE_L0S;
->          |                          ^~~~~~~~~~~~~~~~~~~
->    drivers/net/wireless/ath/carl9170/../ath.h:346:26: note: each undeclared identifier is reported only once for each function it appears in
-> >> drivers/net/wireless/ath/carl9170/../ath.h:348:26: error: 'PCIE_LINK_STATE_L1' undeclared (first use in this function)
->      348 |                 state |= PCIE_LINK_STATE_L1;
->          |                          ^~~~~~~~~~~~~~~~~~
-> --
->    In file included from drivers/net/wireless/ath/ath6kl/../regd.h:23,
->                     from drivers/net/wireless/ath/ath6kl/wmi.c:24:
->    drivers/net/wireless/ath/ath6kl/../ath.h: In function 'ath_pci_aspm_state':
-> >> drivers/net/wireless/ath/ath6kl/../ath.h:346:26: error: 'PCIE_LINK_STATE_L0S' undeclared (first use in this function)
->      346 |                 state |= PCIE_LINK_STATE_L0S;
->          |                          ^~~~~~~~~~~~~~~~~~~
->    drivers/net/wireless/ath/ath6kl/../ath.h:346:26: note: each undeclared identifier is reported only once for each function it appears in
-> >> drivers/net/wireless/ath/ath6kl/../ath.h:348:26: error: 'PCIE_LINK_STATE_L1' undeclared (first use in this function)
->      348 |                 state |= PCIE_LINK_STATE_L1;
->          |                          ^~~~~~~~~~~~~~~~~~
-> --
->    In file included from drivers/net/wireless/ath/ath10k/core.h:25,
->                     from drivers/net/wireless/ath/ath10k/mac.h:11,
->                     from drivers/net/wireless/ath/ath10k/mac.c:9:
->    drivers/net/wireless/ath/ath10k/../ath.h: In function 'ath_pci_aspm_state':
-> >> drivers/net/wireless/ath/ath10k/../ath.h:346:26: error: 'PCIE_LINK_STATE_L0S' undeclared (first use in this function)
->      346 |                 state |= PCIE_LINK_STATE_L0S;
->          |                          ^~~~~~~~~~~~~~~~~~~
->    drivers/net/wireless/ath/ath10k/../ath.h:346:26: note: each undeclared identifier is reported only once for each function it appears in
-> >> drivers/net/wireless/ath/ath10k/../ath.h:348:26: error: 'PCIE_LINK_STATE_L1' undeclared (first use in this function)
->      348 |                 state |= PCIE_LINK_STATE_L1;
->          |                          ^~~~~~~~~~~~~~~~~~
-> 
-> 
-> vim +/PCIE_LINK_STATE_L0S +346 drivers/net/wireless/ath/ath.h
-> 
->    340	
->    341	static inline int ath_pci_aspm_state(u16 lnkctl)
->    342	{
->    343		int state = 0;
->    344	
->    345		if (lnkctl & PCI_EXP_LNKCTL_ASPM_L0S)
->  > 346			state |= PCIE_LINK_STATE_L0S;
->    347		if (lnkctl & PCI_EXP_LNKCTL_ASPM_L1)
->  > 348			state |= PCIE_LINK_STATE_L1;
->    349	
->    350		return state;
->    351	}
->    352	
-> 
-> -- 
-> 0-DAY CI Kernel Test Service
-> https://github.com/intel/lkp-tests/wiki
 
 -- 
 மணிவண்ணன் சதாசிவம்
