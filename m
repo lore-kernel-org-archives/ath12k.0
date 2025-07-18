@@ -4,112 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35A0CC83F3B
-	for <ath12k@archiver.kernel.org>; Fri, 18 Jul 2025 02:55:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98B58C83F34
+	for <ath12k@archiver.kernel.org>; Fri, 18 Jul 2025 02:55:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:MIME-Version:Content-Type:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=xZ4quxnAfEGIRYmWpsGwZnlE5rPMKoZOdNyssF8d8W4=; b=TKgNW7ZbFToJ8BkKHZC8Ugek4s
-	5LPIFKvN+8RFDkx1C3UQNmRSDEaOu97mJPV6pa+2YkYp1Tlc8gJ6t+zmPpcAOH70umBsFl98Ye9qd
-	mpuDIKqBjCjQnCYAvGHRqvcfHGQoyb4aNMXRGM4vS3nHlQJaHcAXIzq7LKg1O0GzEzXtekG06uKSg
-	vcv70yqt0JoouB91qlxMGCyxAJZUU+HLtF96B5YwEMqdRvR8L/8iuiEm99L8Ynq3lVY9BafkAGJb6
-	eZPwPtm0Hh0i8lrOtmyoq+a2K/lckPmbXWMsMiCA9sTQyWpiTrqi+qOO4pb4IkPzFYQIBRcii/mSb
-	TgaE7U1Q==;
+	bh=/5aF3Y37Htuj50hi/E4OxlWZ1R2rw2wLXQRFj5kpMY4=; b=HIFJFdwUph6Yr5mjkb5TXjaq/l
+	DcZ+HrGszUVrLMcqyV/gwGC3lHMdyDpiJbs4ufVwdtxKdpfT1NwblA/fFIPl7Ka6wD0ysrqiiv12w
+	JG3SDJ9wMinUj/fOk4KFORMh+2KcBkzouuQxHTBecuw0PMEzRLJAflWAlA49/7hVoXhgElWmLT5yP
+	HB8YJEL4UfNgFylo7cQZwx7S4BrHjDnnVo3F+lJiZt590ZA9PUHgFucQ1++QaJ8NXY0tH71Oz5Mnd
+	XDsenSSRJRJxUblbHD4wWMLG6cE2UjYo0GudbPFIqe5vm1/Wtirx3nLaozWsEPiZ7jmXS8zTRcbkE
+	yi6UfMSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucbG3-0000000BZAX-471R;
+	id 1ucbG3-0000000BZA6-1Ffw;
 	Fri, 18 Jul 2025 02:55:35 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucbG1-0000000BZ9O-323H
+	id 1ucbG0-0000000BZ8x-2BgH
 	for ath12k@lists.infradead.org;
-	Fri, 18 Jul 2025 02:55:34 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56HLJsxN000541
-	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 02:55:33 GMT
+	Fri, 18 Jul 2025 02:55:33 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56HKbH7L008701
+	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 02:55:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:date:from:in-reply-to:message-id:references:subject:to; s=
-	qcppdkim1; bh=xZ4quxnAfEGIRYmWpsGwZnlE5rPMKoZOdNyssF8d8W4=; b=nR
-	1eenO7AU4t96hIQwgdtPk/sZSvENJS5m9BRJ7kIAqjUEeNTpLA3fZlN9WT/gnxj4
-	KoPZ0qRW3Uc1uXaqkyqbpQTINod8Mi+wnnblazDWn2Dutg39YUMkIDR4pZ1AYt5/
-	91ELsIvrlEMSy3ftzaRC+BwX2aI0myl8A2eUK0Yfu4EEzfB8DCi/G/OQwmv3Qrzw
-	SZueBL3hTA8cJitVfLBaMVJR7n8tuTspbrSiukxfq1Zd6kuwgQE/poWmebVXSt7D
-	gNIG5h8IGArvluy2b7Rt9BDasbUSeDrk5wSEsj5ZmUuo+9BUroB5NQGbNgrwQbME
-	/OKV1HWzw948tKJiG2ww==
+	qcppdkim1; bh=/5aF3Y37Htuj50hi/E4OxlWZ1R2rw2wLXQRFj5kpMY4=; b=O2
+	aqXrSi8MbHoCHXGew/F6650weLr9a7MWTG9hE+wjDOwJ1FjXFHxLmm3n0FWBLT2q
+	+UCtR9H+iiSXzirHnGPchdKmBa6wNYnCuCg141UsOE6FGWL84GVGDwSC1T9Co0Bo
+	/f0x346m+s3MfumCUIe7YM4gFgkmeaDLGlcmwg69DR3sDFdmY6SvlukGTWVigPJ5
+	HbR8q2bUyYa00bUiCbaXUqk8nLpHtIRmoOA3s6qP08hNC8WCe1A5KHtAMiEAqvP1
+	xmF3w3MV/CuEaRhjLjIiAFu02PnTdqTdrsMZqWhAZ9CNu05RwNZGMzQSEsbT+bUP
+	kwZPlq6SY1p5yNRO6P1g==
 Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47w5drvyxd-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ufxb9wsu-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 02:55:33 +0000 (GMT)
-Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-748efefedb5so1495348b3a.2
-        for <ath12k@lists.infradead.org>; Thu, 17 Jul 2025 19:55:33 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 18 Jul 2025 02:55:31 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-74943a7cd9aso2437163b3a.3
+        for <ath12k@lists.infradead.org>; Thu, 17 Jul 2025 19:55:31 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752807332; x=1753412132;
+        d=1e100.net; s=20230601; t=1752807330; x=1753412130;
         h=references:in-reply-to:message-id:date:subject:cc:to:from
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=xZ4quxnAfEGIRYmWpsGwZnlE5rPMKoZOdNyssF8d8W4=;
-        b=BmkWieyN/TCLLGHGyCkE4yWsluJ05Ywg0QCUe1fV8kpqt+95A+OYo9idywIsQ2mc/a
-         uuJ1NFoGkCsY+u4PScotYHENLjHG7zyodRWk838HwspeI2G/xZXlEWsPJsF+Q90f7agq
-         BCAQzfX+tL4AqNyDVuL6nxQsOnSLncrFv1uIB3h+0gVUX4ANleFiSgdPgCB6fjajcjYn
-         3nmPI8+P+OXXyQXZMfPrKZUezWLIjGY4WX3czPCiTS7p08nTycj+gJAPvUFEs2j8Ml3Y
-         Q6J8Ebm/IchFw8y+tm+1l5F8QDdZYyp2M/6vTfCWT9lbxdVfdddD9Tula674Fdkf0hZk
-         JDtQ==
-X-Gm-Message-State: AOJu0YwRSAwEhqlawqU0s4HLAJvqqzWcuB152p4v8DovnCw25rfXmMTD
-	91JYIHvn9IQquFdWX+7EfwQ4mN70eQ8FLx8TRE+VfpDsoZ8hDAVqTR8iva6CQ9Nl+XUbvjGHlvC
-	4O4+OvNqg2nK7jzdkQCsjPhmNHRlCYPeZN81jhqaZClixsq7ykMOmWwNKvU9OeD63HT91WgP6
-X-Gm-Gg: ASbGncsgFX5nuz4yajhAnlbpdznQJsiPlWmYwEyu1TtZoQKvMVjyB+P8IIu+vsy/B8c
-	7S66zAZ10JtRqmzf/I5KaNRN5xOfcqIIc9Ea14E3B4N9WL8DcCMB2OpZM4ucrb6R+8CJyxkNm4d
-	45LNxsAH+ZGERoo9kXd55laucfqL5pGsj8EDiSQtSEWG78FAuyjKGdP0IHkG75F+oFUN+mm2CFy
-	DKOdONtDFdiJg1ZK1rAMb7oNv08aJevR9l6F6xgH3JiHMWcCDcph3ryvOb7vxTRAABEn8qRK/F8
-	CpGE6+0MD1Sx2B/IscZgLHfU5f1sHlqLN5l/LSObrBDsmPHN/25kl5bA1tQzgNyj0gZ3FZxQBpF
-	TAGGsuWjBehnmfXwkhxzEtlDHjVHbgrWk3iCUtTk9RmbdY2qxjY+8gOjpMk6L0n8946WJZg9CbA
+        bh=/5aF3Y37Htuj50hi/E4OxlWZ1R2rw2wLXQRFj5kpMY4=;
+        b=TyTQN2+boMuZFK10/v9VgxjZAutyejhiCTvSWwPPjKNFnqzOBgZUHNnqnVqq+ijIPR
+         AJkiw+bMtfU9hFjdu3Mj4ORqmSpcI/hACC90VSaMSTBd6mpPM6LyIh5hk5A024GC9kkZ
+         4sSn1FBzpJ97ULgbezgoFUXcpCd/0BcnxzbFJbZt6MQOXbTSeGDH4kLUafbOyU67TNz2
+         HAgzjzjEqvM218LD/WNy/AOuRisyOVesfYUlSN013Pqgfa6SbvbFtq2jCAMrkdrbbThV
+         /A1gWhovNuktAjJcN/Mons5BCaltyyevyELI1r3QbKhNlK0i/1QfehjJ2NLh5I86FIen
+         63tA==
+X-Gm-Message-State: AOJu0YwCtyEq4Ym4Jr5r8c2blrkxiJIuNpVPqGGs3J3FunXBiQbM/cwm
+	UDLl26o3BOmf7idZgCdiVkCJ0hO9byusZMVGvQWXFEZ9kZfyCf3aHX41TrLX30TPjMEO1QevWlg
+	3o1VwB2FW3Wk42INy/+feEtpt00RgFCMB2zPhETOppU4WpC8AVef3g+RLp4WxpP3/vLSNfM8S
+X-Gm-Gg: ASbGncupSyB8zbmrCGr96+uraK0fHVDKG7f3oZbeVISFYEygTdOIgmZXto2BjlgQfC7
+	MkMJbLa/sDW3MM9cRZBynj+wVV4W5RJujAP7cOBnAuIaIFxtRkdh0+0HuHOIy9ZcJwykMA2bXGJ
+	l2jHvnQc60EDFluRomuj7KCZfHlD24pDmnqf4Wkwn1pDFbY6K34x0Ev5J/R+khNqFTwzEhTeo2q
+	A5RGt+AaTUrKuHzfr44ZYG5RbFh6cykXkAMtd9EbaHmp5kzM+uz55LEmV3VBRHgCRgX0TBrPZFs
+	vWqnUxmZqk2TsVvn1uZKS0T2mTSppTzXlZcpOB7EJtv9oXo5TY9BHNhSQc97mpZUP/qCAWGOA1j
+	MeQ84EclLoKXNvQhSXmYy7I6EMyGEf8RzIocullt/HBWLETNtILVwZkt01/K46VM2q4psF2i+rA
 	==
-X-Received: by 2002:a05:6a21:b94:b0:224:654a:4461 with SMTP id adf61e73a8af0-237d896b51dmr13655166637.41.1752807332057;
-        Thu, 17 Jul 2025 19:55:32 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEgG+AmfAZAOqo/kKS3DXtkNwhlm/lCb6RkZu+uE3HLcz6TXmGm9U3TyzO4AbtWaLjggjMjBQ==
-X-Received: by 2002:a05:6a21:b94:b0:224:654a:4461 with SMTP id adf61e73a8af0-237d896b51dmr13655129637.41.1752807331518;
-        Thu, 17 Jul 2025 19:55:31 -0700 (PDT)
+X-Received: by 2002:a05:6a20:7283:b0:232:6040:ccf0 with SMTP id adf61e73a8af0-23812a5a2fcmr16205604637.27.1752807330180;
+        Thu, 17 Jul 2025 19:55:30 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGMlFUJ9wB3L8riEPr4ZMca+vA531Ehwcd3n/RHw/Jkh5QtXvrRfjltD1uhm3u1ecDqWdc4Cg==
+X-Received: by 2002:a05:6a20:7283:b0:232:6040:ccf0 with SMTP id adf61e73a8af0-23812a5a2fcmr16205567637.27.1752807329725;
+        Thu, 17 Jul 2025 19:55:29 -0700 (PDT)
 Received: from hu-nithp-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-759cbc68095sm255334b3a.139.2025.07.17.19.55.30
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-759cbc68095sm255334b3a.139.2025.07.17.19.55.28
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 17 Jul 2025 19:55:31 -0700 (PDT)
+        Thu, 17 Jul 2025 19:55:29 -0700 (PDT)
 From: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
         Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
-Subject: [PATCH ath-next v2 3/3] wifi: ath12k: Advertise encapsulation/decapsulation offload support to mac80211
-Date: Fri, 18 Jul 2025 08:25:13 +0530
-Message-Id: <20250718025513.32982-4-nithyanantham.paramasivam@oss.qualcomm.com>
+Subject: [PATCH ath-next v2 2/3] wifi: ath12k: Fix TX status reporting to mac80211 when offload is enabled
+Date: Fri, 18 Jul 2025 08:25:12 +0530
+Message-Id: <20250718025513.32982-3-nithyanantham.paramasivam@oss.qualcomm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20250718025513.32982-1-nithyanantham.paramasivam@oss.qualcomm.com>
 References: <20250718025513.32982-1-nithyanantham.paramasivam@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: _eJwuFp_UMAeFU3asgrAPVt94q-X3ksu
-X-Authority-Analysis: v=2.4 cv=D4xHKuRj c=1 sm=1 tr=0 ts=6879b7a5 cx=c_pps
+X-Proofpoint-GUID: -RdpTdVZwu9ZkJ5b0WaZ6XGUKnWgGok4
+X-Proofpoint-ORIG-GUID: -RdpTdVZwu9ZkJ5b0WaZ6XGUKnWgGok4
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE4MDAyMiBTYWx0ZWRfXzFoREyc/59B+
+ 3xMEGB24yUwmTiKDNAB11ythJtjwPGH/t/XBhDHbzcaoUX0If9d85h+/x8hb2OhAmm7zn2UZnJV
+ JhwHt2+mvXZTo4yKUXw0+chnLk4g1dXoLBRYML3pIS/wlmFMEcjgvFmGp/C2KRdAWfsZouAOF2T
+ OdbR7Fqt95EUTBdIQaQTCB5fxRdlVcV/V4JfvxwLMMmJQBXaytMe6Lvv9NQPEgJiK26ZwdmbdcW
+ uvPByRjRX5iHUjKgJ3+ayw3q5XTFbGIpA1P1kgghnrKMS4c0PNg3RtmiUFafqbwb5uG0pbt3hqW
+ RYmwApR4e8cKltFKvzHFJK7KcxkVWqZN3WSM0XZxZ3TLMpg2cEMsaK6maMyqKhHN+4SnivuKGzj
+ lh3I8XHOi9nbcWtpcg0OQ3mBkaqs8vIlAmOs92Ng8UONIB8x07u2XQiCWqXtRfxbRYPdmmxi
+X-Authority-Analysis: v=2.4 cv=Xc2JzJ55 c=1 sm=1 tr=0 ts=6879b7a3 cx=c_pps
  a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=xNSR-wY7Tz068C_b7HkA:9
- a=2VI0MkxyNR6bbpdq8BZq:22
-X-Proofpoint-GUID: _eJwuFp_UMAeFU3asgrAPVt94q-X3ksu
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE4MDAyMiBTYWx0ZWRfX13ftPQllY70P
- EuJs55ATJJnh3yfuS6XrKuOK6rLl97y4/DlRZFcPVvG3x50KQiGCenrkAs9s50zJkrRUS3Ki/4w
- 2x+Z7rG6o3v4oWFzUaMP1rKvq0z6oXE6T3BxUEOnZBazKW2Uea/FLEjEC4NUzRN7T0TAApCVu+Q
- OfUJyIGBC4XA4/kJRqyTyJVL0yZ3YgVj33AwtEYXsF5dOKkWwzOIrc5K5luQ+Y3j0T3K7HL7dFL
- LzOjh8e+lTk55yXT0zlq8cS3Qurq9mKh6RM8Iyj2mHCsJJq1EG8W0gT/UpINtqqCVY8DVKRWAeg
- AuPYhKFVCHhJY/KiRKIQzZuuohfOxvf3PsWWGvJHfJcsbSZIjuNQvc9E0NTxBNgCBSyKvtwQT6r
- vhWGhfd+0GfoJVe3ZX7f89ZIhMOxxpRAy0D7rhG8n3nCUb67+NJks3fjVgOogkinmfbMcmmg
+ a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=5RRWBY4WAAAA:8 a=9wRqoZsPHZivbfTNylsA:9
+ a=2VI0MkxyNR6bbpdq8BZq:22 a=drtMOSl5Q_Tsf-UZi3mY:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-07-18_01,2025-07-17_02,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 mlxlogscore=999 impostorscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 malwarescore=0 suspectscore=0 bulkscore=0 mlxscore=0
- priorityscore=1501 phishscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2507180022
+ bulkscore=0 mlxscore=0 priorityscore=1501 adultscore=0 mlxlogscore=903
+ phishscore=0 suspectscore=0 spamscore=0 lowpriorityscore=0 impostorscore=0
+ clxscore=1015 malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2507180022
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250717_195533_767715_B146746F 
-X-CRM114-Status: GOOD (  12.08  )
+X-CRM114-CacheID: sfid-20250717_195532_677294_F65D0347 
+X-CRM114-Status: GOOD (  16.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,51 +124,146 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the mac80211 layer handles construction and parsing
-of 802.11 headers during packet transmission and reception.
-Offloading encapsulation and decapsulation to hardware can
-significantly enhance performance. Check the service bit to determine
-if the firmware supports Ethernet offload. If supported, advertise the
-capability to mac80211 to bypass software-based 802.11 header
-processing.
+Currently, the ath12k driver supports only the native Wi-Fi
+frame format. In this mode, the ieee80211_tx_status() function
+works correctly to report transmission status to mac80211, as
+it retrieves station information using sta_info_get_by_addrs().
+
+However, this method is not applicable for Ethernet-converted
+packets, since sta_info_get_by_addrs() cannot extract station
+information from such formats.
+
+Retrieve station information using ath12k_peer_find_by_id() to
+support all frame formats, including native Wi-Fi, raw, and Ethernet.
+Report transmission status using ieee80211_tx_status_ext(), and
+include rate information as part of the datapath TX status report.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00217-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 5 +++++
- drivers/net/wireless/ath/ath12k/wmi.h | 1 +
- 2 files changed, 6 insertions(+)
+ drivers/net/wireless/ath/ath12k/dp_tx.c | 64 +++++++++++++++++++++++--
+ 1 file changed, 60 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 3a33eccc0d1d..93ae76daa549 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -13726,6 +13726,11 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 	ieee80211_hw_set(hw, REPORTS_LOW_ACK);
- 	ieee80211_hw_set(hw, NO_VIRTUAL_MONITOR);
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index e8d3bcc90a2d..c102628c2e5f 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -568,7 +568,8 @@ static void
+ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
+ 				 struct ath12k_tx_desc_params *desc_params,
+ 				 struct dp_tx_ring *tx_ring,
+-				 struct ath12k_dp_htt_wbm_tx_status *ts)
++				 struct ath12k_dp_htt_wbm_tx_status *ts,
++				 u16 peer_id)
+ {
+ 	struct ieee80211_tx_info *info;
+ 	struct ath12k_link_vif *arvif;
+@@ -578,6 +579,8 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
+ 	struct ath12k *ar;
+ 	struct sk_buff *msdu = desc_params->skb;
+ 	s32 noise_floor;
++	struct ieee80211_tx_status status = { 0 };
++	struct ath12k_peer *peer;
  
-+	if (test_bit(WMI_TLV_SERVICE_ETH_OFFLOAD, ar->wmi->wmi_ab->svc_map)) {
-+		ieee80211_hw_set(hw, SUPPORTS_TX_ENCAP_OFFLOAD);
-+		ieee80211_hw_set(hw, SUPPORTS_RX_DECAP_OFFLOAD);
+ 	skb_cb = ATH12K_SKB_CB(msdu);
+ 	info = IEEE80211_SKB_CB(msdu);
+@@ -629,8 +632,25 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
+ 			info->flags |= IEEE80211_TX_STAT_NOACK_TRANSMITTED;
+ 		}
+ 	}
++	rcu_read_lock();
++	spin_lock_bh(&ab->base_lock);
++	peer = ath12k_peer_find_by_id(ab, peer_id);
++	if (!peer || !peer->sta) {
++		ath12k_dbg(ab, ATH12K_DBG_DATA,
++			   "dp_tx: failed to find the peer with peer_id %d\n", peer_id);
++		spin_unlock_bh(&ab->base_lock);
++		ieee80211_free_txskb(ath12k_ar_to_hw(ar), msdu);
++		goto exit;
++	} else {
++		status.sta = peer->sta;
 +	}
++	spin_unlock_bh(&ab->base_lock);
+ 
+-	ieee80211_tx_status_skb(ath12k_ar_to_hw(ar), msdu);
++	status.info = info;
++	status.skb = msdu;
++	ieee80211_tx_status_ext(ath12k_ar_to_hw(ar), &status);
++exit:
++	rcu_read_unlock();
+ }
+ 
+ static void
+@@ -641,6 +661,7 @@ ath12k_dp_tx_process_htt_tx_complete(struct ath12k_base *ab, void *desc,
+ 	struct htt_tx_wbm_completion *status_desc;
+ 	struct ath12k_dp_htt_wbm_tx_status ts = {0};
+ 	enum hal_wbm_htt_tx_comp_status wbm_status;
++	u16 peer_id;
+ 
+ 	status_desc = desc;
+ 
+@@ -653,7 +674,11 @@ ath12k_dp_tx_process_htt_tx_complete(struct ath12k_base *ab, void *desc,
+ 		ts.acked = (wbm_status == HAL_WBM_REL_HTT_TX_COMP_STATUS_OK);
+ 		ts.ack_rssi = le32_get_bits(status_desc->info2,
+ 					    HTT_TX_WBM_COMP_INFO2_ACK_RSSI);
+-		ath12k_dp_tx_htt_tx_complete_buf(ab, desc_params, tx_ring, &ts);
 +
- 	if (cap->nss_ratio_enabled)
- 		ieee80211_hw_set(hw, SUPPORTS_VHT_EXT_NSS_BW);
++		peer_id = le32_get_bits(((struct hal_wbm_completion_ring_tx *)desc)->
++				info3, HAL_WBM_COMPL_TX_INFO3_PEER_ID);
++
++		ath12k_dp_tx_htt_tx_complete_buf(ab, desc_params, tx_ring, &ts, peer_id);
+ 		break;
+ 	case HAL_WBM_REL_HTT_TX_COMP_STATUS_DROP:
+ 	case HAL_WBM_REL_HTT_TX_COMP_STATUS_TTL:
+@@ -805,6 +830,12 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
+ 	struct ath12k_vif *ahvif;
+ 	struct sk_buff *msdu = desc_params->skb;
+ 	s32 noise_floor;
++	struct ieee80211_tx_status status = { 0 };
++	struct ieee80211_rate_status status_rate = { 0 };
++	struct ath12k_peer *peer;
++	struct ath12k_link_sta *arsta;
++	struct ath12k_sta *ahsta;
++	struct rate_info rate;
  
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index ed9b4324a7b8..f1283b8444f9 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2254,6 +2254,7 @@ enum wmi_tlv_service {
- 	WMI_TLV_SERVICE_WMSK_COMPACTION_RX_TLVS = 361,
+ 	if (WARN_ON_ONCE(ts->buf_rel_source != HAL_WBM_REL_SRC_MODULE_TQM)) {
+ 		/* Must not happen */
+@@ -896,7 +927,32 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
  
- 	WMI_TLV_SERVICE_PEER_METADATA_V1A_V1B_SUPPORT = 365,
-+	WMI_TLV_SERVICE_ETH_OFFLOAD = 461,
+ 	ath12k_dp_tx_update_txcompl(ar, ts);
  
- 	WMI_MAX_EXT2_SERVICE,
- };
+-	ieee80211_tx_status_skb(ath12k_ar_to_hw(ar), msdu);
++	spin_lock_bh(&ab->base_lock);
++	peer = ath12k_peer_find_by_id(ab, ts->peer_id);
++	if (!peer || !peer->sta) {
++		ath12k_err(ab,
++			   "dp_tx: failed to find the peer with peer_id %d\n",
++			   ts->peer_id);
++		spin_unlock_bh(&ab->base_lock);
++		ieee80211_free_txskb(ath12k_ar_to_hw(ar), msdu);
++		goto exit;
++	}
++	ahsta = ath12k_sta_to_ahsta(peer->sta);
++	arsta = &ahsta->deflink;
++
++	spin_unlock_bh(&ab->base_lock);
++
++	status.sta = peer->sta;
++	status.info = info;
++	status.skb = msdu;
++	rate = arsta->last_txrate;
++
++	status_rate.rate_idx = rate;
++	status_rate.try_count = 1;
++
++	status.rates = &status_rate;
++	status.n_rates = 1;
++	ieee80211_tx_status_ext(ath12k_ar_to_hw(ar), &status);
+ 
+ exit:
+ 	rcu_read_unlock();
 -- 
 2.17.1
 
