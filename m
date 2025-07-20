@@ -4,71 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF96DC83F27
-	for <ath12k@archiver.kernel.org>; Sat, 19 Jul 2025 19:28:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E1CBC83F1A
+	for <ath12k@archiver.kernel.org>; Sun, 20 Jul 2025 04:24:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=HmSDG6RcKe/PGitxtjh4x4GS8E6pInbFArfAKBge3vU=; b=Mk9UhX/59umejxV7FLvad0aWve
-	OREqh8cFg+yj+weU/gMdRPT2dNpW+cLgLoQMGO9AVFzpcl4i1rEuYNwp4wGhJj0iwpqq41Dqswxc8
-	rF29C9j5waL7RNTZ6WBDDzfNXUX2DpCYDtfOmQSS8zYPwleSI36lQ5RjkOScQ/U8zVNhrkBchudes
-	HfUcyeIIpfjNGRm+3nPGpDDMY6Rl+C/DkyZfyNhYZHKJ/5//jOFFcS90w90EUKKXvX/mjtBAQIeEs
-	Jpabu/mHk6dbsuJ7ao8bwaw2Kf+sEVjFmzE8gi272qlRe+P5z/YzZWK1c6jNYXqyn1Ijohz8xug+4
-	mcaOrv6w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=33LP6STipnEU3sdZfdff9S3Jr2wO+7z1dVrVDCId/P8=; b=Idh4iX+Qz55bBIpGNrIxVjCRBF
+	0INPa39xMNuLGwDSuvxqpnhRX2Vyguy4vTQzI4D/1aeDn62TcMsGi1uPGDJlX4sWBuoAGAxvhnkct
+	W0NGNfu4yQNmQ4IyU+PlMfVK48LMJcrSNTgAHAzS0UH4UfJi/+kEgHRCSC9UjCiPju1LeTjhxSGjN
+	2RGjKz+WKUlFKI79VTSWmdRnlEaEcUgULUZHwpaw2S7qR/OIrboh202ukuXpCtyJ2HeVVTeRmTWB+
+	cs5XU/Z3X7qc+N6y+0BfiQ7QMnoz3VCOEkfjlTbObtztjbLpvFLVd2w2jRCU/Asb/mCtPzDfv9bhl
+	/RbuACyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udDE0-0000000EZmk-1nTK;
-	Sat, 19 Jul 2025 19:28:00 +0000
-Received: from mgamail.intel.com ([198.175.65.15])
+	id 1udLbd-0000000EtX7-3q4s;
+	Sun, 20 Jul 2025 04:24:57 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udDDx-0000000EZmI-30h9
+	id 1udLbb-0000000EtWk-2MkE
 	for ath12k@lists.infradead.org;
-	Sat, 19 Jul 2025 19:27:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1752953278; x=1784489278;
-  h=date:from:to:cc:subject:message-id;
-  bh=zbq/qFc7aNkCoCE4JKBBVqAAA+YTTtqKe6E2tegcPxM=;
-  b=PG09qStcPB5iKGBFjP9cJyeNSNnR4u+0CpXtzjVbXyvcBkbHxc+04ltR
-   oVyxD45y0us5MXAejug0V7bNLCjZviHpFapgYBB8fAFkqrKYd9QHJvga/
-   qJlA4mzjxQhxeIJl2xRiHg0Y3lTtn4l4TfMfW0iM8a2n+cuAtWUvNLEoJ
-   Z9ecZDRD8Tt/tBy4TprBGvzYmZy+mEQFTBcxfIu1bNan+9zeDR/Bdfm40
-   fIJZxdkAngeDNuPzar+HXrb0yT6CTjUubf2LL7+9RZq8dM/vLv9QZLBQS
-   uq/gifyps0iXtFz689Dt9O8aYHhQHwnJcV2zq92jfPfnMdXHMh2jWoPR7
-   w==;
-X-CSE-ConnectionGUID: HBqOM5SOTOaMzFAqPQA56A==
-X-CSE-MsgGUID: 45XgQJ2MTc6CkukoifDfIQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11497"; a="58879356"
-X-IronPort-AV: E=Sophos;i="6.16,324,1744095600"; 
-   d="scan'208";a="58879356"
-Received: from fmviesa002.fm.intel.com ([10.60.135.142])
-  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Jul 2025 12:27:54 -0700
-X-CSE-ConnectionGUID: hTtvTVguRQqm4dC3KGZVkA==
-X-CSE-MsgGUID: u34VMoFJTyaobIc8E/oAFg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,324,1744095600"; 
-   d="scan'208";a="182194524"
-Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
-  by fmviesa002.fm.intel.com with ESMTP; 19 Jul 2025 12:27:53 -0700
-Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1udDDq-000FjX-2o;
-	Sat, 19 Jul 2025 19:27:50 +0000
-Date: Sun, 20 Jul 2025 03:27:14 +0800
-From: kernel test robot <lkp@intel.com>
+	Sun, 20 Jul 2025 04:24:56 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id A9329A5051C;
+	Sun, 20 Jul 2025 04:24:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E3D1C4CEEB;
+	Sun, 20 Jul 2025 04:24:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1752985493;
+	bh=BAiS+5L1aoOna4clIV4XORs7TOaMn2H/5GNlaa5gSKw=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Hues/3N8LDK8NbIKKerIvu2ZL5XDm9nJMyJygi1KB2NFouDNZMVQGEIkYRkNrQzAV
+	 OuPrtbiL7wm6lO3OxkfUsONFQLpXGvxLkhDW3SpCiufumcGmFORUzqsRiqNFLiRd48
+	 kf1FvrBfAT1uD1eIPlg04rzyqsjsI5Kymv+VFbvj8advrAvTrdfJla/vVtHrBCIDrD
+	 ORlpjWAhQ6dtW2flVHfGiiPCFI8Dj/Z7DAWyCJPEy//6NY7OtOd3d8LVaFbJ0E10Ol
+	 vyYpm7EaqfjebHSdu3Xv+ZuAFt5/o1Av2LeEiW6WYPLKaDG0RU0a5PJa1nlFByj4qB
+	 y6euF3y2iX0WQ==
+Date: Sat, 19 Jul 2025 23:24:51 -0500
+From: Bjorn Andersson <andersson@kernel.org>
 To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master-pending] BUILD SUCCESS
- fec6a3037f4b4d6254531a12f7f9146d5815ef3c
-Message-ID: <202507200301.SGIKN59G-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+Cc: Alexander Wilhelm <alexander.wilhelm@westermo.com>, 
+	Jeff Johnson <jjohnson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
+	linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH 00/11] wifi: ath12k: Fix endianness handling in QMI
+Message-ID: <a2sjvescdtdo75lpt6e7tnf7c46sj6g3mlakva5nzsa2p643w2@ie4scpc5vhv7>
+References: <20250716075100.1447352-1-alexander.wilhelm@westermo.com>
+ <833ce5f1-51b2-4d4c-a839-38989ea10344@oss.qualcomm.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <833ce5f1-51b2-4d4c-a839-38989ea10344@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250719_122757_833079_C81D9F2E 
-X-CRM114-Status: UNSURE (   4.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250719_212455_738538_46B50ED4 
+X-CRM114-Status: GOOD (  20.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,144 +74,102 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
-branch HEAD: fec6a3037f4b4d6254531a12f7f9146d5815ef3c  Merge branch 'pending' into main-pending
+On Wed, Jul 16, 2025 at 08:13:20AM -0700, Jeff Johnson wrote:
+> On 7/16/2025 12:50 AM, Alexander Wilhelm wrote:
+> > Fix endianness handling in QMI firmware transfer on big-endian
+> > platforms. Without this fix, the firmware download fails due to
+> > misinterpreted data structures exchanged between the host and the
+> > wireless module.
+> > 
+> > The issue occurs during early bring-up on big endian systems, where QMI
+> > messages are not correctly parsed by the driver, leading to failed
+> > initialization sequences. Ensure all relevant fields are properly
+> > converted between CPU and little-endian format in request and response
+> > messages, as expected by the firmware. Attached logs showing the failure
+> > before the fix:
+> > 
+> >     ath12k_pci 0001:01:00.0: BAR 0: assigned [mem 0xc00000000-0xc001fffff 64bit]
+> >     ath12k_pci 0001:01:00.0: boot pci_mem 0xcd4148e9
+> >     ath12k_pci 0001:01:00.0: pci probe 17cb:1109 17cb:1109
+> >     ath12k_pci 0001:01:00.0: pci tcsr_soc_hw_version major 2 minor 0
+> >     ath12k_pci 0001:01:00.0: request MSI one vector
+> >     ath12k_pci 0001:01:00.0: MSI vectors: 1
+> >     ath12k_pci 0001:01:00.0: msi base data is 0
+> >     ath12k_pci 0001:01:00.0: Hardware name: qcn9274 hw2.0
+> >     ath12k_pci 0001:01:00.0: boot firmware request ath12k/QCN9274/hw2.0/firmware-2.bin size 15134776
+> >     ath12k_pci 0001:01:00.0: found fw timestamp 1722934582
+> >     ath12k_pci 0001:01:00.0: found m3 image ie (421880 B)
+> >     ath12k_pci 0001:01:00.0: found fw image ie (7229440 B)
+> >     ath12k_pci 0001:01:00.0: found dualmac fw image ie (7483392 B)
+> >     ath12k_pci 0001:01:00.0: found firmware features ie (1 B)
+> >     ath12k_pci 0001:01:00.0: features
+> >     ath12k_pci 0001:01:00.0: using fw api 2
+> >     ath12k_pci 0001:01:00.0: dualmac fw selected for board id: 1005
+> >     ath12k_pci 0001:01:00.0: Assign MSI to user: MHI, num_vectors: 3, user_base_data: 0, base_vector: 0
+> >     ath12k_pci 0001:01:00.0: Number of assigned MSI for MHI is 3, base vector is 0
+> >     ath12k_pci 0001:01:00.0: Assign MSI to user: CE, num_vectors: 1, user_base_data: 0, base_vector: 0
+> >     ath12k_pci 0001:01:00.0: Assign MSI to user: DP, num_vectors: 1, user_base_data: 0, base_vector: 0
+> >     ath12k_pci 0001:01:00.0: irq:18 group:0
+> >     ath12k_pci 0001:01:00.0: irq:18 group:1
+> >     ath12k_pci 0001:01:00.0: irq:18 group:2
+> >     ath12k_pci 0001:01:00.0: irq:18 group:3
+> >     ath12k_pci 0001:01:00.0: irq:18 group:4
+> >     ath12k_pci 0001:01:00.0: irq:18 group:5
+> >     ath12k_pci 0001:01:00.0: irq:18 group:6
+> >     ath12k_pci 0001:01:00.0: irq:18 group:7
+> >     ath12k_pci 0001:01:00.0: pci after request_irq msi_ep_base_data 0
+> >     ath12k_pci 0001:01:00.0: cookie:0x0
+> >     ath12k_pci 0001:01:00.0: WLAON_WARM_SW_ENTRY 0x2
+> >     ath12k_pci 0001:01:00.0: WLAON_WARM_SW_ENTRY 0x2
+> >     ath12k_pci 0001:01:00.0: soc reset cause:0
+> >     ath12k_pci 0001:01:00.0: MHISTATUS 0xff04
+> >     ath12k_pci 0001:01:00.0: pci link_ctl 0x0000 L0s 0 L1 0
+> >     ath12k_pci 0001:01:00.0: pci reg 0x3164 instance 0x11 read val 0x11
+> >     ath12k_pci 0001:01:00.0: setting mhi state: INIT(0)
+> >     ath12k_pci 0001:01:00.0: setting mhi state: POWER_ON(2)
+> >     ath12k_pci 0001:01:00.0: mhi notify status reason UNKNOWN
+> >     ath12k_pci 0001:01:00.0: mhi notify status reason MHI_CB_EE_MISSION_MODE
+> >     ath12k_pci 0001:01:00.0: qmi wifi fw qmi service connected
+> >     ath12k_pci 0001:01:00.0: phy capability resp valid 1 num_phy 2 valid 1 board_id 84934656 valid 1 single_chip_mlo_support 0
+> >     ath12k_pci 0001:01:00.0: intra device MLO is disabled hence skip QMI MLO cap
+> > 
+> > Alexander Wilhelm (11):
+> >   wifi: ath12k: fix endianness handling in QMI host capability request
+> >   wifi: ath12k: fix endianness handling in QMI phy capability response
+> >   wifi: ath12k: fix endianness handling in QMI firmware indication
+> >   wifi: ath12k: fix endianness handling in QMI firmware memory indication
+> >   wifi: ath12k: fix endianness handling in QMI respond firmware memory
+> >   wifi: ath12k: fix endianness handling in QMI firmware capabilities
+> >   wifi: ath12k: fix endianness handling in QMI bdf download
+> >   wifi: ath12k: fix endianness handling in QMI firmware m3 info
+> >   wifi: ath12k: fix endianness handling in QMI firmware wlan mode
+> >   wifi: ath12k: fix endianness handling in QMI wlan configuration
+> >   wifi: ath12k: fix endianness handling in QMI response
+> > 
+> >  drivers/net/wireless/ath/ath12k/qmi.c | 149 ++++++++++++++------------
+> >  drivers/net/wireless/ath/ath12k/qmi.h | 106 +++++++++---------
+> >  include/linux/soc/qcom/qmi.h          |   4 +-
+> >  3 files changed, 136 insertions(+), 123 deletions(-)
+> > 
+> 
+> Frankly I'm shocked that the low-level QMI encode/decode is not doing the
+> endian conversion. Since the Qualcomm internal tool that generates the data
+> structures has always generated structs with cpu endianess (i.e. u8, u16, u32,
+> etc) I just assumed that endian conversion was handled at a low level.
+> 
 
-elapsed time: 1449m
+I'm suspecting that those tools, just like this implementation, is
+exclusively tested on little endian machines...
 
-configs tested: 124
-configs skipped: 5
+> So should this issue be pushed down to the QMI encode/decode rather than foist
+> it upon every client's read & write?
+> 
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+It's been a while since I looked at the implementation, but conceptually
+I'm in favor of this.
 
-tested configs:
-alpha                             allnoconfig    gcc-15.1.0
-alpha                            allyesconfig    gcc-15.1.0
-arc                              allmodconfig    gcc-15.1.0
-arc                               allnoconfig    gcc-15.1.0
-arc                              allyesconfig    gcc-15.1.0
-arc                     haps_hs_smp_defconfig    gcc-15.1.0
-arc                        nsimosci_defconfig    gcc-15.1.0
-arc                   randconfig-001-20250719    gcc-14.3.0
-arc                   randconfig-002-20250719    gcc-15.1.0
-arm                              allmodconfig    gcc-15.1.0
-arm                               allnoconfig    clang-21
-arm                              allyesconfig    gcc-15.1.0
-arm                   randconfig-001-20250719    gcc-14.3.0
-arm                   randconfig-002-20250719    clang-21
-arm                   randconfig-003-20250719    clang-21
-arm                   randconfig-004-20250719    clang-16
-arm                           sama5_defconfig    gcc-15.1.0
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-15.1.0
-arm64                 randconfig-001-20250719    clang-20
-arm64                 randconfig-002-20250719    clang-18
-arm64                 randconfig-003-20250719    gcc-15.1.0
-arm64                 randconfig-004-20250719    clang-20
-csky                              allnoconfig    gcc-15.1.0
-csky                  randconfig-001-20250719    gcc-15.1.0
-csky                  randconfig-002-20250719    gcc-11.5.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-hexagon               randconfig-001-20250719    clang-21
-hexagon               randconfig-002-20250719    clang-21
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250719    clang-20
-i386        buildonly-randconfig-002-20250719    gcc-12
-i386        buildonly-randconfig-003-20250719    gcc-12
-i386        buildonly-randconfig-004-20250719    clang-20
-i386        buildonly-randconfig-005-20250719    clang-20
-i386        buildonly-randconfig-006-20250719    clang-20
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    clang-19
-loongarch                         allnoconfig    clang-21
-loongarch             randconfig-001-20250719    clang-18
-loongarch             randconfig-002-20250719    gcc-15.1.0
-m68k                             allmodconfig    gcc-15.1.0
-m68k                              allnoconfig    gcc-15.1.0
-m68k                             allyesconfig    gcc-15.1.0
-m68k                        m5272c3_defconfig    gcc-15.1.0
-microblaze                       allmodconfig    gcc-15.1.0
-microblaze                        allnoconfig    gcc-15.1.0
-microblaze                       allyesconfig    gcc-15.1.0
-microblaze                          defconfig    gcc-15.1.0
-mips                              allnoconfig    gcc-15.1.0
-mips                         db1xxx_defconfig    clang-21
-mips                           ip22_defconfig    gcc-15.1.0
-mips                           mtx1_defconfig    clang-21
-nios2                             allnoconfig    gcc-11.5.0
-nios2                               defconfig    gcc-11.5.0
-nios2                 randconfig-001-20250719    gcc-11.5.0
-nios2                 randconfig-002-20250719    gcc-8.5.0
-openrisc                          allnoconfig    gcc-15.1.0
-openrisc                         allyesconfig    gcc-15.1.0
-parisc                           alldefconfig    gcc-15.1.0
-parisc                           allmodconfig    gcc-15.1.0
-parisc                            allnoconfig    gcc-15.1.0
-parisc                           allyesconfig    gcc-15.1.0
-parisc                              defconfig    gcc-15.1.0
-parisc                randconfig-001-20250719    gcc-8.5.0
-parisc                randconfig-002-20250719    gcc-8.5.0
-parisc64                            defconfig    gcc-15.1.0
-powerpc                          allmodconfig    gcc-15.1.0
-powerpc                           allnoconfig    gcc-15.1.0
-powerpc                          allyesconfig    clang-21
-powerpc                      arches_defconfig    gcc-15.1.0
-powerpc               randconfig-001-20250719    clang-19
-powerpc               randconfig-002-20250719    gcc-10.5.0
-powerpc               randconfig-003-20250719    gcc-12.5.0
-powerpc                     stx_gp3_defconfig    gcc-15.1.0
-powerpc64             randconfig-001-20250719    gcc-8.5.0
-powerpc64             randconfig-002-20250719    clang-21
-powerpc64             randconfig-003-20250719    gcc-10.5.0
-riscv                             allnoconfig    gcc-15.1.0
-riscv                 randconfig-001-20250719    clang-21
-riscv                 randconfig-002-20250719    clang-21
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-21
-s390                             allyesconfig    gcc-15.1.0
-s390                  randconfig-001-20250719    gcc-9.5.0
-s390                  randconfig-002-20250719    gcc-9.5.0
-sh                               allmodconfig    gcc-15.1.0
-sh                                allnoconfig    gcc-15.1.0
-sh                               allyesconfig    gcc-15.1.0
-sh                    randconfig-001-20250719    gcc-13.4.0
-sh                    randconfig-002-20250719    gcc-15.1.0
-sh                           se7705_defconfig    gcc-15.1.0
-sh                           se7724_defconfig    gcc-15.1.0
-sh                           se7750_defconfig    gcc-15.1.0
-sh                             sh03_defconfig    gcc-15.1.0
-sparc                            allmodconfig    gcc-15.1.0
-sparc                             allnoconfig    gcc-15.1.0
-sparc                               defconfig    gcc-15.1.0
-sparc                 randconfig-001-20250719    gcc-15.1.0
-sparc                 randconfig-002-20250719    gcc-15.1.0
-sparc64               randconfig-001-20250719    gcc-9.5.0
-sparc64               randconfig-002-20250719    gcc-9.5.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-um                    randconfig-001-20250719    clang-16
-um                    randconfig-002-20250719    clang-21
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250719    clang-20
-x86_64      buildonly-randconfig-002-20250719    clang-20
-x86_64      buildonly-randconfig-003-20250719    clang-20
-x86_64      buildonly-randconfig-004-20250719    gcc-12
-x86_64      buildonly-randconfig-005-20250719    clang-20
-x86_64      buildonly-randconfig-006-20250719    gcc-12
-x86_64                              defconfig    gcc-11
-x86_64                          rhel-9.4-rust    clang-20
-xtensa                            allnoconfig    gcc-15.1.0
-xtensa                randconfig-001-20250719    gcc-14.3.0
-xtensa                randconfig-002-20250719    gcc-8.5.0
+Regards,
+Bjorn
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+> /jeff
 
