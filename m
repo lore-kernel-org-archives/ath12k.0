@@ -4,120 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A049C83F22
-	for <ath12k@archiver.kernel.org>; Sun, 20 Jul 2025 15:26:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76F67C83F17
+	for <ath12k@archiver.kernel.org>; Mon, 21 Jul 2025 02:29:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=plVALh5uPZThnO1rZ7+UDOYClCnFOvf+/QqHJf2FtbQ=; b=lpjs/m61oQqojHG64QWs679jnS
-	wWI6XQE6sXBFEoBBUwrl35ac2iabzHOBP7j5xHSBAp82OQZ8/q2UuzmsZMg1RGelu1U+3M33/btoU
-	dAw5k1+OBItQyFWX88gj935jXDaNhgrypiiuuNinMcN5p4QSNsJLTHnBDjOnGZdsL4lVqVrpPlzU1
-	UQ7y1jx3oGq8sZ+8F9Gar/PO/xznoK0caHgptEAhb0K2+6dZW5J/Ek5PJTU4DBMzdyZd1zRYcgl2J
-	CUX8LOiCUO9qVDtHLBKBw3RV6QeuKo19N58tFfsdq17cf9C+GoiIVrQpOewof7uX28rg/ASr8gQ6/
-	nj5vszjQ==;
+	bh=PlESFODkg2/n6CKXRrQsrvcrzkq/qeENX4SwJDn1k5I=; b=WUC0AAFCrn9hWl1EBabubexUSH
+	1hgjMYbYDxGVtqfeiYxUgCthItxL5Xy2LPcQNaEjT7cJaRJ6bDgsVzNLt67mVujA9pIBtLVylabNY
+	U5KnOQ3EeYQ024Nv64yoJ4vSP/EhV/Lv/sTEA9OIrK+i8a5ZkQ6R923hZZEUfYjjClJJKibXXoqOr
+	SgIr9cls2MS/aEpQ7Lhx3Xkl3lsgjkGM9bhcQjDmLlQzTupjxxOftsBc88+X0mdDxI4eYXG8qKssL
+	dVBaGWFE6ZiDCNUpNrWISgG907h0O6VcuzlZemdQ4q7fv55XxcPq49jxL51wA/LYX7edoJrYtyDZL
+	sglFKbig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udVw7-0000000FS9d-49oc;
-	Sun, 20 Jul 2025 15:26:47 +0000
+	id 1udgHF-0000000G0DN-0utQ;
+	Mon, 21 Jul 2025 02:29:17 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udVtk-0000000FRug-1Stz
+	id 1udgFv-0000000Fzw1-1ZRf
 	for ath12k@lists.infradead.org;
-	Sun, 20 Jul 2025 15:24:21 +0000
+	Mon, 21 Jul 2025 02:27:56 +0000
 Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56KE8LIP012046
-	for <ath12k@lists.infradead.org>; Sun, 20 Jul 2025 15:24:19 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56KNe15m009461
+	for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 02:27:53 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=plVALh5uPZThnO1rZ7+UDO
-	YClCnFOvf+/QqHJf2FtbQ=; b=oecnPwV/75vRps/Q4WxkZCp+FZLQwP2jAhANSm
-	uvuP604FnJEPhTCJC5iXbo7YuFSXRTsd413E2pWKfLKipElz91ToXCW57/gZQGxO
-	NodRCBqm0+kYNJ/APcbY793VrDCYE8ursAcN/RGsjuCG+/MiycnJpbQgfjNFsK5D
-	92z0Okk5EbSbC2uGqeURONgaUte264s6vDc0fvoOy1togMbOCQHObNZpS7Grh1f7
-	j+/6cLXEJy60hGN+uSJUXMUC+fqn9JFFET2PM0WunuAITisI/93yNV4C/IkXhxp5
-	h1hNlsNDgjkOMjOjStXpKFpZ8Tb46U73Mz1oSHIYhDGtzKqA==
-Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48047q2dk9-1
+	:mime-version:subject:to; s=qcppdkim1; bh=PlESFODkg2/n6CKXRrQsrv
+	crzkq/qeENX4SwJDn1k5I=; b=l8rmCEky0qziIw6wiRSH/cB8ooDGWljJGzSlJR
+	codoLzGXOc3wsk/e2fr7KlFpdW9LZxiQthLCw2BNc47KsOdm9WufbZGT7vxzQzST
+	tVQR4WC5pmEY9Sc6LcqQ4EORIqap5ve9m5Fs0U0j5uTdbQWV8lw8mAcmWFBv0be0
+	vawCT/mgQbSYYTWzyCyJ+2TFvYHzkH0/+McRS6Zg7w5Aznrpin0ZPA2f0lwiJA0c
+	aJh3S4mNnEeJw0ft6jU0yqv3P3CrN+96rYIInhiB1grhSH6JlKOON++2vWv7K9Fa
+	VBJV+zgcw4Ju9JSGVLzB02AH7NYq503h5ZyYlvl+HnhDYv/Q==
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48047q3513-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Sun, 20 Jul 2025 15:24:19 +0000 (GMT)
-Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-7489ac848f3so5615475b3a.1
-        for <ath12k@lists.infradead.org>; Sun, 20 Jul 2025 08:24:19 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 02:27:53 +0000 (GMT)
+Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b3ba7659210so2813991a12.2
+        for <ath12k@lists.infradead.org>; Sun, 20 Jul 2025 19:27:53 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1753025057; x=1753629857;
+        d=1e100.net; s=20230601; t=1753064872; x=1753669672;
         h=cc:to:message-id:content-transfer-encoding:mime-version:subject
          :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=plVALh5uPZThnO1rZ7+UDOYClCnFOvf+/QqHJf2FtbQ=;
-        b=i03QcpltzoWLvXxzdPhDy5QRE6SaX86oGYkLnAWY0WjA9nJg4Jg/nswgHVPAa94RXC
-         RIxyjyTa+7MowiRHFw/Eefa3xw006Zopyh5XcJ96M7APFLnS5b40UMHZPo0AVYU+qZJC
-         y3a+4bLofs/SnTf0PWWBQM3FzUkmsq/Q3ZTT8IAuPOhnb0QEYgfT+f2qOCJlhWkN44sH
-         x/lwsq8EijVw0zgV1LlUDzlnJsdehcZA0QQrm9E2fHp0pvM+s50wcOxeA8VM4YU51PeK
-         CtdwujM2i3NrDCc1m9bIycrtsSgqpquSwiqkQJSRIFUgcL5BzT++k1Xd+UYBvB+snzZ3
-         +3Ig==
-X-Forwarded-Encrypted: i=1; AJvYcCUfvnwRTtjuf+G8/Ogg0FYCIZrEACldolBVmchEBUM/IHYBPiblp2PFipaziZun8MGOU5kAX/A=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwLCwBYdtngNx/jTLwHVnAIS43CLLKaZSfesp6Ep/Is4DnHX7FW
-	5uy82UuJbLuO2OVnrWoc7DL3fUjk7Hx5zsPs7w91TrXL3sQHSc3bk2gN8p+sUkmIRTjjDyGlDgo
-	rzJXs19C0ys68pvUTS8q4fl2om/h3y9dYbQqKC09m5JxRHQWoSkL6VjezxhXQTBov
-X-Gm-Gg: ASbGnctXZJBCgGN45hM4FbfgVIRt02GdX9R2VcWWY67qLPUGsqqksOcCQPnZuRCDuii
-	YZr539SBvMdNrJ3DMemLONxmsHLXi+rIUZx0HAwqVPyB6ohA8lpPz+snnsLFLZE4a3g5h7QfDyj
-	FKAabwFlAZwSGHOF6DDyks6J1bGIkjU9bBIVMu6T4fd5+gtaMY0bhspyjVfUZTnF8U9vVzs7V4f
-	5mXQz0Bl6cg0l6Vc/qoOdD/NIKTa+QG9W5IIr6LDMEWjn7PU1S6RRFSe6uxCs2cQldRMw7RBZEy
-	RFElQ5WbpDderoKtU0tXAXc4RWv5+7BovyOFmdQLQFgNcmW3ePfJeL7pqW3AZ2J9dVc5s4v1vz2
-	C
-X-Received: by 2002:a05:6a00:ad5:b0:730:95a6:3761 with SMTP id d2e1a72fcca58-7572316302emr26726789b3a.3.1753025057090;
-        Sun, 20 Jul 2025 08:24:17 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEMr+rKXYpcuBcjQpGI9EPcvXA0XsbLH7oIyf+np5eJ/phFQ4eHj7c5E/qyHq99ZPbpONICvw==
-X-Received: by 2002:a05:6a00:ad5:b0:730:95a6:3761 with SMTP id d2e1a72fcca58-7572316302emr26726753b3a.3.1753025056477;
-        Sun, 20 Jul 2025 08:24:16 -0700 (PDT)
-Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-759c89d582bsm4288656b3a.58.2025.07.20.08.24.15
+        bh=PlESFODkg2/n6CKXRrQsrvcrzkq/qeENX4SwJDn1k5I=;
+        b=aW7iXm9RO+fkx02W9mag5batB3ObsHV7FWQz7ZujSfP6M2etVXPB+h5UzTBiUkTAX8
+         3nKElFG5pXOnX3bvf5O8yhWlfOwvO1v4zdtUYd51fGz5hs4kmlyGCwplw4m/lTI2/YF+
+         DFAGp3gT8kwIMbGVHfkXhGiD++juHDXtlCe5bOT2OfmiUvPWcJCn11WBRNFY0WeHlBdJ
+         CC9U0t5ZaaaUTmFR93vUOWzDN0ZYZfsKCxtfNbxAjIWyjeGNHeimsn2AUqo0t8ivcE7T
+         w/yRuibRvUugkCHt2P98dSb1+2LaXcSfPVfIIhXL9LwoFUPbEju6OgKt6+waIVFfymMn
+         +l2w==
+X-Forwarded-Encrypted: i=1; AJvYcCVD71m9xXSBvXwqs31ipzqcBhgcydBD7m9klI5veVgf+EKnSfdPFpiE/tmoJ6lolAeLml+VWIU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwBJpapBUcIBirf+2N+ZmoWaUaXWlT5oPylgFpQAxmTd36IVaGI
+	qgq0qpzb/RZjal1OjcazW5Yk+80J16XErMg2732Dkm97wV/qGGnJkCKFI9rueUgy5nEmvAFt1In
+	Ssb7sK7E6N+GRNO5rwd7tP4LtA72ykTwcC6DLszy32N4JCesAdoRbv1+WnzY4sL5cFwDkcdGrLv
+	M=
+X-Gm-Gg: ASbGncsutFgLmCSJEudJvEO8EKnI972fpOybIVmvbYZdASW9Ww7RlPymr57l+byI9Pg
+	+cB9ffL0b34kpgelYmDx1OtXqvEd4XR+FnYQGcyC+QPKMy2Wk9lDgLj2awrpWGL/qhH2Uce5OVF
+	xK5xvY+NNnjZsP92bH6tMXYY/JYnTgZy6CmPRVyaNy3k6w2nk10MUa/v5HBGeRfsqbKHFvU/uUz
+	0nrj/0Fe2ulDqqKxWpjgAeLYtp9N4W2iMKyC+neXlaH8Wc3dl2ZuYb0zZsleM2vrZkXLLmra/vV
+	CuHnuSmAz2tEqj94a7vqUByqrKIaTlNoEkjiP9Y1tuOtPDoBIJyKNnmdTxk9Nlr1lHO4/G4f9KB
+	EET8PxoGY5yC1lfgoag==
+X-Received: by 2002:a17:902:e751:b0:235:225d:3098 with SMTP id d9443c01a7336-23e257706f7mr297068745ad.46.1753064871997;
+        Sun, 20 Jul 2025 19:27:51 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHdLbfWV0WIH6gdMWFXAbj48U52Qby9ezjzObx5YEv+xoAivqbUdo2qXTW8a4OuwKQNGg5T9g==
+X-Received: by 2002:a17:902:e751:b0:235:225d:3098 with SMTP id d9443c01a7336-23e257706f7mr297068425ad.46.1753064871552;
+        Sun, 20 Jul 2025 19:27:51 -0700 (PDT)
+Received: from [127.0.1.1] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23e3b6b4cedsm47541335ad.120.2025.07.20.19.27.49
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 20 Jul 2025 08:24:16 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Date: Sun, 20 Jul 2025 08:24:14 -0700
-Subject: [PATCH ath-next] wifi: ath12k: Prefer {} to {0} in initializers
+        Sun, 20 Jul 2025 19:27:51 -0700 (PDT)
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Date: Mon, 21 Jul 2025 10:27:26 +0800
+Subject: [PATCH ath-next] wifi: ath12k: bring DFS support back for WCN7850
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20250720-ath12k-zero-brace-v1-1-d8c8ca9d40a8@oss.qualcomm.com>
-X-B4-Tracking: v=1; b=H4sIAB0KfWgC/22NwQrCMBBEf6Xs2S3dBKn15H9ID2my2qBtNImhW
- vLvhuLRy8AwM29WCOwtBzhWK3hONlg3F0O7CvSo5iujNcWDaMS+aemAKo4kbvhh73DwSjNSp7Q
- 0bEgPBGX38Hyxy8Y8Q6njzEuEviSjDdH593aWaMt/3O4PNxESttJQJ1mwbPTJhVA/X+qu3TTVR
- aDPOX8BttmumsMAAAA=
-X-Change-ID: 20250718-ath12k-zero-brace-19ac3ded1cb1
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org,
-        Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Message-Id: <20250721-ath12k-dfs-v1-1-065c31454f91@oss.qualcomm.com>
+X-B4-Tracking: v=1; b=H4sIAI2lfWgC/22NzQ6CMBCEX4Xs2SVsI3+efA/DobSLNArVLhIM6
+ bvbcPYyyWRmvtlBODgWuGQ7BF6dOD8nQ6cMzKjnO6OzyYMqVFnU1KBeRlIPtINgo861MkPftpW
+ FNHgFHtx2wG6QejjztkCXktHJ4sP3eFnpyP8BV0LCigtLpu6rsuerF8nfH/00fpryJNDFGH8Ci
+ w+OtQAAAA==
+X-Change-ID: 20250718-ath12k-dfs-82472cfb996d
+To: Jeff Johnson <jjohnson@kernel.org>,
+        Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org, Mihai Moldovan <ionic@ionic.de>,
+        Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzIwMDE0OCBTYWx0ZWRfXxoyQsnvoGVwR
- K6nhrrGZRuEWkttuWu52ug9Zrabm8nfHm4nlM+7ciNy1JfqoWzc/i/z+rr+k8GAL8Q5Byb1HYQw
- eFrm9qMf7vZrdWLZG8NtEMwvw9kJ/KiMIHfOEUSBWmJDRzDHgaynDhkwRhvee2SAv/KMvAX6M75
- AMIn+hGihm6lxNw5WhMp8rzrbBE38fRyXYh0JydBSKJRhoSlkAz21+viw3mfMl7FfUQWG+3RE6y
- oO+Z5AbNig4s1luOKPYGe5Bfu7GN3Wgp0oyvB9TBdXA5pDLR5aE3paQFov/kucKw79BObf6Gw+n
- nEOgwB3ygG3QckLqtOMcOPIyh5CjD2ES/zffancU2nYnpcjpuJpHDYCj6P05w1Hhl4iSJi4UdQB
- TZdPUTumH26vw2u5b6/up8NWcn2Mk9uGN/9H6Ah4KjiAGLEGICzE0yzC2f1vcTWCdOzWNMeb
-X-Proofpoint-ORIG-GUID: OTuUZSmsIJJAQ6dCkumITXtfiDe628SY
-X-Proofpoint-GUID: OTuUZSmsIJJAQ6dCkumITXtfiDe628SY
-X-Authority-Analysis: v=2.4 cv=IrMecK/g c=1 sm=1 tr=0 ts=687d0a23 cx=c_pps
- a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=8rE0DOS6Ath7_zZPqtsA:9
- a=QEXdDO2ut3YA:10 a=OpyuDcXvxspvyRM73sMx:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzIxMDAxOSBTYWx0ZWRfX9hgSmD6lIDku
+ vQ03kgYq3/NLfUIHHDzX0XYdJGvtdwQINaW8uHsUNMuWCBveKDpz3w3jxfxBl5zuzarinuHscnt
+ ns5OmmOTTYV0EJ4L12UOS1VFxmdSqZi+oezVjULRd9Kt/M4lhFKCrAQU4ZCXnR1gF9BozYotd2u
+ zqkT3o9s9JWgb7tc7P+QKiCa0pS+YeGAMQs/XxyLDbNOSu0FH6QsjDS9J3EmYkCDu7BRFgBBcZh
+ 9QNo/eW3uCeJj3pgMMpnyN5RdMaUN4GiBxyAr6cyShcZ6ybB1oroCDc6yD7o9h4GntTnO/lse5v
+ Xw7PBJWXg6LQSSUYHK/wysidvW/DMTNzSEN2g/XbfpWJ0HmQKXAF+2A3nY8VC7YRkx2pyzcbIFM
+ oRhcDU8c3zi74fgUeeQUewfICKaW6InD5ebHOQeDijb4I69lL/vU2XGjx3tUQXnov766J5Df
+X-Proofpoint-ORIG-GUID: LdJ7y2hpEh5bINPzd4R1fNsmR8B1pqeX
+X-Proofpoint-GUID: LdJ7y2hpEh5bINPzd4R1fNsmR8B1pqeX
+X-Authority-Analysis: v=2.4 cv=IrMecK/g c=1 sm=1 tr=0 ts=687da5a9 cx=c_pps
+ a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
+ a=La950oh4TLMd4KyFD9QA:9 a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-07-20_01,2025-07-17_02,2025-03-28_01
+ definitions=2025-07-21_01,2025-07-17_02,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  suspectscore=0 lowpriorityscore=0 malwarescore=0 adultscore=0 clxscore=1015
  priorityscore=1501 spamscore=0 mlxscore=0 mlxlogscore=999 phishscore=0
  impostorscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507200148
+ definitions=main-2507210019
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250720_082420_527756_D327007A 
-X-CRM114-Status: GOOD (  19.79  )
+X-CRM114-CacheID: sfid-20250720_192755_549616_9E32DA96 
+X-CRM114-Status: GOOD (  17.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,486 +135,121 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Prefer {} to {0} in initializers since {} works even when the first
-member is not a scalar.
+Due to the restrict in MAC80211 that DFS (Dynamic Frequency Selection)
+can't be enabled on multiple channels, commit 176f3009ae59 ("wifi: ath12k:
+support 2 channels for single pdev device") removes DFS support in order
+to support 2 channels concurrently, making AP mode not working on DFS
+channels [1].
 
-Generated using:
-sed -i 's/{[[:space:]]*0[[:space:]]*}/{}/g' drivers/net/wireless/ath/ath12k/*
+Revert portions of that commit to bring DFS back, and add a new
+combination to support 2-channels concurrency. This is valid because the
+MAC80211 restrict works on each individual combination, but does not care
+about them as a whole, as far as DFS is concerned.
 
-Compile tested only.
+This change applies to WCN7850 only, other chips are not affected.
 
-Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Fixes: 176f3009ae59 ("wifi: ath12k: support 2 channels for single pdev device")
+Reported-by: Mihai Moldovan <ionic@ionic.de>
+Closes: https://bugzilla.kernel.org/show_bug.cgi?id=220346 # 1
+Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/ce.c                |  2 +-
- drivers/net/wireless/ath/ath12k/core.c              |  2 +-
- drivers/net/wireless/ath/ath12k/dbring.c            |  3 ++-
- drivers/net/wireless/ath/ath12k/debugfs.c           |  8 ++++----
- drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c | 12 ++++++------
- drivers/net/wireless/ath/ath12k/dp.c                |  6 +++---
- drivers/net/wireless/ath/ath12k/dp_rx.c             | 18 +++++++++---------
- drivers/net/wireless/ath/ath12k/dp_tx.c             | 10 +++++-----
- drivers/net/wireless/ath/ath12k/mac.c               | 16 ++++++++--------
- drivers/net/wireless/ath/ath12k/pci.c               |  4 ++--
- drivers/net/wireless/ath/ath12k/wmi.c               | 14 +++++++-------
- 11 files changed, 48 insertions(+), 47 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 47 ++++++++++++++++++++++-------------
+ 1 file changed, 30 insertions(+), 17 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/ce.c b/drivers/net/wireless/ath/ath12k/ce.c
-index f7c15b547504d57984c482fceaff010e8b75bc22..f93a419abf65ec6e9b31e22c78c8c2cdd7bdbc76 100644
---- a/drivers/net/wireless/ath/ath12k/ce.c
-+++ b/drivers/net/wireless/ath/ath12k/ce.c
-@@ -578,7 +578,7 @@ static int ath12k_ce_init_ring(struct ath12k_base *ab,
- 			       struct ath12k_ce_ring *ce_ring,
- 			       int ce_id, enum hal_ring_type type)
- {
--	struct hal_srng_params params = { 0 };
-+	struct hal_srng_params params = {};
- 	int ret;
- 
- 	params.ring_base_paddr = ce_ring->base_addr_ce_space;
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index bf46acb542682d5c20d2faab09d1e4f59e09f771..5d494c5cdc0da3189640751b8d191fa939ac3ff5 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -218,7 +218,7 @@ static int __ath12k_core_create_board_name(struct ath12k_base *ab, char *name,
- 					   bool bus_type_mode, bool with_default)
- {
- 	/* strlen(',variant=') + strlen(ab->qmi.target.bdf_ext) */
--	char variant[9 + ATH12K_QMI_BDF_EXT_STR_LENGTH] = { 0 };
-+	char variant[9 + ATH12K_QMI_BDF_EXT_STR_LENGTH] = {};
- 
- 	if (with_variant && ab->qmi.target.bdf_ext[0] != '\0')
- 		scnprintf(variant, sizeof(variant), ",variant=%s",
-diff --git a/drivers/net/wireless/ath/ath12k/dbring.c b/drivers/net/wireless/ath/ath12k/dbring.c
-index 788160c84c6868a9ac5134d45079b17ad220ca9b..6604dacea2ae59868d7ae3389f2fc0be561e6d36 100644
---- a/drivers/net/wireless/ath/ath12k/dbring.c
-+++ b/drivers/net/wireless/ath/ath12k/dbring.c
-@@ -2,6 +2,7 @@
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-  * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  */
- 
- #include "core.h"
-@@ -117,7 +118,7 @@ int ath12k_dbring_wmi_cfg_setup(struct ath12k *ar,
- 				struct ath12k_dbring *ring,
- 				enum wmi_direct_buffer_module id)
- {
--	struct ath12k_wmi_pdev_dma_ring_cfg_arg arg = {0};
-+	struct ath12k_wmi_pdev_dma_ring_cfg_arg arg = {};
- 	int ret;
- 
- 	if (id >= WMI_DIRECT_BUF_MAX)
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
-index 23da93afaa5c25e806c9859dbbdd796afd23d78a..16601a8c3644812489bf20b2777906ca699207bc 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.c
-@@ -52,7 +52,7 @@ ath12k_write_simulate_fw_crash(struct file *file,
- 	struct ath12k_base *ab = file->private_data;
- 	struct ath12k_pdev *pdev;
- 	struct ath12k *ar = NULL;
--	char buf[32] = {0};
-+	char buf[32] = {};
- 	int i, ret;
- 	ssize_t rc;
- 
-@@ -816,7 +816,7 @@ static ssize_t ath12k_write_extd_rx_stats(struct file *file,
- 					  size_t count, loff_t *ppos)
- {
- 	struct ath12k *ar = file->private_data;
--	struct htt_rx_ring_tlv_filter tlv_filter = {0};
-+	struct htt_rx_ring_tlv_filter tlv_filter = {};
- 	u32 ring_id, rx_filter = 0;
- 	bool enable;
- 	int ret, i;
-@@ -1217,7 +1217,7 @@ void ath12k_debugfs_pdev_create(struct ath12k_base *ab)
- void ath12k_debugfs_soc_create(struct ath12k_base *ab)
- {
- 	bool dput_needed;
--	char soc_name[64] = { 0 };
-+	char soc_name[64] = {};
- 	struct dentry *debugfs_ath12k;
- 
- 	debugfs_ath12k = debugfs_lookup("ath12k", NULL);
-@@ -1470,7 +1470,7 @@ void ath12k_debugfs_register(struct ath12k *ar)
- 	struct ath12k_base *ab = ar->ab;
- 	struct ieee80211_hw *hw = ar->ah->hw;
- 	char pdev_name[5];
--	char buf[100] = {0};
-+	char buf[100] = {};
- 
- 	scnprintf(pdev_name, sizeof(pdev_name), "%s%d", "mac", ar->pdev_idx);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index 96c834b987db5711fd496539ff67e201b6ed074a..48b010a1b7566db364d74b1ddf5de900a0b37474 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -2024,7 +2024,7 @@ ath12k_htt_print_stats_string_tlv(const void *tag_buf, u16 tag_len,
- 	u8 i;
- 	u16 index = 0;
- 	u32 datum;
--	char data[ATH12K_HTT_MAX_STRING_LEN] = {0};
-+	char data[ATH12K_HTT_MAX_STRING_LEN] = {};
- 
- 	tag_len = tag_len >> 2;
- 
-@@ -3081,7 +3081,7 @@ ath12k_htt_print_ul_mumimo_trig_stats(const void *tag_buf, u16 tag_len,
- 				      struct debug_htt_stats_req *stats_req)
- {
- 	const struct ath12k_htt_rx_ul_mumimo_trig_stats_tlv *htt_stats_buf = tag_buf;
--	char str_buf[ATH12K_HTT_MAX_STRING_LEN] = {0};
-+	char str_buf[ATH12K_HTT_MAX_STRING_LEN] = {};
- 	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
- 	u32 len = stats_req->buf_len;
- 	u8 *buf = stats_req->buf;
-@@ -3642,7 +3642,7 @@ ath12k_htt_print_dlpager_stats_tlv(const void *tag_buf, u16 tag_len,
- 	u8 *buf = stats_req->buf;
- 	u8 pg_locked;
- 	u8 pg_unlock;
--	char str_buf[ATH12K_HTT_MAX_STRING_LEN] = {0};
-+	char str_buf[ATH12K_HTT_MAX_STRING_LEN] = {};
- 
- 	if (tag_len < sizeof(*stat_buf))
- 		return;
-@@ -5923,7 +5923,7 @@ static ssize_t ath12k_write_htt_stats_type(struct file *file,
- {
- 	struct ath12k *ar = file->private_data;
- 	enum ath12k_dbg_htt_ext_stats_type type;
--	unsigned int cfg_param[4] = {0};
-+	unsigned int cfg_param[4] = {};
- 	const int size = 32;
- 	int num_args;
- 
-@@ -5973,7 +5973,7 @@ static int ath12k_debugfs_htt_stats_req(struct ath12k *ar)
- 	enum ath12k_dbg_htt_ext_stats_type type = stats_req->type;
- 	u64 cookie;
- 	int ret, pdev_id;
--	struct htt_ext_stats_cfg_params cfg_params = { 0 };
-+	struct htt_ext_stats_cfg_params cfg_params = {};
- 
- 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
- 
-@@ -6112,7 +6112,7 @@ static ssize_t ath12k_write_htt_stats_reset(struct file *file,
- {
- 	struct ath12k *ar = file->private_data;
- 	enum ath12k_dbg_htt_ext_stats_type type;
--	struct htt_ext_stats_cfg_params cfg_params = { 0 };
-+	struct htt_ext_stats_cfg_params cfg_params = {};
- 	u8 param_pos;
- 	int ret;
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index d80af435959a8cd0e84f6e2bce89473331bd7f72..d6435dad61a11175fc6cd55004b9a479e2e6621c 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -242,7 +242,7 @@ int ath12k_dp_srng_setup(struct ath12k_base *ab, struct dp_srng *ring,
- 			 enum hal_ring_type type, int ring_num,
- 			 int mac_id, int num_entries)
- {
--	struct hal_srng_params params = { 0 };
-+	struct hal_srng_params params = {};
- 	int entry_sz = ath12k_hal_srng_get_entrysize(ab, type);
- 	int max_entries = ath12k_hal_srng_get_max_entries(ab, type);
- 	int ret;
-@@ -1084,8 +1084,8 @@ int ath12k_dp_pdev_alloc(struct ath12k_base *ab)
- 
- int ath12k_dp_htt_connect(struct ath12k_dp *dp)
- {
--	struct ath12k_htc_svc_conn_req conn_req = {0};
--	struct ath12k_htc_svc_conn_resp conn_resp = {0};
-+	struct ath12k_htc_svc_conn_req conn_req = {};
-+	struct ath12k_htc_svc_conn_resp conn_resp = {};
- 	int status;
- 
- 	conn_req.ep_ops.ep_tx_complete = ath12k_dp_htt_htc_tx_complete;
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 34072ee5b1ec2a3d11f7cbbecd824b47e3c25359..8ab91273592c826cdd3c39fb9157dc853b2722e5 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -671,7 +671,7 @@ static int ath12k_dp_reo_cmd_send(struct ath12k_base *ab, struct ath12k_dp_rx_ti
- static void ath12k_dp_reo_cache_flush(struct ath12k_base *ab,
- 				      struct ath12k_dp_rx_tid *rx_tid)
- {
--	struct ath12k_hal_reo_cmd cmd = {0};
-+	struct ath12k_hal_reo_cmd cmd = {};
- 	unsigned long tot_desc_sz, desc_sz;
- 	int ret;
- 
-@@ -828,7 +828,7 @@ static void ath12k_peer_rx_tid_qref_reset(struct ath12k_base *ab, u16 peer_id, u
- void ath12k_dp_rx_peer_tid_delete(struct ath12k *ar,
- 				  struct ath12k_peer *peer, u8 tid)
- {
--	struct ath12k_hal_reo_cmd cmd = {0};
-+	struct ath12k_hal_reo_cmd cmd = {};
- 	struct ath12k_dp_rx_tid *rx_tid = &peer->rx_tid[tid];
- 	int ret;
- 
-@@ -939,7 +939,7 @@ static int ath12k_peer_rx_tid_reo_update(struct ath12k *ar,
- 					 u32 ba_win_sz, u16 ssn,
- 					 bool update_ssn)
- {
--	struct ath12k_hal_reo_cmd cmd = {0};
-+	struct ath12k_hal_reo_cmd cmd = {};
- 	int ret;
- 
- 	cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
-@@ -1204,7 +1204,7 @@ int ath12k_dp_rx_peer_pn_replay_config(struct ath12k_link_vif *arvif,
- {
- 	struct ath12k *ar = arvif->ar;
- 	struct ath12k_base *ab = ar->ab;
--	struct ath12k_hal_reo_cmd cmd = {0};
-+	struct ath12k_hal_reo_cmd cmd = {};
- 	struct ath12k_peer *peer;
- 	struct ath12k_dp_rx_tid *rx_tid;
- 	u8 tid;
-@@ -2735,7 +2735,7 @@ static void ath12k_dp_rx_process_received_packets(struct ath12k_base *ab,
- 						  int ring_id)
- {
- 	struct ath12k_hw_group *ag = ab->ag;
--	struct ieee80211_rx_status rx_status = {0};
-+	struct ieee80211_rx_status rx_status = {};
- 	struct ath12k_skb_rxcb *rxcb;
- 	struct sk_buff *msdu;
- 	struct ath12k *ar;
-@@ -3030,7 +3030,7 @@ static int ath12k_dp_rx_h_michael_mic(struct crypto_shash *tfm, u8 *key,
- 				      size_t data_len, u8 *mic)
- {
- 	SHASH_DESC_ON_STACK(desc, tfm);
--	u8 mic_hdr[16] = {0};
-+	u8 mic_hdr[16] = {};
- 	u8 tid = 0;
- 	int ret;
- 
-@@ -3999,7 +3999,7 @@ static void ath12k_dp_rx_wbm_err(struct ath12k *ar,
- 				 struct sk_buff_head *msdu_list)
- {
- 	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
--	struct ieee80211_rx_status rxs = {0};
-+	struct ieee80211_rx_status rxs = {};
- 	struct ath12k_dp_rx_info rx_info;
- 	bool drop = true;
- 
-@@ -4346,7 +4346,7 @@ void ath12k_dp_rx_pdev_free(struct ath12k_base *ab, int mac_id)
- int ath12k_dp_rxdma_ring_sel_config_qcn9274(struct ath12k_base *ab)
- {
- 	struct ath12k_dp *dp = &ab->dp;
--	struct htt_rx_ring_tlv_filter tlv_filter = {0};
-+	struct htt_rx_ring_tlv_filter tlv_filter = {};
- 	u32 ring_id;
- 	int ret;
- 	u32 hal_rx_desc_sz = ab->hal.hal_desc_sz;
-@@ -4387,7 +4387,7 @@ int ath12k_dp_rxdma_ring_sel_config_qcn9274(struct ath12k_base *ab)
- int ath12k_dp_rxdma_ring_sel_config_wcn7850(struct ath12k_base *ab)
- {
- 	struct ath12k_dp *dp = &ab->dp;
--	struct htt_rx_ring_tlv_filter tlv_filter = {0};
-+	struct htt_rx_ring_tlv_filter tlv_filter = {};
- 	u32 ring_id;
- 	int ret = 0;
- 	u32 hal_rx_desc_sz = ab->hal.hal_desc_sz;
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index d79c2ff7795228c71358cf06a0a6c8bd219d4a87..abc84ca8467a21827fc9caeb44d7e2d16e39d835 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -225,7 +225,7 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
- {
- 	struct ath12k_base *ab = ar->ab;
- 	struct ath12k_dp *dp = &ab->dp;
--	struct hal_tx_info ti = {0};
-+	struct hal_tx_info ti = {};
- 	struct ath12k_tx_desc_info *tx_desc;
- 	struct ieee80211_tx_info *info = IEEE80211_SKB_CB(skb);
- 	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB(skb);
-@@ -659,7 +659,7 @@ ath12k_dp_tx_process_htt_tx_complete(struct ath12k_base *ab, void *desc,
- 				     struct ath12k_tx_desc_params *desc_params)
- {
- 	struct htt_tx_wbm_completion *status_desc;
--	struct ath12k_dp_htt_wbm_tx_status ts = {0};
-+	struct ath12k_dp_htt_wbm_tx_status ts = {};
- 	enum hal_wbm_htt_tx_comp_status wbm_status;
- 	u16 peer_id;
- 
-@@ -705,7 +705,7 @@ static void ath12k_dp_tx_update_txcompl(struct ath12k *ar, struct hal_tx_status
- 	struct ieee80211_sta *sta;
- 	struct ath12k_sta *ahsta;
- 	struct ath12k_link_sta *arsta;
--	struct rate_info txrate = {0};
-+	struct rate_info txrate = {};
- 	u16 rate, ru_tones;
- 	u8 rate_idx = 0;
- 	int ret;
-@@ -1001,7 +1001,7 @@ void ath12k_dp_tx_completion_handler(struct ath12k_base *ab, int ring_id)
- 	int hal_ring_id = dp->tx_ring[ring_id].tcl_comp_ring.ring_id;
- 	struct hal_srng *status_ring = &ab->hal.srng_list[hal_ring_id];
- 	struct ath12k_tx_desc_info *tx_desc = NULL;
--	struct hal_tx_status ts = { 0 };
-+	struct hal_tx_status ts = {};
- 	struct ath12k_tx_desc_params desc_params;
- 	struct dp_tx_ring *tx_ring = &dp->tx_ring[ring_id];
- 	struct hal_wbm_release_ring *desc;
-@@ -1571,7 +1571,7 @@ int ath12k_dp_tx_htt_monitor_mode_ring_config(struct ath12k *ar, bool reset)
- int ath12k_dp_tx_htt_rx_monitor_mode_ring_config(struct ath12k *ar, bool reset)
- {
- 	struct ath12k_base *ab = ar->ab;
--	struct htt_rx_ring_tlv_filter tlv_filter = {0};
-+	struct htt_rx_ring_tlv_filter tlv_filter = {};
- 	int ret, ring_id, i;
- 
- 	tlv_filter.offset_valid = false;
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 05250fa0600d6bb868b8def2dd9a226dc8fc437f..7f80c72611c8ebb440d23e34da2e050f7195e504 100644
+index bf612079b8bdae18a043913dbfe1ff7cbd9eaa34..97d8b4e287fc361516e93c7d32436f07e4728896 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -6375,7 +6375,7 @@ static int ath12k_mac_station_add(struct ath12k *ar,
- 	struct ath12k_base *ab = ar->ab;
- 	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
- 	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
--	struct ath12k_wmi_peer_create_arg peer_param = {0};
-+	struct ath12k_wmi_peer_create_arg peer_param = {};
- 	int ret;
+@@ -13364,16 +13364,12 @@ ath12k_mac_setup_radio_iface_comb(struct ath12k *ar,
+ 	comb[0].beacon_int_infra_match = true;
+ 	comb[0].beacon_int_min_gcd = 100;
  
- 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
-@@ -6719,7 +6719,7 @@ static int ath12k_mac_mlo_sta_set_link_active(struct ath12k_base *ab,
- 					      u8 *mlo_inactive_vdev_lst,
- 					      u8 num_mlo_inactive_vdev)
- {
--	struct wmi_mlo_link_set_active_arg param = {0};
-+	struct wmi_mlo_link_set_active_arg param = {};
- 	u32 entry_idx, entry_offset, vdev_idx;
- 	u8 vdev_id;
+-	if (ar->ab->hw_params->single_pdev_only) {
+-		comb[0].num_different_channels = 2;
+-	} else {
+-		comb[0].num_different_channels = 1;
+-		comb[0].radar_detect_widths = BIT(NL80211_CHAN_WIDTH_20_NOHT) |
+-						BIT(NL80211_CHAN_WIDTH_20) |
+-						BIT(NL80211_CHAN_WIDTH_40) |
+-						BIT(NL80211_CHAN_WIDTH_80) |
+-						BIT(NL80211_CHAN_WIDTH_160);
+-	}
++	comb[0].num_different_channels = 1;
++	comb[0].radar_detect_widths = BIT(NL80211_CHAN_WIDTH_20_NOHT) |
++				      BIT(NL80211_CHAN_WIDTH_20) |
++				      BIT(NL80211_CHAN_WIDTH_40) |
++				      BIT(NL80211_CHAN_WIDTH_80) |
++				      BIT(NL80211_CHAN_WIDTH_160);
  
-@@ -6781,8 +6781,8 @@ static int ath12k_mac_mlo_sta_update_link_active(struct ath12k_base *ab,
- 						 struct ieee80211_hw *hw,
- 						 struct ath12k_vif *ahvif)
- {
--	u8 mlo_vdev_id_lst[IEEE80211_MLD_MAX_NUM_LINKS] = {0};
--	u32 mlo_freq_list[IEEE80211_MLD_MAX_NUM_LINKS] = {0};
-+	u8 mlo_vdev_id_lst[IEEE80211_MLD_MAX_NUM_LINKS] = {};
-+	u32 mlo_freq_list[IEEE80211_MLD_MAX_NUM_LINKS] = {};
- 	unsigned long links = ahvif->links_map;
- 	enum wmi_mlo_link_force_reason reason;
- 	struct ieee80211_chanctx_conf *conf;
-@@ -7519,7 +7519,7 @@ static struct ieee80211_sta_ht_cap
- ath12k_create_ht_cap(struct ath12k *ar, u32 ar_ht_cap, u32 rate_cap_rx_chainmask)
- {
- 	int i;
--	struct ieee80211_sta_ht_cap ht_cap = {0};
-+	struct ieee80211_sta_ht_cap ht_cap = {};
- 	u32 ar_vht_cap = ar->pdev->cap.vht_cap;
- 
- 	if (!(ar_ht_cap & WMI_HT_CAP_ENABLED))
-@@ -7675,7 +7675,7 @@ static struct ieee80211_sta_vht_cap
- ath12k_create_vht_cap(struct ath12k *ar, u32 rate_cap_tx_chainmask,
- 		      u32 rate_cap_rx_chainmask)
- {
--	struct ieee80211_sta_vht_cap vht_cap = {0};
-+	struct ieee80211_sta_vht_cap vht_cap = {};
- 	u16 txmcs_map, rxmcs_map;
- 	int i;
- 
-@@ -9682,8 +9682,8 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
- 	struct ieee80211_hw *hw = ah->hw;
- 	struct ath12k_vif *ahvif = arvif->ahvif;
- 	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(ahvif);
--	struct ath12k_wmi_vdev_create_arg vdev_arg = {0};
--	struct ath12k_wmi_peer_create_arg peer_param = {0};
-+	struct ath12k_wmi_vdev_create_arg vdev_arg = {};
-+	struct ath12k_wmi_peer_create_arg peer_param = {};
- 	struct ieee80211_bss_conf *link_conf = NULL;
- 	u32 param_id, param_value;
- 	u16 nss;
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index b4e7e77518dd7750cac5b7da04e643aacc74680d..c729d5526c753d2b7b7542b6f2a145e71b335a43 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -48,7 +48,7 @@
- static const struct pci_device_id ath12k_pci_id_table[] = {
- 	{ PCI_VDEVICE(QCOM, QCN9274_DEVICE_ID) },
- 	{ PCI_VDEVICE(QCOM, WCN7850_DEVICE_ID) },
--	{0}
-+	{}
- };
- 
- MODULE_DEVICE_TABLE(pci, ath12k_pci_id_table);
-@@ -1353,7 +1353,7 @@ static void ath12k_pci_coredump_download(struct ath12k_base *ab)
- 	struct ath12k_tlv_dump_data *dump_tlv;
- 	size_t hdr_len = sizeof(*file_data);
- 	void *buf;
--	u32 dump_seg_sz[FW_CRASH_DUMP_TYPE_MAX] = { 0 };
-+	u32 dump_seg_sz[FW_CRASH_DUMP_TYPE_MAX] = {};
- 
- 	ath12k_mhi_coredump(mhi_ctrl, false);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index a2a493928d0825b3791b0fd4033e568eca296da0..da85c28ec35568ca5c81a49e565c19cff195bac7 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -7039,7 +7039,7 @@ static void ath12k_vdev_stopped_event(struct ath12k_base *ab, struct sk_buff *sk
- 
- static void ath12k_mgmt_rx_event(struct ath12k_base *ab, struct sk_buff *skb)
- {
--	struct ath12k_wmi_mgmt_rx_arg rx_ev = {0};
-+	struct ath12k_wmi_mgmt_rx_arg rx_ev = {};
+ 	return 0;
+ }
+@@ -13456,25 +13452,42 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
+ 	struct ieee80211_iface_combination *combinations, *comb;
+ 	struct wiphy *wiphy = ah->hw->wiphy;
+ 	struct wiphy_radio *radio;
++	int n_combinations = 1;
  	struct ath12k *ar;
- 	struct ieee80211_rx_status *status = IEEE80211_SKB_RXCB(skb);
- 	struct ieee80211_hdr *hdr;
-@@ -7158,7 +7158,7 @@ static void ath12k_mgmt_rx_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 	int i, ret;
  
- static void ath12k_mgmt_tx_compl_event(struct ath12k_base *ab, struct sk_buff *skb)
- {
--	struct wmi_mgmt_tx_compl_event tx_compl_param = {0};
-+	struct wmi_mgmt_tx_compl_event tx_compl_param = {};
- 	struct ath12k *ar;
+-	combinations = kzalloc(sizeof(*combinations), GFP_KERNEL);
+-	if (!combinations)
+-		return -ENOMEM;
+-
+ 	if (ah->num_radio == 1) {
+-		ret = ath12k_mac_setup_radio_iface_comb(&ah->radio[0],
+-							combinations);
++		ar = &ah->radio[0];
++
++		if (ar->ab->hw_params->single_pdev_only)
++			n_combinations = 2;
++
++		combinations = kcalloc(n_combinations, sizeof(*combinations),
++				       GFP_KERNEL);
++		if (!combinations)
++			return -ENOMEM;
++
++		ret = ath12k_mac_setup_radio_iface_comb(ar, combinations);
+ 		if (ret) {
+ 			ath12k_hw_warn(ah, "failed to setup radio interface combinations for one radio: %d",
+ 				       ret);
+ 			goto err_free_combinations;
+ 		}
  
- 	if (ath12k_pull_mgmt_tx_compl_param_tlv(ab, skb, &tx_compl_param) != 0) {
-@@ -7216,7 +7216,7 @@ static struct ath12k *ath12k_get_ar_on_scan_state(struct ath12k_base *ab,
- static void ath12k_scan_event(struct ath12k_base *ab, struct sk_buff *skb)
- {
- 	struct ath12k *ar;
--	struct wmi_scan_event scan_ev = {0};
-+	struct wmi_scan_event scan_ev = {};
++		if (ar->ab->hw_params->single_pdev_only) {
++			comb = combinations + 1;
++			memcpy(comb, combinations, sizeof(*comb));
++			comb->num_different_channels = 2;
++			comb->radar_detect_widths = 0;
++		}
++
+ 		goto out;
+ 	}
  
- 	if (ath12k_pull_scan_ev(ab, skb, &scan_ev) != 0) {
- 		ath12k_warn(ab, "failed to extract scan event");
-@@ -7393,7 +7393,7 @@ static void ath12k_roam_event(struct ath12k_base *ab, struct sk_buff *skb)
++	combinations = kcalloc(n_combinations, sizeof(*combinations), GFP_KERNEL);
++	if (!combinations)
++		return -ENOMEM;
++
+ 	/* there are multiple radios */
  
- static void ath12k_chan_info_event(struct ath12k_base *ab, struct sk_buff *skb)
- {
--	struct wmi_chan_info_event ch_info_ev = {0};
-+	struct wmi_chan_info_event ch_info_ev = {};
- 	struct ath12k *ar;
- 	struct survey_info *survey;
- 	int idx;
-@@ -7541,7 +7541,7 @@ ath12k_pdev_bss_chan_info_event(struct ath12k_base *ab, struct sk_buff *skb)
- static void ath12k_vdev_install_key_compl_event(struct ath12k_base *ab,
- 						struct sk_buff *skb)
- {
--	struct wmi_vdev_install_key_complete_arg install_key_compl = {0};
-+	struct wmi_vdev_install_key_complete_arg install_key_compl = {};
- 	struct ath12k *ar;
+ 	radio = kcalloc(ah->num_radio, sizeof(*radio), GFP_KERNEL);
+@@ -13517,7 +13530,7 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
  
- 	if (ath12k_pull_vdev_install_key_compl_ev(ab, skb, &install_key_compl) != 0) {
-@@ -7646,7 +7646,7 @@ static int ath12k_service_available_event(struct ath12k_base *ab, struct sk_buff
+ out:
+ 	wiphy->iface_combinations = combinations;
+-	wiphy->n_iface_combinations = 1;
++	wiphy->n_iface_combinations = n_combinations;
  
- static void ath12k_peer_assoc_conf_event(struct ath12k_base *ab, struct sk_buff *skb)
- {
--	struct wmi_peer_assoc_conf_arg peer_assoc_conf = {0};
-+	struct wmi_peer_assoc_conf_arg peer_assoc_conf = {};
- 	struct ath12k *ar;
+ 	return 0;
  
- 	if (ath12k_pull_peer_assoc_conf_ev(ab, skb, &peer_assoc_conf) != 0) {
-@@ -8592,7 +8592,7 @@ ath12k_wmi_pdev_temperature_event(struct ath12k_base *ab,
- 				  struct sk_buff *skb)
- {
- 	struct ath12k *ar;
--	struct wmi_pdev_temperature_event ev = {0};
-+	struct wmi_pdev_temperature_event ev = {};
- 
- 	if (ath12k_pull_pdev_temp_ev(ab, skb, &ev) != 0) {
- 		ath12k_warn(ab, "failed to extract pdev temperature event");
 
 ---
-base-commit: d4bc7beefd076ac6f6051558b2152d152269273e
-change-id: 20250718-ath12k-zero-brace-19ac3ded1cb1
+base-commit: 5a1ad8faaa165028dfcce650e20868c8fb7148cb
+change-id: 20250718-ath12k-dfs-82472cfb996d
+
+Best regards,
+-- 
+Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
 
