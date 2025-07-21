@@ -4,120 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDD37C83F1A
-	for <ath12k@archiver.kernel.org>; Mon, 21 Jul 2025 21:39:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38029C83F25
+	for <ath12k@archiver.kernel.org>; Mon, 21 Jul 2025 21:39:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7abZbcTESodIJ9OoUmT0BUOmr8LOHDjD7rgRNFOCTgo=; b=E3B4X3Q8/McxUSqXiOkv7a/iYK
-	VxXwNOp2D6+3Z/LJo0xyx85snARXCdXEB6fvwb2rYY98LU1jegI0NBb+/3zgifMKgylA235k4K0lr
-	63LY27zg1t/eNk9M5Am4CvocuOLx7tIyRLk8/fbNVOJHjWc0+fYSgRnnSV5BDIiQxy45clRKwlF84
-	felElwdc43rF+/T/x+xKV3hO2Uw1QF9LjWuTbS7mFaazwr5329g8lVLey/GvZp/grqrX9NUABHz1z
-	7JLpdFBp/hJDnRz9iyPqf7wu73m5CCMaf7Jn2aFEY+UDADFWH4QPHNwmZbkyQP2eJRGPqkFQYdSZq
-	JlNugkfQ==;
+	bh=UpWXbETewfbjKdm/uesf4U6sOxQjAz10hl/r+X1ya68=; b=zrPaztCd0yIHeMcVYFar0kfk0b
+	BArROXziYrWJHVcy0MHPuefGzXe2BwkdP/vuOQBupMf8BwWgixByR545PXmbfzIK9S63QhaTr4mvz
+	bCXdqM01j4zh19IjxClEd4E6dTFHtcM29JnxFH14m6J8lRxgfc6zCI90EgstmAkxcAqwxUJ6LRecw
+	Af8MmXZ1RaYt4+aSKx8BzxHZfh2TwvXXVW+e7ZorVanfM6B4IW8Auee0ASY99bHDHiZB4buiq+jWB
+	04zwVLatfNgdQOa9dBIoRCyvENy34kf7q+qCiv7ZdFjEfU11Rx/gyuJncE8fwsuubIClscc/qAoiZ
+	/L2AHwrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udyES-00000000kfZ-2KR3;
+	id 1udyES-00000000kfs-48BP;
 	Mon, 21 Jul 2025 21:39:36 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udyC0-00000000kCS-2PpZ
+	id 1udyC0-00000000kCU-2wOu
 	for ath12k@lists.infradead.org;
 	Mon, 21 Jul 2025 21:37:05 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56LFT6SA016274
-	for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 21:37:02 GMT
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56LH1w9j015983
+	for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 21:37:03 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	7abZbcTESodIJ9OoUmT0BUOmr8LOHDjD7rgRNFOCTgo=; b=GbjF8ODyBCI0+lJX
-	iTCO53woorPHKXZU6fMUrbk+bMcJWVNcLelAJJojfa9miwJJLHIA9lcIxEU44AJr
-	9BgSEEjXv+rW55YT7tdIa22zxiAsTp/K+4nHRIGjnO5ck/pM7Xf3Wgjm/nqW8tI/
-	fwX0w0fGniOazwWebxCmEMy18XoRtatJCJIi0J9KNN4csJ+q+b+Qmct4BQSw3xmF
-	1gdZlBPSTm4QiftnnsKgv8jrxjOEUlmEZaxCKal5iL0njjHT6PO/9GI3CLfC9Wyp
-	gMZH3K2KLo0f+m3vyTzHNOvubWw8iHNb44XsxIxqo8KcEoeVekw31ogGNZ6D1sQs
-	hgTq9w==
-Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48048ry9wm-1
+	UpWXbETewfbjKdm/uesf4U6sOxQjAz10hl/r+X1ya68=; b=flpSvoJQUeUGunIB
+	A6gzfI9CR0ERvd1RfN/fPXGA8hw6hYO1uGiY+JNZyvdW5wlgFnV8Wfk7kBHMlGg8
+	Yor4m5XfY6n4KJKFGM+KmWqHfC70wCuZBR9+NZTrBD7GTj8gOUDPVXDNLJ2YKjD8
+	nuGIyCpitDDZsoXSxxmglNYQAkeLZ3x5z0oty7xZ4xmfYJWjOXmKRyvSXC2AVPJi
+	TDMthvACz2D+mD4OyMDN8EbDxh0Jtwo4MR37ac20DPQEIJpNLukoPCtvATX1W0st
+	H14PQj1Y3LJQO2mcaZAP73RTp7L6KC6SQwNyH7Snylbu18j8PSaM1d/2bxpSVKQo
+	DWu+sg==
+Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 480451f3uv-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 21:37:02 +0000 (GMT)
-Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-747ddba7c90so3977731b3a.0
-        for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 14:37:02 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 21:37:03 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-748fd21468cso4212279b3a.1
+        for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 14:37:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1753133821; x=1753738621;
+        d=1e100.net; s=20230601; t=1753133822; x=1753738622;
         h=content-transfer-encoding:mime-version:date:message-id:subject
          :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=7abZbcTESodIJ9OoUmT0BUOmr8LOHDjD7rgRNFOCTgo=;
-        b=S/UUV2D3D6lCUJcvavCq1cqsYRvPyi4Lx+CLRpLAOWtZn3PMbNgAblFF+VvNdYFufY
-         vmUEQvXf0kJnKiMBxuEUAfyhneNupHz4Ej8x5l/LzPO3qVYEG4CAQeb41VBNTAix0BES
-         QipMZezc+G6FY1g0NMSSGGqm8iuketQed7wDDYXHIEQrGI7mahbj9B0Ve9LdCtaBBCRe
-         xGchuPrgxE55Ta1lgOTEgyS5tr/NE6hZQV9sZ3s9YQtAriUhzNL+lFLwvVCeRrhLAeFB
-         MBvWJbm0eAgC5EaF8DFS9+LBYTendWY3ZVJtk2aymbl1G4i4TE7NI1HnSE2q5FQqAneM
-         aj8Q==
-X-Forwarded-Encrypted: i=1; AJvYcCVoN60qyWe8epc7BxPCauKLJ88lWanGCscp+uPVH3Owy/kUE8YGD4WJCA6SsVtK/BZs1A6sBk8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzjctEEw5Ygexddax/kybPmzb62XXCz/kOIqmBBpR7cVrrUnwL3
-	SNeYQxKF973NVCY4I7POTgVNRI6S5frD/Mm1+TnIkAfzppvACIx5vrFbnF1LKanELcq2oq606dX
-	jaVCFY+KkZiawn7wY9fgSLcXwCQ659VVBp/O1nzF3xDuL50jDDLds/MRnEkLd3FhC
-X-Gm-Gg: ASbGncsiUyHgNlrjE+H55neftHe4fBcLDf/RvLfM5IwGD2rMZAte8weboRIpHrkcX1p
-	MQzwePiNXzkHRhZXYulRaYHcpzL9sHbbfN5gjBZcCoHe6C1oyxKKQtH+LmKVo//gkGLvutJEDAW
-	jmzXGth+DPw1OiWnTnr3KDkKwkzSYAxQCg1HrgxhdwqnITyR3rZGLGwl6ZZ/BEzj3L0NkB92r09
-	D5t7kg+G7lYfr2wTl/m7MKAOzDsSpWYZ6LH8r7rhtY9Gs68Ew4/Czu6eXmyQmacf9csaSBmQbuJ
-	ELMao7whRhC0zs1YKpx0mwDmqIdx2bNow75rFkvyq0Vw6mFgNmlNzDGVa93L2bdFT5EK8k2Ys4C
-	a
-X-Received: by 2002:a05:6a21:1fc8:b0:215:df90:b298 with SMTP id adf61e73a8af0-2381245779bmr31469573637.26.1753133821483;
-        Mon, 21 Jul 2025 14:37:01 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGGYkw343g7WZUxu1HxpQSVeE9euVt2TTteLrojF1e3zmfB21RbbR6FxS3LgAOr3YIe29EkOQ==
-X-Received: by 2002:a05:6a21:1fc8:b0:215:df90:b298 with SMTP id adf61e73a8af0-2381245779bmr31469554637.26.1753133821101;
+        bh=UpWXbETewfbjKdm/uesf4U6sOxQjAz10hl/r+X1ya68=;
+        b=G1/KoqViom9gLPIGKnDm57A/fXSubT0mX1Ytx1RCzd5rdxeUt0IpTO8Lff7eiARpS4
+         FNQD75jDfnDVIhYD4fLzi0l68I6ATcMGFTXzbDFVWpRU/OKZAYUvpv/LBwDJqPz1/3g2
+         +A4yux3fWRiJ5h4XkPxxb0Dg2Z4xPeOyQcBHyN43cikyrLVVOGp/gMn5kJaYBoc7Li0A
+         RWtQcjVuDCPC1DRpLQYDC6cRr9EuU408H8Rte+F+vpvCZ+uvhbOI2YaaGNKs2RwQ8OLi
+         kaX/q1H670IMi+/RuhXcIRm8Wvxh0bg5nQIKl0MW496bgnEVPwGLuM4qUQ65LwXYo1dY
+         zkaw==
+X-Gm-Message-State: AOJu0Yy1jy3JQUF0VK+LtKu6Z72AGTD+XFdpNDlhrbrGNN+Zl3W3u7nI
+	9Pbtp2u2D80lBSJG+QbJr9JPBV9tXKPv/BsJ0nrmXgL2+cuPKNdjQtfsM0tkKSWdU4rRteGP1qJ
+	g2zjcY6b0/gKCrSp0N79dSUyo+SaGf8YocfwTA9EaxKBc/QsX0/Lxl75X1DxpYukD
+X-Gm-Gg: ASbGnctPd8FvQJyGFPXZoTDIhhueR877vmLZjXeegXWjKkix6PtTPlQdIBEjvv1lKvd
+	U/yxTISjgCz0gbdCU9Gmv0w0ts6h7qkzndMhtnk4aU3FeWADKd+zHYAu+gQrUCtn8Kw6P62Wdyd
+	DpcWxbvKNW2JBPsohMdjdMMk41ol5Mkom5CV2DJSqJyoedgSozidFCD/tvFI2O3aXPWaJfBvQW/
+	WLza7tuW6t2J1CZUM0h5au+mzaehWZBX0WTx9lqtl2jaOUlf2mbclBVG9u4C1WJzwNtRspUbpVU
+	uGXxCD9O7g/0EX8DVfUMsnP0DbDuFRTAdPMr18gbUmCrqQnmwXDDC+wylbZY527l+9az/OGTitF
+	s
+X-Received: by 2002:a05:6a00:1410:b0:748:f41d:69d2 with SMTP id d2e1a72fcca58-756e7acfa48mr32771117b3a.4.1753133822339;
+        Mon, 21 Jul 2025 14:37:02 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEPUG2SMRJgY+/lzdESBOLJ/M6DzqEnQrb4E4X1LflHnB7zeYCzcFGFzGjBSw/owjRxRJ4aew==
+X-Received: by 2002:a05:6a00:1410:b0:748:f41d:69d2 with SMTP id d2e1a72fcca58-756e7acfa48mr32771086b3a.4.1753133821844;
         Mon, 21 Jul 2025 14:37:01 -0700 (PDT)
 Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-759cbc68046sm6201934b3a.151.2025.07.21.14.37.00
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-759cbc68046sm6201934b3a.151.2025.07.21.14.37.01
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 21 Jul 2025 14:37:00 -0700 (PDT)
+        Mon, 21 Jul 2025 14:37:01 -0700 (PDT)
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: Jeff Johnson <jjohnson@kernel.org>,
-        Baochen Qiang <quic_bqiang@quicinc.com>,
-        Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org, Mihai Moldovan <ionic@ionic.de>
-In-Reply-To: <20250721-ath12k-dfs-v1-1-065c31454f91@oss.qualcomm.com>
-References: <20250721-ath12k-dfs-v1-1-065c31454f91@oss.qualcomm.com>
-Subject: Re: [PATCH ath-next] wifi: ath12k: bring DFS support back for
- WCN7850
-Message-Id: <175313382031.971667.11294209028477002334.b4-ty@oss.qualcomm.com>
-Date: Mon, 21 Jul 2025 14:37:00 -0700
+To: ath12k@lists.infradead.org, Sarika Sharma <quic_sarishar@quicinc.com>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20250721061749.886732-1-quic_sarishar@quicinc.com>
+References: <20250721061749.886732-1-quic_sarishar@quicinc.com>
+Subject: Re: [PATCH ath-next] wifi: ath12k: Correct tid cleanup when tid
+ setup fails
+Message-Id: <175313382123.971667.15852637463136449839.b4-ty@oss.qualcomm.com>
+Date: Mon, 21 Jul 2025 14:37:01 -0700
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.2
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzIxMDE5MSBTYWx0ZWRfX96aEMzSiu7sO
- rQAJ5msIiyaCE3YmQ9JL+ixNy4q6MiW2u21koKiWB2yv/64ljQsGBYLbvG1E/ZMKJC5QJzN4Wuo
- fNNT+gkS2HCmOw3HBD5RjQbBlzCx4qahA73wAjS5LaxY8IBlRrO542XZ9eeGpiYEzSWYKheh3MR
- idGBahDt+lNrf2itKN6q56I/wpHxx2aDr+WTd4uPk7653jX+fjq9SxaqJ7f6XrKMKdhBHYLO1b7
- sihgn3YoQlcwmfo3xpu2xgYkwWJRGEFhC0k40xo6POb1Y1YUD9VIWLafAV1Y05Jh3wWPXRknap0
- vmTBNDf9A7c22b0Cnp7oAUBQ3Gt14AtK9OtWYC0yEsp9UN1+WRDmBcz8WwCY4p8e5LXENA8nzwO
- hACjSubVm6sIrY4LkZlBTXMGBzgRhFA8a19B2UfjFTK3HerfMLlABpUWWUVApPb7A8PaQjyk
-X-Proofpoint-ORIG-GUID: nFZhYsWmi_BIhwOzgiuQ0D6B8a_QUcnr
-X-Proofpoint-GUID: nFZhYsWmi_BIhwOzgiuQ0D6B8a_QUcnr
-X-Authority-Analysis: v=2.4 cv=OPUn3TaB c=1 sm=1 tr=0 ts=687eb2fe cx=c_pps
- a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=Erv8aaIZ6ZqwiAegtCIA:9
- a=QEXdDO2ut3YA:10 a=IoOABgeZipijB_acs4fv:22
+X-Authority-Analysis: v=2.4 cv=EIMG00ZC c=1 sm=1 tr=0 ts=687eb2ff cx=c_pps
+ a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=grRxx7Cr2Ne4EJ9EsKUA:9
+ a=QEXdDO2ut3YA:10 a=zZCYzV9kfG8A:10 a=2VI0MkxyNR6bbpdq8BZq:22
+X-Proofpoint-ORIG-GUID: l62YLZfoK9Nbj7qVRsh0Rj2Vh57Y3Z2V
+X-Proofpoint-GUID: l62YLZfoK9Nbj7qVRsh0Rj2Vh57Y3Z2V
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzIxMDE5MiBTYWx0ZWRfXzZVxWgddcPcY
+ NiCVWAyqOEbGL1kwtlkLHzp66i5k29QmdzGh840seW4PRKx4mZ/i2g2mOJiuuDg/NBvsE1m4/Jh
+ MOuvaLJGo0H9FPcJhi+nOxf0nEIRCX0L82UYR3nyh5Exuii8lZ8XSCWFzFpcB61eY26akCDe8PK
+ T6YZnbVl7T7mGCh0eQShieB7TraSNrbtjEt65EkagLr2/TIqdj1vCasB9FMCyBKHxD6SLGczTyD
+ GGTQHDVOOHP6gFKOoZ2yaK8XtHyUbet79n9C8wzkLQhwHR6/BeP3gKizqq+pyKgc3wGpKLbK9kB
+ Y8Xlgd6gv2dIoJ66cs102G2kNssS2blnfXsyMSwifVH1fy+UutGkMeI1VbUEofXpehO46vBR37f
+ BcxJ8fQ3UYCpC3zLHvZGXgQrlj1v9+wB9poCR5SbD8cG1FWPDqrCI+5VmeIrACFLm0efhWd0
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-07-21_05,2025-07-21_02,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 clxscore=1015 mlxlogscore=904 lowpriorityscore=0 suspectscore=0
- spamscore=0 mlxscore=0 bulkscore=0 priorityscore=1501 phishscore=0
- malwarescore=0 impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ spamscore=0 impostorscore=0 lowpriorityscore=0 bulkscore=0 adultscore=0
+ priorityscore=1501 mlxlogscore=811 phishscore=0 mlxscore=0 clxscore=1015
+ suspectscore=0 malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507210191
+ definitions=main-2507210192
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250721_143704_734204_0F34F555 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20250721_143704_861730_7D45DC43 
+X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,24 +130,20 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 21 Jul 2025 10:27:26 +0800, Baochen Qiang wrote:
-> Due to the restrict in MAC80211 that DFS (Dynamic Frequency Selection)
-> can't be enabled on multiple channels, commit 176f3009ae59 ("wifi: ath12k:
-> support 2 channels for single pdev device") removes DFS support in order
-> to support 2 channels concurrently, making AP mode not working on DFS
-> channels [1].
-> 
-> Revert portions of that commit to bring DFS back, and add a new
-> combination to support 2-channels concurrency. This is valid because the
-> MAC80211 restrict works on each individual combination, but does not care
-> about them as a whole, as far as DFS is concerned.
+On Mon, 21 Jul 2025 11:47:49 +0530, Sarika Sharma wrote:
+> Currently, if any error occurs during ath12k_dp_rx_peer_tid_setup(),
+> the tid value is already incremented, even though the corresponding
+> TID is not actually allocated. Proceed to
+> ath12k_dp_rx_peer_tid_delete() starting from unallocated tid,
+> which might leads to freeing unallocated TID and cause potential
+> crash or out-of-bounds access.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] wifi: ath12k: bring DFS support back for WCN7850
-      commit: c4825d540f4beb179d552f3aa1f44f8db5095fb6
+[1/1] wifi: ath12k: Correct tid cleanup when tid setup fails
+      commit: 4a2bf707270f897ab8077baee8ed5842a5321686
 
 Best regards,
 -- 
