@@ -4,81 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06BC0C87FCC
-	for <ath12k@archiver.kernel.org>; Mon, 21 Jul 2025 11:39:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C4FAC83F25
+	for <ath12k@archiver.kernel.org>; Mon, 21 Jul 2025 11:47:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	References:Message-ID:In-Reply-To:Subject:cc:To:Date:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=d85V8tn50Lak2XQQ2ZDXE1zMZWWyz+YGnPBomLqfY2Y=; b=thIPzL0BbkxRm+IG1RDjz6NPw+
-	Mhnw3t6fdOk3WDnC6ToW7nTLlyCw2gf2G09oU3S85os0o29x79bcyVGU4pAZcwJWl0HAVSTkFOZwX
-	QCreu6z3V7GcIlSnxese+HtKTRTP8xbDBvWLv+q6u24qNlbL5uiX7dRzKvJF/kgxCWdR0aM08X5Hm
-	X+n8km9JhdhpOchmRPIzG6ed3a1rgZ8R9CDGpgTisHcnnNv5y+KVd8268dBNUY0bME7sbMSGJS7Z+
-	aydLL4wsm+CGxX2t1oDj9yUgzQ7EMYCkxtcfp2M8l5PV2lD+94vXRxCrbpgcH+p8Ja7IKdMpCo1vB
-	okAsrncg==;
+	bh=puqRJIrwDn2Q4ibxL3ZSH95wAcLiyVhUDCFAXoIUBl0=; b=UPKPXXdkkpt8AtF4CIcryWBKTr
+	PXuFBnRI5zrTKiRIUMN1H6QuwfkOgP67mPA0ih/iapZkXhjzH4NJrpeeMLS/8DtaBmSYy6wAQgXfT
+	r/+bRGOebApTD0wZ97Q6xmRqIccWvhxxeIc+Kob0GAc+yHYnLM5Q845zuJY7J1rYyq1aEQ6XfqzdX
+	VJZg8lHhGTLthzhmQOh5adfVaDerEqa8BzKnq7AY+kY5uaNEzDrTQZa7sH0pA5rh36iqtQeavizOe
+	VJ0orrnKI9uj2ryxPSww+mqXpmihzJicr8vUWUwZPDk5PK/kF2P0Bfz8eEvkV5VkctU3i2jAEAWum
+	BpCuI+lQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udorY-0000000H7P2-28Xj;
-	Mon, 21 Jul 2025 11:39:20 +0000
-Received: from mgamail.intel.com ([192.198.163.11])
+	id 1udoz8-0000000HBAM-0QaV;
+	Mon, 21 Jul 2025 11:47:10 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udnSL-0000000Gv3h-1QIH;
-	Mon, 21 Jul 2025 10:09:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1753092553; x=1784628553;
-  h=from:date:to:cc:subject:in-reply-to:message-id:
-   references:mime-version;
-  bh=Tg/4b4h6qnSre5IgdRyMFBoGmhuuaYdECJxsVV1WJdo=;
-  b=TrX/OCkHuhkpRqdCCtZoYF4s6D+Aj+YMj4ep1Grm2knB4BWIdyeT4YIs
-   2czblyYjmY0jbWc/jUzb2+nn8mkkxk7TQTi5PlG4agAoRluX62Kovn9Wb
-   KrrHz0K8BFpIX2l7GPJW7arJG1hmzc8+hmEZOf+j8XK/zNT7Ak4A1hDRc
-   bkTdWj+375rZSKfCuddaQbLSO/YV5SM2nVvHmrTXetVPwEDpCCjqzvA38
-   S+JvqSK9CrjiGt2LAYq29Oj+/mO7/nCogH8FR1xUnOPSk+uS0hHuVjmRy
-   Qww96hkCTc3V3RqH3/yohdEylk6nUUU9t8s2llOue8B9Kmih2apX342z2
-   Q==;
-X-CSE-ConnectionGUID: BMPgKLwtQpy576a8Q94MIg==
-X-CSE-MsgGUID: R5BUs5XjSYaci1Eu+Bd1jQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11498"; a="65871297"
-X-IronPort-AV: E=Sophos;i="6.16,328,1744095600"; 
-   d="scan'208";a="65871297"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Jul 2025 03:09:13 -0700
-X-CSE-ConnectionGUID: sMxoJNNaT4yHMxM6NSHEbg==
-X-CSE-MsgGUID: 0+HhGTpLSaOxpNGsGjeLzQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,328,1744095600"; 
-   d="scan'208";a="162835086"
-Received: from ijarvine-mobl1.ger.corp.intel.com (HELO localhost) ([10.245.245.225])
-  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Jul 2025 03:09:08 -0700
-From: =?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>
-Date: Mon, 21 Jul 2025 13:09:05 +0300 (EEST)
-To: Manivannan Sadhasivam <mani@kernel.org>
-cc: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
-    Jeff Johnson <jjohnson@kernel.org>, 
-    Lorenzo Pieralisi <lpieralisi@kernel.org>, 
-    =?ISO-8859-2?Q?Krzysztof_Wilczy=F1ski?= <kwilczynski@kernel.org>, 
-    Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
-    Nirmal Patel <nirmal.patel@linux.intel.com>, 
-    Jonathan Derrick <jonathan.derrick@linux.dev>, 
-    linux-wireless@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>, 
-    ath12k@lists.infradead.org, ath11k@lists.infradead.org, 
-    ath10k@lists.infradead.org, Bjorn Helgaas <helgaas@kernel.org>, 
-    linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, 
-    Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, 
-    Qiang Yu <qiang.yu@oss.qualcomm.com>
+	id 1udoOG-0000000H2Zm-3snl;
+	Mon, 21 Jul 2025 11:09:06 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 450C05C5CA7;
+	Mon, 21 Jul 2025 11:09:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 672E7C4CEED;
+	Mon, 21 Jul 2025 11:08:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1753096143;
+	bh=FY4CSPRbHnGtUTrzGgop5iipKH10dKMnMwEEENK6YLM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=R2Iwqp4D6Xy2w607ZcBfyGxUQ+ADCXiljXuOVgY7TRQ1Vtoe4yZMtV2AQI/8OfPJo
+	 hjp2e9X9Fgdp7+2qgAU6EnrFv4a7JPofRoSLC9w97/sU7nKtcRsFozt9hAiWW0uoq8
+	 PjRPmclKGh75welK99aYH7ArSh2rUncPqG8m5HDdyrO1+pGL73lOHR1VX7rtjnmDI/
+	 473hR+d7GxtA6mZR4NpRea0GldPHPu/jU/VLfqd2RiA1XyjsySOhjky93KQeFSxIaB
+	 ZwVM+dtWGuy6t74W75lOnMAnkMNKtw0+C2it4xxBL2yv/VaFMvOjl3RZtb6uvTHR0m
+	 VoO21ROhy9bBw==
+Date: Mon, 21 Jul 2025 16:38:52 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Ilpo =?utf-8?B?SsOkcnZpbmVu?= <ilpo.jarvinen@linux.intel.com>
+Cc: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
+	Jeff Johnson <jjohnson@kernel.org>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Bjorn Helgaas <bhelgaas@google.com>, Nirmal Patel <nirmal.patel@linux.intel.com>, 
+	Jonathan Derrick <jonathan.derrick@linux.dev>, linux-wireless@vger.kernel.org, 
+	LKML <linux-kernel@vger.kernel.org>, ath12k@lists.infradead.org, ath11k@lists.infradead.org, 
+	ath10k@lists.infradead.org, Bjorn Helgaas <helgaas@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, 
+	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, Qiang Yu <qiang.yu@oss.qualcomm.com>
 Subject: Re: [PATCH 4/6] wifi: ath12k: Use pci_{enable/disable}_link_state()
  APIs to enable/disable ASPM states
-In-Reply-To: <3q2gqo6ipzyqr7i64yhndtpg4etwep4lgffk7emxluxuhjfya5@vt7czmsgpbuw>
-Message-ID: <52baf40b-41ed-2588-7817-4d8cd859e0d1@linux.intel.com>
-References: <20250716-ath-aspm-fix-v1-0-dd3e62c1b692@oss.qualcomm.com> <20250716-ath-aspm-fix-v1-4-dd3e62c1b692@oss.qualcomm.com> <7a97d075-2e37-5f40-5247-867146938613@linux.intel.com> <3q2gqo6ipzyqr7i64yhndtpg4etwep4lgffk7emxluxuhjfya5@vt7czmsgpbuw>
+Message-ID: <je7sz6lgig3picksxv4ncfjcnnw2sdsp5ja6bwofqjuydhc4v6@b3kavwicxggu>
+References: <20250716-ath-aspm-fix-v1-0-dd3e62c1b692@oss.qualcomm.com>
+ <20250716-ath-aspm-fix-v1-4-dd3e62c1b692@oss.qualcomm.com>
+ <7a97d075-2e37-5f40-5247-867146938613@linux.intel.com>
+ <3q2gqo6ipzyqr7i64yhndtpg4etwep4lgffk7emxluxuhjfya5@vt7czmsgpbuw>
+ <52baf40b-41ed-2588-7817-4d8cd859e0d1@linux.intel.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="8323328-917264169-1753092545=:945"
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <52baf40b-41ed-2588-7817-4d8cd859e0d1@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250721_030913_397651_A0623A81 
-X-CRM114-Status: GOOD (  40.35  )
+X-CRM114-CacheID: sfid-20250721_040905_050775_E95DB0B2 
+X-CRM114-Status: GOOD (  56.40  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,254 +83,238 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-  This message is in MIME format.  The first part should be readable text,
-  while the remaining parts are likely unreadable without MIME-aware tools.
+On Mon, Jul 21, 2025 at 01:09:05PM GMT, Ilpo Järvinen wrote:
+> On Mon, 21 Jul 2025, Manivannan Sadhasivam wrote:
+> > On Mon, Jul 21, 2025 at 11:04:10AM GMT, Ilpo Järvinen wrote:
+> > > On Wed, 16 Jul 2025, Manivannan Sadhasivam via B4 Relay wrote:
+> > > > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > > > 
+> > > > It is not recommended to enable/disable the ASPM states on the back of the
+> > > > PCI core directly using the LNKCTL register. It will break the PCI core's
+> > > > knowledge about the device ASPM states. So use the APIs exposed by the PCI
+> > > > core to enable/disable ASPM states.
+> > > > 
+> > > > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> > > > 
+> > > > Reported-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+> > > > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > > > ---
+> > > >  drivers/net/wireless/ath/ath.h        | 14 ++++++++++++++
+> > > >  drivers/net/wireless/ath/ath12k/pci.c | 10 ++++------
+> > > >  2 files changed, 18 insertions(+), 6 deletions(-)
+> > > > 
+> > > > diff --git a/drivers/net/wireless/ath/ath.h b/drivers/net/wireless/ath/ath.h
+> > > > index 34654f710d8a1e63f65a47d4602e2035262a4d9e..ef685123b66bf4f41428fec67c1967f242a9ef27 100644
+> > > > --- a/drivers/net/wireless/ath/ath.h
+> > > > +++ b/drivers/net/wireless/ath/ath.h
+> > > > @@ -21,6 +21,8 @@
+> > > >  #include <linux/skbuff.h>
+> > > >  #include <linux/if_ether.h>
+> > > >  #include <linux/spinlock.h>
+> > > > +#include <linux/pci.h>
+> > > > +#include <linux/pci_regs.h>
+> > > >  #include <net/mac80211.h>
+> > > >  
+> > > >  /*
+> > > > @@ -336,4 +338,16 @@ static inline const char *ath_bus_type_to_string(enum ath_bus_type bustype)
+> > > >  	return ath_bus_type_strings[bustype];
+> > > >  }
+> > > >  
+> > > > +static inline int ath_pci_aspm_state(u16 lnkctl)
+> > > > +{
+> > > > +	int state = 0;
+> > > > +
+> > > > +	if (lnkctl & PCI_EXP_LNKCTL_ASPM_L0S)
+> > > > +		state |= PCIE_LINK_STATE_L0S;
+> > > > +	if (lnkctl & PCI_EXP_LNKCTL_ASPM_L1)
+> > > > +		state |= PCIE_LINK_STATE_L1;
+> > > > +
+> > > > +	return state;
+> > > > +}
+> > > > +
+> > > >  #endif /* ATH_H */
+> > > > diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+> > > > index 489d546390fcdab8f615cc9184006a958d9f140a..a5e11509e3ab8faad6638ff78ce6a8a5e9c3cbbd 100644
+> > > > --- a/drivers/net/wireless/ath/ath12k/pci.c
+> > > > +++ b/drivers/net/wireless/ath/ath12k/pci.c
+> > > > @@ -16,6 +16,8 @@
+> > > >  #include "mhi.h"
+> > > >  #include "debug.h"
+> > > >  
+> > > > +#include "../ath.h"
+> > > > +
+> > > >  #define ATH12K_PCI_BAR_NUM		0
+> > > >  #define ATH12K_PCI_DMA_MASK		36
+> > > >  
+> > > > @@ -928,8 +930,7 @@ static void ath12k_pci_aspm_disable(struct ath12k_pci *ab_pci)
+> > > >  		   u16_get_bits(ab_pci->link_ctl, PCI_EXP_LNKCTL_ASPM_L1));
+> > > >  
+> > > >  	/* disable L0s and L1 */
+> > > > -	pcie_capability_clear_word(ab_pci->pdev, PCI_EXP_LNKCTL,
+> > > > -				   PCI_EXP_LNKCTL_ASPMC);
+> > > > +	pci_disable_link_state(ab_pci->pdev, PCIE_LINK_STATE_L0S | PCIE_LINK_STATE_L1);
+> > > 
+> > > I'd remove to comment too as the code is self-explanatory after this 
+> > > change.
+> > > 
+> > 
+> > Ack
+> > 
+> > > >  
+> > > >  	set_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags);
+> > > >  }
+> > > > @@ -958,10 +959,7 @@ static void ath12k_pci_aspm_restore(struct ath12k_pci *ab_pci)
+> > > >  {
+> > > >  	if (ab_pci->ab->hw_params->supports_aspm &&
+> > > >  	    test_and_clear_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags))
+> > > > -		pcie_capability_clear_and_set_word(ab_pci->pdev, PCI_EXP_LNKCTL,
+> > > > -						   PCI_EXP_LNKCTL_ASPMC,
+> > > > -						   ab_pci->link_ctl &
+> > > > -						   PCI_EXP_LNKCTL_ASPMC);
+> > > > +		pci_enable_link_state(ab_pci->pdev, ath_pci_aspm_state(ab_pci->link_ctl));
+> > > >  }
+> > > >  
+> > > >  static void ath12k_pci_cancel_workqueue(struct ath12k_base *ab)
+> > > 
+> > > As you now depend on ASPM driver being there, these should also add to 
+> > > Kconfig:
+> > > 
+> > > depends on PCIEASPM
+> > > 
+> > 
+> > I thought about it, but since this driver doesn't necessarily enable ASPM for
+> > all the devices it supports, I didn't add the dependency. But looking at it
+> > again, I think makes sense to add the dependency since the driver cannot work
+> > reliably without disabling ASPM (for the supported devices).
+> 
+> PCIEASPM is already default y and if EXPERT so it is not something 
+> that is expected to be disabled.
+> 
+> You also no longer need to move the ASPM link state defines LKP found out 
+> about after adding the depends on.
+> 
 
---8323328-917264169-1753092545=:945
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: QUOTED-PRINTABLE
+Yes, it will fix the reported issue, but guarding the definitions feels wrong to
+me still. Maybe that's something we can worry later.
 
-On Mon, 21 Jul 2025, Manivannan Sadhasivam wrote:
-> On Mon, Jul 21, 2025 at 11:04:10AM GMT, Ilpo J=C3=A4rvinen wrote:
-> > On Wed, 16 Jul 2025, Manivannan Sadhasivam via B4 Relay wrote:
-> > > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-> > >=20
-> > > It is not recommended to enable/disable the ASPM states on the back o=
-f the
-> > > PCI core directly using the LNKCTL register. It will break the PCI co=
-re's
-> > > knowledge about the device ASPM states. So use the APIs exposed by th=
-e PCI
-> > > core to enable/disable ASPM states.
-> > >=20
-> > > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2=
-=2E0_SILICONZ-3
-> > >=20
-> > > Reported-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-> > > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualc=
-omm.com>
-> > > ---
-> > >  drivers/net/wireless/ath/ath.h        | 14 ++++++++++++++
-> > >  drivers/net/wireless/ath/ath12k/pci.c | 10 ++++------
-> > >  2 files changed, 18 insertions(+), 6 deletions(-)
-> > >=20
-> > > diff --git a/drivers/net/wireless/ath/ath.h b/drivers/net/wireless/at=
-h/ath.h
-> > > index 34654f710d8a1e63f65a47d4602e2035262a4d9e..ef685123b66bf4f41428f=
-ec67c1967f242a9ef27 100644
-> > > --- a/drivers/net/wireless/ath/ath.h
-> > > +++ b/drivers/net/wireless/ath/ath.h
-> > > @@ -21,6 +21,8 @@
-> > >  #include <linux/skbuff.h>
-> > >  #include <linux/if_ether.h>
-> > >  #include <linux/spinlock.h>
-> > > +#include <linux/pci.h>
-> > > +#include <linux/pci_regs.h>
-> > >  #include <net/mac80211.h>
-> > > =20
-> > >  /*
-> > > @@ -336,4 +338,16 @@ static inline const char *ath_bus_type_to_string=
-(enum ath_bus_type bustype)
-> > >  =09return ath_bus_type_strings[bustype];
-> > >  }
-> > > =20
-> > > +static inline int ath_pci_aspm_state(u16 lnkctl)
-> > > +{
-> > > +=09int state =3D 0;
-> > > +
-> > > +=09if (lnkctl & PCI_EXP_LNKCTL_ASPM_L0S)
-> > > +=09=09state |=3D PCIE_LINK_STATE_L0S;
-> > > +=09if (lnkctl & PCI_EXP_LNKCTL_ASPM_L1)
-> > > +=09=09state |=3D PCIE_LINK_STATE_L1;
-> > > +
-> > > +=09return state;
-> > > +}
-> > > +
-> > >  #endif /* ATH_H */
-> > > diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wire=
-less/ath/ath12k/pci.c
-> > > index 489d546390fcdab8f615cc9184006a958d9f140a..a5e11509e3ab8faad6638=
-ff78ce6a8a5e9c3cbbd 100644
-> > > --- a/drivers/net/wireless/ath/ath12k/pci.c
-> > > +++ b/drivers/net/wireless/ath/ath12k/pci.c
-> > > @@ -16,6 +16,8 @@
-> > >  #include "mhi.h"
-> > >  #include "debug.h"
-> > > =20
-> > > +#include "../ath.h"
-> > > +
-> > >  #define ATH12K_PCI_BAR_NUM=09=090
-> > >  #define ATH12K_PCI_DMA_MASK=09=0936
-> > > =20
-> > > @@ -928,8 +930,7 @@ static void ath12k_pci_aspm_disable(struct ath12k=
-_pci *ab_pci)
-> > >  =09=09   u16_get_bits(ab_pci->link_ctl, PCI_EXP_LNKCTL_ASPM_L1));
-> > > =20
-> > >  =09/* disable L0s and L1 */
-> > > -=09pcie_capability_clear_word(ab_pci->pdev, PCI_EXP_LNKCTL,
-> > > -=09=09=09=09   PCI_EXP_LNKCTL_ASPMC);
-> > > +=09pci_disable_link_state(ab_pci->pdev, PCIE_LINK_STATE_L0S | PCIE_L=
-INK_STATE_L1);
-> >=20
-> > I'd remove to comment too as the code is self-explanatory after this=20
-> > change.
-> >=20
->=20
-> Ack
->=20
-> > > =20
-> > >  =09set_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags);
-> > >  }
-> > > @@ -958,10 +959,7 @@ static void ath12k_pci_aspm_restore(struct ath12=
-k_pci *ab_pci)
-> > >  {
-> > >  =09if (ab_pci->ab->hw_params->supports_aspm &&
-> > >  =09    test_and_clear_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags))
-> > > -=09=09pcie_capability_clear_and_set_word(ab_pci->pdev, PCI_EXP_LNKCT=
-L,
-> > > -=09=09=09=09=09=09   PCI_EXP_LNKCTL_ASPMC,
-> > > -=09=09=09=09=09=09   ab_pci->link_ctl &
-> > > -=09=09=09=09=09=09   PCI_EXP_LNKCTL_ASPMC);
-> > > +=09=09pci_enable_link_state(ab_pci->pdev, ath_pci_aspm_state(ab_pci-=
->link_ctl));
-> > >  }
-> > > =20
-> > >  static void ath12k_pci_cancel_workqueue(struct ath12k_base *ab)
-> >=20
-> > As you now depend on ASPM driver being there, these should also add to=
-=20
-> > Kconfig:
-> >=20
-> > depends on PCIEASPM
-> >=20
->=20
-> I thought about it, but since this driver doesn't necessarily enable ASPM=
- for
-> all the devices it supports, I didn't add the dependency. But looking at =
-it
-> again, I think makes sense to add the dependency since the driver cannot =
-work
-> reliably without disabling ASPM (for the supported devices).
+> I'm a bit worried this series will regress in the cases where OS doesn't 
+> control ASPM so it might be necessary to include something along the 
+> lines of the patch below too (the earlier discussion on this is in Link 
+> tags):
+> 
 
-PCIEASPM is already default y and if EXPERT so it is not something=20
-that is expected to be disabled.
+atheros drivers didn't have such comment (why they were manually changing the
+LNKCTL register), but I agree that there is a chance that they could cause issue
+on platforms where BIOS didn't give ASPM control to the OS.
 
-You also no longer need to move the ASPM link state defines LKP found out=
-=20
-about after adding the depends on.
+But as a non-ACPI developer, I don't know what does 'ACPI doesn't give
+permission to manage ASPM' mean exactly. Does ACPI allow to disable ASPM but not
+enable it?
 
-I'm a bit worried this series will regress in the cases where OS doesn't=20
-control ASPM so it might be necessary to include something along the=20
-lines of the patch below too (the earlier discussion on this is in Link=20
-tags):
+- Mani
 
------
-From: Ilpo J=C3=A4rvinen <ilpo.jarvinen@linux.intel.com>
-Subject: [PATCH] PCI/ASPM: Always disable ASPM when driver requests it
+> -----
+> From: Ilpo Järvinen <ilpo.jarvinen@linux.intel.com>
+> Subject: [PATCH] PCI/ASPM: Always disable ASPM when driver requests it
+> 
+> PCI core/ASPM service driver allows controlling ASPM state through
+> pci_disable_link_state() API. It was decided earlier (see the Link
+> below), to not allow ASPM changes when OS does not have control over it
+> but only log a warning about the problem (commit 2add0ec14c25
+> ("PCI/ASPM: Warn when driver asks to disable ASPM, but we can't do
+> it")).
+> 
+> A number of drivers have added workarounds to force ASPM off with own
+> writes into the Link Control Register (some even with comments
+> explaining why PCI core does not disable it under some circumstances).
+> According to the comments, some drivers require ASPM to be off for
+> reliable operation.
+> 
+> Having custom ASPM handling in drivers is problematic because the state
+> kept in the ASPM service driver is not updated by the changes made
+> outside the link state management API.
+> 
+> As the first step to address this issue, make pci_disable_link_state()
+> to unconditionally disable ASPM so the motivation for drivers to come
+> up with custom ASPM handling code is eliminated.
+> 
+> To fully take advantage of the ASPM handling core provides, the drivers
+> that need to quirk ASPM have to be altered depend on PCIEASPM and the
+> custom ASPM code is removed. This is to be done separately. As PCIEASPM
+> is already behind EXPERT, it should be no problem to limit disabling it
+> for configurations that do not require touching ASPM.
+> 
+> Make pci_disable_link_state() function comment to comply kerneldoc
+> formatting while changing the description.
+> 
+> Link: https://lore.kernel.org/all/CANUX_P3F5YhbZX3WGU-j1AGpbXb_T9Bis2ErhvKkFMtDvzatVQ@mail.gmail.com/
+> Link: https://lore.kernel.org/all/20230511131441.45704-1-ilpo.jarvinen@linux.intel.com/
+> Signed-off-by: Ilpo Järvinen <ilpo.jarvinen@linux.intel.com>
+> 
+> ---
+>  drivers/pci/pcie/aspm.c | 33 ++++++++++++++++++++-------------
+>  1 file changed, 20 insertions(+), 13 deletions(-)
+> 
+> diff --git a/drivers/pci/pcie/aspm.c b/drivers/pci/pcie/aspm.c
+> index 5721ebfdea71..11732031e342 100644
+> --- a/drivers/pci/pcie/aspm.c
+> +++ b/drivers/pci/pcie/aspm.c
+> @@ -1382,16 +1382,23 @@ static int __pci_disable_link_state(struct pci_dev *pdev, int state, bool locked
+>  		return -EINVAL;
+>  	/*
+>  	 * A driver requested that ASPM be disabled on this device, but
+> -	 * if we don't have permission to manage ASPM (e.g., on ACPI
+> +	 * if we might not have permission to manage ASPM (e.g., on ACPI
+>  	 * systems we have to observe the FADT ACPI_FADT_NO_ASPM bit and
+> -	 * the _OSC method), we can't honor that request.  Windows has
+> -	 * a similar mechanism using "PciASPMOptOut", which is also
+> -	 * ignored in this situation.
+> +	 * the _OSC method), previously we chose to not honor disable
+> +	 * request in that case. Windows has a similar mechanism using
+> +	 * "PciASPMOptOut", which is also ignored in this situation.
+> +	 *
+> +	 * Not honoring the requests to disable ASPM, however, led to
+> +	 * drivers forcing ASPM off on their own. As such changes of ASPM
+> +	 * state are not tracked by this service driver, the state kept here
+> +	 * became out of sync.
+> +	 *
+> +	 * Therefore, honor ASPM disable requests even when OS does not have
+> +	 * ASPM control. Plain disable for ASPM is assumed to be slightly
+> +	 * safer than fully managing it.
+>  	 */
+> -	if (aspm_disabled) {
+> -		pci_warn(pdev, "can't disable ASPM; OS doesn't have ASPM control\n");
+> -		return -EPERM;
+> -	}
+> +	if (aspm_disabled)
+> +		pci_warn(pdev, "OS doesn't have ASPM control, disabling ASPM anyway\n");
+>  
+>  	if (!locked)
+>  		down_read(&pci_bus_sem);
+> @@ -1418,13 +1425,13 @@ int pci_disable_link_state_locked(struct pci_dev *pdev, int state)
+>  EXPORT_SYMBOL(pci_disable_link_state_locked);
+>  
+>  /**
+> - * pci_disable_link_state - Disable device's link state, so the link will
+> - * never enter specific states.  Note that if the BIOS didn't grant ASPM
+> - * control to the OS, this does nothing because we can't touch the LNKCTL
+> - * register. Returns 0 or a negative errno.
+> - *
+> + * pci_disable_link_state - Disable device's link state
+>   * @pdev: PCI device
+>   * @state: ASPM link state to disable
+> + *
+> + * Disable device's link state so the link will never enter specific states.
+> + *
+> + * Return: 0 or a negative errno
+>   */
+>  int pci_disable_link_state(struct pci_dev *pdev, int state)
+>  {
+> 
+> -- 
+> tg: (9f4972a5d481..) aspm/disable-always (depends on: pci/set-default-comment2)
 
-PCI core/ASPM service driver allows controlling ASPM state through
-pci_disable_link_state() API. It was decided earlier (see the Link
-below), to not allow ASPM changes when OS does not have control over it
-but only log a warning about the problem (commit 2add0ec14c25
-("PCI/ASPM: Warn when driver asks to disable ASPM, but we can't do
-it")).
 
-A number of drivers have added workarounds to force ASPM off with own
-writes into the Link Control Register (some even with comments
-explaining why PCI core does not disable it under some circumstances).
-According to the comments, some drivers require ASPM to be off for
-reliable operation.
-
-Having custom ASPM handling in drivers is problematic because the state
-kept in the ASPM service driver is not updated by the changes made
-outside the link state management API.
-
-As the first step to address this issue, make pci_disable_link_state()
-to unconditionally disable ASPM so the motivation for drivers to come
-up with custom ASPM handling code is eliminated.
-
-To fully take advantage of the ASPM handling core provides, the drivers
-that need to quirk ASPM have to be altered depend on PCIEASPM and the
-custom ASPM code is removed. This is to be done separately. As PCIEASPM
-is already behind EXPERT, it should be no problem to limit disabling it
-for configurations that do not require touching ASPM.
-
-Make pci_disable_link_state() function comment to comply kerneldoc
-formatting while changing the description.
-
-Link: https://lore.kernel.org/all/CANUX_P3F5YhbZX3WGU-j1AGpbXb_T9Bis2ErhvKk=
-FMtDvzatVQ@mail.gmail.com/
-Link: https://lore.kernel.org/all/20230511131441.45704-1-ilpo.jarvinen@linu=
-x.intel.com/
-Signed-off-by: Ilpo J=C3=A4rvinen <ilpo.jarvinen@linux.intel.com>
-
----
- drivers/pci/pcie/aspm.c | 33 ++++++++++++++++++++-------------
- 1 file changed, 20 insertions(+), 13 deletions(-)
-
-diff --git a/drivers/pci/pcie/aspm.c b/drivers/pci/pcie/aspm.c
-index 5721ebfdea71..11732031e342 100644
---- a/drivers/pci/pcie/aspm.c
-+++ b/drivers/pci/pcie/aspm.c
-@@ -1382,16 +1382,23 @@ static int __pci_disable_link_state(struct pci_dev =
-*pdev, int state, bool locked
- =09=09return -EINVAL;
- =09/*
- =09 * A driver requested that ASPM be disabled on this device, but
--=09 * if we don't have permission to manage ASPM (e.g., on ACPI
-+=09 * if we might not have permission to manage ASPM (e.g., on ACPI
- =09 * systems we have to observe the FADT ACPI_FADT_NO_ASPM bit and
--=09 * the _OSC method), we can't honor that request.  Windows has
--=09 * a similar mechanism using "PciASPMOptOut", which is also
--=09 * ignored in this situation.
-+=09 * the _OSC method), previously we chose to not honor disable
-+=09 * request in that case. Windows has a similar mechanism using
-+=09 * "PciASPMOptOut", which is also ignored in this situation.
-+=09 *
-+=09 * Not honoring the requests to disable ASPM, however, led to
-+=09 * drivers forcing ASPM off on their own. As such changes of ASPM
-+=09 * state are not tracked by this service driver, the state kept here
-+=09 * became out of sync.
-+=09 *
-+=09 * Therefore, honor ASPM disable requests even when OS does not have
-+=09 * ASPM control. Plain disable for ASPM is assumed to be slightly
-+=09 * safer than fully managing it.
- =09 */
--=09if (aspm_disabled) {
--=09=09pci_warn(pdev, "can't disable ASPM; OS doesn't have ASPM control\n")=
-;
--=09=09return -EPERM;
--=09}
-+=09if (aspm_disabled)
-+=09=09pci_warn(pdev, "OS doesn't have ASPM control, disabling ASPM anyway\=
-n");
-=20
- =09if (!locked)
- =09=09down_read(&pci_bus_sem);
-@@ -1418,13 +1425,13 @@ int pci_disable_link_state_locked(struct pci_dev *p=
-dev, int state)
- EXPORT_SYMBOL(pci_disable_link_state_locked);
-=20
- /**
-- * pci_disable_link_state - Disable device's link state, so the link will
-- * never enter specific states.  Note that if the BIOS didn't grant ASPM
-- * control to the OS, this does nothing because we can't touch the LNKCTL
-- * register. Returns 0 or a negative errno.
-- *
-+ * pci_disable_link_state - Disable device's link state
-  * @pdev: PCI device
-  * @state: ASPM link state to disable
-+ *
-+ * Disable device's link state so the link will never enter specific state=
-s.
-+ *
-+ * Return: 0 or a negative errno
-  */
- int pci_disable_link_state(struct pci_dev *pdev, int state)
- {
-
---=20
-tg: (9f4972a5d481..) aspm/disable-always (depends on: pci/set-default-comme=
-nt2)
---8323328-917264169-1753092545=:945--
+-- 
+மணிவண்ணன் சதாசிவம்
 
