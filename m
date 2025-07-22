@@ -4,115 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AC58C83F1A
-	for <ath12k@archiver.kernel.org>; Mon, 21 Jul 2025 23:13:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 477E9C83F25
+	for <ath12k@archiver.kernel.org>; Tue, 22 Jul 2025 00:08:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:From:Subject:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:From:Date:Reply-To:To:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=UD7kEq3kjBGfnHnxGteIlKswmtx+ENzmKSEZ2T3PVsk=; b=G0gXN5AjTDzfZ8goDpw2xR54ly
-	3L7tAFs+xOnJfBVYVqLG+rQb71MndjOr8GdUoCYKdRuhL1bt3uf2JZt3l10wracenlH393GwnedWX
-	WZOAQFA2t/R90BU7xoejFt1yJiJhFm4c6fWRPWTFx0d1zh/WE7vISjBE/3TGZyVsDpxwtxVQDR/Xv
-	TDP+5Lb32hoPzqZseVJ4rzYIno55R9w01txQB4MX2Y4yBNPnfo+qf5yVb0AdQbGx/gxwhybMoxh2g
-	iOd4kV2fNh2GkzueWUvR0wqfaRe3fOBr2dhqgQS4dXhIszLSwTTbhTWVhvmzw+AExWQxKDNh0bZIG
-	WUtTssJg==;
+	bh=pXMPUFnpCquIlV0HliwZfZ63MVQeJTZVblVvXCA9YGU=; b=2si1DZ+XA+6168dg/8Tm7Y6Cgr
+	GgFothrDKbaEfBrGfiImYeokYK31ocvpQDPuFFjQtINdFnsUHVUbuB3cJKhptw62FayfrK+kmwkU6
+	xI3mfDhG0njFyBs4FuXJvR1qijC5JF2ZOFky4PMF2NBNRfngFcYHDizZFY17bG80cT4DgIbBjExBO
+	mN0C2zpoLq4leI9iybRsuA9Y3wEjhMprX6uC2sWmSnvcRvZWZ0X2d7miI20vwlqjCAeQtY12Cf7ZN
+	3c3iPynquWXzdjeQYWbY+KZMoYMinaHiwcCP9nidAKGyjj7Lxe3qrhtLMQQVAcYJ5wEaBPnclu3O0
+	JxPVl8WQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udzgy-00000000rsj-0c5W;
-	Mon, 21 Jul 2025 23:13:08 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1ue0Yl-00000000w00-3rdj;
+	Tue, 22 Jul 2025 00:08:43 +0000
+Received: from mgamail.intel.com ([192.198.163.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udzgu-00000000rrL-3sxk
+	id 1ue0Yi-00000000vzg-2MM3
 	for ath12k@lists.infradead.org;
-	Mon, 21 Jul 2025 23:13:06 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56LIgW7J013263
-	for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 23:13:04 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=UD7kEq3kjBGfnHnxGteIlK
-	swmtx+ENzmKSEZ2T3PVsk=; b=YVhPaw6Eq2LWfMDalc5SgS7VFDIgwsQfLQ8eAy
-	EjLsEdgz6wzaoGl9MDe8RgRiGfEHJYNfmy0Mdd2IbE6BOtc7RdNDJXOFU86VbVhs
-	KexuOG9YFpotEBQXvVlj+Hz9NDy8p2oStxpzRweoUNcfOHIGb0wJQi8zLkGp0QY6
-	ejKaKCnP4B1IOBF5E/HUkGtMtsRaaDYYVLsRowdZboxmpq/AX1oIcfSmT2qpognl
-	LhLlUzoK+i+qOxhnHwGapgxFiEFJa4b1cGpwG5SaNKBLR+R9AiwKYHA/jFT9dXwo
-	ifG+YHC4oIEDlX6Jnd/+yje+CYJOgcCnzojeGecIIDt2pyCA==
-Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 481g3ej771-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 23:13:04 +0000 (GMT)
-Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b31cc625817so4350349a12.0
-        for <ath12k@lists.infradead.org>; Mon, 21 Jul 2025 16:13:04 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1753139583; x=1753744383;
-        h=content-transfer-encoding:from:content-language:subject:cc:to
-         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=UD7kEq3kjBGfnHnxGteIlKswmtx+ENzmKSEZ2T3PVsk=;
-        b=WougvuOCufyajzoC5BadQdKeVg0J7g86ZdasxRIBMOxYgtSkKVfa9NUIGlxSIaZ/Hj
-         me+nnMHI5BqiYhkBqkAxGhouJkaMohszoA/DD9C9QLgWhDKv179hn/sYgnHxmUANY/iq
-         JEuT6oprsZr0hm3BxsYQz5K8nU6POj5xTOn3K4PGgD3ENNRQn6WMJHQ7nl7KE34EuxhA
-         id2F308IGcYp1hwuHCYKHRyqS2ZGyR6vaJ8xFWjGd3wfehzpf81SUgIYaLg9w95GHbp8
-         m/1GBz7wJYAlSfUDuqTGl0Kc16ZcC52HuIFQIto19AzkjxK19zzjBJgOgrRvv0Q6uk8a
-         O0mg==
-X-Forwarded-Encrypted: i=1; AJvYcCWo5mQEj/pbbFTDjH9muVQKICX3G0JmNHDI86iYQ+uGshp5BbYFtUcwoTKRxKMKnn3eoNelRuE=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yypbu6+1o2AA1LSxZisCmtGPKi5NWo+uta1MJe6kN2u1weAypoS
-	GFSB4r1PMYOz/HbsKo/MevnAkQCb9u9UMYN4KvRyCobRCyiHXpKH2r0pPzTjasolDLenX2k/Rpm
-	iMDOn4DMDex1B1TsfKrAUAwvCVlYiCvpW5/Vy7opxWaCTPrNwDj1Gvhx0Es8b8rDttNO62vLY
-X-Gm-Gg: ASbGncs2am12hxWbe+nr8Fl3lpZfxqyqymn8cbrRL6xB1N2gr9SG8K0atbGkrzFW2vL
-	Sg2FqM81mtdbgHiCCuNQtOGdSsvrznR7q3N3fbZShSSFH8yJeEyC/m/cuv1kDFJSNGz+kwFw/Tm
-	7WKAR4o/fSLanDHUh0gjmcAgFD+GVwzmCm84sUH6qZ+sFQ50seDii/0Rs8x8W32Vq/cRswPBs/D
-	FdcyiTy05Ew6Nc+UvDj/mYL5/dsK+tlMSx1ZnqYvwMg6jn2O8kUH+Wu202ZzQLj7J4K+ujv/5Ha
-	+ExR3+SYdj1VQS66OCQRV09qkM2z/h824jk5hx8uZmpfAn5K4v7yKhHmPrpp4JBSQ1WwZ0OjUb9
-	i
-X-Received: by 2002:a17:902:f650:b0:234:24a8:bee9 with SMTP id d9443c01a7336-23f8abefcd0mr16030745ad.4.1753139583039;
-        Mon, 21 Jul 2025 16:13:03 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHiXOoyw/3pUDeyM5jLlBxiHNJ7SLqzHGpr9fe0bHIzEuRwklScSGuJbZLYz8JuGnIgdx3dRQ==
-X-Received: by 2002:a17:902:f650:b0:234:24a8:bee9 with SMTP id d9443c01a7336-23f8abefcd0mr16030495ad.4.1753139582478;
-        Mon, 21 Jul 2025 16:13:02 -0700 (PDT)
-Received: from [10.81.24.74] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23e3b5e3d4esm63646405ad.23.2025.07.21.16.12.59
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 21 Jul 2025 16:13:00 -0700 (PDT)
-Message-ID: <124a13a2-e727-46db-b1cf-d370088b7fbd@oss.qualcomm.com>
-Date: Mon, 21 Jul 2025 16:12:58 -0700
+	Tue, 22 Jul 2025 00:08:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1753142920; x=1784678920;
+  h=date:from:cc:subject:message-id:mime-version;
+  bh=UBf8Fuz2a5YYUXW0Ac29BBpwFq1J7kp+RtxDnxJZco4=;
+  b=GuhsL4M6zHO3hQEKBJ8kgMbQKcAJ6oMYnHqxZXx+b34WVXiC7TWo8mgl
+   Yz0hh41i2jYzjviZDTsioc+c5oR+v3zymxK16mCNNq7LhKz/Hz6DrTtvi
+   MclP4RKG4+HPKPBm93QKCBvN/hwlXW8JBe5Kleen73trVHV5eIAMOLlda
+   mDKWIIxfAJxpICcAH21iD4strMCty4pTwPTDfcb4eWNC3IKrYtc+hL61F
+   oRY2bqxdwxcLYza+orYqrZFJ0nFW9p/ErZLf1IzZobQj0Mtg8TNsQooAg
+   2aR8vvQ0MOrym2jT2PsoT3jN4m0b3wjsmJg9JaTGqYZw0vcTn3EUXCX2L
+   g==;
+X-CSE-ConnectionGUID: VjP65m8eR+qbFn1G/V2DgA==
+X-CSE-MsgGUID: EzMCScDZRfecXwvmibbjPQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11499"; a="55527549"
+X-IronPort-AV: E=Sophos;i="6.16,330,1744095600"; 
+   d="scan'208";a="55527549"
+Received: from fmviesa001.fm.intel.com ([10.60.135.141])
+  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Jul 2025 17:08:39 -0700
+X-CSE-ConnectionGUID: o6UPAVWnQAO71bvOSvdlhQ==
+X-CSE-MsgGUID: XANzN2SGRIexv2VGyg3w5w==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,330,1744095600"; 
+   d="scan'208";a="189932853"
+Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
+  by fmviesa001.fm.intel.com with ESMTP; 21 Jul 2025 17:08:37 -0700
+Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1ue0Yd-000HGr-0E;
+	Tue, 22 Jul 2025 00:08:35 +0000
+Date: Tue, 22 Jul 2025 08:07:35 +0800
+From: kernel test robot <lkp@intel.com>
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
+	ath12k@lists.infradead.org
+Subject: [ath:master 5/7] drivers/net/phy/phy_device.c:3506:7: error: call to
+ undeclared function 'phy_driver_is_genphy_10g'; ISO C99 and later do not
+ support implicit function declarations
+Message-ID: <202507220841.K9XCOI0c-lkp@intel.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: linux-wireless@vger.kernel.org, Johannes Berg <johannes@sipsolutions.net>
-Cc: ath10k@lists.infradead.org, ath11k@lists.infradead.org,
-        ath12k@lists.infradead.org, jjohnson@kernel.org
-Subject: pull-request: ath-next-20250721
-Content-Language: en-US
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: zbos8seynnkpnA9NONdaYA2cJAgSsENA
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzIxMDIwOCBTYWx0ZWRfX/Ke7FHN3UJZ9
- v/J5oBvzDwhNvI94Vy6Hi127PudmwPJP9qcgwhnhA3whh3uVA2TlQBBnVXYj0XxupL6Qy1c8z/X
- 8kFve/dWnfqgwQswQdiJS8FRvkCziqJdp9ILpawiKWW65g3R3GTUFrobJXT78IVKQdfQCYOGKxN
- 9ILfIZ5zbWgxMnGgtgpknYsNM7tSaEFSWxr8U7jEnnAbGYmU+BUUZv6GJqJd9taQ9c8NppsfGvm
- f2izrmbD99b/r46tQk5niVck8w14T0DgO2MpykKwvPPY4FaaM83qxsQujDYwzc/DacpvVjXEtFV
- /2RgvDU5Hxvb1wW7VRlbMYGXOzruKk57/1A6/i4NR3HEmgZM0vZFFLPj/T4FzYYhU72m/RLqTsf
- q7CLMox2iGtLrkhb3D8BUl5ggLlOZ6Evp1C9CHuCVIuMdh2RsELp7QZ430KiuOTKgKGXOGft
-X-Authority-Analysis: v=2.4 cv=Q+fS452a c=1 sm=1 tr=0 ts=687ec980 cx=c_pps
- a=rz3CxIlbcmazkYymdCej/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=VwQbUJbxAAAA:8 a=cecSKI3_BKC6A8wipHcA:9
- a=QEXdDO2ut3YA:10 a=bFCP_H2QrGi7Okbo017w:22
-X-Proofpoint-GUID: zbos8seynnkpnA9NONdaYA2cJAgSsENA
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-07-21_05,2025-07-21_02,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 adultscore=0 phishscore=0 mlxscore=0 lowpriorityscore=0
- mlxlogscore=999 suspectscore=0 spamscore=0 priorityscore=1501 malwarescore=0
- bulkscore=0 impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507210208
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250721_161305_019972_93CDF14A 
-X-CRM114-Status: GOOD (  14.67  )
+X-CRM114-CacheID: sfid-20250721_170840_664901_99C2F202 
+X-CRM114-Status: GOOD (  17.19  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,241 +86,174 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The following changes since commit 28aa52b6189f1cc409f96910c63fa1b99370b99e:
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
+head:   e7387aea906012a38c96a5010071e4f7d3910e5c
+commit: 0bc6b8212a169d54a3bc6615c61fc84ddb713715 [5/7] Merge branch 'ath-current'
+config: s390-randconfig-001-20250722 (https://download.01.org/0day-ci/archive/20250722/202507220841.K9XCOI0c-lkp@intel.com/config)
+compiler: clang version 22.0.0git (https://github.com/llvm/llvm-project 853c343b45b3e83cc5eeef5a52fc8cc9d8a09252)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250722/202507220841.K9XCOI0c-lkp@intel.com/reproduce)
 
-  Merge git://git.kernel.org/pub/scm/linux/kernel/git/netdev/net (2025-06-26 10:40:50 -0700)
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202507220841.K9XCOI0c-lkp@intel.com/
 
-are available in the Git repository at:
+All errors (new ones prefixed by >>):
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-next-20250721
+>> drivers/net/phy/phy_device.c:3506:7: error: call to undeclared function 'phy_driver_is_genphy_10g'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    3506 |             !phy_driver_is_genphy_10g(phydev))
+         |              ^
+   drivers/net/phy/phy_device.c:3506:7: note: did you mean 'phy_driver_is_genphy'?
+   include/linux/phy.h:1316:20: note: 'phy_driver_is_genphy' declared here
+    1316 | static inline bool phy_driver_is_genphy(struct phy_device *phydev)
+         |                    ^
+   drivers/net/phy/phy_device.c:3524:7: error: call to undeclared function 'phy_driver_is_genphy_10g'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    3524 |             !phy_driver_is_genphy_10g(phydev))
+         |              ^
+   2 errors generated.
 
-for you to fetch changes up to 4a2bf707270f897ab8077baee8ed5842a5321686:
 
-  wifi: ath12k: Correct tid cleanup when tid setup fails (2025-07-21 14:34:01 -0700)
+vim +/phy_driver_is_genphy_10g +3506 drivers/net/phy/phy_device.c
 
-----------------------------------------------------------------
-ath.git patches for v6.17
+425775ed31a6fa Calvin Johnson        2021-06-11  3386  
+b3df0da886ffdb Randy Dunlap          2007-03-06  3387  /**
+b3df0da886ffdb Randy Dunlap          2007-03-06  3388   * phy_probe - probe and init a PHY device
+b3df0da886ffdb Randy Dunlap          2007-03-06  3389   * @dev: device to probe and init
+00db8189d984d6 Andy Fleming          2005-07-30  3390   *
+83456576a42050 Wolfram Sang          2023-03-14  3391   * Take care of setting up the phy_device structure, set the state to READY.
+00db8189d984d6 Andy Fleming          2005-07-30  3392   */
+00db8189d984d6 Andy Fleming          2005-07-30  3393  static int phy_probe(struct device *dev)
+00db8189d984d6 Andy Fleming          2005-07-30  3394  {
+553fe92b26e152 Sergei Shtylyov       2014-01-05  3395  	struct phy_device *phydev = to_phy_device(dev);
+e5a03bfd873c29 Andrew Lunn           2016-01-06  3396  	struct device_driver *drv = phydev->mdio.dev.driver;
+553fe92b26e152 Sergei Shtylyov       2014-01-05  3397  	struct phy_driver *phydrv = to_phy_driver(drv);
+00db8189d984d6 Andy Fleming          2005-07-30  3398  	int err = 0;
+00db8189d984d6 Andy Fleming          2005-07-30  3399  
+00db8189d984d6 Andy Fleming          2005-07-30  3400  	phydev->drv = phydrv;
+00db8189d984d6 Andy Fleming          2005-07-30  3401  
+2c7b49212a86f1 Florian Fainelli      2013-05-19  3402  	/* Disable the interrupt if the PHY doesn't support it
+2c7b49212a86f1 Florian Fainelli      2013-05-19  3403  	 * but the interrupt is still a valid one
+2c7b49212a86f1 Florian Fainelli      2013-05-19  3404  	 */
+0d2e778e38e0dd Heiner Kallweit       2018-11-09  3405  	if (!phy_drv_supports_irq(phydrv) && phy_interrupt_is_valid(phydev))
+00db8189d984d6 Andy Fleming          2005-07-30  3406  		phydev->irq = PHY_POLL;
+00db8189d984d6 Andy Fleming          2005-07-30  3407  
+4284b6a535a9aa Florian Fainelli      2013-05-23  3408  	if (phydrv->flags & PHY_IS_INTERNAL)
+4284b6a535a9aa Florian Fainelli      2013-05-23  3409  		phydev->is_internal = true;
+4284b6a535a9aa Florian Fainelli      2013-05-23  3410  
+92ed2eb7f4b73e Andrew Lunn           2019-02-09  3411  	/* Deassert the reset signal */
+92ed2eb7f4b73e Andrew Lunn           2019-02-09  3412  	phy_device_reset(phydev, 0);
+92ed2eb7f4b73e Andrew Lunn           2019-02-09  3413  
+1dba6995731e1c Bartosz Golaszewski   2020-06-26  3414  	if (phydev->drv->probe) {
+92ed2eb7f4b73e Andrew Lunn           2019-02-09  3415  		err = phydev->drv->probe(phydev);
+1dba6995731e1c Bartosz Golaszewski   2020-06-26  3416  		if (err)
+92ed2eb7f4b73e Andrew Lunn           2019-02-09  3417  			goto out;
+92ed2eb7f4b73e Andrew Lunn           2019-02-09  3418  	}
+92ed2eb7f4b73e Andrew Lunn           2019-02-09  3419  
+cc941e548bffc0 Russell King (Oracle  2023-08-11  3420) 	phy_disable_interrupts(phydev);
+cc941e548bffc0 Russell King (Oracle  2023-08-11  3421) 
+00db8189d984d6 Andy Fleming          2005-07-30  3422  	/* Start out supporting everything. Eventually,
+00db8189d984d6 Andy Fleming          2005-07-30  3423  	 * a controller will attach, and may modify one
+2f53e9047e79b6 Sergei Shtylyov       2014-01-05  3424  	 * or both of these values
+2f53e9047e79b6 Sergei Shtylyov       2014-01-05  3425  	 */
+c2a978c171a6d4 Andrew Lunn           2023-02-17  3426  	if (phydrv->features) {
+3c1bcc8614db10 Andrew Lunn           2018-11-10  3427  		linkmode_copy(phydev->supported, phydrv->features);
+c2a978c171a6d4 Andrew Lunn           2023-02-17  3428  		genphy_c45_read_eee_abilities(phydev);
+c2a978c171a6d4 Andrew Lunn           2023-02-17  3429  	}
+169d7a402dfae4 Wenpeng Liang         2021-06-16  3430  	else if (phydrv->get_features)
+efbdfdc29bdd4d Andrew Lunn           2019-02-09  3431  		err = phydrv->get_features(phydev);
+169d7a402dfae4 Wenpeng Liang         2021-06-16  3432  	else if (phydev->is_c45)
+a1deab17b2e901 Heiner Kallweit       2019-04-03  3433  		err = genphy_c45_pma_read_abilities(phydev);
+169d7a402dfae4 Wenpeng Liang         2021-06-16  3434  	else
+a1deab17b2e901 Heiner Kallweit       2019-04-03  3435  		err = genphy_read_abilities(phydev);
+a1deab17b2e901 Heiner Kallweit       2019-04-03  3436  
+efbdfdc29bdd4d Andrew Lunn           2019-02-09  3437  	if (err)
+efbdfdc29bdd4d Andrew Lunn           2019-02-09  3438  		goto out;
+efbdfdc29bdd4d Andrew Lunn           2019-02-09  3439  
+5e42574b022b26 Heiner Kallweit       2019-04-16  3440  	if (!linkmode_test_bit(ETHTOOL_LINK_MODE_Autoneg_BIT,
+5e42574b022b26 Heiner Kallweit       2019-04-16  3441  			       phydev->supported))
+5e42574b022b26 Heiner Kallweit       2019-04-16  3442  		phydev->autoneg = 0;
+5e42574b022b26 Heiner Kallweit       2019-04-16  3443  
+3b8b11f96616c2 Heiner Kallweit       2019-04-05  3444  	if (linkmode_test_bit(ETHTOOL_LINK_MODE_1000baseT_Half_BIT,
+3b8b11f96616c2 Heiner Kallweit       2019-04-05  3445  			      phydev->supported))
+3b8b11f96616c2 Heiner Kallweit       2019-04-05  3446  		phydev->is_gigabit_capable = 1;
+3b8b11f96616c2 Heiner Kallweit       2019-04-05  3447  	if (linkmode_test_bit(ETHTOOL_LINK_MODE_1000baseT_Full_BIT,
+3b8b11f96616c2 Heiner Kallweit       2019-04-05  3448  			      phydev->supported))
+3b8b11f96616c2 Heiner Kallweit       2019-04-05  3449  		phydev->is_gigabit_capable = 1;
+3b8b11f96616c2 Heiner Kallweit       2019-04-05  3450  
+de906af1cf8d5f Sascha Hauer          2014-05-21  3451  	of_set_phy_supported(phydev);
+22c0ef6b1475ae Heiner Kallweit       2019-05-01  3452  	phy_advertise_supported(phydev);
+00db8189d984d6 Andy Fleming          2005-07-30  3453  
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3454  	/* Get PHY default EEE advertising modes and handle them as potentially
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3455  	 * safe initial configuration.
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3456  	 */
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3457  	err = genphy_c45_read_eee_adv(phydev, phydev->advertising_eee);
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3458  	if (err)
+8f9850dd8d23c1 Dan Carpenter         2023-02-27  3459  		goto out;
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3460  
+7f33fea6bb53d4 Heiner Kallweit       2025-02-16  3461  	/* Get the EEE modes we want to prohibit. */
+7f33fea6bb53d4 Heiner Kallweit       2025-02-16  3462  	of_set_phy_eee_broken(phydev);
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3463  
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3464  	/* Some PHYs may advertise, by default, not support EEE modes. So,
+7f33fea6bb53d4 Heiner Kallweit       2025-02-16  3465  	 * we need to clean them. In addition remove all disabled EEE modes.
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3466  	 */
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3467  	linkmode_and(phydev->advertising_eee, phydev->supported_eee,
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3468  		     phydev->advertising_eee);
+7f33fea6bb53d4 Heiner Kallweit       2025-02-16  3469  	linkmode_andnot(phydev->advertising_eee, phydev->advertising_eee,
+7f33fea6bb53d4 Heiner Kallweit       2025-02-16  3470  			phydev->eee_disabled_modes);
+3eeca4e199cee2 Oleksij Rempel        2023-02-22  3471  
+7f33fea6bb53d4 Heiner Kallweit       2025-02-16  3472  	/* There is no "enabled" flag. If PHY is advertising, assume it is
+7f33fea6bb53d4 Heiner Kallweit       2025-02-16  3473  	 * kind of enabled.
+d853d145ea3e63 jbrunet               2016-11-28  3474  	 */
+7f33fea6bb53d4 Heiner Kallweit       2025-02-16  3475  	phydev->eee_cfg.eee_enabled = !linkmode_empty(phydev->advertising_eee);
+d853d145ea3e63 jbrunet               2016-11-28  3476  
+20a4da20e0bd02 Oleksij Rempel        2024-10-04  3477  	/* Get master/slave strap overrides */
+20a4da20e0bd02 Oleksij Rempel        2024-10-04  3478  	of_set_phy_timing_role(phydev);
+20a4da20e0bd02 Oleksij Rempel        2024-10-04  3479  
+529ed12752635b Timur Tabi            2016-12-07  3480  	/* The Pause Frame bits indicate that the PHY can support passing
+529ed12752635b Timur Tabi            2016-12-07  3481  	 * pause frames. During autonegotiation, the PHYs will determine if
+529ed12752635b Timur Tabi            2016-12-07  3482  	 * they should allow pause frames to pass.  The MAC driver should then
+529ed12752635b Timur Tabi            2016-12-07  3483  	 * use that result to determine whether to enable flow control via
+529ed12752635b Timur Tabi            2016-12-07  3484  	 * pause frames.
+529ed12752635b Timur Tabi            2016-12-07  3485  	 *
+529ed12752635b Timur Tabi            2016-12-07  3486  	 * Normally, PHY drivers should not set the Pause bits, and instead
+529ed12752635b Timur Tabi            2016-12-07  3487  	 * allow phylib to do that.  However, there may be some situations
+529ed12752635b Timur Tabi            2016-12-07  3488  	 * (e.g. hardware erratum) where the driver wants to set only one
+529ed12752635b Timur Tabi            2016-12-07  3489  	 * of these bits.
+529ed12752635b Timur Tabi            2016-12-07  3490  	 */
+efbdfdc29bdd4d Andrew Lunn           2019-02-09  3491  	if (!test_bit(ETHTOOL_LINK_MODE_Pause_BIT, phydev->supported) &&
+efbdfdc29bdd4d Andrew Lunn           2019-02-09  3492  	    !test_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT, phydev->supported)) {
+3c1bcc8614db10 Andrew Lunn           2018-11-10  3493  		linkmode_set_bit(ETHTOOL_LINK_MODE_Pause_BIT,
+3c1bcc8614db10 Andrew Lunn           2018-11-10  3494  				 phydev->supported);
+3c1bcc8614db10 Andrew Lunn           2018-11-10  3495  		linkmode_set_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT,
+3c1bcc8614db10 Andrew Lunn           2018-11-10  3496  				 phydev->supported);
+529ed12752635b Timur Tabi            2016-12-07  3497  	}
+529ed12752635b Timur Tabi            2016-12-07  3498  
+00db8189d984d6 Andy Fleming          2005-07-30  3499  	/* Set the state to READY by default */
+00db8189d984d6 Andy Fleming          2005-07-30  3500  	phydev->state = PHY_READY;
+00db8189d984d6 Andy Fleming          2005-07-30  3501  
+01e5b728e9e43a Andrew Lunn           2023-04-17  3502  	/* Get the LEDs from the device tree, and instantiate standard
+01e5b728e9e43a Andrew Lunn           2023-04-17  3503  	 * LEDs for them.
+01e5b728e9e43a Andrew Lunn           2023-04-17  3504  	 */
+f0f2b992d8185a Sean Anderson         2025-07-07  3505  	if (IS_ENABLED(CONFIG_PHYLIB_LEDS) && !phy_driver_is_genphy(phydev) &&
+f0f2b992d8185a Sean Anderson         2025-07-07 @3506  	    !phy_driver_is_genphy_10g(phydev))
+01e5b728e9e43a Andrew Lunn           2023-04-17  3507  		err = of_phy_leds(phydev);
+01e5b728e9e43a Andrew Lunn           2023-04-17  3508  
+92ed2eb7f4b73e Andrew Lunn           2019-02-09  3509  out:
+f4b47a2e946395 Russell King (Oracle  2023-03-03  3510) 	/* Re-assert the reset signal on error */
+1dba6995731e1c Bartosz Golaszewski   2020-06-26  3511  	if (err)
+1dba6995731e1c Bartosz Golaszewski   2020-06-26  3512  		phy_device_reset(phydev, 1);
+1dba6995731e1c Bartosz Golaszewski   2020-06-26  3513  
+00db8189d984d6 Andy Fleming          2005-07-30  3514  	return err;
+00db8189d984d6 Andy Fleming          2005-07-30  3515  }
+00db8189d984d6 Andy Fleming          2005-07-30  3516  
 
-Highlights for some specific drivers include:
+:::::: The code at line 3506 was first introduced by commit
+:::::: f0f2b992d8185a0366be951685e08643aae17d6d net: phy: Don't register LEDs for genphy
 
-ath9k:
-Add AHB "of" support
+:::::: TO: Sean Anderson <sean.anderson@linux.dev>
+:::::: CC: Jakub Kicinski <kuba@kernel.org>
 
-ath11k:
-Support device-specific firmware override
-Fix potentially reordered access to device memory
-
-ath12k:
-Add more Wi-Fi 7 functionality
-Add more statistics to DebugFS
-Support different memory profiles
-Support 802.11 encap/decap offload to firmware
-Fix potentially reordered access to device memory
-
-And of course there is the usual set of cleanups and bug fixes across
-the entire family of "ath" drivers.
-
-----------------------------------------------------------------
-Aaradhana Sahu (6):
-      wifi: ath12k: Block radio bring-up in FTM mode
-      wifi: ath12k: Add a table of parameters entries impacting memory consumption
-      wifi: ath12k: Remove redundant TID calculation for QCN9274
-      wifi: ath12k: Refactor macros to use memory profile-based values
-      wifi: ath12k: Enable memory profile selection for QCN9274
-      wifi: ath12k: Use HTT_TCL_METADATA_VER_V1 in FTM mode
-
-Aditya Kumar Singh (4):
-      wifi: ath12k: fix timeout while waiting for regulatory update during interface creation
-      wifi: ath12k: add support for Tx Power insertion in RRM action frame
-      wifi: ath12k: advertise NL80211_FEATURE_TX_POWER_INSERTION support
-      wifi: ath12k: Add num_stations counter for each interface
-
-Baochen Qiang (3):
-      wifi: ath12k: remove unneeded semicolon in ath12k_mac_parse_tx_pwr_env()
-      wifi: ath11k: fix sleeping-in-atomic in ath11k_mac_op_set_bitrate_mask()
-      wifi: ath12k: bring DFS support back for WCN7850
-
-Colin Ian King (1):
-      wifi: ath11k: Make read-only const array svc_id static const
-
-Hari Chandrakanthan (1):
-      wifi: ath12k: Fix station association with MBSSID Non-TX BSS
-
-Hariharan Basuthkar (1):
-      wifi: ath12k: Send WMI_VDEV_SET_TPC_POWER_CMD for AP vdev
-
-Harshitha Prem (1):
-      wifi: ath12k: update unsupported bandwidth flags in reg rules
-
-Jeff Johnson (4):
-      wifi: ath12k: pack HTT pdev rate stats structs
-      wifi: ath10k: Prefer {} to {0} in initializers
-      wifi: ath11k: Prefer {} to {0} in initializers
-      wifi: ath12k: Prefer {} to {0} in initializers
-
-Johan Hovold (10):
-      wifi: ath11k: fix suspend use-after-free after probe failure
-      wifi: ath11k: fix dest ring-buffer corruption
-      wifi: ath11k: use plain access for descriptor length
-      wifi: ath11k: use plain accesses for monitor descriptor
-      wifi: ath11k: fix source ring-buffer corruption
-      wifi: ath11k: fix dest ring-buffer corruption when ring is full
-      wifi: ath12k: fix dest ring-buffer corruption
-      wifi: ath12k: use plain access for descriptor length
-      wifi: ath12k: fix source ring-buffer corruption
-      wifi: ath12k: fix dest ring-buffer corruption when ring is full
-
-Kang Yang (1):
-      wifi: ath10k: shutdown driver when hardware is unreliable
-
-Karthikeyan Kathirvel (1):
-      wifi: ath12k: allow beacon protection keys to be installed in hardware
-
-Maharaja Kennadyrajan (2):
-      wifi: ath12k: Add support to TDMA and MLO stats
-      wifi: ath12k: Add support to RTT stats
-
-Miaoqing Pan (2):
-      dt-bindings: net: wireless: ath11k-pci: describe firmware-name property
-      wifi: ath11k: support usercase-specific firmware overrides
-
-Nithyanantham Paramasivam (3):
-      wifi: ath12k: Fix the handling of TX packets in Ethernet mode
-      wifi: ath12k: Fix TX status reporting to mac80211 when offload is enabled
-      wifi: ath12k: Advertise encapsulation/decapsulation offload support to mac80211
-
-P Praneesh (1):
-      wifi: ath12k: set RX_FLAG_SKIP_MONITOR in WBM error path
-
-Pradeep Kumar Chitrapu (8):
-      wifi: ath12k: push HE MU-MIMO params to hardware
-      wifi: ath12k: push EHT MU-MIMO params to hardware
-      wifi: ath12k: move HE MCS mapper to a separate function
-      wifi: ath12k: generate rx and tx mcs maps for supported HE mcs
-      wifi: ath12k: add support for setting fixed HE rate/GI/LTF
-      wifi: ath12k: clean up 80P80 support
-      wifi: ath12k: add support for 160 MHz bandwidth
-      wifi: ath12k: add extended NSS bandwidth support for 160 MHz
-
-Qianfeng Rong (1):
-      wifi: ath5k: Use max() to improve code
-
-Raj Kumar Bhagat (2):
-      wifi: ath12k: handle WMI event for real noise floor calculation
-      wifi: ath12k: use real noise floor instead of default value
-
-Rameshkumar Sundaram (1):
-      wifi: ath12k: Fix beacon reception for sta associated to Non-TX AP
-
-Rosen Penev (4):
-      wifi: ath9k: ahb: reorder declarations
-      wifi: ath9k: ahb: reorder includes
-      dt-bindings: net: wireless: ath9k: add WIFI bindings
-      wifi: ath9k: ahb: replace id_table with of
-
-Saleemuddin Shaik (1):
-      wifi: ath12k: Add support for transmit histogram stats
-
-Sarika Sharma (8):
-      wifi: ath12k: Add memset and update default rate value in wmi tx completion
-      wifi: ath12k: fill link station statistics for MLO
-      wifi: ath12k: add link support for multi-link in arsta
-      wifi: ath12k: add EHT support for TX rate
-      wifi: ath12k: correctly update bw for ofdma packets
-      wifi: ath12k: fetch tx_retry and tx_failed from htt_ppdu_stats_user_cmpltn_common_tlv
-      wifi: ath12k: properly set bit for pdev mask for firmware PPDU_STATS request
-      wifi: ath12k: Correct tid cleanup when tid setup fails
-
-Sergey Senozhatsky (1):
-      wifi: ath11k: clear initialized flag for deinit-ed srng lists
-
-Sivashankari Madhavan (1):
-      wifi: ath12k: support average ack rssi in station dump
-
-Sriram R (2):
-      wifi: ath12k: Add support to enqueue management frame at MLD level
-      wifi: ath12k: Validate peer_id before searching for peer
-
-Sumanth Gavini (3):
-      wifi: wil6210: wmi: Fix spellings reported by codespell
-      wifi: ath10k: Fix Spelling
-      wifi: ath6kl: Fix spellings
-
-Tamizh Chelvam Raja (2):
-      wifi: ath12k: fix endianness handling while accessing wmi service bit
-      wifi: ath12k: Add support to parse max ext2 wmi service bit
-
-Thiraviyam Mariyappan (1):
-      wifi: ath12k: Clear auth flag only for actual association in security mode
-
- .../bindings/net/wireless/qca,ath9k.yaml           |   18 +-
- .../bindings/net/wireless/qcom,ath11k-pci.yaml     |    6 +
- drivers/net/wireless/ath/ath10k/core.c             |   50 +-
- drivers/net/wireless/ath/ath10k/core.h             |   13 +-
- drivers/net/wireless/ath/ath10k/debug.c            |    6 +-
- drivers/net/wireless/ath/ath10k/debugfs_sta.c      |    7 +-
- drivers/net/wireless/ath/ath10k/htt_rx.c           |    8 +-
- drivers/net/wireless/ath/ath10k/htt_tx.c           |    4 +-
- drivers/net/wireless/ath/ath10k/mac.c              |   15 +-
- drivers/net/wireless/ath/ath10k/pci.c              |    3 +-
- drivers/net/wireless/ath/ath10k/wmi.c              |    6 +
- drivers/net/wireless/ath/ath11k/ahb.c              |    2 +-
- drivers/net/wireless/ath/ath11k/ce.c               |    5 +-
- drivers/net/wireless/ath/ath11k/core.c             |    9 +-
- drivers/net/wireless/ath/ath11k/core.h             |   13 +-
- drivers/net/wireless/ath/ath11k/dbring.c           |    3 +-
- drivers/net/wireless/ath/ath11k/debugfs.c          |   38 +-
- .../net/wireless/ath/ath11k/debugfs_htt_stats.c    |   15 +-
- drivers/net/wireless/ath/ath11k/debugfs_sta.c      |   11 +-
- drivers/net/wireless/ath/ath11k/dp.c               |    2 +-
- drivers/net/wireless/ath/ath11k/dp_rx.c            |   45 +-
- drivers/net/wireless/ath/ath11k/dp_tx.c            |   15 +-
- drivers/net/wireless/ath/ath11k/hal.c              |   39 +-
- drivers/net/wireless/ath/ath11k/htc.c              |    2 +-
- drivers/net/wireless/ath/ath11k/mac.c              |   28 +-
- drivers/net/wireless/ath/ath11k/pci.c              |    4 +-
- drivers/net/wireless/ath/ath11k/spectral.c         |    3 +-
- drivers/net/wireless/ath/ath11k/wmi.c              |   12 +-
- drivers/net/wireless/ath/ath12k/ahb.c              |    1 +
- drivers/net/wireless/ath/ath12k/ce.c               |    5 +-
- drivers/net/wireless/ath/ath12k/core.c             |   80 +-
- drivers/net/wireless/ath/ath12k/core.h             |   44 +-
- drivers/net/wireless/ath/ath12k/dbring.c           |    3 +-
- drivers/net/wireless/ath/ath12k/debugfs.c          |    8 +-
- .../net/wireless/ath/ath12k/debugfs_htt_stats.c    |  564 ++++++-
- .../net/wireless/ath/ath12k/debugfs_htt_stats.h    |  207 ++-
- drivers/net/wireless/ath/ath12k/dp.c               |  138 +-
- drivers/net/wireless/ath/ath12k/dp.h               |   43 +-
- drivers/net/wireless/ath/ath12k/dp_mon.c           |   29 +-
- drivers/net/wireless/ath/ath12k/dp_rx.c            |   72 +-
- drivers/net/wireless/ath/ath12k/dp_tx.c            |  155 +-
- drivers/net/wireless/ath/ath12k/hal.c              |   40 +-
- drivers/net/wireless/ath/ath12k/hw.c               |   55 +
- drivers/net/wireless/ath/ath12k/hw.h               |   32 +-
- drivers/net/wireless/ath/ath12k/mac.c              | 1669 +++++++++++++++++---
- drivers/net/wireless/ath/ath12k/mac.h              |   17 +
- drivers/net/wireless/ath/ath12k/pci.c              |    6 +-
- drivers/net/wireless/ath/ath12k/peer.c             |    5 +-
- drivers/net/wireless/ath/ath12k/peer.h             |   28 +
- drivers/net/wireless/ath/ath12k/qmi.c              |    2 +-
- drivers/net/wireless/ath/ath12k/qmi.h              |    6 +-
- drivers/net/wireless/ath/ath12k/reg.c              |   31 +-
- drivers/net/wireless/ath/ath12k/wmi.c              |  359 ++++-
- drivers/net/wireless/ath/ath12k/wmi.h              |  165 +-
- drivers/net/wireless/ath/ath5k/phy.c               |   12 +-
- drivers/net/wireless/ath/ath6kl/core.c             |    2 +-
- drivers/net/wireless/ath/ath6kl/hif.c              |    2 +-
- drivers/net/wireless/ath/ath6kl/htc.h              |    6 +-
- drivers/net/wireless/ath/ath6kl/htc_mbox.c         |    2 +-
- drivers/net/wireless/ath/ath6kl/htc_pipe.c         |    2 +-
- drivers/net/wireless/ath/ath6kl/init.c             |    4 +-
- drivers/net/wireless/ath/ath6kl/main.c             |    2 +-
- drivers/net/wireless/ath/ath6kl/sdio.c             |    2 +-
- drivers/net/wireless/ath/ath6kl/usb.c              |    6 +-
- drivers/net/wireless/ath/ath6kl/wmi.c              |    2 +-
- drivers/net/wireless/ath/ath6kl/wmi.h              |   10 +-
- drivers/net/wireless/ath/ath9k/ahb.c               |   60 +-
- drivers/net/wireless/ath/wil6210/wmi.c             |    2 +-
- drivers/net/wireless/ath/wil6210/wmi.h             |    4 +-
- 69 files changed, 3532 insertions(+), 732 deletions(-)
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
