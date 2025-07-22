@@ -4,71 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95178C83F27
-	for <ath12k@archiver.kernel.org>; Tue, 22 Jul 2025 15:58:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC8D5C87FC5
+	for <ath12k@archiver.kernel.org>; Tue, 22 Jul 2025 15:58:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=mJ1SY2o9qAlthSmlGlrn+G+hrxTKVQ9u5L8LTdKCOFM=; b=1F+VwqnZpphTraQ0u0AmoI8gXn
-	Cth8OWKQmI1NpgPNg5pf1E1g0aTb+aK/YBD4iiw/mdKNid86vWKlWWZg6ZUGcP8VpAFzZ4qAWRHlc
-	684yEABBrWXsMn2HeiLbPL7YBz6d7OjG8oyr5txp9tDbQAc1Zimlp32sucQoOgt72upzPRqvexUI+
-	gWlfpUqOIHb79O9aAO0WSAI1XJd31H+R4irxqpyMkvhgcDBidrY9djrx+beO1uRzdDOpFS0+egYo8
-	U69MtqVWRJu0NAKToIkkrXGPllW6b1PsgeX1g9wuhEc398/UHNxJ0lsmGi7iAZwI3migo9sqPP9wS
-	lzsv0mTg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=fGtSDPWra64/S1y8jWx0tHa677joIW08bFQN0B46iqI=; b=Xa8O7XPAZ9sl0TG+PYtC1RK6yB
+	zn8BwIB0oIeLF4yfLfgq3+Up0O4TmBly8kRhizttef5vfhkpw2lcac2fTHETUCAyd9qnejXZCDpWB
+	Z+/yZnY4r+aTmVH7x4Lg5k9c18MKtMBQaXoB51DuWAxYX33xhCq1MXZ8bSOVDAqP85FYOMgvjVUIF
+	4GjWla9/SWH8YkMWk75nL1A6Occc8T3DwNKHG3i6cGwoJD4cHhjVsVurhN0fy1xwn+LnEWruE7bke
+	06xd27m6wvUgI+3OC+pLmnN3THNUWnLMwWu7kSq+DqyNSKRTNbIPm0oX2SM9HLp+WiuMToqcJInI+
+	5xxfV+0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueFNu-00000002vuM-0hmj;
-	Tue, 22 Jul 2025 15:58:30 +0000
-Received: from mgamail.intel.com ([192.198.163.18])
+	id 1ueFO2-00000002w1A-1VW7;
+	Tue, 22 Jul 2025 15:58:38 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueDwD-00000002hCz-43yi
+	id 1ueEC1-00000002kPi-2eUY
 	for ath12k@lists.infradead.org;
-	Tue, 22 Jul 2025 14:25:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1753194350; x=1784730350;
-  h=date:from:to:cc:subject:message-id;
-  bh=t02IiQuwSwUZ1wwVLTqY3kQwlyZ10c1g9wJ9LjLD0jg=;
-  b=bvcHcIZKVaU8Kn42WJqhP5NrGZ6WXJLugjuT7Bvv6FKWJKBAPJ+ia5Ws
-   FhjjshAMP7wKng0RL6ZgQ+G6mInDNne+a600XXkq0xK8W3IhuRXMBIq9A
-   RP3GEXTqPfC7XmCo/jtHcSdcGzD5LKl5dXVOxnvENWIcK2aXiU3QjFLsQ
-   EubTyOPGtKONfjlQRSkvHo6tBQDaP8VJ3tDqpp+/beFKJrCrrjPpUdrEY
-   UKkKSoaoNBmu0JObNGCjw4TNiwoqbn7/Zf+yW4YNfTzJib0lEumDEfbLC
-   wgno3ECHBmkoiQmw45g4zm3xmBA4ldg2KdLg0JPajv8Vxfx4ljRSImnkq
-   Q==;
-X-CSE-ConnectionGUID: hAVrwujOS+C3Ei7lBS+iFg==
-X-CSE-MsgGUID: oP+A2VskTmaJiUwh5e6v7A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11500"; a="54665972"
-X-IronPort-AV: E=Sophos;i="6.16,331,1744095600"; 
-   d="scan'208";a="54665972"
-Received: from orviesa010.jf.intel.com ([10.64.159.150])
-  by fmvoesa112.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 Jul 2025 07:25:49 -0700
-X-CSE-ConnectionGUID: eXwQIKzQTW20tvx0Ml8AgQ==
-X-CSE-MsgGUID: 6vt7h7tASOmugMUdPoXe8w==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,331,1744095600"; 
-   d="scan'208";a="158470671"
-Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
-  by orviesa010.jf.intel.com with ESMTP; 22 Jul 2025 07:25:48 -0700
-Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1ueDw9-000IPj-37;
-	Tue, 22 Jul 2025 14:25:45 +0000
-Date: Tue, 22 Jul 2025 22:24:45 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master] BUILD SUCCESS
- e4f11ae0c4b29ca0c133f891412afd5dcddc68ff
-Message-ID: <202507222231.z6XP1ume-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Tue, 22 Jul 2025 14:42:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=fGtSDPWra64/S1y8jWx0tHa677joIW08bFQN0B46iqI=;
+	t=1753195329; x=1754404929; b=pzhZMr8cHCqs7EQiuTtvYAjPzkz2N23LeYvc2Wc/oCPrHHr
+	YmE3EBoSwT2Jk/y4nLxurhTdAZcJTeP3dSB5v8OghOR3bv8ckX76iliGpGPdI2GLoy/61RHoIuHQ/
+	+k0TLPt2xWBXdHT3gpzMwk5+PX8iXqGqsEdJfEfQkwGpoVqrxetWzzdz4hQ45Y3raLCWXbYFOqs0S
+	X4M3BSE5RWkB4rMJxDeG5IoUW0a8Cj2E8Uwz1MrT2Ij5PhbQKN1dgf6y8ixK+fLtCXQqwR8eL1ZWK
+	SW9FKIokM527JZAH6jWdygGse/YAv50GDQFjhqpmSGbUYHzI9zQm5j0vm4A9og8w==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1ueEBw-00000002F6Z-24UV;
+	Tue, 22 Jul 2025 16:42:04 +0200
+Message-ID: <1a77ca6a35ad03f839b7c997de3977b521d88edc.camel@sipsolutions.net>
+Subject: Re: [DESIGN RFC] Critical Update handling in the kernel
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, Ping-Ke Shih
+	 <pkshih@realtek.com>, Lorenzo Bianconi <lorenzo@kernel.org>, Ryder Lee
+	 <ryder.lee@mediatek.com>
+Date: Tue, 22 Jul 2025 16:42:03 +0200
+In-Reply-To: <20250717045540.27208-1-aditya.kumar.singh@oss.qualcomm.com>
+References: <20250717045540.27208-1-aditya.kumar.singh@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.56.2 (3.56.2-1.fc42) 
+MIME-Version: 1.0
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250722_072550_023707_E6BDD313 
-X-CRM114-Status: UNSURE (   3.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250722_074209_985617_9D87932F 
+X-CRM114-Status: GOOD (  55.95  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,137 +74,357 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-branch HEAD: e4f11ae0c4b29ca0c133f891412afd5dcddc68ff  [temporary] Resolve conflict between ath-current and ath-next
+Hi,
 
-elapsed time: 862m
+Thanks for writing this up! I really think Realtek and Mediatek should
+comment - CC'ing some folks.
 
-configs tested: 117
-configs skipped: 4
+> "What about vendors whose firmware does not support this functionality?"
+> "What about mac80211_hwsim? How this is supposed to work with
+>  mac80211_hwsim?"
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+I really like the hwsim part because we really can't even test the
+client side right now ...
 
-tested configs:
-alpha                             allnoconfig    gcc-15.1.0
-alpha                            allyesconfig    gcc-15.1.0
-arc                              allmodconfig    gcc-15.1.0
-arc                               allnoconfig    gcc-15.1.0
-arc                              allyesconfig    gcc-15.1.0
-arc                        nsimosci_defconfig    gcc-15.1.0
-arc                   randconfig-001-20250722    gcc-10.5.0
-arc                   randconfig-002-20250722    gcc-11.5.0
-arm                              allmodconfig    gcc-15.1.0
-arm                               allnoconfig    clang-22
-arm                              allyesconfig    gcc-15.1.0
-arm                      jornada720_defconfig    clang-22
-arm                   randconfig-001-20250722    gcc-12.5.0
-arm                   randconfig-002-20250722    clang-22
-arm                   randconfig-003-20250722    gcc-8.5.0
-arm                   randconfig-004-20250722    clang-17
-arm                           spitz_defconfig    gcc-15.1.0
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-15.1.0
-arm64                 randconfig-001-20250722    clang-22
-arm64                 randconfig-002-20250722    clang-22
-arm64                 randconfig-003-20250722    clang-22
-arm64                 randconfig-004-20250722    gcc-8.5.0
-csky                              allnoconfig    gcc-15.1.0
-csky                  randconfig-001-20250722    gcc-11.5.0
-csky                  randconfig-002-20250722    gcc-15.1.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-22
-hexagon                          allyesconfig    clang-22
-hexagon               randconfig-001-20250722    clang-20
-hexagon               randconfig-002-20250722    clang-18
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250722    gcc-12
-i386        buildonly-randconfig-002-20250722    gcc-12
-i386        buildonly-randconfig-003-20250722    clang-20
-i386        buildonly-randconfig-004-20250722    gcc-12
-i386        buildonly-randconfig-005-20250722    clang-20
-i386        buildonly-randconfig-006-20250722    clang-20
-i386                                defconfig    clang-20
-loongarch                        alldefconfig    clang-20
-loongarch                        allmodconfig    clang-19
-loongarch                         allnoconfig    clang-22
-loongarch             randconfig-001-20250722    gcc-15.1.0
-loongarch             randconfig-002-20250722    clang-22
-m68k                             allmodconfig    gcc-15.1.0
-m68k                             allyesconfig    gcc-15.1.0
-m68k                          atari_defconfig    gcc-15.1.0
-m68k                        m5407c3_defconfig    gcc-15.1.0
-microblaze                       allmodconfig    gcc-15.1.0
-microblaze                       allyesconfig    gcc-15.1.0
-microblaze                          defconfig    gcc-15.1.0
-microblaze                      mmu_defconfig    gcc-15.1.0
-nios2                               defconfig    gcc-11.5.0
-nios2                 randconfig-001-20250722    gcc-11.5.0
-nios2                 randconfig-002-20250722    gcc-8.5.0
-openrisc                          allnoconfig    gcc-15.1.0
-openrisc                         allyesconfig    gcc-15.1.0
-parisc                           allmodconfig    gcc-15.1.0
-parisc                            allnoconfig    gcc-15.1.0
-parisc                           allyesconfig    gcc-15.1.0
-parisc                              defconfig    gcc-15.1.0
-parisc                randconfig-001-20250722    gcc-8.5.0
-parisc                randconfig-002-20250722    gcc-8.5.0
-parisc64                            defconfig    gcc-15.1.0
-powerpc                          allmodconfig    gcc-15.1.0
-powerpc                           allnoconfig    gcc-15.1.0
-powerpc                          allyesconfig    clang-22
-powerpc                  iss476-smp_defconfig    gcc-15.1.0
-powerpc                 mpc832x_rdb_defconfig    gcc-15.1.0
-powerpc                  mpc885_ads_defconfig    clang-22
-powerpc               randconfig-001-20250722    gcc-13.4.0
-powerpc               randconfig-002-20250722    clang-22
-powerpc               randconfig-003-20250722    gcc-14.3.0
-powerpc64             randconfig-001-20250722    gcc-8.5.0
-powerpc64             randconfig-002-20250722    clang-22
-powerpc64             randconfig-003-20250722    clang-22
-riscv                            allmodconfig    clang-22
-riscv                             allnoconfig    gcc-15.1.0
-riscv                            allyesconfig    clang-16
-riscv                 randconfig-001-20250722    clang-16
-riscv                 randconfig-002-20250722    gcc-12.5.0
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-22
-s390                             allyesconfig    gcc-15.1.0
-s390                  randconfig-001-20250722    clang-22
-s390                  randconfig-002-20250722    gcc-12.5.0
-sh                               allmodconfig    gcc-15.1.0
-sh                               allyesconfig    gcc-15.1.0
-sh                    randconfig-001-20250722    gcc-15.1.0
-sh                    randconfig-002-20250722    gcc-15.1.0
-sh                           se7206_defconfig    gcc-15.1.0
-sh                        sh7757lcr_defconfig    gcc-15.1.0
-sparc                            allmodconfig    gcc-15.1.0
-sparc                               defconfig    gcc-15.1.0
-sparc                 randconfig-001-20250722    gcc-13.4.0
-sparc                 randconfig-002-20250722    gcc-15.1.0
-sparc64               randconfig-001-20250722    gcc-8.5.0
-sparc64               randconfig-002-20250722    gcc-8.5.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-22
-um                               allyesconfig    gcc-12
-um                    randconfig-001-20250722    gcc-12
-um                    randconfig-002-20250722    gcc-12
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250722    gcc-12
-x86_64      buildonly-randconfig-002-20250722    gcc-12
-x86_64      buildonly-randconfig-003-20250722    gcc-12
-x86_64      buildonly-randconfig-004-20250722    clang-20
-x86_64      buildonly-randconfig-005-20250722    gcc-12
-x86_64      buildonly-randconfig-006-20250722    gcc-12
-x86_64                              defconfig    gcc-11
-x86_64                          rhel-9.4-rust    clang-20
-xtensa                randconfig-001-20250722    gcc-15.1.0
-xtensa                randconfig-002-20250722    gcc-10.5.0
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D
+>                             OPEN QUESTIONS
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D
+> Before we move forward with implementation, we'd like to confirm whether
+> the proposed design looks sound. Are there any concerns or potential issu=
+es
+> we should be aware of?
+>=20
+> Out of curiosity, we're also interested in understanding how other vendor=
+s
+> are currently handling this feature in their downstream drivers. Is it
+> typically offloaded to firmware, or is the logic implemented in the kerne=
+l?
+> Just want to confirm whether all this will be used only by mac80211_hwsim
+> or will there be any actual users?
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+I think Ping-Ke previously indicated that they were planning to do
+things host side? I'm not super familiar with the timing constraints
+though, so I'm not sure what that might imply.
+
+> Critical Update is a mechanism where, if a BSS parameter changes on one o=
+f
+> the links within a Multi-Link Device (MLD), that change is also signaled =
+in
+> the beacons/probe response of its partner links. This allows the multi-li=
+nk
+> client to be proactively informed of the update through any of the partne=
+r
+> links, rather than waiting to receive the updated beacon/probe responses
+> from the affected link itself.
+
+FWIW we also have some client side code for it already. It's probably
+broken ;-)
+
+> This ensures that multi-link clients monitoring Link B can be promptly
+> informed of the change on Link A, without needing to wait for Link A=E2=
+=80=99s next
+> beacon.
+
+Btw, you make this a lot about "without needing to wait" and the whole
+timing, but another, I'd maybe even argue more important, aspect of this
+is that they don't have to be receiving the beacon at all. For example
+for EMLSR clients, or clients that aren't even active at all on a given
+link, they might not/cannot see the beacons for all links at all, even
+if they're nominally connected on those links.
+
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D
+>                             DESIGN PROPOSAL
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D
+>=20
+> Assumptions:
+> ------------
+> The critical update procedure is highly timing-sensitive.=C2=A0
+
+There are two aspects here that I feel maybe you're conflating a bit. On
+the one hand, yes, some of it needs to have the precise information for
+the counters. OTOH, some of it is really not _that_ timing critical,
+e.g. whether or not you actually get the information live at exactly the
+right time. Though of course a frame that's transmitted after a beacon
+that advertised CSA should not suddenly _not_ advertise it even cross-
+link.
+
+> This design introduces additional computational overhead, which could
+> potentially delay beacon processing. Since not all mac80211 drivers may
+> prefer this behavior, introduce a new extended feature flag -
+> CRITICAL_UPDATE_SELF_MANAGED. mac80211 will NOT perform these extra
+> computations if the driver advertises this feature support.
+
+Fair.
+
+> Parsing the beacon update:
+> --------------------------
+> During the ieee80211_assign_beacon() call (where link->u.ap.beacon is
+> updated whenever the beacon content is initially set using
+> ieee80211_start_ap(), modified through ieee80211_change_beacon(), or
+> changed as a result of channel or color switch events) -
+>=20
+> 1. Store the new beacon data in a new pointer, following the usual flow.
+> 2. Parse the beacon (using the head and tail pointers) and record the
+>    starting offsets of each required Element (earlier referred to as IE i=
+.e
+>    Information element) in an array, indexed by element id or extended
+>    element id. This is done per link object.
+> 3. If a previous beacon exists:
+>     3.1 For each element related to the critical update, perform a memcmp=
+()
+>         to detect changes compared to the previous contents.
+>     3.2 If any such element has changed, set the critical update flag in
+>         some link-level object (e.g., link_conf). (this is for the affect=
+ed
+>         link)
+>         3.2.1 At the same time, set the critical update flag for all
+>               partner links as well in the same object.
+>     3.3 Increment the BPCC[2] value (modulo 256 excluding 255) for the
+
+(as an aside, I think this is really funny - it's obviously the same as
+"modulo 255", but I guess I can also see why they worded it that way...)
+
+
+>         current link.
+
+Wouldn't it be far simpler to have hostapd indicate the critical update,
+and even the BPCC value? It also has to include BPCC in RNR and other
+fields, do we really want to _parse_ all of that and update all those
+values?! Seems iffy at best.
+
+> 4. If critical update flag got set in previous step for partner links, ca=
+ll
+>    link_info_changed() with CHANGED_BEACON to notify lower layer that
+>    beacon has changed. This applies only in case when beacon is offloaded
+>    to firmware. In case beacon is given to driver at every TBTT, there is
+>    no need to notify since at next TBTT, driver will fetch the latest
+>    beacon anyways.
+
+Sure.
+
+
+> Forming the new beacon:
+> -----------------------
+> In the __ieee80211_beacon_get() function, where the beacon SKBs are
+> constructed:
+>=20
+> 1. Allow the existing logic to generate all beacon SKBs (including multip=
+le
+>    SKBs in the case of MBSSID-EMA).
+> 2. For each beacon SKB:
+>     2.1 Parse the RNR (Reduced Neighbor Report) element.
+>         2.1.1 For each TBTT Info entry:
+>             2.1.1.1 Extract the BSSID
+>             2.1.1.2 Retrieve the corresponding link sdata from BSSID
+>             2.1.1.3 fetch the latest BPCC value.
+>             2.1.1.4 Update the frame with this latest BPCC value.
+
+Yeah, I really don't like that... Do you really do that in firmware
+today? That sounds all really painful.
+
+>     2.2 Parse the MBSSID profile element.
+>         2.2.1 For each non-Tx profile:
+>             2.2.1.1 Extract the BSSID
+>             2.2.1.2 Retrieve the corresponding link sdata from BSSID
+>             2.2.1.3 If the critical update flag is set in link object, se=
+t
+>                     the CU (Critical Update) bit in the capability elemen=
+t.
+>             2.2.1.4 Set non_tx_update =3D true.
+>     2.3 Parse the multi-link element.
+>         2.3.1 For the self link (already known), fetch the latest BPCC
+>               value.
+>         2.3.2 Update the frame with this BPCC value.
+>     2.4 Update the capability element in the SKB:
+>         2.4.1 If the critical update flag is set, set the CU bit.
+>         2.4.2 If non_tx_update =3D=3D true, also set the non-Tx CU bit.
+
+How much of that can we let hostapd do?
+
+> This mechanism sufficiently handles critical updates due to modifications
+> of existing elements (elements related to the critical update which are
+> already present in the beacon and just one or more field is/are changing
+> its value). However, in the case of new element inclusion (elements relat=
+ed
+> to the critical update which are not alread present in the beacon, but is
+> getting added from next beacon), additional handling is required.
+> Specifically, the newly included elements related to the critical update
+> must be added to the per-STA profile within the Basic Multi-Link Element
+> (BMLE) [3].
+
+That seems almost like an over-optimisation? If I'm reading this
+correctly, this is basically describing a situation like this
+
+(x indicates a beacon TX)
+=20
+link 1    x        x        x        x        x        x        x
+link 2         x        x        x        x        x        x        x
+
+                     ^ link 1 starts channel switching
+                       (after its own bcn, before the next link 2 bcn)
+
+and saying that really the next link 2 beacon will already indicate the
+link 1 beacon will be switching channel.
+
+But is that really actually a case worth worrying about? You can always
+consider it as if this had happened:
+
+link 1    x        x        x        x        x        x        x
+link 2         x        x        x        x        x        x        x
+
+                         ^ link 1 starts channel switching
+
+i.e. as if link 1 had decided to do channel switch just _after_ link 2's
+beacon instead.
+
+Does that really significantly change anything? I'm not so sure?
+
+> To achieve this:
+>=20
+> 3. Allow the existing logic to form the beacon SKB as previously defined
+>    (this already handles modification updates).
+> 4. Maintain an extra_len variable to track any additional space required
+>    for including additional elements.
+> 5. While parsing:
+>     5.1 If critical update is going on in partner link due to inclusion o=
+f
+>         elements, increment extra_len accordingly.
+>     5.2 The required length is determined using the eid/ext eid based
+>         offset  maintained in each beacon data structure.
+>     5.3 Since the element offset is known, and the next byte is the tag
+>         length, the total length is tag_len + 2 (for EID and length
+>         fields).
+>     5.4 Account for any additional fields that may be needed (e.g.,
+>         sub-element ID and length in the Multi-Link IE).
+> 6. Compute the new beacon size:
+>      new_size =3D current_size + extra_len
+> 7. Allocate a new SKB with the updated size.
+> 8. Copy the existing contents and insert the new or updated elements at t=
+he
+>    appropriate offsets.
+> 9. Since IE offsets are cached in the beacon data structure, the entire I=
+E
+>    can be copied directly without re-parsing the full beacon from other
+>    links.
+> 10. Free the original beacon SKB.
+> 11. Return the newly constructed beacon SKB.
+
+That kind of also seems like hostapd could just update the beacons?
+
+> DTIM beacon handling:
+> ---------------------
+> As per requirement [4], the Critical Update (CU) bit in the capability
+> field must be cleared in the DTIM beacon.
+>=20
+> For Non-Offloaded Beacon Handling:
+>     1. The function __ieee80211_beacon_add_tim() is responsible for
+>        updating the DTIM count.
+>     2. When the DTIM count reaches 1 (indicating that the next beacon wil=
+l
+>        be a DTIM beacon), the critical update flag in the corresponding
+>        link object should be reset.
+>=20
+> For Offloaded Beacon Handling:
+>     1. If precise control is required:
+>          1.1 Since DTIM updates are managed by the lower layer (typically
+>              the firmware or driver), an API will be provided to explicit=
+ly
+>              reset the critical update flag.
+>          1.2 The driver, upon detecting that a DTIM beacon is about to be
+>              transmitted, can invoke this API to perform the reset.
+>     2. If some timing inaccuracy is acceptable:
+>          2.1 mac80211 can maintain a timer to reset the critical update
+>              flag after a DTIM interval.
+>          2.2 However, this approach may lead to synchronization issues, a=
+s
+>              mac80211 cannot guarantee the exact timing of beacon
+>              transmission handled by the hardware.
+
+I guess I can see where this is needed, yeah. I think I'd probably go
+for 1, it's simpler for mac80211 and worst case drivers can have a
+counter or something themselves and do that after pulling the DTIM
+beacon from mac80211.
+
+> Update BPCC back to NL:
+> -----------------------
+> After the kernel increments the BPCC value, it can emit a netlink event
+> containing the updated BPCC value. This allows hostapd to receive the
+> latest BPCC and include it in probe/association response frames, as
+> required by the specification.
+>=20
+> This coordination ensures that all - beacon, probe response, and
+> association response frames reflect consistent BPCC values, maintaining
+> compliance with spec-defined behavior for multi-link and critical update
+> handling.
+
+Yeah not liking this too much I guess... Why can't hostapd maintain
+BPCC?
+
+> Counter offset handling of partner links:
+> -----------------------------------------
+> Note: This applies only in case of offloaded beacon case.
+>=20
+> Since not all links operate with the same beacon interval, the firmware
+> cannot simply decrement the counter on every self-beacon transmission.
+>=20
+> To handle this correctly:
+> Each BPCC counter will be associated with:
+>     * An offset (location in the frame where the counter resides), and
+>     * A periodicity value, indicating how often the counter should be
+>       decremented.
+>=20
+> The firmware is expected to:
+>    * Track the number of self-beacon transmissions per link.
+>    * Decrement the counter only after the specified number of
+>      transmissions, as defined by the periodicity value.
+>    * This ensures that counter updates are aligned with each link=E2=80=
+=99s
+>      individual beacon schedule, maintaining spec compliance in multi-lin=
+k
+>      scenarios.
+
+True. Although I expect some devices might simply prevent different
+beacon intervals.
+
+> Complexities:
+> -------------
+> When adding elements in per STA profile, the element length might exceed
+> hence fragmentation needs to be handled properly.
+
+We have fragmentation but all this parsing means also we need
+_defragmentation_ first, which is awkward?
+
+> memcmp vs hashing
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> In the section where memcmp() is used to detect changes in beacon element=
+s
+> (to determine if a critical update is needed), this logic could
+> alternatively be handled at the hostapd level.
+
+Yeah sounds better to me :P
+
+> Since hostapd does not retain the previous beacon frame, it cannot perfor=
+m
+> a direct memory comparison. However, it can compute and store hashes of t=
+he
+> required elements during beacon formation. On subsequent updates, it can
+> compare the new hashes with the previously stored ones to detect changes.
+
+It doesn't necessarily even have to do that - it could also track
+internally when it made changes. Like when something actually starts a
+channel switch. Or color switch maybe, or something.
+
+johannes
 
