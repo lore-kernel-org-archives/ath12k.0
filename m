@@ -4,64 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B70EEC83F17
-	for <ath12k@archiver.kernel.org>; Wed, 23 Jul 2025 10:37:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0B41C83F17
+	for <ath12k@archiver.kernel.org>; Wed, 23 Jul 2025 19:07:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gBa3K+sc+FwHwIkPMuRBeiCuVDJecjqms6fuxGMFbLc=; b=f0q4rsW+YNkP7War5ONtVyvdAA
-	TvDou4gJVpEgcoPQsakyrlkMFmZ3Xn0eL1FS1z1j/kNL28zCNEwtjsjGs0c45smtLAxVs4Rr6mjJd
-	88Ku+IrU+qWWXrJmxdnQAa6rYtBsbq8rq3+uqMHOh2PCENds0o4Ti+BT9K7fvdU6FKKnCeqoVKdiJ
-	kPxaNcbki0/M0vOxjCe4e8xhpJtZ0cTAHn/Io+nfJsiW2jA2q1hsSpL7mQQdIeHrzIlVOW4Zans1Q
-	oN5T+uD04aMByfCpN8Y43OCGGA86T1RYi6Z7K6fG/YIHZe5GwHHiDBuEy1S4XVBD2B38bcX9PpUTm
-	YLrtOVUQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=6OAgETBIo5KYl0wAQ2L6Hxvxd9XFR9GD7QBZUpNqysQ=; b=Wjn33D7dvES8d4j/gAll8j+vmR
+	KnxTKGcH8E9HC4KTu7lqEgLO0Ou4AqOGPyBrn+hTTLIe/LLhppgssMcLZWiVRsxGMX0IIr2P9T+LW
+	AO6o7MqEy5WFqu43/mYEPEQmShU4Vo+wYs/AUouwb6I9ixHqD5runAVRvAEaa+EXv6LTG5EOiWtBM
+	VrEMaXNTzLZdrfguNdnzGnhid3Nh+Ud71T3S4xJE+i3FIdEzE3GikIYDxzcvLyrP4wrsRlb35Ozzu
+	GI3nEU/Qy81LbFZB3gHswXoFHtUkH7dqRQhgUlC3oTNaJvxKp/LUKqobLkqQH2rPfT0crcUmHnz7m
+	nMmoiznw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWr6-00000004i3u-1g6o;
-	Wed, 23 Jul 2025 10:37:48 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	id 1ueeny-00000005o0z-1Poq;
+	Wed, 23 Jul 2025 19:07:06 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWmh-00000004haK-33aA
+	id 1ueenv-00000005o0e-0Sla
 	for ath12k@lists.infradead.org;
-	Wed, 23 Jul 2025 10:33:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=gBa3K+sc+FwHwIkPMuRBeiCuVDJecjqms6fuxGMFbLc=;
-	t=1753266793; x=1754476393; b=m60CFsup83UdjJtHYROU4P4hhbzhF/0omuWwKTaxgTiqqzF
-	e27lx6LSzvqWiSG182T0dCo6yU2JGBlLxK77w1MuGUgNYTp9vKuJMxScj0iRXOZpdczw+wN7JFJAm
-	4AzKDA6xK7+dnEm3aD6ZDej2soW7snQDdWOYz/y+BqbRj0q/jEXc7n87LZgQYdycAP+Bwo0LfVB4B
-	ooTTNV9hc+3jhaVgX/uT6VfVgKl0+/6AlsYVmMJGdJdi2UGvtH8nogsK7Jrdu58F1j3wUsUU0F//1
-	Z316S6je7XkjYekRE+j75qCYhFvGYSGfR03iHAlIDqwxgtY631CcMc4Yu/b1OJMA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1ueWma-00000003iAq-29aA;
-	Wed, 23 Jul 2025 12:33:08 +0200
-Message-ID: <08fee54dd5afc5c8b4966188eb3016713a3d8c8a.camel@sipsolutions.net>
-Subject: Re: [DESIGN RFC] Critical Update handling in the kernel
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, Ping-Ke Shih
-	 <pkshih@realtek.com>, Lorenzo Bianconi <lorenzo@kernel.org>, Ryder Lee
-	 <ryder.lee@mediatek.com>
-Date: Wed, 23 Jul 2025 12:33:07 +0200
-In-Reply-To: <4a94fa66-8140-4cc8-996c-0ed097b4004a@oss.qualcomm.com>
-References: <20250717045540.27208-1-aditya.kumar.singh@oss.qualcomm.com>
-	 <1a77ca6a35ad03f839b7c997de3977b521d88edc.camel@sipsolutions.net>
-	 <4a94fa66-8140-4cc8-996c-0ed097b4004a@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.56.2 (3.56.2-1.fc42) 
+	Wed, 23 Jul 2025 19:07:04 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56NH3SdP009376
+	for <ath12k@lists.infradead.org>; Wed, 23 Jul 2025 19:07:02 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=6OAgETBIo5KYl0wAQ2L6Hxvxd9XFR9GD7QB
+	ZUpNqysQ=; b=DxEHCCpsdExlGWLApGnobsYhg7ZujnVkou5AMy5oVHNPrKwm37h
+	RdL0u4mtJ7Qt8adp2rRVwEOrLZ73PqwCQP5rMJF38cwTJ7n0VMXz2mnc83Mc7ACb
+	Pd5z1FIq5rckC+OWXrscz3f5uqNg45bSQ9hdYGQSzsE9W3RKluTcE98zUEavDAUJ
+	lKJv7I4Ikx/ykgw6OSXvOmCs7HzaV/JjC6xNx/BKS7rskkBEJfWb45fooYyA55Oe
+	Z2ub3cztE3qCgbpZnG9nwsRGTCOPNe1KYXsue7f1FxTt/xSrtpfRTeGoPadbxE77
+	WT3LCcnyyI8cZRa0wRyDA1Yz4yxR+Gz4x1A==
+Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4804na4rbf-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 23 Jul 2025 19:07:01 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-b31cc625817so969649a12.0
+        for <ath12k@lists.infradead.org>; Wed, 23 Jul 2025 12:07:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1753297621; x=1753902421;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=6OAgETBIo5KYl0wAQ2L6Hxvxd9XFR9GD7QBZUpNqysQ=;
+        b=xRSZYWgU4XfmmxRENpXlFxAarMG4nDZyxQsvLlzYVHSEDdtr+gD9PqzyFx5bNh4d79
+         orXQ+2AEGFu/FEYwCRC+VRGYdAAQUpbMzSl/M+eNGMCOx86V/6BVcJ6sz1kESNn7OtmC
+         trOKA73X2W6layWarhZ8eNY9SfcktsZ2WwBZW2LU4LfcYCoYoe0MGQOLMol1ORBEM82n
+         c0HUdVnphNDDZ9PmE6+YhkTS5jzMpNMAkGPqgkZFaeXTjFqfUqpF/c+/U4SyElVXJS5y
+         c7Du35H4cTOSRm9VqfAo9dJdgv1RY4AE/a6A+YOkw4w6S7pbCQIblpfq09+X3F+49o2+
+         lZjg==
+X-Gm-Message-State: AOJu0Ywl2GTzSjgqkBaUh3YSc3Y6PqSQt1DNQEYKyhFq8RDla5BTZh5m
+	oGPm/2uABALDZwvwA6/xFJFI+JyypKpSQSbdr31zyaczGJYC35AJ8Ss8tCORvXmZph2AeQ1i1lU
+	vhJNiwpMA4aDHOm9U1Fy/f0PG8W7PLJyDjTQ2HzrEHyaBv2gDIN5uiCLYtSS1Pimu6cy1T5Ll
+X-Gm-Gg: ASbGncsWiqtBNrakE5ghQRZ94uU3WEj1d1phSX+aVzl0RCHUYXZpm/NdrmZY2tG6dEj
+	vlDJAw8uaju9Is/51z0aj0z5dk/mHchBzWVAu/7DGNJvgOwgYieLWK7P1yeWA8/dLqd80frlMgA
+	z7zZlRmGZciWACp3KPbzhDm8eBu5kXAedGHX2dp4pfGnUwROdO7oHHaHt6fMaQhoXRjRa89vAT/
+	EHu8vPhXm2GGY0B1KkVXB8Uc5+F8FL7IhsVqM+dNUJmg1YAodtPhij3KdbxTF5IC3KMiyEAmrIk
+	D4IkzgNDjJkiuQa3mAWCCeYzff0dzaRXxcqnKRo7fytxUNNpAQnqH3fTk8p9OtY0xc7ok6GstKc
+	OIukjnZs/9TdUm5ge5nm9cuyChxlXMoW0dpiDSHLitLPQHmBOTrv1cQ==
+X-Received: by 2002:a17:90b:3ec4:b0:2fa:42f3:e3e4 with SMTP id 98e67ed59e1d1-31e3e107b35mr10939149a91.3.1753297620710;
+        Wed, 23 Jul 2025 12:07:00 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGMW7SPxYd5AV88V01ROsSqlFgmOzoQGRQjlPHQTKSQch4m9RBwARFM9Viisr5FxDFdGrXm8A==
+X-Received: by 2002:a17:90b:3ec4:b0:2fa:42f3:e3e4 with SMTP id 98e67ed59e1d1-31e3e107b35mr10939111a91.3.1753297620202;
+        Wed, 23 Jul 2025 12:07:00 -0700 (PDT)
+Received: from hu-aisr-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-31e519ce880sm2219528a91.1.2025.07.23.12.06.58
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 23 Jul 2025 12:06:59 -0700 (PDT)
+From: Aishwarya R <aishwarya.r@oss.qualcomm.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Sriram R <quic_srirrama@quicinc.com>,
+        Vinith Kumar R <quic_vinithku@quicinc.com>,
+        Aishwarya R <aishwarya.r@oss.qualcomm.com>
+Subject: [PATCH ath-next] wifi: ath12k: Add fallback for invalid channel number in PHY metadata
+Date: Thu, 24 Jul 2025 00:36:51 +0530
+Message-Id: <20250723190651.699828-1-aishwarya.r@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-GUID: c-TgnVY7kTYHqELB7u6qGYCTEY5SycFk
+X-Proofpoint-ORIG-GUID: c-TgnVY7kTYHqELB7u6qGYCTEY5SycFk
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzIzMDE2MSBTYWx0ZWRfX8WEr1L3beJYu
+ dYLekLwkNny42Akj6Swkwe4TFBYO2GIERgXUl6ppQWsDMWPUfEzDez1HwMgwEyLPUJ6w3SLm+m0
+ tzkbpUh4gY+w3mK7XDa9KkozPDvQsC0SWvgYjp6AQxo6PxxXP0W1XPWxt5NFzJYliBD2Hofr5Vk
+ XkLpY8+nEn70pazJ+t+X769yI2aAr5oR2gOx8wUIjhNs3b4Tx36pPgTg0RQIrL6kPqcd1+GGl/C
+ woH7BsxQ7XUBLfPlRuwRTJ/XQZ5WgxDMsXXmLET2bKq1/YKm/WJThQy3LwW2ZHEsNfr8BEEwSao
+ gXMbHzm0dsnpDyrpj2IPohMYqdCubB+TpSM+k3Wv6nWx37GItUiAZSnsxd1u9pWTcsrJXTXWdFh
+ t1t6Oljf7cuA5MwHVNkAdmTr1P2cyNgmvs3IOhYKIz4aZdyuBFTseb4My2Fh8eH6xM718tPO
+X-Authority-Analysis: v=2.4 cv=DoFW+H/+ c=1 sm=1 tr=0 ts=688132d5 cx=c_pps
+ a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=Wb1JkmetP80A:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=wNp79QKJu4ZgEVFT10sA:9
+ a=_Vgx9l1VpLgwpw_dHYaR:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-07-23_03,2025-07-23_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 phishscore=0 clxscore=1011 mlxscore=0 mlxlogscore=999
+ bulkscore=0 impostorscore=0 malwarescore=0 lowpriorityscore=0 adultscore=0
+ spamscore=0 priorityscore=1501 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2507230161
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_033315_964412_72912CF1 
-X-CRM114-Status: GOOD (  61.89  )
+X-CRM114-CacheID: sfid-20250723_120703_154493_AECAB173 
+X-CRM114-Status: GOOD (  14.87  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,275 +125,81 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, 2025-07-23 at 10:04 +0530, Aditya Kumar Singh wrote:
-> > FWIW we also have some client side code for it already. It's probably
-> > broken ;-)
->=20
-> Yes, I=E2=80=99ve seen that. I=E2=80=99m not entirely sure if it=E2=80=99=
-s broken, but it does=20
-> seem related to CSA parsing from the link=E2=80=94there is code handling =
-that.=20
-> If anything turns out to be broken, we can fix it.
+From: Sriram R <quic_srirrama@quicinc.com>
 
-We just never tested it well, that's why I said that. Sure, if it's
-broken we'll fix it.
+Currently, ath12k_dp_rx_h_ppdu() determines the band and frequency
+based on the channel number and center frequency from the RX descriptor's
+PHY metadata. However, in rare cases, it is observed that frequency
+retrieved from the metadata may be invalid or unexpected especially for
+6 GHz frames.
+This can result in a NULL sband, which prevents proper frequency assignment
+in rx_status and potentially leading to incorrect RX packet classification.
 
-> > > Assumptions:
-> > > ------------
-> > > The critical update procedure is highly timing-sensitive.
-> >=20
-> > There are two aspects here that I feel maybe you're conflating a bit. O=
-n
-> > the one hand, yes, some of it needs to have the precise information for
-> > the counters. OTOH, some of it is really not _that_ timing critical,
-> > e.g. whether or not you actually get the information live at exactly th=
-e
-> > right time. Though of course a frame that's transmitted after a beacon
-> > that advertised CSA should not suddenly _not_ advertise it even cross-
-> > link.
->=20
-> Absolutely! We acknowledge that achieving the ideal case may not be=20
-> possible. Keeping the logic in the kernel brings us closer to the=20
-> expected behavior, whereas shifting it to hostapd would likely result in=
-=20
-> a much larger deviation.
+To fix this potential issue, add a fallback mechanism that uses
+ar->rx_channel to populate the band and frequency when the derived
+sband is invalid or missing.
 
-Fully in hostapd I would agree, but not sure it should be fully in the
-kernel as you propose either? We have some middle ground for CSA today
-with just the counter updates, rather than creating the elements and all
-that. Not sure we couldn't/shouldn't replicate that?
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
-> > Wouldn't it be far simpler to have hostapd indicate the critical update=
-,
-> > and even the BPCC value? It also has to include BPCC in RNR and other
-> > fields, do we really want to _parse_ all of that and update all those
-> > values?! Seems iffy at best.
->=20
-> The challenge is that if hostapd takes on this task, it would need to=20
-> send updates for all partner links. Theoretically, this could result in=
-=20
-> up to 15 beacon NLs being transmitted. Processing these NLs and updating=
-=20
-> the beacons would already be time-consuming.
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+Co-developed-by: Vinith Kumar R <quic_vinithku@quicinc.com>
+Signed-off-by: Vinith Kumar R <quic_vinithku@quicinc.com>
+Signed-off-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
 
-Is it though? I mean, where do you see the bottleneck? Locking wise it's
-just the wiphy lock that shouldn't be contended, netlink isn't the most
-inefficient API ... sure there are roundtrips involved, but this seems a
-bit "handwavy" to me.
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 8ab91273592c..adb0cfe109e6 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -2533,6 +2533,8 @@ void ath12k_dp_rx_h_ppdu(struct ath12k *ar, struct ath12k_dp_rx_info *rx_info)
+ 	channel_num = meta_data;
+ 	center_freq = meta_data >> 16;
+ 
++	rx_status->band = NUM_NL80211_BANDS;
++
+ 	if (center_freq >= ATH12K_MIN_6GHZ_FREQ &&
+ 	    center_freq <= ATH12K_MAX_6GHZ_FREQ) {
+ 		rx_status->band = NL80211_BAND_6GHZ;
+@@ -2541,21 +2543,33 @@ void ath12k_dp_rx_h_ppdu(struct ath12k *ar, struct ath12k_dp_rx_info *rx_info)
+ 		rx_status->band = NL80211_BAND_2GHZ;
+ 	} else if (channel_num >= 36 && channel_num <= 173) {
+ 		rx_status->band = NL80211_BAND_5GHZ;
+-	} else {
++	}
++
++	if (unlikely(rx_status->band == NUM_NL80211_BANDS ||
++		     !ath12k_ar_to_hw(ar)->wiphy->bands[rx_status->band])) {
++		ath12k_warn(ar->ab, "sband is NULL for status band %d channel_num %d center_freq %d pdev_id %d\n",
++			    rx_status->band, channel_num, center_freq, ar->pdev_idx);
++
+ 		spin_lock_bh(&ar->data_lock);
+ 		channel = ar->rx_channel;
+ 		if (channel) {
+ 			rx_status->band = channel->band;
+ 			channel_num =
+ 				ieee80211_frequency_to_channel(channel->center_freq);
++			rx_status->freq = ieee80211_channel_to_frequency(channel_num,
++									 rx_status->band);
++		} else {
++			ath12k_err(ar->ab, "unable to determine channel, band for rx packet");
+ 		}
+ 		spin_unlock_bh(&ar->data_lock);
++		goto h_rate;
+ 	}
+ 
+ 	if (rx_status->band != NL80211_BAND_6GHZ)
+ 		rx_status->freq = ieee80211_channel_to_frequency(channel_num,
+ 								 rx_status->band);
+ 
++h_rate:
+ 	ath12k_dp_rx_h_rate(ar, rx_info);
+ }
 
-We could also always have new per-link attributes for the beacon
-template updates for other links so it doesn't require full commands but
-just updates the beacon tail (probably only that?) of other links in the
-same operation?
+base-commit: 708243c62efde8241e2c66e9c3f377658855149d 
+-- 
+2.34.1
 
-> On top of that, managing=20
-> the additional offsets required to update the counters adds another=20
-> layer of complexity.
->=20
-> OTOH, the proposed design just takes 1 NL update and rest it does=20
-> automatically what is needed which will be less time consuming than=20
-> multiple NL commands flow.
-
-I still don't buy the "time consuming" thing, but I agree that managing
-the counter locations would be more difficult. OTOH, that's a list of
-counters per link, so it's not _that_ much complexity?
-
-I really don't like the parsing in kernel for two reasons:
-
- 1) it's a lot of complexity that would never exist at all when hostapd
-    gives the data because it's building it, it doesn't need to parse
-
- 2) less importantly, I also think it ossifies things since the kernel
-    would need updates for even minor changes in the layout or elements
-    (this of course already being true for FW based solutions)
-
-> > >      2.2 Parse the MBSSID profile element.
-> > >          2.2.1 For each non-Tx profile:
-> > >              2.2.1.1 Extract the BSSID
-> > >              2.2.1.2 Retrieve the corresponding link sdata from BSSID
-> > >              2.2.1.3 If the critical update flag is set in link objec=
-t, set
-> > >                      the CU (Critical Update) bit in the capability e=
-lement.
-> > >              2.2.1.4 Set non_tx_update =3D true.
-> > >      2.3 Parse the multi-link element.
-> > >          2.3.1 For the self link (already known), fetch the latest BP=
-CC
-> > >                value.
-> > >          2.3.2 Update the frame with this BPCC value.
-> > >      2.4 Update the capability element in the SKB:
-> > >          2.4.1 If the critical update flag is set, set the CU bit.
-> > >          2.4.2 If non_tx_update =3D=3D true, also set the non-Tx CU b=
-it.
-> >=20
-> > How much of that can we let hostapd do?
->=20
-> hostapd forms beacon so it can do all of this. The only bottleneck is=20
-> communicating all link's beacon update sequentially via NL. And if=20
-> another update happens in the meantime - for example link A started CSA=
-=20
-> and then link B also started CSA, these will pile up the NL socket queue=
-=20
-> with beacon updates.
-
-I do wonder if this is a practical concern? And if you have seen this in
-practice then where does the bottleneck come from?
-
-But it can also be side-stepped by batching the operations and not doing
-a full update like I wrote above.
-
-So I'm not sure from a design perspective for mac80211 we should let it
-be constrained by this. That doesn't mean there aren't other reasons for
-the design to go either way, but we can work around this one (if it even
-is an issue.)
-
-> > > This mechanism sufficiently handles critical updates due to modificat=
-ions
-> > > of existing elements (elements related to the critical update which a=
-re
-> > > already present in the beacon and just one or more field is/are chang=
-ing
-> > > its value). However, in the case of new element inclusion (elements r=
-elated
-> > > to the critical update which are not alread present in the beacon, bu=
-t is
-> > > getting added from next beacon), additional handling is required.
-> > > Specifically, the newly included elements related to the critical upd=
-ate
-> > > must be added to the per-STA profile within the Basic Multi-Link Elem=
-ent
-> > > (BMLE) [3].
-
-[snip timing explanation]
-
-> You're right, but that's not quite what the original text is trying to=
-=20
-> convey.
-
-OK, sorry, I misunderstood then.
-
-> There are generally two types of critical updates:
->    1. Adding a new element, such as CSA or CCA.
->    2. Modifying an existing element, like VHT/HE/EHT Operation IE, TWT, e=
-tc.
->=20
-> In the second case, forming the beacon is relatively=20
-> straightforward=E2=80=94only the BPCC and the critical update flag need t=
-o be=20
-> set. However, in the first case, it's more complex. You need to insert=
-=20
-> the new elements (e.g., CSA IE) into the per-STA profile of the affected=
-=20
-> link within the reporting link, as shown in the earlier diagram.
-
-Right, of course.
-
-> So to handle this case (additional of new element), the below steps are=
-=20
-> additionally required on top of what was already explained above.
->=20
-> Does this make sense now?
-
-Maybe more? I really wasn't reading it well before, I thought it was
-more about when the new elements were added, rather than the fact _that_
-they need to be added.
-
-I guess to me that was really almost the same, the beacon changes.
-
-> > That kind of also seems like hostapd could just update the beacons?
->=20
-> Yes it can. Only thing is multiple NL beacon updates.
-
-OK so if you're really so worried about that, and that's the main thing,
-we can add the per-link updates into a nested element in the switching-
-link's nl80211 message :)
-
->=20
-> > > Update BPCC back to NL:
-> > > -----------------------
-> > > After the kernel increments the BPCC value, it can emit a netlink eve=
-nt
-> > > containing the updated BPCC value. This allows hostapd to receive the
-> > > latest BPCC and include it in probe/association response frames, as
-> > > required by the specification.
-> > >=20
-> > > This coordination ensures that all - beacon, probe response, and
-> > > association response frames reflect consistent BPCC values, maintaini=
-ng
-> > > compliance with spec-defined behavior for multi-link and critical upd=
-ate
-> > > handling.
-> >=20
-> > Yeah not liking this too much I guess... Why can't hostapd maintain
-> > BPCC?
->=20
-> It can only when everything is fully handled by hostapd. Otherwise=20
-> kernel should be owner of having the latest value. It can report the=20
-> latest value to hostap upon any change.
-
-When is it not fully handled by hostapd though? It always decides to do
-updates, no? Are you thinking there are cases where the driver
-(firmware?) unilaterally changes some things (say the puncturing bitmap)
-and never handshakes that with hostapd, just starts overwriting the
-beacons? Maybe we have a broader architecture discussion to be had here.
-
-
-> > > Complexities:
-> > > -------------
-> > > When adding elements in per STA profile, the element length might exc=
-eed
-> > > hence fragmentation needs to be handled properly.
-> >=20
-> > We have fragmentation but all this parsing means also we need
-> > _defragmentation_ first, which is awkward?
->=20
-> I think de-fragmentation is already supported ? If not, we will have to=
-=20
-> add it to support it.
-
-It is, generally, but it's completely separate in terms of memory
-handling etc. so it's not that simple.
-
-> > > memcmp vs hashing
-> > > =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-> > > In the section where memcmp() is used to detect changes in beacon ele=
-ments
-> > > (to determine if a critical update is needed), this logic could
-> > > alternatively be handled at the hostapd level.
-> >=20
-> > Yeah sounds better to me :P
->=20
-> Okay so only the link which is undergoing a change, hostapd will signal=
-=20
-> to kernel about critical update? Rest kernel will handled parsing and=20
-> updating the partner links as per the need?
-
-I still don't like the parsing though. Like I said above, that's a lot
-of complexity that simply doesn't even exist when hostapd controls all
-the updates.
-
-
-I really would have envisioned this much more along the lines of having
-hostapd start the channel switch (WLOG on link 1 out of links 1 and 2)
-with an nl80211 message that has:
-
- - post-switch beacon for link 1
- - during-switch beacon for link 1
-   - CSA counter offsets for CSA, eCSA, etc. elements
- - post-switch beacon for link 2 (?)
- - during-switch beacon for link 2
-   - CSA counter offsets for link 1's CSA counter
-     (for all the per-STA profile link 1 elements)
-
-isn't that pretty much it? All the BPCC is well-contained within that
-and maintained by hostapd.
-
-I'll agree that this limits to only doing a single channel switch at a
-time across the whole MLD, but maybe that's not the most problematic
-thing?
-
-
-OK I guess I'll have to think about this more ...
-
-johannes
 
