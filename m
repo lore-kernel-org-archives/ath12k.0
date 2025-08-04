@@ -4,84 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46B6FC87FCF
-	for <ath12k@archiver.kernel.org>; Mon,  4 Aug 2025 13:41:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4D9CC87FCB
+	for <ath12k@archiver.kernel.org>; Mon,  4 Aug 2025 13:48:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iuqkYJEHU46HSu5bF/1m8NgiJsyaKNVDD5t0GtyZPKU=; b=V8+TKuH0AD4l3Qm8XIMeq7Zj/5
-	jG1m3lhIn3nLawE8fW//z8DzpCvjL4mt1v6dXJib3odgrJ7sQ85kn9nQdIdqTJ63cqVRRGjDRhCm8
-	RiPUJ6vvLObEO2ci+sV7RRtixpvNzzYmVrA2sKNdJ41+NHIavIPXQLUCKTavqXso7xx8q23u5qQ5K
-	NruuF7TfAY3VHedCYSFinZPFi9dMm6/E4wuYIOWN7z0BuDHCS835AfWf/Ot78buYSwZWTqW2IurmJ
-	kcAlFjA2jdyl+hdMmO2HgNYqqE7kEWeoTiFuISMkIEMEKlEl3T4ikuyizryt9ruYdcalGMxUnf9WH
-	NN7Ch1kA==;
+	bh=wgXRWKdb8/uIkJlxKRlTEuKqEVXG1EaXlBO5d+CRj9c=; b=mjn/DUsD7NA29yjktjfJrm9MV+
+	4041PsyiPfOCLFSwOjrdJpaltHidlwkbDh0dRmyBhb5CKihMY4GT4Pk+syilZ5AA5ZPUUs3/HIPqe
+	nzGcV8adsfW/crkOp4CwyC/PmBUXVhvMu67YKznCyhZwBfZb2bcwhW1sz57xwGa/1sLd4dI02aPez
+	o/cF4FNUZgfwG4kWhGPRVI3jWl2yB6lrP8BlOsTYQy5GHzwmfgD8S0cjNtjEQ0KKbU693DsKYpiK/
+	FbtTz/L1SxUtKC8qSAFhtAetF1W419rErPvXoNgXoeeHs8pr1HB8W1etRs0oJlvDObf1hLXchfpFW
+	mTeDHafw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uivR3-0000000AZEG-08cP;
-	Mon, 04 Aug 2025 13:41:05 +0000
+	id 1uivYe-0000000AaIK-2ljr;
+	Mon, 04 Aug 2025 13:48:56 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uiv1E-0000000AVbI-0h5b
+	id 1uiv3R-0000000AW0l-2PAz
 	for ath12k@lists.infradead.org;
-	Mon, 04 Aug 2025 13:14:25 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5748NrJY030930
-	for <ath12k@lists.infradead.org>; Mon, 4 Aug 2025 13:14:23 GMT
+	Mon, 04 Aug 2025 13:16:42 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5748kXla021762
+	for <ath12k@lists.infradead.org>; Mon, 4 Aug 2025 13:16:41 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	iuqkYJEHU46HSu5bF/1m8NgiJsyaKNVDD5t0GtyZPKU=; b=dSBcPGe34hwe5cmj
-	mNB3LlId72lzaYJtZSgzsodfASxhHgARWwRu90eZ1psCB2Cxis7dqc4ti5c19Bwh
-	fS5Ol7nj6L/cPPs+hAdS0M3wuTukXxrxLvwdKWUhaKLuSfgzj/9XQ0ZXkaQ7CE+y
-	TxJAZGADC6zvrzGWl+9zyEvsArtjZgCVl9c1z7tUMCfR/KC4VbZaNny4SVONspCj
-	GO3WIoaOu0tLyRvMmtdxBoK0Fl1HxZkP8D7KTxc3htCsBBT2kevwoVjKQswWu9pO
-	2Xjn7p/TxO3v+qi6ZnXmUO8ed/yL0nckSKO0rKjMumMPR60y7lltL86OcGSro+2d
-	1BbibA==
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48a2ke369g-1
+	wgXRWKdb8/uIkJlxKRlTEuKqEVXG1EaXlBO5d+CRj9c=; b=bFFm/K5lguhDneyS
+	WrB0qC9uZnJMCyoyyTzA6D60uGTmBFWV6+ajaDsBYc1M+qeI0hVynRSaVyh8d0HP
+	vwUnwNppc377sTEXgSpfUHt03B8qogqY6JbmEouNYZ7fHWrEBd0/gfNw8xSD/prH
+	fWYh3kkIGXJxh4p0najhgLrQ/FqojwQwsRctULet+Dj22D296Hxn2OC3IurXQxWr
+	yJL/48cqWZoEUdKxG93HmQv9sUkTj8/LIA9wJqBtIHt6TYLpEiZYUT1oNkGz8Zgq
+	5IiC9Po82NlTrbgZdOvfdi1ahcQYSoQC0njdkx/BQgF3u/mzPzx22uEuXmiJYxSq
+	pgMJMA==
+Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 489byc5175-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 04 Aug 2025 13:14:23 +0000 (GMT)
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-7e48325048aso90789185a.3
-        for <ath12k@lists.infradead.org>; Mon, 04 Aug 2025 06:14:23 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 04 Aug 2025 13:16:41 +0000 (GMT)
+Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-4b06ad8dadeso1204381cf.1
+        for <ath12k@lists.infradead.org>; Mon, 04 Aug 2025 06:16:40 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754313262; x=1754918062;
+        d=1e100.net; s=20230601; t=1754313400; x=1754918200;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=iuqkYJEHU46HSu5bF/1m8NgiJsyaKNVDD5t0GtyZPKU=;
-        b=w74E5cHixqoJXoT5H4bcQbwdI4tQ85pRHf2oTlxhtZTXVTY4rjy1QAE6JmG496O/BN
-         JAwTMrZBrfZyfxE28uRMo9ri+zoO6a0o2hUmr5v/Xfwsylui7cJkDEjZ8zxkqMlQtgBh
-         6zXR/LZb/zQr8tlDSXZ5w0N0f3gqQoEmXH45ZsA26JQ1R9/J3W1yW4YMAnQYFsslPIQL
-         kYpPGbbyBTviAsJ4TPegXmD7HSLkkjpMnmQ/lHGlWlIH8utsdKD071THa6gF3fHX5FFK
-         6bPHa+AYLCVjGDH6oLlzRO1H/7gLlxnYcM17f5vobMa96kywkJK4KGq5VpufKvVntVDC
-         3Xxg==
-X-Forwarded-Encrypted: i=1; AJvYcCU2QJh8VJT7L6YSpMbUoyUN3cKiuGgdUz7HJZOi3fWxRnps3gM21p7ifRfH8CqCcnywBWVidII=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyBnyCXjzf4stC/G6gEirBzOe5zZfKqt7gVzfQHOyuUTeGq2GDn
-	Q0HSgg3igV492AjuL0iJXBFk1sxR6RydYq5tH66ALS8PVrG+2NF/1TbjsBXdGW3J+s6XFb3KHu1
-	AZTY14PAj0dJwc8W7xJ4P0K+Ci7Y1lpZLUhYwsWhD02cTD7ez01QtyZcny5OMxx6P
-X-Gm-Gg: ASbGnctIMAAVk4AkTrali/r1rRNxL8TV/pR7I7wIrTeWDccRA4VEFBZdGlLG8e4PbH/
-	X0MiKfe34vbuC6F/1eA1gVhyEkoPi1rOZNjyzZ8juW7SWsqqlZvfabI/SDC2b/Q9NpxIPs6NhJt
-	IJ8al+CaKn4L2zA5FVwPyxEuXRkcuMuedxZX/m321gwtabu7cgGYAN/oU6PKVPXYjKhv3Z9c5Ef
-	6ZS4NBTRC7tGdC7cr3aHcRb3A0+9ULRuPDvLt1jcw/hi3unElPARJVuBAExtYR6mtAdM94Y79Ci
-	4RdJn0LVUrEgh4PIqg2HgCFECkqTxZkh853D/Ak/VgBHPPNtZSuwJXpTRg9SD0g/2dSCtO+WkiJ
-	sr0XJpDa2ti8viRG3pQ==
-X-Received: by 2002:a05:620a:40c6:b0:7e8:5bb:b393 with SMTP id af79cd13be357-7e805bbb656mr127005785a.4.1754313262046;
-        Mon, 04 Aug 2025 06:14:22 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHQKfXoAA4iQAVx7vrakGz5rhAfhLmMpyLiivrawj8ql8YqoebUHyRY/Z++bxkV80jn4cAicg==
-X-Received: by 2002:a05:620a:40c6:b0:7e8:5bb:b393 with SMTP id af79cd13be357-7e805bbb656mr127000885a.4.1754313261562;
-        Mon, 04 Aug 2025 06:14:21 -0700 (PDT)
+        bh=wgXRWKdb8/uIkJlxKRlTEuKqEVXG1EaXlBO5d+CRj9c=;
+        b=kANfLMTDHZhrJ0+2iChXFXcFIcDcqB9yjwR+N5gqIS89/H6UTr96rwyKSRyNH0QNL2
+         tqNBhHL8WAQwatuR8N14IoqS4Kabuh+uvXru5gTleM2X1PoKaTs/rIAnUfzKbzEQ9fP+
+         YL+twhzCmdDhzsXwriV+V2ufpXCn2X+bW+I93TucnVii4GT/OIaYWAmwEBDCBnHUhIVU
+         cEiwFE/5//7f5YDMPEPtl4lg5NNDIcvPaTOiF6LYk9g3LhRDcPLuadI05xxpDRlHDpsB
+         bfvtm1clURiAP6HYE/wUcmiKboIe/S89hDXcMHvRIpshxm59/YHt9KY0o5MbxhRfB4ag
+         cxdw==
+X-Forwarded-Encrypted: i=1; AJvYcCUdTCIqOe16KuDmH9bH8PYCwpfyNLeR6g2UogMnMWksUtqxfuJUlokJru6iXrQshXaZZXxx0hk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxHZHOeh7NmkU0kVnUhgQGyeh5/wfvIoiWjFbKj+3qgbK7i9no+
+	SkqlfDpNaIIlzylkaSuT5Ge9fypbOezt6QNeJUOCq+GhcYMhqv4INg9hiQmM/e+GJT4AsmiXq5o
+	S4uuZFbYbRAA8djJ3apPntYnkg5KYqLek0CrPoaMHxJ8dvbZPfjiCu4zJWkH60ynt
+X-Gm-Gg: ASbGncuQyabi1UO9IkQpgI9ivqYy9HnufDn8DUTckUqA/J2oE/YlV0VPuZgwMvoawM8
+	o/e94T4ulSFt/XTaoyVrp89H/h/GnMJwOhuAQu0Xmg3wQbjiMXs/Tp3CW8CCF2GknQT7ffS+vX6
+	rcesWbszEEAQ9vrzOYnFrW961D6HMQhhsl+IsfYhWq1OcIaP+i3sNermIJUgnM52quJdTWXpQ3X
+	kWQN8CqrMDaiwkIiiVTEzaPR31Yf/mHv7/P1giMyZUbzSUMKiJaRH96xWByp7eGrYk/z1zKwODj
+	WZyPP/lro/3NJ9FWQl8PGhpOQ4Di/u5cLOTIlVb3C+oSGj6vb25yTmalB3n0quyZHi0otTvBDUW
+	vQ5kPWf3U2Pgf66L+3g==
+X-Received: by 2002:a05:622a:1211:b0:475:1c59:1748 with SMTP id d75a77b69052e-4af10aa56d2mr63735411cf.11.1754313399505;
+        Mon, 04 Aug 2025 06:16:39 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFf7yZ8n4Kn22sR5Uevb5Blz+Ts3PocLhzk4Ya+jFjCOhrB42Tx4xCPXD1tnN8w3MczWz9xng==
+X-Received: by 2002:a05:622a:1211:b0:475:1c59:1748 with SMTP id d75a77b69052e-4af10aa56d2mr63734971cf.11.1754313398788;
+        Mon, 04 Aug 2025 06:16:38 -0700 (PDT)
 Received: from [192.168.43.16] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-615a8feaf2fsm6810919a12.38.2025.08.04.06.14.19
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-615a8fe82a7sm6859797a12.30.2025.08.04.06.16.36
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 04 Aug 2025 06:14:21 -0700 (PDT)
-Message-ID: <dd278225-6680-4dc2-a0d4-e110fb2cfc20@oss.qualcomm.com>
-Date: Mon, 4 Aug 2025 15:14:18 +0200
+        Mon, 04 Aug 2025 06:16:38 -0700 (PDT)
+Message-ID: <095ab6dd-9b0d-4f58-872a-852c5f19818c@oss.qualcomm.com>
+Date: Mon, 4 Aug 2025 15:16:35 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/3] soc: qcom: mdt_loader: Remove unused parameter
+Subject: Re: [PATCH 2/3] soc: qcom: mdt_loader: Remove pas id parameter
 To: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>,
         Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>,
@@ -97,38 +97,37 @@ Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
         ath12k@lists.infradead.org, linux-remoteproc@vger.kernel.org,
         Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
 References: <20250804-mdtloader-changes-v1-0-5e74629a2241@oss.qualcomm.com>
- <20250804-mdtloader-changes-v1-1-5e74629a2241@oss.qualcomm.com>
+ <20250804-mdtloader-changes-v1-2-5e74629a2241@oss.qualcomm.com>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250804-mdtloader-changes-v1-1-5e74629a2241@oss.qualcomm.com>
+In-Reply-To: <20250804-mdtloader-changes-v1-2-5e74629a2241@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: MQplsq0MbE3JnStCxUU48vHXjmlZ2jtq
-X-Authority-Analysis: v=2.4 cv=TMNFS0la c=1 sm=1 tr=0 ts=6890b22f cx=c_pps
- a=qKBjSQ1v91RyAK45QCPf5w==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8 a=wXYMRSRB5Pq2Cuyld4wA:9
- a=QEXdDO2ut3YA:10 a=NFOGd7dJGGMPyQGDc5-O:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA0MDA3MyBTYWx0ZWRfX+DbjwdoSROhT
- qEzs4ICQx7fn4Ig8nWDg60rOPS0RYrMwBk5FmKXbk5f8X7ckQXf7Vv5DuF2DYvxZGYmyEPrNKpq
- cpIfBDCeFrEwim/O3PjYLDZdIU/QrwsUun0myYcv1agQ1PckmRl/lqeUM0CQypJpTdqZhUa7eRF
- YXMZ41aqU/eeHRGpiPLql8cc5M3Rgbn1+wX/bDXVUUQHdiK75UkNahXOafX30yUQLjOmmlgflD4
- vdXW1xjZUpal9H5CNOPHd6zXZTOgsng8tdSAv2fMFF1HE36mAg2L6qjBSUvMLYGRNrpK8W39p+W
- JtpyObCiyV5mBxYX4R0Q9RgdB8pva0vEoNV6eh80RprgRBsnVJr3bzq/6vGtqtDR6z21+iykX/2
- KmT0xfjqNYi3nFFkesJgJujgU0qZSnYPZne/MPWcT/JJ+tozo12tLGA5flwm0WkeFBXx7xLr
-X-Proofpoint-GUID: MQplsq0MbE3JnStCxUU48vHXjmlZ2jtq
+X-Proofpoint-ORIG-GUID: 3d5SbJoYBRYfw0vQ7WT2s7XckmYidO1k
+X-Authority-Analysis: v=2.4 cv=Y6D4sgeN c=1 sm=1 tr=0 ts=6890b2b9 cx=c_pps
+ a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8 a=IDvrs2r2PCma8_SM7s4A:9
+ a=QEXdDO2ut3YA:10 a=a_PwQJl-kcHnX1M80qC6:22
+X-Proofpoint-GUID: 3d5SbJoYBRYfw0vQ7WT2s7XckmYidO1k
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA0MDA3MCBTYWx0ZWRfX1dO1xBV0ZrHz
+ 1G/cOmS8vaZGjo+7TNC1Txl3R/lqVEHBPWVu8du3UszeA4AJNYIATQIsPScvq/eT4hKW8xoaM/+
+ cj5uiPxAHmO7UAyVCtDfYx2O4tBxqFtaUpZerkVqpzvboIHTr6WDjN6lNR9j4KJJA5jLVDtYdzE
+ hfwg2ZVKb5xzIDViKrcse7dkkytrUVgePkDf0DrZF74CS9QbaCq3eZmaCO2rQ5wVrneB+fd3I4w
+ MOWWOVR3Ggn6SUHiwKaFuB+lHWhyhjw6bLuavK1i5zyujXJoGW8P9EaK24Zw9MNjYca+eccM0FO
+ bN0N25qBPXy+y++DMwo9ZKMM1inunh6CrD1Fy6GOvI50sVZ77TRgfnASS1TLxx+0exAt7h6C6fX
+ J69jlZ+x/P5KxDs9xfrcEiNMpwL8ZaRh1pfYhKxs5Jpmr+u+zs85mNIGDWW9yHcSc1/OS1ZO
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-08-04_05,2025-08-04_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 spamscore=0 phishscore=0 malwarescore=0 clxscore=1015
- impostorscore=0 lowpriorityscore=0 adultscore=0 mlxlogscore=978 bulkscore=0
- priorityscore=1501 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ mlxscore=0 mlxlogscore=999 suspectscore=0 clxscore=1015 lowpriorityscore=0
+ phishscore=0 malwarescore=0 adultscore=0 spamscore=0 impostorscore=0
+ priorityscore=1501 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2508040073
+ definitions=main-2508040070
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250804_061424_217005_406D048B 
-X-CRM114-Status: UNSURE (   9.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250804_061641_620899_2DE5951D 
+X-CRM114-Status: GOOD (  10.91  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,17 +143,19 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 8/4/25 2:41 PM, Mukesh Ojha wrote:
-> commit f4e526ff7e38e ("soc: qcom: mdt_loader: Extract PAS
->  operations") move pas specific code from __qcom_mdt_load()
-> to a separate function qcom_mdt_pas_init() after which the
-> pas_init variable became unused in __qcom_mdt_load().
-> 
-> Remove pas_init argument from __qcom_mdt_load().
+> pas id is not used in qcom_mdt_load_no_init() and it should not
+> be used as it is non-PAS specific function and has no relation
+> to PAS specific mechanism.
 > 
 > Signed-off-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 > ---
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+[...]
+
+> -static bool qcom_mdt_bins_are_split(const struct firmware *fw, const char *fw_name)
+> +static bool qcom_mdt_bins_are_split(const struct firmware *fw)
+
+This seems unrelated (or at least unmentioned)
 
 Konrad
 
