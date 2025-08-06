@@ -4,129 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13D41C87FD3
-	for <ath12k@archiver.kernel.org>; Wed,  6 Aug 2025 19:07:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B8A3C87FDA
+	for <ath12k@archiver.kernel.org>; Wed,  6 Aug 2025 21:57:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:From:
+	Subject:Cc:To:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pLFDFgtgIMICdEJ792w168OyKixfYM5BYvfWCMHrn0A=; b=kEmqDCMcxCHWfIWT4EZu6X2qNn
-	aDNhz2mPMmu+cl5noYpcop4IWeHKKZgmns+CLI+NDj4PJbXM+AX6SNUtC2fZ4C5/gXBg4DYBctDW8
-	0n+lb/aFm3J0uJx8WBADVJOB2kVR9TN8KO57LqKqpRD2utG/joTlEjZ1cftHO/+ZPX4WOE8Lp/KRl
-	cUaN5OKloLlgw4KDSAnH1gBSblEOInI9wO3ZjNUcRpW09pCtTfnuDrtl1FevJ6dCogT0SaICK1jm3
-	iAwWP6GguOsrmbAgDtg7YXC+XTBC/O06uW4FPqOUX2VLsPlfOksOjaDUgoRGE8qO1lJCSovHag3AN
-	sWNDgmtw==;
+	bh=QwHQj2S4iE5W8V5r1sARLF//FzzcxejJevd8ib6r6Bk=; b=KxxvZ39f8U9blXWRf/06NfviaJ
+	2T72GtVqdoBkSeH7gbXD89pwq0rhfKL7b2dBjDIvRU5NRM8EGNayIQbhAayXIPA24JEjaECcMZsGJ
+	d1RZEZKn0mGlTAFr8DuipBhZ3tn7SV8gj5FhKYUqOq6t8Jy1RtV4iLtakIne2ZEOf9CPMHUP5ytuA
+	/I0X5xsZwIDarix02sY9xxMp2cLLmPexTe5s00B+UzPZQ+s8e8bnm/mDNl6wfdk7HKcdwtzY9SkcX
+	ZfMruA/RbaGEgTMEl9O7RTW1MHNTjxAROKEcGcVg8Db617xhUmDhAyJH35a5FefSwINwT6YSGR7gJ
+	SkUvhC6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujjTl-0000000GA8k-3Thz;
-	Wed, 06 Aug 2025 19:07:13 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1ujm8k-0000000Geq0-1Gac;
+	Wed, 06 Aug 2025 21:57:42 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujjTj-0000000GA8C-0L3q
+	id 1ujkLH-0000000GIhH-3Yhv
 	for ath12k@lists.infradead.org;
-	Wed, 06 Aug 2025 19:07:12 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 576ERjFX003968
-	for <ath12k@lists.infradead.org>; Wed, 6 Aug 2025 19:07:09 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	pLFDFgtgIMICdEJ792w168OyKixfYM5BYvfWCMHrn0A=; b=JeWbuwM7PL0zAmGW
-	+VETreTAUCzm2n053JSNWrko8eWL6LoLI1ezrYAhMJtsVrM+wRZeh3pnIl5k8OV0
-	IdE5Y4F2MyaevZLKAcQ5sd9PyxGj8JmMvTgHFxoCGMdr6uUrLo2EfuBT6qdkmKYn
-	k3+ifV38vlVJr9NPx6atLCZtMVPbTRo4uzBIFc5v56+rn5NAkjd8IoUV+x4CjQJy
-	3baZtNqsShLgsD5rEk8GJMOSGW/wvI4FMys+cNtla66buSDnWRjtmeOMbIKleOfw
-	k7X1v0BMLkW/ynYrT1WYBtUCTdbD+D157ShPCNbrdk71zyvtHVbk19hHLzU9mLHs
-	4P91jg==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48c8u20t0q-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 06 Aug 2025 19:07:09 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2403c86ff97so1968255ad.1
-        for <ath12k@lists.infradead.org>; Wed, 06 Aug 2025 12:07:09 -0700 (PDT)
+	Wed, 06 Aug 2025 20:02:32 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-458b2d9dba5so2121275e9.1
+        for <ath12k@lists.infradead.org>; Wed, 06 Aug 2025 13:02:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1754510550; x=1755115350; darn=lists.infradead.org;
+        h=in-reply-to:references:from:subject:cc:to:message-id:date
+         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=QwHQj2S4iE5W8V5r1sARLF//FzzcxejJevd8ib6r6Bk=;
+        b=hEIb+WcZAjntw0c4M36SUnxRfajsmEisSEDDBkTuzzc1JXu+aaIIrELYlC+/nS2rsx
+         XAyfp+5j0mZj75WxUCABYpzpjGZFOiLHxMNNmPeCIjwd4dyKuNTTwKSC2O0/OpbczWpP
+         FAv43/5MInNISB1CciJu9glhhxxOjtqfF1GpP7rp4E3mr+a9DhuLbY5SwlTv8E30nDpE
+         CnScIEr4XodSFdClee4jVDn53XjUC7TSxhvQtO3xlkYvm289yns+usmsPlriWSOMC4cF
+         Vhq5IgPXW2qkL4Mq/rIpbLlcCR3icpeIjYooILfvcTTXYyg+55PuC6rnQY7+S+FPY/E3
+         HOKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754507228; x=1755112028;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=pLFDFgtgIMICdEJ792w168OyKixfYM5BYvfWCMHrn0A=;
-        b=jTgsBXTZuG138g9Il+gjf/zOKjVO0UhuL1ljWQqyv9LUILtNt6eBPnAkAGX7F28Y52
-         grFwuwmBgItWSlXD89MMLT8zd5IqH8Fpdm21T9eRwImmC0qoccn0blPTmCGm8y8V5wm0
-         +u3mo6u+g+LhqHzBSEpLxEI3SqtCik43pr17JXs7uc+ESxUH1Ee9yMGBAZC8T6b209uE
-         lLqoj4DNJEAtJ/mcorRty2u9BsO3zgf0cX903mOFktW14KiB7ShLC9AdOJFUh8dR7DYj
-         Jzg6S0yVuYQVE9yZ3yqX9lMRrV+CWw+4T+tRVKhcVc4vkcjahT7jddHzlH2pPSodJjnt
-         v90A==
-X-Forwarded-Encrypted: i=1; AJvYcCW+0Arqw/io1tp3/dzZp0vtYUX2+ERW45+n2DXJRTfYyKTDFc9yikzgsRN7jH4Ri/3gXoKy28A=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxsXb8m4h2cCUcEYSvJULb4t9du+pnqYpCdsTmaOQwAflSbh0TT
-	BO8ID28n9BMX4y8IXwp4QgUW8gkZu5FOdOTCuskE3hljVn5+6k0HetxiuycBU0gplXqSIAe/eCN
-	qVr+X2zgBE8ehYFMcVQJrN9Y1h7x4kyycx12WFJW4j8q+tsxWSjHF0sKoICG995Us
-X-Gm-Gg: ASbGncusg4QePJ8jy+uAW6MHD+QcJO6P42hY4ua3vd1zLm4/OGDGYG/NBxZE9n8GEBF
-	dhRULYl1VEKsZMq/zmmvMRpMvKB7187+EzPIhOJUD8S2FTS/tLLe2g7/l1zyHCedSP4U49xwImk
-	ib5aySR2rzljwu72HWMDDtUeBNEP4Tm22NuFiXo3KYWyCKJ7PQHhWcY+dVWwBCMSkx7K4BhNZMH
-	I87iKyB9rpzxkrjWYdSjqDJWTDu0/m5cy7CYieR9sSTOj9a+gwvaMoeJhOLa4T7GchKiMZV0KGl
-	Z7VINVJZ18oU5CEbg1CJlv1nFGdBncDlN47TQiisbNTiwUaWRRj8ncPb7p4MgurLdKNG3dAr/WF
-	gLcH+t5YA9fRzIKdYRWJjyyenEjBVojHq
-X-Received: by 2002:a17:902:f612:b0:240:469d:beb0 with SMTP id d9443c01a7336-242a0b6fc4cmr58557545ad.31.1754507228340;
-        Wed, 06 Aug 2025 12:07:08 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHw/V0KLHuGmmP97g4XfNxYYUiYQuA+Las853A79Nu5Cd7FLuHDuerRqAPRejldbNHXAC6rXA==
-X-Received: by 2002:a17:902:f612:b0:240:469d:beb0 with SMTP id d9443c01a7336-242a0b6fc4cmr58556965ad.31.1754507227919;
-        Wed, 06 Aug 2025 12:07:07 -0700 (PDT)
-Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-241d1ef75bdsm164814515ad.11.2025.08.06.12.07.06
+        d=1e100.net; s=20230601; t=1754510550; x=1755115350;
+        h=in-reply-to:references:from:subject:cc:to:message-id:date
+         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=QwHQj2S4iE5W8V5r1sARLF//FzzcxejJevd8ib6r6Bk=;
+        b=khH7Y4MCSyE/4QlgCb6YLN4PAa+rp+baNf5aKGNAnfNHGwgJKUbKjoPEllanQe8uK4
+         Qj47qFskU4BUzIOP9ew2qWADpEAJRsj60uNBGNUi6fv8ZMbMf5/WZ43s0qkA9Ou7RyTA
+         zI4df09QZELAtz5qjp/FSk2OHqMf3zwAkzaawQv4QkDMkmrYe/GLBjnv7KBO4Rtwsw5n
+         aCHXqyNBiCBHjsky3gWSkJkBbROxTbDG5M6tEw5D7Yk846nlVw4qa5QIMQcpiSFpa0GR
+         xroNR8ymBy2wSfSUePC5cBn5L9mpBh7woM4q1I7TWjrW/0+Nb9oU5NKoeHZYnQ90rPtU
+         1R+Q==
+X-Forwarded-Encrypted: i=1; AJvYcCUDl9EYTNtCwXxkJNs3dWrXFJmyhahJs+s4yagQppMhg2ecvoFCYN8crl7gb7X+5//xGvcz87o=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx3KPDy42zAIuPa9HZRGShPOsFBqLxDybKjGXFU32n/P+9tHGgP
+	2XpbhxRYta2P9YtoZVl29MMQDzY3jr0NDA5i4iqYAGM8ZBziYjc+rA6e
+X-Gm-Gg: ASbGncuMQVZOj+zHC0rg8hBxLDmo9vaNCeLdr69ltaoLHDGrUvNuv0ohl2tSrrRBDFw
+	0Qakdk7LyEwo5LeqbsgKuzupbqmE4iElDTwLQicXCK1vGPeFIq30HAgrTjgMrlZVDqdjg330dK7
+	Bjv1UH5kFt+mrpNSpPPRjpVSfbqOhf/XUSLkfzxWu8ORozkKfElqlXbc/j7BhX1sBDhbxyy4o0v
+	n4ExU3TS4t2xNcIEKowRTD6WNbHqEhqJEEbOn/niQ3lu1B80TMsIrv0f/z7W3Rdv6+tGjZU8Evu
+	4FCgWZpI2AHW3nnCBh3CDYNv5RW0dpq8DzVc33C6BLLNhdaAsVWJNefOuoe6XuG4cT8BGwLekql
+	fyzYMmWhZ0voXOR7kKA7qxCjWUm7nxNPpQQr2iRnV
+X-Google-Smtp-Source: AGHT+IHtL9F719IgiXDejNDTx8YGjo5svHsCY0ACzaMi+/cqLe1D3DEUC4gd6a7hIVYKxpfLhuyzCg==
+X-Received: by 2002:a05:600c:4f4c:b0:450:d37d:7c with SMTP id 5b1f17b1804b1-459e95af955mr26598505e9.21.1754510549796;
+        Wed, 06 Aug 2025 13:02:29 -0700 (PDT)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-459ee17535bsm7889325e9.16.2025.08.06.13.02.29
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 06 Aug 2025 12:07:07 -0700 (PDT)
-Message-ID: <c9d761a2-7121-4ce6-84c7-232a6c4ce976@oss.qualcomm.com>
-Date: Wed, 6 Aug 2025 12:07:05 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 3/4] soc: qcom: mdt_loader: Remove pas id parameter
-To: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>,
-        Vikash Garodia <quic_vgarodia@quicinc.com>,
-        Dikshita Agarwal <quic_dikshita@quicinc.com>,
-        Mauro Carvalho Chehab <mchehab@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Mathieu Poirier <mathieu.poirier@linaro.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-        Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>,
-        linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org,
-        ath12k@lists.infradead.org, linux-remoteproc@vger.kernel.org
-References: <20250806172531.1865088-1-mukesh.ojha@oss.qualcomm.com>
- <20250806172531.1865088-3-mukesh.ojha@oss.qualcomm.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20250806172531.1865088-3-mukesh.ojha@oss.qualcomm.com>
+        Wed, 06 Aug 2025 13:02:29 -0700 (PDT)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: 1IO1HwBk5T2EuHBHkBrDXZuv5GEonq_Q
-X-Authority-Analysis: v=2.4 cv=Q/TS452a c=1 sm=1 tr=0 ts=6893a7dd cx=c_pps
- a=JL+w9abYAAE89/QcEU+0QA==:117 a=e70TP3dOR9hTogukJ0528Q==:17
- a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=IDvrs2r2PCma8_SM7s4A:9
- a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22
-X-Proofpoint-ORIG-GUID: 1IO1HwBk5T2EuHBHkBrDXZuv5GEonq_Q
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDA5MCBTYWx0ZWRfX/qxiIgvCcfUd
- i2Zydvc/3bzrM/g05va109CDYgSKaS95JDoXkCFnyKpQdC8/2gQURdJdh5wOq3zWdwdiUdm56kM
- jsBsL64R/k2MidUXZ8pVJzEshyPA/5W+lC1cie8GqTfxRGpAyzsQ5EszE4WKwoRU1HCL0FYt3Mm
- LPBOYUxG+q4JGPE7OBCuyCCblhCB4INcjztyXoELYla3EclRw7MvxcCJe6j8eu+z3paAZiNB/Vl
- 8SAOc4MDxRlJsWWwKXsJbiDSr1qx9Xx9/EVlESCO0M/zNA+5PgSlSQfKn5o9ftmQamoG3kejqRo
- +qp9NL5Rfg4Xw3RGGrby8ol1VyKXfyDEEbFR3nLTzrZhEypIkuJfqANrz30Pj+VtGRB2AI0+uxe
- LvMayMro
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-06_04,2025-08-06_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 adultscore=0 clxscore=1015 suspectscore=0 malwarescore=0
- priorityscore=1501 impostorscore=0 phishscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508060090
+Date: Wed, 06 Aug 2025 22:02:28 +0200
+Message-Id: <DBVM2YZDTS15.1WAPW69YQ5XOA@gmail.com>
+To: "Nithyanantham Paramasivam"
+ <nithyanantham.paramasivam@oss.qualcomm.com>, <ath12k@lists.infradead.org>
+Cc: <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH ath-current 0/7] wifi: ath12k: Fix Issues in REO RX
+ Queue Updates
+From: "Nicolas Escande" <nico.escande@gmail.com>
+X-Mailer: aerc 0.20.1-0-g2ecb8770224a-dirty
+References: <20250806111750.3214584-1-nithyanantham.paramasivam@oss.qualcomm.com>
+In-Reply-To: <20250806111750.3214584-1-nithyanantham.paramasivam@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250806_120711_130961_46CB46F9 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20250806_130231_886279_4FFA00F2 
+X-CRM114-Status: GOOD (  24.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,18 +100,73 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/6/2025 10:25 AM, Mukesh Ojha wrote:
-> pas id is not used in qcom_mdt_load_no_init() and it should not
-> be used as it is non-PAS specific function and has no relation
-> to PAS specific mechanism.
-...> @@ -353,7 +353,7 @@ static int __qcom_mdt_load(struct device *dev, const
-struct firmware *fw,
->  	if (!mdt_header_valid(fw))
->  		return -EINVAL;
->  
-> -	is_split = qcom_mdt_bins_are_split(fw, fw_name);
-> +	is_split = qcom_mdt_bins_are_split(fw);
+On Wed Aug 6, 2025 at 1:17 PM CEST, Nithyanantham Paramasivam wrote:
+> During stress test scenarios, when the REO command ring becomes full,
+> the RX queue update command issued during peer deletion fails due to
+> insufficient space. In response, the host performs a dma_unmap and
+> frees the associated memory. However, the hardware still retains a
+> reference to the same memory address. If the kernel later reallocates
+> this address, unaware that the hardware is still using it, it can
+> lead to memory corruption-since the host might access or modify
+> memory that is still actively referenced by the hardware.
+>
+> Implement a retry mechanism for the HAL_REO_CMD_UPDATE_RX_QUEUE
+> command during TID deletion to prevent memory corruption. Introduce
+> a new list, reo_cmd_update_rx_queue_list, in the dp structure to
+> track pending RX queue updates. Protect this list with
+> reo_rxq_flush_lock, which also ensures synchronized access to
+> reo_cmd_cache_flush_list. Defer memory release until hardware
+> confirms the virtual address is no longer in use, avoiding immediate
+> deallocation on command failure. Release memory for pending RX queue
+> updates via ath12k_dp_rx_reo_cmd_list_cleanup() on system reset
+> if hardware confirmation is not received.
+>
+> Additionally, increase DP_REO_CMD_RING_SIZE to 256 to reduce the
+> likelihood of ring exhaustion. Use a 1KB cache flush command for
+> QoS TID descriptors to improve efficiency.
+>
 
-this should be in the 4/4 patch
+Hello,
 
+I'm not sure I fully understand so please correct where I'm wrong but from =
+what
+I got looking at the code:
+  - you increase the ring size for reo cmd
+  - you enable releasing multiple tid buffer at once
+  - as soon as you allocate the tid you create an entry in the list flaggin=
+g it
+    as active
+  - when you need to clean up a tid
+    - you mark it as inactive in the list, then
+    - try to process the whole list by
+      - sending the reo command to release it
+      - if it succeed you release it and remove the entry from the list
+  - on core exit, you re process the list
+
+What is bothering me with this is that when a vdev which has multiple sta g=
+oes
+down, you will have a lot of those entries to push to the firmware at once:
+
+  - So increasing the ring size / being able to release multiple entries at=
+ once
+    in one reo cmd may or may not be enough to handle the burst. It seems
+    that increasing those is just band aids on the underlying problem but I
+    understand it's just to be on the safe side.
+  - If entries do not get send/accepted by the firmware, we will need to wa=
+it
+    for another station removal before retrying, which could be a wile.
+  - Or in the worst case (one vdev going down and needing to release tid of
+    all its stations) the more entries we have in the list the less likely =
+we
+    will be to be able to push the delete of all stations + the ones still =
+in
+    queue
+
+So, on station removal, why not make just things completely async. Push the=
+ tid
+deletes in a list and wake a workqueue that tries to push those to the firm=
+ware.
+If the ring is full, retry periodically.
+
+Thanks
 
