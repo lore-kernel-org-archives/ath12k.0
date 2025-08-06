@@ -4,116 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84058C87FD1
-	for <ath12k@archiver.kernel.org>; Wed,  6 Aug 2025 07:36:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59570C87FCB
+	for <ath12k@archiver.kernel.org>; Wed,  6 Aug 2025 11:18:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2nqQ0K0cV3yjbvs90QWBSQ0QBNQ/gxQbHXc2pXA4sAo=; b=VhHTsMVUm4agEg0QR9i2bV0vo8
-	n+6eTvZHSCCq8/PkfUCNmv8mUFbREW1/5KO73SZwUTQIpLcfQTpQE5a4xtyJGpFBgr9fXXRYCcOLt
-	02d5U3dHpx4ht4U+XVFYnWp6hoTI8bHRvWlWejulwWvR2pniPdyQlQxzTv1Wz27tzmQZGnHM/9fHb
-	Eh1/xN295EiXdrwIhtfE4F9BKqJ9NKQYhbcfLce0r8lt/cCikdWIQpLfRYkmaGdHHLJY3GmhyyiN/
-	adZaZXn7dT3zeFY2SsuQw1bNcqcRJBV40kHzsUG3iQ6bSsw1eAn/sMJ+nN/uXlb10ncCf6YteSbEJ
-	cuORBxVA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:
+	To:From:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=WtiBpRz0wprqdL+T05uhAHQTmTjB9b6wv16oJjaoicQ=; b=s5055DqtVlNz5YvWD0zGSR6nNZ
+	MgT1SDoAvy4n/sIrmIy7n2CGZjHwWwv4NYo54Agn6+es6UpDyp/Z32sv1ZNPa80Kr9mAqQZGmAqET
+	HPXt33zC+W56QTnNdza3bkjdeeaAbKaosJOW6jq9dcbAnyGcgNiXOjUnOHuabeE9AB8Ez/i8Wflaw
+	vPpVRvhIgQ2TfYUGpz/AJm4TQM6aWtNl65oYjntINgofiq25/vrC2SH9jFXuM0aSPP92TB7K0U3yn
+	CiwPKwUsiKg1Y9cPP3gdl4A3N8fVR9wwRffwfjWwp3Qlv1SanwTNkDrf2eoZNrK6bZPtWGPMooDLD
+	ni45pITQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujYhR-0000000EWqS-13Sy;
-	Wed, 06 Aug 2025 07:36:37 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1ujc9k-0000000Ezfn-06Jr;
+	Wed, 06 Aug 2025 11:18:04 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujYWv-0000000EVdW-14PL
+	id 1ujc9g-0000000EzeQ-3q8B
 	for ath12k@lists.infradead.org;
-	Wed, 06 Aug 2025 07:25:46 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5766PgmD022277;
-	Wed, 6 Aug 2025 07:25:37 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	2nqQ0K0cV3yjbvs90QWBSQ0QBNQ/gxQbHXc2pXA4sAo=; b=Cdb9xuXbEqfoUEj2
-	tdCBIe/nh8BUqzavgGsUib2caarmcLxi7GPshpciioGfvUiWvYSlr9rQitTH72j8
-	6i4f7C/az29HPUJt6toCTrmeL3vNthFwaB6XwKdjMceg1RXfKGAQTPtzoNusyeEf
-	nv5B8F+6hqJzRPjePal2EIWruYXVlwcYtC6hXreLLjOdaxZ5L3scloXZbf074oKx
-	9HEk0skE/q8uYFEYgwTaw1055r/X4Y9tC7G8GyAcqL8S3ptP1LPJKd483u72qvrq
-	13n1MhRfo34Xtw+/xwv7sTFIlS1G0nEYa16F0lpxTIKe2ejXmqilCLs5roe+O9cu
-	7Tk8RA==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48bpy89q7v-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 06 Aug 2025 07:25:37 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5767PaYX002896
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 6 Aug 2025 07:25:36 GMT
-Received: from [10.50.25.73] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Wed, 6 Aug
- 2025 00:25:31 -0700
-Message-ID: <ac14b632-91ec-58a7-26cc-23d0056222b9@quicinc.com>
-Date: Wed, 6 Aug 2025 12:55:19 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH 2/3] soc: qcom: mdt_loader: Remove pas id parameter
-To: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>,
-        Bjorn Andersson
-	<andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        "Vikash
- Garodia" <quic_vgarodia@quicinc.com>,
-        Bryan O'Donoghue
-	<bryan.odonoghue@linaro.org>,
-        Mauro Carvalho Chehab <mchehab@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        Mathieu Poirier
-	<mathieu.poirier@linaro.org>,
-        Dmitry Baryshkov
-	<dmitry.baryshkov@oss.qualcomm.com>
-CC: <linux-arm-msm@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-media@vger.kernel.org>, <linux-wireless@vger.kernel.org>,
-        <ath12k@lists.infradead.org>, <linux-remoteproc@vger.kernel.org>,
-        "Bjorn
- Andersson" <bjorn.andersson@oss.qualcomm.com>
-References: <20250804-mdtloader-changes-v1-0-5e74629a2241@oss.qualcomm.com>
- <20250804-mdtloader-changes-v1-2-5e74629a2241@oss.qualcomm.com>
-Content-Language: en-US
-From: Dikshita Agarwal <quic_dikshita@quicinc.com>
-In-Reply-To: <20250804-mdtloader-changes-v1-2-5e74629a2241@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: KOi4YqLNCKZAqLXV9R7gOyrdCUchfY9H
-X-Proofpoint-ORIG-GUID: KOi4YqLNCKZAqLXV9R7gOyrdCUchfY9H
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDAwOSBTYWx0ZWRfX0TQ9K+31ta3c
- t63cut98vJ4sgHPI43G//saEJRq/ZyO5GPLiLgBOwUW09EuKlJTiihKQW+cUcPbDRLCpia7+f5K
- kJDAcAv3J9UapI+be22L40HnaJQl3OzsoKb0LrgPCJADMXOQl4GnSKR4CmEdPtfldS8E85t03uS
- OOL2Y+bS0GyPYpHivZnkCDFgs6po2qzp8vL5TAYtG00plNETpXrehVi8cPOth+U7YC1oE4NLVU6
- ucUP/75CScU0FnOdDlrEdZ2GFa+w1GcuOCVQ6RecHh2nXDk7LOIk4CJxRKo7Pj1cPEVtEM03vRs
- UKHU5NbWCV64q1KXjbklPJ/4kYX0kFQ3smV2F2xWzM9BC5PHZXsApD3oQz+WcYP478vXczV3sS6
- 6WgiEJTJ
-X-Authority-Analysis: v=2.4 cv=GrlC+l1C c=1 sm=1 tr=0 ts=68930371 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8
- a=COk6AnOGAAAA:8 a=iBbKO0qNdUk1ZPghfYAA:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
+	Wed, 06 Aug 2025 11:18:03 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5765FVSX011007
+	for <ath12k@lists.infradead.org>; Wed, 6 Aug 2025 11:17:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:date:from:message-id:subject:to; s=qcppdkim1; bh=WtiBpRz0wprq
+	dL+T05uhAHQTmTjB9b6wv16oJjaoicQ=; b=gj7cg3Mk4JMpuNmoDxj6Vwj37GFG
+	veV/dmBD9cwZzOZTSWgvaVYtX6XMkhlKfcWrUInDWMdWIvOYvqFSedSrbzkJNCvu
+	bc3+B6NXS1kAh+uIHIfY/nmY+JU/WWlF0Jjoq9oE3diU66hRQuZG3JpkZAdndWPN
+	sUPNG2jRI0+PWjA7Hk+clrSlHHntadeVZTNrH57NeLdmA5fIn9AYhLFviWxHksCS
+	e4O3IcZdalfsDz99dqpV3J4qPotWVogTWOtS6GnAp2IuwvJL3hSmjki8WxouMszk
+	NT9i3ForXMTakFWUg+HH/rEEUjhhdJKjNAWrAF99ck5ySdPWxIQ/ua34cg==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48bpw32j28-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 06 Aug 2025 11:17:58 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3214259ce67so3687160a91.2
+        for <ath12k@lists.infradead.org>; Wed, 06 Aug 2025 04:17:58 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1754479077; x=1755083877;
+        h=message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=WtiBpRz0wprqdL+T05uhAHQTmTjB9b6wv16oJjaoicQ=;
+        b=JeQPzDzfjn0H/ixL6hst67A56oBmGxFTNIwAW8PEp3F3B6pseLwY/JGw8SLnw1GF20
+         w/cZ1vX+iy+3dmxaKNH3u0ybsHc5VpceshLbLFl1d7nPsEqX3cHVTT2cX5/NyeEXIZLr
+         WS41FntQy4hNTndslxsWc+4EBA/QCoTMXXGmEiJDbRsFg3vKYCuees2e8JLAYkDKV3HH
+         PHbRtEJvrHJnyqDZ0vdf+HX8FhDpGkbKAEYgTxMlLEPr2eaMzl01NdZ4DqLYJMLqrDZh
+         YxggCMGajBtXrtDZMZXDV7Rc503wSmZFP2JcChpIFi08rBluLA65F+sV35sQ2MasuOzw
+         gyCQ==
+X-Gm-Message-State: AOJu0YzTPi88JjFWlAUlRsSn7Fa2OgKAwcdk48hSAv8gnIT2+ONVOY8y
+	vn0Kn6ILBXH4249Y25UYFzvriYM5muYjH82qP8tJmcsaK2XP7cvN6mqVLc1Pa11nfhBHPA5N6CY
+	gPITr3zu9vStwyUlFxxkQkuRkkkuDSGlVCkVxcIBR/bAlnbfRs5j0keQQ1HY5w72gtQkKEQ13
+X-Gm-Gg: ASbGnctjuKiq7HBZUqI/gCAFYZTXZdUVoJ+xwiy9YEhR7nARaeXwXG4WC/EmsRfst69
+	ErNa1CPzBrl//o065F8jHpBx7Kv2dy7P0fJBP4yI2DgE/qQvn6H/F7ynLPdI6omVkXyt3QV4I8P
+	h5RE1tHjOhV01JtnousdL9qjekWccaSwCz3KsuzelCg4wHwHdcj4iC0vx3IkRU8EtODvyoAt2ow
+	nlOrBeGaYIZd68VdpkkSEJZW9/ix3s6FtML5ZYeZQ0mMPCtf3M87pUE522YnaF+q7N/QJ3+5/V9
+	4/kfouK2vyVmb2VE4SdMlNmbGKAmfnQ99WhqSaMsc9XiSIxWym2v/iuKLzh+sQSUMxqQRGHAqX4
+	ZbUKGK11O61jO2JAiEjiD60oM0js4qFLQisiGOECLzMIADhgcKkxRVCI3Z7mSBNm5G1jkQrrVvQ
+	==
+X-Received: by 2002:a17:90b:510b:b0:311:f99e:7f57 with SMTP id 98e67ed59e1d1-3216758d502mr2878174a91.23.1754479076970;
+        Wed, 06 Aug 2025 04:17:56 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE1XwnPNYoOYZYKfYeAC7wcfba4IX19JWDYTOJ++Z1aJvosC6lygulwki5g/MyHnuEzjnSJnw==
+X-Received: by 2002:a17:90b:510b:b0:311:f99e:7f57 with SMTP id 98e67ed59e1d1-3216758d502mr2878135a91.23.1754479076482;
+        Wed, 06 Aug 2025 04:17:56 -0700 (PDT)
+Received: from hu-nithp-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b422b7d9dafsm12984111a12.23.2025.08.06.04.17.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 06 Aug 2025 04:17:55 -0700 (PDT)
+From: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
+Subject: [PATCH ath-current 0/7] wifi: ath12k: Fix Issues in REO RX Queue Updates
+Date: Wed,  6 Aug 2025 16:47:43 +0530
+Message-Id: <20250806111750.3214584-1-nithyanantham.paramasivam@oss.qualcomm.com>
+X-Mailer: git-send-email 2.17.1
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDAwOCBTYWx0ZWRfX+3Hiwrl6tMKh
+ /LgHPVy82g9AnoOw+qDSPeQLMukOk5ktaWlvOhydEs6m9MB3tJhX1Pl5JBPoTL3wZ41/wiBU3N1
+ XRewYp19DkkW6nRXiIqW/xZj5nlkuuu2HhSBzPSDsfueO58WlMp9qgErRLQ0+o6yEttXjJ5fMja
+ 3XnAYDGFjLLWhRM/VrXcdk5Rautig+zc0rhZL2BuJrwjLSg37dWlExsexaF/MtBHEE5n3YuQozT
+ c/Wp2V9z2MaHUDCNC6C0K25bSRRFou6K8j9r+EHx/zcpBvvuj638PzS6Yc2sCF9GDeBR+ZcS8VV
+ 7nL10fMwhIDFPjIHBWu6p/q3LJ7bKQmGHkKSVG1hITD3cdQ8BNdcMKSqMhk4tZDy1dgB1Dgl4K7
+ Lee+D+op
+X-Authority-Analysis: v=2.4 cv=J8Cq7BnS c=1 sm=1 tr=0 ts=689339e6 cx=c_pps
+ a=0uOsjrqzRL749jD1oC5vDA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=2OwXVqhp2XgA:10 a=xkmYrVTeFEw3W4icy9sA:9 a=mQ_c8vxmzFEMiUWkPHU9:22
+X-Proofpoint-GUID: mFZR7ldV-YLA2EIY58UiWhCmR52dfM0z
+X-Proofpoint-ORIG-GUID: mFZR7ldV-YLA2EIY58UiWhCmR52dfM0z
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-06_01,2025-08-04_01,2025-03-28_01
+ definitions=2025-08-06_02,2025-08-06_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 malwarescore=0 clxscore=1011 suspectscore=0 priorityscore=1501
- phishscore=0 adultscore=0 bulkscore=0 impostorscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2508060009
+ spamscore=0 bulkscore=0 priorityscore=1501 adultscore=0 malwarescore=0
+ clxscore=1015 impostorscore=0 suspectscore=0 phishscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508060008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250806_002545_302833_34DB95BC 
-X-CRM114-Status: GOOD (  14.00  )
+X-CRM114-CacheID: sfid-20250806_041801_071127_BC2F1191 
+X-CRM114-Status: GOOD (  13.58  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,42 +119,53 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+During stress test scenarios, when the REO command ring becomes full,
+the RX queue update command issued during peer deletion fails due to
+insufficient space. In response, the host performs a dma_unmap and
+frees the associated memory. However, the hardware still retains a
+reference to the same memory address. If the kernel later reallocates
+this address, unaware that the hardware is still using it, it can
+lead to memory corruption-since the host might access or modify
+memory that is still actively referenced by the hardware.
+
+Implement a retry mechanism for the HAL_REO_CMD_UPDATE_RX_QUEUE
+command during TID deletion to prevent memory corruption. Introduce
+a new list, reo_cmd_update_rx_queue_list, in the dp structure to
+track pending RX queue updates. Protect this list with
+reo_rxq_flush_lock, which also ensures synchronized access to
+reo_cmd_cache_flush_list. Defer memory release until hardware
+confirms the virtual address is no longer in use, avoiding immediate
+deallocation on command failure. Release memory for pending RX queue
+updates via ath12k_dp_rx_reo_cmd_list_cleanup() on system reset
+if hardware confirmation is not received.
+
+Additionally, increase DP_REO_CMD_RING_SIZE to 256 to reduce the
+likelihood of ring exhaustion. Use a 1KB cache flush command for
+QoS TID descriptors to improve efficiency.
+
+Manish Dharanenthiran (2):
+  wifi: ath12k: Add Retry Mechanism for REO RX Queue Update Failures
+  wifi: ath12k: Use 1KB Cache Flush Command for QoS TID Descriptors
+
+Nithyanantham Paramasivam (5):
+  wifi: ath12k: Increase DP_REO_CMD_RING_SIZE to 256
+  wifi: ath12k: Refactor RX TID deletion handling into helper function
+  wifi: ath12k: Refactor RX TID buffer cleanup into helper function
+  wifi: ath12k: Refactor REO command to use ath12k_dp_rx_tid_rxq
+  wifi: ath12k: Fix flush cache failure during RX queue update
+
+ drivers/net/wireless/ath/ath12k/dp.c       |   2 +
+ drivers/net/wireless/ath/ath12k/dp.h       |  12 +-
+ drivers/net/wireless/ath/ath12k/dp_rx.c    | 336 ++++++++++++++-------
+ drivers/net/wireless/ath/ath12k/dp_rx.h    |  18 +-
+ drivers/net/wireless/ath/ath12k/hal.h      |   1 +
+ drivers/net/wireless/ath/ath12k/hal_desc.h |   1 +
+ drivers/net/wireless/ath/ath12k/hal_rx.c   |   3 +
+ 7 files changed, 251 insertions(+), 122 deletions(-)
 
 
-On 8/4/2025 6:11 PM, Mukesh Ojha wrote:
-> pas id is not used in qcom_mdt_load_no_init() and it should not
-> be used as it is non-PAS specific function and has no relation
-> to PAS specific mechanism.
-> 
-> Signed-off-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-> ---
->  drivers/media/platform/qcom/venus/firmware.c |  4 ++--
->  drivers/net/wireless/ath/ath12k/ahb.c        |  2 +-
->  drivers/remoteproc/qcom_q6v5_adsp.c          |  2 +-
->  drivers/remoteproc/qcom_q6v5_pas.c           |  7 +++----
->  drivers/remoteproc/qcom_q6v5_wcss.c          |  2 +-
->  drivers/soc/qcom/mdt_loader.c                | 14 ++++++--------
->  include/linux/soc/qcom/mdt_loader.h          |  7 +++----
->  7 files changed, 17 insertions(+), 21 deletions(-)
-> 
-> diff --git a/drivers/media/platform/qcom/venus/firmware.c b/drivers/media/platform/qcom/venus/firmware.c
-> index 66a18830e66d..862d0718f694 100644
-> --- a/drivers/media/platform/qcom/venus/firmware.c
-> +++ b/drivers/media/platform/qcom/venus/firmware.c
-> @@ -136,8 +136,8 @@ static int venus_load_fw(struct venus_core *core, const char *fwname,
->  		ret = qcom_mdt_load(dev, mdt, fwname, VENUS_PAS_ID,
->  				    mem_va, *mem_phys, *mem_size, NULL);
->  	else
-> -		ret = qcom_mdt_load_no_init(dev, mdt, fwname, VENUS_PAS_ID,
-> -					    mem_va, *mem_phys, *mem_size, NULL);
-> +		ret = qcom_mdt_load_no_init(dev, mdt, fwname, mem_va,
-> +					    *mem_phys, *mem_size, NULL);
->  
->  	memunmap(mem_va);
->  err_release_fw:
+base-commit: 95bf875b89b48a95a82aca922eeaf19d52543028
+-- 
+2.17.1
 
-Reviewed-by: Dikshita Agarwal <quic_dikshita@quicinc.com>
-
-Thanks,
-Dikshita
 
