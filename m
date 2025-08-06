@@ -4,111 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E29B8C87FD3
-	for <ath12k@archiver.kernel.org>; Wed,  6 Aug 2025 11:18:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F57DC87FCB
+	for <ath12k@archiver.kernel.org>; Wed,  6 Aug 2025 11:18:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:MIME-Version:Content-Type:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=8U0iA5v5egIGA6QMrKtKKSRgVKgT6nDYg3PKNpf9CWM=; b=hrPf41z+W/KSg5h48Y3kH8Vkbg
-	g+NEAtumwt3NJ6pq454oB0xJft2C+f7H9ImSppwkP9oTZLKLvxaORE2PAbEc2khRyvoReVgZUTutb
-	z+iDoICyDqMxW1CiJkd7KE8eXPw7q1JcJGuXkY4kKmfOLaWzB6V6PiY7fq9RRLQ/rucRZlayyHRrW
-	VfjThwBZdJg0V8liHd99iFU6mv5xCdxApKQyi6Nu+RtDE/0PMdBHYmKjQ5RvhgkdQNwE2Mtx238VT
-	SLwPMwDJvrK4i+uGoHCcOYRL2e4jb4zOPzwuZmUbW4vn+KAA4tp3d7tBQ2j/aX0051DfkohW6ua5t
-	ELuNdNZA==;
+	bh=Y05UIg546tJB5TyXI8H/T1k9acjQE3Skbb07u+v6VgY=; b=IquTV5GSRBD2zo58F5vcCbPFO4
+	k0lZ2Ib6mi/fxDOQbWHIniAJhwB7REOeGyUjitBYcfXu9X7e2hjaQM5NtIgVLTgu7QuQQxl/0AmHR
+	urtmvTjk7dI/bcJR+rbAWGExG1z2XZOMbSFmzm7Mfa+xGtdBH8tvybYEbWg71PKRAHb3uzCE/GkwV
+	BpRodC2MBMOjr2GSfcPYCbQRc4ZqjeU/Moa5bKcRaj0SQEJ3bnwS3Fc2wtMr3sVn1votCssvXisf8
+	ysH2XVTigNKHr1v/Js72d/m9qg//KQU3cFYxnOX1sJpHDno63Ml6MR/pS14OmK7BPXtvwa3SpM3r1
+	+TNViKyQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujc9l-0000000EzgV-2rb3;
-	Wed, 06 Aug 2025 11:18:05 +0000
+	id 1ujc9n-0000000Ezhp-0WVB;
+	Wed, 06 Aug 2025 11:18:07 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujc9j-0000000EzfJ-0lfV
+	id 1ujc9k-0000000Ezfx-3Myl
 	for ath12k@lists.infradead.org;
-	Wed, 06 Aug 2025 11:18:04 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5765FWif011017
-	for <ath12k@lists.infradead.org>; Wed, 6 Aug 2025 11:18:02 GMT
+	Wed, 06 Aug 2025 11:18:05 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 576AMs9V017483
+	for <ath12k@lists.infradead.org>; Wed, 6 Aug 2025 11:18:04 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:date:from:in-reply-to:message-id:references:subject:to; s=
-	qcppdkim1; bh=8U0iA5v5egIGA6QMrKtKKSRgVKgT6nDYg3PKNpf9CWM=; b=Ta
-	LexaGAqMYT44MWanjPnmOXbrvF0Reuy+IQxpukzH9brbfa0o2UfHpVntMKkJAvFZ
-	aUvemPHzmbNfpLuv/Aw1MT4RPHguasVnkPiC22m9UYNP0N7B3s+5NxZdR9vftMfq
-	BzDJ6RTuLoQ0Va/1SpBC0KaNGL5D1llV3w19poA8OkKa7iLWoAMFJj7Z6zVR4fG9
-	KS4ki24VFEduXPk3apMS3hHsNzXHV0JNMZPJp2xTjqeXzRYEH7XtR7TYyYTS0zWU
-	dBZKZWZdV522R1VBx1rl0eK9SWCJgF8R4TIPwqNIJVeix6Qw58vMOjXzlVqFyoMq
-	1VtJTaTkvgezCjJuNs9A==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48bpw32j2h-1
+	qcppdkim1; bh=Y05UIg546tJB5TyXI8H/T1k9acjQE3Skbb07u+v6VgY=; b=eT
+	wlgHt6bIECMxkDmhK6ZXHLgq9nQx9z3cvl/OaaHUHruUelx0HF5ranX3ClHR6zlw
+	Z5A/Co9HeQ4RSMkmnQn4IOB7YtI5/qDY/W21GckxcsA9N0CxK6aMoyHk3gx7H3Di
+	XxhJRFLjjcXYcuyLMAALd320wPVkC2sv34fvydNLD2Fjyslul9OUAojkEELiMmUz
+	BWFeRkPGj1tdKT9mpnoXNUvLISqrYD/pDvqxmSjw1jfdgh6CYT5j1TIatYqwWAxO
+	T59IXSnaF3e62FS92IrT/5DZTDC2JpNqdhrF7FoZNfwRy34J8cVRTQ1BONihjlGj
+	5GWST4MULzigBxMDVWew==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48c586840k-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 06 Aug 2025 11:18:02 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2400117dd80so46718595ad.2
-        for <ath12k@lists.infradead.org>; Wed, 06 Aug 2025 04:18:02 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 06 Aug 2025 11:18:03 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b42218e4a59so4523512a12.0
+        for <ath12k@lists.infradead.org>; Wed, 06 Aug 2025 04:18:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754479081; x=1755083881;
+        d=1e100.net; s=20230601; t=1754479082; x=1755083882;
         h=references:in-reply-to:message-id:date:subject:cc:to:from
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=8U0iA5v5egIGA6QMrKtKKSRgVKgT6nDYg3PKNpf9CWM=;
-        b=ub6OC64DpADodZWcObsEJSv907GDrSCazFD8RvBieajj1Bnbc0M4C6KiFCjLLuB8tZ
-         jiJ7H1u6a3nTXalMpgyZxAdi6JnLpCZB/wjmPFL87fFtY6GfS5GMCTmW4IS5u0bSajND
-         Nz4bKMLvbH/AHkt943m9dlKGCwNgdcAq0Bi1TpT5cVyHdcj7X7JCHWAc9TUdoqAA7Rq/
-         hsakvWKq61h1Q+/5s9ll+ppnJ7nXD1OW6OJRUfIa1h5TEeO6QF/XxuMwwUmembUlyglg
-         A3wyoe7D1odCx3XXHI04a49Qi8ckQoS1wM+JuLh/neiHxetQ3aHcm6Kz1EUPN3tLbKSL
-         GyeA==
-X-Gm-Message-State: AOJu0YyjQRfQ+EbP2ddMeIlnr0R/9tTADOphMZZfDFqJWGCXMNSkQFmH
-	4FVLwXyipsWFbLewa6IGUFnPtzJw6M5G7IHgjjOx/qA8QagBw74irsX6Mju3Uemhu8r86evO+m5
-	DCcBrH/gaq9fpa+vay+HRFPyD1GMtanXNa+JjYxJn5Xtf3mJsOsWc8sojJmSzGKOgV1FuBR2a
-X-Gm-Gg: ASbGnct9FQjy3AvRsOkEKSAqqAmyI5u3sCe2m3zZ+11OqCF+jsimnGk9Y33J0Kt17K4
-	0mx5H9uBen0pVTultW/lPUKXrA/Tp03GsE56lYOO+UX2pn10FY4wmtzABbzjmJgC0VfVEfaMK/d
-	/p5LlP0D+OCuWQy7io0opc/L4kE3kYd7hKWrkjHfW1aSV6q2caLgPX4MlsUp1Scc4kzaUq1m+fN
-	0hSN4+Q+vCkkzwngY/TiXie3KJ88rtCTIXjFfx6te5A8Cl7vpxIuZPS5DptoVSf3uMZGEshS8e2
-	G6KT1CXE6tznQmxqixGChsoHPE9TPXXQTM6wcMNunV2V57MC6l6c0TvIOgn7dCHmbs6qYTCaIsB
-	ZQiVC09YUuR5YIeZLtujUXVgpOpkqbFtkR8PAT7TsNfhQ4OBOfoVQc37FTz6kogWSYLWF6p6AZg
+        bh=Y05UIg546tJB5TyXI8H/T1k9acjQE3Skbb07u+v6VgY=;
+        b=ZJ+AjD6CTZt3RfI1cCXPFtmYdTsIajJbJ86HMku7dqO2yJ6b4KPhW7fwMsIHHtjn5/
+         DHkeXC6xHyESrzXeMq3vRggNiyFJgRk1/7n94B+0wE5fLe9/NaS9usN6n6onv7dulYa2
+         fi+UwvbPfYgn8xBhwfs8wUTXmQSuIvAZOqdzCajYliD5euRT4SlAw4ppVrGvOwQbBU3W
+         RA+/wZJJo6Q3+Jy8/t+2xoP9frWsejUzwC8r9GwAJ+mdE/QWHB12GqYbf/h8IQhcKPIz
+         0pp8V4sj+D5/oy0jBwlOBpKjz7wXC/SGii0XWYYuWKkiGnoVpTw75520V+hxDmzXlceA
+         feSA==
+X-Gm-Message-State: AOJu0YwSIxiUnFzQ6Xhlvai7/BvYVoEqhFdfkv4ExsebK5pt9f0X7kw8
+	9ckX0RFppoG925HZXQTOec82stWlgp/MLaMPkGQ2frMLG72tUFApWZvisPgXNHaucXy8tXSk+fV
+	FyVvtqtRSZYsqdrqFuF3V3+DkWMSYLvnh8aMh6/xaCRcIKBjtkmKIRi1Q21qPqrM11I9EkT0X
+X-Gm-Gg: ASbGncvaYJaVyu+AfwfpbBVZN9KE9qSJ2c9KyspbTRyaAyQn1pUDFjLLZmNPW20KLTW
+	+7uHQ4KW/O3Y/ZptuuiE3z+BLeivvsL7r5YwairDSvmqkc3JaiojXDOW41/vcGk5CuRwbjKlfDF
+	mOFWKBcfAvHtZDjt3dtOpyh/zMNaItvEQazGc2grHWk/hqFPcKFPqJu4HjjWm3vwt6g+K984cUP
+	oPv8m/cTVQywD3/wQl88EAMCpM07SiEarFOkN2aR69mOhqbyP6hL195intNYpHDLE+HZlEYn82V
+	MBp0tTQtVVYmhUB4VWPBYPqfgJj8kYfephZJav9mygupzh4ShMr+Wo59B97TtamVTWA+LkeN1PB
+	+/nGz4LhWAbU4qW60fdBqhJPJj9Q+CjZgUl/2xnnVHd9tQQ0SG+0PDo2qnjrqsVlKJu00QhOJfw
 	==
-X-Received: by 2002:a17:902:f691:b0:240:66ff:b253 with SMTP id d9443c01a7336-2429f55dcfdmr38715935ad.46.1754479080654;
-        Wed, 06 Aug 2025 04:18:00 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFH4tLJCCe2fVLYkYJzdC4gxRgEg1QpV+J7Ag2EAOSWFlQ+zJEhvb4jrmaE6UogtAkwFstfBQ==
-X-Received: by 2002:a17:902:f691:b0:240:66ff:b253 with SMTP id d9443c01a7336-2429f55dcfdmr38715505ad.46.1754479080155;
-        Wed, 06 Aug 2025 04:18:00 -0700 (PDT)
+X-Received: by 2002:a05:6a20:3d06:b0:240:1f14:f6a0 with SMTP id adf61e73a8af0-240314b552amr3978257637.25.1754479082493;
+        Wed, 06 Aug 2025 04:18:02 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHrGy4fikHZlg8qjirjIl3JMQ759ohE9+tbqYgrSa8dpEtBtc5PXbO7CHA0IOQA6IWPkWfg6w==
+X-Received: by 2002:a05:6a20:3d06:b0:240:1f14:f6a0 with SMTP id adf61e73a8af0-240314b552amr3978207637.25.1754479082008;
+        Wed, 06 Aug 2025 04:18:02 -0700 (PDT)
 Received: from hu-nithp-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b422b7d9dafsm12984111a12.23.2025.08.06.04.17.58
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b422b7d9dafsm12984111a12.23.2025.08.06.04.18.00
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 06 Aug 2025 04:17:59 -0700 (PDT)
+        Wed, 06 Aug 2025 04:18:01 -0700 (PDT)
 From: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
         Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
-Subject: [PATCH ath-current 2/7] wifi: ath12k: Refactor RX TID deletion handling into helper function
-Date: Wed,  6 Aug 2025 16:47:45 +0530
-Message-Id: <20250806111750.3214584-3-nithyanantham.paramasivam@oss.qualcomm.com>
+Subject: [PATCH ath-current 3/7] wifi: ath12k: Refactor RX TID buffer cleanup into helper function
+Date: Wed,  6 Aug 2025 16:47:46 +0530
+Message-Id: <20250806111750.3214584-4-nithyanantham.paramasivam@oss.qualcomm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20250806111750.3214584-1-nithyanantham.paramasivam@oss.qualcomm.com>
 References: <20250806111750.3214584-1-nithyanantham.paramasivam@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDAwOCBTYWx0ZWRfXz96TPKCE/sJX
- sXyRxnFIvKKcOLabobuJ89Ym+zgAXn8LhzvCjH1aLjYbjitOojl3BucaHm7hgeWhc1Od7pJokHi
- jq0eQeGm9ucsbh95pqHSr4c4wVKC0NMJLeWN1b9nqwCVysYciRLSQWND8k7Nod6VITineulbh/H
- 3wFB9ua4m1Ma6ZgTwdbMp4nlJhtKSui78qUCQ+wZ/FCOqK9YEFXuP9rPt5wpcgYMQp5/FsXJSl6
- LnbDIW/iATAr2CajZq2bAVHt7r/p2GCuu5KmNfPz1+A1dxotXZ41uaiCvYueN7tHlaPg7KiMJjr
- 5wOVziebrWlJa4xD3PmIYLGi4RvQvB7SOJWOSulSULdqnno6pzzGOKbLETuFXHSaBzoI0K4bSp4
- vTFg4ipJ
-X-Authority-Analysis: v=2.4 cv=J8Cq7BnS c=1 sm=1 tr=0 ts=689339ea cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8 a=OHgFB0bDJtoAK5jKpLUA:9
- a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-GUID: ct4L7Nomb4cFX8H-Ot-uwkyHPuWizdrX
-X-Proofpoint-ORIG-GUID: ct4L7Nomb4cFX8H-Ot-uwkyHPuWizdrX
+X-Proofpoint-GUID: WFFMwzHGz5go-4jPQjs6yWcPUNGNcyuT
+X-Authority-Analysis: v=2.4 cv=MZpsu4/f c=1 sm=1 tr=0 ts=689339ec cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8 a=f9pqRqKp9ZjM8ooqtKoA:9
+ a=bFCP_H2QrGi7Okbo017w:22
+X-Proofpoint-ORIG-GUID: WFFMwzHGz5go-4jPQjs6yWcPUNGNcyuT
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDA2NCBTYWx0ZWRfX05S31WgU+Zjf
+ q216FhKcpAv6ymr0zXDxPTs+LtZ34rQXndN/dXQOxRHv6uiaZav0WQolkbFe7ebu04eYiVlJNvz
+ +7XHb763JGJ3hqG+tSCSTeXKa6Z5sIastNLY3c7mk7OuEP9DH/H74APmj/fpNgQMxQ3mExWrnFN
+ 2kLGWE8M0cm9MFrkg71JcX07eRd3UGmmdaAQXMDvglvgQRwZ1sxUhBuyl/MqeCBAVTc9ddgw1CL
+ gvjd7P6sr1foUPq+38ivNq1jsICUx8tE73wv46HFrijdknlJwIZd97gf9Hv5XhyiWnzZ8mJ7Vh9
+ 4u8VA2GzLe+RkrfILXbG5phAhuA0Nv6ZAVHLkOroFDNB4iZekx8g6ES4S1V/ewkY8iSWqOcV728
+ ZVIu9C8h
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-08-06_02,2025-08-06_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 bulkscore=0 priorityscore=1501 adultscore=0 malwarescore=0
- clxscore=1015 impostorscore=0 suspectscore=0 phishscore=0
+ impostorscore=0 malwarescore=0 spamscore=0 clxscore=1015 bulkscore=0
+ adultscore=0 suspectscore=0 phishscore=0 priorityscore=1501
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508060008
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508060064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250806_041803_338353_F44C4C86 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20250806_041804_956452_F99D9B2F 
+X-CRM114-Status: GOOD (  12.39  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,80 +123,101 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Refactor RX TID deletion handling by moving the REO command
-setup and send sequence into a new helper function:
-ath12k_dp_rx_tid_delete_handler().
+Introduce ath12k_dp_rx_tid_cleanup() to handle RX TID buffer
+unmapping and freeing. This replaces duplicated cleanup logic
+across multiple code paths.
 
-This improves code readability and modularity, and prepares
-the codebase for potential reuse of the REO command logic in
-other contexts where RX TID deletion is required.
+This improves code maintainability and avoids redundancy in
+buffer cleanup operations.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_rx.c | 27 +++++++++++++++++--------
- 1 file changed, 19 insertions(+), 8 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 34 ++++++++++++-------------
+ 1 file changed, 16 insertions(+), 18 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 8ab91273592c..15097fe9e35e 100644
+index 15097fe9e35e..0337355262f2 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -21,6 +21,9 @@
- 
- #define ATH12K_DP_RX_FRAGMENT_TIMEOUT_MS (2 * HZ)
- 
-+static int ath12k_dp_rx_tid_delete_handler(struct ath12k_base *ab,
-+					     struct ath12k_dp_rx_tid *rx_tid);
-+
- static enum hal_encrypt_type ath12k_dp_rx_h_enctype(struct ath12k_base *ab,
- 						    struct hal_rx_desc *desc)
- {
-@@ -769,6 +772,21 @@ static void ath12k_dp_rx_tid_del_func(struct ath12k_dp *dp, void *ctx,
- 	rx_tid->qbuf.vaddr = NULL;
+@@ -584,6 +584,17 @@ static int ath12k_dp_rx_pdev_srng_alloc(struct ath12k *ar)
+ 	return 0;
  }
  
-+static int ath12k_dp_rx_tid_delete_handler(struct ath12k_base *ab,
-+					     struct ath12k_dp_rx_tid *rx_tid)
++static void ath12k_dp_rx_tid_cleanup(struct ath12k_base *ab,
++				     struct ath12k_reoq_buf *tid_qbuf)
 +{
-+	struct ath12k_hal_reo_cmd cmd = {};
-+
-+	cmd.flag = HAL_REO_CMD_FLG_NEED_STATUS;
-+	cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
-+	cmd.addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
-+	cmd.upd0 |= HAL_REO_CMD_UPD0_VLD;
-+
-+	return ath12k_dp_reo_cmd_send(ab, rx_tid,
-+				      HAL_REO_CMD_UPDATE_RX_QUEUE, &cmd,
-+				      ath12k_dp_rx_tid_del_func);
++	if (tid_qbuf->vaddr) {
++		dma_unmap_single(ab->dev, tid_qbuf->paddr_aligned,
++				 tid_qbuf->size, DMA_BIDIRECTIONAL);
++		kfree(tid_qbuf->vaddr);
++		tid_qbuf->vaddr = NULL;
++	}
 +}
 +
- static void ath12k_peer_rx_tid_qref_setup(struct ath12k_base *ab, u16 peer_id, u16 tid,
- 					  dma_addr_t paddr)
+ void ath12k_dp_rx_reo_cmd_list_cleanup(struct ath12k_base *ab)
  {
-@@ -828,20 +846,13 @@ static void ath12k_peer_rx_tid_qref_reset(struct ath12k_base *ab, u16 peer_id, u
- void ath12k_dp_rx_peer_tid_delete(struct ath12k *ar,
- 				  struct ath12k_peer *peer, u8 tid)
- {
--	struct ath12k_hal_reo_cmd cmd = {};
- 	struct ath12k_dp_rx_tid *rx_tid = &peer->rx_tid[tid];
- 	int ret;
+ 	struct ath12k_dp *dp = &ab->dp;
+@@ -593,9 +604,7 @@ void ath12k_dp_rx_reo_cmd_list_cleanup(struct ath12k_base *ab)
+ 	spin_lock_bh(&dp->reo_cmd_lock);
+ 	list_for_each_entry_safe(cmd, tmp, &dp->reo_cmd_list, list) {
+ 		list_del(&cmd->list);
+-		dma_unmap_single(ab->dev, cmd->data.qbuf.paddr_aligned,
+-				 cmd->data.qbuf.size, DMA_BIDIRECTIONAL);
+-		kfree(cmd->data.qbuf.vaddr);
++		ath12k_dp_rx_tid_cleanup(ab, &cmd->data.qbuf);
+ 		kfree(cmd);
+ 	}
  
- 	if (!rx_tid->active)
- 		return;
+@@ -603,9 +612,7 @@ void ath12k_dp_rx_reo_cmd_list_cleanup(struct ath12k_base *ab)
+ 				 &dp->reo_cmd_cache_flush_list, list) {
+ 		list_del(&cmd_cache->list);
+ 		dp->reo_cmd_cache_flush_count--;
+-		dma_unmap_single(ab->dev, cmd_cache->data.qbuf.paddr_aligned,
+-				 cmd_cache->data.qbuf.size, DMA_BIDIRECTIONAL);
+-		kfree(cmd_cache->data.qbuf.vaddr);
++		ath12k_dp_rx_tid_cleanup(ab, &cmd_cache->data.qbuf);
+ 		kfree(cmd_cache);
+ 	}
+ 	spin_unlock_bh(&dp->reo_cmd_lock);
+@@ -620,10 +627,7 @@ static void ath12k_dp_reo_cmd_free(struct ath12k_dp *dp, void *ctx,
+ 		ath12k_warn(dp->ab, "failed to flush rx tid hw desc, tid %d status %d\n",
+ 			    rx_tid->tid, status);
  
--	cmd.flag = HAL_REO_CMD_FLG_NEED_STATUS;
--	cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
--	cmd.addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
--	cmd.upd0 = HAL_REO_CMD_UPD0_VLD;
--	ret = ath12k_dp_reo_cmd_send(ar->ab, rx_tid,
--				     HAL_REO_CMD_UPDATE_RX_QUEUE, &cmd,
--				     ath12k_dp_rx_tid_del_func);
-+	ret = ath12k_dp_rx_tid_delete_handler(ar->ab, rx_tid);
+-	dma_unmap_single(dp->ab->dev, rx_tid->qbuf.paddr_aligned, rx_tid->qbuf.size,
+-			 DMA_BIDIRECTIONAL);
+-	kfree(rx_tid->qbuf.vaddr);
+-	rx_tid->qbuf.vaddr = NULL;
++	ath12k_dp_rx_tid_cleanup(dp->ab, &rx_tid->qbuf);
+ }
+ 
+ static int ath12k_dp_reo_cmd_send(struct ath12k_base *ab, struct ath12k_dp_rx_tid *rx_tid,
+@@ -766,10 +770,7 @@ static void ath12k_dp_rx_tid_del_func(struct ath12k_dp *dp, void *ctx,
+ 
+ 	return;
+ free_desc:
+-	dma_unmap_single(ab->dev, rx_tid->qbuf.paddr_aligned, rx_tid->qbuf.size,
+-			 DMA_BIDIRECTIONAL);
+-	kfree(rx_tid->qbuf.vaddr);
+-	rx_tid->qbuf.vaddr = NULL;
++	ath12k_dp_rx_tid_cleanup(ab, &rx_tid->qbuf);
+ }
+ 
+ static int ath12k_dp_rx_tid_delete_handler(struct ath12k_base *ab,
+@@ -856,10 +857,7 @@ void ath12k_dp_rx_peer_tid_delete(struct ath12k *ar,
  	if (ret) {
  		ath12k_err(ar->ab, "failed to send HAL_REO_CMD_UPDATE_RX_QUEUE cmd, tid %d (%d)\n",
  			   tid, ret);
+-		dma_unmap_single(ar->ab->dev, rx_tid->qbuf.paddr_aligned,
+-				 rx_tid->qbuf.size, DMA_BIDIRECTIONAL);
+-		kfree(rx_tid->qbuf.vaddr);
+-		rx_tid->qbuf.vaddr = NULL;
++		ath12k_dp_rx_tid_cleanup(ar->ab, &rx_tid->qbuf);
+ 	}
+ 
+ 	if (peer->mlo)
 -- 
 2.17.1
 
