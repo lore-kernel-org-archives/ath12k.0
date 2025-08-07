@@ -4,122 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E1E8CA0EC0
-	for <ath12k@archiver.kernel.org>; Thu,  7 Aug 2025 07:50:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CEF5C87FCF
+	for <ath12k@archiver.kernel.org>; Thu,  7 Aug 2025 10:10:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IAd5Ze4vzEvwh8CRNYeZ2qA7tHf7jWkHfXPtXA/b2Zg=; b=R82llSpYfVotBU05bfIs/PQwnC
-	YL+CmscsdXGczgBsTsJpUf1Xlo+PxHgelIVzexOCKBD5JakgUhI8h0q5h7h+5ey2hXd9ZJPPvumIG
-	23auvxRQ2BHAg/KUg+ZxlsqSdm0qgt1KuEiCVjUxN/0MI4iPHCRJI5nAKgJinFCZISUCqlmjvL777
-	SfibEzyWz19twL2FsjlI1CLxdu7mP397KBo1Qzxcdu+sgXcqmIrVuYVvyJe7wpoIUhSnb/tJRkTX5
-	NlX3BFK8Hw+M5eeKddK8inCJWvYNZu2QBZQuGMKhNh9u/QWvGgotPzy5KK/cU7Y280J5SModOeCmc
-	8njCDojg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=s3a2/KC83RRH5zHKbQEVkzPRNvio8bmrz3u0KHdf0+w=; b=W6yqwRzYFQOblX/FLVS3d23Cjp
+	0ImSp4u7w5seA/K3kp0FW4BLjEg6IAp5Sv+zSEvA6Pmljyxfpb0WWrYnrUfwDZiKxIMae7KObn6c+
+	5I4yFbPMBl1ExlskqMmnWFMw+Zd5IAHPwV6nD4etjTSs+fO1BIJJDGK0LhcVF0Bwr4U/Nl9nns+Dk
+	7L/jIDspf2pKKBn3VNI0Lsyub42WT1xEo0bccRpLCe311+RaaaGkgzzovlC5JjsRQ7Ko8fPr57+FF
+	4/ry7umanEex/BYY6Mh7oj5X6tJmpFSziVAM/CZ8DYoGpkHjEdYb/O3tIYks0ZjWPtQvqHlpQJn8W
+	3j9srV8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujvNx-0000000HVdQ-3xlF;
-	Thu, 07 Aug 2025 07:50:01 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1ujxZa-00000000B2E-0si2;
+	Thu, 07 Aug 2025 10:10:10 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujvHk-0000000HUno-22Yz
-	for ath12k@lists.infradead.org;
-	Thu, 07 Aug 2025 07:43:37 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 576LXxPX008940
-	for <ath12k@lists.infradead.org>; Thu, 7 Aug 2025 07:43:35 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=IAd5Ze4vzEv
-	wh8CRNYeZ2qA7tHf7jWkHfXPtXA/b2Zg=; b=kq23wH5DE2+oLegmUvtX/zF+xtk
-	g/FzoL6TijTXlnE32k18k+uqSgh8GeqMAlROGd8glIE9JimOn/gvrPY6p1yT/M6c
-	hvUYYjy4mKzw+PWBhlybCB5wlRK4tCqB0FCGCASdh1dyJ9cLEs6wAAtNrJ2azJPT
-	SKfMOV/BLmhYZPeropj9mMsLU39N7O348ny4KPgPgyf2PN8cRiTk9ExORGz8YT64
-	ueOIL8NOdJKbRwlbVIpTO626RO+4buwTgyDjSliJXBp/cbm1jPai0e721awRoUc5
-	WYQjTUZUMkAhiXrnLddJIHwL6ITOAcnK7Y4a4wYDy9lIm9U/VAf+qaVK4Og==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48bpw2whmr-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 07 Aug 2025 07:43:35 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2400a932e59so9581995ad.1
-        for <ath12k@lists.infradead.org>; Thu, 07 Aug 2025 00:43:35 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754552614; x=1755157414;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=IAd5Ze4vzEvwh8CRNYeZ2qA7tHf7jWkHfXPtXA/b2Zg=;
-        b=APaCwufJU+nyiE8S8iaLQV1ntEgOV11vrJZ/XGwL285gQOoHb7bfJ0ac6h8KQ4/cKJ
-         sR88U8z3aR8B9YCsnfwVKSpftfBdgJIsN2x5vl76p36wkiLnNgfJZ66rGEsZ1bT1zk3y
-         R40DIbHdpIvB/zBwxj5AMjWlcoa9y51+W3ZZkpHuQ0aZDPpJ26iPzwQTzGQ6Sw1fwvFN
-         rX5auJWLW6utGhaUo9lPXzHD5OogXUB7XVHsIsgacFnpDaElHhCcsRLTeZ9X/4hINujY
-         tFxL66bmMVlAvXIpBVk3mlatQs1oH+kXm5d0BKxcZJrXAgdiC6AEZEZhguT94Lz7Tel0
-         2LCw==
-X-Forwarded-Encrypted: i=1; AJvYcCUUOOmsCel8w4CROV5oUIg7EpSUg4wDskeoEOvw7ZYIdkXUTJBiJP2feG81hv02XFaIe1crQcM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwfqtPB38akA7lrl1se030QdSdgFNVlgDy/z0ZrCD53R9/7Ye8s
-	WAV4H+m9jU27Zfw3Y4vb6zEsLUE5bCnNeEvbxLt/Zi+hISNNDgZlRuMFLsthMX6sxkJR5fbbKtc
-	Jtb3etFN7kaHU4B+JP9pGmV+j06MNzeEe0Wt2xLHgxs8XYjIEX4PzZRQ8ep+O7sJq
-X-Gm-Gg: ASbGncsMANtQxTXb6A1gF1Py5zuTYPGQxL7fznkziBFap/vU3C3fiQO36gULnvvXXoS
-	H9hk+WeU+YKF+ro+aBnhGzQaL5YAfnNbAGppgJLGqoCF49/8NAd6RRQiI1Fs3nsD/O9qwxumfNf
-	Zlu+f8FnyvXXMvRaRkNOpSKEBhJVyU18WIfJQM15uFCDwsuabeCGA3Icvzzk5CGimHYDSlX1/8/
-	xH/l9n8LqePqad6gL9V11/gR2wpnnEVCsDO/tF7N6j+bVK48ac7ojdSPPGJiZLYwfBdtdizt0lB
-	1rDbiY4qK488E+Tp4qqVpXQtIOM5FjKa2gUzEibdmsxSY3VbRVTx6UkIMZquxv6y3qI=
-X-Received: by 2002:a17:902:f68f:b0:240:3915:99d6 with SMTP id d9443c01a7336-2429f4abfd4mr86270765ad.33.1754552614143;
-        Thu, 07 Aug 2025 00:43:34 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEmQ70xW0VJBqeSlIUWMJPARL1fYQTkCAlkasjy9//oof5xTgkO6mW9mVoX4c12poiyfQ7JHg==
-X-Received: by 2002:a17:902:f68f:b0:240:3915:99d6 with SMTP id d9443c01a7336-2429f4abfd4mr86270555ad.33.1754552613777;
-        Thu, 07 Aug 2025 00:43:33 -0700 (PDT)
-Received: from hu-mojha-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-241d1ef678dsm178166395ad.39.2025.08.07.00.43.29
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 07 Aug 2025 00:43:33 -0700 (PDT)
-From: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-To: Vikash Garodia <quic_vgarodia@quicinc.com>,
-        Dikshita Agarwal <quic_dikshita@quicinc.com>,
-        Mauro Carvalho Chehab <mchehab@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Mathieu Poirier <mathieu.poirier@linaro.org>,
-        Konrad Dybcio <konradybcio@kernel.org>
-Cc: "Bryan O'Donoghue" <bryan.odonoghue@linaro.org>,
-        linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org,
-        ath12k@lists.infradead.org, linux-remoteproc@vger.kernel.org,
-        Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-Subject: [Patch v3 3/3] soc: qcom: mdt_loader: Remove unused parameter
-Date: Thu,  7 Aug 2025 13:13:11 +0530
-Message-ID: <20250807074311.2381713-3-mukesh.ojha@oss.qualcomm.com>
-X-Mailer: git-send-email 2.50.1
-In-Reply-To: <20250807074311.2381713-1-mukesh.ojha@oss.qualcomm.com>
-References: <20250807074311.2381713-1-mukesh.ojha@oss.qualcomm.com>
+	id 1ujxTY-000000009Y6-2Qdy;
+	Thu, 07 Aug 2025 10:03:56 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 57E0B600AE;
+	Thu,  7 Aug 2025 10:03:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4A6A6C4CEEB;
+	Thu,  7 Aug 2025 10:03:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1754561033;
+	bh=YsqhzwTGXsR1Inz4NSQKc7b929mseLNbPE/51iSw51I=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=aQLXgkfT6CABBvINOQd0JkgipyPhzRY4X9At4aPhH2YDexocOd/T49lHaLOQ9T55Q
+	 Fhjf1afz77KsJXqa5Qdn4/MkvJXaAjnBUQRhvuKx/CM6HCAt5LMN63ago/pVK2cPUy
+	 JNY3NsFeOlWFqo1P90D3aPZvelkDYwTCiL9q+px3Jlu+MezxMrHFr6Rtg7wftkNQeJ
+	 VJ3G8TshAj3JGk98t5Pb9pyj5aXLp9VyDlWsSrK0WMKb11i/5GeB3ZCMFs/o7dqyy5
+	 0GOdUVfXBsUw2vU39ErMupqgB7vk98M5i+V/wA6NPK1LMM+Mt9aboc11Fr08iv4vnw
+	 Khl6HMDo18RkQ==
+Date: Thu, 7 Aug 2025 15:33:43 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Ilpo =?utf-8?B?SsOkcnZpbmVu?= <ilpo.jarvinen@linux.intel.com>
+Cc: "Rafael J. Wysocki" <rafael@kernel.org>, 
+	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, Jeff Johnson <jjohnson@kernel.org>, 
+	Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
+	Nirmal Patel <nirmal.patel@linux.intel.com>, Jonathan Derrick <jonathan.derrick@linux.dev>, 
+	linux-wireless@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>, ath12k@lists.infradead.org, 
+	ath11k@lists.infradead.org, ath10k@lists.infradead.org, Bjorn Helgaas <helgaas@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, 
+	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, Qiang Yu <qiang.yu@oss.qualcomm.com>
+Subject: Re: [PATCH 4/6] wifi: ath12k: Use pci_{enable/disable}_link_state()
+ APIs to enable/disable ASPM states
+Message-ID: <poam3nvpyeahyvuyyow63u7hl63kq7ju6rondfonjjv6mix4vh@gflqxihdm2yk>
+References: <20250716-ath-aspm-fix-v1-0-dd3e62c1b692@oss.qualcomm.com>
+ <20250716-ath-aspm-fix-v1-4-dd3e62c1b692@oss.qualcomm.com>
+ <7a97d075-2e37-5f40-5247-867146938613@linux.intel.com>
+ <3q2gqo6ipzyqr7i64yhndtpg4etwep4lgffk7emxluxuhjfya5@vt7czmsgpbuw>
+ <52baf40b-41ed-2588-7817-4d8cd859e0d1@linux.intel.com>
+ <je7sz6lgig3picksxv4ncfjcnnw2sdsp5ja6bwofqjuydhc4v6@b3kavwicxggu>
+ <fdfcc2c8-c749-2616-9295-7f4aa37fb0a4@linux.intel.com>
 MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=Vbz3PEp9 c=1 sm=1 tr=0 ts=68945927 cx=c_pps
- a=JL+w9abYAAE89/QcEU+0QA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
- a=2OwXVqhp2XgA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=wln2f8d1oZJPYHCAfSYA:9
- a=324X-CrmTo6CU4MGRt3R:22
-X-Proofpoint-ORIG-GUID: C9QTu9i0DHxMydrmt8xE-0AubxbcirxB
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDAwOCBTYWx0ZWRfX0K+IbMAjf5Cq
- wREkTPGH0WP+9Y9oMaT+9UjG2khcVW1cME4CjVT6XojiZyfv8WROYeiUO4f4HXe741Q+q0Pf/vs
- b/8BlMJYmj+SaC1UU3zLUUZw5sKgNvXc7fYLEjlF9dCLszNGQSXXM7pffGKHSCUtJ4GEn+Y9qf9
- QedqFNWNYDm4EOLHI3m8nvrd+1P7/7DETqxJNIItTDz9ouk7aMP8zm71fuzeBcn9M8TjpG80WSf
- ExHFMW8yLG87jX/C4+Ksmf/xekffVUeikPQTeEHrBPSz9hKl7Du4mzdz4/IimGErvvciIYwjgOZ
- IHPtL7u+8/oIRYWx+VvFxZXvQGMBWCGsv7svG+HLNIz8CY25CqU97isHKD9HALMkkzRH5EN5XNM
- K9ze0/9+
-X-Proofpoint-GUID: C9QTu9i0DHxMydrmt8xE-0AubxbcirxB
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-06_05,2025-08-06_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 malwarescore=0 adultscore=0 suspectscore=0 bulkscore=0
- phishscore=0 priorityscore=1501 spamscore=0 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508060008
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250807_004336_639284_E077717C 
-X-CRM114-Status: GOOD (  15.56  )
+In-Reply-To: <fdfcc2c8-c749-2616-9295-7f4aa37fb0a4@linux.intel.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,46 +82,162 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-fw_name in qcom_mdt_bins_are_split() seems unused now, it may have
-used in the past for logging it but due to code refactor this parameter
-is unused now.
+On Mon, Jul 21, 2025 at 02:28:24PM GMT, Ilpo Järvinen wrote:
+> On Mon, 21 Jul 2025, Manivannan Sadhasivam wrote:
+> 
+> > On Mon, Jul 21, 2025 at 01:09:05PM GMT, Ilpo Järvinen wrote:
+> > > On Mon, 21 Jul 2025, Manivannan Sadhasivam wrote:
+> > > > On Mon, Jul 21, 2025 at 11:04:10AM GMT, Ilpo Järvinen wrote:
+> > > > > On Wed, 16 Jul 2025, Manivannan Sadhasivam via B4 Relay wrote:
+> > > > > > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > > > > > 
+> > > > > > It is not recommended to enable/disable the ASPM states on the back of the
+> > > > > > PCI core directly using the LNKCTL register. It will break the PCI core's
+> > > > > > knowledge about the device ASPM states. So use the APIs exposed by the PCI
+> > > > > > core to enable/disable ASPM states.
+> > > > > > 
+> > > > > > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> > > > > > 
+> > > > > > Reported-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+> > > > > > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > > > > > ---
+> > > > > >  drivers/net/wireless/ath/ath.h        | 14 ++++++++++++++
+> > > > > >  drivers/net/wireless/ath/ath12k/pci.c | 10 ++++------
+> > > > > >  2 files changed, 18 insertions(+), 6 deletions(-)
+> > > > > > 
+> > > > > > diff --git a/drivers/net/wireless/ath/ath.h b/drivers/net/wireless/ath/ath.h
+> > > > > > index 34654f710d8a1e63f65a47d4602e2035262a4d9e..ef685123b66bf4f41428fec67c1967f242a9ef27 100644
+> > > > > > --- a/drivers/net/wireless/ath/ath.h
+> > > > > > +++ b/drivers/net/wireless/ath/ath.h
+> > > > > > @@ -21,6 +21,8 @@
+> > > > > >  #include <linux/skbuff.h>
+> > > > > >  #include <linux/if_ether.h>
+> > > > > >  #include <linux/spinlock.h>
+> > > > > > +#include <linux/pci.h>
+> > > > > > +#include <linux/pci_regs.h>
+> > > > > >  #include <net/mac80211.h>
+> > > > > >  
+> > > > > >  /*
+> > > > > > @@ -336,4 +338,16 @@ static inline const char *ath_bus_type_to_string(enum ath_bus_type bustype)
+> > > > > >  	return ath_bus_type_strings[bustype];
+> > > > > >  }
+> > > > > >  
+> > > > > > +static inline int ath_pci_aspm_state(u16 lnkctl)
+> > > > > > +{
+> > > > > > +	int state = 0;
+> > > > > > +
+> > > > > > +	if (lnkctl & PCI_EXP_LNKCTL_ASPM_L0S)
+> > > > > > +		state |= PCIE_LINK_STATE_L0S;
+> > > > > > +	if (lnkctl & PCI_EXP_LNKCTL_ASPM_L1)
+> > > > > > +		state |= PCIE_LINK_STATE_L1;
+> > > > > > +
+> > > > > > +	return state;
+> > > > > > +}
+> > > > > > +
+> > > > > >  #endif /* ATH_H */
+> > > > > > diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+> > > > > > index 489d546390fcdab8f615cc9184006a958d9f140a..a5e11509e3ab8faad6638ff78ce6a8a5e9c3cbbd 100644
+> > > > > > --- a/drivers/net/wireless/ath/ath12k/pci.c
+> > > > > > +++ b/drivers/net/wireless/ath/ath12k/pci.c
+> > > > > > @@ -16,6 +16,8 @@
+> > > > > >  #include "mhi.h"
+> > > > > >  #include "debug.h"
+> > > > > >  
+> > > > > > +#include "../ath.h"
+> > > > > > +
+> > > > > >  #define ATH12K_PCI_BAR_NUM		0
+> > > > > >  #define ATH12K_PCI_DMA_MASK		36
+> > > > > >  
+> > > > > > @@ -928,8 +930,7 @@ static void ath12k_pci_aspm_disable(struct ath12k_pci *ab_pci)
+> > > > > >  		   u16_get_bits(ab_pci->link_ctl, PCI_EXP_LNKCTL_ASPM_L1));
+> > > > > >  
+> > > > > >  	/* disable L0s and L1 */
+> > > > > > -	pcie_capability_clear_word(ab_pci->pdev, PCI_EXP_LNKCTL,
+> > > > > > -				   PCI_EXP_LNKCTL_ASPMC);
+> > > > > > +	pci_disable_link_state(ab_pci->pdev, PCIE_LINK_STATE_L0S | PCIE_LINK_STATE_L1);
+> > > > > 
+> > > > > I'd remove to comment too as the code is self-explanatory after this 
+> > > > > change.
+> > > > > 
+> > > > 
+> > > > Ack
+> > > > 
+> > > > > >  
+> > > > > >  	set_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags);
+> > > > > >  }
+> > > > > > @@ -958,10 +959,7 @@ static void ath12k_pci_aspm_restore(struct ath12k_pci *ab_pci)
+> > > > > >  {
+> > > > > >  	if (ab_pci->ab->hw_params->supports_aspm &&
+> > > > > >  	    test_and_clear_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags))
+> > > > > > -		pcie_capability_clear_and_set_word(ab_pci->pdev, PCI_EXP_LNKCTL,
+> > > > > > -						   PCI_EXP_LNKCTL_ASPMC,
+> > > > > > -						   ab_pci->link_ctl &
+> > > > > > -						   PCI_EXP_LNKCTL_ASPMC);
+> > > > > > +		pci_enable_link_state(ab_pci->pdev, ath_pci_aspm_state(ab_pci->link_ctl));
+> > > > > >  }
+> > > > > >  
+> > > > > >  static void ath12k_pci_cancel_workqueue(struct ath12k_base *ab)
+> > > > > 
+> > > > > As you now depend on ASPM driver being there, these should also add to 
+> > > > > Kconfig:
+> > > > > 
+> > > > > depends on PCIEASPM
+> > > > > 
+> > > > 
+> > > > I thought about it, but since this driver doesn't necessarily enable ASPM for
+> > > > all the devices it supports, I didn't add the dependency. But looking at it
+> > > > again, I think makes sense to add the dependency since the driver cannot work
+> > > > reliably without disabling ASPM (for the supported devices).
+> > > 
+> > > PCIEASPM is already default y and if EXPERT so it is not something 
+> > > that is expected to be disabled.
+> > > 
+> > > You also no longer need to move the ASPM link state defines LKP found out 
+> > > about after adding the depends on.
+> > > 
+> > 
+> > Yes, it will fix the reported issue, but guarding the definitions feels wrong to
+> > me still. Maybe that's something we can worry later.
+> > 
+> > > I'm a bit worried this series will regress in the cases where OS doesn't 
+> > > control ASPM so it might be necessary to include something along the 
+> > > lines of the patch below too (the earlier discussion on this is in Link 
+> > > tags):
+> > > 
+> > 
+> > atheros drivers didn't have such comment (why they were manually changing the
+> > LNKCTL register), but I agree that there is a chance that they could cause issue
+> > on platforms where BIOS didn't give ASPM control to the OS.
+> > 
+> > But as a non-ACPI developer, I don't know what does 'ACPI doesn't give
+> > permission to manage ASPM' mean exactly. Does ACPI allow to disable ASPM but not
+> > enable it?
+> 
+> While others are likely better qualified to answer this, my impression is 
+> that even disabling ASPM is not allowed when OS does has not been granted 
+> control over ASPM (OS should not change the value of ASPM Control in 
+> LNKCTL at all).
+> 
+> The obvious trouble then is, if a driver/hw needs ASPM to be disabled over 
+> certain period of its operation or entirely to ensure stable operation, 
+> and ASPM is enabled, we're between a rock and a hard place when changes to 
+> ASPM Control field are disallowed.
+> 
+> Because the ASPM driver took a hard stance of conformance here and did 
+> not let touching the ASPM Control field, we ended up having drivers that 
+> then write ASPM Control on their own to work around HW problems (see e.g. 
+> the comments in drivers/net/ethernet/intel/e1000e/netdev.c that make it 
+> very clear it was intentional from the driver) so it was considered that 
+> allowing disabling ASPM might be acceptable compromise over drivers doing 
+> it on their own (and leaving the ASPM driver out of the loop because it 
+> cannot be relied to disable ASPM consistently in all cases).
+> 
 
-Signed-off-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
----
-Changes in v3: https://lore.kernel.org/lkml/20250806172531.1865088-4-mukesh.ojha@oss.qualcomm.com/
- - Caller of qcom_mdt_bins_are_split() was modified in 2/2 of this patch in
-   earlier version, bring the change here.
- - patch order changes due to drop of one patch from earlier version.
+Since there was no comments from ACPI folks, I will go ahead with your patch. I
+will also CC them in the next version so that they can yell at me if they want.
 
-Changes in v2:
- - made this as separate patch.
+- Mani
 
- drivers/soc/qcom/mdt_loader.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/soc/qcom/mdt_loader.c b/drivers/soc/qcom/mdt_loader.c
-index 74c415774657..7522223835f5 100644
---- a/drivers/soc/qcom/mdt_loader.c
-+++ b/drivers/soc/qcom/mdt_loader.c
-@@ -302,7 +302,7 @@ int qcom_mdt_pas_init(struct device *dev, const struct firmware *fw,
- }
- EXPORT_SYMBOL_GPL(qcom_mdt_pas_init);
- 
--static bool qcom_mdt_bins_are_split(const struct firmware *fw, const char *fw_name)
-+static bool qcom_mdt_bins_are_split(const struct firmware *fw)
- {
- 	const struct elf32_phdr *phdrs;
- 	const struct elf32_hdr *ehdr;
-@@ -353,7 +353,7 @@ static int __qcom_mdt_load(struct device *dev, const struct firmware *fw,
- 	if (!mdt_header_valid(fw))
- 		return -EINVAL;
- 
--	is_split = qcom_mdt_bins_are_split(fw, fw_name);
-+	is_split = qcom_mdt_bins_are_split(fw);
- 	ehdr = (struct elf32_hdr *)fw->data;
- 	phdrs = (struct elf32_phdr *)(fw->data + ehdr->e_phoff);
- 
 -- 
-2.50.1
-
+மணிவண்ணன் சதாசிவம்
 
