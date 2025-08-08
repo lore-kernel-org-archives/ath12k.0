@@ -4,144 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D82CC87FD2
-	for <ath12k@archiver.kernel.org>; Fri,  8 Aug 2025 12:42:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AA39C87FCB
+	for <ath12k@archiver.kernel.org>; Fri,  8 Aug 2025 19:04:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:Subject:From:To:Date:Message-ID:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=atRwiYutvUJOfylio6NrNatPGg8JCS82sj5+j+KT18I=; b=q5KVQKGAB3/HU3
-	f0a2FA8TbfXMwdsqiWc+DD4nRT7QLSkFa7m22cqW+m+EyfvKgphDOm5k/77MAK+j7LpIuiKmkLs6o
-	2/Bbz0z+F1YmshL9ir0+Tg6VfmjBxzGkYJNH/bDPQAEmoLI2tfXNvG0kb3W1wLmv52TqjBw3VPPLo
-	T/fDNZdO5luoQtfRSyBe1Tn32ruJ8FIafvG35asa0GmTn8X0Nh5m1gmw4lT0XjXdHZICWx9Db+DY9
-	DQQclzP017oSAc/LkydzQdff1sjhJyOZ8j24nAmMDZBvmFHnp8Dv2dJoEIsdQJPiM45vj/tUPvwPr
-	29biGN6NIjjTMapOgPHQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:Cc:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ietVSNFUdjg+Sjq5vTWe/PgHDfKOkPAOEy9CJqyKx6w=; b=kntFRfFWNrVBpc8abZTIew2nm0
+	SVcM5E6G/V1xD9b4LtMOd/FnKsL+HAhPE6LnxhtG2kELEilulFr3etwQOMYsc/TMOGkPwMRDzWCro
+	QoLP0fjOh/pbKpX5ssRTyWj5HOrWFw6YUc/ImYcRDNBWty9ZUknBb7raII2tW8sD0ii7fpO12xEct
+	Z1AjqMXzxV9AxOwulekPyXuJwS9TtmGDW2y/gdAYWbXCtapB/3ExE9hd7OeiocZkRDBa5hgREEco0
+	LANoMJ8EjwPF+HbfPWtYS49lqWuLu5k8C9gPx2SDoEprieHvVSWghPqEWp9Tv6MroetO0gvNTDnVi
+	K41CHsIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ukMQM-00000002paR-1Lbs;
-	Fri, 08 Aug 2025 12:42:18 +0000
-Received: from mail-northeuropeazolkn190100000.outbound.protection.outlook.com ([2a01:111:f403:d200::] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1ukSNk-00000003W1L-3Kbr;
+	Fri, 08 Aug 2025 19:04:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ukM7a-00000002nO0-0fcE
+	id 1ukSNi-00000003W10-3GE9
 	for ath12k@lists.infradead.org;
-	Fri, 08 Aug 2025 12:22:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=nLooOsew4dp0bnTMJHP58PxErMrAsLncGxcvn83Some/qhIq6FnLBRcAzsi4bd94pmfM4pCZ6jXK3tMVjUI+XB3AFOEBr2jZP9Sva9xU7y/XH37gUoVE+NbrHcR1XGcRLVaoPM9cBnmk+E0LAV+7ukonGbjMXIAwruNwnXnt4wdUouFB5ZFN3ORE4gB7d/YTvr3YIPsq5wI4RdvkeglVJHwEqgVb2PGkozy2askIgxMZ1HdEqzsnhUpKXQTpiqkITC7kCknOsaRwCmfwJsuhB9Afks45jo3vtJ4oE1EtldkE0vXGkEROUdr81ARWsObN0cwRPXw9fOPf6Fmih1RNlQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=atRwiYutvUJOfylio6NrNatPGg8JCS82sj5+j+KT18I=;
- b=SB5uW+X70HBl5uEGebuzTZ0tQ8Pr2wJ3sjtSpJLYLZwHIgFAKe6yTnVNsH78nwfjSdQCvekbMFuAmoeQd5004uintoSbxasu2jWjnkJO7sijzV+USUD68rzAbTr/NXq8J9m08WX13Rp/+a8vd1xIvlqf6Szvaw9FHaMGnG8N59Gr9xNb+TuLYpAASpYWMau9EldJykjIW24jAda0g4ChVdw4fwAKFBZc/836YZ0ahgnfjIMePdkoano8znAGFtsg7UkaSAJRLAxATi+Vzj7/Cdg6j0liRfyfeQCxQ4KInu//9Wp8QgH1DD3AsOwKw/i6JLjMLZ/h4kWxNIyZFiqCGA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=LIVE.FR; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=atRwiYutvUJOfylio6NrNatPGg8JCS82sj5+j+KT18I=;
- b=KFX35WVzOxwnml9JlZj1ribODQTV9C4bU5ZJ2EUdN5KZoxjfPtpje7LRYiWS6UoKtvqLqFVKdRo142zfpV2SZqtx2BXhQkN+IlPwaFAyMwFJ/Ny3npv70QSI6ddSSUBz8zDkjUD7NRfoYwb8Q4UCTsZtgFYSlRRVfzvaI4+QtdIH7qIWWf2uaWGQgarUWqzoIm73XBYYUaDnk8YgS9muKilQDRT7YlACOf8oYeYn8IeCkbB32ZNvACkEJ43IrC6B6c9cM82OZF6hJoD0H9l16O9btcUfy97leSPSDBJ+gfxX/LYaW0s8yOSsc1yrZgwtBfVfzcKfU4F1hMVHOpitgg==
-Received: from AS8P190MB1205.EURP190.PROD.OUTLOOK.COM (2603:10a6:20b:2eb::9)
- by FRWP190MB2449.EURP190.PROD.OUTLOOK.COM (2603:10a6:d10:184::24) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9009.13; Fri, 8 Aug
- 2025 12:22:43 +0000
-Received: from AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
- ([fe80::ac68:f0d0:92de:6d99]) by AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
- ([fe80::ac68:f0d0:92de:6d99%7]) with mapi id 15.20.9009.017; Fri, 8 Aug 2025
- 12:22:43 +0000
-Message-ID: <AS8P190MB1205E00E68B9DC98DEBD7CAC872FA@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
-Date: Fri, 8 Aug 2025 14:22:41 +0200
-User-Agent: Thunderbird Daily
-Content-Language: en-US
-To: ath12k@lists.infradead.org
-From: g <gregoire.s93@live.fr>
-Subject: received scan start failure event with the last two firmware
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
-X-ClientProxiedBy: LO4P123CA0255.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:194::8) To AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
- (2603:10a6:20b:2eb::9)
-X-Microsoft-Original-Message-ID: <4591027d-07cf-4f83-9f72-ca2966ba6b90@live.fr>
+	Fri, 08 Aug 2025 19:04:00 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 578ElWKd007839
+	for <ath12k@lists.infradead.org>; Fri, 8 Aug 2025 19:03:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	ietVSNFUdjg+Sjq5vTWe/PgHDfKOkPAOEy9CJqyKx6w=; b=WkXwFZ7FbNm84+2K
+	ML1PugjddeRW8CotuUg91gyrRifBhJR36y/9suk10KM4KLJwdzURCC0ibVN3cEoS
+	YdQ2QqCHzAG9Murf4XLo7WOPm+cmv2yJmDrRg1tLEknVNfNv+FAEXdEWAopa1Xdq
+	JWm04iNNKh+aWlxs0FVOfDnrTBTMNKppk71i6UqbZYkMIyZckNvA8BGQML3xJTjo
+	T/LP+0KZOsHdv7THGAMlTP0eE89IUUa4+JSfVgA8vDIA+l5TxvVslH4mZKxvkerU
+	fYuhTsW4edpZD7g0QmbqJopTHnTfpX6q0RS9/r5FoDwfiL4XIQLnab9VH8JUYgHm
+	fwholg==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48bpy72ycr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Fri, 08 Aug 2025 19:03:58 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-240012b74dfso19225685ad.2
+        for <ath12k@lists.infradead.org>; Fri, 08 Aug 2025 12:03:58 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1754679837; x=1755284637;
+        h=content-transfer-encoding:in-reply-to:cc:content-language:from
+         :references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ietVSNFUdjg+Sjq5vTWe/PgHDfKOkPAOEy9CJqyKx6w=;
+        b=l7ujaqWoo7Q49J+0ZIlySALCJhwZ97lj3rmj/aR4ip2ReAgU30+UmGUb6MEOOxkvxs
+         VOjNo31ffHzz6+gbtBqnin3InLBJvZVCb/rf55pZYkGL7LnomTn9G7UYAUK/NhKKO7MA
+         V0nFqVpffbMvV+22NVzdVL7CSRn3gzKaanqWalGwibaahwmLnckXhSn38ABpEK9hDGfA
+         fmiWtgcG/656UoWZXUmlGaHBhSSXfQYd/UzCkwtQJKEB3f1FZHdY/E9fZS+GctPqUttR
+         vhTFnCMT/oCsPEgW8U/0cWS8jO8ZvxFYguh8Bc5EXFsEErmEWl6a8nHf5PiCpQlqy+PM
+         Wlgw==
+X-Forwarded-Encrypted: i=1; AJvYcCVGd9TJabG/i7QbMsDFUlf2ZEUXLimC/0Hu/tEsQnOmCFiduOIcfsM6CF6KyqMsWiy1xJz11JU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxfTzae46JExfRarDhqdh4LkbUKX6YT95yCLBJ6lREgn6eKtlIT
+	YMVbJ0Cn0Cuzsu04yIccKs3bqEs6mT+QZuE9/maFFRplPyzEK5ZqyF4NJiZwOhvBFMMRDav5AmO
+	QUUxeDpytX8PHL0MeFn59nC4mlymSvPfz5tuICx10r123y1RJP+UffiF7AyewxhxI
+X-Gm-Gg: ASbGnctICbhr6n3ub+Z71PyU8mHjVvYof1WO/WMYQVH8i5kA4qw63dcX5HhxxRqWNBy
+	Ec5ojc4oOjDY9C/p97Z6KJxTYlFikXyQQrF8d0o3dksW5rEAQHG9pbW+ksGcWFmFUknuie9p0qQ
+	ZGkZq/gAeQtDkQ+2+/KzCL5gj/mSmd0Dkw3jgNyCwI68tFR89TxUzmfUwYi4YpLYtbOgmQRongn
+	yejObOFDWlBdmO7XgJMqufUgB/q1gDlvXeQuBdixZzCAgsjTSzsEIDlCX4Q7C/7SAb8wf+mK6xm
+	SKLlDBMDVRBlrNWHcx9zE0D6HI5NKIE8TcE8W1yokXFwy/O6jJeIM0lq9nQpq64OTnFFknifFvB
+	Jx+ZRuU+u2IqDznZcIjyGZ/kImeXe23ei
+X-Received: by 2002:a17:902:d502:b0:240:3c62:6194 with SMTP id d9443c01a7336-242c2003cdemr60832445ad.20.1754679837446;
+        Fri, 08 Aug 2025 12:03:57 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEA9MH03pd6NIzYG1JX4hKKU/R+CO8e73Q66m1dXTZ4Wn8Iih8hKQP3ssl8Wranq16Ogba7Gw==
+X-Received: by 2002:a17:902:d502:b0:240:3c62:6194 with SMTP id d9443c01a7336-242c2003cdemr60831955ad.20.1754679836936;
+        Fri, 08 Aug 2025 12:03:56 -0700 (PDT)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-241d1ef5fbdsm214361645ad.27.2025.08.08.12.03.56
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 08 Aug 2025 12:03:56 -0700 (PDT)
+Message-ID: <90d4ff1b-0cd4-4947-9b40-131e3ab1e83a@oss.qualcomm.com>
+Date: Fri, 8 Aug 2025 12:03:55 -0700
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS8P190MB1205:EE_|FRWP190MB2449:EE_
-X-MS-Office365-Filtering-Correlation-Id: 761e0896-b1b2-4c4b-3f40-08ddd6764606
-X-Microsoft-Antispam: BCL:0;ARA:14566002|15080799012|461199028|6090799003|8060799015|19110799012|5072599009|1602099012|440099028|40105399003|10035399007|4302099013|3412199025;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?TUhiOFpBdlcraytCWldwbFZJZDVGRC9NTjZQbm83SFFlS1I5OVNmTS91T2R5?=
- =?utf-8?B?R1lIYlZTQUs1ajk5OXlCOVh6YVFRQjRrNWk4bEorZ1JicVZBczMyNlJ2LzMz?=
- =?utf-8?B?S1RuV1E1azVuMExtUFcxM1R2Y05oOUhYYTE5UXFoemxwTStQWmRZTTdNZW5Z?=
- =?utf-8?B?ZncyWld5TlVuNmkvNEQrWU5TRGxLaHRsaUcrWGpVVEpSbStJcUdtY3VoWGJ0?=
- =?utf-8?B?REZpNmxPRDg4U3FFYlpzUlU0V0dhaVZ1ZkI3dXpyRjFCTk1sUUE0aDVzVVVZ?=
- =?utf-8?B?UUNieGp3a255Y0luWlAveGppd1NlS3N2NEpoSHUyMVJFUzZiaVFLaHU4Tit6?=
- =?utf-8?B?dGFmT21pdEppL2lWV3ZXWjJBVS81alJiYTFqQVNRVXhCQklRd0N2WDB4WUZB?=
- =?utf-8?B?Z09WU1lHVXM1Q2ZoUzEvekJ5bmVpUnlmY0k5NTRaU1kzN3ppRWFEdWVhS3Mz?=
- =?utf-8?B?dWM1VEtRenZhdXJQWjBpcFpRZXlnMEx4a3dob2dnUis0VFB1TE0zTHQ1eEZ3?=
- =?utf-8?B?T282eDRJWjNwTFFydVVLMVV4OUp4NXFhTzlCSDFQbVdSSXVlYUZEYW9ONE1G?=
- =?utf-8?B?R2dPVENCWXBXM01saElSUmFQbXh1ZlhaZUpCZzlMYXpKalQ3a0xWNUtPM1hm?=
- =?utf-8?B?TkVaNnhhaXRjcU1ESTljRzA1Vjg1Q01sQ2hNa1U2OGMxZTBUQStGaWQ1REFG?=
- =?utf-8?B?MjV2bzduM0xkWFBlRlJkVFZ6cTZZU3pYTGV0TTI3VVMzTDRpQ1F4ZTVXQnls?=
- =?utf-8?B?Qm5tc2FESWRZN01ZL2U1Wjg3bUloYTIyaHM0NnNNbmhjcHBqdjNOdTlZaTFI?=
- =?utf-8?B?ZFJ6TG1lK0U5OXRnS2J0dENHTlNIY3lodit3V0pQS2lwc3JRSCtZU0xERmMz?=
- =?utf-8?B?K2hqTW9DQitJZnEzUGZVTjJUNzBKUWFsM1JxK3BMRkZydWloZ3p4MzBYTjgw?=
- =?utf-8?B?RXdncU1ZQ0NlY0pIL2pHTFBaUXZpZ3pCQkUxTXpQNVNDWFQ1MEdsTTcrMVNR?=
- =?utf-8?B?OHNQb2JOekdRS3F0a2NFL1o5a21HQTByZE9HYVZtMEF0bTNaZk5MRFl4Um1K?=
- =?utf-8?B?Y2dBSFhuMUtZQzhla3d0aHBvZVU0QjNlZU4rR3NsZFBuNVkzbXBFbkg0L3ZS?=
- =?utf-8?B?SE56M040OUZPOUhXeGxic05iczI0WWRVSTdPMzBuUXNMQmRlNytLWXhTNnl1?=
- =?utf-8?B?M3lPWXdFRGtidXovRW5pM3JJUFBsaWZQdEhIUU5jS3JQSTA2T2Q5VlhMbXUr?=
- =?utf-8?B?UUNSMDdqRkFOeW9QQ2d4VEI3NlY0WUk3LzZiblIxbUVkS0ZWSGMweFhPZm1N?=
- =?utf-8?B?ek1QYTd0Vk5SMHBiS2Y1TXNzeGppUEFOZGNRRWppNTFuaEV0dG95cU1abkRD?=
- =?utf-8?B?dzJlYmJsSlYyVFFRazh5eGJqeWw3b3E3V09nMmZLL2xmQWp3VzRzRUtSOHJN?=
- =?utf-8?B?cU5lUFpkNDVVaHhScWN6T1pmWW15cDlmeUlIL2JwT09VV08zemV1VGZRMVd2?=
- =?utf-8?B?QnRvTGNkeUgrUDVQVUZlc0dhTUlEY0N3akV0M2oxb0RFTUNJdTJ4anFCYkU2?=
- =?utf-8?B?WDZRck5KWm1hMEhzZzdxU2l3eUdNRzVDa05tbHJ5Nk1WUnl2Z2MzUlRtbVgv?=
- =?utf-8?B?aDR1Z1M5U2JQV25EWUlxMkJVdGFKdHhNemJyV0wwNlZNZzcvVEc0OXV3ZFpJ?=
- =?utf-8?B?dSt1ZHVwMUhwQVBEWnpkcWtndk44VGsrWEhQNFZVdmExaG8rMklEMGZ3PT0=?=
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?OTlEaGEzYXBtcW5KMmxTcE1sZXFYVjZvdDlHeTF0M1lqcUN0QmtKQk50SGRW?=
- =?utf-8?B?eTMwSURjMGZPejREQjJtNlo4QjFwUk4wSTI4VXNVOURpK3hKVEdweERZQzlp?=
- =?utf-8?B?NU01N3hBNzNwRFM5ZDF6NGZ4T0JaOEk5YW9oWE43MFVKN3NVTzlKRDBXWm9V?=
- =?utf-8?B?MFVWNUFmMkRYK0U5Mlo1SEszeDFlY25GOFB5L3FINGNSR3pDZXVreXdPVUZi?=
- =?utf-8?B?K1UycTRhVkdoS1dQS3hWLzA1cFc3UWc0MmU3aHA5Y0oxZkk5NENVWkVWb3d4?=
- =?utf-8?B?b0NaNU96RkVsT002M1h6dGFFdXFScWRQUi9YWDFDY2txU09WYWZzS2RYU01j?=
- =?utf-8?B?QU1RU1NVNDRwNjBaUWVvQTloWHRBdEY4ZjZvc0lBTDZPeDJ1alkvbGpnU2lO?=
- =?utf-8?B?UUF2R1dOeTNVNlBuQXFMZWlzV0NZRHdtNSswYnpaU1AreXVzSjhmNWtRMVpk?=
- =?utf-8?B?YnpMSHR3ZXEyUEdSb3V6aDJoc2prMnlMY0NsUXZEZUUwNFdaa0REa0VKSXVo?=
- =?utf-8?B?cVVTN0JMTVJYRkN0b2N6WS9UZFNUWWRudUhVV3dxczB5VTR5Kysyc2hFVjF5?=
- =?utf-8?B?UW5TMjd0eHlMa29POUhnNk8wMjJVOTlrVTdQaEhtaW9hVE1JMy81M0gybGIx?=
- =?utf-8?B?WXY0aStpK3l5VER6dU9tc3h0bllDUWNSb2JtemV6bGErQnVJNzduaHpSVnhO?=
- =?utf-8?B?c1dET1p6STNiSkpTVGJDYXF1by8vWDI4bzNNY0gxYzBrUGYvQXVhS2lMTUt3?=
- =?utf-8?B?YkFTcTNTZmxPcjRHdFBXTkxrQ2Q0WlpJRUN0Ly8wa05tOGtsTVVBT1FZT3Nr?=
- =?utf-8?B?N0FwQjBhZGxkUHpKa05RaVh5dGdDc0hVdVNzUGNOQVlLQjkxSTF4Rnk0NFpt?=
- =?utf-8?B?YkIyZUpZOGd6eDNnZUtqQWswZjEyVlFlckVsUStKVDd6Y2ZTdXNkMVd6MDFy?=
- =?utf-8?B?MnRhREZRUS9FbVZud1NFb3lUN2tsN2lSU3cxNlRWU1llZXh0L25zSnJLL2VK?=
- =?utf-8?B?cEtKU3F5YjYyU290cDJoTEhmclBoZjM5SUJLVk5DV2tyK2dWMVBOSXVQb090?=
- =?utf-8?B?MWFKVWFDb0l6dDIwa2pva1VDVmZjVXBZdGc0OWlHalVQMzFxc1pkSTl5QTZw?=
- =?utf-8?B?NWhXZzZOZ2FmTlk1S2JaTGFmaXVaNjBIVlNoWlRFZXVib2l3Uk9WSVhlK3hy?=
- =?utf-8?B?VmRKZmxLZHhUSGF4TE1oSFFEQjRvejh4aW1YblZWbmxZdnF3NUloSzdIOE9w?=
- =?utf-8?B?Rmg2YWtobnU2Z2h6MDdtUnUvNW9acnA2Q3BWbkNHSXNtdWY3UVVkdlg2OWhy?=
- =?utf-8?B?TEFZZEEyYS9qL3ZvZnV6ZW92NlhKbGJiT0NrNVE0cEc3RGtLcDJDNW1Oc0U2?=
- =?utf-8?B?UHdCalpUUkRDZWdCbCtIZ1RBZFRiMldlbXdsbGEzTVZsYTk5WWtvdFJhVHdx?=
- =?utf-8?B?RmFuakQwdk0yL3YvMy9uRzVFeVJzcEtoOHpicXZMZHlINnhQYXJFbzhtcVhF?=
- =?utf-8?B?TURDQUhtTGFUdDhYd0VYR1F3WnZjYmdabkZMT0NmYVJPZjVRU004aE5Ta2RZ?=
- =?utf-8?B?UVV2RDY3dUVsejZ1c1orYmpwYmxIN2MzWGdmWVJxb2FhaVZ4ejdLaFlIazVS?=
- =?utf-8?B?dUJTRnNNejhBSGZVKzJ2UXZOYU9lSjFweStibU03NThGRXRVRnF1bHdOWG92?=
- =?utf-8?B?RVVTMUNSVnQwRjVMd3hHUWhxckQzTjYrbWIzTWpBQWlBMWRpaThnNHdCVmhY?=
- =?utf-8?Q?CDniffQYaP3Hi6SIeI=3D?=
-X-OriginatorOrg: sct-15-20-8534-20-msonline-outlook-e6540.templateTenant
-X-MS-Exchange-CrossTenant-Network-Message-Id: 761e0896-b1b2-4c4b-3f40-08ddd6764606
-X-MS-Exchange-CrossTenant-AuthSource: AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Aug 2025 12:22:43.0575
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: FRWP190MB2449
+User-Agent: Mozilla Thunderbird
+Subject: Re: received scan start failure event with the last two firmware
+To: g <gregoire.s93@live.fr>, ath12k@lists.infradead.org
+References: <AS8P190MB1205E00E68B9DC98DEBD7CAC872FA@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+In-Reply-To: <AS8P190MB1205E00E68B9DC98DEBD7CAC872FA@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-ORIG-GUID: lNceXoheECZGK8Nn_PXP5mTkTOWgogPo
+X-Proofpoint-GUID: lNceXoheECZGK8Nn_PXP5mTkTOWgogPo
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDAwOSBTYWx0ZWRfXz+3V6D7JTTUb
+ eWcegBeDRcydyo/fcLEU3e62mWphvf/e1TG+zKtqNmJdnQevhHatyVyhgfE1pFZsizB1ilYzbtg
+ 2gllrEr89MOs8wvzmuCwfnKSiXpN4EdvmBGy8qjyI9zvJ0wfjBrqa0S5YNmxThVm9tAA4uYPOBO
+ k7rtuijO/BVmusE/RkQSACNUWJv3JozCIKZH43NCjIjLGjCclnX6JnmG9+2gFxNUN8JJpWWU2ix
+ ENhdZgpfzPfo5pq3Lk0tgAzaUNqBjV06n8pmp91HCKGsStxjjTeHb3ZeT8pa5pbtb4dyf0Tk+v1
+ WzdksBjxtxCo8UV2lVVrB4frqG38GnZercS3rt7LmDUU8MCYOelL2IeO1rLYS6nxkb0rIElqYHF
+ haVlR7p7
+X-Authority-Analysis: v=2.4 cv=LNVmQIW9 c=1 sm=1 tr=0 ts=68964a1e cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=e70TP3dOR9hTogukJ0528Q==:17
+ a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=VwQbUJbxAAAA:8 a=H_VxmGiCnkVkl2j89fYA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=eNH5niYpQkIA:10
+ a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-08_06,2025-08-06_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 bulkscore=0 clxscore=1015 malwarescore=0 adultscore=0
+ phishscore=0 priorityscore=1501 impostorscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508060009
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250808_052254_211739_E8DB68C5 
-X-CRM114-Status: UNSURE (   4.55  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250808_120358_816372_B1B98E74 
+X-CRM114-Status: GOOD (  12.11  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,30 +129,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-I’m seeing an issue with the ath12k driver when using certain recent 
-firmware versions.
-With the latest firmware, I get the following error:
+On 8/8/2025 5:22 AM, g wrote:
+> I’m seeing an issue with the ath12k driver when using certain recent 
+> firmware versions.
+> With the latest firmware, I get the following error:
+> 
+> |received scan start failure event|
+> 
+> If I manually restart the driver, sometimes scanning works, but other 
+> (most often) times it fails with this same error.
+> 
+> Affected firmware versions:
+> 
+> - |WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3|
+> 
+> |- ||WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3|
+> 
+> Working firmware version:
+> 
+> |fw_build_id 
+> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3|
+> 
+> With the working firmware, scanning and connect works every time.
+> 
+> I am currently testing on the very latest Linux kernel from mainline:
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=37816488247ddddbc3de113c78c83572274b1e2e
 
-|received scan start failure event|
+Can you create a Bugzilla report using the instructions at:
+https://wireless.docs.kernel.org/en/latest/en/users/drivers/ath12k/bugreport.html
 
-If I manually restart the driver, sometimes scanning works, but other 
-(most often) times it fails with this same error.
-
-Affected firmware versions:
-
-- |WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3|
-
-|- ||WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3|
-
-Working firmware version:
-
-|fw_build_id 
-QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3|
-
-With the working firmware, scanning and connect works every time.
-
-I am currently testing on the very latest Linux kernel from mainline:
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=37816488247ddddbc3de113c78c83572274b1e2e
-
-
+/jeff
 
