@@ -4,111 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B84BCA0EE1
-	for <ath12k@archiver.kernel.org>; Tue, 12 Aug 2025 19:28:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AA95CA0EDC
+	for <ath12k@archiver.kernel.org>; Tue, 12 Aug 2025 22:22:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
-	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pUxwE1f2l6EC7xo8LZfnYQl0cQpeW/Tj1aSh9rtyLq0=; b=kKDS8T6YEi4JMQFhGX42tTDoSz
-	XsOPsAP1YnjWxlAOJWGAduYwaUJxNsrFIEhp15d66st36lKubK1tVnmRqTglPrQF4Z/vm1Gn6WH1Z
-	qHVPbYz/Q+CD6Moq/dJhzR9dUwBhVDeZ7P51ZFsHxbuK9uf6fG7G3lwZK+D0s1x2bL3oCsMOphZeC
-	3mCUzF98lb8aSszu2zHdnM4Sh1VMWcmGk0/VTcgggsoosaEaGkfx1NbWxjhhxVjswvnT14ZbZLcGi
-	o9ICz7J8df61nb/ETAKWQhKc5DzA6NrYvbrxI9trJWoaGPBn3gR23182qVIWxzhqORzYxhu8qjojW
-	6l1+VYQQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:In-Reply-To:
+	From:References:To:Subject:MIME-Version:Date:Message-ID:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=pzqvvlm2MUfRyFJQjbbRd+NFyLHniDUFnlbE047ZsLc=; b=trCWkc76OeUxVy3GDgAXJG/oE3
+	T9AXOlAwnlLIkTpKR875v3I8pXWqVPMji+jasZpX/G2wVmZrJIG+ntMV26pu21F5E//SmgLwdj60O
+	ZfmKsIT0aPlENR9EGH0D/6uv4S6/j26bbdqIWSo335IXC+Y9bhzOxLtasdZkeR4KB+l+BiWuNhiqQ
+	xKNU8g0+HwqtxR1leDQx/uM6QrfwW6lSJKvN4akr8weSY4sLjq+A3clKae4FNRy0IpQpztLr5gfwH
+	TOIYriN+k7X2AaFiAwHGDGGlIB74/8tavIU73iZgianjU8KVCol3vGS0Ulp5lNFqTGAtpUMz5lQ2D
+	+3+5iU8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulufx-0000000Bqgk-1Acw;
-	Tue, 12 Aug 2025 19:28:49 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1ulxNq-0000000C8z9-2g1X;
+	Tue, 12 Aug 2025 22:22:18 +0000
+Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulsYO-0000000BWY7-3Tc8
-	for ath12k@bombadil.infradead.org;
-	Tue, 12 Aug 2025 17:12:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=CC:To:In-Reply-To:References:
-	Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=pUxwE1f2l6EC7xo8LZfnYQl0cQpeW/Tj1aSh9rtyLq0=; b=qWzJbhNteo6OtXBjI8M3RXSFoY
-	UPO9YeLKF6CJZjvbZTh6XeVznlB2fiN4mBXBfzQmfRYEXgzZyuxZpgqjp1Y1Eb0++bWTGlILLeXqu
-	PiB+1uKxlIHrd3BIe7MjLq+Kxk9k2ZrsPw06Ln1/Mc+MGuxhOF/fpBdY4aWCwVm2wR65bIsaZUXab
-	DDHLQ3tq0L1rdPrTUqiZPfR93ukwZ1J2nM4bwl6/KHXyBCYGuJ1kZ6JEkddK8PZMRF94kAMjvVz6/
-	+fFFh09D6lLhJM+YP4w7dPc2dG7MJcAXYINGG1zWIkDdciHexi9gXsjseWZfDwyQ3Jde3XQZgukhd
-	k4DEvUzw==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulsYL-0000000FrzO-18cA
+	id 1ulxNn-0000000C8yi-3olf
 	for ath12k@lists.infradead.org;
-	Tue, 12 Aug 2025 17:12:51 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57CAvh81021060;
-	Tue, 12 Aug 2025 17:12:47 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	pUxwE1f2l6EC7xo8LZfnYQl0cQpeW/Tj1aSh9rtyLq0=; b=JduwOPWG2zfsNJUt
-	LFYkZ7NGLvDuILcpGyog2oPZtPE3Shpa3+Wr9HsOBW/PDkVxmWJSE6IftUWMrYUU
-	ccN9h3ArFm74THYshZT7iTFZ4q/4H35gUtclunmz7y0aa0/dVF+w+12eNW6HGNN+
-	qCbsgQ3+QUkJ3JRLwFAaTJXuP1T5bzBycN7VtuxdMLrtaTiz++iMByxEhVs+9z4+
-	UBITzL0y4P64wqxUK7T9D+i2Z6xe/wq2dL/dodcYwA0ttikTz7OwHiTrKi9n0r+T
-	Qv0yfEhcaMn7QYT3m51RjDzMlDRwrpLz2Ew87x/09ziVnTXruqkk0ze8aISIHp1n
-	72RQhg==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48ffq6mtvg-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 12 Aug 2025 17:12:47 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 57CHCllg010588
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 12 Aug 2025 17:12:47 GMT
-Received: from hu-kiranv-blr.qualcomm.com (10.80.80.8) by
- nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.10; Tue, 12 Aug 2025 10:12:46 -0700
-From: Kiran Venkatappa <quic_kiranv@quicinc.com>
-Date: Tue, 12 Aug 2025 22:39:36 +0530
-Subject: [PATCH ath12k-ng 10/13] wifi: ath12k: Modularize driver into
- common and Wi-Fi 7 specific components
+	Tue, 12 Aug 2025 22:22:17 +0000
+Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-af95ecfbd5bso990816266b.1
+        for <ath12k@lists.infradead.org>; Tue, 12 Aug 2025 15:22:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1755037334; x=1755642134; darn=lists.infradead.org;
+        h=in-reply-to:content-language:from:references:to:subject:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=pzqvvlm2MUfRyFJQjbbRd+NFyLHniDUFnlbE047ZsLc=;
+        b=EWwSKA0I/LeJwaGqbH0xsvgmyYcEqIdJfzKQGN0DH3wORphE5nKJ1tfZIo1GRfrMxf
+         tfAyoE3qpECO5YgAtz0s7CP0VfIHzGOe06geRlpKaJSaUdpkH5O0trJQY5umgzjw+wnW
+         uj2CEIO/2gKDWpBKbpNc82/CsKJLTiiVtCk1wKn0aJXwZ5QT4ThLgX8viMU6pfww/sRP
+         yrS0gFAMTVbWvmEesFZDtPBc0jSFoLATukgU8TKN8CvVj9esoEG7Rkr8NK+7VgXPi7u+
+         5qOnrELH5UVd7EpdDeVRxUUWsvOIh/IjSeXGNrCd9edBAtE0MOqqijkkjVShw/JzZSuR
+         6K9w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1755037334; x=1755642134;
+        h=in-reply-to:content-language:from:references:to:subject:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=pzqvvlm2MUfRyFJQjbbRd+NFyLHniDUFnlbE047ZsLc=;
+        b=ElT6ortsGn7I/Sfg73iyL6roW+GxMLGtQB6LbOL530axwGE5G9sl4DR4PfBkkjVBAo
+         bHXW9qAw97xGYt3lbJQd1eEu3SQT1qYQfLzzxkJafgXDvGcT3RNXSdwPaZNburI8KV2U
+         PRkMSbmny6x74zKTCvVAYaluBUO8XLV75pUspSkBQ5L6CpUewNCh80aOEyTsAkWmOsNL
+         R4wswUci0+jHtmkLCcBjSCB48qKhjeF5yKpEIfBj1zDQrGg9s22B4BHzT8w/jhuwf9gY
+         H6BK1K54nBPk08ohmku8iq9n/KUDg89CGoK5w7A/ocszxo1IBFFHZq+kGXiRjL+9Y48F
+         ikaw==
+X-Gm-Message-State: AOJu0YykbCyz945wOx1XZOWSbcDJ+mLFfL3BebMzxPy+Mzxdq0FlgOlV
+	XKBjFtHKmiM9IIrgOEO29JYf+Wk72y8fzmxdPR2XLFDnKfa1+N87mTgAvYsKJPuW
+X-Gm-Gg: ASbGnctNlNGU66RYxwSjKyyGsYspxn49sVofJC8hX2LLSNOJCs/kbpUKQ/vfvmIwl3i
+	aaAPSD01V+O5CZFIZfYhd1YuvHGCZb3wpnaW08Q8c0CW22S7PsIzqT0yA7e6Ki9IZxdIANEpmBJ
+	YN3lVEGMRXAFC6gA9LiXdSVduy0UAYBcWmTfB/EcrBSzJxV2q3NylXWl1zzQ17b5LyqlGeVZoLA
+	0WfHe+VUIBObs8D6/OmV+FIbKZWSYv5t+Sru14MsAOg1MU9QncHfF5w8Lguwzy0vOKMPCgHheKI
+	4SIebulUYvuJv159TyhVadweqsapaOU9rv68G3nBxeoJZb5RW+TOBFjPE/wJPA2nobcf9A8eNiC
+	eO30kU04UA6mAeIef+SXTTIGTYcP3DmvRl/tSNtKG5OgVZ/BZAGmC1uzsNDIeofPteVw5qbkCJe
+	ciqBQ3bBi3g4ayvtnxU6OmH2fVew==
+X-Google-Smtp-Source: AGHT+IEmIPtX8wfdvL1W39FT8CTrJszrwLPsi9vwc6BNQvM5FVacssuwlqiUUON75Urg3spqsTAGNg==
+X-Received: by 2002:a17:906:730b:b0:af9:8438:de48 with SMTP id a640c23a62f3a-afca4e565f5mr86706766b.48.1755037333415;
+        Tue, 12 Aug 2025 15:22:13 -0700 (PDT)
+Received: from [192.168.0.31] (ip-078-042-147-250.um17.pools.vodafone-ip.de. [78.42.147.250])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-af91a07659dsm2259322666b.21.2025.08.12.15.22.11
+        for <ath12k@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 12 Aug 2025 15:22:12 -0700 (PDT)
+Message-ID: <b5ba0e58-92e7-456f-96bf-f5921df2ae21@gmail.com>
+Date: Wed, 13 Aug 2025 00:22:11 +0200
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-ID: <20250812-ath12k-mod-v1-10-8c9b0eb9335d@quicinc.com>
-References: <20250812-ath12k-mod-v1-0-8c9b0eb9335d@quicinc.com>
-In-Reply-To: <20250812-ath12k-mod-v1-0-8c9b0eb9335d@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-X-Mailer: b4 0.15-dev-1b0d6
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODExMDA3NSBTYWx0ZWRfXwe6svKm/qAuU
- keqnS3tJeGBe25GTc/O5aguxCXbmC6WonLi+U3KP7m/fQbxCJIN+cgoRNQFCsHMbpwpZ3PiBFVK
- Jl+8ksPLnmKLafC+ftSTh2Ta8U8PdzsyD200PfubiatDjk9JGQ7XSIW/EHBJ2WO3pC9A1gmH4+9
- gXVJX9x+QmRoMHnfjy/Gplw+0RHbDrNnegNvbxGZk7NPwGQgYIqDxZxypzu99ewHjP+yp3erzkj
- liuR5XILEgb7vmhF5OMw4xgvqV/sSwOJ/XvCxgAPNK6FTgV6WsmARJsvHP/tLqPr2/+KClIwPB9
- DMXyPEaLH6BkujqqaYzk1kghqaqKEiyFKOc2AxsCrGDS3hAQ04+VioL8b8MPWk8nVZvPIYnr/56
- g0gXP1fL
-X-Authority-Analysis: v=2.4 cv=TLZFS0la c=1 sm=1 tr=0 ts=689b760f cx=c_pps
- a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=COk6AnOGAAAA:8
- a=R1TGHQWeIs1UwQfBVLAA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: s3sPujlpkeJj81nQ-4q72uccefekSyRM
-X-Proofpoint-ORIG-GUID: s3sPujlpkeJj81nQ-4q72uccefekSyRM
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-12_07,2025-08-11_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 phishscore=0 malwarescore=0 spamscore=0 priorityscore=1501
- bulkscore=0 adultscore=0 impostorscore=0 suspectscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508110075
+User-Agent: Betterbird (Linux)
+Subject: Re: Enabling 6 GHz band in WCN785x
+To: ath12k@lists.infradead.org
+References: <6492c438-7cff-400a-80f2-cf17e298569f@gmail.com>
+ <7d934313-6062-4165-b001-853b1a66e2bc@oss.qualcomm.com>
+From: Petros Christopoulos <petros.christopoulos@gmail.com>
+Content-Language: en-US
+In-Reply-To: <7d934313-6062-4165-b001-853b1a66e2bc@oss.qualcomm.com>
+Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms010801090302020001020206"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250812_181249_738876_2229215E 
-X-CRM114-Status: GOOD (  17.20  )
+X-CRM114-CacheID: sfid-20250812_152215_952931_B7D3DAA6 
+X-CRM114-Status: GOOD (  22.69  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,517 +99,188 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Split the ath12k driver into two kernel modules:
+This is a cryptographically signed message in MIME format.
 
- - ath12k.ko for shared logic across multiple targets
- - ath12k_wifi7.ko for Wi-Fi 7 specific configuration and routines
+--------------ms010801090302020001020206
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: base64
 
-The common module (ath12k.ko) must be loaded prior to any device-specific
-module, as the latter depends on exported symbols from the former.
+RGVhciBCYW9jaGVuLA0KDQpJIHRyaWVkIHRoZSBrZXJuZWwgNi4xNi4wIHRvZGF5IChrZXJu
+ZWwtNi4xNi4wLTIwMC5mYzQyLng4Nl82NC5ycG07IGl0IA0KaXMgRmVkb3JhIGtlcm5lbCB0
+ZXN0IHdlZWsgbm93KcKgd2hpY2jCoGNvbnRhaW5zIHRoZSBjb21taXQgDQpkY2ZlYmZkNGM4
+ZGMwYmVjOWI2NjQ5MTA0Y2VjYzA5ZjU5NzhjNGNiwqAgKD1yZXZpc2lvbiANCnY2LjE2LXJj
+MX4xMzJeMn4xNTdeMn4xNl4yfjYyKQ0KDQpidXQgdGhlIGJlaGF2aW9yIHJlZ2FyZGluZyB0
+aGUgV2lmaSBtb2R1bGUgV0NONzg1eCBoYXMgbm90IGNoYW5nZWQ6DQoNCmRlc3BpdGXCoCBz
+dWRvIGl3IHJlZyBzZXQgREUsDQpwaHkjMCByZW1haW5zIHNlbGYgbWFuYWdlZCAoc2VlIGJl
+bG93IGF0IHRoZSBlbmQpDQoNCkhvd2V2ZXIsIHRoZSBvcHRpb24gQ09ORklHX0FUSF9SRUdf
+RFlOQU1JQ19VU0VSX1JFR19ISU5UUyBpcyBub3QgZW5hYmxlZCANCmluIHRoZSBGZWRvcmEg
+a2VybmVsLCBhbmQgSSBoYXZlIGFza2VkIHRoZSBtYWludGFpbmVycyBpZiB0aGlzIGNvdWxk
+IA0KYmXCoGVuYWJsZWQgKGV2ZXJ5dGhpbmcgaXMgb2YgY291cnNlIHNpbXBsZXIgaWYgSSBk
+byBub3QgaGF2ZSB0byANCnJlY29tcGlsZSBldmVyeSBrZXJuZWwgbXlzZWxmLCANCmh0dHBz
+Oi8vYnVnemlsbGEucmVkaGF0LmNvbS9zaG93X2J1Zy5jZ2k/aWQ9MjM4NzQ4NikNCg0KSSBu
+b3RpY2VkIHRoaXMgb3B0aW9uIGlzIHJlbGV2YW50IGluc2lkZSB0aGUgYXRoMTJrIGNvZGUs
+IGUuZy4NCg0KJCBncmVwIC1yIENPTkZJR19BVEhfUkVHX0RZTkFNSUNfVVNFUl9SRUdfSElO
+VFMgDQpkcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrLw0KZHJpdmVycy9uZXQvd2ly
+ZWxlc3MvYXRoL2F0aDEyay9yZWcuYzrCoCBpZiANCighSVNfRU5BQkxFRChDT05GSUdfQVRI
+X1JFR19EWU5BTUlDX1VTRVJfUkVHX0hJTlRTKSkgew0KDQpDb3VsZCB5b3UgcGxlYXNlIGxl
+dCBtZSBrbm93Og0KDQoxLiB3aGV0aGVyIGhhdmluZyB0aGlzIG9wdGlvbiBlbmVibGVkIGlu
+IHRoZSBrZXJuZWzCoGlzIGFic29sdXRlbHkgDQpuZWNlc3NhcnkgZm9yIHRoZSBhYmlsaXR5
+IHRvIGNoYW5nZcKgdGhlIHJlZ2lvbiBvciB0aGVyZSBhcmUgYWxzbyANCmFsdGVybmF0aXZl
+cz8NCg0KMi4gd2hldGhlciBpZiB0aGlzIG9wdGlvbiBpcyBlbmFibGVkIHdpdGgga2VybmVs
+IDYuMTYuMCAod2l0aCB0aGUgY29tbWl0IA0KYWJvdmUpLCBJIHNob3VsZCBiZSBhYmxlIHRv
+IGNoYW5nZSB0aGUgcmVnaW9uIG9mIHRoZSBXQ043ODV4IG1vZHVsZSB3aXRoIA0KYSBzaW1w
+bGUgc3VkbyBpdyByZWcgc2V0IERFLCBvciB3aGV0aGVyIHN0aWxsIGFub3RoZXIgc3BlY2lh
+bCBtZXRob2QgDQp3aWxsIGJlIG5lY2Vzc2FyeT8NCg0KVGhhbmsgeW91IHZlcnkgbXVjaCBh
+bmQga2luZCByZWdhcmRzDQoNClBldHJvcw0KDQoNCmdsb2JhbA0KY291bnRyeSBERTogREZT
+LUVUU0kNCiDCoMKgwqDCoMKgwqDCoCAoMjQwMCAtIDI0ODMgQCA0MCksIChOL0EsIDIwKSwg
+KE4vQSkNCiDCoMKgwqDCoMKgwqDCoCAoNTE1MCAtIDUyNTAgQCA4MCksIChOL0EsIDIzKSwg
+KE4vQSksIE5PLU9VVERPT1IsIEFVVE8tQlcNCiDCoMKgwqDCoMKgwqDCoCAoNTI1MCAtIDUz
+NTAgQCA4MCksIChOL0EsIDIwKSwgKDAgbXMpLCBOTy1PVVRET09SLCBERlMsIEFVVE8tQlcN
+CiDCoMKgwqDCoMKgwqDCoCAoNTQ3MCAtIDU3MjUgQCAxNjApLCAoTi9BLCAyNiksICgwIG1z
+KSwgREZTDQogwqDCoMKgwqDCoMKgwqAgKDU3MjUgLSA1ODc1IEAgODApLCAoTi9BLCAxMyks
+IChOL0EpDQogwqDCoMKgwqDCoMKgwqAgKDU5NDUgLSA2NDI1IEAgMzIwKSwgKE4vQSwgMjMp
+LCAoTi9BKSwgTk8tT1VURE9PUg0KIMKgwqDCoMKgwqDCoMKgICg1NzAwMCAtIDY2MDAwIEAg
+MjE2MCksIChOL0EsIDQwKSwgKE4vQSkNCg0KcGh5IzAgKHNlbGYtbWFuYWdlZCkNCmNvdW50
+cnkgMDA6IERGUy1VTlNFVA0KIMKgwqDCoMKgwqDCoMKgICgyNDAyIC0gMjQ3MiBAIDQwKSwg
+KE4vQSwgMjApLCAoTi9BKQ0KIMKgwqDCoMKgwqDCoMKgICgyNDU3IC0gMjQ4MiBAIDIwKSwg
+KE4vQSwgMjApLCAoTi9BKSwgUEFTU0lWRS1TQ0FODQogwqDCoMKgwqDCoMKgwqAgKDUxNzAg
+LSA1MzMwIEAgMTYwKSwgKE4vQSwgMjApLCAoTi9BKSwgQVVUTy1CVywgUEFTU0lWRS1TQ0FO
+DQogwqDCoMKgwqDCoMKgwqAgKDU0OTAgLSA1NzMwIEAgMTYwKSwgKE4vQSwgMjApLCAoTi9B
+KSwgQVVUTy1CVywgUEFTU0lWRS1TQ0FODQogwqDCoMKgwqDCoMKgwqAgKDU3MzUgLSA1ODk1
+IEAgMTYwKSwgKE4vQSwgMjApLCAoTi9BKSwgQVVUTy1CVywgUEFTU0lWRS1TQ0FODQoNCg0K
+DQoNCg0KDQoNCk9uIDEyLjA4LjIwMjUgMDU6MjEsIEJhb2NoZW4gUWlhbmcgd3JvdGU6DQo+
+DQo+IE9uIDgvMTAvMjAyNSA5OjU2IFBNLCBQZXRyb3MgQ2hyaXN0b3BvdWxvcyB3cm90ZToN
+Cj4+IERlYXIgYWxsLMKgSSBoYXZlIGEgUXVhbGNvbW0gVGVjaG5vbG9naWVzLCBJbmMgV0NO
+Nzg1eCBXaS1GaSA3KDgwMi4xMWJlKSAzMjBNSHogMngyDQo+PiBbRmFzdENvbm5lY3QgNzgw
+MF0gWzE3Y2I6MTEwN10gKHJldiAwMSkgV2lmaSBjb250cm9sbGVyDQo+PiB3aXRoIEZlZG9y
+YSA0MiBLREUswqBsYXRlc3Qga2VybmVsIDYuMTUuOS0yMDEuZmM0Mi54ODZfNjQgYW5kIHJl
+Y2VudCBmaXJtd2FyZSAweDExMDg4MTFjDQo+PiBmd19idWlsZF90aW1lc3RhbXAgMjAyNS0w
+NS0xNyAwMDoyMSBmd19idWlsZF9pZA0KPj4gUUNfSU1BR0VfVkVSU0lPTl9TVFJJTkc9V0xB
+Ti5ITVQuMS4xLmM1LTAwMjg0LjEtUUNBSE1UU1dQTF9WMS4wX1YyLjBfU0kNCj4+IExJQ09O
+Wi0zDQo+Pg0KPj4gVGhlIDYgR0h6IGJhbmQgaXMgZGlzYWJsZWQsIEkgc3VzcGVjdCB0aGF0
+IHRoZSBwcm9ibGVtIGlzIHRoZSAwMCByZWdpb24gc2V0dGluZyBpbiBwaHkjMSwNCj4+IGhv
+d2V2ZXLCoGFzIHRoaXMgaXMgInNlbGYtbWFuYWdlZCIgSSBoYXZlIG5vdCBtYW5hZ2VkIHRv
+IGNoYW5nZSB0aGlzIChpdyByZWfCoHNldCBvciBhbiAvDQo+PiBldGMvbW9kcHJvYmUuZC9h
+dGgxMmsuY29uZiBmaWxlIHdpdGggIm9wdGlvbnMgYXRoMTJrIGNvdW50cnk9REUiIGhhdmUg
+bm8gZWZmZWN0cykuDQo+IFRyeSB3aXRoIENPTkZJR19BVEhfUkVHX0RZTkFNSUNfVVNFUl9S
+RUdfSElOVFMgZW5hYmxlZC4NCj4NCj4+ICQgaXcgcmVnIGdldA0KPj4gZ2xvYmFsDQo+PiBj
+b3VudHJ5IERFOiBERlMtRVRTSQ0KPj4gKDI0MDAgLSAyNDgzIEAgNDApLCAoTi9BLCAyMCks
+IChOL0EpDQo+PiAoNTE1MCAtIDUyNTAgQCA4MCksIChOL0EsIDIzKSwgKE4vQSksIE5PLU9V
+VERPT1IsIEFVVE8tQlcNCj4+ICg1MjUwIC0gNTM1MCBAIDgwKSwgKE4vQSwgMjApLCAoMCBt
+cyksIE5PLU9VVERPT1IsIERGUywgQVVUTy1CVw0KPj4gKDU0NzAgLSA1NzI1IEAgMTYwKSwg
+KE4vQSwgMjYpLCAoMCBtcyksIERGUw0KPj4gKDU3MjUgLSA1ODc1IEAgODApLCAoTi9BLCAx
+MyksIChOL0EpDQo+PiAoNTk0NSAtIDY0MjUgQCAzMjApLCAoTi9BLCAyMyksIChOL0EpLCBO
+Ty1PVVRET09SDQo+PiAoNTcwMDAgLSA2NjAwMCBAIDIxNjApLCAoTi9BLCA0MCksIChOL0Ep
+DQo+Pg0KPj4gcGh5IzEgKHNlbGYtbWFuYWdlZCkNCj4+IGNvdW50cnkgMDA6IERGUy1VTlNF
+VA0KPj4gKDI0MDIgLSAyNDcyIEAgNDApLCAoTi9BLCAyMCksIChOL0EpDQo+PiAoMjQ1NyAt
+IDI0ODIgQCAyMCksIChOL0EsIDIwKSwgKE4vQSksIFBBU1NJVkUtU0NBTg0KPj4gKDUxNzAg
+LSA1MzMwIEAgMTYwKSwgKE4vQSwgMjApLCAoTi9BKSwgQVVUTy1CVywgUEFTU0lWRS1TQ0FO
+DQo+PiAoNTQ5MCAtIDU3MzAgQCAxNjApLCAoTi9BLCAyMCksIChOL0EpLCBBVVRPLUJXLCBQ
+QVNTSVZFLVNDQU4NCj4+ICg1NzM1IC0gNTg5NSBAIDE2MCksIChOL0EsIDIwKSwgKE4vQSks
+IEFVVE8tQlcsIFBBU1NJVkUtU0NBTg0KPj4NCj4+IEkgaGF2ZSBzZWFyY2hlZCBleHRlbnNp
+dmVseSB0aGUgd2ViLCBmb3VuZCBzb21lIHJlbGV2YW50IGFydGljbGVzIChlLmcuIGh0dHBz
+Oi8vDQo+PiBwYXRjaHdvcmsua2VybmVsLm9yZy9wcm9qZWN0L2xpbnV4LXdpcmVsZXNzL3Bh
+dGNoLzIwMjUwNDAxMDIwODQwLjM1Ny01LQ0KPj4gcXVpY19rYW5neWFuZ0BxdWljaW5jLmNv
+bS8sIHdoaWNoIHNob3VsZCBiZSBpbnRlZ3JhdGVkIGludG8gNi4xNS45IGlmIEkgdW5kZXJz
+dGFuZA0KPj4gY29ycmVjdGx5KSwgYnV0IHN0aWxsIG5vIHNvbHV0aW9uLg0KPiBEbyB5b3Ug
+bWVhbiB3aXRoIHRoZSB3aG9sZSAxMUQgc3VwcG9ydCBzZXJpZXMgbWVyZ2VkIHRoZSBpc3N1
+ZSBpcyBzdGlsbCBzZWVuPw0KPg0KPj4gSSB3b3VsZCBiZSBncmF0ZWZ1bCBmb3Igc29tZSBo
+ZWxwLg0KPj4NCj4+IFRoYW5rIHlvdSB2ZXJ5IG11Y2guDQo+Pg0KPj4NCj4NCj4NCg==
 
-As part of this restructuring, Wi-Fi 7 specific files are moved into a
-dedicated `wifi7/` directory and built as a separate module. Common
-symbols are exported accordingly, with further adjustments planned
-in upcoming patches to support architecture-dependent separation.
+--------------ms010801090302020001020206
+Content-Type: application/pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Description: S/MIME Cryptographic Signature
 
-This modularization improves maintainability and scalability by enabling
-clean separation of hardware-specific logic from the shared driver core.
-
-                                          +-----------------+
-                                          |                 |
-                                          |   ath12k.ko     |
-                                          |    (common)     |
-        +---------------+                 |                 |
-        |               |                 +-----------------+
-        |   ath12k.ko   | ===========>
-        |               |                 +------------------+
-        +---------------+                 |                  |
-                                          | ath12k_wifi7.ko  |
-                                          | (wifi7 family)   |
-                                          |                  |
-                                          +------------------+
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Kiran Venkatappa <quic_kiranv@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/Makefile                 | 11 ++++-------
- drivers/net/wireless/ath/ath12k/ahb.c                    |  2 ++
- drivers/net/wireless/ath/ath12k/core.c                   |  5 +++++
- drivers/net/wireless/ath/ath12k/debug.c                  |  4 ++++
- drivers/net/wireless/ath/ath12k/dp_rx.c                  |  3 +++
- drivers/net/wireless/ath/ath12k/hal.c                    |  4 ++++
- drivers/net/wireless/ath/ath12k/htc.c                    |  2 ++
- drivers/net/wireless/ath/ath12k/pci.c                    |  3 +++
- drivers/net/wireless/ath/ath12k/peer.c                   |  2 ++
- drivers/net/wireless/ath/ath12k/wifi7/Makefile           | 10 ++++++++++
- .../net/wireless/ath/ath12k/{ahb_wifi7.c => wifi7/ahb.c} |  8 ++++----
- .../net/wireless/ath/ath12k/{ahb_wifi7.h => wifi7/ahb.h} |  0
- .../net/wireless/ath/ath12k/{ce_wifi7.c => wifi7/ce.c}   |  6 +++---
- .../net/wireless/ath/ath12k/{ce_wifi7.h => wifi7/ce.h}   |  0
- .../wireless/ath/ath12k/{core_wifi7.c => wifi7/core.c}   |  6 +++---
- .../net/wireless/ath/ath12k/{hw_wifi7.c => wifi7/hw.c}   | 16 ++++++++--------
- .../net/wireless/ath/ath12k/{hw_wifi7.h => wifi7/hw.h}   |  0
- .../net/wireless/ath/ath12k/{mhi_wifi7.c => wifi7/mhi.c} |  2 +-
- .../net/wireless/ath/ath12k/{mhi_wifi7.h => wifi7/mhi.h} |  0
- .../net/wireless/ath/ath12k/{pci_wifi7.c => wifi7/pci.c} | 10 +++++-----
- .../net/wireless/ath/ath12k/{pci_wifi7.h => wifi7/pci.h} |  0
- .../net/wireless/ath/ath12k/{wmi_wifi7.c => wifi7/wmi.c} |  4 ++--
- .../net/wireless/ath/ath12k/{wmi_wifi7.h => wifi7/wmi.h} |  0
- 23 files changed, 65 insertions(+), 33 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
-index 9c7a32930ed60eafc36fa65aa0ac001d9237eaf8..8dd77729f52f5143746a6fa568d200b68f4715d6 100644
---- a/drivers/net/wireless/ath/ath12k/Makefile
-+++ b/drivers/net/wireless/ath/ath12k/Makefile
-@@ -1,12 +1,10 @@
- # SPDX-License-Identifier: BSD-3-Clause-Clear
- obj-$(CONFIG_ATH12K) += ath12k.o
- ath12k-y += core.o \
--	    core_wifi7.o \
- 	    hal.o \
- 	    hal_tx.o \
- 	    hal_rx.o \
- 	    wmi.o \
--	    wmi_wifi7.o \
- 	    mac.o \
- 	    reg.o \
- 	    htc.o \
-@@ -16,19 +14,18 @@ ath12k-y += core.o \
- 	    dp_rx.o \
- 	    debug.o \
- 	    ce.o \
--	    ce_wifi7.o \
- 	    peer.o \
- 	    dbring.o \
--	    hw_wifi7.o \
- 	    mhi.o \
--	    mhi_wifi7.o \
- 	    pci.o \
--	    pci_wifi7.o \
- 	    dp_mon.o \
- 	    fw.o \
- 	    p2p.o
- 
--ath12k-$(CONFIG_ATH12K_AHB) += ahb.o ahb_wifi7.o
-+ath12k-$(CONFIG_ATH12K_AHB) += ahb.o
-+
-+obj-$(CONFIG_ATH12K) += wifi7/
-+
- ath12k-$(CONFIG_ATH12K_DEBUGFS) += debugfs.o debugfs_htt_stats.o debugfs_sta.o
- ath12k-$(CONFIG_ACPI) += acpi.o
- ath12k-$(CONFIG_ATH12K_TRACING) += trace.o
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-index fc986e669bdea85cdf3dcc3d60c1f2cc9216d3e0..41ef5170556e9255337b26ec3565ab25f50adc65 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.c
-+++ b/drivers/net/wireless/ath/ath12k/ahb.c
-@@ -1183,6 +1183,7 @@ int ath12k_ahb_register_driver(const enum ath12k_device_family device_id,
- 
- 	return platform_driver_register(ahb_driver);
- }
-+EXPORT_SYMBOL(ath12k_ahb_register_driver);
- 
- void ath12k_ahb_unregister_driver(const enum ath12k_device_family device_id)
- {
-@@ -1198,3 +1199,4 @@ void ath12k_ahb_unregister_driver(const enum ath12k_device_family device_id)
- 	platform_driver_unregister(ahb_driver);
- 	ath12k_ahb_family_drivers[device_id] = NULL;
- }
-+EXPORT_SYMBOL(ath12k_ahb_unregister_driver);
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 8b6fb6a1593a322ceee86ecbd23c87ab9b72394b..346687d1598238caadc7f9188b485189f94640de 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -632,6 +632,7 @@ u32 ath12k_core_get_max_peers_per_radio(struct ath12k_base *ab)
- {
- 	return ath12k_core_get_max_station_per_radio(ab) + TARGET_NUM_VDEVS(ab);
- }
-+EXPORT_SYMBOL(ath12k_core_get_max_peers_per_radio);
- 
- struct reserved_mem *ath12k_core_get_reserved_mem(struct ath12k_base *ab,
- 						  int index)
-@@ -1740,6 +1741,7 @@ enum ath12k_qmi_mem_mode ath12k_core_get_memory_mode(struct ath12k_base *ab)
- 
- 	return ATH12K_QMI_MEMORY_MODE_DEFAULT;
- }
-+EXPORT_SYMBOL(ath12k_core_get_memory_mode);
- 
- int ath12k_core_pre_init(struct ath12k_base *ab)
- {
-@@ -2272,3 +2274,6 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
- 	kfree(ab);
- 	return NULL;
- }
-+
-+MODULE_DESCRIPTION("Driver support for Qualcomm Technologies WLAN devices");
-+MODULE_LICENSE("Dual BSD/GPL");
-diff --git a/drivers/net/wireless/ath/ath12k/debug.c b/drivers/net/wireless/ath/ath12k/debug.c
-index 5ce100cd9a9d16f7fcc2dc0a5522b341ebbff8a3..9910c60f30ced17370cbe47e4cedc9a41f62d196 100644
---- a/drivers/net/wireless/ath/ath12k/debug.c
-+++ b/drivers/net/wireless/ath/ath12k/debug.c
-@@ -21,6 +21,7 @@ void ath12k_info(struct ath12k_base *ab, const char *fmt, ...)
- 	/* TODO: Trace the log */
- 	va_end(args);
- }
-+EXPORT_SYMBOL(ath12k_info);
- 
- void ath12k_err(struct ath12k_base *ab, const char *fmt, ...)
- {
-@@ -35,6 +36,7 @@ void ath12k_err(struct ath12k_base *ab, const char *fmt, ...)
- 	/* TODO: Trace the log */
- 	va_end(args);
- }
-+EXPORT_SYMBOL(ath12k_err);
- 
- void __ath12k_warn(struct device *dev, const char *fmt, ...)
- {
-@@ -49,6 +51,7 @@ void __ath12k_warn(struct device *dev, const char *fmt, ...)
- 	/* TODO: Trace the log */
- 	va_end(args);
- }
-+EXPORT_SYMBOL(__ath12k_warn);
- 
- #ifdef CONFIG_ATH12K_DEBUG
- 
-@@ -72,6 +75,7 @@ void __ath12k_dbg(struct ath12k_base *ab, enum ath12k_debug_mask mask,
- 
- 	va_end(args);
- }
-+EXPORT_SYMBOL(__ath12k_dbg);
- 
- void ath12k_dbg_dump(struct ath12k_base *ab,
- 		     enum ath12k_debug_mask mask,
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 8ab91273592c826cdd3c39fb9157dc853b2722e5..1b1ac82871f4152e86e285c7f0002f33ee1dac58 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -1901,6 +1901,7 @@ void ath12k_dp_htt_htc_t2h_msg_handler(struct ath12k_base *ab,
- 
- 	dev_kfree_skb_any(skb);
- }
-+EXPORT_SYMBOL(ath12k_dp_htt_htc_t2h_msg_handler);
- 
- static int ath12k_dp_rx_msdu_coalesce(struct ath12k *ar,
- 				      struct sk_buff_head *msdu_list,
-@@ -4383,6 +4384,7 @@ int ath12k_dp_rxdma_ring_sel_config_qcn9274(struct ath12k_base *ab)
- 
- 	return ret;
- }
-+EXPORT_SYMBOL(ath12k_dp_rxdma_ring_sel_config_qcn9274);
- 
- int ath12k_dp_rxdma_ring_sel_config_wcn7850(struct ath12k_base *ab)
- {
-@@ -4425,6 +4427,7 @@ int ath12k_dp_rxdma_ring_sel_config_wcn7850(struct ath12k_base *ab)
- 
- 	return ret;
- }
-+EXPORT_SYMBOL(ath12k_dp_rxdma_ring_sel_config_wcn7850);
- 
- int ath12k_dp_rx_htt_setup(struct ath12k_base *ab)
- {
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index 6406fcf5d69fd67dd3d5e0e25bb7a1dd860085ac..022eea9515efd9f38ff27b5b9becdf7e451b310f 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -746,6 +746,7 @@ const struct hal_rx_ops hal_rx_qcn9274_ops = {
- 	.rx_desc_get_desc_size = ath12k_hw_qcn9274_get_rx_desc_size,
- 	.rx_desc_get_msdu_src_link_id = ath12k_hw_qcn9274_rx_desc_get_msdu_src_link,
- };
-+EXPORT_SYMBOL(hal_rx_qcn9274_ops);
- 
- static bool ath12k_hw_qcn9274_compact_rx_desc_get_first_msdu(struct hal_rx_desc *desc)
- {
-@@ -1093,6 +1094,7 @@ const struct hal_ops hal_qcn9274_ops = {
- 	.rxdma_ring_wmask_rx_msdu_end = ath12k_hal_qcn9274_rx_msdu_end_wmask_get,
- 	.get_hal_rx_compact_ops = ath12k_hal_qcn9274_get_hal_rx_compact_ops,
- };
-+EXPORT_SYMBOL(hal_qcn9274_ops);
- 
- static bool ath12k_hw_wcn7850_rx_desc_get_first_msdu(struct hal_rx_desc *desc)
- {
-@@ -1552,6 +1554,7 @@ const struct hal_rx_ops hal_rx_wcn7850_ops = {
- 	.rx_desc_get_desc_size = ath12k_hw_wcn7850_get_rx_desc_size,
- 	.rx_desc_get_msdu_src_link_id = ath12k_hw_wcn7850_rx_desc_get_msdu_src_link,
- };
-+EXPORT_SYMBOL(hal_rx_wcn7850_ops);
- 
- const struct hal_ops hal_wcn7850_ops = {
- 	.create_srng_config = ath12k_hal_srng_create_config_wcn7850,
-@@ -1560,6 +1563,7 @@ const struct hal_ops hal_wcn7850_ops = {
- 	.rxdma_ring_wmask_rx_msdu_end = NULL,
- 	.get_hal_rx_compact_ops = NULL,
- };
-+EXPORT_SYMBOL(hal_wcn7850_ops);
- 
- static int ath12k_hal_alloc_cont_rdp(struct ath12k_base *ab)
- {
-diff --git a/drivers/net/wireless/ath/ath12k/htc.c b/drivers/net/wireless/ath/ath12k/htc.c
-index d13616bf07f43da4711c6e37628f978d7292f3fe..fe8218a56125b22f585ee8badab976173c4219ce 100644
---- a/drivers/net/wireless/ath/ath12k/htc.c
-+++ b/drivers/net/wireless/ath/ath12k/htc.c
-@@ -2,6 +2,7 @@
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-  * Copyright (c) 2021-2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  */
- #include <linux/skbuff.h>
- #include <linux/ctype.h>
-@@ -376,6 +377,7 @@ void ath12k_htc_rx_completion_handler(struct ath12k_base *ab,
- out:
- 	kfree_skb(skb);
- }
-+EXPORT_SYMBOL(ath12k_htc_rx_completion_handler);
- 
- static void ath12k_htc_control_rx_complete(struct ath12k_base *ab,
- 					   struct sk_buff *skb)
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 93e2189ec68704598ce401ed4fe4f5981fc3cece..fbe6359ec74cf121d2d08d94297585eaa423d5ad 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1175,6 +1175,7 @@ u32 ath12k_pci_read32(struct ath12k_base *ab, u32 offset)
- 		ab_pci->pci_ops->release(ab);
- 	return val;
- }
-+EXPORT_SYMBOL(ath12k_pci_read32);
- 
- void ath12k_pci_write32(struct ath12k_base *ab, u32 offset, u32 value)
- {
-@@ -1795,6 +1796,7 @@ int ath12k_pci_register_driver(const enum ath12k_device_family device_id,
- 
- 	return pci_register_driver(pci_driver);
- }
-+EXPORT_SYMBOL(ath12k_pci_register_driver);
- 
- void ath12k_pci_unregister_driver(const enum ath12k_device_family device_id)
- {
-@@ -1805,3 +1807,4 @@ void ath12k_pci_unregister_driver(const enum ath12k_device_family device_id)
- 	pci_unregister_driver(&ath12k_pci_family_drivers[device_id]->driver);
- 	ath12k_pci_family_drivers[device_id] = NULL;
- }
-+EXPORT_SYMBOL(ath12k_pci_unregister_driver);
-diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
-index f1ae9e5b5af7208e9a547b5c191b0dd3b582b295..af95324f270868c81dd7fc32830ac31ae6cc8056 100644
---- a/drivers/net/wireless/ath/ath12k/peer.c
-+++ b/drivers/net/wireless/ath/ath12k/peer.c
-@@ -23,6 +23,7 @@ struct ath12k_ml_peer *ath12k_peer_ml_find(struct ath12k_hw *ah, const u8 *addr)
- 
- 	return NULL;
- }
-+EXPORT_SYMBOL(ath12k_peer_ml_find);
- 
- struct ath12k_peer *ath12k_peer_find(struct ath12k_base *ab, int vdev_id,
- 				     const u8 *addr)
-@@ -78,6 +79,7 @@ struct ath12k_peer *ath12k_peer_find_by_addr(struct ath12k_base *ab,
- 
- 	return NULL;
- }
-+EXPORT_SYMBOL(ath12k_peer_find_by_addr);
- 
- static struct ath12k_peer *ath12k_peer_find_by_ml_id(struct ath12k_base *ab,
- 						     int ml_peer_id)
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/Makefile b/drivers/net/wireless/ath/ath12k/wifi7/Makefile
-new file mode 100644
-index 0000000000000000000000000000000000000000..872ca620a5c5031bdf39817f9833faf2d7ce629d
---- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/Makefile
-@@ -0,0 +1,10 @@
-+# SPDX-License-Identifier: BSD-3-Clause-Clear
-+obj-$(CONFIG_ATH12K) += ath12k_wifi7.o
-+ath12k_wifi7-y += core.o \
-+	          pci.o \
-+	          wmi.o \
-+	          mhi.o \
-+	          ce.o \
-+	          hw.o
-+
-+ath12k_wifi7-$(CONFIG_ATH12K_AHB) += ahb.o
-diff --git a/drivers/net/wireless/ath/ath12k/ahb_wifi7.c b/drivers/net/wireless/ath/ath12k/wifi7/ahb.c
-similarity index 95%
-rename from drivers/net/wireless/ath/ath12k/ahb_wifi7.c
-rename to drivers/net/wireless/ath/ath12k/wifi7/ahb.c
-index ff4f041bafbc452ec9c70c3d9f1ce648b43a26c7..803e13207bc067889fb4c36fff109f78a0ed66bb 100644
---- a/drivers/net/wireless/ath/ath12k/ahb_wifi7.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/ahb.c
-@@ -7,11 +7,11 @@
- #include <linux/of_device.h>
- #include <linux/platform_device.h>
- #include <linux/soc/qcom/mdt_loader.h>
-+#include "../ahb.h"
- #include "ahb.h"
--#include "ahb_wifi7.h"
--#include "debug.h"
--#include "hif.h"
--#include "hw_wifi7.h"
-+#include "../debug.h"
-+#include "../hif.h"
-+#include "hw.h"
- 
- static const struct of_device_id ath12k_wifi7_ahb_of_match[] = {
- 	{ .compatible = "qcom,ipq5332-wifi",
-diff --git a/drivers/net/wireless/ath/ath12k/ahb_wifi7.h b/drivers/net/wireless/ath/ath12k/wifi7/ahb.h
-similarity index 100%
-rename from drivers/net/wireless/ath/ath12k/ahb_wifi7.h
-rename to drivers/net/wireless/ath/ath12k/wifi7/ahb.h
-diff --git a/drivers/net/wireless/ath/ath12k/ce_wifi7.c b/drivers/net/wireless/ath/ath12k/wifi7/ce.c
-similarity index 99%
-rename from drivers/net/wireless/ath/ath12k/ce_wifi7.c
-rename to drivers/net/wireless/ath/ath12k/wifi7/ce.c
-index cf27259d15a0e85c30268c12f935ad3b7985a22f..b4bd1136c25650f559d83242543edf571969059c 100644
---- a/drivers/net/wireless/ath/ath12k/ce_wifi7.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/ce.c
-@@ -8,10 +8,10 @@
- #include <linux/bitops.h>
- #include <linux/bitfield.h>
- 
--#include "core.h"
-+#include "../core.h"
-+#include "../ce.h"
- #include "ce.h"
--#include "ce_wifi7.h"
--#include "dp_rx.h"
-+#include "../dp_rx.h"
- 
- /* Copy Engine (CE) configs for QCN9274 */
- /* Target firmware's Copy Engine configuration. */
-diff --git a/drivers/net/wireless/ath/ath12k/ce_wifi7.h b/drivers/net/wireless/ath/ath12k/wifi7/ce.h
-similarity index 100%
-rename from drivers/net/wireless/ath/ath12k/ce_wifi7.h
-rename to drivers/net/wireless/ath/ath12k/wifi7/ce.h
-diff --git a/drivers/net/wireless/ath/ath12k/core_wifi7.c b/drivers/net/wireless/ath/ath12k/wifi7/core.c
-similarity index 95%
-rename from drivers/net/wireless/ath/ath12k/core_wifi7.c
-rename to drivers/net/wireless/ath/ath12k/wifi7/core.c
-index 85ea8904672cbca03a77e8e9a70c5b397b5e08e2..eb882e56e5ec2865a910d8936cb892f71541d2e9 100644
---- a/drivers/net/wireless/ath/ath12k/core_wifi7.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/core.c
-@@ -5,10 +5,10 @@
-  */
- 
- #include <linux/module.h>
--#include "ahb.h"
-+#include "../ahb.h"
-+#include "../pci.h"
- #include "pci.h"
--#include "pci_wifi7.h"
--#include "ahb_wifi7.h"
-+#include "ahb.h"
- 
- static int ahb_err, pci_err;
- 
-diff --git a/drivers/net/wireless/ath/ath12k/hw_wifi7.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-similarity index 99%
-rename from drivers/net/wireless/ath/ath12k/hw_wifi7.c
-rename to drivers/net/wireless/ath/ath12k/wifi7/hw.c
-index 5f5d3c57b288c1ce9023a14e40cd2f12c9adc13f..93f558847baed6e318f64191cb34f84d7f7586eb 100644
---- a/drivers/net/wireless/ath/ath12k/hw_wifi7.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-@@ -8,17 +8,17 @@
- #include <linux/bitops.h>
- #include <linux/bitfield.h>
- 
--#include "debug.h"
--#include "core.h"
-+#include "../debug.h"
-+#include "../core.h"
-+#include "../ce.h"
- #include "ce.h"
--#include "ce_wifi7.h"
-+#include "../hw.h"
- #include "hw.h"
--#include "hw_wifi7.h"
-+#include "../mhi.h"
- #include "mhi.h"
--#include "dp_rx.h"
--#include "peer.h"
--#include "wmi_wifi7.h"
--#include "mhi_wifi7.h"
-+#include "../dp_rx.h"
-+#include "../peer.h"
-+#include "wmi.h"
- 
- static const guid_t wcn7850_uuid = GUID_INIT(0xf634f534, 0x6147, 0x11ec,
- 					     0x90, 0xd6, 0x02, 0x42,
-diff --git a/drivers/net/wireless/ath/ath12k/hw_wifi7.h b/drivers/net/wireless/ath/ath12k/wifi7/hw.h
-similarity index 100%
-rename from drivers/net/wireless/ath/ath12k/hw_wifi7.h
-rename to drivers/net/wireless/ath/ath12k/wifi7/hw.h
-diff --git a/drivers/net/wireless/ath/ath12k/mhi_wifi7.c b/drivers/net/wireless/ath/ath12k/wifi7/mhi.c
-similarity index 99%
-rename from drivers/net/wireless/ath/ath12k/mhi_wifi7.c
-rename to drivers/net/wireless/ath/ath12k/wifi7/mhi.c
-index be74df152f6f88c1c723459a1cdea21f45b0d15b..74d5f096453118a864ec254150b417bdba5a1d64 100644
---- a/drivers/net/wireless/ath/ath12k/mhi_wifi7.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/mhi.c
-@@ -4,8 +4,8 @@
-  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  */
- 
-+#include "../mhi.h"
- #include "mhi.h"
--#include "mhi_wifi7.h"
- 
- static const struct mhi_channel_config ath12k_mhi_channels_qcn9274[] = {
- 	{
-diff --git a/drivers/net/wireless/ath/ath12k/mhi_wifi7.h b/drivers/net/wireless/ath/ath12k/wifi7/mhi.h
-similarity index 100%
-rename from drivers/net/wireless/ath/ath12k/mhi_wifi7.h
-rename to drivers/net/wireless/ath/ath12k/wifi7/mhi.h
-diff --git a/drivers/net/wireless/ath/ath12k/pci_wifi7.c b/drivers/net/wireless/ath/ath12k/wifi7/pci.c
-similarity index 97%
-rename from drivers/net/wireless/ath/ath12k/pci_wifi7.c
-rename to drivers/net/wireless/ath/ath12k/wifi7/pci.c
-index a680cd9a04e33af1340393429773aea497461412..01a0b42f0e808a7aab656b88816f2f93a8d4da5e 100644
---- a/drivers/net/wireless/ath/ath12k/pci_wifi7.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/pci.c
-@@ -6,12 +6,12 @@
- 
- #include <linux/pci.h>
- 
-+#include "../pci.h"
- #include "pci.h"
--#include "pci_wifi7.h"
--#include "core.h"
--#include "hif.h"
--#include "mhi.h"
--#include "hw_wifi7.h"
-+#include "../core.h"
-+#include "../hif.h"
-+#include "../mhi.h"
-+#include "hw.h"
- 
- #define QCN9274_DEVICE_ID		0x1109
- #define WCN7850_DEVICE_ID		0x1107
-diff --git a/drivers/net/wireless/ath/ath12k/pci_wifi7.h b/drivers/net/wireless/ath/ath12k/wifi7/pci.h
-similarity index 100%
-rename from drivers/net/wireless/ath/ath12k/pci_wifi7.h
-rename to drivers/net/wireless/ath/ath12k/wifi7/pci.h
-diff --git a/drivers/net/wireless/ath/ath12k/wmi_wifi7.c b/drivers/net/wireless/ath/ath12k/wifi7/wmi.c
-similarity index 99%
-rename from drivers/net/wireless/ath/ath12k/wmi_wifi7.c
-rename to drivers/net/wireless/ath/ath12k/wifi7/wmi.c
-index f27fa56210e8332ca3c309eca9184f6cbe560c91..652c353f9fc586ae05fa276ebbb99b9a65a5a7c1 100644
---- a/drivers/net/wireless/ath/ath12k/wmi_wifi7.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/wmi.c
-@@ -4,8 +4,8 @@
-  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  */
- 
--#include "core.h"
--#include "wmi_wifi7.h"
-+#include "../core.h"
-+#include "wmi.h"
- 
- void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
- 			     struct ath12k_wmi_resource_config_arg *config)
-diff --git a/drivers/net/wireless/ath/ath12k/wmi_wifi7.h b/drivers/net/wireless/ath/ath12k/wifi7/wmi.h
-similarity index 100%
-rename from drivers/net/wireless/ath/ath12k/wmi_wifi7.h
-rename to drivers/net/wireless/ath/ath12k/wifi7/wmi.h
-
--- 
-2.34.1
-
+MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCC
+DXYwggYBMIID6aADAgECAhAjQo0Vw63QGUZl80tkKdKTMA0GCSqGSIb3DQEBCwUAMIGBMQsw
+CQYDVQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRy
+bzEXMBUGA1UECgwOQWN0YWxpcyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFsaXMgQ2xpZW50IEF1
+dGhlbnRpY2F0aW9uIENBIEczMB4XDTI1MDcxOTE2MTQxOVoXDTI2MDcxOTE2MTQxOVowKTEn
+MCUGA1UEAwwecGV0cm9zLmNocmlzdG9wb3Vsb3NAZ21haWwuY29tMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAr07zWXrnCI1zbTVpOsdWPg7LO0wiS7/fCXOHakNzio9G5zBF
+89x0ZzgjMCtI9e90VT8bb8gPKyhUwnvNvtHePX4QwVk2tTBZPjk7OYfk3iQynXNLFG808Cfi
+1kArwknrbIvJBX4+UofpGHySO0U3A1BmcqTYB9Xx93LNcAVPTUAaa63g1XP0BFvKPRQSt+PB
+jbYa7CpxzeEq0AQNb5qR9dy0jQ3B4Qwl8PpD4p7VfsR39sxOz0MdjsKbWioPaX19rI5odLAQ
+Ou1ZlPurjyCUrjymbA3/WSsVV4Ls5ROzKur7bbYXcWGx6DnOGVOIdTp/o7czEM19PEOPIL9r
+IIBKCQIDAQABo4IByjCCAcYwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBS+l6mqhL+AvxBT
+fQky+eEuMhvPdzB+BggrBgEFBQcBAQRyMHAwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jYWNlcnQu
+YWN0YWxpcy5pdC9jZXJ0cy9hY3RhbGlzLWF1dGNsaWczMDEGCCsGAQUFBzABhiVodHRwOi8v
+b2NzcDA5LmFjdGFsaXMuaXQvVkEvQVVUSENMLUczMCkGA1UdEQQiMCCBHnBldHJvcy5jaHJp
+c3RvcG91bG9zQGdtYWlsLmNvbTBSBgNVHSAESzBJMDwGBiuBHxABATAyMDAGCCsGAQUFBwIB
+FiRodHRwczovL3d3dy5hY3RhbGlzLml0L2FyZWEtZG93bmxvYWQwCQYHZ4EMAQUBAjAdBgNV
+HSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwSAYDVR0fBEEwPzA9oDugOYY3aHR0cDovL2Ny
+bDA5LmFjdGFsaXMuaXQvUmVwb3NpdG9yeS9BVVRIQ0wtRzMvZ2V0TGFzdENSTDAdBgNVHQ4E
+FgQUuzz/ZVNnMtMVzg8SSt6RV6UBlQEwDgYDVR0PAQH/BAQDAgWgMA0GCSqGSIb3DQEBCwUA
+A4ICAQDJ9XoujR8y0yr4LO1sqQYO9YfoEuZR34N+kBoSlDDZA0DM54gTbSGjGO7cejCgG76f
+a4Dfx9DXC/VIUiw3p95LBJRKBsCBFri91VhqfHH1XDR9zX4rUlP9PzIVdD4xkl1j7NnKxGxA
+pL11AXmhGkYKYneU9OxxrY3ctAT2VB0vHmbsnTfdOF638rRp9fmiHWopBkrxVJ32HMv7GadH
+7iCi4/7Mpu2auYpFIc6FfZha0kPq8gsCjDjUHGn7Kz5gsuW0nLx8ShtPKo05cJQ89G+aZpYN
+Oi5K+8HXGVx4uafP9Sdy0lLDegyDWY7Zdx14qeXet5sujcZ00ta+fXl6GAU40YjKwu7vFqDq
+ZdyG01f+ceVJhIH4jNJDho5BWCCgzPkjEln7SgAw5KIg13CJljRFVgEDxab6FOPNokMzDwi/
+ogqG/7HXtUc5hfjr3Euwcz/KzzgYip1uI4n8gRYgS2fqsbLLlvn0031G2tAkJZJUFKsAJupU
+YeJo1KBSJxIY2tvEqXa72Si6TjGmOO0E8Wt/RRyGBN3Jp1yZGziVEqPvqElc6IZ8CAUir4h4
+FWM6V5lH4nWlmpoDjChGA1oxfcsw5e6lcKx1gslW3Goxaj5VXk3ub3SwdVX5neDspqgU6Y0q
+R3P82qZC2qW3H1qB/ws2Kt4F8hlGntphvCbRlV5PIjCCB20wggVVoAMCAQICEBcQPt49ihy1
+ygZRk+fKQ2swDQYJKoZIhvcNAQELBQAwazELMAkGA1UEBhMCSVQxDjAMBgNVBAcMBU1pbGFu
+MSMwIQYDVQQKDBpBY3RhbGlzIFMucC5BLi8wMzM1ODUyMDk2NzEnMCUGA1UEAwweQWN0YWxp
+cyBBdXRoZW50aWNhdGlvbiBSb290IENBMB4XDTIwMDcwNjA4NDU0N1oXDTMwMDkyMjExMjIw
+MlowgYExCzAJBgNVBAYTAklUMRAwDgYDVQQIDAdCZXJnYW1vMRkwFwYDVQQHDBBQb250ZSBT
+YW4gUGlldHJvMRcwFQYDVQQKDA5BY3RhbGlzIFMucC5BLjEsMCoGA1UEAwwjQWN0YWxpcyBD
+bGllbnQgQXV0aGVudGljYXRpb24gQ0EgRzMwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIK
+AoICAQDt5oeWocGktu3CQlX3Pw8PImBfE+CmQ4iGSZF5HBsvGlAP3EYB7va6OobMUWHvxA+A
+CHEpWq0YfNh6rRUlULOGcIpEFtVf4nAiEvdQtiFQBmtWJSn3naoMHqpMvmwZ4lL0Xr1U9JHm
+TqkU3DuYcNNO3S+hYWDZpWQbeSGibNVeiJ4kY6JDh0fvqloK1BsuS3n2OgArPYGfAYtDjCvT
+2d+6Ym3kArHZjEcrZeBI+yVVnjPwbTSCKax8DtS2NP/CJ6RjpnRvuSwusRy84OdwdB71VKs1
+EDXj1ITcCWRZpkz+OhV6L8Zh+P0rmOSJF6KdHiaozfncURx4s54GFJNRGkx1DnCxcuL0NJMY
+G42/hrDYOjNv+oGWSEZO/CT3aaLSMB5wTbZKfcD1R+tTanXD+5Gz5Mi15DTE7QH8naZjZxqq
+hyxL1KyuIgaVDxvQtPSjo5vTsoa09rn+Ui8ybHnvYO/a/68OIQIHLGbUd2COnwm0TiZ3Jg/o
+YGxwnJPvU1nDXNcecWTIJvFF5qD2ppJH3HgJVVePUEOY1E4Kp3k0B8hdRdhMV5n+O6RCKCTF
+cZaESF8sELgdrqnCLPP1+rX7DA8pxZoX0/9Jk64EOsbfQyLIJlrrob2YS0Xlku6HisZ8qrHL
+hnkzF5y7O34xmatIp8oZ5c54QP+K5flnTYzWjuIxLwIDAQABo4IB9DCCAfAwDwYDVR0TAQH/
+BAUwAwEB/zAfBgNVHSMEGDAWgBRS2Ig6yJ94Zu2J83s4cJTJAgI20DBBBggrBgEFBQcBAQQ1
+MDMwMQYIKwYBBQUHMAGGJWh0dHA6Ly9vY3NwMDUuYWN0YWxpcy5pdC9WQS9BVVRILVJPT1Qw
+RQYDVR0gBD4wPDA6BgRVHSAAMDIwMAYIKwYBBQUHAgEWJGh0dHBzOi8vd3d3LmFjdGFsaXMu
+aXQvYXJlYS1kb3dubG9hZDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwgeMGA1Ud
+HwSB2zCB2DCBlqCBk6CBkIaBjWxkYXA6Ly9sZGFwMDUuYWN0YWxpcy5pdC9jbiUzZEFjdGFs
+aXMlMjBBdXRoZW50aWNhdGlvbiUyMFJvb3QlMjBDQSxvJTNkQWN0YWxpcyUyMFMucC5BLiUy
+ZjAzMzU4NTIwOTY3LGMlM2RJVD9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0O2JpbmFyeTA9
+oDugOYY3aHR0cDovL2NybDA1LmFjdGFsaXMuaXQvUmVwb3NpdG9yeS9BVVRILVJPT1QvZ2V0
+TGFzdENSTDAdBgNVHQ4EFgQUvpepqoS/gL8QU30JMvnhLjIbz3cwDgYDVR0PAQH/BAQDAgEG
+MA0GCSqGSIb3DQEBCwUAA4ICAQAmm+cbWQ10sxID6edV94SAhc1CwzthHFfHpuYS30gisWUf
+Wpgp43Dg1XzG2in3VGV7XrzCCGZh4JM/XQWp+4oxmyV42Qjz9vc8GRksgo6X2nYObPYZzQjd
+a9wxsCB38i4G3H33w8lf9sFvl0xm4ZXZ2s2bF/PdqvrK0ZgvF51+MoIPnli/wJBw3p72xbk5
+Sb1MneSO3tZ293WFzDmz7tuGU0PfytYUkG7O6annGqbU1I6CA6QVKUqeFLPodSODAFqJ3pim
+KD0vX9MuuSa0QinH7CkiPtZMD0mpwwzIsnSs3qOOl60tIZQOTc0I6lCe1LLhrz7Q75J6nNL9
+N5zVwZ1I3o2Lb8Dt7BA13VFuZvZIzapUGV83R7pmSVaj1Bik1nJ/R393e6mwppsT140KDVLh
+4Oenywmp2VpBDuEj9RgICAO0sibv8n379LbO7ARa0kw9y9pggFzN2PAX25b7w0n9m78kpv3z
+3vW65rs6wl7E8VEHNfv8+cnb81dxN3C51KElz+l31zchFTurD5HFEpyEhzO/fMS5AkweRJIz
+wozxNs7OL/S/SVTpJLJL1ukZ1lnHHX0d3xCzRy/5HqfK3uiG22LPB5+RjNDobPAjAz2BKMfk
+F/+v0pzn8mqqkopQaJzEAbLbMpgQYHRCjvrUxxwjJyUFb2Z+40UNtMF4MTK7zTGCBOAwggTc
+AgEBMIGWMIGBMQswCQYDVQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9u
+dGUgU2FuIFBpZXRybzEXMBUGA1UECgwOQWN0YWxpcyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFs
+aXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEczAhAjQo0Vw63QGUZl80tkKdKTMA0GCWCG
+SAFlAwQCAQUAoIIDGjAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEP
+Fw0yNTA4MTIyMjIyMTFaMC8GCSqGSIb3DQEJBDEiBCDYnoMftvJrsvs01xPpbqB7uUgfBdfT
+DN/BXEKmz67RfTCBpwYJKwYBBAGCNxAEMYGZMIGWMIGBMQswCQYDVQQGEwJJVDEQMA4GA1UE
+CAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRybzEXMBUGA1UECgwOQWN0YWxp
+cyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFsaXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcz
+AhAjQo0Vw63QGUZl80tkKdKTMIGpBgsqhkiG9w0BCRACCzGBmaCBljCBgTELMAkGA1UEBhMC
+SVQxEDAOBgNVBAgMB0JlcmdhbW8xGTAXBgNVBAcMEFBvbnRlIFNhbiBQaWV0cm8xFzAVBgNV
+BAoMDkFjdGFsaXMgUy5wLkEuMSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNh
+dGlvbiBDQSBHMwIQI0KNFcOt0BlGZfNLZCnSkzCCAVcGCSqGSIb3DQEJDzGCAUgwggFEMAsG
+CWCGSAFlAwQBKjALBglghkgBZQMEAQIwCgYIKoZIhvcNAwcwDQYIKoZIhvcNAwICAQUwDQYI
+KoZIhvcNAwICAQUwBwYFKw4DAgcwDQYIKoZIhvcNAwICAQUwBwYFKw4DAhowCwYJYIZIAWUD
+BAIBMAsGCWCGSAFlAwQCAjALBglghkgBZQMEAgMwCwYJYIZIAWUDBAIEMAsGCWCGSAFlAwQC
+BzALBglghkgBZQMEAggwCwYJYIZIAWUDBAIJMAsGCWCGSAFlAwQCCjALBgkqhkiG9w0BAQEw
+CwYJK4EFEIZIPwACMAgGBiuBBAELADAIBgYrgQQBCwEwCAYGK4EEAQsCMAgGBiuBBAELAzAL
+BgkrgQUQhkg/AAMwCAYGK4EEAQ4AMAgGBiuBBAEOATAIBgYrgQQBDgIwCAYGK4EEAQ4DMA0G
+CSqGSIb3DQEBAQUABIIBAJ72L+6H02T/LqM6ktW9CBa9YIWxXDBlHE4ttTeCcIWWF+W5REz7
+mahgg1AfaIld0rfLA61BeaJ8VQNtfGew4YxIhu/WRZnEEL46du+rJBt8kHJVRcfPUTKUi1um
+2+/ykkZN4Wo6X+vPJcVQVLruR/sg6jO0tJwORZaECJNeE2+KX4+Iu9VqnRGzHeDl4n8GGVqW
+j1ZseZzPD7aF8d8Ury1M0lyzxO6HLp9AqXzLbPEyon/X+ugMFfGgJfgq7HeICyU3x7Vm7mwF
+905H3664u74Y0nOg7YtPcKkFf4Xy9Di5kZ+S51TVzJAzb93yAUEoDifiXPSAXZusz0h1B5pF
+ahgAAAAAAAA=
+--------------ms010801090302020001020206--
 
