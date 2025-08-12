@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C11C0CA0EC4
-	for <ath12k@archiver.kernel.org>; Tue, 12 Aug 2025 19:28:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B59A6CA0EE0
+	for <ath12k@archiver.kernel.org>; Tue, 12 Aug 2025 19:28:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
 	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=aiTBVoSSX+mqbCI7gGKLiA7aeNzk6TzIu4JC4nz8SSo=; b=wyxFZFNm5xXz1ya1Z2NVUop5S2
-	wXlaRdogKKqP1FCeT4g4TlyyDfgPz5MFE1wAR7qkQuBF1+PBOd3B7Obibvfvumy/lj2+vnIzqdOhn
-	GjGBxgb1McZ4Yp1hLd+vvw88vmnxXHynui9i3BqL+KdOxNa8wm9echnToCk8ivrm+2tKxo6hUT9WG
-	JltVhabFtzuRcQl41IeiZHdnPApnt2eDrUW7KXx19c6kVXxepf+CXGiz7QeU4CKy7a5HjlN8LVVE1
-	EfP1rqZqvsN51tg2GQCgJ/hsq8nMgqaS2KWkZ9O3joDTvOIWFLJ/cEKzaqJn8acsK1zxG5e5JuPqs
-	qZQSJJcQ==;
+	bh=xY5IPFnWIXP7eI6RM3DMx+ivoo6bApufFVFadbz0dL4=; b=3d8bcrfBcsftrH24cySULI7QiN
+	xNZOC79rAdW395HnfBRQYZYVvDG3HQShMhhVLlpsGUmwKyzuAAH6ly2pWG54qHtg3+R5skj/g9k/5
+	Qn1haKIqktNgkxLcZ1D22bJyLOqbdTPJ8PhRKDIlGJp59sAoV6tUmB5SQaI1PGadygPHXQbC7y/j2
+	E1eBmabZzEl6s7BrBnvRLx+UhWQoipttG4PLooGOdw/Lm52OlqMroHOUxFLnrzx9PvhThrthI5P+W
+	r+/qssqqNWA0ris4E6P2b3474AIxdBevEvJ9yrdab+9KTvOC20tkR3XjjZZDXC3wDUc7zR/M+81he
+	NMB9NOUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulufr-0000000Bqa1-2JWr;
-	Tue, 12 Aug 2025 19:28:43 +0000
+	id 1ulufs-0000000Bqaq-24Jv;
+	Tue, 12 Aug 2025 19:28:44 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulsY9-0000000BWS8-0PKP
+	id 1ulsYC-0000000BWTE-2ywm
 	for ath12k@lists.infradead.org;
-	Tue, 12 Aug 2025 17:12:38 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57CAvgRU029556;
-	Tue, 12 Aug 2025 17:12:36 GMT
+	Tue, 12 Aug 2025 17:12:41 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57CAvh7w021060;
+	Tue, 12 Aug 2025 17:12:40 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	aiTBVoSSX+mqbCI7gGKLiA7aeNzk6TzIu4JC4nz8SSo=; b=HcQMQTYZ9Zf843AU
-	rE7gW7o5BAICdCpxKyy6cPhzk/IRn4x/Kk4ytortLkZ8wCKKACY/XlsImln8RXx3
-	vBRm7Z+X/SMPDWwoA56gVRhgPHrOlf55X4KyDPHxOiXjdsW0axYfTLMyquJvXAE7
-	6nKMnKyyDhD0hkRwTQJHbbKkULn2kjlKHjmyGv6Hs4A0Gtr8OFhd1xqHXIiIpXxk
-	vj9vsidewQZi2oLLXjJaqCdA+a/S0eIKZkTtmh9HRlVdERhqZpa99tbd6MNJcU51
-	/4I+yjv6mQ7doK46gT1fMVZqosUF1W1P8I1nqg9M3swyKLHlx6zPtXL1yJv7OYhf
-	VQJ0Hg==
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48dy3g8x3m-1
+	xY5IPFnWIXP7eI6RM3DMx+ivoo6bApufFVFadbz0dL4=; b=bqIBfBwRbdxZcZRz
+	JVN9B4BTNx3mGFI1UTdVuKzZBsnFzXB9HzeUtavZ3HS1EdcNPvIZf/g36J0KECMY
+	bqlXT+ubNWJwgpTdm25rLgBcnU10q05snBeD9rDtpoTd0yR1+QWtnSdUcu2lZPpt
+	hHySStFruThBBtbvh8SRz8GqjQj+qEg4pEE6MgqYv7+sYvJJm2l+mJgWLlTEA6Lt
+	SKS5IlzFeL8KnnhXYDrjNouTqb+xeXfULzdzNymK7p6ESRVUV6+4LgzWNoZRR3Ns
+	C2Jjj4lHaG8Q5B/cLmMaR6vWDr7kzX6H/do07toOQhpNyTmX3fIdND8FcPlFqK2E
+	hT5DZw==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48ffq6mtv5-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 12 Aug 2025 17:12:36 +0000 (GMT)
+	Tue, 12 Aug 2025 17:12:40 +0000 (GMT)
 Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 57CHCZKU001506
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 57CHCdIS010536
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 12 Aug 2025 17:12:35 GMT
+	Tue, 12 Aug 2025 17:12:39 GMT
 Received: from hu-kiranv-blr.qualcomm.com (10.80.80.8) by
  nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.10; Tue, 12 Aug 2025 10:12:34 -0700
+ 15.2.1748.10; Tue, 12 Aug 2025 10:12:38 -0700
 From: Kiran Venkatappa <quic_kiranv@quicinc.com>
-Date: Tue, 12 Aug 2025 22:39:27 +0530
-Subject: [PATCH ath12k-ng 01/13] wifi: ath12k: Restructure PCI code to
- common and Wi-Fi 7 specific logic
+Date: Tue, 12 Aug 2025 22:39:30 +0530
+Subject: [PATCH ath12k-ng 04/13] wifi: ath12k: Move Wi-Fi 7 MHI
+ configuration to dedicated file
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20250812-ath12k-mod-v1-1-8c9b0eb9335d@quicinc.com>
+Message-ID: <20250812-ath12k-mod-v1-4-8c9b0eb9335d@quicinc.com>
 References: <20250812-ath12k-mod-v1-0-8c9b0eb9335d@quicinc.com>
 In-Reply-To: <20250812-ath12k-mod-v1-0-8c9b0eb9335d@quicinc.com>
 To: <ath12k@lists.infradead.org>
@@ -70,30 +70,30 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01c.na.qualcomm.com (10.45.79.139)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=X4lSKHTe c=1 sm=1 tr=0 ts=689b7604 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODExMDA3NSBTYWx0ZWRfX0II1NfqLaDVU
+ P8+1vzg1UsNY0jGsjmmTgKjP8lPpwlQLNRaj0pNrnL09dlDIgtwYT0YyopEMk/h6FUi2oD1ZTV+
+ RkphNZk1BpvOsgxP18XjVVJSqONwDme9/Lkf7iEMO9XelNCLttlcG4+y4gR//kfJUDXg5DduSbn
+ Mo6k5/82IXawcCNp5my4zHv/MkVFpujXVtQicc6bvbS4ZK4JbN1gqRY8ayboyCqnC7ormexcOXy
+ oBnCbN7zWkhWG5aHyHTaDUh91SQfO8OG8hWLBfu1Uybhv4hPRmma9yF6304hPfDxjd1pIXEkxe9
+ n3HkSPs5MsENl4EF+SqlpT2+FbIhRDfsIQaxxX8zuAvZR9D8M+9IZQNDgtDAU6Swy+0+N6wJHgP
+ Nn6rBhhL
+X-Authority-Analysis: v=2.4 cv=TLZFS0la c=1 sm=1 tr=0 ts=689b7608 cx=c_pps
  a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
  a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=COk6AnOGAAAA:8
- a=U9p1R3DoLONZFzZhjYwA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA5MDAzMSBTYWx0ZWRfX/gjFQtLIPaQ3
- 5ZbsqyqIaUd55yR2nQOHFSZnWFvR0lGjHjEaUY8nwqgeJteqdT+WSvX0NoS5FCbp0/kvxRZIOp+
- ywfccngq/bUOhmj/WylFqysnqxgCdyBqmPHEXmMyxtGoy8fM6CpNls9PGP+fzUo4ppadPHec8JM
- W89T1WoTfQBPLkNLndg9iMAtXiInnkOxMwn/ATRYHC6ydQmxlhOawcs0U+oYrcFWrN5jF5dBGRF
- uiNu1blP1d17d++2Z30WlY1xMfywjCi+QJgQ9cVK3ALmzlEuxWlSZc2rfyrizW/vRZ4cs+Zm0wW
- Ls0DMBUbgCeGXju7tjo4pk6bam/CmfF5twfwvKjCiQoTji4Be4SJkY20NF2ucGNKCDKOTyAaiZO
- 8WzpRoHk
-X-Proofpoint-GUID: 5fMVSl27Bax_cqkYbO87tv3nG1LWvD6k
-X-Proofpoint-ORIG-GUID: 5fMVSl27Bax_cqkYbO87tv3nG1LWvD6k
+ a=wRfEwKhB0IFq5YI-txcA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: Ck-olH98IdcJBK68SR1OKaVL6Y4gYLLq
+X-Proofpoint-ORIG-GUID: Ck-olH98IdcJBK68SR1OKaVL6Y4gYLLq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-08-12_07,2025-08-11_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 priorityscore=1501 clxscore=1011 malwarescore=0 adultscore=0
- spamscore=0 bulkscore=0 suspectscore=0 impostorscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2508090031
+ clxscore=1011 phishscore=0 malwarescore=0 spamscore=0 priorityscore=1501
+ bulkscore=0 adultscore=0 impostorscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508110075
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250812_101237_152846_DF21CD49 
-X-CRM114-Status: GOOD (  25.31  )
+X-CRM114-CacheID: sfid-20250812_101240_763529_B4D661BD 
+X-CRM114-Status: GOOD (  19.30  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,14 +108,12 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Refactor pci.c to split common and hardware family specific components.
-Retain shared logic such as probe and initialization sequences in common
-pci.c to support reuse across device families and move Wi-Fi 7 specific
-initialization and configuration to a new pci_wifi7.c file. Register
-device specific routines via callbacks to keep the common PCI code
-generic and extensible for future hardware families.
-This improves maintainability and prepare the codebase for additional
-device family support.
+Relocate target-specific MHI configuration to a new mhi_wifi7.c file to
+isolate Wi-Fi 7 related logic from the common codebase.
+Improve modularity by separating hardware-dependent code from shared
+components.
+Enhance maintainability and prepare the driver for clean integration of
+additional device families.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -123,592 +121,361 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Kiran Venkatappa <quic_kiranv@quicinc.com>
 ---
  drivers/net/wireless/ath/ath12k/Makefile    |   1 +
- drivers/net/wireless/ath/ath12k/core.c      |   5 +-
- drivers/net/wireless/ath/ath12k/core.h      |   6 +
- drivers/net/wireless/ath/ath12k/pci.c       | 200 ++++++++++------------------
- drivers/net/wireless/ath/ath12k/pci.h       |  21 ++-
- drivers/net/wireless/ath/ath12k/pci_wifi7.c | 173 ++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/pci_wifi7.h |  12 ++
- 7 files changed, 278 insertions(+), 140 deletions(-)
+ drivers/net/wireless/ath/ath12k/hw.c        |   1 +
+ drivers/net/wireless/ath/ath12k/mhi.c       | 130 --------------------------
+ drivers/net/wireless/ath/ath12k/mhi.h       |   4 +-
+ drivers/net/wireless/ath/ath12k/mhi_wifi7.c | 138 ++++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/mhi_wifi7.h |  11 +++
+ 6 files changed, 152 insertions(+), 133 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
-index d95ee525a6cd06c13755e7f396151373244e0c39..1a26e00627b0a3d631ddfa62ef70a9b29b426a3f 100644
+index ee075ee68bb834e3f3605b13a5fee6afff0ba763..fb968884f6560ed8dfeabba0e0a1562a98576313 100644
 --- a/drivers/net/wireless/ath/ath12k/Makefile
 +++ b/drivers/net/wireless/ath/ath12k/Makefile
-@@ -19,6 +19,7 @@ ath12k-y += core.o \
+@@ -20,6 +20,7 @@ ath12k-y += core.o \
+ 	    dbring.o \
  	    hw.o \
  	    mhi.o \
++	    mhi_wifi7.o \
  	    pci.o \
-+	    pci_wifi7.o \
+ 	    pci_wifi7.o \
  	    dp_mon.o \
- 	    fw.o \
- 	    p2p.o
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 5d494c5cdc0da3189640751b8d191fa939ac3ff5..b723d7d28cdac48934d621338d6a623781c86b73 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -22,6 +22,7 @@
- #include "hif.h"
- #include "pci.h"
- #include "wow.h"
-+#include "pci_wifi7.h"
+diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
+index df1b4439adc798dc0dfb7d8604874a4fcb77663b..ad372feaef28be9149f86008453409dad5c5d4f7 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.c
++++ b/drivers/net/wireless/ath/ath12k/hw.c
+@@ -17,6 +17,7 @@
+ #include "dp_rx.h"
+ #include "peer.h"
+ #include "wmi_wifi7.h"
++#include "mhi_wifi7.h"
  
- static int ahb_err, pci_err;
- unsigned int ath12k_debug_mask;
-@@ -2287,7 +2288,7 @@ static int ath12k_init(void)
- 	if (ahb_err)
- 		pr_warn("Failed to initialize ath12k AHB device: %d\n", ahb_err);
+ static const guid_t wcn7850_uuid = GUID_INIT(0xf634f534, 0x6147, 0x11ec,
+ 					     0x90, 0xd6, 0x02, 0x42,
+diff --git a/drivers/net/wireless/ath/ath12k/mhi.c b/drivers/net/wireless/ath/ath12k/mhi.c
+index 08f44baf182a5e34651e8c117fe279942f8ad8f4..1f680f6e65d30ac5fd98ad59df90eb9e629746dd 100644
+--- a/drivers/net/wireless/ath/ath12k/mhi.c
++++ b/drivers/net/wireless/ath/ath12k/mhi.c
+@@ -18,136 +18,6 @@
+ #define OTP_VALID_DUALMAC_BOARD_ID_MASK		0x1000
+ #define MHI_CB_INVALID	0xff
  
--	pci_err = ath12k_pci_init();
-+	pci_err = ath12k_wifi7_pci_init();
- 	if (pci_err)
- 		pr_warn("Failed to initialize ath12k PCI device: %d\n", pci_err);
- 
-@@ -2298,7 +2299,7 @@ static int ath12k_init(void)
- static void ath12k_exit(void)
- {
- 	if (!pci_err)
--		ath12k_pci_exit();
-+		ath12k_wifi7_pci_exit();
- 
- 	if (!ahb_err)
- 		ath12k_ahb_exit();
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 519f826f56c8ebb871997777261dbd1f2e5482de..fa04aaa836fcba9d647b2127651cb366046e2e73 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -1028,6 +1028,12 @@ struct ath12k_mem_profile_based_param {
- 	struct ath12k_dp_profile_params dp_params;
- };
- 
-+enum ath12k_device_family {
-+	ATH12K_DEVICE_FAMILY_START,
-+	ATH12K_DEVICE_FAMILY_WIFI7 = ATH12K_DEVICE_FAMILY_START,
-+	ATH12K_DEVICE_FAMILY_MAX,
-+};
-+
- /* Master structure to hold the hw data which may be used in core module */
- struct ath12k_base {
- 	enum ath12k_hw_rev hw_rev;
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index c729d5526c753d2b7b7542b6f2a145e71b335a43..93e2189ec68704598ce401ed4fe4f5981fc3cece 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -28,44 +28,17 @@
- #define WINDOW_RANGE_MASK		GENMASK(18, 0)
- #define WINDOW_STATIC_MASK		GENMASK(31, 6)
- 
--#define TCSR_SOC_HW_VERSION		0x1B00000
--#define TCSR_SOC_HW_VERSION_MAJOR_MASK	GENMASK(11, 8)
--#define TCSR_SOC_HW_VERSION_MINOR_MASK	GENMASK(7, 4)
--
- /* BAR0 + 4k is always accessible, and no
-  * need to force wakeup.
-  * 4K - 32 = 0xFE0
-  */
- #define ACCESS_ALWAYS_OFF 0xFE0
- 
--#define QCN9274_DEVICE_ID		0x1109
--#define WCN7850_DEVICE_ID		0x1107
--
- #define PCIE_LOCAL_REG_QRTR_NODE_ID	0x1E03164
- #define DOMAIN_NUMBER_MASK		GENMASK(7, 4)
- #define BUS_NUMBER_MASK			GENMASK(3, 0)
- 
--static const struct pci_device_id ath12k_pci_id_table[] = {
--	{ PCI_VDEVICE(QCOM, QCN9274_DEVICE_ID) },
--	{ PCI_VDEVICE(QCOM, WCN7850_DEVICE_ID) },
--	{}
--};
--
--MODULE_DEVICE_TABLE(pci, ath12k_pci_id_table);
--
--/* TODO: revisit IRQ mapping for new SRNG's */
--static const struct ath12k_msi_config ath12k_msi_config[] = {
+-static const struct mhi_channel_config ath12k_mhi_channels_qcn9274[] = {
 -	{
--		.total_vectors = 16,
--		.total_users = 3,
--		.users = (struct ath12k_msi_user[]) {
--			{ .name = "MHI", .num_vectors = 3, .base_vector = 0 },
--			{ .name = "CE", .num_vectors = 5, .base_vector = 3 },
--			{ .name = "DP", .num_vectors = 8, .base_vector = 8 },
--		},
+-		.num = 20,
+-		.name = "IPCR",
+-		.num_elements = 32,
+-		.event_ring = 1,
+-		.dir = DMA_TO_DEVICE,
+-		.ee_mask = 0x4,
+-		.pollcfg = 0,
+-		.doorbell = MHI_DB_BRST_DISABLE,
+-		.lpm_notify = false,
+-		.offload_channel = false,
+-		.doorbell_mode_switch = false,
+-		.auto_queue = false,
+-	},
+-	{
+-		.num = 21,
+-		.name = "IPCR",
+-		.num_elements = 32,
+-		.event_ring = 1,
+-		.dir = DMA_FROM_DEVICE,
+-		.ee_mask = 0x4,
+-		.pollcfg = 0,
+-		.doorbell = MHI_DB_BRST_DISABLE,
+-		.lpm_notify = false,
+-		.offload_channel = false,
+-		.doorbell_mode_switch = false,
+-		.auto_queue = true,
 -	},
 -};
 -
-+static struct ath12k_pci_driver *ath12k_pci_family_drivers[ATH12K_DEVICE_FAMILY_MAX];
- static const struct ath12k_msi_config msi_config_one_msi = {
- 	.total_vectors = 1,
- 	.total_users = 4,
-@@ -136,30 +109,6 @@ static const char *irq_name[ATH12K_IRQ_NUM_MAX] = {
- 	"tcl2host-status-ring",
- };
- 
--static int ath12k_pci_bus_wake_up(struct ath12k_base *ab)
--{
--	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
--
--	return mhi_device_get_sync(ab_pci->mhi_ctrl->mhi_dev);
--}
--
--static void ath12k_pci_bus_release(struct ath12k_base *ab)
--{
--	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
--
--	mhi_device_put(ab_pci->mhi_ctrl->mhi_dev);
--}
--
--static const struct ath12k_pci_ops ath12k_pci_ops_qcn9274 = {
--	.wakeup = NULL,
--	.release = NULL,
+-static struct mhi_event_config ath12k_mhi_events_qcn9274[] = {
+-	{
+-		.num_elements = 32,
+-		.irq_moderation_ms = 0,
+-		.irq = 1,
+-		.data_type = MHI_ER_CTRL,
+-		.mode = MHI_DB_BRST_DISABLE,
+-		.hardware_event = false,
+-		.client_managed = false,
+-		.offload_channel = false,
+-	},
+-	{
+-		.num_elements = 256,
+-		.irq_moderation_ms = 1,
+-		.irq = 2,
+-		.mode = MHI_DB_BRST_DISABLE,
+-		.priority = 1,
+-		.hardware_event = false,
+-		.client_managed = false,
+-		.offload_channel = false,
+-	},
 -};
 -
--static const struct ath12k_pci_ops ath12k_pci_ops_wcn7850 = {
--	.wakeup = ath12k_pci_bus_wake_up,
--	.release = ath12k_pci_bus_release,
+-const struct mhi_controller_config ath12k_mhi_config_qcn9274 = {
+-	.max_channels = 30,
+-	.timeout_ms = 10000,
+-	.use_bounce_buf = false,
+-	.buf_len = 0,
+-	.num_channels = ARRAY_SIZE(ath12k_mhi_channels_qcn9274),
+-	.ch_cfg = ath12k_mhi_channels_qcn9274,
+-	.num_events = ARRAY_SIZE(ath12k_mhi_events_qcn9274),
+-	.event_cfg = ath12k_mhi_events_qcn9274,
 -};
 -
- static void ath12k_pci_select_window(struct ath12k_pci *ab_pci, u32 offset)
- {
- 	struct ath12k_base *ab = ab_pci->ab;
-@@ -1531,28 +1480,34 @@ static const struct ath12k_hif_ops ath12k_pci_hif_ops = {
- #endif
- };
- 
--static
--void ath12k_pci_read_hw_version(struct ath12k_base *ab, u32 *major, u32 *minor)
-+static enum ath12k_device_family
-+ath12k_get_device_family(const struct pci_device_id *pci_dev)
- {
--	u32 soc_hw_version;
-+	enum ath12k_device_family device_family_id;
-+	const struct pci_device_id *id;
- 
--	soc_hw_version = ath12k_pci_read32(ab, TCSR_SOC_HW_VERSION);
--	*major = FIELD_GET(TCSR_SOC_HW_VERSION_MAJOR_MASK,
--			   soc_hw_version);
--	*minor = FIELD_GET(TCSR_SOC_HW_VERSION_MINOR_MASK,
--			   soc_hw_version);
-+	for (device_family_id = ATH12K_DEVICE_FAMILY_START;
-+	     device_family_id < ATH12K_DEVICE_FAMILY_MAX; device_family_id++) {
-+		if (!ath12k_pci_family_drivers[device_family_id])
-+			continue;
-+
-+		id = ath12k_pci_family_drivers[device_family_id]->id_table;
-+		while (id->device) {
-+			if (id->device == pci_dev->device)
-+				return device_family_id;
-+			id += 1;
-+		}
-+	}
- 
--	ath12k_dbg(ab, ATH12K_DBG_PCI,
--		   "pci tcsr_soc_hw_version major %d minor %d\n",
--		    *major, *minor);
-+	return ATH12K_DEVICE_FAMILY_MAX;
- }
- 
- static int ath12k_pci_probe(struct pci_dev *pdev,
- 			    const struct pci_device_id *pci_dev)
- {
--	struct ath12k_base *ab;
-+	enum ath12k_device_family device_id;
- 	struct ath12k_pci *ab_pci;
--	u32 soc_hw_version_major, soc_hw_version_minor;
-+	struct ath12k_base *ab;
- 	int ret;
- 
- 	ab = ath12k_core_alloc(&pdev->dev, sizeof(*ab_pci), ATH12K_BUS_PCI);
-@@ -1587,56 +1542,24 @@ static int ath12k_pci_probe(struct pci_dev *pdev,
- 	ab->id.subsystem_vendor = pdev->subsystem_vendor;
- 	ab->id.subsystem_device = pdev->subsystem_device;
- 
--	switch (pci_dev->device) {
--	case QCN9274_DEVICE_ID:
--		ab_pci->msi_config = &ath12k_msi_config[0];
--		ab->static_window_map = true;
--		ab_pci->pci_ops = &ath12k_pci_ops_qcn9274;
--		ab->hal_rx_ops = &hal_rx_qcn9274_ops;
--		ath12k_pci_read_hw_version(ab, &soc_hw_version_major,
--					   &soc_hw_version_minor);
--		ab->target_mem_mode = ath12k_core_get_memory_mode(ab);
--		switch (soc_hw_version_major) {
--		case ATH12K_PCI_SOC_HW_VERSION_2:
--			ab->hw_rev = ATH12K_HW_QCN9274_HW20;
--			break;
--		case ATH12K_PCI_SOC_HW_VERSION_1:
--			ab->hw_rev = ATH12K_HW_QCN9274_HW10;
--			break;
--		default:
--			dev_err(&pdev->dev,
--				"Unknown hardware version found for QCN9274: 0x%x\n",
--				soc_hw_version_major);
--			ret = -EOPNOTSUPP;
--			goto err_pci_free_region;
--		}
--		break;
--	case WCN7850_DEVICE_ID:
--		ab->id.bdf_search = ATH12K_BDF_SEARCH_BUS_AND_BOARD;
--		ab_pci->msi_config = &ath12k_msi_config[0];
--		ab->static_window_map = false;
--		ab_pci->pci_ops = &ath12k_pci_ops_wcn7850;
--		ab->hal_rx_ops = &hal_rx_wcn7850_ops;
--		ath12k_pci_read_hw_version(ab, &soc_hw_version_major,
--					   &soc_hw_version_minor);
--		ab->target_mem_mode = ATH12K_QMI_MEMORY_MODE_DEFAULT;
--		switch (soc_hw_version_major) {
--		case ATH12K_PCI_SOC_HW_VERSION_2:
--			ab->hw_rev = ATH12K_HW_WCN7850_HW20;
--			break;
--		default:
--			dev_err(&pdev->dev,
--				"Unknown hardware version found for WCN7850: 0x%x\n",
--				soc_hw_version_major);
--			ret = -EOPNOTSUPP;
--			goto err_pci_free_region;
--		}
--		break;
-+	device_id = ath12k_get_device_family(pci_dev);
-+	if (device_id >= ATH12K_DEVICE_FAMILY_MAX) {
-+		ath12k_err(ab, "failed to get device family id\n");
-+		ret = -EINVAL;
-+		goto err_pci_free_region;
-+	}
-+
-+	ath12k_dbg(ab, ATH12K_DBG_PCI, "PCI device family id: %d\n", device_id);
-+
-+	ab_pci->device_family_ops = &ath12k_pci_family_drivers[device_id]->ops;
- 
--	default:
--		dev_err(&pdev->dev, "Unknown PCI device found: 0x%x\n",
--			pci_dev->device);
--		ret = -EOPNOTSUPP;
-+	/* Call device specific probe. This is the callback that can
-+	 * be used to override any ops in future
-+	 * probe is validated for NULL during registration.
-+	 */
-+	ret = ab_pci->device_family_ops->probe(pdev, pci_dev);
-+	if (ret) {
-+		ath12k_err(ab, "failed to probe device: %d\n", ret);
- 		goto err_pci_free_region;
- 	}
- 
-@@ -1844,30 +1767,41 @@ static const struct dev_pm_ops __maybe_unused ath12k_pci_pm_ops = {
- 				     ath12k_pci_pm_resume_early)
- };
- 
--static struct pci_driver ath12k_pci_driver = {
--	.name = "ath12k_pci",
--	.id_table = ath12k_pci_id_table,
--	.probe = ath12k_pci_probe,
--	.remove = ath12k_pci_remove,
--	.shutdown = ath12k_pci_shutdown,
--	.driver.pm = &ath12k_pci_pm_ops,
+-static const struct mhi_channel_config ath12k_mhi_channels_wcn7850[] = {
+-	{
+-		.num = 20,
+-		.name = "IPCR",
+-		.num_elements = 64,
+-		.event_ring = 1,
+-		.dir = DMA_TO_DEVICE,
+-		.ee_mask = 0x4,
+-		.pollcfg = 0,
+-		.doorbell = MHI_DB_BRST_DISABLE,
+-		.lpm_notify = false,
+-		.offload_channel = false,
+-		.doorbell_mode_switch = false,
+-		.auto_queue = false,
+-	},
+-	{
+-		.num = 21,
+-		.name = "IPCR",
+-		.num_elements = 64,
+-		.event_ring = 1,
+-		.dir = DMA_FROM_DEVICE,
+-		.ee_mask = 0x4,
+-		.pollcfg = 0,
+-		.doorbell = MHI_DB_BRST_DISABLE,
+-		.lpm_notify = false,
+-		.offload_channel = false,
+-		.doorbell_mode_switch = false,
+-		.auto_queue = true,
+-	},
 -};
 -
--int ath12k_pci_init(void)
-+int ath12k_pci_register_driver(const enum ath12k_device_family device_id,
-+			       struct ath12k_pci_driver *driver)
- {
--	int ret;
-+	struct pci_driver *pci_driver;
- 
--	ret = pci_register_driver(&ath12k_pci_driver);
--	if (ret) {
--		pr_err("failed to register ath12k pci driver: %d\n",
--		       ret);
--		return ret;
-+	if (device_id >= ATH12K_DEVICE_FAMILY_MAX)
-+		return -EINVAL;
-+
-+	if (!driver || !driver->ops.probe)
-+		return -EINVAL;
-+
-+	if (ath12k_pci_family_drivers[device_id]) {
-+		pr_err("Driver already registered for %d\n", device_id);
-+		return -EALREADY;
- 	}
- 
--	return 0;
-+	ath12k_pci_family_drivers[device_id] = driver;
-+
-+	pci_driver = &ath12k_pci_family_drivers[device_id]->driver;
-+	pci_driver->name = driver->name;
-+	pci_driver->id_table = driver->id_table;
-+	pci_driver->probe = ath12k_pci_probe;
-+	pci_driver->remove = ath12k_pci_remove;
-+	pci_driver->shutdown = ath12k_pci_shutdown;
-+	pci_driver->driver.pm = &ath12k_pci_pm_ops;
-+
-+	return pci_register_driver(pci_driver);
- }
- 
--void ath12k_pci_exit(void)
-+void ath12k_pci_unregister_driver(const enum ath12k_device_family device_id)
- {
--	pci_unregister_driver(&ath12k_pci_driver);
-+	if (device_id >= ATH12K_DEVICE_FAMILY_MAX ||
-+	    !ath12k_pci_family_drivers[device_id])
-+		return;
-+
-+	pci_unregister_driver(&ath12k_pci_family_drivers[device_id]->driver);
-+	ath12k_pci_family_drivers[device_id] = NULL;
- }
-diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-index d1ec8aad7f6c3b6f5cbdf8ce57a4106733686521..1b7ecc329a017cafa84780f3f6e634163ead59bb 100644
---- a/drivers/net/wireless/ath/ath12k/pci.h
-+++ b/drivers/net/wireless/ath/ath12k/pci.h
-@@ -7,6 +7,7 @@
- #define ATH12K_PCI_H
- 
- #include <linux/mhi.h>
-+#include <linux/pci.h>
- 
- #include "core.h"
- 
-@@ -70,9 +71,6 @@
- #define QRTR_PCI_DOMAIN_NR_MASK		GENMASK(7, 4)
- #define QRTR_PCI_BUS_NUMBER_MASK	GENMASK(3, 0)
- 
--#define ATH12K_PCI_SOC_HW_VERSION_1	1
--#define ATH12K_PCI_SOC_HW_VERSION_2	2
+-static struct mhi_event_config ath12k_mhi_events_wcn7850[] = {
+-	{
+-		.num_elements = 32,
+-		.irq_moderation_ms = 0,
+-		.irq = 1,
+-		.mode = MHI_DB_BRST_DISABLE,
+-		.data_type = MHI_ER_CTRL,
+-		.hardware_event = false,
+-		.client_managed = false,
+-		.offload_channel = false,
+-	},
+-	{
+-		.num_elements = 256,
+-		.irq_moderation_ms = 1,
+-		.irq = 2,
+-		.mode = MHI_DB_BRST_DISABLE,
+-		.priority = 1,
+-		.hardware_event = false,
+-		.client_managed = false,
+-		.offload_channel = false,
+-	},
+-};
 -
- struct ath12k_msi_user {
- 	const char *name;
- 	int num_vectors;
-@@ -97,6 +95,10 @@ struct ath12k_pci_ops {
- 	void (*release)(struct ath12k_base *ab);
+-const struct mhi_controller_config ath12k_mhi_config_wcn7850 = {
+-	.max_channels = 128,
+-	.timeout_ms = 2000,
+-	.use_bounce_buf = false,
+-	.buf_len = 8192,
+-	.num_channels = ARRAY_SIZE(ath12k_mhi_channels_wcn7850),
+-	.ch_cfg = ath12k_mhi_channels_wcn7850,
+-	.num_events = ARRAY_SIZE(ath12k_mhi_events_wcn7850),
+-	.event_cfg = ath12k_mhi_events_wcn7850,
+-};
+-
+ void ath12k_mhi_set_mhictrl_reset(struct ath12k_base *ab)
+ {
+ 	u32 val;
+diff --git a/drivers/net/wireless/ath/ath12k/mhi.h b/drivers/net/wireless/ath/ath12k/mhi.h
+index 7358b8477536a636743f4fd16d37500a8d458ab1..5e1363650a9a75ff4770e0cb64b6986ca2c5e8a7 100644
+--- a/drivers/net/wireless/ath/ath12k/mhi.h
++++ b/drivers/net/wireless/ath/ath12k/mhi.h
+@@ -2,6 +2,7 @@
+ /*
+  * Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
+  * Copyright (c) 2021-2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+  */
+ #ifndef _ATH12K_MHI_H
+ #define _ATH12K_MHI_H
+@@ -31,9 +32,6 @@ enum ath12k_mhi_state {
+ 	ATH12K_MHI_RDDM_DONE,
  };
  
-+struct ath12k_pci_device_family_ops {
-+	int (*probe)(struct pci_dev *pdev, const struct pci_device_id *pci_dev);
-+};
-+
- struct ath12k_pci {
- 	struct pci_dev *pdev;
- 	struct ath12k_base *ab;
-@@ -119,6 +121,14 @@ struct ath12k_pci {
- 	const struct ath12k_pci_ops *pci_ops;
- 	u32 qmi_instance;
- 	u64 dma_mask;
-+	const struct ath12k_pci_device_family_ops *device_family_ops;
-+};
-+
-+struct ath12k_pci_driver {
-+	const char *name;
-+	const struct pci_device_id *id_table;
-+	struct ath12k_pci_device_family_ops ops;
-+	struct pci_driver driver;
- };
- 
- static inline struct ath12k_pci *ath12k_pci_priv(struct ath12k_base *ab)
-@@ -148,6 +158,7 @@ void ath12k_pci_stop(struct ath12k_base *ab);
- int ath12k_pci_start(struct ath12k_base *ab);
- int ath12k_pci_power_up(struct ath12k_base *ab);
- void ath12k_pci_power_down(struct ath12k_base *ab, bool is_suspend);
--int ath12k_pci_init(void);
--void ath12k_pci_exit(void);
-+int ath12k_pci_register_driver(const enum ath12k_device_family device_id,
-+			       struct ath12k_pci_driver *driver);
-+void ath12k_pci_unregister_driver(const enum ath12k_device_family device_id);
- #endif /* ATH12K_PCI_H */
-diff --git a/drivers/net/wireless/ath/ath12k/pci_wifi7.c b/drivers/net/wireless/ath/ath12k/pci_wifi7.c
+-extern const struct mhi_controller_config ath12k_mhi_config_qcn9274;
+-extern const struct mhi_controller_config ath12k_mhi_config_wcn7850;
+-
+ int ath12k_mhi_start(struct ath12k_pci *ar_pci);
+ void ath12k_mhi_stop(struct ath12k_pci *ar_pci, bool is_suspend);
+ int ath12k_mhi_register(struct ath12k_pci *ar_pci);
+diff --git a/drivers/net/wireless/ath/ath12k/mhi_wifi7.c b/drivers/net/wireless/ath/ath12k/mhi_wifi7.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..8c7718153534ca0f30d33ef954d6c542ae70154a
+index 0000000000000000000000000000000000000000..be74df152f6f88c1c723459a1cdea21f45b0d15b
 --- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/pci_wifi7.c
-@@ -0,0 +1,173 @@
++++ b/drivers/net/wireless/ath/ath12k/mhi_wifi7.c
+@@ -0,0 +1,138 @@
 +// SPDX-License-Identifier: BSD-3-Clause-Clear
 +/*
-+ * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
++ * Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
 + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 + */
 +
-+#include <linux/pci.h>
-+
-+#include "pci.h"
-+#include "pci_wifi7.h"
-+#include "core.h"
-+#include "hif.h"
 +#include "mhi.h"
++#include "mhi_wifi7.h"
 +
-+#define QCN9274_DEVICE_ID		0x1109
-+#define WCN7850_DEVICE_ID		0x1107
-+
-+#define ATH12K_PCI_W7_SOC_HW_VERSION_1	1
-+#define ATH12K_PCI_W7_SOC_HW_VERSION_2	2
-+
-+#define TCSR_SOC_HW_VERSION		0x1B00000
-+#define TCSR_SOC_HW_VERSION_MAJOR_MASK	GENMASK(11, 8)
-+#define TCSR_SOC_HW_VERSION_MINOR_MASK	GENMASK(7, 4)
-+
-+static const struct pci_device_id ath12k_wifi7_pci_id_table[] = {
-+	{ PCI_VDEVICE(QCOM, QCN9274_DEVICE_ID) },
-+	{ PCI_VDEVICE(QCOM, WCN7850_DEVICE_ID) },
-+	{}
-+};
-+
-+MODULE_DEVICE_TABLE(pci, ath12k_wifi7_pci_id_table);
-+
-+/* TODO: revisit IRQ mapping for new SRNG's */
-+static const struct ath12k_msi_config ath12k_wifi7_msi_config[] = {
++static const struct mhi_channel_config ath12k_mhi_channels_qcn9274[] = {
 +	{
-+		.total_vectors = 16,
-+		.total_users = 3,
-+		.users = (struct ath12k_msi_user[]) {
-+			{ .name = "MHI", .num_vectors = 3, .base_vector = 0 },
-+			{ .name = "CE", .num_vectors = 5, .base_vector = 3 },
-+			{ .name = "DP", .num_vectors = 8, .base_vector = 8 },
-+		},
++		.num = 20,
++		.name = "IPCR",
++		.num_elements = 32,
++		.event_ring = 1,
++		.dir = DMA_TO_DEVICE,
++		.ee_mask = 0x4,
++		.pollcfg = 0,
++		.doorbell = MHI_DB_BRST_DISABLE,
++		.lpm_notify = false,
++		.offload_channel = false,
++		.doorbell_mode_switch = false,
++		.auto_queue = false,
++	},
++	{
++		.num = 21,
++		.name = "IPCR",
++		.num_elements = 32,
++		.event_ring = 1,
++		.dir = DMA_FROM_DEVICE,
++		.ee_mask = 0x4,
++		.pollcfg = 0,
++		.doorbell = MHI_DB_BRST_DISABLE,
++		.lpm_notify = false,
++		.offload_channel = false,
++		.doorbell_mode_switch = false,
++		.auto_queue = true,
 +	},
 +};
 +
-+static const struct ath12k_pci_ops ath12k_pci_ops_qcn9274 = {
-+	.wakeup = NULL,
-+	.release = NULL,
++static struct mhi_event_config ath12k_mhi_events_qcn9274[] = {
++	{
++		.num_elements = 32,
++		.irq_moderation_ms = 0,
++		.irq = 1,
++		.data_type = MHI_ER_CTRL,
++		.mode = MHI_DB_BRST_DISABLE,
++		.hardware_event = false,
++		.client_managed = false,
++		.offload_channel = false,
++	},
++	{
++		.num_elements = 256,
++		.irq_moderation_ms = 1,
++		.irq = 2,
++		.mode = MHI_DB_BRST_DISABLE,
++		.priority = 1,
++		.hardware_event = false,
++		.client_managed = false,
++		.offload_channel = false,
++	},
 +};
 +
-+static int ath12k_wifi7_pci_bus_wake_up(struct ath12k_base *ab)
-+{
-+	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
-+
-+	return mhi_device_get_sync(ab_pci->mhi_ctrl->mhi_dev);
-+}
-+
-+static void ath12k_wifi7_pci_bus_release(struct ath12k_base *ab)
-+{
-+	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
-+
-+	mhi_device_put(ab_pci->mhi_ctrl->mhi_dev);
-+}
-+
-+static const struct ath12k_pci_ops ath12k_pci_ops_wcn7850 = {
-+	.wakeup = ath12k_wifi7_pci_bus_wake_up,
-+	.release = ath12k_wifi7_pci_bus_release,
++const struct mhi_controller_config ath12k_mhi_config_qcn9274 = {
++	.max_channels = 30,
++	.timeout_ms = 10000,
++	.use_bounce_buf = false,
++	.buf_len = 0,
++	.num_channels = ARRAY_SIZE(ath12k_mhi_channels_qcn9274),
++	.ch_cfg = ath12k_mhi_channels_qcn9274,
++	.num_events = ARRAY_SIZE(ath12k_mhi_events_qcn9274),
++	.event_cfg = ath12k_mhi_events_qcn9274,
 +};
 +
-+static
-+void ath12k_wifi7_pci_read_hw_version(struct ath12k_base *ab,
-+				      u32 *major, u32 *minor)
-+{
-+	u32 soc_hw_version;
-+
-+	soc_hw_version = ath12k_pci_read32(ab, TCSR_SOC_HW_VERSION);
-+	*major = u32_get_bits(soc_hw_version, TCSR_SOC_HW_VERSION_MAJOR_MASK);
-+	*minor = u32_get_bits(soc_hw_version, TCSR_SOC_HW_VERSION_MINOR_MASK);
-+}
-+
-+static int ath12k_wifi7_pci_probe(struct pci_dev *pdev,
-+				  const struct pci_device_id *pci_dev)
-+{
-+	u32 soc_hw_version_major, soc_hw_version_minor;
-+	struct ath12k_pci *ab_pci;
-+	struct ath12k_base *ab;
-+
-+	ab = pci_get_drvdata(pdev);
-+	if (!ab)
-+		return -EINVAL;
-+
-+	ab_pci = ath12k_pci_priv(ab);
-+	if (!ab_pci)
-+		return -EINVAL;
-+
-+	switch (pci_dev->device) {
-+	case QCN9274_DEVICE_ID:
-+		ab_pci->msi_config = &ath12k_wifi7_msi_config[0];
-+		ab->static_window_map = true;
-+		ab_pci->pci_ops = &ath12k_pci_ops_qcn9274;
-+		ab->hal_rx_ops = &hal_rx_qcn9274_ops;
-+		ath12k_wifi7_pci_read_hw_version(ab, &soc_hw_version_major,
-+						 &soc_hw_version_minor);
-+		ab->target_mem_mode = ath12k_core_get_memory_mode(ab);
-+		switch (soc_hw_version_major) {
-+		case ATH12K_PCI_W7_SOC_HW_VERSION_2:
-+			ab->hw_rev = ATH12K_HW_QCN9274_HW20;
-+			break;
-+		case ATH12K_PCI_W7_SOC_HW_VERSION_1:
-+			ab->hw_rev = ATH12K_HW_QCN9274_HW10;
-+			break;
-+		default:
-+			dev_err(&pdev->dev,
-+				"Unknown hardware version found for QCN9274: 0x%x\n",
-+				soc_hw_version_major);
-+			return -EOPNOTSUPP;
-+		}
-+		break;
-+	case WCN7850_DEVICE_ID:
-+		ab->id.bdf_search = ATH12K_BDF_SEARCH_BUS_AND_BOARD;
-+		ab_pci->msi_config = &ath12k_wifi7_msi_config[0];
-+		ab->static_window_map = false;
-+		ab_pci->pci_ops = &ath12k_pci_ops_wcn7850;
-+		ab->hal_rx_ops = &hal_rx_wcn7850_ops;
-+		ath12k_wifi7_pci_read_hw_version(ab, &soc_hw_version_major,
-+						 &soc_hw_version_minor);
-+		ab->target_mem_mode = ATH12K_QMI_MEMORY_MODE_DEFAULT;
-+		switch (soc_hw_version_major) {
-+		case ATH12K_PCI_W7_SOC_HW_VERSION_2:
-+			ab->hw_rev = ATH12K_HW_WCN7850_HW20;
-+			break;
-+		default:
-+			dev_err(&pdev->dev,
-+				"Unknown hardware version found for WCN7850: 0x%x\n",
-+				soc_hw_version_major);
-+			return -EOPNOTSUPP;
-+		}
-+		break;
-+
-+	default:
-+		dev_err(&pdev->dev, "Unknown Wi-Fi 7 PCI device found: 0x%x\n",
-+			pci_dev->device);
-+		return -EOPNOTSUPP;
-+	}
-+
-+	return 0;
-+}
-+
-+static struct ath12k_pci_driver ath12k_pci_wifi7_driver = {
-+	.name = "ath12k_wifi7_pci",
-+	.id_table = ath12k_wifi7_pci_id_table,
-+	.ops.probe = ath12k_wifi7_pci_probe,
++static const struct mhi_channel_config ath12k_mhi_channels_wcn7850[] = {
++	{
++		.num = 20,
++		.name = "IPCR",
++		.num_elements = 64,
++		.event_ring = 1,
++		.dir = DMA_TO_DEVICE,
++		.ee_mask = 0x4,
++		.pollcfg = 0,
++		.doorbell = MHI_DB_BRST_DISABLE,
++		.lpm_notify = false,
++		.offload_channel = false,
++		.doorbell_mode_switch = false,
++		.auto_queue = false,
++	},
++	{
++		.num = 21,
++		.name = "IPCR",
++		.num_elements = 64,
++		.event_ring = 1,
++		.dir = DMA_FROM_DEVICE,
++		.ee_mask = 0x4,
++		.pollcfg = 0,
++		.doorbell = MHI_DB_BRST_DISABLE,
++		.lpm_notify = false,
++		.offload_channel = false,
++		.doorbell_mode_switch = false,
++		.auto_queue = true,
++	},
 +};
 +
-+int ath12k_wifi7_pci_init(void)
-+{
-+	int ret;
++static struct mhi_event_config ath12k_mhi_events_wcn7850[] = {
++	{
++		.num_elements = 32,
++		.irq_moderation_ms = 0,
++		.irq = 1,
++		.mode = MHI_DB_BRST_DISABLE,
++		.data_type = MHI_ER_CTRL,
++		.hardware_event = false,
++		.client_managed = false,
++		.offload_channel = false,
++	},
++	{
++		.num_elements = 256,
++		.irq_moderation_ms = 1,
++		.irq = 2,
++		.mode = MHI_DB_BRST_DISABLE,
++		.priority = 1,
++		.hardware_event = false,
++		.client_managed = false,
++		.offload_channel = false,
++	},
++};
 +
-+	ret = ath12k_pci_register_driver(ATH12K_DEVICE_FAMILY_WIFI7,
-+					 &ath12k_pci_wifi7_driver);
-+	if (ret) {
-+		pr_err("Failed to register ath12k Wi-Fi 7 driver: %d\n",
-+		       ret);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+void ath12k_wifi7_pci_exit(void)
-+{
-+	ath12k_pci_unregister_driver(ATH12K_DEVICE_FAMILY_WIFI7);
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/pci_wifi7.h b/drivers/net/wireless/ath/ath12k/pci_wifi7.h
++const struct mhi_controller_config ath12k_mhi_config_wcn7850 = {
++	.max_channels = 128,
++	.timeout_ms = 2000,
++	.use_bounce_buf = false,
++	.buf_len = 8192,
++	.num_channels = ARRAY_SIZE(ath12k_mhi_channels_wcn7850),
++	.ch_cfg = ath12k_mhi_channels_wcn7850,
++	.num_events = ARRAY_SIZE(ath12k_mhi_events_wcn7850),
++	.event_cfg = ath12k_mhi_events_wcn7850,
++};
+diff --git a/drivers/net/wireless/ath/ath12k/mhi_wifi7.h b/drivers/net/wireless/ath/ath12k/mhi_wifi7.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..662a8bab0ce7fa8c6d0c440333a7c23e649bdf6e
+index 0000000000000000000000000000000000000000..8417a2bde0877d9a377c8dd4befc24a042f3b629
 --- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/pci_wifi7.h
-@@ -0,0 +1,12 @@
++++ b/drivers/net/wireless/ath/ath12k/mhi_wifi7.h
+@@ -0,0 +1,11 @@
 +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
 +/*
-+ * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
++ * Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
 + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 + */
-+#ifndef ATH12K_PCI_WIFI7_H
-+#define ATH12K_PCI_WIFI7_H
 +
-+int ath12k_wifi7_pci_init(void);
-+void ath12k_wifi7_pci_exit(void);
-+
-+#endif /* ATH12K_PCI_WIFI7_H */
++#ifndef _ATH12K_WIFI7_MHI_H
++#define _ATH12K_WIFI7_MHI_H
++extern const struct mhi_controller_config ath12k_mhi_config_qcn9274;
++extern const struct mhi_controller_config ath12k_mhi_config_wcn7850;
++#endif /* _ATH12K_WIFI7_MHI_H */
 
 -- 
 2.34.1
