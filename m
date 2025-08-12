@@ -4,88 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 966FCCA0EC4
-	for <ath12k@archiver.kernel.org>; Tue, 12 Aug 2025 01:30:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67CCFCA0ED1
+	for <ath12k@archiver.kernel.org>; Tue, 12 Aug 2025 02:04:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=G5aMlYwFGMh0KrcMUN16GaA474jogpJB+eSTUbFSTXg=; b=TEBB4xmJ611tWU8YdT+oC4eYnH
-	htcBFZst1BPGWcoHixprN7xDwdX/+GabZBhPB6gRqBKWAvxn2mr5DUM+JQ1I22l0tm02BV/SNrl+9
-	8w/k9lhFxn0oq5+TYU1nnzGu2f4ChgW45HPbGueSfqbMRQNumG9wHsxvQdC8TbMLwE7vnRkdbScwR
-	QI3uS1y00hGUuOv896CfUZlUQH1LwbNFEZd7H65x0d+HVt1mAXchvW+OU9OwJukz9Lzgyv9L2Ijm8
-	AFqKiE4Bjpb9J0eC/p3eZq7WY8/k3NOf3ohzGhnL4Nzmd6CpaGJ0Pnpig7Fa4Nyx1ASTAxJ+GPhbU
-	7Es4bTjw==;
+	bh=V+Xy4vrZmdYH3GIE79frPRqd0RIJm1rM+/odVc2an3E=; b=0RYuYLStRCbjAvroSVkxbygR+T
+	8eyS9U4ujRKd/s+5PWi/yuR75Vg5o0SnffURYlUPWsS/61KqX2jAA+Ct2Ler9bmvdFJnAtR9An8Ha
+	L1SNsakBTGLwUXXn58a1u3SBpYXmoRRDxvEnabT2sTF76JCA+esORYuStS98yyGsoVGTtkPjSluOL
+	NA+VCLBy5HkoQpBxRxgaiKbfWwnqHyvVJobwqcYb2nfUuOWQ9Kbh5m94Qk1GEDR4lwoc0imUrIB17
+	2NrHOmDtuQaEKepRrvE+KtwQ7LicEEdLP6Qow3csSyRLx6XkvhWKlxImNR9agMMFhJfWDr21nRzkI
+	HrAE10/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uldqo-00000009WFJ-1Sb9;
-	Tue, 12 Aug 2025 01:30:54 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uleNO-00000009a4O-0hso;
+	Tue, 12 Aug 2025 02:04:34 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulXSd-00000008oNq-37FW
-	for ath12k@bombadil.infradead.org;
-	Mon, 11 Aug 2025 18:41:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=G5aMlYwFGMh0KrcMUN16GaA474jogpJB+eSTUbFSTXg=; b=WqP3lziHUp89bBYsuCqrYDw4Pi
-	4dyUyAIoHPFhYzw/NTkWgpewfgAyZMrpy4R3kghpRZ5oUUbl1m9JUg3IvWW3NzrnoG5a5nMHpGjHW
-	z9s1J/iCNW/y5igmYxFTPP8Z7cXr6x2XqOVV0bSOxu+KKusaA7preYkAJhtx/1PAoVMmNYhdKo/jo
-	BTjY9MIhlz42FM8LKMUhwwbKVo0odXHij6mDHhjbqRx2KMYy6tmVy+fzkuYWpiRz3DT9J6dZEYL46
-	ipZVjtJ8dVbJHmTHvw8A5uGAD6Df0xup3bpDXps5a+ulkM0+yU5okHQl7+NV7WGomAlIm/mYbbiUp
-	EGElfn0Q==;
-Received: from nyc.source.kernel.org ([147.75.193.91])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulXSa-0000000FTaA-37OD
+	id 1uleNL-00000009a3X-3pE3
 	for ath12k@lists.infradead.org;
-	Mon, 11 Aug 2025 18:41:30 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id CF7ACA5765E;
-	Mon, 11 Aug 2025 18:41:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7C270C4CEF5;
-	Mon, 11 Aug 2025 18:41:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1754937685;
-	bh=EOfgba50+6CeVpleSRv0Q0EMWfqPtmAaWwa0kISde2A=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Y5myT04UfdY3QhEahpjI/jHBtn5TUMkfoDIpwAjD3Xo84YxlpgG0/faw5XzNJMD3M
-	 oWvo2pWrcU/lzXWFgJmEjxjoizDmKBkYSd/ZPm7Qh6hWn8j/S80sCkH3KWlw1grrz9
-	 WLgZZksjUgUcApM9NZgWjGPuPvMCHk3Y5uIB+AqNqGd3HZFkmCmh7p3qc9nyHdKAeT
-	 0i88rOc39yEjibU/Soct7g6m8+pLz7RAQ/HB3qQdl96tXPAbK1o0Rq85Z7cuzYqViW
-	 hV3Z5OLziqJL2ojO54GRbREcwxzeUGzjygg055bAdOld6Pp/1DcMFZnO5bhERiuAwY
-	 IHBoSQOVspinw==
-From: Bjorn Andersson <andersson@kernel.org>
-To: Vikash Garodia <quic_vgarodia@quicinc.com>,
-	Dikshita Agarwal <quic_dikshita@quicinc.com>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Mathieu Poirier <mathieu.poirier@linaro.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-Cc: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-	linux-media@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-remoteproc@vger.kernel.org,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [Patch v3 1/3] soc: qcom: mdt_loader: Remove unused parameter
-Date: Mon, 11 Aug 2025 13:41:04 -0500
-Message-ID: <175493766087.138281.3100955082494803844.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.49.0
-In-Reply-To: <20250807074311.2381713-1-mukesh.ojha@oss.qualcomm.com>
-References: <20250807074311.2381713-1-mukesh.ojha@oss.qualcomm.com>
+	Tue, 12 Aug 2025 02:04:33 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57BJVY5q008265;
+	Tue, 12 Aug 2025 02:04:31 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	V+Xy4vrZmdYH3GIE79frPRqd0RIJm1rM+/odVc2an3E=; b=J/VQYsfcydaUuxrW
+	vx96qdb3MSthYusc8uZNN/byEmYcr2Dgjp8pmfjQQ13m/36It8k7RIqv5abXoaYI
+	Z0hGT0iQtagYjsVdLvTJuXCFNmS/Dvhw67nAHo9bSD/4sUq5+K5S/lNyVRBPe6Yx
+	EQry1ZS1eBznkF7+jKoFvhN2vvsaM3p00Ent1oX2ihb7r9Px0SUqIh2XwqhVllt8
+	eF9yuJHCB4vuZK6zker2xYLhKlzr10ckbSfa83HLymqADmPZWEdIWg4p5Eewf0wC
+	XylzELcKgwwIC0MO2NQ05A71Os5wNktcxwb7vq1dcG5Dss/0AU3/9i9fDrU7Xy5Q
+	ZhfQGQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48ffhjj8k8-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 12 Aug 2025 02:04:30 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 57C24TTl023406
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 12 Aug 2025 02:04:29 GMT
+Received: from [10.133.33.20] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Mon, 11 Aug
+ 2025 19:04:28 -0700
+Message-ID: <7b6f4d83-f068-4fd2-afd1-214255bbfc72@quicinc.com>
+Date: Tue, 12 Aug 2025 10:04:07 +0800
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next v3] wifi: ath12k: report station mode per-chain
+ signal strength
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20250811112132.48946-1-quic_lingbok@quicinc.com>
+Content-Language: en-US
+From: Lingbo Kong <quic_lingbok@quicinc.com>
+In-Reply-To: <20250811112132.48946-1-quic_lingbok@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODExMDA3NCBTYWx0ZWRfX92+SVaQwXXPC
+ zikLlto9pLvsXc/JOIbDvhdSOXOZ0gWwj1lE87D9utLUsu6IMPy3XFmwLNPNQMCjEVvqgbOYSnJ
+ jX391RwdnekHS196BtKuoIJ03ZJ15mHJpND/Fa+KbmWe4EOCNJIpp+LUi3MS+InYcMZMUyfbyIp
+ zItKS7eH5PUozCWeptsOUDSqS8vcwu7IP9FSHb+Z6ENWa1rbIJeWQFF1xev8VToFsutLJypfkrK
+ DZCCTOTqwyHMac65fQbZ64DG5Plwf7FY21vQ2u1jDcx1sXSK7qSXJtl7TK9GKTz/N7qv7vVCQwR
+ T8gM85+eW6Yd9+tn4nfCDoIPyBM2HgIfr4lVTOlCMow3YrbgPwrnz92aCkkAST5OwDntfYP/+nQ
+ YWTYrdU0
+X-Proofpoint-GUID: Se2B-9i0U0VjjvpLva9hjOh_HwV1RGtL
+X-Authority-Analysis: v=2.4 cv=TJFFS0la c=1 sm=1 tr=0 ts=689aa12e cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=VwQbUJbxAAAA:8
+ a=COk6AnOGAAAA:8 a=pN-lpjZd9i1dOjWOSwIA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: Se2B-9i0U0VjjvpLva9hjOh_HwV1RGtL
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-12_01,2025-08-11_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 suspectscore=0 adultscore=0 impostorscore=0 malwarescore=0
+ phishscore=0 clxscore=1015 spamscore=0 bulkscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2508110074
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250811_194128_948739_7BBB88EF 
-X-CRM114-Status: UNSURE (   5.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250811_190432_076718_B59D27BE 
+X-CRM114-Status: GOOD (  10.70  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,27 +110,46 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+please ignore this patch.
 
-On Thu, 07 Aug 2025 13:13:09 +0530, Mukesh Ojha wrote:
-> commit f4e526ff7e38e ("soc: qcom: mdt_loader: Extract PAS
->  operations") move pas specific code from __qcom_mdt_load()
-> to a separate function qcom_mdt_pas_init() after which the
-> pas_init variable became unused in __qcom_mdt_load().
+/lingbo
+On 2025/8/11 19:21, Lingbo Kong wrote:
+> Currently, command “iw wlan0 station dump” does not show per-chain signal
+> strength.
 > 
-> Remove pas_init argument from __qcom_mdt_load().
+> This is because ath12k does not handle the num_per_chain_rssi and
+> rssi_avg_beacon reported by firmware to ath12k.
 > 
-> [...]
+> To address this, update ath12k to send WMI_REQUEST_STATS_CMDID with the
+> flag WMI_REQUEST_RSSI_PER_CHAIN_STAT to the firmware. Then, add logic to
+> handle num_per_chain_rssi and rssi_avg_beacon in the
+> ath12k_wmi_tlv_fw_stats_parse(), and assign the resulting per-chain signal
+> strength to the chain_signal of struct station_info.
+> 
+> After that, "iw dev xxx station dump" shows the correct per-chain signal
+> strength.
+> Such as:
+> 
+> Station AA:BB:CC:DD:EE:FF (on wlan0)
+>          inactive time:  212 ms
+>          rx bytes:       10398
+>          rx packets:     64
+>          tx bytes:       4362
+>          tx packets:     33
+>          tx retries:     49
+>          tx failed:      0
+>          beacon loss:    0
+>          beacon rx:      14
+>          rx drop misc:   16
+>          signal:         -45 [-51, -46] dBm
+>          beacon signal avg:      -44 dBm
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Closes: https://bugzilla.kernel.org/show_bug.cgi?id=219751
+> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+> ---
+> v3:
 
-Applied, thanks!
 
-[1/3] soc: qcom: mdt_loader: Remove unused parameter
-      commit: 3bf7097bfdd4cf43874d7d41689957bc0d581d47
-[2/3] soc: qcom: mdt_loader: Remove pas id parameter
-      commit: 0daf35da397b083ea0ea5407196bb6bd210530ec
-[3/3] soc: qcom: mdt_loader: Remove unused parameter
-      commit: 3bf7097bfdd4cf43874d7d41689957bc0d581d47
-
-Best regards,
--- 
-Bjorn Andersson <andersson@kernel.org>
 
