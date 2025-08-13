@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86718CA0EC4
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3E88C87FCF
 	for <ath12k@archiver.kernel.org>; Wed, 13 Aug 2025 06:01:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,46 +12,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0LH42O/Q33/mOKw5CPb2wtIPYoPUc7vtLbmoHkL8pbw=; b=hzs/ODsnndvlaRrjClz8KA59mI
-	/SSYlKESlbvbEK94V8SCooJYb6vcbWSyX959UvjJzveK06vnWSalgzCuSlaWdV0NyrfqLj4YoCFGq
-	e3oAmfHk6W8FThWJ+g6ZkuLF+ItVD7/oI43T16IltfKKpayBUcOUH4GKyhUskqvkPeAY9Jk9meVKL
-	JFxEW9FgUYVsAsgx/LepRHSCGkBoGGlqV+kTGxcHTh6LJIXAN5kAy6trhViISnDr4vp5jdmAkpvkf
-	nUhlaoFY5d17anjY+9W51J/H36fP/zGmkBLCcT/Oj/8v0GzIx+TmU3Bak6eATG5I2o8+dTnIGnweq
-	kOVAIRrg==;
+	bh=lbdi9jIdmR916fJ3/R1yfkEiakV7VpA1HISdRxd3adY=; b=hF0rKP8Ra052n9hjVWpwGJZ9A5
+	pDweSotsJEq40sydNqsiaRmB+pDRfq75xocxs/UroYhoU+X9BrLlDowDBI//VAeskX5RyUBLf9PA1
+	hs+Lv6m6iJ57NDIlb1t6dIMLz1lSz1frm4MZxVpafuO/IVPdYd8LPXr+70KDAVN+koy3OO7s1a1Er
+	Fu4EhPVYaYGSAteOYuwAaIL4cqwb/H57srs5xb7uS0AVRB2BfgFdnNyEDNwsWKB8p8Usm2RaDG8Ee
+	9iS/A3725RJFMNI9M838DNM/KG95OTco3rmDjVEPOJYkdO+IPwP9fbqfWUDK8MW1/FN3Ydwp9XLAy
+	fL/H0UdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1um4YP-0000000CiwL-0sUL;
+	id 1um4YP-0000000CiwV-2qgR;
 	Wed, 13 Aug 2025 06:01:41 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1um4PM-0000000ChWc-3ljJ
+	id 1um4Pn-0000000Chau-0DHD
 	for ath12k@lists.infradead.org;
-	Wed, 13 Aug 2025 05:52:22 +0000
+	Wed, 13 Aug 2025 05:52:48 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 19817A5765F;
-	Wed, 13 Aug 2025 05:52:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B418BC4CEEB;
-	Wed, 13 Aug 2025 05:52:18 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 78F2E5C54B6;
+	Wed, 13 Aug 2025 05:52:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2AA40C4CEEB;
+	Wed, 13 Aug 2025 05:52:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755064339;
-	bh=0LH42O/Q33/mOKw5CPb2wtIPYoPUc7vtLbmoHkL8pbw=;
+	s=k20201202; t=1755064366;
+	bh=lbdi9jIdmR916fJ3/R1yfkEiakV7VpA1HISdRxd3adY=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=rOnW++6TVkSFbDmAKHChs12r/pcXOsfkWNWlIV7AR/IJVdYPxifMMuSn+FFtHfmrR
-	 j56oX6BkqK3rfcnybyYg8gNxXVc9jAZuka/LJcFQpHD1oBeSaU6JCT3M4GHhLUoaVV
-	 AvJGUQTs7V0SDt+oazjWSCHxLy8WsIN1ksWb53DOzHch9W0LWjHIsQ77uzXs+fo9d2
-	 Q49R0nmvnebYwYboq/4sHjp7TvwMPR0dyIpGUZ8Uy/qoUPFCCfvna0r/Oi/F2doZvw
-	 5QU9usJBnmF3ETLu23+0MYUAgs6VdAwZmHMg7UxGP7IUUeHPS6cmU/qSs+8Ra5/dmN
-	 3fSiHkOsrNb+A==
-Message-ID: <00a72188-8ac7-4527-8128-352d0882754f@kernel.org>
-Date: Wed, 13 Aug 2025 07:52:17 +0200
+	b=unUXaVGAdazZTyDdg7qOHOpqvAnveCS+F1rTvEcmp1YKazDUIEY5HO1hlyqgPgVm/
+	 NUB9H/ytPUp0/JKTO7cw816vdzLJIldfVOKOTCrwmZsqBFowdbLQe4BXpJdofyWJyx
+	 owyHSzoFA4uhtQ6mIGfjC+zbku3QOtmSCPJuxsJLeyDntuMaOSZDQ4VLX8UtKcBlaG
+	 nP5lZTbT8n8f553MjAQmAmUAj/GgRjUBo6imlLVatW59wnu3JSoKmvvwq88kEmgRm2
+	 NDIJT6i5iCZcv1URpKMgCbLjaW3VC6J3hPEhGquVazem3WtQt55KjD5q/72KXosvAI
+	 M9am0EYYU11kA==
+Message-ID: <687fce38-b02c-4836-88cf-330e58d06f61@kernel.org>
+Date: Wed, 13 Aug 2025 07:52:43 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath12k-ng 03/13] wifi: ath12k: Move Wi-Fi 7 WMI
+Subject: Re: [PATCH ath12k-ng 04/13] wifi: ath12k: Move Wi-Fi 7 MHI
  configuration to dedicated file
 To: Kiran Venkatappa <quic_kiranv@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
 References: <20250812-ath12k-mod-v1-0-8c9b0eb9335d@quicinc.com>
- <20250812-ath12k-mod-v1-3-8c9b0eb9335d@quicinc.com>
+ <20250812-ath12k-mod-v1-4-8c9b0eb9335d@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -97,12 +97,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250812-ath12k-mod-v1-3-8c9b0eb9335d@quicinc.com>
+In-Reply-To: <20250812-ath12k-mod-v1-4-8c9b0eb9335d@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250812_225221_074461_E436D903 
-X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-CacheID: sfid-20250812_225247_172009_65E81E4C 
+X-CRM114-Status: UNSURE (   7.91  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -119,24 +119,18 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 12/08/2025 19:09, Kiran Venkatappa wrote:
-> +}
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi_wifi7.h b/drivers/net/wireless/ath/ath12k/wmi_wifi7.h
+> diff --git a/drivers/net/wireless/ath/ath12k/mhi_wifi7.c b/drivers/net/wireless/ath/ath12k/mhi_wifi7.c
 > new file mode 100644
-> index 0000000000000000000000000000000000000000..1514e3e8d4cb65d3d95d95a1c1593a7b66abcf58
+> index 0000000000000000000000000000000000000000..be74df152f6f88c1c723459a1cdea21f45b0d15b
 > --- /dev/null
-> +++ b/drivers/net/wireless/ath/ath12k/wmi_wifi7.h
-> @@ -0,0 +1,15 @@
-> +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
+> +++ b/drivers/net/wireless/ath/ath12k/mhi_wifi7.c
+> @@ -0,0 +1,138 @@
+> +// SPDX-License-Identifier: BSD-3-Clause-Clear
 > +/*
-> + * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+> + * Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
 > + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 
-Don't rewrite the copyrights. Original file had different one. GPL FAQ
-also EXPLICITLY asks for date in copyrights and does not allow one
-without the date.
-
-(and before you bring internal qcom regulations, let me remind that they
-do not matter. we discussed this in other thread)
+Stop rewriting copyrights when you move EXISTING code!
 
 Best regards,
 Krzysztof
