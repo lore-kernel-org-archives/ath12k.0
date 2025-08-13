@@ -4,120 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7DDAC87FCF
-	for <ath12k@archiver.kernel.org>; Wed, 13 Aug 2025 16:31:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98CD0C87FCF
+	for <ath12k@archiver.kernel.org>; Wed, 13 Aug 2025 16:37:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=X+vJiRxHnn3/K6boPwrrePMMQpvSubNZD/8bC45MJ5w=; b=sVXvbGA6LDa/ujQOvxPaG2hNVS
-	b1/CLVLmiw2Rf2IBbpAkaZNICTikpwMKiBtZN2uMg3ZyyDkNoKEHwF6ze3gz37ff+oiRS91ZsS9fj
-	COTiY0c+SuJCiYT4HBmdO2vnXH8yzOlEmfYcD7jimRMSwh1ZM/3cuz9e2HCGgimWkVKVC/7tLeiqv
-	SnADhi4XcXTkqr/C+71G8tHka8PKcrfuIlBtr4rR6nUkhXluibZP+QJNnQ8A3Kf6uAS6Jt52VxuOe
-	qRNpHSJhN2hZGMh/QdH0CQqklx3PCElzO9Daw9XTxrsfJJqryhME2llTgZ66vTfMXo7m5ol51llBz
-	2A7eY88A==;
+	bh=IcDYei52/iYvDbuz41JZvRxOl3092c+3NywY9eECFRc=; b=KbHRuJXBHv1aQ49El7KMt3uIiU
+	B+eIEK6+BU2+ml+J9UFHUE1/NmDKh9Zpm5bxXJfHbPgMEbMYQKWfcKs1juUlRk12II20kt3Rdeecf
+	N2acBoetw5kA9sS872e+3kBNtKI+MXXVX/yJ1KmYxqYKfNA1eEnQhoT4/nTyTmtwTeA6qGjAa1000
+	HWPkmLT29Von4szrhyZLuy1JZyTdiev5Lpos3K3vFPPZtnqEHw9bZ7NP7n3yQHfF5smqgreQLTxAC
+	7mm2+skjJKRwv7GgRbXR8x8bDLONMihgQRl/uTxxDP5BJtJmMEjL8Nwn2CxrGHTmjmVSKn3MlRGKV
+	jchnQfTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umEOE-0000000EP0M-148X;
-	Wed, 13 Aug 2025 16:31:50 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1umETR-0000000EQnq-13Yr;
+	Wed, 13 Aug 2025 16:37:13 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umDdA-0000000EEOy-3VtR
+	id 1umDuC-0000000EIAL-2fcX
 	for ath12k@lists.infradead.org;
-	Wed, 13 Aug 2025 15:43:14 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57DBLjM2020827
-	for <ath12k@lists.infradead.org>; Wed, 13 Aug 2025 15:43:12 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	X+vJiRxHnn3/K6boPwrrePMMQpvSubNZD/8bC45MJ5w=; b=Zh+d/Ko+ZbGVNY2z
-	KZT/r8rY1DZUnWvaj/ikrs1R7+LdK0Gc2ew99PcLwNQ3qHsSWbtfZiB1WIYr0gUy
-	nslaL+yoOodD3nQJI3Hxv/TGjqZGAWkD+YOSzMUQMIcQksxdVDp9s6T8dcgjzwzo
-	HpyFczFcX5OaPzY/42gn2sFx6QdPSKUKe9uwjKvg5e/fPmaz/VPg+XN8EyMpPTkf
-	0VKOx0806rjKaFdsSD+8uXWrqflq4rEIbTN2IiuZdtaZxyk5tLzFadq1j10gbxVB
-	fBsLdNfqFwv0i4/WtPMCQ5lGLh3m1ROxWMchwc10KhK7uLyHTjGx1oGhSppaajzv
-	FmFibQ==
-Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48dw9svj4h-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 13 Aug 2025 15:43:12 +0000 (GMT)
-Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-76e2e5c4734so55405b3a.0
-        for <ath12k@lists.infradead.org>; Wed, 13 Aug 2025 08:43:12 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755099791; x=1755704591;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=X+vJiRxHnn3/K6boPwrrePMMQpvSubNZD/8bC45MJ5w=;
-        b=tXWUi7FQfZq6p5zhwfh8OtDtlwDDRHZyh2fYSsmFCk/PKDjJCaIXk10aST9vOlCvby
-         wvj0qnz6QvzPcfJj4f0Eh8q8DhT06cEZHimudpF4UgjJXdllH2i5dc1n41opHZ0ddltB
-         a7VVjQjuZGYfuGrYDa2B0sZxHwM5rZvsGWA8hkyol9QGxVNWCjBP693cREw9Zb6TALgd
-         M9FxIfNjO9mgK45QhumiumJWdZ3DzBcf/H6xxb7w2VbDJP6397iALmFhh/eR/r2Z0fjb
-         6TIRecWV6QNbg4D+Z+Aa+mG+VDldZ2mqHobRn7Yi1UPZfaAzVaRAFhIzbFwu1awbGm69
-         o9ZA==
-X-Forwarded-Encrypted: i=1; AJvYcCW/Ldr1RXdoLUondGRgKt1/h3UUqzwQvJV96wbdKSkM4ylKWXvAXSjMK5MXqVg2kVf+jEDwI84=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxQ09gv+7pPcLBETHBapRMlA56/YaL3Lp4FSVpsfG+hiMQnPUvL
-	7E4BOPQcafDoqflQYwxquAMc8YKOnVQNOWYlyhofcOFAgP7eo/NQu+DZtB/HXFyM2wMozkwEPFJ
-	JvQjn2deCPGLiSQjNaQ/nP3YffVAl0Kb5l0W/cL+abamfodqUS/34T14y3CUBj7u9mJ3sQqqK
-X-Gm-Gg: ASbGncs6MQkajCSpbM03+JPcj4r8axfyfLNknYMaKoVV5yfG57hspPSB21Eg26AEv3W
-	lH4r2kppcEwz8wKroin+R0OtsLPSi4zjidqSSbKH6ezRRBx8Xc+zQyB+/aL4vARDQIHA9CTD7KX
-	nEPgW7/9FLrGXMO+XXJkbRarLMECJkpvqpgU6uvzYlmUWbeQSYthlNZ4jb0KzZVa88FCyryIfZl
-	7GSTis2Rwlk5nKAGOH5/pNyxBy3L8sKg/SGj8uAZZTdgkS9Du7AL0mb5qo7CArDJXfd6/7LbBZc
-	j7MR3xSl8lcHbT+hxdioz2TLUbvydu7zQwYGldRC9lidL3UAkSNeAYWCSeyHB3woWbk7UO0yaZ6
-	/S9W8ZHkNlwb9U2OF24U=
-X-Received: by 2002:a05:6a00:2d23:b0:76b:d7e7:f1de with SMTP id d2e1a72fcca58-76e20fbc777mr4617244b3a.17.1755099791043;
-        Wed, 13 Aug 2025 08:43:11 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHt+tw5CQOw9hHP6fC25gOa6wKJiAE3Tp9b+fde67vtYyymzbtqU3y6+2C+GYLi70eEmwf0mg==
-X-Received: by 2002:a05:6a00:2d23:b0:76b:d7e7:f1de with SMTP id d2e1a72fcca58-76e20fbc777mr4617201b3a.17.1755099790581;
-        Wed, 13 Aug 2025 08:43:10 -0700 (PDT)
-Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-76c1a9d6940sm21074480b3a.94.2025.08.13.08.43.09
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 13 Aug 2025 08:43:10 -0700 (PDT)
-Message-ID: <b62af6d9-eea1-41d0-997d-b9585f2a9533@oss.qualcomm.com>
-Date: Wed, 13 Aug 2025 08:43:09 -0700
+	Wed, 13 Aug 2025 16:00:48 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 16E00601E5;
+	Wed, 13 Aug 2025 16:00:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6E725C4CEEB;
+	Wed, 13 Aug 2025 16:00:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755100847;
+	bh=2emd38XphUi6IZy2uLgiRRt37gOsNyuIyf1UAgYALXU=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=jWzP51ARqwHaIaKC56xiZJgCe2jX0VXUDmecpM2U58JHMvXopGI5axzMSw3LDgjOf
+	 NeGuUDGyFteH+4Ie6YOvNWmRY1XFalQ5mqGyVhhcF2CurNc8h8IZRhSvIk/HfB1CEz
+	 AXV91cLYMiqXl9dRhQIv+VmMHsAWmY61QtepZOIX1DJJ/SJpipmqtkhI4jiWAlRfQk
+	 PpmGrCKLq7UhhL9/7DDbE5iIiR3wDy4JkYzZ7QV9EW/A/UZxNRXgHK4ublb7kw8WDy
+	 t2K/UZ9K7M2YX4N4iaxiuyDPQo721IigTVA7My7ueKhW8gxEJTKoM53quH3D+PdzPw
+	 WU4wHhYXFWSDA==
+Message-ID: <f6b046b0-d230-41e6-ab18-686cc7b65f16@kernel.org>
+Date: Wed, 13 Aug 2025 18:00:44 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH ath12k-ng 03/13] wifi: ath12k: Move Wi-Fi 7 WMI
  configuration to dedicated file
-To: Krzysztof Kozlowski <krzk@kernel.org>,
-        Kiran Venkatappa <quic_kiranv@quicinc.com>, ath12k@lists.infradead.org
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+ Kiran Venkatappa <quic_kiranv@quicinc.com>, ath12k@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Cc: linux-wireless@vger.kernel.org
 References: <20250812-ath12k-mod-v1-0-8c9b0eb9335d@quicinc.com>
  <20250812-ath12k-mod-v1-3-8c9b0eb9335d@quicinc.com>
  <00a72188-8ac7-4527-8128-352d0882754f@kernel.org>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+ <b62af6d9-eea1-41d0-997d-b9585f2a9533@oss.qualcomm.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-In-Reply-To: <00a72188-8ac7-4527-8128-352d0882754f@kernel.org>
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
+ QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
+ +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
+ ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
+ 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
+ hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
+ tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
+ 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
+ naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
+ hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
+ whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
+ Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
+ MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
+ OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
+ GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
+ 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
+ YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
+ 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
+ BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
+ JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
+ 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
+ YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
+ qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
+ RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
+ Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
+ H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
+ dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
+ AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
+ jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
+ zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
+ XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
+In-Reply-To: <b62af6d9-eea1-41d0-997d-b9585f2a9533@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=J+Wq7BnS c=1 sm=1 tr=0 ts=689cb290 cx=c_pps
- a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=hgPZAWqQMrviz7OzBV8A:9
- a=QEXdDO2ut3YA:10 a=2VI0MkxyNR6bbpdq8BZq:22
-X-Proofpoint-ORIG-GUID: vJyR4Lf0u9pCSzKTxzqI-ARaQIWjUfCC
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA5MDAxNSBTYWx0ZWRfX6iNc3LlT2eKe
- MWgSUS9S0KSJORLiJwKiy7vEVIjRFN3tFuz2bzi1TMjchE4R1llj3KA3qNhqJHl1wRvx1YuJo01
- kGZaRZ8DTm9O1+/GDBfIxzCwd7Ukv1vEdGD2HvLVl5TNCiCS6sD4MGN8JbQYvSkHDhYq4qPfFwH
- MTbNb1hX0wxVGJE4foA4hirL57cQZMm8H0KKUDTBhEmpOkQj6TVSWkUDC+4Aqx1duh7bGRNgfay
- ceL0wkkbyQtsZ7cEzvRINsoU70kzCEvsgr6dRNOH8cVARvORWttAt/vmjivRd5dsVkky4mNS5lw
- 3TgFyRau826n0Y3lbeq4jOds10damh7IAS7vDYuAwNVilv7iYs945irllBmu3d+Dhgfkb5w/rhU
- TGW0RpKb
-X-Proofpoint-GUID: vJyR4Lf0u9pCSzKTxzqI-ARaQIWjUfCC
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-13_01,2025-08-11_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 adultscore=0 malwarescore=0 impostorscore=0 bulkscore=0
- phishscore=0 suspectscore=0 spamscore=0 clxscore=1015 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2508090015
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250813_084312_891501_88C1010C 
-X-CRM114-Status: GOOD (  13.84  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,30 +118,47 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/12/2025 10:52 PM, Krzysztof Kozlowski wrote:
-> On 12/08/2025 19:09, Kiran Venkatappa wrote:
->> +}
->> diff --git a/drivers/net/wireless/ath/ath12k/wmi_wifi7.h b/drivers/net/wireless/ath/ath12k/wmi_wifi7.h
->> new file mode 100644
->> index 0000000000000000000000000000000000000000..1514e3e8d4cb65d3d95d95a1c1593a7b66abcf58
->> --- /dev/null
->> +++ b/drivers/net/wireless/ath/ath12k/wmi_wifi7.h
->> @@ -0,0 +1,15 @@
->> +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
->> +/*
->> + * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
->> + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+On 13/08/2025 17:43, Jeff Johnson wrote:
+> On 8/12/2025 10:52 PM, Krzysztof Kozlowski wrote:
+>> On 12/08/2025 19:09, Kiran Venkatappa wrote:
+>>> +}
+>>> diff --git a/drivers/net/wireless/ath/ath12k/wmi_wifi7.h b/drivers/net/wireless/ath/ath12k/wmi_wifi7.h
+>>> new file mode 100644
+>>> index 0000000000000000000000000000000000000000..1514e3e8d4cb65d3d95d95a1c1593a7b66abcf58
+>>> --- /dev/null
+>>> +++ b/drivers/net/wireless/ath/ath12k/wmi_wifi7.h
+>>> @@ -0,0 +1,15 @@
+>>> +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
+>>> +/*
+>>> + * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+>>> + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+>>
+>> Don't rewrite the copyrights. Original file had different one. GPL FAQ
+>> also EXPLICITLY asks for date in copyrights and does not allow one
+>> without the date.
+>>
+>> (and before you bring internal qcom regulations, let me remind that they
+>> do not matter. we discussed this in other thread)
 > 
-> Don't rewrite the copyrights. Original file had different one. GPL FAQ
-> also EXPLICITLY asks for date in copyrights and does not allow one
-> without the date.
-> 
-> (and before you bring internal qcom regulations, let me remind that they
-> do not matter. we discussed this in other thread)
+> Wi-Fi team wasn't party to the other thread, and this series was following the
+> legal guidance we were given. I'm circling with the core kernel team and the
+> legal team to make sure your concerns are resolved.
 
-Wi-Fi team wasn't party to the other thread, and this series was following the
-legal guidance we were given. I'm circling with the core kernel team and the
-legal team to make sure your concerns are resolved.
++Cc Greg,
 
-/jeff
+Please follow legal guidance expressed in:
+https://www.gnu.org/licenses/gpl-howto.en.html#copyright-notice
+
+and the license you agreed by signing of the patch:
+LICENSES/preferred/GPL-2.0:
+
+"Copyright (C) <year>  <name of author> "
+...
+"... publish on each copy an appropriate
+copyright notice and disclaimer of warranty;"
+
+Just to remind - you as author sign off your patch, not your legal team.
+
+Best regards,
+Krzysztof
 
