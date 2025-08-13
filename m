@@ -4,87 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AA95CA0EDC
-	for <ath12k@archiver.kernel.org>; Tue, 12 Aug 2025 22:22:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4D45CA0EDC
+	for <ath12k@archiver.kernel.org>; Wed, 13 Aug 2025 03:13:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:In-Reply-To:
-	From:References:To:Subject:MIME-Version:Date:Message-ID:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pzqvvlm2MUfRyFJQjbbRd+NFyLHniDUFnlbE047ZsLc=; b=trCWkc76OeUxVy3GDgAXJG/oE3
-	T9AXOlAwnlLIkTpKR875v3I8pXWqVPMji+jasZpX/G2wVmZrJIG+ntMV26pu21F5E//SmgLwdj60O
-	ZfmKsIT0aPlENR9EGH0D/6uv4S6/j26bbdqIWSo335IXC+Y9bhzOxLtasdZkeR4KB+l+BiWuNhiqQ
-	xKNU8g0+HwqtxR1leDQx/uM6QrfwW6lSJKvN4akr8weSY4sLjq+A3clKae4FNRy0IpQpztLr5gfwH
-	TOIYriN+k7X2AaFiAwHGDGGlIB74/8tavIU73iZgianjU8KVCol3vGS0Ulp5lNFqTGAtpUMz5lQ2D
-	+3+5iU8w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=sllljOc1ljNLdOQPpZWR1FwzW1viCVC1FoGGN0aVrZg=; b=RDsdEQB4mBef0LgZunQotPatyk
+	Wm8klZiOfNIPOBh0j7TGBoQoAZahPBf1w8guc1/w/qHNduNxDBT+9VzLtBsV7SnCUqAcr22mMLr9Q
+	1/ifHiYxroYKoyLmOwSlrBIjJ9BMHHK31Jj10Ta3Fq7V30q99yp/2DeOleDO01zi7yF983cG3vBP1
+	3atcbWRLc/LOCxat5L5M896nFBLcc7LIjBO6v7bYcOx/P3kPEVLldA/o6Zn9xZzR8PRExB2nxf2Sp
+	0zFrtROQgxZdv59W1ZgmfkVhW47lbxaweGUIWpOaAcdFJC8qqyY869mWYC3lOF1gJBy3kkUOixlab
+	3PlC35ZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulxNq-0000000C8z9-2g1X;
-	Tue, 12 Aug 2025 22:22:18 +0000
-Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
+	id 1um1vs-0000000CUle-2Snc;
+	Wed, 13 Aug 2025 03:13:44 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulxNn-0000000C8yi-3olf
+	id 1um1vq-0000000CUkN-0CkN
 	for ath12k@lists.infradead.org;
-	Tue, 12 Aug 2025 22:22:17 +0000
-Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-af95ecfbd5bso990816266b.1
-        for <ath12k@lists.infradead.org>; Tue, 12 Aug 2025 15:22:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1755037334; x=1755642134; darn=lists.infradead.org;
-        h=in-reply-to:content-language:from:references:to:subject:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=pzqvvlm2MUfRyFJQjbbRd+NFyLHniDUFnlbE047ZsLc=;
-        b=EWwSKA0I/LeJwaGqbH0xsvgmyYcEqIdJfzKQGN0DH3wORphE5nKJ1tfZIo1GRfrMxf
-         tfAyoE3qpECO5YgAtz0s7CP0VfIHzGOe06geRlpKaJSaUdpkH5O0trJQY5umgzjw+wnW
-         uj2CEIO/2gKDWpBKbpNc82/CsKJLTiiVtCk1wKn0aJXwZ5QT4ThLgX8viMU6pfww/sRP
-         yrS0gFAMTVbWvmEesFZDtPBc0jSFoLATukgU8TKN8CvVj9esoEG7Rkr8NK+7VgXPi7u+
-         5qOnrELH5UVd7EpdDeVRxUUWsvOIh/IjSeXGNrCd9edBAtE0MOqqijkkjVShw/JzZSuR
-         6K9w==
+	Wed, 13 Aug 2025 03:13:43 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57CLgU80006035
+	for <ath12k@lists.infradead.org>; Wed, 13 Aug 2025 03:13:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	sllljOc1ljNLdOQPpZWR1FwzW1viCVC1FoGGN0aVrZg=; b=Jai0GnZLkFYgSSBz
+	kF0k1Hb50NEHWANTUFfASxckbLu8YqSxbu6dALM2w/orS3/IIP/r+tEpg0QEcpMI
+	ffXONLL/cVnQ8V5RBUfeHi64y4km4/vXdnhbaz8tEnDfxpfpZapNd9GKZE7hXPhe
+	X8wVRgatvee0Lzlg0o9jTpWxjZk7g2fy+bIqYT8IyoKrjC6idQniKRCWQHJQ7buv
+	KMO3QhI/O6MPZHk3fDRYCWl2h7xGiWsj5aFAIb8gE8KteZ772X4TOkNBMsa+SuEk
+	GpEFwEG20JjggFThhCjXpOlINtN5fYBK2Tj890GLCAizhFJykudyDmmUPOSMRGlZ
+	XaX2aA==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48ffhjp2qw-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 13 Aug 2025 03:13:40 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2424aaa9840so67002205ad.1
+        for <ath12k@lists.infradead.org>; Tue, 12 Aug 2025 20:13:40 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755037334; x=1755642134;
-        h=in-reply-to:content-language:from:references:to:subject:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=pzqvvlm2MUfRyFJQjbbRd+NFyLHniDUFnlbE047ZsLc=;
-        b=ElT6ortsGn7I/Sfg73iyL6roW+GxMLGtQB6LbOL530axwGE5G9sl4DR4PfBkkjVBAo
-         bHXW9qAw97xGYt3lbJQd1eEu3SQT1qYQfLzzxkJafgXDvGcT3RNXSdwPaZNburI8KV2U
-         PRkMSbmny6x74zKTCvVAYaluBUO8XLV75pUspSkBQ5L6CpUewNCh80aOEyTsAkWmOsNL
-         R4wswUci0+jHtmkLCcBjSCB48qKhjeF5yKpEIfBj1zDQrGg9s22B4BHzT8w/jhuwf9gY
-         H6BK1K54nBPk08ohmku8iq9n/KUDg89CGoK5w7A/ocszxo1IBFFHZq+kGXiRjL+9Y48F
-         ikaw==
-X-Gm-Message-State: AOJu0YykbCyz945wOx1XZOWSbcDJ+mLFfL3BebMzxPy+Mzxdq0FlgOlV
-	XKBjFtHKmiM9IIrgOEO29JYf+Wk72y8fzmxdPR2XLFDnKfa1+N87mTgAvYsKJPuW
-X-Gm-Gg: ASbGnctNlNGU66RYxwSjKyyGsYspxn49sVofJC8hX2LLSNOJCs/kbpUKQ/vfvmIwl3i
-	aaAPSD01V+O5CZFIZfYhd1YuvHGCZb3wpnaW08Q8c0CW22S7PsIzqT0yA7e6Ki9IZxdIANEpmBJ
-	YN3lVEGMRXAFC6gA9LiXdSVduy0UAYBcWmTfB/EcrBSzJxV2q3NylXWl1zzQ17b5LyqlGeVZoLA
-	0WfHe+VUIBObs8D6/OmV+FIbKZWSYv5t+Sru14MsAOg1MU9QncHfF5w8Lguwzy0vOKMPCgHheKI
-	4SIebulUYvuJv159TyhVadweqsapaOU9rv68G3nBxeoJZb5RW+TOBFjPE/wJPA2nobcf9A8eNiC
-	eO30kU04UA6mAeIef+SXTTIGTYcP3DmvRl/tSNtKG5OgVZ/BZAGmC1uzsNDIeofPteVw5qbkCJe
-	ciqBQ3bBi3g4ayvtnxU6OmH2fVew==
-X-Google-Smtp-Source: AGHT+IEmIPtX8wfdvL1W39FT8CTrJszrwLPsi9vwc6BNQvM5FVacssuwlqiUUON75Urg3spqsTAGNg==
-X-Received: by 2002:a17:906:730b:b0:af9:8438:de48 with SMTP id a640c23a62f3a-afca4e565f5mr86706766b.48.1755037333415;
-        Tue, 12 Aug 2025 15:22:13 -0700 (PDT)
-Received: from [192.168.0.31] (ip-078-042-147-250.um17.pools.vodafone-ip.de. [78.42.147.250])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-af91a07659dsm2259322666b.21.2025.08.12.15.22.11
-        for <ath12k@lists.infradead.org>
+        d=1e100.net; s=20230601; t=1755054819; x=1755659619;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=sllljOc1ljNLdOQPpZWR1FwzW1viCVC1FoGGN0aVrZg=;
+        b=hUb1zS/FI2zL7GQGEI543OIAiSOnVCTnrhpDViOypsY5I8JYZhAD3twM6ivoYElEr7
+         1xlblK/psLfB4cj+DRG/DA+StRp8vXuzX2hcyBwssZa1+1dvmb4c43qkvLpDhqpy4umj
+         JEf5gXStZKLu0BtmgLPbOyEfEuFMYCXAHW9qet+SQ4xb1JUdt7rD0zKVEz4W4tBaiSJF
+         8XAi8NTbhXYrMd0CKYeXaszE6RwuiU/GPS7gRRJBoeQFpmf4NEAGQuIcAknmcMis80ye
+         JKyTGKtpV/YLM3aJFaX1XQlrke9ThbJlqtjiTyezNiUam/KWZwRpjL56clhZtJiq/cOV
+         cn6A==
+X-Forwarded-Encrypted: i=1; AJvYcCVj+ZIjnYW2k3WOVytVZqRH2ft74qv7Y2GpQNC2q7HMj2ibeT9IQWNslev1j4wn/KSsiTGXS/0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw5nmIrNP9uGmlymUf7CdOxH//K+Mbl5MX4IpbxZEUGLC2zmbFI
+	Az0Kx6OlHI0knbmTixE9PFQDSTNzjCQlF6K8GOEwszVGsQ4v+1GSeQPE0tsBP7TjhjC2JNxY5iM
+	pzVh16mdiuSOilgT42u3MbLUSQVcsEMRjjCvp9A79uD5Bb/S6/IXbuky+2g7w0Zvh
+X-Gm-Gg: ASbGncuGfpleaYyebiSawOQWVf27Ei8VI34eVqRdSD+T6Js7Ke2M9lyKkWJKHdN3Xpt
+	hDofDWRWjPQwNlwCQC71L3VY+Iv5peGVa/nul4c97Wpmq4JfJAInDkH6PsL5dWPbVmdYa/RaHaM
+	eyvLDgPt9W+12hx5/zNEbG7Vs7oYLCux6tlAlV7VYrAKpNkdK2KMyjbVjZfuSGuO6v5byDfqvm+
+	CwgWgd/vj2ueU9JMa4pV1qBEsowaDoFAt71P7BPcBfFUtJ6EXfJ+9Mlg2UXZjJLFmnmg1Fpc69Q
+	q2ws6MY9oZ8KvMDQc+MPEeadbusR9p8Cg1NRVduXOjhlCft+mFYqpFTPyiXi63yDYlo8CcLFB4+
+	45MwfSYu6GUCl0z+olORN8oJXpWipt/U=
+X-Received: by 2002:a17:902:ce84:b0:242:2cad:2f8 with SMTP id d9443c01a7336-2430d10c610mr23199955ad.22.1755054819066;
+        Tue, 12 Aug 2025 20:13:39 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE48ID7oB0DuUh0zxWdAtyfFe/BB9okuFdm9Hbecr68kLS/gpnnB9K35MQrvsaWGRvKFLrsLQ==
+X-Received: by 2002:a17:902:ce84:b0:242:2cad:2f8 with SMTP id d9443c01a7336-2430d10c610mr23199585ad.22.1755054818502;
+        Tue, 12 Aug 2025 20:13:38 -0700 (PDT)
+Received: from [10.133.33.19] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-241e8aa404dsm311819545ad.148.2025.08.12.20.13.37
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 12 Aug 2025 15:22:12 -0700 (PDT)
-Message-ID: <b5ba0e58-92e7-456f-96bf-f5921df2ae21@gmail.com>
-Date: Wed, 13 Aug 2025 00:22:11 +0200
+        Tue, 12 Aug 2025 20:13:38 -0700 (PDT)
+Message-ID: <3ae5fcec-bfa4-4d41-8ee6-2c26ce0e4f51@oss.qualcomm.com>
+Date: Wed, 13 Aug 2025 11:13:33 +0800
 MIME-Version: 1.0
-User-Agent: Betterbird (Linux)
+User-Agent: Mozilla Thunderbird
 Subject: Re: Enabling 6 GHz band in WCN785x
-To: ath12k@lists.infradead.org
+To: Petros Christopoulos <petros.christopoulos@gmail.com>,
+        ath12k@lists.infradead.org
 References: <6492c438-7cff-400a-80f2-cf17e298569f@gmail.com>
  <7d934313-6062-4165-b001-853b1a66e2bc@oss.qualcomm.com>
-From: Petros Christopoulos <petros.christopoulos@gmail.com>
+ <b5ba0e58-92e7-456f-96bf-f5921df2ae21@gmail.com>
 Content-Language: en-US
-In-Reply-To: <7d934313-6062-4165-b001-853b1a66e2bc@oss.qualcomm.com>
-Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms010801090302020001020206"
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+In-Reply-To: <b5ba0e58-92e7-456f-96bf-f5921df2ae21@gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODExMDA3NCBTYWx0ZWRfX546eoGonnuiv
+ P9TMVUokIf1ntpUODNnXlN8FqPNynMZTV3aTo8CJQLQ4oyj7kt/AwP9f5WPffYtR9iYCUdkiuEA
+ nUzJVYfXGqS24Hbx0TTA+mt6ashjf4HPsaTliWQHJA77gbziDHCVzJDDGwWbmiSi4LK+Gv2g9VB
+ ir3PF3wE0ecpLNANpB+B1zbW8bMRc0Tai4Mn01OkPwdZM/vUM6NlwuucBap5vrYOOH58yUuM8Js
+ dwxZ9NJDfn1EAwm8Si6lzqXywPu30bMp7UuioFsV6G9mAtErZOJ0VqhLhXctmqXITr0bcm7E0H8
+ NFVGk7KlGDlrsXri+zzk4ze2zmvBRkkzUpWzBauMIcZwMOSZCiFHd6lG5fJsSnbJpsbUUA+kiOz
+ VeLT6KpB
+X-Proofpoint-GUID: KMWdjZu49MKGRbGrfKxtJKTJqwz7wqLM
+X-Authority-Analysis: v=2.4 cv=TJFFS0la c=1 sm=1 tr=0 ts=689c02e4 cx=c_pps
+ a=cmESyDAEBpBGqyK7t0alAg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=20KFwNOVAAAA:8 a=VwQbUJbxAAAA:8
+ a=COk6AnOGAAAA:8 a=guFGt37yKE0mxoUemLIA:9 a=lqcHg5cX4UMA:10 a=3ZKOabzyN94A:10
+ a=QEXdDO2ut3YA:10 a=z2U-W3hJrleVIN9YIjzO:22 a=1OuFwYUASf3TG4hYMiVC:22
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: KMWdjZu49MKGRbGrfKxtJKTJqwz7wqLM
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-12_08,2025-08-11_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 suspectscore=0 adultscore=0 impostorscore=0 malwarescore=0
+ phishscore=0 clxscore=1015 spamscore=0 bulkscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2508110074
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250812_152215_952931_B7D3DAA6 
-X-CRM114-Status: GOOD (  22.69  )
+X-CRM114-CacheID: sfid-20250812_201342_214052_C108CFCB 
+X-CRM114-Status: GOOD (  28.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,188 +132,128 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This is a cryptographically signed message in MIME format.
 
---------------ms010801090302020001020206
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: base64
 
-RGVhciBCYW9jaGVuLA0KDQpJIHRyaWVkIHRoZSBrZXJuZWwgNi4xNi4wIHRvZGF5IChrZXJu
-ZWwtNi4xNi4wLTIwMC5mYzQyLng4Nl82NC5ycG07IGl0IA0KaXMgRmVkb3JhIGtlcm5lbCB0
-ZXN0IHdlZWsgbm93KcKgd2hpY2jCoGNvbnRhaW5zIHRoZSBjb21taXQgDQpkY2ZlYmZkNGM4
-ZGMwYmVjOWI2NjQ5MTA0Y2VjYzA5ZjU5NzhjNGNiwqAgKD1yZXZpc2lvbiANCnY2LjE2LXJj
-MX4xMzJeMn4xNTdeMn4xNl4yfjYyKQ0KDQpidXQgdGhlIGJlaGF2aW9yIHJlZ2FyZGluZyB0
-aGUgV2lmaSBtb2R1bGUgV0NONzg1eCBoYXMgbm90IGNoYW5nZWQ6DQoNCmRlc3BpdGXCoCBz
-dWRvIGl3IHJlZyBzZXQgREUsDQpwaHkjMCByZW1haW5zIHNlbGYgbWFuYWdlZCAoc2VlIGJl
-bG93IGF0IHRoZSBlbmQpDQoNCkhvd2V2ZXIsIHRoZSBvcHRpb24gQ09ORklHX0FUSF9SRUdf
-RFlOQU1JQ19VU0VSX1JFR19ISU5UUyBpcyBub3QgZW5hYmxlZCANCmluIHRoZSBGZWRvcmEg
-a2VybmVsLCBhbmQgSSBoYXZlIGFza2VkIHRoZSBtYWludGFpbmVycyBpZiB0aGlzIGNvdWxk
-IA0KYmXCoGVuYWJsZWQgKGV2ZXJ5dGhpbmcgaXMgb2YgY291cnNlIHNpbXBsZXIgaWYgSSBk
-byBub3QgaGF2ZSB0byANCnJlY29tcGlsZSBldmVyeSBrZXJuZWwgbXlzZWxmLCANCmh0dHBz
-Oi8vYnVnemlsbGEucmVkaGF0LmNvbS9zaG93X2J1Zy5jZ2k/aWQ9MjM4NzQ4NikNCg0KSSBu
-b3RpY2VkIHRoaXMgb3B0aW9uIGlzIHJlbGV2YW50IGluc2lkZSB0aGUgYXRoMTJrIGNvZGUs
-IGUuZy4NCg0KJCBncmVwIC1yIENPTkZJR19BVEhfUkVHX0RZTkFNSUNfVVNFUl9SRUdfSElO
-VFMgDQpkcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrLw0KZHJpdmVycy9uZXQvd2ly
-ZWxlc3MvYXRoL2F0aDEyay9yZWcuYzrCoCBpZiANCighSVNfRU5BQkxFRChDT05GSUdfQVRI
-X1JFR19EWU5BTUlDX1VTRVJfUkVHX0hJTlRTKSkgew0KDQpDb3VsZCB5b3UgcGxlYXNlIGxl
-dCBtZSBrbm93Og0KDQoxLiB3aGV0aGVyIGhhdmluZyB0aGlzIG9wdGlvbiBlbmVibGVkIGlu
-IHRoZSBrZXJuZWzCoGlzIGFic29sdXRlbHkgDQpuZWNlc3NhcnkgZm9yIHRoZSBhYmlsaXR5
-IHRvIGNoYW5nZcKgdGhlIHJlZ2lvbiBvciB0aGVyZSBhcmUgYWxzbyANCmFsdGVybmF0aXZl
-cz8NCg0KMi4gd2hldGhlciBpZiB0aGlzIG9wdGlvbiBpcyBlbmFibGVkIHdpdGgga2VybmVs
-IDYuMTYuMCAod2l0aCB0aGUgY29tbWl0IA0KYWJvdmUpLCBJIHNob3VsZCBiZSBhYmxlIHRv
-IGNoYW5nZSB0aGUgcmVnaW9uIG9mIHRoZSBXQ043ODV4IG1vZHVsZSB3aXRoIA0KYSBzaW1w
-bGUgc3VkbyBpdyByZWcgc2V0IERFLCBvciB3aGV0aGVyIHN0aWxsIGFub3RoZXIgc3BlY2lh
-bCBtZXRob2QgDQp3aWxsIGJlIG5lY2Vzc2FyeT8NCg0KVGhhbmsgeW91IHZlcnkgbXVjaCBh
-bmQga2luZCByZWdhcmRzDQoNClBldHJvcw0KDQoNCmdsb2JhbA0KY291bnRyeSBERTogREZT
-LUVUU0kNCiDCoMKgwqDCoMKgwqDCoCAoMjQwMCAtIDI0ODMgQCA0MCksIChOL0EsIDIwKSwg
-KE4vQSkNCiDCoMKgwqDCoMKgwqDCoCAoNTE1MCAtIDUyNTAgQCA4MCksIChOL0EsIDIzKSwg
-KE4vQSksIE5PLU9VVERPT1IsIEFVVE8tQlcNCiDCoMKgwqDCoMKgwqDCoCAoNTI1MCAtIDUz
-NTAgQCA4MCksIChOL0EsIDIwKSwgKDAgbXMpLCBOTy1PVVRET09SLCBERlMsIEFVVE8tQlcN
-CiDCoMKgwqDCoMKgwqDCoCAoNTQ3MCAtIDU3MjUgQCAxNjApLCAoTi9BLCAyNiksICgwIG1z
-KSwgREZTDQogwqDCoMKgwqDCoMKgwqAgKDU3MjUgLSA1ODc1IEAgODApLCAoTi9BLCAxMyks
-IChOL0EpDQogwqDCoMKgwqDCoMKgwqAgKDU5NDUgLSA2NDI1IEAgMzIwKSwgKE4vQSwgMjMp
-LCAoTi9BKSwgTk8tT1VURE9PUg0KIMKgwqDCoMKgwqDCoMKgICg1NzAwMCAtIDY2MDAwIEAg
-MjE2MCksIChOL0EsIDQwKSwgKE4vQSkNCg0KcGh5IzAgKHNlbGYtbWFuYWdlZCkNCmNvdW50
-cnkgMDA6IERGUy1VTlNFVA0KIMKgwqDCoMKgwqDCoMKgICgyNDAyIC0gMjQ3MiBAIDQwKSwg
-KE4vQSwgMjApLCAoTi9BKQ0KIMKgwqDCoMKgwqDCoMKgICgyNDU3IC0gMjQ4MiBAIDIwKSwg
-KE4vQSwgMjApLCAoTi9BKSwgUEFTU0lWRS1TQ0FODQogwqDCoMKgwqDCoMKgwqAgKDUxNzAg
-LSA1MzMwIEAgMTYwKSwgKE4vQSwgMjApLCAoTi9BKSwgQVVUTy1CVywgUEFTU0lWRS1TQ0FO
-DQogwqDCoMKgwqDCoMKgwqAgKDU0OTAgLSA1NzMwIEAgMTYwKSwgKE4vQSwgMjApLCAoTi9B
-KSwgQVVUTy1CVywgUEFTU0lWRS1TQ0FODQogwqDCoMKgwqDCoMKgwqAgKDU3MzUgLSA1ODk1
-IEAgMTYwKSwgKE4vQSwgMjApLCAoTi9BKSwgQVVUTy1CVywgUEFTU0lWRS1TQ0FODQoNCg0K
-DQoNCg0KDQoNCk9uIDEyLjA4LjIwMjUgMDU6MjEsIEJhb2NoZW4gUWlhbmcgd3JvdGU6DQo+
-DQo+IE9uIDgvMTAvMjAyNSA5OjU2IFBNLCBQZXRyb3MgQ2hyaXN0b3BvdWxvcyB3cm90ZToN
-Cj4+IERlYXIgYWxsLMKgSSBoYXZlIGEgUXVhbGNvbW0gVGVjaG5vbG9naWVzLCBJbmMgV0NO
-Nzg1eCBXaS1GaSA3KDgwMi4xMWJlKSAzMjBNSHogMngyDQo+PiBbRmFzdENvbm5lY3QgNzgw
-MF0gWzE3Y2I6MTEwN10gKHJldiAwMSkgV2lmaSBjb250cm9sbGVyDQo+PiB3aXRoIEZlZG9y
-YSA0MiBLREUswqBsYXRlc3Qga2VybmVsIDYuMTUuOS0yMDEuZmM0Mi54ODZfNjQgYW5kIHJl
-Y2VudCBmaXJtd2FyZSAweDExMDg4MTFjDQo+PiBmd19idWlsZF90aW1lc3RhbXAgMjAyNS0w
-NS0xNyAwMDoyMSBmd19idWlsZF9pZA0KPj4gUUNfSU1BR0VfVkVSU0lPTl9TVFJJTkc9V0xB
-Ti5ITVQuMS4xLmM1LTAwMjg0LjEtUUNBSE1UU1dQTF9WMS4wX1YyLjBfU0kNCj4+IExJQ09O
-Wi0zDQo+Pg0KPj4gVGhlIDYgR0h6IGJhbmQgaXMgZGlzYWJsZWQsIEkgc3VzcGVjdCB0aGF0
-IHRoZSBwcm9ibGVtIGlzIHRoZSAwMCByZWdpb24gc2V0dGluZyBpbiBwaHkjMSwNCj4+IGhv
-d2V2ZXLCoGFzIHRoaXMgaXMgInNlbGYtbWFuYWdlZCIgSSBoYXZlIG5vdCBtYW5hZ2VkIHRv
-IGNoYW5nZSB0aGlzIChpdyByZWfCoHNldCBvciBhbiAvDQo+PiBldGMvbW9kcHJvYmUuZC9h
-dGgxMmsuY29uZiBmaWxlIHdpdGggIm9wdGlvbnMgYXRoMTJrIGNvdW50cnk9REUiIGhhdmUg
-bm8gZWZmZWN0cykuDQo+IFRyeSB3aXRoIENPTkZJR19BVEhfUkVHX0RZTkFNSUNfVVNFUl9S
-RUdfSElOVFMgZW5hYmxlZC4NCj4NCj4+ICQgaXcgcmVnIGdldA0KPj4gZ2xvYmFsDQo+PiBj
-b3VudHJ5IERFOiBERlMtRVRTSQ0KPj4gKDI0MDAgLSAyNDgzIEAgNDApLCAoTi9BLCAyMCks
-IChOL0EpDQo+PiAoNTE1MCAtIDUyNTAgQCA4MCksIChOL0EsIDIzKSwgKE4vQSksIE5PLU9V
-VERPT1IsIEFVVE8tQlcNCj4+ICg1MjUwIC0gNTM1MCBAIDgwKSwgKE4vQSwgMjApLCAoMCBt
-cyksIE5PLU9VVERPT1IsIERGUywgQVVUTy1CVw0KPj4gKDU0NzAgLSA1NzI1IEAgMTYwKSwg
-KE4vQSwgMjYpLCAoMCBtcyksIERGUw0KPj4gKDU3MjUgLSA1ODc1IEAgODApLCAoTi9BLCAx
-MyksIChOL0EpDQo+PiAoNTk0NSAtIDY0MjUgQCAzMjApLCAoTi9BLCAyMyksIChOL0EpLCBO
-Ty1PVVRET09SDQo+PiAoNTcwMDAgLSA2NjAwMCBAIDIxNjApLCAoTi9BLCA0MCksIChOL0Ep
-DQo+Pg0KPj4gcGh5IzEgKHNlbGYtbWFuYWdlZCkNCj4+IGNvdW50cnkgMDA6IERGUy1VTlNF
-VA0KPj4gKDI0MDIgLSAyNDcyIEAgNDApLCAoTi9BLCAyMCksIChOL0EpDQo+PiAoMjQ1NyAt
-IDI0ODIgQCAyMCksIChOL0EsIDIwKSwgKE4vQSksIFBBU1NJVkUtU0NBTg0KPj4gKDUxNzAg
-LSA1MzMwIEAgMTYwKSwgKE4vQSwgMjApLCAoTi9BKSwgQVVUTy1CVywgUEFTU0lWRS1TQ0FO
-DQo+PiAoNTQ5MCAtIDU3MzAgQCAxNjApLCAoTi9BLCAyMCksIChOL0EpLCBBVVRPLUJXLCBQ
-QVNTSVZFLVNDQU4NCj4+ICg1NzM1IC0gNTg5NSBAIDE2MCksIChOL0EsIDIwKSwgKE4vQSks
-IEFVVE8tQlcsIFBBU1NJVkUtU0NBTg0KPj4NCj4+IEkgaGF2ZSBzZWFyY2hlZCBleHRlbnNp
-dmVseSB0aGUgd2ViLCBmb3VuZCBzb21lIHJlbGV2YW50IGFydGljbGVzIChlLmcuIGh0dHBz
-Oi8vDQo+PiBwYXRjaHdvcmsua2VybmVsLm9yZy9wcm9qZWN0L2xpbnV4LXdpcmVsZXNzL3Bh
-dGNoLzIwMjUwNDAxMDIwODQwLjM1Ny01LQ0KPj4gcXVpY19rYW5neWFuZ0BxdWljaW5jLmNv
-bS8sIHdoaWNoIHNob3VsZCBiZSBpbnRlZ3JhdGVkIGludG8gNi4xNS45IGlmIEkgdW5kZXJz
-dGFuZA0KPj4gY29ycmVjdGx5KSwgYnV0IHN0aWxsIG5vIHNvbHV0aW9uLg0KPiBEbyB5b3Ug
-bWVhbiB3aXRoIHRoZSB3aG9sZSAxMUQgc3VwcG9ydCBzZXJpZXMgbWVyZ2VkIHRoZSBpc3N1
-ZSBpcyBzdGlsbCBzZWVuPw0KPg0KPj4gSSB3b3VsZCBiZSBncmF0ZWZ1bCBmb3Igc29tZSBo
-ZWxwLg0KPj4NCj4+IFRoYW5rIHlvdSB2ZXJ5IG11Y2guDQo+Pg0KPj4NCj4NCj4NCg==
+On 8/13/2025 6:22 AM, Petros Christopoulos wrote:
+> Dear Baochen,
+> 
+> I tried the kernel 6.16.0 today (kernel-6.16.0-200.fc42.x86_64.rpm; it is Fedora kernel
+> test week now) which contains the commit dcfebfd4c8dc0bec9b6649104cecc09f5978c4cb 
+> (=revision v6.16-rc1~132^2~157^2~16^2~62)
+> 
+> but the behavior regarding the Wifi module WCN785x has not changed:
+> 
+> despite  sudo iw reg set DE,
+> phy#0 remains self managed (see below at the end)
+> 
+> However, the option CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS is not enabled in the Fedora
+> kernel, and I have asked the maintainers if this could be enabled (everything is of course
+> simpler if I do not have to recompile every kernel myself, https://bugzilla.redhat.com/
+> show_bug.cgi?id=2387486)
+> 
+> I noticed this option is relevant inside the ath12k code, e.g.
+> 
+> $ grep -r CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS drivers/net/wireless/ath/ath12k/
+> drivers/net/wireless/ath/ath12k/reg.c:  if (!
+> IS_ENABLED(CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS)) {
+> 
+> Could you please let me know:
+> 
+> 1. whether having this option enebled in the kernel is absolutely necessary for the
+> ability to change the region or there are also alternatives?
 
---------------ms010801090302020001020206
-Content-Type: application/pkcs7-signature; name="smime.p7s"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename="smime.p7s"
-Content-Description: S/MIME Cryptographic Signature
+The option is only necessary if you want to manually set the country code. Normally the
+driver/firmware should be able to detect automatically the country from AP's frames using
+11D feature.
 
-MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCC
-DXYwggYBMIID6aADAgECAhAjQo0Vw63QGUZl80tkKdKTMA0GCSqGSIb3DQEBCwUAMIGBMQsw
-CQYDVQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRy
-bzEXMBUGA1UECgwOQWN0YWxpcyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFsaXMgQ2xpZW50IEF1
-dGhlbnRpY2F0aW9uIENBIEczMB4XDTI1MDcxOTE2MTQxOVoXDTI2MDcxOTE2MTQxOVowKTEn
-MCUGA1UEAwwecGV0cm9zLmNocmlzdG9wb3Vsb3NAZ21haWwuY29tMIIBIjANBgkqhkiG9w0B
-AQEFAAOCAQ8AMIIBCgKCAQEAr07zWXrnCI1zbTVpOsdWPg7LO0wiS7/fCXOHakNzio9G5zBF
-89x0ZzgjMCtI9e90VT8bb8gPKyhUwnvNvtHePX4QwVk2tTBZPjk7OYfk3iQynXNLFG808Cfi
-1kArwknrbIvJBX4+UofpGHySO0U3A1BmcqTYB9Xx93LNcAVPTUAaa63g1XP0BFvKPRQSt+PB
-jbYa7CpxzeEq0AQNb5qR9dy0jQ3B4Qwl8PpD4p7VfsR39sxOz0MdjsKbWioPaX19rI5odLAQ
-Ou1ZlPurjyCUrjymbA3/WSsVV4Ls5ROzKur7bbYXcWGx6DnOGVOIdTp/o7czEM19PEOPIL9r
-IIBKCQIDAQABo4IByjCCAcYwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBS+l6mqhL+AvxBT
-fQky+eEuMhvPdzB+BggrBgEFBQcBAQRyMHAwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jYWNlcnQu
-YWN0YWxpcy5pdC9jZXJ0cy9hY3RhbGlzLWF1dGNsaWczMDEGCCsGAQUFBzABhiVodHRwOi8v
-b2NzcDA5LmFjdGFsaXMuaXQvVkEvQVVUSENMLUczMCkGA1UdEQQiMCCBHnBldHJvcy5jaHJp
-c3RvcG91bG9zQGdtYWlsLmNvbTBSBgNVHSAESzBJMDwGBiuBHxABATAyMDAGCCsGAQUFBwIB
-FiRodHRwczovL3d3dy5hY3RhbGlzLml0L2FyZWEtZG93bmxvYWQwCQYHZ4EMAQUBAjAdBgNV
-HSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwSAYDVR0fBEEwPzA9oDugOYY3aHR0cDovL2Ny
-bDA5LmFjdGFsaXMuaXQvUmVwb3NpdG9yeS9BVVRIQ0wtRzMvZ2V0TGFzdENSTDAdBgNVHQ4E
-FgQUuzz/ZVNnMtMVzg8SSt6RV6UBlQEwDgYDVR0PAQH/BAQDAgWgMA0GCSqGSIb3DQEBCwUA
-A4ICAQDJ9XoujR8y0yr4LO1sqQYO9YfoEuZR34N+kBoSlDDZA0DM54gTbSGjGO7cejCgG76f
-a4Dfx9DXC/VIUiw3p95LBJRKBsCBFri91VhqfHH1XDR9zX4rUlP9PzIVdD4xkl1j7NnKxGxA
-pL11AXmhGkYKYneU9OxxrY3ctAT2VB0vHmbsnTfdOF638rRp9fmiHWopBkrxVJ32HMv7GadH
-7iCi4/7Mpu2auYpFIc6FfZha0kPq8gsCjDjUHGn7Kz5gsuW0nLx8ShtPKo05cJQ89G+aZpYN
-Oi5K+8HXGVx4uafP9Sdy0lLDegyDWY7Zdx14qeXet5sujcZ00ta+fXl6GAU40YjKwu7vFqDq
-ZdyG01f+ceVJhIH4jNJDho5BWCCgzPkjEln7SgAw5KIg13CJljRFVgEDxab6FOPNokMzDwi/
-ogqG/7HXtUc5hfjr3Euwcz/KzzgYip1uI4n8gRYgS2fqsbLLlvn0031G2tAkJZJUFKsAJupU
-YeJo1KBSJxIY2tvEqXa72Si6TjGmOO0E8Wt/RRyGBN3Jp1yZGziVEqPvqElc6IZ8CAUir4h4
-FWM6V5lH4nWlmpoDjChGA1oxfcsw5e6lcKx1gslW3Goxaj5VXk3ub3SwdVX5neDspqgU6Y0q
-R3P82qZC2qW3H1qB/ws2Kt4F8hlGntphvCbRlV5PIjCCB20wggVVoAMCAQICEBcQPt49ihy1
-ygZRk+fKQ2swDQYJKoZIhvcNAQELBQAwazELMAkGA1UEBhMCSVQxDjAMBgNVBAcMBU1pbGFu
-MSMwIQYDVQQKDBpBY3RhbGlzIFMucC5BLi8wMzM1ODUyMDk2NzEnMCUGA1UEAwweQWN0YWxp
-cyBBdXRoZW50aWNhdGlvbiBSb290IENBMB4XDTIwMDcwNjA4NDU0N1oXDTMwMDkyMjExMjIw
-MlowgYExCzAJBgNVBAYTAklUMRAwDgYDVQQIDAdCZXJnYW1vMRkwFwYDVQQHDBBQb250ZSBT
-YW4gUGlldHJvMRcwFQYDVQQKDA5BY3RhbGlzIFMucC5BLjEsMCoGA1UEAwwjQWN0YWxpcyBD
-bGllbnQgQXV0aGVudGljYXRpb24gQ0EgRzMwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIK
-AoICAQDt5oeWocGktu3CQlX3Pw8PImBfE+CmQ4iGSZF5HBsvGlAP3EYB7va6OobMUWHvxA+A
-CHEpWq0YfNh6rRUlULOGcIpEFtVf4nAiEvdQtiFQBmtWJSn3naoMHqpMvmwZ4lL0Xr1U9JHm
-TqkU3DuYcNNO3S+hYWDZpWQbeSGibNVeiJ4kY6JDh0fvqloK1BsuS3n2OgArPYGfAYtDjCvT
-2d+6Ym3kArHZjEcrZeBI+yVVnjPwbTSCKax8DtS2NP/CJ6RjpnRvuSwusRy84OdwdB71VKs1
-EDXj1ITcCWRZpkz+OhV6L8Zh+P0rmOSJF6KdHiaozfncURx4s54GFJNRGkx1DnCxcuL0NJMY
-G42/hrDYOjNv+oGWSEZO/CT3aaLSMB5wTbZKfcD1R+tTanXD+5Gz5Mi15DTE7QH8naZjZxqq
-hyxL1KyuIgaVDxvQtPSjo5vTsoa09rn+Ui8ybHnvYO/a/68OIQIHLGbUd2COnwm0TiZ3Jg/o
-YGxwnJPvU1nDXNcecWTIJvFF5qD2ppJH3HgJVVePUEOY1E4Kp3k0B8hdRdhMV5n+O6RCKCTF
-cZaESF8sELgdrqnCLPP1+rX7DA8pxZoX0/9Jk64EOsbfQyLIJlrrob2YS0Xlku6HisZ8qrHL
-hnkzF5y7O34xmatIp8oZ5c54QP+K5flnTYzWjuIxLwIDAQABo4IB9DCCAfAwDwYDVR0TAQH/
-BAUwAwEB/zAfBgNVHSMEGDAWgBRS2Ig6yJ94Zu2J83s4cJTJAgI20DBBBggrBgEFBQcBAQQ1
-MDMwMQYIKwYBBQUHMAGGJWh0dHA6Ly9vY3NwMDUuYWN0YWxpcy5pdC9WQS9BVVRILVJPT1Qw
-RQYDVR0gBD4wPDA6BgRVHSAAMDIwMAYIKwYBBQUHAgEWJGh0dHBzOi8vd3d3LmFjdGFsaXMu
-aXQvYXJlYS1kb3dubG9hZDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwgeMGA1Ud
-HwSB2zCB2DCBlqCBk6CBkIaBjWxkYXA6Ly9sZGFwMDUuYWN0YWxpcy5pdC9jbiUzZEFjdGFs
-aXMlMjBBdXRoZW50aWNhdGlvbiUyMFJvb3QlMjBDQSxvJTNkQWN0YWxpcyUyMFMucC5BLiUy
-ZjAzMzU4NTIwOTY3LGMlM2RJVD9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0O2JpbmFyeTA9
-oDugOYY3aHR0cDovL2NybDA1LmFjdGFsaXMuaXQvUmVwb3NpdG9yeS9BVVRILVJPT1QvZ2V0
-TGFzdENSTDAdBgNVHQ4EFgQUvpepqoS/gL8QU30JMvnhLjIbz3cwDgYDVR0PAQH/BAQDAgEG
-MA0GCSqGSIb3DQEBCwUAA4ICAQAmm+cbWQ10sxID6edV94SAhc1CwzthHFfHpuYS30gisWUf
-Wpgp43Dg1XzG2in3VGV7XrzCCGZh4JM/XQWp+4oxmyV42Qjz9vc8GRksgo6X2nYObPYZzQjd
-a9wxsCB38i4G3H33w8lf9sFvl0xm4ZXZ2s2bF/PdqvrK0ZgvF51+MoIPnli/wJBw3p72xbk5
-Sb1MneSO3tZ293WFzDmz7tuGU0PfytYUkG7O6annGqbU1I6CA6QVKUqeFLPodSODAFqJ3pim
-KD0vX9MuuSa0QinH7CkiPtZMD0mpwwzIsnSs3qOOl60tIZQOTc0I6lCe1LLhrz7Q75J6nNL9
-N5zVwZ1I3o2Lb8Dt7BA13VFuZvZIzapUGV83R7pmSVaj1Bik1nJ/R393e6mwppsT140KDVLh
-4Oenywmp2VpBDuEj9RgICAO0sibv8n379LbO7ARa0kw9y9pggFzN2PAX25b7w0n9m78kpv3z
-3vW65rs6wl7E8VEHNfv8+cnb81dxN3C51KElz+l31zchFTurD5HFEpyEhzO/fMS5AkweRJIz
-wozxNs7OL/S/SVTpJLJL1ukZ1lnHHX0d3xCzRy/5HqfK3uiG22LPB5+RjNDobPAjAz2BKMfk
-F/+v0pzn8mqqkopQaJzEAbLbMpgQYHRCjvrUxxwjJyUFb2Z+40UNtMF4MTK7zTGCBOAwggTc
-AgEBMIGWMIGBMQswCQYDVQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9u
-dGUgU2FuIFBpZXRybzEXMBUGA1UECgwOQWN0YWxpcyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFs
-aXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEczAhAjQo0Vw63QGUZl80tkKdKTMA0GCWCG
-SAFlAwQCAQUAoIIDGjAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEP
-Fw0yNTA4MTIyMjIyMTFaMC8GCSqGSIb3DQEJBDEiBCDYnoMftvJrsvs01xPpbqB7uUgfBdfT
-DN/BXEKmz67RfTCBpwYJKwYBBAGCNxAEMYGZMIGWMIGBMQswCQYDVQQGEwJJVDEQMA4GA1UE
-CAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRybzEXMBUGA1UECgwOQWN0YWxp
-cyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFsaXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcz
-AhAjQo0Vw63QGUZl80tkKdKTMIGpBgsqhkiG9w0BCRACCzGBmaCBljCBgTELMAkGA1UEBhMC
-SVQxEDAOBgNVBAgMB0JlcmdhbW8xGTAXBgNVBAcMEFBvbnRlIFNhbiBQaWV0cm8xFzAVBgNV
-BAoMDkFjdGFsaXMgUy5wLkEuMSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNh
-dGlvbiBDQSBHMwIQI0KNFcOt0BlGZfNLZCnSkzCCAVcGCSqGSIb3DQEJDzGCAUgwggFEMAsG
-CWCGSAFlAwQBKjALBglghkgBZQMEAQIwCgYIKoZIhvcNAwcwDQYIKoZIhvcNAwICAQUwDQYI
-KoZIhvcNAwICAQUwBwYFKw4DAgcwDQYIKoZIhvcNAwICAQUwBwYFKw4DAhowCwYJYIZIAWUD
-BAIBMAsGCWCGSAFlAwQCAjALBglghkgBZQMEAgMwCwYJYIZIAWUDBAIEMAsGCWCGSAFlAwQC
-BzALBglghkgBZQMEAggwCwYJYIZIAWUDBAIJMAsGCWCGSAFlAwQCCjALBgkqhkiG9w0BAQEw
-CwYJK4EFEIZIPwACMAgGBiuBBAELADAIBgYrgQQBCwEwCAYGK4EEAQsCMAgGBiuBBAELAzAL
-BgkrgQUQhkg/AAMwCAYGK4EEAQ4AMAgGBiuBBAEOATAIBgYrgQQBDgIwCAYGK4EEAQ4DMA0G
-CSqGSIb3DQEBAQUABIIBAJ72L+6H02T/LqM6ktW9CBa9YIWxXDBlHE4ttTeCcIWWF+W5REz7
-mahgg1AfaIld0rfLA61BeaJ8VQNtfGew4YxIhu/WRZnEEL46du+rJBt8kHJVRcfPUTKUi1um
-2+/ykkZN4Wo6X+vPJcVQVLruR/sg6jO0tJwORZaECJNeE2+KX4+Iu9VqnRGzHeDl4n8GGVqW
-j1ZseZzPD7aF8d8Ury1M0lyzxO6HLp9AqXzLbPEyon/X+ugMFfGgJfgq7HeICyU3x7Vm7mwF
-905H3664u74Y0nOg7YtPcKkFf4Xy9Di5kZ+S51TVzJAzb93yAUEoDifiXPSAXZusz0h1B5pF
-ahgAAAAAAAA=
---------------ms010801090302020001020206--
+11D feature takes some time to detect country info, so please wait, say at least 1 minute,
+before you make conclusion. If still fail, please help collect verbose ath12k log with
+
+	modprobe ath12k debug_mask=0xffffffff
+
+> 
+> 2. whether if this option is enabled with kernel 6.16.0 (with the commit above), I should
+> be able to change the region of the WCN785x module with a simple sudo iw reg set DE, or
+> whether still another special method will be necessary?
+Enabling CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS will let you be able to set country code
+using iw. There is no alternative for this purpose.
+
+> 
+> Thank you very much and kind regards
+> 
+> Petros
+> 
+> 
+> global
+> country DE: DFS-ETSI
+>         (2400 - 2483 @ 40), (N/A, 20), (N/A)
+>         (5150 - 5250 @ 80), (N/A, 23), (N/A), NO-OUTDOOR, AUTO-BW
+>         (5250 - 5350 @ 80), (N/A, 20), (0 ms), NO-OUTDOOR, DFS, AUTO-BW
+>         (5470 - 5725 @ 160), (N/A, 26), (0 ms), DFS
+>         (5725 - 5875 @ 80), (N/A, 13), (N/A)
+>         (5945 - 6425 @ 320), (N/A, 23), (N/A), NO-OUTDOOR
+>         (57000 - 66000 @ 2160), (N/A, 40), (N/A)
+> 
+> phy#0 (self-managed)
+> country 00: DFS-UNSET
+>         (2402 - 2472 @ 40), (N/A, 20), (N/A)
+>         (2457 - 2482 @ 20), (N/A, 20), (N/A), PASSIVE-SCAN
+>         (5170 - 5330 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+>         (5490 - 5730 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+>         (5735 - 5895 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> On 12.08.2025 05:21, Baochen Qiang wrote:
+>>
+>> On 8/10/2025 9:56 PM, Petros Christopoulos wrote:
+>>> Dear all, I have a Qualcomm Technologies, Inc WCN785x Wi-Fi 7(802.11be) 320MHz 2x2
+>>> [FastConnect 7800] [17cb:1107] (rev 01) Wifi controller
+>>> with Fedora 42 KDE, latest kernel 6.15.9-201.fc42.x86_64 and recent firmware 0x1108811c
+>>> fw_build_timestamp 2025-05-17 00:21 fw_build_id
+>>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SI
+>>> LICONZ-3
+>>>
+>>> The 6 GHz band is disabled, I suspect that the problem is the 00 region setting in phy#1,
+>>> however as this is "self-managed" I have not managed to change this (iw reg set or an /
+>>> etc/modprobe.d/ath12k.conf file with "options ath12k country=DE" have no effects).
+>> Try with CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS enabled.
+>>
+>>> $ iw reg get
+>>> global
+>>> country DE: DFS-ETSI
+>>> (2400 - 2483 @ 40), (N/A, 20), (N/A)
+>>> (5150 - 5250 @ 80), (N/A, 23), (N/A), NO-OUTDOOR, AUTO-BW
+>>> (5250 - 5350 @ 80), (N/A, 20), (0 ms), NO-OUTDOOR, DFS, AUTO-BW
+>>> (5470 - 5725 @ 160), (N/A, 26), (0 ms), DFS
+>>> (5725 - 5875 @ 80), (N/A, 13), (N/A)
+>>> (5945 - 6425 @ 320), (N/A, 23), (N/A), NO-OUTDOOR
+>>> (57000 - 66000 @ 2160), (N/A, 40), (N/A)
+>>>
+>>> phy#1 (self-managed)
+>>> country 00: DFS-UNSET
+>>> (2402 - 2472 @ 40), (N/A, 20), (N/A)
+>>> (2457 - 2482 @ 20), (N/A, 20), (N/A), PASSIVE-SCAN
+>>> (5170 - 5330 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+>>> (5490 - 5730 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+>>> (5735 - 5895 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+>>>
+>>> I have searched extensively the web, found some relevant articles (e.g. https://
+>>> patchwork.kernel.org/project/linux-wireless/patch/20250401020840.357-5-
+>>> quic_kangyang@quicinc.com/, which should be integrated into 6.15.9 if I understand
+>>> correctly), but still no solution.
+>> Do you mean with the whole 11D support series merged the issue is still seen?
+>>
+>>> I would be grateful for some help.
+>>>
+>>> Thank you very much.
+>>>
+>>>
+>>
+>>
+
 
