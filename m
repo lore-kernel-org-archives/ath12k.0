@@ -4,120 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4D45CA0EDC
-	for <ath12k@archiver.kernel.org>; Wed, 13 Aug 2025 03:13:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86718CA0EC4
+	for <ath12k@archiver.kernel.org>; Wed, 13 Aug 2025 06:01:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=sllljOc1ljNLdOQPpZWR1FwzW1viCVC1FoGGN0aVrZg=; b=RDsdEQB4mBef0LgZunQotPatyk
-	Wm8klZiOfNIPOBh0j7TGBoQoAZahPBf1w8guc1/w/qHNduNxDBT+9VzLtBsV7SnCUqAcr22mMLr9Q
-	1/ifHiYxroYKoyLmOwSlrBIjJ9BMHHK31Jj10Ta3Fq7V30q99yp/2DeOleDO01zi7yF983cG3vBP1
-	3atcbWRLc/LOCxat5L5M896nFBLcc7LIjBO6v7bYcOx/P3kPEVLldA/o6Zn9xZzR8PRExB2nxf2Sp
-	0zFrtROQgxZdv59W1ZgmfkVhW47lbxaweGUIWpOaAcdFJC8qqyY869mWYC3lOF1gJBy3kkUOixlab
-	3PlC35ZA==;
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0LH42O/Q33/mOKw5CPb2wtIPYoPUc7vtLbmoHkL8pbw=; b=hzs/ODsnndvlaRrjClz8KA59mI
+	/SSYlKESlbvbEK94V8SCooJYb6vcbWSyX959UvjJzveK06vnWSalgzCuSlaWdV0NyrfqLj4YoCFGq
+	e3oAmfHk6W8FThWJ+g6ZkuLF+ItVD7/oI43T16IltfKKpayBUcOUH4GKyhUskqvkPeAY9Jk9meVKL
+	JFxEW9FgUYVsAsgx/LepRHSCGkBoGGlqV+kTGxcHTh6LJIXAN5kAy6trhViISnDr4vp5jdmAkpvkf
+	nUhlaoFY5d17anjY+9W51J/H36fP/zGmkBLCcT/Oj/8v0GzIx+TmU3Bak6eATG5I2o8+dTnIGnweq
+	kOVAIRrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1um1vs-0000000CUle-2Snc;
-	Wed, 13 Aug 2025 03:13:44 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1um4YP-0000000CiwL-0sUL;
+	Wed, 13 Aug 2025 06:01:41 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1um1vq-0000000CUkN-0CkN
+	id 1um4PM-0000000ChWc-3ljJ
 	for ath12k@lists.infradead.org;
-	Wed, 13 Aug 2025 03:13:43 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57CLgU80006035
-	for <ath12k@lists.infradead.org>; Wed, 13 Aug 2025 03:13:40 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	sllljOc1ljNLdOQPpZWR1FwzW1viCVC1FoGGN0aVrZg=; b=Jai0GnZLkFYgSSBz
-	kF0k1Hb50NEHWANTUFfASxckbLu8YqSxbu6dALM2w/orS3/IIP/r+tEpg0QEcpMI
-	ffXONLL/cVnQ8V5RBUfeHi64y4km4/vXdnhbaz8tEnDfxpfpZapNd9GKZE7hXPhe
-	X8wVRgatvee0Lzlg0o9jTpWxjZk7g2fy+bIqYT8IyoKrjC6idQniKRCWQHJQ7buv
-	KMO3QhI/O6MPZHk3fDRYCWl2h7xGiWsj5aFAIb8gE8KteZ772X4TOkNBMsa+SuEk
-	GpEFwEG20JjggFThhCjXpOlINtN5fYBK2Tj890GLCAizhFJykudyDmmUPOSMRGlZ
-	XaX2aA==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48ffhjp2qw-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 13 Aug 2025 03:13:40 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2424aaa9840so67002205ad.1
-        for <ath12k@lists.infradead.org>; Tue, 12 Aug 2025 20:13:40 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755054819; x=1755659619;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=sllljOc1ljNLdOQPpZWR1FwzW1viCVC1FoGGN0aVrZg=;
-        b=hUb1zS/FI2zL7GQGEI543OIAiSOnVCTnrhpDViOypsY5I8JYZhAD3twM6ivoYElEr7
-         1xlblK/psLfB4cj+DRG/DA+StRp8vXuzX2hcyBwssZa1+1dvmb4c43qkvLpDhqpy4umj
-         JEf5gXStZKLu0BtmgLPbOyEfEuFMYCXAHW9qet+SQ4xb1JUdt7rD0zKVEz4W4tBaiSJF
-         8XAi8NTbhXYrMd0CKYeXaszE6RwuiU/GPS7gRRJBoeQFpmf4NEAGQuIcAknmcMis80ye
-         JKyTGKtpV/YLM3aJFaX1XQlrke9ThbJlqtjiTyezNiUam/KWZwRpjL56clhZtJiq/cOV
-         cn6A==
-X-Forwarded-Encrypted: i=1; AJvYcCVj+ZIjnYW2k3WOVytVZqRH2ft74qv7Y2GpQNC2q7HMj2ibeT9IQWNslev1j4wn/KSsiTGXS/0=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw5nmIrNP9uGmlymUf7CdOxH//K+Mbl5MX4IpbxZEUGLC2zmbFI
-	Az0Kx6OlHI0knbmTixE9PFQDSTNzjCQlF6K8GOEwszVGsQ4v+1GSeQPE0tsBP7TjhjC2JNxY5iM
-	pzVh16mdiuSOilgT42u3MbLUSQVcsEMRjjCvp9A79uD5Bb/S6/IXbuky+2g7w0Zvh
-X-Gm-Gg: ASbGncuGfpleaYyebiSawOQWVf27Ei8VI34eVqRdSD+T6Js7Ke2M9lyKkWJKHdN3Xpt
-	hDofDWRWjPQwNlwCQC71L3VY+Iv5peGVa/nul4c97Wpmq4JfJAInDkH6PsL5dWPbVmdYa/RaHaM
-	eyvLDgPt9W+12hx5/zNEbG7Vs7oYLCux6tlAlV7VYrAKpNkdK2KMyjbVjZfuSGuO6v5byDfqvm+
-	CwgWgd/vj2ueU9JMa4pV1qBEsowaDoFAt71P7BPcBfFUtJ6EXfJ+9Mlg2UXZjJLFmnmg1Fpc69Q
-	q2ws6MY9oZ8KvMDQc+MPEeadbusR9p8Cg1NRVduXOjhlCft+mFYqpFTPyiXi63yDYlo8CcLFB4+
-	45MwfSYu6GUCl0z+olORN8oJXpWipt/U=
-X-Received: by 2002:a17:902:ce84:b0:242:2cad:2f8 with SMTP id d9443c01a7336-2430d10c610mr23199955ad.22.1755054819066;
-        Tue, 12 Aug 2025 20:13:39 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IE48ID7oB0DuUh0zxWdAtyfFe/BB9okuFdm9Hbecr68kLS/gpnnB9K35MQrvsaWGRvKFLrsLQ==
-X-Received: by 2002:a17:902:ce84:b0:242:2cad:2f8 with SMTP id d9443c01a7336-2430d10c610mr23199585ad.22.1755054818502;
-        Tue, 12 Aug 2025 20:13:38 -0700 (PDT)
-Received: from [10.133.33.19] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-241e8aa404dsm311819545ad.148.2025.08.12.20.13.37
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 12 Aug 2025 20:13:38 -0700 (PDT)
-Message-ID: <3ae5fcec-bfa4-4d41-8ee6-2c26ce0e4f51@oss.qualcomm.com>
-Date: Wed, 13 Aug 2025 11:13:33 +0800
+	Wed, 13 Aug 2025 05:52:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 19817A5765F;
+	Wed, 13 Aug 2025 05:52:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B418BC4CEEB;
+	Wed, 13 Aug 2025 05:52:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755064339;
+	bh=0LH42O/Q33/mOKw5CPb2wtIPYoPUc7vtLbmoHkL8pbw=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=rOnW++6TVkSFbDmAKHChs12r/pcXOsfkWNWlIV7AR/IJVdYPxifMMuSn+FFtHfmrR
+	 j56oX6BkqK3rfcnybyYg8gNxXVc9jAZuka/LJcFQpHD1oBeSaU6JCT3M4GHhLUoaVV
+	 AvJGUQTs7V0SDt+oazjWSCHxLy8WsIN1ksWb53DOzHch9W0LWjHIsQ77uzXs+fo9d2
+	 Q49R0nmvnebYwYboq/4sHjp7TvwMPR0dyIpGUZ8Uy/qoUPFCCfvna0r/Oi/F2doZvw
+	 5QU9usJBnmF3ETLu23+0MYUAgs6VdAwZmHMg7UxGP7IUUeHPS6cmU/qSs+8Ra5/dmN
+	 3fSiHkOsrNb+A==
+Message-ID: <00a72188-8ac7-4527-8128-352d0882754f@kernel.org>
+Date: Wed, 13 Aug 2025 07:52:17 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: Enabling 6 GHz band in WCN785x
-To: Petros Christopoulos <petros.christopoulos@gmail.com>,
-        ath12k@lists.infradead.org
-References: <6492c438-7cff-400a-80f2-cf17e298569f@gmail.com>
- <7d934313-6062-4165-b001-853b1a66e2bc@oss.qualcomm.com>
- <b5ba0e58-92e7-456f-96bf-f5921df2ae21@gmail.com>
+Subject: Re: [PATCH ath12k-ng 03/13] wifi: ath12k: Move Wi-Fi 7 WMI
+ configuration to dedicated file
+To: Kiran Venkatappa <quic_kiranv@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250812-ath12k-mod-v1-0-8c9b0eb9335d@quicinc.com>
+ <20250812-ath12k-mod-v1-3-8c9b0eb9335d@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-In-Reply-To: <b5ba0e58-92e7-456f-96bf-f5921df2ae21@gmail.com>
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <20250812-ath12k-mod-v1-3-8c9b0eb9335d@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODExMDA3NCBTYWx0ZWRfX546eoGonnuiv
- P9TMVUokIf1ntpUODNnXlN8FqPNynMZTV3aTo8CJQLQ4oyj7kt/AwP9f5WPffYtR9iYCUdkiuEA
- nUzJVYfXGqS24Hbx0TTA+mt6ashjf4HPsaTliWQHJA77gbziDHCVzJDDGwWbmiSi4LK+Gv2g9VB
- ir3PF3wE0ecpLNANpB+B1zbW8bMRc0Tai4Mn01OkPwdZM/vUM6NlwuucBap5vrYOOH58yUuM8Js
- dwxZ9NJDfn1EAwm8Si6lzqXywPu30bMp7UuioFsV6G9mAtErZOJ0VqhLhXctmqXITr0bcm7E0H8
- NFVGk7KlGDlrsXri+zzk4ze2zmvBRkkzUpWzBauMIcZwMOSZCiFHd6lG5fJsSnbJpsbUUA+kiOz
- VeLT6KpB
-X-Proofpoint-GUID: KMWdjZu49MKGRbGrfKxtJKTJqwz7wqLM
-X-Authority-Analysis: v=2.4 cv=TJFFS0la c=1 sm=1 tr=0 ts=689c02e4 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=20KFwNOVAAAA:8 a=VwQbUJbxAAAA:8
- a=COk6AnOGAAAA:8 a=guFGt37yKE0mxoUemLIA:9 a=lqcHg5cX4UMA:10 a=3ZKOabzyN94A:10
- a=QEXdDO2ut3YA:10 a=z2U-W3hJrleVIN9YIjzO:22 a=1OuFwYUASf3TG4hYMiVC:22
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: KMWdjZu49MKGRbGrfKxtJKTJqwz7wqLM
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-12_08,2025-08-11_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 suspectscore=0 adultscore=0 impostorscore=0 malwarescore=0
- phishscore=0 clxscore=1015 spamscore=0 bulkscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2508110074
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250812_201342_214052_C108CFCB 
-X-CRM114-Status: GOOD (  28.34  )
+X-CRM114-CacheID: sfid-20250812_225221_074461_E436D903 
+X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,128 +118,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On 12/08/2025 19:09, Kiran Venkatappa wrote:
+> +}
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi_wifi7.h b/drivers/net/wireless/ath/ath12k/wmi_wifi7.h
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..1514e3e8d4cb65d3d95d95a1c1593a7b66abcf58
+> --- /dev/null
+> +++ b/drivers/net/wireless/ath/ath12k/wmi_wifi7.h
+> @@ -0,0 +1,15 @@
+> +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
+> +/*
+> + * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+> + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 
+Don't rewrite the copyrights. Original file had different one. GPL FAQ
+also EXPLICITLY asks for date in copyrights and does not allow one
+without the date.
 
-On 8/13/2025 6:22 AM, Petros Christopoulos wrote:
-> Dear Baochen,
-> 
-> I tried the kernel 6.16.0 today (kernel-6.16.0-200.fc42.x86_64.rpm; it is Fedora kernel
-> test week now) which contains the commit dcfebfd4c8dc0bec9b6649104cecc09f5978c4cb 
-> (=revision v6.16-rc1~132^2~157^2~16^2~62)
-> 
-> but the behavior regarding the Wifi module WCN785x has not changed:
-> 
-> despite  sudo iw reg set DE,
-> phy#0 remains self managed (see below at the end)
-> 
-> However, the option CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS is not enabled in the Fedora
-> kernel, and I have asked the maintainers if this could be enabled (everything is of course
-> simpler if I do not have to recompile every kernel myself, https://bugzilla.redhat.com/
-> show_bug.cgi?id=2387486)
-> 
-> I noticed this option is relevant inside the ath12k code, e.g.
-> 
-> $ grep -r CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS drivers/net/wireless/ath/ath12k/
-> drivers/net/wireless/ath/ath12k/reg.c:  if (!
-> IS_ENABLED(CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS)) {
-> 
-> Could you please let me know:
-> 
-> 1. whether having this option enebled in the kernel is absolutely necessary for the
-> ability to change the region or there are also alternatives?
+(and before you bring internal qcom regulations, let me remind that they
+do not matter. we discussed this in other thread)
 
-The option is only necessary if you want to manually set the country code. Normally the
-driver/firmware should be able to detect automatically the country from AP's frames using
-11D feature.
-
-11D feature takes some time to detect country info, so please wait, say at least 1 minute,
-before you make conclusion. If still fail, please help collect verbose ath12k log with
-
-	modprobe ath12k debug_mask=0xffffffff
-
-> 
-> 2. whether if this option is enabled with kernel 6.16.0 (with the commit above), I should
-> be able to change the region of the WCN785x module with a simple sudo iw reg set DE, or
-> whether still another special method will be necessary?
-Enabling CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS will let you be able to set country code
-using iw. There is no alternative for this purpose.
-
-> 
-> Thank you very much and kind regards
-> 
-> Petros
-> 
-> 
-> global
-> country DE: DFS-ETSI
->         (2400 - 2483 @ 40), (N/A, 20), (N/A)
->         (5150 - 5250 @ 80), (N/A, 23), (N/A), NO-OUTDOOR, AUTO-BW
->         (5250 - 5350 @ 80), (N/A, 20), (0 ms), NO-OUTDOOR, DFS, AUTO-BW
->         (5470 - 5725 @ 160), (N/A, 26), (0 ms), DFS
->         (5725 - 5875 @ 80), (N/A, 13), (N/A)
->         (5945 - 6425 @ 320), (N/A, 23), (N/A), NO-OUTDOOR
->         (57000 - 66000 @ 2160), (N/A, 40), (N/A)
-> 
-> phy#0 (self-managed)
-> country 00: DFS-UNSET
->         (2402 - 2472 @ 40), (N/A, 20), (N/A)
->         (2457 - 2482 @ 20), (N/A, 20), (N/A), PASSIVE-SCAN
->         (5170 - 5330 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
->         (5490 - 5730 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
->         (5735 - 5895 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> On 12.08.2025 05:21, Baochen Qiang wrote:
->>
->> On 8/10/2025 9:56 PM, Petros Christopoulos wrote:
->>> Dear all, I have a Qualcomm Technologies, Inc WCN785x Wi-Fi 7(802.11be) 320MHz 2x2
->>> [FastConnect 7800] [17cb:1107] (rev 01) Wifi controller
->>> with Fedora 42 KDE, latest kernel 6.15.9-201.fc42.x86_64 and recent firmware 0x1108811c
->>> fw_build_timestamp 2025-05-17 00:21 fw_build_id
->>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SI
->>> LICONZ-3
->>>
->>> The 6 GHz band is disabled, I suspect that the problem is the 00 region setting in phy#1,
->>> however as this is "self-managed" I have not managed to change this (iw reg set or an /
->>> etc/modprobe.d/ath12k.conf file with "options ath12k country=DE" have no effects).
->> Try with CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS enabled.
->>
->>> $ iw reg get
->>> global
->>> country DE: DFS-ETSI
->>> (2400 - 2483 @ 40), (N/A, 20), (N/A)
->>> (5150 - 5250 @ 80), (N/A, 23), (N/A), NO-OUTDOOR, AUTO-BW
->>> (5250 - 5350 @ 80), (N/A, 20), (0 ms), NO-OUTDOOR, DFS, AUTO-BW
->>> (5470 - 5725 @ 160), (N/A, 26), (0 ms), DFS
->>> (5725 - 5875 @ 80), (N/A, 13), (N/A)
->>> (5945 - 6425 @ 320), (N/A, 23), (N/A), NO-OUTDOOR
->>> (57000 - 66000 @ 2160), (N/A, 40), (N/A)
->>>
->>> phy#1 (self-managed)
->>> country 00: DFS-UNSET
->>> (2402 - 2472 @ 40), (N/A, 20), (N/A)
->>> (2457 - 2482 @ 20), (N/A, 20), (N/A), PASSIVE-SCAN
->>> (5170 - 5330 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
->>> (5490 - 5730 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
->>> (5735 - 5895 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
->>>
->>> I have searched extensively the web, found some relevant articles (e.g. https://
->>> patchwork.kernel.org/project/linux-wireless/patch/20250401020840.357-5-
->>> quic_kangyang@quicinc.com/, which should be integrated into 6.15.9 if I understand
->>> correctly), but still no solution.
->> Do you mean with the whole 11D support series merged the issue is still seen?
->>
->>> I would be grateful for some help.
->>>
->>> Thank you very much.
->>>
->>>
->>
->>
-
+Best regards,
+Krzysztof
 
