@@ -4,206 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8D47CA0EE0
-	for <ath12k@archiver.kernel.org>; Fri, 15 Aug 2025 08:15:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E00ECA0EE4
+	for <ath12k@archiver.kernel.org>; Fri, 15 Aug 2025 13:14:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=v2Ow0XdO0nal+O84r2D/rQy4LltEolr4IY2TwcWku2w=; b=kqh3w3Li9ioBLyDBPXIVw9Y49p
-	umkrLiaR789AcLxX3bqG1d+jdWkQczLiAeAPxRn7fZ/IGa8pVDE9/aYNf1XkuCDEYdfgica4Ar+jR
-	Hq2I4K487FOkXfbxqyWbrpxmqKZDdZ9o8sk1VVrL6cxaRMXhBQ93ykYtoH2JwfCxdqLDyTlX7NtVg
-	jxYiX55ST0rngodicF510GdveC8s0F/0/3EmYLsamNKs3O7YrXc2V1MLZ5dEjbhiT6Yfl8s1EqcJW
-	ugqdQMbtJxMOC0I/hK9wBoVlfCb0w/AuN55cmjyd+X49rzabKNyl8jMyWPwD/TZENEhcdaV71OBue
-	50TuovdQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=4vBUeuXNDIqoWiMlVcX7q5VBbBd1IYHnZHLNnL49+N4=; b=xU6w3tIJ+V7HrPq/5yRmkaI74e
+	fsORtVRX4k9wWjHe7z5c/3EIqBo8HpDKBMP8XOH91Xlqv+SvI//6CXHngXzkKoJ78TVqHdz4JhzBq
+	kflKCj8hYTx7Utl/0W30ujyavIcodLGqvh35II4P4+M4uO0aHBUg4H7zCq4525oA7AdEV9LRSftkq
+	gYvXPRg5Nog/77DtK+cl+xbuYz1s2vw9rc05SkcZg986f/DNBCDbCAE5glDXLXzQPe0CyC9abn7du
+	qW+6RRdLS+L73vPFeUcn6KZwKKmpqLVOlfWWeTsf8VIN8zWHMCjPJLZvSBbcx+8TMJYvh3mITNZB5
+	GVsHFs2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umpay-00000001pcL-2A3S;
-	Fri, 15 Aug 2025 08:15:28 +0000
-Received: from mx07-0057a101.pphosted.com ([205.220.184.10])
+	id 1umuGD-00000002Y76-3Dx1;
+	Fri, 15 Aug 2025 13:14:21 +0000
+Received: from mail.as201155.net ([185.84.6.188])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umpZ2-00000001pM1-3Czy
+	id 1umr9e-000000027kW-1Dv3
 	for ath12k@lists.infradead.org;
-	Fri, 15 Aug 2025 08:13:30 +0000
-Received: from pps.filterd (m0214197.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 57F5UI9O2729594;
-	Fri, 15 Aug 2025 10:13:12 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=270620241; bh=v2Ow0XdO0nal+O84r2D/rQ
-	y4LltEolr4IY2TwcWku2w=; b=w92BidxOzlJCciP9qLxhrtIN2FJN1vP9BXfioZ
-	BCr1WIhtCRUR7ukhjJGRWTOAVsYbeTmN3yXI7RAhjiAok9x83qCOXTjM/YZZrVZS
-	XstXkJGV1PpEAhWKkfMNEoxbQTAznaswxJVd6y8+K9BS643JWDAtMQpLdmep2V6A
-	kzVbWzvsLbMhKVf4cJGRDwlTXCXRgyXzZHFEZykqpWpX1KSAmnoELXuoaTyalaPR
-	DtLU+GKJT6SoLwlDyY49ZHWucc1mG2vVsd1Y4wVgOgXgYevMq6A0aW5JK7T/9/vZ
-	PRt6qrx8vQPxlg9rqDU42NEokAFno8qBqoPX9HOhseJMDJHg==
-Received: from eur05-vi1-obe.outbound.protection.outlook.com (mail-vi1eur05on2097.outbound.protection.outlook.com [40.107.21.97])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 48gb9ytrg4-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Fri, 15 Aug 2025 10:13:12 +0200 (MEST)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Ghkuq08V1O9rfeY0MMt2jzZJ7tTjT7Y2VRN5v4FF/80cweRPivqpu2zoerfGbqVcr5TUR20K09ZxNaWYVToFi1Sh95n+/AOqoy0QHY35fhvC8lvdTvUEaX2MC/WT4oKUtSQZdaCwGcVhpt9HXSq9EaDLgo7MeZxW7vZIRJ4Tw0C8BPv1/Bmpr52gekXaqn2bIUrsIt3jOq03R8Ty+EDao4UqEwj2yWpS3BD6Gvxj8tx/1MMj4cIibA0I6AQ8RHNjkzi7T0klkwaKHauFFlUmXiqg9J70FqlVuaCIHvKVVA/vg27QF2LeZBIKnaZJ+XcWxm4/6vEejoVsOJAzPo+mNw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=v2Ow0XdO0nal+O84r2D/rQy4LltEolr4IY2TwcWku2w=;
- b=XFkT3e9a3u+/6RUAbz/GqCaI8wzBcv5gX8e5ovpfsmJFVVtI78M+0cMU0j0cYTN6G45aId5edwbFv7IPGot92AW0JSokVss3oRNLuw+p3X77KK1LaoEONNgqRM/gAxwA+5AQEt0J5F1W3nzx2qkEs+J+1ZcQtphjRuqYouRCrL62RAHInylEOoZf6jUl3b+IfeiERX0gogHH85BK04zryFhAMy5rpTp9Mq6G+S9NbTc65jSA30xwScGojvG3817y9eSsgeHucceqic/YmsyWakzG2iivUgrvrF1vfvVfLP9hJIDEEY0aJqil6s/WlFnOhg87SIv0PxFw3ziaw/vemQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
- dkim=pass header.d=westermo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=beijerelectronicsab.onmicrosoft.com;
- s=selector1-beijerelectronicsab-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=v2Ow0XdO0nal+O84r2D/rQy4LltEolr4IY2TwcWku2w=;
- b=UZijf/90/gSmPXBMQewffZ+trwBUuXTFZXwCdLm5THAAFGJJ9gERVZasdlp7VlBX7bShXifKLrCoVgk+S5/pQ5n9sqTEvLFngd8y8cbRCRW+L0do91uu2sQkncnJy355vE7sOJBOOVhlvIPva5qneoYSClUFRQKBAI3T6jQ3Bek=
-Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM (2603:10a6:d10:17c::10)
- by GV1P192MB2540.EURP192.PROD.OUTLOOK.COM (2603:10a6:150:261::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9031.15; Fri, 15 Aug
- 2025 08:13:08 +0000
-Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- ([fe80::8e66:c97e:57a6:c2b0]) by FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- ([fe80::8e66:c97e:57a6:c2b0%5]) with mapi id 15.20.9031.014; Fri, 15 Aug 2025
- 08:13:08 +0000
-Date: Fri, 15 Aug 2025 10:13:00 +0200
-From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-Subject: ath12k: REO status on PPC does not work
-Message-ID: <aJ7sDOoWmf4jLpjo@FUE-ALEWI-WINX>
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-User-Agent: Mutt/2.1.4 (2021-12-11)
-X-ClientProxiedBy: GVYP280CA0036.SWEP280.PROD.OUTLOOK.COM
- (2603:10a6:150:f9::13) To FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- (2603:10a6:d10:17c::10)
+	Fri, 15 Aug 2025 09:55:23 +0000
+Received: from smtps.newmedia-net.de ([2a05:a1c0:0:de::167]:36976 helo=webmail.newmedia-net.de)
+	by mail.as201155.net with esmtps  (TLS1) tls TLS_RSA_WITH_AES_256_CBC_SHA
+	(Exim 4.97.1)
+	(envelope-from <s.gottschall@dd-wrt.com>)
+	id 1umr9X-000000002zK-0vox;
+	Fri, 15 Aug 2025 11:55:15 +0200
+X-SASI-Hits: BODYTEXTP_SIZE_3000_LESS 0.000000, BODY_SIZE_1400_1499 0.000000,
+	BODY_SIZE_2000_LESS 0.000000, BODY_SIZE_5000_LESS 0.000000,
+	BODY_SIZE_7000_LESS 0.000000, CTE_8BIT 0.000000, DKIM_ALIGNS 0.000000,
+	DKIM_SIGNATURE 0.000000, HTML_00_01 0.050000, HTML_00_10 0.050000,
+	IN_REP_TO 0.000000, LEGITIMATE_SIGNS 0.000000,
+	MSGID_SAMEAS_FROM_HEX_844412 0.100000, MSG_THREAD 0.000000,
+	MULTIPLE_RCPTS 0.100000, MULTIPLE_REAL_RCPTS 0.000000, NO_CTA_FOUND 0.000000,
+	NO_CTA_URI_FOUND 0.000000, NO_FUR_HEADER 0.000000, NO_URI_HTTPS 0.000000,
+	OUTBOUND 0.000000, OUTBOUND_SOPHOS 0.000000, REFERENCES 0.000000,
+	SENDER_NO_AUTH 0.000000, SUSP_DH_NEG 0.000000, USER_AGENT 0.000000,
+	__ANY_URI 0.000000, __BODY_NO_MAILTO 0.000000,
+	__BOUNCE_CHALLENGE_SUBJ 0.000000, __BOUNCE_NDR_SUBJ_EXEMPT 0.000000,
+	__BULK_NEGATE 0.000000, __CT 0.000000, __CTE 0.000000,
+	__CT_TEXT_PLAIN 0.000000, __DKIM_ALIGNS_1 0.000000, __DKIM_ALIGNS_2 0.000000,
+	__DQ_NEG_DOMAIN 0.000000, __DQ_NEG_HEUR 0.000000, __DQ_NEG_IP 0.000000,
+	__FORWARDED_MSG 0.000000, __FROM_DOMAIN_NOT_IN_BODY 0.000000,
+	__FROM_NAME_NOT_IN_BODY 0.000000, __FUR_RDNS_SOPHOS 0.000000,
+	__HAS_CC_HDR 0.000000, __HAS_FROM 0.000000, __HAS_MSGID 0.000000,
+	__HAS_REFERENCES 0.000000, __HEADER_ORDER_FROM 0.000000,
+	__IN_REP_TO 0.000000, __MAIL_CHAIN 0.000000, __MIME_BOUND_CHARSET 0.000000,
+	__MIME_TEXT_ONLY 0.000000, __MIME_TEXT_P 0.000000, __MIME_TEXT_P1 0.000000,
+	__MIME_VERSION 0.000000, __MOZILLA_USER_AGENT 0.000000,
+	__MSGID_HEX_844412 0.000000, __MULTIPLE_RCPTS_CC_X2 0.000000,
+	__MULTIPLE_RCPTS_TO_X2 0.000000, __NO_HTML_TAG_RAW 0.000000,
+	__OUTBOUND_SOPHOS_FUR 0.000000, __OUTBOUND_SOPHOS_FUR_IP 0.000000,
+	__OUTBOUND_SOPHOS_FUR_RDNS 0.000000, __RCVD_PASS 0.000000,
+	__REFERENCES 0.000000, __SANE_MSGID 0.000000, __SCAN_D_NEG 0.000000,
+	__SCAN_D_NEG2 0.000000, __SCAN_D_NEG_HEUR 0.000000,
+	__SCAN_D_NEG_HEUR2 0.000000, __SUBJ_ALPHA_END 0.000000,
+	__SUBJ_ALPHA_NEGATE 0.000000, __SUBJ_REPLY 0.000000,
+	__TO_MALFORMED_2 0.000000, __TO_NAME 0.000000,
+	__TO_NAME_DIFF_FROM_ACC 0.000000, __TO_REAL_NAMES 0.000000,
+	__URI_NO_MAILTO 0.000000, __URI_NO_WWW 0.000000, __USER_AGENT 0.000000,
+	__X_MAILSCANNER 0.000000
+X-SASI-Probability: 8%
+X-SASI-RCODE: 200
+X-SASI-Version: Antispam-Engine: 5.1.4, AntispamData: 2025.8.15.92719
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=dd-wrt.com; s=mikd;
+	h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID; bh=4vBUeuXNDIqoWiMlVcX7q5VBbBd1IYHnZHLNnL49+N4=;
+	b=Rm7iApXJ2z8XcI7Jyc9tKHcV7DuAC+8jeKdrW8aQU+1cCYcnxoTAKsl8rAE0z2C1qhFX+80W38Q7a3NxEtIexf0/u2SBDtlSA97J59oZ9thwU5UnbH3e4Rk8RkJKRT7qmptFHFZhHjE0eKyjIzrjHmI0sCqCnIB7SmqeEayRSqQ=;
+Message-ID: <573c76a8-c2a0-4b9c-b5a8-762b8d094b81@dd-wrt.com>
+Date: Fri, 15 Aug 2025 11:55:14 +0200
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: FRWP192MB2997:EE_|GV1P192MB2540:EE_
-X-MS-Office365-Filtering-Correlation-Id: d3bbe468-addb-42ac-37e1-08dddbd39174
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?TUxjRE9yU1c0Y0FCWEMzaS9RUGlrclFHekppZWRZREN1SktQOFVhcWRWT3JQ?=
- =?utf-8?B?OThycjN4N2syWHFITlhzUXR5WjAwek90cUU0WHJoTCtIeEF4Y2dQaGlKbERF?=
- =?utf-8?B?eTE3b2w4aHZLcDRwcHJaZHcvckxKY1pUNHozU1ZyZG9yUTlVUmVGaDQ4SmdO?=
- =?utf-8?B?QlJWYmNZRXY0WTZVOCtuWmVvTy82MEVaMkhxL0R6MXdJbTcxZjEvc2lCbXla?=
- =?utf-8?B?b2J2YWxyck5YUXNKOEc2eU4wM0hIWlpyMlVYMTlMdkVNZFpxWTBveWxCUDNW?=
- =?utf-8?B?bFViclRYdHV4clVqV3huODRPbjBRbFBEcHVFZ0R5VUZPb3dYMDBnRllvMUpT?=
- =?utf-8?B?dEJGYWFPRHQxT2dMb01Md3RIcGtPSHVFTmE2Y1Z6R3pFY3lCWTA4ZUhYbllI?=
- =?utf-8?B?R0NHYlhJcDVoQUJveldxd1FxVVdqQ0hHYXgxZ0E0WktKY2FDeXJ6QlJTZUxn?=
- =?utf-8?B?V1FsZjE3U04yMmM4WHBjOWNaK3hNeEN2eVJra3FVOCtlSTdVdWlHdkYrMy9C?=
- =?utf-8?B?QW1aQmVZTTdzVWVzV0wvREM1SE1ZNVI2SlJhVUM1YXdTQjFFbWFiVDd0Y0ZG?=
- =?utf-8?B?bWxDeS9STHE1MkM3YXFQTFNsak52VlVmUm1SVzZWQitHakgrUGJJMVJ0R25h?=
- =?utf-8?B?eFNPaTFhU2k5WWlUNWgwelMrRzdFSDNMYkZtdGRJVU05a2x0c2FuR1Z3d25J?=
- =?utf-8?B?NmczdlJtWGdRKytVbXoxMnhjZlYxc3pocXRscitNelJaMnA0WGpCK0hEeis0?=
- =?utf-8?B?ekxKKzgzUEswSlNnYmU5TENlV3BuQ1g1a2QrQ1pSREtVOWpWWnBHZlVnRG5u?=
- =?utf-8?B?dXpJL2tHUDdVRXo1YWFqWW5uMUJOVXlGRXc2UlZSOUNha2M3ZlA5bktxWmRR?=
- =?utf-8?B?bGxuZm1Fb1g5dFEzcncxZE1CZ3ZXdEEweVhsM0JDQ2ZZWEhNOGxSVndaUzI5?=
- =?utf-8?B?a001MTh3ZXg5ODBSS3Z0dmgxSnVGemFMbW8xQWtkSUxUMDFXUmJHVExEVmxW?=
- =?utf-8?B?WTVYOUs1Z01UNXRUK3FCdlhOQ2dNaWxpeUxVQzUxRWhmdDdvcmJKUzN5M2hk?=
- =?utf-8?B?aXlRR0FiNmhleVEzNkVYY2U2VXdDbm1VWnJMSDZ1dkF2ZklWVGtrZENwL1pw?=
- =?utf-8?B?V1lnTTNna0JzbXlrUmpQeHYrTUQ1b05FWWovbFkwWHdEbUY1YkxsbVpzaDRU?=
- =?utf-8?B?NWRMM1Y3djk5TnMxRVZ2S1BLQmdBR205R3dpdlRmenlXRXVhNFFtWFJCUzhU?=
- =?utf-8?B?RktwdThFL1BiUmhaRllZUEJCRVM0RXYxekI1eHdiL1RvdVYrbzAxSlBRUXN0?=
- =?utf-8?B?aE5FYmNKTzUvR2kxOTVocUZPbEdUWmg5QWwrdFdKaU51bHdNNllCaXhTcjg0?=
- =?utf-8?B?WTVWMzVhZmYzZHc1QzhpSVF3cXNjazRlODhpbXF5ZUxqVTNBMnkzRW5GbXVh?=
- =?utf-8?B?TjNiVzV1NTN0azJzWnNwQTRiVXZFV0puSDMyalJHQmJrWU5MUW1jS1dBYlVv?=
- =?utf-8?B?RWFENmhpQy9vbzhVRmJ6VWRqVlZoY1BrVlZaSG43S1pjaUZjWFQ2NG1wa3VE?=
- =?utf-8?B?SkpDR2NSQjBSQy8yUGs1bmN0TFMxN2ZRem1iTkxOMWUwYVlFQ28rS2NVdnJj?=
- =?utf-8?B?aEpvS0IxQzdTTG83NFMydjhDeWYrLzNWbmpmemRxamxqVG5iZy9sVlNBSU1r?=
- =?utf-8?B?MXVLUDRkTC9yMFNVa2RnTmVhY3lCZDRNcm1WZ1NUV1I5NTJUdytVdDl4dVBy?=
- =?utf-8?B?YVZPc2ROeWNwQWw2OEd0b0VaZ25JOTF3OFlZblQzRDhPNnJpMzBzZ2JHQ0JY?=
- =?utf-8?B?ejhkY0RiVHYvQTFVSE1uTkx5RUdWNC9uVm9RVjRuN0hYYXRCRHpBRklIcmZn?=
- =?utf-8?B?RVZ2Y2lxazN4UkVzdC9GL2xNNUVGMGZKa0RVcUxOSEJOSEplV09scSt0S3pi?=
- =?utf-8?Q?qRxbaCcLBUc=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:FRWP192MB2997.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?OFZOZ09QNzZRL1NqeXZ4dEd3Z2VzZGRsbkZZcXpjcDlJMjBYVzhoZ0VuSXpZ?=
- =?utf-8?B?enp6RmxIVEZnK1VJaWFUWVdPQnQ0NHFUbU5YN3ljUGJlbWZwWkhnZWNkeG8v?=
- =?utf-8?B?b1pBTmRjQVFvckl5WC81Z1g1YXY2VFFkd1B6ald5eTBSN2Q2aE5mWUpUVFNy?=
- =?utf-8?B?ajlYNXNydDRTbkY2TjVPSU1VMjNqSkpNMkhObG5WR3l0TVQvWW1PVDF5Z2hY?=
- =?utf-8?B?TitPNFkvQmZrK3ZldlFDODRyODlwSHBTZjhLalFUemJLM0JVbGQyQUl1dFpp?=
- =?utf-8?B?aUErTmVqUkZRZXZuUzdONGQ5REwyYmwrQVNCRHhtVDdmV0gweDNKeEREeDB1?=
- =?utf-8?B?MHgzMForNG5GVkF5clJFRGtLSW5wZ3JJUjFlYUhVQVBWbjhoR3J1bVlrTnND?=
- =?utf-8?B?Y0hySzduUVE4SE1EMXJnRzV1bjNPcDZsdEpLRENrWWNxeFJGd3hGSUNJek9B?=
- =?utf-8?B?NHJwR01JZG1taTZ5YXVySzJhY1dvdllsRFAvOGlXZ3JRRzVQNWRoMHgxRTV5?=
- =?utf-8?B?cUp5bmdFN0J6WUJsZ1IzakwzMFB2NWhBdjV0KzUyZVd6Vi9VRjl3cFRiR1Jy?=
- =?utf-8?B?T0xHUnVxdklZN1dYZUVRbDVKYUVoamgrMUpSaGNkU04zeG5oL2lxTUsyandW?=
- =?utf-8?B?TXl2bmlMbXdLQWhuTnRaWmRPZEZrN0kwbmVDUXIxUE5qT1RDL0xnSkRUSVli?=
- =?utf-8?B?NFJDaEFlWXZFWSsxZGMwMzh4Sk14TEtkc1VGSDFQTkdSN2hnUjBhcGtyT0RL?=
- =?utf-8?B?YnpZL2lpZmo5bGxUZE11Q0d5M01hNGxEMFFzNHRlNUJPMmhoem1rVi8zNDE2?=
- =?utf-8?B?a0NnY25Ta21zT3dWa3BJYmhyclJCSHlZRUFhcUxSQUFUY09NekVRZG1sbGF3?=
- =?utf-8?B?Y3F3Q0pwWGc1dnJGR3JxQ0srODExcGZrQ3pjSjkvcWZTcEM1TkZ1VlJ5ODJt?=
- =?utf-8?B?a0xXaXlROFBnaG9mWTcwUnY3bWZnWXN6Y2tiS0VtY1NXRkNNWFFIV3MzcXhR?=
- =?utf-8?B?THlIMkNJK0x6VDRqTnhNUjNPL0VCT1p5VGl4ZG1vM1dIYUNGY3pnVzIwU0VB?=
- =?utf-8?B?bk4vc0tScnY1Tm5XQ1FxWnFkSEVIOTFzMVowMlp3a3VlZGNjMlNucXpua3My?=
- =?utf-8?B?UmFieUVCbG1yT1pGbHprS01FbjZjd2lDM1EzaXFhclNyV1RlY0g1UVhMdzJ4?=
- =?utf-8?B?VWlDSVNoQWJuenFLSmZaU0FMdEFRdkp3MkxDdDBSR3pYTVIxU09EQjNqOU9a?=
- =?utf-8?B?NEdwc2t5SVN1blVnaSsrUTFYSnBUNGprQWNNVFNUc0ZlWDdXMExTcTRiT2FK?=
- =?utf-8?B?YkFRWVprdTRIcTRrTGZyeTdhNGxIQktPaG5kQUxMZDBwazJiOWw0NmdLVGZu?=
- =?utf-8?B?bjZWQTBlWDJETmxDNllvaHJXSDNFS2MyTWIyWlUvRlNGaDZMazFyM0xocVI5?=
- =?utf-8?B?NjBkQzRzVmNVTC9PRHdmY0ZUVExvUTFHOG5YSTUrOHRSQTdTWlluR3BwdktH?=
- =?utf-8?B?OVRLcWJKRWEwZGFXandPNjJIMkl6bWpmbEhwV1M3T0owb3ZQU2dYeVBFa0Iv?=
- =?utf-8?B?ZnFnVGxSMzlkUzJ1VXhxNU50dWZSVkltQmNQSHZLWTNzdWpMcWw4OEtsclM1?=
- =?utf-8?B?NUFjcDRtbEtNNXpIZ3UxN0hUdU5qdXpWY1lUa3N6K2Q5YXJRNEN1L3NKczBH?=
- =?utf-8?B?ZEtJTFBNYmlnNG95Si9ieFZTMnNjSmtnNGgrMmdFSklvRzQ0VEdKUVNkVytN?=
- =?utf-8?B?eHVhK0JjeEJtRUhnWlBnWEVlV3hzVDdWRlBhUzl2VStoL1h5R2FueEVRSGlH?=
- =?utf-8?B?cGo2azl4Unk3VE5ySUsralRmZk85ZVhBKytSMW02OUtyMTk2eFE4YXpZdmdX?=
- =?utf-8?B?cHY2YWpKQ2E3Qkd5TjZmOEo3enJHMmR3QnA1RW5DTm5LVTZWWFZpTDlCSDAz?=
- =?utf-8?B?a1cvTmdHbGpwQlpYV2daRmFWa01BYlExVGRXNFNrR092ZmZBcVh2dmNJUHln?=
- =?utf-8?B?WUxsZzV6azU3SHJDV05Ib3RydGRWOGpERGVkdytvQ1lGVG90OGVqTzRPYnVn?=
- =?utf-8?B?YUhvcldJTGFJRytpazJaZ3gzV01kNDRDdElOQkV3Q2VJcDZZQ29Hd2cvY05k?=
- =?utf-8?Q?dgEVLozkG+qOr4Hs1gG1/yWZR?=
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: LGIlSWC7sMvrG8giLPBR4q9gbpH8WmuxJbF3gu9BszLPKIs5LbQR3yairBw4+QyFTMQCbtjFXkE/DtRC20zpIJSrrhOKfOdOkIrVIcYwQJqQTy2g+ryeSevO2uKX8lqHQK19TO833Ixbw6MigDnFuSiPganD/c/jvSXT26LQOm4GYzzcJKsusRcN4XVaUMN6qoU/rnEK619ao2mhSdQqTsRL6OnGM2QkMOZ1DXn1i23k/eLhg7TaglFe6IHTCV/fiobemVf93jDwCuIWN5KjqfFJpEQYMMbuoUT2yi/j6tnzwDAVVqXrRWPBCmfPLFyc7yMhsGsrMxMPFlat84Y9BbzisnkhdpCVNW0ExEdDfDaojlgLpftardoj7zTMC0Hn/AfqD5XecfnUPjhda1in/zj4zgXQJE01BdltvyxI9NIgVkIfMxtcuqr3cb6Cg7k48WD6wZMvvemExr0rncJAMW/Zc98VUAeugqlRDYmBzhhRJtbPXvgw11hzfFbQQpUIHtN3YvnJLUIKG4JLoAke0eC7jDRj8MQNyP+hGQM6uuM0cYczRjz8N+L/e7ZmV6Lpe04HKdSp+rrBcAFMsQr+sNKe3EC3eVFQl5yHm4KIA+M390tgJG415B2k6u7Z8EEK
-X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d3bbe468-addb-42ac-37e1-08dddbd39174
-X-MS-Exchange-CrossTenant-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Aug 2025 08:13:08.1921
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: TtS8V8fXbqxp2Agc5B7VNVmhk7169W/EV0FI8xB2UdhcNa2HgPuL4t2n7+19p2uq78oGHFdorepwm/Q/NJYFyA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1P192MB2540
-X-MS-Exchange-CrossPremises-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 14
-X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
-X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
-X-OrganizationHeadersPreserved: GV1P192MB2540.EURP192.PROD.OUTLOOK.COM
-X-Proofpoint-GUID: ENL3x8tQ18dLEUnY7pG5s8goQDVc6n2s
-X-Proofpoint-ORIG-GUID: ENL3x8tQ18dLEUnY7pG5s8goQDVc6n2s
-X-Authority-Analysis: v=2.4 cv=H/WCA+Yi c=1 sm=1 tr=0 ts=689eec18 cx=c_pps
- a=OkXhrD8PvoFXecP6jN22mw==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
- a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
- a=wKuvFiaSGQ0qltdbU6+NXLB8nM8=:19 a=Ol13hO9ccFRV9qXi2t6ftBPywas=:19
- a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=8gLI3H-aZtYA:10
- a=aEozRzyYmvxSZNhvtMIA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODE1MDA2NSBTYWx0ZWRfX65XWZUNvy46h
- agdzLAE0rfA4ck4T/ZDrTlWhSjwtGyEJZbB3mpb1i508couvou6ZPlUYTOqMTF734fYwEGF7oH2
- HDfuB1GMLmlm/qGkXzQprFGe6kD+3Xutf+okrRBYiE4mbIblLeIbx+KSmDxnMLr9P7RSlBhSLzO
- ffOUEtHZcamGWfwD4CHqEVx9tZdXxjbEAQyJG0lBrDUI0xBd7ur4eSygJBJu3RKabN8vLsVxDMy
- 5BRa/zwaYjrj5U1r4oYurFtSDlATM+o1x12HKD0tMAGCbzdTL9ycimpyy5ILlbWAqvVNeDeEo8x
- dQ1T9nY37MYVtdtmO0v3GhSFgiG+AqwrcvFlLniB5Ttv9c8gdRCB4NgSmNvfq78t170QMbfooEy
- B4XUqHzQni7bw2Ja1qz+XMfN6TVtFg==
+User-Agent: Mozilla Thunderbird Beta
+Subject: Re: ath12k: REO status on PPC does not work
+To: Alexander Wilhelm <alexander.wilhelm@westermo.com>,
+ Jeff Johnson <jjohnson@kernel.org>
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <aJ7sDOoWmf4jLpjo@FUE-ALEWI-WINX>
+From: Sebastian Gottschall <s.gottschall@dd-wrt.com>
+In-Reply-To: <aJ7sDOoWmf4jLpjo@FUE-ALEWI-WINX>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+Received-SPF: pass (webmail.newmedia-net.de: localhost is always allowed.) client-ip=127.0.0.1; envelope-from=s.gottschall@dd-wrt.com; helo=webmail.newmedia-net.de;
+X-SA-Exim-Connect-IP: 127.0.0.1
+X-SA-Exim-Mail-From: s.gottschall@dd-wrt.com
+X-SA-Exim-Scanned: No (on webmail.newmedia-net.de); SAEximRunCond expanded to false
+X-NMN-MailScanner-Information: Please contact the ISP for more information
+X-NMN-MailScanner-ID: 1umr9W-000ATi-TP
+X-NMN-MailScanner: Found to be clean
+X-NMN-MailScanner-From: s.gottschall@dd-wrt.com
+X-Received: from localhost ([127.0.0.1] helo=webmail.newmedia-net.de)
+	by webmail.newmedia-net.de with esmtp (Exim 4.72)
+	(envelope-from <s.gottschall@dd-wrt.com>)
+	id 1umr9W-000ATi-TP; Fri, 15 Aug 2025 11:55:14 +0200
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250815_011329_109962_95791662 
-X-CRM114-Status: UNSURE (   8.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250815_025522_493280_79733E78 
+X-CRM114-Status: GOOD (  16.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -218,25 +116,37 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello devs,
+i played already with big endian platforms and ath11k (not ath12k) for 
+months. there is also a problem with the dma descriptors. the firmware 
+simply doesnt support big endian with host communication at the end even 
+if there is a endian flag for the firmware.  dont get into this rabit 
+hole. (i worked 3 months on it and gave up)
+at the end (i was working on a cavium octeon platform at that time) i 
+just switched the kernel boot to little endian which is possible on many 
+ppc platforms too.
 
-I'm currently working on getting the 'ath12k' driver running on a big endian
-PowerPC platform and have encountered the following issue.
-
-In the function 'ath12k_dp_rx_process_reo_status', the REO status is determined
-by inspecting memory that the hardware has previously written via DMA.
-Specifically, during the call to 'ath12k_hal_srng_access_begin', the driver
-reads the value of 'hp_addr' for the destination ring (in my case, always with
-ID 21). On the big endian platform, this value is consistently 0, which prevents
-the REO status from being updated.
-
-Interestingly, DMA read/write accesses work fine for other rings, just not for
-this one. What makes the REO status ring so special? I couldn’t find anything in
-the initialization routine that would explain the difference.
-
-Could anyone give me a hint on what I should be looking for?
-
-
-Best regards
-Alexander Wilhelm
+Am 15.08.2025 um 10:13 schrieb Alexander Wilhelm:
+> Hello devs,
+>
+> I'm currently working on getting the 'ath12k' driver running on a big endian
+> PowerPC platform and have encountered the following issue.
+>
+> In the function 'ath12k_dp_rx_process_reo_status', the REO status is determined
+> by inspecting memory that the hardware has previously written via DMA.
+> Specifically, during the call to 'ath12k_hal_srng_access_begin', the driver
+> reads the value of 'hp_addr' for the destination ring (in my case, always with
+> ID 21). On the big endian platform, this value is consistently 0, which prevents
+> the REO status from being updated.
+>
+> Interestingly, DMA read/write accesses work fine for other rings, just not for
+> this one. What makes the REO status ring so special? I couldn’t find anything in
+> the initialization routine that would explain the difference.
+>
+> Could anyone give me a hint on what I should be looking for?
+>
+>
+> Best regards
+> Alexander Wilhelm
+>
+>
 
