@@ -4,211 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F06EBCA0EE4
-	for <ath12k@archiver.kernel.org>; Fri, 15 Aug 2025 14:41:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA04BCA0EE9
+	for <ath12k@archiver.kernel.org>; Tue, 19 Aug 2025 06:58:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:References:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=heeq3WX7EszElDv+9eBqJ8s3zNPTFCiYBvtrXRd0eRk=; b=3H67HpaRvUBI1xIVEKIW8ZeBPG
-	ms1rHSCvX8RJrTn+sHkF+V/KMLd6oebPREGPMT38XRj2BbOrpCnwD/4Ta7jKGiRu4K7CTTFNMZgXE
-	ZNd0MfbCkMI1tvnl89721ieRJ+uSr3SvUT2q6QfFYhGvJq0QegQgSqkPiM4/cTWahRrGxpxQjT8a0
-	yDU+SE4esKAxZ/86jvRAP61MSM8zX4G7PdYr4D/7IiV+uyqgGPLBrfa7zUPSao84hqzkxslFK7yLp
-	/Le1HH8zA4MafvUc07h3BI7fyF0+bVc4QFw/tWYfkxblIetw2+ihBlcljYIS02MlUltkL9E39mk+Q
-	ebnH7Vmg==;
+	bh=+Qq/aMBe6WA4icgWdgRmHu9HjfiTSjioB8bzv4f37ps=; b=WOR0WEb4D5fRXfXt4EsP7F5wtH
+	XcSan5y+WdAYkAuW3110OPBFqiDKyT00eXnxhhVm1bic3RNEg66ALDOd5mKJolnGARcg/tos+2x2M
+	n9VwxODiLDiQ/DRZKGBUDMn9Uzg6sXTJQnf7eeqgBF97rZnQJ/2dOnJR71WXxvvnpUljGF8XlwYgn
+	0Tm/ZStjoYQU0Yga5yuoZcSs+7m9RVcRDJAee60HhYiYkuhl+lOKD/2D16qJR5qoit2ZQhw79Qb9t
+	hZnZeSCCgDWHfaFqOZvT9Nh0DmKQUGlEZflZb+saZmVQjTxMBOXsR6x2jHI7LOJImIcUz1rcYbFJl
+	x8aKVF0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umvcT-00000002kQF-2pPE;
-	Fri, 15 Aug 2025 14:41:25 +0000
-Received: from mx08-0057a101.pphosted.com ([185.183.31.45])
+	id 1uoGIh-00000009bE8-21xw;
+	Tue, 19 Aug 2025 06:58:31 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umtBI-00000002PUN-0iXB
+	id 1uoFza-00000009YdB-1KxV
 	for ath12k@lists.infradead.org;
-	Fri, 15 Aug 2025 12:05:13 +0000
-Received: from pps.filterd (m0214196.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 57F5slE72735284;
-	Fri, 15 Aug 2025 14:05:05 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
+	Tue, 19 Aug 2025 06:38:47 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57J1lGR1027718
+	for <ath12k@lists.infradead.org>; Tue, 19 Aug 2025 06:38:45 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=270620241; bh=
-	heeq3WX7EszElDv+9eBqJ8s3zNPTFCiYBvtrXRd0eRk=; b=NyV2Vvr3PUklv3Mi
-	qFR9NsFAwtockP+JuwjBIMRqA9JHW6hpf7BRX9qFpti1l3us0ZHs8z2gk62eKJsi
-	hucI12W83HdgE1ocdRDujiyEMoSd3YONwG0Ak7XT2U3oyvpSUcTQOzUhcIsZmDHw
-	fRYdIC4Css/oEEaWrbBvya4PNNjzUgDKAEnUhBdEz6WNtAWw9lvyDVk+j2pjz4aS
-	fWKasxphrufzGovMON/Zgxj7Sm5lj0nnQclleAbX713qoIjucbgAJoFyQ0IFBYT8
-	ikhyoCPkzcnNOV0t/Uozt4FDoHGlenJft3PdTcZCgjPKKwo6jPuLpxXRCcVM1M2p
-	xeSEkQ==
-Received: from eur05-db8-obe.outbound.protection.outlook.com (mail-db8eur05on2114.outbound.protection.outlook.com [40.107.20.114])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 48hhu3gtug-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Fri, 15 Aug 2025 14:05:05 +0200 (MEST)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=qXZYaEwMycRr6+SGpl8n7grrzeXwwbc3BL9tj/Tmx3dFvnH9Mjaf/NyiNBs4/rU3zlXHLlTgqWslXbtBHR2UL6aOq6MlkjAtzNracmj1griEm0JbdJ/pYyqDmTBf+8E5w6jiaWyN05IhrpnjIxkT5GobEIcZeGLxVttXfvJL2bDBv24pbCSVQHQ7yvMUaw2u1vkADpYwdCo8Y81TjiQ+Db/zERoIAarvkfyt9ETH+XkpbZnRJfGtz+ykMxTE/ra+GXKsvyX96GOTPPhDzVDUDyMQDbPMVWoR2IwtBBtMXQb1YleYBvt5gpFufrZ7won6QieAPDiGZhg/fRX4WyrZDw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=heeq3WX7EszElDv+9eBqJ8s3zNPTFCiYBvtrXRd0eRk=;
- b=YsTEGrFg1JWTNsCX+cTBQrAxVY+LgqyZnV8Ny1W4bCXZJ66cyjXAqZvWAvKn5D1bQ76/K0Ir5rk+htHZAhNmxtXVPKRVkpcimizjx4nCziIyEd6eXNOLFWp8UecyKVvcEVdG426OriVTQWI3AkdlJhH+vWCfBDY3ec5m0o0hJ6GhFMX/t+ecXIk4HIY3vbpQUkyc9863Du50iv1g0batHNOaME3mRDT0RPnUcEknP0TxkNW3kvLUUYvOnpcPrFivEiAmNO89gR5Ph9bfhjVb4rIEQAXhXMaJ5Z26uL0OgIFD3ichzgELry/DFmou01SuJJDTp1upn8H+qd8KkO82wA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
- dkim=pass header.d=westermo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=beijerelectronicsab.onmicrosoft.com;
- s=selector1-beijerelectronicsab-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=heeq3WX7EszElDv+9eBqJ8s3zNPTFCiYBvtrXRd0eRk=;
- b=M2Of3CH7DhLYJu6cANT2L7xMKQPL4O5Rcj+x3V6a8eK3pNHKPy+9xbgvADTWtuNoCHnO8ldyEtojrZ5Kj8Fl7gLDXu3ACykIv69zTKHF0SnWdXCXAJCjgpXkPdf9fFE1ZD27myuGGN5anEUume47Rj8v/hGta6A53lju8+ENWx8=
-Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM (2603:10a6:d10:17c::10)
- by AM7P192MB0658.EURP192.PROD.OUTLOOK.COM (2603:10a6:20b:176::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9031.17; Fri, 15 Aug
- 2025 12:00:03 +0000
-Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- ([fe80::8e66:c97e:57a6:c2b0]) by FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- ([fe80::8e66:c97e:57a6:c2b0%5]) with mapi id 15.20.9031.014; Fri, 15 Aug 2025
- 12:00:03 +0000
-Date: Fri, 15 Aug 2025 14:00:00 +0200
-From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-To: Sebastian Gottschall <s.gottschall@dd-wrt.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org,
-        linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: ath12k: REO status on PPC does not work
-Message-ID: <aJ8hQKnlboOLFSkh@FUE-ALEWI-WINX>
-References: <aJ7sDOoWmf4jLpjo@FUE-ALEWI-WINX>
- <573c76a8-c2a0-4b9c-b5a8-762b8d094b81@dd-wrt.com>
- <aJ8LYj+NGaX8cwge@FUE-ALEWI-WINX>
- <5ce28473-0fab-4fbe-9668-0042ff7d86c4@dd-wrt.com>
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <5ce28473-0fab-4fbe-9668-0042ff7d86c4@dd-wrt.com>
-User-Agent: Mutt/2.1.4 (2021-12-11)
-X-ClientProxiedBy: GV2PEPF000045C2.SWEP280.PROD.OUTLOOK.COM
- (2603:10a6:158:401::449) To FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- (2603:10a6:d10:17c::10)
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	+Qq/aMBe6WA4icgWdgRmHu9HjfiTSjioB8bzv4f37ps=; b=cXBx3+GkykVB2H/+
+	rclAvJg00+PXYq+P1x17sgD1TMbD5Mr0kkctnu068m/FosJuNT7d0BALR5K22p0a
+	/dUdXAemP0M4HkqjYkI9pWZik0RToD2Iv6sdHhSVijNoFQvovqmzTvOyF9uv0kvO
+	Qv6bfJXiJenCa3GzevEUxRLdm0ZrUsewskNeNI0Xj0+58rWumfk29GUeFnUd23DM
+	Wu5weD7jy5HoFyCR3TEPHsWf4FO5d59MAwbKXoEn1lsRODVAYEShrbe4mRZMsw2r
+	Kbpps1z79DH3QdawTiOKd+UOn6H+YzATOxP1fmz9ox+2sI0WyBmvG/Exex3xXRM9
+	Qge4fQ==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48jk5mfcke-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 19 Aug 2025 06:38:44 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-323267858edso4989574a91.1
+        for <ath12k@lists.infradead.org>; Mon, 18 Aug 2025 23:38:44 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1755585524; x=1756190324;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=+Qq/aMBe6WA4icgWdgRmHu9HjfiTSjioB8bzv4f37ps=;
+        b=t6FV/+uxBb20JQB13jWUV8UbgRZldOQfTwm1xfszp2FmwhYKrINWANwh+dDJenV+mg
+         mn42q4Js4/W2CynEo3f4RU53JZHYJsppTLyieOOoCOcMJ8+04/CRB8EniWzkPyZsvCK7
+         VsW2hIdZhmccWMy8s9r+dcnvstwFCxKzRduU4n2KpHSQy5k6NwCN5eSXQr3+N/FcTsA+
+         kh/rmn54f07YHV6leIPLviOL8OqipD6uLpNJx7MZBL/umgb4aQpBq0fG8PGyONkIkAII
+         TgIdaZ/dszfAUpdTg1IF2VVmpG0tG8qxBtBLgxcQoVeX/yhR5GyVxg5NmFbylKFCJjxe
+         s/wg==
+X-Gm-Message-State: AOJu0YzqANMGv/w42cCy9j0i47IJBKMnBlMlMCmn/ZHFp5gY+P86dAJ1
+	oFRoyyNuBXzEiQki6zNfNju9ipxKb3MLDFotDeSh5SsdwCZmGV2Gc0oj13/+NMde9Cf2wtE0ZL4
+	UN4VdsCP4b7BqO572itrWTiIfJR1j8qN6jHcWW0sXQH408RPkDDfwHQQFEzHHbFuD
+X-Gm-Gg: ASbGncvP4ltpKP4ZJvtz7bF5hnIJ9yFMxTWYyD76vEUxml5Ihm+xZ7OJpcRLt3d0dBx
+	cFKw2H88zJXVwgerfYSJ7QTFQvYtCdYMKT0Z09Csfc6WjfpfEKfjfpYSVGolDOgSnEF/JrjuD6r
+	YX3PYriGYhH4w6F+EJsj9BcTNd/lTln2w+DL0Vj0+NjWxJ1YE4GpjFUAqAX3XUVTkYpKyJM1QwH
+	FRF5hYzC0Fk1nvaNjtyyBYe0wzxMUgAKFj/0lZb09z88bEl6YCn1llv8lsaqXo2xwSrHUbZTapz
+	TdXIaeTw8Eg1o3taqEWeXM7J0GYVnPNs7H7eit+mNr5pKzZ9Xau1KIqhVHFL3U6xYJ8YjHwGlpO
+	DWptqBy+HXZezvUHsJun1cTF7YzqOYTYIROb1
+X-Received: by 2002:a17:90b:5746:b0:31f:1744:e7fd with SMTP id 98e67ed59e1d1-32476aa1cdfmr1843078a91.31.1755585523828;
+        Mon, 18 Aug 2025 23:38:43 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHQYE9o0BkXEZqqGhwXwAEvO5q7mg3A9ZGePOqkdZyzZsjwzpO4oWulSOZ4lo2KN9r2OZ7z5w==
+X-Received: by 2002:a17:90b:5746:b0:31f:1744:e7fd with SMTP id 98e67ed59e1d1-32476aa1cdfmr1843053a91.31.1755585523326;
+        Mon, 18 Aug 2025 23:38:43 -0700 (PDT)
+Received: from [10.133.33.94] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b472d76f9d5sm9646108a12.45.2025.08.18.23.38.41
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 18 Aug 2025 23:38:43 -0700 (PDT)
+Message-ID: <d6f0b64f-1764-41cd-a7c5-fb34d034ace2@oss.qualcomm.com>
+Date: Tue, 19 Aug 2025 14:38:38 +0800
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: FRWP192MB2997:EE_|AM7P192MB0658:EE_
-X-MS-Office365-Filtering-Correlation-Id: 36db9ccb-9444-4846-8524-08dddbf344a7
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|366016;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?QWFXWGtVZGNXdW5XNVVxY0dIb0RZaE9hQUphQXg4VmJUcWx6U1J6NzN1QjJm?=
- =?utf-8?B?RytqblAzM2txWElpVGUzNDJhWkplZk95dzkvR1hWdWdUd0dYYTBib05kNDNI?=
- =?utf-8?B?c2owOUlGTXZSeGZSbC96ME5RWEdBZzFmRlNWdld6UEgra29vZU1Dcnc4T1FD?=
- =?utf-8?B?SUtaOFAybndOY3RUaHFUTUJLd084K2dDcHgrUkZJYnNadWhBaFdKdkI1dW94?=
- =?utf-8?B?OStLNFg1Sm5ZYTFRQXdmN3dKNEhVb3FlVXZmdnpkVFpFRUljYVB3YkNtY1Zu?=
- =?utf-8?B?MGQ1UlduTG5jTmJZcm1jMENsMWFXSVVxOGJDNlVCVCtpdmJQNHpQUEVUelNx?=
- =?utf-8?B?ekYxMGIvTHdkMWxKbWdGNnBOc0tDakJNV1ByOFJXVElVblN4ZTRrbmpTSDZ2?=
- =?utf-8?B?QVdYTjZQSDB2TkpWQ242elRiakNJRm9HNHpFS2lDWDh2Y2JaRVVMaDMweTBx?=
- =?utf-8?B?THZMOGx5VlAxL2NTcVBFdmh4emdHWTZoK2tPQnZXUEtOK2dQYXhMZVo5emJT?=
- =?utf-8?B?RnRZUjFDVUpKUmJ6d1h1Mk8yUFVZQkc3K3lFb21sOFgvWStOSVJxWTFGSlZw?=
- =?utf-8?B?TjVSSXFnL1Y3S1UybEpjNUFMLy96VFp5TDgwNk9sK2RDOHVkdlRXaWRaMkN0?=
- =?utf-8?B?ekdHRFdqSENLbjE4dVNHaUxwMDh6a3BlRlkzNmZwdGM1eUdFZG9UT2VVTnda?=
- =?utf-8?B?bmJlOW1tVXZzZDEydlNMUHdva0xZVDd0YnNGUjFTblMvaHVhejZZTStnclo3?=
- =?utf-8?B?TmZtRFVqSTVLbjdLdXF1Qy83RWNRNjNYQzdnM3JHN1NlUEhjenl3SXpSOWNt?=
- =?utf-8?B?cjJhUVZRUi9WUnhyUVJCdEJTVTU3b1VXLzVlakptV3hmbFBlVTllcWJ0ZWI4?=
- =?utf-8?B?aUN3Z2xSaWdkb0pnNzlCWnN1L0M4MXp5SFVNRnRPRzErVUh0bHRBNmQrenFa?=
- =?utf-8?B?VkwxemNiRFpxMTNESTExbjRrd2dNK2dTK0pHdURHNU8ybHdYUnlsY1V5SkJr?=
- =?utf-8?B?RSs2SnBpNEV0Z3hMNEs5K0YyR21NS2FEWG82U1hkbWs1RHd5ejhNWFU4UThM?=
- =?utf-8?B?NVkwQkt1Z2ZMemJvMzVrVnFKaGVEZjVsZ0NZcHRyZEk1bXZ6V01seCtsa0pS?=
- =?utf-8?B?VEQ3Y2tkTEh6SEJuYlBzZmdDSUZySGZ6dEoyYlNIVjYva1ZPM3Zzc01wWnM5?=
- =?utf-8?B?MWFpN3NBS1BIV3hhc2ZBbVdrWE53RG1sdG85WGd3dW93eVJ0Tml4Ykp5U2sx?=
- =?utf-8?B?ZktQeWJTRmU5RnVJeWVRKy9IQSs2Wmo2aEljRFY2dlNFNTRaeERPM2FjMUkr?=
- =?utf-8?B?TUhIYWFhLzFlR3ZGVmM3Q1pTOW1XUlJTeWZUVGRMbXFib0czaUZMenJQYStF?=
- =?utf-8?B?aTU2R2htOHNOTWlkdnBtRUdXWkhDc0xZSDVaWDFLWjNxMGYrOURkRjFFNnNZ?=
- =?utf-8?B?Q21OS2l4RWM0dFNzL1Y2WXBHRzRJeWR4VVNnQmdVdDYvUnFKNmVEZUdTOGhW?=
- =?utf-8?B?U212MzVHQ3JoamxQOUh1UFFWSytsaEVUM29Jby80TFR3OEl0bkJzb0pkbnRJ?=
- =?utf-8?B?Zy9GNGpTczlrSXJoSEhsS1dhTlVqczZWdjVVNVMrYXlDVHVTWW5NcnFBWi9k?=
- =?utf-8?B?Sms0TmorY3FhVnB3Vys1V1ovMU5IOVB1NituUm9JSktDYnpBdWhjeVRVbE5v?=
- =?utf-8?B?Q2YySXA3V0xZZkFIdlhBOEFjY0pPeGFEbWVDQzdWZE9FMmUvSUxuVHg4TTBx?=
- =?utf-8?B?Y1JqWUIvalJzd2tGRHp4VzRCc0ZQUFUyeUVBakloQ3ZLRllVRWNwMzJqWmo4?=
- =?utf-8?B?Y2pXRm9uS2NrMFFXLzJhNHNGZzhWVU96UmhGYlFaaUJOZktQRS9hOHJaTEI1?=
- =?utf-8?B?TnczMTEzQ1JnMy9QclNmT3NSTG9LaHNrYkpIWUc4Zm9tbm83eUozY0oxT1Va?=
- =?utf-8?Q?h3tnBb2Hv3Q=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:FRWP192MB2997.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?K1ZaTGZLbHMrdW41dXcyZWViUkVvYWNxL0NYMWIwTW1YaDVwMHk0ME9ZTlBS?=
- =?utf-8?B?S2Vrbmw0T2QwYndwQVRSTGpTanM5Z1lkbkJ0T01SdDlpbzV6QUFYWk9SQUpo?=
- =?utf-8?B?NVlEYmtCS2QzL3d4WXJvN3N2L1ZuaGc2cDN5MVpCSXpDYUx4Q1VrZmFNdGx1?=
- =?utf-8?B?SE1KK2dZTXVtMEpJWHFPZ21wQ1dubC8wZjA4ZVYvSXg1ei9YQWFybDZKbEZW?=
- =?utf-8?B?QXpUL3FBU05Zem5KMXpEZlUveHNLeElxZG52VnpoakRmWlo0cXRJamZiSnA5?=
- =?utf-8?B?SnNZaE43K2RoYzczeGxrTkduZy9FTDN4NEthTmNjM0NMWEQyZG1HK04yWTJR?=
- =?utf-8?B?SHBzWm95aEIra0EwL3dNc0FIdkhQYnBoL1Z4eVlaRDZzK0cva1NUWmcvVmtt?=
- =?utf-8?B?UUkvZ0hqK0N6Q3FuZ3FrOXJEeFFoRlRwbnVHNzAyc0w3MW9IRjhzYTlWclBv?=
- =?utf-8?B?eEh1V2dCRXdleXFVdDVlZThFeW1mdlorK2xOUkxTNDRvV0lNbDhkKy9oZ2Iv?=
- =?utf-8?B?OHBqRUdTbmhOdk14WGhDekd1UU8xQVh1ekxQU2lsREhVM3hmV3ZqS0tDRXhi?=
- =?utf-8?B?SkZETW1sb1FBY2xGUGUzamFiZUs1VWZuQnBIeGdQbVpuQ0cyZzByczJRUWNl?=
- =?utf-8?B?TS9Ra0Rldi9GMWUzV1Mvb21TZXIwcVhUTjhzV2Rnd3R1Q2VXaDVoQ3luNktY?=
- =?utf-8?B?anhURVJjTmZZVXpjRUV1enh1V0FaK2dVaWVwYnMzSE8zcE5QSm9hZHhidG5l?=
- =?utf-8?B?bTVwV1loOEdFZjNUYkU2ME5RbjZja0dNVHgybXlrV2dpR3pvNzJvRDc3Z2tZ?=
- =?utf-8?B?WDBybWNJR0FDaEVMeEg1Wmg5TnlnTzFYZEQvbXkra0YzOHFFU1dpbjVSM0Mv?=
- =?utf-8?B?U0lKMWUyT2FRTHFPVnhvRDlDNUVzeVVwNHRiYnNjRlNqVW82Vmt6V3VFeCtz?=
- =?utf-8?B?NGRxZStmcW1IRVVHSW1pNzRZVUM0cHgrOFZ0eXJZVGMzZHNkb0QveStsRXk4?=
- =?utf-8?B?MWhsQjNydjdtZnJCalY3eUp1RlJLRStGR0dNVnhOYkE2MW14azlPQ2tEVThD?=
- =?utf-8?B?eHI1VjlzK3Y4c0VtWCtMVDlXcFBOVGVMeWlwbkdLWms1aHhhelRFcmt4azI5?=
- =?utf-8?B?bUxnUjlFcTRHdDNoMmZrbW54VE44dzQ3bXFVS1hGWTdSM2dGZUI4VWNBVDRF?=
- =?utf-8?B?MmZFellOVmRtZWhUbUFVdjdlMklSTCtvdXlyM0J5aFcvK0U5ZVpyeUFrdFFn?=
- =?utf-8?B?WDFpQ3BqNnFOTitqbUZ2THBSN1c2Zk5Cd0VicEFoSGRkd21odkxRQmQyYWZL?=
- =?utf-8?B?NnJBcVNIY29NYnJKa2hsMHN3ZFduMzJBQ2JzdlRWcVBLRU00anJhbzV5MENi?=
- =?utf-8?B?TXFLVDNtWnN6QTFwTmRxaHJaOU9vTU9vYWh2d1lKTC9UMmVpYnB1dWowY0Zp?=
- =?utf-8?B?NGFTNzJaUzlFeG9ONURvazU2KzI0UkZqLzB2SjdxZWdyRGNjNGxQYnRMWVp6?=
- =?utf-8?B?bUJ1Ym9YR25EK2FmcXgwcnZkY0RvS1RjMWJjRlBhTzBpMDlacXJyUHphcFZC?=
- =?utf-8?B?T1NHMmVmc0kzQm82eEIxZ2hNRDJOYk1MVURaL2J6ZlBUSHpZQWlNbzJaM0hR?=
- =?utf-8?B?NUl3cUdMNjZWalBkcFdVMmpVK1hmNlhHZ1VMUGRPeEUxeDRScTFDeVdkQW9t?=
- =?utf-8?B?K2J1Y2JHcEpFRFBtY3JXNHo1dHRTWW5od2gxcDlicnhGcHJWWlVKNHp0VWlP?=
- =?utf-8?B?QzlJdHcyRGxPQUxYOXJuRlJwOHorNXA4Y3FpTVFmY2NxNG9EV1hzSFM5b21E?=
- =?utf-8?B?eGhLWlNLS1JuT3lnVmJLSG5sTlNZRytpSXpYa1lrT0lSRHFHTEtCMSs3Z0dN?=
- =?utf-8?B?dUdVcEdLaUxmMDk5b2lmRUFRK0xONmdUdmIrWEROWEF1YUREd3diTlp1RHF0?=
- =?utf-8?B?SWdPUFg3SlNDVTZHZ21GcUg2eWpqc1FoK3JkaGVUckJlci8vbDg1OU5MWTlD?=
- =?utf-8?B?djZEUGVZZHVEWXMxcDJscEJyT3ZXejhOdjhQSXFxanhwbkQrTFpicExoc2RP?=
- =?utf-8?B?clRoQ2NoYncxbTZHcFhDUTZsVlFMWXdVQjZnZmYwTk5EUWVuNUdTWUJreXAx?=
- =?utf-8?Q?gMC8LRXyUwMkAqfR50jL4NMfC?=
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: KNJ6EcIbWu3pOIGcYTqZbGjYjhJRFevYg86DjFUa0OgXIj40jgEqcNtaCAVN9EenL2JQQg8nXTosjhN701cttbF2nDFrrA2qMMvzx03odXeeYVVQjUlSk+PgRbtFkRMuzlSFgNlbXjD33BfzaDCaSBFc1rqAz2Zf3GmKloKfZm7vwinNBxHxs6sYxLELqe3PcfRU/xTmJDQsHVupzTlHnTW5M64aBtcN2igE4eOAs6/NiYsQWl8eoGy7VNnVIh0zyf6SH7FEaNrxKgKjPnNhXK6giNUXC+xl4VMsiKRgMc0m6aMDGrl8zLq39RSoGwqah39/N+tJbYeXH2HXpnyTBSEYwIYIiG4NzJmX1OD30Ra5AoFAZ83DvenyMWpesO+EjBNIKo+hTr9rrYmfx3/SSjgZz8O0CXOkO/UK0n1q9qM1Eub6yAsAlpPMiaqe9wv5sfZTJbIyD4K4HLplwB7FZ0756t2hAg3Gj7kwRCtGhzTZywXSwJ9uenQeTZEaAptmh9dwBh6SUjeJcpmvpn58ybG/eO4t40YrJP07mjDDEJE1vhPDPgZiicJY7n0OihZ2VpH/ONwqgzm7/a73UoGEtJnnOiLZn9piGwncA+q/bfJ3IZOzBsxR0USJJ9Y1PXbB
-X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 36db9ccb-9444-4846-8524-08dddbf344a7
-X-MS-Exchange-CrossTenant-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Aug 2025 12:00:03.2438
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: +M1xvPmwlxmQta9KNpizayGVj/dUUSoDf3QY+0oV0ckH42XHN6t3Sj0zgqU16MgBlsL9XgTP/8epopIPXevaPA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7P192MB0658
-X-MS-Exchange-CrossPremises-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 14
-X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
-X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
-X-OrganizationHeadersPreserved: AM7P192MB0658.EURP192.PROD.OUTLOOK.COM
-X-Authority-Analysis: v=2.4 cv=ceOLbnDM c=1 sm=1 tr=0 ts=689f2271 cx=c_pps
- a=Iy8XcT5hUYZTIqWYt96TUg==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
- a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
- a=wKuvFiaSGQ0qltdbU6+NXLB8nM8=:19 a=Ol13hO9ccFRV9qXi2t6ftBPywas=:19
- a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=8gLI3H-aZtYA:10
- a=RmOkW0f0sXjMcqtWxUkA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
-X-Proofpoint-GUID: 6sVlpOBsTpuk_lvohPLi7XaX4JAYIAlr
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODE1MDA5OSBTYWx0ZWRfX8r3obVB5AdE/
- zQWjT2MYR47xm4ibp0Z8cP0bBT19LUMT1P9dKV9GHnwbng3gN6X1jl6EBLvHYsCVVhb/pvgbMqH
- jnr4rsrkJH27oU41wDjg0SLpmKUqdBQtqyS4OJ1t5ccVPmooywWcROhcEV/+gTfiWdqbRwMEprS
- 8kU9Jj2PotLtcrAOGS8wymAj3izZEZsLaYdliH/ifZ7ZlPKSNp2yhG/VC/JxYZ3GT9xy7oBUW4P
- r4iaonBR+bpe8FpEf1LdaJqVBAWTYuUVuZbJ1HkITdIt5T0eoDBJAQ+PeBOqASmjxBItper0tRv
- 9T9x5DXVdGDJCLei6k+9IzGbnRNNoVkAYPsOvXJ2VvDUpzXgV+dz5+fjXoD+vl5be//bNxmObSD
- MQ5SCjz7X9c1HOyhM83K0SduYxZRNA==
-X-Proofpoint-ORIG-GUID: 6sVlpOBsTpuk_lvohPLi7XaX4JAYIAlr
+User-Agent: Mozilla Thunderbird
+Subject: Re: ath12k: REO status on PPC does not work
+To: Alexander Wilhelm <alexander.wilhelm@westermo.com>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+References: <aJ7sDOoWmf4jLpjo@FUE-ALEWI-WINX>
+Content-Language: en-US
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+In-Reply-To: <aJ7sDOoWmf4jLpjo@FUE-ALEWI-WINX>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Authority-Analysis: v=2.4 cv=Sdn3duRu c=1 sm=1 tr=0 ts=68a41bf4 cx=c_pps
+ a=RP+M6JBNLl+fLTcSJhASfg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=HThdk4v1ZfnwiNzKKCMA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-ORIG-GUID: 27ckf9rMagr1Hvh3TiY3P2cYxit1xf9n
+X-Proofpoint-GUID: 27ckf9rMagr1Hvh3TiY3P2cYxit1xf9n
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODE2MDA0MiBTYWx0ZWRfX4oZAFOjlgOFh
+ zMLU3nTwTRRacAU/6bZ52cz93UdM/06w+sYKvC2X+ldjZSFTwBk6CBwGKYuAupzY5A3bHMxQDEJ
+ Ok0wf0nyR/l5U5DrCe7noFzD9p39DsxKUcq7SXdy5Krir1makzu5QpStiyiHVAKpWeop14B0ORU
+ i7Fhg8m/cPpzfbfKPDCFHw9JpbNcxGANQkGLCNjfVegL8jV56JRhhoRyEzTZkSt5lW8web473uV
+ e0FC1f0r22MyY5Mz7bOBBErTnbq6TK0tCZA+KmigPRtGn/G8pn47svniol1waCDC4PwxeCJOYTj
+ BAhgFLpzYWjTs8PL0MHXEPhvnNMMeq4xmtGRoMBQAFeh1dFPVTmZvtBozd6qLRrKarW1uW1oUWS
+ enizFsJE
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-19_01,2025-08-14_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 clxscore=1015 suspectscore=0 priorityscore=1501 spamscore=0
+ adultscore=0 malwarescore=0 bulkscore=0 phishscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2508160042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250815_050512_495517_22B26037 
-X-CRM114-Status: GOOD (  16.34  )
+X-CRM114-CacheID: sfid-20250818_233846_406482_FB393C95 
+X-CRM114-Status: GOOD (  18.78  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -223,30 +129,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Am Fri, Aug 15, 2025 at 12:50:00PM +0200 schrieb Sebastian Gottschall:
-> i just can say. the changes i had to make for ath11k to get big endian
-> somwhat working where massive. alot of endian handling in ath11k is simply
-> not considered. the firmware is little endian and alot of fields must be
-> converted to host endian order. but at end end i struggled with dma
-> transactions and gave up since it was not resolvable. the patch i made for
-> ath11k was massive at the end and ath12k is not much different
-> technically ath11k and ath12k can be merged at the end. i dont know why
-> there are 2 drivers maintained which are technically very similar at the
-> end. alot of patches for ath12k can be applied to ath11k which i do
-> sometimes if its a usefull patch. but ath11k itself is abadoned for
-> maintainance as it seems (at least if you look for qualcomm supplied
-> patches)
-
-Regarding the ath11k driver, sure, if the firmware doesn't handle the swap
-correctly, it should be disabled and managed directly in the driver. I’ve
-already have a patch for this, spanning over 10K lines, which I plan to
-upstream at some point.
-
-In contrast, the ath12k driver performs the swap internally from the beginning.
-I only had to make a few minor changes to get a working ping. Some patches are
-already in the queue, and others have already been merged upstream.
 
 
-Best regards
-Alexander Wilhelm
+On 8/15/2025 4:13 PM, Alexander Wilhelm wrote:
+> Hello devs,
+> 
+> I'm currently working on getting the 'ath12k' driver running on a big endian
+> PowerPC platform and have encountered the following issue.
+> 
+> In the function 'ath12k_dp_rx_process_reo_status', the REO status is determined
+> by inspecting memory that the hardware has previously written via DMA.
+> Specifically, during the call to 'ath12k_hal_srng_access_begin', the driver
+> reads the value of 'hp_addr' for the destination ring (in my case, always with
+> ID 21). On the big endian platform, this value is consistently 0, which prevents
+> the REO status from being updated.
+
+This does not seem an endian issue to me, because either of them we should get a value
+other than 0.
+
+> 
+> Interestingly, DMA read/write accesses work fine for other rings, just not for
+> this one. What makes the REO status ring so special? I couldn’t find anything in
+> the initialization routine that would explain the difference.
+> 
+> Could anyone give me a hint on what I should be looking for?
+> 
+> 
+What hardware are you using? WCN7850 or QCN9274?
+
+> Best regards
+> Alexander Wilhelm
+>
+
 
