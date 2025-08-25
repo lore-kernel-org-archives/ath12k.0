@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 164A6C8303F
-	for <ath12k@archiver.kernel.org>; Mon, 25 Aug 2025 19:08:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BB7CCA0FEB
+	for <ath12k@archiver.kernel.org>; Mon, 25 Aug 2025 19:09:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:
 	References:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:
 	Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=w+ZXm2aMf4Mp8/xBDqZONvB3y3FNdpeO4ZhWPQIRkls=; b=k65l3rynEiSMlNJqQe+gloH6JH
-	rr8IyS2VEdDUlJee4pU71fZep0/C/dWE6i3gEmtZfehaj2fVnWfjJe8plSkNvF0T6kJooEa/RFS/R
-	wLSK7/YzJpDFaW5gtTr7a8noZKvRQBTs6adXzpVNc1nlOJeqNz3nbwQHFCSpgfqBZGm20Mzqa0gIT
-	UlAa3DTFW3pusfaAlJw/eXQBDqn7l/PsoaMYGHvkz9o0sWZCO6fp5XX9yPif5MvJ3E68K+FAHHC3z
-	EVIehbQkEJSX22K7vYOb7Gk0LbNi69BfjQAnX71YnShy2Q0nOdm3e6COjvfUQEAetNz5En9cC2qUJ
-	GsSsgvCw==;
+	bh=KCjHGGkmmC6v3Bf9wkmeAbcJyKHATedmhzconsWJRvQ=; b=CLQ2n37gR+FSVUV7nhqk/BJlOH
+	wWbtsf02JS01BnvFBpqUQFKkJuy93MuTZb/WzxjWOQ3PW3Heg/xYnP3fSfe03tXNI/P0GgqzCV5Rm
+	7ZPEDQw9AYKHep2WCR2uAPloeCyOjWCVV60mlf6/Kn3OrP1O+9MN3+u6ylQAZ3ZihhxIn+DtmbFpM
+	3+S4mY454lizaRmRngDp4wxACJHPy4KkZGnom0j5IOPk99M2E+vX5NxUwa1IV9hN/qtdC1kElA66W
+	kIKC0f6uq3Ool+Sygz/OrLQLOVsHsXwLoe6FRfhNQUiKWoRr7i+Vwt7NOkIGU2cq8KvYuRUmDGmnz
+	ZZ30BRPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqcYs-00000009Byj-3PnQ;
-	Mon, 25 Aug 2025 19:08:58 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uqcYt-00000009C0V-2zZW;
+	Mon, 25 Aug 2025 19:08:59 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqbFW-00000008rLv-0R1E;
+	id 1uqbFT-00000008rJl-3I4I;
 	Mon, 25 Aug 2025 17:44:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7D4A66029F;
-	Mon, 25 Aug 2025 17:44:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 506D3C19422;
+	by dfw.source.kernel.org (Postfix) with ESMTP id CD5E65C62F0;
+	Mon, 25 Aug 2025 17:44:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 26246C113D0;
 	Mon, 25 Aug 2025 17:44:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1756143890;
-	bh=/VL/puEcwU9JE6/bvQ6RKj2xqu8KqDM0xfb43tkQD9I=;
+	bh=u+j1MWZrVDMnA0nN2hd703dpVLMQhCSZUL4OYJmX1Iw=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=lZ5BPOJQc4SY0eMAd0OTFWvBRepMDTEO+CWEtcEhXckc98ik6kHU1q/wokjGnbQN/
-	 rILsujRc8cREJcoS08NbJ3zMeFKXyq0AtHAmE7cUo7upemiZkxIbCP+GKKXVcZ7Xxh
-	 XIXt8Z50W5bumJUKM/kj/jZD1xPyNfwiRjjLg4ZA3WqDG60TebCZYMI2Q/wffQxwTC
-	 Lc1nDtkTb1/2GzW+XuwumDFe5NL22u8Eni+R6HuWcIjd5rrtPuHabZfw9hskriibYa
-	 aS02jW58X8jhxchWsUEiEtct5LH/GiMa0dEMVmgIUT2xpuwWUvTGbNP9fv9+Z5vsWM
-	 mkKVyaSPko6mA==
+	b=JDKkY/D5iZoD0kVKUsBTL0e8MYxmuawMMJvAeqNP7YhOQN3wTellFdvhGjMRrI5l5
+	 VN9F09nL7C9t6pODn1tZS5Xc+qAHuVl+iRRnFSXIzuDPLB2CmaawMvpyinbWXQIG9g
+	 VMpCFUNfMMishrwV2EF4W4YkL5Jm8C3JJxhcUmSlHvqUo9FFR1n8f/Niqo2fMwAxgZ
+	 uAd4GNql8Jhn1Z6THTI2FCQcvtFlMWwSAX1Opawak3KxvDPCkUqdnbMZCuu7wOYFg7
+	 zbbwSGjqDuWGs+7hzMk7pCMaNNsBB1hbpTGIHGD4HvYAQk6JzUbSxH/nuNgtjRqiV7
+	 dR/o39cctmCjw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 47984CA0FE8;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1481FCA0FE7;
 	Mon, 25 Aug 2025 17:44:50 +0000 (UTC)
 From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
-Date: Mon, 25 Aug 2025 23:14:39 +0530
-Subject: [PATCH v2 4/8] PCI/ASPM: Improve the kernel-doc for
- pci_disable_link_state*() APIs
+Date: Mon, 25 Aug 2025 23:14:36 +0530
+Subject: [PATCH v2 1/8] PCI/ASPM: Always disable ASPM when driver requests
+ it
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20250825-ath-aspm-fix-v2-4-61b2f2db7d89@oss.qualcomm.com>
+Content-Transfer-Encoding: 8bit
+Message-Id: <20250825-ath-aspm-fix-v2-1-61b2f2db7d89@oss.qualcomm.com>
 References: <20250825-ath-aspm-fix-v2-0-61b2f2db7d89@oss.qualcomm.com>
 In-Reply-To: <20250825-ath-aspm-fix-v2-0-61b2f2db7d89@oss.qualcomm.com>
 To: Bjorn Helgaas <bhelgaas@google.com>, 
@@ -70,21 +70,24 @@ Cc: linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
  "Rafael J. Wysocki" <rafael@kernel.org>, 
  Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1098;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=4409;
  i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
- bh=Tfz/vnVvMAdBE04yo1wOWEyY0vLu4AnSJ/u3erLU3u0=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBorKEPSRZmDz2JU+1YrKPan8RUFHp8+J+c+0yFz
- pCiZnYzQ+KJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaKyhDwAKCRBVnxHm/pHO
- 9Q0zB/90j6LoYGJLsGfXcFdL1JD6pFL/6/W6X/cf9fNO+v2sWTL78ffGUtwe7stNZfUljUo1neF
- FDjmXwhJzoYiJWjDhYxrusOSLBNu7xgvLUtOP79yXhHK8PuJPz8xO2tnjGmWYIaSoCyrcWy3Nrn
- paqoC+BEneBcCDTBQC7IaNbIkhDpj0X7+Nr9eCr9tFIm0pbg0ZPTApS2sX1C2YCcVUJYc9KsjD/
- 80y9wlwfTHK5RTkEOap1Cc37/BChZcfosDtlMkFdeKxu/sBU1Oq+yuiyfij6hNXKjh6PZvtlkzw
- EcEWa4XsUO6a1YePFDMJnD3+aa2Mb9+elsGN7+ZCei0IViEA
+ bh=XteWgzQLE4FB1d7fUUtWPfDxXr3Zn7uGZ3PNAO/OJ1o=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBorKEOInbYm5tl5KOPLP0FAuBz7q4CEGOPyc+H8
+ JnnTv9G2EeJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaKyhDgAKCRBVnxHm/pHO
+ 9ZWBB/4v7fVw7cQpZhIlei/tgmZsW671sNE/em0HNodv96mg1pNd6NIEv76mCwcqsQW9WXZzu1P
+ A1Rfn/XV4mJI7DIrfGI80bYvM8hFz5iWdD93TpVpfS9KKTf9BveX3sBJ7CBy7dCdqDqWtMBtxd9
+ RGoFOQB5Zr5yNNBnUfZ1kP4F3Q2lAvzzOaOqUiTwf1Rb66K3OJidg5WrDX2XVgAxXlbh+s3dqgx
+ rKa605QyAAvQHUpIZTxVYoqBxXpFE1Y0B5sW2TdcGODrN9aR4kT1GoBkuj5pgOyT6bZnXvj9Q09
+ iUHx/0rrCwBlMdlO4njgBUYwkx4sySg5EXZNY6rLq3wPz9UT
 X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-Endpoint-Received: by B4 Relay for
  manivannan.sadhasivam@oss.qualcomm.com/default with auth_id=461
 X-Original-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250825_104451_942468_4C7C9906 
+X-CRM114-Status: GOOD (  18.53  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,38 +103,101 @@ Reply-To: manivannan.sadhasivam@oss.qualcomm.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+From: Ilpo Järvinen <ilpo.jarvinen@linux.intel.com>
 
-Add kernel-doc for pci_disable_link_state_locked() API and fix the
-kernel-doc for pci_disable_link_state() API.
+PCI core/ASPM service driver allows controlling ASPM state through
+pci_disable_link_state() API. It was decided earlier (see the Link
+below), to not allow ASPM changes when OS does not have control over it
+but only log a warning about the problem 'commit 2add0ec14c25 ("PCI/ASPM:
+Warn when driver asks to disable ASPM, but we can't do it")'.
 
+A number of drivers have added workarounds to force ASPM off with own
+writes into the Link Control Register (some even with comments
+explaining why PCI core does not disable it under some circumstances).
+According to the comments, some drivers require ASPM to be off for
+reliable operation.
+
+Having custom ASPM handling in drivers is problematic because the state
+kept in the ASPM service driver is not updated by the changes made
+outside the link state management API.
+
+As the first step to address this issue, make pci_disable_link_state()
+to unconditionally disable ASPM so the motivation for drivers to come
+up with custom ASPM handling code is eliminated.
+
+To fully take advantage of the ASPM handling core provides, the drivers
+that need to quirk ASPM have to be altered depend on PCIEASPM and the
+custom ASPM code is removed. This is to be done separately. As PCIEASPM
+is already behind EXPERT, it should be no problem to limit disabling it
+for configurations that do not require touching ASPM.
+
+Make pci_disable_link_state() function comment to comply kerneldoc
+formatting while changing the description.
+
+Link: https://lore.kernel.org/all/CANUX_P3F5YhbZX3WGU-j1AGpbXb_T9Bis2ErhvKkFMtDvzatVQ@mail.gmail.com/
+Link: https://lore.kernel.org/all/20230511131441.45704-1-ilpo.jarvinen@linux.intel.com/
+Signed-off-by: Ilpo Järvinen <ilpo.jarvinen@linux.intel.com>
+[mani: commit message fixup]
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 ---
- drivers/pci/pcie/aspm.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ drivers/pci/pcie/aspm.c | 33 ++++++++++++++++++++-------------
+ 1 file changed, 20 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/pci/pcie/aspm.c b/drivers/pci/pcie/aspm.c
-index 1243715bc054f859af175143a7ffaef0971f097a..3c8101023e80d3c0550136f729782c0e0a3e28cf 100644
+index 919a05b9764791c3cc469c9ada62ba5b2c405118..be9bd272057c3472f3e31dc9568340b19d52012a 100644
 --- a/drivers/pci/pcie/aspm.c
 +++ b/drivers/pci/pcie/aspm.c
-@@ -1415,6 +1415,17 @@ static int __pci_disable_link_state(struct pci_dev *pdev, int state, bool locked
- 	return 0;
- }
+@@ -1381,16 +1381,23 @@ static int __pci_disable_link_state(struct pci_dev *pdev, int state, bool locked
+ 		return -EINVAL;
+ 	/*
+ 	 * A driver requested that ASPM be disabled on this device, but
+-	 * if we don't have permission to manage ASPM (e.g., on ACPI
++	 * if we might not have permission to manage ASPM (e.g., on ACPI
+ 	 * systems we have to observe the FADT ACPI_FADT_NO_ASPM bit and
+-	 * the _OSC method), we can't honor that request.  Windows has
+-	 * a similar mechanism using "PciASPMOptOut", which is also
+-	 * ignored in this situation.
++	 * the _OSC method), previously we chose to not honor disable
++	 * request in that case. Windows has a similar mechanism using
++	 * "PciASPMOptOut", which is also ignored in this situation.
++	 *
++	 * Not honoring the requests to disable ASPM, however, led to
++	 * drivers forcing ASPM off on their own. As such changes of ASPM
++	 * state are not tracked by this service driver, the state kept here
++	 * became out of sync.
++	 *
++	 * Therefore, honor ASPM disable requests even when OS does not have
++	 * ASPM control. Plain disable for ASPM is assumed to be slightly
++	 * safer than fully managing it.
+ 	 */
+-	if (aspm_disabled) {
+-		pci_warn(pdev, "can't disable ASPM; OS doesn't have ASPM control\n");
+-		return -EPERM;
+-	}
++	if (aspm_disabled)
++		pci_warn(pdev, "OS doesn't have ASPM control, disabling ASPM anyway\n");
  
-+/**
-+ * pci_disable_link_state_locked - Disable device's link state
-+ * @pdev: PCI device
-+ * @state: ASPM link state to disable
+ 	if (!locked)
+ 		down_read(&pci_bus_sem);
+@@ -1417,13 +1424,13 @@ int pci_disable_link_state_locked(struct pci_dev *pdev, int state)
+ EXPORT_SYMBOL(pci_disable_link_state_locked);
+ 
+ /**
+- * pci_disable_link_state - Disable device's link state, so the link will
+- * never enter specific states.  Note that if the BIOS didn't grant ASPM
+- * control to the OS, this does nothing because we can't touch the LNKCTL
+- * register. Returns 0 or a negative errno.
+- *
++ * pci_disable_link_state - Disable device's link state
+  * @pdev: PCI device
+  * @state: ASPM link state to disable
 + *
 + * Disable device's link state so the link will never enter specific states.
 + *
-+ * Context: Caller holds pci_bus_sem read lock.
-+ *
-+ * Return: 0 on success, a negative errno otherwise.
-+ */
- int pci_disable_link_state_locked(struct pci_dev *pdev, int state)
++ * Return: 0 or a negative errno
+  */
+ int pci_disable_link_state(struct pci_dev *pdev, int state)
  {
- 	lockdep_assert_held_read(&pci_bus_sem);
 
 -- 
 2.45.2
