@@ -4,190 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10803CA0FF0
-	for <ath12k@archiver.kernel.org>; Tue, 26 Aug 2025 08:23:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3625ACA0EFA
+	for <ath12k@archiver.kernel.org>; Tue, 26 Aug 2025 11:45:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-Type:
-	Content-Transfer-Encoding:References:In-Reply-To:Message-Id:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ggqR0X4h+tHFTx0oryfClbL/QLsiKrl2OGgv4kWQogo=; b=kmh0DoW7O5mz4FwZvH7nxtIYXo
-	NNul+f8WWhnbeRMlonG91yHtD2wSu5zXsf+vf/1Sx5qNqiIrRT+9nrDVcqO/P6Xi2jDPPqx8CNnEk
-	io4mJNTgSSEVgcAGNKVI7yUr8dp9dWNVXcNPaXQZQfjU9bO+Ik1zHD3AkOL10IXXAWuHTjuD0Uo+r
-	cewPibB3L+GlKe7uP2FlmuuWopDWxjEXNPERlh+yE9uUmd3MGcpO6pQmIli6N6xtc2/qP3KYSs7AB
-	spuSLtQFh66w/PDBXP7aGQMTUNiKlFdTjP5cEMHnW/4CF/vLtOGTv/gXPTaOQpcCbc8iLUnMLtJ3z
-	43dvO1Dg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=CNCV9qaRum1DYnlFliK7Vi8YJ+RutKRZ8GpCrZR+NPs=; b=rsHmKIytgj14enqd5rADXm1vuC
+	syVSfJ0mfs5HuJMSMavoo00yLnRJBWbxEBhrQuAhrG8bJzFIj7njY4b41PxiN8rDphwvQO/zKKFKn
+	Z70yIQHafSm1sWjFGAubtI48K0LAJf3TCMG/M2Z8BFfmcHEdunctlP+uQZL6BJCNPmWGc/MyxiiDo
+	ot12DWMIttk/kmJn7OrNVRsfusgeQXomqqc1+/e3jCw/clGNLyZEW+vzfUXKI+lF89HxXk2EU93wy
+	sas6GWHmi2dQEJV4+3Y0W3XazHs1OV8bxOjJXTylk+kPnLT5UHNafyILE1tohssydsPfPudrqjuWN
+	WIAXS/aA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqoxX-0000000AzvR-3Pf1;
-	Tue, 26 Aug 2025 08:23:15 +0000
-Received: from mx08-0057a101.pphosted.com ([185.183.31.45])
+	id 1uqs6x-0000000BpqY-3TJ8;
+	Tue, 26 Aug 2025 11:45:11 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqnyk-0000000ApE5-3og4
+	id 1uqrMz-0000000BgyH-0GLy
 	for ath12k@lists.infradead.org;
-	Tue, 26 Aug 2025 07:20:28 +0000
-Received: from pps.filterd (m0214196.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 57Q4seTo3423421;
-	Tue, 26 Aug 2025 09:20:16 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=270620241; bh=
-	ggqR0X4h+tHFTx0oryfClbL/QLsiKrl2OGgv4kWQogo=; b=jaZdadFGHynls+sw
-	4Eao8ZNXA36t61+0bpPCLNBpB+hD8wNOinsMcj3fAfv0mUPNFi7Z7ohSv/I1i5gP
-	P6ihz3Q6Szxh65IA1YhluRjb+soDwZQDsVI4Ulenyoni7OZZC71UhC0sNxTY3ucr
-	hivteUqMdwvkhzhR0RtPznOgudQEojacUMmjEvExoDVy6WjrYhQHal3Hqz3t8clR
-	BS5Y6YSnUT/BafMVKvtiQsIBjXPmQ7x4yIYJzppqOn/a8OSXyCDLE2vfFLkwpBNU
-	NWJRXR48DUIDzDm/giAteiF0/3Uxlx8Z/ns7PXEdrcPNINb0qChXVpwwhLIcsOFY
-	NKnj2Q==
-Received: from eur02-vi1-obe.outbound.protection.outlook.com (mail-vi1eur02on2106.outbound.protection.outlook.com [40.107.241.106])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 48q308ag97-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Tue, 26 Aug 2025 09:20:16 +0200 (MEST)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Q9Ug3BVl7tE2D9ZBTI0bFL7PQn1bCXnTYRiGa7qbA+jihdJ1nDgNZ7SyuWvuJF1UIo0axdSuDvJw1TTRAX6uA+d23cdWncIibzbCWFpq/Af7OR6LO8E/NxlE6WVQTFpw1CNDOW2dcJ7eFb2BBvO7AMAlnWea5D0Hktq3OQ2KKymHjJaNQY2xvLpnl2MFDAyzJqXu5lAMs2RDi6BwUigut/mMuLpcBes6TmSUzUenFTG0X52R2VePzmkk0ZZrdW+GiOI9WmFi1A/zTcrbrl8VnOGVHhlab+5QeHKm8/qFbBTeb1jbRHhoxEfX+TJu9rgxZrCf0ePlLw3vDy9DBojr4A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ggqR0X4h+tHFTx0oryfClbL/QLsiKrl2OGgv4kWQogo=;
- b=WsCZQsadDHfBlBqnmlfet66y9DR7rhFCYKeLh3JXiDQkTQtHumaFoOMQUxdLNNj36x04LaeD1p/3Bdz+wSxF8wSAo/hfbcOI8oWCE9xnk2NT+IJDJ4tpDzD8cLD/jTdxigapzOVZauPWmFxm4UMC4XADpu1g1ivohuRH6MbQnzJlvMTrHGxQ7RGdprnEADSGsvK6z2lSd3hFLM1VhFt4AJI3gUOLm2J/wf2We3BzL12lW+I1qey3L+3OjWAz7P/d4jCcWSULpdDc2i5tz9jo/wtIDbYlj74O/H9hk0FVhXI2VwfFMWMiStEh/PPikxH3Ufi78PS5ep7MEKJJ4kqcAg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
- dkim=pass header.d=westermo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=beijerelectronicsab.onmicrosoft.com;
- s=selector1-beijerelectronicsab-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ggqR0X4h+tHFTx0oryfClbL/QLsiKrl2OGgv4kWQogo=;
- b=E0jsa3p667oTSzHLs4GoKps4qD1x6Joco9b323d4VmDMcMVEdZPU7Ep/oJwzfpRwkCiKJ28q5B+bkgo8SSeXUZCwArtBVFlw1fF50sXGEGjXBunXvRbPWmLAsFSC4bExTI0Zm+fnjWmUpuT1Nrlkq4j+SHZJ4wu9KvndWudxLD0=
-Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM (2603:10a6:d10:17c::10)
- by DB3P192MB2107.EURP192.PROD.OUTLOOK.COM (2603:10a6:10:438::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9052.20; Tue, 26 Aug
- 2025 07:20:13 +0000
-Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- ([fe80::8e66:c97e:57a6:c2b0]) by FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- ([fe80::8e66:c97e:57a6:c2b0%5]) with mapi id 15.20.9073.010; Tue, 26 Aug 2025
- 07:20:13 +0000
-From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-To: Jeff Johnson <jjohnson@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-Subject: [PATCH v2 2/4] soc: qcom: fix QMI encoding/decoding for basic elements
-Date: Tue, 26 Aug 2025 09:20:05 +0200
-Message-Id: <20250826072007.1395416-3-alexander.wilhelm@westermo.com>
+	Tue, 26 Aug 2025 10:57:42 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57Q3BHcV006924;
+	Tue, 26 Aug 2025 10:57:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=CNCV9qaRum1DYnlFliK7Vi
+	8YJ+RutKRZ8GpCrZR+NPs=; b=LM6K0fbKk5RQXJnQU95+EEXNrUKA62/h9X/RWQ
+	q0nzQYUXsT9Mo5d/qKkaR8llGRWV8Mq+nWoMDWKt8/JDuXw8yweNe5WlJlBlEx+x
+	tmP49sf0BTS2j4WTbL2maUjSCDV6ZZtS95RMr1drv1h3hokTM7gHa6W3X/iOQsJC
+	p7rVt/Orw5Yp929Ub7gLkaBzf0H2AwGJVnH+uvgKk8vTs8QpMA/5DsPyPHRMIDPQ
+	Wa6Ph4Zeb+Sq2EF8EP2RQgEyk004BeVCEhTP1dVwRWDTDnjK/u7gJaAouX1YqxbR
+	9Gu8gwnzyVHJ0uUfFA2UVtuFn6RUXpzgYXfftTxsOxNw+UAw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48q5unrdgq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 26 Aug 2025 10:57:38 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 57QAvcYC016785
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 26 Aug 2025 10:57:38 GMT
+Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1748.24; Tue, 26 Aug 2025 03:57:36 -0700
+From: Roopni Devanathan <quic_rdevanat@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Roopni Devanathan
+	<quic_rdevanat@quicinc.com>
+Subject: [PATCH ath-next] wifi: ath12k: Add support to set per-radio RTS threshold
+Date: Tue, 26 Aug 2025 16:27:14 +0530
+Message-ID: <20250826105714.1188131-1-quic_rdevanat@quicinc.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250826072007.1395416-1-alexander.wilhelm@westermo.com>
-References: <20250826072007.1395416-1-alexander.wilhelm@westermo.com>
+MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
-X-ClientProxiedBy: HE1PR05CA0144.eurprd05.prod.outlook.com
- (2603:10a6:7:28::31) To FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- (2603:10a6:d10:17c::10)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: FRWP192MB2997:EE_|DB3P192MB2107:EE_
-X-MS-Office365-Filtering-Correlation-Id: 926491b9-e1f3-4fe7-447c-08dde470ff91
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?qtSj9YTZPUDlAGuuk05k81Yl+8/7h6wCnRK6Vo9CBL7q1S8uP1GJn4DnCgAj?=
- =?us-ascii?Q?TjT+82PYth7xqlWyHtHA+fj4Hw4+ScM12zovGO/hX/lC31wLylatcVSCWRow?=
- =?us-ascii?Q?venXu/lq0JxVoitfr80ONpx4NuoDQ1K0P5SeXZXHsT1CKcW9/0laOZIIl+/0?=
- =?us-ascii?Q?NHu8kmMQtcGBO1JOknRb7TDxB/lwvKBObL8spVFp7+xykK3ewP2FlB9imB2c?=
- =?us-ascii?Q?3yIszxmxHvg/QPy4m4xq3nGO0pl+sBFghVmoFB5tvv1Coz90MY2tS07GjfHM?=
- =?us-ascii?Q?2DnwhmQNJIU7Rwvh/uL3/zB2i1tYBoSmGTZjKaD3na6efnSejNHJmwCnAQ5a?=
- =?us-ascii?Q?VgQgwC8Y9mOPDABoTgbfeabVQ2tSzRQTCfLmyNVT9oyg2qd5+U/ySffZYz0Z?=
- =?us-ascii?Q?7tsWMDlkzAOat0NgbesuTz1iqbrLri7oFa40vO3pYBG2SqikN+AG9lbYcMP8?=
- =?us-ascii?Q?Z6GO/fc3+xkiwRZq6tCiX63P32Wf1uiU1rbuRJPphPB9E+h1K9yl21XFzuM9?=
- =?us-ascii?Q?xBNFCvoNFGiOxFZFoC4GbsCL6L/+e11gUmsq4sD83bGj+J4S8+p2ruyKGyvR?=
- =?us-ascii?Q?TsxNYvoNzgVUrkVwSOjdl1sn/mPmNgfC2TFrKBmMHQ+k0DH54z/IBquLEmIv?=
- =?us-ascii?Q?4iMtpsRtIEOprG5gxpZ79+Wj1gRrn6rtDPAiiqo8LT4lVl/7lIiic986O7rk?=
- =?us-ascii?Q?+oKf+nW9Jv7h1lAD3wELvk8rO+4F9ehFP45SXsWtO30ceHD0y6cpvdhuqIAl?=
- =?us-ascii?Q?P/j5B2VM6G8fAwXye9WuSgjL6gEKveboDzOioFlCw2D+kiPe+tTQLiTxIQ67?=
- =?us-ascii?Q?x0HdqshVjeGX3V54hI73rgU9YugJ4l1uD3Q78e4Dwq6YK9px2OqOzyx/AfBh?=
- =?us-ascii?Q?fwfk/gyOyGJNKY+gbYgcEf3g0eshrcrWHp7GiRq2mf8siIQ825QibCqL6z4W?=
- =?us-ascii?Q?cZ61+bCuhri7BNiUt3g7YhBRgb+gPWNdpQnDhSHglc2Zj5/UVpi+s3Qu2DaY?=
- =?us-ascii?Q?clXPWUbHagPUcbrHwgxRxOC4sVlfb+tL2242oLLwiMcXTZHehJ3FnhMF8/Cm?=
- =?us-ascii?Q?9AAuRlOtZHe6O9wuZTClFvwVkMNvjhjGqN/mhctk941PZKwm+Jy4/4Dr6crR?=
- =?us-ascii?Q?g8O5Q991XMJlSau83WyEbACuh/DdL+UUKJ756sGBvXFgoCXH+anzhuAMeUTh?=
- =?us-ascii?Q?ME/TtuRkZ1khCB2I1cxEkU93srtgSD2m3EHH2vVDe6nxgy2t0r08xY0diU+D?=
- =?us-ascii?Q?uoFB9/e7V3mO9OaaG0RXBvoiA6tdg5dyKrSXPKQH02TzfYitED1K1QfJNzTl?=
- =?us-ascii?Q?BNevU56rarz9YVp2XLnk2eaIf8meEl41M3fkFbbK1i9Zv4fvyQ4qvKNk1ATO?=
- =?us-ascii?Q?voijhHmjUKw52s5WR/gnSwi8h5Eyfi7zBC9EEGdbyIvMLwbR4iVJ8eP4trNU?=
- =?us-ascii?Q?K6Ey2nO4qEI=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:FRWP192MB2997.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?BbHc/1YZvyRqIwMbUIxEKaZ/i/a7wukd2SWxMN7IrJp/elB8wHF+KeZHRE3n?=
- =?us-ascii?Q?cdDaUS+JdrOM1hyD9pturEmoUiN8LpGHfvqzmfJ0zaYaCS4zHB+b9ApI5rFb?=
- =?us-ascii?Q?0m/cnh3O8EyyH9B8VEFOloO12NlF3BZsgKGVIgU0iwyQSq30ENIBUpKK14bC?=
- =?us-ascii?Q?D1xzI+EY2/h+1qLYTtv9IP1TUeVeYNa2P1vbKmB8hUZU60g+1wboLjOJ3e8u?=
- =?us-ascii?Q?if5mWhT3GNhXLFyXWs8NRYg2sE7jsSQYUah5rjHpz1ZZYYpRAGxKAr4X6+Rl?=
- =?us-ascii?Q?ejhgvYFOadblP1TvobOg22r9tiAfZ0uUlGYATh2RyAhl4B+E/6ljfsljnBF7?=
- =?us-ascii?Q?NtiZBkoHxhKqy+MUJsdr09rGzhmsb4YuAEyq2lnQ+LuatT7Y9iuOIKHf4UTo?=
- =?us-ascii?Q?VubbkQL6q8EQGIpxasH46o7zJH/AKNVsqlq1/xMwdhnjS656eum6aRIHIi3O?=
- =?us-ascii?Q?TQ9NU/SBO7CZgTT2AgGeTlOO39+8aq1m3TLblrGkWZz8R0DfueE0EsDdbXip?=
- =?us-ascii?Q?C4sc0XUiUEMZoNJvRwpQT4kuvqRIdVxkJ/OXXSWewlT6LaVCf6+n7G+Tzjx+?=
- =?us-ascii?Q?1hPUiD5FNIAe+2TJ/9zbkmIKkD83/7DN2x2TYYzZrlvBrflgGcpCcf3q5ME9?=
- =?us-ascii?Q?yMNgXuBiZ4bd/xKzxrvB1gj6eDeKRIWcCyvXSuCliGVNLyXd6Szm3FVGchrQ?=
- =?us-ascii?Q?8gyjrg00sEzE8BXKui2iIGjaDNzdEu+WV1/kgOIP8VPp1vRliKMcbCeJ3G0m?=
- =?us-ascii?Q?CaFDYCPWZKUtUyHoYt/J9yNUZzCVh9KBPGo9T5OcdNdztvXKqBo6D89xK8dc?=
- =?us-ascii?Q?WpFh2goHMH2AxrV3+crvckpHzNwOWe4WDg+E0Xe9j78gF2JG8u4XY6rc5Ca5?=
- =?us-ascii?Q?z0LJgv9dcCGsK9vAoREJY56nCUhiyvcrKmut/+SLLuBg07xlHxWRNYG362ch?=
- =?us-ascii?Q?/30EJXg9qx5l9sPrJMuAiT0Ytd7mw2MTfo+J+X1K4+8AXMKqSgY+rb4gvOyK?=
- =?us-ascii?Q?Cc5ZvQUVr9WPHmCDpI+PWUbSCun5iEJLiKUr9Z5PNzy3hezIWD1EMYEcmcX+?=
- =?us-ascii?Q?eG7YVbdV4eom4FQhkXFDL7gwtPqDx3OsM14VNCqgQtIZEN1wx4lmSGNSxinw?=
- =?us-ascii?Q?gBEvZ8H9W+NbuJ0KtpEmFJAfrHLBuYt0xrbE7MDScYhAmf43M1swWb+3n+aG?=
- =?us-ascii?Q?Rhl3TM3qPTWeUCPhgV5w4ATkb4iBns74QMItDgkfuHWR6DQnRmGr79ptFXLG?=
- =?us-ascii?Q?/07Zy3JtDYqpWvp9t6i1M0WNub5LIY2OrJYkXJ50WOreiinybjB1B2doK1xK?=
- =?us-ascii?Q?QGi8GjKWb65bwo3xxaaN0Yi4SdkybwgBOkdGwSN2QolwpIZf0gLHaPtZbGrx?=
- =?us-ascii?Q?88cBXwkmoa0vgHOIxSGcGUkBvj5Ooyeu8EIzOmvQifQ6SjdSuwATYXtYoCK4?=
- =?us-ascii?Q?cXxI1+RGUoZ/hUX71IOpmOMh5euQWwYW2iX8i6mNnF6OTYf9cszq9ybeyMsa?=
- =?us-ascii?Q?nVXQf39NALTH3YjBY31oZQ0oZwqz41n+CBlbNJmYJSkFz7T9a30AV6YlOBsK?=
- =?us-ascii?Q?/gBvyanGp6SCH3oN6BnK94R1euhBEVY1M3lQey8b?=
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: JXCkXEFAxgl9UueaQKq5EqigXN5W52MYuNbd3YSz+Ove8PKkPhqBBN/ehLGUpGoAszqHGOsPlxxXVtf46S77hUvYWyi4pGxGPl9gTvlz17Qv/BXe/rcRwFppdAXxuH4ozTHR1/V0VL9zdkNUioB3ZZUISEFPtHWGOmFEfEH7LuB8LuXz27jGfi7/F0IN3h2fAouCQcett3w/nS4CV4oeg9q1KUNh2ShRzfpu2q8tiCoZuf9786XvqzArtJTIogU+MuSfAbEGINKze/IfdA75lwgGO3ru5yZuFRIwiS2ZTCXR3MvtmTH0wuMzzXcNrdAHAVhHLLViC0j0zGghg+0dMJ9Y1HmKLirsbHTk7TjfSE7fFfQESoDraNi7g505ML5qBcOrVlzFjn2hDGPfmvUMVrxF5ba1b99jMm0MzrGT/1TWov+6LUaTYsYJ1rj4ZNjD28nU5EoJQQwoNuDGNLtctXIxxRFqriruDwZOT9RPiLdqbYxxREz8F4IQnispfW52Z6Fm/dKpua1TxtxwrgZ0DZP+gQyEqdvyNZZ++IEyjXtrkInOWmxke6lW3FcuO7bArNoW5oGEYh0PXP3muYblhyBw5b59yc7/pABXJXPIFve04unPlfMWUeE4Qr/fLUmo
-X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 926491b9-e1f3-4fe7-447c-08dde470ff91
-X-MS-Exchange-CrossTenant-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Aug 2025 07:20:13.2064
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Sbb0SRSa37xJC+0JmxF2c2SqwOsExVSo15gHu4leGkZNN44C7zsuCqlBcSXhDcAhO8QVviF2q3MgxXReGXmz8g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3P192MB2107
-X-MS-Exchange-CrossPremises-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 14
-X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
-X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
-X-OrganizationHeadersPreserved: DB3P192MB2107.EURP192.PROD.OUTLOOK.COM
-X-Proofpoint-GUID: uLcIAUvK-ZilYEX68s4h_WSNGCcXg6pf
-X-Proofpoint-ORIG-GUID: uLcIAUvK-ZilYEX68s4h_WSNGCcXg6pf
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODI2MDA2NCBTYWx0ZWRfX3Hw2LVlCQXfD
- reOjFw6nALpdIHHnDwy2KaGpTDvB3Iet4hk00gTLveWHgh9YL/yvOv6jpQryGqZRUy5JFJA+Fep
- 3AY18rsmGjBvWznRMj0XpywEZ+9l4cqNzdZCZ0/z1PAaXa80Ak9BTsB6kL2zk+inq3W6Dj9P5J/
- gAsmchlKYMFTNO/qUQpcmzw3lo6n86QWqB4lDeaKDJvZzkUdQ//WyNvj1d6YTK8C9Z1GkA3bHmC
- /T9q6PvX7DoTIFwUEonIh3TSK17qDragnqG7z9DrpXkQ6fDriHM0AtPQCzu8lYDs709ny8HAB9Z
- SlBioIwZ948bUstnh7qwD8GjH5LiAiv+atdwANEJ7OXCdWzXntUySBm45umxhQ=
-X-Authority-Analysis: v=2.4 cv=A8BsP7WG c=1 sm=1 tr=0 ts=68ad6030 cx=c_pps
- a=K3gaILMeFwxk5q8MGe2HyQ==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
- a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
- a=wKuvFiaSGQ0qltdbU6+NXLB8nM8=:19 a=Ol13hO9ccFRV9qXi2t6ftBPywas=:19
- a=xqWC_Br6kY4A:10 a=2OwXVqhp2XgA:10 a=8gLI3H-aZtYA:10 a=N9GNhs4bAAAA:8
- a=T0L45qBzl8X6T0AR6ckA:9 a=PZhj9NlD-CKO8hVp7yCs:22
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: lNygKB7uvdxxT_zhtJmJFqPGOm7trupf
+X-Proofpoint-ORIG-GUID: lNygKB7uvdxxT_zhtJmJFqPGOm7trupf
+X-Authority-Analysis: v=2.4 cv=JJo7s9Kb c=1 sm=1 tr=0 ts=68ad9323 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=2OwXVqhp2XgA:10 a=COk6AnOGAAAA:8 a=3yoqSv9YOmdF3HXSz3sA:9
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODIzMDAzMSBTYWx0ZWRfXwddZ9UYMMMai
+ jXI2AmaxOb7NhmvEkP74RYTD5Dg/NJAFUrGBGF6zrtaGk4ufvmtVeJB1jonlRz4455yUncCsXBn
+ P2ooXgQwXR1yOE8koBnFCLVprXUSrh1Rg+7in4syjA7TLbOoTv36SCmXEaqUJ3dKrZ4v1v76fKh
+ NcWxQp3fBjkIczg/yTXlbIzwUuKH7KCy1RqtgHpmMidHs4yE1CaqsFZg5ek7mb00HwG2w7tBieh
+ OPedUrEsgjKmt00P/oFHjXS9rEbIV6BLyqDsS9b862WgPoS0owVGZyCiewhBbDOpzatMJuCpR7+
+ j1UvLEy4nwDGjWtin3xz/4NI3XD/UotM+/24+pRjq+l6DvEKCEd9CBdaxNFczBvwBnnw5Z1jdlK
+ ujAvvioW
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-26_02,2025-08-26_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 adultscore=0 bulkscore=0 spamscore=0 impostorscore=0
+ malwarescore=0 clxscore=1015 priorityscore=1501 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508230031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250826_002027_228262_CB439E00 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20250826_035741_226332_2B205799 
+X-CRM114-Status: GOOD (  21.75  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -202,96 +106,145 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Extend the QMI byte encoding and decoding logic to support multiple basic
-data type sizes (u8, u16, u32, u64) using existing macros for generic
-access. Ensure correct handling of data sizes and proper byte order
-conversion on big-endian platforms by consistently applying these macros
-during encoding and decoding of basic elements.
+Currently, command to set RTS threshold makes changes to the threshold of
+all radios in the multi-radio wiphy. But each radio in a multi-radio wiphy
+can have different RTS threshold requirements.
 
-Fixes: 9b8a11e82615 ("soc: qcom: Introduce QMI encoder/decoder")
-Signed-off-by: Alexander Wilhelm <alexander.wilhelm@westermo.com>
+To support this requirement, use the index of radio for which the RTS
+threshold needs to be changed from mac80211 - radio_idx. Based on the value
+passed, set the RTS threshold value for the corresponding radios. Following
+are the possible values of radio_idx and the corresponding behavior in
+multi-radio wiphys:
+ 1. radio_idx is -1: consider RTS threshold as a global parameter, i.e.,
+    make changes to all the radios in a wiphy. If setting RTS threshold
+    fails for any radio, then the previous RTS threshold values of
+    respective radios will be restored.
+ 2. radio_idx denotes a specific radio: make changes in RTS threshold to
+    that radio alone.
+ 3. radio_idx is any other number: report it as an invalid number.
+
+In case of single-radio wiphys, continue with the existing behavior, i.e.,
+set the passed RTS threshold value to the radio present.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
 ---
- drivers/soc/qcom/qmi_encdec.c | 50 ++++++++++++++++++++++++++---------
- 1 file changed, 38 insertions(+), 12 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h |  3 +-
+ drivers/net/wireless/ath/ath12k/mac.c  | 50 ++++++++++++++++++++++----
+ 2 files changed, 45 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/soc/qcom/qmi_encdec.c b/drivers/soc/qcom/qmi_encdec.c
-index cb43531a8b66..d8575e92dbf6 100644
---- a/drivers/soc/qcom/qmi_encdec.c
-+++ b/drivers/soc/qcom/qmi_encdec.c
-@@ -36,18 +36,16 @@
- 	*p_length |= ((u8)*p_src) << 8; \
- } while (0)
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 519f826f56c8..da7e99f2ca0b 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -1,7 +1,7 @@
+ /* SPDX-License-Identifier: BSD-3-Clause-Clear */
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+  */
  
--#define QMI_ENCDEC_ENCODE_N_BYTES(p_dst, p_src, size) \
--do { \
--	memcpy(p_dst, p_src, size); \
--	p_dst = (u8 *)p_dst + size; \
--	p_src = (u8 *)p_src + size; \
-+#define QMI_ENCDEC_ENCODE_N_BYTES(p_dst, p_src, type) do { \
-+	*(type *)(p_dst) = QMI_ENCDEC_ENCODE(*(type *)(p_src), type); \
-+	p_dst = (u8 *)(p_dst) + sizeof(type); \
-+	p_src = (u8 *)(p_src) + sizeof(type); \
- } while (0)
+ #ifndef ATH12K_CORE_H
+@@ -730,6 +730,7 @@ struct ath12k {
+ 	u32 txpower_scale;
+ 	u32 power_scale;
+ 	u32 chan_tx_pwr;
++	u32 rts_threshold;
+ 	u32 num_stations;
+ 	u32 max_num_stations;
  
--#define QMI_ENCDEC_DECODE_N_BYTES(p_dst, p_src, size) \
--do { \
--	memcpy(p_dst, p_src, size); \
--	p_dst = (u8 *)p_dst + size; \
--	p_src = (u8 *)p_src + size; \
-+#define QMI_ENCDEC_DECODE_N_BYTES(p_dst, p_src, type) do { \
-+	*(type *)(p_dst) = QMI_ENCDEC_DECODE(*(type *)(p_src), type); \
-+	p_dst = (u8 *)(p_dst) + sizeof(type); \
-+	p_src = (u8 *)(p_src) + sizeof(type); \
- } while (0)
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index bd1ec3b2c084..c0e0423464e3 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+  */
  
- #define UPDATE_ENCODE_VARIABLES(temp_si, buf_dst, \
-@@ -182,7 +180,21 @@ static int qmi_encode_basic_elem(void *buf_dst, const void *buf_src,
- 	u32 i, rc = 0;
+ #include <net/mac80211.h>
+@@ -9848,6 +9848,7 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
  
- 	for (i = 0; i < elem_len; i++) {
--		QMI_ENCDEC_ENCODE_N_BYTES(buf_dst, buf_src, elem_size);
-+		switch (elem_size) {
-+		case sizeof(u8):
-+			QMI_ENCDEC_ENCODE_N_BYTES(buf_dst, buf_src, u8);
-+			break;
-+		case sizeof(u16):
-+			QMI_ENCDEC_ENCODE_N_BYTES(buf_dst, buf_src, u16);
-+			break;
-+		case sizeof(u32):
-+			QMI_ENCDEC_ENCODE_N_BYTES(buf_dst, buf_src, u32);
-+			break;
-+		case sizeof(u64):
-+			QMI_ENCDEC_ENCODE_N_BYTES(buf_dst, buf_src, u64);
-+			break;
+ 	param_id = WMI_VDEV_PARAM_RTS_THRESHOLD;
+ 	param_value = hw->wiphy->rts_threshold;
++	ar->rts_threshold = param_value;
+ 	ret = ath12k_wmi_vdev_set_param_cmd(ar, arvif->vdev_id,
+ 					    param_id, param_value);
+ 	if (ret) {
+@@ -11675,16 +11676,32 @@ static int ath12k_mac_op_set_rts_threshold(struct ieee80211_hw *hw,
+ 					   int radio_idx, u32 value)
+ {
+ 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
++	struct wiphy *wiphy = hw->wiphy;
+ 	struct ath12k *ar;
+-	int param_id = WMI_VDEV_PARAM_RTS_THRESHOLD, ret = 0, i;
++	int param_id = WMI_VDEV_PARAM_RTS_THRESHOLD;
++	int ret = 0, ret_err, i;
+ 
+ 	lockdep_assert_wiphy(hw->wiphy);
+ 
+-	/* Currently we set the rts threshold value to all the vifs across
+-	 * all radios of the single wiphy.
+-	 * TODO Once support for vif specific RTS threshold in mac80211 is
+-	 * available, ath12k can make use of it.
+-	 */
++	if (radio_idx >= wiphy->n_radio || radio_idx < -1)
++		return -EINVAL;
++
++	if (radio_idx != -1) {
++		/* Update RTS threshold in specified radio */
++		ar = ath12k_ah_to_ar(ah, radio_idx);
++		ret = ath12k_set_vdev_param_to_all_vifs(ar, param_id, value);
++		if (ret) {
++			ath12k_warn(ar->ab,
++				    "failed to set RTS config for all vdevs of pdev %d",
++				    ar->pdev->pdev_id);
++			return ret;
 +		}
 +
- 		rc += elem_size;
- 	}
- 
-@@ -465,7 +477,21 @@ static int qmi_decode_basic_elem(void *buf_dst, const void *buf_src,
- 	u32 i, rc = 0;
- 
- 	for (i = 0; i < elem_len; i++) {
--		QMI_ENCDEC_DECODE_N_BYTES(buf_dst, buf_src, elem_size);
-+		switch (elem_size) {
-+		case sizeof(u8):
-+			QMI_ENCDEC_DECODE_N_BYTES(buf_dst, buf_src, u8);
-+			break;
-+		case sizeof(u16):
-+			QMI_ENCDEC_DECODE_N_BYTES(buf_dst, buf_src, u16);
-+			break;
-+		case sizeof(u32):
-+			QMI_ENCDEC_DECODE_N_BYTES(buf_dst, buf_src, u32);
-+			break;
-+		case sizeof(u64):
-+			QMI_ENCDEC_DECODE_N_BYTES(buf_dst, buf_src, u64);
-+			break;
-+		}
++		ar->rts_threshold = value;
++		return 0;
++	}
 +
- 		rc += elem_size;
++	/* Radio_index passed is -1, so set RTS threshold for all radios. */
+ 	for_each_ar(ah, ar, i) {
+ 		ret = ath12k_set_vdev_param_to_all_vifs(ar, param_id, value);
+ 		if (ret) {
+@@ -11693,6 +11710,25 @@ static int ath12k_mac_op_set_rts_threshold(struct ieee80211_hw *hw,
+ 			break;
+ 		}
  	}
++	if (!ret) {
++		/* Setting new RTS threshold for vdevs of all radios passed, so update
++		 * the RTS threshold value for all radios
++		 */
++		for_each_ar(ah, ar, i)
++			ar->rts_threshold = value;
++		return 0;
++	}
++
++	/* RTS threshold config failed, revert to the previous RTS threshold */
++	for (i = i - 1; i >= 0; i--) {
++		ar = ath12k_ah_to_ar(ah, i);
++		ret_err = ath12k_set_vdev_param_to_all_vifs(ar, param_id,
++							    ar->rts_threshold);
++		if (ret_err)
++			ath12k_warn(ar->ab,
++				    "failed to restore RTS threshold for all vdevs of pdev %d",
++				    ar->pdev->pdev_id);
++	}
  
+ 	return ret;
+ }
+
+base-commit: 95bf875b89b48a95a82aca922eeaf19d52543028
 -- 
-2.34.1
+2.25.1
 
 
