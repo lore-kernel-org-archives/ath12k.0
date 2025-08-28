@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D56A2CA1000
-	for <ath12k@archiver.kernel.org>; Thu, 28 Aug 2025 23:25:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1892CA0FF9
+	for <ath12k@archiver.kernel.org>; Thu, 28 Aug 2025 23:25:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=By4abRl/nSq0BPzOsNwcLVkGNLd/yH91AzIYYVBkEwo=; b=aV+wiaIvS9rxOGB+MVcWbg4R5L
-	Ugz3cNc6t+7fGbxsRRrQAe67j3MSAYSlKy5sYH2xC54QyMe0R7N6U4uSZ9DNwZr2HMWRsgpZKd5Ze
-	NtOcz8YCFFap+3yiW8VJezO4Us+exjX0WR87XW5QmbB7LtbHIIht9RhyGmmnFy5+y6WVubB6l/H54
-	Kp2IW8XpzTnuVMyaft3X//glJvpGGGFfd3HancQKhGEMY+FphEfawwtl3tuQcZ6g62PhdWKOrRkQL
-	DvTCQaq2L8xRRYP3fLE3ebj+BmfuyqHFwBb2Zy6hEaCrLOvwk7WPo++s9fyM6s58Yayt2GVVzepPx
-	U+o4BEHw==;
+	bh=UZQiFfzJTj+9Ns43mAmqM10/yOwsXrOusxkjt7y3KsU=; b=KYWmb5trCq03v//dOP1zYIbUSG
+	Lete4G/atukL45p6ldGM4c20T6rr47FLkz82F/T+dheQa6JQikwE4KC6HJFbv2a3XBc73NeitYL2R
+	ok5OZgeIz4z3xXVvjM4CJnGforTrAs6OI8O/EikHw0RYflZBU67cZMBpmQSuE/MYyblumtqmKZrba
+	tdEawCFBo/P2Eqvl8je/6IrzEvq1JcCX1hgo8h/h6UYIlVr1e8Oe9TM81kCwF3Wlo+DW+sfYv1dUk
+	7WEJEwUvSWI03D8q9p7LyK4w1r+pVlQ2DjSOTpw6hIqwO8q3TOsv0ehvoQ9exBQ4wYNcg7gqWwbec
+	nainV6oQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urlzP-00000003dLL-2Ghe;
-	Thu, 28 Aug 2025 23:25:07 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1urlzN-00000003dJn-2WON;
+	Thu, 28 Aug 2025 23:25:05 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urgY7-00000002Ygn-2CmY
+	id 1urgXz-00000002Yec-2GHU
 	for ath12k@lists.infradead.org;
-	Thu, 28 Aug 2025 17:36:36 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57SE2k3w029258;
-	Thu, 28 Aug 2025 17:36:35 GMT
+	Thu, 28 Aug 2025 17:36:29 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57SEOjxU030104;
+	Thu, 28 Aug 2025 17:36:26 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	By4abRl/nSq0BPzOsNwcLVkGNLd/yH91AzIYYVBkEwo=; b=kXsKJH4F9R8ijWIZ
-	gVnjV2VTi83Lrgq0jgHXfA0uvAIrI//8WLTaJDDoWLn6GlghgI0p0x1rjeKoIXaa
-	/cAK/BKlwuN9Ggf6IDtOcHgQuDKhvRT85QZfiChViLRmo76GCnyBnlfUmP0OP/bI
-	+FH40W4V0EyInWXGQFZd1FfoG/6Z2IegRzPYtfB1ETjRCpaDfrPH9Kuuu8nANail
-	oEf4ouNdih7uLKwy0Nbyd0YHDsFJ5jJPGXU0uv8y1CrYVH21q5Yh++eQ5kLzlBLV
-	LYzysBfU1BhkXneD/M/yTXFXDZdgm2jt7uFhQ3tfMk/o4EgQHHr6ewbmCahQXeHv
-	FjOSMw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48q5w31b2r-1
+	UZQiFfzJTj+9Ns43mAmqM10/yOwsXrOusxkjt7y3KsU=; b=Tdrcj8XPaMlgJhp1
+	zs91DPrqyMW4OpKl4r3HP7MAu2ZPEaHKYUbGIMJqmiJUyU9Iw59sQvChmabOBVC1
+	o+hxsCBDE6pN/4bx2Yup9dFSqqvUZi8ILW8+XckrXra9vvP3pnIlT30RvinuqLRt
+	jXINxjbz7GHNz9HklnHXo9eGwoEDLfuwzPwxQe/FO3fvEb3Hdbc/rF2mF2wWBsW/
+	TGhOdkEK4KaMvZ6w44fxKW6gt2Nyx6YfVdhBMtZDE5we16D6pmUeuqmU9Jt57P+R
+	HXIjX/mvp2b3emsjOrExpc+cKV5IWlwknxtxee54QRrwikVEFNc9H/0wQVEj/lBz
+	qh9wDg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48q5up102u-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 28 Aug 2025 17:36:35 +0000 (GMT)
+	Thu, 28 Aug 2025 17:36:26 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 57SHaYxf009077
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 57SHaPVl019697
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 28 Aug 2025 17:36:34 GMT
+	Thu, 28 Aug 2025 17:36:25 GMT
 Received: from hu-rdeuri-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.24; Thu, 28 Aug 2025 10:36:33 -0700
+ 15.2.1748.24; Thu, 28 Aug 2025 10:36:24 -0700
 From: Ripan Deuri <quic_rdeuri@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH ath12k-ng 16/20] wifi: ath12k: Move ath12k_dp_tx and related APIs to wifi7 directory
-Date: Thu, 28 Aug 2025 23:05:49 +0530
-Message-ID: <20250828173553.3341351-17-quic_rdeuri@quicinc.com>
+Subject: [PATCH ath12k-ng 10/20] wifi: ath12k: Move regular msdu processing functions to wifi7 directory
+Date: Thu, 28 Aug 2025 23:05:43 +0530
+Message-ID: <20250828173553.3341351-11-quic_rdeuri@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250828173553.3341351-1-quic_rdeuri@quicinc.com>
 References: <20250828173553.3341351-1-quic_rdeuri@quicinc.com>
@@ -69,30 +69,30 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=Z/vsHGRA c=1 sm=1 tr=0 ts=68b093a3 cx=c_pps
+X-Proofpoint-GUID: _Is-EM4gBLANib2J7D6dq6cJwf3-f-ze
+X-Proofpoint-ORIG-GUID: _Is-EM4gBLANib2J7D6dq6cJwf3-f-ze
+X-Authority-Analysis: v=2.4 cv=JJo7s9Kb c=1 sm=1 tr=0 ts=68b0939a cx=c_pps
  a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=2OwXVqhp2XgA:10 a=COk6AnOGAAAA:8 a=7SphimUZNnBotK8wGKYA:9
+ a=GEpy-HfZoHoA:10 a=2OwXVqhp2XgA:10 a=COk6AnOGAAAA:8 a=IdimTUKBqCxWY8uyIzIA:9
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODIzMDAzMyBTYWx0ZWRfXwqVDzmb6ryML
- TTXc0G5y6DulCCisBVNiVk6xV/6ABxuVnUtxWAQuSkdOcZ0YtPtMjf+QogxUaR0zDRLGleK75wk
- FV8Al0Q0iRimQ0pgCGjJ8lj9PXrl3P+a7eoNfjii0rv/K1+c93ROyJDIKrjb+3G/+EwTsRVgPzf
- D6Kyy/45HeijoLV2OKUEWBO/AMulVTowR06U8BqGM7kOKVW7k+Whuxm67pMBaALNQ5QUduYV29T
- IZyX1icSzoBaYy6pD1OF5nQZku6u/w0Dj8bygPAAwxWuzmex/0B+x5lFxWS7pwIVJ3G+s0uD6G6
- spQayM8v3AEgxNZfdI2NZAeg1d1kXDDKOYhEtvCpl5rgcULnqeH1YBAbJS/YRxHZW+Xw4KYokUm
- HDqS98/k
-X-Proofpoint-GUID: OUZnk8Dyl13KzWds7le65oyGLG2pU5N7
-X-Proofpoint-ORIG-GUID: OUZnk8Dyl13KzWds7le65oyGLG2pU5N7
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODIzMDAzMSBTYWx0ZWRfX3v7xSlZ3KVSd
+ /A6eHoea1OXckZ9JzXz2VExQhKIPq2yAMkBv0U2vnFOtJsbKU6VtuxdzyI0p5j+9yjk+vanQO5U
+ ksDZwC2V9dV+pfKu4uFn7WXC8gmVzBHa6fWAgvImVl+h7kW9/YbOowA3U6rhpsLWe4nQtQvbbFT
+ mkgVKgltOj8pHL2qm8fDZoNRhE4Fl5p+KarxwIShMsAdcKiLoAFSn4tKORR5CkFgoP/v/EF2oy4
+ vIXwiW+9qVa9Ruaw45V8QalYg/lpoNR57sr9GDJYFTMBd26aCrsZSjYUdaP46TYzpUjcqhQzxSJ
+ ZM5AMWR4eWYop5ghZws1C//jMIkAdOkTondeQko43vAXLFZbuVtqz/bxh2Qlfs8lWxO7mA6T1d6
+ qii8zuoZ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-08-28_04,2025-08-28_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 priorityscore=1501 malwarescore=0 phishscore=0 clxscore=1015
- suspectscore=0 impostorscore=0 adultscore=0 bulkscore=0
+ phishscore=0 adultscore=0 bulkscore=0 spamscore=0 impostorscore=0
+ malwarescore=0 clxscore=1015 priorityscore=1501 suspectscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508230033
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508230031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250828_103635_588444_8E56EF69 
-X-CRM114-Status: GOOD (  21.71  )
+X-CRM114-CacheID: sfid-20250828_103627_780494_3F01C82F 
+X-CRM114-Status: GOOD (  20.96  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,18 +109,21 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
 
-Move arch specific TX data path to wifi7 directory as part of Next
-Generation (NG) Driver Framework.
+Move arch specific RX MSDU processing related functions to wifi7 directory.
 
-Architecture specific APIs:
-ath12k_hal_tx_cmd_ext_desc_setup
-ath12k_dp_prepare_htt_metadata
-ath12k_dp_tx
-
-The moved APIs will be a part of dp_tx.c file inside wifi7 directory.
-wifi7/dp_tx.c file will continue to be part of ath12k.ko temporarily
+The moved APIs will be a part of dp_rx.c file inside wifi7 directory.
+wifi7/dp_rx.c file will continue to be part of ath12k.ko temporarily
 until the corresponding infra for movement to ath12k_wifi7.ko arrives
 in upcoming patches.
+
+Architecture specific APIs:
+ath12k_dp_rx_msdu_coalesce
+ath12k_dp_rx_h_csum_offload
+ath12k_dp_rx_h_mpdu
+ath12k_dp_rx_process
+ath12k_dp_rx_process_received_packets
+ath12k_dp_rx_h_verify_tkip_mic
+ath12k_dp_rx_process_msdu
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -128,800 +131,1222 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
 Signed-off-by: Ripan Deuri <quic_rdeuri@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_tx.c       | 363 ------------------
- drivers/net/wireless/ath/ath12k/dp_tx.h       |   3 -
- drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c | 363 ++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wifi7/dp_tx.h |   3 +
- 4 files changed, 366 insertions(+), 366 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_rx.c       | 543 +-----------------
+ drivers/net/wireless/ath/ath12k/dp_rx.h       |  18 +-
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 527 +++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h |   3 +
+ 4 files changed, 547 insertions(+), 544 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index f1649744c78b..c7b0fc22c1a7 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -109,26 +109,6 @@ struct ath12k_tx_desc_info *ath12k_dp_tx_assign_buffer(struct ath12k_dp *dp,
- 	return desc;
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index d52fec62eed7..6809c50ee871 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -1664,95 +1664,8 @@ void ath12k_dp_htt_htc_t2h_msg_handler(struct ath12k_base *ab,
  }
+ EXPORT_SYMBOL(ath12k_dp_htt_htc_t2h_msg_handler);
  
--static void ath12k_hal_tx_cmd_ext_desc_setup(struct ath12k_base *ab,
--					     struct hal_tx_msdu_ext_desc *tcl_ext_cmd,
--					     struct hal_tx_info *ti)
--{
--	tcl_ext_cmd->info0 = le32_encode_bits(ti->paddr,
--					      HAL_TX_MSDU_EXT_INFO0_BUF_PTR_LO);
--	tcl_ext_cmd->info1 = le32_encode_bits(0x0,
--					      HAL_TX_MSDU_EXT_INFO1_BUF_PTR_HI) |
--			       le32_encode_bits(ti->data_len,
--						HAL_TX_MSDU_EXT_INFO1_BUF_LEN);
--
--	tcl_ext_cmd->info1 |= le32_encode_bits(1, HAL_TX_MSDU_EXT_INFO1_EXTN_OVERRIDE) |
--				le32_encode_bits(ti->encap_type,
--						 HAL_TX_MSDU_EXT_INFO1_ENCAP_TYPE) |
--				le32_encode_bits(ti->encrypt_type,
--						 HAL_TX_MSDU_EXT_INFO1_ENCRYPT_TYPE);
--}
--
--#define HTT_META_DATA_ALIGNMENT 0x8
--
- void *ath12k_dp_metadata_align_skb(struct sk_buff *skb, u8 tail_len)
- {
- 	struct sk_buff *tail;
-@@ -142,29 +122,6 @@ void *ath12k_dp_metadata_align_skb(struct sk_buff *skb, u8 tail_len)
- 	return metadata;
- }
- 
--/* Preparing HTT Metadata when utilized with ext MSDU */
--static int ath12k_dp_prepare_htt_metadata(struct sk_buff *skb)
--{
--	struct hal_tx_msdu_metadata *desc_ext;
--	u8 htt_desc_size;
--	/* Size rounded of multiple of 8 bytes */
--	u8 htt_desc_size_aligned;
--
--	htt_desc_size = sizeof(struct hal_tx_msdu_metadata);
--	htt_desc_size_aligned = ALIGN(htt_desc_size, HTT_META_DATA_ALIGNMENT);
--
--	desc_ext = ath12k_dp_metadata_align_skb(skb, htt_desc_size_aligned);
--	if (!desc_ext)
--		return -ENOMEM;
--
--	desc_ext->info0 = le32_encode_bits(1, HAL_TX_MSDU_METADATA_INFO0_ENCRYPT_FLAG) |
--			  le32_encode_bits(0, HAL_TX_MSDU_METADATA_INFO0_ENCRYPT_TYPE) |
--			  le32_encode_bits(1,
--					   HAL_TX_MSDU_METADATA_INFO0_HOST_TX_DESC_POOL);
--
--	return 0;
--}
--
- static void ath12k_dp_tx_move_payload(struct sk_buff *skb,
- 				      unsigned long delta,
- 				      bool head)
-@@ -219,326 +176,6 @@ int ath12k_dp_tx_align_payload(struct ath12k_base *ab,
- 	return ret;
- }
- 
--int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
--		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn,
--		 bool is_mcast)
+-static int ath12k_dp_rx_msdu_coalesce(struct ath12k *ar,
+-				      struct sk_buff_head *msdu_list,
+-				      struct sk_buff *first, struct sk_buff *last,
+-				      u8 l3pad_bytes, int msdu_len)
 -{
 -	struct ath12k_base *ab = ar->ab;
--	struct ath12k_dp *dp = &ab->dp;
--	struct hal_tx_info ti = {};
--	struct ath12k_tx_desc_info *tx_desc;
--	struct ieee80211_tx_info *info = IEEE80211_SKB_CB(skb);
--	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB(skb);
--	struct hal_tcl_data_cmd *hal_tcl_desc;
--	struct hal_tx_msdu_ext_desc *msg;
--	struct sk_buff *skb_ext_desc = NULL;
--	struct hal_srng *tcl_ring;
--	struct ieee80211_hdr *hdr = (void *)skb->data;
--	struct ath12k_vif *ahvif = arvif->ahvif;
--	struct dp_tx_ring *tx_ring;
--	u8 pool_id;
--	u8 hal_ring_id;
--	int ret;
--	u8 ring_selector, ring_map = 0;
--	bool tcl_ring_retry;
--	bool msdu_ext_desc = false;
--	bool add_htt_metadata = false;
--	u32 iova_mask = ab->hw_params->iova_mask;
--	bool is_diff_encap = false;
--	bool is_null_frame = false;
+-	struct sk_buff *skb;
+-	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(first);
+-	int buf_first_hdr_len, buf_first_len;
+-	struct hal_rx_desc *ldesc;
+-	int space_extra, rem_len, buf_len;
+-	u32 hal_rx_desc_sz = ar->ab->hal.hal_desc_sz;
+-	bool is_continuation;
 -
--	if (test_bit(ATH12K_FLAG_CRASH_FLUSH, &ar->ab->dev_flags))
--		return -ESHUTDOWN;
--
--	if (!(info->flags & IEEE80211_TX_CTL_HW_80211_ENCAP) &&
--	    !ieee80211_is_data(hdr->frame_control))
--		return -EOPNOTSUPP;
--
--	pool_id = skb_get_queue_mapping(skb) & (ATH12K_HW_MAX_QUEUES - 1);
--
--	/* Let the default ring selection be based on current processor
--	 * number, where one of the 3 tcl rings are selected based on
--	 * the smp_processor_id(). In case that ring
--	 * is full/busy, we resort to other available rings.
--	 * If all rings are full, we drop the packet.
--	 * TODO: Add throttling logic when all rings are full
+-	/* As the msdu is spread across multiple rx buffers,
+-	 * find the offset to the start of msdu for computing
+-	 * the length of the msdu in the first buffer.
 -	 */
--	ring_selector = ab->hw_params->hw_ops->get_ring_selector(skb);
+-	buf_first_hdr_len = hal_rx_desc_sz + l3pad_bytes;
+-	buf_first_len = DP_RX_BUFFER_SIZE - buf_first_hdr_len;
 -
--tcl_ring_sel:
--	tcl_ring_retry = false;
--	ti.ring_id = ring_selector % ab->hw_params->max_tx_ring;
--
--	ring_map |= BIT(ti.ring_id);
--	ti.rbm_id = ab->hw_params->hal_ops->tcl_to_wbm_rbm_map[ti.ring_id].rbm_id;
--
--	tx_ring = &dp->tx_ring[ti.ring_id];
--
--	tx_desc = ath12k_dp_tx_assign_buffer(dp, pool_id);
--	if (!tx_desc)
--		return -ENOMEM;
--
--	ti.bank_id = arvif->bank_id;
--	ti.meta_data_flags = arvif->tcl_metadata;
--
--	if (ahvif->tx_encap_type == HAL_TCL_ENCAP_TYPE_RAW &&
--	    test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags)) {
--		if (skb_cb->flags & ATH12K_SKB_CIPHER_SET) {
--			ti.encrypt_type =
--				ath12k_dp_tx_get_encrypt_type(skb_cb->cipher);
--
--			if (ieee80211_has_protected(hdr->frame_control))
--				skb_put(skb, IEEE80211_CCMP_MIC_LEN);
--		} else {
--			ti.encrypt_type = HAL_ENCRYPT_TYPE_OPEN;
--		}
--
--		msdu_ext_desc = true;
+-	if (WARN_ON_ONCE(msdu_len <= buf_first_len)) {
+-		skb_put(first, buf_first_hdr_len + msdu_len);
+-		skb_pull(first, buf_first_hdr_len);
+-		return 0;
 -	}
 -
--	if (gsn_valid) {
--		/* Reset and Initialize meta_data_flags with Global Sequence
--		 * Number (GSN) info.
--		 */
--		ti.meta_data_flags =
--			u32_encode_bits(HTT_TCL_META_DATA_TYPE_GLOBAL_SEQ_NUM,
--					HTT_TCL_META_DATA_TYPE) |
--			u32_encode_bits(mcbc_gsn, HTT_TCL_META_DATA_GLOBAL_SEQ_NUM);
--	}
+-	ldesc = (struct hal_rx_desc *)last->data;
+-	rxcb->is_first_msdu = ath12k_dp_rx_h_first_msdu(ab, ldesc);
+-	rxcb->is_last_msdu = ath12k_dp_rx_h_last_msdu(ab, ldesc);
 -
--	ti.encap_type = ath12k_dp_tx_get_encap_type(ab, skb);
--	ti.addr_search_flags = arvif->hal_addr_search_flags;
--	ti.search_type = arvif->search_type;
--	ti.type = HAL_TCL_DESC_TYPE_BUFFER;
--	ti.pkt_offset = 0;
--	ti.lmac_id = ar->lmac_id;
+-	/* MSDU spans over multiple buffers because the length of the MSDU
+-	 * exceeds DP_RX_BUFFER_SIZE - HAL_RX_DESC_SIZE. So assume the data
+-	 * in the first buf is of length DP_RX_BUFFER_SIZE - HAL_RX_DESC_SIZE.
+-	 */
+-	skb_put(first, DP_RX_BUFFER_SIZE);
+-	skb_pull(first, buf_first_hdr_len);
 -
--	ti.vdev_id = arvif->vdev_id;
--	if (gsn_valid)
--		ti.vdev_id += HTT_TX_MLO_MCAST_HOST_REINJECT_BASE_VDEV_ID;
+-	/* When an MSDU spread over multiple buffers MSDU_END
+-	 * tlvs are valid only in the last buffer. Copy those tlvs.
+-	 */
+-	ath12k_dp_rx_desc_end_tlv_copy(ab, rxcb->rx_desc, ldesc);
 -
--	ti.bss_ast_hash = arvif->ast_hash;
--	ti.bss_ast_idx = arvif->ast_idx;
--	ti.dscp_tid_tbl_idx = 0;
--
--	if (skb->ip_summed == CHECKSUM_PARTIAL &&
--	    ti.encap_type != HAL_TCL_ENCAP_TYPE_RAW) {
--		ti.flags0 |= u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_IP4_CKSUM_EN) |
--			     u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_UDP4_CKSUM_EN) |
--			     u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_UDP6_CKSUM_EN) |
--			     u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_TCP4_CKSUM_EN) |
--			     u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_TCP6_CKSUM_EN);
--	}
--
--	ti.flags1 |= u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO3_TID_OVERWRITE);
--
--	ti.tid = ath12k_dp_tx_get_tid(skb);
--
--	switch (ti.encap_type) {
--	case HAL_TCL_ENCAP_TYPE_NATIVE_WIFI:
--		is_null_frame = ieee80211_is_nullfunc(hdr->frame_control);
--		if (ahvif->vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED) {
--			if (skb->protocol == cpu_to_be16(ETH_P_PAE) || is_null_frame)
--				is_diff_encap = true;
--
--			/* Firmware expects msdu ext descriptor for nwifi/raw packets
--			 * received in ETH mode. Without this, observed tx fail for
--			 * Multicast packets in ETH mode.
--			 */
--			msdu_ext_desc = true;
--		} else {
--			ath12k_dp_tx_encap_nwifi(skb);
--		}
--		break;
--	case HAL_TCL_ENCAP_TYPE_RAW:
--		if (!test_bit(ATH12K_FLAG_RAW_MODE, &ab->dev_flags)) {
--			ret = -EINVAL;
--			goto fail_remove_tx_buf;
--		}
--		break;
--	case HAL_TCL_ENCAP_TYPE_ETHERNET:
--		/* no need to encap */
--		break;
--	case HAL_TCL_ENCAP_TYPE_802_3:
--	default:
--		/* TODO: Take care of other encap modes as well */
--		ret = -EINVAL;
--		atomic_inc(&ab->device_stats.tx_err.misc_fail);
--		goto fail_remove_tx_buf;
--	}
--
--	if (iova_mask &&
--	    (unsigned long)skb->data & iova_mask) {
--		ret = ath12k_dp_tx_align_payload(ab, &skb);
--		if (ret) {
--			ath12k_warn(ab, "failed to align TX buffer %d\n", ret);
--			/* don't bail out, give original buffer
--			 * a chance even unaligned.
--			 */
--			goto map;
--		}
--
--		/* hdr is pointing to a wrong place after alignment,
--		 * so refresh it for later use.
--		 */
--		hdr = (void *)skb->data;
--	}
--map:
--	ti.paddr = dma_map_single(ab->dev, skb->data, skb->len, DMA_TO_DEVICE);
--	if (dma_mapping_error(ab->dev, ti.paddr)) {
--		atomic_inc(&ab->device_stats.tx_err.misc_fail);
--		ath12k_warn(ab, "failed to DMA map data Tx buffer\n");
--		ret = -ENOMEM;
--		goto fail_remove_tx_buf;
--	}
--
--	if ((!test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags) &&
--	     !(skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) &&
--	     !(skb_cb->flags & ATH12K_SKB_CIPHER_SET) &&
--	     ieee80211_has_protected(hdr->frame_control)) ||
--	    is_diff_encap) {
--		/* Firmware is not expecting meta data for qos null
--		 * nwifi packet received in ETH encap mode.
--		 */
--		if (is_null_frame && msdu_ext_desc)
--			goto skip_htt_meta;
--
--		/* Add metadata for sw encrypted vlan group traffic
--		 * and EAPOL nwifi packet received in ETH encap mode.
--		 */
--		add_htt_metadata = true;
--		msdu_ext_desc = true;
--		ti.meta_data_flags |= HTT_TCL_META_DATA_VALID_HTT;
--skip_htt_meta:
--		ti.flags0 |= u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_TO_FW);
--		ti.encap_type = HAL_TCL_ENCAP_TYPE_RAW;
--		ti.encrypt_type = HAL_ENCRYPT_TYPE_OPEN;
--	}
--
--	tx_desc->skb = skb;
--	tx_desc->mac_id = ar->pdev_idx;
--	ti.desc_id = tx_desc->desc_id;
--	ti.data_len = skb->len;
--	skb_cb->paddr = ti.paddr;
--	skb_cb->vif = ahvif->vif;
--	skb_cb->ar = ar;
--
--	if (msdu_ext_desc) {
--		skb_ext_desc = dev_alloc_skb(sizeof(struct hal_tx_msdu_ext_desc));
--		if (!skb_ext_desc) {
--			ret = -ENOMEM;
--			goto fail_unmap_dma;
--		}
--
--		skb_put(skb_ext_desc, sizeof(struct hal_tx_msdu_ext_desc));
--		memset(skb_ext_desc->data, 0, skb_ext_desc->len);
--
--		msg = (struct hal_tx_msdu_ext_desc *)skb_ext_desc->data;
--		ath12k_hal_tx_cmd_ext_desc_setup(ab, msg, &ti);
--
--		if (add_htt_metadata) {
--			ret = ath12k_dp_prepare_htt_metadata(skb_ext_desc);
--			if (ret < 0) {
--				ath12k_dbg(ab, ATH12K_DBG_DP_TX,
--					   "Failed to add HTT meta data, dropping packet\n");
--				goto fail_free_ext_skb;
+-	space_extra = msdu_len - (buf_first_len + skb_tailroom(first));
+-	if (space_extra > 0 &&
+-	    (pskb_expand_head(first, 0, space_extra, GFP_ATOMIC) < 0)) {
+-		/* Free up all buffers of the MSDU */
+-		while ((skb = __skb_dequeue(msdu_list)) != NULL) {
+-			rxcb = ATH12K_SKB_RXCB(skb);
+-			if (!rxcb->is_continuation) {
+-				dev_kfree_skb_any(skb);
+-				break;
 -			}
+-			dev_kfree_skb_any(skb);
 -		}
--
--		ti.paddr = dma_map_single(ab->dev, skb_ext_desc->data,
--					  skb_ext_desc->len, DMA_TO_DEVICE);
--		ret = dma_mapping_error(ab->dev, ti.paddr);
--		if (ret)
--			goto fail_free_ext_skb;
--
--		ti.data_len = skb_ext_desc->len;
--		ti.type = HAL_TCL_DESC_TYPE_EXT_DESC;
--
--		skb_cb->paddr_ext_desc = ti.paddr;
--		tx_desc->skb_ext_desc = skb_ext_desc;
+-		return -ENOMEM;
 -	}
 -
--	hal_ring_id = tx_ring->tcl_data_ring.ring_id;
--	tcl_ring = &ab->hal.srng_list[hal_ring_id];
+-	rem_len = msdu_len - buf_first_len;
+-	while ((skb = __skb_dequeue(msdu_list)) != NULL && rem_len > 0) {
+-		rxcb = ATH12K_SKB_RXCB(skb);
+-		is_continuation = rxcb->is_continuation;
+-		if (is_continuation)
+-			buf_len = DP_RX_BUFFER_SIZE - hal_rx_desc_sz;
+-		else
+-			buf_len = rem_len;
 -
--	spin_lock_bh(&tcl_ring->lock);
--
--	ath12k_hal_srng_access_begin(ab, tcl_ring);
--
--	hal_tcl_desc = ath12k_hal_srng_src_get_next_entry(ab, tcl_ring);
--	if (!hal_tcl_desc) {
--		/* NOTE: It is highly unlikely we'll be running out of tcl_ring
--		 * desc because the desc is directly enqueued onto hw queue.
--		 */
--		ath12k_hal_srng_access_end(ab, tcl_ring);
--		ab->device_stats.tx_err.desc_na[ti.ring_id]++;
--		spin_unlock_bh(&tcl_ring->lock);
--		ret = -ENOMEM;
--
--		/* Checking for available tcl descriptors in another ring in
--		 * case of failure due to full tcl ring now, is better than
--		 * checking this ring earlier for each pkt tx.
--		 * Restart ring selection if some rings are not checked yet.
--		 */
--		if (ring_map != (BIT(ab->hw_params->max_tx_ring) - 1) &&
--		    ab->hw_params->tcl_ring_retry) {
--			tcl_ring_retry = true;
--			ring_selector++;
+-		if (buf_len > (DP_RX_BUFFER_SIZE - hal_rx_desc_sz)) {
+-			WARN_ON_ONCE(1);
+-			dev_kfree_skb_any(skb);
+-			return -EINVAL;
 -		}
 -
--		goto fail_unmap_dma_ext;
+-		skb_put(skb, buf_len + hal_rx_desc_sz);
+-		skb_pull(skb, hal_rx_desc_sz);
+-		skb_copy_from_linear_data(skb, skb_put(first, buf_len),
+-					  buf_len);
+-		dev_kfree_skb_any(skb);
+-
+-		rem_len -= buf_len;
+-		if (!is_continuation)
+-			break;
 -	}
 -
--	spin_lock_bh(&arvif->link_stats_lock);
--	arvif->link_stats.tx_encap_type[ti.encap_type]++;
--	arvif->link_stats.tx_encrypt_type[ti.encrypt_type]++;
--	arvif->link_stats.tx_desc_type[ti.type]++;
+-	return 0;
+-}
 -
--	if (is_mcast)
--		arvif->link_stats.tx_bcast_mcast++;
--	else
--		arvif->link_stats.tx_enqueued++;
--	spin_unlock_bh(&arvif->link_stats_lock);
+-static struct sk_buff *ath12k_dp_rx_get_msdu_last_buf(struct sk_buff_head *msdu_list,
+-						      struct sk_buff *first)
++struct sk_buff *ath12k_dp_rx_get_msdu_last_buf(struct sk_buff_head *msdu_list,
++					       struct sk_buff *first)
+ {
+ 	struct sk_buff *skb;
+ 	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(first);
+@@ -1769,13 +1682,6 @@ static struct sk_buff *ath12k_dp_rx_get_msdu_last_buf(struct sk_buff_head *msdu_
+ 	return NULL;
+ }
+ 
+-static void ath12k_dp_rx_h_csum_offload(struct sk_buff *msdu,
+-					struct ath12k_dp_rx_info *rx_info)
+-{
+-	msdu->ip_summed = (rx_info->ip_csum_fail || rx_info->l4_csum_fail) ?
+-			   CHECKSUM_NONE : CHECKSUM_UNNECESSARY;
+-}
 -
--	ab->device_stats.tx_enqueued[ti.ring_id]++;
+ int ath12k_dp_rx_crypto_mic_len(struct ath12k *ar, enum hal_encrypt_type enctype)
+ {
+ 	switch (enctype) {
+@@ -2094,84 +2000,6 @@ ath12k_dp_rx_h_find_peer(struct ath12k_base *ab, struct sk_buff *msdu,
+ 	return peer;
+ }
+ 
+-void ath12k_dp_rx_h_mpdu(struct ath12k *ar,
+-			 struct sk_buff *msdu,
+-			 struct hal_rx_desc *rx_desc,
+-			 struct ath12k_dp_rx_info *rx_info)
+-{
+-	struct ath12k_base *ab = ar->ab;
+-	struct ath12k_skb_rxcb *rxcb;
+-	enum hal_encrypt_type enctype;
+-	bool is_decrypted = false;
+-	struct ieee80211_hdr *hdr;
+-	struct ath12k_peer *peer;
+-	struct ieee80211_rx_status *rx_status = rx_info->rx_status;
+-	u32 err_bitmap;
 -
--	ath12k_hal_tx_cmd_desc_setup(ab, hal_tcl_desc, &ti);
+-	/* PN for multicast packets will be checked in mac80211 */
+-	rxcb = ATH12K_SKB_RXCB(msdu);
+-	rxcb->is_mcbc = rx_info->is_mcbc;
 -
--	ath12k_hal_srng_access_end(ab, tcl_ring);
+-	if (rxcb->is_mcbc)
+-		rxcb->peer_id = rx_info->peer_id;
 -
--	spin_unlock_bh(&tcl_ring->lock);
+-	spin_lock_bh(&ar->ab->base_lock);
+-	peer = ath12k_dp_rx_h_find_peer(ar->ab, msdu, rx_info);
+-	if (peer) {
+-		/* resetting mcbc bit because mcbc packets are unicast
+-		 * packets only for AP as STA sends unicast packets.
+-		 */
+-		rxcb->is_mcbc = rxcb->is_mcbc && !peer->ucast_ra_only;
 -
--	ath12k_dbg_dump(ab, ATH12K_DBG_DP_TX, NULL, "dp tx msdu: ",
--			skb->data, skb->len);
+-		if (rxcb->is_mcbc)
+-			enctype = peer->sec_type_grp;
+-		else
+-			enctype = peer->sec_type;
+-	} else {
+-		enctype = HAL_ENCRYPT_TYPE_OPEN;
+-	}
+-	spin_unlock_bh(&ar->ab->base_lock);
 -
--	atomic_inc(&ar->dp.num_tx_pending);
+-	err_bitmap = ath12k_dp_rx_h_mpdu_err(ab, rx_desc);
+-	if (enctype != HAL_ENCRYPT_TYPE_OPEN && !err_bitmap)
+-		is_decrypted = ath12k_dp_rx_h_is_decrypted(ab, rx_desc);
+-
+-	/* Clear per-MPDU flags while leaving per-PPDU flags intact */
+-	rx_status->flag &= ~(RX_FLAG_FAILED_FCS_CRC |
+-			     RX_FLAG_MMIC_ERROR |
+-			     RX_FLAG_DECRYPTED |
+-			     RX_FLAG_IV_STRIPPED |
+-			     RX_FLAG_MMIC_STRIPPED);
+-
+-	if (err_bitmap & HAL_RX_MPDU_ERR_FCS)
+-		rx_status->flag |= RX_FLAG_FAILED_FCS_CRC;
+-	if (err_bitmap & HAL_RX_MPDU_ERR_TKIP_MIC)
+-		rx_status->flag |= RX_FLAG_MMIC_ERROR;
+-
+-	if (is_decrypted) {
+-		rx_status->flag |= RX_FLAG_DECRYPTED | RX_FLAG_MMIC_STRIPPED;
+-
+-		if (rx_info->is_mcbc)
+-			rx_status->flag |= RX_FLAG_MIC_STRIPPED |
+-					RX_FLAG_ICV_STRIPPED;
+-		else
+-			rx_status->flag |= RX_FLAG_IV_STRIPPED |
+-					   RX_FLAG_PN_VALIDATED;
+-	}
+-
+-	ath12k_dp_rx_h_csum_offload(msdu, rx_info);
+-	ath12k_dp_rx_h_undecap(ar, msdu, rx_desc,
+-			       enctype, rx_status, is_decrypted);
+-
+-	if (!is_decrypted || rx_info->is_mcbc)
+-		return;
+-
+-	if (rx_info->decap_type != DP_RX_DECAP_TYPE_ETHERNET2_DIX) {
+-		hdr = (void *)msdu->data;
+-		hdr->frame_control &= ~__cpu_to_le16(IEEE80211_FCTL_PROTECTED);
+-	}
+-}
+-
+ static void ath12k_dp_rx_h_rate(struct ath12k *ar, struct ath12k_dp_rx_info *rx_info)
+ {
+ 	struct ieee80211_supported_band *sband;
+@@ -2416,140 +2244,9 @@ bool ath12k_dp_rx_check_nwifi_hdr_len_valid(struct ath12k_base *ab,
+ 	return false;
+ }
+ 
+-static int ath12k_dp_rx_process_msdu(struct ath12k *ar,
+-				     struct sk_buff *msdu,
+-				     struct sk_buff_head *msdu_list,
+-				     struct ath12k_dp_rx_info *rx_info)
+-{
+-	struct ath12k_base *ab = ar->ab;
+-	struct hal_rx_desc *rx_desc, *lrx_desc;
+-	struct ath12k_skb_rxcb *rxcb;
+-	struct sk_buff *last_buf;
+-	u8 l3_pad_bytes;
+-	u16 msdu_len;
+-	int ret;
+-	u32 hal_rx_desc_sz = ar->ab->hal.hal_desc_sz;
+-
+-	last_buf = ath12k_dp_rx_get_msdu_last_buf(msdu_list, msdu);
+-	if (!last_buf) {
+-		ath12k_warn(ab,
+-			    "No valid Rx buffer to access MSDU_END tlv\n");
+-		ret = -EIO;
+-		goto free_out;
+-	}
+-
+-	rx_desc = (struct hal_rx_desc *)msdu->data;
+-	lrx_desc = (struct hal_rx_desc *)last_buf->data;
+-	if (!ath12k_dp_rx_h_msdu_done(ab, lrx_desc)) {
+-		ath12k_warn(ab, "msdu_done bit in msdu_end is not set\n");
+-		ret = -EIO;
+-		goto free_out;
+-	}
+-
+-	rxcb = ATH12K_SKB_RXCB(msdu);
+-	rxcb->rx_desc = rx_desc;
+-	msdu_len = ath12k_dp_rx_h_msdu_len(ab, lrx_desc);
+-	l3_pad_bytes = ath12k_dp_rx_h_l3pad(ab, lrx_desc);
+-
+-	if (rxcb->is_frag) {
+-		skb_pull(msdu, hal_rx_desc_sz);
+-	} else if (!rxcb->is_continuation) {
+-		if ((msdu_len + hal_rx_desc_sz) > DP_RX_BUFFER_SIZE) {
+-			ret = -EINVAL;
+-			ath12k_warn(ab, "invalid msdu len %u\n", msdu_len);
+-			ath12k_dbg_dump(ab, ATH12K_DBG_DATA, NULL, "", rx_desc,
+-					sizeof(*rx_desc));
+-			goto free_out;
+-		}
+-		skb_put(msdu, hal_rx_desc_sz + l3_pad_bytes + msdu_len);
+-		skb_pull(msdu, hal_rx_desc_sz + l3_pad_bytes);
+-	} else {
+-		ret = ath12k_dp_rx_msdu_coalesce(ar, msdu_list,
+-						 msdu, last_buf,
+-						 l3_pad_bytes, msdu_len);
+-		if (ret) {
+-			ath12k_warn(ab,
+-				    "failed to coalesce msdu rx buffer%d\n", ret);
+-			goto free_out;
+-		}
+-	}
+-
+-	if (unlikely(!ath12k_dp_rx_check_nwifi_hdr_len_valid(ab, rx_desc, msdu))) {
+-		ret = -EINVAL;
+-		goto free_out;
+-	}
+-
+-	ath12k_dp_rx_h_fetch_info(ab, rx_desc, rx_info);
+-	ath12k_dp_rx_h_ppdu(ar, rx_info);
+-	ath12k_dp_rx_h_mpdu(ar, msdu, rx_desc, rx_info);
+-
+-	rx_info->rx_status->flag |= RX_FLAG_SKIP_MONITOR | RX_FLAG_DUP_VALIDATED;
 -
 -	return 0;
 -
--fail_unmap_dma_ext:
--	if (skb_cb->paddr_ext_desc)
--		dma_unmap_single(ab->dev, skb_cb->paddr_ext_desc,
--				 skb_ext_desc->len,
--				 DMA_TO_DEVICE);
--fail_free_ext_skb:
--	kfree_skb(skb_ext_desc);
--
--fail_unmap_dma:
--	dma_unmap_single(ab->dev, ti.paddr, ti.data_len, DMA_TO_DEVICE);
--
--fail_remove_tx_buf:
--	ath12k_dp_tx_release_txbuf(dp, tx_desc, pool_id);
--
--	spin_lock_bh(&arvif->link_stats_lock);
--	arvif->link_stats.tx_dropped++;
--	spin_unlock_bh(&arvif->link_stats_lock);
--
--	if (tcl_ring_retry)
--		goto tcl_ring_sel;
--
+-free_out:
 -	return ret;
 -}
 -
- void ath12k_dp_tx_free_txbuf(struct ath12k_base *ab,
- 			     struct dp_tx_ring *tx_ring,
- 			     struct ath12k_tx_desc_params *desc_params)
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.h b/drivers/net/wireless/ath/ath12k/dp_tx.h
-index 67ab7b3f55ea..8405a0baf95b 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.h
-@@ -16,9 +16,6 @@ struct ath12k_dp_htt_wbm_tx_status {
- };
+-static void ath12k_dp_rx_process_received_packets(struct ath12k_base *ab,
+-						  struct napi_struct *napi,
+-						  struct sk_buff_head *msdu_list,
+-						  int ring_id)
+-{
+-	struct ath12k_hw_group *ag = ab->ag;
+-	struct ieee80211_rx_status rx_status = {};
+-	struct ath12k_skb_rxcb *rxcb;
+-	struct sk_buff *msdu;
+-	struct ath12k *ar;
+-	struct ath12k_hw_link *hw_links = ag->hw_links;
+-	struct ath12k_base *partner_ab;
+-	struct ath12k_dp_rx_info rx_info;
+-	u8 hw_link_id, pdev_id;
+-	int ret;
+-
+-	if (skb_queue_empty(msdu_list))
+-		return;
+-
+-	rx_info.addr2_present = false;
+-	rx_info.rx_status = &rx_status;
+-
+-	rcu_read_lock();
+-
+-	while ((msdu = __skb_dequeue(msdu_list))) {
+-		rxcb = ATH12K_SKB_RXCB(msdu);
+-		hw_link_id = rxcb->hw_link_id;
+-		partner_ab = ath12k_ag_to_ab(ag,
+-					     hw_links[hw_link_id].device_id);
+-		pdev_id = ath12k_hw_mac_id_to_pdev_id(partner_ab->hw_params,
+-						      hw_links[hw_link_id].pdev_idx);
+-		ar = partner_ab->pdevs[pdev_id].ar;
+-		if (!rcu_dereference(partner_ab->pdevs_active[pdev_id])) {
+-			dev_kfree_skb_any(msdu);
+-			continue;
+-		}
+-
+-		if (test_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags)) {
+-			dev_kfree_skb_any(msdu);
+-			continue;
+-		}
+-
+-		ret = ath12k_dp_rx_process_msdu(ar, msdu, msdu_list, &rx_info);
+-		if (ret) {
+-			ath12k_dbg(ab, ATH12K_DBG_DATA,
+-				   "Unable to process msdu %d", ret);
+-			dev_kfree_skb_any(msdu);
+-			continue;
+-		}
+-
+-		ath12k_dp_rx_deliver_msdu(ar, napi, msdu, &rx_info);
+-	}
+-
+-	rcu_read_unlock();
+-}
+-
+-static u16 ath12k_dp_rx_get_peer_id(struct ath12k_base *ab,
+-				    enum ath12k_peer_metadata_version ver,
+-				    __le32 peer_metadata)
++u16 ath12k_dp_rx_get_peer_id(struct ath12k_base *ab,
++			     enum ath12k_peer_metadata_version ver,
++			     __le32 peer_metadata)
+ {
+ 	switch (ver) {
+ 	default:
+@@ -2570,166 +2267,6 @@ static u16 ath12k_dp_rx_get_peer_id(struct ath12k_base *ab,
+ 	}
+ }
  
- int ath12k_dp_tx_htt_h2t_ver_req_msg(struct ath12k_base *ab);
--int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
--		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn,
--		 bool is_mcast);
- int ath12k_dp_tx_htt_h2t_ppdu_stats_req(struct ath12k *ar, u32 mask);
- int
- ath12k_dp_tx_htt_h2t_ext_stats_req(struct ath12k *ar, u8 type,
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-index 149e211aa225..49d219a195c5 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-@@ -10,6 +10,369 @@
+-int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
+-			 struct napi_struct *napi, int budget)
+-{
+-	struct ath12k_hw_group *ag = ab->ag;
+-	struct list_head rx_desc_used_list[ATH12K_MAX_DEVICES];
+-	struct ath12k_hw_link *hw_links = ag->hw_links;
+-	int num_buffs_reaped[ATH12K_MAX_DEVICES] = {};
+-	struct ath12k_rx_desc_info *desc_info;
+-	struct ath12k_dp *dp = &ab->dp;
+-	struct dp_rxdma_ring *rx_ring = &dp->rx_refill_buf_ring;
+-	struct hal_reo_dest_ring *desc;
+-	struct ath12k_base *partner_ab;
+-	struct sk_buff_head msdu_list;
+-	struct ath12k_skb_rxcb *rxcb;
+-	int total_msdu_reaped = 0;
+-	u8 hw_link_id, device_id;
+-	struct hal_srng *srng;
+-	struct sk_buff *msdu;
+-	bool done = false;
+-	u64 desc_va;
+-
+-	__skb_queue_head_init(&msdu_list);
+-
+-	for (device_id = 0; device_id < ATH12K_MAX_DEVICES; device_id++)
+-		INIT_LIST_HEAD(&rx_desc_used_list[device_id]);
+-
+-	srng = &ab->hal.srng_list[dp->reo_dst_ring[ring_id].ring_id];
+-
+-	spin_lock_bh(&srng->lock);
+-
+-try_again:
+-	ath12k_hal_srng_access_begin(ab, srng);
+-
+-	while ((desc = ath12k_hal_srng_dst_get_next_entry(ab, srng))) {
+-		struct rx_mpdu_desc *mpdu_info;
+-		struct rx_msdu_desc *msdu_info;
+-		enum hal_reo_dest_ring_push_reason push_reason;
+-		u32 cookie;
+-
+-		cookie = le32_get_bits(desc->buf_addr_info.info1,
+-				       BUFFER_ADDR_INFO1_SW_COOKIE);
+-
+-		hw_link_id = le32_get_bits(desc->info0,
+-					   HAL_REO_DEST_RING_INFO0_SRC_LINK_ID);
+-
+-		desc_va = ((u64)le32_to_cpu(desc->buf_va_hi) << 32 |
+-			   le32_to_cpu(desc->buf_va_lo));
+-		desc_info = (struct ath12k_rx_desc_info *)((unsigned long)desc_va);
+-
+-		device_id = hw_links[hw_link_id].device_id;
+-		partner_ab = ath12k_ag_to_ab(ag, device_id);
+-		if (unlikely(!partner_ab)) {
+-			if (desc_info->skb) {
+-				dev_kfree_skb_any(desc_info->skb);
+-				desc_info->skb = NULL;
+-			}
+-
+-			continue;
+-		}
+-
+-		/* retry manual desc retrieval */
+-		if (!desc_info) {
+-			desc_info = ath12k_dp_get_rx_desc(partner_ab, cookie);
+-			if (!desc_info) {
+-				ath12k_warn(partner_ab, "Invalid cookie in manual descriptor retrieval: 0x%x\n",
+-					    cookie);
+-				continue;
+-			}
+-		}
+-
+-		if (desc_info->magic != ATH12K_DP_RX_DESC_MAGIC)
+-			ath12k_warn(ab, "Check HW CC implementation");
+-
+-		msdu = desc_info->skb;
+-		desc_info->skb = NULL;
+-
+-		list_add_tail(&desc_info->list, &rx_desc_used_list[device_id]);
+-
+-		rxcb = ATH12K_SKB_RXCB(msdu);
+-		dma_unmap_single(partner_ab->dev, rxcb->paddr,
+-				 msdu->len + skb_tailroom(msdu),
+-				 DMA_FROM_DEVICE);
+-
+-		num_buffs_reaped[device_id]++;
+-		ab->device_stats.reo_rx[ring_id][ab->device_id]++;
+-
+-		push_reason = le32_get_bits(desc->info0,
+-					    HAL_REO_DEST_RING_INFO0_PUSH_REASON);
+-		if (push_reason !=
+-		    HAL_REO_DEST_RING_PUSH_REASON_ROUTING_INSTRUCTION) {
+-			dev_kfree_skb_any(msdu);
+-			ab->device_stats.hal_reo_error[ring_id]++;
+-			continue;
+-		}
+-
+-		msdu_info = &desc->rx_msdu_info;
+-		mpdu_info = &desc->rx_mpdu_info;
+-
+-		rxcb->is_first_msdu = !!(le32_to_cpu(msdu_info->info0) &
+-					 RX_MSDU_DESC_INFO0_FIRST_MSDU_IN_MPDU);
+-		rxcb->is_last_msdu = !!(le32_to_cpu(msdu_info->info0) &
+-					RX_MSDU_DESC_INFO0_LAST_MSDU_IN_MPDU);
+-		rxcb->is_continuation = !!(le32_to_cpu(msdu_info->info0) &
+-					   RX_MSDU_DESC_INFO0_MSDU_CONTINUATION);
+-		rxcb->hw_link_id = hw_link_id;
+-		rxcb->peer_id = ath12k_dp_rx_get_peer_id(ab, dp->peer_metadata_ver,
+-							 mpdu_info->peer_meta_data);
+-		rxcb->tid = le32_get_bits(mpdu_info->info0,
+-					  RX_MPDU_DESC_INFO0_TID);
+-
+-		__skb_queue_tail(&msdu_list, msdu);
+-
+-		if (!rxcb->is_continuation) {
+-			total_msdu_reaped++;
+-			done = true;
+-		} else {
+-			done = false;
+-		}
+-
+-		if (total_msdu_reaped >= budget)
+-			break;
+-	}
+-
+-	/* Hw might have updated the head pointer after we cached it.
+-	 * In this case, even though there are entries in the ring we'll
+-	 * get rx_desc NULL. Give the read another try with updated cached
+-	 * head pointer so that we can reap complete MPDU in the current
+-	 * rx processing.
+-	 */
+-	if (!done && ath12k_hal_srng_dst_num_free(ab, srng, true)) {
+-		ath12k_hal_srng_access_end(ab, srng);
+-		goto try_again;
+-	}
+-
+-	ath12k_hal_srng_access_end(ab, srng);
+-
+-	spin_unlock_bh(&srng->lock);
+-
+-	if (!total_msdu_reaped)
+-		goto exit;
+-
+-	for (device_id = 0; device_id < ATH12K_MAX_DEVICES; device_id++) {
+-		if (!num_buffs_reaped[device_id])
+-			continue;
+-
+-		partner_ab = ath12k_ag_to_ab(ag, device_id);
+-		rx_ring = &partner_ab->dp.rx_refill_buf_ring;
+-
+-		ath12k_dp_rx_bufs_replenish(partner_ab, rx_ring,
+-					    &rx_desc_used_list[device_id],
+-					    num_buffs_reaped[device_id]);
+-	}
+-
+-	ath12k_dp_rx_process_received_packets(ab, napi, &msdu_list,
+-					      ring_id);
+-
+-exit:
+-	return total_msdu_reaped;
+-}
+-
+ static void ath12k_dp_rx_frag_timer(struct timer_list *timer)
+ {
+ 	struct ath12k_dp_rx_tid *rx_tid = timer_container_of(rx_tid, timer,
+@@ -2787,9 +2324,9 @@ int ath12k_dp_rx_peer_frag_setup(struct ath12k *ar, const u8 *peer_mac, int vdev
+ 	return 0;
+ }
+ 
+-static int ath12k_dp_rx_h_michael_mic(struct crypto_shash *tfm, u8 *key,
+-				      struct ieee80211_hdr *hdr, u8 *data,
+-				      size_t data_len, u8 *mic)
++int ath12k_dp_rx_h_michael_mic(struct crypto_shash *tfm, u8 *key,
++			       struct ieee80211_hdr *hdr, u8 *data,
++			       size_t data_len, u8 *mic)
+ {
+ 	SHASH_DESC_ON_STACK(desc, tfm);
+ 	u8 mic_hdr[16] = {};
+@@ -2828,70 +2365,6 @@ static int ath12k_dp_rx_h_michael_mic(struct crypto_shash *tfm, u8 *key,
+ 	return ret;
+ }
+ 
+-int ath12k_dp_rx_h_verify_tkip_mic(struct ath12k *ar, struct ath12k_peer *peer,
+-				   struct sk_buff *msdu)
+-{
+-	struct ath12k_base *ab = ar->ab;
+-	struct hal_rx_desc *rx_desc = (struct hal_rx_desc *)msdu->data;
+-	struct ieee80211_rx_status *rxs = IEEE80211_SKB_RXCB(msdu);
+-	struct ieee80211_key_conf *key_conf;
+-	struct ieee80211_hdr *hdr;
+-	struct ath12k_dp_rx_info rx_info;
+-	u8 mic[IEEE80211_CCMP_MIC_LEN];
+-	int head_len, tail_len, ret;
+-	size_t data_len;
+-	u32 hdr_len, hal_rx_desc_sz = ar->ab->hal.hal_desc_sz;
+-	u8 *key, *data;
+-	u8 key_idx;
+-
+-	if (ath12k_dp_rx_h_enctype(ab, rx_desc) != HAL_ENCRYPT_TYPE_TKIP_MIC)
+-		return 0;
+-
+-	rx_info.addr2_present = false;
+-	rx_info.rx_status = rxs;
+-
+-	hdr = (struct ieee80211_hdr *)(msdu->data + hal_rx_desc_sz);
+-	hdr_len = ieee80211_hdrlen(hdr->frame_control);
+-	head_len = hdr_len + hal_rx_desc_sz + IEEE80211_TKIP_IV_LEN;
+-	tail_len = IEEE80211_CCMP_MIC_LEN + IEEE80211_TKIP_ICV_LEN + FCS_LEN;
+-
+-	if (!is_multicast_ether_addr(hdr->addr1))
+-		key_idx = peer->ucast_keyidx;
+-	else
+-		key_idx = peer->mcast_keyidx;
+-
+-	key_conf = peer->keys[key_idx];
+-
+-	data = msdu->data + head_len;
+-	data_len = msdu->len - head_len - tail_len;
+-	key = &key_conf->key[NL80211_TKIP_DATA_OFFSET_RX_MIC_KEY];
+-
+-	ret = ath12k_dp_rx_h_michael_mic(peer->tfm_mmic, key, hdr, data, data_len, mic);
+-	if (ret || memcmp(mic, data + data_len, IEEE80211_CCMP_MIC_LEN))
+-		goto mic_fail;
+-
+-	return 0;
+-
+-mic_fail:
+-	(ATH12K_SKB_RXCB(msdu))->is_first_msdu = true;
+-	(ATH12K_SKB_RXCB(msdu))->is_last_msdu = true;
+-
+-	ath12k_dp_rx_h_fetch_info(ab, rx_desc, &rx_info);
+-
+-	rxs->flag |= RX_FLAG_MMIC_ERROR | RX_FLAG_MMIC_STRIPPED |
+-		    RX_FLAG_IV_STRIPPED | RX_FLAG_DECRYPTED;
+-	skb_pull(msdu, hal_rx_desc_sz);
+-
+-	if (unlikely(!ath12k_dp_rx_check_nwifi_hdr_len_valid(ab, rx_desc, msdu)))
+-		return -EINVAL;
+-
+-	ath12k_dp_rx_h_ppdu(ar, &rx_info);
+-	ath12k_dp_rx_h_undecap(ar, msdu, rx_desc,
+-			       HAL_ENCRYPT_TYPE_TKIP_MIC, rxs, true);
+-	ieee80211_rx(ath12k_ar_to_hw(ar), msdu);
+-	return -EINVAL;
+-}
+-
+ void ath12k_dp_rx_h_undecap_frag(struct ath12k *ar, struct sk_buff *msdu,
+ 				 enum hal_encrypt_type enctype, u32 flags)
+ {
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.h b/drivers/net/wireless/ath/ath12k/dp_rx.h
+index dc0b1078213c..5fc9adeb49bd 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.h
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.h
+@@ -6,6 +6,7 @@
+ #ifndef ATH12K_DP_RX_H
+ #define ATH12K_DP_RX_H
+ 
++#include <crypto/hash.h>
+ #include "core.h"
+ #include "wifi7/hal_rx_desc.h"
+ #include "debug.h"
+@@ -353,20 +354,20 @@ void ath12k_dp_rx_deliver_msdu(struct ath12k *ar, struct napi_struct *napi,
+ bool ath12k_dp_rx_check_nwifi_hdr_len_valid(struct ath12k_base *ab,
+ 					    struct hal_rx_desc *rx_desc,
+ 					    struct sk_buff *msdu);
+-void ath12k_dp_rx_h_mpdu(struct ath12k *ar,
+-			 struct sk_buff *msdu,
+-			 struct hal_rx_desc *rx_desc,
+-			 struct ath12k_dp_rx_info *rx_info);
+ u64 ath12k_dp_rx_h_get_pn(struct ath12k *ar, struct sk_buff *skb);
+ void ath12k_dp_rx_h_sort_frags(struct ath12k_base *ab,
+ 			       struct sk_buff_head *frag_list,
+ 			       struct sk_buff *cur_frag);
+ void ath12k_dp_rx_h_undecap_frag(struct ath12k *ar, struct sk_buff *msdu,
+ 				 enum hal_encrypt_type enctype, u32 flags);
+-int ath12k_dp_rx_h_verify_tkip_mic(struct ath12k *ar, struct ath12k_peer *peer,
+-				   struct sk_buff *msdu);
+ void ath12k_dp_rx_frags_cleanup(struct ath12k_dp_rx_tid *rx_tid,
+ 				bool rel_link_desc);
++int ath12k_dp_rx_h_michael_mic(struct crypto_shash *tfm, u8 *key,
++			       struct ieee80211_hdr *hdr, u8 *data,
++			       size_t data_len, u8 *mic);
++u16 ath12k_dp_rx_get_peer_id(struct ath12k_base *ab,
++			     enum ath12k_peer_metadata_version ver,
++			     __le32 peer_metadata);
+ int ath12k_dp_rx_ampdu_start(struct ath12k *ar,
+ 			     struct ieee80211_ampdu_params *params,
+ 			     u8 link_id);
+@@ -394,9 +395,6 @@ int ath12k_dp_rx_pdev_alloc(struct ath12k_base *ab, int pdev_idx);
+ void ath12k_dp_rx_pdev_free(struct ath12k_base *ab, int pdev_idx);
+ void ath12k_dp_rx_reo_cmd_list_cleanup(struct ath12k_base *ab);
+ void ath12k_dp_rx_process_reo_status(struct ath12k_base *ab);
+-int ath12k_dp_rx_process(struct ath12k_base *ab, int mac_id,
+-			 struct napi_struct *napi,
+-			 int budget);
+ int ath12k_dp_rx_bufs_replenish(struct ath12k_base *ab,
+ 				struct dp_rxdma_ring *rx_ring,
+ 				struct list_head *used_list,
+@@ -431,4 +429,6 @@ int ath12k_dp_rx_link_desc_return(struct ath12k_base *ab,
+ bool ath12k_dp_rxdesc_mpdu_valid(struct ath12k_base *ab,
+ 				 struct hal_rx_desc *rx_desc);
+ void ath12k_dp_rx_h_ppdu(struct ath12k *ar, struct ath12k_dp_rx_info *rx_info);
++struct sk_buff *ath12k_dp_rx_get_msdu_last_buf(struct sk_buff_head *msdu_list,
++					       struct sk_buff *first);
+ #endif /* ATH12K_DP_RX_H */
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+index c2b108a1005b..b55cfb926571 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+@@ -8,6 +8,469 @@
+ #include "../dp_tx.h"
  #include "../peer.h"
- #include "dp_tx.h"
  
-+static void ath12k_hal_tx_cmd_ext_desc_setup(struct ath12k_base *ab,
-+					     struct hal_tx_msdu_ext_desc *tcl_ext_cmd,
-+					     struct hal_tx_info *ti)
++static void ath12k_dp_rx_h_csum_offload(struct sk_buff *msdu,
++					struct ath12k_dp_rx_info *rx_info)
 +{
-+	tcl_ext_cmd->info0 = le32_encode_bits(ti->paddr,
-+					      HAL_TX_MSDU_EXT_INFO0_BUF_PTR_LO);
-+	tcl_ext_cmd->info1 = le32_encode_bits(0x0,
-+					      HAL_TX_MSDU_EXT_INFO1_BUF_PTR_HI) |
-+			       le32_encode_bits(ti->data_len,
-+						HAL_TX_MSDU_EXT_INFO1_BUF_LEN);
-+
-+	tcl_ext_cmd->info1 |= le32_encode_bits(1, HAL_TX_MSDU_EXT_INFO1_EXTN_OVERRIDE) |
-+				le32_encode_bits(ti->encap_type,
-+						 HAL_TX_MSDU_EXT_INFO1_ENCAP_TYPE) |
-+				le32_encode_bits(ti->encrypt_type,
-+						 HAL_TX_MSDU_EXT_INFO1_ENCRYPT_TYPE);
++	msdu->ip_summed = (rx_info->ip_csum_fail || rx_info->l4_csum_fail) ?
++			   CHECKSUM_NONE : CHECKSUM_UNNECESSARY;
 +}
 +
-+#define HTT_META_DATA_ALIGNMENT 0x8
-+
-+/* Preparing HTT Metadata when utilized with ext MSDU */
-+static int ath12k_dp_prepare_htt_metadata(struct sk_buff *skb)
-+{
-+	struct hal_tx_msdu_metadata *desc_ext;
-+	u8 htt_desc_size;
-+	/* Size rounded of multiple of 8 bytes */
-+	u8 htt_desc_size_aligned;
-+
-+	htt_desc_size = sizeof(struct hal_tx_msdu_metadata);
-+	htt_desc_size_aligned = ALIGN(htt_desc_size, HTT_META_DATA_ALIGNMENT);
-+
-+	desc_ext = ath12k_dp_metadata_align_skb(skb, htt_desc_size_aligned);
-+	if (!desc_ext)
-+		return -ENOMEM;
-+
-+	desc_ext->info0 = le32_encode_bits(1, HAL_TX_MSDU_METADATA_INFO0_ENCRYPT_FLAG) |
-+			  le32_encode_bits(0, HAL_TX_MSDU_METADATA_INFO0_ENCRYPT_TYPE) |
-+			  le32_encode_bits(1,
-+					   HAL_TX_MSDU_METADATA_INFO0_HOST_TX_DESC_POOL);
-+
-+	return 0;
-+}
-+
-+int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
-+		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn,
-+		 bool is_mcast)
++static void ath12k_dp_rx_h_mpdu(struct ath12k *ar,
++				struct sk_buff *msdu,
++				struct hal_rx_desc *rx_desc,
++				struct ath12k_dp_rx_info *rx_info)
 +{
 +	struct ath12k_base *ab = ar->ab;
-+	struct ath12k_dp *dp = &ab->dp;
-+	struct hal_tx_info ti = {};
-+	struct ath12k_tx_desc_info *tx_desc;
-+	struct ieee80211_tx_info *info = IEEE80211_SKB_CB(skb);
-+	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB(skb);
-+	struct hal_tcl_data_cmd *hal_tcl_desc;
-+	struct hal_tx_msdu_ext_desc *msg;
-+	struct sk_buff *skb_ext_desc = NULL;
-+	struct hal_srng *tcl_ring;
-+	struct ieee80211_hdr *hdr = (void *)skb->data;
-+	struct ath12k_vif *ahvif = arvif->ahvif;
-+	struct dp_tx_ring *tx_ring;
-+	u8 pool_id;
-+	u8 hal_ring_id;
-+	int ret;
-+	u8 ring_selector, ring_map = 0;
-+	bool tcl_ring_retry;
-+	bool msdu_ext_desc = false;
-+	bool add_htt_metadata = false;
-+	u32 iova_mask = ab->hw_params->iova_mask;
-+	bool is_diff_encap = false;
-+	bool is_null_frame = false;
++	struct ath12k_skb_rxcb *rxcb;
++	enum hal_encrypt_type enctype;
++	bool is_decrypted = false;
++	struct ieee80211_hdr *hdr;
++	struct ath12k_peer *peer;
++	struct ieee80211_rx_status *rx_status = rx_info->rx_status;
++	u32 err_bitmap;
 +
-+	if (test_bit(ATH12K_FLAG_CRASH_FLUSH, &ar->ab->dev_flags))
-+		return -ESHUTDOWN;
++	/* PN for multicast packets will be checked in mac80211 */
++	rxcb = ATH12K_SKB_RXCB(msdu);
++	rxcb->is_mcbc = rx_info->is_mcbc;
 +
-+	if (!(info->flags & IEEE80211_TX_CTL_HW_80211_ENCAP) &&
-+	    !ieee80211_is_data(hdr->frame_control))
-+		return -EOPNOTSUPP;
++	if (rxcb->is_mcbc)
++		rxcb->peer_id = rx_info->peer_id;
 +
-+	pool_id = skb_get_queue_mapping(skb) & (ATH12K_HW_MAX_QUEUES - 1);
++	spin_lock_bh(&ar->ab->base_lock);
++	peer = ath12k_dp_rx_h_find_peer(ar->ab, msdu, rx_info);
++	if (peer) {
++		/* resetting mcbc bit because mcbc packets are unicast
++		 * packets only for AP as STA sends unicast packets.
++		 */
++		rxcb->is_mcbc = rxcb->is_mcbc && !peer->ucast_ra_only;
 +
-+	/* Let the default ring selection be based on current processor
-+	 * number, where one of the 3 tcl rings are selected based on
-+	 * the smp_processor_id(). In case that ring
-+	 * is full/busy, we resort to other available rings.
-+	 * If all rings are full, we drop the packet.
-+	 * TODO: Add throttling logic when all rings are full
++		if (rxcb->is_mcbc)
++			enctype = peer->sec_type_grp;
++		else
++			enctype = peer->sec_type;
++	} else {
++		enctype = HAL_ENCRYPT_TYPE_OPEN;
++	}
++	spin_unlock_bh(&ar->ab->base_lock);
++
++	err_bitmap = ath12k_dp_rx_h_mpdu_err(ab, rx_desc);
++	if (enctype != HAL_ENCRYPT_TYPE_OPEN && !err_bitmap)
++		is_decrypted = ath12k_dp_rx_h_is_decrypted(ab, rx_desc);
++
++	/* Clear per-MPDU flags while leaving per-PPDU flags intact */
++	rx_status->flag &= ~(RX_FLAG_FAILED_FCS_CRC |
++			     RX_FLAG_MMIC_ERROR |
++			     RX_FLAG_DECRYPTED |
++			     RX_FLAG_IV_STRIPPED |
++			     RX_FLAG_MMIC_STRIPPED);
++
++	if (err_bitmap & HAL_RX_MPDU_ERR_FCS)
++		rx_status->flag |= RX_FLAG_FAILED_FCS_CRC;
++	if (err_bitmap & HAL_RX_MPDU_ERR_TKIP_MIC)
++		rx_status->flag |= RX_FLAG_MMIC_ERROR;
++
++	if (is_decrypted) {
++		rx_status->flag |= RX_FLAG_DECRYPTED | RX_FLAG_MMIC_STRIPPED;
++
++		if (rx_info->is_mcbc)
++			rx_status->flag |= RX_FLAG_MIC_STRIPPED |
++					RX_FLAG_ICV_STRIPPED;
++		else
++			rx_status->flag |= RX_FLAG_IV_STRIPPED |
++					   RX_FLAG_PN_VALIDATED;
++	}
++
++	ath12k_dp_rx_h_csum_offload(msdu, rx_info);
++	ath12k_dp_rx_h_undecap(ar, msdu, rx_desc,
++			       enctype, rx_status, is_decrypted);
++
++	if (!is_decrypted || rx_info->is_mcbc)
++		return;
++
++	if (rx_info->decap_type != DP_RX_DECAP_TYPE_ETHERNET2_DIX) {
++		hdr = (void *)msdu->data;
++		hdr->frame_control &= ~__cpu_to_le16(IEEE80211_FCTL_PROTECTED);
++	}
++}
++
++static int ath12k_dp_rx_msdu_coalesce(struct ath12k *ar,
++				      struct sk_buff_head *msdu_list,
++				      struct sk_buff *first, struct sk_buff *last,
++				      u8 l3pad_bytes, int msdu_len)
++{
++	struct ath12k_base *ab = ar->ab;
++	struct sk_buff *skb;
++	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(first);
++	int buf_first_hdr_len, buf_first_len;
++	struct hal_rx_desc *ldesc;
++	int space_extra, rem_len, buf_len;
++	u32 hal_rx_desc_sz = ar->ab->hal.hal_desc_sz;
++	bool is_continuation;
++
++	/* As the msdu is spread across multiple rx buffers,
++	 * find the offset to the start of msdu for computing
++	 * the length of the msdu in the first buffer.
 +	 */
-+	ring_selector = ab->hw_params->hw_ops->get_ring_selector(skb);
++	buf_first_hdr_len = hal_rx_desc_sz + l3pad_bytes;
++	buf_first_len = DP_RX_BUFFER_SIZE - buf_first_hdr_len;
 +
-+tcl_ring_sel:
-+	tcl_ring_retry = false;
-+	ti.ring_id = ring_selector % ab->hw_params->max_tx_ring;
-+
-+	ring_map |= BIT(ti.ring_id);
-+	ti.rbm_id = ab->hw_params->hal_ops->tcl_to_wbm_rbm_map[ti.ring_id].rbm_id;
-+
-+	tx_ring = &dp->tx_ring[ti.ring_id];
-+
-+	tx_desc = ath12k_dp_tx_assign_buffer(dp, pool_id);
-+	if (!tx_desc)
-+		return -ENOMEM;
-+
-+	ti.bank_id = arvif->bank_id;
-+	ti.meta_data_flags = arvif->tcl_metadata;
-+
-+	if (ahvif->tx_encap_type == HAL_TCL_ENCAP_TYPE_RAW &&
-+	    test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags)) {
-+		if (skb_cb->flags & ATH12K_SKB_CIPHER_SET) {
-+			ti.encrypt_type =
-+				ath12k_dp_tx_get_encrypt_type(skb_cb->cipher);
-+
-+			if (ieee80211_has_protected(hdr->frame_control))
-+				skb_put(skb, IEEE80211_CCMP_MIC_LEN);
-+		} else {
-+			ti.encrypt_type = HAL_ENCRYPT_TYPE_OPEN;
-+		}
-+
-+		msdu_ext_desc = true;
++	if (WARN_ON_ONCE(msdu_len <= buf_first_len)) {
++		skb_put(first, buf_first_hdr_len + msdu_len);
++		skb_pull(first, buf_first_hdr_len);
++		return 0;
 +	}
 +
-+	if (gsn_valid) {
-+		/* Reset and Initialize meta_data_flags with Global Sequence
-+		 * Number (GSN) info.
-+		 */
-+		ti.meta_data_flags =
-+			u32_encode_bits(HTT_TCL_META_DATA_TYPE_GLOBAL_SEQ_NUM,
-+					HTT_TCL_META_DATA_TYPE) |
-+			u32_encode_bits(mcbc_gsn, HTT_TCL_META_DATA_GLOBAL_SEQ_NUM);
-+	}
++	ldesc = (struct hal_rx_desc *)last->data;
++	rxcb->is_first_msdu = ath12k_dp_rx_h_first_msdu(ab, ldesc);
++	rxcb->is_last_msdu = ath12k_dp_rx_h_last_msdu(ab, ldesc);
 +
-+	ti.encap_type = ath12k_dp_tx_get_encap_type(ab, skb);
-+	ti.addr_search_flags = arvif->hal_addr_search_flags;
-+	ti.search_type = arvif->search_type;
-+	ti.type = HAL_TCL_DESC_TYPE_BUFFER;
-+	ti.pkt_offset = 0;
-+	ti.lmac_id = ar->lmac_id;
++	/* MSDU spans over multiple buffers because the length of the MSDU
++	 * exceeds DP_RX_BUFFER_SIZE - HAL_RX_DESC_SIZE. So assume the data
++	 * in the first buf is of length DP_RX_BUFFER_SIZE - HAL_RX_DESC_SIZE.
++	 */
++	skb_put(first, DP_RX_BUFFER_SIZE);
++	skb_pull(first, buf_first_hdr_len);
 +
-+	ti.vdev_id = arvif->vdev_id;
-+	if (gsn_valid)
-+		ti.vdev_id += HTT_TX_MLO_MCAST_HOST_REINJECT_BASE_VDEV_ID;
++	/* When an MSDU spread over multiple buffers MSDU_END
++	 * tlvs are valid only in the last buffer. Copy those tlvs.
++	 */
++	ath12k_dp_rx_desc_end_tlv_copy(ab, rxcb->rx_desc, ldesc);
 +
-+	ti.bss_ast_hash = arvif->ast_hash;
-+	ti.bss_ast_idx = arvif->ast_idx;
-+	ti.dscp_tid_tbl_idx = 0;
-+
-+	if (skb->ip_summed == CHECKSUM_PARTIAL &&
-+	    ti.encap_type != HAL_TCL_ENCAP_TYPE_RAW) {
-+		ti.flags0 |= u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_IP4_CKSUM_EN) |
-+			     u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_UDP4_CKSUM_EN) |
-+			     u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_UDP6_CKSUM_EN) |
-+			     u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_TCP4_CKSUM_EN) |
-+			     u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_TCP6_CKSUM_EN);
-+	}
-+
-+	ti.flags1 |= u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO3_TID_OVERWRITE);
-+
-+	ti.tid = ath12k_dp_tx_get_tid(skb);
-+
-+	switch (ti.encap_type) {
-+	case HAL_TCL_ENCAP_TYPE_NATIVE_WIFI:
-+		is_null_frame = ieee80211_is_nullfunc(hdr->frame_control);
-+		if (ahvif->vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED) {
-+			if (skb->protocol == cpu_to_be16(ETH_P_PAE) || is_null_frame)
-+				is_diff_encap = true;
-+
-+			/* Firmware expects msdu ext descriptor for nwifi/raw packets
-+			 * received in ETH mode. Without this, observed tx fail for
-+			 * Multicast packets in ETH mode.
-+			 */
-+			msdu_ext_desc = true;
-+		} else {
-+			ath12k_dp_tx_encap_nwifi(skb);
-+		}
-+		break;
-+	case HAL_TCL_ENCAP_TYPE_RAW:
-+		if (!test_bit(ATH12K_FLAG_RAW_MODE, &ab->dev_flags)) {
-+			ret = -EINVAL;
-+			goto fail_remove_tx_buf;
-+		}
-+		break;
-+	case HAL_TCL_ENCAP_TYPE_ETHERNET:
-+		/* no need to encap */
-+		break;
-+	case HAL_TCL_ENCAP_TYPE_802_3:
-+	default:
-+		/* TODO: Take care of other encap modes as well */
-+		ret = -EINVAL;
-+		atomic_inc(&ab->device_stats.tx_err.misc_fail);
-+		goto fail_remove_tx_buf;
-+	}
-+
-+	if (iova_mask &&
-+	    (unsigned long)skb->data & iova_mask) {
-+		ret = ath12k_dp_tx_align_payload(ab, &skb);
-+		if (ret) {
-+			ath12k_warn(ab, "failed to align TX buffer %d\n", ret);
-+			/* don't bail out, give original buffer
-+			 * a chance even unaligned.
-+			 */
-+			goto map;
-+		}
-+
-+		/* hdr is pointing to a wrong place after alignment,
-+		 * so refresh it for later use.
-+		 */
-+		hdr = (void *)skb->data;
-+	}
-+map:
-+	ti.paddr = dma_map_single(ab->dev, skb->data, skb->len, DMA_TO_DEVICE);
-+	if (dma_mapping_error(ab->dev, ti.paddr)) {
-+		atomic_inc(&ab->device_stats.tx_err.misc_fail);
-+		ath12k_warn(ab, "failed to DMA map data Tx buffer\n");
-+		ret = -ENOMEM;
-+		goto fail_remove_tx_buf;
-+	}
-+
-+	if ((!test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags) &&
-+	     !(skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) &&
-+	     !(skb_cb->flags & ATH12K_SKB_CIPHER_SET) &&
-+	     ieee80211_has_protected(hdr->frame_control)) ||
-+	    is_diff_encap) {
-+		/* Firmware is not expecting meta data for qos null
-+		 * nwifi packet received in ETH encap mode.
-+		 */
-+		if (is_null_frame && msdu_ext_desc)
-+			goto skip_htt_meta;
-+
-+		/* Add metadata for sw encrypted vlan group traffic
-+		 * and EAPOL nwifi packet received in ETH encap mode.
-+		 */
-+		add_htt_metadata = true;
-+		msdu_ext_desc = true;
-+		ti.meta_data_flags |= HTT_TCL_META_DATA_VALID_HTT;
-+skip_htt_meta:
-+		ti.flags0 |= u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_TO_FW);
-+		ti.encap_type = HAL_TCL_ENCAP_TYPE_RAW;
-+		ti.encrypt_type = HAL_ENCRYPT_TYPE_OPEN;
-+	}
-+
-+	tx_desc->skb = skb;
-+	tx_desc->mac_id = ar->pdev_idx;
-+	ti.desc_id = tx_desc->desc_id;
-+	ti.data_len = skb->len;
-+	skb_cb->paddr = ti.paddr;
-+	skb_cb->vif = ahvif->vif;
-+	skb_cb->ar = ar;
-+
-+	if (msdu_ext_desc) {
-+		skb_ext_desc = dev_alloc_skb(sizeof(struct hal_tx_msdu_ext_desc));
-+		if (!skb_ext_desc) {
-+			ret = -ENOMEM;
-+			goto fail_unmap_dma;
-+		}
-+
-+		skb_put(skb_ext_desc, sizeof(struct hal_tx_msdu_ext_desc));
-+		memset(skb_ext_desc->data, 0, skb_ext_desc->len);
-+
-+		msg = (struct hal_tx_msdu_ext_desc *)skb_ext_desc->data;
-+		ath12k_hal_tx_cmd_ext_desc_setup(ab, msg, &ti);
-+
-+		if (add_htt_metadata) {
-+			ret = ath12k_dp_prepare_htt_metadata(skb_ext_desc);
-+			if (ret < 0) {
-+				ath12k_dbg(ab, ATH12K_DBG_DP_TX,
-+					   "Failed to add HTT meta data, dropping packet\n");
-+				goto fail_free_ext_skb;
++	space_extra = msdu_len - (buf_first_len + skb_tailroom(first));
++	if (space_extra > 0 &&
++	    (pskb_expand_head(first, 0, space_extra, GFP_ATOMIC) < 0)) {
++		/* Free up all buffers of the MSDU */
++		while ((skb = __skb_dequeue(msdu_list)) != NULL) {
++			rxcb = ATH12K_SKB_RXCB(skb);
++			if (!rxcb->is_continuation) {
++				dev_kfree_skb_any(skb);
++				break;
 +			}
++			dev_kfree_skb_any(skb);
 +		}
-+
-+		ti.paddr = dma_map_single(ab->dev, skb_ext_desc->data,
-+					  skb_ext_desc->len, DMA_TO_DEVICE);
-+		ret = dma_mapping_error(ab->dev, ti.paddr);
-+		if (ret)
-+			goto fail_free_ext_skb;
-+
-+		ti.data_len = skb_ext_desc->len;
-+		ti.type = HAL_TCL_DESC_TYPE_EXT_DESC;
-+
-+		skb_cb->paddr_ext_desc = ti.paddr;
-+		tx_desc->skb_ext_desc = skb_ext_desc;
++		return -ENOMEM;
 +	}
 +
-+	hal_ring_id = tx_ring->tcl_data_ring.ring_id;
-+	tcl_ring = &ab->hal.srng_list[hal_ring_id];
++	rem_len = msdu_len - buf_first_len;
++	while ((skb = __skb_dequeue(msdu_list)) != NULL && rem_len > 0) {
++		rxcb = ATH12K_SKB_RXCB(skb);
++		is_continuation = rxcb->is_continuation;
++		if (is_continuation)
++			buf_len = DP_RX_BUFFER_SIZE - hal_rx_desc_sz;
++		else
++			buf_len = rem_len;
 +
-+	spin_lock_bh(&tcl_ring->lock);
-+
-+	ath12k_hal_srng_access_begin(ab, tcl_ring);
-+
-+	hal_tcl_desc = ath12k_hal_srng_src_get_next_entry(ab, tcl_ring);
-+	if (!hal_tcl_desc) {
-+		/* NOTE: It is highly unlikely we'll be running out of tcl_ring
-+		 * desc because the desc is directly enqueued onto hw queue.
-+		 */
-+		ath12k_hal_srng_access_end(ab, tcl_ring);
-+		ab->device_stats.tx_err.desc_na[ti.ring_id]++;
-+		spin_unlock_bh(&tcl_ring->lock);
-+		ret = -ENOMEM;
-+
-+		/* Checking for available tcl descriptors in another ring in
-+		 * case of failure due to full tcl ring now, is better than
-+		 * checking this ring earlier for each pkt tx.
-+		 * Restart ring selection if some rings are not checked yet.
-+		 */
-+		if (ring_map != (BIT(ab->hw_params->max_tx_ring) - 1) &&
-+		    ab->hw_params->tcl_ring_retry) {
-+			tcl_ring_retry = true;
-+			ring_selector++;
++		if (buf_len > (DP_RX_BUFFER_SIZE - hal_rx_desc_sz)) {
++			WARN_ON_ONCE(1);
++			dev_kfree_skb_any(skb);
++			return -EINVAL;
 +		}
 +
-+		goto fail_unmap_dma_ext;
++		skb_put(skb, buf_len + hal_rx_desc_sz);
++		skb_pull(skb, hal_rx_desc_sz);
++		skb_copy_from_linear_data(skb, skb_put(first, buf_len),
++					  buf_len);
++		dev_kfree_skb_any(skb);
++
++		rem_len -= buf_len;
++		if (!is_continuation)
++			break;
 +	}
 +
-+	spin_lock_bh(&arvif->link_stats_lock);
-+	arvif->link_stats.tx_encap_type[ti.encap_type]++;
-+	arvif->link_stats.tx_encrypt_type[ti.encrypt_type]++;
-+	arvif->link_stats.tx_desc_type[ti.type]++;
++	return 0;
++}
 +
-+	if (is_mcast)
-+		arvif->link_stats.tx_bcast_mcast++;
-+	else
-+		arvif->link_stats.tx_enqueued++;
-+	spin_unlock_bh(&arvif->link_stats_lock);
++static int ath12k_dp_rx_process_msdu(struct ath12k *ar,
++				     struct sk_buff *msdu,
++				     struct sk_buff_head *msdu_list,
++				     struct ath12k_dp_rx_info *rx_info)
++{
++	struct ath12k_base *ab = ar->ab;
++	struct hal_rx_desc *rx_desc, *lrx_desc;
++	struct ath12k_skb_rxcb *rxcb;
++	struct sk_buff *last_buf;
++	u8 l3_pad_bytes;
++	u16 msdu_len;
++	int ret;
++	u32 hal_rx_desc_sz = ar->ab->hal.hal_desc_sz;
 +
-+	ab->device_stats.tx_enqueued[ti.ring_id]++;
++	last_buf = ath12k_dp_rx_get_msdu_last_buf(msdu_list, msdu);
++	if (!last_buf) {
++		ath12k_warn(ab,
++			    "No valid Rx buffer to access MSDU_END tlv\n");
++		ret = -EIO;
++		goto free_out;
++	}
 +
-+	ath12k_hal_tx_cmd_desc_setup(ab, hal_tcl_desc, &ti);
++	rx_desc = (struct hal_rx_desc *)msdu->data;
++	lrx_desc = (struct hal_rx_desc *)last_buf->data;
++	if (!ath12k_dp_rx_h_msdu_done(ab, lrx_desc)) {
++		ath12k_warn(ab, "msdu_done bit in msdu_end is not set\n");
++		ret = -EIO;
++		goto free_out;
++	}
 +
-+	ath12k_hal_srng_access_end(ab, tcl_ring);
++	rxcb = ATH12K_SKB_RXCB(msdu);
++	rxcb->rx_desc = rx_desc;
++	msdu_len = ath12k_dp_rx_h_msdu_len(ab, lrx_desc);
++	l3_pad_bytes = ath12k_dp_rx_h_l3pad(ab, lrx_desc);
 +
-+	spin_unlock_bh(&tcl_ring->lock);
++	if (rxcb->is_frag) {
++		skb_pull(msdu, hal_rx_desc_sz);
++	} else if (!rxcb->is_continuation) {
++		if ((msdu_len + hal_rx_desc_sz) > DP_RX_BUFFER_SIZE) {
++			ret = -EINVAL;
++			ath12k_warn(ab, "invalid msdu len %u\n", msdu_len);
++			ath12k_dbg_dump(ab, ATH12K_DBG_DATA, NULL, "", rx_desc,
++					sizeof(*rx_desc));
++			goto free_out;
++		}
++		skb_put(msdu, hal_rx_desc_sz + l3_pad_bytes + msdu_len);
++		skb_pull(msdu, hal_rx_desc_sz + l3_pad_bytes);
++	} else {
++		ret = ath12k_dp_rx_msdu_coalesce(ar, msdu_list,
++						 msdu, last_buf,
++						 l3_pad_bytes, msdu_len);
++		if (ret) {
++			ath12k_warn(ab,
++				    "failed to coalesce msdu rx buffer%d\n", ret);
++			goto free_out;
++		}
++	}
 +
-+	ath12k_dbg_dump(ab, ATH12K_DBG_DP_TX, NULL, "dp tx msdu: ",
-+			skb->data, skb->len);
++	if (unlikely(!ath12k_dp_rx_check_nwifi_hdr_len_valid(ab, rx_desc, msdu))) {
++		ret = -EINVAL;
++		goto free_out;
++	}
 +
-+	atomic_inc(&ar->dp.num_tx_pending);
++	ath12k_dp_rx_h_fetch_info(ab, rx_desc, rx_info);
++	ath12k_dp_rx_h_ppdu(ar, rx_info);
++	ath12k_dp_rx_h_mpdu(ar, msdu, rx_desc, rx_info);
++
++	rx_info->rx_status->flag |= RX_FLAG_SKIP_MONITOR | RX_FLAG_DUP_VALIDATED;
 +
 +	return 0;
 +
-+fail_unmap_dma_ext:
-+	if (skb_cb->paddr_ext_desc)
-+		dma_unmap_single(ab->dev, skb_cb->paddr_ext_desc,
-+				 skb_ext_desc->len,
-+				 DMA_TO_DEVICE);
-+fail_free_ext_skb:
-+	kfree_skb(skb_ext_desc);
-+
-+fail_unmap_dma:
-+	dma_unmap_single(ab->dev, ti.paddr, ti.data_len, DMA_TO_DEVICE);
-+
-+fail_remove_tx_buf:
-+	ath12k_dp_tx_release_txbuf(dp, tx_desc, pool_id);
-+
-+	spin_lock_bh(&arvif->link_stats_lock);
-+	arvif->link_stats.tx_dropped++;
-+	spin_unlock_bh(&arvif->link_stats_lock);
-+
-+	if (tcl_ring_retry)
-+		goto tcl_ring_sel;
-+
++free_out:
 +	return ret;
 +}
 +
- static void
- ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
- 				 struct ath12k_tx_desc_params *desc_params,
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.h b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.h
-index 4361beb99666..42faf664f8f8 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.h
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.h
-@@ -7,5 +7,8 @@
- #ifndef ATH12K_DP_TX_WIFI7_H
- #define ATH12K_DP_TX_WIFI7_H
++static void ath12k_dp_rx_process_received_packets(struct ath12k_base *ab,
++						  struct napi_struct *napi,
++						  struct sk_buff_head *msdu_list,
++						  int ring_id)
++{
++	struct ath12k_hw_group *ag = ab->ag;
++	struct ieee80211_rx_status rx_status = {};
++	struct ath12k_skb_rxcb *rxcb;
++	struct sk_buff *msdu;
++	struct ath12k *ar;
++	struct ath12k_hw_link *hw_links = ag->hw_links;
++	struct ath12k_base *partner_ab;
++	struct ath12k_dp_rx_info rx_info;
++	u8 hw_link_id, pdev_id;
++	int ret;
++
++	if (skb_queue_empty(msdu_list))
++		return;
++
++	rx_info.addr2_present = false;
++	rx_info.rx_status = &rx_status;
++
++	rcu_read_lock();
++
++	while ((msdu = __skb_dequeue(msdu_list))) {
++		rxcb = ATH12K_SKB_RXCB(msdu);
++		hw_link_id = rxcb->hw_link_id;
++		partner_ab = ath12k_ag_to_ab(ag,
++					     hw_links[hw_link_id].device_id);
++		pdev_id = ath12k_hw_mac_id_to_pdev_id(partner_ab->hw_params,
++						      hw_links[hw_link_id].pdev_idx);
++		ar = partner_ab->pdevs[pdev_id].ar;
++		if (!rcu_dereference(partner_ab->pdevs_active[pdev_id])) {
++			dev_kfree_skb_any(msdu);
++			continue;
++		}
++
++		if (test_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags)) {
++			dev_kfree_skb_any(msdu);
++			continue;
++		}
++
++		ret = ath12k_dp_rx_process_msdu(ar, msdu, msdu_list, &rx_info);
++		if (ret) {
++			ath12k_dbg(ab, ATH12K_DBG_DATA,
++				   "Unable to process msdu %d", ret);
++			dev_kfree_skb_any(msdu);
++			continue;
++		}
++
++		ath12k_dp_rx_deliver_msdu(ar, napi, msdu, &rx_info);
++	}
++
++	rcu_read_unlock();
++}
++
++int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
++			 struct napi_struct *napi, int budget)
++{
++	struct ath12k_hw_group *ag = ab->ag;
++	struct list_head rx_desc_used_list[ATH12K_MAX_DEVICES];
++	struct ath12k_hw_link *hw_links = ag->hw_links;
++	int num_buffs_reaped[ATH12K_MAX_DEVICES] = {};
++	struct ath12k_rx_desc_info *desc_info;
++	struct ath12k_dp *dp = &ab->dp;
++	struct dp_rxdma_ring *rx_ring = &dp->rx_refill_buf_ring;
++	struct hal_reo_dest_ring *desc;
++	struct ath12k_base *partner_ab;
++	struct sk_buff_head msdu_list;
++	struct ath12k_skb_rxcb *rxcb;
++	int total_msdu_reaped = 0;
++	u8 hw_link_id, device_id;
++	struct hal_srng *srng;
++	struct sk_buff *msdu;
++	bool done = false;
++	u64 desc_va;
++
++	__skb_queue_head_init(&msdu_list);
++
++	for (device_id = 0; device_id < ATH12K_MAX_DEVICES; device_id++)
++		INIT_LIST_HEAD(&rx_desc_used_list[device_id]);
++
++	srng = &ab->hal.srng_list[dp->reo_dst_ring[ring_id].ring_id];
++
++	spin_lock_bh(&srng->lock);
++
++try_again:
++	ath12k_hal_srng_access_begin(ab, srng);
++
++	while ((desc = ath12k_hal_srng_dst_get_next_entry(ab, srng))) {
++		struct rx_mpdu_desc *mpdu_info;
++		struct rx_msdu_desc *msdu_info;
++		enum hal_reo_dest_ring_push_reason push_reason;
++		u32 cookie;
++
++		cookie = le32_get_bits(desc->buf_addr_info.info1,
++				       BUFFER_ADDR_INFO1_SW_COOKIE);
++
++		hw_link_id = le32_get_bits(desc->info0,
++					   HAL_REO_DEST_RING_INFO0_SRC_LINK_ID);
++
++		desc_va = ((u64)le32_to_cpu(desc->buf_va_hi) << 32 |
++			   le32_to_cpu(desc->buf_va_lo));
++		desc_info = (struct ath12k_rx_desc_info *)((unsigned long)desc_va);
++
++		device_id = hw_links[hw_link_id].device_id;
++		partner_ab = ath12k_ag_to_ab(ag, device_id);
++		if (unlikely(!partner_ab)) {
++			if (desc_info->skb) {
++				dev_kfree_skb_any(desc_info->skb);
++				desc_info->skb = NULL;
++			}
++
++			continue;
++		}
++
++		/* retry manual desc retrieval */
++		if (!desc_info) {
++			desc_info = ath12k_dp_get_rx_desc(partner_ab, cookie);
++			if (!desc_info) {
++				ath12k_warn(partner_ab, "Invalid cookie in manual descriptor retrieval: 0x%x\n",
++					    cookie);
++				continue;
++			}
++		}
++
++		if (desc_info->magic != ATH12K_DP_RX_DESC_MAGIC)
++			ath12k_warn(ab, "Check HW CC implementation");
++
++		msdu = desc_info->skb;
++		desc_info->skb = NULL;
++
++		list_add_tail(&desc_info->list, &rx_desc_used_list[device_id]);
++
++		rxcb = ATH12K_SKB_RXCB(msdu);
++		dma_unmap_single(partner_ab->dev, rxcb->paddr,
++				 msdu->len + skb_tailroom(msdu),
++				 DMA_FROM_DEVICE);
++
++		num_buffs_reaped[device_id]++;
++		ab->device_stats.reo_rx[ring_id][ab->device_id]++;
++
++		push_reason = le32_get_bits(desc->info0,
++					    HAL_REO_DEST_RING_INFO0_PUSH_REASON);
++		if (push_reason !=
++		    HAL_REO_DEST_RING_PUSH_REASON_ROUTING_INSTRUCTION) {
++			dev_kfree_skb_any(msdu);
++			ab->device_stats.hal_reo_error[ring_id]++;
++			continue;
++		}
++
++		msdu_info = &desc->rx_msdu_info;
++		mpdu_info = &desc->rx_mpdu_info;
++
++		rxcb->is_first_msdu = !!(le32_to_cpu(msdu_info->info0) &
++					 RX_MSDU_DESC_INFO0_FIRST_MSDU_IN_MPDU);
++		rxcb->is_last_msdu = !!(le32_to_cpu(msdu_info->info0) &
++					RX_MSDU_DESC_INFO0_LAST_MSDU_IN_MPDU);
++		rxcb->is_continuation = !!(le32_to_cpu(msdu_info->info0) &
++					   RX_MSDU_DESC_INFO0_MSDU_CONTINUATION);
++		rxcb->hw_link_id = hw_link_id;
++		rxcb->peer_id = ath12k_dp_rx_get_peer_id(ab, dp->peer_metadata_ver,
++							 mpdu_info->peer_meta_data);
++		rxcb->tid = le32_get_bits(mpdu_info->info0,
++					  RX_MPDU_DESC_INFO0_TID);
++
++		__skb_queue_tail(&msdu_list, msdu);
++
++		if (!rxcb->is_continuation) {
++			total_msdu_reaped++;
++			done = true;
++		} else {
++			done = false;
++		}
++
++		if (total_msdu_reaped >= budget)
++			break;
++	}
++
++	/* Hw might have updated the head pointer after we cached it.
++	 * In this case, even though there are entries in the ring we'll
++	 * get rx_desc NULL. Give the read another try with updated cached
++	 * head pointer so that we can reap complete MPDU in the current
++	 * rx processing.
++	 */
++	if (!done && ath12k_hal_srng_dst_num_free(ab, srng, true)) {
++		ath12k_hal_srng_access_end(ab, srng);
++		goto try_again;
++	}
++
++	ath12k_hal_srng_access_end(ab, srng);
++
++	spin_unlock_bh(&srng->lock);
++
++	if (!total_msdu_reaped)
++		goto exit;
++
++	for (device_id = 0; device_id < ATH12K_MAX_DEVICES; device_id++) {
++		if (!num_buffs_reaped[device_id])
++			continue;
++
++		partner_ab = ath12k_ag_to_ab(ag, device_id);
++		rx_ring = &partner_ab->dp.rx_refill_buf_ring;
++
++		ath12k_dp_rx_bufs_replenish(partner_ab, rx_ring,
++					    &rx_desc_used_list[device_id],
++					    num_buffs_reaped[device_id]);
++	}
++
++	ath12k_dp_rx_process_received_packets(ab, napi, &msdu_list,
++					      ring_id);
++
++exit:
++	return total_msdu_reaped;
++}
++
+ static bool
+ ath12k_dp_rx_h_defrag_validate_incr_pn(struct ath12k *ar, struct ath12k_dp_rx_tid *rx_tid)
+ {
+@@ -188,6 +651,70 @@ static int ath12k_dp_rx_h_defrag_reo_reinject(struct ath12k *ar,
+ 	return ret;
+ }
  
-+int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
-+		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn,
-+		 bool is_mcast);
- void ath12k_dp_tx_completion_handler(struct ath12k_base *ab, int ring_id);
++static int ath12k_dp_rx_h_verify_tkip_mic(struct ath12k *ar, struct ath12k_peer *peer,
++					  struct sk_buff *msdu)
++{
++	struct ath12k_base *ab = ar->ab;
++	struct hal_rx_desc *rx_desc = (struct hal_rx_desc *)msdu->data;
++	struct ieee80211_rx_status *rxs = IEEE80211_SKB_RXCB(msdu);
++	struct ieee80211_key_conf *key_conf;
++	struct ieee80211_hdr *hdr;
++	struct ath12k_dp_rx_info rx_info;
++	u8 mic[IEEE80211_CCMP_MIC_LEN];
++	int head_len, tail_len, ret;
++	size_t data_len;
++	u32 hdr_len, hal_rx_desc_sz = ar->ab->hal.hal_desc_sz;
++	u8 *key, *data;
++	u8 key_idx;
++
++	if (ath12k_dp_rx_h_enctype(ab, rx_desc) != HAL_ENCRYPT_TYPE_TKIP_MIC)
++		return 0;
++
++	rx_info.addr2_present = false;
++	rx_info.rx_status = rxs;
++
++	hdr = (struct ieee80211_hdr *)(msdu->data + hal_rx_desc_sz);
++	hdr_len = ieee80211_hdrlen(hdr->frame_control);
++	head_len = hdr_len + hal_rx_desc_sz + IEEE80211_TKIP_IV_LEN;
++	tail_len = IEEE80211_CCMP_MIC_LEN + IEEE80211_TKIP_ICV_LEN + FCS_LEN;
++
++	if (!is_multicast_ether_addr(hdr->addr1))
++		key_idx = peer->ucast_keyidx;
++	else
++		key_idx = peer->mcast_keyidx;
++
++	key_conf = peer->keys[key_idx];
++
++	data = msdu->data + head_len;
++	data_len = msdu->len - head_len - tail_len;
++	key = &key_conf->key[NL80211_TKIP_DATA_OFFSET_RX_MIC_KEY];
++
++	ret = ath12k_dp_rx_h_michael_mic(peer->tfm_mmic, key, hdr, data, data_len, mic);
++	if (ret || memcmp(mic, data + data_len, IEEE80211_CCMP_MIC_LEN))
++		goto mic_fail;
++
++	return 0;
++
++mic_fail:
++	(ATH12K_SKB_RXCB(msdu))->is_first_msdu = true;
++	(ATH12K_SKB_RXCB(msdu))->is_last_msdu = true;
++
++	ath12k_dp_rx_h_fetch_info(ab, rx_desc, &rx_info);
++
++	rxs->flag |= RX_FLAG_MMIC_ERROR | RX_FLAG_MMIC_STRIPPED |
++		    RX_FLAG_IV_STRIPPED | RX_FLAG_DECRYPTED;
++	skb_pull(msdu, hal_rx_desc_sz);
++
++	if (unlikely(!ath12k_dp_rx_check_nwifi_hdr_len_valid(ab, rx_desc, msdu)))
++		return -EINVAL;
++
++	ath12k_dp_rx_h_ppdu(ar, &rx_info);
++	ath12k_dp_rx_h_undecap(ar, msdu, rx_desc,
++			       HAL_ENCRYPT_TYPE_TKIP_MIC, rxs, true);
++	ieee80211_rx(ath12k_ar_to_hw(ar), msdu);
++	return -EINVAL;
++}
++
+ static int ath12k_dp_rx_h_defrag(struct ath12k *ar,
+ 				 struct ath12k_peer *peer,
+ 				 struct ath12k_dp_rx_tid *rx_tid,
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
+index 9c2114c62ba2..fa44e454cee6 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
+@@ -13,6 +13,9 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
+ 				 struct napi_struct *napi, int budget);
+ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
+ 			     int budget);
++int ath12k_dp_rx_process(struct ath12k_base *ab, int mac_id,
++			 struct napi_struct *napi,
++			 int budget);
+ int ath12k_dp_rxdma_ring_sel_config_qcn9274(struct ath12k_base *ab);
+ int ath12k_dp_rxdma_ring_sel_config_wcn7850(struct ath12k_base *ab);
  #endif
 -- 
 2.34.1
