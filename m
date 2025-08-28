@@ -4,60 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 813E6CA0FF6
-	for <ath12k@archiver.kernel.org>; Thu, 28 Aug 2025 23:25:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52FF2CA0FFE
+	for <ath12k@archiver.kernel.org>; Thu, 28 Aug 2025 23:25:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=LGxPvR67xa79RTlYYzMClpCKj9/3BXcuMptLUCym0Ps=; b=KbW3YfG8+vgt55DBINM1UBSIkB
-	VKvRm71lNsvu6EpEBT3oKDkFK1U6CcsJb5Er/eaJlsJ1ch84ezfvz9zgdVLSfh3sgF3mlIunaq1tq
-	uzShfJSGjzLqXLKRwKfsSaik7FSB6FqpiT551JlvCZy3id3AyHA4J3+6kC3VHbKO6gXZFO6Go3ec9
-	TuSHyWm+iunQSjMzlcGV5MGJRZlKuaq/kbAifwGLsyZCgqelT+XP1vKveu5lnEod0UjcYIJj47NSj
-	nl3ovG6cCv1ADECwK6cfseNWb+oAEFJ+6zlF8UBxtsr9LF69CFh9xCt39HTmqtP3bcMbGygUviD8d
-	fXnG2G8A==;
+	bh=vw3SJGDDg+2/BFpzGgCGfl4rFfyCl/pqzm6nt1fgYI0=; b=eUXXflKFUZ9XeKGNVcbYWXmyJ7
+	6nnYM0/Ycqvw6GGyle2jRghBpryETLB+sDDv5Lbr3X8CWVITcEvLMKcswe0hnC7f8lPsKV5s1CEIw
+	bfgW3n8WF3Ipsd2vF2xmsWpLSMuNPqvdLcGZGRfSj/j3D+qZXg51RGYsoxyPno15S7kRZ/4lLQkVA
+	bREais9KyIgsAfrEEFEceTqiE1Ujcqvb0TTjhhBuDJH392tD53eBDFgfa5OgJ4kc4vZzdg27O6SS1
+	xTHxEQdTMQsepqxEJcFyYQBdXg8PUYRFWcUtY2BApr7b/Ax6B3dpOnsSPdC+dY1UErJUUtAvEnPOV
+	cQAbc6BQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urlzN-00000003dJK-0H0r;
-	Thu, 28 Aug 2025 23:25:05 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1urlzP-00000003dL0-0Ld1;
+	Thu, 28 Aug 2025 23:25:07 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urgY0-00000002Yex-0czE
+	id 1urgY7-00000002Ygb-00WL
+	for ath12k@bombadil.infradead.org;
+	Thu, 28 Aug 2025 17:36:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=vw3SJGDDg+2/BFpzGgCGfl4rFfyCl/pqzm6nt1fgYI0=; b=NiA2KrJ4z4d0MuwjKi3oIEGTtr
+	lqJhO9WHFX/cxgz3cj96UxbhN5E/jAM+u4vkpAvhso6bclz+6C0Rbs7wM3HRk5QFyueLVdJDMyVnk
+	LhiCsfHOhTL8te9quMQNDPY/Je28nvNmYgb+l/V8o79qJWO4Rx6tE/4eXI1zCIQZAeqLvSTPNinuF
+	jM3mui993Q3lEtBsTTWeFTvvD2Ct9Pzyntt8uOM0kC8zRTsod9pZ40BGffhB6BU/1FK5RYOpjUBt7
+	2vz3Cn9IBCw+EGuvRgtR/dm7arKOZFphW95zkUA/DqazClBOoDUjqD5/aSTqiNXCf4ijkoXcncDDv
+	Q/vz7+Wg==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1urgY3-00000002pBp-3wmO
 	for ath12k@lists.infradead.org;
-	Thu, 28 Aug 2025 17:36:29 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57SDMUs8008229;
-	Thu, 28 Aug 2025 17:36:27 GMT
+	Thu, 28 Aug 2025 17:36:33 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57S9UQMD005840;
+	Thu, 28 Aug 2025 17:36:30 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	LGxPvR67xa79RTlYYzMClpCKj9/3BXcuMptLUCym0Ps=; b=ZaHixMwOXqZYk2kr
-	pP831WJ+442QQzTHCGj59LOgIMbyNRhdgU8xMALqKQ26CntS6QhW4DT33zZLvJ4W
-	FHecW1Tm8sy8gNiYM7kh198IYVyUxtxKNDxBX+WQ+glWU5MrScaFruNpJBYsNT3v
-	2ud1qAgUlu3JDfUUwKhW+hlnM8/8TpCajuWdC3fa72/c6KGUzdfPH8cJaZ18mi0X
-	Twrq7oLCRSlDVzJ18ZE7Mgeghj5iq6zpEzO7M+3U4AvlBzXAQVT8HRW85QJN6Z+3
-	m8B5XDQ5kAd+nBcg+wT+bl6VYSwXpWnioF7BXET67ggXc6OOgEeLZWqtR6oytCZA
-	4H5rwQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48sh8aqcxk-1
+	vw3SJGDDg+2/BFpzGgCGfl4rFfyCl/pqzm6nt1fgYI0=; b=aPIlBVugAjLodp1Z
+	hR+udmxzvtmLjk5BB650pVO/9S3OaTJl+HHxX8KqHpq01792nR55xZNrmFhx/Ed0
+	HI/kxvIGxali461j8AbFR8verlfDPMAJb062vZiWx1oFH6bKj+RDD5CMam7MKy5/
+	eE6Erlg/BAKg9efzE1btgSHnBpiBhvy4YA7eYLNN8PmojSmU+BrPJ5+R+N3Gwx19
+	lHKHNplmlW5541g+vZ9BD44/72NtFiRLkOB7/l2EifYt8b/roac39LC7BhPa/5GC
+	Yw5lMDw6+K4OuuL10sGkb7YGAsk3Gu957aVb+1FhZ+pAoEq1eAextU9sYIVvTwWD
+	d1wacQ==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48tbpgjvm4-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 28 Aug 2025 17:36:27 +0000 (GMT)
+	Thu, 28 Aug 2025 17:36:30 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 57SHaRCT019703
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 57SHaSvu009044
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 28 Aug 2025 17:36:27 GMT
+	Thu, 28 Aug 2025 17:36:28 GMT
 Received: from hu-rdeuri-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.24; Thu, 28 Aug 2025 10:36:25 -0700
+ 15.2.1748.24; Thu, 28 Aug 2025 10:36:27 -0700
 From: Ripan Deuri <quic_rdeuri@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH ath12k-ng 11/20] wifi: ath12k: Move srng processing to wifi7 directory
-Date: Thu, 28 Aug 2025 23:05:44 +0530
-Message-ID: <20250828173553.3341351-12-quic_rdeuri@quicinc.com>
+Subject: [PATCH ath12k-ng 12/20] wifi: ath12k: Separate arch specific part of RX APIs
+Date: Thu, 28 Aug 2025 23:05:45 +0530
+Message-ID: <20250828173553.3341351-13-quic_rdeuri@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250828173553.3341351-1-quic_rdeuri@quicinc.com>
 References: <20250828173553.3341351-1-quic_rdeuri@quicinc.com>
@@ -69,30 +84,30 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=cLDgskeN c=1 sm=1 tr=0 ts=68b0939b cx=c_pps
+X-Proofpoint-GUID: Qzt2pZ2RNZ1A-FUOnf1-X1vNjESO3Uc3
+X-Proofpoint-ORIG-GUID: Qzt2pZ2RNZ1A-FUOnf1-X1vNjESO3Uc3
+X-Authority-Analysis: v=2.4 cv=G7gcE8k5 c=1 sm=1 tr=0 ts=68b0939e cx=c_pps
  a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=2OwXVqhp2XgA:10 a=COk6AnOGAAAA:8 a=A9GyCDMPox1emiypKBYA:9
+ a=GEpy-HfZoHoA:10 a=2OwXVqhp2XgA:10 a=COk6AnOGAAAA:8 a=UhMrxNEtutGsJ7abFMIA:9
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODI2MDE1MyBTYWx0ZWRfX+nCa7fNNgnFu
- wPAKaW2lvejF22oOvQMBOa65w+U/zV2kZeOVLZP5IxvubwhM0McPf8CXKJgQ35CRfOwM7C5RIUA
- lgdO0i4pz1/EYKhh9f8eR+qSEGV1yBK3Nk8fRL0TCcuQI61isgvY058oETIuuOPUkpyANr3utqr
- tQGg+wZ5ttX2HjF7Njd2MmKk+2I7rc+rJlNMzZieq0TxH/6Pc8e2d6JY0ZUXpeMv4HONB/VXrCI
- 9sYBej4okr4CL+3G84JyQBu1fHHuLRjAqkfdIFnP59iuFruKp927+pYZB5vHAsgTUupscPx5zWX
- zpb2G0z4a3dRQNiSGrkC4F+4+1tU9DknvRvEESvl3tZPIMLIdDNKyLY/vBw7OrHP4PTfMKW+0La
- 37eAtwne
-X-Proofpoint-GUID: ui6xM5szoliTTiYXMaJljJmz9_0fgA7G
-X-Proofpoint-ORIG-GUID: ui6xM5szoliTTiYXMaJljJmz9_0fgA7G
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODI3MDE5OSBTYWx0ZWRfX/DPBlvpdPaWK
+ J/dh22/t22tcw8GEewLXn1fIBfQ6hPANf5DGSRqfl+qTfdYuEaGVe4ouP/WCBV+LWgtB10fi8qD
+ yQhMTiLGGy/rsJFWAZQXtMJvy0svmQLuDTRrZZbkL+9/TY5A/xKMOolMSN4wzFAOksLhfdqh13R
+ n89NdXqkAJWISkUcs3tLHKQ7sF/GRV8pE1UWDiuG0GSne3W+qbrk2xucHKJ2MxntBg277a3rrq8
+ BmJZeGNVsMImes//d56Q2Tg16KFXz49thcdifqJhFQnjXwhgJNCKPrhLm8UtfwSIUHNpNDnK5iB
+ FeEiTps4XupxY3v0wSd/VK1kZJuM1FgP3CNP2lpCdzc5g0pZmmE5Iz+I918FYnbjAb/SV8pB26N
+ Fxpb1ePL
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-08-28_04,2025-08-28_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 clxscore=1015 malwarescore=0 spamscore=0 adultscore=0
- impostorscore=0 suspectscore=0 priorityscore=1501 phishscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508260153
+ malwarescore=0 phishscore=0 priorityscore=1501 adultscore=0 impostorscore=0
+ bulkscore=0 suspectscore=0 clxscore=1015 spamscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2508270199
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250828_103628_220484_E08BE305 
-X-CRM114-Status: GOOD (  24.44  )
+X-CRM114-CacheID: sfid-20250828_183632_296516_E94C486F 
+X-CRM114-Status: GOOD (  12.22  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,18 +124,11 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
 
-Move ath12k_dp_service_srng API and ath12k_dp_rx_process_reo_status
-to wifi7 directory.
+Below API have architecture specific HAL macros.
+  ath12k_dp_rx_peer_pn_replay_config
 
-As srng processing is specific to architecture (wifi7 / wifi8), the
-API ath12k_dp_service_srng is being moved to wifi7 directory. The
-file wifi7/dp.c can be used to define wifi7-specifi functions that are
-common to both tx and rx.
-
-The API which is invoked as part of service srng,
-ath12k_dp_rx_process_reo_status is also moved to wifi7 directory, as
-the implementation is specific to HW due to the usage of wifi7
-specific HAL macros.
+Separate architecture specific parts from these APIs to
+later move them to wifi7 directory.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -128,590 +136,90 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
 Signed-off-by: Ripan Deuri <quic_rdeuri@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/Makefile      |   3 +-
- drivers/net/wireless/ath/ath12k/ahb.c         |   3 +-
- drivers/net/wireless/ath/ath12k/dp.c          | 124 ----------------
- drivers/net/wireless/ath/ath12k/dp.h          |   3 -
- drivers/net/wireless/ath/ath12k/dp_rx.c       |  79 ----------
- drivers/net/wireless/ath/ath12k/dp_rx.h       |   1 -
- drivers/net/wireless/ath/ath12k/pci.c         |   3 +-
- drivers/net/wireless/ath/ath12k/wifi7/dp.c    | 136 ++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wifi7/dp.h    |  15 ++
- drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c |  79 ++++++++++
- drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h |   1 +
- 11 files changed, 237 insertions(+), 210 deletions(-)
- create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/dp.c
- create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/dp.h
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 56 ++++++++++++++-----------
+ 1 file changed, 32 insertions(+), 24 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
-index d7628bb7af02..ed1f1dba3d3b 100644
---- a/drivers/net/wireless/ath/ath12k/Makefile
-+++ b/drivers/net/wireless/ath/ath12k/Makefile
-@@ -24,7 +24,8 @@ ath12k-$(CONFIG_ATH12K_AHB) += ahb.o
- 
- ath12k-y += wifi7/hal_tx.o \
- 	    wifi7/hal_rx.o \
--	    wifi7/dp_rx.o
-+	    wifi7/dp_rx.o \
-+	    wifi7/dp.o
- 
- obj-$(CONFIG_ATH12K) += wifi7/
- 
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-index efb0ef609dcf..ed61dc7ffa68 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.c
-+++ b/drivers/net/wireless/ath/ath12k/ahb.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2019 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2022-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  */
- 
- #include <linux/dma-mapping.h>
-@@ -15,6 +15,7 @@
- #include "ahb.h"
- #include "debug.h"
- #include "hif.h"
-+#include "wifi7/dp.h"
- 
- #define ATH12K_IRQ_CE0_OFFSET 4
- #define ATH12K_MAX_UPDS 1
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 1b4fab3073b0..d0bdf058633f 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -883,130 +883,6 @@ int ath12k_dp_link_desc_setup(struct ath12k_base *ab,
- 	return ret;
- }
- 
--int ath12k_dp_service_srng(struct ath12k_base *ab,
--			   struct ath12k_ext_irq_grp *irq_grp,
--			   int budget)
--{
--	struct napi_struct *napi = &irq_grp->napi;
--	int grp_id = irq_grp->grp_id;
--	int work_done = 0;
--	int i = 0, j;
--	int tot_work_done = 0;
--	enum dp_monitor_mode monitor_mode;
--	u8 ring_mask;
--
--	if (ab->hw_params->ring_mask->tx[grp_id]) {
--		i = fls(ab->hw_params->ring_mask->tx[grp_id]) - 1;
--		ath12k_dp_tx_completion_handler(ab, i);
--	}
--
--	if (ab->hw_params->ring_mask->rx_err[grp_id]) {
--		work_done = ath12k_dp_rx_process_err(ab, napi, budget);
--		budget -= work_done;
--		tot_work_done += work_done;
--		if (budget <= 0)
--			goto done;
--	}
--
--	if (ab->hw_params->ring_mask->rx_wbm_rel[grp_id]) {
--		work_done = ath12k_dp_rx_process_wbm_err(ab,
--							 napi,
--							 budget);
--		budget -= work_done;
--		tot_work_done += work_done;
--
--		if (budget <= 0)
--			goto done;
--	}
--
--	if (ab->hw_params->ring_mask->rx[grp_id]) {
--		i = fls(ab->hw_params->ring_mask->rx[grp_id]) - 1;
--		work_done = ath12k_dp_rx_process(ab, i, napi,
--						 budget);
--		budget -= work_done;
--		tot_work_done += work_done;
--		if (budget <= 0)
--			goto done;
--	}
--
--	if (ab->hw_params->ring_mask->rx_mon_status[grp_id]) {
--		ring_mask = ab->hw_params->ring_mask->rx_mon_status[grp_id];
--		for (i = 0; i < ab->num_radios; i++) {
--			for (j = 0; j < ab->hw_params->num_rxdma_per_pdev; j++) {
--				int id = i * ab->hw_params->num_rxdma_per_pdev + j;
--
--				if (ring_mask & BIT(id)) {
--					work_done =
--					ath12k_dp_mon_process_ring(ab, id, napi, budget,
--								   0);
--					budget -= work_done;
--					tot_work_done += work_done;
--					if (budget <= 0)
--						goto done;
--				}
--			}
--		}
--	}
--
--	if (ab->hw_params->ring_mask->rx_mon_dest[grp_id]) {
--		monitor_mode = ATH12K_DP_RX_MONITOR_MODE;
--		ring_mask = ab->hw_params->ring_mask->rx_mon_dest[grp_id];
--		for (i = 0; i < ab->num_radios; i++) {
--			for (j = 0; j < ab->hw_params->num_rxdma_per_pdev; j++) {
--				int id = i * ab->hw_params->num_rxdma_per_pdev + j;
--
--				if (ring_mask & BIT(id)) {
--					work_done =
--					ath12k_dp_mon_process_ring(ab, id, napi, budget,
--								   monitor_mode);
--					budget -= work_done;
--					tot_work_done += work_done;
--
--					if (budget <= 0)
--						goto done;
--				}
--			}
--		}
--	}
--
--	if (ab->hw_params->ring_mask->tx_mon_dest[grp_id]) {
--		monitor_mode = ATH12K_DP_TX_MONITOR_MODE;
--		ring_mask = ab->hw_params->ring_mask->tx_mon_dest[grp_id];
--		for (i = 0; i < ab->num_radios; i++) {
--			for (j = 0; j < ab->hw_params->num_rxdma_per_pdev; j++) {
--				int id = i * ab->hw_params->num_rxdma_per_pdev + j;
--
--				if (ring_mask & BIT(id)) {
--					work_done =
--					ath12k_dp_mon_process_ring(ab, id, napi, budget,
--								   monitor_mode);
--					budget -= work_done;
--					tot_work_done += work_done;
--
--					if (budget <= 0)
--						goto done;
--				}
--			}
--		}
--	}
--
--	if (ab->hw_params->ring_mask->reo_status[grp_id])
--		ath12k_dp_rx_process_reo_status(ab);
--
--	if (ab->hw_params->ring_mask->host2rxdma[grp_id]) {
--		struct ath12k_dp *dp = &ab->dp;
--		struct dp_rxdma_ring *rx_ring = &dp->rx_refill_buf_ring;
--		LIST_HEAD(list);
--
--		ath12k_dp_rx_bufs_replenish(ab, rx_ring, &list, 0);
--	}
--
--	/* TODO: Implement handler for other interrupts */
--
--done:
--	return tot_work_done;
--}
--
- void ath12k_dp_pdev_free(struct ath12k_base *ab)
- {
- 	int i;
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 6ab74d773261..51af354ee769 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -1936,9 +1936,6 @@ static inline void ath12k_dp_get_mac_addr(u32 addr_l32, u16 addr_h16, u8 *addr)
- 	memcpy(addr + 4, &addr_h16, ETH_ALEN - 4);
- }
- 
--int ath12k_dp_service_srng(struct ath12k_base *ab,
--			   struct ath12k_ext_irq_grp *irq_grp,
--			   int budget);
- int ath12k_dp_htt_connect(struct ath12k_dp *dp);
- void ath12k_dp_vdev_tx_attach(struct ath12k *ar, struct ath12k_link_vif *arvif);
- void ath12k_dp_free(struct ath12k_base *ab);
 diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 6809c50ee871..8832ba5f5cdb 100644
+index 8832ba5f5cdb..dd771063f591 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -2444,85 +2444,6 @@ u64 ath12k_dp_rx_h_get_pn(struct ath12k *ar, struct sk_buff *skb)
- 	return pn;
- }
- 
--void ath12k_dp_rx_process_reo_status(struct ath12k_base *ab)
--{
--	struct ath12k_dp *dp = &ab->dp;
--	struct hal_tlv_64_hdr *hdr;
--	struct hal_srng *srng;
--	struct ath12k_dp_rx_reo_cmd *cmd, *tmp;
--	bool found = false;
--	u16 tag;
--	struct hal_reo_status reo_status;
--
--	srng = &ab->hal.srng_list[dp->reo_status_ring.ring_id];
--
--	memset(&reo_status, 0, sizeof(reo_status));
--
--	spin_lock_bh(&srng->lock);
--
--	ath12k_hal_srng_access_begin(ab, srng);
--
--	while ((hdr = ath12k_hal_srng_dst_get_next_entry(ab, srng))) {
--		tag = le64_get_bits(hdr->tl, HAL_SRNG_TLV_HDR_TAG);
--
--		switch (tag) {
--		case HAL_REO_GET_QUEUE_STATS_STATUS:
--			ath12k_hal_reo_status_queue_stats(ab, hdr,
--							  &reo_status);
--			break;
--		case HAL_REO_FLUSH_QUEUE_STATUS:
--			ath12k_hal_reo_flush_queue_status(ab, hdr,
--							  &reo_status);
--			break;
--		case HAL_REO_FLUSH_CACHE_STATUS:
--			ath12k_hal_reo_flush_cache_status(ab, hdr,
--							  &reo_status);
--			break;
--		case HAL_REO_UNBLOCK_CACHE_STATUS:
--			ath12k_hal_reo_unblk_cache_status(ab, hdr,
--							  &reo_status);
--			break;
--		case HAL_REO_FLUSH_TIMEOUT_LIST_STATUS:
--			ath12k_hal_reo_flush_timeout_list_status(ab, hdr,
--								 &reo_status);
--			break;
--		case HAL_REO_DESCRIPTOR_THRESHOLD_REACHED_STATUS:
--			ath12k_hal_reo_desc_thresh_reached_status(ab, hdr,
--								  &reo_status);
--			break;
--		case HAL_REO_UPDATE_RX_REO_QUEUE_STATUS:
--			ath12k_hal_reo_update_rx_reo_queue_status(ab, hdr,
--								  &reo_status);
--			break;
--		default:
--			ath12k_warn(ab, "Unknown reo status type %d\n", tag);
--			continue;
--		}
--
--		spin_lock_bh(&dp->reo_cmd_lock);
--		list_for_each_entry_safe(cmd, tmp, &dp->reo_cmd_list, list) {
--			if (reo_status.uniform_hdr.cmd_num == cmd->cmd_num) {
--				found = true;
--				list_del(&cmd->list);
--				break;
--			}
--		}
--		spin_unlock_bh(&dp->reo_cmd_lock);
--
--		if (found) {
--			cmd->handler(dp, (void *)&cmd->data,
--				     reo_status.uniform_hdr.cmd_status);
--			kfree(cmd);
--		}
--
--		found = false;
--	}
--
--	ath12k_hal_srng_access_end(ab, srng);
--
--	spin_unlock_bh(&srng->lock);
--}
--
- void ath12k_dp_rx_free(struct ath12k_base *ab)
- {
- 	struct ath12k_dp *dp = &ab->dp;
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.h b/drivers/net/wireless/ath/ath12k/dp_rx.h
-index 5fc9adeb49bd..b3095fd46cd5 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.h
-@@ -394,7 +394,6 @@ void ath12k_dp_rx_free(struct ath12k_base *ab);
- int ath12k_dp_rx_pdev_alloc(struct ath12k_base *ab, int pdev_idx);
- void ath12k_dp_rx_pdev_free(struct ath12k_base *ab, int pdev_idx);
- void ath12k_dp_rx_reo_cmd_list_cleanup(struct ath12k_base *ab);
--void ath12k_dp_rx_process_reo_status(struct ath12k_base *ab);
- int ath12k_dp_rx_bufs_replenish(struct ath12k_base *ab,
- 				struct dp_rxdma_ring *rx_ring,
- 				struct list_head *used_list,
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 72bcaab6f542..2de566444719 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  */
- 
- #include <linux/module.h>
-@@ -15,6 +15,7 @@
- #include "hif.h"
- #include "mhi.h"
- #include "debug.h"
-+#include "wifi7/dp.h"
- 
- #define ATH12K_PCI_BAR_NUM		0
- #define ATH12K_PCI_DMA_MASK		36
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp.c b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-new file mode 100644
-index 000000000000..2e7b9bbd3d8e
---- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-@@ -0,0 +1,136 @@
-+// SPDX-License-Identifier: BSD-3-Clause-Clear
-+/*
-+ * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-+ */
-+#include "../core.h"
-+#include "../debug.h"
-+#include "../dp_rx.h"
-+#include "../dp_tx.h"
-+#include "../dp_mon.h"
-+#include "dp_rx.h"
-+#include "dp.h"
-+
-+int ath12k_dp_service_srng(struct ath12k_base *ab,
-+			   struct ath12k_ext_irq_grp *irq_grp,
-+			   int budget)
-+{
-+	struct napi_struct *napi = &irq_grp->napi;
-+	int grp_id = irq_grp->grp_id;
-+	int work_done = 0;
-+	int i = 0, j;
-+	int tot_work_done = 0;
-+	enum dp_monitor_mode monitor_mode;
-+	u8 ring_mask;
-+
-+	if (ab->hw_params->ring_mask->tx[grp_id]) {
-+		i = fls(ab->hw_params->ring_mask->tx[grp_id]) - 1;
-+		ath12k_dp_tx_completion_handler(ab, i);
-+	}
-+
-+	if (ab->hw_params->ring_mask->rx_err[grp_id]) {
-+		work_done = ath12k_dp_rx_process_err(ab, napi, budget);
-+		budget -= work_done;
-+		tot_work_done += work_done;
-+		if (budget <= 0)
-+			goto done;
-+	}
-+
-+	if (ab->hw_params->ring_mask->rx_wbm_rel[grp_id]) {
-+		work_done = ath12k_dp_rx_process_wbm_err(ab,
-+							 napi,
-+							 budget);
-+		budget -= work_done;
-+		tot_work_done += work_done;
-+
-+		if (budget <= 0)
-+			goto done;
-+	}
-+
-+	if (ab->hw_params->ring_mask->rx[grp_id]) {
-+		i = fls(ab->hw_params->ring_mask->rx[grp_id]) - 1;
-+		work_done = ath12k_dp_rx_process(ab, i, napi,
-+						 budget);
-+		budget -= work_done;
-+		tot_work_done += work_done;
-+		if (budget <= 0)
-+			goto done;
-+	}
-+
-+	if (ab->hw_params->ring_mask->rx_mon_status[grp_id]) {
-+		ring_mask = ab->hw_params->ring_mask->rx_mon_status[grp_id];
-+		for (i = 0; i < ab->num_radios; i++) {
-+			for (j = 0; j < ab->hw_params->num_rxdma_per_pdev; j++) {
-+				int id = i * ab->hw_params->num_rxdma_per_pdev + j;
-+
-+				if (ring_mask & BIT(id)) {
-+					work_done =
-+					ath12k_dp_mon_process_ring(ab, id, napi, budget,
-+								   0);
-+					budget -= work_done;
-+					tot_work_done += work_done;
-+					if (budget <= 0)
-+						goto done;
-+				}
-+			}
-+		}
-+	}
-+
-+	if (ab->hw_params->ring_mask->rx_mon_dest[grp_id]) {
-+		monitor_mode = ATH12K_DP_RX_MONITOR_MODE;
-+		ring_mask = ab->hw_params->ring_mask->rx_mon_dest[grp_id];
-+		for (i = 0; i < ab->num_radios; i++) {
-+			for (j = 0; j < ab->hw_params->num_rxdma_per_pdev; j++) {
-+				int id = i * ab->hw_params->num_rxdma_per_pdev + j;
-+
-+				if (ring_mask & BIT(id)) {
-+					work_done =
-+					ath12k_dp_mon_process_ring(ab, id, napi, budget,
-+								   monitor_mode);
-+					budget -= work_done;
-+					tot_work_done += work_done;
-+
-+					if (budget <= 0)
-+						goto done;
-+				}
-+			}
-+		}
-+	}
-+
-+	if (ab->hw_params->ring_mask->tx_mon_dest[grp_id]) {
-+		monitor_mode = ATH12K_DP_TX_MONITOR_MODE;
-+		ring_mask = ab->hw_params->ring_mask->tx_mon_dest[grp_id];
-+		for (i = 0; i < ab->num_radios; i++) {
-+			for (j = 0; j < ab->hw_params->num_rxdma_per_pdev; j++) {
-+				int id = i * ab->hw_params->num_rxdma_per_pdev + j;
-+
-+				if (ring_mask & BIT(id)) {
-+					work_done =
-+					ath12k_dp_mon_process_ring(ab, id, napi, budget,
-+								   monitor_mode);
-+					budget -= work_done;
-+					tot_work_done += work_done;
-+
-+					if (budget <= 0)
-+						goto done;
-+				}
-+			}
-+		}
-+	}
-+
-+	if (ab->hw_params->ring_mask->reo_status[grp_id])
-+		ath12k_dp_rx_process_reo_status(ab);
-+
-+	if (ab->hw_params->ring_mask->host2rxdma[grp_id]) {
-+		struct ath12k_dp *dp = &ab->dp;
-+		struct dp_rxdma_ring *rx_ring = &dp->rx_refill_buf_ring;
-+		LIST_HEAD(list);
-+
-+		ath12k_dp_rx_bufs_replenish(ab, rx_ring, &list, 0);
-+	}
-+
-+	/* TODO: Implement handler for other interrupts */
-+
-+done:
-+	return tot_work_done;
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp.h b/drivers/net/wireless/ath/ath12k/wifi7/dp.h
-new file mode 100644
-index 000000000000..17255a5671d7
---- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp.h
-@@ -0,0 +1,15 @@
-+/* SPDX-License-Identifier: BSD-3-Clause-Clear */
-+/*
-+ * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-+ */
-+
-+#ifndef ATH12K_DP_WIFI7_H
-+#define ATH12K_DP_WIFI7_H
-+
-+#include "hw.h"
-+
-+int ath12k_dp_service_srng(struct ath12k_base *ab,
-+			   struct ath12k_ext_irq_grp *irq_grp,
-+			   int budget);
-+#endif
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-index b55cfb926571..cbc51a9a2c42 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-@@ -1642,3 +1642,82 @@ int ath12k_dp_rxdma_ring_sel_config_wcn7850(struct ath12k_base *ab)
+@@ -958,6 +958,36 @@ int ath12k_dp_rx_ampdu_stop(struct ath12k *ar,
  	return ret;
  }
- EXPORT_SYMBOL(ath12k_dp_rxdma_ring_sel_config_wcn7850);
-+
-+void ath12k_dp_rx_process_reo_status(struct ath12k_base *ab)
+ 
++static void ath12k_dp_setup_pn_check_reo_cmd(struct ath12k_hal_reo_cmd *cmd,
++					     struct ath12k_dp_rx_tid *rx_tid,
++					     u32 cipher, enum set_key_cmd key_cmd)
 +{
-+	struct ath12k_dp *dp = &ab->dp;
-+	struct hal_tlv_64_hdr *hdr;
-+	struct hal_srng *srng;
-+	struct ath12k_dp_rx_reo_cmd *cmd, *tmp;
-+	bool found = false;
-+	u16 tag;
-+	struct hal_reo_status reo_status;
++	cmd->flag = HAL_REO_CMD_FLG_NEED_STATUS;
++	cmd->upd0 = HAL_REO_CMD_UPD0_PN |
++			HAL_REO_CMD_UPD0_PN_SIZE |
++			HAL_REO_CMD_UPD0_PN_VALID |
++			HAL_REO_CMD_UPD0_PN_CHECK |
++			HAL_REO_CMD_UPD0_SVLD;
 +
-+	srng = &ab->hal.srng_list[dp->reo_status_ring.ring_id];
-+
-+	memset(&reo_status, 0, sizeof(reo_status));
-+
-+	spin_lock_bh(&srng->lock);
-+
-+	ath12k_hal_srng_access_begin(ab, srng);
-+
-+	while ((hdr = ath12k_hal_srng_dst_get_next_entry(ab, srng))) {
-+		tag = le64_get_bits(hdr->tl, HAL_SRNG_TLV_HDR_TAG);
-+
-+		switch (tag) {
-+		case HAL_REO_GET_QUEUE_STATS_STATUS:
-+			ath12k_hal_reo_status_queue_stats(ab, hdr,
-+							  &reo_status);
-+			break;
-+		case HAL_REO_FLUSH_QUEUE_STATUS:
-+			ath12k_hal_reo_flush_queue_status(ab, hdr,
-+							  &reo_status);
-+			break;
-+		case HAL_REO_FLUSH_CACHE_STATUS:
-+			ath12k_hal_reo_flush_cache_status(ab, hdr,
-+							  &reo_status);
-+			break;
-+		case HAL_REO_UNBLOCK_CACHE_STATUS:
-+			ath12k_hal_reo_unblk_cache_status(ab, hdr,
-+							  &reo_status);
-+			break;
-+		case HAL_REO_FLUSH_TIMEOUT_LIST_STATUS:
-+			ath12k_hal_reo_flush_timeout_list_status(ab, hdr,
-+								 &reo_status);
-+			break;
-+		case HAL_REO_DESCRIPTOR_THRESHOLD_REACHED_STATUS:
-+			ath12k_hal_reo_desc_thresh_reached_status(ab, hdr,
-+								  &reo_status);
-+			break;
-+		case HAL_REO_UPDATE_RX_REO_QUEUE_STATUS:
-+			ath12k_hal_reo_update_rx_reo_queue_status(ab, hdr,
-+								  &reo_status);
-+			break;
-+		default:
-+			ath12k_warn(ab, "Unknown reo status type %d\n", tag);
-+			continue;
++	switch (cipher) {
++	case WLAN_CIPHER_SUITE_TKIP:
++	case WLAN_CIPHER_SUITE_CCMP:
++	case WLAN_CIPHER_SUITE_CCMP_256:
++	case WLAN_CIPHER_SUITE_GCMP:
++	case WLAN_CIPHER_SUITE_GCMP_256:
++		if (key_cmd == SET_KEY) {
++			cmd->upd1 |= HAL_REO_CMD_UPD1_PN_CHECK;
++			cmd->pn_size = 48;
 +		}
-+
-+		spin_lock_bh(&dp->reo_cmd_lock);
-+		list_for_each_entry_safe(cmd, tmp, &dp->reo_cmd_list, list) {
-+			if (reo_status.uniform_hdr.cmd_num == cmd->cmd_num) {
-+				found = true;
-+				list_del(&cmd->list);
-+				break;
-+			}
-+		}
-+		spin_unlock_bh(&dp->reo_cmd_lock);
-+
-+		if (found) {
-+			cmd->handler(dp, (void *)&cmd->data,
-+				     reo_status.uniform_hdr.cmd_status);
-+			kfree(cmd);
-+		}
-+
-+		found = false;
++		break;
++	default:
++		break;
 +	}
 +
-+	ath12k_hal_srng_access_end(ab, srng);
-+
-+	spin_unlock_bh(&srng->lock);
++	cmd->addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
++	cmd->addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
 +}
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
-index fa44e454cee6..63176a53c1e7 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
-@@ -16,6 +16,7 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- int ath12k_dp_rx_process(struct ath12k_base *ab, int mac_id,
- 			 struct napi_struct *napi,
- 			 int budget);
-+void ath12k_dp_rx_process_reo_status(struct ath12k_base *ab);
- int ath12k_dp_rxdma_ring_sel_config_qcn9274(struct ath12k_base *ab);
- int ath12k_dp_rxdma_ring_sel_config_wcn7850(struct ath12k_base *ab);
- #endif
++
+ int ath12k_dp_rx_peer_pn_replay_config(struct ath12k_link_vif *arvif,
+ 				       const u8 *peer_addr,
+ 				       enum set_key_cmd key_cmd,
+@@ -978,28 +1008,6 @@ int ath12k_dp_rx_peer_pn_replay_config(struct ath12k_link_vif *arvif,
+ 	if (!(key->flags & IEEE80211_KEY_FLAG_PAIRWISE))
+ 		return 0;
+ 
+-	cmd.flag = HAL_REO_CMD_FLG_NEED_STATUS;
+-	cmd.upd0 = HAL_REO_CMD_UPD0_PN |
+-		    HAL_REO_CMD_UPD0_PN_SIZE |
+-		    HAL_REO_CMD_UPD0_PN_VALID |
+-		    HAL_REO_CMD_UPD0_PN_CHECK |
+-		    HAL_REO_CMD_UPD0_SVLD;
+-
+-	switch (key->cipher) {
+-	case WLAN_CIPHER_SUITE_TKIP:
+-	case WLAN_CIPHER_SUITE_CCMP:
+-	case WLAN_CIPHER_SUITE_CCMP_256:
+-	case WLAN_CIPHER_SUITE_GCMP:
+-	case WLAN_CIPHER_SUITE_GCMP_256:
+-		if (key_cmd == SET_KEY) {
+-			cmd.upd1 |= HAL_REO_CMD_UPD1_PN_CHECK;
+-			cmd.pn_size = 48;
+-		}
+-		break;
+-	default:
+-		break;
+-	}
+-
+ 	spin_lock_bh(&ab->base_lock);
+ 
+ 	peer = ath12k_peer_find(ab, arvif->vdev_id, peer_addr);
+@@ -1014,8 +1022,8 @@ int ath12k_dp_rx_peer_pn_replay_config(struct ath12k_link_vif *arvif,
+ 		rx_tid = &peer->rx_tid[tid];
+ 		if (!rx_tid->active)
+ 			continue;
+-		cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
+-		cmd.addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
++
++		ath12k_dp_setup_pn_check_reo_cmd(&cmd, rx_tid, key->cipher, key_cmd);
+ 		ret = ath12k_dp_reo_cmd_send(ab, rx_tid,
+ 					     HAL_REO_CMD_UPDATE_RX_QUEUE,
+ 					     &cmd, NULL);
 -- 
 2.34.1
 
