@@ -4,118 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAEA4CA1002
-	for <ath12k@archiver.kernel.org>; Mon,  1 Sep 2025 23:18:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19937CA1007
+	for <ath12k@archiver.kernel.org>; Tue,  2 Sep 2025 02:51:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=RZ714zZjCgPT+LTO+5+/1Eh/mCjZ8QjebkWwadXAfoA=; b=DRTGUJaPGCxPQGZUiOW2M4Pv7K
-	iixXiJfmUKuzzK22ZMJuhNLG4WCPJTClkUuuvFCvgihqkNnHG+9rZPZ9kUs+JvSq+W8dDQUTw2B0d
-	ZYZJKxyv04jTmyWQPReQJjrRiIOrGCv9MhLSVeZfym1ywlbcfh2y4ixrdRGLbtWpd1I7PpWO12vH4
-	DLxSoAY1cUS/vxAanNiJIlpFHXd1AZNd6fyRx37tWpMjh8zr+FvzxCEaV3U4VYu1pM4uy9uhODuUM
-	GJivrleVlITsOZimxI+i0MHpW7ijNcxqjLamGLY2aFeXDf17K50bV0R469/BSNc4/uIRkD0w2OQnI
-	XoEbX9bQ==;
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=VQ91as11jxXbvAhop7414Ff9tsMvSa+th6SSKXrSeCI=; b=3BlfF4tnC+ECwOI2hkM1uE7m7U
+	x5O9gB1HIvE3nWVfatUSGeAxMdRhyqrBaoQHe7DcCZb2zJm6efzReNyODM5nPrqWeYOwhP35qv5zD
+	zVGB0V8MA1u8vRMV7QBgVhpyKRTpW6qWMFlcYPh8KApUEwRTx3ShF6Piox74T7mXmmHreOq6yFxIR
+	7upC4FTr6vwoirVAWlNjIH8D69rtc9lWKCygKzWv+k7Kn5FtgZwhJjxY62QEnZNN5wRIcExhjCF3a
+	rWTbUEOzjg/FE2z2xwYpVxnkR0DNA70BEuPUBxioTLsNERwqMTRDAO+cbg06h6treI5A0kbmQEo3/
+	MEvIW4Dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utDmy-0000000EHoY-2rSY;
-	Mon, 01 Sep 2025 23:18:16 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1utH7R-0000000Ew1C-3Nua;
+	Tue, 02 Sep 2025 02:51:37 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ut8f7-0000000DUul-1qwP
+	id 1utH7O-0000000Evzl-1Nf1
 	for ath12k@lists.infradead.org;
-	Mon, 01 Sep 2025 17:49:50 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 581B4CMq002511
-	for <ath12k@lists.infradead.org>; Mon, 1 Sep 2025 17:49:48 GMT
+	Tue, 02 Sep 2025 02:51:36 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5822THIJ027558
+	for <ath12k@lists.infradead.org>; Tue, 2 Sep 2025 02:51:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	RZ714zZjCgPT+LTO+5+/1Eh/mCjZ8QjebkWwadXAfoA=; b=HJedWBVK4EJz3Nnv
-	zQt0xb2LXVFbDWcMGSDMQHepkOLIQKZU/BfL1DMmmh8JLtiNwEcsnuyiUEnUYYrR
-	8E5FkEtz0w3v3xpyf6CYC0k/wCbnN5A8WtPulYAJoB/U4Z0G2VnW+PEmKw5N7CqV
-	yEzw46bsRyJaJTBuyzi4ie4IhQbjpk+BrabAjhHv6O6UVa3A9rapyzfUWjkwUovc
-	2mWwmGpyeGzQFzjJu+85rL5GfWy0fvoXuU7DvpuGqBwLX2afXOgKMxUdhjsm4Hrk
-	KZ45DGq09iQn5olSBvRs+yrtEu/ieaZYSDLx13Kt8Nr+S+xeuhxS9JOCuzPK83H+
-	XGkq/Q==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48ur8rwk8x-1
+	VQ91as11jxXbvAhop7414Ff9tsMvSa+th6SSKXrSeCI=; b=e8pOOdiU2s3BCrRo
+	wz466c0XdIi5wpFkosykdxBgnMCcjUDlq0XE7CnkbH6AUUR8KQl+7dSu13bvSQdc
+	pI4+5se9pX3jkDtSjMbDyy825vdTXP4Rh5DPNovKejSLCprI6Z6lTTuW/PcHdZ0k
+	lxF7ptEgEV7lxMVgbI80WeVIksuDmb4WxOJu0viI0qVedushqg7TZRK+3qMuLwBX
+	Pep9Qq/7o14AOt51Tvals/4z4TTTgTpYNB0xc9OWe9/qgd0T5YxlHRwMkdPnDoKL
+	0KrEz/So81/E5O1oOlsDKZEiO/A7ojyNihNvgBhDbmBhpqV/i+2AlX4grH2n7lzf
+	Xsi/1Q==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48uscuxabv-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 01 Sep 2025 17:49:48 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-244581ce13aso90764975ad.2
-        for <ath12k@lists.infradead.org>; Mon, 01 Sep 2025 10:49:48 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 02 Sep 2025 02:51:33 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-24909dffc72so39507655ad.3
+        for <ath12k@lists.infradead.org>; Mon, 01 Sep 2025 19:51:33 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1756748988; x=1757353788;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20230601; t=1756781492; x=1757386292;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=RZ714zZjCgPT+LTO+5+/1Eh/mCjZ8QjebkWwadXAfoA=;
-        b=MXGU8oqCtPcgH/0D6VtWAdjm0soAGxUNSmS9c+EXZko/nnfBY7s3Zvz8kcrnZ4T+tZ
-         WNWFxs7NEGsBH075ozyml6P5PbYkFjlhFHKm/LNwgNy+YWjYJaMHZuSPdy65sfiSVCMC
-         ewAXh1JYsKzqdPAsn3cUNOer4J3cwBbBpJlcrg9sWW9zBJ2jmaKIsLzwPKOCdoTo1edV
-         J/hssQEI23vYaLwLTYMHaDHTyaTsd/OKWmkEhafK0gs05h4Cqf2WS57p4saKp/SP3Kc+
-         v4P7CeddNH4zC+/2Oivug6jdnMSAQw4buk8ELu1yeOSyOhePHSyWTvQQ+Yb8Th/93Yj1
-         7/Yg==
-X-Forwarded-Encrypted: i=1; AJvYcCWGXRQszl0RIty7/ygX+Fx9/iuu1sedD7DB9KzRO4qJCgMjF0noLsk9bO+8XsoqJW1+5A7w7jU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxHLlhfZ2J78eUNDxtyTFHGNVWauQp3f2tD8fDyQj0X0buhUybO
-	tncZRYLvNR4nCrSWWvPZVYD61c65BkRUtf8k3vQFFnYU569I+Wh2nHUrl5V/X16tSb25LTpOWch
-	WWBwEISlQZdt0s99pY2qyhRrKX0tCbbE31/NVHaifIAtOrKwSDujfhd6kUpGgJgvv
-X-Gm-Gg: ASbGncuoCAU2RnsslatlB/6wBYLhWIgbUhAgpLK/OdMvdex5B+XVR9NhSf0kiVgGad6
-	F900zKNoXbx0o2lRdcx1m9fkBDaN0rGh8y2jy/weSYIHvr+OPTWvfWWPltyJU4lvaeIRzhKdwGc
-	AqjU6/yyzYlxoLDk9W49qWYt4MexHkcETkqILEU8Iw3y0Uf7TeygmgYN2nb9bjhUehOEjTY0Zw9
-	8tIUPlLMU44DPMNzQerwGbhBRUTKaTowXp2ol/doSSa7ChVOmTX/9VRWyS6fKocW8tWMMgeOgFB
-	ezjj8w7qtfxyUZwenlMxpVp9WQDC3fme5lCzuQTCr/2daXmU5DWGrQpu9BJ6U3k4IPVc+HAicFp
-	mVnzPqFAytZPe
-X-Received: by 2002:a17:902:d50a:b0:249:3eec:15be with SMTP id d9443c01a7336-249448dfbe1mr100345395ad.21.1756748987541;
-        Mon, 01 Sep 2025 10:49:47 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFK2aeQcLukriSxTesG3QL3M5PBi/cU1mSHohVrewW0Ht0HVaoSAxlfmjZ5oIA5eSH/KL3Mbw==
-X-Received: by 2002:a17:902:d50a:b0:249:3eec:15be with SMTP id d9443c01a7336-249448dfbe1mr100345185ad.21.1756748987024;
-        Mon, 01 Sep 2025 10:49:47 -0700 (PDT)
-Received: from [192.168.225.142] ([157.49.223.155])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-24906598808sm107919325ad.116.2025.09.01.10.49.45
+        bh=VQ91as11jxXbvAhop7414Ff9tsMvSa+th6SSKXrSeCI=;
+        b=ozYf06mNuaIyFzMdfqoQyzhQTWwCqLkNPnU/0e9GrN+zeqlMIBKyDiHDov6tF9+PiG
+         /4zlR4/UJGtm+EvgOjJWB2fTBftrNCW3tAgv+lb17I6h79AJkqLO14eQ0X4aawlYrMW0
+         y5sA4fBXSKc3apjqDLN1apm6QSHufaJq+yC/lRJTU0JFanB/SFH2v9gd1yo86+5qhM2L
+         yWqCOoW5PwxM5vQhO+YDos47ciRfS7fMKc2neyHzuWbGpHabl+gInu1cAvJObWlSWvqj
+         coUauG+3r8Lk4ZibWR9znMXRtikwntIvQDwzbWk34my5TA9iB/+aLkmjZtr7zjfzmeGO
+         6Cuw==
+X-Forwarded-Encrypted: i=1; AJvYcCU9gjkgOM3/bnDPcguI/fvpL7PoGAhnVXDPxApZx0Hojn7LHkxj6B6YYsCnAazWFOcF8uHols4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxCvT46z/kQAbSTbdT43CjPhnB7nYFTOjqWCcjr200Kg+Lo4ec+
+	v5ExKEI/LbykpU9es1rH97Lm5ab+2Pj991SvCYdjgGprjz8Rpub0DxJSyw1MeCl4X9ymQGLQUjt
+	DdUVZNSek0876uNZlO2uX9NeQbaWC3Ec7WpadIyLe/ZgKQdHZSF4FHJU6700QAOCJLFNtBDMWGP
+	c=
+X-Gm-Gg: ASbGncsj/i+AV61lCl5y9VJWx60BxseBaLuFOp2qZpFxHrGhB6lG/Ds1mkr+zsJIn2b
+	GJ7O22QDVqI3F5KDHQQPSBCTxbYHCfRYCSosxBepEZGIngF98a8UjCa/4njBnqN98dIMKjOaFll
+	8pEGZNBx3pKxbYVopvvq4YUqJToi742lQHLMwyQJgRCRkWANTo2WvPqjrTETa67KqOEH+qetEmW
+	Adi+OjA0caJC91sh9Wxe4/w/EIfOi1xbsuquDp0in272UEYfuqNnsXDZA1Gnwdb128NJ0qpMX8N
+	lNeP62Ccc1c8ClgHnyj6SNuMSAVqKtYlP2KohX2eapNseNvQqwV/iAfl0aFApRAVbBfFHWmee/5
+	kpjAaibKHLGEcxJThLagRINxbao7RPQ4o4iI=
+X-Received: by 2002:a17:903:22cc:b0:249:326:33 with SMTP id d9443c01a7336-249448dea03mr143974795ad.11.1756781491554;
+        Mon, 01 Sep 2025 19:51:31 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGpZ+5uITa2r/3CcXF98NYuwv7RsKeJfZNzkK6xHk0XITvxIfbxLt5bSOFHqCNB1o8psAfWKg==
+X-Received: by 2002:a17:903:22cc:b0:249:326:33 with SMTP id d9443c01a7336-249448dea03mr143974475ad.11.1756781491086;
+        Mon, 01 Sep 2025 19:51:31 -0700 (PDT)
+Received: from [10.133.33.7] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2490f755ebdsm112959255ad.26.2025.09.01.19.51.30
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 01 Sep 2025 10:49:46 -0700 (PDT)
-Message-ID: <353a4e7b-53c3-5dd7-ad67-79cba1d34dbd@oss.qualcomm.com>
-Date: Mon, 1 Sep 2025 23:19:43 +0530
+        Mon, 01 Sep 2025 19:51:30 -0700 (PDT)
+Message-ID: <623e93fd-73ef-445f-8519-d510d0c36801@oss.qualcomm.com>
+Date: Tue, 2 Sep 2025 10:51:28 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH ath12k-ng 00/20] wifi: ath12k: ath12k file re-organization
+User-Agent: Mozilla Thunderbird
+Subject: Re: [linux-mainline-6.17rc3-1-x86_64] RIP at qmi_handle_release with
+ ath12k on a MSI x870e Carbon WiFi - mainline kernel.
+To: a-development@posteo.de, ath12k@lists.infradead.org
+References: <fabc97122016d1a66a53ddedd965d134@posteo.net>
 Content-Language: en-US
-To: Ripan Deuri <quic_rdeuri@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250828173553.3341351-1-quic_rdeuri@quicinc.com>
-From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <20250828173553.3341351-1-quic_rdeuri@quicinc.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODMwMDAxOSBTYWx0ZWRfX6QPMnEHgdGzv
- IV4gebTeAYwNDNPJCau1VNM0Z18NjccfcgoUY2t0bYNnqDk/gme6dSFUlS1mjhHCi/jQ2pSQqzG
- aOOrYegbrUPlQi6Wo+s40IK532l8o87fqFil3vp77Nav1oID1JCtYVyafEWfmaSIoY3lnLwoijQ
- 2rqb1cMboV5cfCQfGL48JgLH9M+ITzCB4Gajh8HlIINvdRV8g01DCmkLPxc/7ZeOofVWynbq23J
- kbgomanfqcl1Q6N0ZdqG9wmor0NwMjznkDx2T64HPs8WDmHDTWBkDO/bMSHkM9wYS2XQmFcj2ci
- pOJblcI2HnjMRAywp5Bn68ecEpWTAeTDmteTof9PwHQAnvMK44XabJOSeq4ArPppb/P/LYw/GK7
- aof6Ev/f
-X-Proofpoint-GUID: GzDhuTJ4HUIZ-iQnWDcUcc68HwqbzNn3
-X-Proofpoint-ORIG-GUID: GzDhuTJ4HUIZ-iQnWDcUcc68HwqbzNn3
-X-Authority-Analysis: v=2.4 cv=PNkP+eqC c=1 sm=1 tr=0 ts=68b5dcbc cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=wqpLlJzFoOPNlw0GHb3lZQ==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8
- a=EUspDBNiAAAA:8 a=D2z4QRl0f1DbYJdCtzwA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=GvdueXVYPmCkWapjIL-Q:22 a=TjNXssC_j7lpFel5tvFf:22
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+In-Reply-To: <fabc97122016d1a66a53ddedd965d134@posteo.net>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODMwMDAzMSBTYWx0ZWRfX1TYZK0VQ9SWh
+ j+IGzoTANUDEwOQf8VUPVINCP7gIvEqzYI2ckN5ef82LABH4LLw7FrXCARH9SwNUVE9I6bR7JQA
+ wYTPQ0q+VFYzIP1Zs/SRZ854w8mcALfwgnVcQqdLfELcB0n1cw7S0+i1So1W3R1GerszpTpPDzp
+ kVUElwDQeTlqc+/1m0vHV7OwXVq4XaSKwUIqOMKO2o3uqnBkBKisFVJQ8DRzc/ZKYXHtTZfxv2H
+ 2s3NT/+oXiU+vNXJeWvEkupgugKU+fs79b5FxHNbfDubOLDKIsWZdwaX5PtUhRqpz7U7MSug5fR
+ MHATEVmaNjx+vvEt6fcaZ8t5NUkk6R/W47y57SwLM9++r930/uCd84d5VUVtVynQiBOqnUshXJj
+ ahmPUAfr
+X-Authority-Analysis: v=2.4 cv=A8xsP7WG c=1 sm=1 tr=0 ts=68b65bb5 cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=OeuxIFDhAAAA:8 a=_AGzQDloAAAA:8
+ a=5FXXUk6PpCwY9C2ZU48A:9 a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
+ a=USl8sPKdY6I_7jokSFGp:22 a=16XsjWzRKMd84bghDgc2:22
+X-Proofpoint-ORIG-GUID: VTRgvqkst9LmUYeibp8nY-gtZmwK6kC7
+X-Proofpoint-GUID: VTRgvqkst9LmUYeibp8nY-gtZmwK6kC7
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-01_06,2025-08-28_01,2025-03-28_01
+ definitions=2025-09-02_01,2025-08-28_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 bulkscore=0 priorityscore=1501 impostorscore=0 clxscore=1015
- suspectscore=0 adultscore=0 phishscore=0 malwarescore=0
+ adultscore=0 spamscore=0 impostorscore=0 bulkscore=0 clxscore=1015
+ suspectscore=0 malwarescore=0 priorityscore=1501 phishscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508300019
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508300031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250901_104949_486467_ADC49480 
-X-CRM114-Status: GOOD (  18.17  )
+X-CRM114-CacheID: sfid-20250901_195134_491061_E17C1023 
+X-CRM114-Status: GOOD (  16.09  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,145 +132,75 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 8/28/2025 11:05 PM, Ripan Deuri wrote:
-> This patch series continues the modularization work described in the
-> https://lore.kernel.org/linux-wireless/20250812-ath12k-mod-v1-0-8c9b0eb9335d@quicinc.com
-> ("wifi: ath12k: Ath12k modularization changes") series, which established
-> the foundation for the Next Generation (NG) ath12k driver framework.
-> That series introduced the foundational split of the original ath12k.ko
-> into two distinct modules: a common module (ath12k.ko) and an architecture-
-> specific module (ath12k_wifi7.ko) for Wi-Fi 7 devices as depicted below.
+On 8/31/2025 11:36 PM, a-development@posteo.de wrote:
+> Had the joy to build a new machine.
+> I had to switch to mainline kernel to boot at all.
+> Blacklisting with kernel 6.16 allows me to boot, or using latest mainline kernel.
 > 
->                                       +-----------------+
->                                       |                 |
->                                       |   ath12k.ko     |
->                                       |    (common)     |
->     +---------------+                 |                 |
->     |               |                 +-----------------+
->     |   ath12k.ko   |  ===========>
->     |               |                 +------------------+
->     +---------------+                 |                  |
->                                       | ath12k_wifi7.ko  |
->                                       | (wifi7 family)   |
->                                       |                  |
->                                       +------------------+
+> Hardware is NEW.
 > 
-> Building on that framework, this series focuses on modularizing the Data Path
-> (DP) of the ath12k driver, allowing the common DP to be reused across different
-> hardware architectures.
+> Log: https://0x0.st/KH4D.txt
+> Alternative: https://paste.gg/p/anonymous/52779beef5144f2fbe74be2673951f50
 > 
-> The patches included here support the NG framework objective by reorganizing
-> DP-specific files and the directory structure as outlined below.
-> 
-> Existing file org             New file org
-> -----------------             ------------
-> ├── dp.c                  ├── dp.c
-> ├── dp.h                  ├── dp.h
-> ├── dp_rx.c               ├── dp_htt.c
-> ├── dp_rx.h               ├── dp_htt.h
-> ├── dp_tx.c               ├── dp_rx.c
-> ├── dp_tx.h               ├── dp_rx.h
-> ├── hal.c                 ├── dp_tx.c
-> ├── hal_desc.h            ├── dp_tx.h
-> ├── hal.h                 ├── hal.c
-> ├── hal_rx.c              ├── hal.h
-> ├── hal_rx.h              ├── wifi7
-> ├── hal_tx.c              │   ├── dp.c
-> ├── hal_tx.h              │   ├── dp_rx.c
->                            │   ├── dp_rx.h
->                            │   ├── dp_tx.c
->                            │   ├── dp_tx.h
->                            │   ├── hal_desc.h
->                            │   ├── hal_qcn9274.c
->                            │   ├── hal_qcn9274.h
->                            │   ├── hal_rx.c
->                            │   ├── hal_rx.h
->                            │   ├── hal_tx.c
->                            │   ├── hal_tx.h
->                            │   ├── hal_wcn7850.c
->                            │   ├── hal_wcn7850.h
->                            │   ├── rx_desc.h
-> 
-> 
-> Note: While common files are not intended to include architecture-specific
-> headers, a few Wi-Fi 7 headers are temporarily included in common files
-> across patches to simplify patch splitting. This will be resolved in a
-> later series.
-> 
-> ---
-> Harsh Kumar Bijlani (4):
->    wifi: ath12k: Move HTT code in dp.h to newly introduced files
->    wifi: ath12k: Move HTT Rx specific code to newly introduced files
->    wifi: ath12k: Move HTT Tx specific code to newly introduced files
->    wifi: ath12k: Move HTT specific code from dp.c to newly introduced
->      files
-> 
-> Pavankumar Nandeshwar (16):
->    wifi: ath12k: Move hal_tx and hal_rx to wifi7 directory
->    wifi: ath12k: Move hal_tx.h file to wifi7 directory
->    wifi: ath12k: Move hal_rx.h file to wifi7 directory
->    wifi: ath12k: Move HAL Rx wrapper APIs to dp_rx.h
->    wifi: ath12k: Move Rx error related functions to wifi7 directory
->    wifi: ath12k: Move hal_desc.h file to wifi7 directory
->    wifi: ath12k: Move rx_desc.h file to wifi7 directory
->    wifi: ath12k: Move rxdma ring config functions to wifi7 directory
->    wifi: ath12k: Move rx error and defrag functions to wifi7 directory
->    wifi: ath12k: Move regular msdu processing functions to wifi7
->      directory
->    wifi: ath12k: Move srng processing to wifi7 directory
->    wifi: ath12k: Separate arch specific part of RX APIs
->    wifi: ath12k: Move arch specific REO functions to wifi7 directory
->    wifi: ath12k: Move arch specific rx tid and related functions to wifi7
->      directory
->    wifi: ath12k: Move arch specific tx APIs to wifi7 directory
->    wifi: ath12k: Move ath12k_dp_tx and related APIs to wifi7 directory
-> 
->   drivers/net/wireless/ath/ath12k/Makefile      |    9 +-
->   drivers/net/wireless/ath/ath12k/ahb.c         |    3 +-
->   drivers/net/wireless/ath/ath12k/core.h        |    4 +-
->   .../wireless/ath/ath12k/debugfs_htt_stats.h   |    4 +-
->   drivers/net/wireless/ath/ath12k/dp.c          |  159 +-
->   drivers/net/wireless/ath/ath12k/dp.h          | 1518 +-------
->   drivers/net/wireless/ath/ath12k/dp_htt.c      | 1354 ++++++++
->   drivers/net/wireless/ath/ath12k/dp_htt.h      | 1546 +++++++++
->   drivers/net/wireless/ath/ath12k/dp_mon.c      |    4 +-
->   drivers/net/wireless/ath/ath12k/dp_rx.c       | 3056 +----------------
->   drivers/net/wireless/ath/ath12k/dp_rx.h       |  297 +-
->   drivers/net/wireless/ath/ath12k/dp_tx.c       | 1609 +--------
->   drivers/net/wireless/ath/ath12k/dp_tx.h       |   41 +-
->   drivers/net/wireless/ath/ath12k/hal.c         |    8 +-
->   drivers/net/wireless/ath/ath12k/hal.h         |  501 ++-
->   drivers/net/wireless/ath/ath12k/mac.c         |    3 +-
->   drivers/net/wireless/ath/ath12k/pci.c         |    3 +-
->   drivers/net/wireless/ath/ath12k/wifi7/dp.c    |  137 +
->   drivers/net/wireless/ath/ath12k/wifi7/dp.h    |   15 +
->   drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 2043 +++++++++++
->   drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h |   47 +
->   drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c |  908 +++++
->   drivers/net/wireless/ath/ath12k/wifi7/dp_tx.h |   14 +
->   .../ath/ath12k/{ => wifi7}/hal_desc.h         |  149 +-
->   .../wireless/ath/ath12k/{ => wifi7}/hal_rx.c  |    8 +-
->   .../wireless/ath/ath12k/{ => wifi7}/hal_rx.h  |  299 +-
->   .../ath12k/{rx_desc.h => wifi7/hal_rx_desc.h} |   48 +-
->   .../wireless/ath/ath12k/{ => wifi7}/hal_tx.c  |    6 +-
->   .../wireless/ath/ath12k/{ => wifi7}/hal_tx.h  |   11 +-
->   drivers/net/wireless/ath/ath12k/wifi7/hw.c    |    4 +-
->   30 files changed, 6993 insertions(+), 6815 deletions(-)
->   create mode 100644 drivers/net/wireless/ath/ath12k/dp_htt.c
->   create mode 100644 drivers/net/wireless/ath/ath12k/dp_htt.h
->   create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/dp.c
->   create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/dp.h
->   create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
->   create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
->   create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
->   create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/dp_tx.h
->   rename drivers/net/wireless/ath/ath12k/{ => wifi7}/hal_desc.h (95%)
->   rename drivers/net/wireless/ath/ath12k/{ => wifi7}/hal_rx.c (99%)
->   rename drivers/net/wireless/ath/ath12k/{ => wifi7}/hal_rx.h (83%)
->   rename drivers/net/wireless/ath/ath12k/{rx_desc.h => wifi7/hal_rx_desc.h} (97%)
->   rename drivers/net/wireless/ath/ath12k/{ => wifi7}/hal_tx.c (97%)
->   rename drivers/net/wireless/ath/ath12k/{ => wifi7}/hal_tx.h (96%)
+> What should I do?
+
+Could you try if below diff can fix your issue:
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 8d2839cf1de3..bc40958e885d 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -2109,14 +2109,27 @@ static int ath12k_core_hw_group_create(struct ath12k_hw_group *ag)
+                ret = ath12k_core_soc_create(ab);
+                if (ret) {
+                        mutex_unlock(&ab->core_lock);
+-                       ath12k_err(ab, "failed to create soc core: %d\n", ret);
+-                       return ret;
++                       ath12k_err(ab, "failed to create soc %d core: %d\n", i, ret);
++                       goto destroy;
+                }
+
+                mutex_unlock(&ab->core_lock);
+        }
+
+        return 0;
++
++destroy:
++       for (i--; i >= 0; i--) {
++               ab = ag->ab[i];
++               if (!ab)
++                       continue;
++
++               mutex_lock(&ab->core_lock);
++               ath12k_core_soc_destroy(ab);
++               mutex_unlock(&ab->core_lock);
++       }
++
++       return ret;
+ }
+
+ void ath12k_core_hw_group_set_mlo_capable(struct ath12k_hw_group *ag)
+@@ -2191,7 +2204,7 @@ int ath12k_core_init(struct ath12k_base *ab)
+                if (ret) {
+                        mutex_unlock(&ag->mutex);
+                        ath12k_warn(ab, "unable to create hw group\n");
+-                       goto err_destroy_hw_group;
++                       goto err_unassign_hw_group;
+                }
+        }
+
+@@ -2199,8 +2212,7 @@ int ath12k_core_init(struct ath12k_base *ab)
+
+        return 0;
+
+-err_destroy_hw_group:
+-       ath12k_core_hw_group_destroy(ab->ag);
++err_unassign_hw_group:
+        ath12k_core_hw_group_unassign(ab);
+ err_unregister_notifier:
+        ath12k_core_panic_notifier_unregister(ab);
+
+
 > 
 
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
