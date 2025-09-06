@@ -4,109 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 082E9CA1016
-	for <ath12k@archiver.kernel.org>; Fri,  5 Sep 2025 16:27:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7DD5CA1012
+	for <ath12k@archiver.kernel.org>; Sat,  6 Sep 2025 14:54:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:
-	To:From:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=PnoEsGdxqqq+FIZVH7OYFnVpR36GWf1rMYPBcU3Bqhs=; b=CT6nfWWGEk5/jSY3K8hrCELuFr
-	GJntfYQS0MaQEDRjsS6P0jbP/gf1zEplM1XDH56vW4sMiOPp2QCepGOUeZQjCuxlqArXJadeyJ0n3
-	IuLCXuvMRyRD3GbGZ3g7WN5E7B5PTAT1HRFEvJSnKATFahaUEmk2oQYdI0UVBvk/rdv3neTmjAMa1
-	SJ3FLZOc3EKL1HFhsyIm1fPduCc7yqEKqEPeVE0BOyOOrfIGe6jZxh2yzvCSEdtdRSBR/eDz2kIRk
-	231fikNVVGU78NslOIjYIl7xZw5FWxoKS+fD/sp7L3DctsrYfI3QJds/IZJzImn+GTweyu8l4UnuJ
-	L1NrTXbA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=popj7jVN7HyZNAr6hNoShTgCXv1ADnvUW/oI6+mWk1M=; b=aIFm1Rlxr6O5Vv+7tKwPk9gjXq
+	CyniEJgtrJXmvI1ZPTy77zxS+gmbdmIaBNw4TU2omgpEmZdJ/hn8jB+kLgTik9mlg7PpojXxoahGB
+	SGrqwoE+Re2SxaQwO3CrWOFXzIh8cB/yEsknPTSbElQXJLidGplYJJLAtiC63/yf8LT2/fl9viSiy
+	HfB3OPECF1xRYN1aljQO0dex9MrC8CSF4b/UV3weOKcp/wLTm5ljUwRiFnC//YW0ZgGYKingk2Wzv
+	McLAnk1HKwAl2ZsT2CuZBWfbvVaKEOjunYNVSNaITn8vjSRiBG6Vy+uoEObKZvWc+iCXz48WkQ9Jq
+	DOlaCHtQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuZHV-000000036js-3Ckk;
-	Fri, 05 Sep 2025 16:27:21 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uuuIo-00000007xnY-1R7l;
+	Sat, 06 Sep 2025 14:54:06 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuVrO-00000001mUS-06Vt
-	for ath12k@lists.infradead.org;
-	Fri, 05 Sep 2025 12:48:11 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5858ufNH014542
-	for <ath12k@lists.infradead.org>; Fri, 5 Sep 2025 12:48:08 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:date:from:message-id:subject:to; s=qcppdkim1; bh=PnoEsGdxqqq+
-	FIZVH7OYFnVpR36GWf1rMYPBcU3Bqhs=; b=BATH75HEm8CTPalJQ4riPPDYX3+H
-	jSl8HtQINeJeXLPTOjXnhoSApfx5oRIZMxYSm8fMH2nhqT7mjZ3K8lXgYidylMl5
-	XL4PNQex3YN0ioS9BMvRJT6Il+y9Z7c1zE8k4K/gfpDecv5KMipsmxe7+87avECp
-	yfuLdRZgbG6zHjYaeYT03dVUUTlbjGL9hYiCbhH980W/EmX+jxtL+g/YIPDkAiK2
-	neOu69gTuShF6ii3gE+78zy8aA1CmPV5T1CbRulmjZFca4fNRyIDXT65xPm/fkS7
-	0xODZuCC5P4xiULRaOydDlXgwUVgJKJqnr5CkPXY6JmW4LPPFdIITcL8Ag==
-Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48urmju3wy-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 05 Sep 2025 12:48:07 +0000 (GMT)
-Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-77260b29516so4333533b3a.3
-        for <ath12k@lists.infradead.org>; Fri, 05 Sep 2025 05:48:07 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757076486; x=1757681286;
-        h=message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=PnoEsGdxqqq+FIZVH7OYFnVpR36GWf1rMYPBcU3Bqhs=;
-        b=i3fRCgwzEkGnhMytFNgoiGPG7TCgrYcqTYOZtvlQ8643qIlVm2fwpbJpq8p1LnkXop
-         cFCHUBx5RTDT2GPN/pVw1HyvaDnjd7BFcq6UU8hy08DNJm9s+xvNyyc3zOD8jD96gxKH
-         cT0mtkgD1TSCFpKTq/O/hB1QykypLxzvVcpdlfELAtnuins1jvNKz/ylszqF2DZPOdO+
-         XVKdKnKutJl0tYuCT/QsmNgTJIB1m6U+heQtDU1HVfpIFe7v5RvEmyIHT/NJN5f5BDjq
-         h2i3ko5hf86YuJKmE+asO4hz2OqiXKiOuruUqefJ+gE6hhATsQ4/OhOaUtUK9Y/Q9z4B
-         RO7w==
-X-Forwarded-Encrypted: i=1; AJvYcCXNwFjy4149i0b7pS8NO7xNQXW3zWoX9JdpWjFyxOlQkAW8aqABzPD2Tc/M2PAa6HGdWyLA2tM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxwYrUi3L+DZks/Vi17/kNQkz5B8JpSX8qGmCpO/Axxff6iEZ56
-	3EOxfaEcUm3kqYUasvF9IYlaw05PhE5kk5GyC/XzkLCpJLTtLeVkCGAWGdufAacdGCueACYkuxz
-	J8oHDSQJzR9vHIO0djrcMk5fBLnLQ0pfUvcEQxJ+Wf+T31QILWkqvqSjF8Ra0IyTI
-X-Gm-Gg: ASbGncue/YwFUjpzv8NRHzJr/f0RvIKNZ6/AmSaoLWKdnxA6TfUVbYbyEuXlYphkxGy
-	5eYYC5O6BujW2d+XA2RLp+b1kdoNQrnTizCTjkiLPPzY60Js5OhfgJdhUMTEguCOuNTWpkktMqH
-	P/xdrb8MkNDbAYMd8UI25io0CHq+3TRg+so5UsLfrXEMTuLwofkaqZtgyiWSc3S+xCMcolwmiD/
-	is6IwofQrgQe1uPt+gJSAasx1F/raR1gvk5putm1Vzu63D57dMlAzoSF9RnG+HS/dHnfaPOJQ+t
-	3RWynlMBDJM6CKVkfqoTea3PPRnv1/csuaHvgm1d8MHJu/jmcBFsDXU0pAOmB5XkEml/Hpn9iUQ
-	7wqyQkmmNuTJshtPzfSXp4H/L5nWGYjwV5Xt/1bwcobM1LdZULY8rnvdS8lCdT10C6k/nnMwCQQ
-	==
-X-Received: by 2002:a05:6a20:1594:b0:248:4d59:93d5 with SMTP id adf61e73a8af0-2484d599525mr14294963637.55.1757076486489;
-        Fri, 05 Sep 2025 05:48:06 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IH+bGBfGl7Fsr54Xy6h/copErhPkUt2t6Lw+VQUe8R0kU2Adw8e1CrcQx0dQhU4gHL6WYqFwg==
-X-Received: by 2002:a05:6a20:1594:b0:248:4d59:93d5 with SMTP id adf61e73a8af0-2484d599525mr14294926637.55.1757076485970;
-        Fri, 05 Sep 2025 05:48:05 -0700 (PDT)
-Received: from hu-nithp-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b4d96829a66sm18041851a12.6.2025.09.05.05.48.04
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 05 Sep 2025 05:48:05 -0700 (PDT)
-From: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
-To: johannes@sipsolutions.net
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
-Subject: [PATCH wireless] wifi: cfg80211: Fix "no buffer space available" error in nl80211_get_station() for MLO
-Date: Fri,  5 Sep 2025 18:18:00 +0530
-Message-Id: <20250905124800.1448493-1-nithyanantham.paramasivam@oss.qualcomm.com>
-X-Mailer: git-send-email 2.17.1
-X-Authority-Analysis: v=2.4 cv=OemYDgTY c=1 sm=1 tr=0 ts=68badc08 cx=c_pps
- a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=kD4sTvn9sZURAWMP:21 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8
- a=gXmUh3uitkxkngZH5WgA:9 a=OpyuDcXvxspvyRM73sMx:22
-X-Proofpoint-GUID: SxyvORj2zaeNfYZAJAbGJef4DzURDsiM
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODMwMDAyNCBTYWx0ZWRfX5+snJ6vtexKs
- lPCMQTzXZ/imWjKKDT/M6/rB/vZhz2sZyHZ60BuLf8azE7i6MEbqShctllgqR01pC1FaV7W1H07
- Wxy6WrcezVbezsDfYLYy3UW77WdfkUoTaKS3ntsEuyrZYqqfzFYBFVuUiYuDeJLO9fZShRkq2Pw
- Tb7WxMx2+rcp5FGRaEvMxNAJzs1+K54jV3ihQ61ciy+sS6WQvSIhV5QmeLdgmKzOXcKDvtBjnf1
- cIUXqPDmqsvdIt7qTBDwwaapdUwBgpF2lVUG55G3fuq+OZS5GKihZ1h7qN8CIx3FtesjJ8dnp8l
- 0F4UFOoG5B4snK1DN5pq5elKOpuaEug3dwxO049iHbatJZaeGC9bIwdZZnQrCSUdjAmSeDOTZvK
- Ga48GWrt
-X-Proofpoint-ORIG-GUID: SxyvORj2zaeNfYZAJAbGJef4DzURDsiM
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-05_04,2025-09-04_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 suspectscore=0 spamscore=0 bulkscore=0 priorityscore=1501
- adultscore=0 clxscore=1015 phishscore=0 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508300024
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250905_054810_184856_B0F0DB06 
-X-CRM114-Status: GOOD (  15.24  )
+	id 1uuuIm-00000007xn8-0ggz;
+	Sat, 06 Sep 2025 14:54:04 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 46333601D7;
+	Sat,  6 Sep 2025 14:54:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B723BC4CEE7;
+	Sat,  6 Sep 2025 14:53:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1757170442;
+	bh=9lGK3si2C+6VrnNOpedp6M1LTDiz7pJw+iJuj1mVc8U=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=EBqDCaiM+rFCZzSGqiDnmVRE5l5WyyF/DHEzciVNr/+bl+7y+3ROTm1DIid5X6XWE
+	 JNcs+Sxe6Sx4K2TZvwxjwudbYI1vZAtGqWhfddeLmJzfU3LZY8qhq4CCiUat7vJGnU
+	 v3ieSDu/GoiJa4ADqLsCBvxtlsVwPPSXGHJmbEubiQ1CjC0ov0D2OBdZjzVd0We51C
+	 1RRpZgNzawJHLL9Mw4Vs68S+ecZiWFdKw9whXF/kwuR6aSqhx9HyQefRp/SPDngL2s
+	 6BLhEyMeKox4EghELP1m7+16dIRBauBkcm9+C+SKCCdm13+wpg2e69GbYKwqnljL/3
+	 9y/cMWMF7/4Bg==
+Date: Sat, 6 Sep 2025 20:23:52 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Ilpo =?utf-8?B?SsOkcnZpbmVu?= <ilpo.jarvinen@linux.intel.com>
+Cc: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
+	David Box <david.e.box@linux.intel.com>, Bjorn Helgaas <bhelgaas@google.com>, 
+	Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Nirmal Patel <nirmal.patel@linux.intel.com>, 
+	Jonathan Derrick <jonathan.derrick@linux.dev>, Jeff Johnson <jjohnson@kernel.org>, linux-pci@vger.kernel.org, 
+	LKML <linux-kernel@vger.kernel.org>, linux-arm-msm@vger.kernel.org, linux-wireless@vger.kernel.org, 
+	ath12k@lists.infradead.org, ath11k@lists.infradead.org, ath10k@lists.infradead.org, 
+	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, "Rafael J. Wysocki" <rafael@kernel.org>
+Subject: Re: [PATCH v2 2/8] PCI/ASPM: Fix the behavior of
+ pci_enable_link_state*() APIs
+Message-ID: <67274gnjp4qy4h3bcawey2edmjiuufdbm262q2qxgcc76dwlic@hdjxqczr54nt>
+References: <20250825-ath-aspm-fix-v2-0-61b2f2db7d89@oss.qualcomm.com>
+ <20250825-ath-aspm-fix-v2-2-61b2f2db7d89@oss.qualcomm.com>
+ <f644fc83-31cc-1f0e-58cf-7c007e6173e4@linux.intel.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <f644fc83-31cc-1f0e-58cf-7c007e6173e4@linux.intel.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,105 +77,69 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, nl80211_get_station() allocates a fixed buffer size using
-NLMSG_DEFAULT_SIZE. In multi-link scenarios - particularly when the
-number of links exceeds two - this buffer size is often insufficient
-to accommodate complete station statistics, resulting in "no buffer
-space available" errors.
+On Tue, Aug 26, 2025 at 03:55:42PM GMT, Ilpo Järvinen wrote:
+> +David
+> 
+> On Mon, 25 Aug 2025, Manivannan Sadhasivam via B4 Relay wrote:
+> 
+> > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > 
+> > pci_enable_link_state() and pci_enable_link_state_locked() APIs are
+> > supposed to be symmectric with pci_disable_link_state() and
+> > pci_disable_link_state_locked() APIs.
+> > 
+> > But unfortunately, they are not symmetric. This behavior was mentioned in
+> > the kernel-doc of these APIs:
+> > 
+> > " Clear and set the default device link state..."
+> > 
+> > and
+> > 
+> > "Also note that this does not enable states disabled by
+> > pci_disable_link_state()"
+> > 
+> > These APIs won't enable all the states specified by the 'state' parameter,
+> > but only enable the ones not previously disabled by the
+> > pci_disable_link_state*() APIs. But this behavior doesn't align with the
+> > naming of these APIs, as they give the impression that these APIs will
+> > enable all the specified states.
+> > 
+> > To resolve this ambiguity, allow these APIs to enable the specified states,
+> > regardeless of whether they were previously disabled or not. This is
+> > accomplished by clearing the previously disabled states from the
+> > 'link::aspm_disable' parameter in __pci_enable_link_state() helper. Also,
+> > reword the kernel-doc to reflect this behavior.
+> > 
+> > The current callers of pci_enable_link_state_locked() APIs (vmd and
+> > pcie-qcom) did not disable the ASPM states before calling this API. So it
+> > is evident that they do not depend on the previous behavior of this API and
+> > intend to enable all the specified states.
+> 
+> While it might be "safe" in the sense that ->aspm_disable is not set by 
+> anything, I'm still not sure if overloading this function for two 
+> different use cases is a good idea.
+> 
 
-To address this, modify nl80211_get_station() to return only
-accumulated station statistics and exclude per link stats.
+Why? I thought your concern was with the callers of this API. Since that is
+taken care, do you have any other concerns?
 
-Pass a new flag (link_stats) to nl80211_send_station() to control
-the inclusion of per link statistics. This allows retaining
-detailed output with per link data in dump commands, while
-excluding it from other commands where it is not needed.
+> I'd like to hear David's opinion on this as he grasps the ->aspm_default 
+> vs ->aspm_disable thing much better than I do.
+> 
+> > And the other API, pci_enable_link_state() doesn't have a caller for now,
+> > but will be used by the 'atheros' WLAN drivers in the subsequent commits.
+> > 
+> > Suggested-by: Ilpo Järvinen <ilpo.jarvinen@linux.intel.com>
+> 
+> This tag sound like I'm endorsing this approach which is not the case. I'd 
+> prefer separate functions for each use case, setting aspm_default and 
+> another for the enable state.
+> 
 
-This change modifies the handling of per link stats introduced in
-commit 82d7f841d9bd ("wifi: cfg80211: extend to embed link level
-statistics in NL message") to enable them only for
-nl80211_dump_station().
+Sorry, I misunderstood then. I'll drop this tag.
 
-Apply the same fix to cfg80211_del_sta_sinfo() by skipping per link
-stats to avoid buffer issues. cfg80211_new_sta() doesn't include
-stats and is therefore not impacted.
+- Mani
 
-Fixes: 82d7f841d9bd ("wifi: cfg80211: extend to embed link level statistics in NL message")
-Signed-off-by: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
----
-Note:
-- Planning to re-enable MLO station statistics in
-  nl80211_get_station() at a later stage with the
-  following option.
-    1) Consider extending nl80211_dump_station() to support MAC
-       address filtering, enabling targeted station statistics dumping.
----
----
- net/wireless/nl80211.c | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
-
-diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
-index 89519aa52893..f2f7424e930c 100644
---- a/net/wireless/nl80211.c
-+++ b/net/wireless/nl80211.c
-@@ -7062,7 +7062,8 @@ static int nl80211_send_station(struct sk_buff *msg, u32 cmd, u32 portid,
- 				u32 seq, int flags,
- 				struct cfg80211_registered_device *rdev,
- 				struct net_device *dev,
--				const u8 *mac_addr, struct station_info *sinfo)
-+				const u8 *mac_addr, struct station_info *sinfo,
-+				bool link_stats)
- {
- 	void *hdr;
- 	struct nlattr *sinfoattr, *bss_param;
-@@ -7283,7 +7284,7 @@ static int nl80211_send_station(struct sk_buff *msg, u32 cmd, u32 portid,
- 			goto nla_put_failure;
- 	}
- 
--	if (sinfo->valid_links) {
-+	if (link_stats && sinfo->valid_links) {
- 		links = nla_nest_start(msg, NL80211_ATTR_MLO_LINKS);
- 		if (!links)
- 			goto nla_put_failure;
-@@ -7574,7 +7575,7 @@ static int nl80211_dump_station(struct sk_buff *skb,
- 				NETLINK_CB(cb->skb).portid,
- 				cb->nlh->nlmsg_seq, NLM_F_MULTI,
- 				rdev, wdev->netdev, mac_addr,
--				&sinfo) < 0)
-+				&sinfo, true) < 0)
- 			goto out;
- 
- 		sta_idx++;
-@@ -7635,7 +7636,7 @@ static int nl80211_get_station(struct sk_buff *skb, struct genl_info *info)
- 
- 	if (nl80211_send_station(msg, NL80211_CMD_NEW_STATION,
- 				 info->snd_portid, info->snd_seq, 0,
--				 rdev, dev, mac_addr, &sinfo) < 0) {
-+				 rdev, dev, mac_addr, &sinfo, false) < 0) {
- 		nlmsg_free(msg);
- 		return -ENOBUFS;
- 	}
-@@ -19680,7 +19681,7 @@ void cfg80211_new_sta(struct net_device *dev, const u8 *mac_addr,
- 		return;
- 
- 	if (nl80211_send_station(msg, NL80211_CMD_NEW_STATION, 0, 0, 0,
--				 rdev, dev, mac_addr, sinfo) < 0) {
-+				 rdev, dev, mac_addr, sinfo, false) < 0) {
- 		nlmsg_free(msg);
- 		return;
- 	}
-@@ -19710,7 +19711,7 @@ void cfg80211_del_sta_sinfo(struct net_device *dev, const u8 *mac_addr,
- 	}
- 
- 	if (nl80211_send_station(msg, NL80211_CMD_DEL_STATION, 0, 0, 0,
--				 rdev, dev, mac_addr, sinfo) < 0) {
-+				 rdev, dev, mac_addr, sinfo, false) < 0) {
- 		nlmsg_free(msg);
- 		return;
- 	}
-
-base-commit: c5142df58d5a19a0615414037f256cd5ca39f7c5
 -- 
-2.17.1
-
+மணிவண்ணன் சதாசிவம்
 
