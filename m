@@ -4,112 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54A42CA101F
-	for <ath12k@archiver.kernel.org>; Mon,  8 Sep 2025 01:51:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C444CA1013
+	for <ath12k@archiver.kernel.org>; Mon,  8 Sep 2025 10:08:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Rrx/5RgS1f+GZ05XDctzozDGEviN6tc7NYb3BzDD0ng=; b=P83u4j6JE0GfU3JePbcWArxg5T
-	5RRYEKZf2DeiQyu1Sx3O/7gzhYN6qUNrVlNSJss+nSo3GXPe7slkhwm0j30y9vpMC23sQ6UgiBFee
-	5Cd+5v13RrVYWHr6NHbiKlfkSIjeRdJKoaW+6Nkgyby+ntof5Za9lyDrjWhlRR/jgBrcLQCe26jV5
-	kGERgQXFqI6SZIp1+0gV0gvC8jqNI50pkwfIdJHF10w2mfFog6xaCUFOA/qV8aN5AcSMTq86muCIR
-	aZQizNkQOLVg+6qMrQFOa9FNkCPyObkX+zNNOQV4n2kUKf3OuT0zUpI3eJsVIYmSolaXOo1saLf10
-	rKcSj9zg==;
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=blPqGsDWqOkQ7scMUEI63AykP0Duimlw27M5hZ7Nj8c=; b=DA9MBCaAV6MKOGBYO7LScEQ4Ia
+	9hLR8V6hhisU8LVSbkdo86qCoMLpNe9xGQPZIt6X3aN8dh0qswKQFJjh30scfY+TWRpfq+y717Uwm
+	DWVC4OkVcqbaFt5tG9uX3HzdkDlWYR4mlkVS4TxeWMK+MsZDZpN68QHt6BTtQiBaqi1kHOCzZ2bfg
+	PS/6kuXi41XNVpO4qct9xx+dGG6NkSmnFDRlz4EW/BYZf3FxY5nEVp89lr8xECKjAj11NBfWfggC8
+	gwn5oM2E7TGIRpL8GhPkBGxL9Q8dwsefSo4fH2QGuB8lvdpqygrwoHy3OIdsAt1tOlm8hidhxOlD8
+	ZgsZL16g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvR2v-0000000DsQt-0O9e;
-	Mon, 08 Sep 2025 01:51:53 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uvYnG-0000000GGiF-0WZm;
+	Mon, 08 Sep 2025 10:08:14 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvR2r-0000000DsOy-3qjQ
+	id 1uvYAF-0000000G1eD-371F
 	for ath12k@lists.infradead.org;
-	Mon, 08 Sep 2025 01:51:51 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 587NOoXR018353
-	for <ath12k@lists.infradead.org>; Mon, 8 Sep 2025 01:51:49 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=Rrx/5RgS1f+GZ05XDctzozDGEviN6tc7NYb
-	3BzDD0ng=; b=nPkKeZ/+N6M7TJS43xNiUwDoAU9ojji6wx1ArbpHU2C9yuJHWYp
-	Xaav4bzkVdKjd92KfTmEOqfN40/lHX//pwN2h5CY279jkuOfv28zqa/CjRMsoca3
-	aGgoCUHmysiHpsxrq0POCqniaoCx9GRSB7I8kLmOcc7AkmI3RK/lbHH8E/q0pbvh
-	qK/Ob6f5hFRNOF4LjXcHuzkj/+Qg+YdZlxwmAejYDtcbWdrauMLw7XRRTNMsjWhR
-	pQWiPOFA1WP9hfBoO3geOWw2U730cGm4mvRi+R8ZizoF7oLdVUZW2nlDIHdeKQb3
-	6cYWvV4oB+jOJKf3YQobIX2BTNerXx3SfqQ==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490db8aw4m-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 08 Sep 2025 01:51:49 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-329745d6960so3844721a91.0
-        for <ath12k@lists.infradead.org>; Sun, 07 Sep 2025 18:51:48 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757296308; x=1757901108;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Rrx/5RgS1f+GZ05XDctzozDGEviN6tc7NYb3BzDD0ng=;
-        b=Tdnqc+T7brxFEdT2stfWdqDDwUxvBHjQZkdHR4IMxmcxCfr7M/HkCjl+ksyPDIBhdO
-         nqIxEC4UyyuMh4cTOfg4zzM2x4ZHNb+TXk/jArnc9Pz4jnQ1Vr977yncqFmns08GEcu4
-         /soKqOiHVkR9aSY/CjITb8lpvab6aEBOVkez9X3BKUf8/+AvWcxrxixMKMtV9hdTd2TI
-         QE9U/IxzzaikYT3fa6wQwJHKTektzRymjqDeXiA0ee+7TVtQxAI3cga/efh3D7QDKYnz
-         mMk6irlM68ALAdF9+VJYVNmwIhtFxv3CBwqBm+8SSoCDPp7IbfT2oXT9/vbyh3DJHYkx
-         fF+Q==
-X-Gm-Message-State: AOJu0Yzk9uiR4Jv8HsHCl14hQbG5h0oyOBqanZG9arEiHRsaPbY/eVM4
-	Z0YhaHs9mY47subdlCEBLnnP6YwD+pq6XUlc433zu3x40CQ1vnPZQz1aJk5vLNaJ40O041Bj+c3
-	blmkYnT1qmVkcHGLs4HhOVUiEMtF5NEqjzwBtQdyix0xEbaO5oCLpgSJfyLRny40I
-X-Gm-Gg: ASbGncvv3PQYUkDMQaqZfO+zg2xUj+V0J/9rK17UQ8wSNPZkhDUnpd2LIrj8KAJD38+
-	t/xTmeSQ5o9TMl5woVZnnsIXxzOwRU5sUQUT3MO9BLEvLbMScM3InijosM5mouXJeciHhlFalw+
-	AEgQrsnO3/oXRJ0GoB+2vlF7zYvjvkNSI9wD6vMXQGfJ8Dcwapn7r6DkZ5gveF4j2M5zHYy+fTE
-	4nyZtolU/+LfduqXdY+RE95XfQ7JJTACeb3p/A2muvq2tG4dkGIYzv0/uvZoBKYPgQV4JTgmHm0
-	/7fyavR7i8SofB7uZHwoyZe8P0Map1qzgajuhK/AcNQkHQz2A+mBcDdF9lV4p02ANRawRUBjwup
-	fs6QIN8k7GFhyv8oqv+v8ykg=
-X-Received: by 2002:a17:90b:38d0:b0:32b:d183:facf with SMTP id 98e67ed59e1d1-32d43f76ba9mr7024656a91.28.1757296307547;
-        Sun, 07 Sep 2025 18:51:47 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IE5nRDidvM463gKG+C+xMPrHa3szfL3WmBr/t6VEt4l6o0AtEY94nQNcmFlQKvdElZnhnqKbg==
-X-Received: by 2002:a17:90b:38d0:b0:32b:d183:facf with SMTP id 98e67ed59e1d1-32d43f76ba9mr7024628a91.28.1757296307064;
-        Sun, 07 Sep 2025 18:51:47 -0700 (PDT)
-Received: from Z2-SFF-G9-MQ.ap.qualcomm.com (i-global052.qualcomm.com. [199.106.103.52])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-32b58d8ca8dsm14563309a91.7.2025.09.07.18.51.45
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 07 Sep 2025 18:51:46 -0700 (PDT)
-From: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
-To: jjohnson@kernel.org
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
-        linux-kernel@vger.kernel.org,
-        Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
-Subject: [PATCH ath-current] wifi: ath12k: fix WMI TLV header misalignment
-Date: Mon,  8 Sep 2025 09:51:39 +0800
-Message-Id: <20250908015139.1301437-1-miaoqing.pan@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+	Mon, 08 Sep 2025 09:27:57 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58890DlZ026682;
+	Mon, 8 Sep 2025 09:27:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	blPqGsDWqOkQ7scMUEI63AykP0Duimlw27M5hZ7Nj8c=; b=Zx7tIAq3tk6bR3kV
+	TQV2JBcZM2rvihO+F8dyklOQoRPpWwNUVfM27or7Lv/CS+Xi+XaBHwzgLe0chHaF
+	1qAVHRA+uJeppsRBElgBaqIQaB+mrkO6Pz2QgKSrCnYc3+jWeV5dJAtTUwfNdZvS
+	FPOiHLEZKzevPKaxMOWlRvdnXoUhfWBs84DGXzndcDOhl8a7YGH2SvkdGXy7sydN
+	Ol89/oGbQPgkfo8EdmqNOdWqooXO4rzPqwbosx+OpY8XaYuNekc2DK0DOlDBc3PB
+	DmJx4regdrzF2srKnXLKnVsTrg1tLI/xvki9lGT8sXOVJll3fOKIAsZyjnaUjDV+
+	d+ixWA==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490bws46p9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 08 Sep 2025 09:27:53 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5889Rql6006707
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 8 Sep 2025 09:27:52 GMT
+Received: from [10.133.33.112] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.24; Mon, 8 Sep
+ 2025 02:27:50 -0700
+Message-ID: <a97626c6-fcfb-4a57-9ba9-68b4f2cc67c4@quicinc.com>
+Date: Mon, 8 Sep 2025 17:26:19 +0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAzMSBTYWx0ZWRfX6BvUsvdo6ikb
- G0fr1LQ/kYpVLXsD+JDHvACQwt5DVI3rjHXXZEY9fuyPUJHKgg+Laa4s/MvBm0Cm8UTFDF1itYo
- 6yvBsNGiLPGg+soqej4P63hWuYVH7Zn5jz5soXldbbzK67HY4zwJjP2N1OSz2YeMSuGGlnUB50r
- CkVhOg36AAvZcL1uWtXIc0455VBrYH3KxhozmU+UhHy5LDNF9bM+W6qJsmD9OQwaJ5rBcNmjPPe
- 56DoQ+XBA91/Fsu9UwA6RsxRj3FV49PfLRv6zzG/tX8gIxWNngVfkK515Z3olYz6a4dKo4+qqck
- 4oGXNgADcKvEvvv/6QAmPHwp9v9SECUnhRexUPQM4c9HhUxIOgtu3y6rUZDveDUIOHo6mrkXLh/
- Q8V1KZvC
-X-Proofpoint-ORIG-GUID: aYx7TQ9YDJ1hnuOEGN2uAGSsxgUuOkJh
-X-Proofpoint-GUID: aYx7TQ9YDJ1hnuOEGN2uAGSsxgUuOkJh
-X-Authority-Analysis: v=2.4 cv=VIDdn8PX c=1 sm=1 tr=0 ts=68be36b5 cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
- a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=dYpq24IgevQlpX1txhoA:9
- a=uKXjsCUrEbL0IQVhDsJ9:22
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-current] wifi: ath12k: Fix missing station power save
+ configuration
+To: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>, <jjohnson@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>
+References: <20250908015025.1301398-1-miaoqing.pan@oss.qualcomm.com>
+Content-Language: en-US
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+In-Reply-To: <20250908015025.1301398-1-miaoqing.pan@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: YcNMYz9Ox-AgdiWt5u9xfEP6SanSLUOZ
+X-Proofpoint-GUID: YcNMYz9Ox-AgdiWt5u9xfEP6SanSLUOZ
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAxOCBTYWx0ZWRfX2YEzMLeyO4vw
+ BzGzwyPHXhNV5jQ9rzEsRzaSrJOgu5xz/OtaeXJ3XVb/IFHUaWOKoGYju3oDWjnvwwjjnAjmzbd
+ DL+UhjKvKzJ4IdSZeGY2Xbz35T5ZReem/K/mYD3hp+sAPPWdtytTGBt6lGNuAO18dzTkxDYZMRR
+ vHRFU09qcdxmEPgOKXUW1oWdrMi8JFSNqKSwTGz8ejuqx8XAgPDbCfhMGcGV6oFcG8qNpKo2dvT
+ 3+fFpYvRcx6nrm6n9VOJxa0O3UkLT1iJ1Uym6M+L9zcDUa5AwlUJkvCMj+oGOt/LhV2ZCwPNqwq
+ c4QsHXcTT0y/YvhrczUI1G9Mg2p45Qvy0ZBgpfH0yZ/z+WApAG6IrKvLXlEV1uaINnk3Ba6LGzI
+ ma1E3lJh
+X-Authority-Analysis: v=2.4 cv=G4kcE8k5 c=1 sm=1 tr=0 ts=68bea199 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8
+ a=EecTVN4gN2f6d5QKcsUA:9 a=QEXdDO2ut3YA:10
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-07_10,2025-09-04_01,2025-03-28_01
+ definitions=2025-09-08_03,2025-09-08_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 malwarescore=0 spamscore=0 suspectscore=0 bulkscore=0
- phishscore=0 adultscore=0 clxscore=1015 impostorscore=0
+ priorityscore=1501 phishscore=0 bulkscore=0 suspectscore=0 clxscore=1011
+ malwarescore=0 adultscore=0 impostorscore=0 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509060031
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509060018
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250907_185150_070596_C1405AB9 
-X-CRM114-Status: GOOD (  14.33  )
+X-CRM114-CacheID: sfid-20250908_022755_789470_42D4C94B 
+X-CRM114-Status: GOOD (  22.35  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,44 +110,197 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-When buf_len is not 4-byte aligned in ath12k_wmi_mgmt_send(), the
-firmware asserts and triggers a recovery. The following error
-messages are observed:
 
-ath12k_pci 0004:01:00.0: failed to submit WMI_MGMT_TX_SEND_CMDID cmd
-ath12k_pci 0004:01:00.0: failed to send mgmt frame: -108
-ath12k_pci 0004:01:00.0: failed to tx mgmt frame, vdev_id 0 :-108
-ath12k_pci 0004:01:00.0: waiting recovery start...
 
-This issue was observed when running 'iw wlanx set power_save off/on'
-in MLO station mode, which triggers the sending of an SMPS action frame
-with a length of 27 bytes to the AP. To resolve the misalignment, use
-buf_len_aligned instead of buf_len when constructing the WMI TLV header.
+On 9/8/2025 9:50 AM, Miaoqing Pan wrote:
+> Commit afbab6e4e88d ("wifi: ath12k: modify ath12k_mac_op_bss_info_changed()
+> for MLO") replaced the bss_info_changed() callback with vif_cfg_changed()
+> and link_info_changed() to support Multi-Link Operation (MLO). As a result,
+> the station power save configuration is no longer correctly applied in
+> ath12k_mac_bss_info_changed().
+> 
+> Move the handling of 'BSS_CHANGED_PS' into ath12k_mac_op_vif_cfg_changed()
+> to align with the updated callback structure introduced for MLO, ensuring
+> proper power-save behavior for station interfaces.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.IOE_HMT.1.1-00011-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+> 
+> Fixes: afbab6e4e88d ("wifi: ath12k: modify ath12k_mac_op_bss_info_changed() for MLO")
+> Signed-off-by: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/mac.c | 122 ++++++++++++++------------
+>  1 file changed, 67 insertions(+), 55 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index bd1ec3b2c084..3a3965b79942 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -4078,12 +4078,68 @@ static int ath12k_mac_fils_discovery(struct ath12k_link_vif *arvif,
+>  	return ret;
+>  }
+>  
+> +static void ath12k_mac_vif_setup_ps(struct ath12k_link_vif *arvif)
+> +{
+> +	struct ath12k *ar = arvif->ar;
+> +	struct ieee80211_vif *vif = arvif->ahvif->vif;
+> +	struct ieee80211_conf *conf = &ath12k_ar_to_hw(ar)->conf;
+> +	enum wmi_sta_powersave_param param;
+> +	struct ieee80211_bss_conf *info;
+> +	enum wmi_sta_ps_mode psmode;
+> +	int ret;
+> +	int timeout;
+> +	bool enable_ps;
+> +
+> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+> +
+> +	if (vif->type != NL80211_IFTYPE_STATION)
+> +		return;
+> +
+> +	enable_ps = arvif->ahvif->ps;
+> +	if (enable_ps) {
+> +		psmode = WMI_STA_PS_MODE_ENABLED;
+> +		param = WMI_STA_PS_PARAM_INACTIVITY_TIME;
+> +
+> +		timeout = conf->dynamic_ps_timeout;
+> +		if (timeout == 0) {
+> +			info = ath12k_mac_get_link_bss_conf(arvif);
+> +			if (!info) {
+> +				ath12k_warn(ar->ab, "unable to access bss link conf in setup ps for vif %pM link %u\n",
+> +					    vif->addr, arvif->link_id);
+> +				return;
+> +			}
+> +
+> +			/* firmware doesn't like 0 */
+> +			timeout = ieee80211_tu_to_usec(info->beacon_int) / 1000;
+> +		}
+> +
+> +		ret = ath12k_wmi_set_sta_ps_param(ar, arvif->vdev_id, param,
+> +						  timeout);
+> +		if (ret) {
+> +			ath12k_warn(ar->ab, "failed to set inactivity time for vdev %d: %i\n",
+> +				    arvif->vdev_id, ret);
+> +			return;
+> +		}
+> +	} else {
+> +		psmode = WMI_STA_PS_MODE_DISABLED;
+> +	}
+> +
+> +	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac vdev %d psmode %s\n",
+> +		   arvif->vdev_id, psmode ? "enable" : "disable");
+> +
+> +	ret = ath12k_wmi_pdev_set_ps_mode(ar, arvif->vdev_id, psmode);
+> +	if (ret)
+> +		ath12k_warn(ar->ab, "failed to set sta power save mode %d for vdev %d: %d\n",
+> +			    psmode, arvif->vdev_id, ret);
+> +}
+> +
+>  static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
+>  					  struct ieee80211_vif *vif,
+>  					  u64 changed)
+>  {
+>  	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+>  	unsigned long links = ahvif->links_map;
+> +	struct ieee80211_vif_cfg *vif_cfg;
+>  	struct ieee80211_bss_conf *info;
+>  	struct ath12k_link_vif *arvif;
+>  	struct ieee80211_sta *sta;
+> @@ -4147,61 +4203,24 @@ static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
+>  			}
+>  		}
+>  	}
+> -}
+> -
+> -static void ath12k_mac_vif_setup_ps(struct ath12k_link_vif *arvif)
+> -{
+> -	struct ath12k *ar = arvif->ar;
+> -	struct ieee80211_vif *vif = arvif->ahvif->vif;
+> -	struct ieee80211_conf *conf = &ath12k_ar_to_hw(ar)->conf;
+> -	enum wmi_sta_powersave_param param;
+> -	struct ieee80211_bss_conf *info;
+> -	enum wmi_sta_ps_mode psmode;
+> -	int ret;
+> -	int timeout;
+> -	bool enable_ps;
+>  
+> -	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+> +	if (changed & BSS_CHANGED_PS) {
+> +		links = ahvif->links_map;
+> +		vif_cfg = &vif->cfg;
+>  
+> -	if (vif->type != NL80211_IFTYPE_STATION)
+> -		return;
+> +		for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
+> +			arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
+> +			if (!arvif || !arvif->ar)
+> +				continue;
+>  
+> -	enable_ps = arvif->ahvif->ps;
+> -	if (enable_ps) {
+> -		psmode = WMI_STA_PS_MODE_ENABLED;
+> -		param = WMI_STA_PS_PARAM_INACTIVITY_TIME;
+> +			ar = arvif->ar;
+>  
+> -		timeout = conf->dynamic_ps_timeout;
+> -		if (timeout == 0) {
+> -			info = ath12k_mac_get_link_bss_conf(arvif);
+> -			if (!info) {
+> -				ath12k_warn(ar->ab, "unable to access bss link conf in setup ps for vif %pM link %u\n",
+> -					    vif->addr, arvif->link_id);
+> -				return;
+> +			if (ar->ab->hw_params->supports_sta_ps) {
+> +				ahvif->ps = vif_cfg->ps;
+> +				ath12k_mac_vif_setup_ps(arvif);
+>  			}
+> -
+> -			/* firmware doesn't like 0 */
+> -			timeout = ieee80211_tu_to_usec(info->beacon_int) / 1000;
+>  		}
+> -
+> -		ret = ath12k_wmi_set_sta_ps_param(ar, arvif->vdev_id, param,
+> -						  timeout);
+> -		if (ret) {
+> -			ath12k_warn(ar->ab, "failed to set inactivity time for vdev %d: %i\n",
+> -				    arvif->vdev_id, ret);
+> -			return;
+> -		}
+> -	} else {
+> -		psmode = WMI_STA_PS_MODE_DISABLED;
+>  	}
+> -
+> -	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac vdev %d psmode %s\n",
+> -		   arvif->vdev_id, psmode ? "enable" : "disable");
+> -
+> -	ret = ath12k_wmi_pdev_set_ps_mode(ar, arvif->vdev_id, psmode);
+> -	if (ret)
+> -		ath12k_warn(ar->ab, "failed to set sta power save mode %d for vdev %d: %d\n",
+> -			    psmode, arvif->vdev_id, ret);
+>  }
+>  
+>  static bool ath12k_mac_supports_tpc(struct ath12k *ar, struct ath12k_vif *ahvif,
+> @@ -4223,7 +4242,6 @@ static void ath12k_mac_bss_info_changed(struct ath12k *ar,
+>  {
+>  	struct ath12k_vif *ahvif = arvif->ahvif;
+>  	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(ahvif);
+> -	struct ieee80211_vif_cfg *vif_cfg = &vif->cfg;
+>  	struct cfg80211_chan_def def;
+>  	u32 param_id, param_value;
+>  	enum nl80211_band band;
+> @@ -4510,12 +4528,6 @@ static void ath12k_mac_bss_info_changed(struct ath12k *ar,
+>  	}
+>  
+>  	ath12k_mac_fils_discovery(arvif, info);
+> -
+> -	if (changed & BSS_CHANGED_PS &&
+> -	    ar->ab->hw_params->supports_sta_ps) {
+> -		ahvif->ps = vif_cfg->ps;
+> -		ath12k_mac_vif_setup_ps(arvif);
+> -	}
+>  }
+>  
+>  static struct ath12k_vif_cache *ath12k_ahvif_get_link_cache(struct ath12k_vif *ahvif,
+> 
+> base-commit: 27893dd6341b929f87d45fc4d65c5778179319dd
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.IOE_HMT.1.1-00011-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
-
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Signed-off-by: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/wmi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 742ffeb48bce..29dadedefdd2 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -843,7 +843,7 @@ int ath12k_wmi_mgmt_send(struct ath12k_link_vif *arvif, u32 buf_id,
- 	cmd->tx_params_valid = 0;
- 
- 	frame_tlv = (struct wmi_tlv *)(skb->data + sizeof(*cmd));
--	frame_tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, buf_len);
-+	frame_tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, buf_len_aligned);
- 
- 	memcpy(frame_tlv->value, frame->data, buf_len);
- 
-
-base-commit: 27893dd6341b929f87d45fc4d65c5778179319dd
--- 
-2.34.1
+Reviewed-by:  Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
 
