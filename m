@@ -4,116 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF330CA1016
-	for <ath12k@archiver.kernel.org>; Mon,  8 Sep 2025 20:36:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3D22CA0FED
+	for <ath12k@archiver.kernel.org>; Tue,  9 Sep 2025 06:57:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tmc/KncJcDRAf/6Ym1h7RSvUJ/Yk8F28mp2Cw4+IbTI=; b=Xb2sDsOiuyzH2XYrd1EYDdt9/A
-	otnIc9nlWs65SzK6W0+iKY+TKcDk/gbAlrSWDKmk0SUnAU4g8EZzvqeU7jPvOUVUPHJ8jig4fGmkn
-	Bz+9DsuYKU2zac2v+FZs41Yi4Emx0RKsYCMiZXyD+8714uQV2oAafcgX2pqW/FsuEwEZd+GtSeT1G
-	uci31m4kMWn9M7LVKsG1VayccVAi2mBnpXhM7FNneZw6oVq9T/KBUuZxBofgQkgCA3XxCFJi9YkCs
-	gZG66elb7QlBYJX1LxAJlOq69n+8UIU4PFcT0kvM1ltHPzxuxzJs+3EGSuhL7W6UlduK5f1BQyZY7
-	zRstSlrg==;
+	bh=wVKo3YdKaeax0HS6OiVmnndIdj6tcQKbRsB8oIbQKxc=; b=GfF89IfcDPxoIIT1vCDdkphUGa
+	Dp0LGBwN6vE35JYP21FeqGjgF3dR9d4DZ+c79Ubgnd1PyVupKwe4A97DxAXhp7OfNt0hovjE+ib6P
+	x4ikg8FeA7P/fOu+IrQEguhfb1hI9+Ralh5a/a/jhxb4I8LaAZWFVbDSaT1OAOL2p2yJRUryQ+N8l
+	GLWME5wZleQdFxaEROedSGWIPIqtEUKX/nGmLR+IYDHGMgf9LcOYWRfUo/S4YUgy8A8EFWUn//usl
+	Vx8z35h0H74HUPKVlima6qtOENozp11kHWY3DA0EZeiMHsneIJwV2zlAu84tt5/an1sKcg3M2hoS5
+	+HR6twDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvibX-00000002EB8-2HBc;
-	Mon, 08 Sep 2025 20:36:47 +0000
+	id 1uvsHu-00000004x3y-05R8;
+	Tue, 09 Sep 2025 06:57:10 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvf43-00000000sYB-0uTr
+	id 1uvoz8-00000003wjo-3ZSe
 	for ath12k@lists.infradead.org;
-	Mon, 08 Sep 2025 16:50:00 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5889a9GG012487
-	for <ath12k@lists.infradead.org>; Mon, 8 Sep 2025 16:49:58 GMT
+	Tue, 09 Sep 2025 03:25:36 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5892ERTl023702
+	for <ath12k@lists.infradead.org>; Tue, 9 Sep 2025 03:25:32 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	tmc/KncJcDRAf/6Ym1h7RSvUJ/Yk8F28mp2Cw4+IbTI=; b=T8Jo/J9r57K9cxfO
-	nOgTGtQUJ+cWzprP6LsL0tNFyir5S9zbfLkSbc9k5/EjGaqzyPFD5ktblUtkLIKR
-	Za5k8ID1/wfiw0B9tS6dSJPzwl9xJhTIWzU2+KEyYnN9WdqqYiNAH2nizgE37/uU
-	/hSqmdljTisOGrAP4rHFLjACiClYJ/nbSbt9oxaUGEKeV7eBbqNu8zh3ijNYqRol
-	tsYT5/JE34gYW6XBznhJu8Yk70nocJKTINu9Z8NgPP5I4MJGZy2kEpgiGEwgtasq
-	DoNHhr4hQ5d7fcR6Mx0BZTg8n2RKX+JxU/DNLpHqMdpsk9JfRVSKdvCTG4eDMHUt
-	7HlGcA==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490by8we09-1
+	wVKo3YdKaeax0HS6OiVmnndIdj6tcQKbRsB8oIbQKxc=; b=ir/iQBmcULfYZouJ
+	rlle/4jXdOHJbP2+e6x9zbWuqZkaeefEe0ssdvYNllIGc07Kd5h9taYloeBN/PuE
+	898j3GtLiXwPRBhpmZsQG+WekOPUzPpZteQSRPYKf/pJjSwzqiDZLl27C4nbmTLa
+	rMMRyRIvm0Q74vScIkek936gxO1s7tlCYnQ937HohE4+ER/St7hzL8PWxY4qVaE1
+	vYd/pXJ9L+LP5x/KDX2oknEgRGzNxjet7J3f5Wqz2Gos0H5QquDoi84JEVEru6Yf
+	1vf0gG5oXlxM2XZUjrDpqxRh6wCx++knA2KVCopSrCp7zEf2YaE8FyvKb2/6dD/T
+	YD/Kkw==
+Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490aapf0mu-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 08 Sep 2025 16:49:58 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-24cba71c71fso37367625ad.2
-        for <ath12k@lists.infradead.org>; Mon, 08 Sep 2025 09:49:58 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 09 Sep 2025 03:25:32 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-7724877cd7cso5857464b3a.1
+        for <ath12k@lists.infradead.org>; Mon, 08 Sep 2025 20:25:32 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757350197; x=1757954997;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=tmc/KncJcDRAf/6Ym1h7RSvUJ/Yk8F28mp2Cw4+IbTI=;
-        b=Q9FJ+6d/qBttCIXKCyRDtLrgLiTiNECIuXNbygLVeQkl8iWKX0/5SCGYH3c7800Sn9
-         qpfrWLgWRCDIy3CWJRhr7Et/bpP4eBOx6cXEanPdU0KFuergtn9B/8bjjtcd0P3JR8tf
-         8gKPF7N0fF57Ymq0RY9bwziBuTUL3VKgFzPwH8LmuEAg2EkIbGQFhMwX8nSFc3dbyWr2
-         YJU4QaWEWHPWT+LneFan4wCH9X0BnqRM4wDv1yNzLxVxulm4rp6Uti1u7Va1xrVosfVj
-         mDCxK7L/LnHebuzRR3fqwNrhWy5Uk8mnjvtC3bB/cVxAVqORd6Krbc97brWpYstISl4/
-         mZsg==
-X-Gm-Message-State: AOJu0YwALlU8ow5NmrX+/2e2S3tDwlxlMenMccOm+uboTCSqogkClATj
-	n7Lc3rc700z/YXASO411PAqhpUnSJQpyib6UKjEXTZrt6m0hs2Ixn+pgQBw+DR5O3MR0tnQB45E
-	5evgpGQNU5S1JLy3rBxVNYL1VaSUzfk5W3/OvbiZBpx46337WL6Jzo73UIl+6pZck
-X-Gm-Gg: ASbGncsYPyICuWDGrFk6JdLKEe9gklivKhM5PT1+hT9GMd3e1aS1XP2Efefkl9PFl6C
-	dnpcUXuSnvG3ByD/oGsXhGdXrO1G40olTwFK8f29BVRuHZ44fC1CyCV42r3GJNZ+t37s6gfk6z9
-	xGnci0TMwagqRZuoDUseUqoSG23u0m9e6fvoWA3G/+2VfMgcKx5Jp88dLKLp5DZmZtOIulvKCVW
-	wjKr3SF3bkzsvJQYAYKEyqdnvZLVlOygcENj04aXvnIVZFVeK0mee5GEvjbBQ6lSHzzZkfOEq0g
-	1eWeCsF25WOKSvkPOLcMxaZdivyy8Rs4a82wenEwSINYuh/CqSrLRFz/N7v7vVWzHceE0iSpDse
-	1
-X-Received: by 2002:a17:902:ce89:b0:24e:229e:204e with SMTP id d9443c01a7336-2516da05c43mr113562655ad.16.1757350197045;
-        Mon, 08 Sep 2025 09:49:57 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHndtWQTiMWDQbMOMbDHp6W6wnK7I1e6M9IeM3dg7nGZndf9T4LlIhZ3ILQvi+OcSxqbgjV1w==
-X-Received: by 2002:a17:902:ce89:b0:24e:229e:204e with SMTP id d9443c01a7336-2516da05c43mr113562335ad.16.1757350196566;
-        Mon, 08 Sep 2025 09:49:56 -0700 (PDT)
-Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-24cb28c3147sm130460655ad.73.2025.09.08.09.49.55
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 08 Sep 2025 09:49:56 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: jjohnson@kernel.org, Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-In-Reply-To: <20250908015139.1301437-1-miaoqing.pan@oss.qualcomm.com>
-References: <20250908015139.1301437-1-miaoqing.pan@oss.qualcomm.com>
-Subject: Re: [PATCH ath-current] wifi: ath12k: fix WMI TLV header
- misalignment
-Message-Id: <175735019587.347840.16470768919118721674.b4-ty@oss.qualcomm.com>
-Date: Mon, 08 Sep 2025 09:49:55 -0700
+        d=1e100.net; s=20230601; t=1757388331; x=1757993131;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=wVKo3YdKaeax0HS6OiVmnndIdj6tcQKbRsB8oIbQKxc=;
+        b=ViD3AMvenAHbJXEe2JSrazS/Qo4fVFk47ZT9nvydlhq3bJJgMoq0Ki1/SYJy9LV20w
+         xoAo2xdpdieqIhl7x53EZlLv4CU/RmRDgNPQSioL6TNVnGCelW/uGoX93gFX25M0HY9w
+         CKKH59S+DiYGBG/mq7uOPGpBkbLCRQnUqtky1w8eSkNTaCDPS3bFlIxUzIDtVyTg12Hu
+         h6ZN/Y1BckR+MF5LDMsxmMUPtr7W+n7Vbf/vt1oG45ZWn5jPILNHMSn9P+y0/pv63Gxi
+         sY5HJHXI8fXDhbzHzPVKM3xenQj+SoyNmaEFzPkD5c1sHOeF1RqTXzAPg+plghFymo0n
+         ZVkg==
+X-Forwarded-Encrypted: i=1; AJvYcCVetyOfuiHmBMIPQY7GMIwxsS9MO6KxyWgaLYy8gY6epHu6ewMvhCOnRn2KYZYjbXnG15iGgKg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxTiK7kPt8W5SgYPyfCkX5iV2ea0fedQIkwfrLMj1e4M9E0kui+
+	IUdcBWuc+zM/iyvWSmZY2IICMRZnVprLiawd7s3vhGwEk+bYTbV9DwnmS34m4+f+BbBCqmHFwMk
+	CvOjoBfgu6iWec07GXFUXxEx3TIVglPvjitWoRDhfFTXqswOjnPSv6+51covIGzuw9JajSa6I
+X-Gm-Gg: ASbGncuinJwSRWQuZ3jciQgV3eY0OFTr0LBKkajDBUh/KBeCiKmwj3oXawRgxq3zvhg
+	Fafepi0uNHUrOA3+3Gmp1m3TApNCGD2dI7SsvrQY/Asqbvfxhag0qxnvKwpKpCLw0FD1XwE2DPn
+	o21JVhDC6uQe1QNetXUTKrXIU4mb73RptBhRh+sGnyq2nNofgtK1ZVL/aX9qkxlBtXtuAXVkgoL
+	4etcFwjhoUXOa64HC3m1/FRBULl/c+jtzfoocpisgMwtR4UmWpYHukoAlfxVVxS90rYIYYHsuk6
+	drrxVjdtmeuHmu762yzE85sghyp491yl2z8U6yulQa67n1XZsC3WhAH2n6j1kVWVRCvqeO6gAHl
+	vE1AsF9JZreulfNeMsYUyju5Ce1JYiffIPP1XhA==
+X-Received: by 2002:a05:6a21:8906:b0:253:6b75:b174 with SMTP id adf61e73a8af0-2536b75ba79mr13057383637.25.1757388330944;
+        Mon, 08 Sep 2025 20:25:30 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG5e7ftrpwstRx/Yz5VqnlaC4YcnvgJ2avXap6WT8A1sbKJOvNcA2l8BiAKpAxDFbmJnkXcvQ==
+X-Received: by 2002:a05:6a21:8906:b0:253:6b75:b174 with SMTP id adf61e73a8af0-2536b75ba79mr13057353637.25.1757388330350;
+        Mon, 08 Sep 2025 20:25:30 -0700 (PDT)
+Received: from [10.133.33.112] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b4f8a0a2851sm19426637a12.37.2025.09.08.20.25.28
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 08 Sep 2025 20:25:30 -0700 (PDT)
+Message-ID: <2de3e7a0-75a7-4d1f-8692-f2209e7993a2@oss.qualcomm.com>
+Date: Tue, 9 Sep 2025 11:25:24 +0800
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath12k-ng 1/8] wifi: ath12k: Remove non-compact TLV
+ support from QCN
+To: Ripan Deuri <quic_rdeuri@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250908162757.2938849-1-quic_rdeuri@quicinc.com>
+ <20250908162757.2938849-2-quic_rdeuri@quicinc.com>
+Content-Language: en-US
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+In-Reply-To: <20250908162757.2938849-2-quic_rdeuri@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.2
-X-Authority-Analysis: v=2.4 cv=Yv8PR5YX c=1 sm=1 tr=0 ts=68bf0936 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=FHtBw0_P-ZgSNNpYaWgA:9
- a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-GUID: 9yx1HzqMikDqVYLlOpEunh9yqFO6TG2L
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAxOCBTYWx0ZWRfXynpb5ZBqn1ot
- TmR7PEoNeEGvm+P17x3LqnMWLU1T2gfQkyr1Obh/vVJknGZOjuxlW/+AhSUAErlwJLuXV+eSj6Z
- VmGWVT3h0UKMMNS7JVbG2M4NfbrDymaPilG2QmYVXCGYJvsjYuId02Y7xynYkNZwOqXYuvNh6Uq
- 0f3BPTtnaz6j5hbZcCt6HkM5WZ36+cb6Ebxv7qXq5HmRr5hJsOVBrKUs/UM+BpVOzUTHNdPqkpr
- 4Kw9fLYY1+C9W9HsnioGpjmbHPMUKVQU0kHi1PeA5TD7ARAXqZ6PUgzeS5OpQJD0JhcQPIgb0No
- ibOA9tQs9bmsZqAPmib6oxmYJFW4kWaGADngxveRIoIG3XJZQg0nTL0xdZzLU2lqNNcRNJ3RS/1
- RPj3xRoj
-X-Proofpoint-ORIG-GUID: 9yx1HzqMikDqVYLlOpEunh9yqFO6TG2L
+X-Authority-Analysis: v=2.4 cv=eMETjGp1 c=1 sm=1 tr=0 ts=68bf9e2c cx=c_pps
+ a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=COk6AnOGAAAA:8 a=HWV5lphievpgisCl_KwA:9
+ a=QEXdDO2ut3YA:10 a=2VI0MkxyNR6bbpdq8BZq:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: 2L18hVT28XE3jY1Wt1Joy95-sVYB0FcM
+X-Proofpoint-ORIG-GUID: 2L18hVT28XE3jY1Wt1Joy95-sVYB0FcM
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAwMCBTYWx0ZWRfX9pRHio2I3frB
+ MX25fdJHYKqhSnWoQZlY87IBGNfIq6ljCGi6JMy8wneeO3e7sZcozJ0+coSR0DyjvQ54que4RFG
+ jW5li8WbaFBz3XL2h/4WH18wNRKEO0QhcQVZlmvqB+jax0o7OXFmCyebHUn1ak14POkcLoei1gc
+ E4KZfmY81vxWIcfGA4aUOsAi+knYBXt3jXnQhh413e45Kj1MlFHuPeIHzpg/d5NNNp0kw/IF00N
+ y6IIfIKkkOeHcH50+v37zYWuFfPxzURfMDLP43Hd02Wyh+FU6Cg4NYbGPXvJRl7EKYOvCXA9GOE
+ ECWtv9VDb6aHSZRiFvZh+qzdT83OHf0StPA013SwJ8tzVZ5B52zDyNTGobCI7gx43cfP57JzvuA
+ 0fq8cz+H
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-08_06,2025-09-08_01,2025-03-28_01
+ definitions=2025-09-08_06,2025-09-08_02,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 malwarescore=0 suspectscore=0 phishscore=0 clxscore=1015
- spamscore=0 priorityscore=1501 impostorscore=0 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509060018
+ impostorscore=0 priorityscore=1501 malwarescore=0 clxscore=1015 adultscore=0
+ bulkscore=0 phishscore=0 spamscore=0 suspectscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2509060000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250908_094959_409240_B40A77E7 
-X-CRM114-Status: GOOD (  10.00  )
+X-CRM114-CacheID: sfid-20250908_202535_022902_5F4C4309 
+X-CRM114-Status: GOOD (  20.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,25 +131,549 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 08 Sep 2025 09:51:39 +0800, Miaoqing Pan wrote:
-> When buf_len is not 4-byte aligned in ath12k_wmi_mgmt_send(), the
-> firmware asserts and triggers a recovery. The following error
-> messages are observed:
+
+On 9/9/2025 12:27 AM, Ripan Deuri wrote:
+> From: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
 > 
-> ath12k_pci 0004:01:00.0: failed to submit WMI_MGMT_TX_SEND_CMDID cmd
-> ath12k_pci 0004:01:00.0: failed to send mgmt frame: -108
-> ath12k_pci 0004:01:00.0: failed to tx mgmt frame, vdev_id 0 :-108
-> ath12k_pci 0004:01:00.0: waiting recovery start...
+> Set compact TLV ops as the default ops by registering them in
+> hw_params by default for QCN, and remove non-compact TLV ops and the
+
+If you are meaning hal_rx_qcn9274_compact_ops it is not registered in hw_params but in
+ab->hal_rx_ops instead.
+
+> corresponding hal APIs for QCN.
 > 
-> [...]
-
-Applied, thanks!
-
-[1/1] wifi: ath12k: fix WMI TLV header misalignment
-      commit: 82e2be57d544ff9ad4696c85600827b39be8ce9e
-
-Best regards,
--- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+> Please note that compact TLVs have been supported by the firmware since
+> the beginning of Wi-Fi 7, so backward compatibility has been maintained.
+> 
+> These changes are specific to QCN as WCN only support non-compact TLVs.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> 
+> Signed-off-by: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
+> Signed-off-by: Ripan Deuri <quic_rdeuri@quicinc.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/dp.c          |  20 +-
+>  drivers/net/wireless/ath/ath12k/dp.h          |   1 -
+>  drivers/net/wireless/ath/ath12k/hal.c         | 339 +-----------------
+>  drivers/net/wireless/ath/ath12k/hal.h         |   2 -
+>  drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c |  16 +-
+>  .../wireless/ath/ath12k/wifi7/hal_rx_desc.h   |   7 -
+>  drivers/net/wireless/ath/ath12k/wifi7/pci.c   |   2 +-
+>  7 files changed, 11 insertions(+), 376 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+> index 8909415df2e2..83d41154c115 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp.c
+> +++ b/drivers/net/wireless/ath/ath12k/dp.c
+> @@ -895,27 +895,9 @@ void ath12k_dp_pdev_pre_alloc(struct ath12k *ar)
+>  	/* TODO: Add any RXDMA setup required per pdev */
+>  }
+>  
+> -bool ath12k_dp_wmask_compaction_rx_tlv_supported(struct ath12k_base *ab)
+> -{
+> -	if (test_bit(WMI_TLV_SERVICE_WMSK_COMPACTION_RX_TLVS, ab->wmi_ab.svc_map) &&
+> -	    ab->hw_params->hal_ops->rxdma_ring_wmask_rx_mpdu_start &&
+> -	    ab->hw_params->hal_ops->rxdma_ring_wmask_rx_msdu_end &&
+> -	    ab->hw_params->hal_ops->get_hal_rx_compact_ops) {
+> -		return true;
+> -	}
+> -	return false;
+> -}
+> -
+>  void ath12k_dp_hal_rx_desc_init(struct ath12k_base *ab)
+>  {
+> -	if (ath12k_dp_wmask_compaction_rx_tlv_supported(ab)) {
+> -		/* RX TLVS compaction is supported, hence change the hal_rx_ops
+> -		 * to compact hal_rx_ops.
+> -		 */
+> -		ab->hal_rx_ops = ab->hw_params->hal_ops->get_hal_rx_compact_ops();
+> -	}
+> -	ab->hal.hal_desc_sz =
+> -		ab->hal_rx_ops->rx_desc_get_desc_size();
+> +	ab->hal.hal_desc_sz = ab->hal_rx_ops->rx_desc_get_desc_size();
+>  }
+>  
+>  int ath12k_dp_pdev_alloc(struct ath12k_base *ab)
+> diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+> index 18a3287945b7..71f7c4858176 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp.h
+> +++ b/drivers/net/wireless/ath/ath12k/dp.h
+> @@ -457,6 +457,5 @@ struct ath12k_rx_desc_info *ath12k_dp_get_rx_desc(struct ath12k_base *ab,
+>  						  u32 cookie);
+>  struct ath12k_tx_desc_info *ath12k_dp_get_tx_desc(struct ath12k_base *ab,
+>  						  u32 desc_id);
+> -bool ath12k_dp_wmask_compaction_rx_tlv_supported(struct ath12k_base *ab);
+>  void ath12k_dp_hal_rx_desc_init(struct ath12k_base *ab);
+>  #endif
+> diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
+> index 144c26586b79..980f17791c1a 100644
+> --- a/drivers/net/wireless/ath/ath12k/hal.c
+> +++ b/drivers/net/wireless/ath/ath12k/hal.c
+> @@ -294,230 +294,6 @@ static unsigned int ath12k_hal_reo1_ring_misc_offset(struct ath12k_base *ab)
+>  	return HAL_REO1_RING_MISC(ab) - HAL_REO1_RING_BASE_LSB(ab);
+>  }
+>  
+> -static bool ath12k_hw_qcn9274_rx_desc_get_first_msdu(struct hal_rx_desc *desc)
+> -{
+> -	return !!le16_get_bits(desc->u.qcn9274.msdu_end.info5,
+> -			       RX_MSDU_END_INFO5_FIRST_MSDU);
+> -}
+> -
+> -static bool ath12k_hw_qcn9274_rx_desc_get_last_msdu(struct hal_rx_desc *desc)
+> -{
+> -	return !!le16_get_bits(desc->u.qcn9274.msdu_end.info5,
+> -			       RX_MSDU_END_INFO5_LAST_MSDU);
+> -}
+> -
+> -static u8 ath12k_hw_qcn9274_rx_desc_get_l3_pad_bytes(struct hal_rx_desc *desc)
+> -{
+> -	return le16_get_bits(desc->u.qcn9274.msdu_end.info5,
+> -			     RX_MSDU_END_INFO5_L3_HDR_PADDING);
+> -}
+> -
+> -static bool ath12k_hw_qcn9274_rx_desc_encrypt_valid(struct hal_rx_desc *desc)
+> -{
+> -	return !!le32_get_bits(desc->u.qcn9274.mpdu_start.info4,
+> -			       RX_MPDU_START_INFO4_ENCRYPT_INFO_VALID);
+> -}
+> -
+> -static u32 ath12k_hw_qcn9274_rx_desc_get_encrypt_type(struct hal_rx_desc *desc)
+> -{
+> -	return le32_get_bits(desc->u.qcn9274.mpdu_start.info2,
+> -			     RX_MPDU_START_INFO2_ENC_TYPE);
+> -}
+> -
+> -static u8 ath12k_hw_qcn9274_rx_desc_get_decap_type(struct hal_rx_desc *desc)
+> -{
+> -	return le32_get_bits(desc->u.qcn9274.msdu_end.info11,
+> -			     RX_MSDU_END_INFO11_DECAP_FORMAT);
+> -}
+> -
+> -static u8 ath12k_hw_qcn9274_rx_desc_get_mesh_ctl(struct hal_rx_desc *desc)
+> -{
+> -	return le32_get_bits(desc->u.qcn9274.msdu_end.info11,
+> -			     RX_MSDU_END_INFO11_MESH_CTRL_PRESENT);
+> -}
+> -
+> -static bool ath12k_hw_qcn9274_rx_desc_get_mpdu_seq_ctl_vld(struct hal_rx_desc *desc)
+> -{
+> -	return !!le32_get_bits(desc->u.qcn9274.mpdu_start.info4,
+> -			       RX_MPDU_START_INFO4_MPDU_SEQ_CTRL_VALID);
+> -}
+> -
+> -static bool ath12k_hw_qcn9274_rx_desc_get_mpdu_fc_valid(struct hal_rx_desc *desc)
+> -{
+> -	return !!le32_get_bits(desc->u.qcn9274.mpdu_start.info4,
+> -			       RX_MPDU_START_INFO4_MPDU_FCTRL_VALID);
+> -}
+> -
+> -static u16 ath12k_hw_qcn9274_rx_desc_get_mpdu_start_seq_no(struct hal_rx_desc *desc)
+> -{
+> -	return le32_get_bits(desc->u.qcn9274.mpdu_start.info4,
+> -			     RX_MPDU_START_INFO4_MPDU_SEQ_NUM);
+> -}
+> -
+> -static u16 ath12k_hw_qcn9274_rx_desc_get_msdu_len(struct hal_rx_desc *desc)
+> -{
+> -	return le32_get_bits(desc->u.qcn9274.msdu_end.info10,
+> -			     RX_MSDU_END_INFO10_MSDU_LENGTH);
+> -}
+> -
+> -static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_sgi(struct hal_rx_desc *desc)
+> -{
+> -	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
+> -			     RX_MSDU_END_INFO12_SGI);
+> -}
+> -
+> -static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_rate_mcs(struct hal_rx_desc *desc)
+> -{
+> -	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
+> -			     RX_MSDU_END_INFO12_RATE_MCS);
+> -}
+> -
+> -static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_rx_bw(struct hal_rx_desc *desc)
+> -{
+> -	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
+> -			     RX_MSDU_END_INFO12_RECV_BW);
+> -}
+> -
+> -static u32 ath12k_hw_qcn9274_rx_desc_get_msdu_freq(struct hal_rx_desc *desc)
+> -{
+> -	return __le32_to_cpu(desc->u.qcn9274.msdu_end.phy_meta_data);
+> -}
+> -
+> -static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_pkt_type(struct hal_rx_desc *desc)
+> -{
+> -	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
+> -			     RX_MSDU_END_INFO12_PKT_TYPE);
+> -}
+> -
+> -static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_nss(struct hal_rx_desc *desc)
+> -{
+> -	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
+> -			     RX_MSDU_END_INFO12_MIMO_SS_BITMAP);
+> -}
+> -
+> -static u8 ath12k_hw_qcn9274_rx_desc_get_mpdu_tid(struct hal_rx_desc *desc)
+> -{
+> -	return le16_get_bits(desc->u.qcn9274.msdu_end.info5,
+> -			    RX_MSDU_END_INFO5_TID);
+> -}
+> -
+> -static u16 ath12k_hw_qcn9274_rx_desc_get_mpdu_peer_id(struct hal_rx_desc *desc)
+> -{
+> -	return __le16_to_cpu(desc->u.qcn9274.mpdu_start.sw_peer_id);
+> -}
+> -
+> -static void ath12k_hw_qcn9274_rx_desc_copy_end_tlv(struct hal_rx_desc *fdesc,
+> -						   struct hal_rx_desc *ldesc)
+> -{
+> -	memcpy(&fdesc->u.qcn9274.msdu_end, &ldesc->u.qcn9274.msdu_end,
+> -	       sizeof(struct rx_msdu_end_qcn9274));
+> -}
+> -
+> -static u32 ath12k_hw_qcn9274_rx_desc_get_mpdu_ppdu_id(struct hal_rx_desc *desc)
+> -{
+> -	return __le16_to_cpu(desc->u.qcn9274.mpdu_start.phy_ppdu_id);
+> -}
+> -
+> -static void ath12k_hw_qcn9274_rx_desc_set_msdu_len(struct hal_rx_desc *desc, u16 len)
+> -{
+> -	u32 info = __le32_to_cpu(desc->u.qcn9274.msdu_end.info10);
+> -
+> -	info &= ~RX_MSDU_END_INFO10_MSDU_LENGTH;
+> -	info |= u32_encode_bits(len, RX_MSDU_END_INFO10_MSDU_LENGTH);
+> -
+> -	desc->u.qcn9274.msdu_end.info10 = __cpu_to_le32(info);
+> -}
+> -
+> -static u8 *ath12k_hw_qcn9274_rx_desc_get_msdu_payload(struct hal_rx_desc *desc)
+> -{
+> -	return &desc->u.qcn9274.msdu_payload[0];
+> -}
+> -
+> -static u32 ath12k_hw_qcn9274_rx_desc_get_mpdu_start_offset(void)
+> -{
+> -	return offsetof(struct hal_rx_desc_qcn9274, mpdu_start);
+> -}
+> -
+> -static u32 ath12k_hw_qcn9274_rx_desc_get_msdu_end_offset(void)
+> -{
+> -	return offsetof(struct hal_rx_desc_qcn9274, msdu_end);
+> -}
+> -
+> -static bool ath12k_hw_qcn9274_rx_desc_mac_addr2_valid(struct hal_rx_desc *desc)
+> -{
+> -	return __le32_to_cpu(desc->u.qcn9274.mpdu_start.info4) &
+> -	       RX_MPDU_START_INFO4_MAC_ADDR2_VALID;
+> -}
+> -
+> -static u8 *ath12k_hw_qcn9274_rx_desc_mpdu_start_addr2(struct hal_rx_desc *desc)
+> -{
+> -	return desc->u.qcn9274.mpdu_start.addr2;
+> -}
+> -
+> -static bool ath12k_hw_qcn9274_rx_desc_is_da_mcbc(struct hal_rx_desc *desc)
+> -{
+> -	return __le16_to_cpu(desc->u.qcn9274.msdu_end.info5) &
+> -	       RX_MSDU_END_INFO5_DA_IS_MCBC;
+> -}
+> -
+> -static void ath12k_hw_qcn9274_rx_desc_get_dot11_hdr(struct hal_rx_desc *desc,
+> -						    struct ieee80211_hdr *hdr)
+> -{
+> -	hdr->frame_control = desc->u.qcn9274.mpdu_start.frame_ctrl;
+> -	hdr->duration_id = desc->u.qcn9274.mpdu_start.duration;
+> -	ether_addr_copy(hdr->addr1, desc->u.qcn9274.mpdu_start.addr1);
+> -	ether_addr_copy(hdr->addr2, desc->u.qcn9274.mpdu_start.addr2);
+> -	ether_addr_copy(hdr->addr3, desc->u.qcn9274.mpdu_start.addr3);
+> -	if (__le32_to_cpu(desc->u.qcn9274.mpdu_start.info4) &
+> -			RX_MPDU_START_INFO4_MAC_ADDR4_VALID) {
+> -		ether_addr_copy(hdr->addr4, desc->u.qcn9274.mpdu_start.addr4);
+> -	}
+> -	hdr->seq_ctrl = desc->u.qcn9274.mpdu_start.seq_ctrl;
+> -}
+> -
+> -static void ath12k_hw_qcn9274_rx_desc_get_crypto_hdr(struct hal_rx_desc *desc,
+> -						     u8 *crypto_hdr,
+> -						     enum hal_encrypt_type enctype)
+> -{
+> -	unsigned int key_id;
+> -
+> -	switch (enctype) {
+> -	case HAL_ENCRYPT_TYPE_OPEN:
+> -		return;
+> -	case HAL_ENCRYPT_TYPE_TKIP_NO_MIC:
+> -	case HAL_ENCRYPT_TYPE_TKIP_MIC:
+> -		crypto_hdr[0] =
+> -			HAL_RX_MPDU_INFO_PN_GET_BYTE2(desc->u.qcn9274.mpdu_start.pn[0]);
+> -		crypto_hdr[1] = 0;
+> -		crypto_hdr[2] =
+> -			HAL_RX_MPDU_INFO_PN_GET_BYTE1(desc->u.qcn9274.mpdu_start.pn[0]);
+> -		break;
+> -	case HAL_ENCRYPT_TYPE_CCMP_128:
+> -	case HAL_ENCRYPT_TYPE_CCMP_256:
+> -	case HAL_ENCRYPT_TYPE_GCMP_128:
+> -	case HAL_ENCRYPT_TYPE_AES_GCMP_256:
+> -		crypto_hdr[0] =
+> -			HAL_RX_MPDU_INFO_PN_GET_BYTE1(desc->u.qcn9274.mpdu_start.pn[0]);
+> -		crypto_hdr[1] =
+> -			HAL_RX_MPDU_INFO_PN_GET_BYTE2(desc->u.qcn9274.mpdu_start.pn[0]);
+> -		crypto_hdr[2] = 0;
+> -		break;
+> -	case HAL_ENCRYPT_TYPE_WEP_40:
+> -	case HAL_ENCRYPT_TYPE_WEP_104:
+> -	case HAL_ENCRYPT_TYPE_WEP_128:
+> -	case HAL_ENCRYPT_TYPE_WAPI_GCM_SM4:
+> -	case HAL_ENCRYPT_TYPE_WAPI:
+> -		return;
+> -	}
+> -	key_id = le32_get_bits(desc->u.qcn9274.mpdu_start.info5,
+> -			       RX_MPDU_START_INFO5_KEY_ID);
+> -	crypto_hdr[3] = 0x20 | (key_id << 6);
+> -	crypto_hdr[4] = HAL_RX_MPDU_INFO_PN_GET_BYTE3(desc->u.qcn9274.mpdu_start.pn[0]);
+> -	crypto_hdr[5] = HAL_RX_MPDU_INFO_PN_GET_BYTE4(desc->u.qcn9274.mpdu_start.pn[0]);
+> -	crypto_hdr[6] = HAL_RX_MPDU_INFO_PN_GET_BYTE1(desc->u.qcn9274.mpdu_start.pn[1]);
+> -	crypto_hdr[7] = HAL_RX_MPDU_INFO_PN_GET_BYTE2(desc->u.qcn9274.mpdu_start.pn[1]);
+> -}
+> -
+>  static int ath12k_hal_srng_create_config_qcn9274(struct ath12k_base *ab)
+>  {
+>  	struct ath12k_hal *hal = &ab->hal;
+> @@ -638,116 +414,6 @@ static u32 ath12k_hal_qcn9274_rx_msdu_end_wmask_get(void)
+>  	return QCN9274_MSDU_END_WMASK;
+>  }
+>  
+> -static const struct hal_rx_ops *ath12k_hal_qcn9274_get_hal_rx_compact_ops(void)
+> -{
+> -	return &hal_rx_qcn9274_compact_ops;
+> -}
+> -
+> -static bool ath12k_hw_qcn9274_dp_rx_h_msdu_done(struct hal_rx_desc *desc)
+> -{
+> -	return !!le32_get_bits(desc->u.qcn9274.msdu_end.info14,
+> -			       RX_MSDU_END_INFO14_MSDU_DONE);
+> -}
+> -
+> -static bool ath12k_hw_qcn9274_dp_rx_h_l4_cksum_fail(struct hal_rx_desc *desc)
+> -{
+> -	return !!le32_get_bits(desc->u.qcn9274.msdu_end.info13,
+> -			       RX_MSDU_END_INFO13_TCP_UDP_CKSUM_FAIL);
+> -}
+> -
+> -static bool ath12k_hw_qcn9274_dp_rx_h_ip_cksum_fail(struct hal_rx_desc *desc)
+> -{
+> -	return !!le32_get_bits(desc->u.qcn9274.msdu_end.info13,
+> -			       RX_MSDU_END_INFO13_IP_CKSUM_FAIL);
+> -}
+> -
+> -static bool ath12k_hw_qcn9274_dp_rx_h_is_decrypted(struct hal_rx_desc *desc)
+> -{
+> -	return (le32_get_bits(desc->u.qcn9274.msdu_end.info14,
+> -			      RX_MSDU_END_INFO14_DECRYPT_STATUS_CODE) ==
+> -			      RX_DESC_DECRYPT_STATUS_CODE_OK);
+> -}
+> -
+> -static u32 ath12k_hw_qcn9274_dp_rx_h_mpdu_err(struct hal_rx_desc *desc)
+> -{
+> -	u32 info = __le32_to_cpu(desc->u.qcn9274.msdu_end.info13);
+> -	u32 errmap = 0;
+> -
+> -	if (info & RX_MSDU_END_INFO13_FCS_ERR)
+> -		errmap |= HAL_RX_MPDU_ERR_FCS;
+> -
+> -	if (info & RX_MSDU_END_INFO13_DECRYPT_ERR)
+> -		errmap |= HAL_RX_MPDU_ERR_DECRYPT;
+> -
+> -	if (info & RX_MSDU_END_INFO13_TKIP_MIC_ERR)
+> -		errmap |= HAL_RX_MPDU_ERR_TKIP_MIC;
+> -
+> -	if (info & RX_MSDU_END_INFO13_A_MSDU_ERROR)
+> -		errmap |= HAL_RX_MPDU_ERR_AMSDU_ERR;
+> -
+> -	if (info & RX_MSDU_END_INFO13_OVERFLOW_ERR)
+> -		errmap |= HAL_RX_MPDU_ERR_OVERFLOW;
+> -
+> -	if (info & RX_MSDU_END_INFO13_MSDU_LEN_ERR)
+> -		errmap |= HAL_RX_MPDU_ERR_MSDU_LEN;
+> -
+> -	if (info & RX_MSDU_END_INFO13_MPDU_LEN_ERR)
+> -		errmap |= HAL_RX_MPDU_ERR_MPDU_LEN;
+> -
+> -	return errmap;
+> -}
+> -
+> -static u32 ath12k_hw_qcn9274_get_rx_desc_size(void)
+> -{
+> -	return sizeof(struct hal_rx_desc_qcn9274);
+> -}
+> -
+> -static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_src_link(struct hal_rx_desc *desc)
+> -{
+> -	return 0;
+> -}
+> -
+> -const struct hal_rx_ops hal_rx_qcn9274_ops = {
+> -	.rx_desc_get_first_msdu = ath12k_hw_qcn9274_rx_desc_get_first_msdu,
+> -	.rx_desc_get_last_msdu = ath12k_hw_qcn9274_rx_desc_get_last_msdu,
+> -	.rx_desc_get_l3_pad_bytes = ath12k_hw_qcn9274_rx_desc_get_l3_pad_bytes,
+> -	.rx_desc_encrypt_valid = ath12k_hw_qcn9274_rx_desc_encrypt_valid,
+> -	.rx_desc_get_encrypt_type = ath12k_hw_qcn9274_rx_desc_get_encrypt_type,
+> -	.rx_desc_get_decap_type = ath12k_hw_qcn9274_rx_desc_get_decap_type,
+> -	.rx_desc_get_mesh_ctl = ath12k_hw_qcn9274_rx_desc_get_mesh_ctl,
+> -	.rx_desc_get_mpdu_seq_ctl_vld = ath12k_hw_qcn9274_rx_desc_get_mpdu_seq_ctl_vld,
+> -	.rx_desc_get_mpdu_fc_valid = ath12k_hw_qcn9274_rx_desc_get_mpdu_fc_valid,
+> -	.rx_desc_get_mpdu_start_seq_no = ath12k_hw_qcn9274_rx_desc_get_mpdu_start_seq_no,
+> -	.rx_desc_get_msdu_len = ath12k_hw_qcn9274_rx_desc_get_msdu_len,
+> -	.rx_desc_get_msdu_sgi = ath12k_hw_qcn9274_rx_desc_get_msdu_sgi,
+> -	.rx_desc_get_msdu_rate_mcs = ath12k_hw_qcn9274_rx_desc_get_msdu_rate_mcs,
+> -	.rx_desc_get_msdu_rx_bw = ath12k_hw_qcn9274_rx_desc_get_msdu_rx_bw,
+> -	.rx_desc_get_msdu_freq = ath12k_hw_qcn9274_rx_desc_get_msdu_freq,
+> -	.rx_desc_get_msdu_pkt_type = ath12k_hw_qcn9274_rx_desc_get_msdu_pkt_type,
+> -	.rx_desc_get_msdu_nss = ath12k_hw_qcn9274_rx_desc_get_msdu_nss,
+> -	.rx_desc_get_mpdu_tid = ath12k_hw_qcn9274_rx_desc_get_mpdu_tid,
+> -	.rx_desc_get_mpdu_peer_id = ath12k_hw_qcn9274_rx_desc_get_mpdu_peer_id,
+> -	.rx_desc_copy_end_tlv = ath12k_hw_qcn9274_rx_desc_copy_end_tlv,
+> -	.rx_desc_get_mpdu_ppdu_id = ath12k_hw_qcn9274_rx_desc_get_mpdu_ppdu_id,
+> -	.rx_desc_set_msdu_len = ath12k_hw_qcn9274_rx_desc_set_msdu_len,
+> -	.rx_desc_get_msdu_payload = ath12k_hw_qcn9274_rx_desc_get_msdu_payload,
+> -	.rx_desc_get_mpdu_start_offset = ath12k_hw_qcn9274_rx_desc_get_mpdu_start_offset,
+> -	.rx_desc_get_msdu_end_offset = ath12k_hw_qcn9274_rx_desc_get_msdu_end_offset,
+> -	.rx_desc_mac_addr2_valid = ath12k_hw_qcn9274_rx_desc_mac_addr2_valid,
+> -	.rx_desc_mpdu_start_addr2 = ath12k_hw_qcn9274_rx_desc_mpdu_start_addr2,
+> -	.rx_desc_is_da_mcbc = ath12k_hw_qcn9274_rx_desc_is_da_mcbc,
+> -	.rx_desc_get_dot11_hdr = ath12k_hw_qcn9274_rx_desc_get_dot11_hdr,
+> -	.rx_desc_get_crypto_header = ath12k_hw_qcn9274_rx_desc_get_crypto_hdr,
+> -	.dp_rx_h_msdu_done = ath12k_hw_qcn9274_dp_rx_h_msdu_done,
+> -	.dp_rx_h_l4_cksum_fail = ath12k_hw_qcn9274_dp_rx_h_l4_cksum_fail,
+> -	.dp_rx_h_ip_cksum_fail = ath12k_hw_qcn9274_dp_rx_h_ip_cksum_fail,
+> -	.dp_rx_h_is_decrypted = ath12k_hw_qcn9274_dp_rx_h_is_decrypted,
+> -	.dp_rx_h_mpdu_err = ath12k_hw_qcn9274_dp_rx_h_mpdu_err,
+> -	.rx_desc_get_desc_size = ath12k_hw_qcn9274_get_rx_desc_size,
+> -	.rx_desc_get_msdu_src_link_id = ath12k_hw_qcn9274_rx_desc_get_msdu_src_link,
+> -};
+> -EXPORT_SYMBOL(hal_rx_qcn9274_ops);
+> -
+>  static bool ath12k_hw_qcn9274_compact_rx_desc_get_first_msdu(struct hal_rx_desc *desc)
+>  {
+>  	return !!le16_get_bits(desc->u.qcn9274_compact.msdu_end.info5,
+> @@ -786,7 +452,7 @@ static u8 ath12k_hw_qcn9274_compact_rx_desc_get_decap_type(struct hal_rx_desc *d
+>  
+>  static u8 ath12k_hw_qcn9274_compact_rx_desc_get_mesh_ctl(struct hal_rx_desc *desc)
+>  {
+> -	return le32_get_bits(desc->u.qcn9274.msdu_end.info11,
+> +	return le32_get_bits(desc->u.qcn9274_compact.msdu_end.info11,
+>  			     RX_MSDU_END_INFO11_MESH_CTRL_PRESENT);
+>  }
+>  
+> @@ -1086,13 +752,13 @@ const struct hal_rx_ops hal_rx_qcn9274_compact_ops = {
+>  	.rx_desc_get_msdu_src_link_id =
+>  		ath12k_hw_qcn9274_compact_rx_desc_get_msdu_src_link,
+>  };
+> +EXPORT_SYMBOL(hal_rx_qcn9274_compact_ops);
+>  
+>  const struct hal_ops hal_qcn9274_ops = {
+>  	.create_srng_config = ath12k_hal_srng_create_config_qcn9274,
+>  	.tcl_to_wbm_rbm_map = ath12k_hal_qcn9274_tcl_to_wbm_rbm_map,
+>  	.rxdma_ring_wmask_rx_mpdu_start = ath12k_hal_qcn9274_rx_mpdu_start_wmask_get,
+>  	.rxdma_ring_wmask_rx_msdu_end = ath12k_hal_qcn9274_rx_msdu_end_wmask_get,
+> -	.get_hal_rx_compact_ops = ath12k_hal_qcn9274_get_hal_rx_compact_ops,
+>  };
+>  EXPORT_SYMBOL(hal_qcn9274_ops);
+>  
+> @@ -1561,7 +1227,6 @@ const struct hal_ops hal_wcn7850_ops = {
+>  	.tcl_to_wbm_rbm_map = ath12k_hal_wcn7850_tcl_to_wbm_rbm_map,
+>  	.rxdma_ring_wmask_rx_mpdu_start = NULL,
+>  	.rxdma_ring_wmask_rx_msdu_end = NULL,
+> -	.get_hal_rx_compact_ops = NULL,
+>  };
+>  EXPORT_SYMBOL(hal_wcn7850_ops);
+>  
+> diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
+> index c99878262a4a..e4c46a9ad94e 100644
+> --- a/drivers/net/wireless/ath/ath12k/hal.h
+> +++ b/drivers/net/wireless/ath/ath12k/hal.h
+> @@ -1599,14 +1599,12 @@ struct hal_ops {
+>  	int (*create_srng_config)(struct ath12k_base *ab);
+>  	u16 (*rxdma_ring_wmask_rx_mpdu_start)(void);
+>  	u32 (*rxdma_ring_wmask_rx_msdu_end)(void);
+> -	const struct hal_rx_ops *(*get_hal_rx_compact_ops)(void);
+>  	const struct ath12k_hal_tcl_to_wbm_rbm_map *tcl_to_wbm_rbm_map;
+>  };
+>  
+>  extern const struct hal_ops hal_qcn9274_ops;
+>  extern const struct hal_ops hal_wcn7850_ops;
+>  
+> -extern const struct hal_rx_ops hal_rx_qcn9274_ops;
+>  extern const struct hal_rx_ops hal_rx_qcn9274_compact_ops;
+>  extern const struct hal_rx_ops hal_rx_wcn7850_ops;
+>  
+> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+> index d95e3c4daa5d..2105d9e94976 100644
+> --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+> +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+> @@ -1901,15 +1901,13 @@ int ath12k_dp_rxdma_ring_sel_config_qcn9274(struct ath12k_base *ab)
+>  	tlv_filter.rx_msdu_end_offset =
+>  		ab->hal_rx_ops->rx_desc_get_msdu_end_offset();
+>  
+> -	if (ath12k_dp_wmask_compaction_rx_tlv_supported(ab)) {
+> -		tlv_filter.rx_mpdu_start_wmask =
+> -			ab->hw_params->hal_ops->rxdma_ring_wmask_rx_mpdu_start();
+> -		tlv_filter.rx_msdu_end_wmask =
+> -			ab->hw_params->hal_ops->rxdma_ring_wmask_rx_msdu_end();
+> -		ath12k_dbg(ab, ATH12K_DBG_DATA,
+> -			   "Configuring compact tlv masks rx_mpdu_start_wmask 0x%x rx_msdu_end_wmask 0x%x\n",
+> -			   tlv_filter.rx_mpdu_start_wmask, tlv_filter.rx_msdu_end_wmask);
+> -	}
+> +	tlv_filter.rx_mpdu_start_wmask =
+> +		ab->hw_params->hal_ops->rxdma_ring_wmask_rx_mpdu_start();
+> +	tlv_filter.rx_msdu_end_wmask =
+> +		ab->hw_params->hal_ops->rxdma_ring_wmask_rx_msdu_end();
+> +	ath12k_dbg(ab, ATH12K_DBG_DATA,
+> +		   "Configuring compact tlv masks rx_mpdu_start_wmask 0x%x rx_msdu_end_wmask 0x%x\n",
+> +		   tlv_filter.rx_mpdu_start_wmask, tlv_filter.rx_msdu_end_wmask);
+>  
+>  	ret = ath12k_dp_tx_htt_rx_filter_setup(ab, ring_id, 0,
+>  					       HAL_RXDMA_BUF,
+> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_rx_desc.h b/drivers/net/wireless/ath/ath12k/wifi7/hal_rx_desc.h
+> index 60f165a176e0..cc5e1d336376 100644
+> --- a/drivers/net/wireless/ath/ath12k/wifi7/hal_rx_desc.h
+> +++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_rx_desc.h
+> @@ -1454,12 +1454,6 @@ struct rx_msdu_end_qcn9274_compact {
+>   *
+>   */
+>  
+> -struct hal_rx_desc_qcn9274 {
+> -	struct rx_msdu_end_qcn9274 msdu_end;
+> -	struct rx_mpdu_start_qcn9274 mpdu_start;
+> -	u8 msdu_payload[];
+> -} __packed;
+> -
+>  struct hal_rx_desc_qcn9274_compact {
+>  	struct rx_msdu_end_qcn9274_compact msdu_end;
+>  	struct rx_mpdu_start_qcn9274_compact mpdu_start;
+> @@ -1489,7 +1483,6 @@ struct hal_rx_desc_wcn7850 {
+>  
+>  struct hal_rx_desc {
+>  	union {
+> -		struct hal_rx_desc_qcn9274 qcn9274;
+>  		struct hal_rx_desc_qcn9274_compact qcn9274_compact;
+>  		struct hal_rx_desc_wcn7850 wcn7850;
+>  	} u;
+> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/pci.c b/drivers/net/wireless/ath/ath12k/wifi7/pci.c
+> index 9b1acf6c7aa3..abdb3b8ff658 100644
+> --- a/drivers/net/wireless/ath/ath12k/wifi7/pci.c
+> +++ b/drivers/net/wireless/ath/ath12k/wifi7/pci.c
+> @@ -101,7 +101,7 @@ static int ath12k_wifi7_pci_probe(struct pci_dev *pdev,
+>  		ab_pci->msi_config = &ath12k_wifi7_msi_config[0];
+>  		ab->static_window_map = true;
+>  		ab_pci->pci_ops = &ath12k_wifi7_pci_ops_qcn9274;
+> -		ab->hal_rx_ops = &hal_rx_qcn9274_ops;
+> +		ab->hal_rx_ops = &hal_rx_qcn9274_compact_ops;
+>  		ath12k_wifi7_pci_read_hw_version(ab, &soc_hw_version_major,
+>  						 &soc_hw_version_minor);
+>  		ab->target_mem_mode = ath12k_core_get_memory_mode(ab);
 
 
