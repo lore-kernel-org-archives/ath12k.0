@@ -4,112 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A772CAC583
-	for <ath12k@archiver.kernel.org>; Thu, 11 Sep 2025 06:38:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C9C8CAC58E
+	for <ath12k@archiver.kernel.org>; Thu, 11 Sep 2025 13:33:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+Ci7qdgBgyJe2UrIMic/tfFkGEGSNKG+ubpPEQWyZHM=; b=Buv356HHtn1nBaxfJeYTR4Gbrn
-	0xcitZ2FAT8vJKDqK4H9GQz/AMXSo/zgWWZXZ3agQZsEl58zgh6+dmd1Z5jIgE1x+34dLVmwZSeSy
-	8HY3JPntvmb+/YebFPgIbVmsnNW6ly/5+mH/Ju+dBuT5SyG5ccOyB8HIXqG8RHxSQROetQlxF8pgC
-	53T4vZXebCJA34+4FP2kWfASD8b2WGzS6nsAy2hzLm/7OnynpTDskxltHk8NWeg2A8Uv/DV+VugZp
-	T4vJ5+5ABJCvXUSQRgNCf7W9wnX/ypOVOxUYbFtl79lphp8+zaHqsD32q4SPuhVTOz8wTqHoc0RQ3
-	8vkCf8eg==;
+	bh=mfb/bEWWfebGlVXlbCvCHlsRh+BoP9p5BYKu3ymw4Q0=; b=aSKvNKqjmSE9pAFFDhfcyYaris
+	RpeQqQ21691J+BaObiZb2aZZkNLZky3QHPvfyCyEEufcBuypH/Bw8IWlzOT9a5JRhTKle92J4ns+6
+	oHZmPmhpuq7e/exo6Ty/tm/b46XHRsbtAi9GXmsTuBi+w3n+jey44JNpC7PE1gdDGsxKWrO6Zc0uP
+	cS8aWcRw4Tp7UO4czaEqua8Yhf4krCg14KptVDQuAiVNTJSIxgzbFh/uColEJsJcRhElcizRiOo8E
+	mU14BOj0LNKcNAi2FljPPmP93Ves4KLC+tHkX2Pau8klMoTkvv+S9KA2UKK2FJJGKMgNgMT5LFI86
+	Oup19nHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwawY-00000001Hyb-1KJm;
-	Thu, 11 Sep 2025 06:38:06 +0000
+	id 1uwhQJ-00000003FhL-2yUb;
+	Thu, 11 Sep 2025 13:33:15 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwawV-00000001HxO-1WHC
+	id 1uwhQG-00000003Fg7-1LVt
 	for ath12k@lists.infradead.org;
-	Thu, 11 Sep 2025 06:38:04 +0000
+	Thu, 11 Sep 2025 13:33:13 +0000
 Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58B2Ieq7002479
-	for <ath12k@lists.infradead.org>; Thu, 11 Sep 2025 06:38:03 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58BBYnUf002541
+	for <ath12k@lists.infradead.org>; Thu, 11 Sep 2025 13:33:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+Ci7qdgBgyJe2UrIMic/tfFkGEGSNKG+ubpPEQWyZHM=; b=lo2+8zD2VX/KtPDI
-	3/TwZPbw/yo8wLNKaUSjlZ10dhFJU0ZPILb5kIaQKg5/pxJS6TMiH+0T2sgyy03f
-	LxMi/q8yoUJYYh2rKCLN6MEEfm5nIcdQMRRPUSHtaobN2B19qy+Tfm/URZGM4X3r
-	9eP6Uburb/gYpkxMz4l37lBZdCKJDQksSRfptoUkIuWy+iiZ4wvuajlFRfP5Y+7O
-	d+JQYv/gwthORY292jpMOG6yerVrYlb74dYirMVdXWghh3R7nyY0BkpG2pVkOsJ4
-	cF5ZSU1F4A/93y9L00vDp+OiP+16HrNn7BrxW4P/GJnnrSEIy/6zfq93d1vVc8h4
-	X5Dyjw==
-Received: from mail-il1-f197.google.com (mail-il1-f197.google.com [209.85.166.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490bwsepp3-1
+	mfb/bEWWfebGlVXlbCvCHlsRh+BoP9p5BYKu3ymw4Q0=; b=WxLDMuV9TGB4FphJ
+	/ubRieHF+w6Hbq95rsoLdyjolwWGsthJvTLFd3wr9gvgupXNGpdirrc1FrsvGwRZ
+	Qg8Q0/YdRLT6UvYWVV+4zURZD+z2YTfG5I3DC4Fy/1eyo9Ge/SyFlCF50pCnpFu8
+	2iCNdsBHLO5earsQORJKx4Sy0h1IjP4aFOLAWFyHwosjVCHI8pVlujQP+q07UkFt
+	MAmDLxb+40m6peCkbI95iPtT/wkqFSudzwFIrvtIB3LgT08pSkgz31/TRJr4cA8p
+	FFNCvujemaYnrgq3JlzMbe2GzADfch/b2Cbf0uiblSFeCLA1mONP6930kPdVA3wr
+	8+WdkQ==
+Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490bwsfy3e-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 11 Sep 2025 06:38:02 +0000 (GMT)
-Received: by mail-il1-f197.google.com with SMTP id e9e14a558f8ab-3f65be4978cso3897365ab.0
-        for <ath12k@lists.infradead.org>; Wed, 10 Sep 2025 23:38:02 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 11 Sep 2025 13:33:10 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-b4e796ad413so1041409a12.2
+        for <ath12k@lists.infradead.org>; Thu, 11 Sep 2025 06:33:10 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757572682; x=1758177482;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=+Ci7qdgBgyJe2UrIMic/tfFkGEGSNKG+ubpPEQWyZHM=;
-        b=GMWYfPYBcuLkoHHI6Ta1mm2wt8Us9qIZdtbUsOKfniSFp+wCNdEDjpAT7biWiCL1Kd
-         hl8D9UoqdWts8nHdMdiAB50A1crUW/9HR6NWSGRLWepdIMedc9ks36PvGqX/iAuGJIM3
-         Z4zuRqfQZCOxmIn81R0vOQFLfR9n/e8TNHr8vHhH6wQEAOx6mmPI1sbffAXJVnr0id+g
-         9lwrDaSp7IKsyWxEjYblTNzPCnBfjdXA4+WtMOeyKLzp67HMxXVWo0DQNEGCbj2sV8HU
-         BVAEzn0U61hfITqLHOWn8F3peUiidZWa6GkFXuaIerJf/4f91wH9uespBqRj1A13+DWt
-         2fpA==
-X-Forwarded-Encrypted: i=1; AJvYcCVfHrYWnZoEW3PoL0lCjsRP7QmTyrsRZI73QZgBBfPVAFoLrWbUmJ9Y5uIqO/Ut1F5t+90kqt4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx5SQqUAqPuMn5xd3PgpbvTRpHE1TbWZbGguGHof/z1bVdzujse
-	5aYfPh5nCiATQuDHvYx1r/TNvKCmflmBSQkSq2oBSaMFcfQrTDen9ddKV00yrnFCHw0wQLEHaxy
-	iHgJhYdnJPt+gd+8ez7m5IHZcpzrHhHw2Che/U7JJcXlqtUPWje6YRwZt+iAR/ROTeV26XRWboE
-	eJBKfY//N0C9DkbQMfwCvAZaI92JgrnmslrrupzaY=
-X-Gm-Gg: ASbGnct05zr4LkzowV0K6ANhKoOWj+daBumQbzww0fNTfXZ1S0FI8CF+WHSHcXkRIVS
-	wJXbwnRf+vfIWR3hI2dPQ0+nz2NJKffP8qX1Vk8S2GAMkP7Yp3aI9pVbwJXFv3z7i8y43iJ404V
-	Jlm/IdYfvYVdw8W6aEdH40/l0=
-X-Received: by 2002:a05:6e02:168e:b0:41e:dc1e:614b with SMTP id e9e14a558f8ab-41edc1e6343mr1944165ab.32.1757572681961;
-        Wed, 10 Sep 2025 23:38:01 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGNQMuDJYbAL6ndhm9/R6Y/BaEQWZJLcWR2UZFy83OOZ43MdUyMwAG1L9l9rOEit0F8e7FJhTXFSy5+Y9gPgSw=
-X-Received: by 2002:a05:6e02:168e:b0:41e:dc1e:614b with SMTP id
- e9e14a558f8ab-41edc1e6343mr1944015ab.32.1757572681580; Wed, 10 Sep 2025
- 23:38:01 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1757597590; x=1758202390;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=mfb/bEWWfebGlVXlbCvCHlsRh+BoP9p5BYKu3ymw4Q0=;
+        b=mxXKQjGGxF6z4QbTd/7pPOprR1Shf+sa7BRbaQc2v3uk50fG4QHJFiyB0lN40yIRt0
+         4+v/Vaom9Gy4q/QzqaUoud+50LA3Q3ZTGaVDC8gmWjiffPhit0+CbsiUXtgr2T/C0g05
+         AkVh3pFxrfH9RE2O/P7acJiF7hCFiHoWDgukG/78wri78c5u4oaB6By6WS0akif/Y0PZ
+         1pJ+S0Ga9kSGA14W/UFFL17hLiUnSwfdpCCkwDGp1fCvcfpR9LdXaQ4AeBKUKO39Xq44
+         NCpEMMFXKxHH/MOm75LXH0FabOBUody3W8Qql4yHBu3ir6UBfK5skZroDQXW7cZgHSi2
+         ciEQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWPG1o3O1gOCpvRPONs/YfAlsXHdrLddY9KPlo/WsNJd0zS+nUNBb8qUcsCHkuE6T/GdeskjEo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwOAfn4MaqyvQcZRlkILBuUAQY3vL5/V1Oei3ZokzP+ccVtBeX2
+	EEwjtfhyZOCO65dHcRKDJS6dbnXvOrS3R0IAXPIMohgyzbFyhtlFfPCPKn3jS1L8+nclm9dpNSt
+	9aPIQQzEUjvWkl9AwvmLNDPOyELTuhxBabvfQ5xp//B+8T63OQgF0BkesDihAiMn9
+X-Gm-Gg: ASbGncsQkXrA+x//pYe44y64iOVU1ptLPrczF251vtwpknTRQO+GZogGKd4DdxhRaM7
+	EYdazDYoiXCJ2wdWe0jqx2VWP+8gCUd5SqxpU8jHtAr09nXg6jiKozr52/7LDjDLHoIvSsV40tx
+	bEl/6dUTKddJ+b8m9eV8NwdsC/vC9iW/Us/Fss1sVzKGy+NHjv8RxjY3L7L6jkpN+UEPGCO6vKu
+	hh1sisUWAbtcbJT3w1QHt9FO/X+KN2KKL0+PenPdUxul/MdaVY/c72OrJ/BrDUaWCyEfS6bR3wv
+	eF40MxAN4d1pV3JrrLy8VXPS6hGEnNw9HBNB8VmnAtjWMqprKz4s2m6CeV/boKmPgr/DbUy039r
+	JzMl0gt9J+R2tyPJ4bSoZNHgKSmKfOvhYt0AG
+X-Received: by 2002:a17:902:dac3:b0:24a:fc8d:894c with SMTP id d9443c01a7336-2516d81824fmr259400585ad.1.1757597589327;
+        Thu, 11 Sep 2025 06:33:09 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IF5gFsPlK7S/E682V/zEbf1qAqKozriy2aQWGfZa4hVT2KfGYUkoMJ6DHUywD+nm4BqBZoMIg==
+X-Received: by 2002:a17:902:dac3:b0:24a:fc8d:894c with SMTP id d9443c01a7336-2516d81824fmr259400175ad.1.1757597588594;
+        Thu, 11 Sep 2025 06:33:08 -0700 (PDT)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-25c3b30619dsm19620455ad.141.2025.09.11.06.33.07
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 11 Sep 2025 06:33:08 -0700 (PDT)
+Message-ID: <5ed9147e-fc4c-4328-9ba1-7b871170481c@oss.qualcomm.com>
+Date: Thu, 11 Sep 2025 06:33:07 -0700
 MIME-Version: 1.0
-References: <20250905124800.1448493-1-nithyanantham.paramasivam@oss.qualcomm.com>
- <a83d883d0f251c08de7dfe7f2b3e7ab890a9b1df.camel@sipsolutions.net>
-In-Reply-To: <a83d883d0f251c08de7dfe7f2b3e7ab890a9b1df.camel@sipsolutions.net>
-From: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
-Date: Thu, 11 Sep 2025 12:07:49 +0530
-X-Gm-Features: Ac12FXy2GrT9fRzERQC9dkcIjCpesCHOqWl2h2s18c-1tkRkF5-LzmEB2VFrFnQ
-Message-ID: <CAD1Z1JJqgVdXHiggeBuQvqwOSHzrzuYZRw3khey9v3oy+xN5pw@mail.gmail.com>
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH wireless] wifi: cfg80211: Fix "no buffer space available"
  error in nl80211_get_station() for MLO
-To: Johannes Berg <johannes@sipsolutions.net>
+To: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>,
+        Johannes Berg <johannes@sipsolutions.net>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-X-Proofpoint-ORIG-GUID: Njq-FR5j7-oyOBPxl_B5yhkE3O4ZV2TC
-X-Proofpoint-GUID: Njq-FR5j7-oyOBPxl_B5yhkE3O4ZV2TC
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAxOCBTYWx0ZWRfX1Iy3cMEpV3L7
- X/uAxQWOFqwxrMyc2tt2gA/aPOoRRaZrMC+aBu2mp2pFAX6rwxKOPjv3v+ZeY4ST9I/nDAcgFN4
- e1B45oJWJyuJgAgEHHTVf4rN8DLRXIza1sHtwuL61w8ioHzZBAXmXfajsdefF9qOcYe4i1Bxfng
- DdPIUZ/8helSoTyrbhAB+PzU7kpys3WSOOe4+4fV0+jvlYhuUfFw2KReX1Wj08leUAZ0f9HHzEj
- 8vBrdhdlfC6/Jcrc2+ZmNbsjU9DzjLweucvB4U8MlED0CVuH/9dm/QIvlrqAAr4rBe1/RwQ0blk
- /O/B3MXuBsfoFOghkWNQF+nm35hfpFY83SFU6SvDGJLvu92vV/Cl3gzm/LFuH7auyTeyu+iOhC/
- 1g11h/Ci
-X-Authority-Analysis: v=2.4 cv=G4kcE8k5 c=1 sm=1 tr=0 ts=68c26e4a cx=c_pps
- a=5fI0PjkolUL5rJELGcJ+0g==:117 a=kD4sTvn9sZURAWMP:21 a=IkcTkHD0fZMA:10
- a=yJojWOMRYYMA:10 a=stkexhm8AAAA:8 a=1P4ObLHyvds7FFSy6CMA:9 a=QEXdDO2ut3YA:10
- a=HaQ4K6lYObfyUnnIi04v:22 a=pIW3pCRaVxJDc-hWtpF8:22
+References: <20250905124800.1448493-1-nithyanantham.paramasivam@oss.qualcomm.com>
+ <a83d883d0f251c08de7dfe7f2b3e7ab890a9b1df.camel@sipsolutions.net>
+ <CAD1Z1JJqgVdXHiggeBuQvqwOSHzrzuYZRw3khey9v3oy+xN5pw@mail.gmail.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <CAD1Z1JJqgVdXHiggeBuQvqwOSHzrzuYZRw3khey9v3oy+xN5pw@mail.gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-ORIG-GUID: 3HzfHJnNZWGzGAjXJ6dgzaFgXwqiQdwn
+X-Proofpoint-GUID: 3HzfHJnNZWGzGAjXJ6dgzaFgXwqiQdwn
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAxOCBTYWx0ZWRfXyL8evB8gO+KS
+ aOI6+FuydMuc5ktj2oRRUMzO1PJz4qWLBpP4ulCAdYwG9zJfz1SICvKcldGYN6cDmRe0Gcd29ap
+ OyFLCCI4FpZBlW04nC+dofcQs7GajQowAPCa8OejSofSVmFLV2ZcSDR63rQrfZtGClPUMUfLRrD
+ kbkuGQb44cSYjVvEaoMbop4e4gitnpDTqNprM1Fcf/TLwDmlvgyoewHYG07iEDaV2cnrYpWC39F
+ Huu4HXc7e3i4KLNprtzwsdAu8qI4F95LDDGdRy5m9TjdpGC0Sr6OcQLZMlNNmyH+0TjJit+S36c
+ 1rp7EU6M1IDGbq2s3BBds1TM1mN6M+7rYcUOBn6IOf6hBRmU8xmkuENF0CKbUYpg9Jt/COUjAlI
+ zYLqJMsl
+X-Authority-Analysis: v=2.4 cv=G4kcE8k5 c=1 sm=1 tr=0 ts=68c2cf96 cx=c_pps
+ a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=e70TP3dOR9hTogukJ0528Q==:17
+ a=kD4sTvn9sZURAWMP:21 a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=VwQbUJbxAAAA:8
+ a=stkexhm8AAAA:8 a=A1avYxSei9jLoB8cXdkA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=D0TqAXdIGyEA:10 a=xa8LZTUigIcA:10 a=_Vgx9l1VpLgwpw_dHYaR:22
+ a=pIW3pCRaVxJDc-hWtpF8:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-10_04,2025-09-10_01,2025-03-28_01
+ definitions=2025-09-11_01,2025-09-11_02,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  priorityscore=1501 phishscore=0 bulkscore=0 suspectscore=0 clxscore=1015
  malwarescore=0 adultscore=0 impostorscore=0 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509060018
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250910_233803_411578_5EC95718 
-X-CRM114-Status: GOOD (  24.46  )
+X-CRM114-CacheID: sfid-20250911_063312_363269_2084421F 
+X-CRM114-Status: GOOD (  23.85  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,58 +134,61 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi Johannes,
+On 9/10/2025 11:37 PM, Nithyanantham Paramasivam wrote:
+> Hi Johannes,
+> 
+> I agree with your thoughts.
+> 
+> From what I observed, a large sk_buff around 32 KB is allocated and
+> passed to nl80211_dump_station(). However, this buffer size isn’t
+> sufficient to accommodate all 16 links(max) when full station
+> statistics are included.
+> 
+> I also agree that splitting the dump per link within a station is a
+> good approach. I’ll explore this further and come back.
+> 
+> Thanks again for the feedback.
+> 
+> Best regards,
+> Nithy
 
-I agree with your thoughts.
+Reminder:
+https://www.kernel.org/doc/html/latest/process/submitting-patches.html#use-trimmed-interleaved-replies-in-email-discussions
 
-From what I observed, a large sk_buff around 32 KB is allocated and
-passed to nl80211_dump_station(). However, this buffer size isn=E2=80=99t
-sufficient to accommodate all 16 links(max) when full station
-statistics are included.
+> On Wed, Sep 10, 2025 at 2:04 PM Johannes Berg <johannes@sipsolutions.net> wrote:
+>>
+>> On Fri, 2025-09-05 at 18:18 +0530, Nithyanantham Paramasivam wrote:
+>>> Currently, nl80211_get_station() allocates a fixed buffer size using
+>>> NLMSG_DEFAULT_SIZE. In multi-link scenarios - particularly when the
+>>> number of links exceeds two - this buffer size is often insufficient
+>>> to accommodate complete station statistics, resulting in "no buffer
+>>> space available" errors.
+>>>
+>>> To address this, modify nl80211_get_station() to return only
+>>> accumulated station statistics and exclude per link stats.
+>>>
+>>> Pass a new flag (link_stats) to nl80211_send_station() to control
+>>> the inclusion of per link statistics. This allows retaining
+>>> detailed output with per link data in dump commands, while
+>>> excluding it from other commands where it is not needed.
+>>
+>> I guess I'll apply the patch for now since it makes things _better_, but
+>> I'm really not convinced that it's actually sufficient, and I'm very
+>> tempted to throw in another patch to make it always false for 6.17.
+>> Convince me not to? I'll reason below:
+>>
+>> It seems to me that with many links, even for dump you could easily need
+>> more space than the size available for a single dump message just like
+>> with get, since there's no fundamental difference between the two. So it
+>> seems to me that not only should it be opt-in from userspace to retrieve
+>> the data during dump, but also there should be the ability to split the
+>> dump not only on a per-STA basis but also per-link within the STA, which
+>> requires some logic adjustments on both sides (hence the opt-in.)
+>>
+>> Especially if we start seeing more links and/or more data for each link,
+>> this will otherwise become an issue even in dumps.
+>>
+>> johannes
+> 
 
-I also agree that splitting the dump per link within a station is a
-good approach. I=E2=80=99ll explore this further and come back.
-
-Thanks again for the feedback.
-
-Best regards,
-Nithy
-
-
-
-On Wed, Sep 10, 2025 at 2:04=E2=80=AFPM Johannes Berg <johannes@sipsolution=
-s.net> wrote:
->
-> On Fri, 2025-09-05 at 18:18 +0530, Nithyanantham Paramasivam wrote:
-> > Currently, nl80211_get_station() allocates a fixed buffer size using
-> > NLMSG_DEFAULT_SIZE. In multi-link scenarios - particularly when the
-> > number of links exceeds two - this buffer size is often insufficient
-> > to accommodate complete station statistics, resulting in "no buffer
-> > space available" errors.
-> >
-> > To address this, modify nl80211_get_station() to return only
-> > accumulated station statistics and exclude per link stats.
-> >
-> > Pass a new flag (link_stats) to nl80211_send_station() to control
-> > the inclusion of per link statistics. This allows retaining
-> > detailed output with per link data in dump commands, while
-> > excluding it from other commands where it is not needed.
->
-> I guess I'll apply the patch for now since it makes things _better_, but
-> I'm really not convinced that it's actually sufficient, and I'm very
-> tempted to throw in another patch to make it always false for 6.17.
-> Convince me not to? I'll reason below:
->
-> It seems to me that with many links, even for dump you could easily need
-> more space than the size available for a single dump message just like
-> with get, since there's no fundamental difference between the two. So it
-> seems to me that not only should it be opt-in from userspace to retrieve
-> the data during dump, but also there should be the ability to split the
-> dump not only on a per-STA basis but also per-link within the STA, which
-> requires some logic adjustments on both sides (hence the opt-in.)
->
-> Especially if we start seeing more links and/or more data for each link,
-> this will otherwise become an issue even in dumps.
->
-> johannes
 
