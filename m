@@ -4,116 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D13ECCAC598
-	for <ath12k@archiver.kernel.org>; Wed, 17 Sep 2025 02:33:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C5A3CAC598
+	for <ath12k@archiver.kernel.org>; Wed, 17 Sep 2025 02:53:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=FrReQTnqljoeNybsCXmGGnr0Q4DAABKRtCC/lOXhvcU=; b=pld7M1aVwp5o3y9rLjDSRJN2GQ
-	S5nZ1zsmFgfMs5pLaf7HiLJ/3vfNHrA41gLLy6Ie/qDM+DrH/2aWEYTMLWMUUECuU6zZLC/ROheDe
-	eBxpl0U6exu8/aUOuCAyuyOA1o3PGu9Ak474VQLSumih4xhJzNoVb2A5IH8DwyMIYvdRpVqkU3ylg
-	V5FCsSU11tI7rSW8aUg0mog/NuVHq258wtwKhzfZuH7itfQrYQ8syO/XfmwrKwlfmyBA+iRpWTmca
-	DF9R8GkVkFwftcmGw0+maL57xiS9SuZkYU/8Btbr8BY7OBOIMrBfbHN/BcBOumY1nbPrdR3I6pm+B
-	RNgC34tw==;
+	bh=JVvSRJYOZy4M0EyZrfl1KA2XhA6LsoUDpQuJsCxvIzs=; b=uns0JRB1hNIzReYVxZVXKfMXUw
+	P2idyb9ZqU1Huhl6XE0B8hxYzKLLAFK8XhfPTMY0pQtfwTdIitgLbCpmegXc8cRAGIVvkdz+ed9o/
+	g1wBHNIQcX0PCsb3GtWjRPwj52a414cGBrAxftysN4NXAjeTAIPdsII40+60sor63ekJEMBOwWDG8
+	ObDcrrFcP1/KrCrlVm54SVoipis/qhAldqOA8KZ6YdAz5aDlOSwt7Z2lVd8nRlMjSH0Ewgaie68ty
+	SegAj+WomAwP+XUikEh/LKa2ZldT2h0rEoFJvxqjU0DC/SdNJRObOJ71YCIjambOIWE1kIO2Q0Fzr
+	Fv2y6tBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyhz4-00000009yNY-2RAQ;
-	Wed, 17 Sep 2025 02:33:26 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uyiIq-0000000A17l-3u9u;
+	Wed, 17 Sep 2025 02:53:52 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyhz2-00000009yN4-0ZGg
+	id 1uyiIo-0000000A172-1kMh
 	for ath12k@lists.infradead.org;
-	Wed, 17 Sep 2025 02:33:25 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58GLa5FR007462
-	for <ath12k@lists.infradead.org>; Wed, 17 Sep 2025 02:33:23 GMT
+	Wed, 17 Sep 2025 02:53:51 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58GLa9Nv025413
+	for <ath12k@lists.infradead.org>; Wed, 17 Sep 2025 02:53:49 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	FrReQTnqljoeNybsCXmGGnr0Q4DAABKRtCC/lOXhvcU=; b=RapfpkezrMRPRQc7
-	Rr6+OxIPxf0Z7pDyb6LKKETuNXIIbbOBrtv9FU2ra6mFUl0cWfV/CnVrrclqt0HE
-	Sfs1rvT1P6CxPUqC14oFvBKhgwhX8V1I1+XJpGCMeJl0h8/vLKLvGLXF4wYbgUpg
-	QTZzzwrBtPSh4lpO4GdC3suxbzUzieTF4UxzrAF1FDOsq8p3Z3aeGWBduhMg4uyt
-	iI2t1pmDkbyrPCQ4MkIGESPO7fVvwi2pW7eZFtp/H27YW8HJW5nU77OinTPtfotu
-	bS4t5O9JpSSdH8tSYhBSoTedwqqy97dC6eEzfki+NMSVPhvq5UUoUu8aRF0pb0Lt
-	Q+hBhA==
+	JVvSRJYOZy4M0EyZrfl1KA2XhA6LsoUDpQuJsCxvIzs=; b=fVmjOd1MKyQMfI1b
+	QlNDV9+4OYkXc5pOWWICwcfFexPYI8VLhkm01s6R24IYIupMazgqh6CiSWFG6xxL
+	k3H/QUGs43rQ8CGHKdD6DoZiKnq4G9gsbvE9xcJTEOAZidLJmbePXHWf9i14dXOo
+	tVO5WRH8xUY1mWbVxn7A78uZtWm7729PVjTZA2mx4iUXJned/EmFDrsegBi0nupp
+	Vr+docQHH4FirKvunRs2Uoh8VUnwnbQR7w5hBsXW5gi59RsGH9zunAViRUeATXQ9
+	kmJNLz1SoJqnPRrEnJwnsSf1ns2FAxX5AMujHAQXrGJ4To0/iFqaT3uhnQ8MyXqk
+	ISRezg==
 Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 497fxxrkbv-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 497fxwgnmp-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 17 Sep 2025 02:33:23 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-24458345f5dso74823695ad.3
-        for <ath12k@lists.infradead.org>; Tue, 16 Sep 2025 19:33:23 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 17 Sep 2025 02:53:49 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-267ac96f558so26585625ad.3
+        for <ath12k@lists.infradead.org>; Tue, 16 Sep 2025 19:53:49 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758076403; x=1758681203;
+        d=1e100.net; s=20230601; t=1758077628; x=1758682428;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=FrReQTnqljoeNybsCXmGGnr0Q4DAABKRtCC/lOXhvcU=;
-        b=hz0fDNNuQ25mJv/BKKO8n9FVizkAbOpovPSVC61EbEUcfwt1TfxKndYL+CEIACPi/u
-         PPTo42LHW0O9aX9HMV2D1jEFLsREq/XlnBrDtP0O3FBlnmF3U5p9ZWsm78szlkMBhW3L
-         jUCQ33mLfwnZQqh1xrx49ClyMn5D2mhKV/ted4JNBTvZLwFA2I7bt8udubrL5fkOBnXx
-         uhALiLEPJbyt7i5oOlBFWA0ipRu84EG9Ulcdjtd2zDsbpjUEJr3qiMV2gDDzZ8n389Ha
-         axBcQ0L1P2J0lJFZrp8I3OFUTK84kgWK8UcpuvL3R2GFAymWs3H4k7JwQENQxEDwgQpu
-         nXHw==
-X-Forwarded-Encrypted: i=1; AJvYcCXHipdc/Mw/a1PmJv6NeTkz/nBuDM7ox9FJZitzYUAVqU+lgJv9npiRnqd/6WlDN/F9+TK3qds=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz4rEP3EXzlK9mn0rk3w9RpBE+tUcOqpxM+itaiRilOpjyO1Aib
-	FZczAdz/ctmv4YbPxZ7rYhepCpFWgb2J1WFaA6mnPfSN6YdHkjlVCEQGPpB4z/HeXRNZd6pd1RG
-	yTzRZpBTQpH6wivrYQePRW0sNmqAzODm3uX4odIX8+MVeeSNz/BvIlVXlXkHwZYw2
-X-Gm-Gg: ASbGncsZP2S+FRX1tqdZvPrzNjhpclFk9FBNpek4yBsyuqtcMXEZ6gO5/80zq02UZjM
-	x+OkvsJFUVLyXm0gda10eBkE0y50isoTu8jzICNEFhJdg90uMT1SW1OgxP7ZEtIxbxxUv3vXWT4
-	b5LwSkwJPezle6fTpyvy5eGXGStBN2uDg5BpywY9aowTRmsMf618iOn2uIN67S072sup945ZegK
-	0TzYuq7ZAT/q6NwJ6Z2aOHvHatXCgBJFkS6xv25sCSGdxnsPt8D6y90OaaU2Qb8lVCWsPZzuJ7f
-	msagoCWkckVBoSLmbjn2CtIrOI9iupIhfMGSyrnUKxVBmAafGLnhIlzAdY056t0dQX8VUn4befI
-	TdU4Hyem8y78lZ1mcu4QUx8XoFdiOL4hnzOAICA==
-X-Received: by 2002:a17:902:ebc5:b0:267:c963:25c2 with SMTP id d9443c01a7336-26813bf2129mr7036615ad.43.1758076402736;
-        Tue, 16 Sep 2025 19:33:22 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IG57Qfsb1gzeQ8IKDiMv0+iirbUDwdvmSrbCVzVBMrY/eL0zRy2rcSooGDkkLzEQcHZlj55VQ==
-X-Received: by 2002:a17:902:ebc5:b0:267:c963:25c2 with SMTP id d9443c01a7336-26813bf2129mr7036235ad.43.1758076402270;
-        Tue, 16 Sep 2025 19:33:22 -0700 (PDT)
+        bh=JVvSRJYOZy4M0EyZrfl1KA2XhA6LsoUDpQuJsCxvIzs=;
+        b=oZs+WBML6+jokiwjjlgeUvPq+rhmqSRFWN46FCf3u81jm7MDt1Zo0RmyK1ziTPkZ2x
+         Q/Vq2ab7qnXxzMY1aMQbDvFiBeKcvGG/j9kzlD31lD7fM4WJDlrRTUqZhi91mp85gyEI
+         cN8VEhc1/GZvfPUVo2qz3enXDajzW4oMQG7OFblQ1B3FzQQ0L8/+w7C5JVqmbOuMEqBe
+         yL+7Lk0iMi3WNRt+XPSudEVQwmc5dkSEHIjSeS+jD5ac2mPtwOG9ZceQkB/kguevOigv
+         gBABKrq2ZFVquR2rOhCSAk99NnqkAYMVVgIBXKqjr+uCuBla02TsirhdT5ovxFy4xhi5
+         LA8w==
+X-Forwarded-Encrypted: i=1; AJvYcCX0w3nq8FbLdtdCWFySKdQomfo860OiEo+nTrHS+/bp92QZwkg70kJhIeX+wz3ZQKcmGBq/wV0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx53WtoaqasryLCoKZ0p4X/SnZZtzuryK4PZaLBZYssJC9cMoEf
+	ywVdC1aSebnpXpvNd6JbImhLEFXxJQAxe0DizZzvADEPFg5DrClbEPgH1/hFlKk2gbzTPSZDUuA
+	sPCYIqYGwTFDqRPomSq8xwwBBEUe2ebARoHgg4EBm9vfcTFNQ/ndLR4BGfBQ5P7iA
+X-Gm-Gg: ASbGncvEBiCpktiX2Us5uo6DTiREeo5VgE0R3Y7BHljVzqn0ZKqDI4Dbx7im8ndpv3F
+	dJaWNEKpNhiYJvXopBJskdKWBKPdwxV8eOXWMhIOxbvc/DAaW0bh3PI+pItRuQ0niU9PlwSiAuh
+	LEa9/otHYNR4VJN9LiNUZu/9eMLiFC2KbUeYC5/loz+XPQSO5b7zEJDNL2jWfiuOtkaniCtCkfT
+	qPR5EcfKZCnTVunRRkewAru9jclcDKx7aKg+BlbYnf7hSxCQCE/Tfd7VYkaYaWr9ECxWTCs5bQA
+	BnP4WYIqIehY565AMKgv5VvFHbxoEiSXY4rebawSWA6FFp+XBGUDc7QOzcmqwutxnuNRu6uLeJM
+	aGco9pEuRohxb9ppIDl40niGztnfbDQouQfPHmA==
+X-Received: by 2002:a17:903:11cc:b0:262:661d:eb1d with SMTP id d9443c01a7336-268118b9516mr6794375ad.1.1758077627955;
+        Tue, 16 Sep 2025 19:53:47 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEz+iCnfeGRJhrk/sCunEeIt1saebIFPgtGbAWqNh6uLgGo3jBEi/jlo5xWg6pe3y86gZRZLA==
+X-Received: by 2002:a17:903:11cc:b0:262:661d:eb1d with SMTP id d9443c01a7336-268118b9516mr6794105ad.1.1758077627388;
+        Tue, 16 Sep 2025 19:53:47 -0700 (PDT)
 Received: from [10.133.33.224] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-261333a972dsm110557595ad.75.2025.09.16.19.33.20
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2653fcb5b33sm84326225ad.92.2025.09.16.19.53.45
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 16 Sep 2025 19:33:21 -0700 (PDT)
-Message-ID: <1826dd68-d418-464b-a96f-1a290809e2a8@oss.qualcomm.com>
-Date: Wed, 17 Sep 2025 10:33:16 +0800
+        Tue, 16 Sep 2025 19:53:47 -0700 (PDT)
+Message-ID: <d1045151-ba85-4412-ac3e-84ee88ac3d91@oss.qualcomm.com>
+Date: Wed, 17 Sep 2025 10:53:42 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next 0/3] wifi: ath12k: monitor mode fixes
-To: Kang Yang <kang.yang@oss.qualcomm.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250722095934.67-1-kang.yang@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next] wifi: ath12k: Add fallback for invalid channel
+ number in PHY metadata
+To: Aishwarya R <aishwarya.r@oss.qualcomm.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Sriram R <quic_srirrama@quicinc.com>,
+        Vinith Kumar R <quic_vinithku@quicinc.com>
+References: <20250723190651.699828-1-aishwarya.r@oss.qualcomm.com>
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20250722095934.67-1-kang.yang@oss.qualcomm.com>
+In-Reply-To: <20250723190651.699828-1-aishwarya.r@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTE2MDIwMiBTYWx0ZWRfXxhjjkSahmSBm
- FidVRiBKl1weC5/VlvzaKhIeCNweS5im3nwz5BX6VQ1bTT5dFMQzVh7CwLO0mJribAXXv5PW2nR
- heweMdIZ4fDGknxNoTv6T0O0lpXgEp7h6CQgqBI4OTlY35fgs73BO/CjZCxFV6S/HIHkgxSdrEx
- ZZ1DqWICftPlN0KK1nZiDmRtVtPtI440KidxirJN2mZ8obkPD/4bWczyajzy+PnUcRhMozRZZou
- vEuMxGQ0AMH44zXh1H6rTpRGlxrkheyF+CD5HtLV75pwc6cUbbHf8iD0AarCoMqftAqvhCQoJX7
- yFav70TGxk0KcKoCw6Z0N3ejnkT97YFr23hNfuaowefjjOblDReK1g9GV4FR6/H6xdwIp04xKG1
- 70qGb3wd
-X-Proofpoint-ORIG-GUID: IK91eIIGedkdR4DAxWleyDK7XETO8mLe
-X-Authority-Analysis: v=2.4 cv=KJZaDEFo c=1 sm=1 tr=0 ts=68ca1df3 cx=c_pps
+X-Authority-Analysis: v=2.4 cv=do/bC0g4 c=1 sm=1 tr=0 ts=68ca22bd cx=c_pps
  a=JL+w9abYAAE89/QcEU+0QA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=-ZAtyTsNoej9e0GDpi0A:9
- a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22
-X-Proofpoint-GUID: IK91eIIGedkdR4DAxWleyDK7XETO8mLe
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8
+ a=FpNJ7K4awL-1w2SDpB0A:9 a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: 6kcJHItT_2-mfszZnInGT-d7praKtLal
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTE2MDIwMiBTYWx0ZWRfX/8On97R+x3JZ
+ mUVQVbRzsyKyYG3YyW+UPeXde0Wfn7TL0TRJbT+lD77jqjHUDZZjk+4brn2vZv03PYfvd6pIDhs
+ Plh+D6S55x4wpopSQMMvcK1GhqXFcn9gbjzCQmHq0/kn3KIzi8jmckf/vThZmq2gjEYP+08ZfOD
+ JCbCM++EPCEmU8AzMMCXETrND/c3NDdx7WMnHa5Ly7d48H30uvFpZomgEu4hr5CotzEwGKYDxIr
+ ygcjRIPY8qi/CbBG6Z0FULRFEj526sZsNNqGeucCmUbyRBXGQKhsRHexDctiu1UtxfPy0CpvP1l
+ YsTM3p2oCVn2RfOZugkkCfLXkUjayKDTRr8wJAj8SX6VJrMP4czl1zWkU01WgzkrzvvfP9ncDeP
+ oDVCS0Ec
+X-Proofpoint-ORIG-GUID: 6kcJHItT_2-mfszZnInGT-d7praKtLal
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-16_02,2025-09-16_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 phishscore=0 bulkscore=0 adultscore=0 impostorscore=0
- suspectscore=0 malwarescore=0 clxscore=1015 priorityscore=1501
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509160202
+ malwarescore=0 clxscore=1015 impostorscore=0 phishscore=0 priorityscore=1501
+ spamscore=0 suspectscore=0 adultscore=0 bulkscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2509160202
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250916_193324_192446_4F17745B 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20250916_195350_605466_F1E4157D 
+X-CRM114-Status: GOOD (  22.10  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,20 +133,81 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 7/22/2025 5:59 PM, Kang Yang wrote:
-> This patch-set includes three nit fixes for monitor mode.
+On 7/24/2025 3:06 AM, Aishwarya R wrote:
+> From: Sriram R <quic_srirrama@quicinc.com>
 > 
-> Kang Yang (3):
->   wifi: ath12k: fix signal in radiotap for WCN7850
->   wifi: ath12k: fix HAL_PHYRX_COMMON_USER_INFO handling in monitor mode
->   wifi: ath12k: fix the fetching of combined rssi
+> Currently, ath12k_dp_rx_h_ppdu() determines the band and frequency
+> based on the channel number and center frequency from the RX descriptor's
+> PHY metadata. However, in rare cases, it is observed that frequency
+> retrieved from the metadata may be invalid or unexpected especially for
+> 6 GHz frames.
+> This can result in a NULL sband, which prevents proper frequency assignment
+> in rx_status and potentially leading to incorrect RX packet classification.
 > 
->  drivers/net/wireless/ath/ath12k/dp_mon.c | 49 +++++++++++++++++++-----
->  drivers/net/wireless/ath/ath12k/hal_rx.h | 12 +++---
->  2 files changed, 46 insertions(+), 15 deletions(-)
+> To fix this potential issue, add a fallback mechanism that uses
+> ar->rx_channel to populate the band and frequency when the derived
+> sband is invalid or missing.
 > 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 > 
-> base-commit: e4f11ae0c4b29ca0c133f891412afd5dcddc68ff
+> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+> Co-developed-by: Vinith Kumar R <quic_vinithku@quicinc.com>
+> Signed-off-by: Vinith Kumar R <quic_vinithku@quicinc.com>
+> Signed-off-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/dp_rx.c | 16 +++++++++++++++-
+>  1 file changed, 15 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+> index 8ab91273592c..adb0cfe109e6 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
+> +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+> @@ -2533,6 +2533,8 @@ void ath12k_dp_rx_h_ppdu(struct ath12k *ar, struct ath12k_dp_rx_info *rx_info)
+>  	channel_num = meta_data;
+>  	center_freq = meta_data >> 16;
+>  
+> +	rx_status->band = NUM_NL80211_BANDS;
+> +
+>  	if (center_freq >= ATH12K_MIN_6GHZ_FREQ &&
+>  	    center_freq <= ATH12K_MAX_6GHZ_FREQ) {
+>  		rx_status->band = NL80211_BAND_6GHZ;
+> @@ -2541,21 +2543,33 @@ void ath12k_dp_rx_h_ppdu(struct ath12k *ar, struct ath12k_dp_rx_info *rx_info)
+>  		rx_status->band = NL80211_BAND_2GHZ;
+>  	} else if (channel_num >= 36 && channel_num <= 173) {
+>  		rx_status->band = NL80211_BAND_5GHZ;
+> -	} else {
+> +	}
+> +
+> +	if (unlikely(rx_status->band == NUM_NL80211_BANDS ||
+> +		     !ath12k_ar_to_hw(ar)->wiphy->bands[rx_status->band])) {
+> +		ath12k_warn(ar->ab, "sband is NULL for status band %d channel_num %d center_freq %d pdev_id %d\n",
+> +			    rx_status->band, channel_num, center_freq, ar->pdev_idx);
+> +
+>  		spin_lock_bh(&ar->data_lock);
+>  		channel = ar->rx_channel;
+>  		if (channel) {
+>  			rx_status->band = channel->band;
+>  			channel_num =
+>  				ieee80211_frequency_to_channel(channel->center_freq);
+> +			rx_status->freq = ieee80211_channel_to_frequency(channel_num,
+> +									 rx_status->band);
+> +		} else {
+> +			ath12k_err(ar->ab, "unable to determine channel, band for rx packet");
+>  		}
+>  		spin_unlock_bh(&ar->data_lock);
+> +		goto h_rate;
+>  	}
+>  
+>  	if (rx_status->band != NL80211_BAND_6GHZ)
+>  		rx_status->freq = ieee80211_channel_to_frequency(channel_num,
+>  								 rx_status->band);
+>  
+> +h_rate:
+>  	ath12k_dp_rx_h_rate(ar, rx_info);
+>  }
+> 
+> base-commit: 708243c62efde8241e2c66e9c3f377658855149d 
 
 Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
