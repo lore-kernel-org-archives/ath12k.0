@@ -4,119 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D53A6CAC597
-	for <ath12k@archiver.kernel.org>; Thu, 18 Sep 2025 07:25:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3197BCAC59A
+	for <ath12k@archiver.kernel.org>; Thu, 18 Sep 2025 07:31:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ue+pVaOAYmIBOaB8cArSGaKhQNAputzlAr9Z6ULW9DM=; b=18XkUdcQR+Mvjyl58hECDOn4cg
-	ve6TO4FWLZc1LjfX7nsmPqQyocmeWXSw7gQCK0OzuY4nljKEYm3Di1JzhIpCHlfnw3d3WH8WRoSRa
-	u4oJvbi2b8EQw39FLRc+CUFkKf81Bn3VK01Ef6fE7n3J+envPM/t5LePJbDnfN+mD6P97URaljIeK
-	IgqspQ7QIL8YidE849YHI1/zd04+wQqFE4iTITQDrkaZU0pvzsRRBQNcSW51XLP0a0aD6bASpaoBD
-	q6HcmrqbdqdP0zmQVUSaeKyO3t8jbEqFtWmv0cmtJEnjDtm6jOFNYDMj1f5Sjj18xvMOYK1a3vrMd
-	RaKBaF1w==;
+	bh=MSjGDOxJVlv8lyqbxoa5TJlW0jL+p+ujSkvMtFycbHs=; b=zqCUfm/IiE9FJh0A9zg20nZQF9
+	SFdEi3EbjH00n9VW5+HSbfk59vnpGhn93x+43k/TSfXgUQ8nRIpMr5jKJRSl3YxV/aYv88N7scPfv
+	4CCfGsmfzG/fzlL+9EQ6tpGltnyk8vkyFlWLHzcw1ijXnnvUyR/Et8RLrws3enptLiQtdKfs9wZ9b
+	lIErM/fV4lVJIgUydHcCdTUxaR472APznR0Y7siGy7ArgJitr3Dg7c6fHVnlg+rN0uaV75NlATyvA
+	7Pz9dLfEmwaSdZWMf54BeWCBO21e6+BmP6F/IoIZfDh4EqE2uuqIr3s7N/R6PVsXGsJqk1aOa0waD
+	BclyV/GQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uz90s-0000000GXOg-2YKY;
-	Thu, 18 Sep 2025 07:25:06 +0000
+	id 1uz96h-0000000GXwa-3xBN;
+	Thu, 18 Sep 2025 07:31:07 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uz90q-0000000GXOC-05IM
+	id 1uz96e-0000000GXub-43XB
 	for ath12k@lists.infradead.org;
-	Thu, 18 Sep 2025 07:25:05 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58I7JqpV028314
-	for <ath12k@lists.infradead.org>; Thu, 18 Sep 2025 07:25:03 GMT
+	Thu, 18 Sep 2025 07:31:06 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58HMaTZC011208
+	for <ath12k@lists.infradead.org>; Thu, 18 Sep 2025 07:31:04 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Ue+pVaOAYmIBOaB8cArSGaKhQNAputzlAr9Z6ULW9DM=; b=FHjaeckpIOa/vF1P
-	ZiClZ09QlfV0arE/nH8dx0BF2IdS7sJWMTuOXqcIFUDT5Zkn492mTXqgIkl1saos
-	dYj3iOeJBnGxbudjBSy/ckECGJ/TgHukswN8sB18+vWlNuCedE0XIA9gvt4RjLcv
-	20NhFf6EQ/8/jD1chjs36r/dGntekHH1CUEvG0tvUZdyJ8JbzvloQYPCbquf4ZwZ
-	jDTCC4LRT05PVexxt3WCr71KKt1jBI5Ct+0ZOC+IL8CmKzVHo+ZYqKgEdTxqPxKj
-	8iKUuWLhE3XIKfP6N++dO0DEKiuXekBmMljNYn7P7q490Xj1AD8bV0vd3UanRy4s
-	r6AeEQ==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 497v1jbapf-1
+	MSjGDOxJVlv8lyqbxoa5TJlW0jL+p+ujSkvMtFycbHs=; b=cjhgWZC2Mzm9Pvtq
+	0te6kbpZcfX90brLFp2wNJvYTosCAAs3xIJsWwH3u9C1ZA5DVv2SVw3Ejt4khKhA
+	CLx7RHttEJhjW2+W92hsSWW5DLNOKBzaJ9D/ZSfT6qP83E981KkmZpAJ3u6hABFv
+	11MoAr1MYzrCAxzievOQJEmNom3ilZ+kT4xmJ7G1sZBLvqbIy0bvAaCZXcMvZ+lu
+	hcrbZwPKx9+nqareNvBT3wLRFOZvvUhiwY7J5DRR3X2kVYuMTtmWXIf8AIvy8yWu
+	PX2oJfyiCyf/2ChDxDVYkZDRBoIFLNSi1NBDUHVQkCv4tCtbrsE3EjTTsR3rv1hd
+	YREObA==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4985wx1ane-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 18 Sep 2025 07:25:02 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-b4d48818a04so477170a12.1
-        for <ath12k@lists.infradead.org>; Thu, 18 Sep 2025 00:25:02 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 18 Sep 2025 07:31:03 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-269880a7bd9so6085435ad.3
+        for <ath12k@lists.infradead.org>; Thu, 18 Sep 2025 00:31:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758180301; x=1758785101;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20230601; t=1758180662; x=1758785462;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Ue+pVaOAYmIBOaB8cArSGaKhQNAputzlAr9Z6ULW9DM=;
-        b=a37CiIOVQ0oAQItuyhdWrKyex4YXzjrEcAXR4hx67c3zYWsXG5X5WfdU4/anBbBscq
-         Y1wV7Db+kCYLMJKN23bVihXKEbERbHeo1ljOkjn+T73TLqXfJxS72oYdCWd8vFbn/A8A
-         GEfps6MWLo+m/qsweiw2E7Qv4BHsdMyMYg8kkGSt7QaD/pIs7VPgw+FqY9m4wZlUw5jp
-         WvnUV5tUOptuUMq3hYLka1f9dEdygw8aOciSQ0HiwUCS+Nsg1vBLNAqwcGiVuwC3wnv5
-         vOOCVMV6e/Pg6sPg6ghxqZjBRMZIEQ5uVGl6kYuE9vOkAjPkMlvUxhvF1XjHEchhIFyk
-         6MYQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUd3dy6NoYJDsA/HCGvr3VAAENgP219rdoVSs92BnAhKMWpABSQdh4G7FBX8QQKAKp7am8tc60=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyv1CrPbe/FBl/hxn1qshAU29VMJKbb896lSHBVFSjqjpJa+J4F
-	Z3PfhgsyF3udYXOuLKRCz1OKRJcJSAxMbmpHXGUhUFhLq+IWyzjchXEsmcILMZNu0pYiF0uPF0s
-	8f0gwznedaChAE2FNXwniSD3bOsdK9LnTRfjMV9aLhgdTRFY9hpU9IWQNWxVhn+GP
-X-Gm-Gg: ASbGncukZy4IqKcXbXJeOMiZaLGPkQlw+5xwXhqMtfWBkyNjOfCFDW241u0QuRkgUKt
-	KMbOSUT4a02iHGPY3USGgnB6l5KR5hBO4Xjw6hmi3b+xeiB9t6S2egG1Sw19DoaeghGojjL1qAz
-	KhSyN+/kyfcrmtpEsNd3MgOoqzxOGdqPPQZPoamB1iOUHms6EVJQ7pfNGamKM8AuRG0/a4RfIwr
-	rYpIP3YSRg4+u6gR1DJa2ov4HdLtdBTcgYkRytfLa+R1PDDGiRho7mQCe9sBEiLE/3iVcbWe+7p
-	LIZ25jHf3Yp/sl9ofh3WS+rq5im+mtYVAroEJlPEiQ/loXLgh4poNE13jT0wNHAeFah0efqHn50
-	bP4YSLw==
-X-Received: by 2002:a05:6a21:3393:b0:249:c440:9b39 with SMTP id adf61e73a8af0-27ab06e41d8mr7636351637.54.1758180301592;
-        Thu, 18 Sep 2025 00:25:01 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IE9sa0L3R0ncN3Jc2SZiMG6nwOJATnPz6XVx4l276ZxLWmOpVYIHpMBxMwzAetN8OkABmjWug==
-X-Received: by 2002:a05:6a21:3393:b0:249:c440:9b39 with SMTP id adf61e73a8af0-27ab06e41d8mr7636321637.54.1758180301201;
-        Thu, 18 Sep 2025 00:25:01 -0700 (PDT)
-Received: from [10.152.204.0] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b54ff38eaf1sm1479952a12.24.2025.09.18.00.24.59
+        bh=MSjGDOxJVlv8lyqbxoa5TJlW0jL+p+ujSkvMtFycbHs=;
+        b=Ws6G640cHWb3fUz0jZy52Ecq+llxD04gBYEW145VkY36afKS8lYtPk/3ZT/Fqq4Dny
+         f4V+E5B9kjxk2u8p0ncmYdBQj/L10nxsqvNb8x/V4gqHdT1Xhwm1qOlVCaPLULlN51Ng
+         0emlxxyim7OtRzOdCv7Zj8l0OotJZNSOPjxw+v+Xg53/FHDe2S9sHU6njzKRxVm7R7QF
+         ukPWmaXk70etijA7F5b+/Y9xUWCqPwin1VhMJQVftYfN+1dDgA9Nfmz90iNwKG/8gvIZ
+         XhQ6WExUEprdHyr0BuYHsknBEtq5+ObYm/JfltVPnRvcp/ESS0Jb04OO5XcUY8qhW+Y0
+         wIBw==
+X-Forwarded-Encrypted: i=1; AJvYcCULLOM2T9wqlMXI2nRlUdgOLRt7L4s4stdvSeKzihr2PkaB9zHWMJVgzdhaO5BXQvT/2qTcwgA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzRZq9qqvYMfqKXw3mZbGFjPh2PhY9aGQyh9VZ5mbRFxfHAAnGO
+	ZMKoBEaZzbm7JKctVQz81rN3jtRDeXVcEnv1G7GJAqwEvXoYbR2fmpteHhGnWO8LEFUPkpRPR6R
+	G85w7TpDLUcvy0PpXJ7LZPOlXYxhfkQvuzNBkqEQNbmmrKDV7B3fEmBMVx2Z66cfePdcaqz5GEe
+	Q=
+X-Gm-Gg: ASbGncth8kRV52/44t1PjniWsExJTn0E8aIZuVRGk+rpvyTwgS44bJh4elXfiweRa42
+	EmdP/NRptvshPYopKmI2yrmKlsJO5+PzGw9gmQ7ZgxunhGPov0C/lVAwvMBpyLHcL2IcCmNZNsf
+	2SFaDbx7+HQimnkCVcluMifojJcjyHjQf+yPi+Wv5QgjP9ztlWexOQaSVJfQEN10Ku65fFqyYSZ
+	XfMEVPylhPyhLeO1TQ2BS+wPnsgp53pZzIJ/y71bhRFLm2xHJClCqEMhycMs2ByVVr/QErkF++s
+	2cQvjw4QJqLarFhu9BOJh33qJcDGTau6BE9Eld84wx+EbuCTTHpsNBtjmo/4xpC7517pKfeSw5A
+	dVXqA9wvnsOxAYO0gEJ66dAuFCNDgENLTbPgc
+X-Received: by 2002:a17:902:e94d:b0:24c:965a:f94d with SMTP id d9443c01a7336-26813cfd846mr59503775ad.46.1758180662358;
+        Thu, 18 Sep 2025 00:31:02 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHF6R0aGszZMJZu5EezdW7KvbKGGAQgOyOQqusY7oJkHBb0cO2tRgbEcai63GOpeXe32VmfCQ==
+X-Received: by 2002:a17:902:e94d:b0:24c:965a:f94d with SMTP id d9443c01a7336-26813cfd846mr59503435ad.46.1758180661869;
+        Thu, 18 Sep 2025 00:31:01 -0700 (PDT)
+Received: from [10.133.33.30] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-26980368dc1sm16041485ad.152.2025.09.18.00.31.00
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 18 Sep 2025 00:25:00 -0700 (PDT)
-Message-ID: <8bf63e27-57e9-fe60-698a-9207b5136c04@oss.qualcomm.com>
-Date: Thu, 18 Sep 2025 12:54:58 +0530
+        Thu, 18 Sep 2025 00:31:01 -0700 (PDT)
+Message-ID: <9c3db505-760d-41a3-9d6b-f55504db6872@oss.qualcomm.com>
+Date: Thu, 18 Sep 2025 15:30:56 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH ath-next V4] wifi: ath12k: report station mode per-chain
- signal strength
-Content-Language: en-US
-To: Lingbo Kong <lingbo.kong@oss.qualcomm.com>, ath12k@lists.infradead.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next 1/3] wifi: ath12k: enhance the
+ WMI_PEER_STA_KICKOUT event with reasons and RSSI reporting
+To: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>,
+        ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-References: <20250812030044.688-1-quic_lingbok@quicinc.com>
-From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <20250812030044.688-1-quic_lingbok@quicinc.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: oXuzMPFXqmQV0_jiRncpSP6-Mc6VflZW
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTE3MDExMCBTYWx0ZWRfX8+6esuTuw0S+
- pAtkFCrrsJ9/jsSP7lgJ90ABvgXztz8nRiWIrY1MerFAzoLyV8e91zKAShtu25RTQPTfAfBLurl
- mace2yoenjOd1VKV3jj7o3cF6nAOVcwNTdQA8ZqY6Js1jb00Cag9axSy8TqfGMVSZW7eYdZ8UQ6
- R9unkvJq6R87z4/3QBBQU/mf1bGHAEBWRvI3kUHIrBHVjfNu4uPNSKxyirwXFbpUGK0H74S2i+F
- nZT5RNHRPTlj4HrkVIlRUnKW2/pPYV8YrPdu1v0lPCmwcYLoVUhygNC355pab3nO70x8CdlCiPL
- I4GctdMTLwMrCGtp7+97Z1FoiAjsFnrp+xFNCos3YQ+dnSJGhH8wsGpAmnMrptw0nMJ6sZ+QEvS
- BHmqWXyj
-X-Authority-Analysis: v=2.4 cv=AeqxH2XG c=1 sm=1 tr=0 ts=68cbb3ce cx=c_pps
- a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
- a=pN-lpjZd9i1dOjWOSwIA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=_Vgx9l1VpLgwpw_dHYaR:22
-X-Proofpoint-GUID: oXuzMPFXqmQV0_jiRncpSP6-Mc6VflZW
+References: <20250812111708.3686-1-maharaja.kennadyrajan@oss.qualcomm.com>
+ <20250812111708.3686-2-maharaja.kennadyrajan@oss.qualcomm.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20250812111708.3686-2-maharaja.kennadyrajan@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: WBmM4jAmVj_ozZlwg9rSA0lKN087Jx1d
+X-Proofpoint-GUID: WBmM4jAmVj_ozZlwg9rSA0lKN087Jx1d
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTE3MDIxOSBTYWx0ZWRfX6FDmTNCu7X7f
+ v7FiH8d5Bl4Ws+SmhFVRG3IqmTCnqVmwJAi497yueZgtzwP2p3fwovjGShMBaogjjNTtL9fuy0g
+ u08D7beuPzImwMna2oBdCxRXGaw6wcIOvmQ2TRP/rjYHh0qKbIRGM/529H/YG3j9GD8I+nOga27
+ jPW2jaMM7K3h7u1ab37ybozpT29b6GmmraeK447sAiSLhvHfq841PJPLTolzKYxPq4nnpJP7SKd
+ nx1U9X38tEUGEOrCPRF7OpsXYCjSEElK2ThoL5TXkVFCO7j5TmDPC3WOevgyoGESaDoaVpzUCbk
+ 4RZp/6G7vjnoJeecdBhv7FOKIevVl+2uCI0amVlaYMg+4vPlblrKCTEk143wp0cmiZnKZktOQf3
+ 4XynA5et
+X-Authority-Analysis: v=2.4 cv=Fq8F/3rq c=1 sm=1 tr=0 ts=68cbb537 cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=eoNwnVE8TkJRRwwNz3IA:9
+ a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-17_01,2025-09-18_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 spamscore=0 phishscore=0 suspectscore=0 adultscore=0
- impostorscore=0 priorityscore=1501 bulkscore=0 clxscore=1015
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509170110
+ clxscore=1015 malwarescore=0 impostorscore=0 phishscore=0 priorityscore=1501
+ bulkscore=0 spamscore=0 suspectscore=0 adultscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2509170219
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250918_002504_199003_E46C37CF 
-X-CRM114-Status: GOOD (  11.03  )
+X-CRM114-CacheID: sfid-20250918_003105_127752_B1CA9AAB 
+X-CRM114-Status: GOOD (  19.67  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,43 +134,79 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 8/12/2025 8:30 AM, Lingbo Kong wrote:
-> From: Lingbo Kong <lingbo.kong@oss.qualcomm.com>
+On 8/12/2025 7:17 PM, Maharaja Kennadyrajan wrote:
+> Enhance the WMI_PEER_STA_KICKOUT event by adding support for reporting the
+> kickout reason and RSSI value. The reason code will be used in the
+> following patches when the beacon miss handling is added.
 > 
-> Currently, command “iw wlan0 station dump” does not show per-chain signal
-> strength.
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 > 
-> This is because ath12k does not handle the num_per_chain_rssi and
-> rssi_avg_beacon reported by firmware to ath12k.
+> Signed-off-by: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/wmi.c |  7 +++++--
+>  drivers/net/wireless/ath/ath12k/wmi.h | 15 +++++++++++++++
+>  2 files changed, 20 insertions(+), 2 deletions(-)
 > 
-> To address this, update ath12k to send WMI_REQUEST_STATS_CMDID with the
-> flag WMI_REQUEST_RSSI_PER_CHAIN_STAT to the firmware. Then, add logic to
-> handle num_per_chain_rssi and rssi_avg_beacon in the
-> ath12k_wmi_tlv_fw_stats_parse(), and assign the resulting per-chain signal
-> strength to the chain_signal of struct station_info.
-> 
-> After that, "iw dev xxx station dump" shows the correct per-chain signal
-> strength.
-> Such as:
-> 
-> Station AA:BB:CC:DD:EE:FF (on wlan0)
->          inactive time:  212 ms
->          rx bytes:       10398
->          rx packets:     64
->          tx bytes:       4362
->          tx packets:     33
->          tx retries:     49
->          tx failed:      0
->          beacon loss:    0
->          beacon rx:      14
->          rx drop misc:   16
->          signal:         -45 [-51, -46] dBm
->          beacon signal avg:      -44 dBm
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Closes: https://bugzilla.kernel.org/show_bug.cgi?id=219751
-> Signed-off-by: Lingbo Kong <lingbo.kong@oss.qualcomm.com>
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+> index da85c28ec355..cb686c68987a 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+> @@ -6461,6 +6461,8 @@ static int ath12k_pull_peer_sta_kickout_ev(struct ath12k_base *ab, struct sk_buf
+>  	}
+>  
+>  	arg->mac_addr = ev->peer_macaddr.addr;
+> +	arg->reason = le32_to_cpu(ev->reason);
+> +	arg->rssi = le32_to_cpu(ev->rssi);
+>  
+>  	kfree(tb);
+>  	return 0;
+> @@ -7333,8 +7335,9 @@ static void ath12k_peer_sta_kickout_event(struct ath12k_base *ab, struct sk_buff
+>  		goto exit;
+>  	}
+>  
+> -	ath12k_dbg(ab, ATH12K_DBG_WMI, "peer sta kickout event %pM",
+> -		   arg.mac_addr);
+> +	ath12k_dbg(ab, ATH12K_DBG_WMI,
+> +		   "peer sta kickout event %pM reason: %d rssi: %d\n",
 
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+nit:
+no ':' needed for a debug print?
+
+> +		   arg.mac_addr, arg.reason, arg.rssi);
+>  
+>  	ieee80211_report_low_ack(sta, 10);
+>  
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+> index f3b0a6f57ec2..211812c62f91 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.h
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
+> @@ -4548,12 +4548,27 @@ struct wmi_scan_event {
+>  	__le32 tsf_timestamp;
+>  } __packed;
+>  
+> +enum wmi_peer_sta_kickout_reason {
+> +	WMI_PEER_STA_KICKOUT_REASON_UNSPECIFIED = 0,
+> +	WMI_PEER_STA_KICKOUT_REASON_XRETRY = 1,
+> +	WMI_PEER_STA_KICKOUT_REASON_INACTIVITY = 2,
+> +	WMI_PEER_STA_KICKOUT_REASON_IBSS_DISCONNECT = 3,
+> +	WMI_PEER_STA_KICKOUT_REASON_TDLS_DISCONNECT = 4,
+> +	WMI_PEER_STA_KICKOUT_REASON_SA_QUERY_TIMEOUT = 5,
+> +	WMI_PEER_STA_KICKOUT_REASON_ROAMING_EVENT = 6,
+> +	WMI_PEER_STA_KICKOUT_REASON_PMF_ERROR = 7,
+> +};
+> +
+>  struct wmi_peer_sta_kickout_arg {
+>  	const u8 *mac_addr;
+> +	enum wmi_peer_sta_kickout_reason reason;
+> +	u32 rssi;
+>  };
+>  
+>  struct wmi_peer_sta_kickout_event {
+>  	struct ath12k_wmi_mac_addr_params peer_macaddr;
+> +	__le32 reason;
+> +	__le32 rssi;
+>  } __packed;
+>  
+>  #define WMI_ROAM_REASON_MASK		GENMASK(3, 0)
+
 
