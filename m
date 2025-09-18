@@ -4,78 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99D59CAC597
-	for <ath12k@archiver.kernel.org>; Thu, 18 Sep 2025 06:00:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03C2ECAC597
+	for <ath12k@archiver.kernel.org>; Thu, 18 Sep 2025 06:57:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=dUDNB+rsAjzCGZXjGg5vvGacZSBfr+ojqS+F0KRTTT8=; b=47TdUN0XWklahiqh3Djvd543do
-	QrsJpqd+2qZbTTgVdCGFhi+nqPrcc84Wb4Ye586K3xHQbouLS30/3dP/s2U86tDNFjV3GYIzgrxFV
-	njS3PEMAp05dJhUfuiKyD/WSc7fEHhoV6CXbkBMHlB47xC7GPTMc1KEUZbK51LClAu3Rzpf9WQXZY
-	/aZ73SFuNHEgedQE3fRgNWMDc7lC44bbnflBIdtUyloT8J5MgLmOJViMMeVrORLTrrhq6LmYlSQZo
-	UIS5H07DyssCCFpr0zIeP/t9qI19/zfzeMtOkyT5lKTvdMpmaK38NvRFhaVhHHKM7iidqfKqo587k
-	Y21RBspw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=kP7bfGFdU/7o7BOcVSMb+JUezO30+s+j/x36Ohrw/po=; b=g4fGPrt09kdauZ+d+dP6D31uOP
+	oZJzdiKVjxz9ZNz92pmcEJGM/vxUO8EOZUZq+De85Wz5sOEcYgBOcrF6CwISfa5e9fEdzSUsvheOv
+	ozylDX6D9qtlpnQascHTsvn7FGcMw2OBxgvoEaH6+jOyRSEKzftHTaP9oZK51BtiIw9bsyRMDVBI0
+	IDFqo+nJBmYB/pXuGUXeMweSru4k8OTGh1JsPSHCS2VLVlLeR1r4aNDhFHnJWVeskmeiafGtnsEMm
+	4780grb/SAGiknB+ntuZV7JfnETrb0EqXT36kkL8b5OJQHA0QLGWqCZa9rchSaZb25pAXlyE57Enk
+	6MggqWWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uz7gn-0000000GMsx-1W5D;
-	Thu, 18 Sep 2025 06:00:17 +0000
-Received: from mgamail.intel.com ([192.198.163.15])
+	id 1uz8a4-0000000GTt8-3Edf;
+	Thu, 18 Sep 2025 06:57:24 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uz7gk-0000000GMsU-1azM
+	id 1uz8a1-0000000GTqw-3H9p
 	for ath12k@lists.infradead.org;
-	Thu, 18 Sep 2025 06:00:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1758175214; x=1789711214;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=0old9ctTyJsH/xFzWRZPdPpfchK49uoPWBzcpSBTL70=;
-  b=SVTUpv2dugzoa5Mdhn0KALjxztTYf0z/w7cDkf0rPyQjBQOFiU6PvZ5E
-   FZVGRlx6caC8+qKafK1cQVY3Eaq355U05odQ5Oyw+/fQFU1kpQN9f1QBN
-   ETCSXA1VbTQlwlo1E3I/jNhfzqGAgRM2uU9izvHPv5u5QgeCN5W3RzgX8
-   wiJF18WQJ+6jyr3m6crdjIeX3esizgxHCfT6ABUHvkv3DDfKm5b8nDgM1
-   cyS62jB/q5hPz19Cvtuh7ikfVHfzGwMt4UEUax4Yq3EPu97yr+6sFsiUx
-   PIeJn/joXv5XoahbfhOhFHZf//0HVrfZVjGiUOXaGGAX3f47zkCLS6xsg
-   A==;
-X-CSE-ConnectionGUID: bI+peFPSSbiw+gimD7C0PQ==
-X-CSE-MsgGUID: oH/+XjBZTj6M4zt/uRUIeg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11556"; a="60606195"
-X-IronPort-AV: E=Sophos;i="6.18,274,1751266800"; 
-   d="scan'208";a="60606195"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Sep 2025 23:00:12 -0700
-X-CSE-ConnectionGUID: HqVbENHoSCCstfpcc2jBfA==
-X-CSE-MsgGUID: O/WEU7TfQCO7wMt5r4e3QA==
-X-ExtLoop1: 1
-Received: from lkp-server01.sh.intel.com (HELO 84a20bd60769) ([10.239.97.150])
-  by fmviesa003.fm.intel.com with ESMTP; 17 Sep 2025 23:00:10 -0700
-Received: from kbuild by 84a20bd60769 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uz7gd-0002oN-0f;
-	Thu, 18 Sep 2025 06:00:07 +0000
-Date: Thu, 18 Sep 2025 13:59:15 +0800
-From: kernel test robot <lkp@intel.com>
-To: Alexander Wilhelm <alexander.wilhelm@westermo.com>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>
-Cc: oe-kbuild-all@lists.linux.dev, linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org
-Subject: Re: [PATCH v2 RESEND 2/4] soc: qcom: fix QMI encoding/decoding for
- basic elements
-Message-ID: <202509181302.j10W2wCw-lkp@intel.com>
-References: <20250917070428.2909-3-alexander.wilhelm@westermo.com>
+	Thu, 18 Sep 2025 06:57:23 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58I6bViF027120
+	for <ath12k@lists.infradead.org>; Thu, 18 Sep 2025 06:57:20 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	kP7bfGFdU/7o7BOcVSMb+JUezO30+s+j/x36Ohrw/po=; b=idYCm4t0dtfo1mNf
+	B2Ols5/GhVrplFSi7idhch8X0MeJX9GJv32dde2Vo//5J9SR5HBV3nmAOIG4zioJ
+	EAFpy5d1p0q+e6RZ1VdSzdfmWbmsaSXdeJ7eYOIoLKwYZFardky8jEsMkTr7X9Sk
+	OURmuhvqcajlpHAQpec1C8aE98oBkVYFXf7C0PlYAjYooZ1HxHWViDX5Du/MOe/3
+	+NQ+ic0AVwoLtoZR6b6pVqc2LPM60LLLD8gX6SaqSbgaImJQfL+PpNLKxthAgCgA
+	4h44ZnSwGhANADnb9Qe0VmBMsALL4Gn5Z+EH8goW0S16w15y5qRkBNerYr6uQiKR
+	z0ENmA==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 497v1jb828-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 18 Sep 2025 06:57:20 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-244581953b8so7627855ad.2
+        for <ath12k@lists.infradead.org>; Wed, 17 Sep 2025 23:57:20 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758178639; x=1758783439;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=kP7bfGFdU/7o7BOcVSMb+JUezO30+s+j/x36Ohrw/po=;
+        b=HPXnzeJOXebFtQnWAj4s+qAMww8nojHALkhxeVblIlIlIZL9Y3fFMeLRkGxZctpu9y
+         XFaZVsGIHnFgJDx//+NccKgATC1xj0Q+ft+ufjLLty33uMf+jW8Cy1xNrotCdDRpMvM2
+         qIz3Rdq+q1FN12CUoWSeVxsMwDneDL+JSBNdVUASJL+21XbxjhtoE6D34RNC9lHCGqfX
+         zEbiecYKkFrsfw3KbmLqM0AeZ4n+FJsmvG6T+XElT6CjieQ1x3hGRWC10OedJQJkjiIa
+         MBuyWK78NlTbp4MioxnTd97pXq1hvjAmj2PkUgddQWOgZ0hcMW4SPRD8rlWd4nmCZklA
+         X1pQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUmidTeH5MQku+NeN/a7a4OhkfL65JbHBw/jLMaQGOeMBiIu0hHaV5M2qb4sdtO50TjkhH0m6A=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywk0AQPOUekYBnbP6UpfXfP7njvGW6dsPppPPLY2d2uND/CJ8ji
+	lOPVOpuxxNb/2xfODcf+MSQ+zTtaQbDh8jwhCj0TXkXZ3JOiV+8RlGjZnE0mchDI/nXpVKHslNH
+	a51tHWQUTI4+JrRdWmXL2GYILuk5qw+sQtG9Cm7rauM4vvSWhau/wk4ShqC/vZlAB
+X-Gm-Gg: ASbGncvNNSj+Mgu6MeLBSP1NWcx6V8SCVP4O/vMBEobwS00sc+jOkkhJHK7FOHSbNWk
+	S0+ZCtlmXI7EwSS1jyL04PWRzO1uAiyYui/1FYzPvYJfz017WUg+v/qNXiyoroxQ0Dyv7klGShf
+	zucSXr237wfSaLJ3FEOLu7kypxDQnDCC/TvVCC2Qluu4q7LFEXaMdwMb3MiHnsZBj9Pz+zw/Ufz
+	V1Zs7MjZpUUwcXdS+nfeg7vldQnL8VHmx/M7YYwuSY3NVEHR17/QmBN7SdeAr5frX9hixI1iiLt
+	rpgEE2xI9uglHKochHB2cH28RCqlWZC5Znyzs9VQhcDBg3gjHxeQXy+RhjRr1A8uitl8CzVq450
+	maOJbaw==
+X-Received: by 2002:a17:903:19d0:b0:267:9a29:7800 with SMTP id d9443c01a7336-26813f1d000mr61188745ad.59.1758178639550;
+        Wed, 17 Sep 2025 23:57:19 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEu+tO6Q57GSmftk1FgfAyqaDBz+rsymYzavH7+yrOI3zPLb0aE7EqBJflDWcrWlzsqxeR8vg==
+X-Received: by 2002:a17:903:19d0:b0:267:9a29:7800 with SMTP id d9443c01a7336-26813f1d000mr61188465ad.59.1758178639021;
+        Wed, 17 Sep 2025 23:57:19 -0700 (PDT)
+Received: from [10.152.204.0] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2698030ee20sm15625335ad.109.2025.09.17.23.57.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 17 Sep 2025 23:57:18 -0700 (PDT)
+Message-ID: <7bb9c17f-34a9-2602-8bb5-d0d5f12f47d2@oss.qualcomm.com>
+Date: Thu, 18 Sep 2025 12:27:16 +0530
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20250917070428.2909-3-alexander.wilhelm@westermo.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH ath-next 0/3] wifi: ath12k: Add support to handle
+ inactivity STA kickout event
+Content-Language: en-US
+To: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250812111708.3686-1-maharaja.kennadyrajan@oss.qualcomm.com>
+From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+In-Reply-To: <20250812111708.3686-1-maharaja.kennadyrajan@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: o-J8cW7STc_f6L5VlpcW_tRu-2upa1-4
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTE3MDExMCBTYWx0ZWRfX0lL0f0dZOFxe
+ wzrBPWbT2RUANMbv8ErdnKjYusDbAceGSkL6GEU5wr8/yaDgcnmrq0O8lOu8P9If87DtIbtqBxN
+ runvNb4bePk65zzwGPpMwV9qX8bPdBfBN6gfAw2sB0iOyQHmetpa06dsGGIZRb1qAVpEgUdSTyw
+ jcwc5QRq+kQbXwcl7KPBWE/j9EP9XZgJW61D6UO7DngqKL7pLYDOtdalBZq7tXESDbX3QthElv8
+ eApV/NzNe64Ng8EaONGmM2iN3GftHt7ytlcHcM4QoVEmogCSDKx1vnj7mQwhizDznyG+AtZdRxJ
+ l10XObbkts/Mv3z2R4XL6KeptARvPWJqRLgb9OsGlm6g7K0esAve5PYeYLRW1SN4LzxJixfwYHY
+ b0kbZ8zS
+X-Authority-Analysis: v=2.4 cv=AeqxH2XG c=1 sm=1 tr=0 ts=68cbad50 cx=c_pps
+ a=cmESyDAEBpBGqyK7t0alAg==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=o4nd2XIhPPp7Sg7KCEwA:9
+ a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22
+X-Proofpoint-GUID: o-J8cW7STc_f6L5VlpcW_tRu-2upa1-4
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-17_01,2025-09-18_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 spamscore=0 phishscore=0 suspectscore=0 adultscore=0
+ impostorscore=0 priorityscore=1501 bulkscore=0 clxscore=1015
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509170110
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250917_230014_478505_6044A2F1 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20250917_235721_941932_876444F8 
+X-CRM114-Status: GOOD (  13.39  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,114 +131,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi Alexander,
 
-kernel test robot noticed the following build warnings:
 
-[auto build test WARNING on ath/ath-next]
-[also build test WARNING on linus/master v6.17-rc6 next-20250917]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+On 8/12/2025 4:47 PM, Maharaja Kennadyrajan wrote:
+> In this patch series, enhance the WMI_PEER_STA_KICKOUT event by adding
+> support for reporting the kickout reason and RSSI value.
+> All reason codes are handled by reporting low ACKs, and will be leveraged
+> in the future.
+> 
+> Add support to handle the peer non-AP STA kickout event for the reason
+> inactivity.
+> 
+> Currently, the ath12k_mac_handle_beacon_miss() does not handle MLO non-AP
+> STA. Hence, add support to handle the MLO non-AP support.
+> 
+> Arulanbu Balusamy (1):
+>    wifi: ath12k: Add support to handle reason inactivity STA kickout
+>      event for QCN9274/IPQ5332
+> 
+> Maharaja Kennadyrajan (2):
+>    wifi: ath12k: enhance the WMI_PEER_STA_KICKOUT event with reasons and
+>      RSSI reporting
+>    wifi: ath12k: Extend beacon miss handling for MLO non-AP STA
+> 
+>   drivers/net/wireless/ath/ath12k/mac.c | 24 +++--------
+>   drivers/net/wireless/ath/ath12k/mac.h |  3 +-
+>   drivers/net/wireless/ath/ath12k/wmi.c | 60 ++++++++++++++++++++-------
+>   drivers/net/wireless/ath/ath12k/wmi.h | 15 +++++++
+>   4 files changed, 66 insertions(+), 36 deletions(-)
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Alexander-Wilhelm/soc-qcom-introduce-generic-QMI-encoding-decoding-macros/20250917-150826
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath-next
-patch link:    https://lore.kernel.org/r/20250917070428.2909-3-alexander.wilhelm%40westermo.com
-patch subject: [PATCH v2 RESEND 2/4] soc: qcom: fix QMI encoding/decoding for basic elements
-config: openrisc-randconfig-r132-20250918 (https://download.01.org/0day-ci/archive/20250918/202509181302.j10W2wCw-lkp@intel.com/config)
-compiler: or1k-linux-gcc (GCC) 15.1.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250918/202509181302.j10W2wCw-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202509181302.j10W2wCw-lkp@intel.com/
-
-sparse warnings: (new ones prefixed by >>)
-   drivers/soc/qcom/qmi_encdec.c:384:55: sparse: sparse: cast to restricted __le16
-   drivers/soc/qcom/qmi_encdec.c:384:55: sparse: sparse: cast to restricted __le16
-   drivers/soc/qcom/qmi_encdec.c:384:55: sparse: sparse: cast to restricted __le16
-   drivers/soc/qcom/qmi_encdec.c:384:55: sparse: sparse: cast to restricted __le16
-   drivers/soc/qcom/qmi_encdec.c:715:31: sparse: sparse: incorrect type in assignment (different base types) @@     expected unsigned int [usertype] val32 @@     got restricted __le32 [usertype] @@
-   drivers/soc/qcom/qmi_encdec.c:715:31: sparse:     expected unsigned int [usertype] val32
-   drivers/soc/qcom/qmi_encdec.c:715:31: sparse:     got restricted __le32 [usertype]
->> drivers/soc/qcom/qmi_encdec.c:188:25: sparse: sparse: incorrect type in assignment (different base types) @@     expected unsigned short [usertype] @@     got restricted __le16 [usertype] @@
-   drivers/soc/qcom/qmi_encdec.c:188:25: sparse:     expected unsigned short [usertype]
-   drivers/soc/qcom/qmi_encdec.c:188:25: sparse:     got restricted __le16 [usertype]
->> drivers/soc/qcom/qmi_encdec.c:191:25: sparse: sparse: incorrect type in assignment (different base types) @@     expected unsigned int [usertype] @@     got restricted __le32 [usertype] @@
-   drivers/soc/qcom/qmi_encdec.c:191:25: sparse:     expected unsigned int [usertype]
-   drivers/soc/qcom/qmi_encdec.c:191:25: sparse:     got restricted __le32 [usertype]
->> drivers/soc/qcom/qmi_encdec.c:194:25: sparse: sparse: incorrect type in assignment (different base types) @@     expected unsigned long long [usertype] @@     got restricted __le64 [usertype] @@
-   drivers/soc/qcom/qmi_encdec.c:194:25: sparse:     expected unsigned long long [usertype]
-   drivers/soc/qcom/qmi_encdec.c:194:25: sparse:     got restricted __le64 [usertype]
-   drivers/soc/qcom/qmi_encdec.c:485:25: sparse: sparse: cast to restricted __le16
-   drivers/soc/qcom/qmi_encdec.c:485:25: sparse: sparse: cast to restricted __le16
-   drivers/soc/qcom/qmi_encdec.c:485:25: sparse: sparse: cast to restricted __le16
-   drivers/soc/qcom/qmi_encdec.c:485:25: sparse: sparse: cast to restricted __le16
->> drivers/soc/qcom/qmi_encdec.c:488:25: sparse: sparse: cast to restricted __le32
->> drivers/soc/qcom/qmi_encdec.c:488:25: sparse: sparse: cast to restricted __le32
->> drivers/soc/qcom/qmi_encdec.c:488:25: sparse: sparse: cast to restricted __le32
->> drivers/soc/qcom/qmi_encdec.c:488:25: sparse: sparse: cast to restricted __le32
->> drivers/soc/qcom/qmi_encdec.c:488:25: sparse: sparse: cast to restricted __le32
->> drivers/soc/qcom/qmi_encdec.c:488:25: sparse: sparse: cast to restricted __le32
->> drivers/soc/qcom/qmi_encdec.c:491:25: sparse: sparse: cast to restricted __le64
->> drivers/soc/qcom/qmi_encdec.c:491:25: sparse: sparse: cast to restricted __le64
->> drivers/soc/qcom/qmi_encdec.c:491:25: sparse: sparse: cast to restricted __le64
->> drivers/soc/qcom/qmi_encdec.c:491:25: sparse: sparse: cast to restricted __le64
->> drivers/soc/qcom/qmi_encdec.c:491:25: sparse: sparse: cast to restricted __le64
->> drivers/soc/qcom/qmi_encdec.c:491:25: sparse: sparse: cast to restricted __le64
->> drivers/soc/qcom/qmi_encdec.c:491:25: sparse: sparse: cast to restricted __le64
->> drivers/soc/qcom/qmi_encdec.c:491:25: sparse: sparse: cast to restricted __le64
->> drivers/soc/qcom/qmi_encdec.c:491:25: sparse: sparse: cast to restricted __le64
->> drivers/soc/qcom/qmi_encdec.c:491:25: sparse: sparse: cast to restricted __le64
-
-vim +188 drivers/soc/qcom/qmi_encdec.c
-
-   161	
-   162	/**
-   163	 * qmi_encode_basic_elem() - Encodes elements of basic/primary data type
-   164	 * @buf_dst: Buffer to store the encoded information.
-   165	 * @buf_src: Buffer containing the elements to be encoded.
-   166	 * @elem_len: Number of elements, in the buf_src, to be encoded.
-   167	 * @elem_size: Size of a single instance of the element to be encoded.
-   168	 *
-   169	 * This function encodes the "elem_len" number of data elements, each of
-   170	 * size "elem_size" bytes from the source buffer "buf_src" and stores the
-   171	 * encoded information in the destination buffer "buf_dst". The elements are
-   172	 * of primary data type which include u8 - u64 or similar. This
-   173	 * function returns the number of bytes of encoded information.
-   174	 *
-   175	 * Return: The number of bytes of encoded information.
-   176	 */
-   177	static int qmi_encode_basic_elem(void *buf_dst, const void *buf_src,
-   178					 u32 elem_len, u32 elem_size)
-   179	{
-   180		u32 i, rc = 0;
-   181	
-   182		for (i = 0; i < elem_len; i++) {
-   183			switch (elem_size) {
-   184			case sizeof(u8):
-   185				QMI_ENCDEC_ENCODE_N_BYTES(buf_dst, buf_src, u8);
-   186				break;
-   187			case sizeof(u16):
- > 188				QMI_ENCDEC_ENCODE_N_BYTES(buf_dst, buf_src, u16);
-   189				break;
-   190			case sizeof(u32):
- > 191				QMI_ENCDEC_ENCODE_N_BYTES(buf_dst, buf_src, u32);
-   192				break;
-   193			case sizeof(u64):
- > 194				QMI_ENCDEC_ENCODE_N_BYTES(buf_dst, buf_src, u64);
-   195				break;
-   196			}
-   197	
-   198			rc += elem_size;
-   199		}
-   200	
-   201		return rc;
-   202	}
-   203	
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
