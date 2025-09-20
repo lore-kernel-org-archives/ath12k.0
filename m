@@ -4,69 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BA9BCAC59A
-	for <ath12k@archiver.kernel.org>; Sat, 20 Sep 2025 01:28:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0378ACAC5A7
+	for <ath12k@archiver.kernel.org>; Sat, 20 Sep 2025 13:17:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=NmgDvRS2dmeSvuaIAoZVAJzW7BoPHMR69NWeLFGcM4k=; b=P3ehUlI1g49NQoi/ISAvjR9/ka
-	k7KKLTO0ynX8eMevTcEEON+E9Tb2qo1BQ9jrazV0QwaA9ZSz8KdJgC9k3vfEEDmOlBD2i4huiYwXP
-	bPg548MI6eYKgQbE4+LMVLb594aeck/CJIViUwNosZ2mep+T5uPcs1/xGepcXXwhtIhyYOO0RH5Qn
-	GOQbJjyoX9R+31nlcfw3TygJd3I4+6HLEOATgprP4y40+X4NUMdNluEhVFAZsLeNOnrWQGOS1ML4o
-	bN/Cok0jybSu//5tKlrN9SKLIID03NZHxpkWfrZeU0/fJ6M1VlZjwnml0z7lXQlgvnv+K8FBpPejR
-	wiYbhf5g==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:References:To:From:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Zll4SNV0UXuaw1z0c42FJDmUtagXkQ9o8ASVrp8b6b8=; b=ATPqR1a8+gX3QrGd1nZguyF71P
+	fWOvGMjnFdo3PnmFpguogNW0i7PVO4ZqAB2fjqPmb4HPcm2b9y2XWMXFErNkRe+HbhoQlI6lu6sah
+	qIDaov31mQvUWeRkvGrr6GQol8s9VBQARsfTkJT0SVVC202kmeN64XPBtaQWGSh1sWHb/6RWOCMUl
+	Cz4Gb0fkRQhQtwB5Z6ukTxbvPDyM2rtgpNnuOJVpsiojjtr+/KIB82I3mLfVGNFsgH850G57d0pIB
+	xTMxIgeC5QbBAOuFjPzKpLAdHClH7RQXRd+138BBwHfa1GBc7QrBO2pJoPsbeul5WQi5pG9pv9fe+
+	jkSHkA/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzmPI-00000004Ugs-0WIR;
-	Sat, 20 Sep 2025 01:28:56 +0000
-Received: from mgamail.intel.com ([192.198.163.16])
+	id 1uzxSX-00000005OBQ-3A0H;
+	Sat, 20 Sep 2025 13:17:01 +0000
+Received: from mail.mokrynskyi.com ([65.109.39.229])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzmPF-00000004UgV-2UlP
+	id 1uzxSV-00000005OAY-0zoS
 	for ath12k@lists.infradead.org;
-	Sat, 20 Sep 2025 01:28:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1758331734; x=1789867734;
-  h=date:from:to:cc:subject:message-id;
-  bh=u2CPl4SI1dnxFXoT0q6F4qAejT8Js6vbnbJyCD697NQ=;
-  b=IovRDEd4QT4hSV2pc63PenlYBlQEXru5YN221/ctVqYqrOj0/Idrhs/0
-   9mCMGQ6DkS4Ng8EN+rOsFHll0a2KbX3L28p/DKKFH9xmjckwBA/TEe4Fc
-   mL0UMTkMowRDCo94+gRW1nOKP+3UCT9GNtmg0jVc1yf4ocbxZVa3h/Ign
-   W3qckPaCRqR3ECNfjwrtk+k5omleSYDHEHp95Oajii16AUOMsBn7kKJbs
-   x+JHvqNlUoI+SF4kY8vBnwEX6Usjs5X+Dt+62MqyW9a44WdyVH+084lvq
-   OZ/klB72WmG7zJhCHK4x8eH8SenQL8VHUI1e0SRmcwA5EaKfjDsjKtVTJ
-   A==;
-X-CSE-ConnectionGUID: Rppyrkn7SwSV/8LRbB7hvA==
-X-CSE-MsgGUID: kTRMe6XfSnWH0JJxDH8G9A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11558"; a="48258142"
-X-IronPort-AV: E=Sophos;i="6.18,279,1751266800"; 
-   d="scan'208";a="48258142"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Sep 2025 18:28:53 -0700
-X-CSE-ConnectionGUID: pbHpwnrMRziY42F5UB9/Pg==
-X-CSE-MsgGUID: 78hRTjKQTvKfMxPUdE8bhg==
-X-ExtLoop1: 1
-Received: from lkp-server01.sh.intel.com (HELO 84a20bd60769) ([10.239.97.150])
-  by fmviesa003.fm.intel.com with ESMTP; 19 Sep 2025 18:28:51 -0700
-Received: from kbuild by 84a20bd60769 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uzmPB-0004wh-0r;
-	Sat, 20 Sep 2025 01:28:49 +0000
-Date: Sat, 20 Sep 2025 09:27:55 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master] BUILD SUCCESS
- 91bfab306bdaa4607dcddba4f8d299b408e5119b
-Message-ID: <202509200949.suL3cKjM-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Sat, 20 Sep 2025 13:17:00 +0000
+Message-ID: <711d7c74-eca5-40d6-b3df-278324982fb6@mokrynskyi.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mokrynskyi.com;
+	s=dkim; t=1758373797;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=Zll4SNV0UXuaw1z0c42FJDmUtagXkQ9o8ASVrp8b6b8=;
+	b=FqvkGXjWalBsdtyaNJhUIlInI66oBpoQbKwRknj70Hmjkh1ra8nP213PBYVFt5iqjIYg4N
+	cm+PoJVjAXaHbldh0OpiC35ViBlikhejlHfh4J3nZGf5vs7hzOmA3j5cfwbBhJj1cXw9XD
+	kZYEKmhxzKC/RrIM8ri8NbQJn9jyxz+8gYKQyf3ZkgUcpBBHXKJ44exo0bGwlwjGb6cl8j
+	LjC11EdPfH9k3ctV6Jp38BQMVakdURtFTQb3ggys5mT0v+xF3RgoGt/XiAzBAfIo22EjP2
+	0FHbEpvra9Rv9FiGMQs2AGNGy1k3ZUkEfxq/uskP4iLbtjwDAKgvY1UPlwtbhA==
+Authentication-Results: mail.mokrynskyi.com;
+	auth=pass smtp.mailfrom=nazar@mokrynskyi.com
+Date: Sat, 20 Sep 2025 16:09:53 +0300
+MIME-Version: 1.0
+Subject: Re: The whole computer hard resets when trying to load ath12k driver
+ in a KVM VM
+From: Nazar Mokrynskyi <nazar@mokrynskyi.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, ath12k@lists.infradead.org
+References: <1bd351ec-1ed9-4a01-aae5-0ceb17fbffce@mokrynskyi.com>
+ <71416eb9-d313-48de-86b1-40e8044b4076@mokrynskyi.com>
+ <bfb8fb5c-ac92-4ebc-8cb6-c46ac2751418@oss.qualcomm.com>
+ <2b0d5ae2-efaf-49c1-a748-724b13dfc94c@mokrynskyi.com>
+Content-Language: en-US, uk, uk-UA
+In-Reply-To: <2b0d5ae2-efaf-49c1-a748-724b13dfc94c@mokrynskyi.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Spamd-Bar: ---
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250919_182853_675697_476A65C4 
-X-CRM114-Status: UNSURE (   3.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250920_061659_597177_434C3B1C 
+X-CRM114-Status: GOOD (  30.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,158 +74,131 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-branch HEAD: 91bfab306bdaa4607dcddba4f8d299b408e5119b  Add localversion-wireless-testing-ath
+Okay, I was able to prevent whole system crashes with `pci=noaer` when booting host kernel (Ubuntu 24.04 6.14.0-29-generic).
+Would be nice if it was not necessary, any idea why things escalate so much?
 
-elapsed time: 1383m
+With older OpenWrt snapshot (r30806-070d8eb4d5) derived from 6.12.40 kernel I was getting these two cases alternating on odd/even boots of the VM:
 
-configs tested: 138
-configs skipped: 4
+> [    7.393886] ath12k_pci 0000:04:00.0: BAR 0 [mem 0x89400000-0x895fffff 64bit]: assigned
+> [    7.402838] ath12k_pci 0000:04:00.0: MSI vectors: 16
+> [    7.407763] ath12k_pci 0000:04:00.0: Hardware name: qcn9274 hw2.0
+> [    7.542240] ath12k_pci 0000:04:00.0: link down error during global reset
+> [    7.570471] mhi mhi0: BHI offset: 0xffffffff is out of range: 0x200000
+> [    7.577614] ath12k_pci 0000:04:00.0: failed to set mhi state: INIT(0)
+> [    7.578488] ath12k_pci 0000:04:00.0: failed to start mhi: -34
+> [    7.579312] ath12k_pci 0000:04:00.0: failed to power up :-34
+> [    7.615653] ath12k_pci 0000:04:00.0: failed to create soc core: -34
+> [    7.617815] ath12k_pci 0000:04:00.0: unable to create hw group
+> [    7.655683] ath12k_pci 0000:04:00.0: failed to init core: -34
+> [    8.123971] ath12k_pci 0000:04:00.0: probe with driver ath12k_pci failed with error -34
+> [    7.158610] ath12k_pci 0000:04:00.0: BAR 0 [mem 0x89400000-0x895fffff 64bit]: assigned
+> [    7.172045] ath12k_pci 0000:04:00.0: MSI vectors: 16
+> [    7.177707] ath12k_pci 0000:04:00.0: Hardware name: qcn9274 hw2.0
+> [    7.291634] ath12k_pci 0000:04:00.0: link down error during global reset
+> [    7.320049] mhi mhi0: Requested to power ON
+> [    7.368077] mhi mhi0: Power on setup success
+> [    7.538116] mhi mhi0: Wait for device to enter SBL or Mission mode
+> [    8.036845] ath12k_pci 0000:04:00.0: qmi dma allocation failed (29360128 B type 1), will try later with small size
+> [    8.046735] ath12k_pci 0000:04:00.0: memory type 10 not supported
+> [    8.050328] kmodloader: done loading kernel modules from /etc/modules.d/*
+> [    8.053813] ath12k_pci 0000:04:00.0: chip_id 0x0 chip_family 0xb board_id 0xff soc_id 0x401a2200
+> [    8.063240] ath12k_pci 0000:04:00.0: fw_version 0x150c0673 fw_build_timestamp 2025-04-24 15:13 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
+> [    8.086352] ath12k_pci 0000:04:00.0: failed to fetch board data for bus=pci,qmi-chip-id=0,qmi-board-id=255 from ath12k/QCN9274/hw2.0/board-2.bin
+> [    8.087598] ath12k_pci 0000:04:00.0: failed to fetch board.bin from QCN9274/hw2.0
+> [    8.093428] ath12k_pci 0000:04:00.0: qmi failed to load bdf:
+> [    8.094398] ath12k_pci 0000:04:00.0: qmi failed to load board data file:-12
+After upgrading to the current latest OpenWrt snapshot (r31110-41aaebad98) derived from 6.12.47 kernel I got this:
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+> [    7.208812] ath12k_pci 0000:04:00.0: BAR 0 [mem 0x89400000-0x895fffff 64bit]: assigned
+> [    7.224830] ath12k_pci 0000:04:00.0: MSI vectors: 16
+> [    7.230381] ath12k_pci 0000:04:00.0: Hardware name: qcn9274 hw2.0
+> [    7.342952] ath12k_pci 0000:04:00.0: link down error during global reset
+> [    7.371390] mhi mhi0: Requested to power ON
+> [    7.417659] mhi mhi0: Power on setup success
+> [  164.087661] mhi mhi0: Device failed to enter MHI Ready
+> [  164.090720] mhi mhi0: MHI did not enter READY state
+> [  164.091615] ath12k_pci 0000:04:00.0: failed to set mhi state: POWER_ON(2)
+> [  164.093214] ath12k_pci 0000:04:00.0: failed to start mhi: -110
+> [  164.094584] ath12k_pci 0000:04:00.0: failed to power up :-110
+> [  164.127713] ath12k_pci 0000:04:00.0: failed to create soc core: -110
+> [  164.132306] ath12k_pci 0000:04:00.0: unable to create hw group
+> [  164.167670] ath12k_pci 0000:04:00.0: failed to init core: -110
+> [  164.632064] ath12k_pci 0000:04:00.0: probe with driver ath12k_pci failed with error -110
+And now most of the time I'm stuck on the situation like the odd boot before, even after cold boot of the host machine with "mhi mhi0: BHI offset: 0xffffffff is out of range: 0x200000".
+Very rarely I get above "mhi mhi0: Device failed to enter MHI Ready" hang instead, can't figure out the pattern, maybe it is just racy or something.
 
-tested configs:
-alpha                             allnoconfig    gcc-15.1.0
-alpha                            allyesconfig    gcc-15.1.0
-alpha                               defconfig    gcc-15.1.0
-arc                              allmodconfig    gcc-15.1.0
-arc                               allnoconfig    gcc-15.1.0
-arc                              allyesconfig    gcc-15.1.0
-arc                                 defconfig    gcc-15.1.0
-arc                   randconfig-001-20250919    gcc-15.1.0
-arc                   randconfig-002-20250919    gcc-8.5.0
-arm                              allmodconfig    gcc-15.1.0
-arm                               allnoconfig    clang-22
-arm                              allyesconfig    gcc-15.1.0
-arm                                 defconfig    clang-22
-arm                            mmp2_defconfig    gcc-15.1.0
-arm                           omap1_defconfig    gcc-15.1.0
-arm                       omap2plus_defconfig    gcc-15.1.0
-arm                   randconfig-001-20250919    gcc-12.5.0
-arm                   randconfig-002-20250919    gcc-10.5.0
-arm                   randconfig-003-20250919    gcc-12.5.0
-arm                   randconfig-004-20250919    clang-22
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-15.1.0
-arm64                               defconfig    gcc-15.1.0
-arm64                 randconfig-001-20250919    gcc-15.1.0
-arm64                 randconfig-002-20250919    gcc-8.5.0
-arm64                 randconfig-003-20250919    gcc-12.5.0
-arm64                 randconfig-004-20250919    gcc-11.5.0
-csky                              allnoconfig    gcc-15.1.0
-csky                                defconfig    gcc-15.1.0
-csky                  randconfig-001-20250919    gcc-14.3.0
-csky                  randconfig-002-20250919    gcc-15.1.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-22
-hexagon                          allyesconfig    clang-22
-hexagon               randconfig-001-20250919    clang-22
-hexagon               randconfig-002-20250919    clang-22
-i386                             allmodconfig    gcc-14
-i386                              allnoconfig    gcc-14
-i386                             allyesconfig    gcc-14
-i386        buildonly-randconfig-001-20250919    clang-20
-i386        buildonly-randconfig-002-20250919    gcc-14
-i386        buildonly-randconfig-003-20250919    gcc-14
-i386        buildonly-randconfig-004-20250919    gcc-14
-i386        buildonly-randconfig-005-20250919    clang-20
-i386        buildonly-randconfig-006-20250919    clang-20
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    clang-19
-loongarch                         allnoconfig    clang-22
-loongarch             randconfig-001-20250919    gcc-15.1.0
-loongarch             randconfig-002-20250919    clang-22
-m68k                             allmodconfig    gcc-15.1.0
-m68k                              allnoconfig    gcc-15.1.0
-m68k                             allyesconfig    gcc-15.1.0
-m68k                            mac_defconfig    gcc-15.1.0
-microblaze                       allmodconfig    gcc-15.1.0
-microblaze                        allnoconfig    gcc-15.1.0
-microblaze                       allyesconfig    gcc-15.1.0
-microblaze                          defconfig    gcc-15.1.0
-mips                              allnoconfig    gcc-15.1.0
-nios2                             allnoconfig    gcc-11.5.0
-nios2                               defconfig    gcc-11.5.0
-nios2                 randconfig-001-20250919    gcc-10.5.0
-nios2                 randconfig-002-20250919    gcc-8.5.0
-openrisc                          allnoconfig    gcc-15.1.0
-openrisc                         allyesconfig    gcc-15.1.0
-openrisc                            defconfig    gcc-15.1.0
-parisc                           allmodconfig    gcc-15.1.0
-parisc                            allnoconfig    gcc-15.1.0
-parisc                           allyesconfig    gcc-15.1.0
-parisc                              defconfig    gcc-15.1.0
-parisc                generic-64bit_defconfig    gcc-15.1.0
-parisc                randconfig-001-20250919    gcc-15.1.0
-parisc                randconfig-002-20250919    gcc-15.1.0
-parisc64                            defconfig    gcc-15.1.0
-powerpc                          allmodconfig    gcc-15.1.0
-powerpc                           allnoconfig    gcc-15.1.0
-powerpc                          allyesconfig    clang-22
-powerpc                 linkstation_defconfig    clang-20
-powerpc                 mpc837x_rdb_defconfig    gcc-15.1.0
-powerpc                  mpc866_ads_defconfig    clang-22
-powerpc               randconfig-001-20250919    gcc-10.5.0
-powerpc               randconfig-002-20250919    gcc-8.5.0
-powerpc               randconfig-003-20250919    clang-18
-powerpc                     taishan_defconfig    clang-17
-powerpc64             randconfig-001-20250919    gcc-8.5.0
-powerpc64             randconfig-002-20250919    gcc-13.4.0
-powerpc64             randconfig-003-20250919    clang-18
-riscv                            allmodconfig    clang-22
-riscv                             allnoconfig    gcc-15.1.0
-riscv                            allyesconfig    clang-16
-riscv                               defconfig    clang-22
-riscv             nommu_k210_sdcard_defconfig    gcc-15.1.0
-riscv                 randconfig-001-20250919    gcc-10.5.0
-riscv                 randconfig-002-20250919    gcc-13.4.0
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-22
-s390                             allyesconfig    gcc-15.1.0
-s390                                defconfig    clang-22
-s390                  randconfig-001-20250919    gcc-8.5.0
-s390                  randconfig-002-20250919    gcc-15.1.0
-sh                               allmodconfig    gcc-15.1.0
-sh                                allnoconfig    gcc-15.1.0
-sh                               allyesconfig    gcc-15.1.0
-sh                                  defconfig    gcc-15.1.0
-sh                    randconfig-001-20250919    gcc-12.5.0
-sh                    randconfig-002-20250919    gcc-10.5.0
-sh                           se7780_defconfig    gcc-15.1.0
-sh                        sh7763rdp_defconfig    gcc-15.1.0
-sh                  sh7785lcr_32bit_defconfig    gcc-15.1.0
-sparc                            allmodconfig    gcc-15.1.0
-sparc                             allnoconfig    gcc-15.1.0
-sparc                               defconfig    gcc-15.1.0
-sparc                 randconfig-001-20250919    gcc-14.3.0
-sparc                 randconfig-002-20250919    gcc-8.5.0
-sparc64                             defconfig    clang-20
-sparc64               randconfig-001-20250919    clang-22
-sparc64               randconfig-002-20250919    gcc-14.3.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-22
-um                               allyesconfig    gcc-14
-um                                  defconfig    clang-22
-um                             i386_defconfig    gcc-14
-um                    randconfig-001-20250919    gcc-12
-um                    randconfig-002-20250919    clang-22
-um                           x86_64_defconfig    clang-22
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250919    clang-20
-x86_64      buildonly-randconfig-002-20250919    gcc-14
-x86_64      buildonly-randconfig-003-20250919    gcc-14
-x86_64      buildonly-randconfig-004-20250919    clang-20
-x86_64      buildonly-randconfig-005-20250919    clang-20
-x86_64      buildonly-randconfig-006-20250919    clang-20
-x86_64                              defconfig    gcc-14
-x86_64                          rhel-9.4-rust    clang-20
-xtensa                            allnoconfig    gcc-15.1.0
-xtensa                randconfig-001-20250919    gcc-11.5.0
-xtensa                randconfig-002-20250919    gcc-8.5.0
+Unfortunately, I don't really understand what any of this means, so not sure where to go from here.
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Will soon have a second QCN9472-based module from a different vendor and would appreciate any help in getting both of them to work.
+
+P.S. I have checked QCN9074 module with ath11k driver again earlier this week, it still works fine in the OpenWrt VM with the instructions I have mentioned in the previous email despite being "not supported" 🙂
+
+Sincerely, Nazar Mokrynskyi
+github.com/nazar-pc
+
+22.08.25 03:05, Nazar Mokrynskyi:
+> Thanks for the response, looks like I'm in completely unsupported territory, but I'd love to see that changed 😅
+>
+> There were some tricks needed, here is a forum thread with the complete journey: https://forum.openwrt.org/t/qcn9074-doesnt-initialize-on-x86-64/163288?u=nazar-pc
+> But more specifically, this seemed to be the missing piece: https://forum.openwrt.org/t/qcn9074-doesnt-initialize-on-x86-64/163288/47?u=nazar-pc
+> For those who don't want to re-read a long thread on the forum, libvirtd domain config needed this piece of configuration:
+>
+>> |<features> <ioapic driver="qemu"/> </features> <devices> <iommu model="intel"> <driver intremap="on" caching_mode="on"/> </iommu> </devices>|
+> Both "intremap" and "caching_mode" were key for device to initialize, and the rest for those two parameters to work at all.
+> With that, I was able to create AP with QCN9074 on the hardware I mentioned earlier.
+>
+> But it certainly didn't crash the whole physical machine with any configuration.
+> Well, most of the time at least, I did managed to crash the machine a couple of times with either ath11k or ath10k when VM didn't shut down cleanly (hard reset of the VM), etc.
+>
+> Sincerely, Nazar Mokrynskyi
+> github.com/nazar-pc
+>
+> 22.08.25 02:46, Jeff Johnson:
+>> On 8/20/2025 2:47 PM, Nazar Mokrynskyi wrote:
+>>> Some additional details.
+>>>
+>>> The system is x86-64: Gigabyte MZ32-AR0 Rev 1.0 motherboard (with M23_R40 BIOS) and AMD Epyc 7302P CPU.
+>>>
+>>> Host OS is Ubuntu 24.04 with HWE kernel 6.14.
+>>>
+>>> As guest:
+>>> * initially tried OpenWrt 24.10.2 with kernel 6.6.93, WiFi backports seem to be from 6.12.6
+>>> * then tried the latest snapshot (r30806-070d8eb4d5), which uses 6.12.40 kernel and according to the kernel module version carries WiFi backports from 6.16
+>>>
+>>>> # lspci -mnn -s 46:00.0
+>>>> 46:00.0 "Network controller [0280]" "Qualcomm Technologies, Inc [17cb]" "QCN62xx/92xx Wireless Network Adapter [1109]" -r01 -p00 "Qualcomm Technologies, Inc [17cb]" "QCN62xx/92xx Wireless Network Adapter [1109]"
+>>> The module is QCN9274 2x2 5G+6G from Commtek (but missing on their website) with M.2 E-key connector.
+>>> Looks very similar to Compex WLW7002E56 in terms of size and features.
+>>>
+>>> This should be most of the details that might be relevant.
+>>>
+>>> Sincerely, Nazar Mokrynskyi
+>>> github.com/nazar-pc
+>>>
+>>> 21.08.25 00:15, Nazar Mokrynskyi:
+>>>> Hi,
+>>>>
+>>>> I have a QCN9274-based Wi-Fi module that I want to use with OpenWrt under KVM VM (libvirtd, vfio).
+>>>> I used various Qualcomm modules this way with ath10k and ath11k in the past successfully, but ath12k seems to be buggy.
+>>>>
+>>>> Two cases:
+>>>> * if host already loaded ath12k, then starting a VM with the PCIe device passthrough triggers immediate hard reset of the machine
+>>>> * if I bind the device to vfio-pci on the host, I can boot the VM, but it inevitably hard resets the machine when ath12k starts loading (presence of the correct board file does not matter, it doesn't seem reach that stage)
+>>>>
+>>>> In the second case, which I'm primarily interested in, the the following lines are the only thing I can capture before host hard resets:
+>>>>
+>>>>> 0000:01:00.0: MSI vectors: 1
+>>>>> 0000:01:00.0: Hardware name: qcn9274 hw2.0
+>>>> And when machine reboots, BIOS prints:
+>>>>> Warning: PCI-Express PERR/SERR error detected.
+>>>> I'm not really sure what this is, but I think it should be trivial to reproduce.
+>>>> Looks like either driver or onboard firmware issue?
+>>>> Open to do more testing and provide additional info.
+>>>>
+>>>> All information I have so far is on the forum here: https://forum.openwrt.org/t/qcn9274-crashes-the-system-during-driver-load/239491?u=nazar-pc
+>> Curious how you managed to get this to work in the past with ath11k since that
+>> is not supported. Some discussions on ath11k here:
+>>
+>> https://bugzilla.kernel.org/show_bug.cgi?id=216055
+>> https://lore.kernel.org/all/fc6bd06f-d52b-4dee-ab1b-4bb845cc0b95@quicinc.com/
 
