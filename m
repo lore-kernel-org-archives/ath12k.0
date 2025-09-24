@@ -4,111 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95259CAC5A5
-	for <ath12k@archiver.kernel.org>; Tue, 23 Sep 2025 22:03:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 113B9CAC5B3
+	for <ath12k@archiver.kernel.org>; Wed, 24 Sep 2025 13:00:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Uc1pbnhzdQKbs99YbruR9OK0hcEX16w/DIBcbHtd1lM=; b=4YoeZd+Yp3dTUPqRjEOOzx695v
-	+N6fsH6zvUUSkIA+t7Plk6RcrFUrpHII/z7EqIKOW0xFmLs85bowXXWoVvcwxxexBfGgOn4u/lM7M
-	h/HHFJ1r5RWzdjZwh2TRkH0aMLk7AgdRQw4yJ9reP4kucQ6H7SAMniy2/g+bRKmWRPPaSDu/7/lp9
-	v9Hf91cFOBHl9RvTTGcwz4utiNek9YB9ovMKnvdKMx/vUmiz8w4H5pBRov9Hka2DmaVY6ZSFlH2t9
-	DEFJ3cERZXthUfL2y4Rge8UBEqFEyitpLy+mWClPyncT7+TghqsS9v2ayoKbKA3M4XSZ8A6q+Nwcb
-	z8OID4xw==;
+	bh=9/tLFpuoba5oWkFVeSAHO88zHOd3TvdB4izNWyYVs1w=; b=otwRlLRMmrfMlrW0apxScw6lZ/
+	8O20aqcvFifRZR/Y/wBr8Vr/LHc0KJ9JFxonI9rETY5mgwl4FTpPfzJEi2DVJ+e3d/pHBT03VtxM+
+	82ymkAhKdMY8RDJCiQTtfv3GeOq/mRmX5jnloZjq6DwWtJAoEg0XDUpSTsnpanLZI4p1vqvUhFulA
+	4wpPGT1p7wNI2jOU3MDgotXQK0IdTP4Qg4kDZCXF+U93Zk4MJAnq7mpt0tXpWgO5U7836auZpyJAl
+	L0fRQcp8hCvAIFNY+GV55XMn9EfbAJZyad0FCkGTZRqiX/9Ce6XNwJickxKqtkqspUeq++Zu1j1b1
+	DU9n9tzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1B6c-0000000F2lU-1Gax;
-	Tue, 23 Sep 2025 22:03:26 +0000
+	id 1v1P73-000000001mk-3EDh;
+	Wed, 24 Sep 2025 13:00:49 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1B6a-0000000F2l0-17K0
+	id 1v1P71-000000001jU-1UX2
 	for ath12k@lists.infradead.org;
-	Tue, 23 Sep 2025 22:03:25 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58NFGf7p004512
-	for <ath12k@lists.infradead.org>; Tue, 23 Sep 2025 22:03:22 GMT
+	Wed, 24 Sep 2025 13:00:48 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58O4iPHX018382
+	for <ath12k@lists.infradead.org>; Wed, 24 Sep 2025 13:00:45 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=Uc1pbnhzdQKbs99YbruR9OK0hcEX16w/DIB
-	cbHtd1lM=; b=Yqm7zph3z+mlv6EVIydn340IzGzza6b93moSJ4NMGgwLNkREWlU
-	Mu+GDvjjYhfwwlFdCZ+8WkfQof6/ShwQmA9X5s+se6XOZ5wbUUJWAkyDOKkDKJjy
-	1CScUvpoFRkQI4vRRda97vWxSUOwAwKkukR3AvnaSpsSRvWaOWvqoxjiL9ib3ppw
-	Zp8zY4gg5H7hvxPAz8nDz1ttVQo51ta5l9akViCaXqW7AFYZyM/IuhY+UtZi46en
-	ywf3m0FTTk52OmhB+7HWSa8Hb0Va1XnVYunOfoCl7gkkreqrNMRiX2XnRlyCUbuK
-	n6Ph+UaaAaTnxSKsbhpxWA6/giXKI3mQdbg==
-Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 499hmntg89-1
+	:subject:to; s=qcppdkim1; bh=9/tLFpuoba5oWkFVeSAHO88zHOd3TvdB4iz
+	NWyYVs1w=; b=lQ0wGTC7XoWjvbVfV+A7TzkkwtbZ4QRET5bYHNIRiVktl2crB01
+	9mXuYKvvkcW99/HNm5X6Vf4wD0MbjgXI7RUJ2z3Vzb0gj0ubOgs2EXdEfpBysEcl
+	i9vbMoafvEB9K6SqSnyMbF/tLs1jNg89bdHcS8mefAwcbNtd+5Ztyb/6a4cwKvh4
+	6/NVu97YqFAEXF0rcpLmxVe1MIrSzSS1tS84QBQ//mazjkctY0+l4ydbInz+bZtg
+	VTKJt8gusoYW/npZcgBXYGZaaYvylsRVLxfBmjkk230lyMDYqemjYEscai7Nz4Ma
+	kI9avrmjt4ZgYiKG3KRCYQQWMWfYat+F2uQ==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49b3kk89yr-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 23 Sep 2025 22:03:22 +0000 (GMT)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-77f2d29dc2aso2139129b3a.0
-        for <ath12k@lists.infradead.org>; Tue, 23 Sep 2025 15:03:21 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 24 Sep 2025 13:00:45 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b4c72281674so4565352a12.3
+        for <ath12k@lists.infradead.org>; Wed, 24 Sep 2025 06:00:45 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758665001; x=1759269801;
+        d=1e100.net; s=20230601; t=1758718844; x=1759323644;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Uc1pbnhzdQKbs99YbruR9OK0hcEX16w/DIBcbHtd1lM=;
-        b=u2xIO3qxKTRtygPizXFgkaMygCc0ia3b8p5gsugAqr1nFKQC510FrtdKCit0yC5prX
-         yDZqgmP2Sc6F3+QuZvaO95EP9NyV41UIl8iSR0pExefsSntgpPlOIrBEZyPvW9kLzQux
-         zkQ4FAs+Ag/owI7JrWy3hk2+9/qe5eiTHa+YerBlH2efs72Fp6QP/4t5KC/f7N8IHTfH
-         xE9K720EMCWWmka0uW7mp3KbTrkhqzGaIDJI00LNRe4b8caUWjLCCJl3+tEhYgDt4EIW
-         z129bFXD01MNm3+QsQnrz3B/513nJSHTPVZA1ZG+3EVk4brD57eHaD67dTIXzWSnF8Zu
-         kC2w==
-X-Gm-Message-State: AOJu0YwKyBlHAiW+c6L59vZBYpArs//zOgxvw+kYWXXxo73fVBccDA+T
-	jXZMHTAM3/Ib+RUr0KIfu9FEX+vGlSN4msQtYz1SkR/mFQmCQ0eSweuBOQZcuQQqYLYSXzZ/VWx
-	k2b6mXKG9bUxPFOcTXg5MCcyWvHBMzH/Hn2KGxCq0t1nsJpeQkXE8beJegjvhh9ieoruyle0G
-X-Gm-Gg: ASbGnctARHH4cWf6NfZnJxnczx6ONMSsGC9s6lfNySzRMswa2Rd9e8gPW1Mh9iYeXLu
-	ZTfwwUGhp79TdS/JkX7vM2ISEWT31jYrx6MObv00ItuA5XPX2g0M6t1zq0w1Sd175fNp4QMbSNT
-	IqI+P39a8vAGdrGARZPqW4kZIxCrDgtixBxkHYVbT/sGqW7TcQ7CvBAID8wcWqE0fsgIVLXAuii
-	OMr22kODAGdG8D4wvQrXuwNB4ZJKL9euG3ApoWESGHqeh1AfKpOao5BfBeLH1JoCiHz3Q+mWsEB
-	CHFg9LBYn6DqUWwIDq1o7pSM9ftiHUTBTCHKgPcSjWbCmDySwsY2RWeSi6fvWRCGSDTycsQyeRF
-	6zCInxu8s0HWsbc5xMyHp
-X-Received: by 2002:a05:6a00:3c8b:b0:772:5b74:c270 with SMTP id d2e1a72fcca58-77f53a84587mr4180011b3a.20.1758665000538;
-        Tue, 23 Sep 2025 15:03:20 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEinvX1Hnftmz6nTwHZivIr39eTOTRQqEhyM1sVpp6OJZ+UGYVB63E4dDrJtLcO3INkUfbhIQ==
-X-Received: by 2002:a05:6a00:3c8b:b0:772:5b74:c270 with SMTP id d2e1a72fcca58-77f53a84587mr4179992b3a.20.1758665000059;
-        Tue, 23 Sep 2025 15:03:20 -0700 (PDT)
-Received: from msinada-linux.qualcomm.com (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-77f254f8f68sm9202214b3a.56.2025.09.23.15.03.19
+        bh=9/tLFpuoba5oWkFVeSAHO88zHOd3TvdB4izNWyYVs1w=;
+        b=Nf9BH5fpJEk56+92EDy4awUZKobeRqQiKALMUQRyvZ09yy3xaLF7oF+wTo1IUpEMzq
+         N46bpsVn0Gyu0cXECHkPlZhB4VCJxpdsbn2XUM+pNx17nGvTwuPSvNn1wCrF0g/U44nS
+         ITe5tsvlG2iQlv5gaozN4+KJU5wOHHsyBb/reCIFVsdTUK7xN8Z2yMf9NCPS4HgZq3n2
+         gI8Pr3ObF4DFY89R0cbYZU6bhakI4bTZLyfTxosn2QewPSwBy2r/OdRuytp4f2l57nwQ
+         vZvS+GZiIEVj6rOOKUNeBx5HA/x2ke3wwvBpPo9Diko1G7lQXKgngzVLWUOJBMKxoLf3
+         c/AQ==
+X-Gm-Message-State: AOJu0Ywy/hzcUUr6XORjOhLu7KDTdwMvr/gBTv9mjwmTvaKPX6euFLHS
+	26vZ5t7eT0YRLPCsgNuCSmCXUlDIPxYfGZjZgnUKqeOrhE7GbyOJH43hdTmro0FQWBwCspnykt2
+	x2NDwjRCx0hJdDU1PYue6/xpTmjdOz768w46/bijvGSvscBTZYc3Y4lsXXBfXFv/jK6J/Pe5B
+X-Gm-Gg: ASbGncuIwVLKYd8imenmnDaOI5+Rbm3N3o7Uia+E2v/GeYEa+n8zdmRUNF76M4s/KBz
+	YdrXKx2TzFbBwglcPD6l4goMyAqogKWna30wGUvrb8imNl38vUvXo+j5DFHQJn+lyG12Y0+7CyG
+	pw/buHkE4RxhHpK0lhnP9QPI4BDT1WWu6e1/2XA3O6nraW/gmOKQ7qoGgoK2CKo+yG/tqyd8HDg
+	IReljjj5Bq4XwwxmyHSe9+Aj9UHuja1yw7NH+C56jQj2WjbuxG1nzIic+IM266m9JV4Qkjy2WrN
+	msaFLdavo9RrJs5PLVQ8ntRbtksUenORziZeFaw19jVRR03Jgt2EnsAVa13shEVUJoMyu+OTI/A
+	1xywvwUOcXkZybykGJsYhBuwVoQVJMaTYpx+TJEbjIODpQCvX1ltdtNpcQ6Wrum8=
+X-Received: by 2002:a17:902:e5d0:b0:267:f7bc:673c with SMTP id d9443c01a7336-27cc678573amr68444695ad.44.1758718843482;
+        Wed, 24 Sep 2025 06:00:43 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEnTsbdkxIvOZjvhLS6YHKQ3WGSbY0tHoisdinofH9nxgMiG0eYasrFh1hQhdFKaEXjW8Phew==
+X-Received: by 2002:a17:902:e5d0:b0:267:f7bc:673c with SMTP id d9443c01a7336-27cc678573amr68444005ad.44.1758718842320;
+        Wed, 24 Sep 2025 06:00:42 -0700 (PDT)
+Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-26989844036sm182323915ad.31.2025.09.24.06.00.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 23 Sep 2025 15:03:19 -0700 (PDT)
-From: Muna Sinada <muna.sinada@oss.qualcomm.com>
+        Wed, 24 Sep 2025 06:00:41 -0700 (PDT)
+From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Karthik M <quic_karm@quicinc.com>,
-        Muna Sinada <muna.sinada@oss.qualcomm.com>
-Subject: [PATCH ath-next] wifi: ath12k: free skb during idr cleanup callback
-Date: Tue, 23 Sep 2025 15:03:16 -0700
-Message-Id: <20250923220316.1595758-1-muna.sinada@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, Aloka Dixit <aloka.dixit@oss.qualcomm.com>,
+        Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+Subject: [PATCH wireless-next] wifi: mac80211: reset FILS discovery and unsol probe resp intervals
+Date: Wed, 24 Sep 2025 18:30:14 +0530
+Message-Id: <20250924130014.2575533-1-aaradhana.sahu@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=YPqfyQGx c=1 sm=1 tr=0 ts=68d3192a cx=c_pps
- a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=yJojWOMRYYMA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8
- a=f__cQE-5ugF2exXfO0kA:9 a=zc0IvFSfCIW2DFIPzwfm:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: _QNv-TPMMmq6wy4-1wdQ8tDAO7VnTcpI
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIwMDAwMCBTYWx0ZWRfX9Pg2asKxAlxX
- 3UW9D24XFhwSXlNVbdcjaIoIvI1r/oGzKCtJXRL3dzfwkSTTxkccV1PqJ+EI22n1wJbbZLWFMZR
- JXfJJ+wxhvH6yzCX7CAbnfFy+tPnGeKDp8zbkhkoxHPnte0FgjJ7ilsveer82C6CQ4bIQDFX1sE
- r5Zp9d0zjm90/yEqZ/nkMSPM87ttdEwk21PSbdT8eP3iXMRCZJczQz0JAQgLOcJO/d0pYldxfTE
- L3mu1dWvYWNzcWxA8iRaMA7/5bB/Om6xNCWh2fGBO3004zXEsdvsdE8XIlVmE+7E68tjZubOV9U
- JTKbIlTwIMJcvd37y3e+Ub3eQCEkIWLRxx5yPkGZF583JNNOVZhc6cXZsOD9L7hOMym950NTSzp
- tCHhgqhR
-X-Proofpoint-GUID: _QNv-TPMMmq6wy4-1wdQ8tDAO7VnTcpI
+X-Proofpoint-GUID: BeAIjcy0EJlQeWly6KIPJn-4Ep2H_jra
+X-Proofpoint-ORIG-GUID: BeAIjcy0EJlQeWly6KIPJn-4Ep2H_jra
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIyMDA4OSBTYWx0ZWRfX/KI20m2nAWXQ
+ QRVT19P1ddUtMIou8Pu4oQbWZLPP4PND4GpTv2WEBIwNlwFGvJ9DX6d7+94eDGqEubE3d4cxadd
+ CFHWUTrfbpVkB9sfMJvGI+2s/jnTl00bHUABWR54vP2vFIkhvQPJjjZupGl19c4tDhGfe1B8UBr
+ bpOuLoeIdnRCVngt7YnZaaWo5+ybIzgrUDioia8reKkVHQ4gOExJJpr+Mewv4/jwxt8j96QHacN
+ GIRsWuhwhKMeD4fJBu1tZyvHSR7MER34SVqn5KUNE5iKqHwMH9VunN/h2N0VV8Q1PdozyvswpQ/
+ 3UcW0T/2XMNSAFpsXSdl6FKXVKREdEIkdnJds6GhRpzYhxFGJErJd2z3fYmx8uyMjxKdtEUX8Jd
+ 5moozmXq
+X-Authority-Analysis: v=2.4 cv=BabY0qt2 c=1 sm=1 tr=0 ts=68d3eb7d cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=GIoCXPmBiaAohYgo0agA:9
+ a=bFCP_H2QrGi7Okbo017w:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-23_06,2025-09-22_05,2025-03-28_01
+ definitions=2025-09-24_03,2025-09-22_05,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 bulkscore=0 priorityscore=1501 phishscore=0 adultscore=0
- clxscore=1011 impostorscore=0 spamscore=0 malwarescore=0
+ suspectscore=0 clxscore=1015 phishscore=0 bulkscore=0 priorityscore=1501
+ adultscore=0 malwarescore=0 spamscore=0 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509200000
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509220089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250923_150324_428186_A25C728B 
-X-CRM114-Status: GOOD (  14.84  )
+X-CRM114-CacheID: sfid-20250924_060047_513093_288BBC80 
+X-CRM114-Status: GOOD (  12.40  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,100 +123,45 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Karthik M <quic_karm@quicinc.com>
+From: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
 
-ath12k just like ath11k [1] did not handle skb cleanup during idr
-cleanup callback. Both ath12k_mac_vif_txmgmt_idr_remove() and
-ath12k_mac_tx_mgmt_pending_free() performed idr cleanup and DMA
-unmapping for skb but only ath12k_mac_tx_mgmt_pending_free() freed
-skb. As a result, during vdev deletion a memory leak occurs.
+When ieee80211_stop_ap() deletes the FILS discovery and unsolicited
+broadcast probe response templates, the associated interval values
+are not reset. This can lead to drivers subsequently operating with
+the non-zero values, leading to unexpected behavior.
 
-Refactor all clean up steps into a new function. New function
-ath12k_mac_tx_mgmt_free() creates a centralized area where idr
-cleanup, DMA unmapping for skb and freeing skb is performed. Utilize
-skb pointer given by idr_remove(), instead of passed as a function
-argument because IDR will be protected by locking. This will prevent
-concurrent modification of the same IDR.
+Trigger repeated retrieval attempts of the FILS discovery template in
+ath12k, resulting in excessive log messages such as:
 
-Now ath12k_mac_tx_mgmt_pending_free() and
-ath12k_mac_vif_txmgmt_idr_remove() call ath12k_mac_tx_mgmt_free().
+mac vdev 0 failed to retrieve FILS discovery template
+mac vdev 4 failed to retrieve FILS discovery template
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+Fix this by resetting the intervals in ieee80211_stop_ap() to ensure
+proper cleanup of FILS discovery and unsolicited broadcast probe
+response templates.
 
-Link: https://lore.kernel.org/r/1637832614-13831-1-git-send-email-quic_srirrama@quicinc.com > # [1]
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Signed-off-by: Karthik M <quic_karm@quicinc.com>
-Signed-off-by: Muna Sinada <muna.sinada@oss.qualcomm.com>
+Fixes: 295b02c4be74 ("mac80211: Add FILS discovery support")
+Fixes: 632189a0180f ("mac80211: Unsolicited broadcast probe response support")
+Signed-off-by: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
+Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 34 ++++++++++++++-------------
- 1 file changed, 18 insertions(+), 16 deletions(-)
+ net/mac80211/cfg.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 1d7b60aa5cb0..eacab798630a 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -8290,23 +8290,32 @@ static void ath12k_mgmt_over_wmi_tx_drop(struct ath12k *ar, struct sk_buff *skb)
- 		wake_up(&ar->txmgmt_empty_waitq);
- }
+diff --git a/net/mac80211/cfg.c b/net/mac80211/cfg.c
+index d9aca1c3c097..c52b0456039d 100644
+--- a/net/mac80211/cfg.c
++++ b/net/mac80211/cfg.c
+@@ -1876,6 +1876,9 @@ static int ieee80211_stop_ap(struct wiphy *wiphy, struct net_device *dev,
+ 	link_conf->nontransmitted = false;
+ 	link_conf->ema_ap = false;
+ 	link_conf->bssid_indicator = 0;
++	link_conf->fils_discovery.min_interval = 0;
++	link_conf->fils_discovery.max_interval = 0;
++	link_conf->unsol_bcast_probe_resp_interval = 0;
  
--int ath12k_mac_tx_mgmt_pending_free(int buf_id, void *skb, void *ctx)
-+static void ath12k_mac_tx_mgmt_free(struct ath12k *ar, int buf_id)
- {
--	struct sk_buff *msdu = skb;
-+	struct sk_buff *msdu;
- 	struct ieee80211_tx_info *info;
--	struct ath12k *ar = ctx;
--	struct ath12k_base *ab = ar->ab;
+ 	__sta_info_flush(sdata, true, link_id, NULL);
  
- 	spin_lock_bh(&ar->txmgmt_idr_lock);
--	idr_remove(&ar->txmgmt_idr, buf_id);
-+	msdu = idr_remove(&ar->txmgmt_idr, buf_id);
- 	spin_unlock_bh(&ar->txmgmt_idr_lock);
--	dma_unmap_single(ab->dev, ATH12K_SKB_CB(msdu)->paddr, msdu->len,
-+
-+	if (!msdu)
-+		return;
-+
-+	dma_unmap_single(ar->ab->dev, ATH12K_SKB_CB(msdu)->paddr, msdu->len,
- 			 DMA_TO_DEVICE);
- 
- 	info = IEEE80211_SKB_CB(msdu);
- 	memset(&info->status, 0, sizeof(info->status));
- 
--	ath12k_mgmt_over_wmi_tx_drop(ar, skb);
-+	ath12k_mgmt_over_wmi_tx_drop(ar, msdu);
-+}
-+
-+int ath12k_mac_tx_mgmt_pending_free(int buf_id, void *skb, void *ctx)
-+{
-+	struct ath12k *ar = ctx;
-+
-+	ath12k_mac_tx_mgmt_free(ar, buf_id);
- 
- 	return 0;
- }
-@@ -8315,17 +8324,10 @@ static int ath12k_mac_vif_txmgmt_idr_remove(int buf_id, void *skb, void *ctx)
- {
- 	struct ieee80211_vif *vif = ctx;
- 	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB(skb);
--	struct sk_buff *msdu = skb;
- 	struct ath12k *ar = skb_cb->ar;
--	struct ath12k_base *ab = ar->ab;
- 
--	if (skb_cb->vif == vif) {
--		spin_lock_bh(&ar->txmgmt_idr_lock);
--		idr_remove(&ar->txmgmt_idr, buf_id);
--		spin_unlock_bh(&ar->txmgmt_idr_lock);
--		dma_unmap_single(ab->dev, skb_cb->paddr, msdu->len,
--				 DMA_TO_DEVICE);
--	}
-+	if (skb_cb->vif == vif)
-+		ath12k_mac_tx_mgmt_free(ar, buf_id);
- 
- 	return 0;
- }
-
-base-commit: 32be3ca4cf78b309dfe7ba52fe2d7cc3c23c5634
 -- 
 2.34.1
 
