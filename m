@@ -4,69 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5980CAC5B5
-	for <ath12k@archiver.kernel.org>; Mon, 29 Sep 2025 04:29:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EC97CAC5B5
+	for <ath12k@archiver.kernel.org>; Mon, 29 Sep 2025 11:45:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=BAjQFn0CegtSwokA7GwqXi/SX3stO+NeWeqAGpumdbk=; b=t2t2HWWQOwG3LWQFKfpq5hEaP+
-	0CLgpQeAY6Oe5c2SNApqQZ2mdcWx+ib/VXyZNtm574CHv2KPBBkYGSujyXm3IddJmpySCDgfY5Mi2
-	72cR9+7VWIy7tcPCn4D0fSLfgIgZYnCaF7zneEzMXSDJtgqBuKdjWsexy5te74TEPTsFgYLjBZnQA
-	9DjDZqyGXkqcxV7Gu8fNHoTrkDaB/qGXy23ruZlYOj14f5owziUm2wmAt8F4660vMrleOIy3yU17f
-	xKFXwb02C4VfyTDEpcvTb8AhelD1Wrwp5T9icJRE7GPWImLSxCSwmbqBykdMLbINzh8IthtaBuYTA
-	VlDW/3Wg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+YyhKvXWduWPh+vTohWDX8r6q077JrpFLKSFztGrO2E=; b=tcLjPuXTt1sevbiUzgJ/bFYQPG
+	w4wqz63NE9XB4P6di5lTBz2FeASYWNhQyhImyZLr5L7iah/nONyFKKpsFxHGHMtMIBydFSxPlsEbg
+	REXxJftjHuC4TlOCmNkZMI+HanuxOYS0SfD9XxD/Nw5ciD60NEfbywQK6pL2vmePeVrKgKLMQhBWC
+	/A3DstYGBD6pE3VjXGUPODu54hzBDuEr87KnHentpQYG9jys/zqjZJJiOROPLLYZj+9NewbwnMs8i
+	NKprkTDxSY1OWxErRiBnxmdAMzABCDMBwuHSjxZQfcvIHQhrXrA5pL1OvJbrLjDs6NEMu5NYVjnqU
+	4RgoVDIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v35WH-00000001JQd-2V0w;
-	Mon, 29 Sep 2025 04:29:49 +0000
-Received: from mgamail.intel.com ([198.175.65.16])
+	id 1v3CKJ-00000002OAt-32y2;
+	Mon, 29 Sep 2025 11:45:55 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v35WF-00000001JPM-2sHP
+	id 1v3CKH-00000002OAX-46Ql
 	for ath12k@lists.infradead.org;
-	Mon, 29 Sep 2025 04:29:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1759120188; x=1790656188;
-  h=date:from:to:cc:subject:message-id;
-  bh=SnLPY3g+afpr256KiuHGlGrtGhJTMMXYszMqRfRj0jk=;
-  b=LbvMoWJbJmE9XhA5iTjbAnymQ6qnvUOZWLeDIzYOXg92a9Vkn5agRDi5
-   UCnHVSzWgMwPtAcf1n5Ow5GnBi7/2DXoJ8Abt2h9x3JrRDft2NLP1KAZd
-   mdaBekmZkSkhrnKEDKw91G7mAI+PLI9KBBMpV2DEmm6kAs3or8M0bW7k2
-   69mQ9InieiGFAvf9lBrSljbkSbP0JD4jIc6+054o3Zkrdf998y9xh/Ndy
-   Qo2OjqEEqCZEN0xjkqtU+dT9ViEz8HHsJMDXvk0KQG2iM9bZfTcYZdFqn
-   6yhQTRvYr5R2yPjrZw3anrBfr9CqBVXR6CTLelR+tQ3gG+pi40/8IXMYS
-   w==;
-X-CSE-ConnectionGUID: iRcnjQAVSNmYKG2EoJco7g==
-X-CSE-MsgGUID: AUW9AHH2SxGTpqzlk/aJGQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11567"; a="61525621"
-X-IronPort-AV: E=Sophos;i="6.18,300,1751266800"; 
-   d="scan'208";a="61525621"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by orvoesa108.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Sep 2025 21:29:46 -0700
-X-CSE-ConnectionGUID: 9e2iBcYeT4mGsKKU17ZVaw==
-X-CSE-MsgGUID: ee8zqyztQvqu5zIqegTevA==
-X-ExtLoop1: 1
-Received: from lkp-server01.sh.intel.com (HELO a2c9da549b7f) ([10.239.97.150])
-  by fmviesa003.fm.intel.com with ESMTP; 28 Sep 2025 21:29:44 -0700
-Received: from kbuild by a2c9da549b7f with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1v35WA-00002h-0F;
-	Mon, 29 Sep 2025 04:29:42 +0000
-Date: Mon, 29 Sep 2025 12:29:24 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:pending-ath12k-ng] BUILD SUCCESS
- 1be247ffcb69db7f4ab3e85a74fcb93b5ab235a4
-Message-ID: <202509291217.dtm1pmDl-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Mon, 29 Sep 2025 11:45:55 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58T9JCTE029384;
+	Mon, 29 Sep 2025 11:45:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	+YyhKvXWduWPh+vTohWDX8r6q077JrpFLKSFztGrO2E=; b=p3oSxVNh1OaMDJ7I
+	Gw+mruhaZ74L3ExF9YTxVeDvR7MgwoRrrRafCQkA1kv5gZiqTtnl+JfP9c/7+0jO
+	/+jV7Amv8Ns78PNIu2Qz9sJcOPAQMj9opvmyrfkUADVGnk21zEj2nrjPQ6lmmZfc
+	o2BYK4agP5f/X0KLPfZOztSf2g7rQos3WRcsBZr/flFCwG+SGtMlA/TxsRXzJUjI
+	E5iulhLDTLTn73ORl3QmeRJ4D4d3DPR0j9/xCl9uMHDZFTretmivB0Ao/vaMirfh
+	7jbIYckc+eJCQjncxy/mRY4fLBC12dGZ2yMAfHkXOps/11ko/4CTq5p8O6V8DyDy
+	y2uhbg==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49e5mcn8p0-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 29 Sep 2025 11:45:52 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 58TBjpqS029708
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 29 Sep 2025 11:45:51 GMT
+Received: from [10.79.125.183] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.24; Mon, 29 Sep
+ 2025 04:45:50 -0700
+Message-ID: <91dbf034-f5c5-4005-9401-1afea9ea1d53@quicinc.com>
+Date: Mon, 29 Sep 2025 17:15:47 +0530
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath12k-ng v2 5/6] wifi: ath12k: Add framework for hardware
+ specific DP interrupt registration
+Content-Language: en-GB
+To: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20250926052218.893876-1-quic_rdeuri@quicinc.com>
+ <20250926052218.893876-6-quic_rdeuri@quicinc.com>
+ <04b2d56e-7b1d-4ceb-9479-3ad97cb7132a@oss.qualcomm.com>
+From: Ripan Deuri <quic_rdeuri@quicinc.com>
+In-Reply-To: <04b2d56e-7b1d-4ceb-9479-3ad97cb7132a@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=RMC+3oi+ c=1 sm=1 tr=0 ts=68da7170 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=COk6AnOGAAAA:8
+ a=s15LIftqT-GvMM0iVDAA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: 8bUU8kCJMLighLDPMHIdCI3MtFsVypqV
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTI3MDAwNCBTYWx0ZWRfXwy6FPH5rrx4w
+ RI6RoD5vZB9wvk6OZ9zuE7+98GGIARpsKmJq5uQVe6hYWLIGjK6fgV7E/H1+/HU4ngtyShJWSUn
+ 0sdg0CktxB5JTjrehNihFJSQSr20WKhJ1lf7uSl2JfunHS1Q2Lfdq+6jUl89zT9uoVILhzoClTb
+ jIwuh+eaqg9kdYg4591q70kHFlFBnwHrin+zLDo/9JWqqOa5+HjeJsBFytUoILSf7/SlQS/XGyv
+ p0lVmZYcsJ91QrNSX3HpZfeL8Miei5rjQRFnfjeUqzevR4lr8XMAzBSVio72mi1hoHLwx3e4xsC
+ Vv6b6zN5IMpmhZRllcOEbLfMTxuIFjt6m3bkfXlqOxA/uLAMzdywtv9t22cywK4exl5dOamFKoK
+ 6b7yy0/cjPOVEptbohfL5Zn8z83L9Q==
+X-Proofpoint-GUID: 8bUU8kCJMLighLDPMHIdCI3MtFsVypqV
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-29_04,2025-09-29_02,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 priorityscore=1501 suspectscore=0 impostorscore=0 spamscore=0
+ adultscore=0 bulkscore=0 clxscore=1015 phishscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2509270004
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250928_212947_809207_21C35B89 
-X-CRM114-Status: UNSURE (   3.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250929_044554_029230_6EBBB8AD 
+X-CRM114-Status: GOOD (  22.66  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,143 +112,324 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending-ath12k-ng
-branch HEAD: 1be247ffcb69db7f4ab3e85a74fcb93b5ab235a4  wifi: ath12k: Refactor ath12k_vif structure
 
-elapsed time: 725m
 
-configs tested: 123
-configs skipped: 6
+On 9/26/2025 12:57 PM, Baochen Qiang wrote:
+> 
+> 
+> On 9/26/2025 1:22 PM, Ripan Deuri wrote:
+>> Currently, the DP service SRNG handler is invoked directly from the NAPI
+>> poll handler, which prevents using different handlers for different
+>> architectures. To fix this, introduce a framework that allows registering
+>> architecture-specific service SRNG handlers.
+>>
+>> Also, add PCI and AHB hif_ops to manage IRQ setup and cleanup from DP.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>
+>> Signed-off-by: Ripan Deuri <quic_rdeuri@quicinc.com>
+>> ---
+>>  drivers/net/wireless/ath/ath12k/ahb.c      | 16 +++++++-----
+>>  drivers/net/wireless/ath/ath12k/core.h     |  3 +++
+>>  drivers/net/wireless/ath/ath12k/hif.h      | 30 +++++++++++++++++++++-
+>>  drivers/net/wireless/ath/ath12k/pci.c      | 23 +++++++++--------
+>>  drivers/net/wireless/ath/ath12k/wifi7/dp.c | 20 ++++++++++++---
+>>  drivers/net/wireless/ath/ath12k/wifi7/dp.h |  2 --
+>>  6 files changed, 71 insertions(+), 23 deletions(-)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
+>> index c545bea18935..4bacdaa62f83 100644
+>> --- a/drivers/net/wireless/ath/ath12k/ahb.c
+>> +++ b/drivers/net/wireless/ath/ath12k/ahb.c
+>> @@ -524,10 +524,9 @@ static int ath12k_ahb_ext_grp_napi_poll(struct napi_struct *napi, int budget)
+>>  	struct ath12k_ext_irq_grp *irq_grp = container_of(napi,
+>>  						struct ath12k_ext_irq_grp,
+>>  						napi);
+>> -	struct ath12k_base *ab = irq_grp->ab;
+>>  	int work_done;
+>>  
+>> -	work_done = ath12k_wifi7_dp_service_srng(ab, irq_grp, budget);
+>> +	work_done = irq_grp->irq_handler(irq_grp->dp, irq_grp, budget);
+>>  	if (work_done < budget) {
+>>  		napi_complete_done(napi, work_done);
+>>  		ath12k_ahb_ext_grp_enable(irq_grp);
+>> @@ -553,7 +552,12 @@ static irqreturn_t ath12k_ahb_ext_interrupt_handler(int irq, void *arg)
+>>  	return IRQ_HANDLED;
+>>  }
+>>  
+>> -static int ath12k_ahb_config_ext_irq(struct ath12k_base *ab)
+>> +static int
+>> +ath12k_ahb_config_ext_irq(struct ath12k_base *ab,
+>> +			  int (*irq_handler)(struct ath12k_dp *dp,
+>> +					     struct ath12k_ext_irq_grp *irq_grp,
+>> +					     int budget),
+>> +			  struct ath12k_dp *dp)
+>>  {
+>>  	const struct ath12k_hw_ring_mask *ring_mask;
+>>  	struct ath12k_ext_irq_grp *irq_grp;
+>> @@ -569,6 +573,8 @@ static int ath12k_ahb_config_ext_irq(struct ath12k_base *ab)
+>>  
+>>  		irq_grp->ab = ab;
+>>  		irq_grp->grp_id = i;
+>> +		irq_grp->irq_handler = irq_handler;
+>> +		irq_grp->dp = dp;
+>>  
+>>  		irq_grp->napi_ndev = alloc_netdev_dummy(0);
+>>  		if (!irq_grp->napi_ndev)
+>> @@ -652,9 +658,6 @@ static int ath12k_ahb_config_irq(struct ath12k_base *ab)
+>>  		ab->irq_num[irq_idx] = irq;
+>>  	}
+>>  
+>> -	/* Configure external interrupts */
+>> -	ret = ath12k_ahb_config_ext_irq(ab);
+>> -
+>>  	return ret;
+>>  }
+>>  
+>> @@ -702,6 +705,7 @@ static const struct ath12k_hif_ops ath12k_ahb_hif_ops = {
+>>  	.map_service_to_pipe = ath12k_ahb_map_service_to_pipe,
+>>  	.power_up = ath12k_ahb_power_up,
+>>  	.power_down = ath12k_ahb_power_down,
+>> +	.ext_irq_setup = ath12k_ahb_config_ext_irq,
+>>  };
+>>  
+>>  static irqreturn_t ath12k_userpd_irq_handler(int irq, void *data)
+>> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+>> index ff99d5ae6226..6a36dfdf5b17 100644
+>> --- a/drivers/net/wireless/ath/ath12k/core.h
+>> +++ b/drivers/net/wireless/ath/ath12k/core.h
+>> @@ -166,6 +166,7 @@ enum ath12k_firmware_mode {
+>>  #define ATH12K_MAX_TCL_RING_NUM	3
+>>  
+>>  struct ath12k_ext_irq_grp {
+>> +	struct ath12k_dp *dp;
+>>  	struct ath12k_base *ab;
+>>  	u32 irqs[ATH12K_EXT_IRQ_NUM_MAX];
+>>  	u32 num_irq;
+>> @@ -174,6 +175,8 @@ struct ath12k_ext_irq_grp {
+>>  	bool napi_enabled;
+>>  	struct napi_struct napi;
+>>  	struct net_device *napi_ndev;
+>> +	int (*irq_handler)(struct ath12k_dp *dp,
+>> +			   struct ath12k_ext_irq_grp *irq_grp, int budget);
+> 
+> commit message says IRQ handler is architiecture specific, then why not put it in
+> ath12k_dp_arch_ops? Replicating irq_handler in each irq_grp seems kind of waste.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+Yes, it can be done via arch_ops too. Will use arch ops in the next
+revision.
 
-tested configs:
-alpha                             allnoconfig    gcc-15.1.0
-alpha                            allyesconfig    gcc-15.1.0
-arc                              allmodconfig    gcc-15.1.0
-arc                               allnoconfig    gcc-15.1.0
-arc                              allyesconfig    gcc-15.1.0
-arc                   randconfig-001-20250929    gcc-8.5.0
-arc                   randconfig-002-20250929    gcc-8.5.0
-arm                              allmodconfig    gcc-15.1.0
-arm                               allnoconfig    clang-22
-arm                              allyesconfig    gcc-15.1.0
-arm                   randconfig-001-20250929    gcc-8.5.0
-arm                   randconfig-002-20250929    gcc-14.3.0
-arm                   randconfig-003-20250929    clang-22
-arm                   randconfig-004-20250929    gcc-10.5.0
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-15.1.0
-arm64                 randconfig-001-20250929    gcc-8.5.0
-arm64                 randconfig-002-20250929    gcc-13.4.0
-arm64                 randconfig-003-20250929    clang-22
-arm64                 randconfig-004-20250929    clang-22
-csky                              allnoconfig    gcc-15.1.0
-csky                  randconfig-001-20250929    gcc-9.5.0
-csky                  randconfig-002-20250929    gcc-15.1.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-22
-hexagon                          allyesconfig    clang-22
-hexagon               randconfig-001-20250929    clang-22
-hexagon               randconfig-002-20250929    clang-22
-i386                             allmodconfig    gcc-14
-i386                              allnoconfig    gcc-14
-i386                             allyesconfig    gcc-14
-i386        buildonly-randconfig-001-20250929    gcc-14
-i386        buildonly-randconfig-002-20250929    clang-20
-i386        buildonly-randconfig-003-20250929    gcc-14
-i386        buildonly-randconfig-004-20250929    gcc-14
-i386        buildonly-randconfig-005-20250929    gcc-14
-i386        buildonly-randconfig-006-20250929    gcc-14
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    clang-19
-loongarch                         allnoconfig    clang-22
-loongarch             randconfig-001-20250929    gcc-12.5.0
-loongarch             randconfig-002-20250929    gcc-15.1.0
-m68k                             allmodconfig    gcc-15.1.0
-m68k                              allnoconfig    gcc-15.1.0
-m68k                             allyesconfig    gcc-15.1.0
-microblaze                       allmodconfig    gcc-15.1.0
-microblaze                        allnoconfig    gcc-15.1.0
-microblaze                       allyesconfig    gcc-15.1.0
-microblaze                          defconfig    gcc-15.1.0
-mips                              allnoconfig    gcc-15.1.0
-mips                            gpr_defconfig    clang-18
-nios2                             allnoconfig    gcc-11.5.0
-nios2                               defconfig    gcc-11.5.0
-nios2                 randconfig-001-20250929    gcc-11.5.0
-nios2                 randconfig-002-20250929    gcc-9.5.0
-openrisc                          allnoconfig    gcc-15.1.0
-openrisc                         allyesconfig    gcc-15.1.0
-openrisc                            defconfig    gcc-15.1.0
-parisc                           allmodconfig    gcc-15.1.0
-parisc                            allnoconfig    gcc-15.1.0
-parisc                           allyesconfig    gcc-15.1.0
-parisc                              defconfig    gcc-15.1.0
-parisc                randconfig-001-20250929    gcc-14.3.0
-parisc                randconfig-002-20250929    gcc-14.3.0
-parisc64                         alldefconfig    gcc-15.1.0
-parisc64                            defconfig    gcc-15.1.0
-powerpc                          allmodconfig    gcc-15.1.0
-powerpc                           allnoconfig    gcc-15.1.0
-powerpc                          allyesconfig    clang-22
-powerpc               randconfig-001-20250929    gcc-15.1.0
-powerpc               randconfig-002-20250929    gcc-8.5.0
-powerpc               randconfig-003-20250929    gcc-13.4.0
-powerpc                    socrates_defconfig    gcc-15.1.0
-powerpc64             randconfig-001-20250929    clang-18
-powerpc64             randconfig-002-20250929    clang-22
-powerpc64             randconfig-003-20250929    clang-22
-riscv                            allmodconfig    clang-22
-riscv                             allnoconfig    gcc-15.1.0
-riscv                            allyesconfig    clang-16
-riscv                               defconfig    clang-22
-riscv                 randconfig-001-20250929    gcc-9.5.0
-riscv                 randconfig-002-20250929    gcc-11.5.0
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-22
-s390                             allyesconfig    gcc-15.1.0
-s390                                defconfig    clang-22
-s390                  randconfig-001-20250929    gcc-11.5.0
-s390                  randconfig-002-20250929    gcc-13.4.0
-sh                               allmodconfig    gcc-15.1.0
-sh                                allnoconfig    gcc-15.1.0
-sh                               allyesconfig    gcc-15.1.0
-sh                                  defconfig    gcc-15.1.0
-sh                    randconfig-001-20250929    gcc-15.1.0
-sh                    randconfig-002-20250929    gcc-15.1.0
-sparc                            allmodconfig    gcc-15.1.0
-sparc                             allnoconfig    gcc-15.1.0
-sparc                               defconfig    gcc-15.1.0
-sparc                 randconfig-001-20250929    gcc-8.5.0
-sparc                 randconfig-002-20250929    gcc-8.5.0
-sparc64                             defconfig    clang-20
-sparc64               randconfig-001-20250929    clang-22
-sparc64               randconfig-002-20250929    clang-22
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-22
-um                               allyesconfig    gcc-14
-um                                  defconfig    clang-22
-um                             i386_defconfig    gcc-14
-um                    randconfig-001-20250929    gcc-14
-um                    randconfig-002-20250929    gcc-14
-um                           x86_64_defconfig    clang-22
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250929    gcc-14
-x86_64      buildonly-randconfig-002-20250929    gcc-14
-x86_64      buildonly-randconfig-003-20250929    clang-20
-x86_64      buildonly-randconfig-004-20250929    gcc-14
-x86_64      buildonly-randconfig-005-20250929    gcc-14
-x86_64      buildonly-randconfig-006-20250929    gcc-14
-x86_64                              defconfig    gcc-14
-x86_64                          rhel-9.4-rust    clang-20
-xtensa                            allnoconfig    gcc-15.1.0
-xtensa                randconfig-001-20250929    gcc-8.5.0
-xtensa                randconfig-002-20250929    gcc-13.4.0
+>>  };
+>>  
+>>  enum ath12k_smbios_cc_type {
+>> diff --git a/drivers/net/wireless/ath/ath12k/hif.h b/drivers/net/wireless/ath/ath12k/hif.h
+>> index e8840fab6061..1f9781f6d564 100644
+>> --- a/drivers/net/wireless/ath/ath12k/hif.h
+>> +++ b/drivers/net/wireless/ath/ath12k/hif.h
+>> @@ -1,7 +1,7 @@
+>>  /* SPDX-License-Identifier: BSD-3-Clause-Clear */
+>>  /*
+>>   * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
+>> - * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+>> + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+>>   */
+>>  
+>>  #ifndef ATH12K_HIF_H
+>> @@ -32,6 +32,12 @@ struct ath12k_hif_ops {
+>>  	void (*get_ce_msi_idx)(struct ath12k_base *ab, u32 ce_id, u32 *msi_idx);
+>>  	int (*panic_handler)(struct ath12k_base *ab);
+>>  	void (*coredump_download)(struct ath12k_base *ab);
+>> +	int (*ext_irq_setup)(struct ath12k_base *ab,
+>> +			     int (*handler)(struct ath12k_dp *dp,
+>> +					    struct ath12k_ext_irq_grp *irq_grp,
+>> +					    int budget),
+>> +			     struct ath12k_dp *dp);
+>> +	void (*ext_irq_cleanup)(struct ath12k_base *ab);
+>>  };
+>>  
+>>  static inline int ath12k_hif_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
+>> @@ -162,4 +168,26 @@ static inline void ath12k_hif_coredump_download(struct ath12k_base *ab)
+>>  	if (ab->hif.ops->coredump_download)
+>>  		ab->hif.ops->coredump_download(ab);
+>>  }
+>> +
+>> +static inline
+>> +int ath12k_hif_ext_irq_setup(struct ath12k_base *ab,
+>> +			     int (*irq_handler)(struct ath12k_dp *dp,
+>> +						struct ath12k_ext_irq_grp *irq_grp,
+>> +						int budget),
+>> +			     struct ath12k_dp *dp)
+>> +{
+>> +	if (!ab->hif.ops->ext_irq_setup)
+>> +		return -EOPNOTSUPP;
+>> +
+>> +	return ab->hif.ops->ext_irq_setup(ab, irq_handler, dp);
+>> +}
+>> +
+>> +static inline void ath12k_hif_ext_irq_cleanup(struct ath12k_base *ab)
+>> +{
+>> +	if (!ab->hif.ops->ext_irq_cleanup)
+>> +		return;
+>> +
+>> +	ab->hif.ops->ext_irq_cleanup(ab);
+>> +}
+>> +
+>>  #endif /* ATH12K_HIF_H */
+>> diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+>> index 672cf2899681..a28bea5c1d40 100644
+>> --- a/drivers/net/wireless/ath/ath12k/pci.c
+>> +++ b/drivers/net/wireless/ath/ath12k/pci.c
+>> @@ -319,8 +319,6 @@ static void ath12k_pci_free_irq(struct ath12k_base *ab)
+>>  		irq_idx = ATH12K_PCI_IRQ_CE0_OFFSET + i;
+>>  		free_irq(ab->irq_num[irq_idx], &ab->ce.ce_pipe[i]);
+>>  	}
+>> -
+>> -	ath12k_pci_free_ext_irq(ab);
+>>  }
+>>  
+>>  static void ath12k_pci_ce_irq_enable(struct ath12k_base *ab, u16 ce_id)
+>> @@ -478,11 +476,10 @@ static int ath12k_pci_ext_grp_napi_poll(struct napi_struct *napi, int budget)
+>>  	struct ath12k_ext_irq_grp *irq_grp = container_of(napi,
+>>  						struct ath12k_ext_irq_grp,
+>>  						napi);
+>> -	struct ath12k_base *ab = irq_grp->ab;
+>>  	int work_done;
+>>  	int i;
+>>  
+>> -	work_done = ath12k_wifi7_dp_service_srng(ab, irq_grp, budget);
+>> +	work_done = irq_grp->irq_handler(irq_grp->dp, irq_grp, budget);
+>>  	if (work_done < budget) {
+>>  		napi_complete_done(napi, work_done);
+>>  		for (i = 0; i < irq_grp->num_irq; i++)
+>> @@ -517,7 +514,12 @@ static irqreturn_t ath12k_pci_ext_interrupt_handler(int irq, void *arg)
+>>  	return IRQ_HANDLED;
+>>  }
+>>  
+>> -static int ath12k_pci_ext_irq_config(struct ath12k_base *ab)
+>> +static
+>> +int ath12k_pci_ext_irq_config(struct ath12k_base *ab,
+>> +			      int (*irq_handler)(struct ath12k_dp *dp,
+>> +						 struct ath12k_ext_irq_grp *irq_grp,
+>> +						 int budget),
+>> +			      struct ath12k_dp *dp)
+>>  {
+>>  	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
+>>  	int i, j, n, ret, num_vectors = 0;
+>> @@ -538,6 +540,8 @@ static int ath12k_pci_ext_irq_config(struct ath12k_base *ab)
+>>  
+>>  		irq_grp->ab = ab;
+>>  		irq_grp->grp_id = i;
+>> +		irq_grp->irq_handler = irq_handler;
+>> +		irq_grp->dp = dp;
+>>  		irq_grp->napi_ndev = alloc_netdev_dummy(0);
+>>  		if (!irq_grp->napi_ndev) {
+>>  			ret = -ENOMEM;
+>> @@ -651,10 +655,6 @@ static int ath12k_pci_config_irq(struct ath12k_base *ab)
+>>  		ath12k_pci_ce_irq_disable(ab, i);
+>>  	}
+>>  
+>> -	ret = ath12k_pci_ext_irq_config(ab);
+>> -	if (ret)
+>> -		return ret;
+>> -
+>>  	return 0;
+>>  }
+>>  
+>> @@ -1483,6 +1483,8 @@ static const struct ath12k_hif_ops ath12k_pci_hif_ops = {
+>>  #ifdef CONFIG_ATH12K_COREDUMP
+>>  	.coredump_download = ath12k_pci_coredump_download,
+>>  #endif
+>> +	.ext_irq_setup = ath12k_pci_ext_irq_config,
+>> +	.ext_irq_cleanup = ath12k_pci_free_ext_irq,
+>>  };
+>>  
+>>  static enum ath12k_device_family
+>> @@ -1691,6 +1693,7 @@ static void ath12k_pci_remove(struct pci_dev *pdev)
+>>  	ath12k_fw_unmap(ab);
+>>  	ath12k_mhi_unregister(ab_pci);
+>>  
+>> +	ab_pci->device_family_ops->arch_deinit(ab);
+>>  	ath12k_pci_free_irq(ab);
+>>  	ath12k_pci_msi_free(ab_pci);
+>>  	ath12k_pci_free_region(ab_pci);
+>> @@ -1698,8 +1701,6 @@ static void ath12k_pci_remove(struct pci_dev *pdev)
+>>  	ath12k_hal_srng_deinit(ab);
+>>  	ath12k_ce_free_pipes(ab);
+>>  
+>> -	ab_pci->device_family_ops->arch_deinit(ab);
+>> -
+>>  	ath12k_core_free(ab);
+>>  }
+>>  
+>> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp.c b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
+>> index adc3480b282b..df9696549d06 100644
+>> --- a/drivers/net/wireless/ath/ath12k/wifi7/dp.c
+>> +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
+>> @@ -10,13 +10,15 @@
+>>  #include "../dp_mon.h"
+>>  #include "../dp_cmn.h"
+>>  #include "dp_rx.h"
+>> +#include "../hif.h"
+>>  #include "dp.h"
+>>  #include "dp_tx.h"
+>>  
+>> -int ath12k_wifi7_dp_service_srng(struct ath12k_base *ab,
+>> -				 struct ath12k_ext_irq_grp *irq_grp,
+>> -				 int budget)
+>> +static int ath12k_wifi7_dp_service_srng(struct ath12k_dp *dp,
+>> +					struct ath12k_ext_irq_grp *irq_grp,
+>> +					int budget)
+>>  {
+>> +	struct ath12k_base *ab = dp->ab;
+>>  	struct napi_struct *napi = &irq_grp->napi;
+>>  	int grp_id = irq_grp->grp_id;
+>>  	int work_done = 0;
+>> @@ -138,6 +140,7 @@ int ath12k_wifi7_dp_service_srng(struct ath12k_base *ab,
+>>  struct ath12k_dp *ath12k_wifi7_dp_device_alloc(struct ath12k_base *ab)
+>>  {
+>>  	struct ath12k_dp *dp;
+>> +	int ret;
+>>  
+>>  	/* TODO: align dp later if cache alignment becomes a bottleneck */
+>>  	dp = kzalloc(sizeof(*dp), GFP_KERNEL);
+>> @@ -148,12 +151,23 @@ struct ath12k_dp *ath12k_wifi7_dp_device_alloc(struct ath12k_base *ab)
+>>  	dp->dev = ab->dev;
+>>  	dp->hw_params = ab->hw_params;
+>>  
+>> +	ret = ath12k_hif_ext_irq_setup(dp->ab, ath12k_wifi7_dp_service_srng, dp);
+>> +	if (ret) {
+>> +		ath12k_err(ab, "failed to setup ext irq, ret %d", ret);
+>> +		goto free_dp;
+>> +	}
+>> +
+>>  	return dp;
+>> +
+>> +free_dp:
+>> +	kfree(dp);
+>> +	return NULL;
+>>  }
+>>  EXPORT_SYMBOL(ath12k_wifi7_dp_device_alloc);
+>>  
+>>  void ath12k_wifi7_dp_device_free(struct ath12k_dp *dp)
+>>  {
+>> +	ath12k_hif_ext_irq_cleanup(dp->ab);
+>>  	kfree(dp);
+>>  }
+>>  EXPORT_SYMBOL(ath12k_wifi7_dp_device_free);
+>> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp.h b/drivers/net/wireless/ath/ath12k/wifi7/dp.h
+>> index 2300fda65786..72fdfb368c99 100644
+>> --- a/drivers/net/wireless/ath/ath12k/wifi7/dp.h
+>> +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp.h
+>> @@ -13,8 +13,6 @@
+>>  struct ath12k_base;
+>>  struct ath12k_dp;
+>>  
+>> -int ath12k_wifi7_dp_service_srng(struct ath12k_base *ab,
+>> -				 struct ath12k_ext_irq_grp *irq_grp, int budget);
+>>  struct ath12k_dp *ath12k_wifi7_dp_device_alloc(struct ath12k_base *ab);
+>>  void ath12k_wifi7_dp_device_free(struct ath12k_dp *dp);
+>>  
+> 
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
