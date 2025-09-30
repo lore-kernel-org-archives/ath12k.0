@@ -4,102 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BB9CCCA471
-	for <ath12k@archiver.kernel.org>; Tue, 30 Sep 2025 13:12:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4282ACCA468
+	for <ath12k@archiver.kernel.org>; Tue, 30 Sep 2025 13:19:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IlUwWJDfckEuvqk5pG1t9MrAPhZFXCfatpDAZlAI/LQ=; b=QKg1OrjWyO35hHq/IilvMIDzcf
-	apxdHs6xqOcTDjdjjlN7x9mGMtLiEc//NVeFjoTDBeVZHySXCs8hvbGk5vUcc52o33x+ymvK7dhs5
-	ofkQs5WzBdLPeWdOvX2Pzmy9mQTpv5NBnRf5qoeB6BQSa1mig2s5X2mEErsY+SjZy5mQ8CFm70rNz
-	luOgugMD+9xL6m4t6/6jEMyPsThpPCRoiCwvG9WSv9exkmGVV6+j/C+8K3JpyWFYNkSWVgLpb1jWh
-	Zvp3bGXjVxCjbPkywlFBAXqh427zSRQKfi/JPx9nQ3auDIQLDri9qq5LrxkWyI90FZEh4EFJapFIu
-	iHOBdzgw==;
+	bh=1UF3xPVizitXHcEN+gFFFp6aHN9M/76f8O6UvUpKNjI=; b=smt4+SVVNqUQvEnNRNoZSHuXkN
+	YXBKPybGVwzsT9x4m6NqrI1tmTpzY8HTab5cIcphuNgk1Y5UKgXsSZ8e+ghrA4TtqaYt9pDlT6tX5
+	tWavi+31s/y4e+IC31PcgK8hHjR9x76A0TYp8n2t7B3qUGfhtcRtST4Sg0MB9d+H7IPsG3M6fs4qL
+	jfxHJOlufLrjtpC93uPs/wvda83JzuczCEyrh+OopiWKIQNKjzJgOZ7OHe9eUMgIjGqvjEBtkeP9I
+	pOa9NfnQKXE73W1yz57WbrscSWPfVhu8osfJM8pgH7Zaasj+uSsTR2IYD9MJII/HDrq0irHiByZM8
+	WEi7k2xg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3a9h-00000005Mhr-1K4T;
-	Tue, 30 Sep 2025 13:12:33 +0000
+	id 1v3aG1-00000005Nwe-05mB;
+	Tue, 30 Sep 2025 13:19:05 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3a9e-00000005Mgk-26eL
+	id 1v3aFx-00000005Nvf-3lrz
 	for ath12k@lists.infradead.org;
-	Tue, 30 Sep 2025 13:12:31 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58UBnM3u014639;
-	Tue, 30 Sep 2025 13:12:30 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Tue, 30 Sep 2025 13:19:03 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58UBHJss009559
+	for <ath12k@lists.infradead.org>; Tue, 30 Sep 2025 13:19:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IlUwWJDfckEuvqk5pG1t9MrAPhZFXCfatpDAZlAI/LQ=; b=omkCt99WVciRehG8
-	BDg7DPZ4oKFYzv4HqwLSQfGMXfDlihDScOFtuEb5FL5WxqVKU35fkIhveo4ZfqCM
-	h1r/NFH83jeLyuYjhfRm/bPrd+PHdbeojI6Ygaq8km6Ou4gs1vRnHDJqobm3Vk7k
-	Z1hzuAIBQZ+vRYxQEl88+vtLCMZMGWCDlpHalZQrySiNJT6QbK0dZK4jjG4BoyWk
-	oTotXPZ/3+CCeJW5Qj176kkwzVlIi/wkA4PHCKCd8rn/ZTfSD5pN2BPS7imSd57f
-	Dh5FQlErBdhFtWGNyC7v7o3sxBLqa5H5JPxOYWO1PM1K66x1Qlm23LogroHOZrlC
-	0GOUxw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49e6vr110e-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Sep 2025 13:12:30 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 58UDCTX5005510
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Sep 2025 13:12:29 GMT
-Received: from [10.79.124.128] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.24; Tue, 30 Sep
- 2025 06:12:28 -0700
-Message-ID: <4b530795-3508-4179-b33c-05e58869ca09@quicinc.com>
-Date: Tue, 30 Sep 2025 18:42:25 +0530
+	1UF3xPVizitXHcEN+gFFFp6aHN9M/76f8O6UvUpKNjI=; b=NgeQOB87nrQAOCKW
+	Nyj5+k8+d8hnHfDcYkdyC6CjQECnNzWxuugTgJPXnE+k40FP7XZ/a6rsoCjZrLwQ
+	EBkaMcBEMjO9QLGO/Yf6yOqfL2V48eJ8zMSfH9GVIQxu6WqfmjfWF2qL21L2O8V+
+	s3ZHRubfWFn6gbAx+oxjLr6x1HpbQOe8QDiH1xvJR73F1LkRcFO1ObpnpyrWS2Qb
+	6U9Wk1BiOiv6Ge0ZTtLQbaC+M7jpCH9xdyyvGWreE4k4tl072tgCWc2vRtk1nTx1
+	nXNssUzWQ53BM+B1h1aTQEMcdm7sp4I/8JH5+PJ7w7tlfrFGGiA/iMIfCyXulA3r
+	eEmcJg==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49e977rt80-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 30 Sep 2025 13:19:00 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-b57e477760dso3645713a12.2
+        for <ath12k@lists.infradead.org>; Tue, 30 Sep 2025 06:19:00 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1759238339; x=1759843139;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=1UF3xPVizitXHcEN+gFFFp6aHN9M/76f8O6UvUpKNjI=;
+        b=W/F+8qQVysNoeT0jHUdMRfSsD+wpNQKanYo1Z6+1CLe0mTmxdd9dcXJLdvyBQJBytr
+         S+wiPi6bDDyf8eqji4rMO7nTd3VlWWcUs4ukrLNHjfMFBuPkldGP6SFG7/kGyb1j4l8Y
+         ekeLsT6kqIg7Yl2bP2MYFc2EVrbiTTs5rNp1CFtdyKeucD4sSD2eBNmjEIT3M+/4bCB2
+         +MLwRM8FUyzc9pZbQW/b8DoumpcbBLMfg9raLD/t7K24ep4gs6NZIhCST7ypu31YMGrp
+         fZznC/4VyBD3bHDqKHy3l2hI8WuCBKuQx+BcnbI4sK9QwZFrReEEGot5AGDm+XqY3m86
+         QgdA==
+X-Forwarded-Encrypted: i=1; AJvYcCUM8Tkr/0/RiGmQ12/M8JsQ4yIlRokQnRJXqS4e8yZytXnbJFolyiQe/PKK0O7L+ZPm5k2Rnqg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyJNkqMx0k9a7JIte1uJchtyN0aBdKM0N6UpWA+L3o6H2HVgAJM
+	vWTDPopDdUBtbQbKiUDOfgSKKvFbonaDrM6zxH+rFYt0EOeGaEp6ISWefzr3lfg8A8mzacvPF/T
+	AEnsMTtZQtNwIg7Q6i/pFBIgD2lXC8qw/ZzAgepWib5RSBFXEoSQdqaLHQ28Nwg9I6E0BCmvE
+X-Gm-Gg: ASbGncsyuXdwkR9EoAna1a9vpHKgVV3gEMAkPt5mWjhpdT0+cEb6GP9AQePkbNuuM3U
+	HjeZ6I9AlrEw1z1xEC927tmZrGUfkqBODmm6W/bk4FCfc40bLkz+2Oglnqrb+YRqM+2RU+FdmB2
+	p9CANYZq2exNd8nfBV/pyb+U94F1uRzIVNZBcehr/rzfevta4guZIojce9aA9Xa32hZejaEFs1s
+	FTlbnCCDcozc+8PbGlSnXLJzh3lOYzOQynrYn7Hi5OZFSgdXmADjnY2fgJrtRCys/nmLE1cCBzW
+	4/Wrem4lkOx0QIzOO3dPhx22YQxRoWsgbiq+ThWleMvTAJGG23j/nhzTPx4etGvodzecWGUjHO1
+	hZiIC1s9NsQWpmjfD1ruKqdqCTIROYsuyX3CIviz/urg=
+X-Received: by 2002:a05:6a20:734e:b0:2cc:acef:95ee with SMTP id adf61e73a8af0-2e7da45e875mr28048876637.52.1759238338952;
+        Tue, 30 Sep 2025 06:18:58 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHXByZqzBxvKKJLmwX8Ti+9nx4OdQkh6CDH5fI10SzUo2K2oW1vRRmLuDdghH3eTHG+u62peQ==
+X-Received: by 2002:a05:6a20:734e:b0:2cc:acef:95ee with SMTP id adf61e73a8af0-2e7da45e875mr28048833637.52.1759238338368;
+        Tue, 30 Sep 2025 06:18:58 -0700 (PDT)
+Received: from [10.133.33.195] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-783ad5e988csm6463432b3a.18.2025.09.30.06.18.56
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 30 Sep 2025 06:18:58 -0700 (PDT)
+Message-ID: <a4df6fd1-6ae4-44b1-8f3d-4c8ec23c4e62@oss.qualcomm.com>
+Date: Tue, 30 Sep 2025 21:18:54 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath12k-ng v3 6/6] wifi: ath12k: Refactor ath12k_vif
- structure
-Content-Language: en-GB
-To: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20250929115102.512719-1-quic_rdeuri@quicinc.com>
- <20250929115102.512719-7-quic_rdeuri@quicinc.com>
- <39facf12-c452-4fa4-9b76-3da6a0ce3230@oss.qualcomm.com>
-From: Ripan Deuri <quic_rdeuri@quicinc.com>
-In-Reply-To: <39facf12-c452-4fa4-9b76-3da6a0ce3230@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
+Subject: Re: [PATCH ath12k-ng v4 0/6] wifi: ath12k: Modularization of objects
+ for Next Generation Driver
+To: Ripan Deuri <quic_rdeuri@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250930131005.2884253-1-quic_rdeuri@quicinc.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20250930131005.2884253-1-quic_rdeuri@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: FnNrCSqTg4Foq0c0V385hU1VnigS-eja
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTI3MDAxNyBTYWx0ZWRfX3kkhi4jDaHcy
- xmyy/edD2Oxw4+p29wqdB/8XmPC7l4NV/zlrNkOqup1kyKClYAXWW5EV3bRDbDx8Dw3sJ15PFnS
- h5bTU0l9qoCQF1lAL8ilz44uaRg8M1iTwEC1zPIyBOTMJAA14Z0hGRshsoNr/hL7ykCyuTLKGeo
- C0sidJPDy/J9jRkYII/XXbMH2xJHhXZMm5wd6uoZQkTGGlDBMHj6kKpBbON2HCoEJqN4OimVUnJ
- f7Gb2+HgYkmg2SXYcMFtLgGP6M19j57+qdXq92vUBC8JbgafFJmfLFVWRWbsA3RXX7+UTfw6WYG
- U5dOamm7AeIdVCL5aTNXX7+K0cpDgAS5HEZyFbVdifDOdpG2/ZfRYY2n7jldenBHcn0QZP4zLnM
- s7vNbEb3fgO03gA4rM+Z2ZLlz+2u5w==
-X-Authority-Analysis: v=2.4 cv=IeiKmGqa c=1 sm=1 tr=0 ts=68dbd73e cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10
- a=4MtMu4i2hCYbHh_dtokA:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-ORIG-GUID: FnNrCSqTg4Foq0c0V385hU1VnigS-eja
+X-Proofpoint-GUID: f9irkrqn2NUAWeQ47AoNHAuJg9TmTHGq
+X-Proofpoint-ORIG-GUID: f9irkrqn2NUAWeQ47AoNHAuJg9TmTHGq
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTI3MDA0MyBTYWx0ZWRfXx47XRPpPuqnz
+ R8OXqzRoYeO9cAHg4J0H4MPc4ybwNBRke3yR7mdiQxOMbfMMXs8F6rP/O2HmJS5QZcJitGZ6amX
+ kUxIjIM+P4kn+64dEY8lR/NA1mtDVtnh4r3BayPV7EvRnP4OuSGYpRFEdFSMuQXX++9n1C3xNLa
+ KrTZbTcGHLTtT10bLAtoxFj3nqqoyibxaA+kpvDT3y2dQD5bL+t29ymbsFv8NeTeNb+Xcqfn6iK
+ DLWwcsdfCuel81ZefA/PeTfmqkI2ZVt1rmb+i28k4FdM1m2u5Kp3+hJIe/4yNIcdyCe82XTf17z
+ D2TaF/zNdYcUT15ShGIZpvfnMg1KXwPZQNiQ2trIy8HZUtwiZdmEUPmI/FvfIOp2EGhm3c3Afgr
+ TS/d+WZZQpHsuVWf1lswslrbT7kdHQ==
+X-Authority-Analysis: v=2.4 cv=Sf36t/Ru c=1 sm=1 tr=0 ts=68dbd8c4 cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=wCY2apRfTzfgVPxwIycA:9
+ a=QEXdDO2ut3YA:10 a=3WC7DwWrALyhR5TkjVHa:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-30_02,2025-09-29_04,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 clxscore=1015 priorityscore=1501 bulkscore=0
- suspectscore=0 spamscore=0 adultscore=0 impostorscore=0 phishscore=0
- malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ clxscore=1015 bulkscore=0 suspectscore=0 adultscore=0 spamscore=0
+ priorityscore=1501 malwarescore=0 lowpriorityscore=0 phishscore=0
+ impostorscore=0 classifier=typeunknown authscore=0 authtc= authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2509150000
- definitions=main-2509270017
+ definitions=main-2509270043
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250930_061230_552736_822A1945 
-X-CRM114-Status: UNSURE (   9.50  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250930_061901_947701_601C67F2 
+X-CRM114-Status: GOOD (  17.85  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,58 +132,81 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 9/30/2025 9:00 AM, Baochen Qiang wrote:
+On 9/30/2025 9:09 PM, Ripan Deuri wrote:
+> The primary purpose of the patches in this series is modularization of
+> object structures along with their allocation and initialization APIs.
+> 
+> Patches in this series are made to achieve the following:
+> 1. Modularization of device object to have a separate DP object in order
+>    to support chipsets of different hardware architectures
+> 2. Refactor hardware group and vif structures to optimize data
+>    path operations for future extensions
+> 3. Add framework to support architecture specific interrupt handling and
+>    ieee80211_ops registration
+> 
+> These changes are intended to provide a base framework for the data path,
+> allowing the data path to remain flexible for future extensions in Next
+> Generation driver development.
+> ---
+> Changes in v4:
+>      - Use ath12k_dp_vif_to_dp_link_vif() in patch 6/6
+> Changes in v3:
+>      - Use dp arch ops to invoke arch specific service srng handler
+> Changes in v2:
+>      - Invoke ext irq setup/cleanup from dp device alloc/free to fix
+>      suspend and resume call trace for wcn7850 in patch 5/6
+> ---
+> Harsh Kumar Bijlani (1):
+>   wifi: ath12k: Refactor ath12k_vif structure
+> 
+> Ripan Deuri (5):
+>   wifi: ath12k: Convert ath12k_dp member in ath12k_base to pointer
+>   wifi: ath12k: Support arch-specific DP device allocation
+>   wifi: ath12k: Rearrange DP fields in ath12k_hw_group struct
+>   wifi: ath12k: Add framework for hardware specific ieee80211_ops
+>     registration
+>   wifi: ath12k: Add framework for hardware specific DP interrupt handler
+> 
+>  drivers/net/wireless/ath/ath12k/ahb.c         |  22 +-
+>  drivers/net/wireless/ath/ath12k/ahb.h         |   4 +-
+>  drivers/net/wireless/ath/ath12k/cmn_defs.h    |  19 +
+>  drivers/net/wireless/ath/ath12k/core.c        |  19 +-
+>  drivers/net/wireless/ath/ath12k/core.h        |  39 +-
+>  drivers/net/wireless/ath/ath12k/debugfs.c     |   3 +-
+>  drivers/net/wireless/ath/ath12k/debugfs_sta.c |   3 +-
+>  drivers/net/wireless/ath/ath12k/dp.c          | 145 +++++---
+>  drivers/net/wireless/ath/ath12k/dp.h          |  32 +-
+>  drivers/net/wireless/ath/ath12k/dp_cmn.h      |  50 +++
+>  drivers/net/wireless/ath/ath12k/dp_htt.c      |  22 +-
+>  drivers/net/wireless/ath/ath12k/dp_mon.c      |  15 +-
+>  drivers/net/wireless/ath/ath12k/dp_rx.c       |  20 +-
+>  drivers/net/wireless/ath/ath12k/mac.c         | 339 +++++++++---------
+>  drivers/net/wireless/ath/ath12k/mac.h         | 131 ++++++-
+>  drivers/net/wireless/ath/ath12k/pci.c         |  23 +-
+>  drivers/net/wireless/ath/ath12k/pci.h         |   4 +-
+>  drivers/net/wireless/ath/ath12k/peer.c        |  10 +-
+>  drivers/net/wireless/ath/ath12k/testmode.c    |   3 +-
+>  drivers/net/wireless/ath/ath12k/wifi7/ahb.c   |   4 +
+>  drivers/net/wireless/ath/ath12k/wifi7/core.c  |  24 ++
+>  drivers/net/wireless/ath/ath12k/wifi7/core.h  |  11 +
+>  drivers/net/wireless/ath/ath12k/wifi7/dp.c    |  40 ++-
+>  drivers/net/wireless/ath/ath12k/wifi7/dp.h    |   9 +-
+>  drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c |  88 +++--
+>  drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c |  29 +-
+>  drivers/net/wireless/ath/ath12k/wifi7/hw.c    |  62 ++++
+>  drivers/net/wireless/ath/ath12k/wifi7/pci.c   |   4 +
+>  drivers/net/wireless/ath/ath12k/wmi.c         |   5 +-
+>  drivers/net/wireless/ath/ath12k/wmi.h         |   5 +-
+>  drivers/net/wireless/ath/ath12k/wow.c         |   5 +-
+>  31 files changed, 849 insertions(+), 340 deletions(-)
+>  create mode 100644 drivers/net/wireless/ath/ath12k/cmn_defs.h
+>  create mode 100644 drivers/net/wireless/ath/ath12k/dp_cmn.h
+>  create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/core.h
 > 
 > 
-> On 9/29/2025 7:51 PM, Ripan Deuri wrote:
-> 
->> @@ -938,15 +944,19 @@ int ath12k_dp_pdev_alloc(struct ath12k_base *ab)
->>  
->>  static void ath12k_dp_update_vdev_search(struct ath12k_link_vif *arvif)
->>  {
->> +	u8 link_id = arvif->link_id;
->> +	struct ath12k_vif *ahvif = arvif->ahvif;
->> +	struct ath12k_dp_link_vif *dp_link_vif = &ahvif->dp_vif.dp_link_vif[link_id];
-> 
-> nit: consistently use ath12k_dp_vif_to_dp_link_vif()
+> base-commit: 972f34d54015a4a16aa9e6a081bafabb6f9bf95c
 
-Addressed in v4.
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
->> +
->>  	switch (arvif->ahvif->vdev_type) {
->>  	case WMI_VDEV_TYPE_STA:
->> -		arvif->hal_addr_search_flags = HAL_TX_ADDRY_EN;
->> -		arvif->search_type = HAL_TX_ADDR_SEARCH_INDEX;
->> +		dp_link_vif->hal_addr_search_flags = HAL_TX_ADDRY_EN;
->> +		dp_link_vif->search_type = HAL_TX_ADDR_SEARCH_DEFAULT;
->>  		break;
->>  	case WMI_VDEV_TYPE_AP:
->>  	case WMI_VDEV_TYPE_IBSS:
->> -		arvif->hal_addr_search_flags = HAL_TX_ADDRX_EN;
->> -		arvif->search_type = HAL_TX_ADDR_SEARCH_DEFAULT;
->> +		dp_link_vif->hal_addr_search_flags = HAL_TX_ADDRX_EN;
->> +		dp_link_vif->search_type = HAL_TX_ADDR_SEARCH_DEFAULT;
->>  		break;
->>  	case WMI_VDEV_TYPE_MONITOR:
->>  	default:
-> 
-> [...]
-> 
->> @@ -318,12 +318,14 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
->>  		       struct ath12k_wmi_peer_create_arg *arg)
->>  {
->>  	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
->> +	struct ath12k_vif *ahvif = arvif->ahvif;
->>  	struct ath12k_link_sta *arsta;
->>  	u8 link_id = arvif->link_id;
->>  	struct ath12k_peer *peer;
->>  	struct ath12k_sta *ahsta;
->>  	u16 ml_peer_id;
->>  	int ret;
->> +	struct ath12k_dp_link_vif *dp_link_vif = &ahvif->dp_vif.dp_link_vif[link_id];
-> 
-> same here, use ath12k_dp_vif_to_dp_link_vif()
-
-Addressed in v4.
 
 
