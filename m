@@ -4,101 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8A14CAC5B0
-	for <ath12k@archiver.kernel.org>; Thu,  2 Oct 2025 20:38:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F126ACAC5B0
+	for <ath12k@archiver.kernel.org>; Fri,  3 Oct 2025 01:14:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=R51FWFQ7Cctn/OANVhy1+/UrxI71AfbAifEB1dOlGT0=; b=XYQy3SR2lIO9GIaCv+TUWo7oeO
-	Erjp/UPFQpLA1GcZxe5jL2HwfGYewWUOxKVO5Rx9BegY/eSbto9Zdc0h5tIuneLc7VoVKJ29MIZuK
-	W8E4qAa/lUrjSIsN1UVIwQwsJ3WsSjl1rm2TAODEzraFK8hs+WRu8Hi8+JiDwdsgYdSPxmoyst8a7
-	poEUTeaVvJbasryIW3MPUTtC+zx3DNCFZiaVkKDFEZ66RTSvhS5utOkXAKx+HlndmCDWaV7gzwaK9
-	uTnD8xw6EAuOIIW75FoON1Uze5H8dksesK7HT/Cbgng/+6IT3x0xk1+bUKV6slkDkp/dGrydjxi47
-	ZyN9BBNg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=o99cVn6YozCS0v5dx+hTSmMFCAgrLCS5YSfrz0lICIo=; b=qzZ8LCnptr45aSXlNa6WnsAF2c
+	00Djj9mBLeX98x5pqX2Ct3lArutu78sQO0jkNAgsdUGEZqT+mhAI5+71EDDHySr9chJgoxiyyG4Bc
+	nKRHfI1bg9gFFqU8RjR5yTBrNH0HYdqJDwSiJzUzxOHI3KvBypzCepTT9BzPvY9GSbg9Lftvzyq1U
+	SaDCoEBMRMGxh1F/BVX5r4G/h2SAHO6Hod/VQqhOXwI5DEyTftPq7mKq30xhOKBuWNjAg7qhQZva8
+	Bz+Kry2DATLEFtH5z7LkQ5MTaFwoanvKhtzQxdRtb5PTj4ONQ5Y6FmrgNt02XU2D/jyLH3CQGdf2a
+	BSzMhydQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v4Q3x-0000000BBGO-2bd1;
-	Thu, 02 Oct 2025 20:38:05 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1v4UNG-0000000BUkD-32k1;
+	Fri, 03 Oct 2025 01:14:18 +0000
+Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v4Q3u-0000000BBG0-2kZw
+	id 1v4UND-0000000BUjq-3xhb
 	for ath12k@lists.infradead.org;
-	Thu, 02 Oct 2025 20:38:04 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59295DdH012562;
-	Thu, 2 Oct 2025 20:38:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	R51FWFQ7Cctn/OANVhy1+/UrxI71AfbAifEB1dOlGT0=; b=fFf1ZIXA9uFMCra2
-	aBX6xi2x4rGyz/CrrVlVZaquHRg33Nv0YEbpLA+SPDGag/dg0CcD/1Dr3FfL2eUj
-	V1nicwWkzx3n07xBNaQnldayv+PAJrD4w+zOmdttSuG1mPtcA2rsX7QZ3YNQVFHB
-	IatAb5Q4Gg256qYtSRrUPWbeQzyIoxf491+duyFuZJG+giJMFMrJ0Dj5+JahUjir
-	Vq1UfRfMqWZ1KPfxnoS00fEZDJ7l/f8cQ/LjW56UKbk15oRyD46fZecb9pnydE46
-	10RWhKbu2cYJTre07xu/ryTysroF0E+01oZL6dFP+1ESj1EDfU2+3htrQtj12O+B
-	k/VW8Q==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49e80u14mh-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 02 Oct 2025 20:38:01 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 592Kc0Lb025242
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 2 Oct 2025 20:38:00 GMT
-Received: from [10.110.5.41] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.24; Thu, 2 Oct
- 2025 13:37:59 -0700
-Message-ID: <d3abec0f-05f8-483a-bb01-629a27026171@quicinc.com>
-Date: Thu, 2 Oct 2025 13:37:58 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next V16 1/2] wifi: ath12k: fix VHT MCS assignment
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Baochen Qiang <quic_bqiang@quicinc.com>,
-        Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-References: <20251002000732.1916364-1-quic_pradeepc@quicinc.com>
- <20251002000732.1916364-2-quic_pradeepc@quicinc.com>
- <4bb3de8a-92dd-444e-bed0-13ec2419cd34@oss.qualcomm.com>
-Content-Language: en-US
-From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-In-Reply-To: <4bb3de8a-92dd-444e-bed0-13ec2419cd34@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTI3MDAyOSBTYWx0ZWRfXzs1NPcYwV5Ue
- xCImEsT/yZABIsUSIKqkEql7zpKZcfxr5Y/AqhxmUoptBBLnxW7/ERyTiG6d19750G1oaUQbqpR
- fKWp7gmYueDxrVssTB8mu4oqMa4D9qjix8xBX318H/QJDDazl6TQlD1C2+YL77J+u/+Bi8f1t/v
- fjhvbgrsw4dCgKyCSUTI/NsCJ1Ywe+ORBKG7Z+w0GoVpYlkQ7tO78lKWq+/OwPQVH//LMiJm+Mf
- LR5qUoEk6Su2DjYCRGNI2mljUYU0DTP4K2TNgXkRUK7YPGuh7A/VdfePBaKDpfN8LpmPkbWUEO+
- Ux7TOUnwzWIsjUM4fsbW3guBvElf0yqFBFWVsMuUWjhIqdjWRlp9suuuckN7ijsRKoe50cCXjzW
- QfEpNXqsS4q2pNYNDWw3tzy1NkX/Ag==
-X-Proofpoint-GUID: URq3yOjfH6iIjUDdLLPPMDUNpl1BddrG
-X-Authority-Analysis: v=2.4 cv=OMkqHCaB c=1 sm=1 tr=0 ts=68dee2a9 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=EUspDBNiAAAA:8
- a=COk6AnOGAAAA:8 a=VwHbBrl-h6yUJW5RUa8A:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: URq3yOjfH6iIjUDdLLPPMDUNpl1BddrG
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-02_08,2025-10-02_03,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 malwarescore=0 bulkscore=0 phishscore=0 adultscore=0
- priorityscore=1501 lowpriorityscore=0 clxscore=1015 spamscore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2509150000
- definitions=main-2509270029
+	Fri, 03 Oct 2025 01:14:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1759454056; x=1790990056;
+  h=date:from:to:cc:subject:message-id;
+  bh=oUQu0H+gQXpfOcEoUAAhjwJbQtNREhOjxB6sA0+jO/o=;
+  b=MEsA502d4JxdGJcScP18ET2lCRyEVMo8Ov2TpWJJihtU8443IYFJFLnd
+   lS/ig56ErxRGwqFCZy/zUkMc/A33uSnnvf5WEbKozcrSI6LYEepSOgj22
+   akgYMRh2+ew3FKrOjFzhjcXNtpfb29/otYunPCdCGo3PHDrfh0oEMwzNs
+   pX/4GOeJv1IutbaNsjbxfy5FrGsttpvMYxV3r2lEct5KCAW+VBUwxf5NO
+   /R072aoh4B6bx0yPXiAtrpkJr7hme8OUCuNBoftZFUUb730HSoIklwK2K
+   rNbnFkymCEmQq1n59kBva/B8HltbunqaNFRpFkEgKLXuOOYeEkXGTm+hb
+   g==;
+X-CSE-ConnectionGUID: 0xn5NHt7ScijpqAc5kOz7Q==
+X-CSE-MsgGUID: UsQodR2rToe3lA+kuyViww==
+X-IronPort-AV: E=McAfee;i="6800,10657,11570"; a="64359139"
+X-IronPort-AV: E=Sophos;i="6.18,311,1751266800"; 
+   d="scan'208";a="64359139"
+Received: from fmviesa001.fm.intel.com ([10.60.135.141])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Oct 2025 18:14:11 -0700
+X-CSE-ConnectionGUID: IUiTIlfJQ96VbIDJr18ybQ==
+X-CSE-MsgGUID: VxNDKqu7T7+hQ/Z19KvNVQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.18,311,1751266800"; 
+   d="scan'208";a="210145238"
+Received: from lkp-server01.sh.intel.com (HELO 2f2a1232a4e4) ([10.239.97.150])
+  by fmviesa001.fm.intel.com with ESMTP; 02 Oct 2025 18:14:10 -0700
+Received: from kbuild by 2f2a1232a4e4 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1v4UN5-0004Dv-2t;
+	Fri, 03 Oct 2025 01:14:07 +0000
+Date: Fri, 03 Oct 2025 09:13:22 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:pending] BUILD SUCCESS
+ 2e346fc6fd5f3b0aa24b2314d6d3ec97bb1d6485
+Message-ID: <202510030912.ZWta7JNv-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251002_133802_832756_0F52FE05 
-X-CRM114-Status: GOOD (  19.40  )
+X-CRM114-CacheID: sfid-20251002_181416_019585_7F2F2ACE 
+X-CRM114-Status: UNSURE (   3.71  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,111 +83,123 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: 2e346fc6fd5f3b0aa24b2314d6d3ec97bb1d6485  wifi: ath12k: free skb during idr cleanup callback
 
+elapsed time: 1459m
 
-On 10/1/2025 6:31 PM, Jeff Johnson wrote:
-> On 10/1/2025 5:07 PM, Pradeep Kumar Chitrapu wrote:
->> From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
->>
->> While associating, firmware needs the peer's receive capability
->> to calculate its own VHT transmit MCS. Currently, the host
->> sends this information via mcs->rx_mcs_set field, but firmware
->> actually reads it from mcs->tx_mcs_set field. Thjis mismatch is
-> 
-> s/Thjis/This/
-> 
->> incorrect.
->>
->> This issue has not caused failures so far because most peers
->> advertise identical TX and RX capabilities. Fix this by
->> assigning the value to tx_mcs_set as expected.
->>
->> Additionally, the rate control mask is intended to limit our
->> transmit MCS, so it should also apply to the peer's receive
->> capability. Update the logic accordingly.
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->>
->> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
->> Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
->> Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
->> ---
->>   drivers/net/wireless/ath/ath12k/mac.c |  7 +++----
->>   drivers/net/wireless/ath/ath12k/wmi.c | 11 +++++++----
->>   drivers/net/wireless/ath/ath12k/wmi.h |  2 ++
-> 
-> wmi.c and wmi.h need copyright updates to match current guidance.
-> 
->>   3 files changed, 12 insertions(+), 8 deletions(-)
->>
->> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
->> index 1d7b60aa5cb0..0d425a1bc0ab 100644
->> --- a/drivers/net/wireless/ath/ath12k/mac.c
->> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->> @@ -2249,7 +2249,6 @@ static void ath12k_peer_assoc_h_vht(struct ath12k *ar,
->>   	struct cfg80211_chan_def def;
->>   	enum nl80211_band band;
->>   	u16 *vht_mcs_mask;
->> -	u16 tx_mcs_map;
->>   	u8 ampdu_factor;
->>   	u8 max_nss, vht_mcs;
->>   	int i, vht_nss, nss_idx;
->> @@ -2340,10 +2339,10 @@ static void ath12k_peer_assoc_h_vht(struct ath12k *ar,
->>   	arg->peer_nss = min(link_sta->rx_nss, max_nss);
->>   	arg->rx_max_rate = __le16_to_cpu(vht_cap->vht_mcs.rx_highest);
->>   	arg->rx_mcs_set = __le16_to_cpu(vht_cap->vht_mcs.rx_mcs_map);
->> -	arg->tx_max_rate = __le16_to_cpu(vht_cap->vht_mcs.tx_highest);
->> +	arg->rx_mcs_set = ath12k_peer_assoc_h_vht_limit(arg->rx_mcs_set, vht_mcs_mask);
->>   
->> -	tx_mcs_map = __le16_to_cpu(vht_cap->vht_mcs.tx_mcs_map);
->> -	arg->tx_mcs_set = ath12k_peer_assoc_h_vht_limit(tx_mcs_map, vht_mcs_mask);
->> +	arg->tx_max_rate = __le16_to_cpu(vht_cap->vht_mcs.tx_highest);
->> +	arg->tx_mcs_set = __le16_to_cpu(vht_cap->vht_mcs.tx_mcs_map);
->>   
->>   	/* In QCN9274 platform, VHT MCS rate 10 and 11 is enabled by default.
->>   	 * VHT MCS rate 10 and 11 is not supported in 11ac standard.
->> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
->> index ff6b3d4ea820..2682d89afd44 100644
->> --- a/drivers/net/wireless/ath/ath12k/wmi.c
->> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
->> @@ -2367,10 +2367,13 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
->>   	cmd->peer_bw_rxnss_override |= cpu_to_le32(arg->peer_bw_rxnss_override);
->>   
->>   	if (arg->vht_capable) {
->> -		mcs->rx_max_rate = cpu_to_le32(arg->rx_max_rate);
->> -		mcs->rx_mcs_set = cpu_to_le32(arg->rx_mcs_set);
->> -		mcs->tx_max_rate = cpu_to_le32(arg->tx_max_rate);
->> -		mcs->tx_mcs_set = cpu_to_le32(arg->tx_mcs_set);
->> +		/* Firmware interprets mcs->tx_mcs_set field as peer's
->> +		 * RX capability
->> +		 */
->> +		mcs->rx_max_rate = cpu_to_le32(arg->tx_max_rate);
->> +		mcs->rx_mcs_set = cpu_to_le32(arg->tx_mcs_set);
->> +		mcs->tx_max_rate = cpu_to_le32(arg->rx_max_rate);
->> +		mcs->tx_mcs_set = cpu_to_le32(arg->rx_mcs_set);
->>   	}
->>   
->>   	/* HE Rates */
->> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
->> index a8c3190e8ad9..6d9c645e3d5d 100644
->> --- a/drivers/net/wireless/ath/ath12k/wmi.h
->> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
->> @@ -4218,8 +4218,10 @@ struct wmi_unit_test_cmd {
->>   struct ath12k_wmi_vht_rate_set_params {
->>   	__le32 tlv_header;
->>   	__le32 rx_max_rate;
->> +	/* MCS at which the peer can transmit */
->>   	__le32 rx_mcs_set;
->>   	__le32 tx_max_rate;
->> +	/* MCS at which the peer can receive */
->>   	__le32 tx_mcs_set;
->>   	__le32 tx_max_mcs_nss;
->>   } __packed;
-> I can apply my two comments when I process this series if there are no other
-> changes required.
-> 
-> /jeff
-Thanks for the review Jeff..
+configs tested: 103
+configs skipped: 3
 
-I will wait for any further review comments.
+The following configs have been built successfully.
+More configs may be tested in the coming days.
+
+tested configs:
+alpha                             allnoconfig    gcc-15.1.0
+alpha                            allyesconfig    gcc-15.1.0
+arc                               allnoconfig    gcc-15.1.0
+arc                   randconfig-001-20251002    gcc-12.5.0
+arc                   randconfig-002-20251002    gcc-12.5.0
+arm                               allnoconfig    clang-22
+arm                   randconfig-001-20251002    gcc-12.5.0
+arm                   randconfig-002-20251002    clang-22
+arm                   randconfig-003-20251002    clang-22
+arm                   randconfig-004-20251002    clang-20
+arm                        spear6xx_defconfig    clang-22
+arm64                             allnoconfig    gcc-15.1.0
+arm64                 randconfig-001-20251002    gcc-8.5.0
+arm64                 randconfig-002-20251002    clang-22
+arm64                 randconfig-003-20251002    clang-22
+arm64                 randconfig-004-20251002    clang-22
+csky                              allnoconfig    gcc-15.1.0
+csky                  randconfig-001-20251002    gcc-15.1.0
+csky                  randconfig-002-20251002    gcc-9.5.0
+hexagon                          allmodconfig    clang-17
+hexagon                           allnoconfig    clang-22
+hexagon                          allyesconfig    clang-22
+hexagon               randconfig-001-20251002    clang-22
+hexagon               randconfig-002-20251002    clang-16
+i386                              allnoconfig    gcc-14
+i386        buildonly-randconfig-001-20251002    clang-20
+i386        buildonly-randconfig-002-20251002    gcc-14
+i386        buildonly-randconfig-003-20251002    clang-20
+i386        buildonly-randconfig-004-20251002    clang-20
+i386        buildonly-randconfig-005-20251002    gcc-14
+i386        buildonly-randconfig-006-20251002    clang-20
+i386                                defconfig    clang-20
+loongarch                         allnoconfig    clang-22
+loongarch             randconfig-001-20251002    gcc-15.1.0
+loongarch             randconfig-002-20251002    clang-18
+m68k                              allnoconfig    gcc-15.1.0
+m68k                          hp300_defconfig    gcc-15.1.0
+microblaze                        allnoconfig    gcc-15.1.0
+microblaze                          defconfig    gcc-15.1.0
+mips                              allnoconfig    gcc-15.1.0
+mips                           xway_defconfig    clang-22
+nios2                             allnoconfig    gcc-11.5.0
+nios2                               defconfig    gcc-11.5.0
+nios2                 randconfig-001-20251002    gcc-11.5.0
+nios2                 randconfig-002-20251002    gcc-10.5.0
+openrisc                          allnoconfig    gcc-15.1.0
+openrisc                            defconfig    gcc-15.1.0
+parisc                            allnoconfig    gcc-15.1.0
+parisc                              defconfig    gcc-15.1.0
+parisc                randconfig-001-20251002    gcc-9.5.0
+parisc                randconfig-002-20251002    gcc-8.5.0
+parisc64                            defconfig    gcc-15.1.0
+powerpc                           allnoconfig    gcc-15.1.0
+powerpc               randconfig-001-20251002    gcc-8.5.0
+powerpc               randconfig-002-20251002    gcc-9.5.0
+powerpc               randconfig-003-20251002    clang-22
+powerpc                     redwood_defconfig    clang-22
+powerpc64             randconfig-001-20251002    clang-22
+powerpc64             randconfig-002-20251002    clang-22
+powerpc64             randconfig-003-20251002    clang-22
+riscv                             allnoconfig    gcc-15.1.0
+riscv             nommu_k210_sdcard_defconfig    gcc-15.1.0
+riscv                 randconfig-001-20251002    clang-22
+riscv                 randconfig-002-20251002    clang-22
+s390                             allmodconfig    clang-18
+s390                              allnoconfig    clang-22
+s390                             allyesconfig    gcc-15.1.0
+s390                  randconfig-001-20251002    gcc-14.3.0
+s390                  randconfig-002-20251002    gcc-11.5.0
+sh                               allmodconfig    gcc-15.1.0
+sh                                allnoconfig    gcc-15.1.0
+sh                               allyesconfig    gcc-15.1.0
+sh                                  defconfig    gcc-15.1.0
+sh                    randconfig-001-20251002    gcc-13.4.0
+sh                    randconfig-002-20251002    gcc-15.1.0
+sh                          sdk7780_defconfig    gcc-15.1.0
+sh                        sh7757lcr_defconfig    gcc-15.1.0
+sh                        sh7785lcr_defconfig    gcc-15.1.0
+sparc                            allmodconfig    gcc-15.1.0
+sparc                             allnoconfig    gcc-15.1.0
+sparc                               defconfig    gcc-15.1.0
+sparc                 randconfig-001-20251002    gcc-8.5.0
+sparc                 randconfig-002-20251002    gcc-15.1.0
+sparc64               randconfig-001-20251002    clang-22
+sparc64               randconfig-002-20251002    gcc-8.5.0
+um                               allmodconfig    clang-19
+um                                allnoconfig    clang-22
+um                               allyesconfig    gcc-14
+um                    randconfig-001-20251002    clang-22
+um                    randconfig-002-20251002    clang-22
+x86_64                            allnoconfig    clang-20
+x86_64                           allyesconfig    clang-20
+x86_64      buildonly-randconfig-001-20251002    gcc-13
+x86_64      buildonly-randconfig-002-20251002    clang-20
+x86_64      buildonly-randconfig-003-20251002    clang-20
+x86_64      buildonly-randconfig-004-20251002    clang-20
+x86_64      buildonly-randconfig-005-20251002    gcc-14
+x86_64      buildonly-randconfig-006-20251002    gcc-14
+x86_64                              defconfig    gcc-14
+x86_64                          rhel-9.4-rust    clang-20
+xtensa                            allnoconfig    gcc-15.1.0
+xtensa                randconfig-001-20251002    gcc-8.5.0
+xtensa                randconfig-002-20251002    gcc-12.5.0
+
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
