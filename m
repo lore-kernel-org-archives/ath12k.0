@@ -4,118 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2FAFCCA476
-	for <ath12k@archiver.kernel.org>; Tue,  7 Oct 2025 13:31:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E28FBCCA470
+	for <ath12k@archiver.kernel.org>; Tue,  7 Oct 2025 13:33:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ntyqc3cfFdL0+zciHAWHrYx64d7Wo2ITIj39j+9BU1A=; b=1nGH96XsO0P8L/drhVRDfYBIFF
-	rrn4F09emc3H89jC6kQ/bHgqJiad3gN6suYnpaKL2larrWOSfNI0h9zQh/wOl2rwGYdaY3721uMrH
-	hFDNzptqxyRHs6F2mzKoortZY0wnMr/oxKWjb8IqKE37r7Zm7B9H5ePdROO206hZoLr7nkfcmmPfH
-	Fg/zR7WHmQA3fXYp6Ri/cBr2R3rgguuzUmJjHCJ/ZlCeS23vii3g17ZiX2L65XQ5zXMhpBdUAoASm
-	WVYsYIFtO4uIRNXp7U5iC16/AOVxrQWin4ruem7dce+zIgjOKoILT9ViUw1uhH7FMxDqV7jVXXiNl
-	hLvUiiYA==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=niQkkf7HgMoKKp1+WrllKQhIsL/j0I6kBdevJ4pk0+0=; b=12OLA6zC/2ScN5ajokRPAJJFIr
+	QQhKIb2zOpRTQHyMMjrA0bDlRjHDd7YkaxzLbxL3BHK4Krc3Gj1qS9ngHDZnYe0luueEHA5BJVQ5z
+	iA+d/27JAcEra2MBPGdTpuww3O5dWhXMdnYQpAX9AKUCcUyp6OBtGF3C+r5gBQp1f+OcoOeSpzChv
+	KiqmN47wooKrUqpTHUkOW4zePotOHyThi8qLcRwG33sO6jJjzCvYOu3IZzWVIuqUbFN0VyYMKES7O
+	oygQFbGCvehq0AcciV1ot1Qjq0sFJdaJetj0/SfZ9JyzjT1jq72IoXUugdqH67rw9TP+9TztCXUfE
+	SvPdyUXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v67me-000000024Np-1gmg;
-	Tue, 07 Oct 2025 13:31:16 +0000
+	id 1v67pB-000000024s7-2sW6;
+	Tue, 07 Oct 2025 13:33:53 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v67mb-000000024N6-08c0
+	id 1v67p9-000000024rk-1qqn
 	for ath12k@lists.infradead.org;
-	Tue, 07 Oct 2025 13:31:15 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 597A5gdb006173
-	for <ath12k@lists.infradead.org>; Tue, 7 Oct 2025 13:31:11 GMT
+	Tue, 07 Oct 2025 13:33:52 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 597BsbUi013641
+	for <ath12k@lists.infradead.org>; Tue, 7 Oct 2025 13:33:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Ntyqc3cfFdL0+zciHAWHrYx64d7Wo2ITIj39j+9BU1A=; b=PPEtf7ktZZv8VKC8
-	YUTgicsLYTLA2ABfArxbCHtU8DjF6Z8EVy67FMhsaPrnwx6/e6RzJuJGPZKErGTq
-	il9+f1DYjS2MonG37PHQ/oUTaKNp0qlaOaI0ob0SxD5M+cwWaa633zm9iuVz8kV6
-	FszkhPjGwpE8lWKrIWXiTNX6L6NiYGqBQKG85cw6gPc9ZTnFS88SxvLEWaCnSwpf
-	RlolBHO9EwstyEbuPZJiHqpU1AcPaWjX00ebr49abgq+10NWLShqDH6eBsSmKJlk
-	vZjXlhqHdORBw8PPslniIJWb0uYrValFqNKeU5DvdAgBzhaOFw2Ff+v9u10ZfjAp
-	ieq69Q==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49jtk6ycq9-1
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=niQkkf7HgMoKKp1+WrllKQhIsL/j0I6kBde
+	vJ4pk0+0=; b=OzPpIme1cZ63RNgrtIFfXjqFbkpj4kHKFgDxnPaqzltQaQ+SDYP
+	6zcOqoWsl6llsezhUrBlyHgROA/HtC06z94cNZ7GZ8X/eQtDjkZL+NPVdqQYVNNL
+	I+YalawD/1+nAqR2GTKg+pJ7MXqr5iJhdD/Fyj+LeTxZoJEUrtitUW4GSJONfxcw
+	CQj0l4IigRwkgU4o/a6kiIHRw0XdoOeXhJJbXAWCj9oiFA7bWcjT5XjAmTwxz1JG
+	W4yVOGD7Qsk+II2NZaergOiakSimO9OwAWHm+WYV6m/0ax0mnxTeyx5zoh7givSC
+	FTy7y8NxoiCgpOyZ0pImMj7+GUxUU7ceXWQ==
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49junu7b99-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 07 Oct 2025 13:31:11 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-33428befc3aso6777605a91.2
-        for <ath12k@lists.infradead.org>; Tue, 07 Oct 2025 06:31:11 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 07 Oct 2025 13:33:50 +0000 (GMT)
+Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-77f64c5cf62so4778411b3a.2
+        for <ath12k@lists.infradead.org>; Tue, 07 Oct 2025 06:33:50 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759843870; x=1760448670;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Ntyqc3cfFdL0+zciHAWHrYx64d7Wo2ITIj39j+9BU1A=;
-        b=JJvdA+5DCf7MJTnPQZ3if3HAj+DKfgnjFmk8j7E12lT9wtCiEYA8Pq7dm17ELN196i
-         Tw8b/H/5nM2Uaej63liD6xIKYN4Li7/EoyDqx53srb3YCbNlBKRgwf3Nkk8ur3D28fEV
-         u8/lyz214zx/GZDcPGlf+tBrNscINgPpLSlICNgv4rCouyKkCPljSNsbdz94+X6iE49Q
-         1k6Z1jHD+1lmIV1ImLKA4nYsoytt8eDneWujGWmsdTuVdL/eeIg03z1dFuildRKAyBvD
-         pgGO6lLYx+rlQeIV3YY39DLa/MIZ0zWJRad8j1iG6+H/WKENYKxIFjWooUIEztaRQyY4
-         340Q==
-X-Forwarded-Encrypted: i=1; AJvYcCVUvKn9jA5kMlruDYiUsBbp+bkPlt0//z2J+x9irTU/4gaLmnAdyngtKSMc0WHza3evkqa20Kc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwiGNoFCQrfUMaoLdoPiw4lTFK4SS2H1oxkl78d5ld9DbTGkXhV
-	2G4pNPRKVq5J54KDIeCVE9gvoY8ESuAFerq0EmL3B3V+0kBTJ8SBsA5BSZDSW4NsXxeqrHPqG7s
-	hI2ADYtDZuHiryzxH1JKbmgs3u2lhyoFJ2Dr4FGbDyfx7WDu5Tb9bkkmOJOYHvuDhPLOFyZt2
-X-Gm-Gg: ASbGncu56gdmyBYWB0bN2N/w8h9/r8JaQIeWDmKTdA7DlaTUKRR3SuLUaLfgBg6V4hl
-	6rCyFAyfv12Kzu/utF7FfrLSFY016ebWiBxEflq6M0YjM1UKX4q7Nmjur6hDC3eDmAF8+tWOJi6
-	d9cgsMMd1MxEwxtAIvNPDpbD6UybDmhZmnbn5BaU2vKa4o2LxAhLqiZQDSc8sxmqhWR76udczxg
-	ZAfXnb9fmUOTs8VK9bGXzh31DuO5wNzfdDrN2z243J5g8FlzFB7qh8D2fR+24UfgLEXjxiHojwQ
-	0apob5iyqWK0OQvPyfDU1r7hgHUAF3Wim1EqDIySFBlrujRLWdLCmgBZzR1S31LS0ZPwIlXy08d
-	qkM69tWH9
-X-Received: by 2002:a17:90b:1d0a:b0:32e:1188:147f with SMTP id 98e67ed59e1d1-339c276e95emr21898798a91.19.1759843869417;
-        Tue, 07 Oct 2025 06:31:09 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEWkR3NMZmKO8TBoV/tq1VuPyh74ytxa3HIkPi4GrzXtS7xG0vWtr49AExNmovoi+H2e/nfYg==
-X-Received: by 2002:a17:90b:1d0a:b0:32e:1188:147f with SMTP id 98e67ed59e1d1-339c276e95emr21898752a91.19.1759843868848;
-        Tue, 07 Oct 2025 06:31:08 -0700 (PDT)
-Received: from [192.168.1.6] ([115.96.2.203])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-339f09bdf1fsm1224456a91.2.2025.10.07.06.31.07
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 07 Oct 2025 06:31:08 -0700 (PDT)
-Message-ID: <8e8b06f0-e654-44da-91a9-9731cb92516e@oss.qualcomm.com>
-Date: Tue, 7 Oct 2025 19:01:04 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next] wifi: ath12k: Fix NSS value update in
- ext_rx_stats
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250725084426.3989966-1-thiraviyam.mariyappan@oss.qualcomm.com>
- <4e204f93-b964-40fb-8eb5-f723f309a2c1@oss.qualcomm.com>
-Content-Language: en-US
+        d=1e100.net; s=20230601; t=1759844029; x=1760448829;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=niQkkf7HgMoKKp1+WrllKQhIsL/j0I6kBdevJ4pk0+0=;
+        b=oJPX+67IJqzEe0u3Dyh3u1FOx6Gw8+KG3SOnDX4DiVpvu+fyN8E8Tg5OqZFdohHglJ
+         7sbljOg5AhKJOAEcyc35/3DBhDzQKh8G51v/DYMwFMQPsC0Gx/AGJvUDOd6HKMVhTiwL
+         hern/f1iBkqiepeZS2A94yu5fsFktva8IGfP75484kbbEKJbRaXAT34ZElJOabz0qmlK
+         uF3FS9Kdp1DD4PZh11elS84OBSjm7bvtUw+gYMmuYUaN5J9yU6oL64WeeZ3fW0feBDyS
+         w/KicTDzt6/ckg5Y+AEVPygeD4dljVKGMllbMORXbzPJyWrr1mtLP29/cLAkU3xG0Of0
+         ZvBQ==
+X-Gm-Message-State: AOJu0YzitVpO8ofayZ4m61Ioxohxqr5eZnmmICBt48e1Gs1V+f+ylJPI
+	BS20IshB7Y9lcOfyEkc1wO/mHeP6k8P7ZhSjilttH1rgGyddfnTLv3sV/W2wyLHSpjJTnpbtUyV
+	Sib/3oueHLi6kP1Pbn+zuA8/n/7Zv0uoL4IkoAKOUSMOZhBdjcpBqH/R/v68J4gH94JBpkT8Q
+X-Gm-Gg: ASbGnctludqiMPYf36ySK0DE9BycTI/cR6XcYmCeNMxSB0z/AAKRrQvnphJb4k/D2lc
+	2OxoK8eUSfSzvU13fydnWy9m3bJ9JIAbpNBkNKuT7jZo4Y/aQM3lidt4dbJ1K21zDQdgTcr88Qo
+	O0IOjt36XMEY2/QI8uSEIW/YMSmUqvcUGwtUyV0qsQqPW1wXS7cdqZ93YJMmNOwepZC9Q3fYqX7
+	bvoavDu+9oRygZOsVlZYYm1v3TGn7NZHg3PrWLsQWcH1M/PXNyPWCxtWdeRnr7pbw2k1GO7Pgjs
+	Y+qD79r5e+rYRlAjq5dracuqcHv+9N6ByIe5hRso4kziNPx8T9hhqd85eVah8IMidt2d7vvee2g
+	YYEG8FWtF69UcpYxvUFvpNB0hiVSBY/yjn8ZtB3EQKve7UVSUSbbjntXY7ZUSAq99fqSQZ6yqw8
+	qnFQ==
+X-Received: by 2002:a05:6a20:7fa5:b0:2fa:516e:26b5 with SMTP id adf61e73a8af0-32b61e58364mr20907839637.20.1759844028790;
+        Tue, 07 Oct 2025 06:33:48 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHd4uOTYbCCqX64dZuLBwCZIQP8tE0wWh9u3cKOdDbFxUzaBtFKggP1sH/FQpelDTRU5YYxFA==
+X-Received: by 2002:a05:6a20:7fa5:b0:2fa:516e:26b5 with SMTP id adf61e73a8af0-32b61e58364mr20907804637.20.1759844028298;
+        Tue, 07 Oct 2025 06:33:48 -0700 (PDT)
+Received: from hu-tmariyap-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-78b81760e58sm14045353b3a.24.2025.10.07.06.33.46
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 07 Oct 2025 06:33:47 -0700 (PDT)
 From: Thiraviyam Mariyappan <thiraviyam.mariyappan@oss.qualcomm.com>
-In-Reply-To: <4e204f93-b964-40fb-8eb5-f723f309a2c1@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA0MDAxNyBTYWx0ZWRfXwRluKEFcnqPu
- 364fPvrwytMXRLmkrv5vL4x9s/wBQXZ0BiI3S1usW8Frv9P8bV1JNciJP8mwxOLeIO3YuvKjX5p
- hk2cd/PW17Qg/FLV+QNF2SkNT5tT5b+O5xvtiPzR2VcX3TTN7GUMOFczzQisIKmkM0MJJzmPgUY
- TEcTE7bMYRXR5je6QEVy47LztIn3+O3cupqOJ7z8VXD/jIYrsLzB23sL7daVgTeKAr5+HRNg2Nm
- 5eTUK3s99csluQVGr6nFufph4nYbfdyKwo+XUf7qGYxCQIW0JiyGNlBA/4aSg+ErnPrWI2eAUu8
- 6lQdu1ZWaFNi419v3aUCK9wa3vvCNdVHxcdyneJsTIwfYhLNtCXfnykzyf1zWLQUKaWaQKi8PUp
- jCMg3mtyta8FCs2u0ipbquGZyV+Q4w==
-X-Authority-Analysis: v=2.4 cv=do3Wylg4 c=1 sm=1 tr=0 ts=68e5161f cx=c_pps
- a=vVfyC5vLCtgYJKYeQD43oA==:117 a=P8EKGVp7AHIUQAkkfTWdsA==:17
- a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=EUspDBNiAAAA:8 a=myYG0hIH-BHpDLZ92UcA:9
- a=QEXdDO2ut3YA:10 a=rl5im9kqc5Lf4LNbBjHf:22
-X-Proofpoint-GUID: y7CNQ4gzD2HWo4_GzRbLWCw7txxmQH5w
-X-Proofpoint-ORIG-GUID: y7CNQ4gzD2HWo4_GzRbLWCw7txxmQH5w
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Thiraviyam Mariyappan <thiraviyam.mariyappan@oss.qualcomm.com>
+Subject: [PATCH ath-next v2] wifi: ath12k: Fix NSS value update in ext_rx_stats
+Date: Tue,  7 Oct 2025 19:03:32 +0530
+Message-Id: <20251007133332.1092178-1-thiraviyam.mariyappan@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-ORIG-GUID: 1AvYQkqhbNu2pZGxfuOq1jwROxPCVPne
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA0MDAyMyBTYWx0ZWRfX9pd8cQ6/vtJv
+ GaLazJp937XEhW/GMCaQz1omdYH8SQePVbTYajjF3Mwwzc30EUOPlmH/s9zJFw3+8SYpYZYSU9M
+ lML4Fuz9K+JO1GT9SfC9QsA5WmRbTCE5Wuao7o27l+dOGrEpA4lslJU2Yojvc1u7HLhbfvsfPG+
+ EGwdf5e4FnGyZtBzB3ugKY6ko/yJCz8b+QPMjSF9Rrw9vqp7x7JjlfemIIOLj67IWv9UE5caC5T
+ iFkaC+ajIwceV+1ZYXIMRxTOKB5d7vGqcc7+ZFVzYslTSLMP38BsKQ9WT9S/PTGK+ww4Cz3v4ZQ
+ 3UKYySO7NbYlzh0I1D0XmKCoMoE+VvmHaMxomF9GayHMN1IGdRDl9jWv+Pg2cKbOEflt0MyMy8z
+ VUOd7sT7fgIOmQKwPc+q79wX2Izwrg==
+X-Authority-Analysis: v=2.4 cv=CbIFJbrl c=1 sm=1 tr=0 ts=68e516be cx=c_pps
+ a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=x6icFKpwvdMA:10 a=EUspDBNiAAAA:8 a=WCOCDAP-shxDn94hZWYA:9
+ a=IoOABgeZipijB_acs4fv:22
+X-Proofpoint-GUID: 1AvYQkqhbNu2pZGxfuOq1jwROxPCVPne
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-10-07_01,2025-10-06_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 adultscore=0 lowpriorityscore=0 phishscore=0 clxscore=1015
- malwarescore=0 spamscore=0 impostorscore=0 priorityscore=1501 bulkscore=0
+ lowpriorityscore=0 malwarescore=0 clxscore=1015 adultscore=0 suspectscore=0
+ spamscore=0 priorityscore=1501 phishscore=0 impostorscore=0 bulkscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2510040017
+ reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2510040023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251007_063113_192468_EAE02EDF 
-X-CRM114-Status: GOOD (  17.22  )
+X-CRM114-CacheID: sfid-20251007_063351_598289_956D708D 
+X-CRM114-Status: GOOD (  16.19  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,44 +124,102 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Currently, in ext_rx_stats, the NSS value is taken directly from
+the firmware, which results in incorrect mapping:
+        4x4, 3x3, 2x2, 1x1 SS are incorrectly updated as 3x3, 2x2,
+1x1, 0x0 SS respectively.
 
+Fix the issue by incrementing the NSS value by 1 while updating
+the PPDU info to ensure accurate spatial stream statistics.
 
-On 9/20/2025 9:25 PM, Jeff Johnson wrote:
-> On 7/25/2025 1:44 AM, Thiraviyam Mariyappan wrote:
->> Currently, in ext_rx_stats, the NSS value is taken directly from
->> the firmware, which results in incorrect mapping:
->>         4x4, 3x3, 2x2, 1x1 SS are incorrectly updated as 3x3, 2x2,
->> 1x1, 0x0 SS respectively.
->>
->> Fix the issue by incrementing the NSS value by 1 while updating
->> the PPDU info to ensure accurate spatial stream statistics.
->>
->> Remove the redundant +1 increment in the radiotap header when monitor
->> mode is enabled to prevent double counting.
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
->>
->> Signed-off-by: Thiraviyam Mariyappan <thiraviyam.mariyappan@oss.qualcomm.com>
->> ---
->>  drivers/net/wireless/ath/ath12k/dp_mon.c | 13 +++++++------
->>  1 file changed, 7 insertions(+), 6 deletions(-)
-> 
-> This patch no longer cleanly applies to ath/main:
-> Applying: wifi: ath12k: Fix NSS value update in ext_rx_stats
-> Using index info to reconstruct a base tree...
-> M       drivers/net/wireless/ath/ath12k/dp_mon.c
-> Falling back to patching base and 3-way merge...
-> Auto-merging drivers/net/wireless/ath/ath12k/dp_mon.c
-> CONFLICT (content): Merge conflict in drivers/net/wireless/ath/ath12k/dp_mon.c
-> 
-> Please rebase. And when you do so, please follow current legal guidance and
-> replace the existing QUIC copyright with the new QTI one.
+Remove the redundant +1 increment in the radiotap header when monitor
+mode is enabled to prevent double counting.
 
-WIll rebase and update the copyright in the next version.
-> 
-> /jeff
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
 
-Thanks,
-Thiraviyam M
+Signed-off-by: Thiraviyam Mariyappan <thiraviyam.mariyappan@oss.qualcomm.com>
+---
+Changes in v2:
+ - Rebased and changed copyright to QTI.
+---
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 19 ++++++++++++-------
+ 1 file changed, 12 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index 009c49502148..39d1967584db 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+  */
+ 
+ #include "dp_mon.h"
+@@ -105,7 +105,7 @@ static void ath12k_dp_mon_parse_vht_sig_a(const struct hal_rx_vht_sig_a_info *vh
+ 	if (ppdu_info->is_stbc && nsts > 0)
+ 		nsts = ((nsts + 1) >> 1) - 1;
+ 
+-	ppdu_info->nss = u32_get_bits(nsts, VHT_SIG_SU_NSS_MASK);
++	ppdu_info->nss = u32_get_bits(nsts, VHT_SIG_SU_NSS_MASK) + 1;
+ 	ppdu_info->bw = u32_get_bits(info0, HAL_RX_VHT_SIG_A_INFO_INFO0_BW);
+ 	ppdu_info->beamformed = u32_get_bits(info1,
+ 					     HAL_RX_VHT_SIG_A_INFO_INFO1_BEAMFORMED);
+@@ -129,7 +129,7 @@ static void ath12k_dp_mon_parse_ht_sig(const struct hal_rx_ht_sig_info *ht_sig,
+ 	ppdu_info->is_stbc = u32_get_bits(info1, HAL_RX_HT_SIG_INFO_INFO1_STBC);
+ 	ppdu_info->ldpc = u32_get_bits(info1, HAL_RX_HT_SIG_INFO_INFO1_FEC_CODING);
+ 	ppdu_info->gi = u32_get_bits(info1, HAL_RX_HT_SIG_INFO_INFO1_GI);
+-	ppdu_info->nss = (ppdu_info->mcs >> 3);
++	ppdu_info->nss = (ppdu_info->mcs >> 3) + 1;
+ }
+ 
+ static void ath12k_dp_mon_parse_l_sig_b(const struct hal_rx_lsig_b_info *lsigb,
+@@ -233,7 +233,9 @@ ath12k_dp_mon_parse_he_sig_b2_ofdma(const struct hal_rx_he_sig_b2_ofdma_info *of
+ 	value = value << HE_STA_ID_SHIFT;
+ 	ppdu_info->he_data4 |= value;
+ 
+-	ppdu_info->nss = u32_get_bits(info0, HAL_RX_HE_SIG_B2_OFDMA_INFO_INFO0_STA_NSTS);
++	ppdu_info->nss =
++		u32_get_bits(info0,
++			     HAL_RX_HE_SIG_B2_OFDMA_INFO_INFO0_STA_NSTS) + 1;
+ 	ppdu_info->beamformed = u32_get_bits(info0,
+ 					     HAL_RX_HE_SIG_B2_OFDMA_INFO_INFO0_STA_TXBF);
+ }
+@@ -261,7 +263,9 @@ ath12k_dp_mon_parse_he_sig_b2_mu(const struct hal_rx_he_sig_b2_mu_info *he_sig_b
+ 	value = value << HE_STA_ID_SHIFT;
+ 	ppdu_info->he_data4 |= value;
+ 
+-	ppdu_info->nss = u32_get_bits(info0, HAL_RX_HE_SIG_B2_MU_INFO_INFO0_STA_NSTS);
++	ppdu_info->nss =
++		u32_get_bits(info0,
++			     HAL_RX_HE_SIG_B2_MU_INFO_INFO0_STA_NSTS) + 1;
+ }
+ 
+ static void
+@@ -553,7 +557,8 @@ static void ath12k_dp_mon_parse_he_sig_su(const struct hal_rx_he_sig_a_su_info *
+ 	ppdu_info->is_stbc = u32_get_bits(info1, HAL_RX_HE_SIG_A_SU_INFO_INFO1_STBC);
+ 	ppdu_info->beamformed = u32_get_bits(info1, HAL_RX_HE_SIG_A_SU_INFO_INFO1_TXBF);
+ 	dcm = u32_get_bits(info0, HAL_RX_HE_SIG_A_SU_INFO_INFO0_DCM);
+-	ppdu_info->nss = u32_get_bits(info0, HAL_RX_HE_SIG_A_SU_INFO_INFO0_NSTS);
++	ppdu_info->nss = u32_get_bits(info0,
++				      HAL_RX_HE_SIG_A_SU_INFO_INFO0_NSTS) + 1;
+ 	ppdu_info->dcm = dcm;
+ }
+ 
+@@ -2179,7 +2184,7 @@ static void ath12k_dp_mon_update_radiotap(struct ath12k *ar,
+ 	spin_unlock_bh(&ar->data_lock);
+ 
+ 	rxs->flag |= RX_FLAG_MACTIME_START;
+-	rxs->nss = ppduinfo->nss + 1;
++	rxs->nss = ppduinfo->nss;
+ 	if (test_bit(WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT,
+ 		     ar->ab->wmi_ab.svc_map))
+ 		rxs->signal = ppduinfo->rssi_comb;
+
+base-commit: 94aced6ed9e2630bae0b5631e384a5302c4b6783
+-- 
+2.34.1
 
 
