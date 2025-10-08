@@ -4,118 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4069DCCD183
-	for <ath12k@archiver.kernel.org>; Wed,  8 Oct 2025 15:52:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE282CAC5BB
+	for <ath12k@archiver.kernel.org>; Wed,  8 Oct 2025 16:09:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KFc76BDgD2P9Eg/sErqSY2dRKzFxKP25dp0vt90ggU4=; b=Zh8QJlJfUk1UyuEMvjGLWE2ojZ
-	Ync0RdKA/gXorDQKNF4hFYpYlVD370Wnos9zYos6ZuoR+w8AHAHpqjAhHHkyXNtmBZaw3iWvTTZZc
-	gdDHWUcW1I9uVVLTdpTwVlBH/zjQGGvVClb7jnyZ2nctZu6vbRoHlF+/u2rWuLLeM+JoEq2nKuGpd
-	hAFItfc1g1Pe9eB4XyEpwxS9Iiz+QgMbLsmMR4URxeMXbjVWPKSjpd7+Aioc6DNu1ev/Xhe2ZezU6
-	aeC5kl1kgcE0QO1eoDIexF2lB+DVHpHD/WZ2sdf3ttvCB/N70EXDqwXVB78g27tcMx6alr1qn9tX8
-	v7IUFbdA==;
+	bh=9SjNOmBYkgmQ4w218km+CPYe5MEFlAVFtIXfYnTSkI4=; b=ENX/lKLFVFliMcTDVKMyAsI8N+
+	GKQq3WNvOFShFxUiVAAwpoQVXn4V8m2gU+2Jf+DxjEgJx0zoDEjjuB1ksD9ZWMtHLqa+eU+Blba3n
+	TCRnhpPMJtRbig++q95WomvQLgU2FA6Z/lzgMHrBY9B95/sRxJo/3Zm2SDTeRT/OEaIXMtW4E+BDV
+	7t6w9TamHSASMdwSoZx/a3HSHUaahBsMnE+KgoB3Rf9vXy4GdAVGla3GZsMb9aSNJuu1lDovoAllh
+	8zFqLV6VxSlDQJplLbZwlXCV+jNFmHTPJmlD7wm6WG9iD/UlfIh2mLxWwOZFMTP4IjtNkiMRF1Kym
+	kL3Z9NuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6WSj-00000004Dw1-46ze;
-	Wed, 08 Oct 2025 15:52:21 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1v6WjO-00000004Ghj-1yUq;
+	Wed, 08 Oct 2025 16:09:34 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6WSh-00000004DvR-13Tx
+	id 1v6WjK-00000004Gfy-2bjY
 	for ath12k@lists.infradead.org;
-	Wed, 08 Oct 2025 15:52:20 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59890Pan026675
-	for <ath12k@lists.infradead.org>; Wed, 8 Oct 2025 15:52:19 GMT
+	Wed, 08 Oct 2025 16:09:33 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59890Rbb001683
+	for <ath12k@lists.infradead.org>; Wed, 8 Oct 2025 16:09:29 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	KFc76BDgD2P9Eg/sErqSY2dRKzFxKP25dp0vt90ggU4=; b=Hfp5B4nc5fUWczSt
-	Gf/rQyICI705m8baPzccyDITha05ciCVRU66tE2cs4a1hZXbIxgFOGWbknki+oUT
-	HvKqMiMt9PY497s07lVpV5rW7Kst+Qel0H2PS7+5nD/UTfPfYgMbfX8TKNT1RWqy
-	ngbX45awxmnS0iYeZeMXDB6Kl0iJVCGjUoM7LqMaK2cb6Z+hMQ/hrBe527JVKstt
-	hWRfaA963jtUdYlOF9W/UnV/6nSPtk+vzrUr7PKEoc5IFa5+FL5YEQ1NUaOOBwLE
-	9IWyWBYFmYCsWJ4Z6RXDRAeLB215hyyS4VS+2u4Sq9OnORPK8MmlNnPiD3CfONzZ
-	79S7QA==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49n89hjvdk-1
+	9SjNOmBYkgmQ4w218km+CPYe5MEFlAVFtIXfYnTSkI4=; b=NYYhrOhSr8+/V/wN
+	mCrm98SqJlQE3wnZ4aSfbXipocoNNbFitASkoM4ij8OO1g3/EKjiUtz6bLIoMOsX
+	v8Uz82Y3gbyo1kqlEqxncpnaXknpoWWqVhSs9/CDgJQfcZBk88kQH/40KT9bJYdw
+	3sEpHSQRO3vmNsm1A8ABBAw478RxIlnf4fNMDEhCyXjARsPNBwDrVA73JpCKWqeN
+	wnQ2vZaIWNWYJRIYBW4tx5pe3FpD3y2r03FlTiAj+IL6LjioJnpGgyL/8fazkfPY
+	k485sJ8TzQAda+olZV0ggo4p6QcMqAwp273bg2xD6jtushHlYOlOp1zDdGdHtEr/
+	0ypBcg==
+Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49jrxnbggm-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 08 Oct 2025 15:52:18 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-27356178876so52996615ad.1
-        for <ath12k@lists.infradead.org>; Wed, 08 Oct 2025 08:52:18 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 08 Oct 2025 16:09:29 +0000 (GMT)
+Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-78427dae77eso6741264b3a.3
+        for <ath12k@lists.infradead.org>; Wed, 08 Oct 2025 09:09:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759938738; x=1760543538;
+        d=1e100.net; s=20230601; t=1759939768; x=1760544568;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=KFc76BDgD2P9Eg/sErqSY2dRKzFxKP25dp0vt90ggU4=;
-        b=TgMYXYQMHDSV+GdrDk+0eUY09FhF6Cisks3PLQKV0qW7w2dX3wMpBTBNzpEfoMq87x
-         THAgt87ZsvIu93exGXCtPnhaDmLTKJ6zaOttMMXKnalSZcdHQkDLxNrprQ/herCeK9yI
-         VrMd4R8oZbxdT4jUbhfG+cWZ8Y9dH6pxWIZx9CxHJUAEXfPgKOP1cv3UcQAf2tA0oBol
-         0QubjsEgHl6gOtJgPQE4bctayqupOAjZ+op07CgRtQ+CE1BiF7a3G/0VAeGH+6v7EB+W
-         IDew/TfrYDOe5ZvOadF+I6f8h3z1GO3eDP7HhvXmSHDCLraCUHEudqlTobA7iL4nb/dQ
-         +mzw==
-X-Forwarded-Encrypted: i=1; AJvYcCUfiDFT9ZBwfDVlAIaht5PGn3GA6/SI1X7VIOXidJvPgLhktay6/BEamuEAUJV3EteMwZqaYGA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwTPGVdanzsL5Blcr5fxXh7k/IKfJINIcNc/xBfODdU4Ao+RIWX
-	4kNuGHW5xWwDcv3s/nMZr1a9hS4t/a8PdNqhWIHFcUKk4cS7yvZ0t4a/y8DENrdM569cUW+WzSJ
-	s/yBT02YGvgjXn4w8EP3mfOAcQiY/HRpeDSnqTkjK8Z7B1s1b7m+UxFTM4trx6OfB
-X-Gm-Gg: ASbGncvY50g9MlEHHZ/XyH4A4+pQP7JV8KNw0B7Zu5jm6JnRGVgv5B2vH6K6H7HV5WZ
-	VC+PlLpTF9mCPI6/lmF1+iiv4KGt5dEJMP7BNo7LA3xLJbR5oaUBLpMwSFrjVzny3y+rmzYg2+C
-	Fj6AxLw7aPJsO2dnAllU9nhIGS4VUKZ5d2mMiiI4+hvHGCaxybnf9bHn0c9xEnRFWU1Xftd8b+r
-	+sttRss3CZpj1mq50E08gvAYr7n5lqs3x5aVSedsPymAy3kv3CjHGj9qXrXnCxsjOrZcL6r2MOl
-	EWXKu/qN9m2Y0i9sVWD2enzYqZiqrfwdtz1YNBnPszXhAjLdi9//4ON5gMl46yXUTDrJDTiHVYH
-	5gj6kJEMrXeM+ud4hdUPW4g==
-X-Received: by 2002:a17:903:8cc:b0:269:936c:88da with SMTP id d9443c01a7336-290273ffeecmr43821535ad.41.1759938737874;
-        Wed, 08 Oct 2025 08:52:17 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHNlgtcPoxczCO031rhbVKzGidTk9wzfvUrXjmBL5eGY3gTdvs/Q86Zo/mTahJRpgOo0JJCIQ==
-X-Received: by 2002:a17:903:8cc:b0:269:936c:88da with SMTP id d9443c01a7336-290273ffeecmr43821275ad.41.1759938737356;
-        Wed, 08 Oct 2025 08:52:17 -0700 (PDT)
+        bh=9SjNOmBYkgmQ4w218km+CPYe5MEFlAVFtIXfYnTSkI4=;
+        b=OCEtP0+jVW/dPSSlquAuIEAo4IEd/Dmc5cD0JBCubyh3xP8358X5rL74iX2RKpefD/
+         /zZZWDDL5d1DsO0/OXiIlefbAos8BL69X58xj3/aE8m8zOuZDZ2+IkMnb753XO2yvivf
+         4VQ6nevEGNU4RqWuBbb+phL5DnjwFLUQ2eUqVG93KMWQo2WuGnyJVGpztyVVEson/UPM
+         eb+w2f6VzEhwo01/xe0Qss8yOYuf6QOygamQWHPNv/yawsWWOX78Q9Dn28d/9xOAEaEv
+         Httd5IB3Z/LucKyBKeEV+XFf7ybmd0+yQCiC+ILD31qlxYO0NZex5ee893gmWKS/sKWI
+         1ovQ==
+X-Forwarded-Encrypted: i=1; AJvYcCX/mpL8FN9Ks5+hkx7dWff0njMM7va/dnFrFktRekoz9+cY370kG+I4GuM6TWnWP1eS7J6ZaLU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzCuKG0JGs5b8uICaGbcIPo49qG4oo8BhQDivtiaDoRaA8ZygB9
+	aW4JdNl2MY4ch0feeuBpcn/NpCtdOu6sg6TKlD12IEsk6YWyTzQHC6OxIR2eseaCf/Fres+NplF
+	qjcOtEKiQaYPXGSemSMl+YiNO7tGW1LtlBqMnGrybHeEAbX0iINefZ6ORHXcAlfdl
+X-Gm-Gg: ASbGncsPFTMGOA6kC2mPXepgtYvfpDGf31POfhqI4RZnAvUCzI+sd4ZPeEhxcFZ06TB
+	QY6utVpjwQ9IjkZFpwRjKV13aj+ggoB+N8UMU/4h209CT8c9fquzLixX+YgNIgm3xUTzoERSnyl
+	f/a9inoGnkT8UHTul939X7ET0N5zf8+5PyMNPY6+5C55E6Pb3bZm37NKlFeHSITDPHz8/BROajk
+	55syP0mcqklbUsCGK7XB+T/3QO+aL7HXDS2RZUnMzYRhJhc4RM2FTnnD01tX4ptpaqR57FoRfy1
+	KapKf6pyj4MUdh23ByNfA5YkDHQD8guFmzJ1Bq3GzzlYjUXntdt1CJOyXUUYXvEa4ID12zq2FMr
+	tZNDULAVpyaduAFiu4pSxng==
+X-Received: by 2002:a05:6a21:6da9:b0:262:d303:38ab with SMTP id adf61e73a8af0-32da839f896mr5751526637.33.1759939768052;
+        Wed, 08 Oct 2025 09:09:28 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGwSYhZX4V4TmEwCuDMwX6Kq+U1LCW3VSwEhMXEfdqhJXPuvkVj+O+uuSORendAHkxiUu8ehg==
+X-Received: by 2002:a05:6a21:6da9:b0:262:d303:38ab with SMTP id adf61e73a8af0-32da839f896mr5751472637.33.1759939767494;
+        Wed, 08 Oct 2025 09:09:27 -0700 (PDT)
 Received: from [192.168.225.142] ([157.49.106.187])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-29034f93b66sm862305ad.124.2025.10.08.08.52.15
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-794d510e3fasm148113b3a.26.2025.10.08.09.09.25
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 08 Oct 2025 08:52:16 -0700 (PDT)
-Message-ID: <a3b8334e-c3bf-015b-540e-d6962ecfaa4f@oss.qualcomm.com>
-Date: Wed, 8 Oct 2025 21:22:13 +0530
+        Wed, 08 Oct 2025 09:09:27 -0700 (PDT)
+Message-ID: <fb9ca418-4df3-ba1e-9fce-9353c2a28136@oss.qualcomm.com>
+Date: Wed, 8 Oct 2025 21:39:22 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.13.0
-Subject: Re: [PATCH ath12k-ng v2 0/2] wifi: ath12k: Modularization of PDEV
- object for Next Generation Driver
+Subject: Re: [PATCH ath-next] wifi: ath12k: Defer vdev bring-up until CSA
+ finalize to avoid stale beacon
 Content-Language: en-US
-To: Ripan Deuri <quic_rdeuri@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20251007110203.1541167-1-quic_rdeuri@quicinc.com>
+To: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+References: <20250924134336.888-1-maharaja.kennadyrajan@oss.qualcomm.com>
 From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <20251007110203.1541167-1-quic_rdeuri@quicinc.com>
+In-Reply-To: <20250924134336.888-1-maharaja.kennadyrajan@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA3MDE0NiBTYWx0ZWRfX5vZOagZbqVAa
- z5pfEhxOucEcEGtjVJ0zdDOMHnNrIB1FHn8FnaibC1plZSieArpsu4NeZIPi3FTGNjfCQQ9ueFe
- XESRb6ZtjM9a0i+4s0rxh2IvIer8Yd6Il3jJq3ujQL6ixbMgQ5pN8egBL8Vta0sUjxUNMbdVegQ
- jllT058dC5QaVbqAHkQCUDhqrSTJhqcOy8jtQpfuHcwYx727wxQlwZCxb0gs/UT1mgyvrxggdtc
- NScuUAQLKmTaOh323kfsw3qrc74Khf/yn99KQLFsFs+lCVOhR7P/aKqw3Nd/7HBqY+KIg2q5uty
- pO6FURVfKncCbPxnm2F2ULz4E9kt4muQiG7+Zvs+MD2SLqSeVohSGsqa0smLZrr1+pZhEU+kzD2
- 37PolDUE2qKbFG1UkAaZVCgbPgQbiQ==
-X-Proofpoint-ORIG-GUID: ffv2cPn1KAShr4UOrJI5xsHEdgmQFm15
-X-Proofpoint-GUID: ffv2cPn1KAShr4UOrJI5xsHEdgmQFm15
-X-Authority-Analysis: v=2.4 cv=cKbtc1eN c=1 sm=1 tr=0 ts=68e688b2 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=z6xreaRxtU16OQ9bEhv1vw==:17
- a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=EUspDBNiAAAA:8 a=vHGgmhArcKzGfspvb2AA:9
- a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA0MDAwMSBTYWx0ZWRfX5Dyuwc76SYYR
+ fEdnEQIPtJYur+pehNLG1xGxguOgxRGHhs4w1GjVZC2IaP0Lc6HOnm8vEPfl5p64O3Pj9w8NOBf
+ JR17AznR/lN/ezkQ3Bh8BkTlXcL5JyBPc7EArtirJeEoy+jVW6PE6+QWFz7zDkVF9LHfj/gYP+i
+ asNWc1s7qzdfpp0OAo08rx7+XxiGalV3cW816lcc/Cl3StOGjBiOQbICIpIIPnRNsJXjLF/aHf7
+ 4vEcfZ/SxInzHDqWdzDRwrnx483ntHHxChbi9rTDyy7a48eiuEWxP+UNaU99psO96XsQch64YYd
+ r6lPyFbs6XcHQH41z+spTCr+7ANczByEsShSySPwcLVOn0z3QkSWWtSz40f5WUI+pq7e+wcqaAq
+ peUIahCN7U5AhWFtxcbqkcHucWaBqQ==
+X-Proofpoint-GUID: 05peOzDqPvVFbZQo-0TfI-3ATu6DkmcO
+X-Proofpoint-ORIG-GUID: 05peOzDqPvVFbZQo-0TfI-3ATu6DkmcO
+X-Authority-Analysis: v=2.4 cv=EqnfbCcA c=1 sm=1 tr=0 ts=68e68cb9 cx=c_pps
+ a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=z6xreaRxtU16OQ9bEhv1vw==:17
+ a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=EUspDBNiAAAA:8 a=BueIPD__e_aKeFq9xe4A:9
+ a=QEXdDO2ut3YA:10 a=zc0IvFSfCIW2DFIPzwfm:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-10-08_05,2025-10-06_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 suspectscore=0 malwarescore=0 spamscore=0 priorityscore=1501
- adultscore=0 impostorscore=0 lowpriorityscore=0 bulkscore=0 phishscore=0
+ phishscore=0 priorityscore=1501 spamscore=0 lowpriorityscore=0 malwarescore=0
+ adultscore=0 suspectscore=0 bulkscore=0 impostorscore=0 clxscore=1015
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2510070146
+ reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2510040001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251008_085219_338874_D53B8FB9 
-X-CRM114-Status: GOOD (  14.68  )
+X-CRM114-CacheID: sfid-20251008_090930_780890_17567932 
+X-CRM114-Status: GOOD (  16.74  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,46 +134,43 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 10/7/2025 4:32 PM, Ripan Deuri wrote:
-> This patch series continues the effort to modularize data path structures
-> in ath12k, focusing on improving the organization of DP pdev handling and
-> preparing for future architecture-specific extensions.
+On 9/24/2025 7:13 PM, Maharaja Kennadyrajan wrote:
+> From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 > 
-> Patch 1 refactors DP pdev handling by consolidating all DP-related fields
-> of a radio into struct ath12k_pdev_dp structure. An RCU-protected array of
-> these objects is introduced in ath12k_dp to facilitate dp_pdev lookup from
-> ath12k_dp.
+> Mac80211 schedules CSA finalize work twice during a channel switch: first
+> during the reserved switch phase and again during the finalize phase.
+> The beacon content is updated only during the second schedule, which occurs
+> after the reserved switch completes. However, the ath12k driver attempts to
+> bring up the VDEV during the channel switch callback
+> (ath12k_mac_update_vif_chan()), which leads to premature installation of
+> stale beacon templates before the updated content is available.
 > 
-> Patch 2 encapsulates PPDU statistics within dp_pdev, as these stats are
-> associated with out-of-band data path operations. This reorganization
-> provides a cleaner structure by grouping both in-band (per-packet) fields
-> and out-of-band stats under the same ath12k_pdev_dp object.
+> This premature VDEV bring-up causes outdated beacon information to be
+> broadcast, which can result in updated channel parameters during the
+> transition. In MBSSID scenarios, this behavior is particularly problematic
+> because the transmitting interface's beacon must be updated before
+> non-transmitting interfaces are brought up. Failing to do so can lead to
+> beacon mismatches across interfaces.
 > 
-> These changes are part of a broader effort to establish a base framework
-> for next-generation driver development, allowing the data path to remain
-> flexible for future extensions.
-> ---
-> Changes in v2:
->      - Made ath12k_pdev_dp_to_ar() a static inline in core.h
-> ---
-> Ripan Deuri (2):
->    wifi: ath12k: Refactor data path pdev struct
->    wifi: ath12k: Rearrange PPDU radio stats
+> Introduce a is_csa_in_progress flag to defer VDEV_UP until CSA finalize is
+> complete. Set this flag during the channel switch callback when CSA is
+> active. In bss_info_changed(), check this flag and issue VDEV_UP only
+> after the beacon template has been updated.
 > 
->   drivers/net/wireless/ath/ath12k/core.h        |  24 +-
->   drivers/net/wireless/ath/ath12k/dp.c          |  23 ++
->   drivers/net/wireless/ath/ath12k/dp.h          |  41 ++++
->   drivers/net/wireless/ath/ath12k/dp_cmn.h      |  18 ++
->   drivers/net/wireless/ath/ath12k/dp_htt.c      |  59 +++--
->   drivers/net/wireless/ath/ath12k/dp_mon.c      | 183 ++++++++-------
->   drivers/net/wireless/ath/ath12k/dp_mon.h      |   9 +-
->   drivers/net/wireless/ath/ath12k/dp_rx.c       |  99 ++++----
->   drivers/net/wireless/ath/ath12k/dp_rx.h       |  13 +-
->   drivers/net/wireless/ath/ath12k/mac.c         |  34 ++-
->   drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 216 ++++++++++--------
->   drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c |  66 +++---
->   drivers/net/wireless/ath/ath12k/wifi7/dp_tx.h |   2 +-
->   13 files changed, 488 insertions(+), 299 deletions(-)
+> Ensure that in MBSSID cases, the transmitting interface is brought up
+> first, followed by all non-transmitting interfaces. This ordering makes
+> sure correct beacon propagation and avoids stale beacon installation
+> during CSA transitions.
+> 
+> Additionally, move the call to ath12k_mac_update_peer_puncturing_width()
+> before VDEV bring-up during CSA handling. This ensures that the puncturing
+> bitmap and bandwidth settings are applied before the VDEV is brought up.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> 
+> Fixes: 8c6faa56bfb2 ("wifi: ath12k: add MBSSID beacon support")
+> Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+> Signed-off-by: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
 
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
