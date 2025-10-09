@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA15CCCD187
-	for <ath12k@archiver.kernel.org>; Thu,  9 Oct 2025 11:11:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C661CCCD18F
+	for <ath12k@archiver.kernel.org>; Thu,  9 Oct 2025 11:11:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=vu3KGIDscAwhEzDbTLctfTIhfENEwbCDmrjyo6yI2Ns=; b=WyHcx1Fh+Cdm8HgTrHDpcBYp1b
-	1F38BAE46W/rK41WwcqZPQ4ToINkHMwTaPhRKle2q3lKojD6HDXyGezF7cxs7CTxnnzAKZ9MIgJ5B
-	GTrRUvbA44wNmwqORXWH+bkFXIKDz2DBGEWDsgT1r6tfhGVU4xgg0Gl5Vu4VHLNqaSZmpk7VZ6PTr
-	gVWce3NosfM6E9vJmia/79J6naLzrPIT8uIKN7qggpumkDUBVZ4G644NPAHVoOfRQUDOzbXYpMBdN
-	K5LAHJWikERrKMyqMdUeFu+awp5oF4UXgK2pTsVFwn2TDsEO6Adw0fTWiut9iv1+GDl3Nw7qrYpK1
-	G4rxqUGg==;
+	bh=BeLSGc+itKx6sYcw7KVyYJoozfQ30B6WM91N+WTNUis=; b=1nkPPJiGZgPcDhJiUV5cwJQR5Z
+	AFdPNbv2qjZ8QBKK09sEUef5hohwwRmdoP1KI+8Cb3phP9nvS20yOzAipMHKhxr72c5zbg7Q2kUFf
+	Vllqt80AlHXll9TWqefiiLdlcTs6kw7trSIyWkgW7aysiqx95CaLjesObDlVBReen2fQ3rehx3oZd
+	/s+6L/fn4f/tDu25RJvyjTm6/D8sC9nunXqbmUIIVJ7mjGa+tZNg6fo+V4FzBm57Weqy/TCQVbqwl
+	TbqGla7m5eLWAdeZ+iACL/bFfLTSlPNE/8srly9rG51ynd+/RTWRZ0oaNoAGU4JNotVhGUqoj2VFN
+	VpBMqk/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6oYI-00000005unk-1oi6;
-	Thu, 09 Oct 2025 11:11:18 +0000
+	id 1v6oYL-00000005urh-2Hm7;
+	Thu, 09 Oct 2025 11:11:21 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6oYF-00000005ulC-3joU
+	id 1v6oYI-00000005uok-45kG
 	for ath12k@lists.infradead.org;
-	Thu, 09 Oct 2025 11:11:17 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5996FOxo014054;
-	Thu, 9 Oct 2025 11:11:15 GMT
+	Thu, 09 Oct 2025 11:11:20 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5996EIeg023275;
+	Thu, 9 Oct 2025 11:11:18 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	vu3KGIDscAwhEzDbTLctfTIhfENEwbCDmrjyo6yI2Ns=; b=ox6X445OHQJW07Xk
-	P0ZGRWuW9X49weFFrqbmVzduzKKhxlEJSiqMvPqp90KxDu3MYpQDnIFjZQC2xnp3
-	KPO+wXUYrYlycgotiC2WpvaAJc5peCp6i4YdHSklrD7bQsqIkWcu8NqDUjuQVkDc
-	+1MG6hSdha30DZo1Oh097Xd5apa5l8gjKNvn+/uk9pYcMW322vKNu6Z+EFlEVL7i
-	0CAqjzLMuIF0dW5uEyOxSd9eBGl5YIVc1CvRa5fqg/ffdBgm946M3XU2zIKh7WXM
-	vvF+gE5N2AjIGVDXqfEtvRdVvekjMEsJh60E0qBtDJ7m1r/aAM9mAsBiYTqkNjr9
-	axs9hQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49nv4kjhrs-1
+	BeLSGc+itKx6sYcw7KVyYJoozfQ30B6WM91N+WTNUis=; b=kOglMfvhukKHOZZG
+	5JPwurrfQ7qafiZ0NuKe31x6yAG2WHJ80T3+VS9o4daj5gDnZYWEgJ2J28r1C5OY
+	BQ4C6dXbQ2c3WYyXad3mcwqB9yk3E3UG4k/AwgE/CFbU9TBRBsnJzWs4Y7HsN0/m
+	kTwEURAUvCFr5E3CCdwm+qSQ07pvEPgcYnnE11kL2Ghh+kh+lJwDkJdzoc3qo+uL
+	UAik0FJ4w3jc5VSIdnIP93kG6OSyIqkjgohp7u08yZcoX7bqZe+rNawXIt5h8yUN
+	jMA3JM067arO+D8d8PcEjfSr/Q7UFFfem+dEmAq1ZIpHCmUaX5M0kVR3jOy4PBhF
+	mUJNOA==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49nv4m2hsc-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 09 Oct 2025 11:11:15 +0000 (GMT)
+	Thu, 09 Oct 2025 11:11:18 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 599BBE1h011066
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 599BBHkp024739
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 9 Oct 2025 11:11:14 GMT
+	Thu, 9 Oct 2025 11:11:17 GMT
 Received: from hu-rdeuri-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.24; Thu, 9 Oct 2025 04:11:13 -0700
+ 15.2.1748.24; Thu, 9 Oct 2025 04:11:16 -0700
 From: Ripan Deuri <quic_rdeuri@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH ath12k-ng 09/18] wifi: ath12k: Move HAL SRNG shadow config and get ring id APIs to wifi7 directory
-Date: Thu, 9 Oct 2025 16:40:36 +0530
-Message-ID: <20251009111045.1763001-10-quic_rdeuri@quicinc.com>
+Subject: [PATCH ath12k-ng 11/18] wifi: ath12k: Move HAL CE status and set link desc addr APIs to wifi7 directory
+Date: Thu, 9 Oct 2025 16:40:38 +0530
+Message-ID: <20251009111045.1763001-12-quic_rdeuri@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20251009111045.1763001-1-quic_rdeuri@quicinc.com>
 References: <20251009111045.1763001-1-quic_rdeuri@quicinc.com>
@@ -69,30 +69,30 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=dojWylg4 c=1 sm=1 tr=0 ts=68e79853 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA4MDEyMSBTYWx0ZWRfX/QUvpNWppdHa
+ MuNbCpZl8RtfVlRJFTDDm/ZzVX8B187wsH6W1hJy7EvbIEM2USpqfQyuXpH8+G/49L2C6g16T+P
+ 2uPR+lEL+2C9hnMBaaI11s9Ev4SFm4wNeruc9lxMIXJGMJESVdu6TGFfc8SNKxO6/p9fnDcIXOZ
+ S3aEf/iG3TtmyjBITqW2kBjKuVD2wn9bP7ZZxeekIcHcL3O1zCFD14s05L+qYtGU9w1ON+s4xJt
+ D2f587s8HOhPWP1qZG/x4dstKZr2+WARQGuwCIkJRnGnUwv7GgTJz4WFZCg9tkJa44UawUfBgui
+ WauWAvgW/LggIC2K0sPoLG6pw3mbFDARIVcDWYOjNNMSGBVVjQ8BFE5fFQ26E7iJabWCKNfU6w8
+ WY3CO2fPAhBxdoGDHzg0LzT08p+O1Q==
+X-Authority-Analysis: v=2.4 cv=B6G0EetM c=1 sm=1 tr=0 ts=68e79856 cx=c_pps
  a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=x6icFKpwvdMA:10 a=COk6AnOGAAAA:8 a=geYsRcAEZK8K0mnbX_QA:9
+ a=GEpy-HfZoHoA:10 a=x6icFKpwvdMA:10 a=COk6AnOGAAAA:8 a=kX_5ZsDEhLr6PecvTysA:9
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: 2uz1Nqgjtbl2iFes-l5DvKErBd6y0HbX
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA4MDEyMSBTYWx0ZWRfX1i0G43vsFGDM
- vT3iPucffS2Dp6OoFm8/HNWqBey1BcsrI+ooXQAaGtokc88PC7if5RmdJJa8EINafdVBx1oswDi
- nFkPiSCXs9Zn/x2aW1W6IqTmA8nkKuxyB06pYH1Prl+j3R/NJig3eJUuAHonwDhG0Mmsc11qQVJ
- k7JhnzJBgbyPocjnnuJi2NU5NJfu0l4D1RAgbrCXlCMWIKdUVL9IVJm9yAOVwUZQWDn1dXoqf4/
- Rqxal7yx6vm0YoQWP6/W+YsIk+1oWOXecavZeKmoTravlNpZzVvB8HqMv8BrL2u2WA8dM03r2sA
- H3cVcllFypW3N2kxaX3ieWtpT+NhTFJhM5fR71CsL8H06XvHvrwta6F+YY+r4hS/E8Ztpl1dRb+
- 9m704L+6ib1KiZOy8rL0nOO+upgoJA==
-X-Proofpoint-ORIG-GUID: 2uz1Nqgjtbl2iFes-l5DvKErBd6y0HbX
+X-Proofpoint-GUID: 0PpOqvaQoMGH0brUSRAc8KDNKPFqqQF1
+X-Proofpoint-ORIG-GUID: 0PpOqvaQoMGH0brUSRAc8KDNKPFqqQF1
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-10-09_03,2025-10-06_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 impostorscore=0 suspectscore=0 lowpriorityscore=0 adultscore=0
- bulkscore=0 spamscore=0 priorityscore=1501 phishscore=0 malwarescore=0
+ spamscore=0 lowpriorityscore=0 bulkscore=0 clxscore=1015 suspectscore=0
+ malwarescore=0 adultscore=0 priorityscore=1501 phishscore=0 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.19.0-2510020000 definitions=main-2510080121
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251009_041115_941165_69EF9DC9 
-X-CRM114-Status: GOOD (  17.71  )
+X-CRM114-CacheID: sfid-20251009_041119_025513_6A36F7E9 
+X-CRM114-Status: GOOD (  16.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,8 +115,8 @@ through the hal_ops mechanism, which are registered
 separately by qcn and wcn
 
 Handling following APIs:
-ath12k_wifi7_hal_srng_update_shadow_config
-ath12k_wifi7_hal_srng_get_ring_id
+ath12k_wifi7_hal_ce_dst_status_get_length
+ath12k_wifi7_hal_set_link_desc_addr
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -124,294 +124,216 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
 Signed-off-by: Ripan Deuri <quic_rdeuri@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/hal.c         | 101 +++---------------
- drivers/net/wireless/ath/ath12k/hal.h         |   5 +
- drivers/net/wireless/ath/ath12k/wifi7/hal.c   |  86 +++++++++++++++
- drivers/net/wireless/ath/ath12k/wifi7/hal.h   |   6 ++
- .../wireless/ath/ath12k/wifi7/hal_qcn9274.c   |   2 +
- .../wireless/ath/ath12k/wifi7/hal_wcn7850.c   |   2 +
- 6 files changed, 117 insertions(+), 85 deletions(-)
+ drivers/net/wireless/ath/ath12k/ce.c          |  2 +-
+ drivers/net/wireless/ath/ath12k/dp.c          |  5 ++--
+ drivers/net/wireless/ath/ath12k/hal.c         | 24 ++++++-------------
+ drivers/net/wireless/ath/ath12k/hal.h         | 14 +++++++----
+ drivers/net/wireless/ath/ath12k/wifi7/dp.c    |  1 +
+ drivers/net/wireless/ath/ath12k/wifi7/hal.c   | 23 ++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wifi7/hal.h   |  6 +++++
+ .../wireless/ath/ath12k/wifi7/hal_qcn9274.c   |  2 ++
+ .../wireless/ath/ath12k/wifi7/hal_wcn7850.c   |  2 ++
+ 9 files changed, 55 insertions(+), 24 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/ce.c b/drivers/net/wireless/ath/ath12k/ce.c
+index ae8fda8689ab..490e49f50264 100644
+--- a/drivers/net/wireless/ath/ath12k/ce.c
++++ b/drivers/net/wireless/ath/ath12k/ce.c
+@@ -132,7 +132,7 @@ static int ath12k_ce_completed_recv_next(struct ath12k_ce_pipe *pipe,
+ 		goto err;
+ 	}
+ 
+-	*nbytes = ath12k_hal_ce_dst_status_get_length(desc);
++	*nbytes = ath12k_hal_ce_dst_status_get_length(&ab->hal, desc);
+ 
+ 	*skb = pipe->dest_ring->skb[sw_index];
+ 	pipe->dest_ring->skb[sw_index] = NULL;
+diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+index 6429ff72aa04..495e03498187 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.c
++++ b/drivers/net/wireless/ath/ath12k/dp.c
+@@ -661,7 +661,7 @@ static int ath12k_dp_scatter_idle_link_desc_setup(struct ath12k_base *ab,
+ 		paddr = link_desc_banks[i].paddr;
+ 		while (n_entries) {
+ 			cookie = DP_LINK_DESC_COOKIE_SET(n_entries, i);
+-			ath12k_hal_set_link_desc_addr(scatter_buf, cookie,
++			ath12k_hal_set_link_desc_addr(dp->hal, scatter_buf, cookie,
+ 						      paddr, rbm);
+ 			n_entries--;
+ 			paddr += HAL_LINK_DESC_SIZE;
+@@ -868,7 +868,8 @@ int ath12k_dp_link_desc_setup(struct ath12k_base *ab,
+ 		while (n_entries &&
+ 		       (desc = ath12k_hal_srng_src_get_next_entry(ab, srng))) {
+ 			cookie = DP_LINK_DESC_COOKIE_SET(n_entries, i);
+-			ath12k_hal_set_link_desc_addr(desc, cookie, paddr, rbm);
++			ath12k_hal_set_link_desc_addr(dp->hal, desc, cookie, paddr,
++						      rbm);
+ 			n_entries--;
+ 			paddr += HAL_LINK_DESC_SIZE;
+ 		}
 diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index 67a7285dc769..d4dd83d9e67f 100644
+index 490a483b8c30..5c13eaf9c19e 100644
 --- a/drivers/net/wireless/ath/ath12k/hal.c
 +++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -36,6 +36,21 @@ static void ath12k_hal_set_umac_srng_ptr_addr(struct ath12k_base *ab,
- 	ab->hal.hal_ops->set_umac_srng_ptr_addr(ab, srng);
+@@ -205,27 +205,17 @@ void ath12k_hal_ce_dst_set_desc(struct ath12k_hal *hal,
+ 	hal->hal_ops->ce_dst_set_desc(desc, paddr);
  }
  
-+static int ath12k_hal_srng_get_ring_id(struct ath12k_hal *hal,
-+				       enum hal_ring_type type,
-+				       int ring_num, int mac_id)
-+{
-+	return hal->hal_ops->srng_get_ring_id(hal, type, ring_num, mac_id);
-+}
-+
-+int ath12k_hal_srng_update_shadow_config(struct ath12k_base *ab,
-+					 enum hal_ring_type ring_type,
-+					 int ring_num)
-+{
-+	return ab->hal.hal_ops->srng_update_shadow_config(ab, ring_type,
-+							  ring_num);
-+}
-+
- static int ath12k_hal_alloc_cont_rdp(struct ath12k_hal *hal)
+-u32 ath12k_hal_ce_dst_status_get_length(struct hal_ce_srng_dst_status_desc *desc)
++u32 ath12k_hal_ce_dst_status_get_length(struct ath12k_hal *hal,
++					struct hal_ce_srng_dst_status_desc *desc)
  {
- 	size_t size;
-@@ -97,28 +112,6 @@ static void ath12k_hal_srng_hw_init(struct ath12k_base *ab,
- 		ath12k_hal_srng_dst_hw_init(ab, srng);
+-	u32 len;
+-
+-	len = le32_get_bits(desc->flags, HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
+-	desc->flags &= ~cpu_to_le32(HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
+-
+-	return len;
++	return hal->hal_ops->ce_dst_status_get_length(desc);
  }
  
--static int ath12k_hal_srng_get_ring_id(struct ath12k_base *ab,
--				       enum hal_ring_type type,
--				       int ring_num, int mac_id)
--{
--	struct hal_srng_config *srng_config = &ab->hal.srng_config[type];
--	int ring_id;
--
--	if (ring_num >= srng_config->max_rings) {
--		ath12k_warn(ab, "invalid ring number :%d\n", ring_num);
--		return -EINVAL;
--	}
--
--	ring_id = srng_config->start_ring_id + ring_num;
--	if (srng_config->mac_type == ATH12K_HAL_SRNG_PMAC)
--		ring_id += mac_id * HAL_SRNG_RINGS_PER_PMAC;
--
--	if (WARN_ON(ring_id >= HAL_SRNG_RING_ID_MAX))
--		return -EINVAL;
--
--	return ring_id;
--}
--
- int ath12k_hal_srng_get_entrysize(struct ath12k_base *ab, u32 ring_type)
+-void ath12k_hal_set_link_desc_addr(struct hal_wbm_link_desc *desc, u32 cookie,
+-				   dma_addr_t paddr,
+-				   enum hal_rx_buf_return_buf_manager rbm)
++void ath12k_hal_set_link_desc_addr(struct ath12k_hal *hal,
++				   struct hal_wbm_link_desc *desc, u32 cookie,
++				   dma_addr_t paddr, int rbm)
  {
- 	struct hal_srng_config *srng_config;
-@@ -619,7 +612,7 @@ int ath12k_hal_srng_setup(struct ath12k_base *ab, enum hal_ring_type type,
- 	u32 idx;
- 	int i;
- 
--	ring_id = ath12k_hal_srng_get_ring_id(ab, type, ring_num, mac_id);
-+	ring_id = ath12k_hal_srng_get_ring_id(hal, type, ring_num, mac_id);
- 	if (ring_id < 0)
- 		return ring_id;
- 
-@@ -706,68 +699,6 @@ int ath12k_hal_srng_setup(struct ath12k_base *ab, enum hal_ring_type type,
- 	return ring_id;
+-	desc->buf_addr_info.info0 = le32_encode_bits((paddr & HAL_ADDR_LSB_REG_MASK),
+-						     BUFFER_ADDR_INFO0_ADDR);
+-	desc->buf_addr_info.info1 =
+-			le32_encode_bits(((u64)paddr >> HAL_ADDR_MSB_REG_SHIFT),
+-					 BUFFER_ADDR_INFO1_ADDR) |
+-			le32_encode_bits(rbm, BUFFER_ADDR_INFO1_RET_BUF_MGR) |
+-			le32_encode_bits(cookie, BUFFER_ADDR_INFO1_SW_COOKIE);
++	hal->hal_ops->set_link_desc_addr(desc, cookie, paddr, rbm);
  }
  
--static void ath12k_hal_srng_update_hp_tp_addr(struct ath12k_base *ab,
--					      int shadow_cfg_idx,
--					      enum hal_ring_type ring_type,
--					      int ring_num)
--{
--	struct hal_srng *srng;
--	struct ath12k_hal *hal = &ab->hal;
--	int ring_id;
--	struct hal_srng_config *srng_config = &hal->srng_config[ring_type];
--
--	ring_id = ath12k_hal_srng_get_ring_id(ab, ring_type, ring_num, 0);
--	if (ring_id < 0)
--		return;
--
--	srng = &hal->srng_list[ring_id];
--
--	if (srng_config->ring_dir == HAL_SRNG_DIR_DST)
--		srng->u.dst_ring.tp_addr = (u32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
--						   (unsigned long)ab->mem);
--	else
--		srng->u.src_ring.hp_addr = (u32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
--						   (unsigned long)ab->mem);
--}
--
--int ath12k_hal_srng_update_shadow_config(struct ath12k_base *ab,
--					 enum hal_ring_type ring_type,
--					 int ring_num)
--{
--	struct ath12k_hal *hal = &ab->hal;
--	struct hal_srng_config *srng_config = &hal->srng_config[ring_type];
--	int shadow_cfg_idx = hal->num_shadow_reg_configured;
--	u32 target_reg;
--
--	if (shadow_cfg_idx >= HAL_SHADOW_NUM_REGS)
--		return -EINVAL;
--
--	hal->num_shadow_reg_configured++;
--
--	target_reg = srng_config->reg_start[HAL_HP_OFFSET_IN_REG_START];
--	target_reg += srng_config->reg_size[HAL_HP_OFFSET_IN_REG_START] *
--		ring_num;
--
--	/* For destination ring, shadow the TP */
--	if (srng_config->ring_dir == HAL_SRNG_DIR_DST)
--		target_reg += HAL_OFFSET_FROM_HP_TO_TP;
--
--	hal->shadow_reg_addr[shadow_cfg_idx] = target_reg;
--
--	/* update hp/tp addr to hal structure*/
--	ath12k_hal_srng_update_hp_tp_addr(ab, shadow_cfg_idx, ring_type,
--					  ring_num);
--
--	ath12k_dbg(ab, ATH12K_DBG_HAL,
--		   "target_reg %x, shadow reg 0x%x shadow_idx 0x%x, ring_type %d, ring num %d",
--		  target_reg,
--		  HAL_SHADOW_REG(shadow_cfg_idx),
--		  shadow_cfg_idx,
--		  ring_type, ring_num);
--
--	return 0;
--}
--
- void ath12k_hal_srng_shadow_config(struct ath12k_base *ab)
- {
- 	struct ath12k_hal *hal = &ab->hal;
+ void *ath12k_hal_srng_dst_peek(struct ath12k_base *ab, struct hal_srng *srng)
 diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 32c6a7d5ea99..774322f1f670 100644
+index 74f05aa1fc6d..b739ebba588b 100644
 --- a/drivers/net/wireless/ath/ath12k/hal.h
 +++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -1702,6 +1702,11 @@ struct hal_ops {
- 				       struct hal_srng *srng);
- 	void (*srng_src_hw_init)(struct ath12k_base *ab, struct hal_srng *srng);
- 	void (*srng_dst_hw_init)(struct ath12k_base *ab, struct hal_srng *srng);
-+	int (*srng_update_shadow_config)(struct ath12k_base *ab,
-+					 enum hal_ring_type ring_type,
-+					 int ring_num);
-+	int (*srng_get_ring_id)(struct ath12k_hal *hal, enum hal_ring_type type,
-+				int ring_num, int mac_id);
+@@ -1713,6 +1713,10 @@ struct hal_ops {
+ 				u8 byte_swap_data);
+ 	void (*ce_dst_set_desc)(struct hal_ce_srng_dest_desc *desc,
+ 				dma_addr_t paddr);
++	u32 (*ce_dst_status_get_length)(struct hal_ce_srng_dst_status_desc *desc);
++	void (*set_link_desc_addr)(struct hal_wbm_link_desc *desc, u32 cookie,
++				   dma_addr_t paddr,
++				   enum hal_rx_buf_return_buf_manager rbm);
  };
  
  u32 ath12k_wifi7_hal_reo_qdesc_size(u32 ba_window_size, u8 tid);
+@@ -1732,9 +1736,6 @@ dma_addr_t ath12k_hal_srng_get_tp_addr(struct ath12k_base *ab,
+ 				       struct hal_srng *srng);
+ dma_addr_t ath12k_hal_srng_get_hp_addr(struct ath12k_base *ab,
+ 				       struct hal_srng *srng);
+-void ath12k_hal_set_link_desc_addr(struct hal_wbm_link_desc *desc, u32 cookie,
+-				   dma_addr_t paddr,
+-				   enum hal_rx_buf_return_buf_manager rbm);
+ u32 ath12k_hal_ce_get_desc_size(struct ath12k_hal *hal, enum hal_ce_desc type);
+ void ath12k_hal_ce_dst_set_desc(struct ath12k_hal *hal,
+ 				struct hal_ce_srng_dest_desc *desc,
+@@ -1743,7 +1744,6 @@ void ath12k_hal_ce_src_set_desc(struct ath12k_hal *hal,
+ 				struct hal_ce_srng_src_desc *desc,
+ 				dma_addr_t paddr, u32 len, u32 id,
+ 				u8 byte_swap_data);
+-u32 ath12k_hal_ce_dst_status_get_length(struct hal_ce_srng_dst_status_desc *desc);
+ int ath12k_hal_srng_get_entrysize(struct ath12k_base *ab, u32 ring_type);
+ int ath12k_hal_srng_get_max_entries(struct ath12k_base *ab, u32 ring_type);
+ void ath12k_hal_srng_get_params(struct ath12k_base *ab, struct hal_srng *srng,
+@@ -1782,4 +1782,10 @@ void ath12k_hal_srng_shadow_config(struct ath12k_base *ab);
+ void ath12k_hal_srng_shadow_update_hp_tp(struct ath12k_base *ab,
+ 					 struct hal_srng *srng);
+ void ath12k_hal_reo_shared_qaddr_cache_clear(struct ath12k_base *ab);
++void ath12k_hal_set_link_desc_addr(struct ath12k_hal *hal,
++				   struct hal_wbm_link_desc *desc, u32 cookie,
++				   dma_addr_t paddr, int rbm);
++u32
++ath12k_hal_ce_dst_status_get_length(struct ath12k_hal *hal,
++				    struct hal_ce_srng_dst_status_desc *desc);
+ #endif
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp.c b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
+index e691d0ca0d75..06d3690ff0c6 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
+@@ -12,6 +12,7 @@
+ #include "dp_rx.h"
+ #include "dp.h"
+ #include "dp_tx.h"
++#include "hal.h"
+ 
+ static int ath12k_wifi7_dp_service_srng(struct ath12k_dp *dp,
+ 					struct ath12k_ext_irq_grp *irq_grp,
 diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal.c b/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-index 2b81d70e60df..565f43a30deb 100644
+index 06a6af8c9c8a..c9e853a32378 100644
 --- a/drivers/net/wireless/ath/ath12k/wifi7/hal.c
 +++ b/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-@@ -333,3 +333,89 @@ void ath12k_wifi7_hal_set_umac_srng_ptr_addr(struct ath12k_base *ab,
- 		}
- 	}
+@@ -457,3 +457,26 @@ void ath12k_wifi7_hal_ce_dst_set_desc(struct hal_ce_srng_dest_desc *desc,
+ 		le32_encode_bits(((u64)paddr >> HAL_ADDR_MSB_REG_SHIFT),
+ 				 HAL_CE_DEST_DESC_ADDR_INFO_ADDR_HI);
  }
 +
-+int ath12k_wifi7_hal_srng_get_ring_id(struct ath12k_hal *hal,
-+				      enum hal_ring_type type,
-+				      int ring_num, int mac_id)
++void ath12k_wifi7_hal_set_link_desc_addr(struct hal_wbm_link_desc *desc,
++					 u32 cookie, dma_addr_t paddr,
++					 enum hal_rx_buf_return_buf_manager rbm)
 +{
-+	struct hal_srng_config *srng_config = &hal->srng_config[type];
-+	int ring_id;
-+
-+	if (ring_num >= srng_config->max_rings) {
-+		ath12k_warn(hal, "invalid ring number :%d\n", ring_num);
-+		return -EINVAL;
-+	}
-+
-+	ring_id = srng_config->start_ring_id + ring_num;
-+	if (srng_config->mac_type == ATH12K_HAL_SRNG_PMAC)
-+		ring_id += mac_id * HAL_SRNG_RINGS_PER_PMAC;
-+
-+	if (WARN_ON(ring_id >= HAL_SRNG_RING_ID_MAX))
-+		return -EINVAL;
-+
-+	return ring_id;
++	desc->buf_addr_info.info0 = le32_encode_bits((paddr & HAL_ADDR_LSB_REG_MASK),
++						     BUFFER_ADDR_INFO0_ADDR);
++	desc->buf_addr_info.info1 =
++			le32_encode_bits(((u64)paddr >> HAL_ADDR_MSB_REG_SHIFT),
++					 BUFFER_ADDR_INFO1_ADDR) |
++			le32_encode_bits(rbm, BUFFER_ADDR_INFO1_RET_BUF_MGR) |
++			le32_encode_bits(cookie, BUFFER_ADDR_INFO1_SW_COOKIE);
 +}
 +
-+static
-+void ath12k_wifi7_hal_srng_update_hp_tp_addr(struct ath12k_base *ab,
-+					     int shadow_cfg_idx,
-+					     enum hal_ring_type ring_type,
-+					     int ring_num)
++u32 ath12k_wifi7_hal_ce_dst_status_get_length(struct hal_ce_srng_dst_status_desc *desc)
 +{
-+	struct hal_srng *srng;
-+	struct ath12k_hal *hal = &ab->hal;
-+	int ring_id;
-+	struct hal_srng_config *srng_config = &hal->srng_config[ring_type];
++	u32 len;
 +
-+	ring_id = ath12k_wifi7_hal_srng_get_ring_id(hal, ring_type, ring_num,
-+						    0);
-+	if (ring_id < 0)
-+		return;
++	len = le32_get_bits(READ_ONCE(desc->flags), HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
++	desc->flags &= ~cpu_to_le32(HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
 +
-+	srng = &hal->srng_list[ring_id];
-+
-+	if (srng_config->ring_dir == HAL_SRNG_DIR_DST)
-+		srng->u.dst_ring.tp_addr = (u32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
-+						   (unsigned long)ab->mem);
-+	else
-+		srng->u.src_ring.hp_addr = (u32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
-+						   (unsigned long)ab->mem);
-+}
-+
-+int ath12k_wifi7_hal_srng_update_shadow_config(struct ath12k_base *ab,
-+					       enum hal_ring_type ring_type,
-+					       int ring_num)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	struct hal_srng_config *srng_config = &hal->srng_config[ring_type];
-+	int shadow_cfg_idx = hal->num_shadow_reg_configured;
-+	u32 target_reg;
-+
-+	if (shadow_cfg_idx >= HAL_SHADOW_NUM_REGS)
-+		return -EINVAL;
-+
-+	hal->num_shadow_reg_configured++;
-+
-+	target_reg = srng_config->reg_start[HAL_HP_OFFSET_IN_REG_START];
-+	target_reg += srng_config->reg_size[HAL_HP_OFFSET_IN_REG_START] *
-+		ring_num;
-+
-+	/* For destination ring, shadow the TP */
-+	if (srng_config->ring_dir == HAL_SRNG_DIR_DST)
-+		target_reg += HAL_OFFSET_FROM_HP_TO_TP;
-+
-+	hal->shadow_reg_addr[shadow_cfg_idx] = target_reg;
-+
-+	/* update hp/tp addr to hal structure*/
-+	ath12k_wifi7_hal_srng_update_hp_tp_addr(ab, shadow_cfg_idx, ring_type,
-+						ring_num);
-+
-+	ath12k_dbg(ab, ATH12K_DBG_HAL,
-+		   "target_reg %x, shadow reg 0x%x shadow_idx 0x%x, ring_type %d, ring num %d",
-+		  target_reg,
-+		  HAL_SHADOW_REG(shadow_cfg_idx),
-+		  shadow_cfg_idx,
-+		  ring_type, ring_num);
-+
-+	return 0;
++	return len;
 +}
 diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal.h b/drivers/net/wireless/ath/ath12k/wifi7/hal.h
-index 044ed1dce323..1ea7b025ed71 100644
+index b0b591eb5a0a..308f80427676 100644
 --- a/drivers/net/wireless/ath/ath12k/wifi7/hal.h
 +++ b/drivers/net/wireless/ath/ath12k/wifi7/hal.h
-@@ -16,4 +16,10 @@ void ath12k_wifi7_hal_srng_src_hw_init(struct ath12k_base *ab,
- 				       struct hal_srng *srng);
- void ath12k_wifi7_hal_set_umac_srng_ptr_addr(struct ath12k_base *ab,
- 					     struct hal_srng *srng);
-+int ath12k_wifi7_hal_srng_update_shadow_config(struct ath12k_base *ab,
-+					       enum hal_ring_type ring_type,
-+					       int ring_num);
-+int ath12k_wifi7_hal_srng_get_ring_id(struct ath12k_hal *hal,
-+				      enum hal_ring_type type,
-+				      int ring_num, int mac_id);
+@@ -28,4 +28,10 @@ void ath12k_wifi7_hal_ce_src_set_desc(struct hal_ce_srng_src_desc *desc,
+ 				      u32 len, u32 id, u8 byte_swap_data);
+ void ath12k_wifi7_hal_ce_dst_set_desc(struct hal_ce_srng_dest_desc *desc,
+ 				      dma_addr_t paddr);
++void
++ath12k_wifi7_hal_set_link_desc_addr(struct hal_wbm_link_desc *desc,
++				    u32 cookie, dma_addr_t paddr,
++				    enum hal_rx_buf_return_buf_manager rbm);
++u32
++ath12k_wifi7_hal_ce_dst_status_get_length(struct hal_ce_srng_dst_status_desc *desc);
  #endif
 diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
-index 070e28a38a70..92769a525c6d 100644
+index 113a0424d5eb..b764d5cd8aeb 100644
 --- a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
 +++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
-@@ -1004,5 +1004,7 @@ const struct hal_ops hal_qcn9274_ops = {
- 	.srng_src_hw_init = ath12k_wifi7_hal_srng_src_hw_init,
- 	.srng_dst_hw_init = ath12k_wifi7_hal_srng_dst_hw_init,
- 	.set_umac_srng_ptr_addr = ath12k_wifi7_hal_set_umac_srng_ptr_addr,
-+	.srng_update_shadow_config = ath12k_wifi7_hal_srng_update_shadow_config,
-+	.srng_get_ring_id = ath12k_wifi7_hal_srng_get_ring_id,
+@@ -1009,5 +1009,7 @@ const struct hal_ops hal_qcn9274_ops = {
+ 	.ce_get_desc_size = ath12k_wifi7_hal_ce_get_desc_size,
+ 	.ce_src_set_desc = ath12k_wifi7_hal_ce_src_set_desc,
+ 	.ce_dst_set_desc = ath12k_wifi7_hal_ce_dst_set_desc,
++	.ce_dst_status_get_length = ath12k_wifi7_hal_ce_dst_status_get_length,
++	.set_link_desc_addr = ath12k_wifi7_hal_set_link_desc_addr,
  };
  EXPORT_SYMBOL(hal_qcn9274_ops);
 diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
-index 9d1f94db60bd..a941bb4783ae 100644
+index 60a21137bd35..0985f929a4b5 100644
 --- a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
 +++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
-@@ -819,5 +819,7 @@ const struct hal_ops hal_wcn7850_ops = {
- 	.srng_src_hw_init = ath12k_wifi7_hal_srng_src_hw_init,
- 	.srng_dst_hw_init = ath12k_wifi7_hal_srng_dst_hw_init,
- 	.set_umac_srng_ptr_addr = ath12k_wifi7_hal_set_umac_srng_ptr_addr,
-+	.srng_update_shadow_config = ath12k_wifi7_hal_srng_update_shadow_config,
-+	.srng_get_ring_id = ath12k_wifi7_hal_srng_get_ring_id,
+@@ -824,5 +824,7 @@ const struct hal_ops hal_wcn7850_ops = {
+ 	.ce_get_desc_size = ath12k_wifi7_hal_ce_get_desc_size,
+ 	.ce_src_set_desc = ath12k_wifi7_hal_ce_src_set_desc,
+ 	.ce_dst_set_desc = ath12k_wifi7_hal_ce_dst_set_desc,
++	.ce_dst_status_get_length = ath12k_wifi7_hal_ce_dst_status_get_length,
++	.set_link_desc_addr = ath12k_wifi7_hal_set_link_desc_addr,
  };
  EXPORT_SYMBOL(hal_wcn7850_ops);
 -- 
