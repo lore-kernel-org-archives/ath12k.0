@@ -4,110 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36147CCD187
-	for <ath12k@archiver.kernel.org>; Thu,  9 Oct 2025 11:11:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99625CCD184
+	for <ath12k@archiver.kernel.org>; Thu,  9 Oct 2025 17:35:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uTUebhpiV3a4eE7MsFR51uv9RZs6d6KeCcVle6wQ7kE=; b=xJ9F5aARlWgp0WkQk6zBe00kIO
-	uYm13+Kvt/uVqVUDDpbqfXFeO5dbIG6Q5XgTRdvSHRva32gFZoXo3XRIA/QVy3/9zAE3DTSsVKGkS
-	4PHZxLLbP4SCkDFtbE3JuRONhoLF2ThV9Kw/Sq0Y7XYkl+TMr4Q1yLDFLMUFmAuLnyi5p6Svr2gCK
-	MMpoPzQwPutXeca7IZhbToBpRJkWNPZfF8xnZG2LsiphH/MflYsc3gZutFNRfAJeDoPMjNe7SRPbv
-	Ii44sXIND8BL9TqT5NWrFnZnQaILwgbzYhngUJrdDJ2ESiAjmkgGZ1YoGw16WeI6YwG3s5LGQ8KUh
-	/kEyfzgA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=gBAux5X4fkA96suYJ0PQrNGIPpxKGaJvqeSwCv7vx/g=; b=Pr8nmDt90BzzXOdkgO11Ue45tf
+	e7Ow9WqGsTs5JSPsqLGMfo+4bbkkE4XWJKtn5BA8JzOqGgAMn7Er4RWgnYQu7FZJRExAbS86g6FgJ
+	TujCajG4713CyjHb5dip5cSpQsL1Op4M7MaFqujkI9UzRm8kES/3sl7nXyWVI1CeAV37WDb+scsxu
+	Z2IdEFuqTlXcbO94lDuxNt8jsypwy3qdvdWGEuVuvW2gj4RsfdWrjvurI/NtgX0+VYZuXXQbNlUuc
+	jxZzDLFpDqC1fQN+cNCthNY1NSPbEsJlRw+3KmCDXkKWtLSWW1A5/1UGGge+05EhPzwLq4cana7a8
+	siQ7ulGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6oYo-00000005vOE-3fN5;
-	Thu, 09 Oct 2025 11:11:50 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1v6uXt-00000006p8X-12zF;
+	Thu, 09 Oct 2025 17:35:17 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6oYm-00000005vLG-1uI8
-	for ath12k@bombadil.infradead.org;
-	Thu, 09 Oct 2025 11:11:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=uTUebhpiV3a4eE7MsFR51uv9RZs6d6KeCcVle6wQ7kE=; b=T+Ay2zEkQX8lF0vErYV3l9oafq
-	DgCkPPne6Yw7GqrmJYo5XUbeqsJGPdgOzXOsMYvwK1P+iK2U8iWfFj/mEE57uT1cQkKSzLXhwX1D7
-	O+I3YaI0XriExGxH9D2+RIo7dD9EAlz5xKkrL5xEgdG4Pw+U0+MvW3K0YWrSH5pbUWz79YXh4P7A6
-	MD2EueNEiticAytveMm/rQZn/mcFT3cALbppILJZDouPaqNwWvWqzwPsi79u28TCzwFXOS2BxoNUa
-	wfIbypERK34Bw9WP9j6DlW1u4pNyjCloNBXrTxWt8oZJWL+w42ReB7Fyxe8xCIYk2bhHRtLmdwpNJ
-	gKToEMBQ==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6oYX-00000001OvK-43Uz
+	id 1v6uXq-00000006p7w-1dv2
 	for ath12k@lists.infradead.org;
-	Thu, 09 Oct 2025 11:11:36 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5996EPBO029764;
-	Thu, 9 Oct 2025 11:11:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Thu, 09 Oct 2025 17:35:15 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 599ETsw7022360
+	for <ath12k@lists.infradead.org>; Thu, 9 Oct 2025 17:35:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	uTUebhpiV3a4eE7MsFR51uv9RZs6d6KeCcVle6wQ7kE=; b=G05eaA83bThgzqFR
-	Pmm4Qk6XEcPdsFRzKePI2XJ/lxVSC6jClPXNiOV+9Ozv44VIzwXJeNYV0bdo+qUo
-	SUxdU+lH/zjnaS3RURI7Ii8Ldx4bN+R56S1uLTxXLolEmLLtofS75dW7Z84rNHpd
-	zsy+MuQ6c7Wv0VaEmhAtwLU4xZfg0SanCfZxwTdYqYXZbRYExSo9DakMpGE8VU/+
-	qrQDWzzsyuaZTVGes3nzEQZHi1fKwEhRCaFztyPxC+P1OcHIRUVBL34ECjAHYvNL
-	GYDPK+rPpYWX10WR6aD1WkQVpiC5lAzr4LBSBgzxL3OOblxrE+GDqRHPBZc7beXf
-	Mb/eAg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49nv4nah46-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 09 Oct 2025 11:11:28 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 599BBSCw009102
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 9 Oct 2025 11:11:28 GMT
-Received: from hu-rdeuri-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.24; Thu, 9 Oct 2025 04:11:26 -0700
-From: Ripan Deuri <quic_rdeuri@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH ath12k-ng 18/18] wifi: ath12k: Drop hal_ prefix from hardware register names
-Date: Thu, 9 Oct 2025 16:40:45 +0530
-Message-ID: <20251009111045.1763001-19-quic_rdeuri@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20251009111045.1763001-1-quic_rdeuri@quicinc.com>
-References: <20251009111045.1763001-1-quic_rdeuri@quicinc.com>
+	gBAux5X4fkA96suYJ0PQrNGIPpxKGaJvqeSwCv7vx/g=; b=dzUprbe44YLM3F7B
+	3n2ZSOxxi/7fK2PY/XnGQYUO0yuF6kQjQ5ZBedrxnjBXKOUyC9ps7qMmC3mAKxKj
+	QJ1U3uL4hjUomwome+tiKZ0W5AULU2l1jnZQaefHoEDphKsHfw0reUseOpVZjDLO
+	GNvlJPhQgf94rd8jbUDVx5BpAOX+csa3xYoVfFiIQjEiqJyQXajjG244c7b/hdVq
+	yn9jOjAcnnk3LeMCi1u+iAswSZYYzpr1RAOQIaOKesQv4WDAdFqSSxxU8W+W0q3T
+	NUF2cqma/jKiEy5PIGQ7jkA8NnHfKL12Fke5xXUHlBg5FS1wiY1Wbjf3ldnf54p8
+	NNhC+w==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49nv4sks5s-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 09 Oct 2025 17:35:07 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-27eeb9730d9so16639755ad.0
+        for <ath12k@lists.infradead.org>; Thu, 09 Oct 2025 10:35:07 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760031306; x=1760636106;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=gBAux5X4fkA96suYJ0PQrNGIPpxKGaJvqeSwCv7vx/g=;
+        b=rvomRQuKImsftO2VgG6tK/FQ3mTb9AIPxBWFDz9EwZWyOaX2wsdtjBpKBqD/+pQ79D
+         cf+b55ma6Jw0leY2vitbss4Q5O1O5WrP0w6ElZJ0rMMyejmqzkGAImxYd4dccauSDgzP
+         CaE2swOOYASqVXLLR31c9+DSRNeUb7mXdZlH3NFTE9ruHk1VeIcn8Dsr1ApYmpS46I0V
+         bKuJUpVzpekr3HlC0Q8D85QVnUYN1VCpATnDIoXjUJ0QxdT7X0/TYeSVPQ3iqh2oSnM2
+         aly3iSeB5AnX3qZDAsIRNdOVq7ZVudW7K5WRMGOfveMpXMNTkmUn+4xkUd6cMH5C4Ggb
+         6xZA==
+X-Forwarded-Encrypted: i=1; AJvYcCVurW6AXLxIL7CEpsDhGXd14zo6XZu5FzKz0XQ71NIXzJgTxPi3UgfskTFz5aV/hC3ARyYeODI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzZvE01dV37uL2XohUvIoQ7+q8jscsoomy6SgSMaY3fhyV6E/8t
+	p5Y5gkr7bAH5cHGhJ/VbRo3SyRvmWLDB9h/a6YPwyHwTze+TPEJ9ZXTACFGlSAOrGl0pJl9vjFM
+	l7zhiR9ap3eE2m3oUSJzob4cGpPi2tbSRlfhevIAqU6MxVCUbTsSNdlSyyY27B1Eu
+X-Gm-Gg: ASbGnct/z88Q/U7rtecBrd6vw9vvNls+OHGejVgc6+dbZ9FHJ8wMKMSfj7DGZbuN6kL
+	ZrKPVJnCi5bw68pq5xSuQIEHPGkPbQfX4IQxnz5iViRBUPi6GDJAH3TX/+TZcHnlI8QE/O1/3gk
+	42exzK3I/yWK844bqYtZyRYRG60PtEjxse/KRie45Yaq4VHNxS7CogVVOQdnFqYG5zCIGjPdUx1
+	3oD79qFdfPGJ0VXUabHoHTRy1EK+6Z7KFLTicPjQXBtXLdxsDMTr1I96YPhJMuh3mymdrCYNVEV
+	AhUXyFG0sTYk7v9cvuZA8B0H5v0zORT2bVIisblUfbyeRRxxlUJ5SbJ+fDjDAlX0/Z1+EPjgdd1
+	pDvR8aLrDUWGkBqiyG4XuMQ==
+X-Received: by 2002:a17:902:ce87:b0:250:6d0e:1e40 with SMTP id d9443c01a7336-29027356a6emr125134415ad.7.1760031306130;
+        Thu, 09 Oct 2025 10:35:06 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGOklSdtzdWVahhEQPwg9PEI1hPEMFk1lp6XBWWPg+HZBSs8b0nz9hA++Dd+lkTXAx+miyBGw==
+X-Received: by 2002:a17:902:ce87:b0:250:6d0e:1e40 with SMTP id d9443c01a7336-29027356a6emr125133995ad.7.1760031305634;
+        Thu, 09 Oct 2025 10:35:05 -0700 (PDT)
+Received: from [192.168.225.142] ([157.49.106.187])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-29034f05c2dsm34277215ad.73.2025.10.09.10.35.03
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 09 Oct 2025 10:35:05 -0700 (PDT)
+Message-ID: <82c7d1b4-bd92-db46-358a-8d3e86ff571a@oss.qualcomm.com>
+Date: Thu, 9 Oct 2025 23:05:00 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=ZJzaWH7b c=1 sm=1 tr=0 ts=68e79860 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=x6icFKpwvdMA:10 a=COk6AnOGAAAA:8 a=1cZl-D-JA15i60oHfWkA:9
- a=TJCq-gOzEa1vjmNJ:21 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: fL8CIV9KgV271fcLNJUS6Bs_p6RHxadX
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA4MDEyMSBTYWx0ZWRfX024mjd3HWgMe
- s2tEs+ARsIqDyaM00jjsZNxyf5wcEmMTQjCs/KWwI8Xp153sBy9yNghOzO1eAFHRI/5yfPT1nLG
- 8APpeYYRaGjVGxIlNRDdVHyZL3zh69isSIGvOOTdsFgXNwRBH1UM1oOslLxxtVK7V/DKUUANsuA
- 4x5AZQWNZcF6ty10h7bD9E+/a0Az2MIXqs8S12xhZX58WHJyN8rNjHnFn6OZltyZk/NWu0zFJIK
- wuaTkLKKX2izkSTgvNL6my8/5pdG/4txXRJBb9HdTfX229Ae51WNcpbySRhyHG9fHDaPeu1dYqI
- iRX0eQrPnwJD9UWz6z8uFW+pN+DTv8JKVXDR1S5uG3LlIAsGpoKCgPiX86Dop2jPAfInu+uZko8
- VMsEGJSJovPjAz/X88Self26cVzlEg==
-X-Proofpoint-GUID: fL8CIV9KgV271fcLNJUS6Bs_p6RHxadX
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH ath12k-ng 00/18] wifi: ath12k: HAL changes for Next
+ Generation Driver
+Content-Language: en-US
+To: Ripan Deuri <quic_rdeuri@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20251009111045.1763001-1-quic_rdeuri@quicinc.com>
+From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+In-Reply-To: <20251009111045.1763001-1-quic_rdeuri@quicinc.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: ND00k3WAb1fb35dfc-c04wpdRo4nRec2
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA4MDEyMSBTYWx0ZWRfXy39lid6afvR/
+ CCAQXunyodve8qhizk7balRsdOM3+YenSliTgfAUnGcCrg4qMHpxier1EbcVvJWi0hteYYVImhA
+ NNctN9USE6RoYIF8slmZDYDmR2VnfODowU1a/G4nR2E5kFZWzP9jEUrYKOXlIxqSRdqBwL3Lx8/
+ QzVwBe5yn+PQslVGejv1wzmXCptUxQiY29Ajn6Qwaw3bl84EE+p7/7qEaXHVeVhqNcO88UwsjXf
+ /7L7MswhbXWTn5fsLkFpdbtONEsVC5DErJZrfAWSxobOvTzS0mZ7qrGFasirtxsqcG9npF80TSf
+ RYZtqDU+6wlWASQ0aOnDrktjcBSwjhSBZdP6yQT97/OgxuU+HoKgAcH3/jtYEKWgSeH8zXbWcxk
+ /UjTfjU1Ai7WNHU5Dlh4+Jg9D6AiFg==
+X-Authority-Analysis: v=2.4 cv=SfL6t/Ru c=1 sm=1 tr=0 ts=68e7f24b cx=c_pps
+ a=cmESyDAEBpBGqyK7t0alAg==:117 a=z6xreaRxtU16OQ9bEhv1vw==:17
+ a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=EUspDBNiAAAA:8 a=frQrzQ4E-2FGA6FtmloA:9
+ a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22
+X-Proofpoint-ORIG-GUID: ND00k3WAb1fb35dfc-c04wpdRo4nRec2
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-09_03,2025-10-06_01,2025-03-28_01
+ definitions=2025-10-09_06,2025-10-06_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 adultscore=0 clxscore=1015 malwarescore=0 lowpriorityscore=0
- phishscore=0 priorityscore=1501 impostorscore=0 suspectscore=0 bulkscore=0
+ adultscore=0 clxscore=1015 malwarescore=0 bulkscore=0 priorityscore=1501
+ suspectscore=0 impostorscore=0 lowpriorityscore=0 phishscore=0 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.19.0-2510020000 definitions=main-2510080121
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251009_121135_002242_013FA3EE 
-X-CRM114-Status: GOOD (  10.73  )
+X-CRM114-CacheID: sfid-20251009_103514_608987_5E15C738 
+X-CRM114-Status: GOOD (  15.47  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,1022 +130,106 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Remove the hal_ prefix from hardware register names in ath12k_hw_regs
-as the registers have been moved from ab->regs to hal->regs.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Ripan Deuri <quic_rdeuri@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/hal.h         | 142 +++----
- drivers/net/wireless/ath/ath12k/wifi7/hal.h   | 122 +++---
- .../wireless/ath/ath12k/wifi7/hal_qcn9274.c   | 360 +++++++++---------
- .../wireless/ath/ath12k/wifi7/hal_wcn7850.c   | 122 +++---
- 4 files changed, 373 insertions(+), 373 deletions(-)
+On 10/9/2025 4:40 PM, Ripan Deuri wrote:
+> The primary objective of this set is to modify the HAL layer
+> to suit the multi-KO model. The HAL APIs will be implemented
+> differently as required by different chipsets and these
+> implementations will be abstracted using an ops mechanism
+> (by registering function pointer callbacks). The hw specific
+> implementations will be registered as callbacks in the hal_ops.
+> 
+> 			common hal API
+> 				|
+> 				|
+> 				|
+> 				|
+> 	=============================================
+> 			     hal_ops
+> 	=============================================
+> 	 _______________              _______________
+> 	|       |       |            |       |       |
+> 	|       |       |            |       |       |
+> 	| qcn   | wcn   |            | qcn   | wcn   |
+> 	| device| device|            | device| device|
+> 	|_______|_______|            |_______|_______|
+> 
+> 	  ath12k_wifi7.ko             ath12k_wifi8.ko
+> 
+> Also, the hal structures that are specific to HW (wifi7) are
+> kept within hal headers in wifi7 directory and the structures
+> that are common are placed in the headers present in the ath12k
+> directory.
+> ---
+> Pavankumar Nandeshwar (16):
+>    wifi: ath12k: Move srng config and hal_ops to hw specific hal files
+>    wifi: ath12k: Initialize desc_size through hal_init
+>    wifi: ath12k: Initialize hal_ops through hal_init
+>    wifi: ath12k: Move wbm_rbm_map to hw specific hal files
+>    wifi: ath12k: Move hal_params and regs to hal from hw
+>    wifi: ath12k: Add direct HAL pointer in ath12k_dp
+>    wifi: ath12k: Use hal handle instead of ab handle
+>    wifi: ath12k: Move HAL CE setup and SRNG related APIs to wifi7
+>      directory
+>    wifi: ath12k: Move HAL SRNG shadow config and get ring id APIs to
+>      wifi7 directory
+>    wifi: ath12k: Move HAL CE desc related APIs to wifi7 directory
+>    wifi: ath12k: Move HAL CE status and set link desc addr APIs to wifi7
+>      directory
+>    wifi: ath12k: Move HAL Tx, REO and link idle setup related APIs to
+>      wifi7 directory
+>    wifi: ath12k: Move HAL REO and Rx buf related APIs to wifi7 directory
+>    wifi: ath12k: Move HAL Cookie Conversion and RBM related APIs to wifi7
+>      directory
+>    wifi: ath12k: Segregate the common and wifi7 specific structures
+>    wifi: ath12k: Remove the unused ring inits in wcn
+> 
+> Ripan Deuri (2):
+>    wifi: ath12k: Rename hal_ops to ops
+>    wifi: ath12k: Drop hal_ prefix from hardware register names
+> 
+>   drivers/net/wireless/ath/ath12k/Makefile      |    1 +
+>   drivers/net/wireless/ath/ath12k/ahb.c         |    4 +-
+>   drivers/net/wireless/ath/ath12k/ce.c          |   25 +-
+>   drivers/net/wireless/ath/ath12k/cmn_defs.h    |    1 +
+>   drivers/net/wireless/ath/ath12k/core.c        |    4 +-
+>   drivers/net/wireless/ath/ath12k/core.h        |    2 +-
+>   drivers/net/wireless/ath/ath12k/dbring.c      |    5 +-
+>   drivers/net/wireless/ath/ath12k/debugfs.c     |    2 +-
+>   drivers/net/wireless/ath/ath12k/dp.c          |  178 +--
+>   drivers/net/wireless/ath/ath12k/dp.h          |   17 +-
+>   drivers/net/wireless/ath/ath12k/dp_mon.c      |    6 +-
+>   drivers/net/wireless/ath/ath12k/dp_mon.h      |    1 +
+>   drivers/net/wireless/ath/ath12k/dp_rx.c       |    7 +-
+>   drivers/net/wireless/ath/ath12k/dp_rx.h       |   17 +-
+>   drivers/net/wireless/ath/ath12k/dp_tx.h       |    1 -
+>   drivers/net/wireless/ath/ath12k/hal.c         | 1114 ++---------------
+>   drivers/net/wireless/ath/ath12k/hal.h         |  804 ++++--------
+>   drivers/net/wireless/ath/ath12k/hw.h          |   92 +-
+>   drivers/net/wireless/ath/ath12k/pci.c         |    2 +-
+>   drivers/net/wireless/ath/ath12k/pci.h         |   10 +-
+>   drivers/net/wireless/ath/ath12k/wifi7/dp.c    |    3 +
+>   drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c |    2 +-
+>   drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h |    5 +-
+>   drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c |   54 +-
+>   drivers/net/wireless/ath/ath12k/wifi7/dp_tx.h |    2 +
+>   drivers/net/wireless/ath/ath12k/wifi7/hal.c   |  705 +++++++++++
+>   drivers/net/wireless/ath/ath12k/wifi7/hal.h   |  563 +++++++++
+>   .../net/wireless/ath/ath12k/wifi7/hal_desc.h  |   80 --
+>   .../wireless/ath/ath12k/wifi7/hal_qcn9274.c   |  661 ++++++++++
+>   .../wireless/ath/ath12k/wifi7/hal_qcn9274.h   |   10 +
+>   .../net/wireless/ath/ath12k/wifi7/hal_rx.c    |   22 +-
+>   .../net/wireless/ath/ath12k/wifi7/hal_rx.h    |   10 +
+>   .../net/wireless/ath/ath12k/wifi7/hal_tx.c    |   10 +-
+>   .../net/wireless/ath/ath12k/wifi7/hal_tx.h    |    7 +-
+>   .../wireless/ath/ath12k/wifi7/hal_wcn7850.c   |  439 +++++++
+>   .../wireless/ath/ath12k/wifi7/hal_wcn7850.h   |    7 +
+>   drivers/net/wireless/ath/ath12k/wifi7/hw.c    |  404 +-----
+>   drivers/net/wireless/ath/ath12k/wifi7/pci.c   |    1 +
+>   38 files changed, 2949 insertions(+), 2329 deletions(-)
+>   create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/hal.c
+>   create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/hal.h
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 68c873a1f454..dbf07c15481b 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -1032,81 +1032,81 @@ struct ath12k_hw_hal_params {
- };
- 
- struct ath12k_hw_regs {
--	u32 hal_tcl1_ring_id;
--	u32 hal_tcl1_ring_misc;
--	u32 hal_tcl1_ring_tp_addr_lsb;
--	u32 hal_tcl1_ring_tp_addr_msb;
--	u32 hal_tcl1_ring_consumer_int_setup_ix0;
--	u32 hal_tcl1_ring_consumer_int_setup_ix1;
--	u32 hal_tcl1_ring_msi1_base_lsb;
--	u32 hal_tcl1_ring_msi1_base_msb;
--	u32 hal_tcl1_ring_msi1_data;
--	u32 hal_tcl_ring_base_lsb;
--	u32 hal_tcl1_ring_base_lsb;
--	u32 hal_tcl1_ring_base_msb;
--	u32 hal_tcl2_ring_base_lsb;
--
--	u32 hal_tcl_status_ring_base_lsb;
--
--	u32 hal_reo1_qdesc_addr;
--	u32 hal_reo1_qdesc_max_peerid;
--
--	u32 hal_wbm_idle_ring_base_lsb;
--	u32 hal_wbm_idle_ring_misc_addr;
--	u32 hal_wbm_r0_idle_list_cntl_addr;
--	u32 hal_wbm_r0_idle_list_size_addr;
--	u32 hal_wbm_scattered_ring_base_lsb;
--	u32 hal_wbm_scattered_ring_base_msb;
--	u32 hal_wbm_scattered_desc_head_info_ix0;
--	u32 hal_wbm_scattered_desc_head_info_ix1;
--	u32 hal_wbm_scattered_desc_tail_info_ix0;
--	u32 hal_wbm_scattered_desc_tail_info_ix1;
--	u32 hal_wbm_scattered_desc_ptr_hp_addr;
--
--	u32 hal_wbm_sw_release_ring_base_lsb;
--	u32 hal_wbm_sw1_release_ring_base_lsb;
--	u32 hal_wbm0_release_ring_base_lsb;
--	u32 hal_wbm1_release_ring_base_lsb;
-+	u32 tcl1_ring_id;
-+	u32 tcl1_ring_misc;
-+	u32 tcl1_ring_tp_addr_lsb;
-+	u32 tcl1_ring_tp_addr_msb;
-+	u32 tcl1_ring_consumer_int_setup_ix0;
-+	u32 tcl1_ring_consumer_int_setup_ix1;
-+	u32 tcl1_ring_msi1_base_lsb;
-+	u32 tcl1_ring_msi1_base_msb;
-+	u32 tcl1_ring_msi1_data;
-+	u32 tcl_ring_base_lsb;
-+	u32 tcl1_ring_base_lsb;
-+	u32 tcl1_ring_base_msb;
-+	u32 tcl2_ring_base_lsb;
-+
-+	u32 tcl_status_ring_base_lsb;
-+
-+	u32 reo1_qdesc_addr;
-+	u32 reo1_qdesc_max_peerid;
-+
-+	u32 wbm_idle_ring_base_lsb;
-+	u32 wbm_idle_ring_misc_addr;
-+	u32 wbm_r0_idle_list_cntl_addr;
-+	u32 wbm_r0_idle_list_size_addr;
-+	u32 wbm_scattered_ring_base_lsb;
-+	u32 wbm_scattered_ring_base_msb;
-+	u32 wbm_scattered_desc_head_info_ix0;
-+	u32 wbm_scattered_desc_head_info_ix1;
-+	u32 wbm_scattered_desc_tail_info_ix0;
-+	u32 wbm_scattered_desc_tail_info_ix1;
-+	u32 wbm_scattered_desc_ptr_hp_addr;
-+
-+	u32 wbm_sw_release_ring_base_lsb;
-+	u32 wbm_sw1_release_ring_base_lsb;
-+	u32 wbm0_release_ring_base_lsb;
-+	u32 wbm1_release_ring_base_lsb;
- 
- 	u32 pcie_qserdes_sysclk_en_sel;
- 	u32 pcie_pcs_osc_dtct_config_base;
- 
--	u32 hal_umac_ce0_src_reg_base;
--	u32 hal_umac_ce0_dest_reg_base;
--	u32 hal_umac_ce1_src_reg_base;
--	u32 hal_umac_ce1_dest_reg_base;
--
--	u32 hal_ppe_rel_ring_base;
--
--	u32 hal_reo2_ring_base;
--	u32 hal_reo1_misc_ctrl_addr;
--	u32 hal_reo1_sw_cookie_cfg0;
--	u32 hal_reo1_sw_cookie_cfg1;
--	u32 hal_reo1_qdesc_lut_base0;
--	u32 hal_reo1_qdesc_lut_base1;
--	u32 hal_reo1_ring_base_lsb;
--	u32 hal_reo1_ring_base_msb;
--	u32 hal_reo1_ring_id;
--	u32 hal_reo1_ring_misc;
--	u32 hal_reo1_ring_hp_addr_lsb;
--	u32 hal_reo1_ring_hp_addr_msb;
--	u32 hal_reo1_ring_producer_int_setup;
--	u32 hal_reo1_ring_msi1_base_lsb;
--	u32 hal_reo1_ring_msi1_base_msb;
--	u32 hal_reo1_ring_msi1_data;
--	u32 hal_reo1_aging_thres_ix0;
--	u32 hal_reo1_aging_thres_ix1;
--	u32 hal_reo1_aging_thres_ix2;
--	u32 hal_reo1_aging_thres_ix3;
--
--	u32 hal_reo2_sw0_ring_base;
--
--	u32 hal_sw2reo_ring_base;
--	u32 hal_sw2reo1_ring_base;
--
--	u32 hal_reo_cmd_ring_base;
--
--	u32 hal_reo_status_ring_base;
-+	u32 umac_ce0_src_reg_base;
-+	u32 umac_ce0_dest_reg_base;
-+	u32 umac_ce1_src_reg_base;
-+	u32 umac_ce1_dest_reg_base;
-+
-+	u32 ppe_rel_ring_base;
-+
-+	u32 reo2_ring_base;
-+	u32 reo1_misc_ctrl_addr;
-+	u32 reo1_sw_cookie_cfg0;
-+	u32 reo1_sw_cookie_cfg1;
-+	u32 reo1_qdesc_lut_base0;
-+	u32 reo1_qdesc_lut_base1;
-+	u32 reo1_ring_base_lsb;
-+	u32 reo1_ring_base_msb;
-+	u32 reo1_ring_id;
-+	u32 reo1_ring_misc;
-+	u32 reo1_ring_hp_addr_lsb;
-+	u32 reo1_ring_hp_addr_msb;
-+	u32 reo1_ring_producer_int_setup;
-+	u32 reo1_ring_msi1_base_lsb;
-+	u32 reo1_ring_msi1_base_msb;
-+	u32 reo1_ring_msi1_data;
-+	u32 reo1_aging_thres_ix0;
-+	u32 reo1_aging_thres_ix1;
-+	u32 reo1_aging_thres_ix2;
-+	u32 reo1_aging_thres_ix3;
-+
-+	u32 reo2_sw0_ring_base;
-+
-+	u32 sw2reo_ring_base;
-+	u32 sw2reo1_ring_base;
-+
-+	u32 reo_cmd_ring_base;
-+
-+	u32 reo_status_ring_base;
- 
- 	u32 gcc_gcc_pcie_hot_rst;
- };
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal.h b/drivers/net/wireless/ath/ath12k/wifi7/hal.h
-index 8a40b9176406..0a39862d07c4 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hal.h
-@@ -29,13 +29,13 @@
- #define HAL_SEQ_WCSS_UMAC_REO_REG		0x00a38000
- #define HAL_SEQ_WCSS_UMAC_TCL_REG		0x00a44000
- #define HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(hal) \
--	((hal)->regs->hal_umac_ce0_src_reg_base)
-+	((hal)->regs->umac_ce0_src_reg_base)
- #define HAL_SEQ_WCSS_UMAC_CE0_DST_REG(hal) \
--	((hal)->regs->hal_umac_ce0_dest_reg_base)
-+	((hal)->regs->umac_ce0_dest_reg_base)
- #define HAL_SEQ_WCSS_UMAC_CE1_SRC_REG(hal) \
--	((hal)->regs->hal_umac_ce1_src_reg_base)
-+	((hal)->regs->umac_ce1_src_reg_base)
- #define HAL_SEQ_WCSS_UMAC_CE1_DST_REG(hal) \
--	((hal)->regs->hal_umac_ce1_dest_reg_base)
-+	((hal)->regs->umac_ce1_dest_reg_base)
- #define HAL_SEQ_WCSS_UMAC_WBM_REG		0x00a34000
- 
- #define HAL_CE_WFSS_CE_REG_BASE			0x01b80000
-@@ -47,30 +47,30 @@
- #define HAL_TCL1_RING_DSCP_TID_MAP		0x00000240
- 
- #define HAL_TCL1_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_tcl1_ring_base_lsb)
-+	((hal)->regs->tcl1_ring_base_lsb)
- #define HAL_TCL1_RING_BASE_MSB(hal) \
--	((hal)->regs->hal_tcl1_ring_base_msb)
--#define HAL_TCL1_RING_ID(hal)		((hal)->regs->hal_tcl1_ring_id)
-+	((hal)->regs->tcl1_ring_base_msb)
-+#define HAL_TCL1_RING_ID(hal)		((hal)->regs->tcl1_ring_id)
- #define HAL_TCL1_RING_MISC(hal) \
--	((hal)->regs->hal_tcl1_ring_misc)
-+	((hal)->regs->tcl1_ring_misc)
- #define HAL_TCL1_RING_TP_ADDR_LSB(hal) \
--	((hal)->regs->hal_tcl1_ring_tp_addr_lsb)
-+	((hal)->regs->tcl1_ring_tp_addr_lsb)
- #define HAL_TCL1_RING_TP_ADDR_MSB(hal) \
--	((hal)->regs->hal_tcl1_ring_tp_addr_msb)
-+	((hal)->regs->tcl1_ring_tp_addr_msb)
- #define HAL_TCL1_RING_CONSUMER_INT_SETUP_IX0(hal) \
--	((hal)->regs->hal_tcl1_ring_consumer_int_setup_ix0)
-+	((hal)->regs->tcl1_ring_consumer_int_setup_ix0)
- #define HAL_TCL1_RING_CONSUMER_INT_SETUP_IX1(hal) \
--	((hal)->regs->hal_tcl1_ring_consumer_int_setup_ix1)
-+	((hal)->regs->tcl1_ring_consumer_int_setup_ix1)
- #define HAL_TCL1_RING_MSI1_BASE_LSB(hal) \
--	((hal)->regs->hal_tcl1_ring_msi1_base_lsb)
-+	((hal)->regs->tcl1_ring_msi1_base_lsb)
- #define HAL_TCL1_RING_MSI1_BASE_MSB(hal) \
--	((hal)->regs->hal_tcl1_ring_msi1_base_msb)
-+	((hal)->regs->tcl1_ring_msi1_base_msb)
- #define HAL_TCL1_RING_MSI1_DATA(hal) \
--	((hal)->regs->hal_tcl1_ring_msi1_data)
-+	((hal)->regs->tcl1_ring_msi1_data)
- #define HAL_TCL2_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_tcl2_ring_base_lsb)
-+	((hal)->regs->tcl2_ring_base_lsb)
- #define HAL_TCL_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_tcl_ring_base_lsb)
-+	((hal)->regs->tcl_ring_base_lsb)
- 
- #define HAL_TCL1_RING_MSI1_BASE_LSB_OFFSET(hal) ({ typeof(hal) _hal = (hal); \
- 	(HAL_TCL1_RING_MSI1_BASE_LSB(_hal) - HAL_TCL1_RING_BASE_LSB(_hal)); })
-@@ -104,7 +104,7 @@
- 
- /* TCL STATUS ring address */
- #define HAL_TCL_STATUS_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_tcl_status_ring_base_lsb)
-+	((hal)->regs->tcl_status_ring_base_lsb)
- #define HAL_TCL_STATUS_RING_HP			0x00002048
- 
- /* PPE2TCL1 Ring address */
-@@ -113,41 +113,41 @@
- 
- /* WBM PPE Release Ring address */
- #define HAL_WBM_PPE_RELEASE_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_ppe_rel_ring_base)
-+	((hal)->regs->ppe_rel_ring_base)
- #define HAL_WBM_PPE_RELEASE_RING_HP		0x00003020
- 
- /* REO2SW(x) R0 ring configuration address */
- #define HAL_REO1_GEN_ENABLE			0x00000000
- #define HAL_REO1_MISC_CTRL_ADDR(hal) \
--	((hal)->regs->hal_reo1_misc_ctrl_addr)
-+	((hal)->regs->reo1_misc_ctrl_addr)
- #define HAL_REO1_DEST_RING_CTRL_IX_0		0x00000004
- #define HAL_REO1_DEST_RING_CTRL_IX_1		0x00000008
- #define HAL_REO1_DEST_RING_CTRL_IX_2		0x0000000c
- #define HAL_REO1_DEST_RING_CTRL_IX_3		0x00000010
--#define HAL_REO1_QDESC_ADDR(hal)		((hal)->regs->hal_reo1_qdesc_addr)
--#define HAL_REO1_QDESC_MAX_PEERID(hal)	((hal)->regs->hal_reo1_qdesc_max_peerid)
--#define HAL_REO1_SW_COOKIE_CFG0(hal)	((hal)->regs->hal_reo1_sw_cookie_cfg0)
--#define HAL_REO1_SW_COOKIE_CFG1(hal)	((hal)->regs->hal_reo1_sw_cookie_cfg1)
--#define HAL_REO1_QDESC_LUT_BASE0(hal)	((hal)->regs->hal_reo1_qdesc_lut_base0)
--#define HAL_REO1_QDESC_LUT_BASE1(hal)	((hal)->regs->hal_reo1_qdesc_lut_base1)
--#define HAL_REO1_RING_BASE_LSB(hal)	((hal)->regs->hal_reo1_ring_base_lsb)
--#define HAL_REO1_RING_BASE_MSB(hal)	((hal)->regs->hal_reo1_ring_base_msb)
--#define HAL_REO1_RING_ID(hal)		((hal)->regs->hal_reo1_ring_id)
--#define HAL_REO1_RING_MISC(hal)		((hal)->regs->hal_reo1_ring_misc)
--#define HAL_REO1_RING_HP_ADDR_LSB(hal)	((hal)->regs->hal_reo1_ring_hp_addr_lsb)
--#define HAL_REO1_RING_HP_ADDR_MSB(hal)	((hal)->regs->hal_reo1_ring_hp_addr_msb)
-+#define HAL_REO1_QDESC_ADDR(hal)		((hal)->regs->reo1_qdesc_addr)
-+#define HAL_REO1_QDESC_MAX_PEERID(hal)	((hal)->regs->reo1_qdesc_max_peerid)
-+#define HAL_REO1_SW_COOKIE_CFG0(hal)	((hal)->regs->reo1_sw_cookie_cfg0)
-+#define HAL_REO1_SW_COOKIE_CFG1(hal)	((hal)->regs->reo1_sw_cookie_cfg1)
-+#define HAL_REO1_QDESC_LUT_BASE0(hal)	((hal)->regs->reo1_qdesc_lut_base0)
-+#define HAL_REO1_QDESC_LUT_BASE1(hal)	((hal)->regs->reo1_qdesc_lut_base1)
-+#define HAL_REO1_RING_BASE_LSB(hal)	((hal)->regs->reo1_ring_base_lsb)
-+#define HAL_REO1_RING_BASE_MSB(hal)	((hal)->regs->reo1_ring_base_msb)
-+#define HAL_REO1_RING_ID(hal)		((hal)->regs->reo1_ring_id)
-+#define HAL_REO1_RING_MISC(hal)		((hal)->regs->reo1_ring_misc)
-+#define HAL_REO1_RING_HP_ADDR_LSB(hal)	((hal)->regs->reo1_ring_hp_addr_lsb)
-+#define HAL_REO1_RING_HP_ADDR_MSB(hal)	((hal)->regs->reo1_ring_hp_addr_msb)
- #define HAL_REO1_RING_PRODUCER_INT_SETUP(hal) \
--	((hal)->regs->hal_reo1_ring_producer_int_setup)
-+	((hal)->regs->reo1_ring_producer_int_setup)
- #define HAL_REO1_RING_MSI1_BASE_LSB(hal)	\
--	((hal)->regs->hal_reo1_ring_msi1_base_lsb)
-+	((hal)->regs->reo1_ring_msi1_base_lsb)
- #define HAL_REO1_RING_MSI1_BASE_MSB(hal)	\
--	((hal)->regs->hal_reo1_ring_msi1_base_msb)
--#define HAL_REO1_RING_MSI1_DATA(hal)	((hal)->regs->hal_reo1_ring_msi1_data)
--#define HAL_REO2_RING_BASE_LSB(hal)	((hal)->regs->hal_reo2_ring_base)
--#define HAL_REO1_AGING_THRESH_IX_0(hal)	((hal)->regs->hal_reo1_aging_thres_ix0)
--#define HAL_REO1_AGING_THRESH_IX_1(hal)	((hal)->regs->hal_reo1_aging_thres_ix1)
--#define HAL_REO1_AGING_THRESH_IX_2(hal)	((hal)->regs->hal_reo1_aging_thres_ix2)
--#define HAL_REO1_AGING_THRESH_IX_3(hal)	((hal)->regs->hal_reo1_aging_thres_ix3)
-+	((hal)->regs->reo1_ring_msi1_base_msb)
-+#define HAL_REO1_RING_MSI1_DATA(hal)	((hal)->regs->reo1_ring_msi1_data)
-+#define HAL_REO2_RING_BASE_LSB(hal)	((hal)->regs->reo2_ring_base)
-+#define HAL_REO1_AGING_THRESH_IX_0(hal)	((hal)->regs->reo1_aging_thres_ix0)
-+#define HAL_REO1_AGING_THRESH_IX_1(hal)	((hal)->regs->reo1_aging_thres_ix1)
-+#define HAL_REO1_AGING_THRESH_IX_2(hal)	((hal)->regs->reo1_aging_thres_ix2)
-+#define HAL_REO1_AGING_THRESH_IX_3(hal)	((hal)->regs->reo1_aging_thres_ix3)
- 
- /* REO2SW(x) R2 ring pointers (head/tail) address */
- #define HAL_REO1_RING_HP			0x00003048
-@@ -158,23 +158,23 @@
- 
- /* REO2SW0 ring configuration address */
- #define HAL_REO_SW0_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_reo2_sw0_ring_base)
-+	((hal)->regs->reo2_sw0_ring_base)
- 
- /* REO2SW0 R2 ring pointer (head/tail) address */
- #define HAL_REO_SW0_RING_HP			0x00003088
- 
- /* REO CMD R0 address */
- #define HAL_REO_CMD_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_reo_cmd_ring_base)
-+	((hal)->regs->reo_cmd_ring_base)
- 
- /* REO CMD R2 address */
- #define HAL_REO_CMD_HP				0x00003020
- 
- /* SW2REO R0 address */
- #define	HAL_SW2REO_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_sw2reo_ring_base)
-+	((hal)->regs->sw2reo_ring_base)
- #define HAL_SW2REO1_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_sw2reo1_ring_base)
-+	((hal)->regs->sw2reo1_ring_base)
- 
- /* SW2REO R2 address */
- #define HAL_SW2REO_RING_HP			0x00003028
-@@ -192,41 +192,41 @@
- 
- /* REO status address */
- #define HAL_REO_STATUS_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_reo_status_ring_base)
-+	((hal)->regs->reo_status_ring_base)
- #define HAL_REO_STATUS_HP			0x000030a8
- 
- /* WBM Idle R0 address */
- #define HAL_WBM_IDLE_LINK_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_wbm_idle_ring_base_lsb)
-+	((hal)->regs->wbm_idle_ring_base_lsb)
- #define HAL_WBM_IDLE_LINK_RING_MISC_ADDR(hal) \
--	((hal)->regs->hal_wbm_idle_ring_misc_addr)
-+	((hal)->regs->wbm_idle_ring_misc_addr)
- #define HAL_WBM_R0_IDLE_LIST_CONTROL_ADDR(hal) \
--	((hal)->regs->hal_wbm_r0_idle_list_cntl_addr)
-+	((hal)->regs->wbm_r0_idle_list_cntl_addr)
- #define HAL_WBM_R0_IDLE_LIST_SIZE_ADDR(hal) \
--	((hal)->regs->hal_wbm_r0_idle_list_size_addr)
-+	((hal)->regs->wbm_r0_idle_list_size_addr)
- #define HAL_WBM_SCATTERED_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_wbm_scattered_ring_base_lsb)
-+	((hal)->regs->wbm_scattered_ring_base_lsb)
- #define HAL_WBM_SCATTERED_RING_BASE_MSB(hal) \
--	((hal)->regs->hal_wbm_scattered_ring_base_msb)
-+	((hal)->regs->wbm_scattered_ring_base_msb)
- #define HAL_WBM_SCATTERED_DESC_PTR_HEAD_INFO_IX0(hal) \
--	((hal)->regs->hal_wbm_scattered_desc_head_info_ix0)
-+	((hal)->regs->wbm_scattered_desc_head_info_ix0)
- #define HAL_WBM_SCATTERED_DESC_PTR_HEAD_INFO_IX1(hal) \
--	((hal)->regs->hal_wbm_scattered_desc_head_info_ix1)
-+	((hal)->regs->wbm_scattered_desc_head_info_ix1)
- #define HAL_WBM_SCATTERED_DESC_PTR_TAIL_INFO_IX0(hal) \
--	((hal)->regs->hal_wbm_scattered_desc_tail_info_ix0)
-+	((hal)->regs->wbm_scattered_desc_tail_info_ix0)
- #define HAL_WBM_SCATTERED_DESC_PTR_TAIL_INFO_IX1(hal) \
--	((hal)->regs->hal_wbm_scattered_desc_tail_info_ix1)
-+	((hal)->regs->wbm_scattered_desc_tail_info_ix1)
- #define HAL_WBM_SCATTERED_DESC_PTR_HP_ADDR(hal) \
--	((hal)->regs->hal_wbm_scattered_desc_ptr_hp_addr)
-+	((hal)->regs->wbm_scattered_desc_ptr_hp_addr)
- 
- /* WBM Idle R2 address */
- #define HAL_WBM_IDLE_LINK_RING_HP		0x000030b8
- 
- /* SW2WBM R0 release address */
- #define HAL_WBM_SW_RELEASE_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_wbm_sw_release_ring_base_lsb)
-+	((hal)->regs->wbm_sw_release_ring_base_lsb)
- #define HAL_WBM_SW1_RELEASE_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_wbm_sw1_release_ring_base_lsb)
-+	((hal)->regs->wbm_sw1_release_ring_base_lsb)
- 
- /* SW2WBM R2 release address */
- #define HAL_WBM_SW_RELEASE_RING_HP		0x00003010
-@@ -234,10 +234,10 @@
- 
- /* WBM2SW R0 release address */
- #define HAL_WBM0_RELEASE_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_wbm0_release_ring_base_lsb)
-+	((hal)->regs->wbm0_release_ring_base_lsb)
- 
- #define HAL_WBM1_RELEASE_RING_BASE_LSB(hal) \
--	((hal)->regs->hal_wbm1_release_ring_base_lsb)
-+	((hal)->regs->wbm1_release_ring_base_lsb)
- 
- /* WBM2SW R2 release address */
- #define HAL_WBM0_RELEASE_RING_HP		0x000030c8
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
-index 2dc4f1539d68..3ccd689bbf1c 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
-@@ -214,269 +214,269 @@ static const struct hal_srng_config hw_srng_config_template[] = {
- 
- const struct ath12k_hw_regs qcn9274_v1_regs = {
- 	/* SW2TCL(x) R0 ring configuration address */
--	.hal_tcl1_ring_id = 0x00000908,
--	.hal_tcl1_ring_misc = 0x00000910,
--	.hal_tcl1_ring_tp_addr_lsb = 0x0000091c,
--	.hal_tcl1_ring_tp_addr_msb = 0x00000920,
--	.hal_tcl1_ring_consumer_int_setup_ix0 = 0x00000930,
--	.hal_tcl1_ring_consumer_int_setup_ix1 = 0x00000934,
--	.hal_tcl1_ring_msi1_base_lsb = 0x00000948,
--	.hal_tcl1_ring_msi1_base_msb = 0x0000094c,
--	.hal_tcl1_ring_msi1_data = 0x00000950,
--	.hal_tcl_ring_base_lsb = 0x00000b58,
--	.hal_tcl1_ring_base_lsb = 0x00000900,
--	.hal_tcl1_ring_base_msb = 0x00000904,
--	.hal_tcl2_ring_base_lsb = 0x00000978,
-+	.tcl1_ring_id = 0x00000908,
-+	.tcl1_ring_misc = 0x00000910,
-+	.tcl1_ring_tp_addr_lsb = 0x0000091c,
-+	.tcl1_ring_tp_addr_msb = 0x00000920,
-+	.tcl1_ring_consumer_int_setup_ix0 = 0x00000930,
-+	.tcl1_ring_consumer_int_setup_ix1 = 0x00000934,
-+	.tcl1_ring_msi1_base_lsb = 0x00000948,
-+	.tcl1_ring_msi1_base_msb = 0x0000094c,
-+	.tcl1_ring_msi1_data = 0x00000950,
-+	.tcl_ring_base_lsb = 0x00000b58,
-+	.tcl1_ring_base_lsb = 0x00000900,
-+	.tcl1_ring_base_msb = 0x00000904,
-+	.tcl2_ring_base_lsb = 0x00000978,
- 
- 	/* TCL STATUS ring address */
--	.hal_tcl_status_ring_base_lsb = 0x00000d38,
--
--	.hal_wbm_idle_ring_base_lsb = 0x00000d0c,
--	.hal_wbm_idle_ring_misc_addr = 0x00000d1c,
--	.hal_wbm_r0_idle_list_cntl_addr = 0x00000210,
--	.hal_wbm_r0_idle_list_size_addr = 0x00000214,
--	.hal_wbm_scattered_ring_base_lsb = 0x00000220,
--	.hal_wbm_scattered_ring_base_msb = 0x00000224,
--	.hal_wbm_scattered_desc_head_info_ix0 = 0x00000230,
--	.hal_wbm_scattered_desc_head_info_ix1 = 0x00000234,
--	.hal_wbm_scattered_desc_tail_info_ix0 = 0x00000240,
--	.hal_wbm_scattered_desc_tail_info_ix1 = 0x00000244,
--	.hal_wbm_scattered_desc_ptr_hp_addr = 0x0000024c,
--
--	.hal_wbm_sw_release_ring_base_lsb = 0x0000034c,
--	.hal_wbm_sw1_release_ring_base_lsb = 0x000003c4,
--	.hal_wbm0_release_ring_base_lsb = 0x00000dd8,
--	.hal_wbm1_release_ring_base_lsb = 0x00000e50,
-+	.tcl_status_ring_base_lsb = 0x00000d38,
-+
-+	.wbm_idle_ring_base_lsb = 0x00000d0c,
-+	.wbm_idle_ring_misc_addr = 0x00000d1c,
-+	.wbm_r0_idle_list_cntl_addr = 0x00000210,
-+	.wbm_r0_idle_list_size_addr = 0x00000214,
-+	.wbm_scattered_ring_base_lsb = 0x00000220,
-+	.wbm_scattered_ring_base_msb = 0x00000224,
-+	.wbm_scattered_desc_head_info_ix0 = 0x00000230,
-+	.wbm_scattered_desc_head_info_ix1 = 0x00000234,
-+	.wbm_scattered_desc_tail_info_ix0 = 0x00000240,
-+	.wbm_scattered_desc_tail_info_ix1 = 0x00000244,
-+	.wbm_scattered_desc_ptr_hp_addr = 0x0000024c,
-+
-+	.wbm_sw_release_ring_base_lsb = 0x0000034c,
-+	.wbm_sw1_release_ring_base_lsb = 0x000003c4,
-+	.wbm0_release_ring_base_lsb = 0x00000dd8,
-+	.wbm1_release_ring_base_lsb = 0x00000e50,
- 
- 	/* PCIe base address */
- 	.pcie_qserdes_sysclk_en_sel = 0x01e0c0a8,
- 	.pcie_pcs_osc_dtct_config_base = 0x01e0d45c,
- 
- 	/* PPE release ring address */
--	.hal_ppe_rel_ring_base = 0x0000043c,
-+	.ppe_rel_ring_base = 0x0000043c,
- 
- 	/* REO DEST ring address */
--	.hal_reo2_ring_base = 0x0000055c,
--	.hal_reo1_misc_ctrl_addr = 0x00000b7c,
--	.hal_reo1_sw_cookie_cfg0 = 0x00000050,
--	.hal_reo1_sw_cookie_cfg1 = 0x00000054,
--	.hal_reo1_qdesc_lut_base0 = 0x00000058,
--	.hal_reo1_qdesc_lut_base1 = 0x0000005c,
--	.hal_reo1_ring_base_lsb = 0x000004e4,
--	.hal_reo1_ring_base_msb = 0x000004e8,
--	.hal_reo1_ring_id = 0x000004ec,
--	.hal_reo1_ring_misc = 0x000004f4,
--	.hal_reo1_ring_hp_addr_lsb = 0x000004f8,
--	.hal_reo1_ring_hp_addr_msb = 0x000004fc,
--	.hal_reo1_ring_producer_int_setup = 0x00000508,
--	.hal_reo1_ring_msi1_base_lsb = 0x0000052C,
--	.hal_reo1_ring_msi1_base_msb = 0x00000530,
--	.hal_reo1_ring_msi1_data = 0x00000534,
--	.hal_reo1_aging_thres_ix0 = 0x00000b08,
--	.hal_reo1_aging_thres_ix1 = 0x00000b0c,
--	.hal_reo1_aging_thres_ix2 = 0x00000b10,
--	.hal_reo1_aging_thres_ix3 = 0x00000b14,
-+	.reo2_ring_base = 0x0000055c,
-+	.reo1_misc_ctrl_addr = 0x00000b7c,
-+	.reo1_sw_cookie_cfg0 = 0x00000050,
-+	.reo1_sw_cookie_cfg1 = 0x00000054,
-+	.reo1_qdesc_lut_base0 = 0x00000058,
-+	.reo1_qdesc_lut_base1 = 0x0000005c,
-+	.reo1_ring_base_lsb = 0x000004e4,
-+	.reo1_ring_base_msb = 0x000004e8,
-+	.reo1_ring_id = 0x000004ec,
-+	.reo1_ring_misc = 0x000004f4,
-+	.reo1_ring_hp_addr_lsb = 0x000004f8,
-+	.reo1_ring_hp_addr_msb = 0x000004fc,
-+	.reo1_ring_producer_int_setup = 0x00000508,
-+	.reo1_ring_msi1_base_lsb = 0x0000052C,
-+	.reo1_ring_msi1_base_msb = 0x00000530,
-+	.reo1_ring_msi1_data = 0x00000534,
-+	.reo1_aging_thres_ix0 = 0x00000b08,
-+	.reo1_aging_thres_ix1 = 0x00000b0c,
-+	.reo1_aging_thres_ix2 = 0x00000b10,
-+	.reo1_aging_thres_ix3 = 0x00000b14,
- 
- 	/* REO Exception ring address */
--	.hal_reo2_sw0_ring_base = 0x000008a4,
-+	.reo2_sw0_ring_base = 0x000008a4,
- 
- 	/* REO Reinject ring address */
--	.hal_sw2reo_ring_base = 0x00000304,
--	.hal_sw2reo1_ring_base = 0x0000037c,
-+	.sw2reo_ring_base = 0x00000304,
-+	.sw2reo1_ring_base = 0x0000037c,
- 
- 	/* REO cmd ring address */
--	.hal_reo_cmd_ring_base = 0x0000028c,
-+	.reo_cmd_ring_base = 0x0000028c,
- 
- 	/* REO status ring address */
--	.hal_reo_status_ring_base = 0x00000a84,
-+	.reo_status_ring_base = 0x00000a84,
- 
- 	/* CE base address */
--	.hal_umac_ce0_src_reg_base = 0x01b80000,
--	.hal_umac_ce0_dest_reg_base = 0x01b81000,
--	.hal_umac_ce1_src_reg_base = 0x01b82000,
--	.hal_umac_ce1_dest_reg_base = 0x01b83000,
-+	.umac_ce0_src_reg_base = 0x01b80000,
-+	.umac_ce0_dest_reg_base = 0x01b81000,
-+	.umac_ce1_src_reg_base = 0x01b82000,
-+	.umac_ce1_dest_reg_base = 0x01b83000,
- 
- 	.gcc_gcc_pcie_hot_rst = 0x1e38338,
- };
- 
- const struct ath12k_hw_regs qcn9274_v2_regs = {
- 	/* SW2TCL(x) R0 ring configuration address */
--	.hal_tcl1_ring_id = 0x00000908,
--	.hal_tcl1_ring_misc = 0x00000910,
--	.hal_tcl1_ring_tp_addr_lsb = 0x0000091c,
--	.hal_tcl1_ring_tp_addr_msb = 0x00000920,
--	.hal_tcl1_ring_consumer_int_setup_ix0 = 0x00000930,
--	.hal_tcl1_ring_consumer_int_setup_ix1 = 0x00000934,
--	.hal_tcl1_ring_msi1_base_lsb = 0x00000948,
--	.hal_tcl1_ring_msi1_base_msb = 0x0000094c,
--	.hal_tcl1_ring_msi1_data = 0x00000950,
--	.hal_tcl_ring_base_lsb = 0x00000b58,
--	.hal_tcl1_ring_base_lsb = 0x00000900,
--	.hal_tcl1_ring_base_msb = 0x00000904,
--	.hal_tcl2_ring_base_lsb = 0x00000978,
-+	.tcl1_ring_id = 0x00000908,
-+	.tcl1_ring_misc = 0x00000910,
-+	.tcl1_ring_tp_addr_lsb = 0x0000091c,
-+	.tcl1_ring_tp_addr_msb = 0x00000920,
-+	.tcl1_ring_consumer_int_setup_ix0 = 0x00000930,
-+	.tcl1_ring_consumer_int_setup_ix1 = 0x00000934,
-+	.tcl1_ring_msi1_base_lsb = 0x00000948,
-+	.tcl1_ring_msi1_base_msb = 0x0000094c,
-+	.tcl1_ring_msi1_data = 0x00000950,
-+	.tcl_ring_base_lsb = 0x00000b58,
-+	.tcl1_ring_base_lsb = 0x00000900,
-+	.tcl1_ring_base_msb = 0x00000904,
-+	.tcl2_ring_base_lsb = 0x00000978,
- 
- 	/* TCL STATUS ring address */
--	.hal_tcl_status_ring_base_lsb = 0x00000d38,
-+	.tcl_status_ring_base_lsb = 0x00000d38,
- 
- 	/* WBM idle link ring address */
--	.hal_wbm_idle_ring_base_lsb = 0x00000d3c,
--	.hal_wbm_idle_ring_misc_addr = 0x00000d4c,
--	.hal_wbm_r0_idle_list_cntl_addr = 0x00000240,
--	.hal_wbm_r0_idle_list_size_addr = 0x00000244,
--	.hal_wbm_scattered_ring_base_lsb = 0x00000250,
--	.hal_wbm_scattered_ring_base_msb = 0x00000254,
--	.hal_wbm_scattered_desc_head_info_ix0 = 0x00000260,
--	.hal_wbm_scattered_desc_head_info_ix1 = 0x00000264,
--	.hal_wbm_scattered_desc_tail_info_ix0 = 0x00000270,
--	.hal_wbm_scattered_desc_tail_info_ix1 = 0x00000274,
--	.hal_wbm_scattered_desc_ptr_hp_addr = 0x0000027c,
-+	.wbm_idle_ring_base_lsb = 0x00000d3c,
-+	.wbm_idle_ring_misc_addr = 0x00000d4c,
-+	.wbm_r0_idle_list_cntl_addr = 0x00000240,
-+	.wbm_r0_idle_list_size_addr = 0x00000244,
-+	.wbm_scattered_ring_base_lsb = 0x00000250,
-+	.wbm_scattered_ring_base_msb = 0x00000254,
-+	.wbm_scattered_desc_head_info_ix0 = 0x00000260,
-+	.wbm_scattered_desc_head_info_ix1 = 0x00000264,
-+	.wbm_scattered_desc_tail_info_ix0 = 0x00000270,
-+	.wbm_scattered_desc_tail_info_ix1 = 0x00000274,
-+	.wbm_scattered_desc_ptr_hp_addr = 0x0000027c,
- 
- 	/* SW2WBM release ring address */
--	.hal_wbm_sw_release_ring_base_lsb = 0x0000037c,
--	.hal_wbm_sw1_release_ring_base_lsb = 0x000003f4,
-+	.wbm_sw_release_ring_base_lsb = 0x0000037c,
-+	.wbm_sw1_release_ring_base_lsb = 0x000003f4,
- 
- 	/* WBM2SW release ring address */
--	.hal_wbm0_release_ring_base_lsb = 0x00000e08,
--	.hal_wbm1_release_ring_base_lsb = 0x00000e80,
-+	.wbm0_release_ring_base_lsb = 0x00000e08,
-+	.wbm1_release_ring_base_lsb = 0x00000e80,
- 
- 	/* PCIe base address */
- 	.pcie_qserdes_sysclk_en_sel = 0x01e0c0a8,
- 	.pcie_pcs_osc_dtct_config_base = 0x01e0d45c,
- 
- 	/* PPE release ring address */
--	.hal_ppe_rel_ring_base = 0x0000046c,
-+	.ppe_rel_ring_base = 0x0000046c,
- 
- 	/* REO DEST ring address */
--	.hal_reo2_ring_base = 0x00000578,
--	.hal_reo1_misc_ctrl_addr = 0x00000b9c,
--	.hal_reo1_sw_cookie_cfg0 = 0x0000006c,
--	.hal_reo1_sw_cookie_cfg1 = 0x00000070,
--	.hal_reo1_qdesc_lut_base0 = 0x00000074,
--	.hal_reo1_qdesc_lut_base1 = 0x00000078,
--	.hal_reo1_qdesc_addr = 0x0000007c,
--	.hal_reo1_qdesc_max_peerid = 0x00000088,
--	.hal_reo1_ring_base_lsb = 0x00000500,
--	.hal_reo1_ring_base_msb = 0x00000504,
--	.hal_reo1_ring_id = 0x00000508,
--	.hal_reo1_ring_misc = 0x00000510,
--	.hal_reo1_ring_hp_addr_lsb = 0x00000514,
--	.hal_reo1_ring_hp_addr_msb = 0x00000518,
--	.hal_reo1_ring_producer_int_setup = 0x00000524,
--	.hal_reo1_ring_msi1_base_lsb = 0x00000548,
--	.hal_reo1_ring_msi1_base_msb = 0x0000054C,
--	.hal_reo1_ring_msi1_data = 0x00000550,
--	.hal_reo1_aging_thres_ix0 = 0x00000B28,
--	.hal_reo1_aging_thres_ix1 = 0x00000B2C,
--	.hal_reo1_aging_thres_ix2 = 0x00000B30,
--	.hal_reo1_aging_thres_ix3 = 0x00000B34,
-+	.reo2_ring_base = 0x00000578,
-+	.reo1_misc_ctrl_addr = 0x00000b9c,
-+	.reo1_sw_cookie_cfg0 = 0x0000006c,
-+	.reo1_sw_cookie_cfg1 = 0x00000070,
-+	.reo1_qdesc_lut_base0 = 0x00000074,
-+	.reo1_qdesc_lut_base1 = 0x00000078,
-+	.reo1_qdesc_addr = 0x0000007c,
-+	.reo1_qdesc_max_peerid = 0x00000088,
-+	.reo1_ring_base_lsb = 0x00000500,
-+	.reo1_ring_base_msb = 0x00000504,
-+	.reo1_ring_id = 0x00000508,
-+	.reo1_ring_misc = 0x00000510,
-+	.reo1_ring_hp_addr_lsb = 0x00000514,
-+	.reo1_ring_hp_addr_msb = 0x00000518,
-+	.reo1_ring_producer_int_setup = 0x00000524,
-+	.reo1_ring_msi1_base_lsb = 0x00000548,
-+	.reo1_ring_msi1_base_msb = 0x0000054C,
-+	.reo1_ring_msi1_data = 0x00000550,
-+	.reo1_aging_thres_ix0 = 0x00000B28,
-+	.reo1_aging_thres_ix1 = 0x00000B2C,
-+	.reo1_aging_thres_ix2 = 0x00000B30,
-+	.reo1_aging_thres_ix3 = 0x00000B34,
- 
- 	/* REO Exception ring address */
--	.hal_reo2_sw0_ring_base = 0x000008c0,
-+	.reo2_sw0_ring_base = 0x000008c0,
- 
- 	/* REO Reinject ring address */
--	.hal_sw2reo_ring_base = 0x00000320,
--	.hal_sw2reo1_ring_base = 0x00000398,
-+	.sw2reo_ring_base = 0x00000320,
-+	.sw2reo1_ring_base = 0x00000398,
- 
- 	/* REO cmd ring address */
--	.hal_reo_cmd_ring_base = 0x000002A8,
-+	.reo_cmd_ring_base = 0x000002A8,
- 
- 	/* REO status ring address */
--	.hal_reo_status_ring_base = 0x00000aa0,
-+	.reo_status_ring_base = 0x00000aa0,
- 
- 	/* CE base address */
--	.hal_umac_ce0_src_reg_base = 0x01b80000,
--	.hal_umac_ce0_dest_reg_base = 0x01b81000,
--	.hal_umac_ce1_src_reg_base = 0x01b82000,
--	.hal_umac_ce1_dest_reg_base = 0x01b83000,
-+	.umac_ce0_src_reg_base = 0x01b80000,
-+	.umac_ce0_dest_reg_base = 0x01b81000,
-+	.umac_ce1_src_reg_base = 0x01b82000,
-+	.umac_ce1_dest_reg_base = 0x01b83000,
- 
- 	.gcc_gcc_pcie_hot_rst = 0x1e38338,
- };
- 
- const struct ath12k_hw_regs ipq5332_regs = {
- 	/* SW2TCL(x) R0 ring configuration address */
--	.hal_tcl1_ring_id = 0x00000918,
--	.hal_tcl1_ring_misc = 0x00000920,
--	.hal_tcl1_ring_tp_addr_lsb = 0x0000092c,
--	.hal_tcl1_ring_tp_addr_msb = 0x00000930,
--	.hal_tcl1_ring_consumer_int_setup_ix0 = 0x00000940,
--	.hal_tcl1_ring_consumer_int_setup_ix1 = 0x00000944,
--	.hal_tcl1_ring_msi1_base_lsb = 0x00000958,
--	.hal_tcl1_ring_msi1_base_msb = 0x0000095c,
--	.hal_tcl1_ring_base_lsb = 0x00000910,
--	.hal_tcl1_ring_base_msb = 0x00000914,
--	.hal_tcl1_ring_msi1_data = 0x00000960,
--	.hal_tcl2_ring_base_lsb = 0x00000988,
--	.hal_tcl_ring_base_lsb = 0x00000b68,
-+	.tcl1_ring_id = 0x00000918,
-+	.tcl1_ring_misc = 0x00000920,
-+	.tcl1_ring_tp_addr_lsb = 0x0000092c,
-+	.tcl1_ring_tp_addr_msb = 0x00000930,
-+	.tcl1_ring_consumer_int_setup_ix0 = 0x00000940,
-+	.tcl1_ring_consumer_int_setup_ix1 = 0x00000944,
-+	.tcl1_ring_msi1_base_lsb = 0x00000958,
-+	.tcl1_ring_msi1_base_msb = 0x0000095c,
-+	.tcl1_ring_base_lsb = 0x00000910,
-+	.tcl1_ring_base_msb = 0x00000914,
-+	.tcl1_ring_msi1_data = 0x00000960,
-+	.tcl2_ring_base_lsb = 0x00000988,
-+	.tcl_ring_base_lsb = 0x00000b68,
- 
- 	/* TCL STATUS ring address */
--	.hal_tcl_status_ring_base_lsb = 0x00000d48,
-+	.tcl_status_ring_base_lsb = 0x00000d48,
- 
- 	/* REO DEST ring address */
--	.hal_reo2_ring_base = 0x00000578,
--	.hal_reo1_misc_ctrl_addr = 0x00000b9c,
--	.hal_reo1_sw_cookie_cfg0 = 0x0000006c,
--	.hal_reo1_sw_cookie_cfg1 = 0x00000070,
--	.hal_reo1_qdesc_lut_base0 = 0x00000074,
--	.hal_reo1_qdesc_lut_base1 = 0x00000078,
--	.hal_reo1_ring_base_lsb = 0x00000500,
--	.hal_reo1_ring_base_msb = 0x00000504,
--	.hal_reo1_ring_id = 0x00000508,
--	.hal_reo1_ring_misc = 0x00000510,
--	.hal_reo1_ring_hp_addr_lsb = 0x00000514,
--	.hal_reo1_ring_hp_addr_msb = 0x00000518,
--	.hal_reo1_ring_producer_int_setup = 0x00000524,
--	.hal_reo1_ring_msi1_base_lsb = 0x00000548,
--	.hal_reo1_ring_msi1_base_msb = 0x0000054C,
--	.hal_reo1_ring_msi1_data = 0x00000550,
--	.hal_reo1_aging_thres_ix0 = 0x00000B28,
--	.hal_reo1_aging_thres_ix1 = 0x00000B2C,
--	.hal_reo1_aging_thres_ix2 = 0x00000B30,
--	.hal_reo1_aging_thres_ix3 = 0x00000B34,
-+	.reo2_ring_base = 0x00000578,
-+	.reo1_misc_ctrl_addr = 0x00000b9c,
-+	.reo1_sw_cookie_cfg0 = 0x0000006c,
-+	.reo1_sw_cookie_cfg1 = 0x00000070,
-+	.reo1_qdesc_lut_base0 = 0x00000074,
-+	.reo1_qdesc_lut_base1 = 0x00000078,
-+	.reo1_ring_base_lsb = 0x00000500,
-+	.reo1_ring_base_msb = 0x00000504,
-+	.reo1_ring_id = 0x00000508,
-+	.reo1_ring_misc = 0x00000510,
-+	.reo1_ring_hp_addr_lsb = 0x00000514,
-+	.reo1_ring_hp_addr_msb = 0x00000518,
-+	.reo1_ring_producer_int_setup = 0x00000524,
-+	.reo1_ring_msi1_base_lsb = 0x00000548,
-+	.reo1_ring_msi1_base_msb = 0x0000054C,
-+	.reo1_ring_msi1_data = 0x00000550,
-+	.reo1_aging_thres_ix0 = 0x00000B28,
-+	.reo1_aging_thres_ix1 = 0x00000B2C,
-+	.reo1_aging_thres_ix2 = 0x00000B30,
-+	.reo1_aging_thres_ix3 = 0x00000B34,
- 
- 	/* REO Exception ring address */
--	.hal_reo2_sw0_ring_base = 0x000008c0,
-+	.reo2_sw0_ring_base = 0x000008c0,
- 
- 	/* REO Reinject ring address */
--	.hal_sw2reo_ring_base = 0x00000320,
--	.hal_sw2reo1_ring_base = 0x00000398,
-+	.sw2reo_ring_base = 0x00000320,
-+	.sw2reo1_ring_base = 0x00000398,
- 
- 	/* REO cmd ring address */
--	.hal_reo_cmd_ring_base = 0x000002A8,
-+	.reo_cmd_ring_base = 0x000002A8,
- 
- 	/* REO status ring address */
--	.hal_reo_status_ring_base = 0x00000aa0,
-+	.reo_status_ring_base = 0x00000aa0,
- 
- 	/* WBM idle link ring address */
--	.hal_wbm_idle_ring_base_lsb = 0x00000d3c,
--	.hal_wbm_idle_ring_misc_addr = 0x00000d4c,
--	.hal_wbm_r0_idle_list_cntl_addr = 0x00000240,
--	.hal_wbm_r0_idle_list_size_addr = 0x00000244,
--	.hal_wbm_scattered_ring_base_lsb = 0x00000250,
--	.hal_wbm_scattered_ring_base_msb = 0x00000254,
--	.hal_wbm_scattered_desc_head_info_ix0 = 0x00000260,
--	.hal_wbm_scattered_desc_head_info_ix1   = 0x00000264,
--	.hal_wbm_scattered_desc_tail_info_ix0 = 0x00000270,
--	.hal_wbm_scattered_desc_tail_info_ix1 = 0x00000274,
--	.hal_wbm_scattered_desc_ptr_hp_addr = 0x0000027c,
-+	.wbm_idle_ring_base_lsb = 0x00000d3c,
-+	.wbm_idle_ring_misc_addr = 0x00000d4c,
-+	.wbm_r0_idle_list_cntl_addr = 0x00000240,
-+	.wbm_r0_idle_list_size_addr = 0x00000244,
-+	.wbm_scattered_ring_base_lsb = 0x00000250,
-+	.wbm_scattered_ring_base_msb = 0x00000254,
-+	.wbm_scattered_desc_head_info_ix0 = 0x00000260,
-+	.wbm_scattered_desc_head_info_ix1   = 0x00000264,
-+	.wbm_scattered_desc_tail_info_ix0 = 0x00000270,
-+	.wbm_scattered_desc_tail_info_ix1 = 0x00000274,
-+	.wbm_scattered_desc_ptr_hp_addr = 0x0000027c,
- 
- 	/* SW2WBM release ring address */
--	.hal_wbm_sw_release_ring_base_lsb = 0x0000037c,
-+	.wbm_sw_release_ring_base_lsb = 0x0000037c,
- 
- 	/* WBM2SW release ring address */
--	.hal_wbm0_release_ring_base_lsb = 0x00000e08,
--	.hal_wbm1_release_ring_base_lsb = 0x00000e80,
-+	.wbm0_release_ring_base_lsb = 0x00000e08,
-+	.wbm1_release_ring_base_lsb = 0x00000e80,
- 
- 	/* PPE release ring address */
--	.hal_ppe_rel_ring_base = 0x0000046c,
-+	.ppe_rel_ring_base = 0x0000046c,
- 
- 	/* CE address */
--	.hal_umac_ce0_src_reg_base = 0x00740000 -
-+	.umac_ce0_src_reg_base = 0x00740000 -
- 		HAL_IPQ5332_CE_WFSS_REG_BASE,
--	.hal_umac_ce0_dest_reg_base = 0x00741000 -
-+	.umac_ce0_dest_reg_base = 0x00741000 -
- 		HAL_IPQ5332_CE_WFSS_REG_BASE,
--	.hal_umac_ce1_src_reg_base = 0x00742000 -
-+	.umac_ce1_src_reg_base = 0x00742000 -
- 		HAL_IPQ5332_CE_WFSS_REG_BASE,
--	.hal_umac_ce1_dest_reg_base = 0x00743000 -
-+	.umac_ce1_dest_reg_base = 0x00743000 -
- 		HAL_IPQ5332_CE_WFSS_REG_BASE,
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
-index 8151c216a5e1..8966de3d64a4 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
-@@ -173,87 +173,87 @@ static const struct hal_srng_config hw_srng_config_template[] = {
- 
- const struct ath12k_hw_regs wcn7850_regs = {
- 	/* SW2TCL(x) R0 ring configuration address */
--	.hal_tcl1_ring_id = 0x00000908,
--	.hal_tcl1_ring_misc = 0x00000910,
--	.hal_tcl1_ring_tp_addr_lsb = 0x0000091c,
--	.hal_tcl1_ring_tp_addr_msb = 0x00000920,
--	.hal_tcl1_ring_consumer_int_setup_ix0 = 0x00000930,
--	.hal_tcl1_ring_consumer_int_setup_ix1 = 0x00000934,
--	.hal_tcl1_ring_msi1_base_lsb = 0x00000948,
--	.hal_tcl1_ring_msi1_base_msb = 0x0000094c,
--	.hal_tcl1_ring_msi1_data = 0x00000950,
--	.hal_tcl_ring_base_lsb = 0x00000b58,
--	.hal_tcl1_ring_base_lsb = 0x00000900,
--	.hal_tcl1_ring_base_msb = 0x00000904,
--	.hal_tcl2_ring_base_lsb = 0x00000978,
-+	.tcl1_ring_id = 0x00000908,
-+	.tcl1_ring_misc = 0x00000910,
-+	.tcl1_ring_tp_addr_lsb = 0x0000091c,
-+	.tcl1_ring_tp_addr_msb = 0x00000920,
-+	.tcl1_ring_consumer_int_setup_ix0 = 0x00000930,
-+	.tcl1_ring_consumer_int_setup_ix1 = 0x00000934,
-+	.tcl1_ring_msi1_base_lsb = 0x00000948,
-+	.tcl1_ring_msi1_base_msb = 0x0000094c,
-+	.tcl1_ring_msi1_data = 0x00000950,
-+	.tcl_ring_base_lsb = 0x00000b58,
-+	.tcl1_ring_base_lsb = 0x00000900,
-+	.tcl1_ring_base_msb = 0x00000904,
-+	.tcl2_ring_base_lsb = 0x00000978,
- 
- 	/* TCL STATUS ring address */
--	.hal_tcl_status_ring_base_lsb = 0x00000d38,
--
--	.hal_wbm_idle_ring_base_lsb = 0x00000d3c,
--	.hal_wbm_idle_ring_misc_addr = 0x00000d4c,
--	.hal_wbm_r0_idle_list_cntl_addr = 0x00000240,
--	.hal_wbm_r0_idle_list_size_addr = 0x00000244,
--	.hal_wbm_scattered_ring_base_lsb = 0x00000250,
--	.hal_wbm_scattered_ring_base_msb = 0x00000254,
--	.hal_wbm_scattered_desc_head_info_ix0 = 0x00000260,
--	.hal_wbm_scattered_desc_head_info_ix1 = 0x00000264,
--	.hal_wbm_scattered_desc_tail_info_ix0 = 0x00000270,
--	.hal_wbm_scattered_desc_tail_info_ix1 = 0x00000274,
--	.hal_wbm_scattered_desc_ptr_hp_addr = 0x00000027c,
--
--	.hal_wbm_sw_release_ring_base_lsb = 0x0000037c,
--	.hal_wbm_sw1_release_ring_base_lsb = 0x00000284,
--	.hal_wbm0_release_ring_base_lsb = 0x00000e08,
--	.hal_wbm1_release_ring_base_lsb = 0x00000e80,
-+	.tcl_status_ring_base_lsb = 0x00000d38,
-+
-+	.wbm_idle_ring_base_lsb = 0x00000d3c,
-+	.wbm_idle_ring_misc_addr = 0x00000d4c,
-+	.wbm_r0_idle_list_cntl_addr = 0x00000240,
-+	.wbm_r0_idle_list_size_addr = 0x00000244,
-+	.wbm_scattered_ring_base_lsb = 0x00000250,
-+	.wbm_scattered_ring_base_msb = 0x00000254,
-+	.wbm_scattered_desc_head_info_ix0 = 0x00000260,
-+	.wbm_scattered_desc_head_info_ix1 = 0x00000264,
-+	.wbm_scattered_desc_tail_info_ix0 = 0x00000270,
-+	.wbm_scattered_desc_tail_info_ix1 = 0x00000274,
-+	.wbm_scattered_desc_ptr_hp_addr = 0x00000027c,
-+
-+	.wbm_sw_release_ring_base_lsb = 0x0000037c,
-+	.wbm_sw1_release_ring_base_lsb = 0x00000284,
-+	.wbm0_release_ring_base_lsb = 0x00000e08,
-+	.wbm1_release_ring_base_lsb = 0x00000e80,
- 
- 	/* PCIe base address */
- 	.pcie_qserdes_sysclk_en_sel = 0x01e0e0a8,
- 	.pcie_pcs_osc_dtct_config_base = 0x01e0f45c,
- 
- 	/* PPE release ring address */
--	.hal_ppe_rel_ring_base = 0x0000043c,
-+	.ppe_rel_ring_base = 0x0000043c,
- 
- 	/* REO DEST ring address */
--	.hal_reo2_ring_base = 0x0000055c,
--	.hal_reo1_misc_ctrl_addr = 0x00000b7c,
--	.hal_reo1_sw_cookie_cfg0 = 0x00000050,
--	.hal_reo1_sw_cookie_cfg1 = 0x00000054,
--	.hal_reo1_qdesc_lut_base0 = 0x00000058,
--	.hal_reo1_qdesc_lut_base1 = 0x0000005c,
--	.hal_reo1_ring_base_lsb = 0x000004e4,
--	.hal_reo1_ring_base_msb = 0x000004e8,
--	.hal_reo1_ring_id = 0x000004ec,
--	.hal_reo1_ring_misc = 0x000004f4,
--	.hal_reo1_ring_hp_addr_lsb = 0x000004f8,
--	.hal_reo1_ring_hp_addr_msb = 0x000004fc,
--	.hal_reo1_ring_producer_int_setup = 0x00000508,
--	.hal_reo1_ring_msi1_base_lsb = 0x0000052C,
--	.hal_reo1_ring_msi1_base_msb = 0x00000530,
--	.hal_reo1_ring_msi1_data = 0x00000534,
--	.hal_reo1_aging_thres_ix0 = 0x00000b08,
--	.hal_reo1_aging_thres_ix1 = 0x00000b0c,
--	.hal_reo1_aging_thres_ix2 = 0x00000b10,
--	.hal_reo1_aging_thres_ix3 = 0x00000b14,
-+	.reo2_ring_base = 0x0000055c,
-+	.reo1_misc_ctrl_addr = 0x00000b7c,
-+	.reo1_sw_cookie_cfg0 = 0x00000050,
-+	.reo1_sw_cookie_cfg1 = 0x00000054,
-+	.reo1_qdesc_lut_base0 = 0x00000058,
-+	.reo1_qdesc_lut_base1 = 0x0000005c,
-+	.reo1_ring_base_lsb = 0x000004e4,
-+	.reo1_ring_base_msb = 0x000004e8,
-+	.reo1_ring_id = 0x000004ec,
-+	.reo1_ring_misc = 0x000004f4,
-+	.reo1_ring_hp_addr_lsb = 0x000004f8,
-+	.reo1_ring_hp_addr_msb = 0x000004fc,
-+	.reo1_ring_producer_int_setup = 0x00000508,
-+	.reo1_ring_msi1_base_lsb = 0x0000052C,
-+	.reo1_ring_msi1_base_msb = 0x00000530,
-+	.reo1_ring_msi1_data = 0x00000534,
-+	.reo1_aging_thres_ix0 = 0x00000b08,
-+	.reo1_aging_thres_ix1 = 0x00000b0c,
-+	.reo1_aging_thres_ix2 = 0x00000b10,
-+	.reo1_aging_thres_ix3 = 0x00000b14,
- 
- 	/* REO Exception ring address */
--	.hal_reo2_sw0_ring_base = 0x000008a4,
-+	.reo2_sw0_ring_base = 0x000008a4,
- 
- 	/* REO Reinject ring address */
--	.hal_sw2reo_ring_base = 0x00000304,
--	.hal_sw2reo1_ring_base = 0x0000037c,
-+	.sw2reo_ring_base = 0x00000304,
-+	.sw2reo1_ring_base = 0x0000037c,
- 
- 	/* REO cmd ring address */
--	.hal_reo_cmd_ring_base = 0x0000028c,
-+	.reo_cmd_ring_base = 0x0000028c,
- 
- 	/* REO status ring address */
--	.hal_reo_status_ring_base = 0x00000a84,
-+	.reo_status_ring_base = 0x00000a84,
- 
- 	/* CE base address */
--	.hal_umac_ce0_src_reg_base = 0x01b80000,
--	.hal_umac_ce0_dest_reg_base = 0x01b81000,
--	.hal_umac_ce1_src_reg_base = 0x01b82000,
--	.hal_umac_ce1_dest_reg_base = 0x01b83000,
-+	.umac_ce0_src_reg_base = 0x01b80000,
-+	.umac_ce0_dest_reg_base = 0x01b81000,
-+	.umac_ce1_src_reg_base = 0x01b82000,
-+	.umac_ce1_dest_reg_base = 0x01b83000,
- 
- 	.gcc_gcc_pcie_hot_rst = 0x1e40304,
- };
--- 
-2.34.1
-
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
