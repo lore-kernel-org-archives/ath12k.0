@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 216F2CCD187
-	for <ath12k@archiver.kernel.org>; Thu,  9 Oct 2025 11:11:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26FF5CCD18A
+	for <ath12k@archiver.kernel.org>; Thu,  9 Oct 2025 11:11:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Vjz3lyetlEMQt7IUGMIq84+X1u1V9tuigBe1HItqC+c=; b=jqdu9kgqBB5ZvTWHHapBHpa63S
-	NGkjzzZsb5u9HY9nSV3Cy3z3F1JECZFCrhROsvF6gYLqGmq8+kn8ujimioJhVxTh5TPwObn4oh2eL
-	79biWemW9aSVuh4UZ4osQpOjopCwL7jwODEF9QjVxRo27vcgQyMoIvyLNPqtkT0QAJz3KdS/2zRRd
-	qccguchgLtH2zCLB4pQeB3cqAQ7yqMCYcHouIYn9KHNBGyacZ1gsvbj1ugSAel7C/r/0KK75RSmUd
-	XR0k2XjsM3XLuc39zmU7fkDtWtCA9MrkCp7ZZUpn78uERk5qrMUUOnl8Q5Ji7cMTdxJBHXVUmsMpB
-	h8dYyXzQ==;
+	bh=h5v1BdVc70EuS3nbXGGw3DoMZx68JERKWH9bFPzfDXY=; b=JU+cq9VsGtT3MgZ5Z2bpX16Yhr
+	V9nilGPGbtCE+ydg8iHiXdpPCuVjqcKRIwAGLEzqoz/wPcoEX4VT5OXAJEUEHcgP4YLEeosGU3NnU
+	6QXDK6HqzReCoXBt4RDAtCT4kg9KWy/AlO1vn05eCPfjbvZWFCZlZvtzdjKjxCsILlxHexi93ZThl
+	YMpa9cN1tUwYPHQrTPp6Zjkzocwi9phmLNWkNBlihProI+PTBdCAFzDH1rg9+z0sKCdvOUX5ROROf
+	l4OBJLjGcF8HCEBcfoU3Nwx9vr7XUZe67bkbXQuXO4ZWztkHHl4IhdrR/PtDm8MiC2wIyNjAVeZmN
+	oYmvVeEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6oYR-00000005uys-38n6;
-	Thu, 09 Oct 2025 11:11:27 +0000
+	id 1v6oYT-00000005v1g-34HP;
+	Thu, 09 Oct 2025 11:11:29 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6oYN-00000005uuN-2qS4
+	id 1v6oYQ-00000005uxA-0qnt
 	for ath12k@lists.infradead.org;
-	Thu, 09 Oct 2025 11:11:25 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5996EOjY029749;
-	Thu, 9 Oct 2025 11:11:23 GMT
+	Thu, 09 Oct 2025 11:11:27 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5996Ehp8005247;
+	Thu, 9 Oct 2025 11:11:26 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Vjz3lyetlEMQt7IUGMIq84+X1u1V9tuigBe1HItqC+c=; b=LfEcbZ0qg6OsS6iZ
-	A/m5omvlL2rpLYsmxcPK66N74v849aK3L3sMaNfU3R1HeX8KSy2pvhzJfhtNxJ/1
-	CDTvnDZTSvyaLBYyFkl7Dj++PkjPXf3A1nLlalWfevhO73v0Ug5L1KrgaLnc+aTP
-	hzgrR5+wBsWYDvHcF1kMZmBC9xyrdUSAfW2sZAX/HufKysexRnJBwstCFDEle6ZM
-	FzrndZBxU6V6FwEHWlSJwFxf8VuiNsJT0NYjpHcn2+eDxX3qluoH/vh5YZpdd0s2
-	zflbL53Dv3XAnEYOwm8DOyTQJ7KhLwbAK8smCdWS8OdATSW2d9GILn1C+Ou8BJut
-	lsBoTQ==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49nv4nah3f-1
+	h5v1BdVc70EuS3nbXGGw3DoMZx68JERKWH9bFPzfDXY=; b=FYvfhA0vTX7YqYzx
+	Fk+KbOwdxvkvnzhaawjvZvx1e2dOhW9FqnLeOWzSfSqRbxn7rWMNemGVFpowngr3
+	W/NNhZRfSoowp/GAqO9/xusVpGFeCBosjuQHGQD7tl6kFMuZWzTK2zZM7mS6h2y3
+	pa40S/FFmIMLdsa6nLt80rEMugcGp58Psl677m4OGmq9wcIVmZrXMwKzTQkRu4Kc
+	IYGGXhWAyP/+MILDK6MylUy+6aEa1k63egPJPebZecBgcLa8LC53CnuLEbl6LJ7v
+	dgElrpSg6yeoodis1mc0oIUNx6EDsQVF+zjbvnCV0lTQja/lQmkNY/Di+PpT2+1Q
+	gh4vxg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49nv4j2h4u-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 09 Oct 2025 11:11:23 +0000 (GMT)
+	Thu, 09 Oct 2025 11:11:25 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 599BBM8n022001
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 599BBPsd011662
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 9 Oct 2025 11:11:22 GMT
+	Thu, 9 Oct 2025 11:11:25 GMT
 Received: from hu-rdeuri-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.24; Thu, 9 Oct 2025 04:11:21 -0700
+ 15.2.1748.24; Thu, 9 Oct 2025 04:11:24 -0700
 From: Ripan Deuri <quic_rdeuri@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH ath12k-ng 14/18] wifi: ath12k: Move HAL Cookie Conversion and RBM related APIs to wifi7 directory
-Date: Thu, 9 Oct 2025 16:40:41 +0530
-Message-ID: <20251009111045.1763001-15-quic_rdeuri@quicinc.com>
+Subject: [PATCH ath12k-ng 16/18] wifi: ath12k: Remove the unused ring inits in wcn
+Date: Thu, 9 Oct 2025 16:40:43 +0530
+Message-ID: <20251009111045.1763001-17-quic_rdeuri@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20251009111045.1763001-1-quic_rdeuri@quicinc.com>
 References: <20251009111045.1763001-1-quic_rdeuri@quicinc.com>
@@ -69,30 +69,30 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=ZJzaWH7b c=1 sm=1 tr=0 ts=68e7985b cx=c_pps
+X-Proofpoint-GUID: nfQexHjVOVghHgSuZ_sj8z34ICYYikcx
+X-Proofpoint-ORIG-GUID: nfQexHjVOVghHgSuZ_sj8z34ICYYikcx
+X-Authority-Analysis: v=2.4 cv=f91FxeyM c=1 sm=1 tr=0 ts=68e7985d cx=c_pps
  a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=x6icFKpwvdMA:10 a=COk6AnOGAAAA:8 a=nloMc1UKMNAEPNwcCPgA:9
+ a=GEpy-HfZoHoA:10 a=x6icFKpwvdMA:10 a=COk6AnOGAAAA:8 a=S4Rt_psGJdqvLXfSAgIA:9
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: OKMMhjsuDjmOnhDeoWa1eNai3BHTf_uj
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA4MDEyMSBTYWx0ZWRfX+hsdO2yPqWMJ
- /6wwiXpnZivtnpXocLg06slKf70t2wETXq/f0xjkFl18T5XOqW9wnRXAN8mmn9uwdo8B7lKW/Fa
- EBQZbmyTDvzvQdxVzfZVcpbSqdT8sZ6CEoVIbsTlmublFlsxhQCwqr5SpTcaX/TSCu6ymi1Gkx+
- FLYUxJIFunEZe3WKo3Mo2Tm1NvEAFhbmzmYVwIEAUWCgF33FntG6BUpo0FzXFJMcEYSgHY3ul4q
- aNKNHaUZjjQRGm/cFg2jqL8m9deBt+k+XlIewTraXLez0Mu2AlmGWSpZGglVXB5HTfrfIZRwWg6
- c6HWoCruC1eJ/QeFCaytuSxf3AfXtfNv4BdysP6al9MzDVkPFrKFiI9PkiMhytnpvc4JFZgw8gH
- Wv9C4yB+a4rGMKrj9bOe7Uj8mOmdUQ==
-X-Proofpoint-GUID: OKMMhjsuDjmOnhDeoWa1eNai3BHTf_uj
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA4MDEyMSBTYWx0ZWRfX1mu2r+pLnm7+
+ PdMyUTaA2sPrWQflyYbFkNx2131OLGZ/lndCjmwi+Xud/UTw6E6xbVxodj/9ChkPlDUkPt4VbGp
+ v5+q161mM8OAJMw3chxG42Py4njOpAY3TIs9afbO3LjX1xWO2MxUuxUj9rmBjWocyGe+m7dQB4+
+ D+sEq9KFC9yPS6OS2q7DUEUBpGX9CL054Yw+2x4MWWv9G2UfBA+D0t/kTZ+McAVffa46qMli0AT
+ m16rUZ+103XhvaZbgXfy0t+HXTCT9OnYsLKwMcddnVUamMw4bfvmJlIwcSUODEruN5KblTlhK0A
+ +nRnt8V2ES4cBfQIcT9QNLwC0/ffBwRVDtRnm7I1/yAUO+5YF4+TerF0Cjr2zbMRJtiWJrwwDLJ
+ oQmCVFUyaiLavOdLlY3wRxYXAvap2w==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-10-09_03,2025-10-06_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 adultscore=0 clxscore=1015 malwarescore=0 lowpriorityscore=0
- phishscore=0 priorityscore=1501 impostorscore=0 suspectscore=0 bulkscore=0
+ spamscore=0 clxscore=1015 adultscore=0 priorityscore=1501 malwarescore=0
+ suspectscore=0 lowpriorityscore=0 impostorscore=0 bulkscore=0 phishscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.19.0-2510020000 definitions=main-2510080121
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251009_041123_750750_98B41502 
-X-CRM114-Status: GOOD (  17.41  )
+X-CRM114-CacheID: sfid-20251009_041126_262170_294715A1 
+X-CRM114-Status: GOOD (  11.45  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,14 +109,15 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
 
-Move the hardware specific HAL APIs to hal.c file
-inside wifi7 directory. These APIs will be called
-through the hal_ops mechanism, which are registered
-separately by qcn and wcn
+Remove the initialization for the following rings in wcn as these rings
+are not used for wcn chips.
 
-Handling following APIs:
-ath12k_wifi7_hal_cc_config
-ath12k_wifi7_hal_get_idle_link_rbm
+HAL_RXDMA_MONITOR_BUF
+HAL_PPE2TCL
+HAL_PPE_RELEASE
+HAL_TX_MONITOR_BUF
+HAL_RXDMA_MONITOR_DST
+HAL_TX_MONITOR_DST
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -124,305 +125,81 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
 Signed-off-by: Ripan Deuri <quic_rdeuri@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c        |  2 +-
- drivers/net/wireless/ath/ath12k/dp.c          | 75 +------------------
- drivers/net/wireless/ath/ath12k/dp.h          |  1 -
- drivers/net/wireless/ath/ath12k/hal.c         | 11 +++
- drivers/net/wireless/ath/ath12k/hal.h         |  6 ++
- drivers/net/wireless/ath/ath12k/wifi7/hal.c   | 73 ++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wifi7/hal.h   |  3 +
- .../wireless/ath/ath12k/wifi7/hal_qcn9274.c   |  2 +
- .../wireless/ath/ath12k/wifi7/hal_wcn7850.c   |  2 +
- 9 files changed, 100 insertions(+), 75 deletions(-)
+ .../wireless/ath/ath12k/wifi7/hal_wcn7850.c   | 54 +++----------------
+ 1 file changed, 6 insertions(+), 48 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 7b51261b1170..1adbdd571a0f 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -922,7 +922,7 @@ static int ath12k_core_start(struct ath12k_base *ab)
- 		goto err_hif_stop;
- 	}
- 
--	ath12k_dp_cc_config(ab);
-+	ath12k_hal_cc_config(ab);
- 
- 	ret = ath12k_dp_rx_pdev_reo_setup(ab);
- 	if (ret) {
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index faba234a6671..0f02924ecdeb 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -1192,60 +1192,6 @@ static void ath12k_dp_cleanup(struct ath12k_base *ab)
- 	/* Deinit any SOC level resource */
- }
- 
--void ath12k_dp_cc_config(struct ath12k_base *ab)
--{
--	u32 cmem_base = ab->qmi.dev_mem[ATH12K_QMI_DEVMEM_CMEM_INDEX].start;
--	u32 reo_base = HAL_SEQ_WCSS_UMAC_REO_REG;
--	u32 wbm_base = HAL_SEQ_WCSS_UMAC_WBM_REG;
--	u32 val = 0;
--	struct ath12k_hal *hal = &ab->hal;
--
--	if (ath12k_ftm_mode)
--		return;
--
--	ath12k_hif_write32(ab, reo_base + HAL_REO1_SW_COOKIE_CFG0(hal), cmem_base);
--
--	val |= u32_encode_bits(ATH12K_CMEM_ADDR_MSB,
--			       HAL_REO1_SW_COOKIE_CFG_CMEM_BASE_ADDR_MSB) |
--		u32_encode_bits(ATH12K_CC_PPT_MSB,
--				HAL_REO1_SW_COOKIE_CFG_COOKIE_PPT_MSB) |
--		u32_encode_bits(ATH12K_CC_SPT_MSB,
--				HAL_REO1_SW_COOKIE_CFG_COOKIE_SPT_MSB) |
--		u32_encode_bits(1, HAL_REO1_SW_COOKIE_CFG_ALIGN) |
--		u32_encode_bits(1, HAL_REO1_SW_COOKIE_CFG_ENABLE) |
--		u32_encode_bits(1, HAL_REO1_SW_COOKIE_CFG_GLOBAL_ENABLE);
--
--	ath12k_hif_write32(ab, reo_base + HAL_REO1_SW_COOKIE_CFG1(hal), val);
--
--	/* Enable HW CC for WBM */
--	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG0, cmem_base);
--
--	val = u32_encode_bits(ATH12K_CMEM_ADDR_MSB,
--			      HAL_WBM_SW_COOKIE_CFG_CMEM_BASE_ADDR_MSB) |
--		u32_encode_bits(ATH12K_CC_PPT_MSB,
--				HAL_WBM_SW_COOKIE_CFG_COOKIE_PPT_MSB) |
--		u32_encode_bits(ATH12K_CC_SPT_MSB,
--				HAL_WBM_SW_COOKIE_CFG_COOKIE_SPT_MSB) |
--		u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_ALIGN);
--
--	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG1, val);
--
--	/* Enable conversion complete indication */
--	val = ath12k_hif_read32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG2);
--	val |= u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_RELEASE_PATH_EN) |
--		u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_ERR_PATH_EN) |
--		u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_CONV_IND_EN);
--
--	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG2, val);
--
--	/* Enable Cookie conversion for WBM2SW Rings */
--	val = ath12k_hif_read32(ab, wbm_base + HAL_WBM_SW_COOKIE_CONVERT_CFG);
--	val |= u32_encode_bits(1, HAL_WBM_SW_COOKIE_CONV_CFG_GLOBAL_EN) |
--	       hal->hal_params->wbm2sw_cc_enable;
--
--	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CONVERT_CFG, val);
--}
--
- static u32 ath12k_dp_cc_cookie_gen(u16 ppt_idx, u16 spt_idx)
- {
- 	return (u32)ppt_idx << ATH12K_CC_PPT_SHIFT | spt_idx;
-@@ -1570,24 +1516,6 @@ static int ath12k_dp_reoq_lut_setup(struct ath12k_base *ab)
- 	return 0;
- }
- 
--static enum hal_rx_buf_return_buf_manager
--ath12k_dp_get_idle_link_rbm(struct ath12k_base *ab)
--{
--	switch (ab->device_id) {
--	case 0:
--		return HAL_RX_BUF_RBM_WBM_DEV0_IDLE_DESC_LIST;
--	case 1:
--		return HAL_RX_BUF_RBM_WBM_DEV1_IDLE_DESC_LIST;
--	case 2:
--		return HAL_RX_BUF_RBM_WBM_DEV2_IDLE_DESC_LIST;
--	default:
--		ath12k_warn(ab, "invalid %d device id, so choose default rbm\n",
--			    ab->device_id);
--		WARN_ON(1);
--		return HAL_RX_BUF_RBM_WBM_DEV0_IDLE_DESC_LIST;
--	}
--}
--
- static int ath12k_dp_setup(struct ath12k_base *ab)
- {
- 	struct ath12k_dp *dp;
-@@ -1605,7 +1533,8 @@ static int ath12k_dp_setup(struct ath12k_base *ab)
- 	spin_lock_init(&dp->reo_cmd_lock);
- 
- 	dp->reo_cmd_cache_flush_count = 0;
--	dp->idle_link_rbm = ath12k_dp_get_idle_link_rbm(ab);
-+	dp->idle_link_rbm =
-+			ath12k_hal_get_idle_link_rbm(&ab->hal, ab->device_id);
- 
- 	ret = ath12k_wbm_idle_ring_setup(ab, &n_link_desc);
- 	if (ret) {
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 9690e3472ab7..2655b4d96f43 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -505,7 +505,6 @@ ath12k_dp_to_pdev_dp(struct ath12k_dp *dp, u8 pdev_idx)
- }
- 
- void ath12k_dp_vdev_tx_attach(struct ath12k *ar, struct ath12k_link_vif *arvif);
--void ath12k_dp_cc_config(struct ath12k_base *ab);
- void ath12k_dp_partner_cc_init(struct ath12k_base *ab);
- int ath12k_dp_pdev_alloc(struct ath12k_base *ab);
- void ath12k_dp_pdev_pre_alloc(struct ath12k *ar);
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index 00cd6dcb5bad..528138a1dc18 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -121,6 +121,17 @@ void ath12k_hal_rx_buf_addr_info_get(struct ath12k_hal *hal,
- 	hal->hal_ops->rx_buf_addr_info_get(binfo, paddr, msdu_cookies, rbm);
- }
- 
-+void ath12k_hal_cc_config(struct ath12k_base *ab)
-+{
-+	ab->hal.hal_ops->cc_config(ab);
-+}
-+
-+enum hal_rx_buf_return_buf_manager
-+ath12k_hal_get_idle_link_rbm(struct ath12k_hal *hal, u8 device_id)
-+{
-+	return hal->hal_ops->get_idle_link_rbm(hal, device_id);
-+}
-+
- static int ath12k_hal_alloc_cont_rdp(struct ath12k_hal *hal)
- {
- 	size_t size;
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 2e85299f3685..0de5e1aa6405 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -1737,6 +1737,9 @@ struct hal_ops {
- 	void (*rx_buf_addr_info_get)(struct ath12k_buffer_addr *binfo,
- 				     dma_addr_t *paddr, u32 *msdu_cookies,
- 				     u8 *rbm);
-+	void (*cc_config)(struct ath12k_base *ab);
-+	enum hal_rx_buf_return_buf_manager
-+		(*get_idle_link_rbm)(struct ath12k_hal *hal, u8 device_id);
- };
- 
- u32 ath12k_wifi7_hal_reo_qdesc_size(u32 ba_window_size, u8 tid);
-@@ -1817,4 +1820,7 @@ void ath12k_hal_rx_buf_addr_info_get(struct ath12k_hal *hal,
- 				     struct ath12k_buffer_addr *binfo,
- 				     dma_addr_t *paddr, u32 *msdu_cookies,
- 				     u8 *rbm);
-+void ath12k_hal_cc_config(struct ath12k_base *ab);
-+enum hal_rx_buf_return_buf_manager
-+ath12k_hal_get_idle_link_rbm(struct ath12k_hal *hal, u8 device_id);
- #endif
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal.c b/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-index 73d86dedadb1..4f9f1efbbfcf 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-@@ -630,3 +630,76 @@ void ath12k_wifi7_hal_write_ml_reoq_lut_addr(struct ath12k_base *ab,
- 	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG +
- 			   HAL_REO1_QDESC_LUT_BASE1(&ab->hal), paddr);
- }
-+
-+void ath12k_wifi7_hal_cc_config(struct ath12k_base *ab)
-+{
-+	u32 cmem_base = ab->qmi.dev_mem[ATH12K_QMI_DEVMEM_CMEM_INDEX].start;
-+	u32 reo_base = HAL_SEQ_WCSS_UMAC_REO_REG;
-+	u32 wbm_base = HAL_SEQ_WCSS_UMAC_WBM_REG;
-+	u32 val = 0;
-+	struct ath12k_hal *hal = &ab->hal;
-+
-+	if (ath12k_ftm_mode)
-+		return;
-+
-+	ath12k_hif_write32(ab, reo_base + HAL_REO1_SW_COOKIE_CFG0(hal), cmem_base);
-+
-+	val |= u32_encode_bits(ATH12K_CMEM_ADDR_MSB,
-+			       HAL_REO1_SW_COOKIE_CFG_CMEM_BASE_ADDR_MSB) |
-+		u32_encode_bits(ATH12K_CC_PPT_MSB,
-+				HAL_REO1_SW_COOKIE_CFG_COOKIE_PPT_MSB) |
-+		u32_encode_bits(ATH12K_CC_SPT_MSB,
-+				HAL_REO1_SW_COOKIE_CFG_COOKIE_SPT_MSB) |
-+		u32_encode_bits(1, HAL_REO1_SW_COOKIE_CFG_ALIGN) |
-+		u32_encode_bits(1, HAL_REO1_SW_COOKIE_CFG_ENABLE) |
-+		u32_encode_bits(1, HAL_REO1_SW_COOKIE_CFG_GLOBAL_ENABLE);
-+
-+	ath12k_hif_write32(ab, reo_base + HAL_REO1_SW_COOKIE_CFG1(hal), val);
-+
-+	/* Enable HW CC for WBM */
-+	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG0, cmem_base);
-+
-+	val = u32_encode_bits(ATH12K_CMEM_ADDR_MSB,
-+			      HAL_WBM_SW_COOKIE_CFG_CMEM_BASE_ADDR_MSB) |
-+		u32_encode_bits(ATH12K_CC_PPT_MSB,
-+				HAL_WBM_SW_COOKIE_CFG_COOKIE_PPT_MSB) |
-+		u32_encode_bits(ATH12K_CC_SPT_MSB,
-+				HAL_WBM_SW_COOKIE_CFG_COOKIE_SPT_MSB) |
-+		u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_ALIGN);
-+
-+	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG1, val);
-+
-+	/* Enable conversion complete indication */
-+	val = ath12k_hif_read32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG2);
-+	val |= u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_RELEASE_PATH_EN) |
-+		u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_ERR_PATH_EN) |
-+		u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_CONV_IND_EN);
-+
-+	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG2, val);
-+
-+	/* Enable Cookie conversion for WBM2SW Rings */
-+	val = ath12k_hif_read32(ab, wbm_base + HAL_WBM_SW_COOKIE_CONVERT_CFG);
-+	val |= u32_encode_bits(1, HAL_WBM_SW_COOKIE_CONV_CFG_GLOBAL_EN) |
-+	       hal->hal_params->wbm2sw_cc_enable;
-+
-+	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CONVERT_CFG, val);
-+}
-+
-+enum hal_rx_buf_return_buf_manager
-+ath12k_wifi7_hal_get_idle_link_rbm(struct ath12k_hal *hal, u8 device_id)
-+{
-+	switch (device_id) {
-+	case 0:
-+		return HAL_RX_BUF_RBM_WBM_DEV0_IDLE_DESC_LIST;
-+	case 1:
-+		return HAL_RX_BUF_RBM_WBM_DEV1_IDLE_DESC_LIST;
-+	case 2:
-+		return HAL_RX_BUF_RBM_WBM_DEV2_IDLE_DESC_LIST;
-+	default:
-+		ath12k_warn(hal,
-+			    "invalid %d device id, so choose default rbm\n",
-+			    device_id);
-+		WARN_ON(1);
-+		return HAL_RX_BUF_RBM_WBM_DEV0_IDLE_DESC_LIST;
-+	}
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal.h b/drivers/net/wireless/ath/ath12k/wifi7/hal.h
-index 6e67f06ffa43..b600b2e3cb78 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hal.h
-@@ -23,6 +23,9 @@ int ath12k_wifi7_hal_srng_get_ring_id(struct ath12k_hal *hal,
- 				      enum hal_ring_type type,
- 				      int ring_num, int mac_id);
- u32 ath12k_wifi7_hal_ce_get_desc_size(enum hal_ce_desc type);
-+void ath12k_wifi7_hal_cc_config(struct ath12k_base *ab);
-+enum hal_rx_buf_return_buf_manager
-+ath12k_wifi7_hal_get_idle_link_rbm(struct ath12k_hal *hal, u8 device_id);
- void ath12k_wifi7_hal_ce_src_set_desc(struct hal_ce_srng_src_desc *desc,
- 				      dma_addr_t paddr,
- 				      u32 len, u32 id, u8 byte_swap_data);
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
-index fb723e971f5d..2dc4f1539d68 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
-@@ -1024,5 +1024,7 @@ const struct hal_ops hal_qcn9274_ops = {
- 	.reo_hw_setup = ath12k_wifi7_hal_reo_hw_setup,
- 	.rx_buf_addr_info_set = ath12k_wifi7_hal_rx_buf_addr_info_set,
- 	.rx_buf_addr_info_get = ath12k_wifi7_hal_rx_buf_addr_info_get,
-+	.cc_config = ath12k_wifi7_hal_cc_config,
-+	.get_idle_link_rbm = ath12k_wifi7_hal_get_idle_link_rbm,
- };
- EXPORT_SYMBOL(hal_qcn9274_ops);
 diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
-index 33f8ddcedd83..233350ccd06e 100644
+index 233350ccd06e..8151c216a5e1 100644
 --- a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
 +++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
-@@ -839,5 +839,7 @@ const struct hal_ops hal_wcn7850_ops = {
- 	.reo_hw_setup = ath12k_wifi7_hal_reo_hw_setup,
- 	.rx_buf_addr_info_set = ath12k_wifi7_hal_rx_buf_addr_info_set,
- 	.rx_buf_addr_info_get = ath12k_wifi7_hal_rx_buf_addr_info_get,
-+	.cc_config = ath12k_wifi7_hal_cc_config,
-+	.get_idle_link_rbm = ath12k_wifi7_hal_get_idle_link_rbm,
+@@ -146,14 +146,7 @@ static const struct hal_srng_config hw_srng_config_template[] = {
+ 		.ring_dir = HAL_SRNG_DIR_DST,
+ 		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
+ 	},
+-	[HAL_RXDMA_MONITOR_BUF] = {
+-		.start_ring_id = HAL_SRNG_SW2RXMON_BUF0,
+-		.max_rings = 1,
+-		.entry_size = sizeof(struct hal_mon_buf_ring) >> 2,
+-		.mac_type = ATH12K_HAL_SRNG_PMAC,
+-		.ring_dir = HAL_SRNG_DIR_SRC,
+-		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
+-	},
++	[HAL_RXDMA_MONITOR_BUF] = {},
+ 	[HAL_RXDMA_MONITOR_STATUS] = {
+ 		.start_ring_id = HAL_SRNG_RING_ID_WMAC1_SW2RXDMA1_STATBUF,
+ 		.max_rings = 1,
+@@ -171,46 +164,11 @@ static const struct hal_srng_config hw_srng_config_template[] = {
+ 		.ring_dir = HAL_SRNG_DIR_SRC,
+ 		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
+ 	},
+-	[HAL_PPE2TCL] = {
+-		.start_ring_id = HAL_SRNG_RING_ID_PPE2TCL1,
+-		.max_rings = 1,
+-		.entry_size = sizeof(struct hal_tcl_entrance_from_ppe_ring) >> 2,
+-		.mac_type = ATH12K_HAL_SRNG_PMAC,
+-		.ring_dir = HAL_SRNG_DIR_SRC,
+-		.max_size = HAL_SW2TCL1_RING_BASE_MSB_RING_SIZE,
+-	},
+-	[HAL_PPE_RELEASE] = {
+-		.start_ring_id = HAL_SRNG_RING_ID_WBM_PPE_RELEASE,
+-		.max_rings = 1,
+-		.entry_size = sizeof(struct hal_wbm_release_ring) >> 2,
+-		.mac_type = ATH12K_HAL_SRNG_PMAC,
+-		.ring_dir = HAL_SRNG_DIR_SRC,
+-		.max_size = HAL_WBM2PPE_RELEASE_RING_BASE_MSB_RING_SIZE,
+-	},
+-	[HAL_TX_MONITOR_BUF] = {
+-		.start_ring_id = HAL_SRNG_RING_ID_WMAC1_SW2TXMON_BUF0,
+-		.max_rings = 1,
+-		.entry_size = sizeof(struct hal_mon_buf_ring) >> 2,
+-		.mac_type = ATH12K_HAL_SRNG_PMAC,
+-		.ring_dir = HAL_SRNG_DIR_SRC,
+-		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
+-	},
+-	[HAL_RXDMA_MONITOR_DST] = {
+-		.start_ring_id = HAL_SRNG_RING_ID_WMAC1_SW2RXMON_BUF0,
+-		.max_rings = 1,
+-		.entry_size = sizeof(struct hal_mon_dest_desc) >> 2,
+-		.mac_type = ATH12K_HAL_SRNG_PMAC,
+-		.ring_dir = HAL_SRNG_DIR_DST,
+-		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
+-	},
+-	[HAL_TX_MONITOR_DST] = {
+-		.start_ring_id = HAL_SRNG_RING_ID_WMAC1_TXMON2SW0_BUF0,
+-		.max_rings = 1,
+-		.entry_size = sizeof(struct hal_mon_dest_desc) >> 2,
+-		.mac_type = ATH12K_HAL_SRNG_PMAC,
+-		.ring_dir = HAL_SRNG_DIR_DST,
+-		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
+-	}
++	[HAL_PPE2TCL] = {},
++	[HAL_PPE_RELEASE] = {},
++	[HAL_TX_MONITOR_BUF] = {},
++	[HAL_RXDMA_MONITOR_DST] = {},
++	[HAL_TX_MONITOR_DST] = {}
  };
- EXPORT_SYMBOL(hal_wcn7850_ops);
+ 
+ const struct ath12k_hw_regs wcn7850_regs = {
 -- 
 2.34.1
 
