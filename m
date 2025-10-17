@@ -4,117 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 946CCCCD184
-	for <ath12k@archiver.kernel.org>; Fri, 17 Oct 2025 05:15:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4EAFCCD199
+	for <ath12k@archiver.kernel.org>; Fri, 17 Oct 2025 05:18:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QIKO/DPFg0c2wPpUGqI6aEd9ZsFDZggwxQR6K7a+wa8=; b=Ef7WEwnt5cdP5TE7vJ609gXYHC
-	azQQRkd/OEdI+04RBDuqjTd2/K7FXkTLuCl3KRjCTCdgUUlWpKSwsNFwCnhUWbe8eGD375wZ2NQsx
-	3W79g8LuV9w7ie8FNYTfjrZIkRmUKOik4BgK20gWyVQl8NH8p2O95c02zmgAbiyKsbDas6LvHWMgV
-	xh9AQoREGPKhwajNM4O7X9Evq9xJsdbMJxK/ePiPDuumqzHzK5nmqMDsp/T9GD2V4CM7JL0Ca53Y1
-	pJkq3vrtoeiv53fWWyH2PUk7EHx4tkeZ6HNHcrFr9oedxOKw7OfzwHVYcbP2vL+SHjzse/xTnfOl6
-	ImBU8nOw==;
+	bh=reIHbmg1S2LMtMkXhq1TwKOVbfmyVwDGwoULlqSh5v0=; b=xaNkKI4qhsxpCIfiujAl4E75w7
+	IarApATS2/akXbTyyPwpmNPeeXmdAlOYOT6GPHwSh+9U0s7efrZd48iXldD9gQUN0nkJalb4k16ce
+	k1Yjg0OSq8wqnqttdAM/L7/HtfcWSgqH/ebnMbVCWS3NeoDXW0JwQhHtMmwQ6TJKZRz0dLtsQYhP+
+	sR7az+2ik09AySx98WJKugLK+3J84oj3m3hO4iOfingvaq1fBHbkA4qLVg8K58LKraMnjflJA55AR
+	FZfdDsec20SfFSZYJurin1PzHM2jSt681eRKkAiQL7zemYE6bTvxZ8h7ea0aPQDcD+ikFj8pTOiOg
+	wAvYnXlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9cof-00000006b8W-1VAQ;
-	Fri, 17 Oct 2025 05:15:49 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1v9cr9-00000006bcD-1neP;
+	Fri, 17 Oct 2025 05:18:23 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9coc-00000006b7X-0hnQ
+	id 1v9cr5-00000006baH-1O1E
 	for ath12k@lists.infradead.org;
-	Fri, 17 Oct 2025 05:15:48 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59GKLOv9008890
-	for <ath12k@lists.infradead.org>; Fri, 17 Oct 2025 05:15:46 GMT
+	Fri, 17 Oct 2025 05:18:21 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59GKLRas020220
+	for <ath12k@lists.infradead.org>; Fri, 17 Oct 2025 05:18:18 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	QIKO/DPFg0c2wPpUGqI6aEd9ZsFDZggwxQR6K7a+wa8=; b=FRdYFNLSJJAowr+n
-	gvssstqhkoQdmm6b+hRKy8OigSnvsu+dureYFV8wANM9n+NZWRp9XInydCSGN00i
-	G4Xx9pLa9zP7JhpOxjAEw5CYSKzViyiS5uk/QLt4wdl1A1oC9KXiRGtTBynYnsPS
-	Kppa3sPTySlFNLslcPZHKlDvZCmFSq6eY5xccJeVoCox/yQbUZK5h918DZKF9Iv0
-	otcNRaQf7nuJ+dW5onFXzJXLrsXKG7J906RdlkeEUGPD5Inw5ViLvqi67b6xsOOs
-	3vAk4GKTdYGXUojC1HpKJu6NAEhmL1NFbJIu76ZlsLskqs9YomosQFSkehi1Xd0S
-	RlWdFA==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49rw1aq5ub-1
+	reIHbmg1S2LMtMkXhq1TwKOVbfmyVwDGwoULlqSh5v0=; b=BLPP2XadcuqktZI4
+	G5PLw4KumE1fOGyMHBatZ8wh+z6S4ygVMb7VO4ll5jIMyjQI/SaAGeElBTst9V6N
+	Jmw4rTFjmlP674GmV0Y+QH15lDAMlBhWhOrTk5yrzLzDhvgRZvkgP1qP0G5xT1S+
+	QaqDqojXhBgj87lTuxhx0oZR40iiyltwaV5nrTuDAPa35YCk7wxhEPSuVFGQuKH4
+	cknIS3KOWW9kYLCFodEYwk7QsUObrGkA9/V1LI5/LpLCf19xv71mrhj6wvuBRU84
+	J+1IXzDY9bGQvU4Ov/LH/l/G2y47fVnhVWFH7Cx3+VVwpPiVa+yjWuB3dD5vRRsK
+	dJdO2Q==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49tqvpmb6f-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 17 Oct 2025 05:15:45 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-28eb14e3cafso28451395ad.1
-        for <ath12k@lists.infradead.org>; Thu, 16 Oct 2025 22:15:45 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 17 Oct 2025 05:18:18 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-272b7bdf41fso20746645ad.0
+        for <ath12k@lists.infradead.org>; Thu, 16 Oct 2025 22:18:18 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760678145; x=1761282945;
+        d=1e100.net; s=20230601; t=1760678297; x=1761283097;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=QIKO/DPFg0c2wPpUGqI6aEd9ZsFDZggwxQR6K7a+wa8=;
-        b=lQJ1sCvuHy/N4SfjwH5lRB3Fg/wOsN+DNYR4Um82a3HYIA5ur84NATKCsM7xsrIHHW
-         uVjQMPuZ3CZPFcpng/Wls8subRljPqKemamwRf2DHqQnJhsLx4ak2AAn9ExSfEqv5LXX
-         Oc34o9AzFck4j+MEW5mIa6BtolCPBOr08tSa59qZ9vZ56Lxb26/fWiPGFeA+opZ8Q4LA
-         oAAzubRSmebxvVoJnbvhY+655W5czbn2KuFFvrPhQoz+I+/Q8GLqZW3QVNvEDv2Dlw9z
-         3TZZ36OVRrXd7X7y5Udp1R7ncFyJOjUZNbaA+jrC7hHHQNt578vMNyj93lu47f52QHHI
-         WSzQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUKRpx7zAYOMoijV8hWZWZXTQUTDLnF72LBtgUDGI4n85fM4oHd3NjsvL/fnGEk0ee46mD2VJ8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YziiWH+eckbQti3k8GLzSMEG9U2ApPoWVZduhYROFPWI5fJMoAm
-	DBzhKJk+Fpz6DQagwSZdIfWAvpT75jujMPhmsgGJhBDtgDTRr/fyu6MdEn3J01lW9FLBIZ8ELIW
-	eBLeSParzVMTwXOeyXhTj0L4bEFzbdIiiwjbd0R0CNA9K96bPyE8FH7YAg739Nafi
-X-Gm-Gg: ASbGncsC8Yay2UBkiiu0yokWMdp3BsQjCWDQbRLlFf7U7QSj+wLn5YeUYV55z0n/J4r
-	fgIX2etRIuwu6Xoa+5xz0tlhSplzBmcZu43F3AzDfaTbPh6l2AY2zgWXjxU9sS4JMGLAcNTJzLs
-	559WQqPHi//7XPJ/FkQEqTCKdt42bajn/vwKyfQ6ijfFCgMY6V4jD8iwolxc5WHEabHUxbN+yUk
-	chfUxhYpSJYZwfWBQB171231aNIBlgVhqklbKOP5O8ng9iABFKO6M3UCsgCsCmQqHybBi+qUZST
-	uRiP9CZA2GfuXQEczn3cTgyHe9oQgSh341uFTCLr27aTzV/fGmHajqi7SX7k/8UGPuWsFW4DFR8
-	I122KspnOTsoUE8uRWd5ZJrKrM8lCdbXTDx+rWFYiBs3SYc+j9gEI1fPkYV60dU8UMUpSlcc=
-X-Received: by 2002:a17:90b:2d8f:b0:335:2824:aab4 with SMTP id 98e67ed59e1d1-33bcf8fa14bmr2497113a91.24.1760678144832;
-        Thu, 16 Oct 2025 22:15:44 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHp5cDrPQ7jg/bHgX5Tzk4GvQSeanJa1RTvTIKbf6pe1o7S4p+gyeCqev5LNL1xEYrTatcd7g==
-X-Received: by 2002:a17:90b:2d8f:b0:335:2824:aab4 with SMTP id 98e67ed59e1d1-33bcf8fa14bmr2497092a91.24.1760678144441;
-        Thu, 16 Oct 2025 22:15:44 -0700 (PDT)
+        bh=reIHbmg1S2LMtMkXhq1TwKOVbfmyVwDGwoULlqSh5v0=;
+        b=GC6gAfWpBn5AiKoTXBhDbZiYt69Uv8KVwPJXFBQCvPIdh5qraXXlm57f33rUNZ6nIU
+         JYdRxOQjcAfeat/jWPPfnBRpOyi6ChHsMK1TLdswQjlS74YDpl+yHJVEj9W9rdc8+H9e
+         qu0Y9jYOelLaoD6Qfly2PuEDcRAItvkNDeAgDgXpcLxmHvIP3qniRHoReLrFumcQH+0O
+         ZOs1kzSYO5BmZ41RsRAcax5KFxW3ieIbFWD+RddkML66Adifr4OKr9rlPG5B3ggDz2cr
+         mBy0ZNUANWxyV7JCHmauVxXcfYlZ0lCAdtR/yoSJJfXUJfZJVX+fJlU1SCYqS6igvHuP
+         dvdQ==
+X-Gm-Message-State: AOJu0YxCp21FAKhGvpxBRuLoFS3FZuo8V3C71/t7OBGBYdgPpvxJNW8N
+	/+ycw0bRBarIUUVoz9AE9+xVlhNtgXjKmhD/R8wRGqQhagZVKmbYXPXtCErfZBdC3NivY06ehgZ
+	NbMW8or24vi2BumAmjbXBWTu5yQ0hOwfB1hiIeIfCimjifmV+Wnwg/kMoJEAMbPJF
+X-Gm-Gg: ASbGncsiV5l5KNtsPEND/FwftOxT2mZp/U5qTtKbDZU4H8Gw5AHdgDFiktkOx01X2A+
+	Br7sgIYMrppVnufjnSqFZGUgSprRZO/Etbq7iHImCs0L6W/V1Dr5GH4nM9pLdcYae4jKmM17OnN
+	XYrCcFopO9xwRVZCFv+NjsBxW4vgLcp7BUzXghQhkjk6UNslD8TYPYgBTTN7SYRv0Kguf5RUUrp
+	jMsYLU3wKh+RIVSJUHjLnsk3T5MoxP19NonaaDOr/Y35XqRNTM//KCNbjTLMkWp1aeZhoVJQvUN
+	cJc49h/ZY77EiEieGe1h7OFacJlT/y8kRlcDxCzSe8EtEs4j3tJb7hj2xsM6IEggXVKWw18xkdA
+	R6gzDQi2mYX+NczkhcHxeHSLN5uBdG4NCmK33kiFpC5dCppbmQXqbVTDNak6pwhtqHx20tZ0=
+X-Received: by 2002:a17:902:f78b:b0:290:ab61:6a4f with SMTP id d9443c01a7336-290c9cb367fmr25156885ad.15.1760678296973;
+        Thu, 16 Oct 2025 22:18:16 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IH4prvPmsGUPvifuO4VqVP6f5Din1XYOHdg3K5RZLlEX3aVsF4HGyFAAqiXlyH23pZrahBu9g==
+X-Received: by 2002:a17:902:f78b:b0:290:ab61:6a4f with SMTP id d9443c01a7336-290c9cb367fmr25156665ad.15.1760678296499;
+        Thu, 16 Oct 2025 22:18:16 -0700 (PDT)
 Received: from [10.133.33.11] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-33bd79d4927sm1402923a91.9.2025.10.16.22.15.42
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b6a22bb5b8fsm4622661a12.37.2025.10.16.22.18.15
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 16 Oct 2025 22:15:44 -0700 (PDT)
-Message-ID: <537f7a80-2e8c-4887-ac47-2cdf861fb351@oss.qualcomm.com>
-Date: Fri, 17 Oct 2025 13:15:38 +0800
+        Thu, 16 Oct 2025 22:18:16 -0700 (PDT)
+Message-ID: <d725799f-6e96-4463-adfc-12ec355dd1b5@oss.qualcomm.com>
+Date: Fri, 17 Oct 2025 13:18:13 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: Add MODULE_FIRMWARE() entries
-To: Takashi Iwai <tiwai@suse.de>, Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
-References: <20251003082955.11436-1-tiwai@suse.de>
+Subject: Re: [PATCH ath-next] wifi: ath12k: add support for BSS color change
+To: Wei Zhang <wei.zhang@oss.qualcomm.com>, jeff.johnson@oss.qualcomm.com
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
+References: <20251017041702.1723258-1-wei.zhang@oss.qualcomm.com>
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20251003082955.11436-1-tiwai@suse.de>
+In-Reply-To: <20251017041702.1723258-1-wei.zhang@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=K88v3iWI c=1 sm=1 tr=0 ts=68f1d101 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Authority-Analysis: v=2.4 cv=aPD9aL9m c=1 sm=1 tr=0 ts=68f1d19a cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=EUspDBNiAAAA:8 a=2wKZT7uEXQSXzUSAk68A:9 a=QEXdDO2ut3YA:10
- a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-GUID: YCKeKQbgx8DAkCKnnvPSgWSC5uq5Xk-h
-X-Proofpoint-ORIG-GUID: YCKeKQbgx8DAkCKnnvPSgWSC5uq5Xk-h
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDEzMDAzNSBTYWx0ZWRfXy//JD5bvT171
- BE8AgqcsvlXwO+b7AWMZF6Z4/+uHUaUP9eggIWcRG3JWmXhd5AtJd89A5dQrJXpmDNLBMePVXqw
- JJHvR29drYAfZ34rK/3PQ0+2f2l3i+7VAXim15HWxNKwyVU9Sndrg4zIgqCQJc0i08oOn0SzuDg
- wzgfTuqSGGwHMI14LZU1myOY0FLCpUD5/VnUuWgsAtPUoH+fEs/Z86SGf0dPlgfL3gcwN2SzB7Q
- JmWBHkaAYHiMatQPzZNKHxCLSat8WqrjdjwtP8GhMHjQWXe6zffy2H89TFHjH8iGyGXxz56VWuC
- hIwoFJZug7/eS7rTk9UVaKddqX2yWBghAasYYA3Lo8KuQ2HehhLRXjG1aKGEHIU7QIMMduwXjUH
- Na8CeiBbmxvqi5roaDi3xryuEifiKg==
+ a=EUspDBNiAAAA:8 a=6FjxNNwmztaAyVa-sjcA:9 a=QEXdDO2ut3YA:10
+ a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDE2MDAxNyBTYWx0ZWRfX1kbmeM5hBLQp
+ QeBkI5Lyzi10NwAiIYzQWA4vQ48lty9CjezS7AvOQwQCWaBe+leRBX8FNAJRwZ4VUMEyvReLyJB
+ IOhoRY+Aeutu8UL3oEc+R8M7MVrbVPUqUmwzHDWgkFIbO75qxt0379MMnH+dKKCqFEf/C8/YNnV
+ P/WUpHjAOzVJbr4JZlMM4/MbeZ1mqLqX7XCk82sAWRNGahciyRvu0nLmPEM7lkqSdMb0Fwb638u
+ ustmsHjKqzQ0coR2hvHPvK61Vq2HG6jxzM0elJVymVPv+JmKOa7rfgY+p5g5y6H6bc6/u+oQ9nm
+ 25xBvZsu6tvvQHrf7oryMmzqTbp4EIHdZmQyjHPsk68fjL69a3bDR5RTKWIY4zCJ3GLgZe0i0Px
+ Nptd/HfnVbbymeiU1+xaV8kDeu1Zsw==
+X-Proofpoint-ORIG-GUID: Ti22_Q3wpO2Z_PJdendkhzXvW06-HIbW
+X-Proofpoint-GUID: Ti22_Q3wpO2Z_PJdendkhzXvW06-HIbW
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-10-17_02,2025-10-13_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 spamscore=0 impostorscore=0 priorityscore=1501 phishscore=0
- adultscore=0 clxscore=1015 bulkscore=0 suspectscore=0 lowpriorityscore=0
+ spamscore=0 adultscore=0 impostorscore=0 lowpriorityscore=0 clxscore=1015
+ bulkscore=0 suspectscore=0 malwarescore=0 phishscore=0 priorityscore=1501
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2510020000 definitions=main-2510130035
+ reason=mlx scancount=1 engine=8.19.0-2510020000 definitions=main-2510160017
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_221546_210903_19DE2E4B 
-X-CRM114-Status: GOOD (  17.83  )
+X-CRM114-CacheID: sfid-20251016_221819_496121_17BB5745 
+X-CRM114-Status: GOOD (  31.44  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,33 +130,322 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 10/3/2025 4:29 PM, Takashi Iwai wrote:
-> Some systems such as live-image or installer require the firmware
-> information for each module declared by MODULE_FIRMWARE(), which is
-> currently missing in ath12k driver.
+On 10/17/2025 12:17 PM, Wei Zhang wrote:
+> Add support for handling BSS color collision events reported by firmware.
 > 
-> For addressing it, this patch adds the MODULE_FIRMWARE() entries.
-> Like ath11k driver, we can just put the currently used firmware
-> entries for QCN9274 and WCN7850 with wildcards.
+> There are two scenarios where a BSS color collision may be detected:
+> 1. The AP's MAC detects the collision directly, and firmware reports a
+>    BSS color collision event to the host.
+> 2. A STA associated with the AP detects the collision. The notification
+>    frame from the peer is routed directly to the AP firmware, which handles
+>    it and sends the BSS color collision event to the host.
 > 
-> Signed-off-by: Takashi Iwai <tiwai@suse.de>
-> ---
->  drivers/net/wireless/ath/ath12k/pci.c | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-> index c729d5526c75..48161db6af57 100644
-> --- a/drivers/net/wireless/ath/ath12k/pci.c
-> +++ b/drivers/net/wireless/ath/ath12k/pci.c
-> @@ -1871,3 +1871,7 @@ void ath12k_pci_exit(void)
->  {
->  	pci_unregister_driver(&ath12k_pci_driver);
->  }
-> +
-> +/* firmware files */
-> +MODULE_FIRMWARE(ATH12K_FW_DIR "/QCN9274/hw2.0/*");
-> +MODULE_FIRMWARE(ATH12K_FW_DIR "/WCN7850/hw2.0/*");
+> This patch add logic to parse and handle such events, and pass the data
+> up to mac80211.
 
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Jeff's commet is not fully addressed ...
+
+s/This patch add/Add/
+
+> 
+> Unlike CSA, firmware does not provide an offload mechanism for BSS color
+> change. Instead, the color change process is triggered via beacon offload
+> TX completion events sent by firmware.
+> 
+> BSS color feature is enabled depending on service flag advertised by
+> firmware, based on which color change functionality is invoked.
+> 
+> This change builds upon the following ath11k patch.
+> commit 886433a98425 ("ath11k: add support for BSS color change")
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.IOE_HMT.1.1-00011-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+> 
+> Signed-off-by: Wei Zhang <wei.zhang@oss.qualcomm.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/core.h |  1 +
+>  drivers/net/wireless/ath/ath12k/mac.c  | 58 +++++++++++++++++++-
+>  drivers/net/wireless/ath/ath12k/wmi.c  | 73 +++++++++++++++++++++++++-
+>  drivers/net/wireless/ath/ath12k/wmi.h  | 24 +++++++++
+>  4 files changed, 154 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+> index 02a32b9f3ac2..41da0efaa854 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.h
+> +++ b/drivers/net/wireless/ath/ath12k/core.h
+> @@ -356,6 +356,7 @@ struct ath12k_link_vif {
+>  	bool pairwise_key_done;
+>  	u16 num_stations;
+>  	bool is_csa_in_progress;
+> +	struct wiphy_work bcn_tx_work;
+>  };
+>  
+>  struct ath12k_vif {
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 86b79deacf03..eb9b9a322870 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -3834,6 +3834,38 @@ static void ath12k_recalculate_mgmt_rate(struct ath12k *ar,
+>  		ath12k_warn(ar->ab, "failed to set beacon tx rate %d\n", ret);
+>  }
+>  
+> +static void ath12k_mac_bcn_tx_event(struct ath12k_link_vif *arvif)
+> +{
+> +	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
+> +	struct ieee80211_bss_conf *link_conf;
+> +
+> +	link_conf = ath12k_mac_get_link_bss_conf(arvif);
+> +	if (!link_conf) {
+> +		ath12k_warn(arvif->ar->ab, "failed to get link conf for vdev %u\n",
+> +			    arvif->vdev_id);
+> +		return;
+> +	}
+> +
+> +	if (link_conf->color_change_active) {
+> +		if (ieee80211_beacon_cntdwn_is_complete(vif, arvif->link_id)) {
+> +			ieee80211_color_change_finish(vif, arvif->link_id);
+> +			return;
+> +		}
+> +
+> +		ieee80211_beacon_update_cntdwn(vif, arvif->link_id);
+> +		ath12k_mac_setup_bcn_tmpl(arvif);
+> +	}
+> +}
+> +
+> +static void ath12k_mac_bcn_tx_work(struct wiphy *wiphy, struct wiphy_work *work)
+> +{
+> +	struct ath12k_link_vif *arvif = container_of(work, struct ath12k_link_vif,
+> +						     bcn_tx_work);
+> +
+> +	lockdep_assert_wiphy(wiphy);
+> +	ath12k_mac_bcn_tx_event(arvif);
+> +}
+> +
+>  static void ath12k_mac_init_arvif(struct ath12k_vif *ahvif,
+>  				  struct ath12k_link_vif *arvif, int link_id)
+>  {
+> @@ -3863,6 +3895,7 @@ static void ath12k_mac_init_arvif(struct ath12k_vif *ahvif,
+>  	INIT_LIST_HEAD(&arvif->list);
+>  	INIT_DELAYED_WORK(&arvif->connection_loss_work,
+>  			  ath12k_mac_vif_sta_connection_loss_work);
+> +	wiphy_work_init(&arvif->bcn_tx_work, ath12k_mac_bcn_tx_work);
+>  
+>  	arvif->num_stations = 0;
+>  
+> @@ -3900,6 +3933,7 @@ static void ath12k_mac_remove_link_interface(struct ieee80211_hw *hw,
+>  	lockdep_assert_wiphy(ah->hw->wiphy);
+>  
+>  	cancel_delayed_work_sync(&arvif->connection_loss_work);
+> +	wiphy_work_cancel(ath12k_ar_to_hw(ar)->wiphy, &arvif->bcn_tx_work);
+>  
+>  	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac remove link interface (vdev %d link id %d)",
+>  		   arvif->vdev_id, arvif->link_id);
+> @@ -4547,8 +4581,25 @@ static void ath12k_mac_bss_info_changed(struct ath12k *ar,
+>  							    ATH12K_BSS_COLOR_AP_PERIODS,
+>  							    info->he_bss_color.enabled);
+>  			if (ret)
+> -				ath12k_warn(ar->ab, "failed to set bss color collision on vdev %i: %d\n",
+> +				ath12k_warn(ar->ab, "failed to set bss color collision on vdev %u: %d\n",
+>  					    arvif->vdev_id,  ret);
+> +
+> +			param_id = WMI_VDEV_PARAM_BSS_COLOR;
+> +			if (info->he_bss_color.enabled)
+> +				param_value = info->he_bss_color.color <<
+> +					      IEEE80211_HE_OPERATION_BSS_COLOR_OFFSET;
+> +			else
+> +				param_value = IEEE80211_HE_OPERATION_BSS_COLOR_DISABLED;
+> +
+> +			ret = ath12k_wmi_vdev_set_param_cmd(ar, arvif->vdev_id,
+> +							    param_id,
+> +							    param_value);
+> +			if (ret)
+> +				ath12k_warn(ar->ab, "failed to set bss color param on vdev %u: %d\n",
+> +					    arvif->vdev_id,  ret);
+> +			else
+> +				ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "bss color param 0x%x set on vdev %u\n",
+> +					   param_value, arvif->vdev_id);
+>  		} else if (vif->type == NL80211_IFTYPE_STATION) {
+>  			ret = ath12k_wmi_send_bss_color_change_enable_cmd(ar,
+>  									  arvif->vdev_id,
+> @@ -13972,6 +14023,11 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+>  	wiphy_ext_feature_set(wiphy, NL80211_EXT_FEATURE_CQM_RSSI_LIST);
+>  	wiphy_ext_feature_set(wiphy, NL80211_EXT_FEATURE_STA_TX_PWR);
+>  	wiphy_ext_feature_set(wiphy, NL80211_EXT_FEATURE_ACK_SIGNAL_SUPPORT);
+> +	if (test_bit(WMI_TLV_SERVICE_BSS_COLOR_OFFLOAD,
+> +		     ab->wmi_ab.svc_map)) {
+> +		wiphy_ext_feature_set(wiphy, NL80211_EXT_FEATURE_BSS_COLOR);
+> +		ieee80211_hw_set(hw, DETECTS_COLOR_COLLISION);
+> +	}
+>  
+>  	wiphy->cipher_suites = cipher_suites;
+>  	wiphy->n_cipher_suites = ARRAY_SIZE(cipher_suites);
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+> index e76275bd6916..5075d86df36f 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+> @@ -14,6 +14,7 @@
+>  #include <linux/uuid.h>
+>  #include <linux/time.h>
+>  #include <linux/of.h>
+> +#include <linux/cleanup.h>
+>  #include "core.h"
+>  #include "debugfs.h"
+>  #include "debug.h"
+> @@ -190,6 +191,8 @@ static const struct ath12k_wmi_tlv_policy ath12k_wmi_tlv_policies[] = {
+>  		.min_len = sizeof(struct wmi_11d_new_cc_event) },
+>  	[WMI_TAG_PER_CHAIN_RSSI_STATS] = {
+>  		.min_len = sizeof(struct wmi_per_chain_rssi_stat_params) },
+> +	[WMI_TAG_OBSS_COLOR_COLLISION_EVT] = {
+> +		.min_len = sizeof(struct wmi_obss_color_collision_event) },
+>  };
+>  
+>  __le32 ath12k_wmi_tlv_hdr(u32 cmd, u32 len)
+> @@ -3850,6 +3853,58 @@ int ath12k_wmi_fils_discovery(struct ath12k *ar, u32 vdev_id, u32 interval,
+>  	return ret;
+>  }
+>  
+> +static void
+> +ath12k_wmi_obss_color_collision_event(struct ath12k_base *ab, struct sk_buff *skb)
+> +{
+> +	const struct wmi_obss_color_collision_event *ev;
+> +	struct ath12k_link_vif *arvif;
+> +	u32 vdev_id, evt_type;
+> +	u64 bitmap;
+> +
+> +	const void **tb __free(kfree) = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
+> +	if (IS_ERR(tb)) {
+> +		ath12k_warn(ab, "failed to parse OBSS color collision tlv %ld\n",
+> +			    PTR_ERR(tb));
+> +		return;
+> +	}
+> +
+> +	ev = tb[WMI_TAG_OBSS_COLOR_COLLISION_EVT];
+> +	if (!ev) {
+> +		ath12k_warn(ab, "failed to fetch OBSS color collision event\n");
+> +		return;
+> +	}
+> +
+> +	vdev_id = le32_to_cpu(ev->vdev_id);
+> +	evt_type = le32_to_cpu(ev->evt_type);
+> +	bitmap = le64_to_cpu(ev->obss_color_bitmap);
+> +
+> +	guard(rcu)();
+> +
+> +	arvif = ath12k_mac_get_arvif_by_vdev_id(ab, vdev_id);
+> +	if (!arvif) {
+> +		ath12k_warn(ab, "no arvif found for vdev %u in OBSS color collision event\n",
+> +			    vdev_id);
+> +		return;
+> +	}
+> +
+> +	switch (evt_type) {
+> +	case WMI_BSS_COLOR_COLLISION_DETECTION:
+> +		ieee80211_obss_color_collision_notify(arvif->ahvif->vif,
+> +						      bitmap,
+> +						      arvif->link_id);
+> +		ath12k_dbg(ab, ATH12K_DBG_WMI,
+> +			   "obss color collision detected vdev %u event %d bitmap %016llx\n",
+> +			   vdev_id, evt_type, bitmap);
+> +		break;
+> +	case WMI_BSS_COLOR_COLLISION_DISABLE:
+> +	case WMI_BSS_COLOR_FREE_SLOT_TIMER_EXPIRY:
+> +	case WMI_BSS_COLOR_FREE_SLOT_AVAILABLE:
+> +		break;
+> +	default:
+> +		ath12k_warn(ab, "unknown OBSS color collision event type %d\n", evt_type);
+> +	}
+> +}
+> +
+>  static void
+>  ath12k_fill_band_to_mac_param(struct ath12k_base  *soc,
+>  			      struct ath12k_wmi_pdev_band_arg *arg)
+> @@ -7014,12 +7069,26 @@ static void ath12k_vdev_start_resp_event(struct ath12k_base *ab, struct sk_buff
+>  
+>  static void ath12k_bcn_tx_status_event(struct ath12k_base *ab, struct sk_buff *skb)
+>  {
+> +	struct ath12k_link_vif *arvif;
+> +	struct ath12k *ar;
+>  	u32 vdev_id, tx_status;
+>  
+>  	if (ath12k_pull_bcn_tx_status_ev(ab, skb, &vdev_id, &tx_status) != 0) {
+>  		ath12k_warn(ab, "failed to extract bcn tx status");
+>  		return;
+>  	}
+> +
+> +	guard(rcu)();
+> +
+> +	arvif = ath12k_mac_get_arvif_by_vdev_id(ab, vdev_id);
+> +	if (!arvif) {
+> +		ath12k_warn(ab, "invalid vdev %u in bcn tx status\n",
+> +			    vdev_id);
+> +		return;
+> +	}
+> +
+> +	ar = arvif->ar;
+> +	wiphy_work_queue(ath12k_ar_to_hw(ar)->wiphy, &arvif->bcn_tx_work);
+>  }
+>  
+>  static void ath12k_vdev_stopped_event(struct ath12k_base *ab, struct sk_buff *skb)
+> @@ -9877,6 +9946,9 @@ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+>  	case WMI_PDEV_RSSI_DBM_CONVERSION_PARAMS_INFO_EVENTID:
+>  		ath12k_wmi_rssi_dbm_conversion_params_info_event(ab, skb);
+>  		break;
+> +	case WMI_OBSS_COLOR_COLLISION_DETECTION_EVENTID:
+> +		ath12k_wmi_obss_color_collision_event(ab, skb);
+> +		break;
+>  	/* add Unsupported events (rare) here */
+>  	case WMI_TBTTOFFSET_EXT_UPDATE_EVENTID:
+>  	case WMI_PEER_OPER_MODE_CHANGE_EVENTID:
+> @@ -9887,7 +9959,6 @@ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+>  	/* add Unsupported events (frequent) here */
+>  	case WMI_PDEV_GET_HALPHY_CAL_STATUS_EVENTID:
+>  	case WMI_MGMT_RX_FW_CONSUMED_EVENTID:
+> -	case WMI_OBSS_COLOR_COLLISION_DETECTION_EVENTID:
+>  		/* debug might flood hence silently ignore (no-op) */
+>  		break;
+>  	case WMI_PDEV_UTF_EVENTID:
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+> index 64bd968989c8..911ef9d52817 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.h
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
+> @@ -4928,6 +4928,24 @@ struct wmi_obss_spatial_reuse_params_cmd {
+>  #define ATH12K_BSS_COLOR_STA_PERIODS				10000
+>  #define ATH12K_BSS_COLOR_AP_PERIODS				5000
+>  
+> +/**
+> + * enum wmi_bss_color_collision - Event types for BSS color collision handling
+> + * @WMI_BSS_COLOR_COLLISION_DISABLE: Indicates that BSS color collision detection
+> + *                                   is disabled.
+> + * @WMI_BSS_COLOR_COLLISION_DETECTION: Event triggered when a BSS color collision
+> + *                                     is detected.
+> + * @WMI_BSS_COLOR_FREE_SLOT_TIMER_EXPIRY: Event indicating that the timer for waiting
+> + *                                        on a free BSS color slot has expired.
+> + * @WMI_BSS_COLOR_FREE_SLOT_AVAILABLE: Event indicating that a free BSS color slot
+> + *                                     has become available.
+> + */
+> +enum wmi_bss_color_collision {
+> +	WMI_BSS_COLOR_COLLISION_DISABLE = 0,
+> +	WMI_BSS_COLOR_COLLISION_DETECTION,
+> +	WMI_BSS_COLOR_FREE_SLOT_TIMER_EXPIRY,
+> +	WMI_BSS_COLOR_FREE_SLOT_AVAILABLE,
+> +};
+> +
+>  struct wmi_obss_color_collision_cfg_params_cmd {
+>  	__le32 tlv_header;
+>  	__le32 vdev_id;
+> @@ -4945,6 +4963,12 @@ struct wmi_bss_color_change_enable_params_cmd {
+>  	__le32 enable;
+>  } __packed;
+>  
+> +struct wmi_obss_color_collision_event {
+> +	__le32 vdev_id;
+> +	__le32 evt_type;
+> +	__le64 obss_color_bitmap;
+> +} __packed;
+> +
+>  #define ATH12K_IPV4_TH_SEED_SIZE 5
+>  #define ATH12K_IPV6_TH_SEED_SIZE 11
+>  
+> 
+> base-commit: d5ce93f136fbee2b7afbe221f34ca881036f8de3
 
 
