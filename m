@@ -4,127 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCBDBCCF9E3
-	for <ath12k@archiver.kernel.org>; Fri, 24 Oct 2025 00:19:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61707CCF9E6
+	for <ath12k@archiver.kernel.org>; Fri, 24 Oct 2025 00:19:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cimsIyyYXBmnXwZwQUw2yhM/mZ0nyhp+xX2NvUPnJN0=; b=kMj75Et5DAgjhOjFm6g63xWxmD
-	Uf1YGfZP4q1wiLOv/O9nDIi5aCQHIiJnoRx801K8sRqo7OXavpS7/9LFhXx5D1OBLOyATwnGJWeoa
-	Lsd5OG1wUwifNef3OOynxhUIo+mUPxe3LWvMGathoVUpump4RiZz8ycshzhUFepM1WkKcb5HA8Np9
-	dEEPYYp82Hx5ShsurbsYt/uufoa6WiE2Y2AkwajO07RN+K4lTZDntx1WIw5o19nBWdHOX9iplg/nz
-	11cvNDQwZ+2JGnqIhIu3Bs1d4jILCAU44aqfVvTWhdcq+uxemFjpliBo8QxLfzax0zvuPy8Ogu7tA
-	Rd9zr33w==;
+	bh=sLRqqQFx4FdldyN44zg/ySSFA4KDzMjdSY/d4qgS6TE=; b=VrwTwt6O5FOF4l3fT5cUUhRRc7
+	b1Arv/xR0k6TM9DyttjdFTeQZNNt8xzPNLD6yA2qbl4fo1JBFjS/vBKvtCPl3wAdjV0Qoa6UT2Nyu
+	yKNtpUiKn8fGTi0Wqph0iqmKI4UQ3RyEZIkN8Yr38IMdWMGi0kxb6nZcMispUlwjhXINq6heDiS6j
+	GDg5an8N7gL45TohZnoUqY3UKEUahSIvk+IfFVjK+pwmRlSkOnhvSeGtoivpSYOvQVSD5n2LleTXj
+	CaH3l5VWl3iVJ8DL0QiopZ7HfxtxLTyV/CbEwm0Mjt6Cg1QTkeLb/7TH4n6Y8lF32sjrXZkYxu67D
+	Jut+hJ8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vC5Wz-00000007tUA-2PQk;
-	Fri, 24 Oct 2025 00:19:45 +0000
+	id 1vC5X2-00000007tVv-0CYj;
+	Fri, 24 Oct 2025 00:19:48 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vC5Wy-00000007tT5-2z7s
+	id 1vC5Wz-00000007tTp-2DKA
 	for ath12k@bombadil.infradead.org;
-	Fri, 24 Oct 2025 00:19:44 +0000
+	Fri, 24 Oct 2025 00:19:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=cimsIyyYXBmnXwZwQUw2yhM/mZ0nyhp+xX2NvUPnJN0=; b=nkkFn6iRz93GQO7XeL+f7oNmgs
-	2v1TLL2QxO8AH4PuMUvCdHJT35m+SHG6Ame3wedAJQygLeAC+JzjkupVRQcVeHC4D9dcnmWBON0OP
-	EtPs6j6rpoHjZLv4ANSCF30DvLVLDOfsAe5v6Cn+sN6PU5tYvUkIn9c4Fj72swDXeXXAp+Gcts0Ei
-	QVGVSDIHYYNs6mAGJnrZ22WAzlBTRA1vIs3cwpQAaUk4ZTQFDniI9W3XJPsUBCzx6qzBWiMNokXOI
-	GcsJL/bmslJBG3lhQctEnw17rOeeNZFLEl2bSr5XT1gFU26YHqTMlkmtbNJtYxjFkkG6f8XiqzJOv
-	1l5uNekQ==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	bh=sLRqqQFx4FdldyN44zg/ySSFA4KDzMjdSY/d4qgS6TE=; b=dVEN9W15kiYYvqu7ML0eEZzpfC
+	MRV5rY9gh9O9IMl2MD657gcVrDRBnMw0KZHBZOO3L2ugHbBJtaq0ArV5ggF/NR0KOK4P8H2gl7ezP
+	+kYUXBnaPbTkwDtWrgZnomjvWuCZW7bqkSL7HAuR7sfYXJ7uFrXH/DrpZy33X/XQlc1FFVvbGrUqG
+	ENbssXmtz5C90RLmGWZh1Ful7Qas77QNskFHdmh7EEtjaRmGb6I1z+W24iS3WfBMt2X36FfgaRobF
+	G5aN18+wijHJ/BkhPxaZcmRe2z5twlGPoumFRvUTURHvKbBgr4bOX8L0xxq1i4bCQw6YI9eyfzKeX
+	6U2J2VGA==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vC4fG-00000001sdM-3KfZ
+	id 1vC4fI-00000001sdi-05DV
 	for ath12k@lists.infradead.org;
 	Thu, 23 Oct 2025 23:24:17 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59NEVJei004632
-	for <ath12k@lists.infradead.org>; Fri, 24 Oct 2025 00:19:36 GMT
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59NEQPr1014650
+	for <ath12k@lists.infradead.org>; Fri, 24 Oct 2025 00:19:39 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=cimsIyyYXBm
-	nXwZwQUw2yhM/mZ0nyhp+xX2NvUPnJN0=; b=MyL6RLHbW/ya9CPnxX2TH2NgpY/
-	rpE5nWb+DXUd2qBBSEXxfw+Pznjg1gwwH0QMq8HNrCXccJG8L+u6PPvvHd22CuAk
-	urJORCfg4+4jdcoeq9hewT1RL2jyl5Gg3HZsgXbsGXM4M3zlVWQDN7lunILMsgnB
-	ATPM/7l+uQwmTlW/dBdqqZsJQve1YI0FUtj7hqaGN71tDhHBppWKmIn6ZWmjul/F
-	FjdsHaSKkvYXF/kBizDTb1L+CsCDzowqO40IUjPx23MNIWlWaILwlaTXlHkUf91s
-	dahQGGwZaQHkqjC82rzIEfLg/v+VI7u0tpN+6my5cGvmF6rbBm4akAYkwnA==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49yp6k1h8g-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=sLRqqQFx4Fd
+	ldyN44zg/ySSFA4KDzMjdSY/d4qgS6TE=; b=RJ735jNKGziVU+G5k+PdDLXt1Oi
+	hofY8f9fjcY69g73kn+CKuGi6ABzGJTuTi4hSKDHycV+DMiY8kN7Yg6+Iq40mUoq
+	xoUcvG4Ur0bOZ1kY4qBYKgkOAEJw7JlDMzMJHfIDJD6dsH0eDq0XkJ7vMc8jEDtl
+	i7Rnb1QGV4yW5HcGzljctkQeOOm4kveR9/bWOu2IiPKO0Sv/snVIGpxzdY9nYTwV
+	ZeiTWvu3W0U1dIqzijKpeRouWeXCPtkXruTs9Ivsqr9flE6rE1uw7Tymnp4ah3yc
+	7Dg/SPF3cRzkCinpQLGM5etVWtYr6wmAPbseTcoXZQO5rxL9+MbS8WI6/7Q==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49xhe0r8r1-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 24 Oct 2025 00:19:36 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-b471737e673so2060793a12.1
-        for <ath12k@lists.infradead.org>; Thu, 23 Oct 2025 17:19:36 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 24 Oct 2025 00:19:38 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-b62f9247dd1so1193062a12.0
+        for <ath12k@lists.infradead.org>; Thu, 23 Oct 2025 17:19:38 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761265175; x=1761869975;
+        d=1e100.net; s=20230601; t=1761265177; x=1761869977;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=cimsIyyYXBmnXwZwQUw2yhM/mZ0nyhp+xX2NvUPnJN0=;
-        b=WTmyRB0COTE0gkh4qBvaAbktz5fvx6b2IM8gbP71oHStyKRj4/QDMTaeQWjqs17b/2
-         I5fOAIvPbWWfxBDDRKgJR6pHRsxSRYD8KkTJ3AVwBu5q01WwfQ+LrUq+nX8h0X2jZoLw
-         tYmNpKaKmYkmhbqC8ulViD7sOmrdcsysvj3Cj5t3TRF5f1RnhD/8OuH+0s9aq/n32eXt
-         HFl/99ogeZ+IvQMHFOBd8jcpPh5UM5bNK0kK7ryUgxbPAxZBzU0erNN+ozjGiH3o6DX7
-         9A/o8OqWPqyS1QRqspRTZvZBtkwxmAvRf6AO18rDIdd8ZZZrtn3mmwk8t67bHKiBorxR
-         TRRg==
-X-Gm-Message-State: AOJu0YzB9uBdpYT1MNjgiWZu10UPPk8sWrVc2a7/NGK6eAXDWjlDwcnF
-	+f6wNTGWcM1ne0geJCpg5XQRnJUQ979H+7BjtZwPP9NNieGIKrNvLzHPQ7K4g5vg7DGa+ysPtD1
-	sngN69gtTuMZw5ngCVhCdnec9ap5bly5pl9Rr+yPnmW5sKQ2PKPHh1j8FwWPKvuwRnpbdGs+o
-X-Gm-Gg: ASbGnctFNrhyEuTb9bD/hEbpYLj5Qdl2KCYt94PTVyLPExI0mDqC4eD9v4pv9T2H3rR
-	tM8seePxRTuFxOrr0bgE8qf8h0IdMsQpIqH0vIuAmRuUt5HRLUWwXu45Y0b3a8sQPflftfTbaak
-	PPu0bCU3Jr/hUpX11Mz30yoAQDef2h8LoY9Gudk1VqFnPI0fdiqbZ/mpCy+wmnwmR7LQt8ktD1G
-	myh4Ms7QMOv5jcDsZwUoDIEU5dkxvIWoADJGtB3gFa4mvUA15erTv451FS1Ff67xTTzY+z/xgNX
-	YkjoTc6rh44b6ItTX8qa36Gu0ZSq3Ox6PPDGYnGVGYlsbgFijUZoRtfN9K1DnPGeAz2VzSq83k3
-	WGPdDyGtdT7e5TzN8RSLvYHehwKK39QIZgNBdKtzj3wU7uFazYYgehVk=
-X-Received: by 2002:a05:6a21:3397:b0:33d:7c46:c4ed with SMTP id adf61e73a8af0-33d7c46c5bemr2159435637.53.1761265175544;
-        Thu, 23 Oct 2025 17:19:35 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEmXxr/9MA2sTRhVUBKY7trMwmIeVyL70IQbWUGvwfl3KeT2SpD/BHggDjAMI06M8uizDfeVg==
-X-Received: by 2002:a05:6a21:3397:b0:33d:7c46:c4ed with SMTP id adf61e73a8af0-33d7c46c5bemr2159404637.53.1761265175021;
-        Thu, 23 Oct 2025 17:19:35 -0700 (PDT)
+        bh=sLRqqQFx4FdldyN44zg/ySSFA4KDzMjdSY/d4qgS6TE=;
+        b=fOoqDXwjEKBpWsubjR/XharrXtj9/XKY/2tdMQHg+lkLg916r282FEoGO7BdL1vloh
+         6SsziwcDVQvPSP9hLo83wSEjyZEcJPQAWtAHA+k8j0i1P22r8B5AJgW26dGP/RpSyP2P
+         aWvF1AXJwGockNmFV++N5Zv6bJdIjj+Lno/fb7m2GJrEBl0PDEFLCQ6PPKUAz7UOxbS5
+         +Kut4JDHSMPwSRG4t6DSVaHAUhrnln9KsOeCNPZfYoz8Gu4Q8Ngb5gyBGHMdFqw7XDEP
+         h1pk1QYwic68+Fa4vhOqPkq9nGmduphzqEmtyVYtrWaVkZFPn2QEf6beizZhF9CfaCoC
+         /KGg==
+X-Gm-Message-State: AOJu0YzgyrlZdeY/e3kt5FeqL3NrjjXmxBZ7Qd8ElJItZljiE+xrCIi4
+	js2y93Mbqi1Ioo9qljE23GNZ3gX43+KTYDq6lQKT4lOdM97NRpirWEuf3PokVOmjEyjqPwHyaKK
+	nn64AVnFbCGlFL9ytM8zVshSJpdUdi+4wt3Xiz6nsGjTMufJD22iLBV5bf5Dos6Uulr34QvyS
+X-Gm-Gg: ASbGnct2Rv8vxv0xZef6v565OiHldRgI+Wgf17O26iuVwAV531NAYOeH9vflh+VN6CJ
+	TRjbRqq6l2EqQr2roB1HvnWhc0z+sUOuHPkgOsHXq65A0+07t9060HxitI7Nc4PpnzCiUrWvir9
+	rgJD+7C+yGwM+pk2byESOdALI7BGR14eyY/EEIE5ZAMYNcXFYNu7mBrHi1/bzy/iwLlakiENTDN
+	WD5TQoOnxhYRc1Qt+EgFvrG7sqhf/NMyWSb7S+Ph2cK2Ti9515tqoIU1g9NXglkayCThHYZ1d+C
+	Pzd8X2TtxiDpAlV/UK4C5O6Tc8V9z5cmZfmod1uBTlr4nnlXTCFF+Xy+aI5sELa0ntvtqj1pLJ8
+	gMMwgQleOmCABwfkp5+7J4SGXIzL+ejPUIaxPh4JlRHtaNOjKvpWhTOc=
+X-Received: by 2002:a05:6a20:9f47:b0:334:9e81:4e5b with SMTP id adf61e73a8af0-33c5fbaadf0mr5191233637.5.1761265177450;
+        Thu, 23 Oct 2025 17:19:37 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG+ozWpKhtNHnU8aRqoMMcfQd69f2qBcbKL7PkB4h+kIQHfxDof3+r3sCOaEE6ZMpZ4wE97tQ==
+X-Received: by 2002:a05:6a20:9f47:b0:334:9e81:4e5b with SMTP id adf61e73a8af0-33c5fbaadf0mr5191215637.5.1761265176986;
+        Thu, 23 Oct 2025 17:19:36 -0700 (PDT)
 Received: from msinada-linux.qualcomm.com (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b6cf4bb65b3sm3296264a12.8.2025.10.23.17.19.34
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b6cf4bb65b3sm3296264a12.8.2025.10.23.17.19.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 23 Oct 2025 17:19:34 -0700 (PDT)
+        Thu, 23 Oct 2025 17:19:36 -0700 (PDT)
 From: Muna Sinada <muna.sinada@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Muna Sinada <muna.sinada@oss.qualcomm.com>
-Subject: [PATCH ath-next 1/6] wifi: ath12k: generalize GI and LTF fixed rate functions
-Date: Thu, 23 Oct 2025 17:19:23 -0700
-Message-Id: <20251024001928.257356-2-muna.sinada@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, Muna Sinada <muna.sinada@oss.qualcomm.com>,
+        Vishal Kumar <quic_visk@quicinc.com>,
+        Aloka Dixit <aloka.dixit@oss.qualcomm.com>
+Subject: [PATCH ath-next 3/6] wifi: ath12k: Add EHT MCS/NSS rates to Peer Assoc
+Date: Thu, 23 Oct 2025 17:19:25 -0700
+Message-Id: <20251024001928.257356-4-muna.sinada@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20251024001928.257356-1-muna.sinada@oss.qualcomm.com>
 References: <20251024001928.257356-1-muna.sinada@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDIzMDEzMSBTYWx0ZWRfX2jEIqz7tX/T6
- 3uYvR7uLCffrZDen+UIXi/LPnkn8O4JnHxQdO+YRHYUDJkulDLbHRj1WaEWHNVXPW2Uzwf3vfiH
- O+tqD7f2nKtcsWYdYLrVkhVssq+sp4I07UsN2IOsvJl33jExypUehMUBS5t3Wft4Ja2ysHRpNrl
- 8lg6H9URMkcqe1XcNlbG/N4MlT+HW1ya8iNc/bfNTsyWB6//kY2XpKuVmvRgUA3Xjm89zoKVkbN
- LJf2W92DyTjeNF3e/l4K6rhgCUW61Z/nE82PPGMyzsIN5KCS8QmUsiNRr2dMBA913i9ZwLgDtl7
- AB+lQcTHElb9TasRX/0N0OhsEquwfYlU8z+a71C+bkvPp3rytG4G4WDTnEKIIuR5BEdzTps47+p
- +sUilD1MyiHOfpLRYKK+5FRUjc2ukQ==
-X-Proofpoint-GUID: -4h7P24gqqohnU43_JrbYSHc22k3q4Pm
-X-Authority-Analysis: v=2.4 cv=bL8b4f+Z c=1 sm=1 tr=0 ts=68fac618 cx=c_pps
- a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8
- a=X7-uiFLsf3CQ3n4UTk4A:9 a=_Vgx9l1VpLgwpw_dHYaR:22
-X-Proofpoint-ORIG-GUID: -4h7P24gqqohnU43_JrbYSHc22k3q4Pm
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDIxMDE2NyBTYWx0ZWRfX5oohOXrbot+r
+ pILnCRb2/OFZPf6pfngiC87Hs8NuGC+Kt3L7/pxpb27hgvQ8eqO8DJLQSmW8PIS8Pf/wyIwzU4J
+ fWiwcuNfcOXf9FKTuYRaWTllYsCZ7v+UqKLawfiwPiczDynkKRxaFrXiBOOCnt+VXA1wzmIWPeB
+ wjafFBXEi2dZFsOSskTURrfUkdAz5sBO9ZIRPl+9gR/Es9ADLIQEs2hTwPrb4qG8RGiRgtHgiTk
+ /0PItCJvi8OZuxS/lhkpxei67Iv+4OfdqYKaZIaglvF2cKEaTbC11NToG+vNoGeZM+5yOXK90DY
+ 36tLLmETGvrJIHXyRjtAMM/OfBqbhyeHKUvhLoVyonV+60BX2nQ+qm4L1D0XnhiPeamuOrRty7T
+ 9ZuM8wTQk0SHBukaqt/xjma0OBr6YA==
+X-Proofpoint-ORIG-GUID: 7G_GgII-6mhignzuD3I34C80Cv-gUTOM
+X-Authority-Analysis: v=2.4 cv=WYUBqkhX c=1 sm=1 tr=0 ts=68fac61a cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8
+ a=DPe7GoXiTccg4i4ia6cA:9 a=3WC7DwWrALyhR5TkjVHa:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: 7G_GgII-6mhignzuD3I34C80Cv-gUTOM
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-10-23_03,2025-10-22_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 adultscore=0 priorityscore=1501 clxscore=1015 malwarescore=0
- spamscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2510020000 definitions=main-2510230131
+ suspectscore=0 adultscore=0 bulkscore=0 impostorscore=0 spamscore=0
+ priorityscore=1501 clxscore=1015 malwarescore=0 lowpriorityscore=0
+ phishscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2510020000
+ definitions=main-2510210167
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251024_002415_366722_EFDB5973 
-X-CRM114-Status: GOOD (  18.93  )
+X-CRM114-CacheID: sfid-20251024_002416_331233_3B5A094A 
+X-CRM114-Status: GOOD (  16.83  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,233 +142,218 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, functions in mac.c for setting GI and LTF rates are
-specifically for HE rates.
+Add EHT MCS/NSS rate functionality to peer association. As part of
+ath12k_peer_assoc_h_eht() add the calculation of EHT MCS/NSS using
+intersection of link_sta and phy capability.
 
-Remove any mention of "HE" in such functions in order to allow for
-other modes to utilize the functions. The intention is to prepare for
-the addition of EHT GI and LTF fixed rate settings.
+ath12k_mac_max_eht_mcs_nss() function is utilized when comparing the
+max NSS of link STA and phy capability since in split phy case, phy
+supports max NSS of 2 for 5G band.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
+Co-developed-by: Vishal Kumar <quic_visk@quicinc.com>
+Signed-off-by: Vishal Kumar <quic_visk@quicinc.com>
+Co-developed-by: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
+Signed-off-by: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
 Signed-off-by: Muna Sinada <muna.sinada@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 77 ++++++++++++++-------------
- drivers/net/wireless/ath/ath12k/mac.h | 14 ++++-
- drivers/net/wireless/ath/ath12k/wmi.h | 12 ++---
- 3 files changed, 60 insertions(+), 43 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 110 ++++++++++++++++++++++++--
+ 1 file changed, 103 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index d7bc19cea2a6..fd49a0953470 100644
+index 397fe320e558..eff1ec1eb4e0 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -12043,55 +12043,57 @@ ath12k_mac_get_single_legacy_rate(struct ath12k *ar,
+@@ -545,6 +545,18 @@ ath12k_mac_max_eht_nss(const u16 eht_mcs_mask[NL80211_EHT_NSS_MAX])
+ 	return 1;
  }
  
- static int
--ath12k_mac_set_fixed_rate_gi_ltf(struct ath12k_link_vif *arvif, u8 he_gi, u8 he_ltf)
-+ath12k_mac_set_fixed_rate_gi_ltf(struct ath12k_link_vif *arvif, u8 gi, u8 ltf)
- {
- 	struct ath12k *ar = arvif->ar;
--	int ret;
-+	int param, ret;
- 
- 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
- 
- 	/* 0.8 = 0, 1.6 = 2 and 3.2 = 3. */
--	if (he_gi && he_gi != 0xFF)
--		he_gi += 1;
-+	if (gi && gi != 0xFF)
-+		gi += 1;
- 
- 	ret = ath12k_wmi_vdev_set_param_cmd(ar, arvif->vdev_id,
--					    WMI_VDEV_PARAM_SGI, he_gi);
-+					    WMI_VDEV_PARAM_SGI, gi);
- 	if (ret) {
--		ath12k_warn(ar->ab, "failed to set HE GI:%d, error:%d\n",
--			    he_gi, ret);
-+		ath12k_warn(ar->ab, "failed to set GI:%d, error:%d\n",
-+			    gi, ret);
- 		return ret;
- 	}
- 	/* start from 1 */
--	if (he_ltf != 0xFF)
--		he_ltf += 1;
-+	if (ltf != 0xFF)
-+		ltf += 1;
++static u32
++ath12k_mac_max_eht_mcs_nss(const u8 *eht_mcs, int eht_mcs_set_size)
++{
++	int i;
++	u8 nss = 0;
 +
-+	param = WMI_VDEV_PARAM_HE_LTF;
- 
- 	ret = ath12k_wmi_vdev_set_param_cmd(ar, arvif->vdev_id,
--					    WMI_VDEV_PARAM_HE_LTF, he_ltf);
-+					    param, ltf);
- 	if (ret) {
--		ath12k_warn(ar->ab, "failed to set HE LTF:%d, error:%d\n",
--			    he_ltf, ret);
-+		ath12k_warn(ar->ab, "failed to set LTF:%d, error:%d\n",
-+			    ltf, ret);
- 		return ret;
- 	}
- 	return 0;
++	for (i = 0; i < eht_mcs_set_size; i++)
++		nss = max(nss, u8_get_bits(eht_mcs[i], IEEE80211_EHT_MCS_NSS_RX));
++
++	return nss;
++}
++
+ static u8 ath12k_parse_mpdudensity(u8 mpdudensity)
+ {
+ /*  From IEEE Std 802.11-2020 defined values for "Minimum MPDU Start Spacing":
+@@ -3016,6 +3028,18 @@ static enum wmi_phy_mode ath12k_mac_get_phymode_eht(struct ath12k *ar,
+ 	return MODE_UNKNOWN;
  }
  
- static int
--ath12k_mac_set_auto_rate_gi_ltf(struct ath12k_link_vif *arvif, u16 he_gi, u8 he_ltf)
-+ath12k_mac_set_auto_rate_gi_ltf(struct ath12k_link_vif *arvif, u16 gi, u8 ltf)
++static bool
++ath12k_peer_assoc_h_eht_masked(const u16 eht_mcs_mask[NL80211_EHT_NSS_MAX])
++{
++	int nss;
++
++	for (nss = 0; nss < NL80211_EHT_NSS_MAX; nss++)
++		if (eht_mcs_mask[nss])
++			return false;
++
++	return true;
++}
++
+ static void ath12k_peer_assoc_h_phymode(struct ath12k *ar,
+ 					struct ath12k_link_vif *arvif,
+ 					struct ath12k_link_sta *arsta,
+@@ -3027,6 +3051,7 @@ static void ath12k_peer_assoc_h_phymode(struct ath12k *ar,
+ 	const u8 *ht_mcs_mask;
+ 	const u16 *vht_mcs_mask;
+ 	const u16 *he_mcs_mask;
++	const u16 *eht_mcs_mask;
+ 	enum wmi_phy_mode phymode = MODE_UNKNOWN;
+ 
+ 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+@@ -3041,6 +3066,7 @@ static void ath12k_peer_assoc_h_phymode(struct ath12k *ar,
+ 	ht_mcs_mask = arvif->bitrate_mask.control[band].ht_mcs;
+ 	vht_mcs_mask = arvif->bitrate_mask.control[band].vht_mcs;
+ 	he_mcs_mask = arvif->bitrate_mask.control[band].he_mcs;
++	eht_mcs_mask = arvif->bitrate_mask.control[band].eht_mcs;
+ 
+ 	link_sta = ath12k_mac_get_link_sta(arsta);
+ 	if (!link_sta) {
+@@ -3051,7 +3077,8 @@ static void ath12k_peer_assoc_h_phymode(struct ath12k *ar,
+ 
+ 	switch (band) {
+ 	case NL80211_BAND_2GHZ:
+-		if (link_sta->eht_cap.has_eht) {
++		if (link_sta->eht_cap.has_eht &&
++		    !ath12k_peer_assoc_h_eht_masked(eht_mcs_mask)) {
+ 			if (link_sta->bandwidth == IEEE80211_STA_RX_BW_40)
+ 				phymode = MODE_11BE_EHT40_2G;
+ 			else
+@@ -3197,16 +3224,21 @@ static void ath12k_peer_assoc_h_eht(struct ath12k *ar,
  {
- 	struct ath12k *ar = arvif->ar;
- 	int ret;
--	u32 he_ar_gi_ltf;
-+	u32 ar_gi_ltf;
- 
--	if (he_gi != 0xFF) {
--		switch (he_gi) {
--		case NL80211_RATE_INFO_HE_GI_0_8:
--			he_gi = WMI_AUTORATE_800NS_GI;
-+	if (gi != 0xFF) {
-+		switch (gi) {
-+		case ATH12K_RATE_INFO_GI_0_8:
-+			gi = WMI_AUTORATE_800NS_GI;
- 			break;
--		case NL80211_RATE_INFO_HE_GI_1_6:
--			he_gi = WMI_AUTORATE_1600NS_GI;
-+		case ATH12K_RATE_INFO_GI_1_6:
-+			gi = WMI_AUTORATE_1600NS_GI;
- 			break;
--		case NL80211_RATE_INFO_HE_GI_3_2:
--			he_gi = WMI_AUTORATE_3200NS_GI;
-+		case ATH12K_RATE_INFO_GI_3_2:
-+			gi = WMI_AUTORATE_3200NS_GI;
- 			break;
- 		default:
- 			ath12k_warn(ar->ab, "Invalid GI\n");
-@@ -12099,16 +12101,16 @@ ath12k_mac_set_auto_rate_gi_ltf(struct ath12k_link_vif *arvif, u16 he_gi, u8 he_
- 		}
- 	}
- 
--	if (he_ltf != 0xFF) {
--		switch (he_ltf) {
--		case NL80211_RATE_INFO_HE_1XLTF:
--			he_ltf = WMI_HE_AUTORATE_LTF_1X;
-+	if (ltf != 0xFF) {
-+		switch (ltf) {
-+		case ATH12K_RATE_INFO_1XLTF:
-+			ltf = WMI_AUTORATE_LTF_1X;
- 			break;
--		case NL80211_RATE_INFO_HE_2XLTF:
--			he_ltf = WMI_HE_AUTORATE_LTF_2X;
-+		case ATH12K_RATE_INFO_2XLTF:
-+			ltf = WMI_AUTORATE_LTF_2X;
- 			break;
--		case NL80211_RATE_INFO_HE_4XLTF:
--			he_ltf = WMI_HE_AUTORATE_LTF_4X;
-+		case ATH12K_RATE_INFO_4XLTF:
-+			ltf = WMI_AUTORATE_LTF_4X;
- 			break;
- 		default:
- 			ath12k_warn(ar->ab, "Invalid LTF\n");
-@@ -12116,15 +12118,15 @@ ath12k_mac_set_auto_rate_gi_ltf(struct ath12k_link_vif *arvif, u16 he_gi, u8 he_
- 		}
- 	}
- 
--	he_ar_gi_ltf = he_gi | he_ltf;
-+	ar_gi_ltf = gi | ltf;
- 
- 	ret = ath12k_wmi_vdev_set_param_cmd(ar, arvif->vdev_id,
- 					    WMI_VDEV_PARAM_AUTORATE_MISC_CFG,
--					    he_ar_gi_ltf);
-+					    ar_gi_ltf);
- 	if (ret) {
- 		ath12k_warn(ar->ab,
--			    "failed to set HE autorate GI:%u, LTF:%u params, error:%d\n",
--			    he_gi, he_ltf, ret);
-+			    "failed to set autorate GI:%u, LTF:%u params, error:%d\n",
-+			    gi, ltf, ret);
- 		return ret;
- 	}
- 
-@@ -12149,10 +12151,10 @@ static int ath12k_mac_set_rate_params(struct ath12k_link_vif *arvif,
- {
+ 	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+ 	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
++	const struct ieee80211_eht_mcs_nss_supp *own_eht_mcs_nss_supp;
+ 	const struct ieee80211_eht_mcs_nss_supp_20mhz_only *bw_20;
++	const struct ieee80211_sta_eht_cap *eht_cap, *own_eht_cap;
++	const struct ieee80211_sband_iftype_data *iftd;
+ 	const struct ieee80211_eht_mcs_nss_supp_bw *bw;
+-	const struct ieee80211_sta_eht_cap *eht_cap;
+ 	const struct ieee80211_sta_he_cap *he_cap;
+ 	struct ieee80211_link_sta *link_sta;
  	struct ieee80211_bss_conf *link_conf;
- 	struct ath12k *ar = arvif->ar;
-+	bool he_support, gi_ltf_set = false;
- 	u32 vdev_param;
- 	u32 param_value;
- 	int ret;
--	bool he_support;
+ 	struct cfg80211_chan_def def;
++	bool user_rate_valid = true;
+ 	enum nl80211_band band;
++	int eht_nss, nss_idx;
+ 	u32 *rx_mcs, *tx_mcs;
+ 	u16 *eht_mcs_mask;
++	u8 max_nss = 0;
  
  	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
  
-@@ -12206,7 +12208,10 @@ static int ath12k_mac_set_rate_params(struct ath12k_link_vif *arvif,
- 			ret = ath12k_mac_set_auto_rate_gi_ltf(arvif, he_gi, he_ltf);
- 		if (ret)
- 			return ret;
--	} else {
-+		gi_ltf_set = true;
+@@ -3234,6 +3266,16 @@ static void ath12k_peer_assoc_h_eht(struct ath12k *ar,
+ 	band = def.chan->band;
+ 	eht_mcs_mask = arvif->bitrate_mask.control[band].eht_mcs;
+ 
++	iftd = ieee80211_get_sband_iftype_data(&ar->mac.sbands[band], vif->type);
++	if (!iftd) {
++		ath12k_warn(ar->ab,
++			    "unable to access iftype_data in struct ieee80211_supported_band\n");
++		return;
 +	}
 +
-+	if (!gi_ltf_set) {
- 		vdev_param = WMI_VDEV_PARAM_SGI;
- 		param_value = ath12k_mac_nlgi_to_wmigi(sgi);
- 		ret = ath12k_wmi_vdev_set_param_cmd(ar, arvif->vdev_id,
-diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-index c05af40bd7a2..1f689e367c8a 100644
---- a/drivers/net/wireless/ath/ath12k/mac.h
-+++ b/drivers/net/wireless/ath/ath12k/mac.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  */
- 
- #ifndef ATH12K_MAC_H
-@@ -84,6 +84,18 @@ enum ath12k_supported_bw {
- 	ATH12K_BW_320   = 4,
- };
- 
-+enum ath12k_gi {
-+	ATH12K_RATE_INFO_GI_0_8,
-+	ATH12K_RATE_INFO_GI_1_6,
-+	ATH12K_RATE_INFO_GI_3_2,
-+};
++	own_eht_cap = &iftd->eht_cap;
++	own_eht_mcs_nss_supp = &own_eht_cap->eht_mcs_nss_supp;
 +
-+enum ath12k_ltf {
-+	ATH12K_RATE_INFO_1XLTF,
-+	ATH12K_RATE_INFO_2XLTF,
-+	ATH12K_RATE_INFO_4XLTF,
-+};
+ 	arg->eht_flag = true;
+ 
+ 	if ((eht_cap->eht_cap_elem.phy_cap_info[5] &
+@@ -3250,6 +3292,28 @@ static void ath12k_peer_assoc_h_eht(struct ath12k *ar,
+ 	rx_mcs = arg->peer_eht_rx_mcs_set;
+ 	tx_mcs = arg->peer_eht_tx_mcs_set;
+ 
++	eht_nss = ath12k_mac_max_eht_mcs_nss((void *)own_eht_mcs_nss_supp,
++					     sizeof(*own_eht_mcs_nss_supp));
++	if (eht_nss > link_sta->rx_nss) {
++		user_rate_valid = false;
++		for (nss_idx = (link_sta->rx_nss - 1); nss_idx >= 0; nss_idx--) {
++			if (eht_mcs_mask[nss_idx]) {
++				user_rate_valid = true;
++				break;
++			}
++		}
++	}
 +
- struct ath12k_mac_get_any_chanctx_conf_arg {
- 	struct ath12k *ar;
- 	struct ieee80211_chanctx_conf *chanctx_conf;
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 64bd968989c8..01b2a865f103 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -223,15 +223,15 @@ enum WMI_HOST_WLAN_BAND {
- };
++	if (!user_rate_valid) {
++		ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
++			   "Setting eht range MCS value to peer supported nss %d for peer %pM\n",
++			   link_sta->rx_nss, arsta->addr);
++		eht_mcs_mask[link_sta->rx_nss - 1] = eht_mcs_mask[eht_nss - 1];
++	}
++
++	bw_20 = &eht_cap->eht_mcs_nss_supp.only_20mhz;
++	bw = &eht_cap->eht_mcs_nss_supp.bw._80;
++
+ 	switch (link_sta->bandwidth) {
+ 	case IEEE80211_STA_RX_BW_320:
+ 		bw = &eht_cap->eht_mcs_nss_supp.bw._320;
+@@ -3274,11 +3338,8 @@ static void ath12k_peer_assoc_h_eht(struct ath12k *ar,
+ 		arg->peer_eht_mcs_count++;
+ 		fallthrough;
+ 	default:
+-		if ((he_cap->he_cap_elem.phy_cap_info[0] &
+-		     (IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_40MHZ_IN_2G |
+-		      IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_40MHZ_80MHZ_IN_5G |
+-		      IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_160MHZ_IN_5G |
+-		      IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_80PLUS80_MHZ_IN_5G)) == 0) {
++		if (!(link_sta->he_cap.he_cap_elem.phy_cap_info[0] &
++		      IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_MASK_ALL)) {
+ 			bw_20 = &eht_cap->eht_mcs_nss_supp.only_20mhz;
  
- /* Parameters used for WMI_VDEV_PARAM_AUTORATE_MISC_CFG command.
-- * Used only for HE auto rate mode.
-+ * Used for HE and EHT auto rate mode.
-  */
- enum {
--	/* HE LTF related configuration */
--	WMI_HE_AUTORATE_LTF_1X = BIT(0),
--	WMI_HE_AUTORATE_LTF_2X = BIT(1),
--	WMI_HE_AUTORATE_LTF_4X = BIT(2),
-+	/* LTF related configuration */
-+	WMI_AUTORATE_LTF_1X = BIT(0),
-+	WMI_AUTORATE_LTF_2X = BIT(1),
-+	WMI_AUTORATE_LTF_4X = BIT(2),
+ 			ath12k_mac_set_eht_mcs(bw_20->rx_tx_mcs7_max_nss,
+@@ -3305,6 +3366,41 @@ static void ath12k_peer_assoc_h_eht(struct ath12k *ar,
  
--	/* HE GI related configuration */
-+	/* GI related configuration */
- 	WMI_AUTORATE_400NS_GI = BIT(8),
- 	WMI_AUTORATE_800NS_GI = BIT(9),
- 	WMI_AUTORATE_1600NS_GI = BIT(10),
+ 	arg->punct_bitmap = ~arvif->punct_bitmap;
+ 	arg->eht_disable_mcs15 = link_conf->eht_disable_mcs15;
++
++	if (!(link_sta->he_cap.he_cap_elem.phy_cap_info[0] &
++	      IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_MASK_ALL)) {
++		if (bw_20->rx_tx_mcs13_max_nss)
++			max_nss = max(max_nss, u8_get_bits(bw_20->rx_tx_mcs13_max_nss,
++							   IEEE80211_EHT_MCS_NSS_RX));
++		if (bw_20->rx_tx_mcs11_max_nss)
++			max_nss = max(max_nss, u8_get_bits(bw_20->rx_tx_mcs11_max_nss,
++							   IEEE80211_EHT_MCS_NSS_RX));
++		if (bw_20->rx_tx_mcs9_max_nss)
++			max_nss = max(max_nss, u8_get_bits(bw_20->rx_tx_mcs9_max_nss,
++							   IEEE80211_EHT_MCS_NSS_RX));
++		if (bw_20->rx_tx_mcs7_max_nss)
++			max_nss = max(max_nss, u8_get_bits(bw_20->rx_tx_mcs7_max_nss,
++							   IEEE80211_EHT_MCS_NSS_RX));
++	} else {
++		if (bw->rx_tx_mcs13_max_nss)
++			max_nss = max(max_nss, u8_get_bits(bw->rx_tx_mcs13_max_nss,
++							   IEEE80211_EHT_MCS_NSS_RX));
++		if (bw->rx_tx_mcs11_max_nss)
++			max_nss = max(max_nss, u8_get_bits(bw->rx_tx_mcs11_max_nss,
++							   IEEE80211_EHT_MCS_NSS_RX));
++		if (bw->rx_tx_mcs9_max_nss)
++			max_nss = max(max_nss, u8_get_bits(bw->rx_tx_mcs9_max_nss,
++							   IEEE80211_EHT_MCS_NSS_RX));
++	}
++
++	max_nss = min(max_nss, (uint8_t)eht_nss);
++
++	arg->peer_nss = min(link_sta->rx_nss, max_nss);
++
++	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
++		   "mac eht peer %pM nss %d mcs cnt %d ru_punct_bitmap 0x%x\n",
++		   arsta->addr, arg->peer_nss, arg->peer_eht_mcs_count,
++		   arg->punct_bitmap);
+ }
+ 
+ static void ath12k_peer_assoc_h_mlo(struct ath12k_link_sta *arsta,
 -- 
 2.34.1
 
