@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 332B5CCF9E3
-	for <ath12k@archiver.kernel.org>; Sat, 25 Oct 2025 16:02:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C56ECCF9E3
+	for <ath12k@archiver.kernel.org>; Sat, 25 Oct 2025 16:14:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=663Jp+s2ilGAmLbA/roNb06YmIUtNADw6z5c3NZm8m0=; b=4np0v4yHSHhUQBamplq/Me2lNh
-	CIjYOX7DucRaHgGV5IPx4l/w5KNqdklu5vRyvpb2z2Alpic8QGbf2r7hmgHo3uAs/hT6HXh+iL0Rw
-	9V6SUft8VHT1fCe6mBoYLyJJsHNP29WmhdGnzt1FBUfZrwIrXGli9MHRYMGTvHgTLGIV4RG8JqIsj
-	aN/5vEBnb69RQxyymAg46UZPyFebaCx6RUWzs5PxH7WMVfeogYbxNUSbuY25z/cCMYd5n2kvSZ/i9
-	ZFv04rPGuHEi9YKByGplRBqgBZ9nFjGXP0iyOCxl1gpSIwdEIAZm7kpJKJpdg7XzDc8/yHG6Vgcbu
-	nYhxFibg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=bmnBedu3fdWJhJBgl+YYsSE5vX+6hY2aIEsZf1QnK/E=; b=a6hgCxTWIIE/4z8urScCfdzhui
+	eOvpJ+lAYhXuOFodHhRdexB6bY5XFScKlVlcq2IVzZ+D4Tl6s2AnNDqk9A/U3VAd9O7K6qKgn+3Wf
+	2GGN8sFEyxMPtsCuCA2fk8c8B05OY/XHkEw9K1a6XqLiw516t7ylKlHlMF+iOlH6QSkjEMCbNMX53
+	WY+rLODhqKVlFAwEMd9r5cDJU4/jEyhLE+AvM4qCmWuE9ZKtt198rwBa24dXJw6ds8SwZGHdHFx5E
+	YR3ByPPBblvLKaiQdROiX1cu+PZ2oEdLUVhfzLNdVN9T9wLX3idD2N9/S/cO7ad1z5IFNFqy8Q7Ew
+	X07VFyMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCgir-0000000BPtC-2gII;
-	Sat, 25 Oct 2025 16:02:29 +0000
-Received: from mgamail.intel.com ([198.175.65.21])
+	id 1vCguM-0000000BRYP-1HrX;
+	Sat, 25 Oct 2025 16:14:22 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCgio-0000000BPsQ-48lZ
+	id 1vCguE-0000000BRVG-0EeJ
 	for ath12k@lists.infradead.org;
-	Sat, 25 Oct 2025 16:02:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1761408147; x=1792944147;
-  h=date:from:to:cc:subject:message-id;
-  bh=9ftmHbOotLQDaRVp1XAB0hF2j2cAGuE1G7XwEJrpmiE=;
-  b=TJxG4lKgpowGIpy96Qj6oZJS3wDKvyq+rcWR63sw+3nQdJAULCURhu2K
-   +vEWyNyEkX3NkkW9qPc7iHwa/xfhzQqksNb/ribNNVeddLkowjTFL+D8D
-   qSzscX1eRqvBSLWpcL5TSvKRh9+TiGa78D8qyYaWAkE1bh7dn05/qIgbA
-   9lg0J40WHyLfOy6x8iFYzDEcpLsR0ZXdqSAybHHWr/qb9NTkxcFvrVkVP
-   rrUhz27sajRFYNUWZIae/XotdUePBUFoC7ho3PRD6qcue9PZldW5Cljas
-   D/BinOaA1ZA87Lmt9j/XwCf8L9P95KbukJxf2elORRED3dqOi3ttcjNmQ
-   Q==;
-X-CSE-ConnectionGUID: OyTOHUSMTmqqoCzyozaYPg==
-X-CSE-MsgGUID: qC1I6BBrQJm2p/SwP0Oprw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11531"; a="63458549"
-X-IronPort-AV: E=Sophos;i="6.17,312,1747724400"; 
-   d="scan'208";a="63458549"
-Received: from orviesa005.jf.intel.com ([10.64.159.145])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 25 Oct 2025 09:02:27 -0700
-X-CSE-ConnectionGUID: UTd+rwWoQtaVQzquhaqVAQ==
-X-CSE-MsgGUID: QEjShtF6SRWbgBv8Pv0FpA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,255,1754982000"; 
-   d="scan'208";a="189793481"
-Received: from lkp-server02.sh.intel.com (HELO 66d7546c76b2) ([10.239.97.151])
-  by orviesa005.jf.intel.com with ESMTP; 25 Oct 2025 09:02:25 -0700
-Received: from kbuild by 66d7546c76b2 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1vCgil-000FPH-0l;
-	Sat, 25 Oct 2025 16:02:23 +0000
-Date: Sun, 26 Oct 2025 00:01:41 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: ath12k@lists.infradead.org
-Subject: [ath:pending] BUILD SUCCESS
- 197498315de711140bcc4722fdeb7c1761777100
-Message-ID: <202510260035.Cp8cpTbK-lkp@intel.com>
-User-Agent: s-nail v14.9.25
+	Sat, 25 Oct 2025 16:14:20 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 752B144EC5;
+	Sat, 25 Oct 2025 16:14:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A164C4CEFF;
+	Sat, 25 Oct 2025 16:14:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1761408853;
+	bh=QorErh9yORnjHmKK8rfLqSYNYmxvjnmyWw6S/K7/wcI=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=EvbCeHk2+7WwwWJm3WZBOiuvQ0k57Al9crKUiL3oNM5Uoelh4GsEeRSyg12KIAIph
+	 grTKw+qXaAcXwT8HL4Ec36uIh9vXtXrb1TE+nH9nYw+DY5DIBa4h/OaWT6jgfO9B49
+	 CTUXsRvuitwYTMpMz7vQpHwYF0IipGNjgRDLLJo3XFsqh7t/ALQ82tEk1gRtQ5TNR2
+	 jSNYzuJM3vhe7AKAcBOMXCkqF0Z4Linft6WqaZAhE3bg20sa0j177psYSOzC5DCR1J
+	 hQtwa6ve7M62RXen9EbzdVw0ZL2wwsSS1wsLLMV47CnOaqa/gdaFX18vr3mCGi+fmF
+	 epGuWfhur6Aew==
+From: Sasha Levin <sashal@kernel.org>
+To: patches@lists.linux.dev,
+	stable@vger.kernel.org
+Cc: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>,
+	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+	Sasha Levin <sashal@kernel.org>,
+	jjohnson@kernel.org,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.17-6.6] wifi: ath12k: Increase DP_REO_CMD_RING_SIZE to 256
+Date: Sat, 25 Oct 2025 11:55:31 -0400
+Message-ID: <20251025160905.3857885-100-sashal@kernel.org>
+X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20251025160905.3857885-1-sashal@kernel.org>
+References: <20251025160905.3857885-1-sashal@kernel.org>
+MIME-Version: 1.0
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.17.5
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251025_090227_080870_E0981D85 
-X-CRM114-Status: UNSURE (   3.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251025_091414_155089_E9C1339D 
+X-CRM114-Status: GOOD (  12.57  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,234 +82,76 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
-branch HEAD: 197498315de711140bcc4722fdeb7c1761777100  wifi: ath12k: Assert base_lock is held before allocating REO update element
+From: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
 
-elapsed time: 1448m
+[ Upstream commit 82993345aef6987a916337ebd2fca3ff4a6250a7 ]
 
-configs tested: 214
-configs skipped: 3
+Increase DP_REO_CMD_RING_SIZE from 128 to 256 to avoid
+queuing failures observed during stress test scenarios.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-tested configs:
-alpha                             allnoconfig    clang-22
-alpha                            allyesconfig    gcc-15.1.0
-alpha                               defconfig    clang-19
-arc                              allmodconfig    clang-19
-arc                              allmodconfig    gcc-15.1.0
-arc                               allnoconfig    clang-22
-arc                              allyesconfig    clang-19
-arc                              allyesconfig    gcc-15.1.0
-arc                                 defconfig    clang-19
-arc                   randconfig-001-20251025    gcc-10.5.0
-arc                   randconfig-002-20251025    gcc-8.5.0
-arm                              allmodconfig    clang-19
-arm                              allmodconfig    gcc-15.1.0
-arm                               allnoconfig    clang-22
-arm                              allyesconfig    clang-19
-arm                              allyesconfig    gcc-15.1.0
-arm                                 defconfig    clang-19
-arm                            hisi_defconfig    clang-22
-arm                   randconfig-001-20251025    clang-22
-arm                   randconfig-002-20251025    gcc-10.5.0
-arm                   randconfig-003-20251025    clang-22
-arm                   randconfig-004-20251025    clang-22
-arm                           sama7_defconfig    clang-22
-arm                        spear6xx_defconfig    clang-22
-arm                           u8500_defconfig    clang-22
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    clang-22
-arm64                               defconfig    clang-19
-arm64                 randconfig-001-20251025    gcc-14.3.0
-arm64                 randconfig-002-20251025    gcc-11.5.0
-arm64                 randconfig-003-20251025    gcc-9.5.0
-arm64                 randconfig-004-20251025    clang-22
-csky                              allnoconfig    clang-22
-csky                                defconfig    clang-19
-csky                  randconfig-001-20251025    gcc-10.5.0
-csky                  randconfig-001-20251025    gcc-11.5.0
-csky                  randconfig-002-20251025    gcc-10.5.0
-csky                  randconfig-002-20251025    gcc-13.4.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-22
-hexagon                          allyesconfig    clang-22
-hexagon                             defconfig    clang-19
-hexagon               randconfig-001-20251025    clang-18
-hexagon               randconfig-001-20251025    gcc-10.5.0
-hexagon               randconfig-002-20251025    clang-20
-hexagon               randconfig-002-20251025    gcc-10.5.0
-i386                             allmodconfig    clang-20
-i386                             allmodconfig    gcc-14
-i386                              allnoconfig    clang-20
-i386                              allnoconfig    gcc-14
-i386                             allyesconfig    clang-20
-i386                             allyesconfig    gcc-14
-i386        buildonly-randconfig-001-20251025    clang-20
-i386        buildonly-randconfig-001-20251025    gcc-14
-i386        buildonly-randconfig-002-20251025    clang-20
-i386        buildonly-randconfig-002-20251025    gcc-14
-i386        buildonly-randconfig-003-20251025    clang-20
-i386        buildonly-randconfig-004-20251025    clang-20
-i386        buildonly-randconfig-005-20251025    clang-20
-i386        buildonly-randconfig-006-20251025    clang-20
-i386                                defconfig    clang-20
-i386                  randconfig-001-20251025    clang-20
-i386                  randconfig-002-20251025    clang-20
-i386                  randconfig-003-20251025    clang-20
-i386                  randconfig-004-20251025    clang-20
-i386                  randconfig-005-20251025    clang-20
-i386                  randconfig-006-20251025    clang-20
-i386                  randconfig-007-20251025    clang-20
-i386                  randconfig-011-20251025    gcc-14
-i386                  randconfig-012-20251025    gcc-14
-i386                  randconfig-013-20251025    gcc-14
-i386                  randconfig-014-20251025    gcc-14
-i386                  randconfig-015-20251025    gcc-14
-i386                  randconfig-016-20251025    gcc-14
-i386                  randconfig-017-20251025    gcc-14
-loongarch                        allmodconfig    clang-19
-loongarch                         allnoconfig    clang-22
-loongarch                           defconfig    clang-19
-loongarch             randconfig-001-20251025    clang-22
-loongarch             randconfig-001-20251025    gcc-10.5.0
-loongarch             randconfig-002-20251025    clang-18
-loongarch             randconfig-002-20251025    gcc-10.5.0
-m68k                             allmodconfig    clang-19
-m68k                             allmodconfig    gcc-15.1.0
-m68k                              allnoconfig    gcc-15.1.0
-m68k                             allyesconfig    clang-19
-m68k                             allyesconfig    gcc-15.1.0
-m68k                                defconfig    clang-19
-microblaze                       allmodconfig    clang-19
-microblaze                       allmodconfig    gcc-15.1.0
-microblaze                        allnoconfig    gcc-15.1.0
-microblaze                       allyesconfig    clang-19
-microblaze                       allyesconfig    gcc-15.1.0
-microblaze                          defconfig    gcc-15.1.0
-mips                              allnoconfig    gcc-15.1.0
-mips                        vocore2_defconfig    clang-22
-nios2                             allnoconfig    gcc-11.5.0
-nios2                             allnoconfig    gcc-15.1.0
-nios2                               defconfig    gcc-11.5.0
-nios2                 randconfig-001-20251025    gcc-10.5.0
-nios2                 randconfig-001-20251025    gcc-11.5.0
-nios2                 randconfig-002-20251025    gcc-10.5.0
-nios2                 randconfig-002-20251025    gcc-11.5.0
-openrisc                          allnoconfig    clang-22
-openrisc                          allnoconfig    gcc-15.1.0
-openrisc                         allyesconfig    gcc-15.1.0
-openrisc                            defconfig    gcc-14
-parisc                           allmodconfig    gcc-15.1.0
-parisc                            allnoconfig    clang-22
-parisc                            allnoconfig    gcc-15.1.0
-parisc                           allyesconfig    gcc-15.1.0
-parisc                              defconfig    gcc-15.1.0
-parisc                randconfig-001-20251025    gcc-10.5.0
-parisc                randconfig-001-20251025    gcc-14.3.0
-parisc                randconfig-002-20251025    gcc-10.5.0
-parisc                randconfig-002-20251025    gcc-8.5.0
-parisc64                            defconfig    gcc-15.1.0
-powerpc                          allmodconfig    gcc-15.1.0
-powerpc                           allnoconfig    clang-22
-powerpc                           allnoconfig    gcc-15.1.0
-powerpc                          allyesconfig    clang-22
-powerpc                          allyesconfig    gcc-15.1.0
-powerpc                       ebony_defconfig    clang-22
-powerpc               randconfig-001-20251025    gcc-10.5.0
-powerpc               randconfig-001-20251025    gcc-11.5.0
-powerpc               randconfig-002-20251025    clang-16
-powerpc               randconfig-002-20251025    gcc-10.5.0
-powerpc               randconfig-003-20251025    clang-22
-powerpc               randconfig-003-20251025    gcc-10.5.0
-powerpc64             randconfig-001-20251025    clang-17
-powerpc64             randconfig-001-20251025    gcc-10.5.0
-powerpc64             randconfig-002-20251025    clang-16
-powerpc64             randconfig-002-20251025    gcc-10.5.0
-powerpc64             randconfig-003-20251025    gcc-10.5.0
-riscv                            allmodconfig    clang-22
-riscv                            allmodconfig    gcc-15.1.0
-riscv                             allnoconfig    clang-22
-riscv                             allnoconfig    gcc-15.1.0
-riscv                            allyesconfig    clang-16
-riscv                            allyesconfig    gcc-15.1.0
-riscv                               defconfig    gcc-14
-riscv                 randconfig-001-20251025    clang-22
-riscv                 randconfig-002-20251025    clang-22
-s390                             allmodconfig    clang-18
-s390                             allmodconfig    gcc-15.1.0
-s390                              allnoconfig    clang-22
-s390                             allyesconfig    gcc-15.1.0
-s390                                defconfig    gcc-14
-s390                  randconfig-001-20251025    gcc-11.5.0
-s390                  randconfig-002-20251025    gcc-8.5.0
-sh                               allmodconfig    gcc-15.1.0
-sh                                allnoconfig    gcc-15.1.0
-sh                               allyesconfig    gcc-15.1.0
-sh                                  defconfig    gcc-14
-sh                    randconfig-001-20251025    gcc-11.5.0
-sh                    randconfig-002-20251025    gcc-15.1.0
-sh                   sh7724_generic_defconfig    clang-22
-sh                            titan_defconfig    clang-22
-sparc                            allmodconfig    gcc-15.1.0
-sparc                             allnoconfig    gcc-15.1.0
-sparc                               defconfig    gcc-15.1.0
-sparc                 randconfig-001-20251025    gcc-11.5.0
-sparc                 randconfig-002-20251025    gcc-15.1.0
-sparc64                             defconfig    gcc-14
-sparc64               randconfig-001-20251025    clang-22
-sparc64               randconfig-002-20251025    gcc-15.1.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-22
-um                               allyesconfig    gcc-14
-um                                  defconfig    gcc-14
-um                             i386_defconfig    gcc-14
-um                    randconfig-001-20251025    clang-22
-um                    randconfig-002-20251025    gcc-14
-um                           x86_64_defconfig    gcc-14
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20251025    clang-20
-x86_64      buildonly-randconfig-001-20251025    gcc-14
-x86_64      buildonly-randconfig-002-20251025    clang-20
-x86_64      buildonly-randconfig-002-20251025    gcc-14
-x86_64      buildonly-randconfig-003-20251025    clang-20
-x86_64      buildonly-randconfig-003-20251025    gcc-14
-x86_64      buildonly-randconfig-004-20251025    clang-20
-x86_64      buildonly-randconfig-005-20251025    clang-20
-x86_64      buildonly-randconfig-006-20251025    clang-20
-x86_64                              defconfig    clang-20
-x86_64                              defconfig    gcc-14
-x86_64                                  kexec    clang-20
-x86_64                randconfig-001-20251025    clang-20
-x86_64                randconfig-002-20251025    clang-20
-x86_64                randconfig-003-20251025    clang-20
-x86_64                randconfig-004-20251025    clang-20
-x86_64                randconfig-005-20251025    clang-20
-x86_64                randconfig-006-20251025    clang-20
-x86_64                randconfig-007-20251025    clang-20
-x86_64                randconfig-008-20251025    clang-20
-x86_64                randconfig-071-20251025    clang-20
-x86_64                randconfig-072-20251025    clang-20
-x86_64                randconfig-073-20251025    clang-20
-x86_64                randconfig-074-20251025    clang-20
-x86_64                randconfig-075-20251025    clang-20
-x86_64                randconfig-076-20251025    clang-20
-x86_64                randconfig-077-20251025    clang-20
-x86_64                randconfig-078-20251025    clang-20
-x86_64                               rhel-9.4    clang-20
-x86_64                           rhel-9.4-bpf    gcc-14
-x86_64                          rhel-9.4-func    clang-20
-x86_64                    rhel-9.4-kselftests    clang-20
-x86_64                         rhel-9.4-kunit    gcc-14
-x86_64                           rhel-9.4-ltp    gcc-14
-x86_64                          rhel-9.4-rust    clang-20
-xtensa                            allnoconfig    gcc-15.1.0
-xtensa                randconfig-001-20251025    gcc-15.1.0
-xtensa                randconfig-002-20251025    gcc-14.3.0
+Signed-off-by: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Link: https://patch.msgid.link/20250806111750.3214584-2-nithyanantham.paramasivam@oss.qualcomm.com
+Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+LLM Generated explanations, may be completely bogus:
+
+YES
+- Bumping `DP_REO_CMD_RING_SIZE` to 256 in
+  `drivers/net/wireless/ath/ath12k/dp.h:187` directly enlarges the REO
+  command SRNG that `ath12k_dp_srng_setup()` provisions in
+  `drivers/net/wireless/ath/ath12k/dp.c:555-563`, so the host can queue
+  twice as many HAL_REO commands (peer/TID deletes, cache flushes, stats
+  reads) before the hardware must drain them.
+- Under the current 128-entry limit, heavy peer churn makes
+  `ath12k_hal_reo_cmd_send()` fall off the ring and return `-ENOBUFS`
+  (`drivers/net/wireless/ath/ath12k/hal_rx.c:223-236`), which propagates
+  straight back to callers via `ath12k_dp_reo_cmd_send()`
+  (`drivers/net/wireless/ath/ath12k/dp_rx.c:650-667`) and leaves TID
+  teardown paths dropping the descriptor while firmware still references
+  it—exactly the “queuing failures” and memory corruption observed
+  during stress.
+- Ath11k has already shipped with the same 256-entry setting
+  (`drivers/net/wireless/ath/ath11k/dp.h:218`), so the larger ring size
+  is a proven, firmware-compatible configuration for this hardware
+  family rather than a new feature.
+- The cost of doubling this DMA ring is only ~6 KiB (256 × 48-byte
+  entries), and the SRNG limits in `hal.c/hal.h` leave ample headroom,
+  so the change is low risk and entirely contained to ath12k datapath
+  setup.
+- Because it prevents a real-world failure that can take the device
+  down, while touching only one constant, the patch squarely fits the
+  stable rules (important bugfix, minimal surface area, no architectural
+  churn).
+
+Natural follow-up for stable maintainers:
+1. Consider also backporting the subsequent ath12k retry fix for REO RX
+   queue updates to cover any residual overflow scenarios that might
+   still appear beyond the expanded ring capacity.
+
+ drivers/net/wireless/ath/ath12k/dp.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+index 7baa48b86f7ad..10093b4515882 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.h
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -184,7 +184,7 @@ struct ath12k_pdev_dp {
+ #define DP_REO_REINJECT_RING_SIZE	32
+ #define DP_RX_RELEASE_RING_SIZE		1024
+ #define DP_REO_EXCEPTION_RING_SIZE	128
+-#define DP_REO_CMD_RING_SIZE		128
++#define DP_REO_CMD_RING_SIZE		256
+ #define DP_REO_STATUS_RING_SIZE		2048
+ #define DP_RXDMA_BUF_RING_SIZE		4096
+ #define DP_RX_MAC_BUF_RING_SIZE		2048
+-- 
+2.51.0
+
 
