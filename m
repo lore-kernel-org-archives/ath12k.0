@@ -4,114 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD494CCF9E0
-	for <ath12k@archiver.kernel.org>; Tue, 28 Oct 2025 06:08:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E86BDCCD1BF
+	for <ath12k@archiver.kernel.org>; Tue, 28 Oct 2025 14:39:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=YFQernyphzUokXIV/+I70uHICPm/RP+xKMym6taPSU8=; b=bwYIp6/4DXVjvhkC+cvN6eE9CY
-	TQGfrwmC37IzOrSm57EzDuilpOIsNGbmnF5eUypDQHcf5YwWwbQuhQBnWZIhyz04ECiCm5O/+NXCs
-	qUEIzsJ6NsPcXU+EzjBg5xJM2aN45/UrJxYzZD2PCpCYIvshJxG9s8EI7UY4+PVprpReFnY6IfwRI
-	Ftkns9SPk/YdGe4ZiB9q9L7N3AnGAfevZrUOPzI7vyvr3aGTMNYvuUdXsGtVPZTD/m4RMYg2jU/xJ
-	aNYr8NsAU/58HYHBx30ikjQXhqFsb2ZY/hXZddD2IS1WjtoFgOmtlQGW9gYa1W5xfBfjzCucDldTP
-	FBJrp1GQ==;
+	bh=HAcUUE/+uYOiJXIxSl2vp4KRe4F6fpk+5AOXMIhD4Lk=; b=oUx24Hdu77MGYwJa1P7u7kMjGl
+	gJ/thuSiHKTcTRwFs5xx8r/TnhxRWFsXK8amfeg/0ojxm2cPWxZgL3fzIy2YT7pjtvOzTr9Q5eA4c
+	qde5jWa2xfgu1G6z3qFSPzWYudIOP668pzvh/IpOuaLAi5EzwOeEFshBsf49L8YJIM3O9P44dBMvD
+	13GTKW7wtoRUJL6kRIAGo+wS3sP1z9RnoHdJW+3SJ8y4yyAs3AhEKz08DimfMQyIcpaVz1Ar2orjl
+	O5t+aKRG3QbBpMlGctOYns3yS3o/GSNu5Sr32Cziaf0JDfygczLi000P0XPyNwNNdk35efWh/q+JI
+	wJxUvJOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDcsV-0000000FJPV-1FvK;
-	Tue, 28 Oct 2025 06:08:19 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vDkr6-0000000G6MI-0jBM;
+	Tue, 28 Oct 2025 14:39:24 +0000
+Received: from mgamail.intel.com ([192.198.163.8])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDcsR-0000000FJOh-3iyc
+	id 1vDkr3-0000000G6Lz-2gWC
 	for ath12k@lists.infradead.org;
-	Tue, 28 Oct 2025 06:08:17 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59RKa6SF2546712
-	for <ath12k@lists.infradead.org>; Tue, 28 Oct 2025 06:08:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=YFQernyphzUokXIV/+I70uHICPm/RP+xKMy
-	m6taPSU8=; b=AHGNaB9pEUoM29BMQpWF6/trsZW1rS5KDocyjzV8W/vz2j4q31H
-	ESPuVsfd68gX/V4mkTkOL9wgY4lCXzbJ0aV4Ub810hB/4P7nsPLk+KjdVdgQFkE8
-	0KTFCwyUCwd6ZwLWs14EZTyorviFMDvmzOMFjz7lfpwqJ82AxbC54C9mW2wl9Zxp
-	o99XC+/nZ1KwF6BKoFFEvRwx++MypnucKh/XX9q/eikQwcFuSQn0J93lkXsWD6zB
-	S8lTfhGAGLW73wU91vZ94ai/Ol8RCs21NeMA4+umq7WTZLv60aALwT374kLQqAyj
-	BcZNbgVasZGCp886nqiBa2Xtc//dyLT+Zyg==
-Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a27s2k002-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 28 Oct 2025 06:08:13 +0000 (GMT)
-Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-7810289cd5eso12207521b3a.1
-        for <ath12k@lists.infradead.org>; Mon, 27 Oct 2025 23:08:13 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761631693; x=1762236493;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=YFQernyphzUokXIV/+I70uHICPm/RP+xKMym6taPSU8=;
-        b=tWCksVkOf4RcC4XQqOBNRzrhYVB26CSHJJ9JVYsmTSx5ICe28F01Jalv+wreX3ELCj
-         Wf5F6XBZL4skup/SFAAqGrxjzpxU22O60aukiXMJURaX/7QdTRwl6CQ4uHie8D2LkLxy
-         eIqxZdQU7hJMPL7vXZqxV3lN+EG5uqRcMgiQmucAZJ8c96guBXRXhXlocamolPgaE8sf
-         mSJBckGwfrCaD7Pjnw8t5XVwVlfrdhe0IX25RYSeU2k8EyAtwcSUL/5F4M5IQC7FxgdW
-         6IF6mNhr21pUGSjUsgE6xMBOuk9/ZeQFdblj7JKI0des4GZz470pjx4RXlstiKkB+QLe
-         cY7w==
-X-Gm-Message-State: AOJu0Yzp+DWGz2U4VBa8RiqDhdM0dPelEirYCFD++jdENAteu5yydHFm
-	IrvdSjxcowkWi0VC0vhAIPtbaYHIQ0EniNLXMpra4rolBrKN6hJ9SukTk/w+DeinLXVx7DKleTa
-	tpR1f9iE1V1+QTWKbRRwmiKhMg2D3ejRbHCEP/81JLlC1wxsVGzrsZ5acMeoR7Suf
-X-Gm-Gg: ASbGncs9FUS6s2hZha5pyCGmjHd8LhRS16PN7DbBn7bR2k5H1V3GnlzC3E5lSbSOcPW
-	H7C0bf1DuHYbydsIQOJiWB9lu7QESFLgDrMtCgmEVZmsNnhpFziZdeaLXFwqPfcDLT6mAUeHez0
-	gBAe4QdvKGJJlC7P5Z0IF3aiWliOkhpt7y1Z33cLXM6+89tSTj5loi4io4Z7fqQ6iUcuGzfJCTG
-	onQ9+e9XY/2tXu0Ewk8WPrae+nJobDgRXAAz49iQ5wyC+OGairajVYMxP/S6MVmrO85ucEYiCwy
-	4n5k6uSsYvtcwzlVBADIKuPNE2p0WTywe+VMTSfbjo+np41T88nt0JINqR4zyNZIiyQ2WIvUavY
-	mJ9iMlOa03jKVTGqB09jz5dKj1P4hb1znQ4q762qbvETqA9JEAkmEDXBWAg==
-X-Received: by 2002:a05:6a00:9281:b0:7a2:721b:adb6 with SMTP id d2e1a72fcca58-7a441c47627mr3120288b3a.28.1761631692849;
-        Mon, 27 Oct 2025 23:08:12 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF5IdZmG+yfCiDsulIMrTHpgRc/xNK0DVqnVio5NHUD8R1SXXmWIe+eXbbrig1qqDs8Z+/EJA==
-X-Received: by 2002:a05:6a00:9281:b0:7a2:721b:adb6 with SMTP id d2e1a72fcca58-7a441c47627mr3120253b3a.28.1761631692335;
-        Mon, 27 Oct 2025 23:08:12 -0700 (PDT)
-Received: from Z2-SFF-G9-MQ.ap.qualcomm.com (i-global052.qualcomm.com. [199.106.103.52])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7a414011acdsm10204566b3a.13.2025.10.27.23.08.09
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 27 Oct 2025 23:08:11 -0700 (PDT)
-From: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
-To: jjohnson@kernel.org
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
-        linux-kernel@vger.kernel.org,
-        Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>,
-        Ross Brown <true.robot.ross@gmail.com>
-Subject: [PATCH ath-current] Revert "wifi: ath12k: Fix missing station power save configuration"
-Date: Tue, 28 Oct 2025 14:07:44 +0800
-Message-Id: <20251028060744.897198-1-miaoqing.pan@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: 2wUYENtfujrkhU7mzm02znR9wTVacIoi
-X-Proofpoint-GUID: 2wUYENtfujrkhU7mzm02znR9wTVacIoi
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI4MDA1MSBTYWx0ZWRfX0UvD0+4mEoSM
- oQFNgvJkYf5Sk51NjdBHsEApSa0UwcGtTEhIrChS+7Ww2RYHSLCoNC/S498Y2BTsiRyuH5eNaeU
- 0yxWZAUevU5Y0cR/sxDWASemb5eg48vMe98FT0t9G+aqOGXEpX1VDZZNHKq/vPdhoGohUWytsos
- JeNdV6WAntgILyTvwElP0OMWCho5tkseQa1HIkg9xilp3i4k/PYm+mABTLJVB+uSZ9Z8wpaRvSO
- U335XPr0cmGMMY8OrbQBZ87SJvsFiEZctqlW/yfnEP+s3JuBW7iomjaQyBMMohGrLMbD0GzH3y3
- vKBrZAo+szAISMy9eYNnfVRt64HfSFq+sV9EsrvdM0OIkz9RdmsbbDvkRGCFkbyV4ft840aSGVg
- j4VgsMuuDCepzs81iwyjRc5AS4VuYw==
-X-Authority-Analysis: v=2.4 cv=R60O2NRX c=1 sm=1 tr=0 ts=69005dcd cx=c_pps
- a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
- a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=pGLkceISAAAA:8
- a=EUspDBNiAAAA:8 a=rFrEXt6fRIhDJ_V8PpwA:9 a=2VI0MkxyNR6bbpdq8BZq:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-28_03,2025-10-22_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 lowpriorityscore=0 phishscore=0 bulkscore=0
- impostorscore=0 clxscore=1015 spamscore=0 adultscore=0 malwarescore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510020000
- definitions=main-2510280051
+	Tue, 28 Oct 2025 14:39:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1761662361; x=1793198361;
+  h=date:from:to:cc:subject:message-id;
+  bh=qiLDCeK6sikvvin2JhkFor8efwG9iOLcDccLlj5Y3hE=;
+  b=BdaBxrCiyMnLCoT+6ijZcLXrfjjT5CwhKxLHCB/cAh5Gd0/qnXH8CQ/K
+   4bKB4BDNmONuvTwwZexbsuQlSZ95M1ip7Ac4MUHE/78bvn/Ugc0qgiosJ
+   MOCeXr9k7wtCInqls/zRBIY4A4978I6xD/r9AnxJwgUhzLfkoc7T7neHz
+   SNdual3Ji8VOAIPt2B8JFIjtTP55m/O6d3r5Zp2ta9N+rsSPRtEbzLbmX
+   4bvvsxvh/9fS48KONwZ4jUMyWLUymULncC90siHqtWQnJwCOCvKPR/kr0
+   RSwjP5NgIXRc4uoBzoVkItOKvl7xx6BbHyYVraoFuZMZuTYodDrjoaQ5X
+   A==;
+X-CSE-ConnectionGUID: Xry2yL8uRCewE7j+GxSrUA==
+X-CSE-MsgGUID: tAyztLKpTAaBVYh4Bog9gA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11586"; a="81394106"
+X-IronPort-AV: E=Sophos;i="6.19,261,1754982000"; 
+   d="scan'208";a="81394106"
+Received: from orviesa009.jf.intel.com ([10.64.159.149])
+  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Oct 2025 07:39:21 -0700
+X-CSE-ConnectionGUID: shFgug5HQJ+fv7sEQMT35g==
+X-CSE-MsgGUID: secp8+o3SiS1MIhzYxp1CA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,261,1754982000"; 
+   d="scan'208";a="184990792"
+Received: from lkp-server02.sh.intel.com (HELO 66d7546c76b2) ([10.239.97.151])
+  by orviesa009.jf.intel.com with ESMTP; 28 Oct 2025 07:39:19 -0700
+Received: from kbuild by 66d7546c76b2 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1vDkqi-000JFQ-04;
+	Tue, 28 Oct 2025 14:39:01 +0000
+Date: Tue, 28 Oct 2025 22:38:08 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org
+Subject: [ath:pending-ath12k-ng] BUILD SUCCESS
+ 6633dca572d8f599b0a1ead0f145a52049ec7709
+Message-ID: <202510282203.tjN1Of07-lkp@intel.com>
+User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251027_230816_051963_F7F65177 
-X-CRM114-Status: GOOD (  16.32  )
+X-CRM114-CacheID: sfid-20251028_073921_721253_8EDC914E 
+X-CRM114-Status: UNSURE (   4.03  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,192 +83,164 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This reverts commit 4b66d18918f8e4d85e51974a9e3ce9abad5c7c3d.
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending-ath12k-ng
+branch HEAD: 6633dca572d8f599b0a1ead0f145a52049ec7709  wifi: ath12k: Add lockdep warn for RCU
 
-In [1], Ross Brown reports poor performance of WCN7850 after enabling
-power save. Temporarily revert the fix; it will be re-enabled once
-the issue is resolved.
+elapsed time: 1459m
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.IOE_HMT.1.1-00011-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+configs tested: 144
+configs skipped: 3
 
-Fixes: 4b66d18918f8 ("wifi: ath12k: Fix missing station power save configuration")
-Reported-by: Ross Brown <true.robot.ross@gmail.com>
-Closes: https://lore.kernel.org/all/CAMn66qZENLhDOcVJuwUZ3ir89PVtVnQRq9DkV5xjJn1p6BKB9w@mail.gmail.com/ # [1]
-Signed-off-by: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 122 ++++++++++++--------------
- 1 file changed, 55 insertions(+), 67 deletions(-)
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index eacab798630a..db351c922018 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -4064,68 +4064,12 @@ static int ath12k_mac_fils_discovery(struct ath12k_link_vif *arvif,
- 	return ret;
- }
- 
--static void ath12k_mac_vif_setup_ps(struct ath12k_link_vif *arvif)
--{
--	struct ath12k *ar = arvif->ar;
--	struct ieee80211_vif *vif = arvif->ahvif->vif;
--	struct ieee80211_conf *conf = &ath12k_ar_to_hw(ar)->conf;
--	enum wmi_sta_powersave_param param;
--	struct ieee80211_bss_conf *info;
--	enum wmi_sta_ps_mode psmode;
--	int ret;
--	int timeout;
--	bool enable_ps;
--
--	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
--
--	if (vif->type != NL80211_IFTYPE_STATION)
--		return;
--
--	enable_ps = arvif->ahvif->ps;
--	if (enable_ps) {
--		psmode = WMI_STA_PS_MODE_ENABLED;
--		param = WMI_STA_PS_PARAM_INACTIVITY_TIME;
--
--		timeout = conf->dynamic_ps_timeout;
--		if (timeout == 0) {
--			info = ath12k_mac_get_link_bss_conf(arvif);
--			if (!info) {
--				ath12k_warn(ar->ab, "unable to access bss link conf in setup ps for vif %pM link %u\n",
--					    vif->addr, arvif->link_id);
--				return;
--			}
--
--			/* firmware doesn't like 0 */
--			timeout = ieee80211_tu_to_usec(info->beacon_int) / 1000;
--		}
--
--		ret = ath12k_wmi_set_sta_ps_param(ar, arvif->vdev_id, param,
--						  timeout);
--		if (ret) {
--			ath12k_warn(ar->ab, "failed to set inactivity time for vdev %d: %i\n",
--				    arvif->vdev_id, ret);
--			return;
--		}
--	} else {
--		psmode = WMI_STA_PS_MODE_DISABLED;
--	}
--
--	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac vdev %d psmode %s\n",
--		   arvif->vdev_id, psmode ? "enable" : "disable");
--
--	ret = ath12k_wmi_pdev_set_ps_mode(ar, arvif->vdev_id, psmode);
--	if (ret)
--		ath12k_warn(ar->ab, "failed to set sta power save mode %d for vdev %d: %d\n",
--			    psmode, arvif->vdev_id, ret);
--}
--
- static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
- 					  struct ieee80211_vif *vif,
- 					  u64 changed)
- {
- 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
- 	unsigned long links = ahvif->links_map;
--	struct ieee80211_vif_cfg *vif_cfg;
- 	struct ieee80211_bss_conf *info;
- 	struct ath12k_link_vif *arvif;
- 	struct ieee80211_sta *sta;
-@@ -4189,24 +4133,61 @@ static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
- 			}
- 		}
- 	}
-+}
- 
--	if (changed & BSS_CHANGED_PS) {
--		links = ahvif->links_map;
--		vif_cfg = &vif->cfg;
-+static void ath12k_mac_vif_setup_ps(struct ath12k_link_vif *arvif)
-+{
-+	struct ath12k *ar = arvif->ar;
-+	struct ieee80211_vif *vif = arvif->ahvif->vif;
-+	struct ieee80211_conf *conf = &ath12k_ar_to_hw(ar)->conf;
-+	enum wmi_sta_powersave_param param;
-+	struct ieee80211_bss_conf *info;
-+	enum wmi_sta_ps_mode psmode;
-+	int ret;
-+	int timeout;
-+	bool enable_ps;
- 
--		for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
--			arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
--			if (!arvif || !arvif->ar)
--				continue;
-+	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
- 
--			ar = arvif->ar;
-+	if (vif->type != NL80211_IFTYPE_STATION)
-+		return;
-+
-+	enable_ps = arvif->ahvif->ps;
-+	if (enable_ps) {
-+		psmode = WMI_STA_PS_MODE_ENABLED;
-+		param = WMI_STA_PS_PARAM_INACTIVITY_TIME;
- 
--			if (ar->ab->hw_params->supports_sta_ps) {
--				ahvif->ps = vif_cfg->ps;
--				ath12k_mac_vif_setup_ps(arvif);
-+		timeout = conf->dynamic_ps_timeout;
-+		if (timeout == 0) {
-+			info = ath12k_mac_get_link_bss_conf(arvif);
-+			if (!info) {
-+				ath12k_warn(ar->ab, "unable to access bss link conf in setup ps for vif %pM link %u\n",
-+					    vif->addr, arvif->link_id);
-+				return;
- 			}
-+
-+			/* firmware doesn't like 0 */
-+			timeout = ieee80211_tu_to_usec(info->beacon_int) / 1000;
- 		}
-+
-+		ret = ath12k_wmi_set_sta_ps_param(ar, arvif->vdev_id, param,
-+						  timeout);
-+		if (ret) {
-+			ath12k_warn(ar->ab, "failed to set inactivity time for vdev %d: %i\n",
-+				    arvif->vdev_id, ret);
-+			return;
-+		}
-+	} else {
-+		psmode = WMI_STA_PS_MODE_DISABLED;
- 	}
-+
-+	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac vdev %d psmode %s\n",
-+		   arvif->vdev_id, psmode ? "enable" : "disable");
-+
-+	ret = ath12k_wmi_pdev_set_ps_mode(ar, arvif->vdev_id, psmode);
-+	if (ret)
-+		ath12k_warn(ar->ab, "failed to set sta power save mode %d for vdev %d: %d\n",
-+			    psmode, arvif->vdev_id, ret);
- }
- 
- static bool ath12k_mac_supports_tpc(struct ath12k *ar, struct ath12k_vif *ahvif,
-@@ -4228,6 +4209,7 @@ static void ath12k_mac_bss_info_changed(struct ath12k *ar,
- {
- 	struct ath12k_vif *ahvif = arvif->ahvif;
- 	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(ahvif);
-+	struct ieee80211_vif_cfg *vif_cfg = &vif->cfg;
- 	struct cfg80211_chan_def def;
- 	u32 param_id, param_value;
- 	enum nl80211_band band;
-@@ -4514,6 +4496,12 @@ static void ath12k_mac_bss_info_changed(struct ath12k *ar,
- 	}
- 
- 	ath12k_mac_fils_discovery(arvif, info);
-+
-+	if (changed & BSS_CHANGED_PS &&
-+	    ar->ab->hw_params->supports_sta_ps) {
-+		ahvif->ps = vif_cfg->ps;
-+		ath12k_mac_vif_setup_ps(arvif);
-+	}
- }
- 
- static struct ath12k_vif_cache *ath12k_ahvif_get_link_cache(struct ath12k_vif *ahvif,
+tested configs:
+alpha                             allnoconfig    gcc-15.1.0
+alpha                            allyesconfig    gcc-15.1.0
+arc                              allmodconfig    gcc-15.1.0
+arc                               allnoconfig    gcc-15.1.0
+arc                              allyesconfig    gcc-15.1.0
+arc                   randconfig-001-20251027    gcc-8.5.0
+arc                   randconfig-001-20251028    gcc-8.5.0
+arc                   randconfig-002-20251027    gcc-8.5.0
+arc                   randconfig-002-20251028    gcc-13.4.0
+arc                           tb10x_defconfig    gcc-15.1.0
+arm                              allmodconfig    gcc-15.1.0
+arm                               allnoconfig    clang-22
+arm                              allyesconfig    gcc-15.1.0
+arm                       aspeed_g5_defconfig    gcc-15.1.0
+arm                           omap1_defconfig    gcc-15.1.0
+arm                   randconfig-001-20251027    clang-22
+arm                   randconfig-001-20251028    clang-22
+arm                   randconfig-002-20251027    clang-22
+arm                   randconfig-002-20251028    clang-22
+arm                   randconfig-003-20251027    gcc-8.5.0
+arm                   randconfig-003-20251028    clang-22
+arm                   randconfig-004-20251027    clang-22
+arm                   randconfig-004-20251028    gcc-8.5.0
+arm                         socfpga_defconfig    gcc-15.1.0
+arm64                            allmodconfig    clang-19
+arm64                             allnoconfig    gcc-15.1.0
+arm64                 randconfig-001-20251027    clang-22
+arm64                 randconfig-001-20251028    clang-22
+arm64                 randconfig-002-20251027    gcc-12.5.0
+arm64                 randconfig-002-20251028    clang-22
+arm64                 randconfig-003-20251027    gcc-9.5.0
+arm64                 randconfig-003-20251028    gcc-11.5.0
+arm64                 randconfig-004-20251027    clang-22
+arm64                 randconfig-004-20251028    gcc-8.5.0
+csky                              allnoconfig    gcc-15.1.0
+csky                  randconfig-001-20251028    gcc-15.1.0
+csky                  randconfig-002-20251028    gcc-15.1.0
+hexagon                          alldefconfig    clang-22
+hexagon                          allmodconfig    clang-17
+hexagon                           allnoconfig    clang-22
+hexagon                          allyesconfig    clang-22
+hexagon               randconfig-001-20251028    clang-22
+hexagon               randconfig-002-20251028    clang-17
+i386                             allmodconfig    gcc-14
+i386                              allnoconfig    gcc-14
+i386        buildonly-randconfig-001-20251027    gcc-13
+i386        buildonly-randconfig-002-20251027    clang-20
+i386        buildonly-randconfig-003-20251027    clang-20
+i386        buildonly-randconfig-004-20251027    gcc-14
+i386        buildonly-randconfig-005-20251027    clang-20
+i386        buildonly-randconfig-006-20251027    clang-20
+loongarch                        allmodconfig    clang-19
+loongarch                         allnoconfig    clang-22
+loongarch             randconfig-001-20251028    gcc-12.5.0
+loongarch             randconfig-002-20251028    clang-22
+m68k                             allmodconfig    gcc-15.1.0
+m68k                              allnoconfig    gcc-15.1.0
+m68k                             allyesconfig    gcc-15.1.0
+m68k                          multi_defconfig    gcc-15.1.0
+microblaze                       allmodconfig    gcc-15.1.0
+microblaze                        allnoconfig    gcc-15.1.0
+microblaze                       allyesconfig    gcc-15.1.0
+mips                              allnoconfig    gcc-15.1.0
+mips                        omega2p_defconfig    clang-22
+nios2                            allmodconfig    gcc-11.5.0
+nios2                             allnoconfig    gcc-11.5.0
+nios2                            allyesconfig    gcc-11.5.0
+nios2                 randconfig-001-20251028    gcc-8.5.0
+nios2                 randconfig-002-20251028    gcc-9.5.0
+openrisc                         allmodconfig    gcc-15.1.0
+openrisc                          allnoconfig    gcc-15.1.0
+openrisc                         allyesconfig    gcc-15.1.0
+openrisc                            defconfig    gcc-15.1.0
+openrisc                  or1klitex_defconfig    gcc-15.1.0
+parisc                           allmodconfig    gcc-15.1.0
+parisc                            allnoconfig    gcc-15.1.0
+parisc                           allyesconfig    gcc-15.1.0
+parisc                              defconfig    gcc-15.1.0
+parisc                randconfig-001-20251028    gcc-9.5.0
+parisc                randconfig-002-20251028    gcc-8.5.0
+powerpc                     akebono_defconfig    clang-22
+powerpc                          allmodconfig    gcc-15.1.0
+powerpc                           allnoconfig    gcc-15.1.0
+powerpc                          allyesconfig    clang-22
+powerpc                  mpc866_ads_defconfig    clang-22
+powerpc               randconfig-001-20251028    gcc-15.1.0
+powerpc               randconfig-002-20251028    gcc-11.5.0
+powerpc               randconfig-003-20251028    gcc-8.5.0
+powerpc64             randconfig-001-20251028    clang-22
+powerpc64             randconfig-002-20251028    clang-22
+powerpc64             randconfig-003-20251028    gcc-13.4.0
+riscv                            allmodconfig    clang-22
+riscv                             allnoconfig    gcc-15.1.0
+riscv                            allyesconfig    clang-16
+riscv                               defconfig    clang-22
+riscv                    nommu_k210_defconfig    clang-22
+riscv                 randconfig-001-20251028    clang-22
+riscv                 randconfig-002-20251028    clang-22
+s390                             allmodconfig    clang-18
+s390                              allnoconfig    clang-22
+s390                             allyesconfig    gcc-15.1.0
+s390                                defconfig    clang-22
+s390                  randconfig-001-20251028    clang-22
+s390                  randconfig-002-20251028    clang-22
+sh                               allmodconfig    gcc-15.1.0
+sh                                allnoconfig    gcc-15.1.0
+sh                               allyesconfig    gcc-15.1.0
+sh                                  defconfig    gcc-15.1.0
+sh                    randconfig-001-20251028    gcc-15.1.0
+sh                    randconfig-002-20251028    gcc-13.4.0
+sh                      rts7751r2d1_defconfig    gcc-15.1.0
+sh                           se7343_defconfig    gcc-15.1.0
+sh                           se7722_defconfig    gcc-15.1.0
+sh                   sh7724_generic_defconfig    gcc-15.1.0
+sparc                            allmodconfig    gcc-15.1.0
+sparc                             allnoconfig    gcc-15.1.0
+sparc                            allyesconfig    gcc-15.1.0
+sparc                               defconfig    gcc-15.1.0
+sparc                 randconfig-001-20251028    gcc-8.5.0
+sparc                 randconfig-002-20251028    gcc-12.5.0
+sparc64                             defconfig    clang-20
+sparc64               randconfig-001-20251028    clang-22
+sparc64               randconfig-002-20251028    gcc-9.5.0
+um                               allmodconfig    clang-19
+um                                allnoconfig    clang-22
+um                               allyesconfig    gcc-14
+um                                  defconfig    clang-22
+um                             i386_defconfig    gcc-14
+um                    randconfig-001-20251028    gcc-14
+um                    randconfig-002-20251028    gcc-14
+um                           x86_64_defconfig    clang-22
+x86_64                            allnoconfig    clang-20
+x86_64                           allyesconfig    clang-20
+x86_64      buildonly-randconfig-001-20251027    gcc-14
+x86_64      buildonly-randconfig-002-20251027    gcc-14
+x86_64      buildonly-randconfig-003-20251027    gcc-14
+x86_64      buildonly-randconfig-004-20251027    gcc-14
+x86_64      buildonly-randconfig-005-20251027    gcc-14
+x86_64      buildonly-randconfig-006-20251027    gcc-14
+x86_64                              defconfig    gcc-14
+x86_64                          rhel-9.4-rust    clang-20
+xtensa                            allnoconfig    gcc-15.1.0
+xtensa                randconfig-001-20251028    gcc-15.1.0
+xtensa                randconfig-002-20251028    gcc-13.4.0
 
-base-commit: 2469bb6a6af944755a7d7daf66be90f3b8decbf9
--- 
-2.34.1
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
