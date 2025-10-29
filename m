@@ -4,130 +4,132 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C2A4CCF9E9
-	for <ath12k@archiver.kernel.org>; Wed, 29 Oct 2025 05:50:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93D5FCCF9E9
+	for <ath12k@archiver.kernel.org>; Wed, 29 Oct 2025 09:33:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WmAbIa2HLXGYbY6ZAbrAI3G+RXNbdEwalIvBalCKji4=; b=4YkC4BJZ0JqjaZgnaI4s/ZT2+1
-	k/PkUMDE/XuZI20qVQjVA3jUQzmHseGWxzil0VsdXzgfZqCiA2jKUR//HJGrQqGd2r5uxqJXjTfPM
-	DOfUwpKI7iSBEmD1xEdimDlB10Un3tGbgJBGaXQ2ODYVfSxEEYQpVUOGZYLxTEE+YCWWsxbnMxfJL
-	UrunGZsu7hlICQL7Llad7KB95EpBc+yh6yJ7+6Upz9dQRLSUYokiic9t7IB7VTAjkikOIRjuFgmsy
-	SjMpf8PFyCHLicKPJ5gSoddLqRpoR0B35zZlK9Op2UULTbJvMEmW1rXIx6MTdoo2hcHxjQxW+K64b
-	AywP0oMA==;
+	bh=zWi24kAJejrPENad76Qq2UdryfCSFDydt8kyu/N4BqY=; b=ETHICNuupdlOCvn1+wmT0JRA+W
+	oYnI73UACnT33egcaf4Z9Z4MXpkFnwwMxDwILgPn4OCKCcqrWavD3c7j+6we5bL2SqPvopCFMzuYz
+	ifhN69FRHcO2UxOjgGPGTqgwYIHrDvJtgjvDGk92GZbNo3M4x9NDcAbRRA+UPFlNZon35mWGsMWfu
+	NGM/AMxfbnKaItS8X9DSLG3cdNrkbYJ6Lpn4JvErRI3wGjGeRvfsxmYtkZxKvWkGKoF0YF9hiLIwb
+	TweLUhIkgZNDr1+kK6u+q58Mck/sx+DaGieeCCpRlcE6cphbrcLYO7Q+HezLUhVI0cJGnHypmOH3V
+	FlrJIZ2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDz4p-0000000HNOX-3UsU;
-	Wed, 29 Oct 2025 05:50:31 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vE2Y8-00000000VZc-1QVc;
+	Wed, 29 Oct 2025 09:33:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDz4m-0000000HNNR-2XY8
+	id 1vE2Y6-00000000VZ2-2YXd
 	for ath12k@lists.infradead.org;
-	Wed, 29 Oct 2025 05:50:30 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59T4ur4v3642861
-	for <ath12k@lists.infradead.org>; Wed, 29 Oct 2025 05:50:27 GMT
+	Wed, 29 Oct 2025 09:32:59 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59T4uoZF3720134
+	for <ath12k@lists.infradead.org>; Wed, 29 Oct 2025 09:32:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	WmAbIa2HLXGYbY6ZAbrAI3G+RXNbdEwalIvBalCKji4=; b=LoAUlbno80vuob69
-	4XmkeXz5/TSlanqqv8vvBmc6XesLnrOD2VotMcYOzHhYp5Q2eba3ssaoMZ034cBz
-	5vtdZ6mdB2a+9QLuERnqChFlaP+Z8ZjOB4YxJug7yYPPPBl6mXNtiAguzQ1/lC3i
-	uk8suQ8tHLMCCJECHt28zYFhWTGYpHHWWBhrcCvpujnQ9q88a6RLzrfLsYxmwlLb
-	HSybs3Idlak16TVxaXEMeywc9lT77IKFL9lKnLdDZIB09MR/cD6ZnA+1XN/B45zD
-	zfAYCckvMuil/Bjus0ZCAa3FvA+3Tsnd8Zd/zQ1+M8OE8+1NayAOIPaZPjfvBEE7
-	TzkvFQ==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a34a1hb6c-1
+	zWi24kAJejrPENad76Qq2UdryfCSFDydt8kyu/N4BqY=; b=Izo+03bpwNgirYPT
+	koLcdRD7HsnGn2kk6xass8gkF6HfaCNJIQ9WKY+8JjMFdO4Z8xREAajxtQo2XCwB
+	Nr1H6ZZVUymIJBLeJpuBOYctmKN6CcxrzXkoj8EL7Jb0SheBcWSTSxjuQ2whoGck
+	XXc67IYKwPEG45/SpXohrGUk4puvvIhpuBON10KgHl1WUb7W6QnJ/w86aswRnwp6
+	nIEn/sTLCZz1NaIeNXZUR4CABI4cctD/bg3dOhBREmhtAPytOWLhjOVfWRaA5MR+
+	uA2le8poOfDOJOeKW7EDQxRy+Cz2cRTfoKGY1VnNx1H5sxivy7xHDkAiLuRnXUoI
+	w8c/dQ==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a34a221je-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 29 Oct 2025 05:50:27 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-26e4fcc744dso38913125ad.3
-        for <ath12k@lists.infradead.org>; Tue, 28 Oct 2025 22:50:27 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 29 Oct 2025 09:32:57 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-3324538ceb0so11293638a91.1
+        for <ath12k@lists.infradead.org>; Wed, 29 Oct 2025 02:32:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1761717026; x=1762321826; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        d=oss.qualcomm.com; s=google; t=1761730377; x=1762335177; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=WmAbIa2HLXGYbY6ZAbrAI3G+RXNbdEwalIvBalCKji4=;
-        b=eZhAlBadcnwdWhlGNGfyWPowip3kMPZ5yV7prMpHfSm/e+kOD03KHy0x3xGBTMOq2S
-         y1EsXuLefhdLjgS1uhDKeYCsbbYONAl/pQK2qBu0i/OgD6amIAPdvgd7/N/pzErfCeKZ
-         vJelU21l2YwLstxbLtF+gCjQAGWPPio/hxs5Ix83xnanbxz1JQ95emRL0XlZHJDQCD5v
-         6kFaHCq/oR3YNGohbcCz6z9RBlPW95Q9v2tZz2kDnp+4x/TpnH0Kktey9IOikZIPoj8I
-         f2sCLaBddCC+Hd/1j3xxYgNrqBXs+H8d4EJKkyLlKoiY3eFfxYp5PSvqySUBZEUKFmmF
-         myEw==
+        bh=zWi24kAJejrPENad76Qq2UdryfCSFDydt8kyu/N4BqY=;
+        b=VJtJHWRjQt9zwu3m9ucbXMEHuIAIc92VVTwugQC6x+9PEfNXQSluiKIjqRG1epQf5E
+         2FaE/nsES1BJrvuEaTlyB+OfSsL46qp4g9SnH6MnPa8ZmOjVEmE4uAbo/o4xQnbDH3dM
+         PATZtuuUH793BwbP3yHmdq0U/DUNYNH2gQ1F1OaVwz/1lLJsrtT2SSsrNdPGblw8k3Af
+         8NiN6gfZrZQn9fDmAD5fvjJO9FVu53Rh/KPxL/xpAd6nIpDQwYfiIQi/+nzuv6kcFJ1k
+         7Nca//z31dF6duncQQxS8eB56+X6JvugMkR01ANUMJpWk1trL6OFEWqesDseVFI6d39v
+         WcuQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761717026; x=1762321826;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20230601; t=1761730377; x=1762335177;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=WmAbIa2HLXGYbY6ZAbrAI3G+RXNbdEwalIvBalCKji4=;
-        b=JV+Q0BQPXDt7zQ2naFiq7DNZeFV4g1jySU0QwiVany0j9ENH/0OBqOmwnYhnI/PzdI
-         K+rEHkyHU90UWTxMogwzCf+2gCWAFFqQV5W/0uWfHQcBhuhY275y6zgDC5T6l+qcd+Kf
-         PuWmnzx67+T4Ymz0f+dSb7VE9SwCr07yz+rKtREd8EZdV/7SajhMxdoIcKiCsmAZewkq
-         5NiuHGTBwL9bpDNRbXfxil/UyyHqls2JXZMecZCXesXID/i2vbuyrr00txt7zXKX2fA2
-         QfoJzCP5ZgJWbrFCXNxOZOhov1UP0kZEqU5Yza9/8nAZds9J81VI49apq/UUxhKtEmvB
-         0GGg==
-X-Gm-Message-State: AOJu0Yw2sE54x6SFatkeXfYn2oDiiqQo7dJ0+gvJD1tIbWMFTf9YreuU
-	SGQYjYDyGVW2OohAGADOBEThH7JDjsO33IZlEffble6yGxSXqRk6hI80dNLQfckZQ/zZSwex0dd
-	Xgw0roS/Ge+tE3x0ULtVBdHqI85aH4N0TT7JKmw9sx0Znb311ho0PcnFUA09vxYMw
-X-Gm-Gg: ASbGnctXGoTx46hyE5/NfLCigUqK7QyPxGtQOMMdOjMwdjFVG2Vs0oKsfmOPdjunbtz
-	jtt5DpKCw4Na9V/CB6wHcMKmJ67IBEyUzwKD2nIxzNiaewbI6C+t4QgHj/JUc6BZhW/1LIxkZYj
-	iSB6MjQSad9E6S0z1h+RJsx/qbize+kL5oLWSPMrFE/c828dkqAQi+yzXeNS6SU5Na8vsNndGQa
-	B8goJWWus0aGVFQY9JP/omPqZ6lgUEtJtqvgRErx0GA6y6JX+PeR0tdRGM8ZS02fLf77Zvc7mgK
-	bVe+qq3cEswUBJNcRf+oy5BDQy663KsfOb6nXnM8e/3JYXIYhnBnmwrY/xIB4oDcZk8w2mWlRt7
-	npkJYSwOo64uOpjcNO4aUVs0qqcHkMfciliATMZtM8wWqMqI5cbxyGzFvfhSx
-X-Received: by 2002:a17:902:e5ce:b0:290:c3ad:8432 with SMTP id d9443c01a7336-294deef9a95mr22435875ad.46.1761717026486;
-        Tue, 28 Oct 2025 22:50:26 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IE3oGqY6JtnY6s9TE+mNpoQ7oW8tW3Vrva1KS/4zSSUMofam04Zi+J5i3WgpjvLhwaCJSaxcA==
-X-Received: by 2002:a17:902:e5ce:b0:290:c3ad:8432 with SMTP id d9443c01a7336-294deef9a95mr22435595ad.46.1761717026005;
-        Tue, 28 Oct 2025 22:50:26 -0700 (PDT)
-Received: from [10.133.33.233] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-29498d0c414sm137576335ad.44.2025.10.28.22.50.24
+        bh=zWi24kAJejrPENad76Qq2UdryfCSFDydt8kyu/N4BqY=;
+        b=VzX+9mvUD8tmYeKeqjSPFiAfTl+sGbjvGYKD1w8QNabSCVsMYvqXR99SW9/8S/53KL
+         HybrJl1R303pXiV6SroNGIGw6VGwsHE4DoYFLKg0ZArsNqOIKzWd2SAdLemMIT8NX87d
+         vT8aZc2pZAq3ZjA5beCK+wa7jfRHlvelmqymOyTZsVxD/B/HMDtYba0iuXfqY7c13abf
+         Hk2ccbWsgIZbXUMRjthBDOfjfoUWsv3S4LBD2I1+lhB/Qt00+JcnscgfEW05SjzxZ5py
+         J8vvRUuNVNfGsR+hBDr5imRPrY2h55HkQrfqBBgTtpnJczipfP+sf5RWgJaFQIbJPfq5
+         VeJg==
+X-Forwarded-Encrypted: i=1; AJvYcCUAXbTme4ed7ZFfthE273FAoASzBpXYKdT9QIgq+vnODjMNU5QOJA6yytVNdswxDeZFunGqo/s=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzr/zTnsjkaKZ41NqiCb8+WJos6HlvlNL5U5YEEK1jL9CBXoTE6
+	9qYf/sZLPYGNc/KzLkfVZir+1LEO3nScaV1WaJLZs2u1+gMt2CDVaHPYLcPEiughXu6IJr74Pjw
+	eic4oNuxBH77veu+WxN8DUtnX3QHA7vXLtnRZO4E5M69f07BrNtDtZxnwDaLk5ZjU+DYXovsN
+X-Gm-Gg: ASbGncsmu3Wwx7gMxjfOGbht61mnHb0FHnYjSNOPQ4UieUrLUvpapdry5UKJFmMEY4A
+	iTGwjdU5ejpVMgWkJDarTEQpD8nHrkNvw3/ox1E7MdmFAWyH1i8ZbyVeBlq+e4HhtKQTfExqZWo
+	qIwJLFMWqhOMzY8N5MRO05QMq9QSJIpR4ju7ZHo6VStno+mNAr5PMhdqOKjFTdUGZomPhlSscaS
+	d5qOV2lOwJEnEjnYX5pxxmrhrBulrMWGIphEKxpLamPq0bgo5ilnjb6DUd1qSXf5w4I7Y/AkTqt
+	YhlbnUjoT4MnkBPka9XsPK9FkUNrcuRwT52VSRlJeSdAImUqVjmSFebW7GtSbTglDj7DnY5WZqb
+	Om+vgDRvR0C7d2XaXhA48vcZ1qAuqYZUrX5vgHSZSnePj
+X-Received: by 2002:a17:90b:1d46:b0:340:29be:8afe with SMTP id 98e67ed59e1d1-3403a2a211cmr2590095a91.33.1761730376858;
+        Wed, 29 Oct 2025 02:32:56 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGT9rcn3NNg/VsimPAfxmXnqtN4k004t5UmNePulLNNW92ejPqrq14iwU13N8IYS0m1DaSM1w==
+X-Received: by 2002:a17:90b:1d46:b0:340:29be:8afe with SMTP id 98e67ed59e1d1-3403a2a211cmr2590067a91.33.1761730376362;
+        Wed, 29 Oct 2025 02:32:56 -0700 (PDT)
+Received: from [10.152.204.0] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-33fed7d27b2sm15042316a91.4.2025.10.29.02.32.54
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 28 Oct 2025 22:50:25 -0700 (PDT)
-Message-ID: <7d389aa2-5e5d-4b0c-8603-60bbcbce7015@oss.qualcomm.com>
-Date: Wed, 29 Oct 2025 13:50:22 +0800
+        Wed, 29 Oct 2025 02:32:56 -0700 (PDT)
+Message-ID: <1b7ea1a1-b1ce-b50d-c141-d9865b0d0175@oss.qualcomm.com>
+Date: Wed, 29 Oct 2025 15:02:52 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-current] Revert "wifi: ath12k: Fix missing station
- power save configuration"
-To: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>, jjohnson@kernel.org
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
-        linux-kernel@vger.kernel.org, Ross Brown <true.robot.ross@gmail.com>
-References: <20251028060744.897198-1-miaoqing.pan@oss.qualcomm.com>
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH ath-next] wifi: ath12k: fix reusing m3 memory
 Content-Language: en-US
-In-Reply-To: <20251028060744.897198-1-miaoqing.pan@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
+To: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+References: <20251029-ath12k-fix-m3-reuse-v1-1-69225bacfc5d@oss.qualcomm.com>
+From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+In-Reply-To: <20251029-ath12k-fix-m3-reuse-v1-1-69225bacfc5d@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=dbiNHHXe c=1 sm=1 tr=0 ts=6901ab23 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI5MDA3MSBTYWx0ZWRfX226QP/61bTGW
+ iKgZy4QrOt0B9OxNTPBJXZmImoozueacZWdUN5OL8NDVen2uvLjK1Y3JfO5VnXLX0eV8Iwk9O2R
+ Md0Kq7w4Ch85bQoq9ereDZs6NUNC6+cYRAz8BuYYnHwufPabHT4LJrsZGGSPP2vpOHp29Nx1dZZ
+ ajCfqDssa8B9e4dEzm5uOp/t20mgULk2fzDhcfIDEeEXuf4V9c+fWLiVO9oeUbcjW/+HE2eh1c9
+ O9MvisTgo21cVhWXl5LIy9N7X2oB+2d7nSD5Ie6WGOidzyP5YpdGghMI/HZMFw5cwdaIKdaoe7P
+ 8RH1q2A6NZR2FluRkIQmfKEtY9rQmQFtc2VD1gI18gPUyTT9zZzHG3C+G90ItVgNyJ1j01AcZtX
+ 3I/3lnwpHoELL+MxbAagOu/hCtfiqw==
+X-Authority-Analysis: v=2.4 cv=V5ZwEOni c=1 sm=1 tr=0 ts=6901df49 cx=c_pps
+ a=RP+M6JBNLl+fLTcSJhASfg==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
  a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8
- a=dJ2fJ0zB95bh057hNQsA:9 a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-ORIG-GUID: UwcqsU3NiR30vj0LXnuuhh8Rx1SyUeig
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI5MDA0MSBTYWx0ZWRfX6LckGfZqBVFG
- XrOPeu5X6CtF/NVhqXl4HgUDnkm/4pFTXY3rKDRP5Ku79uMaSFYUbsRe8fWUfEFlSNaXkC/u1VN
- pTeC9VKrbpGGS4LoXG3gJkiTNQzAEGxFHoK5unh7U//D97y/v077F2qZ9kmhM5PLk+Bgva2oSOz
- 1SQwYtuQyZyGXjfJ5xnRHOazhkkBoAhNqaTw0UP4pRqixg0rqzTbImSE3aJ9T9taSGI7BvGVSiy
- lQ4/T5t/ejpLiuDJJIcpIbtq4WfXFCZZoAVzamaTi9vs+FUjp6yYLeidr10762vu9fmO4TeZp9O
- dpORuyafwOTmuqMDflfA5XWYbix04Wushyk3KwGyJOAj/N4PtZSDqVMGFt7rSC12X2KvhMqrp1h
- jXgsRZLjiksv8CS0NGczOAc9XkT53A==
-X-Proofpoint-GUID: UwcqsU3NiR30vj0LXnuuhh8Rx1SyUeig
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=Y1qFtuX8SmuMirZhVQkA:9
+ a=QEXdDO2ut3YA:10 a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-GUID: SEzElEvHAeXO5IIEFW6f_2qgf1E6Og9V
+X-Proofpoint-ORIG-GUID: SEzElEvHAeXO5IIEFW6f_2qgf1E6Og9V
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-29_02,2025-10-22_01,2025-03-28_01
+ definitions=2025-10-29_04,2025-10-22_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 suspectscore=0 lowpriorityscore=0 impostorscore=0 adultscore=0
- malwarescore=0 bulkscore=0 priorityscore=1501 clxscore=1015 phishscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2510290041
+ spamscore=0 clxscore=1015 adultscore=0 suspectscore=0 bulkscore=0
+ phishscore=0 lowpriorityscore=0 priorityscore=1501 malwarescore=0
+ impostorscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
+ definitions=main-2510290071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251028_225028_775383_4D6F6515 
-X-CRM114-Status: GOOD (  22.87  )
+X-CRM114-CacheID: sfid-20251029_023258_654765_2022B54C 
+X-CRM114-Status: GOOD (  12.32  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,193 +146,21 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 10/28/2025 2:07 PM, Miaoqing Pan wrote:
-> This reverts commit 4b66d18918f8e4d85e51974a9e3ce9abad5c7c3d.
+On 10/29/2025 7:37 AM, Baochen Qiang wrote:
+> During firmware recovery or suspend/resume, m3 memory could be reused if
+> the size of the new m3 binary is equal to or less than that of the
+> existing memory. There will be issues for the latter case, since
+> m3_mem->size will be updated with a smaller value and this value is
+> eventually used in the free path, where the original total size should be
+> used instead.
 > 
-> In [1], Ross Brown reports poor performance of WCN7850 after enabling
-> power save. Temporarily revert the fix; it will be re-enabled once
-> the issue is resolved.
+> To fix it, add a new member in m3_mem_region structure to track the original
+> memory size and use it in free path.
 > 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.IOE_HMT.1.1-00011-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
 > 
-> Fixes: 4b66d18918f8 ("wifi: ath12k: Fix missing station power save configuration")
-> Reported-by: Ross Brown <true.robot.ross@gmail.com>
-> Closes: https://lore.kernel.org/all/CAMn66qZENLhDOcVJuwUZ3ir89PVtVnQRq9DkV5xjJn1p6BKB9w@mail.gmail.com/ # [1]
-> Signed-off-by: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
-> ---
->  drivers/net/wireless/ath/ath12k/mac.c | 122 ++++++++++++--------------
->  1 file changed, 55 insertions(+), 67 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index eacab798630a..db351c922018 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -4064,68 +4064,12 @@ static int ath12k_mac_fils_discovery(struct ath12k_link_vif *arvif,
->  	return ret;
->  }
->  
-> -static void ath12k_mac_vif_setup_ps(struct ath12k_link_vif *arvif)
-> -{
-> -	struct ath12k *ar = arvif->ar;
-> -	struct ieee80211_vif *vif = arvif->ahvif->vif;
-> -	struct ieee80211_conf *conf = &ath12k_ar_to_hw(ar)->conf;
-> -	enum wmi_sta_powersave_param param;
-> -	struct ieee80211_bss_conf *info;
-> -	enum wmi_sta_ps_mode psmode;
-> -	int ret;
-> -	int timeout;
-> -	bool enable_ps;
-> -
-> -	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
-> -
-> -	if (vif->type != NL80211_IFTYPE_STATION)
-> -		return;
-> -
-> -	enable_ps = arvif->ahvif->ps;
-> -	if (enable_ps) {
-> -		psmode = WMI_STA_PS_MODE_ENABLED;
-> -		param = WMI_STA_PS_PARAM_INACTIVITY_TIME;
-> -
-> -		timeout = conf->dynamic_ps_timeout;
-> -		if (timeout == 0) {
-> -			info = ath12k_mac_get_link_bss_conf(arvif);
-> -			if (!info) {
-> -				ath12k_warn(ar->ab, "unable to access bss link conf in setup ps for vif %pM link %u\n",
-> -					    vif->addr, arvif->link_id);
-> -				return;
-> -			}
-> -
-> -			/* firmware doesn't like 0 */
-> -			timeout = ieee80211_tu_to_usec(info->beacon_int) / 1000;
-> -		}
-> -
-> -		ret = ath12k_wmi_set_sta_ps_param(ar, arvif->vdev_id, param,
-> -						  timeout);
-> -		if (ret) {
-> -			ath12k_warn(ar->ab, "failed to set inactivity time for vdev %d: %i\n",
-> -				    arvif->vdev_id, ret);
-> -			return;
-> -		}
-> -	} else {
-> -		psmode = WMI_STA_PS_MODE_DISABLED;
-> -	}
-> -
-> -	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac vdev %d psmode %s\n",
-> -		   arvif->vdev_id, psmode ? "enable" : "disable");
-> -
-> -	ret = ath12k_wmi_pdev_set_ps_mode(ar, arvif->vdev_id, psmode);
-> -	if (ret)
-> -		ath12k_warn(ar->ab, "failed to set sta power save mode %d for vdev %d: %d\n",
-> -			    psmode, arvif->vdev_id, ret);
-> -}
-> -
->  static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
->  					  struct ieee80211_vif *vif,
->  					  u64 changed)
->  {
->  	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
->  	unsigned long links = ahvif->links_map;
-> -	struct ieee80211_vif_cfg *vif_cfg;
->  	struct ieee80211_bss_conf *info;
->  	struct ath12k_link_vif *arvif;
->  	struct ieee80211_sta *sta;
-> @@ -4189,24 +4133,61 @@ static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
->  			}
->  		}
->  	}
-> +}
->  
-> -	if (changed & BSS_CHANGED_PS) {
-> -		links = ahvif->links_map;
-> -		vif_cfg = &vif->cfg;
-> +static void ath12k_mac_vif_setup_ps(struct ath12k_link_vif *arvif)
-> +{
-> +	struct ath12k *ar = arvif->ar;
-> +	struct ieee80211_vif *vif = arvif->ahvif->vif;
-> +	struct ieee80211_conf *conf = &ath12k_ar_to_hw(ar)->conf;
-> +	enum wmi_sta_powersave_param param;
-> +	struct ieee80211_bss_conf *info;
-> +	enum wmi_sta_ps_mode psmode;
-> +	int ret;
-> +	int timeout;
-> +	bool enable_ps;
->  
-> -		for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
-> -			arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
-> -			if (!arvif || !arvif->ar)
-> -				continue;
-> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
->  
-> -			ar = arvif->ar;
-> +	if (vif->type != NL80211_IFTYPE_STATION)
-> +		return;
-> +
-> +	enable_ps = arvif->ahvif->ps;
-> +	if (enable_ps) {
-> +		psmode = WMI_STA_PS_MODE_ENABLED;
-> +		param = WMI_STA_PS_PARAM_INACTIVITY_TIME;
->  
-> -			if (ar->ab->hw_params->supports_sta_ps) {
-> -				ahvif->ps = vif_cfg->ps;
-> -				ath12k_mac_vif_setup_ps(arvif);
-> +		timeout = conf->dynamic_ps_timeout;
-> +		if (timeout == 0) {
-> +			info = ath12k_mac_get_link_bss_conf(arvif);
-> +			if (!info) {
-> +				ath12k_warn(ar->ab, "unable to access bss link conf in setup ps for vif %pM link %u\n",
-> +					    vif->addr, arvif->link_id);
-> +				return;
->  			}
-> +
-> +			/* firmware doesn't like 0 */
-> +			timeout = ieee80211_tu_to_usec(info->beacon_int) / 1000;
->  		}
-> +
-> +		ret = ath12k_wmi_set_sta_ps_param(ar, arvif->vdev_id, param,
-> +						  timeout);
-> +		if (ret) {
-> +			ath12k_warn(ar->ab, "failed to set inactivity time for vdev %d: %i\n",
-> +				    arvif->vdev_id, ret);
-> +			return;
-> +		}
-> +	} else {
-> +		psmode = WMI_STA_PS_MODE_DISABLED;
->  	}
-> +
-> +	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac vdev %d psmode %s\n",
-> +		   arvif->vdev_id, psmode ? "enable" : "disable");
-> +
-> +	ret = ath12k_wmi_pdev_set_ps_mode(ar, arvif->vdev_id, psmode);
-> +	if (ret)
-> +		ath12k_warn(ar->ab, "failed to set sta power save mode %d for vdev %d: %d\n",
-> +			    psmode, arvif->vdev_id, ret);
->  }
->  
->  static bool ath12k_mac_supports_tpc(struct ath12k *ar, struct ath12k_vif *ahvif,
-> @@ -4228,6 +4209,7 @@ static void ath12k_mac_bss_info_changed(struct ath12k *ar,
->  {
->  	struct ath12k_vif *ahvif = arvif->ahvif;
->  	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(ahvif);
-> +	struct ieee80211_vif_cfg *vif_cfg = &vif->cfg;
->  	struct cfg80211_chan_def def;
->  	u32 param_id, param_value;
->  	enum nl80211_band band;
-> @@ -4514,6 +4496,12 @@ static void ath12k_mac_bss_info_changed(struct ath12k *ar,
->  	}
->  
->  	ath12k_mac_fils_discovery(arvif, info);
-> +
-> +	if (changed & BSS_CHANGED_PS &&
-> +	    ar->ab->hw_params->supports_sta_ps) {
-> +		ahvif->ps = vif_cfg->ps;
-> +		ath12k_mac_vif_setup_ps(arvif);
-> +	}
->  }
->  
->  static struct ath12k_vif_cache *ath12k_ahvif_get_link_cache(struct ath12k_vif *ahvif,
-> 
-> base-commit: 2469bb6a6af944755a7d7daf66be90f3b8decbf9
+> Fixes: 05090ae82f44 ("wifi: ath12k: check M3 buffer size as well whey trying to reuse it")
+> Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
