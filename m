@@ -4,133 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2936ACCF9EB
-	for <ath12k@archiver.kernel.org>; Thu, 30 Oct 2025 02:09:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A886BCCF9F0
+	for <ath12k@archiver.kernel.org>; Thu, 30 Oct 2025 08:48:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=txTiryi9IhAHzPUCcDKkjbgc4ZJqQxM5lfYU1LQT8C0=; b=L0dT29OVDMoU0UsDXAXNWbYDqi
-	qUGEuQXlxqRNI1gXjs8VXBPgGeC0GizhhaM22ttHVtSmATewnUBvjA7LQViEGHmuA2x+W/cigXP9K
-	xRrk4qdeofHeojSgUywhRRoQXP9cCLr5j2WPC3TpAcq6nHXnsz/zMAfZ41UIJC5TfETN4shlTlD94
-	ll3PTHWT+BzcIsyxmzBBgshpUmwVHVQXMERh8ghL2XsG7lWlhV/GZlQqQd8EIeT/cbBqZ6J06hGCA
-	SDtxrdmNbDb/QpivLOZu9wp8LVJGZfHmgDvrJB9a+//6tPuZeHyriZUIk00P94zjYPtGcIJaUcuzE
-	Y+NcydUQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=3Hf+wEBwc7Rzr1pIbO2ZOzrCbf45iMRZH1tYzls+nMg=; b=WUv1+hf2OsSEnAk5cgFurklEFb
+	aXq3ieOYxQI1/OUAYE06H7osSSlT/NHlLwbJPcIQ1QCFpumLe+Q+UP0vHMRixCizh5/VVhl80l/rE
+	AqTH9r2tNPNqYZmlCHc8zdfw2kAlbOM5MuKFRzD7/ImDMZPJhXeAj9tZWUoNrrk0WUWCeTvXIL6Tb
+	5jFBBECm1fLWvHNeqXvOsaOIIJiQHj8eQ2VguTOjtutVMIpxSNkPqHo+LFjwAW+KXQg+CjNhF4hEQ
+	HDeX86FA7zFFYMm9ypivTfgLevunMs4Oy7/nzl8xe5onsQRrlU8KLggq/KpvJho0ZqVAYT95vVtwk
+	s0Q5VcWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEI66-00000003MRY-3mmi;
-	Thu, 30 Oct 2025 02:09:06 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vEOKC-00000003mxq-1q0L;
+	Thu, 30 Oct 2025 08:48:04 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEI64-00000003MQz-0319
-	for ath12k@lists.infradead.org;
-	Thu, 30 Oct 2025 02:09:05 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59TG2vMp4135571
-	for <ath12k@lists.infradead.org>; Thu, 30 Oct 2025 02:09:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=txTiryi9IhAHzPUCcDKkjb
-	gc4ZJqQxM5lfYU1LQT8C0=; b=oGg2nbrr49gkQTFfeAPoPwOXJNgKD9NsS9qu/e
-	FRNv0T8tWdJNhpPjtzpxR0Q5i3/GI1ztYXE4NOaLgLc8HNDMPy6vq1+SsdLTzASb
-	TP55mZKvoQutMOE7HuGvzPOuKLbo/DvE2ks25uGwBDWWHiH5FP0NiXWGpRuEtJIg
-	A/p82MRMgIgTKYogtVPnErfsdKG9WwXM+T52Ktt3n6RiP79Ox8XGOdoKf7KWyo5o
-	icGWYX9GrrHPzAYRb/dK0x+DTjFPVYxLAO/t7qYFBLPPaRdVT3eJ9nQMLYhVQKu5
-	AsUNZzR3ZcJrcH4i4shsPoSAq1sudTdCDuLx6hWwQ85DUlAA==
-Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a3ff9u0uv-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 30 Oct 2025 02:09:02 +0000 (GMT)
-Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-7a27ade1e73so459743b3a.2
-        for <ath12k@lists.infradead.org>; Wed, 29 Oct 2025 19:09:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1761790141; x=1762394941; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=txTiryi9IhAHzPUCcDKkjbgc4ZJqQxM5lfYU1LQT8C0=;
-        b=XPIWrZo64KhlnNeylXE6c3dJGMQDRMarhitYCEAH4+jp4hgJyXbHGS25XZmX3RSZul
-         75vH17qmiLRpyObZFM4Yeh91hMxF65bCzKkF9TPT6YxeVHEDghjKynXQy86e+VzHD3YJ
-         nCxrDaIammlWxYV3RI18lUVcQ8AFy8JDLS/ht0Ce7tAbk20aocpOf//u5nsXCIzDLI1k
-         tPTF+ivqDvYKLashYcx6e1cJ18O5vBTm4TG7IVAmz/P0rJRclUEL4FB4LXgZhJ/9OkSt
-         2DW8Vul7wPZ3QhrIIQ1kSDfEUYGkN4un507ALlgLze0vCM/QDmvsaTdmobnj3dysf3Q3
-         Ph7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761790141; x=1762394941;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=txTiryi9IhAHzPUCcDKkjbgc4ZJqQxM5lfYU1LQT8C0=;
-        b=BNDtZiSL30GLQy5wygiaxDIbWb5n1Jj5E8222wT79d4rYC5tm4a6t2ybJxDyyVi5I0
-         ttromK3BhUCa6KAwV8xweDQ7aaVMI16/FDAUCQZBwimLFJixpW1f0bTFf95SGR2RiFnq
-         4Jw3nOZutV58SLhooUEYapzeJPkeDWRp9kNpdPlvrpHsOZMaAHblVkSKAPrwignK0s6C
-         2/fw+Tpfp0RUWGOqxWQO+oXD+LsNiqp8r2s8SWcpjwhxi5YU11zugodyPa8B2K2kuyXE
-         eTQd/zEuWXwveBlCV4O1BaA3m0GK/myO1zD4codhrJWKYstqUuYqiFiACQ7nKKSDvPZX
-         zDvA==
-X-Forwarded-Encrypted: i=1; AJvYcCX6y9ndfAToK18dETFm7qM2HHtX5ohcUfhYyCsXk9dolPfjfeAjgbVrSApOsMxPG9Zhcqfpxk0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwcCArGvw3q9nm7mbZGDHkpkGsVZv6dAUbrpYNQjleeaT29CocE
-	bo8vmFivAXelxRuK2T6551PdIYF93LNxEU8KYqsf5IkcauRZxRXYv8Dy6EO4gP6Gwj6UN81CyRm
-	P40zrCo9CIb+mS8m+HDfE/vRXBy3GJ+D5kwpfrmOdaUuew6ZZh4AyLIOj/ghDndyWR3a+HBkl
-X-Gm-Gg: ASbGnctUW4hlJwIEd65DGWHod6alhqLw0I3gF3Y7XwM/btk8O1vkUaX4+gGDzmqI3Tz
-	ukO18VAOAu6j/JK0M1XDjFVyXBrjYrMHx/cFhKev4qpZ4M3cM9FoDZdeMiDnF9PcnbMfBZe82zr
-	VlJtk9OG6MDE9ksNLps0iJoHwO4MDsKnt5s1J7vVERjGv0w2Y1uknBAjSw+chnENya1NJDZ2yXT
-	1DSj5cdADtOj+y/jKQXJRaVO+QhwSaGU0B+kvr644J99278O79JGtku1KWTKijDqis7zwyPks9m
-	ixWD865HVlqBmEMGqI0KeK3HMO2lXrMPhGcOZ7zTUGU6eWeln40f8FvOGPm5f0HAC9dxaVp6iOf
-	TZFd/Ox04kq7G4dkEQJknieQMu6msWeP31RzeeMSX6p6iRcKTYt+K
-X-Received: by 2002:a05:6a00:84a:b0:7a2:50c5:64e8 with SMTP id d2e1a72fcca58-7a4e4e12aebmr4820888b3a.23.1761790141319;
-        Wed, 29 Oct 2025 19:09:01 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGHmgeapjx0QflJejJC5uG1l2QuXj3wQa6orQ0sWPzjfQno7ofwPjEYQ1924atN+a/PbBmlHw==
-X-Received: by 2002:a05:6a00:84a:b0:7a2:50c5:64e8 with SMTP id d2e1a72fcca58-7a4e4e12aebmr4820862b3a.23.1761790140710;
-        Wed, 29 Oct 2025 19:09:00 -0700 (PDT)
-Received: from [127.0.1.1] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7a414066d0esm17003502b3a.43.2025.10.29.19.08.59
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 29 Oct 2025 19:09:00 -0700 (PDT)
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Date: Thu, 30 Oct 2025 10:08:43 +0800
-Subject: [PATCH ath-next] wifi: ath12k: fix error handling in creating
- hardware group
+	id 1vEOK9-00000003mwg-1M70;
+	Thu, 30 Oct 2025 08:48:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=3Hf+wEBwc7Rzr1pIbO2ZOzrCbf45iMRZH1tYzls+nMg=;
+	t=1761814081; x=1763023681; b=QpKwMHkj8wEL1QkP3lOv/Moxi48bMPE3ZjzXcTeTdGvvsyv
+	2Dnj0Ys7nfY+P7DN8jUSp6RVpnV3g65IvN97lhyan9dLsz5hKsOr/irKH1lckgN/y0NvgvzRCtl8w
+	CMEp44zJ/xWJI9wSf4AoV420speeob0QogZAhleUryKXleJ4PCj26NiIFp5Z6ftlWnCisNyVjdc/D
+	KMoVxajfrA2g+yx63Vc6K1jMx3Pb+uuXlOG4KVMwEwv8ujylI7vUpk0G+HB7XdBd4M2SDEhlnrR+j
+	bPRrY9ZGJZRpobL7d9oNWJ9H7ZdtRCGVpoplPJWOnuXkSpDv7zIq8a6DZl64dwXA==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <benjamin@sipsolutions.net>)
+	id 1vEOK4-0000000GDBZ-1Lgp;
+	Thu, 30 Oct 2025 09:47:56 +0100
+Message-ID: <b6a9de98b9b09c73003b89331ba235c3a959c3fd.camel@sipsolutions.net>
+Subject: Re: [RFC][v1][Design] AP Architecture for Roaming with Wi-Fi 8
+ Seamless Mobility Domain (SMD)
+From: Benjamin Berg <benjamin@sipsolutions.net>
+To: Aditya Sathish <quic_asathish@quicinc.com>, Johannes Berg
+	 <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, 
+	hostap@lists.infradead.org
+Date: Thu, 30 Oct 2025 09:47:55 +0100
+In-Reply-To: <fb0a1ddb-af24-47f9-9d75-0a8f2e346d81@quicinc.com>
+References: <fbf4209c-4fd8-4047-96d7-7fa34d9ba44d@quicinc.com>
+	 <c618e0e8fdee9f7aa2628aefdf2dc04c48e6e9b7.camel@sipsolutions.net>
+	 <30403bb70a2a017c90b1d4a5a1a07514bb670822.camel@sipsolutions.net>
+	 <fb0a1ddb-af24-47f9-9d75-0a8f2e346d81@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.56.2 (3.56.2-2.fc42) 
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20251030-fix-hw-group-create-err-handling-v1-1-0659e4d15fb9@oss.qualcomm.com>
-X-B4-Tracking: v=1; b=H4sIAKrIAmkC/42NUQqDMBBEryL73ZVEa0371XsUP0LcmIAmNonWI
- t69wROUhYFhZvbtEClYivAodgi02mi9y4ZfClBGuoHQ9tlDxaqG3VmF2m5oPjgEv8yoAslESCF
- gLvejdQM2QmvGlbj2rYD8Zg6UNyfiBTIZdLQl6HJibEw+fE/2ys/8f8zKMV8ttajvN1Gr9uljL
- N+LHJWfpjILdMdx/ADTUvJ24QAAAA==
-X-Change-ID: 20250902-fix-hw-group-create-err-handling-58ff01c84d78
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        a-development <a-development@posteo.de>,
-        Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Proofpoint-ORIG-GUID: _-eSe1_p6fKRDdz2p4u-sWoF8fbttFe8
-X-Proofpoint-GUID: _-eSe1_p6fKRDdz2p4u-sWoF8fbttFe8
-X-Authority-Analysis: v=2.4 cv=Cf4FJbrl c=1 sm=1 tr=0 ts=6902c8be cx=c_pps
- a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=uChsZFC9AAAA:8 a=EUspDBNiAAAA:8
- a=Z_vG5fj8drChUe-V2goA:9 a=QEXdDO2ut3YA:10 a=IoOABgeZipijB_acs4fv:22
- a=ULtXvzFHYWHLyBAuiDia:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDMwMDAxNSBTYWx0ZWRfX1SRczQFlN6Rn
- YifYod+MplAIG3oLVAcmTqijOEGn5uRBv/+EsIq7C6D5tJds8/o6GkbwoTft/1TZFdemQnLLEGS
- 1DYltJSNWdQXG/DvF1RiQ2edE+rE1e8b4CAV/q2D4zqt9ISey0bjaZs98ra06tCMmQavfgqQJdk
- VPFWO+nvi383ec890LFNxgG4cFN9Fmv/UO2jBnTYQ7qFdkgZbBVcYP/fMpAQNMxurD68zgK9iXf
- E2TTuMLFH+NI9ELfhWbPnUxXWSMmzhAtRuRRvjq1qlD5Bcivy5+Z+PiX41ZU0U1qi+3Cx7mfuWN
- 9wssBviKB8WiycqX8dlkYQ4FYHRrTO82BtaxNCvhUxYyvsfwf1RWrS3udMCIYhyk08eFLFZFfjS
- MlbpKrMiSoc4VnR5ENBm4dzHn8eb1A==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-10-30_01,2025-10-29_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 suspectscore=0 phishscore=0 malwarescore=0 impostorscore=0
- clxscore=1015 priorityscore=1501 lowpriorityscore=0 spamscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2510300015
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251029_190904_062956_D4004732 
-X-CRM114-Status: GOOD (  16.53  )
+X-CRM114-CacheID: sfid-20251030_014802_435573_3383C59F 
+X-CRM114-Status: GOOD (  26.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,112 +77,97 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-In ath12k_core_init() when ath12k_core_hw_group_create() fails,
-ath12k_core_hw_group_destroy() is called where for each device below
-path would get executed
+Hi,
 
-	ath12k_core_soc_destroy()
-		ath12k_qmi_deinit_service()
-			qmi_handle_release()
+On Wed, 2025-10-29 at 16:17 -0700, Aditya Sathish wrote:
+> [SNIP]
+>=20
+> > A good part of this argument - "pending management frames" - really goe=
+s
+> > back to hostapd's architecture and single-threadedness, but really I
+> > don't think "hostapd's current architecture implies more latency"
+> > implies "we must put this into the kernel."
+> >=20
+> > Continuing that thought: I think that hostapd's architecture currently
+> > leaves a lot to be desired, in particular around how MLD works, and
+> > obviously, at least to some extent, being single-threaded is an
+> > architectural advantage in hostapd.
+> >=20
+> > However, user space also affords far more flexibility than kernel space=
+,
+> > for example some things could be written in rust (with its "fearless
+> > concurrency", which I can attest to), split out to a separate thread or
+> > process, etc.
+> >=20
+> > Anyway ... I guess in a way I'm using the opportunity here to lament th=
+e
+> > lack of architectural work in hostapd which isn't necessarily related t=
+o
+> > this, but I suspect that had hostapd historically had more architectura=
+l
+> > flexibility we might not even be having this discussion?
+> On hostapd architecture: we have had internal discussions with Jouni and
+> recognize the limitations of its single-threaded model at least in contex=
+t
+> of SMD roaming. We are yet to identify any features outside of SMD which
+> holds a critical latency requirement. As such, we see _full_ multi-thread=
+ing
+> as a significant undertaking without any users of this benefit outside of
+> SMD (at least at this time).
+>=20
+> Given this, we are exploring an alternative approach =E2=80=94 introducin=
+g worker
+> threads for low-priority kernel events while enabling prioritized handlin=
+g
+> for sequences like ST Execution and the inter-AP messaging in the main
+> thread. This could offer a tractable path to bring multi-threading withou=
+t
+> having to do a deep-dive study on the impact of parallelism on existing
+> features.
 
-This results in kernel crash in case one of the device fails at
-qmi_handle_init() when creating hardware group:
+Do we have a clear picture of what the performance issues might be?
 
-ath12k_pci 0000:10:00.0: failed to initialize qmi handle
-ath12k_pci 0000:10:00.0: failed to initialize qmi :-517
-ath12k_pci 0000:10:00.0: failed to create soc core: -517
-ath12k_pci 0000:10:00.0: unable to create hw group
-BUG: unable to handle page fault for address: ffffffffffffffb7
-RIP: 0010:qmi_handle_release
-Call Trace:
- <TASK>
- ath12k_qmi_deinit_service
- ath12k_core_hw_group_destroy
- ath12k_core_init
- ath12k_pci_probe
+To me, it seems a bit that talking about threading might be a red
+heering. It could be that the primary issue is the prioritization of
+events when there is a burst of activity.
 
-The detailed reason is, when qmi_handle_init() fails for a device
-ab->qmi.handle is not correctly initialized. Then
-ath12k_core_hw_group_create() returns failure, since error handing
-is done for all device, eventually qmi_handle_release() is called for the
-issue device and finally kernel crashes due to the uninitialized
-ab->qmi.handle.
+We should not need threading as long as each individual event can be
+processed quickly and hostapd is able to keep up overall. In that case,
+we have an event ordering issue which can likely be solved by using
+multiple nl80211 sockets and giving them different priorities in the
+mainloop. By doing that, you can effectively pull all time-critical
+events to the front of the queue and ensure they are processed with
+only a short delay.
 
-Fix this by moving error handling to ath12k_core_hw_group_create(), this
-way the issue device can be skipped.
+Now, that doesn't invalidate your point at all. If we do have tasks
+that take a long time (crypto?, external requests?), then it can make
+sense to push just the slow part into a separate thread and pick up
+processing in the main thread once it has finished.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+Benjamin
 
-Fixes: 6f245ea0ec6c ("wifi: ath12k: introduce device group abstraction")
-Link: https://lore.kernel.org/ath12k/fabc97122016d1a66a53ddedd965d134@posteo.net
-Reported-by: a-development <a-development@posteo.de>
-Closes: https://bugzilla.kernel.org/show_bug.cgi?id=220518
-Tested-by: a-development <a-development@posteo.de>
-Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/core.c | 22 +++++++++++++++++-----
- 1 file changed, 17 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 5d494c5cdc0da3189640751b8d191fa939ac3ff5..a2137b363c2fea4deef724b682c1e41788777c06 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -2106,14 +2106,27 @@ static int ath12k_core_hw_group_create(struct ath12k_hw_group *ag)
- 		ret = ath12k_core_soc_create(ab);
- 		if (ret) {
- 			mutex_unlock(&ab->core_lock);
--			ath12k_err(ab, "failed to create soc core: %d\n", ret);
--			return ret;
-+			ath12k_err(ab, "failed to create soc %d core: %d\n", i, ret);
-+			goto destroy;
- 		}
- 
- 		mutex_unlock(&ab->core_lock);
- 	}
- 
- 	return 0;
-+
-+destroy:
-+	for (i--; i >= 0; i--) {
-+		ab = ag->ab[i];
-+		if (!ab)
-+			continue;
-+
-+		mutex_lock(&ab->core_lock);
-+		ath12k_core_soc_destroy(ab);
-+		mutex_unlock(&ab->core_lock);
-+	}
-+
-+	return ret;
- }
- 
- void ath12k_core_hw_group_set_mlo_capable(struct ath12k_hw_group *ag)
-@@ -2188,7 +2201,7 @@ int ath12k_core_init(struct ath12k_base *ab)
- 		if (ret) {
- 			mutex_unlock(&ag->mutex);
- 			ath12k_warn(ab, "unable to create hw group\n");
--			goto err_destroy_hw_group;
-+			goto err_unassign_hw_group;
- 		}
- 	}
- 
-@@ -2196,8 +2209,7 @@ int ath12k_core_init(struct ath12k_base *ab)
- 
- 	return 0;
- 
--err_destroy_hw_group:
--	ath12k_core_hw_group_destroy(ab->ag);
-+err_unassign_hw_group:
- 	ath12k_core_hw_group_unassign(ab);
- err_unregister_notifier:
- 	ath12k_core_panic_notifier_unregister(ab);
-
----
-base-commit: 43d31f3f26f766f357e95513ba75c5126ce17d4b
-change-id: 20250902-fix-hw-group-create-err-handling-58ff01c84d78
-
-Best regards,
--- 
-Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-
+> To summarize,
+> (1) We will defer offloading the ST Execution and inter-AP communication
+> =C2=A0=C2=A0=C2=A0 to mac80211 until we are ready to demonstrate the need=
+. Until then,
+> =C2=A0=C2=A0=C2=A0 we will proceed with hostapd-based ST Preparation, ST =
+Execution and
+> =C2=A0=C2=A0=C2=A0 inter-AP communication.
+> (2) We are planning to explore the introduction of worker threads for low=
+-
+> =C2=A0=C2=A0=C2=A0 priority kernel events while enabling prioritized hand=
+ling for
+> =C2=A0=C2=A0=C2=A0 sequences like ST Execution in the main thread.
+>=20
+> Regards,
+> Aditya
+>=20
+> Regards,
+> Aditya
+>=20
+>=20
+> _______________________________________________
+> Hostap mailing list
+> Hostap@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/hostap
 
