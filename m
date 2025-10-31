@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A91ECCF9F0
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0F2BCCF9E3
 	for <ath12k@archiver.kernel.org>; Fri, 31 Oct 2025 03:08:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,123 +12,122 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=K95Ko3CGgptOLyfI80+QbvELENUisYEUnnFY8ZDOn74=; b=2TYGjTSB6Wu4vGNDZtP+y3lmYw
-	vMuvbL2ypf2rz4cZgDsMmFox4M27Oi1C9WMJyTT5IOUei1OR2i40u2ZXugS5797yD1yrHkXtGX0ec
-	FsDZxeTSwqZvlT3bbyDrSajZJYh+UIRbgPn49HHT/1fT8yeWJhgVWDZ+zoWNQJH98kk9Ok5QiJzIA
-	/CLJ9SU2dNW/dCD/RUoB34JmTkjUDA2pobzdz9qGnlaTVgMCGF2n+DC0lH3gCR5SPAyQgLHinRIcM
-	+Y3uGnZGxlel91sbf4Qyl4GTA1xvh2isk+nF3GJSBNWmun2ZcO4bqBVcCJKM/pHA06GffpPYfkhtS
-	XxZjEQKg==;
+	bh=lUXjvY7OoRdcYQcgv7P8x8g67gGxIlqbdGmnJsZIYDw=; b=e5bZEVGzDlaAlYM9na42OwDUkL
+	pmQ/a8KJGbOcDU45JMWQv52rdTusOqOoq6JdZ/BcM55+pJXrZBRvDToGqNLwmvE2gGCPh61AurkRE
+	mUltDeLfIUTsBvVb3QHVDuVqE9qDfnsd40ylSEsMkNWuR1xP3n1yhpLppnCFGE2d/CD1dk4xzTr8J
+	TbgR5KhRiYQDDEi9VZ+QahS9LY15F5Ck0jLc9r1RDa3TFMIN44VkU/IfKnG+B5KWODSg2zgb9mJAC
+	FrkYaDZRQ1ooLkb/wsuNdB5MNQsFGQJ+XTKdFMqGW4PiySoClknvpbvkxIq9k6y6GOANrVvyjdMqm
+	yxNa2fMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEfUg-00000005IwT-03VQ;
+	id 1vEfUg-00000005Iwp-1X7F;
 	Fri, 31 Oct 2025 03:08:02 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEfUb-00000005Iuz-1hMG
+	id 1vEfUe-00000005Ivr-038n
 	for ath12k@lists.infradead.org;
-	Fri, 31 Oct 2025 03:07:59 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59ULCAi0872731
-	for <ath12k@lists.infradead.org>; Fri, 31 Oct 2025 03:07:57 GMT
+	Fri, 31 Oct 2025 03:08:01 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59UKsS2Y832863
+	for <ath12k@lists.infradead.org>; Fri, 31 Oct 2025 03:07:59 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	K95Ko3CGgptOLyfI80+QbvELENUisYEUnnFY8ZDOn74=; b=J68eeW0AzovFztMF
-	KzAQuXQ2lgeHlvgYNicAhEYOOHK8MDiMR1QAe4W8Z9OEb72PvgX/9PXeFoD0OB73
-	mjP7vbeZpbqai89SYAW4J9/TENEx2eyaj0fh9h4leF3VEDJqdvglUjGOhu3z+cZg
-	aB9EQORiVip+VuydK6egqfYJDUrQ/zRGEgVrgPFmciUIXA193UvfQD+V2aFE0GtL
-	ql9kQ8RNRQRDSCL1RsrJxTPG23QJlho0i1QPqOXAmYKzLXg/fT7ri16wz424VMnB
-	jELfq1q3yf9TQaAEKIpBzZilyc4qxlK+HdanSBO41u8t+dqaizvENpYOa52i/maf
-	Lfzx3Q==
-Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a4fqn0q14-1
+	lUXjvY7OoRdcYQcgv7P8x8g67gGxIlqbdGmnJsZIYDw=; b=A49V15ayV4g66Kl/
+	R/iUdVFguJC1JTLWJIVw5O2PTKgiBz4I/8KVE9K7+GON4LGPt1FkiAyyJ3ajntud
+	RUReqNop2J3ZQxt187g7zzEOreVbjm7maD4W38xuqFygx8KHbaUZEzSVVopCRnZI
+	EnJUcAUdLDCUceBj5fksRKdxDvqdwUezSrWEzi6HCnCPSmTU1rwP8JSYjpNckmz1
+	pAL8u14GGI0eJ4IJZ9GfPpetjINpPqssixkSg0Sk0UjS7MSovKh59oIUJffrNqLZ
+	rYY57NOxkB8b5qq+sVCku6X4bRES1Ufwuahyfe61zGh3gXf1A5gYltGnMjFHbSL5
+	WXZ/qw==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a4ffb0rpw-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 31 Oct 2025 03:07:56 +0000 (GMT)
-Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b6cdfcb112bso3067960a12.0
-        for <ath12k@lists.infradead.org>; Thu, 30 Oct 2025 20:07:56 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 31 Oct 2025 03:07:59 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-b6cd4d3a441so1525336a12.0
+        for <ath12k@lists.infradead.org>; Thu, 30 Oct 2025 20:07:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1761880076; x=1762484876; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1761880078; x=1762484878; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=K95Ko3CGgptOLyfI80+QbvELENUisYEUnnFY8ZDOn74=;
-        b=Cqj89LirMtojfxxMBDPnmN6r4lgv2yB3kpoEHpjtY3F84homF/MiUmE6etcLhQW+8c
-         rchjtB3SaPuoKM0TBTWe1zow+WeQNHh0FbKE+CEicCYA/oDdtnATGxeOp0LStCewV6ZV
-         A/wpBUaDZEsrpWYdsptVu92bS3cDA0k2bD73hA2D0VHqxxcf9iXS7sbTjAIDyh7URWra
-         yDyfcKPI2T5BS1AGpigCgw/9o5YQPGhUK3IoHrU7O0BsPVDVqaD9a+Q51MYFUllav6UV
-         yIxySv5sl/Y3bl/Dxadug1G1bhDRS0+qwxTTBb/4FU6/6QwuPOQ6b/BVVcPXQrZ8OdlN
-         1GXg==
+        bh=lUXjvY7OoRdcYQcgv7P8x8g67gGxIlqbdGmnJsZIYDw=;
+        b=URycdLxPT9zpfSRaGogey0ZxJm0sGcOr4XYe8gBG0jXYWdlO+S4mRVPFzMnJr2+YwA
+         ayDw5IsCg3RwUU1u+ka+Nc6qh2J7aQJLp4gesSl3uznNBTb+W5FAffbnK6QatTNV44JW
+         SeJDpzLMkLIk4btchCIFWKdZ8uNU67Nl7nDGH2g42alxcHgN4SPNDi7MYCjzHgkg7izT
+         mdVRzm84iAxFJ7hilJMms/za02fGZogos3gIlGTDIMNUI1hdCsdbvtsUVNIJHG1638pT
+         0+HyHbrfzbbSmgao4NPkA3t4j+kqvr+mmSwKEdyw6LvfiY2nMVKVsW4tBti/7+oIk8MV
+         nMZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761880076; x=1762484876;
+        d=1e100.net; s=20230601; t=1761880078; x=1762484878;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=K95Ko3CGgptOLyfI80+QbvELENUisYEUnnFY8ZDOn74=;
-        b=Lj1eTjHQ6Qtq1iya53tWKcGHWi8UZmePx9byKEgteLe91KiPkQ7JULynqCvqPGlFbJ
-         TDdmaUpc38OgMO+LeogC2TbmBdlcddRtEFD4z75OelJKj9zXdxGwSyKnTuRDFkgvwfuP
-         vkXDGT5j9cnsBbup0drRJ5HCVKRJ0L0Zk/67KQfDdeXs+s+ToOmOPazxhV1HlPYBcODC
-         jfC5TzQ0ibtlU51YRK0pLgxZTwN80XEttWKIPHP71h4RYkgkqgppCKciO9VyYAmfvSyY
-         JQzJNnxx/s4vaAlsErEYRwJiv0YJP8wWEg363aKowMC3cmQQCE03P5rnnJmMoVz1nAX6
-         KCgA==
-X-Gm-Message-State: AOJu0YwWMAJSLIB5f+Hphy5W0wTxgi61MPhTHX+nr1zStMMqugrui05X
-	wVGk91Ftm1Xmdp1bflbEKEulMYe5nZ2MOeiRylKYGuLIoUTeZxjorfU2oTsLSMN7aywjPzR5hPw
-	HHHJFbCEz19/5NoAdyo0TCFKhuFyUkBYbm+pLuIFgcB248Dk3OO2kwBMbPRtIeheS
-X-Gm-Gg: ASbGnct3OBzRlRWpxG37hoOGlt6kHXRf4aWSiMrKHolGwSZ/fXMoyrtrLhL8B7phZXq
-	h0qYEKAvcQKKkGRkUeEI6/Q7HQ6pECLzYzx1n2SF4QUCD8phYSsd5X7qajzDoDXKa1AnAwj/+C/
-	3lTYXfn4RGDQgdt+9xGia38ZhHyOhnv/SCaISQf/lSciM8i2mm/uPS431XKjDI30KTB7DK0HMG6
-	ShHMXRNjHPq37TpjvXeyBBobHnaXVktOFmp9SpvTPqmnGANDmF37xB73L0JvgB/Xs9q7mCgIdf0
-	3p9uzjK+Q5UA+2mgfel39s0vUsfSSaXun+0ij9g/tygT3CI14Nt4VkF3YbeHPNAWbbgRtO59yQ7
-	YoBpWcr8tT1/C36sX16WW++BNkeXa/uuaz+ibVpFHI4tc+HvTNPD0Ba3FcLN33y0tnx7T4iyxjh
-	7oWctsUafIUMG3tAdlkkKqDfjevAw5Kws=
-X-Received: by 2002:a05:6a20:2446:b0:343:6f53:e97 with SMTP id adf61e73a8af0-348cc8e377bmr2711644637.48.1761880076152;
-        Thu, 30 Oct 2025 20:07:56 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGUiCAhShpTI+lCmKGzYA1Uo+PVpMB6cFI0JJzik1O352ZEBS6coEhPZ8shA1KJp+QEzbjumA==
-X-Received: by 2002:a05:6a20:2446:b0:343:6f53:e97 with SMTP id adf61e73a8af0-348cc8e377bmr2711602637.48.1761880075636;
-        Thu, 30 Oct 2025 20:07:55 -0700 (PDT)
+        bh=lUXjvY7OoRdcYQcgv7P8x8g67gGxIlqbdGmnJsZIYDw=;
+        b=WE3gSL2+dXC0ph/hDbTjE61bq9JT0nffnKlPKJlJ/pEr3uKa9nub7TXtVPlNfesHAs
+         8sMO9SV+SjqwkWjoTqJeV77C5Kp/kREzMYvir+DNCb3ZdWjE6Uh84jWRZavU0R1TYh01
+         3QaIo+vuKz79c3mPESNc3nvO2hvpLaBZFO5dbp9KfbMzmF5FlnuWCAXAX8UVlS4KlMvf
+         jMOX9AnSZASHmSoK233ZFYVb5wW0+T7OVnJBauSYeg3cWAPnoXpie3Z9IjiRA4rOUQMb
+         yZgsT7l3awJbHGCh5zLLmSLYM+oeZ3MY2dc1gycR40zAluyBny5fW4YIr0v75XNggHo8
+         SorA==
+X-Gm-Message-State: AOJu0Yw2XL52q/HjA990WmaoVcwuVADqyjlIFMxJfzGSHU4TbmLGCllE
+	titnbKNdbkEp3LPsEGixY+45GtVgWXzqsNMyeYruxjfvxhWPZEW2zGjg3Nl9cq8wP+yfTCPzQli
+	6P3kY64TPrXxEShWXAiRebnkAHentu1SCfLjcEQVf4MRJEF3i9B3eyvGPWUW68WA0
+X-Gm-Gg: ASbGnctRRdYttVAYBI4wsbpJtcFJQUKbLJOtYOK3ZOsufkPw3Zygo+ujzh7kQNx+xeJ
+	EHa0O1KluNV0aGp+fNjkqqy4mIu4euhdNzmOs6lOnFm5GdAV4tIX0KayK2PLq6k0kCLSLzdD7RE
+	jhhxG9eLzjeWGpp50xyVAEXSFepz8TAfqwZODFSSXWFrXMBi2j8fATlLkyLzatdNkdGS20gw2zX
+	u8+bUh3nMQ2wFuBj1wWlkIMTRE+3OPdW6H79Szxn/Di2WD66sMz2MSxVLnM181MuWvcbMQ9TXgz
+	1IUPHTIG/xgFasAdMqnAdqCaw+BTd9kkVuUSnJZSRNzc79DWNgBhNEQm+W3CWMYnpoyRWjAWFCa
+	DpgLUcJQRXS4T6DQTAM2CSQ3vpNcclDZB/10j3uP0l2TzrNBYQXkjowDA3+yM/DxfzIMLKWaUnI
+	lBSLUnVkEYlBuBs6WVF5HzzaKaOwp5zzw=
+X-Received: by 2002:a05:6a20:158a:b0:343:6c90:77aa with SMTP id adf61e73a8af0-348bcf39118mr2868782637.29.1761880078489;
+        Thu, 30 Oct 2025 20:07:58 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHnCeW+sXqFa++BIza19zHKtf9ItARuqpC7NRlsI0vHs1Q8l174lemlpy6YJLzFFfjp6C1fRA==
+X-Received: by 2002:a05:6a20:158a:b0:343:6c90:77aa with SMTP id adf61e73a8af0-348bcf39118mr2868749637.29.1761880077922;
+        Thu, 30 Oct 2025 20:07:57 -0700 (PDT)
 Received: from hu-mdharane-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7a7db0a2663sm372130b3a.48.2025.10.30.20.07.53
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7a7db0a2663sm372130b3a.48.2025.10.30.20.07.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 30 Oct 2025 20:07:54 -0700 (PDT)
+        Thu, 30 Oct 2025 20:07:57 -0700 (PDT)
 From: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
-Date: Fri, 31 Oct 2025 08:37:45 +0530
-Subject: [PATCH ath-next 1/2] wifi: ath12k: Make firmware stats reset
- caller-driven
+Date: Fri, 31 Oct 2025 08:37:46 +0530
+Subject: [PATCH ath-next 2/2] wifi: ath12k: Fix timeout error during beacon
+ stats retrieval
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20251031-beacon_stats-v1-1-f52fce7b03ac@qti.qualcomm.com>
+Message-Id: <20251031-beacon_stats-v1-2-f52fce7b03ac@qti.qualcomm.com>
 References: <20251031-beacon_stats-v1-0-f52fce7b03ac@qti.qualcomm.com>
 In-Reply-To: <20251031-beacon_stats-v1-0-f52fce7b03ac@qti.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
         Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
 X-Mailer: b4 0.15-dev-1b0d6
-X-Authority-Analysis: v=2.4 cv=RL2+3oi+ c=1 sm=1 tr=0 ts=6904280c cx=c_pps
- a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Proofpoint-GUID: h_4gfezffcjjt6uv7AkX0YKOtDP-ozc7
+X-Authority-Analysis: v=2.4 cv=fpjRpV4f c=1 sm=1 tr=0 ts=6904280f cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=GELq1AYrxFz-Eafd698A:9
- a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
-X-Proofpoint-ORIG-GUID: OyzslcX97ZHmy6goY92__eyLPklmgyFb
-X-Proofpoint-GUID: OyzslcX97ZHmy6goY92__eyLPklmgyFb
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDMxMDAyNiBTYWx0ZWRfX6zdjAX/b9W7C
- 8LpIBATqQzZx88aEk4vU3gxVa62tNlnKh115BE7HU6rkaemH/LIyZB/eINtKLLZb8IJ3DaB+9J+
- 88Y7ctQbCNFBwCec3eQWAXw8cuZZQKlCV/uMbXPAl7zg1eEFL3DAget/1GZSxf4fnWPhBeQtsN1
- vDBnqtqqW0iJ+9r9H4hCCPwT/mNVq0DHJTflpfRbSLPE6O6ShPoQ9ooqoYN4iucQWRzYeKeDGlN
- 3WocPSz5/ighyaiUb6X6CXhdRkqdNWYyNfWoP0uxtR7fAHvUOHuUYYnpQfls12tf59aA9rGCOzi
- DYxC/HUkvOoLvYvhh6agFh4ulE8ptlgWYnMkqlYrDpxhublLfNlXSXad+6LCXlRFvY7HXRuTHJW
- 5a418XJympmvsghogUbpnfwerUJfGQ==
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=5huyMihl6BJtPKl8yXUA:9
+ a=QEXdDO2ut3YA:10 a=3WC7DwWrALyhR5TkjVHa:22
+X-Proofpoint-ORIG-GUID: h_4gfezffcjjt6uv7AkX0YKOtDP-ozc7
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDMxMDAyNiBTYWx0ZWRfX0WMOwVRQW1G1
+ 7/Gej+LFx7tYAMu4LNi9jAfzayelvAjf0SQiDeMwzeyTWpux31caf6CvARfnJ3CXh2CwyTAjvhs
+ oZJBzcelO8GmtYC3x7xHUwL3YeC5KfHHqkqhFZY0ZWU7l2BIs/BeJKbIJIDfYJz6h3548P1fLyg
+ D2mG3oj3tJSi+Vj2hLwMNKiBcJ02xwL8nSufj4b7FWJYYpvWMUKzTANRTlgDxbiyYfkMS2U6Y22
+ re0STUofDZRJAYc0jaPoPTdoCM43rODIKHi2pDW0sOuvtj9aJUa//rTrB2aZnadkeaw3L2rDvxD
+ hzeB8Ok7r3xuaueVLhn92P9ACGbV8G4rYeRvLWml7CS24tvAEQlkn4rTMta4MUDwUNaWd1BoQml
+ A0lPgBDaHY5V9z4C0uXzcNn174ZGDQ==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2025-10-30_08,2025-10-29_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 lowpriorityscore=0 malwarescore=0 impostorscore=0
- phishscore=0 bulkscore=0 adultscore=0 spamscore=0 clxscore=1011
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
- definitions=main-2510310026
+ suspectscore=0 clxscore=1011 lowpriorityscore=0 adultscore=0 impostorscore=0
+ bulkscore=0 priorityscore=1501 phishscore=0 malwarescore=0 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2510310026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251030_200757_813233_A41B488D 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20251030_200800_064332_4EC2E80B 
+X-CRM114-Status: GOOD (  18.13  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,138 +142,91 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, ath12k_fw_stats_reset() is called in
-ath12k_mac_get_fw_stats() before fetching the required stats from the
-firmware. However, ath12k_open_bcn_stats() requests firmware stats for
-each enabled BSS individually. Since the firmware stats are reset before
-fetching, only the last BSS's data is displayed.
+Currently, for beacon_stats, ath12k_mac_get_fw_stats() is called
+for each started BSS on the specified hardware.
+ath12k_mac_get_fw_stats() will wait for the fw_stats_done completion
+after fetching the requested data from firmware. For the beacon_stats,
+fw_stats_done completion will be set only when stats are received for
+all BSSes. However, for other stats like vdev_stats or pdev_stats, there
+is one request to the firmware for all enabled BSSes. Since beacon_stats
+is fetched individually for all BSSes enabled in that pdev, waiting for
+the completion event results in a timeout error when multiple BSSes are
+enabled.
 
-Also, in ath12k_mac_op_get_txpower(), ath12k_mac_op_sta_statistics(), and
-ath12k_mac_op_link_sta_statistics(), after getting the stats from the
-firmware, the reset function is not called until the next firmware
-stats are requested or while unloading the module. Hence, the stats buffer
-will not be freed until one of the above sequences is executed. However,
-in ath12k_open_vdev_stats(), ath12k_open_bcn_stats() and
-ath12k_open_pdev_stats(), firmware stats are reset after copying the
-necessary data in ath12k_wmi_fw_stats_dump().
+Avoid this by completing the fw_stats_done immediately after
+updating the requested BSS's beacon stats in the list. Subsequently,
+this list will be used to display the beacon stats for all enabled
+BSSes in the requested pdev.
 
-This leads to inconsistent usage of ath12k_fw_stats_reset() for
-freeing the firmware stats.
-
-Avoid these discrepancies by making it the caller's responsibility to
-free the stats buffer, thereby removing the need to free the stats buffer
-in ath12k_mac_get_fw_stats() and ath12k_wmi_fw_stats_dump().
+Additionally, remove 'num_bcn_recvd' from the ath12k_fw_stats struct
+as it is no longer needed.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
+Fixes: 9fe4669ae919 ("wifi: ath12k: Request beacon stats from firmware")
 Signed-off-by: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/debugfs.c |  9 +++------
- drivers/net/wireless/ath/ath12k/mac.c     | 15 ++++++++++-----
- drivers/net/wireless/ath/ath12k/wmi.c     |  2 --
- 3 files changed, 13 insertions(+), 13 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c |  2 --
+ drivers/net/wireless/ath/ath12k/core.h |  1 -
+ drivers/net/wireless/ath/ath12k/wmi.c  | 10 +---------
+ 3 files changed, 1 insertion(+), 12 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
-index 15219429d4ed88c77941533b1ab4c9202ea9da57..d6a86f075d73b92504bef6939ddaa3baa9ce9c1d 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.c
-@@ -1286,6 +1286,7 @@ static int ath12k_open_vdev_stats(struct inode *inode, struct file *file)
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 5d494c5cdc0da3189640751b8d191fa939ac3ff5..f0994f3918f5c36380b3409f9a7889f06c8e0f34 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -1,7 +1,6 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+  */
  
- 	ath12k_wmi_fw_stats_dump(ar, &ar->fw_stats, param.stats_id,
- 				 buf);
-+	ath12k_fw_stats_reset(ar);
- 
- 	file->private_data = no_free_ptr(buf);
- 
-@@ -1352,12 +1353,7 @@ static int ath12k_open_bcn_stats(struct inode *inode, struct file *file)
- 
- 	ath12k_wmi_fw_stats_dump(ar, &ar->fw_stats, param.stats_id,
- 				 buf);
--	/* since beacon stats request is looped for all active VDEVs, saved fw
--	 * stats is not freed for each request until done for all active VDEVs
--	 */
--	spin_lock_bh(&ar->data_lock);
--	ath12k_fw_stats_bcn_free(&ar->fw_stats.bcn);
--	spin_unlock_bh(&ar->data_lock);
-+	ath12k_fw_stats_reset(ar);
- 
- 	file->private_data = no_free_ptr(buf);
- 
-@@ -1418,6 +1414,7 @@ static int ath12k_open_pdev_stats(struct inode *inode, struct file *file)
- 
- 	ath12k_wmi_fw_stats_dump(ar, &ar->fw_stats, param.stats_id,
- 				 buf);
-+	ath12k_fw_stats_reset(ar);
- 
- 	file->private_data = no_free_ptr(buf);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index e79d457e3c03da372c57e4b2c7970d07c38d6008..11e0514eced8d74e5038ddde66848c7798c7390b 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -4954,8 +4954,6 @@ int ath12k_mac_get_fw_stats(struct ath12k *ar,
- 	if (ah->state != ATH12K_HW_STATE_ON)
- 		return -ENETDOWN;
- 
--	ath12k_fw_stats_reset(ar);
--
- 	reinit_completion(&ar->fw_stats_complete);
- 	reinit_completion(&ar->fw_stats_done);
- 
-@@ -5053,6 +5051,7 @@ static int ath12k_mac_op_get_txpower(struct ieee80211_hw *hw,
- 	ar->chan_tx_pwr = pdev->chan_tx_power / 2;
- 	spin_unlock_bh(&ar->data_lock);
- 	ar->last_tx_power_update = jiffies;
-+	ath12k_fw_stats_reset(ar);
- 
- send_tx_power:
- 	*dbm = ar->chan_tx_pwr;
-@@ -12828,14 +12827,18 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 
- 	if (!signal &&
- 	    ahsta->ahvif->vdev_type == WMI_VDEV_TYPE_STA &&
--	    !(ath12k_mac_get_fw_stats(ar, &params)))
-+	    !(ath12k_mac_get_fw_stats(ar, &params))) {
- 		signal = arsta->rssi_beacon;
-+		ath12k_fw_stats_reset(ar);
-+	}
- 
- 	params.stats_id = WMI_REQUEST_RSSI_PER_CHAIN_STAT;
- 	if (!(sinfo->filled & BIT_ULL(NL80211_STA_INFO_CHAIN_SIGNAL)) &&
- 	    ahsta->ahvif->vdev_type == WMI_VDEV_TYPE_STA &&
--	    !(ath12k_mac_get_fw_stats(ar, &params)))
-+	    !(ath12k_mac_get_fw_stats(ar, &params))) {
- 		ath12k_mac_put_chain_rssi(sinfo, arsta);
-+		ath12k_fw_stats_reset(ar);
-+	}
- 
+@@ -1250,7 +1249,6 @@ void ath12k_fw_stats_reset(struct ath12k *ar)
  	spin_lock_bh(&ar->data_lock);
- 	noise_floor = ath12k_pdev_get_noise_floor(ar);
-@@ -12919,8 +12922,10 @@ static void ath12k_mac_op_link_sta_statistics(struct ieee80211_hw *hw,
- 
- 	if (!signal &&
- 	    ahsta->ahvif->vdev_type == WMI_VDEV_TYPE_STA &&
--	    !(ath12k_mac_get_fw_stats(ar, &params)))
-+	    !(ath12k_mac_get_fw_stats(ar, &params))) {
- 		signal = arsta->rssi_beacon;
-+		ath12k_fw_stats_reset(ar);
-+	}
- 
- 	if (signal) {
- 		link_sinfo->signal =
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 5075d86df36ff5a7863bd9c4b379c61997b02618..f812da24b21e68893327d61fe0ff9deb222bd54b 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -8089,8 +8089,6 @@ void ath12k_wmi_fw_stats_dump(struct ath12k *ar,
- 		buf[len - 1] = 0;
- 	else
- 		buf[len] = 0;
--
--	ath12k_fw_stats_reset(ar);
+ 	ath12k_fw_stats_free(&ar->fw_stats);
+ 	ar->fw_stats.num_vdev_recvd = 0;
+-	ar->fw_stats.num_bcn_recvd = 0;
+ 	spin_unlock_bh(&ar->data_lock);
  }
  
- static void
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 41da0efaa85478fbe294f958cbcf458b5ca07204..3c1e0069be1e77007245cec2cb289212c12baf4a 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -646,7 +646,6 @@ struct ath12k_fw_stats {
+ 	struct list_head vdevs;
+ 	struct list_head bcn;
+ 	u32 num_vdev_recvd;
+-	u32 num_bcn_recvd;
+ };
+ 
+ struct ath12k_dbg_htt_stats {
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index f812da24b21e68893327d61fe0ff9deb222bd54b..be8b2943094f8f4a12d625189c11315f1397e42d 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -8485,18 +8485,10 @@ static void ath12k_wmi_fw_stats_process(struct ath12k *ar,
+ 			ath12k_warn(ab, "empty beacon stats");
+ 			return;
+ 		}
+-		/* Mark end until we reached the count of all started VDEVs
+-		 * within the PDEV
+-		 */
+-		if (ar->num_started_vdevs)
+-			is_end = ((++ar->fw_stats.num_bcn_recvd) ==
+-				  ar->num_started_vdevs);
+ 
+ 		list_splice_tail_init(&stats->bcn,
+ 				      &ar->fw_stats.bcn);
+-
+-		if (is_end)
+-			complete(&ar->fw_stats_done);
++		complete(&ar->fw_stats_done);
+ 	}
+ }
+ 
 
 -- 
 2.34.1
