@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E22D5CCF9F8
-	for <ath12k@archiver.kernel.org>; Mon,  3 Nov 2025 11:21:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C169BCCFA08
+	for <ath12k@archiver.kernel.org>; Mon,  3 Nov 2025 11:21:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TBzObbEQ2OMQGsu8kx0xwiy+qWT4OHG6kffJZGAKLJ0=; b=DogaIcIvKk3ktmVQ2HII0bMVvC
-	f3mn+HUWTeOYoVoDOSu0xKVSL5yMeiRlxXAwoke75M/ZHIPjmXAeWp+thHlOMuUg2CaBq0Zp3oYXw
-	9WMiQjU3cGxycYxlwEV4YpNQrBmFJuXwolo5Ag52MZcN62WKEu8SQQQJqg4cbWw0ijNiEEBT7eEig
-	O5J+VNV4dZDk4hreMNUe/TeJmkAzUzSoiDe58pahgewnoHyDXRJpA2BnlVE8d9f+RsCNHOcxU+6Se
-	4pweOsAG7SsREqBwNZnJtFGLymSXlO66nh9Jo4xIDJRl9CoQN5QFZCy/oEy9cBtblA1hEZO+bpMkT
-	Y12325nQ==;
+	bh=i35T6RZTO4M+TIYQXHuT63BbFFGDcKWBWkPPczYMrUc=; b=HfWlThL7MxY1gCxPETCWlkSOLv
+	x32HiT00CiYfuecztGGNspvvXgzT1ZyrIt/b/BEBGlIh6K/5XT3iUew1xRwUWug3n7pU2Hw+rLuA8
+	qW7qoAXVaEMtRWnR2JXn87xtUKSQKdXc00ibw0n/c6wm3VYdkgdagOLFnDCjydvqHFhoW8zMabRPi
+	aoH+VMrMzCYf6qjglY5OJy+9lOLz5CbMdVmbl5wIvi/42+5HGzPVZE4quK6PWDjTkKjn3z9rfPgUY
+	an1PALkomnX6EXNibouRn4LfSGMRjUYFkOQ8bQwQzfi5662g/OVo/Lgv+U+iHI1qBK80n8Km33QhC
+	4F0bI/rA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFsdB-00000009if4-2qZw;
-	Mon, 03 Nov 2025 11:21:49 +0000
+	id 1vFsdD-00000009igx-2Cqq;
+	Mon, 03 Nov 2025 11:21:51 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFsd8-00000009icO-2djw
+	id 1vFsdB-00000009ieZ-1UxQ
 	for ath12k@lists.infradead.org;
-	Mon, 03 Nov 2025 11:21:48 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5A38olJA2730309;
-	Mon, 3 Nov 2025 11:21:45 GMT
+	Mon, 03 Nov 2025 11:21:50 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5A3Al7wT1941385;
+	Mon, 3 Nov 2025 11:21:48 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	TBzObbEQ2OMQGsu8kx0xwiy+qWT4OHG6kffJZGAKLJ0=; b=LIjwMkA1A0nyCZtp
-	PHxncu84ADnd2JDqOwGO8s1q2+gNMAD6b0aCMy2Wv+p56Ugg+Qr3qQpSUp1LSQop
-	j1JI+ZWNlcEIhxvYxoUS7EhOS2jEGSRib4vrpbVKCsHw5SajwXljZeY5uGXnFEDr
-	FYSE9DZXHebJtplTBLFJoSs8Rqrzp8sKIla/BRiOKe+k0tLcDOvQ4KlYBBC75gBx
-	kFjmIivxvmR44N3A012CmfFfunPWG611C0xG1BiGpyYIGPCOUluE5iimgFHU4STq
-	TQfts+pCealmjJOf1o/dRLzSWmneTfPomEdyZYxtd0wE3lNjcKGR0Sl0PKZJuWTY
-	uShIiw==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a6s86ge0h-1
+	i35T6RZTO4M+TIYQXHuT63BbFFGDcKWBWkPPczYMrUc=; b=nto3qIOXNL97T8TX
+	eH35/ppVK1jhllxcutLnY9SoLowlyPX0+mYRae7yWTzHCXw7OWWDAb4/Y3CeyXPf
+	rivlJbLCXoYQWJtpWsg48Hnzm4Uv3dvFLh0r/XC/jDTMnaZa91jDaUQ3WJp09+Ka
+	J616R3rN9l4snTUIRciEPupKOJAlQIqUkg6YyxPSa9hkZecasR84YHLz6WF733To
+	CXdUxvufPwWKU1XkG6ydGsBEwD8VBvsCdU8UGTGp0lTKcpzJxn5sGXUXqhtL/lY/
+	N/xHOF5JoOXKx0qAcvUF6eSkA9KFBxKi6esfihzy33j3qx9VA7B/lg9DTjl0JK0p
+	WPKjqQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a6m9w99ep-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 03 Nov 2025 11:21:45 +0000 (GMT)
+	Mon, 03 Nov 2025 11:21:48 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5A3BLipO005109
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5A3BLlPg017926
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 3 Nov 2025 11:21:44 GMT
+	Mon, 3 Nov 2025 11:21:47 GMT
 Received: from hu-rdeuri-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.24; Mon, 3 Nov 2025 03:21:42 -0800
+ 15.2.1748.24; Mon, 3 Nov 2025 03:21:45 -0800
 From: Ripan Deuri <quic_rdeuri@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH ath12k-ng 05/12] wifi: ath12k: Move ieee80211_ops callback to the arch specific module
-Date: Mon, 3 Nov 2025 16:51:04 +0530
-Message-ID: <20251103112111.2260639-6-quic_rdeuri@quicinc.com>
+Subject: [PATCH ath12k-ng 07/12] wifi: ath12k: Move ath12k_dp_rx_frags_cleanup API to Wi-Fi 7
+Date: Mon, 3 Nov 2025 16:51:06 +0530
+Message-ID: <20251103112111.2260639-8-quic_rdeuri@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20251103112111.2260639-1-quic_rdeuri@quicinc.com>
 References: <20251103112111.2260639-1-quic_rdeuri@quicinc.com>
@@ -69,30 +69,30 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTAzMDEwNCBTYWx0ZWRfX7pF/dYXkHf7V
- LSY6aFjPT6V4GBSK6cTBIm5bIZgs0PYKGjgThpaQ01JbEfn2TTS5rqw5sJ7yudRdgJ6ACQ9Wujb
- yekxxlZipSVUIXEat7tZwL07zyARL54pN1kpWjK+gys3L406GqEdeLgx8f37lc/PSRZWD50Y+t9
- tKu5S8AE+Chy+uCDFW7jyc3bhs2H3xY0hp7HWciQEGYV0RyD27eIwXuWDaV1CXflN6HHs/hbVxA
- G6O3eorL6mY0Y5zg33+IBf6VZnNSc7jevS4yFTR3ytQcvW1PYLjyeVRlLsh3RwIisQ83zIIM00G
- xtPtvG1R1CzjYU+0oiviK6beJGqQgB35VugSIhYqfS5hJJjcazvPqEo4lfJT8CdMvXoXJJR+Tvy
- Pg3Je+qgDan/aDMTWY1MZXi4FqqmaQ==
-X-Authority-Analysis: v=2.4 cv=Tq/rRTXh c=1 sm=1 tr=0 ts=69089049 cx=c_pps
+X-Authority-Analysis: v=2.4 cv=P7Q3RyAu c=1 sm=1 tr=0 ts=6908904c cx=c_pps
  a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=GEpy-HfZoHoA:10 a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=COk6AnOGAAAA:8 a=9QFxP-3vN-HYw_SpdAsA:9 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: 6s-8PWJQMhETAMAG5kznzyh52IkeUsOQ
-X-Proofpoint-ORIG-GUID: 6s-8PWJQMhETAMAG5kznzyh52IkeUsOQ
+ a=COk6AnOGAAAA:8 a=5cgLRFdtdzdyvJiItWkA:9 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: q8a4EopY5xne_BHaDLEsq7nuXufRFWm2
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTAzMDEwNCBTYWx0ZWRfX5EoBkbmsbxNi
+ QIgdRpovlvPPJVQTufoQneXlx35vsIa8Iz5/NFmZDuw1xkwOTt2mmXOf5WT0BqgqpAkjbyoTuZM
+ //1Z86CxRuxn05yXlVdFMNhTewr0s2wJdKZBSViqA4gcahvCEagt4YyM9oojNenNII04RCi7S8Z
+ JbxmktEPbLFXOSPYS8BQCd5697SYDRD8kto+bQ0K8tnk+zIJwRIUzATKzC89oMhDJpg00wdulp1
+ 33g5nFXadTKg/5DwrRw32kB4ZkX2veqBneiIVzLZKf7bxeHKil3aAaRjGKEoltFlLCpTJxmINbj
+ Euv+w0yyi0JR0FnMDS0n2NMdhOFJBSPCVeAdlXFjzkBN4PFSzl/2cTv4RI0ZJkyVXwVYuuvynYk
+ L4QMbUG6W8VvRq9HCxnFAXi7lGsgqA==
+X-Proofpoint-ORIG-GUID: q8a4EopY5xne_BHaDLEsq7nuXufRFWm2
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2025-11-03_01,2025-10-29_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 lowpriorityscore=0 clxscore=1015 impostorscore=0 spamscore=0
- adultscore=0 suspectscore=0 bulkscore=0 priorityscore=1501 malwarescore=0
+ impostorscore=0 lowpriorityscore=0 bulkscore=0 spamscore=0 phishscore=0
+ clxscore=1015 suspectscore=0 adultscore=0 malwarescore=0 priorityscore=1501
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511030104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251103_032147_110018_4356AC4E 
-X-CRM114-Status: GOOD (  19.43  )
+X-CRM114-CacheID: sfid-20251103_032149_517335_68A95922 
+X-CRM114-Status: GOOD (  17.10  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,587 +107,204 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Move the ieee80211_ops Tx callback to the architecture-specific module
-to avoid additional indirections caused by the common Tx function calling
-the architecture-specific Tx functions via ops.
+From: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
+
+The API ath12k_dp_rx_frags_cleanup uses rx hw structure that is specific to
+Wi-Fi 7. Hence move the API to Wi-Fi 7 and use ops infra to reach it from the
+common code.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
+Signed-off-by: Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>
 Signed-off-by: Ripan Deuri <quic_rdeuri@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c        |   1 +
- drivers/net/wireless/ath/ath12k/mac.c         | 231 ++----------------
- drivers/net/wireless/ath/ath12k/mac.h         |  15 +-
- drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c |   2 +
- drivers/net/wireless/ath/ath12k/wifi7/hw.c    | 208 +++++++++++++++-
- 5 files changed, 237 insertions(+), 220 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp.h          | 10 +++++++
+ drivers/net/wireless/ath/ath12k/dp_rx.c       | 28 ++---------------
+ drivers/net/wireless/ath/ath12k/dp_rx.h       |  2 --
+ drivers/net/wireless/ath/ath12k/wifi7/dp.c    |  1 +
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 30 +++++++++++++++++--
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h |  2 ++
+ 6 files changed, 42 insertions(+), 31 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 3bba9c9a1a9b..4439f0a98ec4 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -28,6 +28,7 @@
- unsigned int ath12k_debug_mask;
- module_param_named(debug_mask, ath12k_debug_mask, uint, 0644);
- MODULE_PARM_DESC(debug_mask, "Debugging mask");
-+EXPORT_SYMBOL(ath12k_debug_mask);
- 
- bool ath12k_ftm_mode;
- module_param_named(ftm_mode, ath12k_ftm_mode, bool, 0444);
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index c40c55344e64..d04606559cdf 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -8833,8 +8833,8 @@ static void ath12k_mgmt_over_wmi_tx_work(struct wiphy *wiphy, struct wiphy_work
- 	}
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+index 17c919213c6a..74801055e2f0 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.h
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -408,6 +408,8 @@ struct ath12k_dp_arch_ops {
+ 	int (*rx_link_desc_return)(struct ath12k_base *ab,
+ 				   struct ath12k_buffer_addr *buf_addr_info,
+ 				   enum hal_wbm_rel_bm_act action);
++	void (*rx_frags_cleanup)(struct ath12k_dp_rx_tid *rx_tid,
++				 bool rel_link_desc);
+ 	int (*peer_rx_tid_reo_update)(struct ath12k_dp *dp,
+ 				      struct ath12k_dp_link_peer *peer,
+ 				      struct ath12k_dp_rx_tid *rx_tid,
+@@ -588,6 +590,14 @@ int ath12k_dp_arch_rx_link_desc_return(struct ath12k_dp *dp,
+ 	return dp->ops->rx_link_desc_return(dp->ab, buf_addr_info, action);
  }
  
--static int ath12k_mac_mgmt_tx(struct ath12k *ar, struct sk_buff *skb,
--			      bool is_prb_rsp)
-+int ath12k_mac_mgmt_tx(struct ath12k *ar, struct sk_buff *skb,
-+		       bool is_prb_rsp)
- {
- 	struct sk_buff_head *q = &ar->wmi_mgmt_tx_queue;
- 
-@@ -8864,11 +8864,12 @@ static int ath12k_mac_mgmt_tx(struct ath12k *ar, struct sk_buff *skb,
- 
- 	return 0;
- }
-+EXPORT_SYMBOL(ath12k_mac_mgmt_tx);
- 
--static void ath12k_mac_add_p2p_noa_ie(struct ath12k *ar,
--				      struct ieee80211_vif *vif,
--				      struct sk_buff *skb,
--				      bool is_prb_rsp)
-+void ath12k_mac_add_p2p_noa_ie(struct ath12k *ar,
-+			       struct ieee80211_vif *vif,
-+			       struct sk_buff *skb,
-+			       bool is_prb_rsp)
- {
- 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
- 
-@@ -8885,11 +8886,12 @@ static void ath12k_mac_add_p2p_noa_ie(struct ath12k *ar,
- 
- 	spin_unlock_bh(&ar->data_lock);
- }
-+EXPORT_SYMBOL(ath12k_mac_add_p2p_noa_ie);
- 
- /* Note: called under rcu_read_lock() */
--static void ath12k_mlo_mcast_update_tx_link_address(struct ieee80211_vif *vif,
--						    u8 link_id, struct sk_buff *skb,
--						    u32 info_flags)
-+void ath12k_mlo_mcast_update_tx_link_address(struct ieee80211_vif *vif,
-+					     u8 link_id, struct sk_buff *skb,
-+					     u32 info_flags)
- {
- 	struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
- 	struct ieee80211_bss_conf *bss_conf;
-@@ -8901,10 +8903,11 @@ static void ath12k_mlo_mcast_update_tx_link_address(struct ieee80211_vif *vif,
- 	if (bss_conf)
- 		ether_addr_copy(hdr->addr2, bss_conf->addr);
- }
-+EXPORT_SYMBOL(ath12k_mlo_mcast_update_tx_link_address);
- 
- /* Note: called under rcu_read_lock() */
--static u8 ath12k_mac_get_tx_link(struct ieee80211_sta *sta, struct ieee80211_vif *vif,
--				 u8 link, struct sk_buff *skb, u32 info_flags)
-+u8 ath12k_mac_get_tx_link(struct ieee80211_sta *sta, struct ieee80211_vif *vif,
-+			  u8 link, struct sk_buff *skb, u32 info_flags)
- {
- 	struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
- 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
-@@ -8999,211 +9002,7 @@ static u8 ath12k_mac_get_tx_link(struct ieee80211_sta *sta, struct ieee80211_vif
- 
- 	return link;
- }
--
--/* Note: called under rcu_read_lock() */
--void ath12k_mac_op_tx(struct ieee80211_hw *hw,
--		      struct ieee80211_tx_control *control,
--		      struct sk_buff *skb)
--{
--	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB(skb);
--	struct ieee80211_tx_info *info = IEEE80211_SKB_CB(skb);
--	struct ieee80211_vif *vif = info->control.vif;
--	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
--	struct ath12k_link_vif *arvif = &ahvif->deflink;
--	struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
--	struct ieee80211_key_conf *key = info->control.hw_key;
--	struct ieee80211_sta *sta = control->sta;
--	struct ath12k_link_vif *tmp_arvif;
--	u32 info_flags = info->flags;
--	struct sk_buff *msdu_copied;
--	struct ath12k *ar, *tmp_ar;
--	struct ath12k_pdev_dp *dp_pdev, *tmp_dp_pdev;
--	struct ath12k_dp_link_peer *peer;
--	unsigned long links_map;
--	bool is_mcast = false;
--	bool is_dvlan = false;
--	struct ethhdr *eth;
--	bool is_prb_rsp;
--	u16 mcbc_gsn;
--	u8 link_id;
--	int ret;
--	struct ath12k_dp *tmp_dp;
--
--	if (ahvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
--		ieee80211_free_txskb(hw, skb);
--		return;
--	}
--
--	link_id = u32_get_bits(info->control.flags, IEEE80211_TX_CTRL_MLO_LINK);
--	memset(skb_cb, 0, sizeof(*skb_cb));
--	skb_cb->vif = vif;
--
--	if (key) {
--		skb_cb->cipher = key->cipher;
--		skb_cb->flags |= ATH12K_SKB_CIPHER_SET;
--	}
--
--	/* handle only for MLO case, use deflink for non MLO case */
--	if (ieee80211_vif_is_mld(vif)) {
--		link_id = ath12k_mac_get_tx_link(sta, vif, link_id, skb, info_flags);
--		if (link_id >= IEEE80211_MLD_MAX_NUM_LINKS) {
--			ieee80211_free_txskb(hw, skb);
--			return;
--		}
--	} else {
--		link_id = 0;
--	}
--
--	arvif = rcu_dereference(ahvif->link[link_id]);
--	if (!arvif || !arvif->ar) {
--		ath12k_warn(ahvif->ah, "failed to find arvif link id %u for frame transmission",
--			    link_id);
--		ieee80211_free_txskb(hw, skb);
--		return;
--	}
--
--	ar = arvif->ar;
--	skb_cb->link_id = link_id;
--	/* as skb_cb is common currently for dp and mgmt tx processing
--	 * set this in the common mac op tx function.
--	 */
--	skb_cb->ar = ar;
--	is_prb_rsp = ieee80211_is_probe_resp(hdr->frame_control);
--
--	if (info_flags & IEEE80211_TX_CTL_HW_80211_ENCAP) {
--		eth = (struct ethhdr *)skb->data;
--		is_mcast = is_multicast_ether_addr(eth->h_dest);
--
--		skb_cb->flags |= ATH12K_SKB_HW_80211_ENCAP;
--	} else if (ieee80211_is_mgmt(hdr->frame_control)) {
--		if (sta && sta->mlo)
--			skb_cb->flags |= ATH12K_SKB_MLO_STA;
--
--		ret = ath12k_mac_mgmt_tx(ar, skb, is_prb_rsp);
--		if (ret) {
--			ath12k_warn(ar->ab, "failed to queue management frame %d\n",
--				    ret);
--			ieee80211_free_txskb(hw, skb);
--		}
--		return;
--	}
--
--	if (!(info_flags & IEEE80211_TX_CTL_HW_80211_ENCAP))
--		is_mcast = is_multicast_ether_addr(hdr->addr1);
--
--	/* This is case only for P2P_GO */
--	if (vif->type == NL80211_IFTYPE_AP && vif->p2p)
--		ath12k_mac_add_p2p_noa_ie(ar, vif, skb, is_prb_rsp);
--
--	dp_pdev = ath12k_dp_to_pdev_dp(ar->ab->dp, ar->pdev_idx);
--	if (!dp_pdev) {
--		ieee80211_free_txskb(hw, skb);
--		return;
--	}
--
--	/* Checking if it is a DVLAN frame */
--	if (!test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags) &&
--	    !(skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) &&
--	    !(skb_cb->flags & ATH12K_SKB_CIPHER_SET) &&
--	    ieee80211_has_protected(hdr->frame_control))
--		is_dvlan = true;
--
--	if (!vif->valid_links || !is_mcast || is_dvlan ||
--	    (skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) ||
--	    test_bit(ATH12K_FLAG_RAW_MODE, &ar->ab->dev_flags)) {
--		ret = ath12k_wifi7_dp_tx(dp_pdev, arvif, skb, false, 0, is_mcast);
--		if (unlikely(ret)) {
--			ath12k_warn(ar->ab, "failed to transmit frame %d\n", ret);
--			ieee80211_free_txskb(ar->ah->hw, skb);
--			return;
--		}
--	} else {
--		mcbc_gsn = atomic_inc_return(&ahvif->dp_vif.mcbc_gsn) & 0xfff;
--
--		links_map = ahvif->links_map;
--		for_each_set_bit(link_id, &links_map,
--				 IEEE80211_MLD_MAX_NUM_LINKS) {
--			tmp_arvif = rcu_dereference(ahvif->link[link_id]);
--			if (!tmp_arvif || !tmp_arvif->is_up)
--				continue;
--
--			tmp_ar = tmp_arvif->ar;
--			tmp_dp_pdev = ath12k_dp_to_pdev_dp(tmp_ar->ab->dp,
--							   tmp_ar->pdev_idx);
--			if (!tmp_dp_pdev)
--				continue;
--			msdu_copied = skb_copy(skb, GFP_ATOMIC);
--			if (!msdu_copied) {
--				ath12k_err(ar->ab,
--					   "skb copy failure link_id 0x%X vdevid 0x%X\n",
--					   link_id, tmp_arvif->vdev_id);
--				continue;
--			}
--
--			ath12k_mlo_mcast_update_tx_link_address(vif, link_id,
--								msdu_copied,
--								info_flags);
--
--			skb_cb = ATH12K_SKB_CB(msdu_copied);
--			skb_cb->link_id = link_id;
--			skb_cb->vif = vif;
--			skb_cb->ar = tmp_ar;
--
--			/* For open mode, skip peer find logic */
--			if (unlikely(!ahvif->dp_vif.key_cipher))
--				goto skip_peer_find;
--
--			tmp_dp = ath12k_ab_to_dp(tmp_ar->ab);
--			spin_lock_bh(&tmp_dp->dp_lock);
--			peer = ath12k_dp_link_peer_find_by_addr(tmp_dp,
--								tmp_arvif->bssid);
--			if (!peer || !peer->dp_peer) {
--				spin_unlock_bh(&tmp_dp->dp_lock);
--				ath12k_warn(tmp_ar->ab,
--					    "failed to find peer for vdev_id 0x%X addr %pM link_map 0x%X\n",
--					    tmp_arvif->vdev_id, tmp_arvif->bssid,
--					    ahvif->links_map);
--				dev_kfree_skb_any(msdu_copied);
--				continue;
--			}
--
--			key = peer->dp_peer->keys[peer->dp_peer->mcast_keyidx];
--			if (key) {
--				skb_cb->cipher = key->cipher;
--				skb_cb->flags |= ATH12K_SKB_CIPHER_SET;
--
--				hdr = (struct ieee80211_hdr *)msdu_copied->data;
--				if (!ieee80211_has_protected(hdr->frame_control))
--					hdr->frame_control |=
--						cpu_to_le16(IEEE80211_FCTL_PROTECTED);
--			}
--			spin_unlock_bh(&tmp_dp->dp_lock);
--
--skip_peer_find:
--			ret = ath12k_wifi7_dp_tx(tmp_dp_pdev, tmp_arvif,
--						 msdu_copied, true, mcbc_gsn, is_mcast);
--			if (unlikely(ret)) {
--				if (ret == -ENOMEM) {
--					/* Drops are expected during heavy multicast
--					 * frame flood. Print with debug log
--					 * level to avoid lot of console prints
--					 */
--					ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
--						   "failed to transmit frame %d\n",
--						   ret);
--				} else {
--					ath12k_warn(ar->ab,
--						    "failed to transmit frame %d\n",
--						    ret);
--				}
--
--				dev_kfree_skb_any(msdu_copied);
--			}
--		}
--		ieee80211_free_txskb(ar->ah->hw, skb);
--	}
--}
--EXPORT_SYMBOL(ath12k_mac_op_tx);
-+EXPORT_SYMBOL(ath12k_mac_get_tx_link);
- 
- void ath12k_mac_drain_tx(struct ath12k *ar)
- {
-diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-index f785a81860ce..0c73944f527b 100644
---- a/drivers/net/wireless/ath/ath12k/mac.h
-+++ b/drivers/net/wireless/ath/ath12k/mac.h
-@@ -191,9 +191,6 @@ void ath12k_mac_update_freq_range(struct ath12k *ar,
- void ath12k_mac_fill_reg_tpc_info(struct ath12k *ar,
- 				  struct ath12k_link_vif *arvif,
- 				  struct ieee80211_chanctx_conf *ctx);
--void ath12k_mac_op_tx(struct ieee80211_hw *hw,
--		      struct ieee80211_tx_control *control,
--		      struct sk_buff *skb);
- int ath12k_mac_op_start(struct ieee80211_hw *hw);
- void ath12k_mac_op_stop(struct ieee80211_hw *hw, bool suspend);
- void
-@@ -317,4 +314,16 @@ int ath12k_mac_op_get_txpower(struct ieee80211_hw *hw,
- 			      struct ieee80211_vif *vif,
- 			      unsigned int link_id,
- 			      int *dbm);
-+int ath12k_mac_mgmt_tx(struct ath12k *ar, struct sk_buff *skb,
-+		       bool is_prb_rsp);
-+void ath12k_mac_add_p2p_noa_ie(struct ath12k *ar,
-+			       struct ieee80211_vif *vif,
-+			       struct sk_buff *skb,
-+			       bool is_prb_rsp);
-+u8 ath12k_mac_get_tx_link(struct ieee80211_sta *sta, struct ieee80211_vif *vif,
-+			  u8 link, struct sk_buff *skb, u32 info_flags);
-+
-+void ath12k_mlo_mcast_update_tx_link_address(struct ieee80211_vif *vif,
-+					     u8 link_id, struct sk_buff *skb,
-+					     u32 info_flags);
- #endif
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-index 737651341afc..7e16bc12e36a 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-@@ -57,6 +57,7 @@ static int ath12k_wifi7_dp_prepare_htt_metadata(struct sk_buff *skb)
- 	return 0;
- }
- 
-+/* TODO: Remove the export once this file is built with wifi7 ko */
- int ath12k_wifi7_dp_tx(struct ath12k_pdev_dp *dp_pdev, struct ath12k_link_vif *arvif,
- 		       struct sk_buff *skb, bool gsn_valid, int mcbc_gsn,
- 		       bool is_mcast)
-@@ -378,6 +379,7 @@ int ath12k_wifi7_dp_tx(struct ath12k_pdev_dp *dp_pdev, struct ath12k_link_vif *a
- 
- 	return ret;
- }
-+EXPORT_SYMBOL(ath12k_wifi7_dp_tx);
- 
- static void
- ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-index 946771b96fb5..1f5dda73230d 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-@@ -24,6 +24,7 @@
- #include "../debugfs_sta.h"
- #include "../testmode.h"
- #include "hal.h"
-+#include "dp_tx.h"
- 
- static const guid_t wcn7850_uuid = GUID_INIT(0xf634f534, 0x6147, 0x11ec,
- 					     0x90, 0xd6, 0x02, 0x42,
-@@ -653,8 +654,213 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 	},
- };
- 
-+/* Note: called under rcu_read_lock() */
-+static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
-+				   struct ieee80211_tx_control *control,
-+				   struct sk_buff *skb)
++static inline
++void ath12k_dp_arch_rx_frags_cleanup(struct ath12k_dp *dp,
++				     struct ath12k_dp_rx_tid *rx_tid,
++				     bool rel_link_desc)
 +{
-+	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB(skb);
-+	struct ieee80211_tx_info *info = IEEE80211_SKB_CB(skb);
-+	struct ieee80211_vif *vif = info->control.vif;
-+	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
-+	struct ath12k_link_vif *arvif = &ahvif->deflink;
-+	struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
-+	struct ieee80211_key_conf *key = info->control.hw_key;
-+	struct ieee80211_sta *sta = control->sta;
-+	struct ath12k_link_vif *tmp_arvif;
-+	u32 info_flags = info->flags;
-+	struct sk_buff *msdu_copied;
-+	struct ath12k *ar, *tmp_ar;
-+	struct ath12k_pdev_dp *dp_pdev, *tmp_dp_pdev;
-+	struct ath12k_dp_link_peer *peer;
-+	unsigned long links_map;
-+	bool is_mcast = false;
-+	bool is_dvlan = false;
-+	struct ethhdr *eth;
-+	bool is_prb_rsp;
-+	u16 mcbc_gsn;
-+	u8 link_id;
-+	int ret;
-+	struct ath12k_dp *tmp_dp;
-+
-+	if (ahvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
-+		ieee80211_free_txskb(hw, skb);
-+		return;
-+	}
-+
-+	link_id = u32_get_bits(info->control.flags, IEEE80211_TX_CTRL_MLO_LINK);
-+	memset(skb_cb, 0, sizeof(*skb_cb));
-+	skb_cb->vif = vif;
-+
-+	if (key) {
-+		skb_cb->cipher = key->cipher;
-+		skb_cb->flags |= ATH12K_SKB_CIPHER_SET;
-+	}
-+
-+	/* handle only for MLO case, use deflink for non MLO case */
-+	if (ieee80211_vif_is_mld(vif)) {
-+		link_id = ath12k_mac_get_tx_link(sta, vif, link_id, skb, info_flags);
-+		if (link_id >= IEEE80211_MLD_MAX_NUM_LINKS) {
-+			ieee80211_free_txskb(hw, skb);
-+			return;
-+		}
-+	} else {
-+		link_id = 0;
-+	}
-+
-+	arvif = rcu_dereference(ahvif->link[link_id]);
-+	if (!arvif || !arvif->ar) {
-+		ath12k_warn(ahvif->ah, "failed to find arvif link id %u for frame transmission",
-+			    link_id);
-+		ieee80211_free_txskb(hw, skb);
-+		return;
-+	}
-+
-+	ar = arvif->ar;
-+	skb_cb->link_id = link_id;
-+	/*
-+	 * as skb_cb is common currently for dp and mgmt tx processing
-+	 * set this in the common mac op tx function.
-+	 */
-+	skb_cb->ar = ar;
-+	is_prb_rsp = ieee80211_is_probe_resp(hdr->frame_control);
-+
-+	if (info_flags & IEEE80211_TX_CTL_HW_80211_ENCAP) {
-+		eth = (struct ethhdr *)skb->data;
-+		is_mcast = is_multicast_ether_addr(eth->h_dest);
-+
-+		skb_cb->flags |= ATH12K_SKB_HW_80211_ENCAP;
-+	} else if (ieee80211_is_mgmt(hdr->frame_control)) {
-+		if (sta && sta->mlo)
-+			skb_cb->flags |= ATH12K_SKB_MLO_STA;
-+
-+		ret = ath12k_mac_mgmt_tx(ar, skb, is_prb_rsp);
-+		if (ret) {
-+			ath12k_warn(ar->ab, "failed to queue management frame %d\n",
-+				    ret);
-+			ieee80211_free_txskb(hw, skb);
-+		}
-+		return;
-+	}
-+
-+	if (!(info_flags & IEEE80211_TX_CTL_HW_80211_ENCAP))
-+		is_mcast = is_multicast_ether_addr(hdr->addr1);
-+
-+	/* This is case only for P2P_GO */
-+	if (vif->type == NL80211_IFTYPE_AP && vif->p2p)
-+		ath12k_mac_add_p2p_noa_ie(ar, vif, skb, is_prb_rsp);
-+
-+	dp_pdev = ath12k_dp_to_pdev_dp(ar->ab->dp, ar->pdev_idx);
-+	if (!dp_pdev) {
-+		ieee80211_free_txskb(hw, skb);
-+		return;
-+	}
-+
-+	/* Checking if it is a DVLAN frame */
-+	if (!test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags) &&
-+	    !(skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) &&
-+	    !(skb_cb->flags & ATH12K_SKB_CIPHER_SET) &&
-+	    ieee80211_has_protected(hdr->frame_control))
-+		is_dvlan = true;
-+
-+	if (!vif->valid_links || !is_mcast || is_dvlan ||
-+	    (skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) ||
-+	    test_bit(ATH12K_FLAG_RAW_MODE, &ar->ab->dev_flags)) {
-+		ret = ath12k_wifi7_dp_tx(dp_pdev, arvif, skb, false, 0, is_mcast);
-+		if (unlikely(ret)) {
-+			ath12k_warn(ar->ab, "failed to transmit frame %d\n", ret);
-+			ieee80211_free_txskb(ar->ah->hw, skb);
-+			return;
-+		}
-+	} else {
-+		mcbc_gsn = atomic_inc_return(&ahvif->dp_vif.mcbc_gsn) & 0xfff;
-+
-+		links_map = ahvif->links_map;
-+		for_each_set_bit(link_id, &links_map,
-+				 IEEE80211_MLD_MAX_NUM_LINKS) {
-+			tmp_arvif = rcu_dereference(ahvif->link[link_id]);
-+			if (!tmp_arvif || !tmp_arvif->is_up)
-+				continue;
-+
-+			tmp_ar = tmp_arvif->ar;
-+			tmp_dp_pdev = ath12k_dp_to_pdev_dp(tmp_ar->ab->dp,
-+							   tmp_ar->pdev_idx);
-+			if (!tmp_dp_pdev)
-+				continue;
-+			msdu_copied = skb_copy(skb, GFP_ATOMIC);
-+			if (!msdu_copied) {
-+				ath12k_err(ar->ab,
-+					   "skb copy failure link_id 0x%X vdevid 0x%X\n",
-+					   link_id, tmp_arvif->vdev_id);
-+				continue;
-+			}
-+
-+			ath12k_mlo_mcast_update_tx_link_address(vif, link_id,
-+								msdu_copied,
-+								info_flags);
-+
-+			skb_cb = ATH12K_SKB_CB(msdu_copied);
-+			skb_cb->link_id = link_id;
-+			skb_cb->vif = vif;
-+			skb_cb->ar = tmp_ar;
-+
-+			/* For open mode, skip peer find logic */
-+			if (unlikely(!ahvif->dp_vif.key_cipher))
-+				goto skip_peer_find;
-+
-+			tmp_dp = ath12k_ab_to_dp(tmp_ar->ab);
-+			spin_lock_bh(&tmp_dp->dp_lock);
-+			peer = ath12k_dp_link_peer_find_by_addr(tmp_dp,
-+								tmp_arvif->bssid);
-+			if (!peer || !peer->dp_peer) {
-+				spin_unlock_bh(&tmp_dp->dp_lock);
-+				ath12k_warn(tmp_ar->ab,
-+					    "failed to find peer for vdev_id 0x%X addr %pM link_map 0x%X\n",
-+					    tmp_arvif->vdev_id, tmp_arvif->bssid,
-+					    ahvif->links_map);
-+				dev_kfree_skb_any(msdu_copied);
-+				continue;
-+			}
-+
-+			key = peer->dp_peer->keys[peer->dp_peer->mcast_keyidx];
-+			if (key) {
-+				skb_cb->cipher = key->cipher;
-+				skb_cb->flags |= ATH12K_SKB_CIPHER_SET;
-+
-+				hdr = (struct ieee80211_hdr *)msdu_copied->data;
-+				if (!ieee80211_has_protected(hdr->frame_control))
-+					hdr->frame_control |=
-+						cpu_to_le16(IEEE80211_FCTL_PROTECTED);
-+			}
-+			spin_unlock_bh(&tmp_dp->dp_lock);
-+
-+skip_peer_find:
-+			ret = ath12k_wifi7_dp_tx(tmp_dp_pdev, tmp_arvif,
-+						 msdu_copied, true, mcbc_gsn, is_mcast);
-+			if (unlikely(ret)) {
-+				if (ret == -ENOMEM) {
-+					/* Drops are expected during heavy multicast
-+					 * frame flood. Print with debug log
-+					 * level to avoid lot of console prints
-+					 */
-+					ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
-+						   "failed to transmit frame %d\n",
-+						   ret);
-+				} else {
-+					ath12k_warn(ar->ab,
-+						    "failed to transmit frame %d\n",
-+						    ret);
-+				}
-+
-+				dev_kfree_skb_any(msdu_copied);
-+			}
-+		}
-+		ieee80211_free_txskb(ar->ah->hw, skb);
-+	}
++	dp->ops->rx_frags_cleanup(rx_tid, rel_link_desc);
 +}
 +
- static const struct ieee80211_ops ath12k_ops_wifi7 = {
--	.tx				= ath12k_mac_op_tx,
-+	.tx				= ath12k_wifi7_mac_op_tx,
- 	.wake_tx_queue			= ieee80211_handle_wake_tx_queue,
- 	.start                          = ath12k_mac_op_start,
- 	.stop                           = ath12k_mac_op_stop,
+ static inline int ath12k_dp_arch_peer_rx_tid_reo_update(struct ath12k_dp *dp,
+ 							struct ath12k_dp_link_peer *peer,
+ 							struct ath12k_dp_rx_tid *rx_tid,
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 01faa76f8e06..f76d13299258 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -445,30 +445,6 @@ void ath12k_dp_rx_tid_del_func(struct ath12k_dp *dp, void *ctx,
+ 	rx_tid->qbuf.vaddr = NULL;
+ }
+ 
+-void ath12k_dp_rx_frags_cleanup(struct ath12k_dp_rx_tid *rx_tid,
+-				bool rel_link_desc)
+-{
+-	enum hal_wbm_rel_bm_act act = HAL_WBM_REL_BM_ACT_PUT_IN_IDLE;
+-	struct ath12k_buffer_addr *buf_addr_info;
+-	struct ath12k_dp *dp = rx_tid->dp;
+-
+-	lockdep_assert_held(&dp->dp_lock);
+-
+-	if (rx_tid->dst_ring_desc) {
+-		if (rel_link_desc) {
+-			buf_addr_info = &rx_tid->dst_ring_desc->buf_addr_info;
+-			ath12k_dp_arch_rx_link_desc_return(dp, buf_addr_info, act);
+-		}
+-		kfree(rx_tid->dst_ring_desc);
+-		rx_tid->dst_ring_desc = NULL;
+-	}
+-
+-	rx_tid->cur_sn = 0;
+-	rx_tid->last_frag_no = 0;
+-	rx_tid->rx_frag_bitmap = 0;
+-	__skb_queue_purge(&rx_tid->rx_frags);
+-}
+-
+ void ath12k_dp_rx_peer_tid_cleanup(struct ath12k *ar, struct ath12k_dp_link_peer *peer)
+ {
+ 	struct ath12k_dp_rx_tid *rx_tid;
+@@ -485,7 +461,7 @@ void ath12k_dp_rx_peer_tid_cleanup(struct ath12k *ar, struct ath12k_dp_link_peer
+ 		rx_tid = &peer->dp_peer->rx_tid[i];
+ 
+ 		ath12k_dp_arch_rx_peer_tid_delete(dp, peer, i);
+-		ath12k_dp_rx_frags_cleanup(rx_tid, true);
++		ath12k_dp_arch_rx_frags_cleanup(dp, rx_tid, true);
+ 
+ 		spin_unlock_bh(&dp->dp_lock);
+ 		timer_delete_sync(&rx_tid->frag_timer);
+@@ -1327,7 +1303,7 @@ static void ath12k_dp_rx_frag_timer(struct timer_list *timer)
+ 		spin_unlock_bh(&rx_tid->dp->dp_lock);
+ 		return;
+ 	}
+-	ath12k_dp_rx_frags_cleanup(rx_tid, true);
++	ath12k_dp_arch_rx_frags_cleanup(rx_tid->dp, rx_tid, true);
+ 	spin_unlock_bh(&rx_tid->dp->dp_lock);
+ }
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.h b/drivers/net/wireless/ath/ath12k/dp_rx.h
+index 3c0d66855999..0dffb59c13b8 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.h
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.h
+@@ -183,8 +183,6 @@ void ath12k_dp_rx_h_sort_frags(struct ath12k_base *ab,
+ 			       struct sk_buff *cur_frag);
+ void ath12k_dp_rx_h_undecap_frag(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu,
+ 				 enum hal_encrypt_type enctype, u32 flags);
+-void ath12k_dp_rx_frags_cleanup(struct ath12k_dp_rx_tid *rx_tid,
+-				bool rel_link_desc);
+ int ath12k_dp_rx_h_michael_mic(struct crypto_shash *tfm, u8 *key,
+ 			       struct ieee80211_hdr *hdr, u8 *data,
+ 			       size_t data_len, u8 *mic);
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp.c b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
+index 1fd7738a39b5..b57e8de05c27 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
+@@ -144,6 +144,7 @@ static struct ath12k_dp_arch_ops ath12k_wifi7_dp_arch_ops = {
+ 	.rx_peer_tid_delete = ath12k_wifi7_dp_rx_peer_tid_delete,
+ 	.reo_cache_flush = ath12k_wifi7_dp_reo_cache_flush,
+ 	.rx_link_desc_return = ath12k_wifi7_dp_rx_link_desc_return,
++	.rx_frags_cleanup = ath12k_wifi7_dp_rx_frags_cleanup,
+ 	.peer_rx_tid_reo_update = ath12k_wifi7_peer_rx_tid_reo_update,
+ 	.rx_assign_reoq = ath12k_wifi7_dp_rx_assign_reoq,
+ 	.peer_rx_tid_qref_setup = ath12k_wifi7_peer_rx_tid_qref_setup,
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+index 0cf8a8f7b5f6..13cd23d7c7da 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+@@ -1100,6 +1100,30 @@ static int ath12k_wifi7_dp_rx_h_defrag(struct ath12k_pdev_dp *dp_pdev,
+ 	return 0;
+ }
+ 
++void ath12k_wifi7_dp_rx_frags_cleanup(struct ath12k_dp_rx_tid *rx_tid,
++				      bool rel_link_desc)
++{
++	enum hal_wbm_rel_bm_act act = HAL_WBM_REL_BM_ACT_PUT_IN_IDLE;
++	struct ath12k_buffer_addr *buf_addr_info;
++	struct ath12k_dp *dp = rx_tid->dp;
++
++	lockdep_assert_held(&dp->dp_lock);
++
++	if (rx_tid->dst_ring_desc) {
++		if (rel_link_desc) {
++			buf_addr_info = &rx_tid->dst_ring_desc->buf_addr_info;
++			ath12k_wifi7_dp_rx_link_desc_return(dp->ab, buf_addr_info, act);
++		}
++		kfree(rx_tid->dst_ring_desc);
++		rx_tid->dst_ring_desc = NULL;
++	}
++
++	rx_tid->cur_sn = 0;
++	rx_tid->last_frag_no = 0;
++	rx_tid->rx_frag_bitmap = 0;
++	__skb_queue_purge(&rx_tid->rx_frags);
++}
++
+ static int ath12k_wifi7_dp_rx_frag_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
+ 					  struct sk_buff *msdu,
+ 					  struct hal_reo_dest_ring *ring_desc,
+@@ -1154,7 +1178,7 @@ static int ath12k_wifi7_dp_rx_frag_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
+ 	if ((!skb_queue_empty(&rx_tid->rx_frags) && seqno != rx_tid->cur_sn) ||
+ 	    skb_queue_empty(&rx_tid->rx_frags)) {
+ 		/* Flush stored fragments and start a new sequence */
+-		ath12k_dp_rx_frags_cleanup(rx_tid, true);
++		ath12k_wifi7_dp_rx_frags_cleanup(rx_tid, true);
+ 		rx_tid->cur_sn = seqno;
+ 	}
+ 
+@@ -1214,12 +1238,12 @@ static int ath12k_wifi7_dp_rx_frag_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
+ 	if (ath12k_wifi7_dp_rx_h_defrag_reo_reinject(dp, rx_tid, defrag_skb))
+ 		goto err_frags_cleanup;
+ 
+-	ath12k_dp_rx_frags_cleanup(rx_tid, false);
++	ath12k_wifi7_dp_rx_frags_cleanup(rx_tid, false);
+ 	goto out_unlock;
+ 
+ err_frags_cleanup:
+ 	dev_kfree_skb_any(defrag_skb);
+-	ath12k_dp_rx_frags_cleanup(rx_tid, true);
++	ath12k_wifi7_dp_rx_frags_cleanup(rx_tid, true);
+ out_unlock:
+ 	spin_unlock_bh(&dp->dp_lock);
+ 	return ret;
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
+index cb72b75526d4..85677258b1df 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
+@@ -31,6 +31,8 @@ int ath12k_wifi7_dp_rx_assign_reoq(struct ath12k_base *ab, struct ath12k_dp_peer
+ int ath12k_wifi7_dp_rx_link_desc_return(struct ath12k_base *ab,
+ 					struct ath12k_buffer_addr *buf_addr_info,
+ 					enum hal_wbm_rel_bm_act action);
++void ath12k_wifi7_dp_rx_frags_cleanup(struct ath12k_dp_rx_tid *rx_tid,
++				      bool rel_link_desc);
+ void ath12k_wifi7_peer_rx_tid_qref_setup(struct ath12k_base *ab, u16 peer_id, u16 tid,
+ 					 dma_addr_t paddr);
+ void ath12k_wifi7_dp_rx_peer_tid_delete(struct ath12k_base *ab,
 -- 
 2.34.1
 
