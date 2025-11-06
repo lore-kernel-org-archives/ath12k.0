@@ -4,68 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B017FCCFA05
-	for <ath12k@archiver.kernel.org>; Thu,  6 Nov 2025 12:53:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16BD6CCFA05
+	for <ath12k@archiver.kernel.org>; Thu,  6 Nov 2025 15:34:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=SB8+JLmxMvZ1taiZmigv9b0OWRL2mwFbMhEcLnOTyhU=; b=VFk/speHJa+wfjoqvRYCi9Lzci
-	sMpe/P3fZURdLCUQ1eMcP1mYF8Sm26H+idlvjaJ8rRO7cP89Xci6aNbDK9GEW5CQllxdiFxdeRl3n
-	FXnJUbEQxcI/5sazVq89W+yzlwA+UAXQkhuw46mk70bDH/2D+EcjJWh+oPN8piVSeIzwUN55eLzzJ
-	s+eUqii5p1C/vhVtTnJfqfRgimrHF9Im5B2L+Uojjo8bSmKA1sEp7AjLpGoBFP6JqkwTs0njorcKE
-	pLd8e2yBbCfPWlVFeQGvPEn84rrfbKHKH5EOR2lsEfDNnMnSHQN3XdpBK4aKbWAO67NroKOUfwjZP
-	3aHai+aQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=yqxjaHTpe4VK+QTHaTKoDB5Cp5IvAuOvPPRr4D6XufA=; b=wtnBtpRVtvEvILrTWyAtmYlzN2
+	LAJCHKduQi1Izq2vK9XqPpxJakE+Ym4h8G3aK++UlwlKa6D9lMRwKH6jNHzGSxhohROeI44Phekzj
+	dKaC+kFbmmKJDCVNgHnqzE3kGZNeP5ZUbaF0zC3NET4z7uclI9+vf/TFFAzziiHaMh3OT2tSjJZ3p
+	5IlXQrIvnlNJXqAv5/5PQDRYRP4k0mB6N0e83V+8/YttVZWaQPO0VvbmIZ6Ue4skneWGmU0cWKaVQ
+	WwYlNgmOKa8Pf7gFax3G5GbcwGvMhNGtXhdVRe7ZzNZVIKfxthAdkWTTuLgtlfV/lI8UqQLp8ir6i
+	iNb71zKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGzU9-0000000FW32-1eR9;
-	Thu, 06 Nov 2025 12:53:05 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	id 1vH20A-0000000FpHT-2jm4;
+	Thu, 06 Nov 2025 15:34:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGzU6-0000000FW2S-17Ci;
-	Thu, 06 Nov 2025 12:53:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=SB8+JLmxMvZ1taiZmigv9b0OWRL2mwFbMhEcLnOTyhU=;
-	t=1762433582; x=1763643182; b=FWznEzkCgXU0DLyAZcO+8Vi9mfXHyVodz/b/NtuoH4KVH7A
-	vXoy1r/UUbTsgKv7A5RSoQdM/TH4Jlr4/7jnuaabBd8jpTyuZKqVJi+TOd8s4h8yZYTrsTiiupVVX
-	XCf32MGpmr4Beyyy+g9GrquzhNRL0nCNTtvEuCy0t/E79dGlBu6v8rk4u/0DWFDu6KMDja9ItIsav
-	VviKg6f+/12T+TRhiJE/sgdVw31qdgReY4a32Lk5OFDoxWdV1b/WhMhiycWmu0BMNGnJL5DOglHuF
-	w+jhMVvOJ+01ft66d9olHsjn0y3o1gI7EqtBMz5Dx6hYpDUFiQEih3+5Kk7EAcwQ==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <benjamin@sipsolutions.net>)
-	id 1vGzTx-00000000Bbc-1oWV;
-	Thu, 06 Nov 2025 13:52:53 +0100
-Message-ID: <996194019be7dcca0ee0fd16d7d3274d0f2d4a92.camel@sipsolutions.net>
-Subject: Re: [RFC][v1][Design] AP Architecture for Roaming with Wi-Fi 8
- Seamless Mobility Domain (SMD)
-From: Benjamin Berg <benjamin@sipsolutions.net>
-To: Aditya Sathish <quic_asathish@quicinc.com>, Johannes Berg
-	 <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, 
-	hostap@lists.infradead.org
-Date: Thu, 06 Nov 2025 13:52:52 +0100
-In-Reply-To: <793f6c8d-d092-49c8-b34f-8e6db7761750@quicinc.com> (sfid-20251104_223218_742396_D7F355C0)
-References: <fbf4209c-4fd8-4047-96d7-7fa34d9ba44d@quicinc.com>
-		 <c618e0e8fdee9f7aa2628aefdf2dc04c48e6e9b7.camel@sipsolutions.net>
-		 <30403bb70a2a017c90b1d4a5a1a07514bb670822.camel@sipsolutions.net>
-		 <fb0a1ddb-af24-47f9-9d75-0a8f2e346d81@quicinc.com>
-		 <b6a9de98b9b09c73003b89331ba235c3a959c3fd.camel@sipsolutions.net>
-		 <793f6c8d-d092-49c8-b34f-8e6db7761750@quicinc.com>
-		 (sfid-20251104_223218_742396_D7F355C0)
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.56.2 (3.56.2-2.fc42) 
+	id 1vH207-0000000FpGp-2vGH
+	for ath12k@lists.infradead.org;
+	Thu, 06 Nov 2025 15:34:16 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5A6Bl9nU4131320
+	for <ath12k@lists.infradead.org>; Thu, 6 Nov 2025 15:34:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	yqxjaHTpe4VK+QTHaTKoDB5Cp5IvAuOvPPRr4D6XufA=; b=fTjW0GyufQjJtTWE
+	4Ur1e2Nc5g0InqaOLSRU0pO+VAxkun+S57avNjm70n7REUUbdUf6qAo0uxbIYP7r
+	FwYvl7NZdbcu2UqfD1z0MW5hVpPmtBjiHDMPGT+uyb/bQPaVG+YMDqtJoJpClfPp
+	RUEJ6Qz3nmyb5ByVQJigqmOHgxhU0e79eYzKuygwb6Y8HKO3AwNJgEFUMfffhaY6
+	n6Lj+5Z27uvfwTrJcmD4MQjQ9B2akJ5EEfQRqDR0LR+fBhh0iy58oDmOaPt/gz+t
+	ELfW8JBwJcMIlIPw2o6D8h9j6N9AdXxi3r/JJObfMj4dgfcdgYibwsdtRbVTRxt2
+	CsWF1Q==
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a8u3x0nw1-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 06 Nov 2025 15:34:15 +0000 (GMT)
+Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b6ce1b57b3eso744329a12.1
+        for <ath12k@lists.infradead.org>; Thu, 06 Nov 2025 07:34:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1762443254; x=1763048054; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=yqxjaHTpe4VK+QTHaTKoDB5Cp5IvAuOvPPRr4D6XufA=;
+        b=AKN4gtXVhHFF4Q7vexGOqDcrDNYyrFeR/WH3fztgLH5aPzZ6Ry3usQnXQ6PG9hSmkt
+         LIUUmh5YDu2ziNGvdykKCN/8Auvat7iNII2+d9GH3MPRY2clr31WbNORd+PGmSosBoB/
+         CAfbSxfk9YGy6jrDIA+gzkXB0giaONLW38TMsPDIRU5hHGRUceYnewpdZ/9hpJT/aB9I
+         07zJ9uStsTbzzNadb9x4wWhq1nlhXADOj30lutj6A+OOORfCqxhN+Imn3Xa4pGFJAJ5o
+         VI7TBGlzAo5yYMuydtmGkCJVX2RlkZ3SXIlwvGC8sXyVirm8LJ50eI5q2gh7eP0Hq8ZF
+         OdqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762443254; x=1763048054;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=yqxjaHTpe4VK+QTHaTKoDB5Cp5IvAuOvPPRr4D6XufA=;
+        b=LTHR8S+pZmJhbDfEujrl96JrMay48tJDUbPjhKW+BxuEwKD2S4V0nql7f+1L1SXYju
+         CkKxp4iLMavgzg7+6rt3fJDc2DsCKfjkwfQ8TNbswKTcF2xqIXBPIkvNPTYqh3V3mUFG
+         np4KYjWPtyV4SAe83KOevlmb9lRypaqF2IAgdVFkBn+GDbCQbVuP9F7+RryLFW0k7mwi
+         0Uh4N5tKX801DKdejSOyP7XB9W76P1RpIv1krw0euJc9ofv/puaX72GSy7D5lpQz9kXe
+         Gq+H56/scMyLRszj3EwU3EHV1IAMwcTmIAg4MJ0zMszftdoOoQ4rJHKHC0K4WidcjeT8
+         cC2w==
+X-Gm-Message-State: AOJu0Yx47JbhWZijEaizc8QM2Ng9dLf8VPwgSLt7ISnfh1F8JrGT+/BC
+	ZUpXO37R4Qcz5Bhdg5y/SGVT5REErq9kARLXLi2DU2RU+67hP68yTmsAa4dps34QYgs26nu4Lu7
+	mgcAGoVCzOiRFQwu28iXWteacIsaGXLaw+VssThj968yA+sw+ybR71fuIRWj0pMoM
+X-Gm-Gg: ASbGncs4lUBHiK1/t7u4gu9m7cpWwMWMJoHQtazEZLIwniUawYO1x1gYaF995IrcCYi
+	dXTOT2rta9OijAl6GPBdlbVy62rHcLMxeg7y+KGgh8jNzfC5rVYuX3vjfmhd/8Fp07zFe2bnRHv
+	oym2K0VenboK0lICeO7W0pkDc+C8LVS5TIry6QFRT2D5pjktoSfLu3bAN/7pdW9HQnIMMc6Lfja
+	r2dGTky7092TMY0MXg1FKa80dThVGqVUZ48GZnwAHfV3VkUsbEoM3PxE7roRuVFpQZde8FKSsKl
+	dUcZlDwgYIlA1HqZNxzdT0ecpjyIvEEVEDg6v9FPSb27JCdXY1Ahk/FUnT3ECVC3znGoNhXRgVg
+	wHsVFXg7pY4xo0uJcCViVdBoCoLSGpKficdI=
+X-Received: by 2002:a05:6a20:549d:b0:341:8e52:4be with SMTP id adf61e73a8af0-35227d6e1d5mr7708637.6.1762443254317;
+        Thu, 06 Nov 2025 07:34:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHCj36n+Q5SurmQpG593kSmZIdLE+nEKuCfluWpwGoAjzJO18NF4Rn0ZSbl4e9YApuVZ50s5Q==
+X-Received: by 2002:a05:6a20:549d:b0:341:8e52:4be with SMTP id adf61e73a8af0-35227d6e1d5mr7664637.6.1762443253867;
+        Thu, 06 Nov 2025 07:34:13 -0800 (PST)
+Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-341d0593cb1sm2945865a91.15.2025.11.06.07.34.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 06 Nov 2025 07:34:13 -0800 (PST)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: ath12k@lists.infradead.org,
+        Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20251031-beacon_stats-v1-0-f52fce7b03ac@qti.qualcomm.com>
+References: <20251031-beacon_stats-v1-0-f52fce7b03ac@qti.qualcomm.com>
+Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: Address issues during
+ beacon stats retrieval
+Message-Id: <176244325323.1820628.921013394397437129.b4-ty@oss.qualcomm.com>
+Date: Thu, 06 Nov 2025 07:34:13 -0800
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.3
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTA2MDEyMyBTYWx0ZWRfX/cn6iDVlgel5
+ C0x8aAaeaHBQin1xvWR9CYQQDw1LNB+812gTYA0kZ930AMAdVTw0kUUq5IbTxQmmEjzy6teTZay
+ hbVs4q8TJd5pCpxkm5t0g7b7zgtuEaQIXYUSbgQ1r78lQD2u46AUKt/ZYNiiPffcL7ixv2aVIwr
+ 3YB49YOuEarhKrYPh21XHZL1QNpNREiusDRSlO88NTHdnazM+T1ntJm0ALMRdj1DK/FVeqQtmUQ
+ eQSjBbhtgHKLeVJiAU1UszIGAyAFeiTb6JqA7l+PDSrwMVNI+PvmfO97iLiJvcrd+rDOntqt4TQ
+ dhyVCbWOJ66Q9IEcpMknOexSMD6QKJinUhiURbT7KVMhhTplSuEZtgP+lxw4Hbe6SLJxEZfy6uh
+ gY/r9iERttM/VMlh8ArAteU96QUX6w==
+X-Proofpoint-ORIG-GUID: GYZRdqkDd5osYGaH3xOBEFIN8Is20H-U
+X-Proofpoint-GUID: GYZRdqkDd5osYGaH3xOBEFIN8Is20H-U
+X-Authority-Analysis: v=2.4 cv=BrKQAIX5 c=1 sm=1 tr=0 ts=690cbff7 cx=c_pps
+ a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=IN4UVXusT1ehFvA6WGYA:9
+ a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-11-06_03,2025-11-06_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 spamscore=0 priorityscore=1501 impostorscore=0 bulkscore=0
+ clxscore=1015 adultscore=0 phishscore=0 malwarescore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511060123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251106_045302_307620_6AB1C321 
-X-CRM114-Status: GOOD (  30.15  )
+X-CRM114-CacheID: sfid-20251106_073415_767369_3FAFEFFF 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,93 +142,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi Aditya,
 
-On Tue, 2025-11-04 at 13:30 -0800, Aditya Sathish wrote:
-> On 10/30/2025 01:47, Benjamin Berg wrote:
-> > Do we have a clear picture of what the performance issues might be?
-> >=20
-> > To me, it seems a bit that talking about threading might be a red
-> > heering. It could be that the primary issue is the prioritization of
-> > events when there is a burst of activity.
-> >=20
-> > We should not need threading as long as each individual event can be
-> > processed quickly and hostapd is able to keep up overall. In that case,
-> > we have an event ordering issue which can likely be solved by using
-> > multiple nl80211 sockets and giving them different priorities in the
-> > mainloop. By doing that, you can effectively pull all time-critical
-> > events to the front of the queue and ensure they are processed with
-> > only a short delay.
-> >=20
-> > Now, that doesn't invalidate your point at all. If we do have tasks
-> > that take a long time (crypto?, external requests?), then it can make
-> > sense to push just the slow part into a separate thread and pick up
-> > processing in the main thread once it has finished.
-> To preface our concerns: the longer the context transfer takes, the
-> less time the serving AP has available to drain its remaining packets
-> before hitting the SN limit. This can result in a larger gap in
-> client-perceived latency during roaming depending on when the target
-> AP is ready to start DL transmission. Efficient handling of the
-> context transfer (during the ST Execution phase) is therefore key to
-> minimize client-perceived latency.
+On Fri, 31 Oct 2025 08:37:44 +0530, Manish Dharanenthiran wrote:
+> Currently, retrieving beacon stats is getting failed with timed out error
+> when multiple BSSes are enabled. This patch series tries to address the
+> mentioned issue by the following,
+> 
+> #1: Reset the firmware stats only after retrieving the complete stats
+>  #2: Remove the wait timeout to get stats for all enabled BSSes during
+>  beacon stats retrieval.
+> 
+> [...]
 
-Right, so the time it takes to drain the queues and the likelihood of
-hitting the SN limit is not purely a function of how long the whole ST
-Execution process takes.
+Applied, thanks!
 
-I am probably missing some important bits, but I imagine that an early
-bridge update is quite important. The earlier the bridge stops
-forwarding packets to Serving AP MLD, the fewer packets need to be
-flushed relaxing the SN limit issue and minimizing the time needed to
-drain the queues.
+[1/2] wifi: ath12k: Make firmware stats reset caller-driven
+      commit: bd6ec8111e6546d01f16bb113aee1fcada6e86a9
+[2/2] wifi: ath12k: Fix timeout error during beacon stats retrieval
+      commit: 2977567b244f056d86658160659f06cd6c78ba3d
 
-As far as I can tell, one could immediately ask the bridge to stop
-forwarding packets to the Serving AP MLD when the ST Execution Request
-frame is received. Similarly, forwarding to the Target AP MLD can begin
-as soon as it is known that the ST Execution will succeed. After all,
-the Target AP MLD already knows about the station and can buffer frames
-for it. Such buffering can happen before the HW is fully configured and
-even before the Context has been transferred.
+Best regards,
+-- 
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
-Now, the Target AP MLD does need to be fully configured before the ST
-Execution Response can be sent out. But maybe we can effectively start
-the the DL draining period early and relax the timings that way?
-
-> You've accurately captured the core performance concerns we intended
-> to highlight:
-> 1. _Prioritization of Management Frames:_
-> =C2=A0=C2=A0 Certain management frames - such as SMD - should be able to =
-"skip
-> =C2=A0=C2=A0 the line" since a roam request typically will indicate degra=
-ded
-> =C2=A0=C2=A0 client link quality and prioritizing immediate transition ov=
-er
-> =C2=A0=C2=A0 processing existing management traffic is likely in the clie=
-nt's
-> =C2=A0=C2=A0 best interest - especially after preparation has already com=
-pleted.
-> 2. _Additional Threads for Long-Polled Operations:_
-> =C2=A0=C2=A0 Without multi-threading, long-polled netlink messages or sys=
-tem
-> =C2=A0=C2=A0 calls can block even the prioritized kernel events. As you n=
-oted,
-> =C2=A0=C2=A0 offloading slow operations that are busy waiting to worker t=
-hreads
-> =C2=A0=C2=A0 can allow the main thread to handle time-critical events.
->=20
-> That said, even with multi-threading in hostapd, we still face
-> overhead from RTNL locks and netlink socket overhead =E2=80=94 not only f=
-rom
-> hostapd of the serving MLD but also from other hostapd processes tied
-> to other MLDs on the AP. This is why we initially proposed moving the
-> ST Execution sequence to mac80211. Doing so could reduce round-trip
-> latency from ST Execution Request to Response, especially under high
-> system load and concurrent work across multiple hostapd interfaces.
-
-Yeah, there may be some things for which a lock might need to be held
-in the kernel. That said, with the above in mind, I am wondering what
-the critical parts there are and how long the round-trip time is
-permitted to be in the end.
-
-Benjamin
 
