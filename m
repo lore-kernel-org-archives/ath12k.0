@@ -4,79 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF5A5CCFA1A
-	for <ath12k@archiver.kernel.org>; Tue, 11 Nov 2025 16:02:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8812FCD1297
+	for <ath12k@archiver.kernel.org>; Tue, 11 Nov 2025 17:28:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Cc:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=coMU4DAPi+BtUyHwW1ZGlg7fVra25xQgwHzxt51usSc=; b=GWVIlCqjqWynh0w5PrMK3SOQid
-	1PTKHJuobMxvLIoCogo+ETgz1tTRyMGhtO8HPUjVEIUApPoE6+g8QbvL2QxnOlytBwFP82pTlfNT0
-	I1S1WpgKmgMy95M09+7IeQClmvP7ErfCjaqqneKvFjj6sNRRFP+fwEkBfJ/IWhXiNvdpeXino7lBY
-	tajGffkhWrqs8qJlz0mrPXSS5oYFX9Nex8x0MfJwcyi6rlPwuCXy8wWbVdDtWKsJ+XLAZ/HmZwfYh
-	Whk+66MSBNN0QZMALAQbPO3ZTDPN/byrZa2DgBW3L7mfPICRwwecPYGuPOJIKHMZeFOLk0nViDxwt
-	tA6srMUQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:From:Subject:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=1yTPDHSc2XG60aIrPablLQ3QyMPBQoJr8FY38lTVHzE=; b=B5WRXuCYUmKvKwrfe30OPfMdf9
+	PuhvEB2Dlg5RZnb2tVqXodhwu1h357RkarfnNVOd0uvx656YzmFNgzkxUb2VtEUULKr6SBh0SvP62
+	JVSQAhGvTQCJP0A+kLpVP8/gc2/Z3LepTFJHm9WU6jj6cP+JqvoZRti/JtySYJoUmEtg6T4IbqTRl
+	zYvW/AAW/CAvmyqeTokxBXCUEZObk8iljbTqLrgBGzU05hgJxqH0hyXlrN/647+W7aU5olPhrg0XO
+	KPI4ioxIMdLkp65zs70LuPlhaXdxW4PrxuSE3lG8htQki1O/osL6o836SMu24Jo92gnXDFX4Sfl1n
+	CvjhtbBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIqpO-00000007QFT-2Sgm;
-	Tue, 11 Nov 2025 16:02:42 +0000
-Received: from mail33c25.carrierzone.com ([64.29.147.43])
+	id 1vIsAF-00000007X2x-0xYJ;
+	Tue, 11 Nov 2025 17:28:19 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIqpL-00000007QEh-0hRB
+	id 1vIsAC-00000007X1d-0arJ
 	for ath12k@lists.infradead.org;
-	Tue, 11 Nov 2025 16:02:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=carrierzone.com;
-	s=mailmia; t=1762876949;
-	bh=luEWbFlPm4dvqL0JQ2wxArXI8nxq43clT3aNQcQzfiw=;
-	h=From:To:CC:Subject:Date:In-Reply-To:References:Reply-to:From;
-	b=ggYd0aXJaaOi7aIMHLBF+YwMdKsrlBYZXIC5U+dxhSq3zT3FIO3K1Ct9My9SpdTID
-	 0rrsY/WVfcTrgoOgfUDXj9WZC37wT3UvFlY3Oz+SouLSHVEtmBjciqNZhFAY6/uEm5
-	 wlxR5IMYu9uXFWGpVDHeGPKsqi8bqBz5VXF3wIxE=
-Feedback-ID: pgupta@hindutoo
-Received: from mail33c25.carrierzone.com (localhost [127.0.0.1])
-	by mail33c25.carrierzone.com (8.14.9/8.13.1) with ESMTP id 5ABG2Ndh2871912
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
-	Tue, 11 Nov 2025 16:02:24 +0000
-Received: (from webmail@localhost)
-	by mail33c25.carrierzone.com (8.14.9/8.12.2/Submit) id 5ABG11Z82868960;
-	Tue, 11 Nov 2025 11:01:01 -0500
-From: "pgupta@hindutool.com" <pgupta@hindutool.com>
-To: greearb@candelatech.com, ath12k@lists.infradead.org
-Subject: Re: ath12k pcie radios with MLO support?
-Date: Tue, 11 Nov 2025 11:01:00 -0500
-Message-ID: <1762876860.35o0s3e54wssw80g@mailapp03.register.com>
-In-Reply-To: <1891f4e1-1e28-4f30-b48b-fa50210135da@candelatech.com>
-References: <1891f4e1-1e28-4f30-b48b-fa50210135da@candelatech.com>
+	Tue, 11 Nov 2025 17:28:17 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5ABBGIPX2117330
+	for <ath12k@lists.infradead.org>; Tue, 11 Nov 2025 17:28:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=1yTPDHSc2XG60aIrPablLQ
+	3QyMPBQoJr8FY38lTVHzE=; b=XbaScViBdNyZlvJaRxBTh1MRQ0m11aaITfv+7j
+	JNqOsNxBJdpg7A1YVGJA8sWWsLKnnxVLnytsRzfgGP4PTxTLQIn+SutyD/8jueju
+	fMTUQyGf5FDGN8e3MC6GgFVVotukYEDuG/Zuztu8IB31nKmRu85Bbat6C3Ch7qDA
+	bMCWfeJ6Aqxyb2YieHsKOYT2eVSGF2WeV5NJECQdHZ7ez94T6c6tZHEucaT3Mzs4
+	OU0dLnUHLnUb2U/4WlNEdYm4IxcdY8XXyRDbeHNwFOI3o9gPhW65JrLU3Oka8Mnt
+	N6ZdOpW5zQC0th7teoBD57uURh/aXsZT1bS6Oz+ceULJ14GA==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4abpy8k9e2-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 11 Nov 2025 17:28:15 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3437f0760daso7817020a91.1
+        for <ath12k@lists.infradead.org>; Tue, 11 Nov 2025 09:28:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1762882095; x=1763486895; darn=lists.infradead.org;
+        h=content-transfer-encoding:from:content-language:subject:cc:to
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=1yTPDHSc2XG60aIrPablLQ3QyMPBQoJr8FY38lTVHzE=;
+        b=atyEeZU11A7VgvFh94+jvQK7EQLCfjzakbI6vZsE8hbwhgskfoRK7u435+x8NbM3Ft
+         tCU/aq7+121psB9pHFEZr6vXW3elhvGXAAFCyxvwe3CqwJsQyHIX3QtVfK+VgbcyroE1
+         TWEPH8MHAzfRtioQ3zs3c76j9NSXXKvoPRUHUnST5RrmahIT582rT3AfknmV9E89VGbU
+         KmZzaHRsMDS9mQvogtmCk9ID6X0cEnx00BL1lmc+hmGCAQZca8wsqbotC+G053IpD0/3
+         JP4EvrVgublo0ewQrWCAkRofOI1vpgDzKQ8E5kkwM2bJHt7fU7fe4oN9Qx/OBuHQgVKi
+         l2UA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762882095; x=1763486895;
+        h=content-transfer-encoding:from:content-language:subject:cc:to
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=1yTPDHSc2XG60aIrPablLQ3QyMPBQoJr8FY38lTVHzE=;
+        b=e5gKI5IwbtwFlWXHxhjksCLgpMVWhL+U1oFl1DHnnR2FPpjWiRYRvPtd/ObQL/IQeK
+         In84CDaMM6XpFPaixQ9uHz+FLSNvPjYgooM9A/ZVj4ujNqXjTWhfCxmUV/3TNft9fwok
+         OKbiUkAMqIcA2VGbhPi0+30ehqF72Rw1MMl8XJ7WJZy4oWH8i8AmSdeI31hyIxbZmv5Z
+         Cit/veJpUtUpIGxOCjed1LunGwW8qpj6bulqtXiPn7MUB4PJc+7aQGL/YX0+qYunsvwb
+         LgZqRb0Y52stI25MrDAwiMNc93dZ8BnoCz9oQk0FC8iFLE2KCOmBPrJTI4CoY1VxzjSq
+         aXDw==
+X-Forwarded-Encrypted: i=1; AJvYcCVsNLJw95RKgifZDNs0qF9Nj2p5gtYN0d7cTKdN1pYgFFnCrvFoxtIc3ePYNp7lnOvkmOZodE4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzVmDSWx6IAaum/lyRDMmlRKLQJZrsTFWQ/0uJBhJomB4J3o3fy
+	nyZQPTHXqS1UZ4xBgDq017yTiU6TpDurxZLNNvpJrpxV/W11+ZgjK1WZ6J3phUbaIo8+Ec87xYj
+	40RZa93P9cdk89e+pHHO4Q572FV7B8APL+/lc0Gw0y+VKoO0+8viYLCRg8WW34QPZ
+X-Gm-Gg: ASbGncvVVTo+wFLp+97il02vAC5mWO+fITg4CnWJznsm4+rMvXD8ogUM9ELH2QqjzTy
+	QTJZGbyHbtRkaBnEIVB52MF7ac4VergjN6SEINSqbCf57XoHG+6uU/u3Uc1qevQxdG4okoEWU/N
+	Shhc4/a4+T2nXqJud3HIdeFHcGskNvP8JErPWzNDkA/CRxZ3q/IrDAAakf5ZXIllT8KQX267UB7
+	qzvxCQbmChCIoGttKrBlNsKZO2dLOgwOJknQzDk/fA0h9bLSwU9dsVcsAcmvsh8190Xbi037G0T
+	l1sjVq7j9Quxz3KzFQ9Ke6ltLIOtI8DDLZxzBLtmS0PR+O0rs8aYNg8ZUCUQv66X9FGWBIdU7EW
+	5AqCITRRxBW7/B2wk5lIbjvB4QiiysASITm8=
+X-Received: by 2002:a17:90b:4c04:b0:340:b06f:712e with SMTP id 98e67ed59e1d1-343ddec5998mr119192a91.19.1762882095006;
+        Tue, 11 Nov 2025 09:28:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFbddsu6FdKyudkS0lKZNwLRY1hL64MQLZC+zahT2rFZHB4c/OuxDy9ljnq3D8WemPe/3hrNQ==
+X-Received: by 2002:a17:90b:4c04:b0:340:b06f:712e with SMTP id 98e67ed59e1d1-343ddec5998mr119160a91.19.1762882094449;
+        Tue, 11 Nov 2025 09:28:14 -0800 (PST)
+Received: from [10.81.24.74] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7b0c9ff8538sm15987444b3a.28.2025.11.11.09.28.13
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 11 Nov 2025 09:28:14 -0800 (PST)
+Message-ID: <15a98cae-0274-45f4-9b8e-be6fa9720884@oss.qualcomm.com>
+Date: Tue, 11 Nov 2025 09:28:13 -0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+To: linux-wireless@vger.kernel.org, Johannes Berg <johannes@sipsolutions.net>
+Cc: ath10k@lists.infradead.org, ath11k@lists.infradead.org,
+        ath12k@lists.infradead.org, jjohnson@kernel.org
+Subject: pull-request: ath-next-20251111
+Content-Language: en-US
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: quoted-printable
-X-Image-Url: https://mailapp03.register.com/api/storage/pgupta@hindutool.com/profile/picture
-X-VADE-SPAMSTATE: clean
-X-VADE-SPAMSCORE: 0
-X-VADE-SPAMCAUSE: dmFkZTEDwBJDOajIUfc2JNOpCxS/N95v2SLQllEsb6UnTYqk6xP+yldiELL1gHohBx9j4gEWnXK+P3+scV274/tRSMsCe9iRvjJ2THggOqT1sbhgKXAe5Frnl9CogRdFXCFNNJG+LikGHye7Z323/L4Aw+EVFMowLhcbUBXJTdU7Fj5yvewdMBCzrjaLFQC5K6Kmp86BpBaVMigF1OtA2xVXz09Ydx4RVS4lZHGUhPcogfC1BscD5adg3o8SU6WBLx1fKji+X6MWAVZxyrud2h4MqUgXSw/HJwifwO7MX5zFhbuKAYO4mifCDZdcO+Rnm8H8rVDRMwpr97+8icRG9hc4k1yRU1gb7Qin9Shh7QBHIrNDFMWN7lMtopTJFfm8ftCQdWFKBvrHyqOiYtFEvKTxciOX2c6qIf3ma1GTSRIrUr+wloltaMniFqcQTLxdwsrXTFLJbEox3Mp3ylHpkMp5LrJ2v3c38F56yX2fZk+g9mood9od6reZqi8DFD4oJK1/1hIllvCraOcog3q6QyKi63Z73Jt6uvmC94mlTGPZtOx1I4sEIS4z1JypKqP+Y4xGgaaUF/lZoGFo288cWkgt3WArNCAlL2UwTSW7KsY+AH/GZKEX/7El84ffU8Q/Mwa4awlmsdNnoO8REigmPuDC/p+N4XPv3OBVkkzfWPRnHDDUCQ
-X-Rspamd-Status: No, score=1.90
-X-Rspamd-Result: default: False [1.90 / 6.00];
-	FROM_DN_EQ_ADDR(1.00)[];
-	SUBJECT_ENDS_QUESTION(1.00)[];
-	MIME_GOOD(-0.10)[text/plain];
-	REPLYTO_ADDR_EQ_FROM(0.00)[];
-	ARC_NA(0.00)[];
-	MISSING_XM_UA(0.00)[];
-	MIME_TRACE(0.00)[0:+];
-	RCVD_COUNT_ONE(0.00)[1];
-	FROM_EQ_ENVFROM(0.00)[];
-	RCPT_COUNT_TWO(0.00)[2];
-	RCVD_TLS_LAST(0.00)[];
-	HAS_REPLYTO(0.00)[pgupta@hindutool.com];
-	TO_DN_NONE(0.00)[];
-	TO_MATCH_ENVRCPT_ALL(0.00)[];
-	REPLYTO_DOM_NEQ_TO_DOM(0.00)[]
-X-Origin-Country: Unknown
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: m-nuAHnunsKW3L7-TovPI-nNzmSzvwc9
+X-Authority-Analysis: v=2.4 cv=AYW83nXG c=1 sm=1 tr=0 ts=6913722f cx=c_pps
+ a=0uOsjrqzRL749jD1oC5vDA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=Z3JRDe02xMfDgAAcrXgA:9
+ a=QEXdDO2ut3YA:10 a=mQ_c8vxmzFEMiUWkPHU9:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTExMDE0MiBTYWx0ZWRfX9oHzuXdFsxA3
+ cx/tIbG5o9saUKBUiOg70dKqYk/repS7dXh/YJEIlHXinueLSFlByVPEj1vanQZrBXZ0qdkfu6M
+ qLwW7fK/9yQnc8A5CPH1tvpk2hhc5YgktoXKEqpvrVkDS5NrCxJ9SWwV4GDJ6ju6eOCSgk5HiYN
+ FljwDCYBY5fxj0MBdGUmJF5zOyyNR6kBmLHoCmU8r5eaYBZ3icixOc87FisDJD5tZiS7dxfGyMr
+ 7vDqwQC+cc6cA+YVjjf39+Fd9/jw2oRozXthmRgGZQOJXZRVlFBTlzxtzvB5QSWLwQGlXog5Q7K
+ /KTsaqiKMnkEv88N3+VCs+TF2LrgTwdd6m5qfhhMe0MkWUKjtGxldGmExFVIwELrZYpFCCxP/lM
+ kyt46y3RW5XNwAavgVQxwWjpbQGVQg==
+X-Proofpoint-GUID: m-nuAHnunsKW3L7-TovPI-nNzmSzvwc9
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-11-11_03,2025-11-11_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 impostorscore=0 malwarescore=0 adultscore=0 clxscore=1015
+ suspectscore=0 priorityscore=1501 lowpriorityscore=0 bulkscore=0 phishscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511110142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251111_080239_501785_CEC06A95 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20251111_092816_211768_61C0B452 
+X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,58 +137,38 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Reply-To: pgupta@hindutool.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-There is firmware available from compex that will allow you to do tri-band=
-=2E  Alternatively, compex can hard program the modules, but you need to sp=
-ecify this when you speak with them. I purchased the M.2 E-key modules befo=
-re they came out with the mini-pcie modules.=C2=A0 I had to send the module=
-s to them for re-programming, as I wanted a hardware solution and not just =
-firmware.
+The following changes since commit 2f6adeaf92c4ea4adf5a91b87497ba13bb057996:
 
-I have yet to install the modules but compex can help you with this if you =
-let them know what exact setup you are trying to do.
+  Merge tag 'ath-next-20251103' of git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath into wireless-next (2025-11-05 16:29:11 +0100)
 
-I have older=C2=A0WLW7000 High-Power M.2 Series=C2=A0and I believe they sol=
-d a single 2GHz module and the combined 5+6 Ghz modules when I purchased th=
-em. In any case, I have three modules, one for each band, and this is what =
-I had to do.
+are available in the Git repository at:
 
-Keep in mind that power connector are already soldered on, and I had to use=
- alligator clips to power the 5V supply they need.
+  git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-next-20251111
 
-According to compex, hostapd would be utilized if you use a plain vanilla l=
-inux kernel.
+for you to fetch changes up to 2977567b244f056d86658160659f06cd6c78ba3d:
 
-Here is a video to the modules I have, I made a tictok about them:
+  wifi: ath12k: Fix timeout error during beacon stats retrieval (2025-11-06 07:33:31 -0800)
 
-#TikTok https://www.tiktok.com/t/ZTMWUv26h/
+----------------------------------------------------------------
+ath.git patches for v6.19 (#2)
 
+Just one 2-patch series for this PR.
 
+Once pulled into wireless-next, ath-next will fast-forward, and that
+will provide the baseline for merging ath12k-ng into ath-next.
 
-Regards,
+----------------------------------------------------------------
+Manish Dharanenthiran (2):
+      wifi: ath12k: Make firmware stats reset caller-driven
+      wifi: ath12k: Fix timeout error during beacon stats retrieval
 
-Prashant
-
-On Tue, 11 Nov 2025 07:27:52 -0800, Ben Greear <greearb@candelatech.com> wr=
-ote:
-
->> Hello,
->>
->> Are there any current radios + software available where one can put
->> ath12k radios in (mini)pcie slots or similar and use those in x86-64
->> chassis and provide tri-band MLO?
->>
->> Last I looked, Compex had some dual-band radios and maybe single-band
->> 6ghz, but I am not sure those can be combined into a tri-band MLO soluti=
-on?
->>
->> Thanks,
->> Ben
->>
->> --
->> Ben Greear
->> Candela Technologies Inc http://www.candelatech.com
+ drivers/net/wireless/ath/ath12k/core.c    |  2 --
+ drivers/net/wireless/ath/ath12k/core.h    |  1 -
+ drivers/net/wireless/ath/ath12k/debugfs.c |  9 +++------
+ drivers/net/wireless/ath/ath12k/mac.c     | 15 ++++++++++-----
+ drivers/net/wireless/ath/ath12k/wmi.c     | 12 +-----------
+ 5 files changed, 14 insertions(+), 25 deletions(-)
 
