@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 215F8CCF9E3
-	for <ath12k@archiver.kernel.org>; Wed, 12 Nov 2025 15:30:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B275CCFA1A
+	for <ath12k@archiver.kernel.org>; Wed, 12 Nov 2025 15:36:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=pMT3pQpY04U3IYtmHz+2VFi+g8AokN05sbYlre18scY=; b=gSFBH8A242JLnecbRU82FTwREh
-	1GYBpj5EauLUumOBLFT67hESyLNh4czoyGhUmM0A1WKfIQo0cufItqhn49+A83ayBROyErYEGJfMX
-	jcmyEgwceqS5YDPr+QLGFZuALEtou5UI8oIlX2HAFx4TREXjbwQv3jPkE/Xgdd0X8CmzCyiZsfVxI
-	waG6C4Vz5FCcfrJN+AAyGkamwf76Bt3J3LvlktEkJbkzdi6cYzsFACKnbeG9YFeNe6WV44PIwDfyC
-	U3+iDfextig2LypRwaPBWbdqsy4zg2g6+tApOPRISTbpZ6+9oR66N5njKIbn+yk5NSPe572l1tSgJ
-	drNru21w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=JZFOzLPtvRF8PK8NbbtIvHtDt3UpMd2wyQJfW4KmjgU=; b=1ATdpPgfc+zZ26tetRoWmXE6G1
+	2ruzsBt2VNYpm3p+aPrhQ76FymYK/73HByTLnMN7BgOKzFBV9L1m/8ZX8Cvo28nSbu82lqXtLogmX
+	vw46GURfmilvgvWGadZ8sAO/um+1WASXHHxy4mPe1IlqCjyA0fO5LY5Tly7gRVh0isMLH02PnP6Ch
+	sE5aSEbuq8qU17Md+hBAF5gtA5d0ngF7UJwPEZb64KPa12WS4LbyrYaxEhlX9IW/Z52fHtAP4OvOg
+	SJEAybXf1A1Mp+AfcbkR65z6yDrr0GY9dCgDxbqKZJ3gPGFNUTGUWhkDznHx75r6RSLoQpSe+0lY3
+	XobosGnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJCnT-000000094Fj-3c0T;
-	Wed, 12 Nov 2025 15:30:11 +0000
-Received: from mgamail.intel.com ([192.198.163.8])
+	id 1vJCta-000000094f9-0Sl2;
+	Wed, 12 Nov 2025 15:36:30 +0000
+Received: from dispatch1-us1.ppe-hosted.com ([67.231.154.164])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJCnR-000000094FB-2IZo
+	id 1vJCtX-000000094e0-2OtH
 	for ath12k@lists.infradead.org;
-	Wed, 12 Nov 2025 15:30:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1762961409; x=1794497409;
-  h=date:from:to:cc:subject:message-id;
-  bh=8qWoRfDv7lGJL6kdiHlJGezboLBgEUELeJ8WtD8fGeY=;
-  b=N57G93vaWDWBxOZccUc/b95ckdKBBlKq6eablNPwxCJUbNu9GM7kGFfQ
-   FjiKOAmwKn5eOJPQk3Oe1qWQ5drwgycqdqy+7gYpXQIa02Fy5F08nmyGN
-   V3iSzWv88x8VOE29VXtplKBKuLtHkpRKShaUZ1x1otCGwi+H0l4Dn7muR
-   QzfYr6wUlQBaf2P12DxlbF78BpnjoJxF1q8w5jyRCaN1vkqx26ig5cEZe
-   PcOeREiss+6YyS0g1YUxQH1tdYLcGc5p8DLHugAdVRMcWVoZVM1CSEXzM
-   /dnqvr83T2DZZkUQRqE5JVw76k6NXNi1obEkRNBApkkJNUNC9t0v/Sqt7
-   w==;
-X-CSE-ConnectionGUID: A8f7W/qOQoaZjrYbzzFBWg==
-X-CSE-MsgGUID: 7ftMgdwVQYSPmnm52ynsAA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11611"; a="82656556"
-X-IronPort-AV: E=Sophos;i="6.19,299,1754982000"; 
-   d="scan'208";a="82656556"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Nov 2025 07:30:08 -0800
-X-CSE-ConnectionGUID: 1DgMwpFxT+CSzO5rOrVIsw==
-X-CSE-MsgGUID: Jl99bZOgRbSbYgKyv1zxIw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,299,1754982000"; 
-   d="scan'208";a="193496756"
-Received: from lkp-server01.sh.intel.com (HELO 7b01c990427b) ([10.239.97.150])
-  by fmviesa005.fm.intel.com with ESMTP; 12 Nov 2025 07:30:07 -0800
-Received: from kbuild by 7b01c990427b with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1vJCnN-0004Jv-02;
-	Wed, 12 Nov 2025 15:30:05 +0000
-Date: Wed, 12 Nov 2025 23:29:39 +0800
-From: kernel test robot <lkp@intel.com>
-To: Johannes Berg <johannes.berg@intel.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:for-current] BUILD SUCCESS
- c4e1ac09ee1c750890e36cb1f841f25518f23589
-Message-ID: <202511122333.3ulWmghn-lkp@intel.com>
-User-Agent: s-nail v14.9.25
+	Wed, 12 Nov 2025 15:36:28 +0000
+X-Virus-Scanned: Proofpoint Essentials engine
+Received: from mail3.candelatech.com (mail.candelatech.com [208.74.158.173])
+	by mx1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTP id C0076800075;
+	Wed, 12 Nov 2025 15:36:23 +0000 (UTC)
+Received: from [192.168.1.23] (unknown [98.97.43.124])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	by mail3.candelatech.com (Postfix) with ESMTPSA id 5D44613C2B0;
+	Wed, 12 Nov 2025 07:36:18 -0800 (PST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com 5D44613C2B0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
+	s=default; t=1762961781;
+	bh=SqK0ZpKqaZSwL8unHiKCo+8oP7+Pzio85/6I/EiNXe4=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=gjGxBteAitKiLbvq5bokZHsgYeOHoRpvA0ndU5v7RD2cIfurvL0kzwUqr1++52L1U
+	 9fa9iIjopUpBntk9qv80aedAZ2tbHgcrlUdML4BMX28WkFTTMkT14V+ofTMqlwBfns
+	 NUo4j+w9z8hpxKKX5YnS6B7TZeF+g1svaeoDmHwI=
+Message-ID: <3f43654b-3fca-4020-8393-d028991edba1@candelatech.com>
+Date: Wed, 12 Nov 2025 07:36:15 -0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ath12k pcie radios with MLO support?
+To: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+ Jeff Johnson <jeff.johnson@oss.qualcomm.com>, ath12k@lists.infradead.org
+References: <1891f4e1-1e28-4f30-b48b-fa50210135da@candelatech.com>
+ <f44d00bf-62d3-427d-a70d-29e7e325b8f3@oss.qualcomm.com>
+ <75947d00-4b0c-44af-b887-7874077fe64b@candelatech.com>
+ <4648e6df-08da-9d7a-63e2-d2b850ccabb4@oss.qualcomm.com>
+Content-Language: en-MW
+From: Ben Greear <greearb@candelatech.com>
+Organization: Candela Technologies
+In-Reply-To: <4648e6df-08da-9d7a-63e2-d2b850ccabb4@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+X-MDID: 1762961784-6AGTg0MS0SMr
+X-PPE-STACK: {"stack":"us5"}
+X-MDID-O: us5;at1;1762961784;6AGTg0MS0SMr;<greearb@candelatech.com>;47d173bcd71c2b66982759b803ed8e96
+X-PPE-TRUSTED: V=1;DIR=OUT;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251112_073009_601330_F7840AA4 
-X-CRM114-Status: UNSURE (   4.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251112_073627_691166_41D3FB7A 
+X-CRM114-Status: GOOD (  20.33  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,148 +82,64 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-current
-branch HEAD: c4e1ac09ee1c750890e36cb1f841f25518f23589  wifi: mwl8k: inject DSSS Parameter Set element into beacons if missing
+On 11/11/25 21:15, Vasanthakumar Thiagarajan wrote:
+> 
+> 
+> On 11/12/2025 7:10 AM, Ben Greear wrote:
+>> On 11/11/25 17:29, Jeff Johnson wrote:
+>>> On 11/11/2025 7:27 AM, Ben Greear wrote:
+>>>> Hello,
+>>>>
+>>>> Are there any current radios + software available where one can put
+>>>> ath12k radios in (mini)pcie slots or similar and use those in x86-64
+>>>> chassis and provide tri-band MLO?
+>>>>
+>>>> Last I looked, Compex had some dual-band radios and maybe single-band
+>>>> 6ghz, but I am not sure those can be combined into a tri-band MLO solution?
+>>>
+>>> Most of the Compex modules use the AP-centric QCN chipsets.
+>>> For your use case look for something using the WCN chipset.
+>>>
+>>> Something like:
+>>> https://www.sparklan.com/product/wnfq-291bei/
+>>>
+>>> (I haven't tried it and don't endorse it, just giving as an example)
+>>
+>> Hello Jeff,
+>>
+>> Thanks for the link.  That too is dual band though.  I'm interested in
+>> using ath12k radios for wifi testing purposes, so I'd really like tri-band
+>> MLO to have some feature parity with the MTK 7996 radio board.
+>>
+>> Is ath12k able to combine discrete wifi NICs into tri-band MLO stations?
+> 
+> Yes, ath12k supports tri-band MLO STA. This has been validated for QCN chipsets.
+> Not sure if this has been tested for WCN chipsets.
 
-elapsed time: 1694m
+Can this work with some combination of Compex radios in an x86 chassis,
+or does it require some integrated AP style platform?  If x86 is supported,
+please suggest some radio model(s) you think will work.
 
-configs tested: 128
-configs skipped: 4
+>> Or is ath12k entirely DBDC at this point with no tri-band MLO capability?
+>>
+>> In addition, back in ath10k days, I was able to get the radio to do up to
+>> 64 STA vdevs once I put the firmware on a diet.  From a quick look at the ath12k
+>> driver, it seems the limit for STA vdevs is exactly 1.  Is there any somewhat-documented
+>> way to get ath12k to support more STA vdevs?
+> 
+> Supporting more number of STA vdevs instead of the current 1 STA will require
+> firmware changes (and of course more validations).
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+Any idea if QCA is offering ath12k FW source under NDA and/or for some price?
 
-tested configs:
-alpha                             allnoconfig    gcc-15.1.0
-arc                               allnoconfig    gcc-15.1.0
-arc                   randconfig-001-20251112    gcc-8.5.0
-arc                   randconfig-002-20251112    gcc-9.5.0
-arm                               allnoconfig    clang-22
-arm                          ep93xx_defconfig    clang-22
-arm                          gemini_defconfig    clang-20
-arm                            hisi_defconfig    gcc-15.1.0
-arm                      jornada720_defconfig    clang-22
-arm                        neponset_defconfig    gcc-15.1.0
-arm                   randconfig-001-20251112    gcc-8.5.0
-arm                   randconfig-002-20251112    clang-22
-arm                   randconfig-003-20251112    clang-22
-arm                   randconfig-004-20251112    gcc-14.3.0
-arm64                             allnoconfig    gcc-15.1.0
-arm64                 randconfig-001-20251112    clang-22
-arm64                 randconfig-002-20251112    gcc-10.5.0
-arm64                 randconfig-003-20251112    gcc-8.5.0
-arm64                 randconfig-004-20251112    clang-22
-csky                              allnoconfig    gcc-15.1.0
-csky                  randconfig-001-20251112    gcc-13.4.0
-csky                  randconfig-002-20251112    gcc-15.1.0
-hexagon                           allnoconfig    clang-22
-hexagon               randconfig-001-20251112    clang-16
-hexagon               randconfig-002-20251112    clang-22
-i386                              allnoconfig    gcc-14
-i386        buildonly-randconfig-001-20251112    clang-20
-i386        buildonly-randconfig-002-20251112    gcc-14
-i386        buildonly-randconfig-003-20251112    clang-20
-i386        buildonly-randconfig-004-20251112    clang-20
-i386        buildonly-randconfig-005-20251112    gcc-13
-i386        buildonly-randconfig-006-20251112    clang-20
-i386                  randconfig-001-20251112    gcc-14
-i386                  randconfig-002-20251112    gcc-14
-i386                  randconfig-003-20251112    gcc-14
-i386                  randconfig-004-20251112    clang-20
-i386                  randconfig-005-20251112    clang-20
-i386                  randconfig-006-20251112    clang-20
-i386                  randconfig-007-20251112    gcc-13
-i386                  randconfig-011-20251112    gcc-14
-i386                  randconfig-012-20251112    gcc-14
-i386                  randconfig-013-20251112    clang-20
-i386                  randconfig-014-20251112    clang-20
-i386                  randconfig-015-20251112    clang-20
-i386                  randconfig-016-20251112    gcc-14
-i386                  randconfig-017-20251112    clang-20
-loongarch                         allnoconfig    clang-22
-loongarch                           defconfig    clang-19
-loongarch             randconfig-001-20251112    gcc-15.1.0
-loongarch             randconfig-002-20251112    gcc-13.4.0
-m68k                              allnoconfig    gcc-15.1.0
-m68k                         amcore_defconfig    gcc-15.1.0
-m68k                                defconfig    gcc-15.1.0
-m68k                       m5475evb_defconfig    gcc-15.1.0
-microblaze                        allnoconfig    gcc-15.1.0
-microblaze                          defconfig    gcc-15.1.0
-mips                              allnoconfig    gcc-15.1.0
-mips                        bcm47xx_defconfig    clang-18
-mips                         db1xxx_defconfig    clang-22
-nios2                             allnoconfig    gcc-11.5.0
-nios2                               defconfig    gcc-11.5.0
-nios2                 randconfig-001-20251112    gcc-11.5.0
-nios2                 randconfig-002-20251112    gcc-11.5.0
-openrisc                          allnoconfig    gcc-15.1.0
-openrisc                            defconfig    gcc-15.1.0
-openrisc                    or1ksim_defconfig    gcc-15.1.0
-parisc                            allnoconfig    gcc-15.1.0
-parisc                              defconfig    gcc-15.1.0
-parisc                randconfig-001-20251112    gcc-9.5.0
-parisc                randconfig-002-20251112    gcc-8.5.0
-parisc64                            defconfig    gcc-15.1.0
-powerpc                           allnoconfig    gcc-15.1.0
-powerpc                     ppa8548_defconfig    gcc-15.1.0
-powerpc                       ppc64_defconfig    clang-22
-powerpc                     rainier_defconfig    gcc-15.1.0
-powerpc               randconfig-001-20251112    clang-22
-powerpc               randconfig-002-20251112    clang-22
-powerpc64             randconfig-001-20251112    clang-22
-powerpc64             randconfig-002-20251112    clang-22
-riscv                             allnoconfig    gcc-15.1.0
-riscv                               defconfig    clang-22
-s390                              allnoconfig    clang-22
-s390                                defconfig    clang-22
-sh                                allnoconfig    gcc-15.1.0
-sh                                  defconfig    gcc-15.1.0
-sh                        edosk7760_defconfig    gcc-15.1.0
-sh                          kfr2r09_defconfig    gcc-15.1.0
-sh                          polaris_defconfig    gcc-15.1.0
-sh                           se7750_defconfig    gcc-15.1.0
-sparc                             allnoconfig    gcc-15.1.0
-sparc                               defconfig    gcc-15.1.0
-sparc                 randconfig-001-20251112    gcc-8.5.0
-sparc                 randconfig-002-20251112    gcc-14.3.0
-sparc64                             defconfig    clang-20
-sparc64               randconfig-001-20251112    gcc-8.5.0
-sparc64               randconfig-002-20251112    clang-20
-um                                allnoconfig    clang-22
-um                                  defconfig    clang-22
-um                             i386_defconfig    gcc-14
-um                    randconfig-001-20251112    gcc-14
-um                    randconfig-002-20251112    gcc-14
-um                           x86_64_defconfig    clang-22
-x86_64                           alldefconfig    gcc-14
-x86_64                            allnoconfig    clang-20
-x86_64      buildonly-randconfig-001-20251112    clang-20
-x86_64      buildonly-randconfig-002-20251112    clang-20
-x86_64      buildonly-randconfig-003-20251112    clang-20
-x86_64      buildonly-randconfig-004-20251112    clang-20
-x86_64      buildonly-randconfig-005-20251112    gcc-14
-x86_64      buildonly-randconfig-006-20251112    gcc-14
-x86_64                              defconfig    gcc-14
-x86_64                randconfig-011-20251112    clang-20
-x86_64                randconfig-012-20251112    gcc-14
-x86_64                randconfig-013-20251112    gcc-14
-x86_64                randconfig-014-20251112    clang-20
-x86_64                randconfig-015-20251112    clang-20
-x86_64                randconfig-016-20251112    clang-20
-x86_64                randconfig-071-20251112    clang-20
-x86_64                randconfig-072-20251112    clang-20
-x86_64                randconfig-073-20251112    clang-20
-x86_64                randconfig-074-20251112    gcc-13
-x86_64                randconfig-075-20251112    clang-20
-x86_64                randconfig-076-20251112    clang-20
-xtensa                            allnoconfig    gcc-15.1.0
-xtensa                randconfig-001-20251112    gcc-12.5.0
-xtensa                randconfig-002-20251112    gcc-8.5.0
-xtensa                         virt_defconfig    gcc-15.1.0
-xtensa                    xip_kc705_defconfig    gcc-15.1.0
+We could likely make the changes and validate, but we need the FW source and
+a toolchain to compile it.
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Thanks,
+Ben
+
+-- 
+Ben Greear <greearb@candelatech.com>
+Candela Technologies Inc  http://www.candelatech.com
+
 
