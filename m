@@ -4,109 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED3B7CE7AAE
-	for <ath12k@archiver.kernel.org>; Fri, 14 Nov 2025 11:05:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 234DACE7AE5
+	for <ath12k@archiver.kernel.org>; Fri, 14 Nov 2025 11:16:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6P466x/v0qfPEeLKiuEs2BtcEPRkDQg6/ldJqx4K5+Q=; b=Gm/d+eKcN+ruZ4IMSG0BqJsY31
-	t8bVgHPJRBtXrPtROParw8tNBztkzxw3LRqgZHYNfn2lnqnpHvA/Q5JWv25FDEI01lBRt523fjQ02
-	GSgkatnK2k3RrCCGCDlJI6MgNw2WhHTp8GviYYNX53U0Qv61CqVJFc/aV5//flRJTSH4l+ylKhkh6
-	FhbzgQSARBbiUG713dHeyzduACCt4NGxVHBoaaix90xtYZI3Y6CX1WPuhIMd9h5C1j0Jy2JnO3qVB
-	7ZpMRdCiX8Vj74yYFNXVWQAnjj5204VSMCYQDeU6KVfKSPze79AU3JhTtuC2si15r14dcf0TDvZR3
-	Xas90/ig==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=CZ8onjE/7OaE9hw5UzyAIQZRdquOeTbEhqDF1iMEQIk=; b=gkhPOH1Gwzay3Vh2QhcAVUjcgu
+	gxXHYXN4edNlUkyOhgWySpbnV5bkLsOVXuVsr3GYquelpv2CnJ97yk3pgVYDuQclhHxEkwqK356CF
+	Pht0iaiEIwTlW7qb6r7yfjoqh/ZpvORELmpDbcIWq2MPWiPFhYLIApct47rRja+Zn6pSl3ByqNCxq
+	duOdpM9bDkoG8nMrzG0tt9WSp7/J3aSUhypZ5gLpwv2zp6vx569lNTKilS7UIhkjNmP3qcv4gccCo
+	WFUi5JJ1VsyAA08zrZqXBmWoMfYeiUmBqY6uPkl3JtnnGAtPA5/xX2TtLfauHiurVtAkEodb7r8+H
+	M+SYiq5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJrbz-0000000C5MN-1Wac;
-	Fri, 14 Nov 2025 11:05:03 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vJrmt-0000000C6So-3Tlm;
+	Fri, 14 Nov 2025 11:16:19 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJrbx-0000000C5LX-0NgV;
-	Fri, 14 Nov 2025 11:05:01 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3F3186015D;
-	Fri, 14 Nov 2025 11:05:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 094B7C4CEF8;
-	Fri, 14 Nov 2025 11:04:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763118299;
-	bh=14pCZnsz1YhZIunqLNQU3CAV3Jjl9wEV0BPKyU3rFGM=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=knz8c2wUgj2bqPcC55/4tr5u7g5WJ7xbiT89snQWbbLPr9IHKDRSYKirDI6ZdlvAb
-	 1zUzuSqQWf5uh12aI3r9eNHHyMn5LLd6TuFF719lrVl9LK2Vumz/ADs0bt5Z2SBuKT
-	 aPSIc0Zb7DvWV5LOZVTloVnVZirSvs/+Ic6aKxrDMFjcSPBw0FjI6Z1gl4hSlI4wRC
-	 AZ+lMMB1gn3jWdHbBXSC3xDqoHYh9EdPhdnab544wjFOPWXFAxa58PGcxX86AYyltK
-	 dksXoKadCFfVk0SJz8PSH0sq5KdXM3EFE/5k5GzNPvluxN05I0KWXVQjD0tEqZBdmK
-	 Ey2TbVTeuGp7g==
-Message-ID: <1703d8d7-5105-4585-b8f0-82bb54809718@kernel.org>
-Date: Fri, 14 Nov 2025 12:04:55 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] dt-bindings: wireless: ath: Deprecate
- 'qcom,calibration-variant' property
-To: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>,
- Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, ath10k@lists.infradead.org,
- ath11k@lists.infradead.org, devicetree@vger.kernel.org,
- ath12k@lists.infradead.org, Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
+	id 1vJrmq-0000000C6Rd-2Lk7
+	for ath12k@lists.infradead.org;
+	Fri, 14 Nov 2025 11:16:18 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5AE8RRMu1424135
+	for <ath12k@lists.infradead.org>; Fri, 14 Nov 2025 11:16:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	CZ8onjE/7OaE9hw5UzyAIQZRdquOeTbEhqDF1iMEQIk=; b=MF5EcXQoprYWPOv2
+	pbCM18oA6jCu7BmJjyevTcl0kPdOo9YvGwxrfwmUaan7w++fVoT9Nod0+NrcW90M
+	//93an4TyDQZ+BC68tumTS1yKqSn+lfDMQI9ca6afEGcGUJSzKHX0/zAAylE2NEo
+	+IVCP+jmNV5LAMIihOHiIdAWAQYmwnvbcHR71KZOFVTuoQYbK0f+WS2+LMcmXjV3
+	S+xZg8fkrZCHwfZNyI4A29Nf+AvKOeRc8KdmZxUDb6cu+n9b5WEgs/AEI0oZIqPE
+	bsnLr0UQYUT2r5eMMzxh9w964RlnpzuvookeT5FUkHkY26l3uRjUdWY1kLHwvUi2
+	p4vXsQ==
+Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4adr9g1x28-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Fri, 14 Nov 2025 11:16:15 +0000 (GMT)
+Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-7a43210187cso1840283b3a.3
+        for <ath12k@lists.infradead.org>; Fri, 14 Nov 2025 03:16:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1763118974; x=1763723774; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=CZ8onjE/7OaE9hw5UzyAIQZRdquOeTbEhqDF1iMEQIk=;
+        b=ims58d3e0YpvzkCW3s1G5rZrIKD2rdK0Zta5RNo+LWWfXk+E82H+k1tP9D1COASYYb
+         7XDSDfhLhlCmWQLg6YC5boZY/JBxZjl9lwDTCZ/pCBArNVNxEA6AxEpomhMffIohe2pL
+         kMVilioWqZpjgv2euAwiyMiqny2XOWfpq1bNbCT0q0A7sc+mc/CZ/P280ZBxiXVTpfKw
+         yOkj1iU8RXrDJj9zrXwoC45mQjOq0o+N+BfFQLXTGK7xoA3r3j9ZAIWYw0UNTnF2ezks
+         EHgx1W9EVa+CY0WWR0f+6JTrvBe9biynJ9WWZFpJbxwUF2ULCmnJ3AtZgnxPv5euh77r
+         6qEg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1763118974; x=1763723774;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=CZ8onjE/7OaE9hw5UzyAIQZRdquOeTbEhqDF1iMEQIk=;
+        b=faBXj1XDToLV7Be8K2o7Ul/MG4O9Kv1TLFFHIs+ma35FII5T8Z8naeU5nBndDLBTJg
+         9pFubU3KYNUDloBrg+Xi0OcP6jDl6c9BtEaV0w5mCVVrvVAwP+A+VDt8kkBuqM2eVBDv
+         /evI5FQ+GWAYYpAqcyhYak2CBwRmtAHquezPZOEl3LiIDS83x9cF4ByhvBXMHMiL8o5p
+         vFLB3FkHrxjG3PzPorLOJBDtwmz4q4u8S0pXNNoFI1qsGbGcdTUxAzesBGof/9O6QwjW
+         RwWpRdnOCrz2A3izH16WjlhtH7PTw4zGpvMeNTmFHgjFDtZ/baarwcE8LvBC8flFq4KD
+         tsVA==
+X-Forwarded-Encrypted: i=1; AJvYcCUDSf8KGB2HpabwvPYfSTJPa8xdE/PXSK+g2K2FUj1iPAWCGGlTPCR+Y9Jsxo0UycwN12aD9Qk=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy4raOuwHoSkys3zAGtY57iNb2qfXsPQlsHfaFXnZ3kHV8Jl6ED
+	t45WPeIGvNdLAKvQizuZXuihjM8TTIYB/4kiBJntq61NGtPWfqg84EFGdWJKdUDttNe5nqBwuMu
+	rSfzBeTtCfP7AZgO3v9iHRb1HxO4VTWdq2h5B48dDspq3YWizRvPIDDVk1d30FhUZ
+X-Gm-Gg: ASbGncu/Y+rzzd+idP3A24d8tO80U/4m5SOtD41TibP6s94diJXVJ8JP3ZYwMedxggE
+	VOWrtb2YPXhOkeR+kU7i5bCLlC+efLvZQFlvEbbsd3C5AST4Keq803DIyLBt40wkTctJff+9tk2
+	/UoDe9jGlzUlN5SfD42JesEeu89zbRul4Lmq5m/uWN/9HoGTZixg3JxErIGAsDCZclYdZBLTnta
+	+Z6RN0EcOxxcY5mE1QwZLVXB+A1/qaKOOH0Lvp89o8IMYcIO+zK70nXtbF3Xhjcqtb1JuanYFEy
+	dLWWQAaGdsO1QRpRCXwEPC6fiShEs845UJ8h1w1/l6ni7POa1YFsmug19H4XUwMo8PibY3Npo0B
+	bBPz+SqSi6+oeibM=
+X-Received: by 2002:a05:6a21:e098:b0:342:f5bc:7ce5 with SMTP id adf61e73a8af0-35ba0189681mr3732163637.19.1763118974417;
+        Fri, 14 Nov 2025 03:16:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFod3yfShExltGVniSBUsOUaxRRfujKg3U2KnJt2F3JQHHj5TZebVtDeHhgIkrZk/ReQ7B36w==
+X-Received: by 2002:a05:6a21:e098:b0:342:f5bc:7ce5 with SMTP id adf61e73a8af0-35ba0189681mr3732119637.19.1763118973893;
+        Fri, 14 Nov 2025 03:16:13 -0800 (PST)
+Received: from work ([117.213.102.44])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-bc36db21e8esm4486192a12.5.2025.11.14.03.16.05
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 14 Nov 2025 03:16:13 -0800 (PST)
+Date: Fri, 14 Nov 2025 16:46:00 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: srinivas.kandagatla@oss.qualcomm.com, Jeff Johnson <jjohnson@kernel.org>,
+        Johannes Berg <johannes@sipsolutions.net>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, linux-wireless@vger.kernel.org,
+        linux-kernel@vger.kernel.org, ath10k@lists.infradead.org,
+        ath11k@lists.infradead.org, devicetree@vger.kernel.org,
+        ath12k@lists.infradead.org,
+        Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
+Subject: Re: [PATCH 1/2] wifi: ath: Use static calibration variant table for
+ devicetree platforms
+Message-ID: <kn24jkn77ydcrn23xz6z27cvaclksmeb3ic7pr24lxsqediugl@ubkf5t4wyyrq>
 References: <20251114-ath-variant-tbl-v1-0-a9adfc49e3f3@oss.qualcomm.com>
- <20251114-ath-variant-tbl-v1-2-a9adfc49e3f3@oss.qualcomm.com>
- <b9b4f1bb-45ef-404e-b75e-962e85a557a2@kernel.org>
- <fmumja63j3xvbvfxlmtnkfubgw4jwo5f43srrpfgqrxyqknrj4@izsqazgbiehp>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <fmumja63j3xvbvfxlmtnkfubgw4jwo5f43srrpfgqrxyqknrj4@izsqazgbiehp>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+ <20251114-ath-variant-tbl-v1-1-a9adfc49e3f3@oss.qualcomm.com>
+ <3a951821-14b1-464e-b1da-05a95f4164af@kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <3a951821-14b1-464e-b1da-05a95f4164af@kernel.org>
+X-Authority-Analysis: v=2.4 cv=L+AQguT8 c=1 sm=1 tr=0 ts=69170f7f cx=c_pps
+ a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=Nd/jlyMbCgud2ZEcqXkYLA==:17
+ a=IkcTkHD0fZMA:10 a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=7djovcsh0G9526kC70UA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=OpyuDcXvxspvyRM73sMx:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTE0MDA4OSBTYWx0ZWRfX8SvY4/si4TK4
+ Yciu1rXhZi1bDLFEae6pv7BBowkgN7J+O/x6mQzmZN34GTEviJaaAJhOLoun2fpJyO4ru6nvuiV
+ i8x64BUBiXM2uvUtDXQNR3zxPLt8+hU3peUzDZDDIdTPguIUjw78lZ62dSQiSktgdec5BZBxo5W
+ fyZpj2DGl/KFwPy1ah9VlyiRC5sZIo0KYolFezwUF5eVYQ1SAh9krxA+FzP2IXKnx1iqyd9XQdC
+ +x8rXk4ZLHNUpVnt1xUpaVUXg3YEqcjBKRsPlSUGOqqu3yEyapQfhJ07VRGQTLXx7+7dN/UoaNy
+ adzEuvAGP5tpHKRHPsegnhNR+pQdqw7ubQyxDO2SxhvQmKC5g50kgcSnZH9VewpREKpwmNCzYyX
+ x5Bk5t4Hh91tgVuv+bsQ6+OOEsDfmw==
+X-Proofpoint-ORIG-GUID: nnmHshlQEH17m3mI9i5GlVwk9UG7YSDN
+X-Proofpoint-GUID: nnmHshlQEH17m3mI9i5GlVwk9UG7YSDN
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-11-14_03,2025-11-13_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 phishscore=0 impostorscore=0 priorityscore=1501 adultscore=0
+ clxscore=1015 bulkscore=0 malwarescore=0 lowpriorityscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511140089
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251114_031617_513077_DB651254 
+X-CRM114-Status: GOOD (  33.61  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,48 +151,87 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 14/11/2025 12:02, Manivannan Sadhasivam wrote:
-> On Fri, Nov 14, 2025 at 11:47:25AM +0100, Krzysztof Kozlowski wrote:
->> On 14/11/2025 11:22, Manivannan Sadhasivam wrote:
->>> On devicetree platforms, ath{10k/11k} drivers rely on the presence of the
->>> 'qcom,calibration-variant' property to select the correct calibration data
->>> for device variants with colliding IDs.
->>>
->>> But this property based selection has its own downside that it needs to be
->>> added to the devicetree node of the WLAN device, especially for PCI based
->>> devices. Currently, the users/vendors are forced to hardcode this property
->>> in the PCI device node. If a different device need to be attached to the
->>> slot, then the devicetree node also has to be changed. This approach is not
->>> scalable and creates a bad user experience.
->>>
->>> So deprecate this property from WLAN devicetree nodes and let the drivers
->>> do the devicetree model based calibration variant lookup using a static
->>> table.
->>>
->>> This also warrants removing the property from examples in the binding.
->>>
->>> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
->>> ---
->>
->> The problem - visible in one of the examples here - is that one board
->> has multiple WiFi chips and they use different calibration-variant
->> properties. How do you find the right calibration variant for such case
->> based on board machine match?
->>
++ Srini
+
+On Fri, Nov 14, 2025 at 11:45:30AM +0100, Krzysztof Kozlowski wrote:
+> On 14/11/2025 11:22, Manivannan Sadhasivam wrote:
+> > On devicetree platforms, ath{10k/11k} drivers rely on the presence of the
+> > 'qcom,*calibration-variant' property to select the correct calibration data
+> > for device variants with colliding IDs.
+> > 
+> > But this property based selection has its own downside that it needs to be
+> > added to the devicetree node of the WLAN device, especially for PCI based
+> > devices. Currently, the users/vendors are forced to hardcode this property
+> > in the PCI device node. If a different device need to be attached to the
+> > slot, then the devicetree node also has to be changed. This approach is not
+> > scalable and creates a bad user experience.
+> > 
+> > To get rid of this requirement, this commit introduces a static calibration
+> > variant table ath_calib_variant_table[], consisting of the platform model
+> > and the calibration variant for all upstream supported devices. The entries
+> > of this table are derived from the upstream DTS files.
+> > 
+> > The newly introduced helper, ath_get_calib_variant() will parse the model
+> > name from devicetree and use it to do the variant lookup during runtime. If
+> > the platform model name doesn't match, it will fallback to the devicetree
+> > property based lookup.
+> > 
+> > Going forward, the devicetree based lookup will be deprecated and this
+> > table will be used exclusively for devices connected to the devicetree
+> > based host platforms.
+> > 
+> > Tested-on: WCN6750 hw1.0 AHB WLAN.MSL.2.0.c2-00204-QCAMSLSWPLZ-1
+> > 
+> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > ---
+> >  drivers/net/wireless/ath/ath.h         | 98 ++++++++++++++++++++++++++++++++++
+> >  drivers/net/wireless/ath/ath10k/core.c |  5 ++
+> >  drivers/net/wireless/ath/ath11k/core.c |  7 +++
+> >  3 files changed, 110 insertions(+)
+> > 
+> > diff --git a/drivers/net/wireless/ath/ath.h b/drivers/net/wireless/ath/ath.h
+> > index 34654f710d8a1e63f65a47d4602e2035262a4d9e..d0a12151b7fc13355161c48ba1fb200e4617ed11 100644
+> > --- a/drivers/net/wireless/ath/ath.h
+> > +++ b/drivers/net/wireless/ath/ath.h
+> > @@ -21,6 +21,7 @@
+> >  #include <linux/skbuff.h>
+> >  #include <linux/if_ether.h>
+> >  #include <linux/spinlock.h>
+> > +#include <linux/of.h>
+> >  #include <net/mac80211.h>
+> >  
+> >  /*
+> > @@ -336,4 +337,101 @@ static inline const char *ath_bus_type_to_string(enum ath_bus_type bustype)
+> >  	return ath_bus_type_strings[bustype];
+> >  }
+> >  
+> > +static const struct __ath_calib_variant_table {
+> > +	const char *machine;
+> > +	const char *variant;
+> > +} ath_calib_variant_table[] = {
+> > +	{ "ALFA Network AP120C-AC", "ALFA-Network-AP120C-AC" },
+> > +	{ "8devices Jalapeno", "8devices-Jalapeno" },
+> > +	{ "Google cozmo board", "GO_COZMO" },
+> > +	{ "Google damu board", "GO_DAMU" },
+> > +	{ "Google fennel sku1 board", "GO_FENNEL" },
+> > +	{ "Google fennel sku6 board", "GO_FENNEL" },
+> > +	{ "Google fennel sku7 board", "GO_FENNEL" },
 > 
-> I suspect the legitimacy of the example here. I don't understand how a single
-> machine can have same devices with 3 different calibration data.
-
-Me neither but I am not the domain expert here.
-
+> Are these top-machine models? If so, you cannot use them. The value is
+> user-informative, not ABI. If you wanted to use them, you would need to
+> document the ABI.
 > 
-> AFAIU, calibration data is specific to the platform design. And I don't see any
-> upstream supported devicetree having similar properties.
-Deprecating these is fine with me, but I would prefer if we get here
-some clear answers that mentioned case cannot happen. If you are sure of
-that, please mention it in commit msg.
 
+I had this question initially, but Srini convinced me it is OK to use it in the
+driver as they do it in audio :)
 
-Best regards,
-Krzysztof
+> Just use compatible, that's the entire point of compatible.
+> 
+
+Ok!
+
+- Mani
+
+-- 
+மணிவண்ணன் சதாசிவம்
 
