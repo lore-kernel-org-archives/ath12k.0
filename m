@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 655B0CE7AAA
-	for <ath12k@archiver.kernel.org>; Fri, 14 Nov 2025 10:45:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70474CE7AAA
+	for <ath12k@archiver.kernel.org>; Fri, 14 Nov 2025 10:47:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2hRoFnAVyGjXyyOOzyS7yS5s14bOAyeioxynXnAuz7o=; b=W7/RFBugv9hA3fcBBEqf5znp1V
-	WT9nIZtXVAWxu/mcQVWgUxateT//tPgRg1GAlwZmNs6u84e4QNSA15yM4AhrK51TWP6mk5OS+BD1S
-	s8sXVPlnW7yU3AT3wgnwehwdnZ+BqOxPmIZT0cQNnXmHHlJE0QqIW8O3zoh1dK5fWtJI4yifaZray
-	FbHm+sfwvV4oJuiEZWKv9oQpIIabKMauzPqc8qJwsLt5q4JdUETEohfiowAXpX9gLp7/1MWkGN0bQ
-	1D91XkKCYnOUwyZjTkAnrcSfRY0msMBIrhCMfFZT+1tiWYZOZf0zntkyxt5rEqjXs01faSTXf18Xh
-	gwgMMY6Q==;
+	bh=R+zmyp72K8nF6/1iqpuO/+zo29XNsOVmawS6ICKIdQg=; b=3BkQhgpI2JZKhV3l/n+uE+nSQE
+	HYVj36fgdJaKThT9a53AWwI9pACu7xEgyP4cwet6uhDQgFv1hHplgjd6KU4LWig5fxhdetGCdCVIP
+	E81AiRuVdHTXW3kqt4hwMYWqAS/8rZi63bQrsq3rQwfhfhpdZCJGeKeJc+viJf1QbXT5BPvjlU1V1
+	5II1XVY2ZE0+jgj/mIWAHzeEO3cpu8wQTK2CFSnl/v1v4Vsgs9dwAXDIqNJB9pLZY7Hu4Ka/ZZgbv
+	3Iy3PERXmLYvGtzs4q6l3TCxZ0+BhMBkj32zNAcsJqZdKC3zMesrmGzZcrC+SRW6PBJ9y0hcRSZqA
+	UBBsHPNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJrJC-0000000C3UL-0Wwl;
-	Fri, 14 Nov 2025 10:45:38 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vJrL4-0000000C3pQ-0t4f;
+	Fri, 14 Nov 2025 10:47:34 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJrJA-0000000C3Tp-1jky;
-	Fri, 14 Nov 2025 10:45:36 +0000
+	id 1vJrL1-0000000C3o4-0pxn;
+	Fri, 14 Nov 2025 10:47:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4D83D60174;
-	Fri, 14 Nov 2025 10:45:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0BE70C4CEF8;
-	Fri, 14 Nov 2025 10:45:31 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7E48A43B6C;
+	Fri, 14 Nov 2025 10:47:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 74EF4C113D0;
+	Fri, 14 Nov 2025 10:47:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763117135;
-	bh=4F5PAHalrEVrOe3q+txro3OlvhjyxJ0rxo1kmjSN9uI=;
+	s=k20201202; t=1763117250;
+	bh=Ujxt0bKnawMVqWrfFRuOoNc9wK3U+NR3iMqNJjRps5Q=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=RbPe/J8tJjBa5nk5LniU18FGGaGRbGXCUAdsaPIrakqv5qQkGgfnJEOKwujVzhRDR
-	 O2f2DMR6NEd105A0C+IG8CbudhgKiToaNIHw96+VW/zkwpxCquWsmib7FQyjq80R1b
-	 NtdMIJzWLCzmII4vVAgSg6J9E4Pr2mv96eTStaHMPLhTbSuMWEPvCY1cuyZDtyKsFU
-	 wOVmzs73jIhQ/y/W3vjy9Y17YVxJWCIVIOGFXbpaCsh1AJIOmrxe/eumCBdCxoOpyn
-	 RQLOFgNtsZOvsTPfF0j2z52LuqHzT/utqTpaqdovj7PPtK3xj/9RZNfc5m63j6ilUe
-	 rHlutoplmIhSg==
-Message-ID: <3a951821-14b1-464e-b1da-05a95f4164af@kernel.org>
-Date: Fri, 14 Nov 2025 11:45:30 +0100
+	b=S1ANFTW25lRWDOyLIqj17WOL0xqqbmY56vgbZMSZbK+cGJITHT8X0kiFUpTAd83aX
+	 GQdNkh9IXgE7lUoRzvjUZzsl29+F2UqaOfupsew3VEJ5Brf5JzswTyx3iMkXELIyKm
+	 2U8HeNjfFZSRYnrZroWi9e5tBan1G1Nob+btGy4iw/nrwojG51e+cXD3LdhYdrMpcP
+	 8rSDzV+hncyjtz24jabfQLFSrd0g680EZxue7Un2Fz43u8b0AeWsJWS6h+x9Y/vyO1
+	 EiDzFMLJiYybB9TQ+dd+I0L2WLnat3awdRthQdV5N9yhOHLW5c2dh27n6QJDOiQHjq
+	 +2VQAZtlh0Tww==
+Message-ID: <b9b4f1bb-45ef-404e-b75e-962e85a557a2@kernel.org>
+Date: Fri, 14 Nov 2025 11:47:25 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] wifi: ath: Use static calibration variant table for
- devicetree platforms
+Subject: Re: [PATCH 2/2] dt-bindings: wireless: ath: Deprecate
+ 'qcom,calibration-variant' property
 To: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
  Jeff Johnson <jjohnson@kernel.org>, Johannes Berg
  <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -56,7 +56,7 @@ Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
  devicetree@vger.kernel.org, ath12k@lists.infradead.org,
  Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
 References: <20251114-ath-variant-tbl-v1-0-a9adfc49e3f3@oss.qualcomm.com>
- <20251114-ath-variant-tbl-v1-1-a9adfc49e3f3@oss.qualcomm.com>
+ <20251114-ath-variant-tbl-v1-2-a9adfc49e3f3@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -102,9 +102,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251114-ath-variant-tbl-v1-1-a9adfc49e3f3@oss.qualcomm.com>
+In-Reply-To: <20251114-ath-variant-tbl-v1-2-a9adfc49e3f3@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251114_024731_280233_FD31AD62 
+X-CRM114-Status: GOOD (  11.78  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,7 +124,7 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 14/11/2025 11:22, Manivannan Sadhasivam wrote:
 > On devicetree platforms, ath{10k/11k} drivers rely on the presence of the
-> 'qcom,*calibration-variant' property to select the correct calibration data
+> 'qcom,calibration-variant' property to select the correct calibration data
 > for device variants with colliding IDs.
 > 
 > But this property based selection has its own downside that it needs to be
@@ -131,62 +134,19 @@ On 14/11/2025 11:22, Manivannan Sadhasivam wrote:
 > slot, then the devicetree node also has to be changed. This approach is not
 > scalable and creates a bad user experience.
 > 
-> To get rid of this requirement, this commit introduces a static calibration
-> variant table ath_calib_variant_table[], consisting of the platform model
-> and the calibration variant for all upstream supported devices. The entries
-> of this table are derived from the upstream DTS files.
+> So deprecate this property from WLAN devicetree nodes and let the drivers
+> do the devicetree model based calibration variant lookup using a static
+> table.
 > 
-> The newly introduced helper, ath_get_calib_variant() will parse the model
-> name from devicetree and use it to do the variant lookup during runtime. If
-> the platform model name doesn't match, it will fallback to the devicetree
-> property based lookup.
-> 
-> Going forward, the devicetree based lookup will be deprecated and this
-> table will be used exclusively for devices connected to the devicetree
-> based host platforms.
-> 
-> Tested-on: WCN6750 hw1.0 AHB WLAN.MSL.2.0.c2-00204-QCAMSLSWPLZ-1
+> This also warrants removing the property from examples in the binding.
 > 
 > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 > ---
->  drivers/net/wireless/ath/ath.h         | 98 ++++++++++++++++++++++++++++++++++
->  drivers/net/wireless/ath/ath10k/core.c |  5 ++
->  drivers/net/wireless/ath/ath11k/core.c |  7 +++
->  3 files changed, 110 insertions(+)
-> 
-> diff --git a/drivers/net/wireless/ath/ath.h b/drivers/net/wireless/ath/ath.h
-> index 34654f710d8a1e63f65a47d4602e2035262a4d9e..d0a12151b7fc13355161c48ba1fb200e4617ed11 100644
-> --- a/drivers/net/wireless/ath/ath.h
-> +++ b/drivers/net/wireless/ath/ath.h
-> @@ -21,6 +21,7 @@
->  #include <linux/skbuff.h>
->  #include <linux/if_ether.h>
->  #include <linux/spinlock.h>
-> +#include <linux/of.h>
->  #include <net/mac80211.h>
->  
->  /*
-> @@ -336,4 +337,101 @@ static inline const char *ath_bus_type_to_string(enum ath_bus_type bustype)
->  	return ath_bus_type_strings[bustype];
->  }
->  
-> +static const struct __ath_calib_variant_table {
-> +	const char *machine;
-> +	const char *variant;
-> +} ath_calib_variant_table[] = {
-> +	{ "ALFA Network AP120C-AC", "ALFA-Network-AP120C-AC" },
-> +	{ "8devices Jalapeno", "8devices-Jalapeno" },
-> +	{ "Google cozmo board", "GO_COZMO" },
-> +	{ "Google damu board", "GO_DAMU" },
-> +	{ "Google fennel sku1 board", "GO_FENNEL" },
-> +	{ "Google fennel sku6 board", "GO_FENNEL" },
-> +	{ "Google fennel sku7 board", "GO_FENNEL" },
 
-Are these top-machine models? If so, you cannot use them. The value is
-user-informative, not ABI. If you wanted to use them, you would need to
-document the ABI.
-
-Just use compatible, that's the entire point of compatible.
+The problem - visible in one of the examples here - is that one board
+has multiple WiFi chips and they use different calibration-variant
+properties. How do you find the right calibration variant for such case
+based on board machine match?
 
 Best regards,
 Krzysztof
