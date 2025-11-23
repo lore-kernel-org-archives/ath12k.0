@@ -4,91 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97461CFC278
-	for <ath12k@archiver.kernel.org>; Fri, 21 Nov 2025 13:29:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99C2CCFD2F6
+	for <ath12k@archiver.kernel.org>; Sun, 23 Nov 2025 22:44:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4E4qgWLZbJvc0nks66Kf2sl/KD3LP6StGpvCGYDfDXY=; b=m46MKOoJBjMbSkLjqX5c5JpbpW
-	GPj01WXE+ycw9tyZllZfIv5+N4SaGpmm83DTykkrpecsexv3XbSgpEm0xk/tyaPLHXCSuGMktodAG
-	hNiQS3KO8wlFYDTzsko+HH0yCKbBU2oGRaG6M8BqqXMOTDEiBakDHmUs1R+bsLHrQ4uX0OSbgpq3X
-	vB3FKLglI8OP1hqQgty5GzUG8A02PzKnJX0UBZZpedIy83ryddV6qGohOQni5t7W7IhOn4sWQwecE
-	cHdPLsB7qGUtEklqQIeutYPhiA2CroD7q4tE6BOXrBW4hoZVopAHynLZCH9swftdsnLEGJR4xDD1o
-	KUTu3Kfw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:Subject:
+	Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+TDbtIkIFEEONvTehrmAhkI6gQakZJSj185rwv07CnY=; b=x1kSv5YV2CL28xub9wpqyKe4xw
+	2uO7HbQQApBqgKUuoutNMaR/XZtjSzZzWNIYI4fLl512GQf/TYgwqyv74VPofzUWkomqnjW3kSEh6
+	czdBum2qZQkBhDQtAoJkL8KCMg3szTjXId+elbS++SH722skCRQM+cgiYKEvL+dBghZ8uakzziMdX
+	IYiFsBlNeqwdqRDdXw1PZ3tzVRyL8FA5bLdsAUBW2CgdmSpeIgpcLuVRotLx8LN5bZ632TNgKw54r
+	97C1oVksHdYgW8iRFjYITboz8RTGZe7d6XHZx/DMR1+68Lt0i3CPY1ZTC2gmZsC0pLkBW6CnpNrTG
+	gSacgHSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vMRCM-00000008PcQ-0xSs;
-	Fri, 21 Nov 2025 13:29:14 +0000
+	id 1vNIpE-0000000AkRJ-0vpc;
+	Sun, 23 Nov 2025 22:44:56 +0000
 Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vMRCJ-00000008PbN-0AiA
+	id 1vNIpC-0000000AkR1-10hQ
 	for ath12k@lists.infradead.org;
-	Fri, 21 Nov 2025 13:29:13 +0000
-Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-b7277324054so311097366b.0
-        for <ath12k@lists.infradead.org>; Fri, 21 Nov 2025 05:29:10 -0800 (PST)
+	Sun, 23 Nov 2025 22:44:55 +0000
+Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-b734fcbf1e3so640954366b.3
+        for <ath12k@lists.infradead.org>; Sun, 23 Nov 2025 14:44:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1763731749; x=1764336549; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=4E4qgWLZbJvc0nks66Kf2sl/KD3LP6StGpvCGYDfDXY=;
-        b=AWolaUjX4sYRdipBZzETXgd4PZKzgXltuCuHTEMtwZBPutkMcVj1DuFQaqEeVJE7X2
-         Py3Z8P18LQWaRS/V+O7V6/TvA9EEYPrL8q3ZQ4EeknHuvyIWjnvLcigCdnh5KPL+DOZu
-         wh8qsxql/AVqCobSqLkd8Irw73lHJfob6hWZV4l2ZLSsKJ29FuTWkQO7pL2c9zZ04MQ8
-         zv3vWjud1POG/zzCttSJ6hQpLZYbanqDiNKLPqsMqXTh5BLOjZ945CQSmX4hHBRGGzPU
-         rn4ob8qrQU4qHaDEbRWZTK9dWMfK/hGVYHX2tL71Z3I0bfJK6CEBCFwNxINwMFqK3mb7
-         S96A==
+        d=gmail.com; s=20230601; t=1763937892; x=1764542692; darn=lists.infradead.org;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=+TDbtIkIFEEONvTehrmAhkI6gQakZJSj185rwv07CnY=;
+        b=b/B+EpCmDB2g2JWxktx6ZwnGftc9OaYLMlfxbUL99+/u+DAzgPCQ0i5u97EWzDDTyf
+         ycA3Q/ywtsVe6/RUKU+G4AlA8WuU2hgYbLAJqUC4XX8ZBPftWk9U9rWcIzNij3TgAf3m
+         0UG/KKbtVaD2KQLsf9xkHx72XDe0wuKPx81yVD/kBjtNnaKIT5bH9h7XFCzbGo+Wx6+3
+         soPvq3yB23cWvVr/GDW4BZEtDBcDefta8hXFDUOvGKKmlxVj5+SwRa5u+C/IPnV9BFWr
+         HdzG8Ek9J4KSogoNGQJ2l4nw531/7NspawaJvgfN63kZXEpQHL0c6c+2iMofgl3UBm6W
+         t0NQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763731749; x=1764336549;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=4E4qgWLZbJvc0nks66Kf2sl/KD3LP6StGpvCGYDfDXY=;
-        b=W6eWbOVRkhxX9H1PTbF640KHGl/XEb6EhV+GlgBCIPMEY+ILa0bgfxuV/y4QBtwhzd
-         557n9DVIKe/9olTN652stZ6QCZ7MHOoufVvThhazVQAApCsoIKnhpEwkg+g0uL9HMUh7
-         FLGeS0bZZI15va4s1upp9RnqQadD1YWmlQd3gQaKi956AgfbUP2uqVTwAGs9p9q8v+7L
-         nt6zrY9xNt28UabhZvpDgY0MBu7vYoXc+l0VGRbF52RHtfWB8Ju4LJa5hGlVSwCCowga
-         jwHUzsaK01LeLHyHbPR9B5C1xwMQrEp3P7pOLXH9UwO8OxpDp6YPJlSVq/vQpMBcq70R
-         3E4g==
-X-Forwarded-Encrypted: i=1; AJvYcCVlHBASEZNypQOFxomidA7XMHK7RSK/YH7wPYtXXGOg07XmA2HO6U1HIM+mMqEdJS1w+bkrGJU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyVhYIaxz1hwIMnFsPJTajYgp6/U43cbCs9KBF3CHlBrl1ZJVth
-	bfFrlbC6yRieIeBfW9Dphh5BTPYP5E+GYql6PStpYLLX51jZ9wH+zno=
-X-Gm-Gg: ASbGnct2Cj+eUq7s2yR4yJqAJ50idEnYNUZrie0bgLIgcRUr+bilY9yyiUNY8WmIDMM
-	NdQdDPug76jcwe6HguZh+WpSzdRpDnKnvUco33dA1gSMJXiDprwK1H278SSPzNuhp3J+7NGtTrz
-	5u0XM+uFzu6FRhjlp6ypwpkN65POdVViOH1sJdmNF01vI5Oz/Zsp4HcHDD6Mav3PzEEyO96iNjt
-	32nC8mKfKzEFbAdSuHFUe1loqYIk0VirqttQrL/Xy3H+kwJeXjeXudCCu2AAzXBqZD79glM23+5
-	ZR8x3omILsBrel5DVs2oaFqYWZ3gVDYnDgGhW/RpHM8DnqfoAz/mRyivjfF4T2Dd/WxPdxBYg5M
-	V7qLNqVZ6QUITse32XzwrDrvC4VTJrmn0IQoZ9bZYCMlxjI9WqGRkhZH+BMq2Z+/bEWIU1qbQgs
-	xcndSjEuPyIBHdMIz2curZy+GLnUiV1XS0gr6t8o8Gq296RiE=
-X-Google-Smtp-Source: AGHT+IF+fRHUXtIbFHexbW+bX7vS6xhtJysRXvMNTGrbcAbQOhcG/TSSGP78YliQlRoGmwcWofF6oQ==
-X-Received: by 2002:a17:907:da4:b0:b73:3ced:2f66 with SMTP id a640c23a62f3a-b767159eea3mr272040066b.14.1763731748949;
-        Fri, 21 Nov 2025 05:29:08 -0800 (PST)
-Received: from frutis-latitude7490 (public-gprs376887.centertel.pl. [37.47.103.120])
-        by smtp.googlemail.com with ESMTPSA id a640c23a62f3a-b7654cefe53sm459963266b.13.2025.11.21.05.29.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 21 Nov 2025 05:29:08 -0800 (PST)
-From: =?UTF-8?q?Pawe=C5=82=20Owoc?= <frut3k7@gmail.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: =?UTF-8?q?Pawe=C5=82=20Owoc?= <frut3k7@gmail.com>,
-	ath10k <ath10k@lists.infradead.org>,
-	ath11k <ath11k@lists.infradead.org>,
-	ath12k <ath12k@lists.infradead.org>,
-	linux-wireless <linux-wireless@vger.kernel.org>,
-	Kalle Valo <quic_kvalo@quicinc.com>
-Subject: Re: New staging repos for ath1*k firmware
-Date: Fri, 21 Nov 2025 14:28:25 +0100
-Message-ID: <20251121132825.1663248-1-frut3k7@gmail.com>
-X-Mailer: git-send-email 2.50.0
-In-Reply-To: <bac97f31-4a70-4c4c-8179-4ede0b32f869@quicinc.com>
-References: 
+        d=1e100.net; s=20230601; t=1763937892; x=1764542692;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=+TDbtIkIFEEONvTehrmAhkI6gQakZJSj185rwv07CnY=;
+        b=PqVfwDmCKSy/RcxfxWqKUro1N6WF0s5HcepfmswoL/bRwiPCozua+ovZAEpnjpwImf
+         5oOSHj2+MXOFsAIJmxQqUiZUuB+nRXcmYtOgAOykWv6gD42mU2rlhtZ0hI4pcf/y4Vyt
+         ignVSAopBtr+GcCeVKC1eVZlbXlcKR7O5NYIiour1TvjpNF0owDLhbDhJGISEEIQeHWi
+         brQlZ6yPOElpPJgUEPRt1Km9912suf2EVgdjtmH1BgcLSWkUoQTRunpmT0O97zORnDIT
+         JgkxdXEMKmdt43NlxK/NwogtIlkonNBTq2iu9TfGf1I1nkSyjxehyqRrPXwCJfsfUqo3
+         0vvQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWEeWTSDWGEy95jYCITFq3Yp00wVwLj9f+/adDtgIRgzpScBiPzVqLEH0/o1orRQN0AUJ5Urw8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyxPRLGI95Kd/A30wGk4ZAKaeI89gg9oEC8o6lsv4mqVCJosUOQ
+	hnT/+6Iz7pRk/IruBMH8De8YpJTdiL6Q4khTAm7nA0Nw+VUUU8UKI23JzmRd6R2D+UYkfQPMqgU
+	MvFAG/Y25Phw8D0xwDgGQS/n1V/pvK38=
+X-Gm-Gg: ASbGncsRrWwzUTCRJ1k4wc1UJgPKlUI27Wc965oovYhZZDKZzqIFpwoUfnd3N2k6rCf
+	38bIF4Ips+3nAPKAy9gg02wP6shvBys/3TAy1kJXt+S+mMcpEWpmYhLp0iZOg7bt8Mi99IIap7v
+	/Rok6F5qhh/hG4GprrV/VyuYJotnuJ9fLqI6KFZYXq9SN9TgxNsX1sh3jnYiA/h5BlTMPcJiH8P
+	u61q3Lhpb1cAecsiT1uJk3wqcFQRSUgKphyZxxXdF9zRxjebUd1RILVZrtF/vXmKFWBMdZjp5oy
+	RpX5QlQ=
+X-Google-Smtp-Source: AGHT+IE5s9btl8KFE8c+4keBiMFcig0gza3XlXpRVblfyh0XHjakH8+GQ602BP6yJZz0KAhISv7ng5mutmZda6/w1Ts=
+X-Received: by 2002:a17:907:1c04:b0:b71:8448:a8dd with SMTP id
+ a640c23a62f3a-b7671703d89mr1045888566b.31.1763937891690; Sun, 23 Nov 2025
+ 14:44:51 -0800 (PST)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+References: <CAPDiVH8gaBH6o_OY-zUWYpDbj5mhiqmofKGb71gLgHOi4vA=Vw@mail.gmail.com>
+ <0ba2176e-3339-4a8b-850a-ca5643939c8b@oss.qualcomm.com> <fd3bd8b1-4108-445a-b65f-4769d73e6e63@arm.com>
+ <4a13d862-1bbb-4a98-bc1d-219bf78f7c0d@amd.com> <CAPDiVH-kVCUY8DKexT9OqAZsvkZ5_CGo8d8nENYA-kD=s_x8wA@mail.gmail.com>
+ <e008afed-819d-43eb-8895-2c7aaf24ec13@oss.qualcomm.com> <CAPDiVH-xPDmx-KQx7YJY=7+kwJNbGY-rEu-w+cz18p=kjnKFsw@mail.gmail.com>
+ <979be2a9-9d0b-4382-8519-2f6fbcac5375@oss.qualcomm.com> <CAPDiVH9Fi3Rw4K4npHMAEcOPMj=iFMEJOyhn5cRaq3+9kBYNZA@mail.gmail.com>
+ <CAPDiVH_-=DzPjyjDo34-0HG20feiGfrM4eOpkPt6bavrw2qWaA@mail.gmail.com>
+In-Reply-To: <CAPDiVH_-=DzPjyjDo34-0HG20feiGfrM4eOpkPt6bavrw2qWaA@mail.gmail.com>
+From: Matt Mower <mowerm@gmail.com>
+Date: Sun, 23 Nov 2025 14:44:40 -0800
+X-Gm-Features: AWmQ_bmVktkGYS0kZqT-zWoG9xcEYYl6ViCTjWaL2T9RdixreA7prDngkp_xLVY
+Message-ID: <CAPDiVH-S404i1O7J4EUTohx27Mbo4EaKeHK6tgXs2+1_HxmVtQ@mail.gmail.com>
+Subject: Re: ath12k_pci errors and loss of connectivity in 6.12.y branch
+To: 1107521-done@bugs.debian.org, linux-wireless@vger.kernel.org, 
+	ath12k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251121_052911_107408_5F61B789 
-X-CRM114-Status: UNSURE (   5.35  )
+X-CRM114-CacheID: sfid-20251123_144454_307278_C782B0C0 
+X-CRM114-Status: UNSURE (   2.72  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -104,9 +99,10 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi, is it possible to release the new firmware version (2.12) for the IPQ8074?
-There's a problem with the latest ath11k driver on version 2.9:
-https://lore.kernel.org/linux-wireless/CAKEyCaD8RMqPvwZOxgwAT4G=h-M94ToxoSdYwCjfvZMiM8mB-g@mail.gmail.com/
-
-Regards,
+Closing Debian bug report 1107521. I no longer experience these
+crashes or loss of network connectivity with the following package
+versions in Debian 13:
+- firmware-atheros 20250808-1
+- linux-image-6.12.48+deb13-amd64 6.12.48-1
+- linux-image-6.12.57+deb13-amd64 6.12.57-1
 
