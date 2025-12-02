@@ -4,146 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E571CD12663
-	for <ath12k@archiver.kernel.org>; Tue,  2 Dec 2025 18:54:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2DAAD1266A
+	for <ath12k@archiver.kernel.org>; Tue,  2 Dec 2025 19:40:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hNXN76wd6N8myVw7+8PtjIAlo29BoY5GwXZPUkKU7n8=; b=S5tWdt+jJeOf9v9MCrBFZ6ADyh
-	7lIr/lODH3Cq4SJOfFW94tiy9GSjz9MRxz3eyIRO6eEWhHNuIQtaYu77a23snOHRwNetGsEF3HI0B
-	BUj2aMBwHhVdiVkILWcBSw/CALHDKZcVBfYTHYI3VvmJUNg3PMqVP/HIzEb4bZ2leZDMWiE0u/HoX
-	0B/jKSpINwIR8bYx0+1fj8dkk7OnFbKtaGJIn+OzfjP1WN6btzulmtxAloM8VpbD0t4P2sfE6d/f5
-	x0rxhycJhGE3AWr6o3nltnboMdeyIJAZwOQG32KUu/fSKMFYmSL/1nwdOMCGFLCZyt0803CS5rsLE
-	njlFXXiw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ymqUFuKgkW+1ZVITaHJuQJuCRC41Z8npiwRYSjupMVQ=; b=D2SC2pwb5kg2cM+Yg8MuQFC5hI
+	0Ztm+xUNOenz0gn3KucBxvnlQYEkH21uk3wUrHZygj2ey5gqaFNHWAF+B8Mo1BjuM9tN/uYeC0xTZ
+	9VWCTL1voSrFmoqN66rSJvRoqc7pygWVxZr2DGV4qyTb01uBEsrrDBtDM8bETOWXFqQS/xcSN0jvk
+	eGIdWVRxH6uIH+sMZrbcOkwZpZ54+SEIDfzA7+j5SAaJ6smR0RfNpHQw12q3lHNVkM/2pdbGdidMg
+	HVYXkCBwv0Pl1H1gy9dSUOdE/12cD6TuZjKCWlDctzXWQ8gY8NpaJ+7UBGiHwweVERwahlmjBSoCf
+	M1sKhRtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQVW0-00000005jr6-2bsS;
-	Tue, 02 Dec 2025 18:54:20 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vQWES-00000005lXZ-2A1h;
+	Tue, 02 Dec 2025 19:40:16 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQVVx-00000005jqO-395r
+	id 1vQWEP-00000005lWW-0AzM
 	for ath12k@lists.infradead.org;
-	Tue, 02 Dec 2025 18:54:19 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5B2Hueur1358489
-	for <ath12k@lists.infradead.org>; Tue, 2 Dec 2025 18:54:16 GMT
+	Tue, 02 Dec 2025 19:40:14 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5B2JMemj331193
+	for <ath12k@lists.infradead.org>; Tue, 2 Dec 2025 19:40:11 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	hNXN76wd6N8myVw7+8PtjIAlo29BoY5GwXZPUkKU7n8=; b=ALp3ckUUHlsHUsdj
-	Rd1Y+DpvI04kJ61unC51UMChiu0za2yA1ERP2mFmpDlUkoUiv5Vkks9h/CAxDv9Z
-	Bb7RoRwwVX+a6QISn3k0Z1JCKio3aOivY+iGtWSAmE08Q3s2ujuWAEHzaP/NQU+2
-	dzv8cX+a3SvOBmV8IGTalQwjsryIcQIDYu9TtvWGjOPikNZFGHlFJge2hfayX6lw
-	hUyvHmcvErgD8FQTJsufNfgdCcpHiT2M9Wn3zNF/Of4N/1XTOhcZ1ARD/mlkD2ca
-	I2NzufK2phGwtwEvWTnN5K5ew29QZwaV79xx/wktR8/AQv1heEN1uoiH7Q3QOY8j
-	ao4/hA==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4asp63k5ad-1
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=ymqUFuKgkW+1ZVITaHJuQJuC
+	RC41Z8npiwRYSjupMVQ=; b=GAAOUGu1pnU7oMhHYLNJ8fln9vIgFPletMAjmeHX
+	QbhEfK3hCHGC8rM8nd1noR6GdRmnjM+Lvg4Mbtw8UOHbCMid4PhWIKaiaAord7Xe
+	Nx0e/3SGxVgyrld0Us8Fk6MHaoJJ+HRbosFLlbx9kiXPVwuAxiK2R3YKiNcoXcbg
+	LhGShHpD7CKJEMu4ERU7Yw+lSo1DkdXtCyu7FKHm6zJv8DFo+L98V8Di8LWTmGEP
+	6nCy5AL/ZlBCrpgqaM5tB4hg3Ub+2FY+bMFCVignQJ+lgEFda5zmOE3WSVvKgPDh
+	GhWzeyWT/TcdIm71ABLZd7MbwyoxxFHcYwU2YrBUmF76Bg==
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4at67c01e4-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 02 Dec 2025 18:54:15 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2982b47ce35so65238465ad.2
-        for <ath12k@lists.infradead.org>; Tue, 02 Dec 2025 10:54:15 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Tue, 02 Dec 2025 19:40:11 +0000 (GMT)
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-8b22d590227so664921785a.1
+        for <ath12k@lists.infradead.org>; Tue, 02 Dec 2025 11:40:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1764701655; x=1765306455; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=hNXN76wd6N8myVw7+8PtjIAlo29BoY5GwXZPUkKU7n8=;
-        b=R+nPPYFuHgGFLyEDbOoIs5gDdf/aU8Y2FmRYEgj3V6j8tYivdWsmQv60stcSvvy7DF
-         Px6eoPt+Fp0OWCGA4AsA2K+kzv/7LCoQL9NSR3uZnXTfunMVhyYHC8VF6/N9YtDEW40x
-         s3KBx8F0gm6Lh5NCGlfPE8M00xt6efI3k776JI+WfCLtXzO4dv8wg2n5eBwo1e7eF7Iu
-         VoCesnghKmAEPNPhlHM9Gmi3HMTdh6sZoV4TKz3VIpnUNDjcL06/cqMYwOxBBeTWtWO7
-         V/N7atOreMPh/aRDwHEto6s1J9NeE4cHuUOfXqp9nXCb0LxEnkZZvkfoTv5epOmIymIj
-         7MNg==
+        d=oss.qualcomm.com; s=google; t=1764704410; x=1765309210; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=ymqUFuKgkW+1ZVITaHJuQJuCRC41Z8npiwRYSjupMVQ=;
+        b=ekZp69POjluadBd8fsgLdZK3oxaDQHVS/pKmWKWf42ihnMWbCy1PV10tgZFEzPWpFX
+         s4HFLh9ceUCsdBy+RAngYA43q1HpaMnULOmGYiHcpd46/sUDf6cNld2BhXXOSn6/D8tk
+         TeOKFVjt3Xdz2ZY+oxz3myMQ+SMpBNOxVxycNBSvjQSOO0VFilskunRIiKw1XdOkRhmV
+         q/GNXrQkNkrWAy+1IjpFEWNKWvups0TBiiCSEVweSt5/O+gghKIlCKtKehJRagOsnuYX
+         CxBGBEsft23OnB/fCLHXg8pLpAREmFlEKmAoLLO5jzOKdaxT4QFEn5jywLqUzWYYWOGv
+         p/2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1764701655; x=1765306455;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=hNXN76wd6N8myVw7+8PtjIAlo29BoY5GwXZPUkKU7n8=;
-        b=iH4PCMclELQmG9UNw3ydeCrrcCO+c9Qil2DJTWW9d9ajYo3Inw+LlMIKnDOwLdGNXE
-         73Rq1t3ycFoMRNGY6WaPTGQXPSEEQvkav/jCzGzoBYKzgj1zA+craMtHDd3Re+vFVLMR
-         MUdFxjm9QIpWJeL2+ajHHaRQM3qS58PFQ4DohwGU9OX+ngFD0zd3Y7F3NYn0o8vxIML6
-         Jn6Vg1YQJhnoDNbnKwONijUNAMwcSxrE/ZPliJOk91QsdUZ0qU9omOwSyRdnZL1z+Clt
-         GShTrnjoA1mQvsQie7Z4Gd+CzYz0LNBS2Cs1WpMe1JrYDPDr0dGq8UFnA4bbwZ2fo8h9
-         XBGg==
-X-Forwarded-Encrypted: i=1; AJvYcCUlDIa1BrxtoBINO/yvd/CcLN3hMQ1oa0PhPlD7Dgt4HN6/LHm/zMGtYaYqI2c7qTjh4/NoK+g=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwU6Cx8lAaSwrvAaU7Fs1cPnvm3Khem4i0PB+3sW6zPimViEljL
-	/R8wXWBwKl1Bx2ld20S9DNzxHAGglO7Eby/ddjI6Oel0FGzjo/xrq0rMzFh0436pQf1JcetHuN4
-	jqD7oOWCQUAKpG2B3MclcTZzdcLJsaABVSZCxK4CbY4tLVVy8mkh5vpjiQjXp6PtY
-X-Gm-Gg: ASbGncvyKzXFSOBRBh441IXTtsx10gd4bjXBWQ5iucRjuMK7vA5bjIyUvuZq+fZYxu2
-	9d/rqlDvaV6w9bCoz2tUrKjsI8+c+nZ3Rk2QXQOdB2hCpkAzAEB/MxuQRiagorv2Cf2E+YkCcf6
-	UZVcu/DZdcSyy6JEg5Dn4NBxjHo2cAkKA3w+78Rille/q+ZJpoMe+kfj+jdbrSLefU+ajlJkh2I
-	bfZ9RSfYJ0KKAvOVAZZFR5H8Nty+Z9rjjJhBHhXAJEM+HoAjyWIU0XoVYWCNJrI8jtTZ+eoHs/N
-	w37mhpmOvK3AfCAaL4AITI0ZwkdtyMhhEUqX8LQ12ZNf+jKapuCqiExisB09vMzxHLJlSgEr/Sp
-	R6wz84VvS3uxL3qvmPTM0s6I+20gnyy5U0OF82/uwGloTb6J5xJFQyMZq
-X-Received: by 2002:a17:902:cf4a:b0:299:fc47:d7e3 with SMTP id d9443c01a7336-29d65dcf153mr3194975ad.31.1764701654703;
-        Tue, 02 Dec 2025 10:54:14 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGJ/RzWsFhuxc2+iwjgFwfUTjpK4qX1voFjw3XyGlKEHTYHR3nxGS9zclRDNjBfyGa0y30Nkg==
-X-Received: by 2002:a17:902:cf4a:b0:299:fc47:d7e3 with SMTP id d9443c01a7336-29d65dcf153mr3194655ad.31.1764701654151;
-        Tue, 02 Dec 2025 10:54:14 -0800 (PST)
-Received: from [10.73.112.168] (pat_11.qualcomm.com. [192.35.156.11])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-29bd96307ebsm136616815ad.36.2025.12.02.10.54.12
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 02 Dec 2025 10:54:13 -0800 (PST)
-Message-ID: <cb5cfffe-dbba-4da2-ac1f-de4a9a31f057@oss.qualcomm.com>
-Date: Tue, 2 Dec 2025 10:54:12 -0800
+        d=1e100.net; s=20230601; t=1764704410; x=1765309210;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=ymqUFuKgkW+1ZVITaHJuQJuCRC41Z8npiwRYSjupMVQ=;
+        b=ZuVYAuVoKNfIW1JuIuorH+CxmedDFk53+dpGghch2XfijsfkU8LiWbf9GA1+IDk27P
+         JdLhZZE9eWIbvm6lLJAKbukGA/nSf3F7NyOyf9CLd/fPgikDX/Ehll/jDcdBRXYoJIVx
+         1O06Piqedt0kyPggqdGZojyITmDv709x7Ns3ktpz0454O2a187P/7Sk1q4Ge7wJl83wv
+         qXnKRQwTXxJCCa0rghFrQG0Q2wGsAnFRa94QHUVsElDix6IRbxOhKeHDK8N1zcMB9u3x
+         qDo5ufTFyekhl3uNbCVsDP+Dra4YMP3oNhAqWD0sG5lx2NtWEJrHoOZbJvN6dmYOH18/
+         B/FA==
+X-Forwarded-Encrypted: i=1; AJvYcCUELEvCISnEGNsu8o/Tqes3Y/CtGv/iYugsU+D9lcT/mzi2Bp0+NIjO6MiQaruzCkH36Lg1Srg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz3WfVo6nA3ooYQSZQJOOyX8DHFQwuIJ+129/aA5RmTi+GZj9s4
+	m5pFK9sI2DrH7wfkZ24MdJAFmKuf3/l42Rf5Df2xXWMg6+2LKCX2RrP7GcKhIWKGUGjCosma/0s
+	W8jKw25/dw6eR/YoS5KrzHbye+7pwv2RFnssOqwv9lx5Zj6ak+u4kgGGUi1mzFCjrLCs4iTUP
+X-Gm-Gg: ASbGncv3afNnd1Y8eeVBtNQQAXFAwULHM6Ve2DYrq+T8xWcDI/AhRs8yR/BIOGRnT+n
+	Vevi3Nhq8w0FtbojI7z16xuJa0YSm6TZceBXNvLjkKPr7HBVk5rOrROAlr4XSuvESpBwK5Gtbej
+	VI4vqwC9CJSEGSdnXNT0ZeGmwhZdE0hvV0bPraPdPypVGzTGxxYSgcACotxeZ21E6MSX7JBhEhB
+	0/20fdbxLYR9VJc6qjsOrIBIrRAYy3d/vZbyf1Q4ATuJnSXxtz4hCZf6hNpxJ8/1q4TUo771r08
+	04vmfgs9UJrZ+AVXpcAiOH/E3suV+l7jHNxYU5s9kC/O8+hKAQulLN4aQ8Vj0MYXDLJ1mtuu+wQ
+	ZAdfTg7vyPheRzI+oy9YbX2SEaaRp1gZxIcaWPR+AnWLxUG9z1Igq1sNtexNg7ZRDrSkodPrlpN
+	HsyM6zSQz9ymPhWT7+o4tnaBU=
+X-Received: by 2002:a05:620a:4085:b0:85d:aabb:47d4 with SMTP id af79cd13be357-8b4ebc438d4mr4219788085a.6.1764704410211;
+        Tue, 02 Dec 2025 11:40:10 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFeduTZfiwuLmEI3ux3Yzeal23XZK+cH0bfIgKG8RjjcKOtbLOA0MsLVdr+HitBOBcoOQR5QA==
+X-Received: by 2002:a05:620a:4085:b0:85d:aabb:47d4 with SMTP id af79cd13be357-8b4ebc438d4mr4219781785a.6.1764704409657;
+        Tue, 02 Dec 2025 11:40:09 -0800 (PST)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-596bf8a7d0asm4967858e87.11.2025.12.02.11.40.08
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 02 Dec 2025 11:40:08 -0800 (PST)
+Date: Tue, 2 Dec 2025 21:40:07 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: linux-firmware@kernel.org, linux-wireless@vger.kernel.org,
+        ath10k@lists.infradead.org, ath11k@lists.infradead.org,
+        ath12k@lists.infradead.org, jjohnson@kernel.org
+Subject: Re: [PULL linux-firmware] ath10k, ath11k and ath12k firmware
+ ath-20251202
+Message-ID: <xznwi36wauarz32zf6fzxug5fxpu2dd2de4mgnwoxbwkyanjfr@f4fwq6jtxuyr>
+References: <5d522aab-9ea7-46fc-8d46-00bd60bda496@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/4] bus: mhi: Fix broken runtime PM design
-To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
-        Carl Vanderlip <carl.vanderlip@oss.qualcomm.com>,
-        Oded Gabbay <ogabbay@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
-        Andrew Lunn <andrew+netdev@lunn.ch>,
-        "David S. Miller"
- <davem@davemloft.net>,
-        Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
-        Paolo Abeni <pabeni@redhat.com>
-Cc: mhi@lists.linux.dev, linux-arm-msm@vger.kernel.org,
-        linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
-        linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
-        ath12k@lists.infradead.org, netdev@vger.kernel.org,
-        quic_vbadigan@quicinc.com, vivek.pernamitta@oss.qualcomm.com
-References: <20251201-mhi_runtimepm-v1-0-fab94399ca75@oss.qualcomm.com>
- <20251201-mhi_runtimepm-v1-4-fab94399ca75@oss.qualcomm.com>
- <2dc234d3-3bb4-4d6e-810a-e7197174769f@oss.qualcomm.com>
- <8872ac78-38de-4b1d-a0f5-9f171cc9f42c@oss.qualcomm.com>
-Content-Language: en-US
-From: Mayank Rana <mayank.rana@oss.qualcomm.com>
-In-Reply-To: <8872ac78-38de-4b1d-a0f5-9f171cc9f42c@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-GUID: Sysu2oIBGqb977ZWTJhV95hWO3FODxjU
-X-Proofpoint-ORIG-GUID: Sysu2oIBGqb977ZWTJhV95hWO3FODxjU
-X-Authority-Analysis: v=2.4 cv=XM49iAhE c=1 sm=1 tr=0 ts=692f35d7 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=ZdW6uxA9NKXbfdqeeS2OGA==:17
- a=IkcTkHD0fZMA:10 a=wP3pNCr1ah4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=PkJSjolnkn3GvNMOFesA:9
- a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjAyMDE0OSBTYWx0ZWRfX39iHIHHKtJMA
- oF2WSS0pR1U6tlFrS88k7OYIMNvHPU+tyMcxiHElPQywE5W7+7+CzFJW9X8/lPoyNd+BCDXSgJD
- BhbPWbYQV5V6Ilg9YmzxC1C7mK2mGsEfQ9q5eEaWwLHG0kojxlVD2qlYCNYYSaNd3IuMOiv1D2V
- gnjZLOxBkupgSp73QM6qVt5gRL7Lte6B+cQE1x5UODT3Q787KJDfjEwzWxuREe/MkTp3x1wjCQ1
- w29uyEWY917jR8rgYYUCjCXZJGxPpgn2RoGchVT+zBhbBPAJJ1rM/UPrGi7/yFKLKaTCcBSI7Zy
- P5gPwXatHvtx1MpmUntuSLY16RCmYMoOt4aoo3Qu0wr7WGZXg0BYHg8PJJ17fKq68Fx2GM6vfK5
- A/gCFHCj6eSGqz7Qfppi9ypJyHOlZw==
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <5d522aab-9ea7-46fc-8d46-00bd60bda496@oss.qualcomm.com>
+X-Proofpoint-ORIG-GUID: qyKLTVgTJpTaU-Kg8PjZqKOdSZJyn802
+X-Authority-Analysis: v=2.4 cv=W/c1lBWk c=1 sm=1 tr=0 ts=692f409b cx=c_pps
+ a=50t2pK5VMbmlHzFWWp8p/g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=wP3pNCr1ah4A:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=p0WdMEafAAAA:8 a=VwQbUJbxAAAA:8 a=9XiVC44GTZ18DIIRa0kA:9 a=CjuIK1q_8ugA:10
+ a=IoWCM6iH3mJn3m4BftBB:22
+X-Proofpoint-GUID: qyKLTVgTJpTaU-Kg8PjZqKOdSZJyn802
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjAyMDE1NCBTYWx0ZWRfX8QeaKAVlA6wD
+ J2NQVYokVi/AtgDeg9VYU03iC0ASLb+VYWhfyXOvaq8pf4L7q7pWa+3NhAlJC5JrNY2asgpsSAn
+ +6jEH33xP1RURk5PWQ3GA45Zd02dxsJLY//phPGjt17AElL68WPOV4E4O47LgCehwgH/+VdwbOr
+ gXlg/r+DkPhrk8AKbjirMW83CRd0MyrXoWo8PJn1h8007tQczYta3SRb2VuFJ//NLXmcrkzMNSy
+ Do0AlxW8AYUXzztNx+FE9m2kK5Enc/XiwrryMNnV1jC2a1P7yfcyEiG875o1tGNv9Cbr9EaOTWb
+ ANS33XG+LRAGScgINM174D1daJn8Ovuvqbwh0OGUQCU+ocDcZMcnYn6RtoyTgEaJmopMBiABlGn
+ bp3vdJtnzyG92wWuLXqpj3uTVFye+Q==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2025-12-01_01,2025-11-27_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 priorityscore=1501 suspectscore=0 impostorscore=0 phishscore=0
- adultscore=0 bulkscore=0 malwarescore=0 clxscore=1015 lowpriorityscore=0
+ priorityscore=1501 suspectscore=0 spamscore=0 phishscore=0 lowpriorityscore=0
+ impostorscore=0 malwarescore=0 bulkscore=0 clxscore=1011 adultscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2512020149
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2512020154
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251202_105417_825745_DC8DE7E0 
-X-CRM114-Status: GOOD (  23.94  )
+X-CRM114-CacheID: sfid-20251202_114013_232414_9F51021D 
+X-CRM114-Status: GOOD (  21.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,237 +141,48 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On Tue, Dec 02, 2025 at 10:05:38AM -0800, Jeff Johnson wrote:
+> Hi,
+> Here's a new pull request for ath10k, ath11k and ath12k.
+> 
+> Only ath11k is included this cycle.
+> 
+> Update the board file for two QCA2066 platforms, and update the firmware for
+> QCA6698AQ to enable CSI/CFR reporting functionality for IOT products.
+> 
+> Please let me know if there are any problems.
 
+Thanks, merged and pushed out: https://gitlab.com/kernel-firmware/linux-firmware/-/merge_requests/814
 
-On 12/1/2025 9:26 PM, Krishna Chaitanya Chundru wrote:
+> 
+> Thanks,
+> /jeff
 > 
 > 
-> On 12/2/2025 12:03 AM, Mayank Rana wrote:
->> Hi Krishna
->>
->> On 12/1/2025 4:43 AM, Krishna Chaitanya Chundru wrote:
->>> The current MHI runtime PM design is flawed, as the MHI core attempts to
->>> manage power references internally via mhi_queue() and related paths.
->>> This is problematic because the controller drivers do not have the
->>> knowledge of the client PM status due to the broken PM topology. So when
->>> they runtime suspend the controller, the client drivers could no longer
->>> function.
->>>
->>> To address this, in the new design, the client drivers reports their own
->>> runtime PM status now and the PM framework makes sure that the parent
->>> (controller driver) and other components up in the chain remain active.
->>> This leverages the standard parent-child PM relationship.
->>>
->>> Since MHI creates a mhi_dev device without an associated driver, we
->>> explicitly enable runtime PM on it and mark it with
->>> pm_runtime_no_callbacks() to indicate the PM core that no callbacks
->>> exist for this device. This is only needed for MHI controller, since
->>> the controller driver uses the bus device just like PCI device.
->>>
->>> Also Update the MHI core to explicitly manage runtime PM references in
->>> __mhi_device_get_sync() and mhi_device_put() to ensure the controller
->>> does not enter suspend while a client device is active.
->> Why does this needed here ?
->> Isn't it MHI client driver take care of allowing suspend ?
->> Do you think we should remove mhi_device_get_sync() and 
->> mhi_device_put() API interfaces as well ? And let controller/client 
->> driver takes care of calling get/sync directly ?
-> These API's not only  do runtime_get & put but as also do wake_get & 
-> wake_put which make sure endpoint also doesn't go M1 state.
-ok here we are doing 2 different devices based pm runtime API usage in 
-this core MHI driver.
-1. mhi_cntrl->dev
-2. mhi_cntrl->mhi_dev->dev
-
-Those are seperate devices, and here we are mixing those usage.
-Is it correct or I am seeing differently ?
-
-Regards,
-Mayank
-
->>
->> How are you handling cases for M0 and M3 suspend ?
->> Do we need to tie runtime usage with M0 (pm_runtime_get) and M3 
->> (pm_runtime_put) ?
-> M3 are controlled by the controller driver, they usually do it as part 
-> of their runtime suspend
-> and M0 as part of runtime resume.
- > once the mhi driver gives pm_runtime_put() then only controller can go
- > keep MHI in M3.
- > So we can't tie MHI states pm_runtime_get/put.
-Ok sounds good.
->>
->> Regards,
->> Mayank
->>
->>> Signed-off-by: Krishna Chaitanya Chundru 
->>> <krishna.chundru@oss.qualcomm.com>
->>> ---
->>>   drivers/bus/mhi/host/internal.h |  6 +++---
->>>   drivers/bus/mhi/host/main.c     | 28 ++++------------------------
->>>   drivers/bus/mhi/host/pm.c       | 18 ++++++++----------
->>>   3 files changed, 15 insertions(+), 37 deletions(-)
->>>
->>> diff --git a/drivers/bus/mhi/host/internal.h b/drivers/bus/mhi/host/ 
->>> internal.h
->>> index 
->>> 61e03298e898e6dd02d2a977cddc4c87b21e3a6c..d6a3168bb3ecc34eab1036c0e74f8d70cf422fed 100644
->>> --- a/drivers/bus/mhi/host/internal.h
->>> +++ b/drivers/bus/mhi/host/internal.h
->>> @@ -355,9 +355,9 @@ static inline bool mhi_is_active(struct 
->>> mhi_controller *mhi_cntrl)
->>>   static inline void mhi_trigger_resume(struct mhi_controller 
->>> *mhi_cntrl)
->>>   {
->>>       pm_wakeup_event(&mhi_cntrl->mhi_dev->dev, 0);
->>> -    pm_runtime_get(mhi_cntrl->cntrl_dev);
->>> -    pm_runtime_mark_last_busy(mhi_cntrl->cntrl_dev);
->>> -    pm_runtime_put(mhi_cntrl->cntrl_dev);
->>> +    pm_runtime_get(&mhi_cntrl->mhi_dev->dev);
->>> + pm_runtime_mark_last_busy(&mhi_cntrl->mhi_dev->dev);
->>> +    pm_runtime_put(&mhi_cntrl->mhi_dev->dev);
->>>   }
->>>     /* Register access methods */
->>> diff --git a/drivers/bus/mhi/host/main.c b/drivers/bus/mhi/host/main.c
->>> index 
->>> 7ac1162a0a81ae11245a2bbd9bf6fd6c0f86fbc1..85a9a5a62a6d3f92b0e9dc35b13fd867db89dd95 100644
->>> --- a/drivers/bus/mhi/host/main.c
->>> +++ b/drivers/bus/mhi/host/main.c
->>> @@ -427,6 +427,8 @@ void mhi_create_devices(struct mhi_controller 
->>> *mhi_cntrl)
->>>           if (ret)
->>>               put_device(&mhi_dev->dev);
->>>       }
->>> + pm_runtime_no_callbacks(&mhi_cntrl->mhi_dev->dev);
->>> + devm_pm_runtime_set_active_enabled(&mhi_cntrl->mhi_dev->dev);
->>>   }
->>>     irqreturn_t mhi_irq_handler(int irq_number, void *dev)
->>> @@ -658,12 +660,8 @@ static int parse_xfer_event(struct 
->>> mhi_controller *mhi_cntrl,
->>>               /* notify client */
->>>               mhi_chan->xfer_cb(mhi_chan->mhi_dev, &result);
->>>   -            if (mhi_chan->dir == DMA_TO_DEVICE) {
->>> +            if (mhi_chan->dir == DMA_TO_DEVICE)
->>>                   atomic_dec(&mhi_cntrl->pending_pkts);
->>> -                /* Release the reference got from mhi_queue() */
->>> - pm_runtime_mark_last_busy(mhi_cntrl->cntrl_dev);
->>> -                pm_runtime_put(mhi_cntrl->cntrl_dev);
->>> -            }
->>>                 /*
->>>                * Recycle the buffer if buffer is pre-allocated,
->>> @@ -1152,12 +1150,6 @@ static int mhi_queue(struct mhi_device 
->>> *mhi_dev, struct mhi_buf_info *buf_info,
->>>         read_lock_irqsave(&mhi_cntrl->pm_lock, flags);
->>>   -    /* Packet is queued, take a usage ref to exit M3 if necessary
->>> -     * for host->device buffer, balanced put is done on buffer 
->>> completion
->>> -     * for device->host buffer, balanced put is after ringing the DB
->>> -     */
->>> -    pm_runtime_get(mhi_cntrl->cntrl_dev);
->>> -
->>>       /* Assert dev_wake (to exit/prevent M1/M2)*/
->>>       mhi_cntrl->wake_toggle(mhi_cntrl);
->>>   @@ -1167,11 +1159,6 @@ static int mhi_queue(struct mhi_device 
->>> *mhi_dev, struct mhi_buf_info *buf_info,
->>>       if (likely(MHI_DB_ACCESS_VALID(mhi_cntrl)))
->>>           mhi_ring_chan_db(mhi_cntrl, mhi_chan);
->>>   -    if (dir == DMA_FROM_DEVICE) {
->>> -        pm_runtime_mark_last_busy(mhi_cntrl->cntrl_dev);
->>> -        pm_runtime_put(mhi_cntrl->cntrl_dev);
->>> -    }
->>> -
->>>       read_unlock_irqrestore(&mhi_cntrl->pm_lock, flags);
->>>         return ret;
->>> @@ -1377,7 +1364,6 @@ static int mhi_update_channel_state(struct 
->>> mhi_controller *mhi_cntrl,
->>>       ret = mhi_device_get_sync(mhi_cntrl->mhi_dev);
->>>       if (ret)
->>>           return ret;
->>> -    pm_runtime_get(mhi_cntrl->cntrl_dev);
->>>         reinit_completion(&mhi_chan->completion);
->>>       ret = mhi_send_cmd(mhi_cntrl, mhi_chan, cmd);
->>> @@ -1408,8 +1394,6 @@ static int mhi_update_channel_state(struct 
->>> mhi_controller *mhi_cntrl,
->>>         trace_mhi_channel_command_end(mhi_cntrl, mhi_chan, to_state, 
->>> TPS("Updated"));
->>>   exit_channel_update:
->>> -    pm_runtime_mark_last_busy(mhi_cntrl->cntrl_dev);
->>> -    pm_runtime_put(mhi_cntrl->cntrl_dev);
->>>       mhi_device_put(mhi_cntrl->mhi_dev);
->>>         return ret;
->>> @@ -1592,12 +1576,8 @@ static void mhi_reset_data_chan(struct 
->>> mhi_controller *mhi_cntrl,
->>>       while (tre_ring->rp != tre_ring->wp) {
->>>           struct mhi_buf_info *buf_info = buf_ring->rp;
->>>   -        if (mhi_chan->dir == DMA_TO_DEVICE) {
->>> +        if (mhi_chan->dir == DMA_TO_DEVICE)
->>>               atomic_dec(&mhi_cntrl->pending_pkts);
->>> -            /* Release the reference got from mhi_queue() */
->>> -            pm_runtime_mark_last_busy(mhi_cntrl->cntrl_dev);
->>> -            pm_runtime_put(mhi_cntrl->cntrl_dev);
->>> -        }
->>>             if (!buf_info->pre_mapped)
->>>               mhi_cntrl->unmap_single(mhi_cntrl, buf_info);
->>> diff --git a/drivers/bus/mhi/host/pm.c b/drivers/bus/mhi/host/pm.c
->>> index 
->>> b4ef115189b505c3450ff0949ad2d09f3ed53386..fd690e8af693109ed8c55248db0ea153f9e69423 100644
->>> --- a/drivers/bus/mhi/host/pm.c
->>> +++ b/drivers/bus/mhi/host/pm.c
->>> @@ -429,6 +429,7 @@ static int mhi_pm_mission_mode_transition(struct 
->>> mhi_controller *mhi_cntrl)
->>>         if (MHI_PM_IN_ERROR_STATE(mhi_cntrl->pm_state)) {
->>>           ret = -EIO;
->>> +        read_unlock_bh(&mhi_cntrl->pm_lock);
->>>           goto error_mission_mode;
->>>       }
->>>   @@ -459,11 +460,9 @@ static int 
->>> mhi_pm_mission_mode_transition(struct mhi_controller *mhi_cntrl)
->>>        */
->>>       mhi_create_devices(mhi_cntrl);
->>>   -    read_lock_bh(&mhi_cntrl->pm_lock);
->>>     error_mission_mode:
->>> -    mhi_cntrl->wake_put(mhi_cntrl, false);
->>> -    read_unlock_bh(&mhi_cntrl->pm_lock);
->>> +    mhi_device_put(mhi_cntrl->mhi_dev);
->>>         return ret;
->>>   }
->>> @@ -1038,9 +1037,11 @@ int __mhi_device_get_sync(struct 
->>> mhi_controller *mhi_cntrl)
->>>           read_unlock_bh(&mhi_cntrl->pm_lock);
->>>           return -EIO;
->>>       }
->>> +    read_unlock_bh(&mhi_cntrl->pm_lock);
->>> +
->>> +    pm_runtime_get_sync(&mhi_cntrl->mhi_dev->dev);
->>> +    read_lock_bh(&mhi_cntrl->pm_lock);
->>>       mhi_cntrl->wake_get(mhi_cntrl, true);
->>> -    if (MHI_PM_IN_SUSPEND_STATE(mhi_cntrl->pm_state))
->>> -        mhi_trigger_resume(mhi_cntrl);
->>>       read_unlock_bh(&mhi_cntrl->pm_lock);
->>>         ret = wait_event_timeout(mhi_cntrl->state_event,
->>> @@ -1049,9 +1050,7 @@ int __mhi_device_get_sync(struct mhi_controller 
->>> *mhi_cntrl)
->>>                    msecs_to_jiffies(mhi_cntrl->timeout_ms));
->>>         if (!ret || MHI_PM_IN_ERROR_STATE(mhi_cntrl->pm_state)) {
->>> -        read_lock_bh(&mhi_cntrl->pm_lock);
->>> -        mhi_cntrl->wake_put(mhi_cntrl, false);
->>> -        read_unlock_bh(&mhi_cntrl->pm_lock);
->>> +        mhi_device_put(mhi_cntrl->mhi_dev);
->>>           return -EIO;
->>>       }
->>>   @@ -1339,11 +1338,10 @@ void mhi_device_put(struct mhi_device 
->>> *mhi_dev)
->>>         mhi_dev->dev_wake--;
->>>       read_lock_bh(&mhi_cntrl->pm_lock);
->>> -    if (MHI_PM_IN_SUSPEND_STATE(mhi_cntrl->pm_state))
->>> -        mhi_trigger_resume(mhi_cntrl);
->>>         mhi_cntrl->wake_put(mhi_cntrl, false);
->>>       read_unlock_bh(&mhi_cntrl->pm_lock);
->>> +    pm_runtime_put(&mhi_cntrl->mhi_dev->dev);
->>>   }
->>>   EXPORT_SYMBOL_GPL(mhi_device_put);
->>>
->>
+> The following changes since commit 38c82f07a964e27c3e71224c1f038a4083ff58b0:
 > 
+>   Merge branch 'robot/pr-0-1764573234' into 'main' (2025-12-02 00:54:05 +0000)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/ath/linux-firmware.git ath-20251202
+> 
+> for you to fetch changes up to 15f8543684412387ebfc97a4b99ecd18afdc5e0c:
+> 
+>   ath11k: QCA6698AQ hw2.1: update to WLAN.HSP.1.1-04866-QCAHSPSWPL_V1_V2_SILICONZ_IOE-1 (2025-12-02 09:53:54 -0800)
+> 
+> ----------------------------------------------------------------
+> Jeff Johnson (2):
+>       ath11k: QCA2066 hw2.1: update board-2.bin
+>       ath11k: QCA6698AQ hw2.1: update to WLAN.HSP.1.1-04866-QCAHSPSWPL_V1_V2_SILICONZ_IOE-1
+> 
+>  WHENCE                           |   2 +-
+>  ath11k/QCA2066/hw2.1/board-2.bin | Bin 745408 -> 745440 bytes
+>  ath11k/QCA6698AQ/hw2.1/amss.bin  | Bin 5005312 -> 5083136 bytes
+>  ath11k/QCA6698AQ/hw2.1/m3.bin    | Bin 266684 -> 266684 bytes
+>  4 files changed, 1 insertion(+), 1 deletion(-)
 
+-- 
+With best wishes
+Dmitry
 
