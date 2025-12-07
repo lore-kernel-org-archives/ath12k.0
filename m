@@ -4,93 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45BC0D2CE17
-	for <ath12k@archiver.kernel.org>; Sun,  7 Dec 2025 07:28:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11F4AD1CDC6
+	for <ath12k@archiver.kernel.org>; Sun,  7 Dec 2025 19:29:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=tu1DR8dtdPHs8QCR0wAB9LbfGycgG0Ld/Qas8hKG2vU=; b=ybDs2Wz8NLITfmVRCpeqAeYYMt
-	89FNcL3L0syBgFxJxRIoJqiMfUIXeuY3Nh/D3NJfPbBqqft/7GR5/w/3CewNbylLzVrCJyKinFVWC
-	UfEU3IvmebJ+BznRMd9RExMrMkrkjQywy5Dtjcm48vqqrR2m8J7mMeVNdUaIHgTDriVsyBgi5bHls
-	r5ZluPZ2MXzXMzsRrnFYdDMTIo4GlFgbTyT1leqLFeAaOUKfGFqLM4nZVzIeXlkWZDOqzh16cB2i2
-	iSCBnUbMlonAMQzuU9oMCwJ2VWER9GBr1f+vDbObd0XA1efH29JeseBFGQi3y6/83sAI1FqFCDy1m
-	u1aFfdyA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Opu2+OL/DwS9JbMvMpOEdTVE51EH8OVgiRsdsv9c8zI=; b=LyTttxg3dlnmCKQIxoCBESDYd3
+	rFl7+vngxM3rjE9vftHcQazFRBok/Qnb3bBHi/iXLDNARvJ0EQLVsVHEy8+54qQER3ExPwQ2c9ybX
+	kpzEjJHmBAlmay3rKg0xJhPbqDu5iakKJka5tZWC4zL5yEg+GDF+q5RXYPMEIMhcGsWgs5Ao3ack1
+	AE2s0NBvugdzfzhvK/4e1af/jLzoK2MYy6dFWDmTdG9sGgrDWffDEIJUp1AX0MMONnXtoTWSxOYdC
+	m1PeiQ2KuI6B5xvCp+H12fQA8f36pHIza7qxB3WduK3M/0JFd1jcGaUIyO2NCh52QIY8G6QX1Zd0z
+	4k85iQ0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vS9Bi-0000000BYrc-32M6;
-	Sun, 07 Dec 2025 07:28:10 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vSKRm-0000000CBbb-30B5;
+	Sun, 07 Dec 2025 19:29:30 +0000
+Received: from mail-qv1-xf30.google.com ([2607:f8b0:4864:20::f30])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vS9Bf-0000000BYr8-1Rgt
+	id 1vSKRT-0000000CBae-2ZGx
 	for ath12k@lists.infradead.org;
-	Sun, 07 Dec 2025 07:28:09 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5B72s2tp950701;
-	Sun, 7 Dec 2025 07:28:04 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=tu1DR8dtdPHs8QCR0wAB9L
-	bfGycgG0Ld/Qas8hKG2vU=; b=eTMU09FJcHxCyVovzdsV6hd33dLW/P+AwBIg0i
-	WtZ7H0fiQ4CbL3+43tdYxawbhlbP5Dxf36tpfjX87FU3MKx5hFijOHkryv3cfQdw
-	3zIc2eRlXeG8L59N8RbE7Z3p2/Zz8rhtxwoQ7nnkcFtO90hHJ786MVdLTo0JHIYW
-	ae0dHuStqHgMf95hfYU4K4SvvD59tT67YO5cH+Y3a6zctBkzk4exiKa8GR41bFnc
-	2I4MJ4RAwbiouOGpPBR9j4vHc0V4kX633cb9wO9RX98B9J9TMFxm0ZEgKu6HVYUr
-	R6dx9j+SJy8dSrahoXSKAvPcB6XWTlhiQuMTvM3DsyL729Ng==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4avcndt38h-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sun, 07 Dec 2025 07:28:04 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5B77S3UV004176
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sun, 7 Dec 2025 07:28:03 GMT
-Received: from hu-rdeuri-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.17; Sat, 6 Dec 2025 23:28:02 -0800
-From: Ripan Deuri <quic_rdeuri@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH ath12k-ng] wifi: ath12k: Skip DP peer creation for scan vdev
-Date: Sun, 7 Dec 2025 12:57:17 +0530
-Message-ID: <20251207072717.95542-1-quic_rdeuri@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Sun, 07 Dec 2025 19:29:29 +0000
+Received: by mail-qv1-xf30.google.com with SMTP id 6a1803df08f44-8824888ce97so49548746d6.2
+        for <ath12k@lists.infradead.org>; Sun, 07 Dec 2025 11:29:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1765135750; x=1765740550; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Opu2+OL/DwS9JbMvMpOEdTVE51EH8OVgiRsdsv9c8zI=;
+        b=DKEjyza5P5Shsv1DL5n+Y5U0NWXw18wrOzQdDZvwc9eQTxMembba6VskpdU7OhpkQz
+         IzVaH5p4bjVWzdjOzos+6m/bgj/zS0bKfuBH1nshTtVfqTeVMIaG19eHwYL9e9/PPH0u
+         p2nvnsrg8Sub9mIZysjZuv0TPB0i5vD43t65hkdja4rUY+fYcMMXq+92SU6pJlpKzln3
+         pf2T/xa3f/fxtRdXJY44VE330Wyos17rIS3vM0agWLPZp2xNW2sO5Eco1eFzyUBXTBpq
+         o4LDgAyqG8ItW2EGS8SyP9IRvfCevYmGLGVnc0VZWSV8NY4nhxyEFUpvCwt56iLZB5jQ
+         HFaA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1765135750; x=1765740550;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=Opu2+OL/DwS9JbMvMpOEdTVE51EH8OVgiRsdsv9c8zI=;
+        b=kSM/Gq+FzYd4d/9DrdhbmWvJ//M6igZit/VLNirjGNmgB69PWpf/bILyG0XPN1ZwOK
+         6PZzn12EIRIKJVacwCKdGeeGBi5Kc6uUiPdhmqwvvdrotDWB4K4grO5moFrH0DEHEJm6
+         +b7DnI3/q29mdsQd8i3v7XRwdTJGJLly60o1uQAOt+Fn9H/DzgNbc7Q8k+3b4tBHYtnz
+         xajvKXKzibz4X7l9w2yDXWit0RPBazCLU9ME3XtUsst8Lf9kJ0+47zfyIXwKG2FBPF8u
+         6OSgUsNw15WBQpomFEZNmW64Dq2W8mtNdhKfJ6N2YKqI2HuPqMCDDdrrlNAsQhV/yk3J
+         ErNg==
+X-Forwarded-Encrypted: i=1; AJvYcCW8sMuTrLWNcrrfb2yln84jIntLGf3NBR9tZzBo1pAg3W8AEJJV8bHfjT6TL/hawk3G+qJR2bk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxsOK/QfcE5oAY6KwITtZiDdVkntAWq8Fm0N6DIOzV3PnlzVV7N
+	p6nYGxdZCsYupKfHMS8YBy6gZ7x1gvOQTCtB4ZOwG2FRxT1+AEoA4eEo8A4wWM3+VXaKWj6+RZe
+	GYvDnx+khjyWHX3oRUpB2KUCuh9hO0Q==
+X-Gm-Gg: ASbGnctBOQr99TNo7f59OPrKOT3/++n0WXBOc9KFoHSFF3x/el+0o8VR9QUdCOwv70I
+	9gVkGi+C1zHB2swVb4vbVMu51kI/sypZOn06IuPd7nh9xVNWU6vNQdeRlCnarYjDQYFGUgiAPmP
+	mzORoLBqXy++6Lv9mGvflEHww7/XT6PGFNbqjnQaI07LNeDO1shASdsr6TklH+v4+zMz6GzIPkj
+	5U1onMTj9nyz0Jkjqu455K64DiRSuPbYJ4BDFYII+cN+Gh5AVZKln8PzUT1lXU1HZYSMxzmFLzZ
+	VGc1HdhSXg0Pc4Aqn+ipg4MxUQo=
+X-Google-Smtp-Source: AGHT+IHjR3mLmPnj9fRaa7D59Q5OP/l7CbN+/RdhM+PjFVUL8+kj6fWBqmoyD4tFOMFEsNhTEVep7TjIbtGOzuXKODA=
+X-Received: by 2002:ad4:5ba5:0:b0:880:4ec0:417a with SMTP id
+ 6a1803df08f44-8883dc4c363mr100694556d6.55.1765135749856; Sun, 07 Dec 2025
+ 11:29:09 -0800 (PST)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: Zce2ZoTNgt17XqMNl_AMO9zfzqIurapD
-X-Authority-Analysis: v=2.4 cv=baJmkePB c=1 sm=1 tr=0 ts=69352c84 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=wP3pNCr1ah4A:10 a=VkNPw1HP01LnGYTKEx00:22
- a=COk6AnOGAAAA:8 a=wIFjEMXumgJnCK9oOwUA:9 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: Zce2ZoTNgt17XqMNl_AMO9zfzqIurapD
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjA3MDA2NSBTYWx0ZWRfX2HSXzExcV3th
- BYQwwON6bRR6AhrC/gplBQSE28a0Ufvdx8bXX00aDrc3A4M7U4Y0TAU3n3GW97LYupVD1FC+mt4
- zdNcRPUqAWuyAHWguyuRHdRWi7XTGJAjMAJ9C+2JP4+bfLZv9RUE6DXYumcNmL2mQyK8GVE37Mf
- zXWgIWVGNXQ3XTQLFPVPigqVRjVNNtWzZQixCBrvTwPe4p8u6dyU/9fzKmst8k8FOtnUaFld8+E
- DP/1qwVvOs9OCL84DFxHUygJuuxak9TN6+qeo+0v2W2F2d/CcFTvOMx0wAOgJcerYvycg61rDLd
- 4AOF1/wGKkKgHwy7wlh59dFvJgmFANNqsG+bTJWfXNPH0eDxNLcAO2q+CChn136c+p334EDEEod
- t2sspGIgwOGswAKOvabg8Klwujt8Pg==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-12-06_02,2025-12-04_04,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 phishscore=0 malwarescore=0 priorityscore=1501
- impostorscore=0 spamscore=0 bulkscore=0 suspectscore=0 clxscore=1015
- adultscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
- definitions=main-2512070065
+References: <20251201011457.17422-1-daleyo@gmail.com> <20251201011457.17422-7-daleyo@gmail.com>
+ <7ea43ef2-b453-46cf-a35e-ea11ca1dbe24@kernel.org>
+In-Reply-To: <7ea43ef2-b453-46cf-a35e-ea11ca1dbe24@kernel.org>
+From: =?UTF-8?B?SsOpcsO0bWUgZGUgQnJldGFnbmU=?= <jerome.debretagne@gmail.com>
+Date: Sun, 7 Dec 2025 20:28:33 +0100
+X-Gm-Features: AQt7F2oFhC8Mb-l4_CfaR4BEBfSn1QIKcrxVG9maohU2gcvVq5WClxflVEf0V1E
+Message-ID: <CA+kEDGEjR7cGA0zZfuKkYg37mJZs3Fn7eKbgkB6hdjDLtGxjRQ@mail.gmail.com>
+Subject: Re: [PATCH v2 6/8] dt-bindings: wireless: ath12k: Add disable-rfkill property
+To: Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Lorenzo Bianconi <lorenzo@kernel.org>
+Cc: Dale Whinham <daleyo@gmail.com>, Johannes Berg <johannes@sipsolutions.net>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Jeff Johnson <jjohnson@kernel.org>, Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
+	linux-wireless@vger.kernel.org, devicetree@vger.kernel.org, 
+	ath12k@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251206_232807_519940_D16B9935 
-X-CRM114-Status: GOOD (  14.06  )
+X-CRM114-CacheID: sfid-20251207_112912_313082_5BF96546 
+X-CRM114-Status: GOOD (  16.37  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,133 +101,52 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Consider a multi-link AP configuration:
+Le lun. 1 d=C3=A9c. 2025 =C3=A0 08:34, Krzysztof Kozlowski <krzk@kernel.org=
+> a =C3=A9crit :
+>
+> On 01/12/2025 02:14, Dale Whinham wrote:
+> > From: J=C3=A9r=C3=B4me de Bretagne <jerome.debretagne@gmail.com>
+> >
+> > rfkill should be disabled according to the Surface Pro 11's DSDT.
+> >
+> > https://lore.kernel.org/all/20250113074810.29729-3-quic_lingbok@quicinc=
+.com/
+> > has added support to read the ACPI bitflag when ACPI is supported.
+>
+> It wasn't merged. If it was, reference commits, not random emails.
 
-    MLD vif (MAC addr: aa:bb)
-        |-- 2.4 GHz link (BSSID: aa:bb)
-        |-- 5 GHz link   (BSSID: cc:dd)
+Good catch, It was merged in commit c6a7c0b09d5f, we will reference
+this commit instead.
 
-For AP vdevs, ath12k creates a DP peer using the arvif's BSSID and stores
-it in dp_hw->dp_peers_list. During scan operations, the driver assigns an
-arvif to the scan vdev and uses the vif's MAC address as its BSSID. In
-the above scenario, the scan vdev MAC address (aa:bb) matches the BSSID
-of the 2.4 GHz AP link, causing a duplicate entry in dp_hw->dp_peers_list
-and leading to scan vdev creation failure.
+> > Document the disable-rfkill property to expose one specific feature
+> > (DISABLE_RFKILL_BIT) for devices described with a DT, so that the
+> > feature can be disabled.
+>
+> This is just a circular logic. Add property to have property in DT so
+> that you can use feature.
+>
+> No, describe the hardware or actual problem instead.
 
-Failure in vif bringup sequence:
-1. Create AP vdev for 2.4 GHz link:
-   - Assign arvif with BSSID = aa:bb and link_id = 0.
-   - Create DP peer with address aa:bb and add to dp_hw->dp_peers_list.
+Point taken. Would something like the following be better?
 
-2. Create scan vdev for 5 GHz link:
-   - Assign arvif with BSSID = aa:bb (same as vif MAC address) and
-     link_id = 15.
-   - Attempt to create another DP peer with address aa:bb.
-   - Operation fails because aa:bb already exists in dp_hw->dp_peers_list,
-     resulting in duplicate entry conflict.
+"For some devices, Wi-Fi is entirely hard blocked by default making
+the Wi-Fi radio unusable, except if rfkill is disabled as described
+by an ACPI bitflag on those models. Add the disable-rfkill property
+to expose the DISABLE_RFKILL_BIT feature for devices described
+by a devicetree."
 
-3. Delete scan vdev for 5 GHz link.
-4. Create AP vdev for 5 GHz link.
+> You still need to answer Rob's questions.
 
-Since DP peer is not needed for scan operations, identify scan vdev using
-arvif->link_id >= IEEE80211_MLD_MAX_NUM_LINKS and skip DP peer creation
-and deletion.
+Indeed, we didn't answer another question, sorry. Here it is for
+reference:
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
+> [Rob] Assuming it belongs in DT, why is this ath12k specific? Could be
+> for any wireless chip...
 
-Signed-off-by: Ripan Deuri <quic_rdeuri@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/mac.c  | 22 ++++++++++++++--------
- drivers/net/wireless/ath/ath12k/peer.c | 12 +++++++-----
- 2 files changed, 21 insertions(+), 13 deletions(-)
+Agree, it could be applicable to any wireless chip, it should be moved
+somewhere else. Would ieee80211.yaml be the right target file for
+this property? Or any other file suggestion instead? Thank you.
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 3649f58fef84..42e750376926 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -1229,7 +1229,8 @@ void ath12k_mac_peer_cleanup_all(struct ath12k *ar)
- 
- 	/* Delete all the self dp_peers on asserted radio */
- 	list_for_each_entry_safe_reverse(arvif, tmp_vif, &ar->arvifs, list) {
--		if (arvif->ahvif->vdev_type == WMI_VDEV_TYPE_AP) {
-+		if ((arvif->ahvif->vdev_type == WMI_VDEV_TYPE_AP) &&
-+		    (arvif->link_id < IEEE80211_MLD_MAX_NUM_LINKS)) {
- 			ath12k_dp_peer_delete(dp_hw, arvif->bssid, NULL);
- 			arvif->num_stations = 0;
- 		}
-@@ -4031,7 +4032,8 @@ static void ath12k_mac_remove_link_interface(struct ieee80211_hw *hw,
- 			ath12k_warn(ar->ab, "failed to submit AP self-peer removal on vdev %d link id %d: %d",
- 				    arvif->vdev_id, arvif->link_id, ret);
- 
--		ath12k_dp_peer_delete(&ah->dp_hw, arvif->bssid, NULL);
-+		if (arvif->link_id < IEEE80211_MLD_MAX_NUM_LINKS)
-+			ath12k_dp_peer_delete(&ah->dp_hw, arvif->bssid, NULL);
- 	}
- 	ath12k_mac_vdev_delete(ar, arvif);
- }
-@@ -9720,6 +9722,7 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
- 	u8 link_id;
- 	struct ath12k_dp_link_vif *dp_link_vif = NULL;
- 	struct ath12k_dp_peer_create_params params = {};
-+	bool dp_peer_created = false;
- 
- 	lockdep_assert_wiphy(hw->wiphy);
- 
-@@ -9805,11 +9808,14 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
- 	case WMI_VDEV_TYPE_AP:
- 		params.ucast_ra_only = true;
- 
--		ret = ath12k_dp_peer_create(&ah->dp_hw, arvif->bssid, &params);
--		if (ret) {
--			ath12k_warn(ab, "failed to vdev %d create dp_peer for AP: %d\n",
--				    arvif->vdev_id, ret);
--			goto err_vdev_del;
-+		if (arvif->link_id < IEEE80211_MLD_MAX_NUM_LINKS) {
-+			ret = ath12k_dp_peer_create(&ah->dp_hw, arvif->bssid, &params);
-+			if (ret) {
-+				ath12k_warn(ab, "failed to vdev %d create dp_peer for AP: %d\n",
-+					    arvif->vdev_id, ret);
-+				goto err_vdev_del;
-+			}
-+			dp_peer_created = true;
- 		}
- 
- 		peer_param.vdev_id = arvif->vdev_id;
-@@ -9925,7 +9931,7 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
- 	}
- 
- err_dp_peer_del:
--	if (ahvif->vdev_type == WMI_VDEV_TYPE_AP)
-+	if (dp_peer_created)
- 		ath12k_dp_peer_delete(&ah->dp_hw, arvif->bssid, NULL);
- 
- err_vdev_del:
-diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
-index c2fb5bbd6cea..5f3bd3b9a3e9 100644
---- a/drivers/net/wireless/ath/ath12k/peer.c
-+++ b/drivers/net/wireless/ath/ath12k/peer.c
-@@ -241,11 +241,13 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
- 
- 	spin_unlock_bh(&dp->dp_lock);
- 
--	ret = ath12k_dp_link_peer_assign(ath12k_ab_to_dp(ar->ab),
--					 &(ath12k_ar_to_ah(ar)->dp_hw),
--					 arvif->vdev_id, sta,
--					 (u8 *)arg->peer_addr, link_id,
--					 ar->hw_link_id);
-+	if (arvif->link_id < IEEE80211_MLD_MAX_NUM_LINKS) {
-+		ret = ath12k_dp_link_peer_assign(ath12k_ab_to_dp(ar->ab),
-+						 &(ath12k_ar_to_ah(ar)->dp_hw),
-+						 arvif->vdev_id, sta,
-+						 (u8 *)arg->peer_addr, link_id,
-+						 ar->hw_link_id);
-+	}
- 
- 	return ret;
- }
-
-base-commit: a1e19289932aeef26085feb97597d624da6302ab
--- 
-2.34.1
-
+Best regards,
+J=C3=A9r=C3=B4me
 
