@@ -4,89 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11F4AD1CDC6
-	for <ath12k@archiver.kernel.org>; Sun,  7 Dec 2025 19:29:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E6EDD1CDC6
+	for <ath12k@archiver.kernel.org>; Mon,  8 Dec 2025 02:20:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Opu2+OL/DwS9JbMvMpOEdTVE51EH8OVgiRsdsv9c8zI=; b=LyTttxg3dlnmCKQIxoCBESDYd3
-	rFl7+vngxM3rjE9vftHcQazFRBok/Qnb3bBHi/iXLDNARvJ0EQLVsVHEy8+54qQER3ExPwQ2c9ybX
-	kpzEjJHmBAlmay3rKg0xJhPbqDu5iakKJka5tZWC4zL5yEg+GDF+q5RXYPMEIMhcGsWgs5Ao3ack1
-	AE2s0NBvugdzfzhvK/4e1af/jLzoK2MYy6dFWDmTdG9sGgrDWffDEIJUp1AX0MMONnXtoTWSxOYdC
-	m1PeiQ2KuI6B5xvCp+H12fQA8f36pHIza7qxB3WduK3M/0JFd1jcGaUIyO2NCh52QIY8G6QX1Zd0z
-	4k85iQ0A==;
+	bh=gBAKNQNQ6lwF0FgB7TSW97QySjZwRKCBqn6ogYF17wk=; b=Oo4B4VPCEBjO9DWItwQSLW4Wcs
+	26Z/4aJ/Ip67n0pPPQwBifGxSFOwhSEWaqqVBUy0WCUbcTf0iZbsxCNu5VHGXj8f4GcI7ZKzIqRFz
+	5aXRn5LO07bi6Q5CZk89U1p7OBLtvOX6LC176OU5KTkOIWFFG0L7icEn5Kr1wvWTI4eOU+FWTsnn8
+	FkNon8oBTBdafi0AswhiNrt3LI3DTYWulVTJhJXyej+sao683ArWXe5QDXT8bWoSga3LaYEX3mhIn
+	ZFxrDkI1QEkHC05RFVGCUVi7L/+jxvLCwU4brPfBbA3xoM0UOXsJZIGnEqcQj7xNaDGV/ZFQujbFs
+	moNJoSTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSKRm-0000000CBbb-30B5;
-	Sun, 07 Dec 2025 19:29:30 +0000
-Received: from mail-qv1-xf30.google.com ([2607:f8b0:4864:20::f30])
+	id 1vSQrq-0000000CTTg-47pV;
+	Mon, 08 Dec 2025 02:20:50 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSKRT-0000000CBae-2ZGx
+	id 1vSQro-0000000CTT2-21FH
 	for ath12k@lists.infradead.org;
-	Sun, 07 Dec 2025 19:29:29 +0000
-Received: by mail-qv1-xf30.google.com with SMTP id 6a1803df08f44-8824888ce97so49548746d6.2
-        for <ath12k@lists.infradead.org>; Sun, 07 Dec 2025 11:29:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1765135750; x=1765740550; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Opu2+OL/DwS9JbMvMpOEdTVE51EH8OVgiRsdsv9c8zI=;
-        b=DKEjyza5P5Shsv1DL5n+Y5U0NWXw18wrOzQdDZvwc9eQTxMembba6VskpdU7OhpkQz
-         IzVaH5p4bjVWzdjOzos+6m/bgj/zS0bKfuBH1nshTtVfqTeVMIaG19eHwYL9e9/PPH0u
-         p2nvnsrg8Sub9mIZysjZuv0TPB0i5vD43t65hkdja4rUY+fYcMMXq+92SU6pJlpKzln3
-         pf2T/xa3f/fxtRdXJY44VE330Wyos17rIS3vM0agWLPZp2xNW2sO5Eco1eFzyUBXTBpq
-         o4LDgAyqG8ItW2EGS8SyP9IRvfCevYmGLGVnc0VZWSV8NY4nhxyEFUpvCwt56iLZB5jQ
-         HFaA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1765135750; x=1765740550;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=Opu2+OL/DwS9JbMvMpOEdTVE51EH8OVgiRsdsv9c8zI=;
-        b=kSM/Gq+FzYd4d/9DrdhbmWvJ//M6igZit/VLNirjGNmgB69PWpf/bILyG0XPN1ZwOK
-         6PZzn12EIRIKJVacwCKdGeeGBi5Kc6uUiPdhmqwvvdrotDWB4K4grO5moFrH0DEHEJm6
-         +b7DnI3/q29mdsQd8i3v7XRwdTJGJLly60o1uQAOt+Fn9H/DzgNbc7Q8k+3b4tBHYtnz
-         xajvKXKzibz4X7l9w2yDXWit0RPBazCLU9ME3XtUsst8Lf9kJ0+47zfyIXwKG2FBPF8u
-         6OSgUsNw15WBQpomFEZNmW64Dq2W8mtNdhKfJ6N2YKqI2HuPqMCDDdrrlNAsQhV/yk3J
-         ErNg==
-X-Forwarded-Encrypted: i=1; AJvYcCW8sMuTrLWNcrrfb2yln84jIntLGf3NBR9tZzBo1pAg3W8AEJJV8bHfjT6TL/hawk3G+qJR2bk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxsOK/QfcE5oAY6KwITtZiDdVkntAWq8Fm0N6DIOzV3PnlzVV7N
-	p6nYGxdZCsYupKfHMS8YBy6gZ7x1gvOQTCtB4ZOwG2FRxT1+AEoA4eEo8A4wWM3+VXaKWj6+RZe
-	GYvDnx+khjyWHX3oRUpB2KUCuh9hO0Q==
-X-Gm-Gg: ASbGnctBOQr99TNo7f59OPrKOT3/++n0WXBOc9KFoHSFF3x/el+0o8VR9QUdCOwv70I
-	9gVkGi+C1zHB2swVb4vbVMu51kI/sypZOn06IuPd7nh9xVNWU6vNQdeRlCnarYjDQYFGUgiAPmP
-	mzORoLBqXy++6Lv9mGvflEHww7/XT6PGFNbqjnQaI07LNeDO1shASdsr6TklH+v4+zMz6GzIPkj
-	5U1onMTj9nyz0Jkjqu455K64DiRSuPbYJ4BDFYII+cN+Gh5AVZKln8PzUT1lXU1HZYSMxzmFLzZ
-	VGc1HdhSXg0Pc4Aqn+ipg4MxUQo=
-X-Google-Smtp-Source: AGHT+IHjR3mLmPnj9fRaa7D59Q5OP/l7CbN+/RdhM+PjFVUL8+kj6fWBqmoyD4tFOMFEsNhTEVep7TjIbtGOzuXKODA=
-X-Received: by 2002:ad4:5ba5:0:b0:880:4ec0:417a with SMTP id
- 6a1803df08f44-8883dc4c363mr100694556d6.55.1765135749856; Sun, 07 Dec 2025
- 11:29:09 -0800 (PST)
+	Mon, 08 Dec 2025 02:20:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 46DBF433C5;
+	Mon,  8 Dec 2025 02:20:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE7F4C4CEFB;
+	Mon,  8 Dec 2025 02:20:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1765160447;
+	bh=TAKQ1BejKaRZJjBshOAo3jq/BYcYSUoEANnrwmHTPqg=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=RI65BHMoNBJncsbWuTsTKsrmiPi8D4zLMYxbFWPqm6zIIqoez3U4WCyGO4Bba9mtF
+	 0Jz3xUd+WKgvfz6MjExCa9pfoY/HVyDmzMswl4zzos39LssUlcZjz20ccm0rJFeurh
+	 AZDbhDWdb7kNNkteH4z0/NHRy5HLrJHuFHIbjoAVbBrN4FQ5XCIPd16/S90wQsslFG
+	 2b1YJ/AKtIHjTO7a1blolbsRqnTgtv4jeWHyCAWcEyhs6j/rUVOJGHnU1xhLzq0F8e
+	 /qUrj7RBnCeyTfzybQtlG88avHQ+SUH5YcT8HFwnSRYUq9KSuB5zLqVFzRnaNL9+dI
+	 2h40bx5Ge2xuw==
+Message-ID: <40ab3a19-01b5-461e-aaf9-c3d8142fc926@kernel.org>
+Date: Mon, 8 Dec 2025 03:20:38 +0100
 MIME-Version: 1.0
-References: <20251201011457.17422-1-daleyo@gmail.com> <20251201011457.17422-7-daleyo@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 6/8] dt-bindings: wireless: ath12k: Add disable-rfkill
+ property
+To: =?UTF-8?Q?J=C3=A9r=C3=B4me_de_Bretagne?= <jerome.debretagne@gmail.com>,
+ Rob Herring <robh@kernel.org>, Lorenzo Bianconi <lorenzo@kernel.org>
+Cc: Dale Whinham <daleyo@gmail.com>, Johannes Berg
+ <johannes@sipsolutions.net>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+ Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+ linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
+ ath12k@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20251201011457.17422-1-daleyo@gmail.com>
+ <20251201011457.17422-7-daleyo@gmail.com>
  <7ea43ef2-b453-46cf-a35e-ea11ca1dbe24@kernel.org>
-In-Reply-To: <7ea43ef2-b453-46cf-a35e-ea11ca1dbe24@kernel.org>
-From: =?UTF-8?B?SsOpcsO0bWUgZGUgQnJldGFnbmU=?= <jerome.debretagne@gmail.com>
-Date: Sun, 7 Dec 2025 20:28:33 +0100
-X-Gm-Features: AQt7F2oFhC8Mb-l4_CfaR4BEBfSn1QIKcrxVG9maohU2gcvVq5WClxflVEf0V1E
-Message-ID: <CA+kEDGEjR7cGA0zZfuKkYg37mJZs3Fn7eKbgkB6hdjDLtGxjRQ@mail.gmail.com>
-Subject: Re: [PATCH v2 6/8] dt-bindings: wireless: ath12k: Add disable-rfkill property
-To: Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Lorenzo Bianconi <lorenzo@kernel.org>
-Cc: Dale Whinham <daleyo@gmail.com>, Johannes Berg <johannes@sipsolutions.net>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Jeff Johnson <jjohnson@kernel.org>, Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
-	linux-wireless@vger.kernel.org, devicetree@vger.kernel.org, 
-	ath12k@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+ <CA+kEDGEjR7cGA0zZfuKkYg37mJZs3Fn7eKbgkB6hdjDLtGxjRQ@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <CA+kEDGEjR7cGA0zZfuKkYg37mJZs3Fn7eKbgkB6hdjDLtGxjRQ@mail.gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251207_112912_313082_5BF96546 
-X-CRM114-Status: GOOD (  16.37  )
+X-CRM114-CacheID: sfid-20251207_182048_574744_4078E6E1 
+X-CRM114-Status: GOOD (  15.56  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,52 +125,55 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Le lun. 1 d=C3=A9c. 2025 =C3=A0 08:34, Krzysztof Kozlowski <krzk@kernel.org=
-> a =C3=A9crit :
->
-> On 01/12/2025 02:14, Dale Whinham wrote:
-> > From: J=C3=A9r=C3=B4me de Bretagne <jerome.debretagne@gmail.com>
-> >
-> > rfkill should be disabled according to the Surface Pro 11's DSDT.
-> >
-> > https://lore.kernel.org/all/20250113074810.29729-3-quic_lingbok@quicinc=
-.com/
-> > has added support to read the ACPI bitflag when ACPI is supported.
->
-> It wasn't merged. If it was, reference commits, not random emails.
+On 07/12/2025 20:28, Jérôme de Bretagne wrote:
+> Le lun. 1 déc. 2025 à 08:34, Krzysztof Kozlowski <krzk@kernel.org> a écrit :
+>>
+>> On 01/12/2025 02:14, Dale Whinham wrote:
+>>> From: Jérôme de Bretagne <jerome.debretagne@gmail.com>
+>>>
+>>> rfkill should be disabled according to the Surface Pro 11's DSDT.
+>>>
+>>> https://lore.kernel.org/all/20250113074810.29729-3-quic_lingbok@quicinc.com/
+>>> has added support to read the ACPI bitflag when ACPI is supported.
+>>
+>> It wasn't merged. If it was, reference commits, not random emails.
+> 
+> Good catch, It was merged in commit c6a7c0b09d5f, we will reference
+> this commit instead.
+> 
+>>> Document the disable-rfkill property to expose one specific feature
+>>> (DISABLE_RFKILL_BIT) for devices described with a DT, so that the
+>>> feature can be disabled.
+>>
+>> This is just a circular logic. Add property to have property in DT so
+>> that you can use feature.
+>>
+>> No, describe the hardware or actual problem instead.
+> 
+> Point taken. Would something like the following be better?
+> 
+> "For some devices, Wi-Fi is entirely hard blocked by default making
+> the Wi-Fi radio unusable, except if rfkill is disabled as described
+> by an ACPI bitflag on those models. Add the disable-rfkill property
+> to expose the DISABLE_RFKILL_BIT feature for devices described
+> by a devicetree."
+> 
+>> You still need to answer Rob's questions.
+> 
+> Indeed, we didn't answer another question, sorry. Here it is for
+> reference:
+> 
+>> [Rob] Assuming it belongs in DT, why is this ath12k specific? Could be
+>> for any wireless chip...
+> 
+> Agree, it could be applicable to any wireless chip, it should be moved
+> somewhere else. Would ieee80211.yaml be the right target file for
+> this property? Or any other file suggestion instead? Thank you.
 
-Good catch, It was merged in commit c6a7c0b09d5f, we will reference
-this commit instead.
+Yes, then place it please in above iee80211.yaml common file, with some
+sort of bigger picture explanation.
 
-> > Document the disable-rfkill property to expose one specific feature
-> > (DISABLE_RFKILL_BIT) for devices described with a DT, so that the
-> > feature can be disabled.
->
-> This is just a circular logic. Add property to have property in DT so
-> that you can use feature.
->
-> No, describe the hardware or actual problem instead.
-
-Point taken. Would something like the following be better?
-
-"For some devices, Wi-Fi is entirely hard blocked by default making
-the Wi-Fi radio unusable, except if rfkill is disabled as described
-by an ACPI bitflag on those models. Add the disable-rfkill property
-to expose the DISABLE_RFKILL_BIT feature for devices described
-by a devicetree."
-
-> You still need to answer Rob's questions.
-
-Indeed, we didn't answer another question, sorry. Here it is for
-reference:
-
-> [Rob] Assuming it belongs in DT, why is this ath12k specific? Could be
-> for any wireless chip...
-
-Agree, it could be applicable to any wireless chip, it should be moved
-somewhere else. Would ieee80211.yaml be the right target file for
-this property? Or any other file suggestion instead? Thank you.
 
 Best regards,
-J=C3=A9r=C3=B4me
+Krzysztof
 
