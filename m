@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FC13D59D66
-	for <ath12k@archiver.kernel.org>; Fri, 12 Dec 2025 15:35:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06EB4D49238
+	for <ath12k@archiver.kernel.org>; Fri, 12 Dec 2025 15:39:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
 	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=u3CTZA4Zgmj1lpo2KNxMqlSK76qX4eGkFOmKWdQRJlY=; b=fVNz/xh9JpiCb5lgkQqk03o8M4
-	xQj9YFnLB4vJ5zyWv6IKoQc7yDBUHshHZTVnxW19rzxBuMP8NFW85cBeo+EUK4eJbratZesnERuld
-	M8lq+Y2szc7z0mWJbfthNyD1D4+i46Op6BYeHWexvOVyTGvA/Od1OrUjz8WnCx4QftzFYq9hrV4zg
-	TKgIYz1VG28cVL7LrN/3FSPnCTLveoSO01CaBcfkKRz1wzMc7B7nT5SIpAUYj6tclIqm0+8xJsTCi
-	gHBx3zLuJB35BrVSHXPOwbCg0r1dEaK5aclQd8X3xjmdBAuhidnrrXeZHd3j9Af8cIfiEr5Q+XC4X
-	H3c5cfdA==;
+	bh=tOzK9vIBskz8qm8AeiRvCZIknxdvbHd0qSA20pbLcME=; b=2r8WBNCfbynXRkpEF/Nfi/5Uw+
+	9a1LenFFjZF7UsEwS4pfaxUslzUlcTIhJcWPU4fCpA1qHkODUG0gxf5osIbGwgJJax46NSEdBCUdX
+	yoemuDv8C/XsHsd0LG/C5rw1rhmRzxycNtO52bB32apFoSEGEkUPcKMYI0LohvRs/t405rUHoXM0P
+	0ANkZRC2qZcyGZ+sYtGaitPUrWd+ap6hBpjtQLRHjhexekhOBOm4WPDeNIWD7a9fpJ2kWXlyTh+Lb
+	Mpp+oWwAOY4HncimYewnrNvH6vMiqygQxyexIKlZfJq2laB63DBs+u4KpFD1zHTV9GvAhhOw74M/c
+	F7MumcCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vU5Am-00000000kKP-10uS;
-	Fri, 12 Dec 2025 15:35:12 +0000
-Received: from mgamail.intel.com ([198.175.65.18])
+	id 1vU5Ew-00000000ksS-3Dd9;
+	Fri, 12 Dec 2025 15:39:30 +0000
+Received: from mgamail.intel.com ([192.198.163.9])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vU5Ah-00000000kJw-2MGu
+	id 1vU5Eu-00000000krW-3Kwz
 	for ath12k@lists.infradead.org;
-	Fri, 12 Dec 2025 15:35:09 +0000
+	Fri, 12 Dec 2025 15:39:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1765553707; x=1797089707;
+  t=1765553969; x=1797089969;
   h=date:from:to:cc:subject:message-id;
-  bh=moDkB3e8HPdY2tM1rEAusH9Vvr/8C0cbN2OjdwReCcQ=;
-  b=Nw4rUiDiE+xzhh+80W/7LR09Dw2jUbuaEYcj9HXBHXRRqBJON2Cc6AGj
-   84m9Bnipvgx6YxvD/9PF/KZJjO8XinY7YBk0SJdzZc79Rv9KrXqFb3cyb
-   rPXOM/mYtGM1rRip2qf0XCoQJvps66eekZvkkS/q7rt47yESCHh7j12lB
-   +xgnxdo/UXxSfLoDlULDatmWTO6+pdlHs08sjLfwXGSABv0gvulPywpLA
-   a4lN1o9HUcyHki4soi0PQZSJC/tBiCXU2NN6vyWWOqIAf5Q3S0YAqAEHl
-   Heb1wm5vRucqBPkWaUIS/9v8SH+ODBLd6xunG/zmHxMnPVzo2jeidgfQ7
-   A==;
-X-CSE-ConnectionGUID: Vegw3M0hQgy3iEGOopnl0w==
-X-CSE-MsgGUID: txK3eNJQQhapTlw7nr7iqg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11640"; a="67598919"
+  bh=WViW7dodc0TKyzwU4g2cVy+vK1bTUKUQNA1Pqr75yJU=;
+  b=Z42pNYiBAPrBji6upcXe4htNMzwHvnFmZxUq3qR5j7UnGwKWea3xMzOv
+   O5Y1faZ++xb8IeZgwvtujkHZT+b/9rkOoiKWT0Wz/j+uR6z5qjcfimKVM
+   Ww0R5mgWNfJlGEOPH6eGT+o4ohr33te/V8PACWN//FifaGI7kNWqoPTAv
+   ebW+fbgLNantjumCLr/er3+KRdKGYp5FwbmCSitAhnLk/BuQlH6LOBchJ
+   nULUpgwJrk+eSYGJro+Dzxk5nyRgVuxML7HZJPn6KdkuPMJweX+OHWXxD
+   5/CST9wCN3340gKf3OgyumXSkpR9/7L/H0Cj7wkOuR8ogJBCYJJGthUF1
+   g==;
+X-CSE-ConnectionGUID: eugpgDs5Rl6JV9sQCiA4Fg==
+X-CSE-MsgGUID: 12w9vunoTye/wwvKBqf2SQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11640"; a="78260981"
 X-IronPort-AV: E=Sophos;i="6.21,144,1763452800"; 
-   d="scan'208";a="67598919"
-Received: from fmviesa007.fm.intel.com ([10.60.135.147])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Dec 2025 07:35:05 -0800
-X-CSE-ConnectionGUID: EjGLOq59RCe71RNlEjvtJA==
-X-CSE-MsgGUID: F2uCe8aUSDeFS40u7a7j6g==
+   d="scan'208";a="78260981"
+Received: from orviesa009.jf.intel.com ([10.64.159.149])
+  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Dec 2025 07:38:06 -0800
+X-CSE-ConnectionGUID: +4wPk/OzTo27L9o80KD3Yw==
+X-CSE-MsgGUID: fSk6568oRS24+ZZBqXoQ2Q==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.21,144,1763452800"; 
-   d="scan'208";a="196726955"
+   d="scan'208";a="196865030"
 Received: from lkp-server01.sh.intel.com (HELO d335e3c6db51) ([10.239.97.150])
-  by fmviesa007.fm.intel.com with ESMTP; 12 Dec 2025 07:35:04 -0800
+  by orviesa009.jf.intel.com with ESMTP; 12 Dec 2025 07:38:04 -0800
 Received: from kbuild by d335e3c6db51 with local (Exim 4.98.2)
 	(envelope-from <lkp@intel.com>)
-	id 1vU5Ab-000000006EX-1UIV;
-	Fri, 12 Dec 2025 15:35:01 +0000
-Date: Fri, 12 Dec 2025 23:34:50 +0800
+	id 1vU5DW-000000006F1-0cz1;
+	Fri, 12 Dec 2025 15:38:02 +0000
+Date: Fri, 12 Dec 2025 23:37:08 +0800
 From: kernel test robot <lkp@intel.com>
 To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Cc: ath12k@lists.infradead.org
-Subject: [ath:master-pending] BUILD SUCCESS
- 0e6a1f4c8daebc958cbd853f6e88127ea2139643
-Message-ID: <202512122344.2Y3A9vNC-lkp@intel.com>
+Subject: [ath:pending] BUILD SUCCESS
+ 912a4585732f47e03fa499dd0243e0513b11e388
+Message-ID: <202512122301.ebys3ZA3-lkp@intel.com>
 User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251212_073507_711215_9A95DAC9 
-X-CRM114-Status: UNSURE (   3.14  )
+X-CRM114-CacheID: sfid-20251212_073928_871197_10151698 
+X-CRM114-Status: UNSURE (   3.33  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -83,10 +83,10 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
-branch HEAD: 0e6a1f4c8daebc958cbd853f6e88127ea2139643  Merge branch 'pending' into main-pending
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: 912a4585732f47e03fa499dd0243e0513b11e388  Merge branch 'ath12k-ng' into pending
 
-elapsed time: 1188m
+elapsed time: 1190m
 
 configs tested: 216
 configs skipped: 0
