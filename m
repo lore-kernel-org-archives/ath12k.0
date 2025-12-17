@@ -4,84 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6D9DD64087
-	for <ath12k@archiver.kernel.org>; Wed, 17 Dec 2025 07:43:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31AFDD65C7C
+	for <ath12k@archiver.kernel.org>; Wed, 17 Dec 2025 17:17:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
+	From:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=ePQaSrUNe0VSj65MqKfLoZ6FNLKF2itnxk9+iMK7wGA=; b=BCFu2aWmSRdu/OBzHkLeMwYa00
-	hf4eLPMWI4IEY4t6ypBFI/fe+cLSgvpIDsH0jVZPCh8TWIKJj5JiG8EcPykWq4IDpNl7FfgMD0oAr
-	4SEwMl63NETmW/bJNfYllz2jWco0CA4wAm+MCakIXGsIdqIN5FwEn+U14nV2flr5mkv3WN21ivlGb
-	WDkGqQBs9BBMtt1zd/33bMxQ99eei8ABJxkFVXDGa0NUxWLlOm0/SzjXZF9tO7G2x02vaWcMvfqMK
-	NpF4af+BdYbFhWX8kAuL1n410I2I5RDNB8Sw4LhMknLsfjNgCwAm3UL1DBIiFOou8ut5u0c+4EpVC
-	+l6bQF7Q==;
+	bh=sMsECs55YAxgUig7taet/2grmW0IOY+ljUX3oITZNto=; b=XMBjHrvWQ0TGSYhYY92t5mlRcJ
+	OGsbe/blc3YIY742P3a6xShunF30fJXc/tJa+7lVn7V/5VsiG/gAv3JYubwcJC9P2XnyddPxW0R5b
+	jhMCpzxuEUzf/4LCw7uFO3buOxq5KCpQOLfkG1n6TWQH/ziQR37gLSv1Vx2n4nwbiTVOVil69KHjU
+	D9FbLsgGPmyT5yZsk3eqMDstvCudL9PFsiGNlCn5jW7inbIn8ijf5aSrdttEC5VI4wblEcbqa59Zx
+	Acq74W75Ejkal6928jncdD8SlUtd3ycRkBcWowgtHOWs6Fk1oFxxhlidxvz/MepMdm0yPkGh0+0mq
+	0Nk/2yFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVmBc-00000006IVK-2pnE;
-	Wed, 17 Dec 2025 07:43:04 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1vVv95-00000007A9S-3tu8;
+	Wed, 17 Dec 2025 17:17:03 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVmBa-00000006IUp-21qk
-	for ath12k@lists.infradead.org;
-	Wed, 17 Dec 2025 07:43:03 +0000
-Received: by mail-wm1-x342.google.com with SMTP id 5b1f17b1804b1-477632b0621so37121915e9.2
-        for <ath12k@lists.infradead.org>; Tue, 16 Dec 2025 23:43:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1765957380; x=1766562180; darn=lists.infradead.org;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=ePQaSrUNe0VSj65MqKfLoZ6FNLKF2itnxk9+iMK7wGA=;
-        b=Hwb4ZRe36/ghIzAzWEq4Vhr4/WeUtF57TXhAL0Lfv47lavaLvMAtN1YxNVe4+ocYTU
-         zA1PRjFwmxF1uuF2rEkVGusxd/I2YFLQCickOGQBAty+V+YL37eH49ViqZOxGKd1Op6x
-         +VXCPVHo9xhoa38zJFLWkz1DIkByO/5lKFG55XhC5mUHo70egHT9PI3ZsO1g7Y+CLgKs
-         mMEFHcWFanN30AprV1EKbWvVTeLFPg1Ivdc/jnrvt5CN6HdqetbZuGrWTXLqAUjY8Urj
-         vU7yS/R5CevZC4VUdDU04JLCUaitswdGWv6hDMi/TJxOq4STh9PEqfEmLEv5N7TWH/nF
-         MXIw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1765957380; x=1766562180;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=ePQaSrUNe0VSj65MqKfLoZ6FNLKF2itnxk9+iMK7wGA=;
-        b=MhxIOZ3U8JUPyXGmGta1+N5hAjZcpMEJoEzAUYQr3a+9evNlAbtyISnHx60/AvlYjB
-         gjXXZZSTs3IeihPyqH09vEH3CnuCrhecCFXtp/E08I25iZTyH1fiYDuQUAcGKBdRDXWB
-         v2niyzRy1HMpOQxsFWuDd0Gct5QbxL9ASEvSljZ4D1l44dA3FhtheToGqTJLnQunm3nF
-         mY00a07nyO49V8JJDzFProXl7blWbth694wVvJOPdj6j7LLHkQ4+q/T0sVyPvMJ0vUOO
-         R7iTM2pxKRCyEcF/SoN4yfTFxAK08DE4c1c3QIbgtAw8XP+UGr2DgNptTtRMu00mUuX5
-         DpKw==
-X-Gm-Message-State: AOJu0Yx0cwhlxj9oSlVRPzwsWeZKsn97A2ACIbh7FrGW3K6Vxg/DZiO/
-	lCqB5pPeuLaJFlae+HdgVdT3a7IuDVjDdNE8Tjy+7PsuICMOpEw/3Ago3yQfUqtUdLU=
-X-Gm-Gg: AY/fxX5Qwp27Dr0GdviJFoVpmeRpU9kgZUjaSM7ujzFMblRJkVEknPyWl69zeOFHwUe
-	Lkf7DTdWVC4eUIM48c8oIbzxKkCw5nLSWHPBsI5S25q2+X6O7iPQo8URdWN+LI3VGMO6xGkJm92
-	lMZNYXQsxHoVIqJqqnEfl8PvO/1fL9FoQCliRrIUvZhw8tMBxdF+FGCnvu3Eqfwkk52NVne6wrq
-	JuLzGcW2Tg6tbBbTlLTlYbpJ85OEk5bSNynC96P6Rcq7HbZnuv7CViiPVT62MsauJ4dOQiYQGSN
-	48nHQ3XblRZuUPwS3aeg5a6zXJDY7E0xlVyZ0mfNqRZeyIfuJmN/6rpSAycL1FCTJfHWgWvdH7/
-	DbxOGg8kYm1g5FJkncdNRq3JrGmeo3qoNxeyUBtmmCa8KVqUg1Gt59JNwF5fZtJmm6S8qLUMdOi
-	TChGyi6q591bxb5Jmj
-X-Google-Smtp-Source: AGHT+IGRNvfiHM61rCipsGgJrUd+KI0gepqdhMDg+d5DU5rBrYL7BSePgxqbKR1iSu44rSgB/1xZbw==
-X-Received: by 2002:a05:600c:821a:b0:477:fcb:2267 with SMTP id 5b1f17b1804b1-47a8f89bc9amr187156175e9.8.1765957380183;
-        Tue, 16 Dec 2025 23:43:00 -0800 (PST)
-Received: from localhost ([196.207.164.177])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47bd995cc3fsm24133785e9.16.2025.12.16.23.42.59
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 16 Dec 2025 23:42:59 -0800 (PST)
-Date: Wed, 17 Dec 2025 10:42:56 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: Alok Singh <quic_aloksing@quicinc.com>
-Cc: ath12k@lists.infradead.org
-Subject: [bug report] wifi: ath12k: Move TX monitor functionality to Wi-Fi 7
- module
-Message-ID: <aUJfAFmpAX3ZIv8N@stanley.mountain>
+	id 1vVv94-00000007A8s-3LHd;
+	Wed, 17 Dec 2025 17:17:02 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id C35AD6057B;
+	Wed, 17 Dec 2025 17:17:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 62943C4CEF5;
+	Wed, 17 Dec 2025 17:17:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1765991821;
+	bh=nCNmapLXVkzx5G0AMg0w1rDB82qxLQX+MYjj3DhiKp4=;
+	h=From:Subject:Date:To:Cc:Reply-To:From;
+	b=XKNWmpy4m79ww++MMmPrggUkdOn2gZ8gefp8Nh5CQsp/ZAqAGzKerSg95thiEkcOP
+	 NuB/EMl77H1Xmqn3WMCIRUZyy3bnCafUs+PG0ZcbmAXJst9RNckeI3KKu/b2lRKno1
+	 OL2+IZ2susK1SiaxP2rHvu8HgDWHsrmdTtFc3A6guRoc3kc+gL3YstQtU4AHQhNQGO
+	 TRYdvCbDVnkOo2JTKcPpPdkdedn6G6RoIdaudox8t0/6bIT5HfmRESsxR9MGZa24ql
+	 g8Ea5iBUWHxuWi6mLRl5T09AvLPHRcHAgpad9DDTy9BaxJoGKDR2mWDsnxxsYtocbm
+	 0KA4S7pZimAaw==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 46B3CD65C53;
+	Wed, 17 Dec 2025 17:17:01 +0000 (UTC)
+From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
+Subject: [PATCH 0/2] net: qrtr: Drop the MHI 'auto_queue' feature
+Date: Wed, 17 Dec 2025 22:46:50 +0530
+Message-Id: <20251217-qrtr-fix-v1-0-f6142a3ec9d8@oss.qualcomm.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251216_234302_555047_A0075590 
-X-CRM114-Status: UNSURE (   6.10  )
-X-CRM114-Notice: Please train this message.
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIAILlQmkC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDI1NDI0Nz3cKikiLdtMwK3WQDUwugWIpFimGiElB5QVEqUBhsVHRsbS0AovM
+ Jm1oAAAA=
+X-Change-ID: 20251217-qrtr-fix-c058251d8d1a
+To: Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
+ Carl Vanderlip <carl.vanderlip@oss.qualcomm.com>, 
+ Oded Gabbay <ogabbay@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+ Jeff Johnson <jjohnson@kernel.org>, "David S. Miller" <davem@davemloft.net>, 
+ Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
+ Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Loic Poulain <loic.poulain@oss.qualcomm.com>, 
+ Maxim Kochetkov <fido_max@inbox.ru>
+Cc: linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ linux-kernel@vger.kernel.org, mhi@lists.linux.dev, 
+ linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
+ ath12k@lists.infradead.org, netdev@vger.kernel.org, 
+ Bjorn Andersson <andersson@kernel.org>, Johan Hovold <johan@kernel.org>, 
+ Chris Lew <quic_clew@quicinc.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
+ stable@vger.kernel.org
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1833;
+ i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
+ bh=nCNmapLXVkzx5G0AMg0w1rDB82qxLQX+MYjj3DhiKp4=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBpQuWLGsKVi00BM9j9k2fzmDyfhFZKHkWaVpwxL
+ mEyD11ffiGJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaULliwAKCRBVnxHm/pHO
+ 9dflCACJcSVT7YDyfd1eVp65ty6CysudUmNCdkpwxqBUbCrnGNo3J5HA5Hjn0fxfolTcFBBLQ07
+ NeDnBv7hbBbeyy/YGPc7B2nWrkzT2oE/O6mX1dmUEBSjUBVMBq+M2qerwQHpjy3mT6EmN+lLYuk
+ EoZKz4737MjFD7GJoeu4mMQuQOXQ86hQRcwpELNcqSYNc+8fep+/5IiIPQ2NgkCKu4cKF+CAANE
+ NmFlrFhiohovN3SfcwHdt4M3dZd2Klsd1aCphMoU9i8/gw1xIHR1cGHhWU1Y6+l7SUkLrL6jBh+
+ YTWv2owV7o/wUYhLImCgqMf3xtU5X3/Kt/L/XHl60z1w9ez8
+X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
+ fpr=C668AEC3C3188E4C611465E7488550E901166008
+X-Endpoint-Received: by B4 Relay for
+ manivannan.sadhasivam@oss.qualcomm.com/default with auth_id=461
+X-Original-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,86 +99,56 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: manivannan.sadhasivam@oss.qualcomm.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello Alok Singh,
+Hi,
 
-Commit 52758ff7b50a ("wifi: ath12k: Move TX monitor functionality to
-Wi-Fi 7 module") from Nov 10, 2025 (linux-next), leads to the
-following Smatch static checker warning:
+This series intends to fix the race between the MHI stack and the MHI client
+drivers due to the MHI 'auto_queue' feature. As it turns out often, the best
+way to fix an issue in a feature is to drop the feature itself and this series
+does exactly that.
 
-	drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c:2537 ath12k_wifi7_dp_mon_tx_parse_mon_status()
-	error: uninitialized symbol 'num_user'.
+There is no real benefit in having the 'auto_queue' feature in the MHI stack,
+other than saving a few lines of code in the client drivers. Since the QRTR is
+the only client driver which makes use of this feature, this series reworks the
+QRTR driver to manage the buffer on its own.
 
-drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c
-    2508 enum hal_rx_mon_status
-    2509 ath12k_wifi7_dp_mon_tx_parse_mon_status(struct ath12k_pdev_dp *dp_pdev,
-    2510                                         struct ath12k_mon_data *pmon,
-    2511                                         struct sk_buff *skb,
-    2512                                         struct napi_struct *napi,
-    2513                                         u32 ppdu_id)
-    2514 {
-    2515         struct ath12k_dp *dp = dp_pdev->dp;
-    2516         struct ath12k_base *ab = dp->ab;
-    2517         struct dp_mon_tx_ppdu_info *tx_prot_ppdu_info, *tx_data_ppdu_info;
-    2518         struct hal_tlv_hdr *tlv;
-    2519         u8 *ptr = skb->data;
-    2520         u16 tlv_tag;
-    2521         u16 tlv_len;
-    2522         u32 tlv_userid = 0;
-    2523         u8 num_user;
-    2524         u32 tlv_status = DP_MON_TX_STATUS_PPDU_NOT_DONE;
-    2525 
-    2526         tx_prot_ppdu_info =
-    2527                 ath12k_wifi7_dp_mon_tx_get_ppdu_info(pmon, ppdu_id,
-    2528                                                      DP_MON_TX_PROT_PPDU_INFO);
-    2529         if (!tx_prot_ppdu_info)
-    2530                 return -ENOMEM;
-    2531 
-    2532         tlv = (struct hal_tlv_hdr *)ptr;
-    2533         tlv_tag = le32_get_bits(tlv->tl, HAL_TLV_HDR_TAG);
-    2534 
-    2535         tlv_status = ath12k_wifi7_dp_mon_tx_status_get_num_user(tlv_tag, tlv,
-    2536                                                                 &num_user);
---> 2537         if (tlv_status == DP_MON_TX_STATUS_PPDU_NOT_DONE || !num_user)
-    2538                 return -EINVAL;
+Testing
+=======
 
-You didn't really introduce this bug, the patch just moves code around
-so the scripts mark it as a new bug again.  If the
-ath12k_wifi7_dp_mon_tx_status_get_num_user() function returns
-DP_MON_RX_RESPONSE_REQUIRED_INFO then "num_user" is uninitialized.
-There is a comment which says this needs to be fixed:
-	/* TODO: need to update *num_users */
+Tested on Qcom X1E based Lenovo Thinkpad T14s laptop with WLAN device.
 
-    2539 
-    2540         tx_data_ppdu_info =
-    2541                 ath12k_wifi7_dp_mon_tx_get_ppdu_info(pmon, ppdu_id,
-    2542                                                      DP_MON_TX_DATA_PPDU_INFO);
-    2543         if (!tx_data_ppdu_info)
-    2544                 return -ENOMEM;
-    2545 
-    2546         do {
-    2547                 tlv = (struct hal_tlv_hdr *)ptr;
-    2548                 tlv_tag = le32_get_bits(tlv->tl, HAL_TLV_HDR_TAG);
-    2549                 tlv_len = le32_get_bits(tlv->tl, HAL_TLV_HDR_LEN);
-    2550                 tlv_userid = le32_get_bits(tlv->tl, HAL_TLV_USR_ID);
-    2551 
-    2552                 tlv_status = ath12k_wifi7_dp_mon_tx_parse_status_tlv(ab, pmon,
-    2553                                                                      tlv_tag, ptr,
-    2554                                                                      tlv_userid);
-    2555                 ptr += tlv_len;
-    2556                 ptr = PTR_ALIGN(ptr, HAL_TLV_ALIGN);
-    2557                 if ((ptr - skb->data) >= DP_TX_MONITOR_BUF_SIZE)
-    2558                         break;
-    2559         } while (tlv_status != DP_MON_TX_FES_STATUS_END);
-    2560 
-    2561         ath12k_wifi7_dp_mon_tx_process_ppdu_info(dp_pdev, napi, tx_data_ppdu_info);
-    2562         ath12k_wifi7_dp_mon_tx_process_ppdu_info(dp_pdev, napi, tx_prot_ppdu_info);
-    2563 
-    2564         return tlv_status;
-    2565 }
+Merge Strategy
+==============
 
-regards,
-dan carpenter
+Since this series modifies many subsystem drivers, I'd like to get acks from
+relevant subsystem maintainers and take the series through MHI tree.
+
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+---
+Manivannan Sadhasivam (2):
+      net: qrtr: Drop the MHI auto_queue feature for IPCR DL channels
+      bus: mhi: host: Drop the auto_queue support
+
+ drivers/accel/qaic/mhi_controller.c   | 44 -------------------
+ drivers/bus/mhi/host/init.c           | 10 -----
+ drivers/bus/mhi/host/internal.h       |  3 --
+ drivers/bus/mhi/host/main.c           | 81 +----------------------------------
+ drivers/bus/mhi/host/pci_generic.c    | 20 +--------
+ drivers/net/wireless/ath/ath11k/mhi.c |  4 --
+ drivers/net/wireless/ath/ath12k/mhi.c |  4 --
+ include/linux/mhi.h                   | 14 ------
+ net/qrtr/mhi.c                        | 67 ++++++++++++++++++++++++-----
+ 9 files changed, 60 insertions(+), 187 deletions(-)
+---
+base-commit: 8f0b4cce4481fb22653697cced8d0d04027cb1e8
+change-id: 20251217-qrtr-fix-c058251d8d1a
+
+Best regards,
+-- 
+Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+
+
 
