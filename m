@@ -4,57 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53E92D68BCA
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7CB2D68BC9
 	for <ath12k@archiver.kernel.org>; Wed, 17 Dec 2025 23:57:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:
-	References:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:
-	Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mD8kafDXSIwAcD0kNBoQUlKqSlI7bGsfl3JOSBhmZmA=; b=1hDW5EBUfrinHW7UQO432bmPqW
-	t6pzcF4zGfrknpztUTYUM+Ri1ANI18dD25iahyGorCTn7gmRHhhrzhB3hplF9wdQuJePF5EyjHbV8
-	AZPiJ+1f/era+eqirfMrlaHRZN5uFu1vmwdTPXf5u1SUeur2fvzFv3zjgm/oCOxPuw2hGoHfVhxH8
-	hmYAH0f/ujuZM1zZk3naaD8E/0moGIRaEBxoh6lKZOb+RK5Z4n0flb33p78got06bECfi21mlGfAj
-	NotpAROyMO7s8sbAFkkFCdcQgXxPr8+G6H7kFfneVkKv5y3RiASH8NGfd20vKdR1Pco4oTYZdA6Y/
-	uJr5wl1A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
+	From:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=nQlBSdprNW3tlO+XsaHi3blKZYsEVk3vljx0I4uSIVU=; b=AVHSYBPIKu9s/DM9Xv8C2Vyx4v
+	OxUQzkr54Cnq0cz6qh0dSMJK2fMJGQE4HxYwevdaKetOqlCUIvVl8jzQgJ5SIbEYOIpFLuJ7DSy8j
+	Caxh1rCc9w8dGcA3IBG82yWrWiZXIURmnuzmsu/qmKRnB+9x24UdQ/xYXU3Ll/gAqZ0Sw1GmZNWem
+	kJElrQyXK4Tc7m+nZUigOxgu+6NX+E099qEmSCyqK2kFo7gRgn6VBMpZhiH8Z60p3oU3592FEgxVm
+	SGDUyMYtz/3Qw7twC3i6FC9G5bbO7Xwy5AKALPZ4XnjtQJ8o1wpc4TUPVbPiUsr+7ZXqaAez8gJYy
+	7Gw95ZNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vW1OG-00000007Zn8-0HSK;
+	id 1vW1OG-00000007Zng-1bon;
 	Wed, 17 Dec 2025 23:57:08 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vW1OC-00000007Zhg-1asF
+	id 1vW1OC-00000007ZhX-1aVy
 	for ath12k@lists.infradead.org;
 	Wed, 17 Dec 2025 23:57:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id E7B1644593;
+	by sea.source.kernel.org (Postfix) with ESMTP id 8BDC943648;
 	Wed, 17 Dec 2025 23:56:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id C34DCC2BCB2;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 627DEC4CEF5;
 	Wed, 17 Dec 2025 23:56:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1766015817;
-	bh=C/ueUWFjCyD/VD4TdJXJVaQRqT2VnOEHgebnD6XjxSI=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=Gg/yH8mSTYgUD0T/tb9Qn8AnGrVQ+rAYC8pBAFGF7ftrpEX2XZQUbfirwx+vmcLih
-	 tFh8Q6/US+tG7h1R1anTB6ieiEfr/wD0QA2agVqjwkhbhse+uAbFwgfEffUfV5LadX
-	 hRcecHQ0+EuOWurSpHdDfwwEeA52bxZrT3Ra2f/YnUofrFJLW8rpFGUgTMUrnOPTIY
-	 7B97cGDQk9R2+pS8L0Fq8ZTWPCga7GeoKQht5ZpN33KugPiNc+EcuEkuXe0ZOu1I+8
-	 foACkM0NkgB1FkOWnDJf5xNpVeyxkhw8EZo8syxIfGiIgqYS7nl5CCKQP1f1Jk4WQh
-	 H/BaUrLo+encg==
+	bh=HR4qrmI9rceCWt7faPX8zYQtAYw4yuTbacR2hZ8jKj8=;
+	h=From:Subject:Date:To:Cc:Reply-To:From;
+	b=uESTHdcwFrTGhtuhgh2hLadO1b7dyJ3t5WtA2vwIW3da4rDQFVPqB3LMD0v/7XwrK
+	 bPXPKH+430cMfrdkbzdVwXNWohgfNi1vSIGpSooy2BsxB5L3q8s8wBgKWlQka2i2wC
+	 L6PIfizKciS19/QTZkDOZwSXNL8ve/thr20NrXQBgVG7cn4OGEbdCWuG1sqpwqFW5f
+	 ljfwYXfLoYZVU4s8kVcWENINkdaAq9oyDMsk5L/6992+OdcKKOWwWsY5D3YfHfk59K
+	 UcXzOsC0K5wAOCYsLOjKT0+ZKK0y3K57YjLbP3Z0zafhJhdWSir9QQTvARRpUnijZy
+	 X8/eZfoqCAJSg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B454FD68BCA;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 505F8D65C7F;
 	Wed, 17 Dec 2025 23:56:57 +0000 (UTC)
 From: =?utf-8?q?J=C3=A9r=C3=B4me_de_Bretagne_via_B4_Relay?= <devnull+jerome.debretagne.gmail.com@kernel.org>
-Date: Thu, 18 Dec 2025 00:56:42 +0100
-Subject: [PATCH v3 6/6] wifi: ath12k: Add support for disabling rfkill via
- devicetree
+Subject: [PATCH v3 0/6] Microsoft Surface Pro 11 support
+Date: Thu, 18 Dec 2025 00:56:36 +0100
+Message-Id: <20251218-surface-sp11-for-next-v3-0-875afc7bd3b7@gmail.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 8bit
-Message-Id: <20251218-surface-sp11-for-next-v3-6-875afc7bd3b7@gmail.com>
-References: <20251218-surface-sp11-for-next-v3-0-875afc7bd3b7@gmail.com>
-In-Reply-To: <20251218-surface-sp11-for-next-v3-0-875afc7bd3b7@gmail.com>
+X-B4-Tracking: v=1; b=H4sIADRDQ2kC/x3MOQqAQAxA0atIagNOBhe8ili4ZDTNKImKIN7dw
+ fIV/z9grMIGbfaA8iUmW0zweQbTOsSFUeZkoIJKR65BOzUME6PtzmHYFCPfB1ZUsac61KP3kNp
+ dOcj9f7v+fT8DnBloZwAAAA==
+X-Change-ID: 20251218-surface-sp11-for-next-626e327f7b33
 To: Bjorn Andersson <andersson@kernel.org>, 
  Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -68,21 +69,23 @@ Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, 
  platform-driver-x86@vger.kernel.org, ath12k@lists.infradead.org, 
  Dale Whinham <daleyo@gmail.com>, 
- =?utf-8?q?J=C3=A9r=C3=B4me_de_Bretagne?= <jerome.debretagne@gmail.com>
+ =?utf-8?q?J=C3=A9r=C3=B4me_de_Bretagne?= <jerome.debretagne@gmail.com>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1766015816; l=1265;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1766015815; l=3060;
  i=jerome.debretagne@gmail.com; s=20251217; h=from:subject:message-id;
- bh=mcMjGRXAT6QkIO3PWrqFYRB9BASEzAi+bYp6SS6IoLc=;
- b=wXvPF3j03/LWNZD75iE4hFwXKHz7tgopfmBGylHmu1LBrffKpaZf4z3HFwaYucG5rmnNBA0TC
- +3IEZJkayLkDTe1BOcdFdQoiRfnRjfoDmZPUZW4J2nyHcsYVTGtyd+H
+ bh=HR4qrmI9rceCWt7faPX8zYQtAYw4yuTbacR2hZ8jKj8=;
+ b=t3BXpsJPHxSIlZjyA76+9GhmhP27qDDVarnKi/muuVipdCyPhGDLIzBzk4DJgGDFXkbCTKtLn
+ vi5tRO1d+2BAlPqAqU/Gr8ilzjdiSp01/l7J36E32dkICd8KlD/Ss11
 X-Developer-Key: i=jerome.debretagne@gmail.com; a=ed25519;
  pk=DcPD9n3oDMsPkt+12tU96swmGb5H86cxt+yiEVcUEGk=
 X-Endpoint-Received: by B4 Relay for jerome.debretagne@gmail.com/20251217
  with auth_id=580
 X-Original-From: =?utf-8?q?J=C3=A9r=C3=B4me_de_Bretagne?= <jerome.debretagne@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251217_155704_507279_83FFCA68 
-X-CRM114-Status: GOOD (  11.53  )
+X-CRM114-CacheID: sfid-20251217_155704_489374_C7B41625 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,41 +101,64 @@ Reply-To: jerome.debretagne@gmail.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Dale Whinham <daleyo@gmail.com>
-
-Some devices (e.g. Microsoft Surface Pro 11) indicate that the rfkill
-feature should be disabled by means of an ACPI bitflag.
-
-If ACPI is not being used (i.e. booting using a devicetree) then this
-property will not be read and therefore rfkill may be enabled and
-the ath12k will be hard-blocked with no way to disable it.
-
-Add a devicetree property that allows us to disable the rfkill feature.
+This series brings support for the Qualcomm-based Microsoft Surface
+Pro 11 covering both the OLED and LCD variants.
 
 Signed-off-by: Dale Whinham <daleyo@gmail.com>
-Tested-by: Jérôme de Bretagne <jerome.debretagne@gmail.com>
 Signed-off-by: Jérôme de Bretagne <jerome.debretagne@gmail.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c | 3 +++
- 1 file changed, 3 insertions(+)
+Changes in v3:
+- Update the compatible strings to document both the OLED and LCD variants
+- Move the disable-rfkill property into ieee80211.yaml [Rob,Krzysztof]
+- Reference commit c6a7c0b09d5f and detail the disable-rfkill patch description [Rob,Krzysztof]
+- Switch to the renamed hamoa.dtsi and hamoa-pmics.dtsi [Dale]
+- Improve the comments describing the 2 USB Type-C port location
+- Update the speaker definition to describe only 2-speakers [Konrad]
+- Drop output-low from the speaker definition [Konrad]
+- Enable i2c0 to make it accessible through i2c-tools [Konrad]
+- Delete a non-applicable comment about removable WLAN card [Konrad]
+- Re-order a few nodes and fix indentation issues [Konrad]
+- Squash one of the patches as suggested [Krzysztof]
+- Drop the NAKed patch patch about a dpcd link rate quirk [Dmitry]
+- Include the Reviewed-by: tags
+- Link to v2: https://lore.kernel.org/all/20251201011457.17422-1-daleyo@gmail.com/
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index cc352eef1939937ce902bee2fbd9737ca3ab5993..e10073bb975cfd2e9ee418edcc49d0d51cf93de1 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -77,6 +77,9 @@ static int ath12k_core_rfkill_config(struct ath12k_base *ab)
- 	if (ath12k_acpi_get_disable_rfkill(ab))
- 		return 0;
- 
-+	if (of_property_read_bool(ab->dev->of_node, "disable-rfkill"))
-+		return 0;
-+
- 	for (i = 0; i < ab->num_radios; i++) {
- 		ar = ab->pdevs[i].ar;
- 
+Changes in v2:
+  - Dropped ATNA30DW01 patch as it was merged.
+  - Split device tree into x1e (OLED)/x1p (LCD) specific *.dts files and move common code into x1-microsoft-denali.dtsi (patch 4).
+  - Device tree now enables higher external monitor refresh rates/resolutions (patch 4).
+  - Device tree now enables partially working audio output; requires alsa-ucm-conf and audioreach-topology definitions in userspace (patch 4).
+  - Replaced 'Work around bogus maximum link rate' with a quirk-based approach (patch 5).
+  - Improve the commit message about the disable-rfkill property in response to feedback (patch 6).
 
+---
+Dale Whinham (4):
+      firmware: qcom: scm: allow QSEECOM on Surface Pro 11
+      platform/surface: aggregator_registry: Add Surface Pro 11
+      arm64: dts: qcom: Add support for Surface Pro 11
+      wifi: ath12k: Add support for disabling rfkill via devicetree
+
+Jérôme de Bretagne (2):
+      dt-bindings: arm: qcom: Document Microsoft Surface Pro 11
+      dt-bindings: wireless: ieee80211: Add disable-rfkill property
+
+ Documentation/devicetree/bindings/arm/qcom.yaml    |    8 +
+ .../bindings/net/wireless/ieee80211.yaml           |    6 +
+ arch/arm64/boot/dts/qcom/Makefile                  |    4 +
+ arch/arm64/boot/dts/qcom/x1-microsoft-denali.dtsi  | 1326 ++++++++++++++++++++
+ .../dts/qcom/x1e80100-microsoft-denali-oled.dts    |   20 +
+ .../boot/dts/qcom/x1p64100-microsoft-denali.dts    |   16 +
+ drivers/firmware/qcom/qcom_scm.c                   |    1 +
+ drivers/net/wireless/ath/ath12k/core.c             |    3 +
+ .../platform/surface/surface_aggregator_registry.c |   18 +
+ 9 files changed, 1402 insertions(+)
+---
+base-commit: 8f0b4cce4481fb22653697cced8d0d04027cb1e8
+change-id: 20251218-surface-sp11-for-next-626e327f7b33
+
+Best regards,
 -- 
-2.47.3
+Jérôme de Bretagne <jerome.debretagne@gmail.com>
 
 
 
