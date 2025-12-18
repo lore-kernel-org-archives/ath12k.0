@@ -4,100 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33EACD68BCC
-	for <ath12k@archiver.kernel.org>; Thu, 18 Dec 2025 01:55:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8488ED68BC9
+	for <ath12k@archiver.kernel.org>; Thu, 18 Dec 2025 01:55:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MSFNXmm0LtiuYvbIDgNIlZ919rAec+/ZE2zBI470eJY=; b=kmNLOk+BTSfVKkjbq31DoRcOkI
-	8BaDD5qG81WjStjz41r+0s0eBbmNvFY7gQuelMed0TIH9dRuBduRNrcFgMyLggVYIb/4MT66omw6W
-	9ZxjNnlrdauLDBHnpGpYuqP00k2vduLO+zww7jKDrEzhY3n8Qv531ROa1iIFh/jjPXnVo9qeMI+/w
-	ZgeQuBdaMCbGC+VRiEdfEvjia9p4Vmh4bha7l1FZd7EafoJo9kTHBduZF4fCNd1QXG7+uLUWKJZUH
-	e65NWCqmT49/DRV0zJW6VWsST4P3nAF3A5xcEy9Rp/oEpqT1nL5fDSXwNBPhOu72/zTqjAidn7yIe
-	bLogLk8g==;
+	bh=zd+NHgHkqU0xZFONcwzOTfX+5HAIkhCqXr0ctxebxrQ=; b=TkvDxNPMD+jQBYtbM0mYuIiLVH
+	40uImFcF4ASvTFRgus8fASvipLzTo88VEVnJNrGUW1razjocH/COrQFinZ09F3dWaeRqRaNMgFb8x
+	6zGKwTFgwFfMC5TPh4qwHlHoQiw7Y1JY2jncYeOedv04F0TkV237ln3jqlSRSAsLzs/PNU9ZNl5Fb
+	kqcdJRZ7GFBOye5UAX+Jv1XZ8ArAZneARl0KcvGvqrH9DXSSWC5wooCq2P8hMrCZFilvSS9XRwiel
+	peoFVnY9utZeEXEywv4wg2+OhPUMegOBrP85xfL0/g2Qtu0oB2g1V7RQoHkt0vwWtU7aqcN23slG1
+	MgAKHzMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vW3Ea-00000007fos-3xEE;
-	Thu, 18 Dec 2025 01:55:16 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vW3Ee-00000007fr8-10j2;
+	Thu, 18 Dec 2025 01:55:20 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vW3EY-00000007fnL-1T0v
+	id 1vW3Eb-00000007fod-0T8l
 	for ath12k@lists.infradead.org;
-	Thu, 18 Dec 2025 01:55:15 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5BI1YwLP3717306
-	for <ath12k@lists.infradead.org>; Thu, 18 Dec 2025 01:55:14 GMT
+	Thu, 18 Dec 2025 01:55:19 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5BI1YYaU237507
+	for <ath12k@lists.infradead.org>; Thu, 18 Dec 2025 01:55:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	MSFNXmm0LtiuYvbIDgNIlZ919rAec+/ZE2zBI470eJY=; b=jetQ57GZPGMFMJDr
-	oWcSBs8DMl5ssBkXT438p/53k/fVjL2BZfaqVT1uEOHCkh6pD4hUxDgxhhWDdkeK
-	Hz475B397ijybHs06HRq4bcdDKOU7PjnO9hMARQErNFNJQmkL2lm176AQnT2Q83v
-	D4H1CG8eDItKlnEgPgZzxUMDXuPTkxdEAemjElcKvm+9QpYJdnljw5K6OMgUBfac
-	p5UOnE8qg1Io/5EH60SeovIgkk0Bvhkcvf+ncegW6IOiLYhdvUEQpeIKqqSi78BL
-	6EZ3NbHfcv1A4Qi5cRNzhxcxwA+cGkX4Bke0+lBnIBgrUWMYAoWCLOrPlfDHkKiS
-	fITIxw==
+	zd+NHgHkqU0xZFONcwzOTfX+5HAIkhCqXr0ctxebxrQ=; b=nbejb0kYg0Pdxjwi
+	sVApRzAKFIje2UiJsuW3+f9MBCLgNXaUXJRPn5mqQDuwgo/7aA3XC2BF2WAbaKYL
+	QjwXeYibG15JTh0zQdCh7aeI5I8pWPFIfWC1OrQIZmxDHM7H03fG7JKKDBvCRZKX
+	ujtep9c6X/tWXwySM9O0D5aED4i+6MwJ34XCcdQ5Rjq0mCnKuJ+skAz530ZQ69t7
+	mu3/IvYMJmiqj0Ca/OBGmpIK1x/toB/yAT8WxcAJO3CFMlLeQ0We8kgdq29wmnsp
+	+hfcvzRsf91vzTJC3ap4vQvMnxEbh/Jf3NTtfELxVL37wR2reMLpe6qy6QDXkg2/
+	2tuETg==
 Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4b40n79as9-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4b44x3gg01-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 18 Dec 2025 01:55:13 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2a08cbeb87eso1777495ad.3
-        for <ath12k@lists.infradead.org>; Wed, 17 Dec 2025 17:55:13 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Thu, 18 Dec 2025 01:55:16 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2a0bb1192cbso3322375ad.1
+        for <ath12k@lists.infradead.org>; Wed, 17 Dec 2025 17:55:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1766022913; x=1766627713; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1766022915; x=1766627715; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=MSFNXmm0LtiuYvbIDgNIlZ919rAec+/ZE2zBI470eJY=;
-        b=Xiu7Ffj9kylbshkfbIrKGnoz6NnN+w9ThrUAW7IqrDIaLtzBQYPti//ptGdGUl1wcG
-         UOTx4KSdIvpTw8ZnExlH2eWtEUaAVe4NUimsbUJHGnTef+FN/uMUvwc5LP3JTqhl6bw8
-         sFSP1A29oBhI/NHv8JBLlOFZArFvyaEXJlGFSiFBVap9vXN8wLlLumiigZ4Bj07Mp7v5
-         JyBcGhcvjgDsIGN/Lu641rlHql6RIv/LL2ogiyOlczwMzZXepu3PCyY/DH6dFiT46wj0
-         z/foeTwxEKbIyXcZXzjkhH1FhDJoSWqru2TJZe/Td8Q1ag7dctiE9PSSrQbVGXBK2j9R
-         ELvQ==
+        bh=zd+NHgHkqU0xZFONcwzOTfX+5HAIkhCqXr0ctxebxrQ=;
+        b=AAawc8sAOOirD52ehOT/j/XGzT9txnOtxgRl4J3k1JJMgwY6ZecWzN4ZoPX/CfDTDz
+         Mch+V6zOrvfxuFxps3k2MONDq96KA+y+0eWqQZZgBTlIclMMN6aPxAT3nbOB6R57xAYy
+         MXaAZrAEMvr5pRkdWsbsTgnVMRL287dHSkazgFKiOlHENm2Nl2T4B/sP1k4Plleroz8d
+         2LszjpqCVaam/TDFZHMuzvJW58uc9bb3otf7M4XNU94AoMe3GvowNtiReZbWUAu6unvg
+         79Bvc/NoCjk9ZKEiRa4mYDfb/hBuNzWeYEfnRPpK01fU1P3Zbay7DOsMXRxah5n30MI5
+         uEfw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1766022913; x=1766627713;
+        d=1e100.net; s=20230601; t=1766022915; x=1766627715;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=MSFNXmm0LtiuYvbIDgNIlZ919rAec+/ZE2zBI470eJY=;
-        b=rBZTph85cM8174aOgAr4dtS1z1tf1C9IBfm2uSC9ZZkpRNIItWcPAjCNTSXpHOD5Hn
-         PGjqehPf8FGgxGsokFIgJuxQoyNH5lumuEOIiogkwMcPEhbS9+stGWxBfF3AY6Ouq0/R
-         rxMaR/0TkxZ2pE7kXC/mAT7wXtGj++JxKxDLhZD3XDPazgQnr5Vsy3Ahi6E9KmEhKex6
-         r2vM4IhJ0QqkxhqzOZl3PQ568r3+d8cAk6PTw+azhjb5HesOYAwYGdT2//SpmQwR6UFm
-         hDl9BXLAE+mu1TYz6AmIYTQNNecrB0tBR1ITxB4pd6sZfXmNqs9DB4I6dAkygmCwJuh+
-         VGFg==
-X-Forwarded-Encrypted: i=1; AJvYcCXEPFuRtokqu9R6xejidThoXpQ3gWFnSdRkpzJTuKSKwDfo/+mJzNJe845ZLy58lGbIbUCITl4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxKPCTMnPKhR6qXa6d6zuAufeHywYKacd6v25YOdm8H5iIy6x7U
-	rVeZqlFt5njFST5IQfKCSqwGYprH17h1wDGKnqgso3ZiWFIAYtCypS0s44wcpLWS7pQ727qVMPZ
-	wb39WWG8Z3OfNK4EcVh6kz8KcbMa3u4W9hj1h5S7TH0+niBoAsFww1jHNL6iJcv7p2ib8awwj6y
+        bh=zd+NHgHkqU0xZFONcwzOTfX+5HAIkhCqXr0ctxebxrQ=;
+        b=G05udaJPaDPTs+COiaQBjgoPZ/OumuwIFXinBBm1KUs6uou3yoS0iRP+VIZvKumiYw
+         qTqOrr82nSI9KkoCo6HFE9H6sVHe+ZNpH5HdJxEuaViybMRAHfpLNZoNhJcNePT5O+Og
+         dF7tCqBXUKonKtO+fs9DNGfFqA8uhesVQvJiIgpwePi5v0MlcF2y8wUnpXM3MR3g4Z+k
+         KCCXzo34Cq3qZ/6M2ycxV5NPqS0TbFFPpFhXidTFbH8+ihAaKO30hnYwqNvKnoEoUH2t
+         kSZdltZ9xr0Va8j/8/FdQuHiyHbuJLdee1njNDaKW2At2DzVO1TZLdSto/tagEy1reu3
+         N/VQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXlBjqHItwv/iTfABfn7X1uPbOyjW2faJ7hs2gswM958KfrJlWvpnPAAovD7rsbFbqaSBw0oak=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyY5DXkEBdDL1GGKyGNI/R0kIRCha1GODktPQdWJUSuq2fdtTCi
+	mmSWA+G6LLnXh7APs9D7uLZDNYUMqaM72kTK+36eJEXXzBUXOgKATCQReBoIVdHgF/WRmB9a9Bu
+	JCfbfI2DjyZaXXTcFdpNSWvvxby4t5ok+3jFYQdF2t1nFsdUyxiJuPnTQrBFhAtbvDELSIC0HBP
 	g=
-X-Gm-Gg: AY/fxX74uk4jBQoaQ3scdaWRRiRLTSQ09cFhjV3TuGCa9BcMHu7HFJZxSjXCGV08qed
-	5iQ3tjbIMXY9gPRWNOgXQfzUN9+lp+afcMAUwmp8BuN8CNHjU8G5XRSWhFYzuz0gtOdC+BAgKJV
-	pcjcEJtr0P+Uy4frlD7kp/AWJJ0qpd4SePMOfixhdXNF9ilsKdxq/sLIvynkkw50p+PxRkW2d0Y
-	LKj1eFr/vPCm5BfebaFiUnf1ovc4m8Nv8jPv2N2VknM7isrUH9gloDt3VBfDVS1LZG+kWt+iE5W
-	TI9c5R2Mv6nvrcLjC7BMz99dGfdR7nel+S1wQ8+f4ZjvDZDI6BQqGDgqPvJh2Rf6ZINJi9f/PQ1
-	AuHhNt5up1iCoFpGEHBs2DLmJDZlzD0bsdH6iv6d6VGRJvRDKvUoQXEZ7FEKilOs=
-X-Received: by 2002:a17:903:388d:b0:29d:9f5a:e0d1 with SMTP id d9443c01a7336-29f23e70d05mr211542755ad.27.1766022912902;
-        Wed, 17 Dec 2025 17:55:12 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IE2fG0SxSh7MPfQcvIoBJd6bn8zGv3anKRrLDdDQSdfsSGlMi/5nF5b3CvxiXl3RyooODfiHw==
-X-Received: by 2002:a17:903:388d:b0:29d:9f5a:e0d1 with SMTP id d9443c01a7336-29f23e70d05mr211542545ad.27.1766022912446;
-        Wed, 17 Dec 2025 17:55:12 -0800 (PST)
+X-Gm-Gg: AY/fxX5QLr0z8VrWMHI/sTFADJH+RhrFtY0Kyx9aDPyOdAelIxvqkja4DAZFv8PKKMM
+	Hu88vXh/PENfOOohsfF1QpHO737YLPCmCDq7RDpX2rv+m0TqdLdPyF3YdMkniqycLixP6qnC8/h
+	P5XR6vCKo9c84LSlHQGdNaEiwMwWhY8dtr61/hgLvrskAGCAvkb3R3H/eeSMcyDlL9hhrodPYqf
+	jUzM4O+ZX8zpnymK2MmNI35OdwFxvjb1Tj+vbNpsQaDaDwoCw/vUxu4uzqTCvW2YI6z4acVPeDH
+	aywrlGx9pPVU2esw+Oa2Zwz3HoU16YcSh19sybTyLCKzIRvviI1w5fKXjoksxURfP3g2MuhjYL7
+	wp0mLq9x4isxUYojDIizrdvEVXP8gwIlwHI5OQuY/E5lSZeHrJ/XiYO5cljZI5D8=
+X-Received: by 2002:a17:902:f543:b0:2a1:10f6:3c1 with SMTP id d9443c01a7336-2a110f60540mr103365935ad.26.1766022914817;
+        Wed, 17 Dec 2025 17:55:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH177bhFNjFnWpSYngylfEmZufcf0R7/t06C3AIQcL+52h/fq5RiUjFCICcoChSsdjzSVkkjA==
+X-Received: by 2002:a17:902:f543:b0:2a1:10f6:3c1 with SMTP id d9443c01a7336-2a110f60540mr103365785ad.26.1766022914343;
+        Wed, 17 Dec 2025 17:55:14 -0800 (PST)
 Received: from [127.0.1.1] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2a2d087c812sm6548175ad.15.2025.12.17.17.55.10
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2a2d087c812sm6548175ad.15.2025.12.17.17.55.12
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 17 Dec 2025 17:55:12 -0800 (PST)
+        Wed, 17 Dec 2025 17:55:14 -0800 (PST)
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Date: Thu, 18 Dec 2025 09:54:18 +0800
-Subject: [PATCH ath-next 04/19] wifi: ath12k: fix preferred hardware mode
- calculation
+Date: Thu, 18 Dec 2025 09:54:19 +0800
+Subject: [PATCH ath-next 05/19] wifi: ath12k: refactor 320 MHz bandwidth
+ support parsing
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20251218-ath12k-support-qcc2072-v1-4-87928cf8e547@oss.qualcomm.com>
+Message-Id: <20251218-ath12k-support-qcc2072-v1-5-87928cf8e547@oss.qualcomm.com>
 References: <20251218-ath12k-support-qcc2072-v1-0-87928cf8e547@oss.qualcomm.com>
 In-Reply-To: <20251218-ath12k-support-qcc2072-v1-0-87928cf8e547@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>
@@ -105,31 +105,31 @@ Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         20251201-wlan_image_load_skip_512k-v3-1-bedb5498a58a@oss.qualcomm.com,
         Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Proofpoint-GUID: f3DXvNK8Kio31GRzweK8iLBypslDZhRT
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjE4MDAxMyBTYWx0ZWRfXytNgaD9QmGWv
- o3yM4RwoOgGJMhO6mhIhuIn59Eyp9x28aogxld+eqr236EO3Hw/C9iIDhb2xB0ZnoeWPXjO/sBC
- ivSMOeaKl0OceKOHb6Rg+vXYxqOZkMANSPfcdUuRce4JPF0nSIxT22X3ZcqShnks0bEO45OiuAf
- UBytUPBt4f90oJOMQjX8gZYdStI+zmwJNmd60a+27ooy+KPHpgbKdJvxho5MqPuiGuNtvu/5lsc
- F5n9OXEcRn12iXJ/AunRR2T2v29dfsoIJZbWysntFtKxf8dg2HKCXP+9Kd/n8y9FcVbsAhTSU6+
- v8dvrHCbLM03cOnzp8FSCSw0RkEPp6IzUnJdMuqTVHOntcw0c4vGv4wYC2NWLqCq001Kf3IZnMx
- pPyGlD+Q7TDztT8draubPLU6y20esw==
-X-Authority-Analysis: v=2.4 cv=TZebdBQh c=1 sm=1 tr=0 ts=69435f02 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjE4MDAxMyBTYWx0ZWRfXzuMXGVQ5yzFl
+ ZoaZSYUHVSGf8Mr2sFU6QjLK9aA6QWp4nJ1XXmohCm6vMjCsXIILjkxnxBpaoyeaF6p0zyQyFNA
+ xXueiDOMuIe1qm3SKzMHgAa32SKlH20VHvIC2fPYkMfSiIts5nHxr0iX6RKrjX+PmrquacqxI1c
+ 5J6OYWyYmMDEeCjwuThCTG9kxchwDUkRmPjSXpNV9va6vNYe2CtfSmP9pBsnwojfGOyrNKjCtgs
+ mVPczJg1ZBshPvmklbyA/bnv7PWC1FW0ebJDUeOMtqxb8ZnbVqbtlip+7LhqApnJ+cLwq1esAnO
+ tW+IzflJJr3Z3FCINw1wxwppMPvXnKiluKtznIHsaDz5/HqNDN0rgI+LLtUjL6c2AKMsGbTq9aG
+ S3VPI0zjRXM+0rbRPhrzD2DsUQAO5A==
+X-Proofpoint-GUID: -lc6-VjNW4Rw1FRgAbpsxIR_JFFcppnj
+X-Proofpoint-ORIG-GUID: -lc6-VjNW4Rw1FRgAbpsxIR_JFFcppnj
+X-Authority-Analysis: v=2.4 cv=Zpjg6t7G c=1 sm=1 tr=0 ts=69435f04 cx=c_pps
  a=IZJwPbhc+fLeJZngyXXI0A==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=wP3pNCr1ah4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=zY3FkhqSlrVAWUjZaU8A:9
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=iGNyLxvpPC8n4FyEg3QA:9
  a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-ORIG-GUID: f3DXvNK8Kio31GRzweK8iLBypslDZhRT
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2025-12-18_01,2025-12-17_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 phishscore=0 lowpriorityscore=0 bulkscore=0 malwarescore=0
- spamscore=0 priorityscore=1501 clxscore=1015 impostorscore=0 adultscore=0
+ priorityscore=1501 bulkscore=0 suspectscore=0 spamscore=0 lowpriorityscore=0
+ phishscore=0 malwarescore=0 clxscore=1015 impostorscore=0 adultscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2512180013
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251217_175514_400240_603BE4FF 
-X-CRM114-Status: GOOD (  15.49  )
+X-CRM114-CacheID: sfid-20251217_175517_281534_A290751B 
+X-CRM114-Status: GOOD (  17.03  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,40 +144,81 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-For single pdev device like WCN7850/QCC2072, preferred_hw_mode is
-initialized to WMI_HOST_HW_MODE_SINGLE. Later when firmware sends
-supported modes to host, each mode is compared with the initial one
-and if the priority of the new mode is higher, update the parameter
-and store mode capability.
+For single pdev device, 320 MHz bandwidth support is reported only in
+capability of WMI_HOST_HW_MODE_SINGLE mode, hence commit d4e244c85e45
+("wifi: ath12k: enable 320 MHz bandwidth for 6 GHz band in EHT PHY
+capability for WCN7850") relaxed the condition check in
+ath12k_wmi_tlv_mac_phy_caps_ext() to allow SINGLE mode getting parsed in
+ath12k_wmi_tlv_mac_phy_caps_ext_parse(). Since SINGLE mode is not assumed
+to be preferred, the function returns unconditionally after parsing 320
+MHz support.
 
-For WCN7850, this does not result in issue, as one of the supported
-mode indeed has a higher priority. However the only available mode of
-QCC2072 at this stage is WMI_HOST_HW_MODE_SINGLE, which fails the
-comparison, hence mode capability is not stored. Subsequently driver
-initialization fails.
+This works for WCN7850 because it prefers another mode indeed, while it
+breaks QCC2072 since it prefers SINGLE mode. Due to the unconditional
+return, the subsequent EHT parsing is skipped. Consequently EHT related
+features are disabled.
 
-Fix it by accepting a mode with the same priority.
+Refactor it by moving 320 MHz parsing to ath12k_wmi_tlv_mac_phy_caps_ext(),
+before the mode checking. This makes the code more straightforward, and
+work for both WCN7850 and QCC2072.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
 
 Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/wmi.c | 23 +++++++++++------------
+ 1 file changed, 11 insertions(+), 12 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 150b04d0a21c..ce2bbf6acb4a 100644
+index ce2bbf6acb4a..dd643af892c2 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.c
 +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -4449,7 +4449,7 @@ static int ath12k_wmi_hw_mode_caps(struct ath12k_base *soc,
+@@ -4918,19 +4918,10 @@ ath12k_wmi_tlv_mac_phy_caps_ext_parse(struct ath12k_base *ab,
+ 				      const struct ath12k_wmi_caps_ext_params *caps,
+ 				      struct ath12k_pdev *pdev)
+ {
+-	struct ath12k_band_cap *cap_band;
+-	u32 bands, support_320mhz;
++	u32 bands;
+ 	int i;
  
- 		pref = soc->wmi_ab.preferred_hw_mode;
+ 	if (ab->hw_params->single_pdev_only) {
+-		if (caps->hw_mode_id == WMI_HOST_HW_MODE_SINGLE) {
+-			support_320mhz = le32_to_cpu(caps->eht_cap_phy_info_5ghz[0]) &
+-				IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ;
+-			cap_band = &pdev->cap.band[NL80211_BAND_6GHZ];
+-			cap_band->eht_cap_phy_info[0] |= support_320mhz;
+-			return 0;
+-		}
+-
+ 		for (i = 0; i < ab->fw_pdev_count; i++) {
+ 			struct ath12k_fw_pdev *fw_pdev = &ab->fw_pdev[i];
  
--		if (ath12k_hw_mode_pri_map[mode] < ath12k_hw_mode_pri_map[pref]) {
-+		if (ath12k_hw_mode_pri_map[mode] <= ath12k_hw_mode_pri_map[pref]) {
- 			svc_rdy_ext->pref_hw_mode_caps = *hw_mode_caps;
- 			soc->wmi_ab.preferred_hw_mode = mode;
- 		}
+@@ -4983,14 +4974,22 @@ static int ath12k_wmi_tlv_mac_phy_caps_ext(struct ath12k_base *ab, u16 tag,
+ 					   void *data)
+ {
+ 	const struct ath12k_wmi_caps_ext_params *caps = ptr;
++	struct ath12k_band_cap *cap_band;
++	u32 support_320mhz;
+ 	int i = 0, ret;
+ 
+ 	if (tag != WMI_TAG_MAC_PHY_CAPABILITIES_EXT)
+ 		return -EPROTO;
+ 
+ 	if (ab->hw_params->single_pdev_only) {
+-		if (ab->wmi_ab.preferred_hw_mode != le32_to_cpu(caps->hw_mode_id) &&
+-		    caps->hw_mode_id != WMI_HOST_HW_MODE_SINGLE)
++		if (caps->hw_mode_id == WMI_HOST_HW_MODE_SINGLE) {
++			support_320mhz = le32_to_cpu(caps->eht_cap_phy_info_5ghz[0]) &
++					 IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ;
++			cap_band = &ab->pdevs[0].cap.band[NL80211_BAND_6GHZ];
++			cap_band->eht_cap_phy_info[0] |= support_320mhz;
++		}
++
++		if (ab->wmi_ab.preferred_hw_mode != le32_to_cpu(caps->hw_mode_id))
+ 			return 0;
+ 	} else {
+ 		for (i = 0; i < ab->num_radios; i++) {
 
 -- 
 2.25.1
