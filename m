@@ -4,67 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EDB1D6E2AF
-	for <ath12k@archiver.kernel.org>; Thu, 18 Dec 2025 16:24:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFCD5D6E2B0
+	for <ath12k@archiver.kernel.org>; Thu, 18 Dec 2025 16:35:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3ErTlMAv6ZVtNtIwiySv/0dt6NKw+yq7HXxauLF93bM=; b=qyrCvHfAFUrsiDjwzFw2ZrvI9P
-	w9Tw9ffvHdsC9wS0RL4e6l1hsPbWh+4WhlAACKfZr5LAfCJJqIcq5fD4feQs/7KD/+yjR8u1L4GHq
-	+obOOIZJlTgCSWfqDIHEyP4wJFXCpijWxtDa2lVYAvsn/MwETVNXv75yvwkZPalT++2Z91SPl2xpF
-	ktFDCAdnq40eQnTqB50pAflC3oT6z+rpmp/BrbX14PrAJvIRod5IbEVkE9KHnINb9TUCv2xyOYCmf
-	kHH/k9cZ7wovlDtMu0S9/E7GPf+4bZmNBzFaK5Q39QNU9v4yX5cMqSvCA/a4f8lBpDir7CkdjnpdK
-	3C6TjEtw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=vthX8EZ69SmXta9bEKt82uOMLThl45XqVhRz116/j3k=; b=mCBZzB2ifCchcdg52F60SYs/hb
+	VO0xHDofk5bEbNTSYlHvmlvatT5lWfg2AZYzlWKtfUfh6YhufylqZbdIyTqBfWQmc0CPO7P8lfPcz
+	P5W2nEPp/Ra0QaBjsLuNumelJoYNLu1c9jgFVvFRF53PkLx5LcpEyV0rk57dYs5WI+ZncjZf7yJHQ
+	SAZ/eytql/RzNo4MuR/DumgbbbxyNf058eUU79kyD8GqHDebUL9iSNyAz2mFMeItaVT36QIsZpGPD
+	NLoBLHMMaB+6Nh6x/pHgD0nkMm16xv2CT/yVyxnzJ/YRYFdISHxEYCbUptgE//7nC+Wx0cAkH6dAW
+	Q+qZ+NFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWGnc-00000008ovw-1NNG;
-	Thu, 18 Dec 2025 16:24:20 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vWGyb-00000008pvC-30RU;
+	Thu, 18 Dec 2025 16:35:41 +0000
+Received: from mail-qv1-xf29.google.com ([2607:f8b0:4864:20::f29])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWGna-00000008ovd-08K4;
-	Thu, 18 Dec 2025 16:24:18 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7109460008;
-	Thu, 18 Dec 2025 16:24:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 742D1C4CEFB;
-	Thu, 18 Dec 2025 16:24:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766075057;
-	bh=X5gSMMJxTpeVSLwt9c3VGpJBP7cA+dKBFUTwA1R/8Mk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=CpB9QjfxUGu7QHeL+Ttl3LbAbI0T6PGcte3cn+vIPi7DalYPSikxLc4VNjs+cpLMU
-	 wAHm/NDnq3/9kUW0LDoX3+13AOelp2GqKXTYjoe50BFg7vDy3SO6luvKjh1dbx8+uX
-	 esRJC+w0UZsPyGsE4IuZLrx1NXnDPaAPK7noFXUR3Sfa757BmSMq29w2iuXqHYK48p
-	 MZaE4rqXx9iMTl7GFQzcqkHRmumgpFlPwZofAGeWpTNAx1AKVTt+Di4Upt2U7lFyTc
-	 1X3wPqiVCqHD+JYpbvtv5JKyX0UGO6Mxcto4/3HoJJkrHjbEJkKYjYI8YoSW//pXSP
-	 XLtDOMNb4Xjqg==
-Date: Thu, 18 Dec 2025 21:54:07 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Loic Poulain <loic.poulain@oss.qualcomm.com>
-Cc: manivannan.sadhasivam@oss.qualcomm.com, 
-	Jeff Hugo <jeff.hugo@oss.qualcomm.com>, Carl Vanderlip <carl.vanderlip@oss.qualcomm.com>, 
-	Oded Gabbay <ogabbay@kernel.org>, Jeff Johnson <jjohnson@kernel.org>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Maxim Kochetkov <fido_max@inbox.ru>, 
-	linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
-	mhi@lists.linux.dev, linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
-	ath12k@lists.infradead.org, netdev@vger.kernel.org, Bjorn Andersson <andersson@kernel.org>, 
-	Johan Hovold <johan@kernel.org>, Chris Lew <quic_clew@quicinc.com>, stable@vger.kernel.org
-Subject: Re: [PATCH 1/2] net: qrtr: Drop the MHI auto_queue feature for IPCR
- DL channels
-Message-ID: <pm5amorzm2bvjrvswd4phwiic7wsmitxtzwdvtwqflepxkukjf@esikj32tds7o>
-References: <20251217-qrtr-fix-v1-0-f6142a3ec9d8@oss.qualcomm.com>
- <20251217-qrtr-fix-v1-1-f6142a3ec9d8@oss.qualcomm.com>
- <CAFEp6-0iuJNDM9hdU3rWns=Vst6Ev1iyNim1ngRH3Z44CHwTAg@mail.gmail.com>
+	id 1vWGyZ-00000008pur-3HlQ
+	for ath12k@lists.infradead.org;
+	Thu, 18 Dec 2025 16:35:40 +0000
+Received: by mail-qv1-xf29.google.com with SMTP id 6a1803df08f44-8885aae52b1so7067126d6.0
+        for <ath12k@lists.infradead.org>; Thu, 18 Dec 2025 08:35:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1766075738; x=1766680538; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=vthX8EZ69SmXta9bEKt82uOMLThl45XqVhRz116/j3k=;
+        b=U6r4TC3oHyMt2M/w56cjVgwBkb4krwmMWLiPP+qDbdZr93SxsT+Q3u1bexn7PDGMT7
+         7Rbfezqv+UjeLo0duCl3XZWnpvMqAZyr6AaOgtQqK3twx7OjzfjYwBnDOrulNwCU0OKg
+         /xtCE23wvh8Lx2n7CgkVk2EjnRaCClQINPZh3ObKUGNnFsodZ9ykSrheJsvz/2A0tFbl
+         Rp+TtpLOySg4xuSDdq+7VF73m2cPrpCQ3oRz6RO2sNrPDpo/j8v0zx0kksDgV//ptzUs
+         +Vprm/4v1PofXmBBKUF176OkQGcOIc0NN1fmj6mQFBu06S7IXZFS7/SaHyL85u1OIBr6
+         wp+Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1766075738; x=1766680538;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=vthX8EZ69SmXta9bEKt82uOMLThl45XqVhRz116/j3k=;
+        b=pNTuHzdNw+mYP/rN+N2h7ePfir3TKbgYbaPQ2ZpCw9j6ywBhXqrtHCZj9/Strzglex
+         N0qO0U5Deda8wUFBqzkcbVw0a9B7VnuTbsRFJSRAuyjzKm02dYKxj5/u9e6YllS6+4zk
+         YkEtWTbD3mdsGd/wLHW+SZDdR4UlpiLd2FL1DzmI8i/EjDxCZj2x5G3m5IYgJx+y8iaD
+         fHmwzlfUKWRTCQOHdhYvhHB4S2hJdbXf2eq7mANHgkj2iT3j2hZlhEow5sozbLAbABsJ
+         yc/MMjvsecX5qO4yMqVmnZldcp5s5Sj0TmdSG5DVu8CFq1WQfnmj7hfy2ij6xd9sKgxu
+         Y62A==
+X-Forwarded-Encrypted: i=1; AJvYcCX8CXknz3omZCq9UDkG4CMF+dPMJluupyQGcwZHcRO5xgdEVOiVHK1EOHhGG1YreSFZjlRj1W4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxdd24Kh8KyCHENM4YSw0VtZ/9seug4s3YPuKD6etxByFZuBQlr
+	9oGacl/HpLpWczu9yQ8rIoDqMhCA9X0WaNQHnuyt/F+c7nQjlwVaYg6TGQWCIGlRO0P2honmBOa
+	F8FF3611aXxXd7eBSpnNnvpwcFhYDdQ==
+X-Gm-Gg: AY/fxX4NrT3cGDYN6o0Ns6wbDQEX421au8y+mPvaO7XZX/gFnk2+VWdok33/FzKY88b
+	jwbUUvq3FFasOE0yqKUXhRhg0ykEgv/deG08mJsu6Ecmn7dzPQ3n/PUhzUoiq73nkmLBTmipxVq
+	OtI+8A2XV6LRjWbbln0Eg1IQp6T/RiLakE45OEh4Eg+rsyH5+cvewLEzsw9mNGyUQRWswQsTZcM
+	Xdl6s1YVU9cZQ0yC5WG+gBxNKJNbETCDQWmesaodCxZziWlqof3SMp5HuDGJWLBj0KN35XAfCYy
+	XwYGPD0gFe71Ui8nzIr6xjETu5E=
+X-Google-Smtp-Source: AGHT+IE9/ZCMCiyjrmPyCIsxYsQHia6PO/5OA2ZJrCLu8tQ8JQjcXci/gveKRp2q1MLBH7jp/9tKHDC2qJ1c5+HtAN0=
+X-Received: by 2002:a05:6214:598e:b0:888:7e41:a9a with SMTP id
+ 6a1803df08f44-88d87be8db8mr2888306d6.46.1766075738235; Thu, 18 Dec 2025
+ 08:35:38 -0800 (PST)
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <CAFEp6-0iuJNDM9hdU3rWns=Vst6Ev1iyNim1ngRH3Z44CHwTAg@mail.gmail.com>
+References: <20251218-surface-sp11-for-next-v3-0-875afc7bd3b7@gmail.com>
+ <20251218-surface-sp11-for-next-v3-1-875afc7bd3b7@gmail.com> <438a352e-5174-4361-b6e5-6ff5fe1ce0c0@oss.qualcomm.com>
+In-Reply-To: <438a352e-5174-4361-b6e5-6ff5fe1ce0c0@oss.qualcomm.com>
+From: =?UTF-8?B?SsOpcsO0bWUgZGUgQnJldGFnbmU=?= <jerome.debretagne@gmail.com>
+Date: Thu, 18 Dec 2025 17:35:03 +0100
+X-Gm-Features: AQt7F2rTRoXMF5xHMqmkLERUjvS2qI4aUT26N8INWGtmOaD17Y8RxpKD_isxRH0
+Message-ID: <CA+kEDGE42HhaWZy1o9DjpwcjPiJcqvq52o-_g+auOkp26ukULg@mail.gmail.com>
+Subject: Re: [PATCH v3 1/6] dt-bindings: arm: qcom: Document Microsoft Surface
+ Pro 11
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Johannes Berg <johannes@sipsolutions.net>, Lorenzo Bianconi <lorenzo@kernel.org>, 
+	Maximilian Luz <luzmaximilian@gmail.com>, Hans de Goede <hansg@kernel.org>, 
+	=?UTF-8?Q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>, 
+	Jeff Johnson <jjohnson@kernel.org>, linux-arm-msm@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-wireless@vger.kernel.org, platform-driver-x86@vger.kernel.org, 
+	ath12k@lists.infradead.org, Dale Whinham <daleyo@gmail.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251218_083539_852613_FB9246B4 
+X-CRM114-Status: GOOD (  16.66  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,167 +105,72 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 17, 2025 at 09:55:01PM +0100, Loic Poulain wrote:
-> Hi Mani,
-> 
-> On Wed, Dec 17, 2025 at 6:17 PM Manivannan Sadhasivam via B4 Relay
-> <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org> wrote:
+Le jeu. 18 d=C3=A9c. 2025 =C3=A0 15:15, Konrad Dybcio
+<konrad.dybcio@oss.qualcomm.com> a =C3=A9crit :
+>
+> On 12/18/25 12:56 AM, J=C3=A9r=C3=B4me de Bretagne via B4 Relay wrote:
+> > From: J=C3=A9r=C3=B4me de Bretagne <jerome.debretagne@gmail.com>
 > >
-> > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > Add the compatibles for the Qualcomm-based Microsoft Surface Pro 11,
+> > using its Denali codename.
 > >
-> > MHI stack offers the 'auto_queue' feature, which allows the MHI stack to
-> > auto queue the buffers for the RX path (DL channel). Though this feature
-> > simplifies the client driver design, it introduces race between the client
-> > drivers and the MHI stack. For instance, with auto_queue, the 'dl_callback'
-> > for the DL channel may get called before the client driver is fully probed.
-> > This means, by the time the dl_callback gets called, the client driver's
-> > structures might not be initialized, leading to NULL ptr dereference.
+> > The LCD models are using the Qualcomm Snapdragon X1 Plus (X1P64100),
+> > the OLED ones are using the Qualcomm Snapdragon X1 Elite (X1E80100).
 > >
-> > Currently, the drivers have to workaround this issue by initializing the
-> > internal structures before calling mhi_prepare_for_transfer_autoqueue().
-> > But even so, there is a chance that the client driver's internal code path
-> > may call the MHI queue APIs before mhi_prepare_for_transfer_autoqueue() is
-> > called, leading to similar NULL ptr dereference. This issue has been
-> > reported on the Qcom X1E80100 CRD machines affecting boot.
+> > Due to the difference in how the built-in panel is being handled
+> > between the OLED variant and LCD one, it is required to have two
+> > separate DTBs, so document the compatible string for both variants.
 > >
-> > So to properly fix all these races, drop the MHI 'auto_queue' feature
-> > altogether and let the client driver (QRTR) manage the RX buffers manually.
-> > In the QRTR driver, queue the RX buffers based on the ring length during
-> > probe and recycle the buffers in 'dl_callback' once they are consumed. This
-> > also warrants removing the setting of 'auto_queue' flag from controller
-> > drivers.
-> >
-> > Currently, this 'auto_queue' feature is only enabled for IPCR DL channel.
-> > So only the QRTR client driver requires the modification.
-> >
-> > Cc: stable@vger.kernel.org
-> > Fixes: 227fee5fc99e ("bus: mhi: core: Add an API for auto queueing buffers for DL channel")
-> > Fixes: 68a838b84eff ("net: qrtr: start MHI channel after endpoit creation")
-> > Reported-by: Johan Hovold <johan@kernel.org>
-> > Closes: https://lore.kernel.org/linux-arm-msm/ZyTtVdkCCES0lkl4@hovoldconsulting.com
-> > Suggested-by: Chris Lew <quic_clew@quicinc.com>
-> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > Signed-off-by: J=C3=A9r=C3=B4me de Bretagne <jerome.debretagne@gmail.co=
+m>
 > > ---
-> >  drivers/accel/qaic/mhi_controller.c   | 44 -----------------------
-> >  drivers/bus/mhi/host/pci_generic.c    | 20 ++---------
-> >  drivers/net/wireless/ath/ath11k/mhi.c |  4 ---
-> >  drivers/net/wireless/ath/ath12k/mhi.c |  4 ---
-> >  net/qrtr/mhi.c                        | 67 +++++++++++++++++++++++++++++------
-> >  5 files changed, 58 insertions(+), 81 deletions(-)
-> [...]
-> > diff --git a/net/qrtr/mhi.c b/net/qrtr/mhi.c
-> > index 69f53625a049..0b4d181ea747 100644
-> > --- a/net/qrtr/mhi.c
-> > +++ b/net/qrtr/mhi.c
-> > @@ -24,13 +24,25 @@ static void qcom_mhi_qrtr_dl_callback(struct mhi_device *mhi_dev,
-> >         struct qrtr_mhi_dev *qdev = dev_get_drvdata(&mhi_dev->dev);
-> >         int rc;
+> >  Documentation/devicetree/bindings/arm/qcom.yaml | 8 ++++++++
+> >  1 file changed, 8 insertions(+)
 > >
-> > -       if (!qdev || mhi_res->transaction_status)
-> > +       if (!qdev || (mhi_res->transaction_status && mhi_res->transaction_status != -ENOTCONN))
-> >                 return;
+> > diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Document=
+ation/devicetree/bindings/arm/qcom.yaml
+> > index d84bd3bca2010508a8225b9549d8c634efa06531..7c99bc0d3aae3dc6e9c08fe=
+f0a535e114a3297a8 100644
+> > --- a/Documentation/devicetree/bindings/arm/qcom.yaml
+> > +++ b/Documentation/devicetree/bindings/arm/qcom.yaml
+> > @@ -1067,6 +1067,14 @@ properties:
+> >            - const: qcom,x1e78100
+> >            - const: qcom,x1e80100
 > >
-> > +       /* Channel got reset. So just free the buffer */
-> > +       if (mhi_res->transaction_status == -ENOTCONN) {
-> > +               devm_kfree(&mhi_dev->dev, mhi_res->buf_addr);
-> > +               return;
-> > +       }
-> > +
-> >         rc = qrtr_endpoint_post(&qdev->ep, mhi_res->buf_addr,
-> >                                 mhi_res->bytes_xferd);
-> >         if (rc == -EINVAL)
-> >                 dev_err(qdev->dev, "invalid ipcrouter packet\n");
-> > +
-> > +       /* Done with the buffer, now recycle it for future use */
-> > +       rc = mhi_queue_buf(mhi_dev, DMA_FROM_DEVICE, mhi_res->buf_addr,
-> > +                          mhi_dev->mhi_cntrl->buffer_len, MHI_EOT);
-> > +       if (rc)
-> > +               dev_err(&mhi_dev->dev, "Failed to recycle the buffer: %d\n", rc);
-> >  }
-> >
-> >  /* From QRTR to MHI */
-> > @@ -72,6 +84,27 @@ static int qcom_mhi_qrtr_send(struct qrtr_endpoint *ep, struct sk_buff *skb)
-> >         return rc;
-> >  }
-> >
-> > +static int qcom_mhi_qrtr_queue_dl_buffers(struct mhi_device *mhi_dev)
-> > +{
-> > +       void *buf;
-> > +       int ret;
-> > +
-> > +       while (!mhi_queue_is_full(mhi_dev, DMA_FROM_DEVICE)) {
-> 
-> This approach might be a bit racy, since a buffer could complete
-> before the alloc+queue loop finishes. That could e.g lead to recycle
-> error in a concurrent DL callback.
+> > +      - items:
+> > +          - enum:
+> > +              - microsoft,denali-lcd
+> > +              - microsoft,denali-oled
+> > +          - const: microsoft,denali
+> > +          - const: qcom,x1p64100
+> > +          - const: qcom,x1e80100
+>
+> As the bot pointed out, this is valid, but not what you want:
+>
+> This expects
+>
+> "microsoft,denali-(lcd/oled)", "microsoft,denali", "qcom,x1p64100",
+> "qcom,x1e80100"
+>
+> whereas you're looking for 2 entries:
+>
+> - items:
+>         const: microsoft,denali-lcd
+>         const: microsoft,denali
+>         const: qcom,x1p64100
+>         const: qcom,x1e80100
+>
+> - items:
+>         const: microsoft,denali-oled
+>         const: microsoft,denali
+>         const: qcom,x1e80100
 
-I don't think the race is possible as we just queue the buffers during probe and
-resume. But I get your point, using mhi_get_free_desc_count() is more
-straightforward.
+I was trying to group the 2 variants together, as they are very much
+related. Your description captures the 2 variants way more precisely,
+I will switch to 2 distinct entries in v4.
 
-- Mani
+> Konrad
 
-> It might be simpler to just queue
-> the number of descriptors returned by mhi_get_free_desc_count().
-> 
-> > +               buf = devm_kmalloc(&mhi_dev->dev, mhi_dev->mhi_cntrl->buffer_len, GFP_KERNEL);
-> > +               if (!buf)
-> > +                       return -ENOMEM;
-> > +
-> > +               ret = mhi_queue_buf(mhi_dev, DMA_FROM_DEVICE, buf, mhi_dev->mhi_cntrl->buffer_len,
-> > +                                   MHI_EOT);
-> > +               if (ret) {
-> > +                       dev_err(&mhi_dev->dev, "Failed to queue buffer: %d\n", ret);
-> > +                       return ret;
-> > +               }
-> > +       }
-> > +
-> > +       return 0;
-> > +}
-> > +
-> >  static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
-> >                                const struct mhi_device_id *id)
-> >  {
-> > @@ -87,20 +120,30 @@ static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
-> >         qdev->ep.xmit = qcom_mhi_qrtr_send;
-> >
-> >         dev_set_drvdata(&mhi_dev->dev, qdev);
-> > -       rc = qrtr_endpoint_register(&qdev->ep, QRTR_EP_NID_AUTO);
-> > -       if (rc)
-> > -               return rc;
-> >
-> >         /* start channels */
-> > -       rc = mhi_prepare_for_transfer_autoqueue(mhi_dev);
-> > -       if (rc) {
-> > -               qrtr_endpoint_unregister(&qdev->ep);
-> > +       rc = mhi_prepare_for_transfer(mhi_dev);
-> > +       if (rc)
-> >                 return rc;
-> > -       }
-> > +
-> > +       rc = qrtr_endpoint_register(&qdev->ep, QRTR_EP_NID_AUTO);
-> > +       if (rc)
-> > +               goto err_unprepare;
-> > +
-> > +       rc = qcom_mhi_qrtr_queue_dl_buffers(mhi_dev);
-> > +       if (rc)
-> > +               goto err_unregister;
-> >
-> >         dev_dbg(qdev->dev, "Qualcomm MHI QRTR driver probed\n");
-> >
-> >         return 0;
-> > +
-> > +err_unregister:
-> > +       qrtr_endpoint_unregister(&qdev->ep);
-> > +err_unprepare:
-> > +       mhi_unprepare_from_transfer(mhi_dev);
-> > +
-> > +       return rc;
-> >  }
-> 
-> Regards,
-> Loic
-
--- 
-மணிவண்ணன் சதாசிவம்
+Thanks again for your review,
+J=C3=A9r=C3=B4me
 
