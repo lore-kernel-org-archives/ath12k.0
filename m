@@ -4,145 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24951D6ACE4
-	for <ath12k@archiver.kernel.org>; Thu, 18 Dec 2025 10:54:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95547D6D224
+	for <ath12k@archiver.kernel.org>; Thu, 18 Dec 2025 14:10:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ULiMr+jjQf2IPNeanbk3DLBorGWRLoXxf7JiGDZ0X0I=; b=eT7qG2oi1YHuv7DXxg4gRwIacv
-	QcELaM0/6wnNFfNrtlxLMEyWKHzgWiodjlNWY86r5J9JmwNozU/Pz/eTm7piYhsjijeB+a+ueHQ3n
-	8QJqFRKXZ8MzUUs0hqd55Kx9hxVUAAuK0lqJSca8zjlBfzxm0Yn45QfpxyBTRaDfWEVuC7UcIAeIq
-	nHOv5o93D/FbmdCK23yAiTnqyLIjOdXTzqntGDIgZ5+aG4MRQQlUOMiO+wWoS30ArtZ9Z8loJjVU+
-	oDlCXSEIZdUjWk3L6NGJ/9fvBVyPq3xgWS6nhrQk2Y46OweKPsEeHkGTl1FJ3Qf93evucrD/7YRSg
-	5FXKXQcQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	References:In-Reply-To:To:Cc:MIME-Version:Content-Transfer-Encoding:
+	Content-Type:Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=NcYqBNE04s6CtHx+12vtDk5AlkKRauYsibnscq1JmXM=; b=rj8qXbItsVjc8X2gPvvxAdlC2b
+	RzclkIrqcNGBoZBgTgm6V3UdXkbH+N+MnPsTvv5rvKTLdBwb7mM1yy1XdeQSgLZ1MNhvFRpI3OVsx
+	udzaHz1PIygwSiB5eqQFGL1PvILnsH+8V2NyktO2BaJQT4zoilsc7X3qxIij/EUegEmCXv/t5sDTw
+	Gw93PRMHgudCoOP+HKYEYS5SyPnP/6DoJRQ0hMjQ6dH+ipg/UB5uDvyTHz4bOCqAFUxr7IhGKukGP
+	3xhQkB3A3IqxHJoLri2OSxP2IBArK1IemMF7jhVJeCLskm8JxkXVt2nxJ1dFhk3XHzg6nUhUdysWr
+	Yxx78dEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWBeI-00000008H8l-2axt;
-	Thu, 18 Dec 2025 10:54:22 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vWEiF-00000008att-1P9i;
+	Thu, 18 Dec 2025 14:10:39 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWBeF-00000008H8D-0mFW
+	id 1vWEiE-00000008atn-3Aiw
 	for ath12k@lists.infradead.org;
-	Thu, 18 Dec 2025 10:54:20 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5BI989XC4058529
-	for <ath12k@lists.infradead.org>; Thu, 18 Dec 2025 10:54:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ULiMr+jjQf2IPNeanbk3DLBorGWRLoXxf7JiGDZ0X0I=; b=BaMvMObltxpjlJX2
-	hDi1lnh+3LRntbDrAOg4JzxnEtNIasX/GHrqSFO+6PEWprty46vErmrdjMQ+0R+d
-	PB6dMSyhsXsOkkIbRyZN5NF2qNh1XM0D9CleCOljN15BesCsdrMWuoPmygi2uKmr
-	Ft7+V5RzUDdGWtmok/tlpi00lFdyIc58mdQug/iwF4CS9X0UaOjuIB4sQQ3xWjCb
-	Gy+qX89KVMfYKr4/GHEFEhTBP9LlIxbD5MafnUxG5e1BWN4PNk2oKuSPL7hydyiy
-	u2DEGsYL8IcAXZC+RoFjU+IH52kpMAsyPMwvvOcppYFYD1UasINp/jkJoSIw90ZB
-	1oZrXg==
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4b3xr5b9yr-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 18 Dec 2025 10:54:17 +0000 (GMT)
-Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-8b196719e0fso13184185a.2
-        for <ath12k@lists.infradead.org>; Thu, 18 Dec 2025 02:54:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1766055257; x=1766660057; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=ULiMr+jjQf2IPNeanbk3DLBorGWRLoXxf7JiGDZ0X0I=;
-        b=Fs6zqQHbS32AW4T2HS+LekQRNU4IVzsdTkwn+t+NArSRRyZiRcbBc1PmOBGgL2sGZR
-         cXJ2kfFdU2EsAscxITdnwEvlNpUDQ9a8ehYTA+VKw8opwkxVMLuRz8iazls8qwt3RdT2
-         oGjyfjpVggljN2Snp44N95BSfxOxTaKgnuXQ7TBjZ/YKUguWIKI7NL+RtqcdGlK6nyjT
-         +LvyPtrrxduFCnz5XYcGK2t7GCdWTNEXg48HoV69Zr1UDcl/BJd05oFZiScORIWsK4/o
-         Wc5dj81JafOwzeKDJLGbVSxqR3rxXDkc2iXRR3xTvqHobgcB2s5ViKA+th8Mqpa6JUln
-         7vzw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1766055257; x=1766660057;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=ULiMr+jjQf2IPNeanbk3DLBorGWRLoXxf7JiGDZ0X0I=;
-        b=pq74mFFt0q1BwLLxav+sSA1f9Mb0xUeAgBkNF7Vtc42D2DNtfN9zsBPnQrHqxvQSNy
-         n5vi9pORqgVe3KtcidT6f7MSYFEIEK54Qt+X8ILioI5HNJA9xh50T2VGgaA/MxTrYuvG
-         5KFKUuxYbUabEYGe6x2sPS7EfaoHxKhYZvXOwMXA2Ef/px5e3l4TbP0jPs++qS27/+1P
-         JLud6qqKwfHaN8AgYc4X2+UhWjA9kiP/1ziob+Gsy1RqYAeWOw7uaXPNGHwq9vZ6Ee03
-         FJ+BxLsc7sezUQkLqogLzI/K02sp8XD203I22auMfH5FN17+Wc8ZEP84svvynsvPobZx
-         WBjg==
-X-Forwarded-Encrypted: i=1; AJvYcCXazlB+ERsOKnOvcWRka0ctM2Tr3s+vz1XgcwTp4T1pjmlRisa7J74sxmy/k98rCSJi8s26FJs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzThKqrxEqGmgKGjTTeCeWPn7MsgG07WZrfg3etI/RVVjXofTdL
-	F1JwRoZ56xAjGNzworXfj6Fcj7viUx22dHfyBRKZSsjmu35WVuOkwF6brzmhOHUIZyTuijchh5P
-	3dr43aaRihgDIm+WHnWisUN/6BpvZNd7fC2TS6yHHXuLQwMVoNuw9x9e6S6NB9DR6
-X-Gm-Gg: AY/fxX5GGwBNoArpYHGFziWL5ufNOtMW1J7CgbZMNwyz6O7OhdfnUIL5sO7fsdJC16V
-	uZINCJCbgt3IDsKurO7Urhzu6FDVoLHPaaWpXrgLUiTWCw/02YCiqmyOQvuqIuMwUy+FCp+Mija
-	B1UYj8YSQaMQfbPq29hJ6+1HCe+WwGh9CWz0aBURNJq60ytPW5peMkFAbS0ggTB2+FgdMPXeRRp
-	UXCTf0Fcj+5OVNhbEOtfLrg/Xb83jJnUCCdXAIv6QJuRq/Pl2I26WQQp9OnNqa+smXZXDfgo1YN
-	c60K0lWI8UsHQC0A4iWZ0RcEpG+FVmNslunXABq6a/zcq4u5hEzPsFgodbtOVNPaQs8NKJaf9xD
-	xAPzAoDIEGEgVzKJfY7v+xpUd7LEe5eFHEkCXq6Ilf0bYYuKlOQD4OcInLOf8soiuhg==
-X-Received: by 2002:a05:620a:4441:b0:8b2:e177:fb18 with SMTP id af79cd13be357-8bef2b6ad2fmr173838485a.9.1766055257302;
-        Thu, 18 Dec 2025 02:54:17 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IFg6rD4FG+ZdEpLvSxXB7VPKfet2cJMu4WCkxjwUL9ypB7KXsrgvhhdJxlHfMC+UTosSE+weA==
-X-Received: by 2002:a05:620a:4441:b0:8b2:e177:fb18 with SMTP id af79cd13be357-8bef2b6ad2fmr173836085a.9.1766055256861;
-        Thu, 18 Dec 2025 02:54:16 -0800 (PST)
-Received: from [192.168.119.72] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-64b585b52bbsm2367565a12.6.2025.12.18.02.54.13
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 18 Dec 2025 02:54:16 -0800 (PST)
-Message-ID: <4491e009-0071-4130-9e1a-29145314e349@oss.qualcomm.com>
-Date: Thu, 18 Dec 2025 11:54:13 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 5/6] arm64: dts: qcom: Add support for Surface Pro 11
-To: jerome.debretagne@gmail.com, Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Johannes Berg <johannes@sipsolutions.net>,
-        Lorenzo Bianconi <lorenzo@kernel.org>,
-        Maximilian Luz <luzmaximilian@gmail.com>,
-        Hans de Goede <hansg@kernel.org>,
-        =?UTF-8?Q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>,
-        Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org,
-        platform-driver-x86@vger.kernel.org, ath12k@lists.infradead.org,
-        Dale Whinham <daleyo@gmail.com>
-References: <20251218-surface-sp11-for-next-v3-0-875afc7bd3b7@gmail.com>
- <20251218-surface-sp11-for-next-v3-5-875afc7bd3b7@gmail.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20251218-surface-sp11-for-next-v3-5-875afc7bd3b7@gmail.com>
-Content-Type: text/plain; charset=UTF-8
+	Thu, 18 Dec 2025 14:10:38 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id C748460126;
+	Thu, 18 Dec 2025 14:10:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4115AC4CEFB;
+	Thu, 18 Dec 2025 14:10:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1766067037;
+	bh=uWVUzQxgNzNm2gDea1wolnfAvDM7o/AcptcBe7EbEUI=;
+	h=From:Date:Cc:To:In-Reply-To:References:Subject:From;
+	b=TruMxveDz6ybcxHnux5H+BkQmQnJCSNrtTZKrvMJoxZ/NgBz7ZIiO7GGfTi6LDp4m
+	 SGHpgmWGJrbWpT1OavpDG9XMfQkG/XlmF5n7NsNQ5m0cNJy9VFtIS2dougmR0nRRRU
+	 VZX/fs1cdbWy4NHffk8WjLis8WnLMP5RKLDeo+LyyVY4KdW32VZicpz8sLRFA8wBB/
+	 WRKExKhK05Noe4RocbrgZlSpxCjO1LZ4bZRpxasa3YoxtgJJS9D8SSy1VQe0UpLZI6
+	 vxYsxsMPj3qWN+3OBYPCpdax8OEELLB2i6jMeahsxe7m0IQOI5DvufRjZPh2y6d0No
+	 amyfOhzdXNeZQ==
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 18 Dec 2025 08:10:34 -0600
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-GUID: _ZdAIUGHIcG_dUEP3wqRWk1Q1VmDphDi
-X-Authority-Analysis: v=2.4 cv=DsBbOW/+ c=1 sm=1 tr=0 ts=6943dd5a cx=c_pps
- a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=wP3pNCr1ah4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8
- a=T6QFUigfjUT3ERtuJAUA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=PEH46H7Ffwr30OY-TuGO:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjE4MDA4OSBTYWx0ZWRfXytGxIuvRzDhS
- Ive/hds5vp9QtHOOWh64fyKJbWTi8c42eYG/58C9/naI9bQGddzfRzACRaJ7Tq/f3ORYRCPIU1+
- FGCezrHrcdAxcIQOjfUGJnI+s9mx7ITTTXdnyU0E7kXR1UEpDhqcXnkc9bpmITXfC9Zu3jeTdPG
- t+H9zelTP3XsGrMjkflmKvJ1/t0Z7fBdqN2QFr107/EuJY48FBpX1M1Ohi5xEerO9oU1HhLWNry
- I3OREYkdczqVBENgR+eaqD/4hAJN9F3+oiT6YrxEQHJ4Xvd/TUbZcV54kdVmew3iqLjgk0zbAJ9
- q6t1Ug1qHBDFzvKlymRGE90LuzMCA9Qnzn/8lRr+w8GAILXDBvhIVG8wy0C/cqFLLS6yugkFHw3
- jVP8IsMPybw8k37Z879536sGfeeJUQ==
-X-Proofpoint-ORIG-GUID: _ZdAIUGHIcG_dUEP3wqRWk1Q1VmDphDi
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-12-18_01,2025-12-17_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 priorityscore=1501 impostorscore=0 spamscore=0 adultscore=0
- clxscore=1011 bulkscore=0 malwarescore=0 phishscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2512180089
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251218_025419_375981_A7211B91 
-X-CRM114-Status: GOOD (  14.19  )
+MIME-Version: 1.0
+Cc: Lorenzo Bianconi <lorenzo@kernel.org>, 
+ platform-driver-x86@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
+ Maximilian Luz <luzmaximilian@gmail.com>, 
+ Bjorn Andersson <andersson@kernel.org>, Jeff Johnson <jjohnson@kernel.org>, 
+ Dale Whinham <daleyo@gmail.com>, linux-kernel@vger.kernel.org, 
+ Conor Dooley <conor+dt@kernel.org>, linux-wireless@vger.kernel.org, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, devicetree@vger.kernel.org, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ =?utf-8?q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>, 
+ Hans de Goede <hansg@kernel.org>, ath12k@lists.infradead.org, 
+ Johannes Berg <johannes@sipsolutions.net>
+To: =?utf-8?q?J=C3=A9r=C3=B4me_de_Bretagne?= <jerome.debretagne@gmail.com>
+In-Reply-To: <20251218-surface-sp11-for-next-v3-0-875afc7bd3b7@gmail.com>
+References: <20251218-surface-sp11-for-next-v3-0-875afc7bd3b7@gmail.com>
+Message-Id: <176606698373.3970194.13819697961201913402.robh@kernel.org>
+Subject: Re: [PATCH v3 0/6] Microsoft Surface Pro 11 support
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,50 +78,397 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 12/18/25 12:56 AM, Jérôme de Bretagne via B4 Relay wrote:
-> From: Dale Whinham <daleyo@gmail.com>
-> 
-> Add device trees for the Qualcomm X1E and X1P-based Microsoft Surface
-> Pro 11 machines (codenamed 'Denali').
-> 
-> This device is very similar to the Surface Laptop 7 ('Romulus').
-> 
-> Use a similar strategy to x1-asus-zenbook-a14.dtsi so that we can create
-> x1e and x1p-specific flavors of the device tree without too much code
-> duplication.
-> 
-> Hardware support is similar to other X1 machines. The most notable
-> missing features are:
-> 
-> - Touchscreen and pen
-> - Cameras (and status LEDs)
+
+On Thu, 18 Dec 2025 00:56:36 +0100, Jérôme de Bretagne wrote:
+> This series brings support for the Qualcomm-based Microsoft Surface
+> Pro 11 covering both the OLED and LCD variants.
 > 
 > Signed-off-by: Dale Whinham <daleyo@gmail.com>
-> Tested-by: Dale Whinham <daleyo@gmail.com>
 > Signed-off-by: Jérôme de Bretagne <jerome.debretagne@gmail.com>
 > ---
+> Changes in v3:
+> - Update the compatible strings to document both the OLED and LCD variants
+> - Move the disable-rfkill property into ieee80211.yaml [Rob,Krzysztof]
+> - Reference commit c6a7c0b09d5f and detail the disable-rfkill patch description [Rob,Krzysztof]
+> - Switch to the renamed hamoa.dtsi and hamoa-pmics.dtsi [Dale]
+> - Improve the comments describing the 2 USB Type-C port location
+> - Update the speaker definition to describe only 2-speakers [Konrad]
+> - Drop output-low from the speaker definition [Konrad]
+> - Enable i2c0 to make it accessible through i2c-tools [Konrad]
+> - Delete a non-applicable comment about removable WLAN card [Konrad]
+> - Re-order a few nodes and fix indentation issues [Konrad]
+> - Squash one of the patches as suggested [Krzysztof]
+> - Drop the NAKed patch patch about a dpcd link rate quirk [Dmitry]
+> - Include the Reviewed-by: tags
+> - Link to v2: https://lore.kernel.org/all/20251201011457.17422-1-daleyo@gmail.com/
+> 
+> Changes in v2:
+>   - Dropped ATNA30DW01 patch as it was merged.
+>   - Split device tree into x1e (OLED)/x1p (LCD) specific *.dts files and move common code into x1-microsoft-denali.dtsi (patch 4).
+>   - Device tree now enables higher external monitor refresh rates/resolutions (patch 4).
+>   - Device tree now enables partially working audio output; requires alsa-ucm-conf and audioreach-topology definitions in userspace (patch 4).
+>   - Replaced 'Work around bogus maximum link rate' with a quirk-based approach (patch 5).
+>   - Improve the commit message about the disable-rfkill property in response to feedback (patch 6).
+> 
+> ---
+> Dale Whinham (4):
+>       firmware: qcom: scm: allow QSEECOM on Surface Pro 11
+>       platform/surface: aggregator_registry: Add Surface Pro 11
+>       arm64: dts: qcom: Add support for Surface Pro 11
+>       wifi: ath12k: Add support for disabling rfkill via devicetree
+> 
+> Jérôme de Bretagne (2):
+>       dt-bindings: arm: qcom: Document Microsoft Surface Pro 11
+>       dt-bindings: wireless: ieee80211: Add disable-rfkill property
+> 
+>  Documentation/devicetree/bindings/arm/qcom.yaml    |    8 +
+>  .../bindings/net/wireless/ieee80211.yaml           |    6 +
+>  arch/arm64/boot/dts/qcom/Makefile                  |    4 +
+>  arch/arm64/boot/dts/qcom/x1-microsoft-denali.dtsi  | 1326 ++++++++++++++++++++
+>  .../dts/qcom/x1e80100-microsoft-denali-oled.dts    |   20 +
+>  .../boot/dts/qcom/x1p64100-microsoft-denali.dts    |   16 +
+>  drivers/firmware/qcom/qcom_scm.c                   |    1 +
+>  drivers/net/wireless/ath/ath12k/core.c             |    3 +
+>  .../platform/surface/surface_aggregator_registry.c |   18 +
+>  9 files changed, 1402 insertions(+)
+> ---
+> base-commit: 8f0b4cce4481fb22653697cced8d0d04027cb1e8
+> change-id: 20251218-surface-sp11-for-next-626e327f7b33
+> 
+> Best regards,
+> --
+> Jérôme de Bretagne <jerome.debretagne@gmail.com>
+> 
+> 
+> 
 
-[...]
 
-> +&i2c4 {
-> +	clock-frequency = <400000>;
-> +
-> +	status = "disabled";
-> +};
-> +
-> +&i2c5 {
-> +	clock-frequency = <400000>;
-> +
-> +	status = "disabled";
-> +};
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
 
-A little bit odd to leave them explicitly disabled. If they're useful,
-enabling them makes sense. If not, removing the reference seems to be the
-way to go.
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
 
-With that taken care of, one way or the other:
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+  pip3 install dtschema --upgrade
 
-Konrad
+
+This patch series was applied (using b4) to base:
+ Base: 8f0b4cce4481fb22653697cced8d0d04027cb1e8 (use --merge-base to override)
+
+If this is not the correct base, please add 'base-commit' tag
+(or use b4 which does this automatically)
+
+New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/qcom/' for 20251218-surface-sp11-for-next-v3-0-875afc7bd3b7@gmail.com:
+
+arch/arm64/boot/dts/qcom/x1e80100-microsoft-denali-oled.dtb: / (microsoft,denali-oled): compatible: 'oneOf' conditional failed, one must be fixed:
+	['microsoft,denali-oled', 'microsoft,denali', 'qcom,x1e80100'] is too long
+	['microsoft,denali-oled', 'microsoft,denali', 'qcom,x1e80100'] is too short
+	'microsoft,denali-oled' is not one of ['qcom,apq8016-sbc', 'schneider,apq8016-hmibsc']
+	'microsoft,denali-oled' is not one of ['asus,sparrow', 'huawei,sturgeon', 'lg,lenok', 'samsung,matisse-wifi', 'samsung,milletwifi']
+	'microsoft,denali-oled' is not one of ['asus,nexus7-flo', 'lg,nexus4-mako', 'sony,xperia-yuga', 'qcom,apq8064-cm-qs600', 'qcom,apq8064-ifc6410']
+	'microsoft,denali-oled' is not one of ['qcom,apq8074-dragonboard']
+	'microsoft,denali-oled' is not one of ['qcom,apq8060-dragonboard', 'qcom,msm8660-surf']
+	'microsoft,denali-oled' is not one of ['qcom,apq8084-mtp', 'qcom,apq8084-sbc']
+	'microsoft,denali-oled' is not one of ['microsoft,dempsey', 'microsoft,makepeace', 'microsoft,moneypenny', 'motorola,falcon', 'samsung,ms013g', 'samsung,s3ve3g']
+	'microsoft,denali-oled' is not one of ['htc,memul', 'microsoft,superman-lte', 'microsoft,tesla', 'motorola,peregrine', 'samsung,matisselte']
+	'microsoft,denali-oled' is not one of ['wingtech,wt82918hd']
+	'microsoft,denali-oled' is not one of ['asus,z00t', 'huawei,kiwi', 'longcheer,l9100', 'samsung,a7', 'sony,kanuti-tulip', 'square,apq8039-t2', 'wingtech,wt82918', 'wingtech,wt82918hdhw39']
+	'microsoft,denali-oled' is not one of ['sony,kugo-row', 'sony,suzu-row']
+	'microsoft,denali-oled' is not one of ['qcom,msm8960-cdp', 'samsung,expressatt']
+	'microsoft,denali-oled' is not one of ['sony,huashan']
+	'microsoft,denali-oled' is not one of ['lge,hammerhead', 'samsung,hlte', 'sony,xperia-amami', 'sony,xperia-honami', 'sony,xperia-togari']
+	'microsoft,denali-oled' is not one of ['fairphone,fp2', 'htc,m8', 'oneplus,bacon', 'samsung,klte', 'sony,xperia-aries', 'sony,xperia-castor', 'sony,xperia-leo']
+	'microsoft,denali-oled' is not one of ['samsung,kltechn']
+	'microsoft,denali-oled' is not one of ['longcheer,l9360']
+	'microsoft,denali-oled' is not one of ['acer,a1-724', 'alcatel,idol347', 'asus,z00l', 'gplus,fl8005a', 'huawei,g7', 'lg,c50', 'lg,m216', 'longcheer,l8910', 'longcheer,l8150', 'motorola,harpia', 'motorola,osprey', 'motorola,surnia', 'qcom,msm8916-mtp', 'samsung,a3u-eur', 'samsung,a5u-eur', 'samsung,e5', 'samsung,e7', 'samsung,fortuna3g', 'samsung,gprimeltecan', 'samsung,grandmax', 'samsung,grandprimelte', 'samsung,gt510', 'samsung,gt58', 'samsung,j3ltetw', 'samsung,j5', 'samsung,j5x', 'samsung,rossa', 'samsung,serranove', 'thwc,uf896', 'thwc,ufi001c', 'wingtech,wt86518', 'wingtech,wt86528', 'wingtech,wt88047', 'yiming,uz801-v3']
+	'microsoft,denali-oled' is not one of ['xiaomi,riva']
+	'microsoft,denali-oled' is not one of ['xiaomi,land']
+	'microsoft,denali-oled' is not one of ['flipkart,rimob', 'motorola,potter', 'xiaomi,daisy', 'xiaomi,mido', 'xiaomi,tissot', 'xiaomi,vince']
+	'microsoft,denali-oled' is not one of ['lg,bullhead', 'lg,h815', 'microsoft,talkman', 'xiaomi,libra']
+	'microsoft,denali-oled' is not one of ['sony,karin_windy']
+	'microsoft,denali-oled' is not one of ['huawei,angler', 'microsoft,cityman', 'sony,ivy-row', 'sony,karin-row', 'sony,satsuki-row', 'sony,sumire-row', 'sony,suzuran-row']
+	'microsoft,denali-oled' is not one of ['arrow,apq8096-db820c', 'inforce,ifc6640']
+	'microsoft,denali-oled' is not one of ['oneplus,oneplus3', 'oneplus,oneplus3t', 'qcom,msm8996-mtp', 'sony,dora-row', 'sony,kagura-row', 'sony,keyaki-row', 'xiaomi,gemini']
+	'microsoft,denali-oled' is not one of ['xiaomi,natrium', 'xiaomi,scorpio']
+	'microsoft,denali-oled' is not one of ['asus,novago-tp370ql', 'fxtec,pro1', 'hp,envy-x2', 'lenovo,miix-630', 'oneplus,cheeseburger', 'oneplus,dumpling', 'qcom,msm8998-mtp', 'sony,xperia-lilac', 'sony,xperia-maple', 'sony,xperia-poplar', 'xiaomi,sagit']
+	'microsoft,denali-oled' is not one of ['8dev,jalapeno', 'alfa-network,ap120c-ac']
+	'microsoft,denali-oled' is not one of ['qcom,ipq4019-ap-dk01.1-c1', 'qcom,ipq4019-ap-dk04.1-c3', 'qcom,ipq4019-ap-dk07.1-c1', 'qcom,ipq4019-ap-dk07.1-c2', 'qcom,ipq4019-dk04.1-c1']
+	'microsoft,denali-oled' is not one of ['qcom,ipq5018-rdp432-c2', 'tplink,archer-ax55-v1']
+	'microsoft,denali-oled' is not one of ['qcom,ipq5332-ap-mi01.2', 'qcom,ipq5332-ap-mi01.3', 'qcom,ipq5332-ap-mi01.6', 'qcom,ipq5332-ap-mi01.9']
+	'microsoft,denali-oled' is not one of ['qcom,ipq5424-rdp466']
+	'microsoft,denali-oled' is not one of ['mikrotik,rb3011', 'qcom,ipq8064-ap148']
+	'microsoft,denali-oled' is not one of ['qcom,ipq8074-hk01', 'qcom,ipq8074-hk10-c1', 'qcom,ipq8074-hk10-c2']
+	'microsoft,denali-oled' is not one of ['qcom,ipq9574-ap-al02-c2', 'qcom,ipq9574-ap-al02-c6', 'qcom,ipq9574-ap-al02-c7', 'qcom,ipq9574-ap-al02-c8', 'qcom,ipq9574-ap-al02-c9']
+	'swir,mangoh-green-wp8548' was expected
+	'microsoft,denali-oled' is not one of ['qcom,qrb2210-rb1']
+	'microsoft,denali-oled' is not one of ['fairphone,fp5', 'particle,tachyon', 'qcom,qcm6490-idp', 'qcom,qcs6490-rb3gen2', 'radxa,dragon-q6a', 'shift,otter']
+	'microsoft,denali-oled' is not one of ['qcom,qdu1000-idp', 'qcom,qdu1000-x100']
+	'microsoft,denali-oled' is not one of ['qcom,qru1000-idp']
+	'microsoft,denali-oled' is not one of ['qcom,qar2130p']
+	'microsoft,denali-oled' is not one of ['acer,aspire1', 'qcom,sc7180-idp']
+	'google,coachz-rev1' was expected
+	'google,coachz' was expected
+	'google,coachz-rev1-sku0' was expected
+	'google,coachz-sku0' was expected
+	'google,homestar-rev2' was expected
+	'google,homestar-rev3' was expected
+	'google,homestar' was expected
+	'google,kingoftown-rev0' was expected
+	'google,kingoftown' was expected
+	'google,lazor-rev0' was expected
+	'google,lazor-rev1' was expected
+	'google,lazor-rev3' was expected
+	'google,lazor-rev9' was expected
+	'google,lazor' was expected
+	'google,lazor-rev1-sku2' was expected
+	'google,lazor-rev3-sku2' was expected
+	'google,lazor-rev9-sku2' was expected
+	'google,lazor-sku2' was expected
+	'google,lazor-rev1-sku0' was expected
+	'google,lazor-rev3-sku0' was expected
+	'google,lazor-rev9-sku0' was expected
+	'google,lazor-sku0' was expected
+	'google,lazor-rev4-sku4' was expected
+	'google,lazor-rev9-sku4' was expected
+	'google,lazor-sku4' was expected
+	'google,lazor-rev4-sku5' was expected
+	'google,lazor-rev5-sku5' was expected
+	'google,lazor-rev9-sku6' was expected
+	'google,lazor-sku6' was expected
+	'google,mrbland-rev0-sku0' was expected
+	'google,mrbland-sku1536' was expected
+	'google,mrbland-rev0-sku16' was expected
+	'google,mrbland-sku1024' was expected
+	'google,pazquel-sku5' was expected
+	'google,pazquel-sku1' was expected
+	'google,pazquel-sku6' was expected
+	'google,pazquel-sku0' was expected
+	'google,pazquel-sku22' was expected
+	'google,pazquel-sku21' was expected
+	'google,pompom-rev1' was expected
+	'google,pompom-rev2' was expected
+	'google,pompom' was expected
+	'google,pompom-rev1-sku0' was expected
+	'google,pompom-rev2-sku0' was expected
+	'google,pompom-sku0' was expected
+	'google,quackingstick-sku1537' was expected
+	'google,quackingstick-sku1536' was expected
+	'google,trogdor' was expected
+	'google,trogdor-sku0' was expected
+	'google,wormdingler-rev0-sku16' was expected
+	'google,wormdingler-sku1024' was expected
+	'google,wormdingler-sku1025' was expected
+	'google,wormdingler-rev0-sku0' was expected
+	'google,wormdingler-sku0' was expected
+	'google,wormdingler-sku1' was expected
+	'qcom,sc7280-crd' was expected
+	'google,zoglin' was expected
+	'google,zoglin-sku1536' was expected
+	'qcom,sc7280-idp' was expected
+	'qcom,sc7280-idp2' was expected
+	'google,evoker' was expected
+	'google,evoker-sku512' was expected
+	'google,herobrine' was expected
+	'google,villager-rev0' was expected
+	'google,villager' was expected
+	'google,villager-sku512' was expected
+	'google,zombie' was expected
+	'google,zombie-sku512' was expected
+	'google,zombie-sku2' was expected
+	'google,zombie-sku514' was expected
+	'microsoft,denali-oled' is not one of ['lenovo,flex-5g', 'microsoft,surface-prox', 'qcom,sc8180x-primus']
+	'microsoft,denali-oled' is not one of ['huawei,gaokun3', 'lenovo,thinkpad-x13s', 'microsoft,arcata', 'microsoft,blackrock', 'qcom,sc8280xp-crd', 'qcom,sc8280xp-qrd']
+	'microsoft,denali-oled' is not one of ['lenovo,tbx605f', 'motorola,ali']
+	'microsoft,denali-oled' is not one of ['sony,discovery-row', 'sony,kirin-row', 'sony,pioneer-row', 'sony,voyager-row']
+	'microsoft,denali-oled' is not one of ['inforce,ifc6560']
+	'microsoft,denali-oled' is not one of ['fairphone,fp3', 'motorola,ocean']
+	'microsoft,denali-oled' is not one of ['sony,mermaid-row']
+	'microsoft,denali-oled' is not one of ['xiaomi,lavender']
+	'microsoft,denali-oled' is not one of ['google,sargo']
+	'microsoft,denali-oled' is not one of ['qcom,sdx55-mtp', 'qcom,sdx55-telit-fn980-tlb', 'qcom,sdx55-t55']
+	'microsoft,denali-oled' is not one of ['qcom,sdx65-mtp']
+	'microsoft,denali-oled' is not one of ['qcom,sdx75-idp']
+	'microsoft,denali-oled' is not one of ['qcom,ipq6018-cp01', 'qcom,ipq6018-cp01-c1']
+	'microsoft,denali-oled' is not one of ['qcom,qcs404-evb-1000', 'qcom,qcs404-evb-4000']
+	'microsoft,denali-oled' is not one of ['qcom,monaco-evk', 'qcom,qcs8300-ride']
+	'microsoft,denali-oled' is not one of ['qcom,qcs615-ride']
+	'microsoft,denali-oled' is not one of ['qcom,sa8155p-adp']
+	'microsoft,denali-oled' is not one of ['qcom,sa8295p-adp', 'qcom,sa8540p-ride']
+	'microsoft,denali-oled' is not one of ['qcom,sa8775p-ride', 'qcom,sa8775p-ride-r3']
+	'microsoft,denali-oled' is not one of ['qcom,lemans-evk', 'qcom,qcs9100-ride', 'qcom,qcs9100-ride-r3']
+	'microsoft,denali-oled' is not one of ['huawei,planck', 'lenovo,yoga-c630', 'lg,judyln', 'lg,judyp', 'oneplus,enchilada', 'oneplus,fajita', 'qcom,sdm845-mtp', 'shift,axolotl', 'samsung,starqltechn', 'samsung,w737', 'sony,akari-row', 'sony,akatsuki-row', 'sony,apollo-row', 'thundercomm,db845c', 'xiaomi,beryllium', 'xiaomi,beryllium-ebbg', 'xiaomi,polaris']
+	'microsoft,denali-oled' is not one of ['oneplus,billie2']
+	'microsoft,denali-oled' is not one of ['qcom,qrb4210-rb2']
+	'microsoft,denali-oled' is not one of ['qcom,sm4450-qrd']
+	'microsoft,denali-oled' is not one of ['fxtec,pro1x']
+	'microsoft,denali-oled' is not one of ['lenovo,j606f']
+	'microsoft,denali-oled' is not one of ['sony,pdx201', 'xiaomi,ginkgo', 'xiaomi,laurel-sprout']
+	'microsoft,denali-oled' is not one of ['sony,pdx213']
+	'microsoft,denali-oled' is not one of ['sony,pdx225']
+	'microsoft,denali-oled' is not one of ['xiaomi,curtana', 'xiaomi,joyeuse']
+	'microsoft,denali-oled' is not one of ['google,sunfish']
+	'microsoft,denali-oled' is not one of ['fairphone,fp4']
+	'microsoft,denali-oled' is not one of ['nothing,spacewar']
+	'microsoft,denali-oled' is not one of ['microsoft,surface-duo', 'qcom,sm8150-hdk', 'qcom,sm8150-mtp', 'sony,bahamut-generic', 'sony,griffin-generic']
+	'microsoft,denali-oled' is not one of ['qcom,qrb5165-rb5', 'qcom,sm8250-hdk', 'qcom,sm8250-mtp', 'samsung,r8q', 'samsung,x1q', 'sony,pdx203-generic', 'sony,pdx206-generic', 'xiaomi,elish', 'xiaomi,pipa']
+	'microsoft,denali-oled' is not one of ['microsoft,surface-duo2', 'qcom,sm8350-hdk', 'qcom,sm8350-mtp', 'sony,pdx214-generic', 'sony,pdx215-generic']
+	'microsoft,denali-oled' is not one of ['qcom,sm8450-hdk', 'qcom,sm8450-qrd', 'samsung,r0q', 'sony,pdx223', 'sony,pdx224']
+	'microsoft,denali-oled' is not one of ['qcom,sm8550-hdk', 'qcom,sm8550-mtp', 'qcom,sm8550-qrd', 'samsung,q5q', 'sony,pdx234']
+	'microsoft,denali-oled' is not one of ['qcom,qcs8550-aim300-aiot']
+	'microsoft,denali-oled' is not one of ['qcom,sm8650-hdk', 'qcom,sm8650-mtp', 'qcom,sm8650-qrd']
+	'microsoft,denali-oled' is not one of ['qcom,sm8750-mtp', 'qcom,sm8750-qrd']
+	'microsoft,denali-oled' is not one of ['qcom,x1e001de-devkit']
+	'microsoft,denali-oled' is not one of ['lenovo,thinkpad-t14s-lcd', 'lenovo,thinkpad-t14s-oled']
+	'microsoft,denali-oled' is not one of ['asus,vivobook-s15', 'asus,zenbook-a14-ux3407ra', 'dell,inspiron-14-plus-7441', 'dell,latitude-7455', 'dell,xps13-9345', 'hp,elitebook-ultra-g1q', 'hp,omnibook-x14', 'lenovo,yoga-slim7x', 'microsoft,romulus13', 'microsoft,romulus15', 'qcom,x1e80100-crd', 'qcom,x1e80100-qcp']
+	'microsoft,denali-oled' is not one of ['qcom,hamoa-iot-evk']
+	'microsoft,denali-oled' is not one of ['asus,zenbook-a14-ux3407qa-lcd', 'asus,zenbook-a14-ux3407qa-oled']
+	'microsoft,denali-oled' is not one of ['hp,omnibook-x14-fe1', 'lenovo,thinkbook-16', 'qcom,x1p42100-crd']
+	'qcom,apq8016' was expected
+	'qcom,apq8026' was expected
+	'qcom,apq8064' was expected
+	'qcom,apq8074' was expected
+	'qcom,msm8660' was expected
+	'qcom,apq8084' was expected
+	'qcom,msm8226' was expected
+	'qcom,msm8926' was expected
+	'qcom,msm8929' was expected
+	'qcom,msm8939' was expected
+	'qcom,msm8956' was expected
+	'qcom,msm8960' was expected
+	'qcom,msm8960t' was expected
+	'qcom,msm8974' was expected
+	'qcom,msm8974pro' was expected
+	'samsung,klte' was expected
+	'qcom,msm8976' was expected
+	'qcom,msm8916' was expected
+	'qcom,msm8917' was expected
+	'qcom,msm8937' was expected
+	'qcom,msm8953' was expected
+	'qcom,msm8992' was expected
+	'qcom,apq8094' was expected
+	'qcom,msm8994' was expected
+	'qcom,apq8096-sbc' was expected
+	'qcom,msm8996' was expected
+	'qcom,msm8996pro' was expected
+	'qcom,msm8998' was expected
+	'qcom,ipq4018' was expected
+	'qcom,ipq4019' was expected
+	'qcom,ipq5018' was expected
+	'qcom,ipq5332' was expected
+	'qcom,ipq5424' was expected
+	'qcom,ipq8064' was expected
+	'qcom,ipq8074' was expected
+	'qcom,ipq9574' was expected
+	'swir,wp8548' was expected
+	'qcom,qrb2210' was expected
+	'qcom,qcm6490' was expected
+	'qcom,qdu1000' was expected
+	'qcom,qru1000' was expected
+	'qcom,sar2130p' was expected
+	'qcom,sc7180' was expected
+	'google,coachz-rev2' was expected
+	'google,coachz-rev2-sku0' was expected
+	'google,homestar-rev23' was expected
+	'google,lazor-rev2' was expected
+	'google,lazor-rev4' was expected
+	'google,lazor-rev2-sku2' was expected
+	'google,lazor-rev4-sku2' was expected
+	'google,lazor-rev2-sku0' was expected
+	'google,lazor-rev4-sku0' was expected
+	'google,lazor-rev9-sku10' was expected
+	'google,lazor-sku10' was expected
+	'google,lazor-rev5-sku4' was expected
+	'google,lazor-rev9-sku15' was expected
+	'google,lazor-sku15' was expected
+	'google,lazor-rev5-sku6' was expected
+	'google,lazor-rev9-sku18' was expected
+	'google,lazor-sku18' was expected
+	'google,mrbland-sku768' was expected
+	'google,pazquel-sku4' was expected
+	'google,pazquel-sku2' was expected
+	'google,pazquel-sku20' was expected
+	'google,hoglin-rev3' was expected
+	'google,hoglin' was expected
+	'google,hoglin-sku1536' was expected
+	'google,senor' was expected
+	'google,piglin' was expected
+	'qcom,sc7280' was expected
+	'google,zombie-sku3' was expected
+	'qcom,sc8180x' was expected
+	'qcom,sc8280xp' was expected
+	'qcom,sdm450' was expected
+	'qcom,sdm630' was expected
+	'qcom,sda660' was expected
+	'qcom,sdm632' was expected
+	'qcom,sdm636' was expected
+	'qcom,sdm660' was expected
+	'qcom,sdm670' was expected
+	'qcom,sdx55' was expected
+	'qcom,sdx65' was expected
+	'qcom,sdx75' was expected
+	'qcom,ipq6018' was expected
+	'qcom,qcs404-evb' was expected
+	'qcom,qcs8300' was expected
+	'qcom,qcs615' was expected
+	'qcom,sa8155p' was expected
+	'qcom,sa8540p' was expected
+	'qcom,sa8775p' was expected
+	'qcom,qcs9100' was expected
+	'qcom,sdm845' was expected
+	'qcom,sm4250' was expected
+	'qcom,qrb4210' was expected
+	'qcom,sm4450' was expected
+	'qcom,sm6115' was expected
+	'qcom,sm6115p' was expected
+	'qcom,sm6125' was expected
+	'qcom,sm6350' was expected
+	'qcom,sm6375' was expected
+	'qcom,sm7125' was expected
+	'qcom,sm7150' was expected
+	'qcom,sm7225' was expected
+	'qcom,sm7325' was expected
+	'qcom,sm8150' was expected
+	'qcom,sm8250' was expected
+	'qcom,sm8350' was expected
+	'qcom,sm8450' was expected
+	'qcom,sm8550' was expected
+	'qcom,qcs8550-aim300' was expected
+	'qcom,sm8650' was expected
+	'qcom,sm8750' was expected
+	'qcom,x1e001de' was expected
+	'lenovo,thinkpad-t14s' was expected
+	'qcom,x1e80100' was expected
+	'qcom,hamoa-iot-som' was expected
+	'asus,zenbook-a14-ux3407qa' was expected
+	'qcom,x1p42100' was expected
+	'qcom,apq8096' was expected
+	'qcom,mdm9615' was expected
+	'qcom,qcm2290' was expected
+	'google,lazor-rev5' was expected
+	'google,lazor-rev5-sku2' was expected
+	'google,lazor-rev5-sku0' was expected
+	'google,lazor-rev6-sku4' was expected
+	'google,lazor-rev6-sku6' was expected
+	'google,hoglin-rev4' was expected
+	'google,zombie-sku515' was expected
+	'qcom,qcs404' was expected
+	'qcom,sm6150' was expected
+	'qcom,qcs8550' was expected
+	'qcom,x1e78100' was expected
+	'qcom,x1p64100' was expected
+	from schema $id: http://devicetree.org/schemas/arm/qcom.yaml
+arch/arm64/boot/dts/qcom/x1e80100-microsoft-denali-oled.dtb: wifi@0 (pci17cb,1107): 'disable-rfkill' does not match any of the regexes: '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
+arch/arm64/boot/dts/qcom/x1p64100-microsoft-denali.dtb: wifi@0 (pci17cb,1107): 'disable-rfkill' does not match any of the regexes: '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
+
+
+
+
+
 
