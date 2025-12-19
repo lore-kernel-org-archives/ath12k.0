@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95ACAE66880
-	for <ath12k@archiver.kernel.org>; Fri, 19 Dec 2025 17:38:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2EC6E66882
+	for <ath12k@archiver.kernel.org>; Fri, 19 Dec 2025 17:40:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=xsBEhSmkMtUsm4jSubsXU0QflSa2X5E3pwqQAJrt/Ss=; b=qkeMVTxqijngFYjVPvieIOA7pH
-	tYNuqR/DAocp913MEiYkYvjyrsqegG3YSk5tcu2p9SD20qMVmJgmIiJ/x5kbb9vQK8yByEgKeCGWj
-	aZMDeh7wW0s541Vsr4FVGZFlbLtLFlxqjvTOm1hJSG9W1gTRG6GzEq20iR+aHklAAeQzwvx9JsAwD
-	qkNZpGpUJmZOqzrLTw+dFMfoc0Wb9tswolzE6ltmXD1shNmR4DSy5lb2Ua8NHGN6VE7nGDJCXZOFZ
-	UDl31jz30aLZ0cR6+uAdezXk+4hKD4M8F0oWvill81GuCShnAj+T1lSH2DL//9g10kIRez9htXIkY
-	KO4ErKNw==;
+	bh=FuucfZGLJMQTtPSOcfm8U7Q2GLVatLJPY/7DTraphNE=; b=iTSGGpkMPseqSTA99FSYO927Te
+	lTbDqXzpr0v93LVW5gVWWLLKU6t4rmGdjB28Cv7R5nrNdCC0mTudPvZfWdvd9ppHH8TglkRcbVFec
+	4eCBvTpQDa3R5h3IItsxBABWsD7ib6daO5agujAgZZ4nxdnUyHK7slhAv3yaIyv5egN/QT8j6Dxy4
+	+AQFn+IkAWqh5uZ17vjlGZW2hMZuA4aL98YdxpTHCkh3+rCPH+e+MdbILzGRRwSo2puo39ZnzyvU/
+	NmTSsX8ybZfvlM7BrFMBuW8TgPZiY7NBqqPmt/gDDozIU8jMv2ZNK+XCbbVKExfL4qrKMZSQFI0O1
+	s2ceN98w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWeQe-0000000Aiop-1Lrp;
-	Fri, 19 Dec 2025 17:38:12 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vWeSa-0000000Aiyf-32lw;
+	Fri, 19 Dec 2025 17:40:12 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWeQc-0000000AioR-0Lgi
+	id 1vWeSZ-0000000AiyT-0jqC
 	for ath12k@lists.infradead.org;
-	Fri, 19 Dec 2025 17:38:11 +0000
+	Fri, 19 Dec 2025 17:40:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7030943B1B;
-	Fri, 19 Dec 2025 17:38:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F26A9C4CEF1;
-	Fri, 19 Dec 2025 17:38:02 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 224D460008;
+	Fri, 19 Dec 2025 17:40:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1F046C4CEF1;
+	Fri, 19 Dec 2025 17:40:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766165889;
-	bh=9f3YvNsVwBuh6p/VEDY9wyCOrCSWtk1to9ClwHaPrzE=;
+	s=k20201202; t=1766166009;
+	bh=ZsjdqJpJJXC5C6gH4t4wg63JhIEf5NEbR9uPdpyc89Y=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=D79qIPI4Uap789XICMivlywjmQC+k691Lr9A6ZKwQ5Bj37pOGxRSb+9BKeKLIKIJS
-	 jzA/u89L6W24TMBAjhwgrhHPQ5YmEoZp4oZh6Pg96qlEwISlm81BXflkUY/4ihgppY
-	 O3pcDb2JVc5NVphrrST9F874Ed+ZozlMSyQUSrxveJHSRLSzdAJZasZXTMLQ6IWHd9
-	 ROBsoSHPNleFV4Pb+Pro+Jy0K4wzIt3nTnQkUicQ76cA6AhNt9cM4PnSg0b5lTsii7
-	 DVapUaqmZs47sZxuDp7zE4mqXZk+LoZWkwDqRJUBVi2zj+SDu/d/PHJ415ah6Z9jwM
-	 hr1yFILNpqwkA==
-Message-ID: <9c7115b2-9f31-49e1-a2cd-2071b84fb85d@kernel.org>
-Date: Fri, 19 Dec 2025 18:38:00 +0100
+	b=nMZrqzhtgHrlm3GrbWHY4c89HOWa1fddvvSDV9QwN4+Bm7c4P+cK9wVnpU0j7lClz
+	 kXqey3sBt01kGODW4wW+3PL9Sm3tMzeSO4eA2hMgxZd6H3mVC/1TVbM+QwflxP7Bbl
+	 +oJaR2l76kIgpmQxNn7nJWncJxD0oi9Q24XlGQJM6lxSCVFXZWsJ0N4HDFox1qpJjr
+	 O8XcNKsrNGYP+Chq9uhMzps24Dx7BzTZcbhuMF2MnKLZAY/Jy17HPGbO9TKNPI7vqE
+	 l94ImrpbFz/GPEGY4Muv01Qi+HooNo7iA+HvsaOMgJP6uUkkZaPLXboUmcjXfC9Tl6
+	 MqUM0WjDzcptA==
+Message-ID: <4d167792-cc62-422b-bf65-3ce101377d46@kernel.org>
+Date: Fri, 19 Dec 2025 18:40:00 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/6] dt-bindings: wireless: ieee80211: Add
- disable-rfkill property
+Subject: Re: [PATCH v4 1/6] dt-bindings: arm: qcom: Document Microsoft Surface
+ Pro 11
 To: jerome.debretagne@gmail.com, Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
@@ -61,7 +61,7 @@ Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  platform-driver-x86@vger.kernel.org, ath12k@lists.infradead.org,
  Dale Whinham <daleyo@gmail.com>
 References: <20251218-surface-sp11-for-next-v4-0-7bcf83c1504a@gmail.com>
- <20251218-surface-sp11-for-next-v4-2-7bcf83c1504a@gmail.com>
+ <20251218-surface-sp11-for-next-v4-1-7bcf83c1504a@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -107,12 +107,9 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251218-surface-sp11-for-next-v4-2-7bcf83c1504a@gmail.com>
+In-Reply-To: <20251218-surface-sp11-for-next-v4-1-7bcf83c1504a@gmail.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251219_093810_188126_716073A2 
-X-CRM114-Status: GOOD (  13.18  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,31 +127,52 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 On 18/12/2025 23:22, Jérôme de Bretagne via B4 Relay wrote:
 > From: Jérôme de Bretagne <jerome.debretagne@gmail.com>
 > 
-> For some devices, Wi-Fi is entirely hard blocked by default making
-> the Wi-Fi radio unusable, except if rfkill is disabled as expected
-> on those models.
+> Add the compatibles for the Qualcomm-based Microsoft Surface Pro 11,
+> using its Denali codename.
 > 
-> Commit c6a7c0b09d5f ("wifi: ath12k: Add Support for enabling or
-> disabling specific features based on ACPI bitflag") added a way to
-> support features set via ACPI, including the DISABLE_RFKILL bit.
+> The LCD models are using the Qualcomm Snapdragon X1 Plus (X1P64100),
+> the OLED ones are using the Qualcomm Snapdragon X1 Elite (X1E80100).
 > 
-> Add a disable-rfkill property to expose the DISABLE_RFKILL bit
-> equivalent for devices described by a Devicetree instead of ACPI.
+> Due to the difference in how the built-in panel is being handled
+> between the OLED variant and LCD one, it is required to have two
+> separate DTBs, so document the compatible string for both variants.
 > 
-> Tested-by: Dale Whinham <daleyo@gmail.com>
-
-You cannot test a binding. Building and other make-steps are not testing.
-
-I don't even get how this appeared - wasn't here before and there is no
-trace on the mailing lists. Can you point to the mailing where this was
-given?
-
-
 > Signed-off-by: Jérôme de Bretagne <jerome.debretagne@gmail.com>
 > ---
->  Documentation/devicetree/bindings/net/wireless/ieee80211.yaml | 6 ++++++
->  1 file changed, 6 insertions(+)
+>  Documentation/devicetree/bindings/arm/qcom.yaml | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
 > 
+> diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Documentation/devicetree/bindings/arm/qcom.yaml
+> index d84bd3bca2010508a8225b9549d8c634efa06531..3685330344c0bf621125fc3d2f9c04082d6de144 100644
+> --- a/Documentation/devicetree/bindings/arm/qcom.yaml
+> +++ b/Documentation/devicetree/bindings/arm/qcom.yaml
+> @@ -1067,6 +1067,17 @@ properties:
+>            - const: qcom,x1e78100
+>            - const: qcom,x1e80100
+>  
+> +      - items:
+> +          - const: microsoft,denali-lcd
+> +          - const: microsoft,denali
+> +          - const: qcom,x1p64100
+
+64 < 78, so this should be placed after devkit list.
+
+> +          - const: qcom,x1e80100
+> +
+> +      - items:
+> +          - const: microsoft,denali-oled
+> +          - const: microsoft,denali
+
+So this goes after hamoa list, to keep somehow logical order.
+
+> +          - const: qcom,x1e80100
+> +
+>        - items:
+>            - enum:
+>                - asus,vivobook-s15
+> 
+
+
 Best regards,
 Krzysztof
 
