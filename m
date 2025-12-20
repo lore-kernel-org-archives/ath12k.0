@@ -4,97 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77EF6E668B4
-	for <ath12k@archiver.kernel.org>; Sat, 20 Dec 2025 14:03:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 962A1E668B4
+	for <ath12k@archiver.kernel.org>; Sat, 20 Dec 2025 15:27:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:
+	References:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:
+	Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=vTIPtqzMduKujdd0veJ2LC19WzlWxxZcItU+/SfvSHQ=; b=2QQkozhY8UFkva3Ls8rPC/g1Zu
-	o5x4fZZK5F/x6ovkpiHmaq+JLWUJF++GVA/g8wtuc3QinHRvQdZFTsDptKwMvKfCEHVF8nvg4c85R
-	vU68B3Y2Ma21SzQ44dXgbjoPHjcysuoXNhwmxPMoandKwjeCZAPILM17dmSehUFJG0xV5T8L7DZP3
-	9eDNA3ELnwjRnbPR7gDwfFTpVnDvH3Q+Bszo/UgbcM5rx05ZzGZUlCQzmF//HY5aWQIhIdKc+gXTF
-	ujz+vdkB1jRwnY5hfY8BNQLIqRQW+MLoraZJmCAz/TOoUumh7Ut7yHiayDiSL0mWrxQSNCbEmPKQL
-	f5LfpeTA==;
+	bh=6E55rnlhAOrIku3mUKlbLlFq0iWxyrYu1PmFIURoShU=; b=lDUomkbH1WeJJbOnt/1FCEKpYV
+	Zs1DN7rsvQgi5+KHGuB8Iko/ycyk3wdYs/jeSyF/palaxBLy14M5l6ffqAemwdtLugUAJ+wEpfR9I
+	fyt9GI+6+pMkdwU/zGcKFIWiNwQ3iUSHdZze1FThHsoeONmdxEdNhh1QzZ1T7gHpMnt3VXCfZ5oiD
+	Udk5+fTRWRKri6d8/GZYSm6G9/YAy+x1BeSoRUm0IxJqBhk4Pvzti52nm/VA7JA90MaibtTtWo2+u
+	38ZaaLPe2cj954bfObeDrKBlGl/G0JbRtjDcQ/fq7zcEb6i+xvGwXuTIVfKm2DWOysg7Yp90ITkW0
+	WGlDPRBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWxYD-0000000BdrX-3Q4i;
-	Sat, 20 Dec 2025 14:03:17 +0000
-Received: from mail-qv1-xf2f.google.com ([2607:f8b0:4864:20::f2f])
+	id 1vWys8-0000000BgpN-1Olk;
+	Sat, 20 Dec 2025 15:27:56 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWxYA-0000000Bdr4-3tiz
+	id 1vWys7-0000000BgoY-09Q9
 	for ath12k@lists.infradead.org;
-	Sat, 20 Dec 2025 14:03:16 +0000
-Received: by mail-qv1-xf2f.google.com with SMTP id 6a1803df08f44-88a3bba9fd4so27330146d6.2
-        for <ath12k@lists.infradead.org>; Sat, 20 Dec 2025 06:03:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1766239394; x=1766844194; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=vTIPtqzMduKujdd0veJ2LC19WzlWxxZcItU+/SfvSHQ=;
-        b=b8fkZLCEE3KGwBfxmkVzeoLfJq3T/s/tEXaZXDyaD9HlTxjBF4XXSLzkUAm400/p79
-         +DCH5QZIpzokQthxgagGE4YVULF7eu/4mpv2B3oSMIW/CeB0judQ0460qNOJsn10NPof
-         AwpOpdMrjhM2Zh1oWstYfq2ezuMlJj4UkK3eVAemQbLcoqiD2QdkwE1hhw1gk1pBod/Q
-         XyqeGfAGkSzVLMUbgzGUSa3huHx5151MYA6WLCvOJ4v4vH4lDWwHVY5PPh2WxazJ8JKH
-         6drphxE1g/eSleOsh/tzqwzamJsM+RZTXiam+J6PAYmA1n4haUPWxnhUHl6urlcMHe7+
-         Qtpw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1766239394; x=1766844194;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=vTIPtqzMduKujdd0veJ2LC19WzlWxxZcItU+/SfvSHQ=;
-        b=PqFbS9SdoAb36gd38umwAkE36xjpfP3olcLP1KbhUhM0Z/J2lQncC6kY8QCTINf2c6
-         P9Bxg5U+Me8ZP1iAEU5TBq18Hz1bgd6uyXsg/BlLC3qlIDkhuUMxO/+tysZuK0oE184D
-         99GjCum7btnxbGbRLD++37uN6jZAdjISOHqsLtzqeu267iSjUXFvDgdIweOvJtDsKCYz
-         tDQWjItok5qGgugk8PyqzOdHdKOhBp7ldNTdMjGB+xUbb16PO9N04ELdmiHSn4OIZfKI
-         oRaU6xCxrYCvBeBigCzydvEaDJmh+AVKtA+Tecl/YJQtgpiLGL0HNC8XrJKWhaNINVc6
-         k4Vg==
-X-Forwarded-Encrypted: i=1; AJvYcCVy1CI5skESLRC2IIpQaSzsK7qBdQh8Bz3rFErigB5SgXLGBjLCfxqj46FnR6tqobM1wz/80ug=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx0FSR8yVd8jLc9txQrEFLlbER4iE0tG6WshGhRUzIp6uOo3Ibu
-	NlXmlsjoequuNIfvhyLYnnNM5QrFYyCiteQSQfxaBq5DXyrjo0OVtDqEBEocpG0Wq8iVMyMWKSR
-	AHD5XN76u/O56N5pp9NWf69c1q4sCUA==
-X-Gm-Gg: AY/fxX6/ipRYq+Mceqj9GjnLuns5JcazxChWFlREj6ePNbzRvSpwxc8QexUiM9FL58K
-	MYdA8Sy5SbS3OYaWGwIQtL2fMkxb5Yl5A29CaScw21Uyy+JQF+uFvKkLEYFOJTLoe1GSXR49+PI
-	ZVgVnuwqaTna2LXYNzzdMogfDJ1e38PcIWH/H7xMLTHttzIEvwnw7Ibw0Q2oxXsRlu4Wwfq2xua
-	/Jk+QIcsyo9PRiSEoYaF6k3LjAEas2yARejgHyS15nyliFVtE3rEERuheqgAMG7b3vpNd1e1LDq
-	t8TsiAyV535wSTkNhgZ2d4vp8xM=
-X-Google-Smtp-Source: AGHT+IFp4fR8Wc2qjRuYRZCvAQmroP/eyGv/wjwh1rGAG5pfcUyLHfpF6uaQ82FZr3MKIP8d6MaoUKVouxW6yw2G3dY=
-X-Received: by 2002:a05:6214:248b:b0:70f:a4b0:1eb8 with SMTP id
- 6a1803df08f44-88d8203f029mr99469936d6.13.1766239393583; Sat, 20 Dec 2025
- 06:03:13 -0800 (PST)
+	Sat, 20 Dec 2025 15:27:55 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id D1E5860008;
+	Sat, 20 Dec 2025 15:27:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 7EBA2C4CEF5;
+	Sat, 20 Dec 2025 15:27:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1766244473;
+	bh=rlWIfYfoikdm2g+ig1MLpFeBTAhiwN72iY5iv6kr7aY=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=uNbDL+YUOpwZbh/FCCCknUHSWYIuQReb6ZOLtyGFH4ut9MxHQiyOhKhBCppAfYEak
+	 ABU+O8l9NbsXAN75iQUd7Shs176rCZXS7PycjYl/tdMTEvqkD6QGqoPgrklsbhWNkc
+	 zBi7IOE1ohEkLZZrLcp1jrWMCiL2+lvBxK0uC391WIkXfoKy+Wc32Z98mYCF/LjLHY
+	 LAys3APXcktMmWKXxgMBzSqhrL1iVOvawOg2GOSXkOhYUQp6vvtGxV9qLcTDzC9AUK
+	 KKXGryPvK79nfJTDxvpTvb7aowFwIN+Q0POt9WaeI/e+hw6rAdhohDrsk+B5WeQhrq
+	 ce4jBROXVu6JA==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6E53DE668B8;
+	Sat, 20 Dec 2025 15:27:53 +0000 (UTC)
+From: =?utf-8?q?J=C3=A9r=C3=B4me_de_Bretagne_via_B4_Relay?= <devnull+jerome.debretagne.gmail.com@kernel.org>
+Date: Sat, 20 Dec 2025 16:26:30 +0100
+Subject: [PATCH v6 2/4] firmware: qcom: scm: allow QSEECOM on Surface Pro
+ 11
 MIME-Version: 1.0
-References: <20251220-surface-sp11-for-next-v5-0-16065bef8ef3@gmail.com>
- <M7kfFb5fz-WB43U_xCUwgxpmBJ4TNdp4jE6yFu6HmemIcDx5tXO6H4xnW_pEQz6DMkKm-3POdB9hIdB092zhGQ==@protonmail.internalid>
- <20251220-surface-sp11-for-next-v5-2-16065bef8ef3@gmail.com>
- <e0e9e690-c56e-4b56-90f9-2af46a7feaf3@nxsw.ie> <20251220-fervent-mamba-of-sunshine-f680a8@quoll>
-In-Reply-To: <20251220-fervent-mamba-of-sunshine-f680a8@quoll>
-From: =?UTF-8?B?SsOpcsO0bWUgZGUgQnJldGFnbmU=?= <jerome.debretagne@gmail.com>
-Date: Sat, 20 Dec 2025 15:02:36 +0100
-X-Gm-Features: AQt7F2qSP3aNPDvdAnYCQhdwd2yv91UgJ5ZtJLf3svJOCJgsank9Z_-67rvi34Y
-Message-ID: <CA+kEDGEB-c1SuEdR4W8mnxYQLxN5bqW0v3G6wb=e+a8LY8+OTg@mail.gmail.com>
-Subject: Re: [PATCH v5 2/7] dt-bindings: wireless: ieee80211: Add
- disable-rfkill property
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: "Bryan O'Donoghue" <bod.linux@nxsw.ie>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Johannes Berg <johannes@sipsolutions.net>, Lorenzo Bianconi <lorenzo@kernel.org>, 
-	Maximilian Luz <luzmaximilian@gmail.com>, Hans de Goede <hansg@kernel.org>, 
-	=?UTF-8?Q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>, 
-	Jeff Johnson <jjohnson@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-wireless@vger.kernel.org, platform-driver-x86@vger.kernel.org, 
-	ath12k@lists.infradead.org, Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
-	Dale Whinham <daleyo@gmail.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251220_060314_996996_CB644490 
-X-CRM114-Status: GOOD (  28.37  )
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+Message-Id: <20251220-surface-sp11-for-next-v6-2-81f7451edb77@gmail.com>
+References: <20251220-surface-sp11-for-next-v6-0-81f7451edb77@gmail.com>
+In-Reply-To: <20251220-surface-sp11-for-next-v6-0-81f7451edb77@gmail.com>
+To: Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Johannes Berg <johannes@sipsolutions.net>, 
+ Lorenzo Bianconi <lorenzo@kernel.org>, 
+ Maximilian Luz <luzmaximilian@gmail.com>, Hans de Goede <hansg@kernel.org>, 
+ =?utf-8?q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>, 
+ Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, 
+ platform-driver-x86@vger.kernel.org, ath12k@lists.infradead.org, 
+ Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
+ Dale Whinham <daleyo@gmail.com>, 
+ =?utf-8?q?J=C3=A9r=C3=B4me_de_Bretagne?= <jerome.debretagne@gmail.com>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1766244472; l=997;
+ i=jerome.debretagne@gmail.com; s=20251217; h=from:subject:message-id;
+ bh=CNbXWtuQ7AggDKzwaLKJE5TiiiPe100NQahuSnOowsU=;
+ b=AMXf5Qstm/inbiie5fAjms4i/YPZ1dwa62O04DdEOOljs/5PwBg0LnkdF3OKEPitm2j8o+zDv
+ YF3cwb7BMqvAN9c7QQzVqn2CApJWL10BxMVYCRZGcHwBLnQuWfL6y+e
+X-Developer-Key: i=jerome.debretagne@gmail.com; a=ed25519;
+ pk=DcPD9n3oDMsPkt+12tU96swmGb5H86cxt+yiEVcUEGk=
+X-Endpoint-Received: by B4 Relay for jerome.debretagne@gmail.com/20251217
+ with auth_id=580
+X-Original-From: =?utf-8?q?J=C3=A9r=C3=B4me_de_Bretagne?= <jerome.debretagne@gmail.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,90 +93,36 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: jerome.debretagne@gmail.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Le sam. 20 d=C3=A9c. 2025 =C3=A0 10:12, Krzysztof Kozlowski <krzk@kernel.or=
-g> a =C3=A9crit :
->
-> On Sat, Dec 20, 2025 at 06:04:00AM +0000, Bryan O'Donoghue wrote:
-> > On 20/12/2025 00:21, J=C3=A9r=C3=B4me de Bretagne via B4 Relay wrote:
-> > > From: J=C3=A9r=C3=B4me de Bretagne <jerome.debretagne@gmail.com>
-> > >
-> > > For some devices, Wi-Fi is entirely hard blocked by default making
-> > > the Wi-Fi radio unusable, except if rfkill is disabled as expected
-> > > on those models.
-> > >
-> > > Commit c6a7c0b09d5f ("wifi: ath12k: Add Support for enabling or
-> > > disabling specific features based on ACPI bitflag") added a way to
-> > > support features set via ACPI, including the DISABLE_RFKILL bit.
-> > >
-> > > Add a disable-rfkill property to expose the DISABLE_RFKILL bit
-> > > equivalent for devices described by a Devicetree instead of ACPI.
-> > >
-> > > Signed-off-by: J=C3=A9r=C3=B4me de Bretagne <jerome.debretagne@gmail.=
-com>
-> > > ---
-> > >   Documentation/devicetree/bindings/net/wireless/ieee80211.yaml | 6 +=
-+++++
-> > >   1 file changed, 6 insertions(+)
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/net/wireless/ieee80211=
-.yaml b/Documentation/devicetree/bindings/net/wireless/ieee80211.yaml
-> > > index d89f7a3f88a71d45d6f4ab2ae909eae09cbcaf9a..c10a4675640be947cd0b5=
-eaec2c7ff367fd93945 100644
-> > > --- a/Documentation/devicetree/bindings/net/wireless/ieee80211.yaml
-> > > +++ b/Documentation/devicetree/bindings/net/wireless/ieee80211.yaml
-> > > @@ -29,6 +29,12 @@ properties:
-> > >         different 5 GHz subbands. Using them incorrectly could not wo=
-rk or
-> > >         decrease performance noticeably
-> > >
-> > > +  disable-rfkill:
-> > > +    type: boolean
-> > > +    description:
-> > > +      Disable rfkill for some devices on which Wi-Fi would be entire=
-ly hard
-> > > +      blocked by default otherwise
-> > > +
-> > >   additionalProperties: true
-> > >
-> > >   examples:
-> > >
-> > > --
-> > > 2.47.3
-> > >
-> > >
-> > >
-> >
-> > Is this really a hardware description though ?
-> >
-> > Its really more of a logical/functional description. It tells the runti=
-me
-> > what todo, not what the hardware is.
-> >
-> > You could also have a list of quirks in ath12k for this or have a user-=
-space
-> > utility look for the appropriate platform device string name and disabl=
-e
-> > rfkill.
-> >
-> > I think this logic belongs in drivers/net/wireless/ath/ath12k/ triggeri=
-ng on
-> > a compat string.
->
-> This is good point. Either this could be deducible from the compatible
+From: Dale Whinham <daleyo@gmail.com>
 
-Thank you Bryan and Krzysztof for your feedback, I will drop the
-disable-rfkill patches from this patchset in v6 then. I will work on
-a separate patch using a list of quirks in ath12k as suggested.
+Enables access to EFI variables on this machine.
 
-> or this should actually describe the hardware and whatever is there
-> wired/configured, not what OS should do.
->
-> Best regards,
-> Krzysztof
+Signed-off-by: Dale Whinham <daleyo@gmail.com>
+Signed-off-by: Jérôme de Bretagne <jerome.debretagne@gmail.com>
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+---
+ drivers/firmware/qcom/qcom_scm.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Best regards,
-J=C3=A9r=C3=B4me
+diff --git a/drivers/firmware/qcom/qcom_scm.c b/drivers/firmware/qcom/qcom_scm.c
+index 1a6f85e463e06a12814614cea20719c90a371b69..3dabb04094f91811a430e84998d3c6c759b5c747 100644
+--- a/drivers/firmware/qcom/qcom_scm.c
++++ b/drivers/firmware/qcom/qcom_scm.c
+@@ -2007,6 +2007,7 @@ static const struct of_device_id qcom_scm_qseecom_allowlist[] __maybe_unused = {
+ 	{ .compatible = "lenovo,yoga-slim7x" },
+ 	{ .compatible = "microsoft,arcata", },
+ 	{ .compatible = "microsoft,blackrock" },
++	{ .compatible = "microsoft,denali", },
+ 	{ .compatible = "microsoft,romulus13", },
+ 	{ .compatible = "microsoft,romulus15", },
+ 	{ .compatible = "qcom,hamoa-iot-evk" },
+
+-- 
+2.47.3
+
+
 
