@@ -4,99 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E14BE6F06C
-	for <ath12k@archiver.kernel.org>; Tue, 23 Dec 2025 09:23:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C58AE75446
+	for <ath12k@archiver.kernel.org>; Wed, 24 Dec 2025 09:44:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=yRgaOqVJltPfW93WFzFyiZc87xoZ8vjuVQgiQi7aU4I=; b=MSaKCrysQB82I3dG+iUGB3u8Q6
-	5rxjf4aWav79Redl4cXydRyYfBhleIVAYd5tIrfL34k3pJffNvCINUZmMU0ShtAxuKqH6JmwrQ47w
-	MQEBndw6VUe1whH3A/7VS/mAeWqXtAU+MNibQ75K7BV6flo34+z08jdtypalzBXuGPVk58a3yp4KJ
-	ttHiA8vLlkfNDQWrwsnYjOb4qASIHJveKfSQ+b/jjcLH4HHBbRZzkWIFIEJ7EZspGrzaRmCkod1x5
-	1WTNoOJZnrf0XrHN6ffDCI76yFH/XmCZyFvqfRAEdu8lKDTHCWU1km/NlzIWSCA4UsiUwCea49dK/
-	ruBVz+hw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=j8bMJPL5URsN9kC02yIvSGN59PPsUlvnLYy8ovug86Y=; b=OhUkVylYis4CBrwnZE0gH3DX7y
+	oDp3V0i4eiIYgmes2k1lkvV7REt7Nm4nqZQRSThxRJbToznXZfyamrSu6IAJ+9J3HIezB7ZzONK5N
+	qOvfze+1Augj8RA4oyooX5l5aBVx0anUhEp/xbuH7M70LtzPrji84CbDwhu3c0x7fjeKXX1eR/3fE
+	ykYTzn85rI3UQeKrBfjpxKFjih2nATfOe3EnGN8eDnyyql4Cl+Gm4KZgcJ6fHPjKvT0pfMh5YDRKz
+	74FsXW6FcdZlpGAKfpUJ3Em1gju5SbVCudTnryS3n7a6YprVhQmSMa1TFVZrlFIGdb26MGfNbDBa+
+	i6ZdCJoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vXycM-0000000EkC9-0ASI;
-	Tue, 23 Dec 2025 09:23:46 +0000
-Received: from mail-qv1-xf2c.google.com ([2607:f8b0:4864:20::f2c])
+	id 1vYLQ9-0000000GduL-04R3;
+	Wed, 24 Dec 2025 09:44:41 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vXycI-0000000EkBl-3nyW
+	id 1vYLQ6-0000000Gdtx-1y2G
 	for ath12k@lists.infradead.org;
-	Tue, 23 Dec 2025 09:23:44 +0000
-Received: by mail-qv1-xf2c.google.com with SMTP id 6a1803df08f44-88a2d21427dso47748466d6.3
-        for <ath12k@lists.infradead.org>; Tue, 23 Dec 2025 01:23:42 -0800 (PST)
+	Wed, 24 Dec 2025 09:44:39 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5BO2OmNf461418
+	for <ath12k@lists.infradead.org>; Wed, 24 Dec 2025 09:44:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	j8bMJPL5URsN9kC02yIvSGN59PPsUlvnLYy8ovug86Y=; b=DCRQI818VJNfhxvy
+	vcwkm144QAC59iKG/n+dX/NEbry4V3bERWVgC63J830y2+IxplKJu81zvnBHVDr+
+	YYxhtg3kBdrboHCwaF+Y+tHK3Xt0I2PwdEh92WqpOYFYGxANzU3pp7MnexhOL9vB
+	SeFLB5G2ArFIq0saOFNc9u62sZiisH0/kXKVrEHEcas05swDUkddohEtr2op6gHR
+	Y9gYRKW04/BN6XURT2F+bDBQv9FdNKyU9ds4H0NdtAyOdSeGhhDW/K7/9J/tc5qo
+	Mbn1zfc7sK5GIFF7U/jCnzwbFzxqQlbYEkvQuTyz8fxGqGUZhESpB3ziQe4ZvS6B
+	buSDfQ==
+Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4b7w8fttf3-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 24 Dec 2025 09:44:37 +0000 (GMT)
+Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-88888397482so175034996d6.1
+        for <ath12k@lists.infradead.org>; Wed, 24 Dec 2025 01:44:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1766481821; x=1767086621; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=yRgaOqVJltPfW93WFzFyiZc87xoZ8vjuVQgiQi7aU4I=;
-        b=bUjJGzLpqOMiZXQD/CpKr3aU+Fa0niZkd8/FlpyyRnzUbC8e+P/F7ktzvhXZfxn/tc
-         TEUfJkBC3OdHVkqoc/L7l2ia/bJs3e9R5zhsefYyaev1GB5cGPmcIxpcmZr3dlJH2CoH
-         VHLMUoc9YWD+dcjDJfpBuYH59a6hvlo4yUaK6cRlwU1n/G+07pEL1XIaVfk2pV+fIKXu
-         xFbOzt5tB8ioTEe2o4FrKnQnjSbGRYgVy4TtrA41S3arHZg2ZNdc6FFzLPO43XBvtipn
-         G9Xlzx57/Ea8IC4rIjFTBMCYNYF9IfK7iQJPDBO5aLj/O2XBcoqCh/Jeq+lRltlXiX7O
-         bhIA==
+        d=oss.qualcomm.com; s=google; t=1766569476; x=1767174276; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=j8bMJPL5URsN9kC02yIvSGN59PPsUlvnLYy8ovug86Y=;
+        b=XX/ihgt59uhKnx+lXOLcyn76NhndlTa8evlboBwMcR2Nucz5k+Vzzdp70nvSQ+rPsa
+         8UG4S25rRDWyBXWYr48Y9/1gsn/K/3Cem3GRs3z9Ut1tYjjfdwgkJUe8ISC6/vr9COcd
+         LWoO8dvKuczo1NDYjJ1UUjFIa5fWzg7XKEFyXxe0dxaWx1NR+aqjawkelaL+IdO87eNP
+         E1gl+4qkqyUELiFs4PGmpwOreS8FBEv74vFmY0sBiIuoH3Ee4iI84tdJ/CY9m72CwyFd
+         yNrxj2SfO0IkNVB3Bowmuffqa5PE5xgA58fRLqpZboaCcOh1vrP7j2ja24kfrU/L4ru1
+         tf/Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1766481821; x=1767086621;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=yRgaOqVJltPfW93WFzFyiZc87xoZ8vjuVQgiQi7aU4I=;
-        b=MdK+q1o7YPhgtSrzTaP6tu/uwNFTz3OsOzQd9QUN7loGdUgbZntiqcj/V62ZhLnPJm
-         Bt4jjXIbmVX3kh3zX5ofA4VF1ESu0b3CzJWQIu0NpDr1MOFQPx/SgOULishm6nK4xpSy
-         WfBHcGtYOmREDXXzp8F3Shded7apk5ELRkrsyLL21dEJLiXwVd4dnfUpirOAs4+FjAmr
-         CIp9YLn8wjOpMEa5bj0lT7RTXCgJIwNIAHlAFeMcDPSDRlvAzCTbsGHt1YpGievRKBXs
-         6xIkHpRyVqWcdWTTWl05KnlBmGBFFZHsKopyjhARCRoF1DOZDDMHcZjKWDtS/PrEhSS4
-         fYbA==
-X-Forwarded-Encrypted: i=1; AJvYcCUKDOLpk2MVOr5qLXwXblF8hJoQy+dE4L26L4hY3k/p/nCBC8OSdK7iKZexnF2toEhHDRGs+Qk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwhXsf9xeBVEspWB7YqWRJNkkYYplZ8RhtuZdeZ5kkWOVjg/vZw
-	joU6YVrkuxdMqJEp0b1XFECrgtqZ+EM/vMIMh8W+5qlyxqKiMBN3ET0wL+kYqYo5657ejbsqDQS
-	0BZmkZGtZy6vmIF3irCIsV3/KNB1RBQ==
-X-Gm-Gg: AY/fxX6zpmEKq1e8PyCW8835F7zTE+p3boGeKXXpHT0LXajSCp/fbiX0OBZvV6QhFcv
-	RoFe3LtnsqljcaHNNnDlcWuJyJw8rUKcURRbC45XK4jdtHlVFGb5VzxpWPeT9YYHa0/7o9pMdqu
-	GV0uXrvKQVbpDHqU9ZMVcCIZBcX29df9ucDQC2pt/9+aYwH+9RfjdLtDYNyTcdJTzBxakrfdxsc
-	EooM2x7euHT0GqSzQkRE2YIBTkmGpnGojSSolFgk22xBKBvnd3kBFL4bdxgEmt4FqRYjbtvN04A
-	q2jpCtUfNUAxe6qoFKxgBLQCXRM=
-X-Google-Smtp-Source: AGHT+IFoBGoGMK1AwB+5JaUus3NhgS6DL3IN4kS99/cYzOlE5tfIkUewlkbJ9lfanT1+W800KHA0Cfkb3h8MpQ75Sww=
-X-Received: by 2002:a05:6214:3985:b0:880:460a:96ce with SMTP id
- 6a1803df08f44-88d86e4558amr227453306d6.63.1766481820935; Tue, 23 Dec 2025
- 01:23:40 -0800 (PST)
+        d=1e100.net; s=20230601; t=1766569476; x=1767174276;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=j8bMJPL5URsN9kC02yIvSGN59PPsUlvnLYy8ovug86Y=;
+        b=DX0kWaSh7y2SzEgj5zviFhPYe3sNWyBl+H0D9rd2w+bpoynLSnv+XY1rls4vRB5Nr7
+         iETNEjEtBl+/yimkNIW23KpsUe5Dany2R/fwH/tPFQ/W0jETYO8ExUDqlvAh0HTWrmVD
+         HtFVs5tRV0ws50HEG5jGVHf8gr/TuFMUF5A7EXXQGJ3DxF1BIkAYQB3mwsYWxSV019Yt
+         R9dqdZZ8KJICp+z9Qnwc6PMvVYp7bprcyvcBUE/sTE0rUyJS0BC8WIOwjEwfwGHg4i42
+         eN3d1zJ/5z884Iufogm4R+F1B8zkCD/Ipkobb08X2LLeq2Q5MinOlM18N/lNyYbTDwkd
+         MeZg==
+X-Forwarded-Encrypted: i=1; AJvYcCWHIkSGuVkKDR+7n6vndI0VlRvPKmvvcAw4joHyYR9eFfVReDQlxT3c4gKiK8Zis3X0obblPYU=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy17YxqX9UWRswcCjOE6KFu/UzyWWk8dc8gz6tAbjF3gl4bW4jZ
+	ezoZqM9ExrgfLO79pm84W8zgnLvdowcXDCYGWmgREH9IyT20lCI6pdOF1kf+eTVw/mZA+7x8EXJ
+	OhZDMDBwH/vl2K3OL33WIMC4K3VA4aXUpwg3rbOJyzcyHoxdFqMB1/vT3jfNwEHO1
+X-Gm-Gg: AY/fxX6C/wO2ZE+jKM6Lo95hoMrqpc3kxff/ZuDRi8hH9bgiDKFvRKT5XkieYhy3afR
+	+RRGwbtrV8FUH0vWpeRcmXDqY9zugdW7SL4CGWR+J69oYIcpITwfVruJsShOLCADYbyvU14kN6h
+	BtCD02z0LEkDaO6o7VGxzmPK2dCr5tgsfyACGmvJMsKziUIybOkuANyzEOC5fQhcVfWPY41PMxe
+	yNQaiC/3PlV3juSQygXEB9t5Yww54mmMKgFAEwvH1QgPzU+Gec7HzaKidAzCkQOnpdV6Le0wjcR
+	rpYusf8mgtyW5lGgi3hUhaDDjFGDvbVxIF+U14tjmxxTp6IR89/yNA2Xkz3Kt/oA5B+kcoheOCe
+	Y+3Z+KozgTOiM+NfduKsjGA==
+X-Received: by 2002:a05:622a:1aaa:b0:4e8:aa11:5869 with SMTP id d75a77b69052e-4f4abdd77c5mr248981421cf.70.1766569476162;
+        Wed, 24 Dec 2025 01:44:36 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEkNB3ACPi/FO+hv3JoHsZTBX5MuwuJtcjQ11szAJg+HHnPlCeIsNXx5g1+5A2cYrPCZrtUkA==
+X-Received: by 2002:a05:622a:1aaa:b0:4e8:aa11:5869 with SMTP id d75a77b69052e-4f4abdd77c5mr248981161cf.70.1766569475653;
+        Wed, 24 Dec 2025 01:44:35 -0800 (PST)
+Received: from oss.qualcomm.com ([86.121.7.169])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4324eab257asm33694829f8f.38.2025.12.24.01.44.33
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 24 Dec 2025 01:44:35 -0800 (PST)
+Date: Wed, 24 Dec 2025 11:44:33 +0200
+From: Abel Vesa <abel.vesa@oss.qualcomm.com>
+To: jerome.debretagne@gmail.com
+Cc: Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Johannes Berg <johannes@sipsolutions.net>,
+        Lorenzo Bianconi <lorenzo@kernel.org>,
+        Maximilian Luz <luzmaximilian@gmail.com>,
+        Hans de Goede <hansg@kernel.org>,
+        Ilpo =?utf-8?B?SsOkcnZpbmVu?= <ilpo.jarvinen@linux.intel.com>,
+        Jeff Johnson <jjohnson@kernel.org>, linux-arm-msm@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-wireless@vger.kernel.org, platform-driver-x86@vger.kernel.org,
+        ath12k@lists.infradead.org,
+        Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Dale Whinham <daleyo@gmail.com>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: Re: [PATCH v6 4/4] arm64: dts: qcom: Add support for X1-based
+ Surface Pro 11
+Message-ID: <qptvyecgevfbknaepnyplv2543wojt2cgj26kdsaaytnt6r3rk@kko2bjurdbyp>
+References: <20251220-surface-sp11-for-next-v6-0-81f7451edb77@gmail.com>
+ <20251220-surface-sp11-for-next-v6-4-81f7451edb77@gmail.com>
 MIME-Version: 1.0
-References: <20251220-surface-sp11-for-next-v5-0-16065bef8ef3@gmail.com>
- <M7kfFb5fz-WB43U_xCUwgxpmBJ4TNdp4jE6yFu6HmemIcDx5tXO6H4xnW_pEQz6DMkKm-3POdB9hIdB092zhGQ==@protonmail.internalid>
- <20251220-surface-sp11-for-next-v5-2-16065bef8ef3@gmail.com>
- <e0e9e690-c56e-4b56-90f9-2af46a7feaf3@nxsw.ie> <c29de60c-c7c6-45d7-8d90-616df23df01c@kernel.org>
- <v4hxei4t7n6ebvw6heoccei2t3mskq7uo7zejv6dyvvq5fr5sv@xzpsiic5x7a4>
- <2ff993a7-0fda-4337-9acc-92aaa75be750@kernel.org> <blbyjjkcxwnm5otgkodckxl2gx5ncelhnpqire7jt3yfdvszef@jgk6o7yvn2vo>
- <8b79b662-931f-4634-9389-6602d353d67a@kernel.org> <2ixwny6hzumlqmok5cjwutvtk7nzmx4t3dhxc44ao4l2u755pj@n6m7jyxf2o62>
-In-Reply-To: <2ixwny6hzumlqmok5cjwutvtk7nzmx4t3dhxc44ao4l2u755pj@n6m7jyxf2o62>
-From: =?UTF-8?B?SsOpcsO0bWUgZGUgQnJldGFnbmU=?= <jerome.debretagne@gmail.com>
-Date: Tue, 23 Dec 2025 10:23:04 +0100
-X-Gm-Features: AQt7F2r6BWEGW9jx_jVMTGjMo3TtOBV47eY3f046xBhruPQH5M5YwVt70mMlRT0
-Message-ID: <CA+kEDGHOpWm6Gbcr9MFfpUKoBo=Xys9Wz8J1+F+saRoYbEdpbw@mail.gmail.com>
-Subject: Re: [PATCH v5 2/7] dt-bindings: wireless: ieee80211: Add
- disable-rfkill property
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: Hans de Goede <hansg@kernel.org>, "Bryan O'Donoghue" <bod.linux@nxsw.ie>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Johannes Berg <johannes@sipsolutions.net>, Lorenzo Bianconi <lorenzo@kernel.org>, 
-	Maximilian Luz <luzmaximilian@gmail.com>, =?UTF-8?Q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>, 
-	Jeff Johnson <jjohnson@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-wireless@vger.kernel.org, platform-driver-x86@vger.kernel.org, 
-	ath12k@lists.infradead.org, Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
-	Dale Whinham <daleyo@gmail.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <20251220-surface-sp11-for-next-v6-4-81f7451edb77@gmail.com>
+X-Proofpoint-GUID: SM0Bz6BI_Iml6dbkWUSgwF25pp1RA57a
+X-Proofpoint-ORIG-GUID: SM0Bz6BI_Iml6dbkWUSgwF25pp1RA57a
+X-Authority-Analysis: v=2.4 cv=QutTHFyd c=1 sm=1 tr=0 ts=694bb605 cx=c_pps
+ a=UgVkIMxJMSkC9lv97toC5g==:117 a=DdBtMnqNxkYIvXj6ev4VzQ==:17
+ a=8nJEP1OIZ-IA:10 a=wP3pNCr1ah4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8
+ a=GlChVbD0Fj_pvowmbuwA:9 a=3ZKOabzyN94A:10 a=wPNLvfGTeEIA:10
+ a=1HOtulTD9v-eNWfpl4qZ:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjI0MDA4MiBTYWx0ZWRfXwIz0y+gJitlY
+ cRIJQqv13adfna12tpVNu8PjKwIEZnj/a/m/fWelYNWgaLGlNY64dMk3ccx72g7fmPJkhEiutGQ
+ 1Cww0blH3+Vd+HhKw7hkwOPzvX50DrY0zLNvwkTX5LXpNlZmRhrCmJbsCgPDZm4Hc9/R9Nkd2XB
+ nkQSDRoWheHjz+NLGlaAvD4xNjEQ6xXZO0acwO8hOC9Xg+KKtqff+enimR25tEUdKcuXLcNP531
+ YIX02P9Ouq/ZGxapoZaL9F/u9ApAOVZDS8FZbpvwT5EypcDU5YrmQlZ8oS+3ObXL5RwuOlno8kV
+ c8Iz4bEC9WuZaOcjLT+y4mdXufn5GA6560MZ4ZiU7SRu87OJj9Mu6o4pOwkBO50RB4lrmW7aZs5
+ bMjnnuGlCqvBX09ZggckIDvL5YZFE+j4vovOin9BfHcjNC0CQ2td9dN6RrtEFw469JklrzRHvcV
+ J5PXQBJ5XdolExWCLMA==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-12-24_02,2025-12-22_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 phishscore=0 bulkscore=0 impostorscore=0 spamscore=0
+ malwarescore=0 clxscore=1011 lowpriorityscore=0 priorityscore=1501
+ adultscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2512120000
+ definitions=main-2512240082
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_012342_995419_2351AACA 
-X-CRM114-Status: GOOD (  71.39  )
+X-CRM114-CacheID: sfid-20251224_014438_533388_DAC8F19A 
+X-CRM114-Status: GOOD (  12.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,291 +160,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Le mar. 23 d=C3=A9c. 2025 =C3=A0 07:31, Manivannan Sadhasivam <mani@kernel.=
-org> a =C3=A9crit :
->
-> On Mon, Dec 22, 2025 at 03:22:55PM +0100, Hans de Goede wrote:
-> > Hi,
-> >
-> > On 22-Dec-25 14:41, Manivannan Sadhasivam wrote:
-> > > On Mon, Dec 22, 2025 at 01:41:48PM +0100, Hans de Goede wrote:
-> > >> Hi Mani,
-> > >>
-> > >> On 22-Dec-25 12:45, Manivannan Sadhasivam wrote:
-> > >>> On Mon, Dec 22, 2025 at 11:23:18AM +0100, Hans de Goede wrote:
-> > >>>> +Cc Mani
-> > >>>>
-> > >>>> Hi,
-> > >>>>
-> > >>>> On 20-Dec-25 07:04, Bryan O'Donoghue wrote:
-> > >>>>> On 20/12/2025 00:21, J=C3=A9r=C3=B4me de Bretagne via B4 Relay wr=
-ote:
-> > >>>>>> From: J=C3=A9r=C3=B4me de Bretagne <jerome.debretagne@gmail.com>
-> > >>>>>>
-> > >>>>>> For some devices, Wi-Fi is entirely hard blocked by default maki=
-ng
-> > >>>>>> the Wi-Fi radio unusable, except if rfkill is disabled as expect=
-ed
-> > >>>>>> on those models.
-> > >>>>>>
-> > >>>>>> Commit c6a7c0b09d5f ("wifi: ath12k: Add Support for enabling or
-> > >>>>>> disabling specific features based on ACPI bitflag") added a way =
-to
-> > >>>>>> support features set via ACPI, including the DISABLE_RFKILL bit.
-> > >>>>>>
-> > >>>>>> Add a disable-rfkill property to expose the DISABLE_RFKILL bit
-> > >>>>>> equivalent for devices described by a Devicetree instead of ACPI=
-.
-> > >>>>>>
-> > >>>>>> Signed-off-by: J=C3=A9r=C3=B4me de Bretagne <jerome.debretagne@g=
-mail.com>
-> > >>>>>> ---
-> > >>>>>>   Documentation/devicetree/bindings/net/wireless/ieee80211.yaml =
-| 6 ++++++
-> > >>>>>>   1 file changed, 6 insertions(+)
-> > >>>>>>
-> > >>>>>> diff --git a/Documentation/devicetree/bindings/net/wireless/ieee=
-80211.yaml b/Documentation/devicetree/bindings/net/wireless/ieee80211.yaml
-> > >>>>>> index d89f7a3f88a71d45d6f4ab2ae909eae09cbcaf9a..c10a4675640be947=
-cd0b5eaec2c7ff367fd93945 100644
-> > >>>>>> --- a/Documentation/devicetree/bindings/net/wireless/ieee80211.y=
-aml
-> > >>>>>> +++ b/Documentation/devicetree/bindings/net/wireless/ieee80211.y=
-aml
-> > >>>>>> @@ -29,6 +29,12 @@ properties:
-> > >>>>>>         different 5 GHz subbands. Using them incorrectly could n=
-ot work or
-> > >>>>>>         decrease performance noticeably
-> > >>>>>>
-> > >>>>>> +  disable-rfkill:
-> > >>>>>> +    type: boolean
-> > >>>>>> +    description:
-> > >>>>>> +      Disable rfkill for some devices on which Wi-Fi would be e=
-ntirely hard
-> > >>>>>> +      blocked by default otherwise
-> > >>>>>> +
-> > >>>>>>   additionalProperties: true
-> > >>>>>>
-> > >>>>>>   examples:
-> > >>>>>>
-> > >>>>>> --
-> > >>>>>> 2.47.3
-> > >>>>>>
-> > >>>>>>
-> > >>>>>>
-> > >>>>>
-> > >>>>> Is this really a hardware description though ?
-> > >>>>
-> > >>>> I would say yes it is. The wifi chip has an rfkill input pin and
-> > >>>> things will be broken when that pin is hardwired to a fixed value
-> > >>>> rather then being actually connected to a GPIO from say
-> > >>>> the embedded controller.
-> > >>>>
-> > >>>
-> > >>> IIUC, even if the M.2 slot has the W_DISABLE1# signal routed from t=
-he host,
-> > >>> the device won't make use of it as there is no physical connection.=
- So you want
-> > >>> the WLAN driver to change the state through SW?
-> > >>>
-> > >>>> So I think that we would need here is not a disable-rfkill propert=
-y
-> > >>>> but some way to indicate in the DT-node that the rfkill input pin
-> > >>>> is not connected and thus should be ignored.
-> > >>>>
-> > >>>> This (the rfkill input pin being not-connected) IMHO very much
-> > >>>> is hw-description.
-> > >>>>
-> > >>>
-> > >>> Though we can argue this way, I would prefer to handle it in the dr=
-iver. For
-> > >>> example, with my M.2 series, we will end up describing the M.2 slot=
-:
-> > >>>
-> > >>>   connector {
-> > >>>           compatible =3D "pcie-m2-e-connector";
-> > >>>           w-disable1-gpios =3D <&tlmm 117 GPIO_ACTIVE_LOW>;
-> > >>>           ...
-> > >>>           ports {
-> > >>>                   ...
-> > >>>                   endpoint@0 {
-> > >>>                           reg =3D <0>;
-> > >>>                           remote-endpoint =3D <&pcie4_port0_ep>;
-> > >>>                   };
-> > >>>           };
-> > >>>   };
-> > >>>
-> > >>> Then if we use a DT property to convey the RFKILL pin state of the =
-device, we
-> > >>> would need to describe the endpoint device in DT and hardcode the s=
-tate:
-> > >>>
-> > >>>   &pcie4_port0 {
-> > >>>           ...
-> > >>>           port {
-> > >>>                   pcie4_port0_ep: endpoint {
-> > >>>                           remote-endpoint =3D <&m2_e_pcie_ep>;
-> > >>>                           disable-rfkill;
-> > >>>                   };
-> > >>>           };
-> > >>>   };
-> > >>>
-> > >>> So this will essentially make the M.2 device non-swappable unless y=
-ou change the
-> > >>> DT since you've how hardcoded the device property in the binding. T=
-his is
-> > >>> something I try to avoid to make the M.2 slot really swappable.
-> > >>>
-> > >>> For this reason, I would prefer to handle the RFKILL state in the W=
-LAN driver
-> > >>> using the device specific compatible. This will be problematic only=
- if multiple
-> > >>> cards of the same Device ID have different RFKILL state and the dev=
-ices are not
-> > >>> distinguishable even with sub IDs.
-> > >>
-> > >> I think we're miscommunicating here. I'm not talking about the card =
-having
-> > >> a broken rfkill implementation, I'm talking about the M.2 slot on th=
-e mainboard
-> > >> having e.g. W_DISABLE1# hardwired in such a way that cards would int=
-erpret it as
-> > >> having to always disable their wifi radio which is very similar to w=
-hat is
-> > >> happening on the surface device. Except that on the Surface there is=
- no M.2 slot,
-> > >> the wifi is just soldered onto the mainboard I believe.
-> > >>
-> > >
-> > > Ah, sorry for the confusion. I did misinterpret what you said.
-> > >
-> > >> Based on experience I'm pretty sure we will encounter M.2 slots whic=
-h such
-> > >> a hardwired W_DISABLE1# signal sooner rather then later.
-> > >>
-> > >
-> > > But it makes no sense IMO. Vendors will usually connect unimplemented=
- W_DISABL1#
-> > > GPIOs to a pull-up resistor so that the radios are operational all th=
-e time. I
-> > > don't see how they would expect a WLAN or any device with a radio to =
-be
-> > > connected to the slot if they hardwire the pin to low.
-> >
-> > Pins which are considered "unused" are also often hardwired
-> > to ground. If the m.2 slot is tested with a wifi-module where
-> > the W_DISABLE1# signal is not used on the wifi-module I can
-> > easily see this happen. I've seen a lot crazier / buggy stuff
-> > happen.
-> >
-> > > Are you sure that on the surface the pin is actually hardwired to low=
- and not
-> > > connected to a GPIO that drivers the signal low?
-> >
-> > I don't know what is the exact problem on the Surface. I just
-> > expect to see this more often, we've certainly seen lots of
-> > issues like this on x86 laptops. Things end up looking like
-> > the hard rfkill is activated all the time (and we often don't know
-> > if this is a fw issue, or an actually hardwired problem).
-> >
-> > Just an example from the top of my head the Broadcom windows
-> > drivers use different BT fw files for the same wifi/bt combo
-> > chip depending on the vend:prod id pair. One of the things which
-> > is different is that some fw files invert the BT rfkill signal
-> > because it is wired wrong (or there is an EC fw bug) and this
-> > is then worked around in the bt fw.
-> >
-> > As we see a growing proliferation of arm64 laptops I fully
-> > expect all the fun from having a gazillion different designs
-> > with a time to market rush behind them result in similar issues
-> > on arm64.
-> >
-> > Note I'm not saying we must tackle this today, we can wait
-> > till we see the first case in the real world I guess.
-> >
-> > I just thought that based on my experience this is more or
-> > less bound to happen, we could comeup with a solution for
-> > this now and then this solution could also nicely serve
-> > the Surface case which started this thread.
-> >
-> > But we can also delay tackling this and come up with some
-> > bespoke solution for the Surface case, like as suggested
-> > maybe a special compatible string ?
-> >
->
-> Hmm. If we want to go with the DT property, I'd use something like
-> 'broken-rfkill' or 'broken-w-disable1' or similar in the connector node, =
-not in
-> the device node. This will convey the fact that the RFKILL switch is brok=
-en
-> in the connector or the hardware topology is not known.
->
-> But we do not have the connector binding merged yet. Until then, I'd sugg=
-est to
-> keep the hack in the WLAN driver by using the platform compatible and Dev=
-ice ID:
+On 25-12-20 16:26:32, Jérôme de Bretagne via B4 Relay wrote:
+> From: Dale Whinham <daleyo@gmail.com>
+> 
+> Add device trees for the Qualcomm X1E and X1P-based Microsoft Surface
+> Pro 11 machines (codenamed 'Denali').
+> 
+> This device is very similar to the Surface Laptop 7 ('Romulus').
+> 
+> Use a similar strategy to x1-asus-zenbook-a14.dtsi so that we can create
+> x1e and x1p-specific flavors of the device tree without too much code
+> duplication.
+> 
+> Hardware support is similar to other X1 machines. The most notable
+> missing features are:
+> 
+> - Touchscreen and pen
+> - Cameras (and status LEDs)
+> 
+> Signed-off-by: Dale Whinham <daleyo@gmail.com>
+> Signed-off-by: Jérôme de Bretagne <jerome.debretagne@gmail.com>
+> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-If that suggestion is accepted, please keep in mind that this
-issue is also impacting the Surface Laptop 7 family, with the
-"microsoft,romulus13" and "microsoft,romulus15" compatibles.
-
-The SL7 rfkill issue is mentioned here:
-   https://github.com/bryce-hoehn/linux-surface-laptop-7
-or here:
-   https://github.com/linux-surface/linux-surface/issues/1590
-for reference.
-
-> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireles=
-s/ath/ath12k/core.c
-> index cc352eef1939..481778eb2c95 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.c
-> +++ b/drivers/net/wireless/ath/ath12k/core.c
-> @@ -77,6 +77,16 @@ static int ath12k_core_rfkill_config(struct ath12k_bas=
-e *ab)
->         if (ath12k_acpi_get_disable_rfkill(ab))
->                 return 0;
->
-> +       /*
-> +        * TODO: On Microsoft Surface Pro 11, OS is not able to control t=
-he
-> +        * RFKILL switch. So keep the RFKILL disabled until the OS learns=
- about
-> +        * it. Ideally, this info should come from the connector node of =
-the
-> +        * board DT file. But since the connector DT node is not availabl=
-e,
-> +        * implement the hack in the driver.
-> +        */
-> +       if (of_machine_is_compatible("microsoft,denali") && (ab->id.devic=
-e =3D=3D 0x1107))
-> +               return 0;
-> +
->         for (i =3D 0; i < ab->num_radios; i++) {
->                 ar =3D ab->pdevs[i].ar;
->
->
-> Once the connector binding gets merged, hopefully we can add the DT prope=
-rty and
-> use it in the driver.
->
-> > > It is just hard to believe that board designers can do a blunder like=
- this.
-> >
-> > Heh, you won't believe all the crap happening on cheap
-> > x86 devices.
-> >
->
-> Coming from the DT world, I thought the ACPI world is superior, but this =
-reminds
-> of the fact "No world is superior to another" :)
->
-> - Mani
->
-> --
-> =E0=AE=AE=E0=AE=A3=E0=AE=BF=E0=AE=B5=E0=AE=A3=E0=AF=8D=E0=AE=A3=E0=AE=A9=
-=E0=AF=8D =E0=AE=9A=E0=AE=A4=E0=AE=BE=E0=AE=9A=E0=AE=BF=E0=AE=B5=E0=AE=AE=
-=E0=AF=8D
-
-Thank you,
-J=C3=A9r=C3=B4me
+Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
 
