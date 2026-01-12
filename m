@@ -4,94 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E3DFD25051
-	for <ath12k@archiver.kernel.org>; Mon, 12 Jan 2026 08:44:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78C85D25050
+	for <ath12k@archiver.kernel.org>; Mon, 12 Jan 2026 08:53:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=LtuylQsGR2SHc1tC5K8cJ0nm8a9J5bKDyHrvDYl9Tno=; b=VI1HiZQ73al7wcWmmbaJ2boZ1J
-	ni7XRpcFoUQLiwso3bSm1lA2OY84HZpDZSwdQYfpc3zVA9ZAUAEyYabK1r52aT73sIacS2PUJEQ84
-	hA5GnTXvX6uJyzQt8olEP5CsAjo7jx4e/h/LHz+dtxWdfY0XP6V30F6wnNx0pv0D6UkjdZvA0cHPf
-	5Bybt707pMFF6bBitllExR+h/VXXdB66ciU7qVNhyC1eMQ0ZxZtfeIWweoZlDfsftFvK0qGyVjSfi
-	m4Vud573EJAt8FlqgD2vltlkOUGmVTBP8mnAZvrG4wQo4jXFS1lcJfR6LmhrL+fNqRerX/yBa8BQ0
-	RSTCZNFQ==;
+	bh=PWkCQrMVdcNN3iDMPf5vzVoyrfbbNe8+1ztYVn/Zmqg=; b=z/8XKJr2eOZojL0GbariroIbg9
+	utc10OyqkoeaX4+/0VwUWHq3H5hwDRGGYQi9Lyb66130Qw5WKCa3ZGMxxbQW+UV0+FVFyb33QsZtt
+	CbKVvnV3JAgXNMIuoNGKWxoAB8rLZ5jOQpTYfziiVqlmfo6rDGHCVeJ6TZSdXMDfZNtKpx152WnsV
+	gbTK+w+8SkpRDMkaOIyuGWHBGj1BzfpBa3NDDg8smvqXZw+wNA0y6ClZrJuB5j56Rqfjv+evRVP2x
+	IgrgCFbsvDkKZfT4F8CgqMcOCIz01yXzXyldfjomvJwN9m8vzIwB8AnY6OFp2Me2PrEAjTRPGnpVC
+	bGVrFreQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfDX6-000000050mN-0uRJ;
-	Mon, 12 Jan 2026 08:44:16 +0000
+	id 1vfDgL-000000051lt-0yUz;
+	Mon, 12 Jan 2026 08:53:49 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfDX4-000000050lx-0csz
+	id 1vfDgI-000000051lQ-3vk3
 	for ath12k@lists.infradead.org;
-	Mon, 12 Jan 2026 08:44:15 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60C844bG1041986
-	for <ath12k@lists.infradead.org>; Mon, 12 Jan 2026 08:44:13 GMT
+	Mon, 12 Jan 2026 08:53:48 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60C83BOA3072041
+	for <ath12k@lists.infradead.org>; Mon, 12 Jan 2026 08:53:46 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	LtuylQsGR2SHc1tC5K8cJ0nm8a9J5bKDyHrvDYl9Tno=; b=a8Khh1qYWW8HLxlH
-	oxFCQuNlu0z2GrNyeqmnjBk6S5EMTmD7bsyhLapB2SJ2V30U+Vco5ARwx1+iz/Xc
-	6WN1UjF3/wiLFaClaS6InISKXPtRuvwXF01q+Xr2rAfbHvI3aFMTo3Q/69r96IMd
-	Yv6E2F3LVAuM/QXkYr4RXOO154UMT2bFoInKx7lGn3fwIW5uCQlw/7IeFAwSeHfh
-	ztDYACUFYVhi85Zvi6F/NRxUL4dKMZnyPFDGJ4CUjQkopLzJFlGdYy1g5LoTTRNP
-	Q2MXyE0yC4YSyItGdAC+ElZD24Dp2EtdxAHkPy3kSGQE+dFZxexxEV768amXPXQc
-	H+lHgA==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bkfxfv5y8-1
+	PWkCQrMVdcNN3iDMPf5vzVoyrfbbNe8+1ztYVn/Zmqg=; b=hwSFANl1H5fAwBPG
+	TVHt5jto1u9+H/VGFbWAu37FDkvW5uhj12YUA7atyxL3GFuX+c17Aux9Fn+47vw4
+	qGcRS8u+UcE5Pp/dFWZ4k6FF9w1dapROQ0xO7k/ciIIooeN1Wdq5gV5T6KlyrTVJ
+	6MP4iLTyTobxOqPKh3ZDztmz53UOv8QKIJWANq6xU+IA/hWH/hWa8g1Rt74GqqIW
+	a34zmXfDG0ltJWi7PjLYU4Vd+mS853Gh0HPLB1nwupDvmZt9zA2GRbGOybwbQ8if
+	j2BSIde+DQhGwEC3ELPft3OZ/Am9foakx2fqdFEZSk9scxTUHKMD7lFF/AP+5qB5
+	rQpsxg==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bkntukpm6-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 12 Jan 2026 08:44:13 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-c56848e6f53so1386096a12.0
-        for <ath12k@lists.infradead.org>; Mon, 12 Jan 2026 00:44:13 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Mon, 12 Jan 2026 08:53:46 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-29f1450189eso44606485ad.1
+        for <ath12k@lists.infradead.org>; Mon, 12 Jan 2026 00:53:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1768207452; x=1768812252; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
+        d=oss.qualcomm.com; s=google; t=1768208026; x=1768812826; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=LtuylQsGR2SHc1tC5K8cJ0nm8a9J5bKDyHrvDYl9Tno=;
-        b=iT5wpodq72F2wHo0Rzja76w2Kx2pU9VyCcTSg7cJbIvlB5tijT32pb86wdUcjylrLX
-         7WSSfLlg9p259WyLm5g41P0/t33ZjcNmOdS/5PngNC94Avoo3um/EBdoMqvV/uU2B1iL
-         RFmZLTiHI1JGFoyXjRBEdUTC0sFY0evgy1NsG9edpbUoeDiQ1tZNjxM9hzWOcuXmaax3
-         G4HL9AC706MWK4MBg/gE5vMaQHSxPWOLcI2ys+oKnsjCGunDRtVhiGOHcN2unzfZPvcw
-         Mul8G2ljYN5e5BBehNCwQFr6J0A7I9eblxV0w7/Fp8yHwAUg5uxSa+NGsYcBQKtJOIlu
-         21cA==
+        bh=PWkCQrMVdcNN3iDMPf5vzVoyrfbbNe8+1ztYVn/Zmqg=;
+        b=DWQOjiZkskCFNDYKfyGWykSCoHVslfWllWM3j/eiz2rtkbBCAFxB9D3w7GfKLu8Zwj
+         20NOO4WzFx7f+VCtW/mquTa0PbopnSdbrSOacPbKePWdOOegB1FxGbQ6q8wuaf/dDPCU
+         XVCEep1aKnpXoGpKP7uDVuuB09j0/ipEFH8I1Ax7tMWdSSYVsd8s4+BFbo6Gb3AFonv2
+         QLCzdgHegkA+nQ3YVFMeJ4jFzL3w/O11LjbZUynvycJrelGB9VL2IsFk8fr1r1atISbn
+         rBlZ93oFhuXPCX9V351ZHam4QTVICaDwDJ9F3sd0ZTQhljF0QV0VRWQv78DEhYyARoX6
+         dY1Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768207452; x=1768812252;
-        h=content-transfer-encoding:in-reply-to:from:content-language
+        d=1e100.net; s=20230601; t=1768208026; x=1768812826;
+        h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=LtuylQsGR2SHc1tC5K8cJ0nm8a9J5bKDyHrvDYl9Tno=;
-        b=Ph3CosqRKhNMS0zAtg0TPeFk9eXeyFOrTHnjubRemgrCGhbM2lvGa9QvA6qlrV+m5u
-         7PtK2PYaxfyyi0rKQswhm4qQm5Uoqa+yerHFQFzECil2CiMlegj2BB+rjJgqXSa5kh+g
-         8lmeL0JJe3SwsRKDDw9V813Rbi0wZ/jx9mL0ScGyie+jjplaTEZKp1Ekox3HxGawjH91
-         1fS24luiCaDDcIby9jk7QmTsUtHghUaBlEZsGjD7em+krcsWcCLfO9q3Bt/iT2CHTfsr
-         8Xa8NC71ij5tiXU/xr1QX8RNFsokUHLl1qaxwXpJwzO9AGjTO2CseK3LMEcdetQEZf+U
-         xD7g==
-X-Forwarded-Encrypted: i=1; AJvYcCUGn7xjnm5wG9SXZOh9YHz7j9fuW4kXzhhFAtcJjukwOdQi9ELI+ky91Lkra0O4KMRSsYdIz1s=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx3NYhSwT/7IUoyeXDJXKI9tMOoU834+riWU9zIXhcJYeLW0c9n
-	jahTKYKol9weRLxvB9ImlV9QvPp1YwV222uIxkNFexCmntvEhbieMuZI+UzNpE9EoAjb/2VC37F
-	UElFG0bYJJTgP6g54fsipVvxBsSiWKClOVOHyILiOHfYzejCYCcmznjooY20JKtD+
-X-Gm-Gg: AY/fxX5GPiCto9QKeHuGSBa5MlenXxLgQcZitiSK7jgqCP4q/Nr1d64gCNIL2gt1dls
-	MWqI7hlczfnwoE4FxxnT+JMhp9sR+RhUkXYpJ1A1ty6dCl/ukBHYTkBrAajAJwmTaWfGo8dtxb2
-	79ANfsVSJOy2VAwipujgp9xve7Tzf4vltZUgvmKK/FlFRU3psA5e/zuBgDGpEqtjmuMsEeKd2W4
-	y1x6kW7g45HQqi2SlbzeBkJivnX8RgS5dmUrvLXW7yBBCbvQx+UgHmjd1K9vpxtGFp5fwCmEVDY
-	RIAtevxENSA6K2RmfZL0ZLurTyCYKr6EW6DqDcfo0hQ9nzwkuPzfhHHaiWpDvz8+GynB3zwk9jO
-	IlnOCC/zTF+EFqDiQpmOY7usd0+g2XULsrgrdn/I/Qz0Y9Q7bkRhowko=
-X-Received: by 2002:a05:6a00:9086:b0:81f:f5d:e1a6 with SMTP id d2e1a72fcca58-81f0f5de6e3mr6521274b3a.58.1768207452538;
-        Mon, 12 Jan 2026 00:44:12 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHq7NFkE4v7sC7fUG2lzdAtaGT7wu2cdRhx8GoQ3pjyOCC1K1KcD3iCMGbL+8z+DJWRyOYSew==
-X-Received: by 2002:a05:6a00:9086:b0:81f:f5d:e1a6 with SMTP id d2e1a72fcca58-81f0f5de6e3mr6521259b3a.58.1768207452013;
-        Mon, 12 Jan 2026 00:44:12 -0800 (PST)
-Received: from [10.152.204.0] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-81f106e9be7sm6620903b3a.47.2026.01.12.00.44.10
+        bh=PWkCQrMVdcNN3iDMPf5vzVoyrfbbNe8+1ztYVn/Zmqg=;
+        b=qxoy66uIiwJ/9vZGuZ6SbSNtwmRK/w8mvxBrsCzAqactVZ1G29VWXa9B89GfeRQSCG
+         IDHv4M6/p5USeDKf6Gd92Swt6IhA1RG6Bv3R9CaQDAReVTLfv/872zPGUNWcCIgM6TCY
+         0CEah+Ki6ETejSISjc1s/KCBgBbXGPvMXvkltMmnJLxvfUAcj/E1ixHsrrSBg6sIpU5N
+         +6jerEy+Dhwtfi3TWSmDY8cbc1WO6LGsRWiZZLzh1XEhAlc/FPvvYlRHHQ7iSkPqWmzE
+         QA7U6UFrhXI+W2T15Zf92PIMwwPgtd+wlUVtXRwhSE3UOOEqPeoVB2fg51MHH+kKMog/
+         ndLg==
+X-Forwarded-Encrypted: i=1; AJvYcCWwdmQIUN2K9TVcZiGqHWSLOX5WFkD7UeJQF9z5jpaQOhhVNrlN2Hz+ZwpcWp9X/aZUL/9Qdoo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxIGMH8TQ3c+aI9SFoLcRl+mtOwYqSMKOi6eEI8xcyIxXMws86a
+	J/qJSjpbvyD1gA0iNyBlAAnGa2DemKHqt7SRlvElPpyOsJ9vnnDntpgOoAIGldA1GPPH0PrHGe5
+	mA9U7HtsmDd+kcfvhjsldWM4VnLvEOeajcCvzakOx+Tv6b2KbqJDSOhu0F5uhzfff
+X-Gm-Gg: AY/fxX4PwTX+rrhjc1JIL+zbTlpx9JyJYteNkXK0OoOCbeAR4PS1DnnQX04RPrxLjzF
+	ovC9krhWAQb1R1iDWEqJEt2e/z+VQZTXSNfaeBHDTjoS2bQ1aPKEBPNYZO9pK+ArkksXcV4adi7
+	LZfZgz1+LoQZHhk41FMcYfUwMiVxi7U7p5fveZFGgPTrSu1ENpk6SNzTJ0Rwk2M7CLu0QAOcSyB
+	axLs3MIfpQXkqTsTDikGzvQA7zvJCmiqxJ+i7cpAJg6GvSdShG+U8iUSZ6Ybnz04igT6fDdlkcJ
+	AyamYBTtudlEyczYJ4nplUXb04n+PESikRTz4lfTgIQmoH7Xj0WAEr0/sX7T6gdIMnncoNe1Xcg
+	HUZIRG0urd5LDxEMAzAki6Db706vytEpZv+6kdvY+tuD9/ONzA4w4UIsxC3IrmbyjFixNMQzs5D
+	NPLQie0M0=
+X-Received: by 2002:a17:903:3d0b:b0:2a1:3ad6:fab3 with SMTP id d9443c01a7336-2a3e398244bmr192928365ad.1.1768208025758;
+        Mon, 12 Jan 2026 00:53:45 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFKlV+4r56idUQPnjdvCP2LdvJBCgqv0nR7FqSVZHFjbjhnrVVHBD1fhu/ZRznMJ6bG9A0f2A==
+X-Received: by 2002:a17:903:3d0b:b0:2a1:3ad6:fab3 with SMTP id d9443c01a7336-2a3e398244bmr192928235ad.1.1768208025290;
+        Mon, 12 Jan 2026 00:53:45 -0800 (PST)
+Received: from [10.133.33.243] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2a3e3cb2df6sm170159115ad.61.2026.01.12.00.53.44
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 12 Jan 2026 00:44:11 -0800 (PST)
-Message-ID: <5a4acd79-ef1c-4fcc-896e-ac0d948a1722@oss.qualcomm.com>
-Date: Mon, 12 Jan 2026 14:14:09 +0530
+        Mon, 12 Jan 2026 00:53:45 -0800 (PST)
+Message-ID: <f6c5c5cc-8dad-494f-91ef-632b5316a9a9@oss.qualcomm.com>
+Date: Mon, 12 Jan 2026 16:53:42 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH ath-next] wifi: ath12k: cancel scan only on active scan
@@ -100,37 +101,37 @@ To: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>,
         ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
 References: <20260107-scan_vdev-v1-1-b600aedc645a@qti.qualcomm.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 Content-Language: en-US
-From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 In-Reply-To: <20260107-scan_vdev-v1-1-b600aedc645a@qti.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: bo2OBFna-NX_Hl6sFtNZSyK0cnksEXYM
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTEyMDA2NyBTYWx0ZWRfX8uPULWfWh02n
- QdPkx22Lpd0omJRUm4mjR2ljGuVov+T6v7VtE3SDvl017AcmXrHC27Ai3o4BiP0e8RrCWdzzy80
- rn4eNsMVR50NuY76dBQmZBTxRVUgZpg6JDts+Fq2wQK/+EHwiGP1jM/BmQDn0cApprG6sJkxGe8
- SeZgN87f8cPu1Hxpxb4dVpjHpaNp6TmP/a+lFvwJt6gdLnT0H3yJzLPskal8efbc3bZ+zwItres
- u8TgVQy9EytebbH+ZhUGGu7xtL9FP4gLhsgQXb0Sr4ez0FD/7g2pz35vV0bHgjLWe7IXB4ssyvi
- NtbWHtfBp1oJlpWTg63mRX2rWbAcMRju9jkeePPUvgWduOaxGjNXECiZinJNKV9XW7Rd+QuwVc6
- YpsiRfrSU8PMj2M887REYiGVG/RO/cohHzfM8kcx92mxS/pTlMzMt3NlHcjAugd0wpl4Bl1dhd1
- dw3iuj/jgEjUJkYswSw==
-X-Authority-Analysis: v=2.4 cv=c7WmgB9l c=1 sm=1 tr=0 ts=6964b45d cx=c_pps
- a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTEyMDA2OSBTYWx0ZWRfX3wWpPDvywmjM
+ xF0p6d7aEnm9AQ66je6IjZsoIWtDA9yq3yb3xqCuqsGDKaGVrJDo1JN8V+IcrkPf6HoBIvQ/6Jj
+ 37fJyLxLc6shfjXsBgErGLCYa87Mq058C9av4m5IFB5mG3rbf56QoyN8hfPi7eJ2/IosJ6TTtlk
+ 34HVFmDrTSnxqOKHGzps/5zx8XwRNXx+es5XMqFBrcpK+xVkL9Wd0kMEozjVGogpViXC8CzBzkM
+ D2mPin/L4hCVoSu/0Db9iO6eSNzfb9MLjwo+8j9Tlk+1tsrxzxRJcj10iz4ps21ZAea9IyhPbHf
+ ncoxBtWhrXVqG4v/D+xt2So6tcAB24twSbyoixIWvqx6SulHr1nR+kpTZgWgU5TvoZjwpad7vIt
+ aYD0nZTXrxUnABPKNgnUE/b2pEHqE+Yob2xDlSIcA8gY2REG0d0FK3MpH3TJVMquOiTE92cpdF2
+ 6RUzh9n2sx1eNu0kIVg==
+X-Authority-Analysis: v=2.4 cv=R6AO2NRX c=1 sm=1 tr=0 ts=6964b69a cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=iFBeAqSSch97oa6bARUA:9
- a=QEXdDO2ut3YA:10 a=_Vgx9l1VpLgwpw_dHYaR:22
-X-Proofpoint-GUID: bo2OBFna-NX_Hl6sFtNZSyK0cnksEXYM
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=pvcN0sP83juaDmYZ9xwA:9
+ a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-ORIG-GUID: r6eT1j6lr1CWWcrzxZ2m2sy4fCAt-FVy
+X-Proofpoint-GUID: r6eT1j6lr1CWWcrzxZ2m2sy4fCAt-FVy
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2026-01-12_02,2026-01-09_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 phishscore=0 priorityscore=1501 lowpriorityscore=0 bulkscore=0
- spamscore=0 impostorscore=0 suspectscore=0 adultscore=0 malwarescore=0
+ malwarescore=0 bulkscore=0 spamscore=0 clxscore=1015 priorityscore=1501
+ adultscore=0 phishscore=0 suspectscore=0 lowpriorityscore=0 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2601120067
+ reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2601120069
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260112_004414_199624_4F7B14F6 
-X-CRM114-Status: GOOD (  15.49  )
+X-CRM114-CacheID: sfid-20260112_005346_984156_5DBCEC47 
+X-CRM114-Status: GOOD (  21.72  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,7 +148,7 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 1/7/2026 11:32 AM, Manish Dharanenthiran wrote:
+On 1/7/2026 2:02 PM, Manish Dharanenthiran wrote:
 > Cancel the scheduled scan request only on the vdev that has an active
 > scan running. Currently, ahvif->links_map is used to obtain the links,
 > but this includes links for which no scan is scheduled. In failure cases
@@ -160,11 +161,11 @@ On 1/7/2026 11:32 AM, Manish Dharanenthiran wrote:
 > lr : ath12k_scan_abort+0x20/0xc8 [ath12k]
 > 
 > Call trace:
->   _raw_spin_lock_bh+0x1c/0x54 (P)
->   ath12k_mac_op_cancel_hw_scan+0xac/0xc4 [ath12k]
->   ieee80211_scan_cancel+0xcc/0x12c [mac80211]
->   ieee80211_do_stop+0x6c4/0x7a8 [mac80211]
->   ieee80211_stop+0x60/0xd8 [mac80211]
+>  _raw_spin_lock_bh+0x1c/0x54 (P)
+>  ath12k_mac_op_cancel_hw_scan+0xac/0xc4 [ath12k]
+>  ieee80211_scan_cancel+0xcc/0x12c [mac80211]
+>  ieee80211_do_stop+0x6c4/0x7a8 [mac80211]
+>  ieee80211_stop+0x60/0xd8 [mac80211]
 > 
 > Skip links that are not created or are not the current scan vdev. This
 > ensures only the scan for the matching links is aborted and avoids
@@ -182,6 +183,31 @@ On 1/7/2026 11:32 AM, Manish Dharanenthiran wrote:
 > 
 > Fixes: feed05f1526e ("wifi: ath12k: Split scan request for split band device")
 > Signed-off-by: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/mac.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 2f4daee9e2f0..950ca7536612 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -5606,7 +5606,8 @@ void ath12k_mac_op_cancel_hw_scan(struct ieee80211_hw *hw,
+>  
+>  	for_each_set_bit(link_id, &links_map, ATH12K_NUM_MAX_LINKS) {
+>  		arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
+> -		if (!arvif || arvif->is_started)
+> +		if (!arvif || !arvif->is_created ||
+> +		    arvif->ar->scan.arvif != arvif)
+>  			continue;
+>  
+>  		ar = arvif->ar;
+> 
+> ---
+> base-commit: 631ee338f04db713ba611883f28e94157ebb68e5
+> change-id: 20260106-scan_vdev-94d8cf5a667e
+> 
+> 
 
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+
 
