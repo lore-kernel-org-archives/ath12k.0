@@ -4,66 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEA44D44C50
-	for <ath12k@archiver.kernel.org>; Thu, 15 Jan 2026 14:18:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4AB6D4A5E4
+	for <ath12k@archiver.kernel.org>; Fri, 16 Jan 2026 01:27:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YgTnJsTai7FjZCieWiXAib1IJbxoUGHkwkLU9+Ktvzw=; b=AGQ71AFN0Q3B9GeZdvvl8pkOKu
-	WvOpCQ4NIsAnGlzPO90a4CH0euSVN25S1MyKxePI9A9olbpY25TNa1SgIf+AW/ETlY41vk3yL5oEH
-	VUEu0zg6Om1XrrJd2mGXZNablqUv+E3pHLpDI+A+3MiRHDqY89l+0M7zdgXkQOkZhTwhh1AItGjnz
-	ToN63Jc5KoQnQoqPM1Lzj1s/p/+fQjE9UuNo7qS+LzkRLHUqpyYaO3ZC4wgXN8FfNBOFhlrQqhxI6
-	mzvMnDpI1oZsFOWmA//RiaG0iz1EvtsqRN2L/vs4CVbMPPx7p/NCYxxHBp6RKDArs87FTfxYi1g0z
-	KAgj43sQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=u0/7TgnXglvXHpjdE+gHZmCF1bpUq+ROebyvEVwJOBI=; b=ZoMKYIWcBeWmpxjVWNY6G25dCe
+	cbobIIznjjBTH6mhaN/wIJqMptk0qRLy943hchCW33NEskjrG8qx8g4p+3tp5ZKb5Z0BdrBj0Z53A
+	6HHCaJ4GLx/TNTMI0AZvuVsbgFe2thDYjKEgZWy9vUphsIprQtabX2WBxk6utSqLtN0boMLpouBHT
+	SjjkbyWuKWxDLtj7IfSoKL1ZDJM6aJF5eDWzlxQdlMZCObKXpxpxXw2NAnq9Do0bFcdyhkSZHhzzH
+	gFt52pmajQpSV2LAKmfE9PzM/qnWqrqilTsgoWX9QxxiXvRNZIx1znqJGjqJu0A/5L2F+GIez9319
+	+RuzjISQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgOAu-0000000CSsb-1lo9;
-	Thu, 15 Jan 2026 14:18:12 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	id 1vgYcH-0000000DQ2W-1lJY;
+	Fri, 16 Jan 2026 01:27:09 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgOAp-0000000CSqp-2EEA;
-	Thu, 15 Jan 2026 14:18:11 +0000
+	id 1vgYcF-0000000DQ19-0bf5
+	for ath12k@bombadil.infradead.org;
+	Fri, 16 Jan 2026 01:27:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=YgTnJsTai7FjZCieWiXAib1IJbxoUGHkwkLU9+Ktvzw=;
-	t=1768486687; x=1769696287; b=l+qrIkLdFNtNBASMadyIkjU23AllovQkYH/1a5Ja2PkBPG3
-	JHz7bhkqV3ivt6n1r0KOsyARt83tEnuRlX8ZBhPezq+JwVFZ4qpEWK6du1/B+Kin4zliPB+d7ijyO
-	t2e6efehzLRzWqqEf985HiRbDKbS0TeYTbicapa8C0D5Kki898L35rI6RhYyNnZJyCqZQT1nKQtj5
-	PRXBbvcqZCWvrHuamKhVNMrJhcB1yPcaq+BC96mEdu3I1uRGoccmamjepjA0hhMFia+PSfMLwutgV
-	Hyt1I6VowAGX2YGrJmz+k2jz1XPjq3+DPbzuFzjLcCVoP0i3OUt30ot57+LN98uw==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1vgOAh-0000000CYt3-3aTm;
-	Thu, 15 Jan 2026 15:18:00 +0100
-Message-ID: <52356be3d21920d84579d1a8fd803540c6f9644d.camel@sipsolutions.net>
-Subject: Re: [DESIGN RFC v3] AP Architecture for Wi-Fi-8 Multi-AP
- Coordination (MAPC)
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, Abhishek Rajkapur
- Suryawanshi <abhishek.suryawanshi@oss.qualcomm.com>,
- ath12k@lists.infradead.org, 	hostap@lists.infradead.org
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=u0/7TgnXglvXHpjdE+gHZmCF1bpUq+ROebyvEVwJOBI=; b=MjyTz79MUg+9tdKb8NUnI8744X
+	LqLIfqMYGsFVWnzAAtyNeITz6Oni2v2wbIUER594cub+bZQUvYfSgaSPkiT+PsFtuIA8i6t4YOKb0
+	HGnT0pQGAJSJdKnyicEN5EPda7Q4Hg5k/UpsVLXSxBugUTqKbA7G4yJxljykk/voEyXus/2YR9YiK
+	aiN7yef3ZMXb8pgz4ZhFrGhg3a4OHzqWSep4JayQ0AwCQefkIbnmGdqFTOmIuQGJ3leqgtPaxDvGW
+	7kOsIyA5rEfkHaixerJeR9OUV+m54RYfi23ilnGTd33miMoxGanVv+71yOGmTlpioB7Vm6rPUqoz7
+	4Rx273jw==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vgYc5-00000007tY9-2bmm
+	for ath12k@lists.infradead.org;
+	Fri, 16 Jan 2026 01:27:05 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60FMkkTm3892781
+	for <ath12k@lists.infradead.org>; Fri, 16 Jan 2026 01:26:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	u0/7TgnXglvXHpjdE+gHZmCF1bpUq+ROebyvEVwJOBI=; b=aXblFprq4XNaMmu1
+	Cq7iHkjmOHA8vEIhqypMZx9zOY9yac9ZNZ+mGrbng6gYtsDHRGOeS1dg6iFki9+c
+	5GIyLorKt2V+5VU6LkxIV/v4/CTiwm0FVlutLbcHWZxfriYnEg0hoDg74HVl0ptu
+	OO1afqk07NXEVampZeBNNiS9N6FeeH43oomgRd31NTmR5rtt6ZhEGPPtGo/6RmYF
+	MNnWs5kFvP326F/0J+OGu4py9tn6Gc0iUbdcVcKXu8SIX9MIdAZAKxfUHgcb43Ol
+	ljR9MlXm79hu0dPBSdeThQE+s3KsbqYVJH5mNEKxUVVoa/MUVtBBOzcp1wxDuLOH
+	oG4ZBA==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bq9b08ajg-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Fri, 16 Jan 2026 01:26:52 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-2b47ce772e4so6399091eec.1
+        for <ath12k@lists.infradead.org>; Thu, 15 Jan 2026 17:26:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1768526812; x=1769131612; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=u0/7TgnXglvXHpjdE+gHZmCF1bpUq+ROebyvEVwJOBI=;
+        b=iir/FQMd4LEq4klNnyVXhaQ8dsiL4j+I9dzQpWWAfKCj9bHvax+HOvMq6Nu63epijQ
+         lnGrW8vi38gEeuogROKFSvWjRjfsXphbcrd+EhjTbULQ6Mkc7yYLWoRvrvpIBVkwr77C
+         fzEuecBzxuYxKP/kjOd3UTb5I+vtEXyiPuctCjmNYFZ28PxX2KOMXRWbVRXkq4B36l0M
+         Ky/llv3TIlwErwDdreowjmVR7l/ZfY26LFnBz0jjyliG7m/jeBVqxrMoxWSCH0jyeTnC
+         Hkk5Tnax7U63rPF679u3dE0F23GaGF7SIJ8TsGGj+NL0v/8aZNJY/JJvfYCbYH2pzD//
+         qlcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1768526812; x=1769131612;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=u0/7TgnXglvXHpjdE+gHZmCF1bpUq+ROebyvEVwJOBI=;
+        b=Ez4NQpaLwlS3pqle/p57dOMKRI0J0Vvuby1XyJfdiseGz6zM4tbuCTp9p2CvgMlnhv
+         nbO9HjczD3DfsgNoLPeXtFuCnZ/nI/pn9CN5IePyOjDZkHlA5wSMKUiypi3qSHUyfs8M
+         PITUPFrFnkS3v1U89xQ0G+/p0G9kopoWxKb8kAWIVZX5/gDKJdlfAn3QkWshzuPKs6H5
+         SlbLKzNxiKFARxEANUTtIRJNAzHi4oB01mxNDJYR6TKR2U5EHs5ilPYLdHI72n74N3Y3
+         vNPATqlz012a3KAG2bw89u6mLCiIEVCciDr9ZOqOUHWKRo7sdPqL46ROmxWqTC3eHrZz
+         c5Vg==
+X-Gm-Message-State: AOJu0Yy+X6QjrSxXknQSsodCuqvXnb6w1at7q/RhLWUpF1SvDjhb+sHQ
+	qIm0gpLaZPkIoJSpn5PLQ/nJaFKPaeKpkYeIMkE1+eM8HHRVcmNSX8aGpl5Q8unYYLzUgKXhWxG
+	bfT5CKGHS1RYYzRVZePire5LMxB4cD7d8U223mJ/kIFQwE6+/4iBrpyUTYvbtAYxOc3AIqBmj
+X-Gm-Gg: AY/fxX6IUsS13b1QoP6OGY0cMyV/Oe4MCO0fGsc0PsZU/+cgKblReR/5yby6o8GspS1
+	BJARrN7OcTodXNqfpBBnFZyxxrqY1IPylNwqJXRrmpvzjbCbFS6RknHig7pK6+TKlt95hRyNpFb
+	YlK/B2IfpcKTsEXnxCxfH0+B4SzaVDQfY6MwiNYhkIUwhejjh9ip0zTzGyxicEKFTrZK5dFAYnk
+	P9chP5iiC4pNFXf9W041j+YfbxUlmeKfLx33yTfNhwTAZMWz/y3b+3XkIfLO1ujtfn25NoJYig6
+	BHg+pNnK6CDCGOLbSp/MbVLFJVcxtPOU/FQgv+xG4v0m6GWOhz0kPs/ii4WE9FN7n1IwR1P3BNP
+	8Xt1kUqtEM6sXNzIExlMYDX+Z1CwrPVCMnQZgmhr+ZJwwH/PLOvmaSKr7tYflqfbY
+X-Received: by 2002:a05:693c:2c8d:b0:2b6:ab62:ae74 with SMTP id 5a478bee46e88-2b6b414a149mr1122181eec.35.1768526812004;
+        Thu, 15 Jan 2026 17:26:52 -0800 (PST)
+X-Received: by 2002:a05:693c:2c8d:b0:2b6:ab62:ae74 with SMTP id 5a478bee46e88-2b6b414a149mr1122168eec.35.1768526811361;
+        Thu, 15 Jan 2026 17:26:51 -0800 (PST)
+Received: from hu-jjohnson-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2b6b3502c91sm884104eec.9.2026.01.15.17.26.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 15 Jan 2026 17:26:50 -0800 (PST)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: ath12k@lists.infradead.org, Chien Wong <m@xv97.com>
 Cc: linux-wireless@vger.kernel.org
-Date: Thu, 15 Jan 2026 15:17:59 +0100
-In-Reply-To: <63ff0362-4ee4-4f13-a212-dc1351eefe08@oss.qualcomm.com> (sfid-20260114_201523_158312_F45EB4BD)
-References: <653a4207-38f8-408c-8067-c4960c11a71f@oss.qualcomm.com>
-	 <05381371a41f154058429f0a1079204c4a454f45.camel@sipsolutions.net>
-	 <59cec65b29ded381c85d1be943d88e956a4b7e74.camel@sipsolutions.net>
-	 <63ff0362-4ee4-4f13-a212-dc1351eefe08@oss.qualcomm.com>
-	 (sfid-20260114_201523_158312_F45EB4BD)
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.56.2 (3.56.2-2.fc42) 
+In-Reply-To: <20251030143041.12027-1-m@xv97.com>
+References: <20251030143041.12027-1-m@xv97.com>
+Subject: Re: [PATCH] wifi: ath: fix comment typo in monitor mode handling
+Message-Id: <176852681078.1143034.12947197593422605136.b4-ty@oss.qualcomm.com>
+Date: Thu, 15 Jan 2026 17:26:50 -0800
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.3
+X-Proofpoint-GUID: UVCzdbauU65gAM5cd5TcYrPq7PXDPARK
+X-Proofpoint-ORIG-GUID: UVCzdbauU65gAM5cd5TcYrPq7PXDPARK
+X-Authority-Analysis: v=2.4 cv=TcmbdBQh c=1 sm=1 tr=0 ts=696993dc cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=WD2RVSGR4ZOmZR8fVjQA:9
+ a=QEXdDO2ut3YA:10 a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTE2MDAxMCBTYWx0ZWRfXwGjRyKXC9iqk
+ 29DGXWpXvdM2w4HkaA6J+liYLl4uxqsJyXqBQCpy8WQsR83lOGFvVhcCFErUHoghzup1sPPnDr8
+ aIH6Uc9A4hzds2Bed+SfWVgKwdDFgjs3cGDLgPtexYT5T5AIfloPsj5XjrsbFuZt8RyqqjNx3aV
+ MTFgqFZVNfVTSvj1HesjkHwVgDqDFlQODLObNBFubUEXEeYFYUuJiYa1ppi2dJHyPwUQ/3nJJke
+ KNtf1NMHn8gICxYTkZf3pqieD8syegbc+QNNIVNGFojhSJXlVuMxK8ds1GVXCyAl8cvhDcyRVmx
+ WlvAAFxtVHyiAnbfwCAzUHSs4QTzRqFvVl6gLuJvoKRhqa/UlLs5zTdgM2oCb4Z3Jn23WKP1XKI
+ WJ6Mz6nu3iOOAsAxPBlot6xjXUDEJJUPWYL1B276cjYHn6hCXLpJZG9eYRHU49OiVFY4lQttEVh
+ lbY4iWldBt3HTOR+toQ==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2026-01-16_01,2026-01-15_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 spamscore=0 bulkscore=0 suspectscore=0 lowpriorityscore=0
+ adultscore=0 clxscore=1015 priorityscore=1501 impostorscore=0 phishscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2601160010
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260115_061810_370357_0F4E160F 
-X-CRM114-Status: GOOD (  33.70  )
+X-CRM114-CacheID: sfid-20260116_012659_596902_570E1B1C 
+X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,103 +155,24 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, 2026-01-14 at 11:15 -0800, Jeff Johnson wrote:
-> On 1/12/2026 11:18 AM, Johannes Berg wrote:
-> > On Mon, 2026-01-12 at 20:12 +0100, Johannes Berg wrote:
-> > >=20
-> > > Why do you always want to let firmware be in control of everything?
-> > > Seems at least for some of this you'd really want the upper layers to
-> > > control it for purposes of coordination? How does the FW even know wh=
-ich
-> > > other AP it can coordinate with, isn't that something a network
-> > > controller would determine?
-> >=20
-> > A less generous reading of this could be: you guys want everything to b=
-e
-> > controlled by FW, so you don't have to open-source it in hostapd. Now
-> > you realize oops, don't really want to do all the security handshake in
-> > FW, so we need to ask hostapd and then we need keys and stations and al=
-l
-> > this stuff. So let's build something nobody else can use, upstream it
-> > and we get the best of both worlds - others will maintain the mac80211
-> > code for us anyway.
-> >=20
-> > Am I wrong? Is there a technical reason for not simply doing MAPC
-> > discovery/agreement negotiation etc. in hostapd as well, based on
-> > driver/hw/fw capabilities, and then you don't need all these strange
-> > "triggered by firmware" flows?
->=20
-> My perception is that Qualcomm would love for all the Wi-Fi 8 functionali=
-ty to
-> be in userspace and nl/cfg/mac80211 since then there would be no code
-> maintenance overhead on our part -- just you and the userspace maintainer=
-s.
 
-:)
+On Thu, 30 Oct 2025 22:30:41 +0800, Chien Wong wrote:
+> Correct a typo in the monitor mode comment where "it make" was mistakenly
+> used instead of "it doesn't make". The comment explains that the brief
+> period where monitor mode appears enabled before being removed is harmless
+> in practice.
+> Also, use more common phrase "in practice" instead of "in practise".
+> 
+> 
+> [...]
 
-> But there are concerns about latency, and internal consensus is that some
-> aspects of this functionality has to be handled in firmware (or even hard=
-ware)
-> in order to meet customer KPIs. This comes from our history of supporting
-> large-scale deployments of APs, and the expectations of how Wi-Fi 8 will =
-make
-> things better. That is why we are posting design RFCs, so that you, as we=
-ll as
-> engineers from other vendors, can review our proposals and give your feed=
-back
-> and counter-proposals. We want to avoid developing what might be an
-> architecturally pure design that doesn't actually meet customer needs.
+Applied, thanks!
 
-Sure, that's fair.
+[1/1] wifi: ath: fix comment typo in monitor mode handling
+      commit: 9269caf5a7ff2c0b1f37e06f10eee68d5bf1049e
 
-Maybe I can just ask folks to spell out the constraints and reasoning
-behind the design?
+Best regards,
+-- 
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
-Taking this specific example, it basically says "FW sends a request to
-hostapd, hostapd does the handshake and installs the MAPC station. This
-is how we think we should handle the MAPC stations."
-
-It never says _why_ and how any of this happens. What's the magic thing
-only the firmware can do to figure out it should start coordinating a
-given AP? (Clearly that operation can't be concerned much about latency
-if it asks hostapd.)
-
-In fact I'd have expected that in certain cases some controller
-infrastructure sitting *on top of hostapd* would decide which APs
-coordinate with each other, rather than the firmware. Although I guess
-if you hear the beacon on the same channel with a good enough RSSI then
-you can coordinate.
-
-I could keep guessing - maybe there's a limited space to do this in FW?
-But there's not even anything built into the design where the firmware
-can ask to _remove_ it again, as far as I can tell, unless there was an
-(unstated) assumption that it can just delete the MAPC station and send
-a DEL_STATION notification about it.
-
-The document even says that phase 1 is discovery, and then goes to
-completely ignore phase 1 (it's hidden in FW), and describes basically
-only phase 2.
-
-> And apologies for the "firehose" of both design and code, but we have a d=
-esire
-> to ship Wi-Fi 8 products using upstream code. I've passed along informati=
-on
-> that you want our engineering team to focus on the base NPCA patches so t=
-hat
-> there is the appropriate foundation. But in parallel we do also hope ther=
-e is
-> engagement from other vendors on the Design RFCs we are posting. Our goal=
- is
-> to upstream as much AP functionality as you can absorb.
-
-Sure, and I appreciate that this is coming. I'm a little overwhelmed by
-having so many parallel things going on right now, and all the parallel
-design documents don't help.
-
-Maybe this is the point where we consider inviting everyone who wants to
-a room for a few days? Even a video room might be better ;-) List some
-topics first, present the design briefly, etc.? But I don't know if it's
-just the medium.
-
-johannes
 
