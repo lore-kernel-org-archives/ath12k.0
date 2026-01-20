@@ -4,135 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15011CCF2C9
-	for <ath12k@archiver.kernel.org>; Mon, 19 Jan 2026 08:48:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25BF7D2ED17
+	for <ath12k@archiver.kernel.org>; Tue, 20 Jan 2026 15:23:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6E1iWiERiA9eoYTJsvFJ9yZtgxiIeuP7mpIDKhfF5rE=; b=KQxh1SzOXF2LW9Q0P7bHhPG/u2
-	OgQDEgkdSTtZ/n5fX65C4g7bBlNTKNPeri8DmPby3s2KmDULOEnOCkrVGncsEswt2RE+6lcQS9Yj/
-	/qBxeGF+GrSCrKlUfFyZFzOv99LgaE9iUDd3B5WReXfsiy398dUSFItg/xPOooaxPHvF2ULmH5364
-	m85oF0lB0ElOwVNffA2u3y/1nHAChhCn0t50B1+nYdaeUXaGWlUi2hnF6erVDVYsbJuRR1p1buDcp
-	0uY1FulXR5Xc40pCBMh+LsW3E9T9pjsdcez1N0jYYqL7SIREXSc+wLZ+jcr0LDyiIU4mpSQqzEowI
-	s2OViX7w==;
+	Content-Type:From:Subject:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=TpALKUDyKAgMeTAAjE5QQAf1vwVOBRkwtHr2nPfTUYM=; b=SqpSQzaCK0n1tDVKuF3wQDQRjw
+	YufoapZcgyeaXl22QbexHHBjGA0fvUWaXW9aCM0tN/YYBxbe2Sri2u6gxy/H5D02f3r7MZqK8AZUc
+	5zBPAsYzMJKWougYDpmW+6P0BewoMnyq2dHXTkO1C7x45T2ucDJSmD5njhNUpI4CpFXbrpmOtrgBV
+	gHKkxLqo4CNxx2Sp7tho9e3REyXGpkF/2wgnpn/hfwMv16wSjzsVx+kJn75b0hpL6QcP46GbzA7jp
+	dyVhKvn/YEQVkYlhyn9sg3D7jW7fvsfqpqf3ISp+VHIGAHM8/pCevIScqLcn3zmMKTfgR5k9yXRv9
+	S29x/Mvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhkwU-00000001Zt7-3ItU;
-	Mon, 19 Jan 2026 08:48:58 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1viDZX-000000044jg-3FN4;
+	Tue, 20 Jan 2026 15:23:11 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhkwS-00000001ZsS-22HT
+	id 1viDZV-000000044ib-1HOF
 	for ath12k@lists.infradead.org;
-	Mon, 19 Jan 2026 08:48:58 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60J866Mp3151825
-	for <ath12k@lists.infradead.org>; Mon, 19 Jan 2026 08:48:54 GMT
+	Tue, 20 Jan 2026 15:23:10 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60KETOk81408539
+	for <ath12k@lists.infradead.org>; Tue, 20 Jan 2026 15:23:07 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	6E1iWiERiA9eoYTJsvFJ9yZtgxiIeuP7mpIDKhfF5rE=; b=EWv9Jb3VBz5MEi6e
-	slCa+8u/3QqHODYbU9veCaYr2tYP7hCXBHhnmvnGIDiKWNdFrzAW9ievhNRznxMM
-	z/7UCbHhKRDfT8SvcIqz+urml+tVHsNmimPvZosdKVCBK6dCLvzXsF4HMQt1q8B4
-	5CD8unwzrp+C2vpVDVCb3vX0rGvNSWLVsqvX+0hVdS9ymSEC2o4BUj3YcgUt2z7q
-	iP5AduR+ZAVnyN87dpGmoZDLXor1jEZACH2SOP5rppsJ0JRi1m05+8RwDVgWtqgz
-	UcnEm5P98XkD/xN4nkftV87RbRUM9WURhqa9HZYRPf4T4jwuogZTzy1vbxk+NOdo
-	KV2xsQ==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bs7881e1u-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=TpALKUDyKAgMeTAAjE5QQA
+	f1vwVOBRkwtHr2nPfTUYM=; b=Ue/wWwIvi6KDYaZmeHSf3Tl7N+2trCKDp/81V+
+	EWxGHJM7bK3yEH7aaBX2uu+zi6W8q90vXPBijifIxHrT4KqI5c1MlymgN3D1sT27
+	Fc4bexH/Mhw/l5lQ7qhxdXr8kH6B9IpVrgckN+wyhO4cEF8qrQJxcgH05KuA138+
+	UqER4ivR+G98y5lt/WroRzAO7l9xSC98uhzxutJHuGUtMzOispReaae2mOPalytn
+	gsKaOIioKyxXsJ01pSATWPBMyGcURlX28pZk0q/6dm5l6oaX8UTY6pCFNCVIuNof
+	pSUZ16eMrBGCWkLavXcY5v13HaaemooD4WdE1Tb/xj+VosPw==
+Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bt4y2sh3k-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 19 Jan 2026 08:48:54 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-29f13989cd3so80833155ad.1
-        for <ath12k@lists.infradead.org>; Mon, 19 Jan 2026 00:48:54 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Tue, 20 Jan 2026 15:23:06 +0000 (GMT)
+Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-2b6ba50fc34so3172220eec.0
+        for <ath12k@lists.infradead.org>; Tue, 20 Jan 2026 07:23:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1768812533; x=1769417333; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=6E1iWiERiA9eoYTJsvFJ9yZtgxiIeuP7mpIDKhfF5rE=;
-        b=Tw5n7WpVmzLQAfXok4qRj32SvdAaN5GinGg+CokbikZgLO0jEb3voILmETO2gFpaS6
-         j3BYFwNzrhidbForhRt4on32M/LJSeIvTLhJOvjfb/22Xq4ZThJ7po1u25eYYwWPdGw0
-         2SfxFVx/7jg3RPa02exsRJJXdqfIqOjffoJ+LR53rrEjzMfbopMyLFSwkWKyb+xVVNwm
-         VbsNjfxKzC99GJqSZEUYEuUQ9Gt3iF/HsGUefA6bbykjw94izMzOhXl0G1VV2lCTazcz
-         AKuVxFVMlht32RXw94VXxXVJOo+3AUBE13UB0T9+PEddL44+3B9oxJGFYObFO9F0Wggp
-         K4lw==
+        d=oss.qualcomm.com; s=google; t=1768922586; x=1769527386; darn=lists.infradead.org;
+        h=content-transfer-encoding:from:content-language:subject:cc:to
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=TpALKUDyKAgMeTAAjE5QQAf1vwVOBRkwtHr2nPfTUYM=;
+        b=a4ZhkLv7JVD0JlDR32hSv9VOTHPWUQ5F3uECYbMA8o/cpia5mALVzXbncHhYWpNPG4
+         z2yorbDKuvpLbEvkWl1WrQEALZRdlY+SWoBMZ1KcLuvJ/+7HFsNp+cROaannNdvD9xHt
+         4AptR8WP7jAIaDenQMgCLfIMRKEys3FPkrSPLV9sLanrcGxuZL9SuP5cMm/GvmrhJ2UJ
+         PkPtWKcgW0XLNd5czJGlG/RVGpeJqr/GLnvuTVlYaHoK74JlMvYuQJHsKvxDN/7NIaKH
+         vp+OUM7drhIuzpTuhcKhSZ7Bnb9A/GUZTOWjwGbx/asxNuNs+UWE76nE2yZ5SOT7V4Gz
+         j4+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768812533; x=1769417333;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=6E1iWiERiA9eoYTJsvFJ9yZtgxiIeuP7mpIDKhfF5rE=;
-        b=SmAopuZR+bFzHncp6Rd/oCVnwU3G+KgF6dJyiOcLU6Cfn+pcIEtaAsGMRpvp1htUQ2
-         uUtNFjhQKH2zm3fbL0eLZ7QsVnVtQwGVnIEzs6YhrvK6KpQ6fqX6Coe7mHUeIWY6u/aR
-         Gza3a5o06R6bvL893MJPuKH/xlJr/XmVS4AlGh7XdJbfK9wKh/PGvUfW/lQuwiXnfzrG
-         ZFFYf/KbynYVRDsQDmAfesw6J9cTB2EJNkGaHosqSZMFeRqk3JJpLIeFbfr8sjUlePwd
-         eHX+yyNQ+bdgg9lgzoNU4cCvXANBVlrUVEoD/AST0zovmwq3X7rREU12pZSTLQx4PefT
-         NSCg==
-X-Gm-Message-State: AOJu0YwAic88RtT8jRQlTixF1wZFmrM/6pW8j7kTdZ8wHEnv6lRQZOb+
-	csKOBe/MRfH7L19G+hgVZHJZY1csaTzafeFQeCGfp8/MaYYvtlC1DOJ2xHaAq23p+D9upTHFXrb
-	s/mTkuQFOafOB+bUJYqW+M3rFGaxoOJDpAH+75CzA7mWZJEpZ3PGS79ImYHuG6t+Nr66Eqg5WS2
-	w=
-X-Gm-Gg: AZuq6aKnmlwCQjUuC8Vf5VF4zv1fB50rbG/QxJ1Zbil89qm3Scvhs6rTuC7V3mt4brN
-	/Chc6ult5u4pvZFFlCkCR/QmyFgLjcKsDfCBUwK99L0Zs4KEaN6oMhxfiutc3lbMgc0DkFMEJyZ
-	CW25qihNVfPS6PLqeMjdrpa5GTV6AkEZ5wzZge3crg0pI6BqnCEJ/m48lVJEaz9pKlRH69VyPUL
-	WKq4EN1MGtWAlYPL9fD6P2re/BU82ZnJnfnU826pnQpqbxaq7Ny9Er5vXeaPWrshj4/lPZ0y+dw
-	2B7dZQHwtpL2ipT79TFLIMSq0Iwi23mlgTsaPTMl3nAFs93fIWTNs2XW7fU6Yn4uO7D3nP69+yd
-	1bs6Uzjz/G96Urv5oS84hc0A9ieKBu1aQtOMDKNKJ5lU4U5tA7q7L3Lz/txuzGAh95cKlLt83pi
-	Qfih2cPCM=
-X-Received: by 2002:a17:903:2ce:b0:2a0:c5a6:c8df with SMTP id d9443c01a7336-2a717545089mr97863755ad.21.1768812533046;
-        Mon, 19 Jan 2026 00:48:53 -0800 (PST)
-X-Received: by 2002:a17:903:2ce:b0:2a0:c5a6:c8df with SMTP id d9443c01a7336-2a717545089mr97863555ad.21.1768812532525;
-        Mon, 19 Jan 2026 00:48:52 -0800 (PST)
-Received: from [10.133.33.150] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2a7190ca9d6sm78325155ad.25.2026.01.19.00.48.50
+        d=1e100.net; s=20230601; t=1768922586; x=1769527386;
+        h=content-transfer-encoding:from:content-language:subject:cc:to
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=TpALKUDyKAgMeTAAjE5QQAf1vwVOBRkwtHr2nPfTUYM=;
+        b=glQltHF9LmykIXVey+8hAN6362vGkNFuZBnyBbmt3OYJUQX+5+g4x4jeu4MeJTJu4M
+         32Rute4cqlwERJvu7zSUjgie0zon26IWoO4LAzGJAGJ5tpRKL/F/I2IcorHK4hjrYwdY
+         LzkyxyH+7oLVRXsjnY2TrVFO4ZrGVT9jLU9IXjRIU1VnTA3n9LDyYK/qkFmIWRnCkQKd
+         fUfK9BTWd6KbfIZEYFUJn6bLXiJnJkBe3f7rU8Fuvfrhur6evQXCyZJS8BoR+XXabi0i
+         qgt7kRoZwfwl/2gOcBtXIGKvMnCujiKElLXEIWHsL+d+PEdlISSxuOBMWdiRXeZ4EU2f
+         PBWA==
+X-Forwarded-Encrypted: i=1; AJvYcCWyD947iOCzUCE6j0YOyXz0MFbUmzMqYd3l1sWb1uRxHpPT8CkYFZQjglMKckXAwMmKS1nChj0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxv2r3OjlPyQUAR7NFeLARAxZXKSo5Xk7lNqeqDR0f7jnFpiQ1H
+	DTecYXXsFhUBf7Rb9CN+WDE79AsdL1ya8Uw2FxehQllo6cQXGAx5av4Hod8OqfCWjvWOXTUrbub
+	he4Bh4JNKlfcPWTWIVChlcN/o5rPl2jXn3r7JkqeeWSCuViLRysLNEOgnQyKUF9Dt
+X-Gm-Gg: AZuq6aJoom6Y0GzwWlM7bw2OZcaVVemXxTqwq/pnxsdhppsrvjjiniDF59PBRkwZ5gV
+	7TgfK5EB+jfFgHGTZXTzxWKkb4RhweKL9FeqO9+JYkVWpkGIjqFR7ir/+Ab9P8XoyOmWRK2MYcH
+	/+lA/owiVYFx/6QHjxkEEEVIRoVxZOhxAXWyacu1Ny90tmoV/5LBblz/9XZqPGox2JXibGJhldZ
+	gEboZe6hLHCpRqQvucf/oJ33tV8ktMwpGURsZC3Re9a3EQG9n0LWr9BI6W8fQZgLOREAWWoBd6e
+	Sdld6n2P18pTutxaGEe7I/fO4IIRoN1Ke3G44VpBN2SdXfIQVpFtoDbmesKrvTg5h+e8Jm7SEo5
+	OY/6VKDwh1pe66r7TNPR4GzkpHRGxLk0fczNDpIQgKWGV4g==
+X-Received: by 2002:a05:693c:4096:b0:2b7:110:519a with SMTP id 5a478bee46e88-2b701107280mr1114037eec.17.1768922584462;
+        Tue, 20 Jan 2026 07:23:04 -0800 (PST)
+X-Received: by 2002:a05:693c:4096:b0:2b7:110:519a with SMTP id 5a478bee46e88-2b701107280mr1113941eec.17.1768922582343;
+        Tue, 20 Jan 2026 07:23:02 -0800 (PST)
+Received: from [10.81.91.45] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2b70a036d02sm654912eec.14.2026.01.20.07.23.01
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 19 Jan 2026 00:48:52 -0800 (PST)
-Message-ID: <b947e130-707c-45f2-aba9-de9c12b73be2@oss.qualcomm.com>
-Date: Mon, 19 Jan 2026 16:48:49 +0800
+        Tue, 20 Jan 2026 07:23:02 -0800 (PST)
+Message-ID: <65b400ca-8526-4184-ae0b-5e24e41dab9c@oss.qualcomm.com>
+Date: Tue, 20 Jan 2026 07:23:01 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3] wifi: ath12k: fix endianness handling for SRNG ring
- pointer accesses
-To: Alexander Wilhelm <alexander.wilhelm@westermo.com>,
-        Jeff Johnson <jjohnson@kernel.org>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-References: <20260119073923.764245-1-alexander.wilhelm@westermo.com>
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+To: linux-wireless@vger.kernel.org, Johannes Berg <johannes@sipsolutions.net>
+Cc: ath10k@lists.infradead.org, ath11k@lists.infradead.org,
+        ath12k@lists.infradead.org, jjohnson@kernel.org
+Subject: pull-request: ath-next-20260120
 Content-Language: en-US
-In-Reply-To: <20260119073923.764245-1-alexander.wilhelm@westermo.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=KLVXzVFo c=1 sm=1 tr=0 ts=696deff6 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTIwMDEyNyBTYWx0ZWRfX5B58mh64eQly
+ 6gjaF0oTaCMPRfRgpxPY3egY3ga9Bj4jwHzmqLFkjzzczZQqaF9gmd1kpB9LfFozLGl2XH5IQok
+ g9FzBq/rss0tdBzfas/mp3AGkGixwEIFhRkG4nVQLAnohLooiq1xK89qzt590YaPSFtmn3RHbm5
+ UQLPdqc1sucQBjLJxtuLH2n3oy6MI8VP2nfbmsfJqSPLWlEqP0vC57/QqqUnswACLlf6wL1y4X1
+ y8wAmWTj+9f6EcdxqzIpNqq1EHvg86x1Q1AY/2p3/zkl1ReufDkdgBh3Kv2+qUWlrolaqqmeQcI
+ 2jVUFMQBFlcwTiUf0kSt7+ase3T08CvLpA3hNKzVzjEVRLc+OjJdOmkG4i9rLLal3t6nscGCe8G
+ 23OUm6DM6apICmG5GwHl1rmQRYeNM+4Je4np0G2SFFWYKOZ0dkwgcK8utoDmnwww6iHjTa0Y9/X
+ kyDVCUl5vSPhHhzVPWg==
+X-Authority-Analysis: v=2.4 cv=Ds1bOW/+ c=1 sm=1 tr=0 ts=696f9dda cx=c_pps
+ a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=N9GNhs4bAAAA:8 a=EUspDBNiAAAA:8
- a=dxIy8T9YzDl2N4HinIcA:9 a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
- a=PZhj9NlD-CKO8hVp7yCs:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTE5MDA3MSBTYWx0ZWRfX1Hqdi6G1xLUP
- IAWGsE30SFWPGfBqUhSNMAJ7FIiM8y21CPTcEZJAyWsk5UOzCBmIGBjrJPEbVUD6qkjy9JwnGWS
- /MsMWkcnVrQVwP5VTnCH85MmL7s7gU/x9vs/DS4uhzbb5ommCm8YrJNlR6iDJZjipw9P6RobipP
- lOu3LpHW25Xd53sptxncU20aB1bofR2DICEBAcMAh1ZcNt0aV8pNZLglPDUQE5R6PPOq3/Hw4j4
- 7NsAT7b9mGxI55kvMRjAu8qb6W+Luu/F4ptdyRSsnLCu0u7eJr4Im+126SsQSRAc0vT35aOz/QE
- F6E5kZOrASBBNfbZ5TomX0TVHtWKTGmbF4Meb64zN9cWWBi75DV7dbJQcPodRV16F86AwMJiYSi
- jSl+4HSFgI1SpG6+aor4q4bhngjAbduEhrxuNcex/RhcLKH4cAmnf0nSIrk8aFD9a6MZ1kJrxGT
- 6vruFhEkxN1QXUP0kDQ==
-X-Proofpoint-GUID: HTy4BR7dVID886aznJMYpwc-U5K0u50O
-X-Proofpoint-ORIG-GUID: HTy4BR7dVID886aznJMYpwc-U5K0u50O
+ a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=TO4lM5bOfp6PPmgnV6YA:9
+ a=QEXdDO2ut3YA:10 a=bBxd6f-gb0O0v-kibOvt:22
+X-Proofpoint-GUID: rgpkQwt_zzGFV8Auj48tGNv_GlmZ6vpx
+X-Proofpoint-ORIG-GUID: rgpkQwt_zzGFV8Auj48tGNv_GlmZ6vpx
 X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2026-01-19_01,2026-01-19_01,2025-10-01_01
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.20,FMLib:17.12.100.49
+ definitions=2026-01-20_04,2026-01-20_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 adultscore=0 suspectscore=0 lowpriorityscore=0 spamscore=0
- bulkscore=0 impostorscore=0 malwarescore=0 phishscore=0 priorityscore=1501
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2601190071
+ bulkscore=0 malwarescore=0 clxscore=1015 impostorscore=0 spamscore=0
+ phishscore=0 lowpriorityscore=0 adultscore=0 suspectscore=0
+ priorityscore=1501 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2601150000
+ definitions=main-2601200127
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260119_004856_781093_EE9ABCC5 
-X-CRM114-Status: GOOD (  27.74  )
+X-CRM114-CacheID: sfid-20260120_072309_356209_BA74191C 
+X-CRM114-Status: GOOD (  14.97  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,184 +140,156 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+The following changes since commit 24a57985670e9dac5547e5b7731bf8e7b03d5be8:
 
+  wifi: cfg80211: don't apply HT flags to S1G channels (2026-01-13 10:44:26 +0100)
 
-On 1/19/2026 3:39 PM, Alexander Wilhelm wrote:
-> The SRNG head and tail ring pointers are stored in device memory as
-> little-endian values. On big-endian systems, direct dereferencing of these
-> pointers leads to incorrect values being read or written, causing ring
-> management issues and potentially breaking data flow.
-> 
-> This patch ensures all accesses to SRNG ring pointers use the appropriate
-> endianness conversions. This affects both read and write paths for source
-> and destination rings, as well as debug output. The changes guarantee
-> correct operation on both little- and big-endian architectures.
-> 
-> Signed-off-by: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-> ---
-> Changes in v3:
-> - Rebase on latest 'ath' master
-> - Use always 'le32_to_cpu()' macro for conversions
-> 
-> Changes in v2:
-> - Set '__le32 *' type for 'hp_addr/tp_addr' in both 'dst_ring' and 'src_ring'
-> ---
->  drivers/net/wireless/ath/ath12k/hal.c | 37 +++++++++++++++------------
->  drivers/net/wireless/ath/ath12k/hal.h |  8 +++---
->  2 files changed, 25 insertions(+), 20 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-> index a164563fff28..28d0ff524fc6 100644
-> --- a/drivers/net/wireless/ath/ath12k/hal.c
-> +++ b/drivers/net/wireless/ath/ath12k/hal.c
-> @@ -355,7 +355,7 @@ int ath12k_hal_srng_dst_num_free(struct ath12k_base *ab, struct hal_srng *srng,
->  	tp = srng->u.dst_ring.tp;
->  
->  	if (sync_hw_ptr) {
-> -		hp = *srng->u.dst_ring.hp_addr;
-> +		hp = le32_to_cpu(*srng->u.dst_ring.hp_addr);
->  		srng->u.dst_ring.cached_hp = hp;
->  	} else {
->  		hp = srng->u.dst_ring.cached_hp;
-> @@ -379,7 +379,7 @@ int ath12k_hal_srng_src_num_free(struct ath12k_base *ab, struct hal_srng *srng,
->  	hp = srng->u.src_ring.hp;
->  
->  	if (sync_hw_ptr) {
-> -		tp = *srng->u.src_ring.tp_addr;
-> +		tp = le32_to_cpu(*srng->u.src_ring.tp_addr);
->  		srng->u.src_ring.cached_tp = tp;
->  	} else {
->  		tp = srng->u.src_ring.cached_tp;
-> @@ -500,10 +500,10 @@ void ath12k_hal_srng_access_begin(struct ath12k_base *ab, struct hal_srng *srng)
->  	lockdep_assert_held(&srng->lock);
->  
->  	if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
-> -		srng->u.src_ring.cached_tp =
-> -			*(volatile u32 *)srng->u.src_ring.tp_addr;
-> +		srng->u.src_ring.cached_tp = le32_to_cpu(
-> +			*(volatile __le32 *)srng->u.src_ring.tp_addr);
->  	} else {
-> -		hp = READ_ONCE(*srng->u.dst_ring.hp_addr);
-> +		hp = le32_to_cpu(READ_ONCE(*srng->u.dst_ring.hp_addr));
->  
->  		if (hp != srng->u.dst_ring.cached_hp) {
->  			srng->u.dst_ring.cached_hp = hp;
-> @@ -528,25 +528,28 @@ void ath12k_hal_srng_access_end(struct ath12k_base *ab, struct hal_srng *srng)
->  		 * hence written to a shared memory location that is read by FW
->  		 */
->  		if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
-> -			srng->u.src_ring.last_tp =
-> -				*(volatile u32 *)srng->u.src_ring.tp_addr;
-> +			srng->u.src_ring.last_tp = le32_to_cpu(
-> +				*(volatile __le32 *)srng->u.src_ring.tp_addr);
->  			/* Make sure descriptor is written before updating the
->  			 * head pointer.
->  			 */
->  			dma_wmb();
-> -			WRITE_ONCE(*srng->u.src_ring.hp_addr, srng->u.src_ring.hp);
-> +			WRITE_ONCE(*srng->u.src_ring.hp_addr,
-> +				   cpu_to_le32(srng->u.src_ring.hp));
->  		} else {
-> -			srng->u.dst_ring.last_hp = *srng->u.dst_ring.hp_addr;
-> +			srng->u.dst_ring.last_hp =
-> +				le32_to_cpu(*srng->u.dst_ring.hp_addr);
->  			/* Make sure descriptor is read before updating the
->  			 * tail pointer.
->  			 */
->  			dma_mb();
-> -			WRITE_ONCE(*srng->u.dst_ring.tp_addr, srng->u.dst_ring.tp);
-> +			WRITE_ONCE(*srng->u.dst_ring.tp_addr,
-> +				   cpu_to_le32(srng->u.dst_ring.tp));
->  		}
->  	} else {
->  		if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
-> -			srng->u.src_ring.last_tp =
-> -				*(volatile u32 *)srng->u.src_ring.tp_addr;
-> +			srng->u.src_ring.last_tp = le32_to_cpu(
-> +				*(volatile __le32 *)srng->u.src_ring.tp_addr);
->  			/* Assume implementation use an MMIO write accessor
->  			 * which has the required wmb() so that the descriptor
->  			 * is written before the updating the head pointer.
-> @@ -556,7 +559,8 @@ void ath12k_hal_srng_access_end(struct ath12k_base *ab, struct hal_srng *srng)
->  					   (unsigned long)ab->mem,
->  					   srng->u.src_ring.hp);
->  		} else {
-> -			srng->u.dst_ring.last_hp = *srng->u.dst_ring.hp_addr;
-> +			srng->u.dst_ring.last_hp =
-> +				le32_to_cpu(*srng->u.dst_ring.hp_addr);
->  			/* Make sure descriptor is read before updating the
->  			 * tail pointer.
->  			 */
-> @@ -711,7 +715,7 @@ void ath12k_hal_srng_shadow_update_hp_tp(struct ath12k_base *ab,
->  	 * HP only when then ring isn't' empty.
->  	 */
->  	if (srng->ring_dir == HAL_SRNG_DIR_SRC &&
-> -	    *srng->u.src_ring.tp_addr != srng->u.src_ring.hp)
-> +	    le32_to_cpu(*srng->u.src_ring.tp_addr) != srng->u.src_ring.hp)
->  		ath12k_hal_srng_access_end(ab, srng);
->  }
->  
-> @@ -810,14 +814,15 @@ void ath12k_hal_dump_srng_stats(struct ath12k_base *ab)
->  				   "src srng id %u hp %u, reap_hp %u, cur tp %u, cached tp %u last tp %u napi processed before %ums\n",
->  				   srng->ring_id, srng->u.src_ring.hp,
->  				   srng->u.src_ring.reap_hp,
-> -				   *srng->u.src_ring.tp_addr, srng->u.src_ring.cached_tp,
-> +				   le32_to_cpu(*srng->u.src_ring.tp_addr),
-> +				   srng->u.src_ring.cached_tp,
->  				   srng->u.src_ring.last_tp,
->  				   jiffies_to_msecs(jiffies - srng->timestamp));
->  		else if (srng->ring_dir == HAL_SRNG_DIR_DST)
->  			ath12k_err(ab,
->  				   "dst srng id %u tp %u, cur hp %u, cached hp %u last hp %u napi processed before %ums\n",
->  				   srng->ring_id, srng->u.dst_ring.tp,
-> -				   *srng->u.dst_ring.hp_addr,
-> +				   le32_to_cpu(*srng->u.dst_ring.hp_addr),
->  				   srng->u.dst_ring.cached_hp,
->  				   srng->u.dst_ring.last_hp,
->  				   jiffies_to_msecs(jiffies - srng->timestamp));
-> diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-> index 43e3880f8257..ff6148be94c8 100644
-> --- a/drivers/net/wireless/ath/ath12k/hal.h
-> +++ b/drivers/net/wireless/ath/ath12k/hal.h
-> @@ -914,7 +914,7 @@ struct hal_srng {
->  			u32 tp;
->  
->  			/* Shadow head pointer location to be updated by HW */
-> -			volatile u32 *hp_addr;
-> +			volatile __le32 *hp_addr;
->  
->  			/* Cached head pointer */
->  			u32 cached_hp;
-> @@ -923,7 +923,7 @@ struct hal_srng {
->  			 * will be a register address and need not be
->  			 * accessed through SW structure
->  			 */
-> -			u32 *tp_addr;
-> +			__le32 *tp_addr;
->  
->  			/* Current SW loop cnt */
->  			u32 loop_cnt;
-> @@ -943,7 +943,7 @@ struct hal_srng {
->  			u32 reap_hp;
->  
->  			/* Shadow tail pointer location to be updated by HW */
-> -			u32 *tp_addr;
-> +			__le32 *tp_addr;
->  
->  			/* Cached tail pointer */
->  			u32 cached_tp;
-> @@ -952,7 +952,7 @@ struct hal_srng {
->  			 * will be a register address and need not be accessed
->  			 * through SW structure
->  			 */
-> -			u32 *hp_addr;
-> +			__le32 *hp_addr;
->  
->  			/* Low threshold - in number of ring entries */
->  			u32 low_threshold;
-> 
-> base-commit: 758064145fe77e06d07661b27dfa9c24fe0309a3
+are available in the Git repository at:
 
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+  git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-next-20260120
 
+for you to fetch changes up to d8e1f4a193101a72235416f189b01131a57e26e9:
+
+  wifi: ath12k: enable QCC2072 support (2026-01-15 17:19:42 -0800)
+
+----------------------------------------------------------------
+ath.git patches for v6.20 (#2)
+
+Highlights for some specific drivers include:
+
+ath11k:
+Add support for Channel Frequency Response measurement.
+
+ath12k:
+Add support for the QCC2072 chipset.
+
+And of course there is the usual set of cleanups and bug fixes across
+the entire family of "ath" drivers.
+
+----------------------------------------------------------------
+Alexander Minchev (1):
+      wifi: ath12k: remove redundant pci_set_drvdata() call
+
+Alexandru Gagniuc (1):
+      wifi: ath11k: move .max_tx_ring to struct ath11k_hw_hal_params
+
+Baochen Qiang (18):
+      wifi: ath12k: do WoW offloads only on primary link
+      wifi: ath12k: refactor PCI window register access
+      wifi: ath12k: refactor REO CMD ring handling
+      wifi: ath12k: refactor REO status ring handling
+      wifi: ath12k: fix preferred hardware mode calculation
+      wifi: ath12k: refactor 320 MHz bandwidth support parsing
+      wifi: ath12k: fix mac phy capability parsing
+      wifi: ath12k: add hardware registers for QCC2072
+      wifi: ath12k: add hardware parameters for QCC2072
+      wifi: ath12k: support LPASS_SHARED target memory type
+      wifi: ath12k: support downloading auxiliary ucode image for QCC2072
+      wifi: ath12k: add HAL descriptor and ops for QCC2072
+      wifi: ath12k: add hardware ops support for QCC2072
+      wifi: ath12k: handle REO CMD ring for QCC2072
+      wifi: ath12k: handle REO status ring for QCC2072
+      wifi: ath12k: limit number of channels per WMI command
+      wifi: ath12k: send peer meta data version to firmware
+      wifi: ath12k: enable QCC2072 support
+
+Chien Wong (1):
+      wifi: ath11k: fix comment typo in monitor mode handling
+
+Dan Carpenter (1):
+      wifi: ath12k: clean up on error in ath12k_dp_setup()
+
+Krzysztof Kozlowski (1):
+      dt-bindings: net: wireless: ath11k: Combine two if:then: clauses
+
+Miaoqing Pan (1):
+      wifi: ath12k: fix PCIE_LOCAL_REG_QRTR_NODE_ID definition for QCC2072
+
+Qian Zhang (1):
+      wifi: ath11k: Fix failure to connect to a 6 GHz AP
+
+Randy Dunlap (4):
+      wifi: ath5k: debug.h: fix enum ath5k_debug_level kernel-doc
+      wifi: ath9k: debug.h: fix kernel-doc bad lines and struct ath_tx_stats
+      wifi: ath9k: fix kernel-doc warnings in common-debug.h
+      wifi: wil6210: fix a bunch of kernel-doc warnings
+
+Rosen Penev (1):
+      wifi: ath9k: add OF dependency to AHB
+
+Ross Vandegrift (1):
+      wifi: ath11k: add pm quirk for Thinkpad Z13/Z16 Gen1
+
+Venkateswara Naralasetty (6):
+      wifi: ath11k: Add initialization and deinitialization sequence for CFR module
+      wifi: ath11k: Register debugfs for CFR configuration
+      wifi: ath11k: Add support unassociated client CFR
+      wifi: ath11k: Register relayfs entries for CFR dump
+      wifi: ath11k: Register DBR event handler for CFR data
+      wifi: ath11k: Register handler for CFR capture event
+
+ .../bindings/net/wireless/qcom,ath11k.yaml         |    9 -
+ drivers/net/wireless/ath/ath11k/Kconfig            |   11 +
+ drivers/net/wireless/ath/ath11k/Makefile           |    1 +
+ drivers/net/wireless/ath/ath11k/cfr.c              | 1023 ++++++++++++++++++++
+ drivers/net/wireless/ath/ath11k/cfr.h              |  308 ++++++
+ drivers/net/wireless/ath/ath11k/core.c             |   81 +-
+ drivers/net/wireless/ath/ath11k/core.h             |   19 +-
+ drivers/net/wireless/ath/ath11k/dbring.c           |   50 +-
+ drivers/net/wireless/ath/ath11k/dbring.h           |    8 +-
+ drivers/net/wireless/ath/ath11k/debug.h            |    8 +-
+ drivers/net/wireless/ath/ath11k/debugfs.c          |    2 +-
+ drivers/net/wireless/ath/ath11k/debugfs_sta.c      |  142 ++-
+ drivers/net/wireless/ath/ath11k/dp.c               |   12 +-
+ drivers/net/wireless/ath/ath11k/dp.h               |    1 -
+ drivers/net/wireless/ath/ath11k/dp_tx.c            |    9 +-
+ drivers/net/wireless/ath/ath11k/hal.c              |    3 +-
+ drivers/net/wireless/ath/ath11k/hw.c               |   19 +-
+ drivers/net/wireless/ath/ath11k/hw.h               |    8 +-
+ drivers/net/wireless/ath/ath11k/mac.c              |   23 +-
+ drivers/net/wireless/ath/ath11k/reg.c              |    9 +-
+ drivers/net/wireless/ath/ath11k/wmi.c              |  147 ++-
+ drivers/net/wireless/ath/ath11k/wmi.h              |   97 +-
+ drivers/net/wireless/ath/ath12k/core.h             |    3 +
+ drivers/net/wireless/ath/ath12k/dp.c               |    2 +-
+ drivers/net/wireless/ath/ath12k/fw.c               |   10 +-
+ drivers/net/wireless/ath/ath12k/fw.h               |    3 +-
+ drivers/net/wireless/ath/ath12k/hal.c              |   46 +
+ drivers/net/wireless/ath/ath12k/hal.h              |   34 +
+ drivers/net/wireless/ath/ath12k/hw.h               |    2 +
+ drivers/net/wireless/ath/ath12k/mac.c              |    2 +-
+ drivers/net/wireless/ath/ath12k/pci.c              |   18 +-
+ drivers/net/wireless/ath/ath12k/pci.h              |    7 +
+ drivers/net/wireless/ath/ath12k/qmi.c              |  180 +++-
+ drivers/net/wireless/ath/ath12k/qmi.h              |   16 +
+ drivers/net/wireless/ath/ath12k/wifi7/Makefile     |    3 +-
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c      |   62 +-
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h      |    1 +
+ drivers/net/wireless/ath/ath12k/wifi7/hal.c        |    8 +
+ drivers/net/wireless/ath/ath12k/wifi7/hal.h        |    3 -
+ drivers/net/wireless/ath/ath12k/wifi7/hal_desc.h   |   33 +-
+ .../net/wireless/ath/ath12k/wifi7/hal_qcc2072.c    |  503 ++++++++++
+ .../net/wireless/ath/ath12k/wifi7/hal_qcc2072.h    |   13 +
+ .../net/wireless/ath/ath12k/wifi7/hal_qcn9274.c    |    8 +-
+ drivers/net/wireless/ath/ath12k/wifi7/hal_rx.c     |   97 +-
+ drivers/net/wireless/ath/ath12k/wifi7/hal_rx.h     |   30 +-
+ .../net/wireless/ath/ath12k/wifi7/hal_rx_desc.h    |   17 +
+ .../net/wireless/ath/ath12k/wifi7/hal_wcn7850.c    |    8 +-
+ .../net/wireless/ath/ath12k/wifi7/hal_wcn7850.h    |    1 +
+ drivers/net/wireless/ath/ath12k/wifi7/hw.c         |  101 ++
+ drivers/net/wireless/ath/ath12k/wifi7/pci.c        |   26 +-
+ drivers/net/wireless/ath/ath12k/wifi7/wmi.c        |    5 +
+ drivers/net/wireless/ath/ath12k/wmi.c              |   54 +-
+ drivers/net/wireless/ath/ath12k/wmi.h              |    7 +
+ drivers/net/wireless/ath/ath12k/wow.c              |   16 +
+ drivers/net/wireless/ath/ath5k/debug.h             |    4 +-
+ drivers/net/wireless/ath/ath9k/Kconfig             |    2 +-
+ drivers/net/wireless/ath/ath9k/common-debug.h      |    8 +-
+ drivers/net/wireless/ath/ath9k/debug.h             |   15 +-
+ drivers/net/wireless/ath/wil6210/wil6210.h         |   33 +-
+ 59 files changed, 3135 insertions(+), 236 deletions(-)
+ create mode 100644 drivers/net/wireless/ath/ath11k/cfr.c
+ create mode 100644 drivers/net/wireless/ath/ath11k/cfr.h
+ create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c
+ create mode 100644 drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.h
 
