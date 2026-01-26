@@ -4,86 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6133CF65CB
-	for <ath12k@archiver.kernel.org>; Mon, 26 Jan 2026 09:53:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68683CF65CE
+	for <ath12k@archiver.kernel.org>; Mon, 26 Jan 2026 10:11:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:
+	Subject:Cc:To:From:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cnaMaj6mLos6uYLWyXnb0MsnII4/SswrIv2Xu8MbfD0=; b=Ea3L+2ccNwXAZ4qn4oFaUEl3Dc
-	xO4T54RkcZeyFxeT8WmWmyEq+nUdF08s+o4+8mVBMz0yjywASc+OEocHpnhlzod2UH9T3R1419PL5
-	ZDvRymm6Iu6Fk96i4mrdIWdbTvBd2rt7zv88h/ZkK1QyOrg2v+oVCdYHpAO6auUaKpDNdtjxWYeKm
-	vVRAq89BYNQAQ+DewAjyXWfteZxKG3aCPih5eZDhwppGd8aPbaHqSQB7hF5WpW6cyN7GDX3rbBy3/
-	Pt/pvhVi4DYAh8gvQJUSS/OtoO0a9pWmrY2PCA7M0ld76CW1vrA5lx6FRPqNjUrCcZN8wGIExJC+6
-	xXHvOJyA==;
+	bh=uvc4mcNxQ2S7z08pggxNBkVI5iQmFZjLgi5JVTmtGX0=; b=p2D+hqtI4ltG4J0lEs+gwmJ3FV
+	An5cSL14oep4T1Z8RYDjuUGtBJdVr4gf5WLqydvmmQIqrtgB9XqMZaOtF3hGof/19eWK3XuuTzGC2
+	v5MHulkC5ROEoANpXHvOA/yH6saoOjw3o5XBsqmw27sTUH2FgCMpG+z7tEiW6V4kbCrMOUrKqtEN+
+	zEycd8prbiSUnmITTIYv3NCI959tpK1T+nULaITU7JitoiUnz9IhMH4tzegmhEie6ebiTi54ZCeCZ
+	6ivJRIS7kLGrZo0miRFMEdB5P3Kc6Q/4STKDl9C82ieArmzQaaV3r5R8VtiacodSPIrxDEGw+SeQB
+	lb35j/gA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkJHN-0000000CEhP-2Lee;
-	Mon, 26 Jan 2026 09:53:05 +0000
-Received: from mail-pj1-x102d.google.com ([2607:f8b0:4864:20::102d])
+	id 1vkJZK-0000000CFrq-0fId;
+	Mon, 26 Jan 2026 10:11:38 +0000
+Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkJHK-0000000CEfp-1Fxi
+	id 1vkJZH-0000000CFrU-020X
 	for ath12k@lists.infradead.org;
-	Mon, 26 Jan 2026 09:53:03 +0000
-Received: by mail-pj1-x102d.google.com with SMTP id 98e67ed59e1d1-34c3259da34so2441670a91.2
-        for <ath12k@lists.infradead.org>; Mon, 26 Jan 2026 01:53:01 -0800 (PST)
+	Mon, 26 Jan 2026 10:11:36 +0000
+Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-b87003e998bso932143366b.1
+        for <ath12k@lists.infradead.org>; Mon, 26 Jan 2026 02:11:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1769421181; x=1770025981; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+        d=gmail.com; s=20230601; t=1769422292; x=1770027092; darn=lists.infradead.org;
+        h=in-reply-to:references:subject:cc:to:from:message-id:date
+         :content-transfer-encoding:mime-version:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=cnaMaj6mLos6uYLWyXnb0MsnII4/SswrIv2Xu8MbfD0=;
-        b=BFCM+vDskTsFhE4EdiQvcp+pU3u1/WpuvhEC25LN3T21Q0EsmOoMzr5leau9s0oZhM
-         +2Vc4U9OT6BM0spfx1e6dm/700cEE5TroacdO35QphD8cv/kablKp1NG2NsTtCJcNz2p
-         RA/gGd0FlVvTqgzxZ50/pUt3DAJYp2u29sEtE5xO78LJHz2UXoIBcHnR4AjxUWb07P4Z
-         qzOCo40zoDZ3ZMnCZdfBw0Io/hu+u4GYGBzdqxIz+3WIXGCF3wkOdVRkQj8HvTBXeAql
-         VT2ZIRNvMyFcUwgYYGF9Ecym6RylTw+la9KwSc6/hwYpNFOJJPMvs9bzt1eeyK8i2Bye
-         lfQg==
+        bh=uvc4mcNxQ2S7z08pggxNBkVI5iQmFZjLgi5JVTmtGX0=;
+        b=bWjMoYMd1XprB92hAWlrfeUAjY6SkjtyC/7SbbLiJqxrlIr7aW79s3SzOfud806isJ
+         V4gCdlc4EG/dnlYMD4tpomb20gVQMRCyHQjqaG6Va3XWCl3jZil6PGXq29W7Y0oRcfjV
+         70/vF159bHtU2DNkACFc/KndZKTaQunk78zPLV/8UDXISJJdIx33e/uOqtF3exAnmHEv
+         sECfRYP32oFoC8EqXIBm5+Czx/oQ7BMpiuD7pUufn/HGCULMoA0qNkQaBrO4hqE/x+j+
+         qOXOgK/1436UoDwT0LoJwdsrlKaSSyRzYrKYF6ZxjqIU/71yvHiOiYPtCygz5F/Ohzg5
+         gceg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1769421181; x=1770025981;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=cnaMaj6mLos6uYLWyXnb0MsnII4/SswrIv2Xu8MbfD0=;
-        b=IqYO1QSVwpvr14HaFjlIoZbst4URURIHjw7pNDn/9qSoV278QmxGT/sZsoDpQ+SGJZ
-         lIBevnG1GosErgzZ/yDsQqmzA8fsgOaDddX4ySUEinVzRUO4ldVS7ETnsIvncN91YnyY
-         mno0XujMG4Yu627af2sGk2RYtAY9wMvV14slhyDjKrg9dd5X9c7PP4ZZMqVUFvEqO6t/
-         T6V5GRmyERHJcR+w2lFCpBuoxLaFHqPHnqoZA65gxFxqAShh95veNT5OkGes/2iB7G+5
-         CQpJ29gWV6L5lpnu2DAxOd71QEnelq9vGVg8r6OyCQqEPs/KTUoUdE+bHerYgRdDeZQc
-         KXnA==
-X-Gm-Message-State: AOJu0Yz20VnOho206ntYffOAjO2H+76RrlqhX0NEPGquIS7gjVcaucV/
-	05NRQ78EGAp9w/UUWFPlNq96DH6Nisl6DGIe1p0SBMEg4pddo2yE45WYlDclDaqi
-X-Gm-Gg: AZuq6aK4otPqXTKyPWo5J1oTKpucgmHD5fwyKHINHkctdcCJOeQ3Xq8OlbCkpkJ+YIc
-	v5TetZrNXJl9T24+iWX3SAGqTIJLJLVYkrlaABPrApGY8+d5aD1Zg4MU9V04ato8clx1h4wheRB
-	aTENoqxZqe2MEI97ZXJzTEoKeOTIO0CkkUfBjKoOH6LKOaa+Cskaf09R4c5Ewmhx8SCz8E94Uzc
-	AcWPwXdRNfAg+b6lD0Qq/Y6FO2QM0MtztMdezPkmBfI/C85JIBxZW1CJ5TVF1vkz606cM4xqsh2
-	U7NUDi3TTGW/txyr9uhfs8YW0xq5e5YsNi+IyMp9DXymlApsXXzyJEnDprI4WYmLhrF+Vf0v7ns
-	VdA/YvSWO+gpXCUXKZU2fe2ZeB1dljmQDPAdgI4WmI4AriZCI89vX3ZuXmcAFO6yd5lT3LA8OOm
-	pxIY7M5ElijsPCxIuN4rIOrUw+nLYxM0+1ZyHB
-X-Received: by 2002:a17:90b:2fd0:b0:32e:3c57:8a9e with SMTP id 98e67ed59e1d1-353c41a6f3dmr3587832a91.35.1769421181044;
-        Mon, 26 Jan 2026 01:53:01 -0800 (PST)
-Received: from saikiran-Yoga-Slim-7-14Q8X9 ([2402:e280:3d17:646:1d59:cd47:36b6:dec7])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3536f359950sm3187627a91.10.2026.01.26.01.52.59
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 26 Jan 2026 01:53:00 -0800 (PST)
-From: Saikiran <bjsaikiran@gmail.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-	kvalo@kernel.org,
-	Saikiran <bjsaikiran@gmail.com>
-Subject: [PATCH v2 2/2] wifi: ath12k: Fix firmware stats leak when pdev list is empty
-Date: Mon, 26 Jan 2026 15:22:44 +0530
-Message-ID: <20260126095244.113301-3-bjsaikiran@gmail.com>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20260126095244.113301-1-bjsaikiran@gmail.com>
-References: <20260126095244.113301-1-bjsaikiran@gmail.com>
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+        d=1e100.net; s=20230601; t=1769422292; x=1770027092;
+        h=in-reply-to:references:subject:cc:to:from:message-id:date
+         :content-transfer-encoding:mime-version:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=uvc4mcNxQ2S7z08pggxNBkVI5iQmFZjLgi5JVTmtGX0=;
+        b=lwCcjZ5EigfNWHBHSuaNM3Zx4PFTuSQj4zSvd+F2KtCwZDTf59s+0Wwj0nlkbqMwYz
+         qWEBJ+DquooKGaEEIn5e+dFg7H7PzxrrN3SlLo6p9zLrLz0W6q2uCu0u2yN0Jh3901cn
+         bsOg/njZJ0eimng0od+idU5lb1cnbnJz815M6gBi0txXaXPSWWsNBK9r1pBt3TG4+xRl
+         CAV/L9Zv6WNzjkwSRu4357tZLpTUkrTBjH5DL4oSh2nHDb7KvGbsP0/DYlk1WVu0k7Ki
+         7Uo8gyA1gZsizKoqgGh8YVw2rxrYvhURV6vlH8qhlf5nLAjHoSYztaqu2ih+KjbJVXtf
+         tmjQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVxci9Com0NdnOKv5IXdqdBl7XYuAPXSRr2X9pL4yl8LnSEQXSpCVuRJiOzIUxLsCn4g7XPdqU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwQKIUs5paexfwnDGa/QSvxyYZlqi1L3+OKQXU8wu9tTfc7iMyQ
+	/TpjbEyzYtixa3qqegaHIbU5bUGzEP7E72AK88/JOvVwmFsqO9VjGvAt
+X-Gm-Gg: AZuq6aLgTETOci8FwYgeJF/73DZ/5jSF6RwSKNCZpSJyEP1PHOzhjzfw1QziKJtZ0vT
+	FhL2fKlAMwrscDM2QJp+hrbty+ucr3Gqp0MK/ZHDCxqNuV3MlJfLl7tbJ96vtb4yT6NDJC1T2Y8
+	waN8DVhgvGtL8LExkbcffuD+UBZ6gAHyZunsVUeuhUBdnh/KzQ2RsbjXrm0Zv86+DppwjZpW0zI
+	R8FSVmYdycVV39Fm4LJ31SP+BVaX0C/iCDqfTLSpeF3aqO9YJUFfGWenWZhS2GrVU/nn9xm5ZqW
+	pplhJZnjBEA1A0u5nCBBWkX22Mi6tHd/xnyALuajKJIKCYL4whRSbNIEF50J8Jw85kc/JFtGPRb
+	PxPxT3pfljqaQAP4WqsjSzORu8mI7OfK4+rfkLvVjmGNdJUmkPNt8Y22TnsoxPcRgB6QsNQMfxI
+	cvNA0T63nZffzAr6h7dJGapH3JAJ2WIA==
+X-Received: by 2002:a17:906:6a0b:b0:b80:40ea:1d65 with SMTP id a640c23a62f3a-b8ceefeb05fmr315527566b.31.1769422291853;
+        Mon, 26 Jan 2026 02:11:31 -0800 (PST)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b885b7b1a7fsm597126266b.58.2026.01.26.02.11.31
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 26 Jan 2026 02:11:31 -0800 (PST)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Mon, 26 Jan 2026 11:11:30 +0100
+Message-Id: <DFYFUQNL5YRY.24VJC5QJMQFVF@gmail.com>
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Johannes Berg" <johannes@sipsolutions.net>, "Pablo MARTIN-GOMEZ"
+ <pmartin-gomez@freebox.fr>, "Nicolas Escande" <nico.escande@gmail.com>,
+ <ath12k@lists.infradead.org>
+Cc: <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH ath-next] wifi: ath12k: avoid setting 320MHZ support on
+ non 6GHz band
+X-Mailer: aerc 0.21.0-0-g5549850facc2
+References: <20260123144224.2216923-1-nico.escande@gmail.com>
+ <d26ee979-b5d5-4f50-b423-f8783122f603@freebox.fr>
+ <bfed10db742d29f0609acb04d3354695f87b24e2.camel@sipsolutions.net>
+ <b0e79f6c-36d7-4e49-9d43-8e305a598201@freebox.fr>
+ <26bfd810c1dabc9ed86d4ba68cd20f6434c1d3a2.camel@sipsolutions.net>
+In-Reply-To: <26bfd810c1dabc9ed86d4ba68cd20f6434c1d3a2.camel@sipsolutions.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260126_015302_340538_4EC5F176 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20260126_021135_084097_BB792210 
+X-CRM114-Status: GOOD (  21.11  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,52 +105,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The commits bd6ec8111e65 and 2977567b244f changed firmware stats handling
-to be caller-driven, requiring explicit ath12k_fw_stats_reset() calls
-after using ath12k_mac_get_fw_stats().
+On Fri Jan 23, 2026 at 8:29 PM CET, Johannes Berg wrote:
+> On Fri, 2026-01-23 at 20:21 +0100, Pablo MARTIN-GOMEZ wrote:
+>>=20
+>> > > > +	} else {
+>> > > > +		phy_cap[0] &=3D ~IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ;
+>> > > > +		phy_cap[1] &=3D ~IEEE80211_EHT_PHY_CAP1_BEAMFORMEE_SS_320MHZ_MA=
+SK;
+>> > > > +		phy_cap[2] &=3D ~IEEE80211_EHT_PHY_CAP2_SOUNDING_DIM_320MHZ_MAS=
+K;
+>> > > > +		phy_cap[6] &=3D ~IEEE80211_EHT_PHY_CAP6_MCS15_SUPP_320MHZ;
+>> > > > +	}
+>> > > If you want to clear all 320 MHz fields, you'll also have to clear
+>> > > IEEE80211_EHT_PHY_CAP7_NON_OFDMA_UL_MU_MIMO_320MHZ and
+>> > > IEEE80211_EHT_PHY_CAP7_MU_BEAMFORMER_320MHZ (not sure why it is not =
+done
+>> > > in mac80211)
+>> > >=20
 
-In ath12k_mac_op_get_txpower(), when ath12k_mac_get_fw_stats() succeeds
-but the pdev stats list is empty, the function exits without calling
-ath12k_fw_stats_reset(). Even though the pdev list is empty, the firmware
-may have populated other stats lists (vdevs, beacons, etc.) in the
-ar->fw_stats structure.
+If the QCA guys are interrested I can post a v2 with the additionnal bits a=
+lso
+cleared.
 
-Without resetting the stats buffer, this data accumulates across multiple
-calls, eventually causing the stats buffer to overflow and leading to
-firmware communication failures (error -71/EPROTO) during subsequent
-operations.
+>> > This is, effectively, a firmware workaround. It doesn't belong into
+>> > mac80211. All other drivers just have their capabilities managed in th=
+e
+>> > driver anyway.
+>> >=20
+>> > johannes
+>>=20
 
-The issue manifests during 5GHz scanning which triggers multiple TX power
-queries. Symptoms include:
-- "failed to pull fw stats: -71" errors in dmesg
-- 5GHz networks not detected despite hardware support
-- 2.4GHz networks work normally
+Yep you made me realize that. So I tracked how to fix it in the underlying
+driver and posted this patch.
 
-Fix by calling ath12k_fw_stats_reset() when the pdev list is empty,
-ensuring the stats buffer is properly cleaned up even when only partial
-stats data is received from firmware.
+>> I wasn't talking about putting this patch in mac80211 (I've seen the=20
+>> discussion on the patch Nicolas sent on linux-wireless), I'm talking=20
+>> about the function `ieee80211_put_eht_cap` clearing the Beamformee SS=20
+>> and Sounding Dimension fields but not the Non-OFDMA UL MU-MIMO and MU=20
+>> Beamformer fields for each bandwidth.
+>
+> Ah, you're asking why mac80211 doesn't clear those bits ... I guess it
+> just doesn't matter. If you're not on 320 MHz I'd guess the bits are
+> never checked, so it's not really relevant at all, although then could
+> argue that you only need the first line here as well.
 
-Fixes: bd6ec8111e65 ("wifi: ath12k: Make firmware stats reset caller-driven")
-Link: https://bugs.launchpad.net/ubuntu-concept/+bug/2138308
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302 (Lenovo Yoga Slim 7x)
-Signed-off-by: Saikiran <bjsaikiran@gmail.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 1 +
- 1 file changed, 1 insertion(+)
+I you want Johannes, I can post a patch that also clears those bits in mac8=
+0211
+>
+> johannes
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index e0e49f782bf8..6e35c3ee9864 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -5169,6 +5169,7 @@ static int ath12k_mac_op_get_txpower(struct ieee80211_hw *hw,
- 					struct ath12k_fw_stats_pdev, list);
- 	if (!pdev) {
- 		spin_unlock_bh(&ar->data_lock);
-+		ath12k_fw_stats_reset(ar);
- 		goto err_fallback;
- 	}
- 
--- 
-2.51.0
-
+Nico,
 
