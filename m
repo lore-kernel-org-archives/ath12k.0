@@ -4,98 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFFBED49C6D
-	for <ath12k@archiver.kernel.org>; Fri, 30 Jan 2026 07:51:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2B67E6BF17
+	for <ath12k@archiver.kernel.org>; Fri, 30 Jan 2026 14:27:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=HEhxEUxpF/NBMQhInmGK4G71CIrV6GX1rOHUdXYrZC4=; b=NIqrbAy6bOaKakLKqtDy8QLoY+
-	5O+0unKFsrD9D189af0DRE/1IWZhsHVz66AgFnRp1nVbEsXyB4MFvTRl0KtKmos1MCdFoRPuuphiG
-	fsMRJsDzz1JKFejzOz5IigPdXqZndNIjM6gv9UA0S1jrNOdclOIYujjPz7u8Y2NBDIWL5hzRKBM7p
-	HfLsbouDM19mkPfuEhm5opsg6/KYSuJlwUbDiUZfGqW3bPrgdNp9bP80zfANnEIAA9XEEUTAD6H9a
-	GSIy0B4vc4KQmivgalAV5xyVwiUXh7uA4Ufr14z9wtIVisSTADf1/cvslwE44+eHFbOD/R15O44t9
-	ddRGDg3A==;
+	bh=OjDbAyCVvGi0HknofnhmpEQkSu+LOt1xeGohpiGNUqI=; b=b975by+KJ9v97RLy+GWTivdaE1
+	kr+107XJQAvxp/sHUSwT0Xol4u7kvxEbSbxxjvhUuVewd6vKiYu2MwK2Y67pFlBH7EQ8gpQ9S4jmE
+	DRf/PP1gV/RIe8bh8WMSGCnImu/bQDhyJKnCkH7jWaxFI8iUrtKR6tUsz8EUKV+pcP5tzjEoD/cof
+	rYGD7LONDuxsWESrle0lUWy50CDp0kyFBQ7Vw6A+r0Ai/WjxTPGYUphpQf8DJJy+XCSMOXQae+7J4
+	ITjRVg3hUtnmmXsC7q3EgEOQmPoOnBcj7PREXSWZOY48ySu5FQjdCPu64AfmIkcx+JQj1sxfFkxuF
+	ikjaTtng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vljHQ-00000001ATv-1uBy;
-	Fri, 30 Jan 2026 07:51:00 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vlpTE-00000001aUr-1oeq;
+	Fri, 30 Jan 2026 14:27:36 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vljHN-00000001ATW-2cjA
+	id 1vlpTC-00000001aUY-1ll8
 	for ath12k@lists.infradead.org;
-	Fri, 30 Jan 2026 07:50:59 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60U4bnLH1826296
-	for <ath12k@lists.infradead.org>; Fri, 30 Jan 2026 07:50:56 GMT
+	Fri, 30 Jan 2026 14:27:35 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60UAad5x485889
+	for <ath12k@lists.infradead.org>; Fri, 30 Jan 2026 14:27:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	HEhxEUxpF/NBMQhInmGK4G71CIrV6GX1rOHUdXYrZC4=; b=nUiHslfQ1YyyojXk
-	25tvVEpl7npqnnV08Vw0tjwoH03/4Mxzb1h4r72WiebBRWRkwsMCRtDzMEpK/k7Y
-	zatNmNrxIXc7qPYN0jOA4j7w7wrPhl5VXnowcOtUXwVTZxT0E9vHsXvKgNitZJi2
-	zz+dTXdZBGMY/CK5+MN9EYekZjPeVOFuo6OnaiwQB9gnSHOrzonKkWoykhWEcMR+
-	Pqj5iG1K7g4No10HKYq3s5Se8Xujm8xbsooBnmB2ByKCgQjPm5iuTJpafGGDi2XR
-	OcUmtBT6Fn1c9C6Aog2l9OXTvqVHLvmUUBt2CCFixicCArkCKDOkkE2ttPZpSmdx
-	yJOnDA==
-Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4c0nsmrga7-1
+	OjDbAyCVvGi0HknofnhmpEQkSu+LOt1xeGohpiGNUqI=; b=mMdX0HHUNPof+6oB
+	Qr49xdZvNQz2AXJNRJS7z4t4phEt8yLnn+YIGAfP+FRUmZL5np1514pI9GhVRcXB
+	agvElzqj7NcgUzLD70yKOqBAnZv2wl2xIByvO7dabj5+FslvrJ+GE20t5ihKbiSb
+	5uLaSMv1CB+SozFGge6AcOf4Ss6b0SVjtoddX0DMHOph/Xi8BTz4FFxDj3oQwbo8
+	lTGL2BzoIMzR7ESgWJoy9lroHb1sqxM2qInytfR7Sc4Uic7sEBdzi6/HhZ6VHvaD
+	O6VRDP8YCGLH0DyS0DxKCCOrW0VFS+Zm37PZWSgl60dtBXc70A/FDx0/3sJ6Ys82
+	EZ1e3g==
+Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4c0gtnjecw-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 30 Jan 2026 07:50:56 +0000 (GMT)
-Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-81f2481ab87so2042773b3a.0
-        for <ath12k@lists.infradead.org>; Thu, 29 Jan 2026 23:50:56 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Fri, 30 Jan 2026 14:27:33 +0000 (GMT)
+Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-124a95b6f61so16247548c88.0
+        for <ath12k@lists.infradead.org>; Fri, 30 Jan 2026 06:27:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1769759455; x=1770364255; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1769783252; x=1770388052; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=HEhxEUxpF/NBMQhInmGK4G71CIrV6GX1rOHUdXYrZC4=;
-        b=Nhd9m3XDBpb/glmMh/37NroQ0TUXYyr0PH3HmlBABGYGrG8yp/c02lNJeejEN74emb
-         aZG2acgfHwgj7ICd6jKY5Ai2BONo8KEV6RNMOvqx4UnN3dw/n5CPjWUbp2To19dVKVSg
-         /WVsUStjHzetf4uCbF3C6zEMk5bTyguQIUUuz/jw6yvIe4/WcZpgz3X8EWPfPbwMc+YX
-         mEjQWYvF6EV0FfqjR0SAbPgQexEOu9tvnahm2LgW0FNk8/qkbC7y7xIVeTDhIzq9L6GL
-         imnGPhqQ+aAdo54LZyJKFXJ3Cm3uFzSOYbpIxCwEVk24y3XczJliowME50L2MClemoqk
-         MOyA==
+        bh=OjDbAyCVvGi0HknofnhmpEQkSu+LOt1xeGohpiGNUqI=;
+        b=H0VbIhw/8BpHUQJpp5bTNGu2CmXwPDrcuOTtfkeG3Fcm8PPWmO57IWxEXLMdhqPmZE
+         PoZINU2enDgoHnfKQ/+nwQ0FRcdgFop905Wmf+wVJfS8S9RI10JHiNn88yge+P19QXCR
+         LfBXtrYvtAz6CcqMn9Hv4NpS4lQVJUelueuHmcs+pGuUtwQs0lagQbjC6aJyT7w7wpcS
+         Xl4eDbiAEz39CcQS+jPxfBi9YeFPoGnrSh07XrhPdT6+Y9OV3I/mcwcbO10AAy/2h/AJ
+         hNPg3Q6cxU5zQ5i9CeeFhgzo+tzre33Gg+f7niO59tVtvOFawr4ZldB9NY+oXwzhPcx0
+         Pmsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1769759455; x=1770364255;
+        d=1e100.net; s=20230601; t=1769783252; x=1770388052;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=HEhxEUxpF/NBMQhInmGK4G71CIrV6GX1rOHUdXYrZC4=;
-        b=SWi3G4Kw54ouBTFxROSlRjsQ+vuCCCzi6bpEVHfq3awhUPFxuAak4StgfAy/AfsxeY
-         jNYHa1Mt73r4yoQiXYgLJwMAgamNSebJrJZ5HRAebPrXOaxDgo680F1h7Z5AoC9T/rPo
-         pXCaIdhwN0anUbHN2vTOj2Xp6FthVZ+1oc0d0hsioWNuX8bhSYslRiG/tWKhZ4RtBVT4
-         M+FRsGr+p8QqlPW37hCJ6uikymnw7nPBWHnSxXmnbQ6ePf1Rbs+2M4ZRvqewGXjvYc8E
-         wCG5ESBA3rnxw6y6O4P3oEkBDSpMb9wp16/o0VZcD/I8QjppmOwIx77oOTGlAIsMu6u7
-         my5g==
-X-Gm-Message-State: AOJu0Ywk2Bs4Ww/r8KxeCiosqRrFPENx9YSZBqff5553QnF0kMtAaX6+
-	DDXSRSxOSNP6AkGkBnrl+bZpFE8vTOFmkOjAWUYaOo5+NWLVYDxYNAdzetEi9FmjnGwIzbJdXie
-	7Gu2EL7eFSI12zQSQ4QesIufsy21uadxNE56nLMl3ZWtuMxQ3uCMJEkEvgffco06Q
-X-Gm-Gg: AZuq6aLbaMxETyuVOTDPpNIhFpIq7MIh3pdlw+Qvzk5AQwyPxUaCX16oTg8R6li8xQ6
-	yWYa7xoI60LTD4bTzvOh0nKnaOXNCj0gKRhq4coMCa6rbr9m8ao6bs503Zu6ZNSh2U9j3ga2gRT
-	bShogB5mB0zEVj3DYnk3zemcFAMdaGdbXZfctkrYdLS5+lQ/rEsCSsOrxmyCcjA1GJmD2NIsKCm
-	ZzYn4RocjuDu8AEUYwUuAe3hMeiqoB5uQ2sRS4lS0DO77Y+VD+b3inm5vERHmtA0A03/YL17iHK
-	C4Q3DA81fj8vajp3xEKfuqUGuldb09Vbbf/OWvilaz68ZGds8lIeIFcvaxQLM4zuKo7o0Fp4Ypq
-	5k6ziJ8+WhEvnqibJPhnrGRRYLbLYQsHee5g/GuYjctj5+IaIBtEdMsShcjIC4DWMY7HzKn+03Y
-	mtn/cBMA==
-X-Received: by 2002:a05:6a00:2e82:b0:823:9c0:47a8 with SMTP id d2e1a72fcca58-823aa3fd374mr1857592b3a.9.1769759455445;
-        Thu, 29 Jan 2026 23:50:55 -0800 (PST)
-X-Received: by 2002:a05:6a00:2e82:b0:823:9c0:47a8 with SMTP id d2e1a72fcca58-823aa3fd374mr1857575b3a.9.1769759454848;
-        Thu, 29 Jan 2026 23:50:54 -0800 (PST)
-Received: from [10.133.33.47] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82379b1ef88sm6465051b3a.8.2026.01.29.23.50.53
+        bh=OjDbAyCVvGi0HknofnhmpEQkSu+LOt1xeGohpiGNUqI=;
+        b=a+NwkErsqJE+flPQWHrl0vGbgqkdFbN7VxHmEByooctzMId/rqVF7GFs/wZ27pNmv2
+         vgKAJmf8mC9M+JWuecb4Tix/Ua2qeaboiWcwCrsR6U+xenQiefBmZZkU9pipFXM6xCSL
+         O9bBJGxcxpBTcihbAlym4gfnTag818IV7ZRHQP4uiLNmCanUk+jSMnkFQoyQIYCS8lu2
+         rQxKVkTjsb+4u3BSnsEegHqYImo/a5lv98XuIxkeQze+wjALanNELdAcz/e087+cIsyW
+         1jnukZFw6iHYEGJYnVp8+BBRh0XhOLUEJXj4t6fAGJ4GRYjyIgCJVQPnD1Wl78S79law
+         BHWg==
+X-Gm-Message-State: AOJu0YxSI3lZTqhyJStu5NeBQ2a1lzqlXyET8WEFg93hT+LKe/JgRLO1
+	iITWIiadKQy7R8m28wIRsnio65RW3jPeiJgPT2guFifC649VLG4QgECXqBrs7klsszEtSFXV1v1
+	/XPS7JsiUM4YeJEjs8550u15dJ2ePX+6F80e7sZd9pGmXg5G+AiqK3PD5yKIXcO5HNNTWXIET
+X-Gm-Gg: AZuq6aK/bXUY4B9+i3wG0C7NxA1W5TTg5My3UR3RfWFCUIJtW0eRvOCfdBwrPUO32wT
+	D7lqW01fPhULaQAJHpnmhJjDgOKJMpFeqnlBwFBUKY6OnY8Ei9/G0Wpoqi7ZRG/FarnQ9a3JGZk
+	jao32WXGqFHC0S6Z32/74phRYEQq1Wv2Kg2Z5mT8vj+xGcBAqpTF8sLWhhgv57NNeN/Jdj8hlai
+	v8SbeC4LYEhfoWOJyLjgMMCjh5ep8f2SnYDFtbc3W99nZ/dgAKlh9D5mjR+1c6gMb0WNXTBDiLT
+	JERdynrSHPpZuVyvxs7infBlLjO15YYy30Ft0Zx+bXmuEiiapy3KJwrd/r/YOX5zFNqdmDfV/Ea
+	ZFZ68KHW7QLt6hzl7NN79bp2NfedJ0z357zMRsmZyhXRHRef9SnkdJn8KMDZXh6CzPr5jVg==
+X-Received: by 2002:a05:7022:2381:b0:119:e56b:c75b with SMTP id a92af1059eb24-125c0ff91b2mr1588418c88.32.1769783251717;
+        Fri, 30 Jan 2026 06:27:31 -0800 (PST)
+X-Received: by 2002:a05:7022:2381:b0:119:e56b:c75b with SMTP id a92af1059eb24-125c0ff91b2mr1588395c88.32.1769783251044;
+        Fri, 30 Jan 2026 06:27:31 -0800 (PST)
+Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-124abb2c514sm9466147c88.12.2026.01.30.06.27.30
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 29 Jan 2026 23:50:54 -0800 (PST)
-Message-ID: <49212251-acec-4c45-856e-8b28b0a56768@oss.qualcomm.com>
-Date: Fri, 30 Jan 2026 15:50:49 +0800
+        Fri, 30 Jan 2026 06:27:30 -0800 (PST)
+Message-ID: <b96b9fb2-3313-4c3d-b20f-ea477f72bd62@oss.qualcomm.com>
+Date: Fri, 30 Jan 2026 06:27:28 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 2/2] wifi: ath12k: Fix firmware stats leak when pdev
  list is empty
-To: Saikiran B <bjsaikiran@gmail.com>
+To: Saikiran B <bjsaikiran@gmail.com>,
+        Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
         kvalo@kernel.org
 References: <20260126095244.113301-1-bjsaikiran@gmail.com>
@@ -107,38 +107,39 @@ References: <20260126095244.113301-1-bjsaikiran@gmail.com>
  <CAAFDt1s_NtY1vXa5STRW7oQn9yDJBC0g7CPSZXn0tFhd+CSHrQ@mail.gmail.com>
  <fbcbeb0f-c073-4da5-9dbe-2518a1d31f20@oss.qualcomm.com>
  <CAAFDt1uSQce_9AG2488yaeeEjCwQwQubW51K51VHiJF8Rp6xRQ@mail.gmail.com>
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
 In-Reply-To: <CAAFDt1uSQce_9AG2488yaeeEjCwQwQubW51K51VHiJF8Rp6xRQ@mail.gmail.com>
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTMwMDA2MCBTYWx0ZWRfX2fvVO0GAnypd
- NY9A7Ak3kXpnok45MuRih0oK30a7kFy+IGMWfBI0k8CRCwyiDrhq8cIuoc/3uxZfO0xluGU6jeo
- DotX1TfGoIR0OKNz6TSUYsBHUnT7XyQA3UiDimKA6sNl8nrCdeki/C995G8O1Py+jdcTA7OtL1h
- iRXZ2s0u1oRXwr2uhWPqwVL+VSChDP5AahAREcIpAoumBk3jcBdA0W/ffos81dhdQBvEoA9T/ry
- 9G/oEqBaTYneNUQ4Avfp07+0b7FFJw74Q0TMgQXEByW0w5xClN53VEJALg0xmhLBLNssURNDTGB
- C1OmGEbui5MGTV/6xCJGA0x0wFFlz8zBcvWkJ5n7cnHJORj7BDsFQ8J+PEU7Oik+TB1BrdXArHV
- Ix816z//XbEbcAce73fhb0RYspiJN9+w9NlI7coS30XZJQNHopQkEh4EdSyvgiS38YM5fV6h6Xe
- NgmZYdL9QyFBCK0oPMg==
-X-Proofpoint-GUID: NlYtSMvl9mhA6MyTXf8ICe_qRU_SL3P1
-X-Proofpoint-ORIG-GUID: NlYtSMvl9mhA6MyTXf8ICe_qRU_SL3P1
-X-Authority-Analysis: v=2.4 cv=HMbO14tv c=1 sm=1 tr=0 ts=697c62e0 cx=c_pps
- a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: DngcoimOsMdxMqif7CJkgcIO0WVOxV_h
+X-Authority-Analysis: v=2.4 cv=FPcWBuos c=1 sm=1 tr=0 ts=697cbfd5 cx=c_pps
+ a=JYo30EpNSr/tUYqK9jHPoA==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
  a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=danhDmx_AAAA:8
- a=pGLkceISAAAA:8 a=J3Hy4y-j4yJuyjteYWcA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=IoOABgeZipijB_acs4fv:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=pGLkceISAAAA:8 a=8ltgOPgcfqXs1Gl5X78A:9
+ a=QEXdDO2ut3YA:10 a=6jIDAdUXVGMA:10 a=zZCYzV9kfG8A:10
+ a=Fk4IpSoW4aLDllm1B1p-:22
+X-Proofpoint-ORIG-GUID: DngcoimOsMdxMqif7CJkgcIO0WVOxV_h
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTMwMDExOCBTYWx0ZWRfX95N9vPipkKUA
+ 9G74Bcvp0QqFu2qeIreVtR2v3pN4aLb1YVCxjyoGp5M8CSWkatM18Gjiw6VGbhLHDEESwZCH5JI
+ jvtKCivP9/yXDqKST479wAp7mLd8p2awTubHlrVubd1AlBkdELQ4mCtqtzQ+1feJwzEGa2k27+4
+ VU8l+XKgPdPqwVt5CV9xB489QHNY4fQNN9qWvS9w7ob2X+6KvvHGD6qoSBfUFXesvHkHRPl6Wao
+ F68UGqevCwZRzliN+X+nJoto5ljpMZQ6G+uSAYYkfnsZIF5UsHoN7dHAdnZJRJ1R4Icrqnbiz09
+ KDqDc54Rww37IliPe77kxhthwVwIbcondrA4lmCkmaRUMXbrJ4nbhL5h9eNm+caMz3k+hrIwn/G
+ kP91YGP06/D0X3FfJ9hG4ywPag6U7yol4Vh+iOCWsMRyLs6r54GBG9NGhmBbc7oCctnPWHc62Aj
+ 2gRqo11L+2Ih/1O+PAw==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-01-29_03,2026-01-29_01,2025-10-01_01
+ definitions=2026-01-30_02,2026-01-29_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 priorityscore=1501 malwarescore=0 impostorscore=0 suspectscore=0
- phishscore=0 clxscore=1015 bulkscore=0 lowpriorityscore=0 adultscore=0
+ lowpriorityscore=0 spamscore=0 clxscore=1015 phishscore=0 bulkscore=0
+ impostorscore=0 suspectscore=0 priorityscore=1501 adultscore=0 malwarescore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2601300060
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2601300118
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260129_235057_677199_563F3280 
-X-CRM114-Status: GOOD (  29.56  )
+X-CRM114-CacheID: sfid-20260130_062734_599273_3EF35C6E 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,215 +154,11 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-
-On 1/30/2026 3:32 PM, Saikiran B wrote:
-> On Fri, Jan 30, 2026 at 7:39 AM Baochen Qiang
-> <baochen.qiang@oss.qualcomm.com> wrote:
->>
->>
->>
->> On 1/29/2026 10:06 PM, Saikiran B wrote:
->>> On Thu, Jan 29, 2026 at 7:57 AM Baochen Qiang
->>> <baochen.qiang@oss.qualcomm.com> wrote:
->>>>
->>>>
->>>>
->>>> On 1/27/2026 12:40 PM, Saikiran B wrote:
->>>>> I have analyzed the logs and code flow in depth to provide more
->>>>> definitive answers for your questions.
->>>>>
->>>>> The log entries showing the failure are:
->>>>> [  563.574076] ath12k_pci 0004:01:00.0: failed to pull fw stats: -71
->>>>> [  564.575896] ath12k_pci 0004:01:00.0: time out while waiting for get fw stats
->>>>>
->>>>> 1. Why are other stats populated?
->>>>> The "failed to pull fw stats: -71" error is not the initial failure
->>>>> but a symptom that appears after repeated operations. The leak happens
->>>>> during *successful* calls prior to this error.
->>>>>
->>>>> Code flow proving the leak:
->>>>> - ath12k_mac_get_fw_stats() sends WMI_REQUEST_PDEV_STAT.
->>>>> - Firmware responds. ath12k_update_stats_event() parses the response.
->>>>> - ath12k_wmi_fw_stats_process() is called, which splices 'vdevs' and
->>>>> 'beacon' stats into ar->fw_stats.vdevs/bcn.
->>>>> - ath12k_mac_get_fw_stats() returns 0 (Success).
->>>>> - In ath12k_mac_op_get_txpower(), the check `if (!pdev)` fails if the
->>>>> pdev-specific list is empty (but vdev list is NOT empty).
->>>>> - The function exits via `err_fallback` WITHOUT calling ath12k_fw_stats_reset().
->>>>> - Result: The 'vdev' and 'beacon' stats that were spliced into
->>>>> ar->fw_stats remain there, leaking memory and accumulating with every
->>>>> call.
->>>>>
->>>>> 2. Exact place where -71 is printed:
->>>>> The error "failed to pull fw stats: -71" is printed in
->>>>> [ath12k_update_stats_event()](drivers/net/wireless/ath/ath12k/wmi.c).
->>>>> It corresponds to "ret = ath12k_wmi_pull_fw_stats()" returning -EPROTO.
->>>>> This propagates from
->>>>> [ath12k_wmi_tlv_fw_stats_data_parse()](drivers/net/wireless/ath/ath12k/wmi.c),
->>>>> when buffer validation checks (like `len < sizeof(*src)`) fail.
->>>>>
->>>>> Conclusion:
->>>>> The fix in my patch (resetting stats when `!pdev`) is critical because
->>>>> it ensures that the accumulated 'vdev' and 'beacon' stats are freed
->>>>> even when the 'pdev' list ends up empty.
->>>>>
->>>>> Let me know if you need anything else.
->>>>
->>>> can you please try below to see if it can fix your issue?
->>>>
->>>> https://lore.kernel.org/r/20260129-ath12k-fw-stats-fixes-v1-0-55d66064f4d5@oss.qualcomm.com
->>>>
->>>>>
->>>>> Thanks & Regards,
->>>>> Saikiran
->>>>>
->>>>> On Tue, Jan 27, 2026 at 9:47 AM Saikiran B <bjsaikiran@gmail.com> wrote:
->>>>>>
->>>>>> Hi Baochen,
->>>>>>
->>>>>> Regarding your questions:
->>>>>>
->>>>>> "Are other stats populated?"
->>>>>>
->>>>>> Yes. When ath12k_mac_get_fw_stats() returns success (0), it means the
->>>>>> firmware response was received and valid WMI events were processed.
->>>>>> The firmware response to WMI_REQUEST_PDEV_STAT typically includes
->>>>>> multiple stats TLVs (vdev stats, beacon stats, etc.). Even if the
->>>>>> "pdev stats" list ends up empty (e.g., due to specific filtering or
->>>>>> availability), the firmware should have populated other lists (like
->>>>>> vdevs or beacons) in the ar->fw_stats structure. If we don't reset,
->>>>>> these valid entries leak and accumulate.
->>>>>>
->>>>>> "Where exactly is -71 (EPROTO) printed?"
->>>>>>
->>>>>> The log "failed to pull fw stats: -71" is printed in
->>>>>> ath12k_update_stats_event() (wmi.c line 8500 in my tree). This error
->>>>>> code (-EPROTO) propagates from ath12k_wmi_tlv_fw_stats_data_parse(),
->>>>>> where it is returned when buffer validation checks fail (e.g., if (len
->>>>>> < sizeof(*src))). This failure suggests that the accumulated state or
->>>>>> memory corruption from the leak eventually causes the parser to fail
->>>>>> on subsequent events.
->>>>>>
->>>>>> So, fixing the leak is necessary for correctness regardless of the
->>>>>> specific side-effect error code.
->>>>>>
->>>>>> Thanks & Regards,
->>>>>> Saikiran
->>>>>>
->>>>>> On Tue, Jan 27, 2026 at 8:57 AM Baochen Qiang
->>>>>> <baochen.qiang@oss.qualcomm.com> wrote:
->>>>>>>
->>>>>>>
->>>>>>>
->>>>>>> On 1/26/2026 5:52 PM, Saikiran wrote:
->>>>>>>> The commits bd6ec8111e65 and 2977567b244f changed firmware stats handling
->>>>>>>> to be caller-driven, requiring explicit ath12k_fw_stats_reset() calls
->>>>>>>> after using ath12k_mac_get_fw_stats().
->>>>>>>>
->>>>>>>> In ath12k_mac_op_get_txpower(), when ath12k_mac_get_fw_stats() succeeds
->>>>>>>> but the pdev stats list is empty, the function exits without calling
->>>>>>>> ath12k_fw_stats_reset(). Even though the pdev list is empty, the firmware
->>>>>>>> may have populated other stats lists (vdevs, beacons, etc.) in the
->>>>>>>
->>>>>>> 'may' is not enough, we need to be 100% sure whether other stats are populated. This is
->>>>>>> critical for us to find the root cause.
->>>>>>>
->>>>>>>> ar->fw_stats structure.
->>>>>>>>
->>>>>>>> Without resetting the stats buffer, this data accumulates across multiple
->>>>>>>> calls, eventually causing the stats buffer to overflow and leading to
->>>>>>>> firmware communication failures (error -71/EPROTO) during subsequent
->>>>>>>> operations.
->>>>>>>>
->>>>>>>> The issue manifests during 5GHz scanning which triggers multiple TX power
->>>>>>>> queries. Symptoms include:
->>>>>>>> - "failed to pull fw stats: -71" errors in dmesg
->>>>>>>
->>>>>>> still, can you please check the logs to see at which exact place is this printed?
->>>>>>>
->>>>>>>> - 5GHz networks not detected despite hardware support
->>>>>>>> - 2.4GHz networks work normally
->>>>>>>>
->>>>>>>> Fix by calling ath12k_fw_stats_reset() when the pdev list is empty,
->>>>>>>> ensuring the stats buffer is properly cleaned up even when only partial
->>>>>>>> stats data is received from firmware.
->>>>>>>>
->>>>>>>> Fixes: bd6ec8111e65 ("wifi: ath12k: Make firmware stats reset caller-driven")
->>>>>>>> Link: https://bugs.launchpad.net/ubuntu-concept/+bug/2138308
->>>>>>>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302 (Lenovo Yoga Slim 7x)
->>>>>>>> Signed-off-by: Saikiran <bjsaikiran@gmail.com>
->>>>>>>> ---
->>>>>>>>  drivers/net/wireless/ath/ath12k/mac.c | 1 +
->>>>>>>>  1 file changed, 1 insertion(+)
->>>>>>>>
->>>>>>>> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
->>>>>>>> index e0e49f782bf8..6e35c3ee9864 100644
->>>>>>>> --- a/drivers/net/wireless/ath/ath12k/mac.c
->>>>>>>> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->>>>>>>> @@ -5169,6 +5169,7 @@ static int ath12k_mac_op_get_txpower(struct ieee80211_hw *hw,
->>>>>>>>                                       struct ath12k_fw_stats_pdev, list);
->>>>>>>>       if (!pdev) {
->>>>>>>>               spin_unlock_bh(&ar->data_lock);
->>>>>>>> +             ath12k_fw_stats_reset(ar);
->>>>>>>>               goto err_fallback;
->>>>>>>>       }
->>>>>>>>
->>>>>>>
->>>>
->>>
->>> Hi Baochen,
->>>
->>> I tried applying your patches on top of v6.19-rc7 (which is the latest
->>> mainline release candidate I'm testing on), but I ran into build
->>> issues because some of the dependencies seem missing.
->>>
->>> Specifically:
->>> Patch 2 ("wifi: ath12k: fix station lookup failure when disconnecting
->>> from AP") uses `ath12k_link_sta_find_by_addr()`, which does not exist
->>> in my tree. It seems your patches are based on a different tree
->>> (ath-next?) that has newer changes not yet in the mainline.
->>>
->>> Could you please point me to the specific git repo/branch you are
->>> using? I can try to build and test on that baseline to be sure.
->>
->> My bad. Please try the latest ath tree:
->>
->> https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/
->>
->> the base commit is ath-202601271544 tag.
->>
->>>
->>> Regarding the firmware stats issue:
->>> I verified the firmware files match the latest available (MD5 sums
->>> matched), yet the "-71" errors and memory leak persist on my device
->>> without fixes.
->>>
->>> I successfully applied the logic from your Patch 1 manually (since
->>> [ath12k_mac_get_target_pdev_id](cci:1://file:///home/saikiran/linux/kernel/x1e/x1e/drivers/net/wireless/ath/ath12k/mac.c:989:0-1008:1)
->>> exists), but I haven't fully validated if it alone resolves the leak
->>> in all scenarios.
->>>
->>> However, the fix I proposed in my v2 patch (resetting stats when pdev
->>> list is empty) definitely stops the leak mechanism by ensuring cleanup
->>> happens even when the firmware returns partial stats (which seems to
->>> be the trigger condition).
->>>
->>> I'll wait for your pointer to the base tree to do a proper test of your series.
->>>
->>> Thanks & Regards,
->>> Saikiran
->>
-> 
-> Hi,
-> 
+On 1/29/2026 11:32 PM, Saikiran B wrote:
 > I have merged the tag, applied your patches and I can confirm that the
 > leak has been fixed.
 
-Thank you Saikiran for the test!
+When I apply the patches would you like me to add the following?
 
-> 
-> Thanks & Regards,
-> Saikiran
-
+Tested-by: Saikiran B <bjsaikiran@gmail.com>
 
