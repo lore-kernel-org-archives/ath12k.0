@@ -4,127 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4644E7DEEE
-	for <ath12k@archiver.kernel.org>; Mon,  2 Feb 2026 14:37:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DCF2EE7DEF4
+	for <ath12k@archiver.kernel.org>; Mon,  2 Feb 2026 15:17:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:From:Subject:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=eAWb4km5TleWO/t5iavF0aQqzr8+qMuKOS8aZDkQyDU=; b=EXWxSG5m8mcE46g8U68ggdZThf
-	GLgKbBjER86OicXvYjjS8vlUV0RK/viQ8BBKN0kcfcesUkGBhNI2RiVR9RqyAgI7MdfPFoSkLQlWi
-	INPChlPnBLk/NDVjbTRfi87p2G8SLf9kXkk17lnz6RoxUrfXhYQcS/oUefBKW4wloy41CUrtGGqPj
-	VrDnJLbubDjfZDm4ocwRnpn7AW1+aM5W9WpMAKzhJJI8LWT9IYBKvd+DpM1nf5EdVJ40C7l+AS/IT
-	tvE7cJsuFFpTzgGKT4bamsH6ddz+eElJV7qShbVftsTzjc9qh0+dz3piNyGJ6WAJ4F+6D0TwyxkZs
-	2Amz3i7Q==;
+	bh=VUARgzGPJhRK4HrRb+3HfBCK/Wz2+3KoUtSkwanfWJY=; b=qacCKX/czJc62dnHnLodJd89/g
+	N21i0ntRcPXHUH928lxjWtwHk74LksS1lfQOq3fy5TQl9715eSaBcxC2yGlB74VTcDpsVMOfkb0VQ
+	YGRonlilEyik74dPxsStLPgKIfyganCC3ggmPJubj3Lvim3KRKCNcOtLNqvi5KXUTVqufDiLS943w
+	xwEnTLh9bZ89QvHdDHvUxEHadSY8+a/lVI6PgKFelOkQGF4dqVtpxOxRNqQF40FNs0V/16JF8TgTq
+	SQkj+2y/R8Pzoq9KBUdILLTTU9UInMlNnozP8hElr7lyw5/peMcmSAQZSQmDrAiFtDy+x1RBWnr/w
+	B4hLLGiw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vmv30-000000056pc-2ElY;
-	Mon, 02 Feb 2026 14:37:02 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vmvgA-00000005AxD-2dtY;
+	Mon, 02 Feb 2026 15:17:30 +0000
+Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vmv2x-000000056oR-0YGn
+	id 1vmvg8-00000005Awq-2ysm
 	for ath12k@lists.infradead.org;
-	Mon, 02 Feb 2026 14:37:00 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 612CJXLS2884426
-	for <ath12k@lists.infradead.org>; Mon, 2 Feb 2026 14:36:58 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=eAWb4km5TleWO/t5iavF0a
-	Qqzr8+qMuKOS8aZDkQyDU=; b=K03YTCDh88rDSmPGCDsBvsMoc7RhBbElFTVDfZ
-	l52z6+FxCIoL283X3IfYkCXGFoM+ul5cMVA5NFz86voYlVvEpYoMIMuEWA7iF2SN
-	4ZjH47I0tHAc8doVZhV0OKEGD7NvRLvpG0JOxELNRzb12mXPpgD4tEdCrUVaeCVo
-	NpsxHxY8AagL+shDT3hHNjlyWi/BlDS+wbi00wVBn4TaY1/L/pVJJkeYDvDd6Vmt
-	uCmI01BbTkvne3wsIaFNxDWa6Fy+bpfWh/CCm7z9mVRayp+AEFeNawVd09oBQ3GK
-	2iiZh7xGYlyCZ9lzU8jcHOYqvjRsbZKoweyAi5ysi4d2Sqew==
-Received: from mail-dl1-f70.google.com (mail-dl1-f70.google.com [74.125.82.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4c2uu3gbx0-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 02 Feb 2026 14:36:58 +0000 (GMT)
-Received: by mail-dl1-f70.google.com with SMTP id a92af1059eb24-1249d001040so2895092c88.1
-        for <ath12k@lists.infradead.org>; Mon, 02 Feb 2026 06:36:58 -0800 (PST)
+	Mon, 02 Feb 2026 15:17:29 +0000
+Received: by mail-pf1-x42e.google.com with SMTP id d2e1a72fcca58-823210d1d8eso2297740b3a.1
+        for <ath12k@lists.infradead.org>; Mon, 02 Feb 2026 07:17:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1770043017; x=1770647817; darn=lists.infradead.org;
-        h=content-transfer-encoding:from:content-language:subject:cc:to
-         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=eAWb4km5TleWO/t5iavF0aQqzr8+qMuKOS8aZDkQyDU=;
-        b=SlYJnhXt93EXW6jzgda9PNT/mqvK72z+kFNOFeezmr4VU43AEkmTjGLXuH5oa9XVAd
-         ROwMiUai3FEcpQu/xy4v55mJ48xkRQA8bTWoYFQ4iY5eKlwMlLHtQQdlAUviHFoPn+fe
-         rQAUdZT4QNIAGZC0lojI0EwqiT7q89NmCawha5lEIkdeukjsuFsu+ld7wAj2GImtZFRq
-         s2Ed7F5KAbAjDwGPcIGLjlXbhh2FhuLnTqF+RQG4Nt4v8TPPCG9kcyESmMit6AW5Pi57
-         HId7pIJ8ERlVIrcRSp6rFPZ8s95DKCjix/OVH3p6OTRvlTX/GMaQvx44A41dRijwRJOh
-         H2Sw==
+        d=gmail.com; s=20230601; t=1770045447; x=1770650247; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=VUARgzGPJhRK4HrRb+3HfBCK/Wz2+3KoUtSkwanfWJY=;
+        b=dD0TTKXNHYKBtHQ/NziFtZxhL7/QmaDnNMWbS5j2TiMI9I0pLgjXcXp1bHus4OoiH0
+         19JrDzEewe8ZC4aWNyhhQkfIE9BX/BvDo+JMuIN+2Mkj+nDDsxrbunEmQelDJBUQcv3L
+         Xe+8I3R+LEqeBD3AM2pwEA2huSg5OreLk7/xyRIvywNL6rgScWCIRO+ylC9YunNEen68
+         7+wFGcw1He/8Af3upzh3mq20if/sMkRFskQS7cEqkooqGJGhrlgx8ocg0NA0LWRWHw9H
+         pTjeIxZIToWW0Q3CKSWs+OR/uYclKg7Z/Yj6harVVGTD0GxYt7CEWeVbKz0A09vq3WB4
+         ohbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770043017; x=1770647817;
-        h=content-transfer-encoding:from:content-language:subject:cc:to
-         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=eAWb4km5TleWO/t5iavF0aQqzr8+qMuKOS8aZDkQyDU=;
-        b=KaLDAF2IAjz9CkvU56LBIUaVMxbZ5k6hK6myXrlTbZwrW6raTKXHIApj2pTHlWwVip
-         ZJykMOfKXiXIe39dJilTXrnizWh4DDQO4lZR24dClRBZMDQUtOgXqD42oH+NbW9X0Ykt
-         Gnm5rNtur15Ao4EGrX1AV72mYj/WXKayvjlMSd/CNRUUxuIyQqMJlmo1VF7qnOEDND/t
-         YjOWAPaoop0f3uQOxGAcISOk6snR+uvbXBaE1W7NygPEW7bFAt1QBIImxz4MKWQjGdou
-         RWR80zHdvdntDR+iiHBWlItIgfJINdEaJ0kC95gOd5IBvsjCk8F0IoOzN1lyK5DfkHOY
-         /aZQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVAFuJ54iol4FoY6TQuhQI5OWj1AFdDuRHimVvi7Iik2sHLzOOjQ9omO8Cnr37n1bgm6nrHkSI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwDIchUYe62FFcka0PDR6Ew4HscH8U2UIKQvN6Nw1lbdtDIRf2u
-	chaBMRBhS4D1AttR7vZS/DfYHxA0Nnf3PW7BRd6rb6uaOhRViLBi4rHEwAr7vJzwwunLh60V7OP
-	eaYOdBbckAoLrNYfJbPB5lW7+WWbCZAfWOxmTa0eSML8WNe4ywsKe4IMiUdnttT4+
-X-Gm-Gg: AZuq6aLypIL7MLgFyj+u9hPSkYyEuwUY/2UQt7h5Nz9YnSMIpkDfH4a0IUaF9TQn5wp
-	ue97BfGNEsLzGvuN7UzFU6GXN53dfJVRsBYQZnRyJtHyRCMvmwatEvWXSgcDekPrb3n867ZPs4S
-	wsI+gBqqaMO+lX1IqtZZbtvCBtX2Z0O2Qr3Zcjys6zS8DI/hAGe/37x/qzM6qc927na8VtdUU6Z
-	KmPXmTF1R3gWBWecak99c48jwCsgUeFKW8TpZy2TooD17orCptfNu1WnvYOmHsGymg26SLC4iwk
-	3IpISGAY9tTbg8i3k0Np8JfIWSalYV+OF2K1cMKa0UVbr54TCAuTk7he/jlCFzRnFZaDymZw6wh
-	ytfBiCeRZiaHgpdeiUPK9VXc3uV/pjMO1LEaidojLhr2F0w==
-X-Received: by 2002:a05:7022:2485:b0:119:e569:f86a with SMTP id a92af1059eb24-125c197f8aemr4890414c88.7.1770043017335;
-        Mon, 02 Feb 2026 06:36:57 -0800 (PST)
-X-Received: by 2002:a05:7022:2485:b0:119:e569:f86a with SMTP id a92af1059eb24-125c197f8aemr4890386c88.7.1770043016725;
-        Mon, 02 Feb 2026 06:36:56 -0800 (PST)
-Received: from [10.81.91.45] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-124a9debe5dsm19571387c88.11.2026.02.02.06.36.56
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 02 Feb 2026 06:36:56 -0800 (PST)
-Message-ID: <28dfd5c2-9c97-420c-a37e-e43b215799c0@oss.qualcomm.com>
-Date: Mon, 2 Feb 2026 06:36:55 -0800
+        d=1e100.net; s=20230601; t=1770045447; x=1770650247;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=VUARgzGPJhRK4HrRb+3HfBCK/Wz2+3KoUtSkwanfWJY=;
+        b=wG16VJyibkRL+tvY7oi15hKxFFyofBpRC/HiRMIMH2Tui8bdY0O4JibrDV6lMPRKl9
+         P1wMPizZ2ydm/0A98gKj++qTqzxFCojiQWAeIIVVsXm41cwYZEuC3oldi7u2XfxNcHFi
+         5FCFe/4b04a6xi/u690HcbtL+4M2v5jUQBLbHGAPR9LrvC5Zl6EA75KkJCSwYf8LFU1r
+         lhUZmaXyYJX32jsQF1uyGgef56Vvx2TsnUp+p2Z63IhfG3ifqAuk6n35T5yilNaahuaG
+         8co7s25znhm3x5yOHh7ix+5rGjZnZPOlCnMJyBq2wG/J+ZY0VdBopsLjdY9+WxFqOnOL
+         CfBg==
+X-Forwarded-Encrypted: i=1; AJvYcCV5adNKJwFvIWbRJFRJ2MgTqeYx291FFfwGSIwUnN5s2iItBSXehoLvzX4nOnExJ+w//tRPSc0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyAD4EcW0b2zwD/PW1UE4GuFCJsdlt90DI9ABwYcCLg2gf+hjx1
+	FUj5mgDUEozuliGT8H7Anb/zqkvO2Yud9AbsH/IPksV3x9jTXSVUrcPT
+X-Gm-Gg: AZuq6aJTRjr6xfzAjILkljuSwdi0HYQEfNVGLqpfCN9oKXsqzuHwZhEEkAu6p8Cjgyh
+	v/Br1vWUvn3sVWqIBUcQfaxUPmVGqTjkIN6bG8xPHtjMZ2ixdHKPA20MTiDpBkBiSDmOm3oQaGr
+	kohOHSxUK09YouEF1CoN528eGX+3paSPAw3rP0fqk8JVt6m8dCZecdLfINGwfm3FMqZrGZqg5op
+	mjNTfNQTbHU+zuvKE4p17o2kb00ktGoKrsWaADiA1nh74hNvJ2W/0f07ZQazY0udzZWLsZfPTSF
+	Kg0swJtXvGLq3KqAdru/pLySxhSREDfpWtAmTD9dXgKhzOKzNqKyixEPEQBJNltXcGrnzP95N/K
+	UhXxzijUw8GAVDfxZdK9KEc6FaQkrkuDSP6M5Ao44fmANrVXIyD0icZLM57ujAeanouR1lKZU17
+	Kj3aQsihGSOpr5pLApNHxqGRLazJbT+HQf4A==
+X-Received: by 2002:a05:6a00:3026:b0:7e8:4471:ae6d with SMTP id d2e1a72fcca58-823aa7376d1mr11367711b3a.57.1770045447289;
+        Mon, 02 Feb 2026 07:17:27 -0800 (PST)
+Received: from saikiran-Yoga-Slim-7-14Q8X9 ([2402:e280:3d17:646:6b:a50d:4972:6cd4])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82379b58f38sm16843432b3a.24.2026.02.02.07.17.24
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 02 Feb 2026 07:17:26 -0800 (PST)
+From: Saikiran <bjsaikiran@gmail.com>
+To: jjohnson@kernel.org,
+	kvalo@kernel.org
+Cc: quic_bqiang@quicinc.com,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Saikiran <bjsaikiran@gmail.com>
+Subject: [PATCH] wifi: ath12k: fix CMA error and MHI state mismatch during resume
+Date: Mon,  2 Feb 2026 20:47:20 +0530
+Message-ID: <20260202151720.49904-1-bjsaikiran@gmail.com>
+X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: linux-wireless@vger.kernel.org, Johannes Berg <johannes@sipsolutions.net>
-Cc: ath10k@lists.infradead.org, ath11k@lists.infradead.org,
-        ath12k@lists.infradead.org, jjohnson@kernel.org
-Subject: pull-request: ath-next-20260202
-Content-Language: en-US
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: Is8sjVyoKIlfSPyT8aOkRly58u0DrIap
-X-Authority-Analysis: v=2.4 cv=OrRCCi/t c=1 sm=1 tr=0 ts=6980b68a cx=c_pps
- a=SvEPeNj+VMjHSW//kvnxuw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=qSke-fb0mpNoTSwYOz8A:9
- a=QEXdDO2ut3YA:10 a=Kq8ClHjjuc5pcCNDwlU0:22
-X-Proofpoint-GUID: Is8sjVyoKIlfSPyT8aOkRly58u0DrIap
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjAyMDExNSBTYWx0ZWRfX/ooRgYRUPKGz
- S6YUFnDNSx4p4GGVXVxSRilMPqJZ0aqgFiHXRfxx2eMW12ciULqQO2t83G5cz8OUdIraM7v2Yq8
- bJaSdJ+T0LKU6+mGqSmIgpwhl4hxFGL1UXicYB5fu7mrxh4eARLJ7uItZTkgbzRCl5XV9N4XfTI
- mBGOmgXFzy+PSUGxKNT2n4Jk6Q0ohwUPqJh/ybT2BEUNIWpoQOBLibGZdVnfPRAXuYBOnJkhOBj
- Vau2Cq1afQBEYA055vUjEPDiD2E0/DMNys46vn1orI1rdBZIW+RV3Lg1qH6J1OdOzVc/TxLWSgz
- Astvm+4LcOd1KmUeMimfzYjoEGZqv7ILKq3+LTEAw6e9W4VFst8rh3J2QaeRR314hANVUhWMdMg
- GXIc7GeoG3mHhQ8ZuH0xzTVeGSTOwDJV6SnZvFmee61mj3wgjRa3Xu+Iv4km5ba1kwkrhZ719Xc
- ojh3LkVB3oKGBvypnCg==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-02-02_04,2026-01-30_04,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 lowpriorityscore=0 spamscore=0 clxscore=1015 adultscore=0
- malwarescore=0 phishscore=0 impostorscore=0 priorityscore=1501 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602020115
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260202_063659_191997_048FB77A 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20260202_071728_748427_3E01E060 
+X-CRM114-Status: GOOD (  14.04  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,57 +99,99 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The following changes since commit c30e188bd2a886258be5facb970a804d8ef549b5:
+Commit 8d5f4da8d70b ("wifi: ath12k: support suspend/resume") introduced
+system suspend/resume support but caused a critical regression where
+CMA pages are corrupted during resume.
 
-  Merge tag 'iwlwifi-next-2026-01-21' of https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/iwlwifi-next (2026-01-27 13:54:12 +0100)
+1. CMA page corruption:
+   Calling mhi_unprepare_after_power_down() during suspend (via
+   ATH12K_MHI_DEINIT) prematurely frees the fbc_image and rddm_image
+   DMA buffers. When these pages are accessed during resume, the kernel
+   detects corruption (Bad page state).
 
-are available in the Git repository at:
+To fix this corruption, the driver must skip ATH12K_MHI_DEINIT during
+suspend, preserving the DMA buffers. However, implementing this fix
+exposes a second issue in the state machine:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-next-20260202
+2. Resume failure due to MHI state mismatch:
+   When DEINIT is skipped during suspend to protect the memory, the
+   ATH12K_MHI_INIT bit remains set. On resume, ath12k_mhi_start()
+   blindly attempts to set INIT again, but the state machine rejects
+   the transition:
 
-for you to fetch changes up to 2c1ba9c2adf0fda96eaaebd8799268a7506a8fc9:
+   ath12k_wifi7_pci ...: failed to set mhi state INIT(0) in current
+   mhi state (0x1)
 
-  wifi: ath12k: clear stale link mapping of ahvif->links_map (2026-01-30 07:12:38 -0800)
+Fix the corruption and enable the correct suspend flow by:
 
-----------------------------------------------------------------
-ath.git patches for v6.20/v7.0 (#3)
+1. In ath12k_mhi_stop(), skipping ATH12K_MHI_DEINIT if suspending.
+   This prevents the memory corruption by keeping the device context
+   valid (MHI_POWER_OFF_KEEP_DEV).
 
-A set of small features and cleanups for the next merge window.
+2. In ath12k_mhi_start(), checking if MHI_INIT is already set.
+   This accommodates the new suspend flow where the device remains
+   initialized, allowing the driver to proceed directly to POWER_ON.
 
-----------------------------------------------------------------
-Aaradhana Sahu (4):
-      wifi: ath12k: Fix index decrement when array_len is zero
-      wifi: ath12k: Add support RX PDEV stats
-      wifi: ath12k: Add support TX hardware queue stats
-      wifi: ath12k: clear stale link mapping of ahvif->links_map
+Tested with suspend/resume cycles on Qualcomm Snapdragon X Elite
+(SC8380XP) with WCN7850 WiFi. No CMA corruption observed, WiFi resumes
+successfully, and deep sleep works correctly.
 
-Dmitry Baryshkov (1):
-      wifi: ath10k: snoc: support powering on the device via pwrseq
+Fixes: 8d5f4da8d70b ("wifi: ath12k: support suspend/resume")
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302 (Lenovo Yoga Slim 7x)
+Signed-off-by: Saikiran <bjsaikiran@gmail.com>
+---
+ drivers/net/wireless/ath/ath12k/mhi.c | 24 +++++++++++++++++-------
+ 1 file changed, 17 insertions(+), 7 deletions(-)
 
-Miaoqing Pan (2):
-      wifi: ath11k: add usecase firmware handling based on device compatible
-      dt-bindings: net: wireless: ath11k-pci: deprecate 'firmware-name' property
+diff --git a/drivers/net/wireless/ath/ath12k/mhi.c b/drivers/net/wireless/ath/ath12k/mhi.c
+index 45c0f66dcc5e..1a0b3bcc6bbf 100644
+--- a/drivers/net/wireless/ath/ath12k/mhi.c
++++ b/drivers/net/wireless/ath/ath12k/mhi.c
+@@ -485,9 +485,14 @@ int ath12k_mhi_start(struct ath12k_pci *ab_pci)
+ 
+ 	ab_pci->mhi_ctrl->timeout_ms = MHI_TIMEOUT_DEFAULT_MS;
+ 
+-	ret = ath12k_mhi_set_state(ab_pci, ATH12K_MHI_INIT);
+-	if (ret)
+-		goto out;
++	/* In case of suspend/resume, MHI INIT is already done.
++	 * So check if MHI INIT is set or not.
++	 */
++	if (!test_bit(ATH12K_MHI_INIT, &ab_pci->mhi_state)) {
++		ret = ath12k_mhi_set_state(ab_pci, ATH12K_MHI_INIT);
++		if (ret)
++			goto out;
++	}
+ 
+ 	ret = ath12k_mhi_set_state(ab_pci, ATH12K_MHI_POWER_ON);
+ 	if (ret)
+@@ -501,16 +506,21 @@ int ath12k_mhi_start(struct ath12k_pci *ab_pci)
+ 
+ void ath12k_mhi_stop(struct ath12k_pci *ab_pci, bool is_suspend)
+ {
+-	/* During suspend we need to use mhi_power_down_keep_dev()
+-	 * workaround, otherwise ath12k_core_resume() will timeout
+-	 * during resume.
++	/* During suspend, we need to use mhi_power_down_keep_dev()
++	 * and avoid calling MHI_DEINIT. The deinit frees BHIE tables
++	 * which causes memory corruption when those pages are
++	 * accessed/freed again during resume. We want to keep the
++	 * device prepared for resume, otherwise ath12k_core_resume()
++	 * will timeout.
+ 	 */
+ 	if (is_suspend)
+ 		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_POWER_OFF_KEEP_DEV);
+ 	else
+ 		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_POWER_OFF);
+ 
+-	ath12k_mhi_set_state(ab_pci, ATH12K_MHI_DEINIT);
++	/* Only deinit when doing full power down, not during suspend */
++	if (!is_suspend)
++		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_DEINIT);
+ }
+ 
+ void ath12k_mhi_suspend(struct ath12k_pci *ab_pci)
+-- 
+2.51.0
 
-Wei Zhang (2):
-      wifi: ath12k: add WMI support for spatial reuse parameter configuration
-      wifi: ath12k: support OBSS PD configuration for AP mode
-
-Ziyi Guo (2):
-      wifi: ath10k: fix lock protection in ath10k_wmi_event_peer_sta_ps_state_chg()
-      wifi: ath10k: sdio: add missing lock protection in ath10k_sdio_fw_crashed_dump()
-
- .../bindings/net/wireless/qcom,ath11k-pci.yaml     |   1 +
- drivers/net/wireless/ath/ath10k/sdio.c             |   6 +
- drivers/net/wireless/ath/ath10k/snoc.c             |  53 +++++-
- drivers/net/wireless/ath/ath10k/snoc.h             |   3 +
- drivers/net/wireless/ath/ath10k/wmi.c              |   4 +-
- drivers/net/wireless/ath/ath11k/core.c             |  27 +++
- drivers/net/wireless/ath/ath11k/core.h             |   4 +
- .../net/wireless/ath/ath12k/debugfs_htt_stats.c    | 197 ++++++++++++++++++++-
- .../net/wireless/ath/ath12k/debugfs_htt_stats.h    |  81 +++++++++
- drivers/net/wireless/ath/ath12k/mac.c              | 174 +++++++++++++++++-
- drivers/net/wireless/ath/ath12k/mac.h              |   3 +
- drivers/net/wireless/ath/ath12k/wmi.c              | 142 +++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h              |  47 +++++
- 13 files changed, 730 insertions(+), 12 deletions(-)
 
