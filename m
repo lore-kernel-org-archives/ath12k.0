@@ -4,66 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B29BAEF5855
-	for <ath12k@archiver.kernel.org>; Sat, 14 Feb 2026 21:26:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58831E63F08
+	for <ath12k@archiver.kernel.org>; Sun, 15 Feb 2026 17:53:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=PDtJhoT8Ipj77smMzjLSD/+jyMhaMBfN7xjhOBl+7GA=; b=wq6DUQqk+C2Xix3ltVmPOvD6Bz
-	Tm5SyikKNg19iTVz5LDNWXAWsbMte96VVRb3b0wxtYAKaUOWQTWkxC+4WbCDgSbAv8fSbs7FwUk4e
-	GTlli2+H4ReTiqfoTjyCRBPhWcDMu3vsrk+k6srMT12fFgzEhfoqn/EDofdS3db7+rawyzo2QCRpS
-	pgifLjeYxpQyHMIxp/HwRSwZVFSbNJaJNv7WDds8K4zCOH2wv2NEeQZ7aFVbhgC/SAF9qmVEFzv2Q
-	2j8uI+LHmS7FM96V5CbynNqLNQzW68UnSImKd/zXSrBpKuI4tpsHMLS9KAc3ZPjjjnB3e2m9PAmWK
-	e+0ebZ4A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=BFjIncPE/ygomcY4BZG6hXyPekENZl+Z6pN5ng8JTWM=; b=JejingT3R5slR6mWIHwElcI1u7
+	JB8EF7ns/QgFR7XNhX//uV5YKy2+DPtgOGengIz09Kh/HAF5C81v+YTYaoAgjjj1k40u88KnNLzC5
+	uacgIDtWHYCpj+z9BYwfq9DmE75qSd3uIKSeaYIaSBZWkLO4Oi6umizKeVZts3GRAPBT3o1qTy9N9
+	dnXRk8Zk/YkTZ+rSrQCRvGx0vq2be0mmOwmXM5iL/GpuIgDX0GW13AlgzxTbA5EbawvRsFuighlOY
+	FnPOET2gJBD1m/EDm5WTzLDnYjLBB+9ZhmEVlldktulakKvrZlrB5z9fF+f1XiDjdg3qO9shXxH/W
+	NOe+SxKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrN9S-00000004wyn-1YUv;
-	Sat, 14 Feb 2026 21:26:06 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vrgJi-00000005ZLr-06C5;
+	Sun, 15 Feb 2026 17:53:58 +0000
+Received: from mgamail.intel.com ([198.175.65.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrN9Q-00000004wwu-1qqe
+	id 1vrgJe-00000005ZLX-3WQG
 	for ath12k@lists.infradead.org;
-	Sat, 14 Feb 2026 21:26:04 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 71D5A6012A;
-	Sat, 14 Feb 2026 21:26:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3AB70C16AAE;
-	Sat, 14 Feb 2026 21:26:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1771104363;
-	bh=jdjBYuLyWUoR/3Tzz15H/qXhA4J4QfVQrEs28NTG/MM=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=eQdqq8sqmSqE3bxOp4wV5RrdXMMe+CuNFMmroEj6z5lRekIAn0dybIHlpWJDln8R3
-	 Zw96eIy8VEtYTMaEUvPuQwMtKRoVTVJ68vtVvN65ztV1aDNDIAV52/pmuBZ+KkdZog
-	 MTktta6Sq3Wau7dQYQDUd3mQdYmjwb9Kx+ZekHXV0zVNRVtxzpXv/uGSJ5KAmOJtKB
-	 NU8vf18qYGBZIrle/8J3UkZlTIDW0hdW0W2jxNLl2vPbGACU3AtlDuoFMYfpARgVDB
-	 uhB2kROHLfs44NYwXZuzhYvtuy3Z3AYTM8G9qinMXHqjN2M5rk8UYE0OqH9IKmbYAG
-	 nuVSYD4lIrV4A==
-From: Sasha Levin <sashal@kernel.org>
-To: patches@lists.linux.dev,
-	stable@vger.kernel.org
-Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	Sasha Levin <sashal@kernel.org>,
-	jjohnson@kernel.org,
-	linux-wireless@vger.kernel.org,
+	Sun, 15 Feb 2026 17:53:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1771178035; x=1802714035;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=hXOlYDzkGeHdSnx/HxwTez3vHrXkvJwme569VZU5k80=;
+  b=FkKLAI5swBUYmXiSnlEJsWWSUiOdc+JpqA1C9JRs7XTnKXB97GPY6Dlf
+   /gEH04qNLPLnGcONFvJs7pfQHtbIOl4qAWgLVL+/uZFVssp2ht1KvzzaN
+   kjCbIk3e+qf9oQcLDvdhDgz73BEm3OeY1i/xarY07dlO9MI7GoUUD0AoA
+   QXrzzRbD9xfDUDMBJMtxQfeUawcZn4q0HvAaxfuxDu/mhL+RiXvflLh4z
+   sm52YjpNFHIp8Yx3gbWBPpYKxg0b5H1pV5sB+kuMDhIIJqB5MPoNHHtwK
+   EscT7ljGN4bM//EZnEIj4oyr97Cn9PN+Aa9adbX9rkiTad7Fss5M2AG8s
+   A==;
+X-CSE-ConnectionGUID: eDpdMRzURyGxy6tlfUh/hA==
+X-CSE-MsgGUID: qE1lDTygTPi0yzqZyWzsng==
+X-IronPort-AV: E=McAfee;i="6800,10657,11702"; a="75902218"
+X-IronPort-AV: E=Sophos;i="6.21,292,1763452800"; 
+   d="scan'208";a="75902218"
+Received: from fmviesa010.fm.intel.com ([10.60.135.150])
+  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Feb 2026 09:53:52 -0800
+X-CSE-ConnectionGUID: jJMFrSu/Qn2e0t5khQiiFw==
+X-CSE-MsgGUID: QhR4QmFQSZiO/izzqqUGow==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.21,292,1763452800"; 
+   d="scan'208";a="212449286"
+Received: from lkp-server01.sh.intel.com (HELO 765f4a05e27f) ([10.239.97.150])
+  by fmviesa010.fm.intel.com with ESMTP; 15 Feb 2026 09:53:50 -0800
+Received: from kbuild by 765f4a05e27f with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1vrgJX-00000000yye-1ZjV;
+	Sun, 15 Feb 2026 17:53:47 +0000
+Date: Mon, 16 Feb 2026 01:53:31 +0800
+From: kernel test robot <lkp@intel.com>
+To: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.19-6.18] wifi: ath12k: fix mac phy capability parsing
-Date: Sat, 14 Feb 2026 16:23:07 -0500
-Message-ID: <20260214212452.782265-42-sashal@kernel.org>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20260214212452.782265-1-sashal@kernel.org>
-References: <20260214212452.782265-1-sashal@kernel.org>
+Cc: oe-kbuild-all@lists.linux.dev, linux-wireless@vger.kernel.org,
+	Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>,
+	Aishwarya R <aishwarya.r@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next] wifi: ath12k: add basic hwmon temperature
+ reporting
+Message-ID: <202602160145.YQdvbqYY-lkp@intel.com>
+References: <20260214035947.44671-1-maharaja.kennadyrajan@oss.qualcomm.com>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.19
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20260214035947.44671-1-maharaja.kennadyrajan@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260215_095354_959500_3D411185 
+X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,154 +91,48 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Hi Maharaja,
 
-[ Upstream commit b5151c9b6e3a347416a4b4b55fc00195526d8771 ]
+kernel test robot noticed the following build errors:
 
-Currently ath12k_pull_mac_phy_cap_svc_ready_ext() assumes only one band
-supported in each phy, hence it skips 5 GHz band if 2 GHz band support
-is detected. This does not work for device which gets only one phy but
-has both bands supported, such as QCC2072.
+[auto build test ERROR on 37a93dd5c49b5fda807fd204edf2547c3493319c]
 
-Change to check each band individually to fix this issue.
+url:    https://github.com/intel-lab-lkp/linux/commits/Maharaja-Kennadyrajan/wifi-ath12k-add-basic-hwmon-temperature-reporting/20260214-120212
+base:   37a93dd5c49b5fda807fd204edf2547c3493319c
+patch link:    https://lore.kernel.org/r/20260214035947.44671-1-maharaja.kennadyrajan%40oss.qualcomm.com
+patch subject: [PATCH ath-next] wifi: ath12k: add basic hwmon temperature reporting
+config: x86_64-randconfig-075-20250806 (https://download.01.org/0day-ci/archive/20260216/202602160145.YQdvbqYY-lkp@intel.com/config)
+compiler: gcc-14 (Debian 14.2.0-19) 14.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260216/202602160145.YQdvbqYY-lkp@intel.com/reproduce)
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202602160145.YQdvbqYY-lkp@intel.com/
 
-Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Link: https://patch.msgid.link/20260112-ath12k-support-qcc2072-v2-6-fc8ce1e43969@oss.qualcomm.com
-Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
+All errors (new ones prefixed by >>):
 
-LLM Generated explanations, may be completely bogus:
+   ld: vmlinux.o: in function `ath12k_thermal_unregister':
+>> drivers/net/wireless/ath/ath12k/thermal.c:118:(.text+0x2df8112): undefined reference to `hwmon_device_unregister'
 
-### Dependency Concerns
 
-The investigation reveals an important dependency issue:
+vim +118 drivers/net/wireless/ath/ath12k/thermal.c
 
-- The constants were **renamed** from
-  `WMI_HOST_WLAN_2G_CAP`/`WMI_HOST_WLAN_5G_CAP` to
-  `WMI_HOST_WLAN_2GHZ_CAP`/`WMI_HOST_WLAN_5GHZ_CAP` in March 2025
-  (commit `6a88093f79ea0`). If backporting to a stable tree that
-  predates this rename, the constant names would need adjustment.
-- The `nss_ratio` fields were added in June 2025 - older stable trees
-  may not have these.
-- The ath12k driver itself was introduced in November 2022, so stable
-  trees from 6.1.y onward should have the driver.
+   106	
+   107	void ath12k_thermal_unregister(struct ath12k_base *ab)
+   108	{
+   109		struct ath12k *ar;
+   110		int i;
+   111	
+   112		for (i = 0; i < ab->num_radios; i++) {
+   113			ar = ab->pdevs[i].ar;
+   114			if (!ar)
+   115				continue;
+   116	
+   117			if (ar->thermal.hwmon_dev) {
+ > 118				hwmon_device_unregister(ar->thermal.hwmon_dev);
 
-The core logic change (if/else if → independent if checks) is self-
-contained and the fix concept applies regardless of these naming
-differences, though minor backport adjustments to constant names may be
-needed for older stable trees.
-
-### Risk vs. Benefit
-
-- **Benefit:** Fixes a real functional bug where dual-band single-PHY
-  WiFi devices (like QCC2072) cannot use 5 GHz band at all. This is a
-  significant hardware functionality issue.
-- **Risk:** Very low. The logic change is straightforward and doesn't
-  affect single-band devices. The only behavioral change for dual-band
-  devices is that both bands are now properly initialized instead of
-  only one.
-
-### Conclusion
-
-This is a clear bug fix in a wireless driver that prevents hardware from
-working correctly. The fix is:
-- Small and contained (single function, single file)
-- Obviously correct (the if/else if logic was clearly wrong for dual-
-  band PHYs)
-- Tested and reviewed
-- Low risk of regression
-- Fixes a real user-visible issue (5 GHz band not working)
-
-The only minor concern is that backporting may require adjusting
-constant names for older stable trees, but this is a trivial mechanical
-adjustment.
-
-**YES**
-
- drivers/net/wireless/ath/ath12k/wmi.c | 22 ++++++++++++++--------
- 1 file changed, 14 insertions(+), 8 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 12f4d378f50d4..1613492b38350 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -496,6 +496,7 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
- 	struct ath12k_band_cap *cap_band;
- 	struct ath12k_pdev_cap *pdev_cap = &pdev->cap;
- 	struct ath12k_fw_pdev *fw_pdev;
-+	u32 supported_bands;
- 	u32 phy_map;
- 	u32 hw_idx, phy_idx = 0;
- 	int i;
-@@ -519,14 +520,19 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
- 		return -EINVAL;
- 
- 	mac_caps = wmi_mac_phy_caps + phy_idx;
-+	supported_bands = le32_to_cpu(mac_caps->supported_bands);
-+
-+	if (!(supported_bands & WMI_HOST_WLAN_2GHZ_CAP) &&
-+	    !(supported_bands & WMI_HOST_WLAN_5GHZ_CAP))
-+		return -EINVAL;
- 
- 	pdev->pdev_id = ath12k_wmi_mac_phy_get_pdev_id(mac_caps);
- 	pdev->hw_link_id = ath12k_wmi_mac_phy_get_hw_link_id(mac_caps);
--	pdev_cap->supported_bands |= le32_to_cpu(mac_caps->supported_bands);
-+	pdev_cap->supported_bands |= supported_bands;
- 	pdev_cap->ampdu_density = le32_to_cpu(mac_caps->ampdu_density);
- 
- 	fw_pdev = &ab->fw_pdev[ab->fw_pdev_count];
--	fw_pdev->supported_bands = le32_to_cpu(mac_caps->supported_bands);
-+	fw_pdev->supported_bands = supported_bands;
- 	fw_pdev->pdev_id = ath12k_wmi_mac_phy_get_pdev_id(mac_caps);
- 	fw_pdev->phy_id = le32_to_cpu(mac_caps->phy_id);
- 	ab->fw_pdev_count++;
-@@ -535,10 +541,12 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
- 	 * band to band for a single radio, need to see how this should be
- 	 * handled.
- 	 */
--	if (le32_to_cpu(mac_caps->supported_bands) & WMI_HOST_WLAN_2GHZ_CAP) {
-+	if (supported_bands & WMI_HOST_WLAN_2GHZ_CAP) {
- 		pdev_cap->tx_chain_mask = le32_to_cpu(mac_caps->tx_chain_mask_2g);
- 		pdev_cap->rx_chain_mask = le32_to_cpu(mac_caps->rx_chain_mask_2g);
--	} else if (le32_to_cpu(mac_caps->supported_bands) & WMI_HOST_WLAN_5GHZ_CAP) {
-+	}
-+
-+	if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP) {
- 		pdev_cap->vht_cap = le32_to_cpu(mac_caps->vht_cap_info_5g);
- 		pdev_cap->vht_mcs = le32_to_cpu(mac_caps->vht_supp_mcs_5g);
- 		pdev_cap->he_mcs = le32_to_cpu(mac_caps->he_supp_mcs_5g);
-@@ -548,8 +556,6 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
- 			WMI_NSS_RATIO_EN_DIS_GET(mac_caps->nss_ratio);
- 		pdev_cap->nss_ratio_info =
- 			WMI_NSS_RATIO_INFO_GET(mac_caps->nss_ratio);
--	} else {
--		return -EINVAL;
- 	}
- 
- 	/* tx/rx chainmask reported from fw depends on the actual hw chains used,
-@@ -565,7 +571,7 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
- 	pdev_cap->rx_chain_mask_shift =
- 			find_first_bit((unsigned long *)&pdev_cap->rx_chain_mask, 32);
- 
--	if (le32_to_cpu(mac_caps->supported_bands) & WMI_HOST_WLAN_2GHZ_CAP) {
-+	if (supported_bands & WMI_HOST_WLAN_2GHZ_CAP) {
- 		cap_band = &pdev_cap->band[NL80211_BAND_2GHZ];
- 		cap_band->phy_id = le32_to_cpu(mac_caps->phy_id);
- 		cap_band->max_bw_supported = le32_to_cpu(mac_caps->max_bw_supported_2g);
-@@ -585,7 +591,7 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
- 				le32_to_cpu(mac_caps->he_ppet2g.ppet16_ppet8_ru3_ru0[i]);
- 	}
- 
--	if (le32_to_cpu(mac_caps->supported_bands) & WMI_HOST_WLAN_5GHZ_CAP) {
-+	if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP) {
- 		cap_band = &pdev_cap->band[NL80211_BAND_5GHZ];
- 		cap_band->phy_id = le32_to_cpu(mac_caps->phy_id);
- 		cap_band->max_bw_supported =
 -- 
-2.51.0
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
