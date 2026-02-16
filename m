@@ -4,64 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 203CFE81A3A
-	for <ath12k@archiver.kernel.org>; Mon, 16 Feb 2026 15:26:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8C08E63F15
+	for <ath12k@archiver.kernel.org>; Mon, 16 Feb 2026 17:17:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7taZpAF2X8Fd+m136ce6Wg1a9z2ZEYN8WTnpMSmQO+M=; b=oGBkFsRW+2aXUARzUVJmJ79s7J
-	jNSJtClx+U3I14wXSPoPxaIS7qWl1GSmLClzj7J17ThuQsjUna9lR5mVuNp+w+52hAdtys8qZjFXI
-	BGTjVfScPMhdXGhgD+6OqVso7eVqum7kQ9caWEN6FyNQVi8Ew7PPn2kRVExGNOH6k3TkJgQAo7+KV
-	6RPnIwun+jttBRXxH5P+gGuX4eDakGjqdbZ3lJisFJ37mzWuVhdAsqvFE/ERlkxiLK8036MbTuSOr
-	gy1gWVgkQjkMhHU3cfLy2Sl24mtdhFWPfQKoMO9EPjhfzhjzWt2fAEDsQp38mjXd2Q3xr9UnaqWE4
-	HG8zLE/g==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=tRx/Lm4pAe/AFgor8xlXcXnKCVXzzTERQn5gOs5u3Tg=; b=C6eObYUhU9uc+AxP1DXXFIY6Tf
+	P6cHAtoU7TTXcio6pXl2hUs3eAhkRtH8egFKh4HdMeOqXuPfrckmGgmDsc8MXWBVv3ENkmm2RrVcA
+	S91qVMhsSwFErnzh1I5qpyVKQVDsOK2Dp24RqCerVz6xcEEQMOYMMCrcnLuJs0gRlBCFiFSbzTaTF
+	2tZ9u3OaSi+Z8rBGYkQDNVegQf6GdoNKdNMgsyGGEeQf0IsA7thRcJzaKEZ547e8da/rJmdIDaaE1
+	lLZxTTAqg/68Rd3GtZ1zl0bvTjFd8oNmnwdVsNLZlOtRqHbLOH9HYvtykz/WImJPDU1GOeh7Rzrwh
+	SkYBaoug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vs0UY-00000006tIa-3UB2;
-	Mon, 16 Feb 2026 15:26:30 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vs2Du-0000000750j-1G5H;
+	Mon, 16 Feb 2026 17:17:26 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vs0U3-00000006tEZ-20tE;
-	Mon, 16 Feb 2026 15:26:00 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 51F76417D3;
-	Mon, 16 Feb 2026 15:25:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0A1B7C116C6;
-	Mon, 16 Feb 2026 15:25:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1771255556;
-	bh=vDRtpAkL1bnKQgVXh7lQ/WNyK2vOaJ7GqBnIwfLExZY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=nOVNsyRqJvlzFkG//5rB0ckYaEEUnPwm/t7YDyB3POV6NQTluEW4+iPIY7fXEFYvI
-	 l8gqFXae2lMHa/PIlGOHNxNQdlcBdyBjs4xOX/tkoNRwpBucuhIh9U2TDXCgZtC7yU
-	 Uooq4Wh7GbucBpvboGWR9BPGV5V1yWX6Qzx0ov94SaGcTs87TfwOKpFnpymwX8fifx
-	 SjSVCXs0iZ5/zZ3BY2nKmH/gSOaAfhLvedBkd0fFFp3D0wtXrTHYEvtBp6CUwkhD4O
-	 IKFL4v77u6nzP72AY3DFsgT/CH/i5KeCd8Ut23A8l6rggkw+j7+Z2Q+W6i69xIVlEq
-	 5bbOS9QglDO5A==
-Date: Mon, 16 Feb 2026 09:25:53 -0600
-From: Bjorn Andersson <andersson@kernel.org>
-To: Alexander Wilhelm <alexander.wilhelm@westermo.com>, 
-	Chris Lew <christopher.lew@oss.qualcomm.com>
-Cc: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
-	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org, David Heidelberg <david@ixit.cz>, 
-	Jeff Johnson <jjohnson@kernel.org>, ath11k@lists.infradead.org, ath12k@lists.infradead.org
-Subject: Re: [PATCH 1/2] soc: qcom: qmi: Fix "invalid data length" in encoder
-Message-ID: <vexuybqdbf6wx5dxlcdlcy6lwqmxmzonorjn6x5zlzdpxzi3yo@pcqbxitzed2m>
-References: <20260214-qmi-encode-invalid-length-v1-0-780cb4e98b0f@oss.qualcomm.com>
- <20260214-qmi-encode-invalid-length-v1-1-780cb4e98b0f@oss.qualcomm.com>
- <aZLcO4kD5fGtLcGh@FUE-ALEWI-WINX>
+	id 1vs2Dl-000000074zl-3ii4
+	for ath12k@lists.infradead.org;
+	Mon, 16 Feb 2026 17:17:25 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61GFuYpV302197
+	for <ath12k@lists.infradead.org>; Mon, 16 Feb 2026 17:17:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	tRx/Lm4pAe/AFgor8xlXcXnKCVXzzTERQn5gOs5u3Tg=; b=NuwGtpHJ4hpqZV4O
+	jZaMlMAIOtqPO4Eq9RXjN0hESohcsT9GtSauZACQXPDm8p3tsSDncakEt8viW4E6
+	OH4dCkgvEZcw5sbp7ezUY+v6VKHHIC1tq0DtdfHPHRRSboDQSj6TYYBy9z/hQhEJ
+	CDo+LiBH1CzFLhWLLP0pRr3cIENuJTGxhAcCu2luhkFQ2TDdReEm5kqHcBA0WQmf
+	+5Kl41ZwlsrjB1WWFqtlKIpQSr1MgpDjTMRqw7SD44b10WLLZHAi7ovwHgmUJr63
+	Zhve0Tiwv3uGujCPcWspF6c6Qu5xjOwDfT7VjXL6ENqlnOvKdTmDLe5UrWxvh5t/
+	5jJo3g==
+Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cc6a9r6md-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 16 Feb 2026 17:17:15 +0000 (GMT)
+Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-824af3c6c0cso1640087b3a.3
+        for <ath12k@lists.infradead.org>; Mon, 16 Feb 2026 09:17:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1771262235; x=1771867035; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=tRx/Lm4pAe/AFgor8xlXcXnKCVXzzTERQn5gOs5u3Tg=;
+        b=GKg/vcz1zzuI+qlmkMDOlZ9+Sqg0vAlO2/n8154paWIRJJIVoiu7QAfRYRtiXLbnhg
+         lL2CoLGBOdVmhHBjtynX/Xgt/eIT82byywizTDS4VaQLHHMh/aTFQZDlLLRIfSnHIG62
+         JAfMSdfhF9dNg1UIOnCE+VQ49/ZcQbcykyWcDclp1SBRGFuguQXYMbHmlVstWNuA7kPO
+         bIl9M2iSCtqzTMjWbZcmxTXVallTmsAe7nnqnzuRl4AJA86o1jcoEOSBSRhi1P7OcNKx
+         6YtUFZD3SWIMjNhEqZPgRHhUSHehfjvaQ/NQcRv3zmQ5eh/zNalOh3kgNy/RiSrzTDV5
+         TN+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1771262235; x=1771867035;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=tRx/Lm4pAe/AFgor8xlXcXnKCVXzzTERQn5gOs5u3Tg=;
+        b=ulbdESXucpthM0k2CuNXvTNUrPQ2pRFVPcgYqLRsOU5YkVwfKzkqb0XYBc8jQXEULf
+         u3FAUbVxNSeQpPgj0Mgjx8Sv74TuKs/2mkUNjEkHMNUIRd3I4c1uXk6NZ9TNck1FwuiD
+         Lm3vWEKr8v6WQnTpM4BAtE33wYi2QQ7jLjeMvwcEal4IJsobkcK8tw9O61rYw9kdLWDF
+         Jml2EpMsvOMTHtqKvhSW6sGUG5n5RmqEhLjZrLRxMLpH6nkYuNZD7xDDiUxyGnR1T2YN
+         wEFMkViUK9VeVKzqgVcUxX5ksMyGS7g07/3WDaHFCuGPqZ/e7POw2fd1C1rHE/F6WZvJ
+         iToQ==
+X-Forwarded-Encrypted: i=1; AJvYcCURVc0nuS81/5IOaifBmFPLfEvX95iTpv2krZfgLfbwpKelFvrK+mvHkyiBTtVjsP1mjp4G9bM=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw3RuAQS6qi9G65+QCbZ7YxoK/OtULng79NSZP/U0wTsBvMBU6u
+	+RqPNQ9WCKIFWxPiJbDubKkWdbHT+ZbO+TY0nYPm0ojVHkaizm4y/I+/XcJTTgYNuZz8Ea7/bKl
+	uw9uk1h/d/KTl/9aV10IbL4nEwTZp3T85+8UhjpA5sAGP3VzrvcwpeIfY8wIB/NIK
+X-Gm-Gg: AZuq6aKJpSmtHIWJezVU1ct8s6H5JzzY3Sr2CY8K3YyoBr2/s0AKf884xwbcpMSx/zH
+	B4k2tuR0W4nEiJl5XGK6GfWu0Q5TyHLb0v8BJDT6JJJpydeTFT12X35GJFtVbe/wvcoOxrKufku
+	lpWienQZdss8w/rOsdJF0e1FQGhJvA3kILIPsUZadHx3Ml7MtrayoZ25G3TgYz/C6DyEe9RHrW7
+	O4VyWmyuP20qaCOtFG7xv8R9WnV4TuIN/OuwITbhM1aOsR1vN5MG18HoOw4nH9LDyP4s4qlGHIO
+	oqIBYvzHkS1kZxEGXjaFGCmR4WAdr3pa2mG3chMSDpEFLK/4q3Qj/+XUB1pCu43dpuxXKpIexIY
+	jlRG/6l9xhU3LW5n7OpJO6XpoUer775SypBn1S5s7qSlIQAFBHodB
+X-Received: by 2002:a05:6a00:3d48:b0:823:cbb:a484 with SMTP id d2e1a72fcca58-824c94e7cfcmr9441766b3a.14.1771262234345;
+        Mon, 16 Feb 2026 09:17:14 -0800 (PST)
+X-Received: by 2002:a05:6a00:3d48:b0:823:cbb:a484 with SMTP id d2e1a72fcca58-824c94e7cfcmr9441748b3a.14.1771262233801;
+        Mon, 16 Feb 2026 09:17:13 -0800 (PST)
+Received: from [192.168.1.2] ([115.97.96.183])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-824c6b69efdsm10689806b3a.40.2026.02.16.09.17.09
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 16 Feb 2026 09:17:13 -0800 (PST)
+Message-ID: <156d6d48-d135-4acf-a5d7-c9ae80523864@oss.qualcomm.com>
+Date: Mon, 16 Feb 2026 22:47:07 +0530
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH wireless-next v8 2/3] wifi: cfg80211: add initial UHR
+ support
+To: Johannes Berg <johannes@sipsolutions.net>, linux-wireless@vger.kernel.org
+Cc: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>,
+        vasanthakumar.thiagarajan@oss.qualcomm.com,
+        Lorenzo Bianconi <lorenzo@kernel.org>, ath12k@lists.infradead.org,
+        Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Ping-Ke Shih <pkshih@realtek.com>
+References: <20260130154259.265130-5-johannes@sipsolutions.net>
+ <20260130164259.54cc12fbb307.I26126bebd83c7ab17e99827489f946ceabb3521f@changeid>
+ <f96125eeda23451c19067359eb9d10b4047bcdd3.camel@sipsolutions.net>
+ <5d54feea-d0cd-4bd7-b0d2-02e42f0fe5e1@oss.qualcomm.com>
+ <be9ab3c7f05b0f56f19aee0ffc7c2f96138b9a05.camel@sipsolutions.net>
+Content-Language: en-US
+From: Harshitha Prem <harshitha.prem@oss.qualcomm.com>
+In-Reply-To: <be9ab3c7f05b0f56f19aee0ffc7c2f96138b9a05.camel@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-In-Reply-To: <aZLcO4kD5fGtLcGh@FUE-ALEWI-WINX>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjE2MDE0OCBTYWx0ZWRfX7RTclXcIGvOp
+ 618i9gf/f8hvxfLe+YhwteIbsBtJ/m3NRtXshhNsyWgQlw1LiWGGDrz21Sne/llqUrqf8bInZuJ
+ PBjZqeAKdvK5PIs5vijjC9mvMq9cBXpEjZ9QcafhvMoWdhM3QDLjS0KoTA2NPM5tVZRgYrsT8aa
+ V7dqwH5mJLKSb965+5GKhBW8/jMzK6dbfuehGeimVVoZjR9I3z/ZGgqsQls+7Znr93KJJTdY501
+ NaOypN8/ME6wFhei+HN+XhFazuYzNTbewDehaboMkBMQ7xodsSHTxngZdRo0tjKczyZn4jpDi1U
+ p9+KyN3HgUocL5OFl6bk+xjV2g/KNrz28ohSvgRXqf1D6SWRtKMY9qVMcZ691j4TriMda7p9o9E
+ +BtvXoc88FCwReqMLnQ4Kh3kK0awsEDmGfTprUToEivFmKwgvITHjmdFG75AbBT8gZq7g3CAbhy
+ 2XZnNb6Hds3qR0fXwyg==
+X-Proofpoint-GUID: XOPhlCNuHC4jfd1dcknzeqhfvxggNIeG
+X-Proofpoint-ORIG-GUID: XOPhlCNuHC4jfd1dcknzeqhfvxggNIeG
+X-Authority-Analysis: v=2.4 cv=TPNIilla c=1 sm=1 tr=0 ts=6993511b cx=c_pps
+ a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=6sPDMptOXngzVA0SphYZxQ==:17
+ a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=41PRVchwZf4xR-Uy6oIA:9 a=3ZKOabzyN94A:10
+ a=QEXdDO2ut3YA:10 a=OpyuDcXvxspvyRM73sMx:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-02-16_05,2026-02-16_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 suspectscore=0 clxscore=1011 phishscore=0 lowpriorityscore=0
+ malwarescore=0 priorityscore=1501 spamscore=0 impostorscore=0 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602160148
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260216_072559_563446_DCCF2A9C 
-X-CRM114-Status: GOOD (  50.84  )
+X-CRM114-CacheID: sfid-20260216_091724_116879_B3386B5D 
+X-CRM114-Status: GOOD (  47.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,217 +152,197 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Mon, Feb 16, 2026 at 09:58:35AM +0100, Alexander Wilhelm wrote:
-> On Sat, Feb 14, 2026 at 03:16:55PM -0600, Bjorn Andersson wrote:
-> > When encoding QMI messages, the "source buffer" is a C-struct in the
-> > host memory, so while the data that goes into the outgoing buffer should
-> > be converted to little endian, the length should not be.
-> > 
-> > Commit 'fe099c387e06 ("soc: qcom: preserve CPU endianness for
-> > QMI_DATA_LEN")' fixed this, but did it by copying a whole word from the
-> > source into a local u32 and then operated on that.
-> > 
-> > If the length in the DATA_LEN refers to either a char or short array,
-> > it's reasonable to expect that the struct is packed such that this word
-> > will contain not only the length-byte (or length-short), but also the
-> > beginning of the payload.
-> > 
-> > As the encoder loops around to encode the payload it runs into an
-> > unreasonable value of "data_len_value" and bails, with the error message
-> > "qmi_encode: Invalid data length".
-> > 
-> > Rather then complicating the logic with local variables of different
-> > types we can instead pick the u8 or u16 "data_len_value" directly from
-> > "buf_src". As "buf_src" refers to a typical C-structure in the client
-> > drivers, we expect this field to be naturally aligned.
-> > 
-> > We can then return to the original expression of qmi_encode_basic_elem()
-> > encoding directly from "src_buf" to "dst_buf", with the endianness
-> > conversion, based on the size of the type.
-> > 
-> > Reported-by: David Heidelberg <david@ixit.cz>
-> > Closes: https://urldefense.com/v3/__https://lore.kernel.org/all/dfb72933-938f-43f2-87f3-2e3ab9697125@ixit.cz/__;!!I9LPvj3b!BCfk4-YtwbkEy3mc_UUojT1xCH5BW5COilqBek1tBnJyWzp2eK716Cj0C_35FQwo8__BS8qk_PK5oJs9i719BCjcA-rnMg3YY71aTHHs$ 
-> > Fixes: fe099c387e06 ("soc: qcom: preserve CPU endianness for QMI_DATA_LEN")
-> > Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
-> > ---
-> >  drivers/soc/qcom/qmi_encdec.c | 26 ++++++++++----------------
-> >  1 file changed, 10 insertions(+), 16 deletions(-)
-> > 
-> > diff --git a/drivers/soc/qcom/qmi_encdec.c b/drivers/soc/qcom/qmi_encdec.c
-> > index 28ce6f130b6ac355820bb295c8c96f9c6a6e385f..45bb26d010da77ab8d481897026b718c2290bad7 100644
-> > --- a/drivers/soc/qcom/qmi_encdec.c
-> > +++ b/drivers/soc/qcom/qmi_encdec.c
-> > @@ -368,8 +368,6 @@ static int qmi_encode(const struct qmi_elem_info *ei_array, void *out_buf,
-> >  	const void *buf_src;
-> >  	int encode_tlv = 0;
-> >  	int rc;
-> > -	u8 val8;
-> > -	u16 val16;
-> >  
-> >  	if (!ei_array)
-> >  		return 0;
-> > @@ -406,7 +404,6 @@ static int qmi_encode(const struct qmi_elem_info *ei_array, void *out_buf,
-> >  			break;
-> >  
-> >  		case QMI_DATA_LEN:
-> > -			memcpy(&data_len_value, buf_src, sizeof(u32));
-> 
-> Hi Bjorn,
-> 
-> unfortunatelly, this change breaks the `ath11k`, and most likely `ath12k`,
-> execution on big-endian platforms:
-> 
->     ath11k_pci 0001:01:00.0: BAR 0: assigned [mem 0xc00000000-0xc001fffff 64bit]
->     ath11k_pci 0001:01:00.0: MSI vectors: 1
->     ath11k_pci 0001:01:00.0: qcn9074 hw1.0
->     ath11k_pci 0001:01:00.0: FW memory mode: 0
->     ath11k_pci 0002:01:00.0: BAR 0: assigned [mem 0xc10000000-0xc101fffff 64bit]
->     ath11k_pci 0002:01:00.0: MSI vectors: 1
->     ath11k_pci 0002:01:00.0: qcn9074 hw1.0
->     ath11k_pci 0002:01:00.0: FW memory mode: 0
->     ath11k_pci 0001:01:00.0: invalid memory segment length: 83886080
->     ath11k_pci 0001:01:00.0: invalid memory segment length: 419430400
->     ath11k_pci 0001:01:00.0: qmi respond memory request failed: 1 0
->     ath11k_pci 0001:01:00.0: qmi failed to respond fw mem req: -22
->     ath11k_pci 0001:01:00.0: qmi respond memory request failed: 1 48
->     ath11k_pci 0001:01:00.0: qmi failed to respond fw mem req: -22
->     ath11k_pci 0002:01:00.0: invalid memory segment length: 83886080
->     ath11k_pci 0002:01:00.0: invalid memory segment length: 419430400
->     ath11k_pci 0002:01:00.0: qmi respond memory request failed: 1 0
->     ath11k_pci 0002:01:00.0: qmi failed to respond fw mem req: -22 
-> 
-> I tried to analyze the regression I introduced and I think I now understand
-> what went wrong. Previously, the code looked like the this:
-> 
->     memcpy(&data_len_value, buf_src, temp_ei->elem_size);
 
-Above log indicates that we have a problem on the decode-side. This
-patch 1, changes the encoder side only. But we might have the same bug
-in both cases(?)...
 
+On 2/13/2026 3:41 PM, Johannes Berg wrote:
+> Hi Harshita,
 > 
-> However, this never worked correctly on big‑endian systems. `buf_src` is a
-> `void *`, but `ath11k` and `ath12k` always store the data as `u32`.
-
-This I think is the actual bug.
-
-Based on the "invalid memory segment length" error, I can see we're
-talking about struct qmi_wlanfw_request_mem_ind_msg_v01.
-
-This defined mem_seg_len as an u32, 
-
-But qmi_wlanfw_request_mem_ind_msg_v01_ei[] tells us that it's an u8
-(elem_size = 1).
-
-> Assume
-> the element value is `0xABCD` with an elem_size of 2, that is, the
-> `sizeof(u16)`. The memory layout on the driver side then looks like this (X
-> marks unused bytes):
+>>> Should we add a separate netlink attribute for the UHR operation, which
+>>> hostapd would fill with the _full_ data like it appears in association
+>>> response etc.?
+>>>
+>>> That way, hostapd doesn't need to build a separate data/attribute
+>>> structure but can just use hostapd_eid_uhr_operation(..., false) for it.
+>>>
+>>> An alternative would be to add more attributes for everything, but it's
+>>> probably more complicated on both sides?
 > 
->     +---------------+----+----+----+----+
->     | Little Endian | XX | XX | AB | CD |
->     +---------------+----+----+----+----+
->     | Big Endian    | CD | AB | XX | XX |
->     +---------------+----+----+----+----+
+>> Thank you for the suggestions.
+>>
+>> We feel that using separate nested attributes for each feature is the better approach, as this allows us to reuse the attributes for the Enhanced BSS Parameter Critical Update procedure, where similar information is carried in the UHR parameters update element.
 > 
-> When `buf_src` is treated as an array of `u32` and then “reinterpreted” as
-> an array of `u8`, only the first 2 bytes of the `u32` are copied, which, on
-> big‑endian, no longer contain the actual data. After the copy,
-> `data_len_value` contains the following data:
+> Heh, I'll admit I'm surprised - I'm usually the one advocating for
+> finer-grained attributes, and here I didn't ;-)
 > 
->     +---------------+----+----+----+----+
->     | Little Endian | XX | XX | AB | CD |
->     +---------------+----+----+----+----+
->     | Big Endian    | XX | XX | XX | XX |
->     +---------------+----+----+----+----+
+>> While this approach is slightly more verbose, we believe it offers better extensibility for the future.
 > 
-> So the original value `0xABCD` never gets copied at all on big‑endian
-> systems. This is why a simple pointer cast cannot work reliably on
-> big‑endian architectures. I did the following change:
+> Does it actually, though?
+> 
+> I had sort of expected hostapd to add the UHR Parameters Update element
+> to the beacons, and configure some way of having firmware set the
+> countdown ("Countdown Timer"). Turns out this is not only in beacons but
+> also in probe response, (re)association response and (UHR? [1]) link
+> reconfiguration response frames.
+> 
+> [1] the spec says "Link Reconfiguration Response" but I think it should
+> say "UHR Link Reconfiguration Response"
+> 
+> But I guess this is going to end up a continuation of the previous wifi7
+> discussion from last year [2] which hadn't really completed. And Lorenzo
+> just posted another thing on this [3].
+> 
+> [2] https://lore.kernel.org/linux-wireless/20250717045540.27208-1-aditya.kumar.singh@oss.qualcomm.com/
+> [3] https://lore.kernel.org/linux-wireless/20260212-mt7996-link-reconf-v1-0-2b110340d6c4@kernel.org/
+> 
+> 
+> So I think maybe we need to figure out how we will do all of this first?
+> 
+> Naively, I would've said ... something stupid. I'm reading the spec as
+> I'm writing this ;-) The UHR Parameters Update element is actually
+> included in all the beacons across the entire AP MLD.
+> 
+> Maybe we need to take a step back from our previous discussion as well,
+> and introduce a broader concept here?
+> 
+> 
+> I could imagine, for example, something where you say in the nl80211 API
+> some variation of
+> 
+>  1) Let's start a new update operation ("NL80211_CMD_START_MLD_BSS_UPDATE"),
+>     I guess already with some parameters saying:
+>      - the updated affiliated AP (link)
+>      - the number of beacon intervals you want to do it for
+>      - the post-update UHR operation (?)
+>        (or the new channel if it's CSA? etc.?)
+> 
+>      - maybe - more critical if we use it for CSA - already the beacon
+>        templates for all the links? with all the things I say in (2)
+>        below, but that's more complex maybe?
+> 
+>        the reason I say this is that there's a difference here in how
+>        the counter is done - for CSA etc. the things have to disappear
+>        from the beacon immediately, for UHR updates they stick around
+>        and the counter indicates "in the past"
+> 
+>     returning a cookie for the operation.
+> 
+>  2) hostapd updates each link's beacon now including the UHR Parameters
+>     Update element(s), for each currently ongoing update it includes -
+>     indexed by the cookie - a list of offsets where the counters are
+>     updated.
+> 
+>     Thing is that this depends on the operation - CSA will already need
+>     the post-switch beacon template so the flow can continue without
+>     involving hostapd, hostapd may however need to update the beacon in
+>     the interim (both pre- and post-switch ones!) and need to refer
+>     again to where the counters are filled in ...
+> 
 > 
 
-You're analysis is correct!
 
-An incoming 0xcd will be written as 0xcd000000 in the 32-bit
-mem_seg_len. This is confirmed by your log, which actually are the
-values 5 and 25.
+Hi Johannes,
 
-Looking further, I see that qmi_wlanfw_host_cap_req_msg_v01_ei[]
-contains "gpios_len", which is declared as sizeof(u8), but gpios_len is
-u32. So the ath11k driver has the same problem on the encode side.
+This approach looks well suited to handling overlapping update scenarios.
 
-In contrast, you can see struct ssctl_subsys_event_req which defines
-subsys_name_len as u8 and ssctl_subsys_event_req_ei[0] specified
-elem_size of sizeof(uint8_t) - which is the source of the bug that David
-reported.
+To make sure I understand it correctly, I’d like to walk through a
+concise example where a UHR critical update and a CSA overlap on link 0
+of a 3‑link AP MLD.
 
->     memcpy(&data_len_value, buf_src, sizeof(u32));
+
+t1: A UHR critical update is triggered. hostapd sends
+NL80211_CMD_START_MLD_BSS_UPDATE with an advanced notification (5
+TBTTs), post‑interval (5 TBTTs), and the beacon template with UHR
+parameters update element for link 0. Timers start in mac80211, and
+hostapd receives cookie X.
+
+
+t2: hostapd sends NL80211_CMD_UPDATE_AP with cookie X and offset where
+the counter is updated for link 1 (and then link 2).
+
+the countdown values would be handled in mac80211 with the offset
+mentioned similar to ieee80211_set_beacon_cntdwn().
+
+t3: Before the UHR advanced interval completes, a CSA is triggered (due
+to radar or user‑initiated). Another NL80211_CMD_START_MLD_BSS_UPDATE is
+issued with CSA countdown 5, including CSA and after beacon templates.
+The after template carries cookie X and the offset. Since UHR CU is
+already in progress, hostapd could also include an updated parameters
+update element. Also, an updated UHR operation element which can be
+modified in after beacon template if CSA finishes after the UHR CU
+advance interval. (why to provide the UHR operation element separately
+is because the advance notification can be before or after the CSA
+finalize).
+hostapd then receives cookie Y for the CSA.
+
+
+t4: hostapd issues NL80211_CMD_UPDATE_AP for link 1 with cookie X (UHR
+offset) and cookie Y (CSA offset), followed by link 2.
+
+
+t5: When the UHR advanced notification interval expires, the CSA after
+beacon template is updated to reflect the new operation element by
+mac80211 or getting it from hostapd.
+
+
+t6: Once the CSA completes, the driver updates the after beacon template
+along with updated counter for UHR parameter update element. (since it
+will be in the post notification interval)
+
+
+t7: When the UHR post‑interval completes, the UHR parameter update
+element is removed. Since offsets are known, the driver can remove it
+from the latest beacon template.
+
+Please let me know if this sequence aligns with the intended behavior,
+or if I’m missing any edge cases.
+
+Also, CSA during NPCA parameter update seems very tricky as the channel
+information advertised in NPCA may not be relevant when there is a CSA,
+perhaps stop the NPCA CU (still spec has not mentioned any details on
+the abort scenario though)
+
+Even, in case of link removal during UHR CU update, we need to stop the
+UHR CU.
+
+Furthermore, the UHR capabilities carries the advance notification
+interval, post notification  (i guess yet to be added in element as I
+see it in "37-8—Enhanced Critical Updates Mechanism") and update
+indication in TIM interval, these intervals can be sent in the START_AP.
+I assume, these intervals cannot be modified dynamically as these are
+exchanged in assoc response (Will reconfirm again).
+
+For beacon offloaded drivers, NL80211_CMD_START_MLD_BSS_UPDATE can be as
+a trigger. May be we can add the updated UHR operation element in case
+of UHR. So, that firmware/driver handle the timers as well as
+constructing the elements since "the encoding of fields in Mode specific
+parameters for any feature say DPS/NPCA/DBE etc.. is same as the
+corresponding field in operation parameters field for that feature" (but
+i see bit variations for NPCA between both)
+
+I guess, this means the proposal of having a separate netlink attribute
+for the UHR operation with _full_ data like is much useful.
+
+Still, we are thinking through on all the other cases of wifi-7/CCA etc..
+
+> Either way, it feels like we've reached the end of where the current
+> design with CSA and BSS color updates will take us. Lorenzo already gave
+> up and put the parsing into the driver to find the offsets, but I
+> personally think that's very inflexible.
 > 
-> My attempt was to always copy the full `u32` value , but it seems that the
-> modem on the "Pixel 3" does not actually use a `u32` there, but rather an
-> array or a packed structure. I’ve CC’ed Jeff and the `ath11k/ath12k`
-> mailing list as well. Hopefully we can find a solution that works across
-> both endianness architectures.
+> Some operations such as link removal may not need to have perfect
+> timing, but some others like CSA really do want the updates to happen at
+> the precise moment.
 > 
-
-This isn't just the modem on Pixel 3, that message is sent on a wide
-variety of Qualcomm SoCs.
-
-> >  			data_len_sz = temp_ei->elem_size == sizeof(u8) ?
-> >  					sizeof(u8) : sizeof(u16);
-> >  			/* Check to avoid out of range buffer access */
-> > @@ -416,19 +413,16 @@ static int qmi_encode(const struct qmi_elem_info *ei_array, void *out_buf,
-> >  				       __func__);
-> >  				return -ETOOSMALL;
-> >  			}
-> > -			if (data_len_sz == sizeof(u8)) {
-> > -				val8 = data_len_value;
-> > -				rc = qmi_encode_basic_elem(buf_dst, &val8,
-> > -							   1, data_len_sz);
-> > -				if (rc < 0)
-> > -					return rc;
-> > -			} else {
-> > -				val16 = data_len_value;
-> > -				rc = qmi_encode_basic_elem(buf_dst, &val16,
-> > -							   1, data_len_sz);
-> > -				if (rc < 0)
-> > -					return rc;
-> > -			}
-> > +
-> > +			if (data_len_sz == sizeof(u8))
-> > +				data_len_value = *(u8 *)buf_src;
-> > +			else
-> > +				data_len_value = *(u16 *)buf_src;
-> > +
-> > +			rc = qmi_encode_basic_elem(buf_dst, buf_src, 1, data_len_sz);
+> In some way, it's almost good that we haven't completed the WiFi7 part
+> since the UHR part throws another curveball with the counters
+> decrementing below zero - for past updates - in a sense.
 > 
-> Here is the problem again: `buf_src` is once more being cast either to a
-> `u8 *` or a `u16 *`. This does not cause issues on little‑endian systems,
-> but it corrupts the data on big‑endian platforms.
 > 
+> johannes
 
-Correct, but prior to 3ced38da5f7d ("soc: qcom: QMI encoding/decoding
-for big endian") only temp_ei->elem_size bytes of buf_src was
-considered. I.e. for a elem_size of 1, only the byte pointed to by
-buf_src was considered to be the length - and this happens to be the
-same thing with little endian.
-
-And as the commit message of this patch states, if we change this to
-always read 32-bits from the length we're likely reading "garbage"
-beyond the u8 or u16 length member.
-
-
-It might very well be that the underlying bug is my expectation that
-elem_size should be reflected in the struct and not only in the encoded
-message, and hence what I wrote in https://github.com/linux-msm/qmic.
-Perhaps the length-specifier of an array should always be u32?
-
-@Chris, what does the downstream generator produce here?
+Thanks in advance for your time and clarification.
 
 Regards,
-Bjorn
+Harshitha
 
-> 
-> Best regards
-> Alexander Wilhelm
 
