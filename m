@@ -4,127 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42C4FE83855
-	for <ath12k@archiver.kernel.org>; Tue, 17 Feb 2026 05:49:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96890E6815D
+	for <ath12k@archiver.kernel.org>; Tue, 17 Feb 2026 10:05:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cFvYsCI5HjURK4lftvkXrgVSok0x3FjDs3Lc91XWaII=; b=ujEgBCjNJ7Uh7x8uQ1s3bc5Lz/
-	wSDG+CkJfaNLgk5Nwl3mnh0U2ez0vhTHGF0Y269Kpp0OXPP6261kreDr0aJwKQduMPOxuHGImmks7
-	ZEpE+pJom7bXFofG2yXy3QsZi3wkcoGa2SbMMGe10oRtVOWK2WNX+jbZHZ43utjbPrMx9HtNRAk2r
-	vD8UWdrtH4z+ojXs6W6AI5R9Ar596WGH26g9BvS7YGuUZ7ZzszbKWr4ECs9fRjjPJH54dq83Roo09
-	PmAkgydaeKtOmUFQgcfEKYu667bauE72NK8eVCs1LMvN8QY7b7Kc1k/SH4ER+wJk9ZDpdJ8FFYXYH
-	3LJyaCqg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=IxTlxrlVqxNJfOH2NwUf+neTFHlV4g3ByZDBv0JUBx0=; b=vpI8Qu3UTCOn0NZymm3HvPnlHR
+	ve/pcn3R8ZNE2/m9GnnpM6eGW5z6wxXPFsNLPb34xlD4bltnLpPAqYjVHJaCTvXnvMUvl3Mk9Dk9F
+	LjsHHW2+hinZ3eTvnfoU4jYlHbxJNzGuGd6L7WkHwanHaroWhNww5bfM/90Zk2vFpFwBa8nXF2xxY
+	BGhZfpQDW9TO+dP3vW3oUB+GlxzQQO8yzYA4b0M3SRSB7h0mrEFdps3V+bxY7DqinFt8oeDXMfFNT
+	9m8whm/BHPk+UBt+UARu9DlfYaqTvP+/dmexJ1EdWgiro5mHzQIef+q9h6ZB+/CEb9vyvyApnB+u9
+	2EQz5fXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsDxn-00000007fGC-3wRO;
-	Tue, 17 Feb 2026 05:49:35 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vsHxa-00000007zpR-1GOM;
+	Tue, 17 Feb 2026 10:05:38 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsDxl-00000007fEU-0ovz
+	id 1vsHxY-00000007zoz-1UHf
 	for ath12k@lists.infradead.org;
-	Tue, 17 Feb 2026 05:49:34 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61GL8Wh2912069
-	for <ath12k@lists.infradead.org>; Tue, 17 Feb 2026 05:49:32 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=cFvYsCI5HjU
-	RK4lftvkXrgVSok0x3FjDs3Lc91XWaII=; b=E0PsDqgcLMdd1+Mq6tVsol84lxT
-	hzanVhJHV2hqr3H/A/BiLiUJjQ2iC96OEo5wH9VN54Tqorc+rkXhM5tnEoZgPmq+
-	xgrMBmvUUtQsRmMyD+qek96aG9/nJJegNCGr3tFdyEAtxPrG6EbmjSQ5xQJ68gOk
-	Pr+K5wrLYovdRAOwde/LmOF+LNMDsQ/Gn4xSwalUtHd59aV77GRCf0MDfTVxFsc7
-	UHxjP/qthCYW1KfCQndYXZbm6L+/Eq51svWGgTu/pHe9nZou66GGP3FiOW+xAuQC
-	5VNPjU+tQV+SyEvG3td+RqtVOaNR6o4ZXy5CAnndMdCfhmaxbvOBHYlxfmQ==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cc6a9sb7a-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 17 Feb 2026 05:49:32 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2aadeb3dee4so217561905ad.2
-        for <ath12k@lists.infradead.org>; Mon, 16 Feb 2026 21:49:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1771307371; x=1771912171; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=cFvYsCI5HjURK4lftvkXrgVSok0x3FjDs3Lc91XWaII=;
-        b=GHcihtgb1xFJjbHWmyVW7t1nVATWb4rXBv1uCzlpgNmUUPZwXYxOzgMUdILu5fiisV
-         0Ns0BxauiaUrZVoOYw2AJbgpfPGfSNs3abWuvGTK0yTwJSl4IcvWL9cSa6vROxN6UO+U
-         Wvu2+JkZxVO46grPef8ZhRangizXM2YjVuHgFPWUAy1EkyAOavhyn+FvlOOzMDrlb5xa
-         Rhxi9p+6oM/Kftvz+siivCvqY0gzgUEU0lNStGa2UyXLKZv4ZQfSyhgkHKehEC1SZMBd
-         rl3HcV0HjmkRo5ZKJnTyTMzSrW1FpCTEg+oU+BhK01hWoLKA3Q/I5WYknZNE3FerNGFe
-         nrkg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771307371; x=1771912171;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=cFvYsCI5HjURK4lftvkXrgVSok0x3FjDs3Lc91XWaII=;
-        b=ZwK9zgvxr33I1jR6GSl5D8SYSv6wXeWSV+Hq5Ba2jReOWSyBf6JHOM5CNkj7FqCvUv
-         iiZtFsk8yxjakDDYiaDaJ09zGBhkIi0OFOHvAlEJYjtQvXdCALjqhSl4CTO6QL9k2KKN
-         N5AlddKXeewlTfln0GcHz/mgZe3SiI9RFSkpPgYN1l/EGTnrpnlueavGpmeOPN5xx2bj
-         PnKAnFMc24iGkVtyK3QWXxNasUZ1WyPrNmj51OzqlUM/h10mxAHNmfaytVTQR3jMj8OW
-         QPya+7tiEI3IZZ+XCgwDWec9yYKm60z/2s9zMawh7zFV2ig1ZHVxDRBv9isyafGTcNo5
-         uhig==
-X-Forwarded-Encrypted: i=1; AJvYcCUXVH5nvLI4ydZHVH7fp7pqXhsaijI2CuyMLU1hE5HBK756qYj43nWQAUdDSPRX5WHHOKmDY98=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwW9HDSHBncQS8+r1XHf5UR91pLelUHRS9YFR8/pu4/GllRCQs6
-	qYfbY9shq+5wgMsgatJq/DjlMvA5lWBlI+5xx6PTOMU7XnNeF05AHTcalYL+P6eXiLxvPEhRUZ1
-	cSXyLnpjvix7xf8AbKdkNxo4HQYIkCNmlzwQlBb0isbqMPo7LF7XmEjicKn5TPyAU
-X-Gm-Gg: AZuq6aKALlxpYlkObdZjbBPn/XPbsUPrwDKg+lU95GkbIyeuOCjHtk/JRrrjwIkdePA
-	C5/J1QhxF4LXfltBQXDBCLqSQJumE9X4V/ZMKq1QsrU7cdccVv5Cu8RGzKkbd95nVugp9rhCBzI
-	qehgixe0R7a/x+Ug/1T+S1mRsKgh6qL+eODsn9zOmCwDKwbEZD9zYgL+oVEcqtkA4tVuOYxPCg2
-	yRtHHZp28nmjO1BHIcokn0llxYzZl23m/2kcIAzpxbdztgU1S/zgo6ACVpdcru6idggmTkXvXO3
-	uqLcdbcmpOwMVzdg/O+eP6xpikAY0RzG1MdQW/4muKQ/HECovYZ0VRN7c4hjN/DjPKYYCg4xOlZ
-	Q3QKoyioNpryeJgBqZ3v3zGH8wj/itZ9QQtZlaeliBtMhf6ieQi86gGRp0e8juBujng==
-X-Received: by 2002:a17:902:d4d0:b0:2aa:d61d:79bf with SMTP id d9443c01a7336-2ab4d04e925mr140733025ad.42.1771307371215;
-        Mon, 16 Feb 2026 21:49:31 -0800 (PST)
-X-Received: by 2002:a17:902:d4d0:b0:2aa:d61d:79bf with SMTP id d9443c01a7336-2ab4d04e925mr140732635ad.42.1771307370740;
-        Mon, 16 Feb 2026 21:49:30 -0800 (PST)
-Received: from hu-kathirve-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ad1a9d5bbcsm89808175ad.56.2026.02.16.21.49.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Feb 2026 21:49:30 -0800 (PST)
-From: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>
-To: johannes@sipsolutions.net
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>
-Subject: [PATCH wireless-next v4 2/2] wifi: mac80211_hwsim: Add UHR capabilities to the driver
-Date: Tue, 17 Feb 2026 11:17:31 +0530
-Message-Id: <20260217054731.3667600-3-karthikeyan.kathirvel@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260217054731.3667600-1-karthikeyan.kathirvel@oss.qualcomm.com>
-References: <20260217054731.3667600-1-karthikeyan.kathirvel@oss.qualcomm.com>
+	Tue, 17 Feb 2026 10:05:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=IxTlxrlVqxNJfOH2NwUf+neTFHlV4g3ByZDBv0JUBx0=;
+	t=1771322736; x=1772532336; b=BgDMf3uYwAnLf1ZI0OXbKBUP9Y3bY5GiIHuZqACkb0HvFzr
+	TYH635Dem2vCl3y1kaLdde2ayjHHMULa+N/OPSqAHNY4M9933CrIy+J4Jbie4FDfOmUBuQ8B+PVSt
+	xM8YQoVP60uctqDxu9ZtyFzRjYAFzSbZIQRJ8/XWSoTpXtWmPruLLItvJZxzlnV5Gy8flyxHh0lVq
+	H5VP3m/UA0XCxYj7YwIjnT6x5Sf8VlYBAKUGFYH+DiTSNxEWnwlWfVIWX3vodlzdHgo038qLbtn1j
+	E7I2twesLIi1yvL62xalyKtq5PECxmu4wBDw5IjDoa+hFoWeY+/dZ8P7vIMLjjzg==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1vsHxP-0000000BKWE-2mTs;
+	Tue, 17 Feb 2026 11:05:29 +0100
+Message-ID: <0f4b34f0b529fd93fc608d8bbac0e98516b7a3d2.camel@sipsolutions.net>
+Subject: Re: [PATCH wireless-next v8 2/3] wifi: cfg80211: add initial UHR
+ support
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Harshitha Prem <harshitha.prem@oss.qualcomm.com>, 
+	linux-wireless@vger.kernel.org
+Cc: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>, 
+	vasanthakumar.thiagarajan@oss.qualcomm.com, Lorenzo Bianconi
+ <lorenzo@kernel.org>, 	ath12k@lists.infradead.org, Jeff Johnson
+ <jeff.johnson@oss.qualcomm.com>,  Ping-Ke Shih <pkshih@realtek.com>
+Date: Tue, 17 Feb 2026 11:05:25 +0100
+In-Reply-To: <156d6d48-d135-4acf-a5d7-c9ae80523864@oss.qualcomm.com>
+References: <20260130154259.265130-5-johannes@sipsolutions.net>
+	 <20260130164259.54cc12fbb307.I26126bebd83c7ab17e99827489f946ceabb3521f@changeid>
+	 <f96125eeda23451c19067359eb9d10b4047bcdd3.camel@sipsolutions.net>
+	 <5d54feea-d0cd-4bd7-b0d2-02e42f0fe5e1@oss.qualcomm.com>
+	 <be9ab3c7f05b0f56f19aee0ffc7c2f96138b9a05.camel@sipsolutions.net>
+	 <156d6d48-d135-4acf-a5d7-c9ae80523864@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.58.3 (3.58.3-1.fc43) 
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjE3MDA0NiBTYWx0ZWRfXw4jbXTYRu9lw
- 1Dd/4n6QReHhtW6MuVXiwZhGlgO8pPGVxSp3GY3Lat6ma/fGh1O/4UvMuWjjUFG02+VaxwTLXe9
- rWlGIcvsBqkAWP/guThMikWwo+VmC7b12OB/cbWIrSiO/hEd4RiLwENPrCeC71CxXTlv750nNGB
- NxnWYKawo2/ky53Yp0EN/L9mM0RZIWKLggqjzdJWgU26nwTGumOeXEnGeK7ds5hGMPA+mdKEA9B
- nvBAlhOHTVvlE7B+bkVU2z5k09yO8srxiUdHFVYpd1hOGFk7XNNcsm0QcgoeeJ+f5yv8I/9cmtr
- w03iJL515gL0LtyM7jx1/iyh9VKx/5mQ9oxWqj0bCCFxdJDn9YIKLr9B9O98rfO9XMqD1PMh0M5
- xxiQmm02K3getzlEUP9ZKnIpeFYLFkx37D727en+JGmeAMyAByOp22/vF9jMafzC5VkMFuZkZs0
- 8XyoyVvej+BFeJb/WUw==
-X-Proofpoint-GUID: qMR8-pJZUBsd8FeePA-BmskcQNyY-Fxw
-X-Proofpoint-ORIG-GUID: qMR8-pJZUBsd8FeePA-BmskcQNyY-Fxw
-X-Authority-Analysis: v=2.4 cv=TPNIilla c=1 sm=1 tr=0 ts=6994016c cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22 a=EUspDBNiAAAA:8
- a=zvSoEyNLsJKm_rXvJ_sA:9 a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-02-16_08,2026-02-16_04,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 suspectscore=0 clxscore=1015 phishscore=0 lowpriorityscore=0
- malwarescore=0 priorityscore=1501 spamscore=0 impostorscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602170046
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260216_214933_350633_DFE778D2 
-X-CRM114-Status: GOOD (  12.96  )
+X-CRM114-CacheID: sfid-20260217_020536_638452_518362BC 
+X-CRM114-Status: GOOD (  45.55  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,346 +82,208 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add UHR capabilities for bringing up the interface in UHR mode.
-This is required to validate UHR test cases.
+Hi,
 
-Signed-off-by: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>
----
- drivers/net/wireless/virtual/mac80211_hwsim.c | 285 ++++++++++++++++++
- 1 file changed, 285 insertions(+)
+> This approach looks well suited to handling overlapping update scenarios.
+>=20
+> To make sure I understand it correctly, I=E2=80=99d like to walk through =
+a
+> concise example where a UHR critical update and a CSA overlap on link 0
+> of a 3=E2=80=91link AP MLD.
 
-diff --git a/drivers/net/wireless/virtual/mac80211_hwsim.c b/drivers/net/wireless/virtual/mac80211_hwsim.c
-index 4d9f5f87e814..7af429e589ff 100644
---- a/drivers/net/wireless/virtual/mac80211_hwsim.c
-+++ b/drivers/net/wireless/virtual/mac80211_hwsim.c
-@@ -4478,6 +4478,51 @@ static const struct ieee80211_sband_iftype_data sband_capa_2ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_ASSIST_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ADD_MAP_TID_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_AP_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_OMC_UL_MU_DIS_RX_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_UHR_TRS_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH |
-+					IEEE80211_UHR_MAC_CAP3_PARAM_UPD_ADV_NOTIF_INTV |
-+					IEEE80211_UHR_MAC_CAP3_UPD_IND_TIM_INTV_LOW,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_UPD_IND_TIM_INTV_HIGH |
-+					IEEE80211_UHR_MAC_CAP4_BOUNDED_ESS |
-+					IEEE80211_UHR_MAC_CAP4_BTM_ASSURANCE |
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_LE80 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- 	{
- 		.types_mask = BIT(NL80211_IFTYPE_AP) |
-@@ -4586,6 +4631,52 @@ static const struct ieee80211_sband_iftype_data sband_capa_2ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_ASSIST_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ADD_MAP_TID_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DBE_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_AP_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_OMC_UL_MU_DIS_RX_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_UHR_TRS_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH |
-+					IEEE80211_UHR_MAC_CAP3_PARAM_UPD_ADV_NOTIF_INTV |
-+					IEEE80211_UHR_MAC_CAP3_UPD_IND_TIM_INTV_LOW,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_UPD_IND_TIM_INTV_HIGH |
-+					IEEE80211_UHR_MAC_CAP4_BOUNDED_ESS |
-+					IEEE80211_UHR_MAC_CAP4_BTM_ASSURANCE |
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_LE80 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- #ifdef CONFIG_MAC80211_MESH
- 	{
-@@ -4755,6 +4846,53 @@ static const struct ieee80211_sband_iftype_data sband_capa_5ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_ASSIST_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ADD_MAP_TID_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_AP_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_OMC_UL_MU_DIS_RX_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_UHR_TRS_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH |
-+					IEEE80211_UHR_MAC_CAP3_PARAM_UPD_ADV_NOTIF_INTV |
-+					IEEE80211_UHR_MAC_CAP3_UPD_IND_TIM_INTV_LOW,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_UPD_IND_TIM_INTV_HIGH |
-+					IEEE80211_UHR_MAC_CAP4_BOUNDED_ESS |
-+					IEEE80211_UHR_MAC_CAP4_BTM_ASSURANCE |
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_160 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_160 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- 	{
- 		.types_mask = BIT(NL80211_IFTYPE_AP) |
-@@ -4880,6 +5018,54 @@ static const struct ieee80211_sband_iftype_data sband_capa_5ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_ASSIST_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ADD_MAP_TID_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DBE_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_AP_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_OMC_UL_MU_DIS_RX_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_UHR_TRS_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH |
-+					IEEE80211_UHR_MAC_CAP3_PARAM_UPD_ADV_NOTIF_INTV |
-+					IEEE80211_UHR_MAC_CAP3_UPD_IND_TIM_INTV_LOW,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_UPD_IND_TIM_INTV_HIGH |
-+					IEEE80211_UHR_MAC_CAP4_BOUNDED_ESS |
-+					IEEE80211_UHR_MAC_CAP4_BTM_ASSURANCE |
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_160 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_160 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- #ifdef CONFIG_MAC80211_MESH
- 	{
-@@ -5073,6 +5259,55 @@ static const struct ieee80211_sband_iftype_data sband_capa_6ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_ASSIST_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ADD_MAP_TID_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_AP_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_OMC_UL_MU_DIS_RX_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_UHR_TRS_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH |
-+					IEEE80211_UHR_MAC_CAP3_PARAM_UPD_ADV_NOTIF_INTV |
-+					IEEE80211_UHR_MAC_CAP3_UPD_IND_TIM_INTV_LOW,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_UPD_IND_TIM_INTV_HIGH |
-+					IEEE80211_UHR_MAC_CAP4_BOUNDED_ESS |
-+					IEEE80211_UHR_MAC_CAP4_BTM_ASSURANCE |
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_160 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_160 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_320 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_320 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- 	{
- 		.types_mask = BIT(NL80211_IFTYPE_AP) |
-@@ -5219,6 +5454,56 @@ static const struct ieee80211_sband_iftype_data sband_capa_6ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_ASSIST_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ADD_MAP_TID_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DBE_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_AP_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_OMC_UL_MU_DIS_RX_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_UHR_TRS_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH |
-+					IEEE80211_UHR_MAC_CAP3_PARAM_UPD_ADV_NOTIF_INTV |
-+					IEEE80211_UHR_MAC_CAP3_UPD_IND_TIM_INTV_LOW,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_UPD_IND_TIM_INTV_HIGH |
-+					IEEE80211_UHR_MAC_CAP4_BOUNDED_ESS |
-+					IEEE80211_UHR_MAC_CAP4_BTM_ASSURANCE |
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_160 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_160 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_320 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_320 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- #ifdef CONFIG_MAC80211_MESH
- 	{
--- 
-2.34.1
+Well, so honestly, you should probably treat what I write as equivalent
+to a paper napkin sketch during a night of drinking ;-)
 
+I surely didn't think it totally through. I was just trying to
+illustrate that I feel like we need to have some kind of new design for
+all these overlapping updates (CSA, BSS color change, EHT and UHR
+critical updates?) than the piecemeal design we have now.
+
+And, importantly, that perhaps I think that this means we need to have
+"post-update UHR operation" more than the individual UHR operation
+updates broken out - which after all is where we started from.
+
+
+> t1: A UHR critical update is triggered. hostapd sends
+> NL80211_CMD_START_MLD_BSS_UPDATE with an advanced notification (5
+> TBTTs), post=E2=80=91interval (5 TBTTs), and the beacon template with UHR
+> parameters update element for link 0. Timers start in mac80211, and
+> hostapd receives cookie X.
+
+Don't know if timers would be really in mac80211 - I guess if the driver
+pulls each individual beacon then mac80211 could handle the countdown,
+but otherwise this might just be given to firmware.
+
+Also I guess the counter would have offset(s) from the start, i.e. the
+beacon template would be in this operation already. Or maybe even beacon
+updates for multiple links? Don't know if that really matters much
+either way.
+
+> t2: hostapd sends NL80211_CMD_UPDATE_AP with cookie X and offset where
+> the counter is updated for link 1 (and then link 2).
+>=20
+> the countdown values would be handled in mac80211 with the offset
+> mentioned similar to ieee80211_set_beacon_cntdwn().
+
+Sort of, yeah. I imagined that the CMD_UPDATE_AP would come with a list
+of "cookie X: { offset X_1, offset X_2 }, cookie Y: { offset Y_1 }" or
+something like that.
+
+> t3: Before the UHR advanced interval completes, a CSA is triggered (due
+> to radar or user=E2=80=91initiated). Another NL80211_CMD_START_MLD_BSS_UP=
+DATE is
+> issued with CSA countdown 5, including CSA and after beacon templates.
+> The after template carries cookie X and the offset. Since UHR CU is
+> already in progress, hostapd could also include an updated parameters
+> update element.=C2=A0
+
+Would have to, I think? I think in your example it's unlikely the _after
+CSA_ template still has cookie X / offset(s) X_n, since you only had 10
+beacon intervals overall for the UHR critical update and CSA might be
+longer, but we could also imagine the UHR critical update was advertised
+for a longer time.
+
+> Also, an updated UHR operation element which can be
+> modified in after beacon template if CSA finishes after the UHR CU
+> advance interval. (why to provide the UHR operation element separately
+> is because the advance notification can be before or after the CSA
+> finalize).
+> hostapd then receives cookie Y for the CSA.
+
+This could get trickier than I imagined - you now have three periods of
+time:
+
+ - now
+ - after CSA but before UHR update
+ - after UHR update
+
+and actually all three might need different UHR operation, since the CSA
+can change the bandwidth and therefore e.g. DBE/NPCA. The intermediate
+period ("after CSA but before UHR update") can be captured by the CSA
+operation (given a template/UHR operation for after) easily.
+
+But I was imagining we capture all this in the operations already, so I
+guess to do that we would need a "NL80211_CMD_MODIFY_MLD_BSS_UPDATE"
+command that takes the cookie and updates the post-operation values, so
+that the changes due to the CSA could be taken into account in the
+previously started UHR update.
+
+FWIW, I was also kind of imagining that we'd design this combined update
+command in a way that it replaces the CSA and color change commands,
+handles the proposed link removal thing from Lorenzo, and then we don't
+need to handle overlapping operations of all kinds, just of this new
+kind that can do many different things. Not a huge difference though
+since CSA/CCA would map to a subset of the new "thing".
+
+
+> t4: hostapd issues NL80211_CMD_UPDATE_AP for link 1 with cookie X (UHR
+> offset) and cookie Y (CSA offset), followed by link 2.
+
+Not sure really about this. You also need new beacon templates for the
+two periods I mentioned above ("after CSA but before UHR update" and
+"after UHR update").
+
+
+I think in my head the beacon templates for post-operations for all
+links would've been handle by NL80211_CMD_START_MLD_BSS_UPDATE and, as I
+discovered above, NL80211_CMD_MODIFY_MLD_BSS_UPDATE, rather than by
+NL80211_CMD_UPDATE_AP.
+
+I was, however, imagining that updates to the *current* template could
+still happen via NL80211_CMD_UPDATE_AP, so - let's build a side branch
+here first, e.g.:
+
+      - we start UHR update to happen in 10 beacon intervals
+        - this comes with a post-update template and post-update UHR operat=
+ion
+      - something else happens, e.g. HT mixed mode needs updating
+        in this case, NL80211_CMD_UPDATE_AP could happen with the cookie(s)
+        and offset(s) for the _current_ beacon
+     =20
+      Although I think perhaps this ends up being racy, and in fact hostapd
+      would need to use a hypothetical NL80211_CMD_MODIFY_MLD_BSS_UPDATE ag=
+ain
+      to update the link's beacon for HT mixed mode for all of the ongoing =
+BSS
+      updates and their post beacon(s)?
+
+Anyway, back to your scenario:
+
+> t5: When the UHR advanced notification interval expires, the CSA after
+> beacon template is updated to reflect the new operation element by
+> mac80211 or getting it from hostapd.
+
+Yeah so that's also an option, if we think it'd work / not be too racy?
+As I wrote, I was thinking CSA becomes another MLD BSS update and then
+the post-CSA template is already given there.
+
+> t6: Once the CSA completes, the driver updates the after beacon template
+> along with updated counter for UHR parameter update element. (since it
+> will be in the post notification interval)
+>=20
+>=20
+> t7: When the UHR post=E2=80=91interval completes, the UHR parameter updat=
+e
+> element is removed. Since offsets are known, the driver can remove it
+> from the latest beacon template.
+
+I wasn't really imagining the driver would remove it I guess, but rather
+a post-update template would be provided already.
+
+Ah! I think you were maybe thinking "this is the offset where to
+insert/remove the UHR Parameter Update element", and I was thinking
+"this is the offset of the counter" so that we could also put it into
+the RNR etc.?
+
+> Please let me know if this sequence aligns with the intended behavior,
+> or if I=E2=80=99m missing any edge cases.
+>=20
+> Also, CSA during NPCA parameter update seems very tricky as the channel
+> information advertised in NPCA may not be relevant when there is a CSA,
+> perhaps stop the NPCA CU (still spec has not mentioned any details on
+> the abort scenario though)
+
+Right, it's a bit tricky all over for concurrency scenarios. I hear that
+two UHR critical updates concurrently are not going to be allowed
+though.
+
+> Even, in case of link removal during UHR CU update, we need to stop the
+> UHR CU.
+
+Well if the link is removed then it probably isn't relevant to update it
+any more anyway?
+
+> Furthermore, the UHR capabilities carries the advance notification
+> interval, post notification  (i guess yet to be added in element as I
+> see it in "37-8=E2=80=94Enhanced Critical Updates Mechanism") and update
+> indication in TIM interval, these intervals can be sent in the START_AP.
+> I assume, these intervals cannot be modified dynamically as these are
+> exchanged in assoc response (Will reconfirm again).
+
+Yeah, I agree, I would tend to think these are fixed.
+
+> For beacon offloaded drivers, NL80211_CMD_START_MLD_BSS_UPDATE can be as
+> a trigger. May be we can add the updated UHR operation element in case
+> of UHR. So, that firmware/driver handle the timers as well as
+> constructing the elements since "the encoding of fields in Mode specific
+> parameters for any feature say DPS/NPCA/DBE etc.. is same as the
+> corresponding field in operation parameters field for that feature" (but
+> i see bit variations for NPCA between both)
+
+The bit variants are going to get fixed, it's just not entirely clear
+yet which way around.
+
+
+> I guess, this means the proposal of having a separate netlink attribute
+> for the UHR operation with _full_ data like is much useful.
+
+OK. We can always also just parse it out anyway, just that element
+(contents) isn't really too difficult to get at.
+
+> Still, we are thinking through on all the other cases of wifi-7/CCA etc..
+
+Of course.
+
+Thanks,
+johannes
 
