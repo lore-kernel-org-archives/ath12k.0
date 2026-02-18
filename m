@@ -4,70 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96890E6815D
-	for <ath12k@archiver.kernel.org>; Tue, 17 Feb 2026 10:05:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B144EE9A047
+	for <ath12k@archiver.kernel.org>; Wed, 18 Feb 2026 18:00:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IxTlxrlVqxNJfOH2NwUf+neTFHlV4g3ByZDBv0JUBx0=; b=vpI8Qu3UTCOn0NZymm3HvPnlHR
-	ve/pcn3R8ZNE2/m9GnnpM6eGW5z6wxXPFsNLPb34xlD4bltnLpPAqYjVHJaCTvXnvMUvl3Mk9Dk9F
-	LjsHHW2+hinZ3eTvnfoU4jYlHbxJNzGuGd6L7WkHwanHaroWhNww5bfM/90Zk2vFpFwBa8nXF2xxY
-	BGhZfpQDW9TO+dP3vW3oUB+GlxzQQO8yzYA4b0M3SRSB7h0mrEFdps3V+bxY7DqinFt8oeDXMfFNT
-	9m8whm/BHPk+UBt+UARu9DlfYaqTvP+/dmexJ1EdWgiro5mHzQIef+q9h6ZB+/CEb9vyvyApnB+u9
-	2EQz5fXw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=gvgZL5fYRbbNaCYDrVwHrqLZUu2F2eOiunykdEYbTCE=; b=mXQARKhi1hm8KpC820NAhJQsPy
+	z4HBNsvzYLeFuo5CJYBFmtdfIAl/IECLTe+KMEZ3vCqfU7Hv5g5c8ijOQWNcRAOBvdJ9xUQmlGaoY
+	Ax8aCgOREyCHtTRQ8wYb4qdiFPCbo0uWctCHpIC/2jrH9CySMwYQjGyzV58kjX6o0eXpzQYUYi3Yh
+	mDfcJub9mIzzAuKeasYgygrojJfRrEP9mmB9jadoob2ZIaCEyu2H8DB+q082FgPaaoGLi1Q379GUB
+	z8E2jyCcvVntuOjiIcQZTS88kAiGIX7c6bd/RE3n+UQnCpjYlCivudL0XANPzHwoy6nb0FtGRA7dM
+	BeJ7F1Ow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsHxa-00000007zpR-1GOM;
-	Tue, 17 Feb 2026 10:05:38 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	id 1vslqk-0000000ACND-1mIK;
+	Wed, 18 Feb 2026 18:00:34 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsHxY-00000007zoz-1UHf
+	id 1vslqd-0000000ACLf-12WY
 	for ath12k@lists.infradead.org;
-	Tue, 17 Feb 2026 10:05:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=IxTlxrlVqxNJfOH2NwUf+neTFHlV4g3ByZDBv0JUBx0=;
-	t=1771322736; x=1772532336; b=BgDMf3uYwAnLf1ZI0OXbKBUP9Y3bY5GiIHuZqACkb0HvFzr
-	TYH635Dem2vCl3y1kaLdde2ayjHHMULa+N/OPSqAHNY4M9933CrIy+J4Jbie4FDfOmUBuQ8B+PVSt
-	xM8YQoVP60uctqDxu9ZtyFzRjYAFzSbZIQRJ8/XWSoTpXtWmPruLLItvJZxzlnV5Gy8flyxHh0lVq
-	H5VP3m/UA0XCxYj7YwIjnT6x5Sf8VlYBAKUGFYH+DiTSNxEWnwlWfVIWX3vodlzdHgo038qLbtn1j
-	E7I2twesLIi1yvL62xalyKtq5PECxmu4wBDw5IjDoa+hFoWeY+/dZ8P7vIMLjjzg==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1vsHxP-0000000BKWE-2mTs;
-	Tue, 17 Feb 2026 11:05:29 +0100
-Message-ID: <0f4b34f0b529fd93fc608d8bbac0e98516b7a3d2.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next v8 2/3] wifi: cfg80211: add initial UHR
- support
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Harshitha Prem <harshitha.prem@oss.qualcomm.com>, 
-	linux-wireless@vger.kernel.org
-Cc: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>, 
-	vasanthakumar.thiagarajan@oss.qualcomm.com, Lorenzo Bianconi
- <lorenzo@kernel.org>, 	ath12k@lists.infradead.org, Jeff Johnson
- <jeff.johnson@oss.qualcomm.com>,  Ping-Ke Shih <pkshih@realtek.com>
-Date: Tue, 17 Feb 2026 11:05:25 +0100
-In-Reply-To: <156d6d48-d135-4acf-a5d7-c9ae80523864@oss.qualcomm.com>
-References: <20260130154259.265130-5-johannes@sipsolutions.net>
-	 <20260130164259.54cc12fbb307.I26126bebd83c7ab17e99827489f946ceabb3521f@changeid>
-	 <f96125eeda23451c19067359eb9d10b4047bcdd3.camel@sipsolutions.net>
-	 <5d54feea-d0cd-4bd7-b0d2-02e42f0fe5e1@oss.qualcomm.com>
-	 <be9ab3c7f05b0f56f19aee0ffc7c2f96138b9a05.camel@sipsolutions.net>
-	 <156d6d48-d135-4acf-a5d7-c9ae80523864@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.58.3 (3.58.3-1.fc43) 
+	Wed, 18 Feb 2026 18:00:29 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61I9ohl62784620
+	for <ath12k@lists.infradead.org>; Wed, 18 Feb 2026 18:00:26 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	gvgZL5fYRbbNaCYDrVwHrqLZUu2F2eOiunykdEYbTCE=; b=MkXkkUXEWW/YoLul
+	fLyS6tzl1qWnX+rPDYn2snJDzmzNC1SAaR0FvubdOJTfpa7lee+JOrHHSCgx32h2
+	qEy7VTfVtTwyX7pS8qdKu/YjUo56NhRHZz88gZrv8pGHc95Imuq/hB6pfVd6NkNE
+	0ENAUI9r0tb7PBeTQMeu9bd/QA6cwVzoP5Cm2lcTN/65I8ceQ2u27DYYSk0uTN7K
+	FnAKP0MLc+hWD7ZYxv2R0T63M6ngpkJiJlL5Kj1VnKoxvTC20KqWuX+DWWdPFX2U
+	uR0SOpA1fHF23v9bzdieZ6rBeEYTFK30Zd6fnff6C7SUoi8lqDvQuzawZbbdSjdW
+	miEcNg==
+Received: from mail-ot1-f71.google.com (mail-ot1-f71.google.com [209.85.210.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ccyrk32jv-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 18 Feb 2026 18:00:26 +0000 (GMT)
+Received: by mail-ot1-f71.google.com with SMTP id 46e09a7af769-7d4c7afa9e0so2908138a34.0
+        for <ath12k@lists.infradead.org>; Wed, 18 Feb 2026 10:00:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1771437625; x=1772042425; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=gvgZL5fYRbbNaCYDrVwHrqLZUu2F2eOiunykdEYbTCE=;
+        b=QXiQRBRsvEp4Ho8y5ZS/Xybun/af5jswUkK0evNyX73j1Wpt6DCa4LiVkotONLYVP0
+         sErhgOSH18SVdBzWJP9dc5hnHxufz5EcpgpAqTRDqGCK2Q5R0FPckhk/2TcCenX/cD6M
+         xnLXikkyqVcr9U+eRYnFAaqTU0xkiVF1F13Pa6yw5/pPqwgw5HmBaW96XGtGtPrI4sgK
+         I2CoChJAqdRebBRdPlOT2VUb5hkU7WeujrlCfQDDPieMK48TocRGjwQGnuL2hIMTOfGq
+         xF9SNxHCzR8d7Fu/eKK0CYGboioN9NTwlSzCa9LqKTbLTPS5QkWS7dN42OJi+q7gpPEW
+         vioQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1771437625; x=1772042425;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=gvgZL5fYRbbNaCYDrVwHrqLZUu2F2eOiunykdEYbTCE=;
+        b=e1/O6wF9dPmrqjPTPljUj6oS4HYpj+uuFOw3FXKhJAdZwNyxzv8/CFP+ksX7iv7ksK
+         9HeGZG0Yv4v26FhKc1SzZev+GmsOGSAxQupZxZw/la2PtoXXG+WK1v2FKEEG9K8zfosf
+         WrY/NZhW2wIkLzJgmjpUNfs54KugFunzGLoIBEZRoUH5aOpdL8UFsVnDkuEvm7/ra0oA
+         OKxoRgc6MWyTF8BULi3Q8YxjaOaJoWMtcP9wlYPulqTEUssnzJoABQMg7HiiYboRScdm
+         THnDureQol1SDT3ZE7xQyUI+L+63imYRx6iNn7I3W1hfesNpaWBMT+P9N7f0ThLJ81oY
+         UANw==
+X-Forwarded-Encrypted: i=1; AJvYcCUlaCIbeqJqtzTPZU1Z+2kFuAZJ0zVNy5BKA6j2zygzMpasZAd1q+dnTtRQjfkVXfyOF1AwByg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyTkdDkXjZ5UfoOqa6/CnAFwK3bpkiHUdPfHtASmK1hZGC1e+Fo
+	3HUiASbJsQkyWuNFwnSgk/QNJHA0iLCIyv0qU+/7VSdfVXki0upE+bRXUYzzDj1B7rHCEO1VvI0
+	3j9fj/E5TUFVjkjSPijKDNocFLxiBkZd+0liH437EzlVUMDdhgfbEJ/N+26D1Q2uE
+X-Gm-Gg: AZuq6aJzyOp0zTfr5CJQN7iKEVrE0rqCebGSpuDe3MqEGNAV2hNeZ5XsPL8phyJF2ll
+	wZUIbdbE3hm3H0h6zOLMgG6h8Q7L04T6IPUU0ulh9A9MDoZt+IwjnxcO8WqeGWLxzlRzZrLYdN2
+	H12J/p60GmLqsNZyB5TUhHRkmE67PzAGTtMoZ0Kgy8RsoKyOAvPRxV3HSc1K+V3Mg11LFmYsFWB
+	efzIwrKcPyfIDjwK9Qg7eBnApQv9wZZcH+0V2pK9qSrvUDHFjgJfa0VV1w1RKt0++nBQ+XCAza2
+	zHlkUvtCPx1c0gCCuv1DlItjY4a8A4xm+8QUW/NF4LVugqd2aqOloSrC7i9NBgGFaSTJsQwY/X+
+	l7Fcn9B+CT9qgeEgQJR7+Ii/axKbbCxYTzQ4jZq5vnVCwR+hJfjpsdlBjrq5M2Mziqpwc0mTpYr
+	GqtAPXGg==
+X-Received: by 2002:a05:6830:dca:b0:7d1:95c7:f4cf with SMTP id 46e09a7af769-7d5127d2d67mr105905a34.14.1771437625506;
+        Wed, 18 Feb 2026 10:00:25 -0800 (PST)
+X-Received: by 2002:a05:6830:dca:b0:7d1:95c7:f4cf with SMTP id 46e09a7af769-7d5127d2d67mr105892a34.14.1771437625085;
+        Wed, 18 Feb 2026 10:00:25 -0800 (PST)
+Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id 46e09a7af769-7d4a754b4bbsm17960110a34.11.2026.02.18.10.00.23
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 18 Feb 2026 10:00:24 -0800 (PST)
+Message-ID: <608ff2a7-775e-46ae-ba8b-9d9c2f8219bc@oss.qualcomm.com>
+Date: Wed, 18 Feb 2026 10:00:22 -0800
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] soc: qcom: qmi: Fix "invalid data length" in encoder
+To: Bjorn Andersson <andersson@kernel.org>,
+        Alexander Wilhelm <alexander.wilhelm@westermo.com>,
+        Chris Lew <christopher.lew@oss.qualcomm.com>
+Cc: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+        linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+        David Heidelberg <david@ixit.cz>, Jeff Johnson <jjohnson@kernel.org>,
+        ath11k@lists.infradead.org, ath12k@lists.infradead.org
+References: <20260214-qmi-encode-invalid-length-v1-0-780cb4e98b0f@oss.qualcomm.com>
+ <20260214-qmi-encode-invalid-length-v1-1-780cb4e98b0f@oss.qualcomm.com>
+ <aZLcO4kD5fGtLcGh@FUE-ALEWI-WINX>
+ <vexuybqdbf6wx5dxlcdlcy6lwqmxmzonorjn6x5zlzdpxzi3yo@pcqbxitzed2m>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <vexuybqdbf6wx5dxlcdlcy6lwqmxmzonorjn6x5zlzdpxzi3yo@pcqbxitzed2m>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: uN4qhXKHKZhbrZKc2_JyG1rtiaYPSJh-
+X-Proofpoint-ORIG-GUID: uN4qhXKHKZhbrZKc2_JyG1rtiaYPSJh-
+X-Authority-Analysis: v=2.4 cv=eOweTXp1 c=1 sm=1 tr=0 ts=6995fe3a cx=c_pps
+ a=OI0sxtj7PyCX9F1bxD/puw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22
+ a=NEAV23lmAAAA:8 a=vZmAtJSpd1NQ6jeXC_kA:9 a=QEXdDO2ut3YA:10 a=ZXulRonScM0A:10
+ a=Z1Yy7GAxqfX1iEi80vsk:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjE4MDE1MyBTYWx0ZWRfX0u9BUZEyii+B
+ MUD5VzlJC53qTYBYQljTUU6lxVjwh8Hujqhik5vR+R389WjADe+lafadhcgSOcHwyd+Jp9w2eFH
+ 1k2YcJLxZEbu6mIGcz2Em2TFDMI2eVx+EUzNqRsAreahbr0Nc5h8t4B8lHJ/CAo1pwsifplBNv/
+ cftpjA4XVF1z/PfOYyhqVBS6Qw7CwY9P3nqC4z0fu5DGQDX6Mpx+Mo3RYoHFt5ge1wxkk9D5QF4
+ ju4ddS1Ko3WUQ7NKwaM9JhMqlx9dAIb2bI+KQW0Nf/Yo7rlXtPKuBIUmT3rVbVjNMkBjdGkIXLs
+ KrzqI3W8HxObvfOkFDSMsaIdzeEeDFtHMMVOwDh6exAuli7CcEtec5C4X0vWzREWMpVGxm9wq90
+ cCZyC/nhdWu5NU39LNv30CWyJuo+ssZrbkjaAHAXFYkAicex/pKBKOJ2GVVGZaQeImj01vxkyvb
+ QnaKTlBOmP1wz5j9CuQ==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-02-18_03,2026-02-18_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 adultscore=0 bulkscore=0 clxscore=1015 phishscore=0
+ malwarescore=0 priorityscore=1501 suspectscore=0 lowpriorityscore=0
+ impostorscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2601150000
+ definitions=main-2602180153
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260217_020536_638452_518362BC 
-X-CRM114-Status: GOOD (  45.55  )
+X-CRM114-CacheID: sfid-20260218_100027_329722_75C00552 
+X-CRM114-Status: GOOD (  13.40  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,208 +155,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On 2/16/2026 7:25 AM, Bjorn Andersson wrote:
+> It might very well be that the underlying bug is my expectation that
+> elem_size should be reflected in the struct and not only in the encoded
+> message, and hence what I wrote in https://github.com/linux-msm/qmic.
+> Perhaps the length-specifier of an array should always be u32?
+> 
+> @Chris, what does the downstream generator produce here?
 
-> This approach looks well suited to handling overlapping update scenarios.
->=20
-> To make sure I understand it correctly, I=E2=80=99d like to walk through =
-a
-> concise example where a UHR critical update and a CSA overlap on link 0
-> of a 3=E2=80=91link AP MLD.
+Is this behavior just constrained to QMI_DATA_LEN TLVs?
 
-Well, so honestly, you should probably treat what I write as equivalent
-to a paper napkin sketch during a night of drinking ;-)
+I'm looking at downstream Android WLAN code and it has the same discrepancy,
+so it appears the code generator is always producing a u32 member in the host
+struct to hold a QMI_DATA_LEN member even though the actual element size as
+defined in the qmi_elem_info array is either sizeof(u8) or sizeof(u16).
 
-I surely didn't think it totally through. I was just trying to
-illustrate that I feel like we need to have some kind of new design for
-all these overlapping updates (CSA, BSS color change, EHT and UHR
-critical updates?) than the piecemeal design we have now.
-
-And, importantly, that perhaps I think that this means we need to have
-"post-update UHR operation" more than the individual UHR operation
-updates broken out - which after all is where we started from.
-
-
-> t1: A UHR critical update is triggered. hostapd sends
-> NL80211_CMD_START_MLD_BSS_UPDATE with an advanced notification (5
-> TBTTs), post=E2=80=91interval (5 TBTTs), and the beacon template with UHR
-> parameters update element for link 0. Timers start in mac80211, and
-> hostapd receives cookie X.
-
-Don't know if timers would be really in mac80211 - I guess if the driver
-pulls each individual beacon then mac80211 could handle the countdown,
-but otherwise this might just be given to firmware.
-
-Also I guess the counter would have offset(s) from the start, i.e. the
-beacon template would be in this operation already. Or maybe even beacon
-updates for multiple links? Don't know if that really matters much
-either way.
-
-> t2: hostapd sends NL80211_CMD_UPDATE_AP with cookie X and offset where
-> the counter is updated for link 1 (and then link 2).
->=20
-> the countdown values would be handled in mac80211 with the offset
-> mentioned similar to ieee80211_set_beacon_cntdwn().
-
-Sort of, yeah. I imagined that the CMD_UPDATE_AP would come with a list
-of "cookie X: { offset X_1, offset X_2 }, cookie Y: { offset Y_1 }" or
-something like that.
-
-> t3: Before the UHR advanced interval completes, a CSA is triggered (due
-> to radar or user=E2=80=91initiated). Another NL80211_CMD_START_MLD_BSS_UP=
-DATE is
-> issued with CSA countdown 5, including CSA and after beacon templates.
-> The after template carries cookie X and the offset. Since UHR CU is
-> already in progress, hostapd could also include an updated parameters
-> update element.=C2=A0
-
-Would have to, I think? I think in your example it's unlikely the _after
-CSA_ template still has cookie X / offset(s) X_n, since you only had 10
-beacon intervals overall for the UHR critical update and CSA might be
-longer, but we could also imagine the UHR critical update was advertised
-for a longer time.
-
-> Also, an updated UHR operation element which can be
-> modified in after beacon template if CSA finishes after the UHR CU
-> advance interval. (why to provide the UHR operation element separately
-> is because the advance notification can be before or after the CSA
-> finalize).
-> hostapd then receives cookie Y for the CSA.
-
-This could get trickier than I imagined - you now have three periods of
-time:
-
- - now
- - after CSA but before UHR update
- - after UHR update
-
-and actually all three might need different UHR operation, since the CSA
-can change the bandwidth and therefore e.g. DBE/NPCA. The intermediate
-period ("after CSA but before UHR update") can be captured by the CSA
-operation (given a template/UHR operation for after) easily.
-
-But I was imagining we capture all this in the operations already, so I
-guess to do that we would need a "NL80211_CMD_MODIFY_MLD_BSS_UPDATE"
-command that takes the cookie and updates the post-operation values, so
-that the changes due to the CSA could be taken into account in the
-previously started UHR update.
-
-FWIW, I was also kind of imagining that we'd design this combined update
-command in a way that it replaces the CSA and color change commands,
-handles the proposed link removal thing from Lorenzo, and then we don't
-need to handle overlapping operations of all kinds, just of this new
-kind that can do many different things. Not a huge difference though
-since CSA/CCA would map to a subset of the new "thing".
+Does this issue get fixed if we change the member in the host struct, i.e. for
+the issue mentioned (that I chopped off) modify:
+struct qmi_wlanfw_request_mem_ind_msg_v01 {
+-	u32 mem_seg_len;
++	u8 mem_seg_len;
 
 
-> t4: hostapd issues NL80211_CMD_UPDATE_AP for link 1 with cookie X (UHR
-> offset) and cookie Y (CSA offset), followed by link 2.
-
-Not sure really about this. You also need new beacon templates for the
-two periods I mentioned above ("after CSA but before UHR update" and
-"after UHR update").
-
-
-I think in my head the beacon templates for post-operations for all
-links would've been handle by NL80211_CMD_START_MLD_BSS_UPDATE and, as I
-discovered above, NL80211_CMD_MODIFY_MLD_BSS_UPDATE, rather than by
-NL80211_CMD_UPDATE_AP.
-
-I was, however, imagining that updates to the *current* template could
-still happen via NL80211_CMD_UPDATE_AP, so - let's build a side branch
-here first, e.g.:
-
-      - we start UHR update to happen in 10 beacon intervals
-        - this comes with a post-update template and post-update UHR operat=
-ion
-      - something else happens, e.g. HT mixed mode needs updating
-        in this case, NL80211_CMD_UPDATE_AP could happen with the cookie(s)
-        and offset(s) for the _current_ beacon
-     =20
-      Although I think perhaps this ends up being racy, and in fact hostapd
-      would need to use a hypothetical NL80211_CMD_MODIFY_MLD_BSS_UPDATE ag=
-ain
-      to update the link's beacon for HT mixed mode for all of the ongoing =
-BSS
-      updates and their post beacon(s)?
-
-Anyway, back to your scenario:
-
-> t5: When the UHR advanced notification interval expires, the CSA after
-> beacon template is updated to reflect the new operation element by
-> mac80211 or getting it from hostapd.
-
-Yeah so that's also an option, if we think it'd work / not be too racy?
-As I wrote, I was thinking CSA becomes another MLD BSS update and then
-the post-CSA template is already given there.
-
-> t6: Once the CSA completes, the driver updates the after beacon template
-> along with updated counter for UHR parameter update element. (since it
-> will be in the post notification interval)
->=20
->=20
-> t7: When the UHR post=E2=80=91interval completes, the UHR parameter updat=
-e
-> element is removed. Since offsets are known, the driver can remove it
-> from the latest beacon template.
-
-I wasn't really imagining the driver would remove it I guess, but rather
-a post-update template would be provided already.
-
-Ah! I think you were maybe thinking "this is the offset where to
-insert/remove the UHR Parameter Update element", and I was thinking
-"this is the offset of the counter" so that we could also put it into
-the RNR etc.?
-
-> Please let me know if this sequence aligns with the intended behavior,
-> or if I=E2=80=99m missing any edge cases.
->=20
-> Also, CSA during NPCA parameter update seems very tricky as the channel
-> information advertised in NPCA may not be relevant when there is a CSA,
-> perhaps stop the NPCA CU (still spec has not mentioned any details on
-> the abort scenario though)
-
-Right, it's a bit tricky all over for concurrency scenarios. I hear that
-two UHR critical updates concurrently are not going to be allowed
-though.
-
-> Even, in case of link removal during UHR CU update, we need to stop the
-> UHR CU.
-
-Well if the link is removed then it probably isn't relevant to update it
-any more anyway?
-
-> Furthermore, the UHR capabilities carries the advance notification
-> interval, post notification  (i guess yet to be added in element as I
-> see it in "37-8=E2=80=94Enhanced Critical Updates Mechanism") and update
-> indication in TIM interval, these intervals can be sent in the START_AP.
-> I assume, these intervals cannot be modified dynamically as these are
-> exchanged in assoc response (Will reconfirm again).
-
-Yeah, I agree, I would tend to think these are fixed.
-
-> For beacon offloaded drivers, NL80211_CMD_START_MLD_BSS_UPDATE can be as
-> a trigger. May be we can add the updated UHR operation element in case
-> of UHR. So, that firmware/driver handle the timers as well as
-> constructing the elements since "the encoding of fields in Mode specific
-> parameters for any feature say DPS/NPCA/DBE etc.. is same as the
-> corresponding field in operation parameters field for that feature" (but
-> i see bit variations for NPCA between both)
-
-The bit variants are going to get fixed, it's just not entirely clear
-yet which way around.
-
-
-> I guess, this means the proposal of having a separate netlink attribute
-> for the UHR operation with _full_ data like is much useful.
-
-OK. We can always also just parse it out anyway, just that element
-(contents) isn't really too difficult to get at.
-
-> Still, we are thinking through on all the other cases of wifi-7/CCA etc..
-
-Of course.
-
-Thanks,
-johannes
 
