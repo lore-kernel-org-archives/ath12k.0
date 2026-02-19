@@ -4,106 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA3FAE9A03B
-	for <ath12k@archiver.kernel.org>; Thu, 19 Feb 2026 11:45:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A19DE9A04F
+	for <ath12k@archiver.kernel.org>; Thu, 19 Feb 2026 19:18:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=maJkr9ep7JNaVi/sSOzihD4kMWcMBlhIY3X+65w5DYE=; b=yqp6JvhAQwelJauFEjQ4J8vun5
-	U23AL5yb0bhaJtwep2E4Twkyqcr7F/KDV1qbtlRvNBgFCftvt1ic/tFY8eleMZFr2XU9MDonjfyp1
-	qQ8RtW69pI8SPw/h0EqFgKpyVZw4Kk0bESVu/zjaIB7m2yB/4p28DbVa0Tcahe6oIQSBB9ceFOR6O
-	DlaIJAAcoxvsbsIlXy0Kl1jNk51ogyQMDt99i2flyheoIms+rPEFcxPJK+CWgHiO06wUcwC+Ep+G6
-	DfgfRvTwqoA84cDq4HWziyD/mLWnFWF1+fH+pf1dV0peAP9IQRolxsSrHPIEI7X+cnqo9h8yeTRKK
-	MxeHm4/w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=hgCcEQscnC1A0M5Z+eU+ZpUVs4h+tvl5CBYetUBPG/E=; b=CXS4gL6ciqiC8XUw2drlmfEXQW
+	vMQUIMTXkBA8pqU9xmpHgX/Lpagt+L24B8QMOa4s3YeDpyN0ukKqMIGEfwlnl+PFf9/jZ+2ZJ0Ew9
+	E8IR5jKTFaJXN86vq/KsL08F8Aw3bEEvIl06yrHAq/lqmMPN3jHr4v5f9gdeDanJF8E1y0tPG0hwk
+	pDqzmNhp7A+S5hOhU6nGbWdzofw2myZFhQy93La9ukUF/xHJoFP5jd+VOQRSjiqIQAdlagA0KGrfW
+	2CbncotptKaYYzkgGja46n48qtMbHbRHk0Kqz245TYdusKfEAsRfGwOhQNpNhpRXRQswKni0jg1W3
+	HvAeqwxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vt2Tj-0000000BIho-1Wgl;
-	Thu, 19 Feb 2026 11:45:55 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vt9Xh-0000000BpW8-4BUY;
+	Thu, 19 Feb 2026 19:18:30 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vt2Tg-0000000BIhT-3Ok7
-	for ath12k@lists.infradead.org;
-	Thu, 19 Feb 2026 11:45:54 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61INlev51924876;
-	Thu, 19 Feb 2026 11:45:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	maJkr9ep7JNaVi/sSOzihD4kMWcMBlhIY3X+65w5DYE=; b=nsH6XnKc6GTj3YDU
-	cKSAyFPm/WFzRB66nM6yKXs3Tx0sHK/HsKjn5SupQdhkdyzLaW+BG5xB6ubcq5fw
-	r7TWNaShFl1XHQmydEa/OcpdH9MRAbfYBs+pjUUjQGbpBHWkZua5g1BzGMVwwK+I
-	Rw1bm0PtQCf1baGwM4VSPpQoGJbsPW1Who+nFASGmA5cqLiFDQNhGH5qjwzeDiS3
-	mJF48MkaAH652/PjAwDmCqezxbIhlwI5SzKlA15Lvas3Skf0jk6TINqCvr8RMUUK
-	sDpYpcn7R4KsqKNgrVXxv2bUIn+DSNLum7FVm/I0a9gymcnfWDFi2PTvfFlRMv7f
-	4GDyyA==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cdqdg9gr0-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 19 Feb 2026 11:45:49 +0000 (GMT)
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 61JBjneO009925
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 19 Feb 2026 11:45:49 GMT
-Received: from [10.50.44.70] (10.80.80.8) by nasanex01a.na.qualcomm.com
- (10.52.223.231) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.17; Thu, 19 Feb
- 2026 03:45:47 -0800
-Message-ID: <ca1f467a-b0bb-4c3e-bda6-5f3d89451abb@quicinc.com>
-Date: Thu, 19 Feb 2026 17:15:44 +0530
+	id 1vt9Xg-0000000BpVL-0kYP;
+	Thu, 19 Feb 2026 19:18:28 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 0462B60054;
+	Thu, 19 Feb 2026 19:18:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A723C4CEF7;
+	Thu, 19 Feb 2026 19:18:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1771528706;
+	bh=gvXBwyLFdk3xxBFxRxUSJbv6JkCAypUGLwGbTH/OBCc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=YXexcDULOjzDtA93bwTJbt66rlxWvePfarSZ7k26QtLaKNqU6T+CWX6UdHtWp/MGT
+	 JcUiYSscYQTLtwOQff/J5lt2XrQLKeTnn8c0JZOVNm7fCTF04JAIgkQfAcpINhIain
+	 biUi47EYDyxPtJgId52KmRmQtDjrrTULDAlVBtKyzs3pff6p3S+nVUGYICuA3zPyQi
+	 Co+HbvuXtvRHZR7AAGU1BgG2134yjsjtv1RVOsqGcJSAvfjhMTtznX6y9MOWztzwst
+	 jIw3RTQ817uv4tbW8DZL2Klxn1HR7pt0R3fzYqUByU4AjW6ebXBor+UzYXcnJbwUkd
+	 p8z8H3Hov92eQ==
+Date: Thu, 19 Feb 2026 13:18:23 -0600
+From: Bjorn Andersson <andersson@kernel.org>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Alexander Wilhelm <alexander.wilhelm@westermo.com>, 
+	Chris Lew <christopher.lew@oss.qualcomm.com>, Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org, David Heidelberg <david@ixit.cz>, 
+	Jeff Johnson <jjohnson@kernel.org>, ath11k@lists.infradead.org, ath12k@lists.infradead.org
+Subject: Re: [PATCH 1/2] soc: qcom: qmi: Fix "invalid data length" in encoder
+Message-ID: <ke3anvhgm7popzmrh3eg272eczhtcmgtho6trkwleczim23lcd@dnaudbsrslhr>
+References: <20260214-qmi-encode-invalid-length-v1-0-780cb4e98b0f@oss.qualcomm.com>
+ <20260214-qmi-encode-invalid-length-v1-1-780cb4e98b0f@oss.qualcomm.com>
+ <aZLcO4kD5fGtLcGh@FUE-ALEWI-WINX>
+ <vexuybqdbf6wx5dxlcdlcy6lwqmxmzonorjn6x5zlzdpxzi3yo@pcqbxitzed2m>
+ <608ff2a7-775e-46ae-ba8b-9d9c2f8219bc@oss.qualcomm.com>
+ <q2gogah4suu3nftewye2l3iud2nxwdi7ykzqnagnz7npmrurgm@7icn643kozp6>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v2] wifi: ath12k: add basic hwmon temperature
- reporting
-To: Pablo MARTIN-GOMEZ <pmartin-gomez@freebox.fr>,
-        Maharaja Kennadyrajan
-	<maharaja.kennadyrajan@oss.qualcomm.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Aishwarya R
-	<aishwarya.r@oss.qualcomm.com>
-References: <20260219073440.19618-1-maharaja.kennadyrajan@oss.qualcomm.com>
- <541218f7-0256-4cae-9cb1-40a1a2da2bfb@freebox.fr>
-Content-Language: en-US
-From: Maharaja Kennadyrajan <quic_mkenna@quicinc.com>
-In-Reply-To: <541218f7-0256-4cae-9cb1-40a1a2da2bfb@freebox.fr>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: r29MFGfKjaYwhn3YUf_3O7hDs09PdIwI
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjE5MDEwOCBTYWx0ZWRfX3VctyHTYpNxs
- lqorG97isfWzsKtvKnUAIYdHniTQnjiUSXX625DWEux0zQU7N5haguqJ8AjadNgWWF/K8nXvfTI
- EfytpE47P6zhtfluTNWdOenzekB9rk9BOTg2J3ZLXmIwlnO196dTngeqH1TTa1KXGzX9sheoB66
- NtrmoEGlQ332KLm6riT2AF+Fc2tN+UK/GQ4UIKnztBDNCQKpX3mWyO5BVt57jsff2a+WuzPdtw6
- YjfBUJaW91ky+FS+tCxAoa3m3iffgL16L5Ul1JsTPkeFX0tiNp8fq1JR0pBvny1qdGYF9y1rGUe
- 55UaMAQK4LPhwRCRnRw3uTgcQOzM4iRo7fSxK4pgQ6MzOla4NK438e/9tiOCTvzbaDxl1hIoY+B
- OycWD7YsSuhZKFerQAY9GBPGo3eqiN8GlTkWZo8AnaZSiN0ctDAvYXJwMStaQ3nANT56dyGHh9N
- XCOzo2rN833u0IPNkwg==
-X-Proofpoint-GUID: r29MFGfKjaYwhn3YUf_3O7hDs09PdIwI
-X-Authority-Analysis: v=2.4 cv=W/M1lBWk c=1 sm=1 tr=0 ts=6996f7ed cx=c_pps
- a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10
- a=VkNPw1HP01LnGYTKEx00:22 a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22
- a=VwQbUJbxAAAA:8 a=QyXUC8HyAAAA:8 a=EUspDBNiAAAA:8 a=7YIXymX5L9svCjQrblEA:9
- a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-02-19_03,2026-02-18_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 priorityscore=1501 adultscore=0 malwarescore=0 clxscore=1011
- suspectscore=0 impostorscore=0 lowpriorityscore=0 phishscore=0 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602190108
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260219_034552_889949_9DE9C184 
-X-CRM114-Status: GOOD (  19.74  )
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <q2gogah4suu3nftewye2l3iud2nxwdi7ykzqnagnz7npmrurgm@7icn643kozp6>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,107 +75,73 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On Wed, Feb 18, 2026 at 12:53:03PM -0600, Bjorn Andersson wrote:
+> On Wed, Feb 18, 2026 at 10:00:22AM -0800, Jeff Johnson wrote:
+> > On 2/16/2026 7:25 AM, Bjorn Andersson wrote:
+> > > It might very well be that the underlying bug is my expectation that
+> > > elem_size should be reflected in the struct and not only in the encoded
+> > > message, and hence what I wrote in https://github.com/linux-msm/qmic.
+> > > Perhaps the length-specifier of an array should always be u32?
+> > > 
+> > > @Chris, what does the downstream generator produce here?
+> > 
+> > Is this behavior just constrained to QMI_DATA_LEN TLVs?
+> > 
+> > I'm looking at downstream Android WLAN code and it has the same discrepancy,
+> > so it appears the code generator is always producing a u32 member in the host
+> > struct to hold a QMI_DATA_LEN member even though the actual element size as
+> > defined in the qmi_elem_info array is either sizeof(u8) or sizeof(u16).
+> > 
+> > Does this issue get fixed if we change the member in the host struct, i.e. for
+> > the issue mentioned (that I chopped off) modify:
+> > struct qmi_wlanfw_request_mem_ind_msg_v01 {
+> > -	u32 mem_seg_len;
+> > +	u8 mem_seg_len;
+> > 
+> 
+> Yes, that would fix the problem.
+> 
+> But if your elem_info arrays are coming from the downstream tool, then I
+> think the correct way to fix this would be to move in the other
+> direction and turn some those u8/u16 members elsewhere into u32.
+> 
+> I have the downstream code generator source here somewhere...
+> 
 
-On 2/19/2026 5:01 PM, Pablo MARTIN-GOMEZ wrote:
-> Hello,
->
-> On 19/02/2026 08:34, Maharaja Kennadyrajan wrote:
->> Add initial thermal support by wiring up a per-radio (pdev) hwmon 
->> temperature
->> sensor backed by the existing WMI pdev temperature command and event.
->> When userspace reads the sysfs file temp1_input, the driver sends
->> WMI_PDEV_GET_TEMPERATURE_CMDID (tag WMI_TAG_PDEV_GET_TEMPERATURE_CMD) 
->> and waits
->> for the corresponding WMI_PDEV_TEMPERATURE_EVENTID
->> (tag WMI_TAG_PDEV_TEMPERATURE_EVENT) to get the temperature and pdev_id.
->>
->> Export the reported value in millidegrees Celsius as required by hwmon.
->> The temperature reported is per-radio (pdev). In a multi-radio wiphy 
->> under a
->> single phy, a separate hwmon device is created for each radio.
->>
->> Sample command and output:
->> $ cat /sys/devices/pci0000:00/.../ieee80211/phyX/hwmonY/temp1_input
->> $ 50000
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
->> Tested-on: WCN7850 hw2.0 PCI 
->> WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
->>
->> Reported-by: kernel test robot <lkp@intel.com>
->> Closes: 
->> https://lore.kernel.org/oe-kbuild-all/202602160145.YQdvbqYY-lkp@intel.com/
->> Co-developed-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
->> Signed-off-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
->> Signed-off-by: Maharaja Kennadyrajan 
->> <maharaja.kennadyrajan@oss.qualcomm.com>
->> ---
->>
->> v2: Fixed the kernel test robot reported build test error.
->>
->>   drivers/net/wireless/ath/ath12k/Makefile  |   1 +
->>   drivers/net/wireless/ath/ath12k/core.c    |  13 +++
->>   drivers/net/wireless/ath/ath12k/core.h    |   3 +
->>   drivers/net/wireless/ath/ath12k/mac.c     |   5 +
->>   drivers/net/wireless/ath/ath12k/thermal.c | 125 ++++++++++++++++++++++
->>   drivers/net/wireless/ath/ath12k/thermal.h |  44 ++++++++
->>   drivers/net/wireless/ath/ath12k/wmi.c     |  57 +++++-----
->>   7 files changed, 217 insertions(+), 31 deletions(-)
->>   create mode 100644 drivers/net/wireless/ath/ath12k/thermal.c
->>   create mode 100644 drivers/net/wireless/ath/ath12k/thermal.h
->>
-> [...]
->> +
->> +int ath12k_thermal_register(struct ath12k_base *ab)
->> +{
->> +    struct ath12k *ar;
->> +    int i, j, ret;
->> +
->> +    if (!IS_REACHABLE(CONFIG_HWMON))
->> +        return 0;
->> +
->> +    for (i = 0; i < ab->num_radios; i++) {
->> +        ar = ab->pdevs[i].ar;
->> +        if (!ar)
->> +            continue;
->> +
->> +        ar->thermal.hwmon_dev =
->> + hwmon_device_register_with_groups(&ar->ah->hw->wiphy->dev,
->> +                              "ath12k_hwmon", ar,
->> +                              ath12k_hwmon_groups);
->> +        if (IS_ERR(ar->thermal.hwmon_dev)) {
->> +            ret = PTR_ERR(ar->thermal.hwmon_dev);
->> +            ar->thermal.hwmon_dev = NULL;
->> +            ath12k_err(ar->ab, "failed to register hwmon device: %d\n",
->> +                   ret);
->> +            for (j = i - 1; j >= 0; j--) {
->> +                ar = ab->pdevs[i].ar;
-> Shouldn't it be `ar = ab->pdevs[j].ar;`?
+I reviewed the downstream code generator source and documentation.
+
+We do generate tables matching the ath12k c-structures, i.e. variable
+length arrays are always prefixed with an uint32_t field - not a
+uint8_t or uint16_t based on elem_size.
+
+Looking back at the original implementation of the in-kernel
+qmi_encode(), we only read elem_size bytes from the c-structure, but we
+do so into the (little-endian) uint32_t on the stack, from which we
+encode the message and act upon the result.
+
+In qmi_decode() we decode elem_size bytes from the message into the
+(little endian) uint32_t and then write 4 bytes to the c-structure.
 
 
-My bad. It should by ab->pdev[j] not ab->pdev[i]. Will be addressed in 
-the next version.
+The fix would as such seem to be to just update the length fields to be
+all uint32_t. The problem I see with this is that qmic [1] is the only
+publicly available code generator, and if we change it to always
+generate uint32_t length members, we also need to fix the
+encoder/decoder in libqrtr [2] - which will be an ABI breaking change.
 
+If we go the other way around, the drawback is that we no longer support
+the c-structures generated by the proprietary code generator.
 
->> +                if (!ar)
->> +                    continue;
->> +
->> + hwmon_device_unregister(ar->thermal.hwmon_dev);
->> +                ar->thermal.hwmon_dev = NULL;
->> +            }
->> +            return ret;
->> +        }
->> +    }
->> +
->> +    return 0;
->> +}
->> +
->
-> [...]
->
-> Best regards,
->
-> Pablo MG
->
->
+Worth pointing out is that the structure of the c-code is an ABI between
+the encoder/decoder, the code generator and the client - it does not
+affect the wire format.
+
+[1] https://github.com/linux-msm/qmic
+[2] https://github.com/linux-msm/qrtr
+
+Regards,
+Bjorn
+
+> Regards,
+> Bjorn
 
