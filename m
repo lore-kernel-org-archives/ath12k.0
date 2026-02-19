@@ -4,90 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED4CCE9A03B
-	for <ath12k@archiver.kernel.org>; Thu, 19 Feb 2026 11:31:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA3FAE9A03B
+	for <ath12k@archiver.kernel.org>; Thu, 19 Feb 2026 11:45:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WDzlYIoeVQaQH9OqgFyjlNZouhIzF/kzZ+17obwht0U=; b=P2HbnYM9Azi4qkNgmuiFyBmSmH
-	33IVkcu1wR+i7Be6z4VtZWJ/IPU8ePuSi0Dz2J2gs+MBfPtiCTMyRdKyyHfLrUJS2RQGqS4t+VJ1B
-	w+Ron+IdK4R/XqJFqe806MN4WpHHVL4Zahgvn8KGSAzY+F5PjfK41j1wGCjE+pBpKV+tQ3aD1zgku
-	K4BMLEvnqoBYuAXTcMGFUVOp538pDPT1paH5UMGFT84O1ihPDG0FnLm/Yb5/ncc3iy+YVbAqYgDHz
-	uQCItxu8dJAcLchD1xrZz9iaHL7GVpS6MOoFy/VheWU5FNZyBGjTPY095JjDx6rn44y4PzUcZU/E0
-	erU+vNQw==;
+	bh=maJkr9ep7JNaVi/sSOzihD4kMWcMBlhIY3X+65w5DYE=; b=yqp6JvhAQwelJauFEjQ4J8vun5
+	U23AL5yb0bhaJtwep2E4Twkyqcr7F/KDV1qbtlRvNBgFCftvt1ic/tFY8eleMZFr2XU9MDonjfyp1
+	qQ8RtW69pI8SPw/h0EqFgKpyVZw4Kk0bESVu/zjaIB7m2yB/4p28DbVa0Tcahe6oIQSBB9ceFOR6O
+	DlaIJAAcoxvsbsIlXy0Kl1jNk51ogyQMDt99i2flyheoIms+rPEFcxPJK+CWgHiO06wUcwC+Ep+G6
+	DfgfRvTwqoA84cDq4HWziyD/mLWnFWF1+fH+pf1dV0peAP9IQRolxsSrHPIEI7X+cnqo9h8yeTRKK
+	MxeHm4/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vt2GB-0000000BHj7-1H5b;
-	Thu, 19 Feb 2026 11:31:55 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1vt2Tj-0000000BIho-1Wgl;
+	Thu, 19 Feb 2026 11:45:55 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vt2G7-0000000BHil-2hWO
+	id 1vt2Tg-0000000BIhT-3Ok7
 	for ath12k@lists.infradead.org;
-	Thu, 19 Feb 2026 11:31:53 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4837584120eso6068905e9.1
-        for <ath12k@lists.infradead.org>; Thu, 19 Feb 2026 03:31:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=freebox-fr.20230601.gappssmtp.com; s=20230601; t=1771500709; x=1772105509; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=WDzlYIoeVQaQH9OqgFyjlNZouhIzF/kzZ+17obwht0U=;
-        b=r3nOLHuPdb2G+JkO2AB1WyPU2uP3bzxeSrDxeN/K2l0oH9ItNnW5dgA3iXNlb+v6Y5
-         Yus+6bpFqqZCQFR4cNrtQyQjN1s/9E+4tA+6WHeUmql+j4LIA4lcIOW0iv5sjapdlFSR
-         tv6gnjgURhsbwIpeT6L+/L30tXhxpvFxyDlNo4tVipb+AmqbwpA4j9b1iyNTLKBbmuac
-         XFG+w/Z1QK8ZPPifSIscTel2u8WCSDI6FnyDwDcZ4edBTex76bPbjX2+mHXhuJM8r2T5
-         zrZb1q/MZFD2ZB67Kego3eH6tk8ovnHKP2CuBoMgXH8HOrrsyAsGbwR16oBsn2xtyzsC
-         4qcw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771500709; x=1772105509;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=WDzlYIoeVQaQH9OqgFyjlNZouhIzF/kzZ+17obwht0U=;
-        b=IHpLZf8B4QikMj+8lfM9HVpylk/8n2sQBzjMlDKic7/WzXmXWlm2Pj5gHPgIuf8B9t
-         jZGGoPtKcrpwbcX4XyYXeZZL9qgbPngUAVGgmVaxPVflk2IGZo8so5ZhHVbsbL1jucwQ
-         BLltfqs0fi03t6wktQO7AvgVupeLXBZn1TTSm/9dpdbpJHSSbF2CLJb1nkaHJMx1topF
-         gndX21DRsRvuwcfzLZlYZf5ZdEECJIwdXbhSxrsSU6GlOl/TL+vRwqhmsctnyZLooUVj
-         99hH//YNLqDf18ELY0MNgJlDcEakUl0izDeft3m34K1Zia6w+EhSd6M6TbC77chOYz1X
-         Q1xw==
-X-Forwarded-Encrypted: i=1; AJvYcCW1muqQ4IaRyQK8SwbDpMI5F3/eTnFhlahVa4UVPFUzrKjZVHs3LHq9n0AzQeXKgwVQOS2x5xc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxOguKm88AqCWWRBl4ZIOTEbtvLnuqxoS4p+wlo7YkSVPo4MHhb
-	hPY412LNSbZu84EuSbWXkAlmd1cgPvQXihAjTbXBVhqwqVYT/EZ5RjYtcAqvbsICk8k=
-X-Gm-Gg: AZuq6aJWrBK3CATcIiEIirIwxWmuoYzQZ3O9GYOd5RnYCcgalQ4Bhz5QCN4gHj0p6dT
-	A8DiMlyzWwanLkT/By5juVW9pqyUDkcAq4M7UyML1cw6QOfFuOJUHqMawBjmSX8gU85WZdZJKdn
-	2MgZ8+1wOZpGBfgR14jNu6eNAKhFVeDbPj81WipjjzSlqgNTsCCuF/EfS0hE4EA2JylTTwsm+26
-	X/KWh+eKN8Doct9XpE7Q2QDPYck6ojiYd+MuJ7ertdr0OjUZB9tc9flRLwofkbp7aP4TABLEz4B
-	Tt9uVK7mXW04wttbFTzbyP5CZSAvK42WmIv8zw1UbvSKSBW7twjg/z3UfoGjCyoBxyvF9o5h9TE
-	GGq1t09r5fn7oiMG/BC2dlfJsdu6usuUXK/2yG6nbeAGKG71KZNLCyDTc9FKVkmPWz7ExjDE/jM
-	EXMVgQTBgdK70Iqf/O0pRyGWI22hdyexfa+f35F0Sx+eJUJQlbv8Hbww==
-X-Received: by 2002:a05:600c:8709:b0:480:1c53:2085 with SMTP id 5b1f17b1804b1-48379bd731emr287433325e9.19.1771500708973;
-        Thu, 19 Feb 2026 03:31:48 -0800 (PST)
-Received: from [192.168.108.101] (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4839ea1e9absm18204535e9.3.2026.02.19.03.31.48
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 19 Feb 2026 03:31:48 -0800 (PST)
-Message-ID: <541218f7-0256-4cae-9cb1-40a1a2da2bfb@freebox.fr>
-Date: Thu, 19 Feb 2026 12:31:48 +0100
+	Thu, 19 Feb 2026 11:45:54 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61INlev51924876;
+	Thu, 19 Feb 2026 11:45:50 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	maJkr9ep7JNaVi/sSOzihD4kMWcMBlhIY3X+65w5DYE=; b=nsH6XnKc6GTj3YDU
+	cKSAyFPm/WFzRB66nM6yKXs3Tx0sHK/HsKjn5SupQdhkdyzLaW+BG5xB6ubcq5fw
+	r7TWNaShFl1XHQmydEa/OcpdH9MRAbfYBs+pjUUjQGbpBHWkZua5g1BzGMVwwK+I
+	Rw1bm0PtQCf1baGwM4VSPpQoGJbsPW1Who+nFASGmA5cqLiFDQNhGH5qjwzeDiS3
+	mJF48MkaAH652/PjAwDmCqezxbIhlwI5SzKlA15Lvas3Skf0jk6TINqCvr8RMUUK
+	sDpYpcn7R4KsqKNgrVXxv2bUIn+DSNLum7FVm/I0a9gymcnfWDFi2PTvfFlRMv7f
+	4GDyyA==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cdqdg9gr0-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 19 Feb 2026 11:45:49 +0000 (GMT)
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 61JBjneO009925
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 19 Feb 2026 11:45:49 GMT
+Received: from [10.50.44.70] (10.80.80.8) by nasanex01a.na.qualcomm.com
+ (10.52.223.231) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.17; Thu, 19 Feb
+ 2026 03:45:47 -0800
+Message-ID: <ca1f467a-b0bb-4c3e-bda6-5f3d89451abb@quicinc.com>
+Date: Thu, 19 Feb 2026 17:15:44 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH ath-next v2] wifi: ath12k: add basic hwmon temperature
  reporting
-To: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>,
- ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Aishwarya R <aishwarya.r@oss.qualcomm.com>
+To: Pablo MARTIN-GOMEZ <pmartin-gomez@freebox.fr>,
+        Maharaja Kennadyrajan
+	<maharaja.kennadyrajan@oss.qualcomm.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Aishwarya R
+	<aishwarya.r@oss.qualcomm.com>
 References: <20260219073440.19618-1-maharaja.kennadyrajan@oss.qualcomm.com>
+ <541218f7-0256-4cae-9cb1-40a1a2da2bfb@freebox.fr>
 Content-Language: en-US
-From: Pablo MARTIN-GOMEZ <pmartin-gomez@freebox.fr>
-In-Reply-To: <20260219073440.19618-1-maharaja.kennadyrajan@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
+From: Maharaja Kennadyrajan <quic_mkenna@quicinc.com>
+In-Reply-To: <541218f7-0256-4cae-9cb1-40a1a2da2bfb@freebox.fr>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: r29MFGfKjaYwhn3YUf_3O7hDs09PdIwI
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjE5MDEwOCBTYWx0ZWRfX3VctyHTYpNxs
+ lqorG97isfWzsKtvKnUAIYdHniTQnjiUSXX625DWEux0zQU7N5haguqJ8AjadNgWWF/K8nXvfTI
+ EfytpE47P6zhtfluTNWdOenzekB9rk9BOTg2J3ZLXmIwlnO196dTngeqH1TTa1KXGzX9sheoB66
+ NtrmoEGlQ332KLm6riT2AF+Fc2tN+UK/GQ4UIKnztBDNCQKpX3mWyO5BVt57jsff2a+WuzPdtw6
+ YjfBUJaW91ky+FS+tCxAoa3m3iffgL16L5Ul1JsTPkeFX0tiNp8fq1JR0pBvny1qdGYF9y1rGUe
+ 55UaMAQK4LPhwRCRnRw3uTgcQOzM4iRo7fSxK4pgQ6MzOla4NK438e/9tiOCTvzbaDxl1hIoY+B
+ OycWD7YsSuhZKFerQAY9GBPGo3eqiN8GlTkWZo8AnaZSiN0ctDAvYXJwMStaQ3nANT56dyGHh9N
+ XCOzo2rN833u0IPNkwg==
+X-Proofpoint-GUID: r29MFGfKjaYwhn3YUf_3O7hDs09PdIwI
+X-Authority-Analysis: v=2.4 cv=W/M1lBWk c=1 sm=1 tr=0 ts=6996f7ed cx=c_pps
+ a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22
+ a=VwQbUJbxAAAA:8 a=QyXUC8HyAAAA:8 a=EUspDBNiAAAA:8 a=7YIXymX5L9svCjQrblEA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-02-19_03,2026-02-18_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0 priorityscore=1501 adultscore=0 malwarescore=0 clxscore=1011
+ suspectscore=0 impostorscore=0 lowpriorityscore=0 phishscore=0 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602190108
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260219_033151_979683_73307378 
-X-CRM114-Status: GOOD (  18.23  )
+X-CRM114-CacheID: sfid-20260219_034552_889949_9DE9C184 
+X-CRM114-Status: GOOD (  19.74  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,92 +118,107 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello,
 
-On 19/02/2026 08:34, Maharaja Kennadyrajan wrote:
-> Add initial thermal support by wiring up a per-radio (pdev) hwmon temperature
-> sensor backed by the existing WMI pdev temperature command and event.
-> When userspace reads the sysfs file temp1_input, the driver sends
-> WMI_PDEV_GET_TEMPERATURE_CMDID (tag WMI_TAG_PDEV_GET_TEMPERATURE_CMD) and waits
-> for the corresponding WMI_PDEV_TEMPERATURE_EVENTID
-> (tag WMI_TAG_PDEV_TEMPERATURE_EVENT) to get the temperature and pdev_id.
+On 2/19/2026 5:01 PM, Pablo MARTIN-GOMEZ wrote:
+> Hello,
 >
-> Export the reported value in millidegrees Celsius as required by hwmon.
-> The temperature reported is per-radio (pdev). In a multi-radio wiphy under a
-> single phy, a separate hwmon device is created for each radio.
->
-> Sample command and output:
-> $ cat /sys/devices/pci0000:00/.../ieee80211/phyX/hwmonY/temp1_input
-> $ 50000
->
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
->
-> Reported-by: kernel test robot <lkp@intel.com>
-> Closes: https://lore.kernel.org/oe-kbuild-all/202602160145.YQdvbqYY-lkp@intel.com/
-> Co-developed-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
-> Signed-off-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
-> Signed-off-by: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
-> ---
->
-> v2: Fixed the kernel test robot reported build test error.
->
->   drivers/net/wireless/ath/ath12k/Makefile  |   1 +
->   drivers/net/wireless/ath/ath12k/core.c    |  13 +++
->   drivers/net/wireless/ath/ath12k/core.h    |   3 +
->   drivers/net/wireless/ath/ath12k/mac.c     |   5 +
->   drivers/net/wireless/ath/ath12k/thermal.c | 125 ++++++++++++++++++++++
->   drivers/net/wireless/ath/ath12k/thermal.h |  44 ++++++++
->   drivers/net/wireless/ath/ath12k/wmi.c     |  57 +++++-----
->   7 files changed, 217 insertions(+), 31 deletions(-)
->   create mode 100644 drivers/net/wireless/ath/ath12k/thermal.c
->   create mode 100644 drivers/net/wireless/ath/ath12k/thermal.h
->
-[...]
-> +
-> +int ath12k_thermal_register(struct ath12k_base *ab)
-> +{
-> +	struct ath12k *ar;
-> +	int i, j, ret;
-> +
-> +	if (!IS_REACHABLE(CONFIG_HWMON))
-> +		return 0;
-> +
-> +	for (i = 0; i < ab->num_radios; i++) {
-> +		ar = ab->pdevs[i].ar;
-> +		if (!ar)
-> +			continue;
-> +
-> +		ar->thermal.hwmon_dev =
-> +			hwmon_device_register_with_groups(&ar->ah->hw->wiphy->dev,
-> +							  "ath12k_hwmon", ar,
-> +							  ath12k_hwmon_groups);
-> +		if (IS_ERR(ar->thermal.hwmon_dev)) {
-> +			ret = PTR_ERR(ar->thermal.hwmon_dev);
-> +			ar->thermal.hwmon_dev = NULL;
-> +			ath12k_err(ar->ab, "failed to register hwmon device: %d\n",
-> +				   ret);
-> +			for (j = i - 1; j >= 0; j--) {
-> +				ar = ab->pdevs[i].ar;
-Shouldn't it be `ar = ab->pdevs[j].ar;`?
-> +				if (!ar)
-> +					continue;
-> +
-> +				hwmon_device_unregister(ar->thermal.hwmon_dev);
-> +				ar->thermal.hwmon_dev = NULL;
-> +			}
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	return 0;
-> +}
-> +
+> On 19/02/2026 08:34, Maharaja Kennadyrajan wrote:
+>> Add initial thermal support by wiring up a per-radio (pdev) hwmon 
+>> temperature
+>> sensor backed by the existing WMI pdev temperature command and event.
+>> When userspace reads the sysfs file temp1_input, the driver sends
+>> WMI_PDEV_GET_TEMPERATURE_CMDID (tag WMI_TAG_PDEV_GET_TEMPERATURE_CMD) 
+>> and waits
+>> for the corresponding WMI_PDEV_TEMPERATURE_EVENTID
+>> (tag WMI_TAG_PDEV_TEMPERATURE_EVENT) to get the temperature and pdev_id.
+>>
+>> Export the reported value in millidegrees Celsius as required by hwmon.
+>> The temperature reported is per-radio (pdev). In a multi-radio wiphy 
+>> under a
+>> single phy, a separate hwmon device is created for each radio.
+>>
+>> Sample command and output:
+>> $ cat /sys/devices/pci0000:00/.../ieee80211/phyX/hwmonY/temp1_input
+>> $ 50000
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+>> Tested-on: WCN7850 hw2.0 PCI 
+>> WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
+>>
+>> Reported-by: kernel test robot <lkp@intel.com>
+>> Closes: 
+>> https://lore.kernel.org/oe-kbuild-all/202602160145.YQdvbqYY-lkp@intel.com/
+>> Co-developed-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
+>> Signed-off-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
+>> Signed-off-by: Maharaja Kennadyrajan 
+>> <maharaja.kennadyrajan@oss.qualcomm.com>
+>> ---
+>>
+>> v2: Fixed the kernel test robot reported build test error.
+>>
+>>   drivers/net/wireless/ath/ath12k/Makefile  |   1 +
+>>   drivers/net/wireless/ath/ath12k/core.c    |  13 +++
+>>   drivers/net/wireless/ath/ath12k/core.h    |   3 +
+>>   drivers/net/wireless/ath/ath12k/mac.c     |   5 +
+>>   drivers/net/wireless/ath/ath12k/thermal.c | 125 ++++++++++++++++++++++
+>>   drivers/net/wireless/ath/ath12k/thermal.h |  44 ++++++++
+>>   drivers/net/wireless/ath/ath12k/wmi.c     |  57 +++++-----
+>>   7 files changed, 217 insertions(+), 31 deletions(-)
+>>   create mode 100644 drivers/net/wireless/ath/ath12k/thermal.c
+>>   create mode 100644 drivers/net/wireless/ath/ath12k/thermal.h
+>>
+> [...]
+>> +
+>> +int ath12k_thermal_register(struct ath12k_base *ab)
+>> +{
+>> +    struct ath12k *ar;
+>> +    int i, j, ret;
+>> +
+>> +    if (!IS_REACHABLE(CONFIG_HWMON))
+>> +        return 0;
+>> +
+>> +    for (i = 0; i < ab->num_radios; i++) {
+>> +        ar = ab->pdevs[i].ar;
+>> +        if (!ar)
+>> +            continue;
+>> +
+>> +        ar->thermal.hwmon_dev =
+>> + hwmon_device_register_with_groups(&ar->ah->hw->wiphy->dev,
+>> +                              "ath12k_hwmon", ar,
+>> +                              ath12k_hwmon_groups);
+>> +        if (IS_ERR(ar->thermal.hwmon_dev)) {
+>> +            ret = PTR_ERR(ar->thermal.hwmon_dev);
+>> +            ar->thermal.hwmon_dev = NULL;
+>> +            ath12k_err(ar->ab, "failed to register hwmon device: %d\n",
+>> +                   ret);
+>> +            for (j = i - 1; j >= 0; j--) {
+>> +                ar = ab->pdevs[i].ar;
+> Shouldn't it be `ar = ab->pdevs[j].ar;`?
 
-[...]
 
-Best regards,
+My bad. It should by ab->pdev[j] not ab->pdev[i]. Will be addressed in 
+the next version.
 
-Pablo MG
 
+>> +                if (!ar)
+>> +                    continue;
+>> +
+>> + hwmon_device_unregister(ar->thermal.hwmon_dev);
+>> +                ar->thermal.hwmon_dev = NULL;
+>> +            }
+>> +            return ret;
+>> +        }
+>> +    }
+>> +
+>> +    return 0;
+>> +}
+>> +
+>
+> [...]
+>
+> Best regards,
+>
+> Pablo MG
+>
+>
 
