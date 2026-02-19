@@ -4,89 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01985E9A03B
-	for <ath12k@archiver.kernel.org>; Thu, 19 Feb 2026 09:15:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED4CCE9A03B
+	for <ath12k@archiver.kernel.org>; Thu, 19 Feb 2026 11:31:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
-	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
-	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=A+NuR9VGQucH3RE5LsdgI6IWd0WqBlDZWEmahtU6Wyw=; b=fESUTdJ1V/D06h8h3oGR7sJFzZ
-	ljRLNUG05hmzwK/wv0LlDLflowwh13Jn1+Tpp+8hKImXIpbDOdd/BTxq9zSnnGqe7FwOsL1oH9Sl8
-	MrfY+1FNy8NanriK2W7fkDiCK3/0DWaqwtgWDOsGlTRpZGMrjhFbVICcC0aX9gOqPNrR82q66K+lf
-	+zGx21+HOxKJ4AYOKdGyV9lxJ49e+PDU8UXbBbH/2wOLe4h+wqCZJCdY2xKTJcdTh1ZDxbpUYTKzK
-	p/rqYz9Pzfp6y0tz5zJ1W97rocVHwo/67F71m4oKMq8WmaeVbh2B7tUdDEeDbyfwEQB/+sQOUhWDY
-	UDiPXNHQ==;
+	bh=WDzlYIoeVQaQH9OqgFyjlNZouhIzF/kzZ+17obwht0U=; b=P2HbnYM9Azi4qkNgmuiFyBmSmH
+	33IVkcu1wR+i7Be6z4VtZWJ/IPU8ePuSi0Dz2J2gs+MBfPtiCTMyRdKyyHfLrUJS2RQGqS4t+VJ1B
+	w+Ron+IdK4R/XqJFqe806MN4WpHHVL4Zahgvn8KGSAzY+F5PjfK41j1wGCjE+pBpKV+tQ3aD1zgku
+	K4BMLEvnqoBYuAXTcMGFUVOp538pDPT1paH5UMGFT84O1ihPDG0FnLm/Yb5/ncc3iy+YVbAqYgDHz
+	uQCItxu8dJAcLchD1xrZz9iaHL7GVpS6MOoFy/VheWU5FNZyBGjTPY095JjDx6rn44y4PzUcZU/E0
+	erU+vNQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vt07u-0000000B9x7-2vIc;
-	Thu, 19 Feb 2026 09:15:14 +0000
-Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
+	id 1vt2GB-0000000BHj7-1H5b;
+	Thu, 19 Feb 2026 11:31:55 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vt07r-0000000B9wd-3g0y
+	id 1vt2G7-0000000BHil-2hWO
 	for ath12k@lists.infradead.org;
-	Thu, 19 Feb 2026 09:15:12 +0000
-Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-4834826e555so6260675e9.2
-        for <ath12k@lists.infradead.org>; Thu, 19 Feb 2026 01:15:11 -0800 (PST)
+	Thu, 19 Feb 2026 11:31:53 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4837584120eso6068905e9.1
+        for <ath12k@lists.infradead.org>; Thu, 19 Feb 2026 03:31:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1771492510; x=1772097310; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=A+NuR9VGQucH3RE5LsdgI6IWd0WqBlDZWEmahtU6Wyw=;
-        b=nk0Yx4SNSb3niLbtGHDd/EiL9WRSZoKCJCBY3c8q7gnIU1wq31wZuwp7qjx4yupHRl
-         3cAUwRb8yQPuCGfVtnay9WmPvbEbcAsERUSpMIypf7nEbnAKC14J5Rs6VXYdTojEHdlK
-         IwRth+WTah83GZy150Bs+KdBF0XqZ52I+pzmkWU+2vDH+LiNCUlmUcFDv3XOodgrJQ+Z
-         41IDO5+HdIWquLlQ5HdppJev/PfGucwkSKLhrwmJmXyOMeAXEmlBQlRBtmrsOK+wN/np
-         W+xb4ILpmMlUQ/TVACB7YcLRe+HqL8AmHqDOf+7c0qdzz5xcbr7iut90JdQjSuQ4LnOW
-         bjbg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771492510; x=1772097310;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-gg:x-gm-message-state
+        d=freebox-fr.20230601.gappssmtp.com; s=20230601; t=1771500709; x=1772105509; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=A+NuR9VGQucH3RE5LsdgI6IWd0WqBlDZWEmahtU6Wyw=;
-        b=tn+TaPvRPR/YPmUD0bHq84PM7e7DvIp6yr2XNEQPFWBDVGNWb9Z2QkjuUWgppPCUS9
-         xazKNXlzBz0uuJl/JtLkf3phCnIG7plDcfe/O/EVeyAaJqyk/Degr17gx3R1MYYJL/5c
-         Nm8zL9Glln2aapdOhvLvFP8VNPNn7uzY3coxqKw3r7er7aVtRoTc+AXoBlD4W1KjEI1/
-         0YyxSe9eka+qHQ7yybps6+Et0QmQ9LIpClyf1w4E58rxtgi+Y0MWmkbBxcl3MyNS6rsu
-         jY7ejOgM9MBDkTyKOlqZoXqqxfmwl3CTjMafMgWBXWkJijFKTCu2X02Bia42WVCJGnm8
-         W+8w==
-X-Forwarded-Encrypted: i=1; AJvYcCXPjsTFWfr/MuqzrmELqbuuUl6GAiln284IeY4cu0pHFHs1j5CpV51zsrxQyiaXtc9+ee2UXtg=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywv/adkWwL9PYSL67REUW7ZRwfJPy4SrgvS8o77Q0HJI2tH4pzk
-	dxECDRs+KJhPu7TQsoxXbN3O7PIaBouVRVyfXK9xM/e/ltY2hjbdl12PyrMKwQ==
-X-Gm-Gg: AZuq6aLHN+PBWVJ3QtcyibBMmcigGZpifW9YFggnKkfhw/Nr3HGDtWHqdB+kR3sSVkB
-	ZqudzfXS/+z07dVP28ww0kjmVIgHpZGDn0A9e95z1JgnfRl4wZUyj9i2HY+4cseWBh6LL7l06yG
-	kNrBQBy9TL5n/BWiGg54l2+fSPUKTaSKd497PlYWNDbfUNSTN1YD0tmmBGGxbueCfqmRFlaxKfX
-	3il3zfzBCU7GGPKa1ToLLqnZJOHb1y0XhBCGXId8zldu1Sb/HtXIzwLyGWrN4wseaKNUFTigm/H
-	Fh5Ssw26elF0MLksGBFw6rKRTQPng7GkCvTjQ57A8d8QRGb/kq7TNHwsPW/jJHCoQc9p+GFXGj9
-	UhEbqeGhOC577oGptzO7/epe248gykN0clRVGu0bCj/Q7FRTR2O6z78V9Mkge2+bVRCODkfP17Z
-	itzJYQ5qqso5ASCQwDWvfNXQwSLbGJ4qRg3OQrAsvD0w==
-X-Received: by 2002:a05:600c:8b61:b0:480:1b65:b744 with SMTP id 5b1f17b1804b1-48379bf7907mr264060185e9.28.1771492509311;
-        Thu, 19 Feb 2026 01:15:09 -0800 (PST)
-Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-483801ff9b3sm362588785e9.13.2026.02.19.01.15.08
+        bh=WDzlYIoeVQaQH9OqgFyjlNZouhIzF/kzZ+17obwht0U=;
+        b=r3nOLHuPdb2G+JkO2AB1WyPU2uP3bzxeSrDxeN/K2l0oH9ItNnW5dgA3iXNlb+v6Y5
+         Yus+6bpFqqZCQFR4cNrtQyQjN1s/9E+4tA+6WHeUmql+j4LIA4lcIOW0iv5sjapdlFSR
+         tv6gnjgURhsbwIpeT6L+/L30tXhxpvFxyDlNo4tVipb+AmqbwpA4j9b1iyNTLKBbmuac
+         XFG+w/Z1QK8ZPPifSIscTel2u8WCSDI6FnyDwDcZ4edBTex76bPbjX2+mHXhuJM8r2T5
+         zrZb1q/MZFD2ZB67Kego3eH6tk8ovnHKP2CuBoMgXH8HOrrsyAsGbwR16oBsn2xtyzsC
+         4qcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1771500709; x=1772105509;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=WDzlYIoeVQaQH9OqgFyjlNZouhIzF/kzZ+17obwht0U=;
+        b=IHpLZf8B4QikMj+8lfM9HVpylk/8n2sQBzjMlDKic7/WzXmXWlm2Pj5gHPgIuf8B9t
+         jZGGoPtKcrpwbcX4XyYXeZZL9qgbPngUAVGgmVaxPVflk2IGZo8so5ZhHVbsbL1jucwQ
+         BLltfqs0fi03t6wktQO7AvgVupeLXBZn1TTSm/9dpdbpJHSSbF2CLJb1nkaHJMx1topF
+         gndX21DRsRvuwcfzLZlYZf5ZdEECJIwdXbhSxrsSU6GlOl/TL+vRwqhmsctnyZLooUVj
+         99hH//YNLqDf18ELY0MNgJlDcEakUl0izDeft3m34K1Zia6w+EhSd6M6TbC77chOYz1X
+         Q1xw==
+X-Forwarded-Encrypted: i=1; AJvYcCW1muqQ4IaRyQK8SwbDpMI5F3/eTnFhlahVa4UVPFUzrKjZVHs3LHq9n0AzQeXKgwVQOS2x5xc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxOguKm88AqCWWRBl4ZIOTEbtvLnuqxoS4p+wlo7YkSVPo4MHhb
+	hPY412LNSbZu84EuSbWXkAlmd1cgPvQXihAjTbXBVhqwqVYT/EZ5RjYtcAqvbsICk8k=
+X-Gm-Gg: AZuq6aJWrBK3CATcIiEIirIwxWmuoYzQZ3O9GYOd5RnYCcgalQ4Bhz5QCN4gHj0p6dT
+	A8DiMlyzWwanLkT/By5juVW9pqyUDkcAq4M7UyML1cw6QOfFuOJUHqMawBjmSX8gU85WZdZJKdn
+	2MgZ8+1wOZpGBfgR14jNu6eNAKhFVeDbPj81WipjjzSlqgNTsCCuF/EfS0hE4EA2JylTTwsm+26
+	X/KWh+eKN8Doct9XpE7Q2QDPYck6ojiYd+MuJ7ertdr0OjUZB9tc9flRLwofkbp7aP4TABLEz4B
+	Tt9uVK7mXW04wttbFTzbyP5CZSAvK42WmIv8zw1UbvSKSBW7twjg/z3UfoGjCyoBxyvF9o5h9TE
+	GGq1t09r5fn7oiMG/BC2dlfJsdu6usuUXK/2yG6nbeAGKG71KZNLCyDTc9FKVkmPWz7ExjDE/jM
+	EXMVgQTBgdK70Iqf/O0pRyGWI22hdyexfa+f35F0Sx+eJUJQlbv8Hbww==
+X-Received: by 2002:a05:600c:8709:b0:480:1c53:2085 with SMTP id 5b1f17b1804b1-48379bd731emr287433325e9.19.1771500708973;
+        Thu, 19 Feb 2026 03:31:48 -0800 (PST)
+Received: from [192.168.108.101] (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4839ea1e9absm18204535e9.3.2026.02.19.03.31.48
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 19 Feb 2026 01:15:08 -0800 (PST)
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
-Date: Thu, 19 Feb 2026 10:15:08 +0100
-Message-Id: <DGITONL8L200.PJE38TDXYRQC@gmail.com>
-Cc: <linux-wireless@vger.kernel.org>, "Aishwarya R"
- <aishwarya.r@oss.qualcomm.com>
+        Thu, 19 Feb 2026 03:31:48 -0800 (PST)
+Message-ID: <541218f7-0256-4cae-9cb1-40a1a2da2bfb@freebox.fr>
+Date: Thu, 19 Feb 2026 12:31:48 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH ath-next v2] wifi: ath12k: add basic hwmon temperature
  reporting
-From: "Nicolas Escande" <nico.escande@gmail.com>
-To: "Maharaja Kennadyrajan" <maharaja.kennadyrajan@oss.qualcomm.com>,
- <ath12k@lists.infradead.org>
-X-Mailer: aerc 0.21.0-0-g5549850facc2
+To: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>,
+ ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Aishwarya R <aishwarya.r@oss.qualcomm.com>
 References: <20260219073440.19618-1-maharaja.kennadyrajan@oss.qualcomm.com>
+Content-Language: en-US
+From: Pablo MARTIN-GOMEZ <pmartin-gomez@freebox.fr>
 In-Reply-To: <20260219073440.19618-1-maharaja.kennadyrajan@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260219_011511_934352_8CED9DBC 
-X-CRM114-Status: GOOD (  13.79  )
+X-CRM114-CacheID: sfid-20260219_033151_979683_73307378 
+X-CRM114-Status: GOOD (  18.23  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,48 +102,92 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu Feb 19, 2026 at 8:34 AM CET, Maharaja Kennadyrajan wrote:
-> Add initial thermal support by wiring up a per-radio (pdev) hwmon tempera=
-ture
+Hello,
+
+On 19/02/2026 08:34, Maharaja Kennadyrajan wrote:
+> Add initial thermal support by wiring up a per-radio (pdev) hwmon temperature
 > sensor backed by the existing WMI pdev temperature command and event.
 > When userspace reads the sysfs file temp1_input, the driver sends
-> WMI_PDEV_GET_TEMPERATURE_CMDID (tag WMI_TAG_PDEV_GET_TEMPERATURE_CMD) and=
- waits
+> WMI_PDEV_GET_TEMPERATURE_CMDID (tag WMI_TAG_PDEV_GET_TEMPERATURE_CMD) and waits
 > for the corresponding WMI_PDEV_TEMPERATURE_EVENTID
 > (tag WMI_TAG_PDEV_TEMPERATURE_EVENT) to get the temperature and pdev_id.
 >
 > Export the reported value in millidegrees Celsius as required by hwmon.
-> The temperature reported is per-radio (pdev). In a multi-radio wiphy unde=
-r a
+> The temperature reported is per-radio (pdev). In a multi-radio wiphy under a
 > single phy, a separate hwmon device is created for each radio.
 >
 > Sample command and output:
 > $ cat /sys/devices/pci0000:00/.../ieee80211/phyX/hwmonY/temp1_input
 > $ 50000
 >
-Hello,
-
-In ath10k & ath11k you guys also had the throtling feature. Do you guys pla=
-n to
-add this also at some point ?
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
+>
+> Reported-by: kernel test robot <lkp@intel.com>
+> Closes: https://lore.kernel.org/oe-kbuild-all/202602160145.YQdvbqYY-lkp@intel.com/
+> Co-developed-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
+> Signed-off-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
+> Signed-off-by: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
+> ---
+>
+> v2: Fixed the kernel test robot reported build test error.
+>
+>   drivers/net/wireless/ath/ath12k/Makefile  |   1 +
+>   drivers/net/wireless/ath/ath12k/core.c    |  13 +++
+>   drivers/net/wireless/ath/ath12k/core.h    |   3 +
+>   drivers/net/wireless/ath/ath12k/mac.c     |   5 +
+>   drivers/net/wireless/ath/ath12k/thermal.c | 125 ++++++++++++++++++++++
+>   drivers/net/wireless/ath/ath12k/thermal.h |  44 ++++++++
+>   drivers/net/wireless/ath/ath12k/wmi.c     |  57 +++++-----
+>   7 files changed, 217 insertions(+), 31 deletions(-)
+>   create mode 100644 drivers/net/wireless/ath/ath12k/thermal.c
+>   create mode 100644 drivers/net/wireless/ath/ath12k/thermal.h
+>
+[...]
+> +
+> +int ath12k_thermal_register(struct ath12k_base *ab)
+> +{
+> +	struct ath12k *ar;
+> +	int i, j, ret;
+> +
+> +	if (!IS_REACHABLE(CONFIG_HWMON))
+> +		return 0;
+> +
+> +	for (i = 0; i < ab->num_radios; i++) {
+> +		ar = ab->pdevs[i].ar;
+> +		if (!ar)
+> +			continue;
+> +
+> +		ar->thermal.hwmon_dev =
+> +			hwmon_device_register_with_groups(&ar->ah->hw->wiphy->dev,
+> +							  "ath12k_hwmon", ar,
+> +							  ath12k_hwmon_groups);
+> +		if (IS_ERR(ar->thermal.hwmon_dev)) {
+> +			ret = PTR_ERR(ar->thermal.hwmon_dev);
+> +			ar->thermal.hwmon_dev = NULL;
+> +			ath12k_err(ar->ab, "failed to register hwmon device: %d\n",
+> +				   ret);
+> +			for (j = i - 1; j >= 0; j--) {
+> +				ar = ab->pdevs[i].ar;
+Shouldn't it be `ar = ab->pdevs[j].ar;`?
+> +				if (!ar)
+> +					continue;
+> +
+> +				hwmon_device_unregister(ar->thermal.hwmon_dev);
+> +				ar->thermal.hwmon_dev = NULL;
+> +			}
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	return 0;
+> +}
+> +
 
 [...]
 
-> --- a/drivers/net/wireless/ath/ath12k/Makefile
-> +++ b/drivers/net/wireless/ath/ath12k/Makefile
-> @@ -32,6 +32,7 @@ ath12k-$(CONFIG_ATH12K_TRACING) +=3D trace.o
->  ath12k-$(CONFIG_PM) +=3D wow.o
->  ath12k-$(CONFIG_ATH12K_COREDUMP) +=3D coredump.o
->  ath12k-$(CONFIG_NL80211_TESTMODE) +=3D testmode.o
-> +ath12k-$(CONFIG_THERMAL) +=3D thermal.o
->
+Best regards,
 
-I may be wrong but I do not see Kconfig changes that allows to actually bui=
-ld
-the new files. Is this intended ?
- =20
->  # for tracing framework to find trace.h
->  CFLAGS_trace.o :=3D -I$(src)
-> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireles=
-s/ath/ath12k/core.c
+Pablo MG
+
 
