@@ -4,105 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAA25C55178
-	for <ath12k@archiver.kernel.org>; Fri, 20 Feb 2026 09:55:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1430FC5AD44
+	for <ath12k@archiver.kernel.org>; Fri, 20 Feb 2026 17:53:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JFygskVWcOk/FNfbcnCRmtfmSQU7zntYpcO68PJi84k=; b=vThkuKObU/4JdMksAghC6eR/ex
-	584SvB/+IG7qUlj+eLbp6YW99zlXuvbrEWCp3KN+rVyexJr0ti7LVs7R4xGnPnh1ZCgVGw3gGq/Aw
-	pVi1q0Kr+v8M23gUpPJqctySNM7es2j3M8JAE7+He4XnPidluyVVrpf0rgW458UQ5vYoaFc+RBEvo
-	SjyYZalsjZs73f4Y5PwS6uRANq8iw9dACNJOgldhUXL8yI0AnxQae9T+R879iWaXQMXEljpzoXthI
-	ijVkBzGeSTDYQ1KqIT5DBIa1WWQcgbAyVpMKcKWRQlPV/SdsWivNCi7nNBnnIrw0iEWNowin4ulm/
-	MaCZbBQg==;
+	bh=0srCeho4DTy1RFWev4F97XRwpqyAchfSz4tNZb1F+Ug=; b=iov5o1n9PAha9bQdWJfwhWhKeF
+	PDkehQjdajIzTYuCmRlw/ZMzGkE0HshGmNpuU7or8ZOWyzXR1Z5ldEvFJEh0pp0d8Z60kYnDXD9yY
+	PCvcQxBmYGEShnyRwZR2b0Us/2lfoRL4kko3HE3Vqn5KoA55vtQM30LTEM/jgVNWnOY2+yjLqCUST
+	GV66coWg5CyC3SdGl1rBYlqGvoSCFUMfkdoNEY8DrtFkfNt84nLkTpXUhqLGsF0XBrZZoC5EHmyy/
+	93DxO7sROHmPvYUnq6Wns+OturQ31VMAiMc/uOJb4LQtPB6WrKdPO6BGDakn0NrnfhAWUqx0BMQCd
+	G1bJ//tA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtNEO-0000000Dhuc-14lT;
-	Fri, 20 Feb 2026 09:55:28 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vtUhE-0000000FPx6-3INb;
+	Fri, 20 Feb 2026 17:53:44 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtNEM-0000000DhsV-1jSU
-	for ath12k@lists.infradead.org;
-	Fri, 20 Feb 2026 09:55:27 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61K5RmYH3697705;
-	Fri, 20 Feb 2026 09:55:25 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	JFygskVWcOk/FNfbcnCRmtfmSQU7zntYpcO68PJi84k=; b=iSG57pz/HT0xOiKX
-	HOETaPZfU/SS0ET13aa4g7ylQtJLtl1oiFpSR1dbLhpnpYh4YejRywPvddReuyOv
-	RoJ0Zx0g+iM9H+nUxWtH8TauubaU2TVXCwWni/a0SJ9JvT7QIoYq5IjbyQZsi4NS
-	coWQ2zQKPDnR+NndhrgQZ0hXvSan9XUIyQw8Xl4iH7Vnt/ylReejgwXL1vYi5VXS
-	TW4Q7/LkERIwpKASkFRGZ49r9b2Z1kXptxqX8bBKryzJcZ+IUG/dj9OAUs8iQ9Ng
-	p8ZucjZG4ltiQj9okHMsaMw9bE0mFXLB2uY2yfxaIiVURBkUDPVNGYTcQAAFjuqo
-	Tvn31g==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ceh5jgnp6-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 20 Feb 2026 09:55:25 +0000 (GMT)
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 61K9tO3Y027491
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 20 Feb 2026 09:55:24 GMT
-Received: from [10.152.205.141] (10.80.80.8) by nasanex01a.na.qualcomm.com
- (10.52.223.231) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.17; Fri, 20 Feb
- 2026 01:55:22 -0800
-Message-ID: <939f1f6a-ec52-4acf-8d8e-1ae81e2d9008@quicinc.com>
-Date: Fri, 20 Feb 2026 15:25:18 +0530
+	id 1vtUhB-0000000FPwD-22a7;
+	Fri, 20 Feb 2026 17:53:42 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 8306843CD3;
+	Fri, 20 Feb 2026 17:53:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2B9EC116C6;
+	Fri, 20 Feb 2026 17:53:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1771610020;
+	bh=zNATZPRtqPD3ySxmy8GYe+CARDOEJ9t0TrF6n5pOmTE=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=B/kT1Cv5HlExiMa1VET81TqQAYYr9tLcOCAnJJOdYaK/sPblFipClpHYyjogdEkG0
+	 HKk85M77RiFqctmJv2TKiFzu0iTYJ98/4FyPJyPHRLzUFPff0p9dtjSyWqTnpNl151
+	 hIn5yV2EWQmaVjj4NBWUpNo7stuvoREiuWcuUE51B11JG4W46absJE1rza03DKOni7
+	 yffyAmnqEx/nFTM8RU+HQMaX7rJuM2MSqY/sKZfNI53l9saPewBvCrwSwMBwrVqkld
+	 KdLhrcXUnSMVKKQMzK+kbVvcnrDlhrlQjh9QUSv13NXam3yqbRhppYpAq5tKj0a3Ua
+	 WCmRfCeSGkzeg==
+Message-ID: <3b0d26bd-35ff-40af-af8e-fbc1dd0d31cd@kernel.org>
+Date: Fri, 20 Feb 2026 09:53:38 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v2] wifi: ath12k: add basic hwmon temperature
- reporting
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-        Maharaja Kennadyrajan
-	<maharaja.kennadyrajan@oss.qualcomm.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Aishwarya R
-	<aishwarya.r@oss.qualcomm.com>
-References: <20260219073440.19618-1-maharaja.kennadyrajan@oss.qualcomm.com>
- <6d8849c2-a58c-4aea-863f-6e4c335ea4cc@oss.qualcomm.com>
+Subject: Re: [PATCH wireless-next 0/2] wifi: mac80211: fetch FILS and
+ unsolicited probe response templates by link ID
+To: Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>,
+ Jeff Johnson <jjohnson@kernel.org>, Felix Fietkau <nbd@nbd.name>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, Ryder Lee <ryder.lee@mediatek.com>,
+ Shayne Chen <shayne.chen@mediatek.com>, Sean Wang <sean.wang@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+ linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ Sriram R <quic_srirrama@quicinc.com>
+References: <20260220-fils-prob-by-link-v1-0-a2746a853f75@oss.qualcomm.com>
+From: Jeff Johnson <jjohnson@kernel.org>
 Content-Language: en-US
-From: Maharaja Kennadyrajan <quic_mkenna@quicinc.com>
-In-Reply-To: <6d8849c2-a58c-4aea-863f-6e4c335ea4cc@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=Raedyltv c=1 sm=1 tr=0 ts=69982f8d cx=c_pps
- a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10
- a=VkNPw1HP01LnGYTKEx00:22 a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22
- a=Mp5vFCwjDu8Sjic8cMYA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjIwMDA4NiBTYWx0ZWRfX1B7REW+zeAIo
- oAc0tK6QTelgoybMasalmhx6dkodDVqALRZqMh4QLNv8fRajX53Hs22WHZEXkKA16/VKs40IEUk
- 3RBLly1zLoe661tUoTA+p284enzEyBr2qMhakO3BY5zoqVpZt65HriSmTD0eDMr+XAUskqWKXj3
- m5AY3KCGw7zfiI7q5SmF1yLZjDCO533cdZljQgWyDONKSJ2cbm4t0J9VuSluBWyItOcS0p7CmFj
- 7VpkWeao9y16KQwF85HGhoxFLHcS+0NFOvSFRiBBA7S8f9XuZ5wb5U4xA6Tvjxfrfq4QiAtrk+N
- uivaxv9vrViTdEbq6A+KptYFpw9ftCYnxm1v3CT0hIl8kzvi+i6MDD6zniv7dkJ5KDPduHJyCkj
- rVNfMoSNeM6aMcthk4srbJEmJbuwy/QYwp57MtTp6n1uvceE2UY1+C2ELIxtuL8CIOtJUFyL8YU
- 0uIcc+gNFzYlZwl3uQQ==
-X-Proofpoint-GUID: 1vBHfxwsVif1HQ5bW1hl6LPvE3EyxOSP
-X-Proofpoint-ORIG-GUID: 1vBHfxwsVif1HQ5bW1hl6LPvE3EyxOSP
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-02-20_01,2026-02-20_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 lowpriorityscore=0 spamscore=0 phishscore=0 bulkscore=0
- clxscore=1015 suspectscore=0 impostorscore=0 malwarescore=0 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602200086
+In-Reply-To: <20260220-fils-prob-by-link-v1-0-a2746a853f75@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260220_015526_573161_5919DBFE 
-X-CRM114-Status: GOOD (  15.12  )
+X-CRM114-CacheID: sfid-20260220_095341_549522_66A677B7 
+X-CRM114-Status: GOOD (  10.75  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,77 +81,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On 2/19/2026 11:42 AM, Raj Kumar Bhagat wrote:
+> Currently, the FILS discovery and unsolicited probe response templates
+> are always fetched from the default link of a virtual interface in both
+> Multi-Link Operation (MLO) and non-MLO cases. However, in the MLO case
+> there is a need to fetch these templates from a specific link instead of
+> the default link.
+> 
+> Hence, add support for fetching these templates based on the link ID from
+> the corresponding link data.
+> 
+> ---
+> Sriram R (2):
+>       wifi: mac80211: fetch FILS discovery template by link ID
+>       wifi: mac80211: fetch unsolicited probe response template by link ID
+> 
+>  drivers/net/wireless/ath/ath11k/mac.c           |  4 +--
+>  drivers/net/wireless/ath/ath12k/mac.c           |  6 ++--
 
-On 2/20/2026 3:14 AM, Jeff Johnson wrote:
-> On 2/18/2026 11:34 PM, Maharaja Kennadyrajan wrote:
->> +int ath12k_thermal_register(struct ath12k_base *ab)
->> +{
->> +	struct ath12k *ar;
->> +	int i, j, ret;
->> +
->> +	if (!IS_REACHABLE(CONFIG_HWMON))
->> +		return 0;
->> +
->> +	for (i = 0; i < ab->num_radios; i++) {
->> +		ar = ab->pdevs[i].ar;
->> +		if (!ar)
->> +			continue;
->> +
->> +		ar->thermal.hwmon_dev =
->> +			hwmon_device_register_with_groups(&ar->ah->hw->wiphy->dev,
->> +							  "ath12k_hwmon", ar,
->> +							  ath12k_hwmon_groups);
-> ath10k and ath11k use devm_hwmon_device_register_with_groups().
-> why doesn't ath12k do the same?
-> then the code below and in _unregister() that calls hwmon_device_unregister()
-> would be unnecessary since the objects would be reclaimed when the dev is
-> destroyed.
+Acked-by: Jeff Johnson <jjohnson@kernel.org> # for drivers/net/wireless/ath
 
+>  drivers/net/wireless/mediatek/mt76/mt7915/mcu.c |  4 +--
+>  drivers/net/wireless/mediatek/mt76/mt7996/mcu.c |  6 ++--
+>  include/net/mac80211.h                          |  8 +++--
+>  net/mac80211/tx.c                               | 40 ++++++++++++++++---------
+>  6 files changed, 44 insertions(+), 24 deletions(-)
+> ---
+> base-commit: 37a93dd5c49b5fda807fd204edf2547c3493319c
+> change-id: 20260220-fils-prob-by-link-eef176414f1b
+> 
 
-ath12k_thermal_register() loops all radios and devm-registers hwmon devices. If registration fails for radio N, it returns an error that bubbles up and 'ath12k_core_pdev_create()' unwinds only DP ('ath12k_dp_pdev_free()'),
-while already-registered hwmon devices for earlier radios remain bound to `wiphy->dev` via devm. If bring-up aborts (pdev_create fails), those hwmon sysfs nodes may persist until the 'wiphy' device is finally destroyed,
-which can be much later or never if the bring-up stops early. It will impact resource/sysfs leak window and possible user-visible stale hwmon entries in failure paths.
-
-Given this, using hwmon_device_register_with_groups() plus explicit unregister keeps lifecycle handling predictable and aligned with ath12k’s recovery paths.
-
-
->> +		if (IS_ERR(ar->thermal.hwmon_dev)) {
->> +			ret = PTR_ERR(ar->thermal.hwmon_dev);
->> +			ar->thermal.hwmon_dev = NULL;
->> +			ath12k_err(ar->ab, "failed to register hwmon device: %d\n",
->> +				   ret);
->> +			for (j = i - 1; j >= 0; j--) {
->> +				ar = ab->pdevs[i].ar;
->> +				if (!ar)
->> +					continue;
->> +
->> +				hwmon_device_unregister(ar->thermal.hwmon_dev);
->> +				ar->thermal.hwmon_dev = NULL;
->> +			}
->> +			return ret;
->> +		}
->> +	}
->> +
->> +	return 0;
->> +}
->> +
->> +void ath12k_thermal_unregister(struct ath12k_base *ab)
->> +{
->> +	struct ath12k *ar;
->> +	int i;
->> +
->> +	if (!IS_REACHABLE(CONFIG_HWMON))
->> +		return;
->> +
->> +	for (i = 0; i < ab->num_radios; i++) {
->> +		ar = ab->pdevs[i].ar;
->> +		if (!ar)
->> +			continue;
->> +
->> +		if (ar->thermal.hwmon_dev) {
->> +			hwmon_device_unregister(ar->thermal.hwmon_dev);
->> +			ar->thermal.hwmon_dev = NULL;
->> +		}
->> +	}
->> +}
 
