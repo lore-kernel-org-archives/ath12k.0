@@ -4,134 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58435FD7F91
-	for <ath12k@archiver.kernel.org>; Fri, 27 Feb 2026 10:35:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64586FD7F6F
+	for <ath12k@archiver.kernel.org>; Fri, 27 Feb 2026 10:37:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=H0Lc1eqGejEKqbReUge3UeZ1gxHJB7/DI9+f5ViN17s=; b=gqUrxMNQd0xBJY9SNXxwwNSYjy
-	lOEKwOCc6iHxTT97k6Px4S6PRV8fXAdVVu6pu/on6fmYxhC1+Ass2La9NDQ53Ao6U182G8Vcc9WPC
-	KTsrzVxbX+sUVbTY6WkP0VEOziTAw7FqI4OXJNk+/bm1TTlwWghUkiEpEzJzQOtvrYByDTp47xOyI
-	Ft+hKYiVlmfKxQ7qULJ2JM1LWaX4Y8Tj8s/Q8AwfXrPEscXTE5XSMgOjiM0lU2iPbEo1A8J95RDDi
-	G0pOtlG3YCAltvRrtqq2p4ixFcfR3VsnBitBCfo0xkPYeGUpRW8gexp68S0X9VliHtLge2sdTEGXd
-	nAdxPQbQ==;
+	bh=r/r2l+vLJaAiK2DMkjrG1+OQCRw0snb2TJXSdrDhm7U=; b=mfU5St7genFGqcXHTD9HnFz1xq
+	yJ55SOPMv3L3LlJRZp6BM5RJEV3yNnH8D7bnPFI0WW9qjX+e9wkHCpo9/N9QymxKzHEd2wipO9Brv
+	1t8nWONEnR15/OypDsAhoMZIX8e7RJn6QYFB5Kc0sw1kedg6M85aIbHJufu7Iignvzzf5hX/Gp2kN
+	1/8UZoLOMr06XEuALeLPvucpFn7oC7/mLuMrlDLbanwLBDYRhtDSCvUOmYWNtcJ6eRtwW/SYaT98e
+	3XLANf72TX6fUqU4P3UkYSC30ahQazflpSj/G2/PWsvAVlJy1MZ9XUkMndZRy2GpvIydfevJekpW5
+	iAzKyGGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvvC4-00000008FAU-0BGR;
-	Fri, 27 Feb 2026 10:35:36 +0000
+	id 1vvvEM-00000008FLs-0QIM;
+	Fri, 27 Feb 2026 10:37:58 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvvC2-00000008FA8-0YSl
+	id 1vvvEJ-00000008FLD-2jlz
 	for ath12k@lists.infradead.org;
-	Fri, 27 Feb 2026 10:35:35 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61RADC9J2403004
-	for <ath12k@lists.infradead.org>; Fri, 27 Feb 2026 10:35:33 GMT
+	Fri, 27 Feb 2026 10:37:57 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61RAGA7Y3747005
+	for <ath12k@lists.infradead.org>; Fri, 27 Feb 2026 10:37:54 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	H0Lc1eqGejEKqbReUge3UeZ1gxHJB7/DI9+f5ViN17s=; b=QdNQ7pkA05zumX1s
-	TQ4WaOmA7RK5Qa6zgvmjAGxmnVKYJ82djZlbHt+zELrTCEKQ3ULBvWUfEug1vHoD
-	nSbE9b9WGluI/anv/aua3LdhTSu8LGP4K6gf7DVelNvibMoAYi6HkcUkhIt4D8f6
-	ym1cWCZgHXlwaiSu7q4gRQhTcyjkKnmdbQXzfSX9oxA/k3Fuq5VTj4y+2n7oUYoL
-	ZKSaPeWQ8E+wbU+C2JMwf9KaqYLvZxLd6rQQZRCT6a/yLAcjjFsvPCbH3M+8bUXZ
-	gj7tWR9vw3wSbiq+3C6J3SH8WAcjvrv4JJdchblzbGuQPnBLnhJBR5LYRDAXJ8sT
-	tjm5Ig==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cjw23adeh-1
+	r/r2l+vLJaAiK2DMkjrG1+OQCRw0snb2TJXSdrDhm7U=; b=frT2HldCTIgNFv9z
+	J2gppiOeQkkFi5WjsDk9/x5OwKbLZqytcSVJzxa10M+Z5GDV3TSiSS57+/vFMCJP
+	BAYoyLYJlpsWc+XQqxDxfpVhrEGgl6PCOX0n9G7+lcvX18x12WG6oGgvXNONNbcH
+	ECjVwk+ecPPmXnbOHhS5l43i4qsDEPq3UTbi1JCIWzIo9jYHsapRgoqiwR0tFefi
+	Tq4rYhIGiRHdYQ5aC5d6SrFZGk3GDVqnI42nu9rkA55KnwQRCK6x1HWoS7lS8eCB
+	RBlr0WyMozHjzeI41aGCb0SwSrZbx3Ws5MSpWfUW+IzI9BrHEE4zdFK3Ng5p/6ad
+	GI2ZIw==
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cjuur2mvg-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 27 Feb 2026 10:35:32 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-354c72d23dfso9701975a91.2
-        for <ath12k@lists.infradead.org>; Fri, 27 Feb 2026 02:35:32 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Fri, 27 Feb 2026 10:37:54 +0000 (GMT)
+Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-c70f137aa4aso1070442a12.2
+        for <ath12k@lists.infradead.org>; Fri, 27 Feb 2026 02:37:54 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1772188532; x=1772793332; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1772188673; x=1772793473; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=H0Lc1eqGejEKqbReUge3UeZ1gxHJB7/DI9+f5ViN17s=;
-        b=kovoaq18noCc7DdLRmpEneGaeBbRvn97k6uHJODIE1a06ZiBSwUDkMOUXqcXqwpIOl
-         V/qLCN4GZxZIM/cNw6+p+qB2vq+lOJMGq/qH2eFHxmHZN3JfZXvOGRzF9eE4lmGylFOE
-         4GuB1NkkKjYyaSGXJQ+UaXAh4k7C01klBKw4Oc8NYfa7bo6t+NTt1G/inG9/r/I6UGXW
-         KGUtszSM5k4GM6t4Z/0/MlVWsU8zIsThY7YdcW4YRZgeJhEEZsHvQB2wigYLwJbzvtjj
-         IXOuUQTl0zD4jHQcjHBUB7C1lAExG8BBouIYQsYAicF5DfhZEqlE+EK1ZupzHM4vLM0P
-         oZXQ==
+        bh=r/r2l+vLJaAiK2DMkjrG1+OQCRw0snb2TJXSdrDhm7U=;
+        b=PVgTLWA5N2QQz2g0XDDppiSmLgNBiREb6cGzg5HpqgnISWhzY5Hsb9Zhra/jHsJixh
+         9qJf+ImqSLwMkmkBr6mmOgafdvsmqrCtuxV8dPw8hLKe34N7OQCWbhDzPJLOj+2m7fIC
+         tsxcJ0wEyRbIgSWCygXBNhuL5SCdxqfAG7gO3+HqFTjH/9zuxRq7HlmEtuG3afPI57sV
+         fDBx+l75lXBnTsUy5KAhx/R/KPTdZoAeG0yTXCc+hXDMb7yzQveVQWZIwnuBwHGunSb0
+         r+p51xlNJFmf5CudksYyd+RcR+Xf94TjbyZMZ/WPzu8ih7TyzUmAdBAPyLZLl8YajE4W
+         qSIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772188532; x=1772793332;
+        d=1e100.net; s=20230601; t=1772188673; x=1772793473;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=H0Lc1eqGejEKqbReUge3UeZ1gxHJB7/DI9+f5ViN17s=;
-        b=SmBOidGgp1NX9oER/M6HzRMZE1htibP8gigA8VxKvtxx6ekjq1a7kom2Dj0MWqF7iX
-         Ljq78BQ8/GSmQ1qO7fROrxrqmVgXoSuMMCq8I5LC1zNO5E3g//F3KhbE3NGMukDS/Tff
-         TX2Yau/Z1TwcXSzHUQLIvog/jmOVUczbU4Pc5cUmxc8R+7tOzN5cZ19/vSipmqBGZw0M
-         ANxuVgOIqih/GHMxRj68FBB1tyOZn8X+Ag2jtxnbBqE2SQQzTZeI4/5hBGuR/YKSkPu6
-         /51hOFH16jTeQTeGDqnr9clP70b+hb5qNVhbXxhxQb+SG6OgNbAQgLG6aSso/pJ/LUey
-         XukQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWbXM2Q+SnFTxdcX3P4uLSfpcs8uBUEexG1XgkM33Px7kp+e2Wci5hQoEu8oZlPahMS9s5eWlg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwMoFkVceKhdf9/D4jbQceNJnlJg2DVpOaLX3IH6wU95flIAIkZ
-	JV3/uM7kBf7DIZrVF0b/W5S7yjBM5wAn6yJGRvyNraN5M6C8rtkriA9/hFXMVbqYtDa7r2NTbhP
-	bVp/FVRq1pcOkVH+8nOBjFqY27DKWwfsQmjA52bLlIKvPnHsDrVYGCtGKM/p5s5ar
-X-Gm-Gg: ATEYQzx5ZElJkViBIAQ5q9NiJXpHVjC19K4WaXnA1j2JQWgprEa05EtaOj9DfLQ9wDd
-	irqWb0u8xwQQbTIM+mrNX56pyGxr83CmuFxghDv4D5rI7rzMy0p23JOm4rBuKLu5s8xY44BIuKK
-	lfao7wQU0tAPNfKCoMCcdiHH1gJWYK++b9yp9dKEkM2MLUjjAq4VvOeXkMgEMCRWmxjZeVSpHwq
-	6vCztk+VnHnF5ZFlFiRgsgQ3l6N8jpEIRTeQAiHTjjH8ffa/DbL4SD51g9J+NvRWjyYtJ//GAS8
-	5tdEOq7KX4EFuOr9zw4zs+D4FV6xRXxWIZxw2XHAqrfHoOb93BV6LBdPvJAj4p9ZfGK5aGPEQUb
-	J1df9IeoDyUy4MHq7rOn46YQ9r8YN+rQTbLjAZu3Gkiwz+AFyN1HTQkOXg5q3yFSuJFA+B2CEUE
-	rs/zjrgrvutwChNS33MA==
-X-Received: by 2002:a17:90b:3501:b0:354:c7f8:6d7b with SMTP id 98e67ed59e1d1-35965cf8152mr2475057a91.27.1772188531675;
-        Fri, 27 Feb 2026 02:35:31 -0800 (PST)
-X-Received: by 2002:a17:90b:3501:b0:354:c7f8:6d7b with SMTP id 98e67ed59e1d1-35965cf8152mr2475028a91.27.1772188531067;
-        Fri, 27 Feb 2026 02:35:31 -0800 (PST)
+        bh=r/r2l+vLJaAiK2DMkjrG1+OQCRw0snb2TJXSdrDhm7U=;
+        b=oR/2Dkf2pm1FiF3/NnQKLPHDpH72CO0hRo6lHU3whmuKYiOmwPEGnaegcDUkbcCMNu
+         dqLLo+EYlIy6iFU16tjUI6CfozZ8L/dG1k5xN03BjkC6EjjXJRuCqVoXH6nm5YS3IaRH
+         YXd2tholKkhSf5sDFqZ3d5c+5XNsErJkU+4CbxUcdOMju1F8xuzAn2z7WYEz04mIg5Fg
+         CRR4MyT8JOFqw+nqVxY1uMA1FmHyq6Y/J32LHRWgeqPNSDMjsyFKsfM6WMgQvBEgNIWx
+         3Bd2CNdgKPdjs1tX9XpqNEd/oePBKhBZuPl+mPLrFZpFh4Fw238wwRgK2xQ9shyqOhr4
+         E9Qg==
+X-Forwarded-Encrypted: i=1; AJvYcCXWWf2EzPUVwDCt6DTVHbytQdi+c4RlQBC4Q/vfCvUANkMuj3+w5oRp9SNfxziMTYAcHat2Kzo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyRkmSqmpaFoXEnHSygLn9fG4jBje+m3I5+FUSCfEV3wCHbAaGa
+	5Qt5quTT/jGQaAsoynGS38Zwr0BLtIptiI5IENOevHKYTqSnekMOwBQnXTdS/rIPdkSurxsPdUB
+	PxaScHp3hUU9nVanxL0sZs7nLn1uvpY/SKYtOL29EQNhLgrWhdkoH//cdMH/bSusHOtDHhCYrrN
+	I=
+X-Gm-Gg: ATEYQzxw+PrgXMP21MmCnj4Oz9+xan2vhsl2+ehvUA3YVpUJcQq0w2QrtnpQ1lB242D
+	J0HLmu1tgYiqIWFnjiR3KLsxRZ/Q2R9gMd0CIsGqBB/ATfpC1MGMWsSzBNZJLHc9r+v89ckKgsH
+	Xcs9YVZyk1MP6FHd1JTfmeEknGcm/RsxGArUlOHiqyluU1Z3QOSzbT2u7vxwo5ho7mVipWmqfif
+	cKDNjNHjMWpJ7ycRqM7HZHVZ9E78Orf/sGRfc6Nyrnpt7DCXVMcsvASvlgZFoJzor43u2q34iJF
+	ge7G3dUbPN3zlc8Pfp6XJwBOwJMa4TPSlwsRHLqTve72NOR9fyklqvyRmbV2D0prIl9Kf1rGI4l
+	Z7vV8efgK3Ss6u8WPqwnoBNAmKXJkAUVHOPbt4bZ2vXLBl2VTrKDosD1LImoYzSaE3woIzDPrlN
+	69AlgXxP7AWlz3t/ftGw==
+X-Received: by 2002:a05:6a20:94cf:b0:394:3344:a6a3 with SMTP id adf61e73a8af0-395c3b1980cmr2246183637.57.1772188673126;
+        Fri, 27 Feb 2026 02:37:53 -0800 (PST)
+X-Received: by 2002:a05:6a20:94cf:b0:394:3344:a6a3 with SMTP id adf61e73a8af0-395c3b1980cmr2246164637.57.1772188672587;
+        Fri, 27 Feb 2026 02:37:52 -0800 (PST)
 Received: from [10.133.33.12] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3590158f8a3sm8044969a91.2.2026.02.27.02.35.29
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-c70fa801704sm4440657a12.19.2026.02.27.02.37.50
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 27 Feb 2026 02:35:30 -0800 (PST)
-Message-ID: <60467511-80a7-4c56-8e6c-04b2f3eb971b@oss.qualcomm.com>
-Date: Fri, 27 Feb 2026 18:35:25 +0800
+        Fri, 27 Feb 2026 02:37:52 -0800 (PST)
+Message-ID: <00743cd4-c3e8-41c3-bb2d-1ce7ff5630c7@oss.qualcomm.com>
+Date: Fri, 27 Feb 2026 18:37:49 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next] wifi: ath12k: Set up MLO after SSR
+Subject: Re: [PATCH ath-next] wifi: ath12k: Fix the assignment of logical link
+ index
 To: Roopni Devanathan <roopni.devanathan@oss.qualcomm.com>,
         ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
-        Ramya Gnanasekar <ramya.gnanasekar@oss.qualcomm.com>
-References: <20260227041127.3265879-1-roopni.devanathan@oss.qualcomm.com>
+        Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
+References: <20260226041911.2434999-1-roopni.devanathan@oss.qualcomm.com>
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20260227041127.3265879-1-roopni.devanathan@oss.qualcomm.com>
+In-Reply-To: <20260226041911.2434999-1-roopni.devanathan@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: jYj6OKayk-dNw17KEiDIDkBBn7M6WblI
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjI3MDA5MSBTYWx0ZWRfXz1TXk/Q3tmrR
- T1qCMYwTs+ZBWWp6IEkfSovlKKp1pHbN55RFrqVyywau6DvcECWkIXG79qGXLuLowyHunfJM0eG
- AT1DzBjJnMNskd6vQFpb0T9SLr/uUI/jzoRcviQJLOtiF8Y79zGCj0tFvi8q/bdojR6U4syxtoL
- ylk/cBurW5LEnArQTVLGGJTIUtKBhHWVvZQyahlQ/2ghFhp+hGHXd0envf2uvVv5mCOAcGj+DbW
- pYGCUjKz2N8CZpNH23ssextwhm2+6GDpSJtH+lRW0CJOLww7MW7TPKMOHPL7sKHjQOIlueWqhFV
- jYAJLhTLoCdqrWzPPnJq6wvYm8ZtIMgskRQFgMT2YsPaQCnkj+ddOmoPlVCLrvdStpfNJvXTTko
- lv4AgLvj1/WoyTIrOJ7vQGXoXuO0n0y/KUbj8UPATEGID/uyCvamsfivulxeVzyytXswehU2kJA
- Kqk7NGsEJxLGTrZFUjQ==
-X-Authority-Analysis: v=2.4 cv=cJHtc1eN c=1 sm=1 tr=0 ts=69a17374 cx=c_pps
- a=RP+M6JBNLl+fLTcSJhASfg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-GUID: F5RTIfful1wxxVks_oLlBX6_GdsSgfwK
+X-Authority-Analysis: v=2.4 cv=PN8COPqC c=1 sm=1 tr=0 ts=69a17402 cx=c_pps
+ a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
- a=EUspDBNiAAAA:8 a=X4JEpTBpwg_adTgisIIA:9 a=QEXdDO2ut3YA:10
- a=iS9zxrgQBfv6-_F4QbHw:22
-X-Proofpoint-ORIG-GUID: jYj6OKayk-dNw17KEiDIDkBBn7M6WblI
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
+ a=EUspDBNiAAAA:8 a=60smP4qnKYXzuQrFqocA:9 a=QEXdDO2ut3YA:10
+ a=x9snwWr2DeNwDh03kgHS:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjI3MDA5MSBTYWx0ZWRfXxt/kUFBqRdBC
+ cGEBPspfC8PmDqSgbZYQcVw5SK+4TH5hKIey7sG/A/wgv4kOOhTSmA0pQm1P8aMx3hbjYG3FvrW
+ Lg3vVcLfQXDppprEfJzO3+YI/XkQdooGEWyfrl6JQ2AGsKHB5tnJBuoU9m4pzmfL8/o0axZZISz
+ 5dEuEjmp9/8zXQFkcmsTTL/kQ5oYqsEyP41a7qg1qEkyqJPhcE+GEzU9CigmKYjzVJI+IOzUv1e
+ nFB3oESooqlwQD3TCO3oAFLmDi3nhWK+3xtSOFdbfL3n9ePzTb29jFu7UnVhzyCcmU3YYo5Drdg
+ vjLWhbmBcloh9JcRAu61OlmrM+PuzN13zF95gF0ZjEs6odwL2mlLpJGbqUmyZpV21VOttaCGCCI
+ SlB3bJblmivM+P7VqVdyQrcwpVd2cpSPCdYOLMzvg6hw2xCjazLi9GRdAOHKoNc/0DSZIo2RfcW
+ j07U8yobRiCF9SV/BtQ==
+X-Proofpoint-ORIG-GUID: F5RTIfful1wxxVks_oLlBX6_GdsSgfwK
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-02-27_01,2026-02-26_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 impostorscore=0 lowpriorityscore=0 phishscore=0 adultscore=0
- spamscore=0 clxscore=1015 priorityscore=1501 suspectscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2602270091
+ priorityscore=1501 impostorscore=0 clxscore=1015 lowpriorityscore=0
+ adultscore=0 spamscore=0 phishscore=0 suspectscore=0 bulkscore=0
+ malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2602130000
+ definitions=main-2602270091
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260227_023534_297312_83A7BE1E 
-X-CRM114-Status: GOOD (  19.44  )
+X-CRM114-CacheID: sfid-20260227_023756_063871_E2AB4507 
+X-CRM114-Status: GOOD (  24.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,63 +151,102 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 2/27/2026 12:11 PM, Roopni Devanathan wrote:
-> From: Ramya Gnanasekar <ramya.gnanasekar@oss.qualcomm.com>
+On 2/26/2026 12:19 PM, Roopni Devanathan wrote:
+> From: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
 > 
-> During recovery of an MLO setup from a core reset,
-> ATH12K_GROUP_FLAG_REGISTERED is set because ath12k_mac_unregister is not
-> called during core reset. So, when an MLO setup is recovering from a core
-> reset, ath12k_core_mlo_setup() is skipped. Hence, the firmware will not
-> have information about partner links. This makes MLO association fail
-> after recovery.
+> Per-link logical index is assigned from the global counter,
+> ahsta->num_peer. This logical index is sent to firmware during peer
+> association. If there is a failure in creating a link station,
+> ath12k_mac_free_unassign_link_sta() clears the link, but does not decrement
+> the logical link index. This will result in a higher logical link index for
+> the next link station created. Also, if there is a leak in logical link
+> index as we assign the incremented num_peer, then the index can exceed the
+> maximum valid value of 15.
 > 
-> To resolve this, call ath12k_core_mlo_setup() during recovery, to set up
-> MLO. Also, if MLO setup fails during recovery, call
-> ath12k_mac_unregister() and ath12k_mac_destroy() to unregister mac and
-> then tear down the mac structures.
+> As an example, let's say we have a 2 GHz + 5 GHz + 6 GHz MLO setup. So the
+> logical link indices that they have are 0, 1 and 2, respectively. If the
+> 5 GHz link is removed, logical link index 1 becomes available, and num_peer
+> is not reduced to 2 and still remains at 3. If a new 5 GHz link is added
+> later, it gets the index 3, instead of reusing link index 1. Also,
+> num_peer is increased to 4, though only 3 links are present.
 > 
-> Also, initiate MLO teardown in the hardware group stop sequence to align
-> with the hardware group start sequence.
+> To resolve these, create a bitmap, free_logical_link_idx, that tracks the
+> available logical link indices. When a link station is created, select the
+> first free logical index and when a link station is removed, mark its
+> logical link index as available by setting the bit.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01181-QCAHKSWPL_SILICONZ-1
 > 
-> Signed-off-by: Ramya Gnanasekar <ramya.gnanasekar@oss.qualcomm.com>
+> Signed-off-by: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
 > Signed-off-by: Roopni Devanathan <roopni.devanathan@oss.qualcomm.com>
 > ---
->  drivers/net/wireless/ath/ath12k/core.c | 10 +++++++++-
->  1 file changed, 9 insertions(+), 1 deletion(-)
+>  drivers/net/wireless/ath/ath12k/core.h |  2 +-
+>  drivers/net/wireless/ath/ath12k/mac.c  | 16 ++++++++++++++--
+>  2 files changed, 15 insertions(+), 3 deletions(-)
 > 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-> index 9dca1a0af73e..218c0a0c9699 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.c
-> +++ b/drivers/net/wireless/ath/ath12k/core.c
-> @@ -1017,6 +1017,8 @@ static void ath12k_core_hw_group_stop(struct ath12k_hw_group *ag)
+> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+> index 990934ec92fc..5498ff285102 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.h
+> +++ b/drivers/net/wireless/ath/ath12k/core.h
+> @@ -522,7 +522,7 @@ struct ath12k_sta {
+>  	u16 links_map;
+>  	u8 assoc_link_id;
+>  	u16 ml_peer_id;
+> -	u8 num_peer;
+> +	u16 free_logical_link_idx_map;
 >  
->  	ath12k_mac_unregister(ag);
+>  	enum ieee80211_sta_state state;
+>  };
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 68431a0e128e..db1b098b67d0 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -6784,6 +6784,8 @@ static void ath12k_mac_free_unassign_link_sta(struct ath12k_hw *ah,
+>  		return;
 >  
-> +	ath12k_mac_mlo_teardown(ag);
+>  	ahsta->links_map &= ~BIT(link_id);
+> +	ahsta->free_logical_link_idx_map |= BIT(arsta->link_idx);
 > +
->  	for (i = ag->num_devices - 1; i >= 0; i--) {
->  		ab = ag->ab[i];
->  		if (!ab)
-> @@ -1134,8 +1136,14 @@ static int ath12k_core_hw_group_start(struct ath12k_hw_group *ag)
+>  	rcu_assign_pointer(ahsta->link[link_id], NULL);
+>  	synchronize_rcu();
 >  
->  	lockdep_assert_held(&ag->mutex);
+> @@ -7102,6 +7104,7 @@ static int ath12k_mac_assign_link_sta(struct ath12k_hw *ah,
+>  	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(ahsta);
+>  	struct ieee80211_link_sta *link_sta;
+>  	struct ath12k_link_vif *arvif;
+> +	int link_idx;
 >  
-> -	if (test_bit(ATH12K_GROUP_FLAG_REGISTERED, &ag->flags))
-> +	if (test_bit(ATH12K_GROUP_FLAG_REGISTERED, &ag->flags)) {
-> +		ret = ath12k_core_mlo_setup(ag);
-> +		if (WARN_ON(ret)) {
-> +			ath12k_mac_unregister(ag);
-> +			goto err_mac_destroy;
-> +		}
->  		goto core_pdev_create;
-> +	}
+>  	lockdep_assert_wiphy(ah->hw->wiphy);
 >  
->  	ret = ath12k_mac_allocate(ag);
->  	if (WARN_ON(ret))
+> @@ -7120,8 +7123,16 @@ static int ath12k_mac_assign_link_sta(struct ath12k_hw *ah,
+>  
+>  	ether_addr_copy(arsta->addr, link_sta->addr);
+>  
+> -	/* logical index of the link sta in order of creation */
+> -	arsta->link_idx = ahsta->num_peer++;
+> +	if (!ahsta->free_logical_link_idx_map)
+> +		return -ENOSPC;
+> +
+> +	/*
+> +	 * Allocate a logical link index by selecting the first available bit
+> +	 * from the free logical index map
+> +	 */
+> +	link_idx = __ffs(ahsta->free_logical_link_idx_map);
+> +	ahsta->free_logical_link_idx_map &= ~BIT(link_idx);
+> +	arsta->link_idx = link_idx;
+>  
+>  	arsta->link_id = link_id;
+>  	ahsta->links_map |= BIT(arsta->link_id);
+> @@ -7630,6 +7641,7 @@ int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+>  	if (old_state == IEEE80211_STA_NOTEXIST &&
+>  	    new_state == IEEE80211_STA_NONE) {
+>  		memset(ahsta, 0, sizeof(*ahsta));
+> +		ahsta->free_logical_link_idx_map = U16_MAX;
+>  
+>  		arsta = &ahsta->deflink;
+>  
 > 
-> base-commit: 20ad0d58517073b3b683ff786c65dd3142321707
+> base-commit: 62f9b9b19939138c34ce0ac1e5d4969d617ecbb6
 
 Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
