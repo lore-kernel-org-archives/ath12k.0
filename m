@@ -4,89 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12379FD5316
-	for <ath12k@archiver.kernel.org>; Fri, 27 Feb 2026 09:17:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31244FD5316
+	for <ath12k@archiver.kernel.org>; Fri, 27 Feb 2026 09:22:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:From:
-	Subject:To:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:
+	Subject:To:From:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
 	Mime-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jZcJjJ/XMH1eR+uh9i0K+HsXdgxllBZzSfKzwC5Di0U=; b=w1XDlXL46XI/QCZyHcVxbdJ/gS
-	zHdBzTZY4f/sGgVOFbpEO+CzMTCHPMaKkYBnTmqWduLm+mBJXSKwV41oPpc5+aNqbBrLsUQQpcnnb
-	7D4HwpI8SGyT58twbK61LE+Y4dtmZ9iXa5Ada/yJ3qR5svfM4LhGoHMM15Rx1tC+SQuR10DMxg7i4
-	lchmkLfqWrp03Feu0ByfHNxum8vHsQs7l8SI6RY5xsAkPspLzGr2fgDxmNkY69McpOax+d6NLvS44
-	Uiomq4TLXpGql28IIv5fLGUECn7sIUmQNRqkf2ckCMlVR+BxrVAcTanH5CqrLe10gQ2Goj0BgnlXu
-	QPo+36xg==;
+	bh=2GxG3pB/mEMcn1PbbMxa3ws5zcQTcFmJ7Cf607s7J2E=; b=oxLP3k/2eLk986Hnh5J4G9OmqW
+	42PrjL6X6Acu3qbfMBy2Myj9h8kdUpdAUEw42kZfwoI6MzUlM0ByKANm54vtEA7hCM89V8WhcSr+C
+	STOr7ZJGD/Ju+LARdYtPJ0qWxjn9WfcS3nQwzrA8raUZa2m4AxwPVzyRoJmZlXJH+InTHrZLAh/ck
+	cBhipHJismODhcOGrOQDYuo7lpHx8dIbGTn27R6lSwOf8OZv3fHhtfMsuJrU+j83W4F9wpUr+kEmC
+	prKH8gDXA+yanCKbhuzGuldZObbYkuF9eUsPGYw5MlHedlF98X32aE0K98zokN/nVJCx0yjfu8LF2
+	r01TrlmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvty1-0000000844Q-1vou;
-	Fri, 27 Feb 2026 09:17:01 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	id 1vvu3Q-000000085XH-3s6A;
+	Fri, 27 Feb 2026 09:22:36 +0000
+Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvtxz-00000008448-1OBH
+	id 1vvu3O-000000085Uy-2j79
 	for ath12k@lists.infradead.org;
-	Fri, 27 Feb 2026 09:17:00 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-4837634de51so7798305e9.1
-        for <ath12k@lists.infradead.org>; Fri, 27 Feb 2026 01:16:58 -0800 (PST)
+	Fri, 27 Feb 2026 09:22:35 +0000
+Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-4398f9e3b40so1803282f8f.1
+        for <ath12k@lists.infradead.org>; Fri, 27 Feb 2026 01:22:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1772183817; x=1772788617; darn=lists.infradead.org;
-        h=in-reply-to:references:from:subject:to:message-id:date
+        d=gmail.com; s=20230601; t=1772184152; x=1772788952; darn=lists.infradead.org;
+        h=in-reply-to:references:subject:to:from:message-id:date
          :content-transfer-encoding:mime-version:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=jZcJjJ/XMH1eR+uh9i0K+HsXdgxllBZzSfKzwC5Di0U=;
-        b=krBoaJENOe4wXWGlvlmtLImNu16eSBJ5vP55v3bznTfQgzBTyeQzhtIUPEFQYquNWW
-         Gq41rUi7+dqPUxNkW050e3Dwu2AQyPPRt0fdvFk4wHoHnquT23gnIjS8Z4snkF4bWEVa
-         lC7C1lZox/QhRrbXOgehBprOnXNnHEzKIPglgx+VkfrwBIniXg0PnHV1dlnybhqB6tQq
-         lMEFyige41fTvd/SLFMFdU7YvnhHlqPcb+v4yqQUTCYpztxll1BtIqcim2ja4kOsmFHJ
-         UtksG1JZO6lZDgXnLb9SwG8aD3KGNHWQo5DLTyuGN5L4CT1J4eLEUiKJcgoP93kz82Bu
-         vHUA==
+        bh=2GxG3pB/mEMcn1PbbMxa3ws5zcQTcFmJ7Cf607s7J2E=;
+        b=lwteRt6fUMvR4nVepizd6PKOyM3ZEHF3hA7k6m8+xPPDP1scm31q1HtvyPof01vXK2
+         Puz2AHo5/mZaHkppcZMquL4FP2trP37XNlCDyAXqu4iML2up7k5Hf+7mk/0WGE7cVdNC
+         v4FE0COm9PN7crdtUmig2j9nallMC2uOioL4o3S1wLBO8LBAB4wxiWJUutI7Wlk61VoM
+         j4MalriHQCYvEDy1pvOAHWYdgnGkbPrKhNpir7pR7r+STnSyJ4JN432/kwdlMWwNrdWO
+         97k0DK658VcZzZRKGNxtZazF55QfmdpfhcbJUfv23xFqJfbz/7BB7ramdKxtA32+UanN
+         RsUw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772183817; x=1772788617;
-        h=in-reply-to:references:from:subject:to:message-id:date
+        d=1e100.net; s=20230601; t=1772184152; x=1772788952;
+        h=in-reply-to:references:subject:to:from:message-id:date
          :content-transfer-encoding:mime-version:x-gm-gg:x-gm-message-state
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=jZcJjJ/XMH1eR+uh9i0K+HsXdgxllBZzSfKzwC5Di0U=;
-        b=CIe6yneOfaegEHMz8dDdGIbzbJIPChvwItdpEYk/MRruGHxltn4qJfdfMl/4Zx3Wi4
-         it8zM5yH61QG0E4FIwo6Hr9H1tEDvsXb/gTwFcJrOYplJfI3Si3JHWxaSSRLGwmyOaP9
-         0wYdOxPHJdUbXga7pUr9ffsQhTon/SYZE/7gUHbNGs1K72C2eNiKenxr3HTQg4tZ8oDF
-         kiDLc+M//XC+9QOUfOBngE4jIhU1HBiZ2/It38CCo64cFptD5GMhCFkB3YTbCprcKBsN
-         dyZE7L9hZ2YwEYqUAUwP8rBKKd3ww58iNq40cdrOOYzw5Th8Lp8M84wDitJKkSKC/Z0l
-         Yt2g==
-X-Forwarded-Encrypted: i=1; AJvYcCVViqzZVbfy+JFdOxDvD1kGc/asv2VkM3I7AiSpaIAhJxLXdhrIaiNJOZARyo9uYdXeHLT/0SI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzdxLpyrLVgK8E7l1FryuJUiUMjvxWoUnPUyWbO8sExi2gFOmCY
-	1tBPxzT1HyZef6a8fgUS7zi90cvbtO3GX4FZRaoXNZr5BF2SzoLhRgjP
-X-Gm-Gg: ATEYQzzMn5o+l+P5xBWZYLJk3pNGaeY+QmW4OMCeSDk27PdGubvDGQvhYSMfK2x9Dpa
-	tENQaMxmyTAFEaDx3NRTJSYdT02+0BfG3lKZPfRCcSZ8gjMbSvv/D00PJUiJTjSMMC9sYXGcujx
-	yqbTBRYMfm5ZDXiVmKUnVPtKCnrC2Kn9b06smmmiHeeXOf2/2JaqjCs8cjOizuD9OOoCLffjzWR
-	EWUShTxLHREilzBaXeZu0SuFJSHxmVppkhpjPT0+OBnCHQyBGZn/ha6iz02WZtP00NcqJnbe2bE
-	wuhbLs0X3L/D7psobxTEPWPX/HpcnfDpQYR/OGu84CkRH4H8p3GqTPyAvS9UBRu6Rb78jUGx9jq
-	qW10Qw2htxEPugogZ7/TARY/o1yISE4JEYsWzp+XqUA3uV6dD5hr7Wpmq5mqUDXDAXuiG2N5qrE
-	MJoC/777Tafy32uFFk7a0eAIvAymUcXYWSFW9P1r8N2A==
-X-Received: by 2002:a05:600c:b90:b0:483:abeb:7a5c with SMTP id 5b1f17b1804b1-483c9bdb600mr31323875e9.12.1772183816949;
-        Fri, 27 Feb 2026 01:16:56 -0800 (PST)
+        bh=2GxG3pB/mEMcn1PbbMxa3ws5zcQTcFmJ7Cf607s7J2E=;
+        b=MEsNiWYSQA2Zhvb0qyJK6XWErQt6Xf84PdJVCn2x2wdXzdY0LoTNPvfgV8qVtPuItT
+         1RV5a6ixD8UUoptho59US7JBYLIdpXglZLOhfmeRvVzUtlDfXg/MTn48blCP8YWrGHK1
+         Fm7GKCimjQP+RYjvCCFWFKnot5e7TvlK4XYnda1c1l6vqqU2w7Y3ugIPiOkERn693mQ/
+         LlYrju9VSgqBF8sG6dDaqyLxXWUnY5WGrS1OjmgXtg6m2d1GKqqHbHwK5mKvqN3SVQOj
+         Uv4rFtdHEaX9bGQcjMkJxDzaTVUuEZmw51wF3tDBubYZnEkwo63Lm24AGwOtJf+r64Mk
+         p4tA==
+X-Forwarded-Encrypted: i=1; AJvYcCX2se1IiyXsAlytQCRStiGlYLuJcn8uAOIus4X0QxtzF8XmO39LR5/OmDhGctfzzdlc7Lq3XQA=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy+0k413Pjh0x5f1ef+hkGSM9pZcQVZgRFvkT3bDAP2kY+JhTUd
+	fxyRnGOGJIWG7CFT5UjJwtZ1qd6V6HBzgpG7PSOdhuKfsWQzuq21+kLCByFhig==
+X-Gm-Gg: ATEYQzy+v6KJtaPECMliVv0hW12w/XeQyG2dhJ982aKfkA/GZ/2INBI6My2fXCmZ6JS
+	ubYrtFz0SmJ5vp0x7JwI6TobA/3qBrltv8vK0jzPXvIdI7sNT8jz8qSaod+0NB+WymLDgP/uo41
+	6XlqICvd+oqlofRSsBFpzAEmvXNAozoV6OnVxJpa8buWremvTOFjNRxKDOeKWBzON3uWiyN3xCd
+	5hUFpCitlCT/oBCOPKSdo0wp4uMuByCyrXdDCNpkdQSvUKRpr7w4eFuFrnRGwR8w5MHDd/uy978
+	3t8VV6aV1ud1+XARHHUVpJtk4X71BzhKkcFdoTTYFGeLbSmY47gQpzgUS4gaMMKaAkIiC/O6ZmE
+	kjhw2K0N7X7+lQ9B/bPk3EPIQUrhpcv5VNgMkzQpCaIqlVp22GBb4lfBNDgLCsTDq3cqANknWaZ
+	hPUNFtdpaY3+NuSXAQ63J7jydf8M7qBJ2VZZPWiZa4XQ==
+X-Received: by 2002:a05:6000:2890:b0:435:bbd7:18d8 with SMTP id ffacd0b85a97d-4399de14ab6mr3477874f8f.17.1772184152079;
+        Fri, 27 Feb 2026 01:22:32 -0800 (PST)
 Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-483bfb77466sm74951295e9.5.2026.02.27.01.16.56
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4399c60f8e5sm6130897f8f.4.2026.02.27.01.22.31
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 27 Feb 2026 01:16:56 -0800 (PST)
+        Fri, 27 Feb 2026 01:22:31 -0800 (PST)
 Mime-Version: 1.0
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/plain; charset=UTF-8
-Date: Fri, 27 Feb 2026 10:16:55 +0100
-Message-Id: <DGPMQDTEBLPC.25LCWXNBJJDZX@gmail.com>
-To: "Pablo MARTIN-GOMEZ" <pmartin-gomez@freebox.fr>,
+Date: Fri, 27 Feb 2026 10:22:31 +0100
+Message-Id: <DGPMUNZ4ZBY8.181RAQTQN7UT8@gmail.com>
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Baochen Qiang" <baochen.qiang@oss.qualcomm.com>,
  <ath12k@lists.infradead.org>
 Subject: Re: [RFC PATCH 1/1] wifi: ath12k: avoid dynamic alloc when parsing
  wmi tb
-From: "Nicolas Escande" <nico.escande@gmail.com>
 X-Mailer: aerc 0.21.0-0-g5549850facc2
 References: <20260226165517.1899045-1-nico.escande@gmail.com>
  <20260226165517.1899045-2-nico.escande@gmail.com>
- <f8b98f6f-5e52-4968-8270-6ffe2e381ae2@freebox.fr>
-In-Reply-To: <f8b98f6f-5e52-4968-8270-6ffe2e381ae2@freebox.fr>
+ <34974936-e75c-42db-9516-496e685d3dad@oss.qualcomm.com>
+In-Reply-To: <34974936-e75c-42db-9516-496e685d3dad@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260227_011659_407406_156A3955 
-X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-CacheID: sfid-20260227_012234_693043_262608CC 
+X-CRM114-Status: UNSURE (   9.18  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,55 +102,39 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu Feb 26, 2026 at 8:48 PM CET, Pablo MARTIN-GOMEZ wrote:
+On Fri Feb 27, 2026 at 4:18 AM CET, Baochen Qiang wrote:
 [...]
->> @@ -2249,6 +2250,11 @@ struct ath12k_base *ath12k_core_alloc(struct devi=
-ce *dev, size_t priv_size,
->>  	if (!ab)
->>  		return NULL;
->> =20
->> +	ab->wmi_tb =3D __alloc_percpu(WMI_TAG_MAX * sizeof(void *),
->> +				    __alignof__(void *));
->> +	if (!ab->wmi_tb)
->> +		goto err_sc_free;
-> If `!ab->wmi_tb`, you're going to `free_percpu(ab->wmi_tb)`; it works but=
- it's not super pretty.
-Yes it's by design, we do not need to null check before free() and it avoid=
-s
-adding a new label that would cause more code chrun
->> +
->>  	init_completion(&ab->driver_recovery);
->> =20
->>  	ab->workqueue =3D create_singlethread_workqueue("ath12k_wq");
->> @@ -2296,6 +2302,7 @@ struct ath12k_base *ath12k_core_alloc(struct devic=
-e *dev, size_t priv_size,
->>  err_free_wq:
->>  	destroy_workqueue(ab->workqueue);
->>  err_sc_free:
->> +	free_percpu(ab->wmi_tb);
->>  	kfree(ab);
->>  	return NULL;
->>  }
-> [...]
->> @@ -6795,11 +6749,9 @@ ath12k_pull_pdev_temp_ev(struct ath12k_base *ab, =
-struct sk_buff *skb,
->>  	ev =3D tb[WMI_TAG_PDEV_TEMPERATURE_EVENT];
->>  	if (!ev) {
->>  		ath12k_warn(ab, "failed to fetch pdev temp ev");
->> -		kfree(tb);
->>  		return -EPROTO;
->>  	}
->> =20
->> -	kfree(tb);
->>  	return 0;
->>  }
-> You're missing a change on `ath12k_reg_11d_new_cc_event` (was added by 59=
-1de41d7008585f2e7c35dbcf5922fcb4d79e39)
-Indeed, this was ported from an older kernel, I'll fix before non RFC submi=
-ssion
-if there is interrest from QCA around this feature.
-> [...]
+>> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wirele=
+ss/ath/ath12k/core.h
+>> index 990934ec92fc..378573a100e8 100644
+>> --- a/drivers/net/wireless/ath/ath12k/core.h
+>> +++ b/drivers/net/wireless/ath/ath12k/core.h
+>> @@ -19,6 +19,7 @@
+>>  #include <linux/average.h>
+>>  #include <linux/of.h>
+>>  #include <linux/rhashtable.h>
+>> +#include <linux/percpu.h>
+>>  #include "qmi.h"
+>>  #include "htc.h"
+>>  #include "wmi.h"
+>> @@ -934,6 +935,7 @@ struct ath12k_base {
+>>  	struct device *dev;
+>>  	struct ath12k_qmi qmi;
+>>  	struct ath12k_wmi_base wmi_ab;
+>> +	void __percpu *wmi_tb;
 >
-> Best regards,
-> Pablo MG
+> instead of allocating it per device, how about making it global and alloc=
+ating once when
+> loading driver. This way we may save some memory in case where more than =
+one devices get
+> probed?
+Yes I can do that.
+
+I'll wait a few days to see if there's more feedback from you guys and I po=
+st
+something more polished then. And I'll probably post something for ATH11K, =
+it
+seems to have the same pattern.
+
+Thx for the review
 
