@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56096FD0049
-	for <ath12k@archiver.kernel.org>; Sun,  1 Mar 2026 01:15:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8824FFD004A
+	for <ath12k@archiver.kernel.org>; Sun,  1 Mar 2026 01:18:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=C8ll8VQVzGQcUOEN388GW6x16wAkvvod3oSG6I6GF18=; b=DITaK6segZpulmgJwmcAQOtWpn
-	gOtPAs/VZnxx0HydJ2WDPXF+8PF2GJPQV3xNXuPjKAA163wjxef8MHzp8Eh2oLfTEpwqf73TA6ZpR
-	CwXB1DLF67/+liQBXUftACpF42Wx0dclNTXEqg/cw+6Wk2nwKrZkqvCBtJwDjLLZ4mwjl7cwdU405
-	V17DQJ/Wi2S3H96ZUhjuazU0IPqCS3uVM/IW/IeS2Fu2tkyrHXrcT8+ZztbHh3JY5UQ3CoDzsO9+Z
-	o+untc/NpFfecb2IBV9pbZ9xGMCxJkDSJUi1RBe5BqUyBbcIEp9PKnyoTNty6nvuqXpdQ9i1Tbnc1
-	PbFwM6cw==;
+	bh=CSSBluWARUI4IID6pcp5vF+1MSDZE04TMFvRB6chX1A=; b=xDWta2RSXodYM7zE/nbgtUfosH
+	betEhjo4WQVHXCXZSp/5RLkwLJmkqi79DSM/RRldw+8cBcmz+/1gbOUZEEOkcDPkTrH5DfKakYs+o
+	hPLLEWrD0St54XL+Bie/o6L86e2STIq/49IllULFqeMpXt4XgGI1Q6IQnVCPxv1s4R1Tutml/ttK9
+	U6Kuf3SaXBFXGozo/53ymYohZk1CIfVfdAgmA3gpSmBFlTJTluCo7UJtZqlR7nCQU814XQ+2VLwz6
+	ZOt4wKYAcv32QHCYnJeZ4U6jGTJygqHmbI8aUpSAx4rJNRAHqAStFibHRoSAd1tOBnOYfDPBrbM51
+	+XRMuz4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwVPJ-0000000ARtm-1BPq;
-	Sun, 01 Mar 2026 01:15:41 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vwVSR-0000000AT1y-1CZn;
+	Sun, 01 Mar 2026 01:18:55 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwVP3-0000000ARk0-0dNV;
-	Sun, 01 Mar 2026 01:15:26 +0000
+	id 1vwVSM-0000000ASzW-3hL6;
+	Sun, 01 Mar 2026 01:18:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id CC06840A3E;
-	Sun,  1 Mar 2026 01:15:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 411C8C2BC86;
-	Sun,  1 Mar 2026 01:15:23 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 795E2417EF;
+	Sun,  1 Mar 2026 01:18:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6A6EC19424;
+	Sun,  1 Mar 2026 01:18:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772327724;
-	bh=Aprur0hQ/wf1PgPBeG45PsEudzfTijFRPQC792XAL0I=;
+	s=k20201202; t=1772327930;
+	bh=5xNmEnYFuQcpjHnT1ySMF1saGPP8aPSszZDDcH+ngd4=;
 	h=From:To:Cc:Subject:Date:From;
-	b=Hvhr+nQu87EcY+mqYCu36N86HmWnYQuuO/UBxpt0V1vWnLvq7cY6kyr9Eiv3c00A6
-	 4hMP94SPuEYhXLIbePlVSh9WfoIz/OmZzkO4RUwLNmYdTj1rCpc9krp6yHBgik8UBK
-	 J8lEz92166ww3Djk5lhZGmtosxDT2HbVW7Dpx/XITix9qfa9BeoydHj/W2JOTe4F7J
-	 /CoR5E5Mwl89muykeFDITZSkvhAHZT2UUojpnzjZWi/6mHqv5G2RrHKxoUAUpuVvun
-	 THydyCK70t3Bc/EGS9Q9KmjDca8eVS3gMbCfXFHhzzYxIZNfIjyOtLlanVcjSxzmo6
-	 AtarVbRcwjngA==
+	b=H269SD+Ndp3obFBlLjNA91PhMImo4lgDDLNndpDN5JZDSQ8zzNye6ZlZutJFcvdbe
+	 0Qvy9tJluzRcXhI4gJ/GIs4CiPuL+NsyommWGq77OsLV+lds9p3R6waTNnO0WAnA9T
+	 8mo1moBkUSQ4JvT+C4d1oYwwM0XxLghWYE+OWwPulEgZJI5jSMTz34pwIddjQzDFrm
+	 W8Genzrd0zLzifUvZxTnR0qhfC2Hm4Zl4PG7WeffvQf6aug2qZZ1jXqFS+h9lXQN0z
+	 nnz5AxZkuhknISw3ra36H9qIeLnhhf04MS14heqW8zGxvWTmJdptgnX3/IuPCIWp/Y
+	 ypAJjoA0uan8Q==
 From: Sasha Levin <sashal@kernel.org>
 To: stable@vger.kernel.org,
 	manivannan.sadhasivam@oss.qualcomm.com
@@ -57,16 +57,16 @@ Cc: Johan Hovold <johan@kernel.org>,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	netdev@vger.kernel.org
-Subject: FAILED: Patch "net: qrtr: Drop the MHI auto_queue feature for IPCR DL channels" failed to apply to 6.18-stable tree
-Date: Sat, 28 Feb 2026 20:15:21 -0500
-Message-ID: <20260301011522.1668549-1-sashal@kernel.org>
+Subject: FAILED: Patch "net: qrtr: Drop the MHI auto_queue feature for IPCR DL channels" failed to apply to 6.12-stable tree
+Date: Sat, 28 Feb 2026 20:18:46 -0500
+Message-ID: <20260301011847.1673242-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
 X-Patchwork-Hint: ignore
 X-stable: review
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260228_171525_255176_0A4B84A0 
+X-CRM114-CacheID: sfid-20260228_171852_935137_70A3BC06 
 X-CRM114-Status: GOOD (  16.33  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,7 +82,7 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The patch below does not apply to the 6.18-stable tree.
+The patch below does not apply to the 6.12-stable tree.
 If someone wants it applied there, or to any other stable or longterm
 tree, then please email the backport, including the original git commit
 id to <stable@vger.kernel.org>.
