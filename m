@@ -4,70 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0456FD0045
-	for <ath12k@archiver.kernel.org>; Sun,  1 Mar 2026 01:40:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17CCCD58E43
+	for <ath12k@archiver.kernel.org>; Mon,  2 Mar 2026 01:30:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=7LlQ1mM7dPsI6c8d0u7lOPGOZQX86aeuPsq9rI4in2k=; b=Nwj+5UezPedsbcZBxYLkJTQ/YC
-	w8Z5mCCAYF2nLtUN9+YFkZbI10yenxULMlGVm930bRL3IaqPeBY2Df6ZhlBT3Zn/g0b5sVmXhysWv
-	eTzKXux6A57Sz5efcRPdCDmRkHAGRpAVF4W0ctUtGCPuMbWIYqj/NGU1gu+HfMkqM2N8Vhvma+nU8
-	JK2MOMZ1LP9JYdqhYRvNVDpko5vRU5ZMVanXVr8OM/vp8X5ll3i+rHiv1+USd9Vq6kS1kqdZy2ei4
-	mgJIt/fSFM7+RBKuCAS2Y647/BHYksQN9BaMl6h7YitFLKrdXBeEAIyscxDcBmT6I+rSDofQkWSOY
-	yU51FerA==;
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=kL/TuXcE9gf7aYW7lJRqr95c37rKLHGoDKsfTHS5Quo=; b=Z5//SJQR4YsTfhKWF2KrwVKlwv
+	SVodD4gE359272GeCIZweumeiIblxOZjwzk1bkDqtscVBHdzgwguJk1KctMdnJ8jDpKqSL3UXz3rY
+	RqpyYbhPKeLTqXAx4B2x0yLFiTr8cJRlHgw9USPVYDZ0MuZMXgwPe4o+UCXYWc63YAjA5T/VdQvx/
+	oree4rlmWU8REn2c0yhywZjGip1fH2SWrJcZMmQYGjZAWZ9yUEK06b6bRUY/E0IbIybv6AyTrUJ6q
+	/m/ZuIXp5hc5Llqrcd9nXImyh8zSq35Z61Z0NElED2pgxT0WRMK7A8q8kGJ5j9/BSdB6f4Kjc0rLs
+	1cqomcoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwVnK-0000000AbeO-2zcK;
-	Sun, 01 Mar 2026 01:40:30 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vws7S-0000000C47S-1r96;
+	Mon, 02 Mar 2026 01:30:46 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwVnI-0000000Abbc-0OqN;
-	Sun, 01 Mar 2026 01:40:29 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 87CFE419EC;
-	Sun,  1 Mar 2026 01:40:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EAC0CC19424;
-	Sun,  1 Mar 2026 01:40:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772329227;
-	bh=6c7qlvqROuVfwZitj8PoUohHWgdZUh0lvO9e4RsBBDk=;
-	h=From:To:Cc:Subject:Date:From;
-	b=OeYS0TCo7fXKgb3QBhrZUeIVI/b90mJGhcPqX8RB8TLRzMT3ulAA5RO9v0xPAxolr
-	 KOlSBfzxi5vapyklrLlQ/ZupreibrNajivW8ALoylMu6mN3nZIHLmr+0R0I9fHW4Rx
-	 NrzSHN99tPTlZO/8iCjTUQJMxaOT1EQAx0VvXprEYcAoRJ93yDMAUZIxpTvrrCssAO
-	 HRZhVvNwcSNHri26KodHGBkZoNFsPm3sjoLAXC60dqRxisIhXjXOUoap+jBVbtoqKp
-	 TpHbKKa9NhhjVku+wmqw6QZdZHC5r9x55DQ67aO9VMUlZJsxW6smpkiTXcbj9Bi5Ii
-	 bWCCXV+6OJz4A==
-From: Sasha Levin <sashal@kernel.org>
-To: stable@vger.kernel.org,
-	manivannan.sadhasivam@oss.qualcomm.com
-Cc: Johan Hovold <johan@kernel.org>,
-	Chris Lew <quic_clew@quicinc.com>,
-	Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
-	Loic Poulain <loic.poulain@oss.qualcomm.com>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	linux-arm-msm@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	mhi@lists.linux.dev,
-	linux-wireless@vger.kernel.org,
-	ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org,
-	netdev@vger.kernel.org
-Subject: FAILED: Patch "net: qrtr: Drop the MHI auto_queue feature for IPCR DL channels" failed to apply to 6.1-stable tree
-Date: Sat, 28 Feb 2026 20:40:24 -0500
-Message-ID: <20260301014024.1701637-1-sashal@kernel.org>
-X-Mailer: git-send-email 2.51.0
+	id 1vws7Q-0000000C474-1aUJ
+	for ath12k@lists.infradead.org;
+	Mon, 02 Mar 2026 01:30:45 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 621NK2j02342009
+	for <ath12k@lists.infradead.org>; Mon, 2 Mar 2026 01:30:42 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	kL/TuXcE9gf7aYW7lJRqr95c37rKLHGoDKsfTHS5Quo=; b=OD2TbpnoaXakn5WW
+	yeZ3CkXuQNA9ZuZmamjgd7MioS3XzQV+LRacqVNQXc6YNOl/Qih4huLwHH8kcMN2
+	8M9TK/cNNaZ0MzTJegTk5u/7XgP03TBoY2e8Xif1peVjsEzMBkLLwGwiD9plCaHZ
+	CzyT52qcNjmoQEzPaT24hOZ8tAzaGNtqC6PyNc0JPpmjeb+FGtelwK0bYj4XguGS
+	+9sUdy05TvleWH4LgPeT9RiIhrP4VJhPe1AYpx74bznYK6OflNd8+zeHhn0RMNX1
+	WOCwsQHtMRsnOh0jk1LwWcO1+lyQkDqFLBfHuNiPHQz3/Ki9OsNDcDvmubmBemkj
+	eKW89w==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cksfd3hvf-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 02 Mar 2026 01:30:42 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-354c0234c1fso2913891a91.2
+        for <ath12k@lists.infradead.org>; Sun, 01 Mar 2026 17:30:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1772415041; x=1773019841; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=kL/TuXcE9gf7aYW7lJRqr95c37rKLHGoDKsfTHS5Quo=;
+        b=Ht6id5XnoliIewc3x3slFggh8GoxXu7fWLNoHOi0wFgIJKSMzqED4Px480rALAoYRl
+         F0FksdVC3LvXZ/R94yT5UHW7XSQIGitZZJIeUgNpLXSugQ+XM5EWAu6B7SXFw3pz0luT
+         M7adfVIVwnHJmmiIBu2u+4rznNL0uEd3a/v7LlZSC6EdsLcBb4HpPtoQy8m2cM57W45U
+         LdrWsE5MUF5+jtJ+dIHA+qsGX4ElnIvy6hOW08qhXi7ut5KaMp4qmUy4Ahe59x+L6iVp
+         qROG0MABuDcwlM61cyyF2ba8/hvAKOQT27TVVzmVBoZsuNITkFMl0LXN9cgQcLSHOO26
+         9qSQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772415041; x=1773019841;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=kL/TuXcE9gf7aYW7lJRqr95c37rKLHGoDKsfTHS5Quo=;
+        b=IQha8Ok1ZnkgkdeEyfCrCnNreapBIcyip2i4rWeKkp03H/UjVujK2K+dTULRbftJXn
+         1vT+cyzQoATwUFAq8851uLzDXoquGQ7jc9uYAQ6cUu2Hx0G8HDanI6sHq4wArfb/OMJW
+         HY0unvJ+19qoqN+/WAQajYMtrx56uaeeZ7oVCjjMmItFMJ/0V7elSDgwq23lZe15GJjg
+         0FJMwEa/Uv2Kp3aQkutJ6bNypcIZdRRZ9aDpLussX7Hkoyr0M2RddPAkZDh6mzJ/FnAf
+         apSgYhRmy6X+edKBXPhnc+nbGGk3Ls22ElXIKv9gNXHL0MIErJDdQHusXOtJ58whhWga
+         oUbQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUQUZr16ppeVr87X7i45Q5SkZb93KLFhEY0jyStuC14JUyPj+ra2IaifGdi/KXrwIVGhe6F0Mg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YymJmMPgDryXklwbXpmMCq6qRkNXL08h1raQy7keULDaGnEKZnF
+	dZ5DzTLM3/UPI/IGBhd7CpCI/Jad03+TaVU0aE+aNcIx6ZMqQiRlIMsV3tHdDLDNEXRWIIRl/cV
+	RZ+vxGWjZreaN627hB7KgwlsLgpTNe+QDGsG8QvvmC+GLl8t0VMg0mxv79wNQDCom
+X-Gm-Gg: ATEYQzz4HYJqWa7ZmRKtP/7FUK1qcudJQVELGSTGHIQH4LTdbeq/k3pQuwyYSAYOEYz
+	yqb74wXEb2WTLXowJYBQMbvw67pakSPhzkMwDwbFAJFhcgqNMdyGoETQpn5UWLBOEwQE8O0rv6P
+	c6eoRbbmEoKNHYPe4ZRgA+kav7r9qW6l21C8mxhBzQH7yBYV9U8bKFj+GkQ4EuNBLN2rOWcoelI
+	Lv0ibV7zNtX2q0l+819uReingwtGmfYU1SuHzBGDRKGn9wX/5PYUGSodE1BLbGulQuOKT1InkqU
+	U9rcfc2DfRU0RbEoMhSoORG+ZWe7oy5FIz3XQDjN1Z6+vay8e6RUK2c9zT1/reuPFKdP9jlXbtd
+	8PIU17BdsbTjp1VblbQ6Ig888W/VmEwqsgNq346viaLsoUZYY9HsrrmTJL/26BatvD3O3HEByDW
+	dRhra+LZvdPYwOULShchA=
+X-Received: by 2002:a17:90b:240e:b0:359:8d0d:5905 with SMTP id 98e67ed59e1d1-3598d0d5c70mr1239662a91.9.1772415041130;
+        Sun, 01 Mar 2026 17:30:41 -0800 (PST)
+X-Received: by 2002:a17:90b:240e:b0:359:8d0d:5905 with SMTP id 98e67ed59e1d1-3598d0d5c70mr1239632a91.9.1772415040565;
+        Sun, 01 Mar 2026 17:30:40 -0800 (PST)
+Received: from [10.133.33.249] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2adfb69fa65sm120951355ad.58.2026.03.01.17.30.39
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 01 Mar 2026 17:30:40 -0800 (PST)
+Message-ID: <c4cb8b56-717f-401d-8b98-5fec557a7abb@oss.qualcomm.com>
+Date: Mon, 2 Mar 2026 09:30:35 +0800
 MIME-Version: 1.0
-X-Patchwork-Hint: ignore
-X-stable: review
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next] wifi: ath12k: account TX stats only when ACK/BA
+ status is present
+To: Sarika Sharma <sarika.sharma@oss.qualcomm.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20260226051947.1379716-1-sarika.sharma@oss.qualcomm.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20260226051947.1379716-1-sarika.sharma@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: zkABVtIwFx6R4ccY-EI56yggjfRILBys
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzAyMDAxMSBTYWx0ZWRfX7vhUHgucbSXN
+ C9FLFwEn56sEHTKkMBHkqpFO4et/xes4f4SQR2yDM8Rg6XMo36WtVnBboEG5lTDYbKxk2rKxcVL
+ bdDM4vLWlL2I1JBRKSAgerGPO5zNyQ/6u75igy5kwx9yMTT58t0cw8mF8nf5bTvRdr3PrmmYriV
+ KvXvecIbqnMPq9+ncgNFbGfkjh9axeusSB+9mjTZreWRVJMLowhAobDkhTt/pYjDyWzrkgWhfGw
+ bONKv1JZalmMX9J/wDSaSv54EWGqpQFew0/0naJNwyciEHJHwzI6lmqWQOjRVYeRZLVq6Sg27GP
+ UZb1nZsgKijQzAHUwi1HiVFtxWHLySg0VdoyzDLVKdhGMAYjPhuT4M59EytJYIs3rgKWqQTwtzL
+ jA3I4XQhNoz8/UZ6wOsLTErhPvuDDQ7DYrl/pfotTtNYJ4GClb7p6OHE1aWqzrYCzAV0KlrCcX5
+ B7z80YR5/yQwQtOWSew==
+X-Authority-Analysis: v=2.4 cv=HKDO14tv c=1 sm=1 tr=0 ts=69a4e842 cx=c_pps
+ a=RP+M6JBNLl+fLTcSJhASfg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
+ a=EUspDBNiAAAA:8 a=CSDw-C9IAAAA:8 a=VLjYsMtYoAVcrLbv3zkA:9 a=QEXdDO2ut3YA:10
+ a=iS9zxrgQBfv6-_F4QbHw:22 a=wzwtrm5WU4lM03trS8pa:22
+X-Proofpoint-GUID: zkABVtIwFx6R4ccY-EI56yggjfRILBys
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-02_01,2026-02-27_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 clxscore=1015 phishscore=0 impostorscore=0 adultscore=0
+ spamscore=0 bulkscore=0 suspectscore=0 priorityscore=1501 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603020011
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260228_174028_180536_E95807AC 
-X-CRM114-Status: GOOD (  16.23  )
+X-CRM114-CacheID: sfid-20260301_173044_582460_BABEC230 
+X-CRM114-Status: GOOD (  19.95  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,661 +145,79 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The patch below does not apply to the 6.1-stable tree.
-If someone wants it applied there, or to any other stable or longterm
-tree, then please email the backport, including the original git commit
-id to <stable@vger.kernel.org>.
-
-Thanks,
-Sasha
-
------------------- original commit in Linus's tree ------------------
-
-From 51731792a25cb312ca94cdccfa139eb46de1b2ef Mon Sep 17 00:00:00 2001
-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Date: Thu, 18 Dec 2025 22:21:44 +0530
-Subject: [PATCH] net: qrtr: Drop the MHI auto_queue feature for IPCR DL
- channels
-
-MHI stack offers the 'auto_queue' feature, which allows the MHI stack to
-auto queue the buffers for the RX path (DL channel). Though this feature
-simplifies the client driver design, it introduces race between the client
-drivers and the MHI stack. For instance, with auto_queue, the 'dl_callback'
-for the DL channel may get called before the client driver is fully probed.
-This means, by the time the dl_callback gets called, the client driver's
-structures might not be initialized, leading to NULL ptr dereference.
-
-Currently, the drivers have to workaround this issue by initializing the
-internal structures before calling mhi_prepare_for_transfer_autoqueue().
-But even so, there is a chance that the client driver's internal code path
-may call the MHI queue APIs before mhi_prepare_for_transfer_autoqueue() is
-called, leading to similar NULL ptr dereference. This issue has been
-reported on the Qcom X1E80100 CRD machines affecting boot.
-
-So to properly fix all these races, drop the MHI 'auto_queue' feature
-altogether and let the client driver (QRTR) manage the RX buffers manually.
-In the QRTR driver, queue the RX buffers based on the ring length during
-probe and recycle the buffers in 'dl_callback' once they are consumed. This
-also warrants removing the setting of 'auto_queue' flag from controller
-drivers.
-
-Currently, this 'auto_queue' feature is only enabled for IPCR DL channel.
-So only the QRTR client driver requires the modification.
-
-Fixes: 227fee5fc99e ("bus: mhi: core: Add an API for auto queueing buffers for DL channel")
-Fixes: 68a838b84eff ("net: qrtr: start MHI channel after endpoit creation")
-Reported-by: Johan Hovold <johan@kernel.org>
-Closes: https://lore.kernel.org/linux-arm-msm/ZyTtVdkCCES0lkl4@hovoldconsulting.com
-Suggested-by: Chris Lew <quic_clew@quicinc.com>
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Reviewed-by: Jeff Hugo <jeff.hugo@oss.qualcomm.com>
-Reviewed-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
-Acked-by: Jeff Johnson <jjohnson@kernel.org> # drivers/net/wireless/ath/...
-Acked-by: Jeff Hugo <jeff.hugo@oss.qualcomm.com>
-Acked-by: Paolo Abeni <pabeni@redhat.com>
-Cc: stable@vger.kernel.org
-Link: https://patch.msgid.link/20251218-qrtr-fix-v2-1-c7499bfcfbe0@oss.qualcomm.com
----
- drivers/accel/qaic/mhi_controller.c   | 44 -----------------
- drivers/bus/mhi/host/pci_generic.c    | 20 +-------
- drivers/net/wireless/ath/ath11k/mhi.c |  4 --
- drivers/net/wireless/ath/ath12k/mhi.c |  4 --
- net/qrtr/mhi.c                        | 69 ++++++++++++++++++++++-----
- 5 files changed, 60 insertions(+), 81 deletions(-)
-
-diff --git a/drivers/accel/qaic/mhi_controller.c b/drivers/accel/qaic/mhi_controller.c
-index 13a14c6c61689..4d787f77ce419 100644
---- a/drivers/accel/qaic/mhi_controller.c
-+++ b/drivers/accel/qaic/mhi_controller.c
-@@ -39,7 +39,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -55,7 +54,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -71,7 +69,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -87,7 +84,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -103,7 +99,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -119,7 +114,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -135,7 +129,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -151,7 +144,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -167,7 +159,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -183,7 +174,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -199,7 +189,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -215,7 +204,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -231,7 +219,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -247,7 +234,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -263,7 +249,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -279,7 +264,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -295,7 +279,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -311,7 +294,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -327,7 +309,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -343,7 +324,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -359,7 +339,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -375,7 +354,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -391,7 +369,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -407,7 +384,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -423,7 +399,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -439,7 +414,6 @@ static const struct mhi_channel_config aic100_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = true,
- 		.wake_capable = false,
- 	},
- };
-@@ -458,7 +432,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -474,7 +447,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -490,7 +462,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -506,7 +477,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -522,7 +492,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -538,7 +507,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -554,7 +522,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -570,7 +537,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -586,7 +552,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -602,7 +567,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -618,7 +582,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -634,7 +597,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -650,7 +612,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -666,7 +627,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -682,7 +642,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -698,7 +657,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -714,7 +672,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 		.wake_capable = false,
- 	},
- 	{
-@@ -730,7 +687,6 @@ static const struct mhi_channel_config aic200_channels[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = true,
- 		.wake_capable = false,
- 	},
- };
-diff --git a/drivers/bus/mhi/host/pci_generic.c b/drivers/bus/mhi/host/pci_generic.c
-index e3bc737313a2f..0884a384b77fc 100644
---- a/drivers/bus/mhi/host/pci_generic.c
-+++ b/drivers/bus/mhi/host/pci_generic.c
-@@ -94,22 +94,6 @@ struct mhi_pci_dev_info {
- 		.doorbell_mode_switch = false,		\
- 	}
- 
--#define MHI_CHANNEL_CONFIG_DL_AUTOQUEUE(ch_num, ch_name, el_count, ev_ring) \
--	{						\
--		.num = ch_num,				\
--		.name = ch_name,			\
--		.num_elements = el_count,		\
--		.event_ring = ev_ring,			\
--		.dir = DMA_FROM_DEVICE,			\
--		.ee_mask = BIT(MHI_EE_AMSS),		\
--		.pollcfg = 0,				\
--		.doorbell = MHI_DB_BRST_DISABLE,	\
--		.lpm_notify = false,			\
--		.offload_channel = false,		\
--		.doorbell_mode_switch = false,		\
--		.auto_queue = true,			\
--	}
--
- #define MHI_EVENT_CONFIG_CTRL(ev_ring, el_count) \
- 	{					\
- 		.num_elements = el_count,	\
-@@ -329,7 +313,7 @@ static const struct mhi_channel_config modem_qcom_v1_mhi_channels[] = {
- 	MHI_CHANNEL_CONFIG_UL(14, "QMI", 4, 0),
- 	MHI_CHANNEL_CONFIG_DL(15, "QMI", 4, 0),
- 	MHI_CHANNEL_CONFIG_UL(20, "IPCR", 8, 0),
--	MHI_CHANNEL_CONFIG_DL_AUTOQUEUE(21, "IPCR", 8, 0),
-+	MHI_CHANNEL_CONFIG_DL(21, "IPCR", 8, 0),
- 	MHI_CHANNEL_CONFIG_UL_FP(34, "FIREHOSE", 32, 0),
- 	MHI_CHANNEL_CONFIG_DL_FP(35, "FIREHOSE", 32, 0),
- 	MHI_CHANNEL_CONFIG_UL(46, "IP_SW0", 64, 2),
-@@ -762,7 +746,7 @@ static const struct mhi_channel_config mhi_telit_fn980_hw_v1_channels[] = {
- 	MHI_CHANNEL_CONFIG_UL(14, "QMI", 32, 0),
- 	MHI_CHANNEL_CONFIG_DL(15, "QMI", 32, 0),
- 	MHI_CHANNEL_CONFIG_UL(20, "IPCR", 16, 0),
--	MHI_CHANNEL_CONFIG_DL_AUTOQUEUE(21, "IPCR", 16, 0),
-+	MHI_CHANNEL_CONFIG_DL(21, "IPCR", 16, 0),
- 	MHI_CHANNEL_CONFIG_HW_UL(100, "IP_HW0", 128, 1),
- 	MHI_CHANNEL_CONFIG_HW_DL(101, "IP_HW0", 128, 2),
- };
-diff --git a/drivers/net/wireless/ath/ath11k/mhi.c b/drivers/net/wireless/ath/ath11k/mhi.c
-index acd76e9392d31..d2c44f7f9b622 100644
---- a/drivers/net/wireless/ath/ath11k/mhi.c
-+++ b/drivers/net/wireless/ath/ath11k/mhi.c
-@@ -34,7 +34,6 @@ static const struct mhi_channel_config ath11k_mhi_channels_qca6390[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 	},
- 	{
- 		.num = 21,
-@@ -48,7 +47,6 @@ static const struct mhi_channel_config ath11k_mhi_channels_qca6390[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = true,
- 	},
- };
- 
-@@ -99,7 +97,6 @@ static const struct mhi_channel_config ath11k_mhi_channels_qcn9074[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 	},
- 	{
- 		.num = 21,
-@@ -113,7 +110,6 @@ static const struct mhi_channel_config ath11k_mhi_channels_qcn9074[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = true,
- 	},
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/mhi.c b/drivers/net/wireless/ath/ath12k/mhi.c
-index 08f44baf182a5..2dbdb95ae7bea 100644
---- a/drivers/net/wireless/ath/ath12k/mhi.c
-+++ b/drivers/net/wireless/ath/ath12k/mhi.c
-@@ -31,7 +31,6 @@ static const struct mhi_channel_config ath12k_mhi_channels_qcn9274[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 	},
- 	{
- 		.num = 21,
-@@ -45,7 +44,6 @@ static const struct mhi_channel_config ath12k_mhi_channels_qcn9274[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = true,
- 	},
- };
- 
-@@ -96,7 +94,6 @@ static const struct mhi_channel_config ath12k_mhi_channels_wcn7850[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = false,
- 	},
- 	{
- 		.num = 21,
-@@ -110,7 +107,6 @@ static const struct mhi_channel_config ath12k_mhi_channels_wcn7850[] = {
- 		.lpm_notify = false,
- 		.offload_channel = false,
- 		.doorbell_mode_switch = false,
--		.auto_queue = true,
- 	},
- };
- 
-diff --git a/net/qrtr/mhi.c b/net/qrtr/mhi.c
-index 69f53625a049d..80e341d2f8a45 100644
---- a/net/qrtr/mhi.c
-+++ b/net/qrtr/mhi.c
-@@ -24,13 +24,25 @@ static void qcom_mhi_qrtr_dl_callback(struct mhi_device *mhi_dev,
- 	struct qrtr_mhi_dev *qdev = dev_get_drvdata(&mhi_dev->dev);
- 	int rc;
- 
--	if (!qdev || mhi_res->transaction_status)
-+	if (!qdev || (mhi_res->transaction_status && mhi_res->transaction_status != -ENOTCONN))
- 		return;
- 
-+	/* Channel got reset. So just free the buffer */
-+	if (mhi_res->transaction_status == -ENOTCONN) {
-+		devm_kfree(&mhi_dev->dev, mhi_res->buf_addr);
-+		return;
-+	}
-+
- 	rc = qrtr_endpoint_post(&qdev->ep, mhi_res->buf_addr,
- 				mhi_res->bytes_xferd);
- 	if (rc == -EINVAL)
- 		dev_err(qdev->dev, "invalid ipcrouter packet\n");
-+
-+	/* Done with the buffer, now recycle it for future use */
-+	rc = mhi_queue_buf(mhi_dev, DMA_FROM_DEVICE, mhi_res->buf_addr,
-+			   mhi_dev->mhi_cntrl->buffer_len, MHI_EOT);
-+	if (rc)
-+		dev_err(&mhi_dev->dev, "Failed to recycle the buffer: %d\n", rc);
- }
- 
- /* From QRTR to MHI */
-@@ -72,6 +84,29 @@ static int qcom_mhi_qrtr_send(struct qrtr_endpoint *ep, struct sk_buff *skb)
- 	return rc;
- }
- 
-+static int qcom_mhi_qrtr_queue_dl_buffers(struct mhi_device *mhi_dev)
-+{
-+	u32 free_desc;
-+	void *buf;
-+	int ret;
-+
-+	free_desc = mhi_get_free_desc_count(mhi_dev, DMA_FROM_DEVICE);
-+	while (free_desc--) {
-+		buf = devm_kmalloc(&mhi_dev->dev, mhi_dev->mhi_cntrl->buffer_len, GFP_KERNEL);
-+		if (!buf)
-+			return -ENOMEM;
-+
-+		ret = mhi_queue_buf(mhi_dev, DMA_FROM_DEVICE, buf, mhi_dev->mhi_cntrl->buffer_len,
-+				    MHI_EOT);
-+		if (ret) {
-+			dev_err(&mhi_dev->dev, "Failed to queue buffer: %d\n", ret);
-+			return ret;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
- static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
- 			       const struct mhi_device_id *id)
- {
-@@ -87,20 +122,30 @@ static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
- 	qdev->ep.xmit = qcom_mhi_qrtr_send;
- 
- 	dev_set_drvdata(&mhi_dev->dev, qdev);
--	rc = qrtr_endpoint_register(&qdev->ep, QRTR_EP_NID_AUTO);
--	if (rc)
--		return rc;
- 
- 	/* start channels */
--	rc = mhi_prepare_for_transfer_autoqueue(mhi_dev);
--	if (rc) {
--		qrtr_endpoint_unregister(&qdev->ep);
-+	rc = mhi_prepare_for_transfer(mhi_dev);
-+	if (rc)
- 		return rc;
--	}
-+
-+	rc = qrtr_endpoint_register(&qdev->ep, QRTR_EP_NID_AUTO);
-+	if (rc)
-+		goto err_unprepare;
-+
-+	rc = qcom_mhi_qrtr_queue_dl_buffers(mhi_dev);
-+	if (rc)
-+		goto err_unregister;
- 
- 	dev_dbg(qdev->dev, "Qualcomm MHI QRTR driver probed\n");
- 
- 	return 0;
-+
-+err_unregister:
-+	qrtr_endpoint_unregister(&qdev->ep);
-+err_unprepare:
-+	mhi_unprepare_from_transfer(mhi_dev);
-+
-+	return rc;
- }
- 
- static void qcom_mhi_qrtr_remove(struct mhi_device *mhi_dev)
-@@ -151,11 +196,13 @@ static int __maybe_unused qcom_mhi_qrtr_pm_resume_early(struct device *dev)
- 	if (state == MHI_STATE_M3)
- 		return 0;
- 
--	rc = mhi_prepare_for_transfer_autoqueue(mhi_dev);
--	if (rc)
-+	rc = mhi_prepare_for_transfer(mhi_dev);
-+	if (rc) {
- 		dev_err(dev, "failed to prepare for autoqueue transfer %d\n", rc);
-+		return rc;
-+	}
- 
--	return rc;
-+	return qcom_mhi_qrtr_queue_dl_buffers(mhi_dev);
- }
- 
- static const struct dev_pm_ops qcom_mhi_qrtr_pm_ops = {
--- 
-2.51.0
 
 
+On 2/26/2026 1:19 PM, Sarika Sharma wrote:
+> The fields tx_retry_failed, tx_retry_count, and tx_duration are
+> currently updated outside the HTT_PPDU_STATS_TAG_USR_COMPLTN_ACK_BA_STATUS
+> flag check. In certain scenarios, firmware delivers multiple PPDU
+> statistics for the same PPDU, first without BA/ACK information, and
+> later with BA/ACK status once it becomes available. As the same PPDU
+> is processed again, these counters are updated a second time,
+> resulting in duplicate TX statistics.
+> 
+> To address this, move the accounting of tx_retry_failed and
+> tx_retry_count under the ACK/BA status flag check, and similarly gate
+> tx_duration on the same path. This ensures that each PPDU contributes
+> to these counters exactly once, avoids double counting, and provides
+> consistent reporting in userspace tools such as station dump.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+> 
+> Fixes: a0b963e1da5b ("wifi: ath12k: fetch tx_retry and tx_failed from htt_ppdu_stats_user_cmpltn_common_tlv")
+> Signed-off-by: Sarika Sharma <sarika.sharma@oss.qualcomm.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/dp_htt.c | 24 +++++++++++++-----------
+>  1 file changed, 13 insertions(+), 11 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/dp_htt.c b/drivers/net/wireless/ath/ath12k/dp_htt.c
+> index cc71c5c5de5a..61c1c3b2350e 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp_htt.c
+> +++ b/drivers/net/wireless/ath/ath12k/dp_htt.c
+> @@ -205,16 +205,9 @@ ath12k_update_per_peer_tx_stats(struct ath12k_pdev_dp *dp_pdev,
+>  	if (!(usr_stats->tlv_flags & BIT(HTT_PPDU_STATS_TAG_USR_RATE)))
+>  		return;
+>  
+> -	if (usr_stats->tlv_flags & BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_COMMON)) {
+> +	if (usr_stats->tlv_flags & BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_COMMON))
+>  		is_ampdu =
+>  			HTT_USR_CMPLTN_IS_AMPDU(usr_stats->cmpltn_cmn.flags);
+> -		tx_retry_failed =
+> -			__le16_to_cpu(usr_stats->cmpltn_cmn.mpdu_tried) -
+> -			__le16_to_cpu(usr_stats->cmpltn_cmn.mpdu_success);
+> -		tx_retry_count =
+> -			HTT_USR_CMPLTN_LONG_RETRY(usr_stats->cmpltn_cmn.flags) +
+> -			HTT_USR_CMPLTN_SHORT_RETRY(usr_stats->cmpltn_cmn.flags);
+> -	}
+>  
+>  	if (usr_stats->tlv_flags &
+>  	    BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_ACK_BA_STATUS)) {
+> @@ -223,10 +216,19 @@ ath12k_update_per_peer_tx_stats(struct ath12k_pdev_dp *dp_pdev,
+>  					  HTT_PPDU_STATS_ACK_BA_INFO_NUM_MSDU_M);
+>  		tid = le32_get_bits(usr_stats->ack_ba.info,
+>  				    HTT_PPDU_STATS_ACK_BA_INFO_TID_NUM);
+> -	}
+>  
+> -	if (common->fes_duration_us)
+> -		tx_duration = le32_to_cpu(common->fes_duration_us);
+> +		if (usr_stats->tlv_flags & BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_COMMON)) {
+> +			tx_retry_failed =
+> +				__le16_to_cpu(usr_stats->cmpltn_cmn.mpdu_tried) -
+> +				__le16_to_cpu(usr_stats->cmpltn_cmn.mpdu_success);
+> +			tx_retry_count =
+> +				HTT_USR_CMPLTN_LONG_RETRY(usr_stats->cmpltn_cmn.flags) +
+> +				HTT_USR_CMPLTN_SHORT_RETRY(usr_stats->cmpltn_cmn.flags);
+> +		}
+> +
+> +		if (common->fes_duration_us)
+> +			tx_duration = le32_to_cpu(common->fes_duration_us);
+> +	}
+>  
+>  	user_rate = &usr_stats->rate;
+>  	flags = HTT_USR_RATE_PREAMBLE(user_rate->rate_flags);
+> 
+> base-commit: 62f9b9b19939138c34ce0ac1e5d4969d617ecbb6
 
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
 
