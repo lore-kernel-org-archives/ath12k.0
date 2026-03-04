@@ -4,131 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59433EB7EAC
-	for <ath12k@archiver.kernel.org>; Wed,  4 Mar 2026 08:54:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFCF2EB7EB2
+	for <ath12k@archiver.kernel.org>; Wed,  4 Mar 2026 08:54:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iXNn8gE+HxSx+H98VO9vSfJk7bcf6vTbEo1SVs+3ZeU=; b=0Dh8MURXxyCpW1Me5BzetBsg/6
-	m8lXK3bidUazU9cjQrNb6y6xB0vYn3OOZbHeELO8o3ggcAfgs54PGi7iGhx36tOhGtmsaUCs9Xie3
-	glucAGIIh1GCAAhLq2RPPdKmLBEPzPzrhHQ6y2wuxk8Pl+Xk4UH9PgzIcZ6ifdK1AEr9YP6YL+2vC
-	DsSDNbVwKluPCzUW7oHhSwURlQT42g6iC4VNjU9bEmiNuDqarTeOwSEWjrPufHQlatt/zj6vW0X4h
-	6/DiLbdU8STVi1nea/dehdgvyK/7t7DEY8AvRRpLzIh5WR0cFrfvJO7ryTS9j1IP48uZxul7uN0Hd
-	dugfjFXA==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=KqCQTN0mpKgKHcGY9unMdelUAmpcagrmaV/BIIbHl28=; b=sUdUAKJ50WGHLsIMsgjhHQpbOM
+	oGV2DwhZBMkow5J213UjzfSW4Wec9R6MdcdtaAOMMgeLITScwJvq+oUnEnKtQvD26DZG0GBcA3E4X
+	RyU1Y6zeqfobWn4G669kHgPnbaBgVHsyiLqQ1PRJ5ekc9lqnQzOghkgoavYasxulXctVFZSo7Pj9T
+	6qNCiEkrTM3nJ8Xr7tfsTCyGt5ajNzMBgt09FJZ/0dE+Cilnqm6mipDzEiaT/J+I/y/dT8ZW7E4a6
+	YiDklZZYqNpOVvEj368EYDjVp2CqXB6fEw/Xdzzsvi4OUWgolfmBJFVOHER/xi1AIwNjMPRzgcaVf
+	om5AfG3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxhze-0000000GnFN-0M21;
-	Wed, 04 Mar 2026 08:54:10 +0000
+	id 1vxhzg-0000000GnGW-32r7;
+	Wed, 04 Mar 2026 08:54:12 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxhzb-0000000GnDt-2S95
+	id 1vxhzc-0000000GnEG-1jSF
 	for ath12k@lists.infradead.org;
-	Wed, 04 Mar 2026 08:54:08 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6245SQDG2861139
-	for <ath12k@lists.infradead.org>; Wed, 4 Mar 2026 08:54:06 GMT
+	Wed, 04 Mar 2026 08:54:09 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6245SRJO945123
+	for <ath12k@lists.infradead.org>; Wed, 4 Mar 2026 08:54:07 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	iXNn8gE+HxSx+H98VO9vSfJk7bcf6vTbEo1SVs+3ZeU=; b=h7UWy8mEE0RpTVdZ
-	zQcWJHg6BIamccaFE/u6sOQmfoASWNM7W7fIF60h8AKodSK0ovrx5l/WsQEPgUsx
-	ro+iqAWc9oOjKSkhEtj7R6qwMXy0gciodW+rlZbdLAXViE9f8/GlP9xJos8qQJEX
-	e1OI9g/xXle/KQ21Twr0ILutnJ4zVSGGG+m1fCjTPqCFztYf6FnhjHLpeNB3dfov
-	t7jvbeOAeHctt9XJgJCc7nfa2ImXaD9f6Dsg+8ux2K/5FJQbNLG1hAUmuYCUec5Z
-	JdhvduAdqx6pPQ8NE2KFZYZ0Zk48NW6GaTix+DcW8/wXQj9hb8T+sJY5c/pnPyXC
-	hTgQVA==
-Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cp2c9k7rr-1
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=KqCQTN0mpKgKHcGY9unMdelUAmpcagrmaV/
+	BIIbHl28=; b=EMXJNdyw3CwHchkrLP9ZPgunK26GidPzXytbIx0JtFr+NhWRVxg
+	p1DMq4aCDpToOopxq0Jb552T4OBbyrrkK58LZSKW5TYDMEE2htQGDeZla9jVNZvD
+	NUo49ivu2CStTF/2EY3rdxhdkqhgSvqo8MGQqhu4XYZEbmFN2OKyrC8sgk89VCfN
+	lUCvgC9IY7hPSthBIDBzrSJIQKKKxUyhL+tvOfTjf7ZaT9V7bdcwni3oVsjrbccI
+	ShzY20KaahKaQYd2odaffHuGT72mXG8gBlFSZoBFXv2Vqx6xYk5xzqpngoRb46DA
+	LGUCojGyFAn7r8A8QivojAgxMbX2LrzhaHQ==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cnvxfcbtd-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 04 Mar 2026 08:54:06 +0000 (GMT)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-8273494d873so2746965b3a.1
-        for <ath12k@lists.infradead.org>; Wed, 04 Mar 2026 00:54:06 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Wed, 04 Mar 2026 08:54:07 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-bce224720d8so3802858a12.1
+        for <ath12k@lists.infradead.org>; Wed, 04 Mar 2026 00:54:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=oss.qualcomm.com; s=google; t=1772614446; x=1773219246; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=iXNn8gE+HxSx+H98VO9vSfJk7bcf6vTbEo1SVs+3ZeU=;
-        b=Qrxf7lSngAqJ6lJEjB7V9OGnhwvMc0EvOx2zoN5vo4N2G/ZJjKPU6UvBiiC18Z35Ft
-         N7XWM79U9qfb6CwY64qXzfyD838Rv+6Vnh1FbVAsuSp5AaZFhtu46GkJ6EsXWH0ZoSXF
-         VeKEoL0aRh6N4K/yh5l4A05sBhvCdblbes/tOhY9YBIIitnlY9XD5ff3nfDidz6aQyC3
-         Ecoxykg+ENc3eZo00mBtB24aU1A8UbhOwEhZoKDFWLCaNMNmv7hxKjo5guIl2RBBqcoI
-         S47LLmAFW1aDLXMfIsLQe7kZ6jZWYpqlYmSWFRl6Fk7to73YTXaJD81y8SHSb3BVY2ed
-         QVAw==
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=KqCQTN0mpKgKHcGY9unMdelUAmpcagrmaV/BIIbHl28=;
+        b=IWYBhWchYX35iTl1rd5t8oiIZLH6G9t+awzoQ9NJSliiqx6Fd8VjqVLen+ancly000
+         kZ58SH1mdsr/JryusEjdMOGoQ+quc+iy0SWN8NytLSm6FIum/qrw6RiAhBAz/kk4gBZo
+         5KBg02ws8sxawHzscddL2qvp+UfYlHAxMBxT/GaCZHwcC60cEz1pVE5RcZpqpGng+/sp
+         ntXuFHh4WTIpqYouP1PgZD2DQ/P+fGl4h/+5O6Gr6hoj1oXokhMFbu39LjqrwEofCaiw
+         v/Kpb6Z7gyGo6xAuLx6ICUIju7z4SlfIgHsWB29PfOEWqBv5FWljfH8oLUQ2vYM2ulMn
+         awZA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20230601; t=1772614446; x=1773219246;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=iXNn8gE+HxSx+H98VO9vSfJk7bcf6vTbEo1SVs+3ZeU=;
-        b=Ih8bIHPd2GuIN1SuzlguYIaH7AnrDLQatX2PN2FA7h0WHr/oPf4MuA73Wn8giklAZM
-         8oOg/igsEx3rwvggfRvbxXf1xkLn48ZJVhi0KQc2AD/5x4AEQFib85/NN5PIuPvA3kL9
-         MToefoOv3Kq295+pJH8nviNTBFaQLgtzrXjpHCr+KXtPTLaqP6d9jr0R1Onyq5UZluDy
-         iu3Xaf3X3apDVDvm4l6C2PFQIhuHLexVm/fGm2HiZkNRiig0gz9mquSOggLMIecw6Prp
-         3XQMcqYXwNZ7mzISfldDJPiqvdSzARXN3RbL8BGx0aDDs5JTLPgShZJ8WtlL2W+Irod4
-         n6tw==
-X-Forwarded-Encrypted: i=1; AJvYcCXFNOlUHr2+HSS1YYuQAUHhx2L8TVFASu2L1z4yZmBLe1DwSYjIWO5oqk9wNXl6O1W9CJwlgEw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwE26hK0JPlzzpSVD6X8N3CdfychlhT6KpUZ11PL7lmf3iUH9AH
-	NEhHIo3odmAYT9Mvv9i7yCMj26njPrHQGkLNRFjwnyWUFqQc1OHhy9I5zp5ETqzKIKm0U/BVeKa
-	KWebtZNQ3i2nRRZzAA7bbVqWFdBq6yH1ULtkfVLmuiqEIeMmfdFYLbtCbtl66Erb0
-X-Gm-Gg: ATEYQzxJMpDtwRmo03ynEYhkal4xRd4mJ/ffg32QUdQQLPm+au1yoM25AiARiEkeMMa
-	dsYRfL7dve85iFambeWbw02jixGW2KGny84Sxq43+Na0METRxYV1VDvDyL5mXxbiKFdGFHS1+fI
-	a42v8iLXxDosESyNeFr+QGIUhU2JKfGyX9wYH99BFrbu5SgW8onzoRXpR9ei4PZ72GwGtqlhsoO
-	0bKKJbMuo/+yWJ8DnFzYerp9n0NIRq/+/8t8sSKPBcvNaJ0cr2NkR/DaMhcwdYvVQSFRZBa3njh
-	xHRo2pynyFKC557QMolDaizmUFRdz0mz/1AYLPT6uLYIB9IYgtrGbZQvJQLAW0oCCRUcPmNm6ey
-	K9BcfA8rSaDBLYsqwSt+BxvBJ0fxuYnIUqhBnL2JHOMI2xRqROc0CFXGkx+gekZEEGw==
-X-Received: by 2002:a05:6a00:189d:b0:824:3d5b:3cd3 with SMTP id d2e1a72fcca58-82971f8f4c8mr1336554b3a.0.1772614445540;
-        Wed, 04 Mar 2026 00:54:05 -0800 (PST)
-X-Received: by 2002:a05:6a00:189d:b0:824:3d5b:3cd3 with SMTP id d2e1a72fcca58-82971f8f4c8mr1336536b3a.0.1772614444932;
-        Wed, 04 Mar 2026 00:54:04 -0800 (PST)
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=KqCQTN0mpKgKHcGY9unMdelUAmpcagrmaV/BIIbHl28=;
+        b=sfEEGXWoJW/Oza5VZn15/mzr8Ia38cwxGhxKsdERH5lOLjne5i/tkwQZwGdCZTRS9s
+         jl0rmLJLs0O62SErn9bCKaHDatrTkS5NHmzgoSilNNONGhHVWb9ZdmNj8jSdovyy9lhW
+         SKyYVHcdDdK2K/aE1fQOUk09HTsyburptX7Pep3PW18vpYl9ozU38QcMIDgV18ptXdZn
+         E31r8CGQsJle5rdAomrgnb8xQX3dVCJx6cghf3PSc3DVIPSAPxOSRUEFneKqOTC03BD1
+         sQtXxZ9QAHjQCkDpqVz0IUFCMOT4Q7qMA7Dm89nUkhEpe0vzj5GeaC2ZJW5fgIbPz5qA
+         vdQw==
+X-Forwarded-Encrypted: i=1; AJvYcCW1pJqP9yfvK8/TFpOh5qydjpa073j6x/EDKDi6YFEtqnXfXUdTimOCr496YAsGsicZJlcoeq0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyQuutDZdFYxXYXmjpJDtrsMQstu6aaphzvdwLqw3YQSDZuSpBF
+	o7c9rtdWCq0hZE0/FwYotAbHOg95jKO7esOmmV6/l56hDVXVDOVW8jGMrHlPIO8n7ZqArmaM3MK
+	tano2D9m96ARcTNf6VYM8WCgbCBS/rfH6lrNPcA29IrcUtrbegkMlfP3ZVacQ4+AHVy9XNW4j
+X-Gm-Gg: ATEYQzyGDs9n54VmTn92fk95vgnnl9C5mvVH1FwTf8LH3uvO74XDwSHo0xyiiUxwM20
+	HGvJEvpEMUcVjaTgtiEKXbIe1cdmhlzQj7MThnJ8Fx1Gvv0PQG/Ci6jY19wDxod2PCifn3Xl4Qa
+	+wklLmkLZRU+4kM2VrhkOfRKq6Wsn4EqWqx6TKQUQ2pQvWcvwnrElS77dMJxk+n3OLDd3PLFH3H
+	hRN8Y5YmYibvXWpEZXWpk5Jb2QFJxwE+3Jdt5Nf+AxKib/2FZWXRl/SPBNj0miK8WfAEwPviNhq
+	GcqE84yLpYRBpi5vjKyqUgsPIDGcsKSji6D9k63lnF0gPIeqW5O9AiBlHBXWaij4JEoc92CZlnw
+	GbW/4GbsiSk+1eznYmJEKCRBibQLfK++0e0T/pUUs19YFh1D5G/2wHqVpxugf/18zzA==
+X-Received: by 2002:a05:6a00:2195:b0:7e8:4398:b34f with SMTP id d2e1a72fcca58-82972c9e7d7mr1219408b3a.34.1772614446179;
+        Wed, 04 Mar 2026 00:54:06 -0800 (PST)
+X-Received: by 2002:a05:6a00:2195:b0:7e8:4398:b34f with SMTP id d2e1a72fcca58-82972c9e7d7mr1219268b3a.34.1772614437061;
+        Wed, 04 Mar 2026 00:53:57 -0800 (PST)
 Received: from hu-kathirve-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8273a01a9dasm18205140b3a.49.2026.03.04.00.54.02
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8273a01a9dasm18205140b3a.49.2026.03.04.00.53.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 04 Mar 2026 00:54:04 -0800 (PST)
+        Wed, 04 Mar 2026 00:53:56 -0800 (PST)
 From: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>
 To: johannes@sipsolutions.net
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>
-Subject: [PATCH wireless-next v5 2/2] wifi: mac80211_hwsim: Add UHR capabilities to the driver
-Date: Wed,  4 Mar 2026 14:23:43 +0530
-Message-Id: <20260304085343.1093993-3-karthikeyan.kathirvel@oss.qualcomm.com>
+Subject: [PATCH wireless-next v5 00/02] wifi: ieee80211/mac80211: Add UHR (802.11bn) Capability and Operation parsing helpers
+Date: Wed,  4 Mar 2026 14:23:41 +0530
+Message-Id: <20260304085343.1093993-1-karthikeyan.kathirvel@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260304085343.1093993-1-karthikeyan.kathirvel@oss.qualcomm.com>
-References: <20260304085343.1093993-1-karthikeyan.kathirvel@oss.qualcomm.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA0MDA2NyBTYWx0ZWRfX2qCMCmWiTqOb
- mSacnMgjWEy23zKJGL9xeLQTdHO5evubUJBirZeRjmsz5DpV0oIk9R3lFVJJZnkFtOrO7N9dT1y
- lFw2uoilxJLw9Y4syjuMSgeWwfgKI310sGla1nQg2Tw7vSR1aSq/tzAEmtiQgi2vDtAGSUjgcq4
- 1scFoLjARPdl/Flu7cEOHRkOYHHGSkjywURXigt+ydjddz2lxykqECcAd1dKtfXm+gKOyGo6elQ
- ToYb7FVCwfi49GL5+VcaqjGWWWsAHIrGAFbA+eQtlF5PMjf4whi2PpUOMoFIOMvlykzlUBjbbCQ
- JARz1jmzS0t8yX+op+DthABLs24bick1dw9lh/uhfbULnw6efupLjYrhq2MI6Qh+y9nl62CyMqA
- Fi9cd/VpHEa1zHRhDwKoYLjAZ69aVmCIrgqTr+s7SwGiSInK42zJxfMmfmgu2A/uuTuVAlLxMvV
- FUnwrUORwWsQukhqcxA==
-X-Proofpoint-ORIG-GUID: SGnBbQfWZ1Wb0SGoHRSICC_e13rZmV0M
-X-Proofpoint-GUID: SGnBbQfWZ1Wb0SGoHRSICC_e13rZmV0M
-X-Authority-Analysis: v=2.4 cv=EefFgfmC c=1 sm=1 tr=0 ts=69a7f32e cx=c_pps
- a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=EUspDBNiAAAA:8 a=HmXHpSMdhKLYPtCZ9UQA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=zc0IvFSfCIW2DFIPzwfm:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA0MDA2NyBTYWx0ZWRfX3JACzK4XEuBt
+ XZrgBWLHGbGbxpsD8JgcJL9JA0WrlF6JzZ8zNHjzNYR31Ltyy6CwSaOjg8FIFnuP/13OEVNCyRf
+ uifPHgWhfdb6OrGcQMErVfww2lTp8+McwzVapUBSW6qT0hCVPtRAmgNee2/LHx5y9XqgmAjurdl
+ wolTpBLQek6IBOhMl9MSa7S6WvnOB0PUlYXPzTswdynYPQbI8jMybyIKUchEKLJ03nejquTIctY
+ ZAviJ+ZnW8JN0b7tImV5luHgMc5u8kiJEI3ZuxxfniYMOTqgBOv+S3SeZskXQY04fXTvSHZAyIJ
+ Kv3buZ62GrVuATCzP+J49x3jwRVS3oeN8aQutVUgmpKJKuELBXEobl1E/Y/VqAuQyxA1+QfIyJ/
+ g+RKSbRXN+MIn6nipFt+0Aom/M01aO7Y1gb3l/AK7F7f6amdrJuMb+Sbk+NLoLmPj4NoxcKcEQa
+ wCD+Nn0PchSi6eOTnyA==
+X-Proofpoint-ORIG-GUID: l7Lf5Bsh9wP2PKKqC7CwOCobSrxhuK0p
+X-Authority-Analysis: v=2.4 cv=S+HUAYsP c=1 sm=1 tr=0 ts=69a7f32f cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
+ a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=syIFNRD9xIPPAOLOExcA:9
+ a=3WC7DwWrALyhR5TkjVHa:22
+X-Proofpoint-GUID: l7Lf5Bsh9wP2PKKqC7CwOCobSrxhuK0p
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-03-04_04,2026-03-03_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 spamscore=0 bulkscore=0 adultscore=0 impostorscore=0
- phishscore=0 clxscore=1015 priorityscore=1501 lowpriorityscore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2602130000
- definitions=main-2603040067
+ phishscore=0 malwarescore=0 lowpriorityscore=0 bulkscore=0 suspectscore=0
+ clxscore=1015 spamscore=0 priorityscore=1501 adultscore=0 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603040067
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_005407_746795_44A96304 
-X-CRM114-Status: GOOD (  13.59  )
+X-CRM114-CacheID: sfid-20260304_005408_587147_573AA8A7 
+X-CRM114-Status: GOOD (  10.73  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,311 +136,37 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add UHR capabilities for bringing up the interface in UHR mode.
-This is required to validate UHR test cases.
+This series covers support for UHR capability and operation (11bn)
+parsing helpers for DPS/DBE/P-EDCA, and adds mac80211 hwsim changes.
 
-The fields added to AP and STATION mode for each bands based on the
-IEEE 802.11bn Draft P802.11bn/D1.3 "Table 9-bb3—Fields of the UHR MAC
-Capabilities Information field" and "Table 9-bb6—Subfields of the UHR
-PHY Capabilities Information field"
+The code changes are based on the IEEE 802.11bn Draft P802.11bn/D1.3.
+There may be changes in the code to adopt upcoming 11bn spec changes.
 
-Signed-off-by: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>
+Karthikeyan Kathirvel (2):
+  wifi: UHR: define DPS/DBE/P-EDCA elements and fix size parsing
+  wifi: mac80211_hwsim: Add UHR capabilities to the driver
+
+ drivers/net/wireless/virtual/mac80211_hwsim.c | 246 ++++++++++++++++
+ include/linux/ieee80211-uhr.h                 | 271 +++++++++++++++++-
+ 2 files changed, 511 insertions(+), 6 deletions(-)
 ---
- drivers/net/wireless/virtual/mac80211_hwsim.c | 246 ++++++++++++++++++
- 1 file changed, 246 insertions(+)
+v5:
+	- Addressed Johannes's comments
+	- Modified hwsim UHR MAC and PHY Caps as per spec
 
-diff --git a/drivers/net/wireless/virtual/mac80211_hwsim.c b/drivers/net/wireless/virtual/mac80211_hwsim.c
-index e89173f91637..1d8060ad86fd 100644
---- a/drivers/net/wireless/virtual/mac80211_hwsim.c
-+++ b/drivers/net/wireless/virtual/mac80211_hwsim.c
-@@ -4478,6 +4478,43 @@ static const struct ieee80211_sband_iftype_data sband_capa_2ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ADD_MAP_TID_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_UHR_TRS_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_LE80 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- 	{
- 		.types_mask = BIT(NL80211_IFTYPE_AP) |
-@@ -4586,6 +4623,48 @@ static const struct ieee80211_sband_iftype_data sband_capa_2ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DBE_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_AP_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_OMC_UL_MU_DIS_RX_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH |
-+					IEEE80211_UHR_MAC_CAP3_PARAM_UPD_ADV_NOTIF_INTV |
-+					IEEE80211_UHR_MAC_CAP3_UPD_IND_TIM_INTV_LOW,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_UPD_IND_TIM_INTV_HIGH |
-+					IEEE80211_UHR_MAC_CAP4_BOUNDED_ESS |
-+					IEEE80211_UHR_MAC_CAP4_BTM_ASSURANCE |
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- #ifdef CONFIG_MAC80211_MESH
- 	{
-@@ -4755,6 +4834,45 @@ static const struct ieee80211_sband_iftype_data sband_capa_5ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ADD_MAP_TID_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_UHR_TRS_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_160 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_160 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- 	{
- 		.types_mask = BIT(NL80211_IFTYPE_AP) |
-@@ -4880,6 +4998,49 @@ static const struct ieee80211_sband_iftype_data sband_capa_5ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DBE_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_AP_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_OMC_UL_MU_DIS_RX_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH |
-+					IEEE80211_UHR_MAC_CAP3_PARAM_UPD_ADV_NOTIF_INTV |
-+					IEEE80211_UHR_MAC_CAP3_UPD_IND_TIM_INTV_LOW,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_UPD_IND_TIM_INTV_HIGH |
-+					IEEE80211_UHR_MAC_CAP4_BOUNDED_ESS |
-+					IEEE80211_UHR_MAC_CAP4_BTM_ASSURANCE |
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_160 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- #ifdef CONFIG_MAC80211_MESH
- 	{
-@@ -5073,6 +5234,47 @@ static const struct ieee80211_sband_iftype_data sband_capa_6ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ADD_MAP_TID_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_UHR_TRS_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_160 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_160 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_320 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_DL_MU_320 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- 	{
- 		.types_mask = BIT(NL80211_IFTYPE_AP) |
-@@ -5219,6 +5421,50 @@ static const struct ieee80211_sband_iftype_data sband_capa_6ghz[] = {
- 			},
- 			/* PPE threshold information is not supported */
- 		},
-+		.uhr_cap = {
-+			.has_uhr = true,
-+			.mac = {
-+				.mac_cap[0] =
-+					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_NPCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_ENH_BSR_SUPP |
-+					IEEE80211_UHR_MAC_CAP0_EOTSP_SUPP,
-+				.mac_cap[1] =
-+					IEEE80211_UHR_MAC_CAP1_DSO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PEDCA_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DBE_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_UL_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_P2P_LLI_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_AP_PUO_SUPP |
-+					IEEE80211_UHR_MAC_CAP1_DUO_SUPP,
-+				.mac_cap[2] =
-+					IEEE80211_UHR_MAC_CAP2_OMC_UL_MU_DIS_RX_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_AOM_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_IFCS_LOC_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXSPG_SUPP |
-+					IEEE80211_UHR_MAC_CAP2_TXOP_RET_IN_TXSPG |
-+					IEEE80211_UHR_MAC_CAP2_UHR_OM_PU_TO_LOW,
-+				.mac_cap[3] =
-+					IEEE80211_UHR_MAC_CAP3_UHR_OM_PU_TO_HIGH |
-+					IEEE80211_UHR_MAC_CAP3_PARAM_UPD_ADV_NOTIF_INTV |
-+					IEEE80211_UHR_MAC_CAP3_UPD_IND_TIM_INTV_LOW,
-+				.mac_cap[4] =
-+					IEEE80211_UHR_MAC_CAP4_UPD_IND_TIM_INTV_HIGH |
-+					IEEE80211_UHR_MAC_CAP4_BOUNDED_ESS |
-+					IEEE80211_UHR_MAC_CAP4_BTM_ASSURANCE |
-+					IEEE80211_UHR_MAC_CAP4_CO_BF_SUPP,
-+			},
-+			.phy = {
-+				.cap =
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_LE80 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_160 |
-+					IEEE80211_UHR_PHY_CAP_MAX_NSS_RX_SND_NDP_320 |
-+					IEEE80211_UHR_PHY_CAP_ELR_RX |
-+					IEEE80211_UHR_PHY_CAP_ELR_TX,
-+			},
-+		},
- 	},
- #ifdef CONFIG_MAC80211_MESH
- 	{
+v4:
+	- Addressed Pablo's comment on mac80211_hwsim
+
+v3:
+	- Addressed Johannes's comments
+	- Removed reserved macros and unwanted
+	  IEEE80211_UHR_DBE_OPER_DIS_SUBCHANNEL_BITMAP
+
+v2:
+	- Rebased the changes on top of Johannes's initial UHR commits
+---
+
+base-commit: 0314e382cf02983eb3c33ac537ad9701e7858bc9
 -- 
 2.34.1
 
