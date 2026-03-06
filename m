@@ -4,123 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8B17F01826
-	for <ath12k@archiver.kernel.org>; Fri,  6 Mar 2026 11:15:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4B97F0182E
+	for <ath12k@archiver.kernel.org>; Fri,  6 Mar 2026 12:01:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XJs5TCyxG034yHHiOuHak36ovrbyK4UrTjLP5FzgnKo=; b=RaGC2z6BW2c61yNUcUam1zFx5w
-	kCcHlGJL9cKpfuUWeqDCVqBNF3y5y5vmgnvsG/ZrVuCgBN8tLg33O6qnl+S0afV7UrQA82CcB7XJx
-	W2HEnSuGu6APJrT5bP/6NdUZUZ5zugaUhpvqCvauc1id25/szUG5Gx0WMTvFsbPegxHoN18ySk+Fx
-	ULkbp0Jb7IGjdt97bXK7vvFkD2nRt8Ccb92NbMX5E95htbZuir8P8uEK6Vm4B+s4QP9TWSYGreYz2
-	F5WBR1DSTrs0AkWHK9/LOiPWjBxQere9Axt45KswdwlQ1ND8fzWY0+HYPrGSv94/1ivImFiQFOl82
-	D7YDhPKA==;
+	bh=T5bGqi89mFUFrHCKGw/j9UK4xduPWvTzAqKlBJ9K1e0=; b=xu4OqAnNlAMhzas4RljqPEG80E
+	KADDX6fn15YHtxjSgLobssullcaIqaLnJGpJoA5uW/BwHULRZPyJjpoqyItqhsQa6dKlB9HOvzXgb
+	W9rZxRfLBtcBpe/5fTKfea0MQLF17VnoWDgkSbD/JsBKh14ZnlLvGPlsZseU8DtQjQ0wb/dBTAgau
+	A8meyrWNsnnKBIECGxJ/alIPiDngev9z1x30L0tvKh/ef+G93hX13FeMOEHrf0ya0v8GYvESSge3C
+	z2bRNqB5w1g3x/YBOVWPYCcSnq/tFVc3lM4fez8kHCiN+Gp4wSAM6EYsuwfXDyFk9qiTG1+2EO2o1
+	4m1KElsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyT9I-00000003Y0N-2YfG;
-	Fri, 06 Mar 2026 11:15:16 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vyTsO-00000003ahy-1DVk;
+	Fri, 06 Mar 2026 12:01:52 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyT9F-00000003Xze-4BTy
+	id 1vyTsM-00000003ahX-0Sq4
 	for ath12k@lists.infradead.org;
-	Fri, 06 Mar 2026 11:15:15 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 45E2F43747;
-	Fri,  6 Mar 2026 11:15:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 847E0C4CEF7;
-	Fri,  6 Mar 2026 11:15:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772795713;
-	bh=qQ1LMDD+Itww5H6FRPGdFnCtQZPG9QaXWO16g4BtvUo=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Skgyak6008iYf4a1IVMcmJvZE0GpMmvDXnAhMshbpPBO4aHsjy2crfozYy6et/0R7
-	 cOuCCW6eAlwzlF8Cq2xCHao/cLtTSg0J0uU0zRBaRlqVjayGhQrg4Ra4NobcmyGRPt
-	 aVYjcHh45zQ4NqXoJHFefVxg3RawaJ1ypVmXGRhHDdxrw3KphnWp1OGcxw2ltf0TXe
-	 VG0gVZrhVGW2lVH6g+1/MFwmL4XnQD0CenN8KvfKAYlzGfkE2rBTr/AMgj9EHy2deR
-	 ujFoLH/jLreUoOMAz0jFfGbuvmSfMSZ7z0uh8T5d1cgCovmJ6nVLsG1teYcS1nYbFw
-	 ZK7dB2H5G62FA==
-Message-ID: <5dab61a6-d8cc-431d-b59e-744d98195d90@kernel.org>
-Date: Fri, 6 Mar 2026 12:15:01 +0100
+	Fri, 06 Mar 2026 12:01:51 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 626Bak0u4186067
+	for <ath12k@lists.infradead.org>; Fri, 6 Mar 2026 12:01:47 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	T5bGqi89mFUFrHCKGw/j9UK4xduPWvTzAqKlBJ9K1e0=; b=jLL2TD4o8kV++R7U
+	fj3WXAdmbt58wmThP+QGlmotiGcaFWLBDPdMeACCyE6IzLXMRzX08YJL5hTQidH5
+	BvgvWrMqoJefdJqixXuyTbozov24StU7kOypkM/8BTgzj0M/ot8DozINIP+bJFqV
+	Wz4AV+PQu2cfQXeX6UJIpFsFEYjVHHwmcbXsfjYcuGdcJ4ZuWAmLgbYbvxOSKr1x
+	nEo+Ec+PP7Pg15MUKXIGg6B/teyfynb2g/oVY3qNsqZWzRMVKjOK3cNogralH+ax
+	n7tau+XylJrwiAVBBiowJhMZLEL1BStBXjTjlUR4lbK0eBxpa/jKJsEGB2ZEK5FF
+	x5cqmw==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cqruk98a7-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Fri, 06 Mar 2026 12:01:47 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2ae3f446ccfso59625155ad.2
+        for <ath12k@lists.infradead.org>; Fri, 06 Mar 2026 04:01:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1772798506; x=1773403306; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=T5bGqi89mFUFrHCKGw/j9UK4xduPWvTzAqKlBJ9K1e0=;
+        b=UVnwRCLktmjX3yOQVokwDM6QdEEm4dG1WSkWYsVArAZAmf7YkNVH/uLgKBBhzKBD6/
+         EBkdq7detXUzoDW37/ScqYvYxnRuseOQv72vALzgcFBHv/JYTwi1cUaz+I2db5OixZwq
+         swXUbTVt6tDm5zANov7RXQD9iPtICgyZUVGFOm12vTEh+gtjtj2OqrQIBRap3XQdfZGo
+         gia7G54A83e+v9jTkwZCSRa2oSXAt5zQoxqZ0joDgpM481/Ca8vwH668pfPtekHQ6Odh
+         nzWdrOTnispH8CizeS6PR5bqzW5RVm2aMAFSITl0wK024byEzvSzFQLqNStL9jOlp5xb
+         mP5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772798506; x=1773403306;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=T5bGqi89mFUFrHCKGw/j9UK4xduPWvTzAqKlBJ9K1e0=;
+        b=VyXPRBZHq9dDMjCczJJxqe5eJ8ZyGcqkjqymDBCQtEXf8/3N2KjB89R1CGHPD7R/Z5
+         kyy0Cz4gvYYS7AFJfR3if9vG/KvFTlwOHg05xIYeTN4aE2Ps+EbmjoUd6z39ypcwWWP1
+         kCSTcAnQI9ZCKGPgTU8aJl+hsjEorSBsh18ob//4u5devRX1BjWOA+DqLFKqpoTPz9IH
+         Oqc4Iu/VqR2arpCQ5/bD2Jp43z2RwkqTlPJQxISoKvRQGYS3i2XQZfPjl+rBPrkIQFrY
+         QywXg/vAsvSFCg1fyF4ofDiMK4K/X6TkrHOSG/05T8FcrfQILuADtJ1t9Yfi+hgYsj+A
+         0AoA==
+X-Forwarded-Encrypted: i=1; AJvYcCVhC38rxiKmWEObIOhzEGY/3h2FNvaLKKOwxn8CCth+VkHFox0XsHE5ask9BzWpD/FvTTo1Mno=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxfjOdxwnu1pXN224WkZMqr4TZ4lGw2tf807/0Scx/NSwalTQBD
+	O7D9VroLTo0wfUFo6BXBMCjyOBYCV/UXpXJL0wDZku2Rzt+pYbmneFDJ3lwD23WAOaCWo5zcEbY
+	NeeJ29UGsSeITaqYyciWw1Wp2DIVUJa5hLMid+8ltWEL+ufm3m/jzr5ZXAMDrjBaR
+X-Gm-Gg: ATEYQzzzN6pTFAnfsSGZHLgQOoWkv0s2TnO09T58Umee6EFTXxQjc0HLMjZLjMeH787
+	aNX07Et8mloxqJDgSeAmq8nyLEgKsB6TlUVR+89Lvl5zUcZ5Feifnuy/Kto3YXsrUQsSGwp8u+K
+	J/e0XQ35+pdVwRJ9Qqu/24PgoIQl9yqPkDqY8vgsx644YZteVviN/YZE3kOKaX03bLZCOdnoZ1V
+	4dGnseb9eMyYnqppr8JYt+wIL7a33pWA8KEy5/+tNWTBpp1cHMc9njTLF27wHeGYKF4M/PctzlZ
+	Ppyx5u5TsOd/66392/IV1x9r5AnBWMIZiUsdovntFjxJwGcts0qzip/N34uHzTbxuCH/nvGhLfM
+	jmeR8YRjpwUI+kw5yxlilI8O+tm3WcehrwRGfz5GwDGSdtzlfPPGabQmwi4oBArM=
+X-Received: by 2002:a17:902:f78e:b0:2ae:6192:8da3 with SMTP id d9443c01a7336-2ae824623camr22163375ad.42.1772798505996;
+        Fri, 06 Mar 2026 04:01:45 -0800 (PST)
+X-Received: by 2002:a17:902:f78e:b0:2ae:6192:8da3 with SMTP id d9443c01a7336-2ae824623camr22162945ad.42.1772798505331;
+        Fri, 06 Mar 2026 04:01:45 -0800 (PST)
+Received: from [10.152.199.53] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ae83e5c167sm16432005ad.1.2026.03.06.04.01.43
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 06 Mar 2026 04:01:44 -0800 (PST)
+Message-ID: <6679fdab-d3b6-41b1-b807-fb0909af6cbe@oss.qualcomm.com>
+Date: Fri, 6 Mar 2026 17:31:41 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 02/14] firmware: qcom: Add a generic PAS service
-To: Sumit Garg <sumit.garg@kernel.org>, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
- freedreno@lists.freedesktop.org, linux-media@vger.kernel.org,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- ath12k@lists.infradead.org, linux-remoteproc@vger.kernel.org
-Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, robin.clark@oss.qualcomm.com,
- sean@poorly.run, akhilpo@oss.qualcomm.com, lumag@kernel.org,
- abhinav.kumar@linux.dev, jesszhan0024@gmail.com,
- marijn.suijten@somainline.org, airlied@gmail.com, simona@ffwll.ch,
- vikash.garodia@oss.qualcomm.com, dikshita.agarwal@oss.qualcomm.com,
- bod@kernel.org, mchehab@kernel.org, elder@kernel.org, andrew+netdev@lunn.ch,
- davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
- pabeni@redhat.com, jjohnson@kernel.org, mathieu.poirier@linaro.org,
- trilokkumar.soni@oss.qualcomm.com, mukesh.ojha@oss.qualcomm.com,
- pavan.kondeti@oss.qualcomm.com, jorge.ramirez@oss.qualcomm.com,
- tonyh@qti.qualcomm.com, vignesh.viswanathan@oss.qualcomm.com,
- srinivas.kandagatla@oss.qualcomm.com, amirreza.zarrabi@oss.qualcomm.com,
- jens.wiklander@linaro.org, op-tee@lists.trustedfirmware.org,
- apurupa@qti.qualcomm.com, skare@qti.qualcomm.com,
- Sumit Garg <sumit.garg@oss.qualcomm.com>
-References: <20260306105027.290375-1-sumit.garg@kernel.org>
- <20260306105027.290375-3-sumit.garg@kernel.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH wireless-next v5 2/2] wifi: mac80211_hwsim: Add UHR
+ capabilities to the driver
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+References: <20260304085343.1093993-1-karthikeyan.kathirvel@oss.qualcomm.com>
+ <20260304085343.1093993-3-karthikeyan.kathirvel@oss.qualcomm.com>
+ <f256b3e7fa9227caf0bbd6696b81aa79b145945c.camel@sipsolutions.net>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20260306105027.290375-3-sumit.garg@kernel.org>
-Content-Type: text/plain; charset=UTF-8
+From: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>
+In-Reply-To: <f256b3e7fa9227caf0bbd6696b81aa79b145945c.camel@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA2MDExNCBTYWx0ZWRfX+cWCCxC+lWM/
+ L6WmJ1JjHDN1nMRvrlxSB1sPQ7D99y5emBTeuw1wKWMHLV/MODJt7B7ombL20aEQ4A+Jglqx7kp
+ wqQ30zALZFgBnID1W24bZ6s6nxCSs6XAKVJOMKHvhYw3QK6lFcpE+Vnt9DQ+z6naYbazA+E6p+b
+ 3Zr7xhpIxdLAiyhWfQcNE1JWWA7sbnMeEsaKB9jgQQYp4uHKRciuAs/XRNno5SYVxj5qkHxVzgw
+ 39wbjlmNsowcjO744GpIDq86a39Q2a2k3HHTxHLO7vp2GLwxSzX6mk4KCgUpJXRlltbrbiJMvZ0
+ kZduuogpgdM1tKxv4sPy7mTbLIVDUU0OWquVR25TA7n9dMykcg5usfut2CoSqghkNjQ5d/Petzm
+ B9Hyqj3bXbz4+NwBN27cGikS11GU+OnXd1D4yfnZna3/CmCWkDDZ0IFySLBBwK4UzcWbnv1waQd
+ R883ldzQXBM8q76kgEQ==
+X-Proofpoint-ORIG-GUID: -QUoYP_gylEUz3Vd-9V1xLecxCPBJUoV
+X-Authority-Analysis: v=2.4 cv=DvZbOW/+ c=1 sm=1 tr=0 ts=69aac22b cx=c_pps
+ a=cmESyDAEBpBGqyK7t0alAg==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+ a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=SiGYLgrUxgJyI8PW2ecA:9 a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22
+X-Proofpoint-GUID: -QUoYP_gylEUz3Vd-9V1xLecxCPBJUoV
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-06_04,2026-03-04_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 impostorscore=0 malwarescore=0 bulkscore=0 adultscore=0
+ suspectscore=0 clxscore=1015 phishscore=0 priorityscore=1501 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603060114
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260306_031514_106976_3CA007CE 
-X-CRM114-Status: GOOD (  30.40  )
+X-CRM114-CacheID: sfid-20260306_040150_288363_A2A9FD37 
+X-CRM114-Status: GOOD (  16.66  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,164 +145,41 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 06/03/2026 11:50, Sumit Garg wrote:
-> From: Sumit Garg <sumit.garg@oss.qualcomm.com>
+
+
+On 3/4/2026 4:19 PM, Johannes Berg wrote:
+> On Wed, 2026-03-04 at 14:23 +0530, Karthikeyan Kathirvel wrote:
+>>
+>> +++ b/drivers/net/wireless/virtual/mac80211_hwsim.c
+>> @@ -4478,6 +4478,43 @@ static const struct ieee80211_sband_iftype_data sband_capa_2ghz[] = {
+>>   			},
+>>   			/* PPE threshold information is not supported */
+>>   		},
+>> +		.uhr_cap = {
 > 
-> Qcom platforms has the legacy of using non-standard SCM calls
-> splintered over the various kernel drivers. These SCM calls aren't
-> compliant with the standard SMC calling conventions which is a
-> prerequisite to enable migration to the FF-A specifications from
-> Arm.
+> Missing from the context, but this is non-AP side.
 > 
-> OP-TEE as an alternative trusted OS to QTEE can't support these non-
-> standard SCM calls. And even for newer architectures QTEE won't be able
-> to support SCM calls either with FF-A requirements coming in. And with
-> both OP-TEE and QTEE drivers well integrated in the TEE subsystem, it
-> makes further sense to reuse the TEE bus client drivers infrastructure.
+>> +			.has_uhr = true,
+>> +			.mac = {
+>> +				.mac_cap[0] =
+>> +					IEEE80211_UHR_MAC_CAP0_DPS_SUPP |
+>> +					IEEE80211_UHR_MAC_CAP0_DPS_AP_STATIC_HCM_SUPP |
 > 
-> The added benefit of TEE bus infrastructure is that there is support
-> for discoverable/enumerable services. With that client drivers don't
-> have to manually invoke a special SCM call to know the service status.
+> "Reserved for a non-AP STA."
 > 
-> So enable the generic Peripheral Authentication Service (PAS) provided
-> by the firmware. It acts as the common layer with different TZ
-> backends plugged in whether it's an SCM implementation or a proper
-> TEE bus based PAS service implementation.
+
+Yes it is applicable only for Mobile AP, neither supported for AP or 
+non-AP STA, but I see only this I have missed it, remaining seems to be 
+correct at to my knowledge.
+
+> Maybe we're just better off doing this as we implement features?
+>
+Agree! I will leave this decision to you :)
+
+> I've applied patch 1 with some minor edits.
 > 
-> Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
-> ---
->  drivers/firmware/qcom/Kconfig          |   8 +
->  drivers/firmware/qcom/Makefile         |   1 +
->  drivers/firmware/qcom/qcom_pas.c       | 295 +++++++++++++++++++++++++
->  drivers/firmware/qcom/qcom_pas.h       |  53 +++++
->  include/linux/firmware/qcom/qcom_pas.h |  41 ++++
->  5 files changed, 398 insertions(+)
->  create mode 100644 drivers/firmware/qcom/qcom_pas.c
->  create mode 100644 drivers/firmware/qcom/qcom_pas.h
->  create mode 100644 include/linux/firmware/qcom/qcom_pas.h
-> 
-> diff --git a/drivers/firmware/qcom/Kconfig b/drivers/firmware/qcom/Kconfig
-> index b477d54b495a..8653639d06db 100644
-> --- a/drivers/firmware/qcom/Kconfig
-> +++ b/drivers/firmware/qcom/Kconfig
-> @@ -6,6 +6,14 @@
->  
->  menu "Qualcomm firmware drivers"
->  
-> +config QCOM_PAS
-> +	tristate
-> +	help
-> +	  Enable the generic Peripheral Authentication Service (PAS) provided
-> +	  by the firmware. It acts as the common layer with different TZ
-> +	  backends plugged in whether it's an SCM implementation or a proper
-> +	  TEE bus based PAS service implementation.
-> +
->  config QCOM_SCM
->  	select QCOM_TZMEM
->  	tristate
-> diff --git a/drivers/firmware/qcom/Makefile b/drivers/firmware/qcom/Makefile
-> index 0be40a1abc13..dc5ab45f906a 100644
-> --- a/drivers/firmware/qcom/Makefile
-> +++ b/drivers/firmware/qcom/Makefile
-> @@ -8,3 +8,4 @@ qcom-scm-objs += qcom_scm.o qcom_scm-smc.o qcom_scm-legacy.o
->  obj-$(CONFIG_QCOM_TZMEM)	+= qcom_tzmem.o
->  obj-$(CONFIG_QCOM_QSEECOM)	+= qcom_qseecom.o
->  obj-$(CONFIG_QCOM_QSEECOM_UEFISECAPP) += qcom_qseecom_uefisecapp.o
-> +obj-$(CONFIG_QCOM_PAS)		+= qcom_pas.o
-> diff --git a/drivers/firmware/qcom/qcom_pas.c b/drivers/firmware/qcom/qcom_pas.c
-> new file mode 100644
-> index 000000000000..dc04ff1b6be0
-> --- /dev/null
-> +++ b/drivers/firmware/qcom/qcom_pas.c
-> @@ -0,0 +1,295 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-> + */
-> +
-> +#include <linux/delay.h>
-> +#include <linux/device/devres.h>
-> +#include <linux/firmware/qcom/qcom_pas.h>
-> +#include <linux/of.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/slab.h>
-> +
-> +#include "qcom_pas.h"
-> +#include "qcom_scm.h"
-> +
-> +static struct qcom_pas_ops *ops_ptr;
+Thanks :)
 
-I really dislike this singleton design. And it is not even needed! If
-you were storing here some allocated instance of SCM/PAS I could
-understand, but singleton for only ops? Just implement one driver (so
-SCM + whatever you have here) which will decide which ops to use,
-through the probe. Really, this is neither needed nor beneficial.
+> johannes
 
-It actually leads to more problems with this barrier handling, see
-further comments.
-...
-
-> +
-> +/**
-> + * qcom_pas_shutdown() - Shut down the remote processor
-> + * @pas_id:	peripheral authentication service id
-> + *
-> + * Returns 0 on success.
-> + */
-> +int qcom_pas_shutdown(u32 pas_id)
-> +{
-> +	if (ops_ptr)
-> +		return ops_ptr->shutdown(ops_ptr->dev, pas_id);
-> +
-> +	return -ENODEV;
-> +}
-> +EXPORT_SYMBOL_GPL(qcom_pas_shutdown);
-> +
-> +/**
-> + * qcom_pas_supported() - Check if the peripheral authentication service is
-> + *			  available for the given peripheral
-> + * @pas_id:	peripheral authentication service id
-> + *
-> + * Returns true if PAS is supported for this peripheral, otherwise false.
-> + */
-> +bool qcom_pas_supported(u32 pas_id)
-> +{
-> +	if (ops_ptr)
-
-Lack of barriers here is not looking right. Existing/old code is not a
-good example, I fixed only the obvious issue, but new code should be
-correct from the beginning.
-
-Barriers should normally be always paired, unless you have some clear
-path no concurrent execution can happen here, but such explanation is
-missing, look:
-
-> +		return ops_ptr->supported(ops_ptr->dev, pas_id);
-> +
-> +	return false;
-> +}
-> +EXPORT_SYMBOL_GPL(qcom_pas_supported);
-> +
-> +/**
-> + * qcom_pas_is_available() - Check for PAS service
-> + *
-> + * Returns true on success.
-> + */
-> +bool qcom_pas_is_available(void)
-> +{
-> +	/* The barrier is needed to synchronize with client drivers. */
-
-
-Here. This is pretty pointless/redundant comment. Obviously barriers are
-to synchronize with whoever is calling this and only clients are calling.
-
-You must say something useful, not just barrier is a barrier... It's
-like documenting mutex "to synchronize".
-
-> +	return !!smp_load_acquire(&ops_ptr);
-
-
-Best regards,
-Krzysztof
 
