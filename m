@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA17AF01821
-	for <ath12k@archiver.kernel.org>; Fri,  6 Mar 2026 10:51:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C957F01821
+	for <ath12k@archiver.kernel.org>; Fri,  6 Mar 2026 10:51:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=6XSBhCGPook/lma52K8G/3Mhi4FmGh56CNTIG4CqsOA=; b=GtXUJLL1Y5J6orLDjldf/jsoJG
-	IrvQp/deA2mLDuPUInIFaYg1I2WjjT2+6OgBahaVtUMf6OS5J9K3U97MDyxDIcPSiQT0F19Ib/hPB
-	F5kHhp78EPdPnVhbsCOHSRlkaARM+sdsgM0PGw1ak5N/rVcMEaqEOeFW3B1vhs6I8P76PNBE6LxCw
-	uUxZX/8gIyuZZU+j2hSP+X4l4RFsv8O6ykfbiTPDxQK9sVYC5S4Nq3lIKwCQ50AWdFprT3j0EYavO
-	H0pwu4ZkHdL0kRxSyM1PFmz3lVOhQe2TiVi1dcZCFTt3DZv3s8E9syzUk1q4OttQovNfKJgew1Doe
-	KvDh/Vgg==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=sKS7TMEYXY0/A3er1dYwT18BSYP4wyN8jtdoRqHgDB4=; b=oPOCSe/gQ2BKEOyDBD53aLNAEZ
+	CRTnk8s59L3vaMd8nnsPLHApXpsewBVpuYYvM7MBavKRJXHWeGbxDASwRSHXDNyYZ0JD1MeHPA0fm
+	0Xi3UDSd5jcP7+LYH171iQ1po9bGmjuR1vAuhRrJNGUcl6hCfTRMJ/WGayA5o0fixC66nd49wdeon
+	R7x3DTKo2YC6+bwkk3Sz8k/4MSR9nRRYVJ79CaX+4eA8QEButP85XjV6bADiNjaFNNvAZkEy+AezH
+	3fZjoS4a0+KEZvWp+0Kj0DzUPGAZOWDhS8fCfNrgHFZpqWSJ1HxWiF5m/eN4BZspn0JLm4/kq4lhv
+	uuXhf12Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vySlz-00000003VZR-1Luo;
-	Fri, 06 Mar 2026 10:51:11 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vySmA-00000003Vaw-2WeJ;
+	Fri, 06 Mar 2026 10:51:22 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vySlv-00000003VYl-3sOU
+	id 1vySm8-00000003Vaj-0C4l
 	for ath12k@lists.infradead.org;
-	Fri, 06 Mar 2026 10:51:10 +0000
+	Fri, 06 Mar 2026 10:51:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 96CE341AD7;
+	by tor.source.kernel.org (Postfix) with ESMTP id 32FE060018;
+	Fri,  6 Mar 2026 10:51:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 135E5C4CEF7;
 	Fri,  6 Mar 2026 10:51:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DE76CC4CEF7;
-	Fri,  6 Mar 2026 10:50:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772794264;
-	bh=N/un1ct3aC4OeKYTUVQo9SBlq9RdaM42L1qkY0h+EJk=;
-	h=From:To:Cc:Subject:Date:From;
-	b=FOEJ4YYeVY/+uRUqYkk5lU/VGNZknbgr6QBcYs9Jk24o3j2FihSpo9So1NT2RiIMJ
-	 9SvHtEschlq/UlN7LoAcRN9iQ3WMaSRAYmSIDAEVFkEkBVlVvAs/SKoLy4NeTF/Lc0
-	 6145rbuUXU8SkvJlJGPqmnWam3h1QKIuJwst0Vb7EQSJ7d3DqAg4j/dYwYDgYNZbH+
-	 PEJr65S4SPBKJ0avG8pXvfU76ugRbBjluct4vvbVQV8TkG2YJgRvvnjG2UiGGuMSjK
-	 9jILTEiV0/MMhlzQD9mXBQaSEbZRj48pWLAB5KIrxbUuNi3dgcL9UBBgXd749UprpA
-	 J1RVkQMwyd1tg==
+	s=k20201202; t=1772794278;
+	bh=VulyuWgkoLsxmBOeLgDF0beLPvgQfeLav/LDt2v0t0Q=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=VmU6y7g3advHug/qS723M6eJUsviyh5bVasatx5p50xDjCT09nokXcIYQQVxdk1Uh
+	 IXHFoRAZ59QQXpUwxq3xBJleExhVzhTADDdniH854fSHsDs+QLroSQIXW/DPSNUro1
+	 wjyv1NYmQjKE5TvnNe+/D4WwZ4VWDBXjfb1gJgEGU5osdEl+JI/AhmXy90VvD0NDNp
+	 7TpYWuYuzT+yNafUWwPc2FLPUUP/842c2BBVecR6Vgt0fq9xo6pgCcqzsOpXcvcH6Y
+	 rvzXVI0axUarB6ZPzjzBQuF2nqh/QuMGf5yNXBZBHPAk5+8Y5HjQwumg7DBTN8jMDO
+	 l1dKtb0+CMd9g==
 From: Sumit Garg <sumit.garg@kernel.org>
 To: linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org,
@@ -91,15 +91,14 @@ Cc: andersson@kernel.org,
 	apurupa@qti.qualcomm.com,
 	skare@qti.qualcomm.com,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: [PATCH 00/14] firmware: qcom: Add OP-TEE PAS service support
-Date: Fri,  6 Mar 2026 16:20:13 +0530
-Message-ID: <20260306105027.290375-1-sumit.garg@kernel.org>
+Subject: [PATCH 01/14] arm64: dts: qcom: kodiak: Add EL2 overlay
+Date: Fri,  6 Mar 2026 16:20:14 +0530
+Message-ID: <20260306105027.290375-2-sumit.garg@kernel.org>
 X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20260306105027.290375-1-sumit.garg@kernel.org>
+References: <20260306105027.290375-1-sumit.garg@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260306_025108_079074_AA5A0EBB 
-X-CRM114-Status: GOOD (  14.84  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,109 +113,87 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sumit Garg <sumit.garg@oss.qualcomm.com>
+From: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 
-Qcom platforms has the legacy of using non-standard SCM calls
-splintered over the various kernel drivers. These SCM calls aren't
-compliant with the standard SMC calling conventions which is a
-prerequisite to enable migration to the FF-A specifications from
-Arm.
+All the existing variants Kodiak boards are using Gunyah hypervisor
+which means that, so far, Linux-based OS could only boot in EL1 on those
+devices.  However, it is possible for us to boot Linux at EL2 on these
+devices [1].
 
-OP-TEE as an alternative trusted OS to QTEE can't support these non-
-standard SCM calls. And even for newer architectures QTEE won't be able
-to support SCM calls either with FF-A requirements coming in. And with
-both OP-TEE and QTEE drivers well integrated in the TEE subsystem, it
-makes further sense to reuse the TEE bus client drivers infrastructure.
+When running under Gunyah, the remote processor firmware IOMMU
+streams are controlled by Gunyah. However, without Gunyah, the IOMMU is
+managed by the consumer of this DeviceTree. Therefore, describe the
+firmware streams for each remote processor.
 
-The added benefit of TEE bus infrastructure is that there is support
-for discoverable/enumerable services. With that client drivers don't
-have to manually invoke a special SCM call to know the service status.
+Add a EL2-specific DT overlay and apply it to Kodiak IOT variant
+devices to create -el2.dtb for each of them alongside "normal" dtb.
 
-So enable the generic Peripheral Authentication Service (PAS) provided
-by the firmware. It acts as the common layer with different TZ
-backends plugged in whether it's an SCM implementation or a proper
-TEE bus based PAS service implementation.
+[1]
+https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-4/boot-developer-touchpoints.html#uefi
 
-The TEE PAS service ABI is designed to be extensible with additional API
-as PTA_QCOM_PAS_CAPABILITIES. This allows to accommodate any future
-extensions of the PAS service needed while still maintaining backwards
-compatibility.
-
-Currently OP-TEE support is being added to provide the backend PAS
-service implementation which can be found as part of this PR [1].
-This implementation has been tested on Kodiak/RB3Gen2 board with lemans
-EVK board being the next target. In addition to that WIN/IPQ targets
-planning to use OP-TEE will use this service too.
-
-Patch summary:
-- Patch #1: adds Kodiak EL2 overlay since boot stack with TF-A/OP-TEE
-  only allow UEFI and Linux to boot in EL2.
-- Patch #2: adds generic PAS service.
-- Patch #3: migrates SCM backend to generic PAS service.
-- Patch #4: adds TEE/OP-TEE backend for generic PAS service.
-- Patch #5-#13: migrates all client drivers to generic PAS service.
-- Patch #14: drops legacy PAS SCM exported APIs.
-
-The patch-set is based on v7.0-rc2 tag and can be found in git tree here
-[2].
-
-Merge strategy:
-----------------
-
-It is expected due to APIs dependency, the entire patch-set to go via
-the Qcom tree. All other subsystem maintainers, it will be great if I
-can get acks for the corresponding subsystem patches.
-
-[1] https://github.com/OP-TEE/optee_os/pull/7721
-[2] https://git.kernel.org/pub/scm/linux/kernel/git/sumit.garg/linux.git/log/?h=qcom-pas-v1
-
-Mukesh Ojha (1):
-  arm64: dts: qcom: kodiak: Add EL2 overlay
-
-Sumit Garg (13):
-  firmware: qcom: Add a generic PAS service
-  firmware: qcom_scm: Migrate to generic PAS service
-  firmware: qcom: Add a PAS TEE service
-  remoteproc: qcom_q6v5_pas: Switch over to generic PAS TZ APIs
-  remoteproc: qcom_q6v5_mss: Switch to generic PAS TZ APIs
-  soc: qcom: mdtloader: Switch to generic PAS TZ APIs
-  remoteproc: qcom_wcnss: Switch to generic PAS TZ APIs
-  remoteproc: qcom: Select QCOM_PAS_TEE service backend
-  drm/msm: Switch to generic PAS TZ APIs
-  media: qcom: Switch to generic PAS TZ APIs
-  net: ipa: Switch to generic PAS TZ APIs
-  wifi: ath12k: Switch to generic PAS TZ APIs
-  firmware: qcom_scm: Remove SCM PAS wrappers
-
- arch/arm64/boot/dts/qcom/Makefile             |   2 +
- arch/arm64/boot/dts/qcom/kodiak-el2.dtso      |  35 ++
- drivers/firmware/qcom/Kconfig                 |  18 +
- drivers/firmware/qcom/Makefile                |   2 +
- drivers/firmware/qcom/qcom_pas.c              | 295 +++++++++++
- drivers/firmware/qcom/qcom_pas.h              |  53 ++
- drivers/firmware/qcom/qcom_pas_tee.c          | 478 ++++++++++++++++++
- drivers/firmware/qcom/qcom_scm.c              | 304 ++++-------
- drivers/gpu/drm/msm/adreno/a5xx_gpu.c         |   4 +-
- drivers/gpu/drm/msm/adreno/adreno_gpu.c       |  11 +-
- .../media/platform/qcom/iris/iris_firmware.c  |   9 +-
- drivers/media/platform/qcom/venus/firmware.c  |  11 +-
- drivers/net/ipa/ipa_main.c                    |  13 +-
- drivers/net/wireless/ath/ath12k/ahb.c         |   8 +-
- drivers/remoteproc/Kconfig                    |   1 +
- drivers/remoteproc/qcom_q6v5_mss.c            |   5 +-
- drivers/remoteproc/qcom_q6v5_pas.c            |  51 +-
- drivers/remoteproc/qcom_wcnss.c               |  12 +-
- drivers/soc/qcom/mdt_loader.c                 |  12 +-
- include/linux/firmware/qcom/qcom_pas.h        |  41 ++
- include/linux/firmware/qcom/qcom_scm.h        |  29 --
- include/linux/soc/qcom/mdt_loader.h           |   6 +-
- 22 files changed, 1097 insertions(+), 303 deletions(-)
+Signed-off-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
+[SG: watchdog fixup]
+Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
+---
+ arch/arm64/boot/dts/qcom/Makefile        |  2 ++
+ arch/arm64/boot/dts/qcom/kodiak-el2.dtso | 35 ++++++++++++++++++++++++
+ 2 files changed, 37 insertions(+)
  create mode 100644 arch/arm64/boot/dts/qcom/kodiak-el2.dtso
- create mode 100644 drivers/firmware/qcom/qcom_pas.c
- create mode 100644 drivers/firmware/qcom/qcom_pas.h
- create mode 100644 drivers/firmware/qcom/qcom_pas_tee.c
- create mode 100644 include/linux/firmware/qcom/qcom_pas.h
 
+diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
+index f80b5d9cf1e8..09a7f943190e 100644
+--- a/arch/arm64/boot/dts/qcom/Makefile
++++ b/arch/arm64/boot/dts/qcom/Makefile
+@@ -139,6 +139,8 @@ dtb-$(CONFIG_ARCH_QCOM)	+= qcs404-evb-4000.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= qcs615-ride.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= qcs6490-radxa-dragon-q6a.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= qcs6490-rb3gen2.dtb
++qcs6490-rb3gen2-el2-dtbs := qcs6490-rb3gen2.dtb kodiak-el2.dtbo
++dtb-$(CONFIG_ARCH_QCOM)	+= qcs6490-rb3gen2-el2.dtb
+ 
+ qcs6490-rb3gen2-vision-mezzanine-dtbs := qcs6490-rb3gen2.dtb qcs6490-rb3gen2-vision-mezzanine.dtbo
+ qcs6490-rb3gen2-industrial-mezzanine-dtbs := qcs6490-rb3gen2.dtb qcs6490-rb3gen2-industrial-mezzanine.dtbo
+diff --git a/arch/arm64/boot/dts/qcom/kodiak-el2.dtso b/arch/arm64/boot/dts/qcom/kodiak-el2.dtso
+new file mode 100644
+index 000000000000..0b3a69a0d765
+--- /dev/null
++++ b/arch/arm64/boot/dts/qcom/kodiak-el2.dtso
+@@ -0,0 +1,35 @@
++// SPDX-License-Identifier: BSD-3-Clause
++/*
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
++ *
++ * Kodiak specific modifications required to boot in EL2.
++ */
++
++
++/dts-v1/;
++/plugin/;
++
++&gpu_zap_shader {
++	status = "disabled";
++};
++
++&remoteproc_adsp {
++	iommus = <&apps_smmu 0x1800 0x0>;
++};
++
++&remoteproc_cdsp {
++	iommus = <&apps_smmu 0x11a0 0x0400>;
++};
++
++&remoteproc_wpss {
++	iommus = <&apps_smmu 0x1c03 0x1>,
++		 <&apps_smmu 0x1c83 0x1>;
++};
++
++&venus {
++	status = "disabled";
++};
++
++&watchdog {
++	status = "okay";
++};
 -- 
 2.51.0
 
