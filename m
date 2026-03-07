@@ -4,155 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C277CFCC07D
-	for <ath12k@archiver.kernel.org>; Fri,  6 Mar 2026 22:16:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3ED5CFC9EDA
+	for <ath12k@archiver.kernel.org>; Sat,  7 Mar 2026 10:10:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=i8xe+5eaNei8a3fpTPt0x8f/YBdZqjrjrkxNfSV82tg=; b=q+LyBp+QA1fLN2Ka6iSq8qcmla
-	uqFywes+gvmdT6xxDD6SAh6LJizgPicyTf6Jof5UNuKpaud3189Ne2tgfmjmCelVEIu6O1LU4DdW5
-	RNOyUsBNOJOXda8o6GvAvD+EexNozAM+dN12japv9wGCJOuogs9uOMUTiEt2Ud/HgeYzlQ7cq/u3T
-	qi+CpAQZShA8+JnxtSowUV01AQ32IAjnBl0I/OlFXtYrMEb2iIgVjkaV0BX0wJ3ilhhoQhM7QcomX
-	2E8/wjKlsJyRLTuQRmsnCLFRLVZ+oLoOEdkwdWHbEHJ5+WhenyWa5F8RFfymvSohYbTEWDMXyt/kt
-	F08i8O8A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=/jOwRONgGewJlkKdZlENq+Ozz07g4IVyJmhQ+y01eMI=; b=nUBvngvNZYyU471q2JPcX52LXg
+	vmrCCXvyopms1HU3r5YCB4/FIPIuodkqZAZ23gdzq5iSLBAJN8JCWyIuuYOXSP+nb4J20P98HB1y+
+	MoRFYUDmhmfM5rBjxQiiB+6hM9+QR3EzJlSXbhJPm2pDlz13+PcmlJtIaI2Eni0T8NbKqTAvG9nCE
+	528omMv0AwxDgxhj/RuXAjpU/CmCBn2Sx6qEoFcvmDVf6cycVSA9z8/lithqlYo2K3H5d+t3pUho6
+	Alq3fP3FAwLZIriFDfCrjznC4W+ouO5SMjDaHzTTdqoMfbfRWIIdT+JFxB3E8hrAMJZBVEh9Q0JsR
+	WkcOdCYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vydT2-00000004a7D-29pZ;
-	Fri, 06 Mar 2026 22:16:20 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vyobt-0000000548x-38gR;
+	Sat, 07 Mar 2026 10:10:13 +0000
+Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vydSz-00000004a6f-0PRy
+	id 1vyobp-00000005487-2la6
 	for ath12k@lists.infradead.org;
-	Fri, 06 Mar 2026 22:16:18 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 626KX4CJ232975
-	for <ath12k@lists.infradead.org>; Fri, 6 Mar 2026 22:16:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	i8xe+5eaNei8a3fpTPt0x8f/YBdZqjrjrkxNfSV82tg=; b=SfSjst4GB8hij3Ya
-	xumyToC4COQ43yIm2aQSarzCnpo0ypGv1UWid+nyf1aAiMF0Mu+lt8Jlnh6wZEzC
-	z4nAMHqTQKPfGzFi4Ldw17z950DNAf03OiMcQDe7wwE/yO+WD8U5uSjNlAz+xe+E
-	DI126rXVobs/QALLHK6ZUrp94YQkgg6+6YV5FIgosf83knfO3y+5DeVGfbKpw505
-	0N1VQxl+B1ZgE5cgBtv5aVouUiY6VafcBs3QVFZGcpXdHBxf4sdQkDacB7oeO5Xn
-	213NzZUpLBiKTugTF1ByolEGCHvJCbJb5CxMg1cmT9VYtIEhF2oy8+NVVw03lLlg
-	Bzz1rw==
-Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cr2up10cc-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 06 Mar 2026 22:16:16 +0000 (GMT)
-Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-2be55a1448fso5603241eec.0
-        for <ath12k@lists.infradead.org>; Fri, 06 Mar 2026 14:16:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1772835376; x=1773440176; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=i8xe+5eaNei8a3fpTPt0x8f/YBdZqjrjrkxNfSV82tg=;
-        b=inigKVbXDa5C2HsPMAVut55zhUGXB/QKAEHOX1sFY7370FYWqjwxHNV94zti0q5aQ6
-         q2RyEh9kcZ6Ggi5joNfvLNNcu1rzlzE4Dk+YpRm6ARoUCMXPsbPu4zj4zG7/7jYD6zoi
-         03DHKVEz6oCbfD6Gmb78z0XFVp/+307KmURBxEwjSiqkelL8A2PQVK/XHB0lDy+8c45L
-         SKJKSYwccUQhagBLUGRwGEarzK9LiHKl3ETHePUuRqUEPmWpQxc/iUGssoATbZzYczu2
-         gWa9XyiUFW5kMtovynI04dt6BJz2LWZZKpZOt+tuJ2jBK+6/yGBtQqlylslw5ZXNCgYO
-         6gaA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772835376; x=1773440176;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=i8xe+5eaNei8a3fpTPt0x8f/YBdZqjrjrkxNfSV82tg=;
-        b=kLZOlKwX2/KWB6LRuFyZo1GV61nuyZyZMS2BzTeTXYZlaxfrcdMC559JEP8hg6HDkG
-         uxpNeDoLp4SD1C5kdC5Sx5CcJvUdT9U4xnetsxxZlbEhOryh6o1ExqMQc0pjF+H58ZFW
-         ab3Uz7lM+W1RSn3nIg8HwdkPFabJZNGdNdS7XIkR4lZUEotTTHGVyW8Q7KmHHNhg34Vt
-         tuPqTpoC5DkqA8og2/J504nSUFdgm9otM9dsnAmz0Psa096vcFUW5nyMyTRUoxCiqCIG
-         DIcsILXytwR5eLsFV95Tk0/gRroNI9H38tYyC4amH4o6caZzI49hEKSy+agutUdMR8Ch
-         7FuQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXte5bxE8ErRtFBYJrWr2jbUWOAewDIMS94KwRHXQfP8ndU+K0XO+MwUS0KbLrniiLIR3gpvDE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzQIeq3AjHT74BYC9C5iFEMpDTzjlHhUFqaRfYhP+L+LUBpJ/3Q
-	4nMkLNd7tDt+9gqiYE4+XcpIXbBxtWDBDnB2jJJTSINOZXIPvaGe+sKood/13sMWUmh7XhWfKK8
-	c746SSV5cKQCYTuObPFq15W8NbI7h8qMHTof3GxoezG8lpBxtju3y+hCzElXF6m8B
-X-Gm-Gg: ATEYQzwVk/v5haWGDxz+2ZwIb28+k5f+AjPkoNyGXJsUGxvjJUWgbh0C6CBaLmBeaIW
-	iigoMhdRY0SRdAjc/1cD0ADh8oGmJvn0YzANuH4A174kF0YNdQIao6CqYIKn4ngc2eX/oXqobqd
-	pHFkGfV+e9XuLnoook8BiZJUjo/mzMkxAATLWsimbc0e5BKATnXBeRHHGAsYX5bxMnHN5cywQ9l
-	Fl+YJf8e/ujLIAkAxMaqiKkfoYL6ujwuEqWwf66RYzhNubWd+YS6kYDHSStfacJjDs+tQ/MwBbZ
-	ZCXJt+812zunQeSEzuV0woady4Sd1vwZPkQWy6pI2eRVzZKTD6UAx9v4B9ZHDokkCHK8yXIy5w+
-	h9tY1eDyyOcrIPLZd/ahGkRBTVfnQ7dWiyA8e/fJozqt4Rjasrdol9CznzeEGXrOSO8ft7iTaS2
-	L+S160
-X-Received: by 2002:a05:7300:641d:b0:2be:1b95:2400 with SMTP id 5a478bee46e88-2be4e0655c8mr1446273eec.23.1772835375686;
-        Fri, 06 Mar 2026 14:16:15 -0800 (PST)
-X-Received: by 2002:a05:7300:641d:b0:2be:1b95:2400 with SMTP id 5a478bee46e88-2be4e0655c8mr1446255eec.23.1772835375083;
-        Fri, 06 Mar 2026 14:16:15 -0800 (PST)
-Received: from [10.134.65.116] (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2be4f94823esm2301765eec.20.2026.03.06.14.16.14
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 06 Mar 2026 14:16:14 -0800 (PST)
-Message-ID: <f825ae05-6285-4d10-9d66-578fb1221495@oss.qualcomm.com>
-Date: Fri, 6 Mar 2026 14:16:13 -0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 02/14] firmware: qcom: Add a generic PAS service
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-        Sumit Garg <sumit.garg@kernel.org>, linux-arm-msm@vger.kernel.org,
-        devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
-        freedreno@lists.freedesktop.org, linux-media@vger.kernel.org,
-        netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
-        ath12k@lists.infradead.org, linux-remoteproc@vger.kernel.org
-Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, robin.clark@oss.qualcomm.com,
-        sean@poorly.run, akhilpo@oss.qualcomm.com, lumag@kernel.org,
-        abhinav.kumar@linux.dev, jesszhan0024@gmail.com,
-        marijn.suijten@somainline.org, airlied@gmail.com, simona@ffwll.ch,
-        vikash.garodia@oss.qualcomm.com, dikshita.agarwal@oss.qualcomm.com,
-        bod@kernel.org, mchehab@kernel.org, elder@kernel.org,
-        andrew+netdev@lunn.ch, davem@davemloft.net, edumazet@google.com,
-        kuba@kernel.org, pabeni@redhat.com, jjohnson@kernel.org,
-        mathieu.poirier@linaro.org, mukesh.ojha@oss.qualcomm.com,
-        pavan.kondeti@oss.qualcomm.com, jorge.ramirez@oss.qualcomm.com,
-        tonyh@qti.qualcomm.com, vignesh.viswanathan@oss.qualcomm.com,
-        srinivas.kandagatla@oss.qualcomm.com,
-        amirreza.zarrabi@oss.qualcomm.com, jens.wiklander@linaro.org,
-        op-tee@lists.trustedfirmware.org, apurupa@qti.qualcomm.com,
-        skare@qti.qualcomm.com, Sumit Garg <sumit.garg@oss.qualcomm.com>
-References: <20260306105027.290375-1-sumit.garg@kernel.org>
- <20260306105027.290375-3-sumit.garg@kernel.org>
- <e0a86461-c136-4371-99cf-c0b0d31443a3@oss.qualcomm.com>
- <13091f47-938d-43fb-a8c0-4b081818b557@oss.qualcomm.com>
-Content-Language: en-US
-From: Trilok Soni <trilokkumar.soni@oss.qualcomm.com>
-In-Reply-To: <13091f47-938d-43fb-a8c0-4b081818b557@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA2MDIwOSBTYWx0ZWRfX/UHqKjyINHpc
- 8ZeItWhM7MEERiLuociK2KOkw59mUMfwwxeFlrWcbQfJAH1I8HGrjIxn5hsjhiimFWZbAg5O5wC
- IlUuTi8LplIaGQ/sGUdqjA92KTOOvGhySVIQ97GflVbQViPt2ZTwLRdzzOEarWRvihYZ3qKs8Tc
- DeCCGcA058iZVsOrCyWj9o9jR7GWrmijh2yHoXGCiKJLS9/h5tg4sidW0Cqg0XFImdGgnIoI37J
- TTEarTGhBmNAFBX/1e2YZ9hOGEk+LxfFpX5QxcYu/CVzVBFtGX4ANPbSpPg5waafQUvnAB4denF
- +SpxMBu4BaklsGIY3HniLYTqicmhs+Berb2pAlGuNIdUI1fLD4gUyuf0T3XAFIaB4lwj+nDaAxc
- dU3WHgUFdQFI5IFNfAvTQpqeBKg4QBdysc6N80IIZrqzt66YYucxfmZq8wX1VnPWdTD9Y/zej3y
- 4M0gvWGmbL6K8pYO3uQ==
-X-Authority-Analysis: v=2.4 cv=QfBrf8bv c=1 sm=1 tr=0 ts=69ab5230 cx=c_pps
- a=cFYjgdjTJScbgFmBucgdfQ==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=EUspDBNiAAAA:8 a=Js8INul6CuAu6eKS1T4A:9 a=QEXdDO2ut3YA:10
- a=scEy_gLbYbu1JhEsrz4S:22
-X-Proofpoint-ORIG-GUID: RZLWlIdkRFomiO9JKDHUvJ-d5oBJ6uba
-X-Proofpoint-GUID: RZLWlIdkRFomiO9JKDHUvJ-d5oBJ6uba
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-06_06,2026-03-06_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 spamscore=0 clxscore=1015 malwarescore=0 phishscore=0
- priorityscore=1501 lowpriorityscore=0 suspectscore=0 adultscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603060209
+	Sat, 07 Mar 2026 10:10:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1772878209; x=1804414209;
+  h=date:from:to:cc:subject:message-id;
+  bh=psUEuaoRdi+fM+BnJKCjS6GIKW45GPXlS3q5VB2ekHY=;
+  b=OZk99CjnTCZ7fIetEmYFWm2HMgGOJqSVdgyCyfGtWqpIAfG+SuEGqhUD
+   DZeIeN+CyavmthumV4OEKIlV2hADHzsQCx6Rdr1I0zdENqsegKoxp5Rxp
+   TFRMKgC/+qMGaZ0DtIh376YziMfqNm22o11uOOoF03/43rO9c0A6phWnb
+   WOHdJxHXbgX1JE+Gf9CRXedkfLGpHqGelN0Ulpwbalv/wKvwdQ8Twl0IR
+   0sGvkKgs0oBt9k9QatXYN6crkpCja7PcVSv1xYIyAo3/umZXez3olv8b3
+   SJXLuZerAY9uOEjHHhdwYJ62s9sdGKLDQuQdzNRA4vVeBv3KvG7ji+Jj5
+   g==;
+X-CSE-ConnectionGUID: OEG5Iq3RTVa4nMGi/2dWUA==
+X-CSE-MsgGUID: aoXv3xEeTOGWUBLB4N/riw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11721"; a="84611044"
+X-IronPort-AV: E=Sophos;i="6.23,106,1770624000"; 
+   d="scan'208";a="84611044"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 Mar 2026 02:10:04 -0800
+X-CSE-ConnectionGUID: r2ApRnkTTEmnnHwyZYlGHA==
+X-CSE-MsgGUID: VcwByHwzQmG8dNhiTgjLzA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.23,106,1770624000"; 
+   d="scan'208";a="223731072"
+Received: from lkp-server01.sh.intel.com (HELO 058beb05654c) ([10.239.97.150])
+  by orviesa004.jf.intel.com with ESMTP; 07 Mar 2026 02:10:04 -0800
+Received: from kbuild by 058beb05654c with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1vyobg-000000001s1-32oH;
+	Sat, 07 Mar 2026 10:10:00 +0000
+Date: Sat, 07 Mar 2026 18:09:16 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org
+Subject: [ath:pending] BUILD SUCCESS
+ 8e0ab5b9adb7fec3149441621df1cf15325b7215
+Message-ID: <202603071811.Jdk0h7Ag-lkp@intel.com>
+User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260306_141617_171838_5DC74D4A 
-X-CRM114-Status: GOOD (  13.41  )
+X-CRM114-CacheID: sfid-20260307_021009_739352_6393599F 
+X-CRM114-Status: UNSURE (   3.69  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,27 +83,89 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 3/6/2026 2:00 PM, Jeff Johnson wrote:
-> On 3/6/2026 11:47 AM, Trilok Soni wrote:
->> On 3/6/2026 2:50 AM, Sumit Garg wrote:
->>> +MODULE_LICENSE("GPL");
->>> +MODULE_AUTHOR("Sumit Garg <sumit.garg@oss.qualcomm.com>");
->>
->> What is the convention for Qualcomm authored drivers? In some drivers
->> I find that Qualcomm doesn't add MODULE_AUTHOR. Can Qualcomm community
->> clarify it here. I prefer consistency here for the Qualcomm submissions. 
-> 
-> WLAN team was told to not have MODULE_AUTHOR(), so ath10k was the last WLAN
-> driver that had a MODULE_AUTHOR() -- ath11k and ath12k do not have one.
-> 
-> And in reality it is very rare for a given module, over time, to only have a
-> single author. The git history contains the real authorship. So just for that
-> reason I'd drop it.
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: 8e0ab5b9adb7fec3149441621df1cf15325b7215  wifi: ath6kl: wmi: Avoid -Wflex-array-member-not-at-end warning
 
-I agree and that is the same guideline I follow for the drivers we write
-downstream. I just want to make sure that we discuss it here. We may not be able
-to find one single solution, but I prefer to get consistency for Qualcomm
-submissions. 
+elapsed time: 749m
 
----Trilok Soni
+configs tested: 69
+configs skipped: 0
+
+The following configs have been built successfully.
+More configs may be tested in the coming days.
+
+tested configs:
+alpha                   allnoconfig    gcc-15.2.0
+alpha                  allyesconfig    gcc-15.2.0
+arc                    allmodconfig    gcc-15.2.0
+arc                     allnoconfig    gcc-15.2.0
+arc                    allyesconfig    gcc-15.2.0
+arm                     allnoconfig    clang-23
+arm                    allyesconfig    gcc-15.2.0
+arm64                  allmodconfig    clang-19
+arm64                   allnoconfig    gcc-15.2.0
+csky                   allmodconfig    gcc-15.2.0
+csky                    allnoconfig    gcc-15.2.0
+hexagon                allmodconfig    clang-17
+hexagon                 allnoconfig    clang-23
+i386                   allmodconfig    gcc-14
+i386                    allnoconfig    gcc-14
+i386                   allyesconfig    gcc-14
+loongarch              allmodconfig    clang-19
+loongarch               allnoconfig    clang-23
+m68k                   allmodconfig    gcc-15.2.0
+m68k                    allnoconfig    gcc-15.2.0
+m68k                   allyesconfig    gcc-15.2.0
+microblaze              allnoconfig    gcc-15.2.0
+microblaze             allyesconfig    gcc-15.2.0
+mips                   allmodconfig    gcc-15.2.0
+mips                    allnoconfig    gcc-15.2.0
+mips                   allyesconfig    gcc-15.2.0
+nios2                  allmodconfig    gcc-11.5.0
+nios2                   allnoconfig    gcc-11.5.0
+openrisc               allmodconfig    gcc-15.2.0
+openrisc                allnoconfig    gcc-15.2.0
+parisc                 allmodconfig    gcc-15.2.0
+parisc                  allnoconfig    gcc-15.2.0
+parisc                 allyesconfig    gcc-15.2.0
+parisc      randconfig-001-20260307    gcc-12.5.0
+parisc      randconfig-002-20260307    gcc-8.5.0
+powerpc                allmodconfig    gcc-15.2.0
+powerpc                 allnoconfig    gcc-15.2.0
+powerpc     randconfig-001-20260307    gcc-8.5.0
+powerpc     randconfig-002-20260307    gcc-11.5.0
+powerpc64   randconfig-001-20260307    gcc-8.5.0
+powerpc64   randconfig-002-20260307    gcc-12.5.0
+riscv                  allmodconfig    clang-23
+riscv                   allnoconfig    gcc-15.2.0
+riscv                  allyesconfig    clang-16
+s390                   allmodconfig    clang-18
+s390                    allnoconfig    clang-23
+s390                   allyesconfig    gcc-15.2.0
+sh                     allmodconfig    gcc-15.2.0
+sh                      allnoconfig    gcc-15.2.0
+sh                     allyesconfig    gcc-15.2.0
+sparc                   allnoconfig    gcc-15.2.0
+sparc       randconfig-001-20260307    gcc-15.2.0
+sparc       randconfig-002-20260307    gcc-11.5.0
+sparc64                allmodconfig    clang-23
+sparc64     randconfig-001-20260307    clang-23
+sparc64     randconfig-002-20260307    gcc-8.5.0
+um                     allmodconfig    clang-19
+um                      allnoconfig    clang-23
+um                     allyesconfig    gcc-14
+um          randconfig-001-20260307    gcc-14
+um          randconfig-002-20260307    clang-23
+x86_64                 allmodconfig    clang-20
+x86_64                  allnoconfig    clang-20
+x86_64                 allyesconfig    clang-20
+x86_64                rhel-9.4-rust    clang-20
+xtensa                  allnoconfig    gcc-15.2.0
+xtensa                 allyesconfig    gcc-15.2.0
+xtensa      randconfig-001-20260307    gcc-8.5.0
+xtensa      randconfig-002-20260307    gcc-8.5.0
+
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
