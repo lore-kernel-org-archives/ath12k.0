@@ -4,104 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34D83FCA19D
-	for <ath12k@archiver.kernel.org>; Mon,  9 Mar 2026 23:06:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D00CBFCA191
+	for <ath12k@archiver.kernel.org>; Mon,  9 Mar 2026 23:06:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4nuiFplGeEPW6F+CQFmrK11Lx/4N6iGgXoWw2lOEPQk=; b=slZwQnzsHMNNKBnrmBFkp433x8
-	irSziwxxzuJ5nIYDwIqydMCTEKhWThN/5QgZuxarfL5C+bjzRalBnxx2+OUifVNbcyc3R033qMROI
-	2ulNbbD2dNPPywMYtL5KrTp5FherMQFsMYLNxMK+r9ZtvFe58PU5fE9ODDDFOGe/uggVa+/JoZVR4
-	4TXKaWqxi7bbbjXIVldp+n1/hYcxTS7u1SLxSom3YzL0wy6sf/Wnh8vx+tiXb7MTHG+LONbVv0teg
-	CBcBpjnlFWnkwe/j4QcUgltTFF9mpJ2jHQW8iLjGikueWv1ktd541V2NakWqLAzxF8puWfpdKJAnJ
-	NJK/JEqA==;
+	bh=/gz4Ge3MHwkUDTTkujrW9dZ+6p+ProQlBVOR/K4PwRg=; b=zlG3AXzsmstQKXSwvhZqT20Wn0
+	nb0TG0vDc9EjNwA4w9FNmSoz0cTFeXeZaF0cmACHdxfXVa1hpNPSpSaSqLhkO6yJenWeBRWVdXx+Z
+	bGR6i/yuVQ8HJxMztueFFW/jzSVuqji8AgGAzhG0MydDZPOldI0xKEPiGROEKea41Z8c6na1mm+Eo
+	id3odup9jfDQxRa2I5CHzhgq2wMVH/Qt5s7N2Hqhu/ty4P5szIDvnqk8wB6KgxXjE3CpEkLXkmGMD
+	Q1uOTSgjtQ1EoHyuWkdjZkhmLfAWKrgRORZ8skO3tbZpER/KsslyAmbjtB16aVoHKTrWlCfA7fTEX
+	D5ZNq7tg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzjfo-00000008Gus-3gUd;
-	Mon, 09 Mar 2026 23:06:04 +0000
+	id 1vzjfq-00000008GxG-0WtK;
+	Mon, 09 Mar 2026 23:06:06 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzjfm-00000008Gos-0aIh
+	id 1vzjfm-00000008GpF-1ISY
 	for ath12k@bombadil.infradead.org;
 	Mon, 09 Mar 2026 23:06:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=4nuiFplGeEPW6F+CQFmrK11Lx/4N6iGgXoWw2lOEPQk=; b=Ul5L4/vBf2GH1pordJt4cuVEWo
-	lnsYrf8cFWz5ur7b1paXWwxYoa3G/jGUFGy/d1fGQVso55A4yLBmuWe/EgKgfIWPB0dq7GZfMIIyD
-	kZ5h++F+3wWmtcwJC5cwk5nyaKEsdCqUblBynodHAct4S3mpmOGre3/mhD5gqqmywklaR50BKBgaB
-	2wb+nsvUf3rDAJA49p4kzDYa6tcPWDQShLoyGSBDk3sVB7LLpzESN/DqYN0iIkcpMGQSjcxmFPOUW
-	uqV7EFbfTz/LjJzx/E9G6ltBhOD9CQdl84r8ruemeempMncNgUMhhfdjJu6Hs+daRjmZxOSo6k2aC
-	od1Cwr8A==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	bh=/gz4Ge3MHwkUDTTkujrW9dZ+6p+ProQlBVOR/K4PwRg=; b=iz8s1kTrCEeLiIWpJcx4u9sx7/
+	j5t1AzeU8tGClu2SK0ASs7CigFq+9lc3Kf3y0s9rUnqkOAaQmIMIrXlLQ/4Xf36VtuLFNXFPlWNlm
+	PtYHK3+Yvbcpacv94hGZEzQZn4yKR/v7hPud7lIqitvrulPLatOdsOPkydM2bVRtQHG73/EiMfaic
+	qXeyCxtFfaODky16jo+FA4+E9A5M42j+YDtEVu8jnQk7MCliTvvPJKh1RYsxQCnn/f65F8I+T6ffz
+	WUPRazYvBas8csNN1I9m1fpo9xkJnuRAKtho0H405G9KXyVsg/mDQzj7+p/uaZ8zPX37L25xiZhn+
+	bzwTr+tA==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzjfb-0000000DJnC-0Tbz
+	id 1vzjfh-0000000DJnw-2bSs
 	for ath12k@lists.infradead.org;
 	Mon, 09 Mar 2026 23:06:00 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 629HBhwl1659911
-	for <ath12k@lists.infradead.org>; Mon, 9 Mar 2026 23:05:48 GMT
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 629HC1PW2427925
+	for <ath12k@lists.infradead.org>; Mon, 9 Mar 2026 23:05:56 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=4nuiFplGeEP
-	W6F+CQFmrK11Lx/4N6iGgXoWw2lOEPQk=; b=gloHc0jcRhYOoGyz7DgdnhjiojN
-	H9hpeKUd3Kr08GXwo2N3xaErYbMYE0ASu4NTUYcKjZ9ez2A9Ln/ugpg39/yqLKpt
-	mJqC7xYLnB5LKufywMAf1lsUOjU0QpQNbrVZdB+sEyfZQPgeemL8PYJLPvILMPtg
-	J9WFvV+Y+4Xa9nvrlKx47wQN0VDhAsMxk6T9hBaepKW6iyHsUBePHNABli94ozlE
-	2crJCJTHgxTLIb4YTD/Z6PXFQqMxMW/7NsUo2SFXI008JG2dOtvgKhb9qGrKUvGX
-	iIBjRfQLrG1MsJtDR2Pool1dBuNiAgVrmfsr2Hh17M6MiZ/6pAmlisLu84Q==
-Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com [209.85.219.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4csyr41k83-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=/gz4Ge3MHwk
+	UDTTkujrW9dZ+6p+ProQlBVOR/K4PwRg=; b=PaYhT6eylqd83bpMQFYbYaV0W5S
+	mkzH1MgbfuAvBJ/7ojSkvwmB2brtv9Dy0UGX8UfrUnxTxvdkTdNan6OUS2+NvZ3e
+	sF4nS+5Yv9L3QfuMDCsD6Y+UAuJmb43YTmwqFS/Gys81rzF0MMxK7v08rJZhdA1b
+	WV2fQRVJm2zf+akHmBl5+inla5z3FhhzRUmrUlgsAKzOM7bgrX6B1OO3v2UxpUMA
+	AYOSjkMi2Tv+TU2zS8pwaDgeJpYWAu2pVQBaPXzhjOTfhZ+VLz3I6w89RDpVfuLp
+	GxB1r5AI7dmq8fbxWWH/M/nZkJFhPG1GwJ7GLHTCooGJvaSAAf/y037ZHYw==
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ct1eks919-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 09 Mar 2026 23:05:48 +0000 (GMT)
-Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-89a116bf0f8so453952646d6.0
-        for <ath12k@lists.infradead.org>; Mon, 09 Mar 2026 16:05:48 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 09 Mar 2026 23:05:55 +0000 (GMT)
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-8cd7d66afceso1295837985a.3
+        for <ath12k@lists.infradead.org>; Mon, 09 Mar 2026 16:05:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1773097548; x=1773702348; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1773097555; x=1773702355; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=4nuiFplGeEPW6F+CQFmrK11Lx/4N6iGgXoWw2lOEPQk=;
-        b=gADvGCnJXsPlYFIOLrc5wEAY3YuYBX5tnO9ZkjKz/veA/zZAGX7lIKYDtJ+yCIMGLf
-         NvXOYIeH+iFo/2GSm8sG/juqDkd8766lrLqOLd/MvSr3xwgqE+jR0Fg1mpqeNiUpa4B2
-         fFmmaSVcBXjS5kNPS/3QWGolg1UAvdEWHjDZexln+rA2IDSimY31efRlpvaFqZ9JonMe
-         MFY/JboedXmGOrv5vvnzen5SHjZXaWtoqxxlHZ9PwyK9KmC0sk5FQwgExMXWaNNY6ipI
-         mv9EhAwI8WX+/UV2MLOEhnHv1GQz56Lw59jzTK8gC7RK8r0z5+OSsdtDV8VAhLVRBFuU
-         MzRg==
+        bh=/gz4Ge3MHwkUDTTkujrW9dZ+6p+ProQlBVOR/K4PwRg=;
+        b=ALkhCVvFin0U+kAAE/wV2k9F97L0pP18pcQDHumRUfUyw4w29zvAim5TPetDZ+Np6s
+         TNLNzkWJrbDLNriE+CFbawyOVeOduiTwyi4qebe1QGA9SbL/jGilBIkFp38gWdcWwSMG
+         LgxftnwTXz6MRNUjWlPd1C1fnfJtkzak3ROeCG8zXy718az0SCSRkXwwyYgXYmphw4Ey
+         8qKV1wfScNNyq7/vKetGKmifOOn8V2AQzn7BgGyAmzb4Ipe9Z/gU5ebp1+LaWdwImgOa
+         bjG3IIxBdSFhU55mcIaJJ2hsFryKxCHH3+CStyS7xsobyO2ID8vxIUZFzr6ICcgwP8fY
+         ZsKw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1773097548; x=1773702348;
+        d=1e100.net; s=20230601; t=1773097555; x=1773702355;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=4nuiFplGeEPW6F+CQFmrK11Lx/4N6iGgXoWw2lOEPQk=;
-        b=oj/gnYOrLD1QrLYN+3uWoUnuFYTbqiUqKBVcY0OKCD42HBTiTHUGQyr4OdFhtRGJqK
-         YMuKj1vhmvaWzSALPT4zh6Lgjxn/aqSL+tSVoHAQohLXK9t/vlqnXT6SiX0HI4YA2uyk
-         KDQVPB7BadsMfox96Xq45OF7J8F05x8hdqSeLxlQiXnZcVElVBfwx4+91kP8c4DXKHU9
-         WfUDnIogijOZmzS5HWtdGXFT/t7ezoTwpaIVqwIOSEMAt2TRi/Q07mzcMETZKYmKJwIW
-         USMWf2NTRz4/rWF8v1QD2hShe7gh3ab245hU6Qjk4A+PegJ9VHgYVkpE+lvzk0+w8uqK
-         hZIw==
-X-Forwarded-Encrypted: i=1; AJvYcCVxxhrV/sBCQOEscwwntDa4m2+VS+FwEvS7LecRZCN+026Jf5ceAspFFv9iaBgW6gFFtrMoY6M=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyVHZwMaPNlmYrOpM0sgeN1Bx2Zi7QBEueCQsIl8WOmleVLPboS
-	w+UkYwRZ6hB4KKL3mLSkh75KIFqr4Q+KLTd0XKSxpLx6ju2uiRkCMqgnAEGMOe2VVqTFcYghFE4
-	tuQy+TuPpgIVQ6GPHxGg0DyyWb/FnnqQXNSPbK8kZbv/CAIWBkLEg+DzP6xWcUGTc
-X-Gm-Gg: ATEYQzwOYZsC2bbkM81KqTNvaudXqEssey+03uy30Hduj4W4ZYOOPNb9fUW/kJ9SIE1
-	MH34Rx1eWKn7ZoVbZCkRo0bbhqUYjOefEvGxVHF/U4FZDzKqsk2sr6KYi4VjsIN6UzuRNIf1/zu
-	uB3zHd8XrVrNxYvZ7UfCE/AxLhIs130C6Q+kUObuR4sNZ1sgnSe25mvdYEFwnXXH+sBjzqamFFm
-	4Zx+odZhMsFLLTS4dp53G5wl6UWlAQzsL5kwWF60qFKbcJwa21zQEzgWu7Rc3ByMcyMVN7+cvBp
-	m3kZsB8Ee8xzizTp3SJlBcZ66w5pUwLJ1nBwIuCk/WTfT7hwdl/p+VNPgQKerW9WEFAf4WNI/NP
-	wvkoXJhlL7pBJfRkINka7zlLGwYk4z2QjK+AZRgRW52lIvs10rQ==
-X-Received: by 2002:a05:620a:40d5:b0:8cd:8d4c:aa0c with SMTP id af79cd13be357-8cd8d4cadd9mr467938185a.0.1773097548037;
-        Mon, 09 Mar 2026 16:05:48 -0700 (PDT)
-X-Received: by 2002:a05:620a:40d5:b0:8cd:8d4c:aa0c with SMTP id af79cd13be357-8cd8d4cadd9mr467934285a.0.1773097547515;
-        Mon, 09 Mar 2026 16:05:47 -0700 (PDT)
+        bh=/gz4Ge3MHwkUDTTkujrW9dZ+6p+ProQlBVOR/K4PwRg=;
+        b=M7CuWEIjt0IEljPhKBr0oi8yHeARQ1iBJmPsWY7GBvDK7tK1QPvsFUno54mExhlDPj
+         HWE3Iweup6T+zv2rULfzYZ0wNYQPf2m0Vm6kynXZlWI/qSbOWjwlo8+fAHeWObwLo/wM
+         NoOKzynmaP9jtja3ees4K4Jajgx+qGtHtAWbInQ8QYmqq3lIuy1t1OJqVMIqBsU63uiL
+         JMbCo4Dz1t3WmhNnZQZfw0fexiw8yErv6Ebw50lbEbVc9najQnPEz1Y4W4Pvk1mTpIoe
+         Aca47G0V4lZ81scAGQRo53EAO90jGbmRnJ+/2/ibh/G95K4JRqbkElpjAwGiAsP4exYi
+         Um6w==
+X-Forwarded-Encrypted: i=1; AJvYcCXLI7gi4aecI/9i0bJLu14diWudzbCf6MoXzcmfWIPxJp0PwxvCbNNA0Pww3z09sOz69pgk/Gc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwuCHBD2e9aVxAkiRDAc6A2yJzxsSc+M1Ikqye8jCBRSCJtT5ox
+	FoaGAkDzUkES+E81sefPEK8Xb8rLcqHlDhcw9pj6gtpJJ3X+JmF3Cue8N0nN/9NqETnTi0isIzi
+	Epl30ORSjS07b8FZEi8a9Ok6ns+m/7OFjlNzWhkoCjsnMcpzi8KnxjUn2vLduvYVg
+X-Gm-Gg: ATEYQzxMYtEfRIBfEkYw/MzIyAFMD7YTC87wL+ZgpJm4SMjFJTx8siILqd0qZ5Hqc1s
+	S8UyTpS9WYvoYfB2WLZ/SVOc0XPAEFktd6f5zB53Mw9FWGmZDXJvqo3Iw8ssMo/hjeBZeMD5r7K
+	0G3NES+ZMPMp1GHwkLVZ+Q7Di7pIouxX2/7Qu0pBR8gJo6bJ+ofJ4CuSnE4DiyVPZ9q0Aa7HnaA
+	DZWxPics2wwpqeiG/E59pyQ1t3hATcmmYU3eGGRQRP+zDHa27K778phq+fXnR2PMDHIO344r1ud
+	UIXVVYaL5EbANi+UTZ2/nMSPMn82jssZzaMP/uObsldcicXv8AS7IflA8TemkAQJ5yu1XWYsoOr
+	prvEvBQMQ7jzvn4IGZt8CPdfCPGS7iaiiTGZcfIwX82YxPQ/D2Q==
+X-Received: by 2002:a05:620a:1728:b0:8cd:8e8c:2076 with SMTP id af79cd13be357-8cd8e8c242dmr439790985a.77.1773097554749;
+        Mon, 09 Mar 2026 16:05:54 -0700 (PDT)
+X-Received: by 2002:a05:620a:1728:b0:8cd:8e8c:2076 with SMTP id af79cd13be357-8cd8e8c242dmr439783485a.77.1773097554104;
+        Mon, 09 Mar 2026 16:05:54 -0700 (PDT)
 Received: from mai.box.freepro.com ([2a05:6e02:1041:c10:ae20:597c:99b8:d161])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-439dae3d98asm33898478f8f.30.2026.03.09.16.05.46
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-439dae3d98asm33898478f8f.30.2026.03.09.16.05.52
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 09 Mar 2026 16:05:46 -0700 (PDT)
+        Mon, 09 Mar 2026 16:05:53 -0700 (PDT)
 From: Daniel Lezcano <daniel.lezcano@oss.qualcomm.com>
 To: konradybcio@kernel.org, andersson@kernel.org
 Cc: linux-kernel@vger.kernel.org, Alex Elder <elder@kernel.org>,
@@ -120,40 +120,40 @@ Cc: linux-kernel@vger.kernel.org, Alex Elder <elder@kernel.org>,
         ath11k@lists.infradead.org, ath12k@lists.infradead.org,
         linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
         linux-sound@vger.kernel.org
-Subject: [PATCH v1 1/8] soc: qcom: qmi: Enumerate the service IDs of QMI
-Date: Tue, 10 Mar 2026 00:03:30 +0100
-Message-ID: <20260309230346.3584252-2-daniel.lezcano@oss.qualcomm.com>
+Subject: [PATCH v1 5/8] slimbus: qcom-ngd-ctrl: Use the unified QMI service ID instead of defining it locally
+Date: Tue, 10 Mar 2026 00:03:34 +0100
+Message-ID: <20260309230346.3584252-6-daniel.lezcano@oss.qualcomm.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260309230346.3584252-1-daniel.lezcano@oss.qualcomm.com>
 References: <20260309230346.3584252-1-daniel.lezcano@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA5MDIwNCBTYWx0ZWRfX0Tap9/ce9yZV
- tAEbchok4WPRiUwzyA6JJTZEClgPNqTgWh8bhUzTXPVrozaOZcIfntULzI1m0uEnkT5ePSQBMUh
- R8RXvNfgGNb3mIAEaOz5M4No+hSCKih7D8oMEaH1rZ2yrt9VilCd6T65ZjsNA+9maXaPsOOIf1t
- Z/s342/F5nx0clQf//3cFkaQ7epCyJWrJQT21I4yk5rzlTQlNHTxbZk1lNf4T53UG3NedqMA8Cr
- GnhRR3MPC7vc5b/bEMyg5bakPtkAdSDmOCwrnCP+KcWo0L4zA82yN7OZHsGKYWYzUwgeh3XeET1
- sktu5sIuRFEu2oUxB0YwkaoOCxeQ+AfqLjmk0evUlNPQH09aTwni7h3ey435E6lNvC/BTLOZ2ca
- KE63L+/MDNCI7bBZ0HyU/3B2Ej4GBZs28HQfLJjl9J1gciRVT4O+7LSboA4PFVdc6V60kXa+Gbo
- 02dt3FXkJtA3Tnd0GVA==
-X-Proofpoint-GUID: cC6soT4_OOdW6SNSQRttj1-i0IgtZ-w_
-X-Proofpoint-ORIG-GUID: cC6soT4_OOdW6SNSQRttj1-i0IgtZ-w_
-X-Authority-Analysis: v=2.4 cv=KNRXzVFo c=1 sm=1 tr=0 ts=69af524c cx=c_pps
- a=wEM5vcRIz55oU/E2lInRtA==:117 a=xqWC_Br6kY4A:10 a=Yq5XynenixoA:10
+X-Proofpoint-GUID: _rV2wePl9tbMIS2wPDWHG0vfeBFtDrp6
+X-Proofpoint-ORIG-GUID: _rV2wePl9tbMIS2wPDWHG0vfeBFtDrp6
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA5MDIwNCBTYWx0ZWRfXzJZoYqIh9O1S
+ NuZ34FGygbSjyIfSsxj1Ij2YMdoFl2J5kv44JQ63Kz1DHmyzweML4TV/O8QZCkYPO7X3ckg/8O7
+ GGu5H9bIkkUIBGwC/5gUXidlRQb34+3LBazw1mcK1g9PaGeWX9B934UVoVvvQe0IQc3cn92BVyy
+ ulSQYdUsvBDcY9uFgPuIpLMh9SXD1oZ1slxQHceqW/I9QeePJUY2aJghW9f2WgXAfIoBAc6pOHI
+ v1l3wd3apLSZeXm8MtPESQW4SI3ZFpBdkPtnEqI/lbI7D42LMrQBRstqp5ZzzbSKK8PrDlIXkmg
+ sc0h6wrtAz2PJBA69b9VwPtiM0Z43NVihfo7ENbeBK05GtgHhg9cJiHeV5zOGdAM1qV6bADIbLU
+ BRlvMq9t52HDGzDbjY2FhwcxQ1ln1wENn8us4MMgjk02b2dUbpr4gnamBnDN76YnyNhN4VgiNXi
+ ZidIQc+z1EwmIeL86Kg==
+X-Authority-Analysis: v=2.4 cv=eIEeTXp1 c=1 sm=1 tr=0 ts=69af5253 cx=c_pps
+ a=50t2pK5VMbmlHzFWWp8p/g==:117 a=xqWC_Br6kY4A:10 a=Yq5XynenixoA:10
  a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
- a=yx91gb_oNiZeI1HMLzn7:22 a=EUspDBNiAAAA:8 a=NWmyY4P_PqWfpxtJLaAA:9
- a=OIgjcC2v60KrkQgK7BGD:22
+ a=DJpcGTmdVt4CTyJn9g5Z:22 a=EUspDBNiAAAA:8 a=PhtMypRRY1SmXJO8NnMA:9
+ a=IoWCM6iH3mJn3m4BftBB:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-03-09_06,2026-03-09_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 impostorscore=0 spamscore=0 bulkscore=0 priorityscore=1501
- suspectscore=0 clxscore=1011 lowpriorityscore=0 malwarescore=0 phishscore=0
+ impostorscore=0 bulkscore=0 lowpriorityscore=0 adultscore=0 suspectscore=0
+ spamscore=0 priorityscore=1501 malwarescore=0 clxscore=1015 phishscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603090204
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260309_230552_626375_54015F7F 
-X-CRM114-Status: GOOD (  15.93  )
+X-CRM114-CacheID: sfid-20260309_230558_872386_E06E51AE 
+X-CRM114-Status: GOOD (  14.42  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,47 +168,38 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The QMI framework proposes a set of services which are defined by an
-integer identifier. The different QMI client lookup for the services
-via this identifier. Moreover, the function qmi_add_lookup() and
-qmi_add_server() must match the service ID but the code in different
-places set the same value but with a different macro name. These
-macros are spreaded across the different subsystems implementing the
-protocols associated with a service. It would make more sense to
-define them in the QMI header for the sake of consistency and clarity.
-
-This change use an unified naming for the services and enumerate the
-ones implemented in the Linux kernel. More services can come later and
-put the service ID in this same header.
+Instead of defining a local macro with a custom name for the QMI
+service identifier, use the one provided in qmi.h and remove the
+locally defined macro.
 
 Signed-off-by: Daniel Lezcano <daniel.lezcano@oss.qualcomm.com>
 ---
- include/linux/soc/qcom/qmi.h | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ drivers/slimbus/qcom-ngd-ctrl.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/include/linux/soc/qcom/qmi.h b/include/linux/soc/qcom/qmi.h
-index 291cdc7ef49c..b8d07f2c07e7 100644
---- a/include/linux/soc/qcom/qmi.h
-+++ b/include/linux/soc/qcom/qmi.h
-@@ -92,6 +92,18 @@ struct qmi_elem_info {
- #define QMI_ERR_INCOMPATIBLE_STATE_V01		90
- #define QMI_ERR_NOT_SUPPORTED_V01		94
+diff --git a/drivers/slimbus/qcom-ngd-ctrl.c b/drivers/slimbus/qcom-ngd-ctrl.c
+index 9aa7218b4e8d..0b88b8577bdb 100644
+--- a/drivers/slimbus/qcom-ngd-ctrl.c
++++ b/drivers/slimbus/qcom-ngd-ctrl.c
+@@ -48,7 +48,6 @@
+ 				NGD_INT_RX_MSG_RCVD)
  
-+/*
-+ * Enumerate the IDs of the QMI services
-+ */
-+#define QMI_SERVICE_ID_TEST		0x0F	/*   15 */
-+#define QMI_SERVICE_ID_SSCTL		0x2B	/*   43 */
-+#define QMI_SERVICE_ID_IPA		0x31	/*   49 */
-+#define QMI_SERVICE_ID_SERVREG_LOC	0x40	/*   64 */
-+#define QMI_SERVICE_ID_SERVREG_NOTIF	0x42	/*   66 */
-+#define QMI_SERVICE_ID_WLFW		0x45	/*   69 */
-+#define QMI_SERVICE_ID_SLIMBUS		0x301	/*  769 */
-+#define QMI_SERVICE_ID_USB_AUDIO_STREAM 0x41D	/* 1053 */
-+
- /**
-  * struct qmi_response_type_v01 - common response header (decoded)
-  * @result:	result of the transaction
+ /* Slimbus QMI service */
+-#define SLIMBUS_QMI_SVC_ID	0x0301
+ #define SLIMBUS_QMI_SVC_V1	1
+ #define SLIMBUS_QMI_INS_ID	0
+ #define SLIMBUS_QMI_SELECT_INSTANCE_REQ_V01	0x0020
+@@ -1408,8 +1407,8 @@ static int qcom_slim_ngd_qmi_svc_event_init(struct qcom_slim_ngd_ctrl *ctrl)
+ 		return ret;
+ 	}
+ 
+-	ret = qmi_add_lookup(&qmi->svc_event_hdl, SLIMBUS_QMI_SVC_ID,
+-			SLIMBUS_QMI_SVC_V1, SLIMBUS_QMI_INS_ID);
++	ret = qmi_add_lookup(&qmi->svc_event_hdl, QMI_SERVICE_ID_SLIMBUS,
++			     SLIMBUS_QMI_SVC_V1, SLIMBUS_QMI_INS_ID);
+ 	if (ret < 0) {
+ 		dev_err(ctrl->dev, "qmi_add_lookup failed: %d\n", ret);
+ 		qmi_handle_release(&qmi->svc_event_hdl);
 -- 
 2.43.0
 
