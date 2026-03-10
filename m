@@ -4,156 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA894FCC9D1
-	for <ath12k@archiver.kernel.org>; Tue, 10 Mar 2026 07:33:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5246EFCD9F
+	for <ath12k@archiver.kernel.org>; Tue, 10 Mar 2026 09:56:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
+	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6jGZMz8cc7oYRoVY8qQfu8RJQuvfF597ul+4q7rukKg=; b=LXw7TnewFZfykMDHxB4K5zzRMY
-	8az5Wovn5XGeyovWmVc0C/8yzTlBV2NHrw0qTbIMTmyvMKYH4Hsp3gW4TxxbujgPI1kayVuyHKq/4
-	UuYblrDS6CA9FZgxfkmEWDOjSERNtg45l/A6VJ+2AJU6XCUJg3k5x8aMqjLpbYBfUJO5zlixYNid6
-	IrGCDqYADZv1b1FDAnqWQOdZJ5HA3CiTDuIMakU7K+yuVq25j3cAm66QoUVY1UJAasqH4n/heWGM/
-	JBFS52wGVOm3quQX+Qk90xypFTchdx0a+m/8J6O3EwHywjB/puVCeTadTd9flVcyk8poy4f20HW+C
-	/tGyEuag==;
+	bh=N+QDzmjxHMtTeBXgcnvJGsDEHOK57cB0KyxE1y787/s=; b=Pgpli5fyiZOJOW1UEN7zduUQig
+	DiNxjo43ffPH5WAq3qm0l5d66ja3deMDEKy8F47HfpDmru54Y0PlnbD899aBNmWT9Aibvabv/wJU1
+	d3W8n4icRvOFb+Zs1jg+F1zUaUSf55tEsCFuP5b7uA7dyFNvziHReCi8BnlA86bfRPwWU/Q3KVMGk
+	QmEkMsHxLKz2UWJQTyM2m7EJtJsAqSP5cX555i32JBI/Hfa5mdrBK6yryrpVKTAvjmabRHsH5jHml
+	EZNj1ItG4j+aFUPZlQKPbBNLjkWsUQqKdYcUcSd16bBQEXeMbEfYWhlh0S4pAd6wsBpzWz/qUtY36
+	15v6cM7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzrbI-00000008rAW-1CdG;
-	Tue, 10 Mar 2026 07:33:56 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vztpH-000000098pg-2HQe;
+	Tue, 10 Mar 2026 09:56:31 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzrbG-00000008rA9-0se6
+	id 1vztpF-000000098ot-0ElB
 	for ath12k@lists.infradead.org;
-	Tue, 10 Mar 2026 07:33:55 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62A2EZVP1900138
-	for <ath12k@lists.infradead.org>; Tue, 10 Mar 2026 07:33:52 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	6jGZMz8cc7oYRoVY8qQfu8RJQuvfF597ul+4q7rukKg=; b=Kis8Ct9GRpNmKtwJ
-	DyqBDWDrEjtOX6ie7KU2k4gGiK6S1xJnr/EMX8A09/MbLt6LYEq4cHuVIFVihy36
-	hvZ8umOrJM2qHjWLwwBnZ3ME5SUkiQlmBnwHw+Fw8ZW0NAWQb2Fj9m7I3GCbc8z6
-	B1kiQa2ZhdvLozL49xc9r4EArybe3waENlPry+rHf0tlU7vkPmHnm1tFbHwGD3Q4
-	5LQl24b92P0mP1QvwbvaR8TXolpX7F5C7a42euRwpoVmvScFy06ftvc1o0cIetmk
-	skOJToP807conUhcupSLAlv2eGl0B9Y/7bdYqn/673W6OJZkkHPjgEIlLbK0nPmH
-	OT+mpg==
-Received: from mail-oi1-f200.google.com (mail-oi1-f200.google.com [209.85.167.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cstsac6ya-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 10 Mar 2026 07:33:51 +0000 (GMT)
-Received: by mail-oi1-f200.google.com with SMTP id 5614622812f47-466f705757bso9500180b6e.0
-        for <ath12k@lists.infradead.org>; Tue, 10 Mar 2026 00:33:51 -0700 (PDT)
+	Tue, 10 Mar 2026 09:56:30 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-439b73f4ab4so9221253f8f.1
+        for <ath12k@lists.infradead.org>; Tue, 10 Mar 2026 02:56:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1773128031; x=1773732831; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=6jGZMz8cc7oYRoVY8qQfu8RJQuvfF597ul+4q7rukKg=;
-        b=DXBhlJpKyHFOfd1mCKW+3M92Ar8LCGiqmQdwOUt6sGVgka1ptLtaM7z9MGApBOEkOe
-         wWXvAm8MmLRmPNV2xEYKivALqKGI3s4TtP/dc6q/eIOpSUkilE4CQez+9eNxa1Z+B4Ly
-         qDsChYu6MXPq2VNmyHobhj/Tq5nnuelQFO91SeYnFOFKLbqtde8Z81DdF8S73zg8ts31
-         P+IAJHXZLsnJWUztEIp4jjPqfp1hBHZbMEpQlGXGTAon/kbbuupfs7gecwuq5Yg8FrD0
-         qklg6rfNgazsmRyTKIix+ezUC9lIiTF/+/2KzdOlJ9eTG2SkZJvpRakyc9W/K41hdsNX
-         CBPQ==
+        d=gmail.com; s=20230601; t=1773136587; x=1773741387; darn=lists.infradead.org;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=N+QDzmjxHMtTeBXgcnvJGsDEHOK57cB0KyxE1y787/s=;
+        b=JD5OTd27ptLHGjo/+KHgtlebsTYVMmamRB4DKonRpvAXYHdHornNWVpKyILOT4efdw
+         e71isiS5mvP8yvFhtEOFQDOysszJ8sltCxjTQ1PM+h6ADC/mjFPhxJjKv4FxtJ7pZbPx
+         HJK0JjfvFfGbS6FysvhayyXJ8fSPAi58WrSBVIGRKEgf42ck/Jt+23illHgtjF8LWS4I
+         YgxFbKXgqCVqQCryyUFbTUgQ99jETvodxSnekHaQPKqTIk6XAhT9m9prCM9QPQ5PyE7q
+         Ss2SU77eZl6So8TZLd9ug4+sWKK0wQe+zZug5Gqtg2gOGTOlB1yrR6ke1cr3i7Xg7g/+
+         VPsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1773128031; x=1773732831;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=6jGZMz8cc7oYRoVY8qQfu8RJQuvfF597ul+4q7rukKg=;
-        b=OYL0LwXZoZ8RqItz4IgC9AbN7+8PGHuCNpHhWp60y20chG8WZi/lTN3SzTcld1pv05
-         NRxsDkIHwfdWFvlX5o/RGdbldVfHGqsaW0i33eDZ4pfVDg3/VoJCex3vnr8sPsJocSat
-         W6BOsaZf5YgXZT1GvbZw/x4UsXPVgyFqk6FbrEgBsE6kzIRU/Dw/Pnjojha4xWwifK1I
-         yMgKVzsJMujRVxiaZi+eerfgUsG1YnHW3UCRa8NLzqxZIDiiNWSCtD+asvNWBuviAXSR
-         9oavFyUIxPGdUVkOYJbxgQrb3k1nuOSEU4uKhe4Z8wHzVRrtc1djYCwZM5WSh35lL9kN
-         DYhA==
-X-Forwarded-Encrypted: i=1; AJvYcCWvWmvotsAYxgP9Q9wwQhK9vrdlPtHty6Qk669opsujctUzypcegB9tU8zd+TYmG0B9lD10ayQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwyPvIr79p7jQ1z7nQzFuaTs1wfUifqXmfXMFG02JkDvKM76SEX
-	HnoUI3msYC0nOTj24T1AupQtQ1bKqCfsSwg2j7l+dREnjwinL4ToHES2IAUsp+gqPhGZ3I6fBq+
-	gTvyNCaWCZdkBEDzoFmjwi7RXyRTTtF1YvyVFUSdGoniwf5EFi845sykb0uaB7ujE
-X-Gm-Gg: ATEYQzzyQ65kt8clI2FW/mEzi0K4XQ4C/6HxI6i0LUZxYdrnvtPIXpdK3ab0hEr3/KI
-	mTrW6xYB9IsKCK0U8GOQ9Vd9w87qKuYk5sEBOhwB3hY8MyZy1t0URxWCa4mmvwrGjsJibLyGq3s
-	ZH/AsejgDvG7qd4S24YUcRrGeP+B2cdKE8+h9DL5ozo5ELfLofT42069wlFXd3+ZsBlc01Jhf0g
-	2UIilU3I3zyXGzKqqA5dYioMuntCrCXL3Fd1b0lNAav595GM6Z4xYJyUvFc0BlUjq5sy57JxEb4
-	eu+qbPknTdrNuPeclNrwzhXpFXwS7qZFoESEbgO96tVuLSkLtUvF2z+bB/O29UBF5Mtzx18TbCO
-	EWFXzBaTgztw/xZa8ryOQkHTOHHN6DoYrpytXTXCW9VQ03mJzhN5HPrw=
-X-Received: by 2002:a05:6808:1189:b0:450:275b:d942 with SMTP id 5614622812f47-466dca7e59fmr7695422b6e.10.1773128031296;
-        Tue, 10 Mar 2026 00:33:51 -0700 (PDT)
-X-Received: by 2002:a05:6808:1189:b0:450:275b:d942 with SMTP id 5614622812f47-466dca7e59fmr7695383b6e.10.1773128030815;
-        Tue, 10 Mar 2026 00:33:50 -0700 (PDT)
-Received: from [192.168.86.165] ([76.176.48.107])
-        by smtp.gmail.com with ESMTPSA id 46e09a7af769-7d755603798sm2041412a34.29.2026.03.10.00.33.47
+        d=1e100.net; s=20230601; t=1773136587; x=1773741387;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-transfer-encoding:mime-version:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=N+QDzmjxHMtTeBXgcnvJGsDEHOK57cB0KyxE1y787/s=;
+        b=OxQKizPs+lTt0xi85QquYzh93TtZ7q7oXYuEXLkkKaem+uS61L/1MYk28+c1wX7T2i
+         QlNYA4wUiscApDFo86EKGCCERC6mSJbsQRxU8ymwO5DyMKGhENoC93hGWA00y7IMfpSh
+         eIkrRb9/aCU19bJdRziM29etbowjGiT2RZHz26K2N5kYdRcRB62OFyDN+NmioyJvuwrD
+         y6NtDFGn3RtyDUfYYNks/uv7BfPgJoCPLHJ6P5rdXqTkECww8k+KnMAI5xeBnc65oNMm
+         zxO5wMww1Xfse3Xw/f3AjlKNc6dzxUY+8pRGjeHOL2Zj+7W+UYoZ6AwcVYj9zP3lm89W
+         +eUQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWsattIWU7axrSltZPJBCNn8J6WrSK5fBQrzflcFcPufIwVfDJWEjpixOyn3DNSIS5Z4/hazpE=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyr0uQxpgA9GPU7VR5pQZXcLBUJaqz2PNgg8bMif3PRjAlsgq9g
+	4Yv8cmAGNrA0KsD/yG6ai95KgNslimkiku6zldWrNnxhbvNgyH2fflSR
+X-Gm-Gg: ATEYQzzAbx8XPOTVquo+m9yzjk8YZJdogckjyD7/gwljxvOV8LImM45Kv5/rWVtWd3M
+	YRawpGvPUTTefehNAh7ZPvL2mhUFg63DmxZ15sRyGYiEZhZlvjliZdZKGobzrvb+a4N2oolEaac
+	jI2EKPgeOYhnJ0YRldW14wh57YBcdgO7ihUsEOTQTypw38N1I1o309LZELM+0dkCa+jj+AwHFeF
+	q+NTqn0oS6ORIlwKOGI21MWli3IcBcxeiEXewrsNX/j6u/uhxqzOH2n57i/4u/FwWTkZ11pxwqT
+	h28r2awD/FVMgJlQj7sgCxA+B+EyWMn1QKT4AnxwYzkmSQaW+W+N5o1Rh8p0hFenh5sjjF9I12a
+	y0M9OPZeiJxYHpffFGEzINjDYWu3a4dyfXrgJwnZwD5OUV81GVCUur2kgLT/aGtlYNuQXfMNggt
+	T7AZu9+eJRZD4oFL7UJPbZ4c+0Mao29HHWtuFdYAQTYQ==
+X-Received: by 2002:a05:6000:40dc:b0:439:ba4d:bf40 with SMTP id ffacd0b85a97d-439da891a22mr26416182f8f.43.1773136586739;
+        Tue, 10 Mar 2026 02:56:26 -0700 (PDT)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-439dae3a20fsm33931715f8f.28.2026.03.10.02.56.26
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 10 Mar 2026 00:33:50 -0700 (PDT)
-Message-ID: <e0532de0-40a6-42b9-8936-933c31251d5e@oss.qualcomm.com>
-Date: Tue, 10 Mar 2026 00:33:46 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 02/14] firmware: qcom: Add a generic PAS service
-To: Sumit Garg <sumit.garg@kernel.org>,
-        Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-        linux-media@vger.kernel.org, netdev@vger.kernel.org,
-        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-remoteproc@vger.kernel.org, andersson@kernel.org,
-        konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-        conor+dt@kernel.org, robin.clark@oss.qualcomm.com, sean@poorly.run,
-        akhilpo@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
-        jesszhan0024@gmail.com, marijn.suijten@somainline.org,
-        airlied@gmail.com, simona@ffwll.ch, vikash.garodia@oss.qualcomm.com,
-        dikshita.agarwal@oss.qualcomm.com, bod@kernel.org, mchehab@kernel.org,
-        elder@kernel.org, andrew+netdev@lunn.ch, davem@davemloft.net,
-        edumazet@google.com, kuba@kernel.org, pabeni@redhat.com,
-        jjohnson@kernel.org, mathieu.poirier@linaro.org,
-        mukesh.ojha@oss.qualcomm.com, pavan.kondeti@oss.qualcomm.com,
-        jorge.ramirez@oss.qualcomm.com, tonyh@qti.qualcomm.com,
-        vignesh.viswanathan@oss.qualcomm.com,
-        srinivas.kandagatla@oss.qualcomm.com,
-        amirreza.zarrabi@oss.qualcomm.com, jens.wiklander@linaro.org,
-        op-tee@lists.trustedfirmware.org, apurupa@qti.qualcomm.com,
-        skare@qti.qualcomm.com, Sumit Garg <sumit.garg@oss.qualcomm.com>
-References: <20260306105027.290375-1-sumit.garg@kernel.org>
- <20260306105027.290375-3-sumit.garg@kernel.org>
- <e0a86461-c136-4371-99cf-c0b0d31443a3@oss.qualcomm.com>
- <13091f47-938d-43fb-a8c0-4b081818b557@oss.qualcomm.com>
- <aa5qdscMRq7abfwT@sumit-xelite>
-Content-Language: en-US
-From: Trilok Soni <trilokkumar.soni@oss.qualcomm.com>
-In-Reply-To: <aa5qdscMRq7abfwT@sumit-xelite>
+        Tue, 10 Mar 2026 02:56:26 -0700 (PDT)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: a8JmpQ8tm8LnLGUpHNNT8h669x6wSS82
-X-Authority-Analysis: v=2.4 cv=I+Vohdgg c=1 sm=1 tr=0 ts=69afc960 cx=c_pps
- a=AKZTfHrQPB8q3CcvmcIuDA==:117 a=lsoD3MMNObdLvy1227ExmA==:17
- a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=EUspDBNiAAAA:8 a=zqicFvc7-s5f9fRnGKsA:9 a=QEXdDO2ut3YA:10
- a=pF_qn-MSjDawc0seGVz6:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzEwMDA2MiBTYWx0ZWRfX2fcJCetiboFw
- 5G6NMeGzuCIHjtQVA5PYMEmpXMEkTY46SRtAQfK2L9cziCYDKFLgMK464jefDoj+6d54BDyeJIP
- n6uuzd6UpQyURKPmnx3jYMRswNrv0tcp+vFkRf6mVQWLS7sOl67UDdiYPQuR8IeDqhxYACIROOM
- pe0H9DUHaj3VVc1sllQ4Rj1Mfo2CGd3/GD7a50msNtL3Dwp0Ajfh8sZQkimlnsER7u+j/j0QVWU
- FIzhdECskEd/b/ighrOIgM5Penpu8UwrsWyLnERWDrDzzMgHgBkvucdFADMYepCsofPtHF/O+05
- UO1qjTt0UpF66EK2T1usjiHjEjyRNbqSFojLEjaYppvY/v94TSTZvs3wn6PZv+91CWcMugDPnQ+
- AXxtKOpFgH7mBWeBN2ajq55jA+nWd4qzyUyBMTwvVAdjEVPznlGBfOTV3eImAnkxd3vVI3Q2Dw1
- VjpRNiRI6KVbEyR1E5w==
-X-Proofpoint-ORIG-GUID: a8JmpQ8tm8LnLGUpHNNT8h669x6wSS82
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-10_01,2026-03-09_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 impostorscore=0 spamscore=0 malwarescore=0 suspectscore=0
- bulkscore=0 lowpriorityscore=0 clxscore=1015 priorityscore=1501 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603100062
+Date: Tue, 10 Mar 2026 10:56:25 +0100
+Message-Id: <DGZ0GMD3VS8R.2ZZLQNJGDDFLZ@gmail.com>
+Cc: <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH ath-next] wifi: ath12k: avoid dynamic alloc when parsing
+ wmi tb
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Jeff Johnson" <jeff.johnson@oss.qualcomm.com>, "Nicolas Escande"
+ <nico.escande@gmail.com>, <ath12k@lists.infradead.org>
+X-Mailer: aerc 0.21.0-0-g5549850facc2
+References: <20260309152050.191820-1-nico.escande@gmail.com>
+ <621ab5fd-206d-4cf9-b30d-cb9d6bc0459b@oss.qualcomm.com>
+In-Reply-To: <621ab5fd-206d-4cf9-b30d-cb9d6bc0459b@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_003354_391899_0C73E429 
-X-CRM114-Status: GOOD (  16.52  )
+X-CRM114-CacheID: sfid-20260310_025629_145313_444BE05E 
+X-CRM114-Status: GOOD (  24.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,33 +101,126 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 3/8/2026 11:36 PM, Sumit Garg wrote:
-> On Fri, Mar 06, 2026 at 02:00:48PM -0800, Jeff Johnson wrote:
->> On 3/6/2026 11:47 AM, Trilok Soni wrote:
->>> On 3/6/2026 2:50 AM, Sumit Garg wrote:
->>>> +MODULE_LICENSE("GPL");
->>>> +MODULE_AUTHOR("Sumit Garg <sumit.garg@oss.qualcomm.com>");
->>>
->>> What is the convention for Qualcomm authored drivers? In some drivers
->>> I find that Qualcomm doesn't add MODULE_AUTHOR. Can Qualcomm community
->>> clarify it here. I prefer consistency here for the Qualcomm submissions. 
->>
->> WLAN team was told to not have MODULE_AUTHOR(), so ath10k was the last WLAN
->> driver that had a MODULE_AUTHOR() -- ath11k and ath12k do not have one.
-> 
-> As I said in my other reply, it is quite subsystem specific.
-> 
->>
->> And in reality it is very rare for a given module, over time, to only have a
->> single author. The git history contains the real authorship. So just for that
->> reason I'd drop it.
-> 
-> Sure, but you would like the driver author to be involved in future
-> maintenence of the driver. In my experience that's how usually the kernel
-> development process works. If a separate maintainer's entry is fine then I
-> can switch to that instead.
+On Mon Mar 9, 2026 at 9:16 PM CET, Jeff Johnson wrote:
+> On 3/9/2026 8:20 AM, Nicolas Escande wrote:
+>
+> I have some nit comments...
+>
+>> On each WMI message received from the hardware, we alloc a temporary arr=
+ay
+>
+> note that not every WMI message handler uses this pattern.
 
-I would prefer the maintainers entry than MODULE_AUTHOR.
+Technically yes indeed. Maybe if I rephrase with something in the lines of:
 
----Trilok Soni
+When we receive a WMI message, we need to extract the relevant data from th=
+e
+hardware depending on the event type. A common pattern is to alloc a temp
+array of WMI_TAG_MAX entries of type void * in which we store pointers to
+structs holding the actual data send by the chipset. Once it is no longer u=
+sed
+this array is then freed. This short lived allocation can fail when memory
+pressure in the system is high enough.
+>>=20
+>> Given the fact that it is scheduled in softirq with the system_bh_wq, we
+>> should not be able to parse more than one WMI message per CPU at any tim=
+e
+>
+> add hard stop .
+
+ok
+
+>
+>>=20
+>> So instead lets move to a per cpu allocated array, stored in the struct
+>> ath12k_base, that is reused accros calls. The ath12k_wmi_tlv_parse_alloc=
+()
+>
+> s/accros/across/
+
+ok
+
+>
+>> is also renamed into / merged with ath12k_wmi_tlv_parse() as it no longe=
+r
+>> allocs memory but returns the existing per-cpu one.
+>
+> note that imperative voice is preferred.
+
+s/So instead lets move/Move/ ?
+
+>
+>>=20
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00218-QCAHKSWPL_SILICONZ-1
+>>=20
+>> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
+>> ---
+>> changes from RFC:
+>>   - rebased on ath-next 8e0ab5b9adb7
+>>   - converted missing call sites ath12k_wmi_obss_color_collision_event()
+>>     & ath12k_wmi_pdev_temperature_event()
+>>   - changed alloc order & cleanup path in ath12k_core_alloc() as it seem=
+s
+>>     it confused people
+>>   - used sizeof(*tb) in ath12k_wmi_tlv_parse()
+>>=20
+>> Note I did try to move to a DEFINE_PER_CPU() allocated array but the mod=
+ule
+>> loader complained about the array size. So I stuck to the per ab alloc.=
+=20
+>> ---
+>>  drivers/net/wireless/ath/ath12k/core.c |   7 +
+>>  drivers/net/wireless/ath/ath12k/core.h |   2 +
+>>  drivers/net/wireless/ath/ath12k/wmi.c  | 178 ++++++-------------------
+>>  3 files changed, 51 insertions(+), 136 deletions(-)
+> ...
+>> @@ -3913,7 +3903,7 @@ ath12k_wmi_obss_color_collision_event(struct ath12=
+k_base *ab, struct sk_buff *sk
+>>  	u32 vdev_id, evt_type;
+>>  	u64 bitmap;
+>> =20
+>> -	const void **tb __free(kfree) =3D ath12k_wmi_tlv_parse_alloc(ab, skb, =
+GFP_ATOMIC);
+>> +	const void **tb =3D ath12k_wmi_tlv_parse(ab, skb);
+>
+> checkpatch complains:
+> Missing a blank line after declarations
+
+Weird that my checkpatch (from yesterday's ath-next) did not catch this:
+scripts/checkpatch.pl \
+	mail/0001-wifi-ath12k-avoid-dynamic-alloc-when-parsing-wmi-tb.patch
+total: 0 errors, 0 warnings, 0 checks, 807 lines checked
+
+Is there additionnal flags or tools I should run ?
+
+>
+> Note that when __free() is used that this rule is not enforced since __fr=
+ee()
+> declarations should appear at first use
+>
+> So I'd separate the declaration of tb from the assignment to be aligned w=
+ith
+> all the other WMI functions
+
+No problem I hesitated to be honest. And I think I prefer seperate declarat=
+ion
+anyway.
+
+>
+>>  	if (IS_ERR(tb)) {
+>>  		ath12k_warn(ab, "failed to parse OBSS color collision tlv %ld\n",
+>>  			    PTR_ERR(tb));
+>
+> that's it for the nits. the development is stress testing the functionali=
+ty.
+
+On that front, I can say that it has been running at scale in production on
+around half a million devices for one mounth and so far so good. But there =
+is
+no need to rush this and we can gladly wait till you guys make the necessar=
+y
+checks so you feel confident enough with it.
+
+>
+> /jeff
 
