@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6F64FED2D8
-	for <ath12k@archiver.kernel.org>; Thu, 12 Mar 2026 06:31:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B27E8FED2D1
+	for <ath12k@archiver.kernel.org>; Thu, 12 Mar 2026 06:31:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=i8T8b8sGsy0Jcdcd/f8oiIrjsZ4ZyxZx1gf3Rovj0Ig=; b=42pZG78uT5XxjKP4HTO22Orkv1
-	FXsoNILFLYJD0x/tjIjGrl1Vf41zyShgmbgLZiJG50ei75cYpjQIzbyyQK/VS34Ll/Fnj5iwGCXnh
-	Ww8GB6IZIa0/SljH4vuOsQ8xK+rxx3BjBmAgSQSY5BliBvy+bNl2FK5rxqoIdWB8fTN7J7RCfclds
-	8hTIvKytSRRLO2lNPkGKGGT9fRWDcejgLmRBIdu9y+PQnJtsquRo0y4ZR8XMmR0mnUiWgkUV+mt1j
-	X8dEWwJli/Lg9BJdMlzkSFX5GN7y//74GL9RNeNrEz0BcM6/XRpuLiycuzviAioXgt5v0M9osw/DX
-	YZDblFug==;
+	bh=6J8M23ax3NiEBSbcRHRvoK9FNUFaGdnbYgFIx+55ylc=; b=qfJt1eIA633PuNSymr4oObum83
+	RvYHIHjpF/Rf/tMpE5XrIUDy2nt4cxOCUbTv7bJ1U1022SjhEJrK/1jm8TGHV7RIxnnRz7IMtyHSk
+	VZu/uXalFxK5CjKcCR7qkw0p5I+PAePsQVh8AHU+tHlDLdjbbGYq+WoezsN4okzFtUkwJz0mKPwhf
+	s1J3B7EfgLOX8tUCaMh9DgQA8OYVS+ZH2jnLuSS9hyiQoy7zFh4tsreXd8/N/3FKsBYPFPhCmKhR9
+	oKXt87LZIZ1Rqgb56ZMBhQ2wpOTnPFnnkzJqfzgQdX5Cx7IRFT+DpcNw/EbWLcYjTCFRwe9YK76/k
+	QJH14bUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Za6-0000000DTOl-2CzK;
-	Thu, 12 Mar 2026 06:31:38 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1w0ZaO-0000000DTUd-1yc4;
+	Thu, 12 Mar 2026 06:31:56 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Za5-0000000DTO6-1LB7
+	id 1w0ZaK-0000000DTTE-35jv
 	for ath12k@lists.infradead.org;
-	Thu, 12 Mar 2026 06:31:37 +0000
+	Thu, 12 Mar 2026 06:31:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5E93060054;
+	by sea.source.kernel.org (Postfix) with ESMTP id 4D3C443944;
+	Thu, 12 Mar 2026 06:31:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB6EAC2BCB1;
 	Thu, 12 Mar 2026 06:31:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 94583C2BCB1;
-	Thu, 12 Mar 2026 06:31:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1773297096;
-	bh=s2IOV+u9Fv1ukmnfMTkmiLINskXtpIQh7wh1yO+m91M=;
+	s=k20201202; t=1773297112;
+	bh=hHZsC9eIhJPkoiZ2eezD+mzHYHoZx4LReMWFxmuE+OU=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Jrwl6OZhWrXKRNb8dWqDDbbrEtdDLxjc9fzrYHhomRw8PegYwmLklJTM+CMMAKByN
-	 eNviA8i1hRr12/7f0c9aNmRvGCJP58BAokYKwsM/eQuKl6wjb7jASR+vXONkGsgnor
-	 iYQOMf/brk+fQHuvHAo7wxxnv7xYgSWVHGbA/qXUF0mJXiUQ5XWI1eVg9xQcUyjfDa
-	 8BK4fel46HvYpkpDQHsmD76y5v1Qj+LBGdSsjdTlPjT5Dej5VraVIs1DDWZsZH4CZU
-	 tq3QiYCsWFkZlQaWQ0HSgAkj06RiuZyPVBTuMWQd4UFbY8zAki/7ACEBOqnfEINhb8
-	 ipX/MGqVludbA==
+	b=Us2d/m5smIigXUAlQogN1VWUx716b3+6WBLQckR5pZY9k06aZp7O4rT+jTzJlKTq8
+	 zdPrNtO5wKm1qlNZfvjzknMPmkWF9sU2+MO6Hpw5RHmWxNNu50tVwaKe+R/F5W2ya6
+	 8JJB8ZBUvoaGeiEbfTNBP85oxInFh7ohv6ZbE/m1sDfg5pHlYt/SWmJ0aw0vN9UJU8
+	 W+F0nRL6iqr+rHM+0yNZytBGbbbX0/8854hjz0EpNZsLH3PR0ttJecGwencVPwehwB
+	 BMlFMG5iwW6uPzclszNPPX3vkPX9BFqqZsb7f9uOSFJGoCS1UzTypj9oHHt17d2/Q+
+	 N/t5KJM9Phkcw==
 From: Sumit Garg <sumit.garg@kernel.org>
 To: linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org,
@@ -92,14 +92,17 @@ Cc: andersson@kernel.org,
 	skare@qti.qualcomm.com,
 	linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: [PATCH v2 12/15] net: ipa: Switch to generic PAS TZ APIs
-Date: Thu, 12 Mar 2026 11:57:53 +0530
-Message-ID: <20260312062756.694390-13-sumit.garg@kernel.org>
+Subject: [PATCH v2 13/15] wifi: ath12k: Switch to generic PAS TZ APIs
+Date: Thu, 12 Mar 2026 11:57:54 +0530
+Message-ID: <20260312062756.694390-14-sumit.garg@kernel.org>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260312062756.694390-1-sumit.garg@kernel.org>
 References: <20260312062756.694390-1-sumit.garg@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260311_233152_814650_60680FF6 
+X-CRM114-Status: GOOD (  10.10  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,55 +119,51 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 
-Switch ipa client driver over to generic PAS TZ APIs. Generic PAS TZ
+Switch ath12k client driver over to generic PAS TZ APIs. Generic PAS TZ
 service allows to support multiple TZ implementation backends like QTEE
 based SCM PAS service, OP-TEE based PAS service and any further future TZ
 backend service.
 
+Acked-by: Jeff Johnson <jjohnson@kernel.org>
 Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 ---
- drivers/net/ipa/ipa_main.c | 13 ++++++++-----
- 1 file changed, 8 insertions(+), 5 deletions(-)
+ drivers/net/wireless/ath/ath12k/ahb.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/ipa/ipa_main.c b/drivers/net/ipa/ipa_main.c
-index edead9c48d1f..8feb8493d5b5 100644
---- a/drivers/net/ipa/ipa_main.c
-+++ b/drivers/net/ipa/ipa_main.c
-@@ -14,7 +14,7 @@
- #include <linux/pm_runtime.h>
- #include <linux/types.h>
+diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
+index 9a4d34e49104..935f893d04ef 100644
+--- a/drivers/net/wireless/ath/ath12k/ahb.c
++++ b/drivers/net/wireless/ath/ath12k/ahb.c
+@@ -5,7 +5,7 @@
+  */
  
+ #include <linux/dma-mapping.h>
 -#include <linux/firmware/qcom/qcom_scm.h>
 +#include <linux/firmware/qcom/qcom_pas.h>
- #include <linux/soc/qcom/mdt_loader.h>
- 
- #include "ipa.h"
-@@ -624,10 +624,13 @@ static int ipa_firmware_load(struct device *dev)
+ #include <linux/of.h>
+ #include <linux/of_device.h>
+ #include <linux/platform_device.h>
+@@ -415,7 +415,7 @@ static int ath12k_ahb_power_up(struct ath12k_base *ab)
  	}
  
- 	ret = qcom_mdt_load(dev, fw, path, IPA_PAS_ID, virt, phys, size, NULL);
--	if (ret)
-+	if (ret) {
- 		dev_err(dev, "error %d loading \"%s\"\n", ret, path);
--	else if ((ret = qcom_scm_pas_auth_and_reset(IPA_PAS_ID)))
--		dev_err(dev, "error %d authenticating \"%s\"\n", ret, path);
-+	} else {
-+		ret = qcom_pas_auth_and_reset(IPA_PAS_ID);
-+		if (ret)
-+			dev_err(dev, "error %d authenticating \"%s\"\n", ret, path);
-+	}
+ 	/* Authenticate FW image using peripheral ID */
+-	ret = qcom_scm_pas_auth_and_reset(pasid);
++	ret = qcom_pas_auth_and_reset(pasid);
+ 	if (ret) {
+ 		ath12k_err(ab, "failed to boot the remote processor %d\n", ret);
+ 		goto err_fw2;
+@@ -478,9 +478,9 @@ static void ath12k_ahb_power_down(struct ath12k_base *ab, bool is_suspend)
+ 	pasid = (u32_encode_bits(ab_ahb->userpd_id, ATH12K_USERPD_ID_MASK)) |
+ 		ATH12K_AHB_UPD_SWID;
+ 	/* Release the firmware */
+-	ret = qcom_scm_pas_shutdown(pasid);
++	ret = qcom_pas_shutdown(pasid);
+ 	if (ret)
+-		ath12k_err(ab, "scm pas shutdown failed for userPD%d: %d\n",
++		ath12k_err(ab, "pas shutdown failed for userPD%d: %d\n",
+ 			   ab_ahb->userpd_id, ret);
+ }
  
- 	memunmap(virt);
- out_release_firmware:
-@@ -754,7 +757,7 @@ static enum ipa_firmware_loader ipa_firmware_loader(struct device *dev)
- 		return IPA_LOADER_INVALID;
- out_self:
- 	/* We need Trust Zone to load firmware; make sure it's available */
--	if (qcom_scm_is_available())
-+	if (qcom_pas_is_available())
- 		return IPA_LOADER_SELF;
- 
- 	return IPA_LOADER_DEFER;
 -- 
 2.51.0
 
