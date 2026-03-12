@@ -4,76 +4,178 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D29D6FED2E4
-	for <ath12k@archiver.kernel.org>; Thu, 12 Mar 2026 08:22:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2925FED2F4
+	for <ath12k@archiver.kernel.org>; Thu, 12 Mar 2026 09:03:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mInBjNwnmOVstovthVyAp86y9JrXwEc/jfaTJc6nf50=; b=z/EKf1H9PeWA4cFePzArswXVvh
-	Li9w62H5dS4wIQdTuLkuNzV2zyL13cFPTJ7v8dplUtYfaD+k3TiZogS6T5Bmdhq3iVQiffNgquyn3
-	Wru/DueQy6EK0zOHTtVvPjEpl10semWH3lD+QkyJVnmxJfE2/5hpJjVMK3/l2fTcQdh90grFA8C5w
-	ErMVP17IpDRFyD5QSDvrroAPRmS8yMt2XrO3raVNJK7NggmZt6RTUFzBqO6YZQWQ3Z6LNYhPhz8gj
-	3m7osV2NQ3wxyr6q0eKF0npHkAgdxIcKmRZGRXOF4B7bmy8UTgiL0SUasDa+19nNRf1QvshQ100wY
-	xjuaVqvQ==;
+	Content-Transfer-Encoding:Content-Type:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=IimIQMbMSdapUEulkEDKvtTbIkvxYo9Efn9sovu+eTA=; b=YYblHInuqBPy6+qKy57bbKl6Xa
+	H0ZhJy9c2fQS9ElfCq+M+/dnhAqIrbp0Znur7Gj8QlrFgHzXpu4uxTkGHlqofz+yCVXXrVz8szfp3
+	SEA5hjmH3tUPL9/EftbrcabTZ9kB+UsBA5x9rbil3vSdcjRTtJMWaVMwbgaw/m5NuTzF09vvO5NU1
+	9buJAV3kkXSFKYTFAYbhLXVFF2K4JTvVMgvovHZkxYaLYysaBvZlb0+pFfs2RFIOtw461E+wLwzKq
+	iPRMAKWXTHaWYAlKEZ51zOkRDpO3Sf03hbjfTdJ2YJs0fQq104C3JfyDwQBpnb9HcagTsQTcF1Cgi
+	rIQCmUJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0bJE-0000000Ddrk-2N3M;
-	Thu, 12 Mar 2026 08:22:20 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	id 1w0bwr-0000000Dgci-2TWo;
+	Thu, 12 Mar 2026 09:03:17 +0000
+Received: from mx07-0057a101.pphosted.com ([205.220.184.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0bJA-0000000DdrC-3jUW
+	id 1w0bwl-0000000DgcM-19Fq
 	for ath12k@lists.infradead.org;
-	Thu, 12 Mar 2026 08:22:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=mInBjNwnmOVstovthVyAp86y9JrXwEc/jfaTJc6nf50=;
-	t=1773303736; x=1774513336; b=AqN2XrlnjKX4ni3ZqVXmxLPNqxzIypiCXj9VGKmCDEtp5Tn
-	RcXLF2yp01PD5M7UvpzKzFSx5IbxPZbnf7WCPvPs3frKejuxysfcj8YbmurvKQOTL+OVCyXF9boO0
-	TjUWDXNtZVes2y8hNgfumtX5SWP7HxpivEBbJ8w5DemTXHCBQeAV9d05RXAFD/oHRv4Xhm+W79j1B
-	8kSfg//1Nf/vrWx8e99uHVWfTw52Lup2NdkC42KLIqp0moOjLJvj6wf3DDW46ZGvj1DnwlpDOPa7h
-	jJxdIV37xfhMPTAn+ICUZUQHVFIMUx09HkiidrLqE/HxW1S/cqtr10yIo0aEtCZw==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1w0bJ2-0000000Fjkr-3E48;
-	Thu, 12 Mar 2026 09:22:08 +0100
-Message-ID: <c676b2cd73463fa88f459f0416c60b03f20dd027.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next v8 2/3] wifi: cfg80211: add initial UHR
- support
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Harshitha Prem <harshitha.prem@oss.qualcomm.com>, 
-	linux-wireless@vger.kernel.org
-Cc: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>, 
-	vasanthakumar.thiagarajan@oss.qualcomm.com, Lorenzo Bianconi
- <lorenzo@kernel.org>, 	ath12k@lists.infradead.org, Jeff Johnson
- <jeff.johnson@oss.qualcomm.com>,  Ping-Ke Shih <pkshih@realtek.com>, Manish
- Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>, Jouni Malinen	
- <j@w1.fi>
-Date: Thu, 12 Mar 2026 09:22:07 +0100
-In-Reply-To: <416d08f1-6b8d-4bf7-9a63-c3c68497d990@oss.qualcomm.com>
-References: <20260130154259.265130-5-johannes@sipsolutions.net>
-	 <20260130164259.54cc12fbb307.I26126bebd83c7ab17e99827489f946ceabb3521f@changeid>
-	 <f96125eeda23451c19067359eb9d10b4047bcdd3.camel@sipsolutions.net>
-	 <5d54feea-d0cd-4bd7-b0d2-02e42f0fe5e1@oss.qualcomm.com>
-	 <be9ab3c7f05b0f56f19aee0ffc7c2f96138b9a05.camel@sipsolutions.net>
-	 <156d6d48-d135-4acf-a5d7-c9ae80523864@oss.qualcomm.com>
-	 <0f4b34f0b529fd93fc608d8bbac0e98516b7a3d2.camel@sipsolutions.net>
-	 <f3282007-a11a-4f68-86d8-0945e4979d65@oss.qualcomm.com>
-	 <d3ecf6e5580cbe50eee807b1e63109e42e3b956c.camel@sipsolutions.net>
-	 <416d08f1-6b8d-4bf7-9a63-c3c68497d990@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.58.3 (3.58.3-1.fc43) 
+	Thu, 12 Mar 2026 09:03:16 +0000
+Received: from pps.filterd (m0214197.ppops.net [127.0.0.1])
+	by mx07-0057a101.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62C5iUef3894633;
+	Thu, 12 Mar 2026 10:02:56 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=270620241; bh=IimIQMbMSdapUEulkEDKvt
+	TbIkvxYo9Efn9sovu+eTA=; b=Hngzpvk83X4xnD4UrZb8SkauqlWoeDSxlYBjey
+	6NF+iOh+0f09eiEBUjEUrTPrULTETSfRG82+9p+Qf0aQU3panroMHDXLjpdTmp4R
+	hmXrAmgTXaQtH98O4vox7hGQuOw3C2Z6Q3EWsm/20LXQvtPWSw1V1RkgJnjgufWk
+	Sq4l5UK9ej4RoH7El4tYX8j7hwPPRoiGtl/K/2dsllWSxCDh2ExJUjTSIQb7tTic
+	FmBnvpnfxpumkqcTSAExoqbYqGCpEbJSmf751AiK5StpGYz8fhWcDTVwOGyQoU7n
+	WHhdxmi4je0XLS+lp34k0EnDiSbuFCaJIgXFyoJsvAWfnleQ==
+Received: from db3pr0202cu003.outbound.protection.outlook.com (mail-northeuropeazon11020142.outbound.protection.outlook.com [52.101.84.142])
+	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 4ctxy4heg8-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Thu, 12 Mar 2026 10:02:56 +0100 (CET)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=GDk82S4ibEvJGgV1Vix2VKszzhFjoW0L3o68lfcxbakszVr1A58kptq0vybJpis9FKxIw7GtOvaTFmbbQpmQRk2NPIVZsjDA9rBRSYW7rjNAVqiot4wtLcr5Rx+PHxGyqQidSIv2e8kyHiqq7nJI8S6lLtxNThZKKHzboaV4ccmOuWzks828QfSGOd40t9GpI8WrhI1vC0aqfx41BR3m//L9MNeLuhsQY0uChA+6oDTS6fdXLllPxr0tkyTGwGomfuzdyUPjARvA8sP7fJohv/0Na9QQXqZ49Dm62CyUzyVwVEY9VC0nk7Eea6ayGScJhLED7U6GZg+0cgX4bqjGtQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=IimIQMbMSdapUEulkEDKvtTbIkvxYo9Efn9sovu+eTA=;
+ b=cr1JrfTKDOR2CJ/Y3RcoViqCwfOLJZ2UcjXVPHcbv4oA4aAHHnTUWNQD7H4X5esFv+qtscFE7N8e932hEHMOCqBJHSSCDiBqQVZ2vk2eafoGot3QJWdLU2xWaD1nZ6OL954v8HMRkaA8mQ8macCyE+nPE97/aBsypD+mo5re8mSYNcyW7sBXdaAOq1pWJqmf+EGP+fNJPncnZHjowH3qa0LI0RtkBjxVZtR8h9qwMlrjrZFpylljBWKDW/I+ULIBml5UnNvWsDGWOKEf0b307lVDgxdLsWvmBSPmXgQ1rWFD97dLlZWw6N6TS0YYH3PV78UAfDHBQCbHJr2I9adKBA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
+ dkim=pass header.d=westermo.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=beijerelectronicsab.onmicrosoft.com;
+ s=selector1-beijerelectronicsab-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IimIQMbMSdapUEulkEDKvtTbIkvxYo9Efn9sovu+eTA=;
+ b=yx2DjvBnliCLdLCcEhvMsbvAyMtYj4M4k6ruQFx495AC0EShHdkyKiMgUtbpbLr6hBku2Ep6Q+d6mnLGAwD6Ubzh9PbUB6pPQ+SpezI/Kx2pgwVUZTC2BOAiJuAiG3NUWOE4g5YDG6aZ6NkoU7jiUPnH6MaFOXVVAx61LMm9D+c=
+Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM (2603:10a6:d10:17c::10)
+ by DU2PPF3CD3900DC.EURP192.PROD.OUTLOOK.COM (2603:10a6:18:3::98b) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9700.11; Thu, 12 Mar
+ 2026 09:02:53 +0000
+Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
+ ([fe80::8c02:9739:5f2d:b147]) by FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
+ ([fe80::8c02:9739:5f2d:b147%6]) with mapi id 15.20.9700.010; Thu, 12 Mar 2026
+ 09:02:53 +0000
+Date: Thu, 12 Mar 2026 10:02:50 +0100
+From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: ath12k: handling of HE and EHT capabilities
+Message-ID: <abKBOp8Jc7f7U0T8@FUE-ALEWI-WINX>
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+User-Agent: Mutt/2.2.12 (2023-09-09)
+X-ClientProxiedBy: GVZP280CA0093.SWEP280.PROD.OUTLOOK.COM
+ (2603:10a6:150:275::7) To FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
+ (2603:10a6:d10:17c::10)
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: FRWP192MB2997:EE_|DU2PPF3CD3900DC:EE_
+X-MS-Office365-Filtering-Correlation-Id: 0ab5efe3-ef1f-4e53-8ef1-08de80162509
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|366016|18092099006|18002099003|56012099003|18082099003;
+X-Microsoft-Antispam-Message-Info: 680iMFN9ji8cmGTlL+z440n5dI+NIT6RpMBBCcM6W979drNIz/EcOhUU1Wt33eh/z/AKqLyCVHaNp7q6HvSyRUzkQRmi9krkr17F978g0hBtYDEUwFYWFefvBqc6BGJbeksKGLSfn10g7gtIOYkpBsOJdc+TqE2Os5cDHeHURyBdPuSt0Xf5tLfh0UzgSHJ6cJ4DiRvQiW+gwKZEb29yh8QB8VLN+NYWv7IFLG8RKo86eUaPUivc0mGGk+PoRRBFJpaP3UBnDgpTuMFIGUONLlyQVKlalndxCM+ODpXNrtdoSFqn1qEtgkHEFjOi5WoIo4VfqML2UbmqDntldZ9kyS+54TxZDqpyEFc0jH/mjpsnX86s6GmOtp7NToGA1EDZckq097vMvBgwJRgf1x0v5q0DA13LRLYqqbRC/MaM1abRTQyOzpE5A1vZFJFtNLUB/LMd0dRvK0B+5coaI+AfVqgLQzYVkYzKDyh6/LLGu258SIAJAm5Ho14fblKxZSPesP67371lXhHh83RS0f4NQNgXQ/BVQLgkIk9y3p1TZCDb+yxqLFWbwk/XFMk5jE6ZR/5pu0Wxg+3rU3XwdF73tF9kRA+GdcjDmmyyRypyurkU5tW/t/g4tSQOwtB7snHzqRgKpdPjcsTChvo0D6FpV6XsaOUqD9bAv/nGyfExM79BUx/Jfmw/hlc+CiLqn9gtdFdZln1veGaQuGmRo9PVoVR34QLLC/mXR5gyaV+bP6U=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:FRWP192MB2997.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(18092099006)(18002099003)(56012099003)(18082099003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?OGlQV0FBUzJQcGdvVTZwWjVNZ1lobFFCNlZQUXE0U3dnTEMybGtxaWtaTWxN?=
+ =?utf-8?B?U0RMSk1zK2NXLy9xZ0pTZnJ5alE4NlkxTU14YTZzSTgxYUdWcTMwNlZLMkt2?=
+ =?utf-8?B?dUNGTExvdXFCR21Wdi8xVmpFektQRklPSThtZ0pzcUMzeXRITVVTVVNGamZ4?=
+ =?utf-8?B?M1FaQ1RGZHRVYW9nWTNVT0phdE9HYlRWbU9OWThHYVRBQlBkSVBmZkNlamJG?=
+ =?utf-8?B?YU82bDg3QjBVTkpYcGcyMi9iN1BsK1owK1hkRDhyYTQvcUJPU0N3MmRPWEc0?=
+ =?utf-8?B?REdGbG94SjJyREdGbFhyMzcyYklsMXZTQ0pPNG1WUHVJWGREeWJUUnVYWWdP?=
+ =?utf-8?B?S2RJZlZEb2JaUEJHdkhjS2h5K2oyenV5TjcyMzlsdHZFL296UXBab2Y1N1ox?=
+ =?utf-8?B?b2Y5V2pxMXRqNFlmd0tjQW9HR2krZ0FWTk1nSzJEWHRFRDdtZDRYMk5ZaDk1?=
+ =?utf-8?B?M3NMM2Q4cDhxRXRkMDBmbFdITWliQkdHR2Rqc1VZVTBYNGhtdUxUR2NPYnFX?=
+ =?utf-8?B?d3VvL3ZsYzlFRitUYkRRRy9qSGg5UUl4dzJNSFpVa1RMZlZNdzJDd1RJcUVm?=
+ =?utf-8?B?dkZqclc2czRVek52eVNEOHhlaXd6alp3OTMvODBsdldkK0EwdUNpQ09IMW5q?=
+ =?utf-8?B?WjM4SlZZWWVwdlNzNjRmV1V1cThnZ1k4ZUI4ckcvZ0lpZ3pFYkswMnRQTC9L?=
+ =?utf-8?B?N1pVYWhtWkYrSWtFdmQ1SHMxY0orV0dRMWNWRzRCcmtkMnMyNVdoYU80eC9S?=
+ =?utf-8?B?NGRQcStXb2hWZDJYTU1zdVlnaTJaSTlXU1lDeFAvQ1drQlpoSEp2b0NvQUNs?=
+ =?utf-8?B?d3IwMFZhd0JNdExqcEVTZEtjREk4M1ZXUkZTRGJmbXl4dndlZmg0SzlxTDFw?=
+ =?utf-8?B?R1VZK25BNldyVzF1ZmtLb0dYUzhDYktLeCtpVXdiZDdIM3d1YWtlY21FenBs?=
+ =?utf-8?B?dTcxaW9UMC9oNVNiSlFlbU5odmJMWE9jWFVsa3BKbFFWVHpYb3UzUExmMklu?=
+ =?utf-8?B?bk1uTWxoMVkrcm9lZlhRR1JiVmdKcVMydFUwUnNKSXBYVnM0d1ZxWVZEcllT?=
+ =?utf-8?B?ejZjWUdnbXZsSE1VcS9xRmV6VWJIQ283bThnQ3EwbXR0NHRSVUR6eGRIY3Ry?=
+ =?utf-8?B?cG9YSkZZMmxTU2loQ0diMGpTV3k1ZmRmbVRLMmpRRUI2Q2FOV1BwM1FTMkNR?=
+ =?utf-8?B?OW9XUjhBNjFSdUZGMWNValVIZ09GdjVQa1JIcEs4RHpaSVlFdFlnaVV5eVFl?=
+ =?utf-8?B?UW5qMUdoVFhwbVB6WE5UVW1aNjFZNWdKYldZclpJcVh4YzJETmVSaVpCQXo4?=
+ =?utf-8?B?b3l1aFRpWDh0STVvekNLb1hwMDFvMUtZZWx5NFpreXEzV2xraFpQZ2RFaGdX?=
+ =?utf-8?B?UXZtZlJxaVdRS1M3M1ZVbk9hVzFEOEcrOFRpTjdpVUQrQ1JTM3A0WWljSms1?=
+ =?utf-8?B?QU5wVERlb3MxMDdvS3JXTUlIU1Q5V1hzdU1WYW1KZU9XQllERDhrcHFxWTFR?=
+ =?utf-8?B?VG5GbjVCaFdVTWs3UUNDWHQ5dHB1RG9DV0xKRmpmVVZMRDl5alhXSjd0UVZl?=
+ =?utf-8?B?SmlXN3ZtR054aG1aR2RNUEtuMU9EVUpMV1ZRY1IwclVCcnJjdGtjM2JnQnZQ?=
+ =?utf-8?B?L1JZa1FNeWNQRm42NUtVNnFTTXJqL1pTSWNhMjVYSTdxSVJMYzJCS3VHWXJX?=
+ =?utf-8?B?M0V4SHhoZFdFZUs1MlpKdmdNM29sWDJiZ1ltWXR5VEhmUUVBc20vNk1HNVBX?=
+ =?utf-8?B?YzkyM1IwMnBNa2hma0FqNEtwdlg1N0h6R0JoM21SMFF3U2pFTnBiN2VCMzBK?=
+ =?utf-8?B?bzM0OTBJQWlDeVZVSU1CZCtUZzFVeGsvTWJHZW1BN0tuRXNrNmJyVkJZamYx?=
+ =?utf-8?B?Um16dE81ZjdWYkVRZ05jMzRWWU9wRFhmTXdCalFZTDdCMWUvRzNVY2h6aHE4?=
+ =?utf-8?B?cENjbmdMRHpMUklIM3JmOTY0anVpdW94K28rcndDNjZrakpsMUU2MXdvQ2hL?=
+ =?utf-8?B?THlhcDdNanRvMzVscTRKMnBLL0ZTczU5MnJsRkxBbjJQR0xRYjRobmxBak05?=
+ =?utf-8?B?dTdrUjZ2TGxFRyt0aExSRTFMV010cDhkL3dCcWd5SFJwWXdOK1R6Vll2d3VG?=
+ =?utf-8?B?cElrdlJGVUQySE01eHpXcmhUZW5CWEFXOEhKYzRjbGh2S2xSUHZ6TzBrOEZv?=
+ =?utf-8?B?TFlkRVNVSWRicU9ubDJBakR4ak0wNUpVTnEyUjdhd0dQQVJNZmd2S2trQ3B6?=
+ =?utf-8?B?ZlRHL3BLVzJwMjRQK2c3S3VNbER5ZEV2elNtYTVXb3VqeXNSelhpRlNLVG5a?=
+ =?utf-8?B?UUJHM1dGMkxETWxwYTlLeWxJODlTbjJLR2xKazFDYUwzUHR1bEgxdz09?=
+X-Exchange-RoutingPolicyChecked: XB5rCA8/ZN4fd4JijRfy0Oyq7rwIbv1EwBE1gBk+StjBIlYPnZapzbUZbhrLTxoA1usvlv9yBREo/3NC8FzAwEqG/DCl2AH/k0zx+PLq7DVkrGvDz6MOb6dkhgsIaRkL63jIdi0FajXDWiqzDP6o//EK0tNsXZ+MbElDDvxV4b/3l3NSTCPxJ+b8NW5V8zEl6sKjTtjrw4VR9BrQ4npfaap8XAmctEOfh2+Ly/QrI6PtYXYY3UHAuragYDbe5xjcV4xV/AcDix6DazSRohhtUrqyaN860aI3jTzh+uFH8R9+jcOkC+zcb8r8ZhZE9N8iXKVyUc6ZgP0p87AiT7pJbw==
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: vQ6rOzAAu6gxIUDYkLw3T0NevHgztsYU83drRH0p0ltqBxFL4wIOg0qb/OThidg/WXaqt7S8swOAP0kNzBWII3ogBzLscIpHo5ra8WvBiTzfDcIlzw5qeOs3C52LbOMCkfg2q3Vmd0gXfkBtn6qVOf/H0tEDOmuGaDTptZ+zFkNC7/ozg4V8wjJPVu94YnHDcb6Jquf7o5xFehbP91jd5q+muibAvofV3JoTAZ1anl8rREk7zviKhyZPjUWyaR1E0/cGoN2maiEWKOEbToCTLEZiEUniHnhUeSraz9s7UABCVStDatFQf214jRuhwlxF5aCHFjwxBMFPpx/0zjV8p/NZGEPb3ynLQrqfbIIuYXANcESuOgU5sWSCQYaKeQ3t8CKLYtXwtFnjY2D2IAILRMGmIcW5L1W0F+TDW4e1q9fq9Gmm+1MGv1dNdPbK3sSccqXxtKFWnmio3jHB4e5rF3Qtn41pNS1Bme1PH5Kq99awyzBORkEnCv/qGLlOKt9V1WSjQTqnc1gjQzDmDx3DbBpiWuQv4HPnTIn+KxsDRYVz4FHgRuhwbKec0qCY8ZoDDY1IX12cYjh+ElcK2Cauzj4TK6cUJw5nQiZ8eDrQDtYo4Pn0LtHfbUOohvm8hcp/
+X-OriginatorOrg: westermo.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0ab5efe3-ef1f-4e53-8ef1-08de80162509
+X-MS-Exchange-CrossTenant-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Mar 2026 09:02:53.2984
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: TCEYB9msJyfYIm++ShKMWUsXKmEWu/0L6H1QPi8Nr+pe/zQ7DGAGY/0LZfR0VDXDX3C23R4RfXFJ09qabtmG4w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PPF3CD3900DC
+X-MS-Exchange-CrossPremises-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossPremises-AuthAs: Internal
+X-MS-Exchange-CrossPremises-AuthMechanism: 14
+X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
+X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
+X-MS-Exchange-CrossPremises-BCC: 
+X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
+X-MS-Exchange-CrossPremises-TransportTrafficType: Email
+X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
+X-MS-Exchange-CrossPremises-SCL: 1
+X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
+X-OrganizationHeadersPreserved: DU2PPF3CD3900DC.EURP192.PROD.OUTLOOK.COM
+X-Authority-Analysis: v=2.4 cv=deaNHHXe c=1 sm=1 tr=0 ts=69b28140 cx=c_pps
+ a=vA9PrX/BfemLN70XEOC+sw==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
+ a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
+ a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=8gLI3H-aZtYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=tr3XZvuDWTETL0Uaxejn:22 a=8ys4xmT3Mru1TjC2zVq1:22
+ a=I_8DsNCv6K1W6gimf3sA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzEyMDA3MiBTYWx0ZWRfX5TvmjBKNFQpc
+ 23M9prSqL/3SZ7whmi7ynOZTCWKUnFstPC2JUuq441CTsuP6v2rqGM+lST0pHp9p5wdgEZQuWrw
+ I+0DtWSGnQhADpMSq4pMhQhQcvtBGuvB52xS1bZf2onmsycBnKHIx3yhUf1Ib80qSX4poUFoXOf
+ fU0GB1Bzb6rWj8pT1xAdVoWvVCmZccq2Lrr3sNQzmQF6dDS+mMslan8eDGlC0qkWifGAaZGZlJH
+ TytflpIz9rbeQfXA86Y7d2IIiq5e2QqDk7Nzk4gVaWmPteQmnF844DbQ3KF4kCfH9CLXXTpn15A
+ P1V+Z8sVDnsz6EtFohZ4zwN94cL/GN4mFrr0aCraq+efGElBysO3y5y0c3ayyhjYVZRXiO4RmYs
+ OXYAuH7rBRJkHEAcA+MSLr13N2vT1fu7zndJNKsxT4PTvnBkZ3BhjlawFN4VdZb+CeP+oG8IM+p
+ fDze186NZFckYulMG9A==
+X-Proofpoint-ORIG-GUID: lUN3OE2hTXLuqPO7GVi-VkrXdDQbpJ7F
+X-Proofpoint-GUID: lUN3OE2hTXLuqPO7GVi-VkrXdDQbpJ7F
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260312_012217_371008_5C1EAFAD 
-X-CRM114-Status: GOOD (  61.64  )
+X-CRM114-CacheID: sfid-20260312_020311_885905_8D116027 
+X-CRM114-Status: GOOD (  10.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,333 +190,98 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2026-03-12 at 11:19 +0530, Harshitha Prem wrote:
-> > Yeah, maybe, then it wouldn't ever really go to a normal SET_BEACON any
-> > more, maybe?
-> >=20
-> > I was thinking more for not having to change all the code in hostapd at
-> > a given time, it might be more plausible to still allow SET_BEACON and
-> > just keep giving the counter offsets etc., in case e.g. something "old"
-> > like short-preamble changes.
-> >=20
-> > But clearly hostapd would have to manage those offsets etc. anyway, so
-> > perhaps there's really not going to be any reason to support SET_BEACON
-> > while updates are in progress. But in that case I'd probably argue it
-> > (SET_BEACON) should be disallowed by the kernel, to catch errors.
->=20
-> Yes, that's the idea when any MLD_BSS_UPDATE is in progress, instead of
-> sending SET_BEACON rather use MODIFY_MLD_BSS_UPDATE.
+Hello devs,
 
-I was going to say that introduces its own set of races, if it's trying
-to modify the BSS update while it _just_ finished, but actually that
-race exists anyway and we'd want to just reject updates (regardless of
-which command is used) that refer to now-invalid cookies.
+I’m currently trying to fix the HE and EHT capabilities handling on the
+big‑endian platform. Unfortunately, I don’t fully understand how exactly
+these capabilities are supposed to be defined.
 
-> >=20
-> > >    |                           |                           |
-> > >  6 |                           | Beacons: 10, 9, 8...      |
-> > >    |                           |-------------------------->|
-> > >    |                           |                           |
-> > >  7 | [CSA Triggered: Link0,    |                           |
-> > >    |  Count 10. Sees Cookie X] |                           |
-> > >    |                           |                           |
-> > >  8 | CMD_START_MLD_BSS_UPDATE  |                           |
-> > >    | [Type:CSA, Link:0, Tmpls, |                           |
-> > >    |  Cookie X + Offset,       |                           |
-> > >    |  Post Tmpl (No UHR ele)]  |                           |
-> > >    |-------------------------->|                           |
-> >=20
-> > Not sure I understand the "No UHR ele" part - surely the post template
-> > still has UHR? Or did you mean "UHR parameter update"?
-> >=20
->=20
-> At this point, the CSA post-beacon template would not include the
-> updated UHR operation element, since hostapd needs a way to determine
-> whether that element should be added. The updated UHR operation element
-> is expected to be reflected only after the advance timer expires.
-> In a scenario where the CSA completes before the advance timer expires,
-> the CSA post-beacon may not actually require the updated UHR operation
-> element.
+For example, I use the `iw` tool to display the capabilities and their
+descriptions. The code for that has the following function prototypes:
 
-Oh, you were thinking of the _updated_ element only? I read it as "no
-UHR operation at all", which seems nonsensical since it's still UHR.
+    * void print_ht_capability(__u16 cap);
+    * void print_vht_info(__u32 capa, const __u8 *mcs);
+    * static void __print_he_capa(const __u16 *mac_cap,
+                                  const __u16 *phy_cap,
+                                  const __u16 *mcs_set, size_t mcs_len,
+                                  const __u8 *ppet, int ppet_len,
+                                  bool indent);
+    * static void __print_eht_capa(int band,
+                                   const __u8 *mac_cap,
+                                   const __u32 *phy_cap,
+                                   const __u8 *mcs_set, size_t mcs_len,
+                                   const __u8 *ppet, size_t ppet_len,
+                                   const __u16 *he_phy_cap,
+                                   bool indent);
 
-> For example, if the UHR advance timer expires before the CSA completes,=
-=C2=A0
+For HE capabilites in 6 GHz band I couldn't find the respective function.
+Then I looked into `include/net/cfg80211.h` and examined the structures
+that define the capability data types.
 
-(taking this out of the paragraph)
+    struct ieee80211_sta_ht_cap {
+        u16 cap; /* use IEEE80211_HT_CAP_ */
+        bool ht_supported;
+        u8 ampdu_factor;
+        u8 ampdu_density;
+        struct ieee80211_mcs_info mcs;
+    };
 
-This seems like a bit of a strange "if" though - hostapd set the timers
-in beacon countdown for both, so it can trivially predict which one is
-going to expire first, there's nothing that can stop that from happening
-the way it was predicted.
+    struct ieee80211_sta_vht_cap {
+        bool vht_supported;
+        u32 cap; /* use IEEE80211_VHT_CAP_ */
+        struct ieee80211_vht_mcs_info vht_mcs;
+    };
 
-It obviously has dependencies between them, but I don't see a way to
-avoid them.
+The structs for HT and VHT use `u16` and `u32` data types for the `cap`
+variable, matching what `iw` does. That part is consistent.
 
+    struct ieee80211_he_cap_elem {
+        u8 mac_cap_info[6];
+        u8 phy_cap_info[11];
+    } __packed;
 
-> Because of this, an event-driven approach was considered.
-[...]
-> it could
-> notify hostapd, which could then update the CSA post-beacon template
-> with the updated UHR operation element via MODIFY_MLD_BSS_UPDATE.
+    struct ieee80211_he_6ghz_capa {
+        /* uses IEEE80211_HE_6GHZ_CAP_* below */
+        __le16 capa; }
+    __packed;
 
-So I think all this is an interesting question we should really decide
-on first, before we continue with the details of the design.
+However, for HE the types differ from the `iw` implementation. Here, `u8`
+arrays are used instead of `u16` for MAC and PHY capabilities. The 6 GHz
+capabilities use `u16`, which is also different.
 
-We have been talking a lot about templates here, and associated latency
-issues, and the question of hostapd being single-threaded comes up again
-later in your email, etc.
+    struct ieee80211_eht_cap_elem_fixed {
+        u8 mac_cap_info[2];
+        u8 phy_cap_info[9];
+    } __packed;
 
-Each UHR update operation will have three pending templates:
- - announcing the update will happen (counting down)
- - announcing the update has happened (counting up)
- - steady state after the operation
+For EHT, `u8` arrays are also used for both MAC and PHY caps, instead of
+`u32` for the PHY caps as in the `iw` implementation.
 
-Each additional overlapping operation adds another template (another UHR
-update operation is [currently] not permitted by the spec, so there's no
-second "counting up"):
+The current `ath12k` implementation always uses `u32` values, which does
+not work on big‑endian platforms:
 
- time
-  |
-  v
-  |
-  x <-- beacon transmission
-  |
-  | UHR update starts
-  |   - template I: announcing update will happen
-  |   - template II: announcing update has happened
-  |   - template III: steady state after UHR update
-  |
-  x <-- switch current template to I, two more pending
-  |
+    ath12k_pci 0001:01:00.0: BAR 0: assigned [mem 0xc00000000-0xc001fffff 64bit]
+    ath12k_pci 0001:01:00.0: MSI vectors: 1
+    ath12k_pci 0001:01:00.0: Hardware name: qcn9274 hw2.0
+    ath12k_pci 0001:01:00.0: qmi dma allocation failed (29360128 B type 1), will try later with small size
+    ath12k_pci 0001:01:00.0: memory type 10 not supported
+    ath12k_pci 0001:01:00.0: chip_id 0x0 chip_family 0xb board_id 0x1005 soc_id 0x401a2200
+    ath12k_pci 0001:01:00.0: fw_version 0x111300d6 fw_build_timestamp 2024-08-06 08:43 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
+    ath12k_pci 0001:01:00.0: leaving PCI ASPM disabled to avoid MHI M2 problems
+    ath12k_pci 0001:01:00.0: Invalid module id 2
+    ath12k_pci 0001:01:00.0: failed to parse tlv -22
+    ath12k_pci 0001:01:00.0: ieee80211 registration failed: -22
+    ath12k_pci 0001:01:00.0: failed register the radio with mac80211: -22
+    ath12k_pci 0001:01:00.0: failed to create pdev core: -22
+    ath12k_pci 0001:01:00.0: qmi failed set mode request, mode: 4, err = -110
+    ath12k_pci 0001:01:00.0: qmi failed to send wlan mode off
 
-...
-
-  | CSA starts
-  |   - update current beacon I to I': include CSA
-  |   - update template II to II': include CSA
-  |   - update template III to III': include CSA
-  |     (assuming CSA finishes after UHR parameter update)
-  |   - add template IV: post UHR update and post CSA
-  |
-  x <-- current template is I' now
-  |
-  | (If now something else happens that should be reflected in
-  |  the beacon _immediately_, all four I', II', III', IV templates
-  |  need to be updated.)
-  |
-...
-  |
-  x <-- UHR update takes effect, switch to II'
-  |
-...
-  |
-  x <-- UHR update is no longer announced, switch to III'
-  |
-...
-  | channel switch actually happens
-  |
-  x <-- CSA has happened, is no longer announced, template IV
-  |
-...
-
-(and you could have more of these overlapping, say link removal happens
-at the same time, BSS color change, etc., but each new operation only
-updates all the templates and adds at most a single new one, UHR updates
-two new ones.)
-
-And if that seems complex already, I haven't drawn this up for multi-
-link! That would actually have an effect over all the links of the AP
-MLD, since they interact with each other too, and carry some information
-with counters from the other APs.
-
-So if only _one_ link is doing updates, the number of templates just
-multiplies by the number of links, and if multiple links are doing
-overlapping updates you add all of those together; three links doing two
-overlapping updates each would have four templates each and thus require
-a total of 18 templates! (But that's "only" six overlapping operations.)
-
-Oh and each of those templates would have a whole bunch of counter
-offsets, since the counter for each operation may need to be set in
-multiple places.
-
-This is clearly a *lot* of complexity, and we haven't even really talked
-about sending Probe Response, (Re)Association Response, EPP Capabilities
-and Operation Parameter Response (and perhaps other) frames, some of
-which may have to carry all of those (six) counters in various places.
+I want to address and fix this issue. However, I cannot apply the “never
+break the userspace” rule here, as it seems, it is already broken. Can
+someone help clarify which datatypes are supposed to be used? Once that is
+clear, I can fix the `ath12k` implementation.
 
 
-My original thought was that yes, indeed we can manage this complexity
-in the kernel - each set of these operations gets a set of counter
-offsets, and we can either do that in mac80211 or have API to let
-firmware fill in the counters, and=C2=A0even extend that so that each
-operation's cookie can be given for other frames (mentioned in the
-previous paragraph). It does get tedious though ...
-
-(I was going to write something about event-driven updates here, but
-another thing came to mind first.)
-
-Considering multi-link, event-driven updates, and all the response
-frames that I mentioned above, made me realise that we also need to
-think about the design in terms of beacon TBTTs for multiple links. I'd
-think that the spec allows having different beacon intervals for
-different links, and there are TSF offsets, but there's a question here
-if we actually want/need that in the implementation.
-
-If not, and the TBTTs for multiple links are aligned, that could
-simplify things quite significantly. If yes, perhaps due to the multi-HW
-architecture you (Qualcomm) have, it would require a more complex design
-to get it right, especially considering that you could have say 4-5
-links max and need to send the response frames.
-
-If beacon intervals are the same and TBTT aligned, then basically you
-just have to update all the link beacons once each beacon interval, and
-could send (handwaving a bit) the response frames with an indication
-that they are expected to go out during a specific period of time, and
-if that time is mispredicted by hostapd the frame would get dropped by
-the driver/FW, and hostapd could send another response instead with the
-updated counters etc.
-
-In this case, you could also make the whole beacon template update
-handling event-driven, and just have a single "beacons transmitted"
-event to hostapd while any operations are ongoing, and hostapd would
-just update all the beacon templates for all the links at that point,
-including even writing all the counters itself even, it has plenty of
-time (a whole beacon interval) to do that.
-
-However, if they're not aligned, you'd need an event per link, and then
-handling it on time is really only plausible if we can require the
-beacons to either be at the same time or have a "minimum distance",
-because otherwise you could end up with really small time intervals.
-It's still maybe possible in that case, because hostapd would know which
-link(s) got the beacon TX event, but it'd have to update all links for
-each event, and if there are beacons close to each other that could
-easily become impossible, because after any beacon TX event it has to
-update _all_ links before _any_ link transmits a new beacon, and so it
-doesn't work if they're only a short time apart.
-
-I'll stop here, I think there are a couple of system design questions in
-this that we need answers on first, particularly the question about
-beacon alignment across multiple links. But it also affects how we send
-the response frames, and it _would_ be nice to not have to offload the
-counter filling in those to the kernel/driver/firmware, since that would
-make it far more extensible (e.g. for the EPP frame that doesn't seem to
-have been considered so far.)
-
-
-
-> It might be possible to rely on a generic notification when this is
-> started via CMD_START_MLD_BSS_UPDATE. That said, since CSA has existed
-> for a long time, I was wondering whether also sending CH_SWITCH_NOTIFY
-> for backward compatibility could be considered, at least initially.
-
-Fair. I think probably easier to _not_ have it, since hostapd would
-otherwise have to figure out which one to handle, but I guess TBD.
-
-
-> That=E2=80=99s a fair point. With multiple operations potentially occurri=
-ng in
-> parallel, it does seem possible that this could gradually result in an
-> increasing number of templates being involved.
-
-Yes. I spelled it out more above :)
-
-> > So I'm coming around to the idea that you have a notification and
-> > hostapd has to update the templates at that point.
->=20
-> Yes, that does seem to align with the direction here. This approach
-> would still partially rely on event=E2=80=91driven updates (for example,
-> reacting to a UHR event) to modify the BSS via CMD_MODIFY_MLD_BSS_UPDATE
-> for csa. At the same time, since such notifications would likely require
-> the beacon templates to be updated fairly promptly, it does raise some
-> open questions around prioritization and handling on the hostapd side,
-> particularly given its single=E2=80=91threaded nature.
-
-Sure, but I think we're reaching a point where the single-threaded
-nature will need to be reconsidered anyway, if only to offload longer-
-running operations (such as SAE/EPPKE calculations) to another
-thread/CPU.
-
-> > >    |                           |                           |
-> > > 23 |                           | Beacons Continue...       |
-> > >    |                           |-------------------------->|
-> > >    |                           |                           |
-> > > 24 |                           | Probe Request             |
-> > >    |                           |<--------------------------|
-> > >    |                           | [Fetch TBTT]              |
-> > >    |     send_mgmt (TBTT)      |                           |
-> > >    |<--------------------------|                           |
-> > >    |                           |                           |
-> > > 25 | send_mgmt (Probe Resp     |                           |
-> > >    |  w/ TBTT in UHR Param)    |                           |
-> > >    |-------------------------->|                           |
-> > >    |                           |                           |
-> >=20
-> > Not sure I follow this part regarding the "TBTT" thing. Are you saying
-> > the RX of the probe request would have a TBTT attached to it? But does
-> > it matter, what matters is the TX? And that's probably impossible to ge=
-t
-> > right?
->=20
-> What I was trying to describe is the handling of probe and association
-> responses during an ongoing UHR CU / EHT CU.
-
-Ah yes, see some thoughts about that above. I think the "fetch TBTT"
-basically inherently leaves a race - if we want to fully solve that we
-either have to have some "drop frame if it was wrong" thing like I
-described above. Perhaps that could be expressed in "don't send this
-frame after this TBTT" or something instead of linking to the
-operations.
-
-> In such cases, when a probe request or association request is received,
-> the corresponding response may need to reflect the current countdown
-> state. For example, in the case of UHR, a probe response might need to
-> include an UHR parameters update element with the appropriate countdown
-> value.
-
-Right, across all the links.
-
-> The idea was that, at the time the response is being constructed, the
-> current countdown could be obtained from the relevant cookie and made
-> available to user space. This would allow hostapd to build the probe or
-> association response accordingly.
-
-Yeah but it's racy anyway, and if there's anything event driven hostapd
-knows the counter already. I described some thoughts above, so not going
-to elaborate more here for now.
-
-
-> > It's input into the kernel, so the size doesn't matter, I think? For
-> > notifications that might be an issue, and dumpit is used for data going
-> > _out_ of the kernel so userspace doesn't have to have arbitrarily large
-> > buffers ready before it knows the data, but on input I don't see how it
-> > matters.
->=20
-> Based on the earlier discussion in the below thread, I had wondered
-> whether there might be a potential bottleneck here.
->=20
-> https://lore.kernel.org/all/c7e383a9-c291-426b-a7f1-7845fabbaeeb@oss.qual=
-comm.com/
->=20
-> We will re=E2=80=91check this internally to confirm whether that concern =
-is
-> still applicable.
-
-Looks like I never replied to that point there, but I don't think it's
-an issue on commands sent to the kernel - the in-kernel socket isn't
-limited by the size of any command like a userspace read() or recvmsg()
-call is limited to the buffer size it has allocated a priori.
-
-There's no such huge event going to userspace in the design, but I
-suppose even if there _was_ we could just mandate that hostapd increase
-the recvmsg() buffer size according to the number of links or such that
-it expects to handle, or even just use a huge size (a few dozen KiB) for
-each call, it's not really a big deal either way IMHO.
-
-We don't want to have such huge events (we really can't have them as
-multicast events), and we generally strive to keep dump message size
-reasonably small, but I don't think it's going to be a show-stopper.
-
-johannes
+Best regards
+Alexander Wilhelm
 
