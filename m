@@ -4,145 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB202FED2D3
-	for <ath12k@archiver.kernel.org>; Thu, 12 Mar 2026 05:49:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C48BFED2CC
+	for <ath12k@archiver.kernel.org>; Thu, 12 Mar 2026 06:28:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9ZoyLCKbfmAWXPj7Ja8hrtYbKxwcdYf3vbaiNIY6ts0=; b=Sp23UXW0+JTNCU2uEsMlVpPfnv
-	YOxpgtKWjV5O5NACWnx7ADZSggSiifU2Y8WFSJy3jFHVYU6RVuyOncYTjEIYmefXi6ZO54kJZFYfq
-	5LxZbnRxtBM7fybwdrtA3UKIsinTl1qsI2iauH3OgOdDnyFq7JTpnlH7YRcotGS9hO9+Zp+xeaiLF
-	bqdhZBz9XEew2iCfbQC/ERKs2GautOAwl0sDNec7dLcluVq53ti2G7PSzwdE7ed/Zf4hw7SrpC8zI
-	mVVXBFKKAyyjjGMV/Umk3Ji+CDMDMvGPhCRO5irX2JkH18M2hD5IzebkpX3n9JX0uYWHPy11dmFqK
-	AM9bo/IA==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=RpovysDm6qNNbp8lXOZqBXhU5qvIn7QYoLAsiBBFhfU=; b=RralrCO1TDlorcuGPVB/LUm8gL
+	wVaGstLx9NzqXreS1kZMms7JVVKpLhPyWBj16MsPKogQDeC1f8cnzutOG+wlOFd0GcZHwlKczY6i2
+	Tw7YCj//pwS64ReI26htvjzD5QxT2I9wl0t5j/lsRt9ThxT6G+fI34PD9dLrQYqQBqo4Nu7JO7PWL
+	uUD/970zQV1gfOSKEf/Kw4Nifbtb3bbrl6+kpiRxwG5UjXj3ZkJKle+B2rniVl2CGzguoCehAKV+H
+	zFujDOJ/b4mSDohj7EEcEkKHHQvXJV7uVYflhNqkXEelOXJCUBXeEKvbXoEyPJWOtJxED1B8rO6uu
+	0UeqzG/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Yv5-0000000DPAx-0RI1;
-	Thu, 12 Mar 2026 05:49:15 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1w0ZWy-0000000DS7o-0SY9;
+	Thu, 12 Mar 2026 06:28:24 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Yv0-0000000DP9h-3Uw9
+	id 1w0ZWv-0000000DS7I-2WPc
 	for ath12k@lists.infradead.org;
-	Thu, 12 Mar 2026 05:49:12 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62BMN2dI263530
-	for <ath12k@lists.infradead.org>; Thu, 12 Mar 2026 05:49:07 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	9ZoyLCKbfmAWXPj7Ja8hrtYbKxwcdYf3vbaiNIY6ts0=; b=a4/Piyqr5Vz99KIw
-	0lHcopj5xnanhwUsF1NsDCXFbVyppccvjYvYaSj+q8qGv3BJxgVorGjKNPMIO4xo
-	GM0BtezRton/en5lyqQilmvtGUmGur5Zfzn6A4XyXcZ694UD3wlZIPQNaOWwPryE
-	Vs+0DKgba4mk3+X5MNW2ev9sNxiwozlNeJ1OkXEwp83Pa89S1EgRxwY2BmNewneY
-	jHQ32dmZ08v5sKjj6hX8iYKEGIkl4lrhEvmOIRS4T0I3sIP16+ba4xvzuQBl0Ob/
-	/eGF1jXK9CuPJLklCc1iVhsp1GBpuYCly8C+xb/GGoax5oliwwU9H/xmvQ73iJLH
-	O0Bd9A==
-Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cuh4yh0gv-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 12 Mar 2026 05:49:07 +0000 (GMT)
-Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-c7387c70046so349203a12.0
-        for <ath12k@lists.infradead.org>; Wed, 11 Mar 2026 22:49:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1773294546; x=1773899346; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=9ZoyLCKbfmAWXPj7Ja8hrtYbKxwcdYf3vbaiNIY6ts0=;
-        b=YDp5aTblmlsqyuqjnslft8dXof5hSut88w6U5/TT/Nv3v3qiZj6Z8vUDBX8gRQt0i5
-         VRLsGYcKkPbCXtx8j5qJRpI42UMM+ZXWrSisAE8iZEsh5iLyj2UL7kMT8GpL9wNfc0iI
-         JI2wLgBoUCaPKlh5jR1878kuM3S26r7ySYF0/GvSWrMdmQSG9GCGo9MRwYN6lysenc3P
-         CqYRs/7wqmV/Wc7b+qqJORiIz2xblgmOARMOCzx5VglqSsMtIoeefjPegzlSqSh6Gh6X
-         5tdYSlz47j689h9fnsUmmi0t40RpvzhRmQD7J4l8YUQlySFOAePzSUIhve1tXnm2WjMV
-         5tiA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1773294546; x=1773899346;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=9ZoyLCKbfmAWXPj7Ja8hrtYbKxwcdYf3vbaiNIY6ts0=;
-        b=Va6n/4KjoVzbD2yyj4lz9qTCF3JOCf02v+Jt/acLxRvmnriSCkN4qViEGYML7R9UBv
-         9uD6MoxhxKbRFisjtK1QrcC8iH/QX6DLmepZa8eVoVjjDWSFgphtAwMc24Q58E186P37
-         W4r036Zlb/rWwKOwixzy8ejhf9zFp5hWFtmghLIunQNCtbQ26Dqa10f52Nubi7ZnXwIi
-         YwqBGMGwwWi4TAcy+v05BOrE7n5AicHZ2UYfrqOM/9zxYiWch0cTQ/PZ9x+sk+ykHgOX
-         rmn/uYa8XVGvj4MI5mUhAGv1ydLB95aZAWLNNHsDB8nc8KcdTrjAdXwTx95qeiyyWW2o
-         GfMg==
-X-Forwarded-Encrypted: i=1; AJvYcCVWUUctopX1fgJWADvU6jMA7sV4rqD5QctiRcnU80V77jcfgPS8oWdRNTnD0K150eS+mt80SKs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwtyTSVo03Uhcz7io6Oj8tOtRFXKKOznUQezVSXUQMJzm1FkrOO
-	kxwYdg9FFNkJ7dNZzMAe4C7P1kIp+bhUZ0Qyd/UybTE7Ldl8lsusu4lteOEkCc6thVPuRgk6CuN
-	QCWV3V6lJ1upVqIliJP9Mf0VabN4PzTEDgRD/AZbt41+mXBk7sOVvrqfkeVw0tPO/
-X-Gm-Gg: ATEYQzyoDEa9amnYa37VlygNe3aJ7ry5NFWJQctC1WpikOFCZDkrs3Y5UB5s1SZ5n8w
-	GgJz7D+F/XtW826k4AXHcd3mff31dD9IMqMF3ZYp8mHYPHoET0hLfVMnYp3KyapH1kysw1sksIv
-	QCsV3WIEj8A8gSkjFhPwxAJykV4aiEBYX3QogJzGX+gMRDuzaj+jzoMfXmbarMgmLw5IlDEONbe
-	VLqOR4tlqKq6e48tYIjFY3NK9EyqA1uVH+hrnOgPcxOD29FaSijLyzh91dP+qT4FGW5xHSYjRER
-	/2Y4+wyqMK2J7qPVwbahKgCAeAQ/fzijlVvIUxHen9GV3reSmNEEW1Zc/IDUICAW3xkaOqYcU6x
-	KyoRbJoO38WSdQjlPWTSieNV0TPO/k4d8By6fdoU3NuH7ikX2dQ==
-X-Received: by 2002:a05:6a20:3d83:b0:398:80dd:5705 with SMTP id adf61e73a8af0-398c60e42f8mr4950302637.46.1773294546339;
-        Wed, 11 Mar 2026 22:49:06 -0700 (PDT)
-X-Received: by 2002:a05:6a20:3d83:b0:398:80dd:5705 with SMTP id adf61e73a8af0-398c60e42f8mr4950275637.46.1773294545758;
-        Wed, 11 Mar 2026 22:49:05 -0700 (PDT)
-Received: from [192.168.1.4] ([27.5.116.18])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-c73cdf9303csm4090926a12.18.2026.03.11.22.49.02
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 11 Mar 2026 22:49:04 -0700 (PDT)
-Message-ID: <416d08f1-6b8d-4bf7-9a63-c3c68497d990@oss.qualcomm.com>
-Date: Thu, 12 Mar 2026 11:19:00 +0530
+	Thu, 12 Mar 2026 06:28:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id ACA78423BC;
+	Thu, 12 Mar 2026 06:28:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EAE6EC4CEF7;
+	Thu, 12 Mar 2026 06:28:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1773296899;
+	bh=gzjC3+HXwJYqJxbOxEjt7FRKLUrp3Sx8tGFp6KAYFyg=;
+	h=From:To:Cc:Subject:Date:From;
+	b=QuYTGHhYc3mF+ToCAl/YU2nORRURoLpgtIWhZaoxhM9y1isdCNmVBphhYPKYNcuCk
+	 MtSSCCihQdGnGVMfvEn6kNvFKgTgVtObil4m74Q2ATvVYQHU2kjnnspGpcIEkpnwgq
+	 4fYorrbf2rUfw6Wvp2D0iSKZuOFC58bp9u5HN/QCxrfcv1Lj4rwCGAf5H7eTll2Adc
+	 tJf3fzcducdbwGNeo1ZUnd/rg4EQazr/N4lq9hamfA/UswJt1YNqDY3F/IdNZj1DH3
+	 /6CnguYXyYLZF+Owj+hK+SWQ5GagYjg2kwcxAA8QjvFIp6Jl10AF4LgbKxEjkdu1bD
+	 S1kunhkCWRTdQ==
+From: Sumit Garg <sumit.garg@kernel.org>
+To: linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org,
+	linux-media@vger.kernel.org,
+	netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-remoteproc@vger.kernel.org
+Cc: andersson@kernel.org,
+	konradybcio@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	robin.clark@oss.qualcomm.com,
+	sean@poorly.run,
+	akhilpo@oss.qualcomm.com,
+	lumag@kernel.org,
+	abhinav.kumar@linux.dev,
+	jesszhan0024@gmail.com,
+	marijn.suijten@somainline.org,
+	airlied@gmail.com,
+	simona@ffwll.ch,
+	vikash.garodia@oss.qualcomm.com,
+	dikshita.agarwal@oss.qualcomm.com,
+	bod@kernel.org,
+	mchehab@kernel.org,
+	elder@kernel.org,
+	andrew+netdev@lunn.ch,
+	davem@davemloft.net,
+	edumazet@google.com,
+	kuba@kernel.org,
+	pabeni@redhat.com,
+	jjohnson@kernel.org,
+	mathieu.poirier@linaro.org,
+	trilokkumar.soni@oss.qualcomm.com,
+	mukesh.ojha@oss.qualcomm.com,
+	pavan.kondeti@oss.qualcomm.com,
+	jorge.ramirez@oss.qualcomm.com,
+	tonyh@qti.qualcomm.com,
+	vignesh.viswanathan@oss.qualcomm.com,
+	srinivas.kandagatla@oss.qualcomm.com,
+	amirreza.zarrabi@oss.qualcomm.com,
+	jens.wiklander@linaro.org,
+	op-tee@lists.trustedfirmware.org,
+	apurupa@qti.qualcomm.com,
+	skare@qti.qualcomm.com,
+	linux-kernel@vger.kernel.org,
+	Sumit Garg <sumit.garg@oss.qualcomm.com>
+Subject: [PATCH v2 00/15] firmware: qcom: Add OP-TEE PAS service support
+Date: Thu, 12 Mar 2026 11:57:41 +0530
+Message-ID: <20260312062756.694390-1-sumit.garg@kernel.org>
+X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH wireless-next v8 2/3] wifi: cfg80211: add initial UHR
- support
-To: Johannes Berg <johannes@sipsolutions.net>, linux-wireless@vger.kernel.org
-Cc: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>,
-        vasanthakumar.thiagarajan@oss.qualcomm.com,
-        Lorenzo Bianconi <lorenzo@kernel.org>, ath12k@lists.infradead.org,
-        Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-        Ping-Ke Shih <pkshih@realtek.com>,
-        Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
-References: <20260130154259.265130-5-johannes@sipsolutions.net>
- <20260130164259.54cc12fbb307.I26126bebd83c7ab17e99827489f946ceabb3521f@changeid>
- <f96125eeda23451c19067359eb9d10b4047bcdd3.camel@sipsolutions.net>
- <5d54feea-d0cd-4bd7-b0d2-02e42f0fe5e1@oss.qualcomm.com>
- <be9ab3c7f05b0f56f19aee0ffc7c2f96138b9a05.camel@sipsolutions.net>
- <156d6d48-d135-4acf-a5d7-c9ae80523864@oss.qualcomm.com>
- <0f4b34f0b529fd93fc608d8bbac0e98516b7a3d2.camel@sipsolutions.net>
- <f3282007-a11a-4f68-86d8-0945e4979d65@oss.qualcomm.com>
- <d3ecf6e5580cbe50eee807b1e63109e42e3b956c.camel@sipsolutions.net>
-Content-Language: en-US
-From: Harshitha Prem <harshitha.prem@oss.qualcomm.com>
-In-Reply-To: <d3ecf6e5580cbe50eee807b1e63109e42e3b956c.camel@sipsolutions.net>
-Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzEyMDA0NCBTYWx0ZWRfX5p8A0uIHr2vr
- j2RPtHW3neSVNCj+RCVa2ZShXfW0PPNeGgZYbarGdasKMXqRtDqcz/gmHUuxxVwkWcfac8Gik8a
- BKuZOSdbUEBrQ7zlos2WwO7fYz4TfmAonOi7ZsqX+/GRXrzarTHDYnbASYT4nl76Ksbjh7j+PyU
- p/bZaKYPyqGyMoYe+bd28ESTX8s2wO9Anr3kymume6qjMHd9zWOUkRxgHHXRyVIxUp96Xx6KOwL
- RzToG7O7zfm6+mVejFX6a+Lam1RabcPXfPp3IWyBMkvf+1vx7oQ7c8INdfvZLE/BEuF/hNF1WVD
- vE0126ThZg8e547CSQAsU/XWOsgPsSfhpwJuGaGQsG26h664UqlqOQhHEP9gC8l1HVcx8T7vMtb
- /2W2RgUgJ4vPUVnypoot8Dc3E+CXc/ib0KGDOQ5DOgh0oS9KAOwo/mLSwwYWYTskAAc7oHP+MhV
- aE+Agfyizeyx2DonGNQ==
-X-Proofpoint-ORIG-GUID: H0gkZtFLnf3Om1GbGmbd_wOXkV1rq5bW
-X-Authority-Analysis: v=2.4 cv=C+7kCAP+ c=1 sm=1 tr=0 ts=69b253d3 cx=c_pps
- a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=2nr1+02xqZAyC3l0ZA5/6g==:17
- a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=E38heQHmJUpkbQq-XYUA:9 a=3ZKOabzyN94A:10
- a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
-X-Proofpoint-GUID: H0gkZtFLnf3Om1GbGmbd_wOXkV1rq5bW
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-11_02,2026-03-09_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 priorityscore=1501 phishscore=0 adultscore=0 suspectscore=0
- bulkscore=0 lowpriorityscore=0 clxscore=1015 impostorscore=0 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603120044
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260311_224911_033692_5868940A 
-X-CRM114-Status: GOOD (  40.48  )
+X-CRM114-CacheID: sfid-20260311_232821_705958_67C8266E 
+X-CRM114-Status: GOOD (  16.88  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,370 +115,120 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 
+Qcom platforms has the legacy of using non-standard SCM calls
+splintered over the various kernel drivers. These SCM calls aren't
+compliant with the standard SMC calling conventions which is a
+prerequisite to enable migration to the FF-A specifications from Arm.
 
-On 3/6/2026 6:13 PM, Johannes Berg wrote:
-> Hi,
-> 
->> Thank you very much for your patience, and apologies for the delayed
->> response. We spent some time discussing this internally and wanted to
->> follow up thoughtfully.
-> 
-> Hey, no worries, I'm clearly also not always able to respond quickly, a
-> lot of things are going on at any given time ...
-> 
+OP-TEE as an alternative trusted OS to Qualcomm TEE (QTEE) can't
+support these non-standard SCM calls. And even for newer architectures
+with S-EL2 and Hafnium support, QTEE won't be able to support SCM
+calls either with FF-A requirements coming in. And with both OP-TEE
+and QTEE drivers well integrated in the TEE subsystem, it makes further
+sense to reuse the TEE bus client drivers infrastructure.
 
-Thanks for understanding! :)
+The added benefit of TEE bus infrastructure is that there is support
+for discoverable/enumerable services. With that client drivers don't
+have to manually invoke a special SCM call to know the service status.
 
->>> This could get trickier than I imagined - you now have three periods of
->>> time:
->>>
->>>  - now
->>>  - after CSA but before UHR update
->>>  - after UHR update
->>>
->>> and actually all three might need different UHR operation, since the CSA
->>> can change the bandwidth and therefore e.g. DBE/NPCA. The intermediate
->>> period ("after CSA but before UHR update") can be captured by the CSA
->>> operation (given a template/UHR operation for after) easily.
->>>
->>> But I was imagining we capture all this in the operations already, so I
->>> guess to do that we would need a "NL80211_CMD_MODIFY_MLD_BSS_UPDATE"
->>> command that takes the cookie and updates the post-operation values, so
->>> that the changes due to the CSA could be taken into account in the
->>> previously started UHR update.
->>
->> The idea of introducing an NL80211_CMD_MODIFY_MLD_BSS_UPDATE command
->> makes a lot of sense to us. In cases where
->> NL80211_CMD_START_MLD_BSS_UPDATE is already in progress, having a modify
->> path to update the current beacon seems easier to reason about and
->> manage. From that perspective, a pairing such as
->> NL80211_CMD_START_MLD_BSS_UPDATE together with
->> NL80211_CMD_MODIFY_MLD_BSS_UPDATE feels quite natural.
-> 
-> Yeah, maybe, then it wouldn't ever really go to a normal SET_BEACON any
-> more, maybe?
-> 
-> I was thinking more for not having to change all the code in hostapd at
-> a given time, it might be more plausible to still allow SET_BEACON and
-> just keep giving the counter offsets etc., in case e.g. something "old"
-> like short-preamble changes.
-> 
-> But clearly hostapd would have to manage those offsets etc. anyway, so
-> perhaps there's really not going to be any reason to support SET_BEACON
-> while updates are in progress. But in that case I'd probably argue it
-> (SET_BEACON) should be disallowed by the kernel, to catch errors.
+So enable the generic Peripheral Authentication Service (PAS) provided
+by the firmware. It acts as the common layer with different TZ
+backends plugged in whether it's an SCM implementation or a proper
+TEE bus based PAS service implementation.
 
-Yes, that's the idea when any MLD_BSS_UPDATE is in progress, instead of
-sending SET_BEACON rather use MODIFY_MLD_BSS_UPDATE.
+The TEE PAS service ABI is designed to be extensible with additional API
+as PTA_QCOM_PAS_CAPABILITIES. This allows to accommodate any future
+extensions of the PAS service needed while still maintaining backwards
+compatibility.
 
-> 
->> Please find below the envisioned design flow for the UHR CU and CSA
->> intersection.
->>
->> Hostapd (User)          mac80211 (Kernel)           Air / Station
->>    |                           |                           |
->>  1 | CMD_START_AP [Adv Notif,  |                           |
->>    |  Post Notif, Upd Int]     |                           |
->>    |-------------------------->|                           |
->>    |                           |                           |
->>  2 | CMD_START_MLD_BSS_UPDATE  |                           |
->>    | [Link:0, CurTmpl+Offset   |                           |
->>    |  (All), Timer, PostTmpl   |                           |
->>    |  (All), Type:UHR_CU,      |                           |
->>    |  Post UHR Op element]     |                           |
->>    |-------------------------->|                           |
->>    |                           |                           |
->>  3 |                           | [Set Tmpl, Timer: Adv=10, |
->>    |                           |  Post=10, TIM Update]     |
->>    |                           |                           |
->>  4 |         Cookie X          |                           |
->>    |<--------------------------|                           |
->>    |                           |                           |
->>  5 | EVENT_UHR_CU (CU_START)   |                           |
->>    |<--------------------------|                           |
-> 
-> Not sure what the event does really, at this point? It kind of starts
-> immediately anyway, no? But it also doesn't matter for this high-level
-> discussion.
+Currently OP-TEE support is being added to provide the backend PAS
+service implementation which can be found as part of this PR [1].
+This implementation has been tested on Kodiak/RB3Gen2 board with lemans
+EVK board being the next target. In addition to that WIN/IPQ targets
+planning to use OP-TEE will use this service too. Surely the backwards
+compatibility is maintained and tested for SCM backend.
 
-Yeah, it would kind of immediate, this is just an indication to user
-space applications if someone is interested.
+Patch summary:
+- Patch #1: adds Kodiak EL2 overlay since boot stack with TF-A/OP-TEE
+  only allow UEFI and Linux to boot in EL2.
+- Patch #2: adds generic PAS service.
+- Patch #3: migrates SCM backend to generic PAS service.
+- Patch #4: adds TEE/OP-TEE backend for generic PAS service.
+- Patch #5-#13: migrates all client drivers to generic PAS service.
+- Patch #14: drops legacy PAS SCM exported APIs.
 
-> 
->>    |                           |                           |
->>  6 |                           | Beacons: 10, 9, 8...      |
->>    |                           |-------------------------->|
->>    |                           |                           |
->>  7 | [CSA Triggered: Link0,    |                           |
->>    |  Count 10. Sees Cookie X] |                           |
->>    |                           |                           |
->>  8 | CMD_START_MLD_BSS_UPDATE  |                           |
->>    | [Type:CSA, Link:0, Tmpls, |                           |
->>    |  Cookie X + Offset,       |                           |
->>    |  Post Tmpl (No UHR ele)]  |                           |
->>    |-------------------------->|                           |
-> 
-> Not sure I understand the "No UHR ele" part - surely the post template
-> still has UHR? Or did you mean "UHR parameter update"?
-> 
+The patch-set is based on v7.0-rc2 tag and can be found in git tree here
+[2].
 
-At this point, the CSA post-beacon template would not include the
-updated UHR operation element, since hostapd needs a way to determine
-whether that element should be added. The updated UHR operation element
-is expected to be reflected only after the advance timer expires.
-In a scenario where the CSA completes before the advance timer expires,
-the CSA post-beacon may not actually require the updated UHR operation
-element.
+Merge strategy:
 
-Because of this, an event-driven approach was considered. For example,
-if the UHR advance timer expires before the CSA completes, it could
-notify hostapd, which could then update the CSA post-beacon template
-with the updated UHR operation element via MODIFY_MLD_BSS_UPDATE.
+It is expected due to APIs dependency, the entire patch-set to go via
+the Qcom tree. All other subsystem maintainers, it will be great if I
+can get acks for the corresponding subsystem patches.
 
-> Not that there's a race here - "Sees Cookie X", but who knows the cookie
-> X is even still valid?
-> 
-> But I think we can pretty much solve that racy by marking a cookie X
-> invalid in the kernel (or even FW?) and rejecting the new
-> CMD_START_MLD_BSS_UPDATE operation that still refers to Cookie X -
-> hostapd would just have to know about that specific rejection reason (I
-> guess netlink extended status would point to the wrong cookie attr or
-> so) and then rebuild the templates without taking the update with cookie
-> X into account.
+[1] https://github.com/OP-TEE/optee_os/pull/7721
+[2] https://git.kernel.org/pub/scm/linux/kernel/git/sumit.garg/linux.git/log/?h=qcom-pas-v1
 
-In this case, cookie X would still need to remain valid for a UHR
-critical update, since the countdown associated with cookie X would have
-to continue alongside the cookie Y (CSA) countdown. Given that, it’s not
-clear whether cookie X can be invalidated at that stage without
-impacting the ongoing UHR flow.
+---
+Changes in v2:
+- Fixed kernel doc warnings.
+- Polish commit message and comments for patch #2.
+- Pass proper PAS ID in set_remote_state API for media firmware drivers.
+- Added Maintainer entry and dropped MODULE_AUTHOR.
+- Picked up ack from Jeff.
 
-> 
-> But with that race aside, yeah, seems reasonable.
-> 
->>    |                           |                           |
->>  9 |         Cookie Y          |                           |
->>    |<--------------------------|                           |
->>    |                           |                           |
->> 10 | CMD_CH_SWITCH_STARTED_    |                           |
->>    | NOTIFY                    |                           |
->>    |<--------------------------|                           |
-> 
-> I don't know - this was started by CMD_START_MLD_BSS_UPDATE too, so
-> probably should be some generic notification about it, or like I said
-> above, maybe isn't even needed at all?
+Mukesh Ojha (1):
+  arm64: dts: qcom: kodiak: Add EL2 overlay
 
-It might be possible to rely on a generic notification when this is
-started via CMD_START_MLD_BSS_UPDATE. That said, since CSA has existed
-for a long time, I was wondering whether also sending CH_SWITCH_NOTIFY
-for backward compatibility could be considered, at least initially.
+Sumit Garg (14):
+  firmware: qcom: Add a generic PAS service
+  firmware: qcom_scm: Migrate to generic PAS service
+  firmware: qcom: Add a PAS TEE service
+  remoteproc: qcom_q6v5_pas: Switch over to generic PAS TZ APIs
+  remoteproc: qcom_q6v5_mss: Switch to generic PAS TZ APIs
+  soc: qcom: mdtloader: Switch to generic PAS TZ APIs
+  remoteproc: qcom_wcnss: Switch to generic PAS TZ APIs
+  remoteproc: qcom: Select QCOM_PAS_TEE service backend
+  drm/msm: Switch to generic PAS TZ APIs
+  media: qcom: Switch to generic PAS TZ APIs
+  net: ipa: Switch to generic PAS TZ APIs
+  wifi: ath12k: Switch to generic PAS TZ APIs
+  firmware: qcom_scm: Remove SCM PAS wrappers
+  MAINTAINERS: Add maintainer entry for Qualcomm PAS TZ service
 
-> 
-> (I think a good chunk of the channel switch notification is code
-> unification between client and AP, does the AP even use the start
-> notification?)
-> 
->>    |                           |                           |
->> 11 |                           | Beacons: X=7, Y=10        |
->>    |                           |-------------------------->|
->>    |                           |                           |
->> 12 | CMD_MODIFY_MLD_BSS_UPDATE |                           |
->>    | (Cookie X Post Tmpl w/    |                           |
->>    |  Chan Info, 3 Links)      |                           |
->>    |-------------------------->|                           |
->>    |                           |                           |
->> 13 |                           | Beacons: X=1, Y=4         |
->>    |                           |-------------------------->|
->>    |                           |                           |
->> 14 |                           | [X=0: Modify Cur Tmpl     |
->>    |                           |  w/ Post UHR Op element]  |
->>    |                           |                           |
->> 15 | EVENT_UHR_CU              |                           |
->>    | (CU_ADVANCE_COMPLETE)     |                           |
->>    |<--------------------------|                           |
-> 
-> That should have Cookie X somehow as an attribute, of course :)
-> 
-> Really all the events should have, but here clearly you meant X since
-> the other operation isn't done yet.
+ MAINTAINERS                                   |   9 +
+ arch/arm64/boot/dts/qcom/Makefile             |   2 +
+ arch/arm64/boot/dts/qcom/kodiak-el2.dtso      |  35 ++
+ drivers/firmware/qcom/Kconfig                 |  18 +
+ drivers/firmware/qcom/Makefile                |   2 +
+ drivers/firmware/qcom/qcom_pas.c              | 298 +++++++++++
+ drivers/firmware/qcom/qcom_pas.h              |  53 ++
+ drivers/firmware/qcom/qcom_pas_tee.c          | 477 ++++++++++++++++++
+ drivers/firmware/qcom/qcom_scm.c              | 304 ++++-------
+ drivers/gpu/drm/msm/adreno/a5xx_gpu.c         |   4 +-
+ drivers/gpu/drm/msm/adreno/adreno_gpu.c       |  11 +-
+ .../media/platform/qcom/iris/iris_firmware.c  |   9 +-
+ drivers/media/platform/qcom/venus/firmware.c  |  11 +-
+ drivers/net/ipa/ipa_main.c                    |  13 +-
+ drivers/net/wireless/ath/ath12k/ahb.c         |   8 +-
+ drivers/remoteproc/Kconfig                    |   1 +
+ drivers/remoteproc/qcom_q6v5_mss.c            |   5 +-
+ drivers/remoteproc/qcom_q6v5_pas.c            |  51 +-
+ drivers/remoteproc/qcom_wcnss.c               |  12 +-
+ drivers/soc/qcom/mdt_loader.c                 |  12 +-
+ include/linux/firmware/qcom/qcom_pas.h        |  41 ++
+ include/linux/firmware/qcom/qcom_scm.h        |  29 --
+ include/linux/soc/qcom/mdt_loader.h           |   6 +-
+ 23 files changed, 1108 insertions(+), 303 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/qcom/kodiak-el2.dtso
+ create mode 100644 drivers/firmware/qcom/qcom_pas.c
+ create mode 100644 drivers/firmware/qcom/qcom_pas.h
+ create mode 100644 drivers/firmware/qcom/qcom_pas_tee.c
+ create mode 100644 include/linux/firmware/qcom/qcom_pas.h
 
-Indeed, all the events should have the cookie X.
+-- 
+2.51.0
 
-> 
->>    |                           |                           |
->> 16 | CMD_MODIFY_MLD_BSS_UPDATE |                           |
->>    | (Cookie Y Post Tmpl w/    |                           |
->>    |  UHR Op + Param elements) |                           |
->>    |-------------------------->|                           |
-> 
-> What's this doing? Didn't we have post-Y templates already in the prior
-> command? Otherwise isn't this quite a bit racy? Though I guess we have a
-> whole beacon interval for hostapd to update everything, which really
-> ought to be sufficient (though hostapd may need to stop being single-
-> threaded ...)
-
-This is mainly to allow updating the CSA post‑beacon template with the
-updated UHR operation element. As you mentioned, yeah, While a full
-beacon interval is available, it seemed possible that under heavier
-event processing in hostapd, there could still be some short‑lived races
-or inconsistencies.
-
-> 
->>    |                           |                           |
->> 17 |                           | Beacons: X=127, Y=3       |
->>    |                           |-------------------------->|
->>    |                           |                           |
->> 18 |                           | Beacons: X=128/129,       |
->>    |                           |          Y=2/1 (CSA done) |
->>    |                           |-------------------------->|
->>    |                           |                           |
->> 19 |                           | [Y=0: Set Post Tmpl       |
->>    |                           |  cookie Y, UHR Param      |
->>    |                           |  Off, X=130]              |
->>    |                           |                           |
->> 20 | CMD_CH_SWITCH_NOTIFY      |                           |
->>    |<--------------------------|                           |
-> 
-> (similar comment as above wrt. what notifications are needed)
-> 
->>    |                           |                           |
->> 21 | CMD_MLD_BSS_UPDATE_NOTIFY |                           |
->>    | (Complete Cookie Y)       |                           |
->>    |<--------------------------|                           |
-> 
-> Right.
-> 
->>    |                           |                           |
->> 22 | CMD_MODIFY_MLD_BSS_UPDATE |                           |
->>    | (Cookie X Post Tmpl w/    |                           |
->>    |  UpdatedChan Info)        |                           |
->>    |-------------------------->|                           |
-> 
-> "X post" is a bit misleading ... it's still ongoing, because it's
-> changed now but not really _after_ the update X, it's still advertising
-> the update X has happened. So in some way the flow is still there.
-> 
-> But it does point out that we need basically three (additional)
-> templates for a UHR update:
-> 
->  - announcing the upcoming update
->  - announcing the update happened
->  - back to normal state afterwards
-> 
-> Which, perhaps, is indeed a bit too much to offload all to the kernel
-> even in terms of the API, because if you mix another operation in (here
-> in your example the channel switch Y), you end up with even more
-> templates ...
-
-That’s a fair point. With multiple operations potentially occurring in
-parallel, it does seem possible that this could gradually result in an
-increasing number of templates being involved.
-
-> 
-> So I'm coming around to the idea that you have a notification and
-> hostapd has to update the templates at that point.
-
-Yes, that does seem to align with the direction here. This approach
-would still partially rely on event‑driven updates (for example,
-reacting to a UHR event) to modify the BSS via CMD_MODIFY_MLD_BSS_UPDATE
-for csa. At the same time, since such notifications would likely require
-the beacon templates to be updated fairly promptly, it does raise some
-open questions around prioritization and handling on the hostapd side,
-particularly given its single‑threaded nature.
-
-> 
->>    |                           |                           |
->> 23 |                           | Beacons Continue...       |
->>    |                           |-------------------------->|
->>    |                           |                           |
->> 24 |                           | Probe Request             |
->>    |                           |<--------------------------|
->>    |                           | [Fetch TBTT]              |
->>    |     send_mgmt (TBTT)      |                           |
->>    |<--------------------------|                           |
->>    |                           |                           |
->> 25 | send_mgmt (Probe Resp     |                           |
->>    |  w/ TBTT in UHR Param)    |                           |
->>    |-------------------------->|                           |
->>    |                           |                           |
-> 
-> Not sure I follow this part regarding the "TBTT" thing. Are you saying
-> the RX of the probe request would have a TBTT attached to it? But does
-> it matter, what matters is the TX? And that's probably impossible to get
-> right?
-
-What I was trying to describe is the handling of probe and association
-responses during an ongoing UHR CU / EHT CU.
-
-In such cases, when a probe request or association request is received,
-the corresponding response may need to reflect the current countdown
-state. For example, in the case of UHR, a probe response might need to
-include an UHR parameters update element with the appropriate countdown
-value.
-
-The idea was that, at the time the response is being constructed, the
-current countdown could be obtained from the relevant cookie and made
-available to user space. This would allow hostapd to build the probe or
-association response accordingly.
-
-> 
->> The diagram uses a number of abbreviations, so an explanation is
->> provided below for clarity.
-> 
-> Oops, sorry, didn't see that before starting to reply, so maybe I missed
-> something above. I'd go back and check, but I'll have to pick up my kids
-> soon.
-> 
->> Step 14
->> 	The driver/firmware can update the current beacon template with
->> the post‑UHR operation element. Until the advance notification interval
->> completes, the UHR operation element would not yet be updated.
-> 
-> Not sure I follow, are you envisioning the driver/firmware changing the
-> beacon contents? I was envisioning it basically always getting the right
-> template at the right time, and only filling the counters per their
-> offsets.
-> 
->> A few potential concerns to consider:
->>
->> 1. Carrying both the current and post‑beacon templates for all
->> affiliated links of an MLD might make the NL message fairly large. we
->> are not sure how well that fits with existing practice, since multipart
->> handling seems to be used mostly for dump commands. As an alternate, can
->> we have multiple commands with message id and reassemble it?
-> 
-> It's input into the kernel, so the size doesn't matter, I think? For
-> notifications that might be an issue, and dumpit is used for data going
-> _out_ of the kernel so userspace doesn't have to have arbitrarily large
-> buffers ready before it knows the data, but on input I don't see how it
-> matters.
-
-Based on the earlier discussion in the below thread, I had wondered
-whether there might be a potential bottleneck here.
-
-https://lore.kernel.org/all/c7e383a9-c291-426b-a7f1-7845fabbaeeb@oss.qualcomm.com/
-
-We will re‑check this internally to confirm whether that concern is
-still applicable.
-
-> 
->> 2. There may be a small sequencing aspect worth thinking through. For
->> example, if a UHR_CU operation is close to completion and we are about
->> to apply its post‑beacon template, but before hostapd processes
->> EVENT_UHR_CU with CU_POST_NOTIF_COMPLETE it issues a
->> START_MLD_BSS_UPDATE for CSA, we could potentially end up using an
->> unexpected version of the current beacon template. This may already be
->> handled by the existing flow, but it seemed worth calling out for
->> completeness.
-> 
-> Yes, I agree, it's something we need to think about. I mentioned that a
-> bit above, perhaps one way to solve the race is to have a reject built
-> in based on the cookie(s) being used, that could technically even be
-> pushed all the way down to the firmware if you really wanted to.
-> 
-> johannes
-
-
-Thanks,
-Harshitha
 
