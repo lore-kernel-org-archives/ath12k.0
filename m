@@ -4,64 +4,185 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29206105A593
-	for <ath12k@archiver.kernel.org>; Thu, 12 Mar 2026 12:10:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27E5F105A596
+	for <ath12k@archiver.kernel.org>; Thu, 12 Mar 2026 13:00:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nIvP4MBs3pIkVDcI62tjt2naMEia4i4a0qMpSIQlY5Y=; b=PSqI+Uclne6qkqaPPSomSHIHCy
-	3wwqK/64L3fAhMdiyfefXiJBzz5/87io48Tofw6JAG7kpBYpr5hh0Vsui4NyWIS8KB9E7GoCQb2/q
-	0LmMb/wMw4zz7JtTGGOU8VG4ORZfwA3lRQGCrBytyd0mzEr8VktSjhoH38SkBlZnBlxpTGNx6Y9YN
-	ta3VkAP3PWb+xsBCilWxeIQ1a+B10OcqjanHuaOlQCkf9Wv6kikds0upcNGmeNb270F3gsm07H55J
-	0bdjgcbqL6qrvl4GwLyU+EaP+Gfpg/w7yyfUoY9OvELEigLnWJvkpr1JR/MV6PFo37gSDQ55tqgWd
-	g212peAg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:References:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=6w+J6djcVBpw2+d9DZLLEa/wQcKyQJ0NCmt0oAgfogg=; b=e/2vI1MW2PFsDqjhpJwxNJJZ9y
+	p3uY4RecbB02ZY9/LZdeIeBB69fHKvB/SOnCOB5w4KT213vMORggPLkXpScRRdWbY7k2BobbZSURo
+	e/tbcBIH/lLcE7x8WtmKoMv/PVvK9hCJg7+iCyshUyvVrkq5Qe5wKfp80Y9pDT0nK+pz9/X3srTUa
+	7pwedG8HdvGE7eqEY71kW/FZ7paKOOWQi9oxP8pqkKujZ3Po4bQpQVXESQUQjf/Heuzs45VKnba79
+	9Mvc5ohwBXVO5K7HWrsuM3YOhBzo/CXCCQrGelEK8Zf57OY44OKMaAk8DPKq8hKhmkWLLI9Kwpmhp
+	u5N9uHcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0esD-0000000E0Pe-3Brz;
-	Thu, 12 Mar 2026 12:10:41 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	id 1w0feV-0000000E5xK-28W9;
+	Thu, 12 Mar 2026 13:00:35 +0000
+Received: from mx08-0057a101.pphosted.com ([185.183.31.45])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0erx-0000000E0Od-3R4B
+	id 1w0feS-0000000E5wZ-2c11
 	for ath12k@lists.infradead.org;
-	Thu, 12 Mar 2026 12:10:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=nIvP4MBs3pIkVDcI62tjt2naMEia4i4a0qMpSIQlY5Y=;
-	t=1773317425; x=1774527025; b=svQHp9c7lJ1KeUCArL1LyTjjD8vkpyvRh5bbPJwa0lT8Kns
-	CtktfcRrcfevd34xPCi/pc9vZRjoiSePjzimSUp1etckjllqP3Nkqd3RAK9BFwVX2Q6RkDItjMzXj
-	Ht3pFRUl/XrqWU5BzIpzP5f8tNno1c173fdbbK+nDgDk6AwTDGxJFky2DlmRtLpRBKd52ieuOavgy
-	30yKPU2kK1LW4Jnz3OHMPr2CzPGA9FSMC0GqBfh5LA9xD6OMZB29uSAyTqosLHaT/d3bVdnz1r8pr
-	ybrclS0USUb9X/kuBwUpW2Ndcxch65hjTQWW2SMrDYngCnuyvri4Ag4T37uAzc/g==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1w0eru-0000000Fq0Q-04U7;
-	Thu, 12 Mar 2026 13:10:22 +0100
-Message-ID: <e8960517faf04ed4f1bf331e23a95c477113309f.camel@sipsolutions.net>
+	Thu, 12 Mar 2026 13:00:34 +0000
+Received: from pps.filterd (m0214196.ppops.net [127.0.0.1])
+	by mx07-0057a101.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62C5XgPV3751703;
+	Thu, 12 Mar 2026 14:00:25 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=270620241; bh=
+	6w+J6djcVBpw2+d9DZLLEa/wQcKyQJ0NCmt0oAgfogg=; b=a9TgEhEryi9UVsaf
+	jVTGEAwRqyGipIIaaA6FI4lJXKPpWSStcQOeo2E2cUQwDrfAm1G7dY2oS9wU6aHR
+	a15zrmbWkCtOxhve4twbWXJbB6xyxhUQpOJkiZleeLO9uclyLdcZm1Y3T8g05Qsi
+	LqUAbsyAU5TTfX6IL6z3/dbqPHM2phwfpsPJ0bdK3lsd1d1oyVodMZfaoLqv86f9
+	ugbZBZnWukhs9AiJwTO9JtY2HXQ06G3qaqKJenp9XPKisuCZIgl7cfowI7bs0YDN
+	fIGvXKuIGYnbTImoi7K1X7tL7yyBvAHx+ScFcZjqWaLTPTaFTISS/311+Q8xtgEo
+	F3KXkw==
+Received: from am0pr83cu005.outbound.protection.outlook.com (mail-westeuropeazon11020091.outbound.protection.outlook.com [52.101.69.91])
+	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 4cty3ghgsy-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Thu, 12 Mar 2026 14:00:25 +0100 (CET)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=jQrJUsl6pdwWWPsanjIOpHGfHoWc8PXCj2IFHuDQpmZP+uJWYpjuNGU1L/OpYfFouQgbIvpewLaBmGKJ2P2W0PNCQQeBzjlm4FdipzsWjao65S4VB4uNSHdh5h8iGYyGUquZKkydI3BoZO2pt4UkmFic2uRKU6Qhx1GRGNse573codzc0dzZPMrqTTKa/D/lEn7aEojHVr47FwQPx2fRcwVFtXrQkj7j8LzgdbLfwbqqXbgDTRj4Y4seAd02V+WVpvXaI976qMoL93x6a6GGn3FXrFGUPUJNBiRlXzQPUb/XUFDSf2qdXStPp1J3V5O/rqPyikEUbTbTsFGcZG/jJQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=6w+J6djcVBpw2+d9DZLLEa/wQcKyQJ0NCmt0oAgfogg=;
+ b=aDUvMj+U3WMDXYfow6SZgkRCJ1JQs7PscwLfJAe4Wr/FIzwXHYZtjb/p8gs49m0Y/WLcav9Titmq9xMnQA8y+NCTE54GY7yDO6eVf2GaI8CGJbPyHbu0dYtg7iilbqLF9ffIwvEVc5gZrJ+xP9IHSHAR6Elc7+p3ireaeMkxXtpGHINCTjdgiiYzu4xy4wmK1s5H/XuYa05HrJdmoFrSQggZdh5SEvXjeWG3NR6rmMMGjCKWdCr8ppLR3RHxSHBiDZnT2JC7gwBVBxtEOVbUZVjCNsxCB6LRmSeNopSDGMK6YveR9zLiXIzs0P/+90bdxA9aMuxIzM6/AXpinpL6GQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
+ dkim=pass header.d=westermo.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=beijerelectronicsab.onmicrosoft.com;
+ s=selector1-beijerelectronicsab-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6w+J6djcVBpw2+d9DZLLEa/wQcKyQJ0NCmt0oAgfogg=;
+ b=WhUGEoi3Cn0/x6W8ThWnhSXKMEzSK9kI+YKU+kyNRQSsSSZ09gsSsYGhsTj/LZ8X6jn2e5m7P/W7z9taO9WVAUrCMkgShbxxwfilmyV6UhbUFSheu24I+rw+MeM3zCrvCkOv2aoTbzdaApnMTJ4Mvryr5zETJlp4BAxpZuBUYXI=
+Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM (2603:10a6:d10:17c::10)
+ by PAWP192MB2104.EURP192.PROD.OUTLOOK.COM (2603:10a6:102:343::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9700.15; Thu, 12 Mar
+ 2026 13:00:21 +0000
+Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
+ ([fe80::8c02:9739:5f2d:b147]) by FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
+ ([fe80::8c02:9739:5f2d:b147%6]) with mapi id 15.20.9700.010; Thu, 12 Mar 2026
+ 13:00:21 +0000
+Date: Thu, 12 Mar 2026 14:00:15 +0100
+From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org,
+        linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
 Subject: Re: ath12k: handling of HE and EHT capabilities
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org, 
-	linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Thu, 12 Mar 2026 13:10:21 +0100
-In-Reply-To: <40b4b959b2ea5afd55381e6ae2d0c1908456734c.camel@sipsolutions.net>
+Message-ID: <abK42BnlaPi9J9YC@FUE-ALEWI-WINX>
 References: <abKBOp8Jc7f7U0T8@FUE-ALEWI-WINX>
-		 <b7f4c8f1a251ea9cccb32f021828896371953143.camel@sipsolutions.net>
-		 <abKbLNK0YrT6dr96@FUE-ALEWI-WINX>
-	 <40b4b959b2ea5afd55381e6ae2d0c1908456734c.camel@sipsolutions.net>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.58.3 (3.58.3-1.fc43) 
+ <b7f4c8f1a251ea9cccb32f021828896371953143.camel@sipsolutions.net>
+ <abKbLNK0YrT6dr96@FUE-ALEWI-WINX>
+ <40b4b959b2ea5afd55381e6ae2d0c1908456734c.camel@sipsolutions.net>
+ <e8960517faf04ed4f1bf331e23a95c477113309f.camel@sipsolutions.net>
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <e8960517faf04ed4f1bf331e23a95c477113309f.camel@sipsolutions.net>
+User-Agent: Mutt/2.2.12 (2023-09-09)
+X-ClientProxiedBy: GV3PEPF0001DBCF.SWEP280.PROD.OUTLOOK.COM
+ (2603:10a6:158:401::6b5) To FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
+ (2603:10a6:d10:17c::10)
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: FRWP192MB2997:EE_|PAWP192MB2104:EE_
+X-MS-Office365-Filtering-Correlation-Id: cec3cb6d-a1ca-4bfc-8a09-08de80375187
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|22082099003|56012099003|18002099003;
+X-Microsoft-Antispam-Message-Info: 4MfXFJzuzfGcv/W5ioTQ9Ly3+pkFIWjJdJNxyRwS9OMkfsbVs3dejHRDNIetiUItd8TT6c4g3ORwVabF1My7pyMfJ4DhgsPyajLxr3bieWESEySHm9+To6dcNibLZ+qR3KeUaPQBroQ4QFtTTuVxHt5CJewxpRhT48velvuloTawAm/7DUcjp451L5DLkD7rXFjzBzLaVOR39/pYBI/folCHspjL0g47TIfaNIc2QhvT9AgQNNnBU5oPgul9WwQ5Wf1K9Vj7F1f3q0uMVFLnXIRI6zXmcVfJinHpjprnUIEJHGkPlIEyUSTXwWIWXGiaQFbAfcnQEmKPZkvSnCyiI2eujjdfmR+TY8d1DFwOI7sxXNH4s6QTkHF6v3LdgDZBBJkzfU4JHa+wVRrAn9Ui4orfqka7Ivv1tNZTill0I/dNRIhsn6qYmVpHZuUE9c0YiFaddMC5BD6WnXgXBMcSGOobGz0KFV1HORzrZmCPnXJMenWWSCXhVJEPq0ueQiLRwNxGf8y0mbCQApOgUKyKq2873V2ut1B1OgdJL2KL8i8rwJFERe73WWc+Oo02S4yLGuR8HTrFIbq3UyvCb+AmkXlR/0yDVaU3QGGa4yWPvh/gkwm17TL1QW9tEXq1HU/TNEiZ/dijfWQFMaxvRs+CCdY8pTJmuPuiIuoaVoitmc4QwDv8ByYicU4+LJHNIAFVTqdB/0Z8FCNg5lEP0piC0TQBrU+OvnzcHcfbvQqwkE8=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:FRWP192MB2997.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(22082099003)(56012099003)(18002099003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?dllwT2g2eFVrQjBQMEpQN3JWRzZKdTlkZEtsZ1hiOWE1RVVsdDhNWjhDb3Zx?=
+ =?utf-8?B?NWhvMUhXV3VYTjR0bklRTENvN3hQMmdxTUNqZ0Z0NFY1MzVwTUxEM3JEbkl6?=
+ =?utf-8?B?TDMrMWR6T2oySE0wVU9taXZJaWNIMzJ5dmYvN3ZXQm5HMnVsRlN0Umd0eGox?=
+ =?utf-8?B?Umc2dzUvdEIvVDB2NnlkZkN6REozOVlXWWFsbHcrSEdyZVpIY3E2cFlQeXMy?=
+ =?utf-8?B?T0MrcjJSMXhpRHFSMmtXUnRDQVQyVUtoMWt0M2NaTkZMek5Kb3hDaWJJMFBF?=
+ =?utf-8?B?T0RsdlA0M2dXeW11cDVRTmpwdmtWMmVGNTJVbXRPYWRpNlBpdU8zbjh5QnZx?=
+ =?utf-8?B?czFJVVZrc0ZwcW5WWlFGTXVFeXEvUEFXTjQyQmx4WmJ0NnFLWnZzRWVadTNp?=
+ =?utf-8?B?cFBwZFlIRTdQVitOVTFJR2N1cVpLVXo0My9uTXJaQzU3M0ZET3FXTlNzN29B?=
+ =?utf-8?B?TVFXT0h6cVh3S3FpcHNEdUZsRE40TGV6RDVlWmNRK29rbGliSGhwUXlYSUFY?=
+ =?utf-8?B?ZGpHZXlqSmliM2lrMEo3eXBKcnJEZE8xZ2VocHNoVENUekdEV1gySytGNkEz?=
+ =?utf-8?B?UitHeXcvdHMzSXVVdHdUVWxGQlZUVHpCSHdaYStOZ2xkbENQenNrdkhZWDJl?=
+ =?utf-8?B?dHliNEFsdzE4bVlFeituTURJYnZOeTdCRmVxdkNZZVB6UWMvejJQL1g3OU0x?=
+ =?utf-8?B?ZHY4Y2NQSGl1YUQvV0ZtOWdoRkpjY1hUOThUaHdZK2wxTnI1YVBRUEJqTEN3?=
+ =?utf-8?B?b0NqcnJUcitqbXJDeU0zdmc1V3MzUHYzbjNscEtyUW0zMTEzMGZ1R2dSRERD?=
+ =?utf-8?B?YU5aNmNKSkpTZHV2OGw3eW8zdEoyN0RjODIxUHV4M1JDN3UrN2NPTGZmOHZM?=
+ =?utf-8?B?Wi9SUTFrSC83SFJPSlVMNHFNTzdaeUtuUTBuQURhdjR6UkM2ZkJVNEhmZzRU?=
+ =?utf-8?B?ZFh3OUpRclBmbFFYRWhOWWlHd09qaVZpd1h0VkVteFhsNFVra2taTVg4T3FE?=
+ =?utf-8?B?b0dORjJiNkhTRllWOHZuL2g5V1dlRVFkWWFWRlNTNE1oUG81d01xN1FueHFa?=
+ =?utf-8?B?SUpuVnRHbEE1VjBrSFZodVNERHlDRGRZN3NVcytUQmVwRG1kSzlQSisxSXlk?=
+ =?utf-8?B?aTJFMHpuUUtPWkhrVGZmM1NmdDQvUS94SWUwMlMrSmtlYjNLWDNFV0J4WTR4?=
+ =?utf-8?B?eVVOWDF4bkZUV2hKdERHeWpGQTF4aHpOQk5QQTB1cEV5R0YrNHFWY0NqRk41?=
+ =?utf-8?B?VTdWVVRmQVJjM0xrQlY3RncxQVZ4b0RwZlNWa1RSMGdsK0tUVm9ETjB1dVov?=
+ =?utf-8?B?NHgrZDFxSUs2NFZBNCtkb0l0OE9tOEdrUkJOMnZubjhWYmx6OWlsUUFqcFZL?=
+ =?utf-8?B?Yy9GQkNJN3FoTlhtMW84RHJFUUhGOHppWTFJNGdaZ3NmTUZ5enRPRUdVODBV?=
+ =?utf-8?B?VGlqOVNjSjhjemlnbGFsc0RvOXhGS2tlSWhZUm9LeGJOVVV6N25yaFcrWldp?=
+ =?utf-8?B?NWpvRml2dW5aVDdUS3p4eCt2MnQ0K1BucXlTd1hrc1ZUNnlSbzlGM0VGdDMr?=
+ =?utf-8?B?b2VhUmlHd05qNVNlTWNlcUprSEF1dnk2UDJvakZFbnN5TWF1a3pHdzNzMTRK?=
+ =?utf-8?B?c3V0d2ZUYnU1T3NYZng0QkY5Y3hRMjN3eXBvaDFhb3RycUY0YTd0TmRvRmw1?=
+ =?utf-8?B?VkNmRWk4bmlUZUF2czFNL0ZHRXJrRnFhVXVZZnAzTzNiSUt5d2tOQ2t0c2Jp?=
+ =?utf-8?B?QmJkVnoyQ1NKU0orVXdyTVM3RkFGM2tJMUYzcmwweFZOZEhmN29MTTYyanRC?=
+ =?utf-8?B?YnZianV0a2dMZG4xWi9LNXdFR1JuZjhEcG80NEFydmVieXVqcGhiRWQyZ2NX?=
+ =?utf-8?B?bHhNYlZ5U2RKSUwxSy9Jb09NQ04zb3VTOTk0MG9nbCsrckNnTE95TlliSXdY?=
+ =?utf-8?B?cHYvcGdvSHVuMkJDcENHb3p5SWsyYS9nNko3eHhmYU83MDQvRXBBdGNTRU5n?=
+ =?utf-8?B?cVVwT0pWc084OExvNElDVDBGcTduYThFdi85UFIwWWc3VFhUeE5tTVYrMEg1?=
+ =?utf-8?B?QkIydzZKTzNLTGtYNjgvR0luWk9nWjk2NVorRFVVdjFSR1NVSm9TWVhLZ3Ja?=
+ =?utf-8?B?ZWlVaWRPS29mclBNTVNZeHBTY1RwUnRTOUhTcnVxK2w1L3pFYTFXVmlZQmlj?=
+ =?utf-8?B?NnpmNXhMY2VhV0FPU2pjaHp1Ti80NUxWVUQrZkNJbHF6OHh6Ky9XWWRqc1Vl?=
+ =?utf-8?B?TUVlRjVvMWEwY05GL0toQ3FCOFd5QTJSTTlaekhsb0J3Z0N3TktPcldnRkNr?=
+ =?utf-8?B?OGE0aktpaWJPb3JMcHdURVpLYVozLzZJeWs2b0ViNUJhQzdWVEhXQT09?=
+X-Exchange-RoutingPolicyChecked: U7EyT1CSzEYKiyWWpUzhJMrUf9d4AgcDvnHKkoljo3jUlxq0Rt1LIY/Wcr/I6czrYVaKZs6oNv5RQeLU4TMsa6QB2smpdKR8a58o/moC+j/loHOL4RtNC9ZubPSNf3mlj6XbjLJ0q7IVOl78etLVta3jvfwaeLW76ZNkyxMCT/413i8wg8mQq+6jILQ/wC7+BeRVO3H5pGzGuLjrdd7Mg+unCMfgEOGHIX3++jSodlybbhrj0X5yEAK2jwBxgyssNN5BBsdCWWopu/A1aPmpY+oNZ/1nYBCCiAGJSOFCre2yFiZAfukQtfnllKr8NfmATZVo12FFEmamHo7A4xbhrw==
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: T1+qgZ3S3FOE9afDcBITTghuPdgEGjIX7YO7BS1AlKj0mr3PUcn97DIhblixM7kaBrli6bHakLCkoPXpKn3CWUCeEvSC1TB99IFm/w7hPQb+e8Ai8vUttNdcHXUwtrNpvsbgg0yhceGruguisuwEEeKEVfHh9CJheAJoDzOvdl0fGa6swP60V6lewgYvZNDt7RnzTG/zJejsv1EoFRmWHA9jMn6B5R4XYfIE8ycFh4U/NIF5bsKcqGQUA0GUPVrJZKkV4KA0d/X7rHUCbZPJ9KIdrailuR6TgBxrxT8tNJ5WcMdkanO3P///sffUWAk1LsIRpL+wjnFqT/3i/1pYX2QfYMk/ZcPdWEg5/h+uHxjczd4Nrq4QaxKSzn7xB16aqWSlNiOOCx3u2qjs2IgvhXomfyLJJaP7n8OJT92nhtn0aJ5JVbP1BcH+RLjyOIpmtH6+eH+P6D0lTqVkrvZoxHWcGN0ruYODb8XCuCAqytK42qvkhhM8+Cqo+/mduLwXQ1ANOuGPHeWg4YYr80jyWJKDr6gwyrA1QOZcxhNAMFSJjOR0gbWqUk2yoIRb1AfjHe0nWq6c4dPRG3qp1lH1vJfq6q/JtOH+COvh+bQnBx62cdScF21du6cDt0BxilS5
+X-OriginatorOrg: westermo.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cec3cb6d-a1ca-4bfc-8a09-08de80375187
+X-MS-Exchange-CrossTenant-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Mar 2026 13:00:21.3430
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Axl5vx2DACpERK2M2usWSjNJjd4IPGZQMhntPbVCvhvTVJa61EeA6citPkSgIt8mxckbrw0oU71/b0oyY6lhsg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAWP192MB2104
+X-MS-Exchange-CrossPremises-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossPremises-AuthAs: Internal
+X-MS-Exchange-CrossPremises-AuthMechanism: 14
+X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
+X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
+X-MS-Exchange-CrossPremises-BCC: 
+X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
+X-MS-Exchange-CrossPremises-TransportTrafficType: Email
+X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
+X-MS-Exchange-CrossPremises-SCL: 1
+X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
+X-OrganizationHeadersPreserved: PAWP192MB2104.EURP192.PROD.OUTLOOK.COM
+X-Proofpoint-GUID: TjUvJ08f8FhvqnqeivS5z4R2aPUqLw_3
+X-Proofpoint-ORIG-GUID: TjUvJ08f8FhvqnqeivS5z4R2aPUqLw_3
+X-Authority-Analysis: v=2.4 cv=MIhtWcZl c=1 sm=1 tr=0 ts=69b2b8e9 cx=c_pps
+ a=aCSaCga/D6ZaJx/7+0lQYw==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
+ a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
+ a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=8gLI3H-aZtYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=tr3XZvuDWTETL0Uaxejn:22 a=WQ4YJ39tjzx_Hbm9pN5v:22
+ a=td9N8bAwm-SjQ8GX2McA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzEyMDEwMyBTYWx0ZWRfX/BYj0uG0OtVo
+ SpWfbeeKm5SznXsY0JfXvGISxLPgfkMZY6z316kywN0ELBk9tIyiYpy98RGHFnD5ciK3MP/8JKN
+ 4Fgh0E9I9IOHQC2HHECGBAQ3unHyDRjPsll3/k2hdOY2wGtA3BWSE+IsCHE1fuKTi1je3KK69iA
+ DoZvH4NDs/ilZG8DijTILgrhU1jysZ0wUcy0oBhC+opNabDdqWg3UX2eJtVyYjjMKmN8+Rk2BX+
+ uHkMAgE7RN7yVeczmn+s+DYxhtO03UWeeCbzTH4yWGLPwzbHoac0VCBtiV/5KnBoIHvo+SUaPLN
+ p6ZuZL5uVbF/IulFeWj3gIkMup81jaMHqP8zq2hdK2CD8mcqGPfDxcGftr8LcBH+PRTg/f/tdFe
+ BRUeFuQk7N9w8zdRZvPpejQKZ6xGS8IR9axDLwJQ9BKLjgO/ttplB71t8GVRqLFrFOn981AB7A5
+ eGrfbeVv+gwJSyH632w==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260312_051036_335657_E375D6E3 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20260312_060033_280796_DF6FC4E9 
+X-CRM114-Status: GOOD (  16.66  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,46 +197,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Wait ...
+On Thu, Mar 12, 2026 at 01:10:21PM +0100, Johannes Berg wrote:
+> Wait ...
+> 
+> > > I don’t see this in the function. For example, the MAC capabilities are a
+> > > `u16 *` in CPU endianness, which is simply memcpy’d from the parsed
+> > > `NL80211_BAND_IFTYPE_ATTR_HE_CAP_MAC`. Later, they are treated as `u16 *`,
+> > > as shown in the following code:
+> > > 
+> > >     printf("%s\t\tHE MAC Capabilities (0x", pre);
+> > >     for (i = 0; i < 3; i++)
+> > >         printf("%04x", mac_cap[i]);
+> > >     printf("):\n");
+> 
+> That's incorrect for sure. But iw code now actually reads
+> 
+>         printf("%s\t\tHE MAC Capabilities (0x", pre);
+>         for (i = 0; i < 3; i++)
+>                 printf("%04x", le16toh(mac_cap[i]));
+>         printf("):\n");
+> 
+> 
+> which is correct. HE PHY capabilities are printed as
+> 
+>         printf("%s\t\tHE PHY Capabilities: (0x", pre);
+>         for (i = 0; i < 11; i++)
+>                 printf("%02x", ((__u8 *)phy_cap)[i + 1]);
+> 
+> in my version of the code, and it seems to me the +1 is incorrect either
+> way?
+> 
+> >         printf("%s\t\tEHT MAC Capabilities (0x", pre);
+> >         for (i = 0; i < 2; i++)
+> >                 printf("%02x", mac_cap[i]);
+> 
+> This was also correct, not incorrect as I stated, since mac_cap is u8 *,
+> and EHT PHY capabilities are cast to u8 * first.
+> 
+> Maybe your iw is just really old?
 
-> > I don=E2=80=99t see this in the function. For example, the MAC capabili=
-ties are a
-> > `u16 *` in CPU endianness, which is simply memcpy=E2=80=99d from the pa=
-rsed
-> > `NL80211_BAND_IFTYPE_ATTR_HE_CAP_MAC`. Later, they are treated as `u16 =
-*`,
-> > as shown in the following code:
-> >=20
-> >     printf("%s\t\tHE MAC Capabilities (0x", pre);
-> >     for (i =3D 0; i < 3; i++)
-> >         printf("%04x", mac_cap[i]);
-> >     printf("):\n");
-
-That's incorrect for sure. But iw code now actually reads
-
-        printf("%s\t\tHE MAC Capabilities (0x", pre);
-        for (i =3D 0; i < 3; i++)
-                printf("%04x", le16toh(mac_cap[i]));
-        printf("):\n");
+Sorry, my fault. I'm using `OpenWrt v24.10.5` with `iw` version 6.9. The
+latest master has the `le16toh` implemented. With my `ath12k` fix the PHY
+capabilities and the respecitve descriptions are fine now. But I still
+cannot get MAC capabilities correct. I'll analyze it further.
 
 
-which is correct. HE PHY capabilities are printed as
-
-        printf("%s\t\tHE PHY Capabilities: (0x", pre);
-        for (i =3D 0; i < 11; i++)
-                printf("%02x", ((__u8 *)phy_cap)[i + 1]);
-
-in my version of the code, and it seems to me the +1 is incorrect either
-way?
-
->         printf("%s\t\tEHT MAC Capabilities (0x", pre);
->         for (i =3D 0; i < 2; i++)
->                 printf("%02x", mac_cap[i]);
-
-This was also correct, not incorrect as I stated, since mac_cap is u8 *,
-and EHT PHY capabilities are cast to u8 * first.
-
-Maybe your iw is just really old?
-
-johannes
+Best regards
+Alexander wilhelm
 
