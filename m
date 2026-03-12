@@ -4,169 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B2441049515
-	for <ath12k@archiver.kernel.org>; Wed, 11 Mar 2026 10:24:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB202FED2D3
+	for <ath12k@archiver.kernel.org>; Thu, 12 Mar 2026 05:49:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-Type:
-	Content-Transfer-Encoding:Message-ID:Date:Subject:Cc:To:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=s1iFyfm+Wgp9q9rDmT6m1RiUvaj4gT4bow2twyb+lHI=; b=YiRnB42RpUFUKTVR6om3eNPASA
-	nC4pmstnyXBLZFFphvj2cMfm9cRKeBoSbBq+SaEWy22BioVT2YhVU9aATvI4ZyRSIfiQt34Pmf9D6
-	Pj0PTaK6GNm8xnDthKBTQOFpa24ep80sVZPh9HRFuU4LpPGd8zFl376q3KuObfs/Hir9HMfMc8/Nx
-	bDVbEmNw7g92UXzF4ppG+QqNyGaJpoofpg81ubkECxC2JTmJu+e9m2fHSu0/LzD8kuohOMqj96XyM
-	xaqS6lg2XeY5BNWTozCXuhWsb9AsaOsrI+Tqhg2TO0TgNYqokReYHooHrEwkGtjEzS2IiJWsf3/6s
-	USQ5LsVQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=9ZoyLCKbfmAWXPj7Ja8hrtYbKxwcdYf3vbaiNIY6ts0=; b=Sp23UXW0+JTNCU2uEsMlVpPfnv
+	YOxpgtKWjV5O5NACWnx7ADZSggSiifU2Y8WFSJy3jFHVYU6RVuyOncYTjEIYmefXi6ZO54kJZFYfq
+	5LxZbnRxtBM7fybwdrtA3UKIsinTl1qsI2iauH3OgOdDnyFq7JTpnlH7YRcotGS9hO9+Zp+xeaiLF
+	bqdhZBz9XEew2iCfbQC/ERKs2GautOAwl0sDNec7dLcluVq53ti2G7PSzwdE7ed/Zf4hw7SrpC8zI
+	mVVXBFKKAyyjjGMV/Umk3Ji+CDMDMvGPhCRO5irX2JkH18M2hD5IzebkpX3n9JX0uYWHPy11dmFqK
+	AM9bo/IA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Gjx-0000000BPnX-36gv;
-	Wed, 11 Mar 2026 10:24:33 +0000
-Received: from mx07-0057a101.pphosted.com ([205.220.184.10])
+	id 1w0Yv5-0000000DPAx-0RI1;
+	Thu, 12 Mar 2026 05:49:15 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Gjv-0000000BPmx-36Bi
+	id 1w0Yv0-0000000DP9h-3Uw9
 	for ath12k@lists.infradead.org;
-	Wed, 11 Mar 2026 10:24:33 +0000
-Received: from pps.filterd (m0214197.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62B509hk1115727;
-	Wed, 11 Mar 2026 11:24:25 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=270620241; bh=s1iFyfm+Wgp9q9rDmT6m1R
-	iUvaj4gT4bow2twyb+lHI=; b=izpZgbwFS3F1eSicw5OoYwi2LDpDYarkXsCVvR
-	dPS75K6aGaSZz9wIOwiCBg00ja09CQ+vfHnOfWVNLtdSMCsuqWupFZ/hU+qC0wih
-	L1yaaQ5Xfvt8Vw6IuAfABywTDND3ApNEWD2jxJl2cg7bKaQoKytXxa0yMbAJeHJY
-	LWL6DugHngW7XG0T0wulbDx7axL13xLzfT9TwmK8pVhXEYfDBGjle+TLEkAO36Yh
-	QrL2MPrPlRLwuhu5/liShNuuNjFntzV6GaDB94sjP2dRE5uuk1ciJyKvSW6pFsNp
-	dQF6ZAZGfdhGeW564MOn6jVyecyUMGC9gtvKrB1lVVULsKIw==
-Received: from gvxpr05cu001.outbound.protection.outlook.com (mail-swedencentralazon11023108.outbound.protection.outlook.com [52.101.83.108])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 4ctxy4gd34-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Wed, 11 Mar 2026 11:24:24 +0100 (CET)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=mRQ88lPH0GlljZ7gv3hHPsYgFmNQJQ3e0brGCXTtwkmVL/o5XZUOTYJGQm6s/4y+TNFeU/3rg1MUtQ31jRUyl6Ct9ryMj6032oRkoIuS5KF6XWTPUDmuMH4Qq/j/ea2Q+g2B9i/gUCoZF+Jrk+EvyjIUck3McLSfj6WZsC25fSHBiSX3J15Jn0M4bzp9YJw8kiXGdRBWl91IV6QFboAPA312ulqEIFvINUAVMzctORKwKcJp4veOf9uq81vLj2auJ/H9vZjXYOL1pUn+Ktcn5DIXmYMzWR5blOHrSJcLk7hV30p1R7Z4W51/om1is2b9kVfdZRplb16CNwZnnPQrFg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=s1iFyfm+Wgp9q9rDmT6m1RiUvaj4gT4bow2twyb+lHI=;
- b=FocBTFcNst5nfnMKpe1o0KPiWqwHtr74AW5Ldwkkr4Jp+7phz1D7HsOA/JQMrzOs+ukTIuqIFur6vboG3JgaF7giIUoeqtUYujTE1ENzq3OTQVB4ffCgCrIkWY9/VMkL3rPggoRUPJTHpDeaCFvIifpHrd43Fef/CRJRVwxNjivg/niHY6AjHzKPTCHzTICfM8SVwQpT5UxktJ2EqECDZUEo7o1sfUcII7rP1YYeCh6jx+mRFaZTgEoCfxULtUOrhgkt3O4tH7I5C9tSCUMow5MPAX/LyL+dxsjx4HPZDBEARhnT68R7XswBepwO0fTH5e6lsWwDpFuoWsRco2N7kw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
- dkim=pass header.d=westermo.com; arc=none
+	Thu, 12 Mar 2026 05:49:12 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62BMN2dI263530
+	for <ath12k@lists.infradead.org>; Thu, 12 Mar 2026 05:49:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	9ZoyLCKbfmAWXPj7Ja8hrtYbKxwcdYf3vbaiNIY6ts0=; b=a4/Piyqr5Vz99KIw
+	0lHcopj5xnanhwUsF1NsDCXFbVyppccvjYvYaSj+q8qGv3BJxgVorGjKNPMIO4xo
+	GM0BtezRton/en5lyqQilmvtGUmGur5Zfzn6A4XyXcZ694UD3wlZIPQNaOWwPryE
+	Vs+0DKgba4mk3+X5MNW2ev9sNxiwozlNeJ1OkXEwp83Pa89S1EgRxwY2BmNewneY
+	jHQ32dmZ08v5sKjj6hX8iYKEGIkl4lrhEvmOIRS4T0I3sIP16+ba4xvzuQBl0Ob/
+	/eGF1jXK9CuPJLklCc1iVhsp1GBpuYCly8C+xb/GGoax5oliwwU9H/xmvQ73iJLH
+	O0Bd9A==
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cuh4yh0gv-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 12 Mar 2026 05:49:07 +0000 (GMT)
+Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-c7387c70046so349203a12.0
+        for <ath12k@lists.infradead.org>; Wed, 11 Mar 2026 22:49:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=beijerelectronicsab.onmicrosoft.com;
- s=selector1-beijerelectronicsab-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=s1iFyfm+Wgp9q9rDmT6m1RiUvaj4gT4bow2twyb+lHI=;
- b=g47T6oYWkaCpXgsPySSZSvK9eFUKiProk8/tcW4tVa/TZkK/RNOAv1rdQqDCupuWEdTK+sBp5eKvnChzGCn6a1Fwt7eBQRiwzZwO29SHN/ReSWpRu/YMQ5VivEHXp4V+UNGVqG182qboPiLhVM1opXc5IFzQVsJzAFvnnHWqgUo=
-Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM (2603:10a6:d10:17c::10)
- by PA2P192MB2334.EURP192.PROD.OUTLOOK.COM (2603:10a6:102:415::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9700.11; Wed, 11 Mar
- 2026 10:24:22 +0000
-Received: from FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- ([fe80::8c02:9739:5f2d:b147]) by FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- ([fe80::8c02:9739:5f2d:b147%6]) with mapi id 15.20.9678.020; Wed, 11 Mar 2026
- 10:24:22 +0000
-From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>, ath12k@lists.infradead.org,
-        linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v4] wifi: ath12k: fix endianness handling for SRNG ring pointer accesses
-Date: Wed, 11 Mar 2026 11:24:15 +0100
-Message-ID: <20260311102416.224621-1-alexander.wilhelm@westermo.com>
-X-Mailer: git-send-email 2.43.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-ClientProxiedBy: GVYP280CA0045.SWEP280.PROD.OUTLOOK.COM
- (2603:10a6:150:f9::14) To FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
- (2603:10a6:d10:17c::10)
+        d=oss.qualcomm.com; s=google; t=1773294546; x=1773899346; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=9ZoyLCKbfmAWXPj7Ja8hrtYbKxwcdYf3vbaiNIY6ts0=;
+        b=YDp5aTblmlsqyuqjnslft8dXof5hSut88w6U5/TT/Nv3v3qiZj6Z8vUDBX8gRQt0i5
+         VRLsGYcKkPbCXtx8j5qJRpI42UMM+ZXWrSisAE8iZEsh5iLyj2UL7kMT8GpL9wNfc0iI
+         JI2wLgBoUCaPKlh5jR1878kuM3S26r7ySYF0/GvSWrMdmQSG9GCGo9MRwYN6lysenc3P
+         CqYRs/7wqmV/Wc7b+qqJORiIz2xblgmOARMOCzx5VglqSsMtIoeefjPegzlSqSh6Gh6X
+         5tdYSlz47j689h9fnsUmmi0t40RpvzhRmQD7J4l8YUQlySFOAePzSUIhve1tXnm2WjMV
+         5tiA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1773294546; x=1773899346;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=9ZoyLCKbfmAWXPj7Ja8hrtYbKxwcdYf3vbaiNIY6ts0=;
+        b=Va6n/4KjoVzbD2yyj4lz9qTCF3JOCf02v+Jt/acLxRvmnriSCkN4qViEGYML7R9UBv
+         9uD6MoxhxKbRFisjtK1QrcC8iH/QX6DLmepZa8eVoVjjDWSFgphtAwMc24Q58E186P37
+         W4r036Zlb/rWwKOwixzy8ejhf9zFp5hWFtmghLIunQNCtbQ26Dqa10f52Nubi7ZnXwIi
+         YwqBGMGwwWi4TAcy+v05BOrE7n5AicHZ2UYfrqOM/9zxYiWch0cTQ/PZ9x+sk+ykHgOX
+         rmn/uYa8XVGvj4MI5mUhAGv1ydLB95aZAWLNNHsDB8nc8KcdTrjAdXwTx95qeiyyWW2o
+         GfMg==
+X-Forwarded-Encrypted: i=1; AJvYcCVWUUctopX1fgJWADvU6jMA7sV4rqD5QctiRcnU80V77jcfgPS8oWdRNTnD0K150eS+mt80SKs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwtyTSVo03Uhcz7io6Oj8tOtRFXKKOznUQezVSXUQMJzm1FkrOO
+	kxwYdg9FFNkJ7dNZzMAe4C7P1kIp+bhUZ0Qyd/UybTE7Ldl8lsusu4lteOEkCc6thVPuRgk6CuN
+	QCWV3V6lJ1upVqIliJP9Mf0VabN4PzTEDgRD/AZbt41+mXBk7sOVvrqfkeVw0tPO/
+X-Gm-Gg: ATEYQzyoDEa9amnYa37VlygNe3aJ7ry5NFWJQctC1WpikOFCZDkrs3Y5UB5s1SZ5n8w
+	GgJz7D+F/XtW826k4AXHcd3mff31dD9IMqMF3ZYp8mHYPHoET0hLfVMnYp3KyapH1kysw1sksIv
+	QCsV3WIEj8A8gSkjFhPwxAJykV4aiEBYX3QogJzGX+gMRDuzaj+jzoMfXmbarMgmLw5IlDEONbe
+	VLqOR4tlqKq6e48tYIjFY3NK9EyqA1uVH+hrnOgPcxOD29FaSijLyzh91dP+qT4FGW5xHSYjRER
+	/2Y4+wyqMK2J7qPVwbahKgCAeAQ/fzijlVvIUxHen9GV3reSmNEEW1Zc/IDUICAW3xkaOqYcU6x
+	KyoRbJoO38WSdQjlPWTSieNV0TPO/k4d8By6fdoU3NuH7ikX2dQ==
+X-Received: by 2002:a05:6a20:3d83:b0:398:80dd:5705 with SMTP id adf61e73a8af0-398c60e42f8mr4950302637.46.1773294546339;
+        Wed, 11 Mar 2026 22:49:06 -0700 (PDT)
+X-Received: by 2002:a05:6a20:3d83:b0:398:80dd:5705 with SMTP id adf61e73a8af0-398c60e42f8mr4950275637.46.1773294545758;
+        Wed, 11 Mar 2026 22:49:05 -0700 (PDT)
+Received: from [192.168.1.4] ([27.5.116.18])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-c73cdf9303csm4090926a12.18.2026.03.11.22.49.02
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 11 Mar 2026 22:49:04 -0700 (PDT)
+Message-ID: <416d08f1-6b8d-4bf7-9a63-c3c68497d990@oss.qualcomm.com>
+Date: Thu, 12 Mar 2026 11:19:00 +0530
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: FRWP192MB2997:EE_|PA2P192MB2334:EE_
-X-MS-Office365-Filtering-Correlation-Id: 216b1158-d180-4585-bfa2-08de7f585c94
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|366016|56012099003|18002099003;
-X-Microsoft-Antispam-Message-Info: bgATdXc9JFuRMJL1UmBAE/6zCZ4wHktH285BJswV76mOYIA8bIj8uRcc6QdKCcvyCpwz0OV9mLXgaogp4hxPZWI2hH7UeYNqVMPlzONXm51Jg6+Y03c3g7IB10f3Hhl93cHsJIUdn2kB3HuU8wIT5Cpq9Wv+IvuVD6rOdEW1oPlePFRl1aWT9gGmne+61mb2QdY1lozBBg10OTMEa8EbhXF78ObLoKzyIdhlgNSPHa8qGH6UKLeZHOAMcksiDKIJHKG7gmWTusyM1DsFL5ZbZ8VV9D1w451wfJMrIHxVj7jBviawpX+2dxhS9xcXMllih1QEC/mMI+H9SCCZBAT8Ewl1YZpE+3U9Usne98YPRLcXFRsJQamgR4UvgjCivXFHg2WpRF2V71sbP4iNE5xec9PDe7LvW6fGpbJlth4mQj0CRYn/W/FcWmsJH96eSKl6HAgaIeaOdW/TND76yv2j/JSFsLQHJ70l3IL27RTBAXiDTZRfQEPC+lnyMjWwmeNKDdLsIzxZ8141ilGp9taJAHPecba6SeRHjNCEdEyWGtY3GoMtreZ0Gf+plxjc3vxX3s0rESU6RXSmfxVAGx7QaYOoaI1bKHLI5R/xSGqOIXAoqDYvQYVDLenxhfC/eliQffnH+CD+k0fYh5sg7TIqNTc0u9A8gYKNCLhiOT4PNCOdQUE55xPo8wqSUD0nzRB005LDSsuCGuEJAz2tk6txhNUtabtywS/s4qlfhu1GJ4s=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:FRWP192MB2997.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(56012099003)(18002099003);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?s/DtX08d52XD5suIRNNi+g0d8tEm+S0GGiAqRQn4WJdQFlbF156Yvq4TTUXk?=
- =?us-ascii?Q?ZA2dM2OXKK5bPaZvBLCRBk41SvYH0ehur53oj9uaINf3UDtv0x41ylRHBdBI?=
- =?us-ascii?Q?YxJo0kk72Hb8Hj1weYY6deNv94iXO7Txz9AC53aEEGhzyAldwXBsTzCzLdjJ?=
- =?us-ascii?Q?s3lTwzdR7338lr2XMlWPwaGp+VV34gbIHtbQP3mJ/T2MpHq1q7OY1WVoZT4y?=
- =?us-ascii?Q?bZmumUGXS2Dn7ABsVnxvg4CkFYBn393moYTXYnFaoL6ADvBuW2rssNB203/v?=
- =?us-ascii?Q?u9e+pxuAqvhqokpTFeGwQBpmGCBbNrDb9lcoz7A5iud7/8NgK3z0Dv5bynl8?=
- =?us-ascii?Q?ZB6gV1Bg6MyimP1WD+spc5xHF91VtBHpmxv+7hQpBRcMqunWxcBiXbKKO5P5?=
- =?us-ascii?Q?t/3j5jXx/GhZ6w+V+6DFuUWp5mg6IvJ2yGDAEyG7va6us+1D51WUmIgCUuDf?=
- =?us-ascii?Q?YwvGGSm/OmLKIwUTcNWjbCTn/TmkAsdy6P/TXyILhUajvD2vG1h3wv7NB0Hb?=
- =?us-ascii?Q?xhqFR4gyjaGATLk2xNa+RwHGpk/lNgtCAqzpZy4G+fkBs1LZJG9Gpk8gA+vc?=
- =?us-ascii?Q?aPXzHi1lkZ2zJsAnxjIsZ5uDR9cdqzpIqxAiDWdbePZPeNR1EDBgos25cNx6?=
- =?us-ascii?Q?SpqkCUQlrMGtizXCYb4oiKWL3ZF9Mu9RCrIFJlY9IJBnqHiXIHM18ukQ35yF?=
- =?us-ascii?Q?xxcUqxjAhMmmczJIhtGPQstf2S7jzWy2F7a0zuyw52QS8leDsgUcNpr8HP3N?=
- =?us-ascii?Q?V9CYGuk5gS09kMWHYGRl3BfUlPFk/sv/b33YXfsnRcd1yTcymxkEnStRWwZf?=
- =?us-ascii?Q?tBkg9McVlYtoBqLzST4Uv1977tjEdNfP4+caQbL6Uustu2dk4C3oQqOy75YI?=
- =?us-ascii?Q?NPDaYb+MBV8eKfe+D85bq1vhLDow/3yFhXbPDH9rXeeiJz61G4wCEq6pD9+N?=
- =?us-ascii?Q?Nqxn7oXL6hj/w0IAWDxfgm9rBwWzAU5h5oDoUFRaE9rT3D+ONQiEfOljcm5B?=
- =?us-ascii?Q?bQKXL9kALjc7grAWvqiakycfio6Z3ikCNQpnTZgQhWT9rK2vfyeqDl0OFpim?=
- =?us-ascii?Q?MNN5/3wFQLN+iLmQ4FBr0MCV8nZaxfwfc1ZA/M/UbPNzkoLLzszjV6BV8R75?=
- =?us-ascii?Q?qxW6ZhiG5tcj1QmInKmGUH7IuGHX0kbFM6r7X29QhVvF0aaok6cyqB7HC3uA?=
- =?us-ascii?Q?GYgqMG/MKEFwHVT4Iq05gAaOlGwtKO0H8qRTveetqCHP+L34H0IlayHUdrKR?=
- =?us-ascii?Q?BEKubXjFm3VJKYx2Tlhj2hPOgOR9yR5v1PcT2ZomnDnqEv8TTeLDkhRr68yr?=
- =?us-ascii?Q?zaICwFzJno6Uk8DFO8+04Yg2ZK2T9gehbrfBwjXCc1o/5VayXkvu1MQeD1Z9?=
- =?us-ascii?Q?nBGv/0VrUJzn51SFOlDjqrmkkdwW+NHdFmDtyvpMscl21rmY02WV1+t6oeX3?=
- =?us-ascii?Q?hRCfCTQutksBBrNJm1YHKSaR6rdCCspeCdDCZswKux4kOfU2f+CZRVI6WhHG?=
- =?us-ascii?Q?7g82hwb+fJbl8atyUjsJM0UKxhEF1/xAyK2NqLrns54WfMS3QTgCThIGzHG3?=
- =?us-ascii?Q?ARzU3LUByopECY7sfKCm/nPdSKiZiJtXEfNVVRZCRl7/u3vmQr2jFpyecs3d?=
- =?us-ascii?Q?oXsu89j/CcM0RIP4FpqxWCLEztPlB0dC9Mcpwx6bNL/+4Y3CJGbpldLQwey8?=
- =?us-ascii?Q?39ZpvxHKuaqH0AgXSIhci9qWuqyxL5UvB0RDJf7vFP9Djf9t0IZydtnjGkty?=
- =?us-ascii?Q?Lq/Hp9gCUw=3D=3D?=
-X-Exchange-RoutingPolicyChecked: t9KQOKxMYA8JCuUlebs6peF+42xWCQipZgtGKTNyKIwavfcYuZlcXITgzqVoSIq0CMmdPD+ENzvYK8q2UFmsSZpL+cpDV/wT1GVoVraKMGB51jHMnwh6Dmt/y2FVoFbdR5/206/g/G3CrXpV/xwnON+3duY9vMC0IPLkA7oCSFWSUU7qtyNMX11KzpyKizEy48C5Tc7blH78E5uEGWDlmlQdQYENI+31D1NaYNlDBngxKwN94Uy2IbPVOnTJZY9WjiNcy2IHRgUIZ+2nfoUrRFed7iCsBjIX+95qIUNg+8kNRs3/gMpSrbP4ec0vVNhTOlctaEw7iTvAWBSEtQ3eGQ==
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: EmbKOau1NYGXtpYAhatZernvajWvtaV/wKdGu1i207EKA2bmeh3YeWy7L/srp1J9EgOR+fr7wvXL2LpsBb7aeocDn1bTPFmPfAj+R01u8cfmLvKqqycVfuXMNWdmY8DsHcio1Jiq+vJb1gAk/SCoofkkW1E+sRmWfgKwYLYc388Qoziqofs9uBqCnKieqTOW8WxNBU8Dl9JxCZzK4VYy5LFHJM0cWwEQmxhCJ2rhO/iA1itJc4mHdZUyJJXVkUJMBXUEWPOFLgLbIVqSpBT+O8eaTVbZOL0QhWl9qEe5XEtoa8mZYLna7SFpuyM3YTK/1yE5Z9d+l3X15HzDztntNQbWRbFWE+7tSco1ewqayWCuiytcW2HdT89OXch+8d372LweOOego3Xc8TBxE7S7SSpNQNPfeanYN5/4WEmjjAuSuncXK/VxpkAVNtiJM/6zt9KgL+S93Fo0t4I1M/sQkOORelofAJbTz9qcRTzMslWHVyMPiJYBHkTO7TT2osztLg+bdcPfy3DPt9yD5xNJ0BxUw9umsMvDz0wWZmCmaV1j4veqZxfbYSQRxbun0O/ZGe7oXIul9JnhjPOyn6vd/MqIiuAmGXm4ztVd64ZhVDEF0KMMx4gXHlQHzrxvSG0T
-X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 216b1158-d180-4585-bfa2-08de7f585c94
-X-MS-Exchange-CrossTenant-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Mar 2026 10:24:22.1067
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: MFNzbdYELss6QDLL11TX1MRj4KZgyJ3PHloiLmkCGN8U1A7KxvwoKtvszeatPY4eVmIM7N3wDMbUg6UXFwQaGw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA2P192MB2334
-X-MS-Exchange-CrossPremises-AuthSource: FRWP192MB2997.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 14
-X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
-X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
-X-OrganizationHeadersPreserved: PA2P192MB2334.EURP192.PROD.OUTLOOK.COM
-X-Authority-Analysis: v=2.4 cv=deaNHHXe c=1 sm=1 tr=0 ts=69b142d9 cx=c_pps
- a=LdThStfLQ9CbqahNFmeyQw==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
- a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
- a=xqWC_Br6kY4A:10 a=Yq5XynenixoA:10 a=8gLI3H-aZtYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=tr3XZvuDWTETL0Uaxejn:22 a=8ys4xmT3Mru1TjC2zVq1:22
- a=N9GNhs4bAAAA:8 a=EUspDBNiAAAA:8 a=xIER7TDS9NvsDhoS_LkA:9
- a=PZhj9NlD-CKO8hVp7yCs:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzExMDA4NyBTYWx0ZWRfX/p1FcLqZlUtu
- ZSP4C7mH6t3jV21MyPJ/+D+T5jGJ2MQGN4YyeCH3mxYAiQNuXT56EiFMSqoQRGJKk74jQ0cQ3Uy
- n1dDg0nJOb4+dF5qaKgeDl5GNEroDZl2yhOhFle3QyghC/7a9yGTw0NUF0t3Ww8NBEpVPchdvTX
- cJKcI3XPP1GROaq0XWAJ0bLPGD5Aap/vMzG/RO2nAYEoQKlGL5ZpDf0Uy/BTWklDaViNoZ1bdTs
- Lbo4swu/jas2eoUHr235hWMp1SPMvifAkeJ4UIwklOePiiL0RUkWnM50MmJkfs6erjN1ok/H60H
- HOZ69Z2XlUCxuAna2bMF5PWjvQKizIcSkUgj3czabQEg/wiKsQ5snuaK+k/W3sjpgWSdqMYMAZx
- MreY5RfLrFtsOxI9PJHlpnfav4RT/HBHr6PM5Zuan3FeQFL/6qUv6C5zrIlemzRR1w/ryr0vGMN
- XdKq0TEHfKYlgyykIGQ==
-X-Proofpoint-ORIG-GUID: EW4eGKyFMAsRWbezoeSU0wuINCWlAkKO
-X-Proofpoint-GUID: EW4eGKyFMAsRWbezoeSU0wuINCWlAkKO
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH wireless-next v8 2/3] wifi: cfg80211: add initial UHR
+ support
+To: Johannes Berg <johannes@sipsolutions.net>, linux-wireless@vger.kernel.org
+Cc: Karthikeyan Kathirvel <karthikeyan.kathirvel@oss.qualcomm.com>,
+        vasanthakumar.thiagarajan@oss.qualcomm.com,
+        Lorenzo Bianconi <lorenzo@kernel.org>, ath12k@lists.infradead.org,
+        Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Ping-Ke Shih <pkshih@realtek.com>,
+        Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
+References: <20260130154259.265130-5-johannes@sipsolutions.net>
+ <20260130164259.54cc12fbb307.I26126bebd83c7ab17e99827489f946ceabb3521f@changeid>
+ <f96125eeda23451c19067359eb9d10b4047bcdd3.camel@sipsolutions.net>
+ <5d54feea-d0cd-4bd7-b0d2-02e42f0fe5e1@oss.qualcomm.com>
+ <be9ab3c7f05b0f56f19aee0ffc7c2f96138b9a05.camel@sipsolutions.net>
+ <156d6d48-d135-4acf-a5d7-c9ae80523864@oss.qualcomm.com>
+ <0f4b34f0b529fd93fc608d8bbac0e98516b7a3d2.camel@sipsolutions.net>
+ <f3282007-a11a-4f68-86d8-0945e4979d65@oss.qualcomm.com>
+ <d3ecf6e5580cbe50eee807b1e63109e42e3b956c.camel@sipsolutions.net>
+Content-Language: en-US
+From: Harshitha Prem <harshitha.prem@oss.qualcomm.com>
+In-Reply-To: <d3ecf6e5580cbe50eee807b1e63109e42e3b956c.camel@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzEyMDA0NCBTYWx0ZWRfX5p8A0uIHr2vr
+ j2RPtHW3neSVNCj+RCVa2ZShXfW0PPNeGgZYbarGdasKMXqRtDqcz/gmHUuxxVwkWcfac8Gik8a
+ BKuZOSdbUEBrQ7zlos2WwO7fYz4TfmAonOi7ZsqX+/GRXrzarTHDYnbASYT4nl76Ksbjh7j+PyU
+ p/bZaKYPyqGyMoYe+bd28ESTX8s2wO9Anr3kymume6qjMHd9zWOUkRxgHHXRyVIxUp96Xx6KOwL
+ RzToG7O7zfm6+mVejFX6a+Lam1RabcPXfPp3IWyBMkvf+1vx7oQ7c8INdfvZLE/BEuF/hNF1WVD
+ vE0126ThZg8e547CSQAsU/XWOsgPsSfhpwJuGaGQsG26h664UqlqOQhHEP9gC8l1HVcx8T7vMtb
+ /2W2RgUgJ4vPUVnypoot8Dc3E+CXc/ib0KGDOQ5DOgh0oS9KAOwo/mLSwwYWYTskAAc7oHP+MhV
+ aE+Agfyizeyx2DonGNQ==
+X-Proofpoint-ORIG-GUID: H0gkZtFLnf3Om1GbGmbd_wOXkV1rq5bW
+X-Authority-Analysis: v=2.4 cv=C+7kCAP+ c=1 sm=1 tr=0 ts=69b253d3 cx=c_pps
+ a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=2nr1+02xqZAyC3l0ZA5/6g==:17
+ a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=E38heQHmJUpkbQq-XYUA:9 a=3ZKOabzyN94A:10
+ a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
+X-Proofpoint-GUID: H0gkZtFLnf3Om1GbGmbd_wOXkV1rq5bW
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-11_02,2026-03-09_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 priorityscore=1501 phishscore=0 adultscore=0 suspectscore=0
+ bulkscore=0 lowpriorityscore=0 clxscore=1015 impostorscore=0 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603120044
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260311_032432_082716_9BDC1A76 
-X-CRM114-Status: GOOD (  13.57  )
+X-CRM114-CacheID: sfid-20260311_224911_033692_5868940A 
+X-CRM114-Status: GOOD (  40.48  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -181,224 +157,370 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The SRNG head and tail ring pointers are stored in device memory as
-little-endian values. On big-endian systems, direct dereferencing of these
-pointers leads to incorrect values being read or written, causing ring
-management issues and potentially breaking data flow.
 
-This patch ensures all accesses to SRNG ring pointers use the appropriate
-endianness conversions. This affects both read and write paths for source
-and destination rings, as well as debug output. The changes guarantee
-correct operation on both little- and big-endian architectures.
 
-Signed-off-by: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
----
-Changes in v4:
-- Rebase on latest 'ath' master
-- Remove volatile from `hp_addr` due to the `checkpatch.pl` warning
-- Fix opening braces at the end of line due to the `checkpatch.pl` error
-- Fix `u32 *` cast in `wifi7/hal.c` due to the `sparse` error
+On 3/6/2026 6:13 PM, Johannes Berg wrote:
+> Hi,
+> 
+>> Thank you very much for your patience, and apologies for the delayed
+>> response. We spent some time discussing this internally and wanted to
+>> follow up thoughtfully.
+> 
+> Hey, no worries, I'm clearly also not always able to respond quickly, a
+> lot of things are going on at any given time ...
+> 
 
-Changes in v3:
-- Rebase on latest 'ath' master
-- Use always 'le32_to_cpu()' macro for conversions
+Thanks for understanding! :)
 
-Changes in v2:
-- Set '__le32 *' type for 'hp_addr/tp_addr' in both 'dst_ring' and 'src_ring'
----
- drivers/net/wireless/ath/ath12k/hal.c       | 31 ++++++++++++---------
- drivers/net/wireless/ath/ath12k/hal.h       |  8 +++---
- drivers/net/wireless/ath/ath12k/wifi7/hal.c | 14 ++++++----
- 3 files changed, 30 insertions(+), 23 deletions(-)
+>>> This could get trickier than I imagined - you now have three periods of
+>>> time:
+>>>
+>>>  - now
+>>>  - after CSA but before UHR update
+>>>  - after UHR update
+>>>
+>>> and actually all three might need different UHR operation, since the CSA
+>>> can change the bandwidth and therefore e.g. DBE/NPCA. The intermediate
+>>> period ("after CSA but before UHR update") can be captured by the CSA
+>>> operation (given a template/UHR operation for after) easily.
+>>>
+>>> But I was imagining we capture all this in the operations already, so I
+>>> guess to do that we would need a "NL80211_CMD_MODIFY_MLD_BSS_UPDATE"
+>>> command that takes the cookie and updates the post-operation values, so
+>>> that the changes due to the CSA could be taken into account in the
+>>> previously started UHR update.
+>>
+>> The idea of introducing an NL80211_CMD_MODIFY_MLD_BSS_UPDATE command
+>> makes a lot of sense to us. In cases where
+>> NL80211_CMD_START_MLD_BSS_UPDATE is already in progress, having a modify
+>> path to update the current beacon seems easier to reason about and
+>> manage. From that perspective, a pairing such as
+>> NL80211_CMD_START_MLD_BSS_UPDATE together with
+>> NL80211_CMD_MODIFY_MLD_BSS_UPDATE feels quite natural.
+> 
+> Yeah, maybe, then it wouldn't ever really go to a normal SET_BEACON any
+> more, maybe?
+> 
+> I was thinking more for not having to change all the code in hostapd at
+> a given time, it might be more plausible to still allow SET_BEACON and
+> just keep giving the counter offsets etc., in case e.g. something "old"
+> like short-preamble changes.
+> 
+> But clearly hostapd would have to manage those offsets etc. anyway, so
+> perhaps there's really not going to be any reason to support SET_BEACON
+> while updates are in progress. But in that case I'd probably argue it
+> (SET_BEACON) should be disallowed by the kernel, to catch errors.
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index a164563fff28..a9c9311538b0 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -355,7 +355,7 @@ int ath12k_hal_srng_dst_num_free(struct ath12k_base *ab, struct hal_srng *srng,
- 	tp = srng->u.dst_ring.tp;
- 
- 	if (sync_hw_ptr) {
--		hp = *srng->u.dst_ring.hp_addr;
-+		hp = le32_to_cpu(*srng->u.dst_ring.hp_addr);
- 		srng->u.dst_ring.cached_hp = hp;
- 	} else {
- 		hp = srng->u.dst_ring.cached_hp;
-@@ -379,7 +379,7 @@ int ath12k_hal_srng_src_num_free(struct ath12k_base *ab, struct hal_srng *srng,
- 	hp = srng->u.src_ring.hp;
- 
- 	if (sync_hw_ptr) {
--		tp = *srng->u.src_ring.tp_addr;
-+		tp = le32_to_cpu(*srng->u.src_ring.tp_addr);
- 		srng->u.src_ring.cached_tp = tp;
- 	} else {
- 		tp = srng->u.src_ring.cached_tp;
-@@ -501,9 +501,9 @@ void ath12k_hal_srng_access_begin(struct ath12k_base *ab, struct hal_srng *srng)
- 
- 	if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
- 		srng->u.src_ring.cached_tp =
--			*(volatile u32 *)srng->u.src_ring.tp_addr;
-+			le32_to_cpu(*srng->u.src_ring.tp_addr);
- 	} else {
--		hp = READ_ONCE(*srng->u.dst_ring.hp_addr);
-+		hp = le32_to_cpu(READ_ONCE(*srng->u.dst_ring.hp_addr));
- 
- 		if (hp != srng->u.dst_ring.cached_hp) {
- 			srng->u.dst_ring.cached_hp = hp;
-@@ -529,24 +529,27 @@ void ath12k_hal_srng_access_end(struct ath12k_base *ab, struct hal_srng *srng)
- 		 */
- 		if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
- 			srng->u.src_ring.last_tp =
--				*(volatile u32 *)srng->u.src_ring.tp_addr;
-+				le32_to_cpu(*srng->u.src_ring.tp_addr);
- 			/* Make sure descriptor is written before updating the
- 			 * head pointer.
- 			 */
- 			dma_wmb();
--			WRITE_ONCE(*srng->u.src_ring.hp_addr, srng->u.src_ring.hp);
-+			WRITE_ONCE(*srng->u.src_ring.hp_addr,
-+				   cpu_to_le32(srng->u.src_ring.hp));
- 		} else {
--			srng->u.dst_ring.last_hp = *srng->u.dst_ring.hp_addr;
-+			srng->u.dst_ring.last_hp =
-+				le32_to_cpu(*srng->u.dst_ring.hp_addr);
- 			/* Make sure descriptor is read before updating the
- 			 * tail pointer.
- 			 */
- 			dma_mb();
--			WRITE_ONCE(*srng->u.dst_ring.tp_addr, srng->u.dst_ring.tp);
-+			WRITE_ONCE(*srng->u.dst_ring.tp_addr,
-+				   cpu_to_le32(srng->u.dst_ring.tp));
- 		}
- 	} else {
- 		if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
- 			srng->u.src_ring.last_tp =
--				*(volatile u32 *)srng->u.src_ring.tp_addr;
-+				le32_to_cpu(*srng->u.src_ring.tp_addr);
- 			/* Assume implementation use an MMIO write accessor
- 			 * which has the required wmb() so that the descriptor
- 			 * is written before the updating the head pointer.
-@@ -556,7 +559,8 @@ void ath12k_hal_srng_access_end(struct ath12k_base *ab, struct hal_srng *srng)
- 					   (unsigned long)ab->mem,
- 					   srng->u.src_ring.hp);
- 		} else {
--			srng->u.dst_ring.last_hp = *srng->u.dst_ring.hp_addr;
-+			srng->u.dst_ring.last_hp =
-+				le32_to_cpu(*srng->u.dst_ring.hp_addr);
- 			/* Make sure descriptor is read before updating the
- 			 * tail pointer.
- 			 */
-@@ -711,7 +715,7 @@ void ath12k_hal_srng_shadow_update_hp_tp(struct ath12k_base *ab,
- 	 * HP only when then ring isn't' empty.
- 	 */
- 	if (srng->ring_dir == HAL_SRNG_DIR_SRC &&
--	    *srng->u.src_ring.tp_addr != srng->u.src_ring.hp)
-+	    le32_to_cpu(*srng->u.src_ring.tp_addr) != srng->u.src_ring.hp)
- 		ath12k_hal_srng_access_end(ab, srng);
- }
- 
-@@ -810,14 +814,15 @@ void ath12k_hal_dump_srng_stats(struct ath12k_base *ab)
- 				   "src srng id %u hp %u, reap_hp %u, cur tp %u, cached tp %u last tp %u napi processed before %ums\n",
- 				   srng->ring_id, srng->u.src_ring.hp,
- 				   srng->u.src_ring.reap_hp,
--				   *srng->u.src_ring.tp_addr, srng->u.src_ring.cached_tp,
-+				   le32_to_cpu(*srng->u.src_ring.tp_addr),
-+				   srng->u.src_ring.cached_tp,
- 				   srng->u.src_ring.last_tp,
- 				   jiffies_to_msecs(jiffies - srng->timestamp));
- 		else if (srng->ring_dir == HAL_SRNG_DIR_DST)
- 			ath12k_err(ab,
- 				   "dst srng id %u tp %u, cur hp %u, cached hp %u last hp %u napi processed before %ums\n",
- 				   srng->ring_id, srng->u.dst_ring.tp,
--				   *srng->u.dst_ring.hp_addr,
-+				   le32_to_cpu(*srng->u.dst_ring.hp_addr),
- 				   srng->u.dst_ring.cached_hp,
- 				   srng->u.dst_ring.last_hp,
- 				   jiffies_to_msecs(jiffies - srng->timestamp));
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index bf4f7dbae866..d8dbcc846387 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -921,7 +921,7 @@ struct hal_srng {
- 			u32 tp;
- 
- 			/* Shadow head pointer location to be updated by HW */
--			volatile u32 *hp_addr;
-+			__le32 *hp_addr;
- 
- 			/* Cached head pointer */
- 			u32 cached_hp;
-@@ -930,7 +930,7 @@ struct hal_srng {
- 			 * will be a register address and need not be
- 			 * accessed through SW structure
- 			 */
--			u32 *tp_addr;
-+			__le32 *tp_addr;
- 
- 			/* Current SW loop cnt */
- 			u32 loop_cnt;
-@@ -950,7 +950,7 @@ struct hal_srng {
- 			u32 reap_hp;
- 
- 			/* Shadow tail pointer location to be updated by HW */
--			u32 *tp_addr;
-+			__le32 *tp_addr;
- 
- 			/* Cached tail pointer */
- 			u32 cached_tp;
-@@ -959,7 +959,7 @@ struct hal_srng {
- 			 * will be a register address and need not be accessed
- 			 * through SW structure
- 			 */
--			u32 *hp_addr;
-+			__le32 *hp_addr;
- 
- 			/* Low threshold - in number of ring entries */
- 			u32 low_threshold;
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal.c b/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-index bd1753ca0db6..c05bfcffdf5c 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-@@ -320,7 +320,7 @@ void ath12k_wifi7_hal_set_umac_srng_ptr_addr(struct ath12k_base *ab,
- 	if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
- 		if (!ab->hw_params->supports_shadow_regs) {
- 			srng->u.src_ring.hp_addr =
--				(u32 *)((unsigned long)ab->mem + reg_base);
-+				(__le32 *)((unsigned long)ab->mem + reg_base);
- 		} else {
- 			ath12k_dbg(ab, ATH12K_DBG_HAL,
- 				   "hal reg_base 0x%x shadow 0x%lx\n",
-@@ -331,7 +331,7 @@ void ath12k_wifi7_hal_set_umac_srng_ptr_addr(struct ath12k_base *ab,
- 	} else  {
- 		if (!ab->hw_params->supports_shadow_regs) {
- 			srng->u.dst_ring.tp_addr =
--				(u32 *)((unsigned long)ab->mem + reg_base +
-+				(__le32 *)((unsigned long)ab->mem + reg_base +
- 						(HAL_REO1_RING_TP - HAL_REO1_RING_HP));
- 		} else {
- 			ath12k_dbg(ab, ATH12K_DBG_HAL,
-@@ -384,11 +384,13 @@ void ath12k_wifi7_hal_srng_update_hp_tp_addr(struct ath12k_base *ab,
- 	srng = &hal->srng_list[ring_id];
- 
- 	if (srng_config->ring_dir == HAL_SRNG_DIR_DST)
--		srng->u.dst_ring.tp_addr = (u32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
--						   (unsigned long)ab->mem);
-+		srng->u.dst_ring.tp_addr =
-+			(__le32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
-+				   (unsigned long)ab->mem);
- 	else
--		srng->u.src_ring.hp_addr = (u32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
--						   (unsigned long)ab->mem);
-+		srng->u.src_ring.hp_addr =
-+			(__le32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
-+				   (unsigned long)ab->mem);
- }
- 
- u32 ath12k_wifi7_hal_ce_get_desc_size(enum hal_ce_desc type)
+Yes, that's the idea when any MLD_BSS_UPDATE is in progress, instead of
+sending SET_BEACON rather use MODIFY_MLD_BSS_UPDATE.
 
-base-commit: c2bcd89db970ee73cccfb9c619b7287d6da4bf88
--- 
-2.43.0
+> 
+>> Please find below the envisioned design flow for the UHR CU and CSA
+>> intersection.
+>>
+>> Hostapd (User)          mac80211 (Kernel)           Air / Station
+>>    |                           |                           |
+>>  1 | CMD_START_AP [Adv Notif,  |                           |
+>>    |  Post Notif, Upd Int]     |                           |
+>>    |-------------------------->|                           |
+>>    |                           |                           |
+>>  2 | CMD_START_MLD_BSS_UPDATE  |                           |
+>>    | [Link:0, CurTmpl+Offset   |                           |
+>>    |  (All), Timer, PostTmpl   |                           |
+>>    |  (All), Type:UHR_CU,      |                           |
+>>    |  Post UHR Op element]     |                           |
+>>    |-------------------------->|                           |
+>>    |                           |                           |
+>>  3 |                           | [Set Tmpl, Timer: Adv=10, |
+>>    |                           |  Post=10, TIM Update]     |
+>>    |                           |                           |
+>>  4 |         Cookie X          |                           |
+>>    |<--------------------------|                           |
+>>    |                           |                           |
+>>  5 | EVENT_UHR_CU (CU_START)   |                           |
+>>    |<--------------------------|                           |
+> 
+> Not sure what the event does really, at this point? It kind of starts
+> immediately anyway, no? But it also doesn't matter for this high-level
+> discussion.
 
+Yeah, it would kind of immediate, this is just an indication to user
+space applications if someone is interested.
+
+> 
+>>    |                           |                           |
+>>  6 |                           | Beacons: 10, 9, 8...      |
+>>    |                           |-------------------------->|
+>>    |                           |                           |
+>>  7 | [CSA Triggered: Link0,    |                           |
+>>    |  Count 10. Sees Cookie X] |                           |
+>>    |                           |                           |
+>>  8 | CMD_START_MLD_BSS_UPDATE  |                           |
+>>    | [Type:CSA, Link:0, Tmpls, |                           |
+>>    |  Cookie X + Offset,       |                           |
+>>    |  Post Tmpl (No UHR ele)]  |                           |
+>>    |-------------------------->|                           |
+> 
+> Not sure I understand the "No UHR ele" part - surely the post template
+> still has UHR? Or did you mean "UHR parameter update"?
+> 
+
+At this point, the CSA post-beacon template would not include the
+updated UHR operation element, since hostapd needs a way to determine
+whether that element should be added. The updated UHR operation element
+is expected to be reflected only after the advance timer expires.
+In a scenario where the CSA completes before the advance timer expires,
+the CSA post-beacon may not actually require the updated UHR operation
+element.
+
+Because of this, an event-driven approach was considered. For example,
+if the UHR advance timer expires before the CSA completes, it could
+notify hostapd, which could then update the CSA post-beacon template
+with the updated UHR operation element via MODIFY_MLD_BSS_UPDATE.
+
+> Not that there's a race here - "Sees Cookie X", but who knows the cookie
+> X is even still valid?
+> 
+> But I think we can pretty much solve that racy by marking a cookie X
+> invalid in the kernel (or even FW?) and rejecting the new
+> CMD_START_MLD_BSS_UPDATE operation that still refers to Cookie X -
+> hostapd would just have to know about that specific rejection reason (I
+> guess netlink extended status would point to the wrong cookie attr or
+> so) and then rebuild the templates without taking the update with cookie
+> X into account.
+
+In this case, cookie X would still need to remain valid for a UHR
+critical update, since the countdown associated with cookie X would have
+to continue alongside the cookie Y (CSA) countdown. Given that, it’s not
+clear whether cookie X can be invalidated at that stage without
+impacting the ongoing UHR flow.
+
+> 
+> But with that race aside, yeah, seems reasonable.
+> 
+>>    |                           |                           |
+>>  9 |         Cookie Y          |                           |
+>>    |<--------------------------|                           |
+>>    |                           |                           |
+>> 10 | CMD_CH_SWITCH_STARTED_    |                           |
+>>    | NOTIFY                    |                           |
+>>    |<--------------------------|                           |
+> 
+> I don't know - this was started by CMD_START_MLD_BSS_UPDATE too, so
+> probably should be some generic notification about it, or like I said
+> above, maybe isn't even needed at all?
+
+It might be possible to rely on a generic notification when this is
+started via CMD_START_MLD_BSS_UPDATE. That said, since CSA has existed
+for a long time, I was wondering whether also sending CH_SWITCH_NOTIFY
+for backward compatibility could be considered, at least initially.
+
+> 
+> (I think a good chunk of the channel switch notification is code
+> unification between client and AP, does the AP even use the start
+> notification?)
+> 
+>>    |                           |                           |
+>> 11 |                           | Beacons: X=7, Y=10        |
+>>    |                           |-------------------------->|
+>>    |                           |                           |
+>> 12 | CMD_MODIFY_MLD_BSS_UPDATE |                           |
+>>    | (Cookie X Post Tmpl w/    |                           |
+>>    |  Chan Info, 3 Links)      |                           |
+>>    |-------------------------->|                           |
+>>    |                           |                           |
+>> 13 |                           | Beacons: X=1, Y=4         |
+>>    |                           |-------------------------->|
+>>    |                           |                           |
+>> 14 |                           | [X=0: Modify Cur Tmpl     |
+>>    |                           |  w/ Post UHR Op element]  |
+>>    |                           |                           |
+>> 15 | EVENT_UHR_CU              |                           |
+>>    | (CU_ADVANCE_COMPLETE)     |                           |
+>>    |<--------------------------|                           |
+> 
+> That should have Cookie X somehow as an attribute, of course :)
+> 
+> Really all the events should have, but here clearly you meant X since
+> the other operation isn't done yet.
+
+Indeed, all the events should have the cookie X.
+
+> 
+>>    |                           |                           |
+>> 16 | CMD_MODIFY_MLD_BSS_UPDATE |                           |
+>>    | (Cookie Y Post Tmpl w/    |                           |
+>>    |  UHR Op + Param elements) |                           |
+>>    |-------------------------->|                           |
+> 
+> What's this doing? Didn't we have post-Y templates already in the prior
+> command? Otherwise isn't this quite a bit racy? Though I guess we have a
+> whole beacon interval for hostapd to update everything, which really
+> ought to be sufficient (though hostapd may need to stop being single-
+> threaded ...)
+
+This is mainly to allow updating the CSA post‑beacon template with the
+updated UHR operation element. As you mentioned, yeah, While a full
+beacon interval is available, it seemed possible that under heavier
+event processing in hostapd, there could still be some short‑lived races
+or inconsistencies.
+
+> 
+>>    |                           |                           |
+>> 17 |                           | Beacons: X=127, Y=3       |
+>>    |                           |-------------------------->|
+>>    |                           |                           |
+>> 18 |                           | Beacons: X=128/129,       |
+>>    |                           |          Y=2/1 (CSA done) |
+>>    |                           |-------------------------->|
+>>    |                           |                           |
+>> 19 |                           | [Y=0: Set Post Tmpl       |
+>>    |                           |  cookie Y, UHR Param      |
+>>    |                           |  Off, X=130]              |
+>>    |                           |                           |
+>> 20 | CMD_CH_SWITCH_NOTIFY      |                           |
+>>    |<--------------------------|                           |
+> 
+> (similar comment as above wrt. what notifications are needed)
+> 
+>>    |                           |                           |
+>> 21 | CMD_MLD_BSS_UPDATE_NOTIFY |                           |
+>>    | (Complete Cookie Y)       |                           |
+>>    |<--------------------------|                           |
+> 
+> Right.
+> 
+>>    |                           |                           |
+>> 22 | CMD_MODIFY_MLD_BSS_UPDATE |                           |
+>>    | (Cookie X Post Tmpl w/    |                           |
+>>    |  UpdatedChan Info)        |                           |
+>>    |-------------------------->|                           |
+> 
+> "X post" is a bit misleading ... it's still ongoing, because it's
+> changed now but not really _after_ the update X, it's still advertising
+> the update X has happened. So in some way the flow is still there.
+> 
+> But it does point out that we need basically three (additional)
+> templates for a UHR update:
+> 
+>  - announcing the upcoming update
+>  - announcing the update happened
+>  - back to normal state afterwards
+> 
+> Which, perhaps, is indeed a bit too much to offload all to the kernel
+> even in terms of the API, because if you mix another operation in (here
+> in your example the channel switch Y), you end up with even more
+> templates ...
+
+That’s a fair point. With multiple operations potentially occurring in
+parallel, it does seem possible that this could gradually result in an
+increasing number of templates being involved.
+
+> 
+> So I'm coming around to the idea that you have a notification and
+> hostapd has to update the templates at that point.
+
+Yes, that does seem to align with the direction here. This approach
+would still partially rely on event‑driven updates (for example,
+reacting to a UHR event) to modify the BSS via CMD_MODIFY_MLD_BSS_UPDATE
+for csa. At the same time, since such notifications would likely require
+the beacon templates to be updated fairly promptly, it does raise some
+open questions around prioritization and handling on the hostapd side,
+particularly given its single‑threaded nature.
+
+> 
+>>    |                           |                           |
+>> 23 |                           | Beacons Continue...       |
+>>    |                           |-------------------------->|
+>>    |                           |                           |
+>> 24 |                           | Probe Request             |
+>>    |                           |<--------------------------|
+>>    |                           | [Fetch TBTT]              |
+>>    |     send_mgmt (TBTT)      |                           |
+>>    |<--------------------------|                           |
+>>    |                           |                           |
+>> 25 | send_mgmt (Probe Resp     |                           |
+>>    |  w/ TBTT in UHR Param)    |                           |
+>>    |-------------------------->|                           |
+>>    |                           |                           |
+> 
+> Not sure I follow this part regarding the "TBTT" thing. Are you saying
+> the RX of the probe request would have a TBTT attached to it? But does
+> it matter, what matters is the TX? And that's probably impossible to get
+> right?
+
+What I was trying to describe is the handling of probe and association
+responses during an ongoing UHR CU / EHT CU.
+
+In such cases, when a probe request or association request is received,
+the corresponding response may need to reflect the current countdown
+state. For example, in the case of UHR, a probe response might need to
+include an UHR parameters update element with the appropriate countdown
+value.
+
+The idea was that, at the time the response is being constructed, the
+current countdown could be obtained from the relevant cookie and made
+available to user space. This would allow hostapd to build the probe or
+association response accordingly.
+
+> 
+>> The diagram uses a number of abbreviations, so an explanation is
+>> provided below for clarity.
+> 
+> Oops, sorry, didn't see that before starting to reply, so maybe I missed
+> something above. I'd go back and check, but I'll have to pick up my kids
+> soon.
+> 
+>> Step 14
+>> 	The driver/firmware can update the current beacon template with
+>> the post‑UHR operation element. Until the advance notification interval
+>> completes, the UHR operation element would not yet be updated.
+> 
+> Not sure I follow, are you envisioning the driver/firmware changing the
+> beacon contents? I was envisioning it basically always getting the right
+> template at the right time, and only filling the counters per their
+> offsets.
+> 
+>> A few potential concerns to consider:
+>>
+>> 1. Carrying both the current and post‑beacon templates for all
+>> affiliated links of an MLD might make the NL message fairly large. we
+>> are not sure how well that fits with existing practice, since multipart
+>> handling seems to be used mostly for dump commands. As an alternate, can
+>> we have multiple commands with message id and reassemble it?
+> 
+> It's input into the kernel, so the size doesn't matter, I think? For
+> notifications that might be an issue, and dumpit is used for data going
+> _out_ of the kernel so userspace doesn't have to have arbitrarily large
+> buffers ready before it knows the data, but on input I don't see how it
+> matters.
+
+Based on the earlier discussion in the below thread, I had wondered
+whether there might be a potential bottleneck here.
+
+https://lore.kernel.org/all/c7e383a9-c291-426b-a7f1-7845fabbaeeb@oss.qualcomm.com/
+
+We will re‑check this internally to confirm whether that concern is
+still applicable.
+
+> 
+>> 2. There may be a small sequencing aspect worth thinking through. For
+>> example, if a UHR_CU operation is close to completion and we are about
+>> to apply its post‑beacon template, but before hostapd processes
+>> EVENT_UHR_CU with CU_POST_NOTIF_COMPLETE it issues a
+>> START_MLD_BSS_UPDATE for CSA, we could potentially end up using an
+>> unexpected version of the current beacon template. This may already be
+>> handled by the existing flow, but it seemed worth calling out for
+>> completeness.
+> 
+> Yes, I agree, it's something we need to think about. I mentioned that a
+> bit above, perhaps one way to solve the race is to have a reject built
+> in based on the cookie(s) being used, that could technically even be
+> pushed all the way down to the firmware if you really wanted to.
+> 
+> johannes
+
+
+Thanks,
+Harshitha
 
