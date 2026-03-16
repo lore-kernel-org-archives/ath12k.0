@@ -4,133 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 013D1F30299
-	for <ath12k@archiver.kernel.org>; Mon, 16 Mar 2026 02:28:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BE67D58B09
+	for <ath12k@archiver.kernel.org>; Mon, 16 Mar 2026 03:48:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=aYdfsIEUjKYKUFr0R8Fwpax3o7fUn8pvEl2MBl7vK/0=; b=iWIxc5PBFh8fMSFTucK5ZzHLBI
-	k1vKDF9n8Ziu2szNhgZM91Ip6akrb7tnM3cr7+YU+JWEp7KvCCxKwlQX3u8BGiRCEWG7K7OjS5hFn
-	OqRbqI+LTZzdPM1cCKhZtV5GwdVTPWqYZEzdCFSALiGKRb+jVWyi6PqvOCK3UivQ865X4vOpvhsYR
-	+ozNdjgDqqlEgrm30hBVGwT7x3dJinYjgJk78f4YOv6sQ+1oBYDTEfbyFcfni72Xt90E35Cn7j03K
-	KgvEOKsW1ax/IVC5nZqK4tPnzWsaABwmIAmyMnIkwjx3B9qZtiM9qy0JbMxj6Z2EOj5LwbuzLvSsi
-	hzpcpfgg==;
+	bh=fT5rQ+5gT8sJC6asjov0bMTamVqtx7ocsFfxmTjg43Y=; b=i1QfEwzxIKLwciqSz6xCbHN7I+
+	z2hk3cONpxA195u7nhArwWXTRrEHFJlR8Emqws5Iv5YZ28Fq6fIdSsoD53nO1lIwUEP0Uap6CtidU
+	Y5G4kCQ/r7WM3qo3FqD2z+aO5gIe5F0GEMCQwQRmsPPjiOj8vKy8tHumN5DtSfjyWf6oY5pqLGadJ
+	5MnWE1M0skKoAwmz67mQb+4GcREI2m45Ce2n9F4rCARqF5lxeduFM3BD1zpoGUkr7V1VI6HpdC0ek
+	rj8Lj0UTwtax6vLdzZCJU0fN1xZoyRqRBlDJYu81swhFY43McQB5/YqDBEFWJHlveNyfoHHirVDQH
+	y8jX/M3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w1xgd-00000003DX3-2Wyf;
-	Mon, 16 Mar 2026 02:28:07 +0000
+	id 1w1ywE-00000003H94-2OvY;
+	Mon, 16 Mar 2026 03:48:18 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w1xgb-00000003DWZ-0GAA
+	id 1w1ywB-00000003H8c-2lNf
 	for ath12k@lists.infradead.org;
-	Mon, 16 Mar 2026 02:28:06 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62F6Thmj2577674
-	for <ath12k@lists.infradead.org>; Mon, 16 Mar 2026 02:28:04 GMT
+	Mon, 16 Mar 2026 03:48:17 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62FB7geo2514619
+	for <ath12k@lists.infradead.org>; Mon, 16 Mar 2026 03:48:13 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	aYdfsIEUjKYKUFr0R8Fwpax3o7fUn8pvEl2MBl7vK/0=; b=Mrov2drxy/mSkYWa
-	1XwzX4eTE6R80UWhInSIYyBsv8P7kx/QhowVkYDVhYAz8N9efeLerYild1s3EbPT
-	z5e2DFzQFQVTd1ymQH9k6/TUo3z8VKnt07dkhAvUl8L5jbgXUQLw1EIigvbJfUT7
-	JIUBdQruAOxXw2mhS7y/qlHKwcufM9aXGUx8VsPeb3sJCI3SXVdfq7zhlZuhZoSd
-	TRSI4xjy1ILp4R3tMMIcMtPrPZ8gPx8WZdHSJG2NXySY4VB24P0DKuO0lnT+hJ+L
-	SBNkiz3wMpY/tqJKHc2ZenNmNr5W9AckRCiqMMAEJ1Sp6CD2cLCHKMZ3GZkKIhXV
-	C4guog==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cvyyc3qah-1
+	fT5rQ+5gT8sJC6asjov0bMTamVqtx7ocsFfxmTjg43Y=; b=ET8V6mjH1+Mc1EeX
+	sERmDtgXzeuhRsI/+wxgy57MikUsvrH/J+JI7YQbDDHmLbZu6gNoZzctgjSf2LJG
+	DN+2S4GDMYn44muztN23AtyRMIZAbNyo97OEN24tqctvXCfF9M0EkDgENNurun2G
+	M2TSIQ5y0WY6b2xeu66Ix1LzE8u5O8SatWVIhpMT8IVBPALTmFabook3n4cQSFHQ
+	RpFOUIK0p3njICVGyM4cESyPzTUwwxC0juG434iuOgE6O0gx+BGWqc/c17BHSM1f
+	VO/dMoPnJSrWDRk6t09bb+qiK/XtsQtGnOGU98mVohM7vusn8CZitF5nr4HfGkh4
+	JFAsyw==
+Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cw043m032-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 16 Mar 2026 02:28:04 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2aeaabedbc3so324394665ad.3
-        for <ath12k@lists.infradead.org>; Sun, 15 Mar 2026 19:28:04 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 16 Mar 2026 03:48:13 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-829b8bb5211so14934638b3a.2
+        for <ath12k@lists.infradead.org>; Sun, 15 Mar 2026 20:48:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1773628084; x=1774232884; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
+        d=oss.qualcomm.com; s=google; t=1773632893; x=1774237693; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=aYdfsIEUjKYKUFr0R8Fwpax3o7fUn8pvEl2MBl7vK/0=;
-        b=fzJ3iTnQHKMN3+ZMax55kUMGBzuGi61gCVOYzemAX+Dm/ocX4ZShbxy95RdF5rSCLn
-         llDEE/9AVn7VNFRIX31kOKC2mnJaK3V4uJ5hM7JthoaZDp+lkj5ancL+UcuAo4pQmf40
-         rklYdfZgwxebLRBmkfWONeIxbfDk5qGdFd/kBpku4FMjixRsnhVN/aPnqO7Geu5lQYXw
-         SN5ZnCIrxCI7sW4UY3kmmcbwJzzVKMfhZZKTIHmxeVWwNNi/pPydmulM/FstourK9lMn
-         3paj3kVAt1oObQ5x1Jat6eSu6aI2i2laggV8mTyBWC87Zj/x/fYi621XMKIGVgKeKYwv
-         QRXQ==
+        bh=fT5rQ+5gT8sJC6asjov0bMTamVqtx7ocsFfxmTjg43Y=;
+        b=jAZHGNM9qKUAKQynNW5IcFP9JyL5g7HI9Js4S9l2h16gYWfWQM3NYPrN1lSEM3rWxP
+         bf2J2STT5oflai3oJMe2M9ZzlnsumPScUZ53GEIKbqQMcveCNo12NQ5hdomdLycSVYP8
+         /xsjynVxB/Bnt2R+ux3AzxKzxe0lFN9QCVvO+fd+vZi8cjDx2MJuB5yiEDCyS/Fzg+9k
+         i5ncxUwLn2EAIlQo9gZwpK+y3qnjt48g5dGrqZGE5rOGZavNjBuoTC6qIGEhZmPmqcCN
+         uuypcT+oDLwGVABBFUj5ZaZalVE4N4oGFQEaornHfBxb3r4K4WycNArfKa9xA/MSkc1W
+         molA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1773628084; x=1774232884;
-        h=content-transfer-encoding:in-reply-to:content-language:from
+        d=1e100.net; s=20251104; t=1773632893; x=1774237693;
+        h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=aYdfsIEUjKYKUFr0R8Fwpax3o7fUn8pvEl2MBl7vK/0=;
-        b=nb/Q19+2NMaLV3mUsCAbsNgheZg5AzA00TGvyc2y5Hy9kxnTmdMtynzxtysnjpwBPo
-         GdQ1ePV5/IH8j3EIfN+MW7LyEx2JSpL2Wl9dK52FTM+F0+DTw07wLKGZs/J5TibPIUuW
-         WfFGvroPAOEXxb2LTNQOm4miHgsTUgby8d7L9YKjE8rqsjqMNeijCCmrUSBesCV5BeIa
-         dWq5tKWEu7mbYkfsYVmV9BIvfSZX3+3XiVxqmJoHR9zE108JDPwQ/3oDDNXX78sh29lB
-         xWd08zvZLTGx8RJXiSbuQ22i7G/EDBaiN4J1Ss6kpm1DcNUTGkH6CLXzQX6Nr39BBHVR
-         mCaQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXL3RdbF9+98BSnP73JZ56+m+9sSfIymZK5Vc0dWM9R2i1KEHQuFjEz9m6Yp00PtIn8rhiHnpI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyiBBYxNE35o+spvwWMkQJPMzrJiOItacLw5mSCsMqwSUagCUYh
-	KrQWFi0lECzVvps8ScRv4+1wshVg9p/YrUiB5LVNNh2mWRDgeZUADTtXAXDvRyNh8IHIf7aUAl2
-	/kZSu6lXK6V8GxKWSPvAoHtGngX/Dbvtxm00jUAqkI7CqDNKHFrDWh+HyoQ7ATjpR
-X-Gm-Gg: ATEYQzy8rR1iDl4LVAAUTrszUWGFXrAzDVKOzOSdzlaWCWqL6kjKbXqzKY8JuWQUP45
-	1fKMG5MuO9RkDU5J2i1obD6XUxtKMc7NwNNB/ZCCcuxOWuU0Qz4VipoX0AlsYS6fV5tpuabtV4m
-	uVnIRL7Sa8hYQ9/VGil4caYELHwBhobyCQbEGs2vabHHgSb0+2P7PxcR4gJXjdHmNprDz9Yy6Nt
-	m4E5dEJmXqzGR+HTAiRs5o7xerqmHEtqtlebzgWPwvAi3KdIKQz4Kd6k4KW/5hyco2Dg9bYJxXC
-	dSkpBYAdguyiXzleh1HopPUs5NmxcpvKwrF88COl+CE95+0ZM79gIaOTzIT0boT6uwTdycVzPjG
-	oSdz1mcPlbaJ9zVL4QbLn0ZTZ5pOfdUDYiv+Qop9nRhiiBjwAo7Qycbz17y/QFsBf1VgK8t+dfK
-	Yzs+mTfCumcD+bQjy2LLk=
-X-Received: by 2002:a17:903:3b8e:b0:2ae:6205:2345 with SMTP id d9443c01a7336-2aecaabcf9cmr104368455ad.35.1773628083746;
-        Sun, 15 Mar 2026 19:28:03 -0700 (PDT)
-X-Received: by 2002:a17:903:3b8e:b0:2ae:6205:2345 with SMTP id d9443c01a7336-2aecaabcf9cmr104368275ad.35.1773628083277;
-        Sun, 15 Mar 2026 19:28:03 -0700 (PDT)
-Received: from [10.133.33.128] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2aece63133fsm87549275ad.41.2026.03.15.19.28.01
+        bh=fT5rQ+5gT8sJC6asjov0bMTamVqtx7ocsFfxmTjg43Y=;
+        b=aBnIt0W0cIR/xlhKmyzKWTabci0ik9yNTQxVVCVJsJCVQKvp1VH40/9I7AyOzgVik2
+         tHQhXh5pUVpTnrWqA5WXM8ywQK7hs1aE8DbSlDcW6kDLTZ4iUU8ttUvrozi6Oj9vbxRT
+         xqG/0D1i9QXXyNkQ+HgPfCuFQ2wj3BIYKl5kUvSml0g7N5PDrlOv47OGHcgHrT1ia1eB
+         f8gCX+VS6qXEdiY8OykvKKpMsEOSjWwyOy8LShlZ/EF9Mo8CFw3zrKuEDM1r1mimc6mQ
+         0iBUCDVTUYRBGTTaEGHdnoa3Q5qxza1s/3d/vr7RXxPOh/BPu/0cKmpPylI8f+NoDhLN
+         BWmA==
+X-Forwarded-Encrypted: i=1; AJvYcCWPu4MHWBhScwEqUUUWT3LBWksBg9hrRBJqrzRe4xh6dRR1ukb+3p2qvSfCyGD+UQvDf4xo79k=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy/yydsqC679mhsbCIAxlhfBfs4F5A1HZARX35I3NB01f8Qs4E5
+	45/jvMahXI4+xGW0t7vVd+lrCkuTk8khGM+jmTPioZspat5ui58FVDnqNKEmmPFLwUVLVQINxA+
+	0I+fKKnSouzDzGWRTtvi56uIyWSEqx10eRVbCyxK5bSGvEtr07SV9AMuve4IlzGE8
+X-Gm-Gg: ATEYQzzT+krip6fdBbPy9sL20jFqNPAGu+v51NWttNDhLNoLRPoA8OY3RgzJ1bxkdL7
+	HgU72nbSDHRkhxSlK6gnUgcb1+cljIOn+aS2qtF5J1rj8HoU6JAfsEpeOfnwJkE7bOxC6iEN0+M
+	tItURp7e/QGSXXLKVpQ1qYrFGt0bcwyXW+kUd2tmdadNBl4CxdHWxmyvpCapIIjxB5zSfjEirF+
+	Vrz767vxMf/2W73F/pzPcNVVhjijaFN53yw3WLemWkbjx1RtyO21uzm0qKzS8rKbPXc8M4UPe3o
+	hrVmgLNF+tReGs/cjNP+s52giKwREtCzpMLJ7nu7QyXu2Xp+D/IFyGAP21EabRk1dj+GKRzsoww
+	gS8tVICvHb454DlHMXItStjyqYYyi6S7aJihHO/V4xN2zvM0f+Tww17XdM2vry12iAw==
+X-Received: by 2002:a05:6a00:908d:b0:81f:3957:2772 with SMTP id d2e1a72fcca58-82a196f6403mr10117846b3a.3.1773632892549;
+        Sun, 15 Mar 2026 20:48:12 -0700 (PDT)
+X-Received: by 2002:a05:6a00:908d:b0:81f:3957:2772 with SMTP id d2e1a72fcca58-82a196f6403mr10117829b3a.3.1773632892030;
+        Sun, 15 Mar 2026 20:48:12 -0700 (PDT)
+Received: from [192.168.11.104] ([124.123.81.173])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82a13a2f112sm11418137b3a.12.2026.03.15.20.48.09
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 15 Mar 2026 19:28:02 -0700 (PDT)
-Message-ID: <55358f82-f0ba-4671-90ed-8061f6ffbabf@oss.qualcomm.com>
-Date: Mon, 16 Mar 2026 10:27:58 +0800
+        Sun, 15 Mar 2026 20:48:11 -0700 (PDT)
+Message-ID: <80ed7081-b17a-4251-affa-68a17c21e884@oss.qualcomm.com>
+Date: Mon, 16 Mar 2026 09:18:07 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v2] wifi: ath12k: avoid dynamic alloc when
- parsing wmi tb
-To: Nicolas Escande <nico.escande@gmail.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20260313113831.3053586-1-nico.escande@gmail.com>
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: Clean up the WMI Unit Test
+ functionality
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+References: <20260310-ath12k-unit-test-cleanup-v1-0-03e3df56f903@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20260313113831.3053586-1-nico.escande@gmail.com>
-Content-Type: text/plain; charset=UTF-8
+From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+In-Reply-To: <20260310-ath12k-unit-test-cleanup-v1-0-03e3df56f903@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=euXSD4pX c=1 sm=1 tr=0 ts=69b76ab4 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE2MDAyNSBTYWx0ZWRfX1RueUX7RItiv
+ 1pB9S2umDEUZJ9srZMyQGmTFL31DGh5VQS0gS8xyMic2L+6Hbgx2TCZdrci/mau9ZcDeVke0Akg
+ 3ZPhHYgEKAJYC1ZedikApzpiM1WGpzSt/ADAYMeSbnqSWQK4UZ0tIQuPiGp4QBn2IfDJ+3XmIbb
+ zcjHJEf5IYbFYRBLMg8NihnPc3RnAzCMsPG0M2twLF7UzYnxARzjpF2OizecV0bV9NBMUMIR8LW
+ AH/+YgpKsgOmXnwzdUldV9gRkehonOJCCfaFIa9FHZiG9gEwXhyHDPXq8ADMfXcgdba3TfrPlk+
+ lCCxoMSapc098ynwBRIrKssEkKoQvf66WiekIvQJ4ANwfKnWT6ypp5NGzyOOWfGpIZJOKFPH9em
+ T5ZsY0+6xH78dwb+EuuNZPlc6UYP65jHYnvC0aoxEdVrxVqUA3O4whWoU12V23KTB5pcuUtoHlH
+ jNFMEzMhQ7fL4bu+OlQ==
+X-Proofpoint-GUID: zZ63-XohVcrzbQbw0BrYjFC9IwgMZJfl
+X-Authority-Analysis: v=2.4 cv=fLs0HJae c=1 sm=1 tr=0 ts=69b77d7d cx=c_pps
+ a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=R7zuFBDiW8lgADV909h7jA==:17
  a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
- a=pGLkceISAAAA:8 a=B37bNE8LRjw87ndVZx8A:9 a=QEXdDO2ut3YA:10
- a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-GUID: 9bOJrKSz4dLMX9UpnPz8iaB8GryQS6ff
-X-Proofpoint-ORIG-GUID: 9bOJrKSz4dLMX9UpnPz8iaB8GryQS6ff
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE2MDAxOCBTYWx0ZWRfX6VwPjYxJpXyF
- UA/TtnEidQVG6VzB6YCXxTARBsKomjJtTSuH5T99ZnszW7+5XgQguWlD05Cyso2pjzYMwMJOmfW
- 0+6BqgrU3qygs5oqKepFgSOojM+7gpDBhIFgF3gEaTS0TJlZxQw1gVu+bgBIqZcFgebLfZNMuK7
- dMNUEDgaSvCX8LapL9KmHNrjSFABfSKyxhxaqcoNwhFoLTzuVYQ9a2kkS9eBWVh6qnqk76qXHbm
- a3EvaT9PcrFJqz/ZNlNc1zj2k272fnYIxUlkM+fEKeNp1DRkoGfTXKxyYOOJZmfIcVwdks2Gsjv
- v0jppv4Hlg7sazauAp5MvX4XwnMVQwqSACiqBtxbcyqeu9bzgICGlLzYIdse0U1mDX3tttPNama
- 1VG3w24g5g6XkTgMfJc028xkOFx5s3qoZmMuwH8B5FrsfXwDCmVfy+RHJmzcYAL8GgsX2+lSJ9Y
- hwte4tzF73uHFedqDLw==
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=EUspDBNiAAAA:8 a=YydTf4iuvZLm8uLOWi4A:9 a=QEXdDO2ut3YA:10
+ a=2VI0MkxyNR6bbpdq8BZq:22
+X-Proofpoint-ORIG-GUID: zZ63-XohVcrzbQbw0BrYjFC9IwgMZJfl
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-16_01,2026-03-13_01,2025-10-01_01
+ definitions=2026-03-16_02,2026-03-13_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 adultscore=0 bulkscore=0 malwarescore=0 spamscore=0
- impostorscore=0 lowpriorityscore=0 phishscore=0 clxscore=1015 suspectscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603160018
+ phishscore=0 priorityscore=1501 malwarescore=0 lowpriorityscore=0
+ suspectscore=0 impostorscore=0 clxscore=1015 adultscore=0 spamscore=0
+ bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2603050001
+ definitions=main-2603160025
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260315_192805_159010_325DE12A 
-X-CRM114-Status: GOOD (  32.74  )
+X-CRM114-CacheID: sfid-20260315_204815_878347_1C4D1DB0 
+X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,125 +150,25 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 3/13/2026 7:38 PM, Nicolas Escande wrote:
-> On each WMI message received from the hardware, we alloc a temporary array
-> of WMI_TAG_MAX entries of type void *. This array is then populated with
-> pointers of parsed structs depending on the WMI type, and then freed. This
-> alloc can fail when memory pressure in the system is high enough.
+On 3/10/2026 8:46 PM, Jeff Johnson wrote:
+> Patch 1 updates the core Unit Test functionality to address multiple
+> existing issues, and patch 2 removes unused DFS Unit Test definitions.
 > 
-> Given the fact that it is scheduled in softirq with the system_bh_wq, we
-> should not be able to parse more than one WMI message per CPU at any time.
-> 
-> So instead lets move to a per cpu allocated array, that is reused across
-> calls: ath12K_wmi_tb that is global to the ath12K module. To alloc & free
-> we added two new module_init/exit functions for this module.
-> 
-> ath12k_wmi_tlv_parse_alloc() and ath12k_wmi_tlv_parse() are merged
-> together as it no longer allocs mem but returns the existing per-cpu one.
-> 
-> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
 > ---
-> Small note on the new ath12k_wmi_tb variable. It is located in core.c and
-> I did not exported it in core.h (nor is it exported with EXPORT_SYMBOL())
-> as it is only used in wmi.c and should not be used by sub modules like
-> ath12k_wifi7.
-
-agree
-
-or alternately you can define ath12k_wmi_tb in wmi.c and add alloc/free functions in
-wmi.c, then call them in core.c. this helps modularity IMO?
-
-either way works for me!
-
+> Jeff Johnson (2):
+>        wifi: ath12k: Clean up the WMI Unit Test command interface
+>        wifi: ath12k: Remove unused DFS Unit Test definitions
 > 
-> changes from v1:
->   - rebased on ath-next 27401c9b1432
->   - changed wording according to Jeff's comment
->   - moved alloc/cleanup to new module_init/exit functions in the
->     ath12k module as per Baochen's comment
-> 
-> changes from RFC:
->   - rebased on ath-next 8e0ab5b9adb7
->   - converted missing call sites ath12k_wmi_obss_color_collision_event()
->     & ath12k_wmi_pdev_temperature_event()
->   - changed alloc order & cleanup path in ath12k_core_alloc() as it seems
->     it confused people
->   - used sizeof(*tb) in ath12k_wmi_tlv_parse()
+>   drivers/net/wireless/ath/ath12k/wmi.c | 58 ++++++++++++++++-------------------
+>   drivers/net/wireless/ath/ath12k/wmi.h | 14 ++++++---
+>   2 files changed, 36 insertions(+), 36 deletions(-)
 > ---
->  drivers/net/wireless/ath/ath12k/core.c |  22 +++
->  drivers/net/wireless/ath/ath12k/core.h |   1 +
->  drivers/net/wireless/ath/ath12k/wmi.c  | 181 ++++++-------------------
->  3 files changed, 68 insertions(+), 136 deletions(-)
+> base-commit: 9942b3f80f4ebe6852663e0d35ecaf6b7a97c8da
+> change-id: 20260305-ath12k-unit-test-cleanup-07622698c994
 > 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-> index c31c47fb5a73..c9a5baf41845 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.c
-> +++ b/drivers/net/wireless/ath/ath12k/core.c
-> @@ -34,6 +34,8 @@ module_param_named(ftm_mode, ath12k_ftm_mode, bool, 0444);
->  MODULE_PARM_DESC(ftm_mode, "Boots up in factory test mode");
->  EXPORT_SYMBOL(ath12k_ftm_mode);
->  
-> +void __percpu * ath12k_wmi_tb;
-> +
->  /* protected with ath12k_hw_group_mutex */
->  static struct list_head ath12k_hw_group_list = LIST_HEAD_INIT(ath12k_hw_group_list);
->  
-> @@ -2321,5 +2323,25 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
->  	return NULL;
->  }
->  
-> +static int ath12k_init(void)
-> +{
-> +	ath12k_wmi_tb = __alloc_percpu(WMI_TAG_MAX * sizeof(void *),
-> +				       __alignof__(void *));
-> +	if (!ath12k_wmi_tb) {
-> +		pr_warn("Failed to alloc ath12k WMI tb\n");
 
-generally we don't log memory allocation failure
+Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
 
-> +		return -ENOMEM;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static void ath12k_exit(void)
-> +{
-> +	free_percpu(ath12k_wmi_tb);
-> +}
-> +
-> +module_init(ath12k_init);
-> +module_exit(ath12k_exit);
-> +
->  MODULE_DESCRIPTION("Driver support for Qualcomm Technologies WLAN devices");
->  MODULE_LICENSE("Dual BSD/GPL");
-
-
-[...]
-
-> @@ -9205,7 +9117,7 @@ static void ath12k_wmi_event_teardown_complete(struct ath12k_base *ab,
->  	const void **tb;
->  	int ret;
->  
-> -	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-> +	tb = ath12k_wmi_tlv_parse(ab, skb);
->  	if (IS_ERR(tb)) {
->  		ret = PTR_ERR(tb);
->  		ath12k_warn(ab, "failed to parse teardown complete event tlv: %d\n", ret);
-> @@ -9215,11 +9127,8 @@ static void ath12k_wmi_event_teardown_complete(struct ath12k_base *ab,
->  	ev = tb[WMI_TAG_MLO_TEARDOWN_COMPLETE];
->  	if (!ev) {
->  		ath12k_warn(ab, "failed to fetch teardown complete event\n");
-> -		kfree(tb);
->  		return;
-
-nit: better to remove return as well
-
->  	}
-> -
-> -	kfree(tb);
->  }
->  
->  #ifdef CONFIG_ATH12K_DEBUGFS
+> 
 
 
