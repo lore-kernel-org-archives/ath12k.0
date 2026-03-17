@@ -4,136 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 685DEFB5EA5
-	for <ath12k@archiver.kernel.org>; Tue, 17 Mar 2026 03:32:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D772F33817
+	for <ath12k@archiver.kernel.org>; Tue, 17 Mar 2026 08:47:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Z5d7SpaThv2YlpB2AIVm1TAoC97B3vVdAG0MkkHD9h4=; b=x4nEblk2oeobrL2Xn0UYtlq0Dx
-	Yv79d+x6fMg+xCkkXySzUOZB6+FL1YTuzBwjx6o972lqowYB/wh8MXov+aNFROg2/7VrKm3OBa33C
-	snkoY09ndQziqirmmxYoSUpxSdh7rmMcllISDPvYvxnQ5aiCPXQb+RjztBFExyLaOrk3dCFq0hT4W
-	5yAQQKPC/myUOoRS3+tH0g+F9/MquXAcACkfq9ZgQkcpR/vbQzQCYrfkJ4nYEZ0ZB7Gc0f0i1tnYp
-	c7LHLVp36a64D6YLRxusmv43wp57L3AwPtYIHzVu9hAsevO9QjSqqvtt4h5UMB75FvAI9rzoO3Yn+
-	kGr5CAig==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=wF5Y8DNVHZ+09ZJHi+5k2MKV7FQ9BOrucxNeKUrKbwQ=; b=DA35o8zLou1NYzuSx4qAknmtPi
+	Nzg/7LJcEpyH2M5s5Kji6oeOqebzQ0UOT3lKwa8yAjc6tTU/UEugdgd5h8kSbHRk1fATqQRrAb33F
+	RLm6jOG5G7Wq8pzB5wf/G0+Fsj9gLLjaNQ4Q4CXTSr0ijxEDp9D9Gqdz3WVP3vLD7ktIPir4fZHBp
+	xYvKaxT+tqi3zoY/7zHq1BgNJu6wy+xdRftI4xfXdqJzUvHKXAZFnEc4TE4/93fwdSEvjqMguyDaN
+	vi17SMqdG65Wkta92IRIjeTzN7pcovaVqtA2hmLS1oyhpJ2HIRZwol7b4oHUkOMkRt733o/m26Bch
+	LmUOKK4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2LAC-00000005KCl-3xba;
-	Tue, 17 Mar 2026 03:32:12 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1w2Q5c-00000005l7T-06UL;
+	Tue, 17 Mar 2026 08:47:48 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2LAA-00000005KCN-3pva
+	id 1w2Q5X-00000005l6Z-3l5E
 	for ath12k@lists.infradead.org;
-	Tue, 17 Mar 2026 03:32:12 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62H1RPLY1533923
-	for <ath12k@lists.infradead.org>; Tue, 17 Mar 2026 03:32:08 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Z5d7SpaThv2YlpB2AIVm1TAoC97B3vVdAG0MkkHD9h4=; b=KxGHS7EraghVe/vP
-	GoIDcjYK4hu6Ag2Mg9EBwGAnBF9rcTt1T6sOX9VhNEpGMq+fJru0yBFZnWbNA4zx
-	2ubqrTOHrCXgmaj7Z8NnUrfT0SLRsKHDmSZG5/VxZkrgwM9DcoTKs1z1FjNzjqN+
-	MqNDsMrIKeRNilKwOBhnrNEn4wrtMpLl4MfbSX9OZ98amzaaFqBLXlPVrFh4G6G5
-	SC7vciumpz6kiutwMkhPFd7OmUMGtTPkseub6UjgmvfbDZHcAy+ScK+2HEXTCSW1
-	MNsXkbFSIwNKjOwSQ3FtpM/tftYe7vaCWF+eNz+g/nuaRwtNR/H+mveRD/WWMluc
-	Ni9EXA==
-Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cxm5k26ua-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 17 Mar 2026 03:32:08 +0000 (GMT)
-Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-c73783c96baso2627654a12.2
-        for <ath12k@lists.infradead.org>; Mon, 16 Mar 2026 20:32:08 -0700 (PDT)
+	Tue, 17 Mar 2026 08:47:46 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-439b6d9c981so365006f8f.1
+        for <ath12k@lists.infradead.org>; Tue, 17 Mar 2026 01:47:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1773718327; x=1774323127; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Z5d7SpaThv2YlpB2AIVm1TAoC97B3vVdAG0MkkHD9h4=;
-        b=ULlPkNr7SslpAsPJoboDm+zJYijz2xakAWSYpFVYcCPWthMruavAeVH9YWOYwwd1r+
-         sivw/VFGSllAu5jehFpZrhtXOV99RNJqjwcPEtKjBm8Xd5y09QeWLdcBtFGLKNt5Bh12
-         9J9SYCcdo75wPYyYoN55C8Fq+2eC8ixtEadfNUGOgEotN3aR5sH/34+53A14pPRSsIJ8
-         cjIEMF+TaAcfY5NNjzdRgv9OinQdhNJnza+55VwWkwVqJ7FtwBTG08yAEYfuhg9MySdC
-         luQGNKOLO880Uz0qDWFv3bGh6KLnQ3PMvoibfFx6RdlQD8gsFK5t5UCtcHNu513wgI/E
-         J6uw==
+        d=gmail.com; s=20230601; t=1773737262; x=1774342062; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=wF5Y8DNVHZ+09ZJHi+5k2MKV7FQ9BOrucxNeKUrKbwQ=;
+        b=V/RNGVa0Nun2uOgLksLpB2lAfWYQ2pVxxCaFnZ+S6K4m3ovznxqkQdxPVWhIU2j9/z
+         LV3aIG/5FWYMZRy259e36q8wWuXwzuuuo7BRAinjzWfkbSvsZ2FvMP7x1b6s8j8ehPwR
+         hAfGB+/owpUB5wpCZoOvBiByDnsyZgYI3WwLRaMqGXCXGDkXT2Ay6Drou0QasXeR8bPS
+         sUuQznTTppxU7diCM7lgC2ZWDSnf9zT/y3iYD90cnnHL6ImCzb5J3snnQ4oI4R1RmFSJ
+         OVzygfSoWu5BrJ4wtJPTAu20S4HY5SRuOYIC5l59JsgE1V6HN35EEG9F7Vf7zyMy2jQT
+         i9tw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1773718327; x=1774323127;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Z5d7SpaThv2YlpB2AIVm1TAoC97B3vVdAG0MkkHD9h4=;
-        b=J7RBWc+3E3MXL3nOSMJ5/+p3wJf4AJo5airtTGGVdFe1JmYXDIxhfUnzuELP8XDL8H
-         3ZsNIYoKhWDVCgoV03w99bR4fNfYKRnq0RcIUWl3qtddDokedrDykfLlzIiLmMHbVfzs
-         KOCn9AwqWBUj+82yFmU6UKYgOYNKsL7ywJ6MMYjV+86TsnnuVx1Mu0EnkVXS8beq5Nvr
-         q6grP7zX+gaLy13cvYhmMdv1P6622/lTgqI0AqZVVSM4QZI/M9Lr6KMIwmSTYfHDaMQe
-         vn2WN3GPPLU+lPrjLXOhaGsuHIFg0uzllF92r/oOVaW9jxRKljv/Lu/qxsB9Az1Td2x+
-         Mzww==
-X-Forwarded-Encrypted: i=1; AJvYcCURHp8tb/DNq22inXPoCs5u26/QbYM68UZdio7aa0LwrwtT2TUFdtQpayCSWvWxtv+EGZ79lFA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxtCmH2clsEfKkVwlijlIhV73K+2vbPy98Ua4gRiDNCICOy+TRX
-	m+iu4sMWQKF5zrR+Z65cWotcfYgwDhNmwK6zv5QLAWKTYd8vncE1fC21+mJtaSIM72e6JSYsA5d
-	WMt5HZP2zGA87emBe+8CwyctIYwWN9e0Hm7gMcYE4QOp1MRfJ+nc0a3nDHtMVohyYfCKHtOIEiW
-	8=
-X-Gm-Gg: ATEYQzxAn0BrLpxufPts5XE6WFPCT09nGXprghSS3KDgpiHvioxoR4boALFyVmHOmMm
-	zk2dB575oqrn6o/RL/6sMxhJ/v6ClN6anxkw8/GWORc8TLp4EM2gYJufn2ZpCNJxL2DY4/8wGpX
-	aDJ3Q7f0Oa3DsDR7r2NZYVLAddcN7UXkB9nR24RccLXq2GpngW0M3TRaJ4KD5hbJ9pqf+MNCYm5
-	NjDZpXkX0h2jtXRruLRx+Vq6zJwBd5Y5HwsjOl8ujGi7WMZZACWC6COEycVNyF0vTJ1CxftxJQb
-	T0H1DJpWiYF69muLnifhALxOpP3G9Oo09eILCVMnSVVIeDHrv3sl83Exw7rXjCm1hQR0oFYuN08
-	04sNXC5RhtzPZ8bLZ3v5ClcTmaHlunKsniWMRQVlzUw7QYPczxuJav5/BOCjTeqeYIq3Ui9/1vA
-	iaoyPEPghIcYeN7g7w1WY=
-X-Received: by 2002:a05:6a00:7704:b0:827:2891:c17b with SMTP id d2e1a72fcca58-82a196d723cmr10511208b3a.17.1773718327360;
-        Mon, 16 Mar 2026 20:32:07 -0700 (PDT)
-X-Received: by 2002:a05:6a00:7704:b0:827:2891:c17b with SMTP id d2e1a72fcca58-82a196d723cmr10511189b3a.17.1773718326726;
-        Mon, 16 Mar 2026 20:32:06 -0700 (PDT)
-Received: from [10.133.33.128] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82a06fe211csm15255762b3a.0.2026.03.16.20.32.05
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 16 Mar 2026 20:32:06 -0700 (PDT)
-Message-ID: <bf6b4377-1673-4273-8d7d-6163f0109e33@oss.qualcomm.com>
-Date: Tue, 17 Mar 2026 11:32:01 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v3] wifi: ath12k: avoid dynamic alloc when
- parsing wmi tb
-To: Nicolas Escande <nico.escande@gmail.com>, ath12k@lists.infradead.org
+        d=1e100.net; s=20251104; t=1773737262; x=1774342062;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=wF5Y8DNVHZ+09ZJHi+5k2MKV7FQ9BOrucxNeKUrKbwQ=;
+        b=WQ6ozae0QYTfAiqBSAgsIy0MGExYDgStdsXgaWeUX/s6SmMSWV2KiCwdxvoxHxCP9D
+         XAEVnDc20xC+m2hDuFUTHZjnQRGW/usPqJgAgtiPeC0uXSukwrtoULuKrPLEY7jao7U3
+         7Bo5gnNG3aKbHgSNKK4Ii0nF1mZjwfe+vUZqjNz3/MnViED5+vV9xQj1+m1GkMK+wUSW
+         8JVyrwuqsQcRenf0jnSaN4VBJYXNsCYPP/GgC/WZ4KeA5BmphWYDb3Zq6x0PP3pEDNGV
+         26XbaVpUTfPPI9HLEmVsQzScMH3+Pnb9x/dw5wW+RFdtGsZ8xGMDP7KLCv2j2sEybF56
+         bvGg==
+X-Gm-Message-State: AOJu0YxMj+H6W0nTyyBQKMOSzJx4yBaUkIaYuabjh70U9DuSIYVQf3rd
+	hOwYpXgJDlD6Diak7Sg+T7uvCys6A9M97yg7nq4R3BpfO4o07sCY/X7/PjllXg==
+X-Gm-Gg: ATEYQzxEgg+ttfOfnERYBBbsrceib2tlX1q4sko70PvxO7aXgBVo1gxAeCRbdR5Obd1
+	If0CHIvqKLBlyke0ykpzoyjtG8GLH3ldA9bJMN3QIoVftTy4f8/SMr+aK0pgfOmMjWrwoZbO8n3
+	/sC3AY5Pc17w52nEtdOqFb4xuMtrSkkt3G6TLEvMbeJfXGQ5ZtZ38MEsYTHtLm8NB2cP4c33a7f
+	bCi9+6us8OdZDqD/qbUrAsZDNqcyTFsw15SvpfyErrR7qfEhl9bRz4qanZJs1kOigBrdonDJzck
+	F/j5LCGsiYqIyuSb10raO2XPbuI5Mol1e9yGT67KLeEkcJEdHgnu8ssAybfVwPD32Gngm51dj3W
+	BRRsjEZdpSgg1oHc8ZqSB0nZoKO3Xt2TXfcMFM4lTJY4h0yH7bAButCjzmNdBaMyGH79dQW45HB
+	PP35Hh3gTNv3R6MWpE6h0IJfrvu0GV9DjqVUg8KAKmidlfHktqrKFKWq4w
+X-Received: by 2002:a5d:5f82:0:b0:43b:4341:b949 with SMTP id ffacd0b85a97d-43b4983001cmr4653085f8f.20.1773737261338;
+        Tue, 17 Mar 2026 01:47:41 -0700 (PDT)
+Received: from syracuse.iliad.local (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-439fe2186e3sm54983908f8f.26.2026.03.17.01.47.40
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 17 Mar 2026 01:47:40 -0700 (PDT)
+From: Nicolas Escande <nico.escande@gmail.com>
+To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-References: <20260316103248.3042158-1-nico.escande@gmail.com>
- <d38acb9f-60dc-4d37-a3b5-8cd09f76939e@oss.qualcomm.com>
- <DH45I9X47H77.74AIOL6V8R49@gmail.com>
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <DH45I9X47H77.74AIOL6V8R49@gmail.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=fJ00HJae c=1 sm=1 tr=0 ts=69b8cb38 cx=c_pps
- a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
- a=ByHDnCq9wcmhMw9lLjoA:9 a=QEXdDO2ut3YA:10 a=3WC7DwWrALyhR5TkjVHa:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE3MDAyNyBTYWx0ZWRfX4gw5VIrye3Ly
- 78TjznXoRsVY66U/qDO9IXqS16QDdzBXwmVnmcoHHGnwcGYnmCjW11WFB8htuwZGb4xSbN/5vEN
- 8XkT09Vh1QjRlASTJkmJ0L+eUddxobEMAoRs01rQqEVtCGtP2IXh7TkS+aeENTb/khTIhJ3s/SM
- eVs7V0zYqI2pmj3ct5fcTPIoElIOhk3siSx5I0+hUyqw+9AnpC2uUMq9wReZMgF9uPx4bkN9SG6
- XmwHY7bGWIRQWbe9zFZKVbCR+SzV6/V4c6+faIgdqDPIynPaQRMXDDleYwgbLHFo4lYpCbVMuGu
- NDmuaIjx7OiqNpuZMdsxQykgMVLD9rGg3zpyJyghHnIoYPBxYrHaMa7pyI/xZnWWNV4dcyppJ/d
- P7nXsAwCuR5rW5zyh7TZFN9he0oFY4OUhbJqj62oAjE1CN4QNdJnNFD7TjuwVRaaKk3nLkNGWQu
- Lkb2ilDDCoZ9ZT94w+w==
-X-Proofpoint-GUID: N2IDV_xLxz_QBANSh2uNK2OdCB4T4yN-
-X-Proofpoint-ORIG-GUID: N2IDV_xLxz_QBANSh2uNK2OdCB4T4yN-
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-17_01,2026-03-16_06,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 clxscore=1015 malwarescore=0 suspectscore=0 phishscore=0
- lowpriorityscore=0 priorityscore=1501 impostorscore=0 adultscore=0
- bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2603050001
- definitions=main-2603170027
+Subject: [PATCH ath-next v4] wifi: ath12k: avoid dynamic alloc when parsing wmi tb
+Date: Tue, 17 Mar 2026 09:47:40 +0100
+Message-ID: <20260317084740.3756880-1-nico.escande@gmail.com>
+X-Mailer: git-send-email 2.53.0
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260316_203211_103525_02A36196 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20260317_014745_381974_B4168A53 
+X-CRM114-Status: GOOD (  19.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,64 +93,989 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On each WMI message received from the hardware, we alloc a temporary array
+of WMI_TAG_MAX entries of type void *. This array is then populated with
+pointers of parsed structs depending on the WMI type, and then freed. This
+alloc can fail when memory pressure in the system is high enough.
 
+Given the fact that it is scheduled in softirq with the system_bh_wq, we
+should not be able to parse more than one WMI message per CPU at any time.
 
-On 3/16/2026 6:57 PM, Nicolas Escande wrote:
-> On Mon Mar 16, 2026 at 11:42 AM CET, Baochen Qiang wrote:
-> [...]
->>> --- a/drivers/net/wireless/ath/ath12k/core.c
->>> +++ b/drivers/net/wireless/ath/ath12k/core.c
->>> @@ -2321,5 +2321,24 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
->>>  	return NULL;
->>>  }
->>>  
->>> +static int ath12k_init(void)
->>> +{
->>> +	int ret;
->>> +
->>> +	ret = ath12k_wmi_alloc();
->>> +	if (ret)
->>> +		return ret;
->>> +
->>> +	return 0;
->>
->> nit: you can simply
->>
->> 	return ath12k_wmi_alloc();
-> 
-> Yes we can, but I did this in case we need to add more stuff in that function at
-> some later point. It would generate less code chrun. But I'm ok with a direct
-> return statement if you think that's better. Just tell me and I'll send the v4.
+So instead lets move to a per cpu allocated array, that is reused across
+calls: ath12K_wmi_tb that lives in wmi.c of the ath12K module. To alloc &
+free we added two new module_init/exit functions for the module and two
+new wmi functions to alloc/free this memory.
 
-I would prefer a direct return for now. After all We can always change to your style if
-necessary in the future.
+ath12k_wmi_tlv_parse_alloc() and ath12k_wmi_tlv_parse() are merged
+together as it no longer allocs mem but returns the existing per-cpu one.
 
-> 
->>
->>> +}
->>> +
->>> +static void ath12k_exit(void)
->>> +{
->>> +	ath12k_wmi_free();
->>> +}
->>> +
->>> +module_init(ath12k_init);
->>> +module_exit(ath12k_exit);
->>> +
->>>  MODULE_DESCRIPTION("Driver support for Qualcomm Technologies WLAN devices");
->>>  MODULE_LICENSE("Dual BSD/GPL");
->>> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
->>> index 59c193b24764..02ee6c718621 100644
->>> --- a/drivers/net/wireless/ath/ath12k/core.h
->>> +++ b/drivers/net/wireless/ath/ath12k/core.h
->>> @@ -19,6 +19,7 @@
->>>  #include <linux/average.h>
->>>  #include <linux/of.h>
->>>  #include <linux/rhashtable.h>
->>> +#include <linux/percpu.h>
->>
->> does it make more sense to add this to wmi.c instead?
-> 
-> Indeed it does. I'll fix it.
+Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
+---
+changes from v3:
+  - simplified ath12k_core_init() with a single statement
+  - move perpcu.h include directly to wmi.c
+
+changes from v2:
+  - removed now superfluous return in ath12k_wmi_event_teardown_complete()
+  - moved ath12k_wmi_tb declaration to wmi.c & added two functions to
+    alloc / free it
+  - removed useless error message on memory allocation failure
+
+changes from v1:
+  - rebased on ath-next 27401c9b1432
+  - changed wording according to Jeff's comment
+  - moved alloc/cleanup to new module_init/exit functions in the
+    ath12k module as per Baochen's comment
+
+changes from RFC:
+  - rebased on ath-next 8e0ab5b9adb7
+  - converted missing call sites ath12k_wmi_obss_color_collision_event()
+    & ath12k_wmi_pdev_temperature_event()
+  - changed alloc order & cleanup path in ath12k_core_alloc() as it seems
+    it confused people
+  - used sizeof(*tb) in ath12k_wmi_tlv_parse()
+---
+ drivers/net/wireless/ath/ath12k/core.c |  13 ++
+ drivers/net/wireless/ath/ath12k/wmi.c  | 201 ++++++++-----------------
+ drivers/net/wireless/ath/ath12k/wmi.h  |   3 +
+ 3 files changed, 78 insertions(+), 139 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index c31c47fb5a73..6c034071cc6d 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -2321,5 +2321,18 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
+ 	return NULL;
+ }
+ 
++static int ath12k_init(void)
++{
++	return ath12k_wmi_alloc();
++}
++
++static void ath12k_exit(void)
++{
++	ath12k_wmi_free();
++}
++
++module_init(ath12k_init);
++module_exit(ath12k_exit);
++
+ MODULE_DESCRIPTION("Driver support for Qualcomm Technologies WLAN devices");
+ MODULE_LICENSE("Dual BSD/GPL");
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 8e13c3ec1cc7..e74b9ff3956d 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -15,6 +15,7 @@
+ #include <linux/time.h>
+ #include <linux/of.h>
+ #include <linux/cleanup.h>
++#include <linux/percpu.h>
+ #include "core.h"
+ #include "debugfs.h"
+ #include "debug.h"
+@@ -134,6 +135,8 @@ struct wmi_pdev_set_obss_bitmap_arg {
+ 	const char *label;
+ };
+ 
++static void __percpu *ath12k_wmi_tb;
++
+ static const struct ath12k_wmi_tlv_policy ath12k_wmi_tlv_policies[] = {
+ 	[WMI_TAG_ARRAY_BYTE] = { .min_len = 0 },
+ 	[WMI_TAG_ARRAY_UINT32] = { .min_len = 0 },
+@@ -289,29 +292,19 @@ static int ath12k_wmi_tlv_iter_parse(struct ath12k_base *ab, u16 tag, u16 len,
+ 	return 0;
+ }
+ 
+-static int ath12k_wmi_tlv_parse(struct ath12k_base *ar, const void **tb,
+-				const void *ptr, size_t len)
+-{
+-	return ath12k_wmi_tlv_iter(ar, ptr, len, ath12k_wmi_tlv_iter_parse,
+-				   (void *)tb);
+-}
+-
+ static const void **
+-ath12k_wmi_tlv_parse_alloc(struct ath12k_base *ab,
+-			   struct sk_buff *skb, gfp_t gfp)
++ath12k_wmi_tlv_parse(struct ath12k_base *ab, struct sk_buff *skb)
+ {
+ 	const void **tb;
+ 	int ret;
+ 
+-	tb = kzalloc_objs(*tb, WMI_TAG_MAX, gfp);
+-	if (!tb)
+-		return ERR_PTR(-ENOMEM);
++	tb = this_cpu_ptr(ath12k_wmi_tb);
++	memset(tb, 0, WMI_TAG_MAX * sizeof(*tb));
+ 
+-	ret = ath12k_wmi_tlv_parse(ab, tb, skb->data, skb->len);
+-	if (ret) {
+-		kfree(tb);
++	ret = ath12k_wmi_tlv_iter(ab, skb->data, skb->len,
++				  ath12k_wmi_tlv_iter_parse, (void *)tb);
++	if (ret)
+ 		return ERR_PTR(ret);
+-	}
+ 
+ 	return tb;
+ }
+@@ -3911,9 +3904,10 @@ ath12k_wmi_obss_color_collision_event(struct ath12k_base *ab, struct sk_buff *sk
+ 	const struct wmi_obss_color_collision_event *ev;
+ 	struct ath12k_link_vif *arvif;
+ 	u32 vdev_id, evt_type;
++	const void **tb;
+ 	u64 bitmap;
+ 
+-	const void **tb __free(kfree) = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ath12k_warn(ab, "failed to parse OBSS color collision tlv %ld\n",
+ 			    PTR_ERR(tb));
+@@ -5714,7 +5708,7 @@ static int ath12k_pull_vdev_start_resp_tlv(struct ath12k_base *ab, struct sk_buf
+ 	const struct wmi_vdev_start_resp_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -5724,13 +5718,11 @@ static int ath12k_pull_vdev_start_resp_tlv(struct ath12k_base *ab, struct sk_buf
+ 	ev = tb[WMI_TAG_VDEV_START_RESPONSE_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch vdev start resp ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+ 	*vdev_rsp = *ev;
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -5809,7 +5801,7 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_WMI, "processing regulatory ext channel list\n");
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -5819,7 +5811,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_REG_CHAN_LIST_CC_EXT_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch reg chan list ext update ev\n");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+@@ -5849,7 +5840,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 	if (num_2g_reg_rules > MAX_REG_RULES || num_5g_reg_rules > MAX_REG_RULES) {
+ 		ath12k_warn(ab, "Num reg rules for 2G/5G exceeds max limit (num_2g_reg_rules: %d num_5g_reg_rules: %d max_rules: %d)\n",
+ 			    num_2g_reg_rules, num_5g_reg_rules, MAX_REG_RULES);
+-		kfree(tb);
+ 		return -EINVAL;
+ 	}
+ 
+@@ -5859,7 +5849,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 		if (num_6g_reg_rules_ap[i] > MAX_6GHZ_REG_RULES) {
+ 			ath12k_warn(ab, "Num 6G reg rules for AP mode(%d) exceeds max limit (num_6g_reg_rules_ap: %d, max_rules: %d)\n",
+ 				    i, num_6g_reg_rules_ap[i], MAX_6GHZ_REG_RULES);
+-			kfree(tb);
+ 			return -EINVAL;
+ 		}
+ 
+@@ -5884,14 +5873,12 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 		    num_6g_reg_rules_cl[WMI_REG_VLP_AP][i] >  MAX_6GHZ_REG_RULES) {
+ 			ath12k_warn(ab, "Num 6g client reg rules exceeds max limit, for client(type: %d)\n",
+ 				    i);
+-			kfree(tb);
+ 			return -EINVAL;
+ 		}
+ 	}
+ 
+ 	if (!total_reg_rules) {
+ 		ath12k_warn(ab, "No reg rules available\n");
+-		kfree(tb);
+ 		return -EINVAL;
+ 	}
+ 
+@@ -5993,7 +5980,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 						      ext_wmi_reg_rule);
+ 
+ 		if (!reg_info->reg_rules_2g_ptr) {
+-			kfree(tb);
+ 			ath12k_warn(ab, "Unable to Allocate memory for 2g rules\n");
+ 			return -ENOMEM;
+ 		}
+@@ -6027,7 +6013,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 						      ext_wmi_reg_rule);
+ 
+ 		if (!reg_info->reg_rules_5g_ptr) {
+-			kfree(tb);
+ 			ath12k_warn(ab, "Unable to Allocate memory for 5g rules\n");
+ 			return -ENOMEM;
+ 		}
+@@ -6046,7 +6031,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 						      ext_wmi_reg_rule);
+ 
+ 		if (!reg_info->reg_rules_6g_ap_ptr[i]) {
+-			kfree(tb);
+ 			ath12k_warn(ab, "Unable to Allocate memory for 6g ap rules\n");
+ 			return -ENOMEM;
+ 		}
+@@ -6061,7 +6045,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 							      ext_wmi_reg_rule);
+ 
+ 			if (!reg_info->reg_rules_6g_client_ptr[j][i]) {
+-				kfree(tb);
+ 				ath12k_warn(ab, "Unable to Allocate memory for 6g client rules\n");
+ 				return -ENOMEM;
+ 			}
+@@ -6096,7 +6079,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_WMI, "processed regulatory ext channel list\n");
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6107,7 +6089,7 @@ static int ath12k_pull_peer_del_resp_ev(struct ath12k_base *ab, struct sk_buff *
+ 	const struct wmi_peer_delete_resp_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6117,7 +6099,6 @@ static int ath12k_pull_peer_del_resp_ev(struct ath12k_base *ab, struct sk_buff *
+ 	ev = tb[WMI_TAG_PEER_DELETE_RESP_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch peer delete resp ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+@@ -6127,7 +6108,6 @@ static int ath12k_pull_peer_del_resp_ev(struct ath12k_base *ab, struct sk_buff *
+ 	ether_addr_copy(peer_del_resp->peer_macaddr.addr,
+ 			ev->peer_macaddr.addr);
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6139,7 +6119,7 @@ static int ath12k_pull_vdev_del_resp_ev(struct ath12k_base *ab,
+ 	const struct wmi_vdev_delete_resp_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6149,13 +6129,11 @@ static int ath12k_pull_vdev_del_resp_ev(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_VDEV_DELETE_RESP_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch vdev delete resp ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+ 	*vdev_id = le32_to_cpu(ev->vdev_id);
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6167,7 +6145,7 @@ static int ath12k_pull_bcn_tx_status_ev(struct ath12k_base *ab,
+ 	const struct wmi_bcn_tx_status_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6177,14 +6155,12 @@ static int ath12k_pull_bcn_tx_status_ev(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_OFFLOAD_BCN_TX_STATUS_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch bcn tx status ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+ 	*vdev_id = le32_to_cpu(ev->vdev_id);
+ 	*tx_status = le32_to_cpu(ev->tx_status);
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6195,7 +6171,7 @@ static int ath12k_pull_vdev_stopped_param_tlv(struct ath12k_base *ab, struct sk_
+ 	const struct wmi_vdev_stopped_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6205,13 +6181,11 @@ static int ath12k_pull_vdev_stopped_param_tlv(struct ath12k_base *ab, struct sk_
+ 	ev = tb[WMI_TAG_VDEV_STOPPED_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch vdev stop ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+ 	*vdev_id = le32_to_cpu(ev->vdev_id);
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6350,7 +6324,7 @@ static int ath12k_pull_mgmt_tx_compl_param_tlv(struct ath12k_base *ab,
+ 	const struct wmi_mgmt_tx_compl_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6360,7 +6334,6 @@ static int ath12k_pull_mgmt_tx_compl_param_tlv(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_MGMT_TX_COMPL_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch mgmt tx compl ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+@@ -6370,7 +6343,6 @@ static int ath12k_pull_mgmt_tx_compl_param_tlv(struct ath12k_base *ab,
+ 	param->ppdu_id = ev->ppdu_id;
+ 	param->ack_rssi = ev->ack_rssi;
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6533,7 +6505,7 @@ static int ath12k_pull_scan_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	const struct wmi_scan_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6543,7 +6515,6 @@ static int ath12k_pull_scan_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	ev = tb[WMI_TAG_SCAN_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch scan ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+@@ -6555,7 +6526,6 @@ static int ath12k_pull_scan_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	scan_evt_param->vdev_id = ev->vdev_id;
+ 	scan_evt_param->tsf_timestamp = ev->tsf_timestamp;
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6566,7 +6536,7 @@ static int ath12k_pull_peer_sta_kickout_ev(struct ath12k_base *ab, struct sk_buf
+ 	const struct wmi_peer_sta_kickout_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6576,7 +6546,6 @@ static int ath12k_pull_peer_sta_kickout_ev(struct ath12k_base *ab, struct sk_buf
+ 	ev = tb[WMI_TAG_PEER_STA_KICKOUT_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch peer sta kickout ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+@@ -6584,7 +6553,6 @@ static int ath12k_pull_peer_sta_kickout_ev(struct ath12k_base *ab, struct sk_buf
+ 	arg->reason = le32_to_cpu(ev->reason);
+ 	arg->rssi = le32_to_cpu(ev->rssi);
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6595,7 +6563,7 @@ static int ath12k_pull_roam_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	const struct wmi_roam_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6605,7 +6573,6 @@ static int ath12k_pull_roam_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	ev = tb[WMI_TAG_ROAM_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch roam ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+@@ -6613,7 +6580,6 @@ static int ath12k_pull_roam_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	roam_ev->reason = ev->reason;
+ 	roam_ev->rssi = ev->rssi;
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6647,7 +6613,7 @@ static int ath12k_pull_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	const struct wmi_chan_info_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6657,7 +6623,6 @@ static int ath12k_pull_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	ev = tb[WMI_TAG_CHAN_INFO_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch chan info ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+@@ -6674,7 +6639,6 @@ static int ath12k_pull_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	ch_info_ev->mac_clk_mhz = ev->mac_clk_mhz;
+ 	ch_info_ev->vdev_id = ev->vdev_id;
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6686,7 +6650,7 @@ ath12k_pull_pdev_bss_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	const struct wmi_pdev_bss_chan_info_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6696,7 +6660,6 @@ ath12k_pull_pdev_bss_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	ev = tb[WMI_TAG_PDEV_BSS_CHAN_INFO_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch pdev bss chan info ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+@@ -6714,7 +6677,6 @@ ath12k_pull_pdev_bss_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	bss_ch_info_ev->rx_bss_cycle_count_low = ev->rx_bss_cycle_count_low;
+ 	bss_ch_info_ev->rx_bss_cycle_count_high = ev->rx_bss_cycle_count_high;
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6726,7 +6688,7 @@ ath12k_pull_vdev_install_key_compl_ev(struct ath12k_base *ab, struct sk_buff *sk
+ 	const struct wmi_vdev_install_key_compl_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6736,7 +6698,6 @@ ath12k_pull_vdev_install_key_compl_ev(struct ath12k_base *ab, struct sk_buff *sk
+ 	ev = tb[WMI_TAG_VDEV_INSTALL_KEY_COMPLETE_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch vdev install key compl ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+@@ -6746,7 +6707,6 @@ ath12k_pull_vdev_install_key_compl_ev(struct ath12k_base *ab, struct sk_buff *sk
+ 	arg->key_flags = le32_to_cpu(ev->key_flags);
+ 	arg->status = le32_to_cpu(ev->status);
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6757,7 +6717,7 @@ static int ath12k_pull_peer_assoc_conf_ev(struct ath12k_base *ab, struct sk_buff
+ 	const struct wmi_peer_assoc_conf_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6767,14 +6727,12 @@ static int ath12k_pull_peer_assoc_conf_ev(struct ath12k_base *ab, struct sk_buff
+ 	ev = tb[WMI_TAG_PEER_ASSOC_CONF_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch peer assoc conf ev");
+-		kfree(tb);
+ 		return -EPROTO;
+ 	}
+ 
+ 	peer_assoc_conf->vdev_id = le32_to_cpu(ev->vdev_id);
+ 	peer_assoc_conf->macaddr = ev->peer_macaddr.addr;
+ 
+-	kfree(tb);
+ 	return 0;
+ }
+ 
+@@ -6792,7 +6750,7 @@ static int ath12k_reg_11d_new_cc_event(struct ath12k_base *ab, struct sk_buff *s
+ 	const void **tb;
+ 	int ret, i;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -6801,7 +6759,6 @@ static int ath12k_reg_11d_new_cc_event(struct ath12k_base *ab, struct sk_buff *s
+ 
+ 	ev = tb[WMI_TAG_11D_NEW_COUNTRY_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+ 		ath12k_warn(ab, "failed to fetch 11d new cc ev");
+ 		return -EPROTO;
+ 	}
+@@ -6814,8 +6771,6 @@ static int ath12k_reg_11d_new_cc_event(struct ath12k_base *ab, struct sk_buff *s
+ 		   ab->new_alpha2[0],
+ 		   ab->new_alpha2[1]);
+ 
+-	kfree(tb);
+-
+ 	for (i = 0; i < ab->num_radios; i++) {
+ 		pdev = &ab->pdevs[i];
+ 		ar = pdev->ar;
+@@ -8567,7 +8522,7 @@ static void ath12k_pdev_ctl_failsafe_check_event(struct ath12k_base *ab,
+ 	const struct wmi_pdev_ctl_failsafe_chk_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -8577,7 +8532,6 @@ static void ath12k_pdev_ctl_failsafe_check_event(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_PDEV_CTL_FAILSAFE_CHECK_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch pdev ctl failsafe check ev");
+-		kfree(tb);
+ 		return;
+ 	}
+ 
+@@ -8591,8 +8545,6 @@ static void ath12k_pdev_ctl_failsafe_check_event(struct ath12k_base *ab,
+ 	if (ev->ctl_failsafe_status != 0)
+ 		ath12k_warn(ab, "pdev ctl failsafe failure status %d",
+ 			    ev->ctl_failsafe_status);
+-
+-	kfree(tb);
+ }
+ 
+ static void
+@@ -8664,7 +8616,7 @@ ath12k_wmi_pdev_csa_switch_count_status_event(struct ath12k_base *ab,
+ 	const u32 *vdev_ids;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -8676,7 +8628,6 @@ ath12k_wmi_pdev_csa_switch_count_status_event(struct ath12k_base *ab,
+ 
+ 	if (!ev || !vdev_ids) {
+ 		ath12k_warn(ab, "failed to fetch pdev csa switch count ev");
+-		kfree(tb);
+ 		return;
+ 	}
+ 
+@@ -8686,8 +8637,6 @@ ath12k_wmi_pdev_csa_switch_count_status_event(struct ath12k_base *ab,
+ 		   ev->num_vdevs);
+ 
+ 	ath12k_wmi_process_csa_switch_count_event(ab, ev, vdev_ids);
+-
+-	kfree(tb);
+ }
+ 
+ static void
+@@ -8699,7 +8648,7 @@ ath12k_wmi_pdev_dfs_radar_detected_event(struct ath12k_base *ab, struct sk_buff
+ 	struct ath12k *ar;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -8710,7 +8659,6 @@ ath12k_wmi_pdev_dfs_radar_detected_event(struct ath12k_base *ab, struct sk_buff
+ 
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch pdev dfs radar detected ev");
+-		kfree(tb);
+ 		return;
+ 	}
+ 
+@@ -8749,8 +8697,6 @@ ath12k_wmi_pdev_dfs_radar_detected_event(struct ath12k_base *ab, struct sk_buff
+ 
+ exit:
+ 	rcu_read_unlock();
+-
+-	kfree(tb);
+ }
+ 
+ static void ath12k_tm_wmi_event_segmented(struct ath12k_base *ab, u32 cmd_id,
+@@ -8761,7 +8707,7 @@ static void ath12k_tm_wmi_event_segmented(struct ath12k_base *ab, u32 cmd_id,
+ 	int ret;
+ 	u16 length;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+@@ -8772,14 +8718,11 @@ static void ath12k_tm_wmi_event_segmented(struct ath12k_base *ab, u32 cmd_id,
+ 	ev = tb[WMI_TAG_ARRAY_BYTE];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch ftm msg\n");
+-		kfree(tb);
+ 		return;
+ 	}
+ 
+ 	length = skb->len - TLV_HDR_SIZE;
+ 	ath12k_tm_process_event(ab, cmd_id, ev, length);
+-	kfree(tb);
+-	tb = NULL;
+ }
+ 
+ static void
+@@ -8792,7 +8735,7 @@ ath12k_wmi_pdev_temperature_event(struct ath12k_base *ab,
+ 	int temp;
+ 	u32 pdev_id;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ath12k_warn(ab, "failed to parse tlv: %ld\n", PTR_ERR(tb));
+ 		return;
+@@ -8801,15 +8744,12 @@ ath12k_wmi_pdev_temperature_event(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_PDEV_TEMPERATURE_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch pdev temp ev\n");
+-		kfree(tb);
+ 		return;
+ 	}
+ 
+ 	temp = a_sle32_to_cpu(ev->temp);
+ 	pdev_id = le32_to_cpu(ev->pdev_id);
+ 
+-	kfree(tb);
+-
+ 	ath12k_dbg(ab, ATH12K_DBG_WMI,
+ 		   "pdev temperature ev temp %d pdev_id %u\n",
+ 		   temp, pdev_id);
+@@ -8836,7 +8776,7 @@ static void ath12k_fils_discovery_event(struct ath12k_base *ab,
+ 	const struct wmi_fils_discovery_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab,
+@@ -8848,15 +8788,12 @@ static void ath12k_fils_discovery_event(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_HOST_SWFDA_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch FILS discovery event\n");
+-		kfree(tb);
+ 		return;
+ 	}
+ 
+ 	ath12k_warn(ab,
+ 		    "FILS discovery frame expected from host for vdev_id: %u, transmission scheduled at %u, next TBTT: %u\n",
+ 		    ev->vdev_id, ev->fils_tt, ev->tbtt);
+-
+-	kfree(tb);
+ }
+ 
+ static void ath12k_probe_resp_tx_status_event(struct ath12k_base *ab,
+@@ -8866,7 +8803,7 @@ static void ath12k_probe_resp_tx_status_event(struct ath12k_base *ab,
+ 	const struct wmi_probe_resp_tx_status_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab,
+@@ -8879,7 +8816,6 @@ static void ath12k_probe_resp_tx_status_event(struct ath12k_base *ab,
+ 	if (!ev) {
+ 		ath12k_warn(ab,
+ 			    "failed to fetch probe response transmission status event");
+-		kfree(tb);
+ 		return;
+ 	}
+ 
+@@ -8887,8 +8823,6 @@ static void ath12k_probe_resp_tx_status_event(struct ath12k_base *ab,
+ 		ath12k_warn(ab,
+ 			    "Probe response transmission failed for vdev_id %u, status %u\n",
+ 			    ev->vdev_id, ev->tx_status);
+-
+-	kfree(tb);
+ }
+ 
+ static int ath12k_wmi_p2p_noa_event(struct ath12k_base *ab,
+@@ -8900,7 +8834,7 @@ static int ath12k_wmi_p2p_noa_event(struct ath12k_base *ab,
+ 	struct ath12k *ar;
+ 	int ret, vdev_id;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse P2P NoA TLV: %d\n", ret);
+@@ -8910,10 +8844,8 @@ static int ath12k_wmi_p2p_noa_event(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_P2P_NOA_EVENT];
+ 	noa = tb[WMI_TAG_P2P_NOA_INFO];
+ 
+-	if (!ev || !noa) {
+-		ret = -EPROTO;
+-		goto out;
+-	}
++	if (!ev || !noa)
++		return -EPROTO;
+ 
+ 	vdev_id = __le32_to_cpu(ev->vdev_id);
+ 
+@@ -8936,8 +8868,6 @@ static int ath12k_wmi_p2p_noa_event(struct ath12k_base *ab,
+ 
+ unlock:
+ 	rcu_read_unlock();
+-out:
+-	kfree(tb);
+ 	return ret;
+ }
+ 
+@@ -8948,7 +8878,7 @@ static void ath12k_rfkill_state_change_event(struct ath12k_base *ab,
+ 	const void **tb;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -8956,10 +8886,8 @@ static void ath12k_rfkill_state_change_event(struct ath12k_base *ab,
+ 	}
+ 
+ 	ev = tb[WMI_TAG_RFKILL_EVENT];
+-	if (!ev) {
+-		kfree(tb);
++	if (!ev)
+ 		return;
+-	}
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_MAC,
+ 		   "wmi tlv rfkill state change gpio %d type %d radio_state %d\n",
+@@ -8972,7 +8900,6 @@ static void ath12k_rfkill_state_change_event(struct ath12k_base *ab,
+ 	spin_unlock_bh(&ab->base_lock);
+ 
+ 	queue_work(ab->workqueue, &ab->rfkill_work);
+-	kfree(tb);
+ }
+ 
+ static void
+@@ -8988,7 +8915,7 @@ static void ath12k_wmi_twt_enable_event(struct ath12k_base *ab,
+ 	const struct wmi_twt_enable_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse wmi twt enable status event tlv: %d\n",
+@@ -8999,15 +8926,12 @@ static void ath12k_wmi_twt_enable_event(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_TWT_ENABLE_COMPLETE_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch twt enable wmi event\n");
+-		goto exit;
++		return;
+ 	}
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_MAC, "wmi twt enable event pdev id %u status %u\n",
+ 		   le32_to_cpu(ev->pdev_id),
+ 		   le32_to_cpu(ev->status));
+-
+-exit:
+-	kfree(tb);
+ }
+ 
+ static void ath12k_wmi_twt_disable_event(struct ath12k_base *ab,
+@@ -9017,7 +8941,7 @@ static void ath12k_wmi_twt_disable_event(struct ath12k_base *ab,
+ 	const struct wmi_twt_disable_event *ev;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse wmi twt disable status event tlv: %d\n",
+@@ -9028,15 +8952,12 @@ static void ath12k_wmi_twt_disable_event(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_TWT_DISABLE_COMPLETE_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch twt disable wmi event\n");
+-		goto exit;
++		return;
+ 	}
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_MAC, "wmi twt disable event pdev id %d status %u\n",
+ 		   le32_to_cpu(ev->pdev_id),
+ 		   le32_to_cpu(ev->status));
+-
+-exit:
+-	kfree(tb);
+ }
+ 
+ static int ath12k_wmi_wow_wakeup_host_parse(struct ath12k_base *ab,
+@@ -9109,7 +9030,7 @@ static void ath12k_wmi_gtk_offload_status_event(struct ath12k_base *ab,
+ 	const void **tb;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+@@ -9119,7 +9040,6 @@ static void ath12k_wmi_gtk_offload_status_event(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_GTK_OFFLOAD_STATUS_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch gtk offload status ev");
+-		kfree(tb);
+ 		return;
+ 	}
+ 
+@@ -9129,7 +9049,6 @@ static void ath12k_wmi_gtk_offload_status_event(struct ath12k_base *ab,
+ 		rcu_read_unlock();
+ 		ath12k_warn(ab, "failed to get arvif for vdev_id:%d\n",
+ 			    le32_to_cpu(ev->vdev_id));
+-		kfree(tb);
+ 		return;
+ 	}
+ 
+@@ -9145,8 +9064,6 @@ static void ath12k_wmi_gtk_offload_status_event(struct ath12k_base *ab,
+ 				   (void *)&replay_ctr_be, GFP_ATOMIC);
+ 
+ 	rcu_read_unlock();
+-
+-	kfree(tb);
+ }
+ 
+ static void ath12k_wmi_event_mlo_setup_complete(struct ath12k_base *ab,
+@@ -9158,7 +9075,7 @@ static void ath12k_wmi_event_mlo_setup_complete(struct ath12k_base *ab,
+ 	const void **tb;
+ 	int ret, i;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse mlo setup complete event tlv: %d\n",
+@@ -9169,7 +9086,6 @@ static void ath12k_wmi_event_mlo_setup_complete(struct ath12k_base *ab,
+ 	ev = tb[WMI_TAG_MLO_SETUP_COMPLETE_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch mlo setup complete event\n");
+-		kfree(tb);
+ 		return;
+ 	}
+ 
+@@ -9188,14 +9104,11 @@ static void ath12k_wmi_event_mlo_setup_complete(struct ath12k_base *ab,
+ 	if (!ar) {
+ 		ath12k_warn(ab, "invalid pdev_id %d status %u in setup complete event\n",
+ 			    ev->pdev_id, ev->status);
+-		goto out;
++		return;
+ 	}
+ 
+ 	ar->mlo_setup_status = le32_to_cpu(ev->status);
+ 	complete(&ar->mlo_setup_done);
+-
+-out:
+-	kfree(tb);
+ }
+ 
+ static void ath12k_wmi_event_teardown_complete(struct ath12k_base *ab,
+@@ -9205,7 +9118,7 @@ static void ath12k_wmi_event_teardown_complete(struct ath12k_base *ab,
+ 	const void **tb;
+ 	int ret;
+ 
+-	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
++	tb = ath12k_wmi_tlv_parse(ab, skb);
+ 	if (IS_ERR(tb)) {
+ 		ret = PTR_ERR(tb);
+ 		ath12k_warn(ab, "failed to parse teardown complete event tlv: %d\n", ret);
+@@ -9213,13 +9126,8 @@ static void ath12k_wmi_event_teardown_complete(struct ath12k_base *ab,
+ 	}
+ 
+ 	ev = tb[WMI_TAG_MLO_TEARDOWN_COMPLETE];
+-	if (!ev) {
++	if (!ev)
+ 		ath12k_warn(ab, "failed to fetch teardown complete event\n");
+-		kfree(tb);
+-		return;
+-	}
+-
+-	kfree(tb);
+ }
+ 
+ #ifdef CONFIG_ATH12K_DEBUGFS
+@@ -11253,3 +11161,18 @@ int ath12k_wmi_send_mlo_link_set_active_cmd(struct ath12k_base *ab,
+ 	dev_kfree_skb(skb);
+ 	return ret;
+ }
++
++int ath12k_wmi_alloc(void)
++{
++	ath12k_wmi_tb = __alloc_percpu(WMI_TAG_MAX * sizeof(void *),
++				       __alignof__(void *));
++	if (!ath12k_wmi_tb)
++		return -ENOMEM;
++
++	return 0;
++}
++
++void ath12k_wmi_free(void)
++{
++	free_percpu(ath12k_wmi_tb);
++}
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 0bf0a7941cd3..5e9d287dc9dc 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -6572,4 +6572,7 @@ int ath12k_wmi_send_vdev_set_tpc_power(struct ath12k *ar,
+ 				       struct ath12k_reg_tpc_power_info *param);
+ int ath12k_wmi_send_mlo_link_set_active_cmd(struct ath12k_base *ab,
+ 					    struct wmi_mlo_link_set_active_arg *param);
++int ath12k_wmi_alloc(void);
++void ath12k_wmi_free(void);
++
+ #endif
+-- 
+2.53.0
 
 
