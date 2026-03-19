@@ -4,132 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F13A9108E1E9
-	for <ath12k@archiver.kernel.org>; Thu, 19 Mar 2026 11:08:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 385991090233
+	for <ath12k@archiver.kernel.org>; Thu, 19 Mar 2026 14:14:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YHDw3sqYCoQIpa9CGSywX3G6kMIJy12pGWh/ccVzB98=; b=iJ/nCX/NP4oLlb98du6IB+Eu6p
-	adco/zbYCKJ8HwEzlE0MGM4JRdhJrdZW9ucdm+/sswRSy0cNBC+vB5vA1wziC/5o5ryOp7um5iGDe
-	kjGfGfknfQBHqFPhCKNn6NB2sea7L0u4Cs8zpnteF8B/YApxkf9fzq/SYkScg9HcxWGbFc7J8E3DB
-	LkibOQ9PSPJEBvlEaZ8scMI9LmDq5AUeP2PMhuSrPX6u0o7X7lJ6a42SYI+gBXm5566NPl7Bh/nlH
-	9iCTH88OWj87APk0MAXdshct+sCt9TW2MxHgcw3Qcd1lRz0bUTpdJrPujGlXHepf3jrXzp7Ux8Cms
-	/p4PL6YA==;
+	bh=Bt5S92KQQ206jKW4aSaTmm+Ht5CJzX8Upbglh6zGhlE=; b=TqIbAmQeXzpxtDnRmM84pMs8LA
+	d7U8VvnjLiEmbX85jGVjjdpc7pNl8NhtedKG1+/0z065DNZeRhL/WGcoRutj/MMm5MCUtzP7/kB9s
+	TL9RTVeGhjoVSQKN0p1ws/B4AD6Od5cXblQBJL7bPYuEmZ3sd6nKt4rBikiwXmlozo19nICGrJQGt
+	CUWJ+aYyJmwCc42/psdOTzoK/ILAa2fZ4Hl5nTcLMZSoR345PbOmodjF50hartA4vdeAILSsPlWmx
+	VNClnyYWU88gvVh+V/+hvvctwyluWqW4y7s4A1YKx0izSp0gDzHlKNS7capzbuwtfibMkClWV3ve8
+	6kzU7cpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3BEx-0000000AUdW-2bLT;
-	Thu, 19 Mar 2026 11:08:35 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1w3E8x-0000000Akyj-3w74;
+	Thu, 19 Mar 2026 14:14:35 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3BEu-0000000AUdB-3LzT
+	id 1w3E8t-0000000Aky1-26fv
 	for ath12k@lists.infradead.org;
-	Thu, 19 Mar 2026 11:08:34 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62J73x5p1998773
-	for <ath12k@lists.infradead.org>; Thu, 19 Mar 2026 11:08:31 GMT
+	Thu, 19 Mar 2026 14:14:32 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62J73vIg1898552
+	for <ath12k@lists.infradead.org>; Thu, 19 Mar 2026 14:14:30 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	YHDw3sqYCoQIpa9CGSywX3G6kMIJy12pGWh/ccVzB98=; b=NTBdNZ9KJA6+a+Ii
-	nu6mLTp9zkiPZBD+QBNpLAwf+TIALo2wcysYARZirIAENFVhZkAURy8+a3MiQxBm
-	KLfbgV3p6aZW6+IS3sQ4Ynp8snd080/31wBA7I5RaVJ8OF2Th4qVsX2CC9+jC+xg
-	GLcwIXkbSUiaZ9Ux2/pb+RXVdx+2rT7KztF2ut/3C5yEY/SbDPjeFdzNKwDUVhq4
-	bHmr7ktZDqaRu+TuInH1xjci+DZOGvqMFrFI+8o70GAJFtETF5hbpPPHeWnTPYpP
-	t/eYTWECL2hr/jmBnEtOg8Y8IlceoZs1QZey7aHqijmWGDon19QZUtrsf9r+4dcP
-	YaBZQg==
-Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cyscb4r28-1
+	Bt5S92KQQ206jKW4aSaTmm+Ht5CJzX8Upbglh6zGhlE=; b=DH3Z8IaRGUVTFyKq
+	3WSRk7s23ijnlTyxesx6MiSEhfpr13h9B8sMgY6gqpa9VdE4QjFT/2Kv3zeUvo2y
+	G1RFwWG6L4Hjq2ghswHSZNYXxHh+dzIawD64NXGKROtXplQhNqfQajxex3tycGOT
+	K7GeIpyxgzfPdnnLlO6E6o/k8361Sd6ujBn2AAsYM9QofZJUXktyfH4zvSGewOAn
+	XTHyYdLVq1+qXlT2M7r4erVu9arV2x6pIsRFdAl5dR+sLgPgwghzkD0nyWisAaBh
+	W3EaUxN6PYqmMyeeupOrv7C7PE4KRNFACyxbSKxtCE2m/mvrE+CNN9hzNnN/hM/9
+	lyLGaw==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cyyhgbpfu-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 19 Mar 2026 11:08:31 +0000 (GMT)
-Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-c73a4983fc0so453733a12.3
-        for <ath12k@lists.infradead.org>; Thu, 19 Mar 2026 04:08:31 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 19 Mar 2026 14:14:30 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2b04911610fso12371175ad.3
+        for <ath12k@lists.infradead.org>; Thu, 19 Mar 2026 07:14:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1773918510; x=1774523310; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
+        d=oss.qualcomm.com; s=google; t=1773929669; x=1774534469; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=YHDw3sqYCoQIpa9CGSywX3G6kMIJy12pGWh/ccVzB98=;
-        b=JhxiKnmjtMB2TEG/IBqtD692uIkLqd8jLT3NyYCcYR1FsBND7pYSqUPvYDtNlZR41C
-         jE504ZrnXmYL8intMJU1qRAi7/KcVYxLqEZKTBL3HEqFQ0FgjroreQjH08TGm2TK/nBu
-         hRMr7JqL3YhOSPtvVsryI/XnpQcYLCqovwZwZGZRYiXTWWAJaBzIgKJbObqCjLI+Ntuz
-         3m+5M2B6jgOrrydiFj0ubKtPbkPbWChbO4EflKVTFxdNeACS+NAjCx7WS3et9qiJm4CU
-         T5gWmoDajceevwIjIQCqzuM395Y++ldqcBbmOw7yEn7oHx9VI384qfy/YxVj5EyVLsEO
-         Pcjw==
+        bh=Bt5S92KQQ206jKW4aSaTmm+Ht5CJzX8Upbglh6zGhlE=;
+        b=Va5CoFBPIpp1Sz9ZIJc0hkeZKcX3J/nB1fEednoL5Kai27ygeGb5H3w8jYIdDzZYn1
+         qm5o/R0vTFW5rIUBwHBMV7t6X6T0v7ISW5n5pENEKh1i66wuczPdoUcENSe/naetC1Fu
+         vFUYnol6Q5TS66hC1kmKk3LLX0krEr8m7O2m/tAuoTitlOrmAgg1zYDQRD1cS3eP6kYy
+         u97yI5HJWdgwsxuGnYh+8V4u0ZCEeu/dSuTR027e96ZOjE3ow2mAie1qY0XETKomftmV
+         hoc+D91lisSDfbd9bHXncX3udLav9ihTD7sIuQghK/+CVohxmCkL3UQOMUjbKPwwDA4N
+         9OZA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1773918510; x=1774523310;
-        h=content-transfer-encoding:in-reply-to:from:content-language
+        d=1e100.net; s=20251104; t=1773929669; x=1774534469;
+        h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=YHDw3sqYCoQIpa9CGSywX3G6kMIJy12pGWh/ccVzB98=;
-        b=FjZ9ULNxKoFd9gkCzSfHBZcjI4RgpBMAqYTkhEymAdbGHecc6ZrKZ3VZViHRdU47BI
-         oHgDcx2ZLBzFOC3t1aPaN/kXI00Djy4KQ9qVuxQXsLHiC9km4mK8Ot0eiKmRBQjpu+16
-         XVZlyXK1J1XKcsq9rk+yQVZ243LvveGPnVWsIeQvFtiwXgD+n/T4cgEiEGHfOAn4847D
-         tMNaBDNq5ZO+RSQgXCr5vkCPSNzkUQtgmto9PZXd3XDMS7NaXiVc0def5EfKpuVRATLV
-         i9Xd5DkLocr0qjqjGqLkp0Ss4iumECTPPpsqhuYlhscYWwERNqRYC3hNwcZKnmOvsE3H
-         qkIw==
-X-Forwarded-Encrypted: i=1; AJvYcCVVreVnAcGhwALGc6DDYos3t+yY4zBib5LIm284v1f9JKtBnPwELsPNYDtr5mOv9jUe1w5Gafo=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy47fIafq3eHmN4EWCxqJoncM+IYEFIS9JQVE0TYY3pxN1FLRQR
-	Ck3UmWJEmySMRHGDaLZC107THkB3ObPUFr97+lQwnNgYBsgCix7HNn4fKJ6eRzdWd0iH6VgCmQ+
-	oi9t51HXN3+KguCVI2EuSBgJOPB/az2cMyPaDmxoAc8/D8ArcI+DtCWzUAWeFpntYt9j/y27u
-X-Gm-Gg: ATEYQzzFISZumdmdfxUAw/eBLR2LH/a+6moWTtFccy3J4vmOB3G6h9YKUN/X3V3fQYS
-	/lTVS+cuctN0ic4YtKkm3xj4Ld3xHLWJnQy/MCV2ZMYxoncjS2De2AB9FExEPerf/EKKzLYyC0k
-	tz95VmYFRgQmQkB/fKHepoCAgxrSZvqDEqma4o2jLOID5//kxIjdDOMr1tT09/mBtpniiEO3Bw/
-	7w119deQ60QvvHH6mxPwVa4MdkmpXrD0bmHMF09DXHjg6awvsvQNVPh/ETIEcH9LNKq0Ot8SkYp
-	tWe+26SkvvLD5ye75yg52i60/DEMMaZP/EhYX9IxIiQUCJ4rrlg6kUCOt8hq+5dVerWbia0zNTZ
-	gi5wx5ENUGvBtqPdoAlTCZUujoS1cTs10Nf3O8+UHvC7UBMGoPY3xblUwkSerpA==
-X-Received: by 2002:a05:6a00:4648:b0:823:1276:9a86 with SMTP id d2e1a72fcca58-82a6aee1e65mr6183420b3a.39.1773918510133;
-        Thu, 19 Mar 2026 04:08:30 -0700 (PDT)
-X-Received: by 2002:a05:6a00:4648:b0:823:1276:9a86 with SMTP id d2e1a72fcca58-82a6aee1e65mr6183396b3a.39.1773918509548;
-        Thu, 19 Mar 2026 04:08:29 -0700 (PDT)
-Received: from [10.152.199.23] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82a6b5308fcsm6838567b3a.9.2026.03.19.04.08.26
+        bh=Bt5S92KQQ206jKW4aSaTmm+Ht5CJzX8Upbglh6zGhlE=;
+        b=IL7eiEKFS/H0boe/Qnwx7G4TknFY6CNC0wwOwgXWL4kW75/KOMrJRcfxNX20Dxl96k
+         QvZnnvKZME8RtUQc5Lc4/a7MqFM1s5KvJ+JOzAVcJnYZ8dk+MNu9NJQBjkG+zZ09q+GQ
+         T/xx50Ie9NU9p6NyT9Axs072WuSE7YDBUmZOtrEqX/HDWz05x35KabktXDMETIjErUbO
+         I5RtBwm2rNTEaxsUc3FXlOsniMokrEkQwLbA8egbVFGTf8cMZKY3+3R+qeXxXTpmaYo3
+         nOGPOwLhkNLRiL6eNgXYwInImI8sNikr5UPPlR9yoIN8I+3HBpCRPy715sEo8h8cX84/
+         L+1Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVJRtnDNFGoJPgGt0QlmUVptJEI1K7IPVk+BtE+pRidq4V1esVn+VRMAvmyMovrV/huIyyubtA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzDbtKVSzQy3MGytuE2Fz4A1Zj5Z8LCHFIt70+c0u3J43cPxE2L
+	U0qfUiYV6GYVCsjyN1PHb7uSXNmE779j04G+o65p0U5UbzXcSJMwL2iJFGfHyfRM0v0yDIphpxW
+	4WY3H+4VAVSQw6VvYx2i8vTQ9ctGRa/zshvIyBT66+OK9hRqOiKh/gHErGoQfIk5V
+X-Gm-Gg: ATEYQzxICUYXq82p0TpBtMh4bBe2261VhND2O7/23YyvkutCr21aCLqvPvj8vJXwqAw
+	ksexiKBRaAkvRDmMLuYFkpsQHri8xZRHX2c6LrQKUP0upc8ojeiOXh+BDrIXZYNPrqBXr/2MB6P
+	NIU0rF49SoS1pjt1RtDbcm6ZYic7mKfAL85KPTMoc2ZvCO1uQJoiAoo9WTg2kIkdmU7D4IJIPf/
+	duaKpeAcpogS8gkiNjnIrZzKSZ8ZeUY0+59mSlYJUDne2rIrdHqg/0zV5zBdKqhIpB0X7iZd8N8
+	Od00W9ajaJEX3lhPExYhvXdZUMaKbyfe2HNVEW8p8JfohiXIWPGGnJu4Z6UCMPnM8pmxYiNajCu
+	fv6h09ZmvP7g4z5OGKHRFEZBu/OdTNm4iq6m9QEIQjXEg/3K8NBOqtbQPAPz5Unekt5G6Q0TJBq
+	pYkcrJ8eiTGIVOtw==
+X-Received: by 2002:a17:903:1ac8:b0:2ae:471b:e55 with SMTP id d9443c01a7336-2b06e3c5c83mr76302065ad.30.1773929669312;
+        Thu, 19 Mar 2026 07:14:29 -0700 (PDT)
+X-Received: by 2002:a17:903:1ac8:b0:2ae:471b:e55 with SMTP id d9443c01a7336-2b06e3c5c83mr76301695ad.30.1773929668767;
+        Thu, 19 Mar 2026 07:14:28 -0700 (PDT)
+Received: from [192.168.1.41] (c-24-130-122-79.hsd1.ca.comcast.net. [24.130.122.79])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2b06e5ef519sm60441445ad.49.2026.03.19.07.14.27
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 19 Mar 2026 04:08:29 -0700 (PDT)
-Message-ID: <36c1cae8-d6c0-4432-bc8e-57216c5ea3fd@oss.qualcomm.com>
-Date: Thu, 19 Mar 2026 16:38:21 +0530
+        Thu, 19 Mar 2026 07:14:28 -0700 (PDT)
+Message-ID: <1a037a6b-f39d-4624-8f3d-1298da8c50bf@oss.qualcomm.com>
+Date: Thu, 19 Mar 2026 07:14:23 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v4] wifi: ath12k: avoid dynamic alloc when
- parsing wmi tb
-To: Nicolas Escande <nico.escande@gmail.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20260317084740.3756880-1-nico.escande@gmail.com>
+Subject: Re: [PATCH ath-current] wifi: ath12k: prepare REO update element only
+ for primary link
+To: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+        Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+References: <20260210-ath12k-rxtid-double-free-v1-1-8b523fb2886d@oss.qualcomm.com>
+ <8056cb5f-cdde-4890-b8cf-3b37d1c3483f@oss.qualcomm.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-In-Reply-To: <20260317084740.3756880-1-nico.escande@gmail.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
+In-Reply-To: <8056cb5f-cdde-4890-b8cf-3b37d1c3483f@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: ZcTUCqmVv66HZM6dTWi8l5kaZ3Z5Ld54
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE5MDA4OCBTYWx0ZWRfX74NuBVmB2Go8
- uRHs2azmTSlgGaQgoP2BPt0VGNYCp+c03j7P2JjhBEEg1RWqKdj3byuZP/ilPpYYKLb/qBSL2CY
- 4dOD5rNZ+ppVdSDTCB0++e1AWz3bsfOEbXqw4TwsBBlJ8icqlRyWh5SbbpkSW6n6frOP8FphxSM
- 8HejvPtlG+f5KN+mcqX8sOzrGvO4lUcnDjP6+Hl5zgxda88IDkrQFI0J+a4z4MNsgg4t12PA5Ja
- Eg4jKNC2GoI7XE7g6oIHPv9OY17q1mVFsztZmEfUNuvr9Ld5aOUH6GVFxrF0AOn2WG8k39jcq/J
- eFkOLSFcC3S/0evepx9W5U74UAzA0PJInsVPQVmKSj0Z/9vcNkqfQDn8M59QE7hSP52/dLgzzez
- 1YJBnq9Ug8bqjrVNVg5NLia47di377JbZrPsC4xI22e6pUjDEbXYxgZmZf0Zze0AODWjkRgfzR6
- ZW+YDLieWBH96xntGfQ==
-X-Proofpoint-GUID: ZcTUCqmVv66HZM6dTWi8l5kaZ3Z5Ld54
-X-Authority-Analysis: v=2.4 cv=PtCergM3 c=1 sm=1 tr=0 ts=69bbd92f cx=c_pps
- a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE5MDExMiBTYWx0ZWRfX0UsrP51mLBbC
+ TjH0kSnedIp3l2OMDB9m2FhJpEFFzkksZzHibEXc6AQOSjG5Hqntq0lZQ4NeLhIiEzCHciFHxaW
+ QqGfyNY9iG+yCtwuHCZKOG6hlwFvd6ex/xlkTwleYvA8WEwlYhWVrnRwzJNYJ3UtRlR5GDor7iV
+ DllcMIBvvWAhjVBYDPFtcO6+uU+GzK0vrG+wvTKRhrdXbpFHNC95cKcKrsSIVPj7arS8yrU8jJU
+ 4ZQ8nQsG6pfSUS5i5JVrEyssWWkKDSj4R+KG3jkuGRCubaejPYwE68caCWhqmePMoMxMje84aX1
+ Fp3Kifc1gQYUZt5NhbWwAXIqgA3tEQ2Vkxg9DKXtBz7oJt3iboW4uL081B2D/s/cuMNhrGFtgwp
+ RxbzvDnucFWE0JGJscwNV0dZb2fKy0F73cgpnJKeDilLAMWNs56NjGHiSJXClY3pqxV2Bt1J8gx
+ hT52R5K5ed0bdfgppyA==
+X-Proofpoint-ORIG-GUID: D_MpGxp8EK1U0aO7DzYLsz2KmGeuD9qM
+X-Authority-Analysis: v=2.4 cv=IbSKmGqa c=1 sm=1 tr=0 ts=69bc04c6 cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=Tg7Z00WN3eLgNEO9NLUKUQ==:17
  a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=pGLkceISAAAA:8 a=YMnrxt29I6OX4gW8josA:9 a=QEXdDO2ut3YA:10
- a=3WC7DwWrALyhR5TkjVHa:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=ALmzmtPoW6pM4TZLvQEA:9 a=QEXdDO2ut3YA:10
+ a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-GUID: D_MpGxp8EK1U0aO7DzYLsz2KmGeuD9qM
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-19_01,2026-03-19_01,2025-10-01_01
+ definitions=2026-03-19_01,2026-03-19_05,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 clxscore=1015 priorityscore=1501 bulkscore=0 lowpriorityscore=0
- malwarescore=0 spamscore=0 adultscore=0 suspectscore=0 impostorscore=0
+ bulkscore=0 suspectscore=0 lowpriorityscore=0 spamscore=0 impostorscore=0
+ clxscore=1015 adultscore=0 malwarescore=0 phishscore=0 priorityscore=1501
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603190088
+ reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603190112
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260319_040832_995970_699B72AD 
-X-CRM114-Status: GOOD (  28.23  )
+X-CRM114-CacheID: sfid-20260319_071431_552477_57B74227 
+X-CRM114-Status: GOOD (  13.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,92 +149,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-
-On 3/17/2026 2:17 PM, Nicolas Escande wrote:
-> On each WMI message received from the hardware, we alloc a temporary array
-> of WMI_TAG_MAX entries of type void *. This array is then populated with
-> pointers of parsed structs depending on the WMI type, and then freed. This
-> alloc can fail when memory pressure in the system is high enough.
+On 3/18/2026 8:46 PM, Vasanthakumar Thiagarajan wrote:
 > 
-> Given the fact that it is scheduled in softirq with the system_bh_wq, we
-> should not be able to parse more than one WMI message per CPU at any time.
 > 
-> So instead lets move to a per cpu allocated array, that is reused across
-> calls: ath12K_wmi_tb that lives in wmi.c of the ath12K module. To alloc &
-> free we added two new module_init/exit functions for the module and two
-> new wmi functions to alloc/free this memory.
+> On 2/10/2026 8:37 AM, Baochen Qiang wrote:
+>> Commit [1] introduces dp->reo_cmd_update_rx_queue_list for the purpose
+>> of tracking all pending REO queue flush commands. The helper
+>> ath12k_dp_prepare_reo_update_elem() allocates an element and populates
+>> it with REO queue information, then add it to the list. The element would
+>> be helpful during clean up stage to finally unmap/free the corresponding
+>> REO queue buffer.
+>>
+>> In MLO scenarios with more than one links, for non dp_primary_link_only
+>> chips like WCN7850, that helper is called for each link peer. This
+>> results in multiple elements added to the list but all of them pointing
+>> to the same REO queue buffer. Consequently the same buffer gets
+>> unmap/freed multiple times:
+>>
+>> BUG kmalloc-2k (Tainted: G    B   W  O       ): Object already free
+>> -----------------------------------------------------------------------------
+>> Allocated in ath12k_wifi7_dp_rx_assign_reoq+0xce/0x280 [ath12k_wifi7] age=7436 cpu=10 pid=16130
+>>   __kmalloc_noprof
+>>   ath12k_wifi7_dp_rx_assign_reoq
+>>   ath12k_dp_rx_peer_tid_setup
+>>   ath12k_dp_peer_setup
+>>   ath12k_mac_station_add
+>>   ath12k_mac_op_sta_state
+>>   [...]
+>> Freed in ath12k_dp_rx_tid_cleanup.part.0+0x25/0x40 [ath12k] age=1 cpu=27 pid=16137
+>>   kfree
+>>   ath12k_dp_rx_tid_cleanup.part.0
+>>   ath12k_dp_rx_reo_cmd_list_cleanup
+>>   ath12k_dp_cmn_device_deinit
+>>   ath12k_core_stop
+>>   ath12k_core_hw_group_cleanup
+>>   ath12k_pci_remove
+>>
+>> Fix this by allowing list addition for primary link only. Note
+>> dp_primary_link_only chips like QCN9274 are not affected by this change,
+>> because that's what they were doing in the first place.
+>>
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
+>>
+>> Fixes: 3bf2e57e7d6c ("wifi: ath12k: Add Retry Mechanism for REO RX Queue Update Failures") # [1]
+>> Closes: https://bugzilla.kernel.org/show_bug.cgi?id=221011
+>> Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 > 
-> ath12k_wmi_tlv_parse_alloc() and ath12k_wmi_tlv_parse() are merged
-> together as it no longer allocs mem but returns the existing per-cpu one.
-> 
-> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
-> ---
-> changes from v3:
->    - simplified ath12k_core_init() with a single statement
->    - move perpcu.h include directly to wmi.c
-> 
-> changes from v2:
->    - removed now superfluous return in ath12k_wmi_event_teardown_complete()
->    - moved ath12k_wmi_tb declaration to wmi.c & added two functions to
->      alloc / free it
->    - removed useless error message on memory allocation failure
-> 
-> changes from v1:
->    - rebased on ath-next 27401c9b1432
->    - changed wording according to Jeff's comment
->    - moved alloc/cleanup to new module_init/exit functions in the
->      ath12k module as per Baochen's comment
-> 
-> changes from RFC:
->    - rebased on ath-next 8e0ab5b9adb7
->    - converted missing call sites ath12k_wmi_obss_color_collision_event()
->      & ath12k_wmi_pdev_temperature_event()
->    - changed alloc order & cleanup path in ath12k_core_alloc() as it seems
->      it confused people
->    - used sizeof(*tb) in ath12k_wmi_tlv_parse()
-> ---
->   drivers/net/wireless/ath/ath12k/core.c |  13 ++
->   drivers/net/wireless/ath/ath12k/wmi.c  | 201 ++++++++-----------------
->   drivers/net/wireless/ath/ath12k/wmi.h  |   3 +
->   3 files changed, 78 insertions(+), 139 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-> index c31c47fb5a73..6c034071cc6d 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.c
-> +++ b/drivers/net/wireless/ath/ath12k/core.c
-> @@ -2321,5 +2321,18 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
->   	return NULL;
->   }
->   
-> +static int ath12k_init(void)
-> +{
-> +	return ath12k_wmi_alloc();
+> Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
-
-Since CONFIG_ATH12K is tristate, a built-in boot can continue past a 
-failed ath12k_init() and still run ath12k_wifi7_init().
-
-Please ensure that later initialization path is guarded against 
-allocation failure.
-
-Or may be have this allocated on first device probe and free it on last 
-device deinit ?
-
-
-> +}
-> +
-> +static void ath12k_exit(void)
-> +{
-> +	ath12k_wmi_free();
-> +}
-> +
-> +module_init(ath12k_init);
-> +module_exit(ath12k_exit);
-> +
->   MODULE_DESCRIPTION("Driver support for Qualcomm Technologies WLAN devices");
->   MODULE_LICENSE("Dual BSD/GPL");
---
-Ramesh
+Was there supposed to be a tag in front of that?
 
 
