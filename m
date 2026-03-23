@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84E5EF46100
-	for <ath12k@archiver.kernel.org>; Mon, 23 Mar 2026 12:56:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83EDEF46102
+	for <ath12k@archiver.kernel.org>; Mon, 23 Mar 2026 13:01:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=myYt+XzCg+bE5pVv29XO8ZCXAJn0GDOTuiMIeq1HcZ0=; b=YaNBSh5TzM8TX72EJmrhNX0yJT
-	iVkT72FJj3TxrMhPijnr3QOvYVJqP2lyfNQGO6TMppGGPkZjj7/lv9VIcSqBNoUIUT8KnGdEP2VKC
-	QfLiOSAQk4asT7Wwj3DIIkm3aaLQDc6EbS9p6Y7G416ZVjoowcoeR7uWEbKJLN79UCRslPwxNqlia
-	mgdiBIfDtZwwySLuy+iacpz2lmMhv4tBFezw2gJiRUCLA7Yg30QXB2omRgUeDI+MYyGtXgZ6iQEuI
-	j1rV7DtsAJBhiXcXKvAn12rPyfvT71Dwm99EpcHNCKGsGLFF2U9cZcI4x0WrhNEDoevduOI7n+Fb4
-	MDe8sf9w==;
+	bh=1OoZlOYwtIRVBN+zwUl9hKCmyEoYe5Ca5+OJrDuDQec=; b=zmDQmnmIa34aLVwXaCD3uPRaLy
+	560nfW5SwFbDETOBZsxIgmSnuCbRkMY7CTnwdVgMOYrI5VowCauNJb8VGwGm3QGF5EiG9X9I7LFfh
+	VbzwLcK6nlK994b8fGvpnu2O+I0tr7cK0KMXSpjskuzXeWDmRPZoe0UBQ00CoqsiuQGgkD8hMUj2L
+	JnYRQkfGQiI7uso15TIfBPwANwLk2vgqNiQD8+rwQn6+zgRj6fTCcx5xQwuXdUm3ZZrSafl8PG/vA
+	GLCFcNK5b0L0Lhwz0JUNhDwUjuVi2a5mS9Ph3S63hJvId/7jH/ST7OjpdeSbRAPWlGPXZmWPEcCtJ
+	W6dPBDHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4epK-0000000GjQy-17Y3;
-	Mon, 23 Mar 2026 12:56:14 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1w4euI-0000000Gjuj-0krb;
+	Mon, 23 Mar 2026 13:01:22 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4epJ-0000000GjQq-0LOL
+	id 1w4euF-0000000GjuL-25Sx
 	for ath12k@lists.infradead.org;
-	Mon, 23 Mar 2026 12:56:13 +0000
+	Mon, 23 Mar 2026 13:01:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id DBF13600CB;
-	Mon, 23 Mar 2026 12:56:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3F94AC4CEF7;
-	Mon, 23 Mar 2026 12:55:55 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 10EE443562;
+	Mon, 23 Mar 2026 13:01:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 36476C4CEF7;
+	Mon, 23 Mar 2026 13:01:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1774270571;
-	bh=PcarGU8E9MYAzSiGlIlaN0J/d/2KgvnXGF646Sss/6o=;
+	s=k20201202; t=1774270877;
+	bh=VHSP/3HxZRiZrR1EBuPV5EE+ZKFRtnX/Jig0jtt+O30=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=NoUvT0Ua7vExYFgPZA0igjTdgV0kBq94+evWjMhFBjOIZRv4xfdNUbiaxRXEfZMq6
-	 91VS32MQ+DNV8yrBKUUuWfsUhYYbBdqA2iOX/1ZwqUfR3o4KK55KUT2sg/AomDWEVJ
-	 cML8StUwS91VgBAOaGqn9DzrXrCZkJgJmXnHsIyEns5DJl0GkuS5xEozjfMwyEYLMI
-	 tUjxXbsQKfDvWtljLmC/dhr0bPEzLs3j+Dt/v6AOidSmPjND8gkQSoG0ROJevzjOye
-	 BsJCTGQ6iR64jHHIJ0sY3Z/7theuY1nSZ3Mlnh6tPIwZ/YiVv44DygZqJ1F8pvKq7T
-	 hl+W33yrZuphA==
-Date: Mon, 23 Mar 2026 18:25:53 +0530
+	b=VsIz4BKKNr5zD6NxUiPN+ZyH2K7G6mW06vF88wJIeWeZg6vCyCns3s8BAQFVWYqAJ
+	 soWLj3bmIApwDsJGR4ez1uVODIqanQMZeuMSUqjOUfD7f9j5xXecbzxbqTYmk2EOas
+	 EH2+F/zb0wr9/8c9phiA5W2OOTw9pMvq/balc+x21AT2qwzhY5BJSG7N3qYN20Dd0l
+	 bVtRwTNEZv4jSbkskiPYkh1K7RaF8uNWQivU/IcouchUPENHfc5Dl7N1pC0gGuqAQr
+	 rEDwGhp8z+WAV0WJNN/rekPkrfZtmTK31Cq4Q1iL2gNfpE6QQC+wlQ+aG264dk3oLH
+	 ly3vuSHiEqdEA==
+Date: Mon, 23 Mar 2026 18:31:00 +0530
 From: Sumit Garg <sumit.garg@kernel.org>
 To: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
@@ -68,16 +68,17 @@ Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
 	skare@qti.qualcomm.com, linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
 Subject: Re: [PATCH v2 02/15] firmware: qcom: Add a generic PAS service
-Message-ID: <acE4WXdiuTd1tjAp@sumit-xelite>
+Message-ID: <acE5jPxBJxOr3N5l@sumit-xelite>
 References: <20260312062756.694390-1-sumit.garg@kernel.org>
  <20260312062756.694390-3-sumit.garg@kernel.org>
- <20260313072450.sx7vqtvh62nflhff@hu-mojha-hyd.qualcomm.com>
- <20260313073121.qb7yq7tcga3sshcr@hu-mojha-hyd.qualcomm.com>
+ <20260313075948.nbopdkctdcvzlj3f@hu-mojha-hyd.qualcomm.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <20260313073121.qb7yq7tcga3sshcr@hu-mojha-hyd.qualcomm.com>
+In-Reply-To: <20260313075948.nbopdkctdcvzlj3f@hu-mojha-hyd.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260323_060119_622582_5A4510E6 
+X-CRM114-Status: GOOD (  27.24  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,131 +93,66 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 13, 2026 at 01:01:21PM +0530, Mukesh Ojha wrote:
-> On Fri, Mar 13, 2026 at 12:54:50PM +0530, Mukesh Ojha wrote:
-> > On Thu, Mar 12, 2026 at 11:57:43AM +0530, Sumit Garg wrote:
-> > > From: Sumit Garg <sumit.garg@oss.qualcomm.com>
-> > > 
-> > > Qcom platforms has the legacy of using non-standard SCM calls
-> > > splintered over the various kernel drivers. These SCM calls aren't
-> > > compliant with the standard SMC calling conventions which is a
-> > > prerequisite to enable migration to the FF-A specifications from Arm.
-> > > 
-> > > OP-TEE as an alternative trusted OS to Qualcomm TEE (QTEE) can't
-> > > support these non-standard SCM calls. And even for newer architectures
-> > > with S-EL2 and Hafnium support, QTEE won't be able to support SCM
+On Fri, Mar 13, 2026 at 01:29:48PM +0530, Mukesh Ojha wrote:
+> On Thu, Mar 12, 2026 at 11:57:43AM +0530, Sumit Garg wrote:
+> > From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 > > 
-> >  using S‑EL2 with Hafnium
+> > Qcom platforms has the legacy of using non-standard SCM calls
+> > splintered over the various kernel drivers. These SCM calls aren't
+> > compliant with the standard SMC calling conventions which is a
+> > prerequisite to enable migration to the FF-A specifications from Arm.
 > > 
-> > > calls either with FF-A requirements coming in. And with both OP-TEE
-> > > and QTEE drivers well integrated in the TEE subsystem, it makes further
-> > > sense to reuse the TEE bus client drivers infrastructure.
-> > > 
-> > > The added benefit of TEE bus infrastructure is that there is support
-> > > for discoverable/enumerable services. With that client drivers don't
-> > > have to manually invoke a special SCM call to know the service status.
-> > > 
-> > > So enable the generic Peripheral Authentication Service (PAS) provided
-> > > by the firmware. It acts as the common layer with different TZ
-> > > backends plugged in whether it's an SCM implementation or a proper
-> > > TEE bus based PAS service implementation.
-> > > 
-> > > Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
-> > > ---
-> > >  drivers/firmware/qcom/Kconfig          |   8 +
-> > >  drivers/firmware/qcom/Makefile         |   1 +
-> > >  drivers/firmware/qcom/qcom_pas.c       | 298 +++++++++++++++++++++++++
-> > >  drivers/firmware/qcom/qcom_pas.h       |  53 +++++
-> > >  include/linux/firmware/qcom/qcom_pas.h |  41 ++++
-> > >  5 files changed, 401 insertions(+)
-> > >  create mode 100644 drivers/firmware/qcom/qcom_pas.c
-> > >  create mode 100644 drivers/firmware/qcom/qcom_pas.h
-> > >  create mode 100644 include/linux/firmware/qcom/qcom_pas.h
-> > > 
+> > OP-TEE as an alternative trusted OS to Qualcomm TEE (QTEE) can't
+> > support these non-standard SCM calls. And even for newer architectures
+> > with S-EL2 and Hafnium support, QTEE won't be able to support SCM
+> > calls either with FF-A requirements coming in. And with both OP-TEE
+> > and QTEE drivers well integrated in the TEE subsystem, it makes further
+> > sense to reuse the TEE bus client drivers infrastructure.
+> > 
+> > The added benefit of TEE bus infrastructure is that there is support
+> > for discoverable/enumerable services. With that client drivers don't
+> > have to manually invoke a special SCM call to know the service status.
+> > 
+> > So enable the generic Peripheral Authentication Service (PAS) provided
+> > by the firmware. It acts as the common layer with different TZ
+> > backends plugged in whether it's an SCM implementation or a proper
+> > TEE bus based PAS service implementation.
+> > 
+> > Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
+> > ---
+> >  drivers/firmware/qcom/Kconfig          |   8 +
+> >  drivers/firmware/qcom/Makefile         |   1 +
+> >  drivers/firmware/qcom/qcom_pas.c       | 298 +++++++++++++++++++++++++
+> >  drivers/firmware/qcom/qcom_pas.h       |  53 +++++
+> >  include/linux/firmware/qcom/qcom_pas.h |  41 ++++
+> >  5 files changed, 401 insertions(+)
+> >  create mode 100644 drivers/firmware/qcom/qcom_pas.c
+> >  create mode 100644 drivers/firmware/qcom/qcom_pas.h
+> >  create mode 100644 include/linux/firmware/qcom/qcom_pas.h
+> > 
 
 <snip>
 
-> > > diff --git a/drivers/firmware/qcom/qcom_pas.c b/drivers/firmware/qcom/qcom_pas.c
-> > > new file mode 100644
-> > > index 000000000000..beb1bae55546
-> > > --- /dev/null
-> > > +++ b/drivers/firmware/qcom/qcom_pas.c
-> > > @@ -0,0 +1,298 @@
-> > > +// SPDX-License-Identifier: GPL-2.0
-> > > +/*
-> > > + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-> > > + */
-> > > +
-> > > +#include <linux/device/devres.h>
-> > > +#include <linux/firmware/qcom/qcom_pas.h>
-> > > +#include <linux/kernel.h>
-> > > +#include <linux/module.h>
-> > > +
-> > > +#include "qcom_pas.h"
-> > > +
-> > > +struct qcom_pas_ops *ops_ptr;
-> > 
-> > Should this be static ?
-> > 
-> > > +
-> > > +/**
-> > > + * devm_qcom_pas_context_alloc() - Allocate peripheral authentication service
-> > > + *				   context for a given peripheral
-> > > + *
-> > > + * PAS context is device-resource managed, so the caller does not need
-> > > + * to worry about freeing the context memory.
-> > > + *
-> > > + * @dev:	  PAS firmware device
-> > > + * @pas_id:	  peripheral authentication service id
-> > > + * @mem_phys:	  Subsystem reserve memory start address
-> > > + * @mem_size:	  Subsystem reserve memory size
-> > > + *
-> > > + * Return: The new PAS context, or ERR_PTR() on failure.
-> > > + */
-> > > +struct qcom_pas_context *devm_qcom_pas_context_alloc(struct device *dev,
-> > > +						     u32 pas_id,
-> > > +						     phys_addr_t mem_phys,
-> > > +						     size_t mem_size)
-> > > +{
-> > > +	struct qcom_pas_context *ctx;
-> > > +
-> > > +	ctx = devm_kzalloc(dev, sizeof(*ctx), GFP_KERNEL);
-> > > +	if (!ctx)
-> > > +		return ERR_PTR(-ENOMEM);
-> > > +
-> > > +	ctx->dev = dev;
-> > > +	ctx->pas_id = pas_id;
-> > > +	ctx->mem_phys = mem_phys;
-> > > +	ctx->mem_size = mem_size;
-> > > +
-> > > +	return ctx;
-> > > +}
-> > > +EXPORT_SYMBOL_GPL(devm_qcom_pas_context_alloc);
-> > > +
-> > > +/**
-> > > + * qcom_pas_init_image() - Initialize peripheral authentication service state
-> > > + *			   machine for a given peripheral, using the metadata
-> > > + * @pas_id:	peripheral authentication service id
-> > > + * @metadata:	pointer to memory containing ELF header, program header table
-> > > + *		and optional blob of data used for authenticating the metadata
-> > > + *		and the rest of the firmware
-> > > + * @size:	size of the metadata
-> > > + * @ctx:	optional pas context
-> > > + *
-> > > + * Return: 0 on success.
-> > > + *
-> > > + * Upon successful return, the PAS metadata context (@ctx) will be used to
-> > > + * track the metadata allocation, this needs to be released by invoking
-> > > + * qcom_pas_metadata_release() by the caller.
-> > > + */
-> > > +int qcom_pas_init_image(u32 pas_id, const void *metadata, size_t size,
-> > > +			struct qcom_pas_context *ctx)
+> > diff --git a/drivers/firmware/qcom/qcom_pas.c b/drivers/firmware/qcom/qcom_pas.c
+> > new file mode 100644
+> > index 000000000000..beb1bae55546
+> > --- /dev/null
+> > +++ b/drivers/firmware/qcom/qcom_pas.c
+> > @@ -0,0 +1,298 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+> > + */
 > 
-> please, align this with previous line '(' for all the functions.
+> I know, this is new file but most of the documentation and some of the
+> function are rename to reflect pas service.
 > 
+> Should this carry original file copyright ? Not sure..
+>
 
-The alignment is fine here, not sure why the plain text replies show
-them as not aligned.
+This file only contains the wrapper generic PAS APIs which aren't
+re-used from any other file. Carrying copyrights solely based on moving
+API documentation in not very clear to me. Any other thoughts?
 
 -Sumit
 
