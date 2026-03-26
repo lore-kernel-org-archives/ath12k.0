@@ -4,126 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FE39109E549
-	for <ath12k@archiver.kernel.org>; Thu, 26 Mar 2026 05:06:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB3ED109E54F
+	for <ath12k@archiver.kernel.org>; Thu, 26 Mar 2026 05:11:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=sIOTdj/aFHn/N8qdhQJVWiK9jhfEsHg2Ob4OUCYolXM=; b=jsWVtSz4RK3anjgH2jqzr/zqf2
-	6Lo/zD+CeAZFpR/EGAjGqrU4jYc4kMSzzqJ0CjvPL4a8/uRusYUGNuKmCJBPBZl8fCcccKcM7xDUY
-	TA42RQMpZWHrsSVPUTHrXwhkubItVQ974tJHqzAWIcC0lbNSTJmTm7jlWpJvgcXvWpol1A7DMp71R
-	NLEUC0gciaBVARkYsmK9ls7kGd7JyRnsQnhJXy6Zy7ZNf8Y7O7x12i1Wbrc6ToQwi3Et1AmSF7S81
-	kg5z6nWfS0dDaDK3TVWhDVkLqgdz18LR6BA8bdUWTt0dheEYGec84nf3mfZg7WQSQ81B9V7Fl4JAh
-	NNmBJozw==;
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=je9xx+M2zMyO3JH9z5bTiR8KWSCvjxHfgNsRcJjClNw=; b=nreRLn9UgYvEVliHmvYZWqk5Zp
+	bcvIahOdf4XdpVuGfwnVmkzGE9n527TW/RPKy1q+8AvazL8/dtPE4WK2LdkINQ8t5pCgRMTKxtXML
+	3lZsprq9uYfMYZdXKcFKa6M3mkD5z8mAVzX6tXWf2HfAnvOs2im4FHj2PLu4tF1zMWWuvcfNcRouN
+	I5N+8Yv0oKGIiDPHUOBhuDxogoU+Id8k0y6Uunqjvjlr27q4cg8XqiFUdTHnbzfaZdpq5/UAS2Ulr
+	T+6WJnPUILukGDV92rN5oUxjrdoBOpfmHUcB9JUWKrueS0dHHiEW8ZBNRJwV29JdyRSzh//OwxONK
+	Vr5lF9SA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5cvq-00000004iA3-3Pft;
-	Thu, 26 Mar 2026 05:06:58 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1w5czo-00000004iaX-1iav;
+	Thu, 26 Mar 2026 05:11:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5cvo-00000004i9h-1vAO
+	id 1w5czl-00000004iYt-2TUx
 	for ath12k@lists.infradead.org;
-	Thu, 26 Mar 2026 05:06:57 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62Q0kjNi3957914
-	for <ath12k@lists.infradead.org>; Thu, 26 Mar 2026 05:06:55 GMT
+	Thu, 26 Mar 2026 05:11:03 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62Q0jPRI1554493
+	for <ath12k@lists.infradead.org>; Thu, 26 Mar 2026 05:11:00 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=sIOTdj/aFHn/N8qdhQJVWiK9jhfEsHg2Ob4
-	OUCYolXM=; b=WYJv1lOtWZ6OkBuhuTkdA1txGfXRt2C8iDu2+U/YbE9cLK7I/KA
-	YX9tBqfhSObAd2TnjK4RuLEsKPQCvO9+4giww09nFnWpUrKKS8wWbdMUrB62gZcz
-	UUlX0Yx2AeImi1Jw6OwToVx+Bua1U1FS1jvrQNmkOz24ZFK2ZJDaYgg1kQs2UvER
-	M5BJFMecVe6kkDFu4q66aEdufxUEvBraV7sDPgj49u9uURfRDnLJLtQXqqkJ4Hh3
-	+vDDKbHLW9SGJMlxunjfNiNH0QVhN5q0ri/thFodX6HpArQDL/pgH0xtkbh6OfEr
-	bTD8BjepZvQwgHYZrA70S7TRmZP2wVOs1vA==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4d4tjagn9u-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	je9xx+M2zMyO3JH9z5bTiR8KWSCvjxHfgNsRcJjClNw=; b=bISMWj/gMVkNeIHS
+	mMXgr3kGp77EyfFWpEE4jLYGnPt5Cs1vAMK22lc1ocwpx1tzRhFlFgOHI/WWJNoy
+	917pXeduA6Jwg75oZqdfXNoTpfo0iLF3K8em2eEGZzDMdXix/XA6GI2i6kKN8aif
+	kjaJD9/tSF5GLkHiGo9Sbt+7ZGlFPlzMQeaP0JI751l3Ccw7mB4kiVrK5m7+u7t1
+	gLw5y0SrrutiKhxnVLOHULGE5JxplPJz64HLsfuMLlZT18aBkbBuvlgAYD8erPlx
+	gRgljDy9aJexD2yJUz/HXV515iFPbbEJR6JzD8IUI5r43EeKbw2rM+CtjiKHUnJ0
+	3uGMog==
+Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4d4gj7ax95-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 26 Mar 2026 05:06:54 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2adef9d486bso11252995ad.2
-        for <ath12k@lists.infradead.org>; Wed, 25 Mar 2026 22:06:54 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 26 Mar 2026 05:10:59 +0000 (GMT)
+Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-82c1e1a6cfbso513050b3a.0
+        for <ath12k@lists.infradead.org>; Wed, 25 Mar 2026 22:10:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1774501614; x=1775106414; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=sIOTdj/aFHn/N8qdhQJVWiK9jhfEsHg2Ob4OUCYolXM=;
-        b=ePTwmtx4N+LYBt4LzximkhRo0OrV9C/P0Y/jo0K+Vhr3l2DNb1ztgu+9E8beGfPKQr
-         cTzSgMiz3jx7/07mTvXKX+jk2KKhmq2E4v62rQEwajc7y9mXiGSOGemz5xT15Y4Qg7KR
-         jdx5n/7fpES5GtF0s3+1DEU964VirNz2AUS5XnuD9JWQ9KGP00e5+ymb8dqOeQaRcf6J
-         g6CSYsAMizSGMV9tMBUmYyG5+erpGzCXJKyn+512jCWF2otNdsayjUAXlq3uMYt/nZMd
-         UcJkVLD4h4mY71uWs4DdPkqqRQb+4g3f011ikGqhfQxjpK4rRKBdTOk51VTX01XoFFi1
-         kyew==
+        d=oss.qualcomm.com; s=google; t=1774501859; x=1775106659; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=je9xx+M2zMyO3JH9z5bTiR8KWSCvjxHfgNsRcJjClNw=;
+        b=jobB09ofEDHRvbElqdn+BhbshDtbxA7H9rGdRlTKekqXEGj4lHaG1/Au5wPQ744WWj
+         MliVPdvdvZ5w1C7tRKHy7gS/0M0gxX328M5ZWvBBrGo+wsUhnyh/ScOby9hgYarbfT/J
+         IcoBh3W34gYEGiWognG40OKeeUlIIUM3Y+AWlLzgm+tvWinI0dKvEdvIWWhCjpXeTglt
+         fPGpXOvDqIrSfWJ4MsxNrhOwF5VUNieyZqVA/em9SYVEPhx3dbCY/YIREkaCGn/Tm1cz
+         +EQPpTvGZf6TIaO+0mf9jFsDZ7y5yl8Ee/u1M2Mkc05wKGSI5w2vkw7/dtUi2u5MowPM
+         9a5A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774501614; x=1775106414;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=sIOTdj/aFHn/N8qdhQJVWiK9jhfEsHg2Ob4OUCYolXM=;
-        b=Otspkx4LAlm2mP6aWyL2V6mTPs/IeeNdzOiMOtnUM6KHsKXEuSt3XgrGnGA9xACF5m
-         NDi6alPi6fwGcgIi8zrDbNpj4hjgFnQqcbusCnXhL7tHv/yVKOKmHBSEMfmmi0nZYHmM
-         Ha0J/vmai5hY4Kq+cJomoyXqJ6jFaafwcBd1QrPXxABE8y53nPWLa662w2oFUWXhr7pz
-         VhDYtNIOeM8OT22qp3ZQ7+m0uW7rE4n8IqkflNOOCh8qFgiM20h5W67tTDfPLfRMO3VU
-         YvelYDNEBQ5XrGDY22Y3lX1OFpaYnb7AMynIEearDTDjm6SbixX7h4n++uwnxs1jBvFf
-         vDVA==
-X-Gm-Message-State: AOJu0YyuqIsWjZNF3Ar4eH6oqsd2pw+PqoVdmHfr94jDscIBAKMWeiv8
-	gnXbVcs3tKvpx3qQxP/BNrA0l4VMjm76Homa/ghbHbzO+cIeLDwVbQ3PIBfe0ZnbBovAUJDbKsa
-	1+1HXLvFdTga47BB3t9OPoOumyJgTfngltucqndQAybkJ1DnxSCv86qeyGeQHROHU3a5q/Esj
-X-Gm-Gg: ATEYQzyHegep+EdL3pR188TA/4VkkLnAK8w4SDcqHB4vFSYMwmkRVEP6VN4/9Sdw34P
-	gBxhy07iJqr4sOLkecbEVZjgrHJR16YdsqjLlE0bbu1xA3/pxMbuXEKzumWBOxlYCxrfygXtfRp
-	hMSJtNmlsTr7aQzIJvyJfqoR/r2/rURsJP3XKo+laiLqPHO+X6bdSB3HhB84PsTj9RX3mE02dio
-	VzJ4kNoyEjbkqdlMPTxQhzA8nwSkFngjYAnWBZCNoO3YLCXCeJjMzXoSVhnAKmW0GyYvTsf8E3M
-	VesqvTJWOIkgfQnqA6QNJOa5dpuCHY4uxpzsbDkJtiMKSsyFPgjK4KfADC9xfp4xBxnsbgxTz51
-	M2OzsjPSDkYuduAp1fWTSoeAVK5KC6uc9wuUgMa4jr4sznWL0+Ef9D5kl694+f0/5bITiLMg3HP
-	behvHfCLWcqRKLtlDx7cvLwmwmj79dtPOr1D3opuIYqwVNFqlg
-X-Received: by 2002:a17:903:3c4e:b0:2aa:e3c7:6048 with SMTP id d9443c01a7336-2b0b0a42d45mr71320995ad.23.1774501613714;
-        Wed, 25 Mar 2026 22:06:53 -0700 (PDT)
-X-Received: by 2002:a17:903:3c4e:b0:2aa:e3c7:6048 with SMTP id d9443c01a7336-2b0b0a42d45mr71320675ad.23.1774501613210;
-        Wed, 25 Mar 2026 22:06:53 -0700 (PDT)
-Received: from hu-rdevanat-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2b0bc8fac97sm15259845ad.71.2026.03.25.22.06.51
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Mar 2026 22:06:52 -0700 (PDT)
-From: Roopni Devanathan <roopni.devanathan@oss.qualcomm.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Harish Rachakonda <quic_rachakon@quicinc.com>,
-        Roopni Devanathan <roopni.devanathan@oss.qualcomm.com>
-Subject: [PATCH ath-next] wifi: ath12k: Support channel change stats
-Date: Thu, 26 Mar 2026 10:36:41 +0530
-Message-Id: <20260326050641.3066562-1-roopni.devanathan@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+        d=1e100.net; s=20251104; t=1774501859; x=1775106659;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=je9xx+M2zMyO3JH9z5bTiR8KWSCvjxHfgNsRcJjClNw=;
+        b=dylpfA/x8GYXZiaGO8OzWoMVil98QNmKO8KEPIbsbbvt8xq+3PUJ1klcgf2DVZEi9N
+         q01VoRUpdzR/yBnClJCBE+7fg8NHLinONhCTC2F52IOLaQFqQdYaK6R0eliefrjNoo7C
+         Bjpz5xK2UCGxJlFyT4WXMplt0rFSH83pGnl6n9gDqNEtJEiMORpqJ9Tq53gPsjFQ48vk
+         uXDUdhXMdkZ+BHpN9Nk+rkWhtI8D8nYNOIRUYUeafVFLOHsi48zhyS3ZE6TXDkMVMC/8
+         zD1V7rMvb/TMUZ6Pq20QA75WIAObM2gB+bEB1vK5cqx6NCBRq3S7xhvPuqIBv5okkMTR
+         4sbw==
+X-Forwarded-Encrypted: i=1; AJvYcCVa0Ckm2PXqM2hY30ZCdBpvmtlm0tPfTbrue0kLWt+o2KUTowR9ugAjEuRuzhCD4L5cee6acGA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyLSrXC7FeNjtffVfgmEElainySrGpGli9WhfJqT+knzGcOAc//
+	seV1Nn7D11MvPAGfMUL7Gl/uZ1iAuLT28qPaGR7OKM9goG/fC1w7WyMBInrDjziodVgAii+wF/7
+	zXAUJsfjaI8Ohiy53qVvy2ZcvFVR29gtOW58ZttyBB6OiqHmTNfFEoaxo8o8IjKV4
+X-Gm-Gg: ATEYQzyqz+4fIjBDgxiBJA269VZ37UCldQShhk79VmZ/NmEhuDI5PYl81IqEeGFJSiQ
+	tqVtNoA60d/oLss+E+SE8wWNZO8tzmLkDaiYUdkMWq0OJRJgxximHun5uUniipPwiALZZXgmAJu
+	rzcheuotfGZmmHdG9OyVi/QdbIsEdadsH2NiSc2MUYxsJ0/M8nYcvGF3q1AgB3uym3zBZbUxWtI
+	7noM5eABeAzG/Ignd7fFu1+WgRc7T3NVwKrGSCS8C/Uf4wEU0RpkQh35oIR04WtDl3gymktRVla
+	p0oSP3oH0skMGoRKY9pfoyVisSEfgD1XBEW36WaH/YD/+I/OKgcveBC4SqGtS3Mxq8k6Sp6Dz3c
+	sikzozX39ElxK77LZED81LUFPhY1Y/CIZe76RvRvP3lwexd+4dw==
+X-Received: by 2002:a05:6a00:4bb3:b0:82c:7876:a027 with SMTP id d2e1a72fcca58-82c7876a666mr2759734b3a.18.1774501859103;
+        Wed, 25 Mar 2026 22:10:59 -0700 (PDT)
+X-Received: by 2002:a05:6a00:4bb3:b0:82c:7876:a027 with SMTP id d2e1a72fcca58-82c7876a666mr2759715b3a.18.1774501858647;
+        Wed, 25 Mar 2026 22:10:58 -0700 (PDT)
+Received: from [10.152.196.198] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82c7d3f9593sm1246249b3a.53.2026.03.25.22.10.54
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 25 Mar 2026 22:10:58 -0700 (PDT)
+Message-ID: <c0f0d46f-fced-415d-b2ee-30339a0a0049@oss.qualcomm.com>
+Date: Thu, 26 Mar 2026 10:40:52 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: Xmf5AYNKmFMGpeK3-SMBlWo2Noy5920B
-X-Authority-Analysis: v=2.4 cv=Nr3cssdJ c=1 sm=1 tr=0 ts=69c4beee cx=c_pps
- a=JL+w9abYAAE89/QcEU+0QA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22 a=COk6AnOGAAAA:8
- a=EUspDBNiAAAA:8 a=8HdXM4_gyVcZDa-Q9oUA:9 a=324X-CrmTo6CU4MGRt3R:22
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: Xmf5AYNKmFMGpeK3-SMBlWo2Noy5920B
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzI2MDAzNyBTYWx0ZWRfX9JSSbN0uVYe6
- CWFJBPCFqGxJa4dwsBBYaloLCp0CgFyYGSjSdUPNqYdRbIK9BtVvCqMZk39JQ55NOwl0UH612ku
- iInFcRHRYGDXgnrwR/7U5ZPVbEfYYIpIPkQcDLyTtj6T0R1GucDkH6ADpRJvUlQxX01GB8EMsC0
- 2CnlYL3N7xCUyYA16jJVsLCMmZ3USa1W+B4xVs4Y4oJD1/zQjtn4BHrMPja5kfpLB8mip5Ubbtk
- 9u9tttyxVopqToggnDWUJtS3Dkolg2JxgNNbbjKlS5KtHewUqQHrEBcbxbm4iPq3NeKHYzHgZZP
- zAKbAuIvtQwm1CcXpQ5HuL8g6G3tiB5UeQnzBmxaHQ9CUx4Ts+mBFirX8hIm1zHm/schhS+jhBz
- bwyO8q32hPFFGcnYFC/Lo8X0/WdGaXfv86A4jSbU1dg9DOnQeYju5F9otnPZeoQ5Tu5v7Zqvk8z
- /bNyEA1GL8J9745aDvA==
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next v2 2/5] wifi: ath12k: Add ath12k_hw_params for
+ IPQ5424
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
+        Johannes Berg <johannes@sipsolutions.net>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
+        Saravanakumar Duraisamy <quic_saradura@quicinc.com>
+References: <20250518-ath12k-ipq5424-v2-0-ef81b833dc97@quicinc.com>
+ <20250518-ath12k-ipq5424-v2-2-ef81b833dc97@quicinc.com>
+ <12cb2f34-2142-4a38-9e73-49c2cf66d8f8@oss.qualcomm.com>
+Content-Language: en-US
+From: Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>
+In-Reply-To: <12cb2f34-2142-4a38-9e73-49c2cf66d8f8@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Authority-Analysis: v=2.4 cv=M9hA6iws c=1 sm=1 tr=0 ts=69c4bfe3 cx=c_pps
+ a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+ a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=qC_FGOx9AAAA:8 a=xSzTO1CcoS2zrBndkREA:9 a=QEXdDO2ut3YA:10
+ a=zc0IvFSfCIW2DFIPzwfm:22 a=fsdK_YakeE02zTmptMdW:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzI2MDAzNyBTYWx0ZWRfXw7FqdpymS7gK
+ j3ikH+mSKabV5MgByMzkCljlJkzCh8pZPa4XEsKvGxcqY4MLB6A0D+ML65BSBZ/gFoRvwPQ/xmm
+ GO8zkZYSYPgDsKGjrbhP8pbYk6YWpkHh8Jq3pOFnVCZ9nKT0O/bR7b3IlF0kchv4usCnJSnfqwZ
+ eyiZVkn2SoMTIg5qIiVYBZ/ZCrx0Bw49oa6qb/Seaqn8TEkhkDDdS9iYcCYcnuM4yeIhX8RULPL
+ GPmHpI7axnowatwH7HjebwfVtk9xHoZNVil7dspxO4kkncVdplujnl1WIHZ0REGC0ctg2qd7FiU
+ qBdfCVRE1Vssu59pcqq+4svc9u2j0NhaP9JTVDTGLOw20oKllrhPtl1ExMnIcLYh/xAxysTW2Uz
+ Vhj6UaFYieTCQGyJU7abRq4iGucbv4A/l8rTsR3FLRZXsWDGWeeC9sDKfAaFJK9nJmDTL/MWzb3
+ aqSaHrIpo5rWWEs2Xfg==
+X-Proofpoint-GUID: Mso0lrIMiel7VhdbxuejXVYoaUeZIUFH
+X-Proofpoint-ORIG-GUID: Mso0lrIMiel7VhdbxuejXVYoaUeZIUFH
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-03-26_01,2026-03-24_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 suspectscore=0 impostorscore=0 bulkscore=0 adultscore=0
- priorityscore=1501 lowpriorityscore=0 phishscore=0 malwarescore=0 spamscore=0
+ clxscore=1015 priorityscore=1501 bulkscore=0 impostorscore=0 spamscore=0
+ adultscore=0 malwarescore=0 phishscore=0 lowpriorityscore=0 suspectscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603260037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260325_220656_619096_F6EDCE59 
-X-CRM114-Status: GOOD (  15.73  )
+X-CRM114-CacheID: sfid-20260325_221101_712315_5EA17EC3 
+X-CRM114-Status: GOOD (  13.33  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,178 +155,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Harish Rachakonda <quic_rachakon@quicinc.com>
+On 20-05-2025 21:29, Jeff Johnson wrote:
+> On 5/18/2025 11:22 AM, Raj Kumar Bhagat wrote:
+>> diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
+>> index 7e2cf0fb2085ab014fc14a5c81074802674b154e..866de53f37bb5af94e16c796a0052fda39eb4ea8 100644
+>> --- a/drivers/net/wireless/ath/ath12k/hw.c
+>> +++ b/drivers/net/wireless/ath/ath12k/hw.c
+>> @@ -1590,6 +1590,84 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+>>   		.ce_remap = &ath12k_ce_remap_ipq5332,
+>>   		.bdf_addr_offset = 0xC00000,
+>>   
+>> +		.dp_primary_link_only = true,
+>> +	},
+>> +	{
+>> +		.name = "ipq5424 hw1.0",
+>> +		.hw_rev = ATH12K_HW_IPQ5424_HW10,
+>> +		.fw = {
+>> +			.dir = "IPQ5424/hw1.0",
+>> +			.board_size = 256 * 1024,
+>> +			.cal_offset = 128 * 1024,
+>> +			.m3_loader = ath12k_m3_fw_loader_remoteproc,
+> 
+> Until the firmware is available in linux-firmware I cannot accept this series.
+> Please work with the firmware team to make sure I get firmware via the
+> internal release process so that I can stage it.
+> 
 
-Add support to request channel change stats from the firmware through
-HTT stats type 76. These stats give channel switch details like the
-channel that the radio changed to, its center frequency, time taken
-for the switch, chainmask details, etc.
+Hi Jeff,
 
-Sample output:
-echo 76 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
-Channel Change Timings:
-|PRIMARY CHANNEL FREQ|BANDWIDTH CENTER FREQ|PHYMODE|TX_CHAINMASK|RX_CHAINMASK|SWITCH TIME(us)|INI(us)|TPC+CTL(us)|CAL(us)|MISC(us)|CTL(us)|SW PROFILE|
-|                5200|                 5200|     24|          15|          15|         448850|   2410|      10546| 434593|    1071|   1100|         4|
-|                5240|                 5240|     24|          15|          15|         450730|   4106|      10524| 434528|    1306|   1150|         4|
-|                5180|                 5210|     26|          15|          15|         467894|   4764|      10438| 451101|    1337|   1508|         4|
-|                5200|                 5200|      0|          15|          15|          13838|   2692|       1736|   8558|     686|    802|         6|
-|                5180|                 5180|      0|          15|          15|          13465|   3207|        855|   8579|     578|    760|         6|
-|                5200|                 5200|     24|          15|          15|         570321|   2441|      10439| 555661|    1574|    949|         4|
+The Firmware binaries are now uploaded to CLO:
+https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/tree/main/IPQ5424/hw1.0?ref_type=heads
 
-Note: WCN7850 firmware does not support HTT stats type 76.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01181-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Harish Rachakonda <quic_rachakon@quicinc.com>
-Signed-off-by: Roopni Devanathan <roopni.devanathan@oss.qualcomm.com>
----
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 72 +++++++++++++++++++
- .../wireless/ath/ath12k/debugfs_htt_stats.h   | 26 +++++++
- 2 files changed, 98 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index 7f6ca07fb335..b772181a496e 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -5722,6 +5722,75 @@ ath12k_htt_print_tx_hwq_stats_cmn_tlv(const void *tag_buf, u16 tag_len,
- 	stats_req->buf_len = len;
- }
- 
-+static void
-+ath12k_htt_print_chan_switch_stats_tlv(const void *tag_buf, u16 tag_len,
-+				       struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_chan_switch_stats_tlv *sbuf = tag_buf;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u32 switch_freq, switch_profile;
-+	u32 len = stats_req->buf_len;
-+	u8 *buf = stats_req->buf;
-+	u8 i;
-+
-+	if (tag_len < sizeof(*sbuf))
-+		return;
-+
-+	i = min(le32_to_cpu(sbuf->switch_count), ATH12K_HTT_CHAN_SWITCH_STATS_BUF_LEN);
-+	if (!i)
-+		return;
-+
-+	len += scnprintf(buf + len, buf_len - len, "Channel Change Timings:\n");
-+	len += scnprintf(buf + len, buf_len - len,
-+			 "|%-20s|%-21s|%-7s|%-12s|%-12s|%-15s|",
-+			 "PRIMARY CHANNEL FREQ", "BANDWIDTH CENTER FREQ", "PHYMODE",
-+			 "TX_CHAINMASK", "RX_CHAINMASK", "SWITCH TIME(us)");
-+	len += scnprintf(buf + len, buf_len - len,
-+			 "%-7s|%-11s|%-7s|%-8s|%-7s|%-10s|\n",
-+			 "INI(us)", "TPC+CTL(us)", "CAL(us)", "MISC(us)", "CTL(us)",
-+			 "SW PROFILE");
-+
-+	/*
-+	 * sbuf->switch_count has the number of successful channel changes. The firmware
-+	 * sends the record of channel change in such a way that sbuf->chan_stats[0] will
-+	 * point to the channel change that occurred first and the recent channel change
-+	 * records will be stored in sbuf->chan_stats[9]. As and when new channel change
-+	 * occurs, sbuf->chan_stats[0] will be replaced by records from the next index,
-+	 * sbuf->chan_stats[1]. While printing the records, reverse chronological order
-+	 * is followed, i.e., the most recent channel change records are printed first
-+	 * and the oldest one, last.
-+	 */
-+	while (i--) {
-+		switch_freq = le32_to_cpu(sbuf->chan_stats[i].chan_switch_freq);
-+		switch_profile = le32_to_cpu(sbuf->chan_stats[i].chan_switch_profile);
-+
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "|%20u|%21u|%7u|%12u|%12u|%15u|",
-+				 u32_get_bits(switch_freq,
-+					      ATH12K_HTT_STATS_CHAN_SWITCH_BW_MHZ),
-+				 u32_get_bits(switch_freq,
-+					      ATH12K_HTT_STATS_CHAN_SWITCH_BAND_FREQ),
-+				 u32_get_bits(switch_profile,
-+					      ATH12K_HTT_STATS_CHAN_SWITCH_PHY_MODE),
-+				 u32_get_bits(switch_profile,
-+					      ATH12K_HTT_STATS_CHAN_SWITCH_TX_CHAINMASK),
-+				 u32_get_bits(switch_profile,
-+					      ATH12K_HTT_STATS_CHAN_SWITCH_RX_CHAINMASK),
-+				 le32_to_cpu(sbuf->chan_stats[i].chan_switch_time));
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "%7u|%11u|%7u|%8u|%7u|%10u|\n",
-+				 le32_to_cpu(sbuf->chan_stats[i].ini_module_time),
-+				 le32_to_cpu(sbuf->chan_stats[i].tpc_module_time),
-+				 le32_to_cpu(sbuf->chan_stats[i].cal_module_time),
-+				 le32_to_cpu(sbuf->chan_stats[i].misc_module_time),
-+				 le32_to_cpu(sbuf->chan_stats[i].ctl_module_time),
-+				 u32_get_bits(switch_profile,
-+					      ATH12K_HTT_STATS_CHAN_SWITCH_SW_PROFILE));
-+	}
-+
-+	stats_req->buf_len = len;
-+}
-+
- static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 					  u16 tag, u16 len, const void *tag_buf,
- 					  void *user_data)
-@@ -6024,6 +6093,9 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 	case HTT_STATS_TX_HWQ_CMN_TAG:
- 		ath12k_htt_print_tx_hwq_stats_cmn_tlv(tag_buf, len, stats_req);
- 		break;
-+	case HTT_STATS_CHAN_SWITCH_STATS_TAG:
-+		ath12k_htt_print_chan_switch_stats_tlv(tag_buf, len, stats_req);
-+		break;
- 	default:
- 		break;
- 	}
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-index bfabe6500d44..82ab7b9e4db9 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-@@ -164,6 +164,7 @@ enum ath12k_dbg_htt_ext_stats_type {
- 	ATH12K_DBG_HTT_PDEV_MLO_IPC_STATS			= 64,
- 	ATH12K_DBG_HTT_EXT_PDEV_RTT_RESP_STATS			= 65,
- 	ATH12K_DBG_HTT_EXT_PDEV_RTT_INITIATOR_STATS		= 66,
-+	ATH12K_DBG_HTT_EXT_CHAN_SWITCH_STATS			= 76,
- 
- 	/* keep this last */
- 	ATH12K_DBG_HTT_NUM_EXT_STATS,
-@@ -267,6 +268,7 @@ enum ath12k_dbg_htt_tlv_tag {
- 	HTT_STATS_PDEV_RTT_HW_STATS_TAG			= 196,
- 	HTT_STATS_PDEV_RTT_TBR_SELFGEN_QUEUED_STATS_TAG	= 197,
- 	HTT_STATS_PDEV_RTT_TBR_CMD_RESULT_STATS_TAG	= 198,
-+	HTT_STATS_CHAN_SWITCH_STATS_TAG			= 213,
- 
- 	HTT_STATS_MAX_TAG,
- };
-@@ -2156,4 +2158,28 @@ struct htt_tx_hwq_stats_cmn_tlv {
- 	__le32 txq_timeout;
- } __packed;
- 
-+#define ATH12K_HTT_CHAN_SWITCH_STATS_BUF_LEN	10
-+
-+#define ATH12K_HTT_STATS_CHAN_SWITCH_BW_MHZ		GENMASK(15, 0)
-+#define ATH12K_HTT_STATS_CHAN_SWITCH_BAND_FREQ		GENMASK(31, 16)
-+#define ATH12K_HTT_STATS_CHAN_SWITCH_PHY_MODE		GENMASK(7, 0)
-+#define ATH12K_HTT_STATS_CHAN_SWITCH_TX_CHAINMASK	GENMASK(15, 8)
-+#define ATH12K_HTT_STATS_CHAN_SWITCH_RX_CHAINMASK	GENMASK(23, 16)
-+#define ATH12K_HTT_STATS_CHAN_SWITCH_SW_PROFILE		GENMASK(31, 24)
-+
-+struct ath12k_htt_chan_switch_stats_tlv {
-+	struct {
-+		__le32 chan_switch_freq;
-+		__le32 chan_switch_profile;
-+		__le32 chan_switch_time;
-+		__le32 cal_module_time;
-+		__le32 ini_module_time;
-+		__le32 tpc_module_time;
-+		__le32 misc_module_time;
-+		__le32 ctl_module_time;
-+		__le32 reserved;
-+	} chan_stats[ATH12K_HTT_CHAN_SWITCH_STATS_BUF_LEN];
-+	__le32 switch_count; /* shows how many channel changes have occurred */
-+} __packed;
-+
- #endif
-
-base-commit: 37538641dac955f6690372f0ebb94e5e14a23418
--- 
-2.43.0
-
+Will send the next version and resume this series.
 
