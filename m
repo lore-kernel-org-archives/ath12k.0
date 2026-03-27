@@ -4,122 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3BCE10ED675
-	for <ath12k@archiver.kernel.org>; Fri, 27 Mar 2026 13:15:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DB3110ED661
+	for <ath12k@archiver.kernel.org>; Fri, 27 Mar 2026 13:39:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TYB/GId3uWJNA6+Kc5eBkcs8F/cC3aOTkUma5LKMfM0=; b=Vxre6aRzsLbiVQnycStVUSwZ7m
-	uHzYjU6N8IliGMq+ckXhmMnCYZZI2ipZB/yCOHtRvKqGBDmx4JeCMAKHUuxv/m3RPkk7sTmdCIC28
-	qHzVecAcUxSqQ9I8p7fy/q3mP3+BapbFCxV/FL9xXQIPO5dHARLxqD+3TKnp1Nb31c2EV20rfApbw
-	QTcFGH8B/51wbeI4X0FmYJBhD0ijkVt5YjgxnuiO9HLpdOHQU0WF1vaboY2boIPCSbE8sd6loZLCA
-	2ea0slgiUSms7ZBf68JNW7grcjhW47rtf7mg9k/5MJUkZghUHbtbSswmRFBxVnunijU4c5p5VI3U7
-	XoWZ8/Ew==;
+	bh=xSJjVNKiTpMUD0kx19JZtU2P6im66x5v4Idc6x0flwM=; b=OgBuqKXjPCn6uw6d9OpYK1HctG
+	/EJkHx/NO3d/8RVRnAB2ADpzxuyBW0Yol1B2aQjZjnZno++d76+ZG9OE7SG1bZLsINDWtT4lTf6D3
+	pjPvF4Lvwhr0yVgONQLw98FUowonokbUxN9RUl+DHAAGspGxaRf6FVhP97YXgKQzYFU4g6cwTPws2
+	/Xhv0XIJxLjWfGugTB4UJPZMG1GzPApgaTirBFNJHJdqcuidmP5yI2VcrxBrJp7G2nUxG12Sap49Q
+	gwqoRpXwNcGoOi+BKLUM5V1Jth0q883jmkXHNDXYCjVs/Co++X3+BhUWUa9HU2/URkqLtqtQkS8jn
+	iSnRIVoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w671q-00000007Qc9-37II;
-	Fri, 27 Mar 2026 13:15:10 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1w67PX-00000007SgU-0u56;
+	Fri, 27 Mar 2026 13:39:39 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w671o-00000007Qbl-3nPY
-	for ath12k@bombadil.infradead.org;
-	Fri, 27 Mar 2026 13:15:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=TYB/GId3uWJNA6+Kc5eBkcs8F/cC3aOTkUma5LKMfM0=; b=rH+9BUqOvR0iALkp+9/neFdE9u
-	i+EvaNZmhizif7oyjdk+l6a9mLs64CgDKPB2DBLHeR8uZlpHoFLLj7L10H1XYG8A/owfx2SSfkmej
-	8FB7niY7AN8LbVaHRBJeD6Y/Ph180aXLimCcxtf2UrSVtWfmDazH1X1uHe0QcSW1Yq5xNx87o/9bT
-	74gqXTm/e+YwUadtsSv9UMFmT/rvABakKeC4cQ3djdT6QuOB4fmEY3DjNtEWikOBUiiBuNrKUYCTK
-	qvtqFZbyo9dm5L4O0Zkrp7afEznJPrf5uBPib2pQm02nUC+weTtdLZ4ZOMxOqMznyTGxJgW0f4KFK
-	sv6wLPmw==;
-Received: from sea.source.kernel.org ([172.234.252.31])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w671l-0000000ASzZ-41Ta
+	id 1w67PV-00000007SgL-3lpH
 	for ath12k@lists.infradead.org;
-	Fri, 27 Mar 2026 13:15:07 +0000
+	Fri, 27 Mar 2026 13:39:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 972C442E41;
-	Fri, 27 Mar 2026 13:15:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C955AC19423;
-	Fri, 27 Mar 2026 13:14:49 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id B1D4E60103;
+	Fri, 27 Mar 2026 13:39:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A2EF8C19423;
+	Fri, 27 Mar 2026 13:39:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1774617304;
-	bh=vk7fIMoDnUd+apGBoToCIJIWarWnxjcVLqpnFo6FYtQ=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=UUruWqT8nvTqmrbHmvWowQEwrphCmXl5VCFesVXyEQIc8LqUheUeU0ezWMz+aSYrf
-	 Ax5LDG+FkEhu7NoB4X1iOxlMee6yqdNSF1YwuH1zxMvQzaiO/+ytxX+nVXqNMeNw/K
-	 eEAfAlDxUR08+V+2rgglm8AH+DcwUbHiGLLUx/lja68SBHYdPt2PaPd/gemRLgHynn
-	 wV2g5qqvaKqOt04D4rb//k5bgpNJv8W9iLH0MrO1CnpLxqxUGK0dZqbbAfgZYKq3ol
-	 c+X9XU5WoH2OmoOXbiW8cQTAp4KjSr3ZavenCW8tSDiIJ1wewJ6BkPqJyI5uG6GPF7
-	 inO99AeWqeY0w==
-From: Sumit Garg <sumit.garg@kernel.org>
-To: linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	freedreno@lists.freedesktop.org,
-	linux-media@vger.kernel.org,
-	netdev@vger.kernel.org,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-remoteproc@vger.kernel.org
-Cc: andersson@kernel.org,
-	konradybcio@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	robin.clark@oss.qualcomm.com,
-	sean@poorly.run,
-	akhilpo@oss.qualcomm.com,
-	lumag@kernel.org,
-	abhinav.kumar@linux.dev,
-	jesszhan0024@gmail.com,
-	marijn.suijten@somainline.org,
-	airlied@gmail.com,
-	simona@ffwll.ch,
-	vikash.garodia@oss.qualcomm.com,
-	dikshita.agarwal@oss.qualcomm.com,
-	bod@kernel.org,
-	mchehab@kernel.org,
-	elder@kernel.org,
-	andrew+netdev@lunn.ch,
-	davem@davemloft.net,
-	edumazet@google.com,
-	kuba@kernel.org,
-	pabeni@redhat.com,
-	jjohnson@kernel.org,
-	mathieu.poirier@linaro.org,
-	trilokkumar.soni@oss.qualcomm.com,
-	mukesh.ojha@oss.qualcomm.com,
-	pavan.kondeti@oss.qualcomm.com,
-	jorge.ramirez@oss.qualcomm.com,
-	tonyh@qti.qualcomm.com,
-	vignesh.viswanathan@oss.qualcomm.com,
-	srinivas.kandagatla@oss.qualcomm.com,
-	amirreza.zarrabi@oss.qualcomm.com,
-	jens.wiklander@linaro.org,
-	op-tee@lists.trustedfirmware.org,
-	apurupa@qti.qualcomm.com,
-	skare@qti.qualcomm.com,
-	harshal.dev@oss.qualcomm.com,
-	linux-kernel@vger.kernel.org,
-	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: [PATCH v3 15/15] MAINTAINERS: Add maintainer entry for Qualcomm PAS TZ service
-Date: Fri, 27 Mar 2026 18:40:43 +0530
-Message-ID: <20260327131043.627120-16-sumit.garg@kernel.org>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20260327131043.627120-1-sumit.garg@kernel.org>
-References: <20260327131043.627120-1-sumit.garg@kernel.org>
+	s=k20201202; t=1774618776;
+	bh=EK3L84nzzwEQPvQOCJndbS7CWv2sJDVmRS0NFbkNFt4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=gZ2a9OOmIUE9p1djDWK+JEQLE1+0jE5+eHqkLh0g4U+My9MeFyfXvW8YyFq805afi
+	 Mrhqpi0tviIOqOjc2irCWiYCF1mQOpnX/ZgjyLQUyNzp3RFW8qM+aKwuyeQPAJgSA0
+	 6wPdrWKseyd0ZYZuS8WB7cZi1N+PVw7RrzzgJOAcllE8v4VGoNpaLbxjvxoVN3sWng
+	 G22Co7kk/1POJ7t06mXgXbeqzdMcKYD7o/7DaHBMQkvF2hcgOA8JXt58wkDndNlpe1
+	 97UWhS+jO80p3kcwYdY5DfYiELCVdjQlPIugLIUtArmmyE5ZxIE/+DJ2HxOA2JDiKH
+	 6dPWYSZ4WIkWw==
+Message-ID: <2da6cbcc-677d-4ba8-9762-ecb47b157f21@kernel.org>
+Date: Fri, 27 Mar 2026 14:39:24 +0100
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260327_131506_245139_91603C79 
-X-CRM114-Status: UNSURE (   6.66  )
-X-CRM114-Notice: Please train this message.
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 02/15] firmware: qcom: Add a generic PAS service
+To: Sumit Garg <sumit.garg@kernel.org>,
+ Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+ linux-media@vger.kernel.org, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+ linux-remoteproc@vger.kernel.org, andersson@kernel.org,
+ konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, robin.clark@oss.qualcomm.com, sean@poorly.run,
+ akhilpo@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
+ jesszhan0024@gmail.com, marijn.suijten@somainline.org, airlied@gmail.com,
+ simona@ffwll.ch, vikash.garodia@oss.qualcomm.com,
+ dikshita.agarwal@oss.qualcomm.com, bod@kernel.org, mchehab@kernel.org,
+ elder@kernel.org, andrew+netdev@lunn.ch, davem@davemloft.net,
+ edumazet@google.com, kuba@kernel.org, pabeni@redhat.com,
+ jjohnson@kernel.org, mathieu.poirier@linaro.org,
+ trilokkumar.soni@oss.qualcomm.com, pavan.kondeti@oss.qualcomm.com,
+ jorge.ramirez@oss.qualcomm.com, tonyh@qti.qualcomm.com,
+ vignesh.viswanathan@oss.qualcomm.com, srinivas.kandagatla@oss.qualcomm.com,
+ amirreza.zarrabi@oss.qualcomm.com, jens.wiklander@linaro.org,
+ op-tee@lists.trustedfirmware.org, apurupa@qti.qualcomm.com,
+ skare@qti.qualcomm.com, linux-kernel@vger.kernel.org,
+ Sumit Garg <sumit.garg@oss.qualcomm.com>
+References: <20260312062756.694390-1-sumit.garg@kernel.org>
+ <20260312062756.694390-3-sumit.garg@kernel.org>
+ <20260313072450.sx7vqtvh62nflhff@hu-mojha-hyd.qualcomm.com>
+ <acE3MR4SVCPUzcgR@sumit-xelite>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <acE3MR4SVCPUzcgR@sumit-xelite>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,37 +136,28 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sumit Garg <sumit.garg@oss.qualcomm.com>
+On 23/03/2026 13:50, Sumit Garg wrote:
+>>> +
+>>> +#include <linux/device/devres.h>
+>>> +#include <linux/firmware/qcom/qcom_pas.h>
+>>> +#include <linux/kernel.h>
+>>> +#include <linux/module.h>
+>>> +
+>>> +#include "qcom_pas.h"
+>>> +
+>>> +struct qcom_pas_ops *ops_ptr;
+>>
+>> Should this be static ?
+> 
+> It was static earlier in v1. I dropped it based on earlier v1 discussion
+> with Krzysztof. Let me conclude that discussion on the other thread
+> again.
 
-Add Sumit Garg as the maintainer for the Qualcomm generic Peripheral
-Authentication Service (PAS) as well as the PAS TEE backend driver.
+The discussion was whether this should be singleton in the first place,
+not making it a global singleton.
 
-Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
----
- MAINTAINERS | 9 +++++++++
- 1 file changed, 9 insertions(+)
+Of course it cannot be anything else than static - nothing should poke here.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 0481aca2286c..1a50ce3e204e 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -21806,6 +21806,15 @@ F:	Documentation/devicetree/bindings/media/*qcom*
- F:	drivers/media/platform/qcom
- F:	include/dt-bindings/media/*qcom*
- 
-+QUALCOMM PAS TZ SERVICE
-+M:	Sumit Garg <sumit.garg@oss.qualcomm.com>
-+L:	linux-arm-msm@vger.kernel.org
-+S:	Maintained
-+F:	drivers/firmware/qcom/qcom_pas.c
-+F:	drivers/firmware/qcom/qcom_pas.h
-+F:	drivers/firmware/qcom/qcom_pas_tee.c
-+F:	include/linux/firmware/qcom/qcom_pas.h
-+
- QUALCOMM SMB CHARGER DRIVER
- M:	Casey Connolly <casey.connolly@linaro.org>
- L:	linux-arm-msm@vger.kernel.org
--- 
-2.51.0
-
+Best regards,
+Krzysztof
 
