@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6532F10ED676
-	for <ath12k@archiver.kernel.org>; Fri, 27 Mar 2026 13:13:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2263A10ED677
+	for <ath12k@archiver.kernel.org>; Fri, 27 Mar 2026 13:13:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YbzSL41Tk1WNn3zWf+G56DZLHZY6A19/sPSrwUiq/TM=; b=Y0H6FFytLBe3wmqQYEZT6U7O4h
-	mAePjwqQfc6eK7ygWRWSXC5zOjuwxHE56D4XaV+rxCsCMRRu5wTPob4P6CQnIjZmwjI7/lCJJGliK
-	jPhgxYU9rF3Nrx314R7D/MgcD4qChgvrl4ltkprs9X5PHevAGEihlbhkB0M2cbhcU3ai4T9KogOWe
-	wRxhGSxRspaMiccGoJqSVXj6yBucN1MEf/5qzc5HAqlLtmNSRSsb3rN31Ff4v6TxuAVankL5vqMth
-	dVct4iKRFOItvn4zQ24Y6kVy537XlBKxy/GS2y8c/Y66wr8B96Mu9vMnHnbzzHl7fX6Yd5SqH/MFx
-	AJx6g77g==;
+	bh=wa4pQsWv5Yno7G1X0otgpvfMz5gvjcl/mDIHcq4kOXE=; b=a0TTT0IjbKziCQqvq+DU+LnjIT
+	X/cmj8lbuHa2w2RRdPyAN+pGCnxxkt334Kq+Pdv5a29crahqrYP6hFxHFkzBrUfbNmlDA470onSm0
+	kHURSBOOxCGyWmCRBPUR5NiQ6Ixza0cERs3caRITdCwAFMsw2APtS3kqH3+qUxlZ1SPr6qAkpul+M
+	xm2c5jCHFlM5ftbrUGqRHA+q6+LBhQ6KurHGLyhhCQGGLHj1Q9G4X5J+Gqlwh7MFNMmGBTDjM3ZpQ
+	+gzQvJXD/ybbcGUxO7jEEhrd1Rc4WkV2OmNSKh2UO8plg1bywhhtRttMlf8iYT/yPE1ZMU1o/lrc7
+	TGv25mtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w670I-00000007PYK-0hMb;
-	Fri, 27 Mar 2026 13:13:34 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1w670Z-00000007PfJ-3cbh;
+	Fri, 27 Mar 2026 13:13:51 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w670H-00000007PY5-0wOb
+	id 1w670W-00000007Pen-2REK
 	for ath12k@lists.infradead.org;
-	Fri, 27 Mar 2026 13:13:33 +0000
+	Fri, 27 Mar 2026 13:13:48 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id A125060103;
+	by tor.source.kernel.org (Postfix) with ESMTP id E010560103;
+	Fri, 27 Mar 2026 13:13:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01B3BC19423;
 	Fri, 27 Mar 2026 13:13:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B21E6C2BC87;
-	Fri, 27 Mar 2026 13:13:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1774617212;
-	bh=xYlvJO+JflPgYH7lV81mrAxzP35EX+W421jGEAyidpM=;
+	s=k20201202; t=1774617227;
+	bh=V8EnKxxkOKMl+n0R458o+2crQBk0/0O5QfRMcQ9ghTc=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ATyfvKGUmnv1kKnubs6IiLKUN4mUdaYjdI2G6QVAhehE1B+B5pM968CUWnh79vDZV
-	 qbcMBvWPgvwiD8IfqILDBYLus+CdHaP+aJHmLJBKSqCtSir41Tl5Cpm4QMkTkCPgTJ
-	 b9WmzcQzgu7PJzM9xxBssGMWIrteWCePRPk4eTjtAldyIv3ebIFX+S8Ie6RXbp4OjN
-	 Yflewz9fGgFda2MnKV3CQPSSMoHW6V2p9ESaCH5pfAyW5XIkeUOvRYnxzgO3JlOP9l
-	 7BiDeSrZZmh7v6bzIKiRDOEHfDZu1fbPpNxk1WA8p2wrioLUAppV1dth3AKcUL5HIw
-	 Qp3sRJpgPNQHQ==
+	b=ct9wVerJYpZjtZTKkk3yjTKypxPyidSjILtk9kwESjF6apA3cQcroUOkc0R2rV+Vf
+	 DausJTV0jUWw+KhHxLZaggl8+5T6KtpZ7ssPKHX6Dw7gLrMsjKMPsw4oc/sdjlRbaz
+	 jAczcDUI30GPlIwc3pu7xn1SHkTR0nKFO/N8yIGsr93CPAsmzu9yRK5eJiaX78wLso
+	 VWB+eG3paOsnjomzHfFnSjb6JOBC/0K7Ph7YeDneYnvu5uk+nyhOu94RR1y2NaNP+U
+	 NUQQZl+flRV6LFJ4rjOPcNNYc9czeSGFocgRiFargNBniBNmzv0OVul8HGvsfEK/yN
+	 cPISOsOMvF1xg==
 From: Sumit Garg <sumit.garg@kernel.org>
 To: linux-arm-msm@vger.kernel.org,
 	devicetree@vger.kernel.org,
@@ -93,9 +93,9 @@ Cc: andersson@kernel.org,
 	harshal.dev@oss.qualcomm.com,
 	linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: [PATCH v3 09/15] remoteproc: qcom: Select QCOM_PAS generic service
-Date: Fri, 27 Mar 2026 18:40:37 +0530
-Message-ID: <20260327131043.627120-10-sumit.garg@kernel.org>
+Subject: [PATCH v3 10/15] drm/msm: Switch to generic PAS TZ APIs
+Date: Fri, 27 Mar 2026 18:40:38 +0530
+Message-ID: <20260327131043.627120-11-sumit.garg@kernel.org>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260327131043.627120-1-sumit.garg@kernel.org>
 References: <20260327131043.627120-1-sumit.garg@kernel.org>
@@ -117,26 +117,90 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 
-Select PAS generic service driver to enable support for multiple PAS
-backends like OP-TEE in addition to SCM.
+Switch drm/msm client drivers over to generic PAS TZ APIs. Generic PAS
+TZ service allows to support multiple TZ implementation backends like QTEE
+based SCM PAS service, OP-TEE based PAS service and any further future TZ
+backend service.
 
 Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 ---
- drivers/remoteproc/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/gpu/drm/msm/Kconfig             |  1 +
+ drivers/gpu/drm/msm/adreno/a5xx_gpu.c   |  4 ++--
+ drivers/gpu/drm/msm/adreno/adreno_gpu.c | 11 ++++++-----
+ 3 files changed, 9 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/remoteproc/Kconfig b/drivers/remoteproc/Kconfig
-index ee54436fea5a..da3c5d9562ea 100644
---- a/drivers/remoteproc/Kconfig
-+++ b/drivers/remoteproc/Kconfig
-@@ -230,6 +230,7 @@ config QCOM_Q6V5_PAS
- 	select QCOM_Q6V5_COMMON
- 	select QCOM_RPROC_COMMON
+diff --git a/drivers/gpu/drm/msm/Kconfig b/drivers/gpu/drm/msm/Kconfig
+index 250246f81ea9..09469d56513b 100644
+--- a/drivers/gpu/drm/msm/Kconfig
++++ b/drivers/gpu/drm/msm/Kconfig
+@@ -21,6 +21,7 @@ config DRM_MSM
+ 	select SHMEM
+ 	select TMPFS
  	select QCOM_SCM
 +	select QCOM_PAS
- 	help
- 	  Say y here to support the TrustZone based Peripheral Image Loader for
- 	  the Qualcomm remote processors. This is commonly used to control
+ 	select QCOM_UBWC_CONFIG
+ 	select WANT_DEV_COREDUMP
+ 	select SND_SOC_HDMI_CODEC if SND_SOC
+diff --git a/drivers/gpu/drm/msm/adreno/a5xx_gpu.c b/drivers/gpu/drm/msm/adreno/a5xx_gpu.c
+index ef9fd6171af7..3283852f9a14 100644
+--- a/drivers/gpu/drm/msm/adreno/a5xx_gpu.c
++++ b/drivers/gpu/drm/msm/adreno/a5xx_gpu.c
+@@ -5,7 +5,7 @@
+ #include <linux/kernel.h>
+ #include <linux/types.h>
+ #include <linux/cpumask.h>
+-#include <linux/firmware/qcom/qcom_scm.h>
++#include <linux/firmware/qcom/qcom_pas.h>
+ #include <linux/pm_opp.h>
+ #include <linux/nvmem-consumer.h>
+ #include <linux/slab.h>
+@@ -653,7 +653,7 @@ static int a5xx_zap_shader_resume(struct msm_gpu *gpu)
+ 	if (adreno_is_a506(adreno_gpu))
+ 		return 0;
+ 
+-	ret = qcom_scm_set_remote_state(SCM_GPU_ZAP_SHADER_RESUME, GPU_PAS_ID);
++	ret = qcom_pas_set_remote_state(SCM_GPU_ZAP_SHADER_RESUME, GPU_PAS_ID);
+ 	if (ret)
+ 		DRM_ERROR("%s: zap-shader resume failed: %d\n",
+ 			gpu->name, ret);
+diff --git a/drivers/gpu/drm/msm/adreno/adreno_gpu.c b/drivers/gpu/drm/msm/adreno/adreno_gpu.c
+index d5fe6f6f0dec..047df0393128 100644
+--- a/drivers/gpu/drm/msm/adreno/adreno_gpu.c
++++ b/drivers/gpu/drm/msm/adreno/adreno_gpu.c
+@@ -8,6 +8,7 @@
+ 
+ #include <linux/ascii85.h>
+ #include <linux/interconnect.h>
++#include <linux/firmware/qcom/qcom_pas.h>
+ #include <linux/firmware/qcom/qcom_scm.h>
+ #include <linux/kernel.h>
+ #include <linux/of_reserved_mem.h>
+@@ -146,10 +147,10 @@ static int zap_shader_load_mdt(struct msm_gpu *gpu, const char *fwname,
+ 		goto out;
+ 
+ 	/* Send the image to the secure world */
+-	ret = qcom_scm_pas_auth_and_reset(pasid);
++	ret = qcom_pas_auth_and_reset(pasid);
+ 
+ 	/*
+-	 * If the scm call returns -EOPNOTSUPP we assume that this target
++	 * If the pas call returns -EOPNOTSUPP we assume that this target
+ 	 * doesn't need/support the zap shader so quietly fail
+ 	 */
+ 	if (ret == -EOPNOTSUPP)
+@@ -175,9 +176,9 @@ int adreno_zap_shader_load(struct msm_gpu *gpu, u32 pasid)
+ 	if (!zap_available)
+ 		return -ENODEV;
+ 
+-	/* We need SCM to be able to load the firmware */
+-	if (!qcom_scm_is_available()) {
+-		DRM_DEV_ERROR(&pdev->dev, "SCM is not available\n");
++	/* We need PAS to be able to load the firmware */
++	if (!qcom_pas_is_available()) {
++		DRM_DEV_ERROR(&pdev->dev, "Qcom PAS is not available\n");
+ 		return -EPROBE_DEFER;
+ 	}
+ 
 -- 
 2.51.0
 
