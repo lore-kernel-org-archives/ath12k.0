@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EC70FF492A
-	for <ath12k@archiver.kernel.org>; Mon, 30 Mar 2026 06:30:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC4E2FF4953
+	for <ath12k@archiver.kernel.org>; Mon, 30 Mar 2026 07:09:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
 	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NmI0mvENaLlKzpVxR+d6bE6tK5TzHv8aSnQYB4jVz2E=; b=TiIRVHVWrg0squzrMac3te5x8O
-	6U8/ylQTFNY03uI8gxxfresWOt7keHj7Gwl/ImOUmNmUY3rZPwUx0BaK6TbrqXUiOxeUc5xUJlGeU
-	t0h05ZAacnqZk6sOIp0dYjXo/enTVZ6grJpuT/IB24kwIuQreug499bY1hFXkcU6n0PdTMOGo3Fb8
-	m4IG/bds9dzUIsWJwqBnWdH06EF6HitQDns7S+v+3/orZ22d/5EtPWujDfRgGdcbBe8NPF0pYUWX0
-	jpzc1IK2/XPO1f8iaVPxuAgLNk53u68h2GE3DBNRRYgTVPfEIy4XDOWjY2eOp14rEpYSVVrFDWFIR
-	24S2AAZg==;
+	bh=0Ajo+3jJZtKITRETEgMcCQGmUAN+W+ZGpmTxVIRmv2U=; b=AqbfpYyO/cRFudnX/DyR716ArH
+	6q2nMJw3foCXch+Fx97rfbCl+iTKBi05/J0h87TbhWIUp47+xQjyjcGCvKIxDbcP0yQnJc4ua9Xd6
+	nykRx5I7eraFLp2qmW3DOfs8drMosQmgYPVyi/iLQ30+nmSJ02pOUec+vhkIe7YeCjXU7SS2ufHyk
+	mtDqHFUZcOH+2Ws7ju/BAhWeDZEE62Rbwdp6BxJLxHwcCu0t4CRL78f6NmKVU05+fbYM1moUbKFjA
+	IOAM/ugLw81+a3SpMz0YaWGwMq6O0u//VlfGEYz9wLVnQBevPWaKlxcBgeCi5HGZ49UC2L7OgwyNg
+	EXG1Mo7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w768R-0000000AgtI-0ipF;
-	Mon, 30 Mar 2026 06:30:03 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1w76k9-0000000AjWe-1ar3;
+	Mon, 30 Mar 2026 07:09:01 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w768Q-0000000AgtC-0THt
+	id 1w76k7-0000000AjWD-0aLu
 	for ath12k@lists.infradead.org;
-	Mon, 30 Mar 2026 06:30:02 +0000
+	Mon, 30 Mar 2026 07:09:00 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id AC2F260054;
-	Mon, 30 Mar 2026 06:30:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0708CC4CEF7;
-	Mon, 30 Mar 2026 06:29:44 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 9254A43D99;
+	Mon, 30 Mar 2026 07:08:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C37DEC4CEF7;
+	Mon, 30 Mar 2026 07:08:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1774852200;
-	bh=035aYXpJRW2cnLWGbph4ptLu8VVBvXeKIlejv+8hpVw=;
+	s=k20201202; t=1774854537;
+	bh=/jDwCS37ClQxnMNZi4IpdtAvb0wwJQBYhYWpxA7NdaE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=sAap5ILNduf99Z2ehiqgpjwUfo5MqIvhYLE72v04gGyFNT1vPdmm2znMIBN/1WPxv
-	 KFsmu4d/uEKwe4XwHGphBp0Vw7GsXJYYR6ENvjTAL0kG+11TPgBF7lAskT6NKaKXv3
-	 SqpRuekj2IYI74IFT03P/UKrpKruyJc/fJrbTlvXFEZhcfnBYmP2r3QBNjMbvr6xs6
-	 X0Rgga6H6yaX5JaJ96l+QcsN4bSAW7HOePJIybS6egOCDftuDv/k3vMpPAGFTMgv5p
-	 zdmnBwa7Ysw4rlo8bnuuyuRkb457dCwRAwGl8aiZEoem/hIHfd217rZEav/6X6pLnq
-	 CcrmVuNPPxuXw==
-Date: Mon, 30 Mar 2026 11:59:41 +0530
+	b=MWwAMHbXhHOam7pxS91Eazmz+hUaoDAf2swLU3Xxq0gOap3WbmlYuHlA7Lt16iHk/
+	 okQRjsC54iUTWRm7vbYcOl63AQeNSP1MNEgw1swjH48UQtjagL+B86CXREPNJzOwOq
+	 Cp8lf0iFOXffdYv5f1ZGoX72EDi3p7JUGh67peAHFMO9Q/7XBtMWuezArFeYv8+qt4
+	 fgq1SWLpceGxYsLEgK9CZjwsuKJFx4nOY6DeWoYA4vzLl8bC5lMBjrcNcnMwUkRVKt
+	 CDc0Q5JxKQzahwBZXb6knpLrYwg3kt1+XvW2qSNHe45aTGMzshmNSA4zgJNCA3qG5D
+	 kMXWwGLdrpl2w==
+Date: Mon, 30 Mar 2026 12:38:37 +0530
 From: Sumit Garg <sumit.garg@kernel.org>
 To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>,
+Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
 	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
 	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
 	linux-media@vger.kernel.org, netdev@vger.kernel.org,
@@ -60,25 +60,30 @@ Cc: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>,
 	mchehab@kernel.org, elder@kernel.org, andrew+netdev@lunn.ch,
 	davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
 	pabeni@redhat.com, jjohnson@kernel.org, mathieu.poirier@linaro.org,
-	trilokkumar.soni@oss.qualcomm.com, pavan.kondeti@oss.qualcomm.com,
-	jorge.ramirez@oss.qualcomm.com, tonyh@qti.qualcomm.com,
-	vignesh.viswanathan@oss.qualcomm.com,
+	trilokkumar.soni@oss.qualcomm.com, mukesh.ojha@oss.qualcomm.com,
+	pavan.kondeti@oss.qualcomm.com, jorge.ramirez@oss.qualcomm.com,
+	tonyh@qti.qualcomm.com, vignesh.viswanathan@oss.qualcomm.com,
 	srinivas.kandagatla@oss.qualcomm.com,
 	amirreza.zarrabi@oss.qualcomm.com, jens.wiklander@linaro.org,
 	op-tee@lists.trustedfirmware.org, apurupa@qti.qualcomm.com,
 	skare@qti.qualcomm.com, linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
 Subject: Re: [PATCH v2 02/15] firmware: qcom: Add a generic PAS service
-Message-ID: <acoYVdr4wBEqwFoM@sumit-xelite>
+Message-ID: <acohdYeKYSDQrKUZ@sumit-xelite>
 References: <20260312062756.694390-1-sumit.garg@kernel.org>
  <20260312062756.694390-3-sumit.garg@kernel.org>
- <20260313072450.sx7vqtvh62nflhff@hu-mojha-hyd.qualcomm.com>
- <acE3MR4SVCPUzcgR@sumit-xelite>
- <2da6cbcc-677d-4ba8-9762-ecb47b157f21@kernel.org>
+ <28d63822-f191-400a-8005-5185dd480dbb@kernel.org>
+ <acE-kAi2tkPh2qie@sumit-xelite>
+ <5c5b49aa-7819-44c6-b5f7-19ec780d73fa@kernel.org>
+ <2e55bdc3-54a1-4f18-b9ad-fe03f21fc4da@oss.qualcomm.com>
+ <a0a7269d-7a09-4a78-a4b0-b39b67bc253b@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <2da6cbcc-677d-4ba8-9762-ecb47b157f21@kernel.org>
+In-Reply-To: <a0a7269d-7a09-4a78-a4b0-b39b67bc253b@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260330_000859_215290_051ADCCD 
+X-CRM114-Status: GOOD (  23.09  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,30 +98,56 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 27, 2026 at 02:39:24PM +0100, Krzysztof Kozlowski wrote:
-> On 23/03/2026 13:50, Sumit Garg wrote:
-> >>> +
-> >>> +#include <linux/device/devres.h>
-> >>> +#include <linux/firmware/qcom/qcom_pas.h>
-> >>> +#include <linux/kernel.h>
-> >>> +#include <linux/module.h>
-> >>> +
-> >>> +#include "qcom_pas.h"
-> >>> +
-> >>> +struct qcom_pas_ops *ops_ptr;
+On Fri, Mar 27, 2026 at 02:56:40PM +0100, Krzysztof Kozlowski wrote:
+> On 23/03/2026 15:26, Konrad Dybcio wrote:
+> >>>
+> >>> This pattern has been carried from the PAS API contract among kernel
+> >>> clients and the SCM PAS service earlier. The clients don't hold a
+> >>> reference to the PAS data like underlying platform or TEE device etc.
+> >>> Hence the need to have a global data pointer to hold reference to the
+> >>> ops data structure registered by drivers having different lifetime of
+> >>> devices. Also, the PAS APIs can be called from very different client
+> >>> driver contexts.
+> >>>
+> >>> Surely, avoiding global data is always better given a better alternative
+> >>> is there. Do you have any better alternative proposal here?
 > >>
-> >> Should this be static ?
-> > 
-> > It was static earlier in v1. I dropped it based on earlier v1 discussion
-> > with Krzysztof. Let me conclude that discussion on the other thread
-> > again.
-> 
-> The discussion was whether this should be singleton in the first place,
-> not making it a global singleton.
-> 
-> Of course it cannot be anything else than static - nothing should poke here.
+> >> Why it cannot be part of the context?
+> >>
+> >> Look at your API, e.g.:
+> >> qcom_pas_init_image(). It takes struct qcom_pas_context which should
+> >> contain the ops.
 
-Sure, I have put the static back for v3.
+Have a look at all other PAS client APIs, the context isn't something
+that each client takes a reference and pass it on for every PAS
+invocation. And changing the PAS API contract for kernel clients is out
+of scope of this patch-set.
+
+> > 
+> > This would make the client have to select the ops. The whole point is to
+> > avoid that, since the client has no clue (and is supposed not to have any).
+> 
+> Yeah, I see. The problem is that this patchset just keeps growing the
+> singletons so except existing 'struct qcom_scm *__scm' in qcom_scm.c,
+> this one brings at least three new: 'ops_ptr', 'qcom_pas_ops_scm' and
+> 'qcom_pas_ops_tee'.
+
+Not sure how you equate ops structure __pointer__ to the ops structure
+itself. Can you enlighten me how in the rest of the kernel ops data
+structures are shared among independent modules registering on different
+bus types?
+
+> 
+> I don't think you need all four in total, but only one which will hold
+> whatever pointers are necessary.
+
+Your arguments seems to be in favour of the existing monolithic SCM
+driver design but you need to understand that's not how underlying TZ
+services are implemented. The PAS service in TZ has nothing to do with
+the ICE service for inline crypto as an example.
+
+Please go through the motivation of this patch-set and the corresponding
+OP-TEE implementation as TZ which is all open source.
 
 -Sumit
 
