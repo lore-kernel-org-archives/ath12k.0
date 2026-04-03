@@ -4,113 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23075E7E34F
-	for <ath12k@archiver.kernel.org>; Fri,  3 Apr 2026 09:01:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E2BDE7E355
+	for <ath12k@archiver.kernel.org>; Fri,  3 Apr 2026 09:13:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=oqFxlfuV8pspBAs2CXOzM9DH0w3Wtyj4158jVPNTSw0=; b=Fzachs5B5H2MGFChJKz+m5t27V
-	CzpyqwFVc0Im7y61bqFHrUyNckEtP+NAx+qrhLaSvG3VJQU4yT1hYXAHAp2QhiReFcWJqz8ujBIiJ
-	e9O5Qrs4zZ9AL3ZE1Wi7F9wWmlQbYemxhS6YF3lZdO6jIsNNmhIv4D+C7pfRsS1S31EtQgoynisPI
-	Sl3M8RvejYd8VT4gZmryhL6IwBLd9k15n+6z5h++s0XDBh+jlkNxwa7Uf1Mi/KiOCUvyDc3XzsZgY
-	vtf71KbrSCNDiGVFRrosxY2ypxMo19pligblcQa4uMBDMK6Uj4wjA9Ej5IPsT0kab0GwUWfrRXCbI
-	bUJZej8Q==;
+	bh=O5YFDe8MFBUG75m/VVzNofZ9EsQEjcB7NmOeE9w7w40=; b=wEo1WL/iy5g80HRBf/zjWTNRRM
+	QYNTzcgxeTmVbJSBr5cVUJc39VzkWupONbbFTsdUvahLiG/mceSUzxfNOZG6VFjqOP5ctiAimQ1G3
+	ut0e6Asww52jIu43ObXhJFu8RDscZ98pWIhiYHbOsb+vq7hcS93REBWg4UAwoBpe6yV1id2xDe6me
+	B4Yp04KgCXBUPU70d7on2dqqH/PqaiYEql8SuUsUoEJEpL77B549l+ks7N5iyubfEnUlm7J6pfTCq
+	0JBH5npxsTR8OK1NvStbp0wSngNSLfdMJWkKthSw9T2JMbm3HAQlHLA7jSWUupDQb/gQVrpasuS5p
+	XM5QVbGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8aPE-00000001lNb-2x1k;
-	Fri, 03 Apr 2026 09:01:32 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1w8ab6-00000001mSg-05Q0;
+	Fri, 03 Apr 2026 09:13:48 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8aPD-00000001lNS-15Xt
-	for ath12k@bombadil.infradead.org;
-	Fri, 03 Apr 2026 09:01:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=oqFxlfuV8pspBAs2CXOzM9DH0w3Wtyj4158jVPNTSw0=; b=QnzVf9w8DNjBJ19Y8cOOEPFEX+
-	yIV2uYhEbdDtiK45qnqO0YdWNZaGsP97uAkUuVKZv7ju/3P4rzNRF6gxB3qT3RKIrCTUPnCC3Ktrs
-	sRr2ZFZ9FBsS8mzhhbV4fZZBSrErkfCn/lurDzC/Zd8FCdsLsw0Xk7iAx7lSMzBgBVat3YE1SlG1t
-	HqhaUGrXgekiKN+FCRdVEVtsKIf3eUZ3MnNqLauws3YrbAZDcFhORsKY1P4J6IgJSEHSK7U8BxScW
-	PsPards0ZuUJsGCXF+zLVVCeoeElh6iuxUR9n0fG1lrjmMrwDut+yPEAjDt2xD7HDrhBPnMVMwuz9
-	9UHEqHMg==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8aP9-00000003r5B-0FMH
+	id 1w8ab3-00000001mSH-0N21
 	for ath12k@lists.infradead.org;
-	Fri, 03 Apr 2026 09:01:29 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6336Gip83772892
-	for <ath12k@lists.infradead.org>; Fri, 3 Apr 2026 09:01:22 GMT
+	Fri, 03 Apr 2026 09:13:46 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6336EuGl140906
+	for <ath12k@lists.infradead.org>; Fri, 3 Apr 2026 09:13:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	oqFxlfuV8pspBAs2CXOzM9DH0w3Wtyj4158jVPNTSw0=; b=MJuVqINBnD/Yyeyf
-	XO0FEH61k35SZ0MZfCZiIaX8buCquv/HA3O8+WCTM+DE750FkWOBICkUnqJzvRPR
-	A/5AWn4IoLgMYxcfVtzqgJ2w53TVf9VeyE5HsY73x9inaUN3dDrtYgk4/55G/1Bb
-	VXZ7reDiil/wTbsfBOKqJIbEmyqABijJOStLGwj4mNLcKeioOa4leWB1O5CzDLjG
-	RQZUzx6EP17sKEraLd4OdMHkQAAS1e1+z/ZQB8g2kmevszH4iNDuD/Uy0YtHqADs
-	+qFjWo2B8ecRU2HyvtyMPI3Cjaiy6gaKvu7sYYL1A74zGu09lNI5oloaHKOzdoEI
-	pekMYw==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4d9wcs2a0w-1
+	O5YFDe8MFBUG75m/VVzNofZ9EsQEjcB7NmOeE9w7w40=; b=J1rytX0PjoSiJRDB
+	YEtlUo41CHvxqy3DVcRqJxkwMcLU/sAE2kO0kHLWW79DmaHlKm3Ufix2P5pjt56n
+	NhIM7p/JfE1Q4CVyZFfL6U7vgEMl38xMZSTXpgI53xTGhk2hesnDVIUsfP5/ZYpf
+	SgwHrfJkq1hdux9Lda/kXnzTEHUfKfA8ZQ0WO0fR/rAv5gbg4r2B/NO2hPt4DNBu
+	ljvWb4WRrdMHIav24514Cl5nEkvYYUsk9Mv0mKGE0ZBC5H6bINKfx9SwBvGUHzki
+	gAEzfWjFmAmbrKBXlynkEtrTz3cAN0SKraQ8JQnJ72jUc/Etp+2wgRpwJiLPXKzj
+	zk0xPQ==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4da83y0gup-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 03 Apr 2026 09:01:21 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2b24cd2e2b3so17541195ad.0
-        for <ath12k@lists.infradead.org>; Fri, 03 Apr 2026 02:01:21 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 03 Apr 2026 09:13:44 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-35da8eb0553so1812177a91.1
+        for <ath12k@lists.infradead.org>; Fri, 03 Apr 2026 02:13:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1775206881; x=1775811681; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1775207623; x=1775812423; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=oqFxlfuV8pspBAs2CXOzM9DH0w3Wtyj4158jVPNTSw0=;
-        b=b/IfRdHk97xq5/IDSWODWYgtSpDKWPlInv1P6HHK1JgJJSWNXX3H6Cyggj0YSyebzD
-         ifKhxbKd5VlMeDcdQKMglY16WTAr18N7UiqWLz9e2mxjq51HWXEmJoj28weteTg7T9kk
-         A43/46GzhDluEH0MBDsA3mNZ2sWmj2hx+JgJHlUK5mORNTVU5jz/tuokY6NZuzjK2mN+
-         BphIKwLba62n+7Mxgv51m+UI3wihdFMtJay7+flK7eDVljL7kP+wR2TAEHAKkRcZDVEI
-         I/FblZ2zbtS6+yrEs9jJSz2cvienKMC4uZlYTOB/+sVBom4tuwTh5eO+xOvFOvqrjy9j
-         SztQ==
+        bh=O5YFDe8MFBUG75m/VVzNofZ9EsQEjcB7NmOeE9w7w40=;
+        b=U2rfZSUdNYuM6Bt3IqmlcLpahS+6SAniajJ3qyrqzVA4YJRV4t+1Dgf5xWJ5BPtUev
+         M/alc3IAUYh3vS77UPNH7eE8CPPxdO4Ksebm7OgklafZ9tR5bcGawdIH4HiVF54xdIui
+         WSKO3HWyCavMm/li5EjzsgheqB7j5harVNvrpNre80EqKrtDKPizbHPXWm7LiE8Jstnn
+         6hoOrgfiQsVuV76x4WMloDpYKxy+QDcdd5IZ0d0GNRDydmD15EbFT9QqtrrxNWxCffjP
+         izMZ2pAEkJj2Sxzh+aVQ/dKqz0Pf6iwrmEjay11NNX1f7EQL4lsNSF4c10JEmekWPiA3
+         ZaOw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1775206881; x=1775811681;
+        d=1e100.net; s=20251104; t=1775207623; x=1775812423;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=oqFxlfuV8pspBAs2CXOzM9DH0w3Wtyj4158jVPNTSw0=;
-        b=gesQrbjT1BVLy1L+/mdE1Mck2BxqjRj8KvPyjJEOp4Jvg5hX2Qx5pEnbJfRhv6fkTh
-         1QccOBTx3kHRVcQaEykCCBzwV+d5918Gcp7s+uQOcB4/wbox9DdsgI9p5cnQ6B+3N3Eq
-         EUbjYhxQ3ER5hXZsZLFU0KFeGtHSInYLDRyBHFxoOAUHusOvQ6Q9uyKi8HJ0gE5lhHfC
-         xeONIvXmgXkajpvSToQ/DoCpYr53Q7TJc/r79NNeCx2581KWAW8H13NC3KtUQgmEiWJw
-         5ilNsj3WWuCYEPXhf/7YEPrSOkXdCyEXJ6LBzmN82ArMO69pup340kMxks/laqo99obB
-         E9Wg==
-X-Forwarded-Encrypted: i=1; AJvYcCUixhcAHb97EKPwlHCLfK8bkny3sAqNeMl6qfCUauxpXbTHDxr9NHcFoSk5+PeVpv18Adt7W3c=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwHhsZMDPU/X1clefbK5TxAAwixiPjWP6Qk2fq1s2R3vDfAmjdP
-	jUrTZVVYEQZzw5qX6p4Nx6eLJir5QNR79Pm6knsNCEry36Nebx44TK0twe6uNBSEooBamnNSIsc
-	aC6WRzPVUZKxcAVgLGDPYpTjmfdsk59s7B0m3LwSFOPZJYHik63lQRg6N+9RWCB+V
-X-Gm-Gg: AeBDievQ/1x++bV1PVWmjI6vbjpNAlogJaiNbPVhNhDw49r2K455RFnaYyE9jXoiTBR
-	Bls40DXQpfzY0joJAafhYbcAPPRCbpIbRNu6swtI2uHwB6rxNpMd1mJU1xClw6aod2vbxME8xNB
-	ZsaRIxwxPOU2oendrUblMmRgnztaLF9W6/i85fBT03Wh9EIBzgpB7oBA+wCPYYwMyzlAlSdOhAK
-	jQmv6j7+cq3ckZjedAJ2JpzpD6osEq1AYWpBaE4yHKwYYcHm29/nlKAAxQVuOROIUbPVbJdF6Ru
-	2Xi1vRR3kegTTr76gqFneoaptRdslQxNwA1Z+6IkQdJhGs6MRraNeWRaaVuTa057WF+CBboKJE5
-	eardAYgmkTbFe1E1pKDalYZAcX5C8ESsCTlGMszJkxtQTsk9Vg+D0MnMDBnozlX8BrhSFvx/U9o
-	ygRt1q7Fo1bojjJpY9L0Q=
-X-Received: by 2002:a17:903:1b4c:b0:2b2:420a:b48a with SMTP id d9443c01a7336-2b28182c458mr24575745ad.32.1775206880389;
-        Fri, 03 Apr 2026 02:01:20 -0700 (PDT)
-X-Received: by 2002:a17:903:1b4c:b0:2b2:420a:b48a with SMTP id d9443c01a7336-2b28182c458mr24575075ad.32.1775206879727;
-        Fri, 03 Apr 2026 02:01:19 -0700 (PDT)
+        bh=O5YFDe8MFBUG75m/VVzNofZ9EsQEjcB7NmOeE9w7w40=;
+        b=W2EKKm7tH+ZThZ3dxantIZeB4nzzwFH5AGpTHvamcnXJ8lxlHsJQSGCrT3qzOLbC5X
+         wUITAGsApuJOSXOsEa1yJv3WCzWq9utPhrgO0rkYdRmJxMT9uSJLG5Ec18KrC8v5T0Qs
+         6YCd57IQzwEV4NGhb4px7cxDI3i8C39MExii5IHs6dSa0J73JlqCGV0F70xCPQblNFI/
+         BNKypKWeIKcS09skIZbrr91U8vPLNFcES44bpgRUOFGfV7Wf0r8SNFOA3icZX65HZmd7
+         yFiygjRNuam1xwdIVpcqaofhgwNEOCrj99XmbuiiW8qJPcTt20t+42tUaP4bqGjME+AQ
+         hlUw==
+X-Forwarded-Encrypted: i=1; AJvYcCURTVeB0xYtLDV4s0WZ7IfHURJ8RIjrsSkooPzCl/kV+hfWBc2he/wTwKyYzg4wwsTAtW5aNpA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxUyyJ4sQYeEkJeeFVidJegSq8qSDcjxyrNyrZWToEMNdxX/pJl
+	BWLQrbt4rqXX/HShO2qoQgP1+KKRuP/lz17lppGG3Fu0Cq9oHlmKUi1ywgquypTCp5CyEI0LZvU
+	8pWCip0PwWJtGhjMSzI4ngwMJButFUduoy0K//sYz3l699zp4iIw3mqXaSxN+CALa
+X-Gm-Gg: AeBDieuGwm+jsIUUh4ioaTkN188iF9GUCa80U0I+r+Uj8solx1ihekycOay5gLyd5DS
+	6Xs83RJXw5fqjj0SG0bntIP+AW+W6ChsPTR8eZSA4Xcx8ogGbM19MkEkUoXcXBp12cjeuVBIs9d
+	769EL/4W3+ghUlJ+01SECwphIkEgfCl34VYzGRECfsrm2Jrf9oEfeWo72a47qRme3bI5jwXXzXq
+	dO3qYv5n81/7TYnirRTqgiyXOkaDezmMGoyAUPR+bQEi0nT3V9YcCjLKYs4QPdSSnkjwgAYugDy
+	BQJEeXjJBUxMhYWaiJXYeAmrG2f7mW2hXSWQoWSdCMwUMY+W9iJQG6D1GxkaOdp9Xy+PddXN996
+	iAHVhaKyWdWOpcQg5zI2HbXC4EJ7jfQUYkvndzsnI6gd6xV5J37woijut1l8+S96LjrVD7ZquyQ
+	gkIkTRapQ1Y9D/nvk0hRQ=
+X-Received: by 2002:a17:90b:52c7:b0:35b:a44f:b80 with SMTP id 98e67ed59e1d1-35de591e934mr1457565a91.1.1775207623356;
+        Fri, 03 Apr 2026 02:13:43 -0700 (PDT)
+X-Received: by 2002:a17:90b:52c7:b0:35b:a44f:b80 with SMTP id 98e67ed59e1d1-35de591e934mr1457527a91.1.1775207622493;
+        Fri, 03 Apr 2026 02:13:42 -0700 (PDT)
 Received: from [10.133.33.111] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2b27472cdfesm53090625ad.14.2026.04.03.02.01.16
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-35dd35f50e9sm5182277a91.6.2026.04.03.02.13.39
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 03 Apr 2026 02:01:19 -0700 (PDT)
-Message-ID: <5fff7189-fee7-4d73-a9a1-728389900678@oss.qualcomm.com>
-Date: Fri, 3 Apr 2026 17:01:15 +0800
+        Fri, 03 Apr 2026 02:13:42 -0700 (PDT)
+Message-ID: <5a606f7d-6665-4b0c-bbbe-32538b2315b6@oss.qualcomm.com>
+Date: Fri, 3 Apr 2026 17:13:37 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v4 2/6] wifi: ath12k: Add ath12k_hw_params for
- IPQ5424
+Subject: Re: [PATCH ath-next v4 0/6] wifi: ath12k: Enable IPQ5424 AHB WiFi
+ device
 To: Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>,
         Johannes Berg <johannes@sipsolutions.net>,
         Rob Herring <robh@kernel.org>,
@@ -120,42 +105,43 @@ To: Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>,
         Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
-        Saravanakumar Duraisamy <quic_saradura@quicinc.com>
+        Saravanakumar Duraisamy <quic_saradura@quicinc.com>,
+        Sowmiya Sree Elavalagan <sowmiya.elavalagan@oss.qualcomm.com>,
+        Krzysztof Kozlowski <krzk@kernel.org>
 References: <20260402-ath12k-ipq5424-v4-0-cd1e0f0a6c88@oss.qualcomm.com>
- <20260402-ath12k-ipq5424-v4-2-cd1e0f0a6c88@oss.qualcomm.com>
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20260402-ath12k-ipq5424-v4-2-cd1e0f0a6c88@oss.qualcomm.com>
+In-Reply-To: <20260402-ath12k-ipq5424-v4-0-cd1e0f0a6c88@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: bVp-2DgK147UMOxeuqUrcQNIjYOQCvz3
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDAzMDA3OCBTYWx0ZWRfX037sSo9h2c4N
- OdRmdlvKSF+uM+GAIkP2OD+ZAYXBjSRTIbW1chFdfdBY56nrLwWmYZFdKTLDzj1NYDtDqICVI2O
- i/nqqfkh1M+mtM8teRpVTkTsBejg8MaA12zZqYTYT3rn9ReNR4rUOWNCLZ1miapwcFfFs/96LcC
- X2kLYDSyRWef0gghsEOqH5cwGcaHhrUgbrYhVk/FbKGwkgGYpDRAlcO24e2bHfKz7ioWOCuFTDa
- m9Y0wpuZ9YdCsfZ7ii2CISnpmvyKTfY8L/YT6yhI6VkF9iniDbV7dO8v6ANTcyKUBy/By8Sz0Vq
- ZTwsnFVn271hp/O//ZkCwLS1aLNYbFdaQbOWYnGzvQP7II3233oPcP0bgDinc7rh792P/ZfsZLx
- XoVx0PE4WnSt41l7/jkZyLpAyFwRROGSDyMAi95q+Qa87iECkB/VGXKTM3VnOc9C4Nla4mKsHqc
- sksKpXj6F0w/lC6o+Qw==
-X-Authority-Analysis: v=2.4 cv=ZuPg6t7G c=1 sm=1 tr=0 ts=69cf81e1 cx=c_pps
- a=JL+w9abYAAE89/QcEU+0QA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Authority-Analysis: v=2.4 cv=ar6/yCZV c=1 sm=1 tr=0 ts=69cf84c8 cx=c_pps
+ a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=Z7WYvUlOW1kuK6QZCLMA:9 a=QEXdDO2ut3YA:10
- a=324X-CrmTo6CU4MGRt3R:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: bVp-2DgK147UMOxeuqUrcQNIjYOQCvz3
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=bC-a23v3AAAA:8 a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8
+ a=0McBQ3JIi2lqW2-U6ZoA:9 a=QEXdDO2ut3YA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
+ a=FO4_E8m0qiDe52t0p3_H:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: uFmraeOGF8ftd4JOfuMMzJEdczcha9dG
+X-Proofpoint-GUID: uFmraeOGF8ftd4JOfuMMzJEdczcha9dG
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDAzMDA3OSBTYWx0ZWRfX6soM0QI9fmaF
+ U9alNakU8x1Da43JSbiLLOv+o7OrqGN6971zRgQ3yQXd0XTEancwLypwT2BUbZoa4rYYpdL1qbQ
+ SXfH21Kuw+ei06rm9yx6RUo12kGpL5Mw2t8MS2JblKeomwsGnfeprsgEursbAlKHW9nzRIhll5s
+ 7eP0SIwT9wSPv4IRGNGNl5kRipnP/U4YOnTg4y/bnBamlhquXrAgY3xQ5ftXqtdLtK7+6UzGCHu
+ +gm3Hf3M+jWG9nTqPQ3itWc6z2RXZgh+gACoSPR4xOeRus/h8Enhd1KU7TiM+2YXeFqcsiuVubq
+ UOVsB1DQEyQqnLB7E+53SiA0CTxKJo21UbTwDJGcXxhRpBTuqMPDDynBUYMHBwYf9UQpmkGVTME
+ 9ePu3zFSvak/KFcLcgmbL1lChcGbhV2NOdr48TRUIQ+kiy3abIcfJYQ61Q+0e49RHyPpDcVNCZ3
+ jhsruh9u3Di1fApFR1w==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-04-03_02,2026-04-03_01,2025-10-01_01
+ definitions=2026-04-03_03,2026-04-03_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 bulkscore=0 spamscore=0 lowpriorityscore=0 phishscore=0
- priorityscore=1501 malwarescore=0 clxscore=1015 impostorscore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2603050001
- definitions=main-2604030078
+ priorityscore=1501 suspectscore=0 lowpriorityscore=0 bulkscore=0 adultscore=0
+ malwarescore=0 phishscore=0 spamscore=0 clxscore=1015 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2604030079
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260403_100127_449104_C53786CF 
-X-CRM114-Status: GOOD (  17.79  )
+X-CRM114-CacheID: sfid-20260403_021345_166396_4D14CF8C 
+X-CRM114-Status: GOOD (  16.74  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -172,128 +158,74 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 4/2/2026 11:54 AM, Raj Kumar Bhagat wrote:
-> From: Saravanakumar Duraisamy <quic_saradura@quicinc.com>
+On 4/2/2026 11:53 AM, Raj Kumar Bhagat wrote:
+> Add support for the new ath12k AHB device IPQ5424, as currently, Ath12k
+> AHB only supports IPQ5332 WiFi devices.
 > 
-> Add ath12k_hw_params for the ath12k AHB-based WiFi 7 device IPQ5424.
-> The WiFi device IPQ5424 is similar to IPQ5332. Most of the hardware
-> parameters like hw_ops, wmi_init, ring_mask, etc., are the same between
-> IPQ5424 and IPQ5332, hence use these same parameters for IPQ5424.
-> Some parameters are specific to IPQ5424; initially set these to
-> 0 or NULL, and populate them in subsequent patches.
+> The IPQ5424 is an IEEE 802.11be 2 GHz WiFi device, supporting 4x4
+> configurations. To enable the IPQ5424 device:
+> - Add the necessary hardware parameters for IPQ5424.
+> - Modify the boot-up sequence for ath12k AHB to accommodate the
+>   requirements of the IPQ5424 device.
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
-> Tested-on: IPQ5424 hw1.0 AHB WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Saravanakumar Duraisamy <quic_saradura@quicinc.com>
-> Signed-off-by: Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>
 > ---
->  drivers/net/wireless/ath/ath12k/core.h     |  1 +
->  drivers/net/wireless/ath/ath12k/wifi7/hw.c | 75 ++++++++++++++++++++++++++++++
->  2 files changed, 76 insertions(+)
+> Changes in v4:
+> - DT binding: dropped copyright update as per discussion in v3.
+> - DT binding: Used DT binding from v2 and retained Acked-by tag.
+> - Link to v3: https://patch.msgid.link/20260331-ath12k-ipq5424-v3-0-1455b9cae29c@oss.qualcomm.com
 > 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index 59c193b24764..68453594eba8 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.h
-> +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -157,6 +157,7 @@ enum ath12k_hw_rev {
->  	ATH12K_HW_WCN7850_HW20,
->  	ATH12K_HW_IPQ5332_HW10,
->  	ATH12K_HW_QCC2072_HW10,
-> +	ATH12K_HW_IPQ5424_HW10,
->  };
->  
->  enum ath12k_firmware_mode {
-> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-> index ec6dba96640b..9b9ca06a9f45 100644
-> --- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-> +++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-> @@ -753,6 +753,81 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
->  
->  		.dp_primary_link_only = false,
->  	},
-> +	{
-> +		.name = "ipq5424 hw1.0",
-> +		.hw_rev = ATH12K_HW_IPQ5424_HW10,
-> +		.fw = {
-> +			.dir = "IPQ5424/hw1.0",
-> +			.board_size = 256 * 1024,
-> +			.cal_offset = 128 * 1024,
-> +			.m3_loader = ath12k_m3_fw_loader_remoteproc,
-> +			.download_aux_ucode = false,
-> +		},
-> +		.max_radios = 1,
-> +		.single_pdev_only = false,
-> +		.qmi_service_ins_id = ATH12K_QMI_WLFW_SERVICE_INS_ID_V01_IPQ5332,
-> +		.internal_sleep_clock = false,
-> +
-> +		.hw_ops = &qcn9274_ops,
-> +		.ring_mask = &ath12k_wifi7_hw_ring_mask_ipq5332,
-> +
-> +		.host_ce_config = ath12k_wifi7_host_ce_config_ipq5332,
-> +		.ce_count = 12,
-> +		.target_ce_config = ath12k_wifi7_target_ce_config_wlan_ipq5332,
-> +		.target_ce_count = 12,
-> +		.svc_to_ce_map =
-> +			ath12k_wifi7_target_service_to_ce_map_wlan_ipq5332,
-> +		.svc_to_ce_map_len = 18,
-> +
-> +		.rxdma1_enable = true,
-> +		.num_rxdma_per_pdev = 1,
-> +		.num_rxdma_dst_ring = 0,
-> +		.rx_mac_buf_ring = false,
-> +		.vdev_start_delay = false,
-> +
-> +		.interface_modes = BIT(NL80211_IFTYPE_STATION) |
-> +				   BIT(NL80211_IFTYPE_AP) |
-> +				   BIT(NL80211_IFTYPE_MESH_POINT),
-> +		.supports_monitor = true,
-> +
-> +		.idle_ps = false,
-> +		.download_calib = true,
-> +		.supports_suspend = false,
-> +		.tcl_ring_retry = true,
-> +		.reoq_lut_support = false,
-> +		.supports_shadow_regs = false,
-> +
-> +		.num_tcl_banks = 48,
-> +		.max_tx_ring = 4,
-> +
-> +		.wmi_init = &ath12k_wifi7_wmi_init_qcn9274,
-> +
-> +		.qmi_cnss_feature_bitmap = BIT(CNSS_QDSS_CFG_MISS_V01),
-> +
-> +		.rfkill_pin = 0,
-> +		.rfkill_cfg = 0,
-> +		.rfkill_on_level = 0,
-> +
-> +		.rddm_size = 0,
-> +
-> +		.def_num_link = 0,
-> +		.max_mlo_peer = 256,
-> +
-> +		.otp_board_id_register = 0,
-> +
-> +		.supports_sta_ps = false,
-> +
-> +		.acpi_guid = NULL,
-> +		.supports_dynamic_smps_6ghz = false,
-> +		.iova_mask = 0,
-> +		.supports_aspm = false,
-> +
-> +		.ce_ie_addr = NULL,
-> +		.ce_remap = NULL,
-> +		.bdf_addr_offset = 0x940000,
-> +
-> +		.dp_primary_link_only = true,
-> +	},
->  };
+> Changes in v3:
+> - DT binding: updated copyright.
+> - DT binding: Dropped Acked-by tag as copyright is updated.
+> - Rebased on latest ToT.
+> - Dropped ath12k_ahb_ops because qcom_mdt_load() and
+>   qcom_mdt_load_no_init() now have different number of arguments.
+> - Link to v2: https://lore.kernel.org/all/20250518-ath12k-ipq5424-v2-0-ef81b833dc97@quicinc.com/
+> 
+> Changes in v2:
+> - DT binding: Removed the redundant example for IPQ5424, as it is similar
+>   to IPQ5332.
+> - Added driver probe data structure to eliminate the redundant switch-case
+>   logic in the ath12k_ahb_probe() function.
+> - Validation completed, hence changed from RFC to PATCH.
+> - Link to v1: https://lore.kernel.org/all/20250130051838.1924079-1-quic_rajkbhag@quicinc.com/
+> 
+> Signed-off-by: Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>
+> 
+> ---
+> Raj Kumar Bhagat (2):
+>       dt-bindings: net: wireless: add ath12k wifi device IPQ5424
+>       wifi: ath12k: add ath12k_hw_version_map entry for IPQ5424
+> 
+> Saravanakumar Duraisamy (3):
+>       wifi: ath12k: Add ath12k_hw_params for IPQ5424
+>       wifi: ath12k: add ath12k_hw_regs for IPQ5424
+>       wifi: ath12k: Add CE remap hardware parameters for IPQ5424
+> 
+> Sowmiya Sree Elavalagan (1):
+>       wifi: ath12k: Enable IPQ5424 WiFi device support
+> 
+>  .../bindings/net/wireless/qcom,ipq5332-wifi.yaml   |  1 +
+>  drivers/net/wireless/ath/ath12k/ahb.c              | 36 +++++----
+>  drivers/net/wireless/ath/ath12k/ahb.h              |  1 +
+>  drivers/net/wireless/ath/ath12k/ce.h               | 13 ++-
+>  drivers/net/wireless/ath/ath12k/core.h             |  1 +
+>  drivers/net/wireless/ath/ath12k/wifi7/ahb.c        |  8 ++
+>  drivers/net/wireless/ath/ath12k/wifi7/hal.c        |  7 ++
+>  drivers/net/wireless/ath/ath12k/wifi7/hal.h        |  3 +
+>  .../net/wireless/ath/ath12k/wifi7/hal_qcn9274.c    | 88 ++++++++++++++++++++
+>  .../net/wireless/ath/ath12k/wifi7/hal_qcn9274.h    |  1 +
+>  drivers/net/wireless/ath/ath12k/wifi7/hw.c         | 93 +++++++++++++++++++++-
+>  11 files changed, 231 insertions(+), 21 deletions(-)
+> ---
+> base-commit: 15551ababf6d4e857f2101366a0c3eaa86dd822c
+> change-id: 20260331-ath12k-ipq5424-cddb63a46a97
+> 
 
-mhi_config and current_cc_support are missing, please explicitly set them.
+only nit in patch 2/6, so for patches 2-6/6:
 
->  
->  /* Note: called under rcu_read_lock() */
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+
 > 
 
 
