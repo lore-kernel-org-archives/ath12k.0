@@ -4,144 +4,149 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E2BDE7E355
-	for <ath12k@archiver.kernel.org>; Fri,  3 Apr 2026 09:13:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE79FE7E35D
+	for <ath12k@archiver.kernel.org>; Fri,  3 Apr 2026 09:37:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=O5YFDe8MFBUG75m/VVzNofZ9EsQEjcB7NmOeE9w7w40=; b=wEo1WL/iy5g80HRBf/zjWTNRRM
-	QYNTzcgxeTmVbJSBr5cVUJc39VzkWupONbbFTsdUvahLiG/mceSUzxfNOZG6VFjqOP5ctiAimQ1G3
-	ut0e6Asww52jIu43ObXhJFu8RDscZ98pWIhiYHbOsb+vq7hcS93REBWg4UAwoBpe6yV1id2xDe6me
-	B4Yp04KgCXBUPU70d7on2dqqH/PqaiYEql8SuUsUoEJEpL77B549l+ks7N5iyubfEnUlm7J6pfTCq
-	0JBH5npxsTR8OK1NvStbp0wSngNSLfdMJWkKthSw9T2JMbm3HAQlHLA7jSWUupDQb/gQVrpasuS5p
-	XM5QVbGg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:Date:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=H0MsR4PHC7LRNEDJ02SXHtGh86o8LwWKhT/z44z5dSo=; b=KgUakAZ18iOZ/eDRasfsFfUadE
+	FkKRAv/clpij1jtIeZl2Kay/FNYzyuXHSAtnwu1a0I0yCrqgYxj16nP2z+mLQVqUSHXVcAwh4ERNO
+	7YU2hUmfGm1zwfFU+WYH8jqsKObg8mPmVctZcbmGpNbmDRzHGPsvuOUtq1W9r/t/wMIiJUaJBCR4q
+	dOiNlySyMlIF0WELv/zdT7qa/R3hehJGJZQjvkh3qeHg0eKP5TKsWWSIxD1/29ECkOKf7dpbkZPPc
+	5QE8bhbZ/h4aiQg8WAaIbUo2lAilo6fM2O+mui5nOZQHnXuTivpUK+ZjFdR3r1YetUTqOR4RyBd8u
+	7DLNKU2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8ab6-00000001mSg-05Q0;
-	Fri, 03 Apr 2026 09:13:48 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1w8axr-00000001p96-2SBv;
+	Fri, 03 Apr 2026 09:37:19 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8ab3-00000001mSH-0N21
+	id 1w8axo-00000001p8J-0Kaz
 	for ath12k@lists.infradead.org;
-	Fri, 03 Apr 2026 09:13:46 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6336EuGl140906
-	for <ath12k@lists.infradead.org>; Fri, 3 Apr 2026 09:13:44 GMT
+	Fri, 03 Apr 2026 09:37:17 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6337e2GC2707224
+	for <ath12k@lists.infradead.org>; Fri, 3 Apr 2026 09:37:14 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	O5YFDe8MFBUG75m/VVzNofZ9EsQEjcB7NmOeE9w7w40=; b=J1rytX0PjoSiJRDB
-	YEtlUo41CHvxqy3DVcRqJxkwMcLU/sAE2kO0kHLWW79DmaHlKm3Ufix2P5pjt56n
-	NhIM7p/JfE1Q4CVyZFfL6U7vgEMl38xMZSTXpgI53xTGhk2hesnDVIUsfP5/ZYpf
-	SgwHrfJkq1hdux9Lda/kXnzTEHUfKfA8ZQ0WO0fR/rAv5gbg4r2B/NO2hPt4DNBu
-	ljvWb4WRrdMHIav24514Cl5nEkvYYUsk9Mv0mKGE0ZBC5H6bINKfx9SwBvGUHzki
-	gAEzfWjFmAmbrKBXlynkEtrTz3cAN0SKraQ8JQnJ72jUc/Etp+2wgRpwJiLPXKzj
-	zk0xPQ==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4da83y0gup-1
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=H0MsR4PHC7LRNEDJ02SXHtGh
+	86o8LwWKhT/z44z5dSo=; b=isxJvM2K/Cv3Pm0NShfaaEwkY51/yH2P37+roCBv
+	lYrCcgbdhQHUYJxt9ZaYRXWC20+urqqeQP2i3fq42SxtBdpAbOyHaIPnzRWp93qp
+	QhAms5skdcgdocGbuW8EEkhEUxZ3sTcKnETvEuiyk1+Pm3OocQu1n8HzYcRw66t4
+	536ts+kxzBAJIVeVFBFgH3T8x2hYC18mMhBZriiWcTHzQDNU9C8b+kQqmV4xadiD
+	mTBOHSS2dOrTwiGXGNamY2DF5T1mQ/6TJ4GlxtarDcpWup0gReaWKh75SsJBMArq
+	yJ0mRgfT8xA5wWGvPp4wQ33YQwu38eZi/2RiBGwkpqwHTg==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4d9yfjhyee-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 03 Apr 2026 09:13:44 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-35da8eb0553so1812177a91.1
-        for <ath12k@lists.infradead.org>; Fri, 03 Apr 2026 02:13:43 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 03 Apr 2026 09:37:14 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-509070bda13so29730091cf.1
+        for <ath12k@lists.infradead.org>; Fri, 03 Apr 2026 02:37:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1775207623; x=1775812423; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=O5YFDe8MFBUG75m/VVzNofZ9EsQEjcB7NmOeE9w7w40=;
-        b=U2rfZSUdNYuM6Bt3IqmlcLpahS+6SAniajJ3qyrqzVA4YJRV4t+1Dgf5xWJ5BPtUev
-         M/alc3IAUYh3vS77UPNH7eE8CPPxdO4Ksebm7OgklafZ9tR5bcGawdIH4HiVF54xdIui
-         WSKO3HWyCavMm/li5EjzsgheqB7j5harVNvrpNre80EqKrtDKPizbHPXWm7LiE8Jstnn
-         6hoOrgfiQsVuV76x4WMloDpYKxy+QDcdd5IZ0d0GNRDydmD15EbFT9QqtrrxNWxCffjP
-         izMZ2pAEkJj2Sxzh+aVQ/dKqz0Pf6iwrmEjay11NNX1f7EQL4lsNSF4c10JEmekWPiA3
-         ZaOw==
+        d=oss.qualcomm.com; s=google; t=1775209032; x=1775813832; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=H0MsR4PHC7LRNEDJ02SXHtGh86o8LwWKhT/z44z5dSo=;
+        b=DFiQ25JS7r2DRip29c454m+PpCrmpMK03nMexEJHbV8DJ8nW1mbwO3rBMrcRXM3Pv0
+         KAtn0JmrC+TAc1A7nBF1YQ7GJLvXd8dW3ME5nAeYFkFBpnBEo+0ic0nsMk2/1tgH8fex
+         tOzTOIDOc0YQVY6FCffHDk7jmtHlLZ/Jn3nSQ4FVoDRB0dQYj00AdwvuzVT7fiD9Ve8Z
+         PyLEfwydv69ZTVWWA+t8Czx8HjiYXUIR2wzos72aegp46Xc8FXRwp7tiYEg/t7L1Neis
+         tDvVpxtYjzMmuyuRJnuO05qdaA5RBpaVljbbGOGobA511tNGZPXnD3q9f38p38giKFJP
+         Zu5A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1775207623; x=1775812423;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=O5YFDe8MFBUG75m/VVzNofZ9EsQEjcB7NmOeE9w7w40=;
-        b=W2EKKm7tH+ZThZ3dxantIZeB4nzzwFH5AGpTHvamcnXJ8lxlHsJQSGCrT3qzOLbC5X
-         wUITAGsApuJOSXOsEa1yJv3WCzWq9utPhrgO0rkYdRmJxMT9uSJLG5Ec18KrC8v5T0Qs
-         6YCd57IQzwEV4NGhb4px7cxDI3i8C39MExii5IHs6dSa0J73JlqCGV0F70xCPQblNFI/
-         BNKypKWeIKcS09skIZbrr91U8vPLNFcES44bpgRUOFGfV7Wf0r8SNFOA3icZX65HZmd7
-         yFiygjRNuam1xwdIVpcqaofhgwNEOCrj99XmbuiiW8qJPcTt20t+42tUaP4bqGjME+AQ
-         hlUw==
-X-Forwarded-Encrypted: i=1; AJvYcCURTVeB0xYtLDV4s0WZ7IfHURJ8RIjrsSkooPzCl/kV+hfWBc2he/wTwKyYzg4wwsTAtW5aNpA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxUyyJ4sQYeEkJeeFVidJegSq8qSDcjxyrNyrZWToEMNdxX/pJl
-	BWLQrbt4rqXX/HShO2qoQgP1+KKRuP/lz17lppGG3Fu0Cq9oHlmKUi1ywgquypTCp5CyEI0LZvU
-	8pWCip0PwWJtGhjMSzI4ngwMJButFUduoy0K//sYz3l699zp4iIw3mqXaSxN+CALa
-X-Gm-Gg: AeBDieuGwm+jsIUUh4ioaTkN188iF9GUCa80U0I+r+Uj8solx1ihekycOay5gLyd5DS
-	6Xs83RJXw5fqjj0SG0bntIP+AW+W6ChsPTR8eZSA4Xcx8ogGbM19MkEkUoXcXBp12cjeuVBIs9d
-	769EL/4W3+ghUlJ+01SECwphIkEgfCl34VYzGRECfsrm2Jrf9oEfeWo72a47qRme3bI5jwXXzXq
-	dO3qYv5n81/7TYnirRTqgiyXOkaDezmMGoyAUPR+bQEi0nT3V9YcCjLKYs4QPdSSnkjwgAYugDy
-	BQJEeXjJBUxMhYWaiJXYeAmrG2f7mW2hXSWQoWSdCMwUMY+W9iJQG6D1GxkaOdp9Xy+PddXN996
-	iAHVhaKyWdWOpcQg5zI2HbXC4EJ7jfQUYkvndzsnI6gd6xV5J37woijut1l8+S96LjrVD7ZquyQ
-	gkIkTRapQ1Y9D/nvk0hRQ=
-X-Received: by 2002:a17:90b:52c7:b0:35b:a44f:b80 with SMTP id 98e67ed59e1d1-35de591e934mr1457565a91.1.1775207623356;
-        Fri, 03 Apr 2026 02:13:43 -0700 (PDT)
-X-Received: by 2002:a17:90b:52c7:b0:35b:a44f:b80 with SMTP id 98e67ed59e1d1-35de591e934mr1457527a91.1.1775207622493;
-        Fri, 03 Apr 2026 02:13:42 -0700 (PDT)
-Received: from [10.133.33.111] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-35dd35f50e9sm5182277a91.6.2026.04.03.02.13.39
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 03 Apr 2026 02:13:42 -0700 (PDT)
-Message-ID: <5a606f7d-6665-4b0c-bbbe-32538b2315b6@oss.qualcomm.com>
-Date: Fri, 3 Apr 2026 17:13:37 +0800
+        d=1e100.net; s=20251104; t=1775209032; x=1775813832;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:date:from:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=H0MsR4PHC7LRNEDJ02SXHtGh86o8LwWKhT/z44z5dSo=;
+        b=r8JanpsZ4tmx3r+cA+2axuV/OGSLz29xuZQCdQMRzspzm4fKFCZoYFpm7OpfjmMuuo
+         ipU3vVEKylcuzoSHjLW5ZhFG5PcI+XoRYO4XUakVmrYfpwI7q70NnXC52j8kRovknANo
+         8XzHsPox4/fKUe8YxPeC2hXqCHApbUQANZJSxqYbZt1h7XX/hr37e5QpMPckXrHILolI
+         HazR0QOgwl7YL2J3lCDiOhp5x0M7kCc1VIrvkRGUokmE9s1JAR2xPeEP08ZabuCKNf9P
+         x0QTjbjdjxiuTpKsl+jXtnqzYPHtwROYEYzXQvinPVCT2/P4l5kFWX9QUvxmqcszw7FV
+         2ZVA==
+X-Forwarded-Encrypted: i=1; AJvYcCVVd1zbY9V2q7xiOLSgZ8MJCVmTrz5YGAkUtPYJpiLLI9gUAJPNWp+V4uDAQdS43vVo8b+ZNTw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwB7/4ozlWtUAFUrtdqoC5P8IHLGLDixFmsPpwhTXIzNO74vPQx
+	YpcdXFzUNFGXrSwcYvP/BsJF2lbpG1NIB/GMel/KBkdJybqQF1RRm6ytpGIZgwGuisjjJorgnzc
+	pmXDx0WS1eKd3lgatp511ilAk4mk/b4WBIGe16jvREKjlAbXhNKneBjz0w1tBvy/d
+X-Gm-Gg: ATEYQzy29r83FGy/lUkBPDkMQXrnjQXBA0MkUSWFjrBlG53rZ2JtY8dY0yOEPIFWeqJ
+	N9ssV78IQY2Tg4yeooD2gK8FfuckO7dw5qpQdgQy+V3ISkLMGgvAIrIkMFCCrH5BJH6feO+U2Ds
+	yKdM/+cVCy7Er4QP8eQi16X9YyN1JYy+a0oqDvSXl5Pbkk/5Xn4aGtxRwzSUNtqprq694A5z+Cg
+	NHIe2T5jeQmdal2xcAri9PPoGlvlNCr6f7LkyD6vDB/bX538RitRpY8pfeArptvDnTUDPBC+bSK
+	UAEKVZD/25K5Yj4maWPPVRr9oraKXiFDWwc1wPOq9ipZt3r2p+mOonidM3RjJCG/fBDzs40bvcH
+	UlJwIR0OPjpjjeKuVv76SmzH3TDiBdPLGr/NHL4fDftWnO2CGzGblvnmD
+X-Received: by 2002:ac8:7dc5:0:b0:509:202f:f03 with SMTP id d75a77b69052e-50d4fd24b4dmr66234851cf.38.1775209031742;
+        Fri, 03 Apr 2026 02:37:11 -0700 (PDT)
+X-Received: by 2002:ac8:7dc5:0:b0:509:202f:f03 with SMTP id d75a77b69052e-50d4fd24b4dmr66234201cf.38.1775209031263;
+        Fri, 03 Apr 2026 02:37:11 -0700 (PDT)
+Received: from trex (187.red-79-144-197.dynamicip.rima-tde.net. [79.144.197.187])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43d1e2a6f13sm15010561f8f.3.2026.04.03.02.37.08
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 03 Apr 2026 02:37:10 -0700 (PDT)
+From: Jorge Ramirez <jorge.ramirez@oss.qualcomm.com>
+X-Google-Original-From: Jorge Ramirez <JorgeRamirez-Ortiz>
+Date: Fri, 3 Apr 2026 11:37:07 +0200
+To: Sumit Garg <sumit.garg@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        linux-media@vger.kernel.org, netdev@vger.kernel.org,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-remoteproc@vger.kernel.org, andersson@kernel.org,
+        konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+        conor+dt@kernel.org, robin.clark@oss.qualcomm.com, sean@poorly.run,
+        akhilpo@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
+        jesszhan0024@gmail.com, marijn.suijten@somainline.org,
+        airlied@gmail.com, simona@ffwll.ch, vikash.garodia@oss.qualcomm.com,
+        dikshita.agarwal@oss.qualcomm.com, bod@kernel.org, mchehab@kernel.org,
+        elder@kernel.org, andrew+netdev@lunn.ch, davem@davemloft.net,
+        edumazet@google.com, kuba@kernel.org, pabeni@redhat.com,
+        jjohnson@kernel.org, mathieu.poirier@linaro.org,
+        trilokkumar.soni@oss.qualcomm.com, mukesh.ojha@oss.qualcomm.com,
+        pavan.kondeti@oss.qualcomm.com, jorge.ramirez@oss.qualcomm.com,
+        tonyh@qti.qualcomm.com, vignesh.viswanathan@oss.qualcomm.com,
+        srinivas.kandagatla@oss.qualcomm.com,
+        amirreza.zarrabi@oss.qualcomm.com, jens.wiklander@linaro.org,
+        op-tee@lists.trustedfirmware.org, apurupa@qti.qualcomm.com,
+        skare@qti.qualcomm.com, harshal.dev@oss.qualcomm.com,
+        linux-kernel@vger.kernel.org, Sumit Garg <sumit.garg@oss.qualcomm.com>
+Subject: Re: [PATCH v3 11/15] media: qcom: Switch to generic PAS TZ APIs
+Message-ID: <ac-KQ7e8-syph1Zl@trex>
+References: <20260327131043.627120-1-sumit.garg@kernel.org>
+ <20260327131043.627120-12-sumit.garg@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v4 0/6] wifi: ath12k: Enable IPQ5424 AHB WiFi
- device
-To: Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>,
-        Johannes Berg <johannes@sipsolutions.net>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
-        Saravanakumar Duraisamy <quic_saradura@quicinc.com>,
-        Sowmiya Sree Elavalagan <sowmiya.elavalagan@oss.qualcomm.com>,
-        Krzysztof Kozlowski <krzk@kernel.org>
-References: <20260402-ath12k-ipq5424-v4-0-cd1e0f0a6c88@oss.qualcomm.com>
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20260402-ath12k-ipq5424-v4-0-cd1e0f0a6c88@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=ar6/yCZV c=1 sm=1 tr=0 ts=69cf84c8 cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=bC-a23v3AAAA:8 a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8
- a=0McBQ3JIi2lqW2-U6ZoA:9 a=QEXdDO2ut3YA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
- a=FO4_E8m0qiDe52t0p3_H:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: uFmraeOGF8ftd4JOfuMMzJEdczcha9dG
-X-Proofpoint-GUID: uFmraeOGF8ftd4JOfuMMzJEdczcha9dG
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDAzMDA3OSBTYWx0ZWRfX6soM0QI9fmaF
- U9alNakU8x1Da43JSbiLLOv+o7OrqGN6971zRgQ3yQXd0XTEancwLypwT2BUbZoa4rYYpdL1qbQ
- SXfH21Kuw+ei06rm9yx6RUo12kGpL5Mw2t8MS2JblKeomwsGnfeprsgEursbAlKHW9nzRIhll5s
- 7eP0SIwT9wSPv4IRGNGNl5kRipnP/U4YOnTg4y/bnBamlhquXrAgY3xQ5ftXqtdLtK7+6UzGCHu
- +gm3Hf3M+jWG9nTqPQ3itWc6z2RXZgh+gACoSPR4xOeRus/h8Enhd1KU7TiM+2YXeFqcsiuVubq
- UOVsB1DQEyQqnLB7E+53SiA0CTxKJo21UbTwDJGcXxhRpBTuqMPDDynBUYMHBwYf9UQpmkGVTME
- 9ePu3zFSvak/KFcLcgmbL1lChcGbhV2NOdr48TRUIQ+kiy3abIcfJYQ61Q+0e49RHyPpDcVNCZ3
- jhsruh9u3Di1fApFR1w==
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20260327131043.627120-12-sumit.garg@kernel.org>
+X-Proofpoint-GUID: zdg-XMIgQ1i4Awjtnx8A7F9P5B7q4YO9
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDAzMDA4NSBTYWx0ZWRfX67QHve8Zk3X8
+ Nft2Zi6ibwK8RCZxeeTqn3U0273U9+z4q82p3NYVkASdiZk60BeltndWukdHnyTIWdalZxvWlvK
+ aQeIvc5uZh6xa7xErdmS1Loxmb1SLRNGB/lqDzeDuxKCGMbx6TtX2rmkyIWEK8YS6hIVsEt0L11
+ CR/DkAnndcWlSaTz2EqtyJuW85BMtpliSCAp7iU94QY1XcTMvEyaq0SFWFeJ/wl+yi4i0HfgzFB
+ G4WaBI8ovOXE0K9PIdwEcQ5XThF/Zjy40EU6VCWQZrSseDhT2GAcWHuj4CK3By4RE8vKNv83ng5
+ Wk6DTuwWSynndshfUzbYDb2LoSVGFbP4wPnLLtq6KnTTCvfuRZCsKrbASn6VG65XKDav5Vt4G+Y
+ h0MvvAL3T447c2ckXhJIJMGUNZYmQWaw/pE5coeTkjatnE0ikfBOHalBvoT/1WoaPVK3uoR0bZn
+ hgODhfZJ6ZIpqKeoDKw==
+X-Authority-Analysis: v=2.4 cv=OrpCCi/t c=1 sm=1 tr=0 ts=69cf8a4a cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=VPdg2FrOqWfiVCzsz0q0YA==:17
+ a=kj9zAlcOel0A:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=NEAV23lmAAAA:8 a=EUspDBNiAAAA:8 a=vWT0tKtjkO2eN-vK3vkA:9 a=CjuIK1q_8ugA:10
+ a=kacYvNCVWA4VmyqE58fU:22
+X-Proofpoint-ORIG-GUID: zdg-XMIgQ1i4Awjtnx8A7F9P5B7q4YO9
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-04-03_03,2026-04-03_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 suspectscore=0 lowpriorityscore=0 bulkscore=0 adultscore=0
- malwarescore=0 phishscore=0 spamscore=0 clxscore=1015 impostorscore=0
+ impostorscore=0 malwarescore=0 adultscore=0 suspectscore=0 phishscore=0
+ lowpriorityscore=0 spamscore=0 bulkscore=0 clxscore=1015 priorityscore=1501
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2604030079
+ reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2604030085
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260403_021345_166396_4D14CF8C 
-X-CRM114-Status: GOOD (  16.74  )
+X-CRM114-CacheID: sfid-20260403_023716_237443_1E5A8CCD 
+X-CRM114-Status: GOOD (  15.41  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,76 +161,38 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-
-On 4/2/2026 11:53 AM, Raj Kumar Bhagat wrote:
-> Add support for the new ath12k AHB device IPQ5424, as currently, Ath12k
-> AHB only supports IPQ5332 WiFi devices.
+On 27/03/26 18:40:39, Sumit Garg wrote:
+> From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 > 
-> The IPQ5424 is an IEEE 802.11be 2 GHz WiFi device, supporting 4x4
-> configurations. To enable the IPQ5424 device:
-> - Add the necessary hardware parameters for IPQ5424.
-> - Modify the boot-up sequence for ath12k AHB to accommodate the
->   requirements of the IPQ5424 device.
+> Switch qcom media client drivers over to generic PAS TZ APIs. Generic PAS
+> TZ service allows to support multiple TZ implementation backends like QTEE
+> based SCM PAS service, OP-TEE based PAS service and any further future TZ
+> backend service.
+
+OP-TEE based PAS service relies on the linux driver to configure the
+iommu (just as it is done on the no_tz case). This generic patch does
+not cover that requirement.
+
+Because of that, it is probably better if the commit message doesnt
+mention OP-TEE and instead maybe indicate that PAS wll support TEEs that
+implement the same restrictions that QTEE (ie, iommu configuration).
+
+I can send an RFC for OP-TEE support based on the integration work being
+carried out here [1]
+
+[1] https://github.com/OP-TEE/optee_os/pull/7721#discussion_r3016923507
+
 > 
+> Along with that pass proper PAS ID to set_remote_state API. As per testing
+> the SCM backend just ignores it while OP-TEE makes use of it to for proper
+> book keeping purpose.
+> 
+> Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 > ---
-> Changes in v4:
-> - DT binding: dropped copyright update as per discussion in v3.
-> - DT binding: Used DT binding from v2 and retained Acked-by tag.
-> - Link to v3: https://patch.msgid.link/20260331-ath12k-ipq5424-v3-0-1455b9cae29c@oss.qualcomm.com
+>  drivers/media/platform/qcom/iris/Kconfig      | 25 ++++++++++---------
+>  .../media/platform/qcom/iris/iris_firmware.c  |  9 ++++---
+>  drivers/media/platform/qcom/venus/Kconfig     |  1 +
+>  drivers/media/platform/qcom/venus/firmware.c  | 11 ++++----
+>  4 files changed, 25 insertions(+), 21 deletions(-)
 > 
-> Changes in v3:
-> - DT binding: updated copyright.
-> - DT binding: Dropped Acked-by tag as copyright is updated.
-> - Rebased on latest ToT.
-> - Dropped ath12k_ahb_ops because qcom_mdt_load() and
->   qcom_mdt_load_no_init() now have different number of arguments.
-> - Link to v2: https://lore.kernel.org/all/20250518-ath12k-ipq5424-v2-0-ef81b833dc97@quicinc.com/
-> 
-> Changes in v2:
-> - DT binding: Removed the redundant example for IPQ5424, as it is similar
->   to IPQ5332.
-> - Added driver probe data structure to eliminate the redundant switch-case
->   logic in the ath12k_ahb_probe() function.
-> - Validation completed, hence changed from RFC to PATCH.
-> - Link to v1: https://lore.kernel.org/all/20250130051838.1924079-1-quic_rajkbhag@quicinc.com/
-> 
-> Signed-off-by: Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>
-> 
-> ---
-> Raj Kumar Bhagat (2):
->       dt-bindings: net: wireless: add ath12k wifi device IPQ5424
->       wifi: ath12k: add ath12k_hw_version_map entry for IPQ5424
-> 
-> Saravanakumar Duraisamy (3):
->       wifi: ath12k: Add ath12k_hw_params for IPQ5424
->       wifi: ath12k: add ath12k_hw_regs for IPQ5424
->       wifi: ath12k: Add CE remap hardware parameters for IPQ5424
-> 
-> Sowmiya Sree Elavalagan (1):
->       wifi: ath12k: Enable IPQ5424 WiFi device support
-> 
->  .../bindings/net/wireless/qcom,ipq5332-wifi.yaml   |  1 +
->  drivers/net/wireless/ath/ath12k/ahb.c              | 36 +++++----
->  drivers/net/wireless/ath/ath12k/ahb.h              |  1 +
->  drivers/net/wireless/ath/ath12k/ce.h               | 13 ++-
->  drivers/net/wireless/ath/ath12k/core.h             |  1 +
->  drivers/net/wireless/ath/ath12k/wifi7/ahb.c        |  8 ++
->  drivers/net/wireless/ath/ath12k/wifi7/hal.c        |  7 ++
->  drivers/net/wireless/ath/ath12k/wifi7/hal.h        |  3 +
->  .../net/wireless/ath/ath12k/wifi7/hal_qcn9274.c    | 88 ++++++++++++++++++++
->  .../net/wireless/ath/ath12k/wifi7/hal_qcn9274.h    |  1 +
->  drivers/net/wireless/ath/ath12k/wifi7/hw.c         | 93 +++++++++++++++++++++-
->  11 files changed, 231 insertions(+), 21 deletions(-)
-> ---
-> base-commit: 15551ababf6d4e857f2101366a0c3eaa86dd822c
-> change-id: 20260331-ath12k-ipq5424-cddb63a46a97
-> 
-
-only nit in patch 2/6, so for patches 2-6/6:
-
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-
-> 
-
 
