@@ -4,81 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78959EDB7E5
-	for <ath12k@archiver.kernel.org>; Tue,  7 Apr 2026 09:54:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE813FEEF49
+	for <ath12k@archiver.kernel.org>; Tue,  7 Apr 2026 13:55:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Nab9flWRS5uaV7gXAZ3pa/yFHDMsEro8Pr8ssR73TWs=; b=W8RJS5wqwpkWfZ/At7LqD/18R8
-	2IG/+AulXqdBOWuUouSmGHcIt0joq19LdfQBwYvlxl4eRmFOqNY5QdGLpEn9yns/IK/62DI/QvrAh
-	HwT7vWo41ffXUHn3U+4aMMMSurQih8+zxLlP76ERPN1NlNnQImKrUeduJ7nnrwgXp7L6cIUJzQs1K
-	mmFfXcF7dsE5ecAHgxoq4N7Hu55JSmuYu4+lHp7G5p26LJE0VNCHc4pe0IaPzBXv+T0nV+b7xzMrR
-	R1fXaBR6sOtpe5nS8VR70xC935bYJn3zSNPeE7SD8RSDbCNxjyFxK8d+2OeVleTkg+wggWGm6E0/p
-	J4GQa2Pw==;
+	bh=7zA2ykR1114hPcqaxxqNcp6FKPq7UrTLATjTs+py42M=; b=EuDY6ocFv0BFh/MjZQJNb2Dmhg
+	EeTTFjy6PoTF5emIlOHzVQ+N7grLVw5MIMR2XA45uyyuQD/KLc12oInS0Vide45Q/geNtRxa8+d2L
+	CIfqCcMrvkpsCsUXvsZp+nZ2TFSp5ilR7I+kdLxX/Fk8giCrclwidfiXFZQBdI/abdOswEmSLclOV
+	Hb4gRcqqn/NiQPFV0nRZmSI+iM6Jtps0c15UyphMTTxYY3BT5TKdZJPjMAq/QHEk9+efm3EbsqIDO
+	AaExNfNCJ5/knaIjO85ie1HGqHkePSp/pwezw3/OJPmTm5t6kTIsW/hBYXPibcZPMZLPcfpfz9gtp
+	Fs9rpFvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wA38k-00000006FWw-0rWP;
-	Tue, 07 Apr 2026 09:54:34 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1wA6uE-00000006YDl-2Rfx;
+	Tue, 07 Apr 2026 13:55:50 +0000
+Received: from mgamail.intel.com ([198.175.65.20])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wA38g-00000006FWb-2R9t
+	id 1wA6uA-00000006YCZ-0hpW
 	for ath12k@lists.infradead.org;
-	Tue, 07 Apr 2026 09:54:32 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-4852b81c73aso39869725e9.3
-        for <ath12k@lists.infradead.org>; Tue, 07 Apr 2026 02:54:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1775555668; x=1776160468; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=Nab9flWRS5uaV7gXAZ3pa/yFHDMsEro8Pr8ssR73TWs=;
-        b=l52cWOMgeq4KEfN/io7nSXe+aVvsKFMp7OkDeYzsRrGGhjA9pbDfmTrzujeBzOz8lw
-         0B7fdbQcoDKqyfSEul6Nd6o3cPEn7kFFaYUTeTm6NLQ03gU18burNLvRF0oHlsq6wYPi
-         BFmIKjPOf4MbeENtoY3+2HGFg2a2lFg3hqdOzRXzbC21ugntPC8UZfS/ReUz/ututij1
-         1H/ef23lhQB4F5Spg+9/x8nTIDPc6Cd53omHlMjCNKdldsO93//efnLSMJBj1NRDs9Wx
-         UGELbhR3jQ9YmJUwJZs0tv6vthnKkq0HY3zHbU9dmf247P+oNxXOHnm1MdK413tFj1fg
-         QiHQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1775555668; x=1776160468;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Nab9flWRS5uaV7gXAZ3pa/yFHDMsEro8Pr8ssR73TWs=;
-        b=HUEZ7Xasm51sPO73Sd19DEPF4DfMQz4R+R3CYZ58fwen3WcgtbfT9f5dB6InAboR9u
-         guDO5qLuqEeBKTZyTjPFP37qqcNR1ZAbDHKIPiEoRY+6vrWNPIaYYNjzPPgP5/gkdvCF
-         um4cLkOkSWOniOiGbIKErJl2LyF/2sLlcn7gR1OV3ODBjoVUtaF7d+Gv0DfPfgjWQOpd
-         TdLU1Rq/S9bRuEIGQjsBsMWMnv4mSutUjQrMIktWHVFBlJHK03UD6MOBVgiv6V2Mm+p9
-         SWSTMfIU0XtCCZ9XgvCl0PzG8jiwidWzR/iz2KQc4/+D7d5lX0vQuNEqINxIwVpruv6F
-         TiQw==
-X-Gm-Message-State: AOJu0YxPuZ3DN97wOYX00fob/7SzwqyN0UZmYMfUpPUyrS2/cslHRyNE
-	VhPsrV8p2nwMRDuj1pbEnnsm7lD8zm7vavNPk1XEeSuz6S+5Dk5FgZ9bY7Fngw==
-X-Gm-Gg: AeBDietyRFsOJazzmGMzGNHzL6T411lWl1qUOc0u5cpIpF/v04qLDO59jM7N229wMBv
-	40ssN5IbGNqDhgnHe9IJ0tYyh1++eEuhGyjMdHrn6V9h6DEasSF9bgtyuXYtjPMnxYwEnRSQWaK
-	EXaf/ff52mlToDI5RsDo/kvsd4wIKgaHG7fWQBmSfQ2AqrYsur9cgsEHzRoZRYQm2/1f2fTS9W5
-	R13o7uP6TzFHeGbZWpBWnYaaDqQFCAZG2gJke2euyzQH3YCDk6rXnq6dKGds4mBlJocShQyePy+
-	k47m3gcxkwKL8Wq02XeTpuiOJMFkkEWiQk6U/xNxssAVMB/QcHsRoFfWwwDXdFXdcwELdM5Fx//
-	1QRy+ip1F5Gbx8ZSnAFjia90wJleVIxvTcM4qNVqlap1wF68eukQPs9A67x5SjJn/iRdG2s7Axy
-	RR/d/GZkBrixeYnM6W4rF4InWU15VX9pJifpykxc+cOezUTS8B2zDhUd6L
-X-Received: by 2002:a05:600c:3f08:b0:485:3ff1:d5ed with SMTP id 5b1f17b1804b1-488996d22f4mr257098875e9.1.1775555668223;
-        Tue, 07 Apr 2026 02:54:28 -0700 (PDT)
-Received: from syracuse.iliad.local (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-488b6ff70bcsm207380345e9.14.2026.04.07.02.54.27
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 07 Apr 2026 02:54:27 -0700 (PDT)
-From: Nicolas Escande <nico.escande@gmail.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH ath-next v7] wifi: ath12k: avoid dynamic alloc when parsing wmi tb
-Date: Tue,  7 Apr 2026 11:54:26 +0200
-Message-ID: <20260407095426.3285574-1-nico.escande@gmail.com>
-X-Mailer: git-send-email 2.53.0
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+	Tue, 07 Apr 2026 13:55:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1775570147; x=1807106147;
+  h=date:from:to:cc:subject:message-id;
+  bh=cCGtdJKDa2Xb4Mu1Rd/Mx6aDsN037wI88ofTGZme3A4=;
+  b=b+zdtCmEDdXjhgzYDr0/qEZ9L6W+NVNfkh167XdGeX3uyi+u4xd+k4vu
+   f7DFSramB6zEptvdoO039r2hij39Sz28gA7Ch6Ao4fjAbHGaw2o+jUm3a
+   sp5KTkamssUJRhf9t4+Q30y5RMsqhfPaCUNtFR5rE1ylT8zed+RS+Wucy
+   JfF/QApeobym8nRwG0ZIld2HVbzZdig1FAx0PPWI7sj5HHOhrZ7ZloFJ5
+   con00HmGIMzLzIO7dDrUPU8mRITP6uoZwDmMrp2JHLw1HdJYMOLD2WRHp
+   b8l5JIQXz9XqBqaal7SVcIovJjDQAiTDI/rV9ozhSTpL/9QgCGSFcdJiO
+   A==;
+X-CSE-ConnectionGUID: 4txgPLjTTfq47tAx5G3Yyw==
+X-CSE-MsgGUID: XiLftLGxTKqtVIidDB0tfw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11752"; a="76249250"
+X-IronPort-AV: E=Sophos;i="6.23,165,1770624000"; 
+   d="scan'208";a="76249250"
+Received: from fmviesa005.fm.intel.com ([10.60.135.145])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 Apr 2026 06:55:43 -0700
+X-CSE-ConnectionGUID: +psfMO9WTKuioV5prHMMKQ==
+X-CSE-MsgGUID: N97+zD0URfiydvm9Ir/7HQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.23,165,1770624000"; 
+   d="scan'208";a="233047516"
+Received: from lkp-server01.sh.intel.com (HELO d00eb8a6782a) ([10.239.97.150])
+  by fmviesa005.fm.intel.com with ESMTP; 07 Apr 2026 06:55:41 -0700
+Received: from kbuild by d00eb8a6782a with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1wA6u3-000000000eC-0fiW;
+	Tue, 07 Apr 2026 13:55:39 +0000
+Date: Tue, 07 Apr 2026 21:55:19 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org
+Subject: [ath:pending] BUILD SUCCESS
+ 0f09106c9dec4f9b2655b11610e90ee749f32f3a
+Message-ID: <202604072110.HgGSsG0I-lkp@intel.com>
+User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260407_025430_870054_DE3C2ED8 
-X-CRM114-Status: GOOD (  21.65  )
+X-CRM114-CacheID: sfid-20260407_065546_272708_127F2E5D 
+X-CRM114-Status: UNSURE (   3.84  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,1024 +83,199 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On each WMI message received from the hardware, we alloc a temporary array
-of WMI_TAG_MAX entries of type void *. This array is then populated with
-pointers of parsed structs depending on the WMI type, and then freed. This
-alloc can fail when memory pressure in the system is high enough.
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: 0f09106c9dec4f9b2655b11610e90ee749f32f3a  wifi: ath12k: Create symlink for each radio in a wiphy
 
-Given the fact that it is scheduled in softirq with the system_bh_wq, we
-should not be able to parse more than one WMI message per CPU at any time.
+elapsed time: 734m
 
-So instead lets move to a per cpu allocated array, that is reused across
-calls. This memory is allocated as needed and refcounted to exist only
-as long as one struct ath12k_base lives.
+configs tested: 179
+configs skipped: 7
 
-ath12k_wmi_tlv_parse_alloc() and ath12k_wmi_tlv_parse() are merged
-together as it no longer allocs mem but returns the existing per-cpu one.
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00218-QCAHKSWPL_SILICONZ-1
+tested configs:
+alpha                             allnoconfig    gcc-15.2.0
+alpha                            allyesconfig    gcc-15.2.0
+alpha                               defconfig    gcc-15.2.0
+arc                              allmodconfig    clang-16
+arc                               allnoconfig    gcc-15.2.0
+arc                              allyesconfig    clang-23
+arc                                 defconfig    gcc-15.2.0
+arc                   randconfig-001-20260407    clang-23
+arc                   randconfig-002-20260407    clang-23
+arm                               allnoconfig    gcc-15.2.0
+arm                              allyesconfig    clang-16
+arm                                 defconfig    gcc-15.2.0
+arm                         mv78xx0_defconfig    clang-19
+arm                   randconfig-001-20260407    clang-23
+arm                   randconfig-002-20260407    clang-23
+arm                   randconfig-003-20260407    clang-23
+arm                   randconfig-004-20260407    clang-23
+arm64                            allmodconfig    clang-23
+arm64                             allnoconfig    gcc-15.2.0
+arm64                               defconfig    gcc-15.2.0
+arm64                 randconfig-001-20260407    clang-16
+arm64                 randconfig-001-20260407    gcc-9.5.0
+arm64                 randconfig-002-20260407    gcc-13.4.0
+arm64                 randconfig-002-20260407    gcc-9.5.0
+arm64                 randconfig-003-20260407    gcc-8.5.0
+arm64                 randconfig-003-20260407    gcc-9.5.0
+arm64                 randconfig-004-20260407    clang-23
+arm64                 randconfig-004-20260407    gcc-9.5.0
+csky                             allmodconfig    gcc-15.2.0
+csky                              allnoconfig    gcc-15.2.0
+csky                                defconfig    gcc-15.2.0
+csky                  randconfig-001-20260407    gcc-13.4.0
+csky                  randconfig-001-20260407    gcc-9.5.0
+csky                  randconfig-002-20260407    gcc-9.5.0
+hexagon                          allmodconfig    gcc-15.2.0
+hexagon                           allnoconfig    gcc-15.2.0
+hexagon                             defconfig    gcc-15.2.0
+hexagon               randconfig-001-20260407    clang-23
+hexagon               randconfig-002-20260407    clang-23
+i386                             allmodconfig    clang-20
+i386                              allnoconfig    gcc-15.2.0
+i386                             allyesconfig    clang-20
+i386        buildonly-randconfig-001-20260407    clang-20
+i386        buildonly-randconfig-002-20260407    clang-20
+i386        buildonly-randconfig-003-20260407    clang-20
+i386        buildonly-randconfig-004-20260407    clang-20
+i386        buildonly-randconfig-005-20260407    clang-20
+i386        buildonly-randconfig-006-20260407    clang-20
+i386                                defconfig    gcc-15.2.0
+i386                  randconfig-001-20260407    gcc-14
+i386                  randconfig-002-20260407    gcc-14
+i386                  randconfig-003-20260407    gcc-14
+i386                  randconfig-004-20260407    gcc-14
+i386                  randconfig-005-20260407    gcc-14
+i386                  randconfig-006-20260407    gcc-14
+i386                  randconfig-007-20260407    gcc-14
+i386                  randconfig-011-20260407    clang-20
+i386                  randconfig-012-20260407    clang-20
+i386                  randconfig-013-20260407    clang-20
+i386                  randconfig-014-20260407    clang-20
+i386                  randconfig-015-20260407    clang-20
+i386                  randconfig-016-20260407    clang-20
+i386                  randconfig-017-20260407    clang-20
+loongarch                        allmodconfig    clang-23
+loongarch                         allnoconfig    gcc-15.2.0
+loongarch                           defconfig    clang-19
+loongarch             randconfig-001-20260407    clang-23
+loongarch             randconfig-002-20260407    clang-23
+m68k                             allmodconfig    gcc-15.2.0
+m68k                              allnoconfig    gcc-15.2.0
+m68k                             allyesconfig    clang-16
+m68k                                defconfig    clang-19
+m68k                                defconfig    gcc-15.2.0
+microblaze                        allnoconfig    gcc-15.2.0
+microblaze                       allyesconfig    gcc-15.2.0
+microblaze                          defconfig    clang-19
+microblaze                          defconfig    gcc-15.2.0
+mips                             allmodconfig    gcc-15.2.0
+mips                              allnoconfig    gcc-15.2.0
+mips                             allyesconfig    gcc-15.2.0
+nios2                            allmodconfig    clang-23
+nios2                             allnoconfig    clang-23
+nios2                               defconfig    clang-19
+nios2                               defconfig    gcc-15.2.0
+nios2                 randconfig-001-20260407    clang-23
+nios2                 randconfig-002-20260407    clang-23
+openrisc                         allmodconfig    clang-23
+openrisc                          allnoconfig    clang-23
+openrisc                            defconfig    gcc-15.2.0
+parisc                           allmodconfig    gcc-15.2.0
+parisc                            allnoconfig    clang-23
+parisc                           allyesconfig    clang-19
+parisc                              defconfig    gcc-15.2.0
+parisc                randconfig-001-20260407    gcc-10.5.0
+parisc                randconfig-002-20260407    gcc-10.5.0
+parisc64                            defconfig    clang-19
+parisc64                            defconfig    gcc-15.2.0
+powerpc                          allmodconfig    gcc-15.2.0
+powerpc                           allnoconfig    clang-23
+powerpc                     mpc512x_defconfig    clang-23
+powerpc               randconfig-001-20260407    gcc-10.5.0
+powerpc               randconfig-002-20260407    gcc-10.5.0
+powerpc                     tqm5200_defconfig    gcc-15.2.0
+powerpc64             randconfig-001-20260407    gcc-10.5.0
+powerpc64             randconfig-002-20260407    gcc-10.5.0
+riscv                            allmodconfig    clang-23
+riscv                             allnoconfig    clang-23
+riscv                            allyesconfig    clang-16
+riscv                               defconfig    gcc-15.2.0
+riscv                 randconfig-001-20260407    gcc-14.3.0
+riscv                 randconfig-002-20260407    gcc-14.3.0
+s390                             allmodconfig    clang-19
+s390                              allnoconfig    clang-23
+s390                             allyesconfig    gcc-15.2.0
+s390                                defconfig    gcc-15.2.0
+s390                  randconfig-001-20260407    gcc-14.3.0
+s390                  randconfig-002-20260407    gcc-14.3.0
+sh                               allmodconfig    gcc-15.2.0
+sh                                allnoconfig    clang-23
+sh                               allyesconfig    clang-19
+sh                                  defconfig    gcc-14
+sh                    randconfig-001-20260407    gcc-14.3.0
+sh                    randconfig-002-20260407    gcc-14.3.0
+sparc                             allnoconfig    clang-23
+sparc                               defconfig    gcc-15.2.0
+sparc                 randconfig-001-20260407    gcc-12
+sparc                 randconfig-002-20260407    gcc-12
+sparc64                          allmodconfig    clang-23
+sparc64                             defconfig    gcc-14
+sparc64               randconfig-001-20260407    gcc-12
+sparc64               randconfig-002-20260407    gcc-12
+um                               allmodconfig    clang-19
+um                                allnoconfig    clang-23
+um                               allyesconfig    gcc-15.2.0
+um                                  defconfig    gcc-14
+um                             i386_defconfig    gcc-14
+um                    randconfig-001-20260407    gcc-12
+um                    randconfig-002-20260407    gcc-12
+um                           x86_64_defconfig    gcc-14
+x86_64                           allmodconfig    clang-20
+x86_64                            allnoconfig    clang-23
+x86_64                           allyesconfig    clang-20
+x86_64      buildonly-randconfig-001-20260407    gcc-14
+x86_64      buildonly-randconfig-002-20260407    gcc-14
+x86_64      buildonly-randconfig-003-20260407    gcc-14
+x86_64      buildonly-randconfig-004-20260407    gcc-14
+x86_64      buildonly-randconfig-005-20260407    gcc-14
+x86_64      buildonly-randconfig-006-20260407    gcc-14
+x86_64                              defconfig    gcc-14
+x86_64                                  kexec    clang-20
+x86_64                randconfig-001-20260407    gcc-14
+x86_64                randconfig-002-20260407    gcc-14
+x86_64                randconfig-003-20260407    gcc-14
+x86_64                randconfig-004-20260407    gcc-14
+x86_64                randconfig-005-20260407    gcc-14
+x86_64                randconfig-006-20260407    gcc-14
+x86_64                randconfig-011-20260407    clang-20
+x86_64                randconfig-012-20260407    clang-20
+x86_64                randconfig-013-20260407    clang-20
+x86_64                randconfig-014-20260407    clang-20
+x86_64                randconfig-015-20260407    clang-20
+x86_64                randconfig-016-20260407    clang-20
+x86_64                randconfig-071-20260407    clang-20
+x86_64                randconfig-072-20260407    clang-20
+x86_64                randconfig-073-20260407    clang-20
+x86_64                randconfig-074-20260407    clang-20
+x86_64                randconfig-075-20260407    clang-20
+x86_64                randconfig-076-20260407    clang-20
+x86_64                               rhel-9.4    clang-20
+x86_64                           rhel-9.4-bpf    gcc-14
+x86_64                          rhel-9.4-func    clang-20
+x86_64                    rhel-9.4-kselftests    clang-20
+x86_64                         rhel-9.4-kunit    gcc-14
+x86_64                           rhel-9.4-ltp    gcc-14
+x86_64                          rhel-9.4-rust    clang-20
+xtensa                            allnoconfig    clang-23
+xtensa                           allyesconfig    clang-23
+xtensa                randconfig-001-20260407    gcc-12
+xtensa                randconfig-002-20260407    gcc-12
 
-Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
----
-changes from v6:
-  - fix useless ath12k_wmi_tb NULL init
-  - do not use refcount_inc when refount is at 0, it can warn
-
-changes from v5:
-  - use of the refount_t kernel api
-
-changes from v4:
-  - moved to a single instance, refcounted per cpu memory alloc
-  
-changes from v3:
-  - simplified ath12k_core_init() with a single statement
-  - move perpcu.h include directly to wmi.c
-
-changes from v2:
-  - removed now superfluous return in ath12k_wmi_event_teardown_complete()
-  - moved ath12k_wmi_tb declaration to wmi.c & added two functions to
-    alloc / free it
-  - removed useless error message on memory allocation failure
-
-changes from v1:
-  - rebased on ath-next 27401c9b1432
-  - changed wording according to Jeff's comment
-  - moved alloc/cleanup to new module_init/exit functions in the
-    ath12k module as per Baochen's comment
-
-changes from RFC:
-  - rebased on ath-next 8e0ab5b9adb7
-  - converted missing call sites ath12k_wmi_obss_color_collision_event()
-    & ath12k_wmi_pdev_temperature_event()
-  - changed alloc order & cleanup path in ath12k_core_alloc() as it seems
-    it confused people
-  - used sizeof(*tb) in ath12k_wmi_tlv_parse()
----
- drivers/net/wireless/ath/ath12k/core.c |   6 +
- drivers/net/wireless/ath/ath12k/wmi.c  | 217 +++++++++----------------
- drivers/net/wireless/ath/ath12k/wmi.h  |   3 +
- 3 files changed, 87 insertions(+), 139 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index c31c47fb5a73..6f0f4bfbf699 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -2256,6 +2256,7 @@ void ath12k_core_deinit(struct ath12k_base *ab)
- void ath12k_core_free(struct ath12k_base *ab)
- {
- 	timer_delete_sync(&ab->rx_replenish_retry);
-+	ath12k_wmi_free();
- 	destroy_workqueue(ab->workqueue_aux);
- 	destroy_workqueue(ab->workqueue);
- 	kfree(ab);
-@@ -2280,6 +2281,9 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
- 	if (!ab->workqueue_aux)
- 		goto err_free_wq;
- 
-+	if (ath12k_wmi_alloc() < 0)
-+		goto err_free_wq_aux;
-+
- 	mutex_init(&ab->core_lock);
- 	spin_lock_init(&ab->base_lock);
- 	init_completion(&ab->reset_complete);
-@@ -2314,6 +2318,8 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
- 
- 	return ab;
- 
-+err_free_wq_aux:
-+	destroy_workqueue(ab->workqueue_aux);
- err_free_wq:
- 	destroy_workqueue(ab->workqueue);
- err_sc_free:
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 65a05a9520ff..484fdd3b1b7f 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -15,6 +15,8 @@
- #include <linux/time.h>
- #include <linux/of.h>
- #include <linux/cleanup.h>
-+#include <linux/percpu.h>
-+#include <linux/refcount.h>
- #include "core.h"
- #include "debugfs.h"
- #include "debug.h"
-@@ -134,6 +136,10 @@ struct wmi_pdev_set_obss_bitmap_arg {
- 	const char *label;
- };
- 
-+static DEFINE_MUTEX(ath12k_wmi_mutex);
-+static refcount_t ath12k_wmi_refcount;
-+static void __percpu *ath12k_wmi_tb;
-+
- static const struct ath12k_wmi_tlv_policy ath12k_wmi_tlv_policies[] = {
- 	[WMI_TAG_ARRAY_BYTE] = { .min_len = 0 },
- 	[WMI_TAG_ARRAY_UINT32] = { .min_len = 0 },
-@@ -289,29 +295,19 @@ static int ath12k_wmi_tlv_iter_parse(struct ath12k_base *ab, u16 tag, u16 len,
- 	return 0;
- }
- 
--static int ath12k_wmi_tlv_parse(struct ath12k_base *ar, const void **tb,
--				const void *ptr, size_t len)
--{
--	return ath12k_wmi_tlv_iter(ar, ptr, len, ath12k_wmi_tlv_iter_parse,
--				   (void *)tb);
--}
--
- static const void **
--ath12k_wmi_tlv_parse_alloc(struct ath12k_base *ab,
--			   struct sk_buff *skb, gfp_t gfp)
-+ath12k_wmi_tlv_parse(struct ath12k_base *ab, struct sk_buff *skb)
- {
- 	const void **tb;
- 	int ret;
- 
--	tb = kzalloc_objs(*tb, WMI_TAG_MAX, gfp);
--	if (!tb)
--		return ERR_PTR(-ENOMEM);
-+	tb = this_cpu_ptr(ath12k_wmi_tb);
-+	memset(tb, 0, WMI_TAG_MAX * sizeof(*tb));
- 
--	ret = ath12k_wmi_tlv_parse(ab, tb, skb->data, skb->len);
--	if (ret) {
--		kfree(tb);
-+	ret = ath12k_wmi_tlv_iter(ab, skb->data, skb->len,
-+				  ath12k_wmi_tlv_iter_parse, (void *)tb);
-+	if (ret)
- 		return ERR_PTR(ret);
--	}
- 
- 	return tb;
- }
-@@ -3911,9 +3907,10 @@ ath12k_wmi_obss_color_collision_event(struct ath12k_base *ab, struct sk_buff *sk
- 	const struct wmi_obss_color_collision_event *ev;
- 	struct ath12k_link_vif *arvif;
- 	u32 vdev_id, evt_type;
-+	const void **tb;
- 	u64 bitmap;
- 
--	const void **tb __free(kfree) = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ath12k_warn(ab, "failed to parse OBSS color collision tlv %ld\n",
- 			    PTR_ERR(tb));
-@@ -5714,7 +5711,7 @@ static int ath12k_pull_vdev_start_resp_tlv(struct ath12k_base *ab, struct sk_buf
- 	const struct wmi_vdev_start_resp_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -5724,13 +5721,11 @@ static int ath12k_pull_vdev_start_resp_tlv(struct ath12k_base *ab, struct sk_buf
- 	ev = tb[WMI_TAG_VDEV_START_RESPONSE_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch vdev start resp ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
- 	*vdev_rsp = *ev;
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -5809,7 +5804,7 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 
- 	ath12k_dbg(ab, ATH12K_DBG_WMI, "processing regulatory ext channel list\n");
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -5819,7 +5814,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_REG_CHAN_LIST_CC_EXT_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch reg chan list ext update ev\n");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
-@@ -5849,7 +5843,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 	if (num_2g_reg_rules > MAX_REG_RULES || num_5g_reg_rules > MAX_REG_RULES) {
- 		ath12k_warn(ab, "Num reg rules for 2G/5G exceeds max limit (num_2g_reg_rules: %d num_5g_reg_rules: %d max_rules: %d)\n",
- 			    num_2g_reg_rules, num_5g_reg_rules, MAX_REG_RULES);
--		kfree(tb);
- 		return -EINVAL;
- 	}
- 
-@@ -5859,7 +5852,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 		if (num_6g_reg_rules_ap[i] > MAX_6GHZ_REG_RULES) {
- 			ath12k_warn(ab, "Num 6G reg rules for AP mode(%d) exceeds max limit (num_6g_reg_rules_ap: %d, max_rules: %d)\n",
- 				    i, num_6g_reg_rules_ap[i], MAX_6GHZ_REG_RULES);
--			kfree(tb);
- 			return -EINVAL;
- 		}
- 
-@@ -5884,14 +5876,12 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 		    num_6g_reg_rules_cl[WMI_REG_VLP_AP][i] >  MAX_6GHZ_REG_RULES) {
- 			ath12k_warn(ab, "Num 6g client reg rules exceeds max limit, for client(type: %d)\n",
- 				    i);
--			kfree(tb);
- 			return -EINVAL;
- 		}
- 	}
- 
- 	if (!total_reg_rules) {
- 		ath12k_warn(ab, "No reg rules available\n");
--		kfree(tb);
- 		return -EINVAL;
- 	}
- 
-@@ -5993,7 +5983,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 						      ext_wmi_reg_rule);
- 
- 		if (!reg_info->reg_rules_2g_ptr) {
--			kfree(tb);
- 			ath12k_warn(ab, "Unable to Allocate memory for 2g rules\n");
- 			return -ENOMEM;
- 		}
-@@ -6027,7 +6016,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 						      ext_wmi_reg_rule);
- 
- 		if (!reg_info->reg_rules_5g_ptr) {
--			kfree(tb);
- 			ath12k_warn(ab, "Unable to Allocate memory for 5g rules\n");
- 			return -ENOMEM;
- 		}
-@@ -6046,7 +6034,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 						      ext_wmi_reg_rule);
- 
- 		if (!reg_info->reg_rules_6g_ap_ptr[i]) {
--			kfree(tb);
- 			ath12k_warn(ab, "Unable to Allocate memory for 6g ap rules\n");
- 			return -ENOMEM;
- 		}
-@@ -6061,7 +6048,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 							      ext_wmi_reg_rule);
- 
- 			if (!reg_info->reg_rules_6g_client_ptr[j][i]) {
--				kfree(tb);
- 				ath12k_warn(ab, "Unable to Allocate memory for 6g client rules\n");
- 				return -ENOMEM;
- 			}
-@@ -6096,7 +6082,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 
- 	ath12k_dbg(ab, ATH12K_DBG_WMI, "processed regulatory ext channel list\n");
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6107,7 +6092,7 @@ static int ath12k_pull_peer_del_resp_ev(struct ath12k_base *ab, struct sk_buff *
- 	const struct wmi_peer_delete_resp_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6117,7 +6102,6 @@ static int ath12k_pull_peer_del_resp_ev(struct ath12k_base *ab, struct sk_buff *
- 	ev = tb[WMI_TAG_PEER_DELETE_RESP_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch peer delete resp ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
-@@ -6127,7 +6111,6 @@ static int ath12k_pull_peer_del_resp_ev(struct ath12k_base *ab, struct sk_buff *
- 	ether_addr_copy(peer_del_resp->peer_macaddr.addr,
- 			ev->peer_macaddr.addr);
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6139,7 +6122,7 @@ static int ath12k_pull_vdev_del_resp_ev(struct ath12k_base *ab,
- 	const struct wmi_vdev_delete_resp_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6149,13 +6132,11 @@ static int ath12k_pull_vdev_del_resp_ev(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_VDEV_DELETE_RESP_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch vdev delete resp ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
- 	*vdev_id = le32_to_cpu(ev->vdev_id);
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6167,7 +6148,7 @@ static int ath12k_pull_bcn_tx_status_ev(struct ath12k_base *ab,
- 	const struct wmi_bcn_tx_status_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6177,14 +6158,12 @@ static int ath12k_pull_bcn_tx_status_ev(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_OFFLOAD_BCN_TX_STATUS_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch bcn tx status ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
- 	*vdev_id = le32_to_cpu(ev->vdev_id);
- 	*tx_status = le32_to_cpu(ev->tx_status);
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6195,7 +6174,7 @@ static int ath12k_pull_vdev_stopped_param_tlv(struct ath12k_base *ab, struct sk_
- 	const struct wmi_vdev_stopped_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6205,13 +6184,11 @@ static int ath12k_pull_vdev_stopped_param_tlv(struct ath12k_base *ab, struct sk_
- 	ev = tb[WMI_TAG_VDEV_STOPPED_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch vdev stop ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
- 	*vdev_id = le32_to_cpu(ev->vdev_id);
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6350,7 +6327,7 @@ static int ath12k_pull_mgmt_tx_compl_param_tlv(struct ath12k_base *ab,
- 	const struct wmi_mgmt_tx_compl_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6360,7 +6337,6 @@ static int ath12k_pull_mgmt_tx_compl_param_tlv(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_MGMT_TX_COMPL_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch mgmt tx compl ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
-@@ -6370,7 +6346,6 @@ static int ath12k_pull_mgmt_tx_compl_param_tlv(struct ath12k_base *ab,
- 	param->ppdu_id = ev->ppdu_id;
- 	param->ack_rssi = ev->ack_rssi;
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6533,7 +6508,7 @@ static int ath12k_pull_scan_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	const struct wmi_scan_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6543,7 +6518,6 @@ static int ath12k_pull_scan_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	ev = tb[WMI_TAG_SCAN_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch scan ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
-@@ -6555,7 +6529,6 @@ static int ath12k_pull_scan_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	scan_evt_param->vdev_id = ev->vdev_id;
- 	scan_evt_param->tsf_timestamp = ev->tsf_timestamp;
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6566,7 +6539,7 @@ static int ath12k_pull_peer_sta_kickout_ev(struct ath12k_base *ab, struct sk_buf
- 	const struct wmi_peer_sta_kickout_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6576,7 +6549,6 @@ static int ath12k_pull_peer_sta_kickout_ev(struct ath12k_base *ab, struct sk_buf
- 	ev = tb[WMI_TAG_PEER_STA_KICKOUT_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch peer sta kickout ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
-@@ -6584,7 +6556,6 @@ static int ath12k_pull_peer_sta_kickout_ev(struct ath12k_base *ab, struct sk_buf
- 	arg->reason = le32_to_cpu(ev->reason);
- 	arg->rssi = le32_to_cpu(ev->rssi);
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6595,7 +6566,7 @@ static int ath12k_pull_roam_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	const struct wmi_roam_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6605,7 +6576,6 @@ static int ath12k_pull_roam_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	ev = tb[WMI_TAG_ROAM_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch roam ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
-@@ -6613,7 +6583,6 @@ static int ath12k_pull_roam_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	roam_ev->reason = ev->reason;
- 	roam_ev->rssi = ev->rssi;
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6647,7 +6616,7 @@ static int ath12k_pull_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	const struct wmi_chan_info_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6657,7 +6626,6 @@ static int ath12k_pull_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	ev = tb[WMI_TAG_CHAN_INFO_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch chan info ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
-@@ -6674,7 +6642,6 @@ static int ath12k_pull_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	ch_info_ev->mac_clk_mhz = ev->mac_clk_mhz;
- 	ch_info_ev->vdev_id = ev->vdev_id;
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6686,7 +6653,7 @@ ath12k_pull_pdev_bss_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	const struct wmi_pdev_bss_chan_info_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6696,7 +6663,6 @@ ath12k_pull_pdev_bss_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	ev = tb[WMI_TAG_PDEV_BSS_CHAN_INFO_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch pdev bss chan info ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
-@@ -6714,7 +6680,6 @@ ath12k_pull_pdev_bss_chan_info_ev(struct ath12k_base *ab, struct sk_buff *skb,
- 	bss_ch_info_ev->rx_bss_cycle_count_low = ev->rx_bss_cycle_count_low;
- 	bss_ch_info_ev->rx_bss_cycle_count_high = ev->rx_bss_cycle_count_high;
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6726,7 +6691,7 @@ ath12k_pull_vdev_install_key_compl_ev(struct ath12k_base *ab, struct sk_buff *sk
- 	const struct wmi_vdev_install_key_compl_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6736,7 +6701,6 @@ ath12k_pull_vdev_install_key_compl_ev(struct ath12k_base *ab, struct sk_buff *sk
- 	ev = tb[WMI_TAG_VDEV_INSTALL_KEY_COMPLETE_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch vdev install key compl ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
-@@ -6746,7 +6710,6 @@ ath12k_pull_vdev_install_key_compl_ev(struct ath12k_base *ab, struct sk_buff *sk
- 	arg->key_flags = le32_to_cpu(ev->key_flags);
- 	arg->status = le32_to_cpu(ev->status);
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6757,7 +6720,7 @@ static int ath12k_pull_peer_assoc_conf_ev(struct ath12k_base *ab, struct sk_buff
- 	const struct wmi_peer_assoc_conf_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6767,14 +6730,12 @@ static int ath12k_pull_peer_assoc_conf_ev(struct ath12k_base *ab, struct sk_buff
- 	ev = tb[WMI_TAG_PEER_ASSOC_CONF_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch peer assoc conf ev");
--		kfree(tb);
- 		return -EPROTO;
- 	}
- 
- 	peer_assoc_conf->vdev_id = le32_to_cpu(ev->vdev_id);
- 	peer_assoc_conf->macaddr = ev->peer_macaddr.addr;
- 
--	kfree(tb);
- 	return 0;
- }
- 
-@@ -6792,7 +6753,7 @@ static int ath12k_reg_11d_new_cc_event(struct ath12k_base *ab, struct sk_buff *s
- 	const void **tb;
- 	int ret, i;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -6801,7 +6762,6 @@ static int ath12k_reg_11d_new_cc_event(struct ath12k_base *ab, struct sk_buff *s
- 
- 	ev = tb[WMI_TAG_11D_NEW_COUNTRY_EVENT];
- 	if (!ev) {
--		kfree(tb);
- 		ath12k_warn(ab, "failed to fetch 11d new cc ev");
- 		return -EPROTO;
- 	}
-@@ -6814,8 +6774,6 @@ static int ath12k_reg_11d_new_cc_event(struct ath12k_base *ab, struct sk_buff *s
- 		   ab->new_alpha2[0],
- 		   ab->new_alpha2[1]);
- 
--	kfree(tb);
--
- 	for (i = 0; i < ab->num_radios; i++) {
- 		pdev = &ab->pdevs[i];
- 		ar = pdev->ar;
-@@ -8557,7 +8515,7 @@ static void ath12k_pdev_ctl_failsafe_check_event(struct ath12k_base *ab,
- 	const struct wmi_pdev_ctl_failsafe_chk_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -8567,7 +8525,6 @@ static void ath12k_pdev_ctl_failsafe_check_event(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_PDEV_CTL_FAILSAFE_CHECK_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch pdev ctl failsafe check ev");
--		kfree(tb);
- 		return;
- 	}
- 
-@@ -8581,8 +8538,6 @@ static void ath12k_pdev_ctl_failsafe_check_event(struct ath12k_base *ab,
- 	if (ev->ctl_failsafe_status != 0)
- 		ath12k_warn(ab, "pdev ctl failsafe failure status %d",
- 			    ev->ctl_failsafe_status);
--
--	kfree(tb);
- }
- 
- static void
-@@ -8654,7 +8609,7 @@ ath12k_wmi_pdev_csa_switch_count_status_event(struct ath12k_base *ab,
- 	const u32 *vdev_ids;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -8666,7 +8621,6 @@ ath12k_wmi_pdev_csa_switch_count_status_event(struct ath12k_base *ab,
- 
- 	if (!ev || !vdev_ids) {
- 		ath12k_warn(ab, "failed to fetch pdev csa switch count ev");
--		kfree(tb);
- 		return;
- 	}
- 
-@@ -8676,8 +8630,6 @@ ath12k_wmi_pdev_csa_switch_count_status_event(struct ath12k_base *ab,
- 		   ev->num_vdevs);
- 
- 	ath12k_wmi_process_csa_switch_count_event(ab, ev, vdev_ids);
--
--	kfree(tb);
- }
- 
- static void
-@@ -8689,7 +8641,7 @@ ath12k_wmi_pdev_dfs_radar_detected_event(struct ath12k_base *ab, struct sk_buff
- 	struct ath12k *ar;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -8700,7 +8652,6 @@ ath12k_wmi_pdev_dfs_radar_detected_event(struct ath12k_base *ab, struct sk_buff
- 
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch pdev dfs radar detected ev");
--		kfree(tb);
- 		return;
- 	}
- 
-@@ -8739,8 +8690,6 @@ ath12k_wmi_pdev_dfs_radar_detected_event(struct ath12k_base *ab, struct sk_buff
- 
- exit:
- 	rcu_read_unlock();
--
--	kfree(tb);
- }
- 
- static void ath12k_tm_wmi_event_segmented(struct ath12k_base *ab, u32 cmd_id,
-@@ -8751,7 +8700,7 @@ static void ath12k_tm_wmi_event_segmented(struct ath12k_base *ab, u32 cmd_id,
- 	int ret;
- 	u16 length;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
-@@ -8762,14 +8711,11 @@ static void ath12k_tm_wmi_event_segmented(struct ath12k_base *ab, u32 cmd_id,
- 	ev = tb[WMI_TAG_ARRAY_BYTE];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch ftm msg\n");
--		kfree(tb);
- 		return;
- 	}
- 
- 	length = skb->len - TLV_HDR_SIZE;
- 	ath12k_tm_process_event(ab, cmd_id, ev, length);
--	kfree(tb);
--	tb = NULL;
- }
- 
- static void
-@@ -8782,7 +8728,7 @@ ath12k_wmi_pdev_temperature_event(struct ath12k_base *ab,
- 	int temp;
- 	u32 pdev_id;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ath12k_warn(ab, "failed to parse tlv: %ld\n", PTR_ERR(tb));
- 		return;
-@@ -8791,15 +8737,12 @@ ath12k_wmi_pdev_temperature_event(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_PDEV_TEMPERATURE_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch pdev temp ev\n");
--		kfree(tb);
- 		return;
- 	}
- 
- 	temp = a_sle32_to_cpu(ev->temp);
- 	pdev_id = le32_to_cpu(ev->pdev_id);
- 
--	kfree(tb);
--
- 	ath12k_dbg(ab, ATH12K_DBG_WMI,
- 		   "pdev temperature ev temp %d pdev_id %u\n",
- 		   temp, pdev_id);
-@@ -8826,7 +8769,7 @@ static void ath12k_fils_discovery_event(struct ath12k_base *ab,
- 	const struct wmi_fils_discovery_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab,
-@@ -8838,15 +8781,12 @@ static void ath12k_fils_discovery_event(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_HOST_SWFDA_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch FILS discovery event\n");
--		kfree(tb);
- 		return;
- 	}
- 
- 	ath12k_warn(ab,
- 		    "FILS discovery frame expected from host for vdev_id: %u, transmission scheduled at %u, next TBTT: %u\n",
- 		    ev->vdev_id, ev->fils_tt, ev->tbtt);
--
--	kfree(tb);
- }
- 
- static void ath12k_probe_resp_tx_status_event(struct ath12k_base *ab,
-@@ -8856,7 +8796,7 @@ static void ath12k_probe_resp_tx_status_event(struct ath12k_base *ab,
- 	const struct wmi_probe_resp_tx_status_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab,
-@@ -8869,7 +8809,6 @@ static void ath12k_probe_resp_tx_status_event(struct ath12k_base *ab,
- 	if (!ev) {
- 		ath12k_warn(ab,
- 			    "failed to fetch probe response transmission status event");
--		kfree(tb);
- 		return;
- 	}
- 
-@@ -8877,8 +8816,6 @@ static void ath12k_probe_resp_tx_status_event(struct ath12k_base *ab,
- 		ath12k_warn(ab,
- 			    "Probe response transmission failed for vdev_id %u, status %u\n",
- 			    ev->vdev_id, ev->tx_status);
--
--	kfree(tb);
- }
- 
- static int ath12k_wmi_p2p_noa_event(struct ath12k_base *ab,
-@@ -8890,7 +8827,7 @@ static int ath12k_wmi_p2p_noa_event(struct ath12k_base *ab,
- 	struct ath12k *ar;
- 	int ret, vdev_id;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse P2P NoA TLV: %d\n", ret);
-@@ -8900,10 +8837,8 @@ static int ath12k_wmi_p2p_noa_event(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_P2P_NOA_EVENT];
- 	noa = tb[WMI_TAG_P2P_NOA_INFO];
- 
--	if (!ev || !noa) {
--		ret = -EPROTO;
--		goto out;
--	}
-+	if (!ev || !noa)
-+		return -EPROTO;
- 
- 	vdev_id = __le32_to_cpu(ev->vdev_id);
- 
-@@ -8926,8 +8861,6 @@ static int ath12k_wmi_p2p_noa_event(struct ath12k_base *ab,
- 
- unlock:
- 	rcu_read_unlock();
--out:
--	kfree(tb);
- 	return ret;
- }
- 
-@@ -8938,7 +8871,7 @@ static void ath12k_rfkill_state_change_event(struct ath12k_base *ab,
- 	const void **tb;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -8946,10 +8879,8 @@ static void ath12k_rfkill_state_change_event(struct ath12k_base *ab,
- 	}
- 
- 	ev = tb[WMI_TAG_RFKILL_EVENT];
--	if (!ev) {
--		kfree(tb);
-+	if (!ev)
- 		return;
--	}
- 
- 	ath12k_dbg(ab, ATH12K_DBG_MAC,
- 		   "wmi tlv rfkill state change gpio %d type %d radio_state %d\n",
-@@ -8962,7 +8893,6 @@ static void ath12k_rfkill_state_change_event(struct ath12k_base *ab,
- 	spin_unlock_bh(&ab->base_lock);
- 
- 	queue_work(ab->workqueue, &ab->rfkill_work);
--	kfree(tb);
- }
- 
- static void
-@@ -8978,7 +8908,7 @@ static void ath12k_wmi_twt_enable_event(struct ath12k_base *ab,
- 	const struct wmi_twt_enable_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse wmi twt enable status event tlv: %d\n",
-@@ -8989,15 +8919,12 @@ static void ath12k_wmi_twt_enable_event(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_TWT_ENABLE_COMPLETE_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch twt enable wmi event\n");
--		goto exit;
-+		return;
- 	}
- 
- 	ath12k_dbg(ab, ATH12K_DBG_MAC, "wmi twt enable event pdev id %u status %u\n",
- 		   le32_to_cpu(ev->pdev_id),
- 		   le32_to_cpu(ev->status));
--
--exit:
--	kfree(tb);
- }
- 
- static void ath12k_wmi_twt_disable_event(struct ath12k_base *ab,
-@@ -9007,7 +8934,7 @@ static void ath12k_wmi_twt_disable_event(struct ath12k_base *ab,
- 	const struct wmi_twt_disable_event *ev;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse wmi twt disable status event tlv: %d\n",
-@@ -9018,15 +8945,12 @@ static void ath12k_wmi_twt_disable_event(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_TWT_DISABLE_COMPLETE_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch twt disable wmi event\n");
--		goto exit;
-+		return;
- 	}
- 
- 	ath12k_dbg(ab, ATH12K_DBG_MAC, "wmi twt disable event pdev id %d status %u\n",
- 		   le32_to_cpu(ev->pdev_id),
- 		   le32_to_cpu(ev->status));
--
--exit:
--	kfree(tb);
- }
- 
- static int ath12k_wmi_wow_wakeup_host_parse(struct ath12k_base *ab,
-@@ -9099,7 +9023,7 @@ static void ath12k_wmi_gtk_offload_status_event(struct ath12k_base *ab,
- 	const void **tb;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
-@@ -9109,7 +9033,6 @@ static void ath12k_wmi_gtk_offload_status_event(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_GTK_OFFLOAD_STATUS_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch gtk offload status ev");
--		kfree(tb);
- 		return;
- 	}
- 
-@@ -9119,7 +9042,6 @@ static void ath12k_wmi_gtk_offload_status_event(struct ath12k_base *ab,
- 		rcu_read_unlock();
- 		ath12k_warn(ab, "failed to get arvif for vdev_id:%d\n",
- 			    le32_to_cpu(ev->vdev_id));
--		kfree(tb);
- 		return;
- 	}
- 
-@@ -9135,8 +9057,6 @@ static void ath12k_wmi_gtk_offload_status_event(struct ath12k_base *ab,
- 				   (void *)&replay_ctr_be, GFP_ATOMIC);
- 
- 	rcu_read_unlock();
--
--	kfree(tb);
- }
- 
- static void ath12k_wmi_event_mlo_setup_complete(struct ath12k_base *ab,
-@@ -9148,7 +9068,7 @@ static void ath12k_wmi_event_mlo_setup_complete(struct ath12k_base *ab,
- 	const void **tb;
- 	int ret, i;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse mlo setup complete event tlv: %d\n",
-@@ -9159,7 +9079,6 @@ static void ath12k_wmi_event_mlo_setup_complete(struct ath12k_base *ab,
- 	ev = tb[WMI_TAG_MLO_SETUP_COMPLETE_EVENT];
- 	if (!ev) {
- 		ath12k_warn(ab, "failed to fetch mlo setup complete event\n");
--		kfree(tb);
- 		return;
- 	}
- 
-@@ -9178,14 +9097,11 @@ static void ath12k_wmi_event_mlo_setup_complete(struct ath12k_base *ab,
- 	if (!ar) {
- 		ath12k_warn(ab, "invalid pdev_id %d status %u in setup complete event\n",
- 			    ev->pdev_id, ev->status);
--		goto out;
-+		return;
- 	}
- 
- 	ar->mlo_setup_status = le32_to_cpu(ev->status);
- 	complete(&ar->mlo_setup_done);
--
--out:
--	kfree(tb);
- }
- 
- static void ath12k_wmi_event_teardown_complete(struct ath12k_base *ab,
-@@ -9195,7 +9111,7 @@ static void ath12k_wmi_event_teardown_complete(struct ath12k_base *ab,
- 	const void **tb;
- 	int ret;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	tb = ath12k_wmi_tlv_parse(ab, skb);
- 	if (IS_ERR(tb)) {
- 		ret = PTR_ERR(tb);
- 		ath12k_warn(ab, "failed to parse teardown complete event tlv: %d\n", ret);
-@@ -9203,13 +9119,8 @@ static void ath12k_wmi_event_teardown_complete(struct ath12k_base *ab,
- 	}
- 
- 	ev = tb[WMI_TAG_MLO_TEARDOWN_COMPLETE];
--	if (!ev) {
-+	if (!ev)
- 		ath12k_warn(ab, "failed to fetch teardown complete event\n");
--		kfree(tb);
--		return;
--	}
--
--	kfree(tb);
- }
- 
- #ifdef CONFIG_ATH12K_DEBUGFS
-@@ -11239,3 +11150,31 @@ int ath12k_wmi_send_mlo_link_set_active_cmd(struct ath12k_base *ab,
- 	dev_kfree_skb(skb);
- 	return ret;
- }
-+
-+int ath12k_wmi_alloc(void)
-+{
-+	guard(mutex)(&ath12k_wmi_mutex);
-+
-+	if (!ath12k_wmi_tb) {
-+		ath12k_wmi_tb = __alloc_percpu(WMI_TAG_MAX * sizeof(void *),
-+					       __alignof__(void *));
-+		if (!ath12k_wmi_tb)
-+			return -ENOMEM;
-+
-+		refcount_set(&ath12k_wmi_refcount, 1);
-+	} else {
-+		refcount_inc(&ath12k_wmi_refcount);
-+	}
-+
-+	return 0;
-+}
-+
-+void ath12k_wmi_free(void)
-+{
-+	guard(mutex)(&ath12k_wmi_mutex);
-+
-+	if (refcount_dec_and_test(&ath12k_wmi_refcount)) {
-+		free_percpu(ath12k_wmi_tb);
-+		ath12k_wmi_tb = NULL;
-+	}
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 5ba9b7d3a888..4a34b2ca99ea 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -6576,4 +6576,7 @@ int ath12k_wmi_send_vdev_set_tpc_power(struct ath12k *ar,
- 				       struct ath12k_reg_tpc_power_info *param);
- int ath12k_wmi_send_mlo_link_set_active_cmd(struct ath12k_base *ab,
- 					    struct wmi_mlo_link_set_active_arg *param);
-+int ath12k_wmi_alloc(void);
-+void ath12k_wmi_free(void);
-+
- #endif
--- 
-2.53.0
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
