@@ -4,98 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB916FA0C37
-	for <ath12k@archiver.kernel.org>; Wed, 15 Apr 2026 06:39:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6A5CF43841
+	for <ath12k@archiver.kernel.org>; Thu, 16 Apr 2026 07:50:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=pfj9x6lxpQvTTzSusG9u/s2yjrB8/3WmF9Fw6+8o99I=; b=kH08ZYfYN9btW+gCQFKB8AxiG6
-	ZUVoGAleLoJn7eoSHMBTIGs3Mg9JSIdfuISZFVmYw+IRvBb+XH39oC04fMkxSRy3QABCsuc+klGhI
-	xr5milzT9jTqHSsGyNlihjv7QbXD+4OCnWveaEeN3fubCnNbujMFIHpdAYXQerc3g9h227z+zaNry
-	F34RCSenJuZrMpQsZIla+P8gLMojzV+N6NsSmHBXtH282iljSB6wec5AJh310uRlmJROUZN3OSOGu
-	dEAjY+XTgb2OPHxaVd2ECDBMRIwoLiu6vTM7cgnYm3Ga3N+e/uii1fH/2dhhTHJdndCN+E32tNw17
-	jIQZBdtQ==;
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=MGpbNMxSv5gqGpFfnjmtY7u/uvCzpl0AeOIlUoeqXDw=; b=zqgoGRSZR5iRWKGhdQ1XCNA8zs
+	+TievpwJZ1C6jTO36veS020qxfF28WUBJinb8REBjmcq+XrYkxbWm7GMUKgsBUwwlyb4EuHCqGx4i
+	ao5YmFjbXAnJmCEQ959OZszd1GUaydOwyp+fLKhlcGKmpdkzYNZOv9z0du7cpuweTozsChImlvxVZ
+	EXEmmWHRGXV1Pd5rBzkXOSBMG5WmgtseksxE0dLxo7Y3KEslJ1mMT6aRWjQb3hpmLdcn6a4Hd+bgI
+	j/XuQfh7biwc92v1gUpuIWstT1ikwVStigRlf9X9VPdmTU7EbpuIJCWTMLTcoCrXMJ4yw2vVVMT/H
+	wVvWRdbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wCttz-00000000eqY-2v6V;
-	Wed, 15 Apr 2026 06:39:07 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wDHUd-000000028sz-0rkD;
+	Thu, 16 Apr 2026 07:50:31 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wCttw-00000000eos-44sB
+	id 1wDHUa-000000028sX-291z
 	for ath12k@lists.infradead.org;
-	Wed, 15 Apr 2026 06:39:06 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63F4N8uW3126736;
-	Wed, 15 Apr 2026 06:39:03 GMT
+	Thu, 16 Apr 2026 07:50:29 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63G6OsAg2652064
+	for <ath12k@lists.infradead.org>; Thu, 16 Apr 2026 07:50:26 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=pfj9x6lxpQvTTzSusG9u/s2yjrB8/3WmF9F
-	w6+8o99I=; b=Zhi1MJ7tg2tFCmj0rOt3Up+ZgYiQUsDndugFe1U8ufOctz30g37
-	xUPBysPbl5ZWve8BzfkCYyaQXidMTXaZKZAWE8bCv/KKfbalP+zsOl2I5tjiRf8G
-	XfLA6CoJP4Uzx0HIH67m6UVN8LZ8Wwo4Dxtx6E2zQVMYQSs5UF0fFfgEZi7KL0WE
-	YnB1v4n6FC259HiBPf7T82mzKq/J7pyTqqJ4zOBVzEXUuftFgQcksm1qh0V70TO1
-	MBUqDiVtRrX3qgH1tOAQpQUSUWQmiPT0SvUdSZxUR9Urh0wZiT50ghYkfaWTqXxT
-	R8bEvT3c0YcA21Wg8E+JYKSfZpuXzOCTUAw==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dht56t14h-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 15 Apr 2026 06:39:03 +0000 (GMT)
-Received: from pps.filterd (nasanppmta04.qualcomm.com [127.0.0.1])
-	by NASANPPMTA04.qualcomm.com (8.18.1.7/8.18.1.7) with ESMTP id 63F6d2Q0020655;
-	Wed, 15 Apr 2026 06:39:02 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by NASANPPMTA04.qualcomm.com (PPS) with ESMTPS id 4dg55scfw0-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 15 Apr 2026 06:39:02 +0000 (GMT)
-Received: from nasanppmta04.qualcomm.com (nasanppmta04.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.18.1.12/8.18.1.12) with ESMTP id 63F6d1lb020634;
-	Wed, 15 Apr 2026 06:39:01 GMT
-Received: from hu-devc-sha-u22-c.qualcomm.com (hu-yintang-sha.qualcomm.com [10.253.185.253])
-	by NASANPPMTA04.qualcomm.com (PPS) with ESMTPS id 63F6d02k020571
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 15 Apr 2026 06:39:01 +0000 (GMT)
-Received: by hu-devc-sha-u22-c.qualcomm.com (Postfix, from userid 398181)
-	id 22E175F6; Wed, 15 Apr 2026 12:08:59 +0530 (+0530)
-From: Yingying Tang <yintang@qti.qualcomm.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, yintang@qti.qualcomm.com,
-        yingying.tang@oss.qualcomm.com
-Subject: [PATCH ath-next] wifi: ath12k: add channel 177 to the 5 GHz channel list
-Date: Wed, 15 Apr 2026 12:08:57 +0530
-Message-Id: <20260415063857.2462256-1-yintang@qti.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	MGpbNMxSv5gqGpFfnjmtY7u/uvCzpl0AeOIlUoeqXDw=; b=DlQd4DNfZ/oPIR90
+	f/AxI1o/NUi9KTHtqu6eLXkxpUp+ZuHoIaVBSOEUvoCyzFhf27zYoeQuiKrWPe2/
+	1ZRTRizgjd3a3p04B5WsbQ64TWxM1egkFOE2tuBaSbHjBQ9sKQaoJSz5aS2IXutz
+	ARCRmHvB5rU2OiQsMuA+CZlTWK/GHGKQJyEkSsC1i7X1KDRLAYuoVuzpY/gp2z7L
+	pWm4hHEfgNA+II26N2PeRGtzHOs1mAy/W9DdgWo9PpXd//kvD0Ds7vVAit7wE7lm
+	glF5WtbV684ecsbRmFxRiYxTp32KdmkbY3m+WOkqH4Enw+0YTaEGwOAkY+8imaoE
+	WUdewg==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4djtfug8va-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 16 Apr 2026 07:50:26 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2b2ecc96a9aso48784165ad.1
+        for <ath12k@lists.infradead.org>; Thu, 16 Apr 2026 00:50:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1776325825; x=1776930625; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=MGpbNMxSv5gqGpFfnjmtY7u/uvCzpl0AeOIlUoeqXDw=;
+        b=kQ7hJSvgJOpFRfOVUYwpecvtfKY+/QPncxm6oS550fV5spVE5EK/AgJAbeMmhjD2LP
+         a4Gi06+C0IjlyAQAAz8zHAoDiKB9tZzOjNHM6F/hRvXWNR9XXqOMITmgVzht8wz6CpEk
+         jXEVn+W95h3mRYDgh0Cja4Z4F6yVVUqubqT0djgfCg4QpOEN+MwC/mK9ywDZQ3oOqS4n
+         MRAS5+Oo+3m52+9a2/usnbeL4LjrZNHNQIftTaYbCk5kc5os+AcYO0dE2JTlUS7hiWVQ
+         h93quPusSy/c/psbmknnB4Q5QEPCIGEkmpWztLq8Usb33dhX7BJRz//E43/ps/ZDp/PM
+         Ep2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1776325825; x=1776930625;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=MGpbNMxSv5gqGpFfnjmtY7u/uvCzpl0AeOIlUoeqXDw=;
+        b=tGrmh7T9AECJPAIs/BSAtLjXgSxmoDLwN4XEp1aORacwi0gXgYuVWf6cMHlWTdBw25
+         pICpKNLyEA9aMe5oQqsVuRu9KKRm5iFU66EoyPFSOor58Jay2qAw2qwbcej84jVpSaVz
+         YJeJe7xcL8PT1NJGBOFsVb5kmfrsf+zqed3RG8B6jFkNgqbEzU5pIc+lzbnF9Sy+2AfD
+         S3zrNJpXaXj2VJtdI9drinCqkSzi83fZuF02hsj83MsXWFeXcXhl78nBRCUdQoaDxBmE
+         OTbWPr+cpR+pDheHH/+bB0AROFsQe0/Owb4Y1twhK+Pt5AAPZXh8XlTyWBXdi1sM/qtm
+         2pow==
+X-Forwarded-Encrypted: i=1; AFNElJ+rGRrJqjuvZhKijeZXwpfom4pk65Pwq36xK6eJ1Kj546shFsNJ68aWlndkXTdwtmY3E2nLTNk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzrfZmHYCEXdWKa/gNKmV3SfE4UNpMjTDpvAtf/C6TMIE3jP6t1
+	tBrjN+Ky4ecXx2VwBzoI2CM9eWmuTPYThgPd9uQT0aaCxHbnE0YBfSSzoHAp0rU1GIFM6VF4Pqi
+	QSE7qOw7em74h+RH9W7MvoNd0et8FNTVLS0avo3EnzhlreFivMXIBH3v4MIWBF7gB
+X-Gm-Gg: AeBDievKRugF+g2O3GuhJDl2OlqjLQJzdgPDQ/TBSRZsnjaJvVOaBIupkdwz7uTjl6E
+	2YODAqc9FZWypWnqAYIvcQtPCrTNmRPT3QdflHGDR357Dma7/jQLrTqdLoLWHFc13FeLVLyzh9G
+	cgLVRKC6vD5r98ULnLeZw3cVZvDul5a/QNT2mqZHjuscr6Ovg4AKR2wk6Sv/q+AEzZWuO2EK4qV
+	0bHbB94rDh+QZU2UFRJ5KFLdLaDelZ59HclFzTwy1MnOAYNkGdxtTywlhAHTQvPFLEhiVptX+Ln
+	m/cabqZN96j1sSvAZn/1Ku6tTfrdKC4bLDjrnRP/yfgVaHWkUd6Z62efMw1SUBrVCthpkSnElXJ
+	5rlzg6JkIaAZPhpx00POI43c1n18iouzI7E7ay2B8HT7gtRmUaBzcwINw9C7ktos=
+X-Received: by 2002:a05:6a20:7d9d:b0:398:7df5:2dae with SMTP id adf61e73a8af0-39fe3c2d54amr26625061637.9.1776325825407;
+        Thu, 16 Apr 2026 00:50:25 -0700 (PDT)
+X-Received: by 2002:a05:6a20:7d9d:b0:398:7df5:2dae with SMTP id adf61e73a8af0-39fe3c2d54amr26625018637.9.1776325824820;
+        Thu, 16 Apr 2026 00:50:24 -0700 (PDT)
+Received: from [10.152.207.30] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82f670791bcsm4586014b3a.18.2026.04.16.00.50.20
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 16 Apr 2026 00:50:24 -0700 (PDT)
+Message-ID: <ffe60911-1ae4-4ee4-ac20-42ffeab89808@oss.qualcomm.com>
+Date: Thu, 16 Apr 2026 13:20:18 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Authority-Analysis: v=2.4 cv=LuiiDHdc c=1 sm=1 tr=0 ts=69df3287 cx=c_pps
- a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=A5OVakUREuEA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
- a=gowsoOTTUOVcmtlkKump:22 a=EUspDBNiAAAA:8 a=FF8qzyc13NczEEFYgNUA:9
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDE1MDA1OSBTYWx0ZWRfX91KPWy9cMDVh
- MD91sQI9LcauAPde+KbtJB0SbPewNtmPhgpRFVT0vptL2Fw49iw+yY43uR90Sa+RWkTTkML4Wat
- GAt1M7m759zDtqVWYB3qwKbNBpETfXm2T9Q1oVr0byibPNd+UTKEjh60iJxbx18EAqsbvII0DLL
- Hdj28D/q1Zicv4gA4KA+40fltAGttyb7z0U8KG9F/zecuy/X1/9jb0LHg4hheqrSlHfyWnZdKiK
- HAzc0pG9WfolRqdWFHkQJOeZThD+CJuOYGJD5AgTEY7xUoyToZXmplCQH//Emqi3Wzdg8U0iWnY
- L1FkGPYGinrvGNg6UDNE2bBGHYgNePkcSQP5gQBckThvLjzt18g2A3l2YcLgMz8c4Vu9Cr8C35L
- 43Q01elvOem75CTkltYkc1s0IDpL9kcPsJa57Q/Er+EBfqq/EjEiCA1Sbbbe06skmoDT1eDvwme
- xtjZ3qu4icK36GA8Ayw==
-X-Proofpoint-ORIG-GUID: 8VSbwQGdBoQjHQMCrM4BC6ih2CBU7Jvr
-X-Proofpoint-GUID: 8VSbwQGdBoQjHQMCrM4BC6ih2CBU7Jvr
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH wireless-next v8 2/3] wifi: cfg80211: add initial UHR
+ support
+To: Johannes Berg <johannes@sipsolutions.net>,
+        Harshitha Prem <harshitha.prem@oss.qualcomm.com>,
+        linux-wireless@vger.kernel.org
+Cc: vasanthakumar.thiagarajan@oss.qualcomm.com,
+        Lorenzo Bianconi <lorenzo@kernel.org>, ath12k@lists.infradead.org,
+        Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Ping-Ke Shih <pkshih@realtek.com>, Jouni Malinen <j@w1.fi>,
+        Benjamin Berg <benjamin@sipsolutions.net>
+References: <20260130154259.265130-5-johannes@sipsolutions.net>
+ <20260130164259.54cc12fbb307.I26126bebd83c7ab17e99827489f946ceabb3521f@changeid>
+ <f96125eeda23451c19067359eb9d10b4047bcdd3.camel@sipsolutions.net>
+ <5d54feea-d0cd-4bd7-b0d2-02e42f0fe5e1@oss.qualcomm.com>
+ <be9ab3c7f05b0f56f19aee0ffc7c2f96138b9a05.camel@sipsolutions.net>
+ <156d6d48-d135-4acf-a5d7-c9ae80523864@oss.qualcomm.com>
+ <0f4b34f0b529fd93fc608d8bbac0e98516b7a3d2.camel@sipsolutions.net>
+ <f3282007-a11a-4f68-86d8-0945e4979d65@oss.qualcomm.com>
+ <d3ecf6e5580cbe50eee807b1e63109e42e3b956c.camel@sipsolutions.net>
+ <416d08f1-6b8d-4bf7-9a63-c3c68497d990@oss.qualcomm.com>
+ <c676b2cd73463fa88f459f0416c60b03f20dd027.camel@sipsolutions.net>
+ <1cf0ae795b0e3e95b38cb7abf84ffad34c187fdf.camel@sipsolutions.net>
+Content-Language: en-US
+From: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
+In-Reply-To: <1cf0ae795b0e3e95b38cb7abf84ffad34c187fdf.camel@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: RQaIZ-4AAHWagalXE4xodUf0doFMt8bF
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDE2MDA3MyBTYWx0ZWRfXwN0kV+xJlM0S
+ CTRnzEg2Al1Q52VOvJmsWWZfsn4KPb4xvSF/fM33YpgOSd07X4kqO9tZF62sIdvV8+vvp1Mmb3k
+ 5d1hmVje5IFrIeJdbcjxwiDvxlFdoqD7lvs3NbSEQaKqbZkxjNKnGlj8qQrFkq6da9+rYI+YGtD
+ QySmA1EIqaWIiAr7RftT2HJPRDdAUHZNdKi85jJbc6yIhg6/+wLzV7YfLo6GnaUAsnOrdBpRAtN
+ 7VYMqzSvZugPjirc3MBd5iZNqJjMso3tXevJ5tVU7E5BaG3Dc23ySCDPsgtz+Xz75Pk7/ZByChV
+ fRXl/v3RSOFP/dy9xVsRHevUYqBI85Odiq1F+63njnCroSw5BwC1ikUCV2ggo0CxkkHHakvVrZf
+ WBAPuqbYWK82G5KKwN+JM9dOGIc0i4GQ33dHk8o2NCMgFnAOd/TljkwobwnX/k7KbabFqv0jPjY
+ apl+HAJPvrW+kuAv/ow==
+X-Proofpoint-GUID: RQaIZ-4AAHWagalXE4xodUf0doFMt8bF
+X-Authority-Analysis: v=2.4 cv=KrF9H2WN c=1 sm=1 tr=0 ts=69e094c2 cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+ a=IkcTkHD0fZMA:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=ePdpjyjeF8tyq4wwS_QA:9 a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-04-14_04,2026-04-13_04,2025-10-01_01
+ definitions=2026-04-16_02,2026-04-13_04,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 clxscore=1011 priorityscore=1501 adultscore=0 spamscore=0
- suspectscore=0 malwarescore=0 phishscore=0 lowpriorityscore=0 impostorscore=0
+ bulkscore=0 spamscore=0 clxscore=1011 priorityscore=1501 phishscore=0
+ impostorscore=0 malwarescore=0 adultscore=0 lowpriorityscore=0 suspectscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2604070000 definitions=main-2604150059
+ reason=mlx scancount=1 engine=8.22.0-2604070000 definitions=main-2604160073
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260414_233905_138350_0B2E8338 
-X-CRM114-Status: GOOD (  16.54  )
+X-CRM114-CacheID: sfid-20260416_005028_568862_4C53F3BB 
+X-CRM114-Status: GOOD (  60.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,138 +160,191 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Yingying Tang <yingying.tang@oss.qualcomm.com>
 
-Add support for 5 GHz channel 177 with a center frequency of 5885 MHz and
-Operating Class 125 per IEEE Std 802.11-2024 Table E-4.
 
-Channels 169, 173, and 177 are in the 5.9 GHz band and must be disabled
-when 5.9 GHz service bit is not supported. The 5.9 GHz band is only permitted
-for WLAN operation under FCC regulations.
+On 3/13/2026 1:02 AM, Johannes Berg wrote:
+> 
+>>> Because of this, an event-driven approach was considered.
+> 
+> So - starting this again from scratch. Benjamin and I spent some time
+> discussing this today too, and hashed out a (mostly?) workable solution
+> that should address most of the issues. I'll try to summarise that
+> below.
+> 
+Thanks for the detailed summary.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
+> As will become obvious - and that's why I quoted only the line _you_
+> wrote before - this means we (including myself :)) need to stop being
+> afraid of hostapd doing (soft?) real-time [1] tasks...
+> 
+> [1] I'm using that word in the (formal) sense of having a deadline, not
+> of having to be particularly fast.
+> 
+> 
+> Let's assume the following constraints:
+> 
+> - preparing a beacon template as a real-time task can be done by
+> hostapd, given enough heads-up time
+> - no periodic events in a steady state when the AP is operating
+> normally
+> - TSF drift between links is correctly handled (maintaining <=30us
+> offset at any time)
+> 
 
-Signed-off-by: Yingying Tang <yingying.tang@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/mac.c   | 26 +++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h   |  1 +
- 4 files changed, 38 insertions(+), 4 deletions(-)
+Handling beacon template within TBTT interval between links is possible 
+in a model implementation but in real-time low-cost platforms where the 
+AP is handling max clients (256) with multiple vdevs enabled might be a 
+overhead for user-space to process.
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 59c193b24764..17b31c969cd9 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -541,8 +541,8 @@ struct ath12k_sta {
- #define ATH12K_MAX_5GHZ_FREQ	(ATH12K_5GHZ_MAX_CENTER + ATH12K_HALF_20MHZ_BW)
- #define ATH12K_MIN_6GHZ_FREQ	(ATH12K_6GHZ_MIN_CENTER - ATH12K_HALF_20MHZ_BW)
- #define ATH12K_MAX_6GHZ_FREQ	(ATH12K_6GHZ_MAX_CENTER + ATH12K_HALF_20MHZ_BW)
--#define ATH12K_NUM_CHANS 101
--#define ATH12K_MAX_5GHZ_CHAN 173
-+#define ATH12K_NUM_CHANS 102
-+#define ATH12K_MAX_5GHZ_CHAN 177
- 
- static inline bool ath12k_is_2ghz_channel_freq(u32 freq)
- {
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index f0b4f607b845..5327a427c26c 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -17,6 +17,11 @@
- #include "dp_mon.h"
- #include "debugfs_htt_stats.h"
- 
-+#define ATH12K_2GHZ_MIN_CHAN_NUM 1
-+#define ATH12K_2GHZ_MAX_CHAN_NUM 14
-+#define ATH12K_5GHZ_MIN_CHAN_NUM 36
-+#define ATH12K_5GHZ_MAX_CHAN_NUM 177
-+
- static int ath12k_dp_rx_tid_delete_handler(struct ath12k_base *ab,
- 					   struct ath12k_dp_rx_tid_rxq *rx_tid);
- 
-@@ -1284,9 +1289,11 @@ void ath12k_dp_rx_h_ppdu(struct ath12k_pdev_dp *dp_pdev,
- 	    center_freq <= ATH12K_MAX_6GHZ_FREQ) {
- 		rx_status->band = NL80211_BAND_6GHZ;
- 		rx_status->freq = center_freq;
--	} else if (channel_num >= 1 && channel_num <= 14) {
-+	} else if (channel_num >= ATH12K_2GHZ_MIN_CHAN_NUM &&
-+		   channel_num <= ATH12K_2GHZ_MAX_CHAN_NUM) {
- 		rx_status->band = NL80211_BAND_2GHZ;
--	} else if (channel_num >= 36 && channel_num <= 173) {
-+	} else if (channel_num >= ATH12K_5GHZ_MIN_CHAN_NUM &&
-+		   channel_num <= ATH12K_5GHZ_MAX_CHAN_NUM) {
- 		rx_status->band = NL80211_BAND_5GHZ;
- 	}
- 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 553ec28b6aaa..7fb6507cebf8 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -51,6 +51,9 @@
- 	.max_power              = 30, \
- }
- 
-+#define ATH12K_5_9_GHZ_MIN_FREQ 5845
-+#define ATH12K_5_9_GHZ_MAX_FREQ 5885
-+
- static const struct ieee80211_channel ath12k_2ghz_channels[] = {
- 	CHAN2G(1, 2412, 0),
- 	CHAN2G(2, 2417, 0),
-@@ -96,6 +99,7 @@ static const struct ieee80211_channel ath12k_5ghz_channels[] = {
- 	CHAN5G(165, 5825, 0),
- 	CHAN5G(169, 5845, 0),
- 	CHAN5G(173, 5865, 0),
-+	CHAN5G(177, 5885, 0),
- };
- 
- static const struct ieee80211_channel ath12k_6ghz_channels[] = {
-@@ -13900,6 +13904,26 @@ static int ath12k_mac_update_band(struct ath12k *ar,
- 	return 0;
- }
- 
-+static void ath12k_mac_update_5_9_ghz_ch_list(struct ath12k *ar,
-+					      struct ieee80211_supported_band *band)
-+{
-+	int i;
-+
-+	if (test_bit(WMI_TLV_SERVICE_5_9GHZ_SUPPORT,
-+		     ar->ab->wmi_ab.svc_map))
-+		return;
-+
-+	guard(spinlock_bh)(&ar->ab->base_lock);
-+	if (ar->ab->dfs_region != ATH12K_DFS_REG_FCC)
-+		return;
-+
-+	for (i = 0; i < band->n_channels; i++) {
-+		if (band->channels[i].center_freq >= ATH12K_5_9_GHZ_MIN_FREQ &&
-+		    band->channels[i].center_freq <= ATH12K_5_9_GHZ_MAX_FREQ)
-+			band->channels[i].flags |= IEEE80211_CHAN_DISABLED;
-+	}
-+}
-+
- static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
- 					   u32 supported_bands,
- 					   struct ieee80211_supported_band *bands[])
-@@ -14033,6 +14057,8 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
- 			band->n_bitrates = ath12k_a_rates_size;
- 			band->bitrates = ath12k_a_rates;
- 
-+			ath12k_mac_update_5_9_ghz_ch_list(ar, band);
-+
- 			if (ab->hw_params->single_pdev_only) {
- 				phy_id = ath12k_get_phy_id(ar, WMI_HOST_WLAN_5GHZ_CAP);
- 				reg_cap = &ab->hal_reg_cap[phy_id];
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 5ba9b7d3a888..8fab8ddaae59 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2259,6 +2259,7 @@ enum wmi_tlv_service {
- 	WMI_TLV_SERVICE_FREQINFO_IN_METADATA = 219,
- 	WMI_TLV_SERVICE_EXT2_MSG = 220,
- 	WMI_TLV_SERVICE_BEACON_PROTECTION_SUPPORT = 244,
-+	WMI_TLV_SERVICE_5_9GHZ_SUPPORT = 247,
- 	WMI_TLV_SERVICE_SRG_SRP_SPATIAL_REUSE_SUPPORT = 249,
- 	WMI_TLV_SERVICE_MBSS_PARAM_IN_VDEV_START_SUPPORT = 253,
- 
--- 
-base-commit: dbd94b9831bc52a1efb7ff3de841ffc3457428ce
+> We evidently already make these assumptions:
+> 
+> - if beacon intervals are not the same, the TBTT offset in RNR is
+> filled in by firmware (I see no way around this)
+> - either firmware fills in TSF offset, or it's just zero, and not
+> really accounting for slight drifts (but that's probably OK since it
+> never adds up given the <=30us requirement)
+> 
+> And also let's introduce some new operations to driver/firmware:
+> 
+> - the firmware can drop a frame that it's not able to transmit before
+> a given (as frame metadata) TSF value on the link, and indicate to
+> the driver that this is the reason the frame was dropped
+> - the firmware can create events at/after beacon TBTT (or beacon
+> transmission), this can be controlled by the driver; these events
+> contain the next TBTT's timestamp value
+> - the TSF offsets between links can be known to the driver, if they can
+> change (I suspect CSA could do that?) this can somehow be noticed by
+> or given to the driver
+> 
+> With that, it seems we can redesign this whole thing to be event-driven
+> and (mostly?) race-free.
+> 
+> In steady state, basically nothing would change from what hostapd is
+> doing today. It simply configures beacon templates, occasionally updates
+> them if elements need to change, and sends probe responses,
+> (re)association responses etc. as usual.
+> 
+> During any sort of update (CSA, color change, EHT updates, UHR updates)
+> things operate a bit differently:
+> 
+> 1) hostapd enables TBTT / beacon transmit events, these events would be
+> generated by firmware and passed up, for each link, containing also the
+> TBTT timestamp of the _next_ beacon to be transmitted
+> 
+> 2) hostapd waits for the TBTT event for the link that it wants to do the
+> update on, ignoring events for other links
+> 
+> 3) starting from that TBTT event, on each TBTT event hostapd generates a
+> new beacon template for the link the event was for, and configures it to
+> the driver/firmware. Since that's a future beacon, it has to predict the
+> content of that beacon using
+> - the TBTT of the first beacon carrying the update announcement
+> - the TSF offsets between the links
+> - the beacon intervals of all the links
+> (a bit more on this later)
+> 
+> 4) After applying the updates (a bit more on this later) and noticing
+> that the announcements are finished, hostapd waits for one more TBTT
+> event for each link and configures the beacons back to steady state,
+> after which it turns off the events.
+> 
+> If, at any time during this, hostapd needs to send a probe response,
+> (re)association response, EPP Capa/Operation response (or others?) which
+> holds information about the updates with the current counter values,
+> hostapd will create the frame per the current counters that it
+> maintains, and will transmit this frame with a TSF cut-off value
+> indicating that it must be transmitted before the next TBTT (over all
+> links), or dropped.
+> If this frame ends up being dropped by firmware because it didn't get
+> out before the indicated TSF, hostapd gets a specific notification for
+> this and then simply re-generates it and sends it again. This could
+> possibly repeat if TBTTs are close together on multiple links, but I
+> think it's not worth optimising for this case, though it could be done
+> by deferring the response slightly based on timers, or at the expense of
+> a more complex API ("defer until X and don't send after Y" vs. "don't
+> send after Y"), neither seems really worthwhile.
+> 
+
+For dense client situations where we have the AP in a stadium or in any 
+crowded place, the clients are moving between APs, we see that there 
+will be more traffic drops for client connected as it gets dropped due 
+to above condition. (Also, there is a chance the station might add the 
+AP to the blacklist if there are more rejection while associating)
+
+> 
+> I said I'd give more information for (3) and (4) above, so:
+> 
+> For (3), also consider that it already has to effectively be able to do
+> this for the templates thing we discussed, it has to predict what each
+> link is going to look like in the future. I think this isn't too much of
+> an issue, but care must be taken especially if beacon intervals differ.
+> 
+> For (4), I think the way how the updates are done may depend on what the
+> update is. If, for example, it's DBE increasing the bandwidth, then
+> could just do the update _before_ the 0 beacon is transmitted, and if
+> it's decreasing bandwidth could do it _after_ the 0 beacon is
+> transmitted. Some of these may potentially require management by the
+> kernel or even driver/firmware (how do you switch NPCA parameters at the
+> exact right point if not in FW?), and perhaps (especially for CSA?)
+
+In offloaded case, firmware takes care of removing the newly added 
+element(s) once the beacon with count 1 is sent. For CSA and ML 
+reconfig, fimrware will send a completion event from which kernel/driver 
+data will be updated.
+
+> there will be some considerations regarding multiple interfaces.
+> I mostly think this question is orthogonal, since armed with a TBTT
+> hostapd could also request that this update be done at a given TBTT.
+> 
+> 
+As mentioned above, this gets tricky in the cases which involves a low 
+cost platforms in a dense client scenario. Users might not like having a 
+glitch in their traffic (especially during live streaming) :)
+
+> We haven't really been able to poke significant holes into this, but
+> maybe that doesn't mean much. Couple of thoughts on that:
+> 
+>   * For each link, hostapd has roughly the whole beacon interval to build
+>     the next beacon's template, which seems reasonable.
+>   * There's a really weird corner case where an assoc response is
+>     attempted to transmit just before a beacon, doesn't get an ACK, but a
+>     retransmission isn't possible until after the beacon and it's dropped
+>     due to the TSF cut-off. Doesn't seem worth worrying about.
+>   * If the TBTTs for two links are at the same time, and the events to
+>     userspace for them are not coming "updated link first", then the
+>     beacon transmitted at the same time on the unchanged link may not yet
+>     be announcing the update, depending on the event order, given that
+>     hostapd waited for the affected link's first TBTT event. This doesn't
+>     really seem like a problem, but I think could be addressed by
+>     updating all the links on the first event immediately or so, or
+>     (Benjamin prefers this I think) adding the first beacon's TBTT to the
+>     response to the event enable command, I just worry that would cause
+>     other races that would need to be addressed.
+> 
+> That's it for now :) Let me know what you think.
+> 
+> johannes
+
+Thanks for the detailed answer with clear explanation. Yes, this is not 
+much racy as we saw in the previous designs and addressed most of them.
+We do think that this is suitable for the cases where the CPU load is 
+very much low, also the time sensitiveness with respect to client 
+handling is not a problem.
+
+But, in real time use cases where the AP is getting deployed in crowded 
+places, the CPU load spikes which might cause more traffic drops or 
+connectivity issues. Also, if the AP is enabled with cloud analyzer 
+which collects periodic stats, load will be high, thus chances for the 
+user-space application to get the CPU cycle is highly subjective. That's 
+why we preferred a offload solution where most of the time sensitive 
+operation are within the firmware.
+
+We will come up with a offloaded design that would be scalable for the 
+upstream driver(s), also address the hwsim cases where we would want a 
+minimal test cases for handling CU to facilitate upstream STA 
+implementations.
+
+Regards
+Manish Dharanenthiran
+
 
