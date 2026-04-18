@@ -4,56 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6129F99C6A
-	for <ath12k@archiver.kernel.org>; Fri, 17 Apr 2026 21:47:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C597F99C8C
+	for <ath12k@archiver.kernel.org>; Sat, 18 Apr 2026 16:36:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:To:Subject:From:MIME-Version:Date:Message-ID:Reply-To:Cc:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=u2fTv3IiXBB3BEJSoVAs9tglrnbn2oVYpexBCzoUu20=; b=SkjaN2l1Na63T7jmto27yMcDRH
-	8w1JVsVKgT3SgUg3QvRzzRcXt3ja7edQgDl1HWUDMkyBKoaq21UdnTv7+s0ZpxT/Pi5hmfVKm5JVc
-	LcvCKyo5aLzGOjxuFayHW5rNZY29hbu5Nad67G/5/Er7At+nmIgeuR5g3q4p1M/hQSaNfQUEjYPqd
-	Ag5TIbKRnlDtAvcW6iCLk8uZCbZT5bkZSDsCIwArKqi0DC4o1w9WjI7H5AwMnouOWglYiSc4kuoRu
-	nn3T49SJUxC4sth3YbLiMQuRon+udV7K7lrkDM2+SH9mWCRYeW48UYIQUBrm60DY/yDeOShOBfGFk
-	yweXsEDQ==;
+	bh=EIov3vZowt5bVNydawHb/4jPVvuIa5Cbwf/oc3CDOVc=; b=mfgMgaOd/UTHddIybcQeYvPn+D
+	RhphO3BwNTMKLPcEq+ZTrPH6/vFZ0SXYFpkuX2vU37OCmUrW8n24vsbgWeQ0YyJGJdIo6NtX92Z67
+	4rLmpxCrb/90X+UX53ewvKNQO8oIC8JMwmF1chLCsemyTg4RIeH+cMfQGuyo3pfgRjq4PtDKDSJ0M
+	sunbzHIBJybdlwT1e5ROmGXcduFyqfKoice/1QxxXWiWBPNKDAUVZPEFSv3tsf0+CoSjg3PkxwOV5
+	IvTDZi0dyYtW9qfeST75OR+0V5/R/KvExe+38QU/zgyZZ2bF6EZCJu+CltgL8FPwpIYHQsPXxmQaa
+	bjybSAQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wDr1f-00000004V75-2vcX;
-	Fri, 17 Apr 2026 21:46:59 +0000
-Received: from mail.mokrynskyi.com ([65.109.39.229])
+	id 1wE8el-00000005658-0qsI;
+	Sat, 18 Apr 2026 16:36:31 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wDr1d-00000004V6m-1J1O
+	id 1wE8ei-0000000564n-2tZf
 	for ath12k@lists.infradead.org;
-	Fri, 17 Apr 2026 21:46:58 +0000
-Message-ID: <d464db58-a5cc-4f65-8bb7-3d3eea6ef01a@mokrynskyi.com>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mokrynskyi.com;
-	s=dkim; t=1776462406;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=u2fTv3IiXBB3BEJSoVAs9tglrnbn2oVYpexBCzoUu20=;
-	b=Ei2U+dsCu98qfqoXHWdCyiHkPmY+jyygiMZ+hkR8MuHU2n+JoSXUDXKNWNRUXVyz09Sz2A
-	4prfIQtwaSH3uSCuW4vEz8NeE6WWYjm1/xqgYCOTpFeQ/Bwne4Q/V262u3U6MV/PxbPVwq
-	wyZ4XaID336XfaV0UcpB1DYJGlhjcKVzWh+BxRvHAzM3LnTdfi9nhF+A6mTAyUh1chBKw4
-	TUZPINvswbQdlBQnhD6ZxiWfj6CFVUOU8hWwqNplUFVQdUc1mNL2EenvUWbDszfQPUOsCH
-	xn4xJHUKRz4wt006GLqkoL/4tky8DG6K4/ClJ/wh7iBA89gIcBEkZrAnEQqElg==
-Authentication-Results: mail.mokrynskyi.com;
-	auth=pass smtp.mailfrom=nazar@mokrynskyi.com
-Date: Sat, 18 Apr 2026 00:46:45 +0300
-MIME-Version: 1.0
-Content-Language: en-US, uk, uk-UA
-From: Nazar Mokrynskyi <nazar@mokrynskyi.com>
-Subject: Update regulatory database inside firmware
+	Sat, 18 Apr 2026 16:36:30 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63I4dsNO326469;
+	Sat, 18 Apr 2026 16:36:27 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=EIov3vZowt5bVNydawHb/4jPVvuIa5Cbwf/
+	oc3CDOVc=; b=c1IpWUlYluUFK8az0OUgg/s+H39Gmbg2rpN9ojxD8C8LY2sJ93h
+	tGszmm/Zm2Q1gb3VusDo6Uif7t77op+OfunYayOgbIvsPKkkZ3NMOF+HVzO28aXI
+	pYgML8yIHzfy6AbIR5hZ5e0/3+Ka2WwbFqVFn47BaawnoLKpBgbBxTlywV0iLrk3
+	LblJpeBqwRpvJ7p0krzwPW1+Z+ufQ7dFis2XOBbyalYc545CrdtlVdMafClst4Ie
+	J3EXNgIIaa9vY+DroRi/YhSraHchO8ambt7hXyTsKc16uR2gMf92+or0nwfwVXpZ
+	QfIZ1oZdBriTK1dsyMjYptnWngfE6GCrbuA==
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dm34h92hd-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 18 Apr 2026 16:36:26 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.18.1.7/8.18.1.7) with ESMTP id 63IGaNJt026278;
+	Sat, 18 Apr 2026 16:36:23 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 4dm31hdc8a-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 18 Apr 2026 16:36:23 +0000 (GMT)
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.18.1.12/8.18.1.12) with ESMTP id 63IGaN0b026273;
+	Sat, 18 Apr 2026 16:36:23 GMT
+Received: from hu-devc-blr-u22-a.qualcomm.com (hu-tamizhr-blr.qualcomm.com [10.190.110.180])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 63IGaM8k026272
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 18 Apr 2026 16:36:23 +0000 (GMT)
+Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 380741)
+	id 21B28418EB; Sat, 18 Apr 2026 22:06:22 +0530 (+0530)
+From: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Spamd-Bar: --
+Cc: linux-wireless@vger.kernel.org,
+        Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
+Subject: [PATCH ath-next] wifi: ath12k: Handle DP_RX_DECAP_TYPE_8023 type in Rx path
+Date: Sat, 18 Apr 2026 22:06:20 +0530
+Message-Id: <20260418163620.3633959-1-tamizh.raja@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Authority-Analysis: v=2.4 cv=J46aKgnS c=1 sm=1 tr=0 ts=69e3b30b cx=c_pps
+ a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=A5OVakUREuEA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
+ a=DJpcGTmdVt4CTyJn9g5Z:22 a=EUspDBNiAAAA:8 a=Cu7rrvbFi3rOH6yX9OAA:9
+X-Proofpoint-GUID: hHWe2p7e_m6k-6NKay-q4eDJV-LbM3Bu
+X-Proofpoint-ORIG-GUID: hHWe2p7e_m6k-6NKay-q4eDJV-LbM3Bu
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDE4MDE2NSBTYWx0ZWRfX+1/kNBjwgXuZ
+ ABoho4dK5UgRSY90F0ZaxbusxhUaaQrSZxysM3+TTHP8xU4hxJ/7tbAttcUL/Q2bc8pFiOLczhc
+ ADXWjhcPnpc2wXOhLjk0Cj/Oxry20UzWOukw+cjTEXBrPoWeqmWJB2J4cw7P2C60cw3rt33hAyt
+ vZkIGrnFQiR9PrncVAKCHPzSWpsXp+NwWyP7t4eHpN/rJVsOWWYpDYHXhivrcbb3jRNp0C5cZ5L
+ cRAPcuuIB2qZs8cVr+zUBNSbVEEPSqA3qIzHl6efZuRYGfk/ysQKqPnWwIxYnh3+JJfQGhvyXlq
+ MsMONs/7L24GzO/f5v5yWRWfJcvx63/2iB6JVIh9OwReK/iyoyHVAUGK6i3NAUR+7+RkG5AiFoz
+ nVJdk7CBtMvs3blemlCvUNiU+JFRxLMXJowZLZMOkA6WcB2s8cuae1s73GyerK38WozuNwXcHvB
+ QIUx29vRYseeQkzdsQg==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-04-18_05,2026-04-17_04,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 adultscore=0 phishscore=0 suspectscore=0 spamscore=0
+ malwarescore=0 priorityscore=1501 clxscore=1011 bulkscore=0
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2604070000
+ definitions=main-2604180165
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260417_144657_559349_3666DDDE 
-X-CRM114-Status: UNSURE (   3.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260418_093628_800548_B832F553 
+X-CRM114-Status: GOOD (  18.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,15 +111,152 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Right now the information is significantly outdated.
+The driver does not currently set any rx_flag for frames received with
+decap type DP_RX_DECAP_TYPE_8023. When the hardware reports
+LLC-encapsulated packets whose length field is below 0x0600, the MSDU_END
+descriptor may indicate decap type DP_RX_DECAP_TYPE_8023.
 
-Many countries have 6 GHz band available now for WiFi, but QCN9274 and probably others refuse to recognize it since the information comes from the firmware rather than kernel's updated regulatory database.
-Please publish firmware with updated information.
+These frames are effectively equivalent to Ethernet-II (DIX) packets,
+similar to those decoded as DP_RX_DECAP_TYPE_ETHERNET2_DIX. If the
+driver does not set RX_FLAG_8023 for these frames, mac80211 will
+misinterpret them as 802.11 frames. This causes valid frames such as
+Bridge Protocol Data Units (BPDUs) to be dropped. BPDUs are exchanged
+between switches to maintain and manage network topology, and must
+be treated as Ethernet frames.
 
-I'm using WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1, which I believe is the latest one as of right now.
+Set RX_FLAG_8023 for decap type DP_RX_DECAP_TYPE_8023 in
+ath12k_dp_rx_h_undecap() to ensure mac80211 handles these frames
+correctly. Also add multicast packet handling support for the
+DP_RX_DECAP_TYPE_8023 decap type.
 
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 57 ++++++++++++++++---------
+ 1 file changed, 37 insertions(+), 20 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 250459facff3..cae00e0539df 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -1092,7 +1092,8 @@ static void ath12k_get_dot11_hdr_from_rx_desc(struct ath12k_pdev_dp *dp_pdev,
+ static void ath12k_dp_rx_h_undecap_eth(struct ath12k_pdev_dp *dp_pdev,
+ 				       struct sk_buff *msdu,
+ 				       enum hal_encrypt_type enctype,
+-				       struct hal_rx_desc_data *rx_info)
++				       struct hal_rx_desc_data *rx_info,
++				       enum ath12k_dp_rx_decap_type decap_type)
+ {
+ 	struct ieee80211_hdr *hdr;
+ 	struct ethhdr *eth;
+@@ -1100,12 +1101,24 @@ static void ath12k_dp_rx_h_undecap_eth(struct ath12k_pdev_dp *dp_pdev,
+ 	u8 sa[ETH_ALEN];
+ 	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
+ 	struct ath12k_dp_rx_rfc1042_hdr rfc = {0xaa, 0xaa, 0x03, {0x00, 0x00, 0x00}};
++	struct ath12k_dp_rx_rfc1042_hdr *llc;
+ 
+ 	eth = (struct ethhdr *)msdu->data;
+ 	ether_addr_copy(da, eth->h_dest);
+ 	ether_addr_copy(sa, eth->h_source);
+-	rfc.snap_type = eth->h_proto;
+-	skb_pull(msdu, sizeof(*eth));
++	if (decap_type == DP_RX_DECAP_TYPE_8023) {
++		/*
++		 * For 802.3 frames, eth->h_proto carries a length field, not
++		 * an EtherType. The actual EtherType is in the LLC/SNAP header
++		 * that follows the Ethernet header.
++		 */
++		llc = (struct ath12k_dp_rx_rfc1042_hdr *)(msdu->data + sizeof(*eth));
++		rfc.snap_type = llc->snap_type;
++		skb_pull(msdu, sizeof(*eth) + sizeof(*llc));
++	} else {
++		rfc.snap_type = eth->h_proto;
++		skb_pull(msdu, sizeof(*eth));
++	}
+ 	memcpy(skb_push(msdu, sizeof(rfc)), &rfc,
+ 	       sizeof(rfc));
+ 	ath12k_get_dot11_hdr_from_rx_desc(dp_pdev, msdu, rxcb, enctype, rx_info);
+@@ -1123,9 +1136,10 @@ void ath12k_dp_rx_h_undecap(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu
+ 			    bool decrypted,
+ 			    struct hal_rx_desc_data *rx_info)
+ {
++	enum ath12k_dp_rx_decap_type decap_type = rx_info->decap_type;
+ 	struct ethhdr *ehdr;
+ 
+-	switch (rx_info->decap_type) {
++	switch (decap_type) {
+ 	case DP_RX_DECAP_TYPE_NATIVE_WIFI:
+ 		ath12k_dp_rx_h_undecap_nwifi(dp_pdev, msdu, enctype, rx_info);
+ 		break;
+@@ -1139,19 +1153,33 @@ void ath12k_dp_rx_h_undecap(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu
+ 		/* mac80211 allows fast path only for authorized STA */
+ 		if (ehdr->h_proto == cpu_to_be16(ETH_P_PAE)) {
+ 			ATH12K_SKB_RXCB(msdu)->is_eapol = true;
+-			ath12k_dp_rx_h_undecap_eth(dp_pdev, msdu, enctype, rx_info);
++			ath12k_dp_rx_h_undecap_eth(dp_pdev, msdu, enctype, rx_info,
++						   decap_type);
+ 			break;
+ 		}
+ 
+ 		/* PN for mcast packets will be validated in mac80211;
+ 		 * remove eth header and add 802.11 header.
+ 		 */
+-		if (ATH12K_SKB_RXCB(msdu)->is_mcbc && decrypted)
+-			ath12k_dp_rx_h_undecap_eth(dp_pdev, msdu, enctype, rx_info);
++		if (ATH12K_SKB_RXCB(msdu)->is_mcbc && decrypted) {
++			ath12k_dp_rx_h_undecap_eth(dp_pdev, msdu, enctype, rx_info,
++						   decap_type);
++			break;
++		}
++
++		rx_info->rx_status->flag |= RX_FLAG_8023;
+ 		break;
+ 	case DP_RX_DECAP_TYPE_8023:
+-		/* TODO: Handle undecap for these formats */
+-		break;
++		/*
++		 * Note that ethernet decap format indicates that the decapped
++		 * packet is either Ethernet 2 (DIX)  or 802.3 (uses SNAP/LLC).
++		 */
++		if (ATH12K_SKB_RXCB(msdu)->is_mcbc && decrypted) {
++			ath12k_dp_rx_h_undecap_eth(dp_pdev, msdu, enctype, rx_info,
++						   decap_type);
++			break;
++		}
++		rx_info->rx_status->flag |= RX_FLAG_8023;
+ 	}
+ }
+ EXPORT_SYMBOL(ath12k_dp_rx_h_undecap);
+@@ -1333,9 +1361,7 @@ void ath12k_dp_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev, struct napi_struc
+ 	struct ath12k_dp_peer *peer;
+ 	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
+ 	struct ieee80211_rx_status *status = rx_info->rx_status;
+-	u8 decap = rx_info->decap_type;
+ 	bool is_mcbc = rxcb->is_mcbc;
+-	bool is_eapol = rxcb->is_eapol;
+ 
+ 	peer = ath12k_dp_peer_find_by_peerid(dp_pdev, rx_info->peer_id);
+ 
+@@ -1380,15 +1406,6 @@ void ath12k_dp_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev, struct napi_struc
+ 
+ 	/* TODO: trace rx packet */
+ 
+-	/* PN for multicast packets are not validate in HW,
+-	 * so skip 802.3 rx path
+-	 * Also, fast_rx expects the STA to be authorized, hence
+-	 * eapol packets are sent in slow path.
+-	 */
+-	if (decap == DP_RX_DECAP_TYPE_ETHERNET2_DIX && !is_eapol &&
+-	    !(is_mcbc && rx_status->flag & RX_FLAG_DECRYPTED))
+-		rx_status->flag |= RX_FLAG_8023;
+-
+ 	ieee80211_rx_napi(ath12k_pdev_dp_to_hw(dp_pdev), pubsta, msdu, napi);
+ }
+ EXPORT_SYMBOL(ath12k_dp_rx_deliver_msdu);
+
+base-commit: 9a4f673eb08d2a7713b258d671b4a45f2a6e68b7
 -- 
-Sincerely, Nazar Mokrynskyi
-github.com/nazar-pc
+2.34.1
 
 
