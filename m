@@ -4,99 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C597F99C8C
-	for <ath12k@archiver.kernel.org>; Sat, 18 Apr 2026 16:36:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E101EA719A
+	for <ath12k@archiver.kernel.org>; Sun, 19 Apr 2026 16:31:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=EIov3vZowt5bVNydawHb/4jPVvuIa5Cbwf/oc3CDOVc=; b=mfgMgaOd/UTHddIybcQeYvPn+D
-	RhphO3BwNTMKLPcEq+ZTrPH6/vFZ0SXYFpkuX2vU37OCmUrW8n24vsbgWeQ0YyJGJdIo6NtX92Z67
-	4rLmpxCrb/90X+UX53ewvKNQO8oIC8JMwmF1chLCsemyTg4RIeH+cMfQGuyo3pfgRjq4PtDKDSJ0M
-	sunbzHIBJybdlwT1e5ROmGXcduFyqfKoice/1QxxXWiWBPNKDAUVZPEFSv3tsf0+CoSjg3PkxwOV5
-	IvTDZi0dyYtW9qfeST75OR+0V5/R/KvExe+38QU/zgyZZ2bF6EZCJu+CltgL8FPwpIYHQsPXxmQaa
-	bjybSAQw==;
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Y4Ok21R8TtS1c7XoLZjXmfdoHlTBFWS1WBYcbTBRwSY=; b=YSiqWLt+Wzt/Jkv2IO+qnalElW
+	dmdLKc8ikoJt+5NsyG18OvBdibwOCI2Z9QwpnTLAEEmP6RLrAzAn0sZm0EOtz6JQuij8vvKTm3nPz
+	yNNdqjhQLk5KSS3rf6HsmADHNFMbnGC4WxLvn05ekYYNCvqrNX/OOgXGjeiyzCHc9JTEqS+ZxFypQ
+	y4+VdHDPEBZOE0gvFNe8ko1u51pDset6EaE2inps98MaxB0n8q8StxU5jwfCsgfq3PBtBVg6IWBJI
+	ZU+gK4FmJgx2YjVL/xSdIeY8l8q/ARX6NnI5jC9nCaBfvH7NiPA7RVlVCE+m2YgvuwCr3PEy5D5Fw
+	kryvsPjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wE8el-00000005658-0qsI;
-	Sat, 18 Apr 2026 16:36:31 +0000
+	id 1wEV3a-00000005vdk-1zkE;
+	Sun, 19 Apr 2026 16:31:38 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wE8ei-0000000564n-2tZf
+	id 1wEV3X-00000005vdP-1Wnt
 	for ath12k@lists.infradead.org;
-	Sat, 18 Apr 2026 16:36:30 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63I4dsNO326469;
-	Sat, 18 Apr 2026 16:36:27 GMT
+	Sun, 19 Apr 2026 16:31:36 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63J5eTDA1351818
+	for <ath12k@lists.infradead.org>; Sun, 19 Apr 2026 16:31:34 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=EIov3vZowt5bVNydawHb/4jPVvuIa5Cbwf/
-	oc3CDOVc=; b=c1IpWUlYluUFK8az0OUgg/s+H39Gmbg2rpN9ojxD8C8LY2sJ93h
-	tGszmm/Zm2Q1gb3VusDo6Uif7t77op+OfunYayOgbIvsPKkkZ3NMOF+HVzO28aXI
-	pYgML8yIHzfy6AbIR5hZ5e0/3+Ka2WwbFqVFn47BaawnoLKpBgbBxTlywV0iLrk3
-	LblJpeBqwRpvJ7p0krzwPW1+Z+ufQ7dFis2XOBbyalYc545CrdtlVdMafClst4Ie
-	J3EXNgIIaa9vY+DroRi/YhSraHchO8ambt7hXyTsKc16uR2gMf92+or0nwfwVXpZ
-	QfIZ1oZdBriTK1dsyMjYptnWngfE6GCrbuA==
-Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dm34h92hd-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 18 Apr 2026 16:36:26 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.18.1.7/8.18.1.7) with ESMTP id 63IGaNJt026278;
-	Sat, 18 Apr 2026 16:36:23 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 4dm31hdc8a-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 18 Apr 2026 16:36:23 +0000 (GMT)
-Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.18.1.12/8.18.1.12) with ESMTP id 63IGaN0b026273;
-	Sat, 18 Apr 2026 16:36:23 GMT
-Received: from hu-devc-blr-u22-a.qualcomm.com (hu-tamizhr-blr.qualcomm.com [10.190.110.180])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 63IGaM8k026272
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 18 Apr 2026 16:36:23 +0000 (GMT)
-Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 380741)
-	id 21B28418EB; Sat, 18 Apr 2026 22:06:22 +0530 (+0530)
-From: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
-Subject: [PATCH ath-next] wifi: ath12k: Handle DP_RX_DECAP_TYPE_8023 type in Rx path
-Date: Sat, 18 Apr 2026 22:06:20 +0530
-Message-Id: <20260418163620.3633959-1-tamizh.raja@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Y4Ok21R8TtS1c7XoLZjXmfdoHlTBFWS1WBYcbTBRwSY=; b=AmmuALiYV7le/epv
+	COBcK4V2DMIUGsDIbUQDwT28xndOD683UqUn6IMSBtYcvnxsCb+Lf/NUXfUi8jV3
+	o2hbFmEOnmiZIPPsN4NxdjfaWRKT+VEkg2dNdItbJlBcRlhh4plSONgT/qmokvQv
+	ni4d5QlDSl7F0aJm5P5bwKJ8g0YkNMYnwyc3MNqiTeRV5yMEtcHUZjBCBRBNnqlA
+	5RSfsEefCVdcIvG4UQhcj/HI2TzF9251GKeHwLhn6bc+/srfw8ye7IETkfP6molg
+	IM5mjBG/flnb8dW2aUgkDXQ/iIDjx8rA1cGXU4VNgKZC3z17d6FYM3TO50Q2YOHB
+	LtZFtw==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dm388jsaj-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Sun, 19 Apr 2026 16:31:33 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-35daf3d3030so2316820a91.1
+        for <ath12k@lists.infradead.org>; Sun, 19 Apr 2026 09:31:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1776616293; x=1777221093; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Y4Ok21R8TtS1c7XoLZjXmfdoHlTBFWS1WBYcbTBRwSY=;
+        b=U/6I1vYcMWo6AD+NX3sEHbUw2oz4+pMm19Z1XXEI5lreW7oYJnSh4AhYyhcCCGcLEK
+         Sg3Q528bJQSnON2hYdIt8Q7i20kYC8sgvxtG4wPVQu4qfo7nlijXL7qKyugGuXYtc4+p
+         ib76FQLNJrE206WrYdS8uFvEnfpT/PGfn1/BtXLzjmjqQa5F8vlF2acUO9sWuMn1OynR
+         frSPHBCMS5PfVzwotxFsSBg2nVE59nbgDgkWU9CBQAeqt9bQgXi7+yaodKCPzUI+Ki+p
+         4hi1q4+9T8O+y+v1JqfvilGaSuZlQdvk8nEzX+CU/oGypqo9tKFzCZCZcetd9fUoxPs5
+         V6pg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1776616293; x=1777221093;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Y4Ok21R8TtS1c7XoLZjXmfdoHlTBFWS1WBYcbTBRwSY=;
+        b=X4hPxgb7ouHAQ2IX5aifqyzbKTROR85oT3mWwWDaMK12XdSKtc9Zh6gA3EUS43ZH8f
+         B5lx4VlmO9jbqGd99vVJbVHsLcqUil14az1LS/RUvxwd8q6znEl6vup6kHhqDpbpCfgo
+         K87i62/u9CtbEKp8N+3vDYXdWsWBWONxnlTgtwwhhWW/WHmRA+Su3xO31qwYoQhK4pzI
+         P8JzP6gfqXUPO0mSu5GX31PaaxCM5m2NNWNeqT04ZuBn+dpShOjFO0O3s6QLBPkGcT2p
+         bHRpEnlWVa+3VnOiDGWmYv5ZIYHRyFrLxN35/Bc1gcfujsoWawzPfwe0W4OsDkZLndlm
+         0TBg==
+X-Forwarded-Encrypted: i=1; AFNElJ8lmrOe5M+x4niSqamv+moHzyHogsHSFt674noEvqY3okwaV7NE1LN6Gc7tbr0LsvxA6uxYHhw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw/fq6WvhxDCPjfYQshNWKi/60np+XLGoC96e03Hed7texDjTao
+	ZJbHOKJPoAK+AGuTHFcdy7O+XFX4BIYfbreWJLOWwuXk1JpO58CYFFIGGiyFTkQ4RJFuE5ftTBs
+	AdtPb1InBZvaoG686/4dWN3p2LfuUhshvoxTXa9EYX0SQ9mgm5wsJ+3ZXKThezh9JbFCzUGmJ
+X-Gm-Gg: AeBDieviP+6xU6Hf9aQzFmfndSEZpAvzUBgjLAEDKdSR4asF7KBaq4ONXYjjcMNtpAE
+	qPKnIHdNDRFLJ0SNdP4/Ggh33qmRNUPKDzV9JwWfNj4LgGkxSHjaAXy9oufWli8QaRUq/6PRGVN
+	Z/MmJCu+I1BBAH3KpOc0WWekcbrhrASzg9UwBQ/BHHsUaetorMbUao7K7FZk1NZDX44ubolKdIc
+	8gMhle82UOzlcByCG+52P8xC+5kDAXuzpb5wGDeuMv0vHUiTHzcA4IEmNWHunA9Hhn5e4zsNnlt
+	9gzy1o9HK0MNotMnqDSn1YfGkmRPGRwBxjHGL5JERSBaM3u6CBu5WTCYaUNjY2NNoJHs7HMJARW
+	m6C+4r/n7Zx5ukVgtRnv2BebbtBkmP8OtNw/o20KfBZ0rGKcb9zWBIL05hatx4HQtrYmy40pHZw
+	==
+X-Received: by 2002:a17:90b:380c:b0:35f:b5df:448 with SMTP id 98e67ed59e1d1-3614049ed12mr10891805a91.24.1776616293020;
+        Sun, 19 Apr 2026 09:31:33 -0700 (PDT)
+X-Received: by 2002:a17:90b:380c:b0:35f:b5df:448 with SMTP id 98e67ed59e1d1-3614049ed12mr10891791a91.24.1776616292477;
+        Sun, 19 Apr 2026 09:31:32 -0700 (PDT)
+Received: from [10.118.196.30] ([106.192.65.65])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2b5fab0cddfsm114681905ad.49.2026.04.19.09.31.27
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 19 Apr 2026 09:31:32 -0700 (PDT)
+Message-ID: <38a1c477-c82a-49f8-a632-babe2069c427@oss.qualcomm.com>
+Date: Sun, 19 Apr 2026 22:01:19 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Authority-Analysis: v=2.4 cv=J46aKgnS c=1 sm=1 tr=0 ts=69e3b30b cx=c_pps
- a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=A5OVakUREuEA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
- a=DJpcGTmdVt4CTyJn9g5Z:22 a=EUspDBNiAAAA:8 a=Cu7rrvbFi3rOH6yX9OAA:9
-X-Proofpoint-GUID: hHWe2p7e_m6k-6NKay-q4eDJV-LbM3Bu
-X-Proofpoint-ORIG-GUID: hHWe2p7e_m6k-6NKay-q4eDJV-LbM3Bu
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDE4MDE2NSBTYWx0ZWRfX+1/kNBjwgXuZ
- ABoho4dK5UgRSY90F0ZaxbusxhUaaQrSZxysM3+TTHP8xU4hxJ/7tbAttcUL/Q2bc8pFiOLczhc
- ADXWjhcPnpc2wXOhLjk0Cj/Oxry20UzWOukw+cjTEXBrPoWeqmWJB2J4cw7P2C60cw3rt33hAyt
- vZkIGrnFQiR9PrncVAKCHPzSWpsXp+NwWyP7t4eHpN/rJVsOWWYpDYHXhivrcbb3jRNp0C5cZ5L
- cRAPcuuIB2qZs8cVr+zUBNSbVEEPSqA3qIzHl6efZuRYGfk/ysQKqPnWwIxYnh3+JJfQGhvyXlq
- MsMONs/7L24GzO/f5v5yWRWfJcvx63/2iB6JVIh9OwReK/iyoyHVAUGK6i3NAUR+7+RkG5AiFoz
- nVJdk7CBtMvs3blemlCvUNiU+JFRxLMXJowZLZMOkA6WcB2s8cuae1s73GyerK38WozuNwXcHvB
- QIUx29vRYseeQkzdsQg==
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next] wifi: ath12k: Fix invalid IRQ requests during
+ AHB probe
+To: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20260414062829.2371761-1-aaradhana.sahu@oss.qualcomm.com>
+Content-Language: en-US
+From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+In-Reply-To: <20260414062829.2371761-1-aaradhana.sahu@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Authority-Analysis: v=2.4 cv=GthyPE1C c=1 sm=1 tr=0 ts=69e50365 cx=c_pps
+ a=RP+M6JBNLl+fLTcSJhASfg==:117 a=hMyz4loUA+MjAVYq/NeUoQ==:17
+ a=IkcTkHD0fZMA:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
+ a=EUspDBNiAAAA:8 a=0MLAdd28pQG-b0eIEP0A:9 a=QEXdDO2ut3YA:10
+ a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-GUID: izqKnst93Ls1Hr0vh5TfNm775U-26Zg0
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDE5MDE3NyBTYWx0ZWRfX6I4Z95kn8VLc
+ bjhXfYvqbFrxzwGxomQmmjadikevEOjhBEUPEBpE97eDQuLItCZjhZYy9ugQOK1OglsEIS8FD0p
+ eZ+8Hai8+u0PK1UmeUCXnu8Skz8vIZPdb3ibAunR+BWPvP5qMB4t50rmXhAuO+JJvzM4zR6TrV3
+ QCOrInvpwk4FEiL8xB0P7X1XK6mHRoyWsWS/9HapE01mjD0l8A6hfhbsmjO1BtK5asiULCMeMVp
+ ES1gecco86PzunqQzgEvfUaGVr3C0Jro2D2utHwlBbNrOMYhnDZagpGToelvUnq5AYRo0WZFwD/
+ NpIW1/hPBlkyZHgtlrx3K+vVXH11x/siJSyvvGuNAOeq40Am9G8wqlPWzBu5sIqunYc6f/jJnQf
+ GoJFYBLlGNCTyjBIYHa6au4PuNat4aom80k6eUqhT6RQYzifNQgDGZapeSHgAIAAjJSTxznZkEW
+ 1wKpBwHvam5lB5zN3Vw==
+X-Proofpoint-ORIG-GUID: izqKnst93Ls1Hr0vh5TfNm775U-26Zg0
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-04-18_05,2026-04-17_04,2025-10-01_01
+ definitions=2026-04-19_05,2026-04-17_04,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 adultscore=0 phishscore=0 suspectscore=0 spamscore=0
- malwarescore=0 priorityscore=1501 clxscore=1011 bulkscore=0
- lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2604070000
- definitions=main-2604180165
+ impostorscore=0 adultscore=0 phishscore=0 lowpriorityscore=0 clxscore=1015
+ priorityscore=1501 malwarescore=0 spamscore=0 bulkscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2604070000 definitions=main-2604190177
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260418_093628_800548_B832F553 
-X-CRM114-Status: GOOD (  18.25  )
+X-CRM114-CacheID: sfid-20260419_093135_463552_64519F3D 
+X-CRM114-Status: GOOD (  11.97  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,152 +146,28 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The driver does not currently set any rx_flag for frames received with
-decap type DP_RX_DECAP_TYPE_8023. When the hardware reports
-LLC-encapsulated packets whose length field is below 0x0600, the MSDU_END
-descriptor may indicate decap type DP_RX_DECAP_TYPE_8023.
-
-These frames are effectively equivalent to Ethernet-II (DIX) packets,
-similar to those decoded as DP_RX_DECAP_TYPE_ETHERNET2_DIX. If the
-driver does not set RX_FLAG_8023 for these frames, mac80211 will
-misinterpret them as 802.11 frames. This causes valid frames such as
-Bridge Protocol Data Units (BPDUs) to be dropped. BPDUs are exchanged
-between switches to maintain and manage network topology, and must
-be treated as Ethernet frames.
-
-Set RX_FLAG_8023 for decap type DP_RX_DECAP_TYPE_8023 in
-ath12k_dp_rx_h_undecap() to ensure mac80211 handles these frames
-correctly. Also add multicast packet handling support for the
-DP_RX_DECAP_TYPE_8023 decap type.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/dp_rx.c | 57 ++++++++++++++++---------
- 1 file changed, 37 insertions(+), 20 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 250459facff3..cae00e0539df 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -1092,7 +1092,8 @@ static void ath12k_get_dot11_hdr_from_rx_desc(struct ath12k_pdev_dp *dp_pdev,
- static void ath12k_dp_rx_h_undecap_eth(struct ath12k_pdev_dp *dp_pdev,
- 				       struct sk_buff *msdu,
- 				       enum hal_encrypt_type enctype,
--				       struct hal_rx_desc_data *rx_info)
-+				       struct hal_rx_desc_data *rx_info,
-+				       enum ath12k_dp_rx_decap_type decap_type)
- {
- 	struct ieee80211_hdr *hdr;
- 	struct ethhdr *eth;
-@@ -1100,12 +1101,24 @@ static void ath12k_dp_rx_h_undecap_eth(struct ath12k_pdev_dp *dp_pdev,
- 	u8 sa[ETH_ALEN];
- 	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
- 	struct ath12k_dp_rx_rfc1042_hdr rfc = {0xaa, 0xaa, 0x03, {0x00, 0x00, 0x00}};
-+	struct ath12k_dp_rx_rfc1042_hdr *llc;
- 
- 	eth = (struct ethhdr *)msdu->data;
- 	ether_addr_copy(da, eth->h_dest);
- 	ether_addr_copy(sa, eth->h_source);
--	rfc.snap_type = eth->h_proto;
--	skb_pull(msdu, sizeof(*eth));
-+	if (decap_type == DP_RX_DECAP_TYPE_8023) {
-+		/*
-+		 * For 802.3 frames, eth->h_proto carries a length field, not
-+		 * an EtherType. The actual EtherType is in the LLC/SNAP header
-+		 * that follows the Ethernet header.
-+		 */
-+		llc = (struct ath12k_dp_rx_rfc1042_hdr *)(msdu->data + sizeof(*eth));
-+		rfc.snap_type = llc->snap_type;
-+		skb_pull(msdu, sizeof(*eth) + sizeof(*llc));
-+	} else {
-+		rfc.snap_type = eth->h_proto;
-+		skb_pull(msdu, sizeof(*eth));
-+	}
- 	memcpy(skb_push(msdu, sizeof(rfc)), &rfc,
- 	       sizeof(rfc));
- 	ath12k_get_dot11_hdr_from_rx_desc(dp_pdev, msdu, rxcb, enctype, rx_info);
-@@ -1123,9 +1136,10 @@ void ath12k_dp_rx_h_undecap(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu
- 			    bool decrypted,
- 			    struct hal_rx_desc_data *rx_info)
- {
-+	enum ath12k_dp_rx_decap_type decap_type = rx_info->decap_type;
- 	struct ethhdr *ehdr;
- 
--	switch (rx_info->decap_type) {
-+	switch (decap_type) {
- 	case DP_RX_DECAP_TYPE_NATIVE_WIFI:
- 		ath12k_dp_rx_h_undecap_nwifi(dp_pdev, msdu, enctype, rx_info);
- 		break;
-@@ -1139,19 +1153,33 @@ void ath12k_dp_rx_h_undecap(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu
- 		/* mac80211 allows fast path only for authorized STA */
- 		if (ehdr->h_proto == cpu_to_be16(ETH_P_PAE)) {
- 			ATH12K_SKB_RXCB(msdu)->is_eapol = true;
--			ath12k_dp_rx_h_undecap_eth(dp_pdev, msdu, enctype, rx_info);
-+			ath12k_dp_rx_h_undecap_eth(dp_pdev, msdu, enctype, rx_info,
-+						   decap_type);
- 			break;
- 		}
- 
- 		/* PN for mcast packets will be validated in mac80211;
- 		 * remove eth header and add 802.11 header.
- 		 */
--		if (ATH12K_SKB_RXCB(msdu)->is_mcbc && decrypted)
--			ath12k_dp_rx_h_undecap_eth(dp_pdev, msdu, enctype, rx_info);
-+		if (ATH12K_SKB_RXCB(msdu)->is_mcbc && decrypted) {
-+			ath12k_dp_rx_h_undecap_eth(dp_pdev, msdu, enctype, rx_info,
-+						   decap_type);
-+			break;
-+		}
-+
-+		rx_info->rx_status->flag |= RX_FLAG_8023;
- 		break;
- 	case DP_RX_DECAP_TYPE_8023:
--		/* TODO: Handle undecap for these formats */
--		break;
-+		/*
-+		 * Note that ethernet decap format indicates that the decapped
-+		 * packet is either Ethernet 2 (DIX)  or 802.3 (uses SNAP/LLC).
-+		 */
-+		if (ATH12K_SKB_RXCB(msdu)->is_mcbc && decrypted) {
-+			ath12k_dp_rx_h_undecap_eth(dp_pdev, msdu, enctype, rx_info,
-+						   decap_type);
-+			break;
-+		}
-+		rx_info->rx_status->flag |= RX_FLAG_8023;
- 	}
- }
- EXPORT_SYMBOL(ath12k_dp_rx_h_undecap);
-@@ -1333,9 +1361,7 @@ void ath12k_dp_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev, struct napi_struc
- 	struct ath12k_dp_peer *peer;
- 	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
- 	struct ieee80211_rx_status *status = rx_info->rx_status;
--	u8 decap = rx_info->decap_type;
- 	bool is_mcbc = rxcb->is_mcbc;
--	bool is_eapol = rxcb->is_eapol;
- 
- 	peer = ath12k_dp_peer_find_by_peerid(dp_pdev, rx_info->peer_id);
- 
-@@ -1380,15 +1406,6 @@ void ath12k_dp_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev, struct napi_struc
- 
- 	/* TODO: trace rx packet */
- 
--	/* PN for multicast packets are not validate in HW,
--	 * so skip 802.3 rx path
--	 * Also, fast_rx expects the STA to be authorized, hence
--	 * eapol packets are sent in slow path.
--	 */
--	if (decap == DP_RX_DECAP_TYPE_ETHERNET2_DIX && !is_eapol &&
--	    !(is_mcbc && rx_status->flag & RX_FLAG_DECRYPTED))
--		rx_status->flag |= RX_FLAG_8023;
--
- 	ieee80211_rx_napi(ath12k_pdev_dp_to_hw(dp_pdev), pubsta, msdu, napi);
- }
- EXPORT_SYMBOL(ath12k_dp_rx_deliver_msdu);
-
-base-commit: 9a4f673eb08d2a7713b258d671b4a45f2a6e68b7
--- 
-2.34.1
-
+On 4/14/2026 11:58 AM, Aaradhana Sahu wrote:
+> ath12k_ahb_config_ext_irq() iterates over ATH12K_EXT_IRQ_NUM_MAX (16)
+> entries while checking TX ring masks, but the tcl_to_wbm_rbm_map array
+> contains only DP_TCL_NUM_RING_MAX (4) valid elements.
+> 
+> When the iterator (j) is greater than or equal to DP_TCL_NUM_RING_MAX,
+> it accesses tcl_to_wbm_rbm_map[j] out of bounds. This results in
+> reading uninitialized memory for wbm_ring_num, causing the driver to
+> evaluate incorrect BIT() conditions and request IRQs for rings that do
+> not have an assigned interrupt line or device tree entry.
+> 
+> This leads to request_irq() failures with -ENXIO or -EINVAL during
+> ath12k AHB probe.
+> 
+> Fix this by splitting the loop into two separate loops: one iterating
+> over DP_TCL_NUM_RING_MAX for TX ring, and another iterating over
+> ATH12K_EXT_IRQ_NUM_MAX for remaining IRQ entries.
+> Also add a bounds check for num_irq.
+> 
+> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
+> 
+> Fixes: 6cee30f0da75 ("wifi: ath12k: add AHB driver support for IPQ5332")
+> Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
 
