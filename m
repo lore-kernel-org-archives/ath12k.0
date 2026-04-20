@@ -4,135 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E642EA71A4
-	for <ath12k@archiver.kernel.org>; Mon, 20 Apr 2026 02:55:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB1B6F588C2
+	for <ath12k@archiver.kernel.org>; Mon, 20 Apr 2026 13:23:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=8ke/Wtb4q17dqFQowkNz1oZz9+IjyVbzRZwHzDjvZAM=; b=3XYfWlR5A31zuFDeYpk+iltrB2
-	gHNhG0MHcUg1xFERcZrbFAP/ay2Ljhk+0wbVvU8pqjDMQOpeeYvUurGeI4JdtTC2aFRFXQfJX8kH6
-	NJAPX/VrWGWaY8B9oSOZKDCnfXuaXDu432qZu0FOURm4s38d5swQdm/EpebnVU0S4FWbAgSz+z8jl
-	osoo+26VX/vXyQKHZ3GcVc8kbBbIFNnwCiEBVjOjyQ6IZj0/aXofPlBCZlQixyS2PyJ4IN/vsBH1J
-	n/fbi0qbjnd1BSFrDMMIYD0yP5alVKX5VIuGoVOYK4+bw9xgGI1gjxInHZ17P6pVqJ9u9Uu2gB9UO
-	opWCSUuA==;
+	bh=rGUHGzNjJB4kQDVmGp1guJv80IBNrpKduEgokZ3p5AA=; b=AfsSPa5McqxOD5pWh4UM0v6Vf0
+	27A98nJ8g/3U/VAjkhZPMbT8sFtI+Qqo70aC2sk/FoxUgPTFGzXFEsMvN75jViq+oX7CqgG5c6dFr
+	HoeIARlyA9gLzfrDJ4HqIhgwazfIAEOq118rP1YGPQCxCcB0UKIlN+7RHLByAI6efIqCjffYwQtnt
+	YWZD0ZSwCRw5SfcyLiXwqCs5lajirmayLxypf9Px6Qa5jQTRiqdIypoCaAJ/aLkAIthUqep6NulPx
+	GaphlgJm5V1OyfOdzypBQlktAy/zT5QNz0xg34i+cJTVnxtcUD/5Wi6Yzv8gj27YnrGSpoNttJFs4
+	zMfGit2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEemy-00000006LI4-45dF;
-	Mon, 20 Apr 2026 02:55:08 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wEoaw-00000006zaT-2Vwg;
+	Mon, 20 Apr 2026 13:23:22 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEemw-00000006LHh-3ICM
+	id 1wEoat-00000006za8-1hPZ
 	for ath12k@lists.infradead.org;
-	Mon, 20 Apr 2026 02:55:08 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63JJTLqS1761975
-	for <ath12k@lists.infradead.org>; Mon, 20 Apr 2026 02:55:05 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	8ke/Wtb4q17dqFQowkNz1oZz9+IjyVbzRZwHzDjvZAM=; b=UNwIVKysyw5XaRKz
-	SqHH5iZ/+Dje7xoafkmX1CgLIofPRyMNzP7VcJndZUxtSUk7/li6+ssV/Zkhp8nU
-	HYsOnqehXlMOSo1btErnNduaoByUXpHlyrqRPI+lVhoPbg9Gx3oIIiHQJ9+WuSZv
-	/gWOeAUbbtLR38DihbuswEnCWekenM3Ua6CZ9EJf5P9AH3rjZdSXp6e5obfAY69f
-	eOK0xSIizjUTktVdyyP97GoM2GRYwm3bQXkn//yr3K3+IwDMmEjU82cwYxmG0I0o
-	k7+gVvxS94xOxNarfD0R+cyz02zk6p7RUIbQXQ1dJ7xF+3B0TWLUbXPBRSMAo1rN
-	SceP8g==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dm19fut69-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 20 Apr 2026 02:55:05 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2adef9d486bso23650935ad.2
-        for <ath12k@lists.infradead.org>; Sun, 19 Apr 2026 19:55:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1776653704; x=1777258504; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=8ke/Wtb4q17dqFQowkNz1oZz9+IjyVbzRZwHzDjvZAM=;
-        b=Vm3/IDClD0h67ytkir114qXML0GzWtGRcC5M0/bGipMjPso2dlY0C9Xyt9B+V4VdMP
-         MthambfU4aSiikYQunV7U0ghtua7W+8wm+ElMRp30MmXAT+/wpY6+UHAb7EDVK2/t6Ri
-         /nFFStzhMaERmPm5X9iYZauiO2CqKCbQjKKxDMoek+eqvSKJBFBPncQx4ngfs6y1Mq9l
-         467YFafBNSGWR9P4yGPUFRmQBnPPptcq8D1o1Qntk/L7ZA1DqINJjzSjT281VdjQDh+E
-         /FU7/GMof2+rXFhFMjuL7BaWL7AZcHonEvPk3vNvBZl3AlM8uSC4FYm/IMTijZJseN6d
-         JV5A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1776653704; x=1777258504;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=8ke/Wtb4q17dqFQowkNz1oZz9+IjyVbzRZwHzDjvZAM=;
-        b=OfsMLzj7i8jNaFBEp6TXeqzZkRgp14qhxIaqq36r1CRmPmBM/BYcdB4lXbwKaB7GSD
-         gOJI4ME0+j00PUqJZ0upY4Y+HA3CJ8HSTE5wRTWV5rXfChYUqcKqo1Go0WrZPSS4NjZ2
-         xnqRUQ5a5aYLAVT+wUx3fp6OcwKVKtiZK4i4TNCogTp4zBu3KF22L9596hnv0/O/agpX
-         0gGsTZCEbBJjAU6oz1FBjfMlF5n0xjB7NiyBtdDxnBi5S2MC1ZZKdIoOmJQdBPQSjccT
-         aSHQ2Lc/W/4KZg04KsJfyx/bsDDNHV8dg5Nb59xiuGNX3HUSivqV3G8WjLpmkua/XfZx
-         8Z2w==
-X-Forwarded-Encrypted: i=1; AFNElJ+Nq71vSeP+44j/411xylO2C7t64t9Ev4HxRivdVQWFTQ6QM4JN7RNKQSL9MC/unE/VrEFzmGY=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx4SYdaqj26jgu+wwjyFoMFj3z/v9CRE/E2UQlIapEKd26sGZXi
-	yjQZO3XQnRPiZAiJGV9ItUYSGYDDDvrgNz08GVpQ/yDyEkvG0BkBjAaCDa6rQ9WcrMGI3EU+/BM
-	4KJC/1ih2UVq2fdQ1fRgIdAUDw+1iRvExn8iYUewwBHIS9XwLuAxb+5RpPDXXdrlT
-X-Gm-Gg: AeBDievIvRiXqIxYJX25aLlefZSIvmjvsIQfirbnOi0vmQB85u89cLENiAeoFd8nuI2
-	DvKHwG291b8vd1K4z/riRJSOeIzisrKApeJZkDHjCllcXuiupPMy1fo09+S+hpNFGIS5enGQoZj
-	zrU2hT1YkIcrPd8jS4UsJdE+1WI4cGZd2Q/bxqV/nDFLPNwSo5l8rHbHlI7/smSnnDXdA7ZDetA
-	viHWJLCp+ckK2gBwl6fTNouffzKeysyzWaF64VwN4tX6QnaRz5QQa5qEjdFEGIjQUR3DhjmuHM1
-	VyWBabK0pI7hlKm38mD2xJ++Vc4IURs56kM2V1MVFpHHtRDWweOz8tMeSJ7xAdvD9H+MMljwwtH
-	rdbU//VfbiGlK+qXlEakJBOv2f7VWLsVKqJdRW17qpb+3mz5b5ZQlZtxDjWaMW1gUGmNjQBy4WR
-	MnfF5DWn7ZPIxLAdla4q1O2UsDkDhDUA==
-X-Received: by 2002:a05:6a21:3288:b0:398:6461:688c with SMTP id adf61e73a8af0-3a08d687640mr13204994637.2.1776653704377;
-        Sun, 19 Apr 2026 19:55:04 -0700 (PDT)
-X-Received: by 2002:a05:6a21:3288:b0:398:6461:688c with SMTP id adf61e73a8af0-3a08d687640mr13204970637.2.1776653703835;
-        Sun, 19 Apr 2026 19:55:03 -0700 (PDT)
-Received: from [10.133.33.231] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-c797703059fsm6627677a12.24.2026.04.19.19.55.01
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 19 Apr 2026 19:55:02 -0700 (PDT)
-Message-ID: <881f2840-6585-4439-b5e9-90cbe47096bb@oss.qualcomm.com>
-Date: Mon, 20 Apr 2026 10:55:00 +0800
+	Mon, 20 Apr 2026 13:23:21 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 91AB44413B;
+	Mon, 20 Apr 2026 13:23:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 34A8DC2BCB7;
+	Mon, 20 Apr 2026 13:23:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1776691398;
+	bh=4Ew+9P1AhCIc/hFMFZX1yd3SOp26GdjQC76CnuAw4eY=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=fSret4Nr/dT4WI0ejo0jrquAkS3QgSrfYNw6HWDYnF8qXQjQF/d9dCAjSJNT/EerC
+	 ofT1iBDn4z/v15MvAyWJDVSMz3FAnIpobV7u3ziVGRnDMb/pfOParuYSss12DImyA7
+	 VrM65Lw22Xdya8WaVwVoVBKz3C/ypKddFgupEONNj9GhF+VKk00PuRU4c0+dBnyR3u
+	 3IMaKSK6C0Vdd+/58A8j62wIeAgi67ulXUS4/eQWD+SC32SipBv2ia+fovTOrPUQX7
+	 O14rmcx1mLErQDKXdnKm5N5JALk/OyZEYXOdocKbdJRV31wweANHaSfMt0mwl5K832
+	 Z0ZM4Td0rrNIg==
+From: Sasha Levin <sashal@kernel.org>
+To: patches@lists.linux.dev,
+	stable@vger.kernel.org
+Cc: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>,
+	Roopni Devanathan <roopni.devanathan@oss.qualcomm.com>,
+	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
+	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+	Sasha Levin <sashal@kernel.org>,
+	jjohnson@kernel.org,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH AUTOSEL 7.0-6.18] wifi: ath12k: Fix the assignment of logical link index
+Date: Mon, 20 Apr 2026 09:16:36 -0400
+Message-ID: <20260420132314.1023554-2-sashal@kernel.org>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260420132314.1023554-1-sashal@kernel.org>
+References: <20260420132314.1023554-1-sashal@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next] wifi: ath12k: Fix invalid IRQ requests during
- AHB probe
-To: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>,
-        ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20260414062829.2371761-1-aaradhana.sahu@oss.qualcomm.com>
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20260414062829.2371761-1-aaradhana.sahu@oss.qualcomm.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 7.0
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDIwMDAyNCBTYWx0ZWRfXzY0YrRzImBgz
- xtNGTo+A/NTDNAg5+zKDADZYYXVs9zI6vC/hXGsz8NpHE+s0TUyZVINDdYmRzBPMjk5lFwAwNlA
- LyRLh6/EzqNhy8z0iYys7vuSkiUqCRH3pl7r2vOhpWUxw+oYVQJMsfw4WAPiQUkqtnb+gafywJ1
- Lvla31Vev7xViIdSuI/loHWn+ioBrlrXD317tsG1jyABl1rNA9oonzoQuUwyfT2zlw0A1oxgb2D
- 5PbMe6uUKr9IO6+m9ujkGp81j3F52e0Dfy45K3E5ZSe2OONH5kF2s5CpTS8bLwrcGfya1iwlH/u
- kxsJ67KB6BgvaSKHSnUqfivbmHHegkKgplr1P5VZk/Uw6WpqDntqa95oH11TnfOJHhaHP++j5Q3
- +kFofdK/mHXlyy01O2ifSDJ/vGX9H0L6Pf/Dug0sNHOJxLRvypK02TOm6fY9dIQMl/KuhuLxvoF
- 6KcNy+n4Rww7GpDg3oQ==
-X-Proofpoint-ORIG-GUID: 6YGDfdLDXH2AslNV1NIjbFD6yfnZRF7t
-X-Proofpoint-GUID: 6YGDfdLDXH2AslNV1NIjbFD6yfnZRF7t
-X-Authority-Analysis: v=2.4 cv=FMorAeos c=1 sm=1 tr=0 ts=69e59589 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=EUspDBNiAAAA:8 a=Rz3G870NILOoTZsrui0A:9 a=QEXdDO2ut3YA:10
- a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-04-19_07,2026-04-17_04,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 spamscore=0 priorityscore=1501 phishscore=0 adultscore=0
- clxscore=1015 suspectscore=0 lowpriorityscore=0 impostorscore=0
- malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2604070000
- definitions=main-2604200024
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260419_195506_972164_080E4071 
-X-CRM114-Status: GOOD (  22.92  )
+X-CRM114-CacheID: sfid-20260420_062319_527177_9CDB27ED 
+X-CRM114-Status: GOOD (  28.71  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,89 +85,330 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
 
+[ Upstream commit aecb569d7fb689e3e5b0005ca7bd0a2ef28915e8 ]
 
-On 4/14/2026 2:28 PM, Aaradhana Sahu wrote:
-> ath12k_ahb_config_ext_irq() iterates over ATH12K_EXT_IRQ_NUM_MAX (16)
-> entries while checking TX ring masks, but the tcl_to_wbm_rbm_map array
-> contains only DP_TCL_NUM_RING_MAX (4) valid elements.
-> 
-> When the iterator (j) is greater than or equal to DP_TCL_NUM_RING_MAX,
-> it accesses tcl_to_wbm_rbm_map[j] out of bounds. This results in
-> reading uninitialized memory for wbm_ring_num, causing the driver to
-> evaluate incorrect BIT() conditions and request IRQs for rings that do
-> not have an assigned interrupt line or device tree entry.
-> 
-> This leads to request_irq() failures with -ENXIO or -EINVAL during
-> ath12k AHB probe.
-> 
-> Fix this by splitting the loop into two separate loops: one iterating
-> over DP_TCL_NUM_RING_MAX for TX ring, and another iterating over
-> ATH12K_EXT_IRQ_NUM_MAX for remaining IRQ entries.
-> Also add a bounds check for num_irq.
-> 
-> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
-> 
-> Fixes: 6cee30f0da75 ("wifi: ath12k: add AHB driver support for IPQ5332")
-> Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-> ---
->  drivers/net/wireless/ath/ath12k/ahb.c | 25 +++++++++++++++----------
->  1 file changed, 15 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-> index 2dcf0a52e4c1..30733a244454 100644
-> --- a/drivers/net/wireless/ath/ath12k/ahb.c
-> +++ b/drivers/net/wireless/ath/ath12k/ahb.c
-> @@ -583,31 +583,36 @@ static int ath12k_ahb_config_ext_irq(struct ath12k_base *ab)
->  		netif_napi_add(irq_grp->napi_ndev, &irq_grp->napi,
->  			       ath12k_ahb_ext_grp_napi_poll);
->  
-> -		for (j = 0; j < ATH12K_EXT_IRQ_NUM_MAX; j++) {
-> -			/* For TX ring, ensure that the ring mask and the
-> -			 * tcl_to_wbm_rbm_map point to the same ring number.
-> -			 */
-> +		for (j = 0; j < DP_TCL_NUM_RING_MAX; j++) {
->  			if (ring_mask->tx[i] &
-> -			    BIT(ab->hal.tcl_to_wbm_rbm_map[j].wbm_ring_num)) {
-> +			    BIT(ab->hal.tcl_to_wbm_rbm_map[j].wbm_ring_num) &&
-> +			    num_irq < ATH12K_EXT_IRQ_NUM_MAX) {
->  				irq_grp->irqs[num_irq++] =
->  					wbm2host_tx_completions_ring1 - j;
->  			}
-> +		}
->  
-> -			if (ring_mask->rx[i] & BIT(j)) {
-> +		for (j = 0; j < ATH12K_EXT_IRQ_NUM_MAX; j++) {
-> +			if (ring_mask->rx[i] & BIT(j) &&
-> +			    num_irq < ATH12K_EXT_IRQ_NUM_MAX) {
->  				irq_grp->irqs[num_irq++] =
->  					reo2host_destination_ring1 - j;
->  			}
->  
-> -			if (ring_mask->rx_err[i] & BIT(j))
-> +			if (ring_mask->rx_err[i] & BIT(j) &&
-> +			    num_irq < ATH12K_EXT_IRQ_NUM_MAX)
->  				irq_grp->irqs[num_irq++] = reo2host_exception;
->  
-> -			if (ring_mask->rx_wbm_rel[i] & BIT(j))
-> +			if (ring_mask->rx_wbm_rel[i] & BIT(j) &&
-> +			    num_irq < ATH12K_EXT_IRQ_NUM_MAX)
->  				irq_grp->irqs[num_irq++] = wbm2host_rx_release;
->  
-> -			if (ring_mask->reo_status[i] & BIT(j))
-> +			if (ring_mask->reo_status[i] & BIT(j) &&
-> +			    num_irq < ATH12K_EXT_IRQ_NUM_MAX)
->  				irq_grp->irqs[num_irq++] = reo2host_status;
->  
-> -			if (ring_mask->rx_mon_dest[i] & BIT(j))
-> +			if (ring_mask->rx_mon_dest[i] & BIT(j) &&
-> +			    num_irq < ATH12K_EXT_IRQ_NUM_MAX)
->  				irq_grp->irqs[num_irq++] =
->  					rxdma2host_monitor_destination_mac1;
->  		}
-> 
-> base-commit: e6630ad4c58f89ba72e64fca5989ecf1e06319c9
+Per-link logical index is assigned from the global counter,
+ahsta->num_peer. This logical index is sent to firmware during peer
+association. If there is a failure in creating a link station,
+ath12k_mac_free_unassign_link_sta() clears the link, but does not decrement
+the logical link index. This will result in a higher logical link index for
+the next link station created. Also, if there is a leak in logical link
+index as we assign the incremented num_peer, then the index can exceed the
+maximum valid value of 15.
 
+As an example, let's say we have a 2 GHz + 5 GHz + 6 GHz MLO setup. So the
+logical link indices that they have are 0, 1 and 2, respectively. If the
+5 GHz link is removed, logical link index 1 becomes available, and num_peer
+is not reduced to 2 and still remains at 3. If a new 5 GHz link is added
+later, it gets the index 3, instead of reusing link index 1. Also,
+num_peer is increased to 4, though only 3 links are present.
+
+To resolve these, create a bitmap, free_logical_link_idx, that tracks the
+available logical link indices. When a link station is created, select the
+first free logical index and when a link station is removed, mark its
+logical link index as available by setting the bit.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01181-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
+Signed-off-by: Roopni Devanathan <roopni.devanathan@oss.qualcomm.com>
+Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
 Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Link: https://patch.msgid.link/20260226041911.2434999-1-roopni.devanathan@oss.qualcomm.com
+Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+
+LLM Generated explanations, may be completely bogus:
+
+Now I have all the information I need. Let me compile the final
+analysis.
+
+---
+
+## Complete Analysis
+
+### PHASE 1: COMMIT MESSAGE FORENSICS
+
+**Step 1.1:**
+- Subsystem: `wifi: ath12k`
+- Action verb: "Fix"
+- Summary: Fixes the assignment of logical link index for MLO (Multi-
+  Link Operation) link stations.
+
+**Step 1.2: Tags:**
+- `Tested-on: QCN9274 hw2.0 PCI` — hardware tested
+- `Signed-off-by: Manish Dharanenthiran` — original author
+- `Signed-off-by: Roopni Devanathan` — submitter
+- `Reviewed-by: Rameshkumar Sundaram`, `Baochen Qiang`, `Vasanthakumar
+  Thiagarajan` — 3 Qualcomm reviewers
+- `Link:` to patch.msgid.link — original submission
+- `Signed-off-by: Jeff Johnson` — ath12k maintainer applied it
+- No Fixes: tag, no Reported-by, no syzbot, no Cc: stable — expected for
+  autoselection candidates.
+
+**Step 1.3:** The commit message describes a clear bug: `num_peer` is a
+monotonically incrementing counter used to assign logical link indices.
+When links are removed, the counter is never decremented, causing
+"leakage" of index values. Over time with link add/remove cycles, the
+index exceeds the firmware's maximum valid value of 15.
+
+**Step 1.4:** This is NOT a hidden bug fix — the subject explicitly says
+"Fix".
+
+### PHASE 2: DIFF ANALYSIS
+
+**Step 2.1:**
+- `core.h`: 1 line changed (`u8 num_peer` -> `u16
+  free_logical_link_idx_map`)
+- `mac.c`: ~20 lines changed across 3 functions
+- Functions modified: `ath12k_mac_free_unassign_link_sta`,
+  `ath12k_mac_assign_link_sta`, `ath12k_mac_op_sta_state`
+- Scope: well-contained, single-subsystem fix
+
+**Step 2.2:**
+- In `ath12k_mac_free_unassign_link_sta`: adds
+  `ahsta->free_logical_link_idx_map |= BIT(arsta->link_idx)` — returns
+  the freed index to the pool
+- In `ath12k_mac_assign_link_sta`: replaces `arsta->link_idx =
+  ahsta->num_peer++` with bitmap-based allocation using `__ffs()` + adds
+  `-ENOSPC` check
+- In `ath12k_mac_op_sta_state`: initializes
+  `ahsta->free_logical_link_idx_map = U16_MAX` when a new station is
+  created (all bits set = all indices free)
+
+**Step 2.3:** Bug category: Logic/correctness bug — resource index leak.
+The old approach only increments, never reuses indices. The new bitmap
+approach properly tracks available indices.
+
+**Step 2.4:** Fix quality:
+- The fix is correct — bitmap tracks available indices, `__ffs` gets the
+  lowest free bit, removal sets the bit back
+- It adds a proper `-ENOSPC` check for when all indices are exhausted
+- Minimal regression risk — the logic is straightforward and only
+  touches the specific allocation/deallocation paths
+- The U16_MAX initialization means 16 indices (0-15), which matches the
+  firmware's maximum
+
+### PHASE 3: GIT HISTORY INVESTIGATION
+
+**Step 3.1:** `git blame` confirms both the buggy code (`num_peer++` at
+line 7124) and the incomplete cleanup function were introduced by the
+same commit: `8e6f8bc286031` ("Add MLO station state change handling")
+by Sriram R, dated 2024-11-21, first in v6.14-rc1.
+
+**Step 3.2:** No Fixes: tag present. The bug was introduced by
+8e6f8bc286031.
+
+**Step 3.3:** No intermediate fixes for the same issue. No prerequisites
+found — the patch modifies code that exists in the tree as-is.
+
+**Step 3.4:** The author (Manish Dharanenthiran) is a regular ath12k
+contributor with 9+ commits in the subsystem. Jeff Johnson (ath12k
+maintainer) applied it.
+
+**Step 3.5:** This is a standalone single-patch fix. No dependencies on
+other commits.
+
+### PHASE 4: MAILING LIST RESEARCH
+
+Lore was not accessible due to anti-bot protection. b4 dig could not
+find the exact commit (it hasn't landed in the main tree yet from the
+perspective of this 7.0 tree). The patch was sent to
+`ath12k@lists.infradead.org` and `linux-wireless@vger.kernel.org`. It
+was reviewed by 3 Qualcomm engineers and applied by the ath12k
+maintainer Jeff Johnson.
+
+### PHASE 5: CODE SEMANTIC ANALYSIS
+
+**Step 5.1:** Modified functions: `ath12k_mac_free_unassign_link_sta`,
+`ath12k_mac_assign_link_sta`, `ath12k_mac_op_sta_state`
+
+**Step 5.2:** `arsta->link_idx` is used in `ath12k_peer_assoc_h_mlo()`
+(line 3531) to populate `ml->logical_link_idx` which is sent to firmware
+via `wmi.c` line 2348 as `ml_params->logical_link_idx`. This is a WMI
+command parameter — an invalid value directly impacts firmware behavior.
+
+**Step 5.4:** The path: `ath12k_mac_op_sta_state` ->
+`ath12k_mac_assign_link_sta` -> sets `link_idx` -> later used in
+`ath12k_peer_assoc_h_mlo` -> sent via WMI to firmware. This is a
+standard MLO station association path triggered during Wi-Fi connection
+setup.
+
+### PHASE 6: STABLE TREE ANALYSIS
+
+**Step 6.1:** The buggy code (`num_peer` field) was introduced in commit
+`8e6f8bc286031`, first in v6.14-rc1. It is:
+- **NOT in v6.13, v6.12, or any earlier LTS tree**
+- Present in v6.14, v6.15, v6.16, v6.17, v6.18, v6.19, v7.0
+
+For the 7.0.y stable tree specifically, the buggy code IS present.
+
+**Step 6.2:** The code in v7.0 matches exactly what the patch expects
+(verified by reading lines 7096-7137 and 6771-6798 of mac.c). The patch
+should apply cleanly.
+
+### PHASE 7: SUBSYSTEM CONTEXT
+
+**Step 7.1:** Subsystem: wireless driver (ath12k) — IMPORTANT for WiFi 7
+users with Qualcomm QCN9274 and similar chipsets. MLO is a key WiFi 7
+feature.
+
+**Step 7.2:** ath12k is very actively developed (183 commits to mac.c
+between v6.14 and v7.0).
+
+### PHASE 8: IMPACT AND RISK ASSESSMENT
+
+**Step 8.1:** Affected users: Users of Qualcomm ath12k WiFi 7 hardware
+with MLO enabled (QCN9274, etc.).
+
+**Step 8.2:** Trigger: Happens when MLO links are removed and re-added —
+occurs during roaming, channel switching, or temporary link degradation.
+In a typical MLO setup with frequent link changes, this can be triggered
+relatively easily.
+
+**Step 8.3:** Failure mode: Sending an invalid logical link index (>15)
+to firmware can cause firmware malfunction, potential firmware crash, or
+incorrect MLO behavior. Severity: **HIGH** — firmware receives invalid
+commands.
+
+**Step 8.4:**
+- Benefit: Prevents firmware from receiving invalid index values during
+  MLO operations, which could cause connection instability or firmware
+  crashes
+- Risk: LOW — the change is ~20 lines, well-contained, uses standard
+  bitmap operations, reviewed by 3 engineers plus maintainer
+- Ratio: Favorable
+
+### PHASE 9: FINAL SYNTHESIS
+
+**Evidence FOR backporting:**
+- Fixes a real, clearly described bug (index leak leading to invalid
+  firmware commands)
+- Small, well-contained fix (~20 lines across 2 files)
+- Obviously correct bitmap-based approach
+- 3 Reviewed-by tags from Qualcomm engineers + maintainer sign-off
+- Tested on hardware (QCN9274 hw2.0)
+- The buggy code exists in v7.0 (target tree)
+- Should apply cleanly
+
+**Evidence AGAINST backporting:**
+- No Fixes: tag, no syzbot/crash report, no user-reported symptom
+- Replaces a data structure member (counter -> bitmap), slightly more
+  than a trivial patch
+- MLO is relatively new; impact limited to WiFi 7 MLO users
+- No explicit Cc: stable nomination
+- The bug requires specific MLO link add/remove cycles to manifest
+
+**Stable rules checklist:**
+1. Obviously correct and tested? **Yes** — bitmap approach is
+   straightforward, hardware tested
+2. Fixes a real bug? **Yes** — index leak causing invalid firmware
+   commands
+3. Important issue? **Medium-High** — can cause firmware malfunction in
+   MLO
+4. Small and contained? **Yes** — ~20 lines in 2 files, single subsystem
+5. No new features? **Correct** — pure bug fix
+6. Can apply to stable? **Yes** — code matches cleanly
+
+**Verification:**
+- [Phase 1] Parsed tags: 3 Reviewed-by, tested-on, Link, maintainer SOB
+- [Phase 2] Diff analysis: replaces `num_peer` counter with
+  `free_logical_link_idx_map` bitmap across 3 functions
+- [Phase 3] git blame: buggy code introduced in 8e6f8bc286031
+  (v6.14-rc1), confirmed by `git merge-base --is-ancestor` checks
+- [Phase 3] `git merge-base --is-ancestor 8e6f8bc286031 v6.13` → Not in
+  v6.13; `v6.14` → Yes
+- [Phase 3] Author has 9+ ath12k commits, is a regular contributor
+- [Phase 4] b4 dig could not find the commit (not merged in this tree);
+  lore blocked by anti-bot
+- [Phase 5] Traced `link_idx` usage: set in `ath12k_mac_assign_link_sta`
+  → used in `ath12k_peer_assoc_h_mlo` (line 3531) → sent to firmware via
+  WMI (wmi.c line 2348)
+- [Phase 6] Buggy code confirmed present in v7.0 tree; code at lines
+  7096-7137 matches patch context exactly
+- [Phase 6] NOT in v6.13 or earlier LTS trees (v6.12.y, v6.6.y, etc.)
+- [Phase 8] Invalid logical_link_idx sent to firmware can cause firmware
+  malfunction
+- UNVERIFIED: Could not access lore discussion to check for reviewer
+  stable nominations or concerns
+
+This is a real bug fix for a resource index leak in WiFi 7 MLO handling
+that can lead to invalid firmware commands. The fix is small, self-
+contained, well-reviewed, and hardware-tested. The buggy code exists in
+the target 7.0.y tree.
+
+**YES**
+
+ drivers/net/wireless/ath/ath12k/core.h |  2 +-
+ drivers/net/wireless/ath/ath12k/mac.c  | 16 ++++++++++++++--
+ 2 files changed, 15 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 990934ec92fca..5498ff285102b 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -522,7 +522,7 @@ struct ath12k_sta {
+ 	u16 links_map;
+ 	u8 assoc_link_id;
+ 	u16 ml_peer_id;
+-	u8 num_peer;
++	u16 free_logical_link_idx_map;
+ 
+ 	enum ieee80211_sta_state state;
+ };
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index b253d1e3f4052..769d240e3ae24 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -6784,6 +6784,8 @@ static void ath12k_mac_free_unassign_link_sta(struct ath12k_hw *ah,
+ 		return;
+ 
+ 	ahsta->links_map &= ~BIT(link_id);
++	ahsta->free_logical_link_idx_map |= BIT(arsta->link_idx);
++
+ 	rcu_assign_pointer(ahsta->link[link_id], NULL);
+ 	synchronize_rcu();
+ 
+@@ -7102,6 +7104,7 @@ static int ath12k_mac_assign_link_sta(struct ath12k_hw *ah,
+ 	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(ahsta);
+ 	struct ieee80211_link_sta *link_sta;
+ 	struct ath12k_link_vif *arvif;
++	int link_idx;
+ 
+ 	lockdep_assert_wiphy(ah->hw->wiphy);
+ 
+@@ -7120,8 +7123,16 @@ static int ath12k_mac_assign_link_sta(struct ath12k_hw *ah,
+ 
+ 	ether_addr_copy(arsta->addr, link_sta->addr);
+ 
+-	/* logical index of the link sta in order of creation */
+-	arsta->link_idx = ahsta->num_peer++;
++	if (!ahsta->free_logical_link_idx_map)
++		return -ENOSPC;
++
++	/*
++	 * Allocate a logical link index by selecting the first available bit
++	 * from the free logical index map
++	 */
++	link_idx = __ffs(ahsta->free_logical_link_idx_map);
++	ahsta->free_logical_link_idx_map &= ~BIT(link_idx);
++	arsta->link_idx = link_idx;
+ 
+ 	arsta->link_id = link_id;
+ 	ahsta->links_map |= BIT(arsta->link_id);
+@@ -7630,6 +7641,7 @@ int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+ 	if (old_state == IEEE80211_STA_NOTEXIST &&
+ 	    new_state == IEEE80211_STA_NONE) {
+ 		memset(ahsta, 0, sizeof(*ahsta));
++		ahsta->free_logical_link_idx_map = U16_MAX;
+ 
+ 		arsta = &ahsta->deflink;
+ 
+-- 
+2.53.0
 
 
