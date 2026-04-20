@@ -4,71 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C992DF588C4
-	for <ath12k@archiver.kernel.org>; Mon, 20 Apr 2026 13:33:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE5EAF588E3
+	for <ath12k@archiver.kernel.org>; Mon, 20 Apr 2026 15:27:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/kykfelX//V3PvrIn2cAUanW7hdqU0+BlsFgZ/RG/Lo=; b=Hd0UjHavnHC04xoTGp+UiVndRK
-	u+A1Dd6CG4/GmMPoEm3ZDOG83B99dIdhQEkg9jZfYRdBZ5TOIDwR5g9fWwc+dY1ilN930K0Uh2jvo
-	xT6po6YJiLfAKFJ9N/joLFxWiRKUV2KV6buei1pyH0YyWG0bD4//gIAc80OLQ43SenzsnZWQxmbQx
-	wkWYQlSV6zbYaccNbz+GI4GEqcYfYdkdYGy3uJm1lmDMxQJtjRxHs9GBZ9SPsdKuZQF1krBR3T4d9
-	nnf7e+bpq9ilLScYdngHVe/+e8PiGypvYqpwJN+c93uCQylQA0nv/7Z+1Vzhjd3PvXsN2u6KAh3QY
-	57hDZ3mA==;
+	bh=jVkE30hQ08LQ7R5FThqKLE6Uk75qf/KBDIHUXGckQOk=; b=EvC0wLIqWtZhpU5oWaHaZr5DcU
+	4V95rMx1qOVPH1k19seSEmopTAxPAxl8swyz8njTAWjsyMMPVG8sm5T73cyeytVA3tcSCmer/G99S
+	2h2qWRoxWX0vuZpnL+XYRXnmL3zU8Y03KrR8oHUDWoJXvnsZtqpLcp/DnHx92lEl0rxeGHgqFBP4e
+	qmIwb6l9Ega13IEdT5KsuIU2uBEnz2xMDlveLaCQlompEgWn5waoB6qKRwjizhOJnH/P1w1HqDINr
+	EBUfTU+LOHbpByQMTbi33LOaR278LbijTQ9v1K/Txsa8pns38jjYUuxqS5EKlVwfV8qeUPgwnGb7g
+	h5S5dxGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEokX-000000073Od-2Mta;
-	Mon, 20 Apr 2026 13:33:17 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wEqWf-00000007HRP-2V3w;
+	Mon, 20 Apr 2026 15:27:05 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEokU-000000073OD-26Cj
+	id 1wEqWc-00000007HQz-3Tv0
 	for ath12k@lists.infradead.org;
-	Mon, 20 Apr 2026 13:33:15 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 3012840554;
-	Mon, 20 Apr 2026 13:33:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9297C2BCB4;
-	Mon, 20 Apr 2026 13:33:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1776691994;
-	bh=LUDV08gzADyENRa5emx25syYugOXi3ly76AbdcLA3bY=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Es6XmYlTqs3BBTnvqjJUpgRI7DueoTS6FtWmRKniI2T+SrrMcpmympzye5S/ilYRr
-	 Hf9eEuBnRh/Hz77sWl+p7Xl+SfOg6Eo0YGggbGt1iIns5fxkeCXM+c72eYo+ZaaICy
-	 QJ2xsE3GFn9eUvhpX5Hl6U/lmoHu9/2qyaPVcjvN0Gyfyn+IZWixKK4NC885ut/pE+
-	 qtLQmoBFrvSRJaX7w43gn/FzxsHQLA8oOTsCLhtEl/vf+jCHCzmlCzVdUkbc8cuDYf
-	 DzriRbUGQ4+BQOuUlyY/OQGlwsNGAwq/Vxq4WCNMq0HLjZhnyCme2EaEY1dWRS7wt/
-	 78YA1QtVDN4ng==
-From: Sasha Levin <sashal@kernel.org>
-To: patches@lists.linux.dev,
-	stable@vger.kernel.org
-Cc: Avula Sri Charan <quic_asrichar@quicinc.com>,
-	Roopni Devanathan <roopni.devanathan@oss.qualcomm.com>,
-	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	Sasha Levin <sashal@kernel.org>,
-	jjohnson@kernel.org,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH AUTOSEL 7.0-6.18] wifi: ath12k: Skip adding inactive partner vdev info
-Date: Mon, 20 Apr 2026 09:21:45 -0400
-Message-ID: <20260420132314.1023554-311-sashal@kernel.org>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260420132314.1023554-1-sashal@kernel.org>
-References: <20260420132314.1023554-1-sashal@kernel.org>
+	Mon, 20 Apr 2026 15:27:04 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63KBGUf11598266
+	for <ath12k@lists.infradead.org>; Mon, 20 Apr 2026 15:27:01 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	jVkE30hQ08LQ7R5FThqKLE6Uk75qf/KBDIHUXGckQOk=; b=VjDxrrDHpm8xRm/g
+	aHz09UTuUfvgz6CzP0YR/A4f7uQeDJE3GIBjY9AUl6nfzxVQK8wSGvNSjIMP0XEK
+	/qqKRBRLuORcS5LrneGnEgv95O9DWiyMbyI+xjujABS8yhGc0HQu2F5D+19qztLj
+	j5I2teaRCFz963vrSlgGHKdKBobbUUzdq+oqmeyB0wmQjpDmpga/BtwbXpfdyBi0
+	MuUE2ZhCYzaMzL34Ja6Ye6GNYQHU5ti93ZE65v6CRIgW/LEnAfOaBimpaV7zPQDh
+	FpGGAaJ0k86VEz94CTLKH8QQIa0vy4tksr7WFb2G/LWnXEe8dmUxf9QZT4Uun+XQ
+	aFWknQ==
+Received: from mail-dy1-f197.google.com (mail-dy1-f197.google.com [74.125.82.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dnfgnj3eg-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 20 Apr 2026 15:27:01 +0000 (GMT)
+Received: by mail-dy1-f197.google.com with SMTP id 5a478bee46e88-2c16233ee11so4323821eec.1
+        for <ath12k@lists.infradead.org>; Mon, 20 Apr 2026 08:27:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1776698820; x=1777303620; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=jVkE30hQ08LQ7R5FThqKLE6Uk75qf/KBDIHUXGckQOk=;
+        b=f6qqCpvpfWrCeagfZ+LBvVFLmjbmaeGCN7zw8WsaCFNkgVFFET0GBX1u2XadydI1rU
+         Qm/NwiYkFEjIzab7b3Db+w9bY78VT9sBCFl9rPmE8ovlOwFJjfLuylNoKFjtNfiQ7cNV
+         sHvSqNSJKIXVoG6PIBvwpFwgrYxzitU+zyAS9L+h2XWhs2S2oGzmn/1bsqYPuXvK0J5n
+         s+hijfRM81d5NqXJXojlv3x3DPgL3ts63KaMW+tyqZXKphVkHqPfi+LqhElnmmzY+BdN
+         X7MYgzbHwOw/8f3shfCVnvkSrRznLy1lcjn1n+qjZJWGfc+scgbKbfu74k5yvaAHljpp
+         UNxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1776698820; x=1777303620;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=jVkE30hQ08LQ7R5FThqKLE6Uk75qf/KBDIHUXGckQOk=;
+        b=fM4OK6BXufvuJDHQXFhcNoJRdaLrMwxqq8ZZzvRWLQwhHzrrfpPewJeZpqlfA8dPhp
+         js2rd1LbbtpNv5X2IrWwJ1Q9nmTjhbNNmAb6L/pTascAnEUQm7hq2LbHE+IiMLyzV2vX
+         4cCHlET5ccuhDJYlbaDzg/GltU4wTjuVgX+6+4mqAfnnuZiasfPCoC4P96DgYR+byY5y
+         qjDE0c9cnJfqOGjNeVjcd/8Brqrm3Xl1Q81Ctcdw463xSWgFk98ZqVUoCY8pkYV/dbTH
+         dbE+UlFWNx+6hszpgypFejGPi8DaQdyS7TLFaCYxVCM4o44fJrZAKHsQy/bvtAh5T2A6
+         /4NQ==
+X-Forwarded-Encrypted: i=1; AFNElJ883HabUOCw2x2+7cvVSylKsFPaVziBpU00LZTWi+1zvUgmMTUXrbClk/1xy2wwjPrBoZ/x5Aw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz+ywyYtQvwJf6Vx0RAQl7YTPnc/DXn+2eWUIE+rnwLRSf9b+0F
+	ksA7/kxIJK5o7CRjzBJLDCzv6veKVfDpoUr+FOBRdmPmbfmeez2W4UUOZ9iPiqUWJMKPjjtTL9g
+	ep9DcXRgQ8s4gTe1YyBM3qbc9YSOGQP9BmYx5XT3eMQMVIkwfCmy+OfTHRG2cLJTdgcx68U9i
+X-Gm-Gg: AeBDieuPgysjaM0pb0acvZfLhTTH+4m4NVwNkW0rde5ru6pXR4T36ZOQkuDl4uZSFiV
+	EymAhee1V4GBlFgY+qkwatCKUQ3ro7O1OnLPvDxz0kzgDYcpv36kKDsb1mOIfhRub4FpuNrxchl
+	w6WjogwLluoBeSxocZctWaFYmWDfs+HHg2/5rR2KUtcMZMBTITnb5guJWdgpf6gXoxEFlmtUZ78
+	hkncfzCRr4KZmusJVQnv6L96NUFMIvky6elJ49fXiLm/fWCFXHvkD5DGz7PP5MgFoqo/1Aspw/r
+	ieZa/WGdqR/b+aPngWtAyCyCJNaUFJnBSNXQod/VH5rAhc//AktOPkz67WVJQP8EU23iVyGSjmh
+	DClNQKqnhrrIAeze6K0kPnAOphas57BXfrwLy5XkuAkvqU5TU/iuQQikzGwbMtWg10qDPQ41ZzW
+	25n2AJ5d2GgOg=
+X-Received: by 2002:a05:7022:2602:b0:128:d23d:81a2 with SMTP id a92af1059eb24-12c73f9ae5cmr6881009c88.29.1776698820245;
+        Mon, 20 Apr 2026 08:27:00 -0700 (PDT)
+X-Received: by 2002:a05:7022:2602:b0:128:d23d:81a2 with SMTP id a92af1059eb24-12c73f9ae5cmr6880978c88.29.1776698819448;
+        Mon, 20 Apr 2026 08:26:59 -0700 (PDT)
+Received: from hu-jjohnson-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-12c770516f1sm13775671c88.7.2026.04.20.08.26.58
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 20 Apr 2026 08:26:58 -0700 (PDT)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: Jeff Johnson <jjohnson@kernel.org>,
+        Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+In-Reply-To: <20260409-ath12k-htc-proto-v1-0-cda86d6355f1@oss.qualcomm.com>
+References: <20260409-ath12k-htc-proto-v1-0-cda86d6355f1@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: Consistently name struct
+ ath12k_base pointers
+Message-Id: <177669881838.2486446.3805599461059578232.b4-ty@oss.qualcomm.com>
+Date: Mon, 20 Apr 2026 08:26:58 -0700
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 7.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.3
+X-Proofpoint-ORIG-GUID: 1VvKqk9N7ufQjR32G3xfcNfZfSIKJcmJ
+X-Proofpoint-GUID: 1VvKqk9N7ufQjR32G3xfcNfZfSIKJcmJ
+X-Authority-Analysis: v=2.4 cv=TK11jVla c=1 sm=1 tr=0 ts=69e645c5 cx=c_pps
+ a=Uww141gWH0fZj/3QKPojxA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=bC-a23v3AAAA:8 a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8 a=UDxKe0bwUzp4W916UMsA:9
+ a=QEXdDO2ut3YA:10 a=PxkB5W3o20Ba91AHUih5:22 a=FO4_E8m0qiDe52t0p3_H:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDIwMDE1MSBTYWx0ZWRfX/FgagZD9Wgkk
+ ZktO/I3NSNflEdOJzFhVHDf/JsqSxS9JlIDyIxmdj5hhbwBMBX4jP4FaT7YX2Td2zMXr0neOLvY
+ QUJyn78S6zO6+hC3Q4B8PvZNca7etDKtnQEoj+de1Q0tQFepTQog1+z3qdschHdmPtEZnbK+hJo
+ rxE87lC4BqvCvxANXpCXzuCfSMxcF/i8nYKt7HpLxtEp5Y7nH1jD5oGeW5m2/ouG+vrhV68dJxv
+ 5kRCnjHgZr5BK4s+Achgd3qu6lmb2k97tBWckfJre//+XVE0STCcVItb0iKtH1f/n3W0DZ2OMja
+ nWM830d8jQdSdO0JLkFe++J/m2mtgEf9H7cmvxMAnA7A5LUlI9m1ld1GFfiCSDM/ba5gM6Q3I4L
+ TPFU006l8Qc4GbqoGs1kLNz4rbozO+2O8Nx9GZIpaU3BD6n1bD7wqYv81ZaLUCzOcCKGikbFwHi
+ FJWV6TTl0+IPZkwUaOA==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-04-20_03,2026-04-20_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 clxscore=1015 lowpriorityscore=0 malwarescore=0
+ priorityscore=1501 suspectscore=0 adultscore=0 phishscore=0 spamscore=0
+ bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2604070000
+ definitions=main-2604200151
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260420_063314_582358_3F92CE05 
-X-CRM114-Status: GOOD (  22.53  )
+X-CRM114-CacheID: sfid-20260420_082702_885927_9CB1220D 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,259 +147,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Avula Sri Charan <quic_asrichar@quicinc.com>
 
-[ Upstream commit 7d7dc26f72abb7a76abb4a68ebad75d5ab7b375e ]
+On Thu, 09 Apr 2026 11:44:22 -0700, Jeff Johnson wrote:
+> Per ath12k convention, a pointer to struct ath12k_base should be named
+> 'ab', but there are a few places it is named 'ar', so fix them.
+> 
+> Note that one instance in ath12k_wmi_tlv_parse() is not modified since
+> that instance is being removed as part of:
+> 
+> https://patch.msgid.link/20260407095426.3285574-1-nico.escande@gmail.com/
+> 
+> [...]
 
-Currently, a vdev that is created is considered active for partner link
-population. In case of an MLD station, non-associated link vdevs can be
-created but not started. Yet, they are added as partner links. This leads
-to the creation of stale FW partner entries which accumulate and cause
-assertions.
+Applied, thanks!
 
-To resolve this issue, check if the vdev is started and operating on a
-chosen frequency, i.e., arvif->is_started, instead of checking if the vdev
-is created, i.e., arvif->is_created. This determines if the vdev is active
-or not and skips adding it as a partner link if it's inactive.
+[1/2] wifi: ath12k: Fix HTC prototype ath12k_base parameters
+      commit: a49300ad9796e59f2eb740c608ccaf6b1621a6bd
+[2/2] wifi: ath12k: Fix ath12k_dp_htt_tlv_iter()'s iter() signature
+      commit: 90ef329e73c673e4e3ea66226bb1d8fe3acf45a5
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01181-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Avula Sri Charan <quic_asrichar@quicinc.com>
-Signed-off-by: Roopni Devanathan <roopni.devanathan@oss.qualcomm.com>
-Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Link: https://patch.msgid.link/20260330040732.1847263-1-roopni.devanathan@oss.qualcomm.com
-Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
-
-LLM Generated explanations, may be completely bogus:
-
-Now I have sufficient information. Let me compile the full analysis.
-
----
-
-## PHASE 1: COMMIT MESSAGE FORENSICS
-
-**Step 1.1:** Subsystem: `wifi: ath12k:`. Action verb: "Skip" (which
-implies avoiding incorrect behavior). Summary: Skip adding inactive
-partner vdev info to prevent firmware assertions.
-
-**Step 1.2:** Tags:
-- Tested-on: QCN9274 hw2.0 PCI (hardware-tested)
-- Signed-off-by: Avula Sri Charan (author), Roopni Devanathan
-  (submitter), Jeff Johnson (ath12k maintainer)
-- Reviewed-by: Rameshkumar Sundaram, Baochen Qiang (both active ath12k
-  contributors)
-- Link: patch.msgid.link URL for the submission
-- No Fixes: tag (expected for review candidates)
-- No Cc: stable (expected for review candidates)
-
-**Step 1.3:** Bug: When MLD station mode has non-associated link vdevs
-that are created but not started, they are incorrectly added as partner
-links. This leads to stale FW partner entries that accumulate and
-**cause firmware assertions** (FW crash). Root cause: the check used
-`is_created` but should use `is_started` to ensure only active vdevs are
-added.
-
-**Step 1.4:** This is clearly a bug fix despite not using the word "fix"
-prominently. "Skip adding" = avoiding incorrect behavior that causes
-firmware crashes.
-
-## PHASE 2: DIFF ANALYSIS
-
-**Step 2.1:** Single file changed:
-`drivers/net/wireless/ath/ath12k/mac.c`. Change is 1 line: `is_created`
--> `is_started`. Minimal scope.
-
-**Step 2.2:** In `ath12k_mac_mlo_get_vdev_args()`, when iterating
-partner link vdevs:
-- BEFORE: Check `arvif_p->is_created` (vdev allocated in firmware)
-- AFTER: Check `arvif_p->is_started` (vdev started and operating on
-  frequency)
-- This is a more restrictive check that filters out vdevs that exist but
-  are not active.
-
-**Step 2.3:** Bug category: Logic/correctness fix. A created-but-not-
-started vdev should not be treated as an active partner, because it has
-no channel context yet. Adding it causes stale FW partner entries ->
-firmware assertion.
-
-**Step 2.4:** Fix quality: Obviously correct. `is_started` is a subset
-of `is_created` (a vdev must be created before it can be started), so
-this is strictly more restrictive. The fix cannot introduce regressions
-because any vdev that is started is also created. The fix is reviewed by
-two ath12k developers and tested on real hardware.
-
-## PHASE 3: GIT HISTORY INVESTIGATION
-
-**Step 3.1:** Blame shows the buggy line (`is_created` check) was
-introduced by commit `315d80be304ac1` ("wifi: ath12k: allocate new links
-in change_vif_links()") by Aditya Kumar Singh. This commit appeared at
-v6.13-rc6, landing in v6.15.
-
-**Step 3.2:** The original function `ath12k_mac_mlo_get_vdev_args()` was
-introduced by `1ea0cdee6fb3a4` ("wifi: ath12k: MLO vdev bringup
-changes") at v6.12-rc4, landing in v6.14. The `is_created` check was an
-addition on top in v6.15.
-
-**Step 3.3:** The fix is standalone. No other patches are needed as
-prerequisites.
-
-**Step 3.4:** Avula Sri Charan has one other commit in ath12k (napi
-fix). Roopni Devanathan has multiple ath12k contributions. Reviewers
-(Rameshkumar Sundaram, Baochen Qiang) are active ath12k contributors.
-
-**Step 3.5:** No dependent commits needed. The fix only changes one
-condition.
-
-## PHASE 4: MAILING LIST RESEARCH
-
-**Step 4.1:** b4 dig could not find the commit (it's not yet merged).
-The submission URL is `https://patch.msgid.link/20260330040732.1847263-
-1-roopni.devanathan@oss.qualcomm.com`. Lore is behind Anubis protection,
-but we can confirm from the commit tags that it was reviewed by two
-developers and accepted by the subsystem maintainer Jeff Johnson.
-
-**Step 4.2:** Two reviewers (Rameshkumar Sundaram, Baochen Qiang)
-reviewed the patch. Jeff Johnson (ath12k maintainer) signed off.
-
-**Step 4.3-4.5:** Bug report details not available via web due to Anubis
-protection. The commit message itself describes the bug mechanism
-clearly.
-
-## PHASE 5: CODE SEMANTIC ANALYSIS
-
-**Step 5.1:** Modified function: `ath12k_mac_mlo_get_vdev_args()`
-
-**Step 5.2:** Called from `ath12k_mac_vdev_start_restart()` (line
-11210), which is a key function in the vdev start path. This is called
-during channel context assignment (common MLO WiFi operation).
-
-**Step 5.3-5.4:** The function populates partner link info that gets
-sent to firmware via `ath12k_wmi_vdev_start()`. Incorrect partner
-entries lead to firmware state corruption and assertion failures.
-
-**Step 5.5:** The `is_started` flag is well-established in the codebase
-with clear semantics: set when vdev starts operating, cleared when it
-stops.
-
-## PHASE 6: STABLE TREE ANALYSIS
-
-**Step 6.1:** The buggy code (`is_created` check in
-`ath12k_mac_mlo_get_vdev_args()`) was introduced in v6.15 (commit
-`315d80be304ac1`). It exists in:
-- v7.0 (confirmed: `git merge-base --is-ancestor` = IN v7.0)
-- v6.15+ (confirmed)
-- NOT in v6.14 or earlier (MLO function is different or doesn't have the
-  check)
-
-**Step 6.2:** The fix is a single-line change. It will apply cleanly to
-the 7.0 stable tree since the surrounding code is identical.
-
-**Step 6.3:** No related fixes already in stable for this specific
-issue.
-
-## PHASE 7: SUBSYSTEM CONTEXT
-
-**Step 7.1:** Subsystem: WiFi/ath12k (wireless driver). Criticality:
-IMPORTANT - ath12k supports Qualcomm WiFi 7 hardware (QCN9274, WCN7850)
-used in modern systems.
-
-**Step 7.2:** Very active subsystem - 232 commits to this file since the
-MLO function was introduced.
-
-## PHASE 8: IMPACT AND RISK ASSESSMENT
-
-**Step 8.1:** Affected users: ath12k WiFi users in MLD/MLO station mode.
-This is a growing user base as WiFi 7 hardware becomes more common.
-
-**Step 8.2:** Trigger: MLD station connects with multiple links, non-
-associated link vdevs are created but not started, then a vdev start
-occurs. This is a normal MLO operation path, not an edge case.
-
-**Step 8.3:** Failure mode: Firmware assertion (crash). Severity:
-**CRITICAL** - the WiFi firmware crashes, requiring recovery.
-
-**Step 8.4:**
-- Benefit: HIGH - prevents firmware crashes during normal MLO operation
-- Risk: VERY LOW - 1 line change, strictly more restrictive condition,
-  cannot regress
-- Ratio: Strongly favorable
-
-## PHASE 9: FINAL SYNTHESIS
-
-**Evidence FOR backporting:**
-- Fixes firmware assertion (crash) - critical severity
-- Single-line change, obviously correct
-- `is_started` is a strict subset of `is_created` - no regression
-  possible
-- Reviewed by 2 developers, tested on real hardware
-- Affects normal MLO WiFi operation path
-- Clean apply to 7.0 stable
-
-**Evidence AGAINST backporting:**
-- Affects only MLO (WiFi 7) users with ath12k hardware (limited
-  audience)
-- Relatively new code (v6.15+)
-- No explicit Fixes: tag or Cc: stable
-
-**Stable rules checklist:**
-1. Obviously correct and tested? **YES** - 1-line change, more
-   restrictive check, HW-tested
-2. Fixes a real bug? **YES** - firmware assertions/crashes
-3. Important issue? **YES** - firmware crash
-4. Small and contained? **YES** - 1 line in 1 file
-5. No new features? **YES** - purely a fix
-6. Can apply to stable? **YES** - clean apply
-
-## Verification
-
-- [Phase 1] Parsed tags: Tested-on: QCN9274, Reviewed-by: 2 developers,
-  Signed-off-by: Jeff Johnson (maintainer)
-- [Phase 2] Diff analysis: 1 line changed in
-  `ath12k_mac_mlo_get_vdev_args()`, `is_created` -> `is_started`
-- [Phase 3] git blame: buggy `is_created` check introduced in
-  315d80be304ac1 (v6.15), added by Aditya Kumar Singh
-- [Phase 3] git describe: 315d80be304ac1 = v6.13-rc6-1322, landed in
-  v6.15
-- [Phase 3] git merge-base: 315d80be304ac1 IS in v7.0, NOT in v6.14
-- [Phase 3] git merge-base: 1ea0cdee6fb3a4 (original function) IS in
-  v6.14, NOT in v6.13
-- [Phase 5] Grep callers: `ath12k_mac_mlo_get_vdev_args()` called from
-  `ath12k_mac_vdev_start_restart()` at line 11210
-- [Phase 5] Grep `is_started`: set to true in vdev start path (lines
-  11637, 12106, 12118), false in unassign path (lines 12168, 12179)
-- [Phase 6] Buggy code exists in v6.15+ and v7.0 stable trees only
-- [Phase 7] Active subsystem: 232 commits since MLO function
-  introduction
-- [Phase 8] Failure mode: firmware assertion = CRITICAL
-- UNVERIFIED: Could not access lore.kernel.org discussion due to Anubis
-  protection
-
-The fix is a minimal, obviously correct, single-line change that
-prevents firmware crashes during normal MLO WiFi operation. It meets all
-stable kernel criteria.
-
-**YES**
-
- drivers/net/wireless/ath/ath12k/mac.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 769d240e3ae24..6fca4418ab0bd 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -11122,7 +11122,7 @@ ath12k_mac_mlo_get_vdev_args(struct ath12k_link_vif *arvif,
- 		if (arvif == arvif_p)
- 			continue;
- 
--		if (!arvif_p->is_created)
-+		if (!arvif_p->is_started)
- 			continue;
- 
- 		link_conf = wiphy_dereference(ahvif->ah->hw->wiphy,
+Best regards,
 -- 
-2.53.0
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
 
