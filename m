@@ -4,130 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACC5FF8FA98
-	for <ath12k@archiver.kernel.org>; Tue, 21 Apr 2026 15:33:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CEACEF327D4
+	for <ath12k@archiver.kernel.org>; Tue, 21 Apr 2026 17:26:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=yIxlUghUBKiCc8deiyZT8qQwfk7BrJmVDIuLaHQJzPU=; b=dndvR5ppB7w7VheIDLZ6iIgpjC
-	0O/dCxMJokUmpjEk+J1gspsd7PEa6ndze9QvZgtLbJa7tGAGZNyYHdVVpSW3RR7R26owe2fEXdbBm
-	Oe5JbMrK539R0hN00ygI/dlb+4TXHz5VG0rNxm/EoZV6GmqtI5pjkc5yHtucN0eDLnnO/HBU5900N
-	xu7Z8S/wFTObMbIuVX4I9TWjsqgI+vk8BFGuRQxHa8x3bZTwBhK3ECSR+7XWa8YNcWPbvlbQ5ZUKw
-	DE2h7YcN38s8R9gASB+26I0h5o9+wbjCJ3lw9krgHctD9L6ofiByz1tj2n8IT22RMXD9BlggPd/WR
-	X+rv1SMw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Uu5+POdFqqclIWWOEr3Sv9HNAu+bDuUYEserSDIYQ6I=; b=nG7LWtfVS7BJ26uXVDk2XSgSZ3
+	QS92ztcEnfdz7R2+45YiIs9RjBl48dEBoJr+wF30fgHygQ7w81kRAuBrjlKmCNXd8WCENyfOacp8n
+	dyJLripLIWsNCWXklFubJmO1yUwUnKdwKs+lOEDufWfzUcyNRxPSdTR+1HStRouTCdGK/+ApV/Wfq
+	NssHFODsM1dQO5IQqx5uhxIVGPeVvnzb841nNrYpfCrhTSuHMBw1PTQd+aowrUVyzNm4nre0NAO17
+	VlHC45ETN/zpODvBIRTgdLaGOqNK44PzzTVvx2ZdSCQUq0vjAuYdIWZKKhjwwu+foEA0ilea19stO
+	BW01ftvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFD6J-00000008pt2-1trc;
-	Tue, 21 Apr 2026 15:33:23 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wFEre-00000008y6H-2LvX;
+	Tue, 21 Apr 2026 17:26:22 +0000
+Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFD6F-00000008pqs-0Z6P
+	id 1wFErb-00000008y5q-3zKP
 	for ath12k@lists.infradead.org;
-	Tue, 21 Apr 2026 15:33:21 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63LA2kmP1809742
-	for <ath12k@lists.infradead.org>; Tue, 21 Apr 2026 15:33:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=yIxlUghUBKiCc8deiyZT8qQw
-	fk7BrJmVDIuLaHQJzPU=; b=RXkr/ERU2gTXlqPP0N71+8Xh9h/qx33T85Pw88jm
-	lLesSNNFIySLhS74zBasK9ALQN/0eXlBAdrlZ1AJ7H9XChtCVxteuw/tj22laSlH
-	lOi4iD/SIt8LG/E7a0c9HvhuJ5i+33+hoMVgRZz0PFS6IxIC0uvL8u9AQm08JC3S
-	Zvck8K34cvfSJ0q3mpBA9Q/DRv30EH7WPd7KRpsj6Wl7To2BUuQ6pfjX8u/1yE0K
-	Y1SDAXw7rlFkPhpmtF5g2o7uTE4+J51JD4VgLyE6TAlx7/+AefqTR/IkIoFzKmBA
-	Mky6cPxvbgW0VavzE84noEXdAN1x/M5b+U6InjAldgovCg==
-Received: from mail-ot1-f69.google.com (mail-ot1-f69.google.com [209.85.210.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dp74xs2c0-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 21 Apr 2026 15:33:17 +0000 (GMT)
-Received: by mail-ot1-f69.google.com with SMTP id 46e09a7af769-7dcda136050so1095635a34.2
-        for <ath12k@lists.infradead.org>; Tue, 21 Apr 2026 08:33:17 -0700 (PDT)
+	Tue, 21 Apr 2026 17:26:21 +0000
+Received: by mail-pl1-x632.google.com with SMTP id d9443c01a7336-2ad9516a653so23568695ad.0
+        for <ath12k@lists.infradead.org>; Tue, 21 Apr 2026 10:26:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1776785597; x=1777390397; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=yIxlUghUBKiCc8deiyZT8qQwfk7BrJmVDIuLaHQJzPU=;
-        b=PQ/HdSpK1Q6Z91yVj7jjPAE+5yZ3fx611og0Liaa5tH8G2I6xsZCsDWNYIdaAst8Y7
-         wSESJ8zOUwS+Xm4SeQxJMZKfuEBXffcIE0mEWrBZlT8PgvlE/JEKz74F9nwOjb4tv0zz
-         ADF9DEIHEuGkc4sJYddqKDG6SMJlZRKpbccZND9zH/3mSqMfHNV/d3hBghduud0nNuf2
-         HS4PpV0nKbrsJBxhx4M9K+R0mpqc4Uxh0lH2fjaII5vsUJDCl8drMy6nAZChwTzKQpQY
-         0fI3uc19vsCdU1uCQPN6tRxhGObhz/KV5G30HrM5YABeCvK9nhJq5AA+rwnVrm79pKxv
-         ilPA==
+        d=gmail.com; s=20251104; t=1776792378; x=1777397178; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Uu5+POdFqqclIWWOEr3Sv9HNAu+bDuUYEserSDIYQ6I=;
+        b=SFX3R5oflJhCO23vyx10277VMMaQtWF+Hg+O2xE7vo9no5sPSIFNwCooCPYwD6EXDg
+         DJRGHPc3PNOsbp8lAZHdcTOD9EDrfU0ZpU4eJ6Rk1+tUmJLoYaFYTLI2i18aRz3CUgKy
+         seqNlL/4POapsagU/hGGwjAqwx++mGYDcoqjsy2bSfzHUUCZhW3WDZs+NTaT/ZSF6mDF
+         igwfFrruHGqb3Un6sT77G84rFDG3KIR8q6gytDbh2jfqchnTfdS5LUTqVLndKo5yBxvT
+         RWCDpHJmlAcwSkz3vJC3xr9pUezKs2ScUU0nK/0ci1FExWatjRzCpA3nIaZaog76gxXZ
+         eBKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1776785597; x=1777390397;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=yIxlUghUBKiCc8deiyZT8qQwfk7BrJmVDIuLaHQJzPU=;
-        b=tDGT569h1rd4LsvFaD/J5GC10H7TOWtsXgZ8EO66krlmktlB5xgcw2+o2O1+Yizbmo
-         3wLA7EdlR4c6est1cSwKEBqHqLZ/QCcahhFzuhsqlLAXxWJdeTmqAfRUYfyMW8qXqaFW
-         P3VH4aBj+qjB8pQxJ6pfK8WJuRVdQJhNHxqqoTGcxn5MnSvsYmGcA+YCHjzBtelqbT+L
-         lK3gue7Vv/6+GpDdRT9Ytqrv9nkEZoU2TJHzkujLbCDTcT4UaQJ7+2ovZ1IHK/4wkL9d
-         8Y/Vx70EM06nZv4KRaqwflHmCoyY7iEdbIBTn7CinRNOqlriqWj+qgsUL4TPcTwJnGyx
-         RTMQ==
-X-Forwarded-Encrypted: i=1; AFNElJ/vOiR5or2ERtbXVv0ef/FWqfkeOhUqZ2GXVooPQPriiz/ObxNOyYykspzfShlhXxxClDugQ5M=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywoe9RCD/sdFEm+wHcG3VLWKTToEssklG8d9OlUxL4ZblTSoxzu
-	piYIplxNgT0uZKsWbvic6hsVNHnCB9Tv3g7H6mFV+6qyotYAOSWixu8U3QbRWIa5/+4AgTOse+k
-	zqyi3Bff3GxFWorPTR6dqD7cGxOEL/58hFAMuksvw9GjJ41U4CqA7JZCRHM9oEisT3PkGt2aj
-X-Gm-Gg: AeBDieugs4SdahEb5NQdrN/WAFjOE89VtgXDMrP+U1GG6X0dza6JDbRUVDnhCmc0fQi
-	AlZi7Kt/4iK1p7wk4pquPxM7wrmStRDaaXtz2SzZvaRDF3mnw9GTxr4Y9Zo9ESgLUb5uyahL6LS
-	b8i8AVUj8UMP2gG3M5N8AQad3GJpaII+j1kYKBjO/asnJGyanU0hatI3oYBd+Oc9kBrU/d2nph/
-	ZhuUpRxdWDq+LwkPbMJCbcCSx7q5O6PWrOIIlq9KlsPjYzKw088/8SH4DrnMdGoT9ZudUMJxtbZ
-	8Q724DWR4KHPKXGVORuwb+Rqf+2qFOmO5oEJkDVoAkzGhRke7O0tfx8HSc6dEgUIDVI2fxe0y2s
-	1h5WbjxDpqqHLBpaZRRk9lo9/R0UE+K21bD8WybmEbCB4I35gaRTcH3DeSaEfwukgvP8qOVg6ca
-	+OhouHn+jOgKraVOdGNXqxCY2ZeZ7joliHrxAtvOzwNetsBw==
-X-Received: by 2002:a05:6820:55d7:20b0:67d:f88f:d853 with SMTP id 006d021491bc7-69462e2109cmr6917207eaf.6.1776785597049;
-        Tue, 21 Apr 2026 08:33:17 -0700 (PDT)
-X-Received: by 2002:a05:6820:55d7:20b0:67d:f88f:d853 with SMTP id 006d021491bc7-69462e2109cmr6917190eaf.6.1776785596615;
-        Tue, 21 Apr 2026 08:33:16 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5a4187ec0c2sm3757178e87.82.2026.04.21.08.33.15
+        d=1e100.net; s=20251104; t=1776792378; x=1777397178;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=Uu5+POdFqqclIWWOEr3Sv9HNAu+bDuUYEserSDIYQ6I=;
+        b=I4sj693xCDhXgEafHL+LJzr4jxweX8Li/G6yxnFJGrqmJumz4S+S6WPsDwDeuapsfU
+         hJsgm0/x54EQH0HnnkA/hBEVz+5isrQStofJe4VjCBhoofJvfB68raGpaQa+kOtEinY0
+         cHztyTJQPbgXP/S4iNZhkiJbxFRE2R+jOU5RMfCKWRA+ImWehDsd5xvf7BSmmHGHm9XQ
+         n2ZHH7jXzUvu8inBjDYxz12KyLjCx7o6Ly4b9RIp/1pDx3+/gk2fMN6jo7ytdbqTmf1l
+         jEUwQ2OygDBbyuNqsnLEw3lrgLRKPBgiVBE3RM9wZYtHavff6UmTp7JzXGwIty2Qe+1U
+         BI1w==
+X-Forwarded-Encrypted: i=1; AFNElJ9w/7ZEI2ZQLsDCEzXjSRj6UEw0bmePrca8RclUqMjMrWLY02jUa1XHRfJPUr4IYK97UMqV34o=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw2NdkK6s60CFwNgw4OSsR49B6vzVfb53i2Xr4DjJ8mqValApF4
+	DwnkfulD58iYZIdzaM87gYOyRBjNdFb0Qe+L8q8pI3qALBgC+GqwxKCF
+X-Gm-Gg: AeBDieuDNPF2dvE8KCAEWOrUqV9pGoMqioEDcjITm/4jr9qE89FZPOS5l77Td4m3lWZ
+	BYtdpasug+ofyFG0GAuAyFkpu1WngEExD14jQqEwJpfches8i9oDqMLFCA3FFb8a/TU24zV115+
+	YyFtEATikvW2I1a5EesHa0XkZvb8F84pJtPY8d0vO53AHkjPWPCUrbXuLmFTfxJtvLmK1CQIYYi
+	qSTVs5hy3TT/t87NORRJQkHyZ97lS1lM1cDloXn0t94v0emwKa5D6IJok5Qzm1zQEKjVZya7zN9
+	e7U2+po79s3/VIVAkoxrBcbeta8xGvfExzC3UHtcW+F+ofhb0hfR7hFZX3FgU6pr9mNa6rGCyva
+	9gJ7H753Yv3ARc+9RpWfeffWupjasVcvCesnfIsJQ71nBKM28oLQ6ua0zPlni6BpCkj1lZ+reWq
+	OnVT0FdW6+uX9fC4BhpfyxnQgPza9bxoSqFSImXPx25cShdxw=
+X-Received: by 2002:a17:902:db0d:b0:2b2:4fe3:7b89 with SMTP id d9443c01a7336-2b5f9f52879mr182995625ad.38.1776792378433;
+        Tue, 21 Apr 2026 10:26:18 -0700 (PDT)
+Received: from lenovo.localdomain ([123.110.133.16])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2b5faa507cbsm144897015ad.37.2026.04.21.10.26.15
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 21 Apr 2026 08:33:15 -0700 (PDT)
-Date: Tue, 21 Apr 2026 18:33:13 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: linux-firmware@kernel.org, linux-wireless@vger.kernel.org,
-        ath10k@lists.infradead.org, ath11k@lists.infradead.org,
-        ath12k@lists.infradead.org, jjohnson@kernel.org
-Subject: Re: [PULL linux-firmware] ath10k, ath11k and ath12k firmware
- ath-20260421
-Message-ID: <wxnc2oczwg3hakkjxms53qbeckmy4oncp42mnqq5t7xs7lsvdc@4mmbo74zs3e2>
-References: <b581cc04-f5cd-4e99-9251-523e50623b03@oss.qualcomm.com>
+        Tue, 21 Apr 2026 10:26:18 -0700 (PDT)
+From: Yu-Hsiang Tseng <asas1asas200@gmail.com>
+To: Jeff Johnson <jjohnson@kernel.org>,
+	ath12k@lists.infradead.org
+Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+	Rameshkumar Sundaram <quic_ramess@quicinc.com>,
+	Kalle Valo <kvalo@kernel.org>,
+	Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
+	Clark Williams <clrkwllms@kernel.org>,
+	Steven Rostedt <rostedt@goodmis.org>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-rt-devel@lists.linux.dev
+Subject: [PATCH v2] wifi: ath12k: fix false positive RCU warnings on PREEMPT_RT
+Date: Wed, 22 Apr 2026 01:25:00 +0800
+Message-ID: <20260421172500.1050754-1-asas1asas200@gmail.com>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <4cdf2e61-fe69-4168-9df7-55bb71585dfe@oss.qualcomm.com>
+References: <4cdf2e61-fe69-4168-9df7-55bb71585dfe@oss.qualcomm.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <b581cc04-f5cd-4e99-9251-523e50623b03@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=Vq8Txe2n c=1 sm=1 tr=0 ts=69e798bd cx=c_pps
- a=z9lCQkyTxNhZyzAvolXo/A==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=p0WdMEafAAAA:8
- a=W2b0fEEQJ4TDHmAVsWEA:9 a=CjuIK1q_8ugA:10 a=EyFUmsFV_t8cxB2kMr4A:22
-X-Proofpoint-GUID: 8BJ0pRQVyPuI9Cf2tprKrA2JjREiVcOG
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDIxMDE1NCBTYWx0ZWRfX8yexVpXsHK4n
- IBmLRHijzmiPNPhLJ3HZYHgeJH11jI6ndjSo4qXK01KILAPc/mEdR4ZeVVNs6B6noMybuFarPaW
- C/ovORe2zKpucYzxOA6Ag+rQzg8KFLzrabDbLNPd7eKAosTyS3eVBN+A3xlFca0ZyBsX3GOIdra
- 05FYaHzCkYQmH0YV9TlHP2krjrz9BVahD8oA66+aOQp8HGeTTgZmY75thtTjmrXt03/5uXqOOrJ
- bgAX474QrOV9cFViYAR8ZVqFbbaarMJtlnrr18OYApbLVXbBTSEucHxJlOrkPC0CnPCga6GNbEu
- FeCCE574jCdo6BGRgLtoD2xSSvNAhTKMXp1YM+KsUZLDG9T6NTVhkMZHsFrAuS2XEbh1ZA3QTC3
- +XgFbKyW+YqMLT6dC1n2ciN0LIzg8YZpL9QXrs6Iqbuf0TZtrpEPM6pyGE24SP/7XJ1myL/xVGA
- OhqJR5xEjuzwpC0tssw==
-X-Proofpoint-ORIG-GUID: 8BJ0pRQVyPuI9Cf2tprKrA2JjREiVcOG
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-04-21_03,2026-04-21_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 phishscore=0 bulkscore=0 spamscore=0 impostorscore=0
- clxscore=1015 priorityscore=1501 adultscore=0 lowpriorityscore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2604070000
- definitions=main-2604210154
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260421_083319_340824_C47EC776 
-X-CRM114-Status: GOOD (  14.13  )
+X-CRM114-CacheID: sfid-20260421_102619_997903_5F6040F4 
+X-CRM114-Status: GOOD (  12.93  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,25 +106,94 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Apr 21, 2026 at 07:36:08AM -0700, Jeff Johnson wrote:
-> Hi,
-> Here's a new pull request for ath10k, ath11k and ath12k firmware.
-> 
-> There are no changes for ath10k or ath11k.
-> For ath12k, add the initial firmware and board files for IPQ5424 and QCC2072.
+Two functions in ath12k assert that the caller holds an RCU read lock:
+ath12k_mac_get_arvif() and ath12k_p2p_noa_update_vdev_iter(). Both use:
 
-Merged and pushed out, thanks!
+    WARN_ON(!rcu_read_lock_any_held());
 
-https://gitlab.com/kernel-firmware/linux-firmware/-/merge_requests/1010
+On PREEMPT_RT kernels built with CONFIG_PROVE_RCU=n, this produces a
+false positive splat whenever these functions are invoked from paths
+that do hold the RCU read lock (e.g. firmware stats processing or
+mac80211 interface iteration).
 
-> 
-> Please let me know if there are any problems.
-> 
-> Thanks,
-> /jeff
-> ---
+Root cause:
 
+  - On !PROVE_RCU, rcu_read_lock_any_held() is a static inline that
+    returns !preemptible() as a proxy for "in an RCU read section".
+
+  - On PREEMPT_RT, rcu_read_lock() does not disable preemption. A
+    task can therefore be preemptible while legitimately holding an
+    RCU read lock.
+
+  - Callers such as ath12k_wmi_tlv_rssi_chain_parse() (via guard(rcu)())
+    and ieee80211_iterate_active_interfaces_atomic() do hold the RCU
+    read lock, so these warnings are incorrect.
+
+Typical splat seen on a WCN7850 station with periodic fw stats
+processing:
+
+  WARNING: drivers/net/wireless/ath/ath12k/mac.c:791 at
+    ath12k_mac_get_arvif+0x9e/0xd0 [ath12k]
+  Tainted: G W O 6.19.13-rt #1 PREEMPT_RT
+  Call Trace:
+   ath12k_wmi_tlv_rssi_chain_parse+0x69/0x170 [ath12k]
+   ath12k_wmi_tlv_iter+0x7f/0x120 [ath12k]
+   ath12k_wmi_tlv_fw_stats_parse+0x342/0x6b0 [ath12k]
+   ath12k_wmi_op_rx+0xe9e/0x3150 [ath12k]
+   ath12k_htc_rx_completion_handler+0x3df/0x5b0 [ath12k]
+   ath12k_ce_per_engine_service+0x325/0x3e0 [ath12k]
+   ath12k_pci_ce_workqueue+0x20/0x40 [ath12k]
+
+Replace the WARN_ON() with RCU_LOCKDEP_WARN(), which is gated on
+debug_lockdep_rcu_enabled() and therefore compiles out entirely
+when PROVE_RCU is disabled. PROVE_RCU kernels continue to get the
+full lockdep-based check.
+
+Fixes: 3dd2c68f206e ("wifi: ath12k: prepare vif data structure for MLO handling")
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
+Suggested-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Signed-off-by: Yu-Hsiang Tseng <asas1asas200@gmail.com>
+---
+Changes in v2:
+  - Also fix the same WARN_ON() in ath12k_p2p_noa_update_vdev_iter()
+    (suggested by Baochen Qiang)
+  - Update commit message to cover both call sites
+
+Link to v1: https://lore.kernel.org/ath12k/20260420161049.695518-1-asas1asas200@gmail.com/
+
+ drivers/net/wireless/ath/ath12k/mac.c | 3 ++-
+ drivers/net/wireless/ath/ath12k/p2p.c | 3 ++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index fbdfe6424fd7..a772a5b6adc9 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -788,7 +788,8 @@ struct ath12k_link_vif *ath12k_mac_get_arvif(struct ath12k *ar, u32 vdev_id)
+ 
+ 	/* To use the arvif returned, caller must have held rcu read lock.
+ 	 */
+-	WARN_ON(!rcu_read_lock_any_held());
++	RCU_LOCKDEP_WARN(!rcu_read_lock_any_held(),
++			 "RCU read lock not held");
+ 	arvif_iter.vdev_id = vdev_id;
+ 	arvif_iter.ar = ar;
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/p2p.c b/drivers/net/wireless/ath/ath12k/p2p.c
+index 59589748f1a8..caa92612372b 100644
+--- a/drivers/net/wireless/ath/ath12k/p2p.c
++++ b/drivers/net/wireless/ath/ath12k/p2p.c
+@@ -123,7 +123,8 @@ static void ath12k_p2p_noa_update_vdev_iter(void *data, u8 *mac,
+ 	struct ath12k_p2p_noa_arg *arg = data;
+ 	struct ath12k_link_vif *arvif;
+ 
+-	WARN_ON(!rcu_read_lock_any_held());
++	RCU_LOCKDEP_WARN(!rcu_read_lock_any_held(),
++			 "RCU read lock not held");
+ 	arvif = &ahvif->deflink;
+ 	if (!arvif->is_created || arvif->ar != arg->ar || arvif->vdev_id != arg->vdev_id)
+ 		return;
 -- 
-With best wishes
-Dmitry
+2.53.0
+
 
