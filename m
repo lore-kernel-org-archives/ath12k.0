@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D4BCF8FA6D
-	for <ath12k@archiver.kernel.org>; Tue, 21 Apr 2026 12:22:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7227AF8FA6A
+	for <ath12k@archiver.kernel.org>; Tue, 21 Apr 2026 12:32:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
 	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1+F5bGDiqkjPkUrDy7gvdDcnuav6OoF1GwOXYBPJwsQ=; b=03qQ2kfeqhPmPXfj9mZYAWNSiY
-	mWnTq9gic07H0okqgGvelwlM9jkwzl91MwQDIKRnaV0+a8Wlx431wBxLBwxyeoLQWBjLMhCVI48AY
-	wJCF8MsfjFZkh8jCtY2cgfWv60naFdAhSpCjto/MyLUA5M3R3VMtMGpfBVAuzaShuk0b0nm2kn3XW
-	Tr4+87kzlhXoVpzHMnNpaf8bH97BYKhNPT0HjOuI0UcFjnV/SPmLDiQ1tmDILad3ZiSG15XwcxteY
-	VrT/o+YxtM9G2T4D0q7d86PSG7h5ypYqH7+or+ZD0md8xoam8B3LF5mdqgjANXw1sGm7TNVnedwWt
-	binrfTGA==;
+	bh=Om/OyonHy1Sj+qi+egigWomZxDvS+a6B0NhoxhEEXGM=; b=ZSsTy7WjyHlo7yvS0mFwM5mVO2
+	AUjdxjeRN/9dVajTJixBO/cpxrDkH7kP1Cz6DHok7UkywIKDAsQ/nVzqt7mv9gceOoDkf2ZAUCrSs
+	cqACYaVE/XtcFFDzYQgmWB7QG0V6PX28yg/ia47lhZi+/Jt0R+JDJXM2guwYiO8KsZ/B3IU7EyykA
+	EJhHsuemaf7gFb4sFaRYsEDr3pCZmyMOO/9/NMRCpgnnmZIz6I20aW3dweS59RhIIdianZLz1u/02
+	3u0agjyyDa7PKyP9ngrCA/kbKM72WK7V4SQvM5CfthFRriWRAQa4ozSa+xh9dPNkCI+ziYyB/28mT
+	/oRZp9kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFA7n-00000008aFk-30fC;
-	Tue, 21 Apr 2026 12:22:43 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wFAHD-00000008ahm-2gBQ;
+	Tue, 21 Apr 2026 12:32:27 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFA7l-00000008aFO-3Z4i
+	id 1wFAHC-00000008ahe-1V6V
 	for ath12k@lists.infradead.org;
-	Tue, 21 Apr 2026 12:22:42 +0000
+	Tue, 21 Apr 2026 12:32:26 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8224A44157;
-	Tue, 21 Apr 2026 12:22:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D5106C2BCB0;
-	Tue, 21 Apr 2026 12:22:25 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 48D6A60123;
+	Tue, 21 Apr 2026 12:32:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C61D7C2BCB0;
+	Tue, 21 Apr 2026 12:32:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1776774160;
-	bh=FjTWTBKyxU9wnoOFIU6eC+Zsg/ak07chnRRJ6hIxvXc=;
+	s=k20201202; t=1776774745;
+	bh=fHogJFUXtmJ8h9rv9J/W39FCHQRKZiuaR6kEImeePd4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=pDUCyVwGb8ya/GZDqDieIScgOVrPOl3I/FJS9ccMew51Xp1PwcmYEtedShhwnrxmc
-	 RCa1sJsDGPFZz7l6xh8HYRvZ9j5G0bWWeLPo1qSM5vCkcLDW5wJx2OyFKcOZhGoLOI
-	 YwnWftevNO1eAx5/cWBBv5WlkJhG/5+YfhdJ7vYHIkPT3IgE3VLw8p3NofnqsNgFtH
-	 RYEOsuva6FlMuZC1XmZz9dmSpii3t/okBhMPqO1l7pjE1ED/sH7WZTsW/w8Cyns2AW
-	 HTHIQlNviNnES+NmZ/S8HynmnxRzzgDyzjO6jdJPH1Z83lN19f1bjFMnu8aORK25oM
-	 Z2/yYBPfJux+A==
-Date: Tue, 21 Apr 2026 17:52:22 +0530
+	b=lidjiUFBNlGW1ZK0cSZ+MOH/azPjNeQC2ufFrT3Euzuck2WCt3RLjFYrFRp0vfnli
+	 OuUlNVqJtli074ztaXzrFbQ/yRocV1IPcQWnHpns8hQ1NE57s+Sia+dZBi5TdWIkTa
+	 saMQNbkE5vLxG0Jay62Njd1XE4oPW1yWc7aBRs8YZU6awIQy0Yuhf4XkWVbBzy2F1K
+	 A4nPWMje0DwxXeQWCMRKEdOucnglxzzugl582jJbezldoCpkHno8lLygyOz7Ia9P8S
+	 H8bSr0zGdzaRMZRv3UWKdMFouo1Y6N2OwQIsWRisEmT9z48LmNyPoMWI4YzfzDIas8
+	 HLFwNc8s0xsjQ==
+Date: Tue, 21 Apr 2026 18:02:06 +0530
 From: Sumit Garg <sumit.garg@kernel.org>
-To: Bjorn Andersson <andersson@kernel.org>
+To: lumag@kernel.org, robin.clark@oss.qualcomm.com
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
 	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
 	linux-media@vger.kernel.org, netdev@vger.kernel.org,
 	linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-	linux-remoteproc@vger.kernel.org, konradybcio@kernel.org,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	robin.clark@oss.qualcomm.com, sean@poorly.run,
+	linux-remoteproc@vger.kernel.org, andersson@kernel.org,
+	konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, robin.clark@oss.qualcomm.com, sean@poorly.run,
 	akhilpo@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
 	jesszhan0024@gmail.com, marijn.suijten@somainline.org,
 	airlied@gmail.com, simona@ffwll.ch, vikash.garodia@oss.qualcomm.com,
@@ -68,18 +68,14 @@ Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
 	skare@qti.qualcomm.com, harshal.dev@oss.qualcomm.com,
 	linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: Re: [PATCH v3 00/15] firmware: qcom: Add OP-TEE PAS service support
-Message-ID: <aedr_gE2Sxs-UvbL@sumit-xelite>
+Subject: Re: [PATCH v3 10/15] drm/msm: Switch to generic PAS TZ APIs
+Message-ID: <aeduRrAMOAW4f5TU@sumit-xelite>
 References: <20260327131043.627120-1-sumit.garg@kernel.org>
- <adPLx3nCBb8IHz2b@baldur>
- <adSOFCL26y5qt1Cu@sumit-xelite>
+ <20260327131043.627120-11-sumit.garg@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <adSOFCL26y5qt1Cu@sumit-xelite>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260421_052241_940994_6E9B4EB0 
-X-CRM114-Status: GOOD (  20.90  )
+In-Reply-To: <20260327131043.627120-11-sumit.garg@kernel.org>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,44 +90,103 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Apr 07, 2026 at 10:24:44AM +0530, Sumit Garg wrote:
-> Hi Bjorn,
-> 
-> On Mon, Apr 06, 2026 at 10:09:27AM -0500, Bjorn Andersson wrote:
-> > On Fri, Mar 27, 2026 at 06:40:28PM +0530, Sumit Garg wrote:
-> > > From: Sumit Garg <sumit.garg@oss.qualcomm.com>
-> > > 
-> > > Qcom platforms has the legacy of using non-standard SCM calls
-> > > splintered over the various kernel drivers. These SCM calls aren't
-> > > compliant with the standard SMC calling conventions which is a
-> > > prerequisite to enable migration to the FF-A specifications from Arm.
-> > > 
-> > 
-> > Please get our colleagues involved in this discussion, because this
-> > non-SCM interface does not match the direction we are taking.
-> 
-> I thought I have already involved folks from QTEE perspective (Apurupa
-> and Sree) actively working on FF-A implementation aligned to this
-> interface. It would have been better if you could let me know where is
-> the direction mismatch here. In case there is a better alternative
-> design proposal for PAS service with FF-A, I would be happy to hear
-> that.
-> 
-> Anyhow for the legacy SoCs like KLMT, we really don't have any
-> alternative but have to stick to existing QTEE PAS design with OP-TEE
-> providing as an alternative backend. Surely we want to support loading
-> of existing signed firmware present in linux-firmware repo for KLMT with
-> OP-TEE being the TZ.
+Hey Rob, Dmitry,
 
-After further offline internal Qcom discussions, the teams are aligned
-on the vision to use and extend generic Qcom PAS layer for all the TZ
-backends whether it's legacy SCM backend based on QTEE, OP-TEE backend
-as proposed by this patch-set or future object invoke (based on
-SMCInvoke) for QTEE.
+On Fri, Mar 27, 2026 at 06:40:38PM +0530, Sumit Garg wrote:
+> From: Sumit Garg <sumit.garg@oss.qualcomm.com>
+> 
+> Switch drm/msm client drivers over to generic PAS TZ APIs. Generic PAS
+> TZ service allows to support multiple TZ implementation backends like QTEE
+> based SCM PAS service, OP-TEE based PAS service and any further future TZ
+> backend service.
+> 
+> Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
+> ---
+>  drivers/gpu/drm/msm/Kconfig             |  1 +
+>  drivers/gpu/drm/msm/adreno/a5xx_gpu.c   |  4 ++--
+>  drivers/gpu/drm/msm/adreno/adreno_gpu.c | 11 ++++++-----
+>  3 files changed, 9 insertions(+), 7 deletions(-)
+> 
 
-I hope with that we can progress to get this patch-set merged in next
-merge window. I will send v4 shortly after merge window closes to
-address misc. comments from Harshal on patch 04/15.
+Can I get an ack from you on this change? I expect this complete
+patch-set to land via Qcom SoC tree.
 
 -Sumit
+
+> diff --git a/drivers/gpu/drm/msm/Kconfig b/drivers/gpu/drm/msm/Kconfig
+> index 250246f81ea9..09469d56513b 100644
+> --- a/drivers/gpu/drm/msm/Kconfig
+> +++ b/drivers/gpu/drm/msm/Kconfig
+> @@ -21,6 +21,7 @@ config DRM_MSM
+>  	select SHMEM
+>  	select TMPFS
+>  	select QCOM_SCM
+> +	select QCOM_PAS
+>  	select QCOM_UBWC_CONFIG
+>  	select WANT_DEV_COREDUMP
+>  	select SND_SOC_HDMI_CODEC if SND_SOC
+> diff --git a/drivers/gpu/drm/msm/adreno/a5xx_gpu.c b/drivers/gpu/drm/msm/adreno/a5xx_gpu.c
+> index ef9fd6171af7..3283852f9a14 100644
+> --- a/drivers/gpu/drm/msm/adreno/a5xx_gpu.c
+> +++ b/drivers/gpu/drm/msm/adreno/a5xx_gpu.c
+> @@ -5,7 +5,7 @@
+>  #include <linux/kernel.h>
+>  #include <linux/types.h>
+>  #include <linux/cpumask.h>
+> -#include <linux/firmware/qcom/qcom_scm.h>
+> +#include <linux/firmware/qcom/qcom_pas.h>
+>  #include <linux/pm_opp.h>
+>  #include <linux/nvmem-consumer.h>
+>  #include <linux/slab.h>
+> @@ -653,7 +653,7 @@ static int a5xx_zap_shader_resume(struct msm_gpu *gpu)
+>  	if (adreno_is_a506(adreno_gpu))
+>  		return 0;
+>  
+> -	ret = qcom_scm_set_remote_state(SCM_GPU_ZAP_SHADER_RESUME, GPU_PAS_ID);
+> +	ret = qcom_pas_set_remote_state(SCM_GPU_ZAP_SHADER_RESUME, GPU_PAS_ID);
+>  	if (ret)
+>  		DRM_ERROR("%s: zap-shader resume failed: %d\n",
+>  			gpu->name, ret);
+> diff --git a/drivers/gpu/drm/msm/adreno/adreno_gpu.c b/drivers/gpu/drm/msm/adreno/adreno_gpu.c
+> index d5fe6f6f0dec..047df0393128 100644
+> --- a/drivers/gpu/drm/msm/adreno/adreno_gpu.c
+> +++ b/drivers/gpu/drm/msm/adreno/adreno_gpu.c
+> @@ -8,6 +8,7 @@
+>  
+>  #include <linux/ascii85.h>
+>  #include <linux/interconnect.h>
+> +#include <linux/firmware/qcom/qcom_pas.h>
+>  #include <linux/firmware/qcom/qcom_scm.h>
+>  #include <linux/kernel.h>
+>  #include <linux/of_reserved_mem.h>
+> @@ -146,10 +147,10 @@ static int zap_shader_load_mdt(struct msm_gpu *gpu, const char *fwname,
+>  		goto out;
+>  
+>  	/* Send the image to the secure world */
+> -	ret = qcom_scm_pas_auth_and_reset(pasid);
+> +	ret = qcom_pas_auth_and_reset(pasid);
+>  
+>  	/*
+> -	 * If the scm call returns -EOPNOTSUPP we assume that this target
+> +	 * If the pas call returns -EOPNOTSUPP we assume that this target
+>  	 * doesn't need/support the zap shader so quietly fail
+>  	 */
+>  	if (ret == -EOPNOTSUPP)
+> @@ -175,9 +176,9 @@ int adreno_zap_shader_load(struct msm_gpu *gpu, u32 pasid)
+>  	if (!zap_available)
+>  		return -ENODEV;
+>  
+> -	/* We need SCM to be able to load the firmware */
+> -	if (!qcom_scm_is_available()) {
+> -		DRM_DEV_ERROR(&pdev->dev, "SCM is not available\n");
+> +	/* We need PAS to be able to load the firmware */
+> +	if (!qcom_pas_is_available()) {
+> +		DRM_DEV_ERROR(&pdev->dev, "Qcom PAS is not available\n");
+>  		return -EPROBE_DEFER;
+>  	}
+>  
+> -- 
+> 2.51.0
+> 
+> 
 
