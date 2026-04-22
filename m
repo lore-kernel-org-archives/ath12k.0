@@ -4,95 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6255FF94CB2
-	for <ath12k@archiver.kernel.org>; Wed, 22 Apr 2026 03:14:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4287F94CBD
+	for <ath12k@archiver.kernel.org>; Wed, 22 Apr 2026 03:17:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:Subject:
-	Message-ID:Date:From:MIME-Version:Reply-To:Cc:Content-Transfer-Encoding:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=2xgQwNxqZSDkOcGdlTcj5jDSu680V7dHAShR8Ti4ttk=; b=uxJt2Uj4MiwiWsAd3uusMf8efv
-	uaaVrb1wIAI1Zgiz3oznlnRTbfakfz/28EwxsX6OXTAzeE0ll5jkVwdaq9nD1bgpF5tXobI63KLL3
-	27tx8n7POu0abtvEWaMIxoIKyUO/V99ZdomzGl5kWsGdnD4ZxetWWRBjAxVxvOB7PjZoWx1WECEkM
-	VfkNTDQILuLtpe5P60dB6wJqguWYkKwFIl9l5BlgSoaJ6dFGg4OFHTdUxN+5w3V+JzMlCFPfCdJyY
-	rDn0R1v0vO26OwqczPsw5WkPV7lHS8Aaoj/DSXXfdhXdDpbw7dO79WDFIQz329Jk39KBrg6I+oqk+
-	4yBLg/DQ==;
+	bh=1MMLrNAB6O+Ae6xlQfBrffwSH9lBUgIvofKknAQxUkM=; b=FfikNXZecIbyjM5s9HjY+FEGqQ
+	UaJ4ssoFZ2uVD0/QQnTzNtc355H18KxrrQidRZY41zo+yffRpvU4YRo5Gm8XU/xrsxjimF6mP/cag
+	LSh2VsqerXG4OqQ/5qF8paG8OFmikkgx/y0EKc6ZEDJneGHnbX7NhZTObx/t2PT85wdD3ZnfZ+y7n
+	uLP/DXvI8qwZRjCk/HImWu8XvLREKD5A9BH3ILWxzRT+IXqoqpsYrnrOFnI1spgXxbJy0QJlSLCAa
+	mqaNyfwfmt7LodLCXNw8EMe6/Kue84ptQHxeofWpXJu4U5TlCkpPSNVcw0B2t9mFAA1vqd4A8LI51
+	nDADvHBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFO2h-00000009XYb-0Dyd;
-	Wed, 22 Apr 2026 03:14:23 +0000
-Received: from mail-yw1-x112e.google.com ([2607:f8b0:4864:20::112e])
+	id 1wFO5W-00000009Xka-2jNd;
+	Wed, 22 Apr 2026 03:17:18 +0000
+Received: from mgamail.intel.com ([198.175.65.9])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFO2d-00000009XXR-3kbf
+	id 1wFO5U-00000009Xjn-0V6f
 	for ath12k@lists.infradead.org;
-	Wed, 22 Apr 2026 03:14:21 +0000
-Received: by mail-yw1-x112e.google.com with SMTP id 00721157ae682-79885f4a8ffso52133367b3.3
-        for <ath12k@lists.infradead.org>; Tue, 21 Apr 2026 20:14:19 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1776827658; cv=none;
-        d=google.com; s=arc-20240605;
-        b=h4Ri+qjYi/zG2yvPqoAvHL8hcvuqXu0VDTEqhGBfmBfHlzO0SNeSXaxt8ALcqUqeSj
-         D7vJcyq+Ah7q8PRsPEXoR3EHezkFM9oVz2SWbU1uUnZiqu+XK+313wbcgeJjRmFf44Np
-         OKGeanuakblySj47QltTCUVjtw8AZMEXdx6lXiJz1ug/Izb02IMX3SJwqOEf36JZa54K
-         rdOqhxmnGr0UMUeDAEUsY2p+dmKrHW56WFKQWj0VXWsqgX3tUKOmssfCrwF7lAcXVfn8
-         0pXn8pKLJaBZRZtoZDJ18c7pWwrSV1lqMe5/wPXRQhgjrEz+uR9nahO+VrZGXoo7c1X+
-         XmQQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=to:subject:message-id:date:from:mime-version:dkim-signature;
-        bh=2xgQwNxqZSDkOcGdlTcj5jDSu680V7dHAShR8Ti4ttk=;
-        fh=1SVnUWCOlqesgPz0exmlrbRHUNpcaNpUxuycVPutrXI=;
-        b=B1thqf7oNFVIUK7yU54KHCuYD1xmJK5p8+dYaGJdtgdPVfki0LGSVmZoaVGGQgy5SE
-         uFJATJYN8psnXiIn6IdAlzEwypoMO3paFRmKmirec/lAbTnoYMPKznWKkuxF60HDmb0V
-         ruD7GuUbe1t5duNvWhOVdGkxceqj/d1fAjeNlTdiR+fMzlI5TqtNMekUEMHOfHV9Kk0g
-         ZdxN97iNRpsHkyES6F8LZe/NygdcNV4ONLnx6x4CiZebFeu6E0QA2tEZuuLaZT4hN69m
-         PRots0yuMEFhgS9015fTjpGVg6ijvRAaiSY7beYDi/1NtC74jQ0sy5cMO+H8lDG8O/Ix
-         NKgw==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1776827658; x=1777432458; darn=lists.infradead.org;
-        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=2xgQwNxqZSDkOcGdlTcj5jDSu680V7dHAShR8Ti4ttk=;
-        b=itT3zH4FIW3uBa2JhqKO/FZdsusJPqBPaJqXTDHn3mprcVPeeN3QnwJiLi4sRI3oHP
-         RxR7Sx7tnAfhBrgz3scpyyNx4k1kCtVua3da0X0a6MtPJBClOp4B3VrswuV4EdvNMymG
-         nxM62E4fcXxJunq01u3Zs127PQclad/w3KJ93SOAHPdFZT9t1R4RU1qyoOGJEOch2hqz
-         4eDxg8qONs0Z2EAtcbyv5kEbufWCWYQ81434oAh2uI4IiqHPiCRIH+NqOJjqMiaHcdEW
-         AOytUkoisKH595R+eBCuLCq8ROeQ4EJMafdk0WEtPMaht3qbk+PoDqv80xchYWDeldn5
-         alhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1776827658; x=1777432458;
-        h=to:subject:message-id:date:from:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=2xgQwNxqZSDkOcGdlTcj5jDSu680V7dHAShR8Ti4ttk=;
-        b=RTkNIoeA81JdeZ/z2KmeOfOrFE0ab+xgJ9HM5Jy3Xi6izVFfv+Un0ATEINhkL7rHoi
-         FO8iJPDBYB8o6NK8RKZ2MCadcqL3Wzp4kaMniIG4IZcZnoioR+oB/kKLebZUQPH7EZy6
-         Rzpd/PGL07jWYD+3aP+VwvIAYbNDFG2hSlJo8yvRhWhK8ilHB/1uSUMOuJkPQBvdHgec
-         80YcAb6yXBTEtVpALHHpWQcq1sOLHpwi0r0R+X2XZOs7gbc6CN8LGia1jXuQ13WC1U3g
-         gJ9JI60d0wuVDylokrAY3tXmeXlK5IU9d55GOoF600doWVsCO/E9qMeNapQ0E6QudWWp
-         RHAQ==
-X-Gm-Message-State: AOJu0YxZ9r5avH5EblnqLcDA5KBLPhLuyFk3jcCSz2g/4Hw6qkWjviVQ
-	bdJ+ImS/s50wVgMkL+n1b6X2ZcISYW5sXOP7MwRVKLDzFhYV199tqiioATCfjSUQ925iYeEb0sD
-	MwPYZreZ+7ab7xcHltDzDFW0rvN6w25WwJhfe
-X-Gm-Gg: AeBDiesOuiaKG94MNH+Er/CvRT6uVYG5mtwEhpBKjPz64p9RXARMUpbH+aqy3UTAvDv
-	sJvTMYrJWmMKip6T0iP5DiY54szR6mKbJI2OQ4xBXEhURQ88oX3m0S5mPbwk/hpGOKbHeaH3Oay
-	L7NHYkDoAzEYJqsCe5Eq4jJ/1aHki5Y5lFkN8kC9l0ovBWt1/Y0rTUk0LSt5b9YtUDo13NP4Cu2
-	fCgNxhCR2U2o/Cuf/TdEeO5c15u2MwiQRdyXyEFa7gJ5KLcPqqQsNSXN0lWT4FImbb04r53f+fL
-	m1QS6hbjUfvfYwCp3A==
-X-Received: by 2002:a05:690c:d90:b0:7ba:154:87d1 with SMTP id
- 00721157ae682-7ba01549f49mr185439467b3.33.1776827658115; Tue, 21 Apr 2026
- 20:14:18 -0700 (PDT)
-MIME-Version: 1.0
-From: Doug Brewer <brewer.doug@gmail.com>
-Date: Wed, 22 Apr 2026 11:14:06 +0800
-X-Gm-Features: AQROBzCR16s_Eaob2s90Qlo8G6BOh0eAp7i-xA4picjvi6vS455XUIBo9wVS7ck
-Message-ID: <CAG0V13REH4kwFq+w_FJBf98NDXbajyZzReWjFu0EVzt0vn-Sxg@mail.gmail.com>
-Subject: QCN9274 fails to start firmware (-110) on Linux 6.18/7.0
-To: ath12k@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
+	Wed, 22 Apr 2026 03:17:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1776827836; x=1808363836;
+  h=date:from:to:cc:subject:message-id;
+  bh=q1NeFqTEk/8e/ZauWgBz/rFE/5fcZxgS3YdRrNMZPaM=;
+  b=RsM3dP6KrdqjLPTY6ooQlCvE9Bqw3KfFeBusUZ98mL8TEl37lGmL8hj/
+   0hzzWHJh0BPj5FVgVbsp40SO65/fNQnPzlcabGmbTG91Is+rVLB71oZYV
+   Ccg/c3/vWqv16kvQSv2ulUMhf7iIPfkG6cfrM+agcC1la6iNb4uvUWIeF
+   pNTIiCnMyFQPxaNlsCKvc5Ik65oM4visNjTAcwLFOVSY3Cmtv4lz8d+dg
+   dV//U2Nttr6jfFdiT70fHGwieRKSaTSrDD+uPmG3WyQYqdLe82dGwCnms
+   p79sOZajPtFGBu+Sr5lZqfyXKt9MsarFWDWoPj/XgSxYGYDaE8Dy1u4pe
+   g==;
+X-CSE-ConnectionGUID: J4RYS/3LS0azlmCrRIfLHQ==
+X-CSE-MsgGUID: vAVr86O+QX+/ATr8BiQ3qA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11763"; a="100430222"
+X-IronPort-AV: E=Sophos;i="6.23,192,1770624000"; 
+   d="scan'208";a="100430222"
+Received: from fmviesa008.fm.intel.com ([10.60.135.148])
+  by orvoesa101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Apr 2026 20:17:15 -0700
+X-CSE-ConnectionGUID: 1qgGKlxwQqKr/8Wx6oCU6w==
+X-CSE-MsgGUID: PmbqwvNoSxiX7NSkPioFKA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.23,192,1770624000"; 
+   d="scan'208";a="229554146"
+Received: from lkp-server01.sh.intel.com (HELO 7e48d0ff8e22) ([10.239.97.150])
+  by fmviesa008.fm.intel.com with ESMTP; 21 Apr 2026 20:17:14 -0700
+Received: from kbuild by 7e48d0ff8e22 with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1wFO5P-000000004FE-3apK;
+	Wed, 22 Apr 2026 03:17:11 +0000
+Date: Wed, 22 Apr 2026 11:16:11 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org
+Subject: [ath:ath-next] BUILD SUCCESS
+ 590182b72213ef04977ab0b16b8dadfcfd25ff73
+Message-ID: <202604221102.UtFqgt4d-lkp@intel.com>
+User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260421_201419_962913_C44EB878 
-X-CRM114-Status: UNSURE (   5.47  )
+X-CRM114-CacheID: sfid-20260421_201716_226318_3176145C 
+X-CRM114-Status: UNSURE (   4.08  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -108,30 +83,131 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello,
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath-next
+branch HEAD: 590182b72213ef04977ab0b16b8dadfcfd25ff73  wifi: ath12k: Fix invalid IRQ requests during AHB probe
 
-I'm testing Linux kernel 6.18 and 7.0, and the ath12k driver shows the
-following errors:
+elapsed time: 762m
 
-ath12k_wifi7_pci 0001:11:00.0: BAR 0 [mem 0xf2200000-0xf23fffff 64bit]: assigned
-ath12k_wifi7_pci 0001:11:00.0: enabling device (0000 -> 0002)
-ath12k_wifi7_pci 0001:11:00.0: Wi-Fi 7 Hardware name: qcn9274 hw2.0
-ath12k_wifi7_pci 0001:11:00.0: MSI vectors: 16
-ath12k_wifi7_pci 0001:11:00.0: memory type 10 not supported
-ath12k_wifi7_pci 0001:11:00.0: chip_id 0x0 chip_family 0xb board_id 0xff soc_id
-0x401a2200
-ath12k_wifi7_pci 0001:11:00.0: fw_version 0x160484db fw_build_timestamp 2025-12-
-09 19:48 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.WBE.1.6-01243-QCAHKSWPL_SILICO
-NZ-1
-ath12k_wifi7_pci 0001:11:00.0: ignore reset dev flags 0x12
-ath12k_wifi7_pci 0001:11:00.0: qmi failed set mode request, mode: 0, err = -110
-ath12k_wifi7_pci 0001:11:00.0: qmi failed to send wlan fw mode:-110
-ath12k_wifi7_pci 0001:11:00.0: failed to send firmware start: -110
-ath12k_wifi7_pci 0001:11:00.0: failed to start firmware: -110
+configs tested: 111
+configs skipped: 5
 
-What could be the cause of this issue, and is there any possible
-solution? Thank you.
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Regards,
-Doug
+tested configs:
+alpha                   allnoconfig    gcc-15.2.0
+alpha                  allyesconfig    gcc-15.2.0
+arc                    allmodconfig    gcc-15.2.0
+arc                     allnoconfig    gcc-15.2.0
+arc                    allyesconfig    gcc-15.2.0
+arc         randconfig-001-20260422    gcc-9.5.0
+arc         randconfig-002-20260422    gcc-11.5.0
+arm                     allnoconfig    clang-23
+arm                    allyesconfig    gcc-15.2.0
+arm         randconfig-001-20260422    gcc-8.5.0
+arm         randconfig-002-20260422    gcc-8.5.0
+arm64                  allmodconfig    clang-19
+arm64                   allnoconfig    gcc-15.2.0
+csky                   allmodconfig    gcc-15.2.0
+csky                    allnoconfig    gcc-15.2.0
+hexagon                allmodconfig    clang-17
+hexagon                 allnoconfig    clang-23
+hexagon     randconfig-001-20260422    clang-23
+hexagon     randconfig-002-20260422    clang-23
+i386                   allmodconfig    gcc-14
+i386                    allnoconfig    gcc-14
+i386                   allyesconfig    gcc-14
+i386        randconfig-004-20260422    gcc-14
+loongarch              allmodconfig    clang-19
+loongarch               allnoconfig    clang-23
+loongarch                 defconfig    clang-19
+loongarch   randconfig-001-20260422    gcc-15.2.0
+loongarch   randconfig-002-20260422    clang-18
+m68k                   allmodconfig    gcc-15.2.0
+m68k                    allnoconfig    gcc-15.2.0
+m68k                   allyesconfig    gcc-15.2.0
+m68k                      defconfig    gcc-15.2.0
+microblaze              allnoconfig    gcc-15.2.0
+microblaze             allyesconfig    gcc-15.2.0
+microblaze                defconfig    gcc-15.2.0
+mips                   allmodconfig    gcc-15.2.0
+mips                    allnoconfig    gcc-15.2.0
+mips                   allyesconfig    gcc-15.2.0
+nios2                  allmodconfig    gcc-11.5.0
+nios2                   allnoconfig    gcc-11.5.0
+nios2                     defconfig    gcc-11.5.0
+openrisc               allmodconfig    gcc-15.2.0
+openrisc                allnoconfig    gcc-15.2.0
+openrisc                  defconfig    gcc-15.2.0
+parisc                 allmodconfig    gcc-15.2.0
+parisc                  allnoconfig    gcc-15.2.0
+parisc                 allyesconfig    gcc-15.2.0
+parisc                    defconfig    gcc-15.2.0
+parisc      randconfig-001-20260422    gcc-14.3.0
+parisc      randconfig-002-20260422    gcc-9.5.0
+parisc64                  defconfig    gcc-15.2.0
+powerpc                allmodconfig    gcc-15.2.0
+powerpc                 allnoconfig    gcc-15.2.0
+powerpc            arches_defconfig    gcc-15.2.0
+powerpc     randconfig-001-20260422    gcc-13.4.0
+powerpc     randconfig-002-20260422    gcc-14.3.0
+powerpc64   randconfig-001-20260422    clang-23
+powerpc64   randconfig-002-20260422    gcc-15.2.0
+riscv                  allmodconfig    clang-23
+riscv                   allnoconfig    gcc-15.2.0
+riscv                  allyesconfig    clang-16
+riscv                     defconfig    clang-23
+s390                   allmodconfig    clang-18
+s390                    allnoconfig    clang-23
+s390                   allyesconfig    gcc-15.2.0
+s390                      defconfig    clang-23
+s390        randconfig-001-20260422    clang-23
+s390        randconfig-002-20260422    clang-18
+sh                     allmodconfig    gcc-15.2.0
+sh                      allnoconfig    gcc-15.2.0
+sh                     allyesconfig    gcc-15.2.0
+sh                        defconfig    gcc-15.2.0
+sh          randconfig-001-20260422    gcc-13.4.0
+sh          randconfig-002-20260422    gcc-11.5.0
+sparc                   allnoconfig    gcc-15.2.0
+sparc                     defconfig    gcc-15.2.0
+sparc       randconfig-001-20260422    gcc-13.4.0
+sparc       randconfig-002-20260422    gcc-8.5.0
+sparc64                allmodconfig    clang-23
+sparc64                   defconfig    clang-20
+sparc64     randconfig-001-20260422    gcc-11.5.0
+sparc64     randconfig-002-20260422    clang-20
+um                     allmodconfig    clang-19
+um                      allnoconfig    clang-23
+um                     allyesconfig    gcc-14
+um                        defconfig    clang-23
+um                   i386_defconfig    gcc-14
+um          randconfig-001-20260422    gcc-14
+um          randconfig-002-20260422    gcc-14
+um                 x86_64_defconfig    clang-23
+x86_64                 allmodconfig    clang-20
+x86_64                  allnoconfig    clang-20
+x86_64                 allyesconfig    clang-20
+x86_64                    defconfig    gcc-14
+x86_64      randconfig-001-20260422    clang-20
+x86_64      randconfig-002-20260422    gcc-14
+x86_64      randconfig-003-20260422    gcc-14
+x86_64      randconfig-004-20260422    clang-20
+x86_64      randconfig-005-20260422    gcc-14
+x86_64      randconfig-006-20260422    clang-20
+x86_64      randconfig-011-20260422    clang-20
+x86_64      randconfig-012-20260422    gcc-14
+x86_64      randconfig-013-20260422    clang-20
+x86_64      randconfig-014-20260422    clang-20
+x86_64      randconfig-015-20260422    gcc-14
+x86_64      randconfig-016-20260422    gcc-14
+x86_64                rhel-9.4-rust    clang-20
+xtensa                  allnoconfig    gcc-15.2.0
+xtensa                 allyesconfig    gcc-15.2.0
+xtensa      randconfig-001-20260422    gcc-15.2.0
+xtensa      randconfig-002-20260422    gcc-8.5.0
+
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
