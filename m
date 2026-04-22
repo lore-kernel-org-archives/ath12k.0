@@ -4,123 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D977F9B5F6
-	for <ath12k@archiver.kernel.org>; Wed, 22 Apr 2026 09:30:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C283F9EDCA
+	for <ath12k@archiver.kernel.org>; Wed, 22 Apr 2026 13:06:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+ciYn21WnECbplMa7Su8EvUdf1iEIh0gD91TEaZjp1Q=; b=mM/vviWFnIf1tVhLq2ipC3Ba8q
-	9z8TcdMeGr5GwbBLu2oRod0t8Cb0QUShY66e/x4K9HWtVKRvtXWQd3/Z9dSJFqEsd7um1y94Bp8XN
-	FGSCN/GqB261xaHat3u0L71GKS/I2zBRFfO81FzYT+qdNOvpwL2hMA9H+RGi/hTejCWCxfks8g/bG
-	xLJB9GSoiuS0Be0Ir7HqCAxEJkLDyT7kF04cDfPcL+1/CkEnN+VQZzye1+hvwF0ibXsZedG9VpeX6
-	EoawQVHYUZx1v19pORG3h7C9Ael3HrPKkg8oYGxMEgtYNcWWE6Pq34S6fqAtcth7e1DpScjs8k19h
-	yMR19uRg==;
+	bh=mC1j34T7H8QnV+yrQN6L/rJyl0oDqhmpMij72LcTN0Y=; b=kvSKGvmI+k8uRI1auvLjDW2zpe
+	FLspyKRikj1T8b7pXpWCO0h4UYtgalf1yJ8X5/U95KZtuv1+lLyzfnxVyKtnTNsqgUEX9xCmKgDeS
+	DUPkDKvGvciyQX2C5+woYbIZigng3lVF2cBUCmFUhmlBuHtbHbn4INSjxN+swDj00FaOuKnonx4dd
+	OTMclExVNI9HZiKq2VMwDwgniyJ0k3mPlONSD2fjHtIyrSf4NQbhSAh7yg3lH7Bn5iUQqH+9lKP5x
+	v3XqT4hqEvTBU1LdBQ57GSAvWVEK7/JN6OFAqiFw9d5jiQ3uAqJQge3Kz4hDB8rrFm/2g8eJksHpS
+	REdk+htw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFTud-00000009qOD-49xN;
-	Wed, 22 Apr 2026 09:30:27 +0000
-Received: from relay.yourmailgateway.de ([188.68.61.103])
+	id 1wFXHj-0000000AGAr-0g46;
+	Wed, 22 Apr 2026 13:06:31 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFTua-00000009qNQ-02Pp
+	id 1wFXHd-0000000AGAN-0hSU
 	for ath12k@lists.infradead.org;
-	Wed, 22 Apr 2026 09:30:26 +0000
-Received: from mors-relay-8403.netcup.net (localhost [127.0.0.1])
-	by mors-relay-8403.netcup.net (Postfix) with ESMTPS id 4g0v8W45pWz88pL;
-	Wed, 22 Apr 2026 11:30:19 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=leemhuis.info;
-	s=key2; t=1776850219;
-	bh=JNW8xSB3VQeZ7TY22JqnC/RD8zj1AfxSoJ7DF+WQ4To=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=W1e7+zaBzzcNokkp3ZLt+j7S3wGeqFm+M6g+/aN8bjzliJwBKyEplgi6Lbi3VSzn2
-	 klpDud1nWgUh4Zgjx35unSvePaXaJrjECPFHuZtgZHARdfhwAXw6ybZcffsDjnLHFn
-	 2jom6uaCQp254OwN8B5oT/dPRVu45TUo59B/VZGGkiwbwe3nG5b/sHmaHbSROvpF01
-	 bYAi7flOkR5viwcKJXHAxwDwNrdDGfGUhiCxHQ7Gc+tT8THuv+LzO2RSYSXHJKJ1sv
-	 ObQ0E/v+TNw/IuJF2xtIk42KCp3nJjYmT56FcST9TWNNp8p4wYIUP89nVvivoTh1co
-	 FzyC/mqXTA/+g==
-Received: from policy01-mors.netcup.net (unknown [46.38.225.35])
-	by mors-relay-8403.netcup.net (Postfix) with ESMTPS id 4g0v8W3NYmz88nQ;
-	Wed, 22 Apr 2026 11:30:19 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at policy01-mors.netcup.net
-Received: from mxe9fb.netcup.net (unknown [10.243.12.53])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by policy01-mors.netcup.net (Postfix) with ESMTPS id 4g0v8V3CXRz8tZN;
-	Wed, 22 Apr 2026 11:30:18 +0200 (CEST)
-Received: from [IPV6:2a02:8108:8984:1d00:a0cf:1912:4be:477f] (unknown [IPv6:2a02:8108:8984:1d00:a0cf:1912:4be:477f])
-	by mxe9fb.netcup.net (Postfix) with ESMTPSA id 20D5E632A6;
-	Wed, 22 Apr 2026 11:30:17 +0200 (CEST)
-Authentication-Results: mxe9fb;
-        spf=pass (sender IP is 2a02:8108:8984:1d00:a0cf:1912:4be:477f) smtp.mailfrom=linux@leemhuis.info smtp.helo=[IPV6:2a02:8108:8984:1d00:a0cf:1912:4be:477f]
-Received-SPF: pass (mxe9fb: connection is authenticated)
-Message-ID: <ed0ecf21-54b4-41e0-92a9-3c7a0e140882@leemhuis.info>
-Date: Wed, 22 Apr 2026 11:30:10 +0200
+	Wed, 22 Apr 2026 13:06:29 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63MAlSrT2209080
+	for <ath12k@lists.infradead.org>; Wed, 22 Apr 2026 13:06:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	mC1j34T7H8QnV+yrQN6L/rJyl0oDqhmpMij72LcTN0Y=; b=msGHaOm7bN+xIxnL
+	NBsQjZmlXu/BWDCh+Jji3z8FcbvgwJxrfYrq8G0CI3mJaFiKkB4qhuKaTbcQGLDp
+	xqP0LwOfQS/eDQyBsDQUsMTu2786vQQsgCiECDMHV/a7AykCWXhDUpXF7I+qx2IK
+	Hvg8WQ+XKOzh6HoY+YxmyJmxLB2v5hdH1vbga668JJ37Nu1odlUsxAlfrPla3HBj
+	JFJvrJIryxt99PRSsd+iQGtPO/3/LOJks0X/5VtL4FhJDH/vaCy8gZ1ZZCWcxUtx
+	rN2OG+yzjLBCXspw8WHigd8iX00rSgNSjC99xE/MFI7TiGxp4q/Izc1oX6v0Vj2E
+	ybU/5w==
+Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dpengbeq7-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 22 Apr 2026 13:06:24 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-82fa6c3a77cso2799426b3a.3
+        for <ath12k@lists.infradead.org>; Wed, 22 Apr 2026 06:06:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1776863183; x=1777467983; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=mC1j34T7H8QnV+yrQN6L/rJyl0oDqhmpMij72LcTN0Y=;
+        b=a7RS/c5LEY0imYRMs0wRX/FCUKrrZXQznay8JrnCuDZAwnSUTYkf0hMyDV/eg/oHJC
+         JWM4bpUbus4qxpJyZ22w2nIedC+CTswhWg5RYRZ7EU+Yr0fF70qPpirdK05bwe6CA+SV
+         H4UsPhTgcPi5K/k0lcMNRddqcguVvbq+QKHd2AprHpFz2O4HGkBv3Hq+BpgYd9MW0tBo
+         uPrS7MJbFy93rafCtAOZ6Wo3E3Hwyo2Uw7BoUKluzyOK8wW4d0pcSPquH8deeUSKRMwO
+         yruckFPo+4x7hqgEj/pxIcXAHr6tMbEi9fsYd/qvcPJpFVVEfcCYko5ZdD914pI/7nuQ
+         Cfpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1776863183; x=1777467983;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=mC1j34T7H8QnV+yrQN6L/rJyl0oDqhmpMij72LcTN0Y=;
+        b=SniF6Sur784M80I0ej03GUXpWbB+btbFGuYauXLg/DgJkrCmfH48pBzOh4c241tuHW
+         o4+7JK8gPuo7Ika0JtBuCYiz8rbOxsrS5bhbsouWGN35L8deRYc/aDfR6Ku1u7gQZPll
+         NVaBvci972IFREIt4wKi3JUG+0r0dWqWOK1Iq8GxOcuDOUn2QpFGJpcCqj3RwtWg/65X
+         4EjwXoWCy4SNS+aBbPcjLVz+Qbcu7iryJZTA6R+lZIxLJmYVc51gAczNVOzrSWJ9ivC6
+         dQnZcxKwDxB51HgHBNBXajsdsPpH3VAzEDUF/BWR1nTPbtVddLQWlOTxQ6BMeBCSoI6W
+         X65A==
+X-Forwarded-Encrypted: i=1; AFNElJ9ZA5WBCNLWf3TxCL6hdUGWMayWgFs01JcElb+iyFrKQsn4gSAwrRhcrsSOQJs6wOt0Gr5cCvk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxlmCvD2HkO1IuXz+FWzFYDZcALsARlGhEO4JFaysJU3JK50m2r
+	QNODb2e6pv/tBuEffvmf30pGg1jZGMDgBUmFtrNetR6seHd5n59xdpYgGUjlgFGebih2ouXZcyu
+	/OtvAxzHpLCnxCLtJlLZGDuz3wfkksetkIOEgHOx9WgOBVz2belJWeweNPq2pNvH1
+X-Gm-Gg: AeBDiesHX7ABwjLySYjHhsw+Fq/AdiYgbgHdc6+z6aJt8/paqakIRCgIlOxnz1W0Sn3
+	1NeOmKfsd8OqTSGfeQrMfCLtijMO+v2UzqWDIv/9jrKz93vPTQ4n3qsPBvCn5HipF5EyLhoVe+i
+	Dpcca+40rlwCHEaJ7I/f47d2tDnwS2J2Q+exni+E9DVn37MV1+Eoldz7jT9DEdmTJml1Aw5QGii
+	1rUSqmXjY1HqeZF2eg5al5aCAYT+hG6DqI13UZ+22P2uKS/V3CfiKKCps8NmLEU3oCmVdwdXNro
+	pfZHn7hK+LLL0GzM81CUVoqj2Zyz/vIz/4qNYD7zodNErAAaCdl0tqlFZXeUDBUCZEhjc2SdiRD
+	8Svk5qgRnBTNznB9VwoWxIg1kbfGZFssi620jz68iPMZwfxYQoMD57qlzKsvMkorY+L0bgN7s7V
+	ad
+X-Received: by 2002:a05:6a00:2288:b0:82c:e76b:c68c with SMTP id d2e1a72fcca58-82f8c3f2b00mr22912342b3a.0.1776863182972;
+        Wed, 22 Apr 2026 06:06:22 -0700 (PDT)
+X-Received: by 2002:a05:6a00:2288:b0:82c:e76b:c68c with SMTP id d2e1a72fcca58-82f8c3f2b00mr22912289b3a.0.1776863182301;
+        Wed, 22 Apr 2026 06:06:22 -0700 (PDT)
+Received: from [192.168.11.106] ([124.123.81.173])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82f8ebb33fcsm16417095b3a.33.2026.04.22.06.06.20
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 22 Apr 2026 06:06:21 -0700 (PDT)
+Message-ID: <3e83cdf3-4aa4-44ba-a0d1-c54600552186@oss.qualcomm.com>
+Date: Wed, 22 Apr 2026 18:36:18 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-current] wifi: ath12k: prepare REO update element only
- for primary link
-To: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
- Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
- linux-kernel@vger.kernel.org,
- Linux kernel regressions list <regressions@lists.linux.dev>
-References: <20260210-ath12k-rxtid-double-free-v1-1-8b523fb2886d@oss.qualcomm.com>
-From: Thorsten Leemhuis <linux@leemhuis.info>
-Content-Language: de-DE, en-US
-Autocrypt: addr=linux@leemhuis.info; keydata=
- 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 MEK4
-In-Reply-To: <20260210-ath12k-rxtid-double-free-v1-1-8b523fb2886d@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
+Subject: Re: [PATCH ath-next v2 0/5] wifi: ath12k: thermal throttling and
+ cooling device support
+To: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20260413153840.1969931-1-maharaja.kennadyrajan@oss.qualcomm.com>
+Content-Language: en-US
+From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+In-Reply-To: <20260413153840.1969931-1-maharaja.kennadyrajan@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-PPP-Message-ID: <177685021745.1987386.16177602692449177458@mxe9fb.netcup.net>
-X-NC-CID: 4B9LzG65V1rMZagq8sEC1LTmm56Y0hn1qn+uk+gRoKO90N86AuQ=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDIyMDEyNiBTYWx0ZWRfX9OnCQu9yUi61
+ N/JYKuANSjvqx2FmaYozNgBkMAvVuxM/+ACr0RVeX3vDAdfS681El+oJ4DhtA3Ujsk+wxf+bNH1
+ TFYC+rAoPbXS0pVA0Ia8USMnSHpen+M3TtgN4LudEl6ABc5/8C477Y9QT3dRMhdEz5xm10XSSCT
+ /28blG4t2lHu8LZTIMR88qVTVozOxs3LY5VwPPlunWwkkALHcPxVmGeuf3adnM4TZWxcgx0RcMQ
+ +FtCUTUd97HdNAiOv5sz9FgPuxAakns9Q6HJjUc2DxlESmzVMJHvFA3jbigmUjXZiNlb68Rko4l
+ ayP/pfc6+ohsfSul57xx9DY3BqExpJMWLOtb7tYQdEBhZFn14qrSipxWBPRJ3wmWymC7xvddBqK
+ aZzgsP/0yuLWhHZyB3x7DpUI69+f3V9C5RkNC3FBpTVBW4Qb74PTtd/Lu2H8vV+b4Kc2HNnzFU+
+ CMkdw5OCfbYnYnT1L2Q==
+X-Proofpoint-ORIG-GUID: 1422yQ8E48yjJuFOcw-3gmSlZRiIp6QP
+X-Authority-Analysis: v=2.4 cv=RYygzVtv c=1 sm=1 tr=0 ts=69e8c7d0 cx=c_pps
+ a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=R7zuFBDiW8lgADV909h7jA==:17
+ a=IkcTkHD0fZMA:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=H-Wgj3y7uwXhWPCsC4wA:9 a=QEXdDO2ut3YA:10
+ a=2VI0MkxyNR6bbpdq8BZq:22
+X-Proofpoint-GUID: 1422yQ8E48yjJuFOcw-3gmSlZRiIp6QP
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-04-22_01,2026-04-21_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 lowpriorityscore=0 adultscore=0 phishscore=0 malwarescore=0
+ suspectscore=0 bulkscore=0 clxscore=1015 priorityscore=1501 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2604200000 definitions=main-2604220126
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260422_023024_338168_4349E5D3 
-X-CRM114-Status: GOOD (  21.81  )
+X-CRM114-CacheID: sfid-20260422_060625_355408_C8F830FC 
+X-CRM114-Status: GOOD (  14.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,81 +146,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Lo! Top-posting on purpose to make this easy to process.
+On 4/13/2026 9:08 PM, Maharaja Kennadyrajan wrote:
+> Patch 1 handles the firmware stats event so we can track the current
+> temperature and throttle level per pdev without spamming logs.
+> 
+> Patch 2 enables thermal throttling at bring-up and programs default level
+> tables to firmware via WMI_THERM_THROT_SET_CONF_CMDID; the driver picks
+> IPA/XFEM defaults based on the firmware WMI service bitmap, supports 4 or 5
+> levels as advertised, and only fills optional fields (pout reduction,
+> tx chain mask) when the corresponding WMI service bits are present.
+> 
+> Patch 3 refactors per-radio thermal hwmon cleanup to reduce code duplication and
+> ensure consistent cleanup across thermal register and unregister paths.
+> 
+> Patch 4 reorders the group teardown logic symmetric for safe thermal sysfs cleanup.
+> 
+> Patch 5 exposes a thermal cooling device per radio so the kernel thermal
+> framework or userspace can set the TX duty-cycle off percentage; writes
+> are validated against the throttling state range and host state is kept in
+> sync with successful firmware updates.
+> 
+> Examples:
+> echo 40 > /sys/devices/pci0000:00/0000:00:1d.1/0000:58:00.0/ieee80211/phyX/cooling_device/cur_stat
+> cat /sys/devices/pci0000:00/0000:00:1d.1/0000:58:00.0/ieee80211/phyX/cooling_device/cur_state
+> cat /sys/devices/pci0000:00/0000:00:1d.1/0000:58:00.0/ieee80211/phyX/cooling_device/max_state
+> 
+> v2: Addressed Jeff's comment by rebased on latest TOT with wmi tb - alloc and free
+>      interface change.
+> 
+> Maharaja Kennadyrajan (5):
+>    wifi: ath12k: handle thermal throttle stats WMI event
+>    wifi: ath12k: configure firmware thermal throttling via WMI
+>    wifi: ath12k: refactor per-radio thermal hwmon setup and cleanup
+>    wifi: ath12k: reorder group start/stop for safe thermal sysfs cleanup
+>    wifi: ath12k: add thermal cooling device support
+> 
+>   drivers/net/wireless/ath/ath12k/core.c    |  50 +++--
+>   drivers/net/wireless/ath/ath12k/mac.c     |   9 +
+>   drivers/net/wireless/ath/ath12k/thermal.c | 252 ++++++++++++++++++----
+>   drivers/net/wireless/ath/ath12k/thermal.h |  35 +++
+>   drivers/net/wireless/ath/ath12k/wmi.c     | 108 ++++++++++
+>   drivers/net/wireless/ath/ath12k/wmi.h     |  50 +++++
+>   6 files changed, 447 insertions(+), 57 deletions(-)
+> 
+> 
+> base-commit: 9a4f673eb08d2a7713b258d671b4a45f2a6e68b7
 
-Jeff, what happened to below patch? It was supposed to fix the
-regression linked below, but unless I'm missing something (which might
-very well be the case!) it seems it never got any further than this thread.
-
-Ciao, Thorsten
-
-P.S:: Adding a stable tag might be good to ensure this fix is backported.
-
-On 2/10/26 04:07, Baochen Qiang wrote:
-> Commit [1] introduces dp->reo_cmd_update_rx_queue_list for the purpose
-> of tracking all pending REO queue flush commands. The helper
-> ath12k_dp_prepare_reo_update_elem() allocates an element and populates
-> it with REO queue information, then add it to the list. The element would
-> be helpful during clean up stage to finally unmap/free the corresponding
-> REO queue buffer.
-> 
-> In MLO scenarios with more than one links, for non dp_primary_link_only
-> chips like WCN7850, that helper is called for each link peer. This
-> results in multiple elements added to the list but all of them pointing
-> to the same REO queue buffer. Consequently the same buffer gets
-> unmap/freed multiple times:
-> 
-> BUG kmalloc-2k (Tainted: G    B   W  O       ): Object already free
-> -----------------------------------------------------------------------------
-> Allocated in ath12k_wifi7_dp_rx_assign_reoq+0xce/0x280 [ath12k_wifi7] age=7436 cpu=10 pid=16130
->  __kmalloc_noprof
->  ath12k_wifi7_dp_rx_assign_reoq
->  ath12k_dp_rx_peer_tid_setup
->  ath12k_dp_peer_setup
->  ath12k_mac_station_add
->  ath12k_mac_op_sta_state
->  [...]
-> Freed in ath12k_dp_rx_tid_cleanup.part.0+0x25/0x40 [ath12k] age=1 cpu=27 pid=16137
->  kfree
->  ath12k_dp_rx_tid_cleanup.part.0
->  ath12k_dp_rx_reo_cmd_list_cleanup
->  ath12k_dp_cmn_device_deinit
->  ath12k_core_stop
->  ath12k_core_hw_group_cleanup
->  ath12k_pci_remove
-> 
-> Fix this by allowing list addition for primary link only. Note
-> dp_primary_link_only chips like QCN9274 are not affected by this change,
-> because that's what they were doing in the first place.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
-> 
-> Fixes: 3bf2e57e7d6c ("wifi: ath12k: Add Retry Mechanism for REO RX Queue Update Failures") # [1]
-> Closes: https://bugzilla.kernel.org/show_bug.cgi?id=221011
-> Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-> ---
->  drivers/net/wireless/ath/ath12k/dp_rx.c | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-> index a32ee9f8061a..6995de7761df 100644
-> --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-> +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-> @@ -565,6 +565,9 @@ static int ath12k_dp_prepare_reo_update_elem(struct ath12k_dp *dp,
->  
->  	lockdep_assert_held(&dp->dp_lock);
->  
-> +	if (!peer->primary_link)
-> +		return 0;
-> +
->  	elem = kzalloc(sizeof(*elem), GFP_ATOMIC);
->  	if (!elem)
->  		return -ENOMEM;
-> 
-> ---
-> base-commit: d9a2be2d72d4f9035f0334e0ff49180fe9df6e52
-> change-id: 20260128-ath12k-rxtid-double-free-289100bb5163
-> 
-> Best regards,
-
+Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
 
