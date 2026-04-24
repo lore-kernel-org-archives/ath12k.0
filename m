@@ -4,83 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE566FE51ED
-	for <ath12k@archiver.kernel.org>; Fri, 24 Apr 2026 08:59:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0894FED3D9
+	for <ath12k@archiver.kernel.org>; Fri, 24 Apr 2026 14:48:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=eoyg8FMw0CwqCK8I4nG4squLxWdTJlKOwqwgr4RUV68=; b=HU7A3dwU9TKFGZa/ByOTiWLl6o
-	PmmeQlpc+nHKMuie9gEo3ZhCyizhW16IVg2vPJmYRSy78wDScW9k9ynRxb7xZ196KZZLiAcaerwCx
-	45qYSVWmN11zalyuFeNpqgu861KUmBjWlr2imbzoz7/TjGxC7/zT5B+Uodz5pvMtcP/Kzv+FDuXXS
-	RfJO/gBzCF4ldt1yKAvfMEFTv410jBhzJz7MIWXxWO47XAPyIu77nM5SYKPTncWCEChmaRfL4yDX4
-	+vhREHj8iwROc6hS9PllatN+diqp4xrUZJNW4EAgRuteueX4bFdgyc6HZo9ndIM0kByHn/rQbXI2C
-	coX0yryg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=v8FYF8oZhNqSuTK+FyZ824o92INSUjfpo9VA3IN58oI=; b=XInzyFMZfC8MXzvsJUyFPxM0Qm
+	nHjKUuTktC5cmfSyF+Tzv7UKz/tHO07uBpoQk4neTFDGS1d23/Ab23Zc4L7GcaNZ5laCKEP3+Npwr
+	oEu+Wc6RDqdd7FCTg4smosfsKCf0Qw6CkwPnSXED2cc033OB5QfRrueSWjYCHKQI6aG6WCGoFtIIH
+	SJa3NDwRFLkmPtVgQm4wrCaI4Har3kWHinPPRv210f7uojatS2qWFrAJ9uLmhkgZwr2a0x531xKUT
+	rV9nM9/DQYspnmrUQYvqZIymJ5ppdKXZKKUTWZme2HkvLa/IDOhndAX1tfvSDZxa6cK2jBYmnwQ0h
+	q/zEkkOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wGCNw-0000000CuT3-1uVJ;
-	Fri, 24 Apr 2026 08:59:40 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1wGHpM-0000000DLMB-0j1D;
+	Fri, 24 Apr 2026 14:48:20 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wGCNu-0000000CuSh-1Bsu
+	id 1wGHpJ-0000000DLLW-30Td
 	for ath12k@lists.infradead.org;
-	Fri, 24 Apr 2026 08:59:39 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-48a563e4ef7so40947465e9.0
-        for <ath12k@lists.infradead.org>; Fri, 24 Apr 2026 01:59:37 -0700 (PDT)
+	Fri, 24 Apr 2026 14:48:18 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-488d2079582so92734825e9.2
+        for <ath12k@lists.infradead.org>; Fri, 24 Apr 2026 07:48:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1777021176; x=1777625976; darn=lists.infradead.org;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=eoyg8FMw0CwqCK8I4nG4squLxWdTJlKOwqwgr4RUV68=;
-        b=b1wxT1a0zBwZV3RNd91j4Ks/Q/7GoJLHTGX08209+kbsYId7mzMtm2bZFFwyTP7F5o
-         Rqipbm87D8hYpZoZhne2fEZdk210U1G72csQtt3gzRHDq17jsq6VnsAKq5PjgYeIacab
-         fANvD1utvRmo7coL5o0+Uyp4YoIGoFgQ4b+m5w5S0QMALJ8sNOvnwIXvQkbxeTgRHzi4
-         brpr5sRpT+7182qIWqgLmTKssPppoW/qqiztLuVOOLx1yaftA/G0sRat79FG7NdNFWSn
-         9HgXB2fUd9N5oX9Crs8HidygTZdfl747Y7wdmDucREWdHEWJMQ0oUJJfMTqr2GOcNcjR
-         rXyw==
+        d=gmail.com; s=20251104; t=1777042095; x=1777646895; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=v8FYF8oZhNqSuTK+FyZ824o92INSUjfpo9VA3IN58oI=;
+        b=TsO1foSdeEWqAf1eoCC0J71d9pnN2dZefA+/HmnVC6KMr3/JR8rMWtfarflpaZ/rlW
+         q8wRHlsJNdmP/Ql11bVvbSaeGELNEhOpL4YC0GcD2oTuasL+1tSpIlEIwKeai/1CN+0F
+         nNjSBsbwPOWMZ3DXSOT/wSArQaf1LoXj0u6ldiI7o/2pfOQfcqREJmxLbgnjf9p/nnzz
+         rj5hyb2u4MviNzKjHc1tEZ7F8xtMdNd5JoHRM7G6zporQkV3iZZ15po7Z8hp1MryTiqP
+         ETl/UfJP0lvgyjZLmWpyNK8DyOTe64wUUdL5XGSISY/eeIA4hYuCvbS3LISDhKdPidU9
+         s1uQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1777021176; x=1777625976;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=eoyg8FMw0CwqCK8I4nG4squLxWdTJlKOwqwgr4RUV68=;
-        b=phBnTCp+BDFk/SybcPUQXa3+HOtjLQYaVACoecTSab3ovH/ukpjt5J7hecqgbTGF7A
-         9WewZlKPOMU6eAx+H084QAFsv5T902Rwl5FU78MeLTiqfmRguk7AxFAoLnEacfR5sz+q
-         yLz7pBbyiFg33jcyWMhmvl1XTSRPEKs5W/HUo8x6M4Q1Tp+Nq0cN3+7o2J6oM47NLQhA
-         EUosqr/30CpWbxeZFILLe3aK3n4H+UcMg/fr66Xe9rgCM4+gizsNNPuGtJpJuh8afX5Q
-         QHgVMRX40MAzxu2Tboov1z/Cwy/xStbCEaQ98NPVM8I3vJcFfZUmoSwLkZ4Ivv3enain
-         4RGg==
-X-Forwarded-Encrypted: i=1; AFNElJ/QYXfa4pIybT94RY7eGzP/Cwdshync0Nu4Y0xW/solpt2Y+UhPuGdyLpay9oxUBSThfLojhfA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx+B2RlC8M+/zd3/xcI2rmMA/nAImYVESddYtckpoX573JFH7tw
-	J+ztE/iEVpf65lsL+R23zC+YLtxXLM1T49w4kBsUyJiE3zNtsWexqCNF
-X-Gm-Gg: AeBDiesh6g1PR4sHVUCKT1JYvTYtRP6HxvsDk7bhTWOEp/Kkarvqq8NSO2jYwgKwbJM
-	bK7M3EN9aYxmxnHKE8Dv8r2+zVi1/7nZqzhui7XgW29baUBqfCh5Mp9mBX/o81cEwaFzYjRMoKK
-	NOig6YExdkydGBwSyqBQsjrWmhxcMzM25LVslSXzPILBsxDyNb32MszE2XqcnjbTgCY+lwxNKPk
-	r2/vewOWOhabkXL00HotU+NNyDB0txzUZESu2dJRqD46Hl2LOspS9y1wNQhIjLk+jfzwfOnxsRa
-	hx5eJbfQa54SeL1CsaKm+EN7cKxgYMwP7pEzv0E7phN6o1M2Jfj6vaBZleCY+evLfDLHOt5SMOi
-	MXLIwUwrReeiGGGHjnC37VckuhOQ9JRYoUF9UAzy17nxURNWkbWeTUEawlJDepnIqvkY/iIl6d8
-	IWQcSKTxUpompyEwwXx9q1a2MZJC07qg==
-X-Received: by 2002:a05:600c:a105:b0:486:fb69:4960 with SMTP id 5b1f17b1804b1-488fb7786e4mr333909925e9.19.1777021175566;
-        Fri, 24 Apr 2026 01:59:35 -0700 (PDT)
-Received: from localhost ([196.207.164.177])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-488fb74c7a2sm180838455e9.1.2026.04.24.01.59.34
+        d=1e100.net; s=20251104; t=1777042095; x=1777646895;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=v8FYF8oZhNqSuTK+FyZ824o92INSUjfpo9VA3IN58oI=;
+        b=JmXGMYFRS0SRBey81IooWvOy5Do5W38XFIwi1hnsWt6fRKlk1PmVXwPpy/bauh/bxL
+         cZMwDn3b7zSLtyhRc6WevY+3StJVoJmxsLGEEW2b2ZjLitpttCR0De5/zk1soVC3IO2s
+         SEWEuStj1SL47E8AqtfSsfOGcirY8Z6eeelz0Wk+femPKxXmRvON8ti4TDdLRShORJW4
+         cqazaO/xOWz6BDp6veTzU8n/GytMd1Ia26pZiYuSJ+ApiKt4nfAl356CTPq1YvRfoaw3
+         MUXcdxRJ8CVbVs8UqXaDYSthvxsZ+YlDcjxVAX0D3QVZ66FSpAW7CmRrq81pQbCIFMoZ
+         t3oA==
+X-Gm-Message-State: AOJu0YwiPlSFaWgx0vzm/QvP5Tubrh/Zq8cLylXBOUcndosSDU+/MA8q
+	9G50GvHpMOhQR0ZPvjbNnNhECPRbXy6c4nfYreDFnpebw1sJTiypzYptnIXdmw==
+X-Gm-Gg: AeBDietksTWDkxoG5jYI2W10B3VUKdhvXYEYev+R1dAuuK+W+kgs6BnjMzZNaAHlB7s
+	LNy2FMMDQewg5OWynICsCtVy7qEW74Sx87BHlxUJXMba/4/TjNwyPrR13ifbCrh7STyA40K/uDY
+	+o7yUtmmIa0Q7HomAvnqWU5NG+LyX+5d1O+B+wuhsvzJiiA95M5B2dCRShncJ1WYCs5oEFrygJE
+	/xefe6S9k8NkyGwGWkJwr/flfuE9MZ+g6rN8hbxLYEr5AWganKwF+fL3v4H4bDZ2/2DIn2hkYp9
+	dIDfPDSqc8wwtZCnanE7+ysq4uX8xOijw78MR7ClLyPpL5Y2lWSvsEoMzW7KlQQTCdACyiihfv5
+	E0ITUUIPqMmrUtlOAPiyl0uFL9/1xJT9E0325IyrHG1iCVs5l2KQzQpF9uYj/Jh9eQyxd2X0dAN
+	h6cIE95pwmhQlrUNSYUHeUJ+ZGPSL3pZHAJ9CQYCJHobm72k9I5PFupv0VLVo5d7mtc6Y=
+X-Received: by 2002:a05:600c:3483:b0:486:fba7:b150 with SMTP id 5b1f17b1804b1-488fb7787d7mr439337615e9.15.1777042095095;
+        Fri, 24 Apr 2026 07:48:15 -0700 (PDT)
+Received: from syracuse.iliad.local (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-48919f54572sm157605825e9.26.2026.04.24.07.48.14
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 24 Apr 2026 01:59:35 -0700 (PDT)
-Date: Fri, 24 Apr 2026 11:59:31 +0300
-From: Dan Carpenter <error27@gmail.com>
-To: Lingbo Kong <quic_lingbok@quicinc.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
-Subject: [bug report] wifi: ath12k: Add support for reading variant from ACPI
- to download board data file
-Message-ID: <aesw8xC4txXCTlw-@stanley.mountain>
+        Fri, 24 Apr 2026 07:48:14 -0700 (PDT)
+From: Nicolas Escande <nico.escande@gmail.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH 1/2] wifi: ath11k: fix error path leaks in some WMI WOW calls
+Date: Fri, 24 Apr 2026 16:48:12 +0200
+Message-ID: <20260424144813.1708214-2-nico.escande@gmail.com>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260424144813.1708214-1-nico.escande@gmail.com>
+References: <20260424144813.1708214-1-nico.escande@gmail.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260424_015938_342664_8A9DDB55 
-X-CRM114-Status: UNSURE (   6.02  )
+X-CRM114-CacheID: sfid-20260424_074817_776155_723A2D8F 
+X-CRM114-Status: UNSURE (   9.78  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,76 +97,67 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello Lingbo Kong,
+Fix two instances where we used to directly return the result of
+ath11k_wmi_cmd_send(...). Because we did not check the return value, we
+also did not free the skb in the error path.
 
-Commit 0a43c3a520e9 ("wifi: ath12k: Add support for reading variant
-from ACPI to download board data file") from Jan 13, 2025
-(linux-next), leads to the following Smatch static checker warning:
+Fixes: 79802b13a492 ("ath11k: implement WoW enable and wakeup commands")
+Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
+---
+ drivers/net/wireless/ath/ath11k/wmi.c | 19 ++++++++++++++++---
+ 1 file changed, 16 insertions(+), 3 deletions(-)
 
-	drivers/net/wireless/ath/ath12k/acpi.c:395 ath12k_acpi_start()
-	warn: set error code if 'ab->acpi.bdf_string[0] == 0'
+diff --git a/drivers/net/wireless/ath/ath11k/wmi.c b/drivers/net/wireless/ath/ath11k/wmi.c
+index 40747fba3b0c..024c2aad9fb4 100644
+--- a/drivers/net/wireless/ath/ath11k/wmi.c
++++ b/drivers/net/wireless/ath/ath11k/wmi.c
+@@ -9332,6 +9332,7 @@ int ath11k_wmi_wow_host_wakeup_ind(struct ath11k *ar)
+ 	struct wmi_wow_host_wakeup_ind *cmd;
+ 	struct sk_buff *skb;
+ 	size_t len;
++	int ret;
+ 
+ 	len = sizeof(*cmd);
+ 	skb = ath11k_wmi_alloc_skb(ar->wmi->wmi_ab, len);
+@@ -9345,14 +9346,20 @@ int ath11k_wmi_wow_host_wakeup_ind(struct ath11k *ar)
+ 
+ 	ath11k_dbg(ar->ab, ATH11K_DBG_WMI, "tlv wow host wakeup ind\n");
+ 
+-	return ath11k_wmi_cmd_send(ar->wmi, skb, WMI_WOW_HOSTWAKEUP_FROM_SLEEP_CMDID);
++	ret = ath11k_wmi_cmd_send(ar->wmi, skb, WMI_WOW_HOSTWAKEUP_FROM_SLEEP_CMDID);
++	if (ret) {
++		ath11k_warn(ar->ab, "failed to send WMI_WOW_HOSTWAKEUP_FROM_SLEEP_CMDID\n");
++		dev_kfree_skb(skb);
++	}
++
++	return ret;
+ }
+ 
+ int ath11k_wmi_wow_enable(struct ath11k *ar)
+ {
+ 	struct wmi_wow_enable_cmd *cmd;
+ 	struct sk_buff *skb;
+-	int len;
++	int ret, len;
+ 
+ 	len = sizeof(*cmd);
+ 	skb = ath11k_wmi_alloc_skb(ar->wmi->wmi_ab, len);
+@@ -9367,7 +9374,13 @@ int ath11k_wmi_wow_enable(struct ath11k *ar)
+ 	cmd->pause_iface_config = WOW_IFACE_PAUSE_ENABLED;
+ 	ath11k_dbg(ar->ab, ATH11K_DBG_WMI, "tlv wow enable\n");
+ 
+-	return ath11k_wmi_cmd_send(ar->wmi, skb, WMI_WOW_ENABLE_CMDID);
++	ret = ath11k_wmi_cmd_send(ar->wmi, skb, WMI_WOW_ENABLE_CMDID);
++	if (ret) {
++		ath11k_warn(ar->ab, "failed to send WMI_WOW_ENABLE_CMDID\n");
++		dev_kfree_skb(skb);
++	}
++
++	return ret;
+ }
+ 
+ int ath11k_wmi_scan_prob_req_oui(struct ath11k *ar,
+-- 
+2.53.0
 
-drivers/net/wireless/ath/ath12k/acpi.c
-    351 int ath12k_acpi_start(struct ath12k_base *ab)
-    352 {
-    353         acpi_status status;
-    354         int ret;
-    355 
-    356         ab->acpi.acpi_tas_enable = false;
-    357         ab->acpi.acpi_disable_11be = false;
-    358         ab->acpi.acpi_disable_rfkill = false;
-    359         ab->acpi.acpi_bios_sar_enable = false;
-    360         ab->acpi.acpi_cca_enable = false;
-    361         ab->acpi.acpi_band_edge_enable = false;
-    362         ab->acpi.acpi_enable_bdf = false;
-    363         ab->acpi.bdf_string[0] = '\0';
-    364 
-    365         if (!ab->hw_params->acpi_guid)
-    366                 /* not supported with this hardware */
-    367                 return 0;
-    368 
-    369         ret = ath12k_acpi_dsm_get_data(ab, ATH12K_ACPI_DSM_FUNC_SUPPORT_FUNCS);
-    370         if (ret) {
-    371                 ath12k_dbg(ab, ATH12K_DBG_BOOT, "failed to get ACPI DSM data: %d\n", ret);
-    372                 return ret;
-    373         }
-    374 
-    375         if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acpi, ATH12K_ACPI_FUNC_BIT_DISABLE_FLAG)) {
-    376                 ret = ath12k_acpi_dsm_get_data(ab, ATH12K_ACPI_DSM_FUNC_DISABLE_FLAG);
-    377                 if (ret) {
-    378                         ath12k_warn(ab, "failed to get ACPI DISABLE FLAG: %d\n", ret);
-    379                         return ret;
-    380                 }
-    381 
-    382                 if (ATH12K_ACPI_CHEK_BIT_VALID(ab->acpi,
-    383                                                ATH12K_ACPI_DSM_DISABLE_11BE_BIT))
-    384                         ab->acpi.acpi_disable_11be = true;
-    385 
-    386                 if (!ATH12K_ACPI_CHEK_BIT_VALID(ab->acpi,
-    387                                                 ATH12K_ACPI_DSM_DISABLE_RFKILL_BIT))
-    388                         ab->acpi.acpi_disable_rfkill = true;
-    389         }
-    390 
-    391         if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acpi, ATH12K_ACPI_FUNC_BIT_BDF_EXT)) {
-    392                 ret = ath12k_acpi_dsm_get_data(ab, ATH12K_ACPI_DSM_FUNC_BDF_EXT);
-    393                 if (ret || ab->acpi.bdf_string[0] == '\0') {
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Should we set the error code for an empty string?
-
-    394                         ath12k_warn(ab, "failed to get ACPI BDF EXT: %d\n", ret);
---> 395                         return ret;
-    396                 }
-    397 
-    398                 ab->acpi.acpi_enable_bdf = true;
-    399         }
-    400 
-    401         if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acpi, ATH12K_ACPI_FUNC_BIT_TAS_CFG)) {
-    402                 ret = ath12k_acpi_dsm_get_data(ab, ATH12K_ACPI_DSM_FUNC_TAS_CFG);
-    403                 if (ret) {
-    404                         ath12k_warn(ab, "failed to get ACPI TAS config table: %d\n", ret);
-
-This email is a free service from the Smatch-CI project [smatch.sf.net].
-
-regards,
-dan carpenter
 
