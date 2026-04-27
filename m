@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 645B7FF8862
-	for <ath12k@archiver.kernel.org>; Mon, 27 Apr 2026 09:56:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0CC0FF8868
+	for <ath12k@archiver.kernel.org>; Mon, 27 Apr 2026 09:56:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=9jP61LK+ChSJ/JWdk7DMmSZsVK5ZJjWh+ti+BemAztM=; b=Z4oPxpSIHw3vkDFpYSmS4IG1au
-	UNXOXX91JxOsRnN0C5GbXPCI8z1jrj5OCNoz+hbpFiY5dNTuO2Xzmklo/9svpC5jo5PYjjUFwpcHP
-	CGSXJS3CPg/eSI2PsmzTWNf3LrSliAIBX9HXITjDXqFh9GGbVtpxZUiijqt9Imyw4ZWRzB8A+LSr6
-	Ud3bWvkO7h9Zg8e/jWJWgb6r+nqd1/2AY+zTwCa4P3H9i6+yOZgR3gR5uC3+hYr12xloG6SGMCyYS
-	Y9n6SQwsGOR7g1bR/234aTyEQO1sy99FwqEpyu5Ko7zSBxbLIp/eN0YTS6XLCyA2AHNuYldh574qA
-	6i4myLQA==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=So5b/fiaI5ThGzFHZpk1Z5JPQ10A6F+QOYJy5etdIoc=; b=RvD9ByHC8ps6nYQJ3mUqqKO22R
+	5ZAexnl6Q6xJE3Gb38LDsZ/WVja4i1+n/LYQlg3yM21T6E/+BxUMclySFNkBWO175npS9jr/Kl+sE
+	7R3KHx0q0WEsFWDtm20eBvzgeucYDwOdZBTFrzZvPaM6/vGZmWKSnrkXXYwvc/6Sdno0MBdJ+TP/e
+	Ttweu03gnME9dJO/K5NOfdg4sf4YmIlW6L776jzu987aEQsxufK9oGQxamnjF19/NY1nZuIEewGxL
+	c0GOP7q79CkJn3CiYZbtJUHL3w+TdPmCR1ajb0e+Jwd3SLWz1ZyP+OuElXew4iyn3+co7wHtJU1Ou
+	pFC8Rqbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHIha-0000000GcWP-0gv9;
-	Mon, 27 Apr 2026 09:56:30 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wHIho-0000000GcXm-268H;
+	Mon, 27 Apr 2026 09:56:44 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHIhX-0000000GcVc-3Ddm
+	id 1wHIhm-0000000GcXS-0VWj
 	for ath12k@lists.infradead.org;
-	Mon, 27 Apr 2026 09:56:29 +0000
+	Mon, 27 Apr 2026 09:56:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7DFA943C44;
+	by tor.source.kernel.org (Postfix) with ESMTP id 026F060138;
+	Mon, 27 Apr 2026 09:56:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 10397C19425;
 	Mon, 27 Apr 2026 09:56:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8FFCAC2BCB4;
-	Mon, 27 Apr 2026 09:56:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1777283786;
-	bh=jMmit9CI2GuOx6nGL6l6rT3WoEmoOZljdXM257fv1rY=;
-	h=From:To:Cc:Subject:Date:From;
-	b=NGZ6W8hzd02dc31RtbeTvU87c03i2+XoFfsp8ZKY5Q/b2GXEgjW/xF1Ba8XN7CaOH
-	 PCWma2I8ZKKvkL7PZ0b4BibO4z28yI72/3kDCmEmKeshL3iDj//WegAQPz1br0RZAS
-	 Rwl8L4IMw4kuCIlgkhryicOMKmFePXxy5qZa1nBP/dIV8eVkHbfwEJonyLtVbrfhz5
-	 ikl1vcieK1wpgMCKLyvqW5aaAchex4l6hJBXfMZf7PLZVX0s2j45genoCtPX2VZKV2
-	 JmnjtGuFa7E9j0yVlbaGgR+TNTfVDErPpTjxLEqkDIk9sO7m//9XuS5SbdRyYD3V1E
-	 c+2N4UaG01lgg==
+	s=k20201202; t=1777283800;
+	bh=Vjf/+W6X2o66/p4JzdVpEIdyl1g7SDuTTeHJJ8c4c3c=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=cIvBmmoWC4ilkf4onLtk1RY6WIe+m6DAizvAuPwSB0lEO8+ZPvYQInQCDIAS79N7X
+	 JyrYREaURcugcD0kLj1b5DNLMq/vnTYHtxEk5WqR46jndRF48LRK/Wgx54xAAg1bmt
+	 awVYnSWneL2LiVm+BfhWs4C9PLPyaZlFK7GHDMZo1B8aRy9yeXALulLykdOgZ0VkkW
+	 QyyRfd3i6sZwx8M25NZ/p2UbKS2TWyebfUukIipYnekeFsOF/bzCIcrW+D9wSob12b
+	 wB+au19OqxM3fyBTbEinuskD/HXsSk4KbHZeca+5YvT+AjF72D1PTSOS1hU6qIDyrb
+	 fCCCaHW9o/EKw==
 From: Sumit Garg <sumit.garg@kernel.org>
 To: andersson@kernel.org,
 	konradybcio@kernel.org
@@ -92,15 +92,14 @@ Cc: linux-arm-msm@vger.kernel.org,
 	skare@qti.qualcomm.com,
 	linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: [PATCH v4 00/15] firmware: qcom: Add OP-TEE PAS service support
-Date: Mon, 27 Apr 2026 15:25:48 +0530
-Message-ID: <20260427095603.1157963-1-sumit.garg@kernel.org>
+Subject: [PATCH v4 01/15] arm64: dts: qcom: kodiak: Add EL2 overlay
+Date: Mon, 27 Apr 2026 15:25:49 +0530
+Message-ID: <20260427095603.1157963-2-sumit.garg@kernel.org>
 X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20260427095603.1157963-1-sumit.garg@kernel.org>
+References: <20260427095603.1157963-1-sumit.garg@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260427_025627_866727_0FE05590 
-X-CRM114-Status: GOOD (  18.76  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,137 +114,87 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sumit Garg <sumit.garg@oss.qualcomm.com>
+From: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 
-Qcom platforms has the legacy of using non-standard SCM calls
-splintered over the various kernel drivers. These SCM calls aren't
-compliant with the standard SMC calling conventions which is a
-prerequisite to enable migration to the FF-A specifications from Arm.
+All the existing variants Kodiak boards are using Gunyah hypervisor
+which means that, so far, Linux-based OS could only boot in EL1 on those
+devices.  However, it is possible for us to boot Linux at EL2 on these
+devices [1].
 
-OP-TEE as an alternative trusted OS to Qualcomm TEE (QTEE) can't
-support these non-standard SCM calls. And even for newer architectures
-using S-EL2 with Hafnium support, QTEE won't be able to support SCM
-calls either with FF-A requirements coming in. And with both OP-TEE
-and QTEE drivers well integrated in the TEE subsystem, it makes further
-sense to reuse the TEE bus client drivers infrastructure.
+When running under Gunyah, the remote processor firmware IOMMU
+streams are controlled by Gunyah. However, without Gunyah, the IOMMU is
+managed by the consumer of this DeviceTree. Therefore, describe the
+firmware streams for each remote processor.
 
-The added benefit of TEE bus infrastructure is that there is support
-for discoverable/enumerable services. With that client drivers don't
-have to manually invoke a special SCM call to know the service status.
+Add a EL2-specific DT overlay and apply it to Kodiak IOT variant
+devices to create -el2.dtb for each of them alongside "normal" dtb.
 
-So enable the generic Peripheral Authentication Service (PAS) provided
-by the firmware. It acts as the common layer with different TZ
-backends plugged in whether it's an SCM implementation or a proper
-TEE bus based PAS service implementation.
+[1]
+https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-4/boot-developer-touchpoints.html#uefi
 
-The TEE PAS service ABI is designed to be extensible with additional API
-as PTA_QCOM_PAS_CAPABILITIES. This allows to accommodate any future
-extensions of the PAS service needed while still maintaining backwards
-compatibility.
-
-Currently OP-TEE support is being added to provide the backend PAS
-service implementation which can be found as part of this PR [1].
-This implementation has been tested on Kodiak/RB3Gen2 board with lemans
-EVK board being the next target. In addition to that WIN/IPQ targets
-planning to use OP-TEE will use this service too. Surely the backwards
-compatibility is maintained and tested for SCM backend.
-
-Note that kernel PAS service support while running in EL2 is at parity
-among OP-TEE vs QTEE. Especially the media (venus/iris) support depends
-on proper IOMMU support being worked out on the PAS client end.
-
-Patch summary:
-- Patch #1: adds Kodiak EL2 overlay since boot stack with TF-A/OP-TEE
-  only allow UEFI and Linux to boot in EL2.
-- Patch #2: adds generic PAS service.
-- Patch #3: migrates SCM backend to generic PAS service.
-- Patch #4: adds TEE/OP-TEE backend for generic PAS service.
-- Patch #5-#13: migrates all client drivers to generic PAS service.
-- Patch #14: drops legacy PAS SCM exported APIs.
-
-The patch-set is based on v7.1-rc1 tag and can be found in git tree here
-[2].
-
-Merge strategy:
-
-It is expected due to APIs dependency, the entire patch-set to go via
-the Qcom tree. All other subsystem maintainers, it will be great if I
-can get acks for the corresponding subsystem patches.
-
-[1] https://github.com/OP-TEE/optee_os/pull/7721
-[2] https://git.kernel.org/pub/scm/linux/kernel/git/sumit.garg/linux.git/log/?h=qcom-pas-v4
-
+Signed-off-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
+[SG: watchdog fixup]
+Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 ---
-Changes in v4:
-- Incorporate misc. comments on patch #4.
-- Picked up an ack for patch #10.
-- Clarify in cover letter about state of media support.
-
-Changes in v3:
-- Incorporated some style and misc. comments for patch #2, #3 and #4.
-- Add QCOM_PAS Kconfig dependency for various subsystems.
-- Switch from pseudo TA to proper TA invoke commands.
-
-Changes in v2:
-- Fixed kernel doc warnings.
-- Polish commit message and comments for patch #2.
-- Pass proper PAS ID in set_remote_state API for media firmware drivers.
-- Added Maintainer entry and dropped MODULE_AUTHOR.
-
-Mukesh Ojha (1):
-  arm64: dts: qcom: kodiak: Add EL2 overlay
-
-Sumit Garg (14):
-  firmware: qcom: Add a generic PAS service
-  firmware: qcom_scm: Migrate to generic PAS service
-  firmware: qcom: Add a PAS TEE service
-  remoteproc: qcom_q6v5_pas: Switch over to generic PAS TZ APIs
-  remoteproc: qcom_q6v5_mss: Switch to generic PAS TZ APIs
-  soc: qcom: mdtloader: Switch to generic PAS TZ APIs
-  remoteproc: qcom_wcnss: Switch to generic PAS TZ APIs
-  remoteproc: qcom: Select QCOM_PAS generic service
-  drm/msm: Switch to generic PAS TZ APIs
-  media: qcom: Switch to generic PAS TZ APIs
-  net: ipa: Switch to generic PAS TZ APIs
-  wifi: ath12k: Switch to generic PAS TZ APIs
-  firmware: qcom_scm: Remove SCM PAS wrappers
-  MAINTAINERS: Add maintainer entry for Qualcomm PAS TZ service
-
- MAINTAINERS                                   |   9 +
- arch/arm64/boot/dts/qcom/Makefile             |   2 +
- arch/arm64/boot/dts/qcom/kodiak-el2.dtso      |  35 ++
- drivers/firmware/qcom/Kconfig                 |  19 +
- drivers/firmware/qcom/Makefile                |   2 +
- drivers/firmware/qcom/qcom_pas.c              | 288 +++++++++++
- drivers/firmware/qcom/qcom_pas.h              |  50 ++
- drivers/firmware/qcom/qcom_pas_tee.c          | 479 ++++++++++++++++++
- drivers/firmware/qcom/qcom_scm.c              | 302 ++++-------
- drivers/gpu/drm/msm/Kconfig                   |   1 +
- drivers/gpu/drm/msm/adreno/a5xx_gpu.c         |   4 +-
- drivers/gpu/drm/msm/adreno/adreno_gpu.c       |  11 +-
- drivers/media/platform/qcom/iris/Kconfig      |  25 +-
- .../media/platform/qcom/iris/iris_firmware.c  |   9 +-
- drivers/media/platform/qcom/venus/Kconfig     |   1 +
- drivers/media/platform/qcom/venus/firmware.c  |  11 +-
- drivers/net/ipa/Kconfig                       |   2 +-
- drivers/net/ipa/ipa_main.c                    |  13 +-
- drivers/net/wireless/ath/ath12k/Kconfig       |   2 +-
- drivers/net/wireless/ath/ath12k/ahb.c         |   8 +-
- drivers/remoteproc/Kconfig                    |   1 +
- drivers/remoteproc/qcom_q6v5_mss.c            |   5 +-
- drivers/remoteproc/qcom_q6v5_pas.c            |  51 +-
- drivers/remoteproc/qcom_wcnss.c               |  12 +-
- drivers/soc/qcom/mdt_loader.c                 |  12 +-
- include/linux/firmware/qcom/qcom_pas.h        |  43 ++
- include/linux/firmware/qcom/qcom_scm.h        |  29 --
- include/linux/soc/qcom/mdt_loader.h           |   6 +-
- 28 files changed, 1115 insertions(+), 317 deletions(-)
+ arch/arm64/boot/dts/qcom/Makefile        |  2 ++
+ arch/arm64/boot/dts/qcom/kodiak-el2.dtso | 35 ++++++++++++++++++++++++
+ 2 files changed, 37 insertions(+)
  create mode 100644 arch/arm64/boot/dts/qcom/kodiak-el2.dtso
- create mode 100644 drivers/firmware/qcom/qcom_pas.c
- create mode 100644 drivers/firmware/qcom/qcom_pas.h
- create mode 100644 drivers/firmware/qcom/qcom_pas_tee.c
- create mode 100644 include/linux/firmware/qcom/qcom_pas.h
 
+diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
+index 4ba8e7306419..28123cdc9de2 100644
+--- a/arch/arm64/boot/dts/qcom/Makefile
++++ b/arch/arm64/boot/dts/qcom/Makefile
+@@ -170,6 +170,8 @@ qcs615-ride-el2-dtbs := qcs615-ride.dtb talos-el2.dtbo
+ dtb-$(CONFIG_ARCH_QCOM)	+= qcs615-ride-el2.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= qcs6490-radxa-dragon-q6a.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= qcs6490-rb3gen2.dtb
++qcs6490-rb3gen2-el2-dtbs := qcs6490-rb3gen2.dtb kodiak-el2.dtbo
++dtb-$(CONFIG_ARCH_QCOM)	+= qcs6490-rb3gen2-el2.dtb
+ 
+ qcs6490-rb3gen2-vision-mezzanine-dtbs := qcs6490-rb3gen2.dtb qcs6490-rb3gen2-vision-mezzanine.dtbo
+ qcs6490-rb3gen2-industrial-mezzanine-dtbs := qcs6490-rb3gen2.dtb qcs6490-rb3gen2-industrial-mezzanine.dtbo
+diff --git a/arch/arm64/boot/dts/qcom/kodiak-el2.dtso b/arch/arm64/boot/dts/qcom/kodiak-el2.dtso
+new file mode 100644
+index 000000000000..0b3a69a0d765
+--- /dev/null
++++ b/arch/arm64/boot/dts/qcom/kodiak-el2.dtso
+@@ -0,0 +1,35 @@
++// SPDX-License-Identifier: BSD-3-Clause
++/*
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
++ *
++ * Kodiak specific modifications required to boot in EL2.
++ */
++
++
++/dts-v1/;
++/plugin/;
++
++&gpu_zap_shader {
++	status = "disabled";
++};
++
++&remoteproc_adsp {
++	iommus = <&apps_smmu 0x1800 0x0>;
++};
++
++&remoteproc_cdsp {
++	iommus = <&apps_smmu 0x11a0 0x0400>;
++};
++
++&remoteproc_wpss {
++	iommus = <&apps_smmu 0x1c03 0x1>,
++		 <&apps_smmu 0x1c83 0x1>;
++};
++
++&venus {
++	status = "disabled";
++};
++
++&watchdog {
++	status = "okay";
++};
 -- 
 2.51.0
 
