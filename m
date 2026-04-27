@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A0ABFF885E
-	for <ath12k@archiver.kernel.org>; Mon, 27 Apr 2026 09:59:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23E86FF885E
+	for <ath12k@archiver.kernel.org>; Mon, 27 Apr 2026 09:59:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ylocZ+ddvLKoyFdXUuGItu1n2sr67ZQok8cTGDhSW2A=; b=k/x3tTGXDbLfbK6p1C8K72/5Yv
-	GksFjP5AeaRW8uAFPUWzo2sCMls5CXweCfUfNRQg9xn2JFaZ+AYoKXk9lRuxBMu2gn2xd+MxgPGGC
-	VuXt4HkPvMPslYFjblFx9YcGGdgRfUGR2pHKr67EV2H5Jq2yB8qBCgQGFUSMqY/lPrnjtThhnWvJR
-	eXMGkXtG/YAMO7ezup10/Qy/XlWL446MJdYc1B5YYgU9NWBm7jMrJc0b3wBjFU4QKD9MEDMv/6tCf
-	13uhIBRC/70lXkBHQqKqzkNihIqb+pYlhFIChoBWruBbXEWnbICfoQFncplMPGgyEgKqRYP25Ncp2
-	ntqyi8Tw==;
+	bh=oFiI1oXY9OhWBFkjmghNjXBQOR6mfmJcSRB9A+OJT+c=; b=sCBuiMHoY3LDhn+ykurN0Z5keI
+	vuOQHOdAmErYSnO4CFX1oz1HYxbrLIxBRi/3Rr1ew2Xl1/adyb5zeKEn95Q+9rcjlyKUcbji6ruGF
+	slSvi5MTyWJ8yjZRzJ3dbLrii9ScDUdUVto9h/LwLuX5l7yY+2Ox+0dnwtSxhmhYJfAczYIpOm1Zk
+	MVjLFReBoDgnmfERk3aDxqn9nO8SnWpNV04uAz/vEok6Kg2QqMV5IFnX20a9ZvO14FL/i9RyGxU/v
+	4cqZYsoeHSkhrHvOeqa88biaoxiGhHFSmgS9sCFPAJByID0cFzfWnEcMwLrjANPZBrAaE4z+XMFrX
+	M0lIt4Qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHIkN-0000000GdhP-0tPw;
-	Mon, 27 Apr 2026 09:59:23 +0000
+	id 1wHIka-0000000Gdq6-2y3f;
+	Mon, 27 Apr 2026 09:59:36 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHIkJ-0000000GdfK-1QCB
+	id 1wHIkX-0000000Gdnu-1ta7
 	for ath12k@lists.infradead.org;
-	Mon, 27 Apr 2026 09:59:21 +0000
+	Mon, 27 Apr 2026 09:59:35 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id D2E0D43439;
-	Mon, 27 Apr 2026 09:59:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 29349C19425;
-	Mon, 27 Apr 2026 09:59:04 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0B04D40BFC;
+	Mon, 27 Apr 2026 09:59:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5753DC2BCB6;
+	Mon, 27 Apr 2026 09:59:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1777283958;
-	bh=RSNfV6exKvq+zvrQNX0xnasMhRBhyfJlznDBh2Dgzrw=;
+	s=k20201202; t=1777283972;
+	bh=hXxx+4QUgMOw3htf/QGDwyguBASyu2uqZ06knOuCGaA=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=k7T+CluJITwcmx+92RW90GFd92ds95jYeXpF9w/0XmknR12IOZrYP4d+yeWTeM3mw
-	 annKV+extW0h61NMyHURgvXxInfhgO2JyApexZfRe3LgfvWs1EP8nk+l+DO5tY0dan
-	 f/5+cfiwk2m4f8CvONTA2kAkEh2vqF1iKpHdPjKcHhSn4TCFcCmX0srwT+CaigH7Dc
-	 f0Bb4P4S3x8QMJ+UWqqXXU7t4UBaBhqa3s61NQrh5k1OUgZlq+s8RA6VQ8e9kM4Amb
-	 6u4lR6iNN+4PDx47rHgt6jCqx0CRx+LA2nc4tnELJ9yxwwA+gO4NagRzAqpHoOTfWV
-	 hZPICunebgEDw==
+	b=QVDKeuunL76HM1861au4fRPSLOyaDFWyKt4ECY432CoPxvvp0x4XVh2Tpuv+CYTEK
+	 vcx4tgtwsm2mSL1EePtBXXBl5vXCPAU+XvsSF0GO2Mn7wWDBT8C6vekkVrsbDVkImj
+	 B2VWX7AqTfEvbl/VlP5LZwvHsTcSLsE/EEPEz5sJFFCuLA4vJ3fsoGfWsqBmjnOHFI
+	 wy2UyLTcDIDKsCmdPud8yfCvcUYbJWNnqRZtni3f7w97FvXi8/IOruHhF/uPcqvG5k
+	 OAgpCeXdq1qC/8h1oI04a/S3VEf9/7duELX0Q00AfqmHjcZuMxCquCijDU75ch78hP
+	 xJB6V3R9Czn9Q==
 From: Sumit Garg <sumit.garg@kernel.org>
 To: andersson@kernel.org,
 	konradybcio@kernel.org
@@ -92,17 +92,17 @@ Cc: linux-arm-msm@vger.kernel.org,
 	skare@qti.qualcomm.com,
 	linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: [PATCH v4 12/15] net: ipa: Switch to generic PAS TZ APIs
-Date: Mon, 27 Apr 2026 15:26:00 +0530
-Message-ID: <20260427095603.1157963-13-sumit.garg@kernel.org>
+Subject: [PATCH v4 13/15] wifi: ath12k: Switch to generic PAS TZ APIs
+Date: Mon, 27 Apr 2026 15:26:01 +0530
+Message-ID: <20260427095603.1157963-14-sumit.garg@kernel.org>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260427095603.1157963-1-sumit.garg@kernel.org>
 References: <20260427095603.1157963-1-sumit.garg@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260427_025919_413027_5F96AFA1 
-X-CRM114-Status: GOOD (  11.67  )
+X-CRM114-CacheID: sfid-20260427_025933_531153_0358B928 
+X-CRM114-Status: GOOD (  11.92  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,69 +119,65 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 
-Switch ipa client driver over to generic PAS TZ APIs. Generic PAS TZ
+Switch ath12k client driver over to generic PAS TZ APIs. Generic PAS TZ
 service allows to support multiple TZ implementation backends like QTEE
 based SCM PAS service, OP-TEE based PAS service and any further future TZ
 backend service.
 
+Acked-by: Jeff Johnson <jjohnson@kernel.org>
 Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 ---
- drivers/net/ipa/Kconfig    |  2 +-
- drivers/net/ipa/ipa_main.c | 13 ++++++++-----
- 2 files changed, 9 insertions(+), 6 deletions(-)
+ drivers/net/wireless/ath/ath12k/Kconfig | 2 +-
+ drivers/net/wireless/ath/ath12k/ahb.c   | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/net/ipa/Kconfig b/drivers/net/ipa/Kconfig
-index 01d219d3760c..a9aff1b7977d 100644
---- a/drivers/net/ipa/Kconfig
-+++ b/drivers/net/ipa/Kconfig
-@@ -6,7 +6,7 @@ config QCOM_IPA
- 	depends on QCOM_RPROC_COMMON || (QCOM_RPROC_COMMON=n && COMPILE_TEST)
- 	depends on QCOM_AOSS_QMP || QCOM_AOSS_QMP=n
+diff --git a/drivers/net/wireless/ath/ath12k/Kconfig b/drivers/net/wireless/ath/ath12k/Kconfig
+index d39c075758bd..2b8b87931330 100644
+--- a/drivers/net/wireless/ath/ath12k/Kconfig
++++ b/drivers/net/wireless/ath/ath12k/Kconfig
+@@ -18,7 +18,7 @@ config ATH12K_AHB
+ 	bool "QTI ath12k AHB support"
+ 	depends on ATH12K && REMOTEPROC
  	select QCOM_MDT_LOADER
 -	select QCOM_SCM
 +	select QCOM_PAS
- 	select QCOM_QMI_HELPERS
  	help
- 	  Choose Y or M here to include support for the Qualcomm
-diff --git a/drivers/net/ipa/ipa_main.c b/drivers/net/ipa/ipa_main.c
-index 788dd99af2a4..3cd9e44680e9 100644
---- a/drivers/net/ipa/ipa_main.c
-+++ b/drivers/net/ipa/ipa_main.c
-@@ -14,7 +14,7 @@
- #include <linux/pm_runtime.h>
- #include <linux/types.h>
+ 	  Enable support for Ath12k AHB bus chipsets, example IPQ5332.
  
+diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
+index 2dcf0a52e4c1..c5ba91e6f95e 100644
+--- a/drivers/net/wireless/ath/ath12k/ahb.c
++++ b/drivers/net/wireless/ath/ath12k/ahb.c
+@@ -5,7 +5,7 @@
+  */
+ 
+ #include <linux/dma-mapping.h>
 -#include <linux/firmware/qcom/qcom_scm.h>
 +#include <linux/firmware/qcom/qcom_pas.h>
- #include <linux/soc/qcom/mdt_loader.h>
+ #include <linux/of.h>
+ #include <linux/of_device.h>
+ #include <linux/platform_device.h>
+@@ -420,7 +420,7 @@ static int ath12k_ahb_power_up(struct ath12k_base *ab)
  
- #include "ipa.h"
-@@ -624,10 +624,13 @@ static int ipa_firmware_load(struct device *dev)
+ 	if (ab_ahb->scm_auth_enabled) {
+ 		/* Authenticate FW image using peripheral ID */
+-		ret = qcom_scm_pas_auth_and_reset(pasid);
++		ret = qcom_pas_auth_and_reset(pasid);
+ 		if (ret) {
+ 			ath12k_err(ab, "failed to boot the remote processor %d\n", ret);
+ 			goto err_fw2;
+@@ -485,9 +485,9 @@ static void ath12k_ahb_power_down(struct ath12k_base *ab, bool is_suspend)
+ 		pasid = (u32_encode_bits(ab_ahb->userpd_id, ATH12K_USERPD_ID_MASK)) |
+ 			 ATH12K_AHB_UPD_SWID;
+ 		/* Release the firmware */
+-		ret = qcom_scm_pas_shutdown(pasid);
++		ret = qcom_pas_shutdown(pasid);
+ 		if (ret)
+-			ath12k_err(ab, "scm pas shutdown failed for userPD%d\n",
++			ath12k_err(ab, "pas shutdown failed for userPD%d: %d\n",
+ 				   ab_ahb->userpd_id);
  	}
- 
- 	ret = qcom_mdt_load(dev, fw, path, IPA_PAS_ID, virt, phys, size, NULL);
--	if (ret)
-+	if (ret) {
- 		dev_err(dev, "error %d loading \"%s\"\n", ret, path);
--	else if ((ret = qcom_scm_pas_auth_and_reset(IPA_PAS_ID)))
--		dev_err(dev, "error %d authenticating \"%s\"\n", ret, path);
-+	} else {
-+		ret = qcom_pas_auth_and_reset(IPA_PAS_ID);
-+		if (ret)
-+			dev_err(dev, "error %d authenticating \"%s\"\n", ret, path);
-+	}
- 
- 	memunmap(virt);
- out_release_firmware:
-@@ -758,7 +761,7 @@ static enum ipa_firmware_loader ipa_firmware_loader(struct device *dev)
- 		return IPA_LOADER_INVALID;
- out_self:
- 	/* We need Trust Zone to load firmware; make sure it's available */
--	if (qcom_scm_is_available())
-+	if (qcom_pas_is_available())
- 		return IPA_LOADER_SELF;
- 
- 	return IPA_LOADER_DEFER;
+ }
 -- 
 2.51.0
 
