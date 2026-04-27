@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB7DAFF8861
-	for <ath12k@archiver.kernel.org>; Mon, 27 Apr 2026 09:58:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 427C4FF8861
+	for <ath12k@archiver.kernel.org>; Mon, 27 Apr 2026 09:58:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=35rfIGT5sB2Gqd1h0Gem2T9b6gvSG8M+QOqIWxfWoAg=; b=Ca/MCARcZzdku/eBp/dVOxYzva
-	3DZdkyqblushcSJI8O7PWjuhALUcmf7fpihIAq5ue3sECKSoQr5BmGR00R0CgyR1iatLWaXvsJDMJ
-	q9qVQvjjf2ZFX39FMdza4xNmLlLKiABm+KLDhdiczITgFSPBhsCueci8DKA8i6UX62n/7V0xLuQtc
-	STxRVhYgZRgVePJIjOoVSBDvnCF5YgzUWXE+njHStrWpy+mxdj6uYuunUhMh/w8RViU2w6pkTvje4
-	UkHpp1UlADxPvviGgN8ZxqA2aLz4SU/5Tkmri65pFeC+T2p7nY9e5xjkLnqvDGAFKi5qeFCxYGlo8
-	FhUzcAmA==;
+	bh=8rUEIX0kUPQxWDttdQB1Z70/2405Si7WRmM0O92XjXE=; b=OVlA4EFsF37WaIH9ghgZgA61xq
+	JjtCzMdyzfuiMaqhZ8Gsv0vE+wRsMPkumtL63GJb/IAdF2s0t8SupWkWK4dD7OjPUtNWpD2j4y70B
+	El+DslWEOp6iePt7COvLWc4oxVr/t/PU720G6jG9OebKmrJWSMcUsoQYzc0xXICWhZDeRLYz3v08A
+	6HESlWmfZq/Egxe7FJ+vbvyOvXNCtu4JCB+9R5tcM6t4Wz6V8C5iEvSTyYyC1bmnuHbzWLqlrNhqD
+	fr3jznvWVywYGMdC3p7TR942CxAAjuVSYV6bcTLqqPxJynGRE6w8aOhRDvP4ew+46hXW0Nf1dZhAI
+	Tq9EZJ3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHIjC-0000000Gd98-2dQW;
-	Mon, 27 Apr 2026 09:58:10 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wHIjQ-0000000GdFm-49Mz;
+	Mon, 27 Apr 2026 09:58:24 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHIj9-0000000Gd6g-46oV
+	id 1wHIjO-0000000GdEA-0Hf3
 	for ath12k@lists.infradead.org;
-	Mon, 27 Apr 2026 09:58:09 +0000
+	Mon, 27 Apr 2026 09:58:23 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 590C0442C8;
+	by sea.source.kernel.org (Postfix) with ESMTP id 9A8974418D;
+	Mon, 27 Apr 2026 09:58:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DB698C2BCB9;
 	Mon, 27 Apr 2026 09:58:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 673F1C2BCB6;
-	Mon, 27 Apr 2026 09:57:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1777283887;
-	bh=VzhDqsiFiUXfxZd81NSur10DXXCFIN3cES5W3dbPI8k=;
+	s=k20201202; t=1777283901;
+	bh=6sMeataN91v3DK2/OM6RN4V1kVMHnyLiK0yE4PVQrP8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=g4+YyAUNRTFiwSXYHbcfYJw6QH6wTznLZljlE2nES+knEuGtg9/d241wLGrfQRSOa
-	 TV/lcFFANTiYjyDFbvLdGbWO+fZW1cTUQt7Y293jIuZUDYdnZGw8ajMJNsci92fSw7
-	 5GGvYSqbLQWUq6IYYc4KYAdnjptVJMmAS5NukP4YqeeHafIKNedcgjTnwtaOxPZuzf
-	 1ORfUYVJOk2z1fNStjJuVXrkbpij63TSEEZfWU1pvTfJj43LuxKVllpvoUxlfFjmEZ
-	 SBDWDV4sZqjp6skH3gLdg8CKUoL1kZNB4L6Q6Dg8K0VrLgOAKbMFLL1UaHxzmkF1GM
-	 Q2DWxmGtR1fWg==
+	b=QIJBnvj9TWNnO1BxOeV3F4HfjzJvi5lYnjzVZPbWoPEV8NmZMmomZdNKn1q//4NFF
+	 gY7/hsDB4Z9GSOqC5FjMb9L0B0v3qmHnSL+bbQ3z4YAl+iFf7jjJJXffeCjSvWCqUp
+	 QNi03y38ZZUSDAUK8Ff89rbX3XSSQOxTHOf1bB1LU2efUXEBECqcH/YRjWD9PcAuX9
+	 CEoK6dMwiuZeBZp+z91AUCKY5d90Q+LDM+rSLAc8Rzm7MQzNYJnSdHfumLkmGuqpv7
+	 Wz4NErgjv6RaI420T7gEivkkYea9uEcNz26h/wT5qmX8u1oPpns5/jst6Gp1XWaPV7
+	 l2aH+YIze1ShA==
 From: Sumit Garg <sumit.garg@kernel.org>
 To: andersson@kernel.org,
 	konradybcio@kernel.org
@@ -92,17 +92,17 @@ Cc: linux-arm-msm@vger.kernel.org,
 	skare@qti.qualcomm.com,
 	linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: [PATCH v4 07/15] soc: qcom: mdtloader: Switch to generic PAS TZ APIs
-Date: Mon, 27 Apr 2026 15:25:55 +0530
-Message-ID: <20260427095603.1157963-8-sumit.garg@kernel.org>
+Subject: [PATCH v4 08/15] remoteproc: qcom_wcnss: Switch to generic PAS TZ APIs
+Date: Mon, 27 Apr 2026 15:25:56 +0530
+Message-ID: <20260427095603.1157963-9-sumit.garg@kernel.org>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260427095603.1157963-1-sumit.garg@kernel.org>
 References: <20260427095603.1157963-1-sumit.garg@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260427_025808_082041_3A838358 
-X-CRM114-Status: GOOD (  12.08  )
+X-CRM114-CacheID: sfid-20260427_025822_163276_AD12219E 
+X-CRM114-Status: GOOD (  13.04  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,106 +119,69 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 
-Switch mdtloader client driver over to generic PAS TZ APIs. Generic PAS
+Switch qcom_wcnss client driver over to generic PAS TZ APIs. Generic PAS
 TZ service allows to support multiple TZ implementation backends like QTEE
 based SCM PAS service, OP-TEE based PAS service and any further future TZ
 backend service.
 
 Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 ---
- drivers/soc/qcom/mdt_loader.c       | 12 ++++++------
- include/linux/soc/qcom/mdt_loader.h |  6 +++---
- 2 files changed, 9 insertions(+), 9 deletions(-)
+ drivers/remoteproc/qcom_wcnss.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/soc/qcom/mdt_loader.c b/drivers/soc/qcom/mdt_loader.c
-index c004d444d698..fdde7eda538a 100644
---- a/drivers/soc/qcom/mdt_loader.c
-+++ b/drivers/soc/qcom/mdt_loader.c
-@@ -13,7 +13,7 @@
- #include <linux/firmware.h>
- #include <linux/kernel.h>
- #include <linux/module.h>
+diff --git a/drivers/remoteproc/qcom_wcnss.c b/drivers/remoteproc/qcom_wcnss.c
+index 4add9037dbd5..0dbdd18ab3dd 100644
+--- a/drivers/remoteproc/qcom_wcnss.c
++++ b/drivers/remoteproc/qcom_wcnss.c
+@@ -19,7 +19,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/pm_domain.h>
+ #include <linux/pm_runtime.h>
 -#include <linux/firmware/qcom/qcom_scm.h>
 +#include <linux/firmware/qcom/qcom_pas.h>
- #include <linux/sizes.h>
- #include <linux/slab.h>
+ #include <linux/regulator/consumer.h>
+ #include <linux/remoteproc.h>
  #include <linux/soc/qcom/mdt_loader.h>
-@@ -229,7 +229,7 @@ EXPORT_SYMBOL_GPL(qcom_mdt_read_metadata);
+@@ -257,7 +257,7 @@ static int wcnss_start(struct rproc *rproc)
+ 	wcnss_indicate_nv_download(wcnss);
+ 	wcnss_configure_iris(wcnss);
  
- static int __qcom_mdt_pas_init(struct device *dev, const struct firmware *fw,
- 			       const char *fw_name, int pas_id, phys_addr_t mem_phys,
--			       struct qcom_scm_pas_context *ctx)
-+			       struct qcom_pas_context *ctx)
- {
- 	const struct elf32_phdr *phdrs;
- 	const struct elf32_phdr *phdr;
-@@ -271,7 +271,7 @@ static int __qcom_mdt_pas_init(struct device *dev, const struct firmware *fw,
- 		goto out;
- 	}
- 
--	ret = qcom_scm_pas_init_image(pas_id, metadata, metadata_len, ctx);
-+	ret = qcom_pas_init_image(pas_id, metadata, metadata_len, ctx);
- 	kfree(metadata);
+-	ret = qcom_scm_pas_auth_and_reset(WCNSS_PAS_ID);
++	ret = qcom_pas_auth_and_reset(WCNSS_PAS_ID);
  	if (ret) {
- 		/* Invalid firmware metadata */
-@@ -280,7 +280,7 @@ static int __qcom_mdt_pas_init(struct device *dev, const struct firmware *fw,
+ 		dev_err(wcnss->dev,
+ 			"failed to authenticate image and release reset\n");
+@@ -269,7 +269,7 @@ static int wcnss_start(struct rproc *rproc)
+ 	if (wcnss->ready_irq > 0 && ret == 0) {
+ 		/* We have a ready_irq, but it didn't fire in time. */
+ 		dev_err(wcnss->dev, "start timed out\n");
+-		qcom_scm_pas_shutdown(WCNSS_PAS_ID);
++		qcom_pas_shutdown(WCNSS_PAS_ID);
+ 		ret = -ETIMEDOUT;
+ 		goto disable_iris;
+ 	}
+@@ -311,7 +311,7 @@ static int wcnss_stop(struct rproc *rproc)
+ 					    0);
  	}
  
- 	if (relocate) {
--		ret = qcom_scm_pas_mem_setup(pas_id, mem_phys, max_addr - min_addr);
-+		ret = qcom_pas_mem_setup(pas_id, mem_phys, max_addr - min_addr);
- 		if (ret) {
- 			/* Unable to set up relocation */
- 			dev_err(dev, "error %d setting up firmware %s\n", ret, fw_name);
-@@ -472,7 +472,7 @@ EXPORT_SYMBOL_GPL(qcom_mdt_load);
-  * firmware segments (e.g., .bXX files). Authentication of the segments done
-  * by a separate call.
-  *
-- * The PAS context must be initialized using qcom_scm_pas_context_init()
-+ * The PAS context must be initialized using qcom_pas_context_init()
-  * prior to invoking this function.
-  *
-  * @ctx:        Pointer to the PAS (Peripheral Authentication Service) context
-@@ -483,7 +483,7 @@ EXPORT_SYMBOL_GPL(qcom_mdt_load);
-  *
-  * Return: 0 on success or a negative error code on failure.
-  */
--int qcom_mdt_pas_load(struct qcom_scm_pas_context *ctx, const struct firmware *fw,
-+int qcom_mdt_pas_load(struct qcom_pas_context *ctx, const struct firmware *fw,
- 		      const char *firmware, void *mem_region, phys_addr_t *reloc_base)
- {
- 	int ret;
-diff --git a/include/linux/soc/qcom/mdt_loader.h b/include/linux/soc/qcom/mdt_loader.h
-index 82372e0db0a1..142409555425 100644
---- a/include/linux/soc/qcom/mdt_loader.h
-+++ b/include/linux/soc/qcom/mdt_loader.h
-@@ -10,7 +10,7 @@
+-	ret = qcom_scm_pas_shutdown(WCNSS_PAS_ID);
++	ret = qcom_pas_shutdown(WCNSS_PAS_ID);
+ 	if (ret)
+ 		dev_err(wcnss->dev, "failed to shutdown: %d\n", ret);
  
- struct device;
- struct firmware;
--struct qcom_scm_pas_context;
-+struct qcom_pas_context;
+@@ -557,10 +557,10 @@ static int wcnss_probe(struct platform_device *pdev)
  
- #if IS_ENABLED(CONFIG_QCOM_MDT_LOADER)
+ 	data = of_device_get_match_data(&pdev->dev);
  
-@@ -20,7 +20,7 @@ int qcom_mdt_load(struct device *dev, const struct firmware *fw,
- 		  phys_addr_t mem_phys, size_t mem_size,
- 		  phys_addr_t *reloc_base);
+-	if (!qcom_scm_is_available())
++	if (!qcom_pas_is_available())
+ 		return -EPROBE_DEFER;
  
--int qcom_mdt_pas_load(struct qcom_scm_pas_context *ctx, const struct firmware *fw,
-+int qcom_mdt_pas_load(struct qcom_pas_context *ctx, const struct firmware *fw,
- 		      const char *firmware, void *mem_region, phys_addr_t *reloc_base);
- 
- int qcom_mdt_load_no_init(struct device *dev, const struct firmware *fw,
-@@ -45,7 +45,7 @@ static inline int qcom_mdt_load(struct device *dev, const struct firmware *fw,
- 	return -ENODEV;
- }
- 
--static inline int qcom_mdt_pas_load(struct qcom_scm_pas_context *ctx,
-+static inline int qcom_mdt_pas_load(struct qcom_pas_context *ctx,
- 				    const struct firmware *fw, const char *firmware,
- 				    void *mem_region, phys_addr_t *reloc_base)
- {
+-	if (!qcom_scm_pas_supported(WCNSS_PAS_ID)) {
++	if (!qcom_pas_supported(WCNSS_PAS_ID)) {
+ 		dev_err(&pdev->dev, "PAS is not available for WCNSS\n");
+ 		return -ENXIO;
+ 	}
 -- 
 2.51.0
 
