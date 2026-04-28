@@ -4,103 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4D8FFF885A
-	for <ath12k@archiver.kernel.org>; Tue, 28 Apr 2026 16:47:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFEC0FF8868
+	for <ath12k@archiver.kernel.org>; Tue, 28 Apr 2026 16:54:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=lsaS50fJFWEgKS/X3mmwXYg/L5d5/h6qIX6nFemmP8U=; b=CoSL6xByCnwF2JUKZZgFbEACrW
-	pJnXooAVdNxxdE/c6OsjA4x1FDn+n9+yS3oeY2XEsuXKFSiOYKnx1v1IAN3/0CTHgInMMukKIZZku
-	hK5FHPseTOQLasJf4ZuASsTc4Hn5NJHozSuYEVInifL8i1pxbFXV2L0qnR/MtI4tPMUUcZmHJBgRd
-	9EzGHAtYm9OgQNJiYTS1hN1W4ssVLLr9fIYnQ0bY+KtF9gC6IGEYlysBbqtx1YfcqjPwTkQJHYBHr
-	Gz4KZD2wozZUHZjl1y3Cz0qdJf25Rw/r7XfJDMgj7kBnIHtvyLTAngmdFe8/60OdDtBQnd/5LVA4L
-	4Gl6GUGg==;
+	bh=m3Z9r4IpEjJMUHPOqoRO6rW4qYst7QOqGLcntOF/K5A=; b=goNm4z/Z6sc7XhG0R9UWIl/MIx
+	JTE178sevEgM7qMX705V6iN/rKrMIZQg3vrW3ZiMKBkOXIl5SyOab4ctQvShKmS5h8cJYdmUShO2E
+	ntXKotIoXc33s93uOeN2cRu4A344cDf9kQ4wxz9IlhOHXnhnazeiTRMDcx7AFyaQgLvzWuAm40CYw
+	V3Ej+PnnrwHWWToeI+7qkWOHjUvn4g4qrLkKjzFKPzXEo8SQ1rTltfgTzzHuShTc+iWuD2p0s6kM1
+	0CA0Lpprr+kTAjiFgAKmVxGsEKPwvF51NrNCdL4gDVPcdT1psmCbQ+uaEFjYt/t8Q2Ch0xA+XzkVg
+	dfOi/W2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHlaw-00000001yL5-2gYG;
-	Tue, 28 Apr 2026 16:47:34 +0000
-Received: from mail-oa1-x2e.google.com ([2001:4860:4864:20::2e])
+	id 1wHlhH-00000001z6E-2GES;
+	Tue, 28 Apr 2026 16:54:07 +0000
+Received: from mail-oo1-xc34.google.com ([2607:f8b0:4864:20::c34])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHlat-00000001yJu-0NLz
+	id 1wHlhF-00000001z5T-2Vj4
 	for ath12k@lists.infradead.org;
-	Tue, 28 Apr 2026 16:47:33 +0000
-Received: by mail-oa1-x2e.google.com with SMTP id 586e51a60fabf-4042fe53946so5208363fac.3
-        for <ath12k@lists.infradead.org>; Tue, 28 Apr 2026 09:47:30 -0700 (PDT)
+	Tue, 28 Apr 2026 16:54:06 +0000
+Received: by mail-oo1-xc34.google.com with SMTP id 006d021491bc7-6948da50eb5so14643eaf.1
+        for <ath12k@lists.infradead.org>; Tue, 28 Apr 2026 09:54:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=ieee.org; s=google; t=1777394849; x=1777999649; darn=lists.infradead.org;
+        d=ieee.org; s=google; t=1777395244; x=1778000044; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=lsaS50fJFWEgKS/X3mmwXYg/L5d5/h6qIX6nFemmP8U=;
-        b=QC5Qqro4mFCY1roEi2lY2Kgaup1GRLngLXzhRrvPz7Gemf45QQiApRchtV6lmDhjJe
-         B6UM+RhyIKlkH/FDZ0MlAy4YScZ/u5XJlD3sfMhk6oDMP1jhJVvcl4cTJpJrSpXOuNGy
-         ICcclbL0iA4uBMBePFlSrKwI0fxCIrvj57FVI=
+        bh=m3Z9r4IpEjJMUHPOqoRO6rW4qYst7QOqGLcntOF/K5A=;
+        b=Y5aIWF3IFN1iIaG2uTeIdGiU6defubFUHdiqbIG9OGuScwRGxTaKA1QXRhg14SIZOJ
+         SN0dSiLDi+EFcIu+BTXuJnMlC0fwH0aMgOkqzlYCdJUKQOhqiBjxTUIUbpKYWxXtYRx3
+         8ydZ74Yh1HmP0rS++WhQoTTNdyoVqA9MDz8PY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1777394849; x=1777999649;
+        d=1e100.net; s=20251104; t=1777395244; x=1778000044;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=lsaS50fJFWEgKS/X3mmwXYg/L5d5/h6qIX6nFemmP8U=;
-        b=cjjRRHWZZcUQhrMGLW7l+TDabNDG99Av9ca6/2bDrqZgj5yOZrrnGEFTQgJxN+JE7y
-         w8at7rI1ps2uYgAe0HbsV3WhYXCrEoa5bQz2QkM1rwnLqlgSHDCcukB2OQ9VxYChgbxE
-         FC96bgCclBD10fGko4pJj5VFXexA9tpaUS6DO0EANTMKC8JZlFhmzKQKWqDp0wL2BoZ2
-         XV0pvojxkBPhg9UreAwGn/C3y9b1Jszc9435xk+OH0LIdZjIG8o9Klkmh2211DC16YTm
-         VI9a2P6SIFcVMp2zqZsO+K8MYVJT6JKZDZajoHBbXPBi9ya+4Iu/IwEWSAc4LOly+qSt
-         adfg==
-X-Forwarded-Encrypted: i=1; AFNElJ/swA3mou4ZXklD+OZMWvTWSf3X91frB85hviFDcejuNuy2rwDOfrqaqriK7il1trH9QpwhxJI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyMe3Fw+LryahBUdAn7Oyks2PdDTBPrRZYws00xOwC/U+l7QEZ6
-	1I9AEa4nAtg3MGC67buddysg77qgLQ0caXj74EpJihqszPDvQ5o82SU/DE/ZdsYRKA==
-X-Gm-Gg: AeBDiev7OPV0Gw2ddaRTDdZZoAqWrgo/54+5pf563XYqUi52tXvLJKNX9lHqyJOWvix
-	QIb/onrEC1rIrJwcjGgIIon4wm4oJcDZ8H0ubqC4vbkW7iSprKS99zawCmfSBTS3XR0PLdRW2yM
-	HTqk6zkoEdWJGyR+et633Jod9ga4e5lFQrRdrZXc463rKkCYsrs/6Pn2dZd3qSbTcigyTWEt2HJ
-	gAK4u6td4kJzAGkLKTmBqHSRLUXiDK4HkIB/YtHkV6Q0ZTUsAdoflp0kcY75rxUoreFfWJAk4WM
-	6/8t3hw2sszozTEeXPWaSZqj+NjpMrmtL1NlZJrDhRBs1YA5EY3Jp/p2CGcr8w0nPr3Jje27S+Q
-	O56Ahyk+72LbYcDChuZFqU972MEvW6lansL+YfEaOf4mXqQghe0zCCRd86e/5KqbJoxIIurb/Kq
-	m8fppyUsjWnIwrxpmUYKAzNvLQkyA5vljxQG+5fffLiJS+H8ovR/P1sKg9vFjMjfGxNYIC
-X-Received: by 2002:a05:6871:e78f:b0:42f:ba47:36f5 with SMTP id 586e51a60fabf-433f396963emr2135147fac.17.1777394849189;
-        Tue, 28 Apr 2026 09:47:29 -0700 (PDT)
+        bh=m3Z9r4IpEjJMUHPOqoRO6rW4qYst7QOqGLcntOF/K5A=;
+        b=RicJGaqPROlwFQFFHuTP5xLpzhoWzdB8ezi1+nGv0eUrOUkf3kwSig9SNtIvI11TVf
+         9VuQ7iRtz5Bei8WT5KsGNFWpTrngStsvi+hr+VRD6x1EKfOZLaatw2cqpXWCxaWxQmYA
+         k25RqNcJSTwI3ZXPWaNIUkOI5rtg5CPEQbwILFn+o+IW0gtieOaVQQ8801iob6aFqEn9
+         pkikg0qZH2x7uFIDC9srN9vyDdyKZ/MnpesMByw0BUcypYi1LL8LngL3sVW7GdQkSqGQ
+         Xq0ToewXbW8EuW3NoXbeoWuDe2MfwotIxZQdHlOBQe+TRTgaXm98uG+lN/gt9zlHrVDz
+         o7bQ==
+X-Forwarded-Encrypted: i=1; AFNElJ9hg0tMmzBrmGYRRd4VUYMM0ti7naDpdcYr/64uX2LyuvAngm/YwFsbANapfBocJnDqAXS11uE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwK06Pg+heKjj7S3zn4+fJalhC8N7WjiQHTD9d+8b1if3leBwGo
+	4inx7vWiM9bSne5SP2tDjSTSKgFON1jpyXRuqv1g3FA0NyVCLYslK0KJPty3efFnaA==
+X-Gm-Gg: AeBDiet2YeannsiuEptgxUYizQKDfxD2V/nXxtBxdBAcqT4IDyTIbw0sSMsK3afoVTK
+	Qfm0yARoudKfdUSbt0/GuT5LeOg6G+f+mr7qIcixEeHCHdX1s3bfpAow0mPCM7PDI9rqEI+F7T4
+	P9bLSEnSUePABFO7cQ9sTf3HoZIjL+26u8+FnaVjFzlwsdif7OwqGDi1Dnc2maQHw12sgKF7iY1
+	aTZ9EwSPVX2/PzlrpEtfYx8/KTcL4QV6GIQ/4Yzo/WvNWEa6WYS2bEK5chhBQmRi94tk6PSQmft
+	VWVIbqbhRDGPCLs5WQjwh0cb70yal0mEuhIdr0nHIa8ai06JZa8H6XbxdiU6Vmad5gO8p0cj7hW
+	EhUHZzPHcqe8nKp+2iCbY3TWSFm5U0q8a4gAutQiG3g8QvMMtmjyGjprQQH+4TIKks5RdkHRFMc
+	QK7eoWa9j/ICcjVdbkYxOj5du9XpYm//to3ux1v2Vpxa7kPmjgpRPtBEoDs8qFTUCnmEJcSlO0N
+	utmyxo=
+X-Received: by 2002:a05:6820:4b05:b0:696:13e9:6863 with SMTP id 006d021491bc7-6965c5ee294mr1871158eaf.2.1777395244239;
+        Tue, 28 Apr 2026 09:54:04 -0700 (PDT)
 Received: from [172.22.22.28] (c-75-72-117-212.hsd1.mn.comcast.net. [75.72.117.212])
-        by smtp.googlemail.com with ESMTPSA id 586e51a60fabf-433efbf1d8dsm2255892fac.6.2026.04.28.09.47.27
+        by smtp.googlemail.com with ESMTPSA id 586e51a60fabf-433effdc79bsm2240677fac.18.2026.04.28.09.54.01
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 28 Apr 2026 09:47:28 -0700 (PDT)
-Message-ID: <bf380b65-1513-4792-9e3c-d03bff17c141@ieee.org>
-Date: Tue, 28 Apr 2026 11:47:26 -0500
+        Tue, 28 Apr 2026 09:54:03 -0700 (PDT)
+Message-ID: <aa2b2823-05b2-49a6-bdd3-622523497a0d@ieee.org>
+Date: Tue, 28 Apr 2026 11:54:00 -0500
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/4] net: ipa: Use the unified QMI service ID instead
- of defining it locally
-To: Daniel Lezcano <daniel.lezcano@oss.qualcomm.com>, konradybcio@kernel.org,
- andersson@kernel.org
-Cc: linux-kernel@vger.kernel.org, Alex Elder <elder@kernel.org>,
- Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
- <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Jeff Johnson <jjohnson@kernel.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Srinivas Kandagatla <srini@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Takashi Iwai <tiwai@suse.com>, Kees Cook <kees@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Arnd Bergmann <arnd@arndb.de>, Mark Brown <broonie@kernel.org>,
- Wesley Cheng <quic_wcheng@quicinc.com>, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
- ath11k@lists.infradead.org, ath12k@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- linux-sound@vger.kernel.org,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-References: <20260316171419.2619620-1-daniel.lezcano@oss.qualcomm.com>
- <20260316171419.2619620-2-daniel.lezcano@oss.qualcomm.com>
+Subject: Re: [PATCH v4 12/15] net: ipa: Switch to generic PAS TZ APIs
+To: Sumit Garg <sumit.garg@kernel.org>, andersson@kernel.org,
+ konradybcio@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+ linux-media@vger.kernel.org, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+ linux-remoteproc@vger.kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, robin.clark@oss.qualcomm.com, sean@poorly.run,
+ akhilpo@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
+ jesszhan0024@gmail.com, marijn.suijten@somainline.org, airlied@gmail.com,
+ simona@ffwll.ch, vikash.garodia@oss.qualcomm.com,
+ dikshita.agarwal@oss.qualcomm.com, bod@kernel.org, mchehab@kernel.org,
+ elder@kernel.org, andrew+netdev@lunn.ch, davem@davemloft.net,
+ edumazet@google.com, kuba@kernel.org, pabeni@redhat.com,
+ jjohnson@kernel.org, mathieu.poirier@linaro.org,
+ trilokkumar.soni@oss.qualcomm.com, mukesh.ojha@oss.qualcomm.com,
+ pavan.kondeti@oss.qualcomm.com, jorge.ramirez@oss.qualcomm.com,
+ tonyh@qti.qualcomm.com, vignesh.viswanathan@oss.qualcomm.com,
+ srinivas.kandagatla@oss.qualcomm.com, amirreza.zarrabi@oss.qualcomm.com,
+ jens.wiklander@linaro.org, op-tee@lists.trustedfirmware.org,
+ apurupa@qti.qualcomm.com, skare@qti.qualcomm.com,
+ linux-kernel@vger.kernel.org, Sumit Garg <sumit.garg@oss.qualcomm.com>
+References: <20260427095603.1157963-1-sumit.garg@kernel.org>
+ <20260427095603.1157963-13-sumit.garg@kernel.org>
 Content-Language: en-US
 From: Alex Elder <elder@ieee.org>
-In-Reply-To: <20260316171419.2619620-2-daniel.lezcano@oss.qualcomm.com>
+In-Reply-To: <20260427095603.1157963-13-sumit.garg@kernel.org>
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260428_094731_230946_A9ECA198 
-X-CRM114-Status: GOOD (  16.42  )
+X-CRM114-CacheID: sfid-20260428_095405_649369_8E6EB67A 
+X-CRM114-Status: GOOD (  17.48  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,55 +119,76 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 3/16/26 12:14 PM, Daniel Lezcano wrote:
-> Instead of defining a local macro with a custom name for the QMI
-> service identifier, use the one provided in qmi.h and remove the
-> locally defined macro.
+On 4/27/26 4:56 AM, Sumit Garg wrote:
+> From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 > 
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-> Signed-off-by: Daniel Lezcano <daniel.lezcano@oss.qualcomm.com>
+> Switch ipa client driver over to generic PAS TZ APIs. Generic PAS TZ
+> service allows to support multiple TZ implementation backends like QTEE
+> based SCM PAS service, OP-TEE based PAS service and any further future TZ
+> backend service.
+> 
+> Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 
-Looks good!
+Looks good to me.
 
 Reviewed-by: Alex Elder <elder@riscstar.com>
 
 > ---
->   drivers/net/ipa/ipa_qmi.c | 6 ++----
->   1 file changed, 2 insertions(+), 4 deletions(-)
+>   drivers/net/ipa/Kconfig    |  2 +-
+>   drivers/net/ipa/ipa_main.c | 13 ++++++++-----
+>   2 files changed, 9 insertions(+), 6 deletions(-)
 > 
-> diff --git a/drivers/net/ipa/ipa_qmi.c b/drivers/net/ipa/ipa_qmi.c
-> index d771f3a71f94..37936ad132a2 100644
-> --- a/drivers/net/ipa/ipa_qmi.c
-> +++ b/drivers/net/ipa/ipa_qmi.c
-> @@ -66,11 +66,9 @@
->    *   determination of when things are "ready"
->    */
+> diff --git a/drivers/net/ipa/Kconfig b/drivers/net/ipa/Kconfig
+> index 01d219d3760c..a9aff1b7977d 100644
+> --- a/drivers/net/ipa/Kconfig
+> +++ b/drivers/net/ipa/Kconfig
+> @@ -6,7 +6,7 @@ config QCOM_IPA
+>   	depends on QCOM_RPROC_COMMON || (QCOM_RPROC_COMMON=n && COMPILE_TEST)
+>   	depends on QCOM_AOSS_QMP || QCOM_AOSS_QMP=n
+>   	select QCOM_MDT_LOADER
+> -	select QCOM_SCM
+> +	select QCOM_PAS
+>   	select QCOM_QMI_HELPERS
+>   	help
+>   	  Choose Y or M here to include support for the Qualcomm
+> diff --git a/drivers/net/ipa/ipa_main.c b/drivers/net/ipa/ipa_main.c
+> index 788dd99af2a4..3cd9e44680e9 100644
+> --- a/drivers/net/ipa/ipa_main.c
+> +++ b/drivers/net/ipa/ipa_main.c
+> @@ -14,7 +14,7 @@
+>   #include <linux/pm_runtime.h>
+>   #include <linux/types.h>
 >   
-> -#define IPA_HOST_SERVICE_SVC_ID		0x31
->   #define IPA_HOST_SVC_VERS		1
->   #define IPA_HOST_SERVICE_INS_ID		1
+> -#include <linux/firmware/qcom/qcom_scm.h>
+> +#include <linux/firmware/qcom/qcom_pas.h>
+>   #include <linux/soc/qcom/mdt_loader.h>
 >   
-> -#define IPA_MODEM_SERVICE_SVC_ID	0x31
->   #define IPA_MODEM_SERVICE_INS_ID	2
->   #define IPA_MODEM_SVC_VERS		1
+>   #include "ipa.h"
+> @@ -624,10 +624,13 @@ static int ipa_firmware_load(struct device *dev)
+>   	}
 >   
-> @@ -484,7 +482,7 @@ int ipa_qmi_setup(struct ipa *ipa)
->   	if (ret)
->   		return ret;
+>   	ret = qcom_mdt_load(dev, fw, path, IPA_PAS_ID, virt, phys, size, NULL);
+> -	if (ret)
+> +	if (ret) {
+>   		dev_err(dev, "error %d loading \"%s\"\n", ret, path);
+> -	else if ((ret = qcom_scm_pas_auth_and_reset(IPA_PAS_ID)))
+> -		dev_err(dev, "error %d authenticating \"%s\"\n", ret, path);
+> +	} else {
+> +		ret = qcom_pas_auth_and_reset(IPA_PAS_ID);
+> +		if (ret)
+> +			dev_err(dev, "error %d authenticating \"%s\"\n", ret, path);
+> +	}
 >   
-> -	ret = qmi_add_server(&ipa_qmi->server_handle, IPA_HOST_SERVICE_SVC_ID,
-> +	ret = qmi_add_server(&ipa_qmi->server_handle, QMI_SERVICE_ID_IPA,
->   			     IPA_HOST_SVC_VERS, IPA_HOST_SERVICE_INS_ID);
->   	if (ret)
->   		goto err_server_handle_release;
-> @@ -501,7 +499,7 @@ int ipa_qmi_setup(struct ipa *ipa)
->   	/* We need this ready before the service lookup is added */
->   	INIT_WORK(&ipa_qmi->init_driver_work, ipa_client_init_driver_work);
+>   	memunmap(virt);
+>   out_release_firmware:
+> @@ -758,7 +761,7 @@ static enum ipa_firmware_loader ipa_firmware_loader(struct device *dev)
+>   		return IPA_LOADER_INVALID;
+>   out_self:
+>   	/* We need Trust Zone to load firmware; make sure it's available */
+> -	if (qcom_scm_is_available())
+> +	if (qcom_pas_is_available())
+>   		return IPA_LOADER_SELF;
 >   
-> -	ret = qmi_add_lookup(&ipa_qmi->client_handle, IPA_MODEM_SERVICE_SVC_ID,
-> +	ret = qmi_add_lookup(&ipa_qmi->client_handle, QMI_SERVICE_ID_IPA,
->   			     IPA_MODEM_SVC_VERS, IPA_MODEM_SERVICE_INS_ID);
->   	if (ret)
->   		goto err_client_handle_release;
+>   	return IPA_LOADER_DEFER;
 
 
