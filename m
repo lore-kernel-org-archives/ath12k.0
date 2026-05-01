@@ -4,132 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45D64CCFA13
-	for <ath12k@archiver.kernel.org>; Thu, 30 Apr 2026 21:54:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89BD6CD3425
+	for <ath12k@archiver.kernel.org>; Fri,  1 May 2026 13:27:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=oD/hwFjD2LNpSn907GkM770fKxCvjrV9J6VUXwvJVyk=; b=J4YK1mJrQ8jOHTe3jpVqF908Uu
-	JuC9+RgaUKso7OQwoho3C3P5+d2AZuryA+ffDi7CLxRFAQh1/g5uVGxKf4LqZHS7wEf2GR3jZsF+g
-	TdFMuYKzbH/aIzxuwjailORPJqejeXBe+XpOLfIN3jpqlv9dj5w1K/7d3+dQz3Wb4ciFjpeOz49Lb
-	htgFqmSqIMHsyo2ThrIN4Zkq4b7Q006GNj+RuOjx4WktJwlqnCtdVuL7l/R/i1jEWtei6O9N16FWa
-	aW6Xkv/K7vxZMCE1VDrBiNnDyDpytHtnDokbWsn5jmbV1Ee5gugAtOCVFyKHFekh2P27xqxwKgpGE
-	LG1yw5Kg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=X8s7IhI7V7UA5jLpN5Gs0P3dVxfDsU+zQLBJX3MZoOE=; b=E8t4bdfXGwCdTu/gaHIX73OUoL
+	vUpkMT2UcqSh8qrCCvkOs1istWQdbDpv+LXrL74okpF62gcg0KN7HL99QZm/S3TqFtbdUX2ho13Tt
+	kv0xwoABOrhTfBSmtIynSBK7GSk7TX+RcfHzT2duA+Mx0ak/qruj3nWYITNIIoNrJysP1uAhPi+2Z
+	c/JHazjFDHzWn+IailFxc20xOdDcKIOZRQyybVvAKEcxs1qNag1FOlbmVmropFUpYreZStyd+B02V
+	h3XpnFl93J/kYD8nMuGpyUYGQFKxMWy0V0F0dSP2IciUDsyalJyHL60BBVS9I1OnIKYw/rmMCxQSr
+	A+SzmjHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wIZKo-000000060wq-37Jp;
-	Thu, 30 Apr 2026 21:54:14 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wIntg-00000007Ag7-0pBT;
+	Fri, 01 May 2026 13:27:12 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wIZKm-000000060wR-1RAf
+	id 1wIntd-00000007Afk-2Gys
 	for ath12k@lists.infradead.org;
-	Thu, 30 Apr 2026 21:54:13 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63UGIcld2121658
-	for <ath12k@lists.infradead.org>; Thu, 30 Apr 2026 21:54:11 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	oD/hwFjD2LNpSn907GkM770fKxCvjrV9J6VUXwvJVyk=; b=IdEFwmdNbwRqQAUT
-	vAqHPqSgxaw7LsSVuvKhZPLpEAHKjn1Ki6Jnqqrk1QvKXji/phDgmnlL8tHKULUE
-	O9hdHa+4lDOjdkmCs/YnSTmcA5Ud76ozHgkaBSLyxTLv+ZF9utMuLofw/3rqmz3C
-	JX82xY+bbxh1IWwrbxNuM2viPwOVg31LCfUZa+tbBoI4kJGsNbJrktB9WZqKVQYR
-	6wxQz+caN++kiHQz7+IUhRRvmYd35ZJunzBZztaP3dn+tdldDq8kppgEAqnlHpM4
-	exMqdREdWtVeUfQ0Pw8YUzzUBdfMJvlB9SE10AIID8JB3aykpOG6NpIBU9U9c74Z
-	0ebbdg==
-Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dvag4semh-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 30 Apr 2026 21:54:11 +0000 (GMT)
-Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-12c8de02a4dso8047044c88.1
-        for <ath12k@lists.infradead.org>; Thu, 30 Apr 2026 14:54:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1777586051; x=1778190851; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=oD/hwFjD2LNpSn907GkM770fKxCvjrV9J6VUXwvJVyk=;
-        b=kHqbO6IMzfzbOqvry6WaXNIT0lxhAAiwsbXQbiU0mLUTpN4+G03AUr50eJDaz8bT9C
-         7FYXdd8vHEct7eggQGX7u+5SsphkfaDapgxkzHOm2f+JR63cle2+N8EP+P/FbUeTTI02
-         ZigF2M4r8NGahcP+dBYcFKRZ1S6jvWvZ36ShSvVQbMnchVn2fqbSHZcpxveUSLGYU1ip
-         hpgK5hAqumb/Tgomlc3VgugSsWu6Qm8YW/rXRYLNas78MUCoCFrkpRoaL4Z/kZOSIUkf
-         PKds2V33q97QUe7MAMvIPku4kQ+wLOjF6iXo3cNGUJa1NH/tGgbliX4eWFjb80MdCBjW
-         a1HA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1777586051; x=1778190851;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=oD/hwFjD2LNpSn907GkM770fKxCvjrV9J6VUXwvJVyk=;
-        b=Cc9jyg5/4C372YWDiU6/RCdXO9lYxNPEendyCcA77ghb50oycZa7jiacPhXdoiD2Ci
-         UhNRxQIQGvmjcqSj+QlT8V2DV1GPnitikg9MnPV173YxjoK6VhOG4UWdN3k/WnoQP0u/
-         SvcgiIIUQ4+DC59huvpoJ6Jy3UiWLdtRGTTcD8XNzQMo8X1zUuUuELtScBwT/AYZED/f
-         ECEsK+dO6pJVoaGsPFPEyUzyXwrhXbVPhl4ZeEh0az+fHi4rQ2ZfqCVdF85Pc+fXxLsG
-         7h+TBjE70w8hnwxhoWHSCfRxpfs0I+EA38O9HWqEAq5MnaUINP2pV1awmv//dB0ImW1e
-         CBUA==
-X-Forwarded-Encrypted: i=1; AFNElJ9BWYABJcxwkeAipkq6Z4zWvhZZtKDORIYqSH1oYIAEygDjCYSSYBps6o/QPXGOVp7SRDsFMlg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyUtQygJvoxbxtJY8S5bNAPOEiSXde97qNCIpddlguZT2ZvHvpr
-	xu3CxuAoj6fulVO7Omg4tzWsLfcjFcTocHX0PAPKpxM8h7xTtsPHNyBKWuF6vANQjcNBQQRdENn
-	02Sh2OGBkkRSGUjriwz1++jZNeRPn0ZzN+i/cvlIDhcDlx85Hs+Fa6+8jrvomt/t7
-X-Gm-Gg: AeBDiesF2G16Ty2e+MN+pcf6balnMjW8QaHQtHOHSI7xQAflBIL9DviZnRehq7qHaAy
-	0IC6YonOwWwZWZBaK0fRX85smeSvfvzRgjwBu73Wje3SQTrpYfdUdzJqoA6BZ7iVGN19J6dhqC2
-	zr6hfNDz7AN7dmzrX+BHN/ximu8mc6/nyczPe0DdCpXQHngISu98ILMXlgZl0cZZ34lk9F2Uedk
-	mrub3tsKi4s5EqSfx9L14lZZJn2ADBweTtVuCgGNIKnyGDh1pUMKTAGZT3RIOlSY1XvxCMZJTYp
-	2txRS9ZR/44cnsosRXcwINTkuN4mt9SAyRjnhMgno/k2rs5bRvb3+8YoYAGqHNZ/mv3WmYFoL/K
-	r/0eF60nwzacEZx83KxlzhMzN49nLrDbSh+c5BBgc0vPN9oPi3FgQBuyc5UpEvsJq3MaRtbz9Hq
-	AAS1eHEqZvowgSL4EPxTTLN+m/
-X-Received: by 2002:a05:7022:258f:b0:12c:8f92:c6ba with SMTP id a92af1059eb24-12dead0b926mr2583412c88.34.1777586050770;
-        Thu, 30 Apr 2026 14:54:10 -0700 (PDT)
-X-Received: by 2002:a05:7022:258f:b0:12c:8f92:c6ba with SMTP id a92af1059eb24-12dead0b926mr2583395c88.34.1777586050260;
-        Thu, 30 Apr 2026 14:54:10 -0700 (PDT)
-Received: from [192.168.1.59] (c-24-130-122-79.hsd1.ca.comcast.net. [24.130.122.79])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-12df8287711sm416994c88.4.2026.04.30.14.54.09
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 30 Apr 2026 14:54:09 -0700 (PDT)
-Message-ID: <67aba8de-9a4e-46bd-936a-688abdb5d01e@oss.qualcomm.com>
-Date: Thu, 30 Apr 2026 14:54:08 -0700
+	Fri, 01 May 2026 13:27:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 307B6435AD;
+	Fri,  1 May 2026 13:27:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A09DDC2BCB4;
+	Fri,  1 May 2026 13:26:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1777642028;
+	bh=cecY22npZ8O09cZUaB8M0VENwxo6jF899E2WK/sGM8U=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Ks9s1mZIkV8HxwO4Mq2+M0rNhz33rtPZ+PEpQg8O0T7agTQM/ie+qo1rwFzMc+b+A
+	 VqDH4/+JcAgC//FSDTXVNeTLY3ZnVf6ao0PPeE2eDyKLB70fqAtG1BZGKK4J4NwVYM
+	 OfaQriqJVci3Be7SKDrYFRY61OXwF0wXPYEyzsVt5ayiFhEFxMW1q5daFboq3L7XMO
+	 64Cx2hTxZcYCLazmmG5vv2hGIZnAcTrMTjhtB+7TrKmtFgXcpfm7HFnitN26O/Gx8U
+	 JOUfHUQd9G+45ryjeV+BQBCvFltUxfgmsGCNc+KFS0VD58QfpBufJUzuhvutKP50DW
+	 4FZ/nGOcO+OnA==
+Date: Fri, 1 May 2026 18:56:50 +0530
+From: Sumit Garg <sumit.garg@kernel.org>
+To: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
+Cc: andersson@kernel.org, konradybcio@kernel.org,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+	linux-media@vger.kernel.org, netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+	linux-remoteproc@vger.kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org,
+	robin.clark@oss.qualcomm.com, sean@poorly.run,
+	akhilpo@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
+	jesszhan0024@gmail.com, marijn.suijten@somainline.org,
+	airlied@gmail.com, simona@ffwll.ch, vikash.garodia@oss.qualcomm.com,
+	dikshita.agarwal@oss.qualcomm.com, bod@kernel.org,
+	mchehab@kernel.org, elder@kernel.org, andrew+netdev@lunn.ch,
+	davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
+	pabeni@redhat.com, jjohnson@kernel.org, mathieu.poirier@linaro.org,
+	trilokkumar.soni@oss.qualcomm.com, pavan.kondeti@oss.qualcomm.com,
+	jorge.ramirez@oss.qualcomm.com, tonyh@qti.qualcomm.com,
+	vignesh.viswanathan@oss.qualcomm.com,
+	srinivas.kandagatla@oss.qualcomm.com,
+	amirreza.zarrabi@oss.qualcomm.com, jens.wiklander@linaro.org,
+	op-tee@lists.trustedfirmware.org, apurupa@qti.qualcomm.com,
+	skare@qti.qualcomm.com, linux-kernel@vger.kernel.org,
+	Sumit Garg <sumit.garg@oss.qualcomm.com>
+Subject: Re: [PATCH v4 11/15] media: qcom: Switch to generic PAS TZ APIs
+Message-ID: <afSqGp-yzZip7q-j@sumit-xelite>
+References: <20260427095603.1157963-1-sumit.garg@kernel.org>
+ <20260427095603.1157963-12-sumit.garg@kernel.org>
+ <20260428193714.sg5n3tntww2nuquu@hu-mojha-hyd.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath 0/2] fix leaks in some WMI error path
-To: Nicolas Escande <nico.escande@gmail.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20260424144813.1708214-1-nico.escande@gmail.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20260424144813.1708214-1-nico.escande@gmail.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: VrXsefyNuqu6hPnBBVZgT1JgrSzTA-_A
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDMwMDIyNiBTYWx0ZWRfXxBTkko/msc//
- r8BQBjXh2fwQ6EX5A1UnRqwDwype5z637FE4iDzpY9v9M2iULoYqUPQwuGABoeQWjy05ziI4cEh
- EBmTa4S99md8O7iold7mqdqoXfi+ISZ9Fa/6hQqayBSQUbjlRgEj/0blWFMWIzqeyWoW5V2lgxE
- XueFKQDbL1L9tvAc/ZG1H6PEwUqnA6hQxa5ws+4E6i3jiDgoyLWpvNhtXEtYdzNFdcGXCRRSYV1
- Q00zPp7IGr09clhmw/JY/kNAw/gm+MpsozWJ0eguMj6OYm1z8jptx3Sbw7Sl0zPKsQAKjeQwohI
- CA24rxqhSHXzh8j4fSGCxJ/dvOI9y6v3vQ3LkDm4KSCEP0PmxVxPG+Y2vSRlvCzQP56xrYXt0ss
- cCuCB3obV17sSDNPpGctMqUi9rXGUYB7gYev+LjyXt+GIFm9wO6DMu7JVy8CD+0OQEBU40tV1r+
- YUh0Cm74lQFVSHskdLg==
-X-Authority-Analysis: v=2.4 cv=UcxhjqSN c=1 sm=1 tr=0 ts=69f3cf83 cx=c_pps
- a=JYo30EpNSr/tUYqK9jHPoA==:117 a=Tg7Z00WN3eLgNEO9NLUKUQ==:17
- a=IkcTkHD0fZMA:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=VwQbUJbxAAAA:8 a=pGLkceISAAAA:8 a=FqyUr2HIOI8AG8dd71AA:9 a=QEXdDO2ut3YA:10
- a=zgiPjhLxNE0A:10 a=Fk4IpSoW4aLDllm1B1p-:22
-X-Proofpoint-ORIG-GUID: VrXsefyNuqu6hPnBBVZgT1JgrSzTA-_A
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-04-30_06,2026-04-30_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 bulkscore=0 clxscore=1015 lowpriorityscore=0 malwarescore=0
- impostorscore=0 adultscore=0 spamscore=0 phishscore=0 priorityscore=1501
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2604200000 definitions=main-2604300226
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20260428193714.sg5n3tntww2nuquu@hu-mojha-hyd.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260430_145412_410950_5CA0391F 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20260501_062709_631242_878FC3B3 
+X-CRM114-Status: GOOD (  26.74  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,24 +94,200 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/24/2026 7:48 AM, Nicolas Escande wrote:
-> So this is similar work to what has been posted here [0] for ath12k.
+On Wed, Apr 29, 2026 at 01:07:14AM +0530, Mukesh Ojha wrote:
+> On Mon, Apr 27, 2026 at 03:25:59PM +0530, Sumit Garg wrote:
+> > From: Sumit Garg <sumit.garg@oss.qualcomm.com>
+> > 
+> > Switch qcom media client drivers over to generic PAS TZ APIs. Generic PAS
+> > TZ service allows to support multiple TZ implementation backends like QTEE
+> > based SCM PAS service, OP-TEE based PAS service and any further future TZ
+> > backend service.
+> > 
+> > Along with that pass proper PAS ID to set_remote_state API. As per testing
+> > the SCM backend just ignores it while OP-TEE makes use of it to for proper
+> > book keeping purpose.
 > 
-> When we use the pattern 'return ath11k_wmi_cmd_send(...)' without
-> explicitly checking the return value we fail to free the allocated skb.
+> When we use 'Along with' or 'while at it', patch is doing two things and
+> not one.
+
+Okay, I will split this into 2.
+
 > 
-> This has been split into 2 patches per Jeff's guidance to hopefully
-> ease the backporting process.
+> > 
+> > Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
+> > ---
+> >  drivers/media/platform/qcom/iris/Kconfig      | 25 ++++++++++---------
+> >  .../media/platform/qcom/iris/iris_firmware.c  |  9 ++++---
+> >  drivers/media/platform/qcom/venus/Kconfig     |  1 +
+> >  drivers/media/platform/qcom/venus/firmware.c  | 11 ++++----
+> >  4 files changed, 25 insertions(+), 21 deletions(-)
+> > 
+> > diff --git a/drivers/media/platform/qcom/iris/Kconfig b/drivers/media/platform/qcom/iris/Kconfig
+> > index 3c803a05305a..f54b759c18aa 100644
+> > --- a/drivers/media/platform/qcom/iris/Kconfig
+> > +++ b/drivers/media/platform/qcom/iris/Kconfig
+> > @@ -1,13 +1,14 @@
+> >  config VIDEO_QCOM_IRIS
+> > -        tristate "Qualcomm iris V4L2 decoder driver"
+> > -        depends on VIDEO_DEV
+> > -        depends on ARCH_QCOM || COMPILE_TEST
+> > -        select V4L2_MEM2MEM_DEV
+> > -        select QCOM_MDT_LOADER if ARCH_QCOM
+> > -        select QCOM_SCM
+> > -        select VIDEOBUF2_DMA_CONTIG
+> > -        help
+> > -          This is a V4L2 driver for Qualcomm iris video accelerator
+> > -          hardware. It accelerates decoding operations on various
+> > -          Qualcomm SoCs.
+> > -          To compile this driver as a module choose m here.
+> > +	tristate "Qualcomm iris V4L2 decoder driver"
+> > +	depends on VIDEO_DEV
+> > +	depends on ARCH_QCOM || COMPILE_TEST
+> > +	select V4L2_MEM2MEM_DEV
+> > +	select QCOM_MDT_LOADER if ARCH_QCOM
+> > +	select QCOM_SCM
+> > +	select QCOM_PAS
+> > +	select VIDEOBUF2_DMA_CONTIG
+> > +	help
+> > +	  This is a V4L2 driver for Qualcomm iris video accelerator
+> > +	  hardware. It accelerates decoding operations on various
+> > +	  Qualcomm SoCs.
+> > +	  To compile this driver as a module choose m here.
 > 
-> [0] https://lore.kernel.org/linux-wireless/20260422163258.3013872-1-nico.escande@gmail.com/
+> Here, Space replaced by Tabs just for one line.., should be fine.
+
+Yeah, spaces aren't meant here.
+
 > 
-> Nicolas Escande (2):
->   wifi: ath11k: fix leak in error path of some WOW related WMI commands
->   wifi: ath11k: fix error path leaks in some WMI calls
 > 
->  drivers/net/wireless/ath/ath11k/wmi.c | 131 ++++++++++++++++++++++----
->  1 file changed, 112 insertions(+), 19 deletions(-)
+> > diff --git a/drivers/media/platform/qcom/iris/iris_firmware.c b/drivers/media/platform/qcom/iris/iris_firmware.c
+> > index 5f408024e967..856fa6a79064 100644
+> > --- a/drivers/media/platform/qcom/iris/iris_firmware.c
+> > +++ b/drivers/media/platform/qcom/iris/iris_firmware.c
+> > @@ -4,6 +4,7 @@
+> >   */
+> >  
+> >  #include <linux/firmware.h>
+> > +#include <linux/firmware/qcom/qcom_pas.h>
+> >  #include <linux/firmware/qcom/qcom_scm.h>
+> >  #include <linux/of_address.h>
+> >  #include <linux/of_reserved_mem.h>
+> > @@ -79,7 +80,7 @@ int iris_fw_load(struct iris_core *core)
+> >  		return -ENOMEM;
+> >  	}
+> >  
+> > -	ret = qcom_scm_pas_auth_and_reset(core->iris_platform_data->pas_id);
+> > +	ret = qcom_pas_auth_and_reset(core->iris_platform_data->pas_id);
+> >  	if (ret)  {
+> >  		dev_err(core->dev, "auth and reset failed: %d\n", ret);
+> >  		return ret;
+> > @@ -93,7 +94,7 @@ int iris_fw_load(struct iris_core *core)
+> >  						     cp_config->cp_nonpixel_size);
+> >  		if (ret) {
+> >  			dev_err(core->dev, "qcom_scm_mem_protect_video_var failed: %d\n", ret);
+> > -			qcom_scm_pas_shutdown(core->iris_platform_data->pas_id);
+> > +			qcom_pas_shutdown(core->iris_platform_data->pas_id);
+> >  			return ret;
+> >  		}
+> >  	}
+> > @@ -103,10 +104,10 @@ int iris_fw_load(struct iris_core *core)
+> >  
+> >  int iris_fw_unload(struct iris_core *core)
+> >  {
+> > -	return qcom_scm_pas_shutdown(core->iris_platform_data->pas_id);
+> > +	return qcom_pas_shutdown(core->iris_platform_data->pas_id);
+> >  }
+> >  
+> >  int iris_set_hw_state(struct iris_core *core, bool resume)
+> >  {
+> > -	return qcom_scm_set_remote_state(resume, 0);
+> > +	return qcom_pas_set_remote_state(resume, core->irisi_platform_data->pas_id);
+> 
+> 
+> Should be a separate change for qcom_pas_set_remote_state()
+> 
+> >  }
+> > diff --git a/drivers/media/platform/qcom/venus/Kconfig b/drivers/media/platform/qcom/venus/Kconfig
+> > index ffb731ecd48c..574172724e8f 100644
+> > --- a/drivers/media/platform/qcom/venus/Kconfig
+> > +++ b/drivers/media/platform/qcom/venus/Kconfig
+> > @@ -6,6 +6,7 @@ config VIDEO_QCOM_VENUS
+> >  	select OF_DYNAMIC if ARCH_QCOM
+> >  	select QCOM_MDT_LOADER if ARCH_QCOM
+> >  	select QCOM_SCM
+> > +	select QCOM_PAS
+> >  	select VIDEOBUF2_DMA_CONTIG
+> >  	select V4L2_MEM2MEM_DEV
+> >  	help
+> > diff --git a/drivers/media/platform/qcom/venus/firmware.c b/drivers/media/platform/qcom/venus/firmware.c
+> > index 1de7436713ed..3c0727ea137d 100644
+> > --- a/drivers/media/platform/qcom/venus/firmware.c
+> > +++ b/drivers/media/platform/qcom/venus/firmware.c
+> > @@ -12,6 +12,7 @@
+> >  #include <linux/of_reserved_mem.h>
+> >  #include <linux/platform_device.h>
+> >  #include <linux/of_device.h>
+> > +#include <linux/firmware/qcom/qcom_pas.h>
+> >  #include <linux/firmware/qcom/qcom_scm.h>
+> >  #include <linux/sizes.h>
+> >  #include <linux/soc/qcom/mdt_loader.h>
+> > @@ -58,7 +59,7 @@ int venus_set_hw_state(struct venus_core *core, bool resume)
+> >  	int ret;
+> >  
+> >  	if (core->use_tz) {
+> > -		ret = qcom_scm_set_remote_state(resume, 0);
+> > +		ret = qcom_pas_set_remote_state(resume, VENUS_PAS_ID);
+> 
+> This too..
+> 
+> >  		if (resume && ret == -EINVAL)
+> >  			ret = 0;
+> >  		return ret;
+> > @@ -218,7 +219,7 @@ int venus_boot(struct venus_core *core)
+> >  	int ret;
+> >  
+> >  	if (!IS_ENABLED(CONFIG_QCOM_MDT_LOADER) ||
+> > -	    (core->use_tz && !qcom_scm_is_available()))
+> > +	    (core->use_tz && !qcom_pas_is_available()))
+> >  		return -EPROBE_DEFER;
+> >  
+> >  	ret = of_property_read_string_index(dev->of_node, "firmware-name", 0,
+> > @@ -236,7 +237,7 @@ int venus_boot(struct venus_core *core)
+> >  	core->fw.mem_phys = mem_phys;
+> >  
+> >  	if (core->use_tz)
+> > -		ret = qcom_scm_pas_auth_and_reset(VENUS_PAS_ID);
+> > +		ret = qcom_pas_auth_and_reset(VENUS_PAS_ID);
+> >  	else
+> >  		ret = venus_boot_no_tz(core, mem_phys, mem_size);
+> >  
+> > @@ -259,7 +260,7 @@ int venus_boot(struct venus_core *core)
+> >  						     res->cp_nonpixel_start,
+> >  						     res->cp_nonpixel_size);
+> >  		if (ret) {
+> > -			qcom_scm_pas_shutdown(VENUS_PAS_ID);
+> > +			qcom_pas_shutdown(VENUS_PAS_ID);
+> >  			dev_err(dev, "set virtual address ranges fail (%d)\n",
+> >  				ret);
+> >  			return ret;
+> > @@ -274,7 +275,7 @@ int venus_shutdown(struct venus_core *core)
+> >  	int ret;
+> >  
+> >  	if (core->use_tz)
+> > -		ret = qcom_scm_pas_shutdown(VENUS_PAS_ID);
+> > +		ret = qcom_pas_shutdown(VENUS_PAS_ID);
+> >  	else
+> >  		ret = venus_shutdown_no_tz(core);
+> >  
+> > -- 
+> > 2.51.0
+> 
+> with above change
+> 
+> Reviewed-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 > 
 
-Please repost and include the ath11k list
+Thanks.
+
+-Sumit
 
