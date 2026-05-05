@@ -4,64 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF119CD13DA
-	for <ath12k@archiver.kernel.org>; Tue,  5 May 2026 07:08:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E0A8FF8855
+	for <ath12k@archiver.kernel.org>; Tue,  5 May 2026 14:02:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:To:From:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=LyJWgyXmwRseHdrQwryzBfjOY6srlu4zgbG/wX8JNGc=; b=qw6QD7z9Sj/5h0X6FsqyZcs3Qk
-	dMzWDrTd3aM9OmTnsA8+OUNPZwJEix4PA0RAWXj0eroZsHr6VxreZJ7ywmM5vnPhmojRfdgq0uU1e
-	GTD9lUk0rtFepGSrwDx9iZJVyvv/NEBBf8egI5d5B2uv7cXL9YpMZDm/rOiVzUlEK1NJA7jmumr0X
-	dyGctb0QxUUKkUtlwLX3ZremHypiVhWSl98FkehSXziXiHkU3MUVPLxp+bue0wQIE4NxnTAMVtoVZ
-	vBUW9t5JLSR7M/J6KtEMGjdm1mqe0+SOsylHxElC/OvFGQ7NxtjaFWy5JDCpUlwFeb6CxUqe+rtjh
-	uDXag5cg==;
+	Content-Type:From:Subject:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=NX2GqVOMLwVw8Cryw7SY8QQJe69k3Ra4iwriZpqn3SU=; b=RKZA60b9xPTiFlFYYxmG+FYFnt
+	lhoUNrnVywtUd+RoyjDT5y5M7EaAg+ixr88Xb5M3vIJ3E3Wg6dIztC4VCEqivMxyyxcJSZbjaxUaF
+	seg/akypnfXLJuuLu6vL6+zzpECmN1Ewdt90HFQzWncDNbBPXd5dXexd4mgPKX4pLAOSwTwrmeauA
+	RbzpHp8IODgU3WmkL5gsL+c8yQ7WTuIBN8g6yS+YTBh0BNwX5EygbDpvEXJbZKoWDKkySsw0f/Deu
+	MPGGwnXgPFHcxqRNuAxqlNIQGeNSQOdL4QodWC6uvtQ4xtMwWUhoUOCJH04MrL6/aQ+Q8n7WL5FyF
+	vCHw0ZnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wK9tD-0000000FMJp-1p3C;
-	Tue, 05 May 2026 07:08:19 +0000
-Received: from mail.mokrynskyi.com ([65.109.39.229])
+	id 1wKGMF-0000000GQBc-0GSG;
+	Tue, 05 May 2026 14:02:43 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wK9t9-0000000FMHr-4AN6
+	id 1wKGMD-0000000GQB5-2fsf
+	for ath12k@bombadil.infradead.org;
+	Tue, 05 May 2026 14:02:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:From:Subject:Cc:To:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=NX2GqVOMLwVw8Cryw7SY8QQJe69k3Ra4iwriZpqn3SU=; b=OufU+7hSAsihknst3TLnsEVPZx
+	8oLVislrrdHLY8RsOt6sEExDleGw6WV+vdGC3w3dBsx2i4PxcClYfRQRuZ/QhZoKR0tnT7+68h3tc
+	U+OqXdTpo7pT6FIEdJ2MuT7/qIWL/RQfO6NlSxrBoYPsFYbGrJ4GGS4DelkffKO9PnjEdM4/h/whB
+	IKbzKBsOGN9jkkdPz344tNsZ/CERUkz+ny/fUlYuAzNwdZnmwFVxK1Ia4hrkyUgQUf9wtgVj/fpGk
+	/1OT8uB9RdESO81qCAZ3Y/FKkCUBMYHJgseRXzH1+wD8n6mziDnPVe7ectYyRcJ6sW0f6QsRQ6atN
+	TKkV+P6w==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1wKGM8-0000000DiBd-3OLU
 	for ath12k@lists.infradead.org;
-	Tue, 05 May 2026 07:08:17 +0000
-Message-ID: <f137dcdf-2663-433a-b794-e4c43cd4dd2c@mokrynskyi.com>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mokrynskyi.com;
-	s=dkim; t=1777964878;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=LyJWgyXmwRseHdrQwryzBfjOY6srlu4zgbG/wX8JNGc=;
-	b=RKC4aBVq2q4wDQzpxDskc3joYzyO6GDALygSdNe7Lef6rY5nME+ewtNccxjVW9zUvP7Yib
-	MV/7reF+lnEKf83UPfynmV4jvZpI68h/J0FQFJlrrgcz6YSYn3P/yrnjyURPSM0HXQabWq
-	RSpiQkEtvtj9qOuUyR/iwhdIWiHu+dY+u/k7KjhVmzYsUveeEBPE5YjrFDEp2dOpbwzuFG
-	s12wf+KBDVCm69F8AaOJZ8qV4wi2a/tJz414vospeCIzjYXZihkddMSDfQ/6tepikDoVch
-	ujmBI/L0yPrlqS0FCitgdZvgTjMLlrm2haLsKtZl8MjMobIdsMu1RqRNE/kZ5w==
-Authentication-Results: mail.mokrynskyi.com;
-	auth=pass smtp.mailfrom=nazar@mokrynskyi.com
-Date: Tue, 5 May 2026 10:07:57 +0300
+	Tue, 05 May 2026 14:02:40 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6458p2XD3409246
+	for <ath12k@lists.infradead.org>; Tue, 5 May 2026 14:02:33 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=NX2GqVOMLwVw8Cryw7SY8Q
+	QJe69k3Ra4iwriZpqn3SU=; b=CCQc0WFp7xQXWugeo64R2XJr94jSLF1YAvgDNm
+	yTRys/qkD3xKviO47iGpe2h4ekOkNlhwkozr4XcFTCGIanp3x+YegqC5PUsiXYJO
+	NrEnl+cRRfxC9r7XR0gEk7fWMVB68/3p1tT6/hUms0rZgcwdFM8dGC8abZQfSe4z
+	pC63Pmp5olLFX9Lrn9Bx3EHu92osJhnESfUPZkSgLlfcW5xgc/3eDe0MHfVM3e2C
+	uVT/iBPaKSzBa96EaVmavR1gRB5HdbkO9gEgrSjavO/+Ra1pJ0lovNsIXug3/uay
+	CFBUJrsXvQT1dFW1agxe1G2PirwBepIT4ElliPmMWTeuJ+PQ==
+Received: from mail-dl1-f70.google.com (mail-dl1-f70.google.com [74.125.82.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dxx00vdeu-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 05 May 2026 14:02:33 +0000 (GMT)
+Received: by mail-dl1-f70.google.com with SMTP id a92af1059eb24-130aab787bcso3252120c88.1
+        for <ath12k@lists.infradead.org>; Tue, 05 May 2026 07:02:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1777989752; x=1778594552; darn=lists.infradead.org;
+        h=content-transfer-encoding:from:content-language:subject:cc:to
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=NX2GqVOMLwVw8Cryw7SY8QQJe69k3Ra4iwriZpqn3SU=;
+        b=kHyJEMLFJoYoHpmiX+m4LfQNUxmp4KxGvMBzHzcSuqJ8YxRyMIHb1o3YVNG3qx+O4+
+         IxnO8xuqOy00HWCB+MLQpggryh6jMXQKv0dNdgB0/2IwZVisTmzwzEawH+0Ptq2N4Q5P
+         r+LmZb6+SNXcyO8DzQvdlK8Pgf2T3Zj96LlUxIxb/oOW01+iNR3osB8rzsJF0wgvxpR5
+         tGHeTaXvZZA2Bo8ZeQR4ZKO9dcORuz5DD+2gwN2dGjf/aYs8Fk8MHljjEWsJ12Wu3gqm
+         YQaVYEsYDL0TsorrYaS7ly8kSptgQm5YPBlFP5qq+5n6jZxL0kkDxMcNzA45TWq6KrOQ
+         song==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1777989752; x=1778594552;
+        h=content-transfer-encoding:from:content-language:subject:cc:to
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=NX2GqVOMLwVw8Cryw7SY8QQJe69k3Ra4iwriZpqn3SU=;
+        b=sqyMX3VmVUifw8yrnQ9RQlFBGed5SSMsqA6aCkcYSn+KNVXqyXqugR1JGmRUnbWXAX
+         LafkAtBYUDHpYju9aKzP9VxUWfpE1bjEhXtHvAtWPRe5QInycEZWy+uZpTBwhbSUrFOS
+         Zl2Tuqb/arTko5Onwvu8mSdIAUAAHSPAhO/9K8dXoRebZdUpZI6qBX1BE5OuTFW2pnBt
+         X0qRKP5gcK0iyAk2/9K8kNjzy//0dHebmMIA2W4xrIaxzPcowV9909RHnQRRl/criz36
+         AwEQOBM88/83LOIgUEn3iZTYZ//8b2UArVMqHcmRQA3YbXM00XB4MtQNzeRREL0jSvdT
+         K/Ww==
+X-Forwarded-Encrypted: i=1; AFNElJ+DhZkK6i9sAflpf0JRHJFxPgaBmNCj5qHJeCJp6DEffY7zg8dwLVPNxpgspbF5oRSJyDSiP5Q=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyooBm63s2zYTMIkV0aTBaE3/tzfkPBLGZ9s2iu0g1FTWqJHNnp
+	b+teLkncPaooypdMfLVcSM+iPcpGb/xAV6FBAJREWKrRzOJ1uVB1IqKy0Z87TeblZO97Dxccqpw
+	DDgNMTYv+wioGjpfDMMXwuPWxg72Jhls2pyPupVKJ8LPOM78BK3r79sFr4yBPRodi
+X-Gm-Gg: AeBDiesCwhZL8zcCJvVSaiUa5bW1T9Fi7RntR/GzIw7M9uh3oZN6nAA1NpAKSeJ+Ekl
+	2POlTzVA02Ej+mzQrzdjXB455axmxQ3gtApAUG5TnDVTbrpQaJoLDdUZdGTluhN7L276nRnofXy
+	AqRw4WE/ENSe44dFet23V7s4C207cLOMkcuCsS9VRr+Xs5uX9yRN5htrTB267q9YuZZbajSgZtl
+	cI0l5lLjyflenCzmVERBemULmrDBVsNVrr95iG42BWVILgvzNqN+6Lnsa2Rn4aus5OpmCc/Xgns
+	Gi21XXRZZKUwKxPPU50b6lX9/80B3RdFqthmu9zMIWkOaR33FW8JuaKSabA2kueFI20lC4pQe6y
+	0c2RHMSi23S6pxT7OO/6tXuvTs7LZZOrDv06Js1P911eN/12GOEQuVn1aXzb/Fth8pX/o
+X-Received: by 2002:a05:7022:660c:b0:12a:6ab7:3f73 with SMTP id a92af1059eb24-12dfd6ef2ecmr7329908c88.0.1777989751692;
+        Tue, 05 May 2026 07:02:31 -0700 (PDT)
+X-Received: by 2002:a05:7022:660c:b0:12a:6ab7:3f73 with SMTP id a92af1059eb24-12dfd6ef2ecmr7329781c88.0.1777989750591;
+        Tue, 05 May 2026 07:02:30 -0700 (PDT)
+Received: from [10.81.91.45] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-12df843f04esm17828716c88.13.2026.05.05.07.02.29
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 05 May 2026 07:02:30 -0700 (PDT)
+Message-ID: <1078e0dd-4d30-4cc1-8ca8-426099127efb@oss.qualcomm.com>
+Date: Tue, 5 May 2026 07:02:29 -0700
 MIME-Version: 1.0
-Subject: Re: The whole computer hard resets when trying to load ath12k driver
- in a KVM VM
-From: Nazar Mokrynskyi <nazar@mokrynskyi.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, ath12k@lists.infradead.org
-References: <1bd351ec-1ed9-4a01-aae5-0ceb17fbffce@mokrynskyi.com>
- <71416eb9-d313-48de-86b1-40e8044b4076@mokrynskyi.com>
- <bfb8fb5c-ac92-4ebc-8cb6-c46ac2751418@oss.qualcomm.com>
- <2b0d5ae2-efaf-49c1-a748-724b13dfc94c@mokrynskyi.com>
- <711d7c74-eca5-40d6-b3df-278324982fb6@mokrynskyi.com>
- <02e40ced-21b5-46ef-a969-cc83e5160dce@mokrynskyi.com>
-Content-Language: en-US, uk, uk-UA
-In-Reply-To: <02e40ced-21b5-46ef-a969-cc83e5160dce@mokrynskyi.com>
+User-Agent: Mozilla Thunderbird
+To: linux-wireless@vger.kernel.org, Johannes Berg <johannes@sipsolutions.net>
+Cc: ath10k@lists.infradead.org, ath11k@lists.infradead.org,
+        ath12k@lists.infradead.org, jjohnson@kernel.org
+Subject: pull-request: ath-current-20260505
+Content-Language: en-US
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-X-Spamd-Bar: ---
+Content-Transfer-Encoding: 7bit
+X-Authority-Analysis: v=2.4 cv=APflyhIR c=1 sm=1 tr=0 ts=69f9f879 cx=c_pps
+ a=SvEPeNj+VMjHSW//kvnxuw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
+ a=VwQbUJbxAAAA:8 a=gN_giuKsPDD6efEbj5cA:9 a=QEXdDO2ut3YA:10
+ a=Kq8ClHjjuc5pcCNDwlU0:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTA1MDEzNCBTYWx0ZWRfX6nd+9W5R2Iio
+ ftuBpor4WUCNoksyq4XT+YaAUXgovGet9ED8J4gmfJ48RgarlkCykwnulx+6DfrpTq4707Fc5Re
+ djxm3OpDIy9wajigIUCfweFPk4JqsSCrqOf2scqpSUlhWel6LS0tuk67W/DX7hc2LbyccDxM1jO
+ 5Y/bdEfi/O7zqwaUqjuXvXLwGXZDYU2FhxQ7f8ztcT0W10ZgEvq/UphAC3RdVa1yCFQdbokSd4r
+ gjE5e5fhIZ0b+BpLqeS2bNjxaleZ8YgbC0Wmt8BGV372NcgGLPxg0hHujrY7JavHbAAP+vKM2d9
+ iITF7eXwdaIN6A8oVGf7OgxJ54nzMgF12abnima6iwZHhtvgBPz/TzbD3h1jWqVe0U/JoBUZq4R
+ +cwcUGUJw+pfQVnyHbjxUkMgkffMXXc9bKtEuI7+HKi3QzEohZllMkpWSEld8utDze1ZTs9Qbuo
+ JNe63O0JIUMK3kpaK6g==
+X-Proofpoint-GUID: 1EZVrG9gvJ1IF0TpnVDNdp9DAVRDtyBJ
+X-Proofpoint-ORIG-GUID: 1EZVrG9gvJ1IF0TpnVDNdp9DAVRDtyBJ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-05-05_02,2026-04-30_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0 clxscore=1015 impostorscore=0 spamscore=0 phishscore=0
+ lowpriorityscore=0 malwarescore=0 adultscore=0 suspectscore=0
+ priorityscore=1501 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2604200000
+ definitions=main-2605050134
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260505_000816_421605_57901E86 
-X-CRM114-Status: GOOD (  30.97  )
+X-CRM114-CacheID: sfid-20260505_150237_244081_1B5423AE 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,148 +157,42 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Any feedback on the patches, is it upstreamable?
+The following changes since commit d997c32157d2ca06e9f3f00ba6c4bf06593b49e7:
 
-Sincerely, Nazar Mokrynskyi
-github.com/nazar-pc
+  Merge tag 'ath-current-20260427' of git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath (2026-04-28 10:41:51 +0200)
 
-17.04.26 15:08, Nazar Mokrynskyi:
-> I've been able to get QCN9274 working under KVM with virtio too with two small patches: https://github.com/openwrt/openwrt/pull/22969
->
-> Dealing with mailing lists for sending patches is a huge pain for me, so I kindly request you to take a look and pull them upstream when you have a bit of time.
-> The changes are essentially trivial.
->
-> I wouldn't mind other hacks becoming unnecessary, but at least with those patches I can work around the rest of bugs as described before.
->
-> Sincerely, Nazar Mokrynskyi
-> github.com/nazar-pc
->
-> 20.09.25 16:09, Nazar Mokrynskyi:
->> Okay, I was able to prevent whole system crashes with `pci=noaer` when booting host kernel (Ubuntu 24.04 6.14.0-29-generic).
->> Would be nice if it was not necessary, any idea why things escalate so much?
->>
->> With older OpenWrt snapshot (r30806-070d8eb4d5) derived from 6.12.40 kernel I was getting these two cases alternating on odd/even boots of the VM:
->>
->>> [    7.393886] ath12k_pci 0000:04:00.0: BAR 0 [mem 0x89400000-0x895fffff 64bit]: assigned
->>> [    7.402838] ath12k_pci 0000:04:00.0: MSI vectors: 16
->>> [    7.407763] ath12k_pci 0000:04:00.0: Hardware name: qcn9274 hw2.0
->>> [    7.542240] ath12k_pci 0000:04:00.0: link down error during global reset
->>> [    7.570471] mhi mhi0: BHI offset: 0xffffffff is out of range: 0x200000
->>> [    7.577614] ath12k_pci 0000:04:00.0: failed to set mhi state: INIT(0)
->>> [    7.578488] ath12k_pci 0000:04:00.0: failed to start mhi: -34
->>> [    7.579312] ath12k_pci 0000:04:00.0: failed to power up :-34
->>> [    7.615653] ath12k_pci 0000:04:00.0: failed to create soc core: -34
->>> [    7.617815] ath12k_pci 0000:04:00.0: unable to create hw group
->>> [    7.655683] ath12k_pci 0000:04:00.0: failed to init core: -34
->>> [    8.123971] ath12k_pci 0000:04:00.0: probe with driver ath12k_pci failed with error -34
->>> [    7.158610] ath12k_pci 0000:04:00.0: BAR 0 [mem 0x89400000-0x895fffff 64bit]: assigned
->>> [    7.172045] ath12k_pci 0000:04:00.0: MSI vectors: 16
->>> [    7.177707] ath12k_pci 0000:04:00.0: Hardware name: qcn9274 hw2.0
->>> [    7.291634] ath12k_pci 0000:04:00.0: link down error during global reset
->>> [    7.320049] mhi mhi0: Requested to power ON
->>> [    7.368077] mhi mhi0: Power on setup success
->>> [    7.538116] mhi mhi0: Wait for device to enter SBL or Mission mode
->>> [    8.036845] ath12k_pci 0000:04:00.0: qmi dma allocation failed (29360128 B type 1), will try later with small size
->>> [    8.046735] ath12k_pci 0000:04:00.0: memory type 10 not supported
->>> [    8.050328] kmodloader: done loading kernel modules from /etc/modules.d/*
->>> [    8.053813] ath12k_pci 0000:04:00.0: chip_id 0x0 chip_family 0xb board_id 0xff soc_id 0x401a2200
->>> [    8.063240] ath12k_pci 0000:04:00.0: fw_version 0x150c0673 fw_build_timestamp 2025-04-24 15:13 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
->>> [    8.086352] ath12k_pci 0000:04:00.0: failed to fetch board data for bus=pci,qmi-chip-id=0,qmi-board-id=255 from ath12k/QCN9274/hw2.0/board-2.bin
->>> [    8.087598] ath12k_pci 0000:04:00.0: failed to fetch board.bin from QCN9274/hw2.0
->>> [    8.093428] ath12k_pci 0000:04:00.0: qmi failed to load bdf:
->>> [    8.094398] ath12k_pci 0000:04:00.0: qmi failed to load board data file:-12
->> After upgrading to the current latest OpenWrt snapshot (r31110-41aaebad98) derived from 6.12.47 kernel I got this:
->>
->>> [    7.208812] ath12k_pci 0000:04:00.0: BAR 0 [mem 0x89400000-0x895fffff 64bit]: assigned
->>> [    7.224830] ath12k_pci 0000:04:00.0: MSI vectors: 16
->>> [    7.230381] ath12k_pci 0000:04:00.0: Hardware name: qcn9274 hw2.0
->>> [    7.342952] ath12k_pci 0000:04:00.0: link down error during global reset
->>> [    7.371390] mhi mhi0: Requested to power ON
->>> [    7.417659] mhi mhi0: Power on setup success
->>> [  164.087661] mhi mhi0: Device failed to enter MHI Ready
->>> [  164.090720] mhi mhi0: MHI did not enter READY state
->>> [  164.091615] ath12k_pci 0000:04:00.0: failed to set mhi state: POWER_ON(2)
->>> [  164.093214] ath12k_pci 0000:04:00.0: failed to start mhi: -110
->>> [  164.094584] ath12k_pci 0000:04:00.0: failed to power up :-110
->>> [  164.127713] ath12k_pci 0000:04:00.0: failed to create soc core: -110
->>> [  164.132306] ath12k_pci 0000:04:00.0: unable to create hw group
->>> [  164.167670] ath12k_pci 0000:04:00.0: failed to init core: -110
->>> [  164.632064] ath12k_pci 0000:04:00.0: probe with driver ath12k_pci failed with error -110
->> And now most of the time I'm stuck on the situation like the odd boot before, even after cold boot of the host machine with "mhi mhi0: BHI offset: 0xffffffff is out of range: 0x200000".
->> Very rarely I get above "mhi mhi0: Device failed to enter MHI Ready" hang instead, can't figure out the pattern, maybe it is just racy or something.
->>
->> Unfortunately, I don't really understand what any of this means, so not sure where to go from here.
->>
->> Will soon have a second QCN9472-based module from a different vendor and would appreciate any help in getting both of them to work.
->>
->> P.S. I have checked QCN9074 module with ath11k driver again earlier this week, it still works fine in the OpenWrt VM with the instructions I have mentioned in the previous email despite being "not supported" 🙂
->>
->> Sincerely, Nazar Mokrynskyi
->> github.com/nazar-pc
->>
->> 22.08.25 03:05, Nazar Mokrynskyi:
->>> Thanks for the response, looks like I'm in completely unsupported territory, but I'd love to see that changed 😅
->>>
->>> There were some tricks needed, here is a forum thread with the complete journey: https://forum.openwrt.org/t/qcn9074-doesnt-initialize-on-x86-64/163288?u=nazar-pc
->>> But more specifically, this seemed to be the missing piece: https://forum.openwrt.org/t/qcn9074-doesnt-initialize-on-x86-64/163288/47?u=nazar-pc
->>> For those who don't want to re-read a long thread on the forum, libvirtd domain config needed this piece of configuration:
->>>
->>>> |<features> <ioapic driver="qemu"/> </features> <devices> <iommu model="intel"> <driver intremap="on" caching_mode="on"/> </iommu> </devices>|
->>> Both "intremap" and "caching_mode" were key for device to initialize, and the rest for those two parameters to work at all.
->>> With that, I was able to create AP with QCN9074 on the hardware I mentioned earlier.
->>>
->>> But it certainly didn't crash the whole physical machine with any configuration.
->>> Well, most of the time at least, I did managed to crash the machine a couple of times with either ath11k or ath10k when VM didn't shut down cleanly (hard reset of the VM), etc.
->>>
->>> Sincerely, Nazar Mokrynskyi
->>> github.com/nazar-pc
->>>
->>> 22.08.25 02:46, Jeff Johnson:
->>>> On 8/20/2025 2:47 PM, Nazar Mokrynskyi wrote:
->>>>> Some additional details.
->>>>>
->>>>> The system is x86-64: Gigabyte MZ32-AR0 Rev 1.0 motherboard (with M23_R40 BIOS) and AMD Epyc 7302P CPU.
->>>>>
->>>>> Host OS is Ubuntu 24.04 with HWE kernel 6.14.
->>>>>
->>>>> As guest:
->>>>> * initially tried OpenWrt 24.10.2 with kernel 6.6.93, WiFi backports seem to be from 6.12.6
->>>>> * then tried the latest snapshot (r30806-070d8eb4d5), which uses 6.12.40 kernel and according to the kernel module version carries WiFi backports from 6.16
->>>>>
->>>>>> # lspci -mnn -s 46:00.0
->>>>>> 46:00.0 "Network controller [0280]" "Qualcomm Technologies, Inc [17cb]" "QCN62xx/92xx Wireless Network Adapter [1109]" -r01 -p00 "Qualcomm Technologies, Inc [17cb]" "QCN62xx/92xx Wireless Network Adapter [1109]"
->>>>> The module is QCN9274 2x2 5G+6G from Commtek (but missing on their website) with M.2 E-key connector.
->>>>> Looks very similar to Compex WLW7002E56 in terms of size and features.
->>>>>
->>>>> This should be most of the details that might be relevant.
->>>>>
->>>>> Sincerely, Nazar Mokrynskyi
->>>>> github.com/nazar-pc
->>>>>
->>>>> 21.08.25 00:15, Nazar Mokrynskyi:
->>>>>> Hi,
->>>>>>
->>>>>> I have a QCN9274-based Wi-Fi module that I want to use with OpenWrt under KVM VM (libvirtd, vfio).
->>>>>> I used various Qualcomm modules this way with ath10k and ath11k in the past successfully, but ath12k seems to be buggy.
->>>>>>
->>>>>> Two cases:
->>>>>> * if host already loaded ath12k, then starting a VM with the PCIe device passthrough triggers immediate hard reset of the machine
->>>>>> * if I bind the device to vfio-pci on the host, I can boot the VM, but it inevitably hard resets the machine when ath12k starts loading (presence of the correct board file does not matter, it doesn't seem reach that stage)
->>>>>>
->>>>>> In the second case, which I'm primarily interested in, the the following lines are the only thing I can capture before host hard resets:
->>>>>>
->>>>>>> 0000:01:00.0: MSI vectors: 1
->>>>>>> 0000:01:00.0: Hardware name: qcn9274 hw2.0
->>>>>> And when machine reboots, BIOS prints:
->>>>>>> Warning: PCI-Express PERR/SERR error detected.
->>>>>> I'm not really sure what this is, but I think it should be trivial to reproduce.
->>>>>> Looks like either driver or onboard firmware issue?
->>>>>> Open to do more testing and provide additional info.
->>>>>>
->>>>>> All information I have so far is on the forum here: https://forum.openwrt.org/t/qcn9274-crashes-the-system-during-driver-load/239491?u=nazar-pc
->>>> Curious how you managed to get this to work in the past with ath11k since that
->>>> is not supported. Some discussions on ath11k here:
->>>>
->>>> https://bugzilla.kernel.org/show_bug.cgi?id=216055
->>>> https://lore.kernel.org/all/fc6bd06f-d52b-4dee-ab1b-4bb845cc0b95@quicinc.com/
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-current-20260505
+
+for you to fetch changes up to d748603f12baff112caa3ab7d39f50100f010dbd:
+
+  wifi: ath5k: do not access array OOB (2026-05-04 07:15:20 -0700)
+
+----------------------------------------------------------------
+ath.git update for v7.1-rc3
+
+Fix an ath5k potential stack buffer overwrite.
+Fix several issues in ath12k:
+- WMI buffer leaks on error conditions
+- use of uninitialized stack data when processing RSSI events
+- incorrect logic for determining the peer ID in the RX path
+
+----------------------------------------------------------------
+Baochen Qiang (1):
+      wifi: ath12k: fix peer_id usage in normal RX path
+
+Jiri Slaby (SUSE) (1):
+      wifi: ath5k: do not access array OOB
+
+Nicolas Escande (1):
+      wifi: ath12k: fix leak in some ath12k_wmi_xxx() functions
+
+Rameshkumar Sundaram (1):
+      wifi: ath12k: initialize RSSI dBm conversion event state
+
+ drivers/net/wireless/ath/ath12k/dp_rx.c |   2 +-
+ drivers/net/wireless/ath/ath12k/wmi.c   | 105 +++++++++++++++++++++++++++-----
+ drivers/net/wireless/ath/ath5k/base.c   |   3 +-
+ 3 files changed, 92 insertions(+), 18 deletions(-)
 
