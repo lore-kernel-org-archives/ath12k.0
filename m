@@ -4,56 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D317CD3427
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE281CD3439
 	for <ath12k@archiver.kernel.org>; Tue,  5 May 2026 17:24:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=4YomgKhaVyFY7egyHjSVSlDXhkJ5thpj1igc2YBNc6w=; b=u8LyWV62w/wf1Nx7gYUQQ9NpOs
-	EvntzUuCQ2+qn3xLC+dhoOk6meOrntmqL9ROin32qbOwqra2VNzBpgYkF1qJcohnXFEGzTn4GHWqe
-	SNN7GPdD32BU502ZM6caV/t2K4A+ibge5zPikYigBRFVeGC1gy4RHiraJR4ESdvhphr9wmGAacaGG
-	AX9KK4W4VtLNIPz2HITsL2YczWWCWeba42ybOf/XjjgIWwZ4ZBB30Ts/FsWfkMS/5lJ4G2ydGjBQf
-	uUdHH59I9WtwN4d5G8TiXfVUnteNjEyCJz1oZJ5+FMbt4hW4sD8XreyGFyBdjZom7yAyFa0BWa3iu
-	X3UwluUg==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=xRjGmSXnfyqa5TGEncOZBsbYdyG6uICmkKgL4DXNmjQ=; b=LJqyZoDFn5gRH+daZ8ykEOPdMb
+	sqLAJKPK1FTZJY0c4uuT3JiJd8vdlvs15Urc3qKVKqREqHoX9W/Q11Flt1iRqyLOIudDzI1t9Bk98
+	iomwIq6ocON49oJ1L0vK9uXTvTBCuolanrUg2JO6whD/N3Iv1l+Fev2Vv/pFEYPufY+hL5wvCGRJi
+	bA3fRYBRvjKEc/1JPhlIgLGCowrzzRJvxsssimHGKi4EhX2VgnKTZ3czGXY5Bn54Lk4QmYq/oySQb
+	ndL3hNY70eH73jMTNr0UbMFHASj9LgB6YJmv4oJdbaIIzF8wf48WB6XbrKHoBWLli5pfviw7bl3RR
+	pDKfYGKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wKJVj-0000000H32D-3yBR;
-	Tue, 05 May 2026 17:24:43 +0000
+	id 1wKJVk-0000000H32S-1xBG;
+	Tue, 05 May 2026 17:24:44 +0000
 Received: from mail.mokrynskyi.com ([65.109.39.229])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wKJVh-0000000H30l-0AOn
+	id 1wKJVh-0000000H30u-3hk2
 	for ath12k@lists.infradead.org;
-	Tue, 05 May 2026 17:24:42 +0000
+	Tue, 05 May 2026 17:24:43 +0000
 From: Nazar Mokrynskyi <nazar@mokrynskyi.com>
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mokrynskyi.com;
-	s=dkim; t=1778001862;
+	s=dkim; t=1778001876;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=4YomgKhaVyFY7egyHjSVSlDXhkJ5thpj1igc2YBNc6w=;
-	b=eQ8bo+lJemXAGD9gUufuBfvi4m/O4rNBAfuffbmcWQVWuqDpcBl6NIN+wfToDjEBDI1xA9
-	M6GmtRyWr+Gi7AgRK7ACoYGEqMg9YhqfvZFD7NZSJPYw83ZN8X5ExOeD1DZM2Dc62K2N5b
-	y7bqbZ4NL91hAXSOnxi5b3vnx29wdMg0eU8BWl72ZE6xOWtU3lSlmpeaIpfD6b4qhQlYwE
-	r8iwYWvzKMA4bOYNp+sRdgObheblEghv5TT6rhNntBQVE+6UbGYqbFi7XGPn23Js7vDvWk
-	Ug8yU8NGtId/QfQjhuYDCWW+gAbAsIb4HyrCFBMROuS3G6URBPJRrjiYAEVHBw==
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=xRjGmSXnfyqa5TGEncOZBsbYdyG6uICmkKgL4DXNmjQ=;
+	b=L3ZfOOA1PdmLNse/2N0fpZS1uFo00roq2A4Vn2ExFte1N21poMOMyl2I03pPakUydzpi1O
+	7zJG+/cW4KRDxhu3EGlA6Gt7tSHC16ed9CBo+uC0UTTaJdsBl9oRj916I/dA4WcJZ2YWY+
+	g1pN9zGDJhwzka3wVZNL2M37LLjaf2DELWHrivyRSjw3ejft57xHp/1H3tbcyFdvOfAHbN
+	DpzDXfPbjfq+Y/v3KF+j1sxwjJhLSu76cTR5LOKC6F/7bA/7NWQ3WyM40Zz9X7vA9FV31m
+	rpI9Vk75BJhstcvG2TF3KBKk9wJhRxW1GeX39byh6IbeStA/+cuw+Ga5hm7t9w==
 Authentication-Results: mail.mokrynskyi.com;
 	auth=pass smtp.mailfrom=nazar@mokrynskyi.com
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
 	jeff.johnson@oss.qualcomm.com,
 	Nazar Mokrynskyi <nazar@mokrynskyi.com>
-Subject: [PATCH 0/2] wifi: ath12k: Fix operation under virtio
-Date: Tue,  5 May 2026 20:24:13 +0300
-Message-ID: <20260505172415.566328-1-nazar@mokrynskyi.com>
+Subject: [PATCH 2/2] wifi: ath12k: skip unknown direct buffer ring module IDs
+Date: Tue,  5 May 2026 20:24:15 +0300
+Message-ID: <20260505172415.566328-3-nazar@mokrynskyi.com>
+In-Reply-To: <20260505172415.566328-1-nazar@mokrynskyi.com>
+References: <20260505172415.566328-1-nazar@mokrynskyi.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Spamd-Bar: -
+X-Spamd-Bar: -----
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260505_102441_429540_A47707AE 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20260505_102442_358676_FFCE7588 
+X-CRM114-Status: GOOD (  11.35  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,89 +71,58 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-I've been struggling with ath12k and even ath11k for years:
-https://forum.openwrt.org/t/qcn9274-crashes-the-system-during-driver-load/239491?u=nazar-pc
-https://forum.openwrt.org/t/qcn9074-doesnt-initialize-on-x86-64/163288?u=nazar-pc
+The firmware may advertise direct buffer ring capabilities for module
+IDs beyond what the driver currently knows about (WMI_DIRECT_BUF_MAX).
+This happens with newer firmware versions that support additional ring
+types not yet implemented in the driver.
 
-With these patches it is finally possible to use QCN9274 under KVM with virtio.
+The current code treats an unknown module_id as a fatal error, returning
+-EINVAL and tearing down the entire driver initialization. This is
+incorrect: the driver only needs to set up rings for types it uses
+(SPECTRAL=0, CFR=1) and can safely ignore capability advertisements for
+unknown types.
 
-First patch avoids global reset, allowing module to power on properly. Similar
-patch should probably be added for ath11k too. Without this patch I was getting
-the following:
-```
-[    6.856855] ath12k_pci 0000:01:00.0: BAR 0 [mem 0xfc600000-0xfc7fffff 64bit]: assigned
-[    6.879292] ath12k_pci 0000:01:00.0: MSI vectors: 16
-[    6.883931] ath12k_pci 0000:01:00.0: Hardware name: qcn9274 hw2.0
-[    6.990901] ath12k_pci 0000:01:00.0: link down error during global reset
-[    7.998602] ath12k_pci 0000:01:00.0: link failed to recover after global reset
-[    8.011545] mhi mhi0: BHI offset: 0xffffffff is out of range: 0x200000
-[    8.013095] ath12k_pci 0000:01:00.0: failed to set mhi state: INIT(0)
-[    8.014588] ath12k_pci 0000:01:00.0: failed to start mhi: -34
-[    8.016025] ath12k_pci 0000:01:00.0: failed to power up :-34
-[    8.050113] ath12k_pci 0000:01:00.0: failed to create soc 0 core: -34
-[    8.053079] ath12k_pci 0000:01:00.0: unable to create hw group
-[    8.090241] ath12k_pci 0000:01:00.0: failed to init core: -34
-[    8.554526] ath12k_pci 0000:01:00.0: probe with driver ath12k_pci failed with error -34
-```
+Change the unknown module_id handling to skip the entry with a debug
+message rather than failing, allowing initialization to proceed.
 
-With the patch the process goes further:
-```
-[    6.897009] ath12k_pci 0000:01:00.0: BAR 0 [mem 0xfc600000-0xfc7fffff 64bit]: assigned
-[    6.906501] ath12k_pci 0000:01:00.0: MSI vectors: 16
-[    6.909033] ath12k_pci 0000:01:00.0: Hardware name: qcn9274 hw2.0
-[    6.959630] mhi mhi0: Requested to power ON
-[    6.960899] mhi mhi0: Power on setup success
-[    7.128588] mhi mhi0: Wait for device to enter SBL or Mission mode
-[    7.659325] ath12k_pci 0000:01:00.0: qmi dma allocation failed (20971520 B type 1), will try later with small size
-[    7.670187] ath12k_pci 0000:01:00.0: memory type 10 not supported
-[    7.674957] kmodloader: done loading kernel modules from /etc/modules.d/*
-[    7.683773] ath12k_pci 0000:01:00.0: chip_id 0x0 chip_family 0xb board_id 0x1019 soc_id 0x401a2200
-[    7.688137] ath12k_pci 0000:01:00.0: fw_version 0x160484db fw_build_timestamp 2025-12-09 20:09 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-[   10.611560] ath12k_pci 0000:01:00.0: Invalid module id 2
-[   10.616467] ath12k_pci 0000:01:00.0: failed to parse tlv -22
-[   10.747508] debugfs: File 'simulate_fw_crash' in directory 'pci-0000:01:00.0' already present!
-[   10.752188] debugfs: File 'device_dp_stats' in directory 'pci-0000:01:00.0' already present!
-[   10.770705] ieee80211 phy0: copying sband (band 1) due to VHT EXT NSS BW flag
-[   10.774844] debugfs: File 'ath12k' in directory 'phy0' already present!
-[   13.968334] ath12k_pci 0000:01:00.0: failed to send WMI_PDEV_SET_PARAM cmd
-[   13.971771] ath12k_pci 0000:01:00.0: failed to set ac override for ARP: -108
-[   13.975315] ath12k_pci 0000:01:00.0: fail to start mac operations in pdev idx 0 ret -108
-[   14.123699] ath12k_pci 0000:01:00.0: link down error during global reset
-[   14.167537] mhi mhi0: BHI offset: 0xffffffff is out of range: 0x200000
-[   14.169031] ath12k_pci 0000:01:00.0: failed to set mhi state: INIT(0)
-[   14.170504] ath12k_pci 0000:01:00.0: failed to start mhi: -34
-```
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
 
-Second patch fixes an issue I had in OpenWRT, which may have been caused by
-firmware upgrade:
-```
-[   10.611560] ath12k_pci 0000:01:00.0: Invalid module id 2
-[   10.616467] ath12k_pci 0000:01:00.0: failed to parse tlv -22
-```
-
-My understanding is that it is fine to ignore unknown capability of the
-firmware, it should not be required if driver doesn't know about it anyway.
-
-I noticed a very similar code in ath11k, but wasn't sure if the change is needed
-there too, so skipped it. Though I have a strong suspicion the same firmware
-mismatch might happen there too.
-
-With both of those I can finally use QCN9274 under KVM virtual machine with
-virtio, at least with `pci=noaer` on the host. Without `pci=noaer` the module
-still boots and works properly, but any attempt to shut down or reboot
-inevitably crashes the host, which I reported to vfio maintainers, but I'd
-appreciate cooperation from ath12k maintainers too:
-https://lore.kernel.org/kvm/70de9b8f-b7c7-481b-8cb1-931e3b82eb0e@mokrynskyi.com/
-
-Nazar Mokrynskyi (2):
-  wifi: ath12k: skip PCIe global reset on initial power-up
-  wifi: ath12k: skip unknown direct buffer ring module IDs
-
- drivers/net/wireless/ath/ath12k/pci.c |  3 ++-
+Signed-off-by: Nazar Mokrynskyi <nazar@mokrynskyi.com>
+---
  drivers/net/wireless/ath/ath12k/wmi.c | 12 ++++--------
- 2 files changed, 6 insertions(+), 9 deletions(-)
+ 1 file changed, 4 insertions(+), 8 deletions(-)
 
---
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 484fdd3b1..0e776a8d8 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -4814,10 +4814,10 @@ static int ath12k_wmi_dma_ring_caps(struct ath12k_base *ab,
+ 	dir_buff_caps = ab->db_caps;
+ 	for (i = 0; i < dma_caps_parse->n_dma_ring_caps; i++) {
+ 		if (le32_to_cpu(dma_caps[i].module_id) >= WMI_DIRECT_BUF_MAX) {
+-			ath12k_warn(ab, "Invalid module id %d\n",
+-				    le32_to_cpu(dma_caps[i].module_id));
+-			ret = -EINVAL;
+-			goto free_dir_buff;
++			ath12k_dbg(ab, ATH12K_DBG_WMI,
++				   "Skipping unknown direct buf ring module id %d\n",
++				   le32_to_cpu(dma_caps[i].module_id));
++			continue;
+ 		}
+ 
+ 		dir_buff_caps[i].id = le32_to_cpu(dma_caps[i].module_id);
+@@ -4829,10 +4829,6 @@ static int ath12k_wmi_dma_ring_caps(struct ath12k_base *ab,
+ 	}
+ 
+ 	return 0;
+-
+-free_dir_buff:
+-	ath12k_wmi_free_dbring_caps(ab);
+-	return ret;
+ }
+ 
+ static void
+-- 
 2.43.0
 
 
