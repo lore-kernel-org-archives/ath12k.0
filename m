@@ -4,128 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2ADCCD3447
-	for <ath12k@archiver.kernel.org>; Sat,  9 May 2026 02:59:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 638FFCD3447
+	for <ath12k@archiver.kernel.org>; Sat,  9 May 2026 02:59:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=y7PQ7mMFj09RBEC6R19QFDNhjCRnQR0cfi6POVI/210=; b=YNzoTD2yjZghss7iIRn1D4T4Ak
-	1FbvXKGJA2t5rYwX6CO1kQ9ig330NpYOb5T4jxPRX3Wl9rngfiDJHEUz/NEPBxYf0wQR1EVN36K3D
-	1aJ1k8k6RtsCYfRb9tIsOLy5bw3iTWCepBNE9nYyaKxKN7DO0KDeUih+Pc0yycGdaTzDLfy+MBgE9
-	zWNpfK7jZEkPf1wuIfpcTuj2U+oQ8ZL/HWYJfiD+lYkyrJgI4mgGmgLWbkj1TCjT5FdSoR1mdx1VE
-	K5D7X5LHo4pPYLKO732k0S8Xul91NaNJqXOxHC8ZOx0T4QRqaaDodi/jHZUlXSMqo3ppWc+FhgMYe
-	zAdV7PjA==;
+	bh=50H5oNb0zAgUgWNo0Pb+zr76atRJ4QpFRMqVAVEcQGA=; b=JBeaDx4cExhh1AULG599CRF+gD
+	k6lC6JSPAyYUKjAuDZEL+oeZS8bYIfHl0Sqrm2f9MZwbSmCJQu3JpEickyrb8GLdsAxhU3/pSUgCg
+	nXNSCRq3OeDV6j++QzQXS7pKqV8dj/AzC6oEXhh4onRZhmxD1r1YgEJgoNQOW8Wh9kM8rTAm6U1tg
+	Mww50//xGMyUdpv7feBT+YnFkF+0rIcD2ViOx1q+taI2z2lI7Z8dOkTa4DYHmv343NqkU2Nb58U+k
+	/E/9rgERS+Pfjb+N25d+xxd9rYM5lGyENBggi9ULihlxOsImVW4n6Dd8Qu7UiaWdSB3ScJ4Tin1ef
+	H7hx/csA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wLXuQ-000000084FX-0GYn;
-	Sat, 09 May 2026 02:59:18 +0000
+	id 1wLXuT-000000084Gp-0gAy;
+	Sat, 09 May 2026 02:59:21 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wLXuN-000000084Et-2m4h
+	id 1wLXuQ-000000084FY-2giq
 	for ath12k@lists.infradead.org;
-	Sat, 09 May 2026 02:59:16 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 648KDmO4853161
-	for <ath12k@lists.infradead.org>; Sat, 9 May 2026 02:59:14 GMT
+	Sat, 09 May 2026 02:59:19 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6492poOb2866538
+	for <ath12k@lists.infradead.org>; Sat, 9 May 2026 02:59:17 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=y7PQ7mMFj09
-	RBEC6R19QFDNhjCRnQR0cfi6POVI/210=; b=pGb1IPo6bfOm0gu+mHpxhaTKbi9
-	UjKoBXxQdtVgUN9kISSTTOtU+w3bOpxuQjyXAaEqz+r6X5ms+GMg436bjjvC7VpL
-	xviUwWERJx1TAyEVTaLLr5+TIFpE7zWhOwgfXWiUWMc3GhrkwvhlwrMHHPO8Se2t
-	ILg3mEkFq5GNL7ogx9PRDO3uuKB1jX5xxRdlkTsWqsVRirG4RLOoiGXznnSWyezw
-	cMhFFoC0wzBUXsqZiJCUYIBY0MiRLjmDHnh/x7lBQh/urZ8gP/wD9d3+dZWVuAbl
-	XGlrxEsBSEkJiYbRuwy2APe0bGJbZfN933qH2SsB4LH45aGKkMzrkKa3h8A==
+	:mime-version:references:subject:to; s=qcppdkim1; bh=50H5oNb0zAg
+	UgWNo0Pb+zr76atRJ4QpFRMqVAVEcQGA=; b=R57fLsvC6VYbYI4+r/5guUpNZB3
+	icSJvR29RuDLbIC89fMRBQaEL9VuoJ3cLchhnzGX1RKXBB+631DtNfUBFlnGXFo0
+	evvasNmM+3tZvLRAtkD38KWswGsczpn1XRV0lYQ6a131YYfFkOHIDFcbSc4k60KR
+	7nJuovowP/rpywz4tEzPkgS3wRoyyAOns1lD9TkkMj30Q8b+J0JRoOii4tKzrkRC
+	ecjTptfkZ8g5aOMyEV50bvOvdRmlB/86yIrd09n/rQLjtYHkbB39IPfmFGOFoI+m
+	3v6eAG4UHBJKZbs71tGjiy9ZfXKBalk/sR3x5tAUvveL10f6JSsbSQL9Elw==
 Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e1fptjp77-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e1vgy00ep-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Sat, 09 May 2026 02:59:14 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-367cb6de61aso788452a91.1
-        for <ath12k@lists.infradead.org>; Fri, 08 May 2026 19:59:14 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Sat, 09 May 2026 02:59:17 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-366ded5ab5fso2003690a91.0
+        for <ath12k@lists.infradead.org>; Fri, 08 May 2026 19:59:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1778295554; x=1778900354; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1778295556; x=1778900356; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=y7PQ7mMFj09RBEC6R19QFDNhjCRnQR0cfi6POVI/210=;
-        b=W3GTTGYF2FnUcTjnDudestn5CQrAstJYv6GUK9Du2/xmZAiUtYsY7nsdDCoPb+UIzJ
-         PAMt1QiRxUftPgaHA91Y/Qako6MrB1X0aYbzDB5g25UCvQgNqO/o7W8DTwfmSSjMnneG
-         pa+lnyYaKtCt5G4n4g1qSa0DlRHckb9SAgG/J9kV4G+QCeUugvbO8R2Z3AVHNxK/k1IQ
-         cjr2BagWtKMMzw5ftH4Yo6gUiK04e3S6tueKzLV12luj7WtfZb9e3OuzLw5JXhuu5uee
-         bu7RpuA+I/sjo48P8zQxVsOS6LidLT+MjEZ3iyFY0U/jpX1S+KD8DWSAupOZhiBNLGee
-         OZ+w==
+        bh=50H5oNb0zAgUgWNo0Pb+zr76atRJ4QpFRMqVAVEcQGA=;
+        b=i8BK4vvWkaRUiZAElrg8E8Gz7sTtJhgtEWaSyX4tzG+ZFZdhk/32zKowi57tuMfmRh
+         qpO+FbGHXmPLwjXSoFZbapt+D+y0OWDpiFIe/A9v4iYA/ltsYo9fiWAfOtlMrmkki2uF
+         l484xgWtG1+Hem+hLjGdRung5gFDggtcMFrrkDAzDf8HY66m5fJf1JzMC8UX69W8fUkt
+         jdG6ojhM3vjdGaj1/akGQGEaJDda4DL8YFV+nfBWCWhE6WQtz6rxm5byFzdD3xNS3HDT
+         Pk2NOFWkJQUYySSkftkvCd3wUthbgSYXSO1XBB3GTBq5NRZPLoYv0XYqS1+KZXuiFTSl
+         vVAQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1778295554; x=1778900354;
+        d=1e100.net; s=20251104; t=1778295556; x=1778900356;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=y7PQ7mMFj09RBEC6R19QFDNhjCRnQR0cfi6POVI/210=;
-        b=ptgRaY+21G9OEvgA8pgT0bUrrf/6+t1fVOBNw8rqcsBrWqBcviArOSA7UrN1b5zTdD
-         ygwQ/i9ZgaCqSpTNMh26sgPHnLMHj0btCR2fP19qGp4BhTS51QQQjAC4Up1ZZk9OY44R
-         6CVu6WX8qgBJn7RSnQxpRzQjrHdRfxHfiRHpYGMuZZF6725wjLvvL/3a3w0yaP9Ma0Wo
-         kOBHv3nD5rusMxyrkhrL3srw5C6SfzDcbRRfIhWQdsOToszaRFVrQeA2gzWiH39IwBLj
-         LnprNsfUkZjv8OfBFqvnyKdexRrBMs/IvQ6c0a5H/a93GQfilfSb631JpeGdkaYlUeWm
-         Q9WQ==
-X-Gm-Message-State: AOJu0YwqWrScLLLCKH8Suo+nqV9JqEMCMeNA9ShfX/pI5MNwZmnbAJSe
-	FW8+rAKgsGkQv6XBLJdwazriZc38ivNpg4FRMoSJA+GQW1IR93NIdv7DmeaP0Sgcz80MRxHHFzt
-	AzIVYm7Pz0v5WSlWWCMadIWKbVKWCj0s7m2JGhIVzB3RiAq0Za5SVe1ixUfDt3QlJ
-X-Gm-Gg: Acq92OGPh6XxTh3ZtPVw1TP0WApEb55u+pMPnGnDn75AaNsp18JrDopP7xGZ2oFCpT2
-	O4zEE6tMtW73RX4QbWD1kLmR2M5BcW2S8HQ1FsAkLEHMvWbexpxt9AKV8sgOUpF+ZDPjMwA3GHT
-	cRtgql8Dz/rAiq2m8aPA04J7dbfPrKk1hvTlDxJim7lyDPhw8fmIsnBTwL/wznDMQ8/u26/+wpo
-	jSnSaMHrEM/H/Y7Cj/LMi//nDMyfc8Kt3VYAY4pPn8gdd9D4pGK9/Ydq7JVG0jInQwiYS90+1ed
-	Vpc/d+i5f0RpfvNbdL7n47J9lDEBdogjx1+Uk7eN+ISFZBO+hn/xnWJw0K2b93YcT13XAwb99d9
-	/tcg3vu3iY/XDrjhiKS2m77CsHOD11SqsaTFGo/TFTG06NYSB2pLAtpECizkYvPa1XDy6qJffT0
-	rnD0hc
-X-Received: by 2002:a17:90b:2691:b0:359:fe72:3559 with SMTP id 98e67ed59e1d1-365ac46dc62mr16763809a91.21.1778295553636;
-        Fri, 08 May 2026 19:59:13 -0700 (PDT)
-X-Received: by 2002:a17:90b:2691:b0:359:fe72:3559 with SMTP id 98e67ed59e1d1-365ac46dc62mr16763787a91.21.1778295553087;
-        Fri, 08 May 2026 19:59:13 -0700 (PDT)
+        bh=50H5oNb0zAgUgWNo0Pb+zr76atRJ4QpFRMqVAVEcQGA=;
+        b=LJJ6gzc5YWHJAGnmtY9d6W5e0gE5vJQeVK+LZa6Ru/jesWwOF7B2DdPIVX3JFdlK9G
+         uD8WRoJkV2UWlJiprKVv8Pm7VehJptwMe2lqT1UfUGAff+fvb/gX1aNPFXb3E99MKEVg
+         2GuPQoRYNqlDgDb8bn6Olkz6CuQlFLoJJFJLQesorgg/L4HN/e+wsjSpOUqtPG13zLiA
+         Q/vgTs71MoQcMl20HkebUAXX5++aSsEAKTB0WBSHbEQZQyXlcfPMP+ft3Kv3ylncFCRR
+         9vjuDK7Vdcob5OR2vt6DoTMHBYiFwDilegtBDn3oN2rc3qPDsbnJjvRKwpjiULzXNnIZ
+         rkSA==
+X-Gm-Message-State: AOJu0YzE7u8To62ZZCS4aFCWrI3Zaa5UT5ZTCVdD8jF8gTUmw1/up2Ff
+	o009tB0QB1HMt43USH1O772Oq10uv+83dBbrZLzYDrM7iS646doHZpjLV2Iaf6iMdU3HWsqAj7c
+	MU+v+ETRcKemXr3VJRzmmi3YD1FTVd6L8LM3iuiucQCfffVfy/a5v3d0wmn8tr921BuyinNrWq2
+	g=
+X-Gm-Gg: Acq92OH7NpWU4J5MZqvIi5ijl4lJj5gQU20FQKNbTGWLFGPMSpGww/lK0tme1/ppeHo
+	9lkNWJej8HwEH82Fcdh2+sl+g+BBlmbapdiAfa3zEdcqYAZRzX2v0DipCHy77PnIeKMOB5XIQT5
+	JhplbwSxECXXuH7n/IViPsx+CxCDyvzDMSEqDjjHYlhs/pnwRx+sPSWnBSQHlz2fmt6WdK83kM7
+	tlcwNtFariql0Ii2/QD0kdWco9uLlez7jXp/WbfmTiTVaYueC+iPMkyUh3PMIJziKJB58mQN2/i
+	uz+TsCvGyJkhh51EtHjCacrgMYkeg6f/L9yVV+SONxJgbHuX7xWHopX329zyH4AfS/6E8ANhDsw
+	R5RMlVLR17gX2hzCAMKRKD2ZXs7YSTjI6tqDkDCUkhATYE4oYguYqX7gXOwqSsIyMKjr+RvqQIh
+	FJYvmI
+X-Received: by 2002:a17:90b:45:b0:366:159a:c228 with SMTP id 98e67ed59e1d1-367d468cf75mr1169876a91.6.1778295556340;
+        Fri, 08 May 2026 19:59:16 -0700 (PDT)
+X-Received: by 2002:a17:90b:45:b0:366:159a:c228 with SMTP id 98e67ed59e1d1-367d468cf75mr1169852a91.6.1778295555804;
+        Fri, 08 May 2026 19:59:15 -0700 (PDT)
 Received: from Z2-SFF-G9-MQ.ap.qualcomm.com (i-global052.qualcomm.com. [199.106.103.52])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-367be8be938sm750899a91.4.2026.05.08.19.59.11
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-367be8be938sm750899a91.4.2026.05.08.19.59.13
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 08 May 2026 19:59:12 -0700 (PDT)
+        Fri, 08 May 2026 19:59:15 -0700 (PDT)
 From: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
 To: jjohnson@kernel.org
 Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
         linux-kernel@vger.kernel.org,
         Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
-Subject: [PATCH ath-next 1/5] wifi: ath12k: fix TLV32 length mask
-Date: Sat,  9 May 2026 10:58:15 +0800
-Message-Id: <20260509025819.1641630-2-miaoqing.pan@oss.qualcomm.com>
+Subject: [PATCH ath-next 2/5] wifi: ath12k: refactor HAL TLV32/64 decode helpers
+Date: Sat,  9 May 2026 10:58:16 +0800
+Message-Id: <20260509025819.1641630-3-miaoqing.pan@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260509025819.1641630-1-miaoqing.pan@oss.qualcomm.com>
 References: <20260509025819.1641630-1-miaoqing.pan@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: aoZLPv56fSTPFHzpG0TGXhVg4qID8u2r
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTA5MDAyNyBTYWx0ZWRfX4LqtwhxELisd
- g530qFMKUW2ATXmbJoDQSPMUoFvf/GrMTTglgnd+4nGqaa1/qTClILtkWxUC2T91dfbtVbdm5AH
- I8p2yD/T42CWbFdCKd69dFuiaa+S/GzkbFzhEPbRFqVsW4SnIAcfN7r1qmJ3Q1t0DOHX/5gk75b
- 8qO663S/9Dqsf6U/x4UOb0rFTXYzO+uIeoBwgJwBvXWzqbK6tWt8Ob0odQ2gs1p+eVuLTgUjuau
- fcLE35QuF8Ee19EFxTTFRJJAL9lPIYpfZpAN3dBPgL06NsfA7F3/pS/58CgxQJU5CuxHqTkfSwj
- 3PIELGHLc5ikWv45MHls7B8B8hhdmkuL5l3no0lyCe2wNRa3r7L8vChmR3Q/LxJ9XgkXRfk5t1r
- SjgmyLTphmPCCXeGaj9slD5v1laHDiye47+w/UVJX0aDPg0C/s6AiVxNf5HMxWKR6JcTjtc8m7K
- 0+4scPyWiF+6iUyrcUg==
-X-Proofpoint-GUID: aoZLPv56fSTPFHzpG0TGXhVg4qID8u2r
-X-Authority-Analysis: v=2.4 cv=IYi3n2qa c=1 sm=1 tr=0 ts=69fea302 cx=c_pps
+X-Authority-Analysis: v=2.4 cv=fpHsol4f c=1 sm=1 tr=0 ts=69fea305 cx=c_pps
  a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
  a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22 a=EUspDBNiAAAA:8
- a=oTESD8Iu_DoklxnQOhcA:9 a=uKXjsCUrEbL0IQVhDsJ9:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=EUspDBNiAAAA:8
+ a=R17iYGmNITDVIwCHYO4A:9 a=uKXjsCUrEbL0IQVhDsJ9:22
+X-Proofpoint-ORIG-GUID: vD-sEmoxisVC7GJq6-Sirn-AvQ3PWXNF
+X-Proofpoint-GUID: vD-sEmoxisVC7GJq6-Sirn-AvQ3PWXNF
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTA5MDAyNyBTYWx0ZWRfXxbyuha+0laey
+ HCgIp5jkoX2kimIq0CfkNpXbkGBRz3WbHKVByQQrXP/wqmh9508Unmha8wxNDyj/nfFX0vxmuXd
+ 7nEoMx86xiBoyYT+DCoDYlF0Z8qZK70AbGtBuOkL46fGgoI1hADsMCJkq3hwiOHv9FS1gy51npR
+ W0Y/77ECIxKQ13hfph1WfTWhkhQtazJSriOMV3+/LrJwe/Ivy5cbiLOGquUs46YwUNM/+PkMmvM
+ /QBydyPkUiUPjHfdJqe3o6m1mIS/xKJkEmcr6DpGkNQeeRZtD67v4iWqxI5loEuWguklLKfa5B4
+ v2WBQBer5RU9m4rmRd/7T8nUvePDWwwhnQEwJjCt8ZWhSSN5ci7eeQfzBaZgo4evwvQYUgwrzmB
+ Pwf3jlhd0z16NdLcpzaubguQTpYnknVHRQxF5VKFvstMNB+b6mZD+M2ONG8/nErnx7yGVAEDxNh
+ l5on+yz/yQIzhwoZ8/A==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-05-09_01,2026-05-08_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 adultscore=0 suspectscore=0 impostorscore=0 lowpriorityscore=0
- priorityscore=1501 clxscore=1011 bulkscore=0 malwarescore=0 phishscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2604200000 definitions=main-2605090027
+ suspectscore=0 malwarescore=0 lowpriorityscore=0 priorityscore=1501
+ adultscore=0 phishscore=0 clxscore=1011 spamscore=0 impostorscore=0
+ bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2604200000
+ definitions=main-2605090027
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260508_195915_821658_3E2E1FC3 
-X-CRM114-Status: GOOD (  12.35  )
+X-CRM114-CacheID: sfid-20260508_195918_802473_F2DE3622 
+X-CRM114-Status: GOOD (  14.43  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,77 +142,152 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-HAL_TLV_HDR_LEN was using the wrong bitmask; fix it to cover
-bits [21:10]. Also drop HAL_SRNG_TLV_HDR_{TAG,LEN} and use the
-generic TLV header bit definitions for TLV32/TLV64 encode/decode
-to avoid redundant macros.
+Change TLV decode helpers to return the TLV value pointer and optionally
+decode tag/len/usrid via out parameters. This allows reusing the helpers
+for DP monitor RX status header TLV parsing and avoids duplicated header
+decoding in callers.
+
+No functional change intended.
 
 Tested-on: QCC2072 hw1.0 PCI WLAN.COL.1.0.c2-00068-QCACOLSWPL_V1_TO_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 Signed-off-by: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/hal.c | 8 ++++----
- drivers/net/wireless/ath/ath12k/hal.h | 5 +----
- 2 files changed, 5 insertions(+), 8 deletions(-)
+ drivers/net/wireless/ath/ath12k/hal.c         | 26 ++++++++++++-------
+ drivers/net/wireless/ath/ath12k/hal.h         |  4 +--
+ .../wireless/ath/ath12k/wifi7/hal_qcc2072.c   |  2 +-
+ .../wireless/ath/ath12k/wifi7/hal_qcn9274.c   | 11 +++++++-
+ .../wireless/ath/ath12k/wifi7/hal_wcn7850.c   | 11 +++++++-
+ 5 files changed, 39 insertions(+), 15 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index a164563fff28..f03817b2fbc5 100644
+index f03817b2fbc5..d940f83cd92f 100644
 --- a/drivers/net/wireless/ath/ath12k/hal.c
 +++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -828,8 +828,8 @@ void *ath12k_hal_encode_tlv64_hdr(void *tlv, u64 tag, u64 len)
+@@ -846,26 +846,32 @@ void *ath12k_hal_encode_tlv32_hdr(void *tlv, u64 tag, u64 len)
+ }
+ EXPORT_SYMBOL(ath12k_hal_encode_tlv32_hdr);
+ 
+-u16 ath12k_hal_decode_tlv64_hdr(void *tlv, void **desc)
++void *ath12k_hal_decode_tlv64_hdr(void *tlv, u16 *tag, u16 *len, u16 *usrid)
  {
  	struct hal_tlv_64_hdr *tlv64 = tlv;
+-	u16 tag;
  
--	tlv64->tl = le64_encode_bits(tag, HAL_TLV_HDR_TAG) |
--		    le64_encode_bits(len, HAL_TLV_HDR_LEN);
-+	tlv64->tl = le64_encode_bits(tag, HAL_TLV_64_HDR_TAG) |
-+		    le64_encode_bits(len, HAL_TLV_64_HDR_LEN);
+-	tag = le64_get_bits(tlv64->tl, HAL_TLV_64_HDR_TAG);
+-	*desc = tlv64->value;
++	if (tag)
++		*tag = le64_get_bits(tlv64->tl, HAL_TLV_64_HDR_TAG);
++	if (len)
++		*len = le64_get_bits(tlv64->tl, HAL_TLV_64_HDR_LEN);
++	if (usrid)
++		*usrid = le64_get_bits(tlv64->tl, HAL_TLV_64_USR_ID);
  
- 	return tlv64->value;
+-	return tag;
++	return tlv64->value;
  }
-@@ -851,7 +851,7 @@ u16 ath12k_hal_decode_tlv64_hdr(void *tlv, void **desc)
- 	struct hal_tlv_64_hdr *tlv64 = tlv;
- 	u16 tag;
+ EXPORT_SYMBOL(ath12k_hal_decode_tlv64_hdr);
  
--	tag = le64_get_bits(tlv64->tl, HAL_SRNG_TLV_HDR_TAG);
-+	tag = le64_get_bits(tlv64->tl, HAL_TLV_64_HDR_TAG);
- 	*desc = tlv64->value;
- 
- 	return tag;
-@@ -863,7 +863,7 @@ u16 ath12k_hal_decode_tlv32_hdr(void *tlv, void **desc)
+-u16 ath12k_hal_decode_tlv32_hdr(void *tlv, void **desc)
++void *ath12k_hal_decode_tlv32_hdr(void *tlv, u16 *tag, u16 *len, u16 *usrid)
+ {
  	struct hal_tlv_hdr *tlv32 = tlv;
- 	u16 tag;
+-	u16 tag;
  
--	tag = le32_get_bits(tlv32->tl, HAL_SRNG_TLV_HDR_TAG);
-+	tag = le32_get_bits(tlv32->tl, HAL_TLV_HDR_TAG);
- 	*desc = tlv32->value;
+-	tag = le32_get_bits(tlv32->tl, HAL_TLV_HDR_TAG);
+-	*desc = tlv32->value;
++	if (tag)
++		*tag = le32_get_bits(tlv32->tl, HAL_TLV_HDR_TAG);
++	if (len)
++		*len = le32_get_bits(tlv32->tl, HAL_TLV_HDR_LEN);
++	if (usrid)
++		*usrid = le32_get_bits(tlv32->tl, HAL_TLV_USR_ID);
  
- 	return tag;
+-	return tag;
++	return tlv32->value;
+ }
+ EXPORT_SYMBOL(ath12k_hal_decode_tlv32_hdr);
 diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index bf4f7dbae866..b3a89ace5a97 100644
+index b3a89ace5a97..3158c1881c76 100644
 --- a/drivers/net/wireless/ath/ath12k/hal.h
 +++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -1442,7 +1442,7 @@ struct hal_ops {
+@@ -1551,6 +1551,6 @@ void ath12k_hal_rx_reo_ent_buf_paddr_get(struct ath12k_hal *hal, void *rx_desc,
+ 					 u8 *rbm, u32 *msdu_cnt);
+ void *ath12k_hal_encode_tlv64_hdr(void *tlv, u64 tag, u64 len);
+ void *ath12k_hal_encode_tlv32_hdr(void *tlv, u64 tag, u64 len);
+-u16 ath12k_hal_decode_tlv64_hdr(void *tlv, void **desc);
+-u16 ath12k_hal_decode_tlv32_hdr(void *tlv, void **desc);
++void *ath12k_hal_decode_tlv64_hdr(void *tlv, u16 *tag, u16 *len, u16 *usrid);
++void *ath12k_hal_decode_tlv32_hdr(void *tlv, u16 *tag, u16 *len, u16 *usrid);
+ #endif
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c
+index 1eefb931a853..c0583c3a2191 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c
+@@ -439,7 +439,7 @@ static u16 ath12k_hal_reo_status_dec_tlv_hdr_qcc2072(void *tlv, void **desc)
+ 	struct hal_reo_get_queue_stats_status_qcc2072 *status_tlv;
+ 	u16 tag;
+ 
+-	tag = ath12k_hal_decode_tlv32_hdr(tlv, (void **)&status_tlv);
++	status_tlv = ath12k_hal_decode_tlv32_hdr(tlv, &tag, NULL, NULL);
+ 	/*
+ 	 * actual desc of REO status entry starts after tlv32_padding,
+ 	 * see hal_reo_get_queue_stats_status_qcc2072
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
+index ba9ce1e718e8..8d8d1a9c05d3 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
+@@ -934,6 +934,15 @@ void ath12k_hal_extract_rx_desc_data_qcn9274(struct hal_rx_desc_data *rx_desc_da
+ 	rx_desc_data->err_bitmap = ath12k_hal_rx_h_mpdu_err_qcn9274(rx_desc);
+ }
+ 
++static u16 ath12k_hal_reo_status_dec_tlv_hdr_qcn9274(void *tlv, void **desc)
++{
++	u16 tag;
++
++	*desc = ath12k_hal_decode_tlv64_hdr(tlv, &tag, NULL, NULL);
++
++	return tag;
++}
++
+ const struct ath12k_hw_hal_params ath12k_hw_hal_params_qcn9274 = {
+ 	.rx_buf_rbm = HAL_RX_BUF_RBM_SW3_BM,
+ 	.wbm2sw_cc_enable = HAL_WBM_SW_COOKIE_CONV_CFG_WBM2SW0_EN |
+@@ -1122,5 +1131,5 @@ const struct hal_ops hal_qcn9274_ops = {
+ 	.rx_msdu_list_get = ath12k_wifi7_hal_rx_msdu_list_get,
+ 	.rx_reo_ent_buf_paddr_get = ath12k_wifi7_hal_rx_reo_ent_buf_paddr_get,
+ 	.reo_cmd_enc_tlv_hdr = ath12k_hal_encode_tlv64_hdr,
+-	.reo_status_dec_tlv_hdr = ath12k_hal_decode_tlv64_hdr,
++	.reo_status_dec_tlv_hdr = ath12k_hal_reo_status_dec_tlv_hdr_qcn9274,
  };
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
+index e64e512cac7d..4bef64ac9150 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
+@@ -740,6 +740,15 @@ int ath12k_hal_srng_create_config_wcn7850(struct ath12k_hal *hal)
+ 	return 0;
+ }
  
- #define HAL_TLV_HDR_TAG		GENMASK(9, 1)
--#define HAL_TLV_HDR_LEN		GENMASK(25, 10)
-+#define HAL_TLV_HDR_LEN		GENMASK(21, 10)
- #define HAL_TLV_USR_ID		GENMASK(31, 26)
- 
- #define HAL_TLV_ALIGN	4
-@@ -1462,9 +1462,6 @@ struct hal_tlv_64_hdr {
- 	u8 value[];
- } __packed;
- 
--#define HAL_SRNG_TLV_HDR_TAG		GENMASK(9, 1)
--#define HAL_SRNG_TLV_HDR_LEN		GENMASK(25, 10)
--
- dma_addr_t ath12k_hal_srng_get_tp_addr(struct ath12k_base *ab,
- 				       struct hal_srng *srng);
- dma_addr_t ath12k_hal_srng_get_hp_addr(struct ath12k_base *ab,
++static u16 ath12k_hal_reo_status_dec_tlv_hdr_wcn7850(void *tlv, void **desc)
++{
++	u16 tag;
++
++	*desc = ath12k_hal_decode_tlv64_hdr(tlv, &tag, NULL, NULL);
++
++	return tag;
++}
++
+ const struct ath12k_hal_tcl_to_wbm_rbm_map
+ ath12k_hal_tcl_to_wbm_rbm_map_wcn7850[DP_TCL_NUM_RING_MAX] = {
+ 	{
+@@ -805,5 +814,5 @@ const struct hal_ops hal_wcn7850_ops = {
+ 	.rx_msdu_list_get = ath12k_wifi7_hal_rx_msdu_list_get,
+ 	.rx_reo_ent_buf_paddr_get = ath12k_wifi7_hal_rx_reo_ent_buf_paddr_get,
+ 	.reo_cmd_enc_tlv_hdr = ath12k_hal_encode_tlv64_hdr,
+-	.reo_status_dec_tlv_hdr = ath12k_hal_decode_tlv64_hdr,
++	.reo_status_dec_tlv_hdr = ath12k_hal_reo_status_dec_tlv_hdr_wcn7850,
+ };
 -- 
 2.34.1
 
