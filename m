@@ -4,135 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AA7FCD4F52
-	for <ath12k@archiver.kernel.org>; Mon, 18 May 2026 13:54:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2FF1CD343F
+	for <ath12k@archiver.kernel.org>; Mon, 18 May 2026 23:18:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NBiw6w/Bl1SGBsyyxj194UhIBjNkUE0ezPyMhXtCx1g=; b=zBfyOg6PwzTt58bKkzc97p9Wn1
-	hKVYOFqNyHO60dL20l2j5N8WT747hud9TvyfWqa+koAOUiPYiE9W4avI/XzAZwMWUQtrFgeWbmDdD
-	nKPd3mCw7VsNe6TVhE2GxS83A5iIql7kaTUauIBCMFzsrDS9D5vvi/CKFNHGwCdaPyAdylKj00nZq
-	2gUsiOrRmxC8zS2PxzhfEI1X0H55udn3Hl+jdzlopxGVOBfoJh0lo8csdfL05X16A5V+RYXc2TK0C
-	31c1+PhHZnPmSu/dP0ZByDwFfM5eFkLNARcFiq0UvKJYwg2z1KURoLffjVK/xVPbahr270L1sRX+o
-	LmdbLg3A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:From:
+	MIME-Version:Content-Type:Date:Message-ID:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=MwQ4+T8/IHn57ekqGl0FuTuuwxp2E9CrynR+1mutik0=; b=CDVTvng+2wEqLEb6fC+99NTBKf
+	gkN0pAeO/BEEKq7+I9nPdbDbvSA6xG/0OntlOeUWNTkWUviKyivtxMASKVHn0XV0Og+S4klZCIa+v
+	bY6N9VFXpQc291xPuymnF0wLq7ZSfP/1pWKXrOvM+NKjxigSRKZMxcfiqSEjX1c5rrEqcoA++LQsH
+	DriEiY/w14nvSGwase7NQauIa6jjhoxLywW77MHqQq8xIPJ/2uYsodmYV+m1VspZoNp1lsPaixVW+
+	emjUFvqc5bbDCkrEgfPxdIL15+RhavvbV/5EHifpOug+AY8ptogUHlrvlfYzog4oK8UsXUc+HCak9
+	5WMqbRxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOyQJ-0000000FsyG-38PM;
-	Mon, 18 May 2026 13:54:23 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wP7E7-0000000HAkA-1nAI;
+	Mon, 18 May 2026 23:18:23 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOyQF-0000000FsvE-4949
+	id 1wP7E4-0000000HAjW-2kZi
 	for ath12k@lists.infradead.org;
-	Mon, 18 May 2026 13:54:22 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64ID3t3L753087
-	for <ath12k@lists.infradead.org>; Mon, 18 May 2026 13:54:19 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	NBiw6w/Bl1SGBsyyxj194UhIBjNkUE0ezPyMhXtCx1g=; b=Tewq/jTYbdfC8IYC
-	c8KqLEr+XDSrjVWKNFNfOqVMmGg3JyTF+BcwM94fl2+Fmgh+k0T1Lfy5Z6mPtkXr
-	P6Yp6KhuLWyKac9YktoR99axAKIhTz0kUxTm0xG95iFaWDi66hh2rjdv7XnJWtEw
-	lM8m14quth2rbUuuiy+Uw2gLCBqnJZqzwJwaxf/oec5vtYY86gWISiLEMyzLERSD
-	aLdtdAO1StNNIY06JVv9fYvHO7k5Smo/vD39FdfINOl0WpbqBsU7e2PNKazgbMio
-	aiAx6Ofxg+W+GAwyQvm4CS0uY+CMTUKgnG4mTzF4YxvpqCZ+0tNd7nIp0VP0t0n6
-	UBnEIg==
-Received: from mail-dl1-f69.google.com (mail-dl1-f69.google.com [74.125.82.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e6tvcnkq6-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 18 May 2026 13:54:19 +0000 (GMT)
-Received: by mail-dl1-f69.google.com with SMTP id a92af1059eb24-132d631edaaso11578928c88.0
-        for <ath12k@lists.infradead.org>; Mon, 18 May 2026 06:54:19 -0700 (PDT)
+	Mon, 18 May 2026 23:18:22 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-488a88aeec9so34181485e9.2
+        for <ath12k@lists.infradead.org>; Mon, 18 May 2026 16:18:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1779112458; x=1779717258; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=NBiw6w/Bl1SGBsyyxj194UhIBjNkUE0ezPyMhXtCx1g=;
-        b=YsxmeJzNUThUaTAZMOBPkS90lm59ultgceGhSSvGV4b6op1UrYxB59Gwa3SOVBsNNs
-         nlELSHCniJmdiZELQs5SG9oJm4i3u61/dS+sxLeBhGLaFt/fA6c8bO5Flm4R0WGNgJ7A
-         PQGo2oAgbovAwMncIUY/yKUFOSLvQ7eWJ5uKFktqpICLohGeIhP2gKmgx9GoMJ2F7we/
-         QpAL++y1i4pX7/J8D1M9DOTjWyUrlFLxJ2L0HdeitwblpFOakBLZ72TzET9vQfehotmr
-         IVbTNEU6VUjuhnyj+lo3R7ybBwLgxhAyofr8J2XdkvUVu94yGAGu5ccSBa8Fuv8/KZ4c
-         ZC4g==
+        d=gmail.com; s=20251104; t=1779146298; x=1779751098; darn=lists.infradead.org;
+        h=subject:cc:to:from:mime-version:date:message-id:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=MwQ4+T8/IHn57ekqGl0FuTuuwxp2E9CrynR+1mutik0=;
+        b=nLOqSEamXSRK58bHqyP9NDNSnxtFRiD4J/kFgEBbi/oOCUI2+nPoe9gp9nmlMZEel2
+         Vcy8nsDkR6Y38rKrqckkdOAM0bVOCL6viBLdsPqRPL447MQLxL3KADjoQNpC8O0blPxX
+         0OJV6kt1GU+a7JlFuwXzfPHTyYqVXrva8YahOjbmULoSXXaIFhgfyx1ulOErc8Jg8yN3
+         RSiubLqIRvst7s9IdeSHr1vI+3Y5dFk9XHipaVgiG2f7O0+MShKA6lEe7sdxYAj/smED
+         QyXMpN/BrnQagFuWR8qdheO0I0WPTqfEk8yz+46l+1X/VB6JvIT7CSqVLO3Va1j7+iV4
+         gnzw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779112458; x=1779717258;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=NBiw6w/Bl1SGBsyyxj194UhIBjNkUE0ezPyMhXtCx1g=;
-        b=nC6HhkX1x0H6ltbHCOO8/ezslYhLZk7C0hw2ilFy/Xb63R1WxbeOfCZv+exLTFfkxh
-         uTI7lkPlbbyiInTMbehB6trzckQh5HQX0AKDXLqe60ugKPaz7Ye2Vh80kDPqHGb2afdk
-         BBMvR9DvlUnfKKNx7DWZ/Rx6nf0gnLwH/E6o6cTHOiFHmIYlyu/KRoV7nf7+WuodVyL0
-         yQgu1kJPk9bt7AQK9RWtnO6Q3SY7/+vXZRpihwOKWHfDKjzTgpRV9yrGcUYtVYINc/JV
-         uz1BTgBW1UlYn4UsK3RAoeuq7nDLRL6ttkPulePYvPgswh0m/tciYifjhQDEmcwJq/MB
-         xeXA==
-X-Forwarded-Encrypted: i=1; AFNElJ+HEu61mtRW6xeR3LnAi9BCOXBH1eqsV7UeObTvhaodydquma4Qozfy906tB0RHUXkMJ6ili/Q=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxbUBmixIG33+ATVOHBhgMV4Q6AStHxQXWhtqg+m1YZozfhbfZu
-	fBgtOchllH+F50Gs/+8Do9qaDPeeAfxgSVWdHRFYp1iY73oTPDR1OvSaJlyoiEetII3OrZ7wU86
-	6kQCrZtC1gLkZ2qOJ697FIhHGDxxoPxUYYaCTWNcKs7tXyi79gddovXIwZEYNBbO4YX7vbH1I
-X-Gm-Gg: Acq92OF4rAnSHXprRZi421BvM6pJunJo+9KOOlznYuJkaS/hFrA4fB4+oEQvoRLJy3W
-	Twd7Wba6fG6uIlDzrqqIUvjKjaOzWkFB5WEaiK0s3kBRF0gYI7cJbz+3/SMhCnKV6jUQLVLkly8
-	1gZ270CT99U+9SG9K6E8OzroenHBaR8he4IBFmKKAG1dvZVEyi98+SOdLn05R1V19Hs5gJ1Anbt
-	AeAmYgCRtZW4GZPzRLK6XDUUqCyVNFZPhl4/Oh4vr0tFaYuYSX/ZmJxXcc3KCZ5poXXtge8psyS
-	XbMuag1SfCbKupF1bFnN6bPx9cy0VnrbtLPDP+uupQKHgfj0Nq4AnFGHe5ZGW5FP/r1McS8Dk1V
-	kJxecTvqLrtKvaPxfYDWoFjdTC51fnNEMfDKHu7Mmi951DgjtjTVwXStAK+2I0M/HAi/6m5nTq+
-	b56hijGFYXoOs=
-X-Received: by 2002:a05:7022:ec7:b0:12f:1f67:e743 with SMTP id a92af1059eb24-13504a57b79mr6538621c88.40.1779112458476;
-        Mon, 18 May 2026 06:54:18 -0700 (PDT)
-X-Received: by 2002:a05:7022:ec7:b0:12f:1f67:e743 with SMTP id a92af1059eb24-13504a57b79mr6538597c88.40.1779112457870;
-        Mon, 18 May 2026 06:54:17 -0700 (PDT)
-Received: from hu-jjohnson-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-134cc33a618sm20870488c88.12.2026.05.18.06.54.17
+        d=1e100.net; s=20251104; t=1779146298; x=1779751098;
+        h=subject:cc:to:from:mime-version:date:message-id:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=MwQ4+T8/IHn57ekqGl0FuTuuwxp2E9CrynR+1mutik0=;
+        b=S+At4D70ma+2s9GS0akhSOC3ArOvqVdq7jIflixKZCy4ZyS1P7c7XZlMdYxgim8f2Z
+         aX8PoktsScGCDPLtWR5d+BcRgcwGIUI9b9jNqEhMI3zRQyNTIALQ3dj4bAT1FqlUi78g
+         ZIiofDiRKa0qwXQXmiUf9mMs7ym56Nwow6DF7i1QlH1TqbqybaBoLv7o0ZL5PbQtQ7UD
+         ahZ2EAFwaMkX5qkQ135qZ4In09zUS2QiJ2PNPgFS7HRXB02hU1NqoHOX43Rtq1IZIsv0
+         ADUwiVBP2ZVksQbMZGjqppMDnjejEQURx7dTES3ABH2hMFdZ8p88yrB+1cXzy/T6+B8N
+         wqag==
+X-Gm-Message-State: AOJu0YzJ0lav/JNCM/Xu9cK9JS0S1m0hTKv6Rdq5Ya1Q3QYrA9QkR5mJ
+	P7e9jgve5d73wEJZzD+6BZIUqfaZ6o4FRNjuvj6gouc61XmiH3q3V3c1Sv7eTNQDKDQ=
+X-Gm-Gg: Acq92OHzovA0ZaR9zXGD1pmU+iUygn40UgW/i+S6d5I2tEFr42W6DJvsyVuhyGIfz0p
+	6lqwV3GoTFzoix0hhCq/8pP/LwLwtpu4+LcYG2YVlPNhR7qbHOXJhHd6xSxLJP4vKDo8P+wfoP5
+	hBIIWX6TJ0fSNMLDbOdjhBitvoA80AUvRNg7Cg97hfuYR1EWyVywzbiG6fEdZtG92l7JWhG0RQr
+	yRAOLXsh1so+Uoqu++Gz3XNcrNcjhIdlvU2MycYiuE2SMvHK+vbvG5PMrkh5z71lJTL1x9sAJUw
+	YWDIydW9EHlMo1iTrdOoHcMRx+pwGMzhR7KuZ/5yMdU/NSiQsUZFl/bc/KogMR+DFVLpzwNWlur
+	rD1L6aa2MS5M6WvBTH+YS9qibpPYGFxWvhccAjgZxmuxuKEYK2XjUSVRDjR3bIRPCktcYIA/IOJ
+	bzsNUXFQ/7eu1heQNe01OwcXlL86fLNXtd4XDP3C7ZjL/blFvp2ms=
+X-Received: by 2002:a05:600c:698d:b0:48f:e230:2a1c with SMTP id 5b1f17b1804b1-48fe6631158mr275019155e9.31.1779146298231;
+        Mon, 18 May 2026 16:18:18 -0700 (PDT)
+Received: from smtp-relay.insalata-fresca.ch ([91.84.77.49])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4900c16c62dsm90310455e9.11.2026.05.18.16.18.17
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 18 May 2026 06:54:17 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: Jeff Johnson <jjohnson@kernel.org>,
-        Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-In-Reply-To: <20260514-ath12k-fix-20mhz-only-mcs-map-v1-1-a38d4a9b21a2@oss.qualcomm.com>
-References: <20260514-ath12k-fix-20mhz-only-mcs-map-v1-1-a38d4a9b21a2@oss.qualcomm.com>
-Subject: Re: [PATCH ath-current] wifi: ath12k: fix EHT TX MCS limitation
- due to wrong 20 MHz-only parsing
-Message-Id: <177911245724.2671480.16936967026360058275.b4-ty@oss.qualcomm.com>
-Date: Mon, 18 May 2026 06:54:17 -0700
+        Mon, 18 May 2026 16:18:17 -0700 (PDT)
+Message-ID: <6a0b9e39.87c5160c.1d1e38.353c@mx.google.com>
+Date: Mon, 18 May 2026 16:18:17 -0700 (PDT)
+Received: from claude-maintenance.insalata-fresca.ch (claude-maintenance.lan [10.42.0.122])
+	by smtp-relay.insalata-fresca.ch (Postfix) with ESMTP id 13A3E80BC;
+	Mon, 18 May 2026 23:18:17 +0000 (UTC)
+Content-Type: multipart/mixed; boundary="===============4304209518966126559=="
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.3
-X-Proofpoint-ORIG-GUID: bjNMYrXn5xvlygxvzLoQL3n2bvYtQW-Y
-X-Authority-Analysis: v=2.4 cv=UIDt2ify c=1 sm=1 tr=0 ts=6a0b1a0b cx=c_pps
- a=kVLUcbK0zfr7ocalXnG1qA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=EUspDBNiAAAA:8 a=MLNRGpfyw66JFDu800EA:9 a=QEXdDO2ut3YA:10
- a=vr4QvYf-bLy2KjpDp97w:22
-X-Proofpoint-GUID: bjNMYrXn5xvlygxvzLoQL3n2bvYtQW-Y
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTE4MDEzNiBTYWx0ZWRfX8bZ0kA/oKfR6
- HiT1f55aW8cLIU4uG+1HBCPjKFdZcSXcwbq6EueVVU9TIZVn7Gn/WBZER6woMwOGKSI5z7lB+Pc
- 3yhoKpTq+3YC1EssGWSP6/8LCNSHnd8tkojiGhDJYQcj1ziuI/gf3QH+PCYK75YwxGbxsMfUz+E
- GjG2CEg6gUVkHRe9EMbXDjsI38oMPqkIozZpnzOvZOJnN+1qTZEgdcxE5eY6ORZ+x2t2vbzbWBm
- GhVpmRRB4su7tTmKgt4XKmI87YwD5K5l/TgLxSwGtrQq/K4CH27wh3Mdp6T5cJ6djPnqG3WWX9/
- XvMfc1BAPZ+OUn8d9eEyEoX203f0mC6Zurr1ho3vJ7mLH/87tKzvYZfb0PPbaxjIX2PFAsnsBCT
- nDJKFA//vMPTbigMQkBqN9xLaLd+/fuIrzETj38tAGzc341kEihhbcLs+jTtNwHUV/F1VG68zRH
- Fni3rTho6JebRCP+Jxg==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-05-18_03,2026-05-15_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 impostorscore=0 phishscore=0 priorityscore=1501
- bulkscore=0 suspectscore=0 malwarescore=0 spamscore=0 clxscore=1015
- adultscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2605130000
- definitions=main-2605180136
+From: insalata.fresca@gmail.com
+To: jjohnson@kernel.org, quic_rajkbhag@quicinc.com
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org, quic_bqiang@quicinc.com
+Subject: =?utf-8?q?ath12k=3A_QCN9274_hw2=2E0_single-band_cards_on_IPQ9574_=E2=80=94_firmware_RDDM_after_WMI=5FINIT=5FCMD_=28WLAN=2EWBE=2E1=2E6-01243=29?=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260518_065420_040115_67159591 
-X-CRM114-Status: UNSURE (   7.02  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260518_161820_725945_7C82C108 
+X-CRM114-Status: GOOD (  10.07  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,29 +94,107 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+--===============4304209518966126559==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
 
-On Thu, 14 May 2026 11:32:51 +0800, Baochen Qiang wrote:
-> When connecting to an AP configured for EHT 20 MHz with a full EHT
-> MCS/NSS map (supporting MCS 0-13)
-> 
-> Supported EHT-MCS and NSS Set
->     EHT-MCS Map (BW <= 80MHz): 0x444444
->         .... .... .... .... .... 0100 = Rx Max Nss That Supports EHT-MCS 0-9: 4
->         .... .... .... .... 0100 .... = Tx Max Nss That Supports EHT-MCS 0-9: 4
->         .... .... .... 0100 .... .... = Rx Max Nss That Supports EHT-MCS 10-11: 4
->         .... .... 0100 .... .... .... = Tx Max Nss That Supports EHT-MCS 10-11: 4
->         .... 0100 .... .... .... .... = Rx Max Nss That Supports EHT-MCS 12-13: 4
->         0100 .... .... .... .... .... = Tx Max Nss That Supports EHT-MCS 12-13: 4
-> 
-> [...]
+Hi Jeff, Raj Kumar, all,
 
-Applied, thanks!
+I'm bringing up mainline OpenWrt on a Wallys DR9574 (IPQ9574 SoC + three
+QCN9274 hw2.0 M.2 cards: one 2.4 GHz, one 5 GHz, one 6 GHz, all single-band,
+all single-mac firmware). After working through two host-side bugs I've hit
+what looks like a firmware crash and would appreciate guidance.
 
-[1/1] wifi: ath12k: fix EHT TX MCS limitation due to wrong 20 MHz-only parsing
-      commit: 60fb2cf51e77bb1c0261160b4be44209d68956b1
+Hardware
+--------
+  Platform : Wallys DR9574 (Qualcomm AP-AL02-C4 reference design)
+  SoC      : IPQ9574, soc_id 0x401a2200
+  Cards    : 3x QCN9274 hw2.0 M.2 (DR9274-2GK / DR9274-5GK / DR9274-6GK)
+  Firmware : WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1 (linux-firmware 20260410)
+             fw_version 0x160484db, built 2025-12-09 19:48
+  Kernel   : 6.12.89 + ath12k from current ath-next + backports-6.18.26
+  OTP      : slot 0001 board_id=0x1 (2.4 GHz card, programmed)
+             slots 0002 0003 board_id=0xff (5/6 GHz cards, unprogrammed)
 
-Best regards,
--- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Two host-side fixes required (separate patches)
+-----------------------------------------------
 
+Fix A -- single-mac cards must not request WMI MAC1:
+
+  Without: HTC service WMI MAC1 connect response: status: 0x1 (NOT_FOUND)
+  Cause  : hw_params.max_radios=2 for qcn9274 hw2.0 unconditionally drives
+           ath12k_htc_init() to open two WMI endpoints. Single-mac firmware
+           (dualmac OTP bit clear) does not advertise the MAC1 WMI service.
+  Fix    : read dualmac OTP at MHI register time; scope wmi_ep_count to 1
+           when ab->dualmac is false for qcn9274 hw2.0.
+
+Fix B -- DMA ring capability parser must tolerate unknown module IDs:
+
+  Without: "Invalid module id 3" -> "failed to parse tlv -22" -> WMI ready timeout
+  Cause  : WBE.1.6 sends capability entries for module_id 3 (and possibly
+           others) the host enum does not know. ath12k_dp_get_ring_num()
+           returns -EINVAL for unknown IDs, breaking TLV parsing entirely.
+  Fix    : warn-and-skip on unknown module_id instead of returning -EINVAL.
+
+Both confirmed working on this hardware. Happy to format as [PATCH ath-next] if
+useful -- they get all three cards from "won't init" to "init proceeds cleanly
+through WMI SVC_READY_EXT".
+
+The blocker: firmware RDDM ~316 ms after host sends WMI_INIT_CMD
+-----------------------------------------------------------------
+
+With both fixes applied and CONFIG_ATH12K_DEBUG=y + debug_mask=0xffffff, boot
+is clean through service negotiation:
+
+  [19.482] Control service: ul pipe 0 dl pipe 1 eid 0 ready
+  [19.485] HTT Data connect response: status: 0, assigned ep: 1
+  [19.485] WMI connect response:      status: 0, assigned ep: 2
+  [19.486] wmi_ext_service_bitmap 0x5e45be01 0x2d94d02 0x1c7010c6 0xee7d5c14
+  [19.486] num hw modes 1  preferred_hw_mode 0
+           slot 0002 (5/6 GHz): supported_bands 2  freq 5 GHz [4890-7125 MHz]
+           slot 0001 (2.4 GHz): supported_bands 1  freq 2 GHz [2401-2495 MHz]
+  [19.486] unsupported dma ring cap module id 3, skipping       (Fix B)
+  [20.408] htc ep 2 consumed 1 credits (total 1)  <-- WMI_INIT_CMD sent
+  [20.724] ath12k_pci 0003:01:00.0: mhi notify status reason MHI_CB_EE_RDDM
+  [20.883] ath12k_pci 0001:01:00.0: mhi notify status reason MHI_CB_EE_RDDM
+  [24.517] ath12k_pci 0002:01:00.0: failed to receive wmi unified ready event: -110
+
+MHI_CB_EE_RDDM (RAM Dump Debug Mode) fires 316-476 ms after the host sends
+WMI_INIT_CMD. The crash hits all three cards on every boot. Card 0002 does not
+crash but times out waiting for WMI_UNIFIED_READY, presumably because the
+firmware group is stuck.
+
+I also attempted two host-side patches targeting the post-INIT path: a
+NULL-ptr guard in ath12k_core_start and a DMA ring config timing fix in
+ath12k_core_hw_group_start. Both were confirmed to have no effect -- RDDM fires
+before either code path is reached, ruling out those theories.
+
+A 21013-line verbose ath12k log (multiple consecutive boots) is available on
+request.
+
+Questions
+---------
+
+1. Is WLAN.WBE.1.6-01243 known to work with current ath-next on QCN9274 hw2.0
+   single-band cards? Is there a known-good firmware version to try
+   (WBE.1.4.x or WBE.1.3.x)?
+
+2. Is the WMI_INIT_CMD payload format expected to differ between single-band
+   and dual-band QCN9274 variants in a way current ath-next doesn't handle?
+
+3. Is there a way to extract an RDDM dump after this crash (debugfs, PCIe BAR,
+   MHI API) to identify the specific firmware fault?
+
+4. Wallys vendor documentation says "only single band modules can work with
+   current ath12k without extra development". My cards ARE single-band yet all
+   three crash. Is there known additional host-side work beyond Fixes A and B?
+
+Full verbose dmesg on request. Patches A and B are ready to post in proper
+format if useful upstream.
+
+Thanks,
+Stefano
+
+--===============4304209518966126559==--
 
