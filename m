@@ -4,115 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 101FDCD4F57
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0DC31CD343F
 	for <ath12k@archiver.kernel.org>; Tue, 19 May 2026 01:08:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=opKCdYGQQeXEl44WzwqwkN/2YDFGtLqnDNeag6cAjQk=; b=c1KaV+DUzWgaO8dIJjsiZKjyce
-	oW49cpNkrUpfZrMoDjCEBCut9GCB+ln9IWvIAFoVmUG0xZRfvNIo8+wCe7NXmC1SGJ4cywge3CmaP
-	UFl86oHxy2gXLLReDX7LKgINPtHyNosePzbntBAr/y6psc0qtzWncFX5KHHzltL/eFHx/zcfap0Fz
-	A7CB90LbCtQ3E6hl4IIza5g3TT9J7qZKEAit4TK4k7eVJ1Lg6KYcjVqRhsdTeU1EjxjotZnuIXakW
-	6dE0PCu2Fyj4RoABbVFNPXsBORiR/MpUGzrUSBPjKbSrrb/sMp2q9bawjV3VahdVybijVLq5UScfn
-	NWwT2OFw==;
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=X9HmXD8It3zOIVPJa6MlBya8ryspjm9ncZa5MieYLs4=; b=YcZrBhlMN3o/jXfrCjbBYfDAHc
+	sGaVdmf3d0bNPxRx/OkCOn3gXjFi/yY4fVSvVlMTm8IxPBOzRA67fD3qoOddHAPGdXf02WIgR6cJT
+	p3PmXBDf9wMxFK9TTradZvMrPt4jVlu1KcaPYUqnJoH/+YtAVPMs80eYjhfFnO7DF55IInC8xEwMF
+	aCENO+79uwL9WKn+y1vq4+1v2M/sIJk+dtvEgMVptcszwCut1FCpRTdwvo3LUFxEW+0Bit8hAbBpb
+	5Mrv9UCGSDK807Lljrqi9iDzWjR+QOJ+xFyhu8lNsijJFd2u+8Js+q1uusA/2EDtPLlnoDQ1aj7pS
+	4d228k8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wP8wL-0000000HKHQ-2gMl;
+	id 1wP8wL-0000000HKHX-2zoq;
 	Tue, 19 May 2026 01:08:09 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wP8wI-0000000HKGf-1Huv
+	id 1wP8wJ-0000000HKGz-22O7
 	for ath12k@lists.infradead.org;
-	Tue, 19 May 2026 01:08:07 +0000
+	Tue, 19 May 2026 01:08:08 +0000
 Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64IGSMoY2091041
-	for <ath12k@lists.infradead.org>; Tue, 19 May 2026 01:08:04 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64IH1wig2091139
+	for <ath12k@lists.infradead.org>; Tue, 19 May 2026 01:08:06 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=opKCdYGQQeXEl44WzwqwkN/2YDFGtLqnDNe
-	ag6cAjQk=; b=mze0kJSRRk95yz+FiA1wMKRg8GeHFqaySr7XiaVdzfbVscIhsdF
-	Io/5ltl16dTPdm73xq6oyXMNRPowVB6STSmDfzNJ+3cnsXc+bChgtZYTr6s1qxnr
-	akoOk+BZBD5H71dWHkkOz9UM/D/XdIdKkI271r/QWC6bbI0LLb7+80dk56E7dG5E
-	QjnCRc0WPXsvaiiMsGKAzYEELbv+FfItQ6z58zZO1VVDKJFgou77/3A5ub90Gyl4
-	vcgD5cjgHfz07jad/iLbtMcd40diFpUFtzcZopQTrIFNSnZvPYkdkz1WE4Jp08DX
-	/GLQ08BNd3ng/3/ezNhdtnHc71fclibjuIw==
-Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e80rpk1u4-1
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=X9HmXD8It3z
+	OIVPJa6MlBya8ryspjm9ncZa5MieYLs4=; b=bAH7mkvwJJk0C3CWufg2av+kqmu
+	u2ogO5AhMvgKaWGXHF1gaMnRmsizlhdCDVCuC3dpbVNv/JWZr3XoyJ10/MYcJhLF
+	bPD+4lxha9YKcOO7vazKuNkyzfjzxyCZpohpFKidHGsmGfiaMNfVhY9OYpv86lCp
+	Mk9ftcxw3T4NnHTMPDpVPC9FbT5ceD6DmTCZM1c5Ouha+rKJiEXYfVsGuGYJ1G3D
+	HJ9Vq9JVC291W+S6I31bUZNJbfSrcxnxgwBO6dV5wP1Wz/nelwCdR6aC5XnCpNDL
+	523qf9XR3NwKf4b72gmK7sdFHdJyJzjO9oWPNMpWi+11HaX1+XBlWI2YY6w==
+Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e80rpk1u8-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 19 May 2026 01:08:04 +0000 (GMT)
-Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-82f9f49e4beso1467334b3a.0
-        for <ath12k@lists.infradead.org>; Mon, 18 May 2026 18:08:04 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 19 May 2026 01:08:06 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-82f85179263so4600160b3a.3
+        for <ath12k@lists.infradead.org>; Mon, 18 May 2026 18:08:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1779152883; x=1779757683; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=opKCdYGQQeXEl44WzwqwkN/2YDFGtLqnDNeag6cAjQk=;
-        b=GOvbbunYbxc+x2K670PF9FP8fUXL/66l+kZh85565SvcAdANODXFYX9T/51ZZx+hvA
-         2TRfkupok4/mDTi0JEFn81yc9tIQycnTfZc7SVpgZFBy1xxZeBwNStsHV9Xx/Zo+HLUu
-         +aCX6i2RCTtJeaFtzexAdTomgQCJemq/ZjOOaHHEaj2xt9eu6W3l53gRQg14B83BBpbX
-         9A6gWBgIWeruNoYJlbrSYigqXghWN/oHbm7YsVSt77vYVm6K1msFX5o3E8dykC9NBKtJ
-         Er0al+udDbYCgpLA5UltMrSjgo8hV+VLXU072wm1RRYyUKTRZSATaEp+3V8aKiCcALoD
-         tqbQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779152883; x=1779757683;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=oss.qualcomm.com; s=google; t=1779152886; x=1779757686; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=opKCdYGQQeXEl44WzwqwkN/2YDFGtLqnDNeag6cAjQk=;
-        b=bOFzZcFji77tLLCyHv7x/OVRQQNPr0j45qfQmeXXxn89dKu9ZOz7ZJHPAbX1Pc/jqm
-         RKmfZ6nyaoyuznZuZJMhIQtMgsyCVMBhIIkLetCTyzLfK8GqV2/fQYNnwl5j3Hfkt9f6
-         6jm/lP07gkP1yxtV/uUaH46A8vCF103i4RIJRV5SV/Li62Pe/VycPE6BMIFtTMgZyxIp
-         DM335iUoFemKS0roBcDh5cBSaia3n7eKVq4BEZ3P2sG/aRZHd7TKcVT7S5W1yZ0h95p7
-         Qaj3Xuk+sZu5MgqYLpqoXj72yula9Ejj8vu9wBB913qlNY7NvibRkJ3zHw24ZSIjEzdE
-         5muw==
-X-Forwarded-Encrypted: i=1; AFNElJ+FgMcLztW5ZjnqyFG9+u4CI4v5rjAxW+Jb7LVTSNQjU9S1HF9Cq+jdC9SlgFZnpoJRagk+/RM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyPLU23oHg/vpHlCn+2ocKHs+/gwTPr9LGNfvKe7S2N/CajuDBF
-	ddV/YhOh85/ZtAaXD1hoEpYTmbUXbrohO8h5aD2mXgD+Lx2lXUDFMUwYWRMLjxgbjHZDi8rLyES
-	fItGiLK43bGf6JtwPrXOi9QzSRHmKf9qtc2tF0WrAH/pU93Zx8haTDhZOEOmGjVtd
-X-Gm-Gg: Acq92OF8qZ8ppmfakeL830cBMyds5rHVfIjcISK3ALwWE4xVQkB8BP91tfYzeQB6JP7
-	naXMYy9jxhTwgfKv1aGuCJ4nPA/NxpZL8D9dp4YotPb7+yMtdKX/9sKsvX9DRqwSckKqC3RSHn+
-	f7BQphTw4YCBhTkQSKSC8J/DL6zA2WaZyIKLZmDdHoJDSchBnCs5cOclTnDquclzEQJFULDpD61
-	ZGyTa9UyMnfkce6jgzkRdIEY35b817mHukm8N2ajJ3Mm+trsu6lUEwDboxWVH1xHdywQPPGiT1i
-	7ACmAx3Gm+NQUo/soGRT5D9x9xp4hUq31cFVnNCg6NDYcKfMNIdZdADVhkn71e16bsvdBOsrlpi
-	SJHlVm+b+VBDCayfRIZgNy16wTifRbZfB2FD2s5S30qLhu46t5ckrlOyuVCI/M38FcRNtL21/bF
-	Nlfyhi
-X-Received: by 2002:a05:6a00:bc93:b0:82a:7893:e14b with SMTP id d2e1a72fcca58-83f33d98510mr17008262b3a.38.1779152883330;
-        Mon, 18 May 2026 18:08:03 -0700 (PDT)
-X-Received: by 2002:a05:6a00:bc93:b0:82a:7893:e14b with SMTP id d2e1a72fcca58-83f33d98510mr17008227b3a.38.1779152882831;
-        Mon, 18 May 2026 18:08:02 -0700 (PDT)
+        bh=X9HmXD8It3zOIVPJa6MlBya8ryspjm9ncZa5MieYLs4=;
+        b=hME6ye0mwigzi0zhQUir27d53QcavzjSYt+tb4rwwRqw1v7m8nyTzGgqnQ6TbBSudd
+         HOYzYlDz3dlLctMVEZ9aZ/ZRfnM1wJR1UUzRFJ1d0Z8idwtn4i4CRPbaf/uGEknisucT
+         9nZAbbTn7DTwzwORuZrGEnVBeDa/MoyQMB+KhKBNadn81Z6OSy3ApFhqKfmFp/1Df7/o
+         xHgI7yNOuvQT4ZWgRbkLvQ09X8TyRprivwr24qLs/x/TU9iEi2InQrdv8iXgBTHpi4tS
+         3+iZyfdwnjt/6XgpJMadA7iB024eAKWjPe2kVg/9uuJtTSVf20Uu2USaOD89tM3xxVGG
+         lcBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1779152886; x=1779757686;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=X9HmXD8It3zOIVPJa6MlBya8ryspjm9ncZa5MieYLs4=;
+        b=DBWyWtnMPvXZLA/q9PAH2FYTAFZXnEu3mDUS2aGlvFp7i7QYcH05BViBn6o5R1t/OW
+         cbWrdLQ+TL+CiXnS3Is/KbmD594nu/ZCz6zMgZJ+PYqGzyQYxM6OZ1aZ6xvBZuK5kmA/
+         LrzgxAQmsyWyAZnALN7iwWpQ0jTu3ebb9/pZMOg7/jay2ZA549JS+aeyWKiTvwU400nN
+         CYz9cVdKwQcx7s9lg6/Yh7SPe/g2LFGsWhHYQiLUh3sOWKHo9QC3ROy0DX2qBwDSPt/T
+         7ibRdie1Wlmv+NwclyzZo50rlpRkrhyzY+fEjGla7mU/TJa+PbAzzpvag4xRC4ZVwOz0
+         jVfg==
+X-Forwarded-Encrypted: i=1; AFNElJ+Szdrpfg2KxAkxT4DbVnFOyjP7zK3VcoXx8tuXwpyQ7CwRSBmnUU7GnNnRuGZopuW/sdcUjdw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzj9899KTu5juQ+mdK4M2keEreHwB4aJEqiiwkffcD8bO7wB3XB
+	gS/lNsk25RwAMFFGGCzUhB7MRi9Ew9MIi+YKyVVT3ZE7Bg1YJgXJGKe2VI9FwdTabOxHE7ROFe2
+	ddJyXvyFWYRBTwQ8+s8d8So6xDcZz47bjjsZwJj3eDjb7Fe3ehgBJ1tEvjJTwEowLWk4l7a6M
+X-Gm-Gg: Acq92OGEGE0g6W6YEFiuUu/p1uX3OkAhca0GgW+xFAa+zQRkqMoQFs/m44gBBJPB28r
+	QE2kF40bU8Aw4Lub3bIYO8BuO3iw9HbD6f9/2UrG8n/VNehfAOMHJDioIR6+rYq9ib7RnaavLcL
+	LUFmQKcGMfpNOoMsdycXwd3VwPL/E272Xwd1GSZvKKjWZNEB/rdmpxN+cm3shVJ6qSs32p37Mgk
+	pyPUqsPRWFRm/jhHGsmnxB4YDRU068cOKZpcmRuoYVrfRZHJwN9OLyQnpdVpDFITTUKmxrfkUfF
+	CLTAoj+snmFATIArR1B7d0UH+kT9KjiZHt9nfH0aXT4pJpPe98hXJ5giJUWmLpN9vj3kt3TMHlT
+	wt3kH/mska1q/OZkHh03FucXacBFuPlNe/v1hql1VpjtXXfnoxdOJs4yUSwRZGp3hVol3VPS3QX
+	4LpSMh
+X-Received: by 2002:a05:6a00:4193:b0:82f:a6bf:bee7 with SMTP id d2e1a72fcca58-83f33d0d040mr17751391b3a.49.1779152885747;
+        Mon, 18 May 2026 18:08:05 -0700 (PDT)
+X-Received: by 2002:a05:6a00:4193:b0:82f:a6bf:bee7 with SMTP id d2e1a72fcca58-83f33d0d040mr17751368b3a.49.1779152885236;
+        Mon, 18 May 2026 18:08:05 -0700 (PDT)
 Received: from hangtian-z2-2004.ap.qualcomm.com (i-global052.qualcomm.com. [199.106.103.52])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-83f1942a83fsm16196793b3a.0.2026.05.18.18.08.00
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-83f1942a83fsm16196793b3a.0.2026.05.18.18.08.03
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 18 May 2026 18:08:02 -0700 (PDT)
+        Mon, 18 May 2026 18:08:04 -0700 (PDT)
 From: Hangtian Zhu <hangtian.zhu@oss.qualcomm.com>
 X-Google-Original-From: Hangtian Zhu <hangtian@qti.qualcomm.com>
 To: tglx@kernel.org, jjohnson@kernel.org
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         linux-kernel@vger.kernel.org
-Subject: [PATCH v5 0/2] genirq/ath12k: fallback to threaded NAPI when IRQ affinity is unavailable
-Date: Tue, 19 May 2026 09:07:56 +0800
-Message-Id: <20260519010758.712297-1-hangtian@qti.qualcomm.com>
+Subject: [PATCH v5 1/2] genirq: export irq_can_set_affinity() for module drivers
+Date: Tue, 19 May 2026 09:07:57 +0800
+Message-Id: <20260519010758.712297-2-hangtian@qti.qualcomm.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20260519010758.712297-1-hangtian@qti.qualcomm.com>
+References: <20260519010758.712297-1-hangtian@qti.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-GUID: 7TL16bBjaurYNssRPXi6OWGdyTGzD2T0
-X-Proofpoint-ORIG-GUID: 7TL16bBjaurYNssRPXi6OWGdyTGzD2T0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTE5MDAwOCBTYWx0ZWRfX5VL2nWn8haC2
- 39eQDnOFAf2KQZYutmG6obpD8d4bfbgubKOMnwmzpted32cutqngPm8a45nvY5hqd6l3IWJHsZX
- WzJkAb8Ql9NCAhTCQMNWhYVCj85NVvH71VdsCXmQVk8u71H1IQ3voYkQ5Bu6tpF10yIDfBPpcsA
- 6sHWaAD8I8cs5FbuQGTsb9ccFvhgqO9zHt8K+TM5vj4G38NxbhC/y/Rg8bfPRnOf7jfUC/R/V0E
- y9lM+taH4n7RnON+oYmO3k22p0iyiw64L10uFMxaU3qSQY8NC7jQ1Pmkx22YCDubVAXp0/Zg9uE
- /zrwB/GTIfv5jqG9pTz0dDlfravGru+wHztaG2V/fRHE5kdnAqYWjtIy62wF666tj+Ts/brjoYF
- g8egrdSQjVC78hB1lOdYwfWiYOjjseDTtfjh0XIWgZ9H2JBMNdtn8Y2bWb0CMWAN9x4uP2D8r0+
- uti/G9CNSsE8t+38M5g==
-X-Authority-Analysis: v=2.4 cv=ecMNubEH c=1 sm=1 tr=0 ts=6a0bb7f4 cx=c_pps
- a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
+X-Proofpoint-GUID: _3SuQa4MywKOgFCX7Fbl-EuyCFgovpKL
+X-Proofpoint-ORIG-GUID: _3SuQa4MywKOgFCX7Fbl-EuyCFgovpKL
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTE5MDAwOCBTYWx0ZWRfXyeM7s863zzwG
+ P+GuVg8Tr0Ez7dEbTAbH5w46mffUK/1cw6EYDz/DnzpEho6PFfHIGNnSrS+BDY6UdSNeApvTfhd
+ 8YIfSx6SmlV++pIfp//sdKgITGW/M11GZ5jTUPW1S6g9Ukuzvcnl/0f6etZhI4ch/2WDBtactsH
+ tvPOI+MMQk0z9ltS2LjKz6IwFu6mRslWM0ZDWgvlupTmKvRJtmougeiFtKf4T60ElTtiN2BE8DJ
+ XklStlF7dzSWsQozQJCpURakPB8xojUTruDzVO5gCgSCu9eQzwCBI7USHuwV3w0+v+rRmTz3N4d
+ XRHmmTD9BjKNWlFSoWWHKOSk6SEkXbLrB+UCIdkRpF2YEHlfiv0cANXsWckHfH+wgun8tm/OqsW
+ PFG8Tk+vA0R6hsDyGh012QwxCDUzhsdjKYIPEp/6s5psqeRUZX2L+4puGaPV+/YSLvAQIyOHdyQ
+ o71hjowgb8Hri9rg9Bg==
+X-Authority-Analysis: v=2.4 cv=ecMNubEH c=1 sm=1 tr=0 ts=6a0bb7f6 cx=c_pps
+ a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
  a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
  a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22 a=EUspDBNiAAAA:8
- a=wq-1lD5fFhYcRPXe29MA:9 a=OpyuDcXvxspvyRM73sMx:22
+ a=ncsClcd2Rt7TSDcZb1cA:9 a=2VI0MkxyNR6bbpdq8BZq:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-05-19_01,2026-05-18_01,2025-10-01_01
@@ -122,8 +125,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2605130000 definitions=main-2605190008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260518_180806_475840_E0206650 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20260518_180807_640299_B14B886F 
+X-CRM114-Status: GOOD (  12.02  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,41 +143,31 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Hangtian Zhu <hangtian.zhu@oss.qualcomm.com>
 
-This series improves ath12k datapath behavior on platforms where the
-effective IRQ path for WLAN MSI interrupts does not support affinity
-setting.
+Export irq_can_set_affinity() for loadable drivers that need a runtime
+check for IRQ affinity capability.
 
-In such setups, DP processing cannot be distributed as intended and can
-become CPU-constrained. The ath12k change switches to threaded NAPI when
-runtime IRQ capability indicates affinity is unavailable.
+In hierarchical IRQ setups where the effective irqchip path lacks
+.irq_set_affinity(), drivers may need to switch to a fallback policy.
+Without this export, module drivers cannot use the core helper and have
+to open-code equivalent checks.
 
-Patch 1 exports irq_can_set_affinity() for module drivers so they can
-reuse the IRQ core helper instead of open-coding equivalent checks.
-
-Patch 2 uses irq_can_set_affinity() in ath12k PCI to enable threaded NAPI
-for DP interrupt groups only when affinity cannot be set.
-
-On RB3Gen2 with QCC2072, EHT160 UDP downlink throughput improved from
-802 Mbps to 2.58 Gbps after enabling threaded NAPI.
-
-Tested-on: QCC2072 hw1.0 PCI WLAN.COL.1.0.c2-00074-QCACOLSWPL_V1_TO_SILICONZ-1
-
-Thanks,
-Hangtian Zhu
+Signed-off-by: Hangtian Zhu <hangtian.zhu@oss.qualcomm.com>
 ---
-v2: sanity check irq >=0 before irq_can_set_affinity in patch 2
-v1: initial post
+ kernel/irq/manage.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Hangtian Zhu (2):
-  genirq: export irq_can_set_affinity() for module drivers
-  wifi: ath12k: enable threaded NAPI when DP IRQ affinity is unavailable
-
- drivers/net/wireless/ath/ath12k/pci.c | 11 ++++++++++-
- kernel/irq/manage.c                   |  1 +
- 2 files changed, 11 insertions(+), 1 deletion(-)
-
-
-base-commit: e12d2d3983acb150fd987d19ec6a2a530da110df
+diff --git a/kernel/irq/manage.c b/kernel/irq/manage.c
+index 2e8072437826..c3aa33ef4be9 100644
+--- a/kernel/irq/manage.c
++++ b/kernel/irq/manage.c
+@@ -171,6 +171,7 @@ int irq_can_set_affinity(unsigned int irq)
+ {
+ 	return __irq_can_set_affinity(irq_to_desc(irq));
+ }
++EXPORT_SYMBOL_GPL(irq_can_set_affinity);
+ 
+ /**
+  * irq_can_set_affinity_usr - Check if affinity of a irq can be set from user space
 -- 
 2.25.1
 
