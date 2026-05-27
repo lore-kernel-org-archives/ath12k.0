@@ -4,91 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAB42CD5BD0
-	for <ath12k@archiver.kernel.org>; Wed, 27 May 2026 16:12:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A4E7CD4F54
+	for <ath12k@archiver.kernel.org>; Wed, 27 May 2026 19:52:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:
-	Content-Transfer-Encoding:Cc:Date:In-Reply-To:From:Subject:Mime-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gCF93p0pPbudh0wfYlc1I9a7H3qyspnUPz7c6ldVCIo=; b=0K5MnlcALNDMBtur609mKF2la8
-	S/9z5Z2dI5/XKfpc910x/KWugH0IGDPiAVlPywROI8nh2M7NhePO70nDFE+wGgA+hsdfD8vv6dCWM
-	OiUiJYeRGwSmlpPMXTwjNgZJ0PyW92XwLcL0Bj1A1NLSof/HIofr3371k6V311R4cC5mYh1vLYcF9
-	WSMyEfnsYX0ftJA/mT5jzL1PSFL2u+QuJX70m1/m0wo+zfbxcVHOwk2qMI12qR87aIT0VMLTKQteq
-	ULfhQSOUm4CPX4PTb+/7BJkXoff8NBmVSY5D7QdpKq0+iI9e0CWyOOOkEyir/rw9BEr6/k8alPstz
-	g874E/NA==;
+	bh=rZO3fziTBuxbAv6/WgS4fmu/DgnKomzs/QOcLDB/MF4=; b=h4Yf1lxFtFQN2Hw9Tv3T9lT9pJ
+	GOyTvVsX7ZLoGxBuUQCta8nozD1lytWk3on4JkBBHhNc7KjH3Jitp1IwNxoIm7Sf5QR1AoDzYTUBU
+	r39g0n/PD0ScP24++wxFjjMSsO6x5RzxS+wX2nDLg97eLPF4fcDZQD9eQ4zajasC5fvvOxdBEwn93
+	FM8z7VOhDTMYbQxinw6eyasU4NuTQNtwZfcK3VdB2BnL0Eh+2zdcW/bDWH3nxU4lRe/l7WROkrM+x
+	NQiTvbfbf9/e3Tl94r1ZPbIi9RX14BBvn0cA0fghZXRVoJuA8G/d7R1UbSzsqV3msu4KY/uEKVi2F
+	JU6yrGCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSGsL-00000004TmH-2rhV;
-	Wed, 27 May 2026 16:12:57 +0000
-Received: from mail-qk1-x736.google.com ([2607:f8b0:4864:20::736])
+	id 1wSKIQ-00000004h6e-3Y9D;
+	Wed, 27 May 2026 19:52:06 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSGsJ-00000004Tlc-2OZk
+	id 1wSKIO-00000004h6G-39Ia
 	for ath12k@lists.infradead.org;
-	Wed, 27 May 2026 16:12:56 +0000
-Received: by mail-qk1-x736.google.com with SMTP id af79cd13be357-914bfa75911so581352285a.1
-        for <ath12k@lists.infradead.org>; Wed, 27 May 2026 09:12:54 -0700 (PDT)
+	Wed, 27 May 2026 19:52:06 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64RHgBh0150057
+	for <ath12k@lists.infradead.org>; Wed, 27 May 2026 19:52:03 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	rZO3fziTBuxbAv6/WgS4fmu/DgnKomzs/QOcLDB/MF4=; b=azbXpwa5dJ/EV6fw
+	us1A+oRKB7oi9C4PCZ00DfpG/apj5eX275oZuW473rQiGzH4arAMiW/axqV0ZoXt
+	pRwjVulzHq1DTfYd2YAViGyccI5c9ghhSwkUyv+aEAt3K3iHGOyCGbDh75/jMDen
+	pRt5ogDojxN8PfsIRdW4IXvUybw47cpIE+4h92jrrUmPgVYXsRiYwvTSv7iy/Jdv
+	z6WuFfGvv1jDSyvVRZcEhcv4LRkyGpmRZrmSqas7+mujlJ8if8ZadPJwmbhHU49l
+	uJnZNjWzliP9IfkW/t9l7e6/hl69w0r5tFAK0jsPLq7BP4u9Vz+n5+qJxUczneq2
+	rkGzTw==
+Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4edxxvt4yf-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 27 May 2026 19:52:03 +0000 (GMT)
+Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-2f2d983d109so6809990eec.0
+        for <ath12k@lists.infradead.org>; Wed, 27 May 2026 12:52:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1779898374; x=1780503174; darn=lists.infradead.org;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=gCF93p0pPbudh0wfYlc1I9a7H3qyspnUPz7c6ldVCIo=;
-        b=J8lhgKRFQMSbBUoVxgVsY5bM809HSHWJ0y9IzHwlNUrz45ASRh61vsqMZKQ8lbhs9O
-         VVB84E1F+Jx/Qp+dzbBSva0kcNSdX4juzD7yJfYQj2qTR+i4Mf8N/N+gXvbPwytxgHdD
-         J8NF9k+TM/UcXBrblqyetHbKZRqeHLOVv4Y2LiUpoczL+k566qVDrAbqDaBzirYktO3A
-         vXZ/Au7z25H4KNruWIgpdlsyp87IAWEjzIdP9DYgJnxL66NnCKzv5Ijd3YuV7H+3ejgD
-         PHt/DSv1O/CRI7Fd1iGSroeHz0VhFRF5n24YCe3ZKyIym/wf6Y2zIAPuXJwkQndpnZb9
-         9h9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779898374; x=1780503174;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:x-gm-gg:x-gm-message-state
+        d=oss.qualcomm.com; s=google; t=1779911523; x=1780516323; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=gCF93p0pPbudh0wfYlc1I9a7H3qyspnUPz7c6ldVCIo=;
-        b=UDg3b4seKpp9uyPONLxEnZ2ZvmS63C5wG8DEWdKCg4/9CbuDmF1CpfaFCGy80r06/G
-         zqnZNyWA1Mt0PJGdvSQYUXj+qY7+1h7j2dpNlRj+Yfnz9phcTA98zYyzU0HpI1XJjnHK
-         JzOPWzri730PsdwijdNgCD0UaqXcxfLDGwUBsOHHCUy4d10qE/7uTHLA96SzJ1k6D8Ka
-         DucdaM2q2Y3G2WHvfnJUjWtC4jw5HSRBWfsDD+WXJmOYDtbeHXL0HkImScbjyMDmLaFw
-         xDSc3CialN5w4Qhqo01oc2jPv50Um5MPRAL0gl+tRu1RETpLDSASJ3iNy3iSp1U8H26L
-         Jmcg==
-X-Forwarded-Encrypted: i=1; AFNElJ/cjU0t+fFXnColmcXOAHbu0CDAPd7ZPBPxoo1OeMw03CRdZuGPQRIHtu94uWUY8j/v8tC2V6U=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx4Yf4e+E724rkmd5vDaE9StITuqA+AQ4VFv2bfJ41I4+ctGrLf
-	0ZoK00wMqwTTeJjVMHmSKfiaRcd0dhyeCxiRLU50MKUfpBZi/FpZtFeV
-X-Gm-Gg: Acq92OGS+kbe8NSwJr2w0qDFXWZGGHPl/o3T/Ye7C3T0SspHtvUibb39mZi7cdywXyp
-	4E8w6zqvTXg79eaZMlg3eK/63duVrEo2+bNmL4w0E9zft1QyTxtmv7DVRVqmqWkun+ImNuB71qi
-	jgjF9w7s0u/pw2/ea4ASIH0g18Ipb7ggUxGWNyhwaM2zEd1QHujV1QREKt6Ns1dyM4Q/lZiGf6K
-	JWV4QaZvuCGxKokFlKQDRYpkbwEQo513sRWKYQNwjrbKnTg8yWJqZnWjhKT6vDw2q+UMQj71oHp
-	C55JvyGQAJRkt20m4wHMFP5sfkafTj0KKcTHTQ6D/5/PZbsGyWdpzkYWV9Sda79AbQcypXG7cIi
-	RquyKdqiTn4BrsyYqg33+E+ohaZ5nNaPPzu/CldpaPi7k4eJif5WqB/SIKHsJr204Hd1499QPiA
-	SeZ5PD4I3qfpG2GOLkcrSybpvZsWzFzgwJuERIy5UOLgNCm/vHv13eM2nyeNpp9Cnzxy5SQdM5M
-	pkMnbqVqUkNw4Dpb3B6jLgkWVVBwunKZQPeHImQKDQQBJ+PuVgZ5HVw/dkFpw==
-X-Received: by 2002:a05:620a:454b:b0:911:fba0:6d02 with SMTP id af79cd13be357-914b510b65dmr2927962085a.22.1779898373714;
-        Wed, 27 May 2026 09:12:53 -0700 (PDT)
-Received: from smtpclient.apple ([2601:19b:4200:392f:e976:246b:e928:1bf7])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-914f87d26basm515826085a.24.2026.05.27.09.12.52
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Wed, 27 May 2026 09:12:53 -0700 (PDT)
-Content-Type: text/plain;
-	charset=utf-8
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3864.600.51.1.1\))
+        bh=rZO3fziTBuxbAv6/WgS4fmu/DgnKomzs/QOcLDB/MF4=;
+        b=cz4pAkW6/A/Wf5JgqM0D3e+wYjNEPLh3RLEo2FLKzN6YDjK07ToEbOUwK/rylLWD7B
+         L31lFDviGLHoePi0nph+/CLtyhdCCjcuKkUkr7Cel+iP+Il33r69QDUWZfEkIHm/px0o
+         TsmB5HCyXMQfoRxCWTznOnWJYmkrtVTOO6rcmxy//lNksCZTN2JqEBfX/fqjL591Q1Og
+         A8RQIXQB7vPcBQFDXpudkK4vDFVchu4VjxHzvfoXHVLnzuWbwRmwuOm3xhuxr/B3vvge
+         Jhgk4HJnEHB8Bbn2iUiJ+tMU/d0KFFO4RH71Mw3LYEAulghco0aOajbYQoTHQDhuhtAX
+         GVSg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1779911523; x=1780516323;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=rZO3fziTBuxbAv6/WgS4fmu/DgnKomzs/QOcLDB/MF4=;
+        b=nhXdm/Uami3gOSLKzV2R2Zvk/bYf9Zht/h/lDfCL+9BqvRPw6x4QSxtiPVh7PGHj2x
+         1M7YEEAw+3vJmDrcyJtLJBoI11Z5rfwlB4NIEFA87LDIOIm2wjrbpV06cLzWEA6YPwDT
+         OyF2cQ8DRgFEwVsMZKukAFHko9fGv4iVGLMJgJ/KGlFI1GIBsTNM/JFBjAmcB9S1Qmo9
+         1ZGHSv+XMr39o10xLIv1ymhKYNPB5Oh6NR3mC05xKL4OgOjYOExc7h7tIZZr+edbiovt
+         a5S6lZVaTa/P46eiV5O3OO0jX9tDMNtJISAISkhPKgN2SdUyqQJuBzVBT2a07SK+nbWY
+         sM0Q==
+X-Forwarded-Encrypted: i=1; AFNElJ82SIabzVAEm/A8p05PbXTbfqmqDJvLXLqgVv3o36/7mcCj7w06dv2KKK6Z0EkswEW0fWvWlS0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx0RE9IDZwgC57M/uaVhxlT9F8/Cp7KOTXZGgzNhRGNRjK/M351
+	0e8u+sbPnnv6k18mswBwhpRdgTB7+MYapZm7wNnoSmynq54eF8oh9wmYXx4YI8c/FUHSy1ZY0pC
+	FORHd1o+4O9rAZggdt8ID4mfF8J2c+i7KRNsvpkli8mMxgJ6Gl3OhGUlv9oqkZQBb
+X-Gm-Gg: Acq92OG90w0BhmmWspMbQGfCr+FfZvZ0BDDwyUdreJeqmLLfzIwXGLp39x3o6/6lFK9
+	1wKfQEqNFAijzcEqDtBkbCKcUKXPjxT0tUOEBxf/v9mgerImeNtZUS6BbN7EkoOx94t8GbNiQPn
+	gngmn2ERYUnu72VVzBo4KQrlvXXDRfBnGmD0Ro7dhM6MD5U+cQ6C1XwVbnwmDLomj4Y3F1MCXcL
+	bIBligLPAZPIP3qdxa/VSpqgyRqKu9tI6Bgoa0eWy3reB+gEuZvLlIqnni+VKhgA9Ru7boWVoCU
+	xNUfaXwJoF5xcZMx15A8UdB6/SB18tGAZ9ynW3lEwVDyDyI8uapEHUzLK4D2wd/Ny+UnZ7Wk2sX
+	e14FOySaRKUetX+jBqUnRwzMQfVHff3RuGaUD/tu5LqTNl4hsjESH8jzAm6vpFTHfGijf4sbLom
+	ZKWO38pbbotzG1q83g+p1DD0Wm
+X-Received: by 2002:a05:7301:9bc8:b0:2be:6f30:f2f9 with SMTP id 5a478bee46e88-30449187ebdmr12061318eec.26.1779911522705;
+        Wed, 27 May 2026 12:52:02 -0700 (PDT)
+X-Received: by 2002:a05:7301:9bc8:b0:2be:6f30:f2f9 with SMTP id 5a478bee46e88-30449187ebdmr12061295eec.26.1779911522174;
+        Wed, 27 May 2026 12:52:02 -0700 (PDT)
+Received: from [192.168.1.59] (c-24-130-122-79.hsd1.ca.comcast.net. [24.130.122.79])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-304524610f7sm13536204eec.29.2026.05.27.12.52.01
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 27 May 2026 12:52:01 -0700 (PDT)
+Message-ID: <dc8c9c9c-dc85-40dd-9313-845a808a35f4@oss.qualcomm.com>
+Date: Wed, 27 May 2026 12:52:00 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 1/1] wifi: ath12k: support calibration-variant from device
  tree
-From: Andrew LaMarche <andrewjlamarche@gmail.com>
-In-Reply-To: <20260131003222.2011259-1-andrewjlamarche@gmail.com>
-Date: Wed, 27 May 2026 12:12:41 -0400
-Cc: linux-wireless@vger.kernel.org,
- ath12k@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Transfer-Encoding: quoted-printable
-Message-Id: <A2E3AAE1-1A80-4265-9497-0C95C3308CD7@gmail.com>
+To: Andrew LaMarche <andrewjlamarche@gmail.com>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
 References: <20260131003222.2011259-1-andrewjlamarche@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-X-Mailer: Apple Mail (2.3864.600.51.1.1)
+ <A2E3AAE1-1A80-4265-9497-0C95C3308CD7@gmail.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <A2E3AAE1-1A80-4265-9497-0C95C3308CD7@gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-ORIG-GUID: 556prLeh95Dn96vnrSUUXBltC5isUWnq
+X-Authority-Analysis: v=2.4 cv=bJAm5v+Z c=1 sm=1 tr=0 ts=6a174b63 cx=c_pps
+ a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=Tg7Z00WN3eLgNEO9NLUKUQ==:17
+ a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
+ a=bC-a23v3AAAA:8 a=COk6AnOGAAAA:8 a=KKAkSRfTAAAA:8 a=HgE-MqBRfio-cNNWzu0A:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=bBxd6f-gb0O0v-kibOvt:22
+ a=FO4_E8m0qiDe52t0p3_H:22 a=TjNXssC_j7lpFel5tvFf:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTI3MDE5OSBTYWx0ZWRfX9px4W7MhoJ/C
+ 4tqeM1ZNr5EokWVnwQkzx7cpNg4G7yy9/duTgBGrbwQlOcac2BpXmw3RpFMFCURvAaJQzXfLENB
+ syeVw0b+EYUHpYsM/zqO+F+y6WI++Ux7DJeQuGpekOysriU0MljH3ZitP+jEQystC/vIsLbmhlF
+ hDs0UivF4h3NuDmBxcHzJJttCiOvQ11cg9vS1PQhC22qqrcMD1gawhIsoMb73aC7xC7GMYf4YeA
+ wlQ4v5IaHu/LOdb+GqbA6sskm6GbWUCFxxK8lN7JnJtXx2wL8kUU33N1Ia8RExIa/eEH7Rlm4Uu
+ 5qnQ5Eaul/gznu8T4lm/GGO2rCkbCXNmyuktVjHDs4zFNvgytd2kIHkZ68j/ttPi8x2xSIeRtXr
+ eKTIm+w7S7wFQdvjOpOh+oe7x1Ds6CmIM33NgUa11j282LEpJ2oHcrgQO/LZKcocvle7l8p8qBT
+ cNYEloO8sk1GCgnDihA==
+X-Proofpoint-GUID: 556prLeh95Dn96vnrSUUXBltC5isUWnq
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-05-27_04,2026-05-26_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 suspectscore=0 adultscore=0 spamscore=0 impostorscore=0
+ bulkscore=0 priorityscore=1501 malwarescore=0 phishscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2605130000 definitions=main-2605270199
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260527_091255_622872_334AFF68 
-X-CRM114-Status: GOOD (  26.68  )
+X-CRM114-CacheID: sfid-20260527_125204_839934_1FFA1C85 
+X-CRM114-Status: GOOD (  10.21  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,121 +149,19 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On 5/27/2026 9:12 AM, Andrew LaMarche wrote:
+> Hi,
+> 
+> A kind ping here. I’m not sure why this functionality is missing in the first place, but it is needed for loading caldata from the device tree.
 
-A kind ping here. I=E2=80=99m not sure why this functionality is missing =
-in the first place, but it is needed for loading caldata from the device =
-tree.
+Your patch duplicates functionality in the Qualcomm authored series:
+https://msgid.link/20250228184214.337119-1-quic_rajkbhag@quicinc.com
 
-Cheers,
-Andrew
+And note the upstream device bindings for ath10k and ath11k only support the
+generic binding qcom,calibration-variant.
 
-> On Jan 30, 2026, at 7:32=E2=80=AFPM, Andrew LaMarche =
-<andrewjlamarche@gmail.com> wrote:
->=20
-> ath10k and ath11k support reading calibration variants from the device
-> tree to locate the correct Board Description File (BDF). The =
-ath12k-wsi
-> binding already describes using qcom,calibration-variant and
-> qcom,ath12k-calibration-variant, but it is not implemented in the =
-code.
->=20
-> Many ath12k designs expose all the radios under a single phy, each of
-> which typically require a separate BDF. Without this, the radios may =
-not
-> come up or will not be calibrated correctly.
->=20
-> Fix this by parsing the device tree for the generation-agnostic
-> qcom,calibration-variant node or ath12k-specific
-> qcom,ath12k-calibration-variant node. This allows the driver to =
-properly
-> select, read and apply the correct BDF.
->=20
-> Signed-off-by: Andrew LaMarche <andrewjlamarche@gmail.com>
-> ---
-> drivers/net/wireless/ath/ath12k/core.c | 25 +++++++++++++++++++++++++
-> drivers/net/wireless/ath/ath12k/core.h |  2 +-
-> drivers/net/wireless/ath/ath12k/qmi.c  |  4 ++++
-> 3 files changed, 30 insertions(+), 1 deletion(-)
->=20
-> diff --git a/drivers/net/wireless/ath/ath12k/core.c =
-b/drivers/net/wireless/ath/ath12k/core.c
-> index cc352eef1939..e45f76d81337 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.c
-> +++ b/drivers/net/wireless/ath/ath12k/core.c
-> @@ -806,6 +806,31 @@ int ath12k_core_check_smbios(struct ath12k_base =
-*ab)
-> 	return 0;
-> }
->=20
-> +int ath12k_core_check_dt(struct ath12k_base *ab)
-> +{
-> +	size_t max_len =3D sizeof(ab->qmi.target.bdf_ext);
-> +	const char *variant =3D NULL;
-> +	struct device_node *node;
-> +
-> +	node =3D ab->dev->of_node;
-> +	if (!node)
-> +		return -ENOENT;
-> +
-> +	of_property_read_string(node, "qcom,calibration-variant",
-> +			&variant);
-> +	if (!variant)
-> +		of_property_read_string(node, =
-"qcom,ath12k-calibration-variant",
-> +				&variant);
-> +	if (!variant)
-> +		return -ENODATA;
-> +
-> +	if (strscpy(ab->qmi.target.bdf_ext, variant, max_len) < 0)
-> +		ath12k_dbg(ab, ATH12K_DBG_BOOT,
-> +				"bdf variant string is longer than the =
-buffer can accommodate (variant: %s)\n", variant);
-> +
-> +	return 0;
-> +}
-> +
-> static int ath12k_core_soc_create(struct ath12k_base *ab)
-> {
-> 	int ret;
-> diff --git a/drivers/net/wireless/ath/ath12k/core.h =
-b/drivers/net/wireless/ath/ath12k/core.h
-> index 3c1e0069be1e..39700a780ee2 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.h
-> +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -1352,7 +1352,7 @@ int ath12k_core_fetch_bdf(struct ath12k_base =
-*ath12k,
-> 			  struct ath12k_board_data *bd);
-> void ath12k_core_free_bdf(struct ath12k_base *ab, struct =
-ath12k_board_data *bd);
-> int ath12k_core_fetch_regdb(struct ath12k_base *ab, struct =
-ath12k_board_data *bd);
-> -int ath12k_core_check_dt(struct ath12k_base *ath12k);
-> +int ath12k_core_check_dt(struct ath12k_base *ab);
-> int ath12k_core_check_smbios(struct ath12k_base *ab);
-> void ath12k_core_halt(struct ath12k *ar);
-> int ath12k_core_resume_early(struct ath12k_base *ab);
-> diff --git a/drivers/net/wireless/ath/ath12k/qmi.c =
-b/drivers/net/wireless/ath/ath12k/qmi.c
-> index b7c48b6706df..22ef5aab871f 100644
-> --- a/drivers/net/wireless/ath/ath12k/qmi.c
-> +++ b/drivers/net/wireless/ath/ath12k/qmi.c
-> @@ -2903,6 +2903,10 @@ int ath12k_qmi_request_target_cap(struct =
-ath12k_base *ab)
-> 	if (r)
-> 		ath12k_dbg(ab, ATH12K_DBG_QMI, "SMBIOS bdf variant name =
-not set.\n");
->=20
-> +	r =3D ath12k_core_check_dt(ab);
-> +	if (r)
-> +		ath12k_dbg(ab, ATH12K_DBG_QMI, "DT bdf variant name not =
-set.\n");
-> +
-> 	r =3D ath12k_acpi_start(ab);
-> 	if (r)
-> 		/* ACPI is optional so continue in case of an error */
-> --=20
-> 2.43.0
->=20
+There are no longer any generation-specific bindings, see:
+https://msgid.link/20250225-b-wifi-qcom-calibration-variant-v1-0-3b2aa3f89c53@linaro.org
 
+/jeff
 
