@@ -4,133 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B2A6CD5BD5
-	for <ath12k@archiver.kernel.org>; Thu, 28 May 2026 07:56:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B067CD6E44
+	for <ath12k@archiver.kernel.org>; Thu, 28 May 2026 13:11:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=dTE50W1bsXAlocRr11xq4D566Kq+w3xqvpSkOq4Nftk=; b=XelOFDgIXKuV/7DVZuawRA05ab
-	khHeR6JByf7TZl5hFA+HhHvxmHlctJQDRwPZKcKVv6qDg5pRkw3a4AVgILHV1Al8DOB/NEsK1tJZh
-	MluNblJXFEQMqP+qwEuKumdF7A/vUzR2l7rwJOQ0m7CXgZMg2mwT6GSAJ0PnrYI+gh0ur+0TnmOZu
-	/F6jqmcFBjVMqawygNCws91BpGrqEU7W7kvnX7Rd5nuJoMZoZkOcExutwWpxz7tZ+RwLd74TTZ+jJ
-	1UhgHKRv5h44nKI0okh9yYsNHslR9WXiFz7NVFfqtI4LpodfCfaiPhNFI2ZIu4QnLDzaFHqSiYe3O
-	/XXHZOsw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=iDEo0j2nHsYSJgSqy1z8dWMjD802zHIig7qC3EKAx/k=; b=buRNZOwDQSm4PVmpC7SKYt58F/
+	NuiwU2rvorUyfl2407soJksIBaDmyngj2PR9DHfSNTOIWxyAkcgT9ujCbWCy4SN8jfazlhiMNkke+
+	Y77yU/Jg2dX4ZS8jw1wWxJtdW5pJxkcewU+xsOkmfAnmKvqvP4oXViUTK3LUX5wByHJGyT7z7zw8V
+	EpykrVjM4UVHp/lW1SkQtLeAsOs8J8CUnZL9Xm6a4O8Zm/R2CFM8hEMRASvfbioZjg+WuvrzquPcP
+	AlDRT3OtYApL3YA50bfebQltJl3c2YwfbfrpUPj6iP+t+9DyMNvUdyvX4YANSUS27h0xAZdR7KMG/
+	4CR/HUdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSVbm-00000005JRd-3ta4;
-	Thu, 28 May 2026 07:56:50 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wSaWD-00000005lfN-01sC;
+	Thu, 28 May 2026 13:11:25 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSVbk-00000005JRA-26ja
+	id 1wSaW8-00000005lex-3RIi
 	for ath12k@lists.infradead.org;
-	Thu, 28 May 2026 07:56:49 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64S7AaWu1975743
-	for <ath12k@lists.infradead.org>; Thu, 28 May 2026 07:56:47 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	dTE50W1bsXAlocRr11xq4D566Kq+w3xqvpSkOq4Nftk=; b=NTpKuC4vCUCGx2Od
-	hhlz9jf669+7o7EaCobZHcDX/c5FFeAhP3bgqAZI5YyMlgDEZzgxWj1brp9jrYRM
-	Bpa1DGYmCUiKQ7K3bBQtUsfRVbYl57keeG7iIWvEUkybgwwY03hsa8QVkeuKDpRA
-	jYxP47oS4AA1uAoq0HLYBatfDdf4ed0FHWiKYBHvn6PguYjB2+Be0FLdPO27n3s0
-	zetVgoJRWZbOgobP3e9jP3ZyfUSKuiOvJGk0WnNOQJJmDqX7F9mCu0TpB/u8vsua
-	GhYxIu3CV6q7kLJMEIZLkr0B7Wh3TEIleyBnL1YVylb/iauVgOclHKhPDl5brYUW
-	JObNMA==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ee7y3sv3n-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 28 May 2026 07:56:47 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2b2ecc96a9aso142360335ad.1
-        for <ath12k@lists.infradead.org>; Thu, 28 May 2026 00:56:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1779955007; x=1780559807; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=dTE50W1bsXAlocRr11xq4D566Kq+w3xqvpSkOq4Nftk=;
-        b=VXMCyWIJ40rGSN7jsKL0or84JjZbaoudMIuJ4ItbQSiTgYDGJmgBk/ibuprxP8i+Gp
-         +LBL2u0iNGwGc0IwNrI3rVnY45Bp41URRh075aeZuzeF5Z4JCwJ/6BZOMUhqj6//EBXT
-         tUNSUhNVv0R4iHgURQuLcKWSoDSSr0EFy9N8cAIxMlNZyZp/DcUv3taVYZIHyK6URUwD
-         mDxGv9w4bwRfHsh9Ym5x5yE+4uxJnH8KzvjqblN8iGn34I8e+qFU7dUT7L4SUyN23QQC
-         qwpfu1M44UuYsDV/cwDT0zravgFMytteZ8xJUVbNzb7DwbFGQQI/O8puMCYMAwmv6Qnt
-         02bg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779955007; x=1780559807;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=dTE50W1bsXAlocRr11xq4D566Kq+w3xqvpSkOq4Nftk=;
-        b=fPPeLMkIh8ZDXUu7q8KQlXG0+r0FUH6952FdEzjiYqGT1F4uXeGS4nWG+fBGQYOZrZ
-         MFkNbQGqntDza7Xged/SqBfEOxgyXQVRnLSRu1Bezpv4Cv4NJdXn/plj1cgwB1jbVVsO
-         H/ZRmVCk5WjrzMdz15jbtscii/jiXl3fdVdyI3SCX4HC4rFZMzEwitFl/3FrJDh365so
-         U4KyHKuPSuGj0czRuokO7bZg+yXdQ1KQzvVoO7/pdEC4D3VCWDkI496m1z6pGtCn6kPB
-         0H7gV4keSbWcQCZ5nkeFml6ZHFiApGj6wujt1BDjkBZ377lfnomhP39+iTbPUPVwqjG3
-         McBQ==
-X-Forwarded-Encrypted: i=1; AFNElJ/7iI5OavRoD5j8fcaQDoTltINJZvryYuDtBT2x7fg5GQFUjifjBkI5gyLdyrelLIYz51+uf5I=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwPrxtWXNb0vpYmLicCixJOYA1Mdu8qfmxbzZCxqDuY65YdReA3
-	okdfjmYgIFMflEAcWOWfBuu6zz+xmAfaoJVdYuCk5XXrZqVfxjkQrGQQHoqokPJ2xOyqqr7Q70p
-	5x6fJZHXc+hwcvQqeYQ563cI414RZUUEeoigGQFpGKnfVV2CSJeRFWzmVL2cAwA6spteBMi/o
-X-Gm-Gg: Acq92OFBoWVaVDvQDdb016PTpYZ/tMoGtM01aUz1zgyl4hn6QbqEMVbzr4d7Klaleqv
-	1Xt5AaWkCgskKrRrFefZunBz6CkELrN7hOnKfdXw26NAHNgnhdUnFg3BFQIwMPUVH6MV6NoM3hc
-	sGb5/dnlczQIriLJ5+K4q3bnsutHevr4fLMNOT+xDg+Lig4FAnIYjkH0ZfsWVFJdvSma5r+QKbY
-	JNtNjSnqR9r099jy0rq9hDMNOcSP6zUfPFsEgOdEJmlwgV0shG0qD8txlUzyn4vvgUMYPmM2rn1
-	s9LcO3FC7RD3SRO3gHDs/GGDWuTLO0V0gNtVaAkj8vCCCJBeW4HnOivrBwGwHo0Ix+XfcTLeWpa
-	Ac7XGjsaRJ4/mSLiIz1mfyoe2Ckb9VC00I17Mu1ONbxb01XfiKRspkZehPJdLC3WwtG3PlPdKek
-	sv
-X-Received: by 2002:a17:903:1a84:b0:2be:3850:297e with SMTP id d9443c01a7336-2beb07726a8mr290233055ad.31.1779955006978;
-        Thu, 28 May 2026 00:56:46 -0700 (PDT)
-X-Received: by 2002:a17:903:1a84:b0:2be:3850:297e with SMTP id d9443c01a7336-2beb07726a8mr290232735ad.31.1779955006410;
-        Thu, 28 May 2026 00:56:46 -0700 (PDT)
-Received: from [192.168.11.105] ([124.123.82.179])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2bf132aea25sm1996705ad.79.2026.05.28.00.56.44
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 28 May 2026 00:56:45 -0700 (PDT)
-Message-ID: <a4ee39fd-f1d6-4b84-832c-c4eb0166476d@oss.qualcomm.com>
-Date: Thu, 28 May 2026 13:26:42 +0530
+	Thu, 28 May 2026 13:11:23 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 1CF1240869;
+	Thu, 28 May 2026 13:11:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4393B1F000E9;
+	Thu, 28 May 2026 13:11:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1779973880;
+	bh=iDEo0j2nHsYSJgSqy1z8dWMjD802zHIig7qC3EKAx/k=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=b2UHAKvVDwz9Q8zDeG5+gjEzAwHGNvWPrhFQu4UWecZMGU9oLFnYEUppHdL1JG96W
+	 ZyKfXbFlZkxgErlkIJ9vEDjHqhgkZYeEglVfzfyl1vwgy5OcQX/ILvYNtAw+Fw/u/n
+	 7Rf4HO5aTgBsh8Qrexyv+asWzwUvPXiN0B/LUktlwpZ7GWwIh5oxpK5VedspSPx+Bn
+	 nl+HsmBpJmBcRweXxwoqgm9Olo+josivuYToc2QW7vazCQsXTqNoHWp1knQYF/ENFG
+	 jtLGo1SiiASszWS5aZ18I7jEX0fOy1BKxNFyaZVCVtMBYw8PPdiTBmqYLjDYvMKN77
+	 k31LndrsIUjKg==
+Date: Thu, 28 May 2026 18:41:07 +0530
+From: Sumit Garg <sumit.garg@kernel.org>
+To: Amirreza Zarrabi <amirreza.zarrabi@oss.qualcomm.com>
+Cc: andersson@kernel.org, linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org, linux-media@vger.kernel.org,
+	netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org, linux-remoteproc@vger.kernel.org,
+	konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, robin.clark@oss.qualcomm.com, sean@poorly.run,
+	akhilpo@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
+	jesszhan0024@gmail.com, marijn.suijten@somainline.org,
+	airlied@gmail.com, simona@ffwll.ch, vikash.garodia@oss.qualcomm.com,
+	dikshita.agarwal@oss.qualcomm.com, bod@kernel.org,
+	mchehab@kernel.org, elder@kernel.org, andrew+netdev@lunn.ch,
+	davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
+	pabeni@redhat.com, jjohnson@kernel.org, mathieu.poirier@linaro.org,
+	trilokkumar.soni@oss.qualcomm.com, mukesh.ojha@oss.qualcomm.com,
+	pavan.kondeti@oss.qualcomm.com, jorge.ramirez@oss.qualcomm.com,
+	tonyh@qti.qualcomm.com, vignesh.viswanathan@oss.qualcomm.com,
+	srinivas.kandagatla@oss.qualcomm.com, jens.wiklander@linaro.org,
+	op-tee@lists.trustedfirmware.org, apurupa@qti.qualcomm.com,
+	skare@qti.qualcomm.com, linux-kernel@vger.kernel.org,
+	Sumit Garg <sumit.garg@oss.qualcomm.com>,
+	Harshal Dev <harshal.dev@oss.qualcomm.com>
+Subject: Re: [PATCH v7 02/15] firmware: qcom: Add a generic PAS service
+Message-ID: <ahg-6-eLus-J7tC8@sumit-xelite>
+References: <20260522115936.201208-1-sumit.garg@kernel.org>
+ <20260522115936.201208-3-sumit.garg@kernel.org>
+ <37fb075c-3f48-4a7c-b05d-090b0b09e04a@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next] wifi: ath12k: avoid setting 320MHZ support on
- non 6GHz band
-To: Nicolas Escande <nico.escande@gmail.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20260123144224.2216923-1-nico.escande@gmail.com>
-Content-Language: en-US
-From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-In-Reply-To: <20260123144224.2216923-1-nico.escande@gmail.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: PvVb3qYINoudfntiKeJS-LU4UIGauNk6
-X-Authority-Analysis: v=2.4 cv=JMYLdcKb c=1 sm=1 tr=0 ts=6a17f53f cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=ZCREz13nqshT/on6E9YcPw==:17
- a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=pGLkceISAAAA:8 a=QzOFYGnyxmos3_uqdkgA:9 a=QEXdDO2ut3YA:10
- a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-GUID: PvVb3qYINoudfntiKeJS-LU4UIGauNk6
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTI4MDA3OSBTYWx0ZWRfXy2pxJBK9PF+D
- Fr8zU8PpvP1Nu4FnyVoOCkxOGFLreaiiplhiDNA9HtlOsGZBOR5AjutIxQAdnRd+3eiKIu1NIeQ
- NJYoXas9sfAk1hBxBBtVbJ9uH+OwPCzvVAoUTLKCADOrik64Qy31fMZr9pqpzu9GJ1j2jWllhJf
- Q+VXGQSKiexUhrxy+nEiyjSTN1eEna+WwqyXscGIXocXAZH0d86lXOPoOydJxLVHdOfAVTVAw3m
- Ljb7CHBK8GgRE8SWjVJK75oRX6sCaU7MiXfbYZJQHFoTBXEVNGaCMIZVvlssofUefhciroqnziG
- F03V/nM/451FtDB9MGIm9rSWhDF692ihBNcJ/jARCmDc3mgpYg7n7Ka2TmML1qCfAadjCzezO60
- /lw4/hNtYqaji2B9RchXbU8nG41URAwzeDxwhUKjwKIry3A8CXqkvS4Oir6ARx01iT5uacAwyCn
- 4Oy7+4B1RplqD4lGa0A==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-05-28_02,2026-05-26_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 spamscore=0 malwarescore=0 suspectscore=0 priorityscore=1501
- adultscore=0 phishscore=0 bulkscore=0 impostorscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2605210000 definitions=main-2605280079
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <37fb075c-3f48-4a7c-b05d-090b0b09e04a@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260528_005648_578204_D7977493 
-X-CRM114-Status: GOOD (  23.54  )
+X-CRM114-CacheID: sfid-20260528_061120_898348_3EFC0A91 
+X-CRM114-Status: GOOD (  44.63  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,94 +93,188 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/23/2026 8:12 PM, Nicolas Escande wrote:
-> On a split phy qcn9274 (2.4GHz + 5GHz low), "iw phy" reports 320MHz
-> realated features on the 5GHz band while it should not:
+Hi Amir,
+
+On Thu, May 28, 2026 at 10:45:32AM +1000, Amirreza Zarrabi wrote:
+> Hi Sumit,
 > 
->      Wiphy phy1
->      [...]
->          Band 2:
->      [...]
->              EHT Iftypes: managed
->      [...]
->                  EHT PHY Capabilities: (0xe2ffdbe018778000):
->                      320MHz in 6GHz Supported
->      [...]
->                      Beamformee SS (320MHz): 7
->      [...]
->                      Number Of Sounding Dimensions (320MHz): 3
->      [...]
->                  EHT MCS/NSS: (0x22222222222222222200000000):
+> On 5/22/2026 9:59 PM, Sumit Garg wrote:
+> > From: Sumit Garg <sumit.garg@oss.qualcomm.com>
+> > 
+> > Qcom platforms has the legacy of using non-standard SCM calls
+> > splintered over the various kernel drivers. These SCM calls aren't
+> > compliant with the standard SMC calling conventions which is a
+> > prerequisite to enable migration to the FF-A specifications from Arm.
+> > 
+> > OP-TEE as an alternative trusted OS to Qualcomm TEE (QTEE) can't
+> > support these non-standard SCM calls. And even for newer architectures
+> > using S-EL2 with Hafnium support, QTEE won't be able to support SCM
+> > calls either with FF-A requirements coming in. And with both OP-TEE
+> > and QTEE drivers well integrated in the TEE subsystem, it makes further
+> > sense to reuse the TEE bus client drivers infrastructure.
+> > 
+> > The added benefit of TEE bus infrastructure is that there is support
+> > for discoverable/enumerable services. With that client drivers don't
+> > have to manually invoke a special SCM call to know the service status.
+> > 
+> > So enable the generic Peripheral Authentication Service (PAS) provided
+> > by the firmware. It acts as the common layer with different TZ
+> > backends plugged in whether it's an SCM implementation or a proper
+> > TEE bus based PAS service implementation.
+> > 
+> > Reviewed-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
+> > Tested-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com> # Lemans
+> > Reviewed-by: Harshal Dev <harshal.dev@oss.qualcomm.com>
+> > Tested-by: Vignesh Viswanathan <vignesh.viswanathan@oss.qualcomm.com> # IPQ9650
+> > Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
+> > ---
+> >  drivers/firmware/qcom/Kconfig          |   8 +
+> >  drivers/firmware/qcom/Makefile         |   1 +
+> >  drivers/firmware/qcom/qcom_pas.c       | 291 +++++++++++++++++++++++++
+> >  drivers/firmware/qcom/qcom_pas.h       |  50 +++++
+> >  include/linux/firmware/qcom/qcom_pas.h |  43 ++++
+> >  5 files changed, 393 insertions(+)
+> >  create mode 100644 drivers/firmware/qcom/qcom_pas.c
+> >  create mode 100644 drivers/firmware/qcom/qcom_pas.h
+> >  create mode 100644 include/linux/firmware/qcom/qcom_pas.h
+> > 
+> > diff --git a/drivers/firmware/qcom/Kconfig b/drivers/firmware/qcom/Kconfig
+> > index b477d54b495a..9f66cc774508 100644
+> > --- a/drivers/firmware/qcom/Kconfig
+> > +++ b/drivers/firmware/qcom/Kconfig
+> > @@ -6,6 +6,14 @@
+> >  
+> >  menu "Qualcomm firmware drivers"
+> >  
+> > +config QCOM_PAS
+> > +	tristate "Qualcomm generic PAS interface driver"
+> > +	help
+> > +	  Enable the generic Peripheral Authentication Service (PAS) provided
+> > +	  by the firmware. It acts as the common layer with different TZ
+> > +	  backends plugged in whether it's an SCM implementation or a proper
+> > +	  TEE bus based PAS service implementation.
+> > +
+> >  config QCOM_SCM
+> >  	select QCOM_TZMEM
+> >  	tristate
+> > diff --git a/drivers/firmware/qcom/Makefile b/drivers/firmware/qcom/Makefile
+> > index 0be40a1abc13..dc5ab45f906a 100644
+> > --- a/drivers/firmware/qcom/Makefile
+> > +++ b/drivers/firmware/qcom/Makefile
+> > @@ -8,3 +8,4 @@ qcom-scm-objs += qcom_scm.o qcom_scm-smc.o qcom_scm-legacy.o
+> >  obj-$(CONFIG_QCOM_TZMEM)	+= qcom_tzmem.o
+> >  obj-$(CONFIG_QCOM_QSEECOM)	+= qcom_qseecom.o
+> >  obj-$(CONFIG_QCOM_QSEECOM_UEFISECAPP) += qcom_qseecom_uefisecapp.o
+> > +obj-$(CONFIG_QCOM_PAS)		+= qcom_pas.o
+
+<snip>
+
+> > diff --git a/include/linux/firmware/qcom/qcom_pas.h b/include/linux/firmware/qcom/qcom_pas.h
+> > new file mode 100644
+> > index 000000000000..65b1c9564458
+> > --- /dev/null
+> > +++ b/include/linux/firmware/qcom/qcom_pas.h
+> > @@ -0,0 +1,43 @@
+> > +/* SPDX-License-Identifier: GPL-2.0-only */
+> > +/*
+> > + * Copyright (c) 2010-2015, 2018-2019 The Linux Foundation. All rights reserved.
+> > + * Copyright (C) 2015 Linaro Ltd.
+> > + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+> > + */
+> > +
+> > +#ifndef __QCOM_PAS_H
+> > +#define __QCOM_PAS_H
+> > +
+> > +#include <linux/err.h>
+> > +#include <linux/types.h>
+> > +
+> > +struct qcom_pas_context {
+> > +	struct device *dev;
+> > +	u32 pas_id;
+> > +	phys_addr_t mem_phys;
+> > +	size_t mem_size;
+> > +	void *ptr;
+> > +	dma_addr_t phys;
+> > +	ssize_t size;
+> > +	bool use_tzmem;
+> > +};
+> > +
+> > +bool qcom_pas_is_available(void);
+> > +struct qcom_pas_context *devm_qcom_pas_context_alloc(struct device *dev,
+> > +						     u32 pas_id,
+> > +						     phys_addr_t mem_phys,
+> > +						     size_t mem_size);
+> > +int qcom_pas_init_image(u32 pas_id, const void *metadata, size_t size,
+> > +			struct qcom_pas_context *ctx);
+> > +struct resource_table *qcom_pas_get_rsc_table(struct qcom_pas_context *ctx,
+> > +					      void *input_rt, size_t input_rt_size,
+> > +					      size_t *output_rt_size);
+> > +int qcom_pas_mem_setup(u32 pas_id, phys_addr_t addr, phys_addr_t size);
+> > +int qcom_pas_auth_and_reset(u32 pas_id);
+> > +int qcom_pas_prepare_and_auth_reset(struct qcom_pas_context *ctx);
+> > +int qcom_pas_set_remote_state(u32 state, u32 pas_id);
+> > +int qcom_pas_shutdown(u32 pas_id);
+> > +bool qcom_pas_supported(u32 pas_id);
+> > +void qcom_pas_metadata_release(struct qcom_pas_context *ctx);
+> > +
+> > +#endif /* __QCOM_PAS_H */
 > 
-> This is also reflected in the beacons sent by a mesh interface started on
-> that band. They erroneously advertise 320MHZ support too.
+> I have a question about the shape of the generic PAS abstraction.
 > 
-> This should not happen as the spec at section 9.4.2.323.3 says we should
-> not set the 320MHz related fields when not operating on a 6GHz band.
-> For example it says about Bit 0 "Support For 320 MHz In 6 GHz"
+> Looking at the current interface, it seems that pas_id is still treated as
+> the primary identity for most PAS operations, while struct qcom_pas_context
+> is used as optional extended state for the operations that need it. I can see
+> how this maps well to the existing SCM PAS interface and keeps the transition
+> simple.
 > 
->    "Reserved if the EHT Capabilities element is indicating capabilities for
->     the 2.4 GHz or 5 GHz bands."
+> However, I wonder if this makes the abstraction less generic in the long term.
+> Some callbacks in struct qcom_pas_ops receive only pas_id, while others
+> receive struct qcom_pas_context *ctx. This works as long as pas_id is
+> sufficient for those operations. But if a backend needs per-peripheral
+> private state for operations such as auth_and_reset,
+> shutdown, or set_remote_state, it would need to reconstruct that state from
+> pas_id or maintain a separate pas_id to backend-context mapping.
 > 
-> Fix this by clearing the related bits when converting from WMI eht phy
-> capabilities to mac80211 phy capabilities, for bands other than 6GHz.
+> Would it be cleaner to make struct qcom_pas_context the common
+> per-peripheral object and pass it consistently to all per-peripheral callbacks?
+> Existing backends could still use ctx->pas_id, but future backends would not
+> need to perform a separate lookup only because the callback was passed a raw
+> pas_id.
+
+The common evolution for a generic abstraction comes when it's needed.
+So once the client driver or the backend comes up with certain
+requirements then the generic PAS layer can be extended as needed. It
+should be possible for more APIs to migrate to using PAS context but
+there should be corresponding use-case requirements.
+
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00218-QCAHKSWPL_SILICONZ-1
+> I also wonder whether struct qcom_pas_context is exposing some
+> implementation-specific state. Fields such as ptr, phys, size, and
+> use_tzmem seem to describe how the current SCM/QTEE implementations manage
+> metadata memory, rather than generic PAS state. For another backend, the
+> per-operation state might be a tee_shm, an FF-A memory handle, shared or lent
+> memory state, or something else transport-specific.
 > 
-> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
-> ---
->   drivers/net/wireless/ath/ath12k/wmi.c | 9 ++++++++-
->   1 file changed, 8 insertions(+), 1 deletion(-)
+> Would it make sense to keep only the common PAS fields in
+> struct qcom_pas_context, such as dev, pas_id, and possibly the firmware
+> memory address/size if those are truly generic, and add a backend-private
+> pointer for implementation-specific state?
+
+Currently, the 2 backends can re-use parts of the PAS context but I
+agree more abstraction can be done as needed for future backends.
+
 > 
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-> index 84c29e4896a4..14947fdb9813 100644
-> --- a/drivers/net/wireless/ath/ath12k/wmi.c
-> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-> @@ -4888,6 +4888,7 @@ static void ath12k_wmi_eht_caps_parse(struct ath12k_pdev *pdev, u32 band,
->   				       __le32 cap_info_internal)
->   {
->   	struct ath12k_band_cap *cap_band = &pdev->cap.band[band];
-> +	u8 *phy_cap = (u8 *)&cap_band->eht_cap_phy_info[0];
->   	u32 support_320mhz;
->   	u8 i;
->   
-> @@ -4901,8 +4902,14 @@ static void ath12k_wmi_eht_caps_parse(struct ath12k_pdev *pdev, u32 band,
->   	for (i = 0; i < WMI_MAX_EHTCAP_PHY_SIZE; i++)
->   		cap_band->eht_cap_phy_info[i] = le32_to_cpu(cap_phy_info[i]);
->   
-> -	if (band == NL80211_BAND_6GHZ)
-> +	if (band == NL80211_BAND_6GHZ) {
->   		cap_band->eht_cap_phy_info[0] |= support_320mhz;
-> +	} else {
-> +		phy_cap[0] &= ~IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ;
-> +		phy_cap[1] &= ~IEEE80211_EHT_PHY_CAP1_BEAMFORMEE_SS_320MHZ_MASK;
-> +		phy_cap[2] &= ~IEEE80211_EHT_PHY_CAP2_SOUNDING_DIM_320MHZ_MASK;
+> I may be missing a reason why the pas_id-only callbacks are preferred, but if
+> this is intended to be the long-term generic PAS layer rather than mainly a
+> shim over the existing SCM API shape, using the context consistently and keeping
+> backend-specific state private seems easier to extend.
 
-This field is split across PHY capability byte 2 and byte 3, so should
-IEEE80211_EHT_PHY_CAP3_SOUNDING_DIM_320MHZ_MASK be cleared as well ?
+As I mentioned above, the generic PAS layer isn't fixed but it will
+surely go through evolution as needed. Current abstraction handles the
+existing client driver and backend requirments.
 
+Moreover the subsystem maintainers are already complaining about this
+series being too large for the merge to happen.
 
-> +		phy_cap[6] &= ~IEEE80211_EHT_PHY_CAP6_MCS15_SUPP_320MHZ;
-> +	}
->   
->   	cap_band->eht_mcs_20_only = le32_to_cpu(supp_mcs[0]);
->   	cap_band->eht_mcs_80 = le32_to_cpu(supp_mcs[1]);
-
-
-Since you said "On a split phy qcn9274 (2.4GHz + 5GHz low)" i wonder how 
-firmware set 6GHz capability bits in this case. That said, the approach 
-looks fine to me, although I would prefer to clear the remaining related 
-bits as well:
-
-   IEEE80211_EHT_PHY_CAP3_SOUNDING_DIM_320MHZ_MASK
-   IEEE80211_EHT_PHY_CAP6_MCS15_SUPP_320MHZ
-   IEEE80211_EHT_PHY_CAP6_EHT_DUP_6GHZ_SUPP
-   IEEE80211_EHT_PHY_CAP7_NON_OFDMA_UL_MU_MIMO_320MHZ
-   IEEE80211_EHT_PHY_CAP7_MU_BEAMFORMER_320MHZ
-
-
--- 
---
-Ramesh
-
+-Sumit
 
