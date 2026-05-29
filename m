@@ -4,81 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B067CD6E44
-	for <ath12k@archiver.kernel.org>; Thu, 28 May 2026 13:11:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DFF8CD6E4A
+	for <ath12k@archiver.kernel.org>; Fri, 29 May 2026 13:02:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iDEo0j2nHsYSJgSqy1z8dWMjD802zHIig7qC3EKAx/k=; b=buRNZOwDQSm4PVmpC7SKYt58F/
-	NuiwU2rvorUyfl2407soJksIBaDmyngj2PR9DHfSNTOIWxyAkcgT9ujCbWCy4SN8jfazlhiMNkke+
-	Y77yU/Jg2dX4ZS8jw1wWxJtdW5pJxkcewU+xsOkmfAnmKvqvP4oXViUTK3LUX5wByHJGyT7z7zw8V
-	EpykrVjM4UVHp/lW1SkQtLeAsOs8J8CUnZL9Xm6a4O8Zm/R2CFM8hEMRASvfbioZjg+WuvrzquPcP
-	AlDRT3OtYApL3YA50bfebQltJl3c2YwfbfrpUPj6iP+t+9DyMNvUdyvX4YANSUS27h0xAZdR7KMG/
-	4CR/HUdQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=66jwmabnss1wzjbJ/pG7HLmk7a00oOo/dxDfODb4vpU=; b=X+CGiOAeQ+n0wRzO/Bdc7TqqnZ
+	vMXBHprHTfwwjqOA/ywp97NXPt/iKYZ0LRhc4Gct9ujtJC+XhPghS1Q4uqvcDH0GS5zFFj5Sfqizn
+	12AvvkX9A9uc/igW2ZCsYckulkOp6L8y+ARMd3tUK38+rnH8O+FcaBvAeRqIxwDxUnla3HvhqqRpX
+	GsjwF/++zzNb93gZZmoQJzGvOwBfb0P7cvb6PJMWGsgpKtrJsh5EkDqWDz/XqI3fx0kcQOX5KEjp0
+	8scGiTU+VUlfIWnGunGgH3U1Ytv3wQDVItgQ/BNhrMUoWIwH27mjQoN9ubk64fR7baRU/UTu/kcv0
+	JVeqTd7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSaWD-00000005lfN-01sC;
-	Thu, 28 May 2026 13:11:25 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wSwrT-00000007PxR-0GvZ;
+	Fri, 29 May 2026 13:02:51 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSaW8-00000005lex-3RIi
-	for ath12k@lists.infradead.org;
-	Thu, 28 May 2026 13:11:23 +0000
+	id 1wSwrQ-00000007Pwb-1lg9;
+	Fri, 29 May 2026 13:02:49 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1CF1240869;
-	Thu, 28 May 2026 13:11:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4393B1F000E9;
-	Thu, 28 May 2026 13:11:10 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id C45344006B;
+	Fri, 29 May 2026 13:02:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 757FE1F00893;
+	Fri, 29 May 2026 13:02:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1779973880;
-	bh=iDEo0j2nHsYSJgSqy1z8dWMjD802zHIig7qC3EKAx/k=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=b2UHAKvVDwz9Q8zDeG5+gjEzAwHGNvWPrhFQu4UWecZMGU9oLFnYEUppHdL1JG96W
-	 ZyKfXbFlZkxgErlkIJ9vEDjHqhgkZYeEglVfzfyl1vwgy5OcQX/ILvYNtAw+Fw/u/n
-	 7Rf4HO5aTgBsh8Qrexyv+asWzwUvPXiN0B/LUktlwpZ7GWwIh5oxpK5VedspSPx+Bn
-	 nl+HsmBpJmBcRweXxwoqgm9Olo+josivuYToc2QW7vazCQsXTqNoHWp1knQYF/ENFG
-	 jtLGo1SiiASszWS5aZ18I7jEX0fOy1BKxNFyaZVCVtMBYw8PPdiTBmqYLjDYvMKN77
-	 k31LndrsIUjKg==
-Date: Thu, 28 May 2026 18:41:07 +0530
-From: Sumit Garg <sumit.garg@kernel.org>
-To: Amirreza Zarrabi <amirreza.zarrabi@oss.qualcomm.com>
-Cc: andersson@kernel.org, linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	freedreno@lists.freedesktop.org, linux-media@vger.kernel.org,
-	netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org, linux-remoteproc@vger.kernel.org,
-	konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, robin.clark@oss.qualcomm.com, sean@poorly.run,
-	akhilpo@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
-	jesszhan0024@gmail.com, marijn.suijten@somainline.org,
-	airlied@gmail.com, simona@ffwll.ch, vikash.garodia@oss.qualcomm.com,
-	dikshita.agarwal@oss.qualcomm.com, bod@kernel.org,
-	mchehab@kernel.org, elder@kernel.org, andrew+netdev@lunn.ch,
-	davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
-	pabeni@redhat.com, jjohnson@kernel.org, mathieu.poirier@linaro.org,
-	trilokkumar.soni@oss.qualcomm.com, mukesh.ojha@oss.qualcomm.com,
-	pavan.kondeti@oss.qualcomm.com, jorge.ramirez@oss.qualcomm.com,
-	tonyh@qti.qualcomm.com, vignesh.viswanathan@oss.qualcomm.com,
-	srinivas.kandagatla@oss.qualcomm.com, jens.wiklander@linaro.org,
-	op-tee@lists.trustedfirmware.org, apurupa@qti.qualcomm.com,
-	skare@qti.qualcomm.com, linux-kernel@vger.kernel.org,
-	Sumit Garg <sumit.garg@oss.qualcomm.com>,
-	Harshal Dev <harshal.dev@oss.qualcomm.com>
-Subject: Re: [PATCH v7 02/15] firmware: qcom: Add a generic PAS service
-Message-ID: <ahg-6-eLus-J7tC8@sumit-xelite>
-References: <20260522115936.201208-1-sumit.garg@kernel.org>
- <20260522115936.201208-3-sumit.garg@kernel.org>
- <37fb075c-3f48-4a7c-b05d-090b0b09e04a@oss.qualcomm.com>
+	s=k20260515; t=1780059767;
+	bh=66jwmabnss1wzjbJ/pG7HLmk7a00oOo/dxDfODb4vpU=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=E3HhoUKR/eThbMY+4+yrcHlS/pZyyLblbZn4d5+FNHlnJnEnizR352OFGeJTuCB/1
+	 fPEhuVfPJmr4NEfbWTKB0lHtHEPAjdcvACXXpCx8RwZZRfBH9Xpv2JHt6LoD9t2vyQ
+	 Io2fAnOB/CXyhFowtOqWtinEWkqw5c0UX/yWQw18xPOEGp/Gd0FCB9W66tKyyJWy/1
+	 sK0LuTYiEzwtdlVVDZH5dlH/pOkreTi1ZRDeUqQsJRzzEO8ivUCJK5DZjcWDYOJaym
+	 KFKrbDa46wfJC+p6Ioenp6HPCLM48/ac5dlXEfTJJyrJN1gstWyZUyrvcTU02aRhNh
+	 he+jdftUvhVKg==
+From: Srinivas Kandagatla <srini@kernel.org>
+To: konradybcio@kernel.org, andersson@kernel.org, 
+ Daniel Lezcano <daniel.lezcano@oss.qualcomm.com>
+Cc: linux-kernel@vger.kernel.org, Alex Elder <elder@kernel.org>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Jeff Johnson <jjohnson@kernel.org>, 
+ Mathieu Poirier <mathieu.poirier@linaro.org>, 
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+ Kees Cook <kees@kernel.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Arnd Bergmann <arnd@arndb.de>, Mark Brown <broonie@kernel.org>, 
+ Wesley Cheng <quic_wcheng@quicinc.com>, netdev@vger.kernel.org, 
+ linux-wireless@vger.kernel.org, ath10k@lists.infradead.org, 
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
+ linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org, 
+ linux-sound@vger.kernel.org
+In-Reply-To: <20260316171419.2619620-1-daniel.lezcano@oss.qualcomm.com>
+References: <20260316171419.2619620-1-daniel.lezcano@oss.qualcomm.com>
+Subject: Re: (subset) [PATCH v2 0/4] Use the QMI service IDs from the QMI
+ header
+Message-Id: <178005976216.10291.3509337895172854457.b4-ty@kernel.org>
+Date: Fri, 29 May 2026 14:02:42 +0100
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <37fb075c-3f48-4a7c-b05d-090b0b09e04a@oss.qualcomm.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260528_061120_898348_3EFC0A91 
-X-CRM114-Status: GOOD (  44.63  )
+X-CRM114-CacheID: sfid-20260529_060248_481083_29BE8F61 
+X-CRM114-Status: GOOD (  10.73  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,188 +86,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi Amir,
 
-On Thu, May 28, 2026 at 10:45:32AM +1000, Amirreza Zarrabi wrote:
-> Hi Sumit,
+On Mon, 16 Mar 2026 18:14:10 +0100, Daniel Lezcano wrote:
+> The different subsystems implementing the QMI service protocol are
+> using their own definition of the service id. It is not a problem but
+> it results on having those duplicated with different names but the
+> same value and without consistency in their name.
 > 
-> On 5/22/2026 9:59 PM, Sumit Garg wrote:
-> > From: Sumit Garg <sumit.garg@oss.qualcomm.com>
-> > 
-> > Qcom platforms has the legacy of using non-standard SCM calls
-> > splintered over the various kernel drivers. These SCM calls aren't
-> > compliant with the standard SMC calling conventions which is a
-> > prerequisite to enable migration to the FF-A specifications from Arm.
-> > 
-> > OP-TEE as an alternative trusted OS to Qualcomm TEE (QTEE) can't
-> > support these non-standard SCM calls. And even for newer architectures
-> > using S-EL2 with Hafnium support, QTEE won't be able to support SCM
-> > calls either with FF-A requirements coming in. And with both OP-TEE
-> > and QTEE drivers well integrated in the TEE subsystem, it makes further
-> > sense to reuse the TEE bus client drivers infrastructure.
-> > 
-> > The added benefit of TEE bus infrastructure is that there is support
-> > for discoverable/enumerable services. With that client drivers don't
-> > have to manually invoke a special SCM call to know the service status.
-> > 
-> > So enable the generic Peripheral Authentication Service (PAS) provided
-> > by the firmware. It acts as the common layer with different TZ
-> > backends plugged in whether it's an SCM implementation or a proper
-> > TEE bus based PAS service implementation.
-> > 
-> > Reviewed-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-> > Tested-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com> # Lemans
-> > Reviewed-by: Harshal Dev <harshal.dev@oss.qualcomm.com>
-> > Tested-by: Vignesh Viswanathan <vignesh.viswanathan@oss.qualcomm.com> # IPQ9650
-> > Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
-> > ---
-> >  drivers/firmware/qcom/Kconfig          |   8 +
-> >  drivers/firmware/qcom/Makefile         |   1 +
-> >  drivers/firmware/qcom/qcom_pas.c       | 291 +++++++++++++++++++++++++
-> >  drivers/firmware/qcom/qcom_pas.h       |  50 +++++
-> >  include/linux/firmware/qcom/qcom_pas.h |  43 ++++
-> >  5 files changed, 393 insertions(+)
-> >  create mode 100644 drivers/firmware/qcom/qcom_pas.c
-> >  create mode 100644 drivers/firmware/qcom/qcom_pas.h
-> >  create mode 100644 include/linux/firmware/qcom/qcom_pas.h
-> > 
-> > diff --git a/drivers/firmware/qcom/Kconfig b/drivers/firmware/qcom/Kconfig
-> > index b477d54b495a..9f66cc774508 100644
-> > --- a/drivers/firmware/qcom/Kconfig
-> > +++ b/drivers/firmware/qcom/Kconfig
-> > @@ -6,6 +6,14 @@
-> >  
-> >  menu "Qualcomm firmware drivers"
-> >  
-> > +config QCOM_PAS
-> > +	tristate "Qualcomm generic PAS interface driver"
-> > +	help
-> > +	  Enable the generic Peripheral Authentication Service (PAS) provided
-> > +	  by the firmware. It acts as the common layer with different TZ
-> > +	  backends plugged in whether it's an SCM implementation or a proper
-> > +	  TEE bus based PAS service implementation.
-> > +
-> >  config QCOM_SCM
-> >  	select QCOM_TZMEM
-> >  	tristate
-> > diff --git a/drivers/firmware/qcom/Makefile b/drivers/firmware/qcom/Makefile
-> > index 0be40a1abc13..dc5ab45f906a 100644
-> > --- a/drivers/firmware/qcom/Makefile
-> > +++ b/drivers/firmware/qcom/Makefile
-> > @@ -8,3 +8,4 @@ qcom-scm-objs += qcom_scm.o qcom_scm-smc.o qcom_scm-legacy.o
-> >  obj-$(CONFIG_QCOM_TZMEM)	+= qcom_tzmem.o
-> >  obj-$(CONFIG_QCOM_QSEECOM)	+= qcom_qseecom.o
-> >  obj-$(CONFIG_QCOM_QSEECOM_UEFISECAPP) += qcom_qseecom_uefisecapp.o
-> > +obj-$(CONFIG_QCOM_PAS)		+= qcom_pas.o
-
-<snip>
-
-> > diff --git a/include/linux/firmware/qcom/qcom_pas.h b/include/linux/firmware/qcom/qcom_pas.h
-> > new file mode 100644
-> > index 000000000000..65b1c9564458
-> > --- /dev/null
-> > +++ b/include/linux/firmware/qcom/qcom_pas.h
-> > @@ -0,0 +1,43 @@
-> > +/* SPDX-License-Identifier: GPL-2.0-only */
-> > +/*
-> > + * Copyright (c) 2010-2015, 2018-2019 The Linux Foundation. All rights reserved.
-> > + * Copyright (C) 2015 Linaro Ltd.
-> > + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-> > + */
-> > +
-> > +#ifndef __QCOM_PAS_H
-> > +#define __QCOM_PAS_H
-> > +
-> > +#include <linux/err.h>
-> > +#include <linux/types.h>
-> > +
-> > +struct qcom_pas_context {
-> > +	struct device *dev;
-> > +	u32 pas_id;
-> > +	phys_addr_t mem_phys;
-> > +	size_t mem_size;
-> > +	void *ptr;
-> > +	dma_addr_t phys;
-> > +	ssize_t size;
-> > +	bool use_tzmem;
-> > +};
-> > +
-> > +bool qcom_pas_is_available(void);
-> > +struct qcom_pas_context *devm_qcom_pas_context_alloc(struct device *dev,
-> > +						     u32 pas_id,
-> > +						     phys_addr_t mem_phys,
-> > +						     size_t mem_size);
-> > +int qcom_pas_init_image(u32 pas_id, const void *metadata, size_t size,
-> > +			struct qcom_pas_context *ctx);
-> > +struct resource_table *qcom_pas_get_rsc_table(struct qcom_pas_context *ctx,
-> > +					      void *input_rt, size_t input_rt_size,
-> > +					      size_t *output_rt_size);
-> > +int qcom_pas_mem_setup(u32 pas_id, phys_addr_t addr, phys_addr_t size);
-> > +int qcom_pas_auth_and_reset(u32 pas_id);
-> > +int qcom_pas_prepare_and_auth_reset(struct qcom_pas_context *ctx);
-> > +int qcom_pas_set_remote_state(u32 state, u32 pas_id);
-> > +int qcom_pas_shutdown(u32 pas_id);
-> > +bool qcom_pas_supported(u32 pas_id);
-> > +void qcom_pas_metadata_release(struct qcom_pas_context *ctx);
-> > +
-> > +#endif /* __QCOM_PAS_H */
+> The QMI service IDs are defined in the qmi.h header file. Use those
+> instead of defining the IDs in the protocol implementation file. It
+> will result in unifying and providing a consistent way to represent
+> the supported protocols.
 > 
-> I have a question about the shape of the generic PAS abstraction.
-> 
-> Looking at the current interface, it seems that pas_id is still treated as
-> the primary identity for most PAS operations, while struct qcom_pas_context
-> is used as optional extended state for the operations that need it. I can see
-> how this maps well to the existing SCM PAS interface and keeps the transition
-> simple.
-> 
-> However, I wonder if this makes the abstraction less generic in the long term.
-> Some callbacks in struct qcom_pas_ops receive only pas_id, while others
-> receive struct qcom_pas_context *ctx. This works as long as pas_id is
-> sufficient for those operations. But if a backend needs per-peripheral
-> private state for operations such as auth_and_reset,
-> shutdown, or set_remote_state, it would need to reconstruct that state from
-> pas_id or maintain a separate pas_id to backend-context mapping.
-> 
-> Would it be cleaner to make struct qcom_pas_context the common
-> per-peripheral object and pass it consistently to all per-peripheral callbacks?
-> Existing backends could still use ctx->pas_id, but future backends would not
-> need to perform a separate lookup only because the callback was passed a raw
-> pas_id.
+> [...]
 
-The common evolution for a generic abstraction comes when it's needed.
-So once the client driver or the backend comes up with certain
-requirements then the generic PAS layer can be extended as needed. It
-should be possible for more APIs to migrate to using PAS context but
-there should be corresponding use-case requirements.
+Applied, thanks!
 
-> 
-> I also wonder whether struct qcom_pas_context is exposing some
-> implementation-specific state. Fields such as ptr, phys, size, and
-> use_tzmem seem to describe how the current SCM/QTEE implementations manage
-> metadata memory, rather than generic PAS state. For another backend, the
-> per-operation state might be a tee_shm, an FF-A memory handle, shared or lent
-> memory state, or something else transport-specific.
-> 
-> Would it make sense to keep only the common PAS fields in
-> struct qcom_pas_context, such as dev, pas_id, and possibly the firmware
-> memory address/size if those are truly generic, and add a backend-private
-> pointer for implementation-specific state?
+[3/4] slimbus: qcom-ngd-ctrl: Use the unified QMI service ID instead of defining it locally
+      commit: 05f3f5984121e1956867b309c76a750c1d4c9682
 
-Currently, the 2 backends can re-use parts of the PAS context but I
-agree more abstraction can be done as needed for future backends.
+Best regards,
+-- 
+Srinivas Kandagatla <srini@kernel.org>
 
-> 
-> I may be missing a reason why the pas_id-only callbacks are preferred, but if
-> this is intended to be the long-term generic PAS layer rather than mainly a
-> shim over the existing SCM API shape, using the context consistently and keeping
-> backend-specific state private seems easier to extend.
-
-As I mentioned above, the generic PAS layer isn't fixed but it will
-surely go through evolution as needed. Current abstraction handles the
-existing client driver and backend requirments.
-
-Moreover the subsystem maintainers are already complaining about this
-series being too large for the merge to happen.
-
--Sumit
 
