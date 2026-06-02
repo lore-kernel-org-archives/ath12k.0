@@ -4,89 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24721CD5BD1
-	for <ath12k@archiver.kernel.org>; Mon,  1 Jun 2026 17:08:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 233CCCD6E60
+	for <ath12k@archiver.kernel.org>; Tue,  2 Jun 2026 14:27:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
-	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
-	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2Bb5+0SQ1WSt0e7KSkXzY2MHcwPs9a1pBUBUqaxnOM8=; b=M45rlH6JZTmBUCDzcLEc69s77C
-	llpPGNni2SCnsQFSUerK0q7Ej7HZy6KfZlDo0Jbk4lBLG305baOP1iwLkHP6wsaR9VigYUqazxvvE
-	Awqr7uvihMX0cpCyPVOiVsRJ5WDtdg14QHEvWdWzh9FcJKTUvwAaR9Kq9nJH9FlthDyTZhPRlHCkV
-	xGn9LBPveLQDX0x4KcJ6/wyaWEYfsNDiDzFX2XI6HY6AnOhDyMfHVK8cZT1NrAglP8sdMLk1x4ZUF
-	iP9DhK2xWaijSd0smgM257O86zpQB2e4A3dRUYs8L3QXux2iB2XSo6mKwhbOlDhWucEfmiJ0NTJwo
-	2hY7x7yA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:From:Subject:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=O50jApDYHIgJb/YLiCc0daKUWGbnLsbEGopktQ8wurA=; b=b3EDcJoieQRg2jshqYqbcOfgq6
+	azOAvB/t08wG/5khd28QU43cAtXU2mhM8u1etpVfnTLw59ppeF1pDvNO7sKGQqPxGP2nA1/kLQJmj
+	O+w8Ft8FNdAon03guxgdzADLYhZ6vy7mLADcNo+Tj/q0vnYRyLVTwmWml0m8xjZX5ZQcr8NpFk0CZ
+	IkbxTO76fPr7013huZkFOvcSKzGDKKi5dsiJSLvC0KH6ZOLTWmEQaTgZwtdbEyuYXhiJ1nxHPanmO
+	4CWW+XhprM2Tio2mzU8pPqSwVVc+kEOQu0xdsdV2Nu+ca8aG0tbAtLrbM12sQ2om1M7tY7MoKNdRC
+	ipFUaqrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wU68E-0000000BYT0-3idc;
-	Mon, 01 Jun 2026 17:08:54 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1wUQ62-0000000DBKV-2cHq;
+	Tue, 02 Jun 2026 14:27:58 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wU68C-0000000BYSR-0grf
+	id 1wUQ60-0000000DBJR-0L7N
 	for ath12k@lists.infradead.org;
-	Mon, 01 Jun 2026 17:08:53 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-49050bfe053so72740155e9.3
-        for <ath12k@lists.infradead.org>; Mon, 01 Jun 2026 10:08:51 -0700 (PDT)
+	Tue, 02 Jun 2026 14:27:57 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6529UZlc3355398
+	for <ath12k@lists.infradead.org>; Tue, 2 Jun 2026 14:27:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=O50jApDYHIgJb/YLiCc0da
+	KUWGbnLsbEGopktQ8wurA=; b=BSZKg4doFi6Yc7w23PyEnxn/ermC+HXymQi7Gx
+	MTU84Gmil9/HLIKmzjmEahYtYwns6qU+JfYWVddLJIGejMzJMGl2TRTAGo1t5C/9
+	ARFk7VZljBobBnQG2/hebyoAoWfqsLjmD9bzxhJAZyBQ+q0sRz2OQQd/RxgWNwRd
+	n84sqh+fDfOjml3+8tPdiUmRN7TzBw+j20fBbh3zPRup0CoYCDhDngQFnTmzn2Sx
+	bsXxviE5PaMbGAsvWkjuTQQajnvsyUW0NzWTlrR8rALOokUoRrv3mxg4Q4LM1ntX
+	i98okuppxifQNnDcQXYI3leyR4weTvds3fVh6D2EsSqp+aoQ==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ehvkx92qu-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 02 Jun 2026 14:27:55 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-304ec73b015so6341100eec.1
+        for <ath12k@lists.infradead.org>; Tue, 02 Jun 2026 07:27:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1780333730; x=1780938530; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+        d=oss.qualcomm.com; s=google; t=1780410474; x=1781015274; darn=lists.infradead.org;
+        h=content-transfer-encoding:from:content-language:subject:cc:to
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=2Bb5+0SQ1WSt0e7KSkXzY2MHcwPs9a1pBUBUqaxnOM8=;
-        b=V7iqYhjQnVB6FMD+//7LyifK4G7X2dSl660RN9Vunu52QqA0UlbxDNrkrFEIQW9ywN
-         0aKmWyatnXIQpTr86TvzWR5QXYL+SUwW10CxAYlvJ42dFhqvA3ctVEUrwNKW4GE4CRe4
-         pL1PZEl6yyrM4yO/yEZJyVcRL6aVy4IOUCbBvL6l8l8bk34l0yg2ItofzLlMjQzVnLvr
-         6kWL6Rha5mpoyVI3JxSKyzrWG6XqzRfqQ/CqC15BQQS1ubypWt4wDsheLeUekZpA3wHE
-         RCQjtG1DuMswIok0ogH2oewluUlZ3NfPas8IgcRLCswJIW92xu1qZtqbw6E7k+oBm6V3
-         cDdA==
+        bh=O50jApDYHIgJb/YLiCc0daKUWGbnLsbEGopktQ8wurA=;
+        b=TXLtmMF38foMbPY3syMZL2SJpSWQtNXKOP3vsH8bEeFxWEDGJ7ofLksm8nWVki54v2
+         KsCPeeTeS6aQ0JxFvW8NuP2xxXLv07/yzsj3FbwT59RTwTQ/8ZUyifSuuH/JAvyN08CY
+         iSYABXvFZmYBe0hEev0+EQSrdxdY+cAFeF/gHe0jLFL9Ja7eYnTWLbWt4RnLJE61D4Pz
+         34I9V5lgkdPxSon/JIpbpWi7fLvo6lSvA72/pfPbO0t4lL2NpZ+3b5EnwALKLDQ4538T
+         bq4DE+kmEMFeEaFXMgHzf7FOjbCRV+vsWDUELDfdLR/PZbobdJIhjJ5eh3SWBsxpImgS
+         O99w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1780333730; x=1780938530;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-gg:x-gm-message-state
+        d=1e100.net; s=20251104; t=1780410474; x=1781015274;
+        h=content-transfer-encoding:from:content-language:subject:cc:to
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=2Bb5+0SQ1WSt0e7KSkXzY2MHcwPs9a1pBUBUqaxnOM8=;
-        b=YqnQnTu+MCRr3oB2uGhcHHfBzR0aAztiieMAxfZ23Ny+nE6njvwUvujUgBg3lpzEOH
-         yMKaK3jVs2CdoC5lYjktoomK37McVzoZlGIEGxesYu55rd3sCdz4L8vnAcPgUv88ht6u
-         6RH01sWxVcblO4tFyAlSwnD7mDdwmIt+vr/pAz2KtMTqERlKkbGOxMzDhAfGZ2vbFY48
-         NcdopMHrZ6lgnEFtEZ9QfaJ/Yc+wfi0NA7fN8LzjtkRmMWeCPEZ0MLdVfGld+4xPG1Bb
-         ZEXv9uW16v9XaGVibsOxw8bCoIN2U0UGbrx17UX4POUbLZfLLtDIfIWK1RxNTDyUNpox
-         xDiw==
-X-Forwarded-Encrypted: i=1; AFNElJ/TAzgSghShS+/nOyDTvBb5UGcAmQlFEOEWgEW/yc0LejalnL5cRGuE121Zlus0XZj5M+UpfVU=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw6zpWEEnBgYXeaEUY0cdWoIy4288PnybgNUVLPF+wOdJyfKMre
-	KgbQ478YbVTO3Spuyf+1/wi/E72hE1CH8SrdTN8ScygAs2DLus82CrjNJDB5LA==
-X-Gm-Gg: Acq92OGCTSSlEVNnRkDKjzhTJaSnLz+VTAas+tt6k2GlzL+fGNGj5kPApfwCKAmRgis
-	PluO+q1mykTQUFOWUAYBsP5on8aY8UhYwSKYi7ou9hhdMdx/fKW7xpEF2pqdJHAw8PRKJXG3y1a
-	GgPM2SAMJ6QAUrXYSZiPvG7iDaWrGKnV7ju/hJEVbjND0WOHsypoQlfZXGYI/WsnAEqfKPAgkHV
-	isyYixw0MfgTXJmKgw1QUx7QM8Ays2Lu1ZV+qgmDpGl29tQE6xFdkg8PRqNqOAW7kzKgd47fW6q
-	JPf6IRTFBKfnyN/hGcydHQKykR8WY3h3fThxjANHxcig0OKZJYG31dTXKoCss2+A8KEm9EiZca9
-	TCvF152SFi/PNXXLOYZ1mGbrmBCSV2NEVRB7xYOIIzGSrq+9Ln8Q47V8PR/eBroyO46CvI0j6jw
-	SwmUsA0aOYpXjsKH7iHc5yBkvcrwabCjl3JXClNdF9Om9xg4hM41QU
-X-Received: by 2002:a05:600c:a11:b0:490:b0f1:c27e with SMTP id 5b1f17b1804b1-490b0f1ce6dmr5127165e9.24.1780333729641;
-        Mon, 01 Jun 2026 10:08:49 -0700 (PDT)
-Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-490b0e13eefsm5056975e9.2.2026.06.01.10.08.49
+        bh=O50jApDYHIgJb/YLiCc0daKUWGbnLsbEGopktQ8wurA=;
+        b=WbZnyDfM01+h9WmDuiIOn/sFswTN8R3QH+3Wvk/+G9ZqbPrn3GT4NFUdOB8ZPMvFiJ
+         y7+2sdGRkXZUckg3E9MrpXuAMWuz9RbkHg5eHdcLFM3PnIXG7NDoD8/5SWBNzgepaPfT
+         pQHc61dlCd5oYnrQmFg6jRaZZ57j+UmpLx5xNbKVg5dvZV4pnkgWAuK87wPsPRPc9YSm
+         joEUtHlFZ9Sibrgse9DH3jZ8zt+NS+Hbc2FEvzeYn4/u/UTJSVrEhCZ2LmweDZAh0Nub
+         stYAN5v4EHaXNlzGhJzsWgMOR6QrbF7Yyzf4nWP56areC9uPxMZ2jP+68upmsJkeel6N
+         ct6A==
+X-Forwarded-Encrypted: i=1; AFNElJ/zQXsIAPnSvvxV4+X5SoL/e9NfV5SP2y3P4+a81FYONYiCQw/hYRmxt/lVdfmkoxg5IWywpcU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzUfvNe+NL3KLqefndAOH+NfUgetMob2ViEwhzGLh2saqXjzNdn
+	6qz8sQHGqclpU+q8S5aHFWFMlluv+v/X/dvhFKsRLEW3xq/ZxK9mth052JWsGA5WsWC9jxomcus
+	Uju19AlZyfby/NtZLa7/xQxB+d5jNzjrZ9bgsK0/N+jPZRaPdDxKWjNB84uezI6pvfagAMCS7
+X-Gm-Gg: Acq92OGI555ZPoc9QSjrw9Wj+BZ09JIuC90GBVluxlzfCfe+ZHnebT/uh1H/vCKBQDr
+	vyCBkl6LcfllbigPF3NRR6ltqsr2z/ouxNnHiCPR40L7fmwDWiYeAP0bFSmVjPIeLEOP5qCAn3d
+	ln7c3AshVCfP0cFbcqnRpJH0kjZx1oVTYXkrlnvNsuk7xOf9N957fKp4t6Rs3Fft/oVzhDujuzc
+	tk4q2+rrcQ+ibkC1XgkPT7K3JHfZ+TuSeN/aR7RiqECPuKt+jwY3skPiErYF7tlIOWXriOvOjQJ
+	4zOBXevi6s6gDADHkXSF+WV5EcR/B3ZWhB61tvkhDhS1z5W7r1yQaIIO4+CfwknfG8eR7YZQFUT
+	wd58rf21wxmjHwB8JhVoxC7bXIALYpdQy8YzQcwkGYkgbKydtGoleHM5GpJ1K99nyzM+p
+X-Received: by 2002:a05:7300:5714:b0:304:1fb6:88fd with SMTP id 5a478bee46e88-304fa693196mr8120233eec.29.1780410474015;
+        Tue, 02 Jun 2026 07:27:54 -0700 (PDT)
+X-Received: by 2002:a05:7300:5714:b0:304:1fb6:88fd with SMTP id 5a478bee46e88-304fa693196mr8120214eec.29.1780410473495;
+        Tue, 02 Jun 2026 07:27:53 -0700 (PDT)
+Received: from [10.81.91.45] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-304ed53d06asm12573698eec.14.2026.06.02.07.27.52
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 01 Jun 2026 10:08:49 -0700 (PDT)
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
+        Tue, 02 Jun 2026 07:27:53 -0700 (PDT)
+Message-ID: <10edc8a3-4d0d-482b-9ea0-30d827f67b2e@oss.qualcomm.com>
+Date: Tue, 2 Jun 2026 07:27:52 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+To: linux-wireless@vger.kernel.org, Johannes Berg <johannes@sipsolutions.net>
+Cc: ath10k@lists.infradead.org, ath11k@lists.infradead.org,
+        ath12k@lists.infradead.org, jjohnson@kernel.org
+Subject: pull-request: ath-next-20260602
+Content-Language: en-US
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
-Date: Mon, 01 Jun 2026 19:08:48 +0200
-Message-Id: <DIXVMW7QYLL5.M5EQ7YQQ0DTM@gmail.com>
-Cc: <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH ath-next] wifi: ath12k: avoid setting 320MHZ support on
- non 6GHz band
-From: "Nicolas Escande" <nico.escande@gmail.com>
-To: "Rameshkumar Sundaram" <rameshkumar.sundaram@oss.qualcomm.com>, "Nicolas
- Escande" <nico.escande@gmail.com>, <ath12k@lists.infradead.org>
-X-Mailer: aerc 0.21.0-0-g5549850facc2
-References: <20260123144224.2216923-1-nico.escande@gmail.com>
- <a4ee39fd-f1d6-4b84-832c-c4eb0166476d@oss.qualcomm.com>
-In-Reply-To: <a4ee39fd-f1d6-4b84-832c-c4eb0166476d@oss.qualcomm.com>
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: x3ODY5fiIXz83Dlyt2CF8MgrE_51bnw6
+X-Authority-Analysis: v=2.4 cv=GYknWwXL c=1 sm=1 tr=0 ts=6a1ee86b cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=VwQbUJbxAAAA:8 a=lSH6NSywkKVUnX8X2cAA:9 a=QEXdDO2ut3YA:10
+ a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-GUID: x3ODY5fiIXz83Dlyt2CF8MgrE_51bnw6
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjAyMDEzOSBTYWx0ZWRfX2N7h/QqzY8/b
+ gn8HieTxoglN9hH8L7bI27SHhVyIc9X1lBPX+IRnGKyOo1xR5S50Dc2b7GRItzTC9jb00xkyOKl
+ t7sHfk8KeaItJTKbx8Uss/sHVlm+S/RuGcUDOrbqeH+HSvEUGIOtDKvasH+shzG2NOgQxIHw2rf
+ e/nbl/CtdVOJcnmbOMforHrRQi65z6j2FakRmNPBPngoWvncPbfSdVyoTTMbBSfi6gH92oLdroN
+ x9xsnn3bbXR/TBI27mR3BHTYL7Qxh3rUqPAI0uns3GljZ4dkNOcGOiPZw2ThvxTf33Kg0xU924m
+ vJ/N1PgqKzk1y3ctcjsRuVTjw80WaoxXqKCpEwNjj9VcWUc8kSysIWKMP9bwLzeN5h7cvcBpkzw
+ NJ5dSdnjbdynvMKkQ2Rzvi0I/VGNnP8Vss1dtlW9avlbTLkEwOTTd860NUdt5mm4GRui1Z5sL7O
+ vXr2OFd3pnbnS33IZvA==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-02_02,2026-05-28_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 impostorscore=0 spamscore=0 bulkscore=0 phishscore=0
+ lowpriorityscore=0 clxscore=1015 suspectscore=0 priorityscore=1501
+ malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2605210000
+ definitions=main-2606020139
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260601_100852_237663_E250C297 
-X-CRM114-Status: GOOD (  21.87  )
+X-CRM114-CacheID: sfid-20260602_072756_232258_709A5ADC 
+X-CRM114-Status: GOOD (  10.40  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,112 +141,85 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu May 28, 2026 at 9:56 AM CEST, Rameshkumar Sundaram wrote:
-> On 1/23/2026 8:12 PM, Nicolas Escande wrote:
->> On a split phy qcn9274 (2.4GHz + 5GHz low), "iw phy" reports 320MHz
->> realated features on the 5GHz band while it should not:
->>=20
->>      Wiphy phy1
->>      [...]
->>          Band 2:
->>      [...]
->>              EHT Iftypes: managed
->>      [...]
->>                  EHT PHY Capabilities: (0xe2ffdbe018778000):
->>                      320MHz in 6GHz Supported
->>      [...]
->>                      Beamformee SS (320MHz): 7
->>      [...]
->>                      Number Of Sounding Dimensions (320MHz): 3
->>      [...]
->>                  EHT MCS/NSS: (0x22222222222222222200000000):
->>=20
->> This is also reflected in the beacons sent by a mesh interface started o=
-n
->> that band. They erroneously advertise 320MHZ support too.
->>=20
->> This should not happen as the spec at section 9.4.2.323.3 says we should
->> not set the 320MHz related fields when not operating on a 6GHz band.
->> For example it says about Bit 0 "Support For 320 MHz In 6 GHz"
->>=20
->>    "Reserved if the EHT Capabilities element is indicating capabilities =
-for
->>     the 2.4 GHz or 5 GHz bands."
->>=20
->> Fix this by clearing the related bits when converting from WMI eht phy
->> capabilities to mac80211 phy capabilities, for bands other than 6GHz.
->>=20
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00218-QCAHKSWPL_SILICONZ-1
->>=20
->> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
->> ---
->>   drivers/net/wireless/ath/ath12k/wmi.c | 9 ++++++++-
->>   1 file changed, 8 insertions(+), 1 deletion(-)
->>=20
->> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireles=
-s/ath/ath12k/wmi.c
->> index 84c29e4896a4..14947fdb9813 100644
->> --- a/drivers/net/wireless/ath/ath12k/wmi.c
->> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
->> @@ -4888,6 +4888,7 @@ static void ath12k_wmi_eht_caps_parse(struct ath12=
-k_pdev *pdev, u32 band,
->>   				       __le32 cap_info_internal)
->>   {
->>   	struct ath12k_band_cap *cap_band =3D &pdev->cap.band[band];
->> +	u8 *phy_cap =3D (u8 *)&cap_band->eht_cap_phy_info[0];
->>   	u32 support_320mhz;
->>   	u8 i;
->>  =20
->> @@ -4901,8 +4902,14 @@ static void ath12k_wmi_eht_caps_parse(struct ath1=
-2k_pdev *pdev, u32 band,
->>   	for (i =3D 0; i < WMI_MAX_EHTCAP_PHY_SIZE; i++)
->>   		cap_band->eht_cap_phy_info[i] =3D le32_to_cpu(cap_phy_info[i]);
->>  =20
->> -	if (band =3D=3D NL80211_BAND_6GHZ)
->> +	if (band =3D=3D NL80211_BAND_6GHZ) {
->>   		cap_band->eht_cap_phy_info[0] |=3D support_320mhz;
->> +	} else {
->> +		phy_cap[0] &=3D ~IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ;
->> +		phy_cap[1] &=3D ~IEEE80211_EHT_PHY_CAP1_BEAMFORMEE_SS_320MHZ_MASK;
->> +		phy_cap[2] &=3D ~IEEE80211_EHT_PHY_CAP2_SOUNDING_DIM_320MHZ_MASK;
->
-> This field is split across PHY capability byte 2 and byte 3, so should
-> IEEE80211_EHT_PHY_CAP3_SOUNDING_DIM_320MHZ_MASK be cleared as well ?
+The following changes since commit e7d6bd24e883bf7c328d73c99bf6bcde19bf5e61:
 
-Indeed
+  Merge tag 'wireless-next-2026-05-28' of https://git.kernel.org/pub/scm/linux/kernel/git/wireless/wireless-next (2026-05-28 17:05:23 -0700)
 
->
->
->> +		phy_cap[6] &=3D ~IEEE80211_EHT_PHY_CAP6_MCS15_SUPP_320MHZ;
->> +	}
->>  =20
->>   	cap_band->eht_mcs_20_only =3D le32_to_cpu(supp_mcs[0]);
->>   	cap_band->eht_mcs_80 =3D le32_to_cpu(supp_mcs[1]);
->
->
-> Since you said "On a split phy qcn9274 (2.4GHz + 5GHz low)" i wonder how=
-=20
-> firmware set 6GHz capability bits in this case. That said, the approach=
-=20
+are available in the Git repository at:
 
-I suspect that the firmware sets the same features for mode 'a', regardless=
- of
-the actual frequency range supported by the device. I've also seen this on =
-a
-5G + 6G split device too.
+  git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-next-20260602
 
-> looks fine to me, although I would prefer to clear the remaining related=
-=20
-> bits as well:
->
->    IEEE80211_EHT_PHY_CAP3_SOUNDING_DIM_320MHZ_MASK
->    IEEE80211_EHT_PHY_CAP6_MCS15_SUPP_320MHZ
->    IEEE80211_EHT_PHY_CAP6_EHT_DUP_6GHZ_SUPP
->    IEEE80211_EHT_PHY_CAP7_NON_OFDMA_UL_MU_MIMO_320MHZ
->    IEEE80211_EHT_PHY_CAP7_MU_BEAMFORMER_320MHZ
+for you to fetch changes up to 565257a857690244211d85593b2cd490ce86783a:
 
-Yes, I cleared the ones I used in my middleware but I really don't mind
-clearing all the 6GHz/320MHz related bits I can find.
+  wifi: ath12k: Handle 4-address EAPOL frames from WBM error path (2026-06-01 09:58:06 -0700)
 
-Thanks for the review, I'll spin a v2
+----------------------------------------------------------------
+ath.git patches for v7.2 (PR #3)
+
+In ath12k, add driver support for WDS mode.
+
+In ath11k and ath12k, a number of cleanups and minor bug fixes.
+
+----------------------------------------------------------------
+Aaradhana Sahu (1):
+      wifi: ath12k: add hardware parameters for maximum supported clients
+
+Aditya Kumar Singh (1):
+      wifi: ath12k: Prevent incorrect vif chanctx switch when handling multi-radio contexts
+
+Hangtian Zhu (1):
+      wifi: ath12k: allow peer_id 0 in dp peer lookup
+
+Kwan Lai Chee Hou (1):
+      wifi: ath12k: fix incorrect HT/VHT/HE/EHT MCS reporting in monitor mode
+
+Miaoqing Pan (3):
+      wifi: ath11k: fix invalid data access in ath11k_dp_rx_h_undecap_nwifi
+      wifi: ath11k: add MSDU length validation for TKIP MIC error
+      wifi: ath12k: fix memory leak in ath12k_wifi7_dp_rx_h_verify_tkip_mic()
+
+Rosen Penev (1):
+      wifi: ath11k: use kzalloc_flex for struct scan_req_params
+
+Tamizh Chelvam Raja (6):
+      wifi: ath12k: Set WDS vdev parameter for 4-address station interface
+      wifi: ath12k: Add support for 4-address mode
+      wifi: ath12k: Add 4-address mode support for eth offload
+      wifi: ath12k: Add support for 4-address NULL frame handling
+      wifi: ath12k: Add support for 4-address frame notification
+      wifi: ath12k: Handle 4-address EAPOL frames from WBM error path
+
+Wei Zhang (3):
+      wifi: ath11k: raise max vdevs to 4 on hardware with P2P and dual-station support
+      wifi: ath12k: fix inconsistent arvif state in vdev_create error paths
+      wifi: ath12k: fix NULL deref in change_sta_links for unready link
+
+ drivers/net/wireless/ath/ath11k/core.c             |  10 +-
+ drivers/net/wireless/ath/ath11k/dp_rx.c            |  59 +++++-
+ drivers/net/wireless/ath/ath11k/mac.c              |  72 +++----
+ drivers/net/wireless/ath/ath11k/wmi.h              |   2 +-
+ drivers/net/wireless/ath/ath12k/core.h             |   9 +
+ drivers/net/wireless/ath/ath12k/dp_mon.c           |   6 +-
+ drivers/net/wireless/ath/ath12k/dp_peer.c          |   2 +-
+ drivers/net/wireless/ath/ath12k/dp_peer.h          |   2 +
+ drivers/net/wireless/ath/ath12k/dp_rx.c            |  13 +-
+ drivers/net/wireless/ath/ath12k/dp_rx.h            |   3 +-
+ drivers/net/wireless/ath/ath12k/hal.h              |   4 +-
+ drivers/net/wireless/ath/ath12k/hw.h               |  25 ++-
+ drivers/net/wireless/ath/ath12k/mac.c              | 228 ++++++++++++++++++---
+ drivers/net/wireless/ath/ath12k/mac.h              |   3 +
+ drivers/net/wireless/ath/ath12k/peer.c             |  11 +-
+ drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c     |   3 +-
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c      |  95 ++++++++-
+ drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c      |  41 +++-
+ drivers/net/wireless/ath/ath12k/wifi7/dp_tx.h      |   4 +-
+ .../net/wireless/ath/ath12k/wifi7/hal_qcc2072.c    |  16 ++
+ .../net/wireless/ath/ath12k/wifi7/hal_qcn9274.c    |  16 ++
+ drivers/net/wireless/ath/ath12k/wifi7/hal_tx.c     |   4 +-
+ drivers/net/wireless/ath/ath12k/wifi7/hal_tx.h     |   1 +
+ .../net/wireless/ath/ath12k/wifi7/hal_wcn7850.c    |  16 ++
+ drivers/net/wireless/ath/ath12k/wifi7/hw.c         |  48 ++++-
+ drivers/net/wireless/ath/ath12k/wmi.c              |  47 ++++-
+ drivers/net/wireless/ath/ath12k/wmi.h              |  17 ++
+ 27 files changed, 642 insertions(+), 115 deletions(-)
 
