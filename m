@@ -4,72 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0C0FCD6E5D
-	for <ath12k@archiver.kernel.org>; Fri,  5 Jun 2026 06:01:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AC33CD8C88
+	for <ath12k@archiver.kernel.org>; Sun,  7 Jun 2026 15:34:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=UBNqjFdYuvFiXkB26JlQDvB8ArlAqTAL5YvWlcrmJbM=; b=1gYorf60+UzlxgwZ9i7cSwJKVn
-	EVo853AmbYd9tgCyPUJ7JJBGbTgl6a7s0lOv/ETUwcqvtLa5usRK1Gk3/O9994zJwLEgdW4JEqBgC
-	zMtaJMQ0HHuZJnPztUhAptY6M4HGMQ3MZGVsVnhBr05ScDaLAF7RZw8jH3L5ou95xOAHEkqFDHht5
-	IDzQ19ZaKNzZBuV7b78KJO0JvNFPWSmF0J39h0vDwu3k3QV3EloIvVZ26zFEB+AwTI0DWvD90kJbc
-	L4oSuu+YVF7MnFMO7d9nF/hisu+aM53HiT/osGNDbf8SEvyyRm1v0DBlBl4JDOrdLRfb3Mqutpqze
-	qkBdy9nA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ctq/1w4DUNTGPmu45gjf8nQfOPRThFzezJAvYr6KElE=; b=k1rJSiM53oUPmZc+aX3p5xXsRZ
+	Cc1UdSs+6aE0jXZrAobuKzXwpnbSrKD3pDY2uZg/ht1ArdZJflD11cR8YUmVU+LPW/rxHBLM6h+8l
+	NtcIi/mAVnqVPdOmpY9dT4ubEFxLXTsEGpQKuufIJgK+16lVRl0r1canmzxwm8YqNibuppWzRIU3l
+	3JitKAuwTFaAp3bn87Zo7hfDm4c+Q8UoHG4nKBiiXAVucYAYY8siYp2mTreV88WVYkdeQvAryUq79
+	pBMuaWv+w16B9V3C2lDu97qvZ6N9AmmtJhPaoI6FLesxmaVPxvpvtgJVaendci3NfDA+MLc14gnyt
+	L9gaJyAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wVNcQ-000000008Au-2Fnq;
-	Fri, 05 Jun 2026 06:01:22 +0000
-Received: from mgamail.intel.com ([198.175.65.11])
+	id 1wWFVd-00000002JgO-0qcm;
+	Sun, 07 Jun 2026 15:33:57 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wVNcN-000000008AX-1KaL
+	id 1wWFVa-00000002Jfy-2bOj
 	for ath12k@lists.infradead.org;
-	Fri, 05 Jun 2026 06:01:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1780639280; x=1812175280;
-  h=date:from:to:cc:subject:message-id;
-  bh=tY6regCDfxsJMRTuKfW2fWQKp1ZiqWp9qdTqXQawT8c=;
-  b=dg/BS/5gyviwtgABjRhkg1zFuckG0acl0eyebxB3YXJLZydT0XWtg9I6
-   iNZ5hNhh9q8VFD4SNEXLuXL71JqCc8dKYLvnl342D5tr+hCKLJ8aki54/
-   6LOHmIb80rtuQMr8g95co1u5oUafMXSMvT6QBhNKo1aKAL4+F3AAluwfX
-   VLQJ8ha9iSQgvDzCJ6atUgUaK4foq5BFz8qt/cBwgjHk/NhKpSr7O/GCd
-   kDg0m/uzMqsHg4y+iWZnHsG/+8fmorKtrFvXobxTC0K3rOj5PbkfYTMqE
-   UjZIHXWPZPtZTcR9/mb/Cf+/uwqE9hNBd5RtdZzySnHYuVp19BLe1QgG9
-   A==;
-X-CSE-ConnectionGUID: HyedfCXdRP69Kw65phxNyw==
-X-CSE-MsgGUID: qZCbx379QiyJ5tT+gQNRSQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11807"; a="91786424"
-X-IronPort-AV: E=Sophos;i="6.24,188,1774335600"; 
-   d="scan'208";a="91786424"
-Received: from orviesa004.jf.intel.com ([10.64.159.144])
-  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Jun 2026 23:01:19 -0700
-X-CSE-ConnectionGUID: mhpXvIVfR+uc9hPPVCek3Q==
-X-CSE-MsgGUID: Wzy+QJ92TsmavLj4irrY0g==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.24,188,1774335600"; 
-   d="scan'208";a="249088734"
-Received: from lkp-server01.sh.intel.com (HELO f0d55cb201f0) ([10.239.97.150])
-  by orviesa004.jf.intel.com with ESMTP; 04 Jun 2026 23:01:16 -0700
-Received: from kbuild by f0d55cb201f0 with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1wVNcH-00000000Fau-1wUa;
-	Fri, 05 Jun 2026 06:01:13 +0000
-Date: Fri, 05 Jun 2026 14:00:30 +0800
-From: kernel test robot <lkp@intel.com>
-To: Johannes Berg <johannes.berg@intel.com>
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
- Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org,
- Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Subject: [ath:master 2/4] net/wireless/nl80211.c:6993:36: error: no
- member named 'he_oper' in 'struct cfg80211_ap_settings'
-Message-ID: <202606051350.TYjbkXmP-lkp@intel.com>
-User-Agent: s-nail v14.9.25
+	Sun, 07 Jun 2026 15:33:56 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 657EjZU4440015
+	for <ath12k@lists.infradead.org>; Sun, 7 Jun 2026 15:33:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	ctq/1w4DUNTGPmu45gjf8nQfOPRThFzezJAvYr6KElE=; b=VK1hobsv1CWC5LvQ
+	JzW2rjpq8tTKS8T4rsxpyIdLGG+F99jp1RCRXGQMygI3N8b7sUKLnLtq8unMdiFN
+	ErxpOu14veKQU5jsKeg81Eeym9TEgiY9EigFTzAS/p5z3Tc8v/e0A2wx90OfiY3t
+	bfZdwUpqf7A3RdgyVBbEx9lAswnjRIYHPKJYzHAfCUUnpkaQSAWJt6ds9EIYUAlj
+	ucW15yus2+aX9Ib2jJhPE2vA7R+Y3btIYbzT1HaiRhPrT7OucTQrLyENjNjnaA5U
+	eW0Npki4zXNv4Pglx61YrGiuKi8ZAF+y0Xuw2yub1OrP6p7P9/kd0QpUESZcVAs2
+	Iea9Wg==
+Received: from mail-dl1-f69.google.com (mail-dl1-f69.google.com [74.125.82.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4em98cvn74-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Sun, 07 Jun 2026 15:33:53 +0000 (GMT)
+Received: by mail-dl1-f69.google.com with SMTP id a92af1059eb24-1365060ac82so2734040c88.1
+        for <ath12k@lists.infradead.org>; Sun, 07 Jun 2026 08:33:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1780846433; x=1781451233; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ctq/1w4DUNTGPmu45gjf8nQfOPRThFzezJAvYr6KElE=;
+        b=gfADmwe3e/9M/qJxSU84FmzcHFJ5G+PYUzU4vzyUCiZUx3DDposcwVtxP22IJh2wCI
+         XdxUHRrXAeTQ6lDc7Ne2P1HMMSKjrBq4CfpCH9USKwy1e9L0FKfUFPIqNqP/bDlhPyha
+         gz1rj6we2aGuyqxJh64eG2IHQlZXTpp2b7oBQE7HAuaiAWcvCYl2UC4LkD3EREwVywFJ
+         mOo6FjVOYDSIeyXtaw4Vm2b+oiESXedy6vyQJ/35xLs0mkdsA6wx98KT1pb9UoT0aHLv
+         iRKWj7zRYC88K1GTO0RwiN6/pLJFsdR9aewoZzGsBYk5AbJiLeAwFrx5DDWbkLJdADcC
+         RxuQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1780846433; x=1781451233;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=ctq/1w4DUNTGPmu45gjf8nQfOPRThFzezJAvYr6KElE=;
+        b=RMyfBbxdL2erGnJ+ARWWMcGoJKfdyJy9PU+TXQ48lAPvUcO7kGv2OYQ0sAZ2LGDSQy
+         /gW6Y0es496cZj0drraLBSnAE9lZosT1HeW3swvoF2GE1ZS8Cjc7qfL6lY+SOA2s/Nxa
+         rRP+0LvoaydPR+fudFDQZhlLiAagPytcRBNwjD9tQMmQxO4TrKcbZ8/zEdoTprrK6mli
+         41nPE6xXX1YRZGdnL9wEK5l7jBKa+R6c0aXrVaI0GPs7MrD5+y18An5VbRs70md7iNuS
+         d8yJhYZAzvhK2NY6q1aVOvAvfjEEwiksD6NHrXTup/XwvXjCHq+NuNB2aTTA2Ax40ocT
+         KqOg==
+X-Forwarded-Encrypted: i=1; AFNElJ8luzr/toIsVD6y3HYT0CH92BXNn4ofc5PJ41GlLwU8qthLnpHda4Kt3wkw65kfdbuzIEexbls=@lists.infradead.org
+X-Gm-Message-State: AOJu0YziQ396K/0Bmokbcrh36L8uGUJ/XVr8U0PmG6i3AC083EMuBP6z
+	+NKc2AIgaB4/q0BuPBKDu618jkhetELkxHXHhBhVPYzDe1oIm81EikRBbAiAJKZSurXdh0vgG0x
+	yBzfWKa3W2Cnud7sbZWK2jggCpDRZN2IXyYtDRUjyvDwjcSTICbYXEvkBjKbHrblgo+lFxxwU
+X-Gm-Gg: Acq92OE5ELXYgmnidVM7QYJhjW/Rxt6C0PO/Zd0ZFh4pb4TLYqRWNgqW/1belAig2L8
+	DpbUWaDFz4I2RoHjbqDtQh4YGjoInhvP2RIo2p7LKVf6LO3QXAoJOCK+XanabGwmuv6YRTlsQRX
+	AtVUyqkRJgHhJDjXJaIfPsF+CAunslgOOoFXR4LTmUlxwQXFvufmc3NZKa3bhpcvySHDk3n7BN+
+	CDdtcgXU1aC1dciKrm5dYZI16SgWZOLib0XXnU6Uk5t8QLZhhrmTE1ZCTIDOSwhlCKLfctx8cea
+	wxrhjfB+INJ9oEqBAm36wlJXcE3px6PkIdV/9FZvulKLZAd7qiE2p5VE+oqDEGeo9FBizbW8EMY
+	Uf6fh4duEMxpdUaX46q0sAd+Yq8JnzLCAx9mVChiMLFgWMpOvFW9SEl/XoASuCxeu4Zb+L0/WIH
+	bwEWYwjwV3e3qO76TV2LS5IHGu
+X-Received: by 2002:a05:7022:b9c:b0:135:40b2:ede0 with SMTP id a92af1059eb24-13807d358e0mr5286691c88.6.1780846432968;
+        Sun, 07 Jun 2026 08:33:52 -0700 (PDT)
+X-Received: by 2002:a05:7022:b9c:b0:135:40b2:ede0 with SMTP id a92af1059eb24-13807d358e0mr5286675c88.6.1780846432450;
+        Sun, 07 Jun 2026 08:33:52 -0700 (PDT)
+Received: from [192.168.1.59] (c-24-130-122-79.hsd1.ca.comcast.net. [24.130.122.79])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-138063de4a5sm6237066c88.13.2026.06.07.08.33.51
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 07 Jun 2026 08:33:51 -0700 (PDT)
+Message-ID: <a97dac59-a689-4b9d-8419-2b09c1d106ab@oss.qualcomm.com>
+Date: Sun, 7 Jun 2026 08:33:50 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next 2/6] wifi: ath12k: Add support for 4-address mode
+To: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20260525110942.2890212-1-tamizh.raja@oss.qualcomm.com>
+ <20260525110942.2890212-3-tamizh.raja@oss.qualcomm.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20260525110942.2890212-3-tamizh.raja@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjA3MDE1NSBTYWx0ZWRfX7d2rmqLlV0gI
+ 5ah/6lKLbIyBSZXhLAhvG0oloXejgA8CFZi/NC8MJe0hyBU7KRV7sKnouaVPcDvaXZY71BpCXu2
+ oG6Od+NmqM7pXka0iBEv7zuCZCKSWHYiETzRJhfdLQJTQsjUfNFFTBImeJ7o+5edcYzIeVJcepD
+ cvScGbtIzrxhDOJXYoNMk6jdvzIRAGfLTk2ynpby8FSLyC4VN/XCM0gO4rSokkVVmTI8OBSgeq3
+ AOvYO1sJte+iQnjbQy0eulqOyza0f9EmRzIgDO4ZLbJkuuyi8mSz6GwmVOSja48BB1U3OaGrifV
+ CCdMuykA5ivZBMtzpINEXkGqVVQ/QppPnkF3W48ai9YhvOlBqBZUMYNOv0PTTLnI38/CK0+H2Os
+ cAbwWPwj0C+A6Vnrm7WyauHgoA8Hd8hl0dcUCLNl6MBo0WgyILcA2Q/WseJeLxmOxwnIzw4QWR8
+ YtW5LiB2iiltR3q8l4A==
+X-Proofpoint-ORIG-GUID: pmTMPwdGzfRaCuL2ux8mG9D21nm0rNX7
+X-Proofpoint-GUID: pmTMPwdGzfRaCuL2ux8mG9D21nm0rNX7
+X-Authority-Analysis: v=2.4 cv=A/pc+aWG c=1 sm=1 tr=0 ts=6a258f61 cx=c_pps
+ a=kVLUcbK0zfr7ocalXnG1qA==:117 a=Tg7Z00WN3eLgNEO9NLUKUQ==:17
+ a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
+ a=VwQbUJbxAAAA:8 a=QyXUC8HyAAAA:8 a=AogDqfkJi6Jrrm46B_8A:9 a=QEXdDO2ut3YA:10
+ a=vr4QvYf-bLy2KjpDp97w:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-07_04,2026-06-05_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 suspectscore=0 bulkscore=0 spamscore=0 malwarescore=0
+ adultscore=0 priorityscore=1501 phishscore=0 impostorscore=0
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2605210000
+ definitions=main-2606070155
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260604_230119_801564_DF3DEB33 
-X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-CacheID: sfid-20260607_083354_691355_11B14321 
+X-CRM114-Status: UNSURE (   9.22  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -85,99 +148,22 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-head:   d54e5a797eebf0ef8c91f628aac578128b39a0b1
-commit: da16cf9abfd30e79c6c7ed7c4f8bf8b1316b934b [2/4] Merge remote-tracking branch 'wireless-next/main'
-config: sparc64-randconfig-002-20260605 (https://download.01.org/0day-ci/archive/20260605/202606051350.TYjbkXmP-lkp@intel.com/config)
-compiler: clang version 23.0.0git (https://github.com/llvm/llvm-project 7917772d7d61384696c61102c08c2ea158e610fa)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260605/202606051350.TYjbkXmP-lkp@intel.com/reproduce)
+On 5/25/2026 4:09 AM, Tamizh Chelvam Raja wrote:
+...
+> @@ -999,6 +1007,11 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
+>  			skb_cb->vif = vif;
+>  			skb_cb->ar = tmp_ar;
+>  
+> +			if (ahsta && ahsta->enable_4addr)
+> +				arsta = rcu_dereference(ahsta->link[link_id]);
+> +			else
+> +				arsta = NULL;
+> +
+Tamizh, please check the smatch warning at:
+https://lore.kernel.org/oe-kbuild/202606051125.XaYVDQZf-lkp@intel.com/
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202606051350.TYjbkXmP-lkp@intel.com/
+This looks legitimate since there is a path where link_id can be 15, exceeding
+the ahsta->link[] array.
 
-All errors (new ones prefixed by >>):
-
->> net/wireless/nl80211.c:6993:36: error: no member named 'he_oper' in 'struct cfg80211_ap_settings'
-    6993 |         if (!!params->he_cap != !!params->he_oper)
-         |                                   ~~~~~~  ^
->> net/wireless/nl80211.c:6996:37: error: no member named 'eht_oper' in 'struct cfg80211_ap_settings'
-    6996 |         if (!!params->eht_cap != !!params->eht_oper)
-         |                                    ~~~~~~  ^
-   2 errors generated.
-
-
-vim +6993 net/wireless/nl80211.c
-
-7443dcd1f1718a Aloka Dixit   2020-09-11  6942  
-66cd794e3c30b8 Johannes Berg 2017-02-07  6943  /*
-66cd794e3c30b8 Johannes Berg 2017-02-07  6944   * Since the nl80211 API didn't include, from the beginning, attributes about
-a384ae96990250 Johannes Berg 2026-04-15  6945   * HT/VHT/... capabilities, we parse them out of the elements and check for
-a384ae96990250 Johannes Berg 2026-04-15  6946   * validity for use by drivers/mac80211.
-66cd794e3c30b8 Johannes Berg 2017-02-07  6947   */
-d642e759b73cbf Johannes Berg 2026-04-15  6948  static int nl80211_calculate_ap_capabilities(struct genl_info *info,
-d642e759b73cbf Johannes Berg 2026-04-15  6949  					     struct cfg80211_ap_settings *params)
-66cd794e3c30b8 Johannes Berg 2017-02-07  6950  {
-a384ae96990250 Johannes Berg 2026-04-15  6951  	size_t ies_len = params->beacon.tail_len;
-a384ae96990250 Johannes Berg 2026-04-15  6952  	const u8 *ies = params->beacon.tail;
-153e2a11c99b73 Johannes Berg 2021-09-30  6953  	const struct element *cap;
-66cd794e3c30b8 Johannes Berg 2017-02-07  6954  
-153e2a11c99b73 Johannes Berg 2021-09-30  6955  	cap = cfg80211_find_elem(WLAN_EID_HT_CAPABILITY, ies, ies_len);
-d642e759b73cbf Johannes Berg 2026-04-15  6956  	if (cap) {
-d642e759b73cbf Johannes Berg 2026-04-15  6957  		if (cap->datalen < sizeof(*params->ht_cap)) {
-d642e759b73cbf Johannes Berg 2026-04-15  6958  			GENL_SET_ERR_MSG(info, "bad HT capability in beacon");
-d642e759b73cbf Johannes Berg 2026-04-15  6959  			return -EINVAL;
-d642e759b73cbf Johannes Berg 2026-04-15  6960  		}
-153e2a11c99b73 Johannes Berg 2021-09-30  6961  		params->ht_cap = (void *)cap->data;
-d642e759b73cbf Johannes Berg 2026-04-15  6962  	}
-d642e759b73cbf Johannes Berg 2026-04-15  6963  
-153e2a11c99b73 Johannes Berg 2021-09-30  6964  	cap = cfg80211_find_elem(WLAN_EID_VHT_CAPABILITY, ies, ies_len);
-d642e759b73cbf Johannes Berg 2026-04-15  6965  	if (cap) {
-d642e759b73cbf Johannes Berg 2026-04-15  6966  		if (cap->datalen < sizeof(*params->vht_cap)) {
-d642e759b73cbf Johannes Berg 2026-04-15  6967  			GENL_SET_ERR_MSG(info, "bad VHT capability in beacon");
-d642e759b73cbf Johannes Berg 2026-04-15  6968  			return -EINVAL;
-d642e759b73cbf Johannes Berg 2026-04-15  6969  		}
-153e2a11c99b73 Johannes Berg 2021-09-30  6970  		params->vht_cap = (void *)cap->data;
-d642e759b73cbf Johannes Berg 2026-04-15  6971  	}
-d642e759b73cbf Johannes Berg 2026-04-15  6972  
-153e2a11c99b73 Johannes Berg 2021-09-30  6973  	cap = cfg80211_find_ext_elem(WLAN_EID_EXT_HE_CAPABILITY, ies, ies_len);
-d642e759b73cbf Johannes Berg 2026-04-15  6974  	if (cap) {
-d642e759b73cbf Johannes Berg 2026-04-15  6975  		if (cap->datalen < sizeof(*params->he_cap) + 1) {
-d642e759b73cbf Johannes Berg 2026-04-15  6976  			GENL_SET_ERR_MSG(info, "bad HE capability in beacon");
-d642e759b73cbf Johannes Berg 2026-04-15  6977  			return -EINVAL;
-d642e759b73cbf Johannes Berg 2026-04-15  6978  		}
-153e2a11c99b73 Johannes Berg 2021-09-30  6979  		params->he_cap = (void *)(cap->data + 1);
-d642e759b73cbf Johannes Berg 2026-04-15  6980  	}
-d642e759b73cbf Johannes Berg 2026-04-15  6981  
-8bc65d38ee4668 Aloka Dixit   2022-05-22  6982  	cap = cfg80211_find_ext_elem(WLAN_EID_EXT_EHT_CAPABILITY, ies, ies_len);
-8bc65d38ee4668 Aloka Dixit   2022-05-22  6983  	if (cap) {
-8bc65d38ee4668 Aloka Dixit   2022-05-22  6984  		params->eht_cap = (void *)(cap->data + 1);
-8bc65d38ee4668 Aloka Dixit   2022-05-22  6985  		if (!ieee80211_eht_capa_size_ok((const u8 *)params->he_cap,
-8bc65d38ee4668 Aloka Dixit   2022-05-22  6986  						(const u8 *)params->eht_cap,
-d642e759b73cbf Johannes Berg 2026-04-15  6987  						cap->datalen - 1, true)) {
-d642e759b73cbf Johannes Berg 2026-04-15  6988  			GENL_SET_ERR_MSG(info, "bad EHT capability in beacon");
-8bc65d38ee4668 Aloka Dixit   2022-05-22  6989  			return -EINVAL;
-8bc65d38ee4668 Aloka Dixit   2022-05-22  6990  		}
-8bc65d38ee4668 Aloka Dixit   2022-05-22  6991  	}
-072e6f7f416f5d Johannes Berg 2026-01-30  6992  
-cb9959ab5f9961 Johannes Berg 2026-06-03 @6993  	if (!!params->he_cap != !!params->he_oper)
-cb9959ab5f9961 Johannes Berg 2026-06-03  6994  		return -EINVAL;
-cb9959ab5f9961 Johannes Berg 2026-06-03  6995  
-cb9959ab5f9961 Johannes Berg 2026-06-03 @6996  	if (!!params->eht_cap != !!params->eht_oper)
-cb9959ab5f9961 Johannes Berg 2026-06-03  6997  		return -EINVAL;
-cb9959ab5f9961 Johannes Berg 2026-06-03  6998  
-8bc65d38ee4668 Aloka Dixit   2022-05-22  6999  	return 0;
-66cd794e3c30b8 Johannes Berg 2017-02-07  7000  }
-66cd794e3c30b8 Johannes Berg 2017-02-07  7001  
-
-:::::: The code at line 6993 was first introduced by commit
-:::::: cb9959ab5f99611d27a06586add84811fe8102dc wifi: cfg80211: enforce HE/EHT cap/oper consistency
-
-:::::: TO: Johannes Berg <johannes.berg@intel.com>
-:::::: CC: Johannes Berg <johannes.berg@intel.com>
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+/jeff
 
