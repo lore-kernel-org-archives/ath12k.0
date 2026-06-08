@@ -4,122 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEE00CD6E79
-	for <ath12k@archiver.kernel.org>; Mon,  8 Jun 2026 17:48:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB2DACD6E79
+	for <ath12k@archiver.kernel.org>; Mon,  8 Jun 2026 17:53:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=d/9g7+8oC3yBt2suG9dk3CdbNFRbx6wAs2lmTlHEx+E=; b=OwYNLbRLBi7q6Qphbt4jbyjixj
-	SmY9tANyhCjIX9FHARYhkZrj5U8ffswvXx/ykp2O531Y0dF4zJySvKhhIVQ50wjhuUVJ+AVGUTTt6
-	L4PQCA+Vi6Jw51Fr+V4ZOjbsD04SiXuaZC4qwuNwVvKjP8+WZXyoClaiVW5xXrUbXZ5+GZkJejJO4
-	ayDQ1aX+M8sIhluMtQz7/NpRkesq6Fq1vcAqdcvoiQGcNL4XRdLgBf62YUjam1YbX/LZX4W0OFA+l
-	uN1pOryFYBDFQ0ooa2Pl+AFhbOqXESQwImHbPJIc6IdOh9Thz8otKPcgxpCfxMuiDr3ECjBxTXdS6
-	UA4JlOPQ==;
+	bh=g0o4A01Zx9wgjGmnTxMlZfyWj+VDfhGQEUZ0E8tBG+U=; b=0H5ac073/1o8hinkIXsIHbwdas
+	UC6Xwv4Ee8tE9oF0cDgekHy5Eb9IbrFbSo8pYJTBOJD78hOmY5Mslyl81Twbkun7gCMwchVfIP64T
+	btxP05zDG2lOGKsN8X5aih0/AycOSO25t4ifObRwyMhiUfP2ZJVzdbXmsjup+HhoJVSGUWmuPPOHq
+	LWxlusWMXaDv3cpwEoiZ9Qpv2OxAW6MjjsgY0SU0KiWeEVfhcD3/wq6RNdTkuS1ura0tFFoqHPQtz
+	s9N2BgHTdhn2Fcx+wwJ6O1iTAFSmCw8Up1BpOQ3X5YnhozEal/9HLODYI4xOnd9DVk6BNlUTdoZcy
+	i57pzfRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWe5N-00000004Ddd-2cNy;
-	Mon, 08 Jun 2026 17:48:29 +0000
+	id 1wWe9x-00000004E3l-1ngC;
+	Mon, 08 Jun 2026 17:53:13 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWe5K-00000004DdA-2LjS
+	id 1wWe9v-00000004E3I-2h7J
 	for ath12k@lists.infradead.org;
-	Mon, 08 Jun 2026 17:48:27 +0000
+	Mon, 08 Jun 2026 17:53:12 +0000
 Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 658FFTIg3971294
-	for <ath12k@lists.infradead.org>; Mon, 8 Jun 2026 17:48:25 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 658FFTdI3971286
+	for <ath12k@lists.infradead.org>; Mon, 8 Jun 2026 17:53:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	d/9g7+8oC3yBt2suG9dk3CdbNFRbx6wAs2lmTlHEx+E=; b=V+yRhuKT5R9WKJxp
-	/4XxY7Kaa5CEQKU6oq21a7PmTwhzGDdnm/sPGZNQ5Pe+ZZlIpA8Z8zsm30pZ+sLk
-	0b6OOGlRmTZxxoMlJM3qdrgMpbPIw8AVhVe8/ia/fq990OdNu9UIFzR4cvecClPi
-	rF9YCsmTBhGOUYRd1HZUflX8Yju1bGe30ueC6io3Pom11Boxnq1oR9Zy/eiBsojB
-	aTh6SSq8ncArbC2u+k9DuMS+BKHcM3OXi+eYzNkl1dpitHBjYBz/QyvOCE0F1xrC
-	k3058kr8exNNsqxiw1GQlB1nMLNOfVgLsxsjdTnaGkbu6iZaVxdWsFgCu4daTQj/
-	b99SRQ==
-Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4enuptj6p2-1
+	g0o4A01Zx9wgjGmnTxMlZfyWj+VDfhGQEUZ0E8tBG+U=; b=Yr98avpooiWCFBBH
+	lVs5U6rvIEpIW5P6S4f4CItVUxWli3WHZBdgS5mp5r1Je/h0lTZRc78kDDOrficG
+	WIAy/SATDF51efn442zIGKoKtuA+7KosUG37Jq47cKxqxwuDwdSGUhs1Dok3L35S
+	du5KHYmQNp6thLj1tMXDJj/lionibLaDsA2n4+PiItjmLFqZW1btwQziPWgLOu2a
+	cPftw9dU1FbPLQgfqBUVtqNDMH7Hr1oKgWE6EWWqmprVw9lx1l1lRVgiIXMPNlYi
+	vXdnh4BBvLCoiX0ZJws26sQErGDbP1VrYVrelXjeaJPW81UHHe2KMtUWPMyCgKjT
+	/B0iAg==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4enuptj7b6-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 08 Jun 2026 17:48:24 +0000 (GMT)
-Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-304df51ff3eso4212327eec.0
-        for <ath12k@lists.infradead.org>; Mon, 08 Jun 2026 10:48:24 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 08 Jun 2026 17:53:10 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2bf32fb7cb2so34027175ad.2
+        for <ath12k@lists.infradead.org>; Mon, 08 Jun 2026 10:53:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1780940904; x=1781545704; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1780941189; x=1781545989; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=d/9g7+8oC3yBt2suG9dk3CdbNFRbx6wAs2lmTlHEx+E=;
-        b=jRaGDNh94yg+fzJu9msKKE/k/tRQsamLn5UJC9l3AwcqeiE6cBxpdL+jem+4VaNna4
-         pXZw6/80SxaIklFK2Fsgq9S6AxqoIwLuaJosjryZnj/oz98F+z+wXpDqfncsNksudSYR
-         gaAacwVhPr/r5J9dwOCYvIEsAcRUcRtkje65Q2pUisTKIAzi2qnWi8MPjd0nmSMjhAr4
-         PXux2ECITion322VLOnvedUHr/UnJMiptulU4okHTF57vf4fq8T9dU77M4P0Fr68bMNp
-         UqNQNDrjfonLazfn/619nW9KQQkhGzNGwYE0GYFlc6JvTtsQ9Lc5PYpLdoX6gAmYafY8
-         hHnA==
+        bh=g0o4A01Zx9wgjGmnTxMlZfyWj+VDfhGQEUZ0E8tBG+U=;
+        b=Kd4LSMkmFmENSOpy6BbsKSFjG0z4iKiN5uOcVV66WI/gOA1ecaXTQ89R9t+I3AbmZi
+         OLAJ8X2E+sR+8AZaUq4RBGqf9z30TvwoWDGfF0QdU8j0ymQDUxDCGhL61wAheQeYB0yh
+         JK/55/v+Uvc4OH+h1c6N8sy9i7tu+Ohkp4GGd4UxMFMV+S+XlHZIOqBpIVYscPt47OeR
+         VlNlkobf+72nqNNAhoud+qeydZusxsto2SVPXB5w5TKvDmByv04PadLzg7RO09kW+Rie
+         mNBI9kRIifBxYIcp6PNBEbJ16Auz/r7ki6wQ/y0asJtMEtfsXYOd4OnwC9WJJ0DJKBFX
+         ds9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1780940904; x=1781545704;
+        d=1e100.net; s=20251104; t=1780941189; x=1781545989;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=d/9g7+8oC3yBt2suG9dk3CdbNFRbx6wAs2lmTlHEx+E=;
-        b=RUe8RZTrpvhN0Lxidhygv1Arhi76BxQx3TfkhtmCbzuyiVne7zmP93cqf7nle9aFmF
-         6oOtVJJTLFtXmcHSaNxpIwLl3iTFT+Ef3moEjJkxy8kHkQYW+9z/8D/WegdZfE8dVs42
-         8bNZYv8xOnG9oXNNh5H3Mc7C/5t6CMckxaitxVW4c2/Ok6G5LFE6H/obWsmIh7Cafp53
-         qxB0gFSYDz+EW/NkcuRmE4bhXCnvKMlbecZfe5nNNgALqnRKLIEnV9gggPStkFO6YYA9
-         Kmc86Pn1Xrz82YW9S56BglqEHiHwPQDoOlP/RRcIx10VsBaifC4yB2yJVe5X4TDo/T4y
-         ajHA==
-X-Forwarded-Encrypted: i=1; AFNElJ8rEFjxDlULAz5pdw89s1BI1GdEG29Wcyfdk/z1vTvVJd0OdUyHhV/NKNFsJ77vcShUaQOQsSY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwnjaOOLzdzj/1L532XS5VO6YNsOwm890bhBpTQFYlVbtOA33kc
-	rlXsYW0JlljUmK8VSacZib1iT2oBw8/ib4HbOqmkk7OOS9cT0Y/QVObZcWwAVj9KFS3H7mAmrgB
-	bLjI9NraayVVcJ1SefEbsrnF3lRH9N21RiV5kRiMUx68V96dv4eXEDrBHM1geStlV
-X-Gm-Gg: Acq92OGmpeAz4iLbAo4oWduWwlKWWvbLRO8XrQSwOIpU6/aEcnv+uKZq1m0zCcB0N8x
-	BUex+EUGQ0qAAlKywmQM8MtbTcpQW7qkAqjEcm33+HYZZM7gMNpISmISMP8NXkA8AhuuYJIvA8b
-	xhbPFf8Z0r5PyG0ix+Wrkux7p99thS9NPS8lgLJztZjFWe1xV4wYmKnP0akS/FK9qlVCh9UaeMX
-	BvUkkHP07V+H97R7pjIL77eAapnYHdWYGlpKLbz58Kjqc9U7J+teW8zr6Tw2X/C+Kf2PXOpTzuK
-	vzEBVR7u1f3//5BjmHkdoRu9FnScmUaARQmYRnInnZwzEfZhmUnkKH3tCuqI3XkeduNbj8IiXJu
-	of10N/508UaDnPSEayEVoiHeucn6vqB/HlO48kzwRuTdXJgZAwhJxj8WfQyY=
-X-Received: by 2002:a05:7300:8190:b0:2ef:8b72:1b9 with SMTP id 5a478bee46e88-3077abcee73mr9540526eec.0.1780940903824;
-        Mon, 08 Jun 2026 10:48:23 -0700 (PDT)
-X-Received: by 2002:a05:7300:8190:b0:2ef:8b72:1b9 with SMTP id 5a478bee46e88-3077abcee73mr9540498eec.0.1780940903154;
-        Mon, 08 Jun 2026 10:48:23 -0700 (PDT)
+        bh=g0o4A01Zx9wgjGmnTxMlZfyWj+VDfhGQEUZ0E8tBG+U=;
+        b=XI1COFiPgo89u/jXjHlWdkdor4pyRU/rPlrevHHfAnTD52+KmB4UEBRA74ltTa+1Vd
+         b7Fke+oZJBUGZd566gBXU5op7uSjrRFGrkNH6hNA5qUBM7JJYbT0u5QMwoezKqWKUYE5
+         TfvhhP4SmOm4SlA3jDLK6YcWDAQ/sUrH210n8NrsUcY/toI6c1sLdXx4RW839aNBCQME
+         F8KwTtEeJjr7f79704gelSqIRy7ATrb3lh00w8s1rRn+zuCxBB90O/HdJq2aA64gE1uQ
+         WKB1fUtq+zayByxL9Wu2zRHuYb3fZR0fNl0C9QTDwVMBhZP1zvHGuwfrZgcC2VCjBk/v
+         hxsQ==
+X-Forwarded-Encrypted: i=1; AFNElJ8ep8/5tSaYteqxipJ8fpMi/5/TQFE7+3hSJuavH88r3XjNpJzrrwqXSwSLHccBJg7gGUaEqyg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YznIRJev9jWuAPspRwkTeWb5FuchZfytUSMaP5X/fR484rzx8BZ
+	5a/SVJYwgRcdE56oLq1BVjKsl4uUy8/4rstu2A/K5z9C7uB70OIfIUVBnFQdyKQSgs9fPer6tVg
+	yHvWsZPp2VWgovUvtqel94INlOAf7CJBhT5lDjlv0uDWAd03tf6KyFnfkmKnXfMObWFfCeMYS
+X-Gm-Gg: Acq92OHFoXx9m2ga82Gn09EoFFVvR8GKF/4DoyFYwTrLFZ5xJmePZJzB83ydyEBqDJ1
+	KxJ8lo522vLInK4P2BYNMYpiY0jlsFwlBhouuTDungoJT90BL1hBwELQYrZdThwJ0fAQC0Bbp7Q
+	W6+UDMAAaNfmStSaAXUIQCrdY8O5E75jWxbqs/qAlgNjSYtcT+iwjM8hbosYRo0Mo9Ss8pqTiui
+	/H2Uwb/N42yPZM04ouzxsHE12JXgPH0I3rejBSVz0J9B7bZsIqQTOvCC+N5ggHllDY1WXSCoUMu
+	qclteTxEIk7QM4W5DJK2PKbrMUTXnt35HQ9BO4x01e1uu5OXV21TWubgJ0WruUFSb7yB2iEHTRV
+	XSRgpY9oBBpHXQ6ZnHSFCwi3VSZiq3AjF7Uw/GcKJ+yidRe5/tUD0HZC9zw4=
+X-Received: by 2002:a17:903:a03:b0:2bf:2b84:c207 with SMTP id d9443c01a7336-2c1e8331ff9mr111298705ad.35.1780941189242;
+        Mon, 08 Jun 2026 10:53:09 -0700 (PDT)
+X-Received: by 2002:a17:903:a03:b0:2bf:2b84:c207 with SMTP id d9443c01a7336-2c1e8331ff9mr111298445ad.35.1780941188594;
+        Mon, 08 Jun 2026 10:53:08 -0700 (PDT)
 Received: from [192.168.1.8] ([116.73.159.142])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-30791f6381fsm9238976eec.0.2026.06.08.10.48.21
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2c16609e2e2sm184242265ad.49.2026.06.08.10.53.06
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 08 Jun 2026 10:48:22 -0700 (PDT)
-Message-ID: <1a584e78-1039-40ba-a6d6-d1af2516c3d8@oss.qualcomm.com>
-Date: Mon, 8 Jun 2026 23:18:18 +0530
+        Mon, 08 Jun 2026 10:53:08 -0700 (PDT)
+Message-ID: <e014bfbf-1144-464b-aeba-c7f0f58e8b2f@oss.qualcomm.com>
+Date: Mon, 8 Jun 2026 23:23:04 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH wireless-next 0/5] wifi: cfg80211: Add fragmented per-link
- station stats in MLO
+Subject: Re: [PATCH wireless-next 1/5] wifi: cfg80211: Drop unused link stats
+ handling in nl80211_send_station()
 To: Johannes Berg <johannes@sipsolutions.net>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
 References: <20260607175912.2266215-1-praneesh.p@oss.qualcomm.com>
- <7d251045171a4146604b8788479efc0e99224ff8.camel@sipsolutions.net>
+ <20260607175912.2266215-2-praneesh.p@oss.qualcomm.com>
+ <ba13edbcfa590fe2bd764719b843e6ee8c675310.camel@sipsolutions.net>
 Content-Language: en-US
 From: Praneesh P <praneesh.p@oss.qualcomm.com>
-In-Reply-To: <7d251045171a4146604b8788479efc0e99224ff8.camel@sipsolutions.net>
+In-Reply-To: <ba13edbcfa590fe2bd764719b843e6ee8c675310.camel@sipsolutions.net>
 Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: 9RFdGQdVH4GgAMEIzgbnDxYXPCnW2j5X
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjA4MDE2NyBTYWx0ZWRfX60RN2VqMTNIa
- JrNqyEe11GgxcDdbgy/EvuLL5/kouPvUdNWIqEUinqEOidVSaXWFJ+Sz9GcW6csS8eLH7WjMKcN
- 8LqMOqYyjpv8LMdRYBjfoeRWH8gHrvHKxIyKSgnuimt4HxQCvZNsCdEPIw0eOM9lPtQHNEzmH4Y
- 75ZKd2abe3MmKXJ9pmfFS7tArTzyDH3qEhdZDZg3Aj3ylxpOcFI/W57eTyYZULfJ31J5RwxvN7t
- RYVP9DqKPnTqqjlCtOhWEQ92+jVIwX72E4aRGZMqIm0rAA3NosYoFITDwNiNIfeo9pBk21iLd39
- 7/IMg71dsYJOBN9U0MctvMN6Ae3mFykmMHzEuOybDrKUv28xPIvPOor+OqiiZjfCvElUuHuob6i
- BqZh6x4KnG8thIK0xo+gStCm/9fMttDF0wLvIC/0jslc+U2++kO17EUnJP4bhZfvLX0AVogY8ZP
- 7sFzWiyqA/kAw9Nm6Yw==
-X-Authority-Analysis: v=2.4 cv=XKAAjwhE c=1 sm=1 tr=0 ts=6a270068 cx=c_pps
- a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=0XKIscjZuezYqwSxLmfFhQ==:17
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: K9GVF7vfkVA34MZeTfco3GwqvUR0ZZb6
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjA4MDE2NyBTYWx0ZWRfXyYxhe/apkDsd
+ n+XNIfm9FAJFIPL0MH9flpMyjLd8J7BA+mXhoU4jJIIc8i/fO3CfR8kV7xZSH1CnZBhdBs58cm6
+ hHLpioI92xOoUUR5UhNiO6hzfW4ZZyfQL3tHeWp0Dl/dxptITenSiXkUJ5tLoqCptc0FLE6ONHs
+ CmdOtpcL7YGfYkoQgT8Q/1stCiUyMP0/Al7dP8ehO8phwF1V8BUr4tMTAZ08unsZvPj/gd7H5sv
+ yb9LEgXPurXHjaR7w9vYWjHO6YzFGDjVj91FbN2eR04sqVu7SnHNay/kJmEZFlnnJvZ7rMvEPEr
+ ltp9HWWcgdKLp7nJ34iiAxCKnYmqDDwwmJJpTJt/8iqgQAKK46iLKQ0nqfntmu9vWm3996HU8+R
+ SPRYw45CFfljiRJ8NQ5qN6x1UOnqbF/5c7/PTEojStgcDdZez+zDvqgJ6VSeWAuh8sjAaBJZH7s
+ 0Rsh3NoFc1m1586KV2Q==
+X-Authority-Analysis: v=2.4 cv=XKAAjwhE c=1 sm=1 tr=0 ts=6a270186 cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=0XKIscjZuezYqwSxLmfFhQ==:17
  a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
  a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
- a=Kw0TDqbp-FwB6xDATtQA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=6Ab_bkdmUrQuMsNx7PHu:22
-X-Proofpoint-GUID: 9RFdGQdVH4GgAMEIzgbnDxYXPCnW2j5X
+ a=_H_or78mt1J3sE7v2EIA:9 a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22
+X-Proofpoint-GUID: K9GVF7vfkVA34MZeTfco3GwqvUR0ZZb6
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
  definitions=2026-06-08_04,2026-06-05_02,2025-10-01_01
@@ -129,8 +129,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2605210000 definitions=main-2606080167
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260608_104826_720915_82C1E545 
-X-CRM114-Status: GOOD (  16.16  )
+X-CRM114-CacheID: sfid-20260608_105311_805839_DD0B32F9 
+X-CRM114-Status: GOOD (  11.52  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,84 +146,31 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On 6/8/2026 12:46 PM, Johannes Berg wrote:
+On 6/8/2026 12:47 PM, Johannes Berg wrote:
 > On Sun, 2026-06-07 at 23:29 +0530, P Praneesh wrote:
->> This series introduces fragmentation support for Multi-Link Operation
->> (MLO) station statistics in nl80211.
->>
->> The current nl80211_dump_station() implementation works well for legacy
->> (single-link) stations, but it does not scale for MLO peers. With
->> multiple links per station, dumping all per-link information in a single
->> netlink message can exceed size limits, resulting in -EMSGSIZE errors
->> and incomplete dumps.
->>
->> With 802.11be (Wi‑Fi 7), a single station may have multiple links, each
->> with its own statistics. To address this, this series introduces a
->> stateful dump mechanism that splits station information into multiple
->> messages when required.
->>
->> The dump is performed in two phases:
->>    - Phase 0: Aggregated (station-level) statistics
->>    - Phase 1: Per-link statistics sent in separate messages
-> [snip]
->
-> Overall, this approach seems (mostly?) right. I have a couple of
-> comments reading the code itself, but also:
-Thanks a lot for your quick and detailed review on this series.
->
->> Aggregated Stats (Phase 0)
->>
->> NL80211_CMD_NEW_STATION
->>   ├─ NL80211_ATTR_IFINDEX
->>   ├─ NL80211_ATTR_MAC
->>   ├─ NL80211_ATTR_GENERATION
->>   └─ NL80211_ATTR_STA_INFO
->>        ├─ <aggregated station attributes>
->>        └─ ...
->>
->> Note: No NL80211_ATTR_MLO_LINKS is included in this phase.
->> Per‑link stats are sent in Phase 1.
->>
->> Per-Link Stats (Phase 1)
->>
->> NL80211_CMD_NEW_STATION
->>    ├─ NL80211_ATTR_IFINDEX
->>    ├─ NL80211_ATTR_MAC                 (MLO MAC)
->>    ├─ NL80211_ATTR_GENERATION
->>    └─ NL80211_ATTR_STA_INFO
->>         └─ NL80211_ATTR_MLO_LINKS
->>              ├─ [link0]
->>              │    ├─ NL80211_ATTR_MLO_LINK_ID = 0
->>              │    ├─ NL80211_ATTR_MAC = <link0 MAC>
->>              │    ├─ NL80211_STA_INFO_RX_BYTES
->>              │    ├─ NL80211_STA_INFO_TX_BYTES
->>              │    └─ ... more link0 stats ...
-> This description is missing another nesting level as
-> NL80211_ATTR_STA_INFO no?
+>> -static int nl80211_fill_link_station(struct sk_buff *msg,
+>> -				     struct cfg80211_registered_device *rdev,
+>> -				     struct link_station_info *link_sinfo)
+> It's a bit odd that you're dropping this only to reintroduce it in patch
+> 4, but I guess it served at least to notice that:
+Sure, I'll restructure the series so patch 1 retains 
+nl80211_fill_link_station() as-is and only removes
+the dead link_stats path from nl80211_send_station(). The function will 
+then be modified in
+patch 4 where nla_nest_start_noflag -> nla_nest_start is corrected as 
+part of introducing the
+new per-link send path.
+>> -	link_sinfoattr = nla_nest_start_noflag(msg, NL80211_ATTR_STA_INFO);
+> all of the nla_nest_start() calls in it really shouldn't have been
+> _noflag in the new code at all.
 >
 > johannes
-Yes, you are right. The per-link stat attributes are wrapped in a nested
-NL80211_ATTR_STA_INFO inside each link entry. The diagram incorrectly
-placed them directly under [linkN]. The correct layout is:
+Understood. NL80211_ATTR_STA_INFO, NL80211_STA_INFO_BSS_PARAM,
+NL80211_STA_INFO_TID_STATS, and the per-tid nested attribute are all 
+properly-nested
+types and must use nla_nest_start(), not nla_nest_start_noflag(). All 
+occurrences in new
+code will be fixed in v2.
 
-NL80211_CMD_NEW_STATION
-├─ NL80211_ATTR_IFINDEX
-├─ NL80211_ATTR_MAC = (MLO MAC)
-├─ NL80211_ATTR_GENERATION
-└─ NL80211_ATTR_STA_INFO
-      └─ NL80211_ATTR_MLO_LINKS
-           └─ [linkN]
-                ├─ NL80211_ATTR_MLO_LINK_ID = N
-                ├─ NL80211_ATTR_MAC = <linkN MAC>
-                └─ NL80211_ATTR_STA_INFO
-                     ├─ NL80211_STA_INFO_RX_BYTES
-                     ├─ NL80211_STA_INFO_TX_BYTES
-
-                     └─ ...
-
-I will correct it in the next version.
-
-Praneesh.
-
-
+-Praneesh
 
