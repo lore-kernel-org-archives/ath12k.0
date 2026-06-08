@@ -4,61 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D94FCD8C8E
-	for <ath12k@archiver.kernel.org>; Mon,  8 Jun 2026 07:16:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D9CECD8C8E
+	for <ath12k@archiver.kernel.org>; Mon,  8 Jun 2026 07:18:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
 	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
 	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=UIZJExVAW/SiQTfvjS5WGXHRXQJ/5VxQHzaox57JJlw=; b=BhMMtZ87/7aT1QBrHCxUdwBTPO
-	enL3YzuJNoUEJ9/2AYXtQaC9YErDCZqEIfcqShZbaSpdJBOVMPiRiS9/WnAl+yJqepiIWnfDBjdfw
-	TZr9i5DRSIcNsOqrJGuNNEeAGoKV25NfXuGaD4gMIsirm1B5FcOPY4Gxf+gCp6Oykhm9EMpmG6ovX
-	GbG23dOjBE8P8i2y3PNQjjtIYp7cHSgXpXA71bh9d2L6my4j9p5nihQoG1Yg/L6GkHA7LIIbGrYOw
-	aKCHSfVvRXWxbw/pakhGumu3xos4RstyR+DXJVxy7p0dIwHgbe0ZtCE0PPeHr+VVRKTsloynNCLX4
-	0jaV48RQ==;
+	bh=UeDU4ktLEM8lXtFt9kqcyMtBd1d+P7EPRUiZl8WNCvw=; b=VJecFhzPTE5UEt2cz2klskIMlv
+	MMcKLwL3+JuoHP3Yp6oykSvJGlicsG5kFF2ENjabY4twP6GeKUzrPeImk5xHIFHCMOmbeENODYi7p
+	wOQVBjwGp+M8xfRkCAlxZ8mQgz0W1C4Y5UmhTH0Ea33jFXRKIi01XXqAUoZ8XEQYKZFpXn4LAplXV
+	P9z1WHVJPD8a0cGzbrqboEoF5yv7TQ2wDEJh93NrUCHfaIadAUPO2xvByqeu30DnYCqxR9w9Hbcg0
+	CiPrdGKQbP+KygTpMHKr6YoWlJqpL1iuNjzy3tarCZzdi9pnNkf1NSJn+EAkUu45I4DUiOPaJUHnC
+	6XXzksnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWUE2-00000002xwh-37by;
-	Mon, 08 Jun 2026 07:16:46 +0000
+	id 1wWUFD-00000002y5W-3yn9;
+	Mon, 08 Jun 2026 07:17:59 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWUDz-00000002xwI-2qow
+	id 1wWUFB-00000002y4q-1O4f
 	for ath12k@lists.infradead.org;
-	Mon, 08 Jun 2026 07:16:44 +0000
+	Mon, 08 Jun 2026 07:17:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
 	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
 	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=UIZJExVAW/SiQTfvjS5WGXHRXQJ/5VxQHzaox57JJlw=;
-	t=1780903003; x=1782112603; b=Ms3NH5gsMqmhJgAhi0fbCCr91ps+cOGW/p8BqH7CXh7ZsI2
-	LBl9+6XrChUeSuPOULswDz3VE5PSflHWCQpYiNs+CQFuDOB+tJxPv20dNpftzHk42gIj29Eop96l4
-	K7tpQKsMn00Ji0V1sTSHvfzVVjfb4UOc/tFAkYtif6YyRQtt1EnclNKMnGKm1zwe5vfBITkPsoS1L
-	p/JR/o22zx1Iwvmuzah+eIW7hOeh4e2+T9sBqaUVl1Un5m2r8XPFAWmGFd53u87bN+a6HYLYHK7d3
-	OFe09WxPzPUwaCaSfSLivpW7Lwl8/VKaQlJ98S/9tMRcTQLbzv0gfd3HKCwD4siw==;
+	Resent-Cc:Resent-Message-ID; bh=UeDU4ktLEM8lXtFt9kqcyMtBd1d+P7EPRUiZl8WNCvw=;
+	t=1780903077; x=1782112677; b=djij09nwwZnZ3UichOl4h08f2mpM2ET/pEDIYidqPnJrsm8
+	mqHx053xGj6BsVD4Z6jWDhuqnub8TZPHxPYBdRBGMQjJkJrNBKaOBQzuY7DKxW/K/d2rSxIEzV/ec
+	SkJ2Aar5sI4QlTbf/UuIVBQc5papuTrLlZnz7s/rKOgTHO+ZBB2I4xLaLH2xjTyoQnRuJVDChsqHp
+	T5pxEY4Q+9HXDMwW2BWJ+JPNK58VUpEYuLfFnRTHVn2UyUJf5S3XC4CSSKFjAjAYMdcpw+kIxDHPk
+	oUOp5LC++ZCc1dzwwYU2J01Sdn1mGOwO2bVaFfQ1To95CiHS7ZUv/JxeyoV9XrBA==;
 Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
 	(Exim 4.98.2)
 	(envelope-from <johannes@sipsolutions.net>)
-	id 1wWUDw-00000005Yx2-0xCr;
-	Mon, 08 Jun 2026 09:16:40 +0200
-Message-ID: <7d251045171a4146604b8788479efc0e99224ff8.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next 0/5] wifi: cfg80211: Add fragmented
- per-link station stats in MLO
+	id 1wWUF8-00000005Yzc-0ju0;
+	Mon, 08 Jun 2026 09:17:54 +0200
+Message-ID: <ba13edbcfa590fe2bd764719b843e6ee8c675310.camel@sipsolutions.net>
+Subject: Re: [PATCH wireless-next 1/5] wifi: cfg80211: Drop unused link
+ stats handling in nl80211_send_station()
 From: Johannes Berg <johannes@sipsolutions.net>
 To: P Praneesh <praneesh.p@oss.qualcomm.com>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
-Date: Mon, 08 Jun 2026 09:16:39 +0200
-In-Reply-To: <20260607175912.2266215-1-praneesh.p@oss.qualcomm.com>
+Date: Mon, 08 Jun 2026 09:17:53 +0200
+In-Reply-To: <20260607175912.2266215-2-praneesh.p@oss.qualcomm.com>
 References: <20260607175912.2266215-1-praneesh.p@oss.qualcomm.com>
+	 <20260607175912.2266215-2-praneesh.p@oss.qualcomm.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 User-Agent: Evolution 3.58.3 (3.58.3-1.fc43) 
 MIME-Version: 1.0
 X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260608_001643_724308_4AA26756 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20260608_001757_367171_8AF6ABCF 
+X-CRM114-Status: UNSURE (   6.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,62 +76,18 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On Sun, 2026-06-07 at 23:29 +0530, P Praneesh wrote:
-> This series introduces fragmentation support for Multi-Link Operation
-> (MLO) station statistics in nl80211.
 >=20
-> The current nl80211_dump_station() implementation works well for legacy
-> (single-link) stations, but it does not scale for MLO peers. With
-> multiple links per station, dumping all per-link information in a single
-> netlink message can exceed size limits, resulting in -EMSGSIZE errors
-> and incomplete dumps.
->=20
-> With 802.11be (Wi=E2=80=91Fi 7), a single station may have multiple links=
-, each
-> with its own statistics. To address this, this series introduces a
-> stateful dump mechanism that splits station information into multiple
-> messages when required.
->=20
-> The dump is performed in two phases:
->   - Phase 0: Aggregated (station-level) statistics
->   - Phase 1: Per-link statistics sent in separate messages
+> -static int nl80211_fill_link_station(struct sk_buff *msg,
+> -				     struct cfg80211_registered_device *rdev,
+> -				     struct link_station_info *link_sinfo)
 
-[snip]
+It's a bit odd that you're dropping this only to reintroduce it in patch
+4, but I guess it served at least to notice that:
 
-Overall, this approach seems (mostly?) right. I have a couple of
-comments reading the code itself, but also:
+> -	link_sinfoattr =3D nla_nest_start_noflag(msg, NL80211_ATTR_STA_INFO);
 
-> Aggregated Stats (Phase 0)
->=20
-> NL80211_CMD_NEW_STATION
->  =E2=94=9C=E2=94=80 NL80211_ATTR_IFINDEX
->  =E2=94=9C=E2=94=80 NL80211_ATTR_MAC
->  =E2=94=9C=E2=94=80 NL80211_ATTR_GENERATION
->  =E2=94=94=E2=94=80 NL80211_ATTR_STA_INFO
->       =E2=94=9C=E2=94=80 <aggregated station attributes>
->       =E2=94=94=E2=94=80 ...
->=20
-> Note: No NL80211_ATTR_MLO_LINKS is included in this phase.
-> Per=E2=80=91link stats are sent in Phase 1.
->=20
-> Per-Link Stats (Phase 1)
->=20
-> NL80211_CMD_NEW_STATION
->   =E2=94=9C=E2=94=80 NL80211_ATTR_IFINDEX
->   =E2=94=9C=E2=94=80 NL80211_ATTR_MAC                 (MLO MAC)
->   =E2=94=9C=E2=94=80 NL80211_ATTR_GENERATION
->   =E2=94=94=E2=94=80 NL80211_ATTR_STA_INFO
->        =E2=94=94=E2=94=80 NL80211_ATTR_MLO_LINKS
->             =E2=94=9C=E2=94=80 [link0]
->             =E2=94=82    =E2=94=9C=E2=94=80 NL80211_ATTR_MLO_LINK_ID =3D =
-0
->             =E2=94=82    =E2=94=9C=E2=94=80 NL80211_ATTR_MAC =3D <link0 M=
-AC>
->             =E2=94=82    =E2=94=9C=E2=94=80 NL80211_STA_INFO_RX_BYTES
->             =E2=94=82    =E2=94=9C=E2=94=80 NL80211_STA_INFO_TX_BYTES
->             =E2=94=82    =E2=94=94=E2=94=80 ... more link0 stats ...
-
-This description is missing another nesting level as
-NL80211_ATTR_STA_INFO no?
+all of the nla_nest_start() calls in it really shouldn't have been
+_noflag in the new code at all.
 
 johannes
 
