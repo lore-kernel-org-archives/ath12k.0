@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0FC4CD8CB2
-	for <ath12k@archiver.kernel.org>; Tue,  9 Jun 2026 16:37:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFF61CD8CB9
+	for <ath12k@archiver.kernel.org>; Tue,  9 Jun 2026 16:39:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=k5nLA3FkcnPxyCfJB+DiY91GeWWHD23ZQy8CAC5DRV0=; b=HNtwJWl3vuUHa4sCEB7Vi+1qym
-	YB2fhiop84oakmSfHyh753r7+1i7s04goyx3z2tWAKxnlXez5Yv7JNU/4B1Olr83DP/Zh7W5y1+6H
-	M+giNzDleBZpHHB978ZuSJhU1oyIPC3uKRhkm00V6nPSWvgzUwyt95UpwsObpsoxIKj/rzxYeQZcJ
-	dIYhvE8Oal2k9nCuomVx7loHELYbhYnK4GdfJWYIarh6+tQi5gZVNzgIZcuAYzaiO7LtW37oW7/22
-	amliqr58oFRGtHd4Ut5Bs0ltPAlX8NJ3GoBvqae663YEo7BFHBMjvncANbdJ+W8i+fR3IpcSjVJDG
-	qD/cTbMA==;
+	bh=yNPShK3Woy5WMT8W9QOvEiCBBwIllxtHV+VvB5QtD9w=; b=z4bL8m9VogUzyM3ZNMmE0KnGtB
+	2bnNbc2uJxmtdy2UobubZTusuA5/liyS4GR/tTBift9ixHKn/DnoxtEagAhbdRTRx5/MEIxJ2S3D2
+	CZ100IA7NSPzND1H+F+d2gq3RwarJxVj7XBQG6B2rPXkIDEpI3YDgUjbK4T9UFvPZ4bq8PEXTNbpu
+	rVW2+cozrCI5vjEEtA8nTpJg53nXHlz5QdTbhq/VV74nWD0g7e+JmdR6gWrfPj8x2uZ7AzpOmvFV2
+	dYdwwijU+BPjWG2NHjh9xWEbeXyNEcTFRa2nhr++2Jm52aX3PylxyabuYusj1hD0EXhEqhTLSsl0p
+	gIzaN26Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWzSB-000000063mr-1ygJ;
-	Tue, 09 Jun 2026 16:37:27 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1wWzTm-000000064HB-1qPi;
+	Tue, 09 Jun 2026 16:39:06 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWzS5-000000063j7-41pw
+	id 1wWzTi-000000064Go-3SpP
 	for ath12k@lists.infradead.org;
-	Tue, 09 Jun 2026 16:37:24 +0000
+	Tue, 09 Jun 2026 16:39:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1781023041;
+	s=mimecast20190719; t=1781023141;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=k5nLA3FkcnPxyCfJB+DiY91GeWWHD23ZQy8CAC5DRV0=;
-	b=Dt385hGvfs2eu9N40lCQr8J68c27/BXhk+68Nk0vaN1ejbgC8tUwuajGGL3KrU+NUbDTpw
-	3wY9U6PCvhmfyXam3X1zetvCLCFaWtEkcinznZbO5vABsj7BTHSFInF2guZBmKZxUx/kTQ
-	WkBrbvQtM9l5WBlfACRTODPHS7/tEmQ=
-Received: from mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-35-165-154-97.us-west-2.compute.amazonaws.com [35.165.154.97]) by
+	bh=yNPShK3Woy5WMT8W9QOvEiCBBwIllxtHV+VvB5QtD9w=;
+	b=SgFv9OMmMe1x4+VCC8uBe6ubWHGQlcVFkzZZKVLkjCJGwhsRrKviyfQZNaRnkoiol5SsHD
+	KKj9raGl9FtCts1HPEkxEQGLuaLERtvb00ZwtsB+KLl6S9yt00ZPjVDpVq7s5XTAK/AvIf
+	CExcFWKrG7LUZjLFqu7ONx3Aae8g0r0=
+Received: from mx-prod-mc-01.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
  relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-53-71k7r_7FNfeWFs7mdfb05g-1; Tue,
- 09 Jun 2026 12:37:16 -0400
-X-MC-Unique: 71k7r_7FNfeWFs7mdfb05g-1
-X-Mimecast-MFC-AGG-ID: 71k7r_7FNfeWFs7mdfb05g_1781023031
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-68-fWQzA6GMOYCOx6xgw1VLcw-1; Tue,
+ 09 Jun 2026 12:37:26 -0400
+X-MC-Unique: fWQzA6GMOYCOx6xgw1VLcw-1
+X-Mimecast-MFC-AGG-ID: fWQzA6GMOYCOx6xgw1VLcw_1781023044
 Received: from mx-prod-int-08.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-08.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.111])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id E69FB184541F;
-	Tue,  9 Jun 2026 16:37:10 +0000 (UTC)
+	by mx-prod-mc-01.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id A13B21955F08;
+	Tue,  9 Jun 2026 16:37:24 +0000 (UTC)
 Received: from fedora.redhat.com (unknown [10.44.32.77])
-	by mx-prod-int-08.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 843D31800662;
-	Tue,  9 Jun 2026 16:37:07 +0000 (UTC)
+	by mx-prod-int-08.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 471741800662;
+	Tue,  9 Jun 2026 16:37:21 +0000 (UTC)
 From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
 To: bhelgaas@google.com,
 	alex@shazbot.org
@@ -65,20 +65,21 @@ Cc: jjohnson@kernel.org,
 	mhi@lists.linux.dev,
 	linux-kernel@vger.kernel.org,
 	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Subject: [PATCH v8 2/3] PCI: Add device-specific reset for Qualcomm devices
-Date: Tue,  9 Jun 2026 18:36:48 +0200
-Message-ID: <20260609163649.319755-3-jtornosm@redhat.com>
+Subject: [PATCH v8 3/3] PCI: Disable broken bus reset on Qualcomm devices
+Date: Tue,  9 Jun 2026 18:36:49 +0200
+Message-ID: <20260609163649.319755-4-jtornosm@redhat.com>
 In-Reply-To: <20260609163649.319755-1-jtornosm@redhat.com>
 References: <20260609163649.319755-1-jtornosm@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.111
-X-Mimecast-MFC-PROC-ID: rdXMWLkZwDwlwR97oOrY9BQqWcR-fsSkpykZpRQ8RoI_1781023031
+X-Mimecast-MFC-PROC-ID: QpcvA3dRs_RcChlzJxoKZ_I-3fDbv9yZYVH8lgQ6yYU_1781023044
 X-Mimecast-Originator: redhat.com
 Content-Transfer-Encoding: 8bit
 content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260609_093722_079530_B7E664CB 
-X-CRM114-Status: GOOD (  17.45  )
+X-CRM114-CacheID: sfid-20260609_093903_698809_3E506AF1 
+X-CRM114-Status: UNSURE (   7.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,165 +95,42 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 Some Qualcomm PCIe devices (WCN6855/WCN7850 WiFi cards, SDX62/SDX65 modems)
-lack working reset methods for VFIO passthrough scenarios. These devices
-have no FLR capability, advertise NoSoftRst+ (blocking PM reset), and have
-broken bus reset.
+do not properly support Secondary Bus Reset (SBR).
 
-The problem manifests in VFIO passthrough scenarios:
+Testing confirms this is device-specific, not deployment-specific:
+MediaTek MT7925e successfully uses bus reset through the same passive
+M.2-to-PCIe adapters where Qualcomm devices fail, proving PERST# is
+properly wired through the adapters.
 
-- WCN6855 WiFi card (17cb:1103): Normal VM operation works fine, including
-  clean shutdown/reboot. However, when the VM terminates uncleanly
-  (crash, force-off), VFIO attempts to reset the device before it can
-  be assigned to another VM. Without a working reset method, the device
-  remains in an undefined state, preventing reuse.
-
-- WCN7850 WiFi card (17cb:1107): Same behavior as WCN6855.
-
-- SDX62/SDX65 5G modems (17cb:0308): Never successfully initialize even
-  on first VM assignment without proper reset capability.
-
-Add device-specific reset entries for these Qualcomm devices using D3cold
-power cycling with automatic D3hot fallback. The implementation uses
-pci_set_power_state(D3cold) which automatically falls back to D3hot on
-platforms without ACPI _PR3 power resources. While not a complete reset
-(BARs preserved), testing shows D3hot transition provides sufficient reset
-for VFIO reuse.
-
-Extract a shared pci_dev_d3cold_d0_cycle() helper function to avoid code
-duplication between pci_d3cold_reset() (strict _PR3 requirement) and the
-new reset_d3cold_d3hot() device-specific reset (automatic fallback).
-The helper performs only the power cycle; IOMMU handling is done by the
-caller (pci_d3cold_reset() for general method, __pci_dev_specific_reset()
-wrapper for device-specific methods).
-
-Device-specific reset is position #1 in the reset hierarchy, so these
-Qualcomm devices will use power cycling as their primary reset method,
-with the general d3cold method (position #8) available as a fallback on
-_PR3-capable platforms if users override via sysfs.
+This quirk acts as a safety net, preventing the broken bus reset from being
+attempted if users override reset methods (device_specific or d3cold when
+available) via sysfs.
 
 Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
 ---
-v8: Fix commit message: correct IOMMU handling description. The helper
-    performs only the power cycle; IOMMU is handled by callers (this was
-    v6 fix)
-v7: https://lore.kernel.org/all/20260603105853.326290-3-jtornosm@redhat.com/
+v8: code unchanged from v7
+v7: https://lore.kernel.org/all/20260603105853.326290-4-jtornosm@redhat.com/
 
- drivers/pci/pci.c    | 37 +++++++++++++++++++++++++++----------
- drivers/pci/pci.h    |  1 +
- drivers/pci/quirks.c | 19 +++++++++++++++++++
- 3 files changed, 47 insertions(+), 10 deletions(-)
+ drivers/pci/quirks.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/pci/pci.c b/drivers/pci/pci.c
-index 096868f80cd4..f7a7443287fd 100644
---- a/drivers/pci/pci.c
-+++ b/drivers/pci/pci.c
-@@ -4491,6 +4491,32 @@ static int pci_pm_reset(struct pci_dev *dev, bool probe)
- 	return ret;
- }
- 
-+/**
-+ * pci_dev_d3cold_d0_cycle - Perform D3cold->D0 power cycle
-+ * @dev: Device to power cycle
-+ *
-+ * Common helper to perform D3cold->D0 power cycle for reset methods.
-+ * Attempts D3cold transition with automatic fallback to D3hot on platforms
-+ * without ACPI _PR3 power resources.
-+ *
-+ * Caller must handle IOMMU preparation/cleanup if needed.
-+ *
-+ * Returns 0 on success, negative error code on failure.
-+ */
-+int pci_dev_d3cold_d0_cycle(struct pci_dev *dev)
-+{
-+	int ret;
-+
-+	if (dev->current_state != PCI_D0)
-+		return -EINVAL;
-+
-+	ret = pci_set_power_state(dev, PCI_D3cold);
-+	if (ret)
-+		return ret;
-+
-+	return pci_set_power_state(dev, PCI_D0);
-+}
-+
- /**
-  * pci_d3cold_reset - Put device into D3cold and back to D0 for reset
-  * @dev: PCI device to reset
-@@ -4520,22 +4546,13 @@ static int pci_d3cold_reset(struct pci_dev *dev, bool probe)
- 	if (probe)
- 		return 0;
- 
--	if (dev->current_state != PCI_D0)
--		return -EINVAL;
--
- 	ret = pci_dev_reset_iommu_prepare(dev);
- 	if (ret) {
- 		pci_err(dev, "failed to stop IOMMU for a PCI reset: %d\n", ret);
- 		return ret;
- 	}
- 
--	ret = pci_set_power_state(dev, PCI_D3cold);
--	if (ret)
--		goto done;
--
--	ret = pci_set_power_state(dev, PCI_D0);
--
--done:
-+	ret = pci_dev_d3cold_d0_cycle(dev);
- 	pci_dev_reset_iommu_done(dev);
- 	return ret;
- }
-diff --git a/drivers/pci/pci.h b/drivers/pci/pci.h
-index 4a14f88e543a..a9942787de9e 100644
---- a/drivers/pci/pci.h
-+++ b/drivers/pci/pci.h
-@@ -234,6 +234,7 @@ void pci_init_reset_methods(struct pci_dev *dev);
- int pci_bridge_secondary_bus_reset(struct pci_dev *dev);
- int pci_bus_error_reset(struct pci_dev *dev);
- int pci_try_reset_bridge(struct pci_dev *bridge);
-+int pci_dev_d3cold_d0_cycle(struct pci_dev *dev);
- 
- struct pci_cap_saved_data {
- 	u16		cap_nr;
 diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
-index e49136ac5dbf..70f3b0f26799 100644
+index 000000000000..111111111111 100644
 --- a/drivers/pci/quirks.c
 +++ b/drivers/pci/quirks.c
-@@ -4237,6 +4237,22 @@ static int reset_hinic_vf_dev(struct pci_dev *pdev, bool probe)
- 	return 0;
- }
- 
-+/*
-+ * Device-specific reset method via D3cold/D3hot power cycle.
-+ *
-+ * Some devices lack working FLR, advertise NoSoftRst+ (blocking PM reset),
-+ * and have broken bus reset. This function provides device-specific reset via
-+ * power cycling, attempting D3cold with automatic fallback to D3hot on platforms
-+ * without ACPI _PR3 power resources.
-+ */
-+static int reset_d3cold_d3hot(struct pci_dev *dev, bool probe)
-+{
-+	if (probe)
-+		return 0;
-+
-+	return pci_dev_d3cold_d0_cycle(dev);
-+}
-+
- static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
- 	{ PCI_VENDOR_ID_INTEL, PCI_DEVICE_ID_INTEL_82599_SFP_VF,
- 		 reset_intel_82599_sfp_virtfn },
-@@ -4252,6 +4268,9 @@ static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
- 		reset_chelsio_generic_dev },
- 	{ PCI_VENDOR_ID_HUAWEI, PCI_DEVICE_ID_HINIC_VF,
- 		reset_hinic_vf_dev },
-+	{ PCI_VENDOR_ID_QCOM, 0x1103, reset_d3cold_d3hot },  /* WCN6855 */
-+	{ PCI_VENDOR_ID_QCOM, 0x1107, reset_d3cold_d3hot },  /* WCN7850 */
-+	{ PCI_VENDOR_ID_QCOM, 0x0308, reset_d3cold_d3hot },  /* SDX62/SDX65 */
- 	{ 0 }
- };
- 
--- 
-2.54.0
+@@ -3789,6 +3789,9 @@ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_ATHEROS, 0x0030, quirk_no_bus_reset);
+ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_ATHEROS, 0x0032, quirk_no_bus_reset);
+ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_ATHEROS, 0x003c, quirk_no_bus_reset);
+ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_ATHEROS, 0x0033, quirk_no_bus_reset);
+ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_ATHEROS, 0x0034, quirk_no_bus_reset);
+ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_ATHEROS, 0x003e, quirk_no_bus_reset);
++DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_QCOM, 0x1103, quirk_no_bus_reset); /* WCN6855 */
++DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_QCOM, 0x1107, quirk_no_bus_reset); /* WCN7850 */
++DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_QCOM, 0x0308, quirk_no_bus_reset); /* SDX62/SDX65 */
+
+ /*
+  * Root port on some Cavium CN8xxx chips do not successfully complete a bus
+--
+2.53.0
 
 
