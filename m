@@ -4,130 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CE9BCD98C5
-	for <ath12k@archiver.kernel.org>; Thu, 11 Jun 2026 03:33:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C875CD98CF
+	for <ath12k@archiver.kernel.org>; Thu, 11 Jun 2026 03:33:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=eAi/cH55ITaxLHzNN6NVJATn9sydmgbMVi5O/Jv7r6w=; b=SUPDmBLLLz5JEMmy8+tI0akmce
-	N4m2Bv1Rjq3Uq9YAROOcDESWSEC0pguUyJOHwRtAmo3rjZn6eq7vjhWP0sTQlY9iVbicfYtMvnUxy
-	T8yp0JxXrL3qobZ/9eBlp1RAh0gRgeLt8gGikcunKoZvnM45QuqvUa6h7M1+LU9rPFiHJlUG39alF
-	tw4KU7+CE/X2INoSIvk/mnzwG/icUT15y4YxwvfLTtAURPrP+XPcIzxuORZl8N+NLEQh5G0ujevIk
-	jSMTooR23VleNiyUpyzbwWFRSzoms9O4GJY7D1UjS5f7cRLoSKe0O8RwheFvjOwkfYluTg7SigBKh
-	US+C7C7Q==;
+	bh=g43XeO4Dh6cO/pZEQr5ju05m3Cr2XMlgsLAM3KbtotY=; b=08bU307bwzJKS4opHeQmpDzopf
+	XWeDwkubZ93bge7+2Zas0Fzy3m8QkBCgIJ/Ktbp0adNqhrphf6ulOR25GoFgCnaSqDE85fiE0B2Y2
+	WPxN3N5uzpWIgSaVM6rkqo/nXs3w+i/diY1eugrehObv81bq+Px3+95e4lvqPnWJWybLDhdmD8ruV
+	e4unkdKqVnDlh2cd6UXbV/GpJQvRwsv1QJasoLy2XVDulOz3jNCdYpfD+6v+s6dg7F2s/w6j26bm2
+	WqRCN9pxDGAGRJP8UKGWupVeDEv/YIV7ojZCip0etZMJoCKLn6cQkHGGgXSkFFaJJZwYyFUVAUMFG
+	XzZhgJGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXWAW-00000008cFz-3cuC;
-	Thu, 11 Jun 2026 03:33:24 +0000
+	id 1wXWAY-00000008cGl-3zA4;
+	Thu, 11 Jun 2026 03:33:26 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXWAU-00000008cFC-3nzq
+	id 1wXWAW-00000008cFk-3287
 	for ath12k@lists.infradead.org;
-	Thu, 11 Jun 2026 03:33:24 +0000
+	Thu, 11 Jun 2026 03:33:25 +0000
 Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65B0NXOm3159569
-	for <ath12k@lists.infradead.org>; Thu, 11 Jun 2026 03:33:22 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65B0NxiH3160173
+	for <ath12k@lists.infradead.org>; Thu, 11 Jun 2026 03:33:24 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=eAi/cH55ITa
-	xLHzNN6NVJATn9sydmgbMVi5O/Jv7r6w=; b=Ll+i/DywpyGYjwdKlM/bL1PH3lv
-	/RyOIL4Ioi/VE5XETjJIXV4F2neR704cqs5Y7h16qUKog8qWQV80svO1Xl/UFs0h
-	Dd1JuwZGqNPCuJztbqCBq73Vke7OydiFiIRNh3ADvCDPQaZ0Tc9+vxKGkwZXVpoO
-	lyA4wu+lnNp9ijWMcE4UNRuaVIOkAANU0vuITjGF+9UAJyCUK2TktARY8DxLQU2u
-	gUTNEIlWbZZfmwVjaxEXm1AmyJKiWAlIrjp/BCtuoge85r10Vtq+9rkVCljPG55F
-	2mScMNM/mmfwXUrjlfO+LKwTszIqKpEF5oIJrnJHhT9H3ncfkMbf4XdjHcg==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4eqe701e9f-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=g43XeO4Dh6c
+	O/pZEQr5ju05m3Cr2XMlgsLAM3KbtotY=; b=FPdrR/SMKM76elVTWCnDM1s/ez5
+	0mpPl4zuZLhUD+PXIxULF3mDhMa2j83cF2rZGY0Idy6c0JZ6bYg5ivY78ABmGwhQ
+	N2JAia+HhMMS0ixdtzNZNmtgvhPPI4HVK+9nOwAIKXQtZWKzUlS7y0UYWUdeKeNA
+	3bCN/YRL0HpIz77wTgzJV0YsXusENVYcpSQ8eOCD5Q38n8qH1AUr4U8xl9y7RxU6
+	0/999F4MTKgUBia6cRZRwen5DrL/itNVVpcaNtmNWirDmKfM84mk6TwxbMhIifR0
+	57N4bH5GhmF2EJ9hCsU2eVa9+ohSLNGnIeVlZLcAtPIlrem7vZhDPnGNscw==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4eqe701e9k-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 11 Jun 2026 03:33:22 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2c2d65d9792so5967345ad.0
-        for <ath12k@lists.infradead.org>; Wed, 10 Jun 2026 20:33:22 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 11 Jun 2026 03:33:24 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-36d98b6f019so7356292a91.2
+        for <ath12k@lists.infradead.org>; Wed, 10 Jun 2026 20:33:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1781148801; x=1781753601; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1781148804; x=1781753604; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=eAi/cH55ITaxLHzNN6NVJATn9sydmgbMVi5O/Jv7r6w=;
-        b=QIb2QDomNMJO0E0zlVwFHy3iZBcYgthQZkBUkcIymcUgerKjQatllDRK+2Bg8Q9mcI
-         KVW16pR/2RzHpPdQqpFbYkmBA1mp+gszndUgE5ERez1xTmxBPocOKXH+AzI/hZ9ozULZ
-         kqZhYUx0rRwmUgewY191kEvQA3Oy1K35X2di69AQ0qljBHIJCh+eZX1YcTS05Ih3/KZo
-         +odCMp0s3ZVo6jAdmZ3mitEknnwf8mg/1C/XsM4UQW2p+5IdoR3Xdj+vGovolGxAr1ed
-         V4uFBvemgqGktHojpVWrMby3QTnxBS7SB97+rHPqvD4YmqpYsneU8c3AaVOQKf7xA2Vc
-         Jvnw==
+        bh=g43XeO4Dh6cO/pZEQr5ju05m3Cr2XMlgsLAM3KbtotY=;
+        b=JP4/9dsjWs1ePmyahhMgrTUszO94V9XAQBcE5i5CiG8cVrr4I3lgtJe5BDIfcOhOYl
+         vb+JZ/WSKMZ4H3Rh8pswEJgmdJsd8COGuYQZ7T96YxORdSTjr5Q32epHvMlO9Uj29Edw
+         QZunojb9JO384UD3dhbHuasKlDXADsY7t8+132VNbPngxi1vS3JU0kJmoKVekW1BcUPz
+         de+aH+eF0Rvru5T5FfbAXK+stScNZYfjlB6zf7HEWwx/bn/Ezk4Cx4xBWTwJpAM96Ryp
+         bwo+sHsu7I3dZB5cxMR2Ov6sT5HTr3D2/2fWa3KwEXvWTgYO55MJu5zsxZvZ/9A7wrKN
+         6N3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781148801; x=1781753601;
+        d=1e100.net; s=20251104; t=1781148804; x=1781753604;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=eAi/cH55ITaxLHzNN6NVJATn9sydmgbMVi5O/Jv7r6w=;
-        b=bwRONsyeDrr66vCevYSM3BqIYzmhWB4f4sxz4kDhsbPnGmEoucd5dN+Eb58c7qaYj7
-         3BeDiuEMbiYwXr+WWoHnnNmEnj4seLbEC1B9IwL69pwhsv7wg46tEyD2VrBKYZm26XWE
-         s37MKpYRu5TtlFduwORDBAIIr1WSOTis6myABS42nb0kax9ZvDLBvgumAuMGTHVtFaG4
-         PG2GEa0Ch1CkqUzr8BbLXLGyBJ/upNW19YMTUwlmAcg30lsYCiTvQAgSF5OFNNw568zl
-         VrKPi2NXyq2WLgvmCWaCLTDEz7G4/wLi2yn5A+IynhCVKNkhvhP6glMNbPhDloFjaLK8
-         QUuw==
-X-Gm-Message-State: AOJu0YxwhjQb29TLdNSVwc/k7ZikoS7BGvzIg0mjmkqEuGuT7kFhPMlS
-	QiJot5oQQ7isYgeW8w/0uKXt5cRNOLGc49NCGTiUhsYN2OwfinkHcYRz2q+Pr1A/ppUIdRKPYIr
-	eOWwpv8hHal4Q4NrnfxwamkfqxwI3UTfnAUBaqpH2i4VS13/xdVCRXD0tnUhBrS2QXNqaSpgH
-X-Gm-Gg: Acq92OFH0rVEKq8tVYD/ao5CZAN6NIhsOgg6QIirgbiz29PqUx44WIPX27Qpj3zdbCh
-	ae3dtq2GTQI+AUGThF5vO2bFDh3hkZ/wXmkIPC3YNUrSIwEo9oteBvSax7sLn65qAu3AWVSL0r/
-	fggaWufi7GM//N0GytXaPKYF8NQop9DrnuN6NBeAxQUz0Dtoo+NviSz+sycywA17f1vMIqKuXVP
-	9+QD481nt6q7PazJHwaB6jTZLLJVdVGgOYmn3qvPNt1tKBgoNXx8AUWCt6V0PJ4g438Ky71Yf9Z
-	rz5AKdQISrb2GvOrGOZzH3uZ/ScVyPJeSxpUMeQBTUn2kCwA3UaIv6mOy/EfYUzu/qdytXfOnBV
-	56ccxcC9l4ZDMQo77DGL4SwOK9VBpaSBrFG4kksts9lHycVNVLm1UhZtq1ODqIvc+jRkBzDpCFy
-	H8H8pHkLX1qK8yT1PEQTfk5w6NglliZDIDBswCgTVBu5C97UVlHXCLT/s=
-X-Received: by 2002:a17:90b:33c1:b0:36a:aa9:eea0 with SMTP id 98e67ed59e1d1-3779cb2617fmr1024652a91.4.1781148801432;
-        Wed, 10 Jun 2026 20:33:21 -0700 (PDT)
-X-Received: by 2002:a17:90b:33c1:b0:36a:aa9:eea0 with SMTP id 98e67ed59e1d1-3779cb2617fmr1024636a91.4.1781148800891;
-        Wed, 10 Jun 2026 20:33:20 -0700 (PDT)
+        bh=g43XeO4Dh6cO/pZEQr5ju05m3Cr2XMlgsLAM3KbtotY=;
+        b=gQyTbxuJwOJjS0llqxoFsOIsb8UBGpAOC8V8SCHRltOgO0TJFBGTZpahnnJJjlk6qL
+         Dh2zwb4nIlkqND4Oh3afmL3n5Ak/LYoml+kDUeto2DxjELq6sC/fvKGhrqjZaE+RWjEe
+         CwFMIbxm+lX5JuhfJFjpM6Sp0OLAwok6U2AYKwqw+ofoLUrxOGtEXUgTVBmGGnFhtIKT
+         UzG1dcC+HTvygBkzzX/gXdoG9lo024incAtXv5U7anJoNIcfIo+b95kFYA+jEyuvnNyN
+         zfb4bCZJbwCYAqmEzgymBAn4s3o37cimie+VYmELtTA5a8sOD3LG6tDPaDea1fdJZd3R
+         HV8A==
+X-Gm-Message-State: AOJu0YzI2Td0gx5T7sxRAfuk/d20C+K/l3gAhtJvjgVzqWt/CHQKPHft
+	WKM7M34ts9vt9qhKZ7oowFe8lR/rYBq2WyIt1jsug9M67dr21vLr8ndeVLy7X0qwcSk+JZHu7NL
+	zuTzlj9YHeWIg8W665052I7QuV71CppgYXuCv/dHPqoGkUns4O19qsIzu8XBwN1fJlJKZaE/Q
+X-Gm-Gg: Acq92OFaOhktgM0lYzoKslMIVRawK8gAn2vusivj1pk0ELSPTKGF4vT4dlgkHHT1PLj
+	UkYAg/VcZxMQrQGTxoVqRKonhM+QWaiwiGV+FC9o1J9REPrvL6hedegwsez69rWDaabk9D1ILeI
+	ZuG6ABVeSrPgndd1Vo2l/Rf2xa1ET6Tv1wbCSQzy3XEtMLsTTQUTVvO9etE/3at+NhxhpKIH64S
+	w+COIoyATz6wvy3kMccBeTAcdKT1LQCkRrY0fMlwQ+tYtgY6igE0sEuFZV87EEVXR9YtgrCiUYP
+	Pzvk2YK0EX7GrmhRtzton5Qydh9rsFpLF3rwCxbWyJ98G+v4e2M0MEsYwKaWqnvUTWNUF3ZFCNX
+	eyu/Q/JqeO2dwDeXznekGoQT5wI4iiFsBJqmIDdN66E/zT6kKe6/1I4oQysmwhyd9SpwKxLdiaz
+	ix0TaDG5sEd4EUr+soMZzqln/ykOgPJTS7LCYablGGuRjcH8LGjGyJxmY=
+X-Received: by 2002:a17:90a:e7c4:b0:36a:f612:e695 with SMTP id 98e67ed59e1d1-377a591536fmr1193540a91.17.1781148803578;
+        Wed, 10 Jun 2026 20:33:23 -0700 (PDT)
+X-Received: by 2002:a17:90a:e7c4:b0:36a:f612:e695 with SMTP id 98e67ed59e1d1-377a591536fmr1193501a91.17.1781148802969;
+        Wed, 10 Jun 2026 20:33:22 -0700 (PDT)
 Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3775287186dsm896041a91.6.2026.06.10.20.33.19
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3775287186dsm896041a91.6.2026.06.10.20.33.21
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 10 Jun 2026 20:33:20 -0700 (PDT)
+        Wed, 10 Jun 2026 20:33:22 -0700 (PDT)
 From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
         Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Subject: [PATCH ath-next 1/3] wifi: ath12k: switch to name-based reserved memory lookup
-Date: Thu, 11 Jun 2026 09:03:12 +0530
-Message-Id: <20260611033314.2330-2-aaradhana.sahu@oss.qualcomm.com>
+Subject: [PATCH ath-next 2/3] wifi: ath12k: refactor QMI memory assignment
+Date: Thu, 11 Jun 2026 09:03:13 +0530
+Message-Id: <20260611033314.2330-3-aaradhana.sahu@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260611033314.2330-1-aaradhana.sahu@oss.qualcomm.com>
 References: <20260611033314.2330-1-aaradhana.sahu@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjExMDAzMSBTYWx0ZWRfXwKVDAtO75q1x
- tVyPcp2LTOF7pHSt2iCkW8vBNHEzGfa39eL4GQyyCSG34kj9UApoZ6r5BzkjNHmcOL1czDyGMcj
- 0G1S9I4zrhfe3SP4faovjtnHCXFhjMh4XbAzoCwk3EZraOkSxJokELGAAIMgNVhExCIF9HzcPIz
- SUzzSy4O4ywz9ksme5ECfyD393S8harZ10wRLJUQd2Nw4q2GsRvxzTpqArvWDMoTq2PEvFmQlKH
- UX3mGDV/LM7B5uBtM3gog7BbSeS5uCl0YnzAw4osvmrL4d7UmdKIjec7O45qXFub9F4vTXxYT3x
- NAD76eMp/t+B1OWDj4Yo8LvvxTaNYzG6WVM1CIsJOrv7dx10CvMdkJSFiJA2lG5df+voS+EM1ca
- M8Y9L0n1ORMw8U0Wm3ZuNHImlEmRvF2uzmVTFNJNATZIlg+nZ/Q5h+dLO6KBeXg4xdIzO50ti5+
- eLNhhmuFXS535lI/B2g==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjExMDAzMSBTYWx0ZWRfXzpeAkUWlSY8A
- x2qz4Ylm1w1it290tqSdOjqzQpvX1uMlD7gBYxyw0X8LKFLAtjX1WdvhzUK8jlLgtsWvvbAUgRH
- qifUT/ivszYwWbPG7GvLHovfoc9LIO8=
-X-Proofpoint-GUID: yV4zdZ50uxKyv_BWV6wsqlHf9n4p5uGo
-X-Proofpoint-ORIG-GUID: yV4zdZ50uxKyv_BWV6wsqlHf9n4p5uGo
-X-Authority-Analysis: v=2.4 cv=Z5Tc2nRA c=1 sm=1 tr=0 ts=6a2a2c82 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjExMDAzMSBTYWx0ZWRfX/WZR8ugtJNel
+ +AHGbWKQjFuZfxgaZTdUmnlYCAVhNKXVN8RzIYKGfs88CiNVh/Bq7SxPI04repELEuLb9TWypE3
+ vOB+OU6fYjsGosU+wzwBcy7mZLFJ0ckB4A4TTgMKNnPV7WGMpoWWD5mJKDXlMbHal0OmlBUqGRY
+ 7csgjHEUUqrulUyyTS2V/vHiUFyFO1/z3hsnhAkU7AXLgJheVse1SV/tlpDX8iagE0PFPZ9wo9G
+ VO+Z4fZhGObCqpci82prUm2OjbNCwWXzhlNe8lRGV+IhNK4N8sPkgeYzv9zKes1xSaAlPB4r9J5
+ 323Q313XyEB7/EhoOy1efIfXbqupnPLfmFNao95WFtu+eAVL/OT9PiePFJWS3x5CmUGABDQmTH3
+ r5nsNtMeqxBxvIatk017N5mWsqHIdVZwYA/0of0t9UJcLUYRLcGMNk4WV62JGKP6+jmdtr0NAZ3
+ CYFnjz6wXCzA/jselaQ==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjExMDAzMSBTYWx0ZWRfX5kThoDDBgqu0
+ jMuQ2tkYz19pOJkAX93bT1HmHZOnI3JIARwyv2a0BEuGFJXRc1LXD5ymgbd6Vj53uKYGkLD4flr
+ af8RCTUCH/P+trr7wtpOW/snlzT0Wtc=
+X-Proofpoint-GUID: SVZ5oeoPkbEA_PQ7Dmg6gRrX3NB0NALv
+X-Proofpoint-ORIG-GUID: SVZ5oeoPkbEA_PQ7Dmg6gRrX3NB0NALv
+X-Authority-Analysis: v=2.4 cv=Z5Tc2nRA c=1 sm=1 tr=0 ts=6a2a2c84 cx=c_pps
+ a=0uOsjrqzRL749jD1oC5vDA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
  a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8
- a=jmRftXr0Aczi6AUq4NEA:9 a=1OuFwYUASf3TG4hYMiVC:22
+ a=FsuqK5EfqoqfIKw4FYwA:9 a=mQ_c8vxmzFEMiUWkPHU9:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
  definitions=2026-06-11_01,2026-06-09_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 bulkscore=0 adultscore=0 impostorscore=0 malwarescore=0
+ clxscore=1011 bulkscore=0 adultscore=0 impostorscore=0 malwarescore=0
  spamscore=0 lowpriorityscore=0 phishscore=0 priorityscore=1501 suspectscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2606040000 definitions=main-2606110031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260610_203322_950924_E17EDDC7 
-X-CRM114-Status: GOOD (  20.33  )
+X-CRM114-CacheID: sfid-20260610_203324_765317_7C91B3B0 
+X-CRM114-Status: GOOD (  16.82  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,226 +142,206 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The driver currently retrieves reserved memory regions using index-based
-lookup, which depends on the ordering of reserved-memory nodes in the
-device tree. Since different platforms define these regions in varying
-orders and combinations, this approach is not compatible and can result
-in incorrect memory region access.
+ath12k_qmi_assign_target_mem_chunk() uses a large switch-case to handle
+both memory region identification and allocation for each memory request
+type, leading to redundant allocation logic.
 
-Switch to looking up memory regions by name instead of index so it does
-not depend on node order.
-
-Use names already defined in qcom,ipq5332-wifi.yaml, so there are no
-backward compatibility issues.
+Refactor this by introducing ath12k_qmi_get_mem_reg_name() to map memory
+request types to their corresponding reserved memory region names.
 
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/ahb.c  | 18 ++++++------
- drivers/net/wireless/ath/ath12k/core.c | 25 -----------------
- drivers/net/wireless/ath/ath12k/core.h |  2 --
- drivers/net/wireless/ath/ath12k/qmi.c  | 38 +++++++++++++-------------
- 4 files changed, 29 insertions(+), 54 deletions(-)
+ drivers/net/wireless/ath/ath12k/qmi.c | 157 ++++++++++----------------
+ 1 file changed, 61 insertions(+), 96 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-index 30733a244454..695b605a92fd 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.c
-+++ b/drivers/net/wireless/ath/ath12k/ahb.c
-@@ -15,6 +15,7 @@
- #include "ahb.h"
- #include "debug.h"
- #include "hif.h"
-+#include <linux/of_reserved_mem.h>
- 
- #define ATH12K_IRQ_CE0_OFFSET 4
- #define ATH12K_MAX_UPDS 1
-@@ -338,24 +339,25 @@ static int ath12k_ahb_power_up(struct ath12k_base *ab)
- 	char fw2_name[ATH12K_USERPD_FW_NAME_LEN];
- 	struct device *dev = ab->dev;
- 	const struct firmware *fw, *fw2;
--	struct reserved_mem *rmem = NULL;
- 	unsigned long time_left;
- 	phys_addr_t mem_phys;
-+	struct resource res;
- 	void *mem_region;
- 	size_t mem_size;
- 	u32 pasid;
- 	int ret;
- 
--	rmem = ath12k_core_get_reserved_mem(ab, 0);
--	if (!rmem)
--		return -ENODEV;
-+	ret = of_reserved_mem_region_to_resource_byname(dev->of_node, "q6-region",
-+							&res);
-+	if (ret)
-+		return ret;
- 
--	mem_phys = rmem->base;
--	mem_size = rmem->size;
-+	mem_phys = res.start;
-+	mem_size = resource_size(&res);
- 	mem_region = devm_memremap(dev, mem_phys, mem_size, MEMREMAP_WC);
- 	if (IS_ERR(mem_region)) {
--		ath12k_err(ab, "unable to map memory region: %pa+%pa\n",
--			   &rmem->base, &rmem->size);
-+		ath12k_err(ab, "unable to map memory region: %pa+%zx\n",
-+			   &res.start, mem_size);
- 		return PTR_ERR(mem_region);
- 	}
- 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 742d4fd1b598..617d039b9237 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -637,31 +637,6 @@ u32 ath12k_core_get_max_peers_per_radio(struct ath12k_base *ab)
- }
- EXPORT_SYMBOL(ath12k_core_get_max_peers_per_radio);
- 
--struct reserved_mem *ath12k_core_get_reserved_mem(struct ath12k_base *ab,
--						  int index)
--{
--	struct device *dev = ab->dev;
--	struct reserved_mem *rmem;
--	struct device_node *node;
--
--	node = of_parse_phandle(dev->of_node, "memory-region", index);
--	if (!node) {
--		ath12k_dbg(ab, ATH12K_DBG_BOOT,
--			   "failed to parse memory-region for index %d\n", index);
--		return NULL;
--	}
--
--	rmem = of_reserved_mem_lookup(node);
--	of_node_put(node);
--	if (!rmem) {
--		ath12k_dbg(ab, ATH12K_DBG_BOOT,
--			   "unable to get memory-region for index %d\n", index);
--		return NULL;
--	}
--
--	return rmem;
--}
--
- static inline
- void ath12k_core_to_group_ref_get(struct ath12k_base *ab)
- {
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index fc5127b5c1a3..ba2f617d8e5f 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -1294,8 +1294,6 @@ void ath12k_fw_stats_init(struct ath12k *ar);
- void ath12k_fw_stats_bcn_free(struct list_head *head);
- void ath12k_fw_stats_free(struct ath12k_fw_stats *stats);
- void ath12k_fw_stats_reset(struct ath12k *ar);
--struct reserved_mem *ath12k_core_get_reserved_mem(struct ath12k_base *ab,
--						  int index);
- enum ath12k_qmi_mem_mode ath12k_core_get_memory_mode(struct ath12k_base *ab);
- 
- static inline const char *ath12k_scan_state_str(enum ath12k_scan_state state)
 diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index fd762b5d7bb5..0176d6a4bf8c 100644
+index 0176d6a4bf8c..5bf045971c94 100644
 --- a/drivers/net/wireless/ath/ath12k/qmi.c
 +++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -13,6 +13,7 @@
- #include <linux/firmware.h>
- #include <linux/of_address.h>
- #include <linux/ioport.h>
-+#include <linux/of_reserved_mem.h>
+@@ -2726,120 +2726,85 @@ static int ath12k_qmi_alloc_target_mem_chunk(struct ath12k_base *ab)
+ 	return ret;
+ }
  
- #define SLEEP_CLOCK_SELECT_INTERNAL_BIT	0x02
- #define HOST_CSTATE_BIT			0x04
-@@ -2727,20 +2728,20 @@ static int ath12k_qmi_alloc_target_mem_chunk(struct ath12k_base *ab)
- 
++static const char *ath12k_qmi_get_mem_reg_name(int mem_type)
++{
++	switch (mem_type) {
++	case HOST_DDR_REGION_TYPE:
++	case BDF_MEM_REGION_TYPE:
++		return "q6-region";
++	case M3_DUMP_REGION_TYPE:
++		return "m3-dump";
++	case CALDB_MEM_REGION_TYPE:
++		return "q6-caldb";
++	case MLO_GLOBAL_MEM_REGION_TYPE:
++		return "mlo-global-mem";
++	default:
++		return NULL;
++	}
++}
++
  static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
  {
--	struct reserved_mem *rmem;
-+	struct device_node *np = ab->dev->of_node;
+ 	struct device_node *np = ab->dev->of_node;
++	struct target_mem_chunk *chunk;
  	size_t avail_rmem_size;
-+	struct resource res;
+ 	struct resource res;
++	const char *rname;
  	int i, idx, ret;
  
  	for (i = 0, idx = 0; i < ab->qmi.mem_seg_count; i++) {
- 		switch (ab->qmi.target_mem[i].type) {
- 		case HOST_DDR_REGION_TYPE:
--			rmem = ath12k_core_get_reserved_mem(ab, 0);
--			if (!rmem) {
--				ret = -ENODEV;
-+			ret = of_reserved_mem_region_to_resource_byname(np, "q6-region",
-+									&res);
-+			if (ret)
- 				goto out;
--			}
- 
--			avail_rmem_size = rmem->size;
-+			avail_rmem_size = resource_size(&res);
- 			if (avail_rmem_size < ab->qmi.target_mem[i].size) {
- 				ath12k_dbg(ab, ATH12K_DBG_QMI,
- 					   "failed to assign mem type %u req size %u avail size %zu\n",
-@@ -2751,7 +2752,7 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
- 				goto out;
- 			}
- 
--			ab->qmi.target_mem[idx].paddr = rmem->base;
-+			ab->qmi.target_mem[idx].paddr = res.start;
- 			ab->qmi.target_mem[idx].v.ioaddr =
- 				ioremap(ab->qmi.target_mem[idx].paddr,
- 					ab->qmi.target_mem[i].size);
-@@ -2764,13 +2765,13 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
- 			idx++;
- 			break;
- 		case BDF_MEM_REGION_TYPE:
--			rmem = ath12k_core_get_reserved_mem(ab, 0);
--			if (!rmem) {
--				ret = -ENODEV;
-+			ret = of_reserved_mem_region_to_resource_byname(np, "q6-region",
-+									&res);
-+			if (ret)
- 				goto out;
--			}
- 
--			avail_rmem_size = rmem->size - ab->hw_params->bdf_addr_offset;
-+			avail_rmem_size = resource_size(&res) -
-+					  ab->hw_params->bdf_addr_offset;
- 			if (avail_rmem_size < ab->qmi.target_mem[i].size) {
- 				ath12k_dbg(ab, ATH12K_DBG_QMI,
- 					   "failed to assign mem type %u req size %u avail size %zu\n",
-@@ -2781,7 +2782,7 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
- 				goto out;
- 			}
- 			ab->qmi.target_mem[idx].paddr =
--				rmem->base + ab->hw_params->bdf_addr_offset;
-+				res.start + ab->hw_params->bdf_addr_offset;
- 			ab->qmi.target_mem[idx].v.ioaddr =
- 				ioremap(ab->qmi.target_mem[idx].paddr,
- 					ab->qmi.target_mem[i].size);
-@@ -2806,13 +2807,12 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
- 			idx++;
- 			break;
- 		case M3_DUMP_REGION_TYPE:
--			rmem = ath12k_core_get_reserved_mem(ab, 1);
--			if (!rmem) {
+-		switch (ab->qmi.target_mem[i].type) {
+-		case HOST_DDR_REGION_TYPE:
+-			ret = of_reserved_mem_region_to_resource_byname(np, "q6-region",
+-									&res);
+-			if (ret)
+-				goto out;
+-
+-			avail_rmem_size = resource_size(&res);
+-			if (avail_rmem_size < ab->qmi.target_mem[i].size) {
+-				ath12k_dbg(ab, ATH12K_DBG_QMI,
+-					   "failed to assign mem type %u req size %u avail size %zu\n",
+-					   ab->qmi.target_mem[i].type,
+-					   ab->qmi.target_mem[i].size,
+-					   avail_rmem_size);
 -				ret = -EINVAL;
-+			ret = of_reserved_mem_region_to_resource_byname(np, "m3-dump",
-+									&res);
-+			if (ret)
- 				goto out;
+-				goto out;
 -			}
+-
+-			ab->qmi.target_mem[idx].paddr = res.start;
+-			ab->qmi.target_mem[idx].v.ioaddr =
+-				ioremap(ab->qmi.target_mem[idx].paddr,
+-					ab->qmi.target_mem[i].size);
+-			if (!ab->qmi.target_mem[idx].v.ioaddr) {
+-				ret = -EIO;
+-				goto out;
+-			}
+-			ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
+-			ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
+-			idx++;
+-			break;
+-		case BDF_MEM_REGION_TYPE:
+-			ret = of_reserved_mem_region_to_resource_byname(np, "q6-region",
+-									&res);
+-			if (ret)
+-				goto out;
+-
+-			avail_rmem_size = resource_size(&res) -
+-					  ab->hw_params->bdf_addr_offset;
+-			if (avail_rmem_size < ab->qmi.target_mem[i].size) {
+-				ath12k_dbg(ab, ATH12K_DBG_QMI,
+-					   "failed to assign mem type %u req size %u avail size %zu\n",
+-					   ab->qmi.target_mem[i].type,
+-					   ab->qmi.target_mem[i].size,
+-					   avail_rmem_size);
+-				ret = -EINVAL;
+-				goto out;
+-			}
+-			ab->qmi.target_mem[idx].paddr =
+-				res.start + ab->hw_params->bdf_addr_offset;
+-			ab->qmi.target_mem[idx].v.ioaddr =
+-				ioremap(ab->qmi.target_mem[idx].paddr,
+-					ab->qmi.target_mem[i].size);
+-			if (!ab->qmi.target_mem[idx].v.ioaddr) {
+-				ret = -EIO;
+-				goto out;
+-			}
+-			ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
+-			ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
+-			idx++;
+-			break;
+-		case CALDB_MEM_REGION_TYPE:
+-			/* Cold boot calibration is not enabled in Ath12k. Hence,
++		chunk = &ab->qmi.target_mem[i];
++		if (chunk->type == CALDB_MEM_REGION_TYPE) {
++			/*
++			 * Cold boot calibration is not enabled in Ath12k. Hence,
+ 			 * assign paddr = 0.
+ 			 * Once cold boot calibration is enabled add support to
+ 			 * assign reserved memory from DT.
+ 			 */
+ 			ab->qmi.target_mem[idx].paddr = 0;
+ 			ab->qmi.target_mem[idx].v.ioaddr = NULL;
+-			ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
+-			ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
++			ab->qmi.target_mem[idx].size = chunk->size;
++			ab->qmi.target_mem[idx].type = chunk->type;
+ 			idx++;
+-			break;
+-		case M3_DUMP_REGION_TYPE:
+-			ret = of_reserved_mem_region_to_resource_byname(np, "m3-dump",
+-									&res);
+-			if (ret)
+-				goto out;
+-
+-			avail_rmem_size = resource_size(&res);
+-			if (avail_rmem_size < ab->qmi.target_mem[i].size) {
+-				ath12k_dbg(ab, ATH12K_DBG_QMI,
+-					   "failed to assign mem type %u req size %u avail size %zu\n",
+-					   ab->qmi.target_mem[i].type,
+-					   ab->qmi.target_mem[i].size,
+-					   avail_rmem_size);
+-				ret = -EINVAL;
+-				goto out;
+-			}
++			continue;
++		}
  
--			avail_rmem_size = rmem->size;
-+			avail_rmem_size = resource_size(&res);
- 			if (avail_rmem_size < ab->qmi.target_mem[i].size) {
- 				ath12k_dbg(ab, ATH12K_DBG_QMI,
- 					   "failed to assign mem type %u req size %u avail size %zu\n",
-@@ -2823,7 +2823,7 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
- 				goto out;
- 			}
+-			ab->qmi.target_mem[idx].paddr = res.start;
+-			ab->qmi.target_mem[idx].v.ioaddr =
+-				ioremap(ab->qmi.target_mem[idx].paddr,
+-					ab->qmi.target_mem[i].size);
+-			if (!ab->qmi.target_mem[idx].v.ioaddr) {
+-				ret = -EIO;
+-				goto out;
+-			}
+-			ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
+-			ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
+-			idx++;
+-			break;
+-		default:
++		rname = ath12k_qmi_get_mem_reg_name(chunk->type);
++		if (!rname) {
+ 			ath12k_warn(ab, "qmi ignore invalid mem req type %u\n",
+-				    ab->qmi.target_mem[i].type);
+-			break;
++				    chunk->type);
++			continue;
++		}
++
++		ret = of_reserved_mem_region_to_resource_byname(np, rname, &res);
++		if (ret)
++			goto out;
++
++		avail_rmem_size = resource_size(&res);
++		if (chunk->type == BDF_MEM_REGION_TYPE) {
++			avail_rmem_size -= ab->hw_params->bdf_addr_offset;
++			res.start += ab->hw_params->bdf_addr_offset;
+ 		}
++
++		if (avail_rmem_size < chunk->size) {
++			ath12k_dbg(ab, ATH12K_DBG_QMI,
++				   "failed to assign mem type %u req size %u avail size %zu\n",
++				   chunk->type, chunk->size, avail_rmem_size);
++			ret = -EINVAL;
++			goto out;
++		}
++
++		ab->qmi.target_mem[idx].paddr = res.start;
++		ab->qmi.target_mem[idx].v.ioaddr = ioremap(ab->qmi.target_mem[idx].paddr,
++							   chunk->size);
++		if (!ab->qmi.target_mem[idx].v.ioaddr) {
++			ret = -EIO;
++			goto out;
++		}
++
++		ab->qmi.target_mem[idx].size = chunk->size;
++		ab->qmi.target_mem[idx].type = chunk->type;
++		idx++;
+ 	}
+ 	ab->qmi.mem_seg_count = idx;
  
--			ab->qmi.target_mem[idx].paddr = rmem->base;
-+			ab->qmi.target_mem[idx].paddr = res.start;
- 			ab->qmi.target_mem[idx].v.ioaddr =
- 				ioremap(ab->qmi.target_mem[idx].paddr,
- 					ab->qmi.target_mem[i].size);
 -- 
 2.34.1
 
