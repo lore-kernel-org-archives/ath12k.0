@@ -4,81 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9EADCD98D2
-	for <ath12k@archiver.kernel.org>; Thu, 11 Jun 2026 08:44:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5ED62CD98CC
+	for <ath12k@archiver.kernel.org>; Thu, 11 Jun 2026 15:20:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=KfjdmvbLZ2ajcdt58jAGget3u2obgXtGYDr0JfRuXz8=; b=PjcuyWx2Jkx1QaloPR//vdqvW7
-	wN5wBbf9WriqilmWfpcTMO3z3Hi3QhhGVHWFYw7Wtt6OpxSrQYGFM8XwpdxdOPhqn5/hMfVy71Apg
-	4KYPnQ8BRWWuy5LjQT6Fk61bkTqmg01Ky/7gl8FoQdeKdsKFxKjuCwoMHRrQznNZxQoMK2Z2rpjum
-	jwP9xDS88lXHztH6FRlSWRTs4Wg92x/Cyd7SNZ1+0+cK+la9uMrAkJnOCxnsaEAf7dfAOaLmAajaR
-	F+IY6skdl7hh5mtesIYmKIuVfjqR/yJrpFhDM8HBdHdtkPKYkVpTFl5cl8CXI5r0r1TSJaVAmSzHm
-	wp7lXGbA==;
+	bh=d+z2A7Gml2DzqxPncOg7u1K/S6kxNm1O3Janqlmf9qk=; b=qPDkHcupJrwfeyBFj64SLjzgOQ
+	Md8ZM0jeaYK+A2/WxNGVV77BYlnioBEXtymhJXOyEhKaQDwKDgt+ipaptMWZZB2I41ImMzFtx9Xzq
+	SvKly8FetzWv2L3cXtzYSOd2ogAt5PIp3mmxLZRaMy6bg/ZGoyzqaqbdbuC9eorFn/IFcjU/rs7vs
+	RUnTZol4JmsBnxnTy9V4kMurmpsbKSUa2Vy4BNwkiqXRivPB8eZv9k46dG/DAWGiCWStROvdcpu0S
+	5diz618lW2tigWuSFZR2IaK3tboPEC6/gRvCSvmqpj+ibotDqzf7TbcS90J68B4VLg4eu+QNz6ECc
+	dKCZLi7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXb1Y-000000092U1-2buN;
-	Thu, 11 Jun 2026 08:44:28 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1wXhDH-00000009fcg-0Kdl;
+	Thu, 11 Jun 2026 15:20:59 +0000
+Received: from mgamail.intel.com ([198.175.65.12])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXb1V-000000092Th-3pG4
+	id 1wXhDF-00000009fc3-0erf
 	for ath12k@lists.infradead.org;
-	Thu, 11 Jun 2026 08:44:27 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-490a76757e5so51206425e9.2
-        for <ath12k@lists.infradead.org>; Thu, 11 Jun 2026 01:44:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1781167464; x=1781772264; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=KfjdmvbLZ2ajcdt58jAGget3u2obgXtGYDr0JfRuXz8=;
-        b=GHB/2p7uOm4l0nv6mDnxSYYhkkk7tTkfSX6SKzbwSTIIWj59CTo6ssUONuBDRlc+GP
-         ODhbJwFy3pV39jwovcD/gVKj+rKAKrezbhbT1FKmdGzn/jebrGt59BMuQebbWQhuw167
-         lWSMIconXI95Z4AsmPSTaLUnb0LSjb4lz3EDJQiwE3GlpxUoc8csERhb7L7dwyt81mku
-         Tsn2mdGr/3pzPBGHY86nso8Jp5ETp7RXlyCXHyppccuCouYkI5Ma32E78Hw3OBFukAOt
-         XtiXhTviQ3X0zdiQ+jE8egdvPLjjDyHURvm80RG0QJ4g2Bz2fQKdwxQxC0DrpLO5MhGL
-         1mkw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781167464; x=1781772264;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=KfjdmvbLZ2ajcdt58jAGget3u2obgXtGYDr0JfRuXz8=;
-        b=HrOYmkXzthGI1uw/2AxHFBxrEc5MNA4rtARp7ucL9nn5WBhK/JJ/10RZ7ensOyPceK
-         XfrqSvy2MCmTWEdEGUYGeJtLKveAEyaXZczzB8OXFKR4+y1ZzrudXMFqKHZGyhZcJhe1
-         B99DfPAfNgpAbnSjOdC4YWVTyGPTMscA0KOQpBIa0LZG5kmMCZ17iUNaOH+Aulh96Rii
-         1TVE9wrr6HA+CXEoLQhm6eZOVNaY5XWncJrWDYHjK5+I6Z59OkRlmDbVzxYu0Sq1tWTZ
-         6DBumA2mAQ2Z8CZuNkdCMITElLiMEO0zzne1XhLwQtK6a/Sx0pAHAzW06TWOrKF+hSyb
-         wKeA==
-X-Gm-Message-State: AOJu0YwjL32tDTG3DzGQif6Siz0tphd9I/yIdN9Nc8bBiHHEjGQJZT18
-	4SNBaxZWYfyh/qF3AXeFsqtgYrhz7j3m8cKqq+wFz6VrD8YIpR0XQvAhUNAkxg==
-X-Gm-Gg: Acq92OHl6cn2/ndlIbo+wI23AYrDQ61qi96l9Lc8jOksdUc+IjGrUr4Y77Litq4KBub
-	MNVDzL9Dl9UoePR7nbStpfg692F8belRB9GJw1KSPRI1JnCX/1xHn8IVyq56Ltnn9Ln8x0sLMDJ
-	Vw5YvioDmbcjwUfkHi8N5mYcZ/zp6waj55h28U3VCV12BqOwV8TfG5LszODuVrn7BWoMZiiVUw6
-	NFl+BhyFJc/8ARPobJnEr3wWOlcmunszgDRu4kFRUy+8AkZ3LQPIks+JxCmc3xrDC1ace+jnXZ9
-	r5jcE58p0e7AjosuDO+B9Q/UDVs1xW0ljxqIOsfJ3dawxm6Hl7z9ph4BDJPTINztwHC4H/pOYpo
-	t3gSAB+yePB4etFHML/A+cyoh8uYDA38Y5Ax3M7+EssrIdr5+J7bcuWBr0QoKW361A8kcGwAYC/
-	r82lRfwx0k6Y41NtWro0hyoA9c/u1IhTiRpfQwMotV9f/YngiEwd+xt4rorIAu/I2szMA=
-X-Received: by 2002:a05:600c:5250:b0:490:c2a2:b1d4 with SMTP id 5b1f17b1804b1-490e5620658mr18944445e9.35.1781167463459;
-        Thu, 11 Jun 2026 01:44:23 -0700 (PDT)
-Received: from syracuse.iliad.local (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4601f2dcde3sm81024394f8f.1.2026.06.11.01.44.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 11 Jun 2026 01:44:23 -0700 (PDT)
-From: Nicolas Escande <nico.escande@gmail.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH ath-next v2] wifi: ath12k: avoid setting 320MHZ support on non 6GHz band
-Date: Thu, 11 Jun 2026 10:44:22 +0200
-Message-ID: <20260611084422.1511513-1-nico.escande@gmail.com>
-X-Mailer: git-send-email 2.54.0
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+	Thu, 11 Jun 2026 15:20:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1781191257; x=1812727257;
+  h=date:from:to:cc:subject:message-id;
+  bh=LgtmiNxNlbx0S7LXRLfudsb8ucIc+EaaF6dWrsAJrM8=;
+  b=ODIyejrA158lQk0TWPzPbcMLWo4vitN8S1ak+u5VLWWVt712GFa3CmwF
+   OWub2eFdmRTCBLGBohWutXbIdoY06nmNDgInkyyarq60z50Qrrge/nRDp
+   bXOgF3xOV/uHxC8hXT+xGB0GokqSprKl+MW71/VzimFLtlJiaefOyNH9T
+   kBvxn3ARCl+Siyc8d7MNtK3rIwoFbfmaX9dn0zx/6SZLOQU4wsu/fYEQY
+   A73I9UCDV24w0OV+HSPRMpmwVO09JwtKIClYlm27yAjlOvYK6yjDnHwnV
+   /oStKM2a9oLkjOBTaFH9x0VeDivBwfM1QimB7Dsvr9vc8rfh9/dwxokRG
+   A==;
+X-CSE-ConnectionGUID: 8MfcK3R4T3KNUlKfYTF5TQ==
+X-CSE-MsgGUID: my3GsrxQQWuh0JeCgF1dfA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11813"; a="93492889"
+X-IronPort-AV: E=Sophos;i="6.24,199,1774335600"; 
+   d="scan'208";a="93492889"
+Received: from orviesa005.jf.intel.com ([10.64.159.145])
+  by orvoesa104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Jun 2026 08:20:53 -0700
+X-CSE-ConnectionGUID: gbEQBTNdSUecfVN2aOSj4Q==
+X-CSE-MsgGUID: qZLw2YTITiuTGDCso6IcBw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.24,199,1774335600"; 
+   d="scan'208";a="251450572"
+Received: from lkp-server01.sh.intel.com (HELO f0d55cb201f0) ([10.239.97.150])
+  by orviesa005.jf.intel.com with ESMTP; 11 Jun 2026 08:20:51 -0700
+Received: from kbuild by f0d55cb201f0 with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1wXhD7-00000000NJM-05NG;
+	Thu, 11 Jun 2026 15:20:49 +0000
+Date: Thu, 11 Jun 2026 23:20:31 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org
+Subject: [ath:master] BUILD SUCCESS
+ 83f028be15fe071efbee8e27837538d6cca77e87
+Message-ID: <202606112323.B6pib8eE-lkp@intel.com>
+User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260611_014425_989564_48345A3C 
-X-CRM114-Status: GOOD (  15.42  )
+X-CRM114-CacheID: sfid-20260611_082057_393886_C5DA8059 
+X-CRM114-Status: UNSURE (   3.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,85 +83,256 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On a split phy qcn9274 (2.4GHz + 5GHz low), "iw phy" reports 320MHz
-realated features on the 5GHz band while it should not:
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
+branch HEAD: 83f028be15fe071efbee8e27837538d6cca77e87  wifi: nl80211: Fixup merge build failure
 
-    Wiphy phy1
-    [...]
-        Band 2:
-    [...]
-            EHT Iftypes: managed
-    [...]
-                EHT PHY Capabilities: (0xe2ffdbe018778000):
-                    320MHz in 6GHz Supported
-    [...]
-                    Beamformee SS (320MHz): 7
-    [...]
-                    Number Of Sounding Dimensions (320MHz): 3
-    [...]
-                EHT MCS/NSS: (0x22222222222222222200000000):
+elapsed time: 815m
 
-This is also reflected in the beacons sent by a mesh interface started on
-that band. They erroneously advertise 320MHZ support too.
+configs tested: 236
+configs skipped: 2
 
-This should not happen as the spec at section 9.4.2.323.3 says we should
-not set the 320MHz related fields when not operating on a 6GHz band.
-For example it says about Bit 0 "Support For 320 MHz In 6 GHz"
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-  "Reserved if the EHT Capabilities element is indicating capabilities for
-   the 2.4 GHz or 5 GHz bands."
+tested configs:
+alpha                             allnoconfig    gcc-16.1.0
+alpha                            allyesconfig    gcc-16.1.0
+alpha                               defconfig    gcc-16.1.0
+arc                              allmodconfig    clang-23
+arc                               allnoconfig    gcc-16.1.0
+arc                              allyesconfig    clang-23
+arc                                 defconfig    gcc-16.1.0
+arc                        nsim_700_defconfig    gcc-16.1.0
+arc                            randconfig-001    gcc-14.3.0
+arc                   randconfig-001-20260611    gcc-14.3.0
+arc                            randconfig-002    gcc-14.3.0
+arc                   randconfig-002-20260611    gcc-14.3.0
+arm                               allnoconfig    gcc-16.1.0
+arm                              allyesconfig    clang-23
+arm                                 defconfig    gcc-16.1.0
+arm                           omap1_defconfig    gcc-16.1.0
+arm                            randconfig-001    gcc-14.3.0
+arm                   randconfig-001-20260611    gcc-14.3.0
+arm                            randconfig-002    gcc-14.3.0
+arm                   randconfig-002-20260611    gcc-14.3.0
+arm                            randconfig-003    gcc-14.3.0
+arm                   randconfig-003-20260611    gcc-14.3.0
+arm                            randconfig-004    gcc-14.3.0
+arm                   randconfig-004-20260611    gcc-14.3.0
+arm64                            allmodconfig    clang-23
+arm64                             allnoconfig    gcc-16.1.0
+arm64                               defconfig    gcc-16.1.0
+arm64                 randconfig-001-20260611    gcc-14.3.0
+arm64                 randconfig-002-20260611    gcc-14.3.0
+arm64                 randconfig-003-20260611    gcc-14.3.0
+arm64                 randconfig-004-20260611    gcc-14.3.0
+csky                             allmodconfig    gcc-16.1.0
+csky                              allnoconfig    gcc-16.1.0
+csky                                defconfig    gcc-16.1.0
+csky                  randconfig-001-20260611    gcc-14.3.0
+csky                  randconfig-002-20260611    gcc-14.3.0
+hexagon                          allmodconfig    gcc-16.1.0
+hexagon                           allnoconfig    gcc-16.1.0
+hexagon                             defconfig    gcc-16.1.0
+hexagon               randconfig-001-20260611    clang-16
+hexagon               randconfig-001-20260611    clang-17
+hexagon               randconfig-002-20260611    clang-16
+hexagon               randconfig-002-20260611    clang-17
+i386                             allmodconfig    clang-22
+i386                              allnoconfig    gcc-16.1.0
+i386                             allyesconfig    clang-22
+i386                 buildonly-randconfig-001    clang-22
+i386        buildonly-randconfig-001-20260611    clang-22
+i386                 buildonly-randconfig-002    clang-22
+i386        buildonly-randconfig-002-20260611    clang-22
+i386                 buildonly-randconfig-003    clang-22
+i386        buildonly-randconfig-003-20260611    clang-22
+i386                 buildonly-randconfig-004    clang-22
+i386        buildonly-randconfig-004-20260611    clang-22
+i386                 buildonly-randconfig-005    clang-22
+i386        buildonly-randconfig-005-20260611    clang-22
+i386                 buildonly-randconfig-006    clang-22
+i386        buildonly-randconfig-006-20260611    clang-22
+i386                                defconfig    gcc-16.1.0
+i386                           randconfig-001    gcc-14
+i386                  randconfig-001-20260611    gcc-14
+i386                           randconfig-002    gcc-14
+i386                  randconfig-002-20260611    gcc-14
+i386                           randconfig-003    gcc-14
+i386                  randconfig-003-20260611    gcc-14
+i386                           randconfig-004    gcc-14
+i386                  randconfig-004-20260611    gcc-14
+i386                           randconfig-005    gcc-14
+i386                  randconfig-005-20260611    gcc-14
+i386                           randconfig-006    gcc-14
+i386                  randconfig-006-20260611    gcc-14
+i386                           randconfig-007    gcc-14
+i386                  randconfig-007-20260611    gcc-14
+i386                  randconfig-011-20260611    gcc-14
+i386                  randconfig-012-20260611    gcc-14
+i386                  randconfig-013-20260611    gcc-14
+i386                  randconfig-014-20260611    gcc-14
+i386                  randconfig-015-20260611    gcc-14
+i386                  randconfig-016-20260611    gcc-14
+i386                  randconfig-017-20260611    gcc-14
+loongarch                        allmodconfig    clang-23
+loongarch                         allnoconfig    gcc-16.1.0
+loongarch                           defconfig    clang-23
+loongarch             randconfig-001-20260611    clang-16
+loongarch             randconfig-001-20260611    clang-17
+loongarch             randconfig-002-20260611    clang-16
+loongarch             randconfig-002-20260611    clang-17
+m68k                             allmodconfig    gcc-16.1.0
+m68k                              allnoconfig    gcc-16.1.0
+m68k                             allyesconfig    clang-23
+m68k                                defconfig    clang-23
+microblaze                        allnoconfig    gcc-16.1.0
+microblaze                       allyesconfig    gcc-16.1.0
+microblaze                          defconfig    clang-23
+mips                             allmodconfig    gcc-16.1.0
+mips                              allnoconfig    gcc-16.1.0
+mips                             allyesconfig    gcc-16.1.0
+nios2                            allmodconfig    clang-20
+nios2                             allnoconfig    clang-23
+nios2                               defconfig    clang-23
+nios2                 randconfig-001-20260611    clang-16
+nios2                 randconfig-001-20260611    clang-17
+nios2                 randconfig-002-20260611    clang-16
+nios2                 randconfig-002-20260611    clang-17
+openrisc                         allmodconfig    clang-20
+openrisc                          allnoconfig    clang-23
+openrisc                            defconfig    gcc-16.1.0
+parisc                           allmodconfig    gcc-16.1.0
+parisc                            allnoconfig    clang-23
+parisc                           allyesconfig    clang-17
+parisc                           allyesconfig    clang-23
+parisc                              defconfig    gcc-16.1.0
+parisc                randconfig-001-20260611    gcc-13.4.0
+parisc                randconfig-002-20260611    gcc-13.4.0
+parisc64                            defconfig    clang-23
+powerpc                     akebono_defconfig    clang-23
+powerpc                          allmodconfig    gcc-16.1.0
+powerpc                           allnoconfig    clang-23
+powerpc               randconfig-001-20260611    gcc-13.4.0
+powerpc               randconfig-002-20260611    gcc-13.4.0
+powerpc                     tqm8540_defconfig    gcc-16.1.0
+powerpc64             randconfig-001-20260611    gcc-13.4.0
+powerpc64             randconfig-002-20260611    gcc-13.4.0
+riscv                            allmodconfig    clang-23
+riscv                             allnoconfig    clang-23
+riscv                            allyesconfig    clang-23
+riscv                               defconfig    gcc-16.1.0
+riscv                          randconfig-001    gcc-12.5.0
+riscv                 randconfig-001-20260611    gcc-12.5.0
+riscv                          randconfig-002    gcc-12.5.0
+riscv                 randconfig-002-20260611    gcc-12.5.0
+s390                             allmodconfig    clang-17
+s390                             allmodconfig    clang-23
+s390                              allnoconfig    clang-23
+s390                             allyesconfig    gcc-16.1.0
+s390                                defconfig    gcc-16.1.0
+s390                           randconfig-001    gcc-12.5.0
+s390                  randconfig-001-20260611    gcc-12.5.0
+s390                           randconfig-002    gcc-12.5.0
+s390                  randconfig-002-20260611    gcc-12.5.0
+sh                               allmodconfig    gcc-16.1.0
+sh                                allnoconfig    clang-23
+sh                               allyesconfig    clang-17
+sh                               allyesconfig    clang-23
+sh                                  defconfig    gcc-14
+sh                             randconfig-001    gcc-12.5.0
+sh                    randconfig-001-20260611    gcc-12.5.0
+sh                             randconfig-002    gcc-12.5.0
+sh                    randconfig-002-20260611    gcc-12.5.0
+sparc                             allnoconfig    clang-23
+sparc                               defconfig    gcc-16.1.0
+sparc                 randconfig-001-20260611    gcc-15.2.0
+sparc                 randconfig-002-20260611    gcc-15.2.0
+sparc64                          allmodconfig    clang-20
+sparc64                             defconfig    gcc-14
+sparc64               randconfig-001-20260611    gcc-15.2.0
+sparc64               randconfig-002-20260611    gcc-15.2.0
+um                               allmodconfig    clang-17
+um                               allmodconfig    clang-23
+um                                allnoconfig    clang-23
+um                               allyesconfig    gcc-16.1.0
+um                                  defconfig    gcc-14
+um                             i386_defconfig    gcc-14
+um                    randconfig-001-20260611    gcc-15.2.0
+um                    randconfig-002-20260611    gcc-15.2.0
+um                           x86_64_defconfig    gcc-14
+x86_64                           allmodconfig    clang-22
+x86_64                            allnoconfig    clang-23
+x86_64                           allyesconfig    clang-22
+x86_64               buildonly-randconfig-001    gcc-14
+x86_64      buildonly-randconfig-001-20260611    gcc-14
+x86_64               buildonly-randconfig-002    gcc-14
+x86_64      buildonly-randconfig-002-20260611    gcc-14
+x86_64               buildonly-randconfig-003    gcc-14
+x86_64      buildonly-randconfig-003-20260611    gcc-14
+x86_64               buildonly-randconfig-004    gcc-14
+x86_64      buildonly-randconfig-004-20260611    gcc-14
+x86_64               buildonly-randconfig-005    gcc-14
+x86_64      buildonly-randconfig-005-20260611    gcc-14
+x86_64               buildonly-randconfig-006    gcc-14
+x86_64      buildonly-randconfig-006-20260611    gcc-14
+x86_64                              defconfig    gcc-14
+x86_64                                  kexec    clang-22
+x86_64                         randconfig-001    clang-22
+x86_64                randconfig-001-20260611    clang-22
+x86_64                randconfig-001-20260611    gcc-14
+x86_64                         randconfig-002    clang-22
+x86_64                randconfig-002-20260611    clang-22
+x86_64                randconfig-002-20260611    gcc-14
+x86_64                         randconfig-003    clang-22
+x86_64                randconfig-003-20260611    clang-22
+x86_64                randconfig-003-20260611    gcc-14
+x86_64                         randconfig-004    clang-22
+x86_64                randconfig-004-20260611    clang-22
+x86_64                randconfig-004-20260611    gcc-14
+x86_64                         randconfig-005    clang-22
+x86_64                randconfig-005-20260611    clang-22
+x86_64                randconfig-005-20260611    gcc-14
+x86_64                         randconfig-006    clang-22
+x86_64                randconfig-006-20260611    clang-22
+x86_64                randconfig-006-20260611    gcc-14
+x86_64                         randconfig-011    clang-22
+x86_64                randconfig-011-20260611    clang-22
+x86_64                randconfig-011-20260611    gcc-14
+x86_64                         randconfig-012    clang-22
+x86_64                randconfig-012-20260611    clang-22
+x86_64                randconfig-012-20260611    gcc-14
+x86_64                         randconfig-013    clang-22
+x86_64                randconfig-013-20260611    clang-22
+x86_64                randconfig-013-20260611    gcc-14
+x86_64                         randconfig-014    clang-22
+x86_64                randconfig-014-20260611    clang-22
+x86_64                randconfig-014-20260611    gcc-14
+x86_64                         randconfig-015    clang-22
+x86_64                randconfig-015-20260611    clang-22
+x86_64                randconfig-015-20260611    gcc-14
+x86_64                         randconfig-016    clang-22
+x86_64                randconfig-016-20260611    clang-22
+x86_64                randconfig-016-20260611    gcc-14
+x86_64                randconfig-071-20260611    clang-22
+x86_64                randconfig-072-20260611    clang-22
+x86_64                randconfig-073-20260611    clang-22
+x86_64                randconfig-074-20260611    clang-22
+x86_64                randconfig-075-20260611    clang-22
+x86_64                randconfig-076-20260611    clang-22
+x86_64                               rhel-9.4    clang-22
+x86_64                           rhel-9.4-bpf    gcc-14
+x86_64                          rhel-9.4-func    clang-22
+x86_64                    rhel-9.4-kselftests    clang-22
+x86_64                         rhel-9.4-kunit    gcc-14
+x86_64                           rhel-9.4-ltp    gcc-14
+x86_64                          rhel-9.4-rust    clang-22
+xtensa                            allnoconfig    clang-23
+xtensa                           allyesconfig    clang-20
+xtensa                randconfig-001-20260611    gcc-15.2.0
+xtensa                randconfig-002-20260611    gcc-15.2.0
 
-Fix this by clearing the related bits when converting from WMI eht phy
-capabilities to mac80211 phy capabilities, for bands other than 6GHz.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00218-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
----
-Changes from v1:
-  - rebased on ath-next
-  - clear all 6GHz / 320MHz related phy capabilities fields from the firmware
----
- drivers/net/wireless/ath/ath12k/wmi.c | 17 ++++++++++++++++-
- 1 file changed, 16 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 84a31b953db8..a8a4654c4f34 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -5154,6 +5154,7 @@ static void ath12k_wmi_eht_caps_parse(struct ath12k_pdev *pdev, u32 band,
- 				       __le32 cap_info_internal)
- {
- 	struct ath12k_band_cap *cap_band = &pdev->cap.band[band];
-+	u8 *phy_cap = (u8 *)&cap_band->eht_cap_phy_info[0];
- 	u32 support_320mhz;
- 	u8 i;
- 
-@@ -5167,8 +5168,22 @@ static void ath12k_wmi_eht_caps_parse(struct ath12k_pdev *pdev, u32 band,
- 	for (i = 0; i < WMI_MAX_EHTCAP_PHY_SIZE; i++)
- 		cap_band->eht_cap_phy_info[i] = le32_to_cpu(cap_phy_info[i]);
- 
--	if (band == NL80211_BAND_6GHZ)
-+	if (band == NL80211_BAND_6GHZ) {	
- 		cap_band->eht_cap_phy_info[0] |= support_320mhz;
-+	} else {
-+		/*
-+		 * It seems the firmware can report capabilities specific to
-+		 * 6GHz also for 5GHz, so lets explicitely clear them out.
-+		 */
-+		phy_cap[0] &= ~IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ;
-+		phy_cap[1] &= ~IEEE80211_EHT_PHY_CAP1_BEAMFORMEE_SS_320MHZ_MASK;
-+		phy_cap[2] &= ~IEEE80211_EHT_PHY_CAP2_SOUNDING_DIM_320MHZ_MASK;
-+		phy_cap[3] &= ~IEEE80211_EHT_PHY_CAP3_SOUNDING_DIM_320MHZ_MASK;
-+		phy_cap[6] &= ~IEEE80211_EHT_PHY_CAP6_MCS15_SUPP_320MHZ;
-+		phy_cap[6] &= ~IEEE80211_EHT_PHY_CAP6_EHT_DUP_6GHZ_SUPP;
-+		phy_cap[7] &= ~IEEE80211_EHT_PHY_CAP7_NON_OFDMA_UL_MU_MIMO_320MHZ;
-+		phy_cap[7] &= ~IEEE80211_EHT_PHY_CAP7_MU_BEAMFORMER_320MHZ;	;
-+	}
- 
- 	cap_band->eht_mcs_20_only = le32_to_cpu(supp_mcs[0]);
- 	cap_band->eht_mcs_80 = le32_to_cpu(supp_mcs[1]);
--- 
-2.54.0
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
