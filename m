@@ -4,130 +4,131 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98FB2CD8CA8
-	for <ath12k@archiver.kernel.org>; Sun, 14 Jun 2026 05:18:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15588CD98C7
+	for <ath12k@archiver.kernel.org>; Sun, 14 Jun 2026 05:18:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=wgFP3UvqzIlvDi28YX756R6m0ZesSFOytF38ii9aXEM=; b=K+W5k4J1xCt8tgasbh0MDaJqaj
-	4RRm5I7kAx7fPUymotPLNX4YhThKJYfVqKQ0pqJoTx5J+pJ3/wWTJCGAxJ0GyDfyIdbXR399K0uek
-	16xKRMevjKpf7rmG2klWpwl+fJP0VsF2TWa0isDJTZ6XjqZBObQd+MVIdLvC/4cCWCXBMGXGWUs/m
-	kQpVWGl5YgSODHAsx2muEzXnSr/X9Dxgen4+mQ+UdO+py3i0KIenGT24dI35fegJ8di7JVaakf0Gs
-	jULMmm23U+hZ5PZs0DVtRneFJx7H6z1wTscdZTIo7FsZkH+kR4KkZSPHws3Pe+YW9gX2EsUhskjB3
-	QcfZVeQA==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=EiKLOiDVudlQGkTMkHnlpYL7j4GbMZyPsHezGFhbg+8=; b=SR4tTPV1KneMyezFrCuctz35KV
+	ydwkLg4O8u7wo5dFDIK24aCgIOfdKuypDJjb3UPxcuw3IhU1upYxU5inwO+rkP/2kTQrZn89Mnu8Q
+	lPMdj2SS32xnofhuGCSYZKEoHC7VV9dP9pXXgaa/anFSmTQyaCooyHEgsImJ27JtBGYKc7jCFLPAE
+	TKBRXpJpXtOk6UxbtdB+8dOPQqfgpfF+12KQeTlbJciTBA8ZHuEUwADi6EECbTvh84vmVF6MI2WuM
+	MBugdvAqJyVx9b8gEW4JK+nHPI2pIgG9V6ECUwY/nGmSBhloVCV1gawJP7jba0k4xoZN2Fgcvi46J
+	zMqV8YKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wYdEl-0000000CkXw-0ou2;
-	Sun, 14 Jun 2026 05:18:23 +0000
+	id 1wYdEn-0000000CkYl-1IPh;
+	Sun, 14 Jun 2026 05:18:25 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wYdEi-0000000CkXa-3Czm
+	id 1wYdEl-0000000CkXv-0Qvk
 	for ath12k@lists.infradead.org;
-	Sun, 14 Jun 2026 05:18:22 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65E4nBib206382
-	for <ath12k@lists.infradead.org>; Sun, 14 Jun 2026 05:18:19 GMT
+	Sun, 14 Jun 2026 05:18:24 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65E5CUcF252141
+	for <ath12k@lists.infradead.org>; Sun, 14 Jun 2026 05:18:22 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=wgFP3UvqzIlvDi28YX756R
-	6m0ZesSFOytF38ii9aXEM=; b=LiZWEovXLxq8AWi/JX9hIWpViS1h1twDo0ff/5
-	WcOPvaz290vV4eiDluZc4pJ9R1Ri10m91liaaXr4W5Gbora2brAyfWfZUiMT/knT
-	J8GaexaapG6ZPM5YDbhnIh0Bz8fhiM9q4nYsunN7V3nKlULA6y62qL50h2qXxRFD
-	wseiOGnIXLAqwj0DaKTuoj7KBSrGkXJeqFhweEdm2lvPXJtZ5UoMZD+QWLzMxnNI
-	6BQwgNzogABZbFikYgzpcqZKCj0zBNGDyc2MlOxzV0wLvsRJl+V98jMzDKHwX4AQ
-	CjkabX7AKqno7e5p/WOhnsTtnqLHbVcwNbexf2+ZAj6igM2g==
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=EiKLOiDVudl
+	QGkTMkHnlpYL7j4GbMZyPsHezGFhbg+8=; b=kRBdEthxlh/q7uir2Vpqxhx3Jsq
+	eFoBXsdL387n1KpUdc16+IjgUwXtEzWySQlhSSS9khGv1NnlpI1tMwdDysl9aLWU
+	rrOw8C/TWtIl3WiORplV9wx5Ktahwh4UPpmmRuLQTtpr3TG2HQBo4gtfxjoOAxc1
+	zyCvxnwmisEJWbeOh6GJQ4xdghtGGhuNvgqj9Mif72XX1lkVNVCkIpyc6NEK67J+
+	aZZ1WJKvWVM31Eau8/ctaYx2tEi1BoVuhSzzudFevr9SgVEJsb1mHj1udFP6SXpe
+	QqP05xrZbP+pVeScQWmw3j6VHtxRpCby9UbbP3QidahdUNAuFH/XLp8hZXQ==
 Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4erye12sa8-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ery9fatgu-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Sun, 14 Jun 2026 05:18:18 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2beff6b6e74so29475445ad.1
-        for <ath12k@lists.infradead.org>; Sat, 13 Jun 2026 22:18:18 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Sun, 14 Jun 2026 05:18:22 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2c0c36f1cc0so39988755ad.3
+        for <ath12k@lists.infradead.org>; Sat, 13 Jun 2026 22:18:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1781414298; x=1782019098; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=wgFP3UvqzIlvDi28YX756R6m0ZesSFOytF38ii9aXEM=;
-        b=ObNjHiQgftHObUazB0BH93iEer35L0P0jIDM+bm8/xKHY7okmL+Cc2riq11iarcJ0k
-         dt0ZpXeDtFQwyBmCbzvI5GAsKSlQY7HFn3+XGSpulesEp9wHvfepiZiNkIt5QC/XB+H4
-         gaElIdvvUwXpgQwvIUd52IiYsj9sDbPIaNpSQYPGTGPee3u/JMixEoNaJ8XAQ/und5CD
-         Bvp1fmRwqglr/6t8t8uQvc+NsXvt5Im/HmvYfFa95gjdFszoXq1YkC6CvSOCr0XA6Q8i
-         SYRVbAKSAgmKX0cOnYz2sZw5uGhny5n8gpyzD94W0r61UpR2gBNDPP7una67wfXVh5iZ
-         m/XQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781414298; x=1782019098;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=oss.qualcomm.com; s=google; t=1781414302; x=1782019102; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=wgFP3UvqzIlvDi28YX756R6m0ZesSFOytF38ii9aXEM=;
-        b=XrWzG7BJ8tzAPjD4DhOS99LjwsDIm8lpf+w+0cywJGp2aPhc2GUrCF8dbxllSfPaGb
-         T+TF7MCsPllo8HJjsWNWmJsX9WxPNvHds8NZrFc9QVqiffcPEaomTA7z6TvMCH2XMRbL
-         iusma0S57BaD+4X5JVuwoypXbSe7s7UaO38LvIDXELwxDyUKCAdyCXqlGGjym3Uld2bQ
-         TJT5UmekLnrz4y1uAo3ZdnEU5UM5PFJ4BImioc+vbIHiPArconJo2uthacd3FyeCNnMI
-         CgscSAy8g++/s/XAFT3t+y2QaHBxIQPjbWchpNgsUWDOJeuzfQuzSl0HqnO9E+LZWcxA
-         ta5A==
-X-Forwarded-Encrypted: i=1; AFNElJ/IkJb6YmQlsSXUg3YdihG3EE3cMKf7iahTFtzN3g9Q/dHJ4+R9GREVWmA7y5MvsUXPTvsyc4w=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzEzjZtZoawwrO/sV3kgDiq4rHWTZ/hiE+xCu+wrJQkakdsBFSn
-	Ehf16Fwed4MpT7prp6MmjV9aC1gz1ze/VqQ4673OkEoTGGLlirtuaIXDXkTaX9OqzkIYcXvDUDs
-	rZGC1orjwBySj4JgjMVXuifcDnR0qGX8J+alyMX//ztmhQzM+LGpINeY9KcQoYlJM
-X-Gm-Gg: Acq92OFtWGzbpbNkNuEEUbBbQjkUW9tph3mkMHfiGfuhLGtEbY7huzYY6Dy4HnzmAeu
-	SOCyCQbMKDLkHRHC2yXo0U8nk2mQcr1XPva6p4fP4hiXSh9w9hS2b81+Cz9CjOL0sOB0XEcVBuK
-	DtnwwQ3NCyUW8aXMSRRGmtUEZjrw+zWaj+5E2X+R2eNl/h9Br6j04VHQp48vJD+xk5y7HnVKK1j
-	MNoQ5xZyxiYFvtclGRUrfzXobVhfsRYtIopjB9btHUb7MHyjM/XaZQ5ra5j2i6hHBPKUn8UK/5I
-	ADO+asKHln4fUMn/iJ8xaVLYRKnoaVo60CdPqn0wrE45VYWNROSHcwP1MW52v9f0k0wxVYUeThR
-	1hJsQsPQRWcvKfXCpg4nM+sOusLeMpFw0zu1n2Q9/xtqt6Dj1yIBzh2QQBXLVm7pUaWYwSPToYN
-	Rr4jLIGhflJQbQIByS3t0SHhBgz1EXKz1Ke/jja58=
-X-Received: by 2002:a17:903:240f:b0:2c1:5667:2740 with SMTP id d9443c01a7336-2c4125591a7mr97800425ad.21.1781414297582;
-        Sat, 13 Jun 2026 22:18:17 -0700 (PDT)
-X-Received: by 2002:a17:903:240f:b0:2c1:5667:2740 with SMTP id d9443c01a7336-2c4125591a7mr97800205ad.21.1781414297033;
-        Sat, 13 Jun 2026 22:18:17 -0700 (PDT)
+        bh=EiKLOiDVudlQGkTMkHnlpYL7j4GbMZyPsHezGFhbg+8=;
+        b=AolsRKlccC9BJjKZc81KaCWA4sH9IWmufNg/hPJM2rQ3VjEvQykI3X/EHQSfc+/gs0
+         DTpGOiLp4sLJO9kqjmOah21f0yos21uCt/pcqYEWPwc68Tg7mMRBYL/Iuo1yOQ/6qw19
+         pCNcMFl7WrD3LmMco0adOOaVkNyjRFVV064Wyz5WZtwm243H/Wtu3ePMHkn/4hebAOI8
+         eWpYR8toFLkV3f5XR6NutHg8GimZdCm56LT7l5Rw+4SRPG+xfb8U6The/Kv4fasH/hYW
+         YrLn+rV4LJMsJ5nr806Dg2SCkMYMCmFE4Gi5VfHck7aqI7qLh8kba+oXSOLgNIHqzOH5
+         jH6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1781414302; x=1782019102;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=EiKLOiDVudlQGkTMkHnlpYL7j4GbMZyPsHezGFhbg+8=;
+        b=i+zxJo5M0GtbSrQYFlgcAx/K3/iqrFhWeNIKjFW+MJvwj29amA6zji1/7q16VCGLhF
+         K+nWuKas1qEBqo8O2RvRW1K/hTe4u7CPY/PEs8G4p769MvBB47VoyRIhZZmWb+tyTZWq
+         R7wiULX7HxYjMnWTnN/+TUwxjopOHT2xtJ+fSFSEgOJ92Cbtnx2mAiOkiWzx3zyxFO6Y
+         mZhOxJm7YxpCp0gXnevipxe942kXCO2ZkxXw5NE6jJKG6+AxSdaLUA3SLd+uqc0tYDBq
+         JqXeBsEWWKOBar46ON/VoS0BPoIox0dfGzWKT0Q4tC1LVaerpYkZKjLMqZyt+gnxeOeJ
+         +ipg==
+X-Forwarded-Encrypted: i=1; AFNElJ/kgnAOXL9S32TRfghgOclvpvv8yyDmVOnJyxgUtI3fweIpuTseCizGYhSRstimDpRDy53SavY=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz4O8AytgSz/Gymu6mcKls+zpyEKwYloOMnemsuAqlUQs0nfAe3
+	ndECWFgAksEiGiDnsWFNy7SS/S3tUby5U/E3nthiO1ZkV364IzqYBRwI9NXRg3CV9o1uMOUzxbI
+	Xs6cr9kEyqbVw/HJ6lbwmTqIpZsaVDzu7wxvgdQKA1kf6Mi1RrrIXZC0rB8svirtr
+X-Gm-Gg: Acq92OG2DyVNfCe6PF5BQyyGKwyaU5McC60JLde3sr9rs333rIEFjK87tqFpk0An5JI
+	moVzOLBmX4H5z2WIcaMkAz8XC0gHDbIHVTuGtiQXSEf8ZQ9kI0ZwYuGEdfT8CXET57Z1DmGqNvA
+	5igtSnXcd2y5UXLMFJQ12fq7lUOBt1rKRpptb5y6ENRTksWvgJ8K+0dBuvecJwzx505KX/5JL0g
+	A9y99TPF6dQWxq6Lhv49L/VmaHx4uIeTZaFdnsm00Pzjqt56im3lnLuhoyqHY5f7jzqwOa9vwF0
+	nn+FUV0Mv/wxHHxfN7KunwsrD/aOQhPCBFpjWugf3pLm6f/9myNT7RYqUI8eB0wlzh4s4vNLPu2
+	0zp4cFlQjw87NYvFtdz+6TwL527aTImcjJmkk3UlzdQVOwW//puzli45YNogIZMVvMMzVg5kz3u
+	K2gAaNkTjMS+JOPD7mBQ3wUWelU8Q8O0BK5/nChGQ=
+X-Received: by 2002:a17:903:46c6:b0:2b0:6a22:5165 with SMTP id d9443c01a7336-2c41050a155mr109935365ad.7.1781414302031;
+        Sat, 13 Jun 2026 22:18:22 -0700 (PDT)
+X-Received: by 2002:a17:903:46c6:b0:2b0:6a22:5165 with SMTP id d9443c01a7336-2c41050a155mr109935095ad.7.1781414301565;
+        Sat, 13 Jun 2026 22:18:21 -0700 (PDT)
 Received: from hu-ppranees-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2c42f7c651dsm64456705ad.26.2026.06.13.22.18.14
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2c42f7c651dsm64456705ad.26.2026.06.13.22.18.19
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 13 Jun 2026 22:18:16 -0700 (PDT)
+        Sat, 13 Jun 2026 22:18:21 -0700 (PDT)
 From: P Praneesh <praneesh.p@oss.qualcomm.com>
 To: johannes@sipsolutions.net
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         praneesh.p@oss.qualcomm.com
-Subject: [PATCH wireless-next v2 0/5] wifi: cfg80211: Add fragmented per-link station stats in MLO
-Date: Sun, 14 Jun 2026 10:47:30 +0530
-Message-ID: <20260614051739.3979947-1-praneesh.p@oss.qualcomm.com>
+Subject: [PATCH wireless-next v2 1/5] wifi: cfg80211: Drop unused link stats handling in nl80211_send_station()
+Date: Sun, 14 Jun 2026 10:47:31 +0530
+Message-ID: <20260614051739.3979947-2-praneesh.p@oss.qualcomm.com>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20260614051739.3979947-1-praneesh.p@oss.qualcomm.com>
+References: <20260614051739.3979947-1-praneesh.p@oss.qualcomm.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=yes
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-GUID: ARavWXFPhXWPfBhenk4i89FHB0O9y-QV
-X-Authority-Analysis: v=2.4 cv=MNlQXsZl c=1 sm=1 tr=0 ts=6a2e399a cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjE0MDA0OSBTYWx0ZWRfX/u/b9irhCnSJ
+ o2lyu8W2MJRrMbjfbZT3+oi2YJqOuOI/z1pWUDSmUsht+7/q9zi3Rey2JiNtscwiZkFb5DXYfBk
+ IRtehb/RcmIEj41SebPEF5w81gvrUYhZslDnDoDDNBJnKpZWm9abaj1nKBd7X4Seqz00YZFRW9T
+ tMAykYG6DxBvxR1yxkJuusru3dz0/KKXZtx6nmDLtSNycL27rhnu+vUamqsOaChhVXda3czLjpF
+ 9M19BMPJqUsKH7R7HmPYjMy0uZmrnwj8kZXmH5/oslH5WnvPKFdAk/PFzOSC4AJ8dDwkwE6/LkC
+ ECuS2jkigE6SiaxmpEu5NUxOt2ItaSr7hiz2CGg9ethllvoz5JS9KuM0gxi8bt8dHndHjNvFnF4
+ WKUuVzsZcaGf3sMaw7aQNMOULww/3ycwJAJTvAWj43ka6WLPIvqB+cOwmb5pZAoX0mlg2NtmkGR
+ 4B/Y8tXb078a+el4h6A==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjE0MDA0OSBTYWx0ZWRfX7gzZEjA3Fo7k
+ DuQeBNUzUeDMCrW54u5iU+w5L1BIB4KvegvAlVrTn/JRnxc69LUaZawttzjzr2INPq20K4UCA8i
+ YTG2LYQ7gE+/yvHSvks0lckMalERBB4=
+X-Proofpoint-GUID: HOfvRjTlzePC6C23cKXBxSGEljHUUVFK
+X-Proofpoint-ORIG-GUID: HOfvRjTlzePC6C23cKXBxSGEljHUUVFK
+X-Authority-Analysis: v=2.4 cv=ULvt2ify c=1 sm=1 tr=0 ts=6a2e399e cx=c_pps
  a=cmESyDAEBpBGqyK7t0alAg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=WN52PlUurRMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=D0vhY7WTa_WH9j_4aaoA:9 a=3ZKOabzyN94A:10 a=xE34mhsjmDcA:10
- a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjE0MDA0OSBTYWx0ZWRfXwUThbt02MBaF
- pA3mt9byiKjVKtLV2ZjbBV/PjjQMGTplMhnHV+1u7lpaWjGL1td34xb08AQB4evh5S0ff6U7rpk
- L01mYs5aTUN9prcdFcc01ldV8hSoVOw=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjE0MDA0OSBTYWx0ZWRfX7xnfIUb20ri8
- SJgrNIBQoCTOqaSI7tBs03fdzXXS5VxNBhLFRT5IivtRHJ6Xo9CuNdS3VKw/M70RF2GJsF43jeN
- 5Dnwfeb9WHrZF1xmIkklBt/bvZjpNaTvK8FmUxqMfXs62eNkMdc7Y2uFsuyOsMS+yHuxPWQhBkC
- S85wcvR+SpKfunlLroXS5ZVY7gFnuxvSnI6pmK8lM7dcKGPYz7n2JKmR3s3guGJ5SGXxRbGDMCI
- 3gr1H4HZ3kuSAdSlyuC+unrC3RCQmCz3YxbpHq/8djGLLDz9X2UP49WItVct6K6ALWbGKQNODuF
- Ppd8TkXLSbATE2NCYY3aadi44wWyRBb9Nb9szDnNGRj0oei6obkPqKmCfwsN49EervJtUM1OfzB
- mkhBHaZMA3NI5Xz/0balidsSpIc2yQXLmw/HkkXYPY5gujPsuXPyH181EecTQCYvUWCz5C5bxEE
- IgaWdmw9TCfU8M4AUHQ==
-X-Proofpoint-ORIG-GUID: ARavWXFPhXWPfBhenk4i89FHB0O9y-QV
+ a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8
+ a=9HtPZ92rRTiFI9LOixoA:9 a=1OuFwYUASf3TG4hYMiVC:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
  definitions=2026-06-14_01,2026-06-12_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 impostorscore=0 spamscore=0 priorityscore=1501 phishscore=0
- adultscore=0 suspectscore=0 clxscore=1015 lowpriorityscore=0 bulkscore=0
+ suspectscore=0 clxscore=1015 phishscore=0 spamscore=0 priorityscore=1501
+ lowpriorityscore=0 bulkscore=0 malwarescore=0 adultscore=0 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2606040000 definitions=main-2606140049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260613_221820_936054_2319745A 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20260613_221823_146848_7F9EFF9E 
+X-CRM114-Status: GOOD (  15.08  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,301 +143,136 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This series introduces fragmentation support for Multi-Link Operation
-(MLO) station statistics in nl80211.
+Remove the link level statistics handling from
+nl80211_send_station() and drop the unused link_stats parameter
+from its signature and callers. The removed code iterated over
+each MLO link and attempted to send link specific station data
+through NL80211_ATTR_MLO_LINKS, but this logic was never used
+because link_stats was always false.
 
-The current nl80211_dump_station() implementation works well for legacy
-(single-link) stations, but it does not scale for MLO peers. With
-multiple links per station, dumping all per-link information in a single
-netlink message can exceed size limits, resulting in -EMSGSIZE errors
-and incomplete dumps.
+This logic was introduced during early work on link level station
+statistics with the intention of reporting information for each
+link. Due to message size concerns when a station has multiple
+links, the feature was disabled behind the link_stats flag and
+remained unused.
 
-With 802.11be (Wi-Fi 7), a single station may have multiple links, each
-with its own statistics. To address this, this series introduces a
-stateful dump mechanism that splits station information into multiple
-messages when required.
+The link level reporting block in nl80211_send_station() is dead
+code and cannot support larger messages, so remove it. This
+cleanup also prepares for proper link level statistics reporting
+in nl80211_dump_station() in a later patch, where fragmentation
+allows safe transmission of multi link data.
 
-The dump is performed in two phases:
-  - Phase 0: Aggregated (station-level) statistics
-  - Phase 1: Per-link statistics sent in separate messages
+Also fix label indentation: the nla_put_failure label had an
+erroneous leading space.
 
-This ensures:
-  - Reliable delivery of complete station information for MLO peers
-  - Backward compatibility for legacy stations
-  - A scalable design for future extensions
-
-Summary of changes:
-  - Drop unused per-link stats handling from nl80211_send_station()
-  - Introduce a helper to pack common station-level STA_INFO attributes
-  - Refactor nl80211_dump_station() to use a stateful dump context
-  - Implement per-link stats fragmentation using a two-phase approach
-  - Add optional MAC address filtering for per-link station dumps
-
-Message Layout Examples:
-
-Aggregated Stats (Phase 0)
-
-NL80211_CMD_NEW_STATION
- ├─ NL80211_ATTR_IFINDEX
- ├─ NL80211_ATTR_MAC
- ├─ NL80211_ATTR_GENERATION
- └─ NL80211_ATTR_STA_INFO
-      ├─ <aggregated station attributes>
-      └─ ...
-
-Note: No NL80211_ATTR_MLO_LINKS is included in this phase.
-Per-link stats are sent in Phase 1.
-
-Per-Link Stats (Phase 1) - one message per link
-
-NL80211_CMD_NEW_STATION
-  ├─ NL80211_ATTR_IFINDEX
-  ├─ NL80211_ATTR_MAC  (MLO MAC)
-  ├─ NL80211_ATTR_GENERATION
-  └─ NL80211_ATTR_STA_INFO (empty - present for parser compat)
-       └─ NL80211_ATTR_MLO_LINKS
-            └─ [linkN]
-                 ├─ NL80211_ATTR_MLO_LINK_ID = N
-                 ├─ NL80211_ATTR_MAC = <linkN MAC>
-                 └─ NL80211_ATTR_STA_INFO
-                      ├─ NL80211_STA_INFO_RX_BYTES
-                      ├─ NL80211_STA_INFO_TX_BYTES
-                      └─ ... more linkN stats ..
-
-Testing:
-  - Verified using "iw station dump" on a 3-link MLO station
-  - iw requires some updates to parse fragmented per-link stats
-    (e.g., NL80211_ATTR_MLO_LINKS handling). Those changes will be
-    submitted separately.
-
-Sample station dump output:
-
-Single link EHT STA:
-~~~~~~~~~~~~~~~~~~~
-
-Station ff:ff:ff:0f:f8:64 (on wlan0)
-        authorized:     yes
-        authenticated:  yes
-        associated:     yes
-        preamble:       long
-        WMM/WME:        yes
-        MFP:            yes
-        TDLS peer:      no
-        inactive time:  182068 ms
-        rx bytes:       1567
-        rx packets:     15
-        tx bytes:       1083
-        tx packets:     6
-        tx retries:     0
-        tx failed:      0
-        rx drop misc:   0
-        signal:         -30 dBm
-        signal avg:     -27 dBm
-        tx bitrate:     6.0 MBit/s
-        tx duration:    3136 us
-        rx bitrate:     1441.3 MBit/s 80MHz EHT-MCS 7 EHT-NSS 4 EHT-GI 0
-        rx duration:    0 us
-        last ack signal:-31 dBm
-        avg ack signal: -31 dBm
-        DTIM period:    2
-        beacon interval:100
-        connected time: 185 seconds
-        associated at [boottime]:       157.326s
-        associated at:  157326 ms
-        current time:   342408 ms
-
-        Link 0:
-                address: ff:ff:ff:0f:f8:64
-                inactive time:  182068 ms
-                rx bytes:       1567
-                rx packets:     15
-                tx bytes:       1083
-                tx packets:     6
-                tx retries:     0
-                tx failed:      0
-                rx drop misc:   0
-                signal:         -30 dBm
-                signal avg:     -29 dBm
-                tx bitrate:     6.0 MBit/s
-                tx duration:    1568 us
-                rx duration:    0 us
-                last ack signal:-31 dBm
-                avg ack signal: -31 dBm
-                DTIM period:    2
-                beacon interval:100
-
-3 link MLO EHT STA:
-~~~~~~~~~~~~~~~~~~
-
-Station ff:ff:ff:ff:5f:23 (on wlan0)
-        authorized:     yes
-        authenticated:  yes
-        associated:     yes
-        preamble:       long
-        WMM/WME:        yes
-        MFP:            yes
-        TDLS peer:      no
-        inactive time:  173476 ms
-        rx bytes:       1036
-        rx packets:     9
-        tx bytes:       1694
-        tx packets:     6
-        tx retries:     1
-        tx failed:      1
-        rx drop misc:   0
-        signal:         -20 dBm
-        signal avg:     -22 dBm
-        tx bitrate:     6.0 MBit/s
-        tx duration:    2476 us
-        rx duration:    0 us
-        last ack signal:-22 dBm
-        avg ack signal: -22 dBm
-        DTIM period:    2
-        beacon interval:100
-        connected time: 174 seconds
-        associated at [boottime]:       168.236s
-        associated at:  168236 ms
-        current time:   342412 ms
-
-        Link 0:
-                address: ff:ff:ff:ff:5f:23
-                inactive time:  173476 ms
-                rx bytes:       138
-                rx packets:     3
-                tx bytes:       0
-                tx packets:     0
-                tx retries:     0
-                tx failed:      0
-                rx drop misc:   0
-                signal:         -27 dBm
-                signal avg:     -28 dBm
-                tx duration:    0 us
-                rx duration:    0 us
-                DTIM period:    2
-                beacon interval:100
-        Link 1:
-                address: ff:ff:ff:ff:5f:24
-                inactive time:  173976 ms
-                rx bytes:       898
-                rx packets:     6
-                tx bytes:       1694
-                tx packets:     6
-                tx retries:     0
-                tx failed:      0
-                rx drop misc:   0
-                signal:         -20 dBm
-                signal avg:     -22 dBm
-                tx bitrate:     6.0 MBit/s
-                tx duration:    2476 us
-                rx bitrate:     6.0 MBit/s
-                rx duration:    0 us
-                last ack signal:-22 dBm
-                avg ack signal: -22 dBm
-                DTIM period:    2
-                beacon interval:100
-        Link 2:
-                address: ff:ff:ff:ff:5f:25
-                inactive time:  174188 ms
-                rx bytes:       0
-                rx packets:     0
-                tx bytes:       0
-                tx packets:     0
-                tx retries:     1
-                tx failed:      1
-                rx drop misc:   0
-                signal:         -30 dBm
-                signal avg:     -31 dBm
-                tx bitrate:     12.0 MBit/s
-                tx duration:    1920 us
-                rx duration:    0 us
-                DTIM period:    2
-                beacon interval:100
-
-With HE AP and STA:
-~~~~~~~~~~~~~~~~~~
-
-Station ff:ff:ff:f1:f8:f4 (on wlan0)
-        authorized:     yes
-        authenticated:  yes
-        associated:     yes
-        preamble:       long
-        WMM/WME:        yes
-        MFP:            yes
-        TDLS peer:      no
-        inactive time:  10176 ms
-        rx bytes:       968
-        rx packets:     10
-        tx bytes:       856
-        tx packets:     6
-        tx retries:     0
-        tx failed:      0
-        rx drop misc:   0
-        signal:         -24 dBm
-        signal avg:     -27 dBm
-        tx bitrate:     6.0 MBit/s
-        tx duration:    1300 us
-        rx bitrate:     1297.1 MBit/s 80MHz HE-MCS 6 HE-NSS 4
-        rx duration:    0 us
-        last ack signal:-30 dBm
-        avg ack signal: -30 dBm
-        DTIM period:    2
-        beacon interval:100
-        short slot time:yes
-        connected time: 11 seconds
-        associated at [boottime]:       69.552s
-        associated at:  69530 ms
-        current time:   80780 ms
+Signed-off-by: P Praneesh <praneesh.p@oss.qualcomm.com>
 ---
-v2:
-    - In patch 1/5, Narrowed the scope: only drops the link stats from
-      nl80211_send_station() (formerly also deleted nl80211_fill_link_station();
-      that function is now moved to patch 4/5 and reused there). Also fix
-      the nla_put_failure label indentation (spurious leading space).
-    - In patch 2/5, Fix all nla_nest_start_noflag() calls in
-      nl80211_send_station() for nested attribute types (STA_INFO,
-      BSS_PARAM, TID_STATS, per-tid) to use nla_nest_start() so that
-      NLA_F_NESTED is set correctly.
-    - In patch 3/5, Drop nl80211_dump_station_cb wrapper struct and
-      nl80211_send_accumulated_station() helper; store the context pointer
-      directly at cb->args[2] following the nl80211_dump_wiphy pattern.
-      Build the common netlink header inline in the dump loop instead of
-      delegating to a helper. Add documentation explaining why
-      memset(&ctx->sinfo) is required after cfg80211_sinfo_release_content()
-      to prevent a double-free in nl80211_dump_station_done().
-    - In patch 4/5, Restructure the dump loop around a switch statement so
-      one netlink message is produced per iteration with header construction
-      in a single place. Replace nl80211_send_link_station() helper with a
-      leaner nl80211_put_link_station_payload() that only fills the
-      NL80211_ATTR_MLO_LINKS nest, leaving header assembly to the caller.
-      Fix all nla_nest_start_noflag() calls in nl80211_fill_link_station()
-      to use nla_nest_start(). Fix the AGGREGATED phase to propagate the
-      real error from nl80211_put_sta_info_common() instead of returning
-      skb->len, which would cause an infinite re-invocation loop on
-      -EMSGSIZE. Use __free(kfree) for attrbuf to avoid scattered manual
-      kfree() calls.
-    - In patch 5/5, Rename local mac_addr pointer to mac to avoid shadowing
-      the outer ctx->mac_addr field. Set cb->args[2] = 0 on the MAC
-      validation error path to prevent nl80211_dump_station_done() from
-      attempting to free a partially initialised context.
----
+ net/wireless/nl80211.c | 50 +++++-------------------------------------
+ 1 file changed, 6 insertions(+), 44 deletions(-)
 
-P Praneesh (5):
-  wifi: cfg80211: Drop unused link stats handling in
-    nl80211_send_station()
-  wifi: cfg80211: Add helper to pack station-level STA_INFO
-  wifi: cfg80211: Refactor nl80211_dump_station() to prepare for
-    per-link stats
-  wifi: cfg80211: Fragment per-link station stats in
-    nl80211_dump_station()
-  wifi: cfg80211: support MAC address filtering in station dump for link
-    stats
-
- include/uapi/linux/nl80211.h |  19 ++
- net/wireless/nl80211.c       | 402 ++++++++++++++++++++++++-----------
- 2 files changed, 297 insertions(+), 124 deletions(-)
-
-
-base-commit: 972c4dd19cb92e03d75b66c426cfade07582a1ba
+diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
+index 53b4b3f76697..98548e69b5fc 100644
+--- a/net/wireless/nl80211.c
++++ b/net/wireless/nl80211.c
+@@ -8033,14 +8033,10 @@ static int nl80211_send_station(struct sk_buff *msg, u32 cmd, u32 portid,
+ 				u32 seq, int flags,
+ 				struct cfg80211_registered_device *rdev,
+ 				struct wireless_dev *wdev,
+-				const u8 *mac_addr, struct station_info *sinfo,
+-				bool link_stats)
++				const u8 *mac_addr, struct station_info *sinfo)
+ {
+ 	void *hdr;
+ 	struct nlattr *sinfoattr, *bss_param;
+-	struct link_station_info *link_sinfo;
+-	struct nlattr *links, *link;
+-	int link_id;
+ 
+ 	hdr = nl80211hdr_put(msg, portid, seq, flags, cmd);
+ 	if (!hdr) {
+@@ -8258,45 +8254,11 @@ static int nl80211_send_station(struct sk_buff *msg, u32 cmd, u32 portid,
+ 			goto nla_put_failure;
+ 	}
+ 
+-	if (link_stats && sinfo->valid_links) {
+-		links = nla_nest_start(msg, NL80211_ATTR_MLO_LINKS);
+-		if (!links)
+-			goto nla_put_failure;
+-
+-		for_each_valid_link(sinfo, link_id) {
+-			link_sinfo = sinfo->links[link_id];
+-
+-			if (WARN_ON_ONCE(!link_sinfo))
+-				continue;
+-
+-			if (!is_valid_ether_addr(link_sinfo->addr))
+-				continue;
+-
+-			link = nla_nest_start(msg, link_id + 1);
+-			if (!link)
+-				goto nla_put_failure;
+-
+-			if (nla_put_u8(msg, NL80211_ATTR_MLO_LINK_ID,
+-				       link_id))
+-				goto nla_put_failure;
+-
+-			if (nla_put(msg, NL80211_ATTR_MAC, ETH_ALEN,
+-				    link_sinfo->addr))
+-				goto nla_put_failure;
+-
+-			if (nl80211_fill_link_station(msg, rdev, link_sinfo))
+-				goto nla_put_failure;
+-
+-			nla_nest_end(msg, link);
+-		}
+-		nla_nest_end(msg, links);
+-	}
+-
+ 	cfg80211_sinfo_release_content(sinfo);
+ 	genlmsg_end(msg, hdr);
+ 	return 0;
+ 
+- nla_put_failure:
++nla_put_failure:
+ 	cfg80211_sinfo_release_content(sinfo);
+ 	genlmsg_cancel(msg, hdr);
+ 	return -EMSGSIZE;
+@@ -8549,7 +8511,7 @@ static int nl80211_dump_station(struct sk_buff *skb,
+ 				NETLINK_CB(cb->skb).portid,
+ 				cb->nlh->nlmsg_seq, NLM_F_MULTI,
+ 				rdev, wdev, mac_addr,
+-				&sinfo, false) < 0)
++				&sinfo) < 0)
+ 			goto out;
+ 
+ 		sta_idx++;
+@@ -8613,7 +8575,7 @@ static int nl80211_get_station(struct sk_buff *skb, struct genl_info *info)
+ 
+ 	if (nl80211_send_station(msg, NL80211_CMD_NEW_STATION,
+ 				 info->snd_portid, info->snd_seq, 0,
+-				 rdev, wdev, mac_addr, &sinfo, false) < 0) {
++				 rdev, wdev, mac_addr, &sinfo) < 0) {
+ 		nlmsg_free(msg);
+ 		return -ENOBUFS;
+ 	}
+@@ -21635,7 +21597,7 @@ void cfg80211_new_sta(struct wireless_dev *wdev, const u8 *mac_addr,
+ 		return;
+ 
+ 	if (nl80211_send_station(msg, NL80211_CMD_NEW_STATION, 0, 0, 0,
+-				 rdev, wdev, mac_addr, sinfo, false) < 0) {
++				 rdev, wdev, mac_addr, sinfo) < 0) {
+ 		nlmsg_free(msg);
+ 		return;
+ 	}
+@@ -21665,7 +21627,7 @@ void cfg80211_del_sta_sinfo(struct wireless_dev *wdev, const u8 *mac_addr,
+ 	}
+ 
+ 	if (nl80211_send_station(msg, NL80211_CMD_DEL_STATION, 0, 0, 0,
+-				 rdev, wdev, mac_addr, sinfo, false) < 0) {
++				 rdev, wdev, mac_addr, sinfo) < 0) {
+ 		nlmsg_free(msg);
+ 		return;
+ 	}
 -- 
 2.43.0
 
