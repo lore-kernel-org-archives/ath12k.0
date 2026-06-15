@@ -4,101 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BACCCD98DE
-	for <ath12k@archiver.kernel.org>; Mon, 15 Jun 2026 08:38:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A6A0CD98C7
+	for <ath12k@archiver.kernel.org>; Mon, 15 Jun 2026 11:21:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:MIME-Version:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=FpQspOt3oBlmx1ICglqJz9lIvpUfboVOloEqqL6E+S0=; b=e9k05LJA0Vx57CL2Che4O2EBwq
-	rIz8ouzo01EwUSasT0feEEhLYbvSMUmvVr5nXAw/OFuIG0fZVjFDLSxpnn7M6qk5nmaAEaJXmm17o
-	1pI9QB5w614wUc9km0w8mUd6D+acDx67Gvsnfhm80oHSTcH5xmIyJTdzxHjQcfQoZIXym/lltqiwP
-	3G1sXCZy3UqwmEDkBZqA7yT28J67GOEg4EekIhGcrStyv2Hndnlt6FQAoQmDMOWltKyETo+UBvVSA
-	LL+x3v7SPqO21db1MJ89b2WuMpHO2oS4naq+AqXcTXEFIqMTOW/TBjQZGgTup6N3/DlS2c335O5Gc
-	TEWOllPQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=B6WQlP4LsP1BC2/D9rOcFasJgBtWxq+pQN34qv7/LvI=; b=GrN7xmWHTZ3lyvqcFDdk61xAmm
+	sHltvpXmpthHqv9/WWfvKsI4bp33SzncPz5wM6hkw+/xsClqvRNoBFs1PSBiaoPmPTG35fn1NSd1y
+	58iSQJND8KfK5xXxVUDlH9Ogp2GCQIBbc3WWEFXUx2yKsocJPm9efIVD5Lka2MyOxcK0pXMTcW3nA
+	rJpqIQPYEzyiB1z/R2J/J3WbgSYTz+9UBGCwywC9i9MYaIeyn4FSjz2zbsOVZbohOa+Vj9w+oS2qP
+	IYm6gxgAdDmd+0ez0KtD6Mtkw2Lvr5cLIgDKFl61Tuw2mfMxa7Zem6mQIh7chTXNCch8ZwlLjQ2EJ
+	MoBlA36w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ2pT-0000000DtMJ-42lC;
-	Mon, 15 Jun 2026 08:37:59 +0000
-Received: from mail-qk1-x736.google.com ([2607:f8b0:4864:20::736])
+	id 1wZ5Nb-0000000E5mE-0M57;
+	Mon, 15 Jun 2026 11:21:23 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ2pP-0000000DtLD-1gBj
+	id 1wZ5NW-0000000E5lD-3EaZ
 	for ath12k@lists.infradead.org;
-	Mon, 15 Jun 2026 08:37:58 +0000
-Received: by mail-qk1-x736.google.com with SMTP id af79cd13be357-91591f19c30so444066885a.1
-        for <ath12k@lists.infradead.org>; Mon, 15 Jun 2026 01:37:54 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1781512674; cv=none;
-        d=google.com; s=arc-20240605;
-        b=GOHC8ej5MdHsTyaNO/ei6vWYpO+kjPZj4xVVTM0zQSy2wcBC5fRHIJRhUH7MQg8IFs
-         7saf9gi7HCcVvgO23Znq38RphYY+G0njsLzlipeTpMQMFNlPgvbdGMU5FnLDwNA7q6oe
-         Ol/9yl+t2pmdD/rN6Eks9kMvnatxR6i+48ptrbD2X1t2YAzzKBzJLHKjD9f+CuAvzVt2
-         4AwRexWLPrFW/ma+fp5eQ/lcQ5SDaK66lCzuAo2zMgVuChikPImqN09ihR/NQGkQnu1n
-         FZ9r6DAiylzNcYWjc9UQbxTTGzbxRDVBSKdkky7bd1owTGPifCu80eERB9myfTIdk5LR
-         DJvw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :mime-version:dkim-signature;
-        bh=FpQspOt3oBlmx1ICglqJz9lIvpUfboVOloEqqL6E+S0=;
-        fh=7aUtyT8zpJGScMHyGjywsrvfXXRZJK3Rofi+q1nz8Gk=;
-        b=CqWFOibD0ONyRpZAHV7Dj10FJBumEmg/u7xY8NXUuZx53nu1lfiFonyi82QIRH6W2r
-         uL3XwfuRapB7Mos9wBMWGbqA37myte1L9pZljqVjDlGkG/4Nr/htL1G6BExNqSZw0TJb
-         zBRhA/Dp+VondX38yxuJ/ODAqbjIhDmMjNlv1QjaVN9WL8nOL1sOoI9bKEGH2KIPg4RC
-         G71+YYbx+7h5HJgo/ISHbucRhcFCiuLtbqGZ1l0oyprGR/kFrgWu8+i/Dw9CZpvvef7o
-         V7cONszG2ggyKGU5R0S9X/k4p68qeby7fuSw3ZT/d7pJOWsVxPYTyd6WBgDjUI0s/eRA
-         YEiw==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1781512674; x=1782117474; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=FpQspOt3oBlmx1ICglqJz9lIvpUfboVOloEqqL6E+S0=;
-        b=MHpvecjcxOXOEL+6JcdMhOENdZ2d9e2+Yxdhjk5269L2X+LNjiuPX4zPLGUtqpYYdk
-         btzIsNJFxqiu8Pq6SsmN4LPf/7Qf8Fop2cuxpH9BLyTYX+0heXoqqy0vnDB0ZBa5BgXO
-         v7ZqMC7/QxAHos+mrDOkOKhebXWREPDSl+LBzkqJByokHypG+zWtHuBKmhRAzul9ONmB
-         GZFWrlD2Hxc6mTKAUE0jvUVqh/2MNi+WSWaxUmBZ7fQgKXHl8a04qz/z6ms+QtF1fQkr
-         XviSIwtm5kh+DAMA2nA7d2xsuLZXcWd1TgNUIGjzeOB0KO9Woxtvx59AE/vYBYcE5TXJ
-         3mBw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781512674; x=1782117474;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=FpQspOt3oBlmx1ICglqJz9lIvpUfboVOloEqqL6E+S0=;
-        b=cFEEqgv+nYt0iVYkBll1/g23wDnYHF1MZ5na+nXxCx9pFrq+dessUOKvtNlnsDK7yy
-         ejvH0mu19o6BndOhQK8YgAsXoN3Lc0x4/OcCui4QLd2wiaFRz9RnCXLv43BGMZNMg1kW
-         8J/i5fC1ogN4S8yvBs8fOeSwoXYJCtUuhKpDKentdVGy+t7UsyyvP/gVAeBCP6GD/Rtr
-         Hypq+6trjORFOtie7CpVwQCItIgxublnabK0bxFAQRqAIzmO0yyEWxWCa4q/yqUN9a8Q
-         yKj5uAhjS901/yhOjqNgQYiN0M6COk5/FPWfGUmqhlJtzys6Je5+WhUt86sRJczaqJDK
-         6Xmw==
-X-Gm-Message-State: AOJu0YzvWL0xjdAQUTvK1m3oJWDKH0SHCbl4bdO28mWIzvLzt5y4lYqb
-	9t3NcZ+eusVB+0HkSqwWNHEce3Pujnj6wF844EEqsQQ601/XCOShXL4Ill+Zf1+vsNBISdHnCfa
-	D6El7N6ReIyqZZZPPwxMm/X69oh5zrOgEdDuqwOY=
-X-Gm-Gg: Acq92OGPrz9KP0I0JoOIFKIl05T8nnivo3RLsnEyl7bHCny4y2uGU5uoWrae1nh1x97
-	2fbLojJEhgjGtZma5F3S1YHQoP9n8J1g7GI8rfjTlD15KyKSnZlaTn2zXWxlhwKwyikzQa+43NU
-	w/jevbep8MlO5BYUMsf2sU9NHugJaFG+FqBLELV75U2L5OS0uc/iojJJljaj3zlvMGjY2aE6erm
-	nMmkHg5IIYDG87BkApSPOJJ1xPGLZsS/WWqAK8jzSI3hjxGLpFu8wPyc2OBaLtXzDOMSkv67YWZ
-	9ck5r8Hf9n8wW43g/7AmlX6M/r3507C4LxWlSwWKT+cvwqj9vA==
-X-Received: by 2002:a05:620a:2a15:b0:915:b9f6:71a1 with SMTP id
- af79cd13be357-917f1f4b4fcmr1445280985a.45.1781512673970; Mon, 15 Jun 2026
- 01:37:53 -0700 (PDT)
+	Mon, 15 Jun 2026 11:21:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1781522477;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=B6WQlP4LsP1BC2/D9rOcFasJgBtWxq+pQN34qv7/LvI=;
+	b=OTs6lRZn+1mUQCODsRKeCVRuSGhJd0fHsnxK3Mh5nB6Qhv6BskL8P7ChyISOrlmaDwM182
+	EtGfYL8TqzafDTkxoAeIKz+zu/x8lZZKJkSYuDpvzIQyNFfX9Zay8LZZFz1jK3j66fAz+o
+	d4/qTU0+ULPbMKTcaYACF0EMQbuoK1Q=
+Received: from mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-612-jMW5aiWeMYq1zjUJVUtulQ-1; Mon,
+ 15 Jun 2026 07:21:11 -0400
+X-MC-Unique: jMW5aiWeMYq1zjUJVUtulQ-1
+X-Mimecast-MFC-AGG-ID: jMW5aiWeMYq1zjUJVUtulQ_1781522470
+Received: from mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.95])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id F239E19540D3;
+	Mon, 15 Jun 2026 11:21:09 +0000 (UTC)
+Received: from fedora.redhat.com (unknown [10.44.48.61])
+	by mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id DD5291774;
+	Mon, 15 Jun 2026 11:21:06 +0000 (UTC)
+From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+To: jjohnson@kernel.org
+Cc: linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>,
+	stable@vger.kernel.org
+Subject: [PATCH v2] ath12k: fix NULL pointer dereference in rhash table destroy
+Date: Mon, 15 Jun 2026 13:21:03 +0200
+Message-ID: <20260615112103.601982-1-jtornosm@redhat.com>
 MIME-Version: 1.0
-From: Paolo Ferraris <paoloferrarisperso@gmail.com>
-Date: Mon, 15 Jun 2026 10:37:42 +0200
-X-Gm-Features: AVVi8CdNIkSw2jDRK5rfxm4oEMNyllliAxvyxzjlLQaUxh_QzJuI80m1x50uFzU
-Message-ID: <CALHCNm8dsuWWYRCsGNa=1ii-Xx=Qeu4LPQ7XfbaPwhwA61zxsw@mail.gmail.com>
-Subject: [Feature Request] ath12k: Optimize s2idle wake latency / Implement
- Fast Resume for WCN785x
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, kvalo@kernel.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+X-Scanned-By: MIMEDefang 3.6 on 10.30.177.95
+X-Mimecast-MFC-PROC-ID: f7G0UQlJtc1zixCzd4AD4mk6rmkVcLWUBN1Bit6s9Kc_1781522470
+X-Mimecast-Originator: redhat.com
+Content-Transfer-Encoding: 8bit
+content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260615_013755_447415_D07CEFA2 
-X-CRM114-Status: UNSURE (   5.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260615_042119_140892_CEA717EC 
+X-CRM114-Status: GOOD (  13.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,39 +85,96 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello ath12k maintainers and developers,
-I am writing to respectfully request an optimization for the  ath12k
-firmware/driver regarding the resume latency from  s2idle  on modern
-Intel platforms.
-Hardware Details:
-  =E2=80=A2 Laptop: HP Spectre 16 (Intel Meteor Lake Ultra 7 155H)
-  =E2=80=A2 Wi-Fi Module: Qualcomm WCN785x Wi-Fi 7 (FastConnect 7800)
-  =E2=80=A2 Kernel: Linux 7.0 (Arch Linux)
-The Issue
-When the laptop resumes from  s2 idle  sleep, the WCN785x takes a
-consistent 10 to 15 seconds to establish a connection. Based on  dmesg
- logs, it appears the firmware undergoes a full cold-boot sequence (
-fw_version  is re-logged) followed by a lengthy passive regulatory
-sweep of the channels before allowing Authentication
+When unbinding the ath12k driver, kernel NULL pointer dereferences
+occur in irq_work_sync() called from rhashtable_destroy().
 
-Diagnosis & Isolation:
-To ensure this was not a motherboard ACPI issue or an Intel PCIe
-dropout bug (like the  0xffffffff  ASPM bug seen on some Intel cards),
-we physically swapped the Wifi module on this exact same motherboard
-to a MediaTek MT7922 (Wi-Fi 6E). The MT7922 resumed and authenticated
-almost instantly upon waking from  s2idle . This confirms that the HP
-BIOS and the Linux kernel are handling the PCIe wake states correctly,
-and the latency is strictly isolated to the  ath12k  firmware
-initialization and scanning routine.
+Two hash tables are affected:
+1. ath12k_link_sta hash table in ath12k_base
+2. ath12k_dp_link_peer hash table in ath12k_dp
 
-Feature Request:
-Would it be possible for the Qualcomm firmware team to implement "Scan
-Caching" or a "Fast Resume" state for  s2idle  in a future firmware
-release? Ideally, allowing the chip to cache the connected AP's
-channel before sleep to bypass the massive 15-second passive sweep
-upon waking.
-Thank you very much for your hard work on the ath12k driver!
+The issue happens because the destroy functions are called unconditionally
+in cleanup paths, but the hash tables are only initialized late in their
+respective init functions. If the device was never fully started or if the
+init functions failed before initializing the hash tables, the pointers
+will be NULL. The issues are always reproducible from a VM because the MSI
+addressing initialization is failing.
 
-Best regards,
-Paolo Ferraris
+Call trace for ath12k_link_sta_rhash_tbl_destroy:
+ RIP: irq_work_sync+0x1e/0x70
+ rhashtable_destroy+0x12/0x60
+ ath12k_link_sta_rhash_tbl_destroy+0x19/0x40 [ath12k]
+ ath12k_core_stop+0xe/0x80 [ath12k]
+ ath12k_core_hw_group_cleanup+0x6b/0xb0 [ath12k]
+ ath12k_pci_remove+0x60/0x110 [ath12k]
+
+Call trace for ath12k_dp_link_peer_rhash_tbl_destroy:
+ RIP: irq_work_sync+0x1e/0x70
+ rhashtable_destroy+0x12/0x60
+ ath12k_dp_link_peer_rhash_tbl_destroy+0x29/0x50 [ath12k]
+ ath12k_dp_cmn_device_deinit+0x21/0x140 [ath12k]
+ ath12k_core_hw_group_cleanup+0x6b/0xb0 [ath12k]
+ ath12k_pci_remove+0x60/0x110 [ath12k]
+
+Fix this by adding NULL checks before calling rhashtable_destroy() in
+both destroy functions.
+
+The NULL check approach was chosen because the rhashtable pointer
+serves as the initialization state indicator. The init can fail at
+various points, leaving some components uninitialized. Checking the
+pointer directly is simpler than adding separate state flags that
+would need synchronization.
+
+Fixes: 57ccca410237 ("wifi: ath12k: Add hash table for ath12k_link_sta in ath12k_base")
+Fixes: a88cf5f71adf ("wifi: ath12k: Add hash table for ath12k_dp_link_peer")
+Cc: stable@vger.kernel.org
+Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+---
+v2: - Use guard(mutex) instead of manual mutex_lock/unlock with goto in
+    ath12k_dp_link_peer_rhash_tbl_destroy (suggested by Jeff Johnson)
+    - Add rationale paragraph in commit message explaining why NULL check
+    approach was chosen over state flags
+v1: https://lore.kernel.org/all/20260604071032.659009-1-jtornosm@redhat.com/ 
+
+ drivers/net/wireless/ath/ath12k/dp_peer.c | 7 +++++--
+ drivers/net/wireless/ath/ath12k/peer.c    | 3 +++
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.c b/drivers/net/wireless/ath/ath12k/dp_peer.c
+index a1100782d45e..ab3e3e107782 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_peer.c
++++ b/drivers/net/wireless/ath/ath12k/dp_peer.c
+@@ -274,11 +274,14 @@ int ath12k_dp_link_peer_rhash_tbl_init(struct ath12k_dp *dp)
+ 
+ void ath12k_dp_link_peer_rhash_tbl_destroy(struct ath12k_dp *dp)
+ {
+-	mutex_lock(&dp->link_peer_rhash_tbl_lock);
++	guard(mutex)(&dp->link_peer_rhash_tbl_lock);
++
++	if (!dp->rhead_peer_addr)
++		return;
++
+ 	rhashtable_destroy(dp->rhead_peer_addr);
+ 	kfree(dp->rhead_peer_addr);
+ 	dp->rhead_peer_addr = NULL;
+-	mutex_unlock(&dp->link_peer_rhash_tbl_lock);
+ }
+ 
+ static int ath12k_dp_link_peer_rhash_insert(struct ath12k_dp *dp,
+diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
+index 2e875176baaa..80fee2ce68f1 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.c
++++ b/drivers/net/wireless/ath/ath12k/peer.c
+@@ -444,6 +444,9 @@ int ath12k_link_sta_rhash_tbl_init(struct ath12k_base *ab)
+ 
+ void ath12k_link_sta_rhash_tbl_destroy(struct ath12k_base *ab)
+ {
++	if (!ab->rhead_sta_addr)
++		return;
++
+ 	rhashtable_destroy(ab->rhead_sta_addr);
+ 	kfree(ab->rhead_sta_addr);
+ 	ab->rhead_sta_addr = NULL;
+-- 
+2.54.0
+
 
