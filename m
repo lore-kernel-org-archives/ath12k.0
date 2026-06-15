@@ -4,73 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A6A0CD98C7
-	for <ath12k@archiver.kernel.org>; Mon, 15 Jun 2026 11:21:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46B6ACD98CF
+	for <ath12k@archiver.kernel.org>; Mon, 15 Jun 2026 13:36:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=B6WQlP4LsP1BC2/D9rOcFasJgBtWxq+pQN34qv7/LvI=; b=GrN7xmWHTZ3lyvqcFDdk61xAmm
-	sHltvpXmpthHqv9/WWfvKsI4bp33SzncPz5wM6hkw+/xsClqvRNoBFs1PSBiaoPmPTG35fn1NSd1y
-	58iSQJND8KfK5xXxVUDlH9Ogp2GCQIBbc3WWEFXUx2yKsocJPm9efIVD5Lka2MyOxcK0pXMTcW3nA
-	rJpqIQPYEzyiB1z/R2J/J3WbgSYTz+9UBGCwywC9i9MYaIeyn4FSjz2zbsOVZbohOa+Vj9w+oS2qP
-	IYm6gxgAdDmd+0ez0KtD6Mtkw2Lvr5cLIgDKFl61Tuw2mfMxa7Zem6mQIh7chTXNCch8ZwlLjQ2EJ
-	MoBlA36w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=bJPr7AwovREaKXgEuzZAVb8kOr5xcjm3uq69zeHw4Ao=; b=Rcvu4qqiIByDsq5xVE+r7h3DdB
+	c2BsK7cQ/p7NcxYTlf9igoIaehtZvNpJ9buoLkzXJPdtSIVo5XZzFGrgjSfCnlcVtoPgwCMOR2Gje
+	vVE460yOSN4miWd114HimO9Ztf2qYRZmUFqUrG4+whCexpDyWvKhWrk7XPJe1fQI/Vm3pJJG477OW
+	6a8+0ikPXMxTusl7jwuFSEafUj87YNGwRaJyXetsDS00ukGqoX5yLNaCkmjS9hhhbDpRR+VRoJsdY
+	8mCk1z4nbNopA8FbSiem6EoOpfdOX6BzKs63pTjpLUbrpgYKeiex3djwyxXGr9MknUaExGqnaejX9
+	y2ZMKNQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ5Nb-0000000E5mE-0M57;
-	Mon, 15 Jun 2026 11:21:23 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1wZ7Un-0000000EJiu-48xG;
+	Mon, 15 Jun 2026 13:36:57 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ5NW-0000000E5lD-3EaZ
+	id 1wZ7Ul-0000000EJiD-3AZ8
 	for ath12k@lists.infradead.org;
-	Mon, 15 Jun 2026 11:21:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1781522477;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=B6WQlP4LsP1BC2/D9rOcFasJgBtWxq+pQN34qv7/LvI=;
-	b=OTs6lRZn+1mUQCODsRKeCVRuSGhJd0fHsnxK3Mh5nB6Qhv6BskL8P7ChyISOrlmaDwM182
-	EtGfYL8TqzafDTkxoAeIKz+zu/x8lZZKJkSYuDpvzIQyNFfX9Zay8LZZFz1jK3j66fAz+o
-	d4/qTU0+ULPbMKTcaYACF0EMQbuoK1Q=
-Received: from mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
- relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-612-jMW5aiWeMYq1zjUJVUtulQ-1; Mon,
- 15 Jun 2026 07:21:11 -0400
-X-MC-Unique: jMW5aiWeMYq1zjUJVUtulQ-1
-X-Mimecast-MFC-AGG-ID: jMW5aiWeMYq1zjUJVUtulQ_1781522470
-Received: from mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.95])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id F239E19540D3;
-	Mon, 15 Jun 2026 11:21:09 +0000 (UTC)
-Received: from fedora.redhat.com (unknown [10.44.48.61])
-	by mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id DD5291774;
-	Mon, 15 Jun 2026 11:21:06 +0000 (UTC)
-From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-To: jjohnson@kernel.org
-Cc: linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>,
-	stable@vger.kernel.org
-Subject: [PATCH v2] ath12k: fix NULL pointer dereference in rhash table destroy
-Date: Mon, 15 Jun 2026 13:21:03 +0200
-Message-ID: <20260615112103.601982-1-jtornosm@redhat.com>
+	Mon, 15 Jun 2026 13:36:57 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-4905529b933so33860625e9.0
+        for <ath12k@lists.infradead.org>; Mon, 15 Jun 2026 06:36:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1781530613; x=1782135413; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=bJPr7AwovREaKXgEuzZAVb8kOr5xcjm3uq69zeHw4Ao=;
+        b=NK3RSpT7RunNLLrniLTWjd5jUbYV4ybPuu86Y+msWsUG0MGunkWVzoGxQKG/aY+Weq
+         QkKiLUHC26drSZjeIYhKb2Xak8ODaqr7lk1QyXxGcUyQT65KZ/hK/g6drgpM2u2MiC4U
+         5uwqY2XTJtb+upcgtINY1zveWFwheSeQEJJZQtW6hrzkd1xZOLOp4nEu5Vxtam+yoO31
+         Qi+7PUo3ebmgJXIxneV0VRn+4fr/xWx78hBtp6EYOB7aMoangNhA9upjuvBYxxBm6UI7
+         w00AxkoPJhUQG9A+L0SaW4jeJXBGi8UCl0+q+r1LEu96Sc0cnsBqN0HRtCcXv1dVJX80
+         7/6Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1781530613; x=1782135413;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=bJPr7AwovREaKXgEuzZAVb8kOr5xcjm3uq69zeHw4Ao=;
+        b=MwbkZdvv23hXt2ILUlpN68dPptdZOAxRelFFrOu8JIvM7lN1XlMPcaQLWzMWjt0jPz
+         XQB0DLydkXoi7x+Cyp/KZdVNia++1lucQOG2MPtLBhHdJV2kjDPNq545+KSq+2sQIvG7
+         PqpPCvArm2Q4I1zdLvCFqxky+6o/8oN19k08DP5Znw2El8hs0KD5zYT2USUZRnCwM2Xp
+         2YsZAmpNlCfKg/QG/T4s+GMKGqPwM9UQ6sd/UtWMzsBItRtdTnIoULGxf2nFTqHlhCq5
+         MTsuTQHZh+c8mwurGoYWRKlhk+2D+hTkiumCoJV/dVD2+7aiplPkbLRqDMr7dThlbqiR
+         kS2g==
+X-Forwarded-Encrypted: i=1; AFNElJ8nyrBCngsDHlGubIXrbFD5zKp99RmCR3bl0h+kEQCv8nhEERjs5HN4vf6oD+TWp3By2Q+k6PU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwIjh+QJ5E8VanPzxL+OME1fmTv8pciTMVlhcmDjzR46CTae7EH
+	bFR7DNShMwHBMO3ALullYpWLeiTRYJnckG25Ry4nZI/BaOp6IXmego4q
+X-Gm-Gg: Acq92OGzxPf2vhKHiK2YKlKIAiyI4iH5nfHLX6qmtLWxfROjaacyVa0kw/9ZoryPv5y
+	UsPhA5BvfSp5j+f2Rb/TYelkaHxHuX21A1EXu2zAgpF90Zh66aJXLZeotkSTA15t5/OSn14pSv0
+	BOjz1PEu1h4UCOXLSPkS6BoZyIsXM/GAlgI3mzlPkDUC9cYasrL2xiruMVdrzrPB6RlRnqiFuW8
+	yOBj9Aysuu+9NIaTg+LZFtkeh6QhgdnJvKvPKhBWydxa0khgj3ppmUcd47bWajT09LNI9N7W66A
+	c2yDX7TTTEbGyH3hv6KuSUVMcISadmblJSFW8I6z8IiTnjGdACkBQHx3/l44S+F+G8PdV6ahdn5
+	+QqFQLk54Np1FU7D2g2uo4/Fsr1JO/lgtrnaytRgpaet0ZZGZsoeJMT2nci6dFb76KTgw++TUYQ
+	t9x+h4XoVmXndlMgYpjnBtFN6gnG+tL8bCr7p6FYQcbhjxScGKKzBa1kpQUgwUhvJ265WPPhPGH
+	rEgBw2+VLT4BhTcsET3zIsxuUI=
+X-Received: by 2002:a05:600c:4512:b0:490:4663:691b with SMTP id 5b1f17b1804b1-490ec4992aamr201275805e9.7.1781530613100;
+        Mon, 15 Jun 2026 06:36:53 -0700 (PDT)
+Received: from ernest.hoecke-nb (248.201.173.83.static.wline.lns.sme.cust.swisscom.ch. [83.173.201.248])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-490ea961f18sm270433745e9.2.2026.06.15.06.36.52
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 15 Jun 2026 06:36:52 -0700 (PDT)
+Date: Mon, 15 Jun 2026 15:36:50 +0200
+From: Ernest Van Hoecke <ernestvanhoecke@gmail.com>
+To: Andrew LaMarche <andrewjlamarche@gmail.com>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
+	Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/1] wifi: ath12k: support calibration-variant from
+ device tree
+Message-ID: <23fr45actdrqt6rp6fozcaugyk3egs5zm7imschl7gyuuj6cme@3pvdhqv7xvkq>
+References: <20260131003222.2011259-1-andrewjlamarche@gmail.com>
+ <A2E3AAE1-1A80-4265-9497-0C95C3308CD7@gmail.com>
+ <dc8c9c9c-dc85-40dd-9313-845a808a35f4@oss.qualcomm.com>
+ <3B9D1FBE-37D0-4902-8C0C-8AB57C1310A5@gmail.com>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 3.6 on 10.30.177.95
-X-Mimecast-MFC-PROC-ID: f7G0UQlJtc1zixCzd4AD4mk6rmkVcLWUBN1Bit6s9Kc_1781522470
-X-Mimecast-Originator: redhat.com
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
 Content-Transfer-Encoding: 8bit
-content-type: text/plain; charset="US-ASCII"; x-default=true
+In-Reply-To: <3B9D1FBE-37D0-4902-8C0C-8AB57C1310A5@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260615_042119_140892_CEA717EC 
-X-CRM114-Status: GOOD (  13.65  )
+X-CRM114-CacheID: sfid-20260615_063655_807664_C143FEF0 
+X-CRM114-Status: GOOD (  20.73  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,96 +105,52 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-When unbinding the ath12k driver, kernel NULL pointer dereferences
-occur in irq_work_sync() called from rhashtable_destroy().
+On Wed, May 27, 2026 at 05:01:51PM -0400, Andrew LaMarche wrote:
+> Ack on the deprecation of qcom,ath12k-calibration-variant in favor of the
+> generic qcom,calibration-variant. 
+> 
+> However, drivers/net/wireless/ath/ath12k/core.c still misses the logic to 
+> actually load in the BDF, which this patch also accomplishes. I don’t see that
+> in the Qualcomm-authored series you linked. Perhaps a v2 to address this?
+> 
+> Andrew
+> 
+> > On May 27, 2026, at 3:52 PM, Jeff Johnson <jeff.johnson@oss.qualcomm.com> wrote:
+> > 
+> > On 5/27/2026 9:12 AM, Andrew LaMarche wrote:
+> >> Hi,
+> >> 
+> >> A kind ping here. I’m not sure why this functionality is missing in the first place, but it is needed for loading caldata from the device tree.
+> > 
+> > Your patch duplicates functionality in the Qualcomm authored series:
+> > https://msgid.link/20250228184214.337119-1-quic_rajkbhag@quicinc.com
+> > 
+> > And note the upstream device bindings for ath10k and ath11k only support the
+> > generic binding qcom,calibration-variant.
+> > 
+> > There are no longer any generation-specific bindings, see:
+> > https://msgid.link/20250225-b-wifi-qcom-calibration-variant-v1-0-3b2aa3f89c53@linaro.org
+> > 
+> > /jeff
+> 
 
-Two hash tables are affected:
-1. ath12k_link_sta hash table in ath12k_base
-2. ath12k_dp_link_peer hash table in ath12k_dp
+Hi Jeff,
+Hi Andrew,
 
-The issue happens because the destroy functions are called unconditionally
-in cleanup paths, but the hash tables are only initialized late in their
-respective init functions. If the device was never fully started or if the
-init functions failed before initializing the hash tables, the pointers
-will be NULL. The issues are always reproducible from a VM because the MSI
-addressing initialization is failing.
+We also need this functionality, and as Andrew noted, the patch series
+from Qualcomm does not actually address this.
 
-Call trace for ath12k_link_sta_rhash_tbl_destroy:
- RIP: irq_work_sync+0x1e/0x70
- rhashtable_destroy+0x12/0x60
- ath12k_link_sta_rhash_tbl_destroy+0x19/0x40 [ath12k]
- ath12k_core_stop+0xe/0x80 [ath12k]
- ath12k_core_hw_group_cleanup+0x6b/0xb0 [ath12k]
- ath12k_pci_remove+0x60/0x110 [ath12k]
+I believe some confusion arose because the patch series mentions the
+"qcom,calibration-variant" DT property, but it does nothing to implement
+this in the driver. In that series it only exists within a schema file:
+Documentation/devicetree/bindings/net/wireless/qcom,ipq5332-wifi.yaml
 
-Call trace for ath12k_dp_link_peer_rhash_tbl_destroy:
- RIP: irq_work_sync+0x1e/0x70
- rhashtable_destroy+0x12/0x60
- ath12k_dp_link_peer_rhash_tbl_destroy+0x29/0x50 [ath12k]
- ath12k_dp_cmn_device_deinit+0x21/0x140 [ath12k]
- ath12k_core_hw_group_cleanup+0x6b/0xb0 [ath12k]
- ath12k_pci_remove+0x60/0x110 [ath12k]
+Our need for this property was previously discussed here, and for now I
+don't see a way forward without it:
+https://lore.kernel.org/all/77vowy4ax4cl6dlc45i2q3fjmwn3q676wqghq267tmbix7773b@27h5t66mflur/
 
-Fix this by adding NULL checks before calling rhashtable_destroy() in
-both destroy functions.
+Thanks a lot for your work here.
 
-The NULL check approach was chosen because the rhashtable pointer
-serves as the initialization state indicator. The init can fail at
-various points, leaving some components uninitialized. Checking the
-pointer directly is simpler than adding separate state flags that
-would need synchronization.
-
-Fixes: 57ccca410237 ("wifi: ath12k: Add hash table for ath12k_link_sta in ath12k_base")
-Fixes: a88cf5f71adf ("wifi: ath12k: Add hash table for ath12k_dp_link_peer")
-Cc: stable@vger.kernel.org
-Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
----
-v2: - Use guard(mutex) instead of manual mutex_lock/unlock with goto in
-    ath12k_dp_link_peer_rhash_tbl_destroy (suggested by Jeff Johnson)
-    - Add rationale paragraph in commit message explaining why NULL check
-    approach was chosen over state flags
-v1: https://lore.kernel.org/all/20260604071032.659009-1-jtornosm@redhat.com/ 
-
- drivers/net/wireless/ath/ath12k/dp_peer.c | 7 +++++--
- drivers/net/wireless/ath/ath12k/peer.c    | 3 +++
- 2 files changed, 8 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.c b/drivers/net/wireless/ath/ath12k/dp_peer.c
-index a1100782d45e..ab3e3e107782 100644
---- a/drivers/net/wireless/ath/ath12k/dp_peer.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_peer.c
-@@ -274,11 +274,14 @@ int ath12k_dp_link_peer_rhash_tbl_init(struct ath12k_dp *dp)
- 
- void ath12k_dp_link_peer_rhash_tbl_destroy(struct ath12k_dp *dp)
- {
--	mutex_lock(&dp->link_peer_rhash_tbl_lock);
-+	guard(mutex)(&dp->link_peer_rhash_tbl_lock);
-+
-+	if (!dp->rhead_peer_addr)
-+		return;
-+
- 	rhashtable_destroy(dp->rhead_peer_addr);
- 	kfree(dp->rhead_peer_addr);
- 	dp->rhead_peer_addr = NULL;
--	mutex_unlock(&dp->link_peer_rhash_tbl_lock);
- }
- 
- static int ath12k_dp_link_peer_rhash_insert(struct ath12k_dp *dp,
-diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
-index 2e875176baaa..80fee2ce68f1 100644
---- a/drivers/net/wireless/ath/ath12k/peer.c
-+++ b/drivers/net/wireless/ath/ath12k/peer.c
-@@ -444,6 +444,9 @@ int ath12k_link_sta_rhash_tbl_init(struct ath12k_base *ab)
- 
- void ath12k_link_sta_rhash_tbl_destroy(struct ath12k_base *ab)
- {
-+	if (!ab->rhead_sta_addr)
-+		return;
-+
- 	rhashtable_destroy(ab->rhead_sta_addr);
- 	kfree(ab->rhead_sta_addr);
- 	ab->rhead_sta_addr = NULL;
--- 
-2.54.0
-
+Best regards,
+Ernest
 
