@@ -4,131 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 122B6CD98C7
-	for <ath12k@archiver.kernel.org>; Sun, 14 Jun 2026 05:18:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED9F6CD98D6
+	for <ath12k@archiver.kernel.org>; Mon, 15 Jun 2026 07:30:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3xcsC7PWMWF2K4chMPT3Qgjge7/FQUrHZN5Z4nu+yEU=; b=hA00MT6e8menRQwXVVErzOvpsA
-	fPsiVicRwKntxSNmwB0RCOgR6bLBFiAdLNhgdGZMRPz3kHiGw7vvhCOxeS2NFCvoqRMLYMTHmOlQm
-	r3R43VsmyWlVuMmXPhAv/H4jmtOeO8j3fZHHo9/SPhojYEYfGnwDdlUgTshVsc01FKPXZpJLnLohD
-	6TBRa3vFw4k+skk9S1mnofCUjxMRZz4BOQD4OL64MtJ0EzSxSL3yG7xD77Qs5pyH8qtPC0WkGlMwS
-	iuzF020HSCQ/8+Bx6p5ur1zFrBMSPFvOleZNRugl4R3bJ4dgwS0VeaNFtiVt3S9bYu0T34aywokwO
-	Y+8whASQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=4VlL+ld2zIBTp0Uov30L/svoU5nNy1BEIdafxq1tBX4=; b=Ob9739H70xBXT2PYpNXR4fj+aK
+	VLUstpCW7wJaUZEW+hd3PP6VCwimM+3C7Ggk7ZxsV5iIbk/uMp8exxPlhlQWePvoygG+jE4bbwTo4
+	+pIhz8Bx93STvkAubaP0kROOtc+WUeoMuqSE34OnN8R97vFDQAWvEuJiQkaEtwrWR8z/nXVDy33js
+	5BT+vWmE1zslv1XXqsyQULYLI0W9hSlMpBJNFxCNb1i4xoSq7PYamr6J7avPus95DoA9FfVnlmDzB
+	Y4GHmE9WfL4HZQ399G2xdzNrJzTyOHjMqvNeC1x2W7UPLcNQEf7PrWgwaIK6bM+rJcfvgDR8JWkJ6
+	hncff89Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wYdF1-0000000CkeO-37KD;
-	Sun, 14 Jun 2026 05:18:39 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wZ1m1-0000000Dn9s-2xcE;
+	Mon, 15 Jun 2026 07:30:21 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wYdEy-0000000CkcO-40h9
+	id 1wZ1lz-0000000Dn98-3PAs
 	for ath12k@lists.infradead.org;
-	Sun, 14 Jun 2026 05:18:38 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65E48qPa137151
-	for <ath12k@lists.infradead.org>; Sun, 14 Jun 2026 05:18:36 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=3xcsC7PWMWF
-	2K4chMPT3Qgjge7/FQUrHZN5Z4nu+yEU=; b=Z8v14gW9gIyzoNU1NmDesbyTAgN
-	pfkDVWPWLLW6GjdpOuaMOXA9GNGIRT+jfjudekFVCqsjlMxs/Dg4S69TbLr5tYmO
-	8BtY5qjc9pH/VdYHd3WFEyLqLIMxhYfxPjySkOaKNhUxeSS5h0c7K5h3nIe52XqH
-	q7UOjdTQSadM6bbexmnEvLtNU8ED7kEDrb+n4YpCqiLspFIrQ0IeWasVb6Y0BLNZ
-	Qs114FhzoU6FpPYSpYrb/dr9cZY1bxudFnB9Zy5eGKbElrIkyheQFL2WmF+eioTe
-	Exuhd2gcbcU5i+c8ImkYPEiTV/51ZlhYBY+39pqp4HquSzyJQUEI2H9CPwA==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4es0cgjmxw-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Sun, 14 Jun 2026 05:18:36 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2bf1dece2ecso22640955ad.1
-        for <ath12k@lists.infradead.org>; Sat, 13 Jun 2026 22:18:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1781414316; x=1782019116; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=3xcsC7PWMWF2K4chMPT3Qgjge7/FQUrHZN5Z4nu+yEU=;
-        b=TikJuCAI4RFkLG8FPnWst/7W5Gn9WMtF00CIPgTIwV21W1UZTZkfsw+QM2VZLiqWsY
-         L5UXFVL9e9obvPDMIpkIyfxbW2T7xyH36qweuA/U32QL3Ux2jLl7zzkE4NPCJSb90rdo
-         UKJQnRkrvkGzQK5QGFGxTJknQRw72nrzIOqZMZjSvfVwYYjtsP7egaigxeId2mlfKqhg
-         kIdBbFd0RKV/Q1shT8G845qU7AU+cYSvVEJqTCCJcnD4fU/Fa7N/epyYeouYDSEqkOb0
-         Gs3IKfij1l/8LBu7PBuozy89XHLu/4X1tiG084K1pQ7oupHrEoUxUFMi4ifFd7Q6E9a7
-         KnMw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781414316; x=1782019116;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=3xcsC7PWMWF2K4chMPT3Qgjge7/FQUrHZN5Z4nu+yEU=;
-        b=JsFF+uM8iAeXoC8aVtJO1OrttqAbh1B7SuRABmlPCcuo5D5PmkkUhZpDDYfpG09zQG
-         j4QDkSKQpzRkzyyQH+m32rJwfjXRH+/UURg60vyE39Wx44/TPOANKrngmU4foww2XkiQ
-         wzcSJfGJhsFWn6XeEryFexuyRFX//+OOJN9AxLLW9+hGENxXazbK4MkoXcPDKHSMc1Su
-         mtHRLjWPigF5Z54LMJr7X+XARPZD9+kcH3RslLuDMa0/Vjisp3lLAhj8VKJKBXwIkhwa
-         aaMYWWTG4ZxQXpH63IP+R/Awwhf3cG8YRdaPMw7nZqEPHa5OP29fYpNdAmgPSGw6rUQw
-         qrMw==
-X-Forwarded-Encrypted: i=1; AFNElJ9Jwqz3GlWJDU24kfO95mK0zmdT9wvHQP82SKtCFWtUMgJfUqCaPYFBnmDfqlw+512MVErpXro=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw6wLQ1D7PtbJDw0oUo2HIPKDH+faKK3cOmberk8Y4DK5F69Vf2
-	ahGH2f6XmTFhQiChGerSkS0eg1bfjKDYZoGFFNSoBSL3iONTtZ7bmGYYrIIQ98cN7L+uC6CQjpQ
-	D16De4hxnFe0w/976xsBIvXHWDjZ+wSNhNuXKh3c2gSqXyWpIw5dEMXj9tPZcXcRK
-X-Gm-Gg: Acq92OGD28sEF6LKoU0vyAs+LealXKoHd3Y19uTxzIu9UsnEZAZaMzND/cQUl/O8Jo6
-	WYZa381wefmgFzUinbG/G18pK4PyyXLJyE9VJbtdWas7UB3V6dmVdxlqa7lgI2Tbq6mI+1iI/pn
-	ER66jkRHBJYm3pW/gmPhEhFSrmpK6dn9AITX0Yhfcr2HDr0Oi8NVmkuPO215FqaXVGNfxhx+ikZ
-	WumSRiPkwylTPgCyEgIuyhXEDHqcb2l3Bx1JqE78UOgX6Uo7Kv2zxNqx+3xANKr/JDMpcJiJ/TB
-	KmPult1BQq5RMDpSt8XehkWen0/QRdyKJV6bkK+3HsI21DZd3UBs2eFpMhPYFZAWtQdpl9Tyysh
-	22ZXRBzXWPfhM6R2TI1TKfIq6PAegzgho+hceBEbImf2vgaw3n+rMSqHIQ0e9AJKAXFeaaO5xI0
-	AEpQm5DArtTTde00CP0bRlv8iv3B7UKYMlb/5AEoc=
-X-Received: by 2002:a17:903:b46:b0:2b2:5515:661c with SMTP id d9443c01a7336-2c6642b0dc3mr55466455ad.31.1781414315747;
-        Sat, 13 Jun 2026 22:18:35 -0700 (PDT)
-X-Received: by 2002:a17:903:b46:b0:2b2:5515:661c with SMTP id d9443c01a7336-2c6642b0dc3mr55466335ad.31.1781414315272;
-        Sat, 13 Jun 2026 22:18:35 -0700 (PDT)
-Received: from hu-ppranees-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2c42f7c651dsm64456705ad.26.2026.06.13.22.18.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 13 Jun 2026 22:18:34 -0700 (PDT)
-From: P Praneesh <praneesh.p@oss.qualcomm.com>
-To: johannes@sipsolutions.net
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        praneesh.p@oss.qualcomm.com
-Subject: [PATCH wireless-next v2 5/5] wifi: cfg80211: support MAC address filtering in station dump for link stats
-Date: Sun, 14 Jun 2026 10:47:35 +0530
-Message-ID: <20260614051739.3979947-6-praneesh.p@oss.qualcomm.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20260614051739.3979947-1-praneesh.p@oss.qualcomm.com>
-References: <20260614051739.3979947-1-praneesh.p@oss.qualcomm.com>
+	Mon, 15 Jun 2026 07:30:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1781508617;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=4VlL+ld2zIBTp0Uov30L/svoU5nNy1BEIdafxq1tBX4=;
+	b=L48kJV4Eyys6gGSKcYyYFpA8Qh69WHG+L+QA4mZS1tu6JsZIynW1eIeCKHkXUx4hrIIixE
+	dgtFKjX560lzhit6kowxKjZbqI0bS23gniA2GaEfBNzs7Bz/0cGtuYw9wTwXztKeU6TGUP
+	uqjFqTx0BZiUpc78EX2JoTXVPB0DF8I=
+Received: from mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-433-uW9eYI_rOsCmZdj76mUXtw-1; Mon,
+ 15 Jun 2026 03:30:12 -0400
+X-MC-Unique: uW9eYI_rOsCmZdj76mUXtw-1
+X-Mimecast-MFC-AGG-ID: uW9eYI_rOsCmZdj76mUXtw_1781508610
+Received: from mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.93])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 5529B19560BB;
+	Mon, 15 Jun 2026 07:30:09 +0000 (UTC)
+Received: from fedora.redhat.com (unknown [10.44.48.61])
+	by mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id CF602180056E;
+	Mon, 15 Jun 2026 07:30:03 +0000 (UTC)
+From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+To: helgaas@kernel.org,
+	alex@shazbot.org
+Cc: ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	bhelgaas@google.com,
+	jjohnson@kernel.org,
+	jtornosm@redhat.com,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	mani@kernel.org,
+	mhi@lists.linux.dev
+Subject: Re: [PATCH v9] PCI: Add device-specific reset for Qualcomm devices
+Date: Mon, 15 Jun 2026 09:30:01 +0200
+Message-ID: <20260615073001.401330-1-jtornosm@redhat.com>
+In-Reply-To: <20260612151749.GA603817@bhelgaas>
+References: <20260612151749.GA603817@bhelgaas>
 MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.93
+X-Mimecast-MFC-PROC-ID: HbmNIU1JH-WMCRCxlMAWHVXbzkknJkN7jqsxgDHGDck_1781508610
+X-Mimecast-Originator: redhat.com
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: zWwn7wRBHbIJf5Ooz5qiWC7ydCPLOflN
-X-Authority-Analysis: v=2.4 cv=NPLlPU6g c=1 sm=1 tr=0 ts=6a2e39ac cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22 a=EUspDBNiAAAA:8
- a=pcWKcSKorTg-uW9tO98A:9 a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-GUID: zWwn7wRBHbIJf5Ooz5qiWC7ydCPLOflN
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjE0MDA0OSBTYWx0ZWRfX/YZZN491izJF
- kWursDe3xlmmdiWE84VraeItDb7APqD7W/+7lpVNwBhhvPYzssau4ysggCyunApgzBD7gc3y9mX
- WaIcq/SkScnst/sWmIyw52VH8B3Czxc=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjE0MDA0OSBTYWx0ZWRfX1GIden2DxtmX
- ksLiuau405ENTu+lXw1+Ly2zxtsY6uRG/+5DQIIEqiUhLBFQsCghb9QGHVm0HAirNwOmPGxKva+
- hejpi66IhC34ra1N3G1qvJCzfuzh3vZ1qpJKSaryTnoNQKlJBZn2IEH5Jl8fNsyHtYYd1Fk//D6
- XJxpWeB9HI5APl/bl4fOBUMe8MeE7+JtkTDpD01bukj0W/3HdlIafiuNLvcjRytYTTFkRBC6FPR
- dtZc/GuLMKp9y4zHpkIms714RG+D8ZSar+8x05vNsNQKT6IVKVN3ATcw9lDzZwhACZbj5lflYoE
- JkmFzbte1jTR+y8KWJQNZ4AETdnZ0MWcjg5ECbIRNpW7vbopmanQ9io5Rc82spAucJBbW3FAj4w
- d9AWd7CLrnUdliuZx5pqU1kj7QOj7L4sLm3RYdZBtJbFcApmf8ciH83xJb4m6wo89/L4e5uEaZR
- Mj8pqTegF7PLeDEeDTg==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-14_01,2026-06-12_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 lowpriorityscore=0 suspectscore=0 malwarescore=0 bulkscore=0
- adultscore=0 impostorscore=0 phishscore=0 clxscore=1015 priorityscore=1501
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606040000 definitions=main-2606140049
+content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260613_221836_997819_DA4E5E60 
-X-CRM114-Status: GOOD (  19.18  )
+X-CRM114-CacheID: sfid-20260615_003019_928901_247A2124 
+X-CRM114-Status: GOOD (  24.32  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,114 +94,87 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, when userspace requests station information with
-link statistics using NL80211_CMD_GET_STATION with the
-NL80211_ATTR_STA_DUMP_LINK_STATS flag, the kernel uses the .doit callback
-(nl80211_get_station) which sends a single netlink message. For MLO
-stations with multiple links, the link statistics can be large and may
-exceed the maximum netlink message size, causing the operation to fail
-with -EMSGSIZE.
+Hi Bjorn and Alex,
 
-The .dumpit callback (nl80211_dump_station) already supports
-fragmentation across multiple netlink messages, making it suitable
-for handling large link statistics. However, it currently iterates over
-all stations on the interface, which is inefficient when userspace only
-wants information about a specific station.
+Bjorn's questions:
 
-Add support for MAC address filtering in nl80211_dump_station to allow
-userspace to request fragmented link statistics for a specific station.
-When NL80211_ATTR_MAC is present in a dump request, cache the MAC address
-in the dump context and use rdev_get_station() to retrieve information for
-only that station, instead of iterating over all stations with
-rdev_dump_station().
+> I guess "bus reset" here refers to Secondary Bus Reset being asserted
+> by the bridge upstream from these devices?  Seems a bit surprising if
+> that doesn't work.  Or is it just that we can't use SBR because there
+> are multiple devices below that bridge?
 
-This allows userspace tools (like iw) to use NL80211_CMD_GET_STATION with
-NLM_F_DUMP flag to retrieve complete link statistics for a specific
-station across multiple netlink messages, avoiding the message size
-limitation.
+Yes, SBR. The devices I tested are alone on their bus (single device under
+bridge), so it's a device-specific issue, not a topology problem. The
+quirk_no_bus_reset patch addresses this for v7.2.
 
-Signed-off-by: P Praneesh <praneesh.p@oss.qualcomm.com>
----
- net/wireless/nl80211.c | 41 +++++++++++++++++++++++++++++++++++++----
- 1 file changed, 37 insertions(+), 4 deletions(-)
+> I don't know enough about VFIO, but I sort of expected that VFIO would
+> reset devices between reassignment regardless of how a VM terminates.
+> I guess that's not true?
 
-diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
-index 6910dfa7343e..f9818d4cca90 100644
---- a/net/wireless/nl80211.c
-+++ b/net/wireless/nl80211.c
-@@ -8474,6 +8474,8 @@ struct nl80211_dump_station_ctx {
- 	int link_idx;
- 	enum nl80211_dump_station_phase phase;
- 	bool dump_link_stats;
-+	bool filter_mac;
-+	u8 filter_mac_addr[ETH_ALEN];
- 	u8 mac_addr[ETH_ALEN];
- 	struct station_info sinfo;
- };
-@@ -8543,10 +8545,22 @@ static int nl80211_dump_station(struct sk_buff *skb,
- 			err = -ENOMEM;
- 			goto out_err;
- 		}
-+		cb->args[2] = (long)ctx;
- 		ctx->phase = NL80211_DUMP_STA_PHASE_AGGREGATED;
- 		ctx->dump_link_stats =
- 			!!attrbuf[NL80211_ATTR_STA_DUMP_LINK_STATS];
--		cb->args[2] = (long)ctx;
-+		if (attrbuf[NL80211_ATTR_MAC]) {
-+			const u8 *mac = nla_data(attrbuf[NL80211_ATTR_MAC]);
-+
-+			if (!is_valid_ether_addr(mac)) {
-+				kfree(ctx);
-+				cb->args[2] = 0;
-+				err = -EINVAL;
-+				goto out_err;
-+			}
-+			ctx->filter_mac = true;
-+			memcpy(ctx->filter_mac_addr, mac, ETH_ALEN);
-+		}
- 	}
- 
- 	if (!wdev->netdev && wdev->iftype != NL80211_IFTYPE_NAN) {
-@@ -8554,7 +8568,12 @@ static int nl80211_dump_station(struct sk_buff *skb,
- 		goto out_err;
- 	}
- 
--	if (!rdev->ops->dump_station) {
-+	if (ctx->filter_mac) {
-+		if (!rdev->ops->get_station) {
-+			err = -EOPNOTSUPP;
-+			goto out_err;
-+		}
-+	} else if (!rdev->ops->dump_station) {
- 		err = -EOPNOTSUPP;
- 		goto out_err;
- 	}
-@@ -8575,8 +8594,22 @@ static int nl80211_dump_station(struct sk_buff *skb,
- 				}
- 			}
- 
--			err = rdev_dump_station(rdev, wdev, ctx->sta_idx,
--						ctx->mac_addr, &ctx->sinfo);
-+			if (ctx->filter_mac) {
-+				if (ctx->sta_idx > 0) {
-+					err = skb->len;
-+					goto out_err_release;
-+				}
-+				err = rdev_get_station(rdev, wdev,
-+						       ctx->filter_mac_addr,
-+						       &ctx->sinfo);
-+				if (!err)
-+					memcpy(ctx->mac_addr,
-+					       ctx->filter_mac_addr, ETH_ALEN);
-+			} else {
-+				err = rdev_dump_station(rdev, wdev, ctx->sta_idx,
-+							ctx->mac_addr,
-+							&ctx->sinfo);
-+			}
- 			if (err == -ENOENT) {
- 				err = skb->len;
- 				goto out_err_release;
--- 
-2.43.0
+VFIO does attempt reset on every reassignment. Without a working reset method,
+the attempt fails and the device remains in undefined state. With this quirk,
+D3hot successfully resets the device allowing reassignment.
+
+> Since the device claims to preserve internal state across D3hot->D0
+> (and it sounds like at least BARs *are* preserved), is this a
+> potential leak of state between VMs?  To play devil's advocate, how do
+> we convince a customer that none of their data is ever leaked to a
+> subsequent tenant using this device?
+
+This is a valid concern. Testing shows device internals are reset despite
+NoSoftRst+ (command register cleared, requires driver reinitialization),
+though BARs are preserved. Given these devices have no other reset method,
+this provides the only viable mechanism for VFIO reuse. We cannot improve
+beyond what D3hot provides - the quirk works because despite advertising
+NoSoftRst+, D3hot does clear sufficient internal state for clean
+reinitialization.
+
+> If we think this is a viable method, it seems like we should use
+> pci_pm_reset(), which takes care of IOMMU and device readiness issues.
+>
+> We would have to change pci_pm_reset() to deal with the fact that
+> PCI_PM_CTRL_NO_SOFT_RESET seems wrong on these devices.  Maybe we
+> could cache PCI_PM_CTRL_NO_SOFT_RESET in pci_pm_init(), then override
+> it with quirks for these devices?
+
+I explored a similar idea in v2 (PCI_DEV_FLAGS_FORCE_PM_RESET to bypass
+NoSoftRst+):
+https://lore.kernel.org/linux-pci/20260508145153.717641-2-jtornosm@redhat.com/
+(Note: v2 used driver names ath11k/ath12k instead of device-specific names
+WCN6855/WCN7850, which Jeff Johnson later commented on in v7 feedback.)
+
+Alex provided guidance on both approaches and indicated device-specific reset
+seemed more appropriate here:
+
+"Device specific resets are made for this scenario. Look at
+pci_dev_specific_reset() and pci_dev_reset_methods[]. The supporting
+evidence that this performs a worthwhile reset is still a bit weak, but
+heuristically it seems better than nothing, which is what we're left
+with otherwise. Reset via D3hot for a device that does not expose
+NoSoftRst- is not something we should enable or endorse for any common
+use case."
+
+The device-specific approach keeps this quirk isolated to proven device IDs.
+But I can revisit the pm quirk approach if you both prefer it.
+
+Alex's suggestion:
+
+> It would be better to extract the core of pci_pm_reset() to a
+> pci_do_pm_reset() function that's used both here and by the
+> pci_pm_reset() function.
+
+Good point about the code duplication. In v9 I kept it as a self-contained
+quirk to avoid modifying pci_pm_reset() and touching core pci.c code, trying
+to minimize the change footprint. But I agree extracting a helper function
+would be cleaner.
+
+Once we confirm the preferred approach (device-specific vs pm quirk per
+Bjorn's question above), I'll send v10 with the appropriate implementation
+including the helper function if we proceed with the device-specific approach.
+
+Thanks
+
+Best regards
+Jose Ignacio
 
 
