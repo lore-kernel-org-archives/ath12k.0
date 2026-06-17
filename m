@@ -4,57 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E60ECD98E4
-	for <ath12k@archiver.kernel.org>; Wed, 17 Jun 2026 14:48:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B145CCD98F2
+	for <ath12k@archiver.kernel.org>; Wed, 17 Jun 2026 15:47:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Gcy/EaAZ/pJ1qaeNy3eriBsvPASZl+M9Jg5BLs22CGA=; b=eiOTRVQdmNiuLP1EkQmyfXhoJD
-	vILr9hpDkfcZGGhYulsrnwzJHR35TBkG8H403/oChphB18kNmOJ0ZAdwTf9roEN+COyfCjBQFhnEh
-	x5q4qnBWSx1C7VTll/R6nOnOmTMLpGsAK/OIQSaxqlrtQ+PGYbutgUNPh0XuvsN18niQDcc3aR8kc
-	e9VqJK4/FiqQzHcGvMEzP4KjdAkV4P+NG4/pfFWekEJnWZAYUyErqATtGGkXv8WZ0flpACUikHQFv
-	N7BNOJEj38vc39qnsNEdh1NorIBWI/a/G+WKedPn8shoUBoQshOW+XgC1L+pDdlsY7yu99ACrTdeF
-	DJltXTJA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=kZkkt7pTAcwVisdd5LWiHecZhGxj27GXnwp7KJTgyC4=; b=luVcQMH7/TEbC5ApE2F2y2mgYc
+	vyzxo1xVsV2u1TFqK0bmM26T/bB7f/Stdbb/iD34BNO7EfRE+hR5x5iNqFRUgjoyqvxpwoK5jPhYa
+	ZmamLuIam/ihbRo+zxyPB/dYXq+xHH0EcdSrdGwmjh6CkUeREMrNxSB07WsfY1ZsiC2awdoYeNFNz
+	Q8mDwlDxo7++gHMfhXkvDVw78wWcY3GnUOhK9W/3EVBgMuuBhrBpjuB3WRBYkmCSehMMmOU1G1nuM
+	DBdUbqj6s+wGFbrzG5LDp8LdnYZ3WXA72NEb0ZyRUCH/k5g9SY1JLuyhE5EC5L8CY6ihD3IFX5w+F
+	JyZVl1yg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZrYn-0000000HUXp-47mU;
-	Wed, 17 Jun 2026 14:48:09 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wZsU9-0000000HaDj-1wLW;
+	Wed, 17 Jun 2026 15:47:25 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZrYl-0000000HUXE-43KN;
-	Wed, 17 Jun 2026 14:48:07 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1ABFB4347E;
-	Wed, 17 Jun 2026 14:48:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5594E1F000E9;
-	Wed, 17 Jun 2026 14:48:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781707687;
-	bh=Gcy/EaAZ/pJ1qaeNy3eriBsvPASZl+M9Jg5BLs22CGA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=nu+IipjnxThO/KXMaqoJz6F2xpNAmVTnfMkZOXjRxKvtE9gFfupf6rXNAaomX60F7
-	 5nzo4GUh9tYxRjp9dd/C1YD2YXCNY5LUu8MgaMgguQjZmvM+Xt4nfXrOx7yHjSeeEj
-	 r3gZwjJoS6LOoxyRXfqN9wqhvMUbOfCV0/PaCD39EpH1uSrLOG3nOj0rWJUBgt8+n7
-	 L14QWpOIDCM0BZUKXGWTFDTF5rIxJJ/baN22qjH4ar4zyODmDnXsrqtOdJNsZv61z/
-	 nwlpwt55agoKXxja49kLE8IQbgyxHjfyoSPGBkIi2xTUwHdmqxbgwzxNlsDgPw/6Rk
-	 A+2Q4Avt+3JUw==
-Date: Wed, 17 Jun 2026 16:47:58 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Cc: bhelgaas@google.com, alex@shazbot.org, jjohnson@kernel.org, 
-	linux-pci@vger.kernel.org, linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
-	ath12k@lists.infradead.org, mhi@lists.linux.dev, linux-kernel@vger.kernel.org
+	id 1wZsU6-0000000HaCU-0vsu
+	for ath12k@lists.infradead.org;
+	Wed, 17 Jun 2026 15:47:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1781711239;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=kZkkt7pTAcwVisdd5LWiHecZhGxj27GXnwp7KJTgyC4=;
+	b=Acx+q4Y/w+AJOtdfcCs24bw98zeyUxJbrhBi2NPYSfiGl6WfVRzPCxgPgFk8WviC+faT46
+	BPMvBqXuHlpH3x/p/TwBKRbRBLl10MTlJJVgIgzmAApM9i7z47LcHSZN0PHoMn536jQA/g
+	CUWsVivAz/9HR+CVSt3GOlfMxA2aVQw=
+Received: from mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-661-X1sZflmnMEizcLDBGUmEqw-1; Wed,
+ 17 Jun 2026 11:47:17 -0400
+X-MC-Unique: X1sZflmnMEizcLDBGUmEqw-1
+X-Mimecast-MFC-AGG-ID: X1sZflmnMEizcLDBGUmEqw_1781711236
+Received: from mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.95])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id C724519539BC;
+	Wed, 17 Jun 2026 15:47:15 +0000 (UTC)
+Received: from fedora.redhat.com (unknown [10.44.32.13])
+	by mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id B77E11771;
+	Wed, 17 Jun 2026 15:47:10 +0000 (UTC)
+From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+To: mani@kernel.org
+Cc: alex@shazbot.org,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	bhelgaas@google.com,
+	jjohnson@kernel.org,
+	jtornosm@redhat.com,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	mhi@lists.linux.dev
 Subject: Re: [PATCH v9] PCI: Add device-specific reset for Qualcomm devices
-Message-ID: <6nivb5fncfd5dwqkzlxwhtgbsiqvifazcbgpsgukp44iib45ke@65qpwgrvtkgn>
-References: <20260612142638.1243895-1-jtornosm@redhat.com>
+Date: Wed, 17 Jun 2026 17:47:04 +0200
+Message-ID: <20260617154709.186286-1-jtornosm@redhat.com>
+In-Reply-To: <6nivb5fncfd5dwqkzlxwhtgbsiqvifazcbgpsgukp44iib45ke@65qpwgrvtkgn>
+References: <6nivb5fncfd5dwqkzlxwhtgbsiqvifazcbgpsgukp44iib45ke@65qpwgrvtkgn>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
+X-Scanned-By: MIMEDefang 3.6 on 10.30.177.95
+X-Mimecast-MFC-PROC-ID: oWl2ztNlInkpKELZrNsgVq1DmpKoEqYSVqx_42MGn7c_1781711236
+X-Mimecast-Originator: redhat.com
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-In-Reply-To: <20260612142638.1243895-1-jtornosm@redhat.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260617_084722_332357_DC5480E3 
+X-CRM114-Status: GOOD (  10.52  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,49 +93,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 12, 2026 at 04:26:38PM +0200, Jose Ignacio Tornos Martinez wrote:
-> Some Qualcomm PCIe devices (WCN6855/WCN7850 WiFi cards, SDX62/SDX65 modems)
-> lack working reset methods for VFIO passthrough scenarios. These devices
-> have no FLR capability, advertise NoSoftRst+ (blocking PM reset), and have
-> broken bus reset.
-> 
-> The problem manifests in VFIO passthrough scenarios:
-> 
-> - WCN6855 WiFi card (17cb:1103): Normal VM operation works fine, including
->   clean shutdown/reboot. However, when the VM terminates uncleanly
->   (crash, force-off), VFIO attempts to reset the device before it can
->   be assigned to another VM. Without a working reset method, the device
->   remains in an undefined state, preventing reuse.
-> 
-> - WCN7850 WiFi card (17cb:1107): Same behavior as WCN6855.
-> 
-> - SDX62/SDX65 5G modems (17cb:0308): Never successfully initialize even
->   on first VM assignment without proper reset capability.
-> 
-> Add device-specific reset entries for these Qualcomm devices using D3hot
-> power cycling. Testing shows that despite advertising NoSoftRst+, D3hot
-> transition provides sufficient reset for VFIO reuse, particularly after
-> unexpected VM termination. While not a complete reset (BARs preserved),
-> it provides the only viable reset mechanism for these devices.
-> 
+Hi Mani,
 
-I checked internally within Qcom and I was told that these PCIe devices retain
-the context during D3Hot to D0 transition and that's why they advertise
-No_Soft_Reset.
+Thank you for the internal clarification and sharing this information.
 
-The partial reset behavior you are seeing might be due to firmware handling the
-transition as an error state. All these devices use MHI bus and when the MHI
-state doesn't match the PCIe device state, then the firmware will treat it as an
-error and will try to torn down resources. This could be the reason why you are
-seeing partial reset.
+I understand the behavior is firmware error recovery, not a proper reset.
+However, these devices are widely used, and the inability to use them in VMs
+is a significant problem. Could we explore options to achieve safe VFIO
+operation?
 
-Nevertheless, these devices do not support any form of Soft Reset and only way
-to reset them would be by doing D3Cold. But that depends on platform support
-though. So it would be inaccurate/wrong to assume that these devices support
-Soft Reset during D3Hot to D0 transition.
+  1. Are there ANY alternative reset mechanisms besides D3cold? For example:
+     - Device-specific registers or commands?
+     - MHI bus-level operations?
+     - Firmware commands that could trigger proper reset?
 
-- Mani
+     If such mechanisms exist, I'm willing to implement whatever is needed.
 
--- 
-மணிவண்ணன் சதாசிவம்
+  2. If firmware error recovery is the only option available on platforms
+     without _PR3, could we add software steps to make it VFIO-safe?
+     For example, before/after the D3hot transition:
+     - Explicit MHI state teardown?
+     - Firmware commands to clear sensitive device state?
+     - Additional verification or cleanup steps?
+
+  3. The practical challenge is that _PR3 support is not available on most
+     platforms where these devices need to be deployed (desktops, servers).
+     Additionally, the general d3cold reset method has limitations and
+     remains unimplemented due to the concerns raised earlier (ACPI
+     portability, bridge issues, runtime PM complications).
+
+     If D3cold is the only proper reset but requires _PR3, and no alternative
+     mechanisms exist, could we consider accepting the firmware error recovery
+     behavior as a last resort - clearly documented as a platform-specific
+     workaround?
+
+     Currently these devices have no reset capability on most platforms,
+     making them completely unusable for VFIO. Even an imperfect reset is
+     significantly better than no reset at all.
+
+My goal is ensuring these devices can be safely reassigned between VMs.
+I'm open to implementing any of the above approaches - or others you might
+suggest.
+
+Thank you
+
+Best regards
+José Ignacio
+
 
