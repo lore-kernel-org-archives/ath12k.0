@@ -4,127 +4,127 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2161CCD98E6
-	for <ath12k@archiver.kernel.org>; Fri, 19 Jun 2026 06:58:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E81BCD4F26
+	for <ath12k@archiver.kernel.org>; Fri, 19 Jun 2026 12:08:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=xOtmqStDoUGhma7QcihIweAGCbgOFJi/DMLIntRLZpU=; b=OR/wf7KhmI/8Lg9VO72zcqDk3E
-	HJCRLp9NNDO2eCEpA6op5RGCXT8vY8X1/Mno5L9MeYEvD1zgY69L98NF/oJXcfkIwICeoXInOc8VD
-	Pn+buGSOIgIn77sKLrcpdhrEjnpz2GbVWhdHq7qf7bvWi/QqxhlaOt4os3kSJEtlPvraTpo5r6TFa
-	qAquVS3Wakie2xmfkuDJvWQw+jJP5BgcKpQUH0ojYUBOi88v55S27Z9Mj2Atf85RCOF3L5JEJwLu/
-	a7wJhsrIyNnmjla9w8RzoAMI+ABj5dEDOMSmTreVHApIECyh58ajmJ1aCeg/iuotYjeqFgFm9mnbe
-	IeD/wWUQ==;
+	bh=zgx9wN4RH5WyeVxVnM5MXT21ptHceSoyFLQAA2pSnvk=; b=NVDdVab0IgvCVj0sQaCHkkeQSo
+	m6DshtTTurhWsBh+o6wO1JtG2bjPTDS1wC0q+/s/qUe/+4RJfqM7Ym/Qbzl+sdcZlXcAJEx9Pl7lP
+	2orCfIRc1s+WqxVIyY+HPdDV36GMWjRtD8lC0WnP1GRhik9HLPwOnfglIrrwCB4kMmelkQvevjlB1
+	gQARbYaV/4k19hynR0wEProOECTtTH7apLbq5pzNRWXswEZR2MLCUjbzKqgqxcEHGN+B3g/stcfBo
+	u0q/ugqlQlBGXrnL3Dk3dMVb7byy+yWnDccR/nIN8ZkEFOigqGy2qJJc8rmojx8c/o2lq0ayk6tTA
+	aQjZc9LQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1waTBN-000000023su-0zFL;
-	Fri, 19 Jun 2026 06:58:29 +0000
+	id 1waY0v-00000002Mwv-2MG7;
+	Fri, 19 Jun 2026 12:08:01 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1waTBJ-000000023sR-2N1M
+	id 1waY0t-00000002MwX-1n6r
 	for ath12k@lists.infradead.org;
-	Fri, 19 Jun 2026 06:58:26 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65J2sjrQ3130592
-	for <ath12k@lists.infradead.org>; Fri, 19 Jun 2026 06:58:24 GMT
+	Fri, 19 Jun 2026 12:08:00 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65J7Ova53659939
+	for <ath12k@lists.infradead.org>; Fri, 19 Jun 2026 12:07:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=xOtmqStDoUGhma7QcihIweAGCbgOFJi/DML
-	IntRLZpU=; b=D+RuCDuPKF6K//qHbNHkkIfsw3TVBqU0sz8D9+9h17aozl2YxH8
-	MjMFnxTw9an9PPC8rkoPyTzO7Cq1lbDsYpRC4W5/rvoJaLdqQ+7RsL/r39soCgJ9
-	TDD9zzDKX9nsHmfdyxNVNq1pMs6hO0oWx1emqMXWj95IwHO8L9URFH80Z+ONSai6
-	P6rw4xO/qpIO649JENq5QyFhklSgd+dQobDkL5aBSoJpwpJjAhduv9+G+F8vuvoH
-	bWqCj6mogANxiyNqpfpIZ/BjqU/8zLsxe9OWOa0HL7dIYf+YJeXY9N+8TzI/ESoA
-	w3kffo9GLLe1OrJxmCR5fZsYLBec5M6lMMA==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4evp67261r-1
+	:subject:to; s=qcppdkim1; bh=zgx9wN4RH5WyeVxVnM5MXT21ptHceSoyFLQ
+	AA2pSnvk=; b=kWLAJ09lLu8+BuBzTeLlKhj39C8yByDraaboiCm5Xi364E7VClv
+	IxDCIPzq4A4opb5jrmkQ5AvzXwKjOsuzkCPNBplbhXxJeWUkiI6ELtLqh2kTLDWb
+	dQ1caKnl02Rpn4udBjDo97ORRYjGURDtywr5UzaryBNs96en2CX3emrN3lw3pxIK
+	df6143VOAI0xB9BAknxzWOOhkO4RpIfjySxnGiO9T3RTRiY9ITcvOAnULP3W7l9l
+	domo36uY0yV/I0dnhDWSMTmdR3JBXrkS+3SL2BAxf2JpM9bt0vY2Jmmh0F4K7lzS
+	JnxBleGrhWisdZ+tmHqw5gKRO/QwPbZ0Tsg==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4evy72h3ns-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 19 Jun 2026 06:58:24 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2c725d3e886so6483525ad.0
-        for <ath12k@lists.infradead.org>; Thu, 18 Jun 2026 23:58:24 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 19 Jun 2026 12:07:58 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2c0c272e532so19910585ad.1
+        for <ath12k@lists.infradead.org>; Fri, 19 Jun 2026 05:07:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1781852304; x=1782457104; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1781870878; x=1782475678; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=xOtmqStDoUGhma7QcihIweAGCbgOFJi/DMLIntRLZpU=;
-        b=i6lS8CWLd7BAi+XJPBdBSpz6TiZ+61kvru6M3KaVNHmEK1KzfAf8EbLG18MHYwM1ha
-         33SttU2VaXdOauiSjib6/PaDCNmuxWYGj1MPw1Xt1FZ3TMUEz+gk+t9aoVGDKpQs67Ba
-         hb5zGBkqRHGLBFrQwx7qe/YV1a3YOV56yMK1oiVcNM/Lm920VK2jchbxbcEfRivTr6Yy
-         c+rD5vHfvTj2ub+3fLWvzodgx0bYfsuaPiBo+kR6f2x5plN5SaiSA2GlQfZZvKT/GVs0
-         b6XYI92LT1/nxdnrCrecQp41z01QOMW89jPwpIXOHzZ4yAT3SYDWuFOfiA3veWbh46pT
-         /nlg==
+        bh=zgx9wN4RH5WyeVxVnM5MXT21ptHceSoyFLQAA2pSnvk=;
+        b=jBIBVnoOfsXhlRpU8a5jASJ/is6q99OcoUndbOnDX8uvP53R0cuvvbKgGlRq0I5rax
+         RWRwEXZxTpOuiSdwfvVX3o9gm97JTQ/S51Qm5DOIJv9w9MT9M3KyON6yiBusfLxpJjRG
+         CKDUtgIIOhx5SGtCk+bIvN3gVdSJxn0Mda8tS8RxK6gXzrm1djLPT76ZMiwvIORvpelb
+         npmtcGPs7qS6lP+VaheT037kX9oFlQ+njyNX1cXBbzbFjHJjJHuX9KK93y3p5L2A5VHm
+         0xfYzVviBBYh0ixvo1wMCeex5aoPiyaOKSQKr1g6tIVHwIuyCICahbZdQ3WO8h6jWP1W
+         lo9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781852304; x=1782457104;
+        d=1e100.net; s=20251104; t=1781870878; x=1782475678;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=xOtmqStDoUGhma7QcihIweAGCbgOFJi/DMLIntRLZpU=;
-        b=fm7QaMldqLHUqCQn2wN2fa1Iqbo6I4Yg2iheZaDkQN7+SoKIIkMm3Gp+cT1OKlQuU/
-         MSw6hJvtpTgHfQLC1V9QnR6i2+rjvn5dOqrFsfwvRO3jbMHNen/FjwP9lAwHK+TX8uu/
-         uSF6ZHYmkuvxNCpqDlI6zDUmJtbUahdK6tmTyJFYmgX//9LdieThODRmeY35XPTYinql
-         WPSdBKQbMs/TRRH10/k5Iz3Zirazi9uaEvQVtyO1KS3By0TFfk2Qk8Z5BLEbglZyr5Dm
-         icO56ZZKOazH7T2fzbpgAYxHSe0I064Qc6SyYd06JlgE9N4z87qRCtxxtYVEHQaZ8VgR
-         Y0Xw==
-X-Gm-Message-State: AOJu0YxzTrHSC2mmvs762c0JEh6uPL31kqLn6KUGnGvUwTwvqOG0b0aU
-	aRyNWxyDguush/oLOjx6zpnP9HrdrrDTJQ3TPI6VCdJFmJZcTgGCfjsQ32t7sJI8YNDo1hPT+vQ
-	PLAjk0noShaBYUeH7PEjeQ+fcvTsUptmB0xJy0f6yPZiqUP8ct4zgNnT9ol5DM7PYMokXqKzX
-X-Gm-Gg: AfdE7cmplrqp7pGPxkjPPILXpopRWv/oKCXipu3TVaG0mYRvaHIetWDocfEFPzXcewJ
-	jM/9FRKD9lARUb0gRGiImbqimwioV7SzSRKA0DgOnx8RRCSj4LjQLZ3VROYpKEnlU87bhiUoYTX
-	OliAGI60bYan8E9k4biGnQ98DuatMIhg8qZOnOn3rN6uCWdxVeWceLHdiuc5wrfRcHQ3LuS2WY0
-	zNzOUb5nhSdZnphFJkhoZkq1aPAkxs7Uda/SUv6sCjgpqLRjbjHTNkcblJADmkF2zk9SXXKYnlz
-	NsbTapPwLLAm3lIX5Iq0V9TqXIKCxu6ZYFRnuCd2K+ymkRl8bSN0nEQwXcLZvAVBBMpPAxJFFzz
-	QVuHTzBBvWZ1EM+dflQA1dCAhQ4fe+n5dcWfcFIDCPP9sRo8b7jZYjsZxEarYnS08hLbjbUB3Zo
-	z4MspT0UTkesT/S1K+HsNL9bdJVq1TNu7JgA==
-X-Received: by 2002:a17:902:e807:b0:2bd:5ab:af95 with SMTP id d9443c01a7336-2c7185ed173mr30060445ad.0.1781852303563;
-        Thu, 18 Jun 2026 23:58:23 -0700 (PDT)
-X-Received: by 2002:a17:902:e807:b0:2bd:5ab:af95 with SMTP id d9443c01a7336-2c7185ed173mr30060155ad.0.1781852303045;
-        Thu, 18 Jun 2026 23:58:23 -0700 (PDT)
-Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2c72089a6a7sm12373025ad.10.2026.06.18.23.58.21
+        bh=zgx9wN4RH5WyeVxVnM5MXT21ptHceSoyFLQAA2pSnvk=;
+        b=Dw5nUakdOr7jTWD6ldO/dIx0mXQ4DtVS6aR+Irqce1uwqen4/sfqxhMdOxlqsOVT0r
+         6YKqjy537ax734eFi/TE3dT67v4jCOh5Ee6IZu/jk82z9Q/8d5nGT/Lat0T+H++HiNcC
+         +3/HdMAK2t5EgmGzWWcy8zQMCMCEXnOkzt5Xu1tges9qOk0wyZoBw6vzmQmKr+9Q7lsK
+         usS7/HhHeG87h96zm7B+d1+LoNay1b+EutY8vwiTLGu3UUb84dqJ24v0RIlw+lkp5V+C
+         svq3hYRwfOL1v76BvQl0lxeww8mTapAMBXwVnczozx40LaguckqxI8gwYPpXMxY6udmd
+         Swgw==
+X-Gm-Message-State: AOJu0Yz1p5zrGPnMGeWaGSDN1vVk0Gydy1NA+j5L7zosNmtDa8se9WCC
+	xl6LsOHRvLrYCJ4PphxQvgU8c1ojnYD9Zm+RVQ+BjE54adXRSREHtGKzwSmOYcxiqHjyP/a1cTI
+	pF4BT8pGpBYYpYqbW2J3ZzafuPujI/wZkfO1Dbhfv46RF70aARAvZLI7fx1ywPJ54u1vIOWGp
+X-Gm-Gg: AfdE7cnM7LkTjP7TTsGW3IzumEis5HkTpUUl4rnO7yoh3KyK5sscvjeA/0VxX9hEkl4
+	nRTdnc7EbDaB6uAMYMn5NfxurMZU66aUxf+yNxekB9f0mYIGcdmbAYS7dE1UYSnIjUZPrEJ5CFg
+	pcuawXLYO/J+I/aTrwgFzlH3WYUiOs/vz/0rABgBEVYLqoN7cHExX68C2HrQNwJ6jf058L+u8Ww
+	j7iknHDZofqTa68PDRWMLE+amYHN4bRi6bpvobfagREHoLgSOmcQXiE98s+mWGrD6SfLqH3bLyP
+	3yRWSGCyBatvsYxrpt/Qxiz7eHz/suIMhgMXYEk0gwx6AwwRmy+9DXkJZ8E0JGHc6/Yj+quqSiS
+	VWH3GcLIhplTxmyBcJVxsS0kCIIl2XQg2erZo/h50djlbcorio976VUharwsfH9MByefveUBsAl
+	xtqZPjQ4HZpF2CMbA1JZAOMAa5
+X-Received: by 2002:a17:902:ccc8:b0:2c0:cf44:3b3d with SMTP id d9443c01a7336-2c71901af93mr36154715ad.26.1781870877762;
+        Fri, 19 Jun 2026 05:07:57 -0700 (PDT)
+X-Received: by 2002:a17:902:ccc8:b0:2c0:cf44:3b3d with SMTP id d9443c01a7336-2c71901af93mr36154375ad.26.1781870877329;
+        Fri, 19 Jun 2026 05:07:57 -0700 (PDT)
+Received: from hu-aisr-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2c7208d67cbsm23004965ad.26.2026.06.19.05.07.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 18 Jun 2026 23:58:22 -0700 (PDT)
-From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+        Fri, 19 Jun 2026 05:07:57 -0700 (PDT)
+From: Aishwarya R <aishwarya.r@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Subject: [PATCH ath-next v2] wifi: ath12k: add QMI capability negotiation for dynamic memory mode
-Date: Fri, 19 Jun 2026 12:28:16 +0530
-Message-Id: <20260619065816.2139392-1-aaradhana.sahu@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, Aishwarya R <aishwarya.r@oss.qualcomm.com>,
+        P Praneesh <praneesh.p@oss.qualcomm.com>
+Subject: [PATCH ath-next] wifi: ath12k: reset REOQ LUT addresses before firmware stop
+Date: Fri, 19 Jun 2026 17:37:51 +0530
+Message-Id: <20260619120751.363340-1-aishwarya.r@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: r9Y9GGXL8Da2PswWgCwtKjVOQxGm4M3N
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjE5MDA2MyBTYWx0ZWRfX0txI0jMGTFFu
- 4KJD18tiK/r2ghzjQ8+VAK8u6H8g1aeIJ8XnR7Tb4B3dNzn4gmt8Ah8y0XERsRxExuj3k0wM75b
- keAsEZ8FGkEsqnGTTCA7bYqybLp6KllwThJf4dhIK6oscNYwvndtrAurzjvR4uTdTXL5bXCO5k1
- PMMlfhsIoMPvT8U/jT5H1Y23M2HuV19EXRVwEwSLdGb0YxBAKuk0K684c5UIfPhmys1E/lEJbOz
- gR3FzPAc1n5m8aBxDY03PbRjWztdFcDKunJ6QrNlOLgq/lpTL9r2V03UxS93RBWib1qUuGX2N5b
- TMdUulE8eMvHCpSp+DkA/RDzW9YSejedBxx2u75DcICuXH1O1hS1ZnSxNTXhVKy2WSAts8OHXT/
- 3Vx424rcXKQTlPnNsYqKh6VG5Yx8n7kiprUjvBJQ5J8APZ1GT3qBVf6pQqezheWfXomF1LN75bU
- r4zxBC+7v4rv6k701bQ==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjE5MDA2MyBTYWx0ZWRfX4HXtw/L3ASp0
- BgF3am3ivbrGwRHNo4UHA7K4FXLN00HgZmhJSg+Ht/RYXpPuJv1F6/2+0GtHOlhtyrnJwiwJFTn
- HEhrabjtCVfDMBkMmOMmluZCFHnICjw=
-X-Proofpoint-GUID: r9Y9GGXL8Da2PswWgCwtKjVOQxGm4M3N
-X-Authority-Analysis: v=2.4 cv=TdOmcxQh c=1 sm=1 tr=0 ts=6a34e890 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjE5MDExMyBTYWx0ZWRfX6G+1/Wv21dGv
+ uxKtBYj1EmEixB0kcob7rxidgcq4b9EbwDSTQMkRSFqB0RkUMfAQMc0ChT0xrQgCneIyFEnq6vk
+ oErzZAd456Wfzw6e6YFs/DhHSi9wgorylZ1pfQBTXUy8nLLLbMAyMrkwzWK0yDH4SSj2BdFxUaN
+ mv8ezcow91kcakOqqMu1OuAmxOBCmhmofPD/zJk8VpaY0DJa9mYTBQwI0kfZxv6Lknjt2tJwlB5
+ LQmWhlG06QqbdJwMEnDVH0lET2TnzSMSFpLYD4My0xIL8oVHY7JnFiuqbaWLEuTRypwinRrLuNH
+ ydVmChGEEpjAQAyf94FRXu09QNt+xzrp1gmHdBrdcCDG5ujhC7nDiYqTkKPJQcAud9Sm/B2pP+0
+ sC/1/m1xNAtwWkHG3UGmYiUEbdA9Q6JVQs2eQ8Sy+lAAUMyyhb+AOtrXaU7bO8cSlrFz+rT5g/N
+ m2T+jvK9ePRb7kJQQ4w==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjE5MDExMyBTYWx0ZWRfX55FvLfbpiIsu
+ lBJfHKmNGzRVqfiib3mhj89ls1ib/7joXKLeOAj5Bhw+v/8CPUJdz41UifddCnHaJr2r4YrZ6qm
+ kPiRsqg2KpmxJPgWYUpSxmw3uaMNNIM=
+X-Authority-Analysis: v=2.4 cv=I75Vgtgg c=1 sm=1 tr=0 ts=6a35311e cx=c_pps
+ a=cmESyDAEBpBGqyK7t0alAg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22 a=EUspDBNiAAAA:8
- a=m70HO3XBkMWC9QqM1QIA:9 a=GvdueXVYPmCkWapjIL-Q:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22 a=EUspDBNiAAAA:8
+ a=id8SikcatB7TCbyXZYgA:9 a=1OuFwYUASf3TG4hYMiVC:22
+X-Proofpoint-ORIG-GUID: 0IZlAnAdB4Llt1MdQMDxEtePmilq3seA
+X-Proofpoint-GUID: 0IZlAnAdB4Llt1MdQMDxEtePmilq3seA
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-19_01,2026-06-18_03,2025-10-01_01
+ definitions=2026-06-19_02,2026-06-18_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 impostorscore=0 spamscore=0 phishscore=0 malwarescore=0
- clxscore=1015 suspectscore=0 bulkscore=0 priorityscore=1501 adultscore=0
+ lowpriorityscore=0 adultscore=0 impostorscore=0 phishscore=0 spamscore=0
+ clxscore=1015 priorityscore=1501 suspectscore=0 bulkscore=0 malwarescore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606190063
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606190113
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260618_235825_640106_67FA13E0 
-X-CRM114-Status: GOOD (  18.26  )
+X-CRM114-CacheID: sfid-20260619_050759_476158_A77C7F20 
+X-CRM114-Status: GOOD (  16.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,155 +139,126 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On AHB platforms, firmware operates in two modes: fixed-memory mode where
-firmware uses hardcoded addresses for memory regions such as BDF and does
-not request HOST_DDR memory from the host, and dynamic-memory mode where
-firmware expects the host to provide memory addresses including HOST_DDR
-after the Q6 read-only region and relies on host allocation for all memory
-types.
+During module removal, REOQ LUT cleanup writes 0 to the REOQ/ML-REOQ
+LUT address registers. That cleanup runs from ath12k_core_stop(),
+after ath12k_qmi_firmware_stop() has already stopped the
+firmware (mode OFF), so the register writes can hit an invalid target
+access.
 
-Introduce QMI capability negotiation to support both modes. Add a new QMI
-PHY capability flag dynamic_ddr_support which is advertised by firmware to
-indicate it supports dynamic memory mode. When the host detects this
-capability, set the dynamic_mem_support flag in the host capability message
-to signal the host is ready to provide dynamic memory allocation. This
-triggers firmware to send the HOST_DDR memory request and use the
-host-provided address.
+Move the REOQ LUT register reset before ath12k_qmi_firmware_stop(),
+so the registers are cleared before stopping the firmware,
+while register access is still valid.
 
-For backward compatibility, if firmware doesn't advertise
-dynamic_ddr_support, the firmware continues to operate in fixed-memory mode
-where firmware uses predefined addresses.
+Additionally, handle the error path where firmware-ready setup fails
+after LUT programming but before core_stop() is reached, ensuring the
+registers are properly reset in that case as well.
+
+On the crash-recovery path, ath12k_core_reconfigure_on_crash() calls
+ath12k_core_qmi_firmware_ready(), which re-enters ath12k_dp_setup()
+and ath12k_dp_reoq_lut_setup(), so the LUT registers are reprogrammed
+before use and stale values do not persist across recovery.
+
+There is a brief window between the crash and when the LUT registers
+are reprogrammed during recovery, during which the registers still hold
+the freed DMA memory addresses. This is safe because the device is
+non-functional in that window and will not initiate any DMA access
+until firmware is restarted and the registers are reprogrammed.
+
+No functional issue has been observed so far due to this sequence.
+However, this change proactively avoids potential issues such as
+invalid register accesses after firmware stop during module
+removal and error handling.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+Co-developed-by: P Praneesh <praneesh.p@oss.qualcomm.com>
+Signed-off-by: P Praneesh <praneesh.p@oss.qualcomm.com>
+Signed-off-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
 ---
-v2:
-  -Dropped QMI_WLANFW_HOST_CAP_REQ_MSG_V01_MAX_LEN and QMI_WLANFW_PHY_CAP_RESP_MSG_V01_MAX_LEN changes.
-  -Used %u instead of %d in the debug log.
----
- drivers/net/wireless/ath/ath12k/qmi.c | 50 +++++++++++++++++++++++++--
- drivers/net/wireless/ath/ath12k/qmi.h |  6 +++-
- 2 files changed, 52 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c |  5 ++++-
+ drivers/net/wireless/ath/ath12k/dp.c   | 14 ++++++++++++--
+ drivers/net/wireless/ath/ath12k/dp.h   |  1 +
+ 3 files changed, 17 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index fd762b5d7bb5..e15a0c0120d3 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -506,6 +506,24 @@ static const struct qmi_elem_info qmi_wlanfw_host_cap_req_msg_v01_ei[] = {
- 		.offset		= offsetof(struct qmi_wlanfw_host_cap_req_msg_v01,
- 					   feature_list),
- 	},
-+	{
-+		.data_type	= QMI_OPT_FLAG,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x33,
-+		.offset		= offsetof(struct qmi_wlanfw_host_cap_req_msg_v01,
-+					   dynamic_mem_support_valid),
-+	},
-+	{
-+		.data_type	= QMI_UNSIGNED_1_BYTE,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x33,
-+		.offset		= offsetof(struct qmi_wlanfw_host_cap_req_msg_v01,
-+					   dynamic_mem_support),
-+	},
- 	{
- 		.data_type	= QMI_EOTI,
- 		.array_type	= NO_ARRAY,
-@@ -602,6 +620,24 @@ static const struct qmi_elem_info qmi_wlanfw_phy_cap_resp_msg_v01_ei[] = {
- 		.offset         = offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
- 					   single_chip_mlo_support),
- 	},
-+	{
-+		.data_type	= QMI_OPT_FLAG,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x17,
-+		.offset		= offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
-+					   dynamic_ddr_support_valid),
-+	},
-+	{
-+		.data_type	= QMI_UNSIGNED_1_BYTE,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x17,
-+		.offset		= offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
-+					   dynamic_ddr_support),
-+	},
- 	{
- 		.data_type	= QMI_EOTI,
- 		.array_type	= NO_ARRAY,
-@@ -2248,6 +2284,11 @@ int ath12k_qmi_host_cap_send(struct ath12k_base *ab)
- 	if (ret < 0)
- 		goto out;
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 742d4fd1b598..efe37dc91afd 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -708,8 +708,10 @@ static void ath12k_core_stop(struct ath12k_base *ab)
  
-+	if (ab->qmi.dynamic_ddr_support) {
-+		req.dynamic_mem_support_valid = 1;
-+		req.dynamic_mem_support = 1;
+ 	ath12k_core_to_group_ref_put(ab);
+ 
+-	if (!test_bit(ATH12K_FLAG_CRASH_FLUSH, &ab->dev_flags))
++	if (!test_bit(ATH12K_FLAG_CRASH_FLUSH, &ab->dev_flags)) {
++		ath12k_dp_reoq_lut_addr_reset(ath12k_ab_to_dp(ab));
+ 		ath12k_qmi_firmware_stop(ab);
 +	}
+ 
+ 	ath12k_acpi_stop(ab);
+ 
+@@ -1371,6 +1373,7 @@ int ath12k_core_qmi_firmware_ready(struct ath12k_base *ab)
+ 	goto exit;
+ 
+ err_deinit:
++	ath12k_dp_reoq_lut_addr_reset(ath12k_ab_to_dp(ab));
+ 	ath12k_dp_cmn_device_deinit(ath12k_ab_to_dp(ab));
+ 	mutex_unlock(&ab->core_lock);
+ 	mutex_unlock(&ag->mutex);
+diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+index af5f11fc1d84..fbc0788b37a0 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.c
++++ b/drivers/net/wireless/ath/ath12k/dp.c
+@@ -1097,7 +1097,6 @@ static void ath12k_dp_reoq_lut_cleanup(struct ath12k_base *ab)
+ 		return;
+ 
+ 	if (dp->reoq_lut.vaddr_unaligned) {
+-		ath12k_hal_write_reoq_lut_addr(ab, 0);
+ 		dma_free_coherent(ab->dev, dp->reoq_lut.size,
+ 				  dp->reoq_lut.vaddr_unaligned,
+ 				  dp->reoq_lut.paddr_unaligned);
+@@ -1105,7 +1104,6 @@ static void ath12k_dp_reoq_lut_cleanup(struct ath12k_base *ab)
+ 	}
+ 
+ 	if (dp->ml_reoq_lut.vaddr_unaligned) {
+-		ath12k_hal_write_ml_reoq_lut_addr(ab, 0);
+ 		dma_free_coherent(ab->dev, dp->ml_reoq_lut.size,
+ 				  dp->ml_reoq_lut.vaddr_unaligned,
+ 				  dp->ml_reoq_lut.paddr_unaligned);
+@@ -1568,6 +1566,7 @@ static int ath12k_dp_setup(struct ath12k_base *ab)
+ 	ath12k_dp_rx_free(ab);
+ 
+ fail_cmn_reoq_cleanup:
++	ath12k_dp_reoq_lut_addr_reset(dp);
+ 	ath12k_dp_reoq_lut_cleanup(ab);
+ 
+ fail_cmn_srng_cleanup:
+@@ -1627,3 +1626,14 @@ void ath12k_dp_cmn_hw_group_assign(struct ath12k_dp *dp,
+ 	dp->device_id = ab->device_id;
+ 	dp_hw_grp->dp[dp->device_id] = dp;
+ }
 +
- 	ret = qmi_txn_init(&ab->qmi.handle, &txn,
- 			   qmi_wlanfw_host_cap_resp_msg_v01_ei, &resp);
- 	if (ret < 0)
-@@ -2319,11 +2360,14 @@ static void ath12k_qmi_phy_cap_send(struct ath12k_base *ab)
- 
- 	ab->qmi.num_radios = resp.num_phy;
- 
-+	if (resp.dynamic_ddr_support_valid)
-+		ab->qmi.dynamic_ddr_support = resp.dynamic_ddr_support;
++void ath12k_dp_reoq_lut_addr_reset(struct ath12k_dp *dp)
++{
++	struct ath12k_base *ab = dp->ab;
 +
- 	ath12k_dbg(ab, ATH12K_DBG_QMI,
--		   "phy capability resp valid %d single_chip_mlo_support %d valid %d num_phy %d valid %d board_id %d\n",
-+		   "phy capability resp valid %d single_chip_mlo_support %d valid %d num_phy %d valid %d board_id %d dynamic_ddr_valid %u dynamic_ddr_support %u\n",
- 		   resp.single_chip_mlo_support_valid, resp.single_chip_mlo_support,
--		   resp.num_phy_valid, resp.num_phy,
--		   resp.board_id_valid, resp.board_id);
-+		   resp.num_phy_valid, resp.num_phy, resp.board_id_valid, resp.board_id,
-+		   resp.dynamic_ddr_support_valid, resp.dynamic_ddr_support);
- 
- 	return;
- 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
-index 2a63e214eb42..08225242d30a 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.h
-+++ b/drivers/net/wireless/ath/ath12k/qmi.h
-@@ -156,6 +156,7 @@ struct ath12k_qmi {
- 	struct m3_mem_region aux_uc_mem;
- 	unsigned int service_ins_id;
- 	struct dev_mem_info dev_mem[ATH12K_QMI_WLFW_MAX_DEV_MEM_NUM_V01];
-+	u8 dynamic_ddr_support;
- };
- 
- #define QMI_WLANFW_HOST_CAP_REQ_MSG_V01_MAX_LEN		261
-@@ -258,7 +259,8 @@ struct qmi_wlanfw_host_cap_req_msg_v01 {
- 	struct wlfw_host_mlo_chip_info_s_v01 mlo_chip_info[QMI_WLFW_MAX_NUM_MLO_CHIPS_V01];
- 	u8 feature_list_valid;
- 	u64 feature_list;
--
-+	u8 dynamic_mem_support_valid;
-+	u8 dynamic_mem_support;
- };
- 
- struct qmi_wlanfw_host_cap_resp_msg_v01 {
-@@ -281,6 +283,8 @@ struct qmi_wlanfw_phy_cap_resp_msg_v01 {
- 	u32 board_id;
- 	u8 single_chip_mlo_support_valid;
- 	u8 single_chip_mlo_support;
-+	u8 dynamic_ddr_support_valid;
-+	u8 dynamic_ddr_support;
- };
- 
- #define QMI_WLANFW_IND_REGISTER_REQ_MSG_V01_MAX_LEN		54
++	if (dp->reoq_lut.vaddr_unaligned)
++		ath12k_hal_write_reoq_lut_addr(ab, 0);
++
++	if (dp->ml_reoq_lut.vaddr_unaligned)
++		ath12k_hal_write_ml_reoq_lut_addr(ab, 0);
++}
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+index f8cfc7bb29dd..9b39146e65e1 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.h
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -701,4 +701,5 @@ struct ath12k_rx_desc_info *ath12k_dp_get_rx_desc(struct ath12k_dp *dp,
+ 						  u32 cookie);
+ struct ath12k_tx_desc_info *ath12k_dp_get_tx_desc(struct ath12k_dp *dp,
+ 						  u32 desc_id);
++void ath12k_dp_reoq_lut_addr_reset(struct ath12k_dp *dp);
+ #endif
 
-base-commit: 83f028be15fe071efbee8e27837538d6cca77e87
+base-commit: 972c4dd19cb92e03d75b66c426cfade07582a1ba
 -- 
 2.34.1
 
