@@ -4,136 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F866CD98F8
-	for <ath12k@archiver.kernel.org>; Fri, 19 Jun 2026 18:30:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E891CD98F6
+	for <ath12k@archiver.kernel.org>; Mon, 22 Jun 2026 03:32:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Avbh5upeI5OaTX5yqy97LarkLggUeIf2fKq66mXSuNA=; b=FQR+4mqbvFo06CgFKx6EwnePL3
-	lP4kjSdmk7UlyUNsxL5UzSMBWCV2rugO9jN82j/Sa1d7RypYE8H08mTt1UsyBRuFewThYCcrMgR2n
-	I45yoQjLr+nZ3QTqz14CPaVKZgn/Y3MaW4L0yDy8gNWE3g7f/L/PcYYsVNMGMz6o82q7tUEH1WJ8n
-	fiqkBrtO9Q6fgyxv1f8rs1Wzv8cjxDKiRNJfiEYJQ71ALTnIjN2hDVi4jsR+IOsK+/MfSy9Wm48vJ
-	KCvh7W4LOCzwd0ATbISzjhGDmrHq5PAJNG27NAtF3YIRTVzSmKyK/aZeqJUa1eRks+uOpHYKuqQ/8
-	MvvnvAsA==;
+	bh=pJa1DnynoCbIJLjtDNqzEZsjsyIjhRDxhun7EqvtLrs=; b=C5oirkUqV9/lG1hRrjLczUx6OZ
+	Ic8sNHnQZdstWUvdpinFt6QCDe1aRA1krSyRjrD1xjKi7lNsJpVwFlUS6LNXr7xYkS7mZtTDjjUDM
+	bDtU2hJrpNDuXVMvfhBiUuGk9kLJ8i6DzP8tVvvip00eIiHwewNPIGbeGNgZbL09qNmpLKgconUAv
+	MxVkTXMXmjTzdtf5yLpEX4m+qNuwdSQCKCfuZ7JXYY6YykVUemj38T5C6pGPxSsxQHKrgOrkALMfK
+	+U/cJd0Ecp6fnUbrzgX5CCYxWMmdji3PkyiWiE+9KQhT4Lp18vvwQ5VSvohgZZkbu/8/TD0ZlA8z8
+	OUXfSElw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wadzI-00000002sMj-1LNj;
-	Fri, 19 Jun 2026 18:30:44 +0000
+	id 1wbVOO-00000004LaR-3YtL;
+	Mon, 22 Jun 2026 03:32:12 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wadz8-00000002sIo-3oyA
+	id 1wbVOM-00000004La6-0Ubn
 	for ath12k@lists.infradead.org;
-	Fri, 19 Jun 2026 18:30:38 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65JHVchZ1399187
-	for <ath12k@lists.infradead.org>; Fri, 19 Jun 2026 18:30:34 GMT
+	Mon, 22 Jun 2026 03:32:11 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65LNT5AD3645936
+	for <ath12k@lists.infradead.org>; Mon, 22 Jun 2026 03:32:08 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Avbh5upeI5OaTX5yqy97LarkLggUeIf2fKq66mXSuNA=; b=ISUw+mBtlv4gzPOO
-	UjyfOZ2lvDHClG/XOdMZ+MS11FGddFm5KK3DPm9waKDBGvaRMXvYj5aXl1LQdFLh
-	GfGN83u7ebnt6tvkUSjqX4lNng8qBWOuoxkhFuv529GUaTeJ/xeicXagcfGkTQzf
-	9zQ3R/keRrC/UNskmLe5PMDJeDYV1AZaCjSwtwWJ280yXaMH/sNXRkuFny7NMgBc
-	xtMX9XvMMQxp02rSWNqBuXW/f9LdkHGs5CONSPP4Pf31Zp0CV1IhBhnNzcShAfap
-	mE67PKA/5XN1/VsG8xzUvAWaottHHZwwCVdd9+Du1x2BxdPpIQq4ZIMxs6v/wyd6
-	ZyzjXg==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4evmtjcukh-1
+	pJa1DnynoCbIJLjtDNqzEZsjsyIjhRDxhun7EqvtLrs=; b=ZscfBkx8tfb0z4l4
+	+xApX2qVJQfeZOrd2NTR0mCsmLxQ5H82n9GsVYzPw3AxbkIqrh875UNhmzMCyrxX
+	HYCtH9vxIPCl7x5S2TuT/1i6jYsHoSQmnSFvxmoR5LOtNako80SvbFQQWPsKp+gi
+	3cKayy1R/W3FUW8M1m9CYeMYTkh6PXoxQzD2LEqHDAEO1WZT3mhBGmAkDxzxMCBz
+	k+vKdAgJaHMIQ5gBp/w4N1FZ/+GNQHvUoSQYEhN4o5W6HUn4wpKNzqo9yjdHzQIe
+	F6nCXGtRAMppthpMj0WDCppy+wcX0xps+x1xtKYp0C10CHbbHjeSv2v1aQdvtuSb
+	aGNc6g==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ewjexvmr1-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 19 Jun 2026 18:30:33 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-37c6916c768so2888247a91.3
-        for <ath12k@lists.infradead.org>; Fri, 19 Jun 2026 11:30:33 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 22 Jun 2026 03:32:08 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-c88d7a75507so5361158a12.1
+        for <ath12k@lists.infradead.org>; Sun, 21 Jun 2026 20:32:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1781893833; x=1782498633; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
+        d=oss.qualcomm.com; s=google; t=1782099127; x=1782703927; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=Avbh5upeI5OaTX5yqy97LarkLggUeIf2fKq66mXSuNA=;
-        b=EqxEAFNPka3fujCckNR1FYH1Mi6vVAnIGk7Tfa/LOdz0k+DY+pBwc/Wg0++lbMIHx3
-         NiRQmZJCFGMJbagu4sqEYF7Qbm3PWijd9To1ox3KDQvRXD9Ky5YXtXXdrlIoOF0WfHZZ
-         Ci7Q4EgWJ9lLHk7HypfkhnCHST16KXMK3AwXLfqODyvwVgAKux9xRM0DvnpqdvBo2HUE
-         hPXh/kyn/Skfh5waEnuScs41jyXObW2/Zl+MaXA38aYSkaFfQjY4QYMEnm462DCLqD7Q
-         7irh7pNdwgcw/ylAqvrYl3Pq3goNH3AZ8OuggueXA47LMgiMOyYTr1G3PLEbsD7EOu5y
-         F+GQ==
+        bh=pJa1DnynoCbIJLjtDNqzEZsjsyIjhRDxhun7EqvtLrs=;
+        b=eSfcelWWxaGC4cVKEajsF9KZQZ58qjRhCidAyo3JAph1m8Q6thWPtl8hPgr+6v+wfZ
+         oTRUNu1UVHCKIur9aEGlLYWYxyF7wSAp1W+fMGAbPmJRIt6oxM27WmTGI/9GYKKta+LL
+         vPD/nOkWJk/7Qm6NEs6i6e8U+lUX4m1xbFHcmFTb684lH08OIuydc2zqxZh/l66hsXuP
+         2oLHcL0tuPf/kK8t96k6A9F1NXA2WTaWKnIitiEnut8WcYItNU/LSgtk9Uywz7hNEVwO
+         9qbD3jz7azNbhAQK52qoV9o0/gUN2hFadxrneUQLQEOT7Q9i74RLD4dBRkWGbx+c/fTk
+         OMlw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781893833; x=1782498633;
-        h=content-transfer-encoding:in-reply-to:content-language:from
+        d=1e100.net; s=20251104; t=1782099127; x=1782703927;
+        h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Avbh5upeI5OaTX5yqy97LarkLggUeIf2fKq66mXSuNA=;
-        b=C2yAXQxBn5JzMiENHf8CxA8gpuKzneKffRfxeJq+MksmQ9Env3EXze0wxhF13s5hJe
-         4slOmA5ffHqto1CGXqHftqXDwtrte4cqemxctRYECsjsAOck10fXFKdHWzeUp/zjNhIW
-         V3cVUIx/UQdy4tDSE6L+HVitA9VoIRP7NYdgz0ZGohKbCAbBQz9t8KNmmIqoW0iq3W5C
-         WnXNgujc0rKUUhkw9mdELeFo09ri/V7n196JI2cW8CeYt508/96LFW6A837U8/LBNIzJ
-         P0x+m8MXVtpjYPvEMJ/YR//SkdEXhIgZbWPtnxdMi5//uLnqlsiJy5QvA4PiGTOHIQmR
-         krww==
-X-Forwarded-Encrypted: i=1; AFNElJ+v0Sw/o6HGbc1eRVxMl4MfC2ReRfNyL0jgoFYShPedHBl1UyX9ZGRKfJFDq6h8R7fMIUL7XB8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwpSca2y+Jr9f7sTeWIDBYMDuGfSI+jq0+pgDxBosLhDsu64vN2
-	Vf1pITVSsjqmWepVFrjTeQMvmUuU3TUbiZTE5YUn35mvXFEf9/lUieesfFHYX2URYCVo1Gjwqo4
-	VwlAxgC+BRwhojBAnnEkQdk2Jl5DFw/uPgNeA02H44a4uE8KG4hWt4u+U83gDz2otiFV1uUde
-X-Gm-Gg: AfdE7cnC0KyNHHaiNmDtKp+s8XPOjc+frlhs8yZSi3hMjuJETR1jwAjnyFsYErWVZn9
-	NUaYU5jgjzAcS7TufxHkCq8C7a979vcVDMLIgcmTRAr+mSGoOhFHXMWnD0X8R2pbOnec6aJZYnU
-	VArkcD1ZsalvHjPFYGPsSqqAru2LaKRaRRaxqYLgkvGnB3CPoJO47CBKvwdskOEDCX8VWdYsRVi
-	XS1+jH0uu6AoXOaq6Yo6rPE4jyt6ItgdpW6EypuWl5xsf0oop1ZG2YWSWFYtyc7Vwv7a3Poo9qI
-	LMweUb+366lG5BSqHotLp10ZIKBhmUck9NW3H78jx20gBLBvgXyokS5dd9ZeqmXRXg213bwO3W8
-	w8eCgoSZo/I87/MQrlwtpVQcKs2iIKIPBE53niUlWqqhsRM1L6a8umcw=
-X-Received: by 2002:a17:90b:380f:b0:368:af5c:5925 with SMTP id 98e67ed59e1d1-37d160d9177mr4966540a91.23.1781893832383;
-        Fri, 19 Jun 2026 11:30:32 -0700 (PDT)
-X-Received: by 2002:a17:90b:380f:b0:368:af5c:5925 with SMTP id 98e67ed59e1d1-37d160d9177mr4966506a91.23.1781893831966;
-        Fri, 19 Jun 2026 11:30:31 -0700 (PDT)
-Received: from [192.168.11.106] ([124.123.80.135])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-37d4f2d2919sm235734a91.9.2026.06.19.11.30.30
+        bh=pJa1DnynoCbIJLjtDNqzEZsjsyIjhRDxhun7EqvtLrs=;
+        b=DMvHJUg+AIclW6u/d8jBM5gm9hSzAvZDtrghpB/FoM2UhYRlLO08JEbVS90oPRyVgU
+         YMqgEPiH5204bTYjZfsLXlLC7Ws1Po0xaAw8R430PJCneeCKhmey7f5JcIAuekQXbNjr
+         VeCSKkRDA84b4sKPsvAW0ux+tsdICI2cFjI7Lr1lqIFBY7FY5osCErfWLUKQ1V97epGX
+         TAdrEYKviXM6UZ5DwZZ09mSm5qPQCpqoT4O7ySIrlLeXtPwK4cK7tebUBOsUueg3EXZB
+         u/xdiJfd9ttZ5Fw1OMwCgGLNA+tfvLN0Y4MBOy1/bhw+3MowGpxsGCot5TC15pMSRHHl
+         rHew==
+X-Forwarded-Encrypted: i=1; AFNElJ/Px7jsppGvAlT6ty6C9UqQ1lkEm7Gc5wapLP/edBThwPahAREpXWQ1pJbIsV7ykL4Vzk7zXLI=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzy7xMtKH4FS5SuENsLf5zIwj0RWF1PcTG9B4VoelqGsYcgZDZa
+	sdPloFuJQ+SCGw1x8JvUWeB+dm1e1iyQwTEGLUe+RABOI5xpWQE0cDw9dxyMzncjw0F5fFnidTg
+	mh+tF69YD+OgyRK8zsdJn/Un++7GHbF04YR8zVeJuhoveUMwtYvpZaIP7ZZbnkz6mdvLjyUyU
+X-Gm-Gg: AfdE7cniFZN1tJ+bDoIrydZuZ8jTFwZvD19jgoM3DJhu1YHyWVDLr+OgSoCa5yzOVGj
+	TrQaGs0dv01CMo3yW4AIydz6WdYwsC088DSfs7r0BHB5fsxw3VmryCmhhH3xuVFixo7714pvwEQ
+	D8m7d5EfxV8vLwv3UAdulWC6MkMatYRwuR/bTlnmGPnpfN/t89MOEejSn8MxRLrxS+81gsvlFeu
+	AQlndwIJmCs+yp6KtaTWDm+ESsC+OLjg1juMjxua6L2MUztnO2nkPmdoyPqUsEVvYQHKREsX7/Y
+	t+J1snpvvCB8Bg7eDAqAwQvpByOepARnCvtytspsxe/sWjb8+twRTE7KMkeaKxZz3BzetkOVu1X
+	8doi/WhEUtDnCHkj/5Ez27PTKUNQxmMLYdUudwwVuNDg/O6vG7LyJ
+X-Received: by 2002:a05:6300:220a:b0:398:a33a:71c9 with SMTP id adf61e73a8af0-3bb6c9cbbe1mr13694475637.43.1782099127414;
+        Sun, 21 Jun 2026 20:32:07 -0700 (PDT)
+X-Received: by 2002:a05:6300:220a:b0:398:a33a:71c9 with SMTP id adf61e73a8af0-3bb6c9cbbe1mr13694446637.43.1782099126957;
+        Sun, 21 Jun 2026 20:32:06 -0700 (PDT)
+Received: from [192.168.1.8] ([106.222.223.74])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84564d8ee89sm5551794b3a.20.2026.06.21.20.32.04
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 19 Jun 2026 11:30:31 -0700 (PDT)
-Message-ID: <95d1796c-060d-4813-824d-9826d49e4a9d@oss.qualcomm.com>
-Date: Sat, 20 Jun 2026 00:00:27 +0530
+        Sun, 21 Jun 2026 20:32:06 -0700 (PDT)
+Message-ID: <630fbc17-b8d9-40cd-a151-6af8fd9ed979@oss.qualcomm.com>
+Date: Mon, 22 Jun 2026 09:02:02 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v2] wifi: ath12k: add QMI capability negotiation
- for dynamic memory mode
-To: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>,
+Subject: Re: [PATCH ath-next] wifi: ath12k: advertise ieee_link_id in vdev
+ start MLO params
+To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
         ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20260619065816.2139392-1-aaradhana.sahu@oss.qualcomm.com>
-From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org,
+        Hari Naraayana Desikan Kannan <hari.kannan@oss.qualcomm.com>,
+        Karthik M <karthik.m@oss.qualcomm.com>
+References: <20260619-ieee_link_id-v1-1-36cf573cb81d@oss.qualcomm.com>
+ <c5feff91-9303-492c-a031-1b2a1e7f3b7c@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20260619065816.2139392-1-aaradhana.sahu@oss.qualcomm.com>
+From: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>
+In-Reply-To: <c5feff91-9303-492c-a031-1b2a1e7f3b7c@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjE5MDE3NSBTYWx0ZWRfX/HuJh7o7gVXM
- 0ThG851K89gsfr2Ib4WByCBw9vYZMJiMzIYACGXT7TnB3+TDpBrEE0NHlhkorjfrEP0y9rNEs/Y
- 7nM/iQsp5OaTDZslGEGA9C9lqtDX53k=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjE5MDE3NSBTYWx0ZWRfXwt9Sf+V1oC5J
- kOPnGrvksQBE+GGoTqMD49iLg547cX0RAv/29Vb7MF6rwv2nciS6k3f35U8GCxi1QJL7KBGmRJI
- 1WIoLDZcuSk3JSywlsZ+V5v9pBbFL84495N144S/aRIKeTL3jArL/2zDK9wk57yUP4TtwNDedxC
- 23fBTkpE2VnDqDxIfZWnA5rztMSY2YKYh8NdW6EyWiHoEZK9M4qubeFzq7HHSOcexAh0oQQaXcR
- d7cXCrB8+UjdhL9sRfpC9pa+8ta8i0pjW01zWn7jCzPlu/oOcqx9kCdC8srKONtYi3FLzghoYOp
- OaKA3RILbVlwWgbOJf1qKUyCOa9vfHq9odORU+GRsPOzvo68IX3RB6oI/sjeItPQS/jlvpPKJ50
- k4N/u9QOlc2KRk4sG2Zbn3Z7uUrC9BWYuXrV5RSjkWakKVG+R7OakcdjqnfizwzUeV2AX7kuqP2
- LXLJzXZ0xbUM66ogGSg==
-X-Proofpoint-GUID: T5z3mzSXdjmuMVeBYlNKJODoO_yPyqnf
-X-Proofpoint-ORIG-GUID: T5z3mzSXdjmuMVeBYlNKJODoO_yPyqnf
-X-Authority-Analysis: v=2.4 cv=OM8XGyaB c=1 sm=1 tr=0 ts=6a358ac9 cx=c_pps
- a=RP+M6JBNLl+fLTcSJhASfg==:117 a=kllYWVK2JqQtNyhMtAlpJw==:17
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjIyMDAzMCBTYWx0ZWRfX1a3ffJNgTk/R
+ 4LoEKQtNtRkEuSiLxJYskWwnIclfbyPErqUokI2TwNxZpImaczNU+ByL1Nc7qUPE2D26ypWTcfk
+ IQ4imtTdzeW54MmOmruO8rzf9Bx6Hx2n9XPhz5h7rn07sieIFqkajRttrcyORnE/iQzyT1SH9R8
+ vMO2VOoD2IliyxR7vjaTXe0ZQkDjt+XfUMxfk6dPwnHhc4dJG0bv9b3V5sJdFOPzsOICeawBI+A
+ 14M+6ZDMhUY6OpGN3xIOwRZGLvpV6ErMFE4hByMGiu9IUBBd5imYXvMYC2q8nv5weZs8S9J1hiG
+ cbckRYpMBJ7NyzfAXU+0viJHf7cDoMJihy2BGRyLYmhU8QFy/t667qzBqpC4kT22a7hJdDPuYa6
+ +R88aBkZAfyTgtwmQHlJ/MaxA04597wF/j5OSQX4ouBBBtuM9le9a9/lgaaYFNWrmU2iFFSbS9X
+ +aNN+x2LhSwq6urKgGA==
+X-Proofpoint-ORIG-GUID: bF-VZEfJKOV48pW5TcILYWkNkRxJVh9k
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjIyMDAzMCBTYWx0ZWRfX1TPI/sCj4oqG
+ D/FrtodlDnVTefXPTnsGpTT0yJy9BtN4ijEHti6K6R0v5nu7OJcdnXpb8gApSq1xEfEMbG1zUHX
+ oZ03RFV+zd1oISP4yGY/UttgV6BadvI=
+X-Authority-Analysis: v=2.4 cv=YtA/gYYX c=1 sm=1 tr=0 ts=6a38acb8 cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=BF6w7GvFs2xbIyFlm1owPA==:17
  a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
- a=EUspDBNiAAAA:8 a=vXOABIWjEGlRoqXTTScA:9 a=QEXdDO2ut3YA:10
- a=iS9zxrgQBfv6-_F4QbHw:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
+ a=EUspDBNiAAAA:8 a=b4I1gYfj5rPnem_N0rEA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=bFCP_H2QrGi7Okbo017w:22
+X-Proofpoint-GUID: bF-VZEfJKOV48pW5TcILYWkNkRxJVh9k
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-19_04,2026-06-18_03,2025-10-01_01
+ definitions=2026-06-21_02,2026-06-18_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 malwarescore=0 adultscore=0 clxscore=1015 priorityscore=1501
- lowpriorityscore=0 impostorscore=0 bulkscore=0 suspectscore=0 spamscore=0
+ spamscore=0 phishscore=0 malwarescore=0 priorityscore=1501 lowpriorityscore=0
+ impostorscore=0 adultscore=0 suspectscore=0 clxscore=1015 bulkscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606190175
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606220030
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260619_113035_077931_B035F549 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20260621_203210_313345_1799F689 
+X-CRM114-Status: GOOD (  20.56  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,29 +151,150 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/19/2026 12:28 PM, Aaradhana Sahu wrote:
-> On AHB platforms, firmware operates in two modes: fixed-memory mode where
-> firmware uses hardcoded addresses for memory regions such as BDF and does
-> not request HOST_DDR memory from the host, and dynamic-memory mode where
-> firmware expects the host to provide memory addresses including HOST_DDR
-> after the Q6 read-only region and relies on host allocation for all memory
-> types.
+
+
+On 6/19/2026 11:58 PM, Rameshkumar Sundaram wrote:
+> On 6/19/2026 11:25 AM, Manish Dharanenthiran wrote:
+>> Firmware builds the AP MLD partner profile from the hw_link_id passed in
+>> the vdev start parameters. However, hw_link_id is not always the same as
+>> the logical per-MLD ieee_link_id, since ieee_link_id is assigned per MLD
+>> and not per pdev.
+>>
+>> This matters in mixed MLO and SLO setups. For example:
+>>
+>>    MLD 1 - 5 GHz + 6 GHz (2-link MLO): ieee_link_id 0 and 1
+>>    MLD 2 - 6 GHz only    (1-link SLO): ieee_link_id 0
+>>    MLD 3 - 5 GHz only    (1-link SLO): ieee_link_id 0
+>>
+>> The same physical 6 GHz radio can use ieee_link_id 1 for one
+>> MLD and ieee_link_id 0 for another. Pass the correct ieee_link_id to
+>> firmware so it can build accurate per-STA profile elements.
+>>
+>> Add ieee_link_id to wmi_vdev_start_mlo_params for the self link and to
+>> wmi_partner_link_info for each partner link. Populate these fields in
+>> ath12k_mac_mlo_get_vdev_args() from the corresponding vdev link_id
+>> before encoding the WMI command.
+>>
+>> Introduce two new flags in ML params to indicate to firmware when
+>> the new fields are valid:
+>>
+>>    ATH12K_WMI_FLAG_MLO_IEEE_LINK_IDX_VALID         BIT(18) for the 
+>> self link
+>>    ATH12K_WMI_FLAG_MLO_IEEE_LINK_IDX_VALID_PARTNER BIT(19) for partner 
+>> links
+>>
+>> Firmware parses ieee_link_id only when the matching flag is set.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+>>
+>> Co-developed-by: Hari Naraayana Desikan Kannan 
+>> <hari.kannan@oss.qualcomm.com>
+>> Signed-off-by: Hari Naraayana Desikan Kannan 
+>> <hari.kannan@oss.qualcomm.com>
+>> Co-developed-by: Karthik M <karthik.m@oss.qualcomm.com>
+>> Signed-off-by: Karthik M <karthik.m@oss.qualcomm.com>
+>> Signed-off-by: Manish Dharanenthiran 
+>> <manish.dharanenthiran@oss.qualcomm.com>
+>> ---
+>>   drivers/net/wireless/ath/ath12k/mac.c |  3 +++
+>>   drivers/net/wireless/ath/ath12k/wmi.c | 32 +++++++++++++++++++ 
+>> +------------
+>>   drivers/net/wireless/ath/ath12k/wmi.h |  7 +++++++
+>>   3 files changed, 30 insertions(+), 12 deletions(-)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/ 
+>> wireless/ath/ath12k/mac.c
+>> index af354bef5c0d..773ecd6da8e5 100644
+>> --- a/drivers/net/wireless/ath/ath12k/mac.c
+>> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+>> @@ -11253,6 +11253,8 @@ ath12k_mac_mlo_get_vdev_args(struct 
+>> ath12k_link_vif *arvif,
+>>       ml_arg->assoc_link = arvif->is_sta_assoc_link;
+>> +    ml_arg->ieee_link_id = arvif->link_id;
+>> +
+>>       partner_info = ml_arg->partner_info;
+>>       links = ahvif->links_map;
+>> @@ -11276,6 +11278,7 @@ ath12k_mac_mlo_get_vdev_args(struct 
+>> ath12k_link_vif *arvif,
+>>           partner_info->vdev_id = arvif_p->vdev_id;
+>>           partner_info->hw_link_id = arvif_p->ar->pdev->hw_link_id;
+>> +        partner_info->ieee_link_id = arvif_p->link_id;
+>>           ether_addr_copy(partner_info->addr, link_conf->addr);
+>>           ml_arg->num_partner_links++;
+>>           partner_info++;
+>> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/ 
+>> wireless/ath/ath12k/wmi.c
+>> index 84a31b953db8..a0e8b5678ae3 100644
+>> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+>> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+>> @@ -1228,10 +1228,14 @@ int ath12k_wmi_vdev_start(struct ath12k *ar, 
+>> struct wmi_vdev_start_req_arg *arg,
+>>                      le32_encode_bits(arg->ml.mcast_link,
+>>                               ATH12K_WMI_FLAG_MLO_MCAST_VDEV) |
+>>                      le32_encode_bits(arg->ml.link_add,
+>> -                            ATH12K_WMI_FLAG_MLO_LINK_ADD);
+>> +                            ATH12K_WMI_FLAG_MLO_LINK_ADD) |
+>> +                   cpu_to_le32(ATH12K_WMI_FLAG_MLO_IEEE_LINK_IDX_VALID);
+>> -        ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "vdev %d start ml flags 
+>> 0x%x\n",
+>> -               arg->vdev_id, ml_params->flags);
+>> +        ml_params->ieee_link_id = cpu_to_le32(arg->ml.ieee_link_id);
+>> +
+>> +        ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "vdev %d start link_id %d 
+>> ml flags 0x%x\n",
 > 
-> Introduce QMI capability negotiation to support both modes. Add a new QMI
-> PHY capability flag dynamic_ddr_support which is advertised by firmware to
-> indicate it supports dynamic memory mode. When the host detects this
-> capability, set the dynamic_mem_support flag in the host capability message
-> to signal the host is ready to provide dynamic memory allocation. This
-> triggers firmware to send the HOST_DDR memory request and use the
-> host-provided address.
+> %u for vdev and link_id ?
+> Also this part of change is not describe in commit text.
 > 
-> For backward compatibility, if firmware doesn't advertise
-> dynamic_ddr_support, the firmware continues to operate in fixed-memory mode
-> where firmware uses predefined addresses.
+>> +               arg->vdev_id, arg->ml.ieee_link_id,
+>> +               le32_to_cpu(ml_params->flags));
+>>           ptr += sizeof(*ml_params);
+>> @@ -1244,19 +1248,23 @@ int ath12k_wmi_vdev_start(struct ath12k *ar, 
+>> struct wmi_vdev_start_req_arg *arg,
+>>           partner_info = ptr;
+>>           for (i = 0; i < arg->ml.num_partner_links; i++) {
+>> +            struct wmi_ml_partner_info *pinfo = &arg- 
+>> >ml.partner_info[i];
+>> +
+>>               partner_info->tlv_header =
+>>                   ath12k_wmi_tlv_cmd_hdr(WMI_TAG_MLO_PARTNER_LINK_PARAMS,
+>>                                  sizeof(*partner_info));
+>> -            partner_info->vdev_id =
+>> -                cpu_to_le32(arg->ml.partner_info[i].vdev_id);
+>> -            partner_info->hw_link_id =
+>> -                cpu_to_le32(arg->ml.partner_info[i].hw_link_id);
+>> +            partner_info->vdev_id = cpu_to_le32(pinfo->vdev_id);
+>> +            partner_info->hw_link_id = cpu_to_le32(pinfo->hw_link_id);
+>>               ether_addr_copy(partner_info->vdev_addr.addr,
+>> -                    arg->ml.partner_info[i].addr);
+>> -
+>> -            ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "partner vdev %d 
+>> hw_link_id %d macaddr%pM\n",
+>> -                   partner_info->vdev_id, partner_info->hw_link_id,
+>> -                   partner_info->vdev_addr.addr);
+>> +                    pinfo->addr);
+>> +            partner_info->flags =
+>> +                
+>> cpu_to_le32(ATH12K_WMI_FLAG_MLO_IEEE_LINK_IDX_VALID_PARTNER);
+>> +            partner_info->ieee_link_id = cpu_to_le32(pinfo- 
+>> >ieee_link_id);
+>> +
+>> +            ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "partner vdev %d 
+>> hw_link_id %d macaddr %pM link_id %d ml flags 0x%x\n",
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
+> %u for vdev_id, hw_link_id  and ieee_link_id ?
 > 
-> Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+
+Agree. But, there is a mixed usage of %d & %u for both vdev and link_id 
+in this file. Will address along with other comments, if any.
+
+[snip]
+
+
+> 
+> -- 
+> Ramesh
+
+Regards
+Manish Dharanenthiran
 
