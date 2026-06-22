@@ -4,127 +4,127 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB499CDB46B
-	for <ath12k@archiver.kernel.org>; Mon, 22 Jun 2026 06:23:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27F3DCD98F6
+	for <ath12k@archiver.kernel.org>; Mon, 22 Jun 2026 06:26:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=/C/8iYmL+lfKAPj1dd+sn/SjkpTMe1a5ENGah+3sxuc=; b=l3cFHcqvS98kkCiasRB4Pt7H1W
-	xo1t3bDZoKX5IQEcn++Pgp4h30EA6yjTktl7+BbhqQVVokMruINETbtp6XH6zX2mNVpvTbbaCBFll
-	Qz9mUKjJKMiZ/QoogufxXbXOBcmEQX5tvNY6gxMVNU++lFhk9fuxTIVYt9bpRyqNS2VQVHRrHf1g+
-	mV01sV1X7/KIzqlNLw/mOMu4RZNQa5qkP7CWRMdWFsksLUbbTFXItLtdxEPgbAZK5uqP4keTzeAy3
-	EN4qAfzjZFUsrHWWW7gZHaXJf0P70qOpeRq8lep2Qju73XFKckbD3izoLV+a+IY4hE3xq2969l+2N
-	e5Eya26A==;
+	bh=5QCOjORRhwy8f5PoTDOoRqr4PyIF61sQpvIgvDJe4B8=; b=MHkA1s6zKEAjjWWGDBAPQ3slAv
+	xcLHj8U4qL1JR8rBCj8I4sl++Ks9/k95RnvDlbIn5SpUxtkztq0WLCjOkfcH2zwimisXpXEhOZwFT
+	XvNmuaTtsJaNkR/TtVJdvfHJxq2cguGAyyqogSTLMA4nNKLkU0uokqqqfgKgv78JoRj8Uu4w3NDvd
+	sgMDmGrYbOD48g9+o1YV4zqTnoYkfitAoFJHnfi5VEVI8TZgPdlxxvh295FsAV5EzLULMh6VZ/WZ+
+	CDbNNPJbM3Bpt0cF0/ABCpDgiA3JQ2iZHki5ewD2VGEkFzrGcf09fiLdFnEcX/j/exYxrBVgRD0/I
+	Tumzq1xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbY4K-00000004TjK-1qPV;
-	Mon, 22 Jun 2026 06:23:40 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wbY77-00000004Tvl-3Wwo;
+	Mon, 22 Jun 2026 06:26:33 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbY4H-00000004Tin-2Wyq
+	id 1wbY75-00000004TvQ-3FOn
 	for ath12k@lists.infradead.org;
-	Mon, 22 Jun 2026 06:23:38 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65M5AMZg227649
-	for <ath12k@lists.infradead.org>; Mon, 22 Jun 2026 06:23:35 GMT
+	Mon, 22 Jun 2026 06:26:32 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65M59BnT3850490
+	for <ath12k@lists.infradead.org>; Mon, 22 Jun 2026 06:26:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=/C/8iYmL+lfKAPj1dd+sn/SjkpTMe1a5ENG
-	ah+3sxuc=; b=e33sqghey/tokvjUfikxh2nrLF+Sn4d2C2CxZdX5EoY8gEdpd5g
-	nFjve8gq1rA6QYVr6d61LqmLOwcy+zzmT0Kqf6I1WPnWPhVESwmw7UZDISAJ69k2
-	4chHMs89zR6UhiAfFtJXqyMy544pw5DjcbN1jrEkq4By3QbioOGyfvrd26x+JADz
-	CLS+6SDhnILARuw/f2IEvfb9/q2WoaJkQBukQMvI10Hw5qPuLg0Dyo3c6+cOULBO
-	uokW6Yf43CNivQj5cbBXkmyRPHQRfn+bkohfmYBCgce2q+mzOZcV8OVLCXFE0DrJ
-	Hy7JZVauk2d3GnRwgCfH+JR/AWFvwnOn2Iw==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ewjxucy3p-1
+	:subject:to; s=qcppdkim1; bh=5QCOjORRhwy8f5PoTDOoRqr4PyIF61sQpvI
+	gvDJe4B8=; b=LfPp9i7uDpq8i5SzHJWi/3BKAIpVUYR7YhY3dsryUUEMGgq7C4m
+	9tCAiVOWtTPgjWNW1MqjBWGDCGRptggHEusHHExOztzgrpzYkuYpXN3eGoyp/WPN
+	6tnSBKbUQkRyFJ842fEXGS5wA2bvq20uRI0l9BwL8EmLvXpmrHLDKZNERTZ+UdtC
+	sO/bpIvKwfywQ1uCij8aAdr17Trj59dkeD56ha2bQfY8KioNcbyf9PzA9dLwt1CN
+	Y6lek38QnPhK+CsR4myefjkE7z0SpGcso8kSW5IUJbAjI+d9r1zt6UOMeWmJNMCW
+	HtO+jLFmd2hy/yiMHZbU46eIdu8vwqRAjMw==
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ewm584vcr-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 22 Jun 2026 06:23:35 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2c6a9bbcc53so42344075ad.2
-        for <ath12k@lists.infradead.org>; Sun, 21 Jun 2026 23:23:35 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 22 Jun 2026 06:26:31 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-37d125687b6so4057738a91.1
+        for <ath12k@lists.infradead.org>; Sun, 21 Jun 2026 23:26:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1782109414; x=1782714214; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1782109590; x=1782714390; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=/C/8iYmL+lfKAPj1dd+sn/SjkpTMe1a5ENGah+3sxuc=;
-        b=jFGh/RhFb+P2doN5B6b+vkwJ4z/Z6pJDDL2Ks48qPWaceQbgcmzkSDK6DkD7as1Dm9
-         2wQC1/4iK2f8pQiupNnPcng2paMwxb2WkyBPpba1pGwLYMO4n7VG1pGF78bqn5/ys3+V
-         JA9Mr17ClCoHkhpuPYB6xHQ82uaS6/KCnNJkinDc10sGM8I6fStZd5HdKYzF9Ufxd7f7
-         +n0pUU+z8YGfDLMdM+MCB+AskLUs6N3YGQPCRXvJ6Ytyf3fVI3sqEBY2rBb5pO7HHx0Z
-         GZbYeNK8ox9dHqrpl/7udd8fDzIDouqzqpRqU2mFCKla0FtuLQDv/V1U+XtlqzUqtYD0
-         UP7Q==
+        bh=5QCOjORRhwy8f5PoTDOoRqr4PyIF61sQpvIgvDJe4B8=;
+        b=WUanwfOhVDCCyA2YNSfvwTLifNVwrcHgi9QI7NAB72req6owHYW2cAjsQPleqlT6my
+         C+WOolyL4AsYnBaTaNurqfq4ELqFr3k/Uc2/hFf7HWxyyyslknBkfkwn9i/Ast36y8CP
+         V/8Od1jmLGQA33Bpetlqu1vtt4m7NaYNW4ivyadQ3GORbeNtKdOYaWOzi9lwDt8Jo9DN
+         iSJAu8ix4KjZppEzXMxfTa5zyKTdJUMZrFkGLbT5bsLJXOva2PiawbXofuyz952xnhFu
+         0BKtn8T2SOWsmn2MC88DLN4SdzJmCPRDPZxdEzc1ObuTw9dW+jfH6bl3MzxFfq949M0K
+         Hh3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782109414; x=1782714214;
+        d=1e100.net; s=20251104; t=1782109590; x=1782714390;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=/C/8iYmL+lfKAPj1dd+sn/SjkpTMe1a5ENGah+3sxuc=;
-        b=d+FeB6eGBVXVrCbT+EF8/IN03C8JasfEy6ss4AsZ7bXEF9xC3gEaE7e0Kr6ro3Ixsg
-         Mp5hc3mJScDND77xoCuQh0Df7Hym5+IYWVTneiU9TAtttak79Q0j1qAujQiPGwpx+LRv
-         rvEHkByQyym+GSXEy8FM8NCIJSQMBs4/UuQlUZBVJ5/Z6bHDTbPD8JWbNZgC0LnKRyWQ
-         V3RznG8MRu/z5W+/HY1FQsCr1n1gBvzvZ+IhjbfpLL49QtF3cjDmwYcEU0pjQg6i7oJs
-         S3uxy2wiNEwNCewRNp9ZpJay03FcplP8e0/1Uf5JoUoU+cudFQ5XAEJh3dk+nt7FyfJo
-         8UGA==
-X-Gm-Message-State: AOJu0YwOYsYYGEWMIp2kKZdKIpX7K9ntETKYTDEtCZfUPhEPu4co78Jf
-	dQlCnmwbKmujze/ohCzpb7sMlUtOeKMo7BX/OLPKpVJJMD5o2Ln1ya7VKb9fJnMvsyOtMcjkJQj
-	YoyqYXEUXaJ5dVyFwZE+fl65hit9/bS6nkNpKEA7OKVdkMrK6x6TSP3HXv4DtnZ0sBrVUCDYH
-X-Gm-Gg: AfdE7ckDpHXWp9MKrCY452BKEowzAEfJxmaeAUlLnJIIcPlej7Im+Ets/OdA0hjkjv9
-	tHgqi5UFtnGpNFO9XA0Keyb6JMJNuKT8EubJPv7Eomss6XJINqKG2r6JWhUuWy2oDoy7MTdD+JT
-	t1jHyVH6ET62ng6JP0MYkZQ56LV1uSFi+RU2sQ/BG/GQX3t2Pchhy1ZV7DzrofYz2MsdPfVP9Fd
-	did2jx43GvVElZ1s6dyVsQfCr5R4BnrT6V6w4lPN7F1Hnqp8qqe1uNw+BGTRILDP/IBCnx5Izhy
-	3EDyBoCiTs49T+pOtmSTP1j6yTc4ezb+gAfobViVIjkjykmgFh8dyC7M5TNcXomaawXyDAGUJDW
-	XB3YQp5GwdOzfuMnDBA1Hlx3X1T4v54eR4kohqf42+5MaSTJRrxvPI+JguDncBPkIXb4/CYIjMX
-	NMhjoKX7MV4FABrV/i+kz7cTwUQfXnRw3YihpDoinAQo4=
-X-Received: by 2002:a17:903:2309:b0:2c6:a99a:52b5 with SMTP id d9443c01a7336-2c718cb1273mr141350395ad.12.1782109414072;
-        Sun, 21 Jun 2026 23:23:34 -0700 (PDT)
-X-Received: by 2002:a17:903:2309:b0:2c6:a99a:52b5 with SMTP id d9443c01a7336-2c718cb1273mr141350045ad.12.1782109413565;
-        Sun, 21 Jun 2026 23:23:33 -0700 (PDT)
+        bh=5QCOjORRhwy8f5PoTDOoRqr4PyIF61sQpvIgvDJe4B8=;
+        b=hLtt9UqHAVuxtUauIVjwohp85DT+TeHAuzQVaALbECmBFP7SpRfzzjf44XwFh209gr
+         s0qhaxh/rQASAEJAaIKEzsuC97nOTUyRHd5dY3un7eFjyhjyz8FD82jjcpXJx0cMyqLl
+         s4OPASbT3W5Mt4u6m+GlkM8mp69YrIkKtpPrgNDXjjGdkXPEz6rRHC5mbet/cAx+cRQI
+         J70QaEvoLhoQvi8nNcq+oA+emoSuxKyrWhM75wm/GCL6uGkmyRDyoLl3NyDCEJKMUBmv
+         /PKZtGJgCiM3wfVcfT6MA7SewtarASTdZvDNAFri27aAWazj1bM/AaGBi+fu2/0B2czn
+         +ogw==
+X-Gm-Message-State: AOJu0YzQ1hj1zZDEMoGYBR5S4XqhLKRDtDc8zAAh3FXKJRmLemTMCRqE
+	IOi8jAV06OSmuUPYPOn583GOtoIFZyVdKdDmUNGkd4qiqIJG5uvrVdM9HtVKUQ/xsRkk41kusCb
+	WrgQKEEnaExo84mSW8XhjvK0SZSEnCJw2nxytLrxt2nQYFPxlVZeH+xpJSGpINhN5+VNv54t4
+X-Gm-Gg: AfdE7cnnKGhm9pNofkiFmQUJ7OeUpfmtcMUNxYy4jw8tUvMv2f4pcAW5I2geLnlL1Ri
+	VR/W+6O7ulsWTDmSeUOKdmjRqfoBlHvahFEN02cyM3Dz9QXaIqeFZ2emapqZShpj0B3PmzIlFwS
+	1cNsL6V0BW5wg+TJ3piu/iW4ZpnqT37XLjqNwB0f48/aNN9Uuv0vGokn8f9DteI3UVTABHGezor
+	7U2iGYFPY+HsE3LCDXTzWwuRE2RKFKtzjjQEQxbpDDKAZ8R/3dzRAF55T6Gwgrfe8JuPkXWF5oB
+	0t0wRsGqtqWrikRYB3u8c9yZ2ZpqhVUfgnr4nG0WAWsaBF/8SYfv6akx4C+nKhrMUYozlf6ucrz
+	55E2Jwn4NiuDyADmp9VLw86LLWnE5xlOxIJCFdlK/INqrFPLcoooBVW2D8dxTBxi8OH+tGoaVAW
+	vpKxGPbL6cm92PVhXigZ+vW9IPH5dkf/4PtjWxrILQe8o=
+X-Received: by 2002:a17:90b:2686:b0:36b:71e6:3de8 with SMTP id 98e67ed59e1d1-37d1ea6759bmr12541194a91.24.1782109590453;
+        Sun, 21 Jun 2026 23:26:30 -0700 (PDT)
+X-Received: by 2002:a17:90b:2686:b0:36b:71e6:3de8 with SMTP id 98e67ed59e1d1-37d1ea6759bmr12541179a91.24.1782109589953;
+        Sun, 21 Jun 2026 23:26:29 -0700 (PDT)
 Received: from hu-tmariyap-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2c743bfe4fasm65772875ad.59.2026.06.21.23.23.31
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-37d4f315842sm5904652a91.17.2026.06.21.23.26.28
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 21 Jun 2026 23:23:33 -0700 (PDT)
+        Sun, 21 Jun 2026 23:26:29 -0700 (PDT)
 From: Thiraviyam Mariyappan <thiraviyam.mariyappan@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
         Thiraviyam Mariyappan <thiraviyam.mariyappan@oss.qualcomm.com>
-Subject: [PATCH ath-next] wifi: ath12k: Reduce RX SRNG interrupt timer threshold to 200us
-Date: Mon, 22 Jun 2026 11:53:24 +0530
-Message-Id: <20260622062324.758533-1-thiraviyam.mariyappan@oss.qualcomm.com>
+Subject: [PATCH ath-next] wifi: ath12k: Set congestion control max MSDU count
+Date: Mon, 22 Jun 2026 11:56:14 +0530
+Message-Id: <20260622062614.760166-1-thiraviyam.mariyappan@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjIyMDA2MSBTYWx0ZWRfX7yccQmQW7OSY
- FjRodGTBEsJLBp3PGyXPRvGENsWMTxN+UG6VEFlrfNMoWjqSKmGMf0OY5Wdh65GUUqGyoqJ/o1t
- rVq4/46cN6kLmIHuJsnJCKVAluACpQ4=
-X-Authority-Analysis: v=2.4 cv=G/ws1dk5 c=1 sm=1 tr=0 ts=6a38d4e7 cx=c_pps
- a=JL+w9abYAAE89/QcEU+0QA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Proofpoint-ORIG-GUID: cB_oIvTrl78T7qQIE5Xq0Y8JxesKRV2j
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjIyMDA2MSBTYWx0ZWRfX28o4cm/9VjIl
+ 3+06ku63VDQjfaXdbV5bo9hnEFLodmVKviUpwlcpo+GsJWVW+9fzwkhGI9kHZqJv5A0ZaecPLVc
+ vtzUipgoq7FKR0diSc99e7DLgMRFXec=
+X-Proofpoint-GUID: cB_oIvTrl78T7qQIE5Xq0Y8JxesKRV2j
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjIyMDA2MSBTYWx0ZWRfX88VbBB51B6LN
+ /LsQoN86VHA84AmCvvq3WY0Lu+HbHdMthYVcepqwrk18/Ai+oWLvQvUigj3jbPsIJBAmjLyfSNj
+ nKQTZI+aK7VzJO8dKl1KftXQ4tJhkUyJ2oKBgBYWUlYK6IB9WYoRd1pUtTj4m0UsI3awwB7sSjE
+ 7gsrowxO42dbskVBb1YAoowCIQC+4tpgwJ5HoFjE1lH8z/s6OaWk0UjKJ2YHpi8bdoGAlIfYabX
+ 5DKtgln/ruI3ar2ilP+cpRcol9jfNnNRXnYRfgHgn31uQM1qlKU9LQpJZ2QGbU1vPztO6tSvQMw
+ iahqRu0ANam3Ltd4QFkPs1QnCCo11aQtwF560YD1kQBTexPTALDgiEYwBhn0Rspw4wEcRus5/gD
+ ohqCM8Ls9w/bZmtQbHxyr4yS3wteksjUYaSPZbrNx55WDMefU3T4yNMbIJBr2PIpA61IIQLCNT2
+ k79QonBB+Z6ddkMvCSQ==
+X-Authority-Analysis: v=2.4 cv=FOQrAeos c=1 sm=1 tr=0 ts=6a38d597 cx=c_pps
+ a=vVfyC5vLCtgYJKYeQD43oA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22 a=EUspDBNiAAAA:8
- a=rWk4lG9R-Onagg9xqEIA:9 a=324X-CrmTo6CU4MGRt3R:22
-X-Proofpoint-ORIG-GUID: bnSlx3LJbw5l3ga0-yGO5f2lkdOSQS3B
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjIyMDA2MSBTYWx0ZWRfX5emj2jbwVDOl
- rd2/PrjEjh3XLUqagIdee6DoPl3Wzq7yjGSdBqA7jdZHyB6XcuYpvrJuD2Qg0pK3fPbjrrRAyjf
- sCKgqAkbWsOZMVrxkFlzEb5pVuzAe4LP7aFHyVnx4GwhQHvd5ARU5MYSUkGC5MO2c0XYfT7yBZj
- pqWrA1z6Y5BsQD0DXgKdkXJDmW9FTh0w8Zl4FGITW9hYlZd6mYE7m6Yih6wh/p7gUOLrLmJPuQE
- 1vRH/8OCiFNDXoUYYQT9CTXUrK2FbDKoOuNJeQGH7K+z++SzWJCKz7rafNNkLtBSyW4GEJaGJC0
- xxVnEZdR4dwBT53LeAf2l+QwN2hq13zds2U3E0yqir/DsLzEKnIek7jGl3omT/04B0NBeornW/9
- 2us1IJyDfd8NKZJVcZKU6MjdLnftMPxQMFxJeFS4JjrMKPjdl0wK/NImf9n34QnTIxocinahwur
- D423OZYW5V84pYSqvuQ==
-X-Proofpoint-GUID: bnSlx3LJbw5l3ga0-yGO5f2lkdOSQS3B
+ a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22 a=EUspDBNiAAAA:8
+ a=3WufNbzN01JiPezyzvUA:9 a=rl5im9kqc5Lf4LNbBjHf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
  definitions=2026-06-22_01,2026-06-18_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 adultscore=0 bulkscore=0 phishscore=0 impostorscore=0
- spamscore=0 lowpriorityscore=0 suspectscore=0 clxscore=1011 malwarescore=0
+ suspectscore=0 lowpriorityscore=0 bulkscore=0 clxscore=1011 adultscore=0
+ phishscore=0 spamscore=0 priorityscore=1501 impostorscore=0 malwarescore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606220061
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260621_232337_773417_107A4584 
-X-CRM114-Status: GOOD (  12.86  )
+X-CRM114-CacheID: sfid-20260621_232631_821714_BA8E6C4C 
+X-CRM114-Status: GOOD (  15.13  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,53 +139,130 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently when RX traffic is low or intermittent, the RX SRNG interrupt
-mitigation logic defers packet processing for up to 500us via
-HAL_SRNG_INT_TIMER_THRESHOLD_RX.
+Currently when running 128 clients UDP DL test in 5 GHz HE80 (NSS 2x2),
+firmware uses the default max MSDU count (16K MSDUs). This lower limit
+causes the firmware to compute a smaller TQM drop threshold, aggregate
+packets at a reduced rate, and results in increased packet drops with
+TQM drop threshold as the completion reason.
 
-This causes excessive RX servicing delay, leading to increased end-to-end
-latency and degraded TCP performance in low-concurrency scenarios.
+To fix this issue, set WMI_PDEV_PARAM_SET_CONG_CTRL_MAX_MSDUS to the TX
+descriptor count using ath12k_wmi_pdev_set_param(). This increases the
+TQM drop threshold, reduces drop events, and improves throughput from
+~722 Mbps to ~1060 Mbps with 1200 Mbps ingress.
 
-In single-client single-stream TCP tests using 5G EHT160 (NSS 2x2) mode,
-throughput drops to ~400 Mbps DL and UL instead of the expected ~600 Mbps.
-
-In addition, UDP UL end-to-end latency measured in 5G VHT80 (NSS 4x4) mode
-increases by up to ~48% (~570us versus ~270us) across frame sizes from
-76 to 1518 bytes in uplink and bidirectional traffic, indicating delayed
-RX servicing under sparse traffic conditions.
-
-To address this issue, reduce the RX SRNG interrupt timer threshold from
-500us to 200us so that received packets are serviced more promptly under
-low-rate and intermittent RX traffic.
-
-With this change, single-client single-stream TCP throughput in EHT160 is
-restored to expected levels ~600 Mbps TCP DL/UL and UDP UL end-to-end
-latency in VHT80 returns to baseline values ~270us across all tested frame
-sizes. Under high RX load, no throughput regression is observed, as RX
-rings are already serviced frequently. The primary implication is a modest
-increase in RX interrupt frequency under low traffic, with no observed
-functional, stability, or performance regressions on tested platforms.
+Add a new HW capability flag (supports_cong_ctrl_max_msdus) and enable
+the WMI parameter only on supported platforms.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01181-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Thiraviyam Mariyappan <thiraviyam.mariyappan@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/hal.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/hw.h       |  1 +
+ drivers/net/wireless/ath/ath12k/mac.c      | 13 +++++++++++++
+ drivers/net/wireless/ath/ath12k/wifi7/hw.c |  6 ++++++
+ drivers/net/wireless/ath/ath12k/wmi.h      |  1 +
+ 4 files changed, 21 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 21c551d8b248..2a5bdf6d7653 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -1024,7 +1024,7 @@ enum hal_wbm_rel_desc_type {
+diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
+index d135b2936378..ad62f93441b3 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.h
++++ b/drivers/net/wireless/ath/ath12k/hw.h
+@@ -192,6 +192,7 @@ struct ath12k_hw_params {
+ 	bool supports_shadow_regs:1;
+ 	bool supports_aspm:1;
+ 	bool current_cc_support:1;
++	bool supports_cong_ctrl_max_msdus:1;
  
- /* Interrupt mitigation - timer threshold in us */
- #define HAL_SRNG_INT_TIMER_THRESHOLD_TX 1000
--#define HAL_SRNG_INT_TIMER_THRESHOLD_RX 500
-+#define HAL_SRNG_INT_TIMER_THRESHOLD_RX 200
- #define HAL_SRNG_INT_TIMER_THRESHOLD_OTHER 256
+ 	u32 num_tcl_banks;
+ 	u32 max_tx_ring;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index af354bef5c0d..403f00ab2e3e 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -9722,6 +9722,19 @@ static int ath12k_mac_start(struct ath12k *ar)
+ 		goto err;
+ 	}
  
- enum hal_srng_mac_type {
++	if (ab->hw_params->supports_cong_ctrl_max_msdus) {
++		ret = ath12k_wmi_pdev_set_param(ar,
++						WMI_PDEV_PARAM_SET_CONG_CTRL_MAX_MSDUS,
++						ATH12K_NUM_POOL_TX_DESC(ab),
++						pdev->pdev_id);
++		if (ret) {
++			ath12k_err(ab,
++				   "failed to set congestion control MAX MSDUS: %d\n",
++				   ret);
++			goto err;
++		}
++	}
++
+ 	__ath12k_set_antenna(ar, ar->cfg_tx_chainmask, ar->cfg_rx_chainmask);
+ 
+ 	/* TODO: Do we need to enable ANI? */
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+index 3d59fa452ec0..8c99c50a4ba9 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+@@ -390,6 +390,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 					BIT(NL80211_IFTYPE_MESH_POINT) |
+ 					BIT(NL80211_IFTYPE_AP_VLAN),
+ 		.supports_monitor = false,
++		.supports_cong_ctrl_max_msdus = true,
+ 
+ 		.idle_ps = false,
+ 		.download_calib = true,
+@@ -480,6 +481,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 				   BIT(NL80211_IFTYPE_P2P_CLIENT) |
+ 				   BIT(NL80211_IFTYPE_P2P_GO),
+ 		.supports_monitor = true,
++		.supports_cong_ctrl_max_msdus = false,
+ 
+ 		.idle_ps = true,
+ 		.download_calib = false,
+@@ -568,6 +570,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 					BIT(NL80211_IFTYPE_MESH_POINT) |
+ 					BIT(NL80211_IFTYPE_AP_VLAN),
+ 		.supports_monitor = true,
++		.supports_cong_ctrl_max_msdus = true,
+ 
+ 		.idle_ps = false,
+ 		.download_calib = true,
+@@ -654,6 +657,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 				   BIT(NL80211_IFTYPE_AP) |
+ 				   BIT(NL80211_IFTYPE_MESH_POINT),
+ 		.supports_monitor = true,
++		.supports_cong_ctrl_max_msdus = true,
+ 
+ 		.idle_ps = false,
+ 		.download_calib = true,
+@@ -738,6 +742,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 				   BIT(NL80211_IFTYPE_P2P_CLIENT) |
+ 				   BIT(NL80211_IFTYPE_P2P_GO),
+ 		.supports_monitor = true,
++		.supports_cong_ctrl_max_msdus = false,
+ 
+ 		.idle_ps = true,
+ 		.download_calib = false,
+@@ -826,6 +831,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 				   BIT(NL80211_IFTYPE_AP) |
+ 				   BIT(NL80211_IFTYPE_MESH_POINT),
+ 		.supports_monitor = true,
++		.supports_cong_ctrl_max_msdus = true,
+ 
+ 		.idle_ps = false,
+ 		.download_calib = true,
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index c452e3d57a29..4937c547562e 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -1083,6 +1083,7 @@ enum wmi_tlv_pdev_param {
+ 	WMI_PDEV_PARAM_RADIO_CHAN_STATS_ENABLE,
+ 	WMI_PDEV_PARAM_RADIO_DIAGNOSIS_ENABLE,
+ 	WMI_PDEV_PARAM_MESH_MCAST_ENABLE,
++	WMI_PDEV_PARAM_SET_CONG_CTRL_MAX_MSDUS = 0xa6,
+ 	WMI_PDEV_PARAM_SET_CMD_OBSS_PD_THRESHOLD = 0xbc,
+ 	WMI_PDEV_PARAM_SET_CMD_OBSS_PD_PER_AC = 0xbe,
+ 	WMI_PDEV_PARAM_ENABLE_SR_PROHIBIT = 0xc6,
 
 base-commit: 972c4dd19cb92e03d75b66c426cfade07582a1ba
 -- 
