@@ -4,101 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82A9BCD4F26
-	for <ath12k@archiver.kernel.org>; Tue, 23 Jun 2026 10:05:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C54B4CDB46F
+	for <ath12k@archiver.kernel.org>; Tue, 23 Jun 2026 12:56:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=8NjygwYtud3DGtX7MwVPQSYE2dhj0Ujakfqd1CRlUiU=; b=fbpobKnCF3uC7sUxlSjKU/hwfc
-	3LSy6kXZa9ZIkO2wtyFFgf5zOyWS0ArRnl7fg58KbLyR7kC0HZzr+wWLAN449M7CB3v5MtGyAWXb1
-	1Rq53ZY+o3LpcX2/WYhhs7eU6ywiymHmgyAbIX29G9UDAf8l+m8QL1A+LS0k7YHLLm0Sirvpp7h4E
-	VJKny7XcFFfYg3+m3iNqAfjmUQvyNqCR9bTwcZOs6INlbVw2GI28WgqMty+UlSFYNZsqk9OjpinsC
-	mhIPC79A5GZe29AgbCHdOFpmKh/kgG2EgJL55aZdGlw2eAasIsuLJY59TrWNqCzNPyGq+hoeRR6rx
-	ER3fI1QA==;
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=6OViMVvFs1Rdaduz4uN6EcMeVo/mRomtYu9z3RnglZk=; b=QxkCan2vR+V88AFKeA+Lh8EBH8
+	Zl2PJTbA8lunyZY2RH3saQjMzJR2QJPVXX0qqs8el8ZyjL60A8KkOYQRyEJXfJUrHgpTFBa5vch6W
+	iKiCigMHdI/5jVH/S+FSJ9LOVwgeAVO5+4aAhjyr+a2X8rEbhd57ceY7zOU6IWNAmsXRFRNJg8r0v
+	z0+cOlysd+L4K9U1RuNcTMiKnR0eBSdVjyjYAum2WkWXzdHObPvvY/NtXuR4iT/85rgXdeTN1f6W2
+	hMN2LNLbT6zoOXCD7UQgh/BjgxKD+VR3ig2c0GlOqFKeLB4qgFOGtvHH5xMDfzRT9xqvw0eRCo3++
+	EGybjrrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wby0J-000000063WN-15Kk;
-	Tue, 23 Jun 2026 10:05:15 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wc0gP-00000006IIf-2H9n;
+	Tue, 23 Jun 2026 12:56:53 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wby0G-000000063W0-2Wo4
+	id 1wc0gN-00000006IHx-1sZr
 	for ath12k@lists.infradead.org;
-	Tue, 23 Jun 2026 10:05:13 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65NA3QMV953078;
-	Tue, 23 Jun 2026 10:05:12 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=8NjygwYtud3DGtX7MwVPQSYE2dhj0Ujakfq
-	d1CRlUiU=; b=X+0yIcX8PIkgt7VOq49ecOIc0N/0CTeK1SFIWlqLM43pp7I04ib
-	U0z5qbzLDmVMDIijaWIO5sJmg1iifIKxB6PAXRQPG/vmldoABbzTKlKoaZl4eqpl
-	CuMSIJwQP2y7nMKBAab0ChH63bbsfd1xBt2l2OtOQEgoc2WFc7vkIsNxwQKwn/V9
-	rFbZlwGbNGKG5BM4BGqNXtjHMFN35iWzt5FJ5iybq51+3pP59h1sEAL6J2SFJ6eV
-	xJdpKcTpGjyTYKl+ImGrWW7g4mBBfw4Il8vkX35RlU+L9Vj75uDHpt947dxhGvke
-	GXnbEaRkQwcCB5OQzlO6tpoVOaEd32D8mlw==
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4eyr28r0cs-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 23 Jun 2026 10:05:11 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.18.1.7/8.18.1.7) with ESMTP id 65NA58O6022146;
-	Tue, 23 Jun 2026 10:05:08 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 4ewkxjnt3a-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 23 Jun 2026 10:05:08 +0000 (GMT)
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.18.1.12/8.18.1.12) with ESMTP id 65NA57pS022135;
-	Tue, 23 Jun 2026 10:05:07 GMT
-Received: from hu-devc-blr-u22-a.qualcomm.com (hu-tamizhr-blr.qualcomm.com [10.190.110.180])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 65NA57ic022134
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 23 Jun 2026 10:05:07 +0000 (GMT)
-Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 380741)
-	id D4FED41A21; Tue, 23 Jun 2026 15:35:06 +0530 (+0530)
-From: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
-Subject: [PATCH ath-next] wifi: ath12k: Advertise multicast Ethernet encapsulation offload support
-Date: Tue, 23 Jun 2026 15:35:01 +0530
-Message-Id: <20260623100501.2100119-1-tamizh.raja@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+	Tue, 23 Jun 2026 12:56:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1782219408;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=6OViMVvFs1Rdaduz4uN6EcMeVo/mRomtYu9z3RnglZk=;
+	b=d5GxsJ24klIVlLuzvXkrmhBeXJxWkfySXez+tfok8ifPgly4Xv3v4eSsNO+87cYq7ipa6U
+	MKYUHH6sZJPMzt9nePjh65kiaEhXFMfkx1uGM7M04qToBNBQBazPZdWJy5mGqU8Ffd+LwM
+	jU74OsR//A57jD7adhwXGIv4uOTyiG0=
+Received: from mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-81-taBlM7F5OqCiYqbK9DozoA-1; Tue,
+ 23 Jun 2026 08:56:46 -0400
+X-MC-Unique: taBlM7F5OqCiYqbK9DozoA-1
+X-Mimecast-MFC-AGG-ID: taBlM7F5OqCiYqbK9DozoA_1782219404
+Received: from mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.93])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 295321956075;
+	Tue, 23 Jun 2026 12:56:44 +0000 (UTC)
+Received: from fedora.redhat.com (unknown [10.44.48.11])
+	by mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id B71551800598;
+	Tue, 23 Jun 2026 12:56:38 +0000 (UTC)
+From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+To: mani@kernel.org
+Cc: alex@shazbot.org,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	bhelgaas@google.com,
+	jjohnson@kernel.org,
+	jtornosm@redhat.com,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	mhi@lists.linux.dev
+Subject: Re: [PATCH v9] PCI: Add device-specific reset for Qualcomm devices
+Date: Tue, 23 Jun 2026 14:56:35 +0200
+Message-ID: <20260623125637.1188867-1-jtornosm@redhat.com>
+In-Reply-To: <r4jeqtx247iosfjdps6g4fqwtsdzine5qlgh33sdt4p6ktmaln@o725aolrpj4l>
+References: <r4jeqtx247iosfjdps6g4fqwtsdzine5qlgh33sdt4p6ktmaln@o725aolrpj4l>
 MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.93
+X-Mimecast-MFC-PROC-ID: se6zxRM9K1RUajZnM12hPLYLYVPjgAn-JU5eGkvIdcs_1782219404
+X-Mimecast-Originator: redhat.com
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjIzMDA4MSBTYWx0ZWRfX7Z6E6ZHJPF/Y
- ftofIyDchlq+P8vc9vg+XIvIWMmiN62RHrF367nkDJwquOeToR8pRaWr9xgUGLejPV8thhZcOSg
- DzhTifwxbzH15EEvox7xtVH3yCh3wp8=
-X-Authority-Analysis: v=2.4 cv=b4KCJNGx c=1 sm=1 tr=0 ts=6a3a5a57 cx=c_pps
- a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=FelO9ux0wxsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
- a=yOCtJkima9RkubShWh1s:22 a=EUspDBNiAAAA:8 a=SXmXk8MbY0boExpAyW0A:9
-X-Proofpoint-GUID: kXEvrLLRoDqkINmui7u-kFStw4HCJMG1
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjIzMDA4MSBTYWx0ZWRfX4P/UhJ+Lh8m2
- 2Lo6Od4CqcLgCoujgwi6H1Z8+0rhSq14bFDA2s+yZrPn/9931On3EKWpF97qeheVmS5sXsr8OHM
- cLtD7aSGorCX8AXlKLMJsojKLYg8ScDRBEezrQpfiOdvqCjGDoExnAyYphU5Tf3dN7uCyrvg7Na
- nGtYh1QFSqu+RYBIujOAftuZ35oZqUEUbo3lc1mN7NOttLOJv6WbYTDOT3uMKrj6HzT21pRGpdD
- PngReyi4MymFgyjGXjgMBM1N51mIMMee5Zog5xT1NeEUpJAOEVGMVooI21LamgckpyP/rwRg6Us
- C/VO7vCns534cH5a1x8j4c+M0JFJcW6pEbsKGkUjRtpHnMpv+Rb16wGaGzk2EqEmn2Or7ooR2YB
- kdmjj1iRWAGVhBAZPj7JGgbWOmly0iimWWOnXh/oWEq2JjZUKYS1cirKhlBFxUhtmIr1sv1Ymam
- rM608+fdvyjIDpS/EOQ==
-X-Proofpoint-ORIG-GUID: kXEvrLLRoDqkINmui7u-kFStw4HCJMG1
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-23_02,2026-06-22_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 bulkscore=0 adultscore=0 impostorscore=0 spamscore=0
- suspectscore=0 phishscore=0 priorityscore=1501 clxscore=1015 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606230081
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260623_030512_674204_1AD515B4 
-X-CRM114-Status: GOOD (  17.15  )
+X-CRM114-CacheID: sfid-20260623_055651_561787_00BFE89B 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,173 +94,57 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Advertise IEEE80211_OFFLOAD_ENCAP_MCAST to inform mac80211 that
-multicast frame encapsulation is handled in hardware. This allows
-mac80211 to pass Ethernet-formatted multicast frames directly to
-the driver.
+Hi Mani and Alex,
 
-In ath12k_wifi7_mac_op_tx(), refine the logic that selects the MLO
-multicast replication path. Add a sta pointer check so that only unicast
-Hardware-encap frames use the direct transmit path, while multicast
-Hardware-encap frames fall through to the MLO replication loop and are
-transmitted on each active link.
+Thank you both for the guidance. 
 
-In the MLO replication loop, use skb_clone() for Hardware-encap frames.
-These frames are already in Ethernet format and do not require
-802.11 link address rewriting by ath12k_mlo_mcast_update_tx_link_address().
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+I think your insight about the BAR-space reset mechanisms is a much better
+approach to have a "real" reset. With that, I've implemented device-specific
+reset functions based on the driver code Mani referenced:
 
-Signed-off-by: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/mac.c      |  6 ++-
- drivers/net/wireless/ath/ath12k/wifi7/hw.c | 61 +++++++++++++++++-----
- 2 files changed, 53 insertions(+), 14 deletions(-)
+WCN6855/WCN7850 WiFi (reset_qualcomm_wifi):
+- Uses SoC global reset via BAR0 offset 0x3008
+- Follows the sequence from ath11k_pci_soc_global_reset() /
+  ath12k_pci_soc_global_reset() / ath11k_pci_sw_reset()
+- Set reset bit → 10ms delay → clear reset bit → 10ms delay → verify link
+  recovery (up to 5s)
+- Includes MHI controller reset cleanup (offset 0x38) to clear SYSERR after SoC
+  reset
+- Both WCN6855 and WCN7850 share identical register offsets and reset sequence
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index af354bef5c0d..26b46a404580 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10117,7 +10117,8 @@ static void ath12k_mac_update_vif_offload(struct ath12k_link_vif *arvif)
- 	if (vif->type != NL80211_IFTYPE_STATION &&
- 	    vif->type != NL80211_IFTYPE_AP)
- 		vif->offload_flags &= ~(IEEE80211_OFFLOAD_ENCAP_ENABLED |
--					IEEE80211_OFFLOAD_DECAP_ENABLED);
-+					IEEE80211_OFFLOAD_DECAP_ENABLED |
-+					IEEE80211_OFFLOAD_ENCAP_MCAST);
- 
- 	if (vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED) {
- 		ahvif->dp_vif.tx_encap_type = ATH12K_HW_TXRX_ETHERNET;
-@@ -10136,6 +10137,9 @@ static void ath12k_mac_update_vif_offload(struct ath12k_link_vif *arvif)
- 		vif->offload_flags &= ~IEEE80211_OFFLOAD_ENCAP_ENABLED;
- 	}
- 
-+	if (vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED)
-+		vif->offload_flags |= IEEE80211_OFFLOAD_ENCAP_MCAST;
-+
- 	param_id = WMI_VDEV_PARAM_RX_DECAP_TYPE;
- 	if (vif->offload_flags & IEEE80211_OFFLOAD_DECAP_ENABLED)
- 		param_value = ATH12K_HW_TXRX_ETHERNET;
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-index 3d59fa452ec0..e5bf9d218104 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-@@ -903,6 +903,7 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
- 	struct ethhdr *eth;
- 	bool is_prb_rsp;
- 	u16 mcbc_gsn;
-+	u8 cb_flags;
- 	u8 link_id;
- 	int ret;
- 	struct ath12k_dp *tmp_dp;
-@@ -996,8 +997,13 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
- 	    ieee80211_has_protected(hdr->frame_control))
- 		is_dvlan = true;
- 
-+	/*
-+	 * Add a sta pointer check to differentiate multicast encapsulation
-+	 * offload packets, as the ATH12K_SKB_HW_80211_ENCAP flag is also set
-+	 * for such packets.
-+	 */
- 	if (!vif->valid_links || !is_mcast || is_dvlan ||
--	    (skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) ||
-+	    ((skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) && sta) ||
- 	    test_bit(ATH12K_FLAG_RAW_MODE, &ar->ab->dev_flags)) {
- 		ret = ath12k_wifi7_dp_tx(dp_pdev, arvif, arsta, skb, false, 0, is_mcast);
- 		if (unlikely(ret)) {
-@@ -1009,6 +1015,7 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
- 		mcbc_gsn = atomic_inc_return(&ahvif->dp_vif.mcbc_gsn) & 0xfff;
- 
- 		links_map = ahvif->links_map;
-+		cb_flags = skb_cb->flags;
- 		for_each_set_bit(link_id, &links_map,
- 				 IEEE80211_MLD_MAX_NUM_LINKS) {
- 			tmp_arvif = rcu_dereference(ahvif->link[link_id]);
-@@ -1016,21 +1023,45 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
- 				continue;
- 
- 			tmp_ar = tmp_arvif->ar;
--			tmp_dp_pdev = ath12k_dp_to_pdev_dp(tmp_ar->ab->dp,
-+			tmp_dp = ath12k_ab_to_dp(tmp_ar->ab);
-+			tmp_dp_pdev = ath12k_dp_to_pdev_dp(tmp_dp,
- 							   tmp_ar->pdev_idx);
- 			if (!tmp_dp_pdev)
- 				continue;
--			msdu_copied = skb_copy(skb, GFP_ATOMIC);
--			if (!msdu_copied) {
--				ath12k_err(ar->ab,
--					   "skb copy failure link_id 0x%X vdevid 0x%X\n",
--					   link_id, tmp_arvif->vdev_id);
--				continue;
--			}
- 
--			ath12k_mlo_mcast_update_tx_link_address(vif, link_id,
--								msdu_copied,
--								info_flags);
-+			if (cb_flags & ATH12K_SKB_HW_80211_ENCAP) {
-+				/*
-+				 * skb->data may be modified for the iova_mask devices.
-+				 * It is better to use skb_copy() for such devices
-+				 * to avoid any potential skb corruption related issues.
-+				 */
-+				if (tmp_dp->hw_params->iova_mask)
-+					msdu_copied = skb_copy(skb, GFP_ATOMIC);
-+				else
-+					/*
-+					 * ath12k_wifi7_dp_tx() should treat cloned HW-encap
-+					 * Ethernet multicast frames as read-only.
-+					 */
-+					msdu_copied = skb_clone(skb, GFP_ATOMIC);
-+				if (!msdu_copied) {
-+					ath12k_err(ar->ab,
-+						   "skb copy/clone failure link_id 0x%X vdevid 0x%X\n",
-+						   link_id, tmp_arvif->vdev_id);
-+					continue;
-+				}
-+			} else {
-+				msdu_copied = skb_copy(skb, GFP_ATOMIC);
-+				if (!msdu_copied) {
-+					ath12k_err(ar->ab,
-+						   "skb copy failure link_id 0x%X vdevid 0x%X\n",
-+						   link_id, tmp_arvif->vdev_id);
-+					continue;
-+				}
-+
-+				ath12k_mlo_mcast_update_tx_link_address(vif, link_id,
-+									msdu_copied,
-+									info_flags);
-+			}
- 
- 			skb_cb = ATH12K_SKB_CB(msdu_copied);
- 			skb_cb->link_id = link_id;
-@@ -1046,7 +1077,6 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
- 			if (unlikely(!ahvif->dp_vif.key_cipher))
- 				goto skip_peer_find;
- 
--			tmp_dp = ath12k_ab_to_dp(tmp_ar->ab);
- 			spin_lock_bh(&tmp_dp->dp_lock);
- 			peer = ath12k_dp_link_peer_find_by_addr(tmp_dp,
- 								tmp_arvif->bssid);
-@@ -1065,11 +1095,16 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
- 				skb_cb->cipher = key->cipher;
- 				skb_cb->flags |= ATH12K_SKB_CIPHER_SET;
- 
-+				if (skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP)
-+					goto skip_fctl_protected_check;
-+
- 				hdr = (struct ieee80211_hdr *)msdu_copied->data;
- 				if (!ieee80211_has_protected(hdr->frame_control))
- 					hdr->frame_control |=
- 						cpu_to_le16(IEEE80211_FCTL_PROTECTED);
- 			}
-+
-+skip_fctl_protected_check:
- 			spin_unlock_bh(&tmp_dp->dp_lock);
- 
- skip_peer_find:
+SDX62/SDX65 modems (reset_qualcomm_modem):
+- Uses MHI SoC reset via BAR0 offset 0xb0
+- Follows the sequence from mhi_soc_reset() / mhi_pci_reset_prepare()
+- Write reset request → 2s delay for reset completion
 
-base-commit: 972c4dd19cb92e03d75b66c426cfade07582a1ba
--- 
-2.34.1
+All implementations follow Alex's pattern: save command register ->
+enable memory decode -> ioremap BAR -> perform reset sequence ->
+iounmap -> restore command.
+Testing results: The implementation shows successful reset behavior for both
+WiFi and modem devices in VFIO passthrough scenarios.
+
+
+Regarding the approach (quirks.c vs dedicated VFIO driver):
+
+Mani, I understand your concern about potential conflicts with the native
+drivers. I want to make sure I implement this correctly. Could you clarify
+when you envision the conflict occurring? 
+From what I can see, the native drivers call their reset functions directly
+without using pci_try_reset_function(), so the device-specific reset in
+quirks.c could be enough, but I may be missing some error recovery paths or
+other scenarios.
+
+Alex, Mani - would you prefer a dedicated VFIO PCI variant driver (similar
+to mlx5-vfio-pci) to ensure the reset logic only runs in VFIO scenarios, or
+is the quirks.c approach acceptable? I can implement either approach.
+
+With the decision I will send v10.
+
+
+Thank you again for all your help
+
+Best regards
+José Ignacio
 
 
