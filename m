@@ -4,59 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3A97CDB46F
-	for <ath12k@archiver.kernel.org>; Tue, 23 Jun 2026 13:40:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3674CD98F2
+	for <ath12k@archiver.kernel.org>; Tue, 23 Jun 2026 13:50:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pmgv52n41p5z4OQmO+J47C3uc5k3v6DiUGJnWHiFcd8=; b=lp+sSPjBB3DL1xEe1q9onZJTk2
-	Yw3/pN7ytogBwSak1q5VoOUqGmU5RAF7BR7xUZin7lfU35H33PI7UDP3EjCvXU4DRgHobciYhRNcO
-	cLGVe82i9FPiwHf7boaB4mb2DfwD2bqn+53nM5M6ZoPgKTHteZmmex9e8ZusSR9xPvlqGV+dVzlrd
-	KOjdepu2rmQrlVNwDiB8lAQsTk8uKp1TD/MWAQMn3LA7xaZiIfDDDGcibsBJW4dQSSNLsvUMIeDaY
-	BKy2bkScVdN51xQheYryJ/44DV6Dtc7+/fIF80CWSUexkUaKaGzSWqRLGitknurlQ2mdnc2k+IfQZ
-	OyXSx1Sw==;
+	bh=07uoq0PIndTVBv8tgnHeAEJeFAtrzEKE7E1mnPuM/Dg=; b=pzj8gM1g5sIKfnPFeV7wkhZDoE
+	jrUfIrn8a9tT1wwYQcPaiCXq8G9+u1r8q2qJHuAtp4XsvcGTUGmnbA8+KQo1cLH1y6e/WOo3UNz+j
+	Hmx6YB0ddaqHVoKlo2hfJiU5wodH28lWh6S8SHnqwmYDTsBrtQ1rBpCkB4TRBNaVhRco7cCasv6Q7
+	AJYlYNhqib3tZlueHtzz3BCnqk+nn3ixGvvaDWW+fl7fDjy8ieLROLR71XR1oZkONZhxvUP1NFcrb
+	Ja+RyAhZU8eUduqu97nEt8YMAq6Is4mV1xWqsLeBuvuANrlLpQQ7/Hoa7ZmDSAniDz2eVoxFj8WQF
+	cbEJVBAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wc1MZ-00000006Lu5-2VhJ;
-	Tue, 23 Jun 2026 13:40:27 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wc1WD-00000006MrX-24Sj;
+	Tue, 23 Jun 2026 13:50:25 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wc1MX-00000006Ltp-3VPx;
-	Tue, 23 Jun 2026 13:40:26 +0000
+	id 1wc1WC-00000006MrH-1O3U;
+	Tue, 23 Jun 2026 13:50:24 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2CDFA40386;
-	Tue, 23 Jun 2026 13:40:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42F241F000E9;
-	Tue, 23 Jun 2026 13:40:20 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0BAF84001F;
+	Tue, 23 Jun 2026 13:50:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 13A441F000E9;
+	Tue, 23 Jun 2026 13:50:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782222025;
-	bh=pmgv52n41p5z4OQmO+J47C3uc5k3v6DiUGJnWHiFcd8=;
+	s=k20260515; t=1782222623;
+	bh=07uoq0PIndTVBv8tgnHeAEJeFAtrzEKE7E1mnPuM/Dg=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=eog6lePDuynqkdv62ua2ud0QrAX6PAZNziY/Ubl02jOpmGet7dGmXm/9VdWmzkZcq
-	 NKCxBBURFICGgk3em8aj5s1RxE4HWiY7js93DyMVxxDpDfIbQSLgGRZy7r2uBlYLZ+
-	 9FRlL4OTwbnrRmvZgkeG3f32xe+XREvoNrIx2oQfy1wvrda0u+uko8TQcSYEFHOcmq
-	 pft7hlp8BpLL7Xq4Q8BwqPKcnPkDW+E0SdUF8/E2Ii3uEgQNa58B6xxMzcag796MB7
-	 zk7Sq1Agg/SBwR/xTodgV2YIhOZkuRXaxdFRhpL78KowH71QiczKZI9ySCa9QUGAkq
-	 H+GfdPbltNLjQ==
-Date: Tue, 23 Jun 2026 15:40:16 +0200
+	b=gtW8ybMCR3A8frppplBqKA6GR+ojYF+zzFnO8rMTDlzZXqh81kXWWIfEbS1bV+0ex
+	 Pq1th8wk6FIFljyGQDEbPGKOeQaQFpBrhZqrcnoIgJdy0m6Fj0NCg1m/ifnlkD1dVb
+	 fN9yLXJXV5rBTTfVwBDadrOrF49Tkpbf806Gy7XEQjQzI6wXMtZS21S1R3rjnyo34E
+	 2oo7Cm5zFUH3NHHTfONxIriOOXGLStnIz2sTBgMmv6isAfxQyCGM2ixoAt+M2/ffLT
+	 YnK2VTDwt1wRaxUln/ozWqe4nooDXt4Fc+q3/d7/eAUTXDjzD7jQntvBI2kwPO5b13
+	 DR5xGFXyr+cMg==
+Date: Tue, 23 Jun 2026 15:50:15 +0200
 From: Manivannan Sadhasivam <mani@kernel.org>
-To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Cc: alex@shazbot.org, ath11k@lists.infradead.org, 
-	ath12k@lists.infradead.org, bhelgaas@google.com, jjohnson@kernel.org, 
-	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, linux-wireless@vger.kernel.org, 
-	mhi@lists.linux.dev
+To: Alex Williamson <alex@shazbot.org>
+Cc: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>, 
+	ath11k@lists.infradead.org, ath12k@lists.infradead.org, bhelgaas@google.com, 
+	jjohnson@kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, 
+	linux-wireless@vger.kernel.org, mhi@lists.linux.dev
 Subject: Re: [PATCH v9] PCI: Add device-specific reset for Qualcomm devices
-Message-ID: <frqpqy5nbx7wb7ds2osotuntnbsehp2gfbhpmhlilu4mzhljpa@sart22k7tjme>
-References: <r4jeqtx247iosfjdps6g4fqwtsdzine5qlgh33sdt4p6ktmaln@o725aolrpj4l>
- <20260623125637.1188867-1-jtornosm@redhat.com>
+Message-ID: <nlbqw3h2m6cux2cbpq2ka4kq7fl7qlizkndw5zltsqd3qf346n@xmxssbpalqih>
+References: <n3maiuu5cctivlal4fozysz37ir6ecdfws5u2xxw2neclsfdfj@nsvwvlh7b4j5>
+ <20260618063309.9536-1-jtornosm@redhat.com>
+ <4wmbans3ae5ayxqvs3wwn4hg3r3dcjuugmw2akoihvry35bq6k@k5lm6zjrp44l>
+ <20260622160822.09350246@shazbot.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: 8bit
-In-Reply-To: <20260623125637.1188867-1-jtornosm@redhat.com>
+In-Reply-To: <20260622160822.09350246@shazbot.org>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,74 +73,94 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 23, 2026 at 02:56:35PM +0200, Jose Ignacio Tornos Martinez wrote:
-> Hi Mani and Alex,
+On Mon, Jun 22, 2026 at 04:08:22PM -0600, Alex Williamson wrote:
+> On Mon, 22 Jun 2026 18:22:39 +0200
+> Manivannan Sadhasivam <mani@kernel.org> wrote:
 > 
-> Thank you both for the guidance. 
+> > On Thu, Jun 18, 2026 at 08:33:08AM +0200, Jose Ignacio Tornos Martinez wrote:
+> > > Hi Mani,
+> > > 
+> > > Let me clarify the exact scenario and where the reset is necessary:
+> > > 
+> > > * For the commented WiFi devices (WCN6855/WCN7850):
+> > > 
+> > > Standard VFIO passthrough flow (this works fine):
+> > >   1. Unbind native driver (ath11k/ath12k/MHI)
+> > >   2. Bind vfio-pci driver
+> > >   3. Assign device to VM
+> > >   4. VM boots, loads its own driver → device works perfectly
+> > >   5. VM shuts down cleanly → device can be reassigned → works fine
+> > > 
+> > > The problem occurs with unclean VM termination:
+> > >   1. VM crashes or is force-terminated
+> > >   2. VFIO tries to reset the device before reassignment
+> > >   3. Without a working PCI reset method, reset fails
+> > >   4. Device stuck in undefined state → cannot be reassigned to another VM
+> > >   
+> > >      Unbinding the driver again doesn't help because the device hardware
+> > >      itself is in a bad state. From hypervisor:
+> > >      $ lspci -vvv -s 0000:03:00.0
+> > >         03:00.0 Network controller: Qualcomm Technologies, Inc (rev ff) (prog-if ff)
+> > >             !!! Unknown header type 7f
+> > >      And a full host power-cycle is necessary to recover.
+> > >        
+> > 
+> > Can you try the global reset available in the WLAN device BAR space?
+> > 
+> > WCN6855: https://git.kernel.org/pub/scm/linux/kernel/git/pci/pci.git/tree/drivers/net/wireless/ath/ath11k/pci.c#n193
+> > WCN7850: https://git.kernel.org/pub/scm/linux/kernel/git/pci/pci.git/tree/drivers/net/wireless/ath/ath12k/pci.c#n182
+> > 
+> > > * For the commented modem devices (SDX62/SDX65): 
+> > > 
+> > > Even worse because it fails during the first VM boot without proper reset
+> > > capability, standard VFIO passthrough flow:
+> > >   1. Unbind native driver (MHI)
+> > >   2. Bind vfio-pci driver
+> > >   3. Assign device to VM
+> > >   4. VM boots, loads its own driver and crashes:
+> > >      [   24.024165] mhi mhi0: Device failed to enter MHI Ready
+> > >      [   24.024168] mhi mhi0: MHI did not enter READY state
+> > >      
+> > >      Unbind/rebind attempts fail:
+> > >      [  352.643601] mhi mhi0: Requested to power ON
+> > >      [  352.643611] mhi mhi0: Power on setup success
+> > >      [  373.442954] mhi mhi0: Device failed to clear MHI Reset
+> > >      [  373.442970] mhi mhi0: MHI did not enter READY state
+> > >      And requires a full host power cycle to recover,
+> > >      even outside of VFIO scenarios.
+> > > 
+> > > * MHI Host driver's remove callback may handle clean software state
+> > > teardown, but it doesn't provide a PCI reset capability that VFIO can
+> > > invoke. VFIO needs a reset method registered in the PCI reset hierarchy
+> > > (device_specific, pm, flr, bus, etc.). VFIO invokes this reset both during
+> > > initial device binding (before the VM starts) and when reassigning the
+> > > device between VMs - without a working reset method, the device cannot
+> > > reach a clean state for initialization.
+> > >   
+> > 
+> > Likewise, there is a SoC reset available in the modem BAR space. You can try it:
+> > https://git.kernel.org/pub/scm/linux/kernel/git/pci/pci.git/tree/drivers/bus/mhi/host/main.c#n178
+> > 
+> > If these works, then you can hook these in the device_specific reset callback.
 > 
 > 
-> I think your insight about the BAR-space reset mechanisms is a much better
-> approach to have a "real" reset. With that, I've implemented device-specific
-> reset functions based on the driver code Mani referenced:
+> These look promising as simple flows to implement in a device specific
+> reset: save command register, set memory enable, ioremap BAR space,
+> match read/write/delay sequences of reset function and caller, iounmap,
+> restore command.
 > 
-> WCN6855/WCN7850 WiFi (reset_qualcomm_wifi):
-> - Uses SoC global reset via BAR0 offset 0x3008
-> - Follows the sequence from ath11k_pci_soc_global_reset() /
->   ath12k_pci_soc_global_reset() / ath11k_pci_sw_reset()
-> - Set reset bit → 10ms delay → clear reset bit → 10ms delay → verify link
->   recovery (up to 5s)
-> - Includes MHI controller reset cleanup (offset 0x38) to clear SYSERR after SoC
->   reset
-> - Both WCN6855 and WCN7850 share identical register offsets and reset sequence
-> 
-> SDX62/SDX65 modems (reset_qualcomm_modem):
-> - Uses MHI SoC reset via BAR0 offset 0xb0
-> - Follows the sequence from mhi_soc_reset() / mhi_pci_reset_prepare()
-> - Write reset request → 2s delay for reset completion
-> 
-> All implementations follow Alex's pattern: save command register ->
-> enable memory decode -> ioremap BAR -> perform reset sequence ->
-> iounmap -> restore command.
-> Testing results: The implementation shows successful reset behavior for both
-> WiFi and modem devices in VFIO passthrough scenarios.
+> Note the delay in this latter reset is in the caller.  It's also
+> surprising that none of these implement a read to flush the posted
+> write that initiates the reset.  I wonder if that contributes to the 2s
+> delay in the latter example.
 > 
 
-Cool!
+While I agree that the absence of read-back after the posted write is a problem,
+especially with a delay afterwards, the delay itself is required to let the
+device reset itself and do a warm boot.
 
-> 
-> Regarding the approach (quirks.c vs dedicated VFIO driver):
-> 
-> Mani, I understand your concern about potential conflicts with the native
-> drivers. I want to make sure I implement this correctly. Could you clarify
-> when you envision the conflict occurring? 
-> From what I can see, the native drivers call their reset functions directly
-> without using pci_try_reset_function(), so the device-specific reset in
-> quirks.c could be enough, but I may be missing some error recovery paths or
-> other scenarios.
-> 
-
-MHI driver is calling pci_try_reset_function():
-
-$ git grep -r pci_try_reset_function drivers/bus/mhi
-drivers/bus/mhi/host/pci_generic.c:     err = pci_try_reset_function(pdev);
-
-So I was worried that it could create conflict. But looking more, I
-understood that it won't create any conflict, but just an additional SoC reset:
-
-  pci_try_reset_function()
-    -> pci_dev_save_and_disable()
-      -> mhi_pci_reset_prepare()
-         -> mhi_soc_reset()         <- First reset 
-    -> __pci_reset_function_locked()
-      -> pci_dev_specific_reset()   <- Second reset
-
-But this additional SoC reset wouldn't cause any issue to the device due to the
-2s delay, but the total recovery delay would compound to 4s now.
-
-And that also should be fine as this path gets triggered only when the device
-dies during the recovery work (very rare).
-
-So you can implement the reset in quirks.c with device_specific reset.
+I'll submit fixes to do a read-back after triggering the reset to ensure that
+the write gets flushed to the device before the delay.
 
 - Mani
 
