@@ -4,140 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 882C6CD4F26
-	for <ath12k@archiver.kernel.org>; Tue, 23 Jun 2026 08:55:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82A9BCD4F26
+	for <ath12k@archiver.kernel.org>; Tue, 23 Jun 2026 10:05:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=aE9n3ah0N3qa2cRR38jYXiCfe+bTuewMNN2Ot/1RK5o=; b=knJ1pG6CcCpEpvVYU/HD/zjNC4
-	NzACcK5mWQE9Cx4DRjWTsJIuwr95UYjYiE04qIpofAgvnCy2lcoZuYzU78rNy30Ulq/DZaL9Q8O4a
-	h2W3ikCTlMhL3P1YCIXe6sCC6n3ucaWPO5PY/1rFmdzBytY0DSdmjJlj/eW6vt8QfxbUuWpykTNLI
-	cs/zU36bSI2G65UsrnoQmea3Pj3Pe/NrF3DSQWhTa5wDQ9qlUN/bPFOONf+vnc29pAzxixY2uaYgg
-	huzMJMa6U/jfppUt2iOluoXbeRk7I6T1r7Geo/KAIPIsTYfw/Mw0sXmj1OPpgLicEygsVjlON6Ai8
-	FeMd4lKA==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=8NjygwYtud3DGtX7MwVPQSYE2dhj0Ujakfqd1CRlUiU=; b=fbpobKnCF3uC7sUxlSjKU/hwfc
+	3LSy6kXZa9ZIkO2wtyFFgf5zOyWS0ArRnl7fg58KbLyR7kC0HZzr+wWLAN449M7CB3v5MtGyAWXb1
+	1Rq53ZY+o3LpcX2/WYhhs7eU6ywiymHmgyAbIX29G9UDAf8l+m8QL1A+LS0k7YHLLm0Sirvpp7h4E
+	VJKny7XcFFfYg3+m3iNqAfjmUQvyNqCR9bTwcZOs6INlbVw2GI28WgqMty+UlSFYNZsqk9OjpinsC
+	mhIPC79A5GZe29AgbCHdOFpmKh/kgG2EgJL55aZdGlw2eAasIsuLJY59TrWNqCzNPyGq+hoeRR6rx
+	ER3fI1QA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbwvA-00000005wZQ-0QSw;
-	Tue, 23 Jun 2026 08:55:52 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wby0J-000000063WN-15Kk;
+	Tue, 23 Jun 2026 10:05:15 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbwv7-00000005wYw-1VQG
+	id 1wby0G-000000063W0-2Wo4
 	for ath12k@lists.infradead.org;
-	Tue, 23 Jun 2026 08:55:50 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65N6dR703631327
-	for <ath12k@lists.infradead.org>; Tue, 23 Jun 2026 08:55:48 GMT
+	Tue, 23 Jun 2026 10:05:13 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65NA3QMV953078;
+	Tue, 23 Jun 2026 10:05:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	aE9n3ah0N3qa2cRR38jYXiCfe+bTuewMNN2Ot/1RK5o=; b=n3ubBrYSXQwWXHI+
-	gn4nI/HCD2XOGpUVDc68k8FNLl8ckvJt4bupL2cd7rzU1Tin2PLb2rPXEosaEckO
-	4G/0VFrJvimVOnmWviT/Szx0CzORjh7dT1ftcG4i6tl4+rD4E0DLG8m50AjpaXMg
-	6QDM/OK3nBsZm2jalDsrHNDWxOqGfTbz4XYMUCRZka40YX3x67AEfBkWerBY6nds
-	ZDELP9IcbVG2cHuwC53wFSF0RIy7k/vdXmDtkPfiyvYvt1/3+BtCDW/5fTI6Zyzq
-	I0O/djCufRrhZ/Y/3VZjYYCatRvbDj4XeueKoJgV3jc5pcigEWnudrY5+w7Rp4DM
-	u6gOjg==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4eymnvrkf3-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 23 Jun 2026 08:55:47 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2c2c98c1be2so45953115ad.0
-        for <ath12k@lists.infradead.org>; Tue, 23 Jun 2026 01:55:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1782204947; x=1782809747; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=aE9n3ah0N3qa2cRR38jYXiCfe+bTuewMNN2Ot/1RK5o=;
-        b=ZlX8okO6aWCKpc53Ufyr+5iBFhdLFic2naV++o6/4Dv2zQWD53yiIh1VDkNvvyzy1K
-         B78tp/tLD4wZ4+cmSG3F0EcGdMYFTf2ex3c8Mbj1bnmMhbJSybLSC/4ooD2lc3j+TFK5
-         cvggD0G0uQtPf4cBbFGJ0+RNLqRyDu7z7qwGTVy2yLKa6GYRAhRak7cS5IG8SrSI/d63
-         +bS+UhSeYi90UXooFJo5bKxwwq5MFZ4BqUGpf4UJkqrouU9h5oQQ02N4R55xDxH2Vi69
-         VPRp/SmbyJCkQcCJAuz8OGEGEPePVrftx5yrE4QnTmJhq1ypz2BKjZs7IT6ek3SdwfUb
-         oceA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782204947; x=1782809747;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=aE9n3ah0N3qa2cRR38jYXiCfe+bTuewMNN2Ot/1RK5o=;
-        b=NNEIXeTT059fTDBXtP0/drlKpA+WtkUV6doqyZ6jClQlLE4HmjEdp7Ef0k1xAzvgQF
-         DNSf+l//7djhuXOEXFOBKGcmHtwiKqQfZyeqaE1KkygSGBCsLlOm5v72iktPqf6fvq7K
-         a54gxrEWqUhoS8/2nlMnNbBGu+CEpRHGnte9VsYdskru43hGBdp6h1DT5pnS1+W1SNfv
-         qkMJodjtHGX+ZSM9FHZvfxp+meaWddkGPBUcvITJFuZzMa/BY9lDKSmZtPehZ9lFkKjL
-         nrgDE/6uu5EYhhbyPc/4W6lO/F4N/+jYZLiXaLqi9XSNGbwQNgFHOxygYRQNMPtv7et/
-         4m3w==
-X-Forwarded-Encrypted: i=1; AFNElJ/BIZSdvhbCd/AyaSsxSsHoP5zcQ8D9p1pUWeYc9Bhuzk4zlq4Cg1J4CR2wJpKkqCD7gEbKEmo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxyndZNZKpUH2qmEQ4TvwtK6TXq0WHmGn1ps/1J6ZKXECM3mcY7
-	ZYF1tPpcbEGHalronUw8hrpQbMSomdAOx9r8DdyjRi9vVRm9jQonPn9mZFjbkbJNBbfe3p+5Ttb
-	73uDWJHwleNa7ClZwtlkvjO//KE20G9rctP2Qi2UHE0WJc02UKJIiIubvPSSHcBT3
-X-Gm-Gg: AfdE7cnNE84c8zKSrUprUAmbXgM0Lb15MwAywBovDSOkul8m1SS4p89Gy6xn2wpNpLR
-	VkhDB9Sz9p7JaUy6Ba8zCku1oSMTPfRq2bYXWY3umQnyIKIJBXq7zJZTKXgJZD4291arGDbqvZn
-	2pboQlZdL6W1TfFjGNiZB+51c+9Sh91JRIiFUhEYFk/Kpxmk0of8JbVKXrdi3gkmbfUf4/WDzNQ
-	QQLnifq3M1/Jxgj7PEPDAwvz1XXpXhF+1QnCrOnjUaAz3oV2bcjV0FcPZld/e+MKv09w+2ep+MI
-	HnuAFB4PVBuZ3Kqwk+5JjC+OKZgkAA1solZzwtJnC6vMV5wg7AdqH2poOyYeGfZod/URxYbhBJX
-	q4uyb6EIXnYvrnDNqMXl/GBp0y/Es6NoGKQ/qcTwJVxgG7jEdNFb0W34LsYV6TFvNOwDiChgh6Y
-	E3ev8D0WSf
-X-Received: by 2002:a05:6a21:4cc1:b0:3a2:bd1d:d684 with SMTP id adf61e73a8af0-3bb3404fba2mr20581549637.33.1782204946636;
-        Tue, 23 Jun 2026 01:55:46 -0700 (PDT)
-X-Received: by 2002:a05:6a21:4cc1:b0:3a2:bd1d:d684 with SMTP id adf61e73a8af0-3bb3404fba2mr20581523637.33.1782204946165;
-        Tue, 23 Jun 2026 01:55:46 -0700 (PDT)
-Received: from [10.133.33.165] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84564ed3212sm10209394b3a.55.2026.06.23.01.55.43
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 23 Jun 2026 01:55:45 -0700 (PDT)
-Message-ID: <5abb5812-cdd8-47d4-b5a0-33f7351589ea@oss.qualcomm.com>
-Date: Tue, 23 Jun 2026 16:55:41 +0800
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=8NjygwYtud3DGtX7MwVPQSYE2dhj0Ujakfq
+	d1CRlUiU=; b=X+0yIcX8PIkgt7VOq49ecOIc0N/0CTeK1SFIWlqLM43pp7I04ib
+	U0z5qbzLDmVMDIijaWIO5sJmg1iifIKxB6PAXRQPG/vmldoABbzTKlKoaZl4eqpl
+	CuMSIJwQP2y7nMKBAab0ChH63bbsfd1xBt2l2OtOQEgoc2WFc7vkIsNxwQKwn/V9
+	rFbZlwGbNGKG5BM4BGqNXtjHMFN35iWzt5FJ5iybq51+3pP59h1sEAL6J2SFJ6eV
+	xJdpKcTpGjyTYKl+ImGrWW7g4mBBfw4Il8vkX35RlU+L9Vj75uDHpt947dxhGvke
+	GXnbEaRkQwcCB5OQzlO6tpoVOaEd32D8mlw==
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4eyr28r0cs-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 23 Jun 2026 10:05:11 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.18.1.7/8.18.1.7) with ESMTP id 65NA58O6022146;
+	Tue, 23 Jun 2026 10:05:08 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 4ewkxjnt3a-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 23 Jun 2026 10:05:08 +0000 (GMT)
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.18.1.12/8.18.1.12) with ESMTP id 65NA57pS022135;
+	Tue, 23 Jun 2026 10:05:07 GMT
+Received: from hu-devc-blr-u22-a.qualcomm.com (hu-tamizhr-blr.qualcomm.com [10.190.110.180])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 65NA57ic022134
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 23 Jun 2026 10:05:07 +0000 (GMT)
+Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 380741)
+	id D4FED41A21; Tue, 23 Jun 2026 15:35:06 +0530 (+0530)
+From: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
+Subject: [PATCH ath-next] wifi: ath12k: Advertise multicast Ethernet encapsulation offload support
+Date: Tue, 23 Jun 2026 15:35:01 +0530
+Message-Id: <20260623100501.2100119-1-tamizh.raja@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v9] PCI: Add device-specific reset for Qualcomm devices
-To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>, mani@kernel.org
-Cc: alex@shazbot.org, ath11k@lists.infradead.org, ath12k@lists.infradead.org,
-        bhelgaas@google.com, jjohnson@kernel.org, linux-kernel@vger.kernel.org,
-        linux-pci@vger.kernel.org, linux-wireless@vger.kernel.org,
-        mhi@lists.linux.dev
-References: <n3maiuu5cctivlal4fozysz37ir6ecdfws5u2xxw2neclsfdfj@nsvwvlh7b4j5>
- <20260618063309.9536-1-jtornosm@redhat.com>
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20260618063309.9536-1-jtornosm@redhat.com>
-Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=dOWWXuZb c=1 sm=1 tr=0 ts=6a3a4a13 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
- a=_kWzU8USZtXapjXelIsA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjIzMDA3MSBTYWx0ZWRfX6jkayUNHa2Wq
- 8msTyXdF2tQyqrxH6keOzSDt5mIDGXLH627BSNNDHHIZ8Z8Ewdwk/TJKzA7dmSrGJLDaKx4nnHf
- upfOKviwZfUTn4wtFf9U0uyPk13GdEY=
-X-Proofpoint-ORIG-GUID: Q-kzzubQA-q7jNDQXdmfCdJ6J3-2rs5d
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjIzMDA3MSBTYWx0ZWRfX42VXEdAbq7LV
- BypMoVjrWC4bPRFiDEZBm3l87IPwDLh9e1AgmMHGlAtiNet/PCVywI2BRcBt59T/oo17jhnpQt5
- EfdrTCi3GUd6TFjuf2PpPz8HIrmJFolnKzm89KVAed3JM4UrXPHucCBDZHmKZMAQiuNYlqSmcge
- +8+W3inKS9eHkjf80HFgMzGj/u1CQG0ki/RA6Gm3TwXJfYGcChAVITnbo2gowmHBdwgM75iJz4j
- J1tIiuAtxt3s/cr5MCkCY0/7OFydof4PEc83JcqIltPNkkD+8waQiqNv8b9bsVaRkVzJBKLtQEM
- oAM61k2c0IbmQ3AJvnJ7TnsBwxs7LnU6YY86YbRkFPqsqCUNvyy81MC438Hwrtd0VzUZBQTpKmh
- N/sxM3yDFkeiRv3wYf/k4mky57DK9six7OAWF+KquRJWB+DFZWJv3O6PSHBFS9dZPKesA4TnfBD
- vNmD9qoEbXj047rMLzw==
-X-Proofpoint-GUID: Q-kzzubQA-q7jNDQXdmfCdJ6J3-2rs5d
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjIzMDA4MSBTYWx0ZWRfX7Z6E6ZHJPF/Y
+ ftofIyDchlq+P8vc9vg+XIvIWMmiN62RHrF367nkDJwquOeToR8pRaWr9xgUGLejPV8thhZcOSg
+ DzhTifwxbzH15EEvox7xtVH3yCh3wp8=
+X-Authority-Analysis: v=2.4 cv=b4KCJNGx c=1 sm=1 tr=0 ts=6a3a5a57 cx=c_pps
+ a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=FelO9ux0wxsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
+ a=yOCtJkima9RkubShWh1s:22 a=EUspDBNiAAAA:8 a=SXmXk8MbY0boExpAyW0A:9
+X-Proofpoint-GUID: kXEvrLLRoDqkINmui7u-kFStw4HCJMG1
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjIzMDA4MSBTYWx0ZWRfX4P/UhJ+Lh8m2
+ 2Lo6Od4CqcLgCoujgwi6H1Z8+0rhSq14bFDA2s+yZrPn/9931On3EKWpF97qeheVmS5sXsr8OHM
+ cLtD7aSGorCX8AXlKLMJsojKLYg8ScDRBEezrQpfiOdvqCjGDoExnAyYphU5Tf3dN7uCyrvg7Na
+ nGtYh1QFSqu+RYBIujOAftuZ35oZqUEUbo3lc1mN7NOttLOJv6WbYTDOT3uMKrj6HzT21pRGpdD
+ PngReyi4MymFgyjGXjgMBM1N51mIMMee5Zog5xT1NeEUpJAOEVGMVooI21LamgckpyP/rwRg6Us
+ C/VO7vCns534cH5a1x8j4c+M0JFJcW6pEbsKGkUjRtpHnMpv+Rb16wGaGzk2EqEmn2Or7ooR2YB
+ kdmjj1iRWAGVhBAZPj7JGgbWOmly0iimWWOnXh/oWEq2JjZUKYS1cirKhlBFxUhtmIr1sv1Ymam
+ rM608+fdvyjIDpS/EOQ==
+X-Proofpoint-ORIG-GUID: kXEvrLLRoDqkINmui7u-kFStw4HCJMG1
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
  definitions=2026-06-23_02,2026-06-22_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 lowpriorityscore=0 priorityscore=1501 impostorscore=0
- adultscore=0 bulkscore=0 clxscore=1015 phishscore=0 spamscore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2606230071
+ lowpriorityscore=0 bulkscore=0 adultscore=0 impostorscore=0 spamscore=0
+ suspectscore=0 phishscore=0 priorityscore=1501 clxscore=1015 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606230081
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260623_015549_517729_99134C44 
-X-CRM114-Status: GOOD (  22.56  )
+X-CRM114-CacheID: sfid-20260623_030512_674204_1AD515B4 
+X-CRM114-Status: GOOD (  17.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,78 +113,173 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Advertise IEEE80211_OFFLOAD_ENCAP_MCAST to inform mac80211 that
+multicast frame encapsulation is handled in hardware. This allows
+mac80211 to pass Ethernet-formatted multicast frames directly to
+the driver.
 
+In ath12k_wifi7_mac_op_tx(), refine the logic that selects the MLO
+multicast replication path. Add a sta pointer check so that only unicast
+Hardware-encap frames use the direct transmit path, while multicast
+Hardware-encap frames fall through to the MLO replication loop and are
+transmitted on each active link.
 
-On 6/18/2026 2:33 PM, Jose Ignacio Tornos Martinez wrote:
-> Hi Mani,
-> 
-> Let me clarify the exact scenario and where the reset is necessary:
-> 
-> * For the commented WiFi devices (WCN6855/WCN7850):
-> 
-> Standard VFIO passthrough flow (this works fine):
->   1. Unbind native driver (ath11k/ath12k/MHI)
->   2. Bind vfio-pci driver
->   3. Assign device to VM
->   4. VM boots, loads its own driver → device works perfectly
->   5. VM shuts down cleanly → device can be reassigned → works fine
-> 
-> The problem occurs with unclean VM termination:
->   1. VM crashes or is force-terminated
->   2. VFIO tries to reset the device before reassignment
->   3. Without a working PCI reset method, reset fails
->   4. Device stuck in undefined state → cannot be reassigned to another VM
->   
->      Unbinding the driver again doesn't help because the device hardware
->      itself is in a bad state. From hypervisor:
->      $ lspci -vvv -s 0000:03:00.0
->         03:00.0 Network controller: Qualcomm Technologies, Inc (rev ff) (prog-if ff)
->             !!! Unknown header type 7f
->      And a full host power-cycle is necessary to recover.
->      
+In the MLO replication loop, use skb_clone() for Hardware-encap frames.
+These frames are already in Ethernet format and do not require
+802.11 link address rewriting by ath12k_mlo_mcast_update_tx_link_address().
 
-what is the difference between a clean VM shutdown and an unclean termination?
-specifically, will pci driver's .shutdown callback be triggered during the clean VM
-shutdown, and not be triggered during a unclean termination?
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
 
-> * For the commented modem devices (SDX62/SDX65): 
-> 
-> Even worse because it fails during the first VM boot without proper reset
-> capability, standard VFIO passthrough flow:
->   1. Unbind native driver (MHI)
->   2. Bind vfio-pci driver
->   3. Assign device to VM
->   4. VM boots, loads its own driver and crashes:
->      [   24.024165] mhi mhi0: Device failed to enter MHI Ready
->      [   24.024168] mhi mhi0: MHI did not enter READY state
->      
->      Unbind/rebind attempts fail:
->      [  352.643601] mhi mhi0: Requested to power ON
->      [  352.643611] mhi mhi0: Power on setup success
->      [  373.442954] mhi mhi0: Device failed to clear MHI Reset
->      [  373.442970] mhi mhi0: MHI did not enter READY state
->      And requires a full host power cycle to recover,
->      even outside of VFIO scenarios.
-> 
-> * MHI Host driver's remove callback may handle clean software state
-> teardown, but it doesn't provide a PCI reset capability that VFIO can
-> invoke. VFIO needs a reset method registered in the PCI reset hierarchy
-> (device_specific, pm, flr, bus, etc.). VFIO invokes this reset both during
-> initial device binding (before the VM starts) and when reassigning the
-> device between VMs - without a working reset method, the device cannot
-> reach a clean state for initialization.
-> 
-> 
-> 
-> I hope this clarifies the scenario better. Please let me know if I can
-> provide more information or run any specific tests to help investigate this
-> further.
-> 
-> Thanks
-> 
-> Best regards
-> José Ignacio
-> 
-> 
+Signed-off-by: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c      |  6 ++-
+ drivers/net/wireless/ath/ath12k/wifi7/hw.c | 61 +++++++++++++++++-----
+ 2 files changed, 53 insertions(+), 14 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index af354bef5c0d..26b46a404580 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -10117,7 +10117,8 @@ static void ath12k_mac_update_vif_offload(struct ath12k_link_vif *arvif)
+ 	if (vif->type != NL80211_IFTYPE_STATION &&
+ 	    vif->type != NL80211_IFTYPE_AP)
+ 		vif->offload_flags &= ~(IEEE80211_OFFLOAD_ENCAP_ENABLED |
+-					IEEE80211_OFFLOAD_DECAP_ENABLED);
++					IEEE80211_OFFLOAD_DECAP_ENABLED |
++					IEEE80211_OFFLOAD_ENCAP_MCAST);
+ 
+ 	if (vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED) {
+ 		ahvif->dp_vif.tx_encap_type = ATH12K_HW_TXRX_ETHERNET;
+@@ -10136,6 +10137,9 @@ static void ath12k_mac_update_vif_offload(struct ath12k_link_vif *arvif)
+ 		vif->offload_flags &= ~IEEE80211_OFFLOAD_ENCAP_ENABLED;
+ 	}
+ 
++	if (vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED)
++		vif->offload_flags |= IEEE80211_OFFLOAD_ENCAP_MCAST;
++
+ 	param_id = WMI_VDEV_PARAM_RX_DECAP_TYPE;
+ 	if (vif->offload_flags & IEEE80211_OFFLOAD_DECAP_ENABLED)
+ 		param_value = ATH12K_HW_TXRX_ETHERNET;
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+index 3d59fa452ec0..e5bf9d218104 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+@@ -903,6 +903,7 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
+ 	struct ethhdr *eth;
+ 	bool is_prb_rsp;
+ 	u16 mcbc_gsn;
++	u8 cb_flags;
+ 	u8 link_id;
+ 	int ret;
+ 	struct ath12k_dp *tmp_dp;
+@@ -996,8 +997,13 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
+ 	    ieee80211_has_protected(hdr->frame_control))
+ 		is_dvlan = true;
+ 
++	/*
++	 * Add a sta pointer check to differentiate multicast encapsulation
++	 * offload packets, as the ATH12K_SKB_HW_80211_ENCAP flag is also set
++	 * for such packets.
++	 */
+ 	if (!vif->valid_links || !is_mcast || is_dvlan ||
+-	    (skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) ||
++	    ((skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP) && sta) ||
+ 	    test_bit(ATH12K_FLAG_RAW_MODE, &ar->ab->dev_flags)) {
+ 		ret = ath12k_wifi7_dp_tx(dp_pdev, arvif, arsta, skb, false, 0, is_mcast);
+ 		if (unlikely(ret)) {
+@@ -1009,6 +1015,7 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
+ 		mcbc_gsn = atomic_inc_return(&ahvif->dp_vif.mcbc_gsn) & 0xfff;
+ 
+ 		links_map = ahvif->links_map;
++		cb_flags = skb_cb->flags;
+ 		for_each_set_bit(link_id, &links_map,
+ 				 IEEE80211_MLD_MAX_NUM_LINKS) {
+ 			tmp_arvif = rcu_dereference(ahvif->link[link_id]);
+@@ -1016,21 +1023,45 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
+ 				continue;
+ 
+ 			tmp_ar = tmp_arvif->ar;
+-			tmp_dp_pdev = ath12k_dp_to_pdev_dp(tmp_ar->ab->dp,
++			tmp_dp = ath12k_ab_to_dp(tmp_ar->ab);
++			tmp_dp_pdev = ath12k_dp_to_pdev_dp(tmp_dp,
+ 							   tmp_ar->pdev_idx);
+ 			if (!tmp_dp_pdev)
+ 				continue;
+-			msdu_copied = skb_copy(skb, GFP_ATOMIC);
+-			if (!msdu_copied) {
+-				ath12k_err(ar->ab,
+-					   "skb copy failure link_id 0x%X vdevid 0x%X\n",
+-					   link_id, tmp_arvif->vdev_id);
+-				continue;
+-			}
+ 
+-			ath12k_mlo_mcast_update_tx_link_address(vif, link_id,
+-								msdu_copied,
+-								info_flags);
++			if (cb_flags & ATH12K_SKB_HW_80211_ENCAP) {
++				/*
++				 * skb->data may be modified for the iova_mask devices.
++				 * It is better to use skb_copy() for such devices
++				 * to avoid any potential skb corruption related issues.
++				 */
++				if (tmp_dp->hw_params->iova_mask)
++					msdu_copied = skb_copy(skb, GFP_ATOMIC);
++				else
++					/*
++					 * ath12k_wifi7_dp_tx() should treat cloned HW-encap
++					 * Ethernet multicast frames as read-only.
++					 */
++					msdu_copied = skb_clone(skb, GFP_ATOMIC);
++				if (!msdu_copied) {
++					ath12k_err(ar->ab,
++						   "skb copy/clone failure link_id 0x%X vdevid 0x%X\n",
++						   link_id, tmp_arvif->vdev_id);
++					continue;
++				}
++			} else {
++				msdu_copied = skb_copy(skb, GFP_ATOMIC);
++				if (!msdu_copied) {
++					ath12k_err(ar->ab,
++						   "skb copy failure link_id 0x%X vdevid 0x%X\n",
++						   link_id, tmp_arvif->vdev_id);
++					continue;
++				}
++
++				ath12k_mlo_mcast_update_tx_link_address(vif, link_id,
++									msdu_copied,
++									info_flags);
++			}
+ 
+ 			skb_cb = ATH12K_SKB_CB(msdu_copied);
+ 			skb_cb->link_id = link_id;
+@@ -1046,7 +1077,6 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
+ 			if (unlikely(!ahvif->dp_vif.key_cipher))
+ 				goto skip_peer_find;
+ 
+-			tmp_dp = ath12k_ab_to_dp(tmp_ar->ab);
+ 			spin_lock_bh(&tmp_dp->dp_lock);
+ 			peer = ath12k_dp_link_peer_find_by_addr(tmp_dp,
+ 								tmp_arvif->bssid);
+@@ -1065,11 +1095,16 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
+ 				skb_cb->cipher = key->cipher;
+ 				skb_cb->flags |= ATH12K_SKB_CIPHER_SET;
+ 
++				if (skb_cb->flags & ATH12K_SKB_HW_80211_ENCAP)
++					goto skip_fctl_protected_check;
++
+ 				hdr = (struct ieee80211_hdr *)msdu_copied->data;
+ 				if (!ieee80211_has_protected(hdr->frame_control))
+ 					hdr->frame_control |=
+ 						cpu_to_le16(IEEE80211_FCTL_PROTECTED);
+ 			}
++
++skip_fctl_protected_check:
+ 			spin_unlock_bh(&tmp_dp->dp_lock);
+ 
+ skip_peer_find:
+
+base-commit: 972c4dd19cb92e03d75b66c426cfade07582a1ba
+-- 
+2.34.1
 
 
