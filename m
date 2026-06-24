@@ -4,128 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D02D7CDB479
-	for <ath12k@archiver.kernel.org>; Wed, 24 Jun 2026 05:54:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C16CCDE001
+	for <ath12k@archiver.kernel.org>; Wed, 24 Jun 2026 07:47:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=rC2n29l+e+U5R273pH7NXFGAsfPxPHZc2q/3DT0Y/gc=; b=HdcW8/kHtNj6AwxlwqMsYddCBB
-	gI+w8XqrbMWt6ug1Q54jXJtVSmds+eZFNvycAz358phHCCURTCLBuY3fq9w9lW/GPxCYdqG4mg/zp
-	AomZynnTpF6AzTqTP9+DlYtV2paYmyXxgUZoY9v3/nAXqZu7CezsUvLg4kXCYaxt0Dpft77IiUem4
-	YsZFB27fEt6q9Lo3X3lKdREYFJmac44CQAiWJIcXmzTsvOMVmQhhovsxLsqhuCPDGCRhFfe3b9R1K
-	rLDdy95NXs7jYiFxSCFmqUvNuTrhov8bcY9+gKm0UMWHVpUOK+jOInYUS5ZGgWX9Fc7x5q2RjOHPJ
-	Tuj+LqlA==;
+	bh=uyO/oxy6yOszauGRa3+ycH46BEmZ6m/DyI0yY1OAvNo=; b=WZQBdDS96O8NiKoyrc8XnsiLaQ
+	wJrTSyQEyI/+CcYHYXqlg7vp2UKL5Ezc0xeqO1PF8obtZwHo1HPyvRNaN8/xCtAJ8xLxoTXvd0tae
+	2jDwgNqBc8CS9q1wl/kH4lwu1sbbu4WYDkLnUgFxRt35A+PvWWwIerrJbVKKxMkBAgedTgVxHvI2Q
+	HUBIC+C1zDCcZTaLT4DIsaARDLFEw1yk4jrG1FV47Q0fl/Xql+m6Qr5mzr0K2S9Ww1uCZjpFnkjkh
+	qRVe+BcYJnPh86w8hNUx/OnIsiUawl29ezBAEzE2q4/PIrkK3kRPzwvIXUpH9MGO/+B4P9gbOaBvN
+	Esyw8tIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wcGYu-00000007Bic-2Nuz;
-	Wed, 24 Jun 2026 05:54:12 +0000
+	id 1wcIKQ-00000007LRE-0eqm;
+	Wed, 24 Jun 2026 07:47:22 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wcGYr-00000007BfZ-2QCs
+	id 1wcIKN-00000007LQU-2So5
 	for ath12k@lists.infradead.org;
-	Wed, 24 Jun 2026 05:54:11 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65O1T92N1398559
-	for <ath12k@lists.infradead.org>; Wed, 24 Jun 2026 05:54:09 GMT
+	Wed, 24 Jun 2026 07:47:20 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65O5u3LJ1889332
+	for <ath12k@lists.infradead.org>; Wed, 24 Jun 2026 07:47:19 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=rC2n29l+e+U
-	5R273pH7NXFGAsfPxPHZc2q/3DT0Y/gc=; b=VKnngYezdjUbg89jvhh14MuxEKg
-	T1u4c70YMymFF1F5/uhEjBmdrWwVm7uguVAj/abv18prOHcwcFPbdm2PZ1X9/pMe
-	D0jJN7h/mboAVwAGd4uwLCYpyqNhawFmcvKK8rJT6aKpCxMc4NReYYiKsxounxfR
-	jgIESvF97B84onhq/RJgRVTZfuFq7/UkVX8mi+TIhreZsA9MIYPXxV4J4hAT1JVi
-	u9SOqZQ12WXmpMICY9kesNB657oTT0iILw+ClRfz5USn+ypItyNXPMiaq6G8H8S/
-	gLhW3237ZGBja1ivUG70D2B1JokduILiP1W5AdfX1r6xB7VvQ2LqQ81RkQA==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f05aq8qtf-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	uyO/oxy6yOszauGRa3+ycH46BEmZ6m/DyI0yY1OAvNo=; b=EKNzaJANf1T/xYRC
+	xJ23FK4GIyni/i9EsLzVYv9VTaMwY9Pra/uHTHJrR4ebZeA34TYUsXTBLKiTzHgE
+	1QB5QnCQ5wLUlBa9n7Lxzocco9k2j6tKICXEqd6unBbUDA2WRzmwNUM4VRQYjL6G
+	IHwWQrQ8C+Tea8a0tcKoco7M5YPYec8VLPW2ks6nVNkFs0MAB2kP33hqEzOHt2jv
+	1pJAlpc0AJ2ItvsIXORTkOgq/9dzKlCfi0X19SHHXIL0djBFzIA1FRPHS50Ko4mc
+	cRbiDneV2y911jfJsoCwRL2tV/6f1AXOx6nD5OdEYDmcYT45gpAV3wcVC5Vx5z7o
+	EWBKxg==
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4eysv3kyya-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 24 Jun 2026 05:54:08 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-36b982ec338so931093a91.0
-        for <ath12k@lists.infradead.org>; Tue, 23 Jun 2026 22:54:08 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 24 Jun 2026 07:47:18 +0000 (GMT)
+Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-842b0dd8107so567278b3a.0
+        for <ath12k@lists.infradead.org>; Wed, 24 Jun 2026 00:47:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1782280448; x=1782885248; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=rC2n29l+e+U5R273pH7NXFGAsfPxPHZc2q/3DT0Y/gc=;
-        b=HmabblaQgkbqQWg9Dk04YmUnQaPFzJIP0whH1QUAy6qUJ8qc9+SnzUFAgqCtij9fv3
-         bVTJaTois6CbYleFOaNmQxNe/wNmIkiEM6PYYJE/jSFkrErolDrWV2gnbWjryUIF2u+S
-         zz8iOpJzkSzaGNsuVDF3r3e1PlNUPipRzTDP9v/zYEqXHLlqgADf2B75W7TiqGoWClsK
-         rrT76FgTiqu7gNmj5OKSvsLA8ykHgAYLHoSDYwSiXGd35366zI5r8c7B1hLQTVC2UFZn
-         +cprvJluUPCpH46bnUTyHnJbvqH/Pd7LPlV6yHJrtcv1DiNBQSkJE91NddzqoXEhPOxD
-         e8Kw==
+        d=oss.qualcomm.com; s=google; t=1782287238; x=1782892038; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=uyO/oxy6yOszauGRa3+ycH46BEmZ6m/DyI0yY1OAvNo=;
+        b=NdCH7QGszw827p0OWrUPBb7+NhXPBY8ilYWjh5sC0b81YtjTBG1+Di3Ra973PIudi1
+         DINsA4d8Cg9Xejfm2F9/Ohy0d4apH1X+quKaXPqR78GD1ihJ2VhQLfIb6CjmhxWQQmao
+         zLxwqfpm+NzP3fZcy2FVEBmQmwfZ9UX07J1sP6Ycn029BaF54/lmqDCkxq89Ey6iKNW5
+         HAIVLdX0qlGkfkA+kuARafu3ZWpW2/j+NXUNdh/eSn4HztK2J8kbBZybnXf5PHC3nRin
+         iRpx54BBQlhgu4IK0qe/bIjTY+25JGq2Jt/eZeFFZmUwZXr6QAmk3BzSghsptW2xRUbA
+         Rn2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782280448; x=1782885248;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=rC2n29l+e+U5R273pH7NXFGAsfPxPHZc2q/3DT0Y/gc=;
-        b=dPs0U0OJk3RTJvgvQPMW4QJHh0+C2aWvzUA5dkUyguNjiqzMYWy6vOG6ZpIWgXXHfH
-         N08/Gtvrr5/Y4RhW/n6/Hkx1KPPLYqTZZKY86Cjq8D0y/BSSGvZd+05k+2mCedaxexOH
-         xcIecTPW0bap9oAWn3nHr3bh5BZBqrmn/U0DOZnwYHWyR5W6XZ4ZldVwUXcuHfy+2DQD
-         WzdJNDY8+Lbmrr4uFkdxVxBxZLcSjVYrgPUauwtgWN7Po6c9cb7WSOvCQrAK45cDVmd3
-         vG2U08oop+qENR0X4k6077oDymVktQ1HpEN+/7drn4m4e285Et/22JP4JugpUUjaOtT9
-         21LQ==
-X-Gm-Message-State: AOJu0Yy+Yi6sMpfv1OxTNhBf+mhEUAaex3Yoft/Wgn3oQSO9zgnSHcGS
-	zjIh85ei11wZHYwSx9ll/MwmwVxynCiTUw+EXZPzhoVT38Lvpw/E1MDR/EQ0BPcKEfE7ta48vFb
-	R72FJSM78vQbcgIwptTuavp1CT8+xO0cESYdMhZbeCeZ3zXC7eeW8HjkuSH4uowbSafk6mmo=
-X-Gm-Gg: AfdE7cmeFA6Qpw2wNxpFOP4Oj3YPZ2CK8GTuU4JsNGDR1btcoQC6ROBVECliR4JSXtc
-	Yq78RSVbBjyOtIoZGPKAu5lAq2B9Z1aTKBtvl3XtHr5vXsnicTn39WEngnVLrO3okaZQj2cy9Yv
-	3Ukvjg8lHwsYTBKzH2LSuJ/IGMTYCpDULdSAF6mTDS8PiqQS0oYNpTIrPsIhLnJb8+hZP2urG5T
-	zHQbg2CVRY9IG2KpLWfAht488fGsP+gPf4r0uUK0hr7hHYYhpPAlR2NI+zhHnf80eh+/LtTnmjx
-	Pq12GOVra6RyWctNexGLWybh6AhaA1kQZAasJfZG9D3EkwyqUf0y3fx41WUfFgnQIbigV41vCXR
-	b4ZXuicwZhyrYtWtFJJiebwiBQm3QA0dJBR33ieT5IvjpzjuTmEmFMsZVCwc49HcLWcQcA9YmcI
-	59lslVFMmYlALM+vpgTM3UH1U3z8B6mGZy20dH
-X-Received: by 2002:a17:902:e80d:b0:2c6:f350:e89e with SMTP id d9443c01a7336-2c7e14af599mr20494515ad.20.1782280447619;
-        Tue, 23 Jun 2026 22:54:07 -0700 (PDT)
-X-Received: by 2002:a17:902:e80d:b0:2c6:f350:e89e with SMTP id d9443c01a7336-2c7e14af599mr20494405ad.20.1782280447143;
-        Tue, 23 Jun 2026 22:54:07 -0700 (PDT)
-Received: from hu-ssramya-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2c7439f86aesm122593895ad.49.2026.06.23.22.54.05
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 23 Jun 2026 22:54:06 -0700 (PDT)
-From: Sreeramya Soratkal <sreeramya.soratkal@oss.qualcomm.com>
-To: ath12k@lists.infradead.org
-Cc: wireless@vger.kernel.org, sreeramya.soratkal@oss.qualcomm.com
-Subject: [PATCH ath-next 3/3] wifi: ath12k: Show per-radio center freq in dp stats
-Date: Wed, 24 Jun 2026 11:23:57 +0530
-Message-Id: <20260624055357.196596-4-sreeramya.soratkal@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260624055357.196596-1-sreeramya.soratkal@oss.qualcomm.com>
-References: <20260624055357.196596-1-sreeramya.soratkal@oss.qualcomm.com>
+        d=1e100.net; s=20251104; t=1782287238; x=1782892038;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=uyO/oxy6yOszauGRa3+ycH46BEmZ6m/DyI0yY1OAvNo=;
+        b=GdwN4JzLh7MxQHlxO0aPwdv655Y4cY718nZCrXzNckdkyzg2cegOZw3vbHJQHKGj/Q
+         IO09RRkG3D0pEm/9UyEcgqK6IM8sT48GnCe/NNDFbO5/mNvYvnUL8/fi0W9jACuMc1SU
+         EO6ocNdArQ/ieJdPB3WpKLYBJEIZxSZKaaTcjrLTukvd6C9tp13WHx1Lr4xzUNlIBCSc
+         Fsh610RAKwy8+oUzR4kmrADhm5OobIuD4a+RfLI9ziSy0k41fjPXLiexRphWTDHeA6SU
+         SFkK1k1tFXWC1yom2EEq2tv01m4P5xvW63nritGhsylT6aJplV2V2ai6W3O8pLSAfe3p
+         AklA==
+X-Forwarded-Encrypted: i=1; AFNElJ8lxw45VrTJEnS2T46xE8V/5R4dj0x0o1maR6tif2rLxsUY/m09vgFafwqdNmRuShxNJDny5io=@lists.infradead.org
+X-Gm-Message-State: AOJu0YypL9KKbRctGs62/BCRzbydfKr/qw/ML1JSR1rILy3lCCG4SSWT
+	Yx/kK3BSCKEDMiSDOPnVVxKqFL4HmcEaSWhGsPYEkD0gidh3yGuUK7ATPcdqDyEOg7b+aSKNrJT
+	hLdtYpGTGW5brYgpoROUlo4jqjAXgPDMkgujbcOBAjOjZYV3vxdNo+EYs1k8udaEhm10DWZLg
+X-Gm-Gg: AfdE7clbwvJEm7g+zUUMOi8MUsQ0nk6vjNha6X4RUJOc22VJeeZRWwQ0uhg3n/bbUG/
+	vKNTExl/SPba2NgyeT76FFNRxwvhqmgU1A3Fz3/EFjMnqLZ4KjSWNrBoYiCMMWOwDC0sdQ6OBkY
+	yjbtZGZHazcLnf5QP0f2H7Ft7xfDhMlp53g7OoWO8LBChv5G2V0Mp2u0RnoUqjo10/mQHzSMVMJ
+	AklVP7wwjjP9CNd6Vc68jJVA0apmn7jah143KO8cLcU8VCIHsG0smmYY3izDH8m1LuZBTTmv97o
+	0+kW3djMtlWdXWPnqJr75DpkOCC08c46sRWuURWmZY9O5rjAfV26Pe72KGBB++HT5pP+NxGVTJu
+	GIHrSesWkJVspGlQa6+ZsCnk4GBFEGraktLtzjGVXYEvhCY9RWZ6ebEsZuvk/3me26oGTEHQ7oS
+	YkoLymdqUx
+X-Received: by 2002:a05:6a00:17a9:b0:841:edb9:4ea2 with SMTP id d2e1a72fcca58-845a2c58284mr3191051b3a.32.1782287238159;
+        Wed, 24 Jun 2026 00:47:18 -0700 (PDT)
+X-Received: by 2002:a05:6a00:17a9:b0:841:edb9:4ea2 with SMTP id d2e1a72fcca58-845a2c58284mr3191019b3a.32.1782287237687;
+        Wed, 24 Jun 2026 00:47:17 -0700 (PDT)
+Received: from [10.133.33.165] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-845a3feb775sm1345215b3a.20.2026.06.24.00.47.14
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 24 Jun 2026 00:47:17 -0700 (PDT)
+Message-ID: <4cdfb71b-2ef8-4985-8294-c4a29e37faa3@oss.qualcomm.com>
+Date: Wed, 24 Jun 2026 15:47:12 +0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjI0MDA0NSBTYWx0ZWRfX1h61JiPFc8ck
- 7guSuIPWIeRZeNPvCnsc8vdFlncMiJ/dVGHWtDZF8Wn7x5iclUKIeQkThQqRB6OpHk/jhAyKKMP
- T9RdgQiXiGTrfZgnXdcRsZgrcFQkFCI=
-X-Proofpoint-GUID: MQX0VJFH1FsWWi2Qhu-cnt-BzOu-tnLA
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjI0MDA0NSBTYWx0ZWRfX09vSQo5nN01U
- XR5ufLKVDIRknFzPFMwmZzRdY02ONa+zj6wE8D4DwpjFeaTIeuVIQcGTLnQuO8yCCTXLyWI+UgD
- 7KH9c1KGB+DZXHllPQROwvmNqM0TSbtCTQBdVtauulKwT21IRv3VhaNNCj0L8wVpJl2d/IYDegC
- q+t30XrlpS5aXSaojpzfcS9c4i4BQaSM/XfMRBIWVqOxYtmPaaku0Ye9l9jAjiC34tVx7T/cABY
- CCUSZebnU9/dvfM+D5utR6GydjAWzcvuHVOH+RvnOeO5hDgso+ZQA1CevssWby2kM8k7kstY3Dg
- 41fgcsQwvwk0zhWYL4pwNkuv5WyYFZ3AA9r1sfSghisl0Svy9O7g3GxjCrs37G8PEE/Zf0L8qvW
- 2Qx2ONNOY7IAM5bMIZ3r4ttr/ZL+mg==
-X-Authority-Analysis: v=2.4 cv=UphT8ewB c=1 sm=1 tr=0 ts=6a3b7100 cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8
- a=JlNIVIk9kHasGwjauWMA:9 a=uKXjsCUrEbL0IQVhDsJ9:22
-X-Proofpoint-ORIG-GUID: MQX0VJFH1FsWWi2Qhu-cnt-BzOu-tnLA
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v10] Add device-specific reset for Qualcomm devices
+To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>, bhelgaas@google.com,
+        alex@shazbot.org, mani@kernel.org
+Cc: jjohnson@kernel.org, linux-pci@vger.kernel.org,
+        linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+        ath12k@lists.infradead.org, mhi@lists.linux.dev,
+        linux-kernel@vger.kernel.org
+References: <20260623183115.1585273-1-jtornosm@redhat.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20260623183115.1585273-1-jtornosm@redhat.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjI0MDA2MyBTYWx0ZWRfX+T+HG+83XqhF
+ RmLbbCp83cTQSiXnOoKST/Ge+asYYTm+Kt/H7gRxayOqwh/NQTZhYemkP92WjsJ1AkmSbsgJdrr
+ na7gsk5aGO0z9JHQy3+NwMYSqY85SR8=
+X-Authority-Analysis: v=2.4 cv=WtAb99fv c=1 sm=1 tr=0 ts=6a3b8b86 cx=c_pps
+ a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=VwQbUJbxAAAA:8 a=20KFwNOVAAAA:8 a=rq6MREiLanR6HC4oPXQA:9 a=QEXdDO2ut3YA:10
+ a=IoOABgeZipijB_acs4fv:22
+X-Proofpoint-ORIG-GUID: JNU1mu_sVr7xTElhzS5WQ6YAWO11ORFc
+X-Proofpoint-GUID: JNU1mu_sVr7xTElhzS5WQ6YAWO11ORFc
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjI0MDA2MyBTYWx0ZWRfX17J6bYeVMWnG
+ BbEnLSQeW8EhTk0qnr/bV2WY16L0hf7c67+wLaV8lQmeOnKDb8KwWXqxVR/iqJnKprZSfhcQers
+ XgCuNFGLtMUDO84xHLrCmDlzTBRwzYYSvW74ZUibfZKcyDYZoamdOrRf0MO1yHxZWltRCVTzDVj
+ v3G3Iex36x6LKhuMpvwGgU037ovAXuTL3Fgnq+FsPSa56tYg7xdCuC5O4NU74M3FHb8LxvsuPBO
+ 5nLWQZUcgBIFLgKiVLQkFjAktHbWh0D+GzCT1KQObuh9CaBPFmDdosxVve9KOFqWbv3kDx0Ohds
+ KdPXwRSQP8aKgdvaRU2dGRUvQtUlVzGoEeqQJ/8b44s/X+5wUEKtQkxlxWF3ngvUDIXLMAj5fHz
+ Frp+A3ZNiNzSquvKpGAFQXm89lkHvJGpiWw5upfPvEULu34V4XQTLmqaHHBf/DFpFrK1/VlwIMt
+ W6NsRw9aGonzsRsJ/9g==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-24_01,2026-06-23_01,2025-10-01_01
+ definitions=2026-06-24_02,2026-06-23_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 adultscore=0 phishscore=0 spamscore=0 suspectscore=0
- malwarescore=0 bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2606240045
+ bulkscore=0 lowpriorityscore=0 clxscore=1015 spamscore=0 adultscore=0
+ priorityscore=1501 suspectscore=0 phishscore=0 malwarescore=0 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606240063
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260623_225409_887854_97F7B506 
-X-CRM114-Status: GOOD (  14.13  )
+X-CRM114-CacheID: sfid-20260624_004719_645104_D9195BC8 
+X-CRM114-Status: GOOD (  28.75  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,47 +151,204 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the frequency on which each radio is operating
-is not available in device_dp_stats. This information is
-helpful in debugging the channel-specific throughput and
-is available with iw/nl80211 dump.
 
-Extend the device_dp_stats dump to display the center
-frequency in the existing per-radio loop.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+On 6/24/2026 2:31 AM, Jose Ignacio Tornos Martinez wrote:
+> Some Qualcomm PCIe devices (WCN6855/WCN7850 WiFi cards, SDX62/SDX65 modems)
+> lack working reset methods for VFIO passthrough scenarios. These devices
+> have no FLR capability, advertise NoSoftRst+ (blocking PM reset), and have
+> broken bus reset.
+> 
+> The problem manifests in VFIO passthrough scenarios:
+> 
+> - WCN6855 (17cb:1103) and WCN7850 (17cb:1107) WiFi devices:
+>   Normal VM operation works fine, including clean shutdown/reboot.
+>   However, when the VM terminates uncleanly (crash, force-off), VFIO
+>   attempts to reset the device before it can be assigned to another VM.
+>   Without a working reset method, the device remains in an undefined state,
+>   preventing reuse.
+> 
+> - SDX62/SDX65 (17cb:0308) 5G modems: Never successfully initialize even
+>   on first VM assignment without proper reset capability.
+> 
+> Add device-specific reset methods using BAR-space hardware reset registers
+> that exist in these devices:
+> 
+> - WCN6855/WCN7850 WiFi devices use SoC global reset via BAR0 (sequence from
+>   ath11k/ath12k driver: ath11k_pci_soc_global_reset(), ath11k_pci_sw_reset(),
+>   ath11k_mhi_set_mhictrl_reset()):
+>   - Write/clear reset bit at offset 0x3008
+>   - Wait for PCIe link recovery (up to 5 seconds)
+>   - Clear MHI controller SYSERR status at offset 0x38
+> 
+> - SDX62/SDX65 modem devices use MHI SoC reset via BAR0 (sequence from MHI
+>   driver: mhi_soc_reset(), mhi_pci_reset_prepare()):
+>   - Write reset request to offset 0xb0
+>   - Wait 2 seconds for reset completion
+> 
+> These are true hardware reset mechanisms (not power management or firmware
+> error recovery), providing proper device reset for VFIO scenarios.
+> 
+> Testing was performed on desktop platforms with M.2 WiFi and modem cards
+> using M.2-to-PCIe adapters, including extensive force-reset cycling to
+> verify stability.
+> 
+> Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+> ---
+> v10:
+>   - Complete redesign based on maintainer feedback (Manivannan Sadhasivam,
+>     Alex Williamson): use actual hardware reset registers from
+>     device drivers instead of D3hot power cycling
+> v9: https://lore.kernel.org/all/20260612142638.1243895-1-jtornosm@redhat.com/
+> 
+>  drivers/pci/quirks.c | 118 +++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 118 insertions(+)
+> 
+> diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+> index 431c021d7414..8ad3f214e520 100644
+> --- a/drivers/pci/quirks.c
+> +++ b/drivers/pci/quirks.c
+> @@ -4240,6 +4240,121 @@ static int reset_hinic_vf_dev(struct pci_dev *pdev, bool probe)
+>  	return 0;
+>  }
+>  
+> +#define QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET	0x3008
+> +#define QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET_V	BIT(0)
+> +#define QUALCOMM_WIFI_MHISTATUS			0x48
+> +#define QUALCOMM_WIFI_MHICTRL			0x38
+> +#define QUALCOMM_WIFI_MHICTRL_RESET_MASK	0x2
+> +
+> +/*
+> + * Qualcomm WiFi device-specific reset using SoC global reset via BAR0
+> + * registers.
+> + */
+> +static int reset_qualcomm_wifi(struct pci_dev *pdev, bool probe)
+> +{
+> +	bool link_recovered = false;
+> +	unsigned long timeout;
+> +	void __iomem *bar;
+> +	u32 val;
+> +	u16 cmd;
+> +
+> +	if (probe)
+> +		return 0;
+> +
+> +	if (pdev->current_state != PCI_D0)
+> +		return -EINVAL;
+> +
+> +	pci_read_config_word(pdev, PCI_COMMAND, &cmd);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd | PCI_COMMAND_MEMORY);
+> +
+> +	bar = pci_iomap(pdev, 0, 0);
+> +	if (!bar) {
+> +		pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +		return -ENODEV;
+> +	}
+> +
+> +	val = ioread32(bar + QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET);
 
-Signed-off-by: Sreeramya Soratkal <sreeramya.soratkal@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/debugfs.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET is beyond the first 4K bar area hence requires MHI
+wakeup before accessing, see [1]. the wakeup callback for WCN6855 is
+ath11k_pci_bus_wake_up() which calls mhi_device_get_sync(). Not sure how this can be done
+here. Maybe Mani can provide some hints?
 
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
-index 57c213111259..d54995b7adb2 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.c
-@@ -1031,6 +1031,7 @@ static ssize_t ath12k_debugfs_dump_device_dp_stats(struct file *file,
- 	struct ath12k_device_dp_stats *device_stats = &dp->device_stats;
- 	int len = 0, i, j, ret;
- 	struct ath12k *ar;
-+	u32 center_freq;
- 	const int size = 4096;
- 	static const char *rxdma_err[HAL_REO_ENTR_RING_RXDMA_ECODE_MAX] = {
- 		[HAL_REO_ENTR_RING_RXDMA_ECODE_OVERFLOW_ERR] = "Overflow",
-@@ -1164,6 +1165,12 @@ static ssize_t ath12k_debugfs_dump_device_dp_stats(struct file *file,
- 	for (i = 0; i < ab->num_radios; i++) {
- 		ar = ath12k_mac_get_ar_by_pdev_id(ab, DP_SW2HW_MACID(i));
- 		if (ar) {
-+			spin_lock_bh(&ar->data_lock);
-+			center_freq = ar->rx_channel ? ar->rx_channel->center_freq : 0;
-+			spin_unlock_bh(&ar->data_lock);
-+			len += scnprintf(buf + len, size - len,
-+					 "\nradio%d center_freq: %u\n",
-+					 i, center_freq);
- 			len += scnprintf(buf + len, size - len,
- 					"\nradio%d tx_pending: %u\n", i,
- 					atomic_read(&ar->dp.num_tx_pending));
--- 
-2.34.1
+[1]
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/ath/ath11k/pcic.c#n216
+
+
+> +	val |= QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET_V;
+> +	iowrite32(val, bar + QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET);
+> +	ioread32(bar + QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET);
+> +
+> +	msleep(10);
+> +
+> +	val &= ~QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET_V;
+> +	iowrite32(val, bar + QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET);
+> +	ioread32(bar + QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET);
+> +
+> +	msleep(10);
+> +
+> +	timeout = jiffies + msecs_to_jiffies(5000);
+> +	while (time_before(jiffies, timeout)) {
+> +		val = ioread32(bar + QUALCOMM_WIFI_PCIE_SOC_GLOBAL_RESET);
+> +		if (val != 0xffffffff) {
+> +			link_recovered = true;
+> +			break;
+> +		}
+> +		msleep(20);
+> +	}
+> +
+> +	if (!link_recovered) {
+> +		pci_err(pdev, "PCIe link failed to recover after reset\n");
+> +		goto out_restore;
+> +	}
+> +
+> +	/* After SOC_GLOBAL_RESET, MHISTATUS may still have SYSERR bit set
+> +	 * and thus need to set MHICTRL_RESET to clear SYSERR.
+> +	 */
+> +	iowrite32(QUALCOMM_WIFI_MHICTRL_RESET_MASK, bar + QUALCOMM_WIFI_MHICTRL);
+> +	ioread32(bar + QUALCOMM_WIFI_MHICTRL);
+> +
+> +	msleep(10);
+> +
+> +out_restore:
+> +	pci_iounmap(pdev, bar);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +
+> +	return link_recovered ? 0 : -ETIMEDOUT;
+> +}
+> +
+> +#define MHI_SOC_RESET_REQ_OFFSET		0xb0
+> +#define MHI_SOC_RESET_REQ			BIT(0)
+> +
+> +/*
+> + * Qualcomm modem device-specific reset using MHI SoC reset via BAR0
+> + * register.
+> + */
+> +static int reset_qualcomm_modem(struct pci_dev *pdev, bool probe)
+> +{
+> +	void __iomem *bar;
+> +	u16 cmd;
+> +
+> +	if (probe)
+> +		return 0;
+> +
+> +	if (pdev->current_state != PCI_D0)
+> +		return -EINVAL;
+> +
+> +	pci_read_config_word(pdev, PCI_COMMAND, &cmd);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd | PCI_COMMAND_MEMORY);
+> +
+> +	bar = pci_iomap(pdev, 0, 0);
+> +	if (!bar) {
+> +		pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +		return -ENODEV;
+> +	}
+> +
+> +	iowrite32(MHI_SOC_RESET_REQ, bar + MHI_SOC_RESET_REQ_OFFSET);
+> +	ioread32(bar + MHI_SOC_RESET_REQ_OFFSET);
+> +
+> +	/* Be sure device reset has been executed */
+> +	msleep(2000);
+> +
+> +	pci_iounmap(pdev, bar);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +
+> +	return 0;
+> +}
+> +
+>  static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
+>  	{ PCI_VENDOR_ID_INTEL, PCI_DEVICE_ID_INTEL_82599_SFP_VF,
+>  		 reset_intel_82599_sfp_virtfn },
+> @@ -4255,6 +4370,9 @@ static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
+>  		reset_chelsio_generic_dev },
+>  	{ PCI_VENDOR_ID_HUAWEI, PCI_DEVICE_ID_HINIC_VF,
+>  		reset_hinic_vf_dev },
+> +	{ PCI_VENDOR_ID_QCOM, 0x1103, reset_qualcomm_wifi },  /* WCN6855 WiFi */
+> +	{ PCI_VENDOR_ID_QCOM, 0x1107, reset_qualcomm_wifi },  /* WCN7850 WiFi */
+> +	{ PCI_VENDOR_ID_QCOM, 0x0308, reset_qualcomm_modem }, /* SDX62/SDX65 modems */
+>  	{ 0 }
+>  };
+>  
 
 
