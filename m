@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30AB4C43327
-	for <ath12k@archiver.kernel.org>; Fri, 26 Jun 2026 13:38:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB7D6C43211
+	for <ath12k@archiver.kernel.org>; Fri, 26 Jun 2026 13:38:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iyRP6bU8GJwZIUhpMbHL1XggSQuYlDgwK1TwcImYTrg=; b=SI8jzrCkbqSLpV9glDII5DOqLk
-	s1tgxQFn6dbyomDEW/Jen2DiVfOG+b1B5VWudp9vbL0Ndy21HjO7T2wlNQoAcMtFkYMAdV7H6ewS+
-	OwSjyNuye5fxl7td7Ol6GTW2MCdHG0ElN9AoXY4y09XEuxvMkL7Zx3UcmZhtfmCvKUbkj509O9GzM
-	GwVc7YeFbRrE7B/7b18RCV0TWspEkzemaX7Ohod7c4s8KReqqDwTbQ0Nnk3ABSNSDQhvfP3qn0Otd
-	iVfgsQXPOzylE10zNB9z0AabKU2EtqHLV0y0fcY9LDQrO/xQWRPHshEFsqLuJKNM+o5lqD9u5t3SI
-	tE2ek23A==;
+	bh=oB5HFy71aB1ePhxjt4gqZ5TfT2Ja/3SuN8FpeiGT1tE=; b=XMdrIj7HjvkMDOg3skhomgSUtp
+	XnmDzn6kmsUCEaBNTnTllUFgMsw41q3Wn+tjq5Z5Auz3FBSdoGhop5gaXr9k6RBT8kCcBUvp7kh25
+	alewx97mW3C1ESWhUMmAlhuk8ukgPZFolnemtxisp6ns9N4J9VisiHtyzHKH89p74SQH/Aj0RrzIj
+	YMyYbMvh1uAIk65yTab8q9eK6UsEvhystgwQlRhp2qOnykqu3KJtBUIfs6k9t3FNDbbIhgw7QIRY/
+	h74U6K8HZLNK53BUYlZjBhzr3y49nGk8Nn5RL0+B2tRfmn+GgYtsDbFH4QfE3XBRIkI99yCEPHWW3
+	eosRVVGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wd6kt-0000000BOYZ-3eEm;
-	Fri, 26 Jun 2026 13:38:03 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wd6lS-0000000BOke-03w1;
+	Fri, 26 Jun 2026 13:38:38 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wd6ks-0000000BOYP-0Vn2
+	id 1wd6lQ-0000000BOjt-2GiP
 	for ath12k@lists.infradead.org;
-	Fri, 26 Jun 2026 13:38:02 +0000
+	Fri, 26 Jun 2026 13:38:36 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id DACCB40A83;
-	Fri, 26 Jun 2026 13:38:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0ACC21F00A3D;
-	Fri, 26 Jun 2026 13:37:30 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id F1AD2600DA;
+	Fri, 26 Jun 2026 13:38:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A67E1F00A3A;
+	Fri, 26 Jun 2026 13:38:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782481081;
-	bh=iyRP6bU8GJwZIUhpMbHL1XggSQuYlDgwK1TwcImYTrg=;
+	s=k20260515; t=1782481115;
+	bh=oB5HFy71aB1ePhxjt4gqZ5TfT2Ja/3SuN8FpeiGT1tE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=HwFpMxvRpfAKkvj84g44PYk1X91/f7jZs29AVgqKOoefwXZDvMmVya/eboUtgdE3N
-	 KjUOkoCFVUsKThToHZcT/rKczr7Ee4DBurfFDGw5fiIq26oeBZaLI0oGPJH6YRR96J
-	 DY11bXS5pPOYvWTpbwVqB3l2eJdPdB4DLOQrMIyIpje95SGZjctigUszFsc04K7b7i
-	 lohQnA/b3YtSFaDNvjdyd4aEN7n1ex/5NC6kAVF4qbQrLlkIHYrRK8h538Vg65sPx9
-	 5wY2CvwhTR9ikKAWntRNQmB6fnmhu6gRsGpDc6VXFZ+pUKxkmMGS45p0xvekdKf0cl
-	 joPXCQpsCWRkA==
+	b=kz8kKem4ONpn/DiV+/IyZxCjQy3Mx1WKNPQzfMjQ2R14tGV5TckLH/AYmjJNH645+
+	 Iu68Xwj2MIc5h7niVoNgEDiZBS3qB0F1/vbCx+QcdGOwK7biNJytczOWhijkWKJIrl
+	 IxsmG82TFoqaDH+sUphmc0mzYYDjhoutv8ycuzKUf8Vmu/5PbX6L18WnAn4QfEqQ8X
+	 dnTeHtgBu4E/dZ+HZ/KDgMUM4LdK+CXyxLofD1dsyVR5qmeL0gR5nTvEEaxuvof5l4
+	 cABb7UgT5jidLLZpLwsfb50XPBVJQiN31XX3WzLTYWxRAuLL8lBWQDGJ8Bz7Ij67W+
+	 D1GJzjsDmDGiQ==
 From: Sumit Garg <sumit.garg@kernel.org>
 To: andersson@kernel.org
 Cc: linux-arm-msm@vger.kernel.org,
@@ -90,9 +90,9 @@ Cc: linux-arm-msm@vger.kernel.org,
 	skare@qti.qualcomm.com,
 	linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: [PATCH v8 05/14] remoteproc: qcom_q6v5_mss: Switch to generic PAS TZ APIs
-Date: Fri, 26 Jun 2026 19:04:25 +0530
-Message-ID: <20260626133440.692849-6-sumit.garg@kernel.org>
+Subject: [PATCH v8 06/14] remoteproc: qcom_wcnss: Switch to generic PAS TZ APIs
+Date: Fri, 26 Jun 2026 19:04:26 +0530
+Message-ID: <20260626133440.692849-7-sumit.garg@kernel.org>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260626133440.692849-1-sumit.garg@kernel.org>
 References: <20260626133440.692849-1-sumit.garg@kernel.org>
@@ -114,7 +114,7 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 
-Switch qcom_q6v5_mss client driver over to generic PAS TZ APIs. Generic PAS
+Switch qcom_wcnss client driver over to generic PAS TZ APIs. Generic PAS
 TZ service allows to support multiple TZ implementation backends like QTEE
 based SCM PAS service, OP-TEE based PAS service and any further future TZ
 backend service.
@@ -123,39 +123,62 @@ Reviewed-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 Tested-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com> # Lemans
 Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 ---
- drivers/remoteproc/qcom_q6v5_mss.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ drivers/remoteproc/qcom_wcnss.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/remoteproc/qcom_q6v5_mss.c b/drivers/remoteproc/qcom_q6v5_mss.c
-index ae78f5c7c1b6..96888007faa8 100644
---- a/drivers/remoteproc/qcom_q6v5_mss.c
-+++ b/drivers/remoteproc/qcom_q6v5_mss.c
-@@ -34,6 +34,7 @@
- #include "qcom_pil_info.h"
- #include "qcom_q6v5.h"
- 
+diff --git a/drivers/remoteproc/qcom_wcnss.c b/drivers/remoteproc/qcom_wcnss.c
+index 4add9037dbd5..0dbdd18ab3dd 100644
+--- a/drivers/remoteproc/qcom_wcnss.c
++++ b/drivers/remoteproc/qcom_wcnss.c
+@@ -19,7 +19,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/pm_domain.h>
+ #include <linux/pm_runtime.h>
+-#include <linux/firmware/qcom/qcom_scm.h>
 +#include <linux/firmware/qcom/qcom_pas.h>
- #include <linux/firmware/qcom/qcom_scm.h>
+ #include <linux/regulator/consumer.h>
+ #include <linux/remoteproc.h>
+ #include <linux/soc/qcom/mdt_loader.h>
+@@ -257,7 +257,7 @@ static int wcnss_start(struct rproc *rproc)
+ 	wcnss_indicate_nv_download(wcnss);
+ 	wcnss_configure_iris(wcnss);
  
- #define MPSS_CRASH_REASON_SMEM		421
-@@ -1480,7 +1481,7 @@ static int q6v5_mpss_load(struct q6v5 *qproc)
+-	ret = qcom_scm_pas_auth_and_reset(WCNSS_PAS_ID);
++	ret = qcom_pas_auth_and_reset(WCNSS_PAS_ID);
+ 	if (ret) {
+ 		dev_err(wcnss->dev,
+ 			"failed to authenticate image and release reset\n");
+@@ -269,7 +269,7 @@ static int wcnss_start(struct rproc *rproc)
+ 	if (wcnss->ready_irq > 0 && ret == 0) {
+ 		/* We have a ready_irq, but it didn't fire in time. */
+ 		dev_err(wcnss->dev, "start timed out\n");
+-		qcom_scm_pas_shutdown(WCNSS_PAS_ID);
++		qcom_pas_shutdown(WCNSS_PAS_ID);
+ 		ret = -ETIMEDOUT;
+ 		goto disable_iris;
+ 	}
+@@ -311,7 +311,7 @@ static int wcnss_stop(struct rproc *rproc)
+ 					    0);
  	}
  
- 	if (qproc->need_pas_mem_setup) {
--		ret = qcom_scm_pas_mem_setup(MPSS_PAS_ID, qproc->mpss_phys, qproc->mpss_size);
-+		ret = qcom_pas_mem_setup(MPSS_PAS_ID, qproc->mpss_phys, qproc->mpss_size);
- 		if (ret) {
- 			dev_err(qproc->dev,
- 				"setting up mpss memory failed: %d\n", ret);
-@@ -2077,7 +2078,7 @@ static int q6v5_probe(struct platform_device *pdev)
- 	if (!desc)
- 		return -EINVAL;
+-	ret = qcom_scm_pas_shutdown(WCNSS_PAS_ID);
++	ret = qcom_pas_shutdown(WCNSS_PAS_ID);
+ 	if (ret)
+ 		dev_err(wcnss->dev, "failed to shutdown: %d\n", ret);
  
--	if (desc->need_mem_protection && !qcom_scm_is_available())
-+	if (desc->need_mem_protection && !qcom_pas_is_available())
+@@ -557,10 +557,10 @@ static int wcnss_probe(struct platform_device *pdev)
+ 
+ 	data = of_device_get_match_data(&pdev->dev);
+ 
+-	if (!qcom_scm_is_available())
++	if (!qcom_pas_is_available())
  		return -EPROBE_DEFER;
  
- 	mba_image = desc->hexagon_mba_image;
+-	if (!qcom_scm_pas_supported(WCNSS_PAS_ID)) {
++	if (!qcom_pas_supported(WCNSS_PAS_ID)) {
+ 		dev_err(&pdev->dev, "PAS is not available for WCNSS\n");
+ 		return -ENXIO;
+ 	}
 -- 
 2.53.0
 
