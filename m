@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76935C43211
-	for <ath12k@archiver.kernel.org>; Fri, 26 Jun 2026 13:41:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F752C44512
+	for <ath12k@archiver.kernel.org>; Fri, 26 Jun 2026 13:42:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4txFycxbGV/RFNZJTvjJwQwjftcOihEUIdkXBmeW3tc=; b=IIIAVdEtw8yyXn4q6Ch6xCgRKu
-	LWKYn38yek9kIAxCajk791PNUcerPMc8n3tGGdG9gxVj+YQTMeeW1fdoCm98b3UVF8JWMzL9+dGz0
-	HLnG9rynUS9g3jnJ3bY0NhSV2tWD6gtk+ZHZ0k/ogSADgYwF9ltYZAWqj1oLAXVplj2Ll9r3cWunF
-	LLRMYaXpYXtMPmNlrn7j6kmDApO7UAqqHObMvb1C6uO9IFkhzoDsWQPf6iBej7/USkIWFAKK0YUj8
-	zcPsCxJyNX437T6ogBHHJww63VeQHaZhhRtWxmQjxYgMHbpdCvB0kvBw7yiVkoeq6k5XwW2I0mcEp
-	BujXViwg==;
+	bh=XJUsMAYjmWAnU9O7bNhJ//OMZ13Hh1LDu2wdf2fpjto=; b=IUSJsz2s2qCFiAOSIfiOQCOBij
+	Qls/swueCmIaEdpI1k4Sg41PyP9VVtS1ISGSUOgobzB5YQFD6lvmLMPA5qjNu5zq2O3sAqKUkL9s3
+	+lpA1VsmKYmslAQ+TRl8ZJ+9jmYbBJfxt05ryLpHtjhPfC/skHOfbPLYx8jrZKm0uhH8guFYIw+Ol
+	hjmmf6ATTz1puSF5YUDyvqFdMImVE9ueOouGJypTkb7LLQOKya0pJBRB4Js/QiGLKHbYoLyjOJWsg
+	8vRQ7ABHg5hQa9+TkA0svH9Ty5S/8aWuuom49Rvz87coFo3XXPx+NFwHstkFKzApPPfx4OPpz5UmR
+	ONSuFuLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wd6oW-0000000BPn9-0heP;
-	Fri, 26 Jun 2026 13:41:48 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wd6p5-0000000BQ1e-1QzK;
+	Fri, 26 Jun 2026 13:42:23 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wd6oU-0000000BPmH-0mXS
+	id 1wd6p3-0000000BQ0c-2jLI
 	for ath12k@lists.infradead.org;
-	Fri, 26 Jun 2026 13:41:46 +0000
+	Fri, 26 Jun 2026 13:42:21 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id DCC8A4011A;
-	Fri, 26 Jun 2026 13:41:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F0D2C1F00A3A;
-	Fri, 26 Jun 2026 13:41:21 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 66F8A412C2;
+	Fri, 26 Jun 2026 13:42:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2AE331F00A3D;
+	Fri, 26 Jun 2026 13:41:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782481305;
-	bh=4txFycxbGV/RFNZJTvjJwQwjftcOihEUIdkXBmeW3tc=;
+	s=k20260515; t=1782481341;
+	bh=XJUsMAYjmWAnU9O7bNhJ//OMZ13Hh1LDu2wdf2fpjto=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=ALG9V/vvIVU10JZWTTjly6p+VmclsZWjg55M1u16HNz4+LjrHqttZsT2C24wKHTBu
-	 /g4iPBtS8fsRGU7aRGVtfwqMoN9KerXUEoe+36PnpIXqpCT2Rr2NmVqYdjUEWb++O1
-	 Nk5Y/APG1ZU5rpj3cNRRycHMlv8BDeYV6VhlIQaesXLOGtANbqgUtlAJOaKbnrtHuH
-	 jYTAHO11i0xlABhdTmAsum1WNX6sRW81w8NE2APxYdDPW9HMj97tmklmCMRZbYaxfK
-	 Ld5vum/ooCPBfcavWhS3aBtGTnINWDyQmal80/ewdqljyWTQuPtaa/Ao8agCoWpqKB
-	 7uc1Ngw7ZhljQ==
+	b=mquDSpOP4TG3h9syVbjc0phTij1tuiiPAgBU80powv0FLrpBIgWzva7ZL7PN2UNEJ
+	 tqBTK2bKPvDzruG06ALOUKtHcYbKkqWUFj9DkadZ0Po4yYSoqWUtXDz08A7K04ef/+
+	 uOu5xB7u+SQnh6MLMZ6CkK5v+UGicaSXMWG0gKyp+TLta6mMABV5i/qJ/L8RfyT+sE
+	 w71NGn7eiTWg6N6cIMXiyvP52Fz8GdBgX+XDj2x7gS1eMow5w+M64F4anKs/QN4y8c
+	 B98ugQqjAgLQmRy3HipPfslJgqdVmnR3DQwxcCEuebUvpfAAos3JaH9L5kKDf7cQDf
+	 b/qAn43Qp5KWQ==
 From: Sumit Garg <sumit.garg@kernel.org>
 To: andersson@kernel.org
 Cc: linux-arm-msm@vger.kernel.org,
@@ -90,9 +90,9 @@ Cc: linux-arm-msm@vger.kernel.org,
 	skare@qti.qualcomm.com,
 	linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: [PATCH v8 13/14] firmware: qcom_scm: Remove SCM PAS wrappers
-Date: Fri, 26 Jun 2026 19:04:33 +0530
-Message-ID: <20260626133440.692849-14-sumit.garg@kernel.org>
+Subject: [PATCH v8 14/14] MAINTAINERS: Add maintainer entry for Qualcomm PAS TZ service
+Date: Fri, 26 Jun 2026 19:04:34 +0530
+Message-ID: <20260626133440.692849-15-sumit.garg@kernel.org>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260626133440.692849-1-sumit.garg@kernel.org>
 References: <20260626133440.692849-1-sumit.garg@kernel.org>
@@ -114,303 +114,34 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 
-Now since all the Qcom SCM client drivers have been migrated over to
-generic PAS TZ service, let's drop the exported SCM PAS wrappers.
+Add Sumit Garg as the maintainer for the Qualcomm generic Peripheral
+Authentication Service (PAS) as well as the PAS TEE backend driver.
 
-Reviewed-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-Tested-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com> # Lemans
-Tested-by: Vignesh Viswanathan <vignesh.viswanathan@oss.qualcomm.com> # IPQ9650
 Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 ---
- drivers/firmware/qcom/qcom_scm.c       | 143 +++++--------------------
- include/linux/firmware/qcom/qcom_scm.h |  29 -----
- 2 files changed, 29 insertions(+), 143 deletions(-)
+ MAINTAINERS | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/drivers/firmware/qcom/qcom_scm.c b/drivers/firmware/qcom/qcom_scm.c
-index 7933e55803dc..1deee6aea387 100644
---- a/drivers/firmware/qcom/qcom_scm.c
-+++ b/drivers/firmware/qcom/qcom_scm.c
-@@ -553,26 +553,6 @@ static void qcom_scm_set_download_mode(u32 dload_mode)
- 		dev_err(__scm->dev, "failed to set download mode: %d\n", ret);
- }
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 15011f5752a9..7847b2a98f90 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -22315,6 +22315,15 @@ F:	Documentation/devicetree/bindings/media/*qcom*
+ F:	drivers/media/platform/qcom
+ F:	include/dt-bindings/media/*qcom*
  
--struct qcom_scm_pas_context *devm_qcom_scm_pas_context_alloc(struct device *dev,
--							     u32 pas_id,
--							     phys_addr_t mem_phys,
--							     size_t mem_size)
--{
--	struct qcom_pas_context *ctx;
--
--	ctx = devm_kzalloc(dev, sizeof(*ctx), GFP_KERNEL);
--	if (!ctx)
--		return ERR_PTR(-ENOMEM);
--
--	ctx->dev = dev;
--	ctx->pas_id = pas_id;
--	ctx->mem_phys = mem_phys;
--	ctx->mem_size = mem_size;
--
--	return (struct qcom_scm_pas_context *)ctx;
--}
--EXPORT_SYMBOL_GPL(devm_qcom_scm_pas_context_alloc);
--
- static int __qcom_scm_pas_init_image(struct device *dev, u32 pas_id,
- 				     dma_addr_t mdata_phys,
- 				     struct qcom_scm_res *res)
-@@ -630,9 +610,9 @@ static int qcom_scm_pas_prep_and_init_image(struct device *dev,
- 	return ret ? : res.result[0];
- }
- 
--static int __qcom_scm_pas_init_image2(struct device *dev, u32 pas_id,
--				      const void *metadata, size_t size,
--				      struct qcom_pas_context *ctx)
-+static int qcom_scm_pas_init_image(struct device *dev, u32 pas_id,
-+				   const void *metadata, size_t size,
-+				   struct qcom_pas_context *ctx)
- {
- 	struct qcom_scm_res res;
- 	dma_addr_t mdata_phys;
-@@ -672,16 +652,8 @@ static int __qcom_scm_pas_init_image2(struct device *dev, u32 pas_id,
- 	return ret ? : res.result[0];
- }
- 
--int qcom_scm_pas_init_image(u32 pas_id, const void *metadata, size_t size,
--			    struct qcom_scm_pas_context *ctx)
--{
--	return __qcom_scm_pas_init_image2(__scm->dev, pas_id, metadata, size,
--					  (struct qcom_pas_context *)ctx);
--}
--EXPORT_SYMBOL_GPL(qcom_scm_pas_init_image);
--
--static void __qcom_scm_pas_metadata_release(struct device *dev,
--					    struct qcom_pas_context *ctx)
-+static void qcom_scm_pas_metadata_release(struct device *dev,
-+					  struct qcom_pas_context *ctx)
- {
- 	if (ctx->use_tzmem)
- 		qcom_tzmem_free(ctx->ptr);
-@@ -691,15 +663,8 @@ static void __qcom_scm_pas_metadata_release(struct device *dev,
- 	ctx->ptr = NULL;
- }
- 
--void qcom_scm_pas_metadata_release(struct qcom_scm_pas_context *ctx)
--{
--	__qcom_scm_pas_metadata_release(__scm->dev,
--					(struct qcom_pas_context *)ctx);
--}
--EXPORT_SYMBOL_GPL(qcom_scm_pas_metadata_release);
--
--static int __qcom_scm_pas_mem_setup(struct device *dev, u32 pas_id,
--				    phys_addr_t addr, phys_addr_t size)
-+static int qcom_scm_pas_mem_setup(struct device *dev, u32 pas_id,
-+				  phys_addr_t addr, phys_addr_t size)
- {
- 	int ret;
- 	struct qcom_scm_desc desc = {
-@@ -730,12 +695,6 @@ static int __qcom_scm_pas_mem_setup(struct device *dev, u32 pas_id,
- 	return ret ? : res.result[0];
- }
- 
--int qcom_scm_pas_mem_setup(u32 pas_id, phys_addr_t addr, phys_addr_t size)
--{
--	return __qcom_scm_pas_mem_setup(__scm->dev, pas_id, addr, size);
--}
--EXPORT_SYMBOL_GPL(qcom_scm_pas_mem_setup);
--
- static void *__qcom_scm_pas_get_rsc_table(struct device *dev, u32 pas_id,
- 					  void *input_rt_tzm,
- 					  size_t input_rt_size,
-@@ -789,11 +748,10 @@ static void *__qcom_scm_pas_get_rsc_table(struct device *dev, u32 pas_id,
- 	return ret ? ERR_PTR(ret) : output_rt_tzm;
- }
- 
--static void *__qcom_scm_pas_get_rsc_table2(struct device *dev,
--					   struct qcom_pas_context *ctx,
--					   void *input_rt,
--					   size_t input_rt_size,
--					   size_t *output_rt_size)
-+static void *qcom_scm_pas_get_rsc_table(struct device *dev,
-+					struct qcom_pas_context *ctx,
-+					void *input_rt, size_t input_rt_size,
-+					size_t *output_rt_size)
- {
- 	struct resource_table empty_rsc = {};
- 	size_t size = SZ_16K;
-@@ -864,19 +822,7 @@ static void *__qcom_scm_pas_get_rsc_table2(struct device *dev,
- 	return ret ? ERR_PTR(ret) : tbl_ptr;
- }
- 
--struct resource_table *qcom_scm_pas_get_rsc_table(struct qcom_scm_pas_context *ctx,
--						  void *input_rt,
--						  size_t input_rt_size,
--						  size_t *output_rt_size)
--{
--	return __qcom_scm_pas_get_rsc_table2(__scm->dev,
--					     (struct qcom_pas_context *)ctx,
--					     input_rt, input_rt_size,
--					     output_rt_size);
--}
--EXPORT_SYMBOL_GPL(qcom_scm_pas_get_rsc_table);
--
--static int __qcom_scm_pas_auth_and_reset(struct device *dev, u32 pas_id)
-+static int qcom_scm_pas_auth_and_reset(struct device *dev, u32 pas_id)
- {
- 	int ret;
- 	struct qcom_scm_desc desc = {
-@@ -905,14 +851,8 @@ static int __qcom_scm_pas_auth_and_reset(struct device *dev, u32 pas_id)
- 	return ret ? : res.result[0];
- }
- 
--int qcom_scm_pas_auth_and_reset(u32 pas_id)
--{
--	return __qcom_scm_pas_auth_and_reset(__scm->dev, pas_id);
--}
--EXPORT_SYMBOL_GPL(qcom_scm_pas_auth_and_reset);
--
--static int __qcom_scm_pas_prepare_and_auth_reset(struct device *dev,
--						 struct qcom_pas_context *ctx)
-+static int qcom_scm_pas_prepare_and_auth_reset(struct device *dev,
-+					       struct qcom_pas_context *ctx)
- {
- 	u64 handle;
- 	int ret;
-@@ -923,7 +863,7 @@ static int __qcom_scm_pas_prepare_and_auth_reset(struct device *dev,
- 	 * memory region and then invokes a call to TrustZone to authenticate.
- 	 */
- 	if (!ctx->use_tzmem)
--		return __qcom_scm_pas_auth_and_reset(dev, ctx->pas_id);
-+		return qcom_scm_pas_auth_and_reset(dev, ctx->pas_id);
- 
- 	/*
- 	 * When Linux runs @ EL2 Linux must create the shmbridge itself and then
-@@ -933,21 +873,14 @@ static int __qcom_scm_pas_prepare_and_auth_reset(struct device *dev,
- 	if (ret)
- 		return ret;
- 
--	ret = __qcom_scm_pas_auth_and_reset(dev, ctx->pas_id);
-+	ret = qcom_scm_pas_auth_and_reset(dev, ctx->pas_id);
- 	qcom_tzmem_shm_bridge_delete(handle);
- 
- 	return ret;
- }
- 
--int qcom_scm_pas_prepare_and_auth_reset(struct qcom_scm_pas_context *ctx)
--{
--	return __qcom_scm_pas_prepare_and_auth_reset(__scm->dev,
--						     (struct qcom_pas_context *)ctx);
--}
--EXPORT_SYMBOL_GPL(qcom_scm_pas_prepare_and_auth_reset);
--
--static int __qcom_scm_pas_set_remote_state(struct device *dev, u32 state,
--					   u32 pas_id)
-+static int qcom_scm_pas_set_remote_state(struct device *dev, u32 state,
-+					 u32 pas_id)
- {
- 	struct qcom_scm_desc desc = {
- 		.svc = QCOM_SCM_SVC_BOOT,
-@@ -965,13 +898,7 @@ static int __qcom_scm_pas_set_remote_state(struct device *dev, u32 state,
- 	return ret ? : res.result[0];
- }
- 
--int qcom_scm_set_remote_state(u32 state, u32 id)
--{
--	return __qcom_scm_pas_set_remote_state(__scm->dev, state, id);
--}
--EXPORT_SYMBOL_GPL(qcom_scm_set_remote_state);
--
--static int __qcom_scm_pas_shutdown(struct device *dev, u32 pas_id)
-+static int qcom_scm_pas_shutdown(struct device *dev, u32 pas_id)
- {
- 	int ret;
- 	struct qcom_scm_desc desc = {
-@@ -1000,13 +927,7 @@ static int __qcom_scm_pas_shutdown(struct device *dev, u32 pas_id)
- 	return ret ? : res.result[0];
- }
- 
--int qcom_scm_pas_shutdown(u32 pas_id)
--{
--	return __qcom_scm_pas_shutdown(__scm->dev, pas_id);
--}
--EXPORT_SYMBOL_GPL(qcom_scm_pas_shutdown);
--
--static bool __qcom_scm_pas_supported(struct device *dev, u32 pas_id)
-+static bool qcom_scm_pas_supported(struct device *dev, u32 pas_id)
- {
- 	int ret;
- 	struct qcom_scm_desc desc = {
-@@ -1027,23 +948,17 @@ static bool __qcom_scm_pas_supported(struct device *dev, u32 pas_id)
- 	return ret ? false : !!res.result[0];
- }
- 
--bool qcom_scm_pas_supported(u32 pas_id)
--{
--	return __qcom_scm_pas_supported(__scm->dev, pas_id);
--}
--EXPORT_SYMBOL_GPL(qcom_scm_pas_supported);
--
- static struct qcom_pas_ops qcom_pas_ops_scm = {
- 	.drv_name		= "qcom_scm",
--	.supported		= __qcom_scm_pas_supported,
--	.init_image		= __qcom_scm_pas_init_image2,
--	.mem_setup		= __qcom_scm_pas_mem_setup,
--	.get_rsc_table		= __qcom_scm_pas_get_rsc_table2,
--	.auth_and_reset		= __qcom_scm_pas_auth_and_reset,
--	.prepare_and_auth_reset	= __qcom_scm_pas_prepare_and_auth_reset,
--	.set_remote_state	= __qcom_scm_pas_set_remote_state,
--	.shutdown		= __qcom_scm_pas_shutdown,
--	.metadata_release	= __qcom_scm_pas_metadata_release,
-+	.supported		= qcom_scm_pas_supported,
-+	.init_image		= qcom_scm_pas_init_image,
-+	.mem_setup		= qcom_scm_pas_mem_setup,
-+	.get_rsc_table		= qcom_scm_pas_get_rsc_table,
-+	.auth_and_reset		= qcom_scm_pas_auth_and_reset,
-+	.prepare_and_auth_reset	= qcom_scm_pas_prepare_and_auth_reset,
-+	.set_remote_state	= qcom_scm_pas_set_remote_state,
-+	.shutdown		= qcom_scm_pas_shutdown,
-+	.metadata_release	= qcom_scm_pas_metadata_release,
- };
- 
- /**
-diff --git a/include/linux/firmware/qcom/qcom_scm.h b/include/linux/firmware/qcom/qcom_scm.h
-index 5747bd191bf1..a0a6bc0229c4 100644
---- a/include/linux/firmware/qcom/qcom_scm.h
-+++ b/include/linux/firmware/qcom/qcom_scm.h
-@@ -64,35 +64,6 @@ bool qcom_scm_is_available(void);
- int qcom_scm_set_cold_boot_addr(void *entry);
- int qcom_scm_set_warm_boot_addr(void *entry);
- void qcom_scm_cpu_power_down(u32 flags);
--int qcom_scm_set_remote_state(u32 state, u32 id);
--
--struct qcom_scm_pas_context {
--	struct device *dev;
--	u32 pas_id;
--	phys_addr_t mem_phys;
--	size_t mem_size;
--	void *ptr;
--	dma_addr_t phys;
--	ssize_t size;
--	bool use_tzmem;
--};
--
--struct qcom_scm_pas_context *devm_qcom_scm_pas_context_alloc(struct device *dev,
--							     u32 pas_id,
--							     phys_addr_t mem_phys,
--							     size_t mem_size);
--int qcom_scm_pas_init_image(u32 pas_id, const void *metadata, size_t size,
--			    struct qcom_scm_pas_context *ctx);
--void qcom_scm_pas_metadata_release(struct qcom_scm_pas_context *ctx);
--int qcom_scm_pas_mem_setup(u32 pas_id, phys_addr_t addr, phys_addr_t size);
--int qcom_scm_pas_auth_and_reset(u32 pas_id);
--int qcom_scm_pas_shutdown(u32 pas_id);
--bool qcom_scm_pas_supported(u32 pas_id);
--struct resource_table *qcom_scm_pas_get_rsc_table(struct qcom_scm_pas_context *ctx,
--						  void *input_rt, size_t input_rt_size,
--						  size_t *output_rt_size);
--
--int qcom_scm_pas_prepare_and_auth_reset(struct qcom_scm_pas_context *ctx);
- 
- int qcom_scm_io_readl(phys_addr_t addr, unsigned int *val);
- int qcom_scm_io_writel(phys_addr_t addr, unsigned int val);
++QUALCOMM PAS TZ SERVICE
++M:	Sumit Garg <sumit.garg@oss.qualcomm.com>
++L:	linux-arm-msm@vger.kernel.org
++S:	Maintained
++F:	drivers/firmware/qcom/qcom_pas.c
++F:	drivers/firmware/qcom/qcom_pas.h
++F:	drivers/firmware/qcom/qcom_pas_tee.c
++F:	include/linux/firmware/qcom/qcom_pas.h
++
+ QUALCOMM SMB CHARGER DRIVER
+ M:	Casey Connolly <casey.connolly@linaro.org>
+ L:	linux-arm-msm@vger.kernel.org
 -- 
 2.53.0
 
