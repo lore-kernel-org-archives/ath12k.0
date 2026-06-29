@@ -4,187 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35EEBC43458
-	for <ath12k@archiver.kernel.org>; Mon, 29 Jun 2026 07:58:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6832C43458
+	for <ath12k@archiver.kernel.org>; Mon, 29 Jun 2026 08:16:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:
-	Message-Id:Content-Transfer-Encoding:Content-Type:Subject:Date:From:Reply-To:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=UC+qFzwXL6Ivn09X5ou76oieImJnAlO4pawJ4xtbIpA=; b=st8BYNvrcqI8yMeb43fga/Rynn
-	aI4NFZdWkjOkHguLH9zP60vC2DzgJSMBcfQ6J/ViVP7XoxS6VDCUNEuSDD7wMBDk65DUx4/NJDKZO
-	XGvNQ6vybNuGQCPX7NblQx3+KoSAkqcwgSCR3MsSeM76NGpG4RmiEoHtqG/jjQgizlHr8MssoxNcG
-	zuM5Ue9/KMQsMl52fGLEZa39Kwxk/WBD8JuONYr/7MyfAHCZkWF7hgBtt99Qiuc1T+c40rDvljmxp
-	zllh/fnzM7Ds/7Wq42CNaFGmNj3gwTcTr4eIIw/ZYRah/Vuo8+DzARcVnBT4JePRZjyrFi7Yv+qjy
-	Wn0EY9OQ==;
+	bh=ecx55/xc2lxYMC6N88BvIRn0gavSqSu2MdQlITN/LoU=; b=hy2jEjxkQDfkhreJf/uzE4QouI
+	0SkDch/uo4XuZkV3sX6TVtTC8BKoU47Lysu1DyrXDJRlXw21Hh3naVAvi82s2BbU+HvL6A+1NCvWH
+	PTicXC7T0pw1NVEbdkxw+HqSVttfQ+XUMNeJoZtUgi33KO+CkUXGYxI5s3AYm+D4glF5gTVOkyIG5
+	/fHn9csyVBz9pbnp2bNP7L4ZUOTIs70OOR8th4p244pCkIX6qCptOgZlArw5u0CyxJJic4Eg72Wmc
+	R1sp+y3nD4Q83K8iP+K2c0JMzjce6MHXqOP/CFYjbgAa8BVAtJ8hi3z8doLA5IYki64X9Nrwj6tn6
+	QKlRrLng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1we6tN-0000000Dxzm-3yI7;
-	Mon, 29 Jun 2026 07:58:57 +0000
-Received: from mx07-0057a101.pphosted.com ([205.220.184.10])
+	id 1we7Ah-0000000DzWu-1rEz;
+	Mon, 29 Jun 2026 08:16:51 +0000
+Received: from mgamail.intel.com ([198.175.65.19])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1we6tJ-0000000DxzK-3oGM
+	id 1we7Af-0000000DzWU-26AC
 	for ath12k@lists.infradead.org;
-	Mon, 29 Jun 2026 07:58:55 +0000
-Received: from pps.filterd (m0214197.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65T6lEKD1652265;
-	Mon, 29 Jun 2026 09:58:49 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=270620241; bh=UC+qFzwXL6Ivn09X5ou76o
-	ieImJnAlO4pawJ4xtbIpA=; b=WinQoFmzLQwBM/RVVZ/YPZ8nQC3brKRcWqXhcx
-	NrGh3qEv4pVcMHus/SZNgIMZFmdncumQ7XkU+YPPB4IIa8bvwbAmxbpUXXY5OUL8
-	jzbtR4qBBgGsZNpN5j4u/IrNewJl9D4PQeCsQLjZb6fM0JbQK8dv7jA9pBChHUrR
-	Aq42FaeI4pW7etxxTl6n6fAQrgEl3isRaC4i0nIF4SEY3OHiVj7PLslEzURy1WsT
-	ijn8zxu4oOxr7sMrSmMd13S5B7skXfZnv6ThrFBtvRqeLP2YUXEiHgARmxkAT2MT
-	+x4PhEFVn9d94lwK4Snv6hFdrPjXvhjdAcnEQFSduj19zIHw==
-Received: from mrwpr03cu001.outbound.protection.outlook.com (mail-francesouthazon11021112.outbound.protection.outlook.com [40.107.130.112])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 4f22v9ad1p-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Mon, 29 Jun 2026 09:58:49 +0200 (MEST)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=orJDhEPWquqM9wsrkM9NPuxtFDmpPHPwj8igty59hNQezQkOiCo36BTT74vo+fY0uOasLTSmPV2e2R/uJoVguoPw5MDHduf3VeM39KXgtnYFJB2YWudaNkDa8VmY8AUq+al4p9TpwDISCAYlS92ihbj1rpUmVZQyxWIdwHF+K9G8VTkoYw7N7MnhMT2UQefpg3BgWo1KCiIJf1rRRv6Pg/+slHQ4EIKicmJj9U26aws8nY7KLpsyiy8rsuU+7a7IJIPehlbOYkOuK6tHaZ0NYHdX/Ju/2KCzxvGFmJguptHFQIcBYzHkVlbMYtR3raXzAgm2pwEEYbW06oNG6XsO/A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=UC+qFzwXL6Ivn09X5ou76oieImJnAlO4pawJ4xtbIpA=;
- b=fRPxUREJJ/r7uS4AyDXNV4JgPkW1eVFzjSiAJdNx5/JkDkJgRbTfVahjcRg/HpOcImkogAoYKR0tUkxU125AHHld3AcSOqsOq6tEuPtm2eTSa6/aSPEdZ9LK0C6o+eJMUU6Pf4l8O6Q1rAKK2TvaP3lysU8hShg/E+PTsyUVRBSMVnonHPl5sHaJ7deD2mFuqbtUbmwYLbEZi5507ptRxlUJ8SsPIvBYTEXdVLxF50NZn7v3O/Og5zKhFeA08fdPuDDoVFCKBZZ0UKuu5lP10blADpauhk5JdK8J5agL6iWkNXUmZC5213Jh3LTnHdZI1rvziMF9XOzrVoIEE3PR0w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
- dkim=pass header.d=westermo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=beijerelectronicsab.onmicrosoft.com;
- s=selector1-beijerelectronicsab-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UC+qFzwXL6Ivn09X5ou76oieImJnAlO4pawJ4xtbIpA=;
- b=WXOj9o4itqlFSDtfmira/a5KwOqjPYa7KQVma+1BQJ74oTlYzS6QN9MMzVwcr1Sa5zEA6Sn8T/IktOloXHK64Ox/+3Z0cgiD7Hr5UNl+KmY1I0qd9GlW/2zy6CSXPnWRxe3VfDb3BpgF7JcgYBiRs9bBNWsOCP1MxR87bDkJ+pE=
-Received: from DB9P192MB3090.EURP192.PROD.OUTLOOK.COM (2603:10a6:10:5e2::11)
- by DU0P192MB2075.EURP192.PROD.OUTLOOK.COM (2603:10a6:10:478::22) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.19; Mon, 29 Jun
- 2026 07:58:46 +0000
-Received: from DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
- ([fe80::656d:42d4:bdce:a46b]) by DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
- ([fe80::656d:42d4:bdce:a46b%6]) with mapi id 15.21.0159.018; Mon, 29 Jun 2026
- 07:58:46 +0000
-From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-Date: Mon, 29 Jun 2026 09:58:44 +0200
-Subject: [PATCH RESEND v5] wifi: ath12k: fix endianness handling for SRNG
- ring pointer accesses
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20260629-fix-srng-ring-pointer-accesses-v5-1-c5c2ea87d960@westermo.com>
-X-B4-Tracking: v=1; b=H4sIALMlQmoC/52PMQ+CMBCF/4rp7JECUqOTg6wOOhqGWg+5BFpyR
- 1BD+O9WJmeXS95L3vflJiXIhKL2q0kxjiQUfAzFeqVcY/0Dge4xq0xnRueZgZpeIOwfwBRPH8g
- PyGCdQxEUMMW2Lna31KX6piKkZ4yLRXBV5/JSno6qin3NoYOhYbQ/+DTXpoiEJNe50RtIwbb4s
- v6OnDypbbDtDk+UKOxC4kL3FTQkQ+D38sBoFs2fsGqe5w+eFtlpEAEAAA==
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-X-Mailer: b4 0.13.0
-X-ClientProxiedBy: GV2PEPF0002399B.SWEP280.PROD.OUTLOOK.COM
- (2603:10a6:158:400::18d) To DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
- (2603:10a6:10:5e2::11)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB9P192MB3090:EE_|DU0P192MB2075:EE_
-X-MS-Office365-Filtering-Correlation-Id: b0664f0f-3896-49ea-226e-08ded5b43f14
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|376014|1800799024|366016|18002099003|11063799006|56012099006|6133799003|3023799007;
-X-Microsoft-Antispam-Message-Info: 6ogDDyF12eW6/goQgoEpRflYH5HeJKw2gxBEJfG52vVP5qJBUn/yny+0BzWKWDTOeY4xA/Vs2e1QOU+CHhoE5re0Zm6+lQNBFTvspnpIAYt4gQ5/HN3pZc2Mj8MBvqT2BozWvgNjReMXMLZaVk7gDuYc2nKGLVe9dDIrWo30wkkKsWW+sm5TeEfmN7w43PZ4UrxMLf2Tc9SLIsXEaLn+H3zUhh0HdEUiv4F0iH/bkMkfxrIMGxKGNV0Nh3PNAq66exN/MY0iSSqHpnzaICP84AvH2ZkgIViJr8OU90bTP0qK4sAIEIwkOg3nD5ueRV7/e+74vEvtqA6X1XuLazRWW6LdNn/27iNDO8OXofqu0K/2W8VFXM+6My6Vi6CSr/4ejcn+6sJnLTT4QPwnJ9mwG6dr4zYd7Zb1ndcM3bamAAA78/JKMs4pnFo3dFC2oZURyL4eJxNyveg9H/gefwauoEI99C6Nf+ZCgNASR0eh9jPGtdV20+lUbFd+fNUcxTwU5A1MIC7cMMfwgVl6id1EePZQoMO+xaDBoA9ewuJk+xmb2MjtT71Yh7RkpLXLYB8a/k1uN/2P0Gh5zAztQljxLHzZ6skEmAziIaRKr5KzY+Z32iaclOuB/3OfRM90c3K6UcKZcn5JOFBEetKwKt+OiLcCDkEAFKYPk6UrwXcVWZU=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9P192MB3090.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(376014)(1800799024)(366016)(18002099003)(11063799006)(56012099006)(6133799003)(3023799007);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ZmdNRGVUWFlpK1J4eTIvLytabER2RForSXBNZmY5aTVtZ0tmNUlDbHE0QkVa?=
- =?utf-8?B?K2srbU9kZmJITFgyOVl1MzUxVmFFQWlMRW10R0hVMjVSam5iZzROL1BiOHc1?=
- =?utf-8?B?OWlWdWJiZ3lGNlhCYXN0UW44aVM0SWU5WTFWZisrZzZWKzRGbTE5K3hHOHQ0?=
- =?utf-8?B?RUlnZC9UdmtSdXQxYkcxWVo5UktBM1htWHcrbC85Q25YNUhnR2JYajM0Q0Ji?=
- =?utf-8?B?eVQrd3cwN2lDN3RoblVIdERlL2lyNkx1QUZnbjIwNTdTWEdJNkVpSjNuSVg1?=
- =?utf-8?B?ZmgvS2NsNXhLZUlmWUZFRnF1aFRZdDRVOU9RTklFc0lLdzRnVVFQazVSd01Z?=
- =?utf-8?B?UUdZaUlXZUF2Q29HOUJOdWZLV0ZuR3V4anhZQ3p1ZFYxcWhnWGx4TkJtSHNI?=
- =?utf-8?B?R2phaUpldEphQTRRdWxmaE5rWVJ4TGYzbjB2SzBEWjBaVTdFOHpPZ05IN0po?=
- =?utf-8?B?aE0zNzg3OU8wNWlMZGRzdGpXeFV4SUFlZ1JuT2JjVnpvcStjc1ZPelRVYUY5?=
- =?utf-8?B?SzMvVmV1eU5SVExjUzArZG1lSFZjVmREWXo5bzNsZjV3b2cvUytRazZmbnRx?=
- =?utf-8?B?cGZEN3FjQzhScnVKeUFhNW1XYlRZYkorajJUWlRZSi80aURQWFlmKzR3SnRN?=
- =?utf-8?B?dGNGSGM1M2s2UFo2VmsvS1lDOGtLVVZhYmhYREJkb3JUVCtVOXNUQldiZDVa?=
- =?utf-8?B?aXBBRjhuOFVkaC9tTUJBb1hMU0FPZGJKR1Z0QUtjdUJmQ2oydHpVUEMyWjNl?=
- =?utf-8?B?THE3SEQ0c1JtSC9mMFhydlZwOFdjbVAwcHJmSGlmWU1NMStOdENnWkIzN0ZZ?=
- =?utf-8?B?S1NZOFI2amVyb09NeVl0eG8yUGkzSlUzTEp1Wkx0VzdXS2RHWFFrZzRzbkNx?=
- =?utf-8?B?ZytyUk83azlaU2tpZjU2aWlTY1ZPbGg1M2ltMEpOOEhXeFMrTmNwNWNrenBv?=
- =?utf-8?B?bTdUMHQ0WkpLdGZTWE8remplV1FWTWpRNTVsTlQ4V3B3RloyTTViVjRsWk5r?=
- =?utf-8?B?NGRFNmlNOVJEcE8rRmdMSFp4aktQRzYzMzc5SmZMQ3pURVJjSlQrUWtWY2NE?=
- =?utf-8?B?bFBFK0pYUkh6OGttc1MxZFpUQVVSSUFXVlJES3hxSS9weTJlRHRTY0wrU2p1?=
- =?utf-8?B?MGk3cG5JR2ZMWUg5c0lNUmNFT1dRWGdHdWgySUpVbjNsUFArTFJIUTR2MDVk?=
- =?utf-8?B?eDdWdFhaRkt6U2l5OUwyRmlaM0w5cWltZzkrOHlDZnl6QkMzVnNGcDJSNnBk?=
- =?utf-8?B?V3dNSWUxbWFpSjNxSVhHSHB4N0tOcWJlWWpMWmtEbEtSOUdsandLUnpGL1JY?=
- =?utf-8?B?QnlNUy9wa1ZielFIRFdJelc2bEhHRXpkWWlpQm1TcDNNYTY2RmtqRG41cDZ2?=
- =?utf-8?B?bG5GK1NiZ2d5RWJjQmxpWGFjRUQxbndHUTZYMCt5cVZPM1NMR3c1TFhsbmFW?=
- =?utf-8?B?NTR6SVo3VjhIN1QwZEVRenljQzF0bXpzQUdQaTZXTkJFM3kxZzZOQUVyRWdK?=
- =?utf-8?B?V3FnWnJpZ2NmTE9ZMjJtOTczTDl6UGhJNHBaNkJRUHAyOGlSZ21Eck80QTdi?=
- =?utf-8?B?Z0l5blJHa2dOS1BuWHpZTi9tMk52Yjh2dEdWQ2xlVHZZZGp1dDViZlNPVFZV?=
- =?utf-8?B?eFBHWXRpcSsyLzVmOUwveGpQaUxuckdKdVF3VG40QTVuUVFKRzZDQ0dLaWEw?=
- =?utf-8?B?YVpVQUM5ckdQQmpONmRwTHRFQWF4Wk5iVWlEb3NreUVtaHg2MllrenphSjBO?=
- =?utf-8?B?dzE5RWFvWlk1NXZOSlgrWm5OekoxUHlNUlhJcUdYZGZmbHpRVHBRUHF5SVpT?=
- =?utf-8?B?cWRUSmEyOGU0NXhETmNSWmxNbmF6TXZFOHIxWWJTVnNTa2NoMGwyM1pId3hh?=
- =?utf-8?B?eE1vNmV1KzYrbkMzUVd5T2RwNTVOT3FiVnR0QUdldFFlbENZSlFpdC9wc01j?=
- =?utf-8?B?b084SzJqRVZLMXlDQTFlTEl4SE81YU9uQU9mc29Ob3B6LzR0TmJCK2xwZlhO?=
- =?utf-8?B?dGQ1bDBhdmtiQlNvb1REOVZZR1FKRkw2bEswdnVqU0xqOWhXMUFIendBTnVk?=
- =?utf-8?B?ak11L3FuWTNsQUJxUjlyaGlpeE1FNUg5TFhISWZHSjYwRGtkbmVHYmdnclcr?=
- =?utf-8?B?MEh4dU55OWhQZ0FrUmx3b2w0clZlZ2FiUHFuMk0wa2NiS1QwRGVmS2plYXlo?=
- =?utf-8?B?V1hnRkQ4b012V2R5RlEwQXFnRlowc0xHWFF4NkpKZk04bUZpWHhhR2R5NUpH?=
- =?utf-8?B?bUE0WGg5M2hlTGtCWWJYOXhVVm4xNllkOVdRV3lDOU9BKzhCMnMxWVB4dG56?=
- =?utf-8?B?eWpSUlgyWXhOWWV5ZWNiVU5MUGpERlRUZTNKWUV1cnJpU3pVQTNudz09?=
-X-Exchange-RoutingPolicyChecked: M/WUmxHFOFSJiyXeQoWxinlWrHqRFejNz4act7R2gBYi/0VxngW0eakLHlfyGriAMzlRtXjcrpzY9P8TB5TvGV6YVxmi3GpGaLq25PyZ4WBZORzphCSug7K+dqa8G488jxUvXKMNAXx/91cgsBNqHW/OVjsnD8/8N5ZqEyzDD2CYDf2kj5zZiwnS/pEaLWIerooD/qMXtLnCzeJ4RRbGn9LuCRoyTWWMjxwSZFgqNdqFnHP3ZqJYejJwr8naTNUq8ewNL+IVYQ4mlJUry/ZwrPhmgYG9auaoPFtZGoEyC1PaDHN31rHI7sIeJr4qCT3yl7RZbBPXoKayxW/ukxE2lA==
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: d+bleG8u+fOx/IyMYMwRuzI8nfK+NQEG+8nbnZ8AD5eXx8Jjq99+9Sgw7V13qLCYp/I1Obyi079NvZg0CzLmsuMl/EAW8WqLDKFFGfb96NAAyrTzArIW4AprtDwpv8H+rx9l/7/f97vAUr+NCLH3cDp4RRZYp13yTvjUUkA7oWYxAXQsu1puUjbBFtF+AM1O+nhrPAjoE36mSVbhlCg8d/cLX8dHR5duKRk/uOKDCya1m+X6mxdRfHQ5bAp2gZkbEWiXWdXbYeNTDy7lgdpoNMu3nyCYsJ77mTSNM4KZ0t2tMVYmPB7zTeF7XVuT44OGzjfT7ihdfAT0vz95yF1UfwOJcwLpDIf59Wr0crTRSV3h8rrAjuwG9rpjq2ndb/iF6d1mLnpohKbVy1yJAhhhKNAcT4h3VXICQ+RwujcrkBUBh+PKv0NLFlouXHX8v2xfnQwd9yd0cRxRAOn+ErRn/w/il5UN472m0defMh2oAyadxGco2EEZisPgYp+2VubejOxyHvA8DypjtHuM2zzJkU9o5zp81Vy3iONhnRnNSMsRywQgfEI7aEoFTKA6SoQj5DlMZE9Jqna+LLsIvB/xQldBbCrM1DpzJXXEMkiFMy5JedfGkOeQJ5lwLopj1ohH
-X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b0664f0f-3896-49ea-226e-08ded5b43f14
-X-MS-Exchange-CrossTenant-AuthSource: DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Jun 2026 07:58:46.3575
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: IaI/Eq9+Mzp9MiU7gHUAKSnDFGZYM4so+zVHvSsMpdBbX2+8K9DnDwDN78WLdIJZmDZS/JSQpnSbM3ZUAAIGfQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0P192MB2075
-X-MS-Exchange-CrossPremises-AuthSource: DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 14
-X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
-X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
-X-OrganizationHeadersPreserved: DU0P192MB2075.EURP192.PROD.OUTLOOK.COM
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjI5MDA2MiBTYWx0ZWRfX0soTEnUvtHyZ
- WZR9orB/2+HyjUZ7rL7Ni2uFUUb1TuBXVwMWRg5yx5GQ7e58zx9I7BFVIDqGRvzHSllbOzccm2R
- UTCisjBXbZQwTePolK4JqtpI0SN9LDB6IbzHwl8BJOT57+C6JwouVeS4uHP8BzflZPPGOUGTz1t
- Kx+UTzXBtae/q19CS8Rd5ao8o94aIzbMFBEh8QJj+1oeJyz5gr/yo49zDYFy8gDgy19a09ZTiM0
- CXUs0v+2k3YZozitXvzj2hJeYDnsl/vO0IeqZSbH/FXhfsl3iE1W/3GcZTyYe/mGWpBIFp+wqJu
- MpAeCCqJRmosY/+Oex3fdjknhEXCErotY7o7g7WDrCnbfNXA3zP3h+2ySsjY5eGYTFDjP/mGzIA
- 0Prqi+9AEP1PDTjYKdSp/qSpOdo7QMIRzcPN+s3tEiCXP+3DDjrn0f7Mb6E3SR2smhSBTfbNXcX
- ffioQBNsIIt6Qv/1t9Q==
-X-Proofpoint-ORIG-GUID: ACT-nl7JuRyXY8RAXoK_NZXWPUoIqVmg
-X-Proofpoint-GUID: ACT-nl7JuRyXY8RAXoK_NZXWPUoIqVmg
-X-Authority-Analysis: v=2.4 cv=ZNznX37b c=1 sm=1 tr=0 ts=6a4225b9 cx=c_pps
- a=PWafkdTFPpR4iz/D5OZcbQ==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
- a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
- a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=8gLI3H-aZtYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=tr3XZvuDWTETL0Uaxejn:22 a=8ys4xmT3Mru1TjC2zVq1:22
- a=N9GNhs4bAAAA:8 a=EUspDBNiAAAA:8 a=xIER7TDS9NvsDhoS_LkA:9 a=QEXdDO2ut3YA:10
- a=PZhj9NlD-CKO8hVp7yCs:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjI5MDA2MiBTYWx0ZWRfXzSQU2GpLetEA
- u9HyoUCVYjhpgFVjWHvKIJ5itK4WQv9LiAaqXhavo4FXuOQsF5F4NftBc2Sy8M1HLF2nh/VCFYh
- ZA2N1CodiRYHNt0p6B4QkKSNRnaques=
+	Mon, 29 Jun 2026 08:16:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1782721009; x=1814257009;
+  h=date:from:to:cc:subject:message-id;
+  bh=Nl0uZihPN74ZQtAIIMQDskn5Me1/PFxnuK6ahsMoIdI=;
+  b=darQQcW5hrmd7RvYWyN1zEGJBObJFurmbFCyZ+l3Qiefz6hFUWKHMO/3
+   iZvvsBcm26r4X/XFkahCZrRJdUzLwYQ8m276i10qyf9KlafqlRt3FvYUJ
+   v03s006FpwgxpSV0UBqmrerMpcDWlDZn1WXNxkjDvop75chxTz8iMLJ4u
+   qkLCpbazG1+NQLKbcEfxIuZlCpvp3aYEsXeuJ+DgovCdr5I2bsSF3Tpe8
+   RtNEpqvMekFQFcHEZucEdicNtkQK17z+wCHETqXV1o5WQlIZYRcnnSrlV
+   /8AuU1Zh8R4bbsFpP+g2llGRmax5obNXC04FclS/PfJw8t/1Yc5U5+XG6
+   w==;
+X-CSE-ConnectionGUID: dUdkpuAxSpKJQPm9VytCXg==
+X-CSE-MsgGUID: f9fehEWTScyNcSvHFQRFuA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11831"; a="83408193"
+X-IronPort-AV: E=Sophos;i="6.24,231,1774335600"; 
+   d="scan'208";a="83408193"
+Received: from orviesa007.jf.intel.com ([10.64.159.147])
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 29 Jun 2026 01:16:48 -0700
+X-CSE-ConnectionGUID: SbPTgI0oRcWIrNnYcDMp3g==
+X-CSE-MsgGUID: 8hcXnS/DTUKVO95jeBb1og==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.24,231,1774335600"; 
+   d="scan'208";a="252028725"
+Received: from lkp-server02.sh.intel.com (HELO ea128546eb3d) ([10.239.97.151])
+  by orviesa007.jf.intel.com with ESMTP; 29 Jun 2026 01:16:47 -0700
+Received: from kbuild by ea128546eb3d with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1we7AI-000000007An-12en;
+	Mon, 29 Jun 2026 08:16:43 +0000
+Date: Mon, 29 Jun 2026 16:15:37 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org
+Subject: [ath:pending] BUILD SUCCESS
+ 4bfe69d8f78d69f3c2e70742263b195fe2433f97
+Message-ID: <202606291625.XcdBOFJ1-lkp@intel.com>
+User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260629_005854_264576_FAF69B41 
-X-CRM114-Status: GOOD (  12.28  )
+X-CRM114-CacheID: sfid-20260629_011649_595209_D0F442BB 
+X-CRM114-Status: UNSURE (   4.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -199,231 +83,231 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The SRNG head and tail ring pointers are stored in device memory as
-little-endian values. On big-endian systems, direct dereferencing of these
-pointers leads to incorrect values being read or written, causing ring
-management issues and potentially breaking data flow.
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: 4bfe69d8f78d69f3c2e70742263b195fe2433f97  wifi: ath12k: advertise ieee_link_id in vdev start MLO params
 
-This patch ensures all accesses to SRNG ring pointers use the appropriate
-endianness conversions. This affects both read and write paths for source
-and destination rings, as well as debug output. The changes guarantee
-correct operation on both little- and big-endian architectures.
+elapsed time: 809m
 
-Signed-off-by: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
----
-Changes in v5:
-- Revert removing volatile from `hp_addr`
+configs tested: 211
+configs skipped: 2
 
-Changes in v4:
-- Rebase on latest 'ath' master
-- Remove volatile from `hp_addr` due to the `checkpatch.pl` warning
-- Fix opening braces at the end of line due to the `checkpatch.pl` error
-- Fix `u32 *` cast in `wifi7/hal.c` due to the `sparse` error
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Changes in v3:
-- Rebase on latest 'ath' master
-- Use always 'le32_to_cpu()' macro for conversions
+tested configs:
+alpha                             allnoconfig    gcc-16.1.0
+alpha                            allyesconfig    gcc-16.1.0
+alpha                               defconfig    gcc-16.1.0
+arc                              allmodconfig    clang-23
+arc                              allmodconfig    gcc-16.1.0
+arc                               allnoconfig    gcc-16.1.0
+arc                              allyesconfig    clang-23
+arc                              allyesconfig    gcc-16.1.0
+arc                                 defconfig    gcc-16.1.0
+arc                   randconfig-001-20260629    clang-17
+arc                   randconfig-001-20260629    gcc-16.1.0
+arc                   randconfig-002-20260629    clang-17
+arc                   randconfig-002-20260629    gcc-8.5.0
+arm                               allnoconfig    clang-23
+arm                               allnoconfig    gcc-16.1.0
+arm                              allyesconfig    clang-23
+arm                              allyesconfig    gcc-16.1.0
+arm                                 defconfig    gcc-16.1.0
+arm                   randconfig-001-20260629    clang-17
+arm                   randconfig-001-20260629    gcc-10.5.0
+arm                   randconfig-002-20260629    clang-16
+arm                   randconfig-002-20260629    clang-17
+arm                   randconfig-003-20260629    clang-17
+arm                   randconfig-003-20260629    clang-23
+arm                   randconfig-004-20260629    clang-17
+arm                   randconfig-004-20260629    gcc-16.1.0
+arm64                            allmodconfig    clang-23
+arm64                             allnoconfig    gcc-16.1.0
+arm64                               defconfig    gcc-16.1.0
+arm64                 randconfig-001-20260629    gcc-16.1.0
+arm64                 randconfig-002-20260629    clang-22
+arm64                 randconfig-003-20260629    clang-23
+arm64                 randconfig-004-20260629    clang-20
+csky                             allmodconfig    gcc-16.1.0
+csky                              allnoconfig    gcc-16.1.0
+csky                                defconfig    gcc-16.1.0
+csky                  randconfig-001-20260629    gcc-10.5.0
+csky                  randconfig-002-20260629    gcc-12.5.0
+hexagon                          allmodconfig    clang-23
+hexagon                          allmodconfig    gcc-16.1.0
+hexagon                           allnoconfig    clang-23
+hexagon                           allnoconfig    gcc-16.1.0
+hexagon                             defconfig    gcc-16.1.0
+hexagon               randconfig-001-20260629    gcc-11.5.0
+hexagon               randconfig-002-20260629    gcc-11.5.0
+i386                             allmodconfig    clang-22
+i386                             allmodconfig    gcc-14
+i386                              allnoconfig    gcc-14
+i386                              allnoconfig    gcc-16.1.0
+i386                             allyesconfig    clang-22
+i386        buildonly-randconfig-001-20260629    gcc-14
+i386        buildonly-randconfig-002-20260629    gcc-14
+i386        buildonly-randconfig-003-20260629    gcc-14
+i386        buildonly-randconfig-004-20260629    gcc-14
+i386        buildonly-randconfig-005-20260629    gcc-14
+i386        buildonly-randconfig-006-20260629    gcc-14
+i386                                defconfig    gcc-16.1.0
+i386                  randconfig-001-20260629    clang-22
+i386                  randconfig-002-20260629    clang-22
+i386                  randconfig-003-20260629    clang-22
+i386                  randconfig-004-20260629    clang-22
+i386                  randconfig-005-20260629    clang-22
+i386                  randconfig-006-20260629    clang-22
+i386                  randconfig-007-20260629    clang-22
+i386                  randconfig-011-20260629    gcc-14
+i386                  randconfig-012-20260629    gcc-14
+i386                  randconfig-013-20260629    gcc-14
+i386                  randconfig-014-20260629    gcc-14
+i386                  randconfig-015-20260629    gcc-14
+i386                  randconfig-016-20260629    gcc-14
+i386                  randconfig-017-20260629    gcc-14
+loongarch                        allmodconfig    clang-19
+loongarch                        allmodconfig    clang-23
+loongarch                         allnoconfig    clang-20
+loongarch                         allnoconfig    gcc-16.1.0
+loongarch                           defconfig    clang-23
+loongarch             randconfig-001-20260629    gcc-11.5.0
+loongarch             randconfig-002-20260629    gcc-11.5.0
+m68k                             allmodconfig    gcc-16.1.0
+m68k                              allnoconfig    gcc-16.1.0
+m68k                             allyesconfig    clang-23
+m68k                             allyesconfig    gcc-16.1.0
+m68k                                defconfig    clang-23
+m68k                       m5475evb_defconfig    gcc-16.1.0
+microblaze                        allnoconfig    gcc-16.1.0
+microblaze                       allyesconfig    gcc-16.1.0
+microblaze                          defconfig    clang-23
+mips                             allmodconfig    gcc-16.1.0
+mips                              allnoconfig    gcc-16.1.0
+mips                             allyesconfig    gcc-16.1.0
+nios2                            allmodconfig    clang-20
+nios2                            allmodconfig    gcc-11.5.0
+nios2                             allnoconfig    clang-23
+nios2                             allnoconfig    gcc-11.5.0
+nios2                               defconfig    clang-23
+nios2                 randconfig-001-20260629    gcc-11.5.0
+nios2                 randconfig-002-20260629    gcc-11.5.0
+openrisc                         allmodconfig    clang-20
+openrisc                         allmodconfig    gcc-16.1.0
+openrisc                          allnoconfig    clang-23
+openrisc                          allnoconfig    gcc-16.1.0
+openrisc                            defconfig    gcc-16.1.0
+parisc                           allmodconfig    gcc-16.1.0
+parisc                            allnoconfig    clang-23
+parisc                            allnoconfig    gcc-16.1.0
+parisc                           allyesconfig    clang-17
+parisc                           allyesconfig    gcc-16.1.0
+parisc                              defconfig    gcc-16.1.0
+parisc                randconfig-001-20260629    gcc-9.5.0
+parisc                randconfig-002-20260629    gcc-9.5.0
+parisc64                            defconfig    clang-23
+powerpc                          allmodconfig    gcc-16.1.0
+powerpc                           allnoconfig    clang-23
+powerpc                           allnoconfig    gcc-16.1.0
+powerpc                     ksi8560_defconfig    gcc-16.1.0
+powerpc               randconfig-001-20260629    gcc-9.5.0
+powerpc               randconfig-002-20260629    gcc-9.5.0
+powerpc64             randconfig-001-20260629    gcc-9.5.0
+powerpc64             randconfig-002-20260629    gcc-9.5.0
+riscv                            allmodconfig    clang-23
+riscv                             allnoconfig    clang-23
+riscv                             allnoconfig    gcc-16.1.0
+riscv                            allyesconfig    clang-23
+riscv                               defconfig    gcc-16.1.0
+riscv                 randconfig-001-20260629    clang-17
+riscv                 randconfig-001-20260629    gcc-12.5.0
+riscv                 randconfig-002-20260629    clang-16
+riscv                 randconfig-002-20260629    clang-17
+s390                             allmodconfig    clang-17
+s390                             allmodconfig    clang-23
+s390                              allnoconfig    clang-23
+s390                             allyesconfig    gcc-16.1.0
+s390                                defconfig    gcc-16.1.0
+s390                  randconfig-001-20260629    clang-17
+s390                  randconfig-001-20260629    gcc-8.5.0
+s390                  randconfig-002-20260629    clang-17
+s390                  randconfig-002-20260629    clang-23
+sh                               allmodconfig    gcc-16.1.0
+sh                                allnoconfig    clang-23
+sh                                allnoconfig    gcc-16.1.0
+sh                               allyesconfig    clang-17
+sh                               allyesconfig    gcc-16.1.0
+sh                                  defconfig    gcc-14
+sh                               j2_defconfig    gcc-16.1.0
+sh                    randconfig-001-20260629    clang-17
+sh                    randconfig-001-20260629    gcc-10.5.0
+sh                    randconfig-002-20260629    clang-17
+sh                    randconfig-002-20260629    gcc-12.5.0
+sh                   sh7770_generic_defconfig    gcc-16.1.0
+sparc                             allnoconfig    clang-23
+sparc                             allnoconfig    gcc-16.1.0
+sparc                               defconfig    gcc-16.1.0
+sparc                 randconfig-001-20260629    gcc-15.2.0
+sparc                 randconfig-002-20260629    gcc-15.2.0
+sparc64                          allmodconfig    clang-20
+sparc64                             defconfig    gcc-14
+sparc64               randconfig-001-20260629    gcc-15.2.0
+sparc64               randconfig-002-20260629    gcc-15.2.0
+um                               allmodconfig    clang-17
+um                               allmodconfig    clang-23
+um                                allnoconfig    clang-16
+um                                allnoconfig    clang-23
+um                               allyesconfig    gcc-14
+um                               allyesconfig    gcc-16.1.0
+um                                  defconfig    gcc-14
+um                             i386_defconfig    gcc-14
+um                    randconfig-001-20260629    gcc-15.2.0
+um                    randconfig-002-20260629    gcc-15.2.0
+um                           x86_64_defconfig    gcc-14
+x86_64                           allmodconfig    clang-22
+x86_64                            allnoconfig    clang-22
+x86_64                            allnoconfig    clang-23
+x86_64                           allyesconfig    clang-22
+x86_64      buildonly-randconfig-001-20260629    clang-22
+x86_64      buildonly-randconfig-002-20260629    clang-22
+x86_64      buildonly-randconfig-003-20260629    clang-22
+x86_64      buildonly-randconfig-004-20260629    clang-22
+x86_64      buildonly-randconfig-005-20260629    clang-22
+x86_64      buildonly-randconfig-006-20260629    clang-22
+x86_64                              defconfig    gcc-14
+x86_64                                  kexec    clang-22
+x86_64                randconfig-001-20260629    gcc-14
+x86_64                randconfig-002-20260629    gcc-14
+x86_64                randconfig-003-20260629    gcc-14
+x86_64                randconfig-004-20260629    gcc-14
+x86_64                randconfig-005-20260629    gcc-14
+x86_64                randconfig-006-20260629    gcc-14
+x86_64                randconfig-011-20260629    gcc-13
+x86_64                randconfig-012-20260629    gcc-13
+x86_64                randconfig-013-20260629    gcc-13
+x86_64                randconfig-014-20260629    gcc-13
+x86_64                randconfig-015-20260629    gcc-13
+x86_64                randconfig-016-20260629    gcc-13
+x86_64                randconfig-071-20260629    clang-22
+x86_64                randconfig-072-20260629    clang-22
+x86_64                randconfig-073-20260629    clang-22
+x86_64                randconfig-074-20260629    clang-22
+x86_64                randconfig-075-20260629    clang-22
+x86_64                randconfig-076-20260629    clang-22
+x86_64                               rhel-9.4    clang-22
+x86_64                           rhel-9.4-bpf    gcc-14
+x86_64                          rhel-9.4-func    clang-22
+x86_64                    rhel-9.4-kselftests    clang-22
+x86_64                         rhel-9.4-kunit    gcc-14
+x86_64                           rhel-9.4-ltp    gcc-14
+x86_64                          rhel-9.4-rust    clang-22
+xtensa                            allnoconfig    clang-23
+xtensa                            allnoconfig    gcc-16.1.0
+xtensa                           allyesconfig    clang-20
+xtensa                randconfig-001-20260629    gcc-15.2.0
+xtensa                randconfig-002-20260629    gcc-15.2.0
 
-Changes in v2:
-- Set '__le32 *' type for 'hp_addr/tp_addr' in both 'dst_ring' and 'src_ring'
----
- drivers/net/wireless/ath/ath12k/hal.c       | 31 +++++++++++++++++------------
- drivers/net/wireless/ath/ath12k/hal.h       |  8 ++++----
- drivers/net/wireless/ath/ath12k/wifi7/hal.c | 14 +++++++------
- 3 files changed, 30 insertions(+), 23 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index a164563fff28..9b55c516c9eb 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -355,7 +355,7 @@ int ath12k_hal_srng_dst_num_free(struct ath12k_base *ab, struct hal_srng *srng,
- 	tp = srng->u.dst_ring.tp;
- 
- 	if (sync_hw_ptr) {
--		hp = *srng->u.dst_ring.hp_addr;
-+		hp = le32_to_cpu(*srng->u.dst_ring.hp_addr);
- 		srng->u.dst_ring.cached_hp = hp;
- 	} else {
- 		hp = srng->u.dst_ring.cached_hp;
-@@ -379,7 +379,7 @@ int ath12k_hal_srng_src_num_free(struct ath12k_base *ab, struct hal_srng *srng,
- 	hp = srng->u.src_ring.hp;
- 
- 	if (sync_hw_ptr) {
--		tp = *srng->u.src_ring.tp_addr;
-+		tp = le32_to_cpu(*srng->u.src_ring.tp_addr);
- 		srng->u.src_ring.cached_tp = tp;
- 	} else {
- 		tp = srng->u.src_ring.cached_tp;
-@@ -501,9 +501,9 @@ void ath12k_hal_srng_access_begin(struct ath12k_base *ab, struct hal_srng *srng)
- 
- 	if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
- 		srng->u.src_ring.cached_tp =
--			*(volatile u32 *)srng->u.src_ring.tp_addr;
-+			le32_to_cpu(*(volatile __le32 *)srng->u.src_ring.tp_addr);
- 	} else {
--		hp = READ_ONCE(*srng->u.dst_ring.hp_addr);
-+		hp = le32_to_cpu(READ_ONCE(*srng->u.dst_ring.hp_addr));
- 
- 		if (hp != srng->u.dst_ring.cached_hp) {
- 			srng->u.dst_ring.cached_hp = hp;
-@@ -529,24 +529,27 @@ void ath12k_hal_srng_access_end(struct ath12k_base *ab, struct hal_srng *srng)
- 		 */
- 		if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
- 			srng->u.src_ring.last_tp =
--				*(volatile u32 *)srng->u.src_ring.tp_addr;
-+				le32_to_cpu(*(volatile __le32 *)srng->u.src_ring.tp_addr);
- 			/* Make sure descriptor is written before updating the
- 			 * head pointer.
- 			 */
- 			dma_wmb();
--			WRITE_ONCE(*srng->u.src_ring.hp_addr, srng->u.src_ring.hp);
-+			WRITE_ONCE(*srng->u.src_ring.hp_addr,
-+				   cpu_to_le32(srng->u.src_ring.hp));
- 		} else {
--			srng->u.dst_ring.last_hp = *srng->u.dst_ring.hp_addr;
-+			srng->u.dst_ring.last_hp =
-+				le32_to_cpu(*srng->u.dst_ring.hp_addr);
- 			/* Make sure descriptor is read before updating the
- 			 * tail pointer.
- 			 */
- 			dma_mb();
--			WRITE_ONCE(*srng->u.dst_ring.tp_addr, srng->u.dst_ring.tp);
-+			WRITE_ONCE(*srng->u.dst_ring.tp_addr,
-+				   cpu_to_le32(srng->u.dst_ring.tp));
- 		}
- 	} else {
- 		if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
- 			srng->u.src_ring.last_tp =
--				*(volatile u32 *)srng->u.src_ring.tp_addr;
-+				le32_to_cpu(*(volatile __le32 *)srng->u.src_ring.tp_addr);
- 			/* Assume implementation use an MMIO write accessor
- 			 * which has the required wmb() so that the descriptor
- 			 * is written before the updating the head pointer.
-@@ -556,7 +559,8 @@ void ath12k_hal_srng_access_end(struct ath12k_base *ab, struct hal_srng *srng)
- 					   (unsigned long)ab->mem,
- 					   srng->u.src_ring.hp);
- 		} else {
--			srng->u.dst_ring.last_hp = *srng->u.dst_ring.hp_addr;
-+			srng->u.dst_ring.last_hp =
-+				le32_to_cpu(*srng->u.dst_ring.hp_addr);
- 			/* Make sure descriptor is read before updating the
- 			 * tail pointer.
- 			 */
-@@ -711,7 +715,7 @@ void ath12k_hal_srng_shadow_update_hp_tp(struct ath12k_base *ab,
- 	 * HP only when then ring isn't' empty.
- 	 */
- 	if (srng->ring_dir == HAL_SRNG_DIR_SRC &&
--	    *srng->u.src_ring.tp_addr != srng->u.src_ring.hp)
-+	    le32_to_cpu(*srng->u.src_ring.tp_addr) != srng->u.src_ring.hp)
- 		ath12k_hal_srng_access_end(ab, srng);
- }
- 
-@@ -810,14 +814,15 @@ void ath12k_hal_dump_srng_stats(struct ath12k_base *ab)
- 				   "src srng id %u hp %u, reap_hp %u, cur tp %u, cached tp %u last tp %u napi processed before %ums\n",
- 				   srng->ring_id, srng->u.src_ring.hp,
- 				   srng->u.src_ring.reap_hp,
--				   *srng->u.src_ring.tp_addr, srng->u.src_ring.cached_tp,
-+				   le32_to_cpu(*srng->u.src_ring.tp_addr),
-+				   srng->u.src_ring.cached_tp,
- 				   srng->u.src_ring.last_tp,
- 				   jiffies_to_msecs(jiffies - srng->timestamp));
- 		else if (srng->ring_dir == HAL_SRNG_DIR_DST)
- 			ath12k_err(ab,
- 				   "dst srng id %u tp %u, cur hp %u, cached hp %u last hp %u napi processed before %ums\n",
- 				   srng->ring_id, srng->u.dst_ring.tp,
--				   *srng->u.dst_ring.hp_addr,
-+				   le32_to_cpu(*srng->u.dst_ring.hp_addr),
- 				   srng->u.dst_ring.cached_hp,
- 				   srng->u.dst_ring.last_hp,
- 				   jiffies_to_msecs(jiffies - srng->timestamp));
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 43e3880f8257..ff6148be94c8 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -914,7 +914,7 @@ struct hal_srng {
- 			u32 tp;
- 
- 			/* Shadow head pointer location to be updated by HW */
--			volatile u32 *hp_addr;
-+			volatile __le32 *hp_addr;
- 
- 			/* Cached head pointer */
- 			u32 cached_hp;
-@@ -923,7 +923,7 @@ struct hal_srng {
- 			 * will be a register address and need not be
- 			 * accessed through SW structure
- 			 */
--			u32 *tp_addr;
-+			__le32 *tp_addr;
- 
- 			/* Current SW loop cnt */
- 			u32 loop_cnt;
-@@ -943,7 +943,7 @@ struct hal_srng {
- 			u32 reap_hp;
- 
- 			/* Shadow tail pointer location to be updated by HW */
--			u32 *tp_addr;
-+			__le32 *tp_addr;
- 
- 			/* Cached tail pointer */
- 			u32 cached_tp;
-@@ -952,7 +952,7 @@ struct hal_srng {
- 			 * will be a register address and need not be accessed
- 			 * through SW structure
- 			 */
--			u32 *hp_addr;
-+			__le32 *hp_addr;
- 
- 			/* Low threshold - in number of ring entries */
- 			u32 low_threshold;
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal.c b/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-index bd1753ca0db6..c05bfcffdf5c 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hal.c
-@@ -320,7 +320,7 @@ void ath12k_wifi7_hal_set_umac_srng_ptr_addr(struct ath12k_base *ab,
- 	if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
- 		if (!ab->hw_params->supports_shadow_regs) {
- 			srng->u.src_ring.hp_addr =
--				(u32 *)((unsigned long)ab->mem + reg_base);
-+				(__le32 *)((unsigned long)ab->mem + reg_base);
- 		} else {
- 			ath12k_dbg(ab, ATH12K_DBG_HAL,
- 				   "hal reg_base 0x%x shadow 0x%lx\n",
-@@ -331,7 +331,7 @@ void ath12k_wifi7_hal_set_umac_srng_ptr_addr(struct ath12k_base *ab,
- 	} else  {
- 		if (!ab->hw_params->supports_shadow_regs) {
- 			srng->u.dst_ring.tp_addr =
--				(u32 *)((unsigned long)ab->mem + reg_base +
-+				(__le32 *)((unsigned long)ab->mem + reg_base +
- 						(HAL_REO1_RING_TP - HAL_REO1_RING_HP));
- 		} else {
- 			ath12k_dbg(ab, ATH12K_DBG_HAL,
-@@ -384,11 +384,13 @@ void ath12k_wifi7_hal_srng_update_hp_tp_addr(struct ath12k_base *ab,
- 	srng = &hal->srng_list[ring_id];
- 
- 	if (srng_config->ring_dir == HAL_SRNG_DIR_DST)
--		srng->u.dst_ring.tp_addr = (u32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
--						   (unsigned long)ab->mem);
-+		srng->u.dst_ring.tp_addr =
-+			(__le32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
-+				   (unsigned long)ab->mem);
- 	else
--		srng->u.src_ring.hp_addr = (u32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
--						   (unsigned long)ab->mem);
-+		srng->u.src_ring.hp_addr =
-+			(__le32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
-+				   (unsigned long)ab->mem);
- }
- 
- u32 ath12k_wifi7_hal_ce_get_desc_size(enum hal_ce_desc type)
-
----
-base-commit: 0138af2472dfdef0d56fc4697416eaa0ff2589bd
-change-id: 20260326-fix-srng-ring-pointer-accesses-657f59b1c10b
-
-Best regards,
--- 
-Alexander Wilhelm <alexander.wilhelm@westermo.com>
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
