@@ -4,97 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CADF0C43458
-	for <ath12k@archiver.kernel.org>; Mon, 29 Jun 2026 18:21:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C286C43458
+	for <ath12k@archiver.kernel.org>; Tue, 30 Jun 2026 00:30:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:
-	Content-Transfer-Encoding:Cc:Date:In-Reply-To:From:Subject:Mime-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uVJE7agHkpN36kqdcRJ3f1sEnJQPMFcd6wB57yBRWMo=; b=djpBqA5mWM9Q9sBW5jBC5t5K39
-	36iqujsGj1dN8+/fA29ERc7hSNRN8yClkCkNPWqiVMwVEVKvWk4jvNcQD4w30cNatSSbi11LYm770
-	sE8EP80DqP2VNi4Yu87msKYHTqJFobd/gddMCBK9aRSo1WyykqbzLEVbE4BdvRGdnTBHH80BmfVHB
-	IFcDHkESslby/f7nkGPME89iZwzZwMncaz66mvsSH93l8p6FL+5YJ8EkMmySXDx8SlTFwJbWbMRo6
-	6j8HaTQkiUn/UkeRKsfo4uO28HZJZ2Oh7DeMwkvL+IgMNt26+JwvuHzGlQ11pduiijpsSu2ErkY4X
-	Ne6QeN0w==;
+	bh=x5YqGTWadi5yBMHeS3jpvfnpejEaTq3yOX4W/eiD4Pk=; b=MXVsKrmPkpvMzF1v4WZLD9/Xes
+	nS4MzKqOPvekTOs8+kcM/EpBe2CEKfEqpZ9ZNR9kS3qcpt+8p0KeARHaQky3m3i9rY2HF9BIoI1Zg
+	csHPpGmVb0yxm6fc4aMkceqsa+KyMs+LUU+9aXpQ0Blc3+nzRItz36QrCx5a1pjsFoH+FPozlYpLn
+	4yDXL19FDJjewXu3qV16o3Bjq8u8dqFLh29FMRHKnsh3UsYnY365QW/BhmLf8V1AHpZ38NRji4yS3
+	Rk1oazWjRJdwCcqa8Z7n5Eeu1q67zP8ZDGw8uG3NtL/Ff9yKs2svRAGTN8rlOFCx9YuSzeOY2rtrH
+	BUq7NsqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weGcB-0000000FLRu-20HQ;
-	Mon, 29 Jun 2026 18:21:51 +0000
-Received: from mail-qv1-xf2b.google.com ([2607:f8b0:4864:20::f2b])
+	id 1weMMr-0000000Fbvl-2B1U;
+	Tue, 30 Jun 2026 00:30:25 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weGc8-0000000FLRT-25kV
+	id 1weMMo-0000000FbvP-3ksh
 	for ath12k@lists.infradead.org;
-	Mon, 29 Jun 2026 18:21:49 +0000
-Received: by mail-qv1-xf2b.google.com with SMTP id 6a1803df08f44-8f032b47e3cso10278706d6.0
-        for <ath12k@lists.infradead.org>; Mon, 29 Jun 2026 11:21:47 -0700 (PDT)
+	Tue, 30 Jun 2026 00:30:24 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65TKfTvY4043207
+	for <ath12k@lists.infradead.org>; Tue, 30 Jun 2026 00:30:21 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	x5YqGTWadi5yBMHeS3jpvfnpejEaTq3yOX4W/eiD4Pk=; b=ZHakZSkXZoi9NX86
+	AwRPrWEUcrtWXeVIEO697NlCUOupGGQSJMltVN22+AN4mDp0L5y7x8chasa8jN7X
+	he2z56rD/plItiLO0dOm0BtWz7jOetEXeTRAZu2m76oYMHQHENSd0EVA2PrF09oM
+	nNEXdbVQfCUiHMwzZ71VFvgPXbzEnafm0/5gcNIw8KHAMEZoJYJKnUvtZxmKCZG7
+	VB9mvo8PIWCXjrJ7zEBdl7zCbZWv6QuXiiRnVaucvmCYr1ME8cFw1Qjl8GwJUqbh
+	eHCWb+skuc4wvkmhu8ARl+osdXHaoPUtxbCiFxJhiFK4WIaC2rH5yKgRIwOyecfd
+	tU1llQ==
+Received: from mail-dl1-f70.google.com (mail-dl1-f70.google.com [74.125.82.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f3n5s3stk-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 30 Jun 2026 00:30:21 +0000 (GMT)
+Received: by mail-dl1-f70.google.com with SMTP id a92af1059eb24-138acbc0e69so18547936c88.0
+        for <ath12k@lists.infradead.org>; Mon, 29 Jun 2026 17:30:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1782757307; x=1783362107; darn=lists.infradead.org;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=uVJE7agHkpN36kqdcRJ3f1sEnJQPMFcd6wB57yBRWMo=;
-        b=Cuaf+txIsa4rFgzgb9FPXe/Xvu8LElnHkt3cX8shRzEl1H0poguT7rtMMxC2kKWZL7
-         KazLBYfdeO5oDTx9gnRS6mfJjhoONiyzMuLwjsuKq2Lo46JJ42S+VeWdxg2jFZug0u2M
-         RKDlQ28s+5+SL57NVbFpYAtOFjeSXe6dm/Zzqisn/EH8t2NhCoAHTCJD8e4ynTrnEd/M
-         cQ2XHTWe/rND9QcJnbK5lVndDZMVo+wjdIgHRWvnnyBFO8BU1L7ltaSjs6zJ/QP9DlKa
-         bwBl6G7578nEHgaCsYDTNh5pKD2ePRoiTCo4nvJQd2OvnejPWye/vWOv8CxRee+blbXI
-         da8g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782757307; x=1783362107;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:x-gm-gg:x-gm-message-state
+        d=oss.qualcomm.com; s=google; t=1782779420; x=1783384220; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=uVJE7agHkpN36kqdcRJ3f1sEnJQPMFcd6wB57yBRWMo=;
-        b=IacBg0R2iV0tAu7ekxxRmIl72b2H9b4N85KzgTj36mGViiOeZtDuRiICIHFWsi1+uU
-         a2ciQVsEmiszl5zDIvg+FVX0PuvRnCSRqokEL41+XD7jvKw/6y6ZxgdcVXl1RvAZZq+w
-         M+f2A7XBSgd682gz9FS3A+RJ4faZrHwp/cWzM6MdNTPklk8UFJ91dB7bgx6Eb0FD700o
-         CoJoXWYzJgrpK3qeZQyFkgUxs1lNWULUiJyJgZVvDVuz4WjnhPwQaooV4tk6nKKwEnTI
-         ArCVYNYR8qfqfFxsDGl3x9n5AY+vC8W2xuh+Id/wFWiQvE9E0S5BqqsdThD5ef7MQlFD
-         3Dig==
-X-Forwarded-Encrypted: i=1; AHgh+RomRR7d5EV/7DbZYs7cjoJVhNl75TghTlph+qINyVpxJflT1c5ulqLhgHlNp3+LQYFok7thyB8=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw1XyGrUmQI3ZmE0jacqcRy2nxnyLOHQ2GdgbS/M6NemU6w9/iL
-	KPU2L1nX9b5LuDPI33G5O6juTjsILgqbWoQPAw9NAEGWpnV7/t6nXvqa
-X-Gm-Gg: AfdE7ckJpS4GSp4Wj1RNANZ7y8EiU+zfatwY7JS6rw6vDUW/7iB84YAlhFOwdSwfpeO
-	h9Fh9BA9ef0LZyZWptDCxbIdSz5LiH1Mr+NqxHSShN4DEZGcNdXiuhD2cN6jO8pJQu4qbnzIQxm
-	laTVrMTgkkb5Xly1M75QKd3spYBl+MAgviJMtsbSQMPZkeVdvIIE5NRjBFIJ5uI+Z4QXvM8MPjm
-	M4HNqnNCex6ooT+y/WIv440EmlbdAXEcYCyOoz0NGYL5fZrwRb904do9mI6OYMJKO3jyDRgSrSR
-	XdY8+u6Penb02BqLYtrhaTThGftB0f25uCochVUo0AxOgoNpfP0QQh+ls0TTWrkj8L2cmj+5qht
-	80ID3RzbRulUr15P/NRX/9u72Z94sNZFWP+Spg54vwHf4hurmv4PmuhVVVDEgGf8S9pjCGjIQzX
-	en999KBqo3g0YcEnSlModjFMY4SNSPqA0=
-X-Received: by 2002:a05:6214:84ce:b0:8e9:f62b:bee4 with SMTP id 6a1803df08f44-8f1bc39795emr6357056d6.52.1782757306440;
-        Mon, 29 Jun 2026 11:21:46 -0700 (PDT)
-Received: from smtpclient.apple ([2601:19b:4200:392f::192])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-8f1a338c6easm4349756d6.17.2026.06.29.11.21.45
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 29 Jun 2026 11:21:46 -0700 (PDT)
-Content-Type: text/plain;
-	charset=utf-8
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3864.600.51.1.1\))
-Subject: Re: [PATCH 1/1] wifi: ath12k: support calibration-variant from device
- tree
-From: Andrew LaMarche <andrewjlamarche@gmail.com>
-In-Reply-To: <rh6uz6bqetobowyrist7hhytdu32v2azvuambenyzofur3tjyj@wghfgwtmjj53>
-Date: Mon, 29 Jun 2026 14:21:35 -0400
-Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
- Jeff Johnson <jjohnson@kernel.org>,
- linux-wireless@vger.kernel.org,
- ath12k@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Transfer-Encoding: quoted-printable
-Message-Id: <78CFA317-FE31-46EC-8AF7-D2BA989D8B0B@gmail.com>
-References: <20260131003222.2011259-1-andrewjlamarche@gmail.com>
- <A2E3AAE1-1A80-4265-9497-0C95C3308CD7@gmail.com>
- <dc8c9c9c-dc85-40dd-9313-845a808a35f4@oss.qualcomm.com>
- <3B9D1FBE-37D0-4902-8C0C-8AB57C1310A5@gmail.com>
- <23fr45actdrqt6rp6fozcaugyk3egs5zm7imschl7gyuuj6cme@3pvdhqv7xvkq>
- <rh6uz6bqetobowyrist7hhytdu32v2azvuambenyzofur3tjyj@wghfgwtmjj53>
-To: Ernest Van Hoecke <ernestvanhoecke@gmail.com>
-X-Mailer: Apple Mail (2.3864.600.51.1.1)
+        bh=x5YqGTWadi5yBMHeS3jpvfnpejEaTq3yOX4W/eiD4Pk=;
+        b=LdNYG2kmG9xaMz+ZiiP/ivh65bgPpQrdZ0K9MbCIjpqPdO837iPBGxDt7Dmy3wWmFP
+         AO5+PtDijgzcvj+tvnO+8wuiBq9Job3HBlv0SjUzMLVRwlxuIlTac/Q1jBh+malg2hxs
+         1Rk2LgqolCDbU6UFMnXFAa11sJ3pX1ZUU5XVQ4kyuK39uKkkyMsHGcRYFq9dyGMkQf93
+         8O8s2CYEVdqXXWyGTA9aO9A1FcNH0dfb/c0xolGHD2vaCmI3x/wkT90TfxLhbdNzumE6
+         bHPLRme+IEDpY5ah9SwovETL+fbmr/03fw2jiBNZAmZDMQkjbnSXc4lA3fp07mdOelWd
+         r8hQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1782779420; x=1783384220;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=x5YqGTWadi5yBMHeS3jpvfnpejEaTq3yOX4W/eiD4Pk=;
+        b=EaFyx99sbLRqGDxRESgE2w8OugXaieCA9Xxm4PdmVtzNEYKg/qwF3hGn2b31q9W+av
+         3yw6+2BO78/aEbsNWOO6G8MT+1/yO0qn9GKDHnTVDeDA9htO5t7wBmucQKcK6D9zNvn0
+         Ar3WVMMiwr1L8zYan8j5AR/UXHvRUe8gTBC7RO/y4O8beGRjmzt/V3kCZd4RZ2NeUCPG
+         QUCRQXcEahg89Tw4OpILZUw+39EfrHLyiRHO2KU7hqvJfXscesdBbVnsg28mQQp2vm4F
+         Aa7G7lDzNOvf2inUaOQ3yPl31VsefR2ar05s6K6Q6uNhlZC2pH/0reS7sq2tolzzAdC3
+         7GFw==
+X-Forwarded-Encrypted: i=1; AFNElJ8BIIOrY/TI1TTGfT8SpXLY9VzBVzQ18r8zZt6A1oxAzidJ8wDVC2OLP6y2190uNzc/m2a8eUk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YylVWx+Irj1jnponob6xoW7DIQ3Hy6r1B1GgI2t2imGKZ9M4S44
+	8RJDAkAdnAvzeGBrtude1F9KJkeay+9Hfpv8y2AbFtVubZGjKTuSGzGkby8z3WH345BAZ879SA1
+	5UtAQtIdyv04J38JpODyPdzAcwqU4rfynKaTHRiz3KSlfpZIPxruZhPYBirnmsd2ge9vR1V/w
+X-Gm-Gg: AfdE7clLMkvyJBY7lSPI1g02Sg+8Zyi2tOFv3ykcOK/k7iWazBjuW7OAkJkhM+zTy+y
+	V1EsKq+Hax4fTkySDZUQ7NUjdPOzvoGaNF+wg7UCkSZhk3cHD8gdqm7po9e1ayf5/+yol7pMXBV
+	5tN3yD1VPIRAlHCi/6T2fqoskbfptD3DE3TxFg/LNU0/Acuy1xTcLG5Pm7gEcikkKpONniXuZzw
+	1bY3cbYxsBI3utdN6ujIlkQmnuryN/HPVBDV3mTbxmwzWlUDB7ufILBhtTjfUl8LWROMshJbDdv
+	MWMzTWMEhYh3TUyMx1ltcrkgR2jebtWXn2xufJD4GjqXArVRgThhVd1y9AFcy0U4qn3F2KhcBEI
+	muCe78/1b5X68B+gUqnPkslDaKpsxyZHrMWCh/fgYGMHlVlcVlq5m6/hLGRzVr/TF1fhu
+X-Received: by 2002:a05:7022:2594:b0:139:d923:f8f7 with SMTP id a92af1059eb24-13b2a14191emr929662c88.4.1782779420214;
+        Mon, 29 Jun 2026 17:30:20 -0700 (PDT)
+X-Received: by 2002:a05:7022:2594:b0:139:d923:f8f7 with SMTP id a92af1059eb24-13b2a14191emr929646c88.4.1782779419481;
+        Mon, 29 Jun 2026 17:30:19 -0700 (PDT)
+Received: from [192.168.1.11] (222.sub-97-215-84.myvzw.com. [97.215.84.222])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-13b2cd1be7bsm291233c88.1.2026.06.29.17.30.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 29 Jun 2026 17:30:18 -0700 (PDT)
+Message-ID: <7fd9e186-fce6-4c81-8aa5-f0de961fdefe@oss.qualcomm.com>
+Date: Mon, 29 Jun 2026 17:30:16 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next 1/3] wifi: ath12k: switch to name-based reserved
+ memory lookup
+To: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20260611033314.2330-1-aaradhana.sahu@oss.qualcomm.com>
+ <20260611033314.2330-2-aaradhana.sahu@oss.qualcomm.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20260611033314.2330-2-aaradhana.sahu@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjMwMDAwMSBTYWx0ZWRfX1IX7uEaYUCAI
+ SpiK2hxPLb729Ul3Fk+la1bwIQLn62l1db8nNHDPLgv/zL8bbKPtChMpT3i03pwqhqH6hXjDlYP
+ Z6fmbiXa4vEnU5s2Tw+o9llKMB04bZs=
+X-Proofpoint-ORIG-GUID: yOYndT56uC1ozrSj4-SXw1ULSVkoCc4G
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjMwMDAwMSBTYWx0ZWRfX+l9+LrluiTAX
+ X74KBfhtR2rzQ6Behbi7TTg755MAJxfsbRFTdnUPt/wtwdEd5Ex+erzba7y4f+q42Be3WbI9nSb
+ mMNtZeqHQoESIWAlXi0oiyO9NnvPnmaJF7tJ0QRRQtGfe0/NZrsQOBn+Uuwosgl3+FcpeTLzgj7
+ JyFPmSBtWnN6xF9RDPGW6yPxhZB+MM6qhljlGnSmTxt8Nqt+rm+NeOgR3Ycm3dMhPDf9p6tfm0c
+ 0Q2HVe5XF5/wcnG2GKhYoPpvOjutU3Uus6v890eTxTniC7rg4XMUPWBOC/pFi44dTNcvCXMarCw
+ +1w1nl/eIwc/+U619HHS135oiVANLTT9iCkABWUG7XO7FX+ca/WkToDMNmUjUaBfy1hN/lH0HXT
+ CkUdptBTFH3tQR7gn+VwVxv3OFcLMVAL/QOK0frDiGzSuK0SxfeypOVRTbotfdZLtvuGbYdOQHj
+ VC+UODyWd/fFOoal2zA==
+X-Authority-Analysis: v=2.4 cv=NZzWEWD4 c=1 sm=1 tr=0 ts=6a430e1d cx=c_pps
+ a=SvEPeNj+VMjHSW//kvnxuw==:117 a=i4k25I72rCCN9bAAQd7+Jg==:17
+ a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
+ a=EUspDBNiAAAA:8 a=6mlMAM2_b4rmZgvfR8EA:9 a=QEXdDO2ut3YA:10
+ a=Kq8ClHjjuc5pcCNDwlU0:22
+X-Proofpoint-GUID: yOYndT56uC1ozrSj4-SXw1ULSVkoCc4G
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-29_05,2026-06-26_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 impostorscore=0 spamscore=0 adultscore=0 suspectscore=0
+ clxscore=1015 bulkscore=0 priorityscore=1501 malwarescore=0
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
+ definitions=main-2606300001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260629_112148_544355_40D13972 
-X-CRM114-Status: GOOD (  20.58  )
+X-CRM114-CacheID: sfid-20260629_173022_955740_ADE1074A 
+X-CRM114-Status: GOOD (  19.36  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,91 +150,41 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-I will prepare v2 this week.
+On 6/10/2026 8:33 PM, Aaradhana Sahu wrote:
+> The driver currently retrieves reserved memory regions using index-based
+> lookup, which depends on the ordering of reserved-memory nodes in the
+> device tree. Since different platforms define these regions in varying
+> orders and combinations, this approach is not compatible and can result
+> in incorrect memory region access.
+> 
+> Switch to looking up memory regions by name instead of index so it does
+> not depend on node order.
+> 
+> Use names already defined in qcom,ipq5332-wifi.yaml, so there are no
+> backward compatibility issues.
+> 
+> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/ahb.c  | 18 ++++++------
+>  drivers/net/wireless/ath/ath12k/core.c | 25 -----------------
+>  drivers/net/wireless/ath/ath12k/core.h |  2 --
+>  drivers/net/wireless/ath/ath12k/qmi.c  | 38 +++++++++++++-------------
+>  4 files changed, 29 insertions(+), 54 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
+> index 30733a244454..695b605a92fd 100644
+> --- a/drivers/net/wireless/ath/ath12k/ahb.c
+> +++ b/drivers/net/wireless/ath/ath12k/ahb.c
+> @@ -15,6 +15,7 @@
+>  #include "ahb.h"
+>  #include "debug.h"
+>  #include "hif.h"
+> +#include <linux/of_reserved_mem.h>
 
-> On Jun 29, 2026, at 4:21=E2=80=AFAM, Ernest Van Hoecke =
-<ernestvanhoecke@gmail.com> wrote:
->=20
-> On Mon, Jun 15, 2026 at 03:36:50PM +0200, Ernest Van Hoecke wrote:
->> On Wed, May 27, 2026 at 05:01:51PM -0400, Andrew LaMarche wrote:
->>> Ack on the deprecation of qcom,ath12k-calibration-variant in favor =
-of the
->>> generic qcom,calibration-variant.=20
->>>=20
->>> However, drivers/net/wireless/ath/ath12k/core.c still misses the =
-logic to=20
->>> actually load in the BDF, which this patch also accomplishes. I =
-don=E2=80=99t see that
->>> in the Qualcomm-authored series you linked. Perhaps a v2 to address =
-this?
->>>=20
->>> Andrew
->>>=20
->>>> On May 27, 2026, at 3:52=E2=80=AFPM, Jeff Johnson =
-<jeff.johnson@oss.qualcomm.com> wrote:
->>>>=20
->>>> On 5/27/2026 9:12 AM, Andrew LaMarche wrote:
->>>>> Hi,
->>>>>=20
->>>>> A kind ping here. I=E2=80=99m not sure why this functionality is =
-missing in the first place, but it is needed for loading caldata from =
-the device tree.
->>>>=20
->>>> Your patch duplicates functionality in the Qualcomm authored =
-series:
->>>> =
-https://msgid.link/20250228184214.337119-1-quic_rajkbhag@quicinc.com
->>>>=20
->>>> And note the upstream device bindings for ath10k and ath11k only =
-support the
->>>> generic binding qcom,calibration-variant.
->>>>=20
->>>> There are no longer any generation-specific bindings, see:
->>>> =
-https://msgid.link/20250225-b-wifi-qcom-calibration-variant-v1-0-3b2aa3f89=
-c53@linaro.org
->>>>=20
->>>> /jeff
->>>=20
->>=20
->> Hi Jeff,
->> Hi Andrew,
->>=20
->> We also need this functionality, and as Andrew noted, the patch =
-series
->> from Qualcomm does not actually address this.
->>=20
->> I believe some confusion arose because the patch series mentions the
->> "qcom,calibration-variant" DT property, but it does nothing to =
-implement
->> this in the driver. In that series it only exists within a schema =
-file:
->> Documentation/devicetree/bindings/net/wireless/qcom,ipq5332-wifi.yaml
->>=20
->> Our need for this property was previously discussed here, and for now =
-I
->> don't see a way forward without it:
->> =
-https://lore.kernel.org/all/77vowy4ax4cl6dlc45i2q3fjmwn3q676wqghq267tmbix7=
-773b@27h5t66mflur/
->>=20
->> Thanks a lot for your work here.
->>=20
->> Best regards,
->> Ernest
->>=20
->=20
-> Hi Andrew,
->=20
-> Are you planning to send a v2 of this?
->=20
-> If not, I'm considering sending a version of this with the
-> qcom,calibration-variant binding to move this forward.
->=20
-> Thanks for your work here!
->=20
-> Kind regards,
-> Ernest
->=20
+system includes should come before the local includes. I'd fix this in my tree
+except there is another issue in the 3/3 patch so I'll want a v2 for the
+entire series.
 
 
