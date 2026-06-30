@@ -4,90 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 784AFC43458
-	for <ath12k@archiver.kernel.org>; Tue, 30 Jun 2026 01:14:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B6DBC43458
+	for <ath12k@archiver.kernel.org>; Tue, 30 Jun 2026 03:53:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:References:Cc:To:From:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=aByZm7jR+8Ms3DdCpAHOVCxrhdh4rHnZilW7Sr7olMA=; b=OfHPHY4OxXQC6sarFgwQLzj422
-	UgHq5BWbeHsH/UQi1JWNkjUVApkf9Wk1ihZ0BYfeuaWR+H3RnJULU/M3VmpCNbd5ly0mCW8Z7snql
-	US0GzBmcQwbrxGz/3vJTGMKVfCEalIxs30BLgzqvVMSX6PhoZ4OlvZ7fEKBsHfItdTlJZ2NEVzPVR
-	n8VNIBVZS96qS+herIKz5t/xcsBPWroCnirk5oFBVxbyeSAiz9u12ssB5tUH/VmbMxt7XzmTuQD49
-	xx5Gk4GReH7QzYbpW8ZXJU3cuG8E0nMcVBmM3ImgZau3QNUXSmQNk6jYHgiv0lWGG0w2d0miBBVd+
-	rpTPXrCA==;
+	bh=JP1yIvMClEIEZQ3nb0MKnhMzUYJWGmbEcD39CqyF3do=; b=bxsLPRXGoH7sOryKp4Gz+AWdz9
+	wNgWfHtT25h6b8V1pfXDGZmKnQdMSVzzdarSPeI2G3VruhwOp9OO54ryLtVWNP1GwnkBStJ0pP9VH
+	bd0vpharMMcPtEPa5zbTYv9drM5hyxAmoxdCrgGl8cXBdhs4p+P+Gzvi+n9McJBZ3h0JziDxKnO3P
+	aZITvk67Go1ziEdyRwYo1orUJz+GpWU++nAFRT2IqmIlqnz2kIk6H7aeBZ5ZQJpxIVNHpKr6yaDis
+	X04rznl8Eve0kqaj6sRah+mljuXeWKNnpE+wT7O1tvCqqsNAN3jWXKcuLEHaIl6XUbCd9QX98zlhj
+	Nhio7wWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weN3W-0000000Fdrh-3ZuI;
-	Tue, 30 Jun 2026 01:14:30 +0000
-Received: from mail-qt1-x82b.google.com ([2607:f8b0:4864:20::82b])
+	id 1wePXC-0000000Fl3K-0hRi;
+	Tue, 30 Jun 2026 03:53:18 +0000
+Received: from mail.mokrynskyi.com ([65.109.39.229])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weN3U-0000000Fdqt-2CUh
+	id 1wePX9-0000000Fl2z-1Axi
 	for ath12k@lists.infradead.org;
-	Tue, 30 Jun 2026 01:14:29 +0000
-Received: by mail-qt1-x82b.google.com with SMTP id d75a77b69052e-51c15bf5000so516341cf.3
-        for <ath12k@lists.infradead.org>; Mon, 29 Jun 2026 18:14:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1782782067; x=1783386867; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=aByZm7jR+8Ms3DdCpAHOVCxrhdh4rHnZilW7Sr7olMA=;
-        b=XujyNNd4b00cHpU8ZMbicc+BvmuYqQ1dsOmO/O1KoCsQyW9qvgi1gEqd+v65FF6vLm
-         NQZ/jzao80BJgvT9thPWt2Ecd7np5OoY142tE1v/kH3Penia8MoSuHnmIM0X2NUin6qz
-         nkPt3UDv+eFaLaUCmb57+3HxW/nbbFiNMb5QVGnHukfAlgcrlLnhLyHZyyDKIOq5QaQg
-         jDp+rywWdrd6LbofmeGwryegDH2v0Pvnb7hXITxVQn6rh2+EiGe2sC3QT3Qer6scxdgo
-         FNTNY17ycHko4GT2Klm7NIeGyWfioRqfNXREUUSdZpuVTxtvcEQJkdCRTZ4lwoDVTvc+
-         Kriw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782782067; x=1783386867;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=aByZm7jR+8Ms3DdCpAHOVCxrhdh4rHnZilW7Sr7olMA=;
-        b=bKq/6OXZYcfSWVJiEzFUMV8MMxCKKr7us3eAo1qjumjIu0sMuhgX7OXYcNoVpnRLoN
-         nJL5hTesWOCTLArDfynQoK7jQBzUfNF6FI0RAXwJor5Pl4L3TyyBG5YYBj4r5bnuiShG
-         R2KO4ZThQ6qEEHkq5OFWcTv8gy1sDiWSxzmWIjl8TsVILP6+dIkb1kTVVPa4lUjhStlV
-         BiPp7zX4IUUkCKR/tYPHW99sk0CnVhT7o/C+jjlFQCNqydOM/2eNbJ17Tv50sfrHa8mI
-         ZgSmyr+laP8YCGQFLalizmDuwpDxuKJlL+LoUJYmo37J/+ZaWkt/3h9TJGRpvuEcq0Tx
-         ci/g==
-X-Forwarded-Encrypted: i=1; AFNElJ+E2BNhsMmSUEeRLqVyu/1ShOykfUx+aAdETX0D4rj2RnU/kdso+hb1LFpZGeK1be7GMF/iWRk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzsaDGNSloijFOVcQbupyQv79SezEc5aBVHQGPmAYb+mPjkhoN6
-	Uj0m8ABup3+yZf364uDHzoTONda4qrmdz1SZTueZYWgs9IwZyNf/EPD6
-X-Gm-Gg: AfdE7clOAjxh1noPKjn0/X2RlGbULJGUsx2XX8G3RD8MY+7ORoPCXb8oQPEzhXn9lq0
-	gsNjgTYIhM4boWRYkXNx8VLXOmiYSgJrBtTtmWHjqeVfqBd35HwTb8ejYaWZ0YsTf7rhtzRSKSr
-	oy2Qwuy40fqovqSJeRJRqaIzRdQxRAosV8TcEFhMrvR8oMxN47ZFlrY7ju5fUt9gvr27ADoUtlA
-	yLa0JeNETgYSLQ1sLzReTYsbpmcJ6NQDuAlbvK0IZ45MP+Bany44tVE7Qf6iw5niescXrtVfbH4
-	SBlJpWbOUAMw8t50htfmshnJQr7kLJ5TIUe0qO1TS+Vyi5rIRjQJLZW5StDCthwcVHA8y56+GJ+
-	I025dpIdAdn83Oh1CsF67/M1xKS34cPDQnJy8zJA4wFgvd5tts8WEYVq0p6ipvGmKovP5qnsJZG
-	euLqTqsaOTO++4HwByAxxNqGls08ebIZdXqM2+77x6N0X5yA==
-X-Received: by 2002:ac8:7dc3:0:b0:51a:8c97:9383 with SMTP id d75a77b69052e-51c108ed505mr23903811cf.58.1782782067209;
-        Mon, 29 Jun 2026 18:14:27 -0700 (PDT)
-Received: from dev.lan (c-75-67-38-46.hsd1.ma.comcast.net. [75.67.38.46])
-        by smtp.googlemail.com with ESMTPSA id d75a77b69052e-51c1099aca4sm7719801cf.17.2026.06.29.18.14.26
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 29 Jun 2026 18:14:26 -0700 (PDT)
-From: Andrew LaMarche <andrewjlamarche@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Andrew LaMarche <andrewjlamarche@gmail.com>,
-	Ernest Van Hoecke <ernestvanhoecke@gmail.com>
-Subject: [PATCH v2 2/2] dt-bindings: wireless: ath12k: drop qcom,ath12k-calibration-variant
-Date: Tue, 30 Jun 2026 01:14:13 +0000
-Message-ID: <20260630011413.1424654-2-andrewjlamarche@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20260630011413.1424654-1-andrewjlamarche@gmail.com>
-References: <20260630011413.1424654-1-andrewjlamarche@gmail.com>
+	Tue, 30 Jun 2026 03:53:16 +0000
+Message-ID: <6f46ab6c-c7c0-4865-a68b-992ace4225d8@mokrynskyi.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mokrynskyi.com;
+	s=dkim; t=1782791574;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=JP1yIvMClEIEZQ3nb0MKnhMzUYJWGmbEcD39CqyF3do=;
+	b=GFgO2Yua4LlEM56tU5GMNhM9/2twhuJ9Vafprwd1uQKe+6EbhUMUox3ANODgK5OdYT2SSt
+	WQBZzX5V2jk+UVX4HQig39lTMgDiLUV2PKfg3KwHIhnAxe5O+8VGAH+Y42L96+5JEAyqY8
+	WPGt/SY8KKpL2GRgNCfw4OW/FkGc000joN/jh0mB1TatzMRUIfEIHSE6jT0LgRkBMyuqY+
+	ohlKZNPFwRxgA5crhr6w4THvadRwPm21SgoJap2sDH4EAa90XB540ApoXxp8+1Eo6rUvxS
+	eMNBgIX4hiHX/A+7o0qoQ8bH4WcArsp3iJjHAE91mzuD+pxut32HpcXLBv4+RQ==
+Authentication-Results: mail.mokrynskyi.com;
+	auth=pass smtp.mailfrom=nazar@mokrynskyi.com
+Date: Tue, 30 Jun 2026 06:52:54 +0300
 MIME-Version: 1.0
+Subject: Re: [PATCH 2/2] wifi: ath12k: skip unknown direct buffer ring module
+ IDs
+From: Nazar Mokrynskyi <nazar@mokrynskyi.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20260505172415.566328-1-nazar@mokrynskyi.com>
+ <20260505172415.566328-3-nazar@mokrynskyi.com>
+ <89f30996-3210-403b-8c9a-52cf6d5fcb51@oss.qualcomm.com>
+ <07a1e340-cfdf-4027-861e-8f2a940bd21c@mokrynskyi.com>
+Content-Language: en-US, uk, uk-UA
+In-Reply-To: <07a1e340-cfdf-4027-861e-8f2a940bd21c@mokrynskyi.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
+X-Spamd-Bar: ---
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260629_181428_573826_15CC0D88 
-X-CRM114-Status: UNSURE (   8.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260629_205315_662219_9D0966C6 
+X-CRM114-Status: GOOD (  25.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,41 +75,94 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The ath12k-wsi binding documentation describes using the
-generation-specific qcom,ath12k-calibration-variant binding as well as
-the generation-agnostic qcom,calibration-variant binding to load
-board-specific calibration data from the device tree. However, the
-driver never implemented either of these.
+Anything else I can do to help upstream some version of these patches?
+I've been running them for another 1.5 months with no issues.
 
-Given that no devices currently supported use
-qcom,ath12k-calibration-variant and the previous patch implements
-qcom,calibration-variant, drop the generation-specific version from the
-binding to prevent future confusion.
+Sincerely, Nazar Mokrynskyi
+github.com/nazar-pc
 
-Signed-off-by: Andrew LaMarche <andrewjlamarche@gmail.com>
----
- .../devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml  | 7 -------
- 1 file changed, 7 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml
-index 589960144fe1..fa64c8aa56f5 100644
---- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml
-+++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml
-@@ -58,13 +58,6 @@ properties:
-       String to uniquely identify variant of the calibration data for designs
-       with colliding bus and device ids
- 
--  qcom,ath12k-calibration-variant:
--    $ref: /schemas/types.yaml#/definitions/string
--    deprecated: true
--    description:
--      String to uniquely identify variant of the calibration data for designs
--      with colliding bus and device ids
--
-   qcom,wsi-controller:
-     $ref: /schemas/types.yaml#/definitions/flag
-     description:
--- 
-2.43.0
-
+11.05.26 23:10, Nazar Mokrynskyi:
+> 11.05.26 22:02, Jeff Johnson:
+>> On 5/5/2026 10:24 AM, Nazar Mokrynskyi wrote:
+>>> The firmware may advertise direct buffer ring capabilities for module
+>>> IDs beyond what the driver currently knows about (WMI_DIRECT_BUF_MAX).
+>>> This happens with newer firmware versions that support additional ring
+>>> types not yet implemented in the driver.
+>> What "newer firmware version" are you using that has this issue?
+>>
+>> Can you share the "Skipping unknown direct buf ring module id" logs from your
+>> modified driver?
+> ID is the same as in the original warning:
+>
+> [   10.611560] ath12k_pci 0000:01:00.0: Invalid module id 2
+> [   10.616467] ath12k_pci 0000:01:00.0: failed to parse tlv -22
+>
+> The firmware according to system logs (all this info is provided in [PATCH 0/2] email):
+>
+> [    7.688137] ath12k_pci 0000:01:00.0: fw_version 0x160484db fw_build_timestamp 2025-12-09 20:09 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+>
+> This is running on OpenWRT 25.12, which uses 6.12.74 kernel with modules backported from 6.18.7 kernel:
+> [    0.000000] Linux version 6.12.74 (builder@buildhost) (x86_64-openwrt-linux-musl-gcc (OpenWrt GCC 14.3.0 r32802-f505120278) 14.3.0, GNU ld (GNU Binutils) 2.44) #0 SMP Wed Mar 25 20:09:53 2026
+> [    6.997293] Loading modules backported from Linux version v6.18.7-0-g5dfbc5357
+> [    6.999210] Backport generated by backports.git c8a37ce
+>
+>>> The current code treats an unknown module_id as a fatal error, returning
+>>> -EINVAL and tearing down the entire driver initialization. This is
+>>> incorrect: the driver only needs to set up rings for types it uses
+>>> (SPECTRAL=0, CFR=1) and can safely ignore capability advertisements for
+>>> unknown types.
+>>>
+>>> Change the unknown module_id handling to skip the entry with a debug
+>>> message rather than failing, allowing initialization to proceed.
+>>>
+>>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+>>>
+>>> Signed-off-by: Nazar Mokrynskyi <nazar@mokrynskyi.com>
+>>> ---
+>>>  drivers/net/wireless/ath/ath12k/wmi.c | 12 ++++--------
+>>>  1 file changed, 4 insertions(+), 8 deletions(-)
+>>>
+>>> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+>>> index 484fdd3b1..0e776a8d8 100644
+>>> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+>>> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+>>> @@ -4814,10 +4814,10 @@ static int ath12k_wmi_dma_ring_caps(struct ath12k_base *ab,
+>>>  	dir_buff_caps = ab->db_caps;
+>>>  	for (i = 0; i < dma_caps_parse->n_dma_ring_caps; i++) {
+>>>  		if (le32_to_cpu(dma_caps[i].module_id) >= WMI_DIRECT_BUF_MAX) {
+>>> -			ath12k_warn(ab, "Invalid module id %d\n",
+>>> -				    le32_to_cpu(dma_caps[i].module_id));
+>>> -			ret = -EINVAL;
+>>> -			goto free_dir_buff;
+>>> +			ath12k_dbg(ab, ATH12K_DBG_WMI,
+>>> +				   "Skipping unknown direct buf ring module id %d\n",
+>>> +				   le32_to_cpu(dma_caps[i].module_id));
+>>> +			continue;
+>> by continuing you don't populate the dir_buff_caps[i] information below,
+>> leaving that record with zeroed data from the initial allocation. Does other
+>> code correctly handle that?
+>>
+>> would it be better to have a separate count of the number of dir_buff_caps
+>> records that are actually filled, and then update
+>> dma_caps_parse->n_dma_ring_caps to match once the parsing has completed?
+> I'm very far from kernel development, let alone ath12k driver specifically.
+> The patch is provided to better showcase the problems I had.
+> If there is a better way to address it, I'd really appreciate if someone more knowledgeable could take over, I just hope this is helpful.
+>
+> With these changes QCN9274 runs an access point with over 3 weeks uptime as of right now.
+> That is not necessary the proof of anything, but it does seem to work in practice so far.
+>>>  		}
+>>>  
+>>>  		dir_buff_caps[i].id = le32_to_cpu(dma_caps[i].module_id);
+>>> @@ -4829,10 +4829,6 @@ static int ath12k_wmi_dma_ring_caps(struct ath12k_base *ab,
+>>>  	}
+>>>  
+>>>  	return 0;
+>>> -
+>>> -free_dir_buff:
+>>> -	ath12k_wmi_free_dbring_caps(ab);
+>>> -	return ret;
+>>>  }
+>>>  
+>>>  static void
 
