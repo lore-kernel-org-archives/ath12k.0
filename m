@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACA8BC43327
-	for <ath12k@archiver.kernel.org>; Wed,  1 Jul 2026 07:35:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18A4AC43458
+	for <ath12k@archiver.kernel.org>; Wed,  1 Jul 2026 07:44:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
 	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=kGEf3SeZYgm8dFwF9x3Ecpp2cSEz1doIyoAXcK2ExLk=; b=ph9lGhAWROyj8WYiFNNtrO61/x
-	qODIYFgGyPThxqUteB3njKTQ2r37UycS8JMw84C3IF1bfmnJF8eouJUrgbYIWYziAsXTCYVsX6yhG
-	xrkFEMa38zNzynaMG6Fcel6I9DxxLFFeQnkxphy7oyNyk9zeBRj5YOuStYAulSG2rDmCJPgzmfvkq
-	lnu/Hh7UHcyfOAWaQXvRjTRCvTcWV9+IkTXoZPOKq7PU2d260AcATUIJyjrRd5Q7VzN/1X6fVSfQi
-	p0dGULnDuYVpefaGaAv7zgNHcn/WdLAgScVkRm2Cy/ozpSFnScVFBqvWtR/tozrig+gtTIhH3LuQQ
-	jMF3Gjhw==;
+	bh=ozLRk5I8ZKe5jB7VBK0AxnV4gzUhCLP0jS540MNnO9g=; b=Xgd37+YNVJCNAXqIyhPsGobCRF
+	MKJQmOd+gHpJulDBeICYmKRZayrm8fCH87aQg0TI3gIxaUp5DtQXWGqsoe6CG9OreKXJDaJiQ67g2
+	e6TrDm2x6FOQamkShRyFPIuXLgBscFx3Sf3bZ/3PSPN/DyFqpN0R3qj1DiEQ9uMYvY1g09khiQQyA
+	ho2qCqE50F8iPIv9vjG/Ky7SVBG28SK4bDHbfEvnaOp+PNvK8fvL5OBklUwusGhwRv6BsRJJC0Vna
+	j5mv2SxEinOZ/WutZ9C7bbrMz+8rcbdS/nmHTdUWU8rMa8Vfh+tZwn2oSPWrc3rFIfnK8yxJKX5+H
+	Ly6pmgug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wepTn-00000000umL-1ptD;
-	Wed, 01 Jul 2026 07:35:31 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wepcw-00000000vbq-3aDM;
+	Wed, 01 Jul 2026 07:44:58 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wepTm-00000000ulz-23mq
+	id 1wepcv-00000000vbk-1mlU
 	for ath12k@lists.infradead.org;
-	Wed, 01 Jul 2026 07:35:30 +0000
+	Wed, 01 Jul 2026 07:44:57 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id E87F1601E2;
-	Wed,  1 Jul 2026 07:35:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 644DB1F000E9;
-	Wed,  1 Jul 2026 07:35:15 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D76BD438F6;
+	Wed,  1 Jul 2026 07:44:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6C5CD1F000E9;
+	Wed,  1 Jul 2026 07:44:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782891329;
-	bh=kGEf3SeZYgm8dFwF9x3Ecpp2cSEz1doIyoAXcK2ExLk=;
+	s=k20260515; t=1782891896;
+	bh=ozLRk5I8ZKe5jB7VBK0AxnV4gzUhCLP0jS540MNnO9g=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=EZXazlFdkvJYULlF2W57c/IBuIHM5bksnlkhn4JZaEZIsV9u2rxfmgVZDWz/sZzM9
-	 TqD+fNJP5Gg69c84izlEtOmv1hXtdA+ae6nzZAfzliStrhO5HzV2wLG4qKigklMyQv
-	 q28Z1sdgYOeeXbjkxyXoJBjXn2qaEFZMf68fviUkyMhpHgkLiOBmo+aVmig+ldi9vy
-	 o6htvUykVi39Ey/ZaVPRgmG7pTTIyJ8j7dR3CBapLqAzJnt7VK0UPPNcDN8kaUUbyn
-	 XLt68BOXBx0lyB/fVegvFbVv6Y+rwjzrNI8Hs+1xo1QRp6g/qlg07x/zc2QicnMnSz
-	 GHT3VNckuu4Qw==
-Date: Wed, 1 Jul 2026 13:05:12 +0530
+	b=dD+FtfSd5ABFPT3H7OfKYHQf1GhlF3Yo9yrHYAAXziAe/Fsg7c/odLOXZtLTqVQCe
+	 D/pDweTD81vwaMb8rKmT+FrAGjs+FpSOnXpPdkb99/rhqJIB1vO/QmniEvWdB7oXDn
+	 DZzE69+CG5ADgir5cNGGOsF7YxupkO6eRgUvcwWPKLgQveI5ufw+JD6KYNUPCKthhr
+	 mlenbMWEKT2oATLz7eAgfqNzIe3jnK+B2mYUrmUbTfTh+4JbVYANXZMbVlCom12Yn9
+	 MzJtJwFhD9G/dQgElq/K4ovkn+kFfs8nocf3PN4BiO0Df9ixYLI4M9HZ52nGxvyKX2
+	 EAUHpr8LFM4QA==
+Date: Wed, 1 Jul 2026 13:14:38 +0530
 From: Sumit Garg <sumit.garg@kernel.org>
 To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 Cc: andersson@kernel.org, linux-arm-msm@vger.kernel.org,
@@ -67,16 +67,16 @@ Cc: andersson@kernel.org, linux-arm-msm@vger.kernel.org,
 	op-tee@lists.trustedfirmware.org, apurupa@qti.qualcomm.com,
 	skare@qti.qualcomm.com, linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: Re: [PATCH v8 04/14] remoteproc: qcom_q6v5_pas: Switch over to
- generic PAS TZ APIs
-Message-ID: <akTDMOvu5H9qMDUK@sumit-xelite>
+Subject: Re: [PATCH v8 10/14] media: qcom: Pass proper PAS ID to
+ set_remote_state API
+Message-ID: <akTFZgKBQYQUYxx4@sumit-xelite>
 References: <20260626133440.692849-1-sumit.garg@kernel.org>
- <20260626133440.692849-5-sumit.garg@kernel.org>
- <594cf827-819e-4262-9dff-a35c7f69f86b@oss.qualcomm.com>
+ <20260626133440.692849-11-sumit.garg@kernel.org>
+ <c251430d-2184-4ecc-8d05-9cb47533e5ec@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <594cf827-819e-4262-9dff-a35c7f69f86b@oss.qualcomm.com>
+In-Reply-To: <c251430d-2184-4ecc-8d05-9cb47533e5ec@oss.qualcomm.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,36 +91,57 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 30, 2026 at 02:34:59PM +0200, Konrad Dybcio wrote:
+On Tue, Jun 30, 2026 at 02:42:25PM +0200, Konrad Dybcio wrote:
 > On 6/26/26 3:34 PM, Sumit Garg wrote:
 > > From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 > > 
-> > Switch qcom_q6v5_pas client driver over to generic PAS TZ APIs. Generic PAS
-> > TZ service allows to support multiple TZ implementation backends like QTEE
-> > based SCM PAS service, OP-TEE based PAS service and any further future TZ
-> > backend service.
-> > 
-> > Since qcom_q6v5_pas depends on MDT loader for PAS firmware loading, it
-> > has to be switched over to generic PAS APIs in this commit to avoid any
-> > build issues.
+> > As per testing the SCM backend just ignores it while OP-TEE makes
+> > use of it to for proper book keeping purpose.
 > > 
 > > Reviewed-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 > > Tested-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com> # Lemans
-> > Tested-by: Vignesh Viswanathan <vignesh.viswanathan@oss.qualcomm.com> # IPQ9650
+> > Reviewed-by: Vikash Garodia <vikash.garodia@oss.qualcomm.com>
 > > Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 > > ---
+> >  drivers/media/platform/qcom/iris/iris_firmware.c | 2 +-
+> >  drivers/media/platform/qcom/venus/firmware.c     | 2 +-
+> >  2 files changed, 2 insertions(+), 2 deletions(-)
+> > 
+> > diff --git a/drivers/media/platform/qcom/iris/iris_firmware.c b/drivers/media/platform/qcom/iris/iris_firmware.c
+> > index ea9654dd679e..d2e7ba4f37e3 100644
+> > --- a/drivers/media/platform/qcom/iris/iris_firmware.c
+> > +++ b/drivers/media/platform/qcom/iris/iris_firmware.c
+> > @@ -110,5 +110,5 @@ int iris_fw_unload(struct iris_core *core)
+> >  
+> >  int iris_set_hw_state(struct iris_core *core, bool resume)
+> >  {
+> > -	return qcom_pas_set_remote_state(resume, 0);
+> > +	return qcom_pas_set_remote_state(resume, IRIS_PAS_ID);
+> >  }
+> > diff --git a/drivers/media/platform/qcom/venus/firmware.c b/drivers/media/platform/qcom/venus/firmware.c
+> > index 3a38ff985822..3c0727ea137d 100644
+> > --- a/drivers/media/platform/qcom/venus/firmware.c
+> > +++ b/drivers/media/platform/qcom/venus/firmware.c
+> > @@ -59,7 +59,7 @@ int venus_set_hw_state(struct venus_core *core, bool resume)
+> >  	int ret;
+> >  
+> >  	if (core->use_tz) {
+> > -		ret = qcom_pas_set_remote_state(resume, 0);
+> > +		ret = qcom_pas_set_remote_state(resume, VENUS_PAS_ID);
 > 
-> I assume that the leftover qcom_scm_assign_mem() will be handled
-> in a separate effort, presumably through something like FF-A lend
-> on the backend
+> This should not be in the middle of a mildly related series..
+> The PAS IDs should be centralized into a single header. And the
+> name of the driver shouldn't be part of the define. I would guesstimate
+> that on the secure side it's probably called VPU or VIDEO
 
-The qcom_scm_assign_mem() is already handled as a SiP call in TF-A.
+I agree with your comments, this is something I would also like to
+consolidate on OP-TEE side as well: see discussion here [1].
 
-> 
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> 
+However, the patch itself was needed to do book keeping on OP-TEE side
+but I can drop it since anyhow the video isn't functional yet in
+upstream dependent on the proper IOMMU support.
 
-Thanks.
+[1] https://github.com/OP-TEE/optee_os/pull/7845#discussion_r3434507317
 
 -Sumit
 
