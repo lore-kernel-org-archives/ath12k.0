@@ -4,79 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 882C6C43602
-	for <ath12k@archiver.kernel.org>; Wed,  1 Jul 2026 05:37:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47E87C43458
+	for <ath12k@archiver.kernel.org>; Wed,  1 Jul 2026 07:05:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
 	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=AxpIkGUR3B/YQ+use+jlgeTg1Rp3sEV28YNx2zBhiBo=; b=pm7fo4eXwhNcMgsYTQ3hvEcfAM
-	yVrocQFhjguDkI6LmATcEz0AQqI7tG72UyxQmpeTwsEYZ3OwmQ9tjDdSj3n13kI9OUkcz8P1UM3P/
-	TSp/ahqEEby4H5LFP45LHtpjnO0MHFJSLxN3zEdTMXWllM18irPOe2aaKVIqZuEquGqep62pCt998
-	Fb//IGEUKOmdEnA8jyehb2p0Oz1rQKntjlVG1uELojyudq/2pML98AquBRuR+oEJM/bSDMiv8PXD2
-	naAEJYZk61UsU3Gpx7Jqcw48U15HCKfjbUs9bQ5KXTkhkrzBJom8TsEPUV9mprKZMB/MTaakzEzLa
-	WDqB+RGg==;
+	bh=mia8sxKq83EdbDucERboNXKa1jY/lp3YbI5KEzP21q0=; b=gUbIJ3yRxK7vP0MKKAKGZOrkaW
+	obE5Pckv5VFQTFo/M6PhA+PzMk6oscs+iF7lztUGQJnBtfUT4lvGte3kdYSs5BisL0iyDn34U5Tvm
+	4ID4ChMEHA7ZmtOYSI/MoQQtqidoBCstiLpILITgLxJ3A+1Ggi7Z4AalaeTmaBEkxge3oywOi5Vqj
+	XseyjzQOUsgRhJzkHKxHskO95gg3pkloFc7dTV03DDSn7PMrcDPSJCn6plnUgQ2SGpdadwxwylHWh
+	emAxYU73Tr3JbKZJfNwtW6yXUoWfb/LzDDEjfZodNQin9jlJAf2dTFlk1iRzZuymsv0f4NEOECWJl
+	AwsaW/4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wendF-00000000gWk-0GjW;
-	Wed, 01 Jul 2026 05:37:09 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wep0a-00000000rgk-07MF;
+	Wed, 01 Jul 2026 07:05:20 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wendE-00000000gWe-12CW
+	id 1wep0Y-00000000rgb-07sM
 	for ath12k@lists.infradead.org;
-	Wed, 01 Jul 2026 05:37:08 +0000
+	Wed, 01 Jul 2026 07:05:18 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id BF2E0413C1;
-	Wed,  1 Jul 2026 05:37:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3EE451F000E9;
-	Wed,  1 Jul 2026 05:36:51 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 560F241AF3;
+	Wed,  1 Jul 2026 07:05:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A0C11F00A3D;
+	Wed,  1 Jul 2026 07:05:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782884226;
-	bh=AxpIkGUR3B/YQ+use+jlgeTg1Rp3sEV28YNx2zBhiBo=;
+	s=k20260515; t=1782889517;
+	bh=mia8sxKq83EdbDucERboNXKa1jY/lp3YbI5KEzP21q0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=cvu3oWYo7MvnOYf+fng4McUfNgKTxtvvPTsKPCovTBnop/zsHeV+5xoq0S0wGuQZo
-	 NDZ/50FVKK/c7equFbh2mTBsm3B29ywpsQc7MUicYWLPOHp8ftk9d9ou6Zv0h4vwHa
-	 ugxgIZwqihSxbLQza8Y2Nn5x9szQNgH9/m5QPvQqhqn3FzhFRIfZfYWnjNOof6axQ1
-	 2x/nCi1CTOmOHj9Qw8wI7wirCSVR4hautUVK6XcunMFvOL2XkSU1vdll90oJhAKJQJ
-	 cEJNcPPoUNVKPx85p8uZdSen2xELIsFevFn4unA0DyKIxqgE8XgZ71e8f/yYhQLTLT
-	 mJp/klMAcBY8A==
-Date: Wed, 1 Jul 2026 11:06:49 +0530
-From: Sumit Garg <sumit.garg@kernel.org>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: andersson@kernel.org, linux-arm-msm@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-	linux-media@vger.kernel.org, netdev@vger.kernel.org,
-	linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-	linux-remoteproc@vger.kernel.org, konradybcio@kernel.org,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	robin.clark@oss.qualcomm.com, sean@poorly.run,
-	akhilpo@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
-	jesszhan0024@gmail.com, marijn.suijten@somainline.org,
-	airlied@gmail.com, simona@ffwll.ch, vikash.garodia@oss.qualcomm.com,
-	bod@kernel.org, mchehab@kernel.org, elder@kernel.org,
-	andrew+netdev@lunn.ch, davem@davemloft.net, edumazet@google.com,
-	kuba@kernel.org, pabeni@redhat.com, jjohnson@kernel.org,
-	mathieu.poirier@linaro.org, trilokkumar.soni@oss.qualcomm.com,
-	mukesh.ojha@oss.qualcomm.com, pavan.kondeti@oss.qualcomm.com,
-	jorge.ramirez@oss.qualcomm.com, tonyh@qti.qualcomm.com,
-	vignesh.viswanathan@oss.qualcomm.com,
-	srinivas.kandagatla@oss.qualcomm.com,
-	amirreza.zarrabi@oss.qualcomm.com, jens.wiklander@linaro.org,
-	op-tee@lists.trustedfirmware.org, apurupa@qti.qualcomm.com,
-	skare@qti.qualcomm.com, linux-kernel@vger.kernel.org,
-	Sumit Garg <sumit.garg@oss.qualcomm.com>
-Subject: Re: [PATCH v8 07/14] remoteproc: qcom: Select QCOM_PAS generic
- service
-Message-ID: <akSncWwMc9tntyD4@sumit-xelite>
-References: <20260626133440.692849-1-sumit.garg@kernel.org>
- <20260626133440.692849-8-sumit.garg@kernel.org>
- <64e425ab-dddc-4221-81d3-3283e2961bea@oss.qualcomm.com>
+	b=DVVj6YqEllZle4eLdF5SZgzJoKA8cAAV8lrQxpPrzMwXlJdu9RWxnnNvXoXLJQI+l
+	 GVWmPVFpBBP33BiFrWkJYWWGycb2B9COkuGSfcUxl2reIF6EFqcnuTICdkFEGN7vJx
+	 UiXp+Dk1a7xKLt88rQ+eaAS4VaNysLgWn/2ErzO49Ns/j/SYt/NMBhKLs09iC8+Qq3
+	 D5emPGL3UKrC1+IiYKlmarUklxkoD92+oiZ5VjCmbZaA4qiSoA5JLCLCp9eDuo8ZU6
+	 mgQNgXNrAX84MEZ5E6BsRfO3NXc5iRMXzP0FvTKejLmoTR+Sl3vQNBhmzG5IQ52CPT
+	 QzASCVo+6LsZA==
+Date: Wed, 1 Jul 2026 09:05:13 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Andrew LaMarche <andrewjlamarche@gmail.com>
+Cc: Johannes Berg <johannes@sipsolutions.net>, 
+	Jeff Johnson <jjohnson@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	linux-wireless@vger.kernel.org, devicetree@vger.kernel.org, ath12k@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, Ernest Van Hoecke <ernestvanhoecke@gmail.com>
+Subject: Re: [PATCH v2 2/2] dt-bindings: wireless: ath12k: drop
+ qcom,ath12k-calibration-variant
+Message-ID: <20260701-objective-gay-aardwolf-fcffef@quoll>
+References: <20260630133001.1426824-1-andrewjlamarche@gmail.com>
+ <20260630133001.1426824-2-andrewjlamarche@gmail.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
-In-Reply-To: <64e425ab-dddc-4221-81d3-3283e2961bea@oss.qualcomm.com>
+In-Reply-To: <20260630133001.1426824-2-andrewjlamarche@gmail.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,72 +73,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi Konrad,
+On Tue, Jun 30, 2026 at 01:30:01PM +0000, Andrew LaMarche wrote:
+> The ath12k-wsi binding documentation describes using the
+> generation-specific qcom,ath12k-calibration-variant binding as well as
+> the generation-agnostic qcom,calibration-variant binding to load
+> board-specific calibration data from the device tree. However, the
+> driver never implemented either of these.
+> 
+> Given that no devices currently supported use
+> qcom,ath12k-calibration-variant and the previous patch implements
+> qcom,calibration-variant, drop the generation-specific version from the
+> binding to prevent future confusion.
+> 
+> Signed-off-by: Andrew LaMarche <andrewjlamarche@gmail.com>
+> ---
+>  .../devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml  | 7 -------
+>  1 file changed, 7 deletions(-)
 
-On Tue, Jun 30, 2026 at 02:37:59PM +0200, Konrad Dybcio wrote:
-> On 6/26/26 3:34 PM, Sumit Garg wrote:
-> > From: Sumit Garg <sumit.garg@oss.qualcomm.com>
-> > 
-> > Select PAS generic service driver to enable support for multiple PAS
-> > backends like OP-TEE in addition to SCM.
-> > 
-> > Tested-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com> # Lemans
-> > Tested-by: Vignesh Viswanathan <vignesh.viswanathan@oss.qualcomm.com> # IPQ9650
-> > Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
-> > ---
-> >  drivers/remoteproc/Kconfig | 4 +++-
-> >  1 file changed, 3 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/remoteproc/Kconfig b/drivers/remoteproc/Kconfig
-> > index c521c744e7db..65befdbfa5f7 100644
-> > --- a/drivers/remoteproc/Kconfig
-> > +++ b/drivers/remoteproc/Kconfig
-> > @@ -210,6 +210,7 @@ config QCOM_Q6V5_MSS
-> >  	select QCOM_Q6V5_COMMON
-> >  	select QCOM_RPROC_COMMON
-> >  	select QCOM_SCM
-> > +	select QCOM_PAS
-> 
-> This is a NOP, SCM already requires QCOM_PAS
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
-That's true but I think we should rather have explicit modules
-dependencies whose APIs are being used by their clients. QCOM_SCM is a
-special module in this case exporting direct SCM calls apart from being
-the backend for the PAS service.
+Best regards,
+Krzysztof
 
-I would prefer explicit dependencies but let me know if you feel
-strongly otherwise.
-
-> 
-> >  	help
-> >  	  Say y here to support the Qualcomm self-authenticating modem
-> >  	  subsystem based on Hexagon V5. The TrustZone based system is
-> > @@ -230,6 +231,7 @@ config QCOM_Q6V5_PAS
-> >  	select QCOM_Q6V5_COMMON
-> >  	select QCOM_RPROC_COMMON
-> >  	select QCOM_SCM
-> > +	select QCOM_PAS
-> 
-> Likewise
-> 
-> >  	help
-> >  	  Say y here to support the TrustZone based Peripheral Image Loader for
-> >  	  the Qualcomm remote processors. This is commonly used to control
-> > @@ -282,7 +284,7 @@ config QCOM_WCNSS_PIL
-> >  	select QCOM_MDT_LOADER
-> >  	select QCOM_PIL_INFO
-> >  	select QCOM_RPROC_COMMON
-> > -	select QCOM_SCM
-> > +	select QCOM_PAS
-> 
-> This is OK
-> 
-> _however_
-> 
-> It leads to a situation where no back-ends can be enabled
-
-The TEE backend is enabled by default if ARCH_QCOM is enabled, if you
-agree then we can similarly enable SCM backend too.
-
--Sumit
 
