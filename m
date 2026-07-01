@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C70CC43458
-	for <ath12k@archiver.kernel.org>; Wed,  1 Jul 2026 07:17:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 203A9C43327
+	for <ath12k@archiver.kernel.org>; Wed,  1 Jul 2026 07:21:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bZyuXeywd+lw/R/9JrIOGEdzbOE8NvZv2e8JZJqiMXQ=; b=sDANWk2uhCHaniJDML1VTUd+Li
-	P18ynxpNAeZemm113pb1Pwmss7mXy3qSjIr4z8F3DvriHY8bJd24VbBYfv5MzLO7GjM/ROxbhsm/C
-	/RfjsGI0+H8O5T6KyOznMkpj7PJ0t2APuPqp83W1sNO5P906rIkXAknpZAfVQssiTfVjXsAOhYBpj
-	bm4UPCyuqV1nN3orIGORT1ibXhAiX5lr2exJfnj/IOXtL9I/HOV++M75EudEeef5iFZik0BPOPGl7
-	wcgX4GKJZRH63fk9RbJe5gDokDNEu5T7Ld0zkIeaSWwqhNaQD8gxAUjT9wwGCgnC6BAm8O0qSPYDJ
-	V1+kaUng==;
+	bh=E8QuM5x7gXGTaLLIIkxCkvrp1Q5hGaoiUi54XE05gBE=; b=G+tYvHklnXZ6JJ5bXhLdtJzTl6
+	NVde9fQo2RjZfv7hb6v3qKe3HLAoOoRlZzW7rCkcwqjXHBrU1v6P5PJLHmirg/xvKgtKxA9BHIdvD
+	uYiC/vE22JnC2INOnRlfGh0JpdgFbE2070UyJvU9IcIi51OGEHiRrf6W+eiA58U9haz20uPmqgQ1S
+	zvV1lFAmS3hncfGaPW2NJYbkcZ56wxlrfSB6TNisYywM2fEew6ztlZDw9VjVRkuLAR1RsAJMOnS9Q
+	hrmszzuuSAfIVfq1brzLyCFDNXm/X2OONUUrwV9GZs6FWCodmvipcGaFMZDXP+NXSA/g21OPJnyz1
+	/WA8Zp0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wepCo-00000000slg-1HzW;
-	Wed, 01 Jul 2026 07:17:58 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wepGJ-00000000t5e-3iEb;
+	Wed, 01 Jul 2026 07:21:35 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wepCn-00000000slX-2o4A
+	id 1wepGI-00000000t5W-4Asp
 	for ath12k@lists.infradead.org;
-	Wed, 01 Jul 2026 07:17:57 +0000
+	Wed, 01 Jul 2026 07:21:35 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5443643427;
-	Wed,  1 Jul 2026 07:17:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C482A1F00A3A;
-	Wed,  1 Jul 2026 07:17:41 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 32F9B6001D;
+	Wed,  1 Jul 2026 07:21:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 192F21F000E9;
+	Wed,  1 Jul 2026 07:21:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782890277;
-	bh=bZyuXeywd+lw/R/9JrIOGEdzbOE8NvZv2e8JZJqiMXQ=;
+	s=k20260515; t=1782890493;
+	bh=E8QuM5x7gXGTaLLIIkxCkvrp1Q5hGaoiUi54XE05gBE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=nSBETdRogeR8MHyqq0tQ7kwPggPv+npkmZ8Q1LMqWxByDcjboUJr2oEBlMEx+O5V+
-	 vSW6k030dDQusRdwbl1fHjMJQm2Ib8/SJYez/hReuxinfpAkmWB6T7T6eay7CSaXy0
-	 Ysce7YgcKUZ/LgHPOjEle37ctrasPoSzHg8Il2vl5siGgtfmDypD3dttt7Cb+Y6I2O
-	 JXj1QsbsW4t+he0qYUHbtxso40EtCb1kIkvX0BRs/I98WcV4q3iQboVu9ZLEeXEPjR
-	 ZKnEZjXdpswkB88L1IUhPu6jRs0rq0LUu09Nc32/TMuAtfXp2ziKW/GlET9ddH8HYz
-	 ZrrFxGHiWYbTw==
-Date: Wed, 1 Jul 2026 12:47:38 +0530
+	b=lxnOmPYiTm5nMcXoRupb4T809lC2MPU9MotfSPQqFnkS0hl7wSnlOIbrJDt7bYekA
+	 sVI7f9YSbJwxbO3u0XfHBURHRZlAAzBwjcRa7ShoFl4mSAzdL250vAQBhsVYHLxYOz
+	 lJ7pSTB5tl4owIgtmPSU9hPFWTm9fZYAtim76KJHfRmZutumZgDE16fIPAKf8KLzGa
+	 zVY3+Rs/vv9nPdSM0Sa5+CPx4HzOg9SPN/Q04wZ7M/iIGeGJECFNKF6x+a/WnF5n0v
+	 t4eo5mj5Bhhv0l95T8RNDIP4NtlQqGPv6v66blXrshDRtF6evB4iQ39jw3D4Nl6tV3
+	 sixI5cetuXoTg==
+Date: Wed, 1 Jul 2026 12:51:14 +0530
 From: Sumit Garg <sumit.garg@kernel.org>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+To: Julian Braha <julianbraha@gmail.com>
 Cc: andersson@kernel.org, linux-arm-msm@vger.kernel.org,
 	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
 	linux-media@vger.kernel.org, netdev@vger.kernel.org,
@@ -68,15 +68,17 @@ Cc: andersson@kernel.org, linux-arm-msm@vger.kernel.org,
 	skare@qti.qualcomm.com, linux-kernel@vger.kernel.org,
 	Sumit Garg <sumit.garg@oss.qualcomm.com>,
 	Harshal Dev <harshal.dev@oss.qualcomm.com>
-Subject: Re: [PATCH v8 01/14] firmware: qcom: Add a generic PAS service
-Message-ID: <akS_Ep0ZgRjclzKV@sumit-xelite>
+Subject: Re: [PATCH v8 02/14] firmware: qcom_scm: Migrate to generic PAS
+ service
+Message-ID: <akS_6izxrhgK-I22@sumit-xelite>
 References: <20260626133440.692849-1-sumit.garg@kernel.org>
- <20260626133440.692849-2-sumit.garg@kernel.org>
- <dc7e58d3-4383-4d93-a38e-699888bff903@oss.qualcomm.com>
+ <20260626133440.692849-3-sumit.garg@kernel.org>
+ <ac8c92cb-21f2-4274-8fe6-f771fe48eec7@gmail.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
-In-Reply-To: <dc7e58d3-4383-4d93-a38e-699888bff903@oss.qualcomm.com>
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <ac8c92cb-21f2-4274-8fe6-f771fe48eec7@gmail.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,25 +93,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 30, 2026 at 02:14:30PM +0200, Konrad Dybcio wrote:
-> On 6/26/26 3:34 PM, Sumit Garg wrote:
-> > From: Sumit Garg <sumit.garg@oss.qualcomm.com>
-> > 
-> > Qcom platforms has the legacy of using non-standard SCM calls
-> > splintered over the various kernel drivers. These SCM calls aren't
-> > compliant with the standard SMC calling conventions which is a
-> > prerequisite to enable migration to the FF-A specifications from Arm.
+On Fri, Jun 26, 2026 at 06:05:54PM +0100, Julian Braha wrote:
+> Hi Sumit,
 > 
-> [...]
+> On 6/26/26 14:34, Sumit Garg wrote:
 > 
-> > +bool qcom_pas_is_available(void)
+> >  config QCOM_SCM
+> > +	tristate "Qualcomm PAS SCM interface driver"
+> > +	select QCOM_PAS
+> >  	select QCOM_TZMEM
+> > -	tristate
+> I think QCOM_SCM is missing a 'select IRQ_DOMAIN'. Right now I get a
+> build error without it:
 > 
-> This is the most important function, for which I would expect
-> kerneldoc be present. I think it also wouldn't hurt to add a
-> footnote in every other function's kerneldoc saying that this must
-> be called first
+> drivers/firmware/qcom/qcom_scm.c: In function ‘qcom_scm_get_waitq_irq’:
+>   drivers/firmware/qcom/qcom_scm.c:2512:16: error: implicit declaration
+> of function ‘irq_create_fwspec_mapping’; did you mean
+> ‘irq_create_of_mapping’? [-Wimplicit-function-declaration]
+>    2512 |         return irq_create_fwspec_mapping(&fwspec);
+>         |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+>         |                irq_create_of_mapping
+>
 
-Will add in the next spin.
+This issue should be independent of this patch-set. Please submit a
+standalone fix for this.
 
 -Sumit
 
