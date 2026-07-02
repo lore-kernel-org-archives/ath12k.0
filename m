@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29DFEC43327
-	for <ath12k@archiver.kernel.org>; Thu,  2 Jul 2026 12:00:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A457DC43458
+	for <ath12k@archiver.kernel.org>; Thu,  2 Jul 2026 12:00:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=g7FpjBIt0YeokSFzLC6S/XCaod58GFwuLHuUF8Xfqag=; b=CuHuq/eCt4vSDVW8i3h+k9zsEx
-	hqRf5o9LoHPF7LCm8ZGk0f8RO+rWTz0FvPrGy8QQ7UivFy21b+pdcvqus/aVggtpQiczdeXQvHlhC
-	NK7hmbLYHVam2MLBZ8Eii4hiQ2giz/W30QM0DRadccVdHtK/tBwanTDgSlZs6Yop6qED7uVQdqQa2
-	YvncyAEE4F8oqvz7uB9UyV48ySpFLUogAW4JfsC4YWqqBDWxAtOTZNso0lSy1APJygna7yXFPOE3i
-	qzqnGNt+7Wwp6auTiuqiLZs7bQK48VZxgPTuCfa2vfKCI9qFv/zH56CFdbnPfzReGo0XJXVRT/77V
-	p+5l4VUA==;
+	bh=YdTarFeUf3JjHQc11F/djDf59yjjzefRJxb3z71PqNs=; b=IcN6BzVVO4WbrYc6jYC7bYqnve
+	PcjgDbM1Y4g14nsBnoVmSSyOfXEhdAf0AGt/d2vpL2XJB1uVdp2D+3XBOfZFR1jWILJTgSRM3ZLGu
+	K0sVOaxGj8AsE8QlcnCT4g7zzu7TvaO9d+sRVDs3Xe2GgQR2g0+x70Y7Czl9e+2pVOJYoEvqdMPM6
+	VPF4/nor19+dUWU9y6iSc2PXtRj+yfXxcwOs0xcjlVT6q1ctQndWwVK4N+B/on+IaIZZo9VZNxMlO
+	4WRYjgWwb7Vz20JK0FeLl4XoI1fqLltCX1iDDX4xZLzhzt5ktCRfQXuJBDD1W1JjpsYWWZ4gztsoq
+	D/K2WxTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfG5p-00000004Naw-3mZt;
-	Thu, 02 Jul 2026 12:00:33 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wfG64-00000004NlW-1crL;
+	Thu, 02 Jul 2026 12:00:48 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfG5o-00000004NZr-3zOM
+	id 1wfG62-00000004NkD-3Uok
 	for ath12k@lists.infradead.org;
-	Thu, 02 Jul 2026 12:00:33 +0000
+	Thu, 02 Jul 2026 12:00:46 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0721260121;
+	by sea.source.kernel.org (Postfix) with ESMTP id 943A742D92;
+	Thu,  2 Jul 2026 12:00:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5EBB71F00A3F;
 	Thu,  2 Jul 2026 12:00:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5976D1F000E9;
-	Thu,  2 Jul 2026 12:00:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782993631;
-	bh=g7FpjBIt0YeokSFzLC6S/XCaod58GFwuLHuUF8Xfqag=;
+	s=k20260515; t=1782993646;
+	bh=YdTarFeUf3JjHQc11F/djDf59yjjzefRJxb3z71PqNs=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=iUjbxMfQep0Npbs2gHIS0sUTSCCw54soOpfH2nkVrZBh6QQ0x0S74HNHRtpkuwiu+
-	 27AwM6fjUMErPybxGHSy30FC//loGNqZKep/0XO4qLvJO3lTls1vwKWRPUqvNC/FNl
-	 OFsJIFvBco1mmroKQjN8q/+49y1M7ZBIQYuYjMoYTAxYfLMvaD8ApKysiPO6bGwk8V
-	 hZhnfiKCG82xb5CnZNmRFJINqzgFricsfqzAzC0s2CyeLtt1SwnV69jl3jlKpjcGpa
-	 +ygWmhygSZ7xrDLiCphUpiMu3tmA3/jZ4c8DVW0e4XD0lP+Qzm3GE/ftNantxESkEx
-	 TSp0Rul1rnsHg==
+	b=nIbNd2pNzmB5Fug+MvC/mfJBtIEUhJ/2n5Af4Hp/Ayta6J+UOJY/Slp53d/XKzvq8
+	 GEFPUp89fTtJqa6ESpNLSQzuY1cnL0eJDgxav7HgwvCIFncdLY+3w9LhrRzIauT2ON
+	 Ey/B++Lx+SipctGuKP0AwAFiGW/SupwFXCmCNyLS6Ft5v4UmMABQZhLipjOCIFq/BI
+	 hyuLfJ8lHYW6u64ksVj9zSXSQpU6C1lSlPMgSjABNTjLRVn4012PP8R4iR++A9EuRD
+	 Httz1PpDr8ZP7gkDSpzBQDSKyOLr3op0d4zbpLSThCneo9AydM1WRHWCcijwMKNI87
+	 ithGWXYfTQF2Q==
 From: Sumit Garg <sumit.garg@kernel.org>
 To: andersson@kernel.org,
 	konradybcio@kernel.org
@@ -90,11 +90,10 @@ Cc: linux-arm-msm@vger.kernel.org,
 	apurupa@qti.qualcomm.com,
 	skare@qti.qualcomm.com,
 	linux-kernel@vger.kernel.org,
-	Sumit Garg <sumit.garg@oss.qualcomm.com>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: [PATCH v9 06/14] remoteproc: qcom_wcnss: Switch to generic PAS TZ APIs
-Date: Thu,  2 Jul 2026 17:28:22 +0530
-Message-ID: <20260702115835.167602-7-sumit.garg@kernel.org>
+	Sumit Garg <sumit.garg@oss.qualcomm.com>
+Subject: [PATCH v9 07/14] remoteproc: qcom: Select QCOM_PAS generic service
+Date: Thu,  2 Jul 2026 17:28:23 +0530
+Message-ID: <20260702115835.167602-8-sumit.garg@kernel.org>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260702115835.167602-1-sumit.garg@kernel.org>
 References: <20260702115835.167602-1-sumit.garg@kernel.org>
@@ -116,72 +115,45 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 
-Switch qcom_wcnss client driver over to generic PAS TZ APIs. Generic PAS
-TZ service allows to support multiple TZ implementation backends like QTEE
-based SCM PAS service, OP-TEE based PAS service and any further future TZ
-backend service.
+Select PAS generic service driver to enable support for multiple PAS
+backends like OP-TEE in addition to SCM.
 
-Reviewed-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 Tested-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com> # Lemans
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Tested-by: Vignesh Viswanathan <vignesh.viswanathan@oss.qualcomm.com> # IPQ9650
 Signed-off-by: Sumit Garg <sumit.garg@oss.qualcomm.com>
 ---
- drivers/remoteproc/qcom_wcnss.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ drivers/remoteproc/Kconfig | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/remoteproc/qcom_wcnss.c b/drivers/remoteproc/qcom_wcnss.c
-index 4add9037dbd5..0dbdd18ab3dd 100644
---- a/drivers/remoteproc/qcom_wcnss.c
-+++ b/drivers/remoteproc/qcom_wcnss.c
-@@ -19,7 +19,7 @@
- #include <linux/platform_device.h>
- #include <linux/pm_domain.h>
- #include <linux/pm_runtime.h>
--#include <linux/firmware/qcom/qcom_scm.h>
-+#include <linux/firmware/qcom/qcom_pas.h>
- #include <linux/regulator/consumer.h>
- #include <linux/remoteproc.h>
- #include <linux/soc/qcom/mdt_loader.h>
-@@ -257,7 +257,7 @@ static int wcnss_start(struct rproc *rproc)
- 	wcnss_indicate_nv_download(wcnss);
- 	wcnss_configure_iris(wcnss);
- 
--	ret = qcom_scm_pas_auth_and_reset(WCNSS_PAS_ID);
-+	ret = qcom_pas_auth_and_reset(WCNSS_PAS_ID);
- 	if (ret) {
- 		dev_err(wcnss->dev,
- 			"failed to authenticate image and release reset\n");
-@@ -269,7 +269,7 @@ static int wcnss_start(struct rproc *rproc)
- 	if (wcnss->ready_irq > 0 && ret == 0) {
- 		/* We have a ready_irq, but it didn't fire in time. */
- 		dev_err(wcnss->dev, "start timed out\n");
--		qcom_scm_pas_shutdown(WCNSS_PAS_ID);
-+		qcom_pas_shutdown(WCNSS_PAS_ID);
- 		ret = -ETIMEDOUT;
- 		goto disable_iris;
- 	}
-@@ -311,7 +311,7 @@ static int wcnss_stop(struct rproc *rproc)
- 					    0);
- 	}
- 
--	ret = qcom_scm_pas_shutdown(WCNSS_PAS_ID);
-+	ret = qcom_pas_shutdown(WCNSS_PAS_ID);
- 	if (ret)
- 		dev_err(wcnss->dev, "failed to shutdown: %d\n", ret);
- 
-@@ -557,10 +557,10 @@ static int wcnss_probe(struct platform_device *pdev)
- 
- 	data = of_device_get_match_data(&pdev->dev);
- 
--	if (!qcom_scm_is_available())
-+	if (!qcom_pas_is_available())
- 		return -EPROBE_DEFER;
- 
--	if (!qcom_scm_pas_supported(WCNSS_PAS_ID)) {
-+	if (!qcom_pas_supported(WCNSS_PAS_ID)) {
- 		dev_err(&pdev->dev, "PAS is not available for WCNSS\n");
- 		return -ENXIO;
- 	}
+diff --git a/drivers/remoteproc/Kconfig b/drivers/remoteproc/Kconfig
+index c521c744e7db..65befdbfa5f7 100644
+--- a/drivers/remoteproc/Kconfig
++++ b/drivers/remoteproc/Kconfig
+@@ -210,6 +210,7 @@ config QCOM_Q6V5_MSS
+ 	select QCOM_Q6V5_COMMON
+ 	select QCOM_RPROC_COMMON
+ 	select QCOM_SCM
++	select QCOM_PAS
+ 	help
+ 	  Say y here to support the Qualcomm self-authenticating modem
+ 	  subsystem based on Hexagon V5. The TrustZone based system is
+@@ -230,6 +231,7 @@ config QCOM_Q6V5_PAS
+ 	select QCOM_Q6V5_COMMON
+ 	select QCOM_RPROC_COMMON
+ 	select QCOM_SCM
++	select QCOM_PAS
+ 	help
+ 	  Say y here to support the TrustZone based Peripheral Image Loader for
+ 	  the Qualcomm remote processors. This is commonly used to control
+@@ -282,7 +284,7 @@ config QCOM_WCNSS_PIL
+ 	select QCOM_MDT_LOADER
+ 	select QCOM_PIL_INFO
+ 	select QCOM_RPROC_COMMON
+-	select QCOM_SCM
++	select QCOM_PAS
+ 	help
+ 	  Say y here to support the Peripheral Image Loader for loading WCNSS
+ 	  firmware and boot the core on e.g. MSM8974, MSM8916. The firmware is
 -- 
 2.53.0
 
