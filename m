@@ -4,138 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24D67C43458
-	for <ath12k@archiver.kernel.org>; Thu,  2 Jul 2026 09:56:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C5B6C43458
+	for <ath12k@archiver.kernel.org>; Thu,  2 Jul 2026 10:50:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=UnUR1LOesZgE+LhExMMNkZRlI6t8z7VRKCRBzJBUFR4=; b=z4DBOID0lWbNruX2xJtDrOzYUB
-	2d57AhAphD6cGwQ7Dot7aKM3IucgWnkNLHtg4FCGfcZLUzOrDLh/zvABriybXxZFaILQA+KkMGuUW
-	dV6nfz6L8H8Y1XBJdFa4g64Z8o3PFQJ0IBJ6OYpXAdD2UF5/dJaRDb2Py8+1QxaIMnPZ3/h4EJQru
-	znM3DYV6pzHifum8q+xAMePfa3hPSVkgpSN0HDuoQFF/WzETYf6mU3ZAr3XbjnRIE+1Z8Rz50bCDD
-	c009s/VnCtHOPozOQDv0uleLqRg/+tNtSBIiC5DuYmTS1oofGzMeZ3yy7Ey+V/s3R7KK1LsglnwtL
-	TLOS1JiA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=SRaN0fhtLzRfSscbqiHk0E6ngcOqzlY1GNGe9o1BII8=; b=dWeK+jTcLhtMeG7fM69CyJQ5pl
+	me/gCnJwvW5IzDEOEgLGVu6xnsB4xPOeF5EOG/2UeMyy92eyaw5ddT7EQcjJ2c0E+Uh1V7RTbOU3k
+	bNja/FPiK0AVxfymWFVM2dFZgwL3a2A6C17s4sPKz+1F0Zquv4rBFFEDYlhsl3urxRCXMJcVv0WwG
+	hFQELq6/vjSJQG0b37tJYzMpzm2an9O0bgE8d0DaRr8LpiyCCMECqhkkN0r6czIf63/rofbVRG7ui
+	9X9ghiSS2sDfT5UxqRRTRDW27axfjNlR8eHqS2PCHxt/RgJMrc3V4lPwzE9bWNpHwZc1tQpIqCELF
+	sgDri+qw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfE9S-000000046PK-3k69;
-	Thu, 02 Jul 2026 09:56:10 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wfF01-00000004DrT-0YW2;
+	Thu, 02 Jul 2026 10:50:29 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfE9Q-000000046Ox-0a6L
+	id 1wfEzx-00000004Dqb-3Kkb
 	for ath12k@lists.infradead.org;
-	Thu, 02 Jul 2026 09:56:09 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6624lghw3485791
-	for <ath12k@lists.infradead.org>; Thu, 2 Jul 2026 09:56:07 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	UnUR1LOesZgE+LhExMMNkZRlI6t8z7VRKCRBzJBUFR4=; b=o0fW9Z8DPpV5Nebk
-	0wNp1ydqmGqi0YInPLG9F9eTTDAe+pgIjnjWvkoKKMJcdK4nbW+c0IB0nCSsczxx
-	M5mZ/UX9WWJreEDTB744zcZOSsBJ9Xht9BuO1PImt3tOnhemyVdkBWIlh6FNHHAC
-	andSu9HU9egIPz1OwdAl6vMYv9PBZflabA6vDAIBEyrC8xrAw3jaCqzTyMQxFZzT
-	HqB6YwHgrNTE+OpmQigzfRKkaDi3UdZaIEZM2OtE5eFuvozSa1KglngoN7XM1iTe
-	TnodHd3VKG+IJhhOm6Qie185Wc0pOeQSj6ZthO3+tgXOOpZ5fR2hiwj40sG3LfuD
-	45zVtQ==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f5h98h3ah-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 02 Jul 2026 09:56:06 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2ca3b3141a6so26324885ad.1
-        for <ath12k@lists.infradead.org>; Thu, 02 Jul 2026 02:56:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1782986166; x=1783590966; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=UnUR1LOesZgE+LhExMMNkZRlI6t8z7VRKCRBzJBUFR4=;
-        b=SFZrYxaBC6HS/9jEpSId5bULc2j38r30De9OsWdaEO+xJbJ/qjkt4Oaq+K8V4B5Wsc
-         v7ixjh4y83qOP/vVQgaBFGDXl6uysawOCxoRI1/DIs2KjLDob7NLyYjyE6w0wBlpyHkn
-         SfKYLqo8qkmC6WwIVbXWVLbUg9gjKCZoJ4ywCySP+44mgJfESmtOsGXL6UwXQm2k8zZw
-         MkzKdckZ8PEneWAldnbUswnw7owj25aB9dWh7X58YMtkcuPjjrVs91XFyXmG79hAg4as
-         X1/+5AQ/9AVkvZ2zquj1vNe+IonZZ7Z15hghF+rTZfJKv0ozM1ouZRIh8Fk6pkD6VY5w
-         N86A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782986166; x=1783590966;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=UnUR1LOesZgE+LhExMMNkZRlI6t8z7VRKCRBzJBUFR4=;
-        b=i5GkYtTTOsl4AuQkvygkkrrTHzqQ5rh2yhOqsfujpFVzsPe47grvEvC8ccUV9yJoR2
-         kAWE2oUtW1jCJMMWsW6ThyMOLItjglgcW7MVjdUqYJ4tgikL9n5I7lQdeMiyf0hCa9PK
-         e895IG7t+AIY0oLeoxaWYBgNM1q3pMmYrU0FX5DHwXydKV90LTL5EAZHcaaMSaaW2Gs2
-         Z85175mly5J3xV7oOpviWYqr1EPuDADzU6rin6sedlccNeiaD9IaPz7W0RODbsMtfoGn
-         Jq9DEbHcwdFnjk8ELG/9dEwDnwmptv2iva4zSmnSKL6cc88+X5iE1MP1YCi2S27PFv1T
-         Ix2g==
-X-Forwarded-Encrypted: i=1; AHgh+RoEe4OZbJD5pyWvphVaHHA3Q5AB4QjxpTaw7TD0x93QuGy98AiilKYhYNwL65znRJJ/T8+rIuY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyvHKPm7N3YcB/6c96PNrvadu7Tb485aG27SxbWhjoZPT2M5ahc
-	ZVYaXMEJie/LnVGZxZuS7wyDckmlbe7g+ADTHxGEJpbxAmBh76uM3v/OoN871KicBwsEjP7oU15
-	WQyd8AN/Its5igNx+srDtTpwXcLRGUO5p4ff0VgT6MLLgjPybPLt2hJ4spK+MVB8S
-X-Gm-Gg: AfdE7ckZ7J270Kme/QFOCerxandtVKRt4JPHWBYod5Xda9CUvhj5C0FnID4T0NV7KgK
-	3U5qrD/6/LbKVGRfIx1osi5Qa995+GKILq994YBJk9A54H8NpQoG43HExTEB4Aetdhw8pz0UWgt
-	lak53f0gOwWYeQbvbU49bzjF6/45CUF/40ttzkDlEtW6mu5dUhixiGVuGkLCotU8JaPsbrtwZ/z
-	Gg4PEc1QUX/JdjNEGxuDFPZ40FQvqJdc3ds7dl8ezMiPPYvzlUhPUVb7U4coCitqza4yLUPpI+r
-	BVYHyWuuc/LQKjFgs6Srs92t5Y5pv9ZQj8CotDcrLC4+VUueR3S+tAd9qDRs6BWfy4ydzJup/P3
-	qd9dzaRFsG3/utMsAbMcc7RMe2IBVSxSBagEiqbTDdc+qlWClh1rPTPAwbGavLFW82mrcpABAEr
-	H0m0+AAZrb
-X-Received: by 2002:a17:90b:1806:b0:37f:db06:229c with SMTP id 98e67ed59e1d1-380aa1cad60mr5597216a91.22.1782986165857;
-        Thu, 02 Jul 2026 02:56:05 -0700 (PDT)
-X-Received: by 2002:a17:90b:1806:b0:37f:db06:229c with SMTP id 98e67ed59e1d1-380aa1cad60mr5597187a91.22.1782986165247;
-        Thu, 02 Jul 2026 02:56:05 -0700 (PDT)
-Received: from [10.133.33.211] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3810200f089sm138115a91.7.2026.07.02.02.56.03
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 02 Jul 2026 02:56:04 -0700 (PDT)
-Message-ID: <cdd85c7d-976d-4bc2-8792-bef7e98afbd4@oss.qualcomm.com>
-Date: Thu, 2 Jul 2026 17:56:01 +0800
+	Thu, 02 Jul 2026 10:50:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1782989422;
+	bh=TdAKQ5bkpDJ+q8vtr1fnXS4gPKoJw8I70LTsjzfMgM8=;
+	h=From:Date:Subject:To:Cc:From;
+	b=G2MjV5Z3MMQ+EENa0wQ8ycXV9qtAp0jrp07oJUCKnuXC1BioqUk07NwF/G0GtUsBZ
+	 F6gHsiUazjA0i+DjmhhTM5UJ0yAu299lenpZ5vxykKSTuDZvaFF+PzkljuCBqi87B4
+	 3f/d+hvQ5/fFUTMbqlQOrb0M7zvTOnDMouG7+hPBPzuX3rLFcdVIn1Q41xKtuvfL4P
+	 dqGLTLzaK+qv3Z7eWiskJcWvnJZmti7WoO8RoKA+yPrMZpXze1Eg/q0YFGGMinJkju
+	 oeQrBAWOwsd3KhOXq5AFpP8wY0ih2f2ig6vLE8L6IcOhxYrNHXJmvTsPV+PO7/x8VM
+	 o+gxM4EvwKQNw==
+Received: from [192.168.1.156] (unknown [100.64.1.118])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: mattl)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id CEAFD17E0CA2;
+	Thu,  2 Jul 2026 12:50:21 +0200 (CEST)
+From: Matthew Leach <matthew.leach@collabora.com>
+Date: Thu, 02 Jul 2026 11:50:16 +0100
+Subject: [PATCH v2] wifi: ath12k: fix survey indexing across bands
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RESEND] wifi: ath12k: fix MAC address copy on big endian
-To: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
-        ath12k@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20260629-fix-mac-addr-copy-on-big-endian-v1-1-3de40f74c13e@westermo.com>
- <f4d0c9c0-6d21-4426-8403-209f77ab1387@oss.qualcomm.com>
- <akYkNQTB5DPwzYXZ@FUE-ALEWI-WINX> <akYsszdtJfrvIRSr@FUE-ALEWI-WINX>
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <akYsszdtJfrvIRSr@FUE-ALEWI-WINX>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: Z25x-10oEGBdYjNYgQ6HRyfwO1y52MWG
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzAyMDEwMiBTYWx0ZWRfX/N4jIaIhmjVt
- LdXU0J5J123mjnMMukloSqT+52RTYU+4h8zPKz/i/yHnqc19IDQo5XiYrYQQFQHxmOILYBDddXD
- +muZemqo8ZQNGa6rNXZH+n/HU6LMb5jGAWMyrB3Nc0ow9x84F/CTGdgjncdd04wbm1lHqk1uwSm
- WtcN0dlcKfnqouQCeXNhQBYkKVQNiJZNN8ga7FU/JBKDM57RNkokjpEBGmFB16Ae32gl6Xj4R03
- B1e0NLP3oDcrdRL0uhKmsZzgQN/6WnbPvqz71KCrzCT/EKaCYUkIdROwYAxQvmEKhHuKUNDWH+9
- OPQMRJFhdFwPoGSRPD7/h/GmoEe4F03Kyqjk1T6p6wN9FPzjWK3KqaMqp+KWI9qva0LtFMYfUjk
- HV9EVJcLZM5SvzEs70/Nb7nVU6bB6ZE4sIzwa6Cvv4jh3+haKqn2fWM27xBf1pSlkTWibGP+W/2
- MEk3olAHeqlzoQZ6www==
-X-Proofpoint-GUID: Z25x-10oEGBdYjNYgQ6HRyfwO1y52MWG
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzAyMDEwMiBTYWx0ZWRfX0zQLmr/Bsfag
- D0jRYpFz0WvMHx+VmWZBeHUsMw1mS3jHPNEnghu8kT11WVnCNG75E8tFYXwbGMX6jsmba5InU82
- CNaLG7Fjmst6ZaoyNWH8huBn+uLqopE=
-X-Authority-Analysis: v=2.4 cv=bdFbluPB c=1 sm=1 tr=0 ts=6a4635b6 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
- a=uj8kP0hEhypoEna20nYA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-07-02_01,2026-06-26_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 bulkscore=0 clxscore=1015 lowpriorityscore=0 phishscore=0
- priorityscore=1501 malwarescore=0 impostorscore=0 suspectscore=0 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607020102
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20260702-ath12-survey-band-fix-v2-1-75b5bdf72a08@collabora.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/4WNQQ6CMBREr0L+2m9opRRYeQ/Doi1fqUFqWmgkh
+ Ltb8AAu32Rm3gqBvKUATbaCp2iDdWMCfsrA9Gp8ENouMfCcl3nJJKqpZxzD7CMtqNXY4d1+sNC
+ CZCVkfZE1pO3bU4qP31v74zDrJ5lpP9sbvQ2T88shjmzv/XNEhgxJdrUQQutCVlfjhkFp59XZu
+ Be027Z9AbFo5NzQAAAA
+X-Change-ID: 20260617-ath12-survey-band-fix-4b5e78579379
+To: Jeff Johnson <jjohnson@kernel.org>, 
+ Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>, 
+ Baochen Qiang <quic_bqiang@quicinc.com>, 
+ Ramya Gnanasekar <quic_rgnanase@quicinc.com>, 
+ Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Cc: Kalle Valo <kvalo@kernel.org>, 
+ Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>, 
+ P Praneesh <quic_ppranees@quicinc.com>, 
+ Sriram R <quic_srirrama@quicinc.com>, linux-wireless@vger.kernel.org, 
+ ath12k@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ kernel@collabora.com, 
+ Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>, 
+ Matthew Leach <matthew.leach@collabora.com>, 
+ Rameshkumar Sundaram <quic_ramess@quicinc.com>, 
+ Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260702_025608_302144_AFF39604 
-X-CRM114-Status: GOOD (  18.02  )
+X-CRM114-CacheID: sfid-20260702_035026_002539_FA622017 
+X-CRM114-Status: GOOD (  20.86  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,42 +89,284 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+When running 'iw dev wlan0 survey dump' the values for the channel busy
+time have the same sequence across bands. This is caused by indexing
+into the ath12k survey array using a band-local index rather than the
+global index passed by mac80211. This results in surveys for 5 GHz and 6
+GHz channels returning values from 2.4 GHz slots, making the survey
+unusable on those bands. Further, there are redundant survey slots for
+multi-radio/single-phy instances.
 
+Fix by moving the survey data into ath12k_hw so multiple radios under a
+single wiphy share one table, and index into it using the global
+mac80211 index. A new spinlock in ath12k_hw serialises access to the
+survey array, which is now shared across all radios under a single hw.
 
-On 7/2/2026 5:17 PM, Alexander Wilhelm wrote:
-> On Thu, Jul 02, 2026 at 10:41:25AM +0200, Alexander Wilhelm wrote:
->> On Thu, Jul 02, 2026 at 04:12:00PM +0800, Baochen Qiang wrote:
->>>
->>>
->>> On 6/29/2026 3:55 PM, Alexander Wilhelm wrote:
->>>> The ath12k_dp_get_mac_addr function performs a simple memcpy from a
->>>> CPU-native data types into an u8 array. On a big-endian architecture, this
->>>> later results in a null‑pointer dereference. Convert the data to
->>>
->>> Alex, did you find a time to investigate the root cause of the null pointer?
-> 
-> Hi Baochen,
-> 
-> I am now running kernel v6.18.26, and it looks like the null-pointer issue is
-> gone. I only see the following log messages:
-> 
->     ath12k_pci 0001:01:00.0: failed to vdev 0 create peer for AP: -110
+Band busy-times Before this fix:
 
-what is the actual mac addr reported from firmware in the PEER MAP event? My understanding
-is that, without this patch (if we really need it) we get a wrong mac addr, then in
-ath12k_dp_link_peer_map_event() we are more likely to fail the peer look up hence would
-create a new peer and wakeup the waiting thread. But the log here clearly indicates that
-the wait timeout, which does not make sense to me.
+2.4 GHz: 9, 2, 2, 2, 4, 2, 10, 16, 4, 12, 5
+5 GHz:   9, 2, 2, 2, 4, 2, 10, 16, 4, 12, 5
+6 GHz:   9, 2, 2, 2, 4, 2, 10, 16, 4, 12, 5
 
->     ath12k_pci 0001:01:00.0: failed to create vdev 04:f0:21:c9:e0:0e ret -110
->     ath12k_pci 0001:01:00.0: failed to assign chanctx for vif 04:f0:21:c9:e0:0e link id 0 link vif is already started
->     ath12k_pci 0001:01:00.0: invalid vdev id in vdev delete resp ev 0
-> 
-> Should I rebase the patch onto the latest `ath/master` branch and update the
-> commit description accordingly?
-> 
-> 
-> Best regards
-> Alexander Wilhelm
+After this fix, times are independent:
+
+2.4 GHz: 23, 5,  5,  12, 2,   12,  26,  5,   3,  1,  27
+5 GHz:   30, 40, 29, 27, 118, 118, 112, 120, 11, 11, 11
+6 GHz:   1,  0,  0,  0,  0,   0,   0,   0,   0,  0,  1
+
+Tested-on: wcn7850 hw2.0 PCI WLAN.IOE_HMT.1.1-00018-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+
+Fixes: 4f242b1d6996 ("wifi: ath12k: support get_survey mac op for single wiphy")
+Signed-off-by: Matthew Leach <matthew.leach@collabora.com>
+---
+Changes in v2:
+- Move survey[] from ath12k to ath12k_hw so multi-radio single-wiphy
+  setups share one global table (suggested by Rameshkumar Sundaram).
+- Drop the ar->mac.sbands[] filter in freq_to_idx() so the WMI event
+  handlers use the same global index
+- Add ah->survey_lock to serialise access to the shared survey table
+- Update Fixes: tag to the correct commit
+- Link to v1: https://patch.msgid.link/20260617-ath12-survey-band-fix-v1-1-e7d9555bb478@collabora.com
+
+To: Jeff Johnson <jjohnson@kernel.org>
+To: Sriram R <quic_srirrama@quicinc.com>
+To: Kalle Valo <kvalo@kernel.org>
+To: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org
+Cc: ath12k@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+ drivers/net/wireless/ath/ath12k/core.h |  6 ++++-
+ drivers/net/wireless/ath/ath12k/mac.c  | 33 ++++++++++++++-------------
+ drivers/net/wireless/ath/ath12k/wmi.c  | 41 ++++++++++++++++++----------------
+ 3 files changed, 45 insertions(+), 35 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 8be435535a4e..6ce2f7b3fa50 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -712,7 +712,6 @@ struct ath12k {
+ 	 * avoid reporting garbage data.
+ 	 */
+ 	bool ch_info_can_report_survey;
+-	struct survey_info survey[ATH12K_NUM_CHANS];
+ 	struct completion bss_survey_done;
+ 
+ 	struct work_struct regd_update_work;
+@@ -774,6 +773,11 @@ struct ath12k_hw {
+ 	 */
+ 	struct mutex hw_mutex;
+ 	enum ath12k_hw_state state;
++
++	/* protects survey[] shared across radios of this hw. */
++	spinlock_t survey_lock;
++	struct survey_info survey[ATH12K_NUM_CHANS];
++
+ 	bool regd_updated;
+ 	bool use_6ghz_regd;
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 2cff9485c95a..daf9bc8722df 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -13348,52 +13348,54 @@ ath12k_mac_update_bss_chan_survey(struct ath12k *ar,
+ int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
+ 			     struct survey_info *survey)
+ {
++	struct ath12k_hw *ah = hw->priv;
+ 	struct ath12k *ar;
+ 	struct ieee80211_supported_band *sband;
+-	struct survey_info *ar_survey;
++	struct survey_info *ah_survey;
++	int sband_idx = idx;
+ 
+ 	lockdep_assert_wiphy(hw->wiphy);
+ 
+-	if (idx >= ATH12K_NUM_CHANS)
++	if (sband_idx >= ATH12K_NUM_CHANS)
+ 		return -ENOENT;
+ 
+ 	sband = hw->wiphy->bands[NL80211_BAND_2GHZ];
+-	if (sband && idx >= sband->n_channels) {
+-		idx -= sband->n_channels;
++	if (sband && sband_idx >= sband->n_channels) {
++		sband_idx -= sband->n_channels;
+ 		sband = NULL;
+ 	}
+ 
+ 	if (!sband)
+ 		sband = hw->wiphy->bands[NL80211_BAND_5GHZ];
+-	if (sband && idx >= sband->n_channels) {
+-		idx -= sband->n_channels;
++	if (sband && sband_idx >= sband->n_channels) {
++		sband_idx -= sband->n_channels;
+ 		sband = NULL;
+ 	}
+ 
+ 	if (!sband)
+ 		sband = hw->wiphy->bands[NL80211_BAND_6GHZ];
+ 
+-	if (!sband || idx >= sband->n_channels)
++	if (!sband || sband_idx >= sband->n_channels)
+ 		return -ENOENT;
+ 
+-	ar = ath12k_mac_get_ar_by_chan(hw, &sband->channels[idx]);
++	ar = ath12k_mac_get_ar_by_chan(hw, &sband->channels[sband_idx]);
+ 	if (!ar) {
+-		if (sband->channels[idx].flags & IEEE80211_CHAN_DISABLED) {
++		if (sband->channels[sband_idx].flags & IEEE80211_CHAN_DISABLED) {
+ 			memset(survey, 0, sizeof(*survey));
+ 			return 0;
+ 		}
+ 		return -ENOENT;
+ 	}
+ 
+-	ar_survey = &ar->survey[idx];
++	ah_survey = &ah->survey[idx];
+ 
+-	ath12k_mac_update_bss_chan_survey(ar, &sband->channels[idx]);
++	ath12k_mac_update_bss_chan_survey(ar, &sband->channels[sband_idx]);
+ 
+-	spin_lock_bh(&ar->data_lock);
+-	memcpy(survey, ar_survey, sizeof(*survey));
+-	spin_unlock_bh(&ar->data_lock);
++	scoped_guard(spinlock_bh, &ah->survey_lock) {
++		memcpy(survey, ah_survey, sizeof(*survey));
++	}
+ 
+-	survey->channel = &sband->channels[idx];
++	survey->channel = &sband->channels[sband_idx];
+ 
+ 	if (ar->rx_channel == survey->channel)
+ 		survey->filled |= SURVEY_INFO_IN_USE;
+@@ -15055,6 +15057,7 @@ static struct ath12k_hw *ath12k_mac_hw_allocate(struct ath12k_hw_group *ag,
+ 
+ 	mutex_init(&ah->hw_mutex);
+ 
++	spin_lock_init(&ah->survey_lock);
+ 	spin_lock_init(&ah->dp_hw.peer_lock);
+ 	INIT_LIST_HEAD(&ah->dp_hw.dp_peers_list);
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index b5e904a55aea..aa70d2a61d38 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -6617,16 +6617,12 @@ static int ath12k_pull_roam_ev(struct ath12k_base *ab, struct sk_buff *skb,
+ 	return 0;
+ }
+ 
+-static int freq_to_idx(struct ath12k *ar, int freq)
++static int freq_to_idx(struct ieee80211_hw *hw, int freq)
+ {
+ 	struct ieee80211_supported_band *sband;
+-	struct ieee80211_hw *hw = ath12k_ar_to_hw(ar);
+ 	int band, ch, idx = 0;
+ 
+ 	for (band = NL80211_BAND_2GHZ; band < NUM_NL80211_BANDS; band++) {
+-		if (!ar->mac.sbands[band].channels)
+-			continue;
+-
+ 		sband = hw->wiphy->bands[band];
+ 		if (!sband)
+ 			continue;
+@@ -7507,6 +7503,7 @@ static void ath12k_chan_info_event(struct ath12k_base *ab, struct sk_buff *skb)
+ {
+ 	struct wmi_chan_info_event ch_info_ev = {};
+ 	struct ath12k *ar;
++	struct ath12k_hw *ah;
+ 	struct survey_info *survey;
+ 	int idx;
+ 	/* HW channel counters frequency value in hertz */
+@@ -7538,6 +7535,7 @@ static void ath12k_chan_info_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 		return;
+ 	}
+ 	spin_lock_bh(&ar->data_lock);
++	ah = ath12k_ar_to_ah(ar);
+ 
+ 	switch (ar->scan.state) {
+ 	case ATH12K_SCAN_IDLE:
+@@ -7549,8 +7547,8 @@ static void ath12k_chan_info_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 		break;
+ 	}
+ 
+-	idx = freq_to_idx(ar, le32_to_cpu(ch_info_ev.freq));
+-	if (idx >= ARRAY_SIZE(ar->survey)) {
++	idx = freq_to_idx(ath12k_ar_to_hw(ar), le32_to_cpu(ch_info_ev.freq));
++	if (idx >= ARRAY_SIZE(ah->survey)) {
+ 		ath12k_warn(ab, "chan info: invalid frequency %d (idx %d out of bounds)\n",
+ 			    ch_info_ev.freq, idx);
+ 		goto exit;
+@@ -7563,14 +7561,16 @@ static void ath12k_chan_info_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 		cc_freq_hz = (le32_to_cpu(ch_info_ev.mac_clk_mhz) * 1000);
+ 
+ 	if (ch_info_ev.cmd_flags == WMI_CHAN_INFO_START_RESP) {
+-		survey = &ar->survey[idx];
+-		memset(survey, 0, sizeof(*survey));
+-		survey->noise = le32_to_cpu(ch_info_ev.noise_floor);
+-		survey->filled = SURVEY_INFO_NOISE_DBM | SURVEY_INFO_TIME |
++		scoped_guard(spinlock_bh, &ah->survey_lock) {
++			survey = &ah->survey[idx];
++			memset(survey, 0, sizeof(*survey));
++			survey->noise = le32_to_cpu(ch_info_ev.noise_floor);
++			survey->filled = SURVEY_INFO_NOISE_DBM | SURVEY_INFO_TIME |
+ 				 SURVEY_INFO_TIME_BUSY;
+-		survey->time = div_u64(le32_to_cpu(ch_info_ev.cycle_count), cc_freq_hz);
+-		survey->time_busy = div_u64(le32_to_cpu(ch_info_ev.rx_clear_count),
+-					    cc_freq_hz);
++			survey->time = div_u64(le32_to_cpu(ch_info_ev.cycle_count), cc_freq_hz);
++			survey->time_busy = div_u64(le32_to_cpu(ch_info_ev.rx_clear_count),
++						    cc_freq_hz);
++		}
+ 	}
+ exit:
+ 	spin_unlock_bh(&ar->data_lock);
+@@ -7583,6 +7583,7 @@ ath12k_pdev_bss_chan_info_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 	struct wmi_pdev_bss_chan_info_event bss_ch_info_ev = {};
+ 	struct survey_info *survey;
+ 	struct ath12k *ar;
++	struct ath12k_hw *ah;
+ 	u32 cc_freq_hz = ab->cc_freq_hz;
+ 	u64 busy, total, tx, rx, rx_bss;
+ 	int idx;
+@@ -7623,15 +7624,18 @@ ath12k_pdev_bss_chan_info_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 		return;
+ 	}
+ 
+-	spin_lock_bh(&ar->data_lock);
+-	idx = freq_to_idx(ar, le32_to_cpu(bss_ch_info_ev.freq));
+-	if (idx >= ARRAY_SIZE(ar->survey)) {
++	ah = ath12k_ar_to_ah(ar);
++
++	guard(spinlock_bh)(&ah->survey_lock);
++
++	idx = freq_to_idx(ath12k_ar_to_hw(ar), le32_to_cpu(bss_ch_info_ev.freq));
++	if (idx >= ARRAY_SIZE(ah->survey)) {
+ 		ath12k_warn(ab, "bss chan info: invalid frequency %d (idx %d out of bounds)\n",
+ 			    bss_ch_info_ev.freq, idx);
+ 		goto exit;
+ 	}
+ 
+-	survey = &ar->survey[idx];
++	survey = &ah->survey[idx];
+ 
+ 	survey->noise     = le32_to_cpu(bss_ch_info_ev.noise_floor);
+ 	survey->time      = div_u64(total, cc_freq_hz);
+@@ -7644,7 +7648,6 @@ ath12k_pdev_bss_chan_info_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 			     SURVEY_INFO_TIME_RX |
+ 			     SURVEY_INFO_TIME_TX);
+ exit:
+-	spin_unlock_bh(&ar->data_lock);
+ 	complete(&ar->bss_survey_done);
+ 
+ 	rcu_read_unlock();
+
+---
+base-commit: 8cd9520d35a6c38db6567e97dd93b1f11f185dc6
+change-id: 20260617-ath12-survey-band-fix-4b5e78579379
+
+Best regards,
+--  
+Matt
 
 
