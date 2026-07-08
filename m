@@ -4,138 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81D8DC43458
-	for <ath12k@archiver.kernel.org>; Wed,  8 Jul 2026 11:59:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E939C44501
+	for <ath12k@archiver.kernel.org>; Wed,  8 Jul 2026 14:30:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TcJSnD72t3bjrI67zk7M3+keJ/xu3I6eDgTZ0AvcGpE=; b=qPT6xVmrLhNDZ0A2YE4WVWPGCo
-	7GXtpwiesTgh/cYKh02vW9RkshPcEm+eCaNClkyYHvB1vRr8KMwZxt/JuTM58kL2wlGbuBunBf3W+
-	XOZq/BRqnLFDdC0dYNWcv+0z9QGt1K7aQOhcjvo5QfqvybKC+J/TNkVS437iYAjeMSLA746SsaM14
-	NFmc5kuXGQfXhVU4shhmZpasHxMjGtuZcji/e2EWGpznzupYE7F6oUEj+PuZefXdJ7pgaqcS1Mjut
-	LvgN4B7/VwHHsPIxasul2aEQU6dWbP3m4VqM9B3OXD/Ow/xfnWF00kAsgwKDtL5VLam7I2+qcFq+8
-	sHDx3zFg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
+	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=FnqwhSH/4ULorTxqpuxed6slqhFzhzD2e2XhRbd1O2g=; b=u0U7xQJz3l2kMgSQSTq3NUTKpI
+	fD5YgDDMcjv1u5rOjbPybnIOiUyIq5e6m2OIwYpyRACPX7aAL8vbhWG/7wjZ334fxr9L6n6K20As5
+	L/xS5MA8eA3l9uqHZNOzUxUZ1fZWQ4V6lwigF/iH/HiZpID80L/uJyFO3QLp2CsN86dcrgjoYH+Tm
+	kgWu8eDbT9f0wPEvdvDr/Q7D0XO8NOvybLyz2lFPSPRlJQm13GEtdcFUL7p9SVy0NFbf4lb350w5t
+	WJXdlXWbQ0Ag5m3EZ/5DwlcCXmeC+neiZa9ZoJlPQxc0UZAQHAG3b/ecCBskwJ28+lUWqidJnIlV5
+	pmG+CMEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whQwZ-0000000H3Im-0vRL;
-	Wed, 08 Jul 2026 11:59:59 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1whTI7-0000000HK5l-44ut;
+	Wed, 08 Jul 2026 14:30:23 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whQwW-0000000H3Hh-3SrK
-	for ath12k@lists.infradead.org;
-	Wed, 08 Jul 2026 11:59:58 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 668BSr3O2672587
-	for <ath12k@lists.infradead.org>; Wed, 8 Jul 2026 11:59:55 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	TcJSnD72t3bjrI67zk7M3+keJ/xu3I6eDgTZ0AvcGpE=; b=LqvCUEx5cZNuz+bM
-	1++j4xfPGr7Ff9+DdMQ6+EoQM08KPMo1uWoC06Sh32SRnqvgrrcjPeh4ZYN2PdKL
-	xMYEmx26D1DepoIlUCr3hQ5NArAA4vGF+HRXiO7Fl0TGpXqPXN2MuDALmPOgTCda
-	0QJQWPvqThMvMcRcWXcHsp7uMl9Y8wuQibRXJ1GtL8l81qr9G85oaIGFCX1Mc82S
-	6fW9PwUCxn+9yd8AEsIg+YBGYDBhkNH5LOgoyqQpb4Bfrr7Jm7AyQ0pboPTn70Is
-	/Q0VED095sS5hmNXQuc1wv84xKAe3qOOmg9n+djGK9DJvS4t/pZyfMWDBeiw2Cc6
-	SQjZ5g==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f9cssta1y-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 08 Jul 2026 11:59:55 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2c804e38c65so15914365ad.2
-        for <ath12k@lists.infradead.org>; Wed, 08 Jul 2026 04:59:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1783511994; x=1784116794; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=TcJSnD72t3bjrI67zk7M3+keJ/xu3I6eDgTZ0AvcGpE=;
-        b=IOFKOoCQMB4d46k9PhqTDtc7sJaO/1xOCXVM4O3ZA+hG2984j/pjwLgpckUaHg6JDI
-         Sa81W8oE9NVzPipiI7iIIickaoJ4ERsQjgqVASL/RBUVaN4yYZJ4k/Tft47eHymCS0cL
-         AIlIJ32TwLYMxZcNZVC7/8UyF5MXATeIzeEEjrw4twAunz90ZTvEUbJkZYN+qilg6FTw
-         t6D8GqJScFg9z+EhamuA8i2JNydgzsBBpuPLPPtGvNfvsox3WQh4a923/FsNxCT9TpXb
-         yZ26md0PLsb7QyLFntYE0dHlAe3hyQRazExA9epxYe40iZlV1PDRTlx5YiYt4DbtDpBG
-         VrvA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783511994; x=1784116794;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=TcJSnD72t3bjrI67zk7M3+keJ/xu3I6eDgTZ0AvcGpE=;
-        b=Vrl/gP4iFbYlKedyBq4d8iF0qKWyPgWibmcWKtFauh1zFykexh7DMH6yZiFt94V56w
-         xAg7DOKfFyvu69cFhLzQnct7jV444T3MOJFJArdJN/9oKG33HrPsMmcdwrZHokXNjtnX
-         Xv20tOlDmnJhxxMAw9eE0adthlv10dCp4Q9/g6y9h8SGOmM2bggMAc7c/VdoFerakv2n
-         KywKjHsdbuwlHMFTQlHD6SR8mPUwHSWYdlH/CHNCJV4N1aJVSEnwGG/dzX01HzWGYTTk
-         DB0vKO4kNqIVi4n4RISZLRq6dHeDGDhg4/ztBNphuA1R3EyGAlWDBmBmi7iq+E/7mxfQ
-         UN3Q==
-X-Forwarded-Encrypted: i=1; AHgh+RqW0285v9JHpx/Zp6ENELUwZ8UQr3bQCYvjbkQCloqPJxi2Qweub8eteONNYvgNAPQeQWu35E8=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywku/aDKiiBnd5IoGGrVaSxYjDI30Sxrij32vMm0fGIGfnk917f
-	Y8T4TZKi6EUqaEKNTeq3ywYS4YtOZAhweCYOQQQqJtJPpUds2TMCBn3/BpHUEJ5/HOhbTsVGu74
-	YGJPb4R7H6KoaAJayvGM92VNoxUXjMXOjS1yVqtGUC0MFTosqo6OjmdLnrnnD0Ma8
-X-Gm-Gg: AfdE7clSVG6gB2U/iLoAxPlf21dJkoZE1B9lOJ1BD22SfPSjJ1TByAqZCszSqt6jS6k
-	KebHF307yd9MQ4RAh+25jap5L51pegYzGIVCNTzwh8J8S89aMAdQOCy6FQ1x4JiGlmd8TvvRC1J
-	cpOnTEofY+X/2DD78NJ7WCS/muXk4ONK3sE7E0PE3cH2tvTRAw/T5oIE9kZscMxp0VJQtIIqpBw
-	rnGVcnLMgy8hoT1WY5OgaWBQ/5dsYLFAEWZo1GRpMFV+I8aNzkIZbJawSm8NoIukP3PySdt1+VN
-	n76LtBBhcdfwODHcZ9jpMMGtoNE6D9Wh7paHvq5UvuXIrJXJHkqoPHzER+cWb4pyFyQ4YL2yL6J
-	tBFlxNtv9o/qx3SR/ioZJuKVzyBiHZjbXwmebuHwQhLVmUq/hm5pOfHU04nZhag==
-X-Received: by 2002:a17:902:fda5:b0:2c9:cb1b:64d6 with SMTP id d9443c01a7336-2ccea3a8001mr21827855ad.19.1783511994557;
-        Wed, 08 Jul 2026 04:59:54 -0700 (PDT)
-X-Received: by 2002:a17:902:fda5:b0:2c9:cb1b:64d6 with SMTP id d9443c01a7336-2ccea3a8001mr21827515ad.19.1783511994089;
-        Wed, 08 Jul 2026 04:59:54 -0700 (PDT)
-Received: from [10.168.91.130] ([223.185.219.139])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ccc9bdb7e9sm27836995ad.10.2026.07.08.04.59.51
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 08 Jul 2026 04:59:53 -0700 (PDT)
-Message-ID: <9bea0cef-e6c5-4810-8b79-f90ac731906d@oss.qualcomm.com>
-Date: Wed, 8 Jul 2026 17:29:49 +0530
+	id 1whTI5-0000000HK31-3ZVX;
+	Wed, 08 Jul 2026 14:30:21 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 4E1E443F4D;
+	Wed,  8 Jul 2026 14:30:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 24C05C2BCFA;
+	Wed,  8 Jul 2026 14:30:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1783521021;
+	bh=4hVqwbuZIm/HNP5Bk8JYvtEHijklI0/2Q3n+iiwAi48=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=q+srIZaLXr0j/rgkL6db46q04rppUtUhKz3yzCbQtF3G+icwe2EqU4nWDVJV+eLO/
+	 XfplMDlTJgndWeTqUsmg2dFr5qSa8lbyUzeBdd2HQiIkDn3RUD54gjcbIzxoZGWDVn
+	 vuJCRnE0Pc6xX9o34YWfWOE2LVKo08UyN0kwXgpT3g7akD56D5R6lYd5UBdYS1Oxe1
+	 HyE0ysoLtsj866CntWx9CgxAXr2k9lRrThb+HaErAG/1BSrE0JP5Yoe0bdHhRM7JmA
+	 iRgly67/+EmK/szSB0g3lN0eSVU1LrtZX8/8m7ww08OuqhiK/ooMJSep6lK7U5i6jp
+	 Dm8Sz9Hblp++w==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0A06FC44506;
+	Wed,  8 Jul 2026 14:30:21 +0000 (UTC)
+From: Manivannan Sadhasivam <mani@kernel.org>
+Date: Wed, 08 Jul 2026 16:30:17 +0200
+Subject: [PATCH v3 3/8] PCI/ASPM: Transition the device to D0 (if required)
+ when enabling ASPM link states
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: release QMI handle on late init failures
-To: Guangshuo Li <lgs201920130244@gmail.com>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-References: <20260708100924.744386-1-lgs201920130244@gmail.com>
-Content-Language: en-US
-From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <20260708100924.744386-1-lgs201920130244@gmail.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=EtziaycA c=1 sm=1 tr=0 ts=6a4e3bbb cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=ziM92C7oNnnlFgKtw0sKeA==:17
- a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8 a=JK7btWPRm8zbeGui-XMA:9 a=QEXdDO2ut3YA:10
- a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzA4MDExNiBTYWx0ZWRfX/tS3YesJ92OM
- Gi3IO0qpPzo7YuncIe/NSdxbUJq05G0V7qEnoK3dbF5wcLix3v0phxtjDPDRMnvb/x28kKVxmNK
- 7jyHyLCv0aul1ZsnUEwTsMKLBW+FyoX2vhDU/UUzANUVv5dSUOOFr+MvJ4jePcDUdyGuYSdD7iH
- 8vUq262kw48fbn6XMo98fuRfklbOpsrzlp0CDlI7KeGMaJc8IpyhRlBNo5E1Ehf6myFX5aBSA9H
- lhymOZCD0e4+SCJczk/5VIYvfj4My/RCgHkfz8kqM0E0ujWA88i2bHjFaxaAvLyD4PmjzJ2T7zN
- s7NSytERWuRiPgMX3gHQzWJfNd9ujr9Wt55qQyndlTUSKgwJ0DoF3ZXy8aKzq7AbZtQuL1AmaOh
- IqJC3esDC1WCHJN3rhByIy8Vte48fJswNN6XiSPJQGDzhDbp0g5of60XPruG6VkaOF2P1vfOIqT
- pg2oAHA/1JhWP1YSa/g==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzA4MDExNiBTYWx0ZWRfX4OV7SLcvRIAN
- +lgZd6+I+AvltAWZ4epz9TRHfXhawxrCrrz3mzGRzecyY2FoTOw7J4eLWqz4iVtet7NwTTyygyI
- jk1ZRNEv/JySu0TjGuBet5qkvvRtDuI=
-X-Proofpoint-GUID: cY_tqZsEmARkEwPv4_WFvfMLSJ0_d0Kl
-X-Proofpoint-ORIG-GUID: cY_tqZsEmARkEwPv4_WFvfMLSJ0_d0Kl
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-07-08_01,2026-07-08_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 lowpriorityscore=0 malwarescore=0 phishscore=0
- priorityscore=1501 clxscore=1015 suspectscore=0 bulkscore=0 impostorscore=0
- spamscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2607080116
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260708_045957_005581_218C5BE9 
-X-CRM114-Status: GOOD (  15.31  )
+Message-Id: <20260708-pci-aspm-fix-v3-3-6bd72451746e@kernel.org>
+References: <20260708-pci-aspm-fix-v3-0-6bd72451746e@kernel.org>
+In-Reply-To: <20260708-pci-aspm-fix-v3-0-6bd72451746e@kernel.org>
+To: Bjorn Helgaas <bhelgaas@google.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Nirmal Patel <nirmal.patel@linux.intel.com>, 
+ Jonathan Derrick <jonathan.derrick@linux.dev>, 
+ Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-msm@vger.kernel.org, linux-wireless@vger.kernel.org, 
+ ath12k@lists.infradead.org, ath11k@lists.infradead.org, 
+ ath10k@lists.infradead.org, 
+ Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, 
+ Qiang Yu <qiang.yu@oss.qualcomm.com>, mani@kernel.org, 
+ =?utf-8?q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=4530; i=mani@kernel.org;
+ h=from:subject:message-id;
+ bh=eN8FiCdGdbeUI39wBlUZELPWwOUG9j0iJUbJK/xZFBw=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBqTl74efK/Ai2x0uHQ4mqtQkU8ooqxnXudiFrXg
+ XsrnmsIH8uJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCak5e+AAKCRBVnxHm/pHO
+ 9YxaCACO28V3wROkvPTSmhskvI+UjcCjrMS1wY2edQf4bTICp+480nDgV3gTbJpRm4kJttXNlwO
+ bC6tgagWp9VUhLb5CVAA9u9cAYf4bH8Emjb7/iDDZTwH8pxBiJ9oDa0BJmRGTXAts0oapdpF1vk
+ 44Qibcc1ZpIpfVVwzENLF02X4ZjrO/CrTniD+P4LUkA0t1L+W4d9PW0icrymu0nktqayckHlJ8x
+ mabEoMNDTVYcoymRyuakmV8OqwgptaadyBx+5C1FMUolVxyE+nhsa1sBAtcZwqM4bc0jnGkxVEb
+ ApsGRWy9IIvgVNWTzqDA5er5LV3U891/iSpdxcuh+yrxgqcz
+X-Developer-Key: i=mani@kernel.org; a=openpgp;
+ fpr=C668AEC3C3188E4C611465E7488550E901166008
+X-Endpoint-Received: by B4 Relay for mani@kernel.org/default with
+ auth_id=787
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,31 +97,122 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+
+Per PCIe spec r6.0, sec 5.5.4:
+
+"If setting either or both of the enable bits for PCI-PM L1 PM Substates,
+both ports must be configured as described in this section while in D0."
+
+Currently, the callers of pci_enable_link_state_locked() (vmd, pcie-qcom)
+transition the device to D0 themselves before enabling the link state. But
+this is easy to get wrong and has to be duplicated by every caller.
+
+Move the D0 transition into the shared __pci_enable_link_state() helper so
+that all three APIs pci_enable_link_state(), pci_enable_link_state_locked()
+and pci_force_enable_link_state() perform it, and only when the PCI-PM L1
+PM Substates are getting enabled.
+
+Now that the helper handles the transition, drop the redundant D0 transition
+from the vmd and pcie-qcom callers.
+
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+---
+ drivers/pci/controller/dwc/pcie-qcom.c |  5 -----
+ drivers/pci/controller/vmd.c           |  5 -----
+ drivers/pci/pcie/aspm.c                | 23 +++++++++++++++++------
+ 3 files changed, 17 insertions(+), 16 deletions(-)
+
+diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+index d8eb52857f69..45f4caeb0814 100644
+--- a/drivers/pci/controller/dwc/pcie-qcom.c
++++ b/drivers/pci/controller/dwc/pcie-qcom.c
+@@ -1085,11 +1085,6 @@ static int qcom_pcie_post_init_2_7_0(struct qcom_pcie *pcie)
+ 
+ static int qcom_pcie_enable_aspm(struct pci_dev *pdev, void *userdata)
+ {
+-	/*
+-	 * Downstream devices need to be in D0 state before enabling PCI PM
+-	 * substates.
+-	 */
+-	pci_set_power_state_locked(pdev, PCI_D0);
+ 	pci_enable_link_state_locked(pdev, PCIE_LINK_STATE_ALL);
+ 
+ 	return 0;
+diff --git a/drivers/pci/controller/vmd.c b/drivers/pci/controller/vmd.c
+index d4ae250d4bc6..20597d2cf66e 100644
+--- a/drivers/pci/controller/vmd.c
++++ b/drivers/pci/controller/vmd.c
+@@ -762,11 +762,6 @@ static int vmd_pm_enable_quirk(struct pci_dev *pdev, void *userdata)
+ 	pci_info(pdev, "VMD: Default LTR value set by driver\n");
+ 
+ out_state_change:
+-	/*
+-	 * Ensure devices are in D0 before enabling PCI-PM L1 PM Substates, per
+-	 * PCIe r6.0, sec 5.5.4.
+-	 */
+-	pci_set_power_state_locked(pdev, PCI_D0);
+ 	pci_enable_link_state_locked(pdev, PCIE_LINK_STATE_ALL);
+ 	return 0;
+ }
+diff --git a/drivers/pci/pcie/aspm.c b/drivers/pci/pcie/aspm.c
+index c04fb71de91c..6d6862fd2ebb 100644
+--- a/drivers/pci/pcie/aspm.c
++++ b/drivers/pci/pcie/aspm.c
+@@ -1524,6 +1524,17 @@ static int __pci_enable_link_state(struct pci_dev *pdev, int state, bool locked,
+ 		return -EPERM;
+ 	}
+ 
++	/*
++	 * Ensure the device is in D0 before enabling PCI-PM L1 PM Substates, per
++	 * PCIe r6.0, sec 5.5.4.
++	 */
++	if (state & PCIE_LINK_STATE_L1_SS_PCIPM) {
++		if (locked)
++			pci_set_power_state_locked(pdev, PCI_D0);
++		else
++			pci_set_power_state(pdev, PCI_D0);
++	}
++
+ 	if (!locked)
+ 		down_read(&pci_bus_sem);
+ 	mutex_lock(&aspm_lock);
+@@ -1550,8 +1561,8 @@ static int __pci_enable_link_state(struct pci_dev *pdev, int state, bool locked,
+  * touch the LNKCTL register. Also note that this does not enable states
+  * disabled by pci_disable_link_state(). Return 0 or a negative errno.
+  *
+- * Note: Ensure devices are in D0 before enabling PCI-PM L1 PM Substates, per
+- * PCIe r6.0, sec 5.5.4.
++ * Note: The device will be transitioned to D0 state if the PCI-PM L1 Substates
++ * are getting enabled.
+  *
+  * @pdev: PCI device
+  * @state: Mask of ASPM link states to enable
+@@ -1569,8 +1580,8 @@ EXPORT_SYMBOL(pci_enable_link_state);
+  * can't touch the LNKCTL register. Also note that this does not enable states
+  * disabled by pci_disable_link_state(). Return 0 or a negative errno.
+  *
+- * Note: Ensure devices are in D0 before enabling PCI-PM L1 PM Substates, per
+- * PCIe r6.0, sec 5.5.4.
++ * Note: The device will be transitioned to D0 state if the PCI-PM L1 Substates
++ * are getting enabled.
+  *
+  * @pdev: PCI device
+  * @state: Mask of ASPM link states to enable
+@@ -1600,8 +1611,8 @@ EXPORT_SYMBOL(pci_enable_link_state_locked);
+  * Note that if the BIOS didn't grant ASPM control to the OS, this does nothing
+  * because we can't touch the LNKCTL register.
+  *
+- * Note: Ensure devices are in D0 before enabling PCI-PM L1 PM Substates, per
+- * PCIe r6.0, sec 5.5.4.
++ * Note: The device will be transitioned to D0 state if the PCI-PM L1 Substates
++ * are getting enabled.
+  *
+  * Return: 0 on success, a negative errno otherwise.
+  */
+
+-- 
+2.43.0
 
 
-On 7/8/2026 3:39 PM, Guangshuo Li wrote:
-> The change referenced by the Fixes tag makes hardware group creation
-> skip the device whose ath12k_core_soc_create() failed, and only destroys
-> devices that were created successfully before it.
-> 
-> That avoids releasing an uninitialized QMI handle when qmi_handle_init()
-> fails, but it also means that ath12k_qmi_init_service() must clean up any
-> resources it has already acquired before returning an error.
-> 
-> qmi_handle_init() can succeed before later initialization steps fail. If
-> the QMI event workqueue allocation fails, or qmi_add_lookup() fails, the
-> function returns an error without releasing the already initialized QMI
-> handle. Since the failed device is now skipped by the hardware group
-> rollback path, that handle is leaked.
-> 
-> Release the QMI handle on those late failure paths and clear ab->qmi.ab
-> so the failed device is left in the same state as the qmi_handle_init()
-> failure path.
-> 
-> Fixes: 088a099690e4 ("wifi: ath12k: fix error handling in creating hardware group")
-> Signed-off-by: Guangshuo Li <lgs201920130244@gmail.com>
-
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-
-btw, similar leak may be there in ath11k also, care to fix that as well?
 
