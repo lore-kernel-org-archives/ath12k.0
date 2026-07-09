@@ -4,138 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30F4BC44507
-	for <ath12k@archiver.kernel.org>; Thu,  9 Jul 2026 14:50:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 615C1C43458
+	for <ath12k@archiver.kernel.org>; Thu,  9 Jul 2026 19:32:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zH4q7BWi2hgwClET7u+00rOznpP+Ykf1PL9gpdCfoHs=; b=l3Cs5lTjHtMEV7Y9HL3V7OHY92
-	8BCAFIRjCWXX6T7/+vr/tHfo/OxYEXS3bGvLxu8iz6m6W95jBLWj0jXjlKFhvF49HSDBCLbACPmz+
-	BXBA+I6fiTNec4aIL7AeXT9rU5MAZErEqKXCRE+cE5WUlFL6OnpPIdidXt2EHLcPvOLB6S+vjH5u1
-	GPR7zlNzegiU+gzikroGLVr6/LCDzk9WWOgUJqDV3yaql2BJg8mLstrgjoPkElQaOI5yXN6ENp5uS
-	0yG8hd3W6nxl1cNZNHL3I+5WQh8aneLgmfS+0U6ioZg8hRWeM36KRj1mwZPP7T5MVto0EsUCqAOlz
-	9JugU4+w==;
+	bh=kAnk8wurZx5c5OpGGojggK9/9lXOvy6JHQHST6N14hk=; b=e8d2aAi7yUmmZGq8yrF42v3LSC
+	D2KzVrzUEvaJLzNWAD3pbI+FsA9JBB3T+V2QEkjnClWnavir8rDFCvMDjdWlXU1nHROncMf+GlkJl
+	CgAPukeNvf9Kk5Rfy5rjsA2Q4CxVMc3NyCvWPd9pFBPyQ4Ko3gk2eyS48qFjrCXeI+ypN3q+r7cMu
+	oZAqp5I51sJCEFlJ+8uWtbFUokQX3TaFcr86rT93myM4A5YChDfKidV0XwaLkfZy2zYXr4nZt61cF
+	/E452BQn7XVR6jRaa4Hp12dyBNA1xJO7e0tz2eMwgLNKGCnTnQYKhq0yGtwCv0SGrotZWJpCVT+NA
+	y5Fr2IsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whq4d-00000002pe4-3uxm;
-	Thu, 09 Jul 2026 14:49:59 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1whuUN-00000003TPc-0DXy;
+	Thu, 09 Jul 2026 19:32:51 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whq4b-00000002pbe-0sLN
+	id 1whuUL-00000003TOt-11vR
 	for ath12k@lists.infradead.org;
-	Thu, 09 Jul 2026 14:49:59 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 669Dw30Q1972334
-	for <ath12k@lists.infradead.org>; Thu, 9 Jul 2026 14:49:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	zH4q7BWi2hgwClET7u+00rOznpP+Ykf1PL9gpdCfoHs=; b=H74RRCgdHLu2YCyC
-	DPR0TxCBM43IdK03QWzGeNG8SziPIBWoNYgwWq1WJNV5k4+xPl5S6kQ15LEjGYhb
-	fECYv/kQWhU83PCaXttlWPeiFZEbhUs8yVTtknVJR4ASUh/RsH905Yken/P1dRD1
-	ba4gMbsJvzwOUM/+pRWNndwGl6UWuaUEFmRrq7o0Isq5cUPqh0GbBqtqMLVV1At3
-	zSF+oU3DyE8435JKNu2UErzOsSeGboKJQjMjUMUZGIa7fDdNYxCilI5Y5g409vQg
-	ngg7/OjMzyVMasWGCbyJUWUfH9LR4IFxJxzdeG2DZNwJlb5v7mE5stv3wfgBYlVk
-	ua83lw==
-Received: from mail-yw1-f199.google.com (mail-yw1-f199.google.com [209.85.128.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f9urvv9ft-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 09 Jul 2026 14:49:56 +0000 (GMT)
-Received: by mail-yw1-f199.google.com with SMTP id 00721157ae682-7f5b54da461so16710477b3.3
-        for <ath12k@lists.infradead.org>; Thu, 09 Jul 2026 07:49:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1783608596; x=1784213396; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=zH4q7BWi2hgwClET7u+00rOznpP+Ykf1PL9gpdCfoHs=;
-        b=SLGwAMxRyzjLnrxeWBv+g3S+n9GbLkNTtMSfRVwXHc5+pwsYq7ufzfHub4klSI/VAl
-         /wXi36OA4ZcXo0pD2y0VN8rqEjU4WvZormLZdVfutR+8v/8KiigKFDFU9S42QJYipkO4
-         dWNVXmMwpxVo9BM4T8SwymqBMdJZfkX2UiO9gh1v8PCJWMxAki+mQ6OEFIdumPIWr/XF
-         ndWlUfGshXAHFBnnf0kYKDD3/aXZ8V7kT64VrkFrdeFs3ISUk6B2X0fw97fwUbzTxbwK
-         f4IwfdI0Ek2oDcGTV0FHvlMCl4Rix+NHl34YffWu2a/cxbp9HwNL319X1goO1TL2llHA
-         3LdQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783608596; x=1784213396;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=zH4q7BWi2hgwClET7u+00rOznpP+Ykf1PL9gpdCfoHs=;
-        b=Ku0HziiUiO0UK3zWIwQdEf4WJAbOW/djhUC1sJx2ZSFcdLfKmUzM7tD9MmMlOvxUMX
-         x9k7qQv+V7LO4G0cH5o/oOa5I+DofE0RbGQ+FF4qmPkkHdHvpf7DwZGj2CV3yrFVKnXw
-         0MAyfF7OeL2e9GWS4VaYrpi5pEvyZhdumTDdg9UptajI2QneTJ9L2vqfdncEK2iCmndC
-         QQ0M9Ss5tqLWT+8aelrTJNsIqw0Ub0Ou76v9N9/o1ip3u65ryZX8REFYQHWdBOPSaloG
-         zP+7C6SI1bYw/Tb4rkwLj/rt1VVIxf9yMPiqou9PHdpM8xFS2GaFA+RsEq+rFHOu3+BN
-         LV/A==
-X-Forwarded-Encrypted: i=1; AHgh+Rr/e/3548ZBKHTTg+/BxedXht8iuSRln4umG+gb1JvZe41kjYiSPmGHsytHY6prXwoucWwSodc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw+DHgCENk9yUdut1rGQt4FnLt+DwUuRos3uNLb3pGZt4cFLDTq
-	xs+XqWO5RgVYxlvqh0Yr0jNTBe+gTtye5FFTMzTED8vM78koV9uLfLmH7zhC3tDCrZXqaLx4ysT
-	OyNkk7Sv0b54mo0JiV2uUm902exL7Q9irtur4/qp1vYNLZNvt5094RKQNCPt+KdwC
-X-Gm-Gg: AfdE7ckzopYnIERSHNJToKrKCDHOMp6KIvaFrNu+A8ceJzcs8XREUzbQqqC3NCSDush
-	cwRft5MO8jqmfvR/+1pP+ToodFO6GcshCeVPs2ZMj/WdUyQD/sKHTRKpA5Rwqku9kq8jC4tmxwo
-	KktBNEQP5ClPQlPahzTFD+GwRberM27YSkbR77Zr8gj6tCAYhQ7DpbR0K37xc1rYnvlklBea7Sy
-	+XfHy8lc+exdcdt8johMVa8ojT24aDinxWIhqlHomH0jlt8Pu5qoHZyh3Hn4Lz5XsXCy8u1fWih
-	7XcwmzqSaLYHTWyZN+oswWhbxYzRAuFfv/Z97uYxl80b/jFR1nUEZLEHfwAysogitVh+ZDoHTDW
-	tI4uwFB2QVVPawMYJiensZOseNC8NhkzIqnaGEeMN+GugCBtonTO70iUhNcgk41ugnQ==
-X-Received: by 2002:a05:690c:3707:b0:80d:d0ab:6d2b with SMTP id 00721157ae682-81dc0be096emr63289377b3.53.1783608595753;
-        Thu, 09 Jul 2026 07:49:55 -0700 (PDT)
-X-Received: by 2002:a05:690c:3707:b0:80d:d0ab:6d2b with SMTP id 00721157ae682-81dc0be096emr63289107b3.53.1783608595327;
-        Thu, 09 Jul 2026 07:49:55 -0700 (PDT)
-Received: from hu-jjohnson-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 00721157ae682-81e7795988dsm4989277b3.26.2026.07.09.07.49.53
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 09 Jul 2026 07:49:54 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: jjohnson@kernel.org,
-        Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        ath11k@lists.infradead.org, linux-kernel@vger.kernel.org,
-        mani@kernel.org, Alex Williamson <alex@shazbot.org>
-In-Reply-To: <20260623141649.41087-1-manivannan.sadhasivam@oss.qualcomm.com>
-References: <20260623141649.41087-1-manivannan.sadhasivam@oss.qualcomm.com>
-Subject: Re: [PATCH 1/2] wifi: ath11k: Flush the posted write after writing
- to PCIE_SOC_GLOBAL_RESET
-Message-Id: <178360859334.1031194.3081866596289507374.b4-ty@oss.qualcomm.com>
-Date: Thu, 09 Jul 2026 07:49:53 -0700
+	Thu, 09 Jul 2026 19:32:49 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 640C4600C3;
+	Thu,  9 Jul 2026 19:32:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 244A21F000E9;
+	Thu,  9 Jul 2026 19:32:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1783625568;
+	bh=kAnk8wurZx5c5OpGGojggK9/9lXOvy6JHQHST6N14hk=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=auzMKv1KlscxwXNmEZXTOFba3AzC1zvV5+KdLqK0W5IDP55KMnvUDomWlmIqurbJq
+	 KvnBdQZTeHn6OnilAVzhRDXElp2+lyOAqSt8AzaPojSa6/oownhsZAeRZ66qSpL/oZ
+	 QPffV5w4Rg1Ou9qpCF7MsXqreDvfczmOByHdhc/WAsKhMv9fb0+4/LyVRMjvolSXnM
+	 gyP9Q5qvjQcq8TuiOCwfjhGGvo1RbIJw+Ef2lv9z7fc6OWQJoR7zsX7App24WvM+x2
+	 0Sx8wwnFRJlrbavFkDmXz0Sm0yUuWQncw1ncAwrPth0JOYmqq7jEyRTmUKtvOrGDpc
+	 uBdy+bMWI8DJw==
+From: Bjorn Andersson <andersson@kernel.org>
+To: konradybcio@kernel.org,
+	Sumit Garg <sumit.garg@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org,
+	linux-media@vger.kernel.org,
+	netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-remoteproc@vger.kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	robin.clark@oss.qualcomm.com,
+	sean@poorly.run,
+	akhilpo@oss.qualcomm.com,
+	lumag@kernel.org,
+	abhinav.kumar@linux.dev,
+	jesszhan0024@gmail.com,
+	marijn.suijten@somainline.org,
+	airlied@gmail.com,
+	simona@ffwll.ch,
+	vikash.garodia@oss.qualcomm.com,
+	bod@kernel.org,
+	mchehab@kernel.org,
+	elder@kernel.org,
+	andrew+netdev@lunn.ch,
+	davem@davemloft.net,
+	edumazet@google.com,
+	kuba@kernel.org,
+	pabeni@redhat.com,
+	jjohnson@kernel.org,
+	mathieu.poirier@linaro.org,
+	trilokkumar.soni@oss.qualcomm.com,
+	mukesh.ojha@oss.qualcomm.com,
+	pavan.kondeti@oss.qualcomm.com,
+	jorge.ramirez@oss.qualcomm.com,
+	tonyh@qti.qualcomm.com,
+	vignesh.viswanathan@oss.qualcomm.com,
+	srinivas.kandagatla@oss.qualcomm.com,
+	amirreza.zarrabi@oss.qualcomm.com,
+	jenswi@kernel.org,
+	op-tee@lists.trustedfirmware.org,
+	apurupa@qti.qualcomm.com,
+	skare@qti.qualcomm.com,
+	linux-kernel@vger.kernel.org,
+	Sumit Garg <sumit.garg@oss.qualcomm.com>
+Subject: Re: (subset) [PATCH v9 00/14] firmware: qcom: Add OP-TEE PAS service support
+Date: Thu,  9 Jul 2026 14:32:39 -0500
+Message-ID: <178362521364.2422497.1305957434056184382.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260702115835.167602-1-sumit.garg@kernel.org>
+References: <20260702115835.167602-1-sumit.garg@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.3
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzA5MDE0NiBTYWx0ZWRfX3bNSCOLGvge+
- 6xSlFuJPInbHmFFSCxYoXchQiDWxJ0UtdUDait3K9F9buvxt4WQBuKRfsj74z61lPhRyNWuUX/z
- oqUsAQgxWuvzhSvm6LkyVTc8pr0mH9c=
-X-Proofpoint-GUID: 0LhJFU9ptHqw8XiLdt7ag9BOM7H6E4Id
-X-Proofpoint-ORIG-GUID: 0LhJFU9ptHqw8XiLdt7ag9BOM7H6E4Id
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzA5MDE0NiBTYWx0ZWRfX+SUjN2hU8hLc
- iKjLf3pa8KTiGXwWL3JHFhKirVpHEpNrx/UaZeLKB2Jf9RLsg7ilGUgXMNyMxLV6Ala8DsvjffN
- nRexX0kzFYdTpHwf0HqI8rFN2dYjS/V/09TVRnnJZ3y025XH/bQYe/DtoGfDYZUkD76NnQJv6Mm
- PVW+m6SUjUA98gUINdZBEES3r9ej8/sfi8bShkjSIu99na0aTD1fSG3A/Ifp9ekoARbtdnox1y+
- +vwffOwlvApzs864IUKseJNfYExAd/ZALWa6TrSrItLk/u3Xv7e3UxzvL3dYE3ccOrKwMeIn6RH
- 9lruPakKHrmK+6FN+CaW+0h+LuBH93TWQsIDaxoVTo34dMvQFJKxQ3cGqvCAiFchjJ+bNx65wAh
- xLkGmf1Q2a+7+qeayst6rrHNOafx0iDbiPQDJ/chG5U7VhUAeYsJbc84EqpREkFUkqN9xFNBPLv
- r6b8bnI+/4w6cddTipQ==
-X-Authority-Analysis: v=2.4 cv=H43rBeYi c=1 sm=1 tr=0 ts=6a4fb514 cx=c_pps
- a=72HoHk1woDtn7btP4rdmlg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=EUspDBNiAAAA:8 a=fjTVS2QutaehiSyZ5pEA:9 a=QEXdDO2ut3YA:10
- a=kA6IBgd4cpdPkAWqgNAz:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-07-09_03,2026-07-09_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 impostorscore=0 adultscore=0 spamscore=0 phishscore=0
- bulkscore=0 priorityscore=1501 malwarescore=0 lowpriorityscore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2607090146
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260709_074957_365959_4438B462 
-X-CRM114-Status: GOOD (  10.40  )
+Content-Transfer-Encoding: 8bit
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,25 +115,41 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 23 Jun 2026 16:16:48 +0200, Manivannan Sadhasivam wrote:
-> ath11k_pci_soc_global_reset() tries to reset the device by writing to the
-> PCIE_SOC_GLOBAL_RESET register. But it doesn't do a read-back to ensure
-> that the write gets flushed to the device before the delay.
+On Thu, 02 Jul 2026 17:28:16 +0530, Sumit Garg wrote:
+> From: Sumit Garg <sumit.garg@oss.qualcomm.com>
 > 
-> This may lead to the delay on the host to be insufficient, if the posted
-> write doesn't reach the device before the delay.
+> Qcom platforms has the legacy of using non-standard SCM calls
+> splintered over the various kernel drivers. These SCM calls aren't
+> compliant with the standard SMC calling conventions which is a
+> prerequisite to enable migration to the FF-A specifications from Arm.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/2] wifi: ath11k: Flush the posted write after writing to PCIE_SOC_GLOBAL_RESET
-      commit: 0fe8010fc5b147607fc19ba010ba469afc95f35f
-[2/2] wifi: ath12k: Flush the posted write after writing to PCIE_SOC_GLOBAL_RESET
-      commit: 55f3aa06951cac78b0206bde961c8cf11929a27a
+[01/14] firmware: qcom: Add a generic PAS service
+        commit: 08314e7c2c38b9ae6a5e01c58ed10a950859404d
+[02/14] firmware: qcom_scm: Migrate to generic PAS service
+        commit: 5c1a2975d23c51c01aca51945d0f10a4ee4c9020
+[03/14] firmware: qcom: Add a PAS TEE service
+        commit: b6f7978da0c4d26fe465aa6634f5a0b48f900de0
+[14/14] MAINTAINERS: Add maintainer entry for Qualcomm PAS TZ service
+        commit: 6701259025d49139131a0eb2257659a066dcca22
+
+This is available as an immutable branch, for other subsystems to pull at:
+  https://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git 20260702115835.167602-2-sumit.garg@kernel.org
+
+
+[04/14] remoteproc: qcom_q6v5_pas: Switch over to generic PAS TZ APIs
+        commit: 254030af0d81b12b7624d9ce85c6bdd3171629c6
+[05/14] remoteproc: qcom_q6v5_mss: Switch to generic PAS TZ APIs
+        commit: f3b1357673ddb37ae8b9a8fe44df73cbd2a519c5
+[06/14] remoteproc: qcom_wcnss: Switch to generic PAS TZ APIs
+        commit: ea3b5245f5deba916320b32a8e6510a74c034c17
+[07/14] remoteproc: qcom: Select QCOM_PAS generic service
+        commit: c4383254ac7a529736577e304176a10371c2ee0b
 
 Best regards,
 -- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-
+Bjorn Andersson <andersson@kernel.org>
 
