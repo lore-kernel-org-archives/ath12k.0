@@ -4,76 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9428BC43458
-	for <ath12k@archiver.kernel.org>; Fri, 10 Jul 2026 15:55:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21A92C43458
+	for <ath12k@archiver.kernel.org>; Fri, 10 Jul 2026 18:29:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=REFOK+cOhS8y8vRAa+RbtY6r4AJSAQeyMeqjIcisduI=; b=GvcEfSBiZ6b48GK5ttBMJJnVWQ
-	Y3FnxRuyKPgGqpxb4tjmSDMIZKNf4YPN7g4pombmq/kSUlsyuYfPxrRQ5apBI/8+NgZ6y0x2WHMRC
-	0axTVjwix1EF/CyEtwVnHdUu4ipvrKRgzLnjMYVr1+fNq+naohVkJcEEmV52q6Z72LpJ0qSTZmcG4
-	zPc+2ulhlXRv9/+yR/DmWgSu9XCnfkFwz/u2fHJlUSaZFkJZZ8uydy7K2k0B+5kJ1C3fevJByPWN0
-	QRUxJkh5ORPSV++WZuNrW5j4sYbBqgnSWojgOTMbyV43jfvlMEKlzvdA8SE8BKzNeZRhq434BuHBz
-	PYjFaLew==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=ke7m2kdSYBWesqd15NM3ZfZV09k+zmhUKCVa+nNpvWo=; b=5COencF/HW6U/sTK81p7Hrceid
+	9RD/VcMeyIsQbbJqGFmJLfZAYxNsdS/BglBdYNrdhqQF3IK9njhU2XVeKpscj8X5BBCsTJxN3TEG0
+	5wG2S/1SbovU/MkEJ37chTCUi/Xqn9GDezgF0pqG51/UaxSK8OEgIvuwMvG9m4ygugWcv/S5YXvHI
+	/QMnL1XmiTrEuVqp/JT0lER3nBF1qIXWcRvojZ5GzGqpO3ZFta1miQkLx2LQsEYQBBi4uJBICumRd
+	x3Age+v5iQ1cmKrSfveFLyA5LX8m6MyWy99xAcsODz9PoWuJfiK7QjkWZIOBumtW5+u/xS8latsXT
+	OEfO0qKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiDZK-00000005DpD-1Tvq;
-	Fri, 10 Jul 2026 15:55:14 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1wiFyD-00000005VaE-3dY5;
+	Fri, 10 Jul 2026 18:29:05 +0000
+Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiDZH-00000005Dmm-3ti1
+	id 1wiFyB-00000005VZi-1hrG
 	for ath12k@lists.infradead.org;
-	Fri, 10 Jul 2026 15:55:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1783698911;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=REFOK+cOhS8y8vRAa+RbtY6r4AJSAQeyMeqjIcisduI=;
-	b=R4DWmDIOJIFjIsfreCEuiMR/H3Ld5mWYITG+BIZU3AQrqYFkAeb2Hcg8OLK8Ckoo4hu8gX
-	Vom5VF6sOG8PzXU2GvF4vv5fdn+PP5Dx+Pvl0JLBhxOppYGJoiLsYWi34J8N6SNFqYLuZv
-	fxtuZFWdpGN0+R/tzEIdLZeYb1QzB1M=
-Received: from mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
- relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-548-qHcaYnJAMv6p54d2-a3U0Q-1; Fri,
- 10 Jul 2026 11:55:09 -0400
-X-MC-Unique: qHcaYnJAMv6p54d2-a3U0Q-1
-X-Mimecast-MFC-AGG-ID: qHcaYnJAMv6p54d2-a3U0Q_1783698908
-Received: from mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.93])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id E81A81955DD1;
-	Fri, 10 Jul 2026 15:55:07 +0000 (UTC)
-Received: from fedora.redhat.com (unknown [10.44.48.25])
-	by mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 5DC791800480;
-	Fri, 10 Jul 2026 15:55:05 +0000 (UTC)
-From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-To: jjohnson@kernel.org
-Cc: ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Subject: [PATCH 2/2] wifi: ath12k: implement custom wake_tx_queue with flow control
-Date: Fri, 10 Jul 2026 17:54:43 +0200
-Message-ID: <20260710155443.1761760-3-jtornosm@redhat.com>
-In-Reply-To: <20260710155443.1761760-1-jtornosm@redhat.com>
-References: <20260710155443.1761760-1-jtornosm@redhat.com>
-MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.93
-X-Mimecast-MFC-PROC-ID: tbDbgRxFRWaFOkdegIe3PN94wDqIK0ZnjG3obiCuX7s_1783698908
-X-Mimecast-Originator: redhat.com
-Content-Transfer-Encoding: 8bit
-content-type: text/plain; charset="US-ASCII"; x-default=true
+	Fri, 10 Jul 2026 18:29:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1783708143; x=1815244143;
+  h=date:from:to:cc:subject:message-id;
+  bh=4D6VLaENoyJye9xITZj9NCWTnnXQK3wABVIECd3SiDs=;
+  b=TmXvGu+U8iIfSFgy2KjObJkcPtqUaJ4DRydeAPi27khq24T1dCfwebsv
+   W2kXnKjHTMSZXn0apRz2XzzRCyeO14yR3KxOAL0kFK1s2lSDKTukqzGRQ
+   xb9lRRfop4HuC23T/lBKnoHSf/gaGaGfBZITDQ2xmqVL1CiLQSve4PLfP
+   i1xFfOouvEUoogA5pSWvbcW7E50IZS2VrIqd8RS1yqyOasQ7xZIx4rfrS
+   A5W1c/b+TJbGFj5mpJENCUVu1eBy0uFNkPGPgyTP+CJ3kSdR9dU0yagvP
+   9z1GI+Obb+wSsWmXWuYYtlG5yl5ixK404sbPZi+Te761WrVk5Pr6zLeLW
+   A==;
+X-CSE-ConnectionGUID: ZZT/yPHXT96NnreKWGgTjg==
+X-CSE-MsgGUID: yybe+nrfTD2wvga2KZR1WA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11841"; a="95014568"
+X-IronPort-AV: E=Sophos;i="6.25,154,1779174000"; 
+   d="scan'208";a="95014568"
+Received: from fmviesa003.fm.intel.com ([10.60.135.143])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 10 Jul 2026 11:29:01 -0700
+X-CSE-ConnectionGUID: Y2N0s439QmCqGpCjEPv9Bg==
+X-CSE-MsgGUID: yA5SLSSRSsOCQDbJr8BlFw==
+X-ExtLoop1: 1
+Received: from lkp-server02.sh.intel.com (HELO ea128546eb3d) ([10.239.97.151])
+  by fmviesa003.fm.intel.com with ESMTP; 10 Jul 2026 11:29:00 -0700
+Received: from kbuild by ea128546eb3d with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1wiFy5-00000000JEv-38G3;
+	Fri, 10 Jul 2026 18:28:57 +0000
+Date: Sat, 11 Jul 2026 02:28:41 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org
+Subject: [ath:for-current] BUILD SUCCESS
+ 55f3aa06951cac78b0206bde961c8cf11929a27a
+Message-ID: <202607110226.6IhR2DKS-lkp@intel.com>
+User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260710_085512_045626_9153DB67 
-X-CRM114-Status: GOOD (  15.75  )
+X-CRM114-CacheID: sfid-20260710_112903_461577_10EE7DCA 
+X-CRM114-Status: UNSURE (   3.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,133 +81,267 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Under heavy traffic, ath12k can hang and experiences -ENOMEM errors
-("failed to transmit frame -12") when the hardware TCL ring fills up.
-This issue is more commonly observed in VMs with PCIe passthrough but
-also occurs on bare metal systems.
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-current
+branch HEAD: 55f3aa06951cac78b0206bde961c8cf11929a27a  wifi: ath12k: Flush the posted write after writing to PCIE_SOC_GLOBAL_RESET
 
-Implement a custom wake_tx_queue operation that:
+elapsed time: 749m
 
-1. Checks hardware ring space before dequeuing packets from mac80211
-2. Uses per-packet locking to serialize ring access and prevent races
-3. Syncs with hardware state to get accurate free slot count
-4. Returns early during firmware crash in the same way as other tx paths
+configs tested: 247
+configs skipped: 7
 
-This approach follows the pattern used in the iwlwifi driver, adapted
-for ath12k's hardware ring architecture.
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-This prevents hangs, eliminates -ENOMEM errors, and improves throughput
-by optimizing resource usage and preventing unnecessary packet drops.
+tested configs:
+alpha                             allnoconfig    gcc-16.1.0
+alpha                            allyesconfig    gcc-16.1.0
+alpha                               defconfig    gcc-16.1.0
+arc                              allmodconfig    clang-23
+arc                               allnoconfig    gcc-16.1.0
+arc                              allyesconfig    clang-23
+arc                                 defconfig    gcc-16.1.0
+arc                            randconfig-001    clang-23
+arc                   randconfig-001-20260710    clang-23
+arc                            randconfig-002    clang-23
+arc                   randconfig-002-20260710    clang-23
+arm                               allnoconfig    gcc-16.1.0
+arm                              allyesconfig    clang-23
+arm                       aspeed_g5_defconfig    gcc-16.1.0
+arm                                 defconfig    gcc-16.1.0
+arm                            randconfig-001    clang-23
+arm                   randconfig-001-20260710    clang-23
+arm                            randconfig-002    clang-23
+arm                   randconfig-002-20260710    clang-23
+arm                            randconfig-003    clang-23
+arm                   randconfig-003-20260710    clang-23
+arm                            randconfig-004    clang-23
+arm                   randconfig-004-20260710    clang-23
+arm                          sp7021_defconfig    gcc-16.1.0
+arm64                            allmodconfig    clang-23
+arm64                             allnoconfig    gcc-16.1.0
+arm64                               defconfig    gcc-16.1.0
+arm64                          randconfig-001    clang-23
+arm64                 randconfig-001-20260710    clang-23
+arm64                 randconfig-001-20260710    gcc-10.5.0
+arm64                          randconfig-002    clang-23
+arm64                 randconfig-002-20260710    clang-23
+arm64                 randconfig-002-20260710    gcc-10.5.0
+arm64                          randconfig-003    clang-23
+arm64                 randconfig-003-20260710    clang-23
+arm64                 randconfig-003-20260710    gcc-10.5.0
+arm64                          randconfig-004    clang-23
+arm64                 randconfig-004-20260710    clang-23
+arm64                 randconfig-004-20260710    gcc-10.5.0
+csky                             allmodconfig    gcc-16.1.0
+csky                              allnoconfig    gcc-16.1.0
+csky                                defconfig    gcc-16.1.0
+csky                           randconfig-001    clang-23
+csky                  randconfig-001-20260710    clang-23
+csky                  randconfig-001-20260710    gcc-10.5.0
+csky                           randconfig-002    clang-23
+csky                  randconfig-002-20260710    clang-23
+csky                  randconfig-002-20260710    gcc-10.5.0
+hexagon                          allmodconfig    gcc-16.1.0
+hexagon                           allnoconfig    gcc-16.1.0
+hexagon                             defconfig    gcc-16.1.0
+hexagon               randconfig-001-20260710    gcc-12.5.0
+hexagon               randconfig-002-20260710    gcc-12.5.0
+i386                             allmodconfig    clang-22
+i386                              allnoconfig    gcc-16.1.0
+i386                             allyesconfig    clang-22
+i386                 buildonly-randconfig-001    clang-22
+i386        buildonly-randconfig-001-20260710    clang-22
+i386                 buildonly-randconfig-002    clang-22
+i386        buildonly-randconfig-002-20260710    clang-22
+i386                 buildonly-randconfig-003    clang-22
+i386        buildonly-randconfig-003-20260710    clang-22
+i386                 buildonly-randconfig-004    clang-22
+i386        buildonly-randconfig-004-20260710    clang-22
+i386                 buildonly-randconfig-005    clang-22
+i386        buildonly-randconfig-005-20260710    clang-22
+i386                 buildonly-randconfig-006    clang-22
+i386        buildonly-randconfig-006-20260710    clang-22
+i386                                defconfig    gcc-16.1.0
+i386                  randconfig-001-20260710    clang-22
+i386                  randconfig-002-20260710    clang-22
+i386                  randconfig-003-20260710    clang-22
+i386                  randconfig-004-20260710    clang-22
+i386                  randconfig-005-20260710    clang-22
+i386                  randconfig-006-20260710    clang-22
+i386                  randconfig-007-20260710    clang-22
+i386                           randconfig-011    gcc-14
+i386                  randconfig-011-20260710    gcc-14
+i386                           randconfig-012    gcc-14
+i386                  randconfig-012-20260710    gcc-14
+i386                           randconfig-013    gcc-14
+i386                  randconfig-013-20260710    gcc-14
+i386                           randconfig-014    gcc-14
+i386                  randconfig-014-20260710    gcc-14
+i386                           randconfig-015    gcc-14
+i386                  randconfig-015-20260710    gcc-14
+i386                           randconfig-016    gcc-14
+i386                  randconfig-016-20260710    gcc-14
+i386                           randconfig-017    gcc-14
+i386                  randconfig-017-20260710    gcc-14
+loongarch                        allmodconfig    clang-23
+loongarch                         allnoconfig    gcc-16.1.0
+loongarch                           defconfig    clang-23
+loongarch             randconfig-001-20260710    gcc-12.5.0
+loongarch             randconfig-002-20260710    gcc-12.5.0
+m68k                             allmodconfig    gcc-16.1.0
+m68k                              allnoconfig    gcc-16.1.0
+m68k                             allyesconfig    clang-23
+m68k                                defconfig    clang-23
+microblaze                        allnoconfig    gcc-16.1.0
+microblaze                       allyesconfig    gcc-16.1.0
+microblaze                          defconfig    clang-23
+mips                             allmodconfig    gcc-16.1.0
+mips                              allnoconfig    gcc-16.1.0
+mips                             allyesconfig    gcc-16.1.0
+nios2                            allmodconfig    clang-20
+nios2                             allnoconfig    clang-23
+nios2                               defconfig    clang-23
+nios2                 randconfig-001-20260710    gcc-12.5.0
+nios2                 randconfig-002-20260710    gcc-12.5.0
+openrisc                         allmodconfig    clang-20
+openrisc                          allnoconfig    clang-23
+openrisc                            defconfig    gcc-16.1.0
+parisc                           allmodconfig    gcc-16.1.0
+parisc                            allnoconfig    clang-23
+parisc                           allyesconfig    clang-17
+parisc                              defconfig    gcc-16.1.0
+parisc                         randconfig-001    clang-17
+parisc                randconfig-001-20260710    clang-17
+parisc                         randconfig-002    clang-17
+parisc                randconfig-002-20260710    clang-17
+parisc64                            defconfig    clang-23
+powerpc                          allmodconfig    gcc-16.1.0
+powerpc                           allnoconfig    clang-23
+powerpc                       eiger_defconfig    clang-23
+powerpc                 mpc836x_rdk_defconfig    clang-23
+powerpc                     mpc83xx_defconfig    clang-21
+powerpc                        randconfig-001    clang-17
+powerpc               randconfig-001-20260710    clang-17
+powerpc                        randconfig-002    clang-17
+powerpc               randconfig-002-20260710    clang-17
+powerpc64                      randconfig-001    clang-17
+powerpc64             randconfig-001-20260710    clang-17
+powerpc64                      randconfig-002    clang-17
+powerpc64             randconfig-002-20260710    clang-17
+riscv                            allmodconfig    clang-23
+riscv                             allnoconfig    clang-23
+riscv                            allyesconfig    clang-23
+riscv                               defconfig    gcc-16.1.0
+riscv                          randconfig-001    clang-17
+riscv                 randconfig-001-20260710    clang-17
+riscv                          randconfig-002    clang-17
+riscv                 randconfig-002-20260710    clang-17
+s390                             allmodconfig    clang-17
+s390                              allnoconfig    clang-23
+s390                             allyesconfig    gcc-16.1.0
+s390                                defconfig    gcc-16.1.0
+s390                           randconfig-001    clang-17
+s390                  randconfig-001-20260710    clang-17
+s390                           randconfig-002    clang-17
+s390                  randconfig-002-20260710    clang-17
+sh                               allmodconfig    gcc-16.1.0
+sh                                allnoconfig    clang-23
+sh                               allyesconfig    clang-17
+sh                                  defconfig    gcc-14
+sh                             randconfig-001    clang-17
+sh                    randconfig-001-20260710    clang-17
+sh                             randconfig-002    clang-17
+sh                    randconfig-002-20260710    clang-17
+sh                   sh7724_generic_defconfig    gcc-16.1.0
+sparc                             allnoconfig    clang-23
+sparc                               defconfig    gcc-16.1.0
+sparc                 randconfig-001-20260710    gcc-15.2.0
+sparc                 randconfig-002-20260710    gcc-15.2.0
+sparc64                          allmodconfig    clang-20
+sparc64                             defconfig    gcc-14
+sparc64               randconfig-001-20260710    gcc-15.2.0
+sparc64               randconfig-002-20260710    gcc-15.2.0
+um                               allmodconfig    clang-17
+um                                allnoconfig    clang-23
+um                               allyesconfig    gcc-16.1.0
+um                                  defconfig    gcc-14
+um                             i386_defconfig    gcc-14
+um                    randconfig-001-20260710    gcc-15.2.0
+um                    randconfig-002-20260710    gcc-15.2.0
+um                           x86_64_defconfig    gcc-14
+x86_64                           allmodconfig    clang-22
+x86_64                            allnoconfig    clang-23
+x86_64                           allyesconfig    clang-22
+x86_64               buildonly-randconfig-001    clang-22
+x86_64      buildonly-randconfig-001-20260710    clang-22
+x86_64               buildonly-randconfig-002    clang-22
+x86_64      buildonly-randconfig-002-20260710    clang-22
+x86_64               buildonly-randconfig-003    clang-22
+x86_64      buildonly-randconfig-003-20260710    clang-22
+x86_64               buildonly-randconfig-004    clang-22
+x86_64      buildonly-randconfig-004-20260710    clang-22
+x86_64               buildonly-randconfig-005    clang-22
+x86_64      buildonly-randconfig-005-20260710    clang-22
+x86_64               buildonly-randconfig-006    clang-22
+x86_64      buildonly-randconfig-006-20260710    clang-22
+x86_64                              defconfig    gcc-14
+x86_64                                  kexec    clang-22
+x86_64                         randconfig-001    clang-22
+x86_64                randconfig-001-20260710    clang-22
+x86_64                randconfig-001-20260710    gcc-14
+x86_64                         randconfig-002    clang-22
+x86_64                randconfig-002-20260710    clang-22
+x86_64                randconfig-002-20260710    gcc-14
+x86_64                         randconfig-003    clang-22
+x86_64                randconfig-003-20260710    clang-22
+x86_64                randconfig-003-20260710    gcc-14
+x86_64                         randconfig-004    clang-22
+x86_64                randconfig-004-20260710    clang-22
+x86_64                randconfig-004-20260710    gcc-14
+x86_64                         randconfig-005    clang-22
+x86_64                randconfig-005-20260710    clang-22
+x86_64                randconfig-005-20260710    gcc-14
+x86_64                         randconfig-006    clang-22
+x86_64                randconfig-006-20260710    clang-22
+x86_64                randconfig-006-20260710    gcc-14
+x86_64                         randconfig-011    gcc-14
+x86_64                randconfig-011-20260710    clang-22
+x86_64                randconfig-011-20260710    gcc-14
+x86_64                         randconfig-012    gcc-14
+x86_64                randconfig-012-20260710    clang-22
+x86_64                randconfig-012-20260710    gcc-14
+x86_64                randconfig-013-20260710    clang-22
+x86_64                         randconfig-014    gcc-14
+x86_64                randconfig-014-20260710    clang-22
+x86_64                         randconfig-015    gcc-14
+x86_64                randconfig-015-20260710    clang-22
+x86_64                randconfig-015-20260710    gcc-14
+x86_64                randconfig-016-20260710    clang-22
+x86_64                         randconfig-071    gcc-14
+x86_64                randconfig-071-20260710    gcc-14
+x86_64                         randconfig-072    gcc-14
+x86_64                randconfig-072-20260710    gcc-14
+x86_64                         randconfig-073    gcc-14
+x86_64                randconfig-073-20260710    gcc-14
+x86_64                         randconfig-074    gcc-14
+x86_64                randconfig-074-20260710    gcc-14
+x86_64                         randconfig-075    gcc-14
+x86_64                randconfig-075-20260710    gcc-14
+x86_64                         randconfig-076    gcc-14
+x86_64                randconfig-076-20260710    gcc-14
+x86_64                               rhel-9.4    clang-22
+x86_64                           rhel-9.4-bpf    gcc-14
+x86_64                          rhel-9.4-func    clang-22
+x86_64                    rhel-9.4-kselftests    clang-22
+x86_64                         rhel-9.4-kunit    gcc-14
+x86_64                           rhel-9.4-ltp    gcc-14
+x86_64                          rhel-9.4-rust    clang-22
+xtensa                            allnoconfig    clang-23
+xtensa                           allyesconfig    clang-20
+xtensa                randconfig-001-20260710    gcc-15.2.0
+xtensa                randconfig-002-20260710    gcc-15.2.0
 
-Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
----
- drivers/net/wireless/ath/ath12k/dp.c       |  1 +
- drivers/net/wireless/ath/ath12k/dp.h       |  2 +
- drivers/net/wireless/ath/ath12k/hal.c      |  1 +
- drivers/net/wireless/ath/ath12k/wifi7/hw.c | 50 +++++++++++++++++++++-
- 4 files changed, 53 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index af5f11fc1d84..3d46cfbf0a1c 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -1539,6 +1539,7 @@ static int ath12k_dp_setup(struct ath12k_base *ab)
- 	}
- 
- 	for (i = 0; i < ab->hw_params->max_tx_ring; i++) {
-+		spin_lock_init(&dp->tx_ring[i].wake_tx_lock);
- 		dp->tx_ring[i].tcl_data_ring_id = i;
- 
- 		dp->tx_ring[i].tx_status_head = 0;
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index f8cfc7bb29dd..68d2020be9b8 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -58,6 +58,8 @@ struct dp_tx_ring {
- 	u8 tcl_data_ring_id;
- 	struct dp_srng tcl_data_ring;
- 	struct dp_srng tcl_comp_ring;
-+	/* Serializes wake_tx_queue operations for this ring */
-+	spinlock_t wake_tx_lock;
- 	struct hal_wbm_completion_ring_tx *tx_status;
- 	int tx_status_head;
- 	int tx_status_tail;
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index a164563fff28..c1c656e4550b 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -390,6 +390,7 @@ int ath12k_hal_srng_src_num_free(struct ath12k_base *ab, struct hal_srng *srng,
- 	else
- 		return ((srng->ring_size - hp + tp) / srng->entry_size) - 1;
- }
-+EXPORT_SYMBOL(ath12k_hal_srng_src_num_free);
- 
- void *ath12k_hal_srng_src_next_peek(struct ath12k_base *ab,
- 				    struct hal_srng *srng)
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-index d9fdd2fc8298..e3a6f9cdee24 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-@@ -1100,9 +1100,57 @@ static void ath12k_wifi7_mac_op_tx(struct ieee80211_hw *hw,
- 	}
- }
- 
-+static void ath12k_wifi7_mac_op_wake_tx_queue(struct ieee80211_hw *hw,
-+					      struct ieee80211_txq *txq)
-+{
-+	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
-+	struct ieee80211_tx_control control = {
-+		.sta = txq->sta,
-+	};
-+	struct ath12k *ar = ah->radio;
-+	struct dp_tx_ring *tx_ring;
-+	struct hal_srng *tcl_ring;
-+	struct ath12k_dp *dp;
-+	struct sk_buff *skb;
-+	int num_free;
-+
-+	if (!ar)
-+		return;
-+
-+	if (unlikely(test_bit(ATH12K_FLAG_CRASH_FLUSH, &ar->ab->dev_flags)))
-+		return;
-+
-+	dp = ar->ab->dp;
-+	tx_ring = &dp->tx_ring[txq->ac % dp->hw_params->max_tx_ring];
-+	tcl_ring = &dp->hal->srng_list[tx_ring->tcl_data_ring.ring_id];
-+
-+	while (1) {
-+		spin_lock_bh(&tx_ring->wake_tx_lock);
-+
-+		spin_lock(&tcl_ring->lock);
-+		num_free = ath12k_hal_srng_src_num_free(ar->ab, tcl_ring, true);
-+		spin_unlock(&tcl_ring->lock);
-+
-+		if (num_free == 0) {
-+			spin_unlock_bh(&tx_ring->wake_tx_lock);
-+			break;
-+		}
-+
-+		skb = ieee80211_tx_dequeue(hw, txq);
-+		if (!skb) {
-+			spin_unlock_bh(&tx_ring->wake_tx_lock);
-+			break;
-+		}
-+
-+		ath12k_wifi7_mac_op_tx(hw, &control, skb);
-+
-+		spin_unlock_bh(&tx_ring->wake_tx_lock);
-+	}
-+}
-+
- static const struct ieee80211_ops ath12k_ops_wifi7 = {
- 	.tx				= ath12k_wifi7_mac_op_tx,
--	.wake_tx_queue			= ieee80211_handle_wake_tx_queue,
-+	.wake_tx_queue			= ath12k_wifi7_mac_op_wake_tx_queue,
- 	.start                          = ath12k_mac_op_start,
- 	.stop                           = ath12k_mac_op_stop,
- 	.reconfig_complete              = ath12k_mac_op_reconfig_complete,
--- 
-2.54.0
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
