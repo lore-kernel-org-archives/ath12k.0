@@ -4,137 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94CC7C44501
-	for <ath12k@archiver.kernel.org>; Mon, 13 Jul 2026 03:04:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C8B6C43458
+	for <ath12k@archiver.kernel.org>; Mon, 13 Jul 2026 03:17:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/jlH+kqpuhP4XLp/9HwP9AS7/ZVK5TzgNUSZ5uQWx4k=; b=w0tA0CbvhqHfmQ90/vgxxuMSFR
-	aGWPjYB0cRYYLJ6bZe4oA2CDnmCd/VmmkUp0uLrRDd+cyy+AZVDIdG/JQLdLNJ1EtMQrLIuVe5p9W
-	VKlZX/6Tael0NEUIqxw0pYTQaUkwGx2pEuJEB2tzsehFnUoGDh1UTByxNz61OS/BcbQLYgMjMRM01
-	hFVA/WN8Je65VeRAn5l2cEY9FX0SkMYK4XPCOSmtg6ZBSqUx5kOifUMmyxrthnMF7VJWMepOow8sp
-	xDejSdjoIwxltUdhlsRte4TIgUR5RygFe8s8I2gT9Y/8HlhOGYliApGidJ5crCYjqeHjBePVI63HK
-	+XyiXCfA==;
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=s6UXAXxEYf1SyoIhABxkkWxNHAbHxvZk97YORSHe2A4=; b=rJOrli2E/49P7geb0U8Tijv3eG
+	DkNJ+AXfmxqZa/ihE4wS1MO/+fRFWGp8kDUhbo54aKB5N4UcaThj3y4bF63hXtHtItxOeCHIq5uVQ
+	dlCV7Rtya5U/lCUucCLHm9NhBr1d8Gq9IO5ll2Oo8VdTvLIdbINmO7dj6pPBX3KEJWylg69w4X+QE
+	Jaq7NtEZAhMdGceiz6wbFrvvAFlR+2eTq5Y0G0TQ9LVJoiOF714B5K7p++bYibF4LEW/FPiFza99p
+	uPclxg3K5YfKd3Df8TrM0s4ficmO20nY5CLxoPottWwT/UWrWceVotnIZ/yavcTRRAxbMskqoleRv
+	ZhPRmhDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wj6xj-000000080X0-3onN;
-	Mon, 13 Jul 2026 03:04:07 +0000
+	id 1wj7AY-000000081O1-3GnN;
+	Mon, 13 Jul 2026 03:17:22 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wj6xh-000000080Wb-3Mn4
+	id 1wj7AW-000000081NW-2EWQ
 	for ath12k@lists.infradead.org;
-	Mon, 13 Jul 2026 03:04:07 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66D29nRS107889
-	for <ath12k@lists.infradead.org>; Mon, 13 Jul 2026 03:04:04 GMT
+	Mon, 13 Jul 2026 03:17:21 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66D3A1Hl169599
+	for <ath12k@lists.infradead.org>; Mon, 13 Jul 2026 03:17:19 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	/jlH+kqpuhP4XLp/9HwP9AS7/ZVK5TzgNUSZ5uQWx4k=; b=M3rERpreWkDVQVWv
-	8pP8V5ev28A+tYAPTIpxhMPjBKmur/93b8VARdiNFJARpJA3GF/uX85Iw/eTGRL4
-	MXhDpdgNwYr0lAGgbq0QgsFGcXtE2WLkwaihXQowlr4tAIduyRNfFCchO//CuKtD
-	VfmNB9spdZUHAKbFLE7gqaIkSMf2xclM59m4rFb1hoOqMVEEquLy+44DP6pbxVhh
-	P46Qv6Do6Uw5w6aDsNuszQ5Y0dOwCntOJ3gOYIHJ5r1hk3cxFLVtRhKahFBB/Vjr
-	OBANTIP/nHawaohLsz27e5RAw72KewLDZE8DBVqZY2u0kYgXC827EStRDpvAQXjF
-	9B19UQ==
-Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fbecgm56e-1
+	s6UXAXxEYf1SyoIhABxkkWxNHAbHxvZk97YORSHe2A4=; b=J/PMKQLhV3BuVb8b
+	va4ch5GmkcEg+e2TB0QAD4eywnjCh9Q6EQcnCwzJpqDJk1JUuXeuH8DQdgWdGm3c
+	EYJzeJlOal2S5pltkEPZGL7kcux6G0PdU1sqzAiuctUQN+uwqLsnqtgUTgZ1wR/y
+	0XN1Rj7LqKfsOLL0EviHyyDr3YS8LgXF9z9rAF14oqLA3d6EmewEnu1DjRayMyGp
+	RHJEpSNe4GvozV8NGuGpfPgET7dCUpQrBTHB89TfhAZA2fL8xFETaQnas8z8qipi
+	WkkaWq9IHTqXzoGTQ3XhqGBt3wfXn1XpC3iZiCvdMX6hMS7ruBKUvzbzMj70UEYk
+	pgIJdQ==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fbeehm63m-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 13 Jul 2026 03:04:04 +0000 (GMT)
-Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-c88e0d11a3fso2356926a12.0
-        for <ath12k@lists.infradead.org>; Sun, 12 Jul 2026 20:04:04 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 13 Jul 2026 03:17:19 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2ccb6f6a3f4so45948315ad.1
+        for <ath12k@lists.infradead.org>; Sun, 12 Jul 2026 20:17:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1783911843; x=1784516643; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1783912638; x=1784517438; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=/jlH+kqpuhP4XLp/9HwP9AS7/ZVK5TzgNUSZ5uQWx4k=;
-        b=GUys4sFAP6WklRQSHvo+EKfgS/DbdjchTGtF3Qza+bMjmXUxfTroPCp5JChUTWrxNK
-         GeVIqKDOqr8IYstDjrwml60l3GAlQMFny3sLn4dPG1ETlCCLEM+XlTfoCIs474JO6I4c
-         Q5ftHiowWmjiVUY6hMxaguMcPbgIyEacEwOo46JOd9C279pFk68SfRavoWyHgsEMkndd
-         I4nGHYiQrzz7T3cSWVjp+SP0SU6RoSeaOkc8PJbkuTlI3+UROStrv7qDIKFOehMmBO+z
-         65AQeqyh9MAoYqO+R4syyQcwyj3yD4SI08NwQrm1oUNQv8B8YrXup3HUaUD9QqIp8cOO
-         riSA==
+         :from:references:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=s6UXAXxEYf1SyoIhABxkkWxNHAbHxvZk97YORSHe2A4=;
+        b=gtFGZpzzvM+AuewfufLlz1S4jHOmsOh2HbTwnwdPhRkCXDepnCsuUez30/BIUEW9wK
+         n7BrkZDpqRuYO986ZASYZyB7UITHe96fH/vY03ysSr6EmLBpQUDkPvyTBYQ6/U2lQcV4
+         QVzrqG4ju/JfKTrGr3cNixkujdOZD4x3B1kLyvUTqV3WmyPHA0DVxQY1sJ/DUkRprZby
+         Lr3ZPaJbRHGZjDXgLjv3cEc8Gs/KkBU48+38WArX8yWT6Sl4gpKEYWdHRRlzJL5ktLdo
+         bulnyaRoJaKvLyhKK79ZVaUWHw6AjtmvPIs5J73eblOg+nQc3qDuwvbjPjqA5PhnWdpN
+         2oXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783911843; x=1784516643;
+        d=1e100.net; s=20251104; t=1783912638; x=1784517438;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=/jlH+kqpuhP4XLp/9HwP9AS7/ZVK5TzgNUSZ5uQWx4k=;
-        b=ZyW/tTXTaRn0rIuSEHILPj5LCijUsh0QUio3uF+kuw6yqcptc09UCZ2vg32vMKpRw9
-         5lBJjOtqTjapJugRpTL6jhS3zxpuAFDmHXZ7qgMuhdRUUWLOQw4bOENz1t0LRf9JcYc8
-         rS+y1j3LHE9cXyoBhXsU3OUxUQ35t0IicCC8NFx0nupPs16+Bm0JgEkwpt0LjQFngIHA
-         xskp7u9O4QX97uTjWaIxTEePBr06/BvMNRPGzLaTm2ghuP6sjL8vvUm6mQJd9zPQeXJz
-         U7GrhMpigGVqR28gODvfGoCYTW1ZFgpLwXstF7dT+T9ZGkflxzgep7ttSTwOBfWnEMe1
-         x1EA==
-X-Forwarded-Encrypted: i=1; AHgh+RokfaoyO2qyX6WuhlBXv8uoIEpPTzov1C1bdm+7x71YLVnZyxCvas+vUSLNV4cAIm5zRH1vL9Y=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxR/IQs/BfVSbFMFmq/R512zbaYRTHbzdfvms/lya7VFGXdKPwu
-	i8hk/mzbIa9BS4ZdtyZIqF0KJ7KOMHUqN9stDNmFZzqtIydTBzslRHFH1+IJFyxlCa513ugh7RI
-	DkLBSoEp/fzkS/XV0fy2fmIpotCd7LtXLbHOeac4EKla0R1xBmQYiHZ9udQW8Pbcf
-X-Gm-Gg: AfdE7cnfNd91aIWs9q16tO+qdjKkbrg5B9ExdLnhdQwT8rdwPHQK+GYRNEAaqaHRM2r
-	7lROa5TBS7m8WAT26u25lnV3+8zp5PeAsFom3Ruvh8rqm9B8d9kIPB4s9H2Iu92dTzHr3+O0juo
-	eb3J2wX9CTEOUtLIdFrHVNfzNablehVqpiTf2iV92rp/kqxiVjORMpW+R8iRL9u+T0G68tkAvZq
-	urr0QGpsP0x2kJQFnvLMRmFOZfabYPWUtcQOBAH0rK5sxbHhxSHOThjAVc4mgXY9c1nxHe+V0Cf
-	ymYH9QyrpqcR5LkC6uTxo+y4BPRPqrTMcepW1bQP0RjsrWjGx4dTiz5It/CDeS4Cdp2wovJNn/f
-	IdoA8GfBLmXMoMaADB/lRXnoEpL38+M/9h4QxjrgKhS5oEIl5ag99OW4vYxHB+HZkwrlVcw9pK2
-	tp6GNrBe4=
-X-Received: by 2002:a05:6a20:394a:b0:3bf:c2ce:972b with SMTP id adf61e73a8af0-3c110b6344bmr8240654637.50.1783911843474;
-        Sun, 12 Jul 2026 20:04:03 -0700 (PDT)
-X-Received: by 2002:a05:6a20:394a:b0:3bf:c2ce:972b with SMTP id adf61e73a8af0-3c110b6344bmr8240634637.50.1783911843013;
-        Sun, 12 Jul 2026 20:04:03 -0700 (PDT)
+         :from:references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=s6UXAXxEYf1SyoIhABxkkWxNHAbHxvZk97YORSHe2A4=;
+        b=IFQGQ34bPaKQvi9aisJ46vRIcmd+6G7UzSXwBQuT+oC63Vhz5OT/XIF2Hy8YCFxpk9
+         zVErfPdQvUO/0JR3QCGAKvTDLqp4sgg8vqs7tjhhHqvoVu+OhcE54UyxsnIlN7geTew5
+         NI9qYodKTaF34KoYoSlUIKx3xG4jkW1X0Doe6mv8nFMSaz4K4FwfYCy9rIHqIXX45pod
+         lJihcIPwdjHnMrJaJRLWETc3YLfKex1edm48NQMHugkDHF0jHMgvbYm++JOTTCGeaQTU
+         XA0BO6/nksc4hyPAwFrZtQ1P0B3aaT/g+jQfFXqmxiZWsBii2NszORji0iMWIgq7WexX
+         EE1w==
+X-Forwarded-Encrypted: i=1; AHgh+RoIhclwK8OhDx6fVVqHlCVaNBe++6m6/CSKfFU9s60HuJAHfXIJnBR+QtZLvwnjyFP1pIDhong=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy61743W/2G4gRhlGo3D2awyGssbEyrMPbcQFvDzefxo8+Y+M7Y
+	iig5mGSFL4vefjBevevEN7J/KuSRzZEOadakAf61mbvDep1DuEgYKYLt8dzRSQ0rZWADISR42wj
+	0mM3x2qaLdWUiGnzEpRVwuI9kQBe4oOGTnnX8PS7utKd0hUR+2OzA/eRrgf8719E6d7yLGkAwns
+	U=
+X-Gm-Gg: AfdE7cnkDD59LruLFoswnd4Po47x3ihLEDGFZn9RGCJpQQD6asXNptm1JvKWzD5Tsda
+	FUNOvAgdKOFJbgj29fnr2lL0qf62HSs6FbxTqL1DiITOYsW2MtE0MLLEpduQxvIXOIW2v2/JLV8
+	LrWt8pCRQm2OiTaplb1e+7Pjmuc9MeWNVxWfpyOlq6mbLmSXfdzJfkNEQxNfcp/91fL2TL6qX3Z
+	zvKhavKpY2zwT1Jhudlnj2Ny0CZ4k4+g7xCP+7OPVPcxZtSjV2aH9OQQLUGTGJ3q5iXE1aCb9kl
+	QrS0fy9GYK3lNQaFxVEhI7CGLkCjXw8+4CIE/B6/pz8odyFBJy9tRSjibvNqbBAPitLrEAqLH1n
+	xUfCH9FYgKRrE9Z35NZdY3pse6QkxuALmTLpkb8I2noWjz6t19hckUshl6H9rzg9jTbwQ/w9O8V
+	m1l5NPEL4=
+X-Received: by 2002:a17:902:d2c7:b0:2c9:994c:9a5 with SMTP id d9443c01a7336-2ce8298a501mr112386135ad.30.1783912638371;
+        Sun, 12 Jul 2026 20:17:18 -0700 (PDT)
+X-Received: by 2002:a17:902:d2c7:b0:2c9:994c:9a5 with SMTP id d9443c01a7336-2ce8298a501mr112385915ad.30.1783912637929;
+        Sun, 12 Jul 2026 20:17:17 -0700 (PDT)
 Received: from [10.133.33.33] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-ca5b3162d3csm7701435a12.18.2026.07.12.20.04.01
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ccc9bf7858sm92067285ad.23.2026.07.12.20.17.15
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 12 Jul 2026 20:04:02 -0700 (PDT)
-Message-ID: <fe668799-6024-4370-acfc-ee64fb3a4d5c@oss.qualcomm.com>
-Date: Mon, 13 Jul 2026 11:03:59 +0800
+        Sun, 12 Jul 2026 20:17:17 -0700 (PDT)
+Message-ID: <8133bce1-2b7e-46fb-8989-f5946ff341a8@oss.qualcomm.com>
+Date: Mon, 13 Jul 2026 11:17:14 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] wifi: ath12k: skip PCIe global reset on initial
- power-up
-To: Nazar Mokrynskyi <nazar@mokrynskyi.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, jeff.johnson@oss.qualcomm.com
-References: <20260505172415.566328-1-nazar@mokrynskyi.com>
- <20260505172415.566328-2-nazar@mokrynskyi.com>
+Subject: Re: [PATCH] wifi: ath12k: release QMI handle on late init failures
+To: Guangshuo Li <lgs201920130244@gmail.com>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+References: <20260708100924.744386-1-lgs201920130244@gmail.com>
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20260505172415.566328-2-nazar@mokrynskyi.com>
+In-Reply-To: <20260708100924.744386-1-lgs201920130244@gmail.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzEzMDAyOCBTYWx0ZWRfX2hveVCXFgjEH
- vL+zKQ+IReXuOdYGgCB58flfEdJ+vWPjlAS2yzX5WK2lh/FfHKI32oNH0XQ8xQHKYgGmr0b57ZV
- ucUKcHGAnsb5vMhEed2M0K/UxRTzZ1c=
-X-Proofpoint-ORIG-GUID: HoUgPiqZ6INwViO5A8KpS9ywnoWMwceE
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzEzMDAyOCBTYWx0ZWRfX+xDtRg+a0vs0
- Avm95KCTjBqcRZVpeWuvCG/OqD3BbqXbAU2vZlVPeiE8YfowRnC6OGhdwNkNpz31Jd6K7qh88Ox
- wjGpI798jhJvvevqMK2Sv2G+mGWxYoABri+xCw/nUtEcDgJGT0u2SaBdnh1lgd5gR2Lz0gFEmtt
- 6RECewLpqDzSH0yZ/EQJwKgYHpaa3L3JZ0uxsIXwpYMjCXzjpoP5oaNbny0SMaRpRiIMqTzhWpj
- yzhWk82UgMZTWWPIz7PVLNZgkbeU9pVBsX/Tf60nWboQ4NJejdDVDMgVi7g68etr1wRnrZYUFW2
- tinyEsvBGzt6LvsdOfd4+T+F42aB3g+xwTnVAXmije7DBXesH8+CG+nzo+eK9g4JgIcLMr+YS8p
- wp3GfersjgVoe6TfZPLdGoYUMwDCM0NsZUrEOkrPqgXu9xMX/ag8FDaxeDkrq5sA2uF70m24xOY
- h5cm6V5vHYT9Bji34EQ==
-X-Proofpoint-GUID: HoUgPiqZ6INwViO5A8KpS9ywnoWMwceE
-X-Authority-Analysis: v=2.4 cv=KM9qylFo c=1 sm=1 tr=0 ts=6a5455a4 cx=c_pps
- a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzEzMDAyOSBTYWx0ZWRfX172vkEGOk5FV
+ jJ3NFuxI5PHNJWZsDQqt3RHkhDiDA/cWAvoMQVSPgTGiqsGPUfzi+UA0SwQatTCBH3yYYP4cluK
+ KE4kfO1t/Nokjyn3pi4WLoReX0dm0IU=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzEzMDAyOSBTYWx0ZWRfXz+vxC49FhHio
+ TttrLe6vbOdtSQUAeZr1b+FElsvrWLMDij4VAe8OaMfcZDl56/c6Y9Sbw3nxN8D3qGJHaxIcFKk
+ dgRBax9f15NTylmZ6IfBtyZCyt+C33vMKikTOb5wZkY39E6etg5wnn0A/2rQETKsFcyHEOB+seC
+ mA6H4VPIAhI159HNNaft5++S+25WyNcqFDSPM5ejRIoCSispdeJybhI5t7Dhd5xBGmxlID04fXU
+ SgFKZ0chmZtSk8RG8yodbpWC/dvI06iqkcwiK1xhG62qXf2SUZ7SKjX7dRyHR6121s4YduLlAsh
+ 7BOw7IRZxXFYv5liUndraWNo9xCx+3dAyvWHwxZcRKCImqFrGZwho/BlvXkrEfgORNXKy3FGrha
+ z/+2FwgNqn64ku77idCDHmS5v5e3q3DG70zdywRJ0WDGxW0slz1cGz5T1n9r9bJloesbGF/2lgR
+ d7BtllRkkFgsk6JZfUw==
+X-Proofpoint-GUID: l4qneYQLJVoKe1navUHuosxTjce-CBz8
+X-Proofpoint-ORIG-GUID: l4qneYQLJVoKe1navUHuosxTjce-CBz8
+X-Authority-Analysis: v=2.4 cv=aPvAb79m c=1 sm=1 tr=0 ts=6a5458bf cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=TD6mGIVpAAAA:8 a=D4nGGoZ5glmf7WdhsA4A:9 a=QEXdDO2ut3YA:10
- a=3WC7DwWrALyhR5TkjVHa:22 a=V7iCuLqznmuTtf2Pv1nF:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=pGLkceISAAAA:8 a=BBdAH38HxtlORMPQ_CcA:9 a=QEXdDO2ut3YA:10
+ a=GvdueXVYPmCkWapjIL-Q:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-07-12_08,2026-07-10_01,2025-10-01_01
+ definitions=2026-07-13_01,2026-07-10_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 phishscore=0 malwarescore=0 bulkscore=0 lowpriorityscore=0
- clxscore=1015 impostorscore=0 adultscore=0 priorityscore=1501 suspectscore=0
+ impostorscore=0 malwarescore=0 adultscore=0 suspectscore=0 bulkscore=0
+ clxscore=1015 priorityscore=1501 spamscore=0 lowpriorityscore=0 phishscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607130028
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607130029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260712_200405_992645_B735DF43 
-X-CRM114-Status: GOOD (  26.14  )
+X-CRM114-CacheID: sfid-20260712_201720_693683_D00DFCEB 
+X-CRM114-Status: GOOD (  22.37  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,61 +153,65 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 5/6/2026 1:24 AM, Nazar Mokrynskyi wrote:
-> ath12k_pci_sw_reset() unconditionally calls ath12k_pci_soc_global_reset()
-> regardless of whether the device is being powered up for the first time or
-> recovering from a previous run. The global reset drops the PCIe link and
-> relies on the host root complex to perform physical link retraining before
-> the MHI BHI register can be accessed.
+On 7/8/2026 6:09 PM, Guangshuo Li wrote:
+> The change referenced by the Fixes tag makes hardware group creation
+> skip the device whose ath12k_core_soc_create() failed, and only destroys
+> devices that were created successfully before it.
 > 
-> When the device is passed through to a VM via VFIO, no physical link
-> retraining occurs after the reset since QEMU's virtual PCIe bridge does
-> not implement hardware LTSSM negotiation. As a result, all subsequent
-> MMIO reads return 0xffffffff and MHI initialization fails with -EREMOTEIO.
+> That avoids releasing an uninitialized QMI handle when qmi_handle_init()
+> fails, but it also means that ath12k_qmi_init_service() must clean up any
+> resources it has already acquired before returning an error.
 > 
-> On initial power-up, vfio-pci has already performed a Function Level
-> Reset before handing the device to the guest driver, placing it in a
-> known clean state equivalent to what the global reset achieves. The global
-
-AFAIK this is not the fact. Some internal registers are not cleanly reset without a global
-reset.
-
-> reset is therefore redundant on power-up and only necessary on the
-> shutdown/recovery path where it tears down an already-running firmware.
-
-is ath12k recovery working in Qemu in your setup? I doubt it since recovery would also hit
-the link retraining issue ? Also how about the rmmod / insmod sequence in Qemu, since
-rmmod also triggers global reset ?
-
-To me this is more like a Qemu/vfio issue than a driver issue. The QEMU's behavior that
-virtual PCIe bridge does not implement hardware LTSSM negotiation basically breaks all
-hardware requiring runtime PCIe link retraining. Not sure why it is designed like this. If
-it can not be fixed/changed in Qemu, can we do it in the host vfio?
-
+> qmi_handle_init() can succeed before later initialization steps fail. If
+> the QMI event workqueue allocation fails, or qmi_add_lookup() fails, the
+> function returns an error without releasing the already initialized QMI
+> handle. Since the failed device is now skipped by the hardware group
+> rollback path, that handle is leaked.
 > 
-> Skip ath12k_pci_soc_global_reset() when power_on is true to allow MHI
-> initialization to succeed under VFIO passthrough without affecting bare
-> metal behavior.
+> Release the QMI handle on those late failure paths and clear ab->qmi.ab
+> so the failed device is left in the same state as the qmi_handle_init()
+> failure path.
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Nazar Mokrynskyi <nazar@mokrynskyi.com>
+> Fixes: 088a099690e4 ("wifi: ath12k: fix error handling in creating hardware group")
+> Signed-off-by: Guangshuo Li <lgs201920130244@gmail.com>
 > ---
->  drivers/net/wireless/ath/ath12k/pci.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
+>  drivers/net/wireless/ath/ath12k/qmi.c | 11 +++++++++--
+>  1 file changed, 9 insertions(+), 2 deletions(-)
 > 
-> diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-> index 375277ca2..a3d7aeb72 100644
-> --- a/drivers/net/wireless/ath/ath12k/pci.c
-> +++ b/drivers/net/wireless/ath/ath12k/pci.c
-> @@ -303,7 +303,8 @@ static void ath12k_pci_sw_reset(struct ath12k_base *ab, bool power_on)
+> diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+> index fd762b5d7bb5..31e9fa9a62be 100644
+> --- a/drivers/net/wireless/ath/ath12k/qmi.c
+> +++ b/drivers/net/wireless/ath/ath12k/qmi.c
+> @@ -4054,7 +4054,8 @@ int ath12k_qmi_init_service(struct ath12k_base *ab)
+>  	ab->qmi.event_wq = alloc_ordered_workqueue("ath12k_qmi_driver_event", 0);
+>  	if (!ab->qmi.event_wq) {
+>  		ath12k_err(ab, "failed to allocate workqueue\n");
+> -		return -EFAULT;
+> +		ret = -EFAULT;
+> +		goto err_release_qmi_handle;
+>  	}
 >  
->  	ath12k_mhi_clear_vector(ab);
->  	ath12k_pci_clear_dbg_registers(ab);
-> -	ath12k_pci_soc_global_reset(ab);
-> +	if (!power_on)
-> +		ath12k_pci_soc_global_reset(ab);
->  	ath12k_mhi_set_mhictrl_reset(ab);
+>  	INIT_LIST_HEAD(&ab->qmi.event_list);
+> @@ -4067,9 +4068,15 @@ int ath12k_qmi_init_service(struct ath12k_base *ab)
+>  	if (ret < 0) {
+>  		ath12k_warn(ab, "failed to add qmi lookup\n");
+>  		destroy_workqueue(ab->qmi.event_wq);
+> -		return ret;
+> +		goto err_release_qmi_handle;
+>  	}
+>  
+> +	return ret;
+> +
+> +err_release_qmi_handle:
+> +	qmi_handle_release(&ab->qmi.handle);
+> +	ab->qmi.ab = NULL;
+
+should this be ?
+
+	ab->qmi.handle = NULL;
+
+> +
+>  	return ret;
 >  }
 >  
 
