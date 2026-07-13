@@ -4,135 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 549EEC43458
-	for <ath12k@archiver.kernel.org>; Mon, 13 Jul 2026 14:44:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23AB9C43458
+	for <ath12k@archiver.kernel.org>; Mon, 13 Jul 2026 15:02:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Vonu41nazZKgZgFzgiMlMdUi1Svr1anpCHuYLg93am0=; b=fbech4VaKnpIroEAv4VTBB4F1y
-	0qGN3xbawsUkrAu/NNryOROb5WZ2Mu3zKJmn8bjun778e6kj/XEnNVTgpdO9aePU2rDh2vPiMItVI
-	ca5HMKwRNwIE86lwRmteyT6LimGlLT/637aKlByrne+9oBWiSY3brCApsP2CJPua1gGDi6lhF46T6
-	Xw73BwzIonULCKvtj3n4L/FzcRq8ik1rxWgJb/NHxOzqlEp67rlP7VZPXnxln9j3+ndAXurTkPUXN
-	8g1COoAH/eh4hfNfvH4Bfa/xb9FTeTCw6c6L5PEWQMCbtSgvB2OGkHFx1WClZyQYnkoTYUhHRHHKc
-	DWdQ/Ezg==;
+	bh=88RxX+JkWNZbQ2cIlHOd3evCkQ6J14mP3ECcOysTa0w=; b=RnAJHiUwQ4yZ7moARGCklsMx3H
+	EavQ/pVz8MG4XI67dDTYPkEc9FFEP7db1rjQkQ50NyZovWEySNfS6ihgOy+lzlblGHOPDmKbzpVKV
+	O3MXBFCw+a3futwGkbfpRJMhQgZwKyviaiIXgq7PrO+ZeDk+Fu9zDsUVMydHzdrrk+Uqxyq25zePy
+	JxEC59JZntyAtCRVthq7cpt0DJ3+jyCNsxJmnWlpHI/vHoXplATITIkX9nufamRUO8hm2krXLdXLX
+	DtDlMIgEE2+kH2wzF5Mb3DZJyPsBP85th0Njiz0QPApb0SypAvvMar+vBoOOdOCLg3WPSndZzrdD8
+	M9FRnr3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjHI6-00000009Xsf-3HS5;
-	Mon, 13 Jul 2026 14:05:50 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wjIAb-00000009iG3-3jQf;
+	Mon, 13 Jul 2026 15:02:09 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjHI3-00000009Xrk-2YYh
+	id 1wjIAY-00000009iED-1z4h
 	for ath12k@lists.infradead.org;
-	Mon, 13 Jul 2026 14:05:48 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66DCDekq1299388
-	for <ath12k@lists.infradead.org>; Mon, 13 Jul 2026 14:05:47 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Vonu41nazZKgZgFzgiMlMdUi1Svr1anpCHuYLg93am0=; b=WOQPMnj/u78/0Gu4
-	LIUId8l6vhHd1IqKI6bV+dVRsUyAGlc4lFE2RFB0/T4N7NBJaKdIesmQeyoDs/my
-	pFmRqgz6AYrzUmQU7NHlqPr53CwTeYkuv2EVDgYXaFpSB7i3Rz702LL9rlcXIV0y
-	i2iKlDzJ5omYPSxB/30nHogUBqhRUq1ruXIVa5CKsq32E1QOt2mfy0AAm1enfRBB
-	K93/At46yKf1zSpgXKlHQOXNDMd3uhGMT4wOAy0ggLU68sQt2GgtDdj978LpxLrM
-	QPOO0fpul3Xxr+qJjxcSo2G8od3PUEqYtsbCPvO8LGsLIwTSiVkdue4l0clg9maI
-	69M4Yw==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fcwk3h04b-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 13 Jul 2026 14:05:47 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-388b404eaa4so4354142a91.0
-        for <ath12k@lists.infradead.org>; Mon, 13 Jul 2026 07:05:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1783951546; x=1784556346; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=Vonu41nazZKgZgFzgiMlMdUi1Svr1anpCHuYLg93am0=;
-        b=CQzGzWEz01TXiEBpegGpQxjSiHY20exTebkLvah1gK+/talsaqycepvjFo4dj5p9e7
-         79RteA8UpmEo4X1hPE0y4+y1oJEDoq8UcVLFkEIv7CdhLjJqHGak3rQXoOrpbRTDFy6C
-         eHkh6dZhUldotDIglfQEXGH4b8q2u0C7xgPnfIdVp/nLJg1BOSEcdWNjtzjYzZfvmFbu
-         aEYIuRxaPccms5w7cV3GyiSOpFqqymomtWtR0Zl3r1NUR/M5TWRo9CQaBanKCe2kKJ76
-         QWXfqWDfYSHxglDiyjcWN+UqVigOxXkfEZe+2hF0IG/5xn1LfrJiQBA3tZ30o8sCc6hv
-         rAAA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783951546; x=1784556346;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=Vonu41nazZKgZgFzgiMlMdUi1Svr1anpCHuYLg93am0=;
-        b=Q/dbA6vQxdlD7mWqHMPNKbGM7b/H1nDVwA5dzcKtYEajnq4J5uyVTjhLaGyztuxNZZ
-         xpYjYZ93V9L1ViwiKr5yJlW1UER+5GOheHcKPMQ1LxdTQalFbtJeFn+PEV83dp6cw5Lr
-         RlMpdn4uPfemva6GUAxrgx7b3MzK2ESzn8tkw0bQoTnOFfEnWfquhZY8pAfhypHDW00g
-         GrmD/Sim80BUU/79f2V4oMA2Ui5X6KBLASro8jwsIG0uVHdek1qsKKglYH5s9FmlNry8
-         c1uktbiQXj0bmNuSwxy+oFdU5IRq3fceNw4fqwtOXR3xzEkGA5mG4qhUfMIzoVc76x/3
-         Qiqw==
-X-Forwarded-Encrypted: i=1; AHgh+RrVdcExnsqk8lT0QPXNaVK73jzfL7n2xmCyFgwgQwFCI3bZYcgl3D97U2U4Od275fqD8HPgIZU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwQldhIxx1Lx35lE98BcdIS+qG/IbCuNYuFpTOTu2fCqCwbt0fo
-	qrxLe9sBOfK7pwoo4un1bLy1R68N6w4Ef2nlOzVhr6SO8nWJfL5HYsAkQ9wmVBT8gKUdnO5JJLG
-	6XZMlKPETpLbnGb4tLLutpTt+xnpHWRaGsWz06ESFIG3LdCHIagwWv/0Az35Z3SN5J9kjnfGA
-X-Gm-Gg: AfdE7ckwoGlgfHu5imr24i4oLQcyqDHoGKQjUeDHzely6aQs1n11bk9mERuCM0fHGG2
-	XRjdW8nWiRcdrdD5w4PsDjDbKTIIzGwKx3SqaGFFgtxU/6QZIbdjixPrUSgfPmDDo0NJhZZXXRe
-	pwUmlEorUXZSNGK4SbUm4DQ4/h9kt7CMBK5Q0q3cLnDRnXc680HP4ZI1OcdzI51oaglF8mKFKMO
-	4W8S+l74vLS9ShSmTYaqaX/X5bHcjoaIWmGpbPCRuBgJgd3yDLGGtotsvcAX9aX/2lz96WyStJZ
-	MAlsWf5tyk6Q9hHxTa0sIxsolWDmDr0nnUeToVyjS6dkxkCCHML7BhYmtreNPpsBRzGrQ9g/3LN
-	cgAKyILu89AzFTS6VTev2MU031AHzgBcJQJZwsyZr1WCfC45m/k+97B1GIbAlroHKtw==
-X-Received: by 2002:a17:90b:4fd2:b0:38d:a76:6470 with SMTP id 98e67ed59e1d1-38dc77c61d6mr7972436a91.39.1783951546521;
-        Mon, 13 Jul 2026 07:05:46 -0700 (PDT)
-X-Received: by 2002:a17:90b:4fd2:b0:38d:a76:6470 with SMTP id 98e67ed59e1d1-38dc77c61d6mr7972363a91.39.1783951546030;
-        Mon, 13 Jul 2026 07:05:46 -0700 (PDT)
-Received: from hu-jjohnson-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3117462f5c7sm77071424eec.0.2026.07.13.07.05.44
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 13 Jul 2026 07:05:44 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: jjohnson@kernel.org, Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org, stable@vger.kernel.org
-In-Reply-To: <20260615112103.601982-1-jtornosm@redhat.com>
-References: <20260615112103.601982-1-jtornosm@redhat.com>
-Subject: Re: [PATCH v2] ath12k: fix NULL pointer dereference in rhash table
- destroy
-Message-Id: <178395154431.877545.2513390294359874255.b4-ty@oss.qualcomm.com>
-Date: Mon, 13 Jul 2026 07:05:44 -0700
+	Mon, 13 Jul 2026 15:02:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1783954923;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=88RxX+JkWNZbQ2cIlHOd3evCkQ6J14mP3ECcOysTa0w=;
+	b=he4sD82ljT/nP65FhFxPKdLfsqZhnVMWq4Ed6u7kyzgMX+CcQsan5fFIzvxDC7qoyFB6G5
+	WJwq3vaY5FJtCkkiGLPs9QwF/l3ONCsJVc8ZnTfYzY53TZq6mEofG9TaTGvjGLSyPrT2vi
+	lOqo5YTMmK8myYFOOPqmlx1YTm2yGHc=
+Received: from mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-35-165-154-97.us-west-2.compute.amazonaws.com [35.165.154.97]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-495-foHAshqCPpOhpbdRenkVsQ-1; Mon,
+ 13 Jul 2026 11:02:00 -0400
+X-MC-Unique: foHAshqCPpOhpbdRenkVsQ-1
+X-Mimecast-MFC-AGG-ID: foHAshqCPpOhpbdRenkVsQ_1783954918
+Received: from mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.12])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id A66ED18009FC;
+	Mon, 13 Jul 2026 15:01:58 +0000 (UTC)
+Received: from fedora.redhat.com (unknown [10.44.48.81])
+	by mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 763911956086;
+	Mon, 13 Jul 2026 15:01:55 +0000 (UTC)
+From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+To: hujy652@gmail.com
+Cc: ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	jjohnson@kernel.org,
+	jtornosm@redhat.com,
+	linux-kernel@vger.kernel.org,
+	linux-wireless@vger.kernel.org
+Subject: Re: [PATCH 1/2] wifi: ath11k: implement custom wake_tx_queue with flow control
+Date: Mon, 13 Jul 2026 17:01:49 +0200
+Message-ID: <20260713150151.2343583-1-jtornosm@redhat.com>
+In-Reply-To: <20260711153336.542-1-hujy652@gmail.com>
+References: <20260711153336.542-1-hujy652@gmail.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.3
-X-Proofpoint-ORIG-GUID: vuwkwGp3d884OPY7Zkv0xzpuNYgq3F41
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzEzMDE0NiBTYWx0ZWRfX3UMOF+J+VWOh
- ImXAdMqukaimfwGOfBy47q1bnHmS7RF2g7QcILTmaWXDm47rE/Ft03uCByv2ZZYRo9RD+la2e3+
- o4syQ0Bafi8CLDZmIz1ptRKHIlLjvJE=
-X-Authority-Analysis: v=2.4 cv=e6c2j6p/ c=1 sm=1 tr=0 ts=6a54f0bb cx=c_pps
- a=RP+M6JBNLl+fLTcSJhASfg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=EUspDBNiAAAA:8 a=C_xO_HesPfbxFcvR4REA:9 a=QEXdDO2ut3YA:10
- a=iS9zxrgQBfv6-_F4QbHw:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzEzMDE0NiBTYWx0ZWRfX50cSB/tZ9CkA
- bSnI2i3EjaYDYcHr7JTSy0HYtY+eICpO+SJdNKlZFi4SIIGRhV7gyA3NwQJwvNKy4OlL416gXbz
- 4q73iSI/IGm3jJerqrJZUtocUONnkOb0C0vHVweDdegIJH/8R3NwWJrn8vkFZJnyGB3yuL0ALOy
- hL0/nYzclQppJQocp5b3fvwGIOHFd21gcS2EoucWFgrwZ00DrUI7UICCNrgh+yjpspkZzTeH4JN
- hxSUoa0emsvQR8TJB7L1YqpUtVmfL9KAu1XLe9X3E5U7qk0EIqmQXhVVnw23xBbIZnqJTX3lT0l
- r3v3cX/MB0X1/13wxIp1fRNWlKrdww+HyFgUejnAsViVGFmf+vZIuCS8Gt/nJrMYtimwNPHkaAn
- 9J24AGDHvTdhKa3C3LT1aSM8KwjJr8sHMjqBEc3nBeGsLoVdWWkRu0ELvNGHcXsfe7B8ka5krZj
- a44aw2hr7JrgJObMUzQ==
-X-Proofpoint-GUID: vuwkwGp3d884OPY7Zkv0xzpuNYgq3F41
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-07-13_03,2026-07-10_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 clxscore=1015 phishscore=0 lowpriorityscore=0 spamscore=0
- adultscore=0 malwarescore=0 impostorscore=0 suspectscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607130146
+X-Scanned-By: MIMEDefang 3.0 on 10.30.177.12
+X-Mimecast-MFC-PROC-ID: W9tPuqEkdTEf4b5RHrlGsuZ1ThLqEzj-s-9ejayE__o_1783954918
+X-Mimecast-Originator: redhat.com
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260713_070547_657609_3985AB79 
-X-CRM114-Status: UNSURE (   8.80  )
+X-CRM114-CacheID: sfid-20260713_080206_586497_F51E95A0 
+X-CRM114-Status: UNSURE (   9.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -148,24 +90,32 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Hi Zhi-Jun,
 
-On Mon, 15 Jun 2026 13:21:03 +0200, Jose Ignacio Tornos Martinez wrote:
-> When unbinding the ath12k driver, kernel NULL pointer dereferences
-> occur in irq_work_sync() called from rhashtable_destroy().
-> 
-> Two hash tables are affected:
-> 1. ath12k_link_sta hash table in ath12k_base
-> 2. ath12k_dp_link_peer hash table in ath12k_dp
-> 
-> [...]
+Thank you for the review.
 
-Applied, thanks!
+> In wake_tx_queue:
+> ring_id = txq->ac % ar->ab->hw_params.hal_params->num_tx_rings;
+>
+>In ath11k_dp_tx which is called by ath11k_mac_op_tx:
+>ring_selector = ab->hw_params.hw_ops->get_ring_selector(skb);
+> ti.ring_id = ring_selector % num_tx_rings;
+>
+> Are you sure ring_id will be the same?
+You're right — txq->ac % num_tx_rings doesn't match
+get_ring_selector(skb) % num_tx_rings on all platforms.
+In v1 the ring identification was only correct for platforms where the ring
+selector happens to coincide with the AC, but not for platforms.
 
-[1/1] ath12k: fix NULL pointer dereference in rhash table destroy
-      commit: 70231dcd782201579990ded73e0435d18bb524ca
+I will send a v2 trying to solve this globally for all the platforms.
+
+> Also mgmt frames use a different path.
+Correct — management frames go through WMI, not the TCL data rings, so they
+are not affected. The flow control applies to data frames, which are the
+ones causing the problem since they use different TCL rings depending on the
+platform's ring selector.
 
 Best regards,
--- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Jose Ignacio
 
 
