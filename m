@@ -4,80 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52E13C44501
-	for <ath12k@archiver.kernel.org>; Tue, 14 Jul 2026 08:48:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9739CC44501
+	for <ath12k@archiver.kernel.org>; Tue, 14 Jul 2026 15:59:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=QgPtgLnsf8qvRaDX9lHTjdZhI5SOrPpagXLEfKGMxTM=; b=jPHmXIK9CMhTFwhlEZTt3/5qsT
-	4d9hR6WbEQ8nRXGwCr3cPIk09FQ6yFklR3mDWoYKYjzCaE6qzubvBqTTBAXxET3T6qgReBrg6OTRA
-	FFLFjRXsIk/5YpyF2K2kT0pUBdoQxeaPNnrTwlOXsBv/+DkP3rEm/tNUb7NFTNuuorOroFFGW678u
-	gIbxSJ5av/Z2XGeUp4AQzA2i0s0OV1HoyMb3juAwh1/OeZ11s+p8Bg4oOQ72cdcL4h61/Lwe/Jcb6
-	9jIg7FNhnFcHvSP6usqtvGlMcEUL5ltYs+88v+oO59bP0GwiRPOJWQptHvanmxKnsNFJ2xMJqoxQK
-	IiqFY0cg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=1dh24pC1RhR3jWKl6U9WnLTqhHEZRr0wAavb5R/xV1A=; b=EOn5evKMlg65IjTrtWYH2ipKZB
+	40U45OsDw6CVYdShlw8FveaMNCWSVICV66savxnMCDFevrz5Oi6VvV3Evfoanfykb24p9jHI2lmtL
+	D8hLKUkeqb0G1sSE2jQGcs0jHzzEI/vkRF1tHJVPtrhgH1N+n66cjzDVxWsfQ9mzPWopqxANsXACo
+	8/QNx3mVSjevDiLUqFt2Q2mDLL94eUfodw+9+/bBh5Fy/80O+8OZQT8M0Fp1p2sdxpLOIz+AQoILi
+	9znmYDeKoEMT189qdozPoolwAHxt5R2WG8nEdoIaiU7C453ji3TZdyCcHEmnmQqa/tN41EyoH5QIT
+	PCSyyt5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjYog-0000000BM6c-0KMc;
-	Tue, 14 Jul 2026 08:48:38 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1wjfXl-0000000Cbp2-18dp;
+	Tue, 14 Jul 2026 15:59:37 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjYof-0000000BM63-0IOf
+	id 1wjfXj-0000000Cbnz-38ME
 	for ath12k@bombadil.infradead.org;
-	Tue, 14 Jul 2026 08:48:37 +0000
+	Tue, 14 Jul 2026 15:59:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
-	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=QgPtgLnsf8qvRaDX9lHTjdZhI5SOrPpagXLEfKGMxTM=; b=qaKQjvU54ltbmj+p9MqMqeLYT7
-	DmablPrKcNq5HusZSbQCePFx7tI+fSumCOalkxtO8MUzM67zY7n4KXjSSXMw66hf5n0/t+lKFCvCS
-	k/WIA/gUmK2rlOdFLMOtEEtaeT9DJgqWxWcTJ/1c7ZdCYNaWce1rqJjt21/3VvZ8JJNNb6i1qBuPI
-	qFLWXT5aWVtaJkKtJvuHiyW7g5trKCu1FG0V27HORCq/s6v7M/Ez8B7MHTffVUKEFQuPNSVI7CvS3
-	jP4k7MJtrltLPsTUkHjRkN40/p7WN3j9uPp0iv+cFvfZo9P8uJ4QJ4O8e2IoMv/Rsb3sjsQbWR1Mq
-	90y8lZLg==;
-Received: from smtp-67.smtpout.orange.fr ([80.12.242.67] helo=smtp.smtpout.orange.fr)
-	by casper.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjYob-0000000EbLg-0nDQ
+	d=infradead.org; s=desiato.20200630; h=content-type:Content-Transfer-Encoding
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=1dh24pC1RhR3jWKl6U9WnLTqhHEZRr0wAavb5R/xV1A=; b=OaO8tQiPqQs921X+MX+G0zD01l
+	Ml1TgLnUAWypbBAUajqIy62XZNOrnyeefHlSLh3nv740HERNjv5WYLeyeNJXYoo4f+2GeoBAA597L
+	T+VCODTSV1TzBBUGEl2XDjTPzsngx9KgviF+bnyQSgnnO9FWAIyo+/yYARXQq2BOzzrzyBpzOz+hC
+	nE0TpUy2gY2/SW5a1oOkfKnOL6lZJ4v2PcoNXsmxUbmO0SeT9S5TMZsndL7zMNKdQNUV+5KrN8dBj
+	7Ra+YogcfWAe94Shejk9edpn7KX9C3f43qBu/GyQp0YMVBnBAzPvdAvkDxG5XiZgLtq7bGkb4orEF
+	CEQ82aYg==;
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1wjfXg-0000000CfY7-2UQd
 	for ath12k@lists.infradead.org;
-	Tue, 14 Jul 2026 08:48:35 +0000
-Received: from device-97.home ([10.65.86.66])
-	by smtp.orange.fr with ESMTP
-	id jYfhwNkWUstezjYfhwaWtL; Tue, 14 Jul 2026 10:39:21 +0200
-Received: from device-97.home ([IPv6:2a01:cb10:785:b00:26fb:aefb:6cd2:db0e])
-	by smtp.orange.fr with ESMTPSA
-	id jYfgwv96VDc2NjYfgwPCKB; Tue, 14 Jul 2026 10:39:21 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
-	s=t20230301; t=1784018361;
-	bh=QgPtgLnsf8qvRaDX9lHTjdZhI5SOrPpagXLEfKGMxTM=;
-	h=From:To:Subject:Date:Message-ID:MIME-Version;
-	b=gRpPUzyVFJ7IN1ZMiIuiUrY4DxYS+BmXLoy+qESTd3mhCKxiBX62etJWlTQsaFFhH
-	 +hlJuYlmV8LbWRbHV5zatiSSl46bkRdY1QWp71diR+/6M7TIamrLZdFZvlxqsNPU/4
-	 KBESBNgoa8kWk/q0LKT75K/C6SkvUD8UGOMGiYQ89FLUfnTRS1ParEWn/7qOyVCVhG
-	 +DVi92IX087ztsVo8PzQtMcLy8rWNkGWZW5zO+AH7SNs5rznJevS8kHx9IGP9C7MHt
-	 +cF6N3S+ARexkpAxO+4CH+BrNP4zzKPIm+9uDENf0lhVu4mbdcTdBE6h6dxtP+O8GF
-	 Vrh4lKmhoUDOg==
-X-ME-Helo: device-97.home
-X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
-X-ME-Date: Tue, 14 Jul 2026 10:39:21 +0200
-X-ME-IP: 2a01:cb10:785:b00:26fb:aefb:6cd2:db0e
-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-kernel@vger.kernel.org,
-	kernel-janitors@vger.kernel.org,
-	Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org
-Subject: [PATCH v2] wifi: ath12k: Constify struct ath12k_dp_arch_ops
-Date: Tue, 14 Jul 2026 10:39:14 +0200
-Message-ID: <969d732e2c6f169e1aa5e89c7e01743a1adb55df.1784010931.git.christophe.jaillet@wanadoo.fr>
-X-Mailer: git-send-email 2.55.0
+	Tue, 14 Jul 2026 15:59:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1784044768;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=1dh24pC1RhR3jWKl6U9WnLTqhHEZRr0wAavb5R/xV1A=;
+	b=IIFOIVNeXH4aJnXKNz13nuC0SJ0UlnwEA8PIPEoUQYw2rhJkvgtXM9VJ92SYYBj9EfeOsY
+	hsBjTlRG1oM9CSV0ca9wq/QNVnB7poQEVmakrnz1EcZPpkp44STgEhC3ZYRO3pzE76D3v6
+	HykMEVzLlG4v7SuCai2iTCJzfuKfafQ=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1784044768;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=1dh24pC1RhR3jWKl6U9WnLTqhHEZRr0wAavb5R/xV1A=;
+	b=IIFOIVNeXH4aJnXKNz13nuC0SJ0UlnwEA8PIPEoUQYw2rhJkvgtXM9VJ92SYYBj9EfeOsY
+	hsBjTlRG1oM9CSV0ca9wq/QNVnB7poQEVmakrnz1EcZPpkp44STgEhC3ZYRO3pzE76D3v6
+	HykMEVzLlG4v7SuCai2iTCJzfuKfafQ=
+Received: from mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-35-165-154-97.us-west-2.compute.amazonaws.com [35.165.154.97]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-480-lxA7Vp8lMY6uXLc4DMMmaQ-1; Tue,
+ 14 Jul 2026 11:59:24 -0400
+X-MC-Unique: lxA7Vp8lMY6uXLc4DMMmaQ-1
+X-Mimecast-MFC-AGG-ID: lxA7Vp8lMY6uXLc4DMMmaQ_1784044763
+Received: from mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.12])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id F02AE180059A;
+	Tue, 14 Jul 2026 15:59:22 +0000 (UTC)
+Received: from fedora.redhat.com (unknown [10.44.48.50])
+	by mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id DC426195608C;
+	Tue, 14 Jul 2026 15:59:18 +0000 (UTC)
+From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+To: jeff.johnson@oss.qualcomm.com
+Cc: ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	jjohnson@kernel.org,
+	jtornosm@redhat.com,
+	linux-kernel@vger.kernel.org,
+	linux-wireless@vger.kernel.org
+Subject: Re: [PATCH 2/2] wifi: ath12k: implement custom wake_tx_queue with flow control
+Date: Tue, 14 Jul 2026 17:59:16 +0200
+Message-ID: <20260714155916.663864-1-jtornosm@redhat.com>
+In-Reply-To: <2b5dfc9a-d2fc-4396-a004-4d3dbe30b408@oss.qualcomm.com>
+References: <2b5dfc9a-d2fc-4396-a004-4d3dbe30b408@oss.qualcomm.com>
 MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 3.0 on 10.30.177.12
+X-Mimecast-MFC-PROC-ID: 5sQorBF7viZZLCOgp61-Z45InjoCGnlmglB_hsW5kpM_1784044763
+X-Mimecast-Originator: redhat.com
 Content-Transfer-Encoding: 8bit
+content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260714_094833_310207_2124FFDD 
-X-CRM114-Status: GOOD (  14.64  )
+X-CRM114-CacheID: sfid-20260714_165932_808558_6C1C1359 
+X-CRM114-Status: UNSURE (   4.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,63 +115,13 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-'struct ath12k_dp_arch_ops' is not modified in this driver.
+Hi Jeff
 
-Constifying this structure moves some data to a read-only section, so
-increases overall security, especially when the structure holds some
-function pointers.
+Thank you for your feedback and for routing to the team.
+I will try to ensure the approach fits all the ath12k datapath requirements.
 
-On a x86_64, with allmodconfig, as an example:
-Before:
-======
-   text	   data	    bss	    dec	    hex	filename
-   6318	   3384	      0	   9702	   25e6	drivers/net/wireless/ath/ath12k/wifi7/dp.o
 
-After:
-=====
-   text	   data	    bss	    dec	    hex	filename
-   6478	   3224	      0	   9702	   25e6	drivers/net/wireless/ath/ath12k/wifi7/dp.o
-
-Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
----
-Compile tested only.
-
-Changes in v2:
-  - Add the missing const!   [Ping-Ke Shih]
-
-v1: https://lore.kernel.org/all/469d732e2c6f159e1a05e89c7e417c3a10db5fdf.1784010931.git.christophe.jaillet@wanadoo.fr/
----
- drivers/net/wireless/ath/ath12k/dp.h       | 2 +-
- drivers/net/wireless/ath/ath12k/wifi7/dp.c | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 64f79e43341e..a94bbc337df4 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -538,7 +538,7 @@ struct ath12k_dp {
- 	/* Lock for protection of peers and rhead_peer_addr */
- 	spinlock_t dp_lock;
- 
--	struct ath12k_dp_arch_ops *ops;
-+	const struct ath12k_dp_arch_ops *ops;
- 
- 	/* Linked list of struct ath12k_dp_link_peer */
- 	struct list_head peers;
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp.c b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-index c72f604661ce..01a45f428990 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-@@ -139,7 +139,7 @@ static int ath12k_wifi7_dp_service_srng(struct ath12k_dp *dp,
- 	return tot_work_done;
- }
- 
--static struct ath12k_dp_arch_ops ath12k_wifi7_dp_arch_ops = {
-+static const struct ath12k_dp_arch_ops ath12k_wifi7_dp_arch_ops = {
- 	.service_srng = ath12k_wifi7_dp_service_srng,
- 	.tx_get_vdev_bank_config = ath12k_wifi7_dp_tx_get_vdev_bank_config,
- 	.reo_cmd_send = ath12k_wifi7_dp_reo_cmd_send,
--- 
-2.55.0
+Best regards,
+Jose Ignacio
 
 
