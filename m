@@ -4,76 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 143E1C44508
-	for <ath12k@archiver.kernel.org>; Wed, 15 Jul 2026 12:52:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92DB8C44507
+	for <ath12k@archiver.kernel.org>; Thu, 16 Jul 2026 00:59:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KtfzWGFBtflnyedcTL2bNv4P5mVxZBab52qWUKk3QRA=; b=mbTKJ5SklOsbsNS2Wbi/3pa7SI
-	wuOXLgjfjdFy8ec9Qx3euyScf8DrJDhBKmjSqtUXuDqYyzTCmO2x3TjfdtPk31C25op/0HFmDFDHp
-	Ym1XuEcRHc3ZzH/FCKsXHZAtPI75SUHYL9MobfdV28rr6dXOe+qfGG/AUiylJAecMVn5kAXkbkmAO
-	BgDHmLGoIWM1uOwCMG0aFhM8uKp03lQr2SgONIkl4lA/UGhAhKl7p+HYvtouE9nDiQkLKNKtjzmvK
-	nB+DEjRKKo+IVxTNwYPTFs628gAqp01FlC70MH7qWGH/jj9hixoZJzFKbliSXBQkILzT0QqCI5Lmu
-	mkFq/QxA==;
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=fxSym0MG0DTsfrTZy5yY04eAKQV5OakSQtDa3iUK2PI=; b=PoNKEy2rfkc4OGw9KOlIaZ8dmQ
+	5yaXUzK+hEfpz2YUOHsOluI/3Q7WXxxb18hkd0YjXd9zXFXzUl7pNZ7tyxBTi4KT5wKxC94R0sik4
+	o61uI7ikvrEID/8LIdewLD8/9mOQ0EGGgeFb+uE4JffVw6+5R/WEFhbdnqMlVksGyBFxVzFxMxAmp
+	gXrPmBjC/o8Mk3xPBJ5+A1JEpvCoQcgoDlopMmZCaTNYVgLzoUOkQekE5PGXVF2W8c40WU562Eh+a
+	hs1alMfetXdqI0ojI+Y3rX0Zsv45mauY/pSUpzjldQaCUifYIoRd3/sb8BIUMXBJWALO7/qhuuOvF
+	KG7dJgkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjz5x-0000000ErFu-37si;
-	Wed, 15 Jul 2026 12:52:13 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1wkARS-0000000GA7Q-3pEp;
+	Thu, 16 Jul 2026 00:59:10 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjz5n-0000000ErD6-0SBU
+	id 1wkARR-0000000GA6q-2IMx
 	for ath12k@lists.infradead.org;
-	Wed, 15 Jul 2026 12:52:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1784119922;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=KtfzWGFBtflnyedcTL2bNv4P5mVxZBab52qWUKk3QRA=;
-	b=UzeQyTKn8sDBVYMv2avO6p7a9C7dauZuU8BrYhYQi4FOAbkPzQhEGHShmc93AwZ+GLIkO/
-	ba40VjU8DvoGcrX7F+amnjgF7bQBa52XN/ZKHX954k8wPgZ9fwQUPuTMG+yheWiA+19uHm
-	cFspz3t0q6265xn4pWzRh8+ccSoKFjo=
-Received: from mx-prod-mc-08.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-35-165-154-97.us-west-2.compute.amazonaws.com [35.165.154.97]) by
- relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-679-WcQPVKSEOLCfklTIe-z3vw-1; Wed,
- 15 Jul 2026 08:50:31 -0400
-X-MC-Unique: WcQPVKSEOLCfklTIe-z3vw-1
-X-Mimecast-MFC-AGG-ID: WcQPVKSEOLCfklTIe-z3vw_1784119830
-Received: from mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.93])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mx-prod-mc-08.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id DCF0E180064D;
-	Wed, 15 Jul 2026 12:50:29 +0000 (UTC)
-Received: from fedora.redhat.com (unknown [10.44.48.52])
-	by mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 2DBD218004D4;
-	Wed, 15 Jul 2026 12:50:26 +0000 (UTC)
-From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-To: jjohnson@kernel.org
-Cc: ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Subject: [PATCH v2 1/3] mac80211: add ieee80211_tx_peek API
-Date: Wed, 15 Jul 2026 14:50:14 +0200
-Message-ID: <20260715125017.277242-2-jtornosm@redhat.com>
-In-Reply-To: <20260715125017.277242-1-jtornosm@redhat.com>
-References: <20260715125017.277242-1-jtornosm@redhat.com>
+	Thu, 16 Jul 2026 00:59:10 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66G0XxCA968383
+	for <ath12k@lists.infradead.org>; Thu, 16 Jul 2026 00:59:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	fxSym0MG0DTsfrTZy5yY04eAKQV5OakSQtDa3iUK2PI=; b=kCYoa4PF/NvUiTHG
+	6+87jHuqfpW/wdcMJteLafDiQmob/cw49hw6YAq7hUvZOwCNFjhgsP8w1uRWviTI
+	KnOpag0pnRAYExClazyWzGCoQNiPvBis0M+wrUlU6x1j76cm8ZoL3Nu9Q5KpUn5B
+	scF0S2pR8yb4i65bbJmobSmccSNLnttQkvM9DFh4wVX6an6uPh0zPF9c42ZSjedC
+	iStyp4B7J6g6P76jvuQhVEA20JkilZfCBgS9KvExMdTJ6hGMq2bMoiZukp8AWQG8
+	bZT3rRBKrqoxQTk0EpjbkbA5i6wFt+wf/JQ4ZVYjq0zh/FDEdZrHE11YYr0nMm5x
+	8EIMCw==
+Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fe7kabfmt-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 16 Jul 2026 00:59:08 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-c856470fe9fso2480733a12.2
+        for <ath12k@lists.infradead.org>; Wed, 15 Jul 2026 17:59:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1784163548; x=1784768348; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=fxSym0MG0DTsfrTZy5yY04eAKQV5OakSQtDa3iUK2PI=;
+        b=Rla4DTKuLJcJ/Rd1URnsImRkYJ5GgZI8JF0emfI1QaGGzDPS8UY3egrA/ojlK4hS4u
+         Ykp6qvsdxVzqPLsQH2LDih9A8QyvKUM5Gwq7avp584QpdfMhwu3NARfNZuYUdqvHIzXw
+         iTyzoZowYri6cEh2OwkK3xvb4vkMzSMtW7IKb8W/eW8d15nBFtApQ3etQ6itFX6brHgp
+         xLtg0E70Zzs5GVhkbEsyJbvGDFXTvX5Tx/WcbumkfIhkRpAeJO/QWsnfQmQTeCZXEqQn
+         b5N6dIbxTuMOLcYtKVzmaMeU5s+TQ/YDwj1eyBKCGlvU8e2hVgxYDFwTTis9uwxF/xbA
+         o2bw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784163548; x=1784768348;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=fxSym0MG0DTsfrTZy5yY04eAKQV5OakSQtDa3iUK2PI=;
+        b=BOWYzIw4TjfDyda3SzHQdcC0lODZ/tQ4MabB99RNt+8wfwe5/J/KXxl2cAJTDL11Gv
+         Jizc4jnmXaQt279G9iVqAjTXNXblhXKNYkeSM/jeOrLc1W6W9go2IwzzWXMfLyMAyM1E
+         Nwxuw/OEasnsC33AOmoYE+KR7n/AtLbjxsHxcost+Di1M2uftlqQbCIEfU3xcFZoYsZ/
+         7nTdl8lrD8GV3RDfGJptn/fzCh/OSyTVI8YJFVAE6f9PVJvWC+wDIkd1wTWcwbgpsLOj
+         NGEii8V3DqN4tM9dIlWxPZEgQAgXqG6gxYJ7x85HY1tVONq/8NbXOJVydWd50zmLrDrO
+         gRKA==
+X-Forwarded-Encrypted: i=1; AHgh+Rp8yfwbCy0aSt4+2t9KNcHqKzPpFUCSwdP+WlWRCHASC4OY8ntdYCsZoJNHyOUPVb1FcBauWYY=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz5qgDRSns09utYFJ7jJH8BB6AZYiQHKJfh2HpTJs2Ehr+qiMbe
+	QLxMv83vQ+i3KxDLgUPccxP6hsICrcD7kfpy4Mdr3aTy1DeCwhNmJK6Njgvg7GVQhf3H6j2bKjo
+	7ySh/IkqymSOHF3hhPdPhzA1AZZrOjr1xNQP5lVMRVa/eB+UHOUoGDeaKPY+ULrKg
+X-Gm-Gg: AfdE7cnAbh4rEBGhZcmLjiszU0A3M0qvFBv5JQtd45HizE8lay5y+6cE2AGc2Famp4N
+	zafqdKU52YZAe+yqpt0nb5ccXsQQVsaYoojS43MpxVatRaPtBjKgrZWr2xhemrvPvAKTQ4QIccV
+	+VI7bjNbz3An3wqhs6pB7eyU72T419sSsEuRixzIgYXFxnGJx+5OU2/+h4gSx/yybi8KuYdZf+E
+	yvlSsC/7R8sLFOuvAgBnq8UqV/eO5hRJi17E24yrZuld6obRzmBfKwMjlId/eXL7EPUEV4sAuEZ
+	8YjMRUo0pO96nsufLD9LLTZxYnoPCuixsCa5n11Xwoc83J095gUlVapHcYJ9dbmVd7+bDyZzrhf
+	aowN8G0XTLUGwqvkWWRcOUV+IYOVha6QJ8DVnW/fK2dhL5qjFstlPLIkYQQ==
+X-Received: by 2002:a05:6a20:4307:b0:3c3:7dfd:22c6 with SMTP id adf61e73a8af0-3c37dfd2500mr2681261637.73.1784163548066;
+        Wed, 15 Jul 2026 17:59:08 -0700 (PDT)
+X-Received: by 2002:a05:6a20:4307:b0:3c3:7dfd:22c6 with SMTP id adf61e73a8af0-3c37dfd2500mr2681244637.73.1784163547629;
+        Wed, 15 Jul 2026 17:59:07 -0700 (PDT)
+Received: from [192.168.1.11] (15.sub-75-218-246.myvzw.com. [75.218.246.15])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3140e5306afsm5588023eec.9.2026.07.15.17.59.06
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 15 Jul 2026 17:59:07 -0700 (PDT)
+Message-ID: <faf48c76-373a-42c1-9c69-cfbc5178640a@oss.qualcomm.com>
+Date: Wed, 15 Jul 2026 17:59:05 -0700
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.93
-X-Mimecast-MFC-PROC-ID: e-F9qIZEV0OieDo0WLntI7kTTvZR-c6y5hZJFSHnU7g_1784119830
-X-Mimecast-Originator: redhat.com
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] wifi: ath11k/ath12k: release QMI handles on late init
+ failures
+To: Guangshuo Li <lgs201920130244@gmail.com>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        Anilkumar Kolli
+ <quic_akolli@quicinc.com>,
+        Sriram R <quic_srirrama@quicinc.com>,
+        Shashidhar Lakkavalli <slakkavalli@datto.com>,
+        Kalle Valo
+ <kvalo@kernel.org>,
+        Venkateswara Naralasetty <quic_vnaralas@quicinc.com>,
+        Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
+        Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+        linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+        linux-kernel@vger.kernel.org, ath12k@lists.infradead.org
+References: <20260715064042.1988288-1-lgs201920130244@gmail.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20260715064042.1988288-1-lgs201920130244@gmail.com>
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: 7bit
+X-Authority-Analysis: v=2.4 cv=TMF1jVla c=1 sm=1 tr=0 ts=6a582cdc cx=c_pps
+ a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=6VQYfvmiyQ8t40WkS/mQdw==:17
+ a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
+ a=pGLkceISAAAA:8 a=jDosp7zG289F-1VKxZYA:9 a=QEXdDO2ut3YA:10
+ a=_Vgx9l1VpLgwpw_dHYaR:22
+X-Proofpoint-GUID: hcuXs0sdj-14breBZbsx1UUTj2ZjRSLE
+X-Proofpoint-ORIG-GUID: hcuXs0sdj-14breBZbsx1UUTj2ZjRSLE
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzE2MDAwNiBTYWx0ZWRfX0/6cjpnoy+pl
+ kybdIj1SN6SV7NPlVpQEGdBAo2+V94e69YCCnIc8k5YfzFDOa+0Ph6VxlPF6PjC3WvlJ8ep2InN
+ bbyipf575b258GxGwtdAEs6Iupm5jho=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzE2MDAwNiBTYWx0ZWRfX1UJjHxvioRP/
+ aJVnkkfHsklonUIVcXH7weQk8RZTqnl2IYn0GCZgi/h15GN+YWDDsk+QzeFYdE8oQxHeuwrE0UT
+ 661YcVYF68oyAH0EGi+aYVh9RPQIEPR/z99VrwkjooFyC2wcGQKiaJ2kkb45DgRLlMSUH03+IAY
+ XoAU4WC4vOCJfr1vwgDc7ib5/AP80/mnNtcro7If45WZPJpkL9a9q/TlrVR+V8bc/QT8YgkTb0H
+ +vTU7yAhbSGLqQzsQtNXyrAcrw3Xxf5mTzjT2Tu6SRMfkxNpbzmwQy3TaadEcLEcPLuySz3wzD3
+ iLkW7nW7is8yYjGXt/Zh7tR1HCiTT6U52KOUIKrR85LRme8xve16Yo+35IJ1g7rwTMEowPB66UD
+ 1aoQHJjoNsQfktlbpQpZXCWcYwt4TzpKge9f0lqryAEfleni/KezPDLmXlEY0yhQuwfHdoyrWdN
+ ev+mkpV5cO4qr8eTrCQ==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-07-16_01,2026-07-15_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 adultscore=0 phishscore=0 suspectscore=0 impostorscore=0
+ priorityscore=1501 bulkscore=0 spamscore=0 malwarescore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607160006
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260715_055203_227884_8D83F501 
-X-CRM114-Status: GOOD (  14.81  )
+X-CRM114-CacheID: sfid-20260715_175909_605160_CE6393F2 
+X-CRM114-Status: GOOD (  14.17  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,111 +158,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add ieee80211_tx_peek() to allow drivers to inspect the next frame
-in a TXQ without removing it.
+On 7/14/2026 11:40 PM, Guangshuo Li wrote:
+> ath11k and ath12k initialize their QMI handles before allocating the QMI
+> event workqueues and registering the service lookups.
+> 
+> If either of these later initialization steps fails, the functions
+> return without releasing the initialized QMI handles, leaking their
+> resources.
+> 
+> Release the QMI handles on the late failure paths in both drivers.
+> 
+> ath12k_qmi_deinit_service() uses ab->qmi.ab to determine whether QMI
+> service initialization completed successfully. Set it only after all
+> initialization steps succeed. Keep the ath11k assignment unchanged
+> because ath11k does not use it as an initialization-success guard.
+> 
+> Fixes: d5c65159f289 ("ath11k: driver for Qualcomm IEEE 802.11ax devices")
+> Fixes: 088a099690e4 ("wifi: ath12k: fix error handling in creating hardware group")
+> Signed-off-by: Guangshuo Li <lgs201920130244@gmail.com>
+> ---
+> v2:
+>   - Set ath12k ab->qmi.ab only after QMI service initialization succeeds,
+>     as suggested by Baochen Qiang.
+>   - Fix the same late initialization QMI handle leak in ath11k, as
+>     suggested by Vasanthakumar Thiagarajan.
+>   - Drop the Reviewed-by tag due to the code changes.
+> 
+>  drivers/net/wireless/ath/ath11k/qmi.c | 10 ++++++++--
+>  drivers/net/wireless/ath/ath12k/qmi.c | 13 ++++++++++---
+>  2 files changed, 18 insertions(+), 5 deletions(-)
 
-Drivers implementing custom wake_tx_queue operations may need to
-determine which hardware TX ring to use before dequeuing a packet,
-using properties like the skb hash or queue mapping that are only
-available from the skb itself.
-
-The function checks pending fragments first, then iterates through
-all fair-queue flows (new_flows and old_flows) to find the first
-queued frame, matching the iteration behavior of fq_tin_dequeue.
-It also pre-caches the skb hash via skb_get_hash() so that
-hash-based ring selectors see a stable value through the subsequent
-dequeue and TX path.
-
-Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
----
-New in v2
-
- include/net/mac80211.h | 20 ++++++++++++++++++++
- net/mac80211/tx.c      | 39 +++++++++++++++++++++++++++++++++++++++
- 2 files changed, 59 insertions(+)
-
-diff --git a/include/net/mac80211.h b/include/net/mac80211.h
-index 4f95da023746..9289b8dca972 100644
---- a/include/net/mac80211.h
-+++ b/include/net/mac80211.h
-@@ -7742,6 +7742,26 @@ void ieee80211_unreserve_tid(struct ieee80211_sta *sta, u8 tid);
- struct sk_buff *ieee80211_tx_dequeue(struct ieee80211_hw *hw,
- 				     struct ieee80211_txq *txq);
- 
-+/**
-+ * ieee80211_tx_peek - peek at the next packet in a software tx queue
-+ *
-+ * @hw: pointer as obtained from ieee80211_alloc_hw()
-+ * @txq: pointer obtained from station or virtual interface, or from
-+ *	ieee80211_next_txq()
-+ *
-+ * Return: the next skb without dequeuing it, or %NULL if the queue is empty.
-+ * The returned pointer is const — the caller must not modify or free the skb.
-+ * The skb remains queued and will be returned by a subsequent
-+ * ieee80211_tx_dequeue() call.
-+ *
-+ * This is useful for drivers that need to inspect the next frame (e.g. to
-+ * determine the target TX ring) before deciding whether to dequeue.
-+ *
-+ * Must be called in the same context as ieee80211_tx_dequeue().
-+ */
-+const struct sk_buff *ieee80211_tx_peek(struct ieee80211_hw *hw,
-+					struct ieee80211_txq *txq);
-+
- /**
-  * ieee80211_tx_dequeue_ni - dequeue a packet from a software tx queue
-  * (in process context)
-diff --git a/net/mac80211/tx.c b/net/mac80211/tx.c
-index c13b209fad47..91bfd8ef9428 100644
---- a/net/mac80211/tx.c
-+++ b/net/mac80211/tx.c
-@@ -3857,6 +3857,45 @@ static bool ieee80211_xmit_fast(struct ieee80211_sub_if_data *sdata,
- 	return true;
- }
- 
-+const struct sk_buff *ieee80211_tx_peek(struct ieee80211_hw *hw,
-+					struct ieee80211_txq *txq)
-+{
-+	struct txq_info *txqi = container_of(txq, struct txq_info, txq);
-+	struct ieee80211_local *local = hw_to_local(hw);
-+	struct fq_tin *tin = &txqi->tin;
-+	struct fq *fq = &local->fq;
-+	struct sk_buff *skb = NULL;
-+	struct fq_flow *flow;
-+
-+	WARN_ON_ONCE(softirq_count() == 0);
-+
-+	spin_lock_bh(&fq->lock);
-+
-+	skb = skb_peek(&txqi->frags);
-+	if (skb)
-+		goto out;
-+
-+	list_for_each_entry(flow, &tin->new_flows, flowchain) {
-+		skb = skb_peek(&flow->queue);
-+		if (skb)
-+			goto out;
-+	}
-+
-+	list_for_each_entry(flow, &tin->old_flows, flowchain) {
-+		skb = skb_peek(&flow->queue);
-+		if (skb)
-+			goto out;
-+	}
-+
-+out:
-+	if (skb)
-+		skb_get_hash(skb);
-+
-+	spin_unlock_bh(&fq->lock);
-+	return skb;
-+}
-+EXPORT_SYMBOL_GPL(ieee80211_tx_peek);
-+
- struct sk_buff *ieee80211_tx_dequeue(struct ieee80211_hw *hw,
- 				     struct ieee80211_txq *txq)
- {
--- 
-2.54.0
+Please split into two patches, one for ath11k and one for ath12k
 
 
