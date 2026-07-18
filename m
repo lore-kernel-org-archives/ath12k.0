@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D107EC4451B
-	for <ath12k@archiver.kernel.org>; Sat, 18 Jul 2026 07:40:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB697C4451B
+	for <ath12k@archiver.kernel.org>; Sat, 18 Jul 2026 07:45:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=uaPspb0vOFkRyG1Ra2k3lDnMsVMESB6T2yn/LNmYQss=; b=1NYmXlVA1a6ZMJbSmca/2+Noxh
-	NQABL14EgazJf7t6w2AeNszfd7ErV1P4jJPKpxYn+MmDhM20q+VChp+S9Ht/UqKXYsfBxNcvnoRJ9
-	pbRgg+/9OX/fPhI/BovE+5lmVUMsLRszEtIlIcyCxPP4PTHgiB/2Bvp6DQu4U4lNJ7ESXmTgbHoy7
-	k8kehBOjuO6ga8HVMs196g+gBVgxKWhlUIp7t5wbh+OvZzCoI4fGFBokMXxkYTJe1xwoa0G5J60Rv
-	FwffHJMKdO4+t2rk9oploAW4LMUqagSProtnOXVhleq+wEuUFmkaJHQodRRsUnP8ckhorGnM7GHFw
-	zapJ5+tg==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=OFyV2Rkgf5HtfQYv0w6PI4pQpZkaJeMYAvZn1zRWRf4=; b=rb5OS88SPtra5lh5rnv+gPz/GK
+	TFPNNTmXOgOig9QW78rJrVlQweuBnSduKFbrOXRZEr/n8BvyZjrJ+qk5k9C8oidvM77uyiETnRyH3
+	+GvA2cCp3U+yjQiMvZwhV3mZNB9jOB29R41fVMaO+zR7pZZ0hhTRgQSuKLAnGyeUd1oh9tEPI3UNh
+	e+LU1UnfNqBy62kEy/FNxFebbE8fdaPlig0i5K3iDbVJ4QR6Npscc1w8cvDndYNmr8ID4mAZfZLgW
+	3TIWjur2wCWlaEN5I0CXJ3tSMvTsv11ye66PDvI+wNtB6POQvkR5PmpVNiSbvy8cN8Nb+tCQeZZ4b
+	AtFl7AXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkzfB-00000003qUe-3YCo;
-	Sat, 18 Jul 2026 07:40:45 +0000
-Received: from mail-pl1-x631.google.com ([2607:f8b0:4864:20::631])
+	id 1wkzjl-00000003qvj-1Y1g;
+	Sat, 18 Jul 2026 07:45:29 +0000
+Received: from mail-pl1-x633.google.com ([2607:f8b0:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkzf8-00000003qTu-1Hwo
+	id 1wkzji-00000003quz-2YpJ
 	for ath12k@lists.infradead.org;
-	Sat, 18 Jul 2026 07:40:43 +0000
-Received: by mail-pl1-x631.google.com with SMTP id d9443c01a7336-2ceaf8a1265so81970555ad.2
-        for <ath12k@lists.infradead.org>; Sat, 18 Jul 2026 00:40:41 -0700 (PDT)
+	Sat, 18 Jul 2026 07:45:27 +0000
+Received: by mail-pl1-x633.google.com with SMTP id d9443c01a7336-2cca0c5799eso61391175ad.0
+        for <ath12k@lists.infradead.org>; Sat, 18 Jul 2026 00:45:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1784360441; x=1784965241; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=uaPspb0vOFkRyG1Ra2k3lDnMsVMESB6T2yn/LNmYQss=;
-        b=iYQa9DK4lI9vO0k5PBvPbiuXJ1/HPrl9RdlfN1AITqqJHDSp/EggH7/80Rsxfbv/gj
-         9ErDS+rHhJvKnfpEsOUpUAP9XkwRhTbKW3ge+ehaUcIr7ZtAWm0aYXM1zgIGUX7rXb3W
-         t7IM7ucbnTvOdYbL9iRwrG9lOkP/AqzwZH8GqbZxkgSyG1b7VrWWLG5P7enMWcgjhFYn
-         XZgUe+4D2I6DNJbuINDAqZ9KBi/xX+iadqUoH+AebMaCYRueJEyQYsaDc0XYgqdc37we
-         cnBx2BhSVEfVLuHKT0aY8x2rKLCOl7NGLxlBsuAj93/yxJ/YWtWRy6Djm+pc3JLwEzqb
-         NLWA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784360441; x=1784965241;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20251104; t=1784360726; x=1784965526; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=uaPspb0vOFkRyG1Ra2k3lDnMsVMESB6T2yn/LNmYQss=;
-        b=K9TUIHyf/8waY9kd+E6WRJvUnd+ZR2hVJbs33wY2+quSLERTH/ZrDmYNV8WdmTc7qK
-         eVAPoBirHwJHRxHAOdhlp6TT/rB4ODF8sHPP524ZmOwB/9WwyonbQfBiH/n3L8iHQyaz
-         8l/iJ2aggjX9Pu6bD4XqKKRDaPN+7pv06GQyEJmBUnzoMMC1JtAmoVxKrO2l1s9vfbJ7
-         KbOMyBa4+/a+KqtRV5OP1MGMzyYzVCn/t9F6AWu+aAIdl/mrxzGrYuyiltpI7YMVonJM
-         K8Dbwd0sxK6/ty6UzImIwZ0TOg/+qyjOhYvmR6I3IZ+iP6pHIQGiPt2XkiPs665FaH/7
-         9FFQ==
-X-Forwarded-Encrypted: i=1; AHgh+Ro2Pq4lsnZYnYdbrsKLl49pKS6Zgse8P158HoWTRGcUdTH4pSrWh10aQJXRaf01w0sg0NzzjUU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxXlOvytZC0ouh49BzCfAZ4O4i3in8QIJb081k7NdlAvLiiu03z
-	2swyViWndKQTz+tOLLUh822dMy2WjuyQsybOpMeB4QxKEEqxKqY8BlRM
-X-Gm-Gg: AfdE7cmNboFPfbC96nQebyQ0vnjoAim1gkbkk1keVnu++FfBTe0kkOGlD+Bb3NkZ80G
-	yvJTfSx37cigmqNk9MSyYN1IlAjCnpagXL8qmNGyKeFQMtpnAdZbR+jPB0uIkv2f2KkG2fiekQX
-	FwsX4yFu/yuNWXnIZb7v9jh24so8TR2xBMmDSMCvK5DYbvrnhx8rrVasOXVljbqDt7adPo8WBOc
-	ORh+r2y2VlQqT8j7uhMarkMdw1a+DkwlZd9eLDtyCjleYJl6Fb9lPEVja2t0TOfI/PW5S3HGapL
-	lj4mdTk8NQiQ4nNXqpqxN8jXmOa2sZdjmyHfawxLqF+M2In4NPsR2uvnXe7Oq9rMAiCNZe6yjgo
-	jAAAD6E34CiJVYiWiX4+Vae5g/viydeyMF6/HBSnEBfV47Q9TB+ShxAwIhzfEFAudGi8=
-X-Received: by 2002:a17:903:1210:b0:2c9:d298:6c06 with SMTP id d9443c01a7336-2cf34a0a6c0mr62046285ad.25.1784360441199;
-        Sat, 18 Jul 2026 00:40:41 -0700 (PDT)
+        bh=OFyV2Rkgf5HtfQYv0w6PI4pQpZkaJeMYAvZn1zRWRf4=;
+        b=c07J3bGPiQ4cB9q0bIIK0GSllP2UG8/Aqiu6NhBjBqhG2RQj78bM35yTv8VZVoJiBr
+         d2ZLB/RABp2WsE7Zar2gce4lS7BDfqdFfR8eeDSYYniGZIpJ2JQD5qKH49blB//PmGWH
+         5dvEIFk4e620Q6IiEp/CZxP6aRQyjC8A16VOnh5owy4MAzpny8HWXlXY1eoWrGeQ7lmA
+         ixjA7rzNQ6wL1Hgx9c/UisIGLca5B2FaigYWfF/NssxpOZpPj4SJPNfUHdlS5yMePzhD
+         MFgukjMVmh5Fiz/voIvh9oO1XnCwAPB5L/QENxFVyvcx2RXb7ycU5O1ugHzr/iZmTQtX
+         R0+g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784360726; x=1784965526;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=OFyV2Rkgf5HtfQYv0w6PI4pQpZkaJeMYAvZn1zRWRf4=;
+        b=tBczgV8BGuJCoyLedCIXTGbO1D5N61mjVjprlYl1z06Ao5Hn3NptF81KHPjXihIQXk
+         bLB3KTN5DdbVfF9s5pM3Jcz8T7XBDGx6knChJzroiYvy25workohRzYOGFj1xUIR5C6C
+         xXhUCyWyB3aSvCJvyRLbdQmAUjd3GTCkQjgzdjkhDWTqtilzf6nXdluixxuyOk7hepwJ
+         kR73cPq8OC3NEcY+ruYh4ndZgNFF+av3X3wJ4CMRMrMaNTnduYDJsrc6Csu1md0iRC4j
+         OhSvWyBpTEZ0WT2dehNOie1Dae/IcKiOHelTkVcrD90e2vrs4pbrhnTppn4628zOMS1h
+         3+7g==
+X-Forwarded-Encrypted: i=1; AHgh+Rou3sMtchFYMHFOG1nxYrTttiso/Seec+/9Trwy86+8bQUBVjIBZ+VfiJhYN2wNFNwctWtcAg8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw09BeOgii1tRXmkTMHiuyZMtUgUqlsV0HN7cBvcf7318u7L8zz
+	nXJ4U2saTRT7TTuvcs9VOlwJJ9hfox07gcc5hsSVPJtm98BjTbBqHCdT
+X-Gm-Gg: AfdE7ckXhN1WdDgPKWsij1C39mCUzDmMP68fhxnKyBhesuWo9z33AwtRHqJQ/kwaUQR
+	NpgCXNfapHKKLPOMX6MvKxzIT6cdnAlsCSB0H4tFb48FuN/kp9dBNuDgLilgzPN3BEm/pWEkg5I
+	OK5vN7Yiz0Su7sQ+be/kS8ueQtEDoQa9egFcEgJJEH9VvXnfIyVr0+sjvRAZn08vQ/vp2d57Enl
+	9IrgvXstUnTP2DOZRGyuI3Ddmxhvn6MCNJqol29QMGKLFpry/wzgK+8c2V/5YjfiHSpsNZtr+CN
+	QVkYq/Tnqq3p/un7ySemQrwhdsDkjzEMgicSNwBGmcQJ/ru9rWFmdBmE64+L5rDmQyMrafkicB1
+	zRIdYCBdVNnELcSdDY2TH7Il1cWqWi8i8pOlV4AicNLfH1aZ6+uPaxCiLTcpd7D9qa10=
+X-Received: by 2002:a17:903:1aeb:b0:2c9:b8b7:5d1c with SMTP id d9443c01a7336-2cf3486ef6emr68540395ad.16.1784360725629;
+        Sat, 18 Jul 2026 00:45:25 -0700 (PDT)
 Received: from lgs.. ([152.32.188.52])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2cf346da07csm23399685ad.52.2026.07.18.00.40.37
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2cf346da07csm23399685ad.52.2026.07.18.00.45.22
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 18 Jul 2026 00:40:40 -0700 (PDT)
+        Sat, 18 Jul 2026 00:45:25 -0700 (PDT)
 From: Guangshuo Li <lgs201920130244@gmail.com>
 To: Jeff Johnson <jjohnson@kernel.org>,
 	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
@@ -80,15 +81,17 @@ To: Jeff Johnson <jjohnson@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	ath12k@lists.infradead.org
 Cc: Guangshuo Li <lgs201920130244@gmail.com>
-Subject: [PATCH v3 0/2] wifi: ath11k/ath12k: release QMI handles on late init failures
-Date: Sat, 18 Jul 2026 15:40:24 +0800
-Message-ID: <20260718074026.3085688-1-lgs201920130244@gmail.com>
+Subject: [PATCH v3 1/2] wifi: ath11k: release QMI handle on late init failures
+Date: Sat, 18 Jul 2026 15:40:25 +0800
+Message-ID: <20260718074026.3085688-2-lgs201920130244@gmail.com>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20260718074026.3085688-1-lgs201920130244@gmail.com>
+References: <20260718074026.3085688-1-lgs201920130244@gmail.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260718_004042_350890_199EC778 
-X-CRM114-Status: UNSURE (   6.78  )
+X-CRM114-CacheID: sfid-20260718_004526_650643_C9890E6F 
+X-CRM114-Status: UNSURE (   9.91  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -104,37 +107,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This series fixes QMI handle leaks in the late initialization failure
-paths of ath11k and ath12k.
+ath11k_qmi_init_service() initializes the QMI handle before allocating
+the QMI event workqueue and registering the service lookup.
 
-Both drivers initialize the QMI handle before allocating the QMI event
-workqueue and registering the service lookup. If either of these later
-steps fails, the initialized QMI handle is not released.
+If either of these later initialization steps fails, the function
+returns without releasing the initialized QMI handle, leaking its
+resources.
 
-Patch 1 fixes the leak in ath11k.
+Release the QMI handle on the late failure paths.
 
-Patch 2 fixes the leak in ath12k and sets ab->qmi.ab only after QMI
-service initialization completes successfully.
-
-v3:
-  - Split the ath11k and ath12k changes into separate patches, as
-    requested by Jeff Johnson.
-
-v2:
-  - Set ath12k ab->qmi.ab only after QMI service initialization succeeds,
-    as suggested by Baochen Qiang.
-  - Fix the same late initialization QMI handle leak in ath11k, as
-    suggested by Vasanthakumar Thiagarajan.
-  - Drop the Reviewed-by tag due to the code changes.
-
-Guangshuo Li (2):
-  wifi: ath11k: release QMI handle on late init failures
-  wifi: ath12k: release QMI handle on late init failures
-
+Fixes: d5c65159f289 ("ath11k: driver for Qualcomm IEEE 802.11ax devices")
+Signed-off-by: Guangshuo Li <lgs201920130244@gmail.com>
+---
  drivers/net/wireless/ath/ath11k/qmi.c | 10 ++++++++--
- drivers/net/wireless/ath/ath12k/qmi.c | 13 ++++++++++---
- 2 files changed, 18 insertions(+), 5 deletions(-)
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath11k/qmi.c b/drivers/net/wireless/ath/ath11k/qmi.c
+index 410a7ee076a0..6e3f82169d24 100644
+--- a/drivers/net/wireless/ath/ath11k/qmi.c
++++ b/drivers/net/wireless/ath/ath11k/qmi.c
+@@ -3329,7 +3329,8 @@ int ath11k_qmi_init_service(struct ath11k_base *ab)
+ 	ab->qmi.event_wq = alloc_ordered_workqueue("ath11k_qmi_driver_event", 0);
+ 	if (!ab->qmi.event_wq) {
+ 		ath11k_err(ab, "failed to allocate workqueue\n");
+-		return -EFAULT;
++		ret = -EFAULT;
++		goto err_release_qmi_handle;
+ 	}
+ 
+ 	INIT_LIST_HEAD(&ab->qmi.event_list);
+@@ -3342,9 +3343,14 @@ int ath11k_qmi_init_service(struct ath11k_base *ab)
+ 	if (ret < 0) {
+ 		ath11k_warn(ab, "failed to add qmi lookup: %d\n", ret);
+ 		destroy_workqueue(ab->qmi.event_wq);
+-		return ret;
++		goto err_release_qmi_handle;
+ 	}
+ 
++	return ret;
++
++err_release_qmi_handle:
++	qmi_handle_release(&ab->qmi.handle);
++
+ 	return ret;
+ }
+ 
 -- 
 2.43.0
 
