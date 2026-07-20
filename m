@@ -4,135 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01AE6C44515
-	for <ath12k@archiver.kernel.org>; Mon, 20 Jul 2026 06:43:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 265EFC44524
+	for <ath12k@archiver.kernel.org>; Mon, 20 Jul 2026 06:43:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uOHSQiMKVR1IwBDP6bunGeFjzNHHpa4oZ3vKtcA1gOA=; b=ffvuYcKpj16VNdqR5KnWAZDiaz
-	29Y+36J6A8EoENauNIZvLW4kT0VnqCQ+ETzWxvDqLQEZ79AHqD6FudYiGfgGmSRQJqRpR2IP88uJM
-	ARg5kz2MWAmeHkEu4khtu15Tcy3fFV5rhAHPKRGb27Y84Ir2NtX67mSnoyRImWu5gofvNU2sromHg
-	YoIrnK0GAPOnXxJ6mKP95I6CVfZm0P+ndEGDVsjJ5aFMEmegxLjDgAy1AMIed+yuFuFi3wlW135rL
-	Ys+3DR9XMlO+YeXLoYRuQixxrbGf6fwBJzaL0px+MQZfMSpxzvcrqqt2md4bCsY45fMnR6jlPaYX2
-	wCar75Hw==;
+	bh=oypFu45XfvZoTRTZc7SyYEzw7BoqUBfDWb3iYCCskVY=; b=noF4OaT4utyVOs0DVIhr/y2SFK
+	KRCPxuS9OCpbSxD16hCJtoCAALDu/31sTQYktnJSeZss2ZAlgOJaIK8oiLryNt9KlADUql99JIXxz
+	h4hx84eKjpRMtrrfUmGa9qRQNvCdJeOcntCENjLgd/rGaYzPtyOtLJYxOi+n1YXeKRono4eyFmiq0
+	ZiPCIaWjzmz2a4XvUI5bmy3qYOb6OjGzfyjhRt5SPYyKkq79iwkzi3NF71nGpDMidFYBwVz+4J9Iv
+	Snc2TnQIswBfuxjuDvT4PyMPliX2tTMIQ3imvJNhmaLy2nJh7Yd+vJLOPmqXDRbMWkPvD7FoOys9f
+	+YSJKGtQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlhjC-00000005zOU-2wwR;
-	Mon, 20 Jul 2026 06:43:50 +0000
+	id 1wlhjF-00000005zRN-3T5W;
+	Mon, 20 Jul 2026 06:43:53 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlhj9-00000005zLi-2vQ7
+	id 1wlhjC-00000005zO8-31y6
 	for ath12k@lists.infradead.org;
-	Mon, 20 Jul 2026 06:43:48 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66K6RglK1774822
-	for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 06:43:46 GMT
+	Mon, 20 Jul 2026 06:43:53 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66K6Rcxc1800197
+	for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 06:43:49 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	uOHSQiMKVR1IwBDP6bunGeFjzNHHpa4oZ3vKtcA1gOA=; b=aeCe45qysGX5X3sy
-	TEVOhdiDYp1TDUcUFdd8hNxeumEu7fJP/YBFIat4ygTDHVUzt8ffgj47UHB2zHVB
-	bRM3VVPnx/a4RqATXvYDCl+8f3kXCs9o6C3KQoXBFByxwqHY4dTtV/s1yZR0LdP4
-	e2Tde42pSe2fP1OHilhFt0okEHwxxk6QnSuh88qsXQyxK7nmDlQaEA9Cul93uVxh
-	VyiT5pIuZjpuZfMJc0K5uIf+04UvzcWRfXH067pWqGzuDpzmjTtLAzkGpIOJO6Dm
-	77mMs91T9xslDw6ZSVraQqH7MqYfxY5EF9iMQ85452xc1VrrMU0C1DWdVXjP8EuT
-	nkBw0A==
+	oypFu45XfvZoTRTZc7SyYEzw7BoqUBfDWb3iYCCskVY=; b=XbfQoygV92O2lRDO
+	zmtsTxokfPMCpiluhidHMHyDp1K6JAUYzOuVQ7P+G1ZltN99EfkvuzjnAUh3m2do
+	W4RYIns4L32dmf7446+gh0KIOY3AuQE7utHTMn1bpI0D0Of4spnJv1ZYZ1ApCJoP
+	hvR0ZDIdDTTj4+p6CAL/6jwt+qgLjGXK2j33R7KjAqwkZp4ThRuPe3fpqazKMH4Q
+	Pb2uWwGMgP37u9TJVfRNbIWYX3tzCfHQQ9+8asT9Px3ScakJBX+hRtRls1WwyjKv
+	ggnreLnhc8O5B6ckdyxaBx3KBZSjsGIulejDMhbt02U1HKqpNFiyDNxuUNgBfEej
+	jhl8iA==
 Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fg2af4sb6-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fg2c6ct37-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 06:43:46 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-c9c26587e67so3925204a12.0
-        for <ath12k@lists.infradead.org>; Sun, 19 Jul 2026 23:43:46 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 06:43:49 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-c96b4f58ddcso6041453a12.3
+        for <ath12k@lists.infradead.org>; Sun, 19 Jul 2026 23:43:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1784529826; x=1785134626; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1784529829; x=1785134629; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=uOHSQiMKVR1IwBDP6bunGeFjzNHHpa4oZ3vKtcA1gOA=;
-        b=K1J3/eccgE4t9Iz/Q7jOqBlHnjbLKCLUR/qQ6B/1QLijI5psC5JgnkDypGoI0+5SxM
-         0GdYFVN1S3Mcw/F5mGqEBI7+lPdFnG8N07BU/+YKY6Mi2zpvw28AX/9ZbkPMw60fFE8W
-         QQ782uJjJN/jbgqmEiP3r4NUpNIAyhsmpjgq94j2FyPyqZyqI0D0j8NqL2GdZW4aS6Gu
-         qX/vVwgx2pF6+9rnXJllgaxoUqwge/U07Ny4s0Gztl5vEO9bCZr1YMleRQCLTSeRCSsy
-         4yys5wDXnSbCvkHySC3JoDIRhbqYGbJzaNkO8LY9zBHW9mQ6A7XTgYbwjHoJHCcQnGxn
-         ge6w==
+        bh=oypFu45XfvZoTRTZc7SyYEzw7BoqUBfDWb3iYCCskVY=;
+        b=YWARaZpPWVGMiP6uUXtql3tFmDTC71xyJjoVbuKFJ2COqc8749uaH1+1nd9HbS8yLN
+         xmjSFcexA8CPfuB0hBp8z3dsE4lAPJt6QayZBM4rfuMDlKyM6CujcbJv11bqjOKo4Gb+
+         +GVvP4YbM3nbDVYNtscBZdJesJ5RhuSp0zmsFV0nyMUMXDI2XwBdl1q3VZcSMo0LGtsu
+         Cpfi3hmfpiWNzV0CbH5YYbmjB2Zo6r5RpcoX30BpVzL7A24MDomthDpI4hoAj5n67i/w
+         oU04PmAJh/GMITUePTn1qxr6WQSo3hHqm6FrVEJgSbLUKbIicKvmph5FLKUAcQ66qigg
+         kOIw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784529826; x=1785134626;
+        d=1e100.net; s=20251104; t=1784529829; x=1785134629;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=uOHSQiMKVR1IwBDP6bunGeFjzNHHpa4oZ3vKtcA1gOA=;
-        b=Cnjnh1bELR1zb4PmQqeoEGUSj1W2lZbk6faP0tQull/7RXOa1KJ9W+M2XlILLa/lSr
-         oD7MaHFUJueqyTKC/FzVJf5GUqj8HxN9xRaiswsqv10PQP3dr3edsBbpibvN2bv7o3gh
-         HluvfUQYcrpUl58aTDkw5I7OeZCksIdVPL2f2sf8enPMH/IEGhV/9rOqlLlBnNcd4B4t
-         HWrFmxCMc0pvEWFm/CYUo2nOtSBZHApVvYQi8dcPW1TAohdKaFk1ICcuxgQYXpeVUn0Q
-         eAbRRHmbinUO2yIuofKApR/m8hcVuhKYnqtORECYSW07X4vjpH7GeKnuzWtwbau9QgeZ
-         DNQA==
-X-Forwarded-Encrypted: i=1; AHgh+RpyRHedbsq99wp9xbOtWHWp1dKCqrf3NhoElch+wuaEHifHqyu6t3rUHyGkGRbyicGhXRk5/ks=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwTP+PHJ/z8zHW2khTBfLP4G37XW16HrZUhsbqXSOTLUfanOZ6H
-	og7wtEasw5Qypj3EVnTjyBDUb97GmxkjFGAP+P49699GwbWALt+cFqs+MJeuIkrpkZWlA4izYi6
-	UFemAqejkryE2A/pHTg6wk5nkY+H3s3uVIkDutGSg48Bbl9RBy2NG948ghfQ9aze3
-X-Gm-Gg: AfdE7ckQ577pqcvOdU1XwJT0EdGkWXguFW+RdP6jENtjYNjUoohDQC77sOeJPBTgMyh
-	7BYfrFhCjy5jsaTd/olQkd7l2ML1GVXPjwn9ZcepN/4GQl0EVfbjtZzWvfRHD3io8L3ntbOpI8I
-	WHsExbRzyls+ZNJpJfNxizjlx55mtWLojoMPdSsJnywgIrGKFxI/hisYl/J5kEslIRvT6koAE6d
-	Mxq2jdd+XuWs801JJV+G+6fuQpWRmMJ2+Z9ovu/ff7z3kwcTqVsq+p2pJZ+Y/2zucCxbg4qoxKh
-	UKokMJ02k5XvZG4nsL8vXSsk7frwd71PECHdAJ5UoCPPm8yYH7lLx3g9vA/QrqAjw9Gb3bwwvOT
-	gyaMr4OVPoIA6xenYiNubnbZ3cfBXGt+2Kbc9ff6OeSrhwzfppMyQhw==
-X-Received: by 2002:a05:6a00:2394:b0:847:8bd0:1b96 with SMTP id d2e1a72fcca58-84c28aa6e58mr11631403b3a.23.1784529825651;
-        Sun, 19 Jul 2026 23:43:45 -0700 (PDT)
-X-Received: by 2002:a05:6a00:2394:b0:847:8bd0:1b96 with SMTP id d2e1a72fcca58-84c28aa6e58mr11631382b3a.23.1784529825163;
-        Sun, 19 Jul 2026 23:43:45 -0700 (PDT)
+        bh=oypFu45XfvZoTRTZc7SyYEzw7BoqUBfDWb3iYCCskVY=;
+        b=goqkcZjxhlPES1fDss7NFI/YyVqoNlemsYrP6Qk3gSgOwdT/3o08YjCarIcu5tAWlB
+         DW2yECW1nSpHeBUbGl2+juSe4w+rOM0Fv8ZJqWfDTjmAV4QO96DY63PyLA1mAGLxVh9K
+         xG4LUs1pZxUsbBVjCjV+0bRBd3FQrnex0/2DsFeIOiOXKqRE7MOLcbBkDl5xbPwRT3CT
+         /smQLigdJvOd/sN7U9c1RWUFKjxhKEWj+mA6Udy67h2hEsEMyl1YAx1ZU113gUP1m3Ai
+         6FPssLvyICWOGBUmX2Uz7iL/CasC6L4FOUFM5Hc0LZjjPrJZQ1rKjLIWphTH2tKni0+s
+         vjWg==
+X-Forwarded-Encrypted: i=1; AHgh+RryCoKw2X+DawoThm2SkHfDY1tAjMaD9NgFa5UxIAP3tUni+sqffuFcjKim7qhBpzaNcfJ3M0c=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzj5mHncv/81T0hn1WS+xW2/BSbfZGzgb//M417K5H9IPyttUn0
+	Z21l3wm+M2mn8rdhk1et2F8djm7FfLYbwAw0A4XCFLt9r4UdGjGrJtx8bkSzRQmkbT+356WfDPr
+	B/9WqxRLVxYUtYfEQzvq9vWvDpyHXdN4N8DcDfeeSzcm3KmgQnFQKeflOclf6WY0/
+X-Gm-Gg: AfdE7cnrcb9Zw5ypoCH2WjemRVmPEjJmz0AKOuAh6X3GzNcYF+PMwO4JtRLtXOlGvOS
+	yJLZDnZ9jsG7iT+k9HSf7AZtOSbXsXxYjRO6yebpU1n0LpP2mlhdpzcoIsS3cvGjCJ/7PrOLUGA
+	d0OJQ/dHLgYxB3dr/q+PlbnSeetnf4sodVQX3XEL/czABlCJuM7RG1aLXFqW5o37CNLfVtLo6V/
+	bZNHT+VxaTyBcC0x4WbXE+PvlyRyX3IICQNJsy3qMPj0/qsu6ClhnPvGqFIAfLgBJf1/+5odZPi
+	wPRiAcZJb+vctZjL81jVQw5S5ZUYQh+tvNElAsAmOpHmUQGIBmgug4v6r2Y2Gzry6Qc8GFny0ZD
+	6rVU+GWSJmFUkLxkZvbM8grk+XcmDhmw7gWk0aUShYSEHvYeeTgqGxQ==
+X-Received: by 2002:a05:6a00:3e26:b0:848:2f74:d8d9 with SMTP id d2e1a72fcca58-84c294c875fmr11304456b3a.74.1784529828589;
+        Sun, 19 Jul 2026 23:43:48 -0700 (PDT)
+X-Received: by 2002:a05:6a00:3e26:b0:848:2f74:d8d9 with SMTP id d2e1a72fcca58-84c294c875fmr11304439b3a.74.1784529828085;
+        Sun, 19 Jul 2026 23:43:48 -0700 (PDT)
 Received: from [127.0.1.1] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84c3793ec61sm3812097b3a.42.2026.07.19.23.43.42
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84c3793ec61sm3812097b3a.42.2026.07.19.23.43.45
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 19 Jul 2026 23:43:43 -0700 (PDT)
+        Sun, 19 Jul 2026 23:43:46 -0700 (PDT)
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Date: Mon, 20 Jul 2026 14:43:27 +0800
-Subject: [PATCH ath-current v2 6/8] wifi: ath12k: do not advertise MLD peer
- ID for firmware-allocate devices
+Date: Mon, 20 Jul 2026 14:43:28 +0800
+Subject: [PATCH ath-current v2 7/8] wifi: ath12k: defer dp_peer
+ registration when firmware allocates MLD peer ID
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20260720-ath12k-fw-allocated-ml-peer-id-v2-6-630632758a80@oss.qualcomm.com>
+Message-Id: <20260720-ath12k-fw-allocated-ml-peer-id-v2-7-630632758a80@oss.qualcomm.com>
 References: <20260720-ath12k-fw-allocated-ml-peer-id-v2-0-630632758a80@oss.qualcomm.com>
 In-Reply-To: <20260720-ath12k-fw-allocated-ml-peer-id-v2-0-630632758a80@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIwMDA3MiBTYWx0ZWRfX/TpMtm3ZLkwX
- oGX6s3/YEAxF1R0WJCJAeJVNAevjz9XrLYm781Ec1bKcLaW6s2GYQyqzNf0Z4wmuV02XTuBQmeq
- YDuWZxUvL6GYa5faGx4961PohSxpcqI=
-X-Proofpoint-GUID: fQcGeSOmLw_c-PqTXp1_JdRghmSByoLJ
-X-Proofpoint-ORIG-GUID: fQcGeSOmLw_c-PqTXp1_JdRghmSByoLJ
-X-Authority-Analysis: v=2.4 cv=a+sAM0SF c=1 sm=1 tr=0 ts=6a5dc3a2 cx=c_pps
+X-Proofpoint-GUID: Ahfk35IB3lJE-c3JlGdF1VWF0qP56yXc
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIwMDA3MiBTYWx0ZWRfXz5lalcqYROO7
+ EJw90NilBF3Upn8COKm+5hOZjadseHY/RNtClx+jUM3cKe2VINuUYYc24ZOL8/jI0Z01FzB6ukl
+ AXo7cIdAAr6xin76Gl+ImcwRE/jrXGDRhsFwHLG3qAy43RRwh+KmZ6lQo6llRHYocN39Tcua3dV
+ ENayt6fY6lIieYdpFlbOJYl8AuESwL0nKVgxzrCFmZ0bdO8ihJimcAj9zJjmvbcztflOehc7FRD
+ +q8p/WzqI3g4lIsF0eFIVzTzRowbdtPUYuyXt1RIXobBo0JhgAoNvl4yijml+LXFfASFU2m5j80
+ T1+AjTkTSR+CFtgqC8POPw+z0M/TGHgYr2nJOK2rpcHIsunYvPydCkCT3CYowxi3rvza4hp1h0F
+ T9J+aEdbGPdQT1s9HLyBAp2Uj07RuS4VEMjhm0GJLoOdIJdzLM52NpV9ciNp4qjxiW5fXDRUnqY
+ Rx5waLix9SOGs67sAig==
+X-Proofpoint-ORIG-GUID: Ahfk35IB3lJE-c3JlGdF1VWF0qP56yXc
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIwMDA3MiBTYWx0ZWRfXzNOc7FhAmN4L
+ LB0CsiS9McTDiLP8nEhU0kv0pFwZ4uC5Ok1Iu45W01m6SjnjQgUiNNQiRaiu9bSCmqUU9gJ3uqr
+ 3K5FT6rDooVhyJCdKCqlOPZpo9UDlHk=
+X-Authority-Analysis: v=2.4 cv=CJQamxrD c=1 sm=1 tr=0 ts=6a5dc3a5 cx=c_pps
  a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=EUspDBNiAAAA:8 a=zO7lKvSgDLHZEP5-WbMA:9 a=QEXdDO2ut3YA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
+ a=EUspDBNiAAAA:8 a=DmUR2gHJotVURrrF6hgA:9 a=QEXdDO2ut3YA:10
  a=_Vgx9l1VpLgwpw_dHYaR:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIwMDA3MiBTYWx0ZWRfX7ttwX+C6xb8W
- 4k++uTKeTeJ7fuC+3uvT5avNL8BStKC1kGbeXqG2/WBpn58EX9PzxXtgMCEHxiibS37Yy7wtGIO
- vJmiqaI2I/M6x9KWz1C5HFW/RMK6n/yo66ROpBwswnU59TdtKoN+304S2RezOjBqqh73M30qFcT
- hzH7nm5LZ5+Q+xUl76wwbEFTv+r8NXryTn/c2OXmKUVPAOij21sHbN3ac/zeHKGsBK7Wi3I5Yst
- Isb1Nr4RVQwpemNjwI3r4l0X5N7Y5pzbUvjPCO6QXBCwq3Et0Ar5K6p4eTWXNtB1nBR6IdYfFAT
- 7ep7UwJGJR65L6s3WoFRKo9pX7rh8CXtM0gzarN87WjQ74hY8kdnx8B0zh4/NvrzUgh4b415g6d
- sauq3ckm6YGxr+Xh7KoyR3Nh0fcLnQSpj6tmYNYB2Ll3zGg25X9//aMH8n3CDuxjy4RwfHcGmep
- 7D+x7QdtZqAPBGV1ZpQ==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-20_01,2026-07-17_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 clxscore=1015 impostorscore=0 malwarescore=0 spamscore=0
- phishscore=0 priorityscore=1501 lowpriorityscore=0 adultscore=0 bulkscore=0
+ bulkscore=0 adultscore=0 impostorscore=0 lowpriorityscore=0 malwarescore=0
+ suspectscore=0 phishscore=0 priorityscore=1501 spamscore=0 clxscore=1015
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607200072
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260719_234347_857941_957C01C6 
-X-CRM114-Status: GOOD (  18.52  )
+X-CRM114-CacheID: sfid-20260719_234350_886178_3929839F 
+X-CRM114-Status: GOOD (  24.66  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,89 +147,178 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-ath12k_peer_assoc_h_mlo() unconditionally sets ml->peer_id_valid and copies
-ahsta->ml_peer_id (with the ATH12K_PEER_ML_ID_VALID bookkeeping bit masked
-off) into the WMI_PEER_ASSOC_CMDID ML params, which causes
-ath12k_wmi_send_peer_assoc_cmd() to set ATH12K_WMI_FLAG_MLO_PEER_ID_VALID.
-This needs to be gated on chips where the firmware allocates the MLD peer
-ID:
+For chips with host_alloc_ml_id=true (QCN9274 etc.), the host allocates
+the MLD peer ID up front; ath12k_dp_peer_create() publishes the dp_peer
+into dp_hw->dp_peers[] using that ID immediately. WCN7850/QCC2072 does
+not work that way: the firmware picks the ID and only tells the host
+afterwards via HTT_T2H_MSG_TYPE_MLO_RX_PEER_MAP, so the publication has
+to be delayed until the event arrives.
 
-  - WCN7850/QCC2072 firmware always picks the ID itself and does not honor
-    a host-supplied one, so the value would be silently ignored anyway;
-  - QCC2072 firmware additionally crashes during MLO disconnect when
-    ATH12K_WMI_FLAG_MLO_PEER_ID_VALID was set in the preceding peer assoc,
-    so the bit must not be sent at all.
+Introduce ATH12K_MLO_PEER_ID_PENDING (0xFFFE) as a sentinel for "is_mlo,
+but ID not yet known". On the firmware-allocates path:
 
-Branch on ah->host_alloc_ml_id:
+  - ath12k_mac_op_sta_state(NOTEXIST->NONE) skips ath12k_peer_ml_alloc()
+    and stores PENDING in ahsta->ml_peer_id and dp_params.peer_id;
+  - ath12k_dp_peer_create() skips dp_peer registration until a real ID is
+    known;
+  - ath12k_peer_create() leaves peer->ml_id at INVALID so consumer sites
+    do not treat PENDING as a real ID;
+  - ath12k_peer_ml_free() and ath12k_mac_dp_peer_cleanup() skip the
+    dp_peers[] write and the free_ml_peer_id_map clear when
+    host_alloc_ml_id is false or the ID is still PENDING.
 
-  - When true (QCN9274 etc.), behavior is unchanged: peer_id_valid is set
-    and the raw ahsta->ml_peer_id (without the VALID bit) is sent down.
-  - When false (WCN7850, QCC2072), peer_id_valid stays unset and
-    ml_peer_id is sent as 0. The firmware ignores both fields and reports
-    the ID it allocated through HTT_T2H_MSG_TYPE_MLO_RX_PEER_MAP.
-
-The early-return on ahsta->ml_peer_id == ATH12K_MLO_PEER_ID_INVALID only
-applies on the host-alloc path, since on the firmware-alloc path the value
-is ATH12K_MLO_PEER_ID_PENDING here, not INVALID.
+The HTT handler change that resolves the PENDING ID is added in a
+follow-up patch.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
 
 Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 22 ++++++++++++++++++----
- 1 file changed, 18 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h    |  1 +
+ drivers/net/wireless/ath/ath12k/dp_peer.c | 23 +++++++++++++++--------
+ drivers/net/wireless/ath/ath12k/mac.c     | 22 ++++++++++++++++------
+ drivers/net/wireless/ath/ath12k/peer.c    | 20 +++++++++++++++++---
+ 4 files changed, 49 insertions(+), 17 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 1f56474efbea..8769b41f5db5 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -72,6 +72,7 @@
+ 
+ #define ATH12K_MAX_MLO_PEERS            256
+ #define ATH12K_MLO_PEER_ID_INVALID      0xFFFF
++#define ATH12K_MLO_PEER_ID_PENDING      0xFFFE
+ 
+ #define ATH12K_INVALID_RSSI_FULL -1
+ #define ATH12K_INVALID_RSSI_EMPTY -128
+diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.c b/drivers/net/wireless/ath/ath12k/dp_peer.c
+index 47d009a0d61f..2a2eae194007 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_peer.c
++++ b/drivers/net/wireless/ath/ath12k/dp_peer.c
+@@ -472,7 +472,9 @@ int ath12k_dp_peer_create(struct ath12k_dp_hw *dp_hw, u8 *addr,
+ 	dp_peer->is_mlo = params->is_mlo;
+ 
+ 	/*
+-	 * For MLO client, the host assigns the ML peer ID, so set peer_id in dp_peer
++	 * For MLO client, the ML peer ID, either known or PENDING, needs to be
++	 * initialized here since the following logic depends on it.
++	 *
+ 	 * For non-MLO client, host gets link peer ID from firmware and will be
+ 	 * assigned at the time of link peer creation
+ 	 */
+@@ -488,13 +490,17 @@ int ath12k_dp_peer_create(struct ath12k_dp_hw *dp_hw, u8 *addr,
+ 	list_add(&dp_peer->list, &dp_hw->dp_peers_list);
+ 
+ 	/*
+-	 * For MLO client, the peer_id for ath12k_dp_peer is allocated by host
+-	 * and that peer_id is known at this point, and hence this ath12k_dp_peer
+-	 * can be added to the RCU table using the peer_id.
+-	 * For non-MLO client, this addition to RCU table shall be done at the
+-	 * time of assignment of ath12k_dp_link_peer to ath12k_dp_peer.
++	 * For an MLO client whose ML peer ID is allocated by the host, the
++	 * peer_id is known here and the dp_peer can be added to the RCU
++	 * table using it. For an MLO client on chips where the firmware
++	 * allocates the ID, peer_id is ATH12K_MLO_PEER_ID_PENDING and the
++	 * RCU table publish is deferred to the
++	 * HTT_T2H_MSG_TYPE_MLO_RX_PEER_MAP handler. For a non-MLO client
++	 * the publish happens later, at the time of assignment of
++	 * ath12k_dp_link_peer to ath12k_dp_peer.
+ 	 */
+-	if (dp_peer->is_mlo)
++	if (dp_peer->is_mlo &&
++	    dp_peer->peer_id != ATH12K_MLO_PEER_ID_PENDING)
+ 		rcu_assign_pointer(dp_hw->dp_peers[dp_peer->peer_id], dp_peer);
+ 
+ 	spin_unlock_bh(&dp_hw->peer_lock);
+@@ -515,7 +521,8 @@ void ath12k_dp_peer_delete(struct ath12k_dp_hw *dp_hw, u8 *addr,
+ 		return;
+ 	}
+ 
+-	if (dp_peer->is_mlo)
++	if (dp_peer->is_mlo &&
++	    dp_peer->peer_id != ATH12K_MLO_PEER_ID_PENDING)
+ 		rcu_assign_pointer(dp_hw->dp_peers[dp_peer->peer_id], NULL);
+ 
+ 	list_del(&dp_peer->list);
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 1ae21618afb6..485be2998180 100644
+index 485be2998180..533109f9d5bd 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3529,11 +3529,16 @@ static void ath12k_peer_assoc_h_mlo(struct ath12k_link_sta *arsta,
- 	struct ath12k_sta *ahsta = arsta->ahsta;
- 	struct ath12k_link_sta *arsta_p;
- 	struct ath12k_link_vif *arvif;
-+	struct ath12k_hw *ah = arsta->arvif->ar->ah;
- 	unsigned long links;
- 	u8 link_id;
- 	int i;
+@@ -1285,7 +1285,9 @@ void ath12k_mac_dp_peer_cleanup(struct ath12k_hw *ah)
+ 	spin_lock_bh(&dp_hw->peer_lock);
+ 	list_for_each_entry_safe(dp_peer, tmp, &dp_hw->dp_peers_list, list) {
+ 		if (dp_peer->is_mlo) {
+-			rcu_assign_pointer(dp_hw->dp_peers[dp_peer->peer_id], NULL);
++			if (dp_peer->peer_id != ATH12K_MLO_PEER_ID_PENDING)
++				rcu_assign_pointer(dp_hw->dp_peers[dp_peer->peer_id],
++						   NULL);
+ 			ath12k_peer_ml_free(ah, ath12k_sta_to_ahsta(dp_peer->sta));
+ 		}
  
--	if (!sta->mlo || ahsta->ml_peer_id == ATH12K_MLO_PEER_ID_INVALID)
-+	if (!sta->mlo)
-+		return;
-+
-+	if (ah->host_alloc_ml_id &&
-+	    ahsta->ml_peer_id == ATH12K_MLO_PEER_ID_INVALID)
- 		return;
+@@ -7746,11 +7748,19 @@ int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+ 		/* ML sta */
+ 		if (sta->mlo && !ahsta->links_map &&
+ 		    (hweight16(sta->valid_links) == 1)) {
+-			ahsta->ml_peer_id = ath12k_peer_ml_alloc(ah);
+-			if (ahsta->ml_peer_id == ATH12K_MLO_PEER_ID_INVALID) {
+-				ath12k_hw_warn(ah, "unable to allocate ML peer id for sta %pM",
+-					       sta->addr);
+-				goto exit;
++			if (ah->host_alloc_ml_id) {
++				ahsta->ml_peer_id = ath12k_peer_ml_alloc(ah);
++				if (ahsta->ml_peer_id == ATH12K_MLO_PEER_ID_INVALID) {
++					ath12k_hw_warn(ah, "unable to allocate ML peer id for sta %pM",
++						       sta->addr);
++					goto exit;
++				}
++			} else {
++				/*
++				 * firmware allocates the ML peer ID and notifies
++				 * the host via HTT_T2H_MSG_TYPE_MLO_RX_PEER_MAP
++				 */
++				ahsta->ml_peer_id = ATH12K_MLO_PEER_ID_PENDING;
+ 			}
  
- 	ml->enabled = true;
-@@ -3541,16 +3546,25 @@ static void ath12k_peer_assoc_h_mlo(struct ath12k_link_sta *arsta,
+ 			dp_params.is_mlo = true;
+diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
+index ae93731b4177..25e4b79f11d6 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.c
++++ b/drivers/net/wireless/ath/ath12k/peer.c
+@@ -230,7 +230,16 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 		/* Fill ML info into created peer */
+ 		if (sta->mlo) {
+ 			ml_peer_id = ahsta->ml_peer_id;
+-			peer->ml_id = ml_peer_id;
++			/*
++			 * For chips where firmware allocates the ML peer ID,
++			 * ml_peer_id is ATH12K_MLO_PEER_ID_PENDING here. The
++			 * MLO_RX_PEER_MAP HTT event handler fixes up
++			 * peer->ml_id once the ID is known.
++			 */
++			if (ml_peer_id == ATH12K_MLO_PEER_ID_PENDING)
++				peer->ml_id = ATH12K_MLO_PEER_ID_INVALID;
++			else
++				peer->ml_id = ml_peer_id;
+ 			ether_addr_copy(peer->ml_addr, sta->addr);
  
- 	/* For now considering the primary umac based on assoc link */
- 	ml->primary_umac = arsta->is_assoc_link;
--	ml->peer_id_valid = true;
+ 			/* the assoc link is considered primary for now */
+@@ -285,8 +294,13 @@ void ath12k_peer_ml_free(struct ath12k_hw *ah, struct ath12k_sta *ahsta)
+ {
+ 	lockdep_assert_wiphy(ah->hw->wiphy);
+ 
+-	if (ahsta->ml_peer_id <
+-	    (ATH12K_MAX_MLO_PEERS | ATH12K_PEER_ML_ID_VALID))
 +	/*
-+	 * Only chips that allocate the MLD peer ID on the host send a valid
-+	 * ml_peer_id in WMI_PEER_ASSOC_CMDID. For chips where the firmware
-+	 * picks the ID, leave peer_id_valid false to avoid unexpected issues.
++	 * Only devices that allocate the ID on the host own a slot in
++	 * free_ml_peer_id_map.
 +	 */
-+	ml->peer_id_valid = ah->host_alloc_ml_id;
- 	ml->logical_link_idx_valid = true;
- 
- 	ether_addr_copy(ml->mld_addr, sta->addr);
- 	ml->logical_link_idx = arsta->link_idx;
- 	/*
- 	 * WMI_MLO_PEER_ASSOC_PARAMS expects the raw ML peer ID without
--	 * the host-side ATH12K_PEER_ML_ID_VALID bookkeeping bit.
-+	 * the host-side ATH12K_PEER_ML_ID_VALID bookkeeping bit. For chips
-+	 * where the firmware allocates the ID, the field is unused (the
-+	 * firmware always allocates regardless of the value here); send 0
-+	 * to make that intent explicit.
- 	 */
--	ml->ml_peer_id = ahsta->ml_peer_id & ~ATH12K_PEER_ML_ID_VALID;
-+	ml->ml_peer_id = ah->host_alloc_ml_id ?
-+			 (ahsta->ml_peer_id & ~ATH12K_PEER_ML_ID_VALID) : 0;
- 	ml->ieee_link_id = arsta->link_id;
- 	ml->num_partner_links = 0;
- 	ml->eml_cap = sta->eml_cap;
++	if (ah->host_alloc_ml_id &&
++	    (ahsta->ml_peer_id <
++	     (ATH12K_MAX_MLO_PEERS | ATH12K_PEER_ML_ID_VALID)))
+ 		clear_bit(ahsta->ml_peer_id & ~ATH12K_PEER_ML_ID_VALID,
+ 			  ah->free_ml_peer_id_map);
+ 	ahsta->ml_peer_id = ATH12K_MLO_PEER_ID_INVALID;
 
 -- 
 2.25.1
