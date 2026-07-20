@@ -4,135 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D89F2C44524
-	for <ath12k@archiver.kernel.org>; Mon, 20 Jul 2026 06:43:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1AB9C44521
+	for <ath12k@archiver.kernel.org>; Mon, 20 Jul 2026 06:43:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MHqVBdkvTS9RGcZbYw3ny3/a6eyNFEqIY0DGCMDX0qc=; b=BGsPfa3cv0PSxURRn1T1hJmZZh
-	d4/bFHvbGR5I6oXjXwN33qy1IZs5UR/RDokKOaG2s6lPYXbU4NW9fK8ev1hz2bH6CyGtRvCiR4dIB
-	05dVIaHc1+MD4mfB3ZmuSShQ1jagc0wrC8PMZBvdmP408gh0uAAUL2S2w9bu6wDRaWoa0Ixi2X81J
-	otJjIokb69A1BHNAVlHv03Cl/Irm0PfR0+eiOsxxEmoxLtRqjyxkKc+zZYiV6kC+BWDwgKsk41K8z
-	6fe1yOahC+Mo4fMsqzp/r4n4dpEY13KDUnb79KjsxruDC9D+gHawbfvRxNhQyRnQDB75U6IRn+M3u
-	JzO1f/ig==;
+	bh=8wYSefXJspKu/F33bCo7jnk3E3ZSEwxIqexvka0grbs=; b=dSN7v/jLLPejvYa1Jv744kRP6W
+	RhJZl7PKf4YoQ6JAQF6pBswbaUIEh0x9RKJg51hBvCYMlQL05XeQr1ts+keKAdBEtvNr6UcjTz/nI
+	BVgUKwZ/rrbQIkNRCswiVudOFGC4jzHNBnJykSW0JBF8D0A0vlbZGwIFv4eqPF5G9Ettfjp0ijJCv
+	RmemP6waLjfljRlmqLIqc92rvx0A39E0K70nsMk9VyZdqIoVh8wqQ6jRy0ghQIaUnCXNc+BR1Qx9g
+	Y1cYL9tPRliadwLyb/qWJZ2WPvf0zgqC1VKmRlybNVlJIV5IoUe6IRQz1eNZeVZUc/OhmIH82eNmp
+	mLvljHXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlhj7-00000005zKS-292q;
-	Mon, 20 Jul 2026 06:43:45 +0000
+	id 1wlhjA-00000005zMm-2cGy;
+	Mon, 20 Jul 2026 06:43:48 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlhj4-00000005zI4-3o46
+	id 1wlhj7-00000005zJX-0hX1
 	for ath12k@lists.infradead.org;
-	Mon, 20 Jul 2026 06:43:44 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66K6RcmH1800270
-	for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 06:43:42 GMT
+	Mon, 20 Jul 2026 06:43:47 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66K6RYaQ1616992
+	for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 06:43:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	MHqVBdkvTS9RGcZbYw3ny3/a6eyNFEqIY0DGCMDX0qc=; b=aDeEFhlvYTzVAgIV
-	BaFeNpXf7krTTaQvgyPEGa3tOxY22zB6B9Yv5PXquBu+iA7t0OPpyUkKiyaJP/EE
-	daprQU2iRGNgWhlVLOAzviToR8nkHk88TS4S+018qsowRfQICCC+zPC2TM9pYAUk
-	T9+w9FdlttD08/siPe7u+grSMhB6fLPQvPyYSpr2nufuftnZ7SoFf6o+WN8WVkzv
-	HWKtIaJRakw6mOZZ9E3gHNJDV8VJ3fJr8PjYFBsCPsH5rgHVdbVfGYmsV1fLF04t
-	Fm6ZctZzlf6U8hiS03PBH8dlmRcs9/w5rGk5tT0xjsBPQ9yBiCVM2xwam+GNIjRT
-	eI2LSw==
-Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fg2c6ct27-1
+	8wYSefXJspKu/F33bCo7jnk3E3ZSEwxIqexvka0grbs=; b=oHmaijl6FucFRQ0b
+	0Ja/5vbGpbW+8uffe2aejYSzcaOEGqqBX5Dy+TBg239bETUZLDvu0XUYea4Nuv4S
+	FxAXS4R6bGs9vvhXGsfgv2RYDWrHejtnMm3QVRNlobkYS3uQeJ6X4I/FIkGJ7E73
+	XiyJIjBAEIdEODOoR4UkRv2rDtINZTf2ikrzwuOd4iSc+rg6j1uaHO0L0cQXyYXj
+	E9cMqWzYdm1T4wSXgSyl9uv6lpSFWU2WzeRuu5kbSnyT1QQNfE0mn2Jx1IeedksM
+	s12UHadCsgKNhr2XlFI1mywBX9sC6u6UQ4U2LTdV7qskLH1e1eBJ5J0mnCnDkBLZ
+	FHiVsg==
+Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fg2bnmsmh-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 06:43:41 +0000 (GMT)
-Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-cb74d5db64eso997466a12.2
-        for <ath12k@lists.infradead.org>; Sun, 19 Jul 2026 23:43:41 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 06:43:43 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-84842381150so17346798b3a.3
+        for <ath12k@lists.infradead.org>; Sun, 19 Jul 2026 23:43:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1784529821; x=1785134621; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1784529823; x=1785134623; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=MHqVBdkvTS9RGcZbYw3ny3/a6eyNFEqIY0DGCMDX0qc=;
-        b=CMS0eTIPnFmG1j7TiUVRVayTyIrFTgnOf3QxGvC58jyd5ZwDp6BNHgq7F7L94OnDcV
-         RptiXVOYFiGLw8rmNACrWms2TvoVrg6tQKQDzRE0wGtvfa3pjFJFDbtG6r4KH1FSK/8/
-         Sx9UIvt9WAHtMaHr0Y772NbXTJr6xmGJ5AbmKKyr2lbwGm0ZymmwtB3bGZo/XF3/1M6J
-         xwPC8oglmN395LgELt75Y+QkATQ+xqr8Tn6B9G372Fa57HE6y+lRuJWSxP7GbVenT7RW
-         uV/QlLs7FfZTqefjHdofBnEh9DbxijuUfBc1fuXU1fMVz01R0h95tohq2sbPkUcc1klz
-         lm4w==
+        bh=8wYSefXJspKu/F33bCo7jnk3E3ZSEwxIqexvka0grbs=;
+        b=cdBvE0VkOuZmP9aRAJ4YormdXgPJ2p+FeuiFeYZt45PuEPmy1NA5F7noPncgDREFZU
+         codcLbBBcaFX6A4jrLglws1FSnzEdLHa405v1sFo0Io6qUJ9vysGxfEI/Kp8waRbPgqM
+         sEr6hG2y8UmBsk2iHhWVKnm0PQzWSxb5aNNIAjVz/hKGryIb2VtXhbLrD1yezi1uDP5N
+         bRlwRbPzrxtQ7nAe7/QJn1xDCRYM40NT2+ZaYjU5aInSY2+Zy+jhDyDqdKuWw8sHR1sh
+         L/y59Pl8B4aeCm3arSW1+UXkw2fAutYtuFFL1scujxgdOQuxiE6+bV3DgDIKPgeirPnA
+         asmw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784529821; x=1785134621;
+        d=1e100.net; s=20251104; t=1784529823; x=1785134623;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=MHqVBdkvTS9RGcZbYw3ny3/a6eyNFEqIY0DGCMDX0qc=;
-        b=olUJEYIGwHsT+QLc2TLzfFPvfavEIDljtHhti6FuUkAySZ5pEZFT8rMIDV2INuCPFD
-         +ufWZR5gHqYSUwQCn++TieeeVtHlrMp//G1DPFDmBNBedYbysDIam3CxYH6lPD+hqB9l
-         bLFLdL3gwul7nhCjAwGquREBywhPYSDdGLAppeCuxLXp4jcSSlB9s9AIeDrDlPzgeyLE
-         TelHlknW7O99ODk76rnAa07n30my5SQZ34PPD1cECYpQNoFsEaMUCuNrlGlJndIu2kXX
-         j0fsSdXhUa6aOmNmowuFE+IE0q8Mqg3gyYbyDAkHJiHSE1TtuujWsHkEKx43XZ9541fF
-         fviA==
-X-Forwarded-Encrypted: i=1; AHgh+RpM692fOOlt1k4FxGQg4z1IjiiAd5AeFfVnpOLHB53/AGmqyqgXkUC481jESTobyDucm2NuDRs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzMNiCfuFOuROXWsyJq3IgzhvR5MN8asztgN+rYic8X8i0ZSrsG
-	qkcDHJQ27dAC/ZwOVZw7PsbpzZi2/tbqQtXKpEtB769g43ln2L4H4pK+6bk3WAjDrW76C3pcQ/s
-	AcXGeQlzrWr7cr9bJwyV6VscwFc3Z3fHI0SvABeZTVRPatEb/8Uixi0tuOLzacO/c
-X-Gm-Gg: AfdE7cnukZiOGHS3I6FAee/39owWUMBJmUf5HK6Jwxk4sAoPUb8ZgqRWg08ZZmIKFlw
-	+bqcVaiT4OZMWPo8sK2VQHGmDovqpdtnXJU6QTIU/Z/pEkGrHpvvrEj626SYeTuLuQyoal7Bbmo
-	DHu29c+x2DezDdOkJOXu3dV0y2FdyuA6zgOsl2s4NrddbyiuyowQLhubsUhJaWB7vK8AtrIGDHA
-	fEc/NVN8ZQEZxQ1AfQ3l4hdLr/HwOk5TiuOr+4ps0O98TNnpQtuRSDWIWVkRUFyUR4LEpH9WquB
-	WOqYgyBcxvrFp0F9ogWjL4yw0ZINUk4nPtGxcxXw9f202VgcMePuXdUOpcT90b0BH8m9YU8Aaoe
-	yRqw+xK+9SBAWr2pmOjoFKXSXGNcKck6TFgVOnSBKTaNEdvt5XWi2BQ==
-X-Received: by 2002:aa7:88c1:0:b0:847:8b1d:230d with SMTP id d2e1a72fcca58-84c2923d612mr13079325b3a.3.1784529820843;
-        Sun, 19 Jul 2026 23:43:40 -0700 (PDT)
-X-Received: by 2002:aa7:88c1:0:b0:847:8b1d:230d with SMTP id d2e1a72fcca58-84c2923d612mr13078971b3a.3.1784529813302;
-        Sun, 19 Jul 2026 23:43:33 -0700 (PDT)
+        bh=8wYSefXJspKu/F33bCo7jnk3E3ZSEwxIqexvka0grbs=;
+        b=qiK9edBm2lGiw3PfKAk1LqQUMZuTqNr6ii3EHLcX8nlG+fTVWBERHimH0OsRES0rJc
+         ZQvk+/1o4zyZe7EjVA/sO/BJWoc+vQKVmq+7xLTohstrk9IEwZOWKEmPYKSML6FTso4c
+         gib2efeXyhNGGsTFRFU0HV45H6OdReke8PWGPGvGoysI4nXpTp5i0mLAgfP3ZQbLrx7L
+         IveJnE81+mEBnV4fj1HzwjMzaF4agpOuByFpDy0j6ChhtG96xhaYM2GJKIsSWESTGK5n
+         0rB7dGfWo5IQrvGyizx8UDU+Obq/VchctXmIVC2ND3SUajP1P92s82ltF1S1rvmY2cRh
+         +S1A==
+X-Forwarded-Encrypted: i=1; AHgh+Rqxvuwd8lUBgkFik5RjZfHRV4/6dJMP4GZVjy5gMLBMgQVLheg8GUZ+ekZmL2Dkf8HdWLog4JI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwZJxn/Hvcy5ldFBOlvXuWZjV5nPbgz/gP5DLUu/46CN3T9fXMI
+	7O9V0oe2r1yMmiSr4YQ2aLqLBKVN//j8oHxSeRTEwvt5Ot1BcQfjg+W7ahBUa5gZixWn5Tf4CVS
+	9SPnXyrON73mM3RmbbZoQ7dBz0Ry8/k2itwAYnxwLSY4NrQ7js3ea65Fxz2nq/uYUotdkAeNSWi
+	k=
+X-Gm-Gg: AfdE7cn2LRPuP56apu1qbrNhNiymTLDzSvyOAWftIA15RLx3SCB2xNj2kdPJBjLdRmw
+	g/HAo6h+VwwYrBKm0QUxqmoimn3kwO5gjS8A8xqZsELd9d0G7N7FauyKPa2BAEiV5N/fMziIRkg
+	v2SI3W4p4KH0aw5aNEa9SsovSql/6Bjs46Rlfb7ov6f826HCbiFrnXzIs11aP2Ln8eN/XH0T2G4
+	j9oo1t+osYEBf3zGZANZMLLe0/Ex3zn9Q+jRADKHEEbRBlFgJWeNxOV9kOHVk14mWV0+dc/oHbO
+	x952Qb10xa+AWRNGqnJG4k0aDbn60xx/+ZOYhloi0UCIldHBeViTsDm9cThj+hyGYyP8U2aYcT0
+	+N7w5R/GVcCde0Ay31P2ay4gVF10oTFFLlf7CpKmDsvhiiTbOxYRMMw==
+X-Received: by 2002:a05:6a00:a88f:b0:847:9151:3409 with SMTP id d2e1a72fcca58-84c294fb467mr13402962b3a.55.1784529822710;
+        Sun, 19 Jul 2026 23:43:42 -0700 (PDT)
+X-Received: by 2002:a05:6a00:a88f:b0:847:9151:3409 with SMTP id d2e1a72fcca58-84c294fb467mr13402939b3a.55.1784529822079;
+        Sun, 19 Jul 2026 23:43:42 -0700 (PDT)
 Received: from [127.0.1.1] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84c3793ec61sm3812097b3a.42.2026.07.19.23.43.30
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84c3793ec61sm3812097b3a.42.2026.07.19.23.43.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 19 Jul 2026 23:43:31 -0700 (PDT)
+        Sun, 19 Jul 2026 23:43:40 -0700 (PDT)
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Date: Mon, 20 Jul 2026 14:43:23 +0800
-Subject: [PATCH ath-current v2 2/8] wifi: ath12k: factor out peer assoc
- send-and-wait into a helper
+Date: Mon, 20 Jul 2026 14:43:26 +0800
+Subject: [PATCH ath-current v2 5/8] wifi: ath12k: introduce
+ host_alloc_ml_id hardware parameter
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20260720-ath12k-fw-allocated-ml-peer-id-v2-2-630632758a80@oss.qualcomm.com>
+Message-Id: <20260720-ath12k-fw-allocated-ml-peer-id-v2-5-630632758a80@oss.qualcomm.com>
 References: <20260720-ath12k-fw-allocated-ml-peer-id-v2-0-630632758a80@oss.qualcomm.com>
 In-Reply-To: <20260720-ath12k-fw-allocated-ml-peer-id-v2-0-630632758a80@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Proofpoint-GUID: yDnocVEKhG5jKPOcuMZprupNLLf9mnWx
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIwMDA3MiBTYWx0ZWRfXyvrFqek7HP3y
- 1i2Gl7UB376wNSLTQLaHdxsEM8az6CYWfrpE/n9e1v8/sY7/0VBdEmCPe52I4n6fcXGxP6QNZW1
- hoeUMAsVhGCc9JhYoI68GZ4AcP3ymbjLP5nlICGfiw2fJ1HXghtS5Pr6z//BoGA/nlL0bRlmkcl
- TrYw8K7lIWsfCn1ec/kxRz1Rm4NUy8kicYEUPeDIyo0T9AjeR1dSeN7zIGlSs8reI7jQiBWlu0V
- tTE88cnwtSC7qOTgaAPVkggM+4Zv+bZnSrXyBQ/Xtplz2AT6wpN7P0LRinkkgpW0DI6EAvrHXoy
- JEoTSIxIlNajAWqg2UEv2oAY+jDQeei4PRxbBXqg8SybPzdl9CZ38zNB7xsex6tsras0vB3xDgm
- exXPUrk20AP3GLvbad6OijmwXMqknuPhE8HzV8LXK/oMslurQRuvtMVi1UoYmtaAjWEOCsxuAIn
- WDrqpHrBRUtFvpF0TCg==
-X-Proofpoint-ORIG-GUID: yDnocVEKhG5jKPOcuMZprupNLLf9mnWx
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIwMDA3MiBTYWx0ZWRfXy6x/WziHdU56
- 5EhebmUdE+oK/FD8Dd2kZ1xMx5ZphTbkbyTWmSv5HjKM/xn7CxsDy2tISV1+sQZHjU4Vmb9FtqY
- CBtgEg4v/UxQAlU/JxhGynI6BdSGygo=
-X-Authority-Analysis: v=2.4 cv=CJQamxrD c=1 sm=1 tr=0 ts=6a5dc39d cx=c_pps
- a=rz3CxIlbcmazkYymdCej/Q==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-GUID: 3ij1_jP1h56XpZNgDYyvK5-BSuJzECMp
+X-Proofpoint-ORIG-GUID: 3ij1_jP1h56XpZNgDYyvK5-BSuJzECMp
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIwMDA3MiBTYWx0ZWRfX9TNMimNA8XUG
+ EGbHAOc1KCj0rm9B9MbfA7PWuYk3fQgtSqXYiABbhX85gkKdYEj9VZOdvmhPzpdAQFgDN98wPDu
+ Do1fHWstS+nPqNbRpAzzEBDsoI5WvNgK4JhGmM5V/NDLHH9Tun3PDDzbHrVAfGepX8+uSohHGsa
+ UOrM99EQprYy+n8A8z5ixsUOWDMtqujlcRzLrxxAh3j/oneST+v+c9CmJlIxk1naycquvrFHBms
+ 2qylq17o1KLJriv7rXeWGMzcEquROfD7eoewBpW6YJ2dftM4VskhovCXP2yvEEL5VdztV6FjkJN
+ dM5HNCl97NlT2crsXO9W6Qqfn5ujm2+D8btEBzRNek/cQQqx4ZbLXX4ytHmmDv4UPddfVZQGdSp
+ KxoBQNPx/q1zV8TdqFHJ9pJT/Xg/VHvQABWl6+/UP2pbujJWtTriQM5DKGtH6UrRDHakYxSUS9u
+ WAxlDH6DBzAY0ZUmUKA==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIwMDA3MiBTYWx0ZWRfX3kyMXLjwKUb6
+ HgzmYbDX0sYH/EbbSAyHpHw/rk3HxDYEt+HhY2kcLflgkKK4tlpQ7mMrTAz1DBmtTh2WFmvpmno
+ URBU+j9K/hS1KuWSqgP2vWEudmRCs8E=
+X-Authority-Analysis: v=2.4 cv=YsQ/gYYX c=1 sm=1 tr=0 ts=6a5dc39f cx=c_pps
+ a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=EUspDBNiAAAA:8 a=pIzPn9nKbmV5hhrGKQQA:9 a=QEXdDO2ut3YA:10
- a=bFCP_H2QrGi7Okbo017w:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=2Mqij7SlxvU2Fhucnr4A:9 a=QEXdDO2ut3YA:10
+ a=2VI0MkxyNR6bbpdq8BZq:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-20_01,2026-07-17_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 adultscore=0 impostorscore=0 lowpriorityscore=0 malwarescore=0
- suspectscore=0 phishscore=0 priorityscore=1501 spamscore=0 clxscore=1015
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607200072
+ impostorscore=0 priorityscore=1501 phishscore=0 adultscore=0
+ lowpriorityscore=0 suspectscore=0 clxscore=1015 spamscore=0 malwarescore=0
+ bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
+ definitions=main-2607200072
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260719_234343_066842_841A8E75 
-X-CRM114-Status: GOOD (  15.77  )
+X-CRM114-CacheID: sfid-20260719_234345_335693_BBEB7708 
+X-CRM114-Status: GOOD (  21.02  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,132 +149,162 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-ath12k_bss_assoc(), ath12k_mac_station_assoc() and
-ath12k_sta_rc_update_wk() all open-code the same sequence: reinit the
-peer_assoc_done completion, send the peer assoc WMI command, then wait
-for the firmware confirmation event. The reinit_completion() was buried
-in ath12k_peer_assoc_prepare(), far from the wait_for_completion_timeout()
-that consumes it, making the reinit/send/wait sequence hard to follow,
-and the three open-coded copies are easy to get out of sync.
+Different ath12k devices diverge on who allocates MLD peer id:
+WCN7850/QCC2072 have the firmware allocate it and notify the host via
+HTT_T2H_MSG_TYPE_MLO_RX_PEER_MAP event; While others let the host allocate
+it and pass it down through WMI_PEER_ASSOC_CMDID with
+ATH12K_WMI_FLAG_MLO_PEER_ID_VALID set.
 
-Move the sequence into a new helper ath12k_mac_peer_assoc() and call it
-from all three sites. The reinit, send and wait now live together so the
-completion's lifecycle is easy to read.
+Currently ath12k host allocates this ID and sends it to firmware by
+default for all devices. This breaks WCN7850/QCC2072, because the host
+maintained ID may be different from the firmware-allocated one.
+Consequently data path may fail to find the dp peer and drop some received
+packets. From user point of view, this results in bugs reported in [1] or
+the 4-way handshake timeout issue.
 
-While at it, ath12k_sta_rc_update_wk() previously warned but still
-waited the full timeout when the peer assoc command failed to send. Now
-a send failure returns immediately and skips the pointless 1 second
-wait, matching the other two callers.
+Add host_alloc_ml_id flag to struct ath12k_hw_params (and a copy on struct
+ath12k_hw for hot-path access) so subsequent patches can branch on it. Set
+true for QCN9274/IPQ5332/IPQ5424, false for WCN7850/QCC2072. The flag will
+be consumed by subsequent patches.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
 
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=221039 # 1
 Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 59 +++++++++++++++++------------------
- 1 file changed, 29 insertions(+), 30 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h     |  1 +
+ drivers/net/wireless/ath/ath12k/hw.h       |  2 ++
+ drivers/net/wireless/ath/ath12k/mac.c      | 18 +++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/wifi7/hw.c | 12 ++++++++++++
+ 4 files changed, 32 insertions(+), 1 deletion(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index fc5127b5c1a3..1f56474efbea 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -793,6 +793,7 @@ struct ath12k_hw {
+ 	enum ath12k_hw_state state;
+ 	bool regd_updated;
+ 	bool use_6ghz_regd;
++	bool host_alloc_ml_id;
+ 
+ 	u8 num_radio;
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
+index d135b2936378..8091501cf742 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.h
++++ b/drivers/net/wireless/ath/ath12k/hw.h
+@@ -232,6 +232,8 @@ struct ath12k_hw_params {
+ 		u32 max_client_dbs;
+ 		u32 max_client_dbs_sbs;
+ 	} client;
++
++	bool host_alloc_ml_id;
+ };
+ 
+ struct ath12k_hw_ops {
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index b7eba8ea981b..3e3b06e15f80 100644
+index 7d0d7d5fbf53..1ae21618afb6 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3594,8 +3594,6 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
+@@ -15382,8 +15382,9 @@ int ath12k_mac_allocate(struct ath12k_hw_group *ag)
+ 	int mac_id, device_id, total_radio, num_hw;
+ 	struct ath12k_base *ab;
+ 	struct ath12k_hw *ah;
+-	int ret, i, j;
++	bool conf = false;
+ 	u8 radio_per_hw;
++	int ret, i, j;
  
- 	memset(arg, 0, sizeof(*arg));
+ 	total_radio = 0;
+ 	for (i = 0; i < ag->num_devices; i++) {
+@@ -15423,6 +15424,20 @@ int ath12k_mac_allocate(struct ath12k_hw_group *ag)
+ 			}
  
--	reinit_completion(&ar->peer_assoc_done);
--
- 	arg->peer_new_assoc = !reassoc;
- 	ath12k_peer_assoc_h_basic(ar, arvif, arsta, arg);
- 	ath12k_peer_assoc_h_crypto(ar, arvif, arsta, arg);
-@@ -3835,6 +3833,29 @@ static u32 ath12k_mac_ieee80211_sta_bw_to_wmi(struct ath12k *ar,
- 	return bw;
- }
- 
-+static int ath12k_mac_peer_assoc(struct ath12k *ar,
-+				 struct ath12k_wmi_peer_assoc_arg *peer_arg)
-+{
-+	int ret;
+ 			ab = ag->ab[device_id];
 +
-+	reinit_completion(&ar->peer_assoc_done);
++			/*
++			 * the assumption is all devices within an ah
++			 * share the same host_alloc_ml_id configuration
++			 */
++			if (j == 0) {
++				conf = ab->hw_params->host_alloc_ml_id;
++			} else if (conf != ab->hw_params->host_alloc_ml_id) {
++				ath12k_warn(ab, "inconsistent ML ID config within ah, device 0 uses %s allocated ID, while device %u doesn't\n",
++					    conf ? "host" : "firmware", device_id);
++				ret = -EINVAL;
++				goto err;
++			}
 +
-+	ret = ath12k_wmi_send_peer_assoc_cmd(ar, peer_arg);
-+	if (ret) {
-+		ath12k_warn(ar->ab, "failed to run peer assoc for %pM vdev %i: %d\n",
-+			    peer_arg->peer_mac, peer_arg->vdev_id, ret);
-+		return ret;
-+	}
-+
-+	if (!wait_for_completion_timeout(&ar->peer_assoc_done, 1 * HZ)) {
-+		ath12k_warn(ar->ab, "failed to get peer assoc conf event for %pM vdev %i\n",
-+			    peer_arg->peer_mac, peer_arg->vdev_id);
-+		return -ETIMEDOUT;
-+	}
-+
-+	return 0;
-+}
-+
- static void ath12k_bss_assoc(struct ath12k *ar,
- 			     struct ath12k_link_vif *arvif,
- 			     struct ieee80211_bss_conf *bss_conf)
-@@ -3915,18 +3936,10 @@ static void ath12k_bss_assoc(struct ath12k *ar,
- 	}
- 
- 	peer_arg->is_assoc = true;
--	ret = ath12k_wmi_send_peer_assoc_cmd(ar, peer_arg);
--	if (ret) {
--		ath12k_warn(ar->ab, "failed to run peer assoc for %pM vdev %i: %d\n",
--			    bss_conf->bssid, arvif->vdev_id, ret);
--		return;
--	}
- 
--	if (!wait_for_completion_timeout(&ar->peer_assoc_done, 1 * HZ)) {
--		ath12k_warn(ar->ab, "failed to get peer assoc conf event for %pM vdev %i\n",
--			    bss_conf->bssid, arvif->vdev_id);
-+	ret = ath12k_mac_peer_assoc(ar, peer_arg);
-+	if (ret)
- 		return;
--	}
- 
- 	ret = ath12k_setup_peer_smps(ar, arvif, bss_conf->bssid,
- 				     &link_sta->ht_cap, &link_sta->he_6ghz_capa);
-@@ -6480,18 +6493,10 @@ static int ath12k_mac_station_assoc(struct ath12k *ar,
- 	}
- 
- 	peer_arg->is_assoc = true;
--	ret = ath12k_wmi_send_peer_assoc_cmd(ar, peer_arg);
--	if (ret) {
--		ath12k_warn(ar->ab, "failed to run peer assoc for STA %pM vdev %i: %d\n",
--			    arsta->addr, arvif->vdev_id, ret);
--		return ret;
--	}
- 
--	if (!wait_for_completion_timeout(&ar->peer_assoc_done, 1 * HZ)) {
--		ath12k_warn(ar->ab, "failed to get peer assoc conf event for %pM vdev %i\n",
--			    arsta->addr, arvif->vdev_id);
--		return -ETIMEDOUT;
--	}
-+	ret = ath12k_mac_peer_assoc(ar, peer_arg);
-+	if (ret)
-+		return ret;
- 
- 	num_vht_rates = ath12k_mac_bitrate_mask_num_vht_rates(ar, band, mask);
- 	num_he_rates = ath12k_mac_bitrate_mask_num_he_rates(ar, band, mask);
-@@ -6840,14 +6845,8 @@ static void ath12k_sta_rc_update_wk(struct wiphy *wiphy, struct wiphy_work *wk)
- 						  peer_arg, true);
- 
- 			peer_arg->is_assoc = false;
--			err = ath12k_wmi_send_peer_assoc_cmd(ar, peer_arg);
--			if (err)
--				ath12k_warn(ar->ab, "failed to run peer assoc for STA %pM vdev %i: %d\n",
--					    arsta->addr, arvif->vdev_id, err);
- 
--			if (!wait_for_completion_timeout(&ar->peer_assoc_done, 1 * HZ))
--				ath12k_warn(ar->ab, "failed to get peer assoc conf event for %pM vdev %i\n",
--					    arsta->addr, arvif->vdev_id);
-+			ath12k_mac_peer_assoc(ar, peer_arg);
+ 			pdev_map[j].ab = ab;
+ 			pdev_map[j].pdev_idx = mac_id;
+ 			mac_id++;
+@@ -15447,6 +15462,7 @@ int ath12k_mac_allocate(struct ath12k_hw_group *ag)
  		}
- 	}
- }
+ 
+ 		ah->dev = ab->dev;
++		ah->host_alloc_ml_id = conf;
+ 
+ 		ag->ah[i] = ah;
+ 		ag->num_hw++;
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+index e5bf9d218104..0c277f51d99c 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+@@ -439,6 +439,8 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 			.max_client_dbs = 128,
+ 			.max_client_dbs_sbs = 128,
+ 		},
++
++		.host_alloc_ml_id = true,
+ 	},
+ 	{
+ 		.name = "wcn7850 hw2.0",
+@@ -530,6 +532,8 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 			.max_client_dbs = 128,
+ 			.max_client_dbs_sbs = 128,
+ 		},
++
++		.host_alloc_ml_id = false,
+ 	},
+ 	{
+ 		.name = "qcn9274 hw2.0",
+@@ -617,6 +621,8 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 			.max_client_dbs = 128,
+ 			.max_client_dbs_sbs = 128,
+ 		},
++
++		.host_alloc_ml_id = true,
+ 	},
+ 	{
+ 		.name = "ipq5332 hw1.0",
+@@ -697,6 +703,8 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 			.max_client_dbs = 128,
+ 			.max_client_dbs_sbs = 128,
+ 		},
++
++		.host_alloc_ml_id = true,
+ 	},
+ 	{
+ 		.name = "qcc2072 hw1.0",
+@@ -789,6 +797,8 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 			.max_client_dbs = 128,
+ 			.max_client_dbs_sbs = 128,
+ 		},
++
++		.host_alloc_ml_id = false,
+ 	},
+ 	{
+ 		.name = "ipq5424 hw1.0",
+@@ -873,6 +883,8 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 			.max_client_dbs = 128,
+ 			.max_client_dbs_sbs = 128,
+ 		},
++
++		.host_alloc_ml_id = true,
+ 	},
+ };
+ 
 
 -- 
 2.25.1
