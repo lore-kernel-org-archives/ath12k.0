@@ -4,71 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63507C44515
-	for <ath12k@archiver.kernel.org>; Mon, 20 Jul 2026 13:40:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1018EC4452A
+	for <ath12k@archiver.kernel.org>; Mon, 20 Jul 2026 14:01:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=QJ8AwRihG0Mgvp2EmR5LMtbDv+43OTfJ1ztxe+TbCYU=; b=2w4ibZnMA4oXkTRat0PIjzuiA2
-	d1yDn6mtkFaip8+Ew8ztDKaZKWC93t/UM+N41iFnUlx/a/sKJVCzDeDM+3qKF4Zif4nSIAqseOrg2
-	aZFdksl1ArECEV+CxbRw7TTgS9e/cqEu8F7U/E4OQJNuxMj9VRF7GV6iYL1KYRpX3IojwDF9PFYSY
-	EAIUAs9mWV1o6VYWZa0B/8P3O409h7aoTn5YXxXQY+/Zng+KoHoRjekyQv4dLTuluxWoAk7YrhyE0
-	LdLuaFRX6Rn0ldcELmfK8IjleeS6yQnI29SfRgBUK2hrqjBpljsATfXh3aUZt7+a5ECh1cXk7jpc3
-	LRL3f8lw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Me63HAxi1n5R+/58j1Al3kh5edACqJibvGy9/ANPjZs=; b=TuG5XLHEyEXhQa6w/493+bu0KE
+	bAs/9dOa10lHiS46Mv+ZEz8n2Twq9SKPDXWtyqRAiDRNt3WuynXJ1Sc8V508AWyXOURRfhjbTo3gH
+	XJhpQK/C12DihKiTBvkrc4JVCHGLfmYQLOH+qs8OBSptFL+9q2XPNvmZhnPro34poxglM02f9UZ15
+	LrWHkRctHX5926LTn3WkD7oksDAO8W4b3+CtdGkhjLvqxdUk1qN973gLMEJDu5V8s89jv3HZJAKm7
+	LcXhzTH9hnCuyMpRUEwmGijAQbdIXGBmdSpTQQuFNOW0PKLTGQOl7wu9Agj4BW3SxzObpNxgWJ7qU
+	me+6Ro/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wloEf-00000006rNd-0OCg;
-	Mon, 20 Jul 2026 13:40:45 +0000
-Received: from mgamail.intel.com ([198.175.65.16])
+	id 1wloYw-00000006tbd-3CWD;
+	Mon, 20 Jul 2026 14:01:42 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wloEc-00000006rMt-1k60
+	id 1wloYt-00000006tb1-3ZHq
 	for ath12k@lists.infradead.org;
-	Mon, 20 Jul 2026 13:40:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1784554842; x=1816090842;
-  h=date:from:to:cc:subject:message-id;
-  bh=AYZ+vMVcRF75KxDi7X5Pf5nItIrudk3SUSga88++EFU=;
-  b=ZyUwRdbMPD4k+QvW9SjNl47vGY8pNvrgAWHBFTW/iuRSY83v1E1YGClZ
-   qdZlb/Kv1OUsmxGn8KnQRAIbhaaSi86lF/Zu/6bJesdFJAwhc/MFqDndS
-   kmDRGlidIoCAXD5mBVI7seCFKrdP1VskuGsaIE/BaOKnOu77DKYgeIAIh
-   +btY8it20TiuhnwZwg++YCWZzvzRYRW/yFpmrLxBEIsET6k7DecrrJJ3t
-   tBp2+mGWlF0FtK+BOaOC+yvmwSifq0sICjNS3lEEUTHUIYDM4eaxKQbC2
-   VrilP5L6hEOzkgTPQL0OpcHebAL4V4Ei0cLJaF7VYGphRowC2D7exm5NP
-   A==;
-X-CSE-ConnectionGUID: 0PKa0biXTUeB0HneR5vSqw==
-X-CSE-MsgGUID: 8swa4fukRTqMdfpuRDNxWw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11852"; a="85334732"
-X-IronPort-AV: E=Sophos;i="6.25,174,1779174000"; 
-   d="scan'208";a="85334732"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by orvoesa108.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Jul 2026 06:40:38 -0700
-X-CSE-ConnectionGUID: WXVh8tTVRIyA+kYI/ArtNw==
-X-CSE-MsgGUID: gC1ewGw8Q3WWwrbHfTH6qg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.25,174,1779174000"; 
-   d="scan'208";a="253085318"
-Received: from lkp-server02.sh.intel.com (HELO ea128546eb3d) ([10.239.97.151])
-  by fmviesa006.fm.intel.com with ESMTP; 20 Jul 2026 06:40:37 -0700
-Received: from kbuild by ea128546eb3d with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1wloEV-00000000WIp-0hu4;
-	Mon, 20 Jul 2026 13:40:35 +0000
-Date: Mon, 20 Jul 2026 21:39:39 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: ath12k@lists.infradead.org
-Subject: [ath:pending] BUILD SUCCESS
- 612701854b588759c0df3094197d415869ada159
-Message-ID: <202607202123.o2SlTAAY-lkp@intel.com>
-User-Agent: s-nail v14.9.25
+	Mon, 20 Jul 2026 14:01:41 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66KDr5Cx2878717
+	for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 14:01:38 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Me63HAxi1n5R+/58j1Al3kh5edACqJibvGy9/ANPjZs=; b=U46QdtAY6/peMZ0V
+	gX19r7MV7qAaHtcSr4pyGTiBNNikQahYh4VaECdQVFONzJ3D8SbianLZtmUoR3Qt
+	0mB+fDXbwkG6X5GZTWxpAAYRFeV6zdCGgXLdZk0X0idf5Qp2JUKx4EkKvHWPAVCi
+	YJXFeZxxiFiSsRQeu3BD3T+oyWKfsFb68CDqPd8ClEmL/FTixEhHkEbQKzz2ZMws
+	7T9KpnYop1BmtnI9zBayME9vp6LkD3wzII5P0WqhjwnezQqGMczZ1mtHhzXZoVyw
+	tIxCxGoMTpBvAKyICLikOhMb79uuWaBMNh0IaHk4RwxtcrPDG/ekov6fimxetr70
+	wJMqMQ==
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fhf0ksrtb-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 14:01:38 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-38e4758ab46so4424623a91.0
+        for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 07:01:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1784556097; x=1785160897; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Me63HAxi1n5R+/58j1Al3kh5edACqJibvGy9/ANPjZs=;
+        b=R91THdGzv/yZr87cLynu93xhILMXbyYP7xU71kwFjeebT6BpvZpVCaOztFTisui3rc
+         8pUGVK/m7naA1ZAeODNu7/Jk1hduq13HAObS2AY3Gx1qYgp8eUFjpR3kewrjDI4gEUYH
+         iw+NjJTmBEY/q9sQCw9vewj2nB0tvc4Qnocjp+oHkmucz6Nv09cdVWGNqEofEAoJnWKk
+         pZr+RusS9fkOiGChbWSbKs1V8TyO4aBDNcMYzwOjzxgUmcYlhO2Nd6eqgWOXsQliLAzB
+         BK9R1wzqW14h11o5gPA/Bn/miHHdzkVMVeZ/xrTfSnGs0IHmRTjULeB8fvDpnIgBsrlB
+         AC+Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784556097; x=1785160897;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=Me63HAxi1n5R+/58j1Al3kh5edACqJibvGy9/ANPjZs=;
+        b=lLeZTuNUiZSfQxbTHo+ndJemZl0cb0WQRz9oc+1KC6kZd9RFD5Y9bWfMwh8syOEpDx
+         U93l3zypj32heZwP3DdgMUOLJj9wlPhtWd4mzZzVxBaLezxzVTpCwz+bNcUn70AYt7oA
+         1ybGE4f2Zrf0ltktBMSJSgmVLpaquha18+iM3s6jVR8doguKzaVNmj4dYubHXMmguuyD
+         hfHBJCytnaY64JEUXPKpkOkVVSYuvLIIcUIgiERlcX+gKCBuQsV8k5jVncXMOIi+nux1
+         OMnN+3WzToGsueEgc0pJHzErhAe7AvbH1oP16K6/C2VpKWyrWGLY7ufQRQTSH4FWG8Y8
+         M0uw==
+X-Forwarded-Encrypted: i=1; AHgh+Rq9TnSKAJ29gr1AANYCwWYnYXy8RzPnLQM+0fZE6023PUtX1uoGx6z8KVAVIuaeZU7SmmuNqDw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yydj6bDInI6rrVxqUNa2IpfqbCZ/w0gMQFvb/YlT6G4itfjFcIC
+	8cxEVSXV+jJCJav8rMSIEwgesMcSqeeQ+FpdwoMnerUusiKyS9NLIlKhoP88AIHU4mtEYdmGM/J
+	xa3A4Jm1fDgj/0C5WGdRfKznSfoOap8C0kcqnI8KMD7WZIdnZ1K5cGpByol956U3G
+X-Gm-Gg: AR+sD12ylT4x4GZFNDTW0nFBbthqTatCtQQKDEqGUv0MUNCKNLBmOSN1rfsBaPT1Qa5
+	8/oC0Swr/oRsbTUGjxPe9scN54GFAvqaEmr032nBJOSU4PXBG2229WbTNXDERQPj22250B9J30b
+	wuz+zSuL3d7IPJGQKxUDQ5wJdVhNJOSGXir91nyWBMO3pl4fGUwIDTsiTpxmgkKDUIFRfyZX8GN
+	HSktePeFIqKyc67UflYInQmQqbwHSrF5eGWdSqGWEWlI/r7LszcdvpXKE7vjYdWvUbc/YyPNAlf
+	Yo6Nx50IUx/OaoIlhb/v1WlDlhjaD3kG8HMq1YDbSDyVo0vofqjyDvqzGkBdJFBL9RzApP9DaMb
+	flIFX9kKnC99G/fupn9SxwQl160awYesONU2Th+zYxvc3LXN2Xp+qOU+YBEA5
+X-Received: by 2002:a17:902:ef01:b0:2c2:62ee:5a0d with SMTP id d9443c01a7336-2cf3489181cmr154941375ad.14.1784556096980;
+        Mon, 20 Jul 2026 07:01:36 -0700 (PDT)
+X-Received: by 2002:a17:902:ef01:b0:2c2:62ee:5a0d with SMTP id d9443c01a7336-2cf3489181cmr154940705ad.14.1784556096252;
+        Mon, 20 Jul 2026 07:01:36 -0700 (PDT)
+Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-31429ff04absm34396812eec.8.2026.07.20.07.01.34
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 20 Jul 2026 07:01:35 -0700 (PDT)
+Message-ID: <8e4a3842-4fc2-4a05-9142-6fd8f23751ed@oss.qualcomm.com>
+Date: Mon, 20 Jul 2026 07:01:32 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3] wifi: ath12k: fix survey indexing across bands
+To: Matthew Leach <matthew.leach@collabora.com>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org, kernel@collabora.com,
+        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
+        Nicolas Escande <nico.escande@gmail.com>,
+        Rameshkumar Sundaram <quic_ramess@quicinc.com>
+References: <20260703-ath12-survey-band-fix-v3-1-2fb050c2505a@collabora.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20260703-ath12-survey-band-fix-v3-1-2fb050c2505a@collabora.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: JSqUyL9LJqLLFeGNvh155D3MGqrPp7FS
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIwMDE1NiBTYWx0ZWRfX6nohUDtXWbA2
+ sD/QQG71tio/hB0GR9oRULIAAPWUG6oF5sHnvZxBAs7ARxdv/2urUX8vvliKFur4+1tp/ieO6jx
+ F2MO/DgVFKkadVxzAYxLeLsN6SnS2To=
+X-Authority-Analysis: v=2.4 cv=G58s1dk5 c=1 sm=1 tr=0 ts=6a5e2a42 cx=c_pps
+ a=vVfyC5vLCtgYJKYeQD43oA==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
+ a=QX4gbG5DAAAA:8 a=xhY4wr4glCW0yVQm5PkA:9 a=QEXdDO2ut3YA:10
+ a=rl5im9kqc5Lf4LNbBjHf:22 a=AbAUZ8qAyYyZVLSsDulk:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIwMDE1NiBTYWx0ZWRfX7pw7sFshPtZu
+ iQwnZ5XrUkbgqiVAm4aAwlsMjcEGfHklY99YrsmJwCL9Wqk3Ih6oapp/AhMtAvzNzU3qkUgdV8S
+ GFQ1cEHi030ZwyY+KBid8y6pWJpWRrG0Xs2EIuF6l0KGMnCM/Usyq8nQUwG8r7vG2cEIaaEbUsh
+ O3VA3oViyn2duwgML2tIMrrcWVk0NNnsFYXgKsid3l7fgb5Whxy1d/pKFh0+L7IKvsrLkiKLV1g
+ xaM8rzVNhh04eTUve7q6a/X13p47YHmIOQHBq9Hi/S7JBB7x5IjOW/oN2Hul+jPa3O6KyzVNFCa
+ 4zTEyLFqbd2/vOBGYx7JmVtkgFXAem9g1eD13NE+8X43zz6l6RrrZ2CyOGz2VA+sjSydJdyVy4K
+ LNHYyv/xGO3mdlVodeJjVCyPdjFIGT54vlBBCFgBabSyoGZwi/uu/vvTS7OPhu382x2jif24PZo
+ xZuAcCS3/Q/xFdQ1BYg==
+X-Proofpoint-GUID: JSqUyL9LJqLLFeGNvh155D3MGqrPp7FS
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-07-20_03,2026-07-20_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 impostorscore=0 clxscore=1015 spamscore=0
+ lowpriorityscore=0 malwarescore=0 adultscore=0 phishscore=0 bulkscore=0
+ suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
+ definitions=main-2607200156
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_064042_493860_98973E51 
-X-CRM114-Status: UNSURE (   3.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260720_070140_016636_C77AEF35 
+X-CRM114-Status: GOOD (  14.86  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,118 +152,48 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
-branch HEAD: 612701854b588759c0df3094197d415869ada159  wifi: ath6kl: Constify struct cfg80211_ops
+On 7/3/2026 8:56 AM, Matthew Leach wrote:
+> When running 'iw dev wlan0 survey dump' the values for the channel busy
+> time have the same sequence across bands. This is caused by indexing
+> into the ath12k survey array using a band-local index rather than the
+> global index passed by mac80211. This results in surveys for 5 GHz and 6
+> GHz channels returning values from 2.4 GHz slots, making the survey
+> unusable on those bands. Further, there are redundant survey slots for
+> multi-radio/single-phy instances.
+> 
+> Fix by moving the survey data into ath12k_hw so multiple radios under a
+> single wiphy share one table, and index into it using the global
+> mac80211 index. A new spinlock in ath12k_hw serialises access to the
+> survey array, which is now shared across all radios under a single hw.
+> 
+> Band busy-times Before this fix:
+> 
+> 2.4 GHz: 9, 2, 2, 2, 4, 2, 10, 16, 4, 12, 5
+> 5 GHz:   9, 2, 2, 2, 4, 2, 10, 16, 4, 12, 5
+> 6 GHz:   9, 2, 2, 2, 4, 2, 10, 16, 4, 12, 5
+> 
+> After this fix, times are independent:
+> 
+> 2.4 GHz: 23, 5,  5,  12, 2,   12,  26,  5,   3,  1,  27
+> 5 GHz:   30, 40, 29, 27, 118, 118, 112, 120, 11, 11, 11
+> 6 GHz:   1,  0,  0,  0,  0,   0,   0,   0,   0,  0,  1
+> 
+> Tested-on: wcn7850 hw2.0 PCI WLAN.IOE_HMT.1.1-00018-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+> 
+> Fixes: 4f242b1d6996 ("wifi: ath12k: support get_survey mac op for single wiphy")
+> Signed-off-by: Matthew Leach <matthew.leach@collabora.com>
+> ---
 
-elapsed time: 733m
+my review agent flagged:
+"file": "drivers/net/wireless/ath/ath12k/core.h",
+"summary": "data_lock comment still lists 'survey info' as one of the fields
+it protects, but survey data is now protected by ah->survey_lock",
+"failure_scenario": "A developer adding survey-related code follows the
+comment and uses data_lock to protect ah->survey[], introducing an unprotected
+access (since the actual readers/writers use survey_lock, not data_lock)."
 
-configs tested: 98
-configs skipped: 1
+I'll update the comment in my pending branch
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+/jeff
 
-tested configs:
-alpha                            allnoconfig    gcc-16.1.0
-alpha                           allyesconfig    gcc-16.1.0
-alpha                              defconfig    gcc-16.1.0
-arc                             allmodconfig    gcc-16.1.0
-arc                             allyesconfig    gcc-16.1.0
-arc                  randconfig-001-20260720    gcc-14.3.0
-arc                  randconfig-002-20260720    gcc-16.1.0
-arm                  randconfig-001-20260720    gcc-8.5.0
-arm                  randconfig-002-20260720    clang-24
-arm                  randconfig-003-20260720    gcc-8.5.0
-arm                  randconfig-004-20260720    gcc-8.5.0
-arm64                randconfig-001-20260720    clang-24
-arm64                randconfig-002-20260720    gcc-8.5.0
-arm64                randconfig-003-20260720    gcc-10.5.0
-arm64                randconfig-004-20260720    clang-17
-csky                            allmodconfig    gcc-16.1.0
-csky                 randconfig-001-20260720    gcc-16.1.0
-csky                 randconfig-002-20260720    gcc-14.3.0
-hexagon              randconfig-001-20260720    clang-24
-hexagon              randconfig-002-20260720    clang-24
-i386                            allmodconfig    gcc-14
-i386       buildonly-randconfig-001-20260720    gcc-14
-i386       buildonly-randconfig-002-20260720    clang-22
-i386       buildonly-randconfig-003-20260720    clang-22
-i386       buildonly-randconfig-004-20260720    gcc-14
-i386       buildonly-randconfig-005-20260720    gcc-13
-i386       buildonly-randconfig-006-20260720    clang-22
-i386                 randconfig-001-20260720    gcc-14
-i386                 randconfig-002-20260720    gcc-13
-i386                 randconfig-003-20260720    gcc-14
-i386                 randconfig-004-20260720    gcc-14
-i386                 randconfig-005-20260720    clang-22
-i386                 randconfig-006-20260720    clang-22
-i386                 randconfig-007-20260720    clang-22
-i386                 randconfig-011-20260720    clang-22
-i386                 randconfig-012-20260720    gcc-14
-i386                 randconfig-013-20260720    gcc-12
-i386                 randconfig-014-20260720    clang-22
-i386                 randconfig-015-20260720    clang-22
-i386                 randconfig-016-20260720    clang-22
-i386                 randconfig-017-20260720    gcc-14
-loongarch                          defconfig    clang-24
-loongarch            randconfig-001-20260720    gcc-16.1.0
-loongarch            randconfig-002-20260720    clang-18
-mips                       qi_lb60_defconfig    clang-17
-nios2                           allmodconfig    gcc-11.5.0
-nios2                            allnoconfig    gcc-11.5.0
-nios2                randconfig-001-20260720    gcc-10.5.0
-nios2                randconfig-002-20260720    gcc-11.5.0
-parisc                          allmodconfig    gcc-16.1.0
-parisc                          allyesconfig    gcc-16.1.0
-parisc                             defconfig    gcc-16.1.0
-parisc               randconfig-001-20260720    gcc-11.5.0
-parisc               randconfig-002-20260720    gcc-13.4.0
-powerpc              mpc834x_itxgp_defconfig    clang-24
-powerpc              randconfig-001-20260720    clang-17
-powerpc              randconfig-002-20260720    clang-17
-powerpc64            randconfig-001-20260720    clang-24
-powerpc64            randconfig-002-20260720    clang-24
-riscv                randconfig-001-20260720    gcc-10.5.0
-riscv                randconfig-002-20260720    gcc-8.5.0
-s390                 randconfig-001-20260720    gcc-11.5.0
-s390                 randconfig-002-20260720    clang-24
-sh                                 defconfig    gcc-16.1.0
-sh                   randconfig-001-20260720    gcc-12.5.0
-sh                   randconfig-002-20260720    gcc-10.5.0
-sparc                randconfig-001-20260720    gcc-16.1.0
-sparc                randconfig-002-20260720    gcc-11.5.0
-sparc64              randconfig-001-20260720    gcc-8.5.0
-sparc64              randconfig-002-20260720    clang-24
-um                   randconfig-001-20260720    clang-18
-um                   randconfig-002-20260720    clang-19
-x86_64     buildonly-randconfig-001-20260720    clang-22
-x86_64     buildonly-randconfig-002-20260720    clang-22
-x86_64     buildonly-randconfig-003-20260720    gcc-14
-x86_64     buildonly-randconfig-004-20260720    gcc-14
-x86_64     buildonly-randconfig-005-20260720    gcc-14
-x86_64     buildonly-randconfig-006-20260720    clang-22
-x86_64               randconfig-001-20260720    clang-22
-x86_64               randconfig-002-20260720    gcc-14
-x86_64               randconfig-003-20260720    gcc-14
-x86_64               randconfig-004-20260720    gcc-14
-x86_64               randconfig-005-20260720    gcc-12
-x86_64               randconfig-006-20260720    clang-22
-x86_64               randconfig-011-20260720    clang-22
-x86_64               randconfig-012-20260720    clang-22
-x86_64               randconfig-013-20260720    clang-22
-x86_64               randconfig-014-20260720    gcc-14
-x86_64               randconfig-015-20260720    gcc-13
-x86_64               randconfig-016-20260720    gcc-14
-x86_64               randconfig-071-20260720    clang-22
-x86_64               randconfig-072-20260720    clang-22
-x86_64               randconfig-073-20260720    gcc-13
-x86_64               randconfig-074-20260720    gcc-14
-x86_64               randconfig-075-20260720    gcc-14
-x86_64               randconfig-076-20260720    gcc-14
-xtensa               randconfig-001-20260720    gcc-13.4.0
-xtensa               randconfig-002-20260720    gcc-8.5.0
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
