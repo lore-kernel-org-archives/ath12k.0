@@ -4,119 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28791C4452B
-	for <ath12k@archiver.kernel.org>; Tue, 21 Jul 2026 06:50:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C5FFC4451C
+	for <ath12k@archiver.kernel.org>; Tue, 21 Jul 2026 06:50:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WhuQSYRiVZbQ+/9xqPc3+t1f0i5a6sUx9rb2bdMhxQI=; b=n8iua0HRhXqBMWR0xNnUcn/7SS
-	Qy+nbTVBp8YvbCd9IAmcOlz5OUolsZJoAi48A6QAq4CXvrjEzcbx1pV55F4chCweA6SPJcXCP+OOR
-	cmhUMOXxG+ElFUlkuFBkpFq5igE72Mf2udpM2zFMZ6FNWuptuDMfs2HW8RcjpmoGydKs/yUbecbPs
-	5+tkEZGX6CXx9hK0rOAYPnEYEeZCiFisYhI0qE6HIXeq+xBxpHnvdeJ4InEPjxXLYT0sauZxrJ4Y+
-	YBWXstGeWHq5WvVXburO//F5QOOzML210aN0L02h5raZDq4L8QCj2FFSng7ZJODEUuW4qQMPpudJO
-	rmzv5qSA==;
+	bh=sFIVIoHhy4SuLurz/T6U0m4+tj4haC5VQS95MPm+iZM=; b=UuljLSoThMURdkdpZkP2yNHLnT
+	k27gOOSmFUrT0P9+TJo6xwAVl0zdrkiqVS5VhcCYZqeXfGyqvdX83Uj5ZBfuC5daaIwFdJCGDPFy8
+	a5xQGXqHmnAu20wmmH9PRq75ZDy7nWos6Xq2BgF85kHAX7SsBTWEvLvfOecCS9FjkZ/xfnufT/t6U
+	JDET0SzzDvAs9cL2iBA620tew9tTE2kvmtulxB/udgQTF1ajNyoA8JsNZ0uSdOu2ZYRD58qbrzUpM
+	uWQHoWtX2Bph21VUJ4s+fcXyyffL2zJcqFlvTH94jpV55hyuLZ+w8clceo9rXGP4csU2J+KXPrwyj
+	PZuk1/Hg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm4JX-00000008ZKF-3Saz;
-	Tue, 21 Jul 2026 06:50:51 +0000
+	id 1wm4JZ-00000008ZL6-3sgt;
+	Tue, 21 Jul 2026 06:50:53 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm4JU-00000008ZJA-1d3x
+	id 1wm4JX-00000008ZK1-2qgf
 	for ath12k@lists.infradead.org;
-	Tue, 21 Jul 2026 06:50:49 +0000
+	Tue, 21 Jul 2026 06:50:53 +0000
 Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66L6M1NQ4107152
-	for <ath12k@lists.infradead.org>; Tue, 21 Jul 2026 06:50:48 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66L6FqUh4107084
+	for <ath12k@lists.infradead.org>; Tue, 21 Jul 2026 06:50:51 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=WhuQSYRiVZb
-	Q+/9xqPc3+t1f0i5a6sUx9rb2bdMhxQI=; b=ANmWNI4L3hZwUW1lZSIqBaAx1Br
-	jUbRob0SRV5GozkIwBVBfz7hx4zbw3V94YF/xP9QdHJCICvVX7xQDogV7feIPJmO
-	AN0k2yv/ovVuUIG2t3/E9J5MH4+CSzXYpSg6zYOoVl6sV9fP2R3Gy3fiQOZvwBr9
-	m2XpVWZijStSMBiafup0dmr9bhelvgjMiwxpoLcenD1dHeKTV+wpefRXVxVjCsKA
-	Cotz0W4y/f+22nH0UNVLre6/0I1ejy1Qa+IDSblBBqthZoDzmyxHocMALYlPVA2D
-	fmmbM7ebX5/WfLuVdsOhRCVfY82iCA6lDkav5pRvNxgLZ35WwtciuB0AAzw==
+	:mime-version:references:subject:to; s=qcppdkim1; bh=sFIVIoHhy4S
+	uLurz/T6U0m4+tj4haC5VQS95MPm+iZM=; b=c3BBDnVicRHgLK2UI7WrHCn1kW/
+	2bB2Xc8vPUnhwAFfEEf+4yb/xIRsj6cbTKbYC4prBtsVEO/8qz4jnKSE6roVbdu9
+	mzhif3NNd18WbdSzP1b2t6a3zD0ij4q/yI1Ara5DnawAzWdwC841QMY9pu0TbY+1
+	Z4bQutNCNuUzmYywvWXVOfgWyZ1cHbjTsg7xH25fsD1Fjkyg4WC2e9IuhMXtWX/o
+	T/nRhlWqmW8TLQXZ9UYOHsTignExfjmpLHvsQqFS//e5I9ia9cSoVLSv3PVu3qSY
+	HeVXXwUHQjdInJT0fNv1zXDKJyvAjZRZJ2BDTRI4J/fiK52jEOPQhSaOVkw==
 Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fhvqn9k89-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fhvqn9k8f-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 21 Jul 2026 06:50:47 +0000 (GMT)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-8486ffba174so18110277b3a.1
-        for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 23:50:47 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 21 Jul 2026 06:50:51 +0000 (GMT)
+Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-8486c3411c8so14794095b3a.2
+        for <ath12k@lists.infradead.org>; Mon, 20 Jul 2026 23:50:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1784616647; x=1785221447; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1784616651; x=1785221451; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=WhuQSYRiVZbQ+/9xqPc3+t1f0i5a6sUx9rb2bdMhxQI=;
-        b=ELNKoeCzkfdc12sHBY/TCJbmV4DuNWLJTRyniGfgWXuLQd1R2PTzL90jj5uIOx8W1h
-         UwjZuN+FlVTeWekQyeWxc8CJNNg7D7zIpHwB3rQKwa4P9D65L5ZCtHroZ9jQKzsrfQ9u
-         7z9UsxhyhyPRQzy0F24kNhhpr236YpjNzzsT/3ozIrotE+KHlMA0SVTNKgcI3tl+S1gp
-         Pkesb10NkCVExwI6mFL/lJApvXayEG3+B3W3drc7kU+giu8EBd28ozwzt9wF2KtaOtPq
-         PdsbE+Fzj7fSFnQ0yjTFI9ZduJxCNvwjAAg7AVOcyUtE0HJsNR7hPqs3JpE1Zl9ECp0j
-         MvOQ==
+        bh=sFIVIoHhy4SuLurz/T6U0m4+tj4haC5VQS95MPm+iZM=;
+        b=Vv85iR0IjUwYUeYj5aYf1+BKalEJdnhCiRlkw7klaWE0jVkS3W98tK62xsT7R/Q5P4
+         LPwFRhYcNteD+WP43W+3nmv5+IZJAAyDaeRsUY4dhdFW5jSe+ap8fKyM0UWvhZ9cQUM5
+         lmOGV8bcHUfz+92hs0fyO/Y+AW8tv1rqgvZX50ghqPAyvCjnAMERteAjtdjunTkQKCkw
+         5fZVyT3w+Br18JGm9la976nDA1xHOdaVy8vjA5v70Pd4scAUlsVB8yOn/GWW4Er4MIMN
+         l2p+oV2+BJ3dFFeaoW9lL7krEI6/E/MVjt7NEya6BejyrfE0rIv9OhQB6Izd8MFYdyzA
+         ImMw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784616647; x=1785221447;
+        d=1e100.net; s=20251104; t=1784616651; x=1785221451;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=WhuQSYRiVZbQ+/9xqPc3+t1f0i5a6sUx9rb2bdMhxQI=;
-        b=fFi9Y8ft11Ny7ZHag/asrAnob8Z1qynK9zOx8ftNeykti/xKAWzrauwn5aOBNqvelv
-         NK2/HUmvOvglv8eh8pLQXMq5zJldhSd7cTNFTM601Yn5/6/cAwchEeR3LZw/wSQK+CWV
-         bq4ZKqlvSwxQoKft8dnPfTL5QkOQemEgJQ94gsI2gJUDnZZKHJWs5D0Ic5x9L5OxZsJM
-         p1oI8+RRinSnxeV35FIlTGjJT24DbFRrTYwes4dkh2nNlAp3ySX/NpAjT4/CQVEoWku3
-         Hb5aQRQ+b2OOuw2pxoRZzSDNPoSrsQKSKzaUmvdATpeuwWmSB+ntqbY81Ac26NmAj1kY
-         kI7A==
-X-Gm-Message-State: AOJu0YzXaGOstesE+Yh6RR5b5pFjfu2VCVYjB9JcrRAMko6hnUFTmze7
-	c7F67HRFsMc/1k374ni345eGB8iT+QSnJJ5FF9hOqrHkXylo/naX+7y6I0eAzO6Mm9/aJYINBHS
-	bRHSGY20RkhprdD93ZsVvHcJQYiGsk1JtTb2qV0sMTBh8m/22ClESwOYkGBPl6G8ZonGyLcCC
-X-Gm-Gg: AR+sD12v20UZ3HMHKi8B9LTeoKQ3slc/JhJs1Q7jufg9xyjAJSgCTYnK7Bwic2OISFA
-	HNdwa85aJloivT2OG2tKr6dgxPtYdQZ0xIRm2doQ7/3z8h9viwXKzCdxKyaDtujLYFKo26vJszF
-	0Ml0Y0K8goY8YDDz6aVF2EgihRUHw3wyhqOubnf4aGO3dGNCQygkKM/k3N0NKiYjCASJFTpBZzy
-	ro2H8LVdKmB9i+05IgbnAiXs1RTZIuqyhy53P+Jdu/gvZ+7fHsDILp1WFOF1NrbgFaeEl4jTpR/
-	RI8CS1P31JrLRtULXqqgX5peTY4UpJh5D+v7l8MWkJgRaqjnTProXyyo1fz+YwTvzU5cQE2TUvd
-	MhViqbhJQKEyp7JOBP6vaTZyHgeQr86kyK+rOrVldG9itDo1OxmtE7lBrq7J3LJiMu7XXZMhQVt
-	Lhm3wIYWW9HWYssBcYNe2zGTo=
-X-Received: by 2002:aa7:8ec5:0:b0:847:82dc:452d with SMTP id d2e1a72fcca58-84c2931085bmr12358014b3a.29.1784616647055;
-        Mon, 20 Jul 2026 23:50:47 -0700 (PDT)
-X-Received: by 2002:aa7:8ec5:0:b0:847:82dc:452d with SMTP id d2e1a72fcca58-84c2931085bmr12357995b3a.29.1784616646463;
-        Mon, 20 Jul 2026 23:50:46 -0700 (PDT)
+        bh=sFIVIoHhy4SuLurz/T6U0m4+tj4haC5VQS95MPm+iZM=;
+        b=OOsjC5ZCI5JxQTGLWT46mg16E/x+1RZ/5GelvddT1mOjJVWWCjf9dx4bHPyDDxXJqc
+         xwe7sEL49+mJfunPWKrcnyg94lv4Z62c2TqM2opPAlL+xG+5XZP3pd4BqeXB+orxyDVF
+         Exz5iofrz+4xhB/cYB5SI1X/Mlrjr2J4XaGDSOu2fbS0ocgX2sWHCepNHpKMy62+prvT
+         1Wp76Uwg0SlmG0yVa6h2P+D1Ra66rnGffyJJpoATex4rw8GM8HKbub6LVz2mHjFGxxJl
+         epZTLciJwnq6i0pH7pCmZAhC01u+3pY6fTfmLipKLH52DGqEjjxLKMLcKdjrRM1B/QKe
+         ElnQ==
+X-Gm-Message-State: AOJu0YySUuWG32PqTipznzfVtvnBmV/t+Bc5Ql45aBXs5ps00pCfpZdT
+	nVdcGt5aaEXqZ5YSD9wOXdXlUKYheKKS6Yt5Yr/D9ZN2ZoQA/DObWhLTjnUHXMUBZKhvYYIvdIP
+	lyQ5KJqSpZv3S1AyREp1Lej9nFGgW6laY1ISYBHJVn43TWxohPoLpfLtmEstL25ByoVEUnWj9
+X-Gm-Gg: AfdE7clQILyK7kqQS5nP02wgWTfstNSXD1E5Ex5m1bYWP7iUMh6lTDXWMzx4NKZZm3g
+	rT4byfEiyvlEpz8lBjQHDxLCB8S7onN4CdfWsNFWiT3vYaNKboRT/gkbM0mYD3/tSeh9QUkVDCX
+	kNW3Hr7ZGnS4R8i0mcuFwHy1XHzgS0IstO2ZuEzGU78heiRXDpYuxpWpZ59C7gakV/M7ajOoDtW
+	XruQE3CSHMwhiHP4Ff8IOyzaR5SoLqDtimB6ZVO6VH+Lqm3k95cjwOm+CuM5Uv7IXQdw3mg3ErM
+	2xh6tith6X4fNr9TBEEIiHgrqGHdUkia7SLo1C2JvpCGLFXHJ3KFfJCkCjD4jGdhAZtfgW03qwl
+	X0/wj2J/6SMc22htiuoUWnOZCqlvIfjVbttk+FzJIALHsxxiF1rdVy5yTMQIL3Uxq+yg/sMbi8l
+	ovBQEqnXdns7sWNe59ALjwpyI=
+X-Received: by 2002:a05:6a00:4515:b0:847:711f:49ab with SMTP id d2e1a72fcca58-84c292ab55fmr17156848b3a.22.1784616650411;
+        Mon, 20 Jul 2026 23:50:50 -0700 (PDT)
+X-Received: by 2002:a05:6a00:4515:b0:847:711f:49ab with SMTP id d2e1a72fcca58-84c292ab55fmr17156824b3a.22.1784616649894;
+        Mon, 20 Jul 2026 23:50:49 -0700 (PDT)
 Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84c2af9ef6dsm6902392b3a.57.2026.07.20.23.50.44
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84c2af9ef6dsm6902392b3a.57.2026.07.20.23.50.46
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 20 Jul 2026 23:50:45 -0700 (PDT)
+        Mon, 20 Jul 2026 23:50:48 -0700 (PDT)
 From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
         Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Subject: [PATCH ath-next 1/2] wifi: ath12k: add AHB platform descriptor support
-Date: Tue, 21 Jul 2026 12:20:37 +0530
-Message-Id: <20260721065038.126046-2-aaradhana.sahu@oss.qualcomm.com>
+Subject: [PATCH ath-next 2/2] wifi: ath12k: Share RootPD state across UserPDs to avoid duplicate operations
+Date: Tue, 21 Jul 2026 12:20:38 +0530
+Message-Id: <20260721065038.126046-3-aaradhana.sahu@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260721065038.126046-1-aaradhana.sahu@oss.qualcomm.com>
 References: <20260721065038.126046-1-aaradhana.sahu@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIxMDA2OSBTYWx0ZWRfX1ShVumUxK1y0
- Ry63chr7HK/B4OlI4X2MuNfE47VlBrbe9cerbaA9wy70tY39gWsPDUmg4cPa2HseukNELeBi4nG
- Hp7rhPfCO7e2pCmo0Hfc/OTOIlXnGnsOjqPV8POoFIeVGTvNs4VH1CGlYKeoQA7h9PeQrEYDBOi
- XaGpq+MULeC7YSgzmrwkUlndnVfl1ENqs+ox+Na+018Eto5zKRtS1Rn8XKqxd2t46Vll9F//jk2
- Ay/WBz7+aiTFmWLLHLprCqxUR1LAUxxq5MH22kHpEo6hUKyHr4S6KpgSI0fLgH10BQZd/BYUzaR
- 5/a8B/Sg9xiiK/d6EHJQ3rEMpoAwF/BYfYPo4+U31VpU86ldWyOa30jMls+IMU421UaoDSOQkdq
- 0kvJWVTeRIiLkv0ABABsTNSR3Q2nHW1ooQb3svBo3tRvrDPsUKEVbA3muA7ITExEaa+iprB3Woy
- WBL8XlTTjoiy8GOqLgA==
-X-Proofpoint-ORIG-GUID: VVVWLkjj9RuuDi8bXFOTxTNi7R4PxSoR
-X-Proofpoint-GUID: VVVWLkjj9RuuDi8bXFOTxTNi7R4PxSoR
-X-Authority-Analysis: v=2.4 cv=M5F97Sws c=1 sm=1 tr=0 ts=6a5f16c7 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIxMDA2OSBTYWx0ZWRfX7/4nK64X71xd
+ CCkgeHvASFMbugPbOofp9fteHWPMQ/ZQHCHU1e3PBhI6ZbL0K+oq3i+oHuJDq/9A4j6n2r8zglc
+ wuXUn3gH7Ix6m7riEebO9FEpB3pB7zGuWwrcpPP1vQNKiG4r69A469OJsqm9PPjY25uPxPqFvu7
+ 88HnTHr9C7AJBEvR6oQaasz+YGzzTwB5Wv5/NE+sg/I7Ac4ggSugjq3OSIT/pF1AZOKcOnMcUYg
+ /mieVATV3HWedObYMXkkOuiYUGBLuhhvP2oeXeLEr8ywClIrcTHH26/hNZG1GD7l8SrY7u4Gd8U
+ CQ96oc1N/NlyD92nhyIFYpPJq+hk1q+ZkvzkX6434w5wctY6jODCpxZ4MvH+b+E4s0HXwT/ZbvC
+ YN+mvROs9sNiQl1RJ44lAca21JYTHkuMEQOlKkhlBfmsu0m7pHDfExiZjeMZtxP6cNCx4WxbB1V
+ RAEh9FocKRI1/6HNgTA==
+X-Proofpoint-ORIG-GUID: vqKqcNsWpxq8tWOISWr8Tnzly58eTULT
+X-Proofpoint-GUID: vqKqcNsWpxq8tWOISWr8Tnzly58eTULT
+X-Authority-Analysis: v=2.4 cv=M5F97Sws c=1 sm=1 tr=0 ts=6a5f16cb cx=c_pps
  a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
  a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22 a=EUspDBNiAAAA:8
- a=PkEvTfuCgjdrwZjYjIcA:9 a=zc0IvFSfCIW2DFIPzwfm:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIxMDA2OSBTYWx0ZWRfX2om30NudyN0x
- g4kg+Pn+sk/IhcQlouBEiWGxA4imGD8cCTy7bPVmeKCf3TlsTfpBmivAHhYHMnnc2jPnlmnow9y
- LGGrYCmJmyRLPT3bOCaBabsM47VMVnc=
+ a=EQc74pWQCqrD_IxNvOgA:9 a=zc0IvFSfCIW2DFIPzwfm:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIxMDA2OSBTYWx0ZWRfXyweV+lFtLRU9
+ xnwOg47uyt8pMhDTQpjtRGloRQ2Lzvarc/urI/jmYLVNPaYfpuyVA33iPGKl71FMiojSm9QGOzO
+ 7JBdfMawZ0GKy0NfgcHeQSsnmGsX1s4=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-20_06,2026-07-20_03,2025-10-01_01
@@ -127,8 +127,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
  definitions=main-2607210069
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_235048_431350_70AAA090 
-X-CRM114-Status: GOOD (  27.94  )
+X-CRM114-CacheID: sfid-20260720_235051_750064_3F2161C5 
+X-CRM114-Status: GOOD (  22.54  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,230 +143,450 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-AHB-based platforms associate each device with a userPD ID that determines
-the firmware name and Peripheral Authentication Service ID (PASID) used
-during firmware authentication.
+Currently, each ath12k AHB device maintains its own RootPD-related
+information. However, RootPD is shared across all UserPD devices, so
+RootPD-related operations such as RootPD boot, and notifier registration,
+should be performed only once during the first UserPD boot up.
 
-Current implementation does not support platforms with multiple devices
-sharing the same compatible string but using different userPD IDs.
-As a result, the driver cannot uniquely identify each device for firmware
-selection and authentication.
+Due to per-device RootPD information, the driver is unable to track
+shared RootPD state across multiple UserPDs, which can result in these
+operations being performed multiple times.
 
-Add an AHB platform descriptor to store device-specific configuration.
-Implement userPD ID resolution by matching device tree reg properties, with
-node name matching as a fallback. Centralize platform configuration to
-simplify the probe path by removing hardware-specific conditionals.
+Fix this by introducing a new ath12k_ahb_rproc_info structure to hold
+shared RootPD-related information such as notifier callbacks, boot
+state, and number of userPD.
+
+Allocate this structure during the first device probe in
+ath12k_ahb_rproc_info_alloc() and reuse the same structure for all
+subsequent device probes.
+
+Also handle rproc deconfiguration correctly when multiple UserPDs share a
+common RootPD. The RootPD provides shared firmware services and resources
+for all UserPDs. Therefore, do not shut down the RootPD while any UserPD
+remains powered on or is still in the boot process.
+
+In addition, a UserPD can be powered down before its associated resources
+are fully released. Defer g_rproc_info cleanup until all UserPD-related
+state and resources have been cleaned up.
+
+For intermediate UserPD removal, cleanup only per-device information
+and remove the UserPD from the tracking array while keeping the RootPD
+running for remaining active UserPDs.
+
+Note: UserPD IDs start from 1, as ID 0 is used by RootPD, which is
+completely handled by the remoteproc driver.
+
+The multi-PD architecture on AHB platforms operates as follows:
+
+                     +-----------------------------+
+                     |   Q6 RootPD (rproc)         |
+                     |   (Shared Resource)         |
+                     |                             |
+                     |  - Manages UserPD lifecycle |
+                     |  - Provides SSR notifiers   |
+                     +--------------+--------------+
+                                    |
+                                    | Manages
+                                    |
+              +---------------------+---------------------+
+              |                     |                     |
+         +----v----+           +----v----+          +----v----+
+         | UserPD1 |           | UserPD2 |          | UserPD3 |
+         |  ID=1   |           |  ID=2   |          |  ID=3   |
+         | (Radio) |           | (Radio) |          | (Radio) |
+         +---------+           +---------+          +---------+
+              |                     |                     |
+              |                     |                     |
+         ath12k_ahb           ath12k_ahb           ath12k_ahb
+         (device 1)           (device 2)           (device 3)
+              |                     |                     |
+              +---------------------+---------------------+
+                                    |
+                                    | All reference
+                                    |
+                          +---------v----------+
+                          | ath12k_ahb_rproc_  |
+                          | info (shared)      |
+                          |                    |
+                          | - tgt_rproc        |
+                          | - notifiers        |
+                          | - rootpd_ready     |
+                          | - num_userpd       |
+                          | - userpd[] array   |
+                          +--------------------+
 
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/ahb.c       |  4 +-
- drivers/net/wireless/ath/ath12k/ahb.h       | 19 +++++
- drivers/net/wireless/ath/ath12k/hw.h        |  1 -
- drivers/net/wireless/ath/ath12k/wifi7/ahb.c | 90 +++++++++++++++++----
- 4 files changed, 94 insertions(+), 20 deletions(-)
+ drivers/net/wireless/ath/ath12k/ahb.c | 205 +++++++++++++++++++++-----
+ drivers/net/wireless/ath/ath12k/ahb.h |  15 +-
+ 2 files changed, 177 insertions(+), 43 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-index 07bb83710b1f..14ee696960c7 100644
+index 14ee696960c7..0fc55c9169e1 100644
 --- a/drivers/net/wireless/ath/ath12k/ahb.c
 +++ b/drivers/net/wireless/ath/ath12k/ahb.c
-@@ -704,7 +704,7 @@ static int ath12k_ahb_map_service_to_pipe(struct ath12k_base *ab, u16 service_id
+@@ -25,6 +25,22 @@ static const char ath12k_userpd_irq[][9] = {"spawn",
+ 				     "ready",
+ 				     "stop-ack"};
+ 
++/*
++ * Multi-UserPD Architecture:
++ *
++ * One Q6 RootPD (managed by separate rproc driver) supports multiple
++ * ath12k UserPDs. Each UserPD represents a WiFi radio instance.
++ *
++ * Lifecycle:
++ *  - RootPD boots when first UserPD probes
++ *  - All UserPDs share RootPD's SSR notifier
++ *
++ * Locking:
++ *  - ath12k_rproc_info_lock: Protects g_rproc_info allocation/free
++ */
++static struct ath12k_ahb_rproc_info *g_rproc_info;
++static DEFINE_MUTEX(ath12k_rproc_info_lock);
++
+ static const char *irq_name[ATH12K_IRQ_NUM_MAX] = {
+ 	"misc-pulse1",
+ 	"misc-latch",
+@@ -786,44 +802,85 @@ static int ath12k_ahb_config_rproc_irq(struct ath12k_base *ab)
+ static int ath12k_ahb_root_pd_state_notifier(struct notifier_block *nb,
+ 					     const unsigned long event, void *data)
+ {
+-	struct ath12k_ahb *ab_ahb = container_of(nb, struct ath12k_ahb, root_pd_nb);
+-	struct ath12k_base *ab = ab_ahb->ab;
++	struct ath12k_ahb_rproc_info *rproc_info =
++		container_of(nb, struct ath12k_ahb_rproc_info, root_pd_nb);
+ 
+ 	if (event == ATH12K_RPROC_AFTER_POWERUP) {
+-		ath12k_dbg(ab, ATH12K_DBG_AHB, "Root PD is UP\n");
+-		complete(&ab_ahb->rootpd_ready);
++		ath12k_generic_dbg(ATH12K_DBG_AHB, "Root PD is UP\n");
++		complete(&rproc_info->rootpd_ready);
+ 	}
+ 
  	return 0;
  }
  
--static const struct ath12k_hif_ops ath12k_ahb_hif_ops = {
-+const struct ath12k_hif_ops ath12k_ahb_hif_ops = {
- 	.start = ath12k_ahb_start,
- 	.stop = ath12k_ahb_stop,
- 	.read32 = ath12k_ahb_read32,
-@@ -715,6 +715,7 @@ static const struct ath12k_hif_ops ath12k_ahb_hif_ops = {
- 	.power_up = ath12k_ahb_power_up,
- 	.power_down = ath12k_ahb_power_down,
- };
-+EXPORT_SYMBOL(ath12k_ahb_hif_ops);
- 
- static irqreturn_t ath12k_userpd_irq_handler(int irq, void *data)
+-static int ath12k_ahb_register_rproc_notifier(struct ath12k_base *ab)
++static int ath12k_ahb_register_rproc_notifier(void)
  {
-@@ -1038,7 +1039,6 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
- 
- 	ab_ahb = ath12k_ab_to_ahb(ab);
- 	ab_ahb->ab = ab;
--	ab->hif.ops = &ath12k_ahb_hif_ops;
- 	ab->pdev = pdev;
- 	platform_set_drvdata(pdev, ab);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.h b/drivers/net/wireless/ath/ath12k/ahb.h
-index a153db6cf1d3..037347ccd21b 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.h
-+++ b/drivers/net/wireless/ath/ath12k/ahb.h
-@@ -30,6 +30,24 @@
- #define ATH12K_USERPD_ID_MASK			GENMASK(10, 8)
- #define ATH12K_USERPD_FW_NAME_LEN		35
- 
-+enum ath12k_ahb_userpd_id {
-+	ATH12K_AHB_USERPD_ID_0 = 1,
-+	ATH12K_AHB_USERPD_ID_1,
-+	ATH12K_AHB_USERPD_ID_2,
-+};
+-	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
++	int ret;
 +
-+struct ath12k_ahb_userpd_map {
-+	phys_addr_t io_start;
-+	const char *node_name;
-+	u32 upd_id;
-+};
-+
-+struct ath12k_ahb_desc {
-+	enum ath12k_hw_rev hw_rev;
-+	bool auth_enabled;
-+	const struct ath12k_hif_ops *ops;
-+};
-+
- enum ath12k_ahb_smp2p_msg_id {
- 	ATH12K_AHB_POWER_SAVE_ENTER = 1,
- 	ATH12K_AHB_POWER_SAVE_EXIT,
-@@ -43,6 +61,7 @@ enum ath12k_ahb_userpd_irq {
- };
++	lockdep_assert_held(&ath12k_rproc_info_lock);
  
- struct ath12k_base;
-+extern const struct ath12k_hif_ops ath12k_ahb_hif_ops;
+-	ab_ahb->root_pd_nb.notifier_call = ath12k_ahb_root_pd_state_notifier;
+-	init_completion(&ab_ahb->rootpd_ready);
++	if (g_rproc_info->root_pd_notifier)
++		return 0;
  
- struct ath12k_ahb_device_family_ops {
- 	int (*probe)(struct platform_device *pdev);
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index 49cfd5dfc70a..3ed38f8f2b48 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -100,7 +100,6 @@ struct ieee80211_rx_status;
- #define ATH12K_REGDB_FILE_NAME		"regdb.bin"
- 
- #define ATH12K_PCIE_MAX_PAYLOAD_SIZE	128
--#define ATH12K_IPQ5332_USERPD_ID	1
- 
- enum ath12k_hw_rate_cck {
- 	ATH12K_HW_RATE_CCK_LP_11M = 0,
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/ahb.c b/drivers/net/wireless/ath/ath12k/wifi7/ahb.c
-index 6a8b8b2a56f9..98a6606ffd76 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/ahb.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/ahb.c
-@@ -15,44 +15,100 @@
- #include "dp.h"
- #include "core.h"
- 
-+/*
-+ * Node name to UserPD ID mapping
-+ *
-+ * The io_start field is used for additional validation when the reg
-+ * property is present in the device tree. If io_start is 0, only
-+ * node_name matching is performed.
-+ *
-+ * For platforms where not all WiFi nodes have a 'reg' property, set
-+ * io_start to 0 for those entries. The driver will match purely by
-+ * node name in such cases.
-+ */
-+static const struct ath12k_ahb_userpd_map ath12k_wifi7_ahb_userpd_map[] = {
-+	{ .io_start = 0x0c000000, .node_name = "wifi", .upd_id = ATH12K_AHB_USERPD_ID_0 },
-+};
+-	ab_ahb->root_pd_notifier = qcom_register_ssr_notifier(ab_ahb->tgt_rproc->name,
+-							      &ab_ahb->root_pd_nb);
+-	if (IS_ERR(ab_ahb->root_pd_notifier))
+-		return PTR_ERR(ab_ahb->root_pd_notifier);
++	g_rproc_info->root_pd_nb.notifier_call = ath12k_ahb_root_pd_state_notifier;
 +
-+static const struct ath12k_ahb_desc ath12k_wifi7_ahb_desc[] = {
-+	[ATH12K_HW_IPQ5332_HW10] = {
-+		.hw_rev = ATH12K_HW_IPQ5332_HW10,
-+		.auth_enabled = true,
-+		.ops = &ath12k_ahb_hif_ops,
-+	},
-+	[ATH12K_HW_IPQ5424_HW10] = {
-+		.hw_rev = ATH12K_HW_IPQ5424_HW10,
-+		.auth_enabled = false,
-+		.ops = &ath12k_ahb_hif_ops,
-+	},
-+};
-+
- static const struct of_device_id ath12k_wifi7_ahb_of_match[] = {
- 	{ .compatible = "qcom,ipq5332-wifi",
--	  .data = (void *)ATH12K_HW_IPQ5332_HW10,
-+	  .data = (void *)&ath12k_wifi7_ahb_desc[ATH12K_HW_IPQ5332_HW10],
- 	},
- 	{ .compatible = "qcom,ipq5424-wifi",
--	  .data = (void *)ATH12K_HW_IPQ5424_HW10,
-+	  .data = (void *)&ath12k_wifi7_ahb_desc[ATH12K_HW_IPQ5424_HW10],
- 	},
- 	{ }
- };
- 
- MODULE_DEVICE_TABLE(of, ath12k_wifi7_ahb_of_match);
- 
-+/*
-+ * ath12k_wifi7_ahb_get_userpd_id - Resolve UserPD ID from DT properties
-+ * @ab: ath12k base structure
-+ *
-+ * Returns: UserPD ID (1-based) on success, 0 on failure
-+ *
-+ * Resolution logic:
-+ * 1. If reg property exist in DT, get userpd_id from io_start
-+ * 2. If reg property is absent, get userpd_id from DT node name
-+ * 3. Return 0 if no match found (probe will fail)
-+ */
-+static u32 ath12k_wifi7_ahb_get_userpd_id(struct ath12k_base *ab)
-+{
-+	const struct ath12k_ahb_userpd_map *map;
-+	struct resource *res;
-+	size_t i;
-+
-+	res = platform_get_resource(ab->pdev, IORESOURCE_MEM, 0);
-+
-+	for (i = 0; i < ARRAY_SIZE(ath12k_wifi7_ahb_userpd_map); i++) {
-+		map = &ath12k_wifi7_ahb_userpd_map[i];
-+
-+		if (res) {
-+			if (map->io_start && map->io_start == res->start)
-+				return map->upd_id;
-+		} else if (map->node_name &&
-+			   of_node_name_eq(ab->dev->of_node, map->node_name)) {
-+			return map->upd_id;
-+		}
++	g_rproc_info->root_pd_notifier =
++			qcom_register_ssr_notifier(g_rproc_info->tgt_rproc->name,
++						   &g_rproc_info->root_pd_nb);
++	if (IS_ERR(g_rproc_info->root_pd_notifier)) {
++		ret = PTR_ERR(g_rproc_info->root_pd_notifier);
++		g_rproc_info->root_pd_notifier = NULL;
++		return ret;
 +	}
+ 
+ 	return 0;
+ }
+ 
+-static void ath12k_ahb_unregister_rproc_notifier(struct ath12k_base *ab)
++static void ath12k_ahb_unregister_rproc_notifier(void)
++{
++	lockdep_assert_held(&ath12k_rproc_info_lock);
 +
-+	return 0;
++	if (!g_rproc_info->root_pd_notifier)
++		return;
++
++	qcom_unregister_ssr_notifier(g_rproc_info->root_pd_notifier,
++				     &g_rproc_info->root_pd_nb);
++	g_rproc_info->root_pd_notifier = NULL;
 +}
 +
- static int ath12k_wifi7_ahb_probe(struct platform_device *pdev)
++static void ath12k_ahb_cleanup_userpd(struct ath12k_base *ab)
  {
-+	const struct ath12k_ahb_desc *desc;
- 	struct ath12k_ahb *ab_ahb;
--	enum ath12k_hw_rev hw_rev;
- 	struct ath12k_base *ab;
- 	int ret;
+ 	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
++	struct ath12k_ahb_rproc_info *rproc_info = ab_ahb->rproc_info;
  
- 	ab = platform_get_drvdata(pdev);
- 	ab_ahb = ath12k_ab_to_ahb(ab);
--
--	hw_rev = (enum ath12k_hw_rev)(kernel_ulong_t)of_device_get_match_data(&pdev->dev);
--	switch (hw_rev) {
--	case ATH12K_HW_IPQ5332_HW10:
--		ab_ahb->userpd_id = ATH12K_IPQ5332_USERPD_ID;
--		ab_ahb->scm_auth_enabled = true;
--		break;
--	case ATH12K_HW_IPQ5424_HW10:
--		ab_ahb->userpd_id = ATH12K_IPQ5332_USERPD_ID;
--		ab_ahb->scm_auth_enabled = false;
--		break;
--	default:
-+	desc = of_device_get_match_data(&pdev->dev);
-+	if (!desc)
- 		return -EOPNOTSUPP;
+-	if (!ab_ahb->root_pd_notifier) {
+-		ath12k_err(ab, "Rproc notifier not registered\n");
++	lockdep_assert_held(&ath12k_rproc_info_lock);
++
++	if (!rproc_info)
+ 		return;
 -	}
  
- 	ab->target_mem_mode = ATH12K_QMI_MEMORY_MODE_DEFAULT;
--	ab->hw_rev = hw_rev;
-+	ab->hw_rev = desc->hw_rev;
-+	ab->hif.ops = desc->ops;
-+	ab_ahb->scm_auth_enabled = desc->auth_enabled;
-+	ab_ahb->userpd_id = ath12k_wifi7_ahb_get_userpd_id(ab);
-+	if (!ab_ahb->userpd_id)
-+		return -EOPNOTSUPP;
+-	qcom_unregister_ssr_notifier(ab_ahb->root_pd_notifier,
+-				     &ab_ahb->root_pd_nb);
+-	ab_ahb->root_pd_notifier = NULL;
++	rproc_info->userpd[ab_ahb->userpd_id - 1] = NULL;
++	rproc_info->num_userpd--;
++	ab_ahb->rproc_info = NULL;
++}
++
++static struct ath12k_ahb_rproc_info *ath12k_ahb_rproc_info_alloc(struct ath12k_base *ab)
++{
++	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
++	struct ath12k_ahb_rproc_info *rproc_info;
++
++	lockdep_assert_held(&ath12k_rproc_info_lock);
++
++	rproc_info = kzalloc_obj(*rproc_info, GFP_KERNEL);
++	if (!rproc_info)
++		return NULL;
++
++	rproc_info->rootpd_booted_by_driver = false;
++	rproc_info->userpd[ab_ahb->userpd_id - 1] = ab_ahb;
++	rproc_info->num_userpd = 1;
++	init_completion(&rproc_info->rootpd_ready);
++	ab_ahb->rproc_info = rproc_info;
++
++	return rproc_info;
+ }
  
- 	ret = ath12k_wifi7_hw_init(ab);
+ static int ath12k_ahb_get_rproc(struct ath12k_base *ab)
+@@ -832,37 +889,69 @@ static int ath12k_ahb_get_rproc(struct ath12k_base *ab)
+ 	struct device *dev = ab->dev;
+ 	struct device_node *np;
+ 	struct rproc *prproc;
++	int ret;
++
++	lockdep_assert_held(&ath12k_rproc_info_lock);
++
++	if (ab_ahb->userpd_id > ATH12K_MAX_DEVICES)
++		return -ENOSPC;
++
++	if (g_rproc_info) {
++		if (g_rproc_info->num_userpd >= ATH12K_MAX_DEVICES) {
++			ath12k_err(ab, "Max UserPD limit reached\n");
++			return -ENOSPC;
++		}
++
++		g_rproc_info->userpd[ab_ahb->userpd_id - 1] = ab_ahb;
++		g_rproc_info->num_userpd++;
++		ab_ahb->rproc_info = g_rproc_info;
++		return 0;
++	}
++
++	g_rproc_info = ath12k_ahb_rproc_info_alloc(ab);
++	if (!g_rproc_info)
++		return -ENOMEM;
+ 
+ 	np = of_parse_phandle(dev->of_node, "qcom,rproc", 0);
+ 	if (!np) {
+ 		ath12k_err(ab, "failed to get q6_rproc handle\n");
+-		return -ENOENT;
++		ret = -ENOENT;
++		goto err_free_rproc_info;
+ 	}
+ 
+ 	prproc = rproc_get_by_phandle(np->phandle);
+ 	of_node_put(np);
+-	if (!prproc)
+-		return dev_err_probe(&ab->pdev->dev, -EPROBE_DEFER,
+-				     "failed to get rproc\n");
+-
+-	ab_ahb->tgt_rproc = prproc;
++	if (!prproc) {
++		ret = dev_err_probe(&ab->pdev->dev, -EPROBE_DEFER,
++				    "failed to get rproc\n");
++		goto err_free_rproc_info;
++	}
+ 
++	g_rproc_info->tgt_rproc = prproc;
+ 	return 0;
++
++err_free_rproc_info:
++	ab_ahb->rproc_info = NULL;
++	kfree(g_rproc_info);
++	g_rproc_info = NULL;
++	return ret;
+ }
+ 
+ static int ath12k_ahb_boot_root_pd(struct ath12k_base *ab)
+ {
+-	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+ 	unsigned long time_left;
+ 	int ret;
+ 
+-	ret = rproc_boot(ab_ahb->tgt_rproc);
++	lockdep_assert_held(&ath12k_rproc_info_lock);
++	reinit_completion(&g_rproc_info->rootpd_ready);
++
++	ret = rproc_boot(g_rproc_info->tgt_rproc);
+ 	if (ret < 0) {
+ 		ath12k_err(ab, "RootPD boot failed\n");
+ 		return ret;
+ 	}
+ 
+-	time_left = wait_for_completion_timeout(&ab_ahb->rootpd_ready,
++	time_left = wait_for_completion_timeout(&g_rproc_info->rootpd_ready,
+ 						ATH12K_ROOTPD_READY_TIMEOUT);
+ 	if (!time_left) {
+ 		ath12k_err(ab, "RootPD ready wait timed out\n");
+@@ -874,44 +963,74 @@ static int ath12k_ahb_boot_root_pd(struct ath12k_base *ab)
+ 
+ static int ath12k_ahb_configure_rproc(struct ath12k_base *ab)
+ {
+-	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+ 	int ret;
+ 
++	mutex_lock(&ath12k_rproc_info_lock);
++
+ 	ret = ath12k_ahb_get_rproc(ab);
+-	if (ret < 0)
++	if (ret < 0) {
++		mutex_unlock(&ath12k_rproc_info_lock);
+ 		return ret;
++	}
+ 
+-	ret = ath12k_ahb_register_rproc_notifier(ab);
++	ret = ath12k_ahb_register_rproc_notifier();
+ 	if (ret < 0) {
+ 		ret = dev_err_probe(&ab->pdev->dev, ret,
+ 				    "failed to register rproc notifier\n");
+-		goto err_put_rproc;
++		goto err_cleanup_userpd;
+ 	}
+ 
+-	if (ab_ahb->tgt_rproc->state != RPROC_RUNNING) {
++	if (g_rproc_info->tgt_rproc->state != RPROC_RUNNING) {
+ 		ret = ath12k_ahb_boot_root_pd(ab);
+ 		if (ret < 0) {
+ 			ath12k_err(ab, "failed to boot the remote processor Q6\n");
+ 			goto err_unreg_notifier;
+ 		}
++		g_rproc_info->rootpd_booted_by_driver = true;
+ 	}
+ 
+-	return ath12k_ahb_config_rproc_irq(ab);
++	mutex_unlock(&ath12k_rproc_info_lock);
++	return 0;
+ 
+ err_unreg_notifier:
+-	ath12k_ahb_unregister_rproc_notifier(ab);
++	ath12k_ahb_unregister_rproc_notifier();
++
++err_cleanup_userpd:
++	ath12k_ahb_cleanup_userpd(ab);
++
++	if (g_rproc_info && !g_rproc_info->num_userpd) {
++		rproc_put(g_rproc_info->tgt_rproc);
++		kfree(g_rproc_info);
++		g_rproc_info = NULL;
++	}
+ 
+-err_put_rproc:
+-	rproc_put(ab_ahb->tgt_rproc);
++	mutex_unlock(&ath12k_rproc_info_lock);
+ 	return ret;
+ }
+ 
+ static void ath12k_ahb_deconfigure_rproc(struct ath12k_base *ab)
+ {
+ 	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
++	struct ath12k_ahb_rproc_info *rproc_info = ab_ahb->rproc_info;
++
++	lockdep_assert_held(&ath12k_rproc_info_lock);
++
++	if (!rproc_info || !g_rproc_info)
++		return;
+ 
+-	ath12k_ahb_unregister_rproc_notifier(ab);
+-	rproc_put(ab_ahb->tgt_rproc);
++	ath12k_ahb_cleanup_userpd(ab);
++
++	if (!g_rproc_info->num_userpd) {
++		ath12k_ahb_unregister_rproc_notifier();
++
++		if (g_rproc_info->rootpd_booted_by_driver &&
++		    g_rproc_info->tgt_rproc->state == RPROC_RUNNING)
++			rproc_shutdown(g_rproc_info->tgt_rproc);
++
++		rproc_put(g_rproc_info->tgt_rproc);
++		kfree(g_rproc_info);
++		g_rproc_info = NULL;
++	}
+ }
+ 
+ static int ath12k_ahb_resource_init(struct ath12k_base *ab)
+@@ -1094,6 +1213,10 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		goto err_ce_free;
+ 
++	ret = ath12k_ahb_config_rproc_irq(ab);
++	if (ret)
++		goto err_rproc_deconfigure;
++
+ 	ret = ath12k_ahb_config_irq(ab);
  	if (ret) {
+ 		ath12k_err(ab, "failed to configure irq: %d\n", ret);
+@@ -1121,7 +1244,9 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
+ 	ab_ahb->device_family_ops->arch_deinit(ab);
+ 
+ err_rproc_deconfigure:
++	mutex_lock(&ath12k_rproc_info_lock);
+ 	ath12k_ahb_deconfigure_rproc(ab);
++	mutex_unlock(&ath12k_rproc_info_lock);
+ 
+ err_ce_free:
+ 	ath12k_ce_free_pipes(ab);
+@@ -1163,7 +1288,9 @@ static void ath12k_ahb_free_resources(struct ath12k_base *ab)
+ 	ath12k_hal_srng_deinit(ab);
+ 	ath12k_ce_free_pipes(ab);
+ 	ath12k_ahb_resource_deinit(ab);
++	mutex_lock(&ath12k_rproc_info_lock);
+ 	ath12k_ahb_deconfigure_rproc(ab);
++	mutex_unlock(&ath12k_rproc_info_lock);
+ 	ab_ahb->device_family_ops->arch_deinit(ab);
+ 	ath12k_core_free(ab);
+ 	platform_set_drvdata(pdev, NULL);
+diff --git a/drivers/net/wireless/ath/ath12k/ahb.h b/drivers/net/wireless/ath/ath12k/ahb.h
+index 037347ccd21b..cdb58b07338f 100644
+--- a/drivers/net/wireless/ath/ath12k/ahb.h
++++ b/drivers/net/wireless/ath/ath12k/ahb.h
+@@ -69,13 +69,19 @@ struct ath12k_ahb_device_family_ops {
+ 	void (*arch_deinit)(struct ath12k_base *ab);
+ };
+ 
+-struct ath12k_ahb {
+-	struct ath12k_base *ab;
++struct ath12k_ahb_rproc_info {
+ 	struct rproc *tgt_rproc;
+-	struct clk *xo_clk;
+-	struct completion rootpd_ready;
+ 	struct notifier_block root_pd_nb;
+ 	void *root_pd_notifier;
++	struct completion rootpd_ready;
++	u8 num_userpd;
++	bool rootpd_booted_by_driver;
++	struct ath12k_ahb *userpd[ATH12K_MAX_DEVICES];
++};
++
++struct ath12k_ahb {
++	struct ath12k_base *ab;
++	struct clk *xo_clk;
+ 	struct qcom_smem_state *spawn_state;
+ 	struct qcom_smem_state *stop_state;
+ 	struct completion userpd_spawned;
+@@ -88,6 +94,7 @@ struct ath12k_ahb {
+ 	const struct ath12k_ahb_ops *ahb_ops;
+ 	const struct ath12k_ahb_device_family_ops *device_family_ops;
+ 	bool scm_auth_enabled;
++	struct ath12k_ahb_rproc_info *rproc_info;
+ };
+ 
+ struct ath12k_ahb_driver {
 -- 
 2.34.1
 
