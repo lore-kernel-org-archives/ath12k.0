@@ -4,135 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D999EC4451C
-	for <ath12k@archiver.kernel.org>; Tue, 21 Jul 2026 16:11:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2495AC4451C
+	for <ath12k@archiver.kernel.org>; Tue, 21 Jul 2026 16:28:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mYflFeJGiDlHHnobo387r0vJX1+Zy6ipWPbVmTEI7xs=; b=JMSDvpmhzRBkdzWQ73qlMBe/Rw
-	PZTkyqTZfEXcgBYPX+em7XLr1H/Yt2flE/ZpN6g5X3eoGvHo26Bvzx09dsw366yOXJHlkeiRx7v6A
-	qb8ElRT5fD/KHI1Ank2OO7FndjWNXbh7DGLacpu4OcDpBFV60dGoghCjDM2viILSXEiGHg0GUJkBF
-	E3SkLFBlJunnIUcpuhDes3muIt0ntk2o9+A3KThhOsv0rkoh6Yyz38DQXh7CN8PqyyOsY+tMje44s
-	6jsLiRRIHcIT0rDsRMCDi2SdVNyFcJE97Ro9ZvMM25yabSahGdcy6YI999bSLWtBoaC46H0QG5TA1
-	MGJ4Z/sQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=yBHQuwqRSrRRpd3ZRMLaZ//+19pguEtC6eLH644rrmw=; b=qsK6dzLoXj7+2FxV0Dh/dnlp97
+	QsUdt968pCGq+EFKcrGg2hggHHc0ftBIOEzwjpX3ON22bjvxNWdq6yZ6Ze08YR01Rm71RFN1/+cKS
+	R9Q8EkwLtkDpvAorIN39F/LKt1IuICOcLtkGrMLnoylF7Ta6BeIrI4Ionz5sOqeXMifIhsh07DItW
+	Oj9scEyuGMTnFEUD9v7BbQVLgg/koGZKTPAEfn9oPiIVteu2/qhKyUr8jrHSxLy0rZpIKIUWVk6jB
+	LupBVhQCU9nEaZnJjKTOjcxqijYpcA4kEX79Y6OKL7ICKZeFq4R475G2G7S4IC3NLABrP+MDlm29g
+	LKr+QXjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmD4O-00000009rPa-2NAW;
-	Tue, 21 Jul 2026 16:11:48 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wmDKI-00000009wKs-3gjx;
+	Tue, 21 Jul 2026 16:28:14 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmD4L-00000009rOs-3n97
-	for ath12k@lists.infradead.org;
-	Tue, 21 Jul 2026 16:11:47 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66LDfpIM2962565
-	for <ath12k@lists.infradead.org>; Tue, 21 Jul 2026 16:11:45 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	mYflFeJGiDlHHnobo387r0vJX1+Zy6ipWPbVmTEI7xs=; b=LEk/9VJeNAlW0YbT
-	5OLIhpcDjPQP01Eoab907ZsoC1wOzRqWursRoG9O5RKt5YcNEH2CRiFrmvIRH6L2
-	S+KUtsMHdmklfsnaHaihhIcFnBzCOHrjuqK8nG3+C+01OA5tuBi0Ksb6hNuo5XMe
-	Ia6cm8Rg5TUiHlu4HLXwqojHz0XETOEYJ6RmJMHa6e7iSXsi9Z9dJBQsOwx/VWb9
-	q1r1JZpmczPmCn6DmJo+FsAQTIKtg8Y8AasB7f3Tpa5i5KLP6Wh7xlJq/GvxLTBC
-	zaimcB0T8ClTbka9oXJrv2bzzUFWORNgVlatCcZnAMN5m7cMqnDRtE9gfimnt0QZ
-	1AzJcw==
-Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fj6nsss9u-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 21 Jul 2026 16:11:45 +0000 (GMT)
-Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-c88cfe287e1so7539975a12.1
-        for <ath12k@lists.infradead.org>; Tue, 21 Jul 2026 09:11:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1784650305; x=1785255105; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=mYflFeJGiDlHHnobo387r0vJX1+Zy6ipWPbVmTEI7xs=;
-        b=WUlcJtJyRWb2aTAjbXNtCHmgRh8nU2POzM664EU193mOVxqxnlv8Vwt5DPKjXsdyHf
-         Sl5pOcLqb9biR1oBR74Ep6zUm+3bTWip6PLLuCU9O4HW2DyiuptxztGImCiYABjNQ61O
-         a3PCLG1VRzg6km7VxRmvHuokFrY+9sSst3TzjRqNMANmjLcZY4jAP2M4ldxmKO6cV+mQ
-         nDidDW3HwFulW1Y4GhDQqRI/sWzfhRK0QBxvOzUrSsxZ5y6e/dBTl5WkorwTpg4uXIqg
-         J51WHiEQW4linrlcdo2TotHis3jzFjn/cofH1lbjWJsdNHR+QGGq8yRyrGGATs2rbolD
-         /JAw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784650305; x=1785255105;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=mYflFeJGiDlHHnobo387r0vJX1+Zy6ipWPbVmTEI7xs=;
-        b=Wm+dQperalPFeuV5N2hMatiPsNIwvW3hJaEiROdMP/TYKxoE4xHcJK+DUpEIXeZTEX
-         QskNI52tKrMmWijHTNDoWGkhgjPnI+qk1D0XEnZO9wpb7HozFzYZOtCOWoJ6mgEfLbGo
-         ElDDKdHzQs7A6lBIhwegxpmpCicpZldoZvPhs5pFHrRvn0bnO1Pz+roz7l5mobpUrENu
-         fDORPL9kRwU7WQHWlI8I9PldakkgzD6GSZgIpToZ7cvNU4CmRS9grW6U5KUjxwG1dEo3
-         /+JhPwmsiIccTflwQ8uKgjZRGP6178wO8TO388wYXHQuH/soi/r2lIKe8jSXLrGoiC2F
-         ljew==
-X-Forwarded-Encrypted: i=1; AHgh+RovWUdARrwsO89SvGJ/oX4R2MsQPSY9J16MfucXSqpHymsGUsmM1tzxyZl10ZW/YHMegh2IP1A=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyiaIqQK6E+LztscSYEd0ZvQcruB15xtEDx4NJV60QDAMUyQR0Y
-	Kqd+2AHfbyeutNZVyDh+9tURmqvGe0t2X+K9QIZjkAdHsF+432/8AB0UzWHyRybCMKYbsKno8cb
-	RjKm6q2EEokds2JrZxRLi08b4rPpaNQ+jJRA4Z/XE8141kmQKBpUq1mdgyPmJXpK4
-X-Gm-Gg: AfdE7cmXeqmRVdoYhc1fkc4Ddgfwg909NDEdqodxyf/MRmcLNvfFs4oRkNs9ka4MXcW
-	IaFaVVDd5lNLlCQU4jEn1r6AQY2RywspL6+kQEewfOtclc9TV9euNIHyRFchl0zhd+VRPwSme5F
-	sBk5pW67ahTAbpYmBb62gQf48SxUQaHjj3xM4l/zaRiMRFDtUcUiYkdFyknOqT3T35PJTqsNkJx
-	YWuOGUI0Stc07f2v4L/mmS6O2xqKhoLEIjdEE7xYxXEYyak9vKsWlOzAWGl7asODnBbALOqNxmm
-	BX9Zb8a6PyNbH7rOirual58v+j3dumWUqB+dsEo31Svp6Kt5DfnRDPtCiw87xW8rwfl8Yj1KKED
-	PicZlwt+FykDsKwG9SjoR5kneAT/dyRMQpkJiYlfVmGsgvmi9BBX1Q16VB9et
-X-Received: by 2002:a05:6a21:1506:b0:3c3:81c2:fa47 with SMTP id adf61e73a8af0-3c3ad7a3880mr21206289637.12.1784650304765;
-        Tue, 21 Jul 2026 09:11:44 -0700 (PDT)
-X-Received: by 2002:a05:6a21:1506:b0:3c3:81c2:fa47 with SMTP id adf61e73a8af0-3c3ad7a3880mr21206260637.12.1784650304209;
-        Tue, 21 Jul 2026 09:11:44 -0700 (PDT)
-Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3147e07000fsm678017eec.21.2026.07.21.09.11.42
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 21 Jul 2026 09:11:43 -0700 (PDT)
-Message-ID: <90548090-8609-4068-bcdc-814963edbf71@oss.qualcomm.com>
-Date: Tue, 21 Jul 2026 09:11:42 -0700
+	id 1wmDKG-00000009wK6-2Mzb;
+	Tue, 21 Jul 2026 16:28:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=yBHQuwqRSrRRpd3ZRMLaZ//+19pguEtC6eLH644rrmw=;
+	t=1784651292; x=1785860892; b=NcVDZhsONHORNf0lr/Otox+3Zgt7v1lVToumDGJ7mdYCE53
+	EtmAMKKbhEF12pPbnvPSOL0fdRMQL/Yi+3pDJHyuOdO1L5hvuc1UMYKATqQa4l9Bjeano2Wwzwrhu
+	d/+OQlYOPdJl3DjmxuUKQ6X/q5NE0gslrhY067Bg54a74lkvpGCcEK7EJCoL3rTsyV/UvGmPI1Q7f
+	bsWYFK8J5Bai4CG0DfZr3nklJEwm5oOZowZ+gMTZAvPVBOXnAESK7pFRM8dQfMSIX8xBu8zLWLAhD
+	FUnpgWS5jzjXfizyK+MGiTD4JW+ddECo5QVdxOHGxXpeo6SrKS6vcdyY1GX3y/Vg==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1wmDKC-00000002AEV-0MRj;
+	Tue, 21 Jul 2026 18:28:08 +0200
+Message-ID: <c913114343692dd201da3af8f05fe1bc356702a8.camel@sipsolutions.net>
+Subject: Re: [PATCH v3 1/3] wifi: mac80211: add ieee80211_tx_peek API
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>, jjohnson@kernel.org
+Cc: ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
+	linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Date: Tue, 21 Jul 2026 18:28:07 +0200
+In-Reply-To: <20260720070852.206495-2-jtornosm@redhat.com>
+References: <20260720070852.206495-1-jtornosm@redhat.com>
+	 <20260720070852.206495-2-jtornosm@redhat.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.58.3 (3.58.3-1.fc43) 
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [DESIGN RFC] EHT/UHR Critical update handling
-To: Manish Dharanenthiran <manish.dharanenthiran@oss.qualcomm.com>,
-        johannes@sipsolutions.net
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
-References: <20260625050326.2946848-1-manish.dharanenthiran@oss.qualcomm.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20260625050326.2946848-1-manish.dharanenthiran@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: vFqHXzz35vqJ-QZvsQnVE6l9PChjjRbP
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIxMDE3MSBTYWx0ZWRfXxHuw2V4OE8PV
- n1qGucjPyfLQcGT+tL1QfRu7QDBsTLKqspr01QQszM0iNTyXhJpQVdb9NKSm59OGmkiFs30U4KU
- s0V9E+hcly4IhjTPMdKqvVNwOUdiqjA=
-X-Authority-Analysis: v=2.4 cv=ZJjnX37b c=1 sm=1 tr=0 ts=6a5f9a41 cx=c_pps
- a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
- a=pIbJr0qklbRdVuy0jGYA:9 a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
-X-Proofpoint-ORIG-GUID: vFqHXzz35vqJ-QZvsQnVE6l9PChjjRbP
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIxMDE3MSBTYWx0ZWRfX/c68Hc+hpdOg
- /iEhptsSxv3Kb33VZGEmJ8Mz74b8KWybhq1w8Hj5AsNJiFZD4/Um1q0hWYm2D47EISi+E1LSxQc
- NKjC0jbf4vOCXSwOn+oITjV1JBsQlezbes07M7FdQKK35/twoRZ1uoZFDIM7H7vxC6UKJ+t36td
- pC9XnomyLKElWVWpMGUEqwrLQUCPfyuQx+1XWrCKLW9FdW3n/swIZd341xAo/Gbb/EdVf5Nn4XT
- 2EjLt3PRCvo2z9NQV7ZElrBAQ+7LjzWszhXxrI474hY+maqaTMfj6Y43BhjZqsGWbEIDzxieiZ3
- IXCAkvQPYEP6mhs0P5DSSsNcdjnriBUrxSbOZWr77GN1TVjt2L0u0Rjii5k8vxhLilaVEhKyx6/
- xnDQlH4oKPtPXux9BuHkmOUb3Pqgnbo7wPfaj6WhYXZIqY+pGPOHaG4At5AbtTzJF1X67eckZ1i
- O4rADsIFeNuGoucWJ7Q==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-07-21_03,2026-07-20_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 phishscore=0 priorityscore=1501 suspectscore=0 impostorscore=0
- malwarescore=0 spamscore=0 lowpriorityscore=0 adultscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607210171
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260721_091145_951673_E8935E62 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260721_092812_601083_3554F5F7 
+X-CRM114-Status: GOOD (  15.16  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,18 +73,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/24/2026 10:03 PM, Manish Dharanenthiran wrote:
-> Hi,
-> 
-> This RFC outlines a proposed approach for handling EHT/UHR Critical Update (CU)
-> procedures across different driver models. The focus is on ensuring correct and
-> consistent behavior of beacon and management frames, while addressing timing
-> constraints and scalability challenges observed in the previously discussed
-> approaches.
+On Mon, 2026-07-20 at 09:08 +0200, Jose Ignacio Tornos Martinez wrote:
+>=20
+> +const struct sk_buff *ieee80211_tx_peek(struct ieee80211_hw *hw,
+> +					struct ieee80211_txq *txq)
 
-The Qualcomm team would appreciate any feedback to this RFC. We are eager to
-have an upstream implementation of this functionality that can be leveraged by
-all AP vendors.
+While it makes some sense, I don't think I like the way you've
+implemented this.
 
-/jeff
+First, it basically does a lot of the work twice, say if it has to walk
+a lot of flows to find the SKB.
+
+Second, the work that it does is almost entirely disjoint from
+ieee80211_tx_dequeue(). The latter doesn't even fill the hash (and not
+all drivers might care), although I'm not even sure it's _needed_ to do
+skb_get_hash() there, seems like this fairly obviously happens *after*
+ieee80211_select_queue() or ieee80211_select_queue_80211(). So maybe
+this isn't strictly more work than what dequeue() would do, because it's
+a nop anyway.
+Also though it does a LOT less work, although it pretends that the SKB
+is fully formed, at least it makes no representations otherwise, and
+that's obviously not true. Most things in the ieee80211_tx_info are not
+filled in, kind of randomly by where and when mac80211 decided to do
+that (which isn't really random, of course, but might as well be random
+to the driver). As such, it seems only useful in a very limited subset
+of cases.
+
+Third, it documents that the skb will be returned by a subsequent
+ieee80211_tx_dequeue() call, but that's obviously not true - the next
+such call might not return anything at all, even for quite a while if
+queues are stopped etc. which isn't considered in peek(), and I'm not
+even convinced that it must ever be returned, if something else happened
+in the meantime while such a situation occurred (queues stopped). Even
+ieee80211_tx_dequeue() itself can drop SKBs entirely.
+
+As such I'm not even convinced that there's a guarantee that after the
+skb peek you even have done the work you claim to have done, if a
+different skb is returned from dequeue() instead of this one.
+
+
+I think I sort of understand the motivation, but it feels like you need
+to go back to the drawing board. Maybe even further back, and perhaps
+ath11k/ath12k just shouldn't use the hash of the SKB itself, but
+something else that can be derived without the SKB hash?
+
+If that's not feasible then this probably needs to be turned upside
+down; perhaps there's some way to dequeue it anyway and hold it
+somewhere for later (though that has issues with all the pointers in the
+skb->cb), I don't have a good idea though.
+
+johannes
 
