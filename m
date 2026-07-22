@@ -4,57 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5E65C4453C
-	for <ath12k@archiver.kernel.org>; Wed, 22 Jul 2026 12:21:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F77AC44539
+	for <ath12k@archiver.kernel.org>; Wed, 22 Jul 2026 12:37:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tJs2JTw9rUvxIZbrDHaXlnRyxMUoIo0lKD4eEA5grFw=; b=qBbUKMi0Xn7gJO0BJI94Y6eP3i
-	LuLKGEDwUV9/gFA1aHssn92w3iI3Vgh8sCqtnn+tzkdBu417HA1nLk0VDkkI9yZc5cRZuo2lF4Kt3
-	lVcEygMYnyCV7uPIMHZaaDvUGLFDqcOlvaXTGFYnrAofcnyZuxRRNSc1IVbm72AZjIE/RlNepYr76
-	QrDsWaqPK1TZ+o5JwVTr5tw9eXxBgqHynj49Wsrn119kR+Zg7Zylgp1XAzTt6D4BUn7sSfICvzJ1q
-	RV7LA/mqPCkfNq7YfsckxR3z7sOXJ1P9RdoHVCMKsWXWQ/9aqVy0V1q43uGBT6uCm4HZGAWsRvtvn
-	rXLgp/xQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Zeu4OxUf2I9+8S7fa2UG8kLQ9l6xQboc70iBQdHsMi4=; b=SFDDITdLuJ6gNIPYMSsCrEB2U8
+	YXVrUnxaslOuXrgDN1G/qXqT4UfqfEnC+CvZ6zl117gc1/wq5wbgpu4TTObpxM8BkvxXX3ylVKMHS
+	YResDeeMtUXFT50tiNxgQOPti8hdp1eNg0JGs2U5mIi7ZTWj93Q+Pi6VhmCXU1Fvd6v/UEgQMIU41
+	22GBR3BB8pZAYyyuETgiC1NGiPTBo5dRfKJIgvuLWJfgQ4JWfcyyfl0wlj2crmCeEAbO+THSKuA7g
+	/HVfseagH+YOrNEmSXyDnEX7BOvbni5nCscGOi6Wn2VkEi7PG+2CkTDGLDeSEXvHn0eXp/yfyMDqB
+	6kYJCqPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmVwr-0000000Bkk2-21nx;
-	Wed, 22 Jul 2026 12:21:17 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wmWCM-0000000BmPj-0Vx9;
+	Wed, 22 Jul 2026 12:37:18 +0000
+Received: from mgamail.intel.com ([192.198.163.10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmVwq-0000000Bkj7-0ySU;
-	Wed, 22 Jul 2026 12:21:16 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9D95341770;
-	Wed, 22 Jul 2026 12:21:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 59D051F000E9;
-	Wed, 22 Jul 2026 12:21:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784722875;
-	bh=tJs2JTw9rUvxIZbrDHaXlnRyxMUoIo0lKD4eEA5grFw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=YetGP3UeR0vXhEwXMKH1BCi4RL9yV2BUK1hzLjLoGfn4c0uJyWxWZ58mkKCM976gc
-	 g38/WbD1WBFNT6tmFuGNL4fQovhY/q2bH01dFvguf/DuTzkR/gDgX84NLHjlFB1NrM
-	 n0v5oso/JGNtB/HtPdCFI5FHHy7O+o8wSvlHWl3PxSL2MzxO82YTIOcBHjcKDYzv/j
-	 pPhB0LTPwkTYwQyZiaf4PnLR5a3kIPHe9ySBBeY5rpngTw9y8UCM4rxj4eJEPCxCCS
-	 FHkZ57qA9JPg08KcYQgSiDlp1m1gfd08INYGQUv0YCMuBdEMR8JSuz9GWMuQSJVAb+
-	 09aGXNfJDcqxA==
-Date: Wed, 22 Jul 2026 14:21:08 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Cc: bhelgaas@google.com, alex@shazbot.org, jjohnson@kernel.org, 
-	linux-pci@vger.kernel.org, linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
-	ath12k@lists.infradead.org, mhi@lists.linux.dev, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v13] PCI: Add device-specific reset for Qualcomm devices
-Message-ID: <y5wemns4rjjfhaykkgghuyjiqqygx2is3bcyflrclrirp3lqh6@aiwdkaycpvuv>
-References: <20260721081301.205374-1-jtornosm@redhat.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <20260721081301.205374-1-jtornosm@redhat.com>
+	id 1wmWCJ-0000000BmP5-2lsM
+	for ath12k@lists.infradead.org;
+	Wed, 22 Jul 2026 12:37:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1784723836; x=1816259836;
+  h=date:from:to:cc:subject:message-id;
+  bh=kPZa9PKdLXy3tL2wKYd0QeqwM1bP7Aa5eRyMieO1jLA=;
+  b=j0CEU74CewJ8NsWC5rb6C/AhlmOAQoi4qUamTfS3j821lPbP1xIRJaAJ
+   UJDPLVuFOs7XKNcGCYNxI32exllnfCsKjx6qj/QMR6jIEOR55qCKXgF9i
+   7Alrzbl2RRFOB2T6zJmy52A8Wdpr7zcxVgOzmIDEl/sLb/A/eojAkVqAy
+   hhfYn0K7MM/rMFtes/HiYFKgTPyA7sG2NiDkw9+4D8kiPxWpBTYz92I0H
+   MUGkPSFoWhGxCMJIMw0ol2gi3/iC2vomh/VqAfDny7wNm1I5mkgGzEKnq
+   ziGo5zRxyJls2TIlHqFKz25Vjkd/7IQ5prF1awRXv3K7lg8Qkfmy7bJBC
+   A==;
+X-CSE-ConnectionGUID: So3A0PaWQhWzgGD8FbJslg==
+X-CSE-MsgGUID: thbVg7kzRXicZBTANxdkhA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11853"; a="96729073"
+X-IronPort-AV: E=Sophos;i="6.25,178,1779174000"; 
+   d="scan'208";a="96729073"
+Received: from orviesa003.jf.intel.com ([10.64.159.143])
+  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 Jul 2026 05:37:15 -0700
+X-CSE-ConnectionGUID: p3dmWlTdQXKgSF1ESc2GHQ==
+X-CSE-MsgGUID: aEN5y/oqQGSjAUPb71QgyQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.25,178,1779174000"; 
+   d="scan'208";a="261637119"
+Received: from lkp-server02.sh.intel.com (HELO ea128546eb3d) ([10.239.97.151])
+  by orviesa003.jf.intel.com with ESMTP; 22 Jul 2026 05:37:14 -0700
+Received: from kbuild by ea128546eb3d with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1wmWCF-00000000YjJ-21Xt;
+	Wed, 22 Jul 2026 12:37:11 +0000
+Date: Wed, 22 Jul 2026 20:36:52 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org
+Subject: [ath:master] BUILD SUCCESS
+ 623bf56a9f0906d780f46ae110b47212ac3406ec
+Message-ID: <202607222041.MWrsWEs3-lkp@intel.com>
+User-Agent: s-nail v14.9.25
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260722_053715_718203_7F1CBA03 
+X-CRM114-Status: UNSURE (   4.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,209 +83,67 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 21, 2026 at 10:13:01AM +0200, Jose Ignacio Tornos Martinez wrote:
-> Some Qualcomm PCIe devices (WCN6855/WCN7850 WLAN cards, SDX62/SDX65 modems)
-> lack working reset methods for VFIO passthrough scenarios. These devices
-> have no FLR capability, advertise NoSoftRst+ (blocking PM reset), and have
-> broken bus reset.
-> 
-> The problem manifests in VFIO passthrough scenarios:
-> 
-> - WCN6855 (17cb:1103) and WCN7850 (17cb:1107) WLAN devices:
->   Normal VM operation works fine, including clean shutdown/reboot.
->   However, when the VM terminates uncleanly (crash, force-off), VFIO
->   attempts to reset the device before it can be assigned to another VM.
->   Without a working reset method, the device remains in an undefined state,
->   preventing reuse.
-> 
-> - SDX62/SDX65 (17cb:0308) 5G modems: Never successfully initialize even
->   on first VM assignment without proper reset capability.
-> 
-> Add device-specific reset methods using BAR-space hardware reset registers
-> that exist in these devices:
-> 
-> - WCN6855/WCN7850 WLAN devices use SoC global reset via BAR0 (sequence from
->   ath11k/ath12k driver: ath11k_pci_soc_global_reset(), ath11k_pci_sw_reset(),
->   ath11k_mhi_set_mhictrl_reset()):
->   - Write/clear reset bit at offset 0x3008
->   - Wait for PCIe link recovery (up to 5 seconds)
->   - Clear MHI controller SYSERR status at offset 0x38
-> 
-> - SDX62/SDX65 modem devices use MHI SoC reset via BAR0 (sequence from MHI
->   driver: mhi_soc_reset(), mhi_pci_reset_prepare()):
->   - Write reset request to offset 0xb0
->   - Wait 2 seconds for reset completion
-> 
-> These are true hardware reset mechanisms (not power management or firmware
-> error recovery), providing proper device reset for VFIO scenarios.
-> 
-> Testing was performed on desktop platforms with M.2 WLAN and modem cards
-> using M.2-to-PCIe adapters, including extensive force-reset cycling to
-> verify stability.
-> 
-> Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
+branch HEAD: 623bf56a9f0906d780f46ae110b47212ac3406ec  wifi: mac80211: Fixup merge between wireless and wireless-next
 
-Reviewed-by: Manivannan Sadhasivam <mani@kernel.org>
+elapsed time: 797m
 
-- Mani
+configs tested: 47
+configs skipped: 2
 
-> ---
-> v13: Address Alex Williamson feedback:
->   - Validate initial ioread32() with PCI_POSSIBLE_ERROR() before
->     read-modify-write to avoid writing error response back to device
->     on platforms with APEI/GHES error escalation
->   - Replace time_before()/msleep() polling loop with read_poll_timeout()
->     for robustness against scheduling delays and code simplification
-> v12: https://lore.kernel.org/all/20260630065815.199693-1-jtornosm@redhat.com/
-> 
->  drivers/pci/quirks.c | 116 +++++++++++++++++++++++++++++++++++++++++++
->  1 file changed, 116 insertions(+)
-> 
-> diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
-> index 431c021d7414..bd1e0742052e 100644
-> --- a/drivers/pci/quirks.c
-> +++ b/drivers/pci/quirks.c
-> @@ -22,6 +22,7 @@
->  #include <linux/isa-dma.h> /* isa_dma_bridge_buggy */
->  #include <linux/init.h>
->  #include <linux/iommu.h>
-> +#include <linux/iopoll.h>
->  #include <linux/delay.h>
->  #include <linux/acpi.h>
->  #include <linux/dmi.h>
-> @@ -4240,6 +4241,118 @@ static int reset_hinic_vf_dev(struct pci_dev *pdev, bool probe)
->  	return 0;
->  }
->  
-> +#define QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET	0x3008
-> +#define QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET_V	BIT(0)
-> +#define QUALCOMM_WLAN_MHICTRL			0x38
-> +#define QUALCOMM_WLAN_MHICTRL_RESET_MASK	0x2
-> +
-> +/*
-> + * Qualcomm WLAN device-specific reset using SoC global reset via BAR0
-> + * registers.
-> + */
-> +static int reset_qualcomm_wlan(struct pci_dev *pdev, bool probe)
-> +{
-> +	void __iomem *bar;
-> +	u32 val;
-> +	u16 cmd;
-> +	int ret;
-> +
-> +	if (probe)
-> +		return 0;
-> +
-> +	if (pdev->current_state != PCI_D0)
-> +		return -EINVAL;
-> +
-> +	pci_read_config_word(pdev, PCI_COMMAND, &cmd);
-> +	pci_write_config_word(pdev, PCI_COMMAND, cmd | PCI_COMMAND_MEMORY);
-> +
-> +	bar = pci_iomap(pdev, 0, 0);
-> +	if (!bar) {
-> +		pci_write_config_word(pdev, PCI_COMMAND, cmd);
-> +		return -ENODEV;
-> +	}
-> +
-> +	val = ioread32(bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
-> +	if (PCI_POSSIBLE_ERROR(val)) {
-> +		ret = -ENODEV;
-> +		goto out_restore;
-> +	}
-> +	val |= QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET_V;
-> +	iowrite32(val, bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
-> +	ioread32(bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
-> +
-> +	msleep(10);
-> +
-> +	val &= ~QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET_V;
-> +	iowrite32(val, bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
-> +	ioread32(bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
-> +
-> +	msleep(10);
-> +
-> +	ret = read_poll_timeout(ioread32, val,
-> +				!PCI_POSSIBLE_ERROR(val),
-> +				20 * USEC_PER_MSEC,
-> +				5 * USEC_PER_SEC, false,
-> +				bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
-> +	if (ret) {
-> +		pci_err(pdev, "PCIe link failed to recover after reset\n");
-> +		goto out_restore;
-> +	}
-> +
-> +	/* After SOC_GLOBAL_RESET, MHISTATUS may still have SYSERR bit set
-> +	 * and thus need to set MHICTRL_RESET to clear SYSERR.
-> +	 */
-> +	iowrite32(QUALCOMM_WLAN_MHICTRL_RESET_MASK, bar + QUALCOMM_WLAN_MHICTRL);
-> +	ioread32(bar + QUALCOMM_WLAN_MHICTRL);
-> +
-> +	msleep(10);
-> +
-> +out_restore:
-> +	pci_iounmap(pdev, bar);
-> +	pci_write_config_word(pdev, PCI_COMMAND, cmd);
-> +
-> +	return ret;
-> +}
-> +
-> +#define MHI_SOC_RESET_REQ_OFFSET		0xb0
-> +#define MHI_SOC_RESET_REQ			BIT(0)
-> +
-> +/*
-> + * Qualcomm modem device-specific reset using MHI SoC reset via BAR0
-> + * register.
-> + */
-> +static int reset_qualcomm_modem(struct pci_dev *pdev, bool probe)
-> +{
-> +	void __iomem *bar;
-> +	u16 cmd;
-> +
-> +	if (probe)
-> +		return 0;
-> +
-> +	if (pdev->current_state != PCI_D0)
-> +		return -EINVAL;
-> +
-> +	pci_read_config_word(pdev, PCI_COMMAND, &cmd);
-> +	pci_write_config_word(pdev, PCI_COMMAND, cmd | PCI_COMMAND_MEMORY);
-> +
-> +	bar = pci_iomap(pdev, 0, 0);
-> +	if (!bar) {
-> +		pci_write_config_word(pdev, PCI_COMMAND, cmd);
-> +		return -ENODEV;
-> +	}
-> +
-> +	iowrite32(MHI_SOC_RESET_REQ, bar + MHI_SOC_RESET_REQ_OFFSET);
-> +	ioread32(bar + MHI_SOC_RESET_REQ_OFFSET);
-> +
-> +	/* Be sure device reset has been executed */
-> +	msleep(2000);
-> +
-> +	pci_iounmap(pdev, bar);
-> +	pci_write_config_word(pdev, PCI_COMMAND, cmd);
-> +
-> +	return 0;
-> +}
-> +
->  static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
->  	{ PCI_VENDOR_ID_INTEL, PCI_DEVICE_ID_INTEL_82599_SFP_VF,
->  		 reset_intel_82599_sfp_virtfn },
-> @@ -4255,6 +4368,9 @@ static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
->  		reset_chelsio_generic_dev },
->  	{ PCI_VENDOR_ID_HUAWEI, PCI_DEVICE_ID_HINIC_VF,
->  		reset_hinic_vf_dev },
-> +	{ PCI_VENDOR_ID_QCOM, 0x0308, reset_qualcomm_modem }, /* SDX62/SDX65 modems */
-> +	{ PCI_VENDOR_ID_QCOM, 0x1103, reset_qualcomm_wlan },  /* WCN6855 WLAN */
-> +	{ PCI_VENDOR_ID_QCOM, 0x1107, reset_qualcomm_wlan },  /* WCN7850 WLAN */
->  	{ 0 }
->  };
->  
-> -- 
-> 2.54.0
-> 
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
--- 
-மணிவண்ணன் சதாசிவம்
+tested configs:
+alpha                  allnoconfig    gcc-16.1.0
+alpha                 allyesconfig    gcc-16.1.0
+alpha                    defconfig    gcc-16.1.0
+arc                   allmodconfig    gcc-16.1.0
+arc                   allyesconfig    gcc-16.1.0
+arc        randconfig-001-20260722    gcc-12.5.0
+arc        randconfig-002-20260722    gcc-14.3.0
+arm        randconfig-002-20260722    clang-24
+csky                  allmodconfig    gcc-16.1.0
+hexagon    randconfig-001-20260722    clang-24
+hexagon    randconfig-002-20260722    clang-24
+i386                  allmodconfig    gcc-14
+i386       randconfig-001-20260722    gcc-14
+i386       randconfig-002-20260722    gcc-14
+i386       randconfig-003-20260722    clang-22
+i386       randconfig-005-20260722    gcc-14
+i386       randconfig-007-20260722    clang-22
+loongarch  randconfig-001-20260722    gcc-16.1.0
+loongarch  randconfig-002-20260722    clang-24
+nios2                 allmodconfig    gcc-11.5.0
+nios2                  allnoconfig    gcc-11.5.0
+nios2      randconfig-001-20260722    gcc-8.5.0
+nios2      randconfig-002-20260722    gcc-8.5.0
+parisc                allmodconfig    gcc-16.1.0
+parisc                allyesconfig    gcc-16.1.0
+parisc                   defconfig    gcc-16.1.0
+parisc     randconfig-001-20260722    gcc-9.5.0
+parisc     randconfig-002-20260722    gcc-8.5.0
+powerpc    randconfig-001-20260722    gcc-8.5.0
+powerpc    randconfig-002-20260722    clang-18
+powerpc64  randconfig-001-20260722    gcc-8.5.0
+powerpc64  randconfig-002-20260722    clang-24
+riscv      randconfig-002-20260722    gcc-10.5.0
+s390       randconfig-002-20260722    gcc-11.5.0
+sh                       defconfig    gcc-16.1.0
+sh         randconfig-001-20260722    gcc-16.1.0
+sh         randconfig-002-20260722    gcc-16.1.0
+sh               sdk7780_defconfig    gcc-16.1.0
+sparc               randconfig-001    gcc-16.1.0
+sparc      randconfig-001-20260722    gcc-15.2.0
+sparc      randconfig-002-20260722    gcc-16.1.0
+sparc64    randconfig-001-20260722    gcc-11.5.0
+sparc64    randconfig-002-20260722    gcc-9.5.0
+um         randconfig-001-20260722    gcc-14
+um         randconfig-002-20260722    clang-24
+xtensa     randconfig-001-20260722    gcc-8.5.0
+xtensa     randconfig-002-20260722    gcc-9.5.0
+
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
