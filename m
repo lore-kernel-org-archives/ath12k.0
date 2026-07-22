@@ -4,59 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80374C44539
-	for <ath12k@archiver.kernel.org>; Wed, 22 Jul 2026 12:17:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5E65C4453C
+	for <ath12k@archiver.kernel.org>; Wed, 22 Jul 2026 12:21:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=T9beRhF2jjJvFTZCtXWpywAw5rE3wHDEFmzE5t7fnUw=; b=GoQrZGot0lkPO9yX44Xn14dynN
-	lgGIwRta+S7e5tnpNfrBivxh8gvDDr52Q1cSrj28QJgvHp5IRC4sxpGRs2v5RXEUQioXJ/AdXICct
-	7xLinE4CVbpYY6OjcIOYJrrTfoLcu+IQZLWnZmPFFyPuj4csuAb6/CD19JUBiqxicBLY6fTvi6mo7
-	3up2iIiEjxehkbpE4azWRiV9YoYVlw9rJHYSlAE2Pq4N852L5skyEBmUnMA4SDvEugDIyJz0Pp5bm
-	oQoqYxSQwayJri1e6JC/mQm5YWwAKxkKta9dtJ/2vnwNOg9NG35fmNSbjG09n9zDgbmJVLU4817sJ
-	xIDvGTng==;
+	bh=tJs2JTw9rUvxIZbrDHaXlnRyxMUoIo0lKD4eEA5grFw=; b=qBbUKMi0Xn7gJO0BJI94Y6eP3i
+	LuLKGEDwUV9/gFA1aHssn92w3iI3Vgh8sCqtnn+tzkdBu417HA1nLk0VDkkI9yZc5cRZuo2lF4Kt3
+	lVcEygMYnyCV7uPIMHZaaDvUGLFDqcOlvaXTGFYnrAofcnyZuxRRNSc1IVbm72AZjIE/RlNepYr76
+	QrDsWaqPK1TZ+o5JwVTr5tw9eXxBgqHynj49Wsrn119kR+Zg7Zylgp1XAzTt6D4BUn7sSfICvzJ1q
+	RV7LA/mqPCkfNq7YfsckxR3z7sOXJ1P9RdoHVCMKsWXWQ/9aqVy0V1q43uGBT6uCm4HZGAWsRvtvn
+	rXLgp/xQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmVsy-0000000BjTJ-3lsA;
-	Wed, 22 Jul 2026 12:17:16 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wmVwr-0000000Bkk2-21nx;
+	Wed, 22 Jul 2026 12:21:17 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmVsx-0000000BjSv-23x4;
-	Wed, 22 Jul 2026 12:17:15 +0000
+	id 1wmVwq-0000000Bkj7-0ySU;
+	Wed, 22 Jul 2026 12:21:16 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id BCA92600AB;
-	Wed, 22 Jul 2026 12:17:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9CA1B1F000E9;
-	Wed, 22 Jul 2026 12:17:10 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 9D95341770;
+	Wed, 22 Jul 2026 12:21:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 59D051F000E9;
+	Wed, 22 Jul 2026 12:21:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784722634;
-	bh=T9beRhF2jjJvFTZCtXWpywAw5rE3wHDEFmzE5t7fnUw=;
+	s=k20260515; t=1784722875;
+	bh=tJs2JTw9rUvxIZbrDHaXlnRyxMUoIo0lKD4eEA5grFw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=IcsfQpRJs3YyBJzWUl/mvMT93RQ+AQOaw5S7BCqTxuIzAca8N+vOiQ/LeUOWs0haJ
-	 6KYGyMBWt7MLsUJ9kEvvdXPCsoYFWAH/9YekTepHuPEcfse7rKv0Oe0lmY+NIw6guW
-	 OfkCxTlNFKfuoJsjsQTqD757G6G3wNRD2sXMKaYcNJcZUrMxFYw0VqftePis0GmZDJ
-	 H1su9VHuHVfhyrIVQa4Z3CQtZkfR59j18cbSdVgaKFN3qm1JH3s2zzjiVsUu3YPJKp
-	 RmMgKeb0DB4BCmsP+zGknbmheuwekrcgAWiGP6qfXzexK3CfOc6uoBWy2z9D+9hiTs
-	 8vgfgNkPiaCww==
-Date: Wed, 22 Jul 2026 14:17:06 +0200
+	b=YetGP3UeR0vXhEwXMKH1BCi4RL9yV2BUK1hzLjLoGfn4c0uJyWxWZ58mkKCM976gc
+	 g38/WbD1WBFNT6tmFuGNL4fQovhY/q2bH01dFvguf/DuTzkR/gDgX84NLHjlFB1NrM
+	 n0v5oso/JGNtB/HtPdCFI5FHHy7O+o8wSvlHWl3PxSL2MzxO82YTIOcBHjcKDYzv/j
+	 pPhB0LTPwkTYwQyZiaf4PnLR5a3kIPHe9ySBBeY5rpngTw9y8UCM4rxj4eJEPCxCCS
+	 FHkZ57qA9JPg08KcYQgSiDlp1m1gfd08INYGQUv0YCMuBdEMR8JSuz9GWMuQSJVAb+
+	 09aGXNfJDcqxA==
+Date: Wed, 22 Jul 2026 14:21:08 +0200
 From: Manivannan Sadhasivam <mani@kernel.org>
 To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Cc: bhelgaas@google.com, alex@shazbot.org, sashiko-bot@kernel.org, 
-	sashiko-reviews@lists.linux.dev, jjohnson@kernel.org, linux-pci@vger.kernel.org, 
-	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
-	mhi@lists.linux.dev, linux-kernel@vger.kernel.org
+Cc: bhelgaas@google.com, alex@shazbot.org, jjohnson@kernel.org, 
+	linux-pci@vger.kernel.org, linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
+	ath12k@lists.infradead.org, mhi@lists.linux.dev, linux-kernel@vger.kernel.org
 Subject: Re: [PATCH v13] PCI: Add device-specific reset for Qualcomm devices
-Message-ID: <d35ftvppjovbyb3va5ok3yy2l5ng2jliqidqa4szp7hrgalrf4@rbhj2ehrff3l>
-References: <20260721082933.7B5A41F000E9@smtp.kernel.org>
- <20260722112813.33153-1-jtornosm@redhat.com>
+Message-ID: <y5wemns4rjjfhaykkgghuyjiqqygx2is3bcyflrclrirp3lqh6@aiwdkaycpvuv>
+References: <20260721081301.205374-1-jtornosm@redhat.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: 8bit
-In-Reply-To: <20260722112813.33153-1-jtornosm@redhat.com>
+In-Reply-To: <20260721081301.205374-1-jtornosm@redhat.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,40 +69,208 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 22, 2026 at 01:28:13PM +0200, Jose Ignacio Tornos Martinez wrote:
-> > [Severity: High]
-> > Will this sequence of ioread32 flush reads and
-> > read_poll_timeout trigger Master Aborts on architectures
-> > with strict error handling?
-> >
-> > The SoC global reset explicitly drops the device PCIe link.
-> > Performing ioread32 flush reads immediately after asserting
-> > the reset, and then actively polling the disconnected MMIO
-> > space with read_poll_timeout while the link recovers, can
-> > result in Unsupported Request errors.
-> >
-> > On strict platforms like ARM64 or x86 servers with APEI/GHES
-> > Firmware First error handling, these can escalate to fatal
-> > Uncorrectable Errors and cause a host kernel panic when a
-> > guest VM exits.
-> >
-> > Should this avoid MMIO flush reads during these reset
-> > sequences and instead use fixed delays to safely bridge the
-> > link-down period?
+On Tue, Jul 21, 2026 at 10:13:01AM +0200, Jose Ignacio Tornos Martinez wrote:
+> Some Qualcomm PCIe devices (WCN6855/WCN7850 WLAN cards, SDX62/SDX65 modems)
+> lack working reset methods for VFIO passthrough scenarios. These devices
+> have no FLR capability, advertise NoSoftRst+ (blocking PM reset), and have
+> broken bus reset.
 > 
-> The SoC global reset at 0x3008 does not immediately drop the
-> PCIe link. The flush reads execute while the device is still
-> responsive - the actual reset takes effect during the
-> subsequent msleep. The ath11k/ath12k drivers perform the same
-> register accesses during this reset sequence, including on
-> ARM64 Qualcomm platforms, without issues.
+> The problem manifests in VFIO passthrough scenarios:
 > 
+> - WCN6855 (17cb:1103) and WCN7850 (17cb:1107) WLAN devices:
+>   Normal VM operation works fine, including clean shutdown/reboot.
+>   However, when the VM terminates uncleanly (crash, force-off), VFIO
+>   attempts to reset the device before it can be assigned to another VM.
+>   Without a working reset method, the device remains in an undefined state,
+>   preventing reuse.
+> 
+> - SDX62/SDX65 (17cb:0308) 5G modems: Never successfully initialize even
+>   on first VM assignment without proper reset capability.
+> 
+> Add device-specific reset methods using BAR-space hardware reset registers
+> that exist in these devices:
+> 
+> - WCN6855/WCN7850 WLAN devices use SoC global reset via BAR0 (sequence from
+>   ath11k/ath12k driver: ath11k_pci_soc_global_reset(), ath11k_pci_sw_reset(),
+>   ath11k_mhi_set_mhictrl_reset()):
+>   - Write/clear reset bit at offset 0x3008
+>   - Wait for PCIe link recovery (up to 5 seconds)
+>   - Clear MHI controller SYSERR status at offset 0x38
+> 
+> - SDX62/SDX65 modem devices use MHI SoC reset via BAR0 (sequence from MHI
+>   driver: mhi_soc_reset(), mhi_pci_reset_prepare()):
+>   - Write reset request to offset 0xb0
+>   - Wait 2 seconds for reset completion
+> 
+> These are true hardware reset mechanisms (not power management or firmware
+> error recovery), providing proper device reset for VFIO scenarios.
+> 
+> Testing was performed on desktop platforms with M.2 WLAN and modem cards
+> using M.2-to-PCIe adapters, including extensive force-reset cycling to
+> verify stability.
+> 
+> Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
 
-Yes, Qcom devices supporting SoC reset have a mechanism to keep the PCIe link
-alive (in L0/L1) when the reset gets triggered in the device. So the register
-access is available throughout the reset cycle.
+Reviewed-by: Manivannan Sadhasivam <mani@kernel.org>
 
 - Mani
+
+> ---
+> v13: Address Alex Williamson feedback:
+>   - Validate initial ioread32() with PCI_POSSIBLE_ERROR() before
+>     read-modify-write to avoid writing error response back to device
+>     on platforms with APEI/GHES error escalation
+>   - Replace time_before()/msleep() polling loop with read_poll_timeout()
+>     for robustness against scheduling delays and code simplification
+> v12: https://lore.kernel.org/all/20260630065815.199693-1-jtornosm@redhat.com/
+> 
+>  drivers/pci/quirks.c | 116 +++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 116 insertions(+)
+> 
+> diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+> index 431c021d7414..bd1e0742052e 100644
+> --- a/drivers/pci/quirks.c
+> +++ b/drivers/pci/quirks.c
+> @@ -22,6 +22,7 @@
+>  #include <linux/isa-dma.h> /* isa_dma_bridge_buggy */
+>  #include <linux/init.h>
+>  #include <linux/iommu.h>
+> +#include <linux/iopoll.h>
+>  #include <linux/delay.h>
+>  #include <linux/acpi.h>
+>  #include <linux/dmi.h>
+> @@ -4240,6 +4241,118 @@ static int reset_hinic_vf_dev(struct pci_dev *pdev, bool probe)
+>  	return 0;
+>  }
+>  
+> +#define QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET	0x3008
+> +#define QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET_V	BIT(0)
+> +#define QUALCOMM_WLAN_MHICTRL			0x38
+> +#define QUALCOMM_WLAN_MHICTRL_RESET_MASK	0x2
+> +
+> +/*
+> + * Qualcomm WLAN device-specific reset using SoC global reset via BAR0
+> + * registers.
+> + */
+> +static int reset_qualcomm_wlan(struct pci_dev *pdev, bool probe)
+> +{
+> +	void __iomem *bar;
+> +	u32 val;
+> +	u16 cmd;
+> +	int ret;
+> +
+> +	if (probe)
+> +		return 0;
+> +
+> +	if (pdev->current_state != PCI_D0)
+> +		return -EINVAL;
+> +
+> +	pci_read_config_word(pdev, PCI_COMMAND, &cmd);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd | PCI_COMMAND_MEMORY);
+> +
+> +	bar = pci_iomap(pdev, 0, 0);
+> +	if (!bar) {
+> +		pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +		return -ENODEV;
+> +	}
+> +
+> +	val = ioread32(bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +	if (PCI_POSSIBLE_ERROR(val)) {
+> +		ret = -ENODEV;
+> +		goto out_restore;
+> +	}
+> +	val |= QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET_V;
+> +	iowrite32(val, bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +	ioread32(bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +
+> +	msleep(10);
+> +
+> +	val &= ~QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET_V;
+> +	iowrite32(val, bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +	ioread32(bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +
+> +	msleep(10);
+> +
+> +	ret = read_poll_timeout(ioread32, val,
+> +				!PCI_POSSIBLE_ERROR(val),
+> +				20 * USEC_PER_MSEC,
+> +				5 * USEC_PER_SEC, false,
+> +				bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +	if (ret) {
+> +		pci_err(pdev, "PCIe link failed to recover after reset\n");
+> +		goto out_restore;
+> +	}
+> +
+> +	/* After SOC_GLOBAL_RESET, MHISTATUS may still have SYSERR bit set
+> +	 * and thus need to set MHICTRL_RESET to clear SYSERR.
+> +	 */
+> +	iowrite32(QUALCOMM_WLAN_MHICTRL_RESET_MASK, bar + QUALCOMM_WLAN_MHICTRL);
+> +	ioread32(bar + QUALCOMM_WLAN_MHICTRL);
+> +
+> +	msleep(10);
+> +
+> +out_restore:
+> +	pci_iounmap(pdev, bar);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +
+> +	return ret;
+> +}
+> +
+> +#define MHI_SOC_RESET_REQ_OFFSET		0xb0
+> +#define MHI_SOC_RESET_REQ			BIT(0)
+> +
+> +/*
+> + * Qualcomm modem device-specific reset using MHI SoC reset via BAR0
+> + * register.
+> + */
+> +static int reset_qualcomm_modem(struct pci_dev *pdev, bool probe)
+> +{
+> +	void __iomem *bar;
+> +	u16 cmd;
+> +
+> +	if (probe)
+> +		return 0;
+> +
+> +	if (pdev->current_state != PCI_D0)
+> +		return -EINVAL;
+> +
+> +	pci_read_config_word(pdev, PCI_COMMAND, &cmd);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd | PCI_COMMAND_MEMORY);
+> +
+> +	bar = pci_iomap(pdev, 0, 0);
+> +	if (!bar) {
+> +		pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +		return -ENODEV;
+> +	}
+> +
+> +	iowrite32(MHI_SOC_RESET_REQ, bar + MHI_SOC_RESET_REQ_OFFSET);
+> +	ioread32(bar + MHI_SOC_RESET_REQ_OFFSET);
+> +
+> +	/* Be sure device reset has been executed */
+> +	msleep(2000);
+> +
+> +	pci_iounmap(pdev, bar);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +
+> +	return 0;
+> +}
+> +
+>  static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
+>  	{ PCI_VENDOR_ID_INTEL, PCI_DEVICE_ID_INTEL_82599_SFP_VF,
+>  		 reset_intel_82599_sfp_virtfn },
+> @@ -4255,6 +4368,9 @@ static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
+>  		reset_chelsio_generic_dev },
+>  	{ PCI_VENDOR_ID_HUAWEI, PCI_DEVICE_ID_HINIC_VF,
+>  		reset_hinic_vf_dev },
+> +	{ PCI_VENDOR_ID_QCOM, 0x0308, reset_qualcomm_modem }, /* SDX62/SDX65 modems */
+> +	{ PCI_VENDOR_ID_QCOM, 0x1103, reset_qualcomm_wlan },  /* WCN6855 WLAN */
+> +	{ PCI_VENDOR_ID_QCOM, 0x1107, reset_qualcomm_wlan },  /* WCN7850 WLAN */
+>  	{ 0 }
+>  };
+>  
+> -- 
+> 2.54.0
+> 
 
 -- 
 மணிவண்ணன் சதாசிவம்
