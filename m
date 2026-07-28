@@ -4,140 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D27A8C53219
-	for <ath12k@archiver.kernel.org>; Tue, 28 Jul 2026 12:24:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D4ABC54F4D
+	for <ath12k@archiver.kernel.org>; Tue, 28 Jul 2026 16:03:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=BOuGRv14cYKG+wn2zmuxiqHqCSQOTP9wT54dUBRfhf8=; b=A9ejom3DnNvqVlm4M8JYsBQ41U
-	Z89WaCO0wmS8cHx0zg9TG09bOQL2cLKqE1JNHX4mq2oriYJWo4gfv0dllcvu1oWqDiQzzaDBGYTCg
-	bAw5y47HjxKmmGV7X27gpw9LPRcKBRJx+gG7zt7SpMuCSZVTuyK3YAWTiuQY7dmClGkLuTIAhrm5X
-	HWfnFEY6SzFwIcD6BSEX7AwTyfirbIX3AiJOoR414KC8TAV4NvBostU5Dg9IEUndhE5drnCJezRJQ
-	okSI/vBmmIpIpTqYQ3TG2/z0sVnyrn7/drCof467bw2cRFYPbeipb53zv4vOHELWRuDUV5BCoAXDD
-	wbY+P75Q==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=9kHCUyLF0kHDD8ILRj4/H/sMOeT2Xi/hZ4Ns4Kmdsok=; b=z2B2z3EbG2OxclP25LKfrf0R0L
+	cUgNXwEgwTDUyqAEhamKFW+6JsvD4+lQNzNUEXF5NsiymB/7p65bm61TnOJZQrkE0DtQIeMqp7ezf
+	zr6/7DLTVyxSlR8pmT/Zuknw6bRLaj9es+qlsKznwPDApjyEUfr+oPDHy+BvILfpdTTThc5RC1c7/
+	YTE1qTb+AR+ZJuRYdDDopCNDKPCOmHnphYMzc+vNqSjKcZbeXaBepgICpIjJIKHWQJh1+2IPTL6cm
+	JFG1b84c2nJPTOYa6jm/FEglJld1V/94kLat5pz+Q/QFqwQvzppA48oB+/NNCkAE5Wx2RzjgMpccp
+	D1W54UPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wogrJ-00000005EP1-2JuH;
-	Tue, 28 Jul 2026 12:24:33 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wokHD-00000005lxi-32iC;
+	Tue, 28 Jul 2026 16:03:31 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wogrG-00000005ENy-45Q0
+	id 1wokHA-00000005lwk-1smy
 	for ath12k@lists.infradead.org;
-	Tue, 28 Jul 2026 12:24:32 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66SBIAQ32735026
-	for <ath12k@lists.infradead.org>; Tue, 28 Jul 2026 12:24:30 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	BOuGRv14cYKG+wn2zmuxiqHqCSQOTP9wT54dUBRfhf8=; b=N3JMg5N7DrJLrCjI
-	foTumEjALLWc4ddbD9S1BqnTLMbUjPeFc8BdezY1TfRx/dr46jy/GcpXGd+Nr+Dw
-	JgMih4wwg+KbMk4fz0Ka0K9XizmWyXv/3RQPbYUNs0LkkJEec4+cCOGWnoSDZWBa
-	Xh0/5fSSnlTWxkLXm1xjJYRnn7F8y6y7RMMdewLyVhgHcrXwm5MirJyAIyVI5wwn
-	+LoLMz6uI1czLhYmMK4+Gpq+lJnqdaMVlc0xA+b6KHYsBDAUpaI/Fnre8xiz2Izp
-	mEUb8oDbvXMExTffU6IYiMWIFcYS5TybAXGhn0LBhaPd1LLUsBg/KmznsexZT96b
-	lFVhgA==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fpbrsv6cd-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 28 Jul 2026 12:24:29 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-38edd45cbc4so4553932a91.3
-        for <ath12k@lists.infradead.org>; Tue, 28 Jul 2026 05:24:29 -0700 (PDT)
+	Tue, 28 Jul 2026 16:03:29 +0000
+Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-4921eed3fa2so25985e9.0
+        for <ath12k@lists.infradead.org>; Tue, 28 Jul 2026 09:03:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1785241469; x=1785846269; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=BOuGRv14cYKG+wn2zmuxiqHqCSQOTP9wT54dUBRfhf8=;
-        b=D7icc2SXVng5YqKImYMvWEoIaeDJw+Ze4a3DswsGTDDnpbgb0ucluMsjFrn9bR22Jh
-         O8OEwsSRWWkJMDUsvwVl9Kb//obrJSrGda1aSQPloG5MwTT6aoXA3XP+oRjz+FqYwjcM
-         owAjGuJ8X4YYrwAbcp2Ul3cdQ+/8vQy80xgQ8L86O9QmN0Jzi/T+x8lj0l2U3r3pMYU/
-         EGesv+Kcl3VySYlFV7ULglgxbKMfYmkFjHLS9wOLM+68gARzZW3RtXyUVs3vBXYpIbEj
-         iZrhD5iaeNB2jx5bMSb4V5gp57PPzgVV7DSEJb+Mbio4dMZRxozPYAQy7IciYVxFIhOx
-         imBw==
+        d=gmail.com; s=20251104; t=1785254605; x=1785859405; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=9kHCUyLF0kHDD8ILRj4/H/sMOeT2Xi/hZ4Ns4Kmdsok=;
+        b=IwzbJg40A6r6IYoX4CwAq18BWe1AvqmIUk4O1Gm9fLWAojuDJ6AD1ZeQfT3zai6jh4
+         11xNVVYDdK78SqAriNMthdOChjvnVXU6XngGpXdi0bMssEkJOuHMVp9kYzj54qwOfnVD
+         1emC9mS8j5ar6yeGoCjlhmPHGx72i242YWNPiBnyH22Kk/gn3IEsjciOII77foCqGsz2
+         sFxq3TPtPWSIdau12K7+IInKECxWAAjQcpekIlvl7aqysWzbFDrluCCwqBX1oBc4qy+D
+         0EIJyhySF89qQfVGCvfNXTw19tfMXA5b1QbldSivDvuj+Hyg0ecFuKDKcs5om3l/p1fQ
+         Yu+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785241469; x=1785846269;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20251104; t=1785254605; x=1785859405;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=BOuGRv14cYKG+wn2zmuxiqHqCSQOTP9wT54dUBRfhf8=;
-        b=cRbeybaxYwzHZwWr/EyNcahg8xI4a5CLuT0OfSXoamXJTAXXM0HeYtFSQpN9RdlXYU
-         CInPwTuimcBQsEEdHqlpGX4/Sf1P6qCx9+EE1fulD3VcAqW96Hb/POr8zhmqGQz6oXVe
-         i6Ux4PVJRhFfptWRMWaopi11Pr0XEA3o8meXil/cVYbg15GdQPv6AM66ndCMOzzfEbpO
-         ldx7ZGOdYtk3V13QX4hsYCoHyvSAWm7UMiJDUL0tPBw+kffBRN99nDMN3wLzZCP6fWWp
-         MRUNwE/I3QTFoWYAojQyTPIIGK3JjSGP+uS54X8BLtvsn++gcOI5Y+pbtzAz+L7zKAV+
-         43wg==
-X-Forwarded-Encrypted: i=1; AHgh+Ro1tQ91Eu00Iw0dH74d7qbRn0a5Z5Nf5Mj+La+nv87kfoZ6rehT9ElQkSn/5Fk/pzYS3ZWKgEI=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yys95AUPwpKWq8GU1XZRi7P7OnNQhUUwY938Uo4fmEOL4TQ9hFk
-	JvJe3/ZmlV+aWXMqgqBYXZ20pGW67HLcfNvl8kBlZenGKcF9dRHoF0VNxc++A0KZHfCb9xu/NKC
-	eBusmdZTYBvMBE5TKJMJ1NegYVMBuiTc60QdGknFRpyuHS/nbOwsjH3YQlyFWaK2b
-X-Gm-Gg: AR+sD12MBWCeBJE9ss+itF8XZaZJTJYE5se+OFTntkpEyDkyCm/e/ja42n4GznXReqH
-	4DJkZ88TOmMAyqnyU8arKnxNkLKovxVkfzXi0JAX0V4pzOGqVf3xQHZCs1emCJe3bjIFPAHNLuq
-	92yLGLjK+z6yWZOrr65kFoU6PW11FgZe3OkPjBXUOqxkJOgE6E7oKfZmCR/K5df2sq2TY34mq7o
-	KSI3CN71Wd6cIFi5NsSogw/yJpyGXPT3ux6rV8Tr7wX94YWfCwu420ZrvYmURmKTsUubLfSk3wj
-	WqosMcBJkLycejHgnk1REK14NbyLdkABcYPS8aZ1pPpsCxfkNPs8Q7TiViHcfo1UkBsGFrGuWY1
-	i6keo2j2NOqvVnarSvRX9caUGXT94OAw=
-X-Received: by 2002:a17:90b:1b06:b0:387:e0bb:57ff with SMTP id 98e67ed59e1d1-38f6a4810c0mr2405578a91.38.1785241468990;
-        Tue, 28 Jul 2026 05:24:28 -0700 (PDT)
-X-Received: by 2002:a17:90b:1b06:b0:387:e0bb:57ff with SMTP id 98e67ed59e1d1-38f6a4810c0mr2405538a91.38.1785241468283;
-        Tue, 28 Jul 2026 05:24:28 -0700 (PDT)
-Received: from [192.168.0.12] ([49.207.202.171])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-38f6414383csm1225455a91.13.2026.07.28.05.24.25
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 28 Jul 2026 05:24:27 -0700 (PDT)
-Message-ID: <b0265df9-a937-48c8-a191-061077b46f28@oss.qualcomm.com>
-Date: Tue, 28 Jul 2026 17:54:24 +0530
+        bh=9kHCUyLF0kHDD8ILRj4/H/sMOeT2Xi/hZ4Ns4Kmdsok=;
+        b=XjS2/Fn8SP7FSBIEWjA31wM5nM2ieIUulEOxIfT3wqPS4UfRBOUcZ+AAvckx9gFahh
+         hCYIde72hvaX94BVk0SE2k8g3VtlkC/d6F+ShaM+cf6e1JNojd0POrXHJd6GoqRYZ0WL
+         lDV8u0VMaTS2iqL3Xsl0EG49IRXenyTDJA9RhIPgBI88oS5G6AFbsTN9ioHs4UOXzRUb
+         bEJmsxp4rQRDEelRZlTB6NiVuR3OUW/cL3rJdV9yUKIOfDirs40WNDp1kTISFYJ9vRJg
+         WwgIijtW6Ql/G4sHncYz+E5xzGaLmKhcYi7o1htrNkI8R71fPLnr7m9xtQizzYManrcg
+         kURg==
+X-Gm-Message-State: AOJu0YzGUMpgU2pRz1MPixz2db691UohMjUmFRIeVy+T7/Vj3DT6/sie
+	wtgKHdVHeK8RH4wYZjb3pmZJ/wmmKXBZ+Btl6/TCBxDW00TbHDvnFCiFDh9BfQ==
+X-Gm-Gg: AR+sD11ZUjRtVT13F40I17HPXowR2oy4DKkhFK3WoIbKTHerVaPSvMIQuOBe55gdN/R
+	5c9sa5qa+2pyeAaQ9KobhP5OMdNC4Ud/vFo6+KH2IS1jnNjGAly0Wv4C3hc9S0b9ON9heFKEMER
+	K8ef6y7Oj63kpMq2Mfc0KPidLe/JxMfJFpPKHqi1SAX8N5Cjl7MnYoOz9UjFMGM5wt2KWLeopgR
+	02AFQr+iX9Q8SSlKr0Tm+ZaotRmqpbvKCXGEMLdXayb5/nEXa+HLrNneQRLZfdvLKVTsgnAOEul
+	X2gw00BiXXf8IKKrhXgsVol+HOcAikZ17T3Y0TjO314+p+kVoo7t8E3RH69Lv1sQmy+nQ25YnHH
+	44Wfe4n/01SaxiGXwFx6L0zO0h9Qxksmo6bgtsHbhQnK1b5JJY70kGiUBxPtLA1T/3w13MQPFYw
+	SazjRqT7FDMUDrcU83fpmBUeohTMCl4atOOx4=
+X-Received: by 2002:a05:600c:a00b:b0:495:515a:dad9 with SMTP id 5b1f17b1804b1-496c65a14b2mr36015295e9.37.1785254604651;
+        Tue, 28 Jul 2026 09:03:24 -0700 (PDT)
+Received: from syracuse.iliad.local (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47fb6b18a9fsm106276f8f.32.2026.07.28.09.03.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 28 Jul 2026 09:03:23 -0700 (PDT)
+From: Nicolas Escande <nico.escande@gmail.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH ath-current] wifi: ath11k: cleanup arsta in ath11k_mac_peer_cleanup_all()
+Date: Tue, 28 Jul 2026 18:03:22 +0200
+Message-ID: <20260728160322.2773915-1-nico.escande@gmail.com>
+X-Mailer: git-send-email 2.55.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next 6/8] wifi: ath12k: track per-ring RX
- sent-to-stack count
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Hariharan Ramanathan <hariharan.ramanathan@oss.qualcomm.com>
-References: <20260723125448.922361-1-pardeep.kaur@oss.qualcomm.com>
- <20260723125448.922361-7-pardeep.kaur@oss.qualcomm.com>
- <c455a465-254c-48e6-9183-7b67d4b76dc1@oss.qualcomm.com>
-Content-Language: en-US
-From: Pardeep Kaur <pardeep.kaur@oss.qualcomm.com>
-In-Reply-To: <c455a465-254c-48e6-9183-7b67d4b76dc1@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzI4MDEwOSBTYWx0ZWRfX1RztbFhGodcD
- nXgv0oGN1uOvBtf/O2fq7GOyPqYXxZYSoTZNub90S5Ymu1J6qoFm2slKf4vs+kfo8+6/oNxcsVW
- GD+osR2wogUPVN9377GNPJL1totw7Ea/jLHu2SBk0cMHDuxH1VC2OS76/3UXJZPMNbo7yZifp3D
- AGvVkqEYsHO96im35KCBMwtcXULqYiLfagYJxC3Lp4OW/+BRYzoNVhFFXBCD7Xh/ToHzEp0oHPr
- fTZd5LJJXNdZpdxQpDerrlLxcug6R1uU/EIg+BEVbJpKJIbfg7dTbEJsCe7It00wqCZQkWP2LDP
- 29vwXynTsSDwmUboI3+Pb37NYbo78DlAfyaIMNIHojXjuxcgB4kM9JPnqflX4V68icD5Ow43t4M
- jSv/zXnHe5mZduHkxTYK6m+GwOniA6YoEVbnIZrLxdP0vGfGvDt8xy56tvWbLrrTO1KIHClYrbt
- EUy6aC3sQcOr5xgbrKg==
-X-Proofpoint-ORIG-GUID: 5R79Zw4PLcPFq4az3MfeQpCmFvE5SCR8
-X-Proofpoint-GUID: 5R79Zw4PLcPFq4az3MfeQpCmFvE5SCR8
-X-Authority-Analysis: v=2.4 cv=ALkdLnG8 c=1 sm=1 tr=0 ts=6a689f7d cx=c_pps
- a=vVfyC5vLCtgYJKYeQD43oA==:117 a=wDio1FLaKedB3uI5tWxtsQ==:17
- a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
- a=5FGsjyyMLv1_ifA18zAA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=rl5im9kqc5Lf4LNbBjHf:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzI4MDEwOSBTYWx0ZWRfXx2wySOCCUnmc
- sRrlO72vNgCDz6U5+7wHCX63ti6EjhDGH6NCilBua4GuI6pTVXlepTZOIcBKoBr/swjXw/X95ou
- d06A/rn5O+2DTCybZf4glr3F1ChZHvs=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-07-28_03,2026-07-28_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 impostorscore=0 phishscore=0 bulkscore=0 clxscore=1015
- priorityscore=1501 adultscore=0 suspectscore=0 malwarescore=0
- lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2607280109
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260728_052431_128626_1EB7003D 
-X-CRM114-Status: GOOD (  14.22  )
+X-CRM114-CacheID: sfid-20260728_090328_512014_32638AD8 
+X-CRM114-Status: GOOD (  14.57  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,39 +93,113 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+When mac80211 removes a sta, it calls .sta_state() which in turn calls
+ath11k_mac_station_remove(). In that function we clean up both  peers &
+arsta related resources.
 
-On 26-07-2026 21:41, Jeff Johnson wrote:
-> On 7/23/2026 5:54 AM, Pardeep Kaur wrote:
->> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
->> index b203513d63cc..33c4c89eefb5 100644
->> --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
->> +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
->> @@ -651,7 +651,10 @@ ath12k_wifi7_dp_rx_process_received_packets(struct ath12k_dp *dp,
->>   			dev_kfree_skb_any(msdu);
->>   			continue;
->>   		}
->> -
->> +		if (likely(ring_id < DP_REO_DST_RING_MAX))
->> +			partner_dp->device_stats.sent_to_stack[ring_id]++;
-> My review agent had the following finding which I did not try to validate:
->
-> sent_to_stack[] is incremented on partner_dp but reo_rx[] is on dp — this
-> splits correlated stats across two devices' debugfs files in MLO
->
-> In a 2-device MLO group, ath12k_wifi7_dp_rx_process_received_packets()
-> increments partner_dp->device_stats.sent_to_stack[ring_id] (the msdu's
-> originating device), while ath12k_wifi7_dp_rx_process() increments
-> dp->device_stats.reo_rx[ring_id][device_id] (the ring owner).
->
-> Reading /sys/kernel/debug/.../device0/device_dp_stats shows reo_rx[ring0]=N
-> but sent_to_stack[ring0]=0; device1's file shows the reverse. The two counters
-> meant to track the same traffic path cannot be compared from a single file.
-will handle this with adding the device_id and ring id
->
->
->> +		else
->> +			WARN_ON_ONCE(1);
->>   		ath12k_dp_rx_deliver_msdu(dp_pdev, napi, msdu, &rx_info);
->>   	}
->>   
+But when the firmware crashes, ath11k calls ieee80211_restart_hw(), which
+assumes that all driver related resources are cleanup up beforehand. This
+cleanup is supposedly done by ath11k_mac_peer_cleanup_all() but does not
+in fact free arsta->rx_stats / tx_stats.
+
+So lets extract the arsta cleanup from ath11k_mac_station_remove() into a
+new ath11k_mac_station_cleanup() and call it from both there and
+ath11k_mac_peer_cleanup_all().
+
+This should handle kmemleaks reports like:
+	unreferenced object 0xffffff801ae66400 (size 1024):
+	  comm "hostapd", pid 1306, jiffies 4295011565
+	  hex dump (first 32 bytes):
+	    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	  backtrace (crc d61c08ec):
+	    kmemleak_alloc+0x3c/0x50
+	    __kmalloc_cache_noprof+0x2b0/0x3e0
+	    ath11k_mac_op_sta_state+0x1dc/0xb10
+	    drv_sta_state+0xac/0x6f8
+	    sta_info_insert_rcu+0x314/0x5e0
+	    sta_info_insert+0x14/0x38
+	    ieee80211_add_station+0x10c/0x1a0
+	    nl80211_new_station+0x3e8/0x680
+	    genl_family_rcv_msg_doit+0xc0/0x120
+	    genl_rcv_msg+0x1b4/0x258
+	    netlink_rcv_skb+0x4c/0x108
+	    genl_rcv+0x38/0x60
+	    netlink_unicast+0x190/0x278
+	    netlink_sendmsg+0x15c/0x370
+	    ____sys_sendmsg+0x120/0x290
+	    ___sys_sendmsg+0x70/0xa0
+
+Tested-on: QCN9074 PCI WLAN.HK.2.9.0.1-01977-QCAHKSWPL_SILICONZ-1
+
+Fixes: 9d5f28c1366f ("wifi: ath11k: fix connection failure due to unexpected peer delete")
+Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
+---
+ Note the problem this is in fact older that the referenced commit, but as
+ it would need another patch to backport to older kernel and the leak is
+ quite minimal & seldom happens, I was hopping to not have to do it.
+---
+ drivers/net/wireless/ath/ath11k/mac.c | 25 ++++++++++++++++++-------
+ 1 file changed, 18 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
+index 2d55cdc4d165..ae91b57c8422 100644
+--- a/drivers/net/wireless/ath/ath11k/mac.c
++++ b/drivers/net/wireless/ath/ath11k/mac.c
+@@ -873,6 +873,22 @@ static int ath11k_mac_set_kickout(struct ath11k_vif *arvif)
+ 	return 0;
+ }
+ 
++static void ath11k_mac_station_cleanup(struct ieee80211_sta *sta)
++{
++	struct ath11k_sta *arsta;
++
++	if (!sta)
++		return;
++
++	arsta = ath11k_sta_to_arsta(sta);
++
++	kfree(arsta->tx_stats);
++	arsta->tx_stats = NULL;
++
++	kfree(arsta->rx_stats);
++	arsta->rx_stats = NULL;
++}
++
+ void ath11k_mac_peer_cleanup_all(struct ath11k *ar)
+ {
+ 	struct ath11k_peer *peer, *tmp;
+@@ -885,6 +901,7 @@ void ath11k_mac_peer_cleanup_all(struct ath11k *ar)
+ 	list_for_each_entry_safe(peer, tmp, &ab->peers, list) {
+ 		ath11k_peer_rx_tid_cleanup(ar, peer);
+ 		ath11k_peer_rhash_delete(ab, peer);
++		ath11k_mac_station_cleanup(peer->sta);
+ 		list_del(&peer->list);
+ 		kfree(peer);
+ 	}
+@@ -9892,7 +9909,6 @@ static int ath11k_mac_station_remove(struct ath11k *ar,
+ {
+ 	struct ath11k_base *ab = ar->ab;
+ 	struct ath11k_vif *arvif = ath11k_vif_to_arvif(vif);
+-	struct ath11k_sta *arsta = ath11k_sta_to_arsta(sta);
+ 	int ret;
+ 
+ 	if (ab->hw_params.vdev_start_delay &&
+@@ -9916,12 +9932,7 @@ static int ath11k_mac_station_remove(struct ath11k *ar,
+ 			   sta->addr, arvif->vdev_id);
+ 
+ 	ath11k_mac_dec_num_stations(arvif, sta);
+-
+-	kfree(arsta->tx_stats);
+-	arsta->tx_stats = NULL;
+-
+-	kfree(arsta->rx_stats);
+-	arsta->rx_stats = NULL;
++	ath11k_mac_station_cleanup(sta);
+ 
+ 	return ret;
+ }
+-- 
+2.55.0
+
 
