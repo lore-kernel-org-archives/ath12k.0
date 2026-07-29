@@ -4,124 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABAC6C53219
-	for <ath12k@archiver.kernel.org>; Wed, 29 Jul 2026 07:18:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26043C54F51
+	for <ath12k@archiver.kernel.org>; Wed, 29 Jul 2026 07:18:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5ny0swmE7MmuvYquYFpfbom/etRJNh+llibZoszEySI=; b=3JY1Lm8eoVgeQIOAQzwI++Y+fR
-	5r6XfhnoBCvNcB2ZYrP3useIOyDlCOUZs6s55IlyZIdts/8RKs24webOuoGpB/pccLX6VFuDfyVdu
-	66hRQrRK8glWOAD4zW7xuNjpBd4Z6F6tygUO6z8I9f9hRrON5kZTepEonwWfnixd5sfsqC039nWnz
-	aNu/tO/2Z7MXZ7BqKf30bX/C+5dCLozRnDGBxwPjoRixBHJP3nT594ExIMYeu1kUaMJTLAHKGLEJS
-	G6NI35Wk2OHF1q1jmqmNh8Ahg3F3McqghC821bdh6bjvlW2k38Bs9BEsdJo1NCQEFS1Zzu0ZM1Wi/
-	dZjz/m2g==;
+	bh=0/q4AL3UqHmQiIbXfDF4U/jvRnNoEITC5BmiuZkEIC4=; b=sA/fW7hn9ujSVeSf4T0MngwkS/
+	vrzr1DixUHP6N9Hwd/6HPpi/sg8KCUmxArTFuSSPWDLdV3lNql/m5/qcHuKJv2t/iu79KLI2kTUyq
+	nZtWZwy/57jC5RZ+Q+O6q1n3B67jiDGc3J0j4M39PaPBDCtoBpX70ejrZ+hfNZBD1OwEJdRWJem47
+	W1OsBZ44GuiDzv43ohJD2b2HdoQKBrFUvB9RbsAlj46EHoGvjR+VSFK7xRiKl2P9vOTt3GV60XPQA
+	InXBzEnKMTugOFEIenX+hvd5q49CnYIn9bY4Z8+JF3QlL4WfCl9I1lTJyNXFg3LBf+wxDCpOxW/hL
+	Veta8Xlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woyYs-00000007699-1GiS;
-	Wed, 29 Jul 2026 07:18:42 +0000
+	id 1woyYt-000000076A0-3WE8;
+	Wed, 29 Jul 2026 07:18:43 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woyYo-0000000767o-1RSp
+	id 1woyYq-0000000768Q-0ccZ
 	for ath12k@lists.infradead.org;
-	Wed, 29 Jul 2026 07:18:41 +0000
+	Wed, 29 Jul 2026 07:18:42 +0000
 Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66T5guLj2055646
-	for <ath12k@lists.infradead.org>; Wed, 29 Jul 2026 07:18:36 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66T5gWLD2055172
+	for <ath12k@lists.infradead.org>; Wed, 29 Jul 2026 07:18:39 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	5ny0swmE7MmuvYquYFpfbom/etRJNh+llibZoszEySI=; b=DMyFrFTaHPGui9GW
-	4dRbOZh8CsrwNWcC6T013tJCfGXi7hSQG7uoeUpYS34MztU97PA/s36KAZT7y2Gg
-	CYFJbKps4QkaIAGki0mbjXxPFh9QcVWoFNBEsWaDIjCVooh05UwCCyYimJT7y3ri
-	qErKZBKh6eh8/O0ohgO59b9VUCZSfar4HY9yS5q+j3BpBxEYKak+ullmBg0L9RBe
-	ctrj66tbnUtjrP6tUiGdAPgxk2A07uNl6IFcTWV+BiMfkonTYAX8rVPaHjml/PMA
-	gbeSemuwoYngyGpeSxMDO1XzD9zyMoQ605IOM3zlxcOZryn5+ix5Qi+K2IO425u6
-	KtCHYA==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fqbm1gbxk-1
+	0/q4AL3UqHmQiIbXfDF4U/jvRnNoEITC5BmiuZkEIC4=; b=DBvcsEoRnd4gnwi3
+	T7ylSpnozhVcNg13SYqFhhLMJ0q3wWBQsqhdT0EZy/r9EQSKaTBieCTR5IKWQZyH
+	T7wt2rh+Zon8FKYfAwjzZOdL2qjOjrUaTC8w4zy7EDRBLN/F5M2s2VOSBRWYIU05
+	NMuw399qCYvjNYc/4m1ljOldru+cDaLozax+EIVLLG5gWqHGtkVZjeiY9KFIffaE
+	Vcm8VaG/3c1vRD/EXuYOH0oBa1AXgP2+EyB2UCyEQHC8eQ5YF2sz7AzCn2NekhPU
+	5MNwtcOWWTG0ryNJAn9CAwEk1poPGvoGlOkOkfCbQEIQ0S5cixrkuV6pmXbaU3vT
+	aCsl6g==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fqbm1gbxs-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 29 Jul 2026 07:18:36 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-cb4bd11ddf8so716610a12.3
-        for <ath12k@lists.infradead.org>; Wed, 29 Jul 2026 00:18:36 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 29 Jul 2026 07:18:39 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-cb4cdf95b5aso1142648a12.1
+        for <ath12k@lists.infradead.org>; Wed, 29 Jul 2026 00:18:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1785309516; x=1785914316; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1785309519; x=1785914319; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=5ny0swmE7MmuvYquYFpfbom/etRJNh+llibZoszEySI=;
-        b=TPo2xrdRj7RWHseK7Ts1SXwuOGrJ4ff+tJyVa0YJ2hse6I7gpvkKvp408I1CmK81Vr
-         Rhzsb/aP9KtXWpvPMZSyWF9lZP3viR8p5rBJ40bUr2UQmR4emGQxpIHnkmjPhJhl/XwG
-         ajWh7lcuIhSJpzkfxpICxSX18hyVEhgPEFALEZu+5eHFXN/dRCy5r/p/v6lpUrAoU8Yy
-         RM/12Sy0VpS7SpIBMsZ5k10SjG3+XcdrY8NiF8o2+9MOHy3czlGX8k9TDdlmNT52NDdR
-         dvV3X42kMIM57xVfDOjRqgK9JHsg29obMW1PxGLyzw+zjA4MoOs6DiqTPJIbqd/OebHB
-         1sWQ==
+        bh=0/q4AL3UqHmQiIbXfDF4U/jvRnNoEITC5BmiuZkEIC4=;
+        b=Ood8dmUG5YfWAZMC2qsQAfa6XcibXRHwov5igYA0w4QlTt+yzqbPCp6cHXRcPesCU2
+         ckVrwSNS5ODSpLaUkUfxXuwgf4T819gMqzeXQtQhrS2YkLfxJZC+XjemWP07Xhl/Ueiy
+         fF1zPWnZO9OE97lnP0oJW+ddPsulUAkTRkCJp15Wdsj6FZMR8L3bsYn5Rd6rfdZjlnJR
+         bPdeajW5wGLvQZXcm3ZoUfoODMnJPJ1DpREp02j0hmQgCXiw3JoqWMHxImpJeQzJA+sC
+         dRgmRrbRyrG+5aOdfrt9gbHf1vkYamO+MT8KCd6T5wWCXsVC89iicr9LaPH8fqRUlzwq
+         mURw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785309516; x=1785914316;
+        d=1e100.net; s=20251104; t=1785309519; x=1785914319;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=5ny0swmE7MmuvYquYFpfbom/etRJNh+llibZoszEySI=;
-        b=gZJaxpoN+NkHSRfP6fM1RRahed0y2Vswn/X/5Cr+aVLliIy/JCYwdRiGkVZ5JSOV+D
-         8q+wz+FNjLnM3QtDsA311tcetnQXdXq5nMuufgLOmjMXWXRxsZ2n1ISMoMZ1o0AUYhcZ
-         inApgLBZbh/lD1PBjpLrmjS36uctssqoBKcmD9SUqEl6cOa/hpKr/gJnycynKvBwXREZ
-         4nu1AUSeJTvvUi18oox5KEQvND6Qm15GjK0yRj46ttOQLiihntM0fTa4sEqlKABKHZzF
-         Y08pMxt19uweZ9X/2t8/rR6Fu8S29A3N1zY7wrOagvOApL3mImzeXp37YGiXUhRZsOjp
-         8XNQ==
-X-Forwarded-Encrypted: i=1; AHgh+Rp4k7jhxW9+l9/Q5j3Qnp6ANfSqIupjM0C/XASdH656QwPXrOO/m7KQ+QtN+NXNueJSYeP3iqA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx+Va9/E9L3EK/FBf0VQWE1bJVuvCfP7vnF/Zs6geudGEQpWUcc
-	VwLGRPmXzS2ZkKl4hL0rYqnwq4GKGIUc5Xz8r/Tt/+XsRJ5tZPanjejmkypBfOWFI8Kd9IL3Qvi
-	Cfkkqgrzm61z7LmNyDSBKy7q6/vSDOpgTQ8GPtcZSoUF32lh8yq/tnaIqjeyqVkGA
-X-Gm-Gg: AR+sD12OP2NCINXiq6bCCmXFMNTrA1SnMD9+JACSP3raPzwyb0ZGXnB5s+WIqoQ5Zqs
-	TSTXjhH846/Qb4HpyZhamsMX+DZWwFSd77Ny6fFm1bDBvYRXD9N/b9wk8ij/L+pxokuRZ3gtRXf
-	KPZdQTzYik+Rufc2MDfbc/lq8y4/qmSLgmEDLk/KRHaUGHxQiUO72AITsItZ7Ic/e4v3NWWFjPm
-	hYG1h+jdleewELJfenUKTSJc9Osc85vlUCRI0G0U9O/3ouXVtQv7gIqQBKbd0lsQtF+I2vCH1nV
-	SyyUod+CRmcxryd2k6FjiYGr6S+PaN19F5E9UrU3RMyYpVxChXBmEozlBEFz6Ebq/WRFWrF6Mdh
-	Dna+jbuQ0M+KyTXVBEAuErlsyyw5xbX8WDuR2CXS1sZWZEqn/l0i72A==
-X-Received: by 2002:a05:6a20:1d98:b0:3bf:e2dc:bc85 with SMTP id adf61e73a8af0-3c8ba5bf3dbmr6517783637.40.1785309515942;
-        Wed, 29 Jul 2026 00:18:35 -0700 (PDT)
-X-Received: by 2002:a05:6a20:1d98:b0:3bf:e2dc:bc85 with SMTP id adf61e73a8af0-3c8ba5bf3dbmr6517749637.40.1785309515426;
-        Wed, 29 Jul 2026 00:18:35 -0700 (PDT)
+        bh=0/q4AL3UqHmQiIbXfDF4U/jvRnNoEITC5BmiuZkEIC4=;
+        b=Ox/aSMFK1DbCktqAxJQNuVxlSOa5f13E7IuqPATSHb38TKKF28jDD9S3z8HRuwW8G8
+         XWWmn7i/BhjCUi+EoADJsbX6V7pF6vzqBvnNzSslN+1yuZcc6kA60Dm+1DINc1+T6+wJ
+         ZJzpoof+9m8lPGROhojMepBId5B9WtB4IhOGAhJ7NmOdpeqTBilJ2bN3QVED8dlhVRTu
+         9lEj2V0CbgLL2FN7iSDfH0tpft9KplciA3/UhQ5chFNbrGvHQYW+J2Hx8ng7Jkg5UGb7
+         +w6qGq+lAhq9rZTDBr2wO7NqKQKMRx2MdVkfKR8x+mJrXI0oPLerBe0BOS2NhpqJ5yl+
+         yyQA==
+X-Forwarded-Encrypted: i=1; AHgh+RqlCaHmRprPcV3Xnh5ZpfQmBCeV6kjlCaJdW0e9/08XGh6lXCKHug4Yv0WAkQSgNN/SQ5lfQ3k=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyNxnm1Zd7173kKpvPQio1GCq6RkeziOgPuuo6jOdNz0JzBGYAU
+	4P6rQ24pd4pUahPKCOSeRkoc8jdZus3HtcbdqK5eiV9EjrkBr4DhBisEiPVdX1b+SOPqpvUW162
+	NO735OVYMl/Zb2xjVi6PEg12lBT5gdTqZw+E/8LfY0PWtH7YJ7oBi+35YFQIgOI/q
+X-Gm-Gg: AR+sD132VKCzaCTt8W8BQ+YMmmmhZtz11PDPOgP/UfCSLeQvUXmPxb+wOp5AEQtGldo
+	au8fwlhUpH90LpEeStAPNFfn8XfDqOw2jNRT9XFgl0I+WH7iDneh1+lcPRMc2FvaYhCJ1uc3ohS
+	lME49UEZfEHobvzz0X2C/OkTPnGeSXOCN9SGg/IlUk0kXAXEahD6TsXJcsuAGQJjDuTmGFpI35M
+	bnoKz555q9s0ollDOzqQGnlm1VQLUOlKTgjrWtkkKQve7TXR/6AHnZqVOH7RQI94j0K9cAkLFUP
+	dNTlN4zcRh/gm0W/oU8RkF5IgBfCHHqivdaYKnzUbQeGEgaUNCxzy6jMWyCTIP8fPhJntVLYInt
+	TnhbEVglNxXm9gJBzt74WwJc7LEVmWT9g8w6447RE6Nr8DSVuAJmJjA==
+X-Received: by 2002:a05:6a20:2d09:b0:3c3:6528:c87 with SMTP id adf61e73a8af0-3c8aafc03aamr7355005637.1.1785309519118;
+        Wed, 29 Jul 2026 00:18:39 -0700 (PDT)
+X-Received: by 2002:a05:6a20:2d09:b0:3c3:6528:c87 with SMTP id adf61e73a8af0-3c8aafc03aamr7354981637.1.1785309518744;
+        Wed, 29 Jul 2026 00:18:38 -0700 (PDT)
 Received: from [127.0.1.1] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cbdb78ae98asm474793a12.1.2026.07.29.00.18.34
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cbdb78ae98asm474793a12.1.2026.07.29.00.18.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 29 Jul 2026 00:18:35 -0700 (PDT)
+        Wed, 29 Jul 2026 00:18:38 -0700 (PDT)
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Date: Wed, 29 Jul 2026 15:18:11 +0800
-Subject: [PATCH ath-next 1/4] wifi: ath12k: signal regd update completion
- when reg event is dropped
+Date: Wed, 29 Jul 2026 15:18:13 +0800
+Subject: [PATCH ath-next 3/4] wifi: ath12k: protect new_alpha2 access with
+ base_lock
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20260729-ath12k-regd-wait-timeout-v1-1-504aa6e7e93c@oss.qualcomm.com>
+Message-Id: <20260729-ath12k-regd-wait-timeout-v1-3-504aa6e7e93c@oss.qualcomm.com>
 References: <20260729-ath12k-regd-wait-timeout-v1-0-504aa6e7e93c@oss.qualcomm.com>
 In-Reply-To: <20260729-ath12k-regd-wait-timeout-v1-0-504aa6e7e93c@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzI5MDA1OCBTYWx0ZWRfX+Fmqgqz7kWbJ
- X1Y/vpEA37Qpb4xGnyRfTa7nBgzIQj5VxPOq8r+G1Fu4nRx3qc6EjzqNw1PLWm3ryEfWC8Q4Y3Y
- JVpnUaMhU5NhDea0lYteFoGxigRURLFrKM24nJYzMrPEg8MmU1/wJIQLiaNE8TA5xXRO8d7NJsU
- rCvANaa5sh0yODB+L0XSr55ixo/H99za0KcR2sfNBkpKDnGz1n9wJsbMev3aog80mQQEMk2X1tj
- lGXXBhT9xA2z2vCzkyyg7rsXPoAv5N8pDuPQ7y37gQP/u0EPbwxRgcMsTbyJrvJu0awIkMPwjPt
- eAa1V7CB4IxEDfapKXlKvsl1F6f2rUvb1kLe9nlqVq88KTdcvo8IXMUMUUBwTHi9PGRIZRdc8KO
- Qb1u+1lNrRC3gyKxXdm7aqH2oNxRXvJXX1SEmcPV9lYceE+DIRmH2BTlUwo4KvQdJeuA56ZQt8E
- xclYQv3+oPBjE9USyjw==
-X-Proofpoint-GUID: 8MtkwattJJcJBu-zuWL5ree8QjDTPwpG
-X-Authority-Analysis: v=2.4 cv=R7Az39RX c=1 sm=1 tr=0 ts=6a69a94c cx=c_pps
- a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzI5MDA1OCBTYWx0ZWRfX5xmUDC0QJMsS
+ 0gGb2zM+zSltFRb0KHtwxN3I+1kNO16zCngToEFIfoeyBdcm7NwcxiCNYM9Tn8WaAkLbA0L85E4
+ SEmBVdh8GbKzzMH2wUoDik1mgIFwWGG87zQbLOf6jwL0qkD1TjdKfc1GZWTsSGSEyb6R7qKyGtn
+ PpV57SxJ3gNhtTJtHrT0fvmG6NnIE9cr+H5VZ0JlLuGbHSE/kwRRIVQbtnR3dfDt9f93eiy88ZF
+ JJjilc91Y122Q91nWGKsCzc0CDnGEOQbiq0X5eb6aqxliNsHdcUKSWf5YEw1kMNfxXrHQTn5p9q
+ tcg9zr+BybyK4OUfwPZjwYf7ugONz/g2SMndrU6kXMUF8gQPeqf+gvLj1itNGfZxXBb0klpZegC
+ 7momeiJMngZebVA16N9YjoFd1bTJNUavad/rOSQTuMUJaTCyPAtsOrrqI7735ztCzVNWd1NePvu
+ QWqdMsxyTB1wuE+sCbg==
+X-Proofpoint-GUID: rOA-XG0Tr5naWt6MRXq0eLB-hxHOcvx2
+X-Authority-Analysis: v=2.4 cv=R7Az39RX c=1 sm=1 tr=0 ts=6a69a94f cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
  a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
- a=EUspDBNiAAAA:8 a=Bb4tyEC6cNv58RkMtAsA:9 a=QEXdDO2ut3YA:10
- a=_Vgx9l1VpLgwpw_dHYaR:22
-X-Proofpoint-ORIG-GUID: 8MtkwattJJcJBu-zuWL5ree8QjDTPwpG
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzI5MDA1OCBTYWx0ZWRfXxajjJiAAIcuI
- tDoBfhfBrbTqWgD5XRzV2RGkc6qh9jL6Zl8Lm/2pISyFOlA1CUSGWGGJT6gU3BOgoNqD/vnwO34
- heH5ub9F5J5qWj50niGd5LZA4yPGX6c=
+ a=EUspDBNiAAAA:8 a=lPJdulcixYuF9D0iInEA:9 a=QEXdDO2ut3YA:10
+ a=3WC7DwWrALyhR5TkjVHa:22
+X-Proofpoint-ORIG-GUID: rOA-XG0Tr5naWt6MRXq0eLB-hxHOcvx2
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzI5MDA1OCBTYWx0ZWRfX7DRPIVPtl46h
+ RWSZB6xEXEgBwQUVBQb36icR7GaKimKu9U3GeGLqHKUyGRQuxz1MOw69ebVV/HAB93/WdNeYnXv
+ +z1XEJmj2knarYSNNOnT8D2KKokJsMs=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-29_02,2026-07-28_02,2025-10-01_01
@@ -131,8 +131,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607290058
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260729_001838_459616_AB778E7D 
-X-CRM114-Status: GOOD (  18.67  )
+X-CRM114-CacheID: sfid-20260729_001841_098256_66E3273B 
+X-CRM114-Status: GOOD (  13.43  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,73 +147,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-During driver bring-up, ath12k_mac_hw_register() reinitializes
-ar->regd_update_completed and sends a set current country command to
-firmware. It then relies on the regulatory event from firmware to signal
-that completion via ath12k_reg_chan_list_event().
+ab->new_alpha2 is written under ab->base_lock by the 11d new country
+code event handler ath12k_reg_11d_new_cc_event() and by the SMBIOS
+BDF parser, and read under the same lock by ath12k_update_11d().
 
-However, when the country being set is identical to the one already
-applied at boot time, ath12k_reg_validate_reg_info() returns
-ATH12K_REG_STATUS_DROP through the "Avoid multiple overwrites to default
-regd" path. In that case ath12k_reg_chan_list_event() jumps to mem_free
-before assigning pdev_idx, so pdev_idx stays at its initial value of 255,
-'ar' remains NULL and complete_all() is never called.
-
-As a result the reinitialized completion is left unsignalled and the next
-ath12k_regd_update() waits the full timeout, printing:
-
-  Timeout while waiting for regulatory update
-
-Fix this by assigning pdev_idx from the event's phy_id right after it is
-extracted, before validation, so that the drop and fallback paths still
-reach complete_all(). Change the guard at the end to check the index
-against ab->num_radios so that an out-of-range phy_id does not lead to an
-invalid pdevs[] access.
+ath12k_mac_hw_register() however read ab->new_alpha2 without holding
+base_lock, racing with those writers. Take base_lock and copy the
+value into a local wmi_set_current_country_arg, mirroring what
+ath12k_update_11d() already does, and use the local copy afterwards.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 
-Fixes: 906619a00967 ("wifi: ath12k: handle regulatory hints during mac registration")
 Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c | 11 +++++++++--
+ drivers/net/wireless/ath/ath12k/mac.c | 11 +++++++++--
  1 file changed, 9 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 2b707ffc1a20..e9ec56a0e8db 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -6964,6 +6964,14 @@ static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *sk
- 		goto mem_free;
- 	}
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 82cbb5b9cd11..56f9c1945cf0 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -15052,11 +15052,17 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 			goto err_unregister_hw;
+ 		}
  
-+	/*
-+	 * Set the valid pdev_idx before validating so that, even when the
-+	 * event is dropped or falls back, the completion the caller in
-+	 * ath12k_mac_hw_register() may be waiting on is still signalled at
-+	 * the end and it does not time out.
-+	 */
-+	pdev_idx = reg_info->phy_id;
+-		if (this_ab->hw_params->current_cc_support && this_ab->new_alpha2[0]) {
++		if (this_ab->hw_params->current_cc_support) {
+ 			struct wmi_set_current_country_arg current_cc = {};
+ 
++			spin_lock_bh(&this_ab->base_lock);
+ 			memcpy(&current_cc.alpha2, this_ab->new_alpha2, 2);
+-			memcpy(&ar->alpha2, this_ab->new_alpha2, 2);
++			spin_unlock_bh(&this_ab->base_lock);
 +
- 	ret = ath12k_reg_validate_reg_info(ab, reg_info);
- 	if (ret == ATH12K_REG_STATUS_FALLBACK) {
- 		ath12k_warn(ab, "failed to validate reg info %d\n", ret);
-@@ -6980,7 +6988,6 @@ static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *sk
++			if (!current_cc.alpha2[0])
++				goto fw_stats_init;
++
++			memcpy(&ar->alpha2, current_cc.alpha2, 2);
+ 
+ 			reinit_completion(&ar->regd_update_completed);
+ 
+@@ -15067,6 +15073,7 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 					    ret);
+ 		}
+ 
++fw_stats_init:
+ 		ath12k_fw_stats_init(ar);
+ 		ath12k_debugfs_register(ar);
  	}
- 
- 	/* free old reg_info if it exist */
--	pdev_idx = reg_info->phy_id;
- 	if (ab->reg_info[pdev_idx]) {
- 		ath12k_reg_reset_reg_info(ab->reg_info[pdev_idx]);
- 		kfree(ab->reg_info[pdev_idx]);
-@@ -7019,7 +7026,7 @@ static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *sk
- 
- out:
- 	/* In some error cases, even a valid pdev_idx might not be available */
--	if (pdev_idx != 255)
-+	if (pdev_idx < ab->num_radios)
- 		ar = ab->pdevs[pdev_idx].ar;
- 
- 	/* During the boot-time update, 'ar' might not be allocated,
 
 -- 
 2.25.1
