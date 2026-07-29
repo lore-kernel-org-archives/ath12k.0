@@ -4,71 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DF0FC53200
-	for <ath12k@archiver.kernel.org>; Wed, 29 Jul 2026 04:40:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABAC6C53219
+	for <ath12k@archiver.kernel.org>; Wed, 29 Jul 2026 07:18:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=QMRIQLOpBwCmnMLpNILjdSAGfH7ygDiYLn47GXf4ZF0=; b=tVay/wAosThM/ntOI0yHNVZWD0
-	K58GcWLoUsZo6lI/k7d4AedN3sdGIrZhdCmFuKBiRLoIJt+6p72ChFhPTuaR7Mo0VnFhp76+tTKVR
-	KvWnj8u8cKuo2fiqVBbXJqsHRLfMTJwyEhKJQRuBw6NMurGkoaUE5qbrIZNNU5XYWV+9lv1GkmE1O
-	2AlRgXop/JePSgyMTfrMB8fQgiv9EnsmCQQKbobV94sEv5yewhiFdkB0P0v62B8barf0MJ/QKX3Bs
-	hxJCx8ZqySnF2EhDDQSwAN7QSj3vySnC6xmMt2gRSrTLawHAezQ/NUf2UKRSSlkis/iJBIg5DFD8I
-	2MzobsfQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
+	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=5ny0swmE7MmuvYquYFpfbom/etRJNh+llibZoszEySI=; b=3JY1Lm8eoVgeQIOAQzwI++Y+fR
+	5r6XfhnoBCvNcB2ZYrP3useIOyDlCOUZs6s55IlyZIdts/8RKs24webOuoGpB/pccLX6VFuDfyVdu
+	66hRQrRK8glWOAD4zW7xuNjpBd4Z6F6tygUO6z8I9f9hRrON5kZTepEonwWfnixd5sfsqC039nWnz
+	aNu/tO/2Z7MXZ7BqKf30bX/C+5dCLozRnDGBxwPjoRixBHJP3nT594ExIMYeu1kUaMJTLAHKGLEJS
+	G6NI35Wk2OHF1q1jmqmNh8Ahg3F3McqghC821bdh6bjvlW2k38Bs9BEsdJo1NCQEFS1Zzu0ZM1Wi/
+	dZjz/m2g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wow6D-00000006rSV-3gTe;
-	Wed, 29 Jul 2026 04:40:57 +0000
-Received: from mgamail.intel.com ([192.198.163.16])
+	id 1woyYs-00000007699-1GiS;
+	Wed, 29 Jul 2026 07:18:42 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wow6A-00000006rS6-19Dc
+	id 1woyYo-0000000767o-1RSp
 	for ath12k@lists.infradead.org;
-	Wed, 29 Jul 2026 04:40:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1785300055; x=1816836055;
-  h=date:from:to:cc:subject:message-id;
-  bh=X5Ac6CgTx/Ml2+aHKC2uNA87QNnr/fJ/DNcWBCq5BBg=;
-  b=GtQgXZDRL9QtXzFg1/A5gtXKFqmwfvTkkHHliJCL+po5SlEIjoLvk83X
-   oQGKoGf+ARyRx+rQaFym3HXeaDd1ippG2hiPkJe0rqG6YiFvsU8ysLZo5
-   VOaU8oX6WG81bC7c4+OwSOXp3qycKSToDejgI3zNhBSHUoWUDkpFllj27
-   dd/bi+bEVLU7KAXdgKkWVov1JiSISITEre12OH/UFmiVzA21YDB9S+bTy
-   g4SbNd8tWgitwrycfYX3/nS3qQ+M4nf6hS3RphLo4i2QOtV7UDVIX7C/z
-   2bjAE9OW36YEP1zQm9r1iGqKemZ+/EerBtm1L+2tKRSqZE0+sX1fWqXZx
-   w==;
-X-CSE-ConnectionGUID: AOyU0sXrRTOzrDAiYdNgoQ==
-X-CSE-MsgGUID: flp5iyMeSOmGZqxUpwIbFA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11859"; a="73434363"
-X-IronPort-AV: E=Sophos;i="6.25,191,1779174000"; 
-   d="scan'208";a="73434363"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Jul 2026 21:40:52 -0700
-X-CSE-ConnectionGUID: kmnFKqDFQ8e6dqGClwTB2Q==
-X-CSE-MsgGUID: hlsxpD7XSsCfbzk3WxCsLA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.25,191,1779174000"; 
-   d="scan'208";a="255599174"
-Received: from lkp-server02.sh.intel.com (HELO ea128546eb3d) ([10.239.97.151])
-  by fmviesa006.fm.intel.com with ESMTP; 28 Jul 2026 21:40:49 -0700
-Received: from kbuild by ea128546eb3d with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1wow5W-00000000f2R-1ATa;
-	Wed, 29 Jul 2026 04:40:14 +0000
-Date: Wed, 29 Jul 2026 12:39:00 +0800
-From: kernel test robot <lkp@intel.com>
-To: Johannes Berg <johannes.berg@intel.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:for-current] BUILD SUCCESS
- 57aa1718d5953dd532137d43b696c68545c2e0b3
-Message-ID: <202607291247.UcOGmadE-lkp@intel.com>
-User-Agent: s-nail v14.9.25
+	Wed, 29 Jul 2026 07:18:41 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66T5guLj2055646
+	for <ath12k@lists.infradead.org>; Wed, 29 Jul 2026 07:18:36 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	5ny0swmE7MmuvYquYFpfbom/etRJNh+llibZoszEySI=; b=DMyFrFTaHPGui9GW
+	4dRbOZh8CsrwNWcC6T013tJCfGXi7hSQG7uoeUpYS34MztU97PA/s36KAZT7y2Gg
+	CYFJbKps4QkaIAGki0mbjXxPFh9QcVWoFNBEsWaDIjCVooh05UwCCyYimJT7y3ri
+	qErKZBKh6eh8/O0ohgO59b9VUCZSfar4HY9yS5q+j3BpBxEYKak+ullmBg0L9RBe
+	ctrj66tbnUtjrP6tUiGdAPgxk2A07uNl6IFcTWV+BiMfkonTYAX8rVPaHjml/PMA
+	gbeSemuwoYngyGpeSxMDO1XzD9zyMoQ605IOM3zlxcOZryn5+ix5Qi+K2IO425u6
+	KtCHYA==
+Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fqbm1gbxk-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 29 Jul 2026 07:18:36 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-cb4bd11ddf8so716610a12.3
+        for <ath12k@lists.infradead.org>; Wed, 29 Jul 2026 00:18:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1785309516; x=1785914316; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=5ny0swmE7MmuvYquYFpfbom/etRJNh+llibZoszEySI=;
+        b=TPo2xrdRj7RWHseK7Ts1SXwuOGrJ4ff+tJyVa0YJ2hse6I7gpvkKvp408I1CmK81Vr
+         Rhzsb/aP9KtXWpvPMZSyWF9lZP3viR8p5rBJ40bUr2UQmR4emGQxpIHnkmjPhJhl/XwG
+         ajWh7lcuIhSJpzkfxpICxSX18hyVEhgPEFALEZu+5eHFXN/dRCy5r/p/v6lpUrAoU8Yy
+         RM/12Sy0VpS7SpIBMsZ5k10SjG3+XcdrY8NiF8o2+9MOHy3czlGX8k9TDdlmNT52NDdR
+         dvV3X42kMIM57xVfDOjRqgK9JHsg29obMW1PxGLyzw+zjA4MoOs6DiqTPJIbqd/OebHB
+         1sWQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1785309516; x=1785914316;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=5ny0swmE7MmuvYquYFpfbom/etRJNh+llibZoszEySI=;
+        b=gZJaxpoN+NkHSRfP6fM1RRahed0y2Vswn/X/5Cr+aVLliIy/JCYwdRiGkVZ5JSOV+D
+         8q+wz+FNjLnM3QtDsA311tcetnQXdXq5nMuufgLOmjMXWXRxsZ2n1ISMoMZ1o0AUYhcZ
+         inApgLBZbh/lD1PBjpLrmjS36uctssqoBKcmD9SUqEl6cOa/hpKr/gJnycynKvBwXREZ
+         4nu1AUSeJTvvUi18oox5KEQvND6Qm15GjK0yRj46ttOQLiihntM0fTa4sEqlKABKHZzF
+         Y08pMxt19uweZ9X/2t8/rR6Fu8S29A3N1zY7wrOagvOApL3mImzeXp37YGiXUhRZsOjp
+         8XNQ==
+X-Forwarded-Encrypted: i=1; AHgh+Rp4k7jhxW9+l9/Q5j3Qnp6ANfSqIupjM0C/XASdH656QwPXrOO/m7KQ+QtN+NXNueJSYeP3iqA=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx+Va9/E9L3EK/FBf0VQWE1bJVuvCfP7vnF/Zs6geudGEQpWUcc
+	VwLGRPmXzS2ZkKl4hL0rYqnwq4GKGIUc5Xz8r/Tt/+XsRJ5tZPanjejmkypBfOWFI8Kd9IL3Qvi
+	Cfkkqgrzm61z7LmNyDSBKy7q6/vSDOpgTQ8GPtcZSoUF32lh8yq/tnaIqjeyqVkGA
+X-Gm-Gg: AR+sD12OP2NCINXiq6bCCmXFMNTrA1SnMD9+JACSP3raPzwyb0ZGXnB5s+WIqoQ5Zqs
+	TSTXjhH846/Qb4HpyZhamsMX+DZWwFSd77Ny6fFm1bDBvYRXD9N/b9wk8ij/L+pxokuRZ3gtRXf
+	KPZdQTzYik+Rufc2MDfbc/lq8y4/qmSLgmEDLk/KRHaUGHxQiUO72AITsItZ7Ic/e4v3NWWFjPm
+	hYG1h+jdleewELJfenUKTSJc9Osc85vlUCRI0G0U9O/3ouXVtQv7gIqQBKbd0lsQtF+I2vCH1nV
+	SyyUod+CRmcxryd2k6FjiYGr6S+PaN19F5E9UrU3RMyYpVxChXBmEozlBEFz6Ebq/WRFWrF6Mdh
+	Dna+jbuQ0M+KyTXVBEAuErlsyyw5xbX8WDuR2CXS1sZWZEqn/l0i72A==
+X-Received: by 2002:a05:6a20:1d98:b0:3bf:e2dc:bc85 with SMTP id adf61e73a8af0-3c8ba5bf3dbmr6517783637.40.1785309515942;
+        Wed, 29 Jul 2026 00:18:35 -0700 (PDT)
+X-Received: by 2002:a05:6a20:1d98:b0:3bf:e2dc:bc85 with SMTP id adf61e73a8af0-3c8ba5bf3dbmr6517749637.40.1785309515426;
+        Wed, 29 Jul 2026 00:18:35 -0700 (PDT)
+Received: from [127.0.1.1] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cbdb78ae98asm474793a12.1.2026.07.29.00.18.34
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 29 Jul 2026 00:18:35 -0700 (PDT)
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Date: Wed, 29 Jul 2026 15:18:11 +0800
+Subject: [PATCH ath-next 1/4] wifi: ath12k: signal regd update completion
+ when reg event is dropped
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20260729-ath12k-regd-wait-timeout-v1-1-504aa6e7e93c@oss.qualcomm.com>
+References: <20260729-ath12k-regd-wait-timeout-v1-0-504aa6e7e93c@oss.qualcomm.com>
+In-Reply-To: <20260729-ath12k-regd-wait-timeout-v1-0-504aa6e7e93c@oss.qualcomm.com>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+X-Mailer: b4 0.14.3
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzI5MDA1OCBTYWx0ZWRfX+Fmqgqz7kWbJ
+ X1Y/vpEA37Qpb4xGnyRfTa7nBgzIQj5VxPOq8r+G1Fu4nRx3qc6EjzqNw1PLWm3ryEfWC8Q4Y3Y
+ JVpnUaMhU5NhDea0lYteFoGxigRURLFrKM24nJYzMrPEg8MmU1/wJIQLiaNE8TA5xXRO8d7NJsU
+ rCvANaa5sh0yODB+L0XSr55ixo/H99za0KcR2sfNBkpKDnGz1n9wJsbMev3aog80mQQEMk2X1tj
+ lGXXBhT9xA2z2vCzkyyg7rsXPoAv5N8pDuPQ7y37gQP/u0EPbwxRgcMsTbyJrvJu0awIkMPwjPt
+ eAa1V7CB4IxEDfapKXlKvsl1F6f2rUvb1kLe9nlqVq88KTdcvo8IXMUMUUBwTHi9PGRIZRdc8KO
+ Qb1u+1lNrRC3gyKxXdm7aqH2oNxRXvJXX1SEmcPV9lYceE+DIRmH2BTlUwo4KvQdJeuA56ZQt8E
+ xclYQv3+oPBjE9USyjw==
+X-Proofpoint-GUID: 8MtkwattJJcJBu-zuWL5ree8QjDTPwpG
+X-Authority-Analysis: v=2.4 cv=R7Az39RX c=1 sm=1 tr=0 ts=6a69a94c cx=c_pps
+ a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
+ a=EUspDBNiAAAA:8 a=Bb4tyEC6cNv58RkMtAsA:9 a=QEXdDO2ut3YA:10
+ a=_Vgx9l1VpLgwpw_dHYaR:22
+X-Proofpoint-ORIG-GUID: 8MtkwattJJcJBu-zuWL5ree8QjDTPwpG
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzI5MDA1OCBTYWx0ZWRfXxajjJiAAIcuI
+ tDoBfhfBrbTqWgD5XRzV2RGkc6qh9jL6Zl8Lm/2pISyFOlA1CUSGWGGJT6gU3BOgoNqD/vnwO34
+ heH5ub9F5J5qWj50niGd5LZA4yPGX6c=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-07-29_02,2026-07-28_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 malwarescore=0 bulkscore=0 priorityscore=1501 phishscore=0
+ adultscore=0 lowpriorityscore=0 impostorscore=0 suspectscore=0 clxscore=1015
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607290058
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260728_214054_361252_57420592 
-X-CRM114-Status: UNSURE (   4.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260729_001838_459616_AB778E7D 
+X-CRM114-Status: GOOD (  18.67  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,140 +147,75 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-current
-branch HEAD: 57aa1718d5953dd532137d43b696c68545c2e0b3  wifi: iwlegacy: replace BUG_ON() with WARN_ON() on num_stations check
+During driver bring-up, ath12k_mac_hw_register() reinitializes
+ar->regd_update_completed and sends a set current country command to
+firmware. It then relies on the regulatory event from firmware to signal
+that completion via ath12k_reg_chan_list_event().
 
-elapsed time: 841m
+However, when the country being set is identical to the one already
+applied at boot time, ath12k_reg_validate_reg_info() returns
+ATH12K_REG_STATUS_DROP through the "Avoid multiple overwrites to default
+regd" path. In that case ath12k_reg_chan_list_event() jumps to mem_free
+before assigning pdev_idx, so pdev_idx stays at its initial value of 255,
+'ar' remains NULL and complete_all() is never called.
 
-configs tested: 120
-configs skipped: 1
+As a result the reinitialized completion is left unsignalled and the next
+ath12k_regd_update() waits the full timeout, printing:
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+  Timeout while waiting for regulatory update
 
-tested configs:
-alpha                            allnoconfig    gcc-16.1.0
-alpha                           allyesconfig    gcc-16.1.0
-alpha                              defconfig    gcc-16.1.0
-arc                             allmodconfig    gcc-16.1.0
-arc                             allyesconfig    gcc-16.1.0
-arc                  randconfig-001-20260729    gcc-8.5.0
-arc                  randconfig-002-20260729    gcc-8.5.0
-arm                  randconfig-001-20260729    gcc-8.5.0
-arm                  randconfig-002-20260729    gcc-8.5.0
-arm                  randconfig-003-20260729    gcc-8.5.0
-arm                  randconfig-004-20260729    gcc-8.5.0
-arm64                randconfig-001-20260729    clang-17
-arm64                randconfig-002-20260729    clang-17
-arm64                randconfig-003-20260729    clang-17
-arm64                randconfig-004-20260729    clang-17
-csky                            allmodconfig    gcc-16.1.0
-csky                 randconfig-001-20260729    clang-17
-csky                 randconfig-002-20260729    clang-17
-hexagon              randconfig-001-20260729    clang-21
-hexagon              randconfig-001-20260729    gcc-9.5.0
-hexagon              randconfig-002-20260729    clang-17
-hexagon              randconfig-002-20260729    gcc-9.5.0
-i386                            allmodconfig    gcc-14
-i386       buildonly-randconfig-001-20260729    gcc-14
-i386       buildonly-randconfig-002-20260729    gcc-14
-i386       buildonly-randconfig-003-20260729    gcc-14
-i386       buildonly-randconfig-004-20260729    gcc-14
-i386       buildonly-randconfig-005-20260729    gcc-14
-i386       buildonly-randconfig-006-20260729    gcc-14
-i386                 randconfig-001-20260729    clang-22
-i386                 randconfig-002-20260729    clang-22
-i386                 randconfig-003-20260729    clang-22
-i386                 randconfig-004-20260729    clang-22
-i386                 randconfig-005-20260729    clang-22
-i386                 randconfig-006-20260729    clang-22
-i386                 randconfig-007-20260729    clang-22
-i386                 randconfig-011-20260729    clang-22
-i386                 randconfig-011-20260729    gcc-14
-i386                 randconfig-012-20260729    clang-22
-i386                 randconfig-012-20260729    gcc-14
-i386                 randconfig-013-20260729    clang-22
-i386                 randconfig-013-20260729    gcc-14
-i386                 randconfig-014-20260729    gcc-14
-i386                 randconfig-015-20260729    clang-22
-i386                 randconfig-015-20260729    gcc-14
-i386                 randconfig-016-20260729    gcc-14
-i386                 randconfig-017-20260729    clang-22
-i386                 randconfig-017-20260729    gcc-14
-loongarch                          defconfig    clang-24
-loongarch            randconfig-001-20260729    clang-19
-loongarch            randconfig-001-20260729    gcc-9.5.0
-loongarch            randconfig-002-20260729    gcc-13.4.0
-loongarch            randconfig-002-20260729    gcc-9.5.0
-mips                       bcm63xx_defconfig    clang-24
-mips                     maltaaprp_defconfig    clang-17
-mips                       maltaup_defconfig    clang-17
-nios2                           allmodconfig    gcc-11.5.0
-nios2                            allnoconfig    gcc-11.5.0
-nios2                randconfig-001-20260729    gcc-11.5.0
-nios2                randconfig-001-20260729    gcc-9.5.0
-nios2                randconfig-002-20260729    gcc-9.5.0
-parisc                          alldefconfig    gcc-16.1.0
-parisc                          allmodconfig    gcc-16.1.0
-parisc                          allyesconfig    gcc-16.1.0
-parisc                             defconfig    gcc-16.1.0
-parisc               randconfig-001-20260729    clang-24
-parisc               randconfig-002-20260729    clang-24
-powerpc                    ksi8560_defconfig    gcc-16.1.0
-powerpc                mpc8313_rdb_defconfig    gcc-16.1.0
-powerpc              randconfig-001-20260729    clang-24
-powerpc              randconfig-002-20260729    clang-24
-powerpc64            randconfig-001-20260729    clang-24
-powerpc64            randconfig-002-20260729    clang-24
-riscv            nommu_k210_sdcard_defconfig    gcc-16.1.0
-riscv                randconfig-001-20260729    gcc-15.2.0
-riscv                randconfig-002-20260729    gcc-15.2.0
-s390                 randconfig-001-20260729    gcc-15.2.0
-s390                 randconfig-002-20260729    gcc-15.2.0
-sh                                 defconfig    gcc-16.1.0
-sh                   randconfig-001-20260729    gcc-15.2.0
-sh                   randconfig-002-20260729    gcc-15.2.0
-sh                  sh7724_generic_defconfig    gcc-16.1.0
-sparc                randconfig-001-20260729    gcc-10.5.0
-sparc                randconfig-002-20260729    gcc-10.5.0
-sparc64              randconfig-001-20260729    gcc-10.5.0
-sparc64              randconfig-002-20260729    gcc-10.5.0
-um                   randconfig-001-20260729    gcc-10.5.0
-um                   randconfig-002-20260729    gcc-10.5.0
-x86_64     buildonly-randconfig-001-20260729    clang-22
-x86_64     buildonly-randconfig-001-20260729    gcc-14
-x86_64     buildonly-randconfig-002-20260729    clang-22
-x86_64     buildonly-randconfig-002-20260729    gcc-14
-x86_64     buildonly-randconfig-003-20260729    clang-22
-x86_64     buildonly-randconfig-004-20260729    clang-22
-x86_64     buildonly-randconfig-004-20260729    gcc-14
-x86_64     buildonly-randconfig-005-20260729    clang-22
-x86_64     buildonly-randconfig-006-20260729    clang-22
-x86_64     buildonly-randconfig-006-20260729    gcc-12
-x86_64                                 kexec    clang-22
-x86_64               randconfig-001-20260729    clang-22
-x86_64               randconfig-002-20260729    clang-22
-x86_64               randconfig-003-20260729    clang-22
-x86_64               randconfig-004-20260729    clang-22
-x86_64               randconfig-005-20260729    clang-22
-x86_64               randconfig-006-20260729    clang-22
-x86_64               randconfig-011-20260729    gcc-14
-x86_64               randconfig-012-20260729    gcc-14
-x86_64               randconfig-013-20260729    gcc-14
-x86_64               randconfig-014-20260729    gcc-14
-x86_64               randconfig-015-20260729    gcc-14
-x86_64               randconfig-016-20260729    gcc-14
-x86_64               randconfig-071-20260729    gcc-12
-x86_64               randconfig-072-20260729    gcc-12
-x86_64               randconfig-073-20260729    gcc-12
-x86_64               randconfig-074-20260729    gcc-12
-x86_64               randconfig-075-20260729    gcc-12
-x86_64               randconfig-076-20260729    gcc-12
-x86_64                          rhel-9.4-bpf    gcc-14
-xtensa               randconfig-001-20260729    gcc-10.5.0
-xtensa               randconfig-002-20260729    gcc-10.5.0
+Fix this by assigning pdev_idx from the event's phy_id right after it is
+extracted, before validation, so that the drop and fallback paths still
+reach complete_all(). Change the guard at the end to check the index
+against ab->num_radios so that an out-of-range phy_id does not lead to an
+invalid pdevs[] access.
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
+
+Fixes: 906619a00967 ("wifi: ath12k: handle regulatory hints during mac registration")
+Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/wmi.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 2b707ffc1a20..e9ec56a0e8db 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -6964,6 +6964,14 @@ static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *sk
+ 		goto mem_free;
+ 	}
+ 
++	/*
++	 * Set the valid pdev_idx before validating so that, even when the
++	 * event is dropped or falls back, the completion the caller in
++	 * ath12k_mac_hw_register() may be waiting on is still signalled at
++	 * the end and it does not time out.
++	 */
++	pdev_idx = reg_info->phy_id;
++
+ 	ret = ath12k_reg_validate_reg_info(ab, reg_info);
+ 	if (ret == ATH12K_REG_STATUS_FALLBACK) {
+ 		ath12k_warn(ab, "failed to validate reg info %d\n", ret);
+@@ -6980,7 +6988,6 @@ static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *sk
+ 	}
+ 
+ 	/* free old reg_info if it exist */
+-	pdev_idx = reg_info->phy_id;
+ 	if (ab->reg_info[pdev_idx]) {
+ 		ath12k_reg_reset_reg_info(ab->reg_info[pdev_idx]);
+ 		kfree(ab->reg_info[pdev_idx]);
+@@ -7019,7 +7026,7 @@ static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *sk
+ 
+ out:
+ 	/* In some error cases, even a valid pdev_idx might not be available */
+-	if (pdev_idx != 255)
++	if (pdev_idx < ab->num_radios)
+ 		ar = ab->pdevs[pdev_idx].ar;
+ 
+ 	/* During the boot-time update, 'ar' might not be allocated,
+
+-- 
+2.25.1
+
 
