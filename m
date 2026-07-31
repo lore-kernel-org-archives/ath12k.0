@@ -4,137 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FA37C55162
-	for <ath12k@archiver.kernel.org>; Thu, 30 Jul 2026 15:11:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC0FDC54F54
+	for <ath12k@archiver.kernel.org>; Fri, 31 Jul 2026 05:34:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0e1MCIXL8gKMWUwtGXYTa0AMbBBgxwuX7rr00z48Sjk=; b=KLJG+2lYLVDpAXvG3u+imLePZN
-	gERUt8WLU1igkzeV/Z4HvNfUlrNPd/bYaudclkUy1+RwkwqqQuJndqZWFJXepdfGgZ97LQiyWYmeI
-	XGJZrjw/WFna1YZnCVSDmRtFFhPNW7OFdPut/4amOftse+jvqKutMZpzOcwb3nZ9qItwcuCi/QWTJ
-	lyA58DHzk4RR+92re6Iq9Gb1rACfC7ZzwHJW+YvhxzoCbciXXs/9rdl5wNHaI6Owbo/xTkGFV22nc
-	/Y19OWTxIbGoJ7Yfe6nSQBWoSUk5BAtpl4enCCmOSXnPQk7Ij+eDk6MbUQth1PzgQCdI45og33Jql
-	w/zpZE5Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=X+kGKFP4B0Q+9BVZYTfIdRIGmMHCgn6SIs9Evw3RV1Q=; b=sGNm5TVmXQeuY6fZFwL87NYOBR
+	/PqvWnU++VsJQ/uoHqzA3S3JOrldqWGao3PMXjmUW/VssjI8MJGjUk0mW1P0BwIfBbSJuuo5w+Ybk
+	RmwwdvfZ0QrI0LkF6xDM/Z/gSrUbclEMguwo1a8t4AEgG8PXTlZe+QcDglEQ+HaiTmZiJTjLSIxQp
+	rbDjxr2GMa8S8kJt+AVlvDFQ7Q5dagodFWVMtpWU2zVvg53cjq7mGF9YMc0aWfoeuTVxRXuLLG8HI
+	cvELwIGN9vl/PaxEBWc/bQmCLvFi9R6iCZ4uBpfOY1pb9kY8TTlvVvwodPJQcOjxgo24HOVTGiu9+
+	1JCpDDnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpSPX-0000000Aoji-2q9W;
-	Thu, 30 Jul 2026 15:11:03 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wpftT-0000000BnxM-2bO5;
+	Fri, 31 Jul 2026 05:34:51 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpSPV-0000000Aoj8-1zIn
-	for ath12k@lists.infradead.org;
-	Thu, 30 Jul 2026 15:11:02 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66UEiowj924895
-	for <ath12k@lists.infradead.org>; Thu, 30 Jul 2026 15:11:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	0e1MCIXL8gKMWUwtGXYTa0AMbBBgxwuX7rr00z48Sjk=; b=VrAvbfaQF6j3Ic9F
-	iUdFLk2e2RV8iT7Gta2FsU618Z6VjoEIhgcl6IzYrSjQzIg6m9Z7hfptvCLD0KTz
-	hbEXM2jp8oWpMAUTmXnoOehqmZXFPfUkwn+IUXKd+827YnuyIwRfrS8t3uj9g2ip
-	iD5dube1fkXvoTwTA8bhbLlj2W3PJbYMWs2aufCv0UEYJNux9HiBNyeZ1blydXif
-	z+RGQJeXUZcIM9Jocy6v/KNg/fje+k8j0LSluk61ywsfrWbBahQ8Y/qxXc826YHn
-	J+uPg7uzYvxZ+XS7c+QyltKXAW8llV/N6IMkSGhvCOVa7ceGRJLw1D7y5uEfDPWV
-	MjsxQQ==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fr8n804us-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 30 Jul 2026 15:11:00 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-cb733fc5024so3200108a12.2
-        for <ath12k@lists.infradead.org>; Thu, 30 Jul 2026 08:11:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1785424260; x=1786029060; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=0e1MCIXL8gKMWUwtGXYTa0AMbBBgxwuX7rr00z48Sjk=;
-        b=XnEb9R/CCFM8HinvfCUJz60RzvrUaMW37ScG1VMdu81K9cPvMbuMZa5k93u8Sa4BMW
-         xSP9apwD2KFParp7AHrDaWDjR+aa7xNnA46j3B5kLPOO0g3RMSJr692/6eVWDUIrexHc
-         ilZcOAR3ZTbGDelLfRib5/RRvI/ME4tYtyDnrkTaCxsfreVlJkYxJGtfl16CPjMBwGE1
-         oCxou7GlGz7LiX4HdtAG7hvu3YbZWFSwX9DhsXBh9SxiNdcqe9PWMgC+Qv57bqmzrB0t
-         4l+X4sGPRSHFralCXqoRmQOZ35C6zvPKzhGUDCJU5Wof8Atihz3mr2N15/w0SYG7nIEG
-         pM4Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785424260; x=1786029060;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=0e1MCIXL8gKMWUwtGXYTa0AMbBBgxwuX7rr00z48Sjk=;
-        b=Wl9PH+EAaAQRKMf86yUY0pjTRm9fko4PldzKpuQslCRFit5/LRXhNhbA3jfeujmp6d
-         RA5DbeNk1b+S06X4JWpDOzGHmEcv5tu9sB7jIEI5ucUs/Mmu/4wRRLg8IZDMf+kDYn4V
-         eJisltb2grwfts+NfCm248Nl9hqeHcJ5529iYElKW1dTDdo76GRpkh+dO4elH4c1Lso9
-         5KI4JfgVdkq1QYNTRow/ew2djdyB6jNkLX0ohZI1fZEgBPGuA58VHmiLSRBHFSwu7zjv
-         d4nlaD9dtE/WQF51wMr6DOtA3Rj/Vil4ArEgMCPnACOisWYQLu1UBpbPgh61bYtVBxQZ
-         Du0Q==
-X-Forwarded-Encrypted: i=1; AHgh+RpZsAmqFPIn/7Bw+sYpXLFH8V2x1+MXxwgttlhxu5GFO5IvsviyYpWIyCCqQTunECEbpamU7S4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzT9fgPAUY5XIjHOkz+fPdaDjPtQdrwFvxDy3Ka2VWJlJosRf85
-	p9IXBGntcV5Z5G15kxPLQ6XzHJM37gLBeV/QSPr651Wlrv0wLicZWGrHlUsdg1Ev6ro+eCY5mFc
-	PwWmWep9p4/TSdsjHLU9Vt6BI0kYOrNO3T8cqDntiWc/BR8sTTVp45AqhUkt2kR7J
-X-Gm-Gg: AR+sD12tYLpROO1zpzZXvZTDZ9lulKr/5ON/y9oYbkezUMD0pz+69v56VdFETaw+Vi/
-	qNwQTiD76yvRZ9X+4ZsvJlHhpfofQw8qM9CtpLkOuo/rRD6v+odYorbtAQdjpSzZjx7ZW3IM4wi
-	QVdWZeaETTZDi21DWJRUMQzRDIs+JqB4ouhzX4QveEkQKMuVOBUuf8ro7e+hKOapk8eHM2Tbg4b
-	Qr093/Ew2KWjXXfuEAD7x7G1q1AiPMa299ePYBTcGekQCPJcwoUk1n9w/ZmcMFbrAYzBJprYipC
-	UHMKuMeR7VC9u8rqA8MIPdAzHraAIxZA6TcMS4VaL7hUCsm5cEmqFedBqu6SVwbw2RfXcIWgWeC
-	cEV2oTnDluCXJyJayN6fvAY7WaH+J/2lUaAPbJwNWWUQrJGo0jbCQLCQ=
-X-Received: by 2002:a05:6a21:178a:b0:3c3:68a5:50c8 with SMTP id adf61e73a8af0-3c90d6e9458mr754408637.71.1785424260203;
-        Thu, 30 Jul 2026 08:11:00 -0700 (PDT)
-X-Received: by 2002:a05:6a21:178a:b0:3c3:68a5:50c8 with SMTP id adf61e73a8af0-3c90d6e9458mr754381637.71.1785424259800;
-        Thu, 30 Jul 2026 08:10:59 -0700 (PDT)
-Received: from hu-jjohnson-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-13e72643a12sm34502171c88.5.2026.07.30.08.10.58
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 30 Jul 2026 08:10:58 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: Jeff Johnson <jjohnson@kernel.org>,
-        Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: ath11k@lists.infradead.org, ath12k@lists.infradead.org,
-        linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260728-mac_phy_caps_parse-stride-mismatch-v1-0-27a9c1a3fbd0@oss.qualcomm.com>
-References: <20260728-mac_phy_caps_parse-stride-mismatch-v1-0-27a9c1a3fbd0@oss.qualcomm.com>
-Subject: Re: [PATCH ath-next 0/2] wifi: ath: fix stride mismatch in
- mac_phy_caps_parse
-Message-Id: <178542425857.3503956.13658873020140475290.b4-ty@oss.qualcomm.com>
-Date: Thu, 30 Jul 2026 08:10:58 -0700
+	id 1wpftR-0000000Bnwr-3siN;
+	Fri, 31 Jul 2026 05:34:50 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id DC3C3600C8;
+	Fri, 31 Jul 2026 05:34:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26CC81F000E9;
+	Fri, 31 Jul 2026 05:34:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1785476088;
+	bh=X+kGKFP4B0Q+9BVZYTfIdRIGmMHCgn6SIs9Evw3RV1Q=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=nk4IYXiykYXlE48Hp6ym9KzOxQfc0H9nG51s5RXUokPSWdGVru9LBZQgCg7v1YtUI
+	 YlXO9czxwUtxyiuGMB2gH2sbAQC/5218+Y98+BWXpobH0ido5dLVYsaVxBkbA4F09t
+	 jkF/rco8kwIiuUKNyFDlAJuESVS/DC/aUqVLO43ezkAjL2sM3+RCc8/79RXwxeESjc
+	 BRWMyd1zELS9gEofbu/wRNjxov1L3fYXA36DL8KqTLc5kd62CjXutD+wHzvLJz+j40
+	 9Ncd5j7bS9kLoEunkHDadrHufpCRy2qsICffHGkEEem2J4uPiYVm1Hbeis5LymT36D
+	 /kef17IVEHeKg==
+Date: Fri, 31 Jul 2026 07:34:39 +0200
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Bjorn Helgaas <helgaas@kernel.org>
+Cc: Bjorn Helgaas <bhelgaas@google.com>, 
+	Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Nirmal Patel <nirmal.patel@linux.intel.com>, 
+	Jonathan Derrick <jonathan.derrick@linux.dev>, Jeff Johnson <jjohnson@kernel.org>, linux-pci@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, linux-wireless@vger.kernel.org, 
+	ath12k@lists.infradead.org, ath11k@lists.infradead.org, ath10k@lists.infradead.org, 
+	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, Qiang Yu <qiang.yu@oss.qualcomm.com>, 
+	Ilpo =?utf-8?B?SsOkcnZpbmVu?= <ilpo.jarvinen@linux.intel.com>, Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Subject: Re: [PATCH v3 6/8] wifi: ath12k: Use
+ pci_{enable/disable}_link_state() APIs to enable/disable ASPM states
+Message-ID: <lmmrcv2dpuitbqmuargtsbk647z66gs6aqanzis226py2hjhys@d5h5p6ltmg4e>
+References: <20260708-pci-aspm-fix-v3-6-6bd72451746e@kernel.org>
+ <20260710202546.GA989860@bhelgaas>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.3
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzMwMDExNSBTYWx0ZWRfX+rJGvuMtXdMU
- KleMNUrY2NsQZGDhPP9unSN7sxSnLF9JEMB2/WWU4hh7U1znnfoZQyo9nWDvO6MHR7GdodeVDK6
- rJhp9zH+qkT9YI02NlI4UkmLNx6vuHxYwtGVDyNWBj/+fR1OpA4wLZcwMXVnXZWYrY1fQnSl+mz
- JmBzTCAjD0Fe0noDlfQWGfL5hidU5McwelDJb/xWZGSxnqU6EOYLdIHYPtyF/rytYEKoPiPFC2t
- QcabDVDPRoentLpPyMIigzbDGuIXj2eCsC4HQ/QgKL5vUZlHwBxpr4t/12mgCkwYHvEl+Xc5vMs
- KwD0U+mHeLE1Sv+DBqgZVRUzY3eJK8cgKlhrcfqE/kZNsbjVF2Xv3TR8c99erLu+BHmqYSqFX7G
- ypYHjvAZJzEBZ/X+keBXljZ00UYYBo6Qn+/IMOb1cK5NRJlYjhwjJKd2p0TjM6jRayvk82x7vxa
- l6BDvEqRDU2DO2MPG0w==
-X-Authority-Analysis: v=2.4 cv=DNq/JSNb c=1 sm=1 tr=0 ts=6a6b6984 cx=c_pps
- a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=EUspDBNiAAAA:8 a=QOL9NQ9GI3QxS5QxDNMA:9 a=QEXdDO2ut3YA:10
- a=_Vgx9l1VpLgwpw_dHYaR:22
-X-Proofpoint-ORIG-GUID: IE9QJxvVhxViZXzVtOJ9IRFOdMb49ddk
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzMwMDExNSBTYWx0ZWRfX4XXxyJwiWIzM
- VtvtaxoYy93SdGiSpxxhFc5hy33/qhKcqeLuiKU0DubRveic0O90JcKSvvLR8oXU49H8mDgRLub
- 8IrvTA+XLhyxoVCozKQNtJK3LHbq3Lg=
-X-Proofpoint-GUID: IE9QJxvVhxViZXzVtOJ9IRFOdMb49ddk
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-07-30_04,2026-07-29_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 adultscore=0 priorityscore=1501 suspectscore=0 clxscore=1015
- impostorscore=0 bulkscore=0 spamscore=0 phishscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607300115
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260730_081101_539661_328AF6BC 
-X-CRM114-Status: UNSURE (   8.14  )
-X-CRM114-Notice: Please train this message.
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <20260710202546.GA989860@bhelgaas>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,20 +76,53 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-On Tue, 28 Jul 2026 18:05:27 -0700, Jeff Johnson wrote:
-> Both ath11k and ath12k have the same issue.
+On Fri, Jul 10, 2026 at 03:25:46PM -0500, Bjorn Helgaas wrote:
+> On Wed, Jul 08, 2026 at 04:30:20PM +0200, Manivannan Sadhasivam wrote:
+> > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > 
+> > It is not recommended to enable/disable the ASPM states on the back of the
+> > PCI core directly using the LNKCTL register. It will break the PCI core's
+> > knowledge about the device ASPM states. So use the APIs exposed by the PCI
+> > core to enable/disable ASPM states.
+> > 
+> > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> > 
+> > Reported-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > ---
+> >  drivers/net/wireless/ath/ath12k/Kconfig |  2 +-
+> >  drivers/net/wireless/ath/ath12k/pci.c   | 19 +++----------------
+> >  drivers/net/wireless/ath/ath12k/pci.h   |  4 +++-
+> >  3 files changed, 7 insertions(+), 18 deletions(-)
+> > 
+> > diff --git a/drivers/net/wireless/ath/ath12k/Kconfig b/drivers/net/wireless/ath/ath12k/Kconfig
+> > index 4a2b240f967a..7852ede3eaea 100644
+> > --- a/drivers/net/wireless/ath/ath12k/Kconfig
+> > +++ b/drivers/net/wireless/ath/ath12k/Kconfig
+> > @@ -1,7 +1,7 @@
+> >  # SPDX-License-Identifier: BSD-3-Clause-Clear
+> >  config ATH12K
+> >  	tristate "Qualcomm Wi-Fi 7 support (ath12k)"
+> > -	depends on MAC80211 && HAS_DMA && PCI
+> > +	depends on MAC80211 && HAS_DMA && PCI && PCIEASPM
+> 
+> As Sashiko pointed out [1], I think adding the PCIEASPM dependency is
+> an issue.  The PCI core should provide stubs or whatever is necessary
+> to make ath12k work even if PCIEASPM isn't selected.
+> 
+> I'm guessing this hardware depends on the ability to disable ASPM even
+> without PCIEASPM so we probably would need more than just empty stubs.
+> We do build aspm.c unconditionally now and we provide LTR and L1SS
+> save/restore regardless of PCIEASPM.  Maybe we need something similar
+> here.
 > 
 
-Applied, thanks!
+This was discussed in v2 and Ath maintainer Jeff was in agreement with the
+dependency:
+https://lore.kernel.org/linux-pci/705a4fe5-658e-25ac-9e4d-6b8089abca46@linux.intel.com
 
-[1/2] wifi: ath12k: fix stride mismatch in mac_phy_caps_parse()
-      commit: 4c6eb712a91fa079be6f9f1419c96e0ad2227081
-[2/2] wifi: ath11k: fix stride mismatch in mac_phy_caps_parse()
-      commit: 7a246c72132eb943b5844ba79dad597b47429dba
+- Mani
 
-Best regards,
 -- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-
+மணிவண்ணன் சதாசிவம்
 
