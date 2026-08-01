@@ -4,85 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6C8FC5516F
-	for <ath12k@archiver.kernel.org>; Sat,  1 Aug 2026 00:43:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7038C54FCD
+	for <ath12k@archiver.kernel.org>; Sat,  1 Aug 2026 06:02:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=F+mu3lYgplfrwjY2DJL/ygTm4SmYdcK4n2UmUXCZpKc=; b=twq1YF6462orJ0UMPzr70RBzuj
-	2OJnfVTTZvVt22m5Z5QKWH2R/QtwJ8ot7GT4KWl9b19UaBKjdgZClPdNXE+S+M3OPaOgUSLzP47i+
-	1iHWfK9sLUDqhGj8LXVYGcQ2RifFjoIuP/fW5mWYLxfmhcCLHLRajRDWPr3lXhmEukZvH3AKyQjKQ
-	Mm2VBkDqC8aqJ4iQXBiln9XpOXiWdlRdpV4TrRd9PuuehLnXYeQXa8nmvwY8bXbd2yz5DKQtJaN/2
-	XlZzgC3n36yX0HCeXNLSfC5S9H/TfeS0ijKXdnWzMM2fMAi6rBSkPPTDaDpfswbiaT/5bwJgXisNE
-	/q6tBbKw==;
+	bh=dSSoRK/XrcPfKtRHbLTdJJPBxH7vcnIRBS2iWLlS+NI=; b=OWwQ70xL9FywQi1Kk54x5WkpHe
+	vkdRidSWRnhRWkc4JPFox+RkVJ64D2K7WJ1HeNR1SbHcMKbEvA+MnQucytAy3B9HP+5yAuH5I3fF4
+	w1jzzjiQFjEgvYuh2qaEkGSlvW7PSPV9RSN2zBfr5qwmhGt0a5O3Dfg/NqKA8fwA2fhxUM+tSl8Hi
+	aPRsxxLN6Ty2Zg7EYN8Cn/KGEYkZrx94DQqt5ChGXjQbe0Dv/g36D3x/dzESh8pe9Y4EZ24ioJePp
+	GZsphc12ms2TGSjvXE4YvCmPBvLtEGh2pmxTzJDbSIJb3S/3iIA79nmbBUWRgkEb7ns/9A8lpc6AO
+	8xVVVWRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpxp2-0000000DmOu-2TxV;
-	Sat, 01 Aug 2026 00:43:28 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1wq2nS-0000000DvSk-0gio;
+	Sat, 01 Aug 2026 06:02:10 +0000
+Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpxp0-0000000DmOX-1mQT
+	id 1wq2nP-0000000DvSC-0MSm
 	for ath12k@lists.infradead.org;
-	Sat, 01 Aug 2026 00:43:27 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id 2adb3069b0e04-5aeb2bc82ccso1721138e87.2
-        for <ath12k@lists.infradead.org>; Fri, 31 Jul 2026 17:43:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1785545004; x=1786149804; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=F+mu3lYgplfrwjY2DJL/ygTm4SmYdcK4n2UmUXCZpKc=;
-        b=KEY2CrTTax71sutG+T1Tn1cGg7iYF2zxgry5YbTGomW6/8YYChm3hvhbMlpMkU+YWw
-         FID5rw+Qmc1ut9wOLcLbys55dw+jMaX86Wnk0iZkuE3wa0RS8vRYR6BAaF9bCG+y+ejX
-         cqAv/DXJHvyHgqJ2WXvzdw/cuv9tw1nHWG/3Hb2L8z6ynPWPiPayHnYPaHZjtAc9Tv+9
-         OQZFDy3Ovh74l0YbH2/l2R6QLuL78dPvDUVioJswF8sEEg+56AAaTYHa7nY/MawzhqHr
-         jxFqClaai72w6T921PF89blnms2V1oB3yOINmjC3PxWp9Li8BaN/ymXJQd8f05idk8JP
-         hpwA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785545004; x=1786149804;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=F+mu3lYgplfrwjY2DJL/ygTm4SmYdcK4n2UmUXCZpKc=;
-        b=fNpfjKVG2e8gOzQe8yh2tACsQ+1X1QMso/8m68mQGAn5Ny/xdAzm5PDZ/kHRRhwWOB
-         d9aQRIZ3gxUGIwL17fOswkFQCRzaPIybUt9XBCWJ5ypGRQ6c3A83ymeLlRIYyG+UTfIQ
-         3yuGO7Kf/x5XtA6msoK1og0BIPEi+xPA6j1kmvpTZqPGhku3XhE7zpFstQANscpg9eYe
-         +Pt78UdYkZjLawjLh1LHypdiQZ/E7B05yp2n8twvYoHaWy98z815vPshTn9yRjWS7BxQ
-         ySneoctxgwN3h53ZYIJRJm33/bmP+qAksSd4pimdJ0vLSZ270e/JrXrW8+k/8CXx3F36
-         Uo/Q==
-X-Forwarded-Encrypted: i=1; AHgh+Rph1sAh4VQoPrsK6zUlxmRYglntOxxj61dOvJINI9I3D9nvvtRNmZQjheA78hAP43DwH/1XTBw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzowxptO/c6ktJ2x9M01FzpuwlUhvdFuhGV3riTxY3KZY/grKdM
-	lwvdNjAokbtG5WdDFhH585XkSHPWxLvoAiJ8li7iHr0ie5Doztx9tRa/
-X-Gm-Gg: AR+sD13DG6sJ5EKA4b/BIh9tK+8DX1tJTwe8rFLvIyDM97q9wGtNtATizWvOpEPacPh
-	zJpqU/7HS7dYXHP74ozoWiEy7aD9gQe81upxNXVXk98OZz3O0GBCw2WQvRGryrYltDylPkTY7j5
-	OT4xwysAOTjqM9Gro7+Hweya9RDjUDN8W5Y9/N+1SyBTyn9QYv3d+4LauKi+qawauv4PJ/xj1BO
-	WWqXuQWEMVSvfLadtVYAXCc4tUpykNANqskgfaRt/Q3+5smquABWPoestFNEXdOubQixOcITnWG
-	tIH0qHkKyo2H8fUvUdT9YwlUTcT95+avYU9CGJ889jF6ImskY9UsbjeXPTXUfK4E4EJaz/wXe0e
-	2CfUme4tKDqXBYBrUX7pTBYaUHUOP8NV0x+pUhswq98ySCDv77IeFErwFSkI4HmiVPaNJD0IeYU
-	sx1xDR9+Slo21CLdVb6t0UKQr/YHbrr+zQGJXHb3FEwRxvx13DlKAue/e/Kva6e3h9gfJgEdKZi
-	nYf3gmfxrdI5/nhD5hxL/lZ
-X-Received: by 2002:ac2:4a6a:0:b0:5b0:f9d:f7d9 with SMTP id 2adb3069b0e04-5b2e4f83e1dmr200946e87.45.1785545003821;
-        Fri, 31 Jul 2026 17:43:23 -0700 (PDT)
-Received: from zbok.dom.cz (89-79-165-104.dynamic.play.pl. [89.79.165.104])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5b2e23d23d7sm598582e87.37.2026.07.31.17.43.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 31 Jul 2026 17:43:22 -0700 (PDT)
-From: Kamil Bienkiewicz <perceivalpercy@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	Kamil Bienkiewicz <perceivalpercy@gmail.com>
-Subject: [PATCH v2] wifi: ath12k: advertise AP_VLAN interface mode for IPQ5332
-Date: Sat,  1 Aug 2026 02:42:43 +0200
-Message-ID: <20260801004243.489010-1-perceivalpercy@gmail.com>
-X-Mailer: git-send-email 2.55.0
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+	Sat, 01 Aug 2026 06:02:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1785564127; x=1817100127;
+  h=date:from:to:cc:subject:message-id;
+  bh=6UnMVwzQjezhkyhFppyeHDL6Uuf9BXs/WDSKdfMUFzM=;
+  b=nFAPgHhwR4BiiDpqLRUbXX6ig06RzKX5e0j5e/uNxfv/PC+C93TaM/xo
+   vWmiq2vfVAugrpYt+YNiJbID2hVV28dYZFg0OqFYk9YpXwrm9deCWPsBZ
+   u2nmQyCMq1J/4uHXiciK4Xavv2As8Vv+E+/aUIZnDnPgMTIcdL+B7+t+B
+   tMOhjYRi4Kdw5Uczr16WncRBzO554ZzNHQIc6jf4i2Y3U7hZ0Qzg0k6Jl
+   X2r8savBm8tD+Fj1/eBFF55rUb5g9kPTJo4A2RanywFMHnxTn5tX1poSd
+   kfCFaBNniQtXMoIGDL8aUmxd17t5ZuocTd1uzs7JgfRjvHCPGmjjA0Ehu
+   w==;
+X-CSE-ConnectionGUID: NSIiKkUDS+abuVoxUaYfyQ==
+X-CSE-MsgGUID: WdNRCAaPTKO/IOAYlWPf5Q==
+X-IronPort-AV: E=McAfee;i="6800,10657,11861"; a="88715418"
+X-IronPort-AV: E=Sophos;i="6.25,198,1779174000"; 
+   d="scan'208";a="88715418"
+Received: from fmviesa004.fm.intel.com ([10.60.135.144])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 31 Jul 2026 23:02:00 -0700
+X-CSE-ConnectionGUID: cLH/z/qvTDqfjLEM0FJY5g==
+X-CSE-MsgGUID: jcLqvlizSDaWQQE9kWqfew==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.25,198,1779174000"; 
+   d="scan'208";a="262709422"
+Received: from lkp-server01.sh.intel.com (HELO 6eda058d650d) ([10.239.97.150])
+  by fmviesa004.fm.intel.com with ESMTP; 31 Jul 2026 23:01:59 -0700
+Received: from kbuild by 6eda058d650d with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1wq2nE-000000002qf-3AIC;
+	Sat, 01 Aug 2026 06:01:56 +0000
+Date: Sat, 01 Aug 2026 14:01:42 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org
+Subject: [ath:ath-next] BUILD SUCCESS
+ 3bbd05723d15dd06f0560bcd94fbf9a91b5f5613
+Message-ID: <202608011428.nKgl2D11-lkp@intel.com>
+User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260731_174326_504284_A846DF57 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20260731_230207_592401_D81CD475 
+X-CRM114-Status: UNSURE (   3.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,57 +83,104 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Only the two QCN9274 hw_params advertise NL80211_IFTYPE_AP_VLAN; the
-IPQ5332 entry does not. As ath12k sets SW_CRYPTO_CONTROL, mac80211 does
-not add the mode on the driver's behalf, so AP/VLAN is absent from the
-wiphy and hostapd cannot create WDS station interfaces:
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath-next
+branch HEAD: 3bbd05723d15dd06f0560bcd94fbf9a91b5f5613  wifi: ath6kl: clamp assoc request/response lengths before subtracting IE offsets
 
-  nl80211: Failed to create interface <name>: -95 (Operation not supported)
+elapsed time: 774m
 
-The 4-address datapath itself (sta_set_4addr, per-station TCL metadata,
-WMI_PEER_USE_4ADDR/WMI_VDEV_PARAM_WDS, 4-address frame and NULL/EAPOL
-handling) is shared Wi-Fi 7 code with no per-chip or per-bus gating, so
-IPQ5332 can already deliver it. AP_VLAN is a software interface type, so
-no interface combination changes are needed.
+configs tested: 84
+configs skipped: 3
 
-On a mixed-bus single-wiphy group the effect is wider still, since
-ath12k_mac_get_ifmodes() intersects interface_modes across all radios:
-one IPQ5332 masks AP_VLAN for the QCN9274 radios too.
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Advertise AP_VLAN on IPQ5332 as QCN9274 does. Tested with 4-address WDS
-stations on IPQ5332 + 2x QCN9274; RADIUS dynamic VLAN was not tested.
+tested configs:
+alpha                            allnoconfig    gcc-16.1.0
+alpha                           allyesconfig    gcc-16.1.0
+alpha                              defconfig    gcc-16.1.0
+arc                             allmodconfig    gcc-16.1.0
+arc                             allyesconfig    gcc-16.1.0
+arc                  randconfig-001-20260801    gcc-14.3.0
+arc                  randconfig-002-20260801    gcc-12.5.0
+arm                  randconfig-001-20260801    clang-24
+arm                  randconfig-002-20260801    gcc-8.5.0
+arm                  randconfig-003-20260801    gcc-12.5.0
+arm                  randconfig-004-20260801    clang-18
+arm64                         randconfig-001    gcc-14.3.0
+arm64                randconfig-001-20260801    clang-21
+arm64                randconfig-002-20260801    clang-21
+arm64                randconfig-003-20260801    gcc-14.3.0
+arm64                randconfig-004-20260801    clang-17
+csky                            allmodconfig    gcc-16.1.0
+csky                 randconfig-001-20260801    gcc-12.5.0
+csky                 randconfig-002-20260801    gcc-10.5.0
+hexagon              randconfig-001-20260801    clang-24
+hexagon              randconfig-002-20260801    clang-17
+i386                            allmodconfig    gcc-14
+i386       buildonly-randconfig-001-20260801    clang-22
+i386       buildonly-randconfig-002-20260801    clang-22
+i386       buildonly-randconfig-003-20260801    clang-22
+i386       buildonly-randconfig-004-20260801    clang-22
+i386       buildonly-randconfig-005-20260801    gcc-14
+i386       buildonly-randconfig-006-20260801    gcc-14
+i386                 randconfig-011-20260801    clang-22
+i386                 randconfig-012-20260801    gcc-14
+i386                 randconfig-013-20260801    gcc-14
+i386                 randconfig-014-20260801    clang-22
+i386                 randconfig-015-20260801    clang-22
+i386                 randconfig-016-20260801    gcc-14
+i386                 randconfig-017-20260801    clang-22
+loongarch                          defconfig    clang-24
+loongarch            randconfig-001-20260801    clang-18
+loongarch            randconfig-002-20260801    gcc-16.1.0
+nios2                           allmodconfig    gcc-11.5.0
+nios2                            allnoconfig    gcc-11.5.0
+nios2                randconfig-001-20260801    gcc-8.5.0
+nios2                randconfig-002-20260801    gcc-11.5.0
+parisc                          allmodconfig    gcc-16.1.0
+parisc                          allyesconfig    gcc-16.1.0
+parisc                             defconfig    gcc-16.1.0
+parisc               randconfig-001-20260801    gcc-11.5.0
+parisc               randconfig-002-20260801    gcc-9.5.0
+powerpc                     bamboo_defconfig    clang-21
+powerpc              mpc834x_itxgp_defconfig    clang-24
+powerpc              randconfig-001-20260801    clang-20
+powerpc              randconfig-002-20260801    gcc-10.5.0
+powerpc64            randconfig-001-20260801    clang-24
+powerpc64            randconfig-002-20260801    clang-24
+riscv                randconfig-001-20260801    gcc-14.3.0
+riscv                randconfig-002-20260801    clang-20
+s390                 randconfig-001-20260801    gcc-15.2.0
+s390                 randconfig-002-20260801    clang-24
+sh                                 defconfig    gcc-16.1.0
+sh                   randconfig-001-20260801    gcc-16.1.0
+sh                   randconfig-002-20260801    gcc-16.1.0
+x86_64     buildonly-randconfig-001-20260801    clang-22
+x86_64     buildonly-randconfig-002-20260801    clang-22
+x86_64     buildonly-randconfig-003-20260801    gcc-13
+x86_64     buildonly-randconfig-004-20260801    clang-22
+x86_64     buildonly-randconfig-005-20260801    clang-22
+x86_64     buildonly-randconfig-006-20260801    clang-22
+x86_64               randconfig-001-20260801    clang-22
+x86_64               randconfig-002-20260801    gcc-14
+x86_64               randconfig-003-20260801    gcc-14
+x86_64               randconfig-004-20260801    clang-22
+x86_64               randconfig-005-20260801    gcc-14
+x86_64               randconfig-006-20260801    gcc-14
+x86_64               randconfig-011-20260801    clang-22
+x86_64               randconfig-012-20260801    gcc-14
+x86_64               randconfig-013-20260801    clang-22
+x86_64               randconfig-014-20260801    gcc-14
+x86_64               randconfig-015-20260801    clang-22
+x86_64               randconfig-016-20260801    clang-22
+x86_64               randconfig-071-20260801    gcc-14
+x86_64               randconfig-072-20260801    gcc-14
+x86_64               randconfig-073-20260801    clang-22
+x86_64               randconfig-074-20260801    gcc-14
+x86_64               randconfig-075-20260801    clang-22
+x86_64               randconfig-076-20260801    clang-22
 
-Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01270-QCAHKSWPL_SILICONZ-1
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Kamil Bienkiewicz <perceivalpercy@gmail.com>
----
-v2: rebased onto ath/main (8150c22bc). No functional change; v1 was
-generated against a backports tree and its trailing context no longer
-matched after .supports_cong_ctrl_max_msdus was added to the IPQ5332
-hw_params entry.
-
-IPQ5424 (line ~845, and possibly QCC2072/WCN7850) appears to need the
-same change, but I have no such hardware, so I have limited this to
-IPQ5332 which I could test.
- drivers/net/wireless/ath/ath12k/wifi7/hw.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-index 7b86f324b..a20c21807 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-@@ -664,7 +664,8 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 
- 		.interface_modes = BIT(NL80211_IFTYPE_STATION) |
- 				   BIT(NL80211_IFTYPE_AP) |
--				   BIT(NL80211_IFTYPE_MESH_POINT),
-+				   BIT(NL80211_IFTYPE_MESH_POINT) |
-+				   BIT(NL80211_IFTYPE_AP_VLAN),
- 		.supports_monitor = true,
- 		.supports_cong_ctrl_max_msdus = true,
- 
--- 
-2.55.0
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
