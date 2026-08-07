@@ -4,68 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 848A8C5AC7A
-	for <ath12k@archiver.kernel.org>; Fri,  7 Aug 2026 02:56:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87434C5AC7C
+	for <ath12k@archiver.kernel.org>; Fri,  7 Aug 2026 10:59:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=sMjo+vMZ3HtHucfyWe9JW8Ip/ZGVz+rgSm+BHT0zqf4=; b=l9WGDoIkznXVHhyYer1OSskA/k
-	EuNfez6tJ98zH0p2DQY6X8rXC3UOM4Rj3sMecXWHH1hEtwyNgYxAr3gDoL1lF8q8sO7gsHwbur5F9
-	H1BiBpPemLQQVvHiNchJlIfcKlg6xsIcGZo5r5VvIhBJ2Uiz8OsEoNyPxY3VKIA0IwmKFytH/ef4f
-	NBStjk/vHVjRNXgRUQSbHyd728Ug+vVwKqFLCz94nHTW9ywceXu4dZyaV5TnbRnkTE/It9p8vxHE9
-	GvfS0g2Ei5Uy9QsXR/UCPem+BKcE++ff9UDlmiZAgi5AHCL77WTfu5LrP/iQ3fnD92EDGcHx6qgsT
-	tjnUOlCQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=2uks6hn8TsE/jS0Ca5ryK/ZPaWu5PXeRNJN2WD99sMs=; b=E0kMovJhHlt3oAq65GV+YJGEfL
+	XBkXZaQZjafOBWFZV3jczHCZrMxhA/NDRYCzUGfQa+tFZZkGf1ZSxLXXJZIVqiPz6hMu2CNadleAb
+	3fJdXMV6Y4ojJqBqVCveOApkAw8LRNWOuyJP1td3+73S3cSZv1jfBGEywiEoJhTZ0Z0RO0aKPw3J6
+	KNmFCkdxmGlJQ1xbVfoKGNoojUpZzVHm9IwtRn089lD1Wr56Lg0VJkArlQP+MsDc+eCcMvy/N8uYw
+	Dg5ctfdCf1UB/ZXrTf2EodcHP5J75+1OINBbe7hvRnaZF89HhhnZT3qjpzIg5FP2HAv2jpYwNNCB0
+	Eu5gcb/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsAlL-000000070mn-43aX;
-	Fri, 07 Aug 2026 02:56:47 +0000
-Received: from mailgw.kylinos.cn ([124.126.103.232])
+	id 1wsII8-00000007mSF-0qZJ;
+	Fri, 07 Aug 2026 10:59:08 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsAlG-000000070ln-438M
+	id 1wsII4-00000007mPc-1paV
 	for ath12k@lists.infradead.org;
-	Fri, 07 Aug 2026 02:56:46 +0000
-X-UUID: 97dedbf4920b11f1aa26b74ffac11d73-20260807
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.12,REQID:75a0e0ad-b6bd-44ee-8edb-59f1de35a4e6,IP:0,U
-	RL:0,TC:0,Content:-5,EDM:25,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
-	N:release,TS:20
-X-CID-META: VersionHash:e7bac3a,CLOUDID:dc1a74f3a12583116f8656b6593050f9,BulkI
-	D:nil,BulkQuantity:0,Recheck:0,SF:81|82|83|102|850|865|898,TC:nil,Content:
-	0|15|50,EDM:5,IP:nil,URL:99|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:
-	0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULS
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: 97dedbf4920b11f1aa26b74ffac11d73-20260807
-X-User: gonglinkai@kylinos.cn
-Received: from localhost.localdomain [(10.44.16.150)] by mailgw.kylinos.cn
-	(envelope-from <gonglinkai@kylinos.cn>)
-	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
-	with ESMTP id 481017638; Fri, 07 Aug 2026 10:56:31 +0800
-From: Linkai Gong <gonglinkai@kylinos.cn>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-	linux-wireless@vger.kernel.org,
+	Fri, 07 Aug 2026 10:59:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1786100342;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=2uks6hn8TsE/jS0Ca5ryK/ZPaWu5PXeRNJN2WD99sMs=;
+	b=Vz9l8FkcRTrVobjZSfPt6x+lhI7qfFA8C3uyAW7wEtkbsBOWDhxF7K/P76gCXkMfhpXz0w
+	t7Lk29IB6x7xcgMrCkbyMMmPzjtEPi4Fy7wd6qzdmhaTFUABNr0OgvhHITeRsHLDX/e3qn
+	alEJF4+Ktm/nOvOZz6xtaE1rCGmWMCU=
+Received: from mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-380-J2S9uKdlOKGXCG6x2-Iq5g-1; Fri,
+ 07 Aug 2026 06:58:59 -0400
+X-MC-Unique: J2S9uKdlOKGXCG6x2-Iq5g-1
+X-Mimecast-MFC-AGG-ID: J2S9uKdlOKGXCG6x2-Iq5g_1786100338
+Received: from mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.93])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id C64961956080;
+	Fri,  7 Aug 2026 10:58:57 +0000 (UTC)
+Received: from fedora.redhat.com (unknown [10.44.48.52])
+	by mx-prod-int-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 96E32180049F;
+	Fri,  7 Aug 2026 10:58:55 +0000 (UTC)
+From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+To: jjohnson@kernel.org
+Cc: ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] wifi: ath12k: fix channel list double-free on error paths
-Date: Fri,  7 Aug 2026 10:56:28 +0800
-Message-Id: <20260807025628.1893831-1-gonglinkai@kylinos.cn>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <6a9196e8-2e2f-43f8-9665-6ebb82b95951@oss.qualcomm.com>
-References: <6a9196e8-2e2f-43f8-9665-6ebb82b95951@oss.qualcomm.com>
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+Subject: [PATCH v5 1/4] wifi: ath11k: use queue mapping for WCN6750 ring selection
+Date: Fri,  7 Aug 2026 12:58:40 +0200
+Message-ID: <20260807105843.20203-2-jtornosm@redhat.com>
+In-Reply-To: <20260807105843.20203-1-jtornosm@redhat.com>
+References: <20260807105843.20203-1-jtornosm@redhat.com>
 MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.93
+X-Mimecast-MFC-PROC-ID: vC8LuOWKKJYRngcO_zTkehZSXpo63Gq-ZeEMiF8AID4_1786100338
+X-Mimecast-Originator: redhat.com
 Content-Transfer-Encoding: 8bit
+content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260806_195643_701156_E68156A7 
-X-CRM114-Status: UNSURE (   7.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260807_035904_591487_2231CB98 
+X-CRM114-Status: GOOD (  14.13  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,26 +88,64 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, Aug 06, 2026 at 18:47:38 -0700, Jeff Johnson wrote:
-> https://wireless.docs.kernel.org/en/latest/en/users/drivers/ath12k/submittingpatches.html#tested-on-tag
-> Tested-on: tag missing. How was this tested?
+WCN6750 selects the TCL ring using skb_get_hash() to distribute
+flows across its 3 TX rings, as introduced in commit 7636c9a6e7d7
+("wifi: ath11k: Add multi TX ring support for WCN6750"). The goal
+was to prevent out-of-order packet delivery that could occur with
+smp_processor_id()-based selection, where packets of the same flow
+could end up on different rings depending on CPU scheduling.
 
-Thanks for the review.
+Switch to skb_get_queue_mapping() instead, which returns the AC
+(access category) assigned by mac80211 in ieee80211_select_queue().
+This provides the same ordering guarantee: packets of the same TID
+always map to the same AC and therefore always land on the same
+ring, preventing reordering.
 
-This issue was found by code review of the error paths in
-ath12k_mac_setup_channels_rates(). I do not have QCN9274/WCN7850
-hardware, so I could not provide a Tested-on tag or reproduce the
-ENOMEM double-free on a device.
+Using queue mapping for ring selection also provides QoS-aware
+distribution, where each traffic class gets a deterministic ring
+assignment, rather than the random distribution that flow hashing
+produces. With 3 rings and 4 ACs (VO=0, VI=1, BE=2, BK=3), the
+mapping becomes: VO and BK share ring 0, VI uses ring 1, and BE
+uses ring 2.
 
-The bug is: after kfree() of sbands[].channels on failure, the
-pointer is left non-NULL (or the wrong band is cleared), and
-ath12k_mac_cleanup_unregister() frees it again.
+This matches the approach already used by ath12k for WCN7850, which
+has the same ring count and uses skb_get_queue_mapping() for its
+ring selector.
 
-I understand Tested-on is required for ath12k. I will follow up
-with a v2 including Tested-on once I can test on QCN9274/WCN7850
-hardware. Meanwhile, any Tested-by from someone with the hardware
-would be appreciated.
+This change also removes the dependency on skb_get_hash(), which
+is relevant for a subsequent patch that removes the skb parameter
+from the get_ring_selector hw_ops callback entirely, enabling
+TX flow control in wake_tx_queue without requiring a complex peek
+to inspect frames before dequeue.
 
-Thanks,
-Linkai
+Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+---
+v5: no modification
+v4: https://lore.kernel.org/all/20260724053121.15759-2-jtornosm@redhat.com/
+
+ drivers/net/wireless/ath/ath11k/hw.c | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath11k/hw.c b/drivers/net/wireless/ath/ath11k/hw.c
+index 93f9a03c48dc..d679e39dce03 100644
+--- a/drivers/net/wireless/ath/ath11k/hw.c
++++ b/drivers/net/wireless/ath/ath11k/hw.c
+@@ -891,13 +891,7 @@ static u32 ath11k_hw_ipq8074_get_tcl_ring_selector(struct sk_buff *skb)
+ 
+ static u32 ath11k_hw_wcn6750_get_tcl_ring_selector(struct sk_buff *skb)
+ {
+-	/* Select the TCL ring based on the flow hash of the SKB instead
+-	 * of CPU ID. Since applications pumping the traffic can be scheduled
+-	 * on multiple CPUs, there is a chance that packets of the same flow
+-	 * could end on different TCL rings, this could sometimes results in
+-	 * an out of order arrival of the packets at the receiver.
+-	 */
+-	return skb_get_hash(skb);
++	return skb_get_queue_mapping(skb);
+ }
+ 
+ const struct ath11k_hw_ops ipq8074_ops = {
+-- 
+2.54.0
+
 
