@@ -4,138 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37FC3C5AD4E
-	for <ath12k@archiver.kernel.org>; Mon, 10 Aug 2026 09:37:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD9FDC5AD4E
+	for <ath12k@archiver.kernel.org>; Mon, 10 Aug 2026 09:46:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Z5/9h6TwDFEnLhuVtmJol2cvjCYtLCULJ7w8r4LoK4M=; b=XBwRNB7NX69JR5Fa8e0BCef+/v
-	xhoZ+TbBiCC/Hfc5ESS1TvRGVs5kBdnO67mvmzseVryJMZV24ul9loYRWR1ENCS9TxJN7J+4mdiiU
-	AvpkuPnBq+OvPBKFt7wMsrvbfN4nYtSU1E3sStEIw81ddbfy2ykHGfxR7JPZpszpRlTKlpSx0EOy9
-	G8QhNQ6ZalgPovWoBdruuAAwP8x8kovFRdgwhsUsHGf/TSGx/0mJ9cNBv/RdmAF4skZ9omOJ3GNHI
-	Rhn00jvu50pa3qviihk8kuh7slB4W8v+vIrodW+Zx3oDPFXo+0ittP6jE6l2DsJRtHvOT4iNjuS7Y
-	LXKrM0eg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=SceX2sy7F8G3sFYLj4u/9YUSzA6BhxHVelvLqQ2qv20=; b=YlguzKdp/j90CGiwasLUXJjKkH
+	dSDDPzDi/oIogoXhUShaYn36ngrWnykr+qaDHwkC1uYrh5YKIawFLec2jqlF/VC5+DYy9fGlE/Nc2
+	M784qCZDZ6MJ1HHKZMN0+DZhNt87EYUWf3xYuBdqZr8DvL+adGgXTlQ0Xz7wHxv7mBT7LFh3lEWtf
+	uu8GsjY1VuR36Xatw5haWxddLK23wXga9gIzMXYc/E2cKkZKWRlQbvJyg3iQxyRryb2xU9qbp2nTu
+	lvBBBoNGiuJIyE87Szj6TWnatTGKXP5eqGOzIutCdL3+zACzGaHLjQ4ddJ2F5x1pctQrflV6ZxcAh
+	QUxtG8iQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtMRg-0000000BQ35-3ZdS;
-	Mon, 10 Aug 2026 09:37:24 +0000
+	id 1wtMaM-0000000BQsx-27JC;
+	Mon, 10 Aug 2026 09:46:22 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtMRf-0000000BQ2V-0CLv
+	id 1wtMaI-0000000BQs1-0WoM
 	for ath12k@lists.infradead.org;
-	Mon, 10 Aug 2026 09:37:24 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67A9S70o890382
-	for <ath12k@lists.infradead.org>; Mon, 10 Aug 2026 09:37:22 GMT
+	Mon, 10 Aug 2026 09:46:20 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67A9S1qs1189351
+	for <ath12k@lists.infradead.org>; Mon, 10 Aug 2026 09:46:17 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Z5/9h6TwDFEnLhuVtmJol2cvjCYtLCULJ7w8r4LoK4M=; b=Fojhgnzfc2Cb7AbR
-	NB0mRi6OjW4ePezuAGbnc4C0mv9B4p/dKHa6TdCRdplgSN13BjBn40bakQyH/Xr1
-	FycpwyV1BQbBNd+EUexLDQZjVzQ1ka35uomny6MF6IBZn2yNHyq4dZeSQsCr+n4V
-	M+G3eZoVjtNWTQLU3x4U4ls3FXdM8hAfiInNjJiljxSIg8r57ETW077H5ettMKoc
-	UaVD2j0Ekq6scA+Ne8Yhn7VWAVGKa0MG8O/p+X+ps0BR3qydCd6Vcr1bGqdHU38I
-	tMF8ErBXNgTIMSnmQ3FxAZXxKeN49i4fpqa2q6kqwO1KCtI1b2izoExxCaKifORM
-	GkR/6w==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fy8v48qyh-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=SceX2sy7F8G3sFYLj4u/9Y
+	USzA6BhxHVelvLqQ2qv20=; b=PjJzJdEoUlUz1HhkkTs5hhbx39z2pVM6tNJt+s
+	3MuVxNUs1+t9q+tavVVXfKMomK1hSfARwqOvIgZRTvjqrre7RNpG9o6HOL7Mf3gh
+	whdEeihA0+inY1qv4m2C8eYvv+O39g4Nfqal7orUuxPaScwFjqqF1TIXSEevdUoH
+	NvhNYx4kHOb+uK8QDoMUdDozgb8KE/pczAZlPJPO4qOnKEnwFgARxY5IS8HXSogO
+	i/K2HtTL6NoHysUgb4djPwey9Xfz+eKMsVvkM+WyboBD2kGE2hTaXa01OoUL1QKZ
+	vwEPkyTsqBfgW8crm4DpYwVBI010fBCIrPPhebuNNSht46gQ==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fy8v28wgb-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 10 Aug 2026 09:37:21 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-38fa7b09921so3048885a91.1
-        for <ath12k@lists.infradead.org>; Mon, 10 Aug 2026 02:37:21 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 10 Aug 2026 09:46:16 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2cfc52ddc55so26761255ad.3
+        for <ath12k@lists.infradead.org>; Mon, 10 Aug 2026 02:46:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1786354641; x=1786959441; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Z5/9h6TwDFEnLhuVtmJol2cvjCYtLCULJ7w8r4LoK4M=;
-        b=HR0UYRPsBoUbTf8mugKaB1cJrqA/Pk0aokxn+OpmvmVHGR4rX+MvHb6YBVT6EeNdO7
-         Tm1IMqGzaf2JHybYFKha5460OWEL4RqZmE2dn2c4t4uxqwIeroMrPUkXT72STw8qwyNe
-         wG3bnEJsSSqub70xeGE2NlNYG+TXlSyG1TiqgKviFM/7NFiQeWVavF8nM35uf5D1i44v
-         FLQa1RMu2gV3iM+AykJqZXz++Pirsp3n6Z6GGR4q/5K1VYmNIPUfxt84FYA54qXymEzT
-         ogcAR2aiynauWFSN+1g+otfHqEHP2bsnJHpaAkolXTeXoup9DuQ4ieIK/9zzZk5VtMjG
-         x7Sw==
+        d=oss.qualcomm.com; s=google; t=1786355176; x=1786959976; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:content-type
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=SceX2sy7F8G3sFYLj4u/9YUSzA6BhxHVelvLqQ2qv20=;
+        b=JYam0JWYzmGnekaYGtl/v7vSAxVddv2hZwZAw+0lgFY0YMSo8Rvf7RqWqagah2GSJ8
+         KkuR/S+0FduvrTHtyj2QjgKUeefxrU9rBvSA2gbUa8Xc+N3fSCZCnSzgs7SOu/VSJXDk
+         aOegWr5lNYCxs8YV3ssahfcxp2QFDJWHozHnrqMqMP2IxIw13plgNCfqUesd8sfwlQkM
+         w7BEVOU6XIrp10caXUwxwfvwd9uYz/gRZuQQY21MHSuk+4sEL8NcA+u0AnZ1jARCpv7Y
+         JG/Ehx/pazIyBksJpsKYnVUPnT16HkcqrM7DGABZUem8ysYXIMtCIRNma3YivPOTAFBp
+         k6BA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786354641; x=1786959441;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=Z5/9h6TwDFEnLhuVtmJol2cvjCYtLCULJ7w8r4LoK4M=;
-        b=TkvR7ZYC2s0Q+c1VeL7B/+e9z21+Mz5q5vfRUYt1bHWE8jeAotV1uFmJ5iUsqD76NY
-         hgkyRWdjn6WEYRw2mfa/Oi9tCLuw5S54YNE0vwI+n+tSeXRgIvuQsnot+4qzShEYhlGr
-         3vNKDTnXmjRyPrYWWx/g7zz1TTm6Jl2tvgVOiVM4/lLoF3qpA5qGHAh9148Gwrofnwsz
-         NWP3F1e+0G/1ncu5g08xOiCyuGIePFpHLvQkvD00fWuKTnCC8obTJe3VM2S+S0KTF+F6
-         cF2r8QvcYs1olvFJKXZZCQDHJ/Hjs/KG6BrSSBDlq6ODIu5byMr9ZCEdyGuZ1qtZG81B
-         KL4A==
-X-Forwarded-Encrypted: i=1; AHgh+RpMXs9V4c1byQsZblT91A7WwnQzpb31qRLvJFfNSje9I5XPfZWeQykG8TEKbTqrHqLjrC240/k=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxLZQ6vUD/gNpDpOB/g5OwAlhQQ5J/F2cx611pKBHTvQrTPREGK
-	TdhLT45zKYFb5OsHAY9YQ3yUhotRKaH7ZmB3AJoI1LnpLEMa1D0hhzDORyu9dzXrmNDb6wsnMnX
-	lEcBkOmyfoVkOtzBi8Zp2R4S1eIA6Dw8NYGmleru0+/4vDF5+fSKXJvKR1HkfoLND
-X-Gm-Gg: AR+sD10XaICvw4gLejUkJCtRvjPsgzggM0WGfYtfxlCvPDqvdVaXv0Bqgv3cOl6h6RC
-	YmuMvSewDPDHbFe3u0rDi5JW6szdt3TIlBpfPUf0z/ViW5kQz1Dfp9rQPWi2MHGHHYOxi0kUACs
-	2mc6r7tZPB84JoF5/WEOmMQwrIsb1PJXZfbL61lvzys+lJJO5y5W8UGdAR5Ao4+tBcRjwlj9A5m
-	AEVDYq18l5sHb3pX2KfmXb4jbBtE+6n4EneQMDYB9irBm1OR2JmbP+yrSnf0wCJ9KRB6FgJPEe/
-	q167wUVXWTly2m3ca9HBKZyqieFTEY+KQUAKOYT1fuMAelO0VqvK/4rndiGV/KE85QXw8O+W/83
-	V6xBF1Q7QTO3/VOWl/hWYyFoLn0wUdifVGEcjAQad+29Z7m9R90zsj15FQJ4Vwc2MjCJi74GL
-X-Received: by 2002:a17:90b:528c:b0:380:9f17:6df3 with SMTP id 98e67ed59e1d1-3903c5448dcmr43326183a91.4.1786354640872;
-        Mon, 10 Aug 2026 02:37:20 -0700 (PDT)
-X-Received: by 2002:a17:90b:528c:b0:380:9f17:6df3 with SMTP id 98e67ed59e1d1-3903c5448dcmr43326144a91.4.1786354640404;
-        Mon, 10 Aug 2026 02:37:20 -0700 (PDT)
-Received: from [10.133.33.20] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3925fc6dab4sm12066088a91.3.2026.08.10.02.37.17
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 10 Aug 2026 02:37:19 -0700 (PDT)
-Message-ID: <bd5db1a2-90f3-4cc9-8cd8-c18499c56a2b@oss.qualcomm.com>
-Date: Mon, 10 Aug 2026 17:37:16 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: fix channel list double-free on error paths
-To: Linkai Gong <gonglinkai@kylinos.cn>, Jeff Johnson <jjohnson@kernel.org>
-Cc: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-References: <20260731093816.1771338-1-gonglinkai@kylinos.cn>
+        d=1e100.net; s=20251104; t=1786355176; x=1786959976;
+        h=cc:to:message-id:content-transfer-encoding:content-type
+         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=SceX2sy7F8G3sFYLj4u/9YUSzA6BhxHVelvLqQ2qv20=;
+        b=IDcgoxQWVhwqFufLxX224fDQg0YwJ4ScQvltVvZKohJZPgUnbFDfjS7NtdUlrbSy40
+         0BCUGQEM65QG5SFCBECU83loMBRaRBRSsrbQSt/io6awbn2n5CIzXaHLhACFW66nU7Nk
+         MAsO2/nrz46uQRo/2PT61q8YhoD1/MSiEWsinE+84euj7vUjm9ZQulgd5YL7rIbrrUnL
+         Ydh87mxqVoG6ZK1tJVfG3BPm6foDYE3RROGQVHV1+4GssqiAb4g+jbU4EzjT/OmUu3iH
+         U/H7le/JBofxWRKbfysAf1BsECCG/ZONC5gOJD+hCzUGhRZTNNwgi20XP7BVkjSe4UIz
+         EE0w==
+X-Gm-Message-State: AOJu0Yynr7ubyZnfyhhP1B1aZluk9j/xmVfjsuF9uYHdsDY+mL6MO7NZ
+	SXFmAATcZSTUJkPnl7+fuJPS3NoxuSkbzL80jbcM29bYoGhpNSWbOYmV9MQp1WCMy9ieFcHet5V
+	dmIVzRz25zxYLr6tyTlst9oPs4WWZ9vgCi9wGxfvQo3Fd6ht/Gw2FH6i5mkX4VSimk/DdUO1DJg
+	w=
+X-Gm-Gg: AR+sD11RiFpqysRzMh8JeqESayi6gunKzsmOUjK9c+R0p0Ol1+5jxFGMok70lYrVn/T
+	PPVC6cwL80j8MwwfnbkGgEvePt3t+aM9RdRKPxE1XbDlgmWzFDHJLt1e7CLHbgnIzf91W3CwXE3
+	fJvQHOLtZk7Ko+KFfk2pv5rtrFxovliAaBZZ5JPDgW3vZI0Dy+c+zRVxTe3n/RikcFZV73wt0vg
+	vdSx0CKptOsVg6qeNlzRaFzVfjQ8Lb91Gm/8mTInY5WttsmMYG3cDRbDp8cUhRyOx9zDZxcUHh9
+	lGPTQN1pcsaZHMASqglUA+sG8IfgimPK83nWo8P6PH/km1BVEcKHu1dmqyUhKnWVWBv0LydcKo/
+	C1ExgAoeDczrV/SDrNQH8GudGrTwtDbhpCvzkOh5TRDkA/5e7tlLLMg==
+X-Received: by 2002:a17:903:8c5:b0:2c9:e2c1:4fb5 with SMTP id d9443c01a7336-2d106e99159mr353867575ad.22.1786355175965;
+        Mon, 10 Aug 2026 02:46:15 -0700 (PDT)
+X-Received: by 2002:a17:903:8c5:b0:2c9:e2c1:4fb5 with SMTP id d9443c01a7336-2d106e99159mr353866995ad.22.1786355175372;
+        Mon, 10 Aug 2026 02:46:15 -0700 (PDT)
+Received: from [127.0.1.1] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2d14ccdb26bsm32671125ad.22.2026.08.10.02.46.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 10 Aug 2026 02:46:14 -0700 (PDT)
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20260731093816.1771338-1-gonglinkai@kylinos.cn>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: 48aIqrAclXbZPkCfVtKtjwcRI_V7JjSR
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODEwMDA4MyBTYWx0ZWRfXwUiTMlFEdMwQ
- uuiT268uGOLUTHG0MfHwZBMY6SFq2fYUutpdxNvh00EmZWE2v7ivJNVlvkhsg2rD7hXKXDpyqHD
- he6UKQAAKLp/f1sF9lSSMvlxIc5fc2U=
-X-Authority-Analysis: v=2.4 cv=W5EIkxWk c=1 sm=1 tr=0 ts=6a799bd1 cx=c_pps
- a=0uOsjrqzRL749jD1oC5vDA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+Date: Mon, 10 Aug 2026 17:46:00 +0800
+Subject: [PATCH] .mailmap: add entries for Baochen Qiang
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20260810-mailmap-v1-1-95129af871ba@oss.qualcomm.com>
+X-B4-Tracking: v=1; b=H4sIANideWoC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDIzMDC0MD3dzEzJzcxAJds2TzpNREA6Pk5BRDJaDqgqLUtMwKsEnRsbW1AMp
+ lFmtZAAAA
+X-Change-ID: 20260810-mailmap-6c7bea02ccd1
+To: ath12k@lists.infradead.org
+Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+X-Mailer: b4 0.14.3
+X-Authority-Analysis: v=2.4 cv=S9PpBosP c=1 sm=1 tr=0 ts=6a799de8 cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
- a=UmHtXT4VRqcp-Ls_mGYA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=mQ_c8vxmzFEMiUWkPHU9:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODEwMDA4MyBTYWx0ZWRfX+R8cx+8/Rgzp
- cdx7iGmzO8oPy5TcSaWxY8g6q1Ze7YQEEzW69E32mE12IihxApDLu1L5m04lfzluwkw+FGSR/0i
- sm9pyAERxPFGnkHoNvLwzePs1QjBM//4/OYlhlplOhwDseYofeCbE0p7eJ1FyyEHrQeRYJuP+/q
- 84nNIGpXW1/UWKmcgAWibKB9JaTPCWim9v3zulccQ7UR/d3aakaNeSYF2KrqRHWkKmtddScHosw
- UcDMts2kPGW1+KMbRgksyMmgkqBUx+dMAIYppFY/CU6iN0xitVoUBEiip2hSSKKMWUovqXlDHXS
- EhfSNvCu8b359OyonxGIH87o9VuiWhZ3kNznYo5SjdKxUQxHPw4/8+0MzKCd7CKbIpunfh4CsRL
- vK1uFELiEG4sGR/zWGQDf7asJC8jGzXDCy+h/Oe1VTBOEgxPDOJ9SzMXV68bKl6ajotoDQRQ+N2
- oDrOzvWYEdg5xwST17g==
-X-Proofpoint-GUID: 48aIqrAclXbZPkCfVtKtjwcRI_V7JjSR
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=JfrnYn6hAAAA:8 a=pHwe-td3AAAA:8 a=pGLkceISAAAA:8
+ a=COk6AnOGAAAA:8 a=LpQP-O61AAAA:8 a=SRrdq9N9AAAA:8 a=KKAkSRfTAAAA:8
+ a=oQLfJTBTAAAA:8 a=icsG72s9AAAA:8 a=fhHLQuVZd-I8e5nCu7EA:9 a=QEXdDO2ut3YA:10
+ a=uG9DUKGECoFWVXl0Dc02:22 a=1CNFftbPRP8L7MoqJWF3:22 a=06DSgVp2mo5w6X7jAMMe:22
+ a=TjNXssC_j7lpFel5tvFf:22 a=pioyyrs4ZptJ924tMmac:22 a=cvBusfyB2V15izCimMoJ:22
+ a=RgvzH8KC66dk9vUkDcCj:22 a=T89tl0cgrjxRNoSN2Dv0:22
+X-Proofpoint-ORIG-GUID: KiGJ-NmDzi9bGqQwf-5SaEJEdx-UkMO7
+X-Proofpoint-GUID: KiGJ-NmDzi9bGqQwf-5SaEJEdx-UkMO7
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODEwMDA4MyBTYWx0ZWRfX79dD/egSuZcD
+ y2knTD99esRfYvxwgL2ZDsllNiomKjAez0MvBpU6ZqEl9aXBWyqdgtgoumrbRIsbI4AnBiV8n0u
+ tVyE8FQMqfQqZ9ENuz1nRaTxpJL7MGkEeziTCtLLRJYSlUo6sTRXI2AO5O1V6BtCA8nhfrNTQJs
+ kEc59SsOodDODX0zgbYYSuolbdTHN9R9dE7766/krDVx1dL1nqr69fGjEK6hYWAFpgJiLEZdeoc
+ brJobnQwfnplQ9cYTsfFvIpv0DECK5RUZk6AaYGbUsnIzKqjfGjCvSqWs+HbnD0Fth+kAGyrVfz
+ IZa0T8CgsHWa5vjNUGF0II9hfa6NM74wmFdSJ7uUgdziZ93sa/4qvX9oWrQS7ibXm0dd5d1y/Kv
+ KQwz5rjccBexk3bRFMHZL5PViybtGKrJ9a3tD158uE5C4lKPqvfdpb50HVRS1bQiH1drsLctGBd
+ 2OhTK/X+u+L7S8KlBkQ==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwODEwMDA4MyBTYWx0ZWRfX+r8ocg1OxNYf
+ DUoGQ5S9FqK9LIVAak3f9s3Q2J15M3ivF6q+y+Ryv1qq4xv43xKDMUPcdQsA6qUxLQHMwN7wKIQ
+ rBg2y8+Nd+dRh/5D9wr7XESPFqB7FFc=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-08-10_02,2026-08-07_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 lowpriorityscore=0 priorityscore=1501 phishscore=0
- clxscore=1015 adultscore=0 bulkscore=0 spamscore=0 impostorscore=0
- malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2608100083
+ phishscore=0 bulkscore=0 adultscore=0 lowpriorityscore=0 malwarescore=0
+ priorityscore=1501 clxscore=1015 suspectscore=0 impostorscore=0 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608100083
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260810_023723_200903_D9D0D123 
-X-CRM114-Status: GOOD (  17.42  )
+X-CRM114-CacheID: sfid-20260810_024618_282834_6FFD42D0 
+X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,63 +150,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Map past iterations of my e-mail addresses to the current one.
 
+Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+---
+To: ath12k@lists.infradead.org
+---
+ .mailmap | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-On 7/31/2026 5:38 PM, Linkai Gong wrote:
-> ath12k_mac_setup_channels_rates() frees band channel arrays on failure
-> but either leaves the pointers non-NULL or clears the wrong band. Later
-> ath12k_mac_cleanup_unregister() frees the same pointers again.
+diff --git a/.mailmap b/.mailmap
+index a0f64c31abcc..332782494b6f 100644
+--- a/.mailmap
++++ b/.mailmap
+@@ -128,7 +128,8 @@ Axel Dyks <xl@xlsigned.net>
+ Axel Lin <axel.lin@gmail.com>
+ Balakrishna Godavarthi <quic_bgodavar@quicinc.com> <bgodavar@codeaurora.org>
+ Banajit Goswami <quic_bgoswami@quicinc.com> <bgoswami@codeaurora.org>
+-Baochen Qiang <quic_bqiang@quicinc.com> <bqiang@codeaurora.org>
++Baochen Qiang <baochen.qiang@oss.qualcomm.com> <bqiang@codeaurora.org>
++Baochen Qiang <baochen.qiang@oss.qualcomm.com> <quic_bqiang@quicinc.com>
+ Baolin Wang <baolin.wang@linux.alibaba.com> <baolin.wang@linaro.org>
+ Baolin Wang <baolin.wang@linux.alibaba.com> <baolin.wang@spreadtrum.com>
+ Baolin Wang <baolin.wang@linux.alibaba.com> <baolin.wang@unisoc.com>
 
-The radio that frees its sbands[].channels inside setup_channels_rates() is precisely the
-one excluded from cleanup_unregister() — the loop is for (j = 0; j < i; j++) and the
-failing radio is index i. The earlier radios (0..i-1) all fully succeeded, so their
-channel arrays are valid and freed exactly once. So this is actually a dangling pointer
-issue, not a reachable double-free — nothing frees the failing radio's pointers a second
-time. Please reword the message to something like "error paths leave dangling pointers + a
-copy-paste typo; harden by consistently nulling after kfree()."
+---
+base-commit: 4fa10e991f77b4c929d1959900a6ed422b9e2ac5
+change-id: 20260810-mailmap-6c7bea02ccd1
 
-> 
-> Clear the correct sbands[].channels pointers after kfree(), including
-> a copy-paste bug that nulled 2 GHz after freeing 6 GHz channels.
-> 
-> Fixes: acc152f9be20 ("wifi: ath12k: combine channel list for split-phy devices in single-wiphy")
-> Signed-off-by: Linkai Gong <gonglinkai@kylinos.cn>
-> ---
->  drivers/net/wireless/ath/ath12k/mac.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index a0928890671a..5468a8d2d5d5 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -14275,6 +14275,7 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
->  					   sizeof(ath12k_6ghz_channels), GFP_KERNEL);
->  			if (!channels) {
->  				kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
-> +				ar->mac.sbands[NL80211_BAND_2GHZ].channels = NULL;
->  				return -ENOMEM;
->  			}
->  
-> @@ -14325,7 +14326,9 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
->  					   GFP_KERNEL);
->  			if (!channels) {
->  				kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
-> +				ar->mac.sbands[NL80211_BAND_2GHZ].channels = NULL;
->  				kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
-> +				ar->mac.sbands[NL80211_BAND_6GHZ].channels = NULL;
->  				return -ENOMEM;
->  			}
->  
-> @@ -14365,7 +14368,7 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
->  					kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
->  					ar->mac.sbands[NL80211_BAND_2GHZ].channels = NULL;
->  					kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
-> -					ar->mac.sbands[NL80211_BAND_2GHZ].channels = NULL;
-> +					ar->mac.sbands[NL80211_BAND_6GHZ].channels = NULL;
->  					kfree(channels);
->  					band->channels = NULL;
->  					return ret;
-
-actual code change looks good
+Best regards,
+-- 
+Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
 
