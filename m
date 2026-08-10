@@ -4,139 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC756C5AD4E
-	for <ath12k@archiver.kernel.org>; Mon, 10 Aug 2026 04:54:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F19F2C5AC82
+	for <ath12k@archiver.kernel.org>; Mon, 10 Aug 2026 04:55:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=C18zYvwGVWpEleb5PKvoQNV7Ix9APthKPxgivVijLzQ=; b=YZfxZd1S+IlT6jcXYntXvUdiuv
-	SWEkweIR164+5dROe3ZAr7AI3Hl4dKhpuBOyhhc7se+u5qspprTlMil91sjN18FT2m/XpTxmcsjfE
-	+vkY3sg1qUevAJ6cJXP2kEpc7iNPiUiPZjQcbI2uGvtHArxKpjwXcIRZPXKfNbWV9iYHRbAVIbqRW
-	pcyyIotuPzI0WYWsQgkssqp3UqHvid6wn6kasmZlzbsPKFQ0V92Znv5fnBYXQOv4M0Ia5HwylV+8h
-	WpIBban7pmE+jqs0A8xLuOPd0/Xr+FAdj7n5MWJaAfVax70ZPEmKo1PLx57lcKM9+U6wrfSrVE2nL
-	F6THr1Dg==;
+	bh=ArTpDam5bh0KLdnINtdiE20WeCWsVmySFXjbwgWmPwE=; b=gm7onns+c5qc/swSbAWpzm9i/6
+	Ick/H1Jt5HdkHw7z6i/a5bf44JjzAEj9hHGB5mvEHsr69xZyuXOJceWh5Lfjfofcs6wzRg1smPV/e
+	VOVt3i10aSMhRNquZLpzLc6jVWWRULNbbaooNuYwnvUWmkMlIfg1vpODLdfvevxURKJKjW8ITAO0Z
+	3OgZcTfcMI5OVW73OCsuV5U05Bcvaskw4yCZpFm4aTwWIGzOp7/T+Wwlizf7EgEFtp2v/4cbzBujy
+	q4/ImfAYw+PCR1wwpVbcqqL1d2VNjkLakNRJe6Gh+OgSfYNoE1kmUuo9ClmVLOjOFIEVMKPofQLrC
+	3fIw82iQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtI1d-0000000B0k3-1nL1;
-	Mon, 10 Aug 2026 04:54:13 +0000
+	id 1wtI2X-0000000B0uk-2kVV;
+	Mon, 10 Aug 2026 04:55:09 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtI1a-0000000B0j6-3fmH
+	id 1wtI2V-0000000B0uQ-1Pu7
 	for ath12k@lists.infradead.org;
-	Mon, 10 Aug 2026 04:54:12 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 679L6oYO3476183
-	for <ath12k@lists.infradead.org>; Mon, 10 Aug 2026 04:54:09 GMT
+	Mon, 10 Aug 2026 04:55:08 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 679L7mML3436725
+	for <ath12k@lists.infradead.org>; Mon, 10 Aug 2026 04:55:07 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	C18zYvwGVWpEleb5PKvoQNV7Ix9APthKPxgivVijLzQ=; b=jvkGBKnkwU+vMGHf
-	5X4AdCizFroQW1msTHs21MG6dVag992Y+AnNErco5rFzTVITgdu3YXzZgUxQMiYJ
-	YdiH1/xmlJSgcst+JMStBH5VBM9x/v1B1GuhIIkdnRSYA5dU7Hw9yYYy64SHeefd
-	Kiss35RAYVjvH/reR4KpIwZkkEgzOQh40uHZlrds2WyPIkHHJ4aQOhl8Euepnn1P
-	LEVGcpHty/WiQijVL7seDohz0wOcRJ74rYR23D3MaaApPK/Ki5cRyt+WrWPV5RyC
-	IxKyuJP8MHg7YxqxyUf1BHZ+hHd1QUsqUf330HnSp2DOlbLeDWITL+wVe2qLpyp0
-	jDvpXA==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fww7cvb4n-1
+	ArTpDam5bh0KLdnINtdiE20WeCWsVmySFXjbwgWmPwE=; b=Z4nak5RFWZGgUquk
+	m94HXSBn/J9iD0zhM6QbhOqSHrHvSSmXxWaPDP2/ZYc02OtmPaRaAv38OH8A548W
+	oKGwZ6hG2hmmWxFq7wVS9/oldFsCT2OtVd4FAUec8Ziy97ri63Jq5/qkm5QoQZvA
+	MWRmO5M2gZYpWcOvz9Bppze9OmkaAwCerMfjRnF2TVsLwDSXkAVF0e26BRQflsQa
+	L/RMa5HUZ7+oj3xn521JZycyMNCtkxAZ+YdpeOdfTs7Fbv8sh/OJiQrvxGE6LOJF
+	W8JlaPr6kaND7q2++nkgkeoHtAhVXM4IO6kIi/OEK923nlPxJXfNRZ+noUp1nHgK
+	+gqUfA==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fwwr9m9a2-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 10 Aug 2026 04:54:09 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2ce7dff6253so37763195ad.1
-        for <ath12k@lists.infradead.org>; Sun, 09 Aug 2026 21:54:09 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 10 Aug 2026 04:55:06 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-cbbb9c9bfc3so897785a12.1
+        for <ath12k@lists.infradead.org>; Sun, 09 Aug 2026 21:55:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1786337649; x=1786942449; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1786337706; x=1786942506; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=C18zYvwGVWpEleb5PKvoQNV7Ix9APthKPxgivVijLzQ=;
-        b=EzpJ6eclJfwWBiUrwVQ3EyqyRraogI7UdpbKhsbaOwsDuHuROXuKTaTIXp7i+YJqqL
-         5IjwWsclAue9rF/RTkX+9Kq1xW1YKAiF3FoF8iOHLPqokieHE15Za0lS9Q2gCq2JWEb5
-         FrkEz3Fot6XKTILinFXMIeCcEE7ETcZ312Scn4bObl2K0iKy8MrfOuMi1Uluk5ACVqXi
-         CM/JPz9DbXghl9BqQCnwgOdcQFztjsJ+rPoEDzug2y50uiGJUzPHOvB797PKTsQhpxnW
-         s46hbz2WNRF0F1LjLuFkYu+EATiCWBMJfdnTKWWW5Co1Q2Ga62Ucc1BUqovSkbVc8Klv
-         LGHg==
+        bh=ArTpDam5bh0KLdnINtdiE20WeCWsVmySFXjbwgWmPwE=;
+        b=RXBFLoH6A0BJBq1z59tcsQHNK3l7+/LoO0OgssqU7ISqu+wmX9mj/8/OUWsvVv2ZzF
+         gYVU/2IcEyBDZrJeTjD3cSrnW9WxBrqSWHsh+pN5rFuHj57r8RFPScwMlteGqq+1enZe
+         b9CA5IecxzypFQ4dkossQxQXtlOSQC9ksdi3JS0GRpOxz0XbqSgpAdrULJABqNrjyF6v
+         +8uZ3SkVsOYpAeLAXJsECFqWTc4/gNCpoVOcr49BGhWCqjHfnl1sTD0JTUKJzDN4qP5Y
+         WlZ1tQKwVYrKovqFlNuRhUqvSjq28KfOavHupFN/8FzMCAx5q5jeieyDYZSS822Pgnke
+         qIvQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786337649; x=1786942449;
+        d=1e100.net; s=20251104; t=1786337706; x=1786942506;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=C18zYvwGVWpEleb5PKvoQNV7Ix9APthKPxgivVijLzQ=;
-        b=QwfAe7bYtLzi9CYeFIZ1lsdLX2veN16ya45EKBCvKrjR7I6ahzfkWWx09qm2b2AxlR
-         +GnLWeYLQLuW1KK1flvG0/0brfZPa2BRfLiLQDdARbZT3Q2zVQJogaUJYeMccLQs+a/x
-         N4yEiROVtFRQ4A3/BVIqmEbUcCbyofWUacUHZVHVQwZWxdSfQev2fj4J2TuEri0+cOBt
-         yq+sAMtPrsptBh20cQY+irsOScUzh6PbmC5fjsHNbqiVHrCgTmRPCH8uVAQjHs2obS9D
-         oqoJn0YYc3Cu1s8f7UYTiBEf/ecHpqTep2sjtDO6H3LqJI/yctC5TqP2ZyOfarmf08Dn
-         kA4A==
-X-Forwarded-Encrypted: i=1; AHgh+RqyCUDSXL3AMNLbASMLIKTfhrLpOY7yAsis9Kk8nquMQFymy/iz+SdWI8EuEqeZ54hWfdjlWmw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyIhhqj3TefDpeCHWkUMF7MLXsdOggsfQsjYnA5fq8OT4p+NlwG
-	6uREZLN1+eyO2UhAsZOH0xQhUia7VPn4j2EIuTyMuUwmVDe6IB/XP/bjOtKPioMEQ00Xkrf8FcD
-	LqzpIKda7n2dTmgDf/Ae90qpGbGGzoCUTZBjH0i+SPs/abhRSLHQNw4VefNqTYfFJLWoZp2Jb
-X-Gm-Gg: AR+sD13Je5lM6DCbuxphP+JGjLNaJGCUtIzHOdD6dBsMkruMQMQvAgUplsVcg5azpiw
-	mRDJAwXvymRASmpFMe+axKLvd0H+/84gZoG0UFUF1qGbKxFwHyAhjuHBPHYu/KtgwjSLY/BY003
-	XjcB1qHXPJYUn8HiByhNi0KGH23aO0KhRuocCrRrfEVSdU9RVRrzfSNLBK/vvBU48Wd4bFjwJ6E
-	LlOijajs4LijzoCb3yDLNvEAw2gVkv+1kXvL/lQg5zCY28kl/uVu9jZcZQ3I1zvXJALhOKbS5Qz
-	wh4LOsGl8+c8PSxtVp+sk+XSPFFSrts9dWtVNBJqtDCOxD/BwwLj6wVkDz+OncWMkh61zCPpfIs
-	ufMzM5ZTeVVQMbZ4vv0SWGSFWYWPjXMxC6ymbK4GiPUIjTbylW4O8Lmgc/UpJU9ggBzcTIFq+az
-	FtXhlOYHYnbcV25Ejq+g==
-X-Received: by 2002:a17:903:8cc:b0:2ca:f417:396b with SMTP id d9443c01a7336-2d2b2d8ecb7mr194927635ad.3.1786337648999;
-        Sun, 09 Aug 2026 21:54:08 -0700 (PDT)
-X-Received: by 2002:a17:903:8cc:b0:2ca:f417:396b with SMTP id d9443c01a7336-2d2b2d8ecb7mr194927295ad.3.1786337648523;
-        Sun, 09 Aug 2026 21:54:08 -0700 (PDT)
+        bh=ArTpDam5bh0KLdnINtdiE20WeCWsVmySFXjbwgWmPwE=;
+        b=kIJ4MTSUkyHaBO0K6w170zuLNZrr2HBWfzpb6/5J/QrgmylIrfQGDnL8N23QAuDc84
+         z7v+Rkzoa8X9a0+aVmtKjC11gfgDpk0qEmNvMZrOgglQd5njeyZkwjurmaI3R1dMqWw1
+         9cd6XyfbrQL6Coihrlup1/SlNqyQCRObHRIh0lKg9m3m/VxOW1CvFheqAybJ1uQfGUKZ
+         QMVEL4+r1N7xudKuMUMd/zUBjeq/OeyWTi6btSFk3Pv8eWdBE3FWfOe7Jvplx2+lWJdW
+         FtZkm87kqAyIRtcY8ZKuiLhnQJsj5gz6rhsL17Ul9KRVj2TlbyNlQK7us9mf2m8Wey/7
+         PGeA==
+X-Forwarded-Encrypted: i=1; AHgh+Rr8R2KBelUcjPvaUVFxd5bzAcctks+hldjg/tpe0+OGKVU8CO2VZNjVbSPq4YdNfIIppycWlOI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxQjj3HdUPskZ2dMobgQbDqb6Mk1NHKOVJgC8Jw6isoPqvfViUl
+	etzdDxRGuXnUgWTuT9v3F12okK5Za6dQGpZY050X7wgAaA71lutbf3Fkc6R2u8N1+qb5+lp4XRr
+	w1234bKsjmWBMMdriKFZHU5vfA36R88RHuMBGVvBRL11QxaduaFOGuIrj/usu/whLPFYmQ+3F
+X-Gm-Gg: AR+sD12V0cvSXiBNXGEYbtyjbt/bIw6yX1x6aZHUj/zbIZLiUPVgWtPEyuwGSBFGofd
+	th3xgvXS6vUB1qV6ZT669KsAyGXIzeaL9XKr2YuNGvkplqtYVn+aa/qXi5b3If2H/2bRjB+Gipi
+	X/lRHwZEbCeA8Q/5uQSe4qxJA9YFHr9IKo7w1iHkMaY7NXkTWKvTRfEtT14RlOQ7GoC4hN26QI1
+	XZw2K+idys1owicUvtQjGyUg77S1xcHLglY054TMjMmDCED6RJ92TkB4sQWBFDmD5M58+03vfkB
+	hKSvZ2gGEKnoChDoR56tJQf/6v1WuKphvI/DbjQffTVYnS2h/GpJp3WQQdkwXeBD9Fb4S8hRjO2
+	T/A1DAjpIirsgxfhXPkS1KgUkmHXfVPzAoDV4kDTyewYXCyykhm77OAvMcu3j2eQfnTUyMTjj3s
+	0h6kETb+DT2oxTSkVJPw==
+X-Received: by 2002:a05:6a00:2393:b0:847:881c:7026 with SMTP id d2e1a72fcca58-84f69418396mr14737203b3a.3.1786337706097;
+        Sun, 09 Aug 2026 21:55:06 -0700 (PDT)
+X-Received: by 2002:a05:6a00:2393:b0:847:881c:7026 with SMTP id d2e1a72fcca58-84f69418396mr14737174b3a.3.1786337705575;
+        Sun, 09 Aug 2026 21:55:05 -0700 (PDT)
 Received: from [10.79.124.186] (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2d14ccb0b2dsm28814835ad.3.2026.08.09.21.54.06
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84f5a3a0f8dsm3248601b3a.12.2026.08.09.21.55.03
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 09 Aug 2026 21:54:08 -0700 (PDT)
-Message-ID: <b9b4aaed-55d5-4230-8b6c-edc41f8ccfea@oss.qualcomm.com>
-Date: Mon, 10 Aug 2026 10:24:05 +0530
+        Sun, 09 Aug 2026 21:55:05 -0700 (PDT)
+Message-ID: <89f8b7d4-fea5-4b22-b5e4-07d8de06eeda@oss.qualcomm.com>
+Date: Mon, 10 Aug 2026 10:25:02 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v2 1/8] wifi: ath12k: fix out-of-bounds access on
- TX stats arrays
+Subject: Re: [PATCH ath-next v2 4/8] wifi: ath12k: add device DP stats reset
+ support via debugfs
 To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
+Cc: linux-wireless@vger.kernel.org,
+        Hariharan Ramanathan <hariharan.ramanathan@oss.qualcomm.com>
 References: <20260806132427.3704828-1-pardeep.kaur@oss.qualcomm.com>
- <20260806132427.3704828-2-pardeep.kaur@oss.qualcomm.com>
- <34ab0833-45fc-4e21-bbf3-bc5a167d9bde@oss.qualcomm.com>
+ <20260806132427.3704828-5-pardeep.kaur@oss.qualcomm.com>
+ <9dd4f651-3437-467f-9994-93b92a83270f@oss.qualcomm.com>
 Content-Language: en-US
 From: Pardeep Kaur <pardeep.kaur@oss.qualcomm.com>
-In-Reply-To: <34ab0833-45fc-4e21-bbf3-bc5a167d9bde@oss.qualcomm.com>
+In-Reply-To: <9dd4f651-3437-467f-9994-93b92a83270f@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: oBhbnmlMRVeWVG4KdLBfgfqgr8P-_HyE
-X-Proofpoint-ORIG-GUID: oBhbnmlMRVeWVG4KdLBfgfqgr8P-_HyE
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODEwMDAzOCBTYWx0ZWRfX9m1MqTBLel1k
- JQn4AqejxA57i390qydwckBmpddKnClsQRH+s84umDPA4XlQtIXQLjkgusnbGNZbYdgIRAmv94j
- vh4lSemwIN1HbWlO7YU4plJBjMcC1J9q3DewaHU46MkluYmAhsiER96MRgdZx//IpJ++cZfJc4q
- 9cKCFCjFRWVHfWmvpdoHrUtZjy9GnNUYVRbHgwau4cOJoYHHGsivGgG7aqCmxVhrpT6nYDY+SDX
- idMZHr7TzgfM3hrUcph4JhXqY+w05ZqCqJR3HvjnnibIW/LIJAB/F8wkA/p2NkI0fGaMmOnREYC
- e8KO7YbcJGBpSwO9I7iByGIZPanwgjMvb9NgccsUehptm0lTZpsHGoFqtZbBd2Iiz619rb+oIiW
- pqHhfh5/KLPnQyOvyAVTQE4bCAqGWzDPTp0r1GOrpu7l4z9k/5IVtAPhm/8lKnVMkzIN5FpNLTj
- s5jspavOEVvKiiC2W0g==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODEwMDAzOCBTYWx0ZWRfX1qevLVXgVTXR
- EIyqB30VDxxKA0y3fJhp6N9DgA+l8BWqWFM70xtbBmF2J+JpIzNMAqgK5HJ9FfiLAI+pZgdD5rj
- VSTVgdZflvUHA6cjBcE+ZLUrGKKvqWQ=
-X-Authority-Analysis: v=2.4 cv=IPsyzAvG c=1 sm=1 tr=0 ts=6a795971 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Authority-Analysis: v=2.4 cv=d73FDxjE c=1 sm=1 tr=0 ts=6a7959aa cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=EUspDBNiAAAA:8 a=Ozm0H6XBQHCMpJSGI6QA:9 a=QEXdDO2ut3YA:10
- a=GvdueXVYPmCkWapjIL-Q:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
+ a=EUspDBNiAAAA:8 a=AFajGRLNYAwZlwsr5FkA:9 a=QEXdDO2ut3YA:10
+ a=3WC7DwWrALyhR5TkjVHa:22
+X-Proofpoint-ORIG-GUID: HlV0SMSPg8mNvcrgaYsD9Iux6FK6Ds3i
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODEwMDAzOCBTYWx0ZWRfXzPjwYWfLBxHZ
+ TRfGhd3vfbM0uQb6UXgZfhKkROFYqtKc1HocIRWzdsoVgGIFOjzL9sHXF/uRLQvJG4exiF8QtV4
+ ycLU5Ze6FofEIZimMeBiFedmTcmb4Prb1476Zuw9GqJhAIRdRY1TyOmWvZCh7eVjG6slON4UcwY
+ dF4CvjguVapyoXmo3hCyVL6bs52Z1fswpG+dZrXgLrOlqEK5xdoJHiHuZ0Dqfmj7Zhu4+iB3Izq
+ L/lpm/vAX5akFZJOvSLgcNXsnhy2Khq7KFasdRZVo0puBGmwmTrM+F8JdoyLMkSz7H4+wMGiitY
+ ewoW1STUS8wJyuVsq/ZzgDPV+5X3Uyj4cJFpTPZ9zwPieLAPPoWWVjdanZUcnguiSPm95ApA7+3
+ 13iAQb+00HZkCd4SLy9EDZF4XLZWD3+7SQ54EmHs4VpSU0h6NDhvo8FjES26X7CCsurbMBnsyA1
+ Ogbhqgt8NENt+Qq/fjA==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwODEwMDAzOCBTYWx0ZWRfXzHSata+fJQvE
+ zb0f55YcXqhnwn6/0DSmhQH2CxpzZPMu3xjc4JRu8fNDLBty6y+BNs8BqOZud3cerzV+S2RGFt3
+ X/1P1R82vr7esVmIVPSsKO5WNO0CUlY=
+X-Proofpoint-GUID: HlV0SMSPg8mNvcrgaYsD9Iux6FK6Ds3i
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-08-09_07,2026-08-07_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 phishscore=0 clxscore=1015 priorityscore=1501 suspectscore=0
- bulkscore=0 impostorscore=0 adultscore=0 lowpriorityscore=0 spamscore=0
+ priorityscore=1501 bulkscore=0 phishscore=0 adultscore=0 malwarescore=0
+ spamscore=0 suspectscore=0 clxscore=1015 impostorscore=0 lowpriorityscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608100038
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260809_215411_004030_4471E2C6 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20260809_215507_393203_E5913849 
+X-CRM114-Status: GOOD (  22.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,71 +153,99 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On 07-08-2026 07:37, Jeff Johnson wrote:
+On 07-08-2026 07:44, Jeff Johnson wrote:
 > On 8/6/2026 6:24 AM, Pardeep Kaur wrote:
->> From: Pardeep Kaur <pardeep.kaur@oss.qualcomm.com>
+>> From: Hariharan Ramanathan <hariharan.ramanathan@oss.qualcomm.com>
 >>
->> The fw_tx_status[], tx_wbm_rel_source[], and tqm_rel_reason[] arrays
->> are indexed directly by values read from hardware without bounds checks.
->> Values at or beyond MAX_FW_TX_STATUS, HAL_WBM_REL_SRC_MODULE_MAX, or
->> MAX_TQM_RELEASE_REASON respectively would write past the end of the
->> arrays causing memory corruption.
+>> There is no way to reset device DP stats counters without reloading
+>> the driver, making it difficult to isolate issues to a specific time
+>> window during debugging.
 >>
->> Add bounds checks using likely() and WARN_ON_ONCE() before incrementing
->> each counter, consistent with the existing pattern used elsewhere in
->> the ath12k codebase.
+>> Add a write handler to the device_dp_stats debugfs file so that
+>> writing 'reset' clears all device DP stats counters. Change the file
+>> mode from 0400 to 0600 to allow write access. Use strcmp() with
+>> newline stripping to match the input, consistent with the existing
+>> pattern in debugfs.c. Return -EINVAL on unrecognised input.
+>>
+>> No lock is taken around the memset since the counters are updated
+>> locklessly in the datapath; taking dp_lock would be misleading as it
+>> does not protect device_stats updates.
 >>
 >> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6.r1-00402-QCAHKSWPL_SILICONZ-1
 >>
->> Fixes: c5c62287e690 ("wifi: ath12k: Add device dp stats support")
+>> Signed-off-by: Hariharan Ramanathan <hariharan.ramanathan@oss.qualcomm.com>
+>> Co-developed-by: Pardeep Kaur <pardeep.kaur@oss.qualcomm.com>
 >> Signed-off-by: Pardeep Kaur <pardeep.kaur@oss.qualcomm.com>
 >> ---
->>   drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c | 15 ++++++++++++---
->>   1 file changed, 12 insertions(+), 3 deletions(-)
+>>   drivers/net/wireless/ath/ath12k/debugfs.c | 35 ++++++++++++++++++++++-
+>>   1 file changed, 34 insertions(+), 1 deletion(-)
 >>
->> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
->> index 587d58eeccfa..632230e77802 100644
->> --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
->> +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
->> @@ -582,7 +582,10 @@ ath12k_dp_tx_process_htt_tx_complete(struct ath12k_dp *dp, void *desc,
+>> diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
+>> index ec49692107a8..0e446a666f4c 100644
+>> --- a/drivers/net/wireless/ath/ath12k/debugfs.c
+>> +++ b/drivers/net/wireless/ath/ath12k/debugfs.c
+>> @@ -1220,8 +1220,41 @@ static ssize_t ath12k_debugfs_dump_device_dp_stats(struct file *file,
+>>   	return ret;
+>>   }
 >>   
->>   	wbm_status = le32_get_bits(status_desc->info0,
->>   				   HTT_TX_WBM_COMP_INFO0_STATUS);
->> -	dp->device_stats.fw_tx_status[wbm_status]++;
->> +	if (likely(wbm_status < MAX_FW_TX_STATUS))
->> +		dp->device_stats.fw_tx_status[wbm_status]++;
->> +	else
->> +		WARN_ON_ONCE(1);
-> My review agent tells me this will now double warn since the default: case of
-> the switch (wbm_status) that follows will also ath12k_warn()
+>> +static ssize_t
+>> +ath12k_debugfs_write_device_dp_stats(struct file *file,
+>> +				     const char __user *user_buf,
+>> +				     size_t count, loff_t *ppos)
+>> +{
+>> +	struct ath12k_base *ab = file->private_data;
+>> +	struct ath12k_dp *dp = ath12k_ab_to_dp(ab);
+>> +	struct ath12k_device_dp_stats *device_stats = &dp->device_stats;
+>> +	char buf[20] = {};
+>> +	int ret;
+>> +
+>> +	if (count >= sizeof(buf))
+>> +		return -EINVAL;
+>> +
+>> +	ret = copy_from_user(buf, user_buf, count);
+>> +	if (ret)
+>> +		return -EFAULT;
+>> +
+>> +	/* drop the possible '\n' from the end */
+>> +	if (count > 0 && buf[count - 1] == '\n')
+>> +		buf[count - 1] = '\0';
+>> +
+> my review agent says:
+> The new ath12k_debugfs_write_device_dp_stats uses raw copy_from_user(buf,
+> user_buf, count) and never checks or advances *ppos. A write split across two
+> write(2) calls (non-zero ppos on the second) will copy the second chunk into
+> buf[0] instead of buf[ppos], silently failing to match "reset". The existing
+> ath12k_write_simulate_fw_crash in the same file (line 63) uses
+> simple_write_to_buffer(), which is the idiomatic kernel pattern here. Replace
+> with:
+> ret = simple_write_to_buffer(buf, sizeof(buf) - 1, ppos, user_buf, count);
+> if (ret <= 0)
+>      return ret;
+will follow the existing pattern and update the patch
 >
-> So for wbm_status warn in one place or the other, but not both
-Thanks for the review will handle this
->
+>> +	if (!strcmp(buf, "reset")) {
+>> +		memset(device_stats, 0, sizeof(*device_stats));
+>> +		return count;
+>> +	}
+>> +
+>> +	ath12k_warn(ab, "unsupported command: %s\n", buf);
+>> +
+>> +	return -EINVAL;
+>> +}
+>> +
+>>   static const struct file_operations fops_device_dp_stats = {
+>>   	.read = ath12k_debugfs_dump_device_dp_stats,
+>> +	.write = ath12k_debugfs_write_device_dp_stats,
+>>   	.open = simple_open,
+>>   	.owner = THIS_MODULE,
+>>   	.llseek = default_llseek,
+>> @@ -1232,7 +1265,7 @@ void ath12k_debugfs_pdev_create(struct ath12k_base *ab)
+>>   	debugfs_create_file("simulate_fw_crash", 0600, ab->debugfs_soc, ab,
+>>   			    &fops_simulate_fw_crash);
 >>   
->>   	switch (wbm_status) {
->>   	case HAL_WBM_REL_HTT_TX_COMP_STATUS_OK:
->> @@ -984,11 +987,17 @@ void ath12k_wifi7_dp_tx_completion_handler(struct ath12k_dp *dp, int ring_id)
->>   		/* Find the HAL_WBM_RELEASE_INFO0_REL_SRC_MODULE value */
->>   		buf_rel_source = le32_get_bits(tx_status->info0,
->>   					       HAL_WBM_RELEASE_INFO0_REL_SRC_MODULE);
->> -		dp->device_stats.tx_wbm_rel_source[buf_rel_source]++;
->> +		if (likely(buf_rel_source < HAL_WBM_REL_SRC_MODULE_MAX))
->> +			dp->device_stats.tx_wbm_rel_source[buf_rel_source]++;
->> +		else
->> +			WARN_ON_ONCE(1);
+>> -	debugfs_create_file("device_dp_stats", 0400, ab->debugfs_soc, ab,
+>> +	debugfs_create_file("device_dp_stats", 0600, ab->debugfs_soc, ab,
+>>   			    &fops_device_dp_stats);
+>>   }
 >>   
->>   		rel_status = le32_get_bits(tx_status->info0,
->>   					   HAL_WBM_COMPL_TX_INFO0_TQM_RELEASE_REASON);
->> -		dp->device_stats.tqm_rel_reason[rel_status]++;
->> +		if (likely(rel_status < MAX_TQM_RELEASE_REASON))
->> +			dp->device_stats.tqm_rel_reason[rel_status]++;
->> +		else
->> +			WARN_ON_ONCE(1);
->>   
->>   		/* Release descriptor as soon as extracting necessary info
->>   		 * to reduce contention
->> base-commit: 691e5e43b2aa
->> --
->> 2.34.1
 
