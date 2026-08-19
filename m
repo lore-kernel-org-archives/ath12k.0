@@ -4,43 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85F9EC5DF6D
-	for <ath12k@archiver.kernel.org>; Wed, 19 Aug 2026 12:41:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88B5CC5B572
+	for <ath12k@archiver.kernel.org>; Wed, 19 Aug 2026 14:03:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=FCs3m/nbR42yHyoYS36kqATC6DY/xbaSZxxoT3A5Xys=; b=Szr/4a/sqfIPwpnWbMBjaUS39k
-	qC555Vrq+mvBJPiEQWq/jfNcWzfbdksWOB9G0T/m8V1svtUX902KSHDDu8I38htDEhSg9ZuyWZkMk
-	Srq7pVwTBej/aJrDw48+KHJUuwebwyOTHqGSijf+Ow83knmLHdSzIzHoYwwwnhdvUAwRfjfoF2vKi
-	LLqxBFz7NGwjrWacKhpmtW4Au2aoRdFOoNUNR0aPn/UJ5FgNYNSiefhxrY1cLhQApS5qE5aPFKMkP
-	pInxw9eBoT+kpeZJ5TWT5JphvBBALWh7LOCl9oPYmrcIsfzNf8FwA/Ug39fsuzLY8hnQKZPHjOD9R
-	AAaT6Kng==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=JyWaVN4KsyNUfHuv/LCeryFcTXMO5aKjG2j+HSmhUrw=; b=aB8/u3oPIl2NQXXPyePaMmLj7X
+	bcx1LlZIg/8CySS8vp5ZPpqyvXmKZUn4Tn9gheCT40jqkB0sCa3JCX3eSnODyidk6SvpSYAAp6hg5
+	SkwnhomLAmvldh4hz9dROMvE+soT9pE/boCvZTGFscflQwPIHIUEGNx3IqhS4yx9b9zxSZp+AVeBu
+	Qy9FA1R2OX+Ru8QKnfLeLbEEEZYbGjGF1lKwhNKpMF/KN84LVgnf8cw0/h3P66/fqEstwqVKrtXzz
+	I3ZB56UwoI7DJCNeab9f2rQxY7xbpxvXOpdOHTX232yjrt+jJTxZyOiqb+wgvDdc32pixF7RFZoQh
+	CGyDpwxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwfby-00000009lq4-0b2L;
-	Wed, 19 Aug 2026 12:41:42 +0000
+	id 1wwgt6-00000009uqI-0Pom;
+	Wed, 19 Aug 2026 14:03:28 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwfbs-00000009lcV-16QK;
-	Wed, 19 Aug 2026 12:41:39 +0000
+	id 1wwgt2-00000009uni-3pcU;
+	Wed, 19 Aug 2026 14:03:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=sipsolutions.net; s=mail; h=Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Content-Type:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=FCs3m/nbR42yHyoYS36kqATC6DY/xbaSZxxoT3A5Xys=;
-	t=1787143296; x=1788352896; b=Q296ymEeG2W52fu3XWIuiYj06txAMEIVEeu7I9gh99uCOqP
-	1qxqcIbw1WclAa8MxKT9+6anmTZyHk4xYFXwt7MxY16MHaTH5qe2QQBS/hQAgCMOc/7NULPy5prGI
-	qgNuWUd7z5BFPNJcyDYN0KAoJF8xCJpOGEUNIlTFttQYwHI857sKe5dXwWIv6cjMM9eMEUuXjIGzE
-	Vg3u/V0q+w8GJv6HqxT+fbazQLycItWUx+d4Ywk/1rg4P9ZuJhL50gWFWuevTAHbLB5jTztRmVsNi
-	mNC9UyWe3fYNa+EuGF6l/E94qHDn5hTcKIcTa2P6ebRdj9zd7SvadLNA2BrSNmTA==;
+	Message-ID:Date:Subject:Cc:To:From:Content-Type:Sender:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-To:Resent-Cc:
+	Resent-Message-ID:In-Reply-To:References;
+	bh=JyWaVN4KsyNUfHuv/LCeryFcTXMO5aKjG2j+HSmhUrw=; t=1787148204; x=1788357804; 
+	b=yH7VgTtEN/wi9LwsNHfuK65TDtkGkdiFAUcOn/wguL1RoGN5UP3fgvRx53w8W2YZcmo+0Gu1U5P
+	mhFxLFkeKf/qpHxo9HDQ8Zsie28jdEctqLx3FZIy48zYe//VWacK401HHEyMkSZeJXa+x6X2v1yby
+	Sze7k4Lsm+9A/huo5xM5B7POqp2hYXTX6Ec8ZMxXFer3AqB8QCcVAJu3JAXa37u1b/qB/GsClaxxZ
+	9Vv/39DyThaeLWq5kYWkSFk7SqQJODmS637rKRuBFkfGxbTP1buxWzRwFKxueF/WFlSZvN35PML7B
+	y0Ihcl+hfTVFn8CtgZlqJ4xrBeGeHrbxLnHw==;
 Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
 	(Exim 4.98.2)
 	(envelope-from <benjamin@sipsolutions.net>)
-	id 1wwfbd-000000089Cs-2pK4;
-	Wed, 19 Aug 2026 14:41:22 +0200
+	id 1wwgsn-0000000B7qc-2IRf;
+	Wed, 19 Aug 2026 16:03:10 +0200
 From: Benjamin Berg <benjamin@sipsolutions.net>
 To: linux-wireless@vger.kernel.org
 Cc: Jeff Johnson <jjohnson@kernel.org>,
@@ -53,18 +54,15 @@ Cc: Jeff Johnson <jjohnson@kernel.org>,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	Benjamin Berg <benjamin.berg@intel.com>
-Subject: [wireless-next PATCH v2 8/8] wifi: mac80211: pass error station if non-STA transmit was requested
-Date: Wed, 19 Aug 2026 14:39:07 +0200
-Message-ID: <20260819143858.594e05877995.I5ffe7bc0d4ccefca5c1e506d5d3d482e13989cda@changeid>
+Subject: [PATCH wireless-next v3 0/8] Adding NO_STA flag and reworking RX link resolution
+Date: Wed, 19 Aug 2026 15:57:04 +0200
+Message-ID: <20260819135703.4072215-10-benjamin@sipsolutions.net>
 X-Mailer: git-send-email 2.55.0
-In-Reply-To: <20260819123858.4025935-10-benjamin@sipsolutions.net>
-References: <20260819123858.4025935-10-benjamin@sipsolutions.net>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260819_054136_333110_1A20F74C 
-X-CRM114-Status: UNSURE (   9.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260819_070324_958780_57999C4B 
+X-CRM114-Status: GOOD (  12.37  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,60 +79,84 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Benjamin Berg <benjamin.berg@intel.com>
 
-When cfg80211 requested a transmit without a station, pass an error
-station to ieee80211_tx_skb_tid instead of the correct one.
+Hi,
 
-Signed-off-by: Benjamin Berg <benjamin.berg@intel.com>
+This patchset refactors the RX link resolution a bit to fix some issues
+where mac80211 might accept frames on the wrong link and incorrectly
+translate the address. It also adds a new NL80211_ATTR_FRAME_CMD_NO_STA
+flag so that userspace can know whether address translation was done by
+the kernel on RX and can also prevent address translation for management
+frames during TX.
 
----
+This together should be enough to fix the existing issues in hostapd
+where stations that are still associated try to authenticate again but
+hostapd for example ends up sending the frame to an old link address.
+
+Benjamin
+
+PS: Sorry, the last mail had various issues, so resending properly now.
+
+v3:
+ * Fix issues found during review
 
 v2:
- * Fix logic error in v1 update
+ * Remove unused variable in rtw89
 
-v1:
- * Only pass error station if NO_STA flag is set
----
- net/mac80211/offchannel.c | 13 +++++++++----
- 1 file changed, 9 insertions(+), 4 deletions(-)
+Changes in v1:
+ * Add NAN_DATA interface handling
+ * Handle NO_STA flag correctly for NAN
+ * Fixed forwarding of station parameter
+ * Rebase and other small fixes
 
-diff --git a/net/mac80211/offchannel.c b/net/mac80211/offchannel.c
-index 5cec8747b193..ddd7a96a2f81 100644
---- a/net/mac80211/offchannel.c
-+++ b/net/mac80211/offchannel.c
-@@ -854,8 +854,10 @@ int ieee80211_mgmt_tx(struct wiphy *wiphy, struct wireless_dev *wdev,
- 			need_offchan = true;
- 
- 		rcu_read_lock();
--		sta = sta_info_get_bss(sdata, mgmt->da);
--		mlo_sta = sta && sta->sta.mlo;
-+		if (!params->no_sta) {
-+			sta = sta_info_get_bss(sdata, mgmt->da);
-+			mlo_sta = sta && sta->sta.mlo;
-+		}
- 
- 		if (!ieee80211_is_action(mgmt->frame_control) ||
- 		    mgmt->u.action.category == WLAN_CATEGORY_PUBLIC ||
-@@ -884,7 +886,8 @@ int ieee80211_mgmt_tx(struct wiphy *wiphy, struct wireless_dev *wdev,
- 		     local->ops->remain_on_channel &&
- 		     memcmp(sdata->vif.cfg.ap_addr, mgmt->bssid, ETH_ALEN))) {
- 			need_offchan = true;
--		} else if (sdata->u.mgd.associated &&
-+		} else if (!params->no_sta &&
-+			   sdata->u.mgd.associated &&
- 			   ether_addr_equal(sdata->vif.cfg.ap_addr, mgmt->da)) {
- 			sta = sta_info_get_bss(sdata, mgmt->da);
- 			mlo_sta = sta && sta->sta.mlo;
-@@ -1022,7 +1025,9 @@ int ieee80211_mgmt_tx(struct wiphy *wiphy, struct wireless_dev *wdev,
- 	}
- 
- 	if (!need_offchan) {
--		ieee80211_tx_skb_tid(sdata, skb, NULL, 7, link_id);
-+		ieee80211_tx_skb_tid(sdata, skb,
-+				     params->no_sta ? ERR_PTR(-ENOENT) : sta,
-+				     7, link_id);
- 		ret = 0;
- 		goto out_unlock;
- 	}
+Changes in RFCv2:
+ * Port other drivers to new API (untested)
+ * Fix a checkpatch warning
+
+Benjamin Berg (8):
+  wifi: iwlwifi: use link_sta internally to the driver
+  wifi: mac80211: change public RX API to use link stations
+  wifi: mac80211: refactor RX link_id and station handling
+  wifi: mac80211: rework RX packet handling
+  wifi: cfg80211: add attribute for TX/RX denoting there is no station
+  wifi: mac80211: report to cfg80211 when no STA is known for a frame
+  wifi: mac80211: pass station to ieee80211_tx_skb_tid
+  uwifi: mac80211: pass error station if non-STA transmit was requested
+
+ drivers/net/wireless/ath/ath11k/dp_rx.c       |   2 +-
+ drivers/net/wireless/ath/ath12k/dp_mon.c      |   2 -
+ drivers/net/wireless/ath/ath12k/dp_rx.c       |  20 +-
+ drivers/net/wireless/ath/ath12k/hw.h          |  20 +-
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c |  20 +-
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h |  12 +-
+ drivers/net/wireless/ath/ath12k/wifi7/hw.c    |   6 +-
+ drivers/net/wireless/ath/ath12k/wmi.c         |   6 -
+ drivers/net/wireless/intel/iwlwifi/mld/agg.c  |  17 +-
+ drivers/net/wireless/intel/iwlwifi/mld/agg.h  |   4 +-
+ drivers/net/wireless/intel/iwlwifi/mld/rx.c   |  50 +-
+ drivers/net/wireless/intel/iwlwifi/mld/rx.h   |   2 +-
+ .../wireless/intel/iwlwifi/mld/tests/agg.c    |   7 +-
+ drivers/net/wireless/intel/iwlwifi/mvm/rx.c   |   2 +-
+ drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c |   6 +-
+ drivers/net/wireless/mediatek/mt76/mac80211.c |  22 +-
+ drivers/net/wireless/realtek/rtw89/core.c     |   7 -
+ .../wireless/virtual/mac80211_hwsim_main.c    |   3 -
+ include/net/cfg80211.h                        |   4 +
+ include/net/mac80211.h                        |  25 +-
+ include/uapi/linux/nl80211.h                  |   7 +
+ net/mac80211/agg-tx.c                         |   4 +-
+ net/mac80211/ap.c                             |   3 -
+ net/mac80211/ht.c                             |   2 +-
+ net/mac80211/ieee80211_i.h                    |  11 +-
+ net/mac80211/iface.c                          |   7 +-
+ net/mac80211/mlme.c                           |  10 +-
+ net/mac80211/offchannel.c                     |  13 +-
+ net/mac80211/rx.c                             | 447 ++++++++++--------
+ net/mac80211/scan.c                           |  10 +-
+ net/mac80211/tdls.c                           |   2 +-
+ net/mac80211/tx.c                             |  10 +-
+ net/wireless/nl80211.c                        |   8 +-
+ 33 files changed, 413 insertions(+), 358 deletions(-)
+
 -- 
 2.55.0
 
