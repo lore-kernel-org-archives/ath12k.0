@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 316E5C5DF86
-	for <ath12k@archiver.kernel.org>; Wed, 19 Aug 2026 12:41:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85F9EC5DF6D
+	for <ath12k@archiver.kernel.org>; Wed, 19 Aug 2026 12:41:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=dVwyfQ46WaoZ8zVsScPZY+SElWof2Uk7HUJYiGftsFo=; b=ysigSBn/VUroShjT6QS+vPxMaF
-	xkCygiU1cGLWm4U0ivNKFn0BDCsX9NbIlBwONHRYmzDUZOy0Eyj2maiYamj2s8njc1oAop6ZAvuS7
-	dfT6MfSzJn2mAnP5Lir9eX5mnYIc3QfSj4VOg+B0eKTaaVNl6W1uOn4I8IFAYt/3NPD8h3VE6BcQE
-	epCkolzukgxjLtBRZPampMysW7K5oC/uDu+sDdc18PTJuOmKSnr1zpBfnPWrjnURMcNM7GAZH0eTp
-	CAqC2QHdz45Uf5+YtRXb/5lSTHWSaBTOGhNcc40wyj/y5ImmX4JqENwsHTwvTS7fo9q+lsFRf2W4p
-	9Zvg0APg==;
+	bh=FCs3m/nbR42yHyoYS36kqATC6DY/xbaSZxxoT3A5Xys=; b=Szr/4a/sqfIPwpnWbMBjaUS39k
+	qC555Vrq+mvBJPiEQWq/jfNcWzfbdksWOB9G0T/m8V1svtUX902KSHDDu8I38htDEhSg9ZuyWZkMk
+	Srq7pVwTBej/aJrDw48+KHJUuwebwyOTHqGSijf+Ow83knmLHdSzIzHoYwwwnhdvUAwRfjfoF2vKi
+	LLqxBFz7NGwjrWacKhpmtW4Au2aoRdFOoNUNR0aPn/UJ5FgNYNSiefhxrY1cLhQApS5qE5aPFKMkP
+	pInxw9eBoT+kpeZJ5TWT5JphvBBALWh7LOCl9oPYmrcIsfzNf8FwA/Ug39fsuzLY8hnQKZPHjOD9R
+	AAaT6Kng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwfbu-00000009lig-37Qs;
-	Wed, 19 Aug 2026 12:41:38 +0000
+	id 1wwfby-00000009lq4-0b2L;
+	Wed, 19 Aug 2026 12:41:42 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwfbo-00000009lXh-0gE1;
-	Wed, 19 Aug 2026 12:41:33 +0000
+	id 1wwfbs-00000009lcV-16QK;
+	Wed, 19 Aug 2026 12:41:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=sipsolutions.net; s=mail; h=Content-Transfer-Encoding:MIME-Version:
 	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Content-Type:Sender
 	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=dVwyfQ46WaoZ8zVsScPZY+SElWof2Uk7HUJYiGftsFo=;
-	t=1787143292; x=1788352892; b=NJGEQLO/Dmp4EfNjS5GAxGoSjxYxff+EGpqYAATyVxtBKMl
-	Gk58Dtd+5t2CZ+twqsO2p1vRz+4DbzqQiFYE7TzHmmu6S4hPgox5DXBsn1z/iFWPYiSVv0mevUtlX
-	IkJWlTdAC/6ZeIn9vdwCRzxNmE88bNAScCmbLw+LejUa7FSlcEa9QH0vjy/fSBIUxMNp1vQUN0XW+
-	tEJl09JRNmw2L73pm+3PmFVk3RhJoykGx5nZT1BT/Nx2IK/XB7JgSMSswOrTA8jwoShfycAtqh9cP
-	tYIuA2erOgw+yFy9sGW1qZgciAVnnBKwrfFiFh+GnudMJ8cNj7zgegqetwUJFMGA==;
+	Resent-Cc:Resent-Message-ID; bh=FCs3m/nbR42yHyoYS36kqATC6DY/xbaSZxxoT3A5Xys=;
+	t=1787143296; x=1788352896; b=Q296ymEeG2W52fu3XWIuiYj06txAMEIVEeu7I9gh99uCOqP
+	1qxqcIbw1WclAa8MxKT9+6anmTZyHk4xYFXwt7MxY16MHaTH5qe2QQBS/hQAgCMOc/7NULPy5prGI
+	qgNuWUd7z5BFPNJcyDYN0KAoJF8xCJpOGEUNIlTFttQYwHI857sKe5dXwWIv6cjMM9eMEUuXjIGzE
+	Vg3u/V0q+w8GJv6HqxT+fbazQLycItWUx+d4Ywk/1rg4P9ZuJhL50gWFWuevTAHbLB5jTztRmVsNi
+	mNC9UyWe3fYNa+EuGF6l/E94qHDn5hTcKIcTa2P6ebRdj9zd7SvadLNA2BrSNmTA==;
 Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
 	(Exim 4.98.2)
 	(envelope-from <benjamin@sipsolutions.net>)
-	id 1wwfbJ-000000089Cs-1qCS;
-	Wed, 19 Aug 2026 14:41:04 +0200
+	id 1wwfbd-000000089Cs-2pK4;
+	Wed, 19 Aug 2026 14:41:22 +0200
 From: Benjamin Berg <benjamin@sipsolutions.net>
 To: linux-wireless@vger.kernel.org
 Cc: Jeff Johnson <jjohnson@kernel.org>,
@@ -53,17 +53,18 @@ Cc: Jeff Johnson <jjohnson@kernel.org>,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	Benjamin Berg <benjamin.berg@intel.com>
-Subject: [wireless-next PATCH v2 5/8] wifi: cfg80211: add attribute for TX/RX denoting there is no station
-Date: Wed, 19 Aug 2026 14:39:04 +0200
-Message-ID: <20260819143858.c15fd33bb776.I4cfd3db83ba3dc0267575f919ba613ea5d10abd5@changeid>
+Subject: [wireless-next PATCH v2 8/8] wifi: mac80211: pass error station if non-STA transmit was requested
+Date: Wed, 19 Aug 2026 14:39:07 +0200
+Message-ID: <20260819143858.594e05877995.I5ffe7bc0d4ccefca5c1e506d5d3d482e13989cda@changeid>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20260819123858.4025935-10-benjamin@sipsolutions.net>
 References: <20260819123858.4025935-10-benjamin@sipsolutions.net>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260819_054132_202973_F8F9CC50 
-X-CRM114-Status: GOOD (  19.19  )
+X-CRM114-CacheID: sfid-20260819_054136_333110_1A20F74C 
+X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,119 +81,60 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Benjamin Berg <benjamin.berg@intel.com>
 
-For MLD stations, userspace may need to explicitly transmit a frame to
-a specific link address. In that case, it needs to ensure that no
-address translation happens.
-
-In the reverse case of an RX, userspace may need to know the link
-address for a frame. By passing the information whether a STA is known
-for the frame, userspace knows whether link translation happened and
-can do the reverse lookup when needed.
-
-This is important for flows where a STA is still registered but the
-connection has been lost and it is returning again.
+When cfg80211 requested a transmit without a station, pass an error
+station to ieee80211_tx_skb_tid instead of the correct one.
 
 Signed-off-by: Benjamin Berg <benjamin.berg@intel.com>
----
- include/net/cfg80211.h       | 4 ++++
- include/uapi/linux/nl80211.h | 7 +++++++
- net/wireless/nl80211.c       | 8 +++++++-
- 3 files changed, 18 insertions(+), 1 deletion(-)
 
-diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
-index 97c16d4ff127..436478daf559 100644
---- a/include/net/cfg80211.h
-+++ b/include/net/cfg80211.h
-@@ -4009,6 +4009,7 @@ struct cfg80211_update_ft_ies_params {
-  * @link_id: for MLO, the link ID to transmit on, -1 if not given; note
-  *	that the link ID isn't validated (much), it's in range but the
-  *	link might not exist (or be used by the receiver STA)
-+ * @no_sta: set if the frame should not be transmitted using an existing STA
-  */
- struct cfg80211_mgmt_tx_params {
- 	struct ieee80211_channel *chan;
-@@ -4021,6 +4022,7 @@ struct cfg80211_mgmt_tx_params {
- 	int n_csa_offsets;
- 	const u16 *csa_offsets;
- 	int link_id;
-+	bool no_sta;
- };
+---
+
+v2:
+ * Fix logic error in v1 update
+
+v1:
+ * Only pass error station if NO_STA flag is set
+---
+ net/mac80211/offchannel.c | 13 +++++++++----
+ 1 file changed, 9 insertions(+), 4 deletions(-)
+
+diff --git a/net/mac80211/offchannel.c b/net/mac80211/offchannel.c
+index 5cec8747b193..ddd7a96a2f81 100644
+--- a/net/mac80211/offchannel.c
++++ b/net/mac80211/offchannel.c
+@@ -854,8 +854,10 @@ int ieee80211_mgmt_tx(struct wiphy *wiphy, struct wireless_dev *wdev,
+ 			need_offchan = true;
  
- /**
-@@ -9501,6 +9503,7 @@ void cfg80211_conn_failed(struct net_device *dev, const u8 *mac_addr,
-  * @flags: flags, as defined in &enum nl80211_rxmgmt_flags
-  * @rx_tstamp: Hardware timestamp of frame RX in nanoseconds
-  * @ack_tstamp: Hardware timestamp of ack TX in nanoseconds
-+ * @no_sta: set if no station is known for the frame (relevant for MLD)
-  */
- struct cfg80211_rx_info {
- 	int freq;
-@@ -9512,6 +9515,7 @@ struct cfg80211_rx_info {
- 	u32 flags;
- 	u64 rx_tstamp;
- 	u64 ack_tstamp;
-+	bool no_sta;
- };
+ 		rcu_read_lock();
+-		sta = sta_info_get_bss(sdata, mgmt->da);
+-		mlo_sta = sta && sta->sta.mlo;
++		if (!params->no_sta) {
++			sta = sta_info_get_bss(sdata, mgmt->da);
++			mlo_sta = sta && sta->sta.mlo;
++		}
  
- /**
-diff --git a/include/uapi/linux/nl80211.h b/include/uapi/linux/nl80211.h
-index 020387d76412..4653f8f26ee7 100644
---- a/include/uapi/linux/nl80211.h
-+++ b/include/uapi/linux/nl80211.h
-@@ -3185,6 +3185,11 @@ enum nl80211_commands {
-  *	The aggregated message always precedes the per-link messages for the
-  *	same station within a dump sequence.
-  *
-+ * @NL80211_ATTR_FRAME_CMD_NO_STA: Valid for NL80211_CMD_FRAME to denote that
-+ *	the kernel had no station for a received frame or should not use a
-+ *	known station to transmit a frame. This is relevant to know whether
-+ *	MLD address translation happened or to disable it when sending a frame.
-+ *
-  * @NUM_NL80211_ATTR: total number of nl80211_attrs available
-  * @NL80211_ATTR_MAX: highest attribute number currently defined
-  * @__NL80211_ATTR_AFTER_LAST: internal use
-@@ -3785,6 +3790,8 @@ enum nl80211_attrs {
+ 		if (!ieee80211_is_action(mgmt->frame_control) ||
+ 		    mgmt->u.action.category == WLAN_CATEGORY_PUBLIC ||
+@@ -884,7 +886,8 @@ int ieee80211_mgmt_tx(struct wiphy *wiphy, struct wireless_dev *wdev,
+ 		     local->ops->remain_on_channel &&
+ 		     memcmp(sdata->vif.cfg.ap_addr, mgmt->bssid, ETH_ALEN))) {
+ 			need_offchan = true;
+-		} else if (sdata->u.mgd.associated &&
++		} else if (!params->no_sta &&
++			   sdata->u.mgd.associated &&
+ 			   ether_addr_equal(sdata->vif.cfg.ap_addr, mgmt->da)) {
+ 			sta = sta_info_get_bss(sdata, mgmt->da);
+ 			mlo_sta = sta && sta->sta.mlo;
+@@ -1022,7 +1025,9 @@ int ieee80211_mgmt_tx(struct wiphy *wiphy, struct wireless_dev *wdev,
+ 	}
  
- 	NL80211_ATTR_STA_DUMP_LINK_STATS,
- 
-+	NL80211_ATTR_FRAME_CMD_NO_STA,
-+
- 	/* add attributes here, update the policy in nl80211.c */
- 
- 	__NL80211_ATTR_AFTER_LAST,
-diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
-index 44f2bad08670..437bebcc0274 100644
---- a/net/wireless/nl80211.c
-+++ b/net/wireless/nl80211.c
-@@ -1096,6 +1096,7 @@ static const struct nla_policy nl80211_policy[NUM_NL80211_ATTR] = {
- 	[NL80211_ATTR_NPCA_PUNCT_BITMAP] =
- 		NLA_POLICY_FULL_RANGE(NLA_U32, &nl80211_punct_bitmap_range),
- 	[NL80211_ATTR_STA_DUMP_LINK_STATS] = { .type = NLA_FLAG },
-+	[NL80211_ATTR_FRAME_CMD_NO_STA] = { .type = NLA_FLAG },
- };
- 
- /* policy for the key attributes */
-@@ -14860,6 +14861,9 @@ static int nl80211_tx_mgmt(struct sk_buff *skb, struct genl_info *info)
- 	    !(wdev->valid_links & BIT(params.link_id)))
- 		return -EINVAL;
- 
-+	params.no_sta =
-+		nla_get_flag(info->attrs[NL80211_ATTR_FRAME_CMD_NO_STA]);
-+
- 	params.buf = nla_data(info->attrs[NL80211_ATTR_FRAME]);
- 	params.len = nla_len(info->attrs[NL80211_ATTR_FRAME]);
- 
-@@ -22024,7 +22028,9 @@ int nl80211_send_mgmt(struct cfg80211_registered_device *rdev,
- 	    (info->ack_tstamp && nla_put_u64_64bit(msg,
- 						   NL80211_ATTR_TX_HW_TIMESTAMP,
- 						   info->ack_tstamp,
--						   NL80211_ATTR_PAD)))
-+						   NL80211_ATTR_PAD)) ||
-+	    (info->no_sta &&
-+	     nla_put_flag(msg, NL80211_ATTR_FRAME_CMD_NO_STA)))
- 		goto nla_put_failure;
- 
- 	genlmsg_end(msg, hdr);
+ 	if (!need_offchan) {
+-		ieee80211_tx_skb_tid(sdata, skb, NULL, 7, link_id);
++		ieee80211_tx_skb_tid(sdata, skb,
++				     params->no_sta ? ERR_PTR(-ENOENT) : sta,
++				     7, link_id);
+ 		ret = 0;
+ 		goto out_unlock;
+ 	}
 -- 
 2.55.0
 
