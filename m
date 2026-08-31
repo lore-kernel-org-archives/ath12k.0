@@ -4,69 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34779C624C6
-	for <ath12k@archiver.kernel.org>; Mon, 31 Aug 2026 13:34:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77FEAC624A5
+	for <ath12k@archiver.kernel.org>; Mon, 31 Aug 2026 15:18:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=suBB6sMnaRiFD/+vEeFBmjXPBsbA6V2QiMRWp064h8M=; b=CP6ejKB57+20zD55lgYVZXLBrt
-	2AbJ2zeaI+7T0L8/apV2Gtx1mcd1NJlsxx7kRV7zpglS0pDJMUPwtbs9hK+Z4GRFBEnFAc+oZyosG
-	EqrKt01FtkWIoYLT8eO76/5teMGezXYHMspTR3qauEvln2Sort4ThJofx6hWuVpHQQuU1zt530muT
-	lEw1Ley3xgR/k+p6SQmem0iMtc9r6/Y5nLmp9HmRHoaro6rOpGmLbtftUgEME1397t5jRy6jXczMx
-	zplB/eMwqNnpvnYPXL0Ca0U0q/AaCjX95dGQMn4Eh/AwEwp7dolEz+axJkoZRNyU6xjLLhht+4f5B
-	cMYZsyrA==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=nJA55XNvLE2Wi1SwAhyde34kstoTKEwzY+Xqkq/NX3M=; b=gFwroc6/ZiL7IKS9UWdJ3u9yHf
+	wSXx6nf8LEm4L95m64XoyWG8WJk7mIK96+E12b782YJIuijjSCO1zglhs7NaWdfoZ9ehZ/6vr1trG
+	cwc1/sNKHLZzD3SSwYXWy0hCLWRyaY4DCACmADaZs/kgD1g4YAd5KlhrJRWd5zUp6tRq+MsUulUSi
+	/uKmCwpP9TS/2pISl42pSNyznmCb8QXKGA+YDSRJqxx41rqtsxvJmdaCN16Q9d0tQmiwIxArsLDaM
+	ahziO23x5KS+fX2xw4uQUmWh4mYyXohSh96AXvci2dOTI05tGVyjx8lCyozKG8eL0NcauAez3mA03
+	eeMquLmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x129p-00000009Qez-3Xy0;
-	Mon, 31 Aug 2026 13:34:41 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1x13mD-00000009piW-0gAT;
+	Mon, 31 Aug 2026 15:18:25 +0000
+Received: from mail01.salmtek.com ([65.108.149.29])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x129p-00000009Qdy-0GNl
+	id 1x13mA-00000009phj-31gb
 	for ath12k@lists.infradead.org;
-	Mon, 31 Aug 2026 13:34:41 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id CA60A4165D;
-	Mon, 31 Aug 2026 13:34:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 477771F00ADF;
-	Mon, 31 Aug 2026 13:34:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788183280;
-	bh=suBB6sMnaRiFD/+vEeFBmjXPBsbA6V2QiMRWp064h8M=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=LkX6jknhSgKIfTdQ1vm9tpy+L9A+0qjlmV+Z8AanhpK55nFFvQQxyP45Al6LMAQR3
-	 cuBuDK3kC3LtjhX0wFk9fEV8kRrkWohELRnTfhPrMoq7o0wlhNAP+iarmUeXyNqm1T
-	 GF2JM4A32W/5+hQ3VoVHMyhU2xT6VcdDVy6RqCjTCCh0DsQyYJ50dcYNhOvHfXhf0U
-	 w6puUhkmxBJLneahWJdAMPXjVoF6d62xDk88hiQ+anW+K/aYYcdnidUnGy8Bq6kKlN
-	 XAgE4kpCKzVSo9CY+tDYpeQBoR+JPLjckNeKFh+KI3IPHCj/P5WifFelru04GrzLKV
-	 SZBccebv5s9Rw==
-From: Sasha Levin <sashal@kernel.org>
-To: patches@lists.linux.dev,
-	stable@vger.kernel.org
-Cc: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
-	Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>,
-	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	Sasha Levin <sashal@kernel.org>,
-	jjohnson@kernel.org,
+	Mon, 31 Aug 2026 15:18:24 +0000
+Received: from mail01.salmtek.com (localhost.localdomain [127.0.0.1])
+	by mail01.salmtek.com (Proxmox) with ESMTP id EA40E40917;
+	Mon, 31 Aug 2026 12:11:13 -0300 (-03)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=salmtek.com; h=
+	cc:cc:content-transfer-encoding:date:from:from:message-id
+	:mime-version:reply-to:subject:subject:to:to; s=selector01; bh=n
+	JA55XNvLE2Wi1SwAhyde34kstoTKEwzY+Xqkq/NX3M=; b=URLmNjwpwfsjv+p2G
+	SG6cyniA6RH6L/B3ZKMBrv11XvOou6btzUDo2+1cbBfa8VvjmuNd8G+9WP65U/hS
+	gQx9q3w0TUIu2WmIMGLC+YefqkNEj6U8NwVJY7YrMIuDab88dJ4mY61WV6sJj25I
+	jE/zN0SjNfP+3vLhAhzoh1mBQEH7t1zvVYtC2LFqsEcyhwR4ydkcn84QX9PWZpmd
+	f2oOwz3SnKRthXsFhL4vUPgEEQmQt11jDJDaXQT7auD/7jwL1UPf/AjUtB2tce0H
+	+HeOWyZLiacDReKAMUQxViwbZcsvFzmGdgSAyGGSzI+fize0U56sQF90JIhCIyl3
+	fh9Ig==
+From: Sebastian Salmhofer <sebastian.salmhofer@salmtek.com>
+To: jjohnson@kernel.org
+Cc: ath12k@lists.infradead.org,
 	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH AUTOSEL 6.18] wifi: ath12k: Prevent incorrect vif chanctx switch when handling multi-radio contexts
-Date: Mon, 31 Aug 2026 09:21:21 -0400
-Message-ID: <20260831133314.4125787-53-sashal@kernel.org>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260831133314.4125787-1-sashal@kernel.org>
-References: <20260831133314.4125787-1-sashal@kernel.org>
+	linux-kernel@vger.kernel.org,
+	Sebastian Salmhofer <sebastian.salmhofer@salmtek.com>
+Subject: [PATCH] wifi: ath12k: flush REO queue extension descriptors before freeing the qdesc
+Date: Mon, 31 Aug 2026 12:10:11 -0300
+Message-ID: <20260831151011.2336305-1-sebastian.salmhofer@salmtek.com>
+X-Mailer: git-send-email 2.47.3
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.18.48
-Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260831_081822_936794_E57A839E 
+X-CRM114-Status: GOOD (  15.02  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,523 +69,105 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Since commit b706fb4e580b ("wifi: ath12k: Use 1KB Cache Flush Command
+for QoS TID Descriptors") a QoS TID RX queue descriptor is retired with
+a single FLUSH_CACHE command carrying FLUSH_QUEUE_1K_DESC. On QCN9274
+that command does not cover the extension descriptors that follow the
+queue descriptor in the same 1536-byte allocation. Those hold the MPDU
+link pointers and are written by REO on every enqueue and dequeue, so
+they are frequently dirty in the REO cache when the TID is deleted.
 
-[ Upstream commit 675aa75bfc29fb18c6e4d58904a91c1d37228217 ]
+After the qdesc is unmapped and freed, the REO cache controller later
+evicts the stale extension lines and writes them back to the old DMA
+address. On a host with the IOMMU enabled this shows up as a burst of
+AMD-Vi IO_PAGE_FAULT write events at 128-byte spacing, e.g.
 
-When multiple links switch channel contexts around the same time, mac80211
-may complete CSA for several links together and invoke
-ath12k_mac_op_switch_vif_chanctx() with an array of vifs spanning more than
-one underlying radio in a single-wiphy configuration.
+  AMD-Vi: Event logged [IO_PAGE_FAULT domain=0x0038 address=0xf6e7a100 flags=0x0020]
+  AMD-Vi: Event logged [IO_PAGE_FAULT domain=0x0038 address=0xf6e7a180 flags=0x0020]
+  ...
+  AMD-Vi: Event logged [IO_PAGE_FAULT domain=0x0038 address=0xf6e7a580 flags=0x0020]
 
-The driver currently assumes that all entries in the vifs array belong to the
-same radio and derives the radio context from the first element. On multi-radio
-hardware, this can lead to incorrect vdev selection/updates and may corrupt
-driver state when the number of vifs exceeds what a single radio supports.
+The faulting addresses always fall at offsets 0x100..0x580 of a
+retired qdesc and never at 0x000 or 0x080, i.e. exactly the ten
+extension descriptors and never the queue descriptor or the 1K bitmap
+descriptor. The writes are triggered by later REO activity, typically
+a new station association, so they can occur minutes or hours after the
+memory was freed, and the blocked transactions stall the data path for
+several seconds. Without an IOMMU the same writes silently corrupt
+whatever now occupies that memory.
 
-Fix this by validating each vif's switch request and then processing vifs
-grouped by their associated radio. For each vif, ensure the band does not
-change across the switch and that both old/new channel contexts resolve to a
-valid ath12k device. Reject attempts to move a vif between radios (not
-supported for now) and return -EOPNOTSUPP to upper layers.
+Restore the per-segment flush of every 128-byte line above the queue
+descriptor, as ath11k still does, before issuing the base flush with
+FLUSH_QUEUE_1K_DESC and NEED_STATUS. REO commands execute in order, so
+the status of the final base flush also confirms the preceding segment
+flushes have completed, and the qdesc is still only freed from that
+completion. A send failure in the sequence leaves the descriptor on the
+retirement list for retry, as before.
 
-Then, iterate through the input vifs, collect all unprocessed entries that map
-to the same radio, and invoke ath12k_mac_update_vif_chan() separately for each
-radio group. This removes any reliance on mac80211 providing the array grouped
-by radio or sharing old_ctx pointers across vifs.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Co-developed-by: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
-Signed-off-by: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Link: https://patch.msgid.link/20260522091828.3199584-1-maharaja.kennadyrajan@oss.qualcomm.com
-Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+Fixes: b706fb4e580b ("wifi: ath12k: Use 1KB Cache Flush Command for QoS TID Descriptors")
+Signed-off-by: Sebastian Salmhofer <sebastian.salmhofer@salmtek.com>
 ---
-
-LLM Generated explanations, may be completely bogus:
-
-## Phase 1: Commit Message Forensics
-
-### Step 1.1: Subject Line
-**Record:** `[wifi: ath12k]` `[Prevent]` — Prevent incorrect vif chanctx
-switch when handling multi-radio contexts.
-
-### Step 1.2: Tags
-**Record:**
-- **Tested-on:** QCN9274 hw2.0 PCI
-  WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
-- **Signed-off-by:** Aditya Kumar Singh, Maharaja Kennadyrajan, Jeff
-  Johnson
-- **Co-developed-by:** Maharaja Kennadyrajan
-- **Reviewed-by:** Baochen Qiang, Rameshkumar Sundaram (Qualcomm ath12k
-  developers)
-- **Link:** https://patch.msgid.link/20260522091828.3199584-1-
-  maharaja.kennadyrajan@oss.qualcomm.com
-- No Fixes:, Reported-by:, Cc: stable, or syzbot tags
-- Notable: Hardware-tested on real QCN9274; dual Reviewed-by from
-  subsystem developers
-
-### Step 1.3: Body Analysis
-**Record:**
-- **Bug:** `ath12k_mac_op_switch_vif_chanctx()` assumes all entries in
-  the `vifs` array belong to the same radio, deriving the radio (`ar`)
-  from `vifs[0]` only. When mac80211 completes CSA for multiple links
-  simultaneously across radios in a single-wiphy multi-radio
-  configuration, vifs from different radios are passed in one array.
-- **Symptom:** Incorrect vdev selection/updates; driver state corruption
-  when vif count exceeds single-radio capacity.
-- **Root cause:** Reliance on mac80211 grouping vifs by radio or sharing
-  old_ctx pointers across vifs — neither is guaranteed.
-- **Fix approach:** Validate each vif individually, group by radio,
-  process each group with the correct `ar`. Reject unsupported band
-  changes and cross-radio moves with `-EOPNOTSUPP`.
-
-### Step 1.4: Hidden Bug Fix Detection
-**Record:** Yes — explicitly a bug fix despite "Prevent" wording. Also
-adds `WARN_ON(!arvif)` in `ath12k_mac_update_vif_chan()` which prevents
-a NULL dereference before `arvif->vdev_id` is accessed (current code
-dereferences `arvif` at line 10893 before the `is_started` check at
-10899, with no NULL guard).
-
----
-
-## Phase 2: Diff Analysis
-
-### Step 2.1: Inventory
-**Record:**
-- **File:** `drivers/net/wireless/ath/ath12k/mac.c` only
-- **Scope:** ~3 lines added in `ath12k_mac_update_vif_chan()`, ~70 lines
-  changed in `ath12k_mac_op_switch_vif_chanctx()`
-- **Functions modified:** `ath12k_mac_update_vif_chan()`,
-  `ath12k_mac_op_switch_vif_chanctx()`
-- **Classification:** Single-file, focused driver fix
-
-### Step 2.2: Code Flow Changes
-**Record:**
-- **Hunk 1 (`ath12k_mac_update_vif_chan`):** Before → dereferences
-  `arvif->vdev_id` in debug print without NULL check. After →
-  `WARN_ON(!arvif); continue;` added before dereference.
-- **Hunk 2 (`ath12k_mac_op_switch_vif_chanctx`):** Before → gets `ar`
-  from `vifs[0].old_ctx`, validates only first vif's old/new ctx match
-  same radio, calls `ath12k_mac_update_vif_chan(ar, vifs, n_vifs)` for
-  entire array. After → validates each vif's band/old/new ctx/radio,
-  builds `ar_map[]`, groups vifs by radio, calls
-  `ath12k_mac_update_vif_chan(group_ar, group_vifs, count)` per radio
-  group.
-
-### Step 2.3: Bug Mechanism
-**Record:** **Category:** Logic/correctness bug + potential NULL pointer
-dereference. **Mechanism:** WMI vdev restart/stop/start commands are
-sent via the `ar` (radio) context. Using radio A's `ar` to process vifs
-belonging to radio B sends vdev operations to the wrong pdev/firmware,
-corrupting driver state. The `WARN_ON(!arvif)` addition fixes a
-secondary NULL deref when `arvif` lookup fails for a vif on the wrong
-radio.
-
-### Step 2.4: Fix Quality
-**Record:** Fix is obviously correct — mirrors the per-vif iteration
-pattern used by rtw89's `rtw89_ops_switch_vif_chanctx()`. Minimal
-regression risk: only affects the multi-vif chanctx switch path, adds
-proper validation, uses existing allocation patterns (`kzalloc_objs`,
-`__free(kfree)`) already present in ath12k. Early returns on error
-prevent partial corruption.
-
----
-
-## Phase 3: Git History Investigation
-
-### Step 3.1: Blame
-**Record:** `ath12k_mac_op_switch_vif_chanctx()` introduced in
-`d889913205cf7` (Kalle Valo, 2022-11-28, "wifi: ath12k: driver for
-Qualcomm Wi-Fi 7 devices"). Radio lookup from `vifs->old_ctx` added in
-`314876885bdcc3` (Sriram R, 2024-04-09, "wifi: ath12k: vdev statemachine
-changes for single wiphy") — this is when the bug was introduced. Both
-commits are ancestors of HEAD.
-
-### Step 3.2: Fixes Tag
-**Record:** N/A — no Fixes: tag in commit message.
-
-### Step 3.3: Related File History
-**Record:** Recent ath12k/mac.c commits include other stable-worthy
-fixes (NULL deref, deadlock, scan state). No related chanctx fix already
-present. `git log -S "ar_map"` returns empty — fix not yet applied to
-this tree.
-
-### Step 3.4: Author Context
-**Record:** Authors are active Qualcomm ath12k contributors (Aditya
-Kumar Singh, Maharaja Kennadyrajan). Multiple prior ath12k fixes in tree
-from same team. Reviewed by Baochen Qiang and Rameshkumar Sundaram.
-
-### Step 3.5: Dependencies
-**Record:** Uses `kzalloc_objs()` and `__free(kfree)` — both present in
-this tree (`3bf5e19c804d0` for kzalloc_objs; `__free(kfree)` already
-used extensively in ath12k/mac.c). Uses `ath12k_generic_dbg()` — present
-in debug.h. No series dependencies; standalone fix. Can apply
-standalone.
-
----
-
-## Phase 4: Mailing List and External Research
-
-### Step 4.1: Original Discussion
-**Record:** `b4 dig -c <hash>` not possible — commit not merged into
-this tree. `b4 dig` with message-id failed (wrong invocation).
-lore.kernel.org and patch.msgid.link blocked by Anubis bot protection
-(curl and WebFetch both returned challenge page). **UNVERIFIED:** Full
-mailing list review thread content.
-
-### Step 4.2: Reviewers
-**Record:** **UNVERIFIED** via b4 dig -w. Commit message shows Reviewed-
-by from two Qualcomm ath12k developers and Signed-off-by from Jeff
-Johnson (ath maintainer).
-
-### Step 4.3: Bug Report
-**Record:** No external bug report or syzbot link. Bug identified
-through code analysis and hardware testing (Tested-on: QCN9274).
-
-### Step 4.4: Related Patches
-**Record:** Standalone patch, not part of a series (no "patch X/Y" in
-subject). No dependencies on other patches.
-
-### Step 4.5: Stable List History
-**Record:** **UNVERIFIED** — could not access lore.kernel.org/stable due
-to bot protection.
-
----
-
-## Phase 5: Code Semantic Analysis
-
-### Step 5.1: Key Functions
-**Record:** `ath12k_mac_op_switch_vif_chanctx()` (mac80211 driver op),
-`ath12k_mac_update_vif_chan()` (internal helper),
-`ath12k_get_ar_by_ctx()` (radio lookup by channel context).
-
-### Step 5.2: Callers
-**Record:** `ath12k_mac_op_switch_vif_chanctx` registered at mac.c:13056
-as `.switch_vif_chanctx` in `ieee80211_ops`. Called from mac80211 via
-`drv_switch_vif_chanctx()` in `net/mac80211/driver-ops.c:414`. mac80211
-invokes this during channel context switches in `net/mac80211/chan.c` —
-both single-vif (`ieee80211_chsw_switch_vif`, line 1389) and multi-vif
-(`ieee80211_chsw_switch_vifs`, line 1537) paths. Multi-vif path collects
-ALL links with in-place reservations across all replacing chanctxs.
-
-### Step 5.3: Callees
-**Record:** `ath12k_get_ar_by_ctx()` → `ath12k_mac_get_ar_by_chan()`
-(maps channel frequency to radio in multi-radio mode).
-`ath12k_mac_update_vif_chan()` → `ath12k_mac_vdev_restart()`,
-`ath12k_mac_vdev_stop()`, `ath12k_mac_vdev_start()` — all send WMI
-commands to firmware via the `ar` pdev.
-
-### Step 5.4: Reachability
-**Record:** Triggered during CSA (Channel Switch Announcement) when
-mac80211 swaps channel contexts. Reachable from AP channel switches, DFS
-events, and MLO multi-link simultaneous CSA. Requires `CONFIG_ATH12K`
-with multi-radio hardware (`ah->num_radio > 1`). Userspace triggers via
-normal WiFi operations (hostapd channel changes, etc.).
-
-### Step 5.5: Similar Patterns
-**Record:** rtw89's `rtw89_ops_switch_vif_chanctx()` (mac80211.c:1369)
-iterates each vif individually with per-vif link lookup — the correct
-pattern. ath12k's pre-fix code was an outlier assuming single-radio
-batch processing.
-
----
-
-## Phase 6: Cross-Referencing Against Local Tree
-
-### Step 6.1: Buggy Code Exists?
-**Record:** **YES.** Local tree is **v6.18.44** (`git describe HEAD`).
-Buggy code confirmed at mac.c:11635-11646 — uses `vifs->old_ctx` for
-single `ar`, processes all `n_vifs` with that `ar`. Bug introduced by
-`314876885bdcc3` (April 2024, present since ~v6.9). Multi-radio single-
-wiphy support fully present (`ah->num_radio`, `wiphy->n_radio`, MLO
-capable hardware registration at mac.c:14395+).
-
-### Step 6.2: Backport Complications
-**Record:** Clean apply expected. File structure matches diff context.
-`kzalloc_objs`, `__free(kfree)`, `ath12k_generic_dbg` all available. No
-conflicting changes in recent history. Expected difficulty: **clean
-apply**.
-
-### Step 6.3: Related Fixes Already Present?
-**Record:** No — `git log -S "ar_map"` and `git grep "Prevent incorrect
-vif chanctx"` return nothing. Fix not yet in tree.
-
----
-
-## Phase 7: Subsystem and Maintainer Context
-
-### Step 7.1: Subsystem Criticality
-**Record:** **drivers/net/wireless/ath/ath12k** — IMPORTANT. WiFi 7
-driver for Qualcomm hardware (QCN9274, WCN7850, etc.). Not core kernel,
-but affects all users of supported WiFi 7 hardware.
-
-### Step 7.2: Subsystem Activity
-**Record:** Actively developed — 20+ commits to ath12k/mac.c in recent
-history. ath12k is a relatively young but production driver in v6.18.
-
----
-
-## Phase 8: Impact and Risk Assessment
-
-### Step 8.1: Who Is Affected
-**Record:** Users of multi-radio ath12k hardware in single-wiphy MLO
-configuration (`CONFIG_ATH12K=y/m`). Specifically QCN9274 and similar
-WiFi 7 chipsets with 2+ radios. Not universal, but growing hardware
-segment.
-
-### Step 8.2: Trigger Conditions
-**Record:** Simultaneous CSA across multiple links spanning more than
-one radio. Occurs when mac80211 calls `ieee80211_chsw_switch_vifs()`
-with `n_vifs > 1` and vifs map to different radios. Realistic on MLO
-AP/STA setups during channel switches. Not timing-dependent race —
-deterministic logic bug. Unprivileged users can trigger indirectly via
-WiFi management (e.g., AP channel change affecting multiple MLO links).
-
-### Step 8.3: Failure Mode Severity
-**Record:** **HIGH** — Driver state corruption. Wrong vdev IDs sent to
-wrong radio's firmware via WMI. Can cause WiFi disconnects, firmware
-communication errors, potential kernel warnings/crashes. The added
-`WARN_ON(!arvif)` path prevents NULL dereference when vif doesn't
-resolve on the wrong radio. Not silent data corruption, but functional
-breakage of wireless connectivity.
-
-### Step 8.4: Risk-Benefit
-**Record:**
-- **Benefit:** HIGH for affected hardware — prevents state corruption
-  during CSA on multi-radio WiFi 7 devices
-- **Risk:** LOW — contained to one function's error handling path, uses
-  established patterns, adds validation before processing
-- **Ratio:** Strong benefit outweighs minimal risk
-
----
-
-## Phase 9: Final Synthesis
-
-### Step 9.1: Evidence Summary
-
-**FOR backporting:**
-- Fixes real, reproducible logic bug in multi-radio chanctx switching
-- Can corrupt driver state / break WiFi on QCN9274-class hardware
-- Hardware-tested (Tested-on: QCN9274)
-- Reviewed by two Qualcomm ath12k developers
-- Small, single-file, self-contained fix
-- Bug present since April 2024 single-wiphy support (`314876885bdcc3`)
-- Buggy code confirmed in v6.18.44
-- Adds NULL safety guard preventing potential oops
-- Follows pattern used by other WiFi drivers (rtw89)
-
-**AGAINST backporting:**
-- Only affects multi-radio ath12k hardware (not all users)
-- No syzbot report or user bug report (identified proactively)
-- CSA across multiple radios may be less common than single-radio
-  operations
-
-**UNRESOLVED:**
-- Full lore.kernel.org review thread (bot protection blocked access)
-- Whether reviewers explicitly nominated for stable
-
-### Step 9.2: Stable Rules Checklist
-1. Obviously correct and tested? **PASS** — logic is sound, QCN9274
-   tested, dual Reviewed-by
-2. Fixes a real bug? **PASS** — incorrect radio selection with state
-   corruption
-3. Important issue? **PASS** — driver state corruption / connectivity
-   loss (HIGH severity)
-4. Small and contained? **PASS** — one file, ~75 lines, focused change
-5. No new features or APIs? **PASS** — bug fix only, returns existing
-   error codes
-6. Can apply to local tree? **PASS** — all dependencies present, clean
-   apply expected
-
-### Step 9.3: Exception Categories
-**Record:** N/A — standard driver bug fix, not a quirk/DT/build/doc
-exception.
-
-### Step 9.4: Decision Rationale
-
-This commit fixes a deterministic bug in ath12k's channel context switch
-handler for multi-radio single-wiphy configurations. The local tree
-(v6.18.44) contains the buggy code introduced in April 2024 and lacks
-this fix. When mac80211 passes vifs spanning multiple radios during
-simultaneous CSA, the driver sends vdev WMI commands to the wrong radio,
-corrupting driver state. The fix correctly groups vifs by radio and
-validates each entry — a minimal, obviously correct change tested on
-real hardware. While the affected hardware population is narrower than a
-core kernel bug, WiFi 7 multi-radio devices are production hardware in
-v6.18, and driver state corruption during channel switches is a serious
-functional defect appropriate for stable.
-
----
-
-## Verification
-
-- **[Phase 1]** Parsed commit message: subject, tags (Tested-on,
-  Reviewed-by x2, Link), body analysis
-- **[Phase 2]** Diff analysis: 2 functions in mac.c, logic bug + NULL
-  guard, ~75 lines
-- **[Phase 3]** `git blame -L 11625,11649`: function from d889913
-  (2022), radio lookup from 314876885bdcc3 (2024-04-09)
-- **[Phase 3]** `git show 314876885bdcc3`: confirmed single-wiphy commit
-  introduced the assumption
-- **[Phase 3]** `git merge-base --is-ancestor`: both d889913 and
-  314876885bdcc3 are in tree
-- **[Phase 3]** `git log -S "ar_map"`: empty — fix not applied
-- **[Phase 3]** `git log --oneline -20 --
-  drivers/net/wireless/ath/ath12k/mac.c`: recent active development
-- **[Phase 4]** `b4 dig -c HEAD`: failed (commit not in tree)
-- **[Phase 4]** lore.kernel.org/patch.msgid.link: blocked by Anubis
-  (UNVERIFIED: review thread)
-- **[Phase 5]** `grep switch_vif_chanctx`: mac80211 chan.c:1537 calls
-  with n_vifs spanning all reserved links
-- **[Phase 5]** Read rtw89 mac80211.c:1369-1414: per-vif iteration
-  pattern (comparison)
-- **[Phase 5]** Read ath12k mac.c:10878-10907: confirmed NULL deref risk
-  before fix
-- **[Phase 6]** `git describe HEAD`: v6.18.44
-- **[Phase 6]** Read mac.c:11625-11649: buggy code present (uses vifs[0]
-  only)
-- **[Phase 6]** `git merge-base --is-ancestor 3bf5e19c804d0 HEAD`:
-  kzalloc_objs available
-- **[Phase 6]** `grep __free(kfree)`: pattern already used in
-  ath12k/mac.c
-- **[Phase 6]** `grep ath12k_generic_dbg`: present in debug.h
-- **[Phase 8]** Failure mode: driver state corruption on multi-radio
-  CSA, severity HIGH
-
-**YES**The background search finished: the commit isn’t in this tree yet
-(no matches for “Prevent incorrect vif chanctx” or “multi-radio
-contexts”), which matches evaluating it as a new backport candidate.
-
-**Summary for v6.18.44:** **YES** — backport this fix.
-
-The bug is real and present: on multi-radio ath12k hardware,
-`ath12k_mac_op_switch_vif_chanctx()` picks the radio from `vifs[0]` but
-processes the whole batch, so simultaneous CSA across radios can send
-vdev WMI commands to the wrong radio and corrupt driver state. The patch
-groups vifs by radio, validates each one, and adds a NULL guard in
-`ath12k_mac_update_vif_chan()`. It’s a small, single-file change, tested
-on QCN9274, and should apply cleanly here.
-
- drivers/net/wireless/ath/ath12k/mac.c | 87 +++++++++++++++++++++++----
- 1 file changed, 76 insertions(+), 11 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 4bb4482e27343..2f47054efa44e 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10888,6 +10888,9 @@ ath12k_mac_update_vif_chan(struct ath12k *ar,
- 			continue;
- 		}
- 
-+		if (WARN_ON(!arvif))
-+			continue;
-+
- 		ath12k_dbg(ab, ATH12K_DBG_MAC,
- 			   "mac chanctx switch vdev_id %i freq %u->%u width %d->%d\n",
- 			   arvif->vdev_id,
-@@ -11628,23 +11631,85 @@ ath12k_mac_op_switch_vif_chanctx(struct ieee80211_hw *hw,
- 				 int n_vifs,
- 				 enum ieee80211_chanctx_switch_mode mode)
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 39 ++++++++++++++++++++-------
+ 1 file changed, 30 insertions(+), 9 deletions(-)
+
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+@@ -225,22 +225,43 @@
+ 				    struct ath12k_dp_rx_tid_rxq *rx_tid)
  {
--	struct ath12k *ar;
-+	struct ath12k *curr_ar, *new_ar, *group_ar;
-+	struct ieee80211_vif_chanctx_switch *v;
-+	int i, j, count = 0;
+ 	struct ath12k_hal_reo_cmd cmd = {};
++	dma_addr_t paddr = rx_tid->qbuf.paddr_aligned;
++	u32 off = rx_tid->qbuf.size;
+ 	int ret;
  
- 	lockdep_assert_wiphy(hw->wiphy);
- 
--	ar = ath12k_get_ar_by_ctx(hw, vifs->old_ctx);
--	if (!ar)
--		return -EINVAL;
-+	if (n_vifs == 0)
-+		return 0;
- 
--	/* Switching channels across radio is not allowed */
--	if (ar != ath12k_get_ar_by_ctx(hw, vifs->new_ctx))
--		return -EINVAL;
-+	struct ath12k **ar_map __free(kfree) = kzalloc_objs(*ar_map, n_vifs);
- 
--	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
--		   "mac chanctx switch n_vifs %d mode %d\n",
--		   n_vifs, mode);
--	ath12k_mac_update_vif_chan(ar, vifs, n_vifs);
-+	if (!ar_map)
-+		return -ENOMEM;
-+
-+	for (i = 0; i < n_vifs; i++) {
-+		v = &vifs[i];
-+
-+		if (v->old_ctx->def.chan->band != v->new_ctx->def.chan->band) {
-+			ath12k_generic_dbg(ATH12K_DBG_MAC,
-+					   "mac chanctx switch band change not supported\n");
-+			return -EOPNOTSUPP;
+-	cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
+-	cmd.addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
++	/* The REO cache controller caches the queue descriptor and each
++	 * 128-byte extension descriptor as separate objects, and a
++	 * FLUSH_CACHE command only addresses one of them. FLUSH_QUEUE_1K_DESC
++	 * extends the base flush to the 1K-window descriptor but does not
++	 * cover the extension descriptors, so flush those explicitly first.
++	 * The command ring executes in order, hence the final base flush
++	 * status also confirms the extension flushes have completed.
++	 */
++	while (off > HAL_LINK_DESC_ALIGN) {
++		off -= HAL_LINK_DESC_ALIGN;
++		memset(&cmd, 0, sizeof(cmd));
++		cmd.addr_lo = lower_32_bits(paddr + off);
++		cmd.addr_hi = upper_32_bits(paddr + off);
++		ret = ath12k_wifi7_dp_reo_cmd_send(ab, rx_tid,
++						   HAL_REO_CMD_FLUSH_CACHE,
++						   &cmd, NULL);
++		if (ret) {
++			ath12k_warn(ab,
++				    "failed to send FLUSH_CACHE for tid %d offset 0x%x: %d\n",
++				    rx_tid->tid, off, ret);
++			return ret;
 +		}
-+
-+		curr_ar = ath12k_get_ar_by_ctx(hw, v->old_ctx);
-+		new_ar = ath12k_get_ar_by_ctx(hw, v->new_ctx);
-+
-+		if (!curr_ar || !new_ar) {
-+			ath12k_generic_dbg(ATH12K_DBG_MAC,
-+					   "unable to determine device for the passed channel ctx\n");
-+			ath12k_generic_dbg(ATH12K_DBG_MAC,
-+					   "Old freq %d MHz (device %s) to new freq %d MHz (device %s)\n",
-+					   v->old_ctx->def.chan->center_freq,
-+					   curr_ar ? "valid" : "invalid",
-+					   v->new_ctx->def.chan->center_freq,
-+					   new_ar ? "valid" : "invalid");
-+			return -EINVAL;
-+		}
- 
-+		/* Switching a vif between two radios is not allowed */
-+		if (curr_ar != new_ar) {
-+			ath12k_dbg(curr_ar->ab, ATH12K_DBG_MAC,
-+				   "mac chanctx switch to another radio not supported\n");
-+			return -EOPNOTSUPP;
-+		}
-+
-+		ar_map[i] = curr_ar;
 +	}
 +
-+	/* Group vifs by radio (ar) and process each group independently. */
-+	bool *processed __free(kfree) = kzalloc_objs(*processed, n_vifs);
-+
-+	if (!processed)
-+		return -ENOMEM;
-+
-+	struct ieee80211_vif_chanctx_switch *group_vifs __free(kfree) =
-+						kzalloc_objs(*group_vifs, n_vifs);
-+
-+	if (!group_vifs)
-+		return -ENOMEM;
-+
-+	for (i = 0; i < n_vifs; i++) {
-+		if (processed[i])
-+			continue;
-+
-+		group_ar = ar_map[i];
-+
-+		count = 0;
-+		for (j = 0; j < n_vifs; j++) {
-+			if (!processed[j] && ar_map[j] == group_ar) {
-+				group_vifs[count++] = vifs[j];
-+				processed[j] = true;
-+			}
-+		}
-+
-+		ath12k_dbg(group_ar->ab, ATH12K_DBG_MAC,
-+			   "mac chanctx switch n_vifs %d mode %d\n",
-+			   count, mode);
-+		ath12k_mac_update_vif_chan(group_ar, group_vifs, count);
-+	}
- 	return 0;
- }
++	memset(&cmd, 0, sizeof(cmd));
++	cmd.addr_lo = lower_32_bits(paddr);
++	cmd.addr_hi = upper_32_bits(paddr);
+ 	/* HAL_REO_CMD_FLG_FLUSH_FWD_ALL_MPDUS - all pending MPDUs
+-	 *in the bitmap will be forwarded/flushed to REO output rings
++	 * in the bitmap will be forwarded/flushed to REO output rings
+ 	 */
+ 	cmd.flag = HAL_REO_CMD_FLG_NEED_STATUS |
+ 		   HAL_REO_CMD_FLG_FLUSH_FWD_ALL_MPDUS;
  
--- 
-2.53.0
+-	/* For all QoS TIDs (except NON_QOS), the driver allocates a maximum
+-	 * window size of 1024. In such cases, the driver can issue a single
+-	 * 1KB descriptor flush command instead of sending multiple 128-byte
+-	 * flush commands for each QoS TID, improving efficiency.
+-	 */
+-
+ 	if (rx_tid->tid != HAL_DESC_REO_NON_QOS_TID)
+ 		cmd.flag |= HAL_REO_CMD_FLG_FLUSH_QUEUE_1K_DESC;
+ 
+--
+2.47.0
 
 
