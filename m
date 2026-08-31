@@ -4,150 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC147C61DD3
-	for <ath12k@archiver.kernel.org>; Mon, 31 Aug 2026 05:53:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34779C624C6
+	for <ath12k@archiver.kernel.org>; Mon, 31 Aug 2026 13:34:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=i6IMBdlMGgMvEJy6upP7aINcUJJT4RA76aNd/khHM6I=; b=XFYKd8bO0JcBjlH0g2foQ2EnME
-	ruA26lyxqHtNQLWu2HNJNVPgjTy7rWkBy7fW+aNt65ztCJ8P8h0px5DqOioeb59D2lIsgT+mjjD8v
-	U9ySnCgNuZa/4aUBcAMsMCGoJ2jUylNIdPeM2T8rruVUsHAGNFzhHHqO5wj70GsM7ykfaBQ7a3Gjo
-	iQl7LoHosz/yCNeVKXRGZR+J8uXcdx4K1+LU2z72lxtoGJSP06UtRQ63DgodeR0Wxxt4nvNSvYwl+
-	x53uJKSNDbyaxMySApdR+lZ3saRlylk84cqfNuHnHKqVwm2s5jVSjtHS21cBrGwnwNEo0Eh+m13BV
-	Btkv5C0g==;
+	bh=suBB6sMnaRiFD/+vEeFBmjXPBsbA6V2QiMRWp064h8M=; b=CP6ejKB57+20zD55lgYVZXLBrt
+	2AbJ2zeaI+7T0L8/apV2Gtx1mcd1NJlsxx7kRV7zpglS0pDJMUPwtbs9hK+Z4GRFBEnFAc+oZyosG
+	EqrKt01FtkWIoYLT8eO76/5teMGezXYHMspTR3qauEvln2Sort4ThJofx6hWuVpHQQuU1zt530muT
+	lEw1Ley3xgR/k+p6SQmem0iMtc9r6/Y5nLmp9HmRHoaro6rOpGmLbtftUgEME1397t5jRy6jXczMx
+	zplB/eMwqNnpvnYPXL0Ca0U0q/AaCjX95dGQMn4Eh/AwEwp7dolEz+axJkoZRNyU6xjLLhht+4f5B
+	cMYZsyrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0uxV-00000008Zpg-25aK;
-	Mon, 31 Aug 2026 05:53:29 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1x129p-00000009Qez-3Xy0;
+	Mon, 31 Aug 2026 13:34:41 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0uxS-00000008Zp9-2nMR
+	id 1x129p-00000009Qdy-0GNl
 	for ath12k@lists.infradead.org;
-	Mon, 31 Aug 2026 05:53:27 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67V52Khr1933573
-	for <ath12k@lists.infradead.org>; Mon, 31 Aug 2026 05:53:26 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	i6IMBdlMGgMvEJy6upP7aINcUJJT4RA76aNd/khHM6I=; b=HfXIJHXbmG2SG1Fp
-	ltjoQr6H/q/Shio/qtoTZ3XfgtXnTpvCdv6SCKOyO1YGrln2btWnca9QeuJfazMq
-	ND5BloJsBdorWbw89FXJzoLDyntdGJMCa119HfKawEgtXPYjX+dUTocylUPqc28S
-	PnlOUP2umvRB/eCJ0A5hZFxjln4Mo2uz2NE+DQHtt36gWJ7iTYXHRjpXXocCWxYE
-	b7xh5fNQDW+TtoEimtx7jgkhXezDTmZPWvWvw5vLzKJumKYtkcF6TGV4ofsirDM0
-	KtoyF1QFoAFG5SYePXLF6FrSHw7qdQffXXhkSF0tjyII8Hw4xdk6/+8tXUFrrYhb
-	kNUPdA==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gbrq84krd-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 31 Aug 2026 05:53:25 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-3967eca9c6aso1034719a91.2
-        for <ath12k@lists.infradead.org>; Sun, 30 Aug 2026 22:53:25 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1788155605; cv=none;
-        d=google.com; s=arc-20260327;
-        b=VC/iVqR7pcqsdOeWHKf3vtoThXaZt7t09Os8K3Bn35tMcQhjklOHZbCOGFagTNX551
-         rUQnqdFus3p6rODRJAmS0T5sa7T49E1FaKacmG62sCiER0mdT9A9cRIkXsuyfETlk7yV
-         CR/mTGxxZnyhUWirOPdX8/cPlyb3Kns4FahYa1TGsvHt2NuvZcJNeOhHpVlg7H9Uleyu
-         +jaTdyu7/kH5Aig4V7U+A8YGF5RoEBDKu5AFc/cWHnMGojoCEzhtyIMX4DqxMJfWKAHg
-         VD1xZB5IdpbHyyy7uZJZK94rFsiuxhYN1G6Zeda8U+JOHJqHnsi3rp9wx/8gK2RA4qBi
-         20jA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=i6IMBdlMGgMvEJy6upP7aINcUJJT4RA76aNd/khHM6I=;
-        fh=ma8WaQBWuqpV1IqQJIUqXjIlzsJlkrrjzGv18pjCMac=;
-        b=FJNfqQeq5k87QCt80sevMq27LK1q0Cvcck8ELs0BaBUwOp9ushEtzFFnYyvD5Nxdt0
-         9uyK7S2SI2eU9LswwNK9lSKZSXmuZNfqpF9UtIQv6dKyghmQIwULrtRrAVYRqFzzpIvL
-         cr2DIkwcr4NLfAZOTYRcDqQELi4/X/StJpOU7NoH4y73lrz4Bc7EX3pUQevjB0u1+cON
-         JKGxh/4YO3IiyZ/TFlBiGKXVE6Gb+9+9ph6u6C0h9+2CTk2IHQDrwtg0RMY/QKrEITvV
-         abOFm1LH4JCNqT5twxzrGZVaAJc7lc98WoGfyKFLugrj/O/QOZ0//PV89+QxoNMk6s4p
-         dAJg==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1788155605; x=1788760405; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=i6IMBdlMGgMvEJy6upP7aINcUJJT4RA76aNd/khHM6I=;
-        b=U7PMOIP3EpAaKRZRXJkNqFQRHSPEgkPNcAigs3CpJXZ/RqMUmYoEv2WEDu6EvPI+f1
-         xgc59BmYjBZBudO7vGuv9+KWUHClHHsuHsxkD3/Hu8HtMbaSvmxpqWGX0gnuTokxL7H7
-         zEw/yBcvU2GszwT//gLfwY6IRQ5H1KLO6/sHzc1VnyqwLY9JuP9Ec72z2nJTbgzyWc5L
-         FWcDhlYxaffh2USm9aZdmRGE5z9HxuLqXije95U2RPLaNmqdB8ZeWGCuGCQiuuiyI4k2
-         bXhNNB3BvbcZmxeFmm2JzALqTCDQ7LAhYGBGUt5UZhIDPHWLxt07fHr48Nzgu4zfsEbJ
-         JR5Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788155605; x=1788760405;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=i6IMBdlMGgMvEJy6upP7aINcUJJT4RA76aNd/khHM6I=;
-        b=IThxh//gOFxPvVOyOM/Bzqwx4KJnP0sp701f8MOT+BFjMzwwP1Hj1CA89apzevVUEE
-         eRWrxBuzoOKNViZk6hobfehRoR8vcAb2+XLdU2PbQRQ7S+h92oCuyhrspVPCdFCMmKqQ
-         OJgn4TQmvE89GVpuiW1jTwqxyGShQtfupaIk5APwMkxH6uLEX+TCs2e+pnIk7wwzeiAA
-         1DqpF1VTMzO9PfzP5ZnZB9Iq/+YUhe+1/nIa6vtrZio1tRImYrmA3f7oo5YQoDelI4KT
-         GmD1P9IJbmRkffnviFTIhqs3j1W/2i7729ibg4Xsl7z4gbxkgdlnl5cw3aRxZHgKnaM/
-         /K0A==
-X-Gm-Message-State: AFuF++lVzoR6YSw+T+KBeSGsInqtx06YkmzO+ieI43vvIXslRnFaDnj3
-	4x9oOWW9F/xNsI/JZaGK7s2HxLCA40gvPIgPXgtZVJSgTkYbgcH3/CDFdgveP/iDDoCjJNbdfBm
-	F2bZ70eSGnS84Iczu+651VPmzCJMYtC5W9imu1O88xXfmRh3d6eIxAC+rg66rWfcNi//vkq3NKx
-	qpx0HIt+8/V8UhbTW4KmqhEMBUOEuXQEwgCGXKSKs=
-X-Gm-Gg: AYBFou1Esd6gVyaPaBXPFtnqbsUcMLJUw9Fv3NtfZJxRXBStYo285W5lik2bdoTFW5n
-	I13/cF9UxcUjbgAHTu9sqv9cv2EQjHZ2a5R44k1NCbhu2m4osrcN6HEP/79fF3Eve97GPsE63h5
-	56J2Hpo4kTclCfQNEGer1n5Vw4LWtgw981qNwLc0vWPil5QqVGuPZzbbMBhOnvr1JSTZu0kPvvT
-	8ZEE3BW8vt9fcAS55Y=
-X-Received: by 2002:a17:90b:5285:b0:396:d28e:b52 with SMTP id 98e67ed59e1d1-398bac69412mr9638961a91.3.1788155605008;
-        Sun, 30 Aug 2026 22:53:25 -0700 (PDT)
-X-Received: by 2002:a17:90b:5285:b0:396:d28e:b52 with SMTP id
- 98e67ed59e1d1-398bac69412mr9638925a91.3.1788155604472; Sun, 30 Aug 2026
- 22:53:24 -0700 (PDT)
+	Mon, 31 Aug 2026 13:34:41 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id CA60A4165D;
+	Mon, 31 Aug 2026 13:34:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 477771F00ADF;
+	Mon, 31 Aug 2026 13:34:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788183280;
+	bh=suBB6sMnaRiFD/+vEeFBmjXPBsbA6V2QiMRWp064h8M=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=LkX6jknhSgKIfTdQ1vm9tpy+L9A+0qjlmV+Z8AanhpK55nFFvQQxyP45Al6LMAQR3
+	 cuBuDK3kC3LtjhX0wFk9fEV8kRrkWohELRnTfhPrMoq7o0wlhNAP+iarmUeXyNqm1T
+	 GF2JM4A32W/5+hQ3VoVHMyhU2xT6VcdDVy6RqCjTCCh0DsQyYJ50dcYNhOvHfXhf0U
+	 w6puUhkmxBJLneahWJdAMPXjVoF6d62xDk88hiQ+anW+K/aYYcdnidUnGy8Bq6kKlN
+	 XAgE4kpCKzVSo9CY+tDYpeQBoR+JPLjckNeKFh+KI3IPHCj/P5WifFelru04GrzLKV
+	 SZBccebv5s9Rw==
+From: Sasha Levin <sashal@kernel.org>
+To: patches@lists.linux.dev,
+	stable@vger.kernel.org
+Cc: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
+	Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>,
+	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
+	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+	Sasha Levin <sashal@kernel.org>,
+	jjohnson@kernel.org,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH AUTOSEL 6.18] wifi: ath12k: Prevent incorrect vif chanctx switch when handling multi-radio contexts
+Date: Mon, 31 Aug 2026 09:21:21 -0400
+Message-ID: <20260831133314.4125787-53-sashal@kernel.org>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260831133314.4125787-1-sashal@kernel.org>
+References: <20260831133314.4125787-1-sashal@kernel.org>
 MIME-Version: 1.0
-References: <20260828065534.1537-1-kang.yang@oss.qualcomm.com>
-In-Reply-To: <20260828065534.1537-1-kang.yang@oss.qualcomm.com>
-From: Tamizh Raja <tamizh.raja@oss.qualcomm.com>
-Date: Mon, 31 Aug 2026 11:23:12 +0530
-X-Gm-Features: AcwNN1Wy8FyiBhUci_1q7jB0oOpbWXw5bqWZpvaioxq4nfOQgv6iuj3oqi8_Qkg
-Message-ID: <CABkEBKYdFcUfMGj1pGmVYrdLQTO0eExq8Z+vMdjYGN+yjQ2uFg@mail.gmail.com>
-Subject: Re: [PATCH ath-next] wifi: ath12k: preserve PPDU state across monitor
- status buffers
-To: Kang Yang <kang.yang@oss.qualcomm.com>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-X-Proofpoint-GUID: cCiWFSBYdU4ocIP-hcaEULeZzERsySGl
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODMxMDA0OCBTYWx0ZWRfX9OXH+s2jhHzV
- MVqxYGaVU/GPllH4/LLigFWFoarpC6yKBVdmjLehrltNzelh2LuXef9MWZsj+JsdOBBE9zzf1uQ
- ErBga9oltzpXK20/TcGwqcJt2yb2kzA=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODMxMDA0OCBTYWx0ZWRfX3sFopVt0Hc+H
- GREI40igOze5aMqhU1b90xNq4rexwA5VAqeVIuX4dKPKs+eSgibi84q8zSYJ+s/nT3GwGH95F71
- us58KD1igt0rSC42/PRI0tA4BasHGwdpVeq/OYRL5GM+MFcA2ZM+LtilMigvDuY5taXdgZ+v/FQ
- Q4isPNgTf4sJl2Msgh0j4mMAmzj7On7oVYDvJAW767ahzR5LIu3rKTlst7ZThHqXujzA08atKtb
- ZMAnsFmQkUlmv1nQQuaaOyxN4KfDeGECW8xKGRQh5OY5eBdPdgu+XHh7W2cqYZ5ueuCPUaojcSs
- 3kpuLBOhaWCiAvTHtFeZLs3GuYYhjSsEL348wKMPs+B2zPHn/z08z4kkweGWfwThOid1qEP9q3Y
- ys3Ham/Y7mh0g7thf9xulvpU6lXxO8HPQDuUgJrx95W3WAdwP2P6+0vRR8G6RVITQCtdzdw43/E
- II4ICsK/f8Y/TiDk8jw==
-X-Authority-Analysis: v=2.4 cv=ZOPnX37b c=1 sm=1 tr=0 ts=6a9516d5 cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10
- a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
- a=YMgV9FUhrdKAYTUUvYB2:22 a=EUspDBNiAAAA:8 a=JWBcIGGzIbbpiR4D4CAA:9
- a=QEXdDO2ut3YA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
-X-Proofpoint-ORIG-GUID: cCiWFSBYdU4ocIP-hcaEULeZzERsySGl
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-08-31_02,2026-08-27_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 spamscore=0 malwarescore=0 lowpriorityscore=0
- priorityscore=1501 adultscore=0 bulkscore=0 impostorscore=0 phishscore=0
- clxscore=1015 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2608310048
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260830_225326_716846_C9F7F426 
-X-CRM114-Status: GOOD (  26.52  )
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.18.48
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,125 +81,523 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, Aug 28, 2026 at 12:26=E2=80=AFPM Kang Yang <kang.yang@oss.qualcomm.=
-com> wrote:
->
-> A monitor PPDU may span multiple status buffers. However,
-> __ath12k_wifi7_dp_mon_process_ring() clears mon_ppdu_info before
-> processing every buffer.
->
-> As a result, continuation buffers lose PPDU state collected from
-> earlier buffers, including ppdu_id and PHY metadata.
->
-> This can cause monitor RX processing to fail when
-> ath12k_wifi7_dp_rx_mon_dest_process() observes a PPDU ID mismatch
-> between status and destination rings, preventing MSDUs from being
-> delivered. It can also produce incomplete EHT metadata that triggers
-> warnings from mac80211:
->         Rate marked as an EHT rate but data is invalid: MCS:0, NSS:0
->
-> ath12k_wifi7_dp_mon_srng_process() already tracks status TLV
-> continuations via ppdu_continuation. Apply the same logic here and
-> only reinitialize mon_ppdu_info when starting a new PPDU.
->
-> mon_ppdu_info persists across ar->monitor_started transitions. If
-> monitor mode stops while a PPDU is mid-continuation, ppdu_continuation
-> stays set and could leak into the next monitor session. Reset it
-> when monitor mode starts.
->
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_S=
-ILICONZ_UPSTREAM-3
->
-> Fixes: 78d3d907d0f1 ("wifi: ath12k: add support to reap and process monit=
-or status ring")
-> Signed-off-by: Kang Yang <kang.yang@oss.qualcomm.com>
-> ---
->  drivers/net/wireless/ath/ath12k/mac.c         |  7 ++++++
->  .../net/wireless/ath/ath12k/wifi7/dp_mon.c    | 23 +++++++++++--------
->  2 files changed, 21 insertions(+), 9 deletions(-)
->
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless=
-/ath/ath12k/mac.c
-> index 9a775602775d..bda055a86f06 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -1502,6 +1502,13 @@ static int ath12k_mac_monitor_start(struct ath12k =
-*ar)
->                 return ret;
->         }
->
-> +       /*
-> +        * A previous monitor session may have stopped mid-PPDU, leaving
-> +        * ppdu_continuation set. Clear it so the first status buffer of
-> +        * this session is not merged with stale state from before.
-> +        */
-> +       ar->dp.mon_data.mon_ppdu_info.ppdu_continuation =3D false;
-> +
->         ar->monitor_started =3D true;
->         ar->num_started_vdevs++;
->
-> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c b/drivers/net=
-/wireless/ath/ath12k/wifi7/dp_mon.c
-> index 016b0c38e51e..ded7d56cd79b 100644
-> --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c
-> +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c
-> @@ -3211,18 +3211,23 @@ __ath12k_wifi7_dp_mon_process_ring(struct ath12k =
-*ar, int mac_id,
->                 goto exit;
->
->         while ((skb =3D __skb_dequeue(&skb_list))) {
-> -               memset(ppdu_info, 0, sizeof(*ppdu_info));
-> -               ppdu_info->peer_id =3D HAL_INVALID_PEERID;
-> +               if (!ppdu_info->ppdu_continuation)
-> +                       ath12k_wifi7_dp_mon_rx_memset_ppdu_info(ppdu_info=
-);
->
->                 hal_status =3D ath12k_wifi7_dp_mon_parse_rx_dest(&ar->dp,=
- pmon, skb);
->
-> -               if (ar->monitor_started &&
-> -                   pmon->mon_ppdu_status =3D=3D DP_PPDU_STATUS_START &&
-> -                   hal_status =3D=3D HAL_TLV_STATUS_PPDU_DONE) {
-> -                       rx_mon_stats->status_ppdu_done++;
-> -                       pmon->mon_ppdu_status =3D DP_PPDU_STATUS_DONE;
-> -                       ath12k_wifi7_dp_rx_mon_dest_process(ar, mac_id, *=
-budget, napi);
-> -                       pmon->mon_ppdu_status =3D DP_PPDU_STATUS_START;
-> +               if (hal_status =3D=3D HAL_TLV_STATUS_PPDU_DONE) {
-Consider HAL_RX_MON_STATUS_PPDU_DONE instead of
-HAL_TLV_STATUS_PPDU_DONE to match the declared return type of
-ath12k_wifi7_dp_mon_parse_rx_dest().
-This is a preexisting inconsistency, but it is good to clean it up
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 
-> +                       ppdu_info->ppdu_continuation =3D false;
-> +                       if (ar->monitor_started &&
-> +                           pmon->mon_ppdu_status =3D=3D DP_PPDU_STATUS_S=
-TART) {
-> +                               rx_mon_stats->status_ppdu_done++;
-> +                               pmon->mon_ppdu_status =3D DP_PPDU_STATUS_=
-DONE;
-> +                               ath12k_wifi7_dp_rx_mon_dest_process(ar, m=
-ac_id,
-> +                                                                   *budg=
-et, napi);
-> +                               pmon->mon_ppdu_status =3D DP_PPDU_STATUS_=
-START;
-> +                       }
-> +               } else {
-> +                       ppdu_info->ppdu_continuation =3D true;
->                 }
->
->                 dev_kfree_skb_any(skb);
->
-> base-commit: ca800a9302764c445de0da0e84d2252400a770ee
-> --
-> 2.34.1
->
->
-Actual code change looks good to me
+[ Upstream commit 675aa75bfc29fb18c6e4d58904a91c1d37228217 ]
 
-Reviewed-by: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
+When multiple links switch channel contexts around the same time, mac80211
+may complete CSA for several links together and invoke
+ath12k_mac_op_switch_vif_chanctx() with an array of vifs spanning more than
+one underlying radio in a single-wiphy configuration.
 
---=20
-- Tamizh.
+The driver currently assumes that all entries in the vifs array belong to the
+same radio and derives the radio context from the first element. On multi-radio
+hardware, this can lead to incorrect vdev selection/updates and may corrupt
+driver state when the number of vifs exceeds what a single radio supports.
+
+Fix this by validating each vif's switch request and then processing vifs
+grouped by their associated radio. For each vif, ensure the band does not
+change across the switch and that both old/new channel contexts resolve to a
+valid ath12k device. Reject attempts to move a vif between radios (not
+supported for now) and return -EOPNOTSUPP to upper layers.
+
+Then, iterate through the input vifs, collect all unprocessed entries that map
+to the same radio, and invoke ath12k_mac_update_vif_chan() separately for each
+radio group. This removes any reliance on mac80211 providing the array grouped
+by radio or sharing old_ctx pointers across vifs.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Co-developed-by: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
+Signed-off-by: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Link: https://patch.msgid.link/20260522091828.3199584-1-maharaja.kennadyrajan@oss.qualcomm.com
+Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+
+LLM Generated explanations, may be completely bogus:
+
+## Phase 1: Commit Message Forensics
+
+### Step 1.1: Subject Line
+**Record:** `[wifi: ath12k]` `[Prevent]` — Prevent incorrect vif chanctx
+switch when handling multi-radio contexts.
+
+### Step 1.2: Tags
+**Record:**
+- **Tested-on:** QCN9274 hw2.0 PCI
+  WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
+- **Signed-off-by:** Aditya Kumar Singh, Maharaja Kennadyrajan, Jeff
+  Johnson
+- **Co-developed-by:** Maharaja Kennadyrajan
+- **Reviewed-by:** Baochen Qiang, Rameshkumar Sundaram (Qualcomm ath12k
+  developers)
+- **Link:** https://patch.msgid.link/20260522091828.3199584-1-
+  maharaja.kennadyrajan@oss.qualcomm.com
+- No Fixes:, Reported-by:, Cc: stable, or syzbot tags
+- Notable: Hardware-tested on real QCN9274; dual Reviewed-by from
+  subsystem developers
+
+### Step 1.3: Body Analysis
+**Record:**
+- **Bug:** `ath12k_mac_op_switch_vif_chanctx()` assumes all entries in
+  the `vifs` array belong to the same radio, deriving the radio (`ar`)
+  from `vifs[0]` only. When mac80211 completes CSA for multiple links
+  simultaneously across radios in a single-wiphy multi-radio
+  configuration, vifs from different radios are passed in one array.
+- **Symptom:** Incorrect vdev selection/updates; driver state corruption
+  when vif count exceeds single-radio capacity.
+- **Root cause:** Reliance on mac80211 grouping vifs by radio or sharing
+  old_ctx pointers across vifs — neither is guaranteed.
+- **Fix approach:** Validate each vif individually, group by radio,
+  process each group with the correct `ar`. Reject unsupported band
+  changes and cross-radio moves with `-EOPNOTSUPP`.
+
+### Step 1.4: Hidden Bug Fix Detection
+**Record:** Yes — explicitly a bug fix despite "Prevent" wording. Also
+adds `WARN_ON(!arvif)` in `ath12k_mac_update_vif_chan()` which prevents
+a NULL dereference before `arvif->vdev_id` is accessed (current code
+dereferences `arvif` at line 10893 before the `is_started` check at
+10899, with no NULL guard).
+
+---
+
+## Phase 2: Diff Analysis
+
+### Step 2.1: Inventory
+**Record:**
+- **File:** `drivers/net/wireless/ath/ath12k/mac.c` only
+- **Scope:** ~3 lines added in `ath12k_mac_update_vif_chan()`, ~70 lines
+  changed in `ath12k_mac_op_switch_vif_chanctx()`
+- **Functions modified:** `ath12k_mac_update_vif_chan()`,
+  `ath12k_mac_op_switch_vif_chanctx()`
+- **Classification:** Single-file, focused driver fix
+
+### Step 2.2: Code Flow Changes
+**Record:**
+- **Hunk 1 (`ath12k_mac_update_vif_chan`):** Before → dereferences
+  `arvif->vdev_id` in debug print without NULL check. After →
+  `WARN_ON(!arvif); continue;` added before dereference.
+- **Hunk 2 (`ath12k_mac_op_switch_vif_chanctx`):** Before → gets `ar`
+  from `vifs[0].old_ctx`, validates only first vif's old/new ctx match
+  same radio, calls `ath12k_mac_update_vif_chan(ar, vifs, n_vifs)` for
+  entire array. After → validates each vif's band/old/new ctx/radio,
+  builds `ar_map[]`, groups vifs by radio, calls
+  `ath12k_mac_update_vif_chan(group_ar, group_vifs, count)` per radio
+  group.
+
+### Step 2.3: Bug Mechanism
+**Record:** **Category:** Logic/correctness bug + potential NULL pointer
+dereference. **Mechanism:** WMI vdev restart/stop/start commands are
+sent via the `ar` (radio) context. Using radio A's `ar` to process vifs
+belonging to radio B sends vdev operations to the wrong pdev/firmware,
+corrupting driver state. The `WARN_ON(!arvif)` addition fixes a
+secondary NULL deref when `arvif` lookup fails for a vif on the wrong
+radio.
+
+### Step 2.4: Fix Quality
+**Record:** Fix is obviously correct — mirrors the per-vif iteration
+pattern used by rtw89's `rtw89_ops_switch_vif_chanctx()`. Minimal
+regression risk: only affects the multi-vif chanctx switch path, adds
+proper validation, uses existing allocation patterns (`kzalloc_objs`,
+`__free(kfree)`) already present in ath12k. Early returns on error
+prevent partial corruption.
+
+---
+
+## Phase 3: Git History Investigation
+
+### Step 3.1: Blame
+**Record:** `ath12k_mac_op_switch_vif_chanctx()` introduced in
+`d889913205cf7` (Kalle Valo, 2022-11-28, "wifi: ath12k: driver for
+Qualcomm Wi-Fi 7 devices"). Radio lookup from `vifs->old_ctx` added in
+`314876885bdcc3` (Sriram R, 2024-04-09, "wifi: ath12k: vdev statemachine
+changes for single wiphy") — this is when the bug was introduced. Both
+commits are ancestors of HEAD.
+
+### Step 3.2: Fixes Tag
+**Record:** N/A — no Fixes: tag in commit message.
+
+### Step 3.3: Related File History
+**Record:** Recent ath12k/mac.c commits include other stable-worthy
+fixes (NULL deref, deadlock, scan state). No related chanctx fix already
+present. `git log -S "ar_map"` returns empty — fix not yet applied to
+this tree.
+
+### Step 3.4: Author Context
+**Record:** Authors are active Qualcomm ath12k contributors (Aditya
+Kumar Singh, Maharaja Kennadyrajan). Multiple prior ath12k fixes in tree
+from same team. Reviewed by Baochen Qiang and Rameshkumar Sundaram.
+
+### Step 3.5: Dependencies
+**Record:** Uses `kzalloc_objs()` and `__free(kfree)` — both present in
+this tree (`3bf5e19c804d0` for kzalloc_objs; `__free(kfree)` already
+used extensively in ath12k/mac.c). Uses `ath12k_generic_dbg()` — present
+in debug.h. No series dependencies; standalone fix. Can apply
+standalone.
+
+---
+
+## Phase 4: Mailing List and External Research
+
+### Step 4.1: Original Discussion
+**Record:** `b4 dig -c <hash>` not possible — commit not merged into
+this tree. `b4 dig` with message-id failed (wrong invocation).
+lore.kernel.org and patch.msgid.link blocked by Anubis bot protection
+(curl and WebFetch both returned challenge page). **UNVERIFIED:** Full
+mailing list review thread content.
+
+### Step 4.2: Reviewers
+**Record:** **UNVERIFIED** via b4 dig -w. Commit message shows Reviewed-
+by from two Qualcomm ath12k developers and Signed-off-by from Jeff
+Johnson (ath maintainer).
+
+### Step 4.3: Bug Report
+**Record:** No external bug report or syzbot link. Bug identified
+through code analysis and hardware testing (Tested-on: QCN9274).
+
+### Step 4.4: Related Patches
+**Record:** Standalone patch, not part of a series (no "patch X/Y" in
+subject). No dependencies on other patches.
+
+### Step 4.5: Stable List History
+**Record:** **UNVERIFIED** — could not access lore.kernel.org/stable due
+to bot protection.
+
+---
+
+## Phase 5: Code Semantic Analysis
+
+### Step 5.1: Key Functions
+**Record:** `ath12k_mac_op_switch_vif_chanctx()` (mac80211 driver op),
+`ath12k_mac_update_vif_chan()` (internal helper),
+`ath12k_get_ar_by_ctx()` (radio lookup by channel context).
+
+### Step 5.2: Callers
+**Record:** `ath12k_mac_op_switch_vif_chanctx` registered at mac.c:13056
+as `.switch_vif_chanctx` in `ieee80211_ops`. Called from mac80211 via
+`drv_switch_vif_chanctx()` in `net/mac80211/driver-ops.c:414`. mac80211
+invokes this during channel context switches in `net/mac80211/chan.c` —
+both single-vif (`ieee80211_chsw_switch_vif`, line 1389) and multi-vif
+(`ieee80211_chsw_switch_vifs`, line 1537) paths. Multi-vif path collects
+ALL links with in-place reservations across all replacing chanctxs.
+
+### Step 5.3: Callees
+**Record:** `ath12k_get_ar_by_ctx()` → `ath12k_mac_get_ar_by_chan()`
+(maps channel frequency to radio in multi-radio mode).
+`ath12k_mac_update_vif_chan()` → `ath12k_mac_vdev_restart()`,
+`ath12k_mac_vdev_stop()`, `ath12k_mac_vdev_start()` — all send WMI
+commands to firmware via the `ar` pdev.
+
+### Step 5.4: Reachability
+**Record:** Triggered during CSA (Channel Switch Announcement) when
+mac80211 swaps channel contexts. Reachable from AP channel switches, DFS
+events, and MLO multi-link simultaneous CSA. Requires `CONFIG_ATH12K`
+with multi-radio hardware (`ah->num_radio > 1`). Userspace triggers via
+normal WiFi operations (hostapd channel changes, etc.).
+
+### Step 5.5: Similar Patterns
+**Record:** rtw89's `rtw89_ops_switch_vif_chanctx()` (mac80211.c:1369)
+iterates each vif individually with per-vif link lookup — the correct
+pattern. ath12k's pre-fix code was an outlier assuming single-radio
+batch processing.
+
+---
+
+## Phase 6: Cross-Referencing Against Local Tree
+
+### Step 6.1: Buggy Code Exists?
+**Record:** **YES.** Local tree is **v6.18.44** (`git describe HEAD`).
+Buggy code confirmed at mac.c:11635-11646 — uses `vifs->old_ctx` for
+single `ar`, processes all `n_vifs` with that `ar`. Bug introduced by
+`314876885bdcc3` (April 2024, present since ~v6.9). Multi-radio single-
+wiphy support fully present (`ah->num_radio`, `wiphy->n_radio`, MLO
+capable hardware registration at mac.c:14395+).
+
+### Step 6.2: Backport Complications
+**Record:** Clean apply expected. File structure matches diff context.
+`kzalloc_objs`, `__free(kfree)`, `ath12k_generic_dbg` all available. No
+conflicting changes in recent history. Expected difficulty: **clean
+apply**.
+
+### Step 6.3: Related Fixes Already Present?
+**Record:** No — `git log -S "ar_map"` and `git grep "Prevent incorrect
+vif chanctx"` return nothing. Fix not yet in tree.
+
+---
+
+## Phase 7: Subsystem and Maintainer Context
+
+### Step 7.1: Subsystem Criticality
+**Record:** **drivers/net/wireless/ath/ath12k** — IMPORTANT. WiFi 7
+driver for Qualcomm hardware (QCN9274, WCN7850, etc.). Not core kernel,
+but affects all users of supported WiFi 7 hardware.
+
+### Step 7.2: Subsystem Activity
+**Record:** Actively developed — 20+ commits to ath12k/mac.c in recent
+history. ath12k is a relatively young but production driver in v6.18.
+
+---
+
+## Phase 8: Impact and Risk Assessment
+
+### Step 8.1: Who Is Affected
+**Record:** Users of multi-radio ath12k hardware in single-wiphy MLO
+configuration (`CONFIG_ATH12K=y/m`). Specifically QCN9274 and similar
+WiFi 7 chipsets with 2+ radios. Not universal, but growing hardware
+segment.
+
+### Step 8.2: Trigger Conditions
+**Record:** Simultaneous CSA across multiple links spanning more than
+one radio. Occurs when mac80211 calls `ieee80211_chsw_switch_vifs()`
+with `n_vifs > 1` and vifs map to different radios. Realistic on MLO
+AP/STA setups during channel switches. Not timing-dependent race —
+deterministic logic bug. Unprivileged users can trigger indirectly via
+WiFi management (e.g., AP channel change affecting multiple MLO links).
+
+### Step 8.3: Failure Mode Severity
+**Record:** **HIGH** — Driver state corruption. Wrong vdev IDs sent to
+wrong radio's firmware via WMI. Can cause WiFi disconnects, firmware
+communication errors, potential kernel warnings/crashes. The added
+`WARN_ON(!arvif)` path prevents NULL dereference when vif doesn't
+resolve on the wrong radio. Not silent data corruption, but functional
+breakage of wireless connectivity.
+
+### Step 8.4: Risk-Benefit
+**Record:**
+- **Benefit:** HIGH for affected hardware — prevents state corruption
+  during CSA on multi-radio WiFi 7 devices
+- **Risk:** LOW — contained to one function's error handling path, uses
+  established patterns, adds validation before processing
+- **Ratio:** Strong benefit outweighs minimal risk
+
+---
+
+## Phase 9: Final Synthesis
+
+### Step 9.1: Evidence Summary
+
+**FOR backporting:**
+- Fixes real, reproducible logic bug in multi-radio chanctx switching
+- Can corrupt driver state / break WiFi on QCN9274-class hardware
+- Hardware-tested (Tested-on: QCN9274)
+- Reviewed by two Qualcomm ath12k developers
+- Small, single-file, self-contained fix
+- Bug present since April 2024 single-wiphy support (`314876885bdcc3`)
+- Buggy code confirmed in v6.18.44
+- Adds NULL safety guard preventing potential oops
+- Follows pattern used by other WiFi drivers (rtw89)
+
+**AGAINST backporting:**
+- Only affects multi-radio ath12k hardware (not all users)
+- No syzbot report or user bug report (identified proactively)
+- CSA across multiple radios may be less common than single-radio
+  operations
+
+**UNRESOLVED:**
+- Full lore.kernel.org review thread (bot protection blocked access)
+- Whether reviewers explicitly nominated for stable
+
+### Step 9.2: Stable Rules Checklist
+1. Obviously correct and tested? **PASS** — logic is sound, QCN9274
+   tested, dual Reviewed-by
+2. Fixes a real bug? **PASS** — incorrect radio selection with state
+   corruption
+3. Important issue? **PASS** — driver state corruption / connectivity
+   loss (HIGH severity)
+4. Small and contained? **PASS** — one file, ~75 lines, focused change
+5. No new features or APIs? **PASS** — bug fix only, returns existing
+   error codes
+6. Can apply to local tree? **PASS** — all dependencies present, clean
+   apply expected
+
+### Step 9.3: Exception Categories
+**Record:** N/A — standard driver bug fix, not a quirk/DT/build/doc
+exception.
+
+### Step 9.4: Decision Rationale
+
+This commit fixes a deterministic bug in ath12k's channel context switch
+handler for multi-radio single-wiphy configurations. The local tree
+(v6.18.44) contains the buggy code introduced in April 2024 and lacks
+this fix. When mac80211 passes vifs spanning multiple radios during
+simultaneous CSA, the driver sends vdev WMI commands to the wrong radio,
+corrupting driver state. The fix correctly groups vifs by radio and
+validates each entry — a minimal, obviously correct change tested on
+real hardware. While the affected hardware population is narrower than a
+core kernel bug, WiFi 7 multi-radio devices are production hardware in
+v6.18, and driver state corruption during channel switches is a serious
+functional defect appropriate for stable.
+
+---
+
+## Verification
+
+- **[Phase 1]** Parsed commit message: subject, tags (Tested-on,
+  Reviewed-by x2, Link), body analysis
+- **[Phase 2]** Diff analysis: 2 functions in mac.c, logic bug + NULL
+  guard, ~75 lines
+- **[Phase 3]** `git blame -L 11625,11649`: function from d889913
+  (2022), radio lookup from 314876885bdcc3 (2024-04-09)
+- **[Phase 3]** `git show 314876885bdcc3`: confirmed single-wiphy commit
+  introduced the assumption
+- **[Phase 3]** `git merge-base --is-ancestor`: both d889913 and
+  314876885bdcc3 are in tree
+- **[Phase 3]** `git log -S "ar_map"`: empty — fix not applied
+- **[Phase 3]** `git log --oneline -20 --
+  drivers/net/wireless/ath/ath12k/mac.c`: recent active development
+- **[Phase 4]** `b4 dig -c HEAD`: failed (commit not in tree)
+- **[Phase 4]** lore.kernel.org/patch.msgid.link: blocked by Anubis
+  (UNVERIFIED: review thread)
+- **[Phase 5]** `grep switch_vif_chanctx`: mac80211 chan.c:1537 calls
+  with n_vifs spanning all reserved links
+- **[Phase 5]** Read rtw89 mac80211.c:1369-1414: per-vif iteration
+  pattern (comparison)
+- **[Phase 5]** Read ath12k mac.c:10878-10907: confirmed NULL deref risk
+  before fix
+- **[Phase 6]** `git describe HEAD`: v6.18.44
+- **[Phase 6]** Read mac.c:11625-11649: buggy code present (uses vifs[0]
+  only)
+- **[Phase 6]** `git merge-base --is-ancestor 3bf5e19c804d0 HEAD`:
+  kzalloc_objs available
+- **[Phase 6]** `grep __free(kfree)`: pattern already used in
+  ath12k/mac.c
+- **[Phase 6]** `grep ath12k_generic_dbg`: present in debug.h
+- **[Phase 8]** Failure mode: driver state corruption on multi-radio
+  CSA, severity HIGH
+
+**YES**The background search finished: the commit isn’t in this tree yet
+(no matches for “Prevent incorrect vif chanctx” or “multi-radio
+contexts”), which matches evaluating it as a new backport candidate.
+
+**Summary for v6.18.44:** **YES** — backport this fix.
+
+The bug is real and present: on multi-radio ath12k hardware,
+`ath12k_mac_op_switch_vif_chanctx()` picks the radio from `vifs[0]` but
+processes the whole batch, so simultaneous CSA across radios can send
+vdev WMI commands to the wrong radio and corrupt driver state. The patch
+groups vifs by radio, validates each one, and adds a NULL guard in
+`ath12k_mac_update_vif_chan()`. It’s a small, single-file change, tested
+on QCN9274, and should apply cleanly here.
+
+ drivers/net/wireless/ath/ath12k/mac.c | 87 +++++++++++++++++++++++----
+ 1 file changed, 76 insertions(+), 11 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 4bb4482e27343..2f47054efa44e 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -10888,6 +10888,9 @@ ath12k_mac_update_vif_chan(struct ath12k *ar,
+ 			continue;
+ 		}
+ 
++		if (WARN_ON(!arvif))
++			continue;
++
+ 		ath12k_dbg(ab, ATH12K_DBG_MAC,
+ 			   "mac chanctx switch vdev_id %i freq %u->%u width %d->%d\n",
+ 			   arvif->vdev_id,
+@@ -11628,23 +11631,85 @@ ath12k_mac_op_switch_vif_chanctx(struct ieee80211_hw *hw,
+ 				 int n_vifs,
+ 				 enum ieee80211_chanctx_switch_mode mode)
+ {
+-	struct ath12k *ar;
++	struct ath12k *curr_ar, *new_ar, *group_ar;
++	struct ieee80211_vif_chanctx_switch *v;
++	int i, j, count = 0;
+ 
+ 	lockdep_assert_wiphy(hw->wiphy);
+ 
+-	ar = ath12k_get_ar_by_ctx(hw, vifs->old_ctx);
+-	if (!ar)
+-		return -EINVAL;
++	if (n_vifs == 0)
++		return 0;
+ 
+-	/* Switching channels across radio is not allowed */
+-	if (ar != ath12k_get_ar_by_ctx(hw, vifs->new_ctx))
+-		return -EINVAL;
++	struct ath12k **ar_map __free(kfree) = kzalloc_objs(*ar_map, n_vifs);
+ 
+-	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
+-		   "mac chanctx switch n_vifs %d mode %d\n",
+-		   n_vifs, mode);
+-	ath12k_mac_update_vif_chan(ar, vifs, n_vifs);
++	if (!ar_map)
++		return -ENOMEM;
++
++	for (i = 0; i < n_vifs; i++) {
++		v = &vifs[i];
++
++		if (v->old_ctx->def.chan->band != v->new_ctx->def.chan->band) {
++			ath12k_generic_dbg(ATH12K_DBG_MAC,
++					   "mac chanctx switch band change not supported\n");
++			return -EOPNOTSUPP;
++		}
++
++		curr_ar = ath12k_get_ar_by_ctx(hw, v->old_ctx);
++		new_ar = ath12k_get_ar_by_ctx(hw, v->new_ctx);
++
++		if (!curr_ar || !new_ar) {
++			ath12k_generic_dbg(ATH12K_DBG_MAC,
++					   "unable to determine device for the passed channel ctx\n");
++			ath12k_generic_dbg(ATH12K_DBG_MAC,
++					   "Old freq %d MHz (device %s) to new freq %d MHz (device %s)\n",
++					   v->old_ctx->def.chan->center_freq,
++					   curr_ar ? "valid" : "invalid",
++					   v->new_ctx->def.chan->center_freq,
++					   new_ar ? "valid" : "invalid");
++			return -EINVAL;
++		}
+ 
++		/* Switching a vif between two radios is not allowed */
++		if (curr_ar != new_ar) {
++			ath12k_dbg(curr_ar->ab, ATH12K_DBG_MAC,
++				   "mac chanctx switch to another radio not supported\n");
++			return -EOPNOTSUPP;
++		}
++
++		ar_map[i] = curr_ar;
++	}
++
++	/* Group vifs by radio (ar) and process each group independently. */
++	bool *processed __free(kfree) = kzalloc_objs(*processed, n_vifs);
++
++	if (!processed)
++		return -ENOMEM;
++
++	struct ieee80211_vif_chanctx_switch *group_vifs __free(kfree) =
++						kzalloc_objs(*group_vifs, n_vifs);
++
++	if (!group_vifs)
++		return -ENOMEM;
++
++	for (i = 0; i < n_vifs; i++) {
++		if (processed[i])
++			continue;
++
++		group_ar = ar_map[i];
++
++		count = 0;
++		for (j = 0; j < n_vifs; j++) {
++			if (!processed[j] && ar_map[j] == group_ar) {
++				group_vifs[count++] = vifs[j];
++				processed[j] = true;
++			}
++		}
++
++		ath12k_dbg(group_ar->ab, ATH12K_DBG_MAC,
++			   "mac chanctx switch n_vifs %d mode %d\n",
++			   count, mode);
++		ath12k_mac_update_vif_chan(group_ar, group_vifs, count);
++	}
+ 	return 0;
+ }
+ 
+-- 
+2.53.0
+
 
