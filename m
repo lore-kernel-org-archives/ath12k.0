@@ -4,89 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 281D8C61DD6
-	for <ath12k@archiver.kernel.org>; Wed,  2 Sep 2026 01:01:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F95EC624D0
+	for <ath12k@archiver.kernel.org>; Wed,  2 Sep 2026 04:14:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=mIsvf/pMgFR1o4nDemQvggnheWLtStmBokvR+GjxbWU=; b=ZoRZ1574jtxCpX4OSO7ZKpvbyu
-	6cECrRYfGLzU9Zd64zY9OD2Sona9i3s/Pgza7B8G5gDj0V6nrskxqaFxqY3LO6lRqxOTTNMMPgCyN
-	67wmP6RCJb2PuOqsuEDwMlX/LJNUSIdJVIKpj7X1HYj7iFrbT4z042BRtREffY7GTyPHJpfIoVORr
-	Uj56+gz3AfLxY0tHQ8VHxVc63kZyDGPa09m4B26Ae2OAdHt0LYQnOlnDUVnWKvt3QQ/7+CTa0rd0A
-	um84P9Y30BvCo0MkCT8mACGW+LPrQ7mUhqZPmidLGm0XEu14KiRuug8s1GqN+gXE9lbq6Fb/VOYBz
-	W8kao9aQ==;
+	bh=P8bTnWEyJUxXVkFvR/GQLqNyBTi2JLeqpEghmiKgmik=; b=tzbpiZMaKNuCm55x4y1hwoWjYr
+	WmQ/xTJm+GIj+t9PEL/kjhXniLfWv5KZVkhrbPPONHTKvJxiXsPjhyx+1Y7BYT62OrFHF4OszlxeA
+	hFpKIOkSmfdpnjulEfz8rVWrU667nQsEJNBeyhI8Pf1oDnkeR7gdBE5qvtTdj+ss4HJ0RMXuvZcyx
+	G+S2YZF9RqRC5FJeWGfVklpeyO58YjggbE/4nS6rnlJLcqRImvoVNIqfDgSKU+Y226DTrET3+hjTE
+	s1Qa+447FWYkOZUSrTU0X8wePi5CE0N04OPCgc1MuKaRds3RJI8s5V0XxN8i5IdUv7rs/tvnxzh5x
+	RQHq6zUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1ZLy-0000000Dc4a-3VyG;
-	Wed, 02 Sep 2026 01:01:26 +0000
-Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
+	id 1x1cMj-0000000DkzR-2VsC;
+	Wed, 02 Sep 2026 04:14:25 +0000
+Received: from mr-2002k-snip6-6.eps.apple.com ([2a01:b747:3000:201::77] helo=outbound.mr.icloud.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1ZLv-0000000Dc3O-3gZ6
+	id 1x1cMh-0000000Dkz4-1MNj
 	for ath12k@lists.infradead.org;
-	Wed, 02 Sep 2026 01:01:25 +0000
-Received: by mail-pl1-x62e.google.com with SMTP id d9443c01a7336-2ceab75934dso5151215ad.2
-        for <ath12k@lists.infradead.org>; Tue, 01 Sep 2026 18:01:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788310882; x=1788915682; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:sender:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=mIsvf/pMgFR1o4nDemQvggnheWLtStmBokvR+GjxbWU=;
-        b=TqwFK50Fmvsg0eKRpo2z7zYlsdFBqu1sCkXX1Y+LyU6gUtojZVK+DMTupGgNVRWE5g
-         kVLU4v8kCsT8Ca3t/0zcvVD5eP2gdMNDb2mc1a3+O4dugGvultXrSZAbT08pyD3qwdNj
-         zsDumoWdINTfvV66PAe1j5ioH/A96AmG242KHR3F57cxbfHe7ESZcm4qEfpYybwX4XER
-         CFoQEGeWVdy7hqlDPISaLftptzFoVCh2DptZ0FXWU+hWV5j20441VsudVxmb5iTSgrjz
-         U3LQUnZPXr8IDRMk2IVFrHyE9EN2XG6ndinD/t77sHEq9RX40gFbZrAm8wNd+fgjJOTj
-         7SAg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788310882; x=1788915682;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:sender:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=mIsvf/pMgFR1o4nDemQvggnheWLtStmBokvR+GjxbWU=;
-        b=leqivoiigGm/m1gbfFCiwpNbGOICPeulL/vej4O+S/jluXTdOdp/GdvpK83LrpCYdD
-         bgqVUjH5+vmusQor2moGvXQGQ87/DOp73ABolC5nHKfiRH93mNuDRznPJ4M6GRhlsFp4
-         UvwKxaFAsOP6Kr6w0vbpJ5XyqPq3OIocxtujcQK43rcJ8oHQsvQJjHoOywgv+FJpj341
-         MWbkntoZ3paJY8XsyCTJdakerB7mefrqOeSUO1ConXQIh9xdZRonLh/l7SfH/VygXftc
-         ILUYZu5FxZIcQWXWNbZ1IzQdaB7IrMztt7vxCZiWKB2ipWehBYmsip6qi6hRHxYgDSjv
-         peiQ==
-X-Forwarded-Encrypted: i=1; AKwUvBzQoyjSbELJBYr2/LkAK8Vcjh6TIWY9BuGbQY/gBv+khzBuoNRO4fsxb0JSYpxwreagHH2dHcA=@lists.infradead.org
-X-Gm-Message-State: AFuF++lALU1dSeRPyOOQHaJM0+y9ctOB0E2Jy7d3GFAQFCyss2n4WImH
-	en/agC02kP/f3XnC6eSNy4PZymcjT2T9Zr4SDsCNyYNaa+cyVfqKR1/O
-X-Gm-Gg: AYBFou2UJyhyE7JNcrfYFKpWIX8A6tmJwlURLneOvSQXNGlLjYnoOKnFrbBwkpeZgpU
-	xenB4BLIDf2ZtV5Corck1AEQ4aF5izQcF9r75XaDUfI60ReWm3x/3DVuYR6rGbHWlw30ZPLZe32
-	oeRA2GBu7FBEWT+thEXy2YuM9gu7RQ8JoEQOOciPXIJixFhFDkZcozuJmQ1DOs9Y2wA+EJrzFug
-	cP8TmOJDC6kye86AvByE7OOszy5XrshbPBGKCPqAdYyzgtNFpeo/Jp/garNWe2sQxGa03oOlNsy
-	FUdZZhv7jGF1RGU98sdPCJlm50UbDsI7EIMNShhch16vSrTsAhI6FFg5TNrFF+AtgwpnF8CvTya
-	0FDvsxY1rinxRqXJ8If/46I+B7WtAUOpm2QulDoiXqZwA6zvgFMzpi34rgivPqFo9eysKuusTJV
-	hu2bT0PG1VPiVauwuWu6eBTAdNJfwRA4xptruFLNbJJolFHwTL8Ia+H+nnXfdqaeOkbNxUvsv/C
-	hIh1ZmK3D4R3+8z
-X-Received: by 2002:a17:90b:17cd:b0:38e:67e1:15b with SMTP id 98e67ed59e1d1-39aededf539mr1313470a91.6.1788310881957;
-        Tue, 01 Sep 2026 18:01:21 -0700 (PDT)
-Received: from localhost (211-75-139-220.hinet-ip.hinet.net. [211.75.139.220])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-39ae0dfe6b6sm2164002a91.1.2026.09.01.18.01.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 01 Sep 2026 18:01:21 -0700 (PDT)
-From: "Chia-Lin Kao (AceLan)" <acelan.kao@canonical.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Vignesh C <quic_vignc@quicinc.com>,
-	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-	Mahendran P <quic_mahep@quicinc.com>,
-	linux-wireless@vger.kernel.org,
+	Wed, 02 Sep 2026 04:14:24 +0000
+Received: from outbound.mr.icloud.com (unknown [127.0.0.2])
+	by p00-icloudmta-asmtp-us-west-2a-60-percent-9 (Postfix) with ESMTPS id 6DD5A1800105;
+	Wed, 02 Sep 2026 04:14:16 +0000 (UTC)
+X-ICL-RepId: 01a06053-230f-77a1-a2d5-4ca82b34aedb
+X-ICL-Out-Info: HUtFAUMHWwJACUgBTUQeDx5WFlZNRAJCTQhKB0MDXxxBAEAdVQFLVxQEEFoJUgQcA0wVWi1aHlUfSQsdDlgGEhZdRV4YUARCAxcbXAAXGVFNAVhbCFsEDx9MDFECQgVWXlQKHQRUB10FXVZQAlpLQgRLRWhcBVwcQBdIHV9qS1YUBBVGClgbQV5aF15NWgJWTQVKA18BWwtAC0gHXARYC14OTgVYGlofGFAcVgIZGEcdUDheGFAEQgMXG1wACUtGCUkdDg5CGEYfVCdXAloKWx4=
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mugops.com; s=sig1; t=1788322459; x=1790914459; bh=P8bTnWEyJUxXVkFvR/GQLqNyBTi2JLeqpEghmiKgmik=; h=From:To:Subject:Date:Message-ID:MIME-Version:x-icloud-hme; b=QhTqjz+a5OIxf1uXj0MzdfI3OhbmiDos+yboZcNjoKDSoyzWzKZZMpA9FTviOk5fDXeRGnLWpzEZRP4zDHstrYBcSpdXjDCjKHwfqIt8YiuRhF/ywYeH5pZUNNKCRMETKtaDik7FcAfbO/LalxiCH3XkEcdR3n/l1GBzYRtyLzZRKztHWvqSY36U7/yg37B7eCvUx2eMBvuI5z4HH1/hfIIfBxpgb5xBoz1+M7+qbxy9GaM75Q3ZaXhYN4Ad9iXigq+S2p/oQDbH0+qBOc5VVSPNF73nNmMdaWcPD8nrGtKckF4BzzjeN+kguFJCK3asHtrKMNS530oS1Sa747RpjA==
+mail-alias-created-date: 1773467597841
+Received: from localhost.localdomain (unknown [17.156.200.36])
+	by p00-icloudmta-asmtp-us-west-2a-60-percent-9 (Postfix) with ESMTPSA id 5B836180014F;
+	Wed, 02 Sep 2026 04:14:14 +0000 (UTC)
+From: Hideo Sumi <hideo.sumi@mugops.com>
+To: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Mathieu Poirier <mathieu.poirier@linaro.org>,
+	linux-remoteproc@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
 	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] wifi: ath12k: fix NULL dereference in hw scan cleanup path
-Date: Wed,  2 Sep 2026 09:01:17 +0800
-Message-ID: <20260902010117.3225320-1-acelan.kao@canonical.com>
-X-Mailer: git-send-email 2.53.0
+	linux-wireless@vger.kernel.org
+Subject: IPQ5332 multipd: missing text PD level and qcom,rproc ownership
+Date: Wed,  2 Sep 2026 13:13:37 +0900
+Message-ID: <20260902041339.7665-1-hideo.sumi@mugops.com>
+X-Mailer: git-send-email 2.47.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+X-Proofpoint-GUID: MF4VUnUysPfHYYGpCoEx83kFLF4BZ9nG
+X-Proofpoint-ORIG-GUID: MF4VUnUysPfHYYGpCoEx83kFLF4BZ9nG
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTAyMDAzNSBTYWx0ZWRfX7n6qUbazuRZl
+ +L+8OD54ht7f6JQy6WEzJtx5RTIKXwy7SVhuRYQweVAlLf7Z3oWmPJn0NdU1a0VqgDaaIfeuQGz
+ h+4GGtaWuWwMVyFQBP3AcqQ0p7bsPAykRIlaTpRdgYJa9in4vkAE4YSQvd/p2srcoBKTUWyQLb+
+ Oo/X8qECti3ppUGdXMmXAF2jzg858KfkaoQeLKRsweQxiPeoKIEBQfcX+GWetd3Yjo2Zp69/s63
+ Rmdsd+A3e6cELdblXSEM0cLXJ6F9Gi/j2qMIP4XseTexehAIOJSpyvdnTHWKGNbrggAPbiisVPL
+ vaYTa1h7nn9Q7i/ypGifMqzTpYSg5E1wt/JW92OK/NXb0KPCBQ37UBa9EA1RLA=
+X-Authority-Info-Out: v=2.4 cv=cNvtc1eN c=1 sm=1 tr=0 ts=6a97a299
+ cx=c_apl:c_pps:t_out a=9mRn2PO/+PIrVdEbaIuMPg==:117
+ a=9mRn2PO/+PIrVdEbaIuMPg==:17 a=VdqzKS8jKosA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=_vlfWRWgPTq3-XICB4gA:9
+X-JNJ: AAAAAAAB9YZqR8kp5r5nOFOn+L6opk//pkNHto4NurxhPhL4HzjX3OPidzx+ODGkCRBvivBhZo9SDbcwvx5OhykJQ+220XH7S3pGPAro/hlAThibpKjGOaVEUrSwV5jEq3q/H96f+8CvkwlrIQHZbEEKfeA4Y5dZ9whtX/ensqnSc5Bf49zfkbLLz0GxXz1QJkoStb2Rrc0wXlMOBE9Pno441pKeDiD5ZDffdb63IALuKhMLOtlXOS702wuAEezPrHXRoBbfurhaOBKzoWKEQ2WGnq63+lgbhyoSPlAoKG+4G/GWRNkLhPL9XGXgYfoK7HKF4ErV7ZLkacsdBg/SSGkAZht46q/U6ib1vs29YqgiFRvNqpwptG2tY2DppPYTyp9UyoeJG22ILqngy4SEiDBXBtGSChHHM+ayBjbl7OQDqeBfHNEm5ngxt5iQhFwRhvqak08T6mIqCBq9vTatFLXFGk7D/RxQbH1kE50HSB8XOrkW3+mgu6cT/CjP0GoK+iu3CgHQEKmAzmF5u3JtRphUqcTRFhvuzZCnstRx3ONe5uCWaDoQVeXqSxr3HP6v4VwiYEAPiIJxTajwkPQQQJH7vBedHlHLzm/GWYohEWjjbPKe/L96DHRpKm4luSyw0zH51hon6ULXyNwOzZb8EHZZfNbpi9DQi3xDeH+Girq3TBqk4crUjzch+pIlRHDKvDgWUtZN3R5AdDDY/Pm2xKbLV2nVSm12zBrCNMA31ClwpBEJambZtrsaToXbzi4gP2wVUWy7UUXLwMaUfZ7osNB/zot+Xgdm4wCIo/2w26lH6EPQCtdOW+cqrFgtyTsjZDX+c6FQ16fvh8wBO4gMnnpZul8KlCW6D0InkPUDGxSyZ+XWyImypA/oVE3fvoQ4raaMRTXAM2Gn4TNP1jpV5mOlILItvEOVLAOno85ejxXTeX7Dhz7NVa2rZKVWCnUe0SwGIWM4JLP911yUmQpSO1DC5IDLpIL
+ 8rH0pxgk1JX33bp+u5k+BrOYH8Gk18p/wrYMnANLbV2Id90u017X/SYihtIHmwXnpjgZUgUip8BwuP8SFQN2tkWpZrK4/YhnzFdi562Un+EOgGECmx6XHF8fDOoPrMpMhHOLObOJ1Zn+9uALju6Kbx4Eykd3SU6rMR533TzmASLQKiZYfaCHyPWCjdNQhovDUnXWKk+5bxj/qQg+PoIuG1RIhbnZqyxRKTnnhfdo2h2sJXlgZSKBW6ODNVPY0lIEB9Z2lRVfd0UwZwXET7L/AzKM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260901_180123_920052_0EDA8E73 
-X-CRM114-Status: GOOD (  14.20  )
+X-CRM114-CacheID: sfid-20260901_211423_419475_3691D21B 
+X-CRM114-Status: GOOD (  23.39  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,70 +83,130 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-ath12k_mac_op_hw_scan() walks ahvif->links_map in its abort path to
-tear down the scan vdevs it may have created. It skips link vifs which
-are no longer present:
+Hi Manikanta, all,
 
-	arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
-	if (!arvif)
-		continue;
+I have been bringing up the WiFi subsystem on an IPQ5332 board using the
+multipd remoteproc driver (qcom_q6v5_mpd) together with the ath12k AHB
+backend, on 6.18.44. Two things came out of it that I could not settle
+from the code alone. Both look structural rather than like mistakes on
+my side, so I would rather report them than sit on them.
 
-	ar = arvif->ar;
-	if (ar->scan.arvif == arvif) {
+Caveat up front: I am running vendor (QSDK) Q6 firmware, as there is no
+upstream firmware for this part. If either answer is "that is a
+vendor-firmware-only concern", that is a perfectly good answer and I
+will stop there.
 
-but it does not check arvif->ar, which is cleared in several teardown
-paths while the link remains set in links_map. When firmware crashes
-and the reset worker detaches the link vifs from their radio, a scan
-request arriving in that window fails, enters the abort path and
-dereferences a NULL ar:
 
-  BUG: kernel NULL pointer dereference, address: 0000000000001508
-  RIP: 0010:ath12k_mac_op_hw_scan+0x170/0x8a0 [ath12k]
-  Call Trace:
-   drv_hw_scan+0xa0/0x160 [mac80211]
-   __ieee80211_start_scan+0x305/0x7b0 [mac80211]
-   ieee80211_request_scan+0xe/0x20 [mac80211]
-   nl80211_trigger_scan+0x610/0xa20 [cfg80211]
+1. The root PD does not boot without a text PD level, and the binding
+   has no way to describe one
+   ------------------------------------------------------------------
 
-0x1508 is the offset of scan.arvif within struct ath12k, reached from
-a NULL base.
+With the DT shaped as the binding describes -- a root PD with user PDs
+pd-1/pd-2 directly underneath -- the root PD never reaches a usable
+state:
 
-The oops happens in a task holding wiphy and rtnl locks, so it takes
-down the rest of the networking stack with it: subsequent scan, netns
-and NetworkManager operations block indefinitely in D state.
+  qcom-q6-mpd d100000.remoteproc: fatal error without message
 
-Check the radio before using it, matching the existing arvif check
-directly above and the arvif->ar check already used elsewhere in this
-file.
+No further diagnostics, and the user PDs never come up.
 
-Fixes: feed05f1526e8 ("wifi: ath12k: Split scan request for split band device")
-Signed-off-by: Chia-Lin Kao (AceLan) <acelan.kao@canonical.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+The vendor DT has a level between the root PD and the user PDs: a text
+PD (compatible "qcom,ipq5332-mpd-upd-text") that owns a separate
+firmware image, with the user PDs as its children rather than the
+root's:
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 99bf5cf79d102..64a636f3ae3c6 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -5821,6 +5821,16 @@ int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
- 				continue;
- 
- 			ar = arvif->ar;
-+
-+			/* The link vif may have been detached from its radio
-+			 * while this scan request was being processed, for
-+			 * example by a firmware recovery running concurrently.
-+			 * The link is still set in links_map in that case, so
-+			 * the radio has to be checked before it is used.
-+			 */
-+			if (!ar)
-+				continue;
-+
- 			if (ar->scan.arvif == arvif) {
- 				wiphy_work_cancel(hw->wiphy, &ar->scan.vdev_clean_wk);
- 				spin_lock_bh(&ar->data_lock);
--- 
-2.53.0
+  q6v5_wcss             qcom,ipq5332-q6-mpd        q6_fw0.mdt
+    text-pd             qcom,ipq5332-mpd-upd-text  q6_fw3.mdt
+      pd1                                          q6_fw1.mdt
+      pd2                                          q6_fw2.mdt
 
+Once I added that level -- a text PD node with its own firmware-name,
+the user PDs reparented under it, and a small driver change so that
+q6_register_userpd() recurses and the PAS ID is derived from the node
+-- the fatal error disappeared and the whole chain came up:
+
+  remoteproc remoteproc2: powering up pd1
+  remoteproc remoteproc1: powering up text-pd3
+  remoteproc remoteproc0: powering up d100000.remoteproc
+  remoteproc remoteproc0: remote processor d100000.remoteproc is now up
+  remoteproc remoteproc1: remote processor text-pd3 is now up
+  remoteproc remoteproc2: remote processor pd1 is now up
+
+The ordering is the interesting part. "powering up" runs child to parent
+as rproc_boot() recurses upward, and "is now up" comes back parent to
+child as it unwinds -- which is exactly the parent-first dependency the
+multipd model exists to express. The text PD simply was not one of the
+levels it can express.
+
+So: is the text PD level deliberately out of scope upstream -- because
+upstream firmware for these parts is expected to be packaged without a
+separate text image, say -- or is it a level that should exist and is
+not there yet?
+
+I ask because if it is the latter, the binding as posted cannot describe
+this hardware at all, and that seems worth settling before it lands. I
+have a working change against qcom_q6v5_mpd.c and would be glad to send
+it as an RFC. I did not want to send it uninvited if the omission is
+intentional.
+
+
+2. The vendor DT and the ath12k AHB backend disagree about what
+   qcom,rproc points at
+   ------------------------------------------------------------------
+
+This one I can describe precisely, but I cannot tell which side is
+meant to be authoritative.
+
+In ath12k's AHB backend, qcom,rproc is the *root* PD. ahb.c resolves the
+phandle and boots it via a function named ath12k_ahb_boot_root_pd(),
+waits for rootpd_ready, and then does the entire user PD lifecycle
+itself: qcom_mdt_load() of amss_<n>.mdt into memory-region[0],
+qcom_scm_pas_auth_and_reset() with a PAS ID it computes locally, and a
+spawn via qcom_smem_state_update_bits(). It also requests the "spawn",
+"ready" and "stop-ack" interrupts by name to drive that sequence.
+
+In the vendor DT, qcom,rproc is the *user* PD:
+
+  wifi@c0000000 {
+      compatible = "qcom,cnss-qca5332", "qcom,ipq5332-wifi";
+      qcom,rproc = <&remoteproc_pd1>;              /* the user PD */
+      qcom,userpd-subsys-name = "q6v5_wcss_userpd1";
+  };
+
+There, remoteproc owns the user PD -- image, PAS, spawn and the same
+three interrupts -- and the WiFi driver only attaches to it.
+
+These are mutually exclusive, and on this board they collide. With
+qcom_q6v5_mpd instantiating user PD rprocs as its binding describes, the
+PD boots fine and then ath12k cannot have the interrupt it needs:
+
+  remoteproc remoteproc2: remote processor pd1 is now up
+  genirq: Flags mismatch irq 31. 00002001 (UserPD1-spawn)
+          vs. 00002001 (q6v5_wcss_userpd1_spawn-ack)
+  ath12k_ahb c000000.wifi: error -EBUSY: Request spawn irq failed: -16
+
+Same interrupt, same flags, two requesters, neither wrong in isolation.
+
+So which is the intended division of labour?
+
+  - Are the pd-1/pd-2 nodes in the multipd binding meant for non-WiFi
+    PDs only, with WiFi user PDs left entirely to ath12k -- so a board
+    with only WiFi user PDs should describe none of them, and point
+    qcom,rproc at the root PD?
+  - Or is remoteproc meant to own them, as the vendor DT has it, and
+    ath12k's AHB backend should attach rather than load and spawn when
+    qcom,rproc resolves to a user PD?
+
+I have deliberately not sent a patch for this one. Either answer implies
+a behaviour change in a driver used by boards I cannot test, and
+guessing at the ownership model and then changing ath12k for everyone is
+not mine to do.
+
+Happy to test patches, provide full boot logs, or run experiments on
+this board -- it is on a serial console with a recoverable second
+firmware bank, so I can iterate destructively without much risk.
+
+Thanks for the series, and for reading this far.
+
+Regards,
+Hideo Sumi
 
