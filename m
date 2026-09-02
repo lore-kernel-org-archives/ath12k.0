@@ -4,138 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A26ACC61DFD
-	for <ath12k@archiver.kernel.org>; Wed,  2 Sep 2026 07:43:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9E56C61DFD
+	for <ath12k@archiver.kernel.org>; Wed,  2 Sep 2026 08:22:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=37uu6taAU91xhz7SXKEmRucnGk+Ox84t3g00a5LtrVU=; b=bfj0ez97SAeoIv/B9TjSdEnjhN
-	C0FBJvm/VK6nwiTy3C9CDaaCSo+vVSN1HD45jVssAvCULyO99wf+7x90eZ4FqBqlIFk5wuZtVN9Oj
-	ySDfx2/9IMRS57xV7E4wsqnilYL+e+pEXIINMW4+pUkLK5/bT0O3YsOlqjSthxorRKCF/JQfEznHQ
-	9XSS8swe82syVeKYyDKk7EcWYBctbi1Rl3J+OadTscpBKgpt7Kz0e8lihfw+Qi/eQ9dZljtBFHJCg
-	Yw6Lj0UzagqOpZ7iylasokdhuKLZlOf5qc0JeraTGpm4dPTFxJBU5vPPc6RbAFOKCnEi20txWTnAk
-	GebLIPAQ==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=ST0JywuIijs9AyXrfzYTAQmxlPvMrq1DLcWk/E2Kd+c=; b=4EuUtWM/x3SdtLtJA0aTmuFFPx
+	E4mQ2DRbAdXQZEtea6dFKTCV0GtODQjtKde4p/joAhIwhPhDMWwz0mUeHkFdYBlwX49Kvm8JYEQ6I
+	G14z947TA3CCRA0/btBDd07a5rGQ8svNcHvwlN/sPECKFlb57xZtqMNz46HYGIHSfGNiCZHuqhZQJ
+	Fk9akDTHcIavOsjIiWmmat3uIyCzDLQ6l2V6y/veFVOztfCqcwz09LjYnQnEGL8EBB3SNh5luI4kB
+	pBmQm0PBDsEUYLwRwBc/eEkrOM2caK4pU6zSskUWcyOnrN1uAPdJG+OfA2bWywwNmp3G8sYJuJAqU
+	6oMJm3LA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1fdX-0000000DyUc-1UgH;
-	Wed, 02 Sep 2026 07:43:59 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1x1gEp-0000000E4jJ-1vbq;
+	Wed, 02 Sep 2026 08:22:31 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1fdT-0000000DyUH-1cyr
+	id 1x1gEm-0000000E4iV-31hd
 	for ath12k@lists.infradead.org;
-	Wed, 02 Sep 2026 07:43:57 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6826VVMH1451379
-	for <ath12k@lists.infradead.org>; Wed, 2 Sep 2026 07:43:54 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	37uu6taAU91xhz7SXKEmRucnGk+Ox84t3g00a5LtrVU=; b=jJEw57KCbL7NKk6t
-	jCvGYyfzOKezm68+GEGc4AW+DsV2WrD/J0A/YhisDwcCHJdwcMCYjm4qVZWi+EG7
-	ckgpbZIWF6Un29xTpUM+vDnGZ20H/UXPoUXtCoG+snWPXg3eCbipsa5Gd8yeiRCk
-	zYCcSMEGBy7W8t255cs9k/AnB2+uWz+6AbEBNiWSsy4dvLNP8Sew4BKQ7jBDhjl4
-	VNhGSF+6CeuBO2gEQ7s5A4zlPrx/s+ovWmBNFZBUPw37EB7G67HcTXmAsmKUqbz9
-	aB//zAAwmG0hXTMMQPp+AmbPYm6lLtDMuljaXmcA4ffHzAUFgzdTpZfbYU62xyi1
-	nQYiag==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gebsx0vgu-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 02 Sep 2026 07:43:54 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-38e8fee6af3so1085234a91.1
-        for <ath12k@lists.infradead.org>; Wed, 02 Sep 2026 00:43:54 -0700 (PDT)
+	Wed, 02 Sep 2026 08:22:30 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-49ccfae359fso5204925e9.3
+        for <ath12k@lists.infradead.org>; Wed, 02 Sep 2026 01:22:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1788335034; x=1788939834; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=37uu6taAU91xhz7SXKEmRucnGk+Ox84t3g00a5LtrVU=;
-        b=cM+gp5lVaCjL0F7R0NN/DGdF/Kz5N/6hGA+T7l+MzDwECKhELPMNAZs5lWZOMQfYNb
-         e+u0FHEdEmTDtK2Fi0q9JTASgOGIYAmFlf73TMbk+/f541Ub9M4Le/FfmbRnHO+uNVYO
-         jPTSFXO/tbh8sWznrSYphipkz6NKBDPzEZFP1wM1cJC9edjxuDThN9CA/7ObSerI0ZB0
-         sB7yb/IR0V5YqbCYtHMqjNv7/H6dTilvc5BPEwl+Fk1UEDE8tFK/WIEOeMMWzjzTo0CU
-         xqqJ+w1zMQ4MgGFTOdKNFblYyHhh3UoCEQHE45/EeIJTyJFzt7Q5TZq3oalkzwzfyJUv
-         Ws4Q==
+        d=gmail.com; s=20251104; t=1788337347; x=1788942147; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=ST0JywuIijs9AyXrfzYTAQmxlPvMrq1DLcWk/E2Kd+c=;
+        b=BE9cV07rGnl6Y94MfuGhIk7WmB3udfUZFayL1vlbMOsYWNAh2tBx80NyCGMGAA7Vcx
+         Mz3Ysei3SV1qknEE9B8zs9qZ4RaHPwcJrNGuUFz+sq73hAUwsE8vQ4LBdECVzVbCPYus
+         pDQbUL/NKddBeWwVim7VP+vX+E4bQU12+861nCPoxxWSc8JfHNj5lvkEIPUR/tr4SgEn
+         FWXMLPi3PVP6UrgTedojRpoDKfSN9qfndqe2Pw32kbHJxSQZD33KdStaGkzrU+1fS0ir
+         ZRT0c34NqNEclbQG3VsCYx77CMbrK43MAqiCAqbzL8ioy4gCdNUQ3yhq+RgMJ87e2J27
+         qzuQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788335034; x=1788939834;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20251104; t=1788337347; x=1788942147;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=37uu6taAU91xhz7SXKEmRucnGk+Ox84t3g00a5LtrVU=;
-        b=X3Jzwrp59JSio9hcLKVkVNE1poG+fggRW/AkDfM4wXBvOiOsUi9aifl+vZ06W7OIAJ
-         PQeleCWkLGp/tzHrL1nrgSY+PcxCrZcjQic1ljtg2t8u2rCpa4I1+xGcw0N6D+v6r7/Q
-         FrfK3G9TCuUYXpJNdKYbNRbNeSpfldso3MI4cZbNwabD/uUf29zKov8fjaCjvJtEig2A
-         IbxjBuKdhMC22leJFzCz5DJELiz+C0R3YtHiXoy9G1B62Wn+t7j4+2q5PMiZDvekokvy
-         S1nBpLAeDeET/V8xr2mqV0knWMpq7HnHu1pPGpxA0/B/WL7F9XUr7jWo0bnX16qRQ0rZ
-         BsTw==
-X-Forwarded-Encrypted: i=1; AKwUvBx1ORcWzxAb7x1EH9Q9yGs5gFf1hT6Q9k7rkK9Pa1Du9MgmQJ2Jc8aDfZn0JrO3w7WnUv5ZB3c=@lists.infradead.org
-X-Gm-Message-State: AFuF++m8k3iKpdIB5nc/qQqNNxHTI8I5HhddXnc/qjXcbNvII3LeKFp8
-	yo/+Vx5WuK0vpXkTHdnW2MHv9LVduvboUjxzrqYFzx40HWeM6GgIkNAICPkA27yqRfaOUcgl59b
-	ZigzcW+5Oqsk76vOoDcBLv8Y9hjxtYltLcHTse0NQwaPduOoaAt+W3fo+KzXmziUY
-X-Gm-Gg: AYBFou1wy0/2Gvi5stzAKk3gi0XcrgBxUTqZevnY0MF2Ega2T4t+3QiAPQBKC4kouzM
-	eYJybDCE/SJx5KUVP1TGGY1MLiL6VK6ooglKpB7bGviX0BYK61ws7oUAA7BiFVX/J1OfJz0yt7W
-	rdvI8FR4VZ8Da8eR+ik7TPMZnH3v3yIgqkgVvSa6x1laywz1oL1zba4Jegqn50DULeWjIoIshl5
-	/qGV9y90Eb7GCVj6jTW10Ze4ngIbdmh5xhkih/Xyid+0b3XdnaH43899A6JYO3JxIQ7IROg0wRI
-	NmmX111XQltYWsqHkv/d/CtKy6iWD4Ix5LWXYnsMeTnGuJKGNT1pFEr7JOGlZYbrVTXYvwXLjlL
-	K1PWslZJwuhXl+aNh3kF7wPj6cnJz2YBpvW/rjUbs
-X-Received: by 2002:a17:90b:4fcb:b0:395:f0e8:9e13 with SMTP id 98e67ed59e1d1-39aedf22274mr4775062a91.7.1788335033634;
-        Wed, 02 Sep 2026 00:43:53 -0700 (PDT)
-X-Received: by 2002:a17:90b:4fcb:b0:395:f0e8:9e13 with SMTP id 98e67ed59e1d1-39aedf22274mr4774985a91.7.1788335032956;
-        Wed, 02 Sep 2026 00:43:52 -0700 (PDT)
-Received: from [10.152.199.23] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1430ea09b6csm3942023c88.4.2026.09.02.00.43.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 02 Sep 2026 00:43:52 -0700 (PDT)
-Message-ID: <001a3142-c2f0-4f9f-9675-1bf1f6f640b1@oss.qualcomm.com>
-Date: Wed, 2 Sep 2026 13:13:47 +0530
+        bh=ST0JywuIijs9AyXrfzYTAQmxlPvMrq1DLcWk/E2Kd+c=;
+        b=ZFfCHYjWiEvhHVwu1uzPGCBKL6Wx90Skz2+JM2J0Fid2Tu+vXfhIYGFEMHOWNIGh7X
+         dkRWD7ceGzcIjZpvCs9qYC/ON5MhBYpjZqENpurSNGVCqmyn2Gltp8OZX9nHJM1gYP9t
+         a4wokCJM1zh2vLvxFEeUHQNGzTusuR75IoYY0ghyelb3xMcOvWqBLFZFT361UDUDb+qi
+         1gFTLnxWtW+UVypP23+iy/7N3FFLLiai0uSKU8VQrRafslbZSqA+PjKK5gc5nqb6NSqL
+         KVFvb4id7GwMQyxX5eCLz/6nimPK+dRKjzXFfAmsT3AQ7tHm9eMy9NVGkrz0s/RGEaXK
+         eIWg==
+X-Forwarded-Encrypted: i=1; AHgh+Rq7NWQD0obkM8rPzXugQ812Gh21NGmGYfrdCB5EoZB0OS6JYvJzqa3p2kaxYxhnRSg1N7/8k2c=@lists.infradead.org
+X-Gm-Message-State: AFuF++moHFUYzIhdGnpQj686AgmD0WQoXG71fGxVTD7wW2V03UlrBt6T
+	WcPzQe/wqZj69M1IaD98WB0DzK6CjeB5NT7FjvoMzfZ/iALt3lgOK6Q3
+X-Gm-Gg: AR+sD13MRvEXIqESc+g7R17ZkvcKWROguy4xL8LrqhOWtj+6NpdxBiozJXoXYrhPK6Z
+	iGyZgmkvRiKvzZosNiAuu/tVFAfFLgrzX2NTZejL6lng2erCbljpbtzcQDSvX4UmazeworP8uL8
+	4Aqh/ebNmkO9Mx514i/80u3Z2xF8Tb3kCWuG1qaGK0xRfcgeB/SliY/wgZ6+d9beLWFs9wdc2E+
+	3C8gSv9cZzWXfjEoIwDDnB1RmAaosoqPtGyHMqoXThqnVrT1VArI7KiINWNY3p3M14K1Kckiupx
+	qaIjf9Sm6hBEXOn6YLCAK626FMmg9VWvMiQOzOl24NdQZyzHGgDWEGmuzJY1nrOgECWbs+v5VPk
+	xnbU26rIx8cdeEI89hBJjEzp/UwYpIFiVetKDhdkBPmy0EkZlpg2C4NqGuO52rUwRhYgO8NIQYt
+	wjG+5zSZ4KXbKHU+P7OtPBoBkiFJvs9ZDIrI3cd5ubNc7Qzdm7u1Y=
+X-Received: by 2002:a05:600c:c170:b0:49b:d45:703e with SMTP id 5b1f17b1804b1-49ce57f072fmr62819355e9.8.1788337346382;
+        Wed, 02 Sep 2026 01:22:26 -0700 (PDT)
+Received: from vitor-nb ([2001:8a0:c4c6:f00:e66:da8a:ae8a:96d3])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48448ee9cf7sm4992947f8f.25.2026.09.02.01.22.24
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 02 Sep 2026 01:22:25 -0700 (PDT)
+From: Vitor Soares <ivitro@gmail.com>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: Vitor Soares <vitor.soares@toradex.com>,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH ath-next] wifi: ath12k: provide MAC address list for single-radio wiphys
+Date: Wed,  2 Sep 2026 09:22:18 +0100
+Message-ID: <20260902082219.3010793-2-ivitro@gmail.com>
+X-Mailer: git-send-email 2.55.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: fix NULL dereference in hw scan cleanup
- path
-To: "Chia-Lin Kao (AceLan)" <acelan.kao@canonical.com>,
-        Jeff Johnson <jjohnson@kernel.org>
-Cc: Vignesh C <quic_vignc@quicinc.com>, Mahendran P <quic_mahep@quicinc.com>,
-        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-References: <20260902010117.3225320-1-acelan.kao@canonical.com>
-From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20260902010117.3225320-1-acelan.kao@canonical.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: aDvXmklIGG3bTOK__kblUtPgD1hSQrVD
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTAyMDA2NyBTYWx0ZWRfX/VNX8eYeM/9n
- u4M54EDyOT8hfyBOUr/5Uct7juK1uMtdjy6nMz6zEj1DccqHnZnNwd9Gz8ASuonR29sHharDZRT
- gJAMI1oaJj12ymFMZoa5E0gc9mYxoaGJ+yIzhkli3xE93fmB2TJ3Tvig90VA1+dq8nPBvYsZShv
- XjpHyI7c/1+VFxjir0iXO9Dx9cwL/pec52tzL942IYts0JpLf8Fn1WJ+zLzXuSwsNCp7MuCW/D0
- 1TS7E6Kdja44OvVstBkEXN8ncEpEDAmVCrF8v2N+B5+CSB5jM5c21YY3MrnQTWznXK6mb5FTvxv
- VE8r2RVNteMEVdwRjGEM0maY4rC/vft9EKmMqyWbXUoQ2tlLaw8oHzeyrWPsW06CQboAMCk7c6C
- 4fJoWt2X5yWehFl9LSYXXehSHHuCy6ctTc5F44HvZkSpo8Etk30amc21Ex+yYPXh9U/ln7kgx53
- W0yPZREj9Kbi5j0Tafg==
-X-Proofpoint-GUID: aDvXmklIGG3bTOK__kblUtPgD1hSQrVD
-X-Authority-Analysis: v=2.4 cv=AufeGu9P c=1 sm=1 tr=0 ts=6a97d3ba cx=c_pps
- a=RP+M6JBNLl+fLTcSJhASfg==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
- a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
- a=DfNHnWVPAAAA:8 a=_5F5FPPE-e8PIXcV8AIA:9 a=QEXdDO2ut3YA:10
- a=iS9zxrgQBfv6-_F4QbHw:22 a=rjTVMONInIDnV1a_A2c_:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTAyMDA2NyBTYWx0ZWRfX0wka80vWCWZW
- O7d44el6jIr1y88gR2uXMX+MsKSTq1ML3zEQVOVZaqG2d1UB707AFekZGe0Cf4zXCSl+c3DPobN
- TwrZOx0WbX8HFIIrVAwfCVIX0sPimaQ=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-02_01,2026-09-01_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 bulkscore=0 lowpriorityscore=0 impostorscore=0 phishscore=0
- spamscore=0 adultscore=0 suspectscore=0 priorityscore=1501 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2609020067
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260902_004355_468882_E5C26351 
-X-CRM114-Status: GOOD (  29.67  )
+X-CRM114-CacheID: sfid-20260902_012228_787656_9478F431 
+X-CRM114-Status: GOOD (  15.47  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,106 +97,121 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/2/2026 6:31 AM, Chia-Lin Kao (AceLan) wrote:
-> ath12k_mac_op_hw_scan() walks ahvif->links_map in its abort path to
-> tear down the scan vdevs it may have created. It skips link vifs which
-> are no longer present:
-> 
-> 	arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
-> 	if (!arvif)
-> 		continue;
-> 
-> 	ar = arvif->ar;
-> 	if (ar->scan.arvif == arvif) {
-> 
-> but it does not check arvif->ar, which is cleared in several teardown
-> paths while the link remains set in links_map. When firmware crashes
-> and the reset worker detaches the link vifs from their radio, a scan
+From: Vitor Soares <vitor.soares@toradex.com>
 
+ath12k supports creating vdevs with addresses provided by mac80211.
+Userspace can already make concurrent interfaces work by explicitly
+assigning different locally administered addresses.
 
-Thanks for fixing this. I'm trying to understand the recovery path that 
-detaches the link vif while leaving links_map unchanged. Could you share 
-more details on that?
+However, ath12k does not advertise an address list, so when a second
+interface is created without an explicit address, mac80211 has nothing
+to pick from and falls back to the permanent address. If the first
+interface is already running with that address, bringing up the second
+one fails with -ENOTUNIQ.
 
-> request arriving in that window fails, enters the abort path and
-> dereferences a NULL ar:
-> 
->    BUG: kernel NULL pointer dereference, address: 0000000000001508
->    RIP: 0010:ath12k_mac_op_hw_scan+0x170/0x8a0 [ath12k]
->    Call Trace:
->     drv_hw_scan+0xa0/0x160 [mac80211]
->     __ieee80211_start_scan+0x305/0x7b0 [mac80211]
->     ieee80211_request_scan+0xe/0x20 [mac80211]
->     nl80211_trigger_scan+0x610/0xa20 [cfg80211]
-> 
-> 0x1508 is the offset of scan.arvif within struct ath12k, reached from
-> a NULL base.
-> 
-> The oops happens in a task holding wiphy and rtnl locks, so it takes
-> down the rest of the networking stack with it: subsequent scan, netns
-> and NetworkManager operations block indefinitely in D state.
-> 
-> Check the radio before using it, matching the existing arvif check
-> directly above and the arvif->ar check already used elsewhere in this
-> file.
-> 
+As in ath11k, provide a list of usable addresses so
+ieee80211_assign_perm_addr() can hand each new interface an unused one.
+Keep the first entry as the radio's own MAC address. Generate the
+remaining entries as locally administered variants by changing only the
+upper nibble of the first octet, which naturally limits the pool to 16
+unique addresses.
 
+Handle only single-radio wiphys. Wiphys with more than one radio behave
+exactly as before.
 
-One sequence that seems to leave the link vif assigned is:
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 
-ath12k_mac_assign_vif_to_vdev() :
+Signed-off-by: Vitor Soares <vitor.soares@toradex.com>
+---
+Note that a device which is not MLO capable registers one wiphy per
+radio, so each radio of a multi-radio device also gets a pool, seeded
+from that radio's own MAC. I only have single-radio WCN7850 hardware,
+so that case is untested.
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 48 +++++++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
 
-assign_chanctx -> ath12k_mac_assign_vif_to_vdev
-       -> ath12k_mac_assign_link_vif: links_map |= BIT(0)
-       -> ath12k_mac_vdev_create: arvif->ar = ar0, WMI fails as FW 
-crashed, returns clearing arvif->ar
-       -> returns ar (NULL), but still links_map has BIT(0) and link is 
-assigned
-
-At that point, links_map still contains BIT(0), and a subsequent 
-ath12k_mac_op_hw_scan() may de-reference link0's arvif->ar.
-
-Is this the sequence you're hitting?
-May be error messages from ath12k_mac_assign_vif_to_vdev() help confirm 
-that?
-
-
-> Fixes: feed05f1526e8 ("wifi: ath12k: Split scan request for split band device")
-> Signed-off-by: Chia-Lin Kao (AceLan) <acelan.kao@canonical.com>
-> ---
->   drivers/net/wireless/ath/ath12k/mac.c | 10 ++++++++++
->   1 file changed, 10 insertions(+)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 99bf5cf79d102..64a636f3ae3c6 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -5821,6 +5821,16 @@ int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
->   				continue;
->   
->   			ar = arvif->ar;
-> +
-> +			/* The link vif may have been detached from its radio
-> +			 * while this scan request was being processed, for
-> +			 * example by a firmware recovery running concurrently.
-> +			 * The link is still set in links_map in that case, so
-> +			 * the radio has to be checked before it is used.
-> +			 */
-> +			if (!ar)
-> +				continue;
-> +
->   			if (ar->scan.arvif == arvif) {
->   				wiphy_work_cancel(hw->wiphy, &ar->scan.vdev_clean_wk);
->   				spin_lock_bh(&ar->data_lock);
-
-
-if above is the scenario, along with this change, would it make sense to 
-call ath12k_mac_unassign_link_vif(arvif) when ath12k_mac_vdev_create() 
-fails in ath12k_mac_assign_vif_to_vdev() ?
-
-
-
-
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 9a775602775d..bee6701f1029 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -14685,6 +14685,50 @@ static void ath12k_mac_cleanup_unregister(struct ath12k *ar)
+ 	kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
+ }
+ 
++static void ath12k_mac_cleanup_mac_address_list(struct ath12k_hw *ah)
++{
++	kfree(ah->hw->wiphy->addresses);
++}
++
++static void ath12k_mac_setup_mac_address_list(struct ath12k_hw *ah,
++					      const u8 *mac_addr)
++{
++	struct ath12k *ar = ath12k_ah_to_ar(ah, 0);
++	struct mac_address *addresses;
++	u16 n_addresses;
++	int i;
++
++	/* The pool is derived from one base address, so it can describe only a
++	 * single-radio wiphy: with more radios each radio has its own base
++	 * address, possibly from a different ath12k_base.
++	 */
++	if (ah->num_radio != 1)
++		return;
++
++	/* Only the upper nibble of the first octet is varied, so at most 16
++	 * addresses can be derived from one base.
++	 */
++	n_addresses = min_t(u16, TARGET_NUM_VDEVS(ar->ab), 16);
++	if (n_addresses <= 1)
++		return;
++
++	addresses = kzalloc_objs(*addresses, n_addresses);
++	if (!addresses)
++		return;
++
++	ether_addr_copy(addresses[0].addr, mac_addr);
++	for (i = 1; i < n_addresses; i++) {
++		ether_addr_copy(addresses[i].addr, mac_addr);
++		/* set Local Administered Address bit */
++		addresses[i].addr[0] |= 0x2;
++
++		addresses[i].addr[0] += i << 4;
++	}
++
++	ah->hw->wiphy->addresses = addresses;
++	ah->hw->wiphy->n_addresses = n_addresses;
++}
++
+ static void ath12k_mac_hw_unregister(struct ath12k_hw *ah)
+ {
+ 	struct ieee80211_hw *hw = ah->hw;
+@@ -14704,6 +14748,7 @@ static void ath12k_mac_hw_unregister(struct ath12k_hw *ah)
+ 		ath12k_mac_cleanup_unregister(ar);
+ 
+ 	ath12k_mac_cleanup_iface_combinations(ah);
++	ath12k_mac_cleanup_mac_address_list(ah);
+ 
+ 	SET_IEEE80211_DEV(hw, NULL);
+ }
+@@ -14820,6 +14865,7 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 	wiphy->available_antennas_tx = antennas_tx;
+ 
+ 	SET_IEEE80211_PERM_ADDR(hw, mac_addr);
++	ath12k_mac_setup_mac_address_list(ah, mac_addr);
+ 	SET_IEEE80211_DEV(hw, ab->dev);
+ 
+ 	ret = ath12k_mac_setup_iface_combinations(ah);
+@@ -15041,6 +15087,8 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 		ath12k_mac_cleanup_unregister(ar);
+ 	}
+ 
++	ath12k_mac_cleanup_mac_address_list(ah);
++
+ 	SET_IEEE80211_DEV(hw, NULL);
+ 
+ 	return ret;
 -- 
-Ramesh
+2.55.0
+
 
