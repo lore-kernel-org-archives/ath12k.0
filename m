@@ -4,75 +4,173 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA7F2C61DD3
-	for <ath12k@archiver.kernel.org>; Thu,  3 Sep 2026 12:43:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 044BDC61DD3
+	for <ath12k@archiver.kernel.org>; Thu,  3 Sep 2026 13:29:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3kGf9SwZXN+BBQTc+zQUIoGFVBNm5rRQNe5woeRka4Q=; b=F7/0387slo1sA6SwvRG1tBVuhc
-	29FFclUh+v0VgfnM8vECMn6QhrJMYmhgMmCZCA+Sycua1S1YjmJFyx8fAxaZx+K24/mX3iOH7mJvJ
-	ft4TaDVuOKulb6rIgcwiYy/vcmmDaG9NmzMtS9UE9gTbOzwur8Nq8xeRVwHeZKjBWgz431nhpvmDW
-	0D01e8l5xan79/2VXaHPwypSF//niyU0qXxzg5d3/SAz+7za019qpxLJj2YQbFMPEvQO/P6GpnnIu
-	mqUShs742a82ApA2uNX05IhmO1/plZnQGF9H1S681vURs6ZQXkSStNmCoFvBvAvZQy5rGeKQ6B0xC
-	yu3nbYjg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-Type:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=c6eDN1LFjJy0wJR/ov+UULOWB8oqTEKjpOQyEvHRjiw=; b=29MAUXPmp/VuNgMTQlR93nkdym
+	h+ocEpSnhWf8UjDHrCWF39C7a5tF33/bXRLWn6d04EgWjLYDzoi0D2upVCeYDJlAubAzWVbB7X9JX
+	Z8iKezljpCdUPP3D50juMm/WaYcXh+1H3kBcuA36s9MZC41o2uL31veTdgdFjn0WyxILpmOpbUfKg
+	dM2i+Vz5y8nrEct5HPvki9X/xrywJ7JpDT0wdNJMoMY+aIIyCwg49BqIv/Ln3O5tqIxFGCRgF7xkJ
+	S6XOWIY1apRfAGyJBKT61MdKqKRWIRv4ADg00+Ajt+PIlOFRjJ8sehh1XU3UeqCYOAyQg56peTKMt
+	EnXGs+fA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x26md-0000000HL1p-1nXs;
-	Thu, 03 Sep 2026 12:43:11 +0000
-Received: from ms-2002c-snip6-11.eps.apple.com ([2a01:b747:3002:204::1f] helo=outbound.ms.icloud.com)
+	id 1x27Vv-0000000HPGc-2whU;
+	Thu, 03 Sep 2026 13:29:59 +0000
+Received: from mx07-0057a101.pphosted.com ([205.220.184.10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x26mb-0000000HKzw-2skB
+	id 1x27Vs-0000000HPFq-0vv2
 	for ath12k@lists.infradead.org;
-	Thu, 03 Sep 2026 12:43:10 +0000
-Received: from outbound.ms.icloud.com (unknown [127.0.0.2])
-	by p00-icloudmta-asmtp-us-west-3a-60-percent-7 (Postfix) with ESMTPS id EA1451800127;
-	Thu, 03 Sep 2026 12:43:04 +0000 (UTC)
-X-ICL-RepId: 01a0674b-5353-7c1d-9f0a-ac4a131db511
-X-ICL-Out-Info: HUtFAUMHWwJACUgATUQeDx5WFlZNRAJCTQhKB0MDXxxBAEAdVQFLVxQEEFoJUgQcA0wVWi1aHlUfSQsdDlgGEhZdRV4YUARCAxcbXAAXGVFNCEgTBVIHXU1WDUcPWB5cFBcVQENeCF4fTBwdDlgGEgBNCg42BlkFXglWA0MFNhIUXUVeGFAEQgMXG1wAFwZbFAREAV0FXQJJCUsCXwNZAUgXTQpUB1MfQRQQWglSBBwDTBVaLVoeVR9JCx0OWAYMUE0BQwgKCEcDTRdeMlMEXxFQFg==
-Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mugops.com; s=sig1; t=1788439385; x=1791031385; bh=3kGf9SwZXN+BBQTc+zQUIoGFVBNm5rRQNe5woeRka4Q=; h=From:To:Subject:Date:Message-ID:MIME-Version:x-icloud-hme; b=qha+5i3ClmSF7Fxs1Rj6X46tU2Ss4oZeXDh3TKlY4L7bATgk5c8ZBY4ThVNpalo7Gn6lQSNJ9yg4pQS5xMNYmdxr2b+8YUCqUQSbDywF2EBVHeMP3YZNFSyC3mYACB8buQUAUzpjZVbejXvPrAsDVLMFNnmGMeNvV2a50nSV4JydwxyhmKVpz52svsy7CSgRoMDMkiwFZ0usgUrj2xGJeQEzcPGRuUV9KuUbwLjYdZAwEhvFuwpbvzHKYi4z7JLtngQ0698WYtHiINzHWAjCOYDT2BCVK4rf3yJFyor3C/D/V71CG/nnqVqEKMO8g7MAmTZ0nUOTQE9aD/90bEtIzg==
-mail-alias-created-date: 1773467597841
-Received: from localhost.localdomain (unknown [17.156.208.39])
-	by p00-icloudmta-asmtp-us-west-3a-60-percent-7 (Postfix) with ESMTPSA id 1E9501800347;
-	Thu, 03 Sep 2026 12:43:03 +0000 (UTC)
-From: Hideo Sumi <hideo.sumi@mugops.com>
-To: aaradhana.sahu@oss.qualcomm.com
-Cc: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Mathieu Poirier <mathieu.poirier@linaro.org>,
-	linux-remoteproc@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	Hideo Sumi <hideo.sumi@mugops.com>
-Subject: Re: IPQ5332 multipd: missing text PD level and qcom,rproc ownership
-Date: Thu,  3 Sep 2026 21:42:38 +0900
-Message-ID: <20260903124238.59908-1-hideo.sumi@mugops.com>
-X-Mailer: git-send-email 2.47.1
-In-Reply-To: <9103ca95-5e27-4979-994c-e14f123cec7e@oss.qualcomm.com>
-References: <20260902041339.7665-1-hideo.sumi@mugops.com> <741d7c3e-6eea-4a84-bf4c-8d8eb8032c83@oss.qualcomm.com> <20260902192434.54709-1-hideo.sumi@mugops.com> <9103ca95-5e27-4979-994c-e14f123cec7e@oss.qualcomm.com>
+	Thu, 03 Sep 2026 13:29:57 +0000
+Received: from pps.filterd (m0214197.ppops.net [127.0.0.1])
+	by mx07-0057a101.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 683D6P483636248;
+	Thu, 3 Sep 2026 15:29:42 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
+	cc:content-type:date:from:message-id:mime-version:subject:to; s=
+	270620241; bh=c6eDN1LFjJy0wJR/ov+UULOWB8oqTEKjpOQyEvHRjiw=; b=Wj
+	8GI082d+PZ4+hnj/fZS+GmonOW8CCzkTr4Qzih0MOpgGqhbkTfWiF2KKOBn/jvbM
+	pYp2JUL7RBMpaKAH6d1kB5TOYvhk5wzWUsY+fXGSt7HHSKU7tGoqPF/yLnm+dQu5
+	eaHjuE/dcgQAmPDDFL/lDTdyPB9toDzRx6uxyRP4YWzWqp5Rne3qwCchFJ56Ml/f
+	tmWIXLGBemzxWauF1qULSMNOrBbyrvY0lGvNd6Z1EUs7+gHJwFimma4I2Oin9iDK
+	OGt0XvSI+y1pbZlrgRF/4HRExZM0TD0AbPuUGf50YYjwN5iJH/QnrcAgJosRgG5r
+	g2uo4//K49hhbFCmsVeA==
+Received: from pa4pr04cu001.outbound.protection.outlook.com (mail-francecentralazon11023085.outbound.protection.outlook.com [40.107.162.85])
+	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 4ge5sv2b6j-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Thu, 03 Sep 2026 15:29:42 +0200 (MEST)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=zJiRehKs2sv70XWFHtF/BTi+bdIc5Hx/2oAYtkyMGKedq1XADkS+wa7SrRTs/NxLw3NuCaezJk1uygzOaGQum94Bk8LHgMGPh8v7zJuTrc8wsNhvUUcBAe9zY4c4ouhC2P5mTKs565Cn/4DQQV2eSSwDSAabXJMqZHY0V/1oqys1bC2YFT3bMyadi/nC7qDA497/6AA50HCfbQzTGZpszHb4D7V9Y6r9sBxpIjEEaTqzPLnBGnSA5KNDeI5GvigcvMUigy8TEdNdv4JRZkevWRRsvs0i5NER9ZvO+tWW3wmYkE3f+30kR1IlbuctDYKSr072akz4n75H83/0POcXzA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=c6eDN1LFjJy0wJR/ov+UULOWB8oqTEKjpOQyEvHRjiw=;
+ b=GTZ7VR3yXevqAMX+jCzpNiBu/GKP1yPQ5dw4MwueUmHUTRANO5vWjtuKRr9+zl+3T2WphKSepyD4UuE94gqGILCuyIL0t4jloUHNI5zRlmJhjDRiGR3TkN3fZ6SRSQEgom/ey0Pvch8bSH2/t1C5Qilv4WZmu3081RyZzd1n/6XxfsxvqVmXSj+z/VqtwOgVt1gTe9oAdT82Ol9pb0+due0wc5PY8Wem2dHqaZMaYJXo4xhJgtii8m09+R5k45EZs9VOsJXHvsANU27eu6L88eMYkyOwgw1p7cQdFXq50qWaOK3NdLKkVhkuWfjpl0HCKp8dR2pRAtfJqhge18SxWw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
+ dkim=pass header.d=westermo.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=beijerelectronicsab.onmicrosoft.com;
+ s=selector1-beijerelectronicsab-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=c6eDN1LFjJy0wJR/ov+UULOWB8oqTEKjpOQyEvHRjiw=;
+ b=KvUpsKH8CYaWM6fl/5kz616skIZHuyOMjimRagNDk2fbj304nBeDuOSOKgZjioAzmk1Y5PtDm4dF7g59cRyHGzm1A5IcWXLgZZbcN9zic9wCTRgvzpGK0zWTW/64PVf79rhtMKWDxDeTc01ti8w6t9ey7HVkD2yIBxjPZ8oaoCA=
+Received: from PA3P192MB2868.EURP192.PROD.OUTLOOK.COM (2603:10a6:102:4d7::12)
+ by AM8P192MB2824.EURP192.PROD.OUTLOOK.COM (2603:10a6:20b:32d::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.360.13; Thu, 3 Sep
+ 2026 13:29:41 +0000
+Received: from PA3P192MB2868.EURP192.PROD.OUTLOOK.COM
+ ([fe80::bd96:8c85:982d:19ce]) by PA3P192MB2868.EURP192.PROD.OUTLOOK.COM
+ ([fe80::bd96:8c85:982d:19ce%4]) with mapi id 15.21.0360.008; Thu, 3 Sep 2026
+ 13:29:41 +0000
+Date: Thu, 3 Sep 2026 15:29:38 +0200
+From: Michael Pfeifroth <micpf@westermo.com>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Subject: [PATCH] wifi: ath12k: fix freq range overflow when reg rules not yet
+ parsed
+Message-ID: <apl2QtZu6EwGL0dD@mpf-ESPRIMO-P9012>
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+X-ClientProxiedBy: BE1P281CA0080.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:b10:78::7) To PA3P192MB2868.EURP192.PROD.OUTLOOK.COM
+ (2603:10a6:102:4d7::12)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTAzMDExMCBTYWx0ZWRfX9Byj5Hr75JY/
- okKGDzwSJLaZBjADxkP0r1HYQQvnycqOLAtPR4EkgW5H+x0eskkzm9arkhNmTEQPgEIi79GX+r0
- yBV5T4JHdAdN8aww+mF9BuSwfpss+i9oEQ6XD9hD8qIcuS69QL2JIIzC+XXYpbeooUQUjJrvhid
- EBqQi8s1htGMC+raDg240mhJyQ1sKCwKVGIdVeEPiLW8aoeFrelFf+NFu33ayCv6/M7TjdNOjxy
- 9kGE3f3U9L1p9/+OK+0CHeykqKtJ2ur5oWmt4OwLKgcyYiUJuxyNKjMwqiGRP9NxCDzeM2VAAR8
- gqPq+EVyBjN7tDwPCidlRuMCb6bhhVAB6VeavWyTNkrLQdLZYY2NP6867I+drI=
-X-Proofpoint-ORIG-GUID: fJGpXCPCm4865Lp24sjlw02uyE5evvgb
-X-Authority-Info-Out: v=2.4 cv=JpD8bc4C c=1 sm=1 tr=0 ts=6a996b59
- cx=c_apl:c_pps:t_out a=kRaGL2Q7qLiahLf3O6OaIA==:117
- a=kRaGL2Q7qLiahLf3O6OaIA==:17 a=VdqzKS8jKosA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=DQ8r9CIClS4u8aE-f4MA:9
-X-Proofpoint-GUID: fJGpXCPCm4865Lp24sjlw02uyE5evvgb
-X-JNJ: AAAAAAABsVGxVvdrxWYo/wJ3mE214TkUdo81P/0LhmPGT57FjVoK77pnffZRUt+mi1OEsSGLHtBB4AiYWtxRCOhDhj61iwj8jHGZrpOKx69uf5WiI8As1c4pvRup3X9vPOrFKAaa3UHm/QCbdqueglTFCSD+E6zfwYT8G5RbYA2+p5QI4mDkwHv34JyGGhRmlvYxh7wxSXIGDeRTIhkdI3sxlDmAqNAAQnnwvRzG/wcpwMXGONqHBqOFEJhNX35MVFVmCwErPJJJmC4NqEe+J+qJ6rkOxhyon3e4qGiznGqFW0pHVexTNNkAMaNRVpn8dbRc8qCabX2SotGLxZc/pXuntl+KeW5JLR1fRsBvIJFEpuIoz8pPs31QC5bxmuDxPAYyxcVK8GZARbIYtEdm7qAx17nc1VWs26r06SonnxEVhxDKo/SnOzTs6dD7n2+ZtwA7wrzFvDgC4xBnT07+CuJ6FnI1ISx3vYZX9SMAG/KeJiYae2ujp8X5vcqwzAdQ2dO1f8ilkCrv6BoP8WHALFoXVA4sthBEOmh46uC3B0tbrUpqqYN79RYb2q2XdP2cLQcQpNf+NMLPUOuH6w7ECebl4isSxqzZbQtJIOtO2icXJxRgkYRgK1zI4It8kdwcwsB7f+/HsTSbZFQThnislVz1/GUaiTj16G7t3tPT4usOVCOPUrY5L00sn+Gf3OlprUSIGj1v2BdpB6Lau9wj/5FcjxPeJ7QykGFz+ytqyp83LHontzY4ndG/NJqmG7uphWYNm0R8pT74FqURJy2VOdRw1DMDXulrD3lQUyuqsN7PQjDwrlsEnj7Uzr4eVoNni/+Mt62IkmeGeoA4Mo3NfGJjDmsM6hznosx02HooIwN1sduuAffS7SFMrcvQ/D0lq9rf20stZf3ApHzgvSUj+8tDQCDPPUq4CURygkpVSucvRZ3uZ5cSO39vx46IhTJx9YNnYhXioThcOAki9FT1un+Mnv24VAN
- 0GX+hW8omDewbncqIYSPKzfK/Cx6DtKP4lBnxb9LuDUNLYGca9600gbik8O03Z/hmIZxrkLrOAOrWcZXI+7yo18qH5PXd1NSpXAtyBq8ozMFvegnSSnfz+cPG4OEKrBigFnf4dIX0Rj8CxBGaVAYk75uX3GzWRieHMp8/Y+7hnzGNS6/09Xu89LqttubOnG6hZIE42vTbgD4n3C/MmkXZWjAvnw8XlyeEbyzpQjQnzBieAVHyRXTaBpuESsQgK53xbDkiNhPgql95iOT6vtXnnk4ponSaA0MlZ/0avWv2ghE8vphiTRo7MTA+EW8KvXbiE1qJnNPBp04eQlxXoYU=
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PA3P192MB2868:EE_|AM8P192MB2824:EE_
+X-MS-Office365-Filtering-Correlation-Id: 06fe99ef-c940-4471-ebec-08df09bf68ac
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|23010399003|18002099003|56012099006|3023799007|11063799006|10067099003|6133799003;
+X-Microsoft-Antispam-Message-Info: 1EoQloj+4wjYvKvq/jEoVM4QFDO8mNeLsEXIGJbgWMT2Fji55nEg/YPqsmsG2Nyg7eY6hpccWrBsqUmMAJihXwRMc1fyKsG5bnxj5DrCV4vf4F6tUHFGCm+gkxYVWE5HNPEU4Y74zH+KtKG9t0XZtm+j5CijkwqJeoTtJbEExfCtk7ECSSu4jSmBwb5PmE6Kqf75Lh9wWywWjZH6vZOUdz6XdLI7NoQAWeBHeEtVBbtuIVgqnWhR430Fg/t+Gp0tUXOLCGZEpXYZKKFC2q50Ssz4K0AYyj1Usqu7JA+L4MPysVXR6uLg4K0plbnkzA/0Q9o0taGHxH20Z7jsNWLIC6C3kefqERiM8KKkJBmHi6wM08DOC4WjIOeMmmXGPzDHf7Hq9TccgEc51fd0gr1vPvRbA+bsFkQVUMRyzGr8sbRsb57FAX+aOzR1cG56GacNWhdRFyBI4rSfLgQHu3OZJI/OsXu2icNgugftzQJZtOFUkn1ZTLEhJ7pyOcX5/ogdAz6XviDH85q/L+dVCxAmRWv5pExCXIxt6O2iY9a/wDtPRD3qXvVADHWVnwH5TMc6KT1FOM8+aPvkkbXbRW2tPqsFkMR3SiaFLSxrZZJHAAe9RBvCl+rYrj4RNAGxDaykzjOkL4n/L1OIeena94O8sRSQqVYMp6+8wYd5Wfz7Mlk=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA3P192MB2868.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(23010399003)(18002099003)(56012099006)(3023799007)(11063799006)(10067099003)(6133799003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?4OskhsE3JoNksK2bkUOv4eYdXhiFPlW1z/Hhm2SPPnpCpLD4zdE3x9UsaVB+?=
+ =?us-ascii?Q?PlYVpsmfIerii80ba9Mu0cvv8v5LU00sNde6ZI20dh29K3cjakb62uIYUP8V?=
+ =?us-ascii?Q?qLrurOesDkeSuCaQbEiXIQiG/k7MGj09m62EvA3LCeUV7vuEATVEHTNfnyKb?=
+ =?us-ascii?Q?hJdd1NJqXWIMAy1UZXg+qhrKg5pwaSSvxYSp4BY/wKOSPt+tM8o3o/GRdtb2?=
+ =?us-ascii?Q?b3+AihHxo8xDFFclMFRpDKEr+bR139PH2xzw1kapb10b11KffPP0HpheG11N?=
+ =?us-ascii?Q?DsfWo4fQYz0N4ZOjWozeuhvYRgesfrnE0aP2ZanOjCZCtD1bPcLlQRXLvk7S?=
+ =?us-ascii?Q?gaYg4XW4QGfh9MvpR8NLjzaff8OzMb55BmeeUkCZvn/GFeRWSkXHA+l92meU?=
+ =?us-ascii?Q?YWqGG8znzL5UO7rlVM9cQcQ9a83WA6qgenyg2XP5pfDQKR7MWdu2o1VzXIsY?=
+ =?us-ascii?Q?+SDZAk4m+iKUfzRmgHav3yolwO+PY90u+ndNPwySBvZhYWMIK+Sq1j8RDexO?=
+ =?us-ascii?Q?ohvv+TFTDPx+sBXP2LfYk9/GEnDm2K1lqcH4l1X6HavLc/+IHMTdDC95YfCq?=
+ =?us-ascii?Q?2jFl23Ij9GyjLJAe9tih5AZJUZKZ53VKf97zeyDz/4pCx/Rgzg1w4kCmFhiF?=
+ =?us-ascii?Q?dfX7Z1oirKxzgy5SBc2v1phyDZd8qr64biB1w16IbtNs/K2rGbv6rf+cbI36?=
+ =?us-ascii?Q?hPL9V0ZIvRJ9pVYPdAccO9FFPEmMYM4yAwCA7mQFEwUH/12QdM7U5LKpjb14?=
+ =?us-ascii?Q?Qh8xP+OOLvBwCqQEHDALO83cNLDFWoGVIoleKQgv/5H4hTheq7COqRWw3jyY?=
+ =?us-ascii?Q?py/Y3mCE+fV2UXazJ1hPJKo7NnCrMptTajMO/SMlrEAwCo78QAKY1sdd9o5w?=
+ =?us-ascii?Q?WMlg/R4DnZAc2KCGe4p1nKw4orliptJGOl5Jkk1KBES6QgayawNwZvB2sr4d?=
+ =?us-ascii?Q?91QW4gOGnlWIpMU3ljN9WpoopwX/BBcGJTTQLWi5T+R202jGFGAKEmCGOaIc?=
+ =?us-ascii?Q?BXHsC/uof4I/y9q2KGrqv5GEIHlAl3fGYhc1DwM8/+Q5v6bscPiPnrIG1RQ/?=
+ =?us-ascii?Q?dmQnoXBPnMENSVQeW3hcsgSTlCvKuEuKh8M45+qIqWTX4oZayww7ixKiE0Rg?=
+ =?us-ascii?Q?zo1+C46qurSnvV1UpD6Pgxe+lqGWNi10wPfLblvJEPIjQ1hyNNP9Ow+fysIT?=
+ =?us-ascii?Q?fFNxE5d/x6ribgY5pnJvSnm+bFhU5guDNpPSz5IyKrxdZJt0rgC8wa/ft+Oz?=
+ =?us-ascii?Q?/g+OvOFsLJl380vfZpbv649Pc4hMbC8BbabvJhs6b+eozmPNZCkqPBkDh/gS?=
+ =?us-ascii?Q?GGNmZV2FeFVNJqlVERwrgx0NcBV7JCzRibhJwFOo25unafkCI/gm+Zc7Jysp?=
+ =?us-ascii?Q?bgkm9HSebUzEk+A3H+Rel7Q+RZPo4ert3fLPcJqvroh2GpmeeY5q9s2tc201?=
+ =?us-ascii?Q?64l8kT7zDlJNqitkTrV7RKqt1PQGRWHiFY55ohpVcV2+Il1O9LWqOJAJtOCc?=
+ =?us-ascii?Q?XWinYRD+U89v0cNuPNPAzLLGtDhNbd7DX9mcYUm0SY9ciktS+iu5S1VWZEqi?=
+ =?us-ascii?Q?4fhTDM125gk4BEGph61L7RtCmi5j7AAf8XtXw2lB9I3z9FOQJvRFxLHj89n0?=
+ =?us-ascii?Q?jubuSQh6/+zK2P7thvVIUPUgQNGC0Zwuv//9yIgh6s9EFPU8T/SWT9HnnzNF?=
+ =?us-ascii?Q?WBzoxdyTIlQsKYLwdWDWxaYxeXWlvcimN5T0/8pXsR4GNzLIsbDjD3KDVNDW?=
+ =?us-ascii?Q?5dS6iOG/gg=3D=3D?=
+X-Exchange-RoutingPolicyChecked: a4Bt8seYR3KyLKdV6qaxHu0DiZDeR/7OEj5hOqU3J5UEXgoGAmCkWWTV+pP5pi4JhG/w1l8qq4q3nCDBGzQ+08OofDOLv1mmhQ+9ANNXi/QtWJsnXZm0hF0kvvEf0gyQxkQpE+F6k7SoAtXuWp042q+rL1Z5cm9/ScT3Z/qm35MBi4QFZfIGjBkHTKjmFZ/bUKgBickezuNI/sph3zxgTbeYMSkQSD6k6mMasfb5gYo/IUSD/mvlbRdVp9YgzbfP7coC1TDv1SbJ5D18TrZhJVYbptXUm/qEfsQR31Frz53CpCv2+siAqbWKs+rQhmBGnIWUfmw9W2YbGgwCUA0E9A==
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: PJfj/874vhDCoh88zyHhiWB2tiGKIlftktD8+pUSU3M8tMTPVtGk87IIjPN+IaHiVSasdeM/dowk9Yy9AjIbsf3mL+yac9M0SAjwsXINAJD69WZeRTh3gDpaNBXZDg56fx0F22i+3AJwSSI7N7NRm6nyO2ia11Y9U74px5AQTQV1AlWUr9yWVovfQwu6+ixWgwc/Mcy4BD1vzYElCBRqQWauDLAsmXD3gjwm6l3IFvdSkOGijxfeDtii+5h+CdEl24WCb3lXbCHSA39BMGmRxQPgiRJo/El8Zn6wrCHRW4lkW27HMQIaVwlSn7qDrKS5dbQgVnIU29zNc7F09mFX5NKf6XdLeMdUyRgU9AghaPdD4e91u0XhL4lzTRuTzu8gx1Coe82XSjqcMR2gQ1G7YxgCt0BEdgqs/OG0s15+xrzTZrtqBwPNbZ3vsbH23wgbGeeJHfwAmazCT7eicYx92mXonBVN/W+wlywCNIXbSvTLyyJzEa5rMWMQDU27nxlRA9AJRMeeA4QSCOmBdGk3BTbffrB9p8oifoYYqvj6oFeudECS/sfXow508jiYYrjAMG7b5TxiXyyOI03HrwggHJibGNBwozkKMWNmruVoy+5wvL4feq1mBIVW4CzwZRww
+X-OriginatorOrg: westermo.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 06fe99ef-c940-4471-ebec-08df09bf68ac
+X-MS-Exchange-CrossTenant-AuthSource: PA3P192MB2868.EURP192.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2026 13:29:41.0140
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: NubMBk4h0eZk/fVYQaZzXpTnamkofiMRivakELU550eyQFY5Ez1BffCWS6EM6rxUDoOYJlJfGe5Fo/IIL8S9OQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8P192MB2824
+X-MS-Exchange-CrossPremises-AuthSource: PA3P192MB2868.EURP192.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossPremises-AuthAs: Internal
+X-MS-Exchange-CrossPremises-AuthMechanism: 14
+X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
+X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
+X-MS-Exchange-CrossPremises-BCC: 
+X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
+X-MS-Exchange-CrossPremises-TransportTrafficType: Email
+X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
+X-MS-Exchange-CrossPremises-SCL: 1
+X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
+X-OrganizationHeadersPreserved: AM8P192MB2824.EURP192.PROD.OUTLOOK.COM
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTAzMDExNyBTYWx0ZWRfXw2qXH9HcSO44
+ 8nZYp0aMHi9GuHy6R/rglpjco6cHcx+3uHYshKlOjO6Pa0YeDJUFwglewIFD2rR5U69GW18ScCS
+ RlugNYB0BOrA04YVk65+7IfKoIyZudVgu5AkqeitIsEhReupNxMH5P1qxWow9QWjmJHHpI1Mris
+ k0garcTrEcUN19Gzj29NZ/N6I4+SgDbZ9ydSx2k5jHx7afxeQPBo9Sch2GQswd7QgqNQiNCPVmJ
+ xpGOmaPUlTHhh5wy+we4owt9HTUgzJrt+z4/f30jheSBQ2VexqtJoRqnXO376O6p/MU6cRQT9Ro
+ zHD6jYfX2+IPBpArvjoggHJTBhlt1blamvEHD3CaGbsUm8Aq9FvYDZ0XljrumORZJjMTN17Tz+9
+ LZxPgRYAH9Dpyc2Erq3ytJi6pm9feyXm2DL6Wc/J9EMJ7BUtSlBSziW1YJfHGLSkAPB6D5cV7as
+ OTSMhOahvRFuRGvMkeA==
+X-Proofpoint-GUID: _nWKZQe-H1SXzyRr3POpRslqkcxorq4o
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTAzMDExNyBTYWx0ZWRfX5cmNTm93sB2L
+ rfgm6KtFG2IAOAoYEae/F2lW8E/rLIrh9uHp7SPazLR/ObS3e4iaWX/jX9zw8jYfHUAU86m0HTI
+ MrT4Xw8ffjZP+tZnZNpFB6JdvVdpDRM=
+X-Authority-Analysis: v=2.4 cv=Es3aPycA c=1 sm=1 tr=0 ts=6a997646 cx=c_pps
+ a=FXahOaI4078dIhBFKIJ6+A==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
+ a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
+ a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=VdqzKS8jKosA:10 a=8gLI3H-aZtYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=tr3XZvuDWTETL0Uaxejn:22 a=8ys4xmT3Mru1TjC2zVq1:22
+ a=VwQbUJbxAAAA:8 a=N9GNhs4bAAAA:8 a=-Oh_-6K6ROkFF56HLt8A:9 a=CjuIK1q_8ugA:10
+ a=PZhj9NlD-CKO8hVp7yCs:22
+X-Proofpoint-ORIG-GUID: _nWKZQe-H1SXzyRr3POpRslqkcxorq4o
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260903_054309_767331_70029EC4 
-X-CRM114-Status: GOOD (  14.91  )
+X-CRM114-CacheID: sfid-20260903_062956_591976_C632094A 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,112 +185,40 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/3/2026, Aaradhana Sahu wrote:
-> Before we look into the SMEM handling, could you please confirm whether
-> you are using the latest ath.git ToT and whether the remoteproc v14
-> series is included?
+ath12k_regd_update() resets ab->reg_freq_{2,5,6}ghz.start_freq to INT_MAX
+before the per-band regulatory rules are parsed, and firmware delivers the
+2 GHz rules before the 5/6 GHz ones. If it runs for a radio whose rules are
+not applied yet, freq_low stays at INT_MAX, and MHZ_TO_KHZ(freq_low)
+overflows u32 into an inverted, empty range. cfg80211 then rejects AP
+bring-up on that band with "Failed to set beacon parameters".
 
-No on both counts, and thank you for the pointer -- I had not seen v14.
-Let me be precise about the base so we compare like for like, and then
-ask you the one question that would settle most of this.
+Reject non-positive-width ranges; a later ath12k_regd_update() installs the
+correct range once the rules exist.
 
-This is an OpenWrt build, not ath.git ToT:
+Fixes: 0d777aa2ca77 ("wifi: ath12k: fix mac pdev frequency range update")
+Cc: stable@vger.kernel.org
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+Signed-off-by: Michael Pfeifroth <micpf@westermo.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-  - kernel 6.18.44
-  - ath12k from the OpenWrt "backports-6.18.39" package
-  - the multipd remoteproc support is the *old* series: Manikanta
-    Mylavarapu's original multipd patches (Nov 2023) plus Ziyang Huang's
-    "split q6_wcss to rootpd and userpd" fixes (Sep 2024), carried as
-    OpenWrt target patches.
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 99bf5cf79..654c58d7c 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -14125,7 +14125,7 @@ EXPORT_SYMBOL(ath12k_mac_op_set_rekey_data);
+ void ath12k_mac_update_freq_range(struct ath12k *ar,
+ 				  u32 freq_low, u32 freq_high)
+ {
+-	if (!(freq_low && freq_high))
++	if (!freq_low || freq_low >= freq_high)
+ 		return;
+ 
+ 	if (ar->freq_range.start_freq || ar->freq_range.end_freq) {
 
-It does not include your v14 series. So it is very possible the issues I
-raised are already addressed there, and I do not want to send you
-chasing a three-year-old base.
+base-commit: 1b78070aaef63512688aebfbc82365ef9d6660f1
+-- 
+2.34.1
 
-The core of my first mail was a *text PD* level between the root PD and
-the user PDs, which the vendor firmware for this part requires and which
-the 2023/2024 series does not model, so I added it locally:
-
-  q6v5_wcss   qcom,ipq5332-q6-mpd         q6_fw0.mdt   root PD
-    text-pd   qcom,ipq5332-mpd-upd-text   q6_fw3.mdt   shared RO text
-      pd1                                 q6_fw1.mdt   user PD
-      pd2                                 q6_fw2.mdt   user PD
-
-So the question that would settle it: does the v14 series introduce this
-text-PD level (a shared read-only text image loaded between root and
-user PDs)? If it does, my local patch is redundant and the right move is
-simply to use v14 -- no need to debug the old base at all. You wrote the
-series, so you can answer that far faster than I can by porting it.
-
-I am glad to help validate v14 on this hardware if that is useful -- if
-you can point me at the base it is meant to apply on (ath.git ToT plus
-the series, or a branch), I will build it for IPQ5332 and report what
-reproduces. I would just rather not promise a blind full rebase, since
-2.4 GHz already works here on the old base and I do not want to trade a
-working setup for guesswork. The OpenWrt device support proceeds on the
-current base regardless; the upstream question is only about landing on
-your track correctly.
-
-The details you asked for, in any case:
-
-Firmware version, from the Q6 error record:
-
-  WLAN.WBE.1.3.2-00067-QCAHKSWPL_SILICONZ-1.128291.1.135427.1
-
-Platform: Qualcomm IPQ5332 (Xiaomi BE3600 Pro). Two on-chip WiFi
-devices, two user PDs, both attached to the single Q6 root PD via the
-shared text PD:
-
-  - wifi0 / pd1: on-chip QCA5332, 2.4 GHz, AHB
-  - wifi1 / pd2: QCN6432, 5 GHz
-
-The multipd DT (our downstream form on the old base):
-
-  &q6v5_wcss {
-      firmware-name = "ath12k/IPQ5332/hw1.0/q6_fw0.mdt",
-                      "ath12k/IPQ5332/hw1.0/iu_fw.mdt",
-                      "ath12k/QCN6432/hw1.0/iu_fw.mdt";
-      status = "okay";
-
-      text-pd3 {
-          compatible = "qcom,ipq5332-mpd-upd-text";
-          firmware-name = "ath12k/IPQ5332/hw1.0/q6_fw3.mdt";
-
-          pd1 {  /* wifi0, 2.4 GHz */
-              firmware-name = "ath12k/IPQ5332/hw1.0/q6_fw1.mdt";
-              interrupts-extended =
-                  <&wcss_smp2p_in 8 IRQ_TYPE_NONE>,
-                  <&wcss_smp2p_in 9 IRQ_TYPE_NONE>,
-                  <&wcss_smp2p_in 12 IRQ_TYPE_NONE>,
-                  <&wcss_smp2p_in 11 IRQ_TYPE_NONE>;
-              interrupt-names = "fatal", "ready",
-                                "spawn-ack", "stop-ack";
-              qcom,smem-states = <&wcss_smp2p_out 8>,
-                                 <&wcss_smp2p_out 9>,
-                                 <&wcss_smp2p_out 10>;
-              qcom,smem-state-names = "shutdown", "stop", "spawn";
-          };
-
-          pd2 {  /* wifi1, 5 GHz */
-              firmware-name = "ath12k/IPQ5332/hw1.0/q6_fw2.mdt";
-              interrupts-extended =
-                  <&wcss_smp2p_in 16 IRQ_TYPE_NONE>,
-                  <&wcss_smp2p_in 17 IRQ_TYPE_NONE>,
-                  <&wcss_smp2p_in 20 IRQ_TYPE_NONE>,
-                  <&wcss_smp2p_in 19 IRQ_TYPE_NONE>;
-              interrupt-names = "fatal", "ready",
-                                "spawn-ack", "stop-ack";
-              qcom,smem-states = <&wcss_smp2p_out 16>,
-                                 <&wcss_smp2p_out 17>,
-                                 <&wcss_smp2p_out 18>;
-              qcom,smem-state-names = "shutdown", "stop", "spawn";
-          };
-      };
-  };
-
-  &wifi0 { qcom,rproc = <&wcss_upd1>; status = "okay"; };  /* pd1 */
-  &wifi1 { qcom,rproc = <&wcss_upd2>; status = "okay"; };  /* pd2 */
-
-Thanks,
-Hideo
 
