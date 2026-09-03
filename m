@@ -4,136 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D397CC624D6
-	for <ath12k@archiver.kernel.org>; Thu,  3 Sep 2026 03:07:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E9A6C61DD3
+	for <ath12k@archiver.kernel.org>; Thu,  3 Sep 2026 06:10:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+dkUpL4IwUW3ZUTI7y6UDzwrF1aRbG8miuQ1bitA8zM=; b=xUZ/6WU9lY0YXG0ySrdxDcFxjA
-	PAstnuJ+5bMz2C0oNPYEKmsXqzhLdip/gbFXhBVqRCEotpPfHfTWszt3D3S3InIwIxKNrg2N7crUt
-	KTviuJASpBk8D9T6/eah0+zb+0x4ygi0xs3Xl41WpfUDg7NOxJEiFkISX+kT9r8TsCtr5w27n8GDJ
-	KMOpxfPHViDPLspNz6+SMtQ/hElkiQZwJl3gJQ7HVnSDLeLtISN/8H4XZvRVVu56dgYt83hVR74E8
-	uJl/CWXDesmix3R4vdQmiJJeNB1hQISm66lrLXcsl0KUX7ubT6DAG0oioX/UC3iUtZzcCI709lL7O
-	lSSCcgSQ==;
+	bh=91AZ6ySo2GU0comiuHGaun1xtRTKFM9Pkah81PE5WJ4=; b=0n3I9YYSd0Q9S6Zd2bIuhrVkZi
+	qvrBqARZfc3hL+mpwyM3xC7GcJeF+8q6pQmP+n4BBMfTt2VTvn5jSiQwlPdlrB3qa4sySUdQBMAdj
+	qAiP03PHac/2G7NkcjElI4BIU5aqGBV3KdRikSWITaB2YvPHoHKwFQbv+KEnn8pzNDjM+x1oPEoqt
+	McW6YDcn2stIs+TtxmoP9pQH1PioPXDrV6tvhnWUoI9ot9nJz4Al5dy05s+JRCGPMRjrPKgqrHIJc
+	ESgSYZFhwGtpUeWgOAHDt/Pvr3GPT25R2114Vj6IN9k6ksMmTIyY1tCzyMgQpuGlnmtwySNikf3aZ
+	BM1zylwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1xne-0000000GFmK-2OHX;
-	Thu, 03 Sep 2026 03:07:38 +0000
+	id 1x20ev-0000000GSWo-0W41;
+	Thu, 03 Sep 2026 06:10:49 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1xnb-0000000GFlq-3y6o
+	id 1x20es-0000000GSWH-0qKn
 	for ath12k@lists.infradead.org;
-	Thu, 03 Sep 2026 03:07:37 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6832xi5Z3657552
-	for <ath12k@lists.infradead.org>; Thu, 3 Sep 2026 03:07:34 GMT
+	Thu, 03 Sep 2026 06:10:47 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6835lgXu3912722
+	for <ath12k@lists.infradead.org>; Thu, 3 Sep 2026 06:10:45 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+dkUpL4IwUW3ZUTI7y6UDzwrF1aRbG8miuQ1bitA8zM=; b=Qz95Lv7k3vn/x5po
-	jdbiHdF9u74ERYqObAg3IK0X3jRhM01ols52vfqhm6hW9dZi3YmDUJmQUfGB673v
-	g0flqSfvoVpdhvFHkogd+FMqjXt2may8VNZRphYQZMVIUgMCx0AG2Y7iSludmzn0
-	odzAZHAH5mvNlZPMEJBIXPDbA/HKP0gZlKWrHoyWTp/uomF2Z+TA7N+VmsCyBPEd
-	HhJi79z/ZhbZ5ZBzlLHr3bof140oVlnI9+GK0L8mlV3Et1qQWWK0nTdBByO0xeeT
-	Tx3YPvubOjm2R5eCoJKZUn9pFDYKsh8jw/04yn1L6rKNjHbSFhDvIjVBeh+PjsEe
-	VJbIrw==
-Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gemjhb3n6-1
+	91AZ6ySo2GU0comiuHGaun1xtRTKFM9Pkah81PE5WJ4=; b=DCRDpbruN1ez9GpU
+	KfgUTky2Y+FAuqvRGCYnir8of1GF7scmCKO0PRr6PK8H9E59xlbsA+I0f41BWsI4
+	o/jv6eb80z6IUT6IqVE5O6nPdNGEk2/HfcWVd0MPs4kOSCIPMqbt5i3eXAPXSdYY
+	LSTN0xNcwAYZILx3QOB0VNj7B71eQCXwqD7en6AAOvKX8EZitq5D2OgIhLptoF4D
+	3Q+417+fdVzzOkml60jA8GlvBpFXhlSiqjz9vDx/lDs2WqZd8kjKWzKOMkNKPTiL
+	pJiAYhKqsU3KLjA8cb3HlHRHeSK8j+li+i/92/rVeSFwODJo6fFqyGc320UwKWME
+	RYqw+A==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gejv8c75u-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 03 Sep 2026 03:07:34 +0000 (GMT)
-Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-cc1a439db36so1896573a12.2
-        for <ath12k@lists.infradead.org>; Wed, 02 Sep 2026 20:07:34 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 03 Sep 2026 06:10:44 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-ca6bd8a190cso2977790a12.0
+        for <ath12k@lists.infradead.org>; Wed, 02 Sep 2026 23:10:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1788404853; x=1789009653; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=+dkUpL4IwUW3ZUTI7y6UDzwrF1aRbG8miuQ1bitA8zM=;
-        b=GuO8Zn2o80i26YHuJAFNL62zmIilbOCaWfwd93s8bh2WIYr4Zmy2hm87BS2xZD97Jf
-         RsARYAI2h30+nwXiuYofZ88GhwBerX58+NqVsc0/UofjOZca06VcIWD+blOgVNYZfayJ
-         dg80JjRlDkEjYBaXUB372CIXxXLEIfOibgyXzEG9/E2P8XBPYQ61I4iDno88sIOGI6Kd
-         xAAtFKmmIKA0Dvyuvv26BUFNZvjxtSJCAtMEIRv/7eNy9NsAmKmp+UqfAnY6Atrobzl/
-         wmS1AyFCDDUr+ZWA3s2MiyRuCAjCKvIKnoIIHXdrwMhHatZ/Vkpn3G1pygHnjcy48sJS
-         TjRA==
+        d=oss.qualcomm.com; s=google; t=1788415844; x=1789020644; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=91AZ6ySo2GU0comiuHGaun1xtRTKFM9Pkah81PE5WJ4=;
+        b=X4y/PTbIyaN4Fqax0aABCvA0XxHw7+lp9Vkc15iPKjfn0Kw8ofIwut7bRN6lv1V2Qn
+         Wy8DtXiv0gMcWn4LegHrv+N3Dp+MiSW6DU7SJfNeDsIEE4KZix9DqsZoCB2L4TxzaWPf
+         PFzZJ2XnQAelqp1TcmzZeKaqcNHmxorb9RJNiRYl8k/pCDPduF8cie070hvbg07/nKqk
+         MMjQjX48JNTCzvy+L+zIK9NltVAqM5g1R+fSu91lZTxMzoRI+zOWoqCGjoClvfMBVYO6
+         q0vmbDbeoi7FALiKgWIaSlCFfB877Gxybje+kZNlOKDTShuJjQE7jX3rMY/JJudBb/wn
+         wOBw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788404853; x=1789009653;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20251104; t=1788415844; x=1789020644;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=+dkUpL4IwUW3ZUTI7y6UDzwrF1aRbG8miuQ1bitA8zM=;
-        b=bXGMKYxpQL8/sdxjLrJTxa+Su+oa2lX5BBAtSPXDp+n+XxJZ9AMHJpOfJofF0L0uie
-         xVdMEIF8ctuXZpnYfB8LdtIA05ySROogW7sbCHd73AtG1jXtKcOBIaQXyGhPsl6x4546
-         DU9rwHTienJjCNJMNlQLcB0LbTXf8DSIrVAzWOvtSQWCG56KT9pGsWcNfqeIEfyZJ49I
-         oBBIM5joDFJT9LDRVI04m0mmN80UDTVE4V6a0AtXTmjLPpfYrt8FFY9UqLwpwQgdO7hT
-         R523DMIYYuy5xVt5qjAzuZeFBnkFY8STBMTj7jKq5ZoThKsVpnwKWyq5YTjAOxNDn1KG
-         ZqIQ==
-X-Gm-Message-State: AFuF++mdfa4nXSJxeyJcv/Eru7l32kuTfqf0mRttbujo1ma/XxwcvNoA
-	TxWCCwFhM4RDm+rbQupBnA9wbiy3PsZ+5tUxFzjSUJlnjkXbpk3219APivAweTcpU7al4FYhXCl
-	H1jhiX8n63SL85uxuaDzArD2Y9gljPlswFdszVYVUg5LW5zIJ9PdAmHn30ggJ7sjK
-X-Gm-Gg: AYBFou1eRHBk0hkOA3VfFpfIiF2z0Gj7WmBYlmSKIcAmFcP5kmA0wF+bxI8JAiwn2K2
-	o1VY0OqRKfzRcpajFX7e8OHqZJ/FG+heu+rofKkYjQhKgDRlDyHqIdnDOZ9ylbHDrRvKjQZbfff
-	cda6FLC8bfgYIj9mXp445cfwCaGzYvu7Xsy0cMlOlWNmxClGl9UAT1pvSxtLDmoViH4Ig3liRmD
-	QbAdugZJUNGl3w7ToL5Muu8k735rJ5bjiviTUd5C8ipDH87GbVLG4DOalX25xkBZeoKLSEjKsBQ
-	nHOoVickLJyS2IUao0182afoiyL31BtY7XzFWp2hM8hyl7lkMWirFJe2Dy2VMboxJkpAauh+zdA
-	zvhP8UhNia2uIR15+z4sVsrgVIyxM8DEP11LZH17jIIiX4zdJ+JU6GuB1X+N+Q/zDdlwHkL9q
-X-Received: by 2002:a05:6a00:2e9c:b0:848:2c2e:c79e with SMTP id d2e1a72fcca58-85ed3c7d861mr12149930b3a.12.1788404853431;
-        Wed, 02 Sep 2026 20:07:33 -0700 (PDT)
-X-Received: by 2002:a05:6a00:2e9c:b0:848:2c2e:c79e with SMTP id d2e1a72fcca58-85ed3c7d861mr12149882b3a.12.1788404852906;
-        Wed, 02 Sep 2026 20:07:32 -0700 (PDT)
-Received: from [10.133.33.22] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-85dc003a82bsm2078731b3a.33.2026.09.02.20.07.31
+        bh=91AZ6ySo2GU0comiuHGaun1xtRTKFM9Pkah81PE5WJ4=;
+        b=fBpdBTUUDY5v3LsaSqYZATurqwsMoLLKV3+KwPOtLcYPof00NqA4JvijIAUzeLAWR8
+         DVRyjvqXAxjD4oQnCNvh3qBjfz5a/+10nltayUbbFwAQCRRA9AQp2molH93IqI/bWhJp
+         PBmaAIwIA+8XbuxC5sEAQLuknSpGgEd74DgwtDUid7KDY+1ZSUId4xRn7zSrBd0gwFIW
+         8MRLsAq8jE3WvCvE2aXjL6xa5iJz5BmON1btuikovWLbCHH15YDMTCjWw9/Rol1HQ87B
+         TcqBZlyoRcYHxww/ZXtjEY1BSGiYjwWjxRzZxq+hyZv/dUaeLKSI5PuOOiv/1BzL7Qge
+         68JA==
+X-Forwarded-Encrypted: i=1; AKwUvByDOuoYBruQglIyw9HGtnIS19Rqc8Y1KhqIS1Q6s3TX6Ch31a7uYdPqD3x7BiANWYzqabXdUMU=@lists.infradead.org
+X-Gm-Message-State: AFuF++mhTj67cvykmyMCJuXCf2bm5jTxjXBY4fgSgovx4YwZQ+oQVO9s
+	skQIzu9x557IbdsYkkJPNWLSgUQy9OVRmnHBErh2ycIEG6MN8Qk5OaPjQXaRkJIwfP/mhKGSgNO
+	fz/GIIBAuFBgoY4fj9buoodaffGJo2vH5tx4BywOLSgXQr9rxvmmEtiwgFW0pQxeK
+X-Gm-Gg: AYBFou3A9JjtuP5jBXP1D7H48k5pPciGMqDZ2v14+ZjajEycup+GM1yck2CcCBlLZB3
+	bFll1kIafWYkYdrckoY4kty8mS/na6xtHUvtlFkGe+GAGRGUPEBKYfDNk0jvd4MG0rQG94U+lUv
+	+Qy8n7kAX5AANBvY+/LtMelS9Ny2RQA0eEPtH92p1Lu16k13KeEv38RnLaQsjWCge2TcIqrqSbz
+	0pyCMTqCTHrDPYNULKFeyImMYNRjEYjuJCicw6XE9ihO8ZJ0mirPH5nxQoL4Pb2qFdZk9LW1AVB
+	QHZURbNF66tDp41OV3t/NeQf6NSpAcvMSvqTnq/NtysUeGPjqfYvkbW43wY9o2mPPZ4QgYpU5fs
+	S0yn5PukTP3TcXpKSRXA6VF6A/8Gx0hEaNw==
+X-Received: by 2002:a05:6a20:4304:b0:3d3:ae0f:526a with SMTP id adf61e73a8af0-3d9b0420a54mr14305563637.22.1788415843866;
+        Wed, 02 Sep 2026 23:10:43 -0700 (PDT)
+X-Received: by 2002:a05:6a20:4304:b0:3d3:ae0f:526a with SMTP id adf61e73a8af0-3d9b0420a54mr14305487637.22.1788415843240;
+        Wed, 02 Sep 2026 23:10:43 -0700 (PDT)
+Received: from [172.20.10.2] ([152.59.48.67])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-332501e5447sm4873959eec.0.2026.09.02.23.10.38
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 02 Sep 2026 20:07:32 -0700 (PDT)
-Message-ID: <265ee3ce-b953-4cef-a34e-c2f51a86ec26@oss.qualcomm.com>
-Date: Thu, 3 Sep 2026 11:07:29 +0800
+        Wed, 02 Sep 2026 23:10:42 -0700 (PDT)
+Message-ID: <9103ca95-5e27-4979-994c-e14f123cec7e@oss.qualcomm.com>
+Date: Thu, 3 Sep 2026 11:40:36 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: flush REO queue extension descriptors
- before freeing the qdesc
-To: Sebastian Salmhofer <sebastian.salmhofer@salmtek.com>, jjohnson@kernel.org
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-References: <20260831151011.2336305-1-sebastian.salmhofer@salmtek.com>
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Subject: Re: IPQ5332 multipd: missing text PD level and qcom,rproc ownership
+To: Hideo Sumi <hideo.sumi@mugops.com>
+Cc: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Mathieu Poirier <mathieu.poirier@linaro.org>,
+        linux-remoteproc@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
+References: <20260902041339.7665-1-hideo.sumi@mugops.com>
+ <741d7c3e-6eea-4a84-bf4c-8d8eb8032c83@oss.qualcomm.com>
+ <20260902192434.54709-1-hideo.sumi@mugops.com>
 Content-Language: en-US
-In-Reply-To: <20260831151011.2336305-1-sebastian.salmhofer@salmtek.com>
+From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+In-Reply-To: <20260902192434.54709-1-hideo.sumi@mugops.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: DXfDro5A6oYk5OKFVRy7WnuN5ivCVI4T
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTAzMDAyNiBTYWx0ZWRfX7nmDYWvuhO5u
- EfG+8NPvC1OTn0KudJjy308fwqCg0BAfrT2IPBabDxrG7Dk/K8uw6cSTuEcv3+33bnPWVPs5/NO
- j973LNM4zF2tsjJZpT1m0QKkmsBU6rM0J8YCrBFHMUm58QzgEmK9G3marCwPczdrw4HSZgCgzKl
- OyYUtEFfP8c/Y4Cbvsm+4zZbYGXv7aSadX7lhPpVb1IiKttP14xYSA6wTb/KYOXutuveUvVvivz
- fkRYzIyIz4E5Oz/GNBoC9hQV+PiNAmoE7weEviaJl7MkYWeHLbsT3fZ7wzOwWoDgd2f2Mq7kU4q
- LsvPCZ+39ZllSqiXGQf1FO+mT/QBiQ2cGvnkMsRVypDrDvhdhPAqz5IwnoyKl1p2ZXRIY99BzOe
- NYT+ouLJkzIy+Vq4/ruzHHflU/B5Sql7px1EP2LZSinlZCN56LBhNxebN2udDe0TGqPpO7Wb3S2
- MkyOOUd51xSJ/rcBjEA==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTAzMDAyNiBTYWx0ZWRfX3OA98ru3DvE5
- WkAY51D9jxUcwzL2aJ6uHYMXv3RIg4Nu/y73PI3AtnXaAWd15ksJ7IHmS/nXtZTEvlSaIvIaSHI
- yt5UKFsXERzXzhbLPuEw8KCE6EP+BUY=
-X-Authority-Analysis: v=2.4 cv=ErHiaycA c=1 sm=1 tr=0 ts=6a98e476 cx=c_pps
- a=rz3CxIlbcmazkYymdCej/Q==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-GUID: TjxUAZgzeWmFC00yIt-ityMuXOnLQE2A
+X-Authority-Analysis: v=2.4 cv=L+wtheT8 c=1 sm=1 tr=0 ts=6a990f64 cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=xmPyY564vjej6uAyVk/9Uw==:17
  a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=urdA6OnrAAAA:8 a=zcs0KYa2kuF-uyBAxWkA:9 a=QEXdDO2ut3YA:10
- a=bFCP_H2QrGi7Okbo017w:22 a=vQ8IPYms0FRTZDs_xDyb:22
-X-Proofpoint-ORIG-GUID: DXfDro5A6oYk5OKFVRy7WnuN5ivCVI4T
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=N4V0GIZ52OFWYRwfAJIA:9 a=QEXdDO2ut3YA:10
+ a=3WC7DwWrALyhR5TkjVHa:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTAzMDA1MyBTYWx0ZWRfX6DNHxYzoIVxJ
+ ksHZe5bHqxvwN3CYNEecu5oVuNjrlB7zDxw2GvDR93YD5chDHnzyJg08RcxLN0U5bgKK78AzysQ
+ jgYqs0CrJgnCyiNfX6qrsIRz1+MW+h+DY/pp/LCSzS0Gz3nmqxHHqJsNvPeNOlbspzsqcgV2xVs
+ BmYVlnveDU7sEVv67VITFUYMFsKY8wc/ZI5FUmDRqE9PEC/2cbSB490zJQOhwwqZ7jyE51colcG
+ v4wj5KEOceeNDHh9J4FSu1UtiDUD9apOLXPfnkOixNJkQNjSxl0clpRm+u0V0E2deHd68xSo6Eq
+ 8UfgzwXHbxSYND3saEKsm7yD6hwUVRHpe/KEVD19guCb83BYOr+0GREmSTk0fIM9vQcY4yTE6m1
+ Dx7nJbizyL58Ay3dkLrpZtY8eiQhzXVGoTQB38xa1NZxUqwwFpY+jrP/XrEIhIxAwTaGz7qP/eW
+ OjWwX03y6m/m0hF+GUg==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTAzMDA1MyBTYWx0ZWRfXwd3qmkBkQSnY
+ laLEvMtpSCYcqF62Y1I21I2dFX67aS2xUS9PHFvR4yAiSuSirHE7ozYgtBPx1bQOwYpPkKyNMp7
+ 1bTNWVTYOHQqxCfb9artYevfihCuiNQ=
+X-Proofpoint-ORIG-GUID: TjxUAZgzeWmFC00yIt-ityMuXOnLQE2A
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-03_01,2026-09-02_04,2025-10-01_01
+ definitions=2026-09-03_02,2026-09-02_04,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 bulkscore=0 adultscore=0 malwarescore=0 spamscore=0
- impostorscore=0 priorityscore=1501 lowpriorityscore=0 suspectscore=0
- clxscore=1015 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2609030026
+ lowpriorityscore=0 clxscore=1015 bulkscore=0 impostorscore=0 phishscore=0
+ spamscore=0 suspectscore=0 adultscore=0 priorityscore=1501 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2609030053
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260902_200736_110026_F0C68679 
-X-CRM114-Status: GOOD (  30.95  )
+X-CRM114-CacheID: sfid-20260902_231046_365682_6EC1BED3 
+X-CRM114-Status: GOOD (  47.13  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,125 +156,155 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 8/31/2026 11:10 PM, Sebastian Salmhofer wrote:
-> Since commit b706fb4e580b ("wifi: ath12k: Use 1KB Cache Flush Command
-> for QoS TID Descriptors") a QoS TID RX queue descriptor is retired with
-> a single FLUSH_CACHE command carrying FLUSH_QUEUE_1K_DESC. On QCN9274
-> that command does not cover the extension descriptors that follow the
-> queue descriptor in the same 1536-byte allocation. Those hold the MPDU
-> link pointers and are written by REO on every enqueue and dequeue, so
-> they are frequently dirty in the REO cache when the TID is deleted.
+On 9/3/2026 12:54 AM, Hideo Sumi wrote:
+> On 9/2/2026 7:47 PM, Aaradhana Sahu wrote:
+>> The intended model is that the root PD is completely managed by
+>> qcom_q6v5_mpd, while the Text PD and WiFi User PDs are managed by ath12k.
+>> ...
+>> So, qcom,rproc in the ath12k DT is expected to point to the root PD.
 > 
-> After the qdesc is unmapped and freed, the REO cache controller later
-> evicts the stale extension lines and writes them back to the old DMA
-> address. On a host with the IOMMU enabled this shows up as a burst of
-> AMD-Vi IO_PAGE_FAULT write events at 128-byte spacing, e.g.
+> Thank you, that settles both questions, and the shared firmware patch is
+> exactly the piece I was missing. I built the model you describe and ran it
+> on the board. It gets a good way in and then stops, and the last problem
+> does not look like something a board can fix, so I am reporting what I
+> found rather than guessing at it.
 > 
->   AMD-Vi: Event logged [IO_PAGE_FAULT domain=0x0038 address=0xf6e7a100 flags=0x0020]
->   AMD-Vi: Event logged [IO_PAGE_FAULT domain=0x0038 address=0xf6e7a180 flags=0x0020]
->   ...
->   AMD-Vi: Event logged [IO_PAGE_FAULT domain=0x0038 address=0xf6e7a580 flags=0x0020]
+> What I built, on 6.18.44 with backports 7.2:
 > 
-> The faulting addresses always fall at offsets 0x100..0x580 of a
-> retired qdesc and never at 0x000 or 0x080, i.e. exactly the ten
-> extension descriptors and never the queue descriptor or the 1K bitmap
-
-the queue desc offset should be 0x000, and the offset of the first extension descriptor
-should at 0x080. However the IOMMU warning starts at 0x100, which does not make sense ...
-
-> descriptor. The writes are triggered by later REO activity, typically
-> a new station association, so they can occur minutes or hours after the
-> memory was freed, and the blocked transactions stall the data path for
-> several seconds.
-
-then what happens? the new sta association succeeds?
-> Without an IOMMU the same writes silently corrupt
-> whatever now occupies that memory.
+>   - ath12k loads the shared read-only image itself, your patch [1] ported
+>     to this tree (it predates the common/Wi-Fi 7 split, so the mapping
+>     comes from power_up() rather than from rproc_info)
+>   - the text PD node is gone from the DT
+>   - the user PD nodes are gone from the DT, so qcom_q6v5_mpd does not
+>     instantiate them
+>   - qcom,rproc points at the root PD
 > 
-> Restore the per-segment flush of every 128-byte line above the queue
-> descriptor, as ath11k still does, before issuing the base flush with
-> FLUSH_QUEUE_1K_DESC and NEED_STATUS. REO commands execute in order, so
-> the status of the final base flush also confirms the preceding segment
-> flushes have completed, and the qdesc is still only freed from that
-> completion. A send failure in the sequence leaves the descriptor on the
-> retirement list for retry, as before.
+> Three things came up on the way. The first two are, I think, plain bugs;
+> I have patches for both and will send them separately if you agree.
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+> 1. ath12k subscribes to the SSR notifier by rproc->name
+>    --------------------------------------------------
 > 
-> Fixes: b706fb4e580b ("wifi: ath12k: Use 1KB Cache Flush Command for QoS TID Descriptors")
-> Signed-off-by: Sebastian Salmhofer <sebastian.salmhofer@salmtek.com>
-> ---
->  drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 39 ++++++++++++++++++++-------
->  1 file changed, 30 insertions(+), 9 deletions(-)
+> ath12k_ahb_register_rproc_notifier() does
 > 
-> --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-> +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-> @@ -225,22 +225,43 @@
->  				    struct ath12k_dp_rx_tid_rxq *rx_tid)
->  {
->  	struct ath12k_hal_reo_cmd cmd = {};
-> +	dma_addr_t paddr = rx_tid->qbuf.paddr_aligned;
-> +	u32 off = rx_tid->qbuf.size;
->  	int ret;
->  
-> -	cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
-> -	cmd.addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
-> +	/* The REO cache controller caches the queue descriptor and each
-> +	 * 128-byte extension descriptor as separate objects, and a
-> +	 * FLUSH_CACHE command only addresses one of them. FLUSH_QUEUE_1K_DESC
-> +	 * extends the base flush to the 1K-window descriptor but does not
-> +	 * cover the extension descriptors, so flush those explicitly first.
-> +	 * The command ring executes in order, hence the final base flush
-> +	 * status also confirms the extension flushes have completed.
-> +	 */
-> +	while (off > HAL_LINK_DESC_ALIGN) {
-> +		off -= HAL_LINK_DESC_ALIGN;
-> +		memset(&cmd, 0, sizeof(cmd));
-
-unnecessary cleanup since all required fields are refilled in each iteration.
-
-> +		cmd.addr_lo = lower_32_bits(paddr + off);
-> +		cmd.addr_hi = upper_32_bits(paddr + off);
-> +		ret = ath12k_wifi7_dp_reo_cmd_send(ab, rx_tid,
-> +						   HAL_REO_CMD_FLUSH_CACHE,
-> +						   &cmd, NULL);
-> +		if (ret) {
-> +			ath12k_warn(ab,
-> +				    "failed to send FLUSH_CACHE for tid %d offset 0x%x: %d\n",
-> +				    rx_tid->tid, off, ret);
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	memset(&cmd, 0, sizeof(cmd));
-
-also unnecessary
-
-> +	cmd.addr_lo = lower_32_bits(paddr);
-> +	cmd.addr_hi = upper_32_bits(paddr);
->  	/* HAL_REO_CMD_FLG_FLUSH_FWD_ALL_MPDUS - all pending MPDUs
-> -	 *in the bitmap will be forwarded/flushed to REO output rings
-> +	 * in the bitmap will be forwarded/flushed to REO output rings
->  	 */
->  	cmd.flag = HAL_REO_CMD_FLG_NEED_STATUS |
->  		   HAL_REO_CMD_FLG_FLUSH_FWD_ALL_MPDUS;
->  
-> -	/* For all QoS TIDs (except NON_QOS), the driver allocates a maximum
-> -	 * window size of 1024. In such cases, the driver can issue a single
-> -	 * 1KB descriptor flush command instead of sending multiple 128-byte
-> -	 * flush commands for each QoS TID, improving efficiency.
-> -	 */
-> -
->  	if (rx_tid->tid != HAL_DESC_REO_NON_QOS_TID)
->  		cmd.flag |= HAL_REO_CMD_FLG_FLUSH_QUEUE_1K_DESC;
-
-HAL_REO_CMD_FLG_FLUSH_QUEUE_1K_DESC is used to flush all in a single cmd. since we switch
-back to the per segment flush, do we still need it?
-
->  
-> --
-> 2.47.0
+>   qcom_register_ssr_notifier(ab_ahb->tgt_rproc->name, &ab_ahb->root_pd_nb);
 > 
+> but that lookup is keyed by the SSR name a driver passes to
+> qcom_add_ssr_subdev(), not by rproc->name. qcom_q6v5_mpd registers
+> "q6wcss" -- the same short name qcom_q6v5_wcss.c uses -- while rproc->name
+> is the DT node name, "d100000.remoteproc" here. So the notifier registers
+> against a name nothing signals:
 > 
+>   remoteproc remoteproc0: remote processor d100000.remoteproc is now up
+>   ath12k_ahb c000000.wifi: RootPD ready wait timed out
+>   ath12k_ahb c000000.wifi: probe with driver ath12k_ahb failed: -110
+> 
+> Subscribing with "q6wcss" fixes it.
+> 
+> 2. wifi0's memory-region[0] does not contain the images
+>    ---------------------------------------------------
+> 
+> ipq5332.dtsi points it at q6_ipq5332_data. The shared read-only image and
+> the user PD images link below that:
+> 
+>   q6_fw3 (shared RO)   0x4aefd000 - 0x4b296000
+>   q6_fw1 (pd1)         0x4b2a3000 - 0x4b55b000
+>   q6_ipq5332_data      0x4bd00000 - 0x4ca00000
+>   q6_region            0x4a900000 - 0x4ca00000
+> 
+> so qcom_mdt_load() refuses them:
+> 
+>   ath12k_ahb c000000.wifi: segment outside memory range
+>   ath12k_ahb c000000.wifi: failed to load shared firmware: -22
+> 
+> Pointing memory-region[0] at q6_region loads both. If ath12k is to own
+> these images, the region it loads them into has to be the one they are
+> linked for, and on this SoC that is the root PD's window.
+> 
+> 3. The user PD nodes: removing them is what the model requires, and
+>    also what breaks it
+>    ---------------------------------------------------------------
+> 
+> This is the one I cannot resolve from here.
+> 
+> Leaving pd-1/pd-2 in the DT does reproduce the IRQ conflict, exactly as
+> you said:
+> 
+>   genirq: Flags mismatch irq 31. 00002001 (UserPD1-spawn)
+>           vs. 00002001 (q6v5_wcss_userpd1_spawn-ack)
+>   ath12k_ahb c000000.wifi: Request spawn irq failed: -16
+> 
+> Removing them clears that. But the root PD then stops during its own boot.
+> Its crash record says:
+> 
+>   pd_stubs.c:137  Invalid user-pd CS load address 0x0
+>   Thread name : sys_m_smsm   Process name : kernel
+>   PC : 0xc000ae58  SSR : 0x018f0027  BADVA : 0x00000000
+> 
+> and ath12k ends at "UserPD spawn wait timed out", probe -110.
+> 
+> The address it is missing comes from SMEM item 507, written by
+> qcom_q6v5_mpd's share_upd_bootinfo_to_q6() before the root PD is started:
+> 
+>   list_for_each_entry(upd_rproc, &upd_rproc_list, node) {
+>           upd_bootinfo.pid       = upd_wcss->pd_asid + 1;
+>           upd_bootinfo.bootaddr  = rproc_get_boot_addr(upd_rproc, fw);
+>           upd_bootinfo.data_size = qcom_mdt_get_size(fw);
+>   }
+> 
+> upd_rproc_list holds the user PD rprocs qcom_q6v5_mpd created. With the
+> user PD nodes removed it is empty, so nothing is published and the root PD
+> faults on a zero address. With them present, remoteproc owns the spawn
+> interrupt. As it stands the two requirements exclude each other.
+> 
+> So my question is: in the intended model, who publishes the user PD boot
+> info to SMEM 507? Three shapes seem possible and I did not want to pick
+> one blind:
+> 
+>   - ath12k writes it, since it owns the images and knows their addresses.
+>     That would mean moving share_upd_bootinfo_to_q6() out of remoteproc,
+>     or exporting it.
+>   - qcom_q6v5_mpd keeps writing it, reading the user PD nodes for their
+>     firmware-name but not creating rprocs for them. The nodes would stay
+>     in the DT and describe the PDs without claiming them.
+>   - Something else covers it that I have not found -- the shared firmware
+>     patch does not touch SMEM 507, so if there is a companion change I
+>     have missed it.
+> 
+> I do not think [1] alone is enough to boot this without one of those, but
+> I may well be reading the wrong tree; if this is fixed in ath12k-ng or in
+> a series I have not seen, that is a fine answer and I will go and read it.
+> 
+> For reference: reading the Q6's crash record needed a change of its own.
+> q6v5_fatal_interrupt() calls
+> 
+>   qcom_smem_get(QCOM_SMEM_HOST_ANY, q6v5->crash_reason, &len);
+> 
+> and QCOM_SMEM_HOST_ANY is -1, so smem.c only searches the global
+> partition. On this part the record is in the WCSS private partition, host
+> 1, and qcom_q6v5_mpd already defines WCSS_SMEM_HOST as 1 for it without
+> using it, because qcom_q6v5_init() has no way to pass a host through.
+> Until I read it from host 1 every one of these failures printed only
+> "fatal error without message". I am happy to send that as a patch too if
+> it is wanted.
+> 
+> Board is on a serial console with a recoverable second firmware bank, so I
+> can test whatever is useful.
+> 
+> [1] https://lore.kernel.org/linux-wireless/20260811054316.518494-1-aaradhana.sahu@oss.qualcomm.com/
+> 
+> Regards,
+> Hideo Sumi
 
+Before we look into the SMEM handling, could you please confirm whether you are using the
+latest ath.git ToT and whether the remoteproc v14 series is included?
+
+Remoteproc series:
+https://patchwork.kernel.org/project/linux-arm-msm/cover/20260803-rproc-v14-0-a1f87b0b0ad2@oss.qualcomm.com/
+
+Could you also share the complete DT changes and the firmware version you are using?
+It would help to know how many WiFi devices/User PDs are attached on your platform.
+
+Once I have these details, I can check whether the issue is already addressed in the latest patches
+or whether an additional change is needed.
 
