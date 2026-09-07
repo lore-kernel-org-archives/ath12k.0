@@ -4,137 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFC8EC79F89
-	for <ath12k@archiver.kernel.org>; Mon,  7 Sep 2026 04:59:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A72D8C79F9E
+	for <ath12k@archiver.kernel.org>; Mon,  7 Sep 2026 11:50:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4whZOxnHdG9aly2zjOMfcepTeMJ8B/tTJlEIlYa/i24=; b=iaZw9oePJJk41T8BficEYo4YX7
-	q/gkiE8Zt2CnjVBzCrXVBN3DKgSFlqSbOb/I+tGAVsyZ/9ahHturouIOIM6U68uk0t5K9oz0lWp6F
-	ILWxCjIq9S00acd+NMvQd/X9AWd1dUfLf6y8RAWCSvJEdA8ihUqTYFswLYgwcj+ZvLR7QkBnKxAoz
-	GCnQj1uWrXO+pb1oz8Px5XlqEiNYYS53Av7g5hjXke00ZPlXSn81UJC7t3xAbJeO4gjZ54C84tBqp
-	vaCkjv3cus0QiyiQUynDZsSPmoqa8gB4F02LdSK52FTa6yZpNIEEYJp/92n6wnWip19UkJNJ+T7pF
-	OY1fbkmQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=gz/5odQtl5IxrS0FqoMNcCHjOTbt/M+2esFXOAMAlW0=; b=i8+eImpiEVA0qAfvabDyptpYuZ
+	0s/ezesSYtxX+8KRcoeNbPleTunJVp+cbz8hVwqiqohLOTbUPSvdZn5AE+18gB5xgmQuV5+MpAj2G
+	gD+RHm2c16AH5v9SkmU82ykpAgK2sM2/ooou+KTYogBkykIA4MERHFjkwACGxieLM63bJem9mVS4E
+	UlQAoJ4b+XhUUHwmAPHRY3FdL/INd78LVWsKi+5Kv9WBirO1/S4vo10dNlJxfGLrvK/l1xBBBYKL1
+	TBTqSukoe5k02S016CdjroNXpQkN/JeKOKxGmO5fVt6yW+kY1z5X2ND9eR3ufPChaEsc+whEYfbJW
+	cawd3oTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3RSV-00000005u7Y-2wed;
-	Mon, 07 Sep 2026 04:59:55 +0000
+	id 1x3Xrm-00000006iRX-1Wm9;
+	Mon, 07 Sep 2026 11:50:26 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3RSU-00000005u7D-0oOJ
+	id 1x3Xrk-00000006iQy-014m
 	for ath12k@lists.infradead.org;
-	Mon, 07 Sep 2026 04:59:55 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6873kwG53712181
-	for <ath12k@lists.infradead.org>; Mon, 7 Sep 2026 04:59:53 GMT
+	Mon, 07 Sep 2026 11:50:25 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 687Amtxd3872836
+	for <ath12k@lists.infradead.org>; Mon, 7 Sep 2026 11:50:21 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	4whZOxnHdG9aly2zjOMfcepTeMJ8B/tTJlEIlYa/i24=; b=PqVepuDeTiBsjJyT
-	qNeAnOnEGkFo9sVpbTFTEwqPoXR9yeVINTCFD+tGDRP3KCIq9lAEPAz89QVgKHZr
-	L/QqC2BPXhbCAqKhDPxKP/Xus8vILDFNhDm9RHulYG29Tjw6xAqKtezRlBkPxkJQ
-	kStse+OoRlg0T0g44V5jKH6r+TXLl8yXUIn3MTWoNr2SKoNdKBhIH+6eYoUIF+9P
-	fH/+fi3JJf2LsihKkanZxt/3svANfvNarHw8IeR2TfZJfAkoG/USraz5C4Ca8cWi
-	093OBUKj9alpGFiQRfKJS/D46YHSEXtfjdcNsgvAF/ayWkYcs+YPyGbbFQvSysMb
-	SxELtQ==
-Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ghfwjguse-1
+	content-type:date:from:message-id:mime-version:subject:to; s=
+	qcppdkim1; bh=gz/5odQtl5IxrS0FqoMNcCHjOTbt/M+2esFXOAMAlW0=; b=jk
+	Qqniy5OhSfhvR4xiLyEbXswCzOYk2C7G/NflSvW8936geSf5xE1b8qwKikl6F8K1
+	bY1QbyKnnYxJAbi41lN+aqpkNzZtKjPL+5y1vdlUlW69Lmz5vjdQpSohwu3jCPqn
+	sHtamN8aMeqkGqMv2arLffbtAwGsrN1CcTUgvtSk5FUJP7oJ+0lMwLHAHE+VMlpN
+	1XXPzSLYGA81e4g/nMhPFRO3zrmz/WY0KUKuMh/JD7M33OZ9CUCbuFP6d42+3mp9
+	H6hFCHeP8631Rt6OqwmOyn7uiLBsuRzbNjLo3ixY8ep5IRI+PNee4wdL/xfumQQQ
+	Gw32RjkX6aL3+Bi0FN6w==
+Received: from mail-ua1-f71.google.com (mail-ua1-f71.google.com [209.85.222.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ghnmj1ux4-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 07 Sep 2026 04:59:53 +0000 (GMT)
-Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-cb11535e6a1so3386487a12.0
-        for <ath12k@lists.infradead.org>; Sun, 06 Sep 2026 21:59:53 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 07 Sep 2026 11:50:20 +0000 (GMT)
+Received: by mail-ua1-f71.google.com with SMTP id a1e0cc1a2514c-97bf875d5f8so2848812241.0
+        for <ath12k@lists.infradead.org>; Mon, 07 Sep 2026 04:50:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1788757192; x=1789361992; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=4whZOxnHdG9aly2zjOMfcepTeMJ8B/tTJlEIlYa/i24=;
-        b=DhNXBY677UcpGqkG5G96MNPk+O+2LtOX/MXv47L1kySWDN/nIJ7mJ+S4q6iLTvDPMu
-         3LblBASBIiTIA/HfCkUYQDyifpjn5bhTfJ2zj+eKFO7KBoRvA5tHf4GDyZwajHdWL+VD
-         0fsqqb479X52ksKau66eH7IR4/8Il77RhwTbqkYavhTmOWG+t6u1eUFMDv4gRkob3/ej
-         YjPmKdJHVVzmWOS5AAqKcDyBV69zHEITVaAFzPS2nu9XQzAGpw9mO9cP2EAATkmyzPXM
-         Q+9QEhgJK0TX+r1D68m9Kd9DzlUH1FdTkZyZfDmCyQMKSLc4xPpUBZ0MsucCYyPd9sNl
-         5xkQ==
+        d=oss.qualcomm.com; s=google; t=1788781820; x=1789386620; darn=lists.infradead.org;
+        h=content-disposition:content-type:mime-version:message-id:subject:to
+         :from:date:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=gz/5odQtl5IxrS0FqoMNcCHjOTbt/M+2esFXOAMAlW0=;
+        b=VKgur1hosoZbKxC0O1NJYYKkCqL0smlRnj2HXNFnz5/vAF3LqBLhN0/SQA4/vkPu/W
+         zCF2PPzGnJxifr/EDCR70lMgrTuZ1nXqHcXkRYnF48Glzc57jysvhj6XzLxWs8+CEzhU
+         Ev9Rg1VGFCWGrmIru7nuopIKS8XzNup1cXfK0KnnKB6KYf0nhbtqw6QnCdH881RHnvjr
+         2KdV01PhJMggl4oBqx5cMq9/7UbYOcv7ff2M4CJcSwsoO2KSgLQSJ22jcEkAWlnuni8k
+         eb1goO9HsBgekMM0Sf3/adi81plrBaJ5I0mC7H/XduZ6vbwrO+utug3SK1N9IPB3W/tz
+         NjHg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788757192; x=1789361992;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20251104; t=1788781820; x=1789386620;
+        h=content-disposition:content-type:mime-version:message-id:subject:to
+         :from:date:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=4whZOxnHdG9aly2zjOMfcepTeMJ8B/tTJlEIlYa/i24=;
-        b=BqDxcFGlOI035QgyD39tPYVkIFIfAMzsAAGM3F5+DkPNXdIh+lJitvgE1OukNLrZLL
-         Y/9p31b1x+DBCw+/VEXxSb/NIKwtG5cOC6lzpffXqHwbbjWGlBYU/OGWuVAgbk8sI+nP
-         XVcuLnaVdaznGukLOt8xfiPyrs40VbAMsZxNJF70KfMe9YCGz8Gsdbw30z50/EzNCv8e
-         mlumAr6blBe6qMz4jj2izAkU7COTNJzswLfeVexYWe4hLwuAO9iMdSFn48DitnhSniYl
-         wfEAY9yotW9Mq7MyIZRNIFoeokcAG2fjLbL+t8w/OF8dJAbayuH7daUAO0kd52NEevld
-         SSPQ==
-X-Forwarded-Encrypted: i=1; AKwUvBwCM3CRxrykKZOG34i3Fxd2nlbztZ+z25LoZRWJTnsx1R8PIX54LPKaIiGZl4tMTfuR2/PLFTQ=@lists.infradead.org
-X-Gm-Message-State: AFuF++mv7SjT8Fhdkc1qqBQTG1xyKi3qn/DqM9WZiOv9Az71Jhz6EXwe
-	Q42d7AbjSyOgrnuW88OaoZLUlofc7my6+WtysLC5a3hglN6zSFYx4Znzzn7tVl/Eq22Zd0aorIc
-	S+NeTFRlOw8WT6WajM/IwQRg64ommO3jYOjQ2fX109IJcZ5hATSLjuUWmOonsMxXl
-X-Gm-Gg: AYBFou2+MN2sHttRhX57MgC/3sipZJixznMA3VPeGwXgfItXM06zbP6tnfBRW4ltcDs
-	9xFf9IruRfS2y64UZnOSeG7nQlNuiw/IlfnZFZ2LMEszCGTFgJj6L/RLhTLBeQlHOVUyUTDE8ZZ
-	L31YPAUOTuICR9UDYKRj3E2uiq268w6VVCz4Z6aZeJPVX49j8gPL2oToP73e9eywApBrmddarp9
-	McpHwOPsVn3G4mKRVjCot44TURrGKXYCC2D2tRnVtmBeoxERuW3YMaD4sWuXsFHG+f4TIuXwVLT
-	jzvA2esxxK3hzxSPt/h2aMod+KVjYDq7WXx5jaUgbR1rWfYMzl83yOC3g3ZDta4B433JjYrTNgg
-	6y8rS99K3HG50B4LpVdsS1Z/6naatZswpgVT3aQiOn3Ms/0JSfFRvs50fPDa/e2WP2g==
-X-Received: by 2002:a05:6a20:7284:b0:3cc:f280:ebc6 with SMTP id adf61e73a8af0-3da39eacf9amr28608217637.5.1788757192439;
-        Sun, 06 Sep 2026 21:59:52 -0700 (PDT)
-X-Received: by 2002:a05:6a20:7284:b0:3cc:f280:ebc6 with SMTP id adf61e73a8af0-3da39eacf9amr28608157637.5.1788757191898;
-        Sun, 06 Sep 2026 21:59:51 -0700 (PDT)
-Received: from ?IPV6:2409:40c4:36:4638:29e7:e0b1:d1ef:dcca? ([2409:40c4:36:4638:29e7:e0b1:d1ef:dcca])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3339ac24d7esm37726261eec.15.2026.09.06.21.59.49
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 06 Sep 2026 21:59:51 -0700 (PDT)
-Message-ID: <e1c37fbb-48db-4ffb-b1b9-bedcde507970@oss.qualcomm.com>
-Date: Mon, 7 Sep 2026 10:29:47 +0530
+        bh=gz/5odQtl5IxrS0FqoMNcCHjOTbt/M+2esFXOAMAlW0=;
+        b=MPhrBlJFYkL0HiKm3XQYlALeOI6BMSIxgyHg+9U5SzURam4X6lE70zAGmvv5h7zwEW
+         XoluuNLtFPz/B530R/8+ppFusJwb5TrKKJq5Skzsl0jsk9qMQ/jQBzTOauVLChhIodaJ
+         MFofdBqenFfVURkKOH3jFO1kmFiiV9KShQL8Lp2llamk4vr4o6QNlmwDW19y3r9snouc
+         46j6bFOT+m7Pcqemw8cVKzZpP8+5Wod7R4+jZgh3PdzmH5atGc6QTR3R7bEupmQaeWzc
+         kIH+aQ3E4URLOmCkZRhm9N1YaTtO/eV8B8ok8z3MxvlQfXar9e2VyC419tOg170RP79l
+         3ulw==
+X-Gm-Message-State: AFuF++ks8IEODcMRafLjCTa1qLN0MG+Ar+CNzyV0ICC0UngugE5jLcji
+	jbQqI5oCc8JeptTtoMVzUqMPA5/SCkkOerYdZZMR1/cFlZy5njHQl+5a5GKW+AsJgFpZGUN0h33
+	k23N8YdZv9fCkNUdzer2K9eWfTUfGj8/kd5PmtrroxPmtdaqH3Ofwnya36lA45H+R0l/RC+TK
+X-Gm-Gg: AYBFou1Zy3ji71+uF9VkoIJH1QxPL4HY6EvyAl67e/AePNvJVxXpKA/4+QbNQZVjHPg
+	W5G+SSo16Kzyum+faIZrtSh6MInefwjAOraxQeJS2CyaiupGNDb/irICxn7X3QCogfnNYUg1/TC
+	d7ZENVEB6x5qgaRNLlucxATiBa4OYvVhM11rSH7GaYLY9eiP30V6mUxsmlRmI/IlGfdsS7I0iW8
+	/Zm3k0nUPeaNvRxxR9FKmYDmAgLHQXBniFcdcFWXB1rm4jdzojHycdO+P5Lb27vUJDf6OY7KI+8
+	Y4reLsSPpqxFife4y4E4G5UBgZq4/SnLClLGU4yRkzCMlH1r24jSBkaw4cI/EURPeBSWR6GssnR
+	GMyuzYyqe4+OGnk7+DmsR7jj86+fve0vh9W1dzL15Igp2QUO5n/9PezC3JVb9JE73kHm6Xq3OLt
+	D+tJ0u6l5TxZRL
+X-Received: by 2002:a05:6102:610c:20b0:786:22cc:cdda with SMTP id ada2fe7eead31-78a2ed80666mr5459761137.1.1788781819881;
+        Mon, 07 Sep 2026 04:50:19 -0700 (PDT)
+X-Received: by 2002:a05:6102:610c:20b0:786:22cc:cdda with SMTP id ada2fe7eead31-78a2ed80666mr5459746137.1.1788781819369;
+        Mon, 07 Sep 2026 04:50:19 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5b667b6c30fsm1934782e87.9.2026.09.07.04.50.18
+        for <ath12k@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 07 Sep 2026 04:50:18 -0700 (PDT)
+Date: Mon, 7 Sep 2026 14:50:16 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: ath12k@lists.infradead.org
+Subject: [hekatombe@gmail.com: ath12k: QCC2072 missing board data for ASUS
+ UX3407NA and UX3607OA]
+Message-ID: <r3tn3bnqvcf5zdigli3gvcb3jez4al64c2grtxso4hw476mguz@srktt5cek7nt>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH wireless-next] wifi: mac80211: Report parent AP BSS
- parameters for AP_VLAN
-To: Johannes Berg <johannes@sipsolutions.net>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Ganesh Kariganuru Mahabalesh <quic_gkarigan@quicinc.com>
-References: <20260820052426.3177309-1-aaradhana.sahu@oss.qualcomm.com>
- <47c4ba195ae49552538ea65f4f13de7d3dced266.camel@sipsolutions.net>
-Content-Language: en-US
-From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-In-Reply-To: <47c4ba195ae49552538ea65f4f13de7d3dced266.camel@sipsolutions.net>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTA3MDA1MCBTYWx0ZWRfX9IqkNFiRJzW+
- kJJ4Rc23WM5LhDnjTzTH9m8DkYxQsT6/QSNEuuoXWFhII6WNjD9d/PpQ3f9nhLQZMltAF0myj85
- h39FI0nHY20AYafWO3u0mh9re1PupnA=
-X-Authority-Analysis: v=2.4 cv=NanWEWD4 c=1 sm=1 tr=0 ts=6a9e44c9 cx=c_pps
- a=rz3CxIlbcmazkYymdCej/Q==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
- a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22 a=1VyEs0PO2QFJR4dUXpwA:9
- a=QEXdDO2ut3YA:10 a=bFCP_H2QrGi7Okbo017w:22
-X-Proofpoint-GUID: bZFJaJDGeMdc_klEv1xIkFmWyFpPluI6
-X-Proofpoint-ORIG-GUID: bZFJaJDGeMdc_klEv1xIkFmWyFpPluI6
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTA3MDA1MCBTYWx0ZWRfX1+w6HUBrQpDh
- d26H8RVrC8gTHdpF/SYl7+jXcACcBXdD08IykN+8EO5dxGQKLr7+kRvJVDaVOYHVInjEQgeN6Xa
- Xi/hJuPLq6NEKxYSpcE3fuAVHbdFxP8mBz5A+Gctyk6KnXA9BDZUT+cZ0gY6TAuYVxwF+2P/Hy6
- 7DreUQY4WMZQj7xIhp9Cspf55V7KSUIoEsclyd5tMWivXGdFn2gFg0ROY/qxs/qUnsCBOrX73y9
- +TEbNeeId3sAjGXWgwq5IdZY4RmecJ7ngyUh8UNB+xA/iZFzzM+Lh1gIUw+CjUCGQqb4FTgofEc
- ABc5UcsAkhcTy2pXIxuf1STRR+OednN5MUbdjKBh8Hgv93kmguRnT7mvgiFHoVsB7MWfY1N2Mtl
- FbwvqSopMdSsh6zfYG5/VqWzJTKlrPlowV74mDpwJvj/C8Z4KLzFIVy0ZhV8T5HXTvcxah/MMJu
- Tf+QPxpTssdhPvajfKw==
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTA3MDEzMCBTYWx0ZWRfX9BjGvlYGwqbK
+ 5kdpMOVstezKccpmdPnsN4kzcIbiw+DmYIHmXFSESx5SpZWHxWOMhxdrjSJPdTD8zfIVzlL+SMt
+ oNW3DjTR/EPsozyjncFRqAbWG+lHwCZA6FiMTjeg/GD7MSEsBeyjbzlRVvddLuV2P0930Rbn1Gp
+ 1sfhHhCC46gxaqGGdIIdXwpYcs0cwiHK6w3/5BryuR/Payxl6pE0SJgObkxjfj4ybtP+GAFZx3Y
+ Vqxpys80cna/lKi0tV/9T5KsOvv9aDhI/wdwzL1nQmSw8atSYAnBdeGs5PCjMJ9bosKcobHHnu+
+ AOQoiMcc3Ghb25tVWZgHDkohH/WGhcNiBmgbR0MMyb9up1LmxQ/S/9NmX8+bN9Eg7t8f8Yp99w8
+ hS4nfwK7aqy9lLu6DPcLfe1lhOYxDnx2Eg7vBIXFnVAbth9BSB8ccBEgqMgz5dRwtGXdEHJf7C2
+ R9jTyG5Cpf+dUhIpPdg==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTA3MDEzMCBTYWx0ZWRfXwzdQO8zQ1ERE
+ cBOboYBLbRpmqzv3mKHT0NsbgDLhbvuzxSxRs5ECxrw8OXBGp78nWUxtrz+Sp4y1jSqp2WUkG1I
+ 4qZlNmDn7PXxSLdbNszxtqhc9v+KJnI=
+X-Proofpoint-ORIG-GUID: 1Knj39SCnd70oYitL8m3DR9FRGcSVC47
+X-Proofpoint-GUID: 1Knj39SCnd70oYitL8m3DR9FRGcSVC47
+X-Authority-Analysis: v=2.4 cv=LZYMLDfi c=1 sm=1 tr=0 ts=6a9ea4fd cx=c_pps
+ a=KB4UBwrhAZV1kjiGHFQexw==:117 a=pGLkceISAAAA:8 a=xqWC_Br6kY4A:10
+ a=kj9zAlcOel0A:10 a=4XcMWytRO3AA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=VwQbUJbxAAAA:8 a=Yk_ucIiMhIRL_01elooA:9 a=CjuIK1q_8ugA:10
+ a=o1xkdb1NAhiiM49bd1HK:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-07_01,2026-09-03_01,2025-10-01_01
+ definitions=2026-09-07_03,2026-09-07_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 spamscore=0 impostorscore=0 suspectscore=0 adultscore=0
- priorityscore=1501 lowpriorityscore=0 phishscore=0 bulkscore=0 malwarescore=0
+ spamscore=0 priorityscore=1501 malwarescore=0 suspectscore=0 impostorscore=0
+ lowpriorityscore=0 phishscore=0 bulkscore=0 clxscore=1015 adultscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2609070050
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2609070130
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260906_215954_241254_35237BB5 
-X-CRM114-Status: GOOD (  16.27  )
+X-CRM114-CacheID: sfid-20260907_045024_093913_E1CAC0ED 
+X-CRM114-Status: GOOD (  11.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,42 +140,97 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+----- Forwarded message from Troels Vognbjerg <hekatombe@gmail.com> -----
 
+Date: Sun, 6 Sep 2026 15:18:05 +0200
+From: Troels Vognbjerg <hekatombe@gmail.com>
+To: linux-firmware@kernel.org
+Subject: ath12k: QCC2072 missing board data for ASUS UX3407NA and UX3607OA
+Message-ID: <CAPMyOuCk7SEhPvcNNQ3ZMUf=uH=e3Pp0NHf6zLoakrSvL4qEoA@mail.gmail.com>
 
-On 9/4/2026 4:08 PM, Johannes Berg wrote:
-> On Thu, 2026-08-20 at 10:54 +0530, Aaradhana Sahu wrote:
->>
->> +struct ieee80211_bss_conf *
->> +ieee80211_get_sdata_bss_conf(struct ieee80211_sub_if_data *sdata, int link_id)
-> 
-> not sure I think this function is all that useful, but
-> 
+Hi
 
-Thanks for the review. Since both sta_set_link_sinfo() and sta_set_sinfo() use this helper,
-I introduced it to avoid duplicating the BSS configuration lookup logic in both callers.
-I can remove it if you prefer.
+I have been working on getting the Wifi working on a pair of Asus
+UX3407NA and UX3607OA laptops.
+Both came with QCC2072 WLAN cards.
+The current linux-firmware (2026-08-10)
+"ath12k/QCC2072/hw1.0/board-2.bin" does not contain board names for
+these devices:
+PCI vendor/device:       17cb:1112
+subsystem vendor/device: 105b:e14f
+qmi-chip-id:             33
+qmi-board-id:            255
 
->> +{
->> +	struct ieee80211_sub_if_data *bss_sdata = sdata;
->> +
->> +	lockdep_assert_wiphy(sdata->local->hw.wiphy);
->> +
->> +	if (sdata->vif.type == NL80211_IFTYPE_AP_VLAN) {
->> +		if (!sdata->bss)
->> +			return NULL;
->> +
->> +		bss_sdata = get_bss_sdata(sdata);
->> +	}
-> 
-> at the very least that part is pointless, and should just be a
-> get_bss_sdata() call?
-> 
-> or are you saying you somehow found a VLAN existing with sdata->bss
-> being NULL?
-> 
-> johannes
+The current firmware will work with both laptops if I add the
+following two lines to ath12k/QCC2072/hw1.0/board-2.bin:
+bus=pci,vendor=17cb,device=1112,subsystem-vendor=105b,subsystem-device=e14f,qmi-chip-id=33,qmi-board-id=255,variant=UX3407Q
+bus=pci,vendor=17cb,device=1112,subsystem-vendor=105b,subsystem-device=e14f,qmi-chip-id=33,qmi-board-id=255
 
-Yes, you are right. The sdata->bss NULL check is unnecessary here.
-I will remove it and send the next version.
+Relevant dmesg from the UX3407NA laptop before the modification:
+[    4.435741] ath12k_wifi7_pci 0004:01:00.0: BAR 0 [mem
+0x78400000-0x785fffff 64bit]: assigned
+[    4.435805] ath12k_wifi7_pci 0004:01:00.0: enabling device (0000 -> 0002)
+[    4.435838] ath12k_wifi7_pci 0004:01:00.0: Wi-Fi 7 Hardware name:
+qcc2072 hw1.0
+[    4.439197] ath12k_wifi7_pci 0004:01:00.0: MSI vectors: 16
+[    4.994025] ath12k_wifi7_pci 0004:01:00.0: chip_id 0x21 chip_family
+0x4 board_id 0xff soc_id 0x40292100
+[    4.994038] ath12k_wifi7_pci 0004:01:00.0: fw_version 0x100581de
+fw_build_timestamp 2024-09-11 23:52 fw_build_id
+QC_IMAGE_VERSION_STRING=WLAN.COL.1.0.c2-00074-QCACOLSWPL_V1_TO_SILICONZ-1
+[    5.001274] ath12k_wifi7_pci 0004:01:00.0: failed to fetch board
+data for bus=pci,vendor=17cb,device=1112,subsystem-vendor=105b,subsystem-device=e14f,qmi-chip-id=33,qmi-board-id=255,variant=UX3407Q
+from ath12k/QCC2072/hw1.0/board-2.bin
+[    5.001281] ath12k_wifi7_pci 0004:01:00.0: failed to fetch board
+data for bus=pci,vendor=17cb,device=1112,subsystem-vendor=105b,subsystem-device=e14f,qmi-chip-id=33,qmi-board-id=255
+from ath12k/QCC2072/hw1.0/board-2.bin
+[    5.001285] ath12k_wifi7_pci 0004:01:00.0: failed to fetch
+board.bin from QCC2072/hw1.0
+[    5.001288] ath12k_wifi7_pci 0004:01:00.0: qmi failed to load bdf:
+[    5.001290] ath12k_wifi7_pci 0004:01:00.0: qmi failed to load board
+data file:-2
 
+And after:
+[    4.439356] ath12k_wifi7_pci 0004:01:00.0: BAR 0 [mem
+0x78400000-0x785fffff 64bit]: assigned
+[    4.439682] ath12k_wifi7_pci 0004:01:00.0: enabling device (0000 -> 0002)
+[    4.440005] ath12k_wifi7_pci 0004:01:00.0: Wi-Fi 7 Hardware name:
+qcc2072 hw1.0
+[    4.440870] ath12k_wifi7_pci 0004:01:00.0: MSI vectors: 16
+[    4.993062] ath12k_wifi7_pci 0004:01:00.0: chip_id 0x21 chip_family
+0x4 board_id 0xff soc_id 0x40292100
+[    4.993066] ath12k_wifi7_pci 0004:01:00.0: fw_version 0x100581de
+fw_build_timestamp 2024-09-11 23:52 fw_build_id
+QC_IMAGE_VERSION_STRING=WLAN.COL.1.0.c2-00074-QCACOLSWPL_V1_TO_SILICONZ-1
+
+The modified board file:
+$ ath12k-bdencoder  --info board-2.bin
+FileSize: 401480
+FileCRC32: 6b132b00
+FileMD5: 1d137f4ea06c32f3597fe9e1d9f0511e
+BoardNames[0]: 'bus=pci,vendor=17cb,device=1112,subsystem-vendor=17cb,subsystem-device=1110,qmi-chip-id=33,qmi-board-id=24','bus=pci,vendor=17cb,device=1112,subsystem-vendor=105b,subsystem-device=e15a,qmi-chip-id=33,qmi-board-id=24','bus=pci,vendor=17cb,device=1112,subsystem-vendor=105b,subsystem-device=e14f,qmi-chip-id=33,qmi-board-id=255,variant=UX3407Q','bus=pci,vendor=17cb,device=1112,subsystem-vendor=105b,subsystem-device=e14f,qmi-chip-id=33,qmi-board-id=255'
+BoardLength[0]: 125452
+BoardCRC32[0]: d922b5f6
+BoardMD5[0]: d0b4209b75e695b5752e5289630cb3f0
+BoardNames[1]: 'bus=pci,vendor=17cb,device=1112,subsystem-vendor=17cb,subsystem-device=1110,qmi-chip-id=33,qmi-board-id=19'
+BoardLength[1]: 125452
+BoardCRC32[1]: 7eab4392
+BoardMD5[1]: 01957cbb3d541f58e743537b852f0c7a
+BoardNames[2]: 'bus=pci,vendor=17cb,device=1112,subsystem-vendor=17cb,subsystem-device=1110,qmi-chip-id=33,qmi-board-id=12'
+BoardLength[2]: 125452
+BoardCRC32[2]: 11faa8d7
+BoardMD5[2]: f795b5ab69acb96dddacdf75083e07b0
+RegdbNames[0]: 'bus=pci'
+RegdbLength[0]: 24310
+RegdbCRC32[0]: 891b8f74
+RegdbMD5[0]: bf34dcd8532537769c28cb484b3568c6
+--
+Regards,
+Troels Vognbjerg
+
+----- End forwarded message -----
+
+-- 
+With best wishes
+Dmitry
 
