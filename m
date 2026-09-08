@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CE73C79FAC
-	for <ath12k@archiver.kernel.org>; Tue,  8 Sep 2026 09:32:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5E93C79F82
+	for <ath12k@archiver.kernel.org>; Tue,  8 Sep 2026 09:32:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=V+aZSiwdH5N1vZ7BksR/50oyXsfQFMsN7A1hoQYbSHs=; b=Dkh1bD0KsUOYa/6cjcPvkcJ3nP
-	AWqKFP34PVd8NSO+9l7Q11VEBmeb6WaP002LvAD4o50YRgLvF8Aqx8OXUF8sVcDWcglGJybRfGyu8
-	37cd5sXQlpGt+3neawMF0Dq5cpmMxaDFDCoDOT0ZKGSx4MK5IyjdRmZlVM/J40LCpwwWOiBoclx1F
-	FxmR/ClXw/P4Rjf7QvDlAh2GR/AeviXwTLqZCYJpJp6M1O9g4ox5lLT7S0ILyltDtHCa4aXOrySZ5
-	Cb+hYobzh2EPs1Ujxvrq4i9hMAlUCvmKoQtVR5CkA23ROMS1P3hsGq1cJ3D0dxTia8VYliLsXFZPP
-	iI5xU68A==;
+	bh=bPA7RZq69BQzFDIgq2/jKxXiYvSrAjNW2sfY7vkWUj8=; b=iXQ3ke6pm5KWzCgWaeRK3oYGUP
+	/DR9o43tMsMAb9F7NY3peKzo1gm51yUDGYGU5n9+50w1v9l12Lxg1SM32kt3jx7xmCZguZZVPXpMO
+	X3eELwt/0S5/vwe6n5lYqGcZGP8nJ4I5RVAt4UD+7RqoKp5MuYZtB5+zzLNkYXpnitDEqGudE3jJd
+	GeNOkrYaSFLao5bWbFfifqviG+PJYC1X7OVgjIIB4YRaxmWq+sCb5CiQapOC0C7b0kB6WdQJbL6L0
+	1OB73o6InQknmCpmSSvr9WIHuD453R+pVyVVyNb0BeXlU6ZUVXqm1kso53b12FbTIhtcRIRr0sFOl
+	lsZC+fMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sC5-00000008ahh-0j6p;
-	Tue, 08 Sep 2026 09:32:45 +0000
+	id 1x3sCA-00000008ans-2FkQ;
+	Tue, 08 Sep 2026 09:32:50 +0000
 Received: from lahtoruutu.iki.fi ([185.185.170.37])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sC2-00000008adu-1Brz;
-	Tue, 08 Sep 2026 09:32:43 +0000
+	id 1x3sC8-00000008aim-0bgF;
+	Tue, 08 Sep 2026 09:32:49 +0000
 Received: from mandelbrot.. (xdsl-83-150-90-33.nebulazone.fi [83.150.90.33])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: jmtilli)
-	by lahtoruutu.iki.fi (Postfix) with ESMTPSA id 4hfJd02Bz0z49QLK;
-	Tue, 08 Sep 2026 12:32:36 +0300 (EEST)
+	by lahtoruutu.iki.fi (Postfix) with ESMTPSA id 4hfJd61d3kz49QFh;
+	Tue, 08 Sep 2026 12:32:42 +0300 (EEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=lahtoruutu;
-	t=1788859956;
+	t=1788859962;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=V+aZSiwdH5N1vZ7BksR/50oyXsfQFMsN7A1hoQYbSHs=;
-	b=IOHk0PyxMbRa110ROyJG+jpxWrz6imAFItRZY7Ws/ISGnw90PgCxNAmdunl/Iwky/R0x/q
-	5erbDh/W2fL9QwC1QgoZ6YdfuDxYqF8wpmGA85OjAYLLqw19l2/C5p5wVk021/BH+Xrz9I
-	GpdWsNMm3Z0rQqw1HPqHxPfcA7Pk+XqtanjEZ0JeqZoto2sJjG9jjHFG6VEqIjwMSp+uZE
-	R/5xiWBa6PNJPUeMucmt+uc+/zP/oj7a6RhBgl2fK97xOcoE0PyXwJIIGBYVL03+lW2czN
-	5tQMbTjNJDMq4RqvUHXtsYmTN/tjyjcgxwuHgRP5dtgfIDVHnM0ejt6MOpshzA==
-ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=lahtoruutu; cv=none; t=1788859956;
-	b=S0Qdm1I33KvJDZdEFzvKrvsI1FR/L6oD09Z5Rz4Pb58lFKyduuN3RuNG6gcaJJJVJJk3DT
-	KI/bIND2nAS6G8lzRpKazMk6STy+BpNo/5U2p6hRflKnaJHGNRtPb7/pEMustKICSFQyZ0
-	wvQFvt1bGthETT/AyitE1SODp/s7pjmjrvexo/RTpNkdE4L9NjAcoxwcfN9tEqP1C4rTwL
-	gwSTbipm+wDN2UjG5G5yhG4rTHnonxMXe5P7CdPpMQXOgbq7V8uj+Q3LtToSOPuGe9W38f
-	fUyGnTr1jxZC3bls3HbKNfvLkWRVX8qEu627xCyUUhU4dp8N82eC8zYmM8meeQ==
+	bh=bPA7RZq69BQzFDIgq2/jKxXiYvSrAjNW2sfY7vkWUj8=;
+	b=GDFvosVQwFpz2usimAFdYNa/rQFAovzLdeUu9VV/g1d7bGTu0waN7IL5GAnWddgfUoURD2
+	vrbsu1mlHExaZN8yiHgnqWJd3DvTatgGsURpSMz25dSER6SNo7hKyBwHan83sJEBN5Ru2h
+	otQRVok3uF5Gw4jPdX0tLS1F2o2YJ6vx298EsjZUZWhWgOFJc+SNbqP5+yaeuYsZVH4TIb
+	TtIxMyyYmjJulqB38IL8qg3IDk2GwOVZh5YpqmYp7EjlQpmx8HECyvy6VNQpQ9sD36L+Fi
+	kUTThOiLuAY6QR9OcsIZ8GhkWt+2grVJedoOXierqzw4q9y9KYVwpPOds3v8GA==
+ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=lahtoruutu; cv=none; t=1788859962;
+	b=NLgnrOeoDJpVgYSEYU8v8YmQx8sQXOoaWImMRa2axAzDmwIdpxs4bPB7DFo9t6ibMBub4Q
+	H+49bVvlW6CTIUWaFkIy2bK7DYJEdyKHBg0WwM9xRrFSA1yD2KYY649rqwkmRipaP611Wh
+	Bl0PytgTOz2IqpvhXpOrzwgmHfS3VXJdSpTWFi9Te3/wMLLzNSPaAvr1AAHRjMTp8rzGS9
+	fS6vvIqjXMZYtqxFZhKZhiwxS2pc64tqWAgmvwvAOub9ieSKz9+2MuUZTzG1FMyQRIcg+U
+	Pq9HuxLWD2tafHvQ8dS072KrBY2qOSnHjIeBfNxUWp1nPwloKeTVFQrIdOi02Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
-	s=lahtoruutu; t=1788859956;
+	s=lahtoruutu; t=1788859962;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=V+aZSiwdH5N1vZ7BksR/50oyXsfQFMsN7A1hoQYbSHs=;
-	b=h8B95emPsI0cqOacxnRJxFm968kwJhkpiRRufQIET2PxV7nvRvftNWvyihd7M1Rqqlu/DZ
-	TWd922cFJJkbuDW9aRUA4QLEc0UDly7WKmEXMZGq7vOqJQCNSemX1MRfVKRI5/HjVPQrRt
-	To8LY7cyeXSCdDS6ME8/wNYqTo+Z6YELqhd224tM7dW0vORgHx7eOdTD+7AkchNLj7bjS0
-	nZBH5hTJiVljL4XBgo1eiiJSnRzzJl0/ZhDFSL95GA5695XH8uOLAwuSCeeQ0e/EjaYJl0
-	heo27wKkdSveYo2YS3HjcMKuXskpYHcsLUEmE8LSe5ylx0kIZpsiK50tuQkCCA==
+	bh=bPA7RZq69BQzFDIgq2/jKxXiYvSrAjNW2sfY7vkWUj8=;
+	b=HoFS9EwbSdJUQMmFbT/OfPafoLTbPvoEWzqKRVA2SssR3h/P5gM5Zc7b+TARFC4SBZAPKz
+	Sre+m/xRtLQutYf28q0uVIXWaNGje4TZBrurWUdWXyyhAEadcB0GK+XsF4Y5OQKL9ofS61
+	vkBwok2pNHVGMus5TT2Jiy1D2jtFgMcqucE/CBHpnWd4hOn/Z9nWXviuyzdPK6IwI6yi8K
+	93dd2dIZKDNTr1HijayJUbvIc0cXUNw5g4Lg6DrTe861drYesoPTIthVlF+pN50SP69+Cd
+	g+s9qYmYTycDJbfHqfHJ8B9NTN7WoS/bQHoo0rVRJMTOR45nfKCkAVHs1cVbVw==
 ARC-Authentication-Results: i=1;
 	ORIGINATING;
 	auth=pass smtp.auth=jmtilli smtp.mailfrom=juha-matti.tilli@iki.fi
@@ -85,17 +85,18 @@ Cc: Bjorn Andersson <andersson@kernel.org>,
 	linux-arm-msm@vger.kernel.org,
 	netdev@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v3 03/12] net: qrtr: mhi: register new qrtr endpoint id for mhi
-Date: Tue,  8 Sep 2026 12:31:36 +0300
-Message-Id: <20260908093145.2492666-4-juha-matti.tilli@iki.fi>
+Subject: [PATCH v3 04/12] soc: qcom: qmi_helpers: add QRTR endpoint ID to qmi_handle
+Date: Tue,  8 Sep 2026 12:31:37 +0300
+Message-Id: <20260908093145.2492666-5-juha-matti.tilli@iki.fi>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260908093145.2492666-1-juha-matti.tilli@iki.fi>
 References: <20260908093145.2492666-1-juha-matti.tilli@iki.fi>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260908_023242_476818_35EAFA8C 
-X-CRM114-Status: GOOD (  10.27  )
+X-CRM114-CacheID: sfid-20260908_023248_338661_A5B628F9 
+X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,70 +111,38 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-MHI will use the mhi_controller data structure to store the QRTR
-endpoint id, as explained previously.
+From: Mihai Moldovan <ionic@ionic.de>
 
+Adding this allows us to easily supply an endpoint ID to bind on later
+on when creating the socket.
+
+Signed-off-by: Mihai Moldovan <ionic@ionic.de>
 Signed-off-by: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
 ---
- net/qrtr/mhi.c | 31 +++++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ include/linux/soc/qcom/qmi.h | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/net/qrtr/mhi.c b/net/qrtr/mhi.c
-index 630ce0da060e5..60d85f126bca5 100644
---- a/net/qrtr/mhi.c
-+++ b/net/qrtr/mhi.c
-@@ -116,6 +116,17 @@ static ssize_t endpoint_show(struct device *dev,
+diff --git a/include/linux/soc/qcom/qmi.h b/include/linux/soc/qcom/qmi.h
+index b9dcb437a0be5..c675d095df778 100644
+--- a/include/linux/soc/qcom/qmi.h
++++ b/include/linux/soc/qcom/qmi.h
+@@ -224,6 +224,7 @@ struct qmi_msg_handler {
+  * @txns:	outstanding transactions
+  * @txn_lock:	lock for modifications of @txns
+  * @handlers:	list of handlers for incoming messages
++ * @endpoint_id: QRTR endpoint ID to bind on
+  */
+ struct qmi_handle {
+ 	struct socket *sock;
+@@ -247,6 +248,8 @@ struct qmi_handle {
+ 	struct mutex txn_lock;
  
- static DEVICE_ATTR_RO(endpoint);
- 
-+static void qcom_mhi_qrtr_free_mhi_id(void *mhi_cntrl_void)
-+{
-+	struct mhi_controller *mhi_cntrl = mhi_cntrl_void;
-+	u32 id = mhi_cntrl->qrtr_endpoint_id;
+ 	const struct qmi_msg_handler *handlers;
 +
-+	if (id != 0)
-+		qrtr_endpoint_free_data_id(id);
-+	mhi_cntrl->qrtr_endpoint_id = 0;
-+	mhi_cntrl->free_qrtr_endpoint_id = NULL;
-+}
-+
- static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
- 			       const struct mhi_device_id *id)
- {
-@@ -130,6 +141,23 @@ static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
- 	qdev->dev = &mhi_dev->dev;
- 	qdev->ep.xmit = qcom_mhi_qrtr_send;
++	u32 endpoint_id;
+ };
  
-+	spin_lock(&mhi_dev->mhi_cntrl->qrtr_endpoint_lock);
-+	if (mhi_dev->mhi_cntrl->qrtr_endpoint_id) {
-+		qdev->ep.endpoint_data_id =
-+			mhi_dev->mhi_cntrl->qrtr_endpoint_id;
-+	} else {
-+		rc = qrtr_endpoint_get_data_id(&qdev->ep.endpoint_data_id);
-+		if (rc) {
-+			spin_unlock(&mhi_dev->mhi_cntrl->qrtr_endpoint_lock);
-+			return -ENOMEM;
-+		}
-+		mhi_dev->mhi_cntrl->qrtr_endpoint_id =
-+			qdev->ep.endpoint_data_id;
-+		mhi_dev->mhi_cntrl->free_qrtr_endpoint_id =
-+			qcom_mhi_qrtr_free_mhi_id;
-+	}
-+	spin_unlock(&mhi_dev->mhi_cntrl->qrtr_endpoint_lock);
-+
- 	dev_set_drvdata(&mhi_dev->dev, qdev);
- 
- 	/* start channels */
-@@ -150,6 +178,9 @@ static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
- 
- 	dev_dbg(qdev->dev, "Qualcomm MHI QRTR driver probed\n");
- 
-+	mhi_dev->mhi_cntrl->qrtr_endpoint_id = qdev->ep.id;
-+	mhi_dev->mhi_cntrl->free_qrtr_endpoint_id = qcom_mhi_qrtr_free_mhi_id;
-+
- 	return 0;
- 
- err_unregister:
+ int qmi_add_lookup(struct qmi_handle *qmi, unsigned int service,
 -- 
 2.34.1
 
