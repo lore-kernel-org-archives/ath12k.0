@@ -4,98 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5B29C79F82
-	for <ath12k@archiver.kernel.org>; Tue,  8 Sep 2026 09:35:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 734E6C79F82
+	for <ath12k@archiver.kernel.org>; Tue,  8 Sep 2026 09:44:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:Subject:References:In-Reply-To:Message-Id:Cc:To:From:Date:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=vRs19l52ovGuAIjGa7YqoKMg2NfGlSjJwTPL4k7vc2c=; b=XxNGkLaltqHYOk3yO3C/nV8i1P
-	qRczQp71oq7rG27nl/HcPXDr4RCyN+KEAmSyeAqanSRVxRhSkI2i4YINGcwMWeK3MgJ6CyOVfCziQ
-	LXQWQoBch2aO5kBQmaCYQL0rjtd/omNmOuETf7xT19Q+6yhJWogs02iVTl4Bgo3Y2AN8RvltHRm/s
-	Mtl+85wUOGj1Ehj3qxm99QO8c1BNIvtbYnaDAopvKSEeEyZ4Q9pFhobChzc05kn/C09btqiWpVKWt
-	B0hv9kWrwxfZecjdX21g/zkw2uFyBNSkMUuo25/tvmfLFtcipKYLsSVck7sTXZfbbCpZb7zFbaKS/
-	dJ6MFPyg==;
+	bh=okk/6UKvvJuFy0HfkixIG69h3/2z4AmE9S0HHh3WLco=; b=bWMMXYZvzvr5r+sImOs2lItuUP
+	OXbyPKwDGkoGsGKUnBnw8X+U60OGehspDnlGynknF2Ecwq2fqvqF+XxAzvyxlsOryiiAxwjipGiLT
+	WKvIGS/ryAOxOx3u6bRKfNPvTB8kkNkzaQaav2ntowtkQ2plfNjVjxzOck98rra2Vdz6ACrDbogiy
+	tR0opXy+BaL0YeNyVRsBPG/HClA10XII5jZTlrr4ocXPaOfw23lI44lBhlXYMWtMg0+SgNhs/fJG1
+	RLGW7xw0bylVq3rjhXbrQFoNoHDQxEjH+amidlZtDhmLCqKElSta8fPXXiUoy7kAWumaVIEag92Jg
+	ww9DqwIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sEu-00000008cUK-1S63;
-	Tue, 08 Sep 2026 09:35:40 +0000
-Received: from lahtoruutu.iki.fi ([2a0b:5c81:1c1::37])
+	id 1x3sNo-00000008ePn-0cgd;
+	Tue, 08 Sep 2026 09:44:52 +0000
+Received: from meesny.iki.fi ([195.140.195.201])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sEr-00000008cR1-3z3Y;
-	Tue, 08 Sep 2026 09:35:39 +0000
-Received: from mandelbrot.. (xdsl-83-150-90-33.nebulazone.fi [83.150.90.33])
+	id 1x3sNm-00000008eOt-0Fpz
+	for ath12k@lists.infradead.org;
+	Tue, 08 Sep 2026 09:44:51 +0000
+Received: from fauth-c2-smtp.messagingengine.com (fauth-c2-smtp.messagingengine.com [204.75.18.201])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: jmtilli)
-	by lahtoruutu.iki.fi (Postfix) with ESMTPSA id 4hfJhM12z2z49QLG;
-	Tue, 08 Sep 2026 12:35:31 +0300 (EEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=lahtoruutu;
-	t=1788860131;
+	by meesny.iki.fi (Postfix) with ESMTPSA id 4hfJtx06zszyTZ;
+	Tue, 08 Sep 2026 12:44:40 +0300 (EEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=meesny;
+	t=1788860681;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=vRs19l52ovGuAIjGa7YqoKMg2NfGlSjJwTPL4k7vc2c=;
-	b=NiAdMkxIyyh3NDJprkUTuf2Q1eqFxi344Ao8crIgZwnovGK9ixUTOjC3pJBBXVQBPI/Rks
-	ndnVwVTgF2OvmJvYtY4mJgONTqNKN77WaJcksfnx4LSL9bB4eQjP+cC5njyJtJLxAxb8xe
-	tUPus41JipdUKflsmdtawujIJEpnTB3+AwjboMoTkNYAY/oTPIRqjIvfF0O28Ydl95SKa/
-	atBjq2+8qVqi654xiTtfcMfZkq5usAoBLEwkpap436S5zVx6RSbKBT/tlvIWK6APE2oXva
-	QKY/39E0KnHVh2ZfeZjxx0L26QKdXZ8TXHEx/H3v1gSL6GJKQTRouxSX1f8gUw==
-ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=lahtoruutu; cv=none; t=1788860131;
-	b=pQAkl8rQAsHWpen5iLs2INnduCGReTAGSKqifshOOzkT6kHUyU5HcyPD0/k1M7PNMW9KNK
-	KD2Utq93Zatn2j5kOIS91BzkWybAmkFS/B0ninJiHNHLJ3Rz9tNBJNvEpUSi3OppP8gS7B
-	ZREihqJWVgzxIbGli8GGdm9xXYipoMgeLRuJ0aKP3qQtRTZPgkWGwkNDqMPntB4jYkym2y
-	V2SVoj5GwLgYIr74PqHY+m46vjLSvlgJvCjsVwdJPaqvOIhz3lwXRDMw61ktbvFAxZAkVW
-	tWFCyD4nZ+UUAgQBzSnCiiyb6YlZ0rfNYZGMz5YgtK4EnC2zWXKib1acFx7YQQ==
+	bh=okk/6UKvvJuFy0HfkixIG69h3/2z4AmE9S0HHh3WLco=;
+	b=pc21ugTFKHuM9jB3p9ZC5/tjK15dDw3NMJm4mOCmaqw9OGOZvACLTrqJXGX0EUya9vmcmQ
+	cEr4O4xLumjj8QTvhO2uc6QwkQp2AafrU8nB82C5G+JZWJTb86wVu1j/bHbCwWZ1VJWHBb
+	WQXRCvM9mqEbjA0mdIJe9ouv5TWixFs=
+ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=meesny; cv=none; t=1788860681;
+	b=AxkhCN2RLXOG2Dupf9LysptnDQlrlBbSudSOq0r0HkLscSL8iMbvlxNdz6zEaur/44bvy0
+	IhpiCVw7OshcV+FIr4dOgsNR/EBnsU0+o+vOHietJkEv8KfhRg6Wfj3eMZr5jPxIaHDo3d
+	5k53SgwewBl1PpIMQziHfnfjks5IwIM=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
-	s=lahtoruutu; t=1788860131;
+	s=meesny; t=1788860681;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=vRs19l52ovGuAIjGa7YqoKMg2NfGlSjJwTPL4k7vc2c=;
-	b=Z+SYMumaDUZrM+bK91MfhU15ixQ4a/2cZVTvZSQR0Xg5cxRl7TM6jCc7od+d8CeGwsss7w
-	U2caCdxD7iPUYUw/sdBxRy24cdOyeR7/1EJEoizbkDxa6nEpuVcgNzm+jFUOu+sEEM28Lg
-	r2SNHNXd1AZPTu89SOdXuRm0+E+voiyg/UcGBILz52bJU3K6W1BBUSh2yLl6YraXaLcdja
-	iRMr+TMcZHZoSnOqN4siTOwse+vn0zyI/3o1UMxibAQHsvj5n0dPI4v7hPjEyuTBh0vYAw
-	r4YlQHEYmPAYhT7bcaxgk2GJ3dbHDfUYLewkv3pEQcyN7kb79ao9Aumk/KgCYQ==
+	bh=okk/6UKvvJuFy0HfkixIG69h3/2z4AmE9S0HHh3WLco=;
+	b=GdjsttsNYVg6eC4VM1Q3iVUurSgqReGIEUa8w0j55RIyPEhTdcHdd2F/6e6Xl+i7qWjD70
+	q5MAjmaUbQpFzvGaa8U6IeP3b1GXnfzr67KyUJ4gARgN2Q09KM1GGC58Ugsj9v7tJrdq9x
+	9NooxCxCh9sePIf0YJ8v5ZbH/knxnik=
 ARC-Authentication-Results: i=1;
 	ORIGINATING;
 	auth=pass smtp.auth=jmtilli smtp.mailfrom=juha-matti.tilli@iki.fi
-From: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
-To: ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org,
-	Kalle Valo <kvalo@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	"David S . Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Simon Horman <horms@kernel.org>,
-	Mihai Moldovan <ionic@ionic.de>,
-	Juha-Matti Tilli <juha-matti.tilli@iki.fi>,
-	linux-wireless@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v3 12/12] wifi: ath12k: bind to QRTR endpoint ID in ath12k_qmi_init_service
-Date: Tue,  8 Sep 2026 12:34:37 +0300
-Message-Id: <20260908093437.2493698-5-juha-matti.tilli@iki.fi>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260908093437.2493698-1-juha-matti.tilli@iki.fi>
-References: <20260908093437.2493698-1-juha-matti.tilli@iki.fi>
+Received: from ams-compute-02.internal (ams-compute-02.internal [10.64.2.62])
+	by mailfauth.ams.internal (Postfix) with ESMTP id 0D73E198003A;
+	Tue,  8 Sep 2026 05:44:40 -0400 (EDT)
+Received: from ams-imap-13 ([10.64.2.33])
+  by ams-compute-02.internal (MEProxy); Tue, 08 Sep 2026 05:44:40 -0400
+X-ME-Sender: <xms:Bdmfag0oJIPtIHdp15FNK_ZlFdN56u-GxgQtG_P6tcyg-IKQuxu50w>
+    <xme:Bdmfal6P618KOufT0AatJ7zRE4WPse3oGZosgxLcXeX3xEYbamL5ACxj0a94aXzP6
+    4rZ0G6g-gEzVQKHhwMpfThmMB0F4Q7zlK9rvH05npXZlKoMVGSFgeoE>
+X-ME-Proxy-Cause: dmFkZTEQ6RAYbZbS6n2XZ91CCDVH1PswnGr8U2+3tuLiFTy4d1Bb10G7XCafM0ID5ejv1h
+    UZXyfcVmyzTcL718ElzEntJLirWMZWQhFqPCw2ydLCRkreUBMw2X3HnoN+1F7JnndHR8zi
+    Sp4ODtSghtSxRKi4Cg861W0s4zHP/rrBOdathqyDMBoI/8T7s8i7Sbxh3vHOGHKpO+cw7K
+    kcvpmbSz0nr0H1WhIwf4idE53v9ZsBaHoldGedv2Gdl6cVY0ywUqLCFL7w588aYhy64fOv
+    SArJG669zMjCkJOlbyfwleJPE+mp9+24JBGl4a/sLnqcR7NpKb6o2Jut9dnpzXgjBXBjN+
+    ZbaBEggnrGmIsPujM9VgF9Oug0fw8KuqtdbLn7kzmkc3wPC30aIXgzv6OFPNklHY+Fypmc
+    HqanJxDTY6vLsYHuUxlM0qgUcp8bR4T/88Lfcnfr0gPXfre+lJPGQ8bXt2GBrNuOOzKlZY
+    hEgQQss4L2oBP+d9CNGZJXrTGm8/jCRjQ9nL6XpH1UqHyvNuhYZfC6kNuph0jCo944fk0r
+    E7kl6dQ/ntbsfOL1i4biQAriVlCJgrKbCpMweYBxAaDPHEP+/r919UIhhC/IYmWg5unr14
+    V1LF0wEfCTTYNlVAPB+LBTdH9H8+SQRHgOasCrb6mtNlINf1A5NIcjiy3zNQ
+X-ME-Proxy: <xmx:CNmfakY1PnJ90UlsCm8XHJwYiV_5SHH34CS-GYqSCvPOjzxhjoKRzQ>
+    <xmx:CNmfaoIuCvbPae8Iatr8AFQel9kzLtqBvQCF-9mZfNDKjANJ47Kwxw>
+    <xmx:CNmfatq4lc6ZVy1cPfkC6DZ0N7p7rvggsllI4zSFJtQmgebEKIVsQw>
+    <xmx:CNmfahAo5lASRNKEZmoX9AoEIxTZhw7W3mioKr96w7lbO0rA63w9fA>
+    <xmx:CNmfajcudKS2cF_hGTgEqVcCI_OV8tv7zL1oiUTz9Nh6UtNVV37URmL0>
+Feedback-ID: i02414972:Fastmail
+Received: by mailuser.ams.internal (Postfix, from userid 501)
+	id 71AD9F80083; Tue,  8 Sep 2026 05:44:37 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+X-ThreadId: Av35K2MZ7qUg
+Date: Tue, 08 Sep 2026 12:44:17 +0300
+From: "Juha-Matti Tilli" <juha-matti.tilli@iki.fi>
+To: ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+ "Kalle Valo" <kvalo@kernel.org>, "Jeff Johnson" <jjohnson@kernel.org>,
+ "Manivannan Sadhasivam" <manivannan.sadhasivam@linaro.org>
+Cc: "Bjorn Andersson" <andersson@kernel.org>,
+ "Konrad Dybcio" <konradybcio@kernel.org>,
+ "David S . Miller" <davem@davemloft.net>,
+ "Eric Dumazet" <edumazet@google.com>, "Jakub Kicinski" <kuba@kernel.org>,
+ "Paolo Abeni" <pabeni@redhat.com>, "Simon Horman" <horms@kernel.org>,
+ "Mihai Moldovan" <ionic@ionic.de>, linux-wireless@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Message-Id: <2cf63e00-95aa-41ba-ae8e-8abbfbc486e7@app.fastmail.com>
+In-Reply-To: <20260908093145.2492666-1-juha-matti.tilli@iki.fi>
+References: <20260908093145.2492666-1-juha-matti.tilli@iki.fi>
+Subject: Re: [PATCH v3 00/12] ath1{1,2}k: support multiple PCI devices in one system
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260908_023538_212951_AA5ECBD1 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20260908_024450_275353_DE66F047 
+X-CRM114-Status: UNSURE (   7.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,58 +127,33 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Mihai Moldovan <ionic@ionic.de>
+On Tue, Sep 8, 2026, at 12:31, Juha-Matti Tilli wrote:
+> As you may well know, multiple identical ath11k and ath12k devices are
+> not supported in a single Linux host because they use conflicting QRTR
+> node IDs. Fortunately, Denis Kenzior created a patchset to support
+> multiple QRTR endpoints with identical node IDs, and Mihai Moldovan
+> refined it, after which I took over the patchset and refined it more.
 
-If possible, fetch the QRTR endpoint ID in ath12k_qmi_init_service, just
-before calling qmi_handle_init, and make it available in the qmi_handle.
+Hello,
 
-qmi_helpers will then automatically bind to this endpoint for us.
+I am incredibly sorry by messing up the threading. git-send-email said:
 
-This finally allows using multiple ath12k-based cards with the same QRTR
-node/port combination to work simultanenous (and, for that matter, at
-all), including combinations of ath11k-based and ath12k-based cards.
+4.7.1 Error: too many recipients from 83.150.90.33
 
-Signed-off-by: Mihai Moldovan <ionic@ionic.de>
-Old-version-tested-by: Mihai Moldovan <ionic@ionic.de>
-Old-version-tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-Signed-off-by: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
----
- drivers/net/wireless/ath/ath12k/qmi.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+...and failed at the patch id 8/12.
 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 50082505c882d..3611d0eff22b3 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -9,11 +9,13 @@
- #include "qmi.h"
- #include "core.h"
- #include "debug.h"
-+#include "hif.h"
- #include <linux/of.h>
- #include <linux/firmware.h>
- #include <linux/of_address.h>
- #include <linux/ioport.h>
- #include <linux/of_reserved_mem.h>
-+#include <net/sock.h>
- 
- #define SLEEP_CLOCK_SELECT_INTERNAL_BIT	0x02
- #define HOST_CSTATE_BIT			0x04
-@@ -4075,6 +4077,13 @@ int ath12k_qmi_init_service(struct ath12k_base *ab)
- 	ab->qmi.ab = ab;
- 
- 	ab->qmi.target_mem_mode = ab->target_mem_mode;
-+
-+	ret = ath12k_hif_set_qrtr_endpoint_id(ab);
-+	if (ret) {
-+		ath12k_warn(ab, "failed to set QRTR endpoint ID: %d\n", ret);
-+		ath12k_warn(ab, "only one device per system will be supported\n");
-+	}
-+
- 	ret = qmi_handle_init(&ab->qmi.handle, ATH12K_QMI_RESP_LEN_MAX,
- 			      &ath12k_qmi_ops, ath12k_qmi_msg_handlers);
- 	if (ret < 0) {
--- 
-2.34.1
+So I thought retrying from where it failed would be safe. But that
+broke the threading.
 
+The next time, I'll increase the waiting time between subsequent mails.
+
+Links to mails missed from the thread:
+
+https://lore.kernel.org/all/20260908093437.2493698-1-juha-matti.tilli@iki.fi/
+https://lore.kernel.org/all/20260908093437.2493698-2-juha-matti.tilli@iki.fi/
+https://lore.kernel.org/all/20260908093437.2493698-3-juha-matti.tilli@iki.fi/
+https://lore.kernel.org/all/20260908093437.2493698-4-juha-matti.tilli@iki.fi/
+https://lore.kernel.org/all/20260908093437.2493698-5-juha-matti.tilli@iki.fi/
+
+BR, Juha-Matti
 
