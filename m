@@ -4,174 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17BC3C79FAD
-	for <ath12k@archiver.kernel.org>; Wed,  9 Sep 2026 11:17:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 455E8C79FBD
+	for <ath12k@archiver.kernel.org>; Wed,  9 Sep 2026 17:25:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:
-	Content-Type:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=H4UKswhLtDLXH0fJ6VuHzgTGDT67Z0rVIPS5FjIxjTg=; b=lQLTQWrIkEoy5hUX1JQ0VtVQNK
-	sA4pLp+233t3vFyoSsD0yl0ymbV/uTaeihBphDkrikUJg8rZR4nJQowA7Rln318R3iGXuQcovSw+e
-	fJW+om2DAVd1HfaYe6c8yIYkN+4BUDqooaQy33Xj8VWEOUKDIjo1Dm4M1b7hrzaEnZMzGXQ3z+RRZ
-	hAM8ZSOj799PjPfGUVdaadQ9mgVTmxSsJFULW4+Syt0MDG03owgHGWtUSJ/t3zFmHJIeeSH60glJZ
-	ZXQ0HwBGBr2yPWCEAYNWpgWWKd0SGjmT6+rSsYZQ8nxugxAUeQJn8FbAhdz9oXURrG9qnQnPntgcd
-	ecfaQEmg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=BuGSJUdqAGGuksD3St8encG/59mlBltIgEgqrmolu2Y=; b=DxxAkczulVFYgtniRH46kbJVZS
+	EHlSGw1AvsXI9i6emHQosniUorTQCMTbNvJeq1xr4yNQINecpL7To8Ou17NOCC4mU66ATcp+KTH5P
+	MApDVDCLLYISAMg8OITmwhsd0jBxOQFQMAbrXkCiM/xsKfKRuABxXK9FPjoEP5OxtfdxKNcI3C0zC
+	4dsCqTYtVTCeXxs0atttL6Xx4wD7vscBsWUNvoK6qF15bNXV1CAdOec/py9ijr0orkjMQIzKxZdpj
+	Ax9HzMLswqgLDXMw3pi8RuEUIGTvFChsEHV4zIhLOOdGAhY8qsiBYLjnCPKzRfKf9zI0kW/esBqeP
+	GjNBkcgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4GJL-0000000BXfP-2L8K;
-	Wed, 09 Sep 2026 11:17:51 +0000
-Received: from mx08-0057a101.pphosted.com ([185.183.31.45])
+	id 1x4M35-0000000CTf3-3bs8;
+	Wed, 09 Sep 2026 17:25:27 +0000
+Received: from mgamail.intel.com ([192.198.163.7])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4GJJ-0000000BXef-1oT9
+	id 1x4M32-0000000CTdr-2LlP
 	for ath12k@lists.infradead.org;
-	Wed, 09 Sep 2026 11:17:51 +0000
-Received: from pps.filterd (m0214196.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 689ApYtF1752426;
-	Wed, 9 Sep 2026 13:17:35 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=270620241; bh=H4UKswhLtDLXH0fJ6VuHzgTG
-	DT67Z0rVIPS5FjIxjTg=; b=l5u/2+U3HIpzO2T6vAci/aywosMMpxaNp1I5vku9
-	RYeOPMtzA/Ep+uwJhxT807AnO5aGrmV6PXZZGAwg8DKFT+TgstAidW777AxChZlY
-	dH6i6jHJ5ZM5QW2SBrWObMkhjy1X3ggadVxZUhsOmOmGQXFZ0T21T2PQKEZXsach
-	3Vvg2WrK1wxzt5Tq1gX4uH2mINyfyR3c/Q8dLMKjFCdn+M3d8wAQGTzDVH3OkzBu
-	DSGTpVrSbyI2KHrIxsUJhAscfImdbBz5xElknBd3QCRknFf2RwTUu1/7WhZMFofY
-	ya2ooTi7hmzEYEJEM4jpaN/UgJBpOV2oNHuC9o3aWXj/Gg==
-Received: from du2pr03cu002.outbound.protection.outlook.com (mail-northeuropeazon11021123.outbound.protection.outlook.com [52.101.65.123])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 4gjq600t77-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Wed, 09 Sep 2026 13:17:34 +0200 (MEST)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=fSdsx8SqzxhuSyxnDtpPYrJf05RSFKzi4iYRRU+BWl2e/zMMTfRyFLgJJdJg/ph2yKnH9gAe/J29u0AbXZ3cBJeIbr1VyaLoI9Iw6Nmf4ARU5XEw6DqBdiQdnucn1SU3PD7kldeOUFhXz2syA4r7N8pzlhgWMNFK8o9/lk3S5newRKOoSLJ/q1HE39A2EO+eolHrM96izw9HQ+jr89m6YTMfPDhjq4cu59pOz0koalf00Ucaa/79S5ejHoCWndsOXQtvAyo7rofVIzjDtHm0Ni6QZyXoFX2As/4FC4xj3y3OJCCnr/no3j9MUCntGEZn1lIR2KN+FWHLl0NHyjrlEw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=H4UKswhLtDLXH0fJ6VuHzgTGDT67Z0rVIPS5FjIxjTg=;
- b=a3t7gokhENoPpbWnt7n2wjuXPOCWHpng02hsxVBRfmOWU2Afi+moHmJJqlXr+yJChwBA+bMp1DowB9KRNVn0NckGPGVXyAxGKWQ+uaU5mSQI2Hmxhv9ZQEJMpzmPMHOtavUl7AEFGUMt83je/T43J3u17YESZ7I301++nuee6iISYb1oVTeMYYc7OnjsmADXJPyV8vvUhok7B2BWRMkgmbJ/GhCQmhmFWzPexUqPwExe4/wBA0w/Cyt0a+vpW5URHbp8yZk/dZjxOOVNtvg1aHfDPAVj3PkXfOaPdWnAE7CTOUbDnmnyno+7RksnQE73nCFqnHs3fjsyTbkVrgUTpg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
- dkim=pass header.d=westermo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=beijerelectronicsab.onmicrosoft.com;
- s=selector1-beijerelectronicsab-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=H4UKswhLtDLXH0fJ6VuHzgTGDT67Z0rVIPS5FjIxjTg=;
- b=DZAvHCnwhiW6Kl5OzXypqVWJxvjO/8/5BtzOgy/PmW17PfXsQ42FUwgE6GpDVOzGySHUk2/k9yEIm+Y8Df5Yhk2v/QOr4fWUmW6h/Jn/e6fEJgZPvCVBhJfj2Ly08zL01iZ7z8kaL2RWC/YNMYzXRQr0e8TZV1PGtkbzmgtfa6g=
-Received: from PA3P192MB2868.EURP192.PROD.OUTLOOK.COM (2603:10a6:102:4d7::12)
- by AS8P192MB1970.EURP192.PROD.OUTLOOK.COM (2603:10a6:20b:536::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.7; Wed, 9 Sep 2026
- 11:17:33 +0000
-Received: from PA3P192MB2868.EURP192.PROD.OUTLOOK.COM
- ([fe80::bd96:8c85:982d:19ce]) by PA3P192MB2868.EURP192.PROD.OUTLOOK.COM
- ([fe80::bd96:8c85:982d:19ce%4]) with mapi id 15.21.0406.005; Wed, 9 Sep 2026
- 11:17:33 +0000
-Date: Wed, 9 Sep 2026 13:17:24 +0200
-From: Michael Pfeifroth <micpf@westermo.com>
-To: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Cc: ath12k@lists.infradead.org, Kalle Valo <kvalo@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org
-Subject: Re: ath12k: QCN9274 WLAN.WBE.1.6 firmware drops pre-auth EAPOL in TX
- encap-offload mode (WPA 4-way handshake fails in AP mode)
-Message-ID: <aqFARFlTS7757Zks@mpf-ESPRIMO-P9012>
-References: <app7ADVti1eiVQr5@mpf-ESPRIMO-P9012>
- <cbbb5555-60f0-4a4b-881d-403decc53ca7@oss.qualcomm.com>
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <cbbb5555-60f0-4a4b-881d-403decc53ca7@oss.qualcomm.com>
-X-ClientProxiedBy: MM0P280CA0079.SWEP280.PROD.OUTLOOK.COM
- (2603:10a6:190:8::12) To PA3P192MB2868.EURP192.PROD.OUTLOOK.COM
- (2603:10a6:102:4d7::12)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA3P192MB2868:EE_|AS8P192MB1970:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9e739015-019a-4bf6-442c-08df0e63f1f2
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|23010399003|1800799024|376014|10067099003|4143699003|18002099003|22082099003|11063799006|56012099006;
-X-Microsoft-Antispam-Message-Info: to9B8qPvwi+sK+ifspnOI8dJ+iyQ4t/VUVKZVHUJTKRHRFZD7DME8If8m0uoZ84zTGYPZheRXqCW0KmcN2NZ74vgGBLZnRid1JF3ywfvdcRxITB1PRXTt4tsspDb3g3Pv5d7LqFTolnDqSoCqls6/kz39bQzKi2op6ND8R6mveQpgTmeekhs9iveUomYYxrC1SyNGfcbUiwtM6amC2BWpmbF2xABQGFOcgikW99MAXaD8lnBMRXt2g5+l+4gsqGydO0+h0iFRbOjFz+qpqf9sG//0Cz9rprJH8C3zgnDNY4FPClJL10US1aHEH+zDV6uFHjYF90yLaUOX6CTbAsOeDrDtB/4hyH7+DAIHoowi9oslilamYv9LZINM8C3FpspgRzrhcLMAMM5K6PBNqqMes6KcmjxuMGvLdb8GYFT4ywpOKJux3F065MwoV2OJx9+237iT6Cqx+c42eU0J7NDxE33JGmbJWgI71QIjFRi4DA2TQ3/uG9nEfenuGX9SQykFvhHRZfssgtXRpsK/At2U8oyNKICGwhCVR0eAGARIFnBCAfLRZt1O3NkCdr/2p4FHFa42uI7ZjokIqPF3ufFBHZXS7C+XRoK2AJHT2ln1wvnwrs5KpkS5jmSAsroS7Nbjj4CCqtXiuiPH+uvVLMuZRadY9wFxr/3s8gI3R4sz9A=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA3P192MB2868.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(23010399003)(1800799024)(376014)(10067099003)(4143699003)(18002099003)(22082099003)(11063799006)(56012099006);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Wf9rpDjyUe1V8ilMRMaNImGQAAZZC0zjJyxcjvEdR5FR6vkSdl7Cj2KzExMS?=
- =?us-ascii?Q?BpWkAAWRmFmXN96HVyhVsVdg6wdMAchH7E1hWnr8IlIjMuK9MQbVGsURhZwz?=
- =?us-ascii?Q?hgz+UxryzansK33PIlqTHfPR5oepS6KvWwLCzBMuS7gxhR0F+nCDr/sr9zks?=
- =?us-ascii?Q?JbqjwtYXo8UCQoaBYZtG4m015uLr/Dgor13weh5r/JDnRdio+j4F8qbJnFsg?=
- =?us-ascii?Q?BNiapvq/J4rL5YSKqoM9vakkG5lcsVAzy3iBJf9KwIuor6KDRHWouh2tYsRk?=
- =?us-ascii?Q?9G/w633ubQ5rbAYCUZmB1my/1nrVp83BFRuPqLazLfrBf6TZ42Jfq5FTFuk+?=
- =?us-ascii?Q?nUjoT1NPsRVeSNk2BgC9AphtR5oR57CBc/Wd34piWavGtVHZqFdcpzFqAB2y?=
- =?us-ascii?Q?E1/rK/jYicdd6BIsHY4SarlhuD2VwsXscyKjIHWOQHxeT2We6s1v8kmsRHgb?=
- =?us-ascii?Q?t+DaU6HsBKphXYeMNILYNQ/gBTNecnK+exI6UzwtxodMSE1ZICb3n7SbpVWI?=
- =?us-ascii?Q?DGn3UqkVeCgXX22eAThjmcnJTUFyl7xSV47KXMqfd7GgY4FwbrfYBQtezsJp?=
- =?us-ascii?Q?vzlLmZyLn/01oXvJnpedj/9asgM+kDBM3c3bZgQOJNzb32MNmbjVo9xEB1y5?=
- =?us-ascii?Q?aloiAOVAL9AxTuVlAwnw/YN0qp+bpqByYUuTDj14n1XiTJaQ8OiAIAxoG3E4?=
- =?us-ascii?Q?TCxAF+779laiA0Tku1Z4mt506Z6cQwhdesmQA7gVdymr5mS7wajCXaWomnT6?=
- =?us-ascii?Q?RScWbmP0QKFIQ/EikUkMKQ9yxtRGzgeomgWBY4s9sTejIVE+XMphvbHM6WYJ?=
- =?us-ascii?Q?jAHhV9GnbzZhG7iDzhB9bBI93mQy0BYTSelGF5e1i1yhbR5wDb6xcV88Yp+d?=
- =?us-ascii?Q?/f7CaJIX1tTp3OX29jqFEup5ihA8hWGwlnN0HBJ4ZaHsxpzQh0uRlHvoUbFn?=
- =?us-ascii?Q?TyuZsHGWz8TC07R2J171FndUA7h2gOTxQONBSqyw/2w3sGGWnMfe//aFYmT7?=
- =?us-ascii?Q?UxjEngUv/8Flrz3V7jVIbTVKw9mK7ofIar1NZkwZWIgZC2ViP0HdwX2Zl1sO?=
- =?us-ascii?Q?9jPM7Dov7K1en+ochtLvDNj2DsIvR74WgFJficuGqNZ6uq3M7UMWbbkdALo5?=
- =?us-ascii?Q?mkvamh+GtbLAJlvZM1eyWKJH/g7PLU7u0+M9CAuzHfmOGb5P5zkNZXzoCn6R?=
- =?us-ascii?Q?a8sz8pgtq8z46gJ1ri9zNn06nGESns0YeHYgbzT5QR2Exi4dXNl9UiH4Z2wk?=
- =?us-ascii?Q?839SdejxJCBSSAAJx0ohQzscifcmKojxEY/+RElvYyGyqEPZRu4P3XOycnML?=
- =?us-ascii?Q?nP9FiFumQ8cAjJqAt7zvCSpuVNPPjHAT0iIu+T87OtOSG53LEPet48lJT9Za?=
- =?us-ascii?Q?epXgOG6ePfT3+AHnWydhJkD/uBXdOUG7akReHkQqu0w3YA4ize/4Hnzs5cns?=
- =?us-ascii?Q?biGiZA4sJnAKAeE16xzpmm1DrImLO/wFbl0Pi3IddEgHZAAg29ytLycS4nDz?=
- =?us-ascii?Q?U0dU0u1yrLvYVyhIEQ5Ka7MM5aZhflFBb/QmYkwV0JUMD2JUp7QHSDR3z0h3?=
- =?us-ascii?Q?fpUvmn+DzMR82BnRT6EpF+DM9VTlSpd0G//u+fPlDO2BbhCueb8lrMFxIhWy?=
- =?us-ascii?Q?fx3I7i9KQNK9Pnf1NCOBBvh1Oo8pVwj+VSdQdBLG521m76tDLYPpqG3Sc1dK?=
- =?us-ascii?Q?QEeJX2YGlXH8/veKjzFGEL6vu6jGekKDll+vqoMyFJ8MB63kCfITuoOdKkvh?=
- =?us-ascii?Q?dEbFr8PBPQ=3D=3D?=
-X-Exchange-RoutingPolicyChecked: aDsEfY0HJkuLQNRkVQFKDO06CXEaDoPcYZrAF2aZ4q7MoA7ogOBw5If7FuygBvYqfz1v8wW6HJ/8gDOmfRKRCle+Q2m0I1Aoz0KRKY/XWTRhxFrNMOkDYJ2Biz+HAFU0kZ8byUEG+R2dKyuZeQAVixNx9kxhgqEH5AgaKwHGCopkiqQ4BmK7aV1G98W7grIP3wPqlz9mSpbycOlYNDafcbQsDlZcetYnSA/H/1wTci7qxsxC4oNzxgc2djH8o8yHiTsTN8O/jvNTNOIttLLMrT4DkP5zpWa2KJhAai2TLWIZTIXOI/ay9jV44p0MUKL2a3NekD4x1NgpDIjTA92T0g==
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: RgznfBpUMvBYZUNborXU0K9mCqjrWSAMTwVuaTfaLOptZfjQK3RA3v4rw+SozlnD7dmay8G2oSRUxMRgUJts0/TsFPEmgpLrxinMDs4r3y7NvMYukJyoCYqoIMAhmtS0qlWjjsDkjRv3nfD56LPfDnKOp+4Iu5TmEFTPMDay1vpfCeCfowVnLyVt8lrNBnnso87+5UGyxsb1zH3SksiF37Aa8/oBOaWPV7d4mHlwJxHwdReM1OTRA+22Xb893ZVcmLY09wsbzwIC2xTaeAEBvof+YPzmCXOdq4DxQfiCjpvuXCZr54FdXS8cFb5y44vtKj/Mq4lYQZeiLTxn3ca+TQxlu0/6jwSWSa2D7c/wyFQ23ti9dnDz+3KluLtdzNyAJBCxGL918I/wfM1RB0OcBbUuMHAFpGgCZscpQYsXmC+3CgFW+95qYqoVFHdGU3EPkSG8YpyWkWxX3lQJ3WVLadImUnZ2qoNPE7ZGbzMLHdeI0dBTh4IZL+NHg5VHTEydYBF1E047CBL7gUsvt2yYuiz2iSEVqwEmtZ2HVPsasnO8AvR6EQNP1Vfgb0XL+TESAiGtExGJPIqAVcDNLm16kkfDVRy0YWcj8ZEn/D/y3m5Psbvd4Gl3xmh3P5EVAkc/
-X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9e739015-019a-4bf6-442c-08df0e63f1f2
-X-MS-Exchange-CrossTenant-AuthSource: PA3P192MB2868.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Sep 2026 11:17:33.5310
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: euBRJ1WoVV8MZjZG+pRNfT/cptnmcfEFcQQBVyJpevIQPEEWIxzNX6GNUp2UP62E3SSLgmsnron64PdPToXaUg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8P192MB1970
-X-MS-Exchange-CrossPremises-AuthSource: PA3P192MB2868.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 14
-X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
-X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
-X-OrganizationHeadersPreserved: AS8P192MB1970.EURP192.PROD.OUTLOOK.COM
-X-Authority-Analysis: v=2.4 cv=ONKyTiaB c=1 sm=1 tr=0 ts=6aa1404f cx=c_pps
- a=zNMqk6dBDzYzXfNKB6ufmg==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
- a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
- a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=VdqzKS8jKosA:10 a=8gLI3H-aZtYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=tr3XZvuDWTETL0Uaxejn:22 a=WQ4YJ39tjzx_Hbm9pN5v:22
- a=VwQbUJbxAAAA:8 a=U02WUVaKTlNM7OgEJ00A:9 a=CjuIK1q_8ugA:10
-X-Proofpoint-ORIG-GUID: GkfBih_R-sMnYqVm87sAFkxSEGA-aw42
-X-Proofpoint-GUID: GkfBih_R-sMnYqVm87sAFkxSEGA-aw42
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTA5MDEyNSBTYWx0ZWRfX3IejD9o3ySwk
- jlDNRwHKOetfYqZOfXdRShjBYgbcyBDDOa/QrAkhUSMz2ABHvGEu6zxALd9MRtfefGNXENkm3xY
- 12L6khoGYq9EzYg3nRoa6+qOTzulZYI=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTA5MDEyNSBTYWx0ZWRfXxfrkI6fnu6ZI
- AjB1WFHW4G+SwDpMtYHJ4klHcC6eI/m62btryN+m6RpF2dK609ckZtiX2aUAkG94aNrBwdOmV+Y
- reLYGw4OYg1C9RykZIOV/mHDU/W1nCQg23lPVJM0W0JyQ5bKtHaiIl37wF1KCYifCawIWyl0cm4
- HHz0aEHcJM0d7HMZrQkVQnzGSJYi13amHmfzkLDvn6l/mTwb3Qak+p8LVDIRkQl0cJG4CvwOHdM
- x3nOgH0JRuyw/HSYRAopjHJvrmCbB0/s3I2dRH5WZOthPyRQ/pfqBEXjdjH8iMN3+GOZsTEeJF/
- 42RCaMCQ5VVXUelIrwAdyuCiiuCK6K62N3vwm1XQwu5Xw8eLgsGb18J/vdHPY3vttcxk2ZQGU1q
- bcnpGorL7RDWWARq++ZOhgYOyna88vcUAlCzGxzLayPSXFcmSt95L0+AqL7VThQrSCoKDiRIegz
- bZcFfQe+gw7zf4E35CA==
+	Wed, 09 Sep 2026 17:25:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1788974724; x=1820510724;
+  h=date:from:to:cc:subject:message-id;
+  bh=qVuAnY4EcYgWNHjunjKt0kDyFHcIvcotXrW7gtKi8n0=;
+  b=MvJe4iq4CbLvnr9ONRvc/FSUn4YHwAkEtnWoub377410a3G2MhQeSBpO
+   0E+vfzeM/RNsTeaFoUfsKp2564vO8DeaNh3NYAdPntrk66entRaLXF2S4
+   DHumkcEZ9tw6j/A+PmuGQdeUtIBS7v3OmrPErq6Qr+wnIibpzap2OxnhX
+   mP16je6QXVJNhFSL9UmpnKe9krv8yieGrndR17NXUX2M16/2KzdZiHG0o
+   9U5XOMNuzsHwqNgovqF3MMdMI5ytabbxr/DWRjv7y+IO4/sHqMhtVF4+O
+   ToCRBtGDJ6/p5mYbubjP+nK8XYNEzC3YI9+5vNH4wBL+DTUi0ymUNjhSN
+   g==;
+X-CSE-ConnectionGUID: Tr9cZSyAT2KCG3ocMc+qAw==
+X-CSE-MsgGUID: hvI/b89eR6OASbzKKNioOw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11900"; a="114953583"
+X-IronPort-AV: E=Sophos;i="6.25,270,1779174000"; 
+   d="scan'208";a="114953583"
+Received: from fmviesa005.fm.intel.com ([10.60.135.145])
+  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Sep 2026 10:25:22 -0700
+X-CSE-ConnectionGUID: fhalSbczS56VJs820yYrlg==
+X-CSE-MsgGUID: zOxutZL5R4eIJkOEThF0Tg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.25,270,1779174000"; 
+   d="scan'208";a="276612886"
+Received: from lkp-server01.sh.intel.com (HELO a3e91e2cf319) ([10.239.97.150])
+  by fmviesa005.fm.intel.com with ESMTP; 09 Sep 2026 10:25:17 -0700
+Received: from kbuild by a3e91e2cf319 with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1x4M2t-000000000hK-0fm5;
+	Wed, 09 Sep 2026 17:25:15 +0000
+Date: Thu, 10 Sep 2026 01:24:20 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org
+Subject: [ath:main-pending] BUILD SUCCESS
+ b81e17f13a7e4a7feb523aa98075a55586d66251
+Message-ID: <202609100117.qAKte5nM-lkp@intel.com>
+User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260909_041749_782518_43C27AFA 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20260909_102524_639320_28FDA4D9 
+X-CRM114-Status: UNSURE (   4.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -186,55 +83,75 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/8/2026 9:59 PM, Vasanthakumar Thiagarajan wrote:
-> Worth trying with commit
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1e33f8acd837420160ea088160d8648a3db54c3b,
-> if it is not part of your image already.
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git main-pending
+branch HEAD: b81e17f13a7e4a7feb523aa98075a55586d66251  Merge branch 'pending' into main-pending
 
-Thanks for the pointer. I backported 1e33f8acd837 ("wifi: ath12k: fix
-encrypted EAPOL TX in encap offload mode") onto my tree (backports-based,
-single-file dp_tx.c); it builds and loads cleanly. Unfortunately it does
-not fix the symptom I reported - the 4-way handshake still times out with
-reason 15 and hostapd still logs "did not Ack EAPOL-Key frame".
+elapsed time: 1060m
 
-Looking at the commit, I think it addresses a different EAPOL case than
-the one that fails here:
+configs tested: 55
+configs skipped: 0
 
-  - 1e33f8ac only re-routes EAPOL frames that carry ATH12K_SKB_CIPHER_SET,
-    i.e. *encrypted* EAPOL. On an established link that is the GTK rekey
-    (group-key handshake), which happens after the pairwise keys are
-    already installed.
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-  - The frame that fails in my case is EAPOL msg 1/4 of the *initial*
-    4-way handshake. It is sent to a not-yet-authorized station before any
-    key exists, so it is *unencrypted* and has no cipher set. It therefore
-    still takes the unchanged is_diff_encap / TO_FW RAW exception path in
-    ath12k_dp_tx() - exactly the path the 1.6 firmware appears to drop - so
-    1e33f8ac leaves it untouched.
+tested configs:
+alpha         allnoconfig    gcc-16.1.0
+alpha        allyesconfig    gcc-16.1.0
+arc          allmodconfig    clang-24
+arc           allnoconfig    gcc-16.1.0
+arc          allyesconfig    clang-24
+arm           allnoconfig    gcc-16.1.0
+arm          allyesconfig    clang-24
+arm64        allmodconfig    clang-24
+arm64         allnoconfig    gcc-16.1.0
+csky         allmodconfig    gcc-16.1.0
+csky          allnoconfig    gcc-16.1.0
+hexagon      allmodconfig    gcc-16.1.0
+hexagon       allnoconfig    gcc-16.1.0
+i386         allmodconfig    clang-22
+i386          allnoconfig    gcc-16.1.0
+i386         allyesconfig    clang-22
+loongarch    allmodconfig    clang-24
+loongarch     allnoconfig    gcc-16.1.0
+m68k         allmodconfig    gcc-16.1.0
+m68k          allnoconfig    gcc-16.1.0
+m68k         allyesconfig    clang-24
+microblaze    allnoconfig    gcc-16.1.0
+microblaze   allyesconfig    gcc-16.1.0
+mips         allmodconfig    gcc-16.1.0
+mips          allnoconfig    gcc-16.1.0
+mips         allyesconfig    gcc-16.1.0
+nios2        allmodconfig    clang-20
+nios2         allnoconfig    clang-24
+openrisc     allmodconfig    clang-20
+openrisc      allnoconfig    clang-24
+parisc       allmodconfig    gcc-16.1.0
+parisc        allnoconfig    clang-24
+parisc       allyesconfig    clang-17
+powerpc      allmodconfig    gcc-16.1.0
+powerpc       allnoconfig    clang-24
+riscv        allmodconfig    clang-24
+riscv         allnoconfig    clang-24
+riscv        allyesconfig    clang-24
+s390         allmodconfig    clang-17
+s390          allnoconfig    clang-24
+s390         allyesconfig    gcc-16.1.0
+sh           allmodconfig    gcc-16.1.0
+sh            allnoconfig    clang-24
+sh           allyesconfig    clang-17
+sparc         allnoconfig    clang-24
+sparc64      allmodconfig    clang-20
+um           allmodconfig    clang-17
+um            allnoconfig    clang-24
+um           allyesconfig    gcc-16.1.0
+x86_64       allmodconfig    clang-22
+x86_64        allnoconfig    clang-24
+x86_64       allyesconfig    clang-22
+x86_64      rhel-9.4-rust    clang-22
+xtensa        allnoconfig    clang-24
+xtensa       allyesconfig    clang-20
 
-So the commit fixes the rekey EAPOL, but the initial handshake never gets
-that far. Test details unchanged from my original report: QCN9274 hw2.0,
-firmware WLAN.WBE.1.6-01243 (the latest published in linux-firmware
-ath12k/QCN9274/hw2.0), AP mode WPA2-PSK/WPA3-SAE.
-
-One thing I noticed: the commit's Tested-on tag is WLAN.WBE.1.6-01270,
-which is newer than anything currently in linux-firmware (01243 is the
-tip). Two questions:
-
-  1. Does 01270 also change the firmware handling of the unencrypted
-     pre-authorization EAPOL on the encap-exception path (i.e. would it fix
-     the initial 4-way handshake, not just rekey)? And is 01270 planned to
-     be published to linux-firmware? I can't reproduce your test setup
-     without it.
-
-  2. If the initial-handshake fix is expected to be driver-side, should
-     ath12k also force the pre-authorization (unencrypted) EAPOL onto the
-     native-WiFi path when ETH TX-encap offload is active - i.e. extend the
-     handling to the is_diff_encap case, not only the cipher-set case?
-
-Happy to provide full hostapd -dd logs and tx-path traces, or to test a
-firmware/driver fix.
-
-Thanks,
-Michael Pfeifroth
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
