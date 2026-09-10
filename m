@@ -4,135 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A8E1C79FB6
-	for <ath12k@archiver.kernel.org>; Wed,  9 Sep 2026 17:58:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BD3FC79FB7
+	for <ath12k@archiver.kernel.org>; Thu, 10 Sep 2026 06:24:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jlUBBr80kVdfFPvGMsK73nviWBviEpjJrpNGHlLZvak=; b=fvo0xiByG4ZeZ+CRLJp43mgLwH
-	pSH2Zei7HcuH9Ptc8H45MVvLHahvnxIGo2qa+ajY1gudYoHajwAQP8KrpEQIBul5pAgFfxUPJ1/18
-	LA66AhN1LAeFfCK98wziFu3mu2jmfSD1DklDTnkpZF/KDl4lh+MwCTV1fWtH6lpdkzlECL7Idy5jM
-	EA9eThmxtigxFm02bHboN5EV6lIem9PtfszkehGu7GoeFEYpSDvJJ1Kpz1+rB5jQ/vdvEG63Mm7xB
-	7GkSEHntygxzaBtKNIGVBhAf5DUbAnauRSDQ4OYo9zTyd8sN8SI2BWvb/OtmkdgxfuXyJZEF7C4iN
-	CNJ/GC1g==;
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0iLDqLG5pF/VNrOWDOw4FPl4nltC+AvSy8rtXgUBCIw=; b=hRZOTMspep6AkxOjRgLwIzpwRJ
+	+5nRoMCR55POwdwb844UDliSQ2wr8w8ojdhYEzSMvnCMalRp4EAbkffkM0IreLKqTUZ6cOra7IDFL
+	hWJCdCrWhbXh3SoLNHjjZetZoDpfRXosD7LAjsraYB28ZnbyvLNIvmhhRpG5KcS1E5kMeFAU3QwY7
+	zOJznIdc+m46Y6r7vinv/WAZW3un2cn9fRhmF2LevvQxqLhuGXcBen9IG7c/iW1YzKFzXOvN+E/d7
+	MUvdr5UpmmAphWD3I/H2Dw9wgKPZq49HvB5v/SY0qqeCeBUBrnWQY2aNAFutZ82DK0TodgcD/3WY4
+	EaqiECBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4MYd-0000000CYZt-3My3;
-	Wed, 09 Sep 2026 17:58:03 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1x4YCn-0000000DVZj-0ht4;
+	Thu, 10 Sep 2026 06:24:17 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4MYb-0000000CYX3-1UiD
+	id 1x4YCk-0000000DVZJ-0DMm
 	for ath12k@lists.infradead.org;
-	Wed, 09 Sep 2026 17:58:02 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 689H7ZMD2065338
-	for <ath12k@lists.infradead.org>; Wed, 9 Sep 2026 17:58:01 GMT
+	Thu, 10 Sep 2026 06:24:15 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68A5H2Lt4059860
+	for <ath12k@lists.infradead.org>; Thu, 10 Sep 2026 06:24:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	jlUBBr80kVdfFPvGMsK73nviWBviEpjJrpNGHlLZvak=; b=a1e+N8+533LeAnjX
-	eR8UwtoeyTgQ2AKkpprep+YsFcopJg+wKyWkHhrvNVZzunxty8uR5Vl9tgtqg6zU
-	owN0OylFBiuTGuP48ewFdM9BAN+TYRMBMCmKuZJoQe2AoBCsS3iAwvU+7Z+96nvS
-	Q3ycCr5OAsEmM4fPBtTFpJhSawjP2onZl5Uq51+hfanJRoUcgq8A3byNoIIMAjoz
-	Zy3TCe4zv1i/lXp09aLBeV+jh9BmVIH+pvJHyPy10T5l23ctNhJDrZixzU39YY/x
-	hp7o9Rn/i8d4s0NuswPRqwFo3niDfTt4Fhr7AF0f/CvTc8YLenQFPhtKhVLTEuW5
-	skwSzg==
-Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gk78x1p4f-1
+	0iLDqLG5pF/VNrOWDOw4FPl4nltC+AvSy8rtXgUBCIw=; b=LMDDWjb/7KMyhyjb
+	8sPvd6NH0z7RGV263y2y+0HAGc6FCECDCnfsEz66kcRFeHP/OnGt4cX4vOTqBdfh
+	tczeY0xO4kWKlNGoB6QdN2ngdXwIcUv6zlovrH4yNIQlcM6rso9YHzFd48lszL9N
+	wlzrOAbsgV7Q9jAIzNbH4AElx9BSGlYUqVCSHnANSq/K0dXBG2gz2exNDRd9uKem
+	VBUo0Y58rXNZw768W8MTvO2CoJn2T9jmwbvIktLERY8CKPN1WOmOXYJhPQ9Lwz5v
+	zncmFotQc2pEqIjsDdBHaUdi4nSktMY5TffBHa/qqSOhK6apBXxwrySEf9Tcj+6J
+	KIqcOA==
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gkcyftedx-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 09 Sep 2026 17:58:00 +0000 (GMT)
-Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-c85798977dcso8942386a12.0
-        for <ath12k@lists.infradead.org>; Wed, 09 Sep 2026 10:58:00 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 10 Sep 2026 06:24:12 +0000 (GMT)
+Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-cc44d708055so11297315a12.0
+        for <ath12k@lists.infradead.org>; Wed, 09 Sep 2026 23:24:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1788976680; x=1789581480; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=jlUBBr80kVdfFPvGMsK73nviWBviEpjJrpNGHlLZvak=;
-        b=NIWmQPYYlmfAWN30HD0YnHwrzGDWda7c4zp63VSZaMk2zGx2pGeEpXj69CmYzDr0kt
-         tfD/fvVSemqe3CyR/qYMqZYI8XxgkOcIYAcN0df9uFK99X5kcGH4dye6ZvY/yJaVPBag
-         jrNZK0Q6evZ+wY1oY0YqEHGkdjWPItXc/I+AOsiOK/ermMkR6ShSff4zs5eO+YbrnuYE
-         PRh0RFoA03/2BvtJxFCyOuuiUpWBvP6sG9++v6WLrM+OzpkC3GqcYNaXPpuON5jD3yaS
-         BoZyX883jaDabKBYOQ+c/Ay0ihDC8xjINaKieohznn1NCyLIO05ZH82IS8wWERFkVs3F
-         hL1A==
+        d=oss.qualcomm.com; s=google; t=1789021452; x=1789626252; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=0iLDqLG5pF/VNrOWDOw4FPl4nltC+AvSy8rtXgUBCIw=;
+        b=NmAYZETQ2RUZPkWnldulAjQcWcP0i3WpB6fjRY2+uQLjKAR5c40NkWZPGT2vEKIOiC
+         nVqQQZZzSWqikddwVOUlEbiA3OkQjzCEaUG1U8j3t3icYspkJcGIG6KxsaOh539gyl/2
+         p1cOsYOEZO5/YVl1ItnirwVBlTD3mFTqAOXROO5m6olLtcNz5FfBIMcK5NPRoWQ+uGfH
+         57nH3+hL/x2Wc4f4wmP78HdCh8KpRiYUpTfSHZE7FD0LTQ9EegZ+B/4sLxlfTrA2nOrj
+         AdDzhUAds1hlvBNaoh34J8irScNAkOCv7lvWK4wg6FKE16UE7RKu1rKyzjiyuwp0mV2e
+         hdRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788976680; x=1789581480;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=jlUBBr80kVdfFPvGMsK73nviWBviEpjJrpNGHlLZvak=;
-        b=Wwo5zuuOcvTdpuVq84qe1bqI6d0c3N+yfHHqCkvJnfYOweuceyOiXqXh96D+UPhqBN
-         eIrBAR9DP4kXABMx5Mnvb/EDT4irw4sFbtbrA0CJEzSd9dGeqfnzI9TI/Rngu4P4ppu+
-         ukWXP+tcZWUaUQnV6yexk2w4ORFfaGte6JlQTcFjd8xR5h1L80/uPRwGczW0EaxAWwme
-         5DNgYeIqvBtNq0wFXDYYegKoOAxmhUcK2BeBjB5UETzW50IlFS7WoG327ua2lGZWLt1C
-         93aF3s/F9TTYeq0SfSuLENeLRedLQApmw1exl9uS+PFxZHmcZayezFroa3+u53aN4dbf
-         faLw==
-X-Gm-Message-State: AFuF++lq9J4bg5GYBsx5knFOrFIE8XTKUSh2X/4QunJwqmjaCcT75eM6
-	sfJW+LHGOFjzqQlqOp+bVx/YK1YC5zntQu3FmIKXCy4kF6sJKtSgqMgWdYi2j5cZfq9kSsPvZ0A
-	+H/5p2lp2gVuiELxIDK2aip2QzyzUa+6gyaPVvOxF2nAOqAOY3izDuvPN77McWEXt
-X-Gm-Gg: AYBFou2FIYA1i7Du3Vm95cVnBu0JjsZkmCH75p27Wy4HbioO8DNgyLdPFy7TNXHh5DW
-	ZrGaWbu0aiofXZGgI1ihr6RFJDguXyzCfOmN34jbq6Ohqdvh+pXrRd7m3G3U6EkiS1ijD+fPTc4
-	Z1LAM5fkGSwGqEULxQL9CnruhRcoqIAOPiYCye55vw63i87KZGt64/Q0Z9qoUdqpmmssEQxujjX
-	5zSerNES4q8OjSiJ+EGdYQMmEntGejzKnv4clWfxz7uKJq+JLLJrQtdBp+yt6V8Xg4JCAsggxCj
-	xG+ejS7x+ACCowlRiLpX5TzE/pDkvCa5LtUFBf8RVmjhhBZwGAEOhas7OhSmedBucgoQvxn//Zt
-	0f6HXQS3D/CqJTOHEGji4zSZbiiVprapLMqC/4JTJcGUePFvg2XZdYuw=
-X-Received: by 2002:a05:6a21:a97:b0:3c4:1c9f:d7e with SMTP id adf61e73a8af0-3da39b437d9mr56708941637.6.1788976680082;
-        Wed, 09 Sep 2026 10:58:00 -0700 (PDT)
-X-Received: by 2002:a05:6a21:a97:b0:3c4:1c9f:d7e with SMTP id adf61e73a8af0-3da39b437d9mr56708887637.6.1788976679569;
-        Wed, 09 Sep 2026 10:57:59 -0700 (PDT)
-Received: from hu-jjohnson-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-339770f0489sm14478225eec.8.2026.09.09.10.57.58
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 09 Sep 2026 10:57:58 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: ath12k@lists.infradead.org, Kang Yang <kang.yang@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org
-In-Reply-To: <20260828065534.1537-1-kang.yang@oss.qualcomm.com>
-References: <20260828065534.1537-1-kang.yang@oss.qualcomm.com>
-Subject: Re: [PATCH ath-next] wifi: ath12k: preserve PPDU state across
- monitor status buffers
-Message-Id: <178897667862.2048605.2420696819574029448.b4-ty@oss.qualcomm.com>
-Date: Wed, 09 Sep 2026 10:57:58 -0700
+        d=1e100.net; s=20251104; t=1789021452; x=1789626252;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=0iLDqLG5pF/VNrOWDOw4FPl4nltC+AvSy8rtXgUBCIw=;
+        b=lw38rg2XpiRCTGaM9JXx30+X+vyhuFZYWjMWJCSIO87KxBAjUtnQtcQSvmONpiE/rV
+         gGJX46fHmD2e4FVRx4tePyogeLIqksJVKI7nMAMeaSXZrbNDivr2gq/Sk3FBDRLkSLhR
+         nzjqunXPiCa4zn33oMdVoiZMkJVij9EyAgtfyHvFtyNIar3T2lWFn8KddjCrxHVzitpB
+         l42AA+4yZUhdmsl2S+fE8OsJr7ukPhi/kLOPI1cIx+yXx+8bsSUnQX6DFjmuHAvYSCFw
+         MNV5glMO06Lj4M7LRy5zeQ5cMAoegMF7sCNIJu0ZNQ0moug2Qrx6BI/LsFNRZ7tdUJa3
+         hVMg==
+X-Gm-Message-State: AFuF++muVP01zur/4Q1po0+sp5jL+MfncxIHXokQxYywmtEHRn4B3fCD
+	rCM07/LH6IaF/Zmt/Abv5gUypjLjcp+GAObssTofs0u3GqkBdThlkdDzyx3pcj0zqRq5oTMKTZD
+	6iwykJG/1AJ6YPpgkHH3ss20Xr8n4NiLAZxr2k1QVdcUntRpTzpEItRUE/e8QTF5PQxV0WAzJ
+X-Gm-Gg: AYBFou1tCn2uti467qVnQVWxb6IFGjYhebJ6RkmYtlzi6T6A2yoTv7UMG0ASkx0DBXM
+	DK4P0mSNySSYt/kNtApHzA+JzRQKD2cbsUgY4r8dXe0NYQ9D1j/rxta+cSsHup/y9bSADt2vThb
+	+ViZp7ohvaUcn++3jXzjfU31uzA4+s60WbozomZbZqnx2Lh2bZstHEaNObvvlvXS6RwGxoy07qy
+	FCJPn74efK7+fwz8Ir8+buG25uS6nUiq81CvS19gKHTRXLxQO46zB+5S1LljYNIAGfX5ps1S5OS
+	DQA3MaqOWAr87W6erXCJB6BUnRTjxfqwGFwSC0tJiMZkueQ4okBu0Ym9EfTWkrBYLBiLiSLh3KB
+	PFZqxSLc7ec9mzaJv9E5CXGRhf2VhP4k25ulORXILx/UFh4E6IwqH83I=
+X-Received: by 2002:a17:90b:274e:b0:398:b1eb:136c with SMTP id 98e67ed59e1d1-39b2610fe62mr59660449a91.9.1789021451502;
+        Wed, 09 Sep 2026 23:24:11 -0700 (PDT)
+X-Received: by 2002:a17:90b:274e:b0:398:b1eb:136c with SMTP id 98e67ed59e1d1-39b2610fe62mr59660345a91.9.1789021450630;
+        Wed, 09 Sep 2026 23:24:10 -0700 (PDT)
+Received: from [10.133.33.250] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-39d7e8ad192sm2468503a91.14.2026.09.09.23.24.08
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 09 Sep 2026 23:24:10 -0700 (PDT)
+Message-ID: <24d3c84a-a4a8-47c5-ba46-1d928b463f56@oss.qualcomm.com>
+Date: Thu, 10 Sep 2026 14:24:07 +0800
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next] wifi: ath12k: provide MAC address list for
+ single-radio wiphys
+To: ath12k@lists.infradead.org,
+        Baochen Qiang
+ <baochen.qiang@oss.qualcomm.com>,
+        Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
+        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+References: <20260902082219.3010793-2-ivitro@gmail.com>
+Content-Language: en-US
+From: Kang Yang <kang.yang@oss.qualcomm.com>
+In-Reply-To: <20260902082219.3010793-2-ivitro@gmail.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.3
-X-Proofpoint-ORIG-GUID: ohGTA9vPAMG57u24XteBk66E24n_-X6v
-X-Proofpoint-GUID: ohGTA9vPAMG57u24XteBk66E24n_-X6v
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTA5MDIwMCBTYWx0ZWRfX6ZOjRn+EvH+m
- DhLVhTkxY4O8NGlZxvCVnnsgx2XWpemazVtf9tWJdUu2rOKxBQXZ+hgBSp/ui9Olh80WRrLSPGX
- x3rNzeYuiiyjIjit+GVQcYxvk0YX9z4=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTA5MDIwMCBTYWx0ZWRfX8E/kTmaOuCCr
- Cu4VNSXhmQ6tjDrSLA6oTtPcdMFGmx57OZ8bjrVdS5wqi/qaLAcB2bbVVUCGkNh8a4C5Unu+VPZ
- XcATa3UGvwoua3az4O8ONyZLnBKkvkzZT94emd3i/WEj7z0C8eyqXk/YMMQr8CSUWqYm/X8DBM/
- LQD3CRqm3N0XPkppFoAcnoBqTnIOlE2HFMtR8AwUdJq05ZgpcU8+XO30PfPelYGp9J1gyJDlaZC
- fKLgDlOQu8Gf1s5Mn8TxwW/7loHMNia2SZEKxxzy/TZJipwJONgfeNG47i9z9svSklIw3xswgk/
- QB+dpodtroaInxgY/Pb2ttNbOWc5nsYwdIUcrHECQVzvIu7uRWTHDS2VDxmSwOXws/EUGwPGTKg
- CA3/THXinm5ayhcYEemWLnvxQS7UAc+qwTapkfZ2FcC6kdAS5NYq1IWzTxXoS2PjsLwYXIwViqE
- dHvCrFEp3STn3Lta0Sg==
-X-Authority-Analysis: v=2.4 cv=SvWgLvO0 c=1 sm=1 tr=0 ts=6aa19e28 cx=c_pps
- a=rz3CxIlbcmazkYymdCej/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+X-Proofpoint-GUID: vcSjiHTJEtXz1G5bAZczluM33y_EmRT9
+X-Authority-Analysis: v=2.4 cv=GNqdgeNK c=1 sm=1 tr=0 ts=6aa24d0c cx=c_pps
+ a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=EUspDBNiAAAA:8 a=7yRbvbv0muN7hk5lIxAA:9 a=QEXdDO2ut3YA:10
- a=bFCP_H2QrGi7Okbo017w:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=m8ToADvmAAAA:8 a=8dmAZdvqxf5LAHb2O34A:9 a=QEXdDO2ut3YA:10
+ a=x9snwWr2DeNwDh03kgHS:22 a=kCrBFHLFDAq2jDEeoMj9:22
+X-Proofpoint-ORIG-GUID: vcSjiHTJEtXz1G5bAZczluM33y_EmRT9
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTEwMDA2NCBTYWx0ZWRfX2UdbCmy6Gt2Y
+ cg+OsfgZEOW0jEYsO4cPIfFYRVAyPWEIbfLwISgAxqseXqpii21jbqjz86AcZE1CTiQMxp5iZAa
+ 8lBbpwJJ3iNsFi8+4SAQA77sSUCsTYIli0I1UVPV8WbKIoSeBdpKCiAs4NbHi2BFrkhaywfJ9tU
+ UaUM3E01pCD4sc9vBYmLSbvLTjg9KB6pVpUNB6Cs5k8UA1rrLYcK/680hPoYwNCsLd3i/OBpKY3
+ O1tGv9m/6mXy+5xCGL8nTQcxPjh1qWVsXOkH+MS+B+iHmnOYeYBZfpDxIQ44/sRBEyq2FsULQmF
+ z9t7QJwLEu0jne/VuB9FEpDHXD8OqSQXC9abO3GvEC4e+XXeYLCcPmHaiXhq/vfjtI8okEhJiD+
+ euD8UNtxJcdb4HaKolto6o/4Ce/ggyenErM4QbpSDSCwvyZHinspHRUmt0mz1drGOwoJQawzt8N
+ GhI9pNA3eyNm2fIuWYg==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTEwMDA2NCBTYWx0ZWRfXxKyveDyF/iSv
+ yTfu3NXvQRCuh0Ag5+j+MwszSBvMBR6/s7fczPDFe1Jyxrm9ElP2lPIWqcV4DVSm2jiR73w3PdA
+ QJt5TAdmQ6zO7DIZ935gHg3HxOUiY24=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-08_03,2026-09-09_02,2025-10-01_01
+ definitions=2026-09-10_02,2026-09-09_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 spamscore=0 phishscore=0 bulkscore=0 malwarescore=0
- adultscore=0 priorityscore=1501 lowpriorityscore=0 suspectscore=0
- impostorscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2609090200
+ clxscore=1015 impostorscore=0 priorityscore=1501 adultscore=0 phishscore=0
+ malwarescore=0 bulkscore=0 spamscore=0 suspectscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609100064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260909_105801_409421_69EC2A8D 
-X-CRM114-Status: UNSURE (   7.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260909_232414_236866_BBD74ED1 
+X-CRM114-Status: GOOD (  31.32  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,23 +151,141 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 28 Aug 2026 14:55:34 +0800, Kang Yang wrote:
-> A monitor PPDU may span multiple status buffers. However,
-> __ath12k_wifi7_dp_mon_process_ring() clears mon_ppdu_info before
-> processing every buffer.
+
+On 9/2/2026 4:22 PM, Vitor Soares wrote:
+> From: Vitor Soares <vitor.soares@toradex.com>
 > 
-> As a result, continuation buffers lose PPDU state collected from
-> earlier buffers, including ppdu_id and PHY metadata.
+> ath12k supports creating vdevs with addresses provided by mac80211.
+> Userspace can already make concurrent interfaces work by explicitly
+> assigning different locally administered addresses.
 > 
-> [...]
+> However, ath12k does not advertise an address list, so when a second
+> interface is created without an explicit address, mac80211 has nothing
+> to pick from and falls back to the permanent address. If the first
+> interface is already running with that address, bringing up the second
+> one fails with -ENOTUNIQ.
+> 
+> As in ath11k, provide a list of usable addresses so
+> ieee80211_assign_perm_addr() can hand each new interface an unused one.
+> Keep the first entry as the radio's own MAC address. Generate the
+> remaining entries as locally administered variants by changing only the
+> upper nibble of the first octet, which naturally limits the pool to 16
+> unique addresses.
+> 
+> Handle only single-radio wiphys. Wiphys with more than one radio behave
+> exactly as before.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
+> 
+> Signed-off-by: Vitor Soares <vitor.soares@toradex.com>
+> ---
+> Note that a device which is not MLO capable registers one wiphy per
+> radio, so each radio of a multi-radio device also gets a pool, seeded
+> from that radio's own MAC. I only have single-radio WCN7850 hardware,
+> so that case is untested.
 
-Applied, thanks!
 
-[1/1] wifi: ath12k: preserve PPDU state across monitor status buffers
-      commit: 69b2d06dafa4a61b718704d655dd370ba660052a
 
-Best regards,
--- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Thanks for the patch.
+
+We discussed this internally and found that some Qualcomm platforms use 
+wiphy->addresses as an interface MAC pool, while others use it to 
+advertise firmware-provided per-radio MAC addresses.
+
+Because of that, using 'ah->num_radio' alone may not be sufficient. Our 
+suggestion would be to gate this behavior with a hardware capability 
+(inside ath12k_wifi7_hw_params) so that the wiphy->addresses semantics 
+remain consistent for a given hardware family.
+
+This would allow platforms that need an interface MAC pool to use the 
+proposed address generation logic, while preserving the existing 
+per-radio MAC advertisement model on other platforms.
+
+
+
+> ---
+>   drivers/net/wireless/ath/ath12k/mac.c | 48 +++++++++++++++++++++++++++
+>   1 file changed, 48 insertions(+)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 9a775602775d..bee6701f1029 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -14685,6 +14685,50 @@ static void ath12k_mac_cleanup_unregister(struct ath12k *ar)
+>   	kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
+>   }
+>   
+> +static void ath12k_mac_cleanup_mac_address_list(struct ath12k_hw *ah)
+> +{
+> +	kfree(ah->hw->wiphy->addresses);
+> +}
+> +
+> +static void ath12k_mac_setup_mac_address_list(struct ath12k_hw *ah,
+> +					      const u8 *mac_addr)
+> +{
+> +	struct ath12k *ar = ath12k_ah_to_ar(ah, 0);
+> +	struct mac_address *addresses;
+> +	u16 n_addresses;
+> +	int i;
+> +
+> +	/* The pool is derived from one base address, so it can describe only a
+> +	 * single-radio wiphy: with more radios each radio has its own base
+> +	 * address, possibly from a different ath12k_base.
+> +	 */
+> +	if (ah->num_radio != 1)
+> +		return;
+> +
+> +	/* Only the upper nibble of the first octet is varied, so at most 16
+> +	 * addresses can be derived from one base.
+> +	 */
+> +	n_addresses = min_t(u16, TARGET_NUM_VDEVS(ar->ab), 16);
+> +	if (n_addresses <= 1)
+> +		return;
+> +
+> +	addresses = kzalloc_objs(*addresses, n_addresses);
+> +	if (!addresses)
+> +		return;
+> +
+> +	ether_addr_copy(addresses[0].addr, mac_addr);
+> +	for (i = 1; i < n_addresses; i++) {
+> +		ether_addr_copy(addresses[i].addr, mac_addr);
+> +		/* set Local Administered Address bit */
+> +		addresses[i].addr[0] |= 0x2;
+> +
+> +		addresses[i].addr[0] += i << 4;
+> +	}
+> +
+> +	ah->hw->wiphy->addresses = addresses;
+> +	ah->hw->wiphy->n_addresses = n_addresses;
+> +}
+> +
+>   static void ath12k_mac_hw_unregister(struct ath12k_hw *ah)
+>   {
+>   	struct ieee80211_hw *hw = ah->hw;
+> @@ -14704,6 +14748,7 @@ static void ath12k_mac_hw_unregister(struct ath12k_hw *ah)
+>   		ath12k_mac_cleanup_unregister(ar);
+>   
+>   	ath12k_mac_cleanup_iface_combinations(ah);
+> +	ath12k_mac_cleanup_mac_address_list(ah);
+>   
+>   	SET_IEEE80211_DEV(hw, NULL);
+>   }
+> @@ -14820,6 +14865,7 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+>   	wiphy->available_antennas_tx = antennas_tx;
+>   
+>   	SET_IEEE80211_PERM_ADDR(hw, mac_addr);
+> +	ath12k_mac_setup_mac_address_list(ah, mac_addr);
+>   	SET_IEEE80211_DEV(hw, ab->dev);
+>   
+>   	ret = ath12k_mac_setup_iface_combinations(ah);
+> @@ -15041,6 +15087,8 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+>   		ath12k_mac_cleanup_unregister(ar);
+>   	}
+>   
+> +	ath12k_mac_cleanup_mac_address_list(ah);
+> +
+>   	SET_IEEE80211_DEV(hw, NULL);
+>   
+>   	return ret;
 
 
