@@ -4,148 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0ED3C88E53
-	for <ath12k@archiver.kernel.org>; Fri, 11 Sep 2026 19:19:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF7C6C88E53
+	for <ath12k@archiver.kernel.org>; Fri, 11 Sep 2026 20:36:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+DpU9d9yKH3MESahifjxuxIqp5MAA0YI6mbsse4jUfs=; b=LxWKcapJWtu6Wy0IBrQcvApK4m
-	NDNd55zTub39UGJJRjjjWidOwI9QghB8g0NM36M4QehHYEHCqBlf8ap5GS+M9KhuIuhxugNYRcC3M
-	V/TMdijkriZbSXTFMypaBSo1fGu3eH9mV1YNfs8jVFLgwSrMcDsKYcbEeuxX2tKmbh0v+OSPwIdFN
-	9KEYFjKCcE/MzRc4jyDcAxb0mop87c7qSLXF40Niu/Q8F7KgOILZl3ETiFsybA78A5710gsG3IJlx
-	GsTgeiFFI7Wi//jeNGT5nILx1Co0kP6pCLPBUzYw/wfQ+BbY3EQVZorlO82HcWQDxjADPIMxZOXY3
-	j+jv1d5A==;
+	bh=B2f1tyPzUGJPWgoXHlJFI5ih3kMGH8+HrYXagtLin9c=; b=L4vgrm+a37yWRqeJTKtzZIhzHd
+	UXvSXX5B+gG77LozPgKMilWmMNeskuAyWLrABL5Q0ZXxerKqPLYcVhiO2EdpBfJuq7BMmhwfI9e5T
+	8OPT68O+xFo11s6H3UwVk0Jh4ytT2Nc8TGF4tEZqlcm9M6r8ho/x1IkgS/plyTgsHIH8tlBwOXs6B
+	8Oe2+1gaO+pzIrca3GPIYHhXYWCI8iLISKiS0afCdeR+Xk15Kyc80CKej00RRG2BaPTGk0Xkhk5ak
+	F3J76ETQHXD9KqRNJiqkBSy9C/paW0soFpraXW1Wa4fN8I1bb3+W8RJ1nRbuksn2YhLsp7kK+gRzu
+	FALSwMoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x56mW-0000000HWa7-2YUe;
-	Fri, 11 Sep 2026 19:19:28 +0000
+	id 1x57zU-000000006rF-1IX8;
+	Fri, 11 Sep 2026 20:36:56 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x56mU-0000000HWZd-2h07
+	id 1x57zP-000000006qB-0Ce1
 	for ath12k@lists.infradead.org;
-	Fri, 11 Sep 2026 19:19:27 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68BHWnpu1462181
-	for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 19:19:26 GMT
+	Fri, 11 Sep 2026 20:36:54 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68BHWBDS1738673
+	for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 20:36:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+DpU9d9yKH3MESahifjxuxIqp5MAA0YI6mbsse4jUfs=; b=Gux0B5UbIvbrfSbG
-	WCX/heFkRvUZQPCsQkJxJs6z9uWTzM8Aej7j1ybGt7NmcHA2OguMmVbD0NgqwuBq
-	0N3u0x8yfaqAjas7TWFuxjrA1X0LLYDmzok3TSORTsxkp/dEdOxYWm+9UWyqn13O
-	9dZsqi+l6sGyMIZSxbDYUzEOfvi+PyIVR3kpCKDPYBgzaX590uIFSb/7lIqMZDFv
-	Uj+/Zx4UcuVYyMESulXadJsHbEq+rIdZN2gdrE/E05MooV35KpIssBgB1vQ5bU7Y
-	Hw+iRLcSLrKuLoX+WtvwyZ3rgTu1ukdX2NeAjdLexrMz5/QLQZEsa8i4zur36xHf
-	r0sshA==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gmp0dgdyf-1
+	B2f1tyPzUGJPWgoXHlJFI5ih3kMGH8+HrYXagtLin9c=; b=MIl3+R9x4hdboPZU
+	GpFHWznV/UTHnFtP7HroGlPgBWhQ3Dk7vRpJnWL98rC7xyvAKdf+cKKHTpug7hT3
+	7espi+uVOvvtuLWpMRMLBA1T6DustWR9cpRmrIfamLI/BDL4SCxroMNbKa0kovrB
+	f2vJsSoLqynl1tZhuVZ8N14oN5XmWi0QBlkaSssmYOpQWsnKO5pwD7iZj0xAheNi
+	6CcP+XunN6g7xY+0B7AqF+EPkrLnT2fNk21UuwN4SCEbaWl22elUo9itSknsqcWn
+	6eP2rD+NgrYvfniqs0ASWVC8B4S1bEV+83T2tVkIMBes3/5E+EQZvMPmN2GqYQ67
+	kBUjHw==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gmp0m0nvr-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 19:19:25 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-38e8e864ef0so2293682a91.0
-        for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 12:19:25 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 20:36:50 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-cc18ced1a5aso2178934a12.1
+        for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 13:36:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1789154365; x=1789759165; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1789159010; x=1789763810; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=+DpU9d9yKH3MESahifjxuxIqp5MAA0YI6mbsse4jUfs=;
-        b=X8+qfLvpYiV+CCrCYib6A4HGihZ4aHvIKP+l3VDvuBsSEEGNSDEVmr1GwZgfYCFFtf
-         9PxXcjHDXycZ/13DjRza571I2sW5bAm5g/dDW6mAEZW6V9v0pgze7yBX9kUbQkz9ct4n
-         kYQe018EiFAZvxHaqXdD/0ogMjo1uV+bV0L/I8vV7PH2eiga7BAtULeZMGcSysJlDD55
-         9iXfxpttY54AG9v/bsyQGVtMDsrfKsHfHYnst3eKSesgqkZ2aGEHgnGeSYfbUaRQvru1
-         K3Py2mw4LmqlQ/PzDe8RQV/aa0L8LnmQDAsSn7Z1y5opYLEwUoJ7GB07LXb4czuMhjhq
-         MsHQ==
+        bh=B2f1tyPzUGJPWgoXHlJFI5ih3kMGH8+HrYXagtLin9c=;
+        b=Brfbgf7i5TD+h+kAH95/2wD8sdCdbWlQ+equKCHnYmDX6GxoU3aDZ9cf20j4C1+xsY
+         Xnri1wH7qt2hJvoC00QktIkCntoy0ZWihmk774IFohgSBQsxNiXwepCF/51cx7ae4K+p
+         C+vnSI2Vh2MlOM7zCSKEbMh9CEfsPYf6x4Lo1huUywntNqglxHZUU9RFTw+Ja7fsuKJl
+         FcrhnfeIv36mHwXgaXY0Plibq719zRRTQziKw1snL6ghAA6YyglOnNKJ/Hh5O5r4Ct/p
+         UDXnMtf8FhWaA+H2i4joEp7wSAdwPMWlzQUgOWd8mhUwCLgAP4w/OoOgjf0ssbM0f06g
+         3g0w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1789154365; x=1789759165;
+        d=1e100.net; s=20251104; t=1789159010; x=1789763810;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=+DpU9d9yKH3MESahifjxuxIqp5MAA0YI6mbsse4jUfs=;
-        b=fiKWwLuwZyzNnM22jWe3oAVA6YJ1JFM2c43wi+0v6f4srxMI34pCNbLj7nuqbQydTR
-         K52iAp4jMVELj/yJjG5zfsbIcIII5z01Izm3NbFMpI4xr1LhVL8nN78ojdxvAlWAOeo9
-         3H6bNHIaheDYmxiODMShX2Qs00ToOdP/fVPlmHsDFRzRROO5fkeu/nfY5z6wwMGhnNAa
-         wk76zPxy+czHB5h7cRlmZ4lOKSzbnQ1fSd8RRIgUUjOP1th3RkBNufrLpKb9EcMD2Eoa
-         QzZqB/+UgyHQx8JhaOr0RPNAF0nwoe9u9Ih6JtN0OwEb7mcS8tYX/H8qHQhQLr+/Zxo/
-         nbaQ==
-X-Forwarded-Encrypted: i=1; AKwUvBzfWq3q/8calGgLjEgcJbhLl6STtMRaDJdpbkryTsMMK7kEbpSvOcfRqXVMBKmK65hyD2jz4Iw=@lists.infradead.org
-X-Gm-Message-State: AFuF++kuNXrh0LUAt4f6/NOCqsBjqd8vW5fFuSp8ML39KcD6cZ6p6s3Z
-	shBn+jaYDAOGwS2w0bEqYs5BB+ULl7NVnhALGXhHRmPm8P+DUbEMmLDRaTIQOL+7Mzoi5oSHY/f
-	O+6uQhW3VHMQkHvc5KTU7GX3wdBEyxceidw/dzFOPb9MWGIGg7HBuAMSZQqS52H/f
-X-Gm-Gg: AYBFou34xGuYJuA/FvQRiVuuhk3dbXQKyJmheEtJ3/74NOh0tYopepIGD6aMYBh23Ca
-	zS1/Un2H9kIptLPC93bqAhJ6p7An0ck6nECL1MOJe359sJ6DPgJlxADr8udTfD/EfZ2y1Xky7nl
-	MxcgIZeyZ3soyZ3fa2F45bwX6gJBLKFijKNXECplnuZVTAsrUlZxNOg5ke48yeQ0/apn4GkKUCr
-	BMhTISlOlkOEzlTZ7DGev3Tg3J5wVBwg5yUB345NwDXLdoYUoYmCOMVoIoowF1hVt+aGfmk8JJL
-	Wf4VQ5oNjgzomsWlUJOgrOqpNh7jxBftpfrtawaeDVRQWXIPlvVUeDU1iwqU/PzYYz7DqAzT4Li
-	GUPil2c40j8YBgw+TqgXwyu6Khds3a21Jryz5gjptF1eOu9Xx+poyt9EkUCiu
-X-Received: by 2002:a17:90a:d64e:b0:395:4de4:92be with SMTP id 98e67ed59e1d1-39d9c1db130mr11183559a91.13.1789154364737;
-        Fri, 11 Sep 2026 12:19:24 -0700 (PDT)
-X-Received: by 2002:a17:90a:d64e:b0:395:4de4:92be with SMTP id 98e67ed59e1d1-39d9c1db130mr11183505a91.13.1789154364261;
-        Fri, 11 Sep 2026 12:19:24 -0700 (PDT)
+        bh=B2f1tyPzUGJPWgoXHlJFI5ih3kMGH8+HrYXagtLin9c=;
+        b=FYP78rgCzll8FxbmqWtwutJ7MPfMWOHiRakegFqtMUlMA6yQmu8LcFcrd2foHTpi9c
+         i8d7+qVx4SVES8CQv1cBMEcjb7lzrTE6qtEEv01eDNDAide9V7d0EPxryIUNygZUjktd
+         E8LmhVGUVfuBY63N+13qUhqSA/H8Sxa6cCrXdEyl0RwmNSsRv/jlm8eIw3Y08GTolWdT
+         l6JUTJqwr46OKYGT2/O0rs46r0/Y5H2xejrCH8meNyvPN4DGZgPwHApwWaWbkAtaqAxz
+         gDqG+hb/VLrumKOiZZSHmSnEfGw2ZVVJIc76xIsG/UGJGfwDc60x3ESUzdOeL6xlcn9C
+         5IaQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzvVQ4xyu7Fy9UHH34Aq9nKfgAhPgdtOREENj2RExE/f4QO7O+PDvPTc8tCq3EdESkmrGFtkw0=@lists.infradead.org
+X-Gm-Message-State: AFuF++npTc0EEW9TcIp6os6hIkAZb8od33kgt4OtR68s+EeQcgQiJfeZ
+	UPo34NsUlbIOBca0P6MogKB5PQhzS9ZLtz+yQxSWqV7ZPIrg7CGKlVSKunydtUtZIqYJFxxukPI
+	YbGwDvmi1/upNyRjV2JB3eBFr68gob1aW1/wwqI8VNf5w+HBBwo3EjzpGWqRZZ8U4
+X-Gm-Gg: AYBFou0uvci0+IzXYU6vByK8REzCCjLszupbAmVwcRgYN83LmlzJf/R5ay5gaoH7d0M
+	kkVuDzylLn8p+r8io+onbAjdMVOryB2bJqzkNJ363nFF276GmLGOfT70w63VdfIFybTMG3FB0hS
+	BNDLxq8no8+NH9Zlv+gSC2Ve7rmQ5tqmQYa0vDzRgu35Jrj/0AMIQ/Hj45JgX84y/xS0N+5wESm
+	N2iV41DVPKtq7t2uHz9dW5D8eNv7wVvgICuAWPdQZeLunTsPIVjj+1MNQbhe1t8mrTdGgGqBOzr
+	M0i30Bq1qhQh2HR+gPastIvKkYqrAeFVcaat2kLXGTYVLsgBTtx8zecLjj3a0Qby8XL30sHzakb
+	aP6q14c7E5480Iv+fulWNXlpD/cx+2FjdNpjs6ZVHuPb1i8L18l+vrh00nBkR
+X-Received: by 2002:a05:6a20:9147:b0:3d3:ae50:97cd with SMTP id adf61e73a8af0-3daed880077mr9742068637.26.1789159009580;
+        Fri, 11 Sep 2026 13:36:49 -0700 (PDT)
+X-Received: by 2002:a05:6a20:9147:b0:3d3:ae50:97cd with SMTP id adf61e73a8af0-3daed880077mr9742025637.26.1789159008965;
+        Fri, 11 Sep 2026 13:36:48 -0700 (PDT)
 Received: from [10.227.105.111] (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-14365a59b18sm8253073c88.2.2026.09.11.12.19.23
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-33ba4e9b359sm8535455eec.14.2026.09.11.13.36.47
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 11 Sep 2026 12:19:23 -0700 (PDT)
-Message-ID: <ee32feeb-e626-43ba-926d-5786aaf1d960@oss.qualcomm.com>
-Date: Fri, 11 Sep 2026 12:19:22 -0700
+        Fri, 11 Sep 2026 13:36:48 -0700 (PDT)
+Message-ID: <dded65dd-56df-4637-b3f5-c244651435a6@oss.qualcomm.com>
+Date: Fri, 11 Sep 2026 13:36:47 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 00/12] ath1{1,2}k: support multiple PCI devices in one
- system
-To: Juha-Matti Tilli <juha-matti.tilli@iki.fi>, ath11k@lists.infradead.org,
-        ath12k@lists.infradead.org, Kalle Valo <kvalo@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        "David S . Miller" <davem@davemloft.net>,
-        Eric Dumazet
- <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
-        Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>,
-        Mihai Moldovan <ionic@ionic.de>, linux-wireless@vger.kernel.org,
-        linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-References: <20260908093145.2492666-1-juha-matti.tilli@iki.fi>
- <2cf63e00-95aa-41ba-ae8e-8abbfbc486e7@app.fastmail.com>
+Subject: Re: [PATCH v3 ath-current] wifi: ath12k: convert scan timeout to
+ wiphy delayed work
+To: Runyu Xiao <runyu.xiao@seu.edu.cn>, Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org,
+        Johannes Berg <johannes@sipsolutions.net>,
+        Jianhao Xu <jianhao.xu@seu.edu.cn>, stable@vger.kernel.org
+References: <20260717025602.262916-1-runyu.xiao@seu.edu.cn>
+ <49600545-3e13-452c-8940-c3e775ac3856@oss.qualcomm.com>
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <2cf63e00-95aa-41ba-ae8e-8abbfbc486e7@app.fastmail.com>
+In-Reply-To: <49600545-3e13-452c-8940-c3e775ac3856@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=U7EHnuru c=1 sm=1 tr=0 ts=6aa4543d cx=c_pps
- a=0uOsjrqzRL749jD1oC5vDA==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTExMDI5MSBTYWx0ZWRfX6NEqlEP8gMWs
+ bGsa26+2NtC/YXSnZikitVhlmfmGiWSrDgzhQM7FXL5CMW3aau5W/P7HJZw5BoQiwzSUFalh78C
+ o6y7WPZteaPgXgzAR1R5Wxpl9BbV1Vo=
+X-Authority-Analysis: v=2.4 cv=W7etxhWk c=1 sm=1 tr=0 ts=6aa46662 cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
  a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
- a=VwQbUJbxAAAA:8 a=b6wZdvJBkCi_B7orZsMA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=mQ_c8vxmzFEMiUWkPHU9:22
-X-Proofpoint-ORIG-GUID: X-Lfz-_B8zAc_9VMpRzR8FPt2t2vBjCs
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTExMDI3MSBTYWx0ZWRfX22rmv5neddxA
- q9n18gpGmdDp4h2XKix92Qu7hVoQjPISrhSt97TlVGGgXr+j8HxaGzoa31kwbiFM1Pu/dTRjABG
- Z2kjj3SbOZ8CemnesjdLR6ht5gvUeUA=
-X-Proofpoint-GUID: X-Lfz-_B8zAc_9VMpRzR8FPt2t2vBjCs
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTExMDI3MSBTYWx0ZWRfX7JiDesO690y9
- INMD7BEwbWvJ4VVfp5JwPdjFF8NwoBA36M2bjuUN611fyIcTPGIEWvjCjN/ynXaOSRzkUHj6fIt
- cu1VsZXfHEYt8wWPKaK7yzfuCvbxWboytGy4z2LiXNzpVsv81pAHkEx/rQVcVP/0MB0tC3yisDL
- ZmZOLQ3yO+x6VV46YxtuYN36vGfdDz+Okp1JDuPRClFry+ldtMUvfxeSwzgfBDx2N19LsGFdPj4
- Pq5wQ7IVkm1VH/j14LD3reCRWQhXmYGfm82YI4IlnkSp0qHOxJ2LmnJKTj96MThZKc6OSibM5G3
- ty1ab42SeOCyxfzbV1nipn0iP9OYZtUS2cbCE9EgDj90Imi+jkPwpMTDAtLp11+UcBUZscEkhAr
- z/2oeup1Ouarg4aC+Ll/SdcWA7cvGKyJuivwlEj6O8jgeHzCcIsplo39o/6izhLYe0YvtTbu/rB
- JY+jjgLtJ8Npay4hI+Q==
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
+ a=Ucu4zBzE-dK3vCHSYFkA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=3WC7DwWrALyhR5TkjVHa:22
+X-Proofpoint-GUID: quB3jyS6oChAGFeOJeMV8w9S0sldpJ88
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTExMDI5MSBTYWx0ZWRfXyTYFAsnEVbml
+ FwofnGmQMmCsstq6obuhBr/V3Gg8ECrIcn9Mqus5o3H/JvNFZBnutw7v2TnYiNingHl2zlBxLMY
+ 44ECx8tZGdEJZnemEMaKi/GIXuSpewkBPBm/kAvhVAHpqhlLkvvexEy4Bxp6S94nk0Ih+l8TeMi
+ Oj94nTYgilHszUWuOhCmybp0SGGyXZlDxrNIECKaICCX1cBoHfMQZDMdZCnqDmy0MORVRXtsgj+
+ b02CgOqsntpIY0XSX6XkdNWUrA0uuzC1ez84/vzop5LgHC4QuL6DksrGt3rLWFgrBLeEn6Qf7td
+ MS/1wjItnCPJgvMCbHuaWBXLv8KnqBx8chLNtTK81n2F6Mqg0kGRvtRJUyqO423RrGEXMsZS2jO
+ OxhZR3oTWX2qnkuwRVIGs+KLwdWNuFYRwv4s6QPxH8sKy9XDojfKBMlIU0KqGUyQzX1ptEDP3rD
+ hZYmL19iOmNkNCXiB1w==
+X-Proofpoint-ORIG-GUID: quB3jyS6oChAGFeOJeMV8w9S0sldpJ88
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-09-11_06,2026-09-11_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 malwarescore=0 priorityscore=1501 phishscore=0
- lowpriorityscore=0 spamscore=0 impostorscore=0 adultscore=0 bulkscore=0
+ bulkscore=0 spamscore=0 adultscore=0 malwarescore=0 impostorscore=0
+ priorityscore=1501 clxscore=1015 lowpriorityscore=0 phishscore=0
  suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2609040000
- definitions=main-2609110271
+ definitions=main-2609110291
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260911_121926_681899_24E0968A 
-X-CRM114-Status: GOOD (  14.93  )
+X-CRM114-CacheID: sfid-20260911_133651_187191_05DA072D 
+X-CRM114-Status: GOOD (  30.40  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -160,77 +152,93 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/8/2026 2:44 AM, Juha-Matti Tilli wrote:
-> On Tue, Sep 8, 2026, at 12:31, Juha-Matti Tilli wrote:
->> As you may well know, multiple identical ath11k and ath12k devices are
->> not supported in a single Linux host because they use conflicting QRTR
->> node IDs. Fortunately, Denis Kenzior created a patchset to support
->> multiple QRTR endpoints with identical node IDs, and Mihai Moldovan
->> refined it, after which I took over the patchset and refined it more.
+On 7/17/2026 7:40 AM, Jeff Johnson wrote:
+> On 7/16/2026 7:56 PM, Runyu Xiao wrote:
+>> ath12k_mac_op_stop() is called with the wiphy mutex held and calls
+>> ath12k_mac_stop(), which cancels ar->scan.timeout. The timeout worker
 > 
-> Hello,
+> you are missing a very important detail, namely it is a synchronous cancel
 > 
-> I am incredibly sorry by messing up the threading. git-send-email said:
+>> also takes the wiphy mutex before aborting the scan, so synchronously
+>> cancelling it from the stop path can deadlock if the worker has started
+>> and is waiting for the same mutex.
+>>
+>> Do not drop the wiphy mutex inside the mac80211 stop callback. Convert
 > 
-> 4.7.1 Error: too many recipients from 83.150.90.33
+> What does this mean? Where are we currently dropping the wiphy mutex?
 > 
-> ...and failed at the patch id 8/12.
+> You should describe the patch in terms of the current code, not in terms of
+> any prior versions of your patch.
 > 
-> So I thought retrying from where it failed would be safe. But that
-> broke the threading.
+>> ar->scan.timeout to wiphy_delayed_work instead, so the timeout callback
+>> runs in wiphy work context with the wiphy mutex held. This matches the
+>> locking model used by the scan vdev cleanup work and lets stop/cancel
+>> paths use wiphy_delayed_work_cancel() while they already hold the wiphy
+>> mutex.
+>>
+>> The old scan-finish path could cancel the delayed work directly from WMI
 > 
-> The next time, I'll increase the waiting time between subsequent mails.
+> what is "old"? There is the current code and the new proposed code.
 > 
-> Links to mails missed from the thread:
+>> event context. With wiphy_delayed_work that cancellation must happen from
+>> wiphy context, so keep it in scan.vdev_clean_wk. Mark scans whose cleanup
+>> work has been queued so a timeout work item that was already queued before
+>> cleanup runs does not abort a scan that is already finishing.
 > 
-> https://lore.kernel.org/all/20260908093437.2493698-1-juha-matti.tilli@iki.fi/
-> https://lore.kernel.org/all/20260908093437.2493698-2-juha-matti.tilli@iki.fi/
-> https://lore.kernel.org/all/20260908093437.2493698-3-juha-matti.tilli@iki.fi/
-> https://lore.kernel.org/all/20260908093437.2493698-4-juha-matti.tilli@iki.fi/
-> https://lore.kernel.org/all/20260908093437.2493698-5-juha-matti.tilli@iki.fi/
+> My AI review agent thinks this logic is unnecessary, but I haven't looked at
+> this in detail.
 > 
-> BR, Juha-Matti
+> "summary": "finish_queued flag is a redundant substitute for
+> wiphy_delayed_work_cancel: __ath12k_mac_scan_finish is always called under
+> wiphy lock, making direct cancellation safe",
+> 
+> "failure_scenario": "Every caller of __ath12k_mac_scan_finish holds the wiphy
+> lock (directly or via wiphy_work dispatch), so wiphy_delayed_work_cancel could
+> be called there directly — as the old cancel_delayed_work was. The new
+> finish_queued flag instead defers suppression to the timeout work itself.
+> Since ath12k_scan_abort already has an explicit ATH12K_SCAN_IDLE bail-out path
+> (line 5232) with a comment covering the timeout-vs-completion race, the
+> finish_queued guard in ath12k_scan_timeout_work provides no additional safety.
+> The cost is 8 reset sites (lines 5337, 5624, 5681, 5775, 10971, 13969, 14012,
+> 15061) where a future error path that forgets the reset leaves
+> finish_queued=true, silently suppressing the next legitimate timeout abort and
+> leaving the driver wedged in SCAN_RUNNING with no recovery."
 
-Unfortunately this prevents many automations from processing your series,
-including mine which utilizes 'b4'
+You never responded to my response. However, since this seems to be a
+legitimate issue I did a little more research and now see why the
+finish_queued flag is needed. A better commit text should explain that since
+the current commit text is confusing
 
-* b4 am -3 -S 20260908093145.2492666-1-juha-matti.tilli@iki.fi
-Grabbing thread from
-lore.kernel.org/all/20260908093145.2492666-1-juha-matti.tilli@iki.fi/t.mbox.gz
-Analyzing 10 messages in the thread
-Looking for additional code-review trailers on lore.kernel.org
-Analyzing 44 code-review messages
-Checking attestation on all messages, may take a moment...
----
-  ✓ [PATCH v3 1/12] net: qrtr: support getting new endpoint ids externally
-    ✓ Signed: DKIM/iki.fi
-  ✓ [PATCH v3 2/12] bus: mhi: allow mhi to know about its qrtr endpoint id and
-free it
-    ✓ Signed: DKIM/iki.fi
-  ✓ [PATCH v3 3/12] net: qrtr: mhi: register new qrtr endpoint id for mhi
-    ✓ Signed: DKIM/iki.fi
-  ✓ [PATCH v3 4/12] soc: qcom: qmi_helpers: add QRTR endpoint ID to qmi_handle
-    ✓ Signed: DKIM/iki.fi
-  ✓ [PATCH v3 5/12] soc: qcom: qmi_helpers: optionally bind to QRTR endpoint
-ID in qmi_sock_create
-    ✓ Signed: DKIM/iki.fi
-  ✓ [PATCH v3 6/12] wifi: ath11k: add QRTR endpoint ID hif feature
-    ✓ Signed: DKIM/iki.fi
-  ✓ [PATCH v3 7/12] wifi: ath11k: stub QRTR endpoint ID fetching
-    ✓ Signed: DKIM/iki.fi
-  ERROR: missing [8/12]!
-  ERROR: missing [9/12]!
-  ERROR: missing [10/12]!
-  ERROR: missing [11/12]!
-  ERROR: missing [12/12]!
----
-Total patches: 7
-WARNING: cannot prepare 3-way (series incomplete)
----
-WARNING: Thread incomplete!
+I propose something like the following. Yes it is AI-assisted, but IMO it does
+a good job of describing both the existing problem and the reason the new flag
+is needed in the modified version.
 
-So I cannot evaluate your series.
+
+ath12k_mac_op_stop() is called with the wiphy mutex held and calls
+ath12k_mac_stop(), which synchronously cancels ar->scan.timeout via
+cancel_delayed_work_sync(). The timeout worker takes the wiphy mutex
+before aborting the scan, so if the worker has already started and is
+waiting for that mutex, the stop path blocks indefinitely: stop holds
+the wiphy mutex waiting for the worker to finish, and the worker waits
+for the wiphy mutex to proceed.
+
+In order to avoid this deadlock, convert ar->scan.timeout from a
+plain delayed_work to a wiphy_delayed_work. The timeout callback then
+runs in wiphy work context with the wiphy mutex already held,
+matching the locking model used by ar->scan.vdev_clean_wk. Stop and
+cancel paths can use wiphy_delayed_work_cancel() while holding the
+mutex, which removes the _sync wait that caused the deadlock.
+
+There is, however, one additional issue with the scan complete path.
+wiphy_delayed_work_cancel() requires the wiphy mutex, but
+__ath12k_mac_scan_finish() is called from WMI event handlers under
+data_lock only, without the wiphy mutex. The existing code can call
+cancel_delayed_work() there directly, but that is no longer valid when
+using wiphy_delayed_work. Instead, set a finish_queued flag and queue
+vdev_clean_wk, which runs under the wiphy mutex and performs the
+cancel. Add a check in the timeout worker so that if it was already
+queued before finish_queued was set, it exits without aborting a scan
+that is already finishing.
 
 /jeff
-
 
