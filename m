@@ -4,93 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C81AC88E4D
-	for <ath12k@archiver.kernel.org>; Fri, 11 Sep 2026 19:15:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0ED3C88E53
+	for <ath12k@archiver.kernel.org>; Fri, 11 Sep 2026 19:19:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XA4Kl0KLnzcJOt9vayKyZzMGbRlqf8uEKgvEQ7zEOY4=; b=ydqWs4jikbqLtQDLpJZvaiLuDL
-	iBSUs3EzOSSSWWUBnLrs0HBVDh39ioDvOvfSpzODZsFI1OWqDzLAv2FcKu5eT/juabORUJ4a2bVd6
-	hBVJFz/l4JfSdJVl0fpaI+3vUvFV29xeDvXL9DIVDcEUNN1DvUeCRscO8CcZZLpjg3MemWJlNM2tD
-	8yu3ckY7WdGFetyDH9MyetJQ/utimesdkkvwHrX+gfaHonV+R08zCNWLn37h79OHjC3WNH+DLnqSl
-	TVt/JxOA8wfRyeN/iwtOYCJ2DAKylWzAHpE9pMU/MZIOOMOK1VWKF3ORpftqYdB3TsntBPeUqT21F
-	dvKFeOMA==;
+	bh=+DpU9d9yKH3MESahifjxuxIqp5MAA0YI6mbsse4jUfs=; b=LxWKcapJWtu6Wy0IBrQcvApK4m
+	NDNd55zTub39UGJJRjjjWidOwI9QghB8g0NM36M4QehHYEHCqBlf8ap5GS+M9KhuIuhxugNYRcC3M
+	V/TMdijkriZbSXTFMypaBSo1fGu3eH9mV1YNfs8jVFLgwSrMcDsKYcbEeuxX2tKmbh0v+OSPwIdFN
+	9KEYFjKCcE/MzRc4jyDcAxb0mop87c7qSLXF40Niu/Q8F7KgOILZl3ETiFsybA78A5710gsG3IJlx
+	GsTgeiFFI7Wi//jeNGT5nILx1Co0kP6pCLPBUzYw/wfQ+BbY3EQVZorlO82HcWQDxjADPIMxZOXY3
+	j+jv1d5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x56iO-0000000HW3R-2uqQ;
-	Fri, 11 Sep 2026 19:15:12 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1x56mW-0000000HWa7-2YUe;
+	Fri, 11 Sep 2026 19:19:28 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x56iJ-0000000HW2N-2sYR
+	id 1x56mU-0000000HWZd-2h07
 	for ath12k@lists.infradead.org;
-	Fri, 11 Sep 2026 19:15:11 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68BHWVZ8488059
-	for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 19:15:06 GMT
+	Fri, 11 Sep 2026 19:19:27 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68BHWnpu1462181
+	for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 19:19:26 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	XA4Kl0KLnzcJOt9vayKyZzMGbRlqf8uEKgvEQ7zEOY4=; b=Mq2EaacaVAgjVX0e
-	3N8B2iHucKabcLOOEc02aUGBnNV1A7FsZjlojV+zwiV62S0nJB50RHkgs4H7Mouf
-	jxR1Kdr0rE8AaO3AmU0CgCnGFzgNpJkUL/ugujL2vccMZ00PuHYh3c7IqldvdpAP
-	ynDMWe3JmtbC/oxvCR+MN2m7uHqKznVzdB/RsXqbBo6CJKmBPUd1noI5I51K3TmK
-	ShkkAr06YPlO0GE3JaY4A58G2ThIv6fSyyQDv7e5v2d5Uip9sUFZdM1JoOWPo146
-	UPVT5a6IA2VpVthw8tSq+HpaT0FP6OLuvdgRBUXbxIoBEAdSEq5sOxVqMNr9JvgX
-	P+IDRQ==
-Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gmm1e8y6y-1
+	+DpU9d9yKH3MESahifjxuxIqp5MAA0YI6mbsse4jUfs=; b=Gux0B5UbIvbrfSbG
+	WCX/heFkRvUZQPCsQkJxJs6z9uWTzM8Aej7j1ybGt7NmcHA2OguMmVbD0NgqwuBq
+	0N3u0x8yfaqAjas7TWFuxjrA1X0LLYDmzok3TSORTsxkp/dEdOxYWm+9UWyqn13O
+	9dZsqi+l6sGyMIZSxbDYUzEOfvi+PyIVR3kpCKDPYBgzaX590uIFSb/7lIqMZDFv
+	Uj+/Zx4UcuVYyMESulXadJsHbEq+rIdZN2gdrE/E05MooV35KpIssBgB1vQ5bU7Y
+	Hw+iRLcSLrKuLoX+WtvwyZ3rgTu1ukdX2NeAjdLexrMz5/QLQZEsa8i4zur36xHf
+	r0sshA==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gmp0dgdyf-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 19:15:06 +0000 (GMT)
-Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-cc1b6f65dacso1216523a12.1
-        for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 12:15:06 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 19:19:25 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-38e8e864ef0so2293682a91.0
+        for <ath12k@lists.infradead.org>; Fri, 11 Sep 2026 12:19:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1789154105; x=1789758905; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1789154365; x=1789759165; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=XA4Kl0KLnzcJOt9vayKyZzMGbRlqf8uEKgvEQ7zEOY4=;
-        b=bP8wv0eyI7sHQA7WESaK1ccDqbEzFgbC6p55dkgJNK6EyUMO1/G/UBKQEudBFitRus
-         LS3kCnNPUqHbj/GlvJnTicAxHmvq+pJjVE0B15r7dByn1xFihg0jIWOuOxve5XPpkYtE
-         ldmA439x3nvW5fYfENLFPixwqYPVo6YB74LsIos0isv8/zCsKAQofCrI1X0+WVJtsDON
-         1kk5vYz/oFprijVBCidRZU4bQQWGa95d47oKsRSBIhMUDnJaI9SD09rEIfoctlWh+4bS
-         tKCovXwZ3QnT7HrVWofj4yyg2ZV+k4/2cLF9eH1CP4oecONEcexT1gbnZur0LvhF0LhD
-         +qSg==
+        bh=+DpU9d9yKH3MESahifjxuxIqp5MAA0YI6mbsse4jUfs=;
+        b=X8+qfLvpYiV+CCrCYib6A4HGihZ4aHvIKP+l3VDvuBsSEEGNSDEVmr1GwZgfYCFFtf
+         9PxXcjHDXycZ/13DjRza571I2sW5bAm5g/dDW6mAEZW6V9v0pgze7yBX9kUbQkz9ct4n
+         kYQe018EiFAZvxHaqXdD/0ogMjo1uV+bV0L/I8vV7PH2eiga7BAtULeZMGcSysJlDD55
+         9iXfxpttY54AG9v/bsyQGVtMDsrfKsHfHYnst3eKSesgqkZ2aGEHgnGeSYfbUaRQvru1
+         K3Py2mw4LmqlQ/PzDe8RQV/aa0L8LnmQDAsSn7Z1y5opYLEwUoJ7GB07LXb4czuMhjhq
+         MsHQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1789154105; x=1789758905;
+        d=1e100.net; s=20251104; t=1789154365; x=1789759165;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=XA4Kl0KLnzcJOt9vayKyZzMGbRlqf8uEKgvEQ7zEOY4=;
-        b=GCGZVofYAO4yUA7u3p3L9wRjeNLEjs5NJJQtx6VZ7uDTr1jATAU7SbjpjtaAKLmnsR
-         Jq6VwbBnhyYvVT4P4yD78sVk1O0Y/sSvzSwMm+1AsfN10m9z25j42LrCfD3rv9P5o2yS
-         pnYXMaTjCRVhMRdqObNU8leBUB55rK6/Vy5AxwRzMmxz0Gt83o7iGQBXMlYidibbzYxz
-         /cgyD2DSQHFWXgDwPxhmnc3WnL1AWsirx3jc5dh6Fu2EpfedVo0aY7I2qDwwbXdANZcm
-         3CykiiS1G+4WR5LVyJnAuGEHuJwhLl8iw2AxL7Pibby3nScnFvXPYTLqL3/B1rxvRGt5
-         SC5A==
-X-Forwarded-Encrypted: i=1; AKwUvBx9VSBBQWk5W2+VQUr8gf7nCdsbCoZuMuonUTN57azZpShFkhEDuC4TuObjn8rbJ1zVRiBjtOE=@lists.infradead.org
-X-Gm-Message-State: AFuF++kKXndRk1+TANk/6+UHkQKf2/NrZTZ0X2FcKjUnkE04tAv13Tgo
-	EGYt/Vru/pgY/4UzgjJxi3StwSXSte/PY9ZkFmGA9WvVr6rdjwr6RCI7TanvCCQgSGq3I90H5CA
-	b0bFHOLlbeoZdxVmmNevebVMpdxuLfvczhRSB+V3P0BI+aRUW3wsbcMAEkqAQ9BYijqpL37Y0
-X-Gm-Gg: AYBFou3hnWXR3ghVdoC1EhCrKhk4psGNPTvhCyjpGfH/GVp2R4iWoyYLAd1CGZKND6b
-	isInFsO+C6gszwe6KOR4ERj5/ohdmL78aOzryhkOFBpVVl8zt5VKgXvi+eecBxbB5TQgsgbM4f2
-	aW1i3u48F6nmzTPWhTa5WU3mY7KyxUKsSyAqFJu11K8vFg9/lm9eIJRTq2I3WUFXteGOnb2w4jr
-	2D7jY6nl40zlIHF4f2pSIdJx4lIJRvLbxOaJ767A5QR2TDprxtEZhUfNuO2HZp2/50eN9JjhAMr
-	7A9C0HDkd1PrdxoM6rPf2nGpBW3Q1Znz+C0iEO9r6sd/trzULVN/8qbmReQBtv1M13ryAR6QYDx
-	sY8oPzhP7NzbiqzelcH/AB8mSUzOyx1T+fxfAT+vxdhKxiLHlHG9fgqe3u5ch
-X-Received: by 2002:a05:6a21:6b10:b0:3d3:ad3c:49a8 with SMTP id adf61e73a8af0-3daed3b9745mr10795679637.22.1789154105071;
-        Fri, 11 Sep 2026 12:15:05 -0700 (PDT)
-X-Received: by 2002:a05:6a21:6b10:b0:3d3:ad3c:49a8 with SMTP id adf61e73a8af0-3daed3b9745mr10795608637.22.1789154104461;
-        Fri, 11 Sep 2026 12:15:04 -0700 (PDT)
+        bh=+DpU9d9yKH3MESahifjxuxIqp5MAA0YI6mbsse4jUfs=;
+        b=fiKWwLuwZyzNnM22jWe3oAVA6YJ1JFM2c43wi+0v6f4srxMI34pCNbLj7nuqbQydTR
+         K52iAp4jMVELj/yJjG5zfsbIcIII5z01Izm3NbFMpI4xr1LhVL8nN78ojdxvAlWAOeo9
+         3H6bNHIaheDYmxiODMShX2Qs00ToOdP/fVPlmHsDFRzRROO5fkeu/nfY5z6wwMGhnNAa
+         wk76zPxy+czHB5h7cRlmZ4lOKSzbnQ1fSd8RRIgUUjOP1th3RkBNufrLpKb9EcMD2Eoa
+         QzZqB/+UgyHQx8JhaOr0RPNAF0nwoe9u9Ih6JtN0OwEb7mcS8tYX/H8qHQhQLr+/Zxo/
+         nbaQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzfWq3q/8calGgLjEgcJbhLl6STtMRaDJdpbkryTsMMK7kEbpSvOcfRqXVMBKmK65hyD2jz4Iw=@lists.infradead.org
+X-Gm-Message-State: AFuF++kuNXrh0LUAt4f6/NOCqsBjqd8vW5fFuSp8ML39KcD6cZ6p6s3Z
+	shBn+jaYDAOGwS2w0bEqYs5BB+ULl7NVnhALGXhHRmPm8P+DUbEMmLDRaTIQOL+7Mzoi5oSHY/f
+	O+6uQhW3VHMQkHvc5KTU7GX3wdBEyxceidw/dzFOPb9MWGIGg7HBuAMSZQqS52H/f
+X-Gm-Gg: AYBFou34xGuYJuA/FvQRiVuuhk3dbXQKyJmheEtJ3/74NOh0tYopepIGD6aMYBh23Ca
+	zS1/Un2H9kIptLPC93bqAhJ6p7An0ck6nECL1MOJe359sJ6DPgJlxADr8udTfD/EfZ2y1Xky7nl
+	MxcgIZeyZ3soyZ3fa2F45bwX6gJBLKFijKNXECplnuZVTAsrUlZxNOg5ke48yeQ0/apn4GkKUCr
+	BMhTISlOlkOEzlTZ7DGev3Tg3J5wVBwg5yUB345NwDXLdoYUoYmCOMVoIoowF1hVt+aGfmk8JJL
+	Wf4VQ5oNjgzomsWlUJOgrOqpNh7jxBftpfrtawaeDVRQWXIPlvVUeDU1iwqU/PzYYz7DqAzT4Li
+	GUPil2c40j8YBgw+TqgXwyu6Khds3a21Jryz5gjptF1eOu9Xx+poyt9EkUCiu
+X-Received: by 2002:a17:90a:d64e:b0:395:4de4:92be with SMTP id 98e67ed59e1d1-39d9c1db130mr11183559a91.13.1789154364737;
+        Fri, 11 Sep 2026 12:19:24 -0700 (PDT)
+X-Received: by 2002:a17:90a:d64e:b0:395:4de4:92be with SMTP id 98e67ed59e1d1-39d9c1db130mr11183505a91.13.1789154364261;
+        Fri, 11 Sep 2026 12:19:24 -0700 (PDT)
 Received: from [10.227.105.111] (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-143659a9a06sm8271959c88.0.2026.09.11.12.15.03
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-14365a59b18sm8253073c88.2.2026.09.11.12.19.23
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 11 Sep 2026 12:15:03 -0700 (PDT)
-Message-ID: <d91ce2be-6489-4399-b035-23f6aec0371f@oss.qualcomm.com>
-Date: Fri, 11 Sep 2026 12:15:00 -0700
+        Fri, 11 Sep 2026 12:19:23 -0700 (PDT)
+Message-ID: <ee32feeb-e626-43ba-926d-5786aaf1d960@oss.qualcomm.com>
+Date: Fri, 11 Sep 2026 12:19:22 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v3 00/12] ath1{1,2}k: support multiple PCI devices in one
@@ -98,7 +98,7 @@ Subject: Re: [PATCH v3 00/12] ath1{1,2}k: support multiple PCI devices in one
 To: Juha-Matti Tilli <juha-matti.tilli@iki.fi>, ath11k@lists.infradead.org,
         ath12k@lists.infradead.org, Kalle Valo <kvalo@kernel.org>,
         Jeff Johnson <jjohnson@kernel.org>,
-        Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Cc: Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>,
         "David S . Miller" <davem@davemloft.net>,
@@ -109,43 +109,43 @@ Cc: Bjorn Andersson <andersson@kernel.org>,
         linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org,
         linux-kernel@vger.kernel.org
 References: <20260908093145.2492666-1-juha-matti.tilli@iki.fi>
+ <2cf63e00-95aa-41ba-ae8e-8abbfbc486e7@app.fastmail.com>
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20260908093145.2492666-1-juha-matti.tilli@iki.fi>
+In-Reply-To: <2cf63e00-95aa-41ba-ae8e-8abbfbc486e7@app.fastmail.com>
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTExMDI3MCBTYWx0ZWRfX7ZypOHs+3jnc
- d+zZMyp8gyE2fPuEGjqHoV0xnNUMvMWdN29D7PyBVnQYIZ/AKGFghN3hs2d6FYaQlcZmeMymQnB
- MPNDX8XEAuRtnmVWhWus2dsq92LKCJIPleMAIsprm9CRoC1H+/IxiqZx9os9U1G7WikoAwZKYt2
- dKV2da/IiuRbgb2BPi1U21zhaDi2EhO9+siCWgue475BIAo7gxTi0rxaUFjJ24iD56GVaHa109f
- cIU8BvnYabnrrd7rPxLPSPBaxok77JlmLncMCNFIR9kWCaokiUegwqYspVcnNWKfmtBLYZuGF9t
- A58bWWVo1QP4DNQW4HOe5fI+Gs9w4tZiMyz4rb7DCazThwZzd/32X5VGPzpLmAkxGOKQZPobNJw
- vGE9l7Trz+gHDsIUyWbWB94ugmQQrxVqupnBYuCIgP7BSNSFX8wCmmD59/aVdH8f9AALIftpv/Q
- 1smvO3Kjm+sdsyvo7EQ==
-X-Proofpoint-ORIG-GUID: yv55b6s1skF1qYywx3uELYuOsOVlHTJ-
-X-Proofpoint-GUID: yv55b6s1skF1qYywx3uELYuOsOVlHTJ-
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTExMDI3MCBTYWx0ZWRfX0EqOVt7oDmgA
- 1zh9IO9zgtvF8IJOY/GgGwNZBQHBV3TpHAP+ejLw11gwDntQtayWoFvlzXYfb1WfhwZGnJopuBx
- ulORXCZ3EjjEs22d6fY/hDDHWuqaXY4=
-X-Authority-Analysis: v=2.4 cv=LrwHWXdc c=1 sm=1 tr=0 ts=6aa4533a cx=c_pps
- a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+Content-Transfer-Encoding: 8bit
+X-Authority-Analysis: v=2.4 cv=U7EHnuru c=1 sm=1 tr=0 ts=6aa4543d cx=c_pps
+ a=0uOsjrqzRL749jD1oC5vDA==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
  a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=bC-a23v3AAAA:8 a=NEAV23lmAAAA:8 a=VwQbUJbxAAAA:8 a=pGLkceISAAAA:8
- a=COk6AnOGAAAA:8 a=nuVjNcMAjKUeO9L8OkEA:9 a=QEXdDO2ut3YA:10
- a=x9snwWr2DeNwDh03kgHS:22 a=FO4_E8m0qiDe52t0p3_H:22 a=TjNXssC_j7lpFel5tvFf:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=VwQbUJbxAAAA:8 a=b6wZdvJBkCi_B7orZsMA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=mQ_c8vxmzFEMiUWkPHU9:22
+X-Proofpoint-ORIG-GUID: X-Lfz-_B8zAc_9VMpRzR8FPt2t2vBjCs
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTExMDI3MSBTYWx0ZWRfX22rmv5neddxA
+ q9n18gpGmdDp4h2XKix92Qu7hVoQjPISrhSt97TlVGGgXr+j8HxaGzoa31kwbiFM1Pu/dTRjABG
+ Z2kjj3SbOZ8CemnesjdLR6ht5gvUeUA=
+X-Proofpoint-GUID: X-Lfz-_B8zAc_9VMpRzR8FPt2t2vBjCs
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTExMDI3MSBTYWx0ZWRfX7JiDesO690y9
+ INMD7BEwbWvJ4VVfp5JwPdjFF8NwoBA36M2bjuUN611fyIcTPGIEWvjCjN/ynXaOSRzkUHj6fIt
+ cu1VsZXfHEYt8wWPKaK7yzfuCvbxWboytGy4z2LiXNzpVsv81pAHkEx/rQVcVP/0MB0tC3yisDL
+ ZmZOLQ3yO+x6VV46YxtuYN36vGfdDz+Okp1JDuPRClFry+ldtMUvfxeSwzgfBDx2N19LsGFdPj4
+ Pq5wQ7IVkm1VH/j14LD3reCRWQhXmYGfm82YI4IlnkSp0qHOxJ2LmnJKTj96MThZKc6OSibM5G3
+ ty1ab42SeOCyxfzbV1nipn0iP9OYZtUS2cbCE9EgDj90Imi+jkPwpMTDAtLp11+UcBUZscEkhAr
+ z/2oeup1Ouarg4aC+Ll/SdcWA7cvGKyJuivwlEj6O8jgeHzCcIsplo39o/6izhLYe0YvtTbu/rB
+ JY+jjgLtJ8Npay4hI+Q==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-09-11_06,2026-09-11_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 phishscore=0 adultscore=0 impostorscore=0 bulkscore=0
- lowpriorityscore=0 suspectscore=0 priorityscore=1501 clxscore=1015
- malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ clxscore=1015 malwarescore=0 priorityscore=1501 phishscore=0
+ lowpriorityscore=0 spamscore=0 impostorscore=0 adultscore=0 bulkscore=0
+ suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2609040000
- definitions=main-2609110270
+ definitions=main-2609110271
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260911_121507_842651_92EDF7B0 
-X-CRM114-Status: GOOD (  56.60  )
+X-CRM114-CacheID: sfid-20260911_121926_681899_24E0968A 
+X-CRM114-Status: GOOD (  14.93  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -160,246 +160,77 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/8/2026 2:31 AM, Juha-Matti Tilli wrote:
+On 9/8/2026 2:44 AM, Juha-Matti Tilli wrote:
+> On Tue, Sep 8, 2026, at 12:31, Juha-Matti Tilli wrote:
+>> As you may well know, multiple identical ath11k and ath12k devices are
+>> not supported in a single Linux host because they use conflicting QRTR
+>> node IDs. Fortunately, Denis Kenzior created a patchset to support
+>> multiple QRTR endpoints with identical node IDs, and Mihai Moldovan
+>> refined it, after which I took over the patchset and refined it more.
+> 
 > Hello,
 > 
-> As you may well know, multiple identical ath11k and ath12k devices are
-> not supported in a single Linux host because they use conflicting QRTR
-> node IDs. Fortunately, Denis Kenzior created a patchset to support
-> multiple QRTR endpoints with identical node IDs, and Mihai Moldovan
-> refined it, after which I took over the patchset and refined it more.
+> I am incredibly sorry by messing up the threading. git-send-email said:
 > 
-> Mihai Moldovan also created a patchset for actually adding the support
-> for this QRTR multi-endpoint feature to ath11k and ath12k drivers.
-> Unfortunately, the code of Mihai was not merge-quality, since it leaked
-> memory if you ran rmmod and modprobe inside a loop. Mihai mentioned this
-> drawback, without providing an API for deleting endpoints or usage of
-> such API in code that's responsible for freeing resources. Also Mihai's
-> patchset had a race condition.
+> 4.7.1 Error: too many recipients from 83.150.90.33
 > 
-> Since Mihai has been busy recently and the previous iteration of this
-> patchset is nearly 2 years old, I decided to "steal" the patchset from
-> him since he said he doesn't care who eventually implements this, as
-> long as it "just works". I am willing to give the responsibility of this
-> patchset back to Mihai if he so wants.
+> ...and failed at the patch id 8/12.
 > 
-> I reverted back to the approach where MHI knows the QRTR endpoint id.
-> This is somewhat ugly, but really the only way resources can be freed
-> (unless you resort to some kind of reference counting which would be
-> doable in kernel, or garbage-collection which wouldn't be doable). It
-> does create some extra memory usage in the mhi_controller data
-> structure, but a large fraction of the time, the data there is useful,
-> since a large fraction of MHI devices actually use QRTR. So this is not
-> as bad as making every PCI device know its QRTR endpoint ID (which a
-> vast majority don't have), even though MHI can be compiled in without
-> QRTR so we have to do the freeing via a function pointer.
+> So I thought retrying from where it failed would be safe. But that
+> broke the threading.
 > 
-> I think the code is mostly merge-quality now. It does require the QRTR
-> multi-endpoint support, such as this v6 (I'm soon going to post v7 --
-> note that in v6 one intermediate commit doesn't compile on 32-bit
-> although the tip of the branch does compile):
+> The next time, I'll increase the waiting time between subsequent mails.
 > 
-> https://msgid.link/all/20260901131934.225991-1-juha-matti.tilli@iki.fi
+> Links to mails missed from the thread:
 > 
-> I tested it on dual ath11k setup, but more testers would be good. If you
-> only have a single ath11k card, your testing is useful too ("given
-> enough races, all race conditions are shallow").
-> 
-> Link to Github if you don't want to apply patches manually from mails:
-> 
-> https://github.com/jmtilli/linux/tree/athnext_multi_qrtr_v7_multi_ath11k_ath12k_v3
-> 
-> Bugzilla: https://bugzilla.kernel.org/show_bug.cgi?id=218480
-> 
-> Mihai mentioned in Bugzilla in comment 21 that there was a hardware
-> crash he couldn't reproduce and he believed it's a race condition. I
-> could reproduce it in older Mihai's patchset version by treating -EEXIST
-> as an error, which indeed points to it being a race condition. I believe
-> the source was qrtr_endpoint_id_get_or_assign that tried to get an ID
-> and then assign an ID if it couldn't get one, while not holding a
-> spinlock. In my newest patchset, my belief is this race condition is
-> gone (the entire offending function is gone), but any kind of review
-> about thread-safety of my code would be good input.
-> 
-> Original description:
-> 
-> ath11k and ath12k suffer from a long-standing issue that is partly
-> caused by the QRTR implementation, which only supports one device per
-> node/port combination and partly caused by the fact that the
-> QMI instance ID of the devices are statically set to 1.
-> 
-> P Praneesh <quic_ppranees at quicinc.com> submitted a patch[0] that fixes
-> this issue generating a unique QMI instance ID based on the PCI bus data
-> for the device and passing that information to the QMI subsystem and the
-> device's firmware via a special PCI register.
-> 
-> However, it quickly turned out that this approach works for the hardware
-> he tested, but fails for other ath11k-based devices, including the
-> popular QCA6930, since its firmware just ignores the special register
-> being used.
-> 
-> Since we need QMI (and, for matter, QRTR) to work for the initial
-> firmware upload, this approach will not work generically.
-> 
-> Fortunately, Denis Kenzior <denkenz at gmail.com> cooked up a patch set for
-> QRTR[1] that introduces the concept of endpoint IDs, which are
-> dynamically allocated and can be used to distinguish different devices
-> even though they use the same node/port combination. Using this patch
-> set, endpoint IDs can be reported as part of auxiliary data in the QRTR
-> socket and bound to for client sockets, which will automatically filter
-> messages from other endpoints and also make sure that client messages
-> are routed to the correct endpoint.
-> 
-> This looked promising, and with that functionality, the only challenge
-> is to find out the correct endpoint IDs and bind to them in drivers to
-> finally support multiple devices in a generic way.
-> 
-> This patch set implements exactly that, and it WORKSFORME, but
-> unfortunately it turns out that "the only challenge" is very difficult
-> to overcome due to the socket-based architecture.
-> 
-> ath1{1,2}k and QRTR are at opposite sides of the socket, with QRTR
-> assigning endpoint IDs and ath1{1,2}k needing a way to fetch and operate
-> on them.
-> 
-> The endpoint reporting feature in QRTR is not helpful in this case,
-> because drivers do not generally know which endpoint belongs to the
-> device they currently handle (i.e., there is no central registry) and
-> even if we were to snoop on the socket and take the first endpoint ID we
-> are unaware of, this might not be the correct one, because it might be
-> in use by a different driver for instance, or correspond to a different
-> device.
-> 
-> The first iteration of this patch set[2] extended struct mhi_device with
-> a qrtr_endpoint_id field that was initialized to zero and populated by
-> the QRTR MHI driver as soon as it was loaded. Drivers could then query
-> this field through an mhi_device->mhi_cntrl->mhi_device chain (if they
-> also use the MHI bus, of course). This, however, was an incredibly ugly
-> hack because QRTR data should not be part of MHI device structures in
-> the first place, timing is critical (drivers querying the endpoint ID
-> must do so after the QRTR MHI module initialized, which is typically
-> only the case after QRTR socket was created) and it was not possible to
-> query or pre-assign an endpoint ID before creating a socket and directly
-> bind to it (which might lead to races such as seeing messages over the
-> socket that are not meant for the endpoint ID drivers are actually
-> interested in).
-> 
-> Since that was not elegant at all, and due to the other mentioned
-> issues, this iteration uses a different approach: endpoint IDs can now
-> be associated with (private) backend endpoint-specific data, which
-> allows us to identify which endpoint ID is being used with what backend,
-> and additionally new API is introduced so that other parts in the kernel
-> can either get an endpoint ID for given endpoint-specific data or even
-> attach endpoint-specific data to a new endpoint ID generated by the QRTR
-> driver. The QRTR system will try to use endpoint-specific data if
-> possible, but falls back to generating endpoint IDs without
-> endpoint-specific data (as in, NULL pointer) if that did not work.
-> 
-> Crucially, the endpoint-specific data pointer is used as an opaque void
-> pointer and at most compared with data stored in the endpoints XArray.
-> 
-> In the QRTR MHI backend, we use the MHI controller's structure pointer
-> as endpoint-specific data, and since the MHI controller is also the bus
-> master and responsible for the physical link, clients (drivers) can
-> pre-register an endpoint ID for their MHI controllers and directly tell
-> QMI to bind to the endpoint ID at socket creation time.
-> 
-> The QRTR SMD backend uses its rpmsg_device pointer and the TUN backend
-> uses the inode pointer as their respective endpoint-specific data
-> pointers.
-> 
-> This approach is cleaner and works better, because it is not prone to
-> races (although it requires coordination between QRTR backends and
-> clients/drivers because both must use the same endpoint-specific data
-> for the scheme to work).
-> 
-> There are, however, also issues with this approach:
->   - Any kernel part can generate an unlimited number of endpoint IDs
->     with arbitrary pointers. The amount of endpoint IDs that can be
->     tracked is limited, though, so there is potential for exhaustion of ID
->     space.
->   - Since previously endpoint IDs were only generated by the QRTR
->     subsystem, there was no need to use any kind of life cycle management
->     for the endpoint IDs: they were created at node creation time and
->     also deleted at node deletion time. Since other subsystems can now
->     create endpoint IDs, it would probably be good to have a way to
->     reclaim created but unused endpoint IDs. No such implementation is
->     provided here.
->   - Multiple PCI/MHI devices will work, but no AHB + PCI/MHI interaction
->     has been tested. Since PCI/MHI devices bind to their endpoint ID,
->     these will likely work, but the AHB devices might still see messages
->     for all endpoints and fail to work correctly. AHB devices seem to be
->     using QMI and thus also QRTR, but without a specific QRTR backend
->     driver (going through REMOTEPROC instead?), so this approach might
->     not be viable for AHB devices.
-> 
-> I am much more comfortable with this patch set, even if it has some
-> rough edges and might not fix the situation for AHB devices.
-> 
-> [0] https://patch.msgid.link/20230111170033.32454-1-kvalo@kernel.org
-> [1] https://patch.msgid.link/20241018181842.1368394-1-denkenz@gmail.com
-> [2] https://msgid.link/cover.1730790058.git.ionic@ionic.de
-> 
-> v3:
->   - rebase against current ath-next
->   - solved a major memory leak
->   - replaced O(N) algorithm by O(1) where N is the leaked memory
->   - solved all known race condition issues
->   - Link to v2: https://msgid.link/cover.1732506261.git.ionic@ionic.de
-> 
-> v2: code and metadata cleanup (checkpatch.pl), no functional changes
+> https://lore.kernel.org/all/20260908093437.2493698-1-juha-matti.tilli@iki.fi/
+> https://lore.kernel.org/all/20260908093437.2493698-2-juha-matti.tilli@iki.fi/
+> https://lore.kernel.org/all/20260908093437.2493698-3-juha-matti.tilli@iki.fi/
+> https://lore.kernel.org/all/20260908093437.2493698-4-juha-matti.tilli@iki.fi/
+> https://lore.kernel.org/all/20260908093437.2493698-5-juha-matti.tilli@iki.fi/
 > 
 > BR, Juha-Matti
-> 
-> Juha-Matti Tilli (5):
->   net: qrtr: support getting new endpoint ids externally
->   bus: mhi: allow mhi to know about its qrtr endpoint id and free it
->   net: qrtr: mhi: register new qrtr endpoint id for mhi
->   wifi: ath11k: implement QRTR endpoint ID fetching for PCI
->   wifi: ath12k: implement QRTR endpoint ID fetching for PCI
-> 
-> Mihai Moldovan (7):
->   soc: qcom: qmi_helpers: add QRTR endpoint ID to qmi_handle
->   soc: qcom: qmi_helpers: optionally bind to QRTR endpoint ID in
->     qmi_sock_create
->   wifi: ath11k: add QRTR endpoint ID hif feature
->   wifi: ath11k: stub QRTR endpoint ID fetching
->   wifi: ath11k: bind to QRTR endpoint ID in ath11k_qmi_init_service
->   wifi: ath12k: add QRTR endpoint ID hif feature
->   wifi: ath12k: bind to QRTR endpoint ID in ath12k_qmi_init_service
-> 
->  MAINTAINERS                           |  1 +
->  drivers/bus/mhi/host/init.c           |  8 +++++
->  drivers/net/wireless/ath/ath11k/ahb.c |  7 ++++
->  drivers/net/wireless/ath/ath11k/hif.h |  9 ++++++
->  drivers/net/wireless/ath/ath11k/mhi.c | 46 +++++++++++++++++++++++++++
->  drivers/net/wireless/ath/ath11k/mhi.h |  1 +
->  drivers/net/wireless/ath/ath11k/pci.c |  1 +
->  drivers/net/wireless/ath/ath11k/qmi.c |  8 +++++
->  drivers/net/wireless/ath/ath12k/hif.h | 10 ++++++
->  drivers/net/wireless/ath/ath12k/mhi.c | 46 +++++++++++++++++++++++++++
->  drivers/net/wireless/ath/ath12k/mhi.h |  3 ++
->  drivers/net/wireless/ath/ath12k/pci.c |  1 +
->  drivers/net/wireless/ath/ath12k/qmi.c |  9 ++++++
->  drivers/soc/qcom/qmi_interface.c      | 28 ++++++++++++++++
->  include/linux/mhi.h                   |  5 +++
->  include/linux/soc/qcom/qmi.h          |  3 ++
->  include/net/qrtr.h                    | 10 ++++++
->  net/qrtr/af_qrtr.c                    | 42 ++++++++++++++++++++----
->  net/qrtr/mhi.c                        | 31 ++++++++++++++++++
->  net/qrtr/qrtr.h                       |  5 +++
->  20 files changed, 268 insertions(+), 6 deletions(-)
->  create mode 100644 include/net/qrtr.h
-> 
 
-How are you populating the list of recipients for your e-mail?
+Unfortunately this prevents many automations from processing your series,
+including mine which utilizes 'b4'
 
-You are including folks no longer involved in kernel development, but more
-importantly, you are using an obsolete e-mail address for the MHI maintainer
-(Mani). I've replaced his address in my reply.
+* b4 am -3 -S 20260908093145.2492666-1-juha-matti.tilli@iki.fi
+Grabbing thread from
+lore.kernel.org/all/20260908093145.2492666-1-juha-matti.tilli@iki.fi/t.mbox.gz
+Analyzing 10 messages in the thread
+Looking for additional code-review trailers on lore.kernel.org
+Analyzing 44 code-review messages
+Checking attestation on all messages, may take a moment...
+---
+  ✓ [PATCH v3 1/12] net: qrtr: support getting new endpoint ids externally
+    ✓ Signed: DKIM/iki.fi
+  ✓ [PATCH v3 2/12] bus: mhi: allow mhi to know about its qrtr endpoint id and
+free it
+    ✓ Signed: DKIM/iki.fi
+  ✓ [PATCH v3 3/12] net: qrtr: mhi: register new qrtr endpoint id for mhi
+    ✓ Signed: DKIM/iki.fi
+  ✓ [PATCH v3 4/12] soc: qcom: qmi_helpers: add QRTR endpoint ID to qmi_handle
+    ✓ Signed: DKIM/iki.fi
+  ✓ [PATCH v3 5/12] soc: qcom: qmi_helpers: optionally bind to QRTR endpoint
+ID in qmi_sock_create
+    ✓ Signed: DKIM/iki.fi
+  ✓ [PATCH v3 6/12] wifi: ath11k: add QRTR endpoint ID hif feature
+    ✓ Signed: DKIM/iki.fi
+  ✓ [PATCH v3 7/12] wifi: ath11k: stub QRTR endpoint ID fetching
+    ✓ Signed: DKIM/iki.fi
+  ERROR: missing [8/12]!
+  ERROR: missing [9/12]!
+  ERROR: missing [10/12]!
+  ERROR: missing [11/12]!
+  ERROR: missing [12/12]!
+---
+Total patches: 7
+WARNING: cannot prepare 3-way (series incomplete)
+---
+WARNING: Thread incomplete!
 
-Please make sure to use scripts/get_maintainer.pl to get an accurate list of
-recipients.
+So I cannot evaluate your series.
 
+/jeff
 
 
