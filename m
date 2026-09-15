@@ -4,79 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81AECC88E53
-	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 07:45:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB9A1C88E73
+	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 07:45:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WPWwjv2lCc78jyciiGeHhfapHx7+w7VurSqk2gEfFB0=; b=ud29v2bB6n6faYQsWOaxMxC9TK
-	nJXK6rV5l9E/g1hmJ3J8UQCSGxr046IdDTKczuCtAimymvgZNmR6piTnlKjzdulpzaAESRhZFMmz4
-	pT9SUFlXyliW3nqwqe04R+7lJn1b2MXuWblsZIpSpZBLtJ8vFONqSzOKy4OtIa7D20Lio5FuQ14oG
-	XmPPImGJ5X31AP/6Kp2j+joxiPWSA11puLXpcSpBhzawMYnpMyXOLgOjZDO0+uoI1y6GhCFVvn/yX
-	/Vph3jjUS59YFX9jfvUg85GhrMa/U0387kqua9w/YNqzH6B5mdQLCvi8D5hsuNJgkxqYT0O7x0lK5
-	ftRdVW5w==;
+	bh=YLt+l40Q3PpFquTJGHV0pr4yqekDZGuuw51X1SrFTE8=; b=K5CM1c6Kr6+jqPma4l6oMZuViH
+	+1PsWRp1RfkFvrU5oYtLfLyo2GmjOE0uykCtOD24H+zGQ1i8bQXxqg9Bx/JI7yhY0K20la3yaAaEx
+	wtHCapW0wufahX4+ef8KDzOcUkFYjuxg1Qltn7Pyfbejad0fkzERcoQFOFtLrb9cf3PdIgu4bJhvH
+	zp7u9UeheQkULSqsDUdKmCpkpc3GM5jTs0qraRLmGAt6B6jNpdNTM5SG+xwnmjkkPV9iSXLGEUq62
+	Krbo4zclJw6isGCAf6ZOT2LyKoyi3TnCoHn2UJAiTVwgZkgGedeQtGk+2sRKevx0ozk7s5h6MZpip
+	14lWAl9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6Nr5-00000005WAw-0TwQ;
-	Tue, 15 Sep 2026 07:45:27 +0000
+	id 1x6NrO-00000005WJa-1aVt;
+	Tue, 15 Sep 2026 07:45:46 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6Nr3-00000005W9Z-1mBA;
-	Tue, 15 Sep 2026 07:45:25 +0000
+	id 1x6NrK-00000005WHu-0LbX;
+	Tue, 15 Sep 2026 07:45:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=WPWwjv2lCc78jyciiGeHhfapHx7+w7VurSqk2gEfFB0=; b=Xpvl52eqqhloD+jZKNpndCFoUG
-	ecIEjuvTjAi78JWa9geGW5NZNUYZt5TUd4s1AL8qs5EMVLZAGDK9zzXn64VfPlBtwN00/xqwMVCHb
-	tS0CSWum46xO5zLWga3oFavDdlM/UDO2bD1w1MihJr/MoeguoeCR6hb9JLly7dLab6bb5IahcutaL
-	7h9lCZyAw4S5Pp0+eLmxKO6ETT6mpqQiH4J1oOFWoKG8cqccj3wJy64b5zKCllINMiO0UxYw97pRX
-	co2nNL0+ApNVaYUEbnG4aAr4u56fAj9KKWRbsDZE9Z3QRALBaJ76DUaRu2r3jhtw9xDPNavDyDA4n
-	kHTB27Bg==;
-Received: from lahtoruutu.iki.fi ([2a0b:5c81:1c1::37])
+	bh=YLt+l40Q3PpFquTJGHV0pr4yqekDZGuuw51X1SrFTE8=; b=ENmsi4xMojaqMwNMUVKPE5fEwa
+	OMWmYvCxnACugmGqWTfyCqnq3g5AprpKwuS1/jn1coW0VfDH8Fx6PoGe0a9NZGFRSG4GSr+YiX2i8
+	6pZBikTzQuSh8TbxRCktetr1yaukIxVBdq/ikJl/tv3uu8DNDQ21JreHgvTh5bOD08e463moC1LC6
+	zoq86q3NJdZLZNXRHv+Z2d/G9sku0Wxl/d5Itw88P68t0pq9Dkszi6tZK2Mf2Eu6atE4aF3EOpucr
+	uHRid9pkWbCjPbOpQhLOq2KMPaLy12yUrT2sIB84wiKoRX+DLTlbpb0bbREXheVgYVwZLsB/HP5hP
+	yJd01b9w==;
+Received: from lahtoruutu.iki.fi ([185.185.170.37])
 	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x6Nqy-00000006OEu-3a12;
-	Tue, 15 Sep 2026 07:45:23 +0000
+	id 1x6NrG-00000006OIi-1vRw;
+	Tue, 15 Sep 2026 07:45:40 +0000
 Received: from mandelbrot.. (xdsl-83-150-90-33.nebulazone.fi [83.150.90.33])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: jmtilli)
-	by lahtoruutu.iki.fi (Postfix) with ESMTPSA id 4hkYvv061Xz49Q6x;
-	Tue, 15 Sep 2026 10:45:15 +0300 (EEST)
+	by lahtoruutu.iki.fi (Postfix) with ESMTPSA id 4hkYwD17PFz49Q6x;
+	Tue, 15 Sep 2026 10:45:32 +0300 (EEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=lahtoruutu;
-	t=1789458315;
+	t=1789458332;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=WPWwjv2lCc78jyciiGeHhfapHx7+w7VurSqk2gEfFB0=;
-	b=KFoazCVbt9KjJ3uE4qMhMFoxJ3RdjvAoV93BUqES91xZ5TunfAHuyNPqJVoYV56FWUf2A4
-	2ZG6XTr3PoNtNstubzTRS5FVJx39nN7I2En02rmxpFLj3fee5hvEWgYcQzN/uK0I+5tmWM
-	3sfZD23cs3A3EppZvQKpVsVU3pSNsIxevg7WL/RKD2g9yUfYsIxGSoZpBl0LMrC3YPQ7rT
-	27oUcf5gjl2aMFT2sH9ShomIfWnZ3cU2usgTt4RMicFy3fgVpem0i2fFD68EiY8jfVaY8a
-	fJ9VWQ6vLMN91QurBrGoMBjwtvYX2bPLI2r08r8dStb1E39pZ+Uz5zHuiH9jVA==
-ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=lahtoruutu; cv=none; t=1789458315;
-	b=djaVSyXl+sHFFQp9z0hvr7LYJsMM5kDmhoV54l4z/UWqTLOtO9mHCgN6nkWHLBcboy0L+8
-	qwXSuPuMccwDi2J9UBK9crZL1vjO7M1r5JyTWatu2ZXVw46oNvLWzt7BWcpsy79FlpEMr2
-	JjSiN7ZnLDrz4ODOHgQHi06nOvJz8ORHYLepwZcx5/Nc2UYQN8sbOQhk+miPEpa7cPLf4H
-	MjLvhCaqPZYSI0IgXA8ollhDsfqPSnbIfAlJP5n2SB4z4eVCC+cxiNY6Obuz9USq7GfkiS
-	euiBKqWgDyarF4O9yUe1FZfnONCQd3/WLemMTA64VIj48TGCDQJwRCk3aHsNkg==
+	bh=YLt+l40Q3PpFquTJGHV0pr4yqekDZGuuw51X1SrFTE8=;
+	b=GFI9TFNcwhRqA62Hr5qFGhZk+U388b3j0kbMGyCuLGxBhTr/19T/9e+nPa8iNhBawQp2Sc
+	MnpEev0653GuSc82GOh5Weg9S4hkbWTxWjNs43k4p7hgFV7+ZC7QiISEFMQey/ShYczJ/G
+	maKE7x960QmIF/IPuC5HsbosnokbEvO05AjG3lHSSZ8KWz/XvbuOHKwZb98ltl65R6WdSN
+	CVKfmkjxXODe2l6oQ/Q9NjrqZBPcW5R69jn4iztYHuJTGyZvP/ELwjaqLpWzBaChK/pVkC
+	juSvSjuv3YE1RPVDTHW3d7yoMXiDshBUUK7woKTUZTaJq42pmNAmdUdcj2tBhg==
+ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=lahtoruutu; cv=none; t=1789458332;
+	b=vGV1q9uOCXnIAbiq6g+n8Fh4+pyPnn4ZVSgSZyj5krs4bh/LxhPnoGuq1nEM8YtU1hydhb
+	qzxPR2BJFtWVCxcATV2gWHt34RMIrJYPyosamsMUUfcVuXg7+p51oFFnB0fsMm88IH1xfl
+	jTdyl8GrbG5uQy+yq2obKhMMR+NGm2um1A/SImm8dpAVUP+ldxTQpjitxdmTtJGrGD2ce6
+	gbhSTzXd5cWgvztLl+Y1FT4H0dKz14TFInNaiRpZQ/KXzRbFHFmcbOM8WF5xDcilhCrEY6
+	7hxN5LDLtExhI3SvqoZJ36qyULPaApZ6LSDhU+DpzM7V9l51M5mYIgz+BTDv+Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
-	s=lahtoruutu; t=1789458315;
+	s=lahtoruutu; t=1789458332;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=WPWwjv2lCc78jyciiGeHhfapHx7+w7VurSqk2gEfFB0=;
-	b=UHzuubR+VxZYxtNsV7lm1EfJL397Ya7G/jGTvzmJf/Cm8vYH0CuaANguY9y7Gukn2LzwAy
-	EKImPMGeNY973ne9NTmqvJ7alPj9hNH8+F0GYG2H6cFKr2f0PW6yHX8DTghd5yFjRWURCX
-	gZ5fbPz6cn74cTTpbquW8vuUXtTYnUveM5qRn1BjsMpHR2S7Ymzivuu4/Ji3jxqJJ2KsWe
-	h8hJlKXixqEPI3NnXx2Id50ezzhMMUQt+g1Wne4wrTePrM4vT07sXFS4mV0WbIjZG1rdT9
-	767mQc3LKguHz8xQdqk2FLifW9+fAQ3AtmOUwccVsoWbf1hzXXEt+BlBVs3OlQ==
+	bh=YLt+l40Q3PpFquTJGHV0pr4yqekDZGuuw51X1SrFTE8=;
+	b=HYZo5SK+l0RWK0daZpPhBvo5TCKGKM4SkrIV0W+0vIzM7GSQa7kTwt2jfIWVmLgwUvhTXL
+	r2bu/np+f2G2T1YE+HNIF6dnajxYmmGnq6C3xwC/70SWHCVX7ynzXJWQ9u5bd79NCXaqud
+	mbVnlSAxR/PrSYuEloCgyaCl0xtTHXRp6uxLf2R457uZTs0IiOPLfcXMLJl8pLp9xT4SC/
+	V9sMx2ptlaqATniV27GwpY+UgefB3P6Sm0FDdsOQMrlYTIvVT03zM2A5MG/AQW3Tp6IhHO
+	U81xEUTLiP896fOJy9p8VcjHad2iI9CN1UVJFizweYGPkQIOxpgQvyvNTb+Gcw==
 ARC-Authentication-Results: i=1;
 	ORIGINATING;
 	auth=pass smtp.auth=jmtilli smtp.mailfrom=juha-matti.tilli@iki.fi
@@ -103,17 +103,18 @@ Cc: Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
 	Juha-Matti Tilli <juha-matti.tilli@iki.fi>,
 	Mihai Moldovan <ionic@ionic.de>,
 	Denis Kenzior <denkenz@gmail.com>
-Subject: [PATCH v4 09/12] wifi: ath11k: bind to QRTR endpoint ID in ath11k_qmi_init_service
-Date: Tue, 15 Sep 2026 10:41:32 +0300
-Message-Id: <20260915074135.2567411-10-juha-matti.tilli@iki.fi>
+Subject: [PATCH v4 10/12] wifi: ath12k: add QRTR endpoint ID hif feature
+Date: Tue, 15 Sep 2026 10:41:33 +0300
+Message-Id: <20260915074135.2567411-11-juha-matti.tilli@iki.fi>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260915074135.2567411-1-juha-matti.tilli@iki.fi>
 References: <20260915074135.2567411-1-juha-matti.tilli@iki.fi>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260915_084522_409568_2E9C2BAF 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20260915_084538_886383_1C35822A 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,49 +131,41 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Mihai Moldovan <ionic@ionic.de>
 
-If possible, fetch the QRTR endpoint ID in ath11k_qmi_init_service, just
-before calling qmi_handle_init, and make it available in the qmi_handle.
-
-qmi_helpers will then automatically bind to this endpoint for us.
-
-This finally allows using multiple ath11k-based cards with the same QRTR
-node/port combination to work simultanenous (and, for that matter, at
-all).
+This will allow fetching the QRTR endpoint ID via hardware-specific
+means.
 
 Signed-off-by: Mihai Moldovan <ionic@ionic.de>
-Tested-by: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
-Tested-on: WCN6855 hw2.1 PCI WLAN.HSP.1.1-04685-QCAHSPSWPL_V1_V2_SILICONZ_IOE-1
 Signed-off-by: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
 ---
- drivers/net/wireless/ath/ath11k/qmi.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ drivers/net/wireless/ath/ath12k/hif.h | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath11k/qmi.c b/drivers/net/wireless/ath/ath11k/qmi.c
-index 7dc07339b9579..ee5effc113667 100644
---- a/drivers/net/wireless/ath/ath11k/qmi.c
-+++ b/drivers/net/wireless/ath/ath11k/qmi.c
-@@ -16,6 +16,7 @@
- #include <linux/ioport.h>
- #include <linux/firmware.h>
- #include <linux/of_irq.h>
-+#include <net/sock.h>
+diff --git a/drivers/net/wireless/ath/ath12k/hif.h b/drivers/net/wireless/ath/ath12k/hif.h
+index 4de8667690e91..4591660519efb 100644
+--- a/drivers/net/wireless/ath/ath12k/hif.h
++++ b/drivers/net/wireless/ath/ath12k/hif.h
+@@ -32,6 +32,7 @@ struct ath12k_hif_ops {
+ 	void (*get_ce_msi_idx)(struct ath12k_base *ab, u32 ce_id, u32 *msi_idx);
+ 	int (*panic_handler)(struct ath12k_base *ab);
+ 	void (*coredump_download)(struct ath12k_base *ab);
++	int (*set_qrtr_endpoint_id)(struct ath12k_base *ab);
+ };
  
- #define SLEEP_CLOCK_SELECT_INTERNAL_BIT	0x02
- #define HOST_CSTATE_BIT			0x04
-@@ -3324,6 +3325,13 @@ int ath11k_qmi_init_service(struct ath11k_base *ab)
- 	ab->qmi.ab = ab;
- 
- 	ab->qmi.target_mem_mode = ab->hw_params.fw_mem_mode;
+ static inline int ath12k_hif_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
+@@ -162,4 +163,13 @@ static inline void ath12k_hif_coredump_download(struct ath12k_base *ab)
+ 	if (ab->hif.ops->coredump_download)
+ 		ab->hif.ops->coredump_download(ab);
+ }
 +
-+	ret = ath11k_set_qrtr_endpoint_id(ab);
-+	if (ret) {
-+		ath11k_warn(ab, "failed to set QRTR endpoint ID: %d\n", ret);
-+		ath11k_warn(ab, "only one device per system will be supported\n");
-+	}
++static inline int ath12k_hif_set_qrtr_endpoint_id(struct ath12k_base *ab)
++{
++	if (!ab->hif.ops->set_qrtr_endpoint_id)
++		return -EOPNOTSUPP;
++	else
++		return ab->hif.ops->set_qrtr_endpoint_id(ab);
++}
 +
- 	ret = qmi_handle_init(&ab->qmi.handle, ATH11K_QMI_RESP_LEN_MAX,
- 			      &ath11k_qmi_ops, ath11k_qmi_msg_handlers);
- 	if (ret < 0) {
+ #endif /* ATH12K_HIF_H */
 -- 
 2.34.1
 
