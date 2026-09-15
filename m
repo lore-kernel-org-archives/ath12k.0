@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADE19C88E7B
-	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 13:22:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17B05C982CC
+	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 13:22:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Z3qD+/A7jhv0PWCPSvpwUGPxq8lg0rVk9lWjUUhnDS4=; b=BunX3t2uWMyBBC/Oj33O+fzcv5
-	Nnjjc6ZvaxJ8Owhtkl7m9oy9pJvndxXtnwW7LTjtSD+FfgTRzCLeMYB3ZAtTwHpWx8JfafIIc58Dt
-	738WmM4tS5jRR21P+nxBkqScQoNoYh7q4zkaVgTI7bf6wxkrYHux4jXOl7nk2ildci9pblNJ2cJMA
-	XvLHiJrTovPfo2AUPiQFSTf7rhtE4LT+qG3mwmd+fQa16E4WkOVBzOqiQ2sP5Vmig7P8Etwelj7+3
-	eWzVeaEtPqbWfo2jNt46gtgDkT/VBV60ZA+l7lWLMN2vV+c56Z4qn/2RyGNKjlT/r/0sSXVhm9QO8
-	xjL+IprQ==;
+	bh=Av7wBlTj2L7cWLC4/0Hi6MzLWEw5Ka3z2fBHgjvDWM4=; b=18ELGRjIsRL72wB3kfu7mVcpts
+	+cYL5CzcH+7X2FAvsjro5UFDjsGoqp5UppvhovL4JP7by4E4Uq+3fBalYL6ekXjaM4A6HgaBz/k9V
+	AWKwkvN3qLuaMcSdIaCQv9+fXDDaDkg96YERGUA6M6behqbxL0aNFzVZajv8KDQxQtgpHmTFyRbgu
+	czIvtEmrnUn5oIrXot9n/Qb42YdzJb9VRoSXV0Ofg7fyB6cQ9e5hz48z7XsQoGfkta1B8XJP+WDmQ
+	5OugoKb9vms+pSkDL0b0Tf++BoPxGY5Jm3gXhxB6Y5C5dhpqqTEQGN0ZopaDF7FqB1Z7RRuIosKOz
+	TK6SSnLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6T72-00000006hNC-1SGI;
-	Tue, 15 Sep 2026 13:22:16 +0000
+	id 1x6T6z-00000006hKn-2dCc;
+	Tue, 15 Sep 2026 13:22:13 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6T70-00000006hKr-1bYc;
-	Tue, 15 Sep 2026 13:22:14 +0000
+	id 1x6T6w-00000006hGf-43kh;
+	Tue, 15 Sep 2026 13:22:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=Z3qD+/A7jhv0PWCPSvpwUGPxq8lg0rVk9lWjUUhnDS4=; b=br+CI4bkOhTdrdGmAsLNP5YsCn
-	kCrdRCJruYYRpJYgY2uNCiddAD7DByUjQ35vfgFxVdS9svIstBvPIz/WsKOtpSmCvkuLUl8sd+15p
-	3TgR1OSmfwfHuKAfOI47dhyBPITLLkjYE47PtD191S3thwlIs3/zjXmaDXhOPFaCFn/p2Td60M7LD
-	itxZOJU5k2Y0R2bdJh0fXou3zU9GbRpyjRP6EeeuiCw3ppmYl2FijozoBQf9GfNM7sDoGB/7lOlpG
-	vZB7gVgOzirXZs+bTV9NVpaqBRybQvkXcY7uejm8wb7ieMtH7N9xCZ1kl7DZluZLfw2Pa8906k6Ka
-	Z8saWTmQ==;
+	bh=Av7wBlTj2L7cWLC4/0Hi6MzLWEw5Ka3z2fBHgjvDWM4=; b=aFaBGBvhPdPLAWUZBBnuXRVGo3
+	ZgdDyC4J0Zm7pJD4smT9v0nM+dhOpcaHwL40jjqehV+G5rAe3BhZjawdCrK41jTVTPKvKw/GVbNPf
+	sIJddUdTDn0xJi9MBIU5ZDEZt5mkHwXKbW6QoV53MFolVfq2BWxuESY5RjR1gwmIQvD7jnkb2kgoB
+	1bMbMjnxiq/YkF505LgZY7Vq0Hu17ASp0j7bVJjOIaGlr5mkDi6JFP2OZTjB8yEjncPv0wwY+Kd3s
+	7GYTIKQiejdFohpeM7947eDbWqhpB2nUcTGYoaihN7pW6XkhsXXS8/tl/VFqqC2JPQjeRQgY3p7uR
+	GS4XWBmA==;
 Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x6T6x-00000006oJz-36ys;
-	Tue, 15 Sep 2026 13:22:13 +0000
+	id 1x6T6s-00000006oI8-23KD;
+	Tue, 15 Sep 2026 13:22:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=sipsolutions.net; s=mail; h=Content-Transfer-Encoding:MIME-Version:
 	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Content-Type:Sender
 	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=Z3qD+/A7jhv0PWCPSvpwUGPxq8lg0rVk9lWjUUhnDS4=;
-	t=1789478531; x=1790688131; b=D0dnmiZCPc9rPuCUJ2TIf0E+FdJ1QDd9F0x0cwSBvRRlNIo
-	GwOrCZs90XeA2ldAamU5oBcTaqNpHs5l5Qp6cnY2bjkoGwi7XS7aaMyVu9w0f6NsOppO3VBtwvC94
-	VZzliboZtHC76eeH93g9lXB0Qpyo3eMkkhLJSCj7Qv48Onsw9qzAWoZFFWXfbjtSknZp3M1PGuSD8
-	lcMEY5xWvnaipdRy7SV9Fo2fIvWbbBm2PYYcJP17uTmpLsTNDYIYUxnX1p6QQo/IYEhApuFf0OR4j
-	yof9OSyVYyOP0IizEYAS82pqWJqmiSKExwja1l8IqvC3HH5d3ZUF4sLu79EbjctQ==;
+	Resent-Cc:Resent-Message-ID; bh=Av7wBlTj2L7cWLC4/0Hi6MzLWEw5Ka3z2fBHgjvDWM4=;
+	t=1789478526; x=1790688126; b=BBE9ycosW0epr+kYsDHaoQJWeMWieAwsG1aRwwgmJYdVAxo
+	G7ke+1ifAMt7OK0nVcGugD2PsCnvAlFi64dnJEUnDAGw6MfYwEiv49pqHdgQ2JTzRW66L5WnLDfwC
+	0OrIm87gsrYVIdFtIKMTMPyW/DckakmjjRIHA4JgnZhJLp5rzxatsyuXZEzm0PyXxywff3H9FXwPC
+	+eRpBWCNMFIutDoWgKdyOXPMw6lcIZ0aQDICl2a2RjXVTRO0Fw3rLqGzWvonIBjIy0pQ6ccE9sUqo
+	RHWtycMWzmPONsdP0znnDtM/ZWZC3V5nGOZHFUQD7lpj8AwNRsxF0JT4xNvRCyRA==;
 Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
 	(Exim 4.98.2)
 	(envelope-from <benjamin@sipsolutions.net>)
-	id 1x6T6n-0000000H08V-3olp;
-	Tue, 15 Sep 2026 15:22:02 +0200
+	id 1x6T6h-0000000H08V-2o9s;
+	Tue, 15 Sep 2026 15:21:55 +0200
 From: Benjamin Berg <benjamin@sipsolutions.net>
 To: linux-wireless@vger.kernel.org
 Cc: Jeff Johnson <jjohnson@kernel.org>,
@@ -67,18 +67,17 @@ Cc: Jeff Johnson <jjohnson@kernel.org>,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	Benjamin Berg <benjamin.berg@intel.com>
-Subject: [PATCH wireless-next v4 8/8] wifi: mac80211: pass error station if non-STA transmit was requested
-Date: Tue, 15 Sep 2026 15:19:34 +0200
-Message-ID: <20260915151925.92499fb21e4a.I5ffe7bc0d4ccefca5c1e506d5d3d482e13989cda@changeid>
+Subject: [PATCH wireless-next v4 2/8] wifi: mac80211: change public RX API to use link stations
+Date: Tue, 15 Sep 2026 15:19:28 +0200
+Message-ID: <20260915151925.06f41565116a.I4a2d45609e94b52654b10ec572e59a45d09c41f4@changeid>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20260915131925.1780764-10-benjamin@sipsolutions.net>
 References: <20260915131925.1780764-10-benjamin@sipsolutions.net>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260915_142211_888862_56C359BF 
-X-CRM114-Status: UNSURE (   9.14  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260915_142206_735386_DB4C9068 
+X-CRM114-Status: GOOD (  20.05  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,63 +94,564 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Benjamin Berg <benjamin.berg@intel.com>
 
-When cfg80211 requested a transmit without a station, pass an error
-station to ieee80211_tx_skb_tid instead of the correct one.
+If a station is passed then the link ID also needs to be known. As such,
+it is a more natural API to simply pass the link station directly rather
+than pushing the link information into the RX status.
+
+Furthermore, having the link ID in the RX status is not actually correct
+because the link IDs are VIF specific and there may be multiple VIFs. In
+the case of a station this relationship is clear, but then one may as
+well use the link station.
+
+This patch only changes the API and emulates the old (incorrect)
+behaviour for now. The mac80211 RX code will be updated in later
+patches.
 
 Signed-off-by: Benjamin Berg <benjamin.berg@intel.com>
 
 ---
 
 v4:
- * Fix typo in subject
+ * Fix link_sta out parameter value of mt76_rx_convert in some cases
 
 v3:
- * Fix logic error in v1 update
+ * Correct error return handling for link ID in ath12k
+
+v2:
+ * Remove now unused variable in rtw89
 
 v1:
- * Only pass error station if NO_STA flag is set
+ * Do not dereference NULL station
 ---
- net/mac80211/offchannel.c | 13 +++++++++----
- 1 file changed, 9 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath11k/dp_rx.c       |  2 +-
+ drivers/net/wireless/ath/ath12k/dp_mon.c      |  2 --
+ drivers/net/wireless/ath/ath12k/dp_rx.c       | 20 ++++++++++++---
+ drivers/net/wireless/ath/ath12k/hw.h          | 20 ++++++++-------
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 20 +++++++--------
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h | 12 ++++-----
+ drivers/net/wireless/ath/ath12k/wifi7/hw.c    |  6 ++---
+ drivers/net/wireless/ath/ath12k/wmi.c         |  6 -----
+ drivers/net/wireless/intel/iwlwifi/mld/rx.c   |  7 +-----
+ drivers/net/wireless/intel/iwlwifi/mvm/rx.c   |  2 +-
+ drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c |  6 ++---
+ drivers/net/wireless/mediatek/mt76/mac80211.c | 25 +++++++++++--------
+ drivers/net/wireless/realtek/rtw89/core.c     |  7 ------
+ .../wireless/virtual/mac80211_hwsim_main.c    |  3 ---
+ include/net/mac80211.h                        | 16 +++++++++---
+ net/mac80211/rx.c                             | 20 +++++++++++----
+ 16 files changed, 92 insertions(+), 82 deletions(-)
 
-diff --git a/net/mac80211/offchannel.c b/net/mac80211/offchannel.c
-index 5cec8747b193..ddd7a96a2f81 100644
---- a/net/mac80211/offchannel.c
-+++ b/net/mac80211/offchannel.c
-@@ -854,8 +854,10 @@ int ieee80211_mgmt_tx(struct wiphy *wiphy, struct wireless_dev *wdev,
- 			need_offchan = true;
+diff --git a/drivers/net/wireless/ath/ath11k/dp_rx.c b/drivers/net/wireless/ath/ath11k/dp_rx.c
+index 33425707c084..fbb3d18f55dd 100644
+--- a/drivers/net/wireless/ath/ath11k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath11k/dp_rx.c
+@@ -2500,7 +2500,7 @@ static void ath11k_dp_rx_deliver_msdu(struct ath11k *ar, struct napi_struct *nap
+ 	    !(is_mcbc && rx_status->flag & RX_FLAG_DECRYPTED))
+ 		rx_status->flag |= RX_FLAG_8023;
  
- 		rcu_read_lock();
--		sta = sta_info_get_bss(sdata, mgmt->da);
--		mlo_sta = sta && sta->sta.mlo;
-+		if (!params->no_sta) {
-+			sta = sta_info_get_bss(sdata, mgmt->da);
-+			mlo_sta = sta && sta->sta.mlo;
+-	ieee80211_rx_napi(ar->hw, pubsta, msdu, napi);
++	ieee80211_rx_napi(ar->hw, pubsta ? &pubsta->deflink : NULL, msdu, napi);
+ }
+ 
+ static bool ath11k_dp_rx_check_nwifi_hdr_len_valid(struct ath11k_base *ab,
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index 7d5be77b081f..1faf1896d0ab 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -503,8 +503,6 @@ void ath12k_dp_mon_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev,
+ 	struct ieee80211_rx_status *rx_status;
+ 	struct ieee80211_radiotap_he *he = NULL;
+ 
+-	status->link_valid = 0;
+-
+ 	if ((status->encoding == RX_ENC_HE) && !(status->flag & RX_FLAG_RADIOTAP_HE) &&
+ 	    !(status->flag & RX_FLAG_SKIP_MONITOR)) {
+ 		he = skb_push(msdu, sizeof(known));
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 8fa0e90b4531..41ac0a4072ae 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -1375,6 +1375,7 @@ void ath12k_dp_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev, struct napi_struc
+ 	struct ath12k_dp *dp = dp_pdev->dp;
+ 	struct ieee80211_rx_status *rx_status;
+ 	struct ieee80211_sta *pubsta;
++	struct ieee80211_link_sta *link_pubsta = NULL;
+ 	struct ath12k_dp_peer *peer;
+ 	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
+ 	struct ieee80211_rx_status *status = rx_info->rx_status;
+@@ -1384,9 +1385,19 @@ void ath12k_dp_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev, struct napi_struc
+ 
+ 	pubsta = peer ? peer->sta : NULL;
+ 
+-	status->link_valid = 0;
+-	if (pubsta && pubsta->valid_links)
+-		ath12k_hw_set_rx_link_id(dp->hw_params, peer, rxcb, status);
++	if (pubsta) {
++		if (pubsta->valid_links) {
++			int link_id =
++				ath12k_hw_get_rx_link_id(dp->hw_params, peer,
++							 rxcb, status);
++
++			if (link_id >= 0)
++				link_pubsta =
++					rcu_dereference(pubsta->link[link_id]);
++		} else {
++			link_pubsta = &pubsta->deflink;
 +		}
++	}
  
- 		if (!ieee80211_is_action(mgmt->frame_control) ||
- 		    mgmt->u.action.category == WLAN_CATEGORY_PUBLIC ||
-@@ -884,7 +886,8 @@ int ieee80211_mgmt_tx(struct wiphy *wiphy, struct wireless_dev *wdev,
- 		     local->ops->remain_on_channel &&
- 		     memcmp(sdata->vif.cfg.ap_addr, mgmt->bssid, ETH_ALEN))) {
- 			need_offchan = true;
--		} else if (sdata->u.mgd.associated &&
-+		} else if (!params->no_sta &&
-+			   sdata->u.mgd.associated &&
- 			   ether_addr_equal(sdata->vif.cfg.ap_addr, mgmt->da)) {
- 			sta = sta_info_get_bss(sdata, mgmt->da);
- 			mlo_sta = sta && sta->sta.mlo;
-@@ -1022,7 +1025,9 @@ int ieee80211_mgmt_tx(struct wiphy *wiphy, struct wireless_dev *wdev,
+ 	ath12k_dbg(dp->ab, ATH12K_DBG_DATA,
+ 		   "rx skb %p len %u peer %pM %d %s sn %u %s%s%s%s%s%s%s%s%s%s rate_idx %u vht_nss %u freq %u band %u flag 0x%x fcs-err %i mic-err %i amsdu-more %i\n",
+@@ -1422,7 +1433,8 @@ void ath12k_dp_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev, struct napi_struc
+ 
+ 	/* TODO: trace rx packet */
+ 
+-	ieee80211_rx_napi(ath12k_pdev_dp_to_hw(dp_pdev), pubsta, msdu, napi);
++	ieee80211_rx_napi(ath12k_pdev_dp_to_hw(dp_pdev), link_pubsta, msdu,
++			  napi);
+ }
+ EXPORT_SYMBOL(ath12k_dp_rx_deliver_msdu);
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
+index 011bb22e21c7..e790de5737db 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.h
++++ b/drivers/net/wireless/ath/ath12k/hw.h
+@@ -249,9 +249,9 @@ struct ath12k_hw_ops {
+ 	bool (*dp_srng_is_tx_comp_ring)(int ring_num);
+ 	bool (*is_frame_link_agnostic)(struct ath12k_link_vif *arvif,
+ 				       struct ieee80211_mgmt *mgmt);
+-	void (*set_rx_link_id)(struct ath12k_dp_peer *dp_peer,
+-			       struct ath12k_skb_rxcb *rxcb,
+-			       struct ieee80211_rx_status *status);
++	int (*get_rx_link_id)(struct ath12k_dp_peer *dp_peer,
++			      struct ath12k_skb_rxcb *rxcb,
++			      struct ieee80211_rx_status *status);
+ };
+ 
+ static inline
+@@ -282,13 +282,15 @@ static inline int ath12k_hw_mac_id_to_srng_id(const struct ath12k_hw_params *hw,
+ 	return 0;
+ }
+ 
+-static inline void ath12k_hw_set_rx_link_id(const struct ath12k_hw_params *hw,
+-					    struct ath12k_dp_peer *dp_peer,
+-					    struct ath12k_skb_rxcb *rxcb,
+-					    struct ieee80211_rx_status *status)
++static inline int ath12k_hw_get_rx_link_id(const struct ath12k_hw_params *hw,
++					   struct ath12k_dp_peer *dp_peer,
++					   struct ath12k_skb_rxcb *rxcb,
++					   struct ieee80211_rx_status *status)
+ {
+-	if (hw->hw_ops->set_rx_link_id)
+-		hw->hw_ops->set_rx_link_id(dp_peer, rxcb, status);
++	if (hw->hw_ops->get_rx_link_id)
++		return hw->hw_ops->get_rx_link_id(dp_peer, rxcb, status);
++
++	return -1;
+ }
+ 
+ struct ath12k_fw_ie {
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+index 95d87dd67872..8b722ee0ad8f 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+@@ -2317,17 +2317,16 @@ ath12k_wifi7_dp_rxdesc_mpdu_valid(struct ath12k_base *ab,
+ 	return tlv_tag == HAL_RX_MPDU_START;
+ }
+ 
+-void
+-ath12k_wifi7_dp_rx_set_link_id_qcn9274(struct ath12k_dp_peer *dp_peer,
++int
++ath12k_wifi7_dp_rx_get_link_id_qcn9274(struct ath12k_dp_peer *dp_peer,
+ 				       struct ath12k_skb_rxcb *rxcb,
+ 				       struct ieee80211_rx_status *status)
+ {
+-	status->link_valid = 1;
+-	status->link_id = dp_peer->hw_links[rxcb->hw_link_id];
++	return dp_peer->hw_links[rxcb->hw_link_id];
+ }
+ 
+-void
+-ath12k_wifi7_dp_rx_set_link_id_wcn7850(struct ath12k_dp_peer *dp_peer,
++int
++ath12k_wifi7_dp_rx_get_link_id_wcn7850(struct ath12k_dp_peer *dp_peer,
+ 				       struct ath12k_skb_rxcb *rxcb,
+ 				       struct ieee80211_rx_status *status)
+ {
+@@ -2341,10 +2340,9 @@ ath12k_wifi7_dp_rx_set_link_id_wcn7850(struct ath12k_dp_peer *dp_peer,
+ 	links_map = READ_ONCE(dp_peer->link_peers_map);
+ 	for_each_set_bit(i, &links_map, ATH12K_NUM_MAX_LINKS) {
+ 		link_peer = rcu_dereference(dp_peer->link_peers[i]);
+-		if (link_peer && link_peer->peer_id == rxcb->peer_id) {
+-			status->link_valid = 1;
+-			status->link_id = link_peer->link_id;
+-			return;
+-		}
++		if (link_peer && link_peer->peer_id == rxcb->peer_id)
++			return link_peer->link_id;
+ 	}
++
++	return -1;
+ }
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
+index 1d3a4788a2dd..d68489ff7b03 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.h
+@@ -57,10 +57,10 @@ ath12k_wifi7_dp_rxdesc_mpdu_valid(struct ath12k_base *ab,
+ 				  struct hal_rx_desc *rx_desc);
+ int ath12k_wifi7_dp_rx_tid_delete_handler(struct ath12k_base *ab,
+ 					  struct ath12k_dp_rx_tid_rxq *rx_tid);
+-void ath12k_wifi7_dp_rx_set_link_id_qcn9274(struct ath12k_dp_peer *dp_peer,
+-					    struct ath12k_skb_rxcb *rxcb,
+-					    struct ieee80211_rx_status *status);
+-void ath12k_wifi7_dp_rx_set_link_id_wcn7850(struct ath12k_dp_peer *dp_peer,
+-					    struct ath12k_skb_rxcb *rxcb,
+-					    struct ieee80211_rx_status *status);
++int ath12k_wifi7_dp_rx_get_link_id_qcn9274(struct ath12k_dp_peer *dp_peer,
++					   struct ath12k_skb_rxcb *rxcb,
++					   struct ieee80211_rx_status *status);
++int ath12k_wifi7_dp_rx_get_link_id_wcn7850(struct ath12k_dp_peer *dp_peer,
++					   struct ath12k_skb_rxcb *rxcb,
++					   struct ieee80211_rx_status *status);
+ #endif
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+index 7b86f324b2e6..4ded807763b6 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+@@ -158,7 +158,7 @@ static const struct ath12k_hw_ops qcn9274_ops = {
+ 	.get_ring_selector = ath12k_wifi7_hw_get_ring_selector_qcn9274,
+ 	.dp_srng_is_tx_comp_ring = ath12k_wifi7_dp_srng_is_comp_ring_qcn9274,
+ 	.is_frame_link_agnostic = ath12k_wifi7_is_frame_link_agnostic_qcn9274,
+-	.set_rx_link_id = ath12k_wifi7_dp_rx_set_link_id_qcn9274,
++	.get_rx_link_id = ath12k_wifi7_dp_rx_get_link_id_qcn9274,
+ };
+ 
+ static const struct ath12k_hw_ops wcn7850_ops = {
+@@ -169,7 +169,7 @@ static const struct ath12k_hw_ops wcn7850_ops = {
+ 	.get_ring_selector = ath12k_wifi7_hw_get_ring_selector_wcn7850,
+ 	.dp_srng_is_tx_comp_ring = ath12k_wifi7_dp_srng_is_comp_ring_wcn7850,
+ 	.is_frame_link_agnostic = ath12k_wifi7_is_frame_link_agnostic_wcn7850,
+-	.set_rx_link_id = ath12k_wifi7_dp_rx_set_link_id_wcn7850,
++	.get_rx_link_id = ath12k_wifi7_dp_rx_get_link_id_wcn7850,
+ };
+ 
+ static const struct ath12k_hw_ops qcc2072_ops = {
+@@ -180,7 +180,7 @@ static const struct ath12k_hw_ops qcc2072_ops = {
+ 	.get_ring_selector = ath12k_wifi7_hw_get_ring_selector_wcn7850,
+ 	.dp_srng_is_tx_comp_ring = ath12k_wifi7_dp_srng_is_comp_ring_wcn7850,
+ 	.is_frame_link_agnostic = ath12k_wifi7_is_frame_link_agnostic_wcn7850,
+-	.set_rx_link_id = ath12k_wifi7_dp_rx_set_link_id_wcn7850,
++	.get_rx_link_id = ath12k_wifi7_dp_rx_get_link_id_wcn7850,
+ };
+ 
+ #define ATH12K_TX_RING_MASK_0 0x1
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index d5160af60e00..7e3655966f02 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -7271,7 +7271,6 @@ static void ath12k_mgmt_rx_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 	struct ath12k_wmi_mgmt_rx_arg rx_ev = {};
+ 	struct ath12k *ar;
+ 	struct ieee80211_rx_status *status = IEEE80211_SKB_RXCB(skb);
+-	struct ieee80211_sta *pubsta = NULL;
+ 	struct ath12k_dp_link_peer *peer;
+ 	struct ieee80211_hdr *hdr;
+ 	bool is_4addr_null_pkt;
+@@ -7373,11 +7372,6 @@ static void ath12k_mgmt_rx_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 			dev_kfree_skb(skb);
+ 			goto exit;
+ 		}
+-		pubsta = peer->sta;
+-		if (pubsta && pubsta->valid_links) {
+-			status->link_valid = 1;
+-			status->link_id = peer->link_id;
+-		}
+ 		spin_unlock_bh(&dp->dp_lock);
+ 		goto send_rx;
+ 	}
+diff --git a/drivers/net/wireless/intel/iwlwifi/mld/rx.c b/drivers/net/wireless/intel/iwlwifi/mld/rx.c
+index 5696a247922b..02bdf6ccbcdc 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mld/rx.c
++++ b/drivers/net/wireless/intel/iwlwifi/mld/rx.c
+@@ -130,7 +130,7 @@ void iwl_mld_pass_packet_to_mac80211(struct iwl_mld *mld,
+ 		return;
  	}
  
- 	if (!need_offchan) {
--		ieee80211_tx_skb_tid(sdata, skb, NULL, 7, link_id);
-+		ieee80211_tx_skb_tid(sdata, skb,
-+				     params->no_sta ? ERR_PTR(-ENOENT) : sta,
-+				     7, link_id);
- 		ret = 0;
- 		goto out_unlock;
+-	ieee80211_rx_napi(mld->hw, link_sta->sta, skb, napi);
++	ieee80211_rx_napi(mld->hw, link_sta, skb, napi);
+ }
+ EXPORT_SYMBOL_IF_IWLWIFI_KUNIT(iwl_mld_pass_packet_to_mac80211);
+ 
+@@ -1765,11 +1765,6 @@ iwl_mld_rx_with_sta(struct iwl_mld *mld, struct ieee80211_hdr *hdr,
+ 
+ 	rx_status = IEEE80211_SKB_RXCB(skb);
+ 
+-	if (link_sta && sta->valid_links) {
+-		rx_status->link_valid = true;
+-		rx_status->link_id = link_sta->link_id;
+-	}
+-
+ 	/* fill checksum */
+ 	if (ieee80211_is_data(hdr->frame_control) &&
+ 	    pkt->len_n_flags & cpu_to_le32(FH_RSCSR_RPA_EN)) {
+diff --git a/drivers/net/wireless/intel/iwlwifi/mvm/rx.c b/drivers/net/wireless/intel/iwlwifi/mvm/rx.c
+index ab1eb2eb0c3c..8c197a090c2b 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mvm/rx.c
++++ b/drivers/net/wireless/intel/iwlwifi/mvm/rx.c
+@@ -90,7 +90,7 @@ static void iwl_mvm_pass_packet_to_mac80211(struct iwl_mvm *mvm,
+ 				fraglen, rxb->truesize);
  	}
+ 
+-	ieee80211_rx_napi(mvm->hw, sta, skb, napi);
++	ieee80211_rx_napi(mvm->hw, sta ? &sta->deflink : NULL, skb, napi);
+ }
+ 
+ /*
+diff --git a/drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c b/drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c
+index 7f0b4f5daa21..8c4009d3a00c 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c
++++ b/drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0 OR BSD-3-Clause
+ /*
+- * Copyright (C) 2012-2014, 2018-2025 Intel Corporation
++ * Copyright (C) 2012-2014, 2018-2026 Intel Corporation
+  * Copyright (C) 2013-2015 Intel Mobile Communications GmbH
+  * Copyright (C) 2015-2017 Intel Deutschland GmbH
+  */
+@@ -243,7 +243,7 @@ static void iwl_mvm_pass_packet_to_mac80211(struct iwl_mvm *mvm,
+ 		return;
+ 	}
+ 
+-	ieee80211_rx_napi(mvm->hw, sta, skb, napi);
++	ieee80211_rx_napi(mvm->hw, sta ? &sta->deflink : NULL, skb, napi);
+ }
+ 
+ static bool iwl_mvm_used_average_energy(struct iwl_mvm *mvm,
+@@ -2528,7 +2528,7 @@ void iwl_mvm_rx_monitor_no_data(struct iwl_mvm *mvm, struct napi_struct *napi,
+ 	}
+ 
+ 	rcu_read_lock();
+-	ieee80211_rx_napi(mvm->hw, sta, skb, napi);
++	ieee80211_rx_napi(mvm->hw, sta ? &sta->deflink : NULL, skb, napi);
+ 	rcu_read_unlock();
+ }
+ 
+diff --git a/drivers/net/wireless/mediatek/mt76/mac80211.c b/drivers/net/wireless/mediatek/mt76/mac80211.c
+index abbe65cbcd89..cda5c5d51aab 100644
+--- a/drivers/net/wireless/mediatek/mt76/mac80211.c
++++ b/drivers/net/wireless/mediatek/mt76/mac80211.c
+@@ -1255,11 +1255,12 @@ EXPORT_SYMBOL(mt76_rx_signal);
+ static void
+ mt76_rx_convert(struct mt76_dev *dev, struct sk_buff *skb,
+ 		struct ieee80211_hw **hw,
+-		struct ieee80211_sta **sta)
++		struct ieee80211_link_sta **link_sta)
+ {
+ 	struct ieee80211_rx_status *status = IEEE80211_SKB_RXCB(skb);
+ 	struct ieee80211_hdr *hdr = mt76_skb_get_hdr(skb);
+ 	struct mt76_rx_status mstat;
++	struct ieee80211_sta *sta;
+ 
+ 	mstat = *((struct mt76_rx_status *)skb->cb);
+ 	memset(status, 0, sizeof(*status));
+@@ -1301,12 +1302,14 @@ mt76_rx_convert(struct mt76_dev *dev, struct sk_buff *skb,
+ 	memcpy(status->chain_signal, mstat.chain_signal,
+ 	       sizeof(mstat.chain_signal));
+ 
+-	if (mstat.wcid) {
+-		status->link_valid = mstat.wcid->link_valid;
+-		status->link_id = mstat.wcid->link_id;
+-	}
++	sta = wcid_to_sta(mstat.wcid);
++	if (!sta)
++		*link_sta = NULL;
++	else if (mstat.wcid->link_valid)
++		*link_sta = rcu_dereference(sta->link[mstat.wcid->link_id]);
++	else
++		*link_sta = &sta->deflink;
+ 
+-	*sta = wcid_to_sta(mstat.wcid);
+ 	*hw = mt76_phy_hw(dev, mstat.phy_idx);
+ }
+ 
+@@ -1530,7 +1533,7 @@ mt76_check_sta(struct mt76_dev *dev, struct sk_buff *skb)
+ void mt76_rx_complete(struct mt76_dev *dev, struct sk_buff_head *frames,
+ 		      struct napi_struct *napi)
+ {
+-	struct ieee80211_sta *sta;
++	struct ieee80211_link_sta *link_sta;
+ 	struct ieee80211_hw *hw;
+ 	struct sk_buff *skb, *tmp;
+ 	LIST_HEAD(list);
+@@ -1541,8 +1544,8 @@ void mt76_rx_complete(struct mt76_dev *dev, struct sk_buff_head *frames,
+ 
+ 		mt76_check_ccmp_pn(skb);
+ 		skb_shinfo(skb)->frag_list = NULL;
+-		mt76_rx_convert(dev, skb, &hw, &sta);
+-		ieee80211_rx_list(hw, sta, skb, &list);
++		mt76_rx_convert(dev, skb, &hw, &link_sta);
++		ieee80211_rx_list(hw, link_sta, skb, &list);
+ 
+ 		/* subsequent amsdu frames */
+ 		while (nskb) {
+@@ -1550,8 +1553,8 @@ void mt76_rx_complete(struct mt76_dev *dev, struct sk_buff_head *frames,
+ 			nskb = nskb->next;
+ 			skb->next = NULL;
+ 
+-			mt76_rx_convert(dev, skb, &hw, &sta);
+-			ieee80211_rx_list(hw, sta, skb, &list);
++			mt76_rx_convert(dev, skb, &hw, &link_sta);
++			ieee80211_rx_list(hw, link_sta, skb, &list);
+ 		}
+ 	}
+ 	spin_unlock(&dev->rx_lock);
+diff --git a/drivers/net/wireless/realtek/rtw89/core.c b/drivers/net/wireless/realtek/rtw89/core.c
+index 397ebbfcac09..454d876aeb88 100644
+--- a/drivers/net/wireless/realtek/rtw89/core.c
++++ b/drivers/net/wireless/realtek/rtw89/core.c
+@@ -3073,10 +3073,8 @@ static void rtw89_vif_rx_stats_iter(void *data, u8 *mac,
+ 	struct rtw89_vif *rtwvif = vif_to_rtwvif(vif);
+ 	struct rtw89_rx_desc_info *desc_info = iter_data->desc_info;
+ 	struct sk_buff *skb = iter_data->skb;
+-	struct ieee80211_rx_status *rx_status = IEEE80211_SKB_RXCB(skb);
+ 	struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
+ 	struct rtw89_rx_phy_ppdu *phy_ppdu = iter_data->phy_ppdu;
+-	bool is_mld = ieee80211_vif_is_mld(vif);
+ 	struct ieee80211_bss_conf *bss_conf;
+ 	struct rtw89_vif_link *rtwvif_link;
+ 	const u8 *bssid = iter_data->bssid;
+@@ -3110,11 +3108,6 @@ static void rtw89_vif_rx_stats_iter(void *data, u8 *mac,
+ 	if (!ether_addr_equal(target_bssid, bssid))
+ 		goto out;
+ 
+-	if (is_mld) {
+-		rx_status->link_valid = true;
+-		rx_status->link_id = rtwvif_link->link_id;
+-	}
+-
+ 	bb = rtw89_get_bb_ctx(rtwdev, rtwvif_link->phy_idx);
+ 	pkt_stat = &bb->cur_pkt_stat;
+ 
+diff --git a/drivers/net/wireless/virtual/mac80211_hwsim_main.c b/drivers/net/wireless/virtual/mac80211_hwsim_main.c
+index 9f895ad718e9..1a12261f3e8e 100644
+--- a/drivers/net/wireless/virtual/mac80211_hwsim_main.c
++++ b/drivers/net/wireless/virtual/mac80211_hwsim_main.c
+@@ -1883,9 +1883,6 @@ static void mac80211_hwsim_rx(struct mac80211_hwsim_data *data,
+ 				sp->active_links_rx &= ~BIT(link_id);
+ 			else
+ 				sp->active_links_rx |= BIT(link_id);
+-
+-			rx_status->link_valid = true;
+-			rx_status->link_id = link_id;
+ 		}
+ 		rcu_read_unlock();
+ 	}
+diff --git a/include/net/mac80211.h b/include/net/mac80211.h
+index 7bb4618065b6..cba7cdf61ce8 100644
+--- a/include/net/mac80211.h
++++ b/include/net/mac80211.h
+@@ -5389,14 +5389,18 @@ void ieee80211_restart_hw(struct ieee80211_hw *hw);
+  * mixed for a single hardware. Must not run concurrently with
+  * ieee80211_tx_status_skb() or ieee80211_tx_status_ni().
+  *
++ * For data frames, when hardware has done address translation, a link station
++ * has to be provided and the frequency information may be skipped.
++ *
+  * This function must be called with BHs disabled and RCU read lock
+  *
+  * @hw: the hardware this frame came in on
+- * @sta: the station the frame was received from, or %NULL
++ * @link_sta: the link station the data frame was received from, or %NULL
+  * @skb: the buffer to receive, owned by mac80211 after this call
+  * @list: the destination list
+  */
+-void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *sta,
++void ieee80211_rx_list(struct ieee80211_hw *hw,
++		       struct ieee80211_link_sta *link_sta,
+ 		       struct sk_buff *skb, struct list_head *list);
+ 
+ /**
+@@ -5414,14 +5418,18 @@ void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *sta,
+  * mixed for a single hardware. Must not run concurrently with
+  * ieee80211_tx_status_skb() or ieee80211_tx_status_ni().
+  *
++ * For data frames, when hardware has done address translation, a link station
++ * has to be provided and the frequency information may be skipped.
++ *
+  * This function must be called with BHs disabled.
+  *
+  * @hw: the hardware this frame came in on
+- * @sta: the station the frame was received from, or %NULL
++ * @link_sta: the link station the data frame was received from, or %NULL
+  * @skb: the buffer to receive, owned by mac80211 after this call
+  * @napi: the NAPI context
+  */
+-void ieee80211_rx_napi(struct ieee80211_hw *hw, struct ieee80211_sta *sta,
++void ieee80211_rx_napi(struct ieee80211_hw *hw,
++		       struct ieee80211_link_sta *link_sta,
+ 		       struct sk_buff *skb, struct napi_struct *napi);
+ 
+ /**
+diff --git a/net/mac80211/rx.c b/net/mac80211/rx.c
+index 31dc6f83781b..0ddd0b8ea12a 100644
+--- a/net/mac80211/rx.c
++++ b/net/mac80211/rx.c
+@@ -5556,7 +5556,8 @@ static void __ieee80211_rx_handle_packet(struct ieee80211_hw *hw,
+  * This is the receive path handler. It is called by a low level driver when an
+  * 802.11 MPDU is received from the hardware.
+  */
+-void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
++void ieee80211_rx_list(struct ieee80211_hw *hw,
++		       struct ieee80211_link_sta *link_pubsta,
+ 		       struct sk_buff *skb, struct list_head *list)
+ {
+ 	struct ieee80211_local *local = hw_to_local(hw);
+@@ -5564,6 +5565,7 @@ void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
+ 	struct ieee80211_supported_band *sband;
+ 	struct ieee80211_rx_status *status = IEEE80211_SKB_RXCB(skb);
+ 	struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
++	struct ieee80211_sta *pubsta;
+ 
+ 	WARN_ON_ONCE(softirq_count() == 0);
+ 
+@@ -5694,8 +5696,15 @@ void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
+ 		}
+ 	}
+ 
+-	if (WARN_ON_ONCE(status->link_id >= IEEE80211_LINK_UNSPECIFIED))
+-		goto drop;
++	/* FIXME: Emulate the old driver behaviour for now */
++	if (link_pubsta) {
++		status->link_valid = 1;
++		status->link_id = link_pubsta->link_id;
++		pubsta = link_pubsta->sta;
++	} else {
++		status->link_valid = 0;
++		pubsta = NULL;
++	}
+ 
+ 	status->rx_flags = 0;
+ 
+@@ -5727,7 +5736,8 @@ void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
+ }
+ EXPORT_SYMBOL(ieee80211_rx_list);
+ 
+-void ieee80211_rx_napi(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
++void ieee80211_rx_napi(struct ieee80211_hw *hw,
++		       struct ieee80211_link_sta *link_pubsta,
+ 		       struct sk_buff *skb, struct napi_struct *napi)
+ {
+ 	struct sk_buff *tmp;
+@@ -5740,7 +5750,7 @@ void ieee80211_rx_napi(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
+ 	 * receive processing
+ 	 */
+ 	rcu_read_lock();
+-	ieee80211_rx_list(hw, pubsta, skb, &list);
++	ieee80211_rx_list(hw, link_pubsta, skb, &list);
+ 	rcu_read_unlock();
+ 
+ 	if (!napi) {
 -- 
 2.55.0
 
