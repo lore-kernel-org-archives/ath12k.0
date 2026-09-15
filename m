@@ -4,129 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CB4AC88E75
-	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 05:29:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F525C88E75
+	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 05:42:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=mbOqZAw6wTOw63b1G2ExHd4hbkezHdD6QRCAfQhtp2o=; b=mmZuMAZtiDAvpwICZwZcYRgdQt
-	yFhrPmCVsVtEwx+nNfX1olz4inJNYXxOxdiWjsig5BukJH2sG2wZk8jmD/+uoK+gRVpEZuzRPm+BR
-	xSVkNw0B48H0uQ+Gt2atGoURgu8gV+lpAKsRz+hg1typMzxta0XwrwtxiLfuLAlPCcufPzh/yzO1l
-	zR5znhU11QAz+M1oTpnAc2vhjCF/F6VaYBRon6q5fwK2UbcZROIgCskQzILlAiHexkbmUX1iP+GNM
-	Pz3eirETehG9O6G4RbWx27gNYf+fRMwUQhwnhXCDrG8t2sRSfM7iEhKZURu5sv8ZfAOTdO8OYXHro
-	RqQmnCeA==;
+	bh=3UskMR1traizMLSAbf0Ymv0Cf8iD3XyS0kBXp39G0No=; b=XMEiG71EovC57VbHJUOYIsAg1B
+	nqgAaCTS5kFgDMkN/e/tcCgdDBGHQZP81drZDbUkCRou4/YZ67tFUlhyvYZ+deQHnVhJRwa9KGwR9
+	Tk76U2Scf38GOcRO/lwXP62kOryjJptCOpVZBSW9axFC2wxSIh8F7rgCqKvQQ4hX1++PD2m3dqBYC
+	UYNIf9OjMUntdB8BN7e4uT/F+fhLmq5YC2mH3QsKiZYJAO+Rt4B5mxUV/0u+tKJ864oquc47Dll4G
+	VwpyWJ8zpSKn4uVleEJNJ+RzN5qdvvqgm++6duemh/lcwbOHg5l9KAv+jqrGGXbs/fshXN+6kQ2JZ
+	HT0pYMWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6Ljf-00000005FKb-07fr;
-	Tue, 15 Sep 2026 05:29:39 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1x6LwS-00000005G52-0XYt;
+	Tue, 15 Sep 2026 05:42:52 +0000
+Received: from lahtoruutu.iki.fi ([185.185.170.37])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6Ljb-00000005FKF-3a5M
-	for ath12k@lists.infradead.org;
-	Tue, 15 Sep 2026 05:29:37 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68F4u19Y2031345
-	for <ath12k@lists.infradead.org>; Tue, 15 Sep 2026 05:29:34 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=mbOqZAw6wTOw63b1G2ExHd4hbkezHdD6QRC
-	AfQhtp2o=; b=pHSR2nYtMIC9SwquqTU2J2jPRgVww8itq+ZCa7vVKOyYlvUH15a
-	eQBxhNS3bv5eHlCbjRf8z47Cd7YUp+JlOcDh/No+7LGmnep3Sv2RBC+A9p9s25p1
-	qOWElfqxvrVc1QsEmt9bCljanUmVv+yYvMCVC5TAVtTsWBGzFGuqYC+2LGEpoCDz
-	20cyNoUUxIWIfXVQRsg9/LRhKqmP4wZqax0L1kN8ZZfZH1PwTmrDUzCbAoZfq0zf
-	k5XibhRGRMThhbHW6Dpl7+RTy3SQIsK2LDQR1iWBzqdgy1JMuMOsv6wTFJFT3lXt
-	tP5mAaczMmS0Z231Z5E7yWcUgaMxWG467lQ==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gpye703dq-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 15 Sep 2026 05:29:34 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-38e1118e4abso7234685a91.0
-        for <ath12k@lists.infradead.org>; Mon, 14 Sep 2026 22:29:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1789450173; x=1790054973; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=mbOqZAw6wTOw63b1G2ExHd4hbkezHdD6QRCAfQhtp2o=;
-        b=ao9+a562XNnhzKDihRdlmfqqIChjmhO2NdTfAOGDvqEjJaz3Hfrp9e0ZmfAjJ/9LR0
-         keOJQTMZwXCsg4Vy1QP3DLqk8F0gT53kYYzPtTdQVqVToIyp7RHjrvwENvbbASrUwkB9
-         39OnK3qsiALcUWC4rjpeFDePkK1Jhatb8WaMoWOs38LBTWtDfB/gNhsy1bKpEragcrwk
-         xa+XeusIoArjK+ZSlvmU+3QHsGg0ldxs5PFVxX2vv02Dk83ATPttdQ3vymC1PJhig2BB
-         Bdj5t+nMpjl6Azliy8WeQh3TgB6MiyNJZJwWrutoChAfhiA8LCRxavbg27ir+VPZqL1q
-         38yA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789450173; x=1790054973;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=mbOqZAw6wTOw63b1G2ExHd4hbkezHdD6QRCAfQhtp2o=;
-        b=IhcyJtEG0EkbDhtG8eEI6LzzSFNC9BR4wbnOTpGzESwChd5IWDa4XxEmAxyp7Cn9CL
-         Ukm/erxIZZ89zSXyfH/dR7mnB8E11m9sL+h7BCgWMIgLOudIoLpz/wmZ4Hs6EyQQS+hc
-         RtFYDt16dPh6zQUwloOU3QkR+hQYpPG3NVGY1NVfg01do7JIZSQp7ydwAq37h67xdQXC
-         o9iWWA51jKnH15Yo9yofCO5eHXAr9JNZVhAreOOHHfranNOWPTk+VAOya1yAn62tBI0u
-         bgblHObAB+R/9etlIlRnqLeoB1Vx9kl4xopzwSou6hWBKfl8J9j4COh9Y7FQgpjUkKJh
-         PBsA==
-X-Gm-Message-State: AFuF++nn0HMVqUcnqkw9tzoBjsCknuJzW/G36m2aa3Wf3VDIQYnjdwm/
-	+j9QYpizadw4xaMuNfLb2qPK+FvDDB21IU5DCol53wkW2Yezr3yQhV/PaS5gCuY3/MmsRWG46LB
-	QikFnGhV9U/xiED9yDeF/IGgpipIRQFpkmCCJmrllW0SVNScpauVvQTBYFgOFd1FJCZt747gu
-X-Gm-Gg: AYBFou0nm/Nxmf6jydfpJHl5/IHrCAZCxYAuBEL3WJbFQL0q03KZfqeTUCWFqaQdCUq
-	yg5O9tDKSHeUkNS8QfeVsTx3ELoJCnxwvq3+JEEqPnp3yr3D2/6RsqWLqSBk2tVgtbB1h3B2UUZ
-	zaGP9N3NVsMVXL6agFW3YOqF/vQ2J2cIfDzLCBZrCr2Xb1nrK6pxMk0B9MeIHUxtrGWxX4iEu8N
-	QfG5Z8+Al4TvkG3QqODIz71JufTwOPt8YCbBPWrSREU7R/12R94g5xfIkWvKgek4T3mZGIFI68s
-	8jkuCmuX32JLq2RqfheJiDvxFcHqGaIQYsoq2z1jeM+/AJhUuGHdzUJLp7P60D4Jrfb5QOvE6Gs
-	W6wJPpRPyLg5Vx1zcQDTqD7ImOzednPtzd9agL4/6Sel+3QLbd/R6W7QyLYugWLj9htnbuLpvpI
-	oyGdTfUqIPJ4hmImTIUd/i+T0=
-X-Received: by 2002:a17:90b:17c8:b0:396:65dd:4093 with SMTP id 98e67ed59e1d1-39dec04f9d9mr10779426a91.14.1789450173445;
-        Mon, 14 Sep 2026 22:29:33 -0700 (PDT)
-X-Received: by 2002:a17:90b:17c8:b0:396:65dd:4093 with SMTP id 98e67ed59e1d1-39dec04f9d9mr10779379a91.14.1789450172943;
-        Mon, 14 Sep 2026 22:29:32 -0700 (PDT)
-Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-33ba4e95075sm30314339eec.11.2026.09.14.22.29.30
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 14 Sep 2026 22:29:32 -0700 (PDT)
-From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>,
-        Ganesh Kariganuru Mahabalesh <quic_gkarigan@quicinc.com>
-Subject: [PATCH wireless-next v2] wifi: mac80211: Report parent AP BSS parameters for AP_VLAN
-Date: Tue, 15 Sep 2026 10:59:23 +0530
-Message-Id: <20260915052923.3300269-1-aaradhana.sahu@oss.qualcomm.com>
+	id 1x6LwN-00000005G3f-2xcH;
+	Tue, 15 Sep 2026 05:42:50 +0000
+Received: from mandelbrot.. (xdsl-83-150-90-33.nebulazone.fi [83.150.90.33])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: jmtilli)
+	by lahtoruutu.iki.fi (Postfix) with ESMTPSA id 4hkWBF1QsTz49Q71;
+	Tue, 15 Sep 2026 08:42:28 +0300 (EEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=lahtoruutu;
+	t=1789450951;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=3UskMR1traizMLSAbf0Ymv0Cf8iD3XyS0kBXp39G0No=;
+	b=AhgYYYj1HolsyjT542m4kqio7dwujo+6S8InQeIMAdEwYH0MKjDaw2irhG9Haagy1pEmlr
+	o8d3/kU1CEVZFPj01X2SYg24lfUHvviGCvDgfy0qO13vLWSF7yW39mDiprPsu5pFRE+wY0
+	fH9fjeNtp29bTl3AlncoaRHC2dFyJ5c3zsnQuCbxJCoR40kO3UmUiM9EazRh3exqzgB7gK
+	kHtjgEWZN16fakMtUmqAHlaE0NxK9ayU69xSH4I/kZsfcg6uycHPZ5464fE3xHCpMw39G0
+	12C0NL74UBhS24EIOxOrdTDydWC4jEh1Wdh9uB425BNBfRJs98f8TwjYYTIXTg==
+ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=lahtoruutu; cv=none; t=1789450951;
+	b=EGfAFZXrjLp9GM8yF5UAQM2H0fEg9xmTTlLNQMl+fPfKUIUrldHEksetOXT5E+8d5KBw58
+	vQHpRKj7ONfPnmL8rHvhGUYr8a8dYh64VxDcSYTJuVWDdWMLAXcQU1yOq/+aPoA/msMIqF
+	UulxpVTg3ikXgMb67jH8HksuoidJe+QoJl9WxdpNze/shGxbQDh2bI+JubBFaUb+kjBTF7
+	FJzrgRClyxI9Y66tNd6YQECvLnN44BBoDU0Z+RqSa91G/LrivBlpMZFqJv5blFfBE2PYHS
+	lA0Y0IDgh2i/rCMnxTZVjcyxRjOJpyjT/52jvJ7otGwcT/f4aRPFZH8d6HSBsw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
+	s=lahtoruutu; t=1789450951;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=3UskMR1traizMLSAbf0Ymv0Cf8iD3XyS0kBXp39G0No=;
+	b=j3rw2MDFLcYp/hY4EvcOmkSOrC3sNmZoDqkazmpRWoxz8tM/7cHZhX91KKKruTzcLx4IId
+	iO6xdOFrm8Oz7oj5Zl85UH2cPhxjIDBloOxeL3Ba5bU9ifucVnEf46e0LQ4LUd5yhZTCKb
+	bQ3JO3KCQRL6S7H8GGyR7w5L+UwPl8cBV6dVbM1SddeKXNe9UKrTAxgllluIY1gsD1uP0y
+	mpmnt1PYV1HjUkxgenJpR/KQLBvMTqGjYE7f/bf/6eSk1HqXWdyi6tw+RQQu91YynzsOq9
+	Oh4sp5uqkhs/gHBS/ACokBEYV473/Swz5J1GQux8vNW+RIzxmePThhilZeGV5w==
+ARC-Authentication-Results: i=1;
+	ORIGINATING;
+	auth=pass smtp.auth=jmtilli smtp.mailfrom=juha-matti.tilli@iki.fi
+From: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
+To: Manivannan Sadhasivam <mani@kernel.org>,
+	linux-arm-msm@vger.kernel.org
+Cc: Juha-Matti Tilli <juha-matti.tilli@iki.fi>,
+	Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Eric Dumazet <edumazet@google.com>,
+	Kuniyuki Iwashima <kuniyu@google.com>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Willem de Bruijn <willemb@google.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Simon Horman <horms@kernel.org>,
+	Mihai Moldovan <ionic@ionic.de>,
+	Denis Kenzior <denkenz@gmail.com>,
+	Marcel Holtmann <marcel@holtmann.org>,
+	Andy Gross <agross@kernel.org>,
+	linux-kernel@vger.kernel.org,
+	mhi@lists.linux.dev,
+	linux-wireless@vger.kernel.org,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	netdev@vger.kernel.org
+Subject: [PATCH v7 00/15] QRTR Multi-endpoint support
+Date: Tue, 15 Sep 2026 08:41:52 +0300
+Message-Id: <20260915054207.2513877-1-juha-matti.tilli@iki.fi>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTE1MDA3NiBTYWx0ZWRfX+TCipi4k6/SF
- DzJpUdyjCsnjJ7UZbhlrevVphN8L8XSKadVYFn0+pXasf2br2zh9+T1jV9vVVudj6bs/oVZRIgZ
- UQrGEbZ+FK4r0M61AAetFQ6rJeUi5yMoTCRkikV4Hkw2ToFSpE9ZFgoi2BYgzQ4G7SkUnwv14z+
- AaE25OBR7BW/1JwZelPCWIBuxPQgn+TrL1cievK4nwprX8HK5Jn03HCmGtWLXaRyh2JYieiH9Yd
- Yl96NFhzQyMfkty4B9t89CEJ/gx4M5BPvKlwJ3DwyKOFmiNzC7VPhLNKfhQAg+xW/cE062VrygQ
- JR1H17tx+5QtbfnGEnRrp17k22urxP2Ej6O0OncN6X8KS3/uPObFBloxJYdl4i9ArRtGzb3GSwv
- Jg0Ghi1TMTpI3uA/DlBQ4D2ZrjIAMCAHxcVAwxxJ9NYfvu2jANbvElcM2Urh/GFHFWmVw6JfbL7
- l0rtuSLQaOljryGWOOw==
-X-Proofpoint-GUID: 30zZfoPYNtxDqM_adGv4JGPlVpsghcRS
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTE1MDA3NiBTYWx0ZWRfX16TZibwfnEIj
- LdvTo5tQx5r+hpn/OU9e2tKS2ymeJ2PJ/1Ce1NK1IKXjvtSQtz2OE3utIt9b39Vuk/aFEw6E6+i
- Absgq08KeOMCmO+Wq2b1qXWPloeD0+4=
-X-Authority-Analysis: v=2.4 cv=fck4WEQF c=1 sm=1 tr=0 ts=6aa8d7be cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22 a=COk6AnOGAAAA:8
- a=EUspDBNiAAAA:8 a=IfjyXQZqvconvXi0t-4A:9 a=uKXjsCUrEbL0IQVhDsJ9:22
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: 30zZfoPYNtxDqM_adGv4JGPlVpsghcRS
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-15_01,2026-09-14_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 suspectscore=0 bulkscore=0 malwarescore=0 phishscore=0
- spamscore=0 lowpriorityscore=0 adultscore=0 clxscore=1015 priorityscore=1501
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609150076
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260914_222936_031132_D47196BD 
-X-CRM114-Status: GOOD (  17.34  )
+X-CRM114-CacheID: sfid-20260914_224248_110570_F10FB9A3 
+X-CRM114-Status: GOOD (  30.48  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,172 +112,190 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-AP_VLAN interfaces do not maintain independent BSS configuration.
-When station information is reported for a 4-address station, BSS
-parameters are read from the AP_VLAN interface, causing beacon interval,
-DTIM period and BSS capability flags to be reported incorrectly.
+Hello,
 
-Read the BSS configuration from the parent AP when populating station
-information for AP_VLAN interfaces. This ensures that beacon interval,
-DTIM period, CTS protection, short preamble and short slot time reflect
-the parent AP configuration for both legacy and MLO station dumps.
+First, I would like to thank Denis Kenzior and Mihai Moldovan for
+initially creating this patchset. Without their efforts, there wouldn't
+be any progress towards supporting multiple identical ath11k or ath12k
+modules on a single Linux host.
 
-For MLO, the per-link BSS configuration is used so that CTS protection,
-short preamble and short slot time reflect the configuration of the
-corresponding parent AP link.
+As you may know, if you put two identical Qualcomm Atheros ath11k or
+ath12k WLAN modules on the same Linux host, they will conflict and
+neither works. This is a massive issue in routers, and to solve it, we
+need QRTR multi-endpoint support.
 
-Only advertise NL80211_STA_INFO_BSS_PARAM when a valid BSS
-configuration is available. This avoids reporting zero-valued BSS
-parameters when corresponding BSS configuration is unavailable.
+I contacted Mihai Moldovan who posted v5 and he said he's been busy and
+can't provide an estimate of when he'll post v6. So I picked up his
+work, ported it over ath-next and solved the issue of cramming two
+32-bit numbers into an unsigned long that can be 32 bits on a 32-bit
+architecture. Mihai said he doesn't have any corporate backing and
+doesn't care who implements multi-ath11k/ath12k support as long as it
+"just works". Since it's been over a year from the previous activity and
+since Mihai has been and is busy and said he doesn't care who eventually
+implements this, I decided to "steal" the responsibility of posting a v6
+to myself since I fortunately have corporate backing. If Mihai so
+decides, I'm willing to hand over this patchset back to him.
 
-Co-developed-by: Ganesh Kariganuru Mahabalesh <quic_gkarigan@quicinc.com>
-Signed-off-by: Ganesh Kariganuru Mahabalesh <quic_gkarigan@quicinc.com>
-Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
----
+Some of the patches may need dropping/squashing. For example, "fit node
+ID + port number combination into unsigned long" fixes one bug on 32-bit
+architectures but introduces another. This needs careful review. I tried
+to adjust the behavior to my tastes in "use only low 16 bits of
+node/port in 32-bit systems", and this needs careful review, too. Both
+of these are candidates for dropping from this patch series.
+
+Furthermore, "validate msglen before ctrl_pkt use", although it seems to
+fix a real bug, seems to be orthogonal to this patchset, and could be a
+candidate for posting separately.
+
+Also, "limit endpoint range to 16 bits on 32-bit machines", "use nid
+modulo 65536 in 32-bit lookups" and "solve the 32-bit unsafe use in
+endpoints" are candidates for squashing together. I didn't squash them
+yet, since I want to keep my options open at this point, to be able to
+easily adapt to any possible code review comments such as squashing or
+dropping commits.
+
+Someone could complain that using a "radix tree of radix trees" approach
+on 64-bit machines is overkill since a single 64-bit key is enough.
+However, this doesn't work on 32-bit machines, and having entirely
+different code on 32-bit and 64-bit machines would be a testing
+nightmare.
+
+I have tested qrtr with all of these changes, and with Mihai Moldovan's
+original and my refined patches to actually have two identical ath11k or
+ath12k modules on the same system. Our limited CPU has issues with
+ath12k, so I have instead tested it with two identical ath11k modules.
+However, Mihai Moldovan created the ath11k/ath12k patchset in a somewhat
+non-optimal way, leaking memory in some use cases, with an O(n)
+algorithm for looking up the endpoint id where n is the amount of leaked
+memory. So I had to rework that entire patchset. None of the leaky O(n)
+stuff is in this patchset, and the subsequently posted ath11k/ath12k
+patchset will have no memory leaks. Its v3 version is already available:
+https://msgid.link/20260908093145.2492666-1-juha-matti.tilli@iki.fi
+
+But first, before merging the multi-ath11k/ath12k patches, this first
+patch set of QRTR multi-endpoint support needs to be merged.
+
+Original description:
+
+The current implementation of QRTR assumes that each entity on the QRTR
+IPC bus is uniquely identifiable by its node/port combination, with
+node/port combinations being used to route messages between entities.
+
+However, this assumption of uniqueness is problematic in scenarios
+where multiple devices with the same node/port combinations are
+connected to the system.  A practical example is a typical consumer PC
+with multiple PCIe-based devices, such as WiFi cards or 5G modems, where
+each device could potentially have the same node identifier set.  In
+such cases, the current QRTR protocol implementation does not provide a
+mechanism to differentiate between these devices, making it impossible
+to support communication with multiple identical devices.
+
+This patch series addresses this limitation by introducing support for
+a concept of an 'endpoint.' Multiple devices with conflicting node/port
+combinations can be supported by assigning a unique endpoint identifier
+to each one.  Such endpoint identifiers can then be used to distinguish
+between devices while sending and receiving messages over QRTR sockets.
+
+The patch series maintains backward compatibility with existing clients:
+the endpoint concept is added using auxiliary data that can be added to
+recvmsg and sendmsg system calls.  The QRTR socket interface is extended
+as follows:
+
+- Adds QRTR_ENDPOINT auxiliary data element that reports which endpoint
+  generated a particular message.  This auxiliary data is only reported
+  if the socket was explicitly opted in using setsockopt, enabling the
+  QRTR_REPORT_ENDPOINT socket option.  SOL_QRTR socket level was added
+  to facilitate this.  This requires QRTR clients to be updated to use
+  recvmsg instead of the more typical recvfrom() or recv() use.
+
+- Similarly, QRTR_ENDPOINT auxiliary data element can be included in
+  sendmsg() requests.  This will allow clients to route QRTR messages
+  to the desired endpoint, even in cases of node/port conflict between
+  multiple endpoints.
+
+- Finally, QRTR_BIND_ENDPOINT socket option is introduced.  This allows
+  clients to bind to a particular endpoint (such as a 5G PCIe modem) if
+  they're only interested in receiving or sending messages to this
+  device.
+
+NOTE: There is 32-bit unsafe use of radix_tree_insert in this patch set.
+This follows the existing usage inside net/qrtr/af_qrtr.c in
+qrtr_tx_wait(), qrtr_tx_resume() and qrtr_tx_flow_failed().  This was
+done deliberately in order to keep the changes as minimal as possible
+until it is known whether the approach outlined is generally acceptable.
+
+v7:
+  - solved an embarrassing 32-bit compilation issue in one commit (that
+    was already fixed in a subsequent commit leading me not to notice)
+  - somewhat reformat a removable NOTE in some commit messages
+  - update recipient list (Cc)
+
+Link to v6:
+https://msgid.link/all/20260901131934.225991-1-juha-matti.tilli@iki.fi
+
+v6:
+  - rebased against current ath-next
+  - finally solve the 32-bit unsafe use by "radix tree of radix trees"
+  - remove checks of node/port being in 16-bit range (they may not be)
+  - Link to v5: https://msgid.link/cover.1754962436.git.ionic@ionic.de
+
+v5:
+  - fix typos in commit message
+  - Link to v4: https://msgid.link/cover.1753720934.git.ionic@ionic.de
+
+v4:
+  - fixed issues found in previous review round:
+    o lock without unlock
+    o wrong return value
+  - Link to v3: https://msgid.link/cover.1753312999.git.ionic@ionic.de
+
+v3:
+  - rebased against current master
+  - fix checkpatch.pl warnings
+  - fix overflow issues with unsigned long radix tree keys by using the
+    upper half of the storage space for one element and the lower half
+    of storage for the other element, making sure that the elements fit
+    into their respective storage space
+  - Link to v2: https://msgid.link/cover.1752947108.git.ionic@ionic.de
+
 v2:
-  -Remove unnecessary sdata->bss NULL check.
----
- net/mac80211/ieee80211_i.h |  2 ++
- net/mac80211/sta_info.c    | 50 ++++++++++++++++++++++++--------------
- net/mac80211/util.c        | 17 +++++++++++++
- 3 files changed, 51 insertions(+), 18 deletions(-)
+  - rebased against current master
+  - fixed most issues found in first review round (see individual
+    commits), minus the 32-bit long unsafe use
 
-diff --git a/net/mac80211/ieee80211_i.h b/net/mac80211/ieee80211_i.h
-index 65311340db40..96978a4a7e2a 100644
---- a/net/mac80211/ieee80211_i.h
-+++ b/net/mac80211/ieee80211_i.h
-@@ -2985,6 +2985,8 @@ ieee80211_uhr_cap_ie_to_sta_uhr_cap(struct ieee80211_sub_if_data *sdata,
- 				    const struct ieee80211_uhr_cap *uhr_cap,
- 				    u8 uhr_cap_len,
- 				    struct link_sta_info *link_sta);
-+struct ieee80211_bss_conf *
-+ieee80211_get_sdata_bss_conf(struct ieee80211_sub_if_data *sdata, int link_id);
- 
- #if IS_ENABLED(CONFIG_MAC80211_KUNIT_TEST)
- #define EXPORT_SYMBOL_IF_MAC80211_KUNIT(sym) EXPORT_SYMBOL_IF_KUNIT(sym)
-diff --git a/net/mac80211/sta_info.c b/net/mac80211/sta_info.c
-index fdf00cbf49d8..26c8b41042f8 100644
---- a/net/mac80211/sta_info.c
-+++ b/net/mac80211/sta_info.c
-@@ -2843,6 +2843,7 @@ static void sta_set_link_sinfo(struct sta_info *sta,
- 	struct ieee80211_sta_rx_stats *last_rxstats;
- 	int i, ac, cpu, link_id = link->link_id;
- 	struct link_sta_info *link_sta_info;
-+	struct ieee80211_bss_conf *bss_conf;
- 	u32 thr = 0;
- 
- 	last_rxstats = sta_get_last_rx_stats(sta, link_id);
-@@ -2864,7 +2865,6 @@ static void sta_set_link_sinfo(struct sta_info *sta,
- 				link_sinfo);
- 
- 	link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_INACTIVE_TIME) |
--			 BIT_ULL(NL80211_STA_INFO_BSS_PARAM) |
- 			 BIT_ULL(NL80211_STA_INFO_RX_DROP_MISC);
- 
- 	if (sdata->vif.type == NL80211_IFTYPE_STATION) {
-@@ -3038,14 +3038,21 @@ static void sta_set_link_sinfo(struct sta_info *sta,
- 	}
- 
- 	link_sinfo->bss_param.flags = 0;
--	if (sdata->vif.bss_conf.use_cts_prot)
--		link_sinfo->bss_param.flags |= BSS_PARAM_FLAGS_CTS_PROT;
--	if (sdata->vif.bss_conf.use_short_preamble)
--		link_sinfo->bss_param.flags |= BSS_PARAM_FLAGS_SHORT_PREAMBLE;
--	if (sdata->vif.bss_conf.use_short_slot)
--		link_sinfo->bss_param.flags |= BSS_PARAM_FLAGS_SHORT_SLOT_TIME;
--	link_sinfo->bss_param.dtim_period = link->conf->dtim_period;
--	link_sinfo->bss_param.beacon_interval = link->conf->beacon_int;
-+
-+	bss_conf = ieee80211_get_sdata_bss_conf(sdata, link_id);
-+	if (bss_conf) {
-+		if (bss_conf->use_cts_prot)
-+			link_sinfo->bss_param.flags |= BSS_PARAM_FLAGS_CTS_PROT;
-+		if (bss_conf->use_short_preamble)
-+			link_sinfo->bss_param.flags |=
-+				BSS_PARAM_FLAGS_SHORT_PREAMBLE;
-+		if (bss_conf->use_short_slot)
-+			link_sinfo->bss_param.flags |=
-+				BSS_PARAM_FLAGS_SHORT_SLOT_TIME;
-+		link_sinfo->bss_param.dtim_period = bss_conf->dtim_period;
-+		link_sinfo->bss_param.beacon_interval = bss_conf->beacon_int;
-+		link_sinfo->filled |= BIT_ULL(NL80211_STA_INFO_BSS_PARAM);
-+	}
- 
- 	thr = sta_get_expected_throughput(sta);
- 	if (!thr && (link_sinfo->filled & BIT_ULL(NL80211_STA_INFO_TX_BITRATE)))
-@@ -3081,6 +3088,7 @@ void sta_set_sinfo(struct sta_info *sta, struct station_info *sinfo,
- {
- 	struct ieee80211_sub_if_data *sdata = sta->sdata;
- 	struct ieee80211_local *local = sdata->local;
-+	struct ieee80211_bss_conf *bss_conf;
- 	u32 thr = 0;
- 	int i, ac, cpu;
- 	struct ieee80211_sta_rx_stats *last_rxstats;
-@@ -3099,7 +3107,6 @@ void sta_set_sinfo(struct sta_info *sta, struct station_info *sinfo,
- 	drv_sta_statistics(local, sdata, &sta->sta, sinfo);
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_INACTIVE_TIME) |
- 			 BIT_ULL(NL80211_STA_INFO_STA_FLAGS) |
--			 BIT_ULL(NL80211_STA_INFO_BSS_PARAM) |
- 			 BIT_ULL(NL80211_STA_INFO_CONNECTED_TIME) |
- 			 BIT_ULL(NL80211_STA_INFO_ASSOC_AT_BOOTTIME) |
- 			 BIT_ULL(NL80211_STA_INFO_RX_DROP_MISC);
-@@ -3268,14 +3275,21 @@ void sta_set_sinfo(struct sta_info *sta, struct station_info *sinfo,
- #endif
- 
- 	sinfo->bss_param.flags = 0;
--	if (sdata->vif.bss_conf.use_cts_prot)
--		sinfo->bss_param.flags |= BSS_PARAM_FLAGS_CTS_PROT;
--	if (sdata->vif.bss_conf.use_short_preamble)
--		sinfo->bss_param.flags |= BSS_PARAM_FLAGS_SHORT_PREAMBLE;
--	if (sdata->vif.bss_conf.use_short_slot)
--		sinfo->bss_param.flags |= BSS_PARAM_FLAGS_SHORT_SLOT_TIME;
--	sinfo->bss_param.dtim_period = sdata->vif.bss_conf.dtim_period;
--	sinfo->bss_param.beacon_interval = sdata->vif.bss_conf.beacon_int;
-+
-+	bss_conf = ieee80211_get_sdata_bss_conf(sdata, -1);
-+	if (bss_conf) {
-+		if (bss_conf->use_cts_prot)
-+			sinfo->bss_param.flags |= BSS_PARAM_FLAGS_CTS_PROT;
-+		if (bss_conf->use_short_preamble)
-+			sinfo->bss_param.flags |=
-+				BSS_PARAM_FLAGS_SHORT_PREAMBLE;
-+		if (bss_conf->use_short_slot)
-+			sinfo->bss_param.flags |=
-+				BSS_PARAM_FLAGS_SHORT_SLOT_TIME;
-+		sinfo->bss_param.dtim_period = bss_conf->dtim_period;
-+		sinfo->bss_param.beacon_interval = bss_conf->beacon_int;
-+		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_BSS_PARAM);
-+	}
- 
- 	sinfo->sta_flags.set = 0;
- 	sinfo->sta_flags.mask = BIT(NL80211_STA_FLAG_AUTHORIZED) |
-diff --git a/net/mac80211/util.c b/net/mac80211/util.c
-index a96078a6bfa2..3f24862ba713 100644
---- a/net/mac80211/util.c
-+++ b/net/mac80211/util.c
-@@ -4752,3 +4752,20 @@ bool ieee80211_vif_nan_started(struct ieee80211_vif *vif)
- 	return vif->type == NL80211_IFTYPE_NAN && sdata->u.nan.started;
- }
- EXPORT_SYMBOL_GPL(ieee80211_vif_nan_started);
-+
-+struct ieee80211_bss_conf *
-+ieee80211_get_sdata_bss_conf(struct ieee80211_sub_if_data *sdata, int link_id)
-+{
-+	struct ieee80211_sub_if_data *bss_sdata = sdata;
-+
-+	lockdep_assert_wiphy(sdata->local->hw.wiphy);
-+
-+	if (sdata->vif.type == NL80211_IFTYPE_AP_VLAN)
-+		bss_sdata = get_bss_sdata(sdata);
-+
-+	if (link_id >= 0)
-+		return sdata_dereference(bss_sdata->vif.link_conf[link_id],
-+					 bss_sdata);
-+
-+	return &bss_sdata->vif.bss_conf;
-+}
+v1 link: https://msgid.link/20241018181842.1368394-1-denkenz@gmail.com
 
-base-commit: 27b084bdd009c5c82346d39d7773bab3191dd299
+BR, Juha-Matti
+
+Denis Kenzior (10):
+  net: qrtr: ns: validate msglen before ctrl_pkt use
+  net: qrtr: allocate and track endpoint ids
+  net: qrtr: support identical node ids
+  net: qrtr: Report sender endpoint in aux data
+  net: qrtr: Report endpoint for locally generated messages
+  net: qrtr: Allow sendmsg to target an endpoint
+  net: qrtr: allow socket endpoint binding
+  net: qrtr: Drop remote {NEW|DEL}_LOOKUP messages
+  net: qrtr: ns: support multiple endpoints
+  net: qrtr: mhi: Report endpoint id in sysfs
+
+Juha-Matti Tilli (4):
+  net: qrtr: use only low 16 bits of node/port in 32-bit systems
+  net: qrtr: limit endpoint range to 16 bits on 32-bit machines
+  net: qrtr: use nid modulo 65536 in 32-bit lookups
+  net: qrtr: solve the 32-bit unsafe use in endpoints
+
+Mihai Moldovan (1):
+  net: qrtr: fit node ID + port number combination into unsigned long
+
+ include/linux/socket.h    |   1 +
+ include/uapi/linux/qrtr.h |   7 +
+ net/qrtr/af_qrtr.c        | 461 ++++++++++++++++++++++++++++++++------
+ net/qrtr/mhi.c            |  14 ++
+ net/qrtr/ns.c             | 316 ++++++++++++++++----------
+ net/qrtr/qrtr.h           |  14 ++
+ 6 files changed, 627 insertions(+), 186 deletions(-)
+
 -- 
 2.34.1
 
