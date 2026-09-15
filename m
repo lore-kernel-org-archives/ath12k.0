@@ -4,127 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CE7FC88E73
-	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 08:01:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA6FAC88E75
+	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 12:32:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=oa6Q/1/UwGnZVW8dCztoYeJ9PNBU4QT7E+kpBF0tFpo=; b=NoI6pHJg/M7PlkN4AadLCqvmJj
-	maWKCg0rWQRrveBolqlkkZ9DiGAyI8J382Y49TZ98kIUFRvi7e5HynWrLmwtV4E4p6olaoaRPwkDC
-	9DbpKyvDCbPq7NGAiQjgVq2e9YtxN3tmoTofso1Ioe1WI8rpnb0jgECI9U0/USyTjhOWF5Aojuyn7
-	e53WpNZfTx4r0MABQBDsGPbldxr9rjdhubx22s7kmL1owyRn96iDf2nsa9dF2KWcWViHaFoZUzEw9
-	HPRWk7VNidSyCk39uvMWswlklqDklJ7b6bXwd55rULMtWZ7jwc++yXkG06zxmo18nlWSxA+zz3415
-	WACMqlwA==;
+	Content-Type:Subject:References:In-Reply-To:Message-Id:Cc:To:From:Date:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=lulhfXdBZ8IlWRG8McqTlzoi9Lws1M12SFhrapzdGsk=; b=oJHVRi4wuPSqXWCHRh8RCzD2qt
+	HTRmfB5XXywjxp0V5CrWqqaoCEYnHY4LwUeHn7hv3qnJ41IDo76vYxITixcMbEcGGgfIQw3iZT8s0
+	dkNFDkHVmFqVNSTx3nGQ/aayfx5SJacwJYk7u3Pqtm5Zb/R7G9B7XZbuI9tg1o31SGaX++FRpz5ck
+	5k+MOtAuPmDWA+xSvflCwKKZ9BkM3vLYALhKK3cy9FUv6Uyk2tLVkolDX4l+c+jmPU9iQWCXMFkhT
+	pt8oUz0L23JsBVA5lIp9LEkVh/3y5ZM+QRfVReyHvsOo7MajYdQLY8LmX32PYkcg9Gr4tlA3G1piZ
+	S6S0mVBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6O6y-00000005Ywx-1KfE;
-	Tue, 15 Sep 2026 08:01:52 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1x6SL7-00000006Vrx-2EP8;
+	Tue, 15 Sep 2026 12:32:45 +0000
+Received: from lahtoruutu.iki.fi ([185.185.170.37])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6O6w-00000005YwH-15Rq
+	id 1x6SL5-00000006VqF-0ouY
 	for ath12k@lists.infradead.org;
-	Tue, 15 Sep 2026 08:01:51 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68F6Zdmg3824086
-	for <ath12k@lists.infradead.org>; Tue, 15 Sep 2026 08:01:49 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=oa6Q/1/UwGnZVW8dCztoYeJ9PNBU4QT7E+k
-	pBF0tFpo=; b=RlvxotWOOPfbWaRAe7We+XLV/vySKZlt/Yb6HuaV356x08piRM5
-	rPsWdPt4SL9LIbvBe+Cm+EbP7FgzXXT8E57d1Nxw9gqYcyUL1foWKAuYmifSotg0
-	cUIUmaQijfxEKXz0HkL7uIaVn+otwCdtywpyq176XTnnOCV19fPoeIKREqBU8sE/
-	aJYx7s2p17CU9/OgGeZqbvO1MD+9b4kcea5l7vFyNpW81wAoPHpttmNckTWJ9inl
-	kglU37ZIHuyLjGiFzaVVmbhkvWcUt2AFa8aKIaIyH9n8wlk8eyr7ugb3CA/r/jOd
-	PZGtIqgTC9zzO2+iSNugFMSFFowifFzsN2Q==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gpn41u87f-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 15 Sep 2026 08:01:49 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-38ea32e57e2so8410527a91.1
-        for <ath12k@lists.infradead.org>; Tue, 15 Sep 2026 01:01:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1789459308; x=1790064108; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=oa6Q/1/UwGnZVW8dCztoYeJ9PNBU4QT7E+kpBF0tFpo=;
-        b=Q1SzRlVbedNTbuR1Q/Tz9IKhXE1TrMqA1IGDHy9HGBF5cEf0mBvkcyEcQS9QjHtuU5
-         3823ddwoqzaTFEsIqgwNPxnUPx1901SzoBHYyrpykWB6xszlbb0S1ZO4p3JnvnILzhSg
-         L0mwdGkhFq8+bdKXWjNbRWKGY0sdeGXpD00mUSCC7Qg5R+6IsoGv6UBMcc1k2nbFR/3w
-         7njOFgeh7o/2SqmrDQjtEoRvH5UUCNK0d0/+daPmLbtEtt1XDYvc1bUK0vv3ckjxwV4T
-         UVy8C4KDT1u0Ose5xkH6hnDxcmTI/sR6tAozE0GELRyJNjI5GIYW4quunV5cnRZ9vU1z
-         t0Qw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789459308; x=1790064108;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=oa6Q/1/UwGnZVW8dCztoYeJ9PNBU4QT7E+kpBF0tFpo=;
-        b=tbGua92CoyvPW4Ts+mHvoxfAwWWelr3Xr6nc5IhS6/uQj8ZtEy0GL12rKXMsPV/UlX
-         0p5VUJjOfkycMLSLoPaxTX09VuuBfB80USIfuyyLr7ibBnc0IY5yHEnOv6kkxYxf7S45
-         6hp81z4UzqURt9upKpvVWsFJ5Gox8jz1Xnc6PEmlAOX3FCTBkPMn/ORvQZSGREna7D7W
-         Ep0NBiLMs4JnW4k1LYetM7jQjWXioefzES1tlnyS4nS1jHo+XCCthxB6cBZ7k6q/m3dU
-         lCTcB5Pluv/+1mZzUo/syQpSQS1/X6T/wHCd1sQOOcz1TRmDuBkJ0Nwf8hHM+UommlN4
-         v4pA==
-X-Gm-Message-State: AFuF++kqsi26xHloMwg06fE7rSqalochEDlwGX1PX55Edaq/XXCT4GDg
-	ziJlbUd3rWNAsPMb1BslcVk6gkwwjEKSVLQI3TiFkI9fld8guK0VbvlwVIB5UnCjhlctIPBQ7rg
-	OAqiKcIZs7FH1L+eJl/vo+oGrQFoXJOesTEg2I7nnvHGq4ImQ+KIp9hshtVkeGzUy
-X-Gm-Gg: AYBFou0ktuuUg6Fb0WqiiUaD6QDqFO0cIjTMMWTccvMHxY2kX3YGmiGXCMgCXM0rz3x
-	LdKNahCsWzxtKFoXpsHnvaazZAnAt8P+xqGkQFwiPq+HACoSXsa3vMgKeEMO/VjORWbbft09m/u
-	5de8cIcKXmmdV/R7gQJSBfdj5nFv7FoCXvYBxsx4VkUSkE/0+plPFgHx/rwfPAphd9AHKZnelW0
-	P+pUvGkmF5VpB0TK/cb1r8x/o32uFTV1jMpWWStl2CFdpnjeYVx4nJbB2FqN01CnA7TrjNNfzpC
-	y2Oo6qc6Pm7MNgyap7IO8NG9xO5JOgSGRMsAJ9MAGd/FLXJEdlLGFBR5SfxIk/WzNWxbqpARvEP
-	1D9LZRagZNxfXjm+U4qTpHj0ngX9as29wRZpnXobc+6InbCru2WiAxa+0Md8=
-X-Received: by 2002:a17:90b:390f:b0:398:c315:fa6f with SMTP id 98e67ed59e1d1-39dec079f10mr11760374a91.14.1789459308475;
-        Tue, 15 Sep 2026 01:01:48 -0700 (PDT)
-X-Received: by 2002:a17:90b:390f:b0:398:c315:fa6f with SMTP id 98e67ed59e1d1-39dec079f10mr11760327a91.14.1789459307987;
-        Tue, 15 Sep 2026 01:01:47 -0700 (PDT)
-Received: from Z2-SFF-G9-MQ.ap.qualcomm.com (i-global052.qualcomm.com. [199.106.103.52])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-39dfb8bd783sm1496368a91.1.2026.09.15.01.01.45
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 15 Sep 2026 01:01:47 -0700 (PDT)
-From: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
-To: jjohnson@kernel.org
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
-        linux-kernel@vger.kernel.org,
-        Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
-Subject: [PATCH ath-current] wifi: ath12k: Fix failure to create ath12k_dp_peer on MLO reconnect
-Date: Tue, 15 Sep 2026 16:00:53 +0800
-Message-Id: <20260915080053.918500-1-miaoqing.pan@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+	Tue, 15 Sep 2026 12:32:44 +0000
+Received: from fauth-c2-smtp.messagingengine.com (fauth-c2-smtp.messagingengine.com [204.75.18.201])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: jmtilli)
+	by lahtoruutu.iki.fi (Postfix) with ESMTPSA id 4hkhHM36jPz49QD6;
+	Tue, 15 Sep 2026 15:32:31 +0300 (EEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=lahtoruutu;
+	t=1789475553;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=lulhfXdBZ8IlWRG8McqTlzoi9Lws1M12SFhrapzdGsk=;
+	b=h0bhXPsBZNOVOfd6N4w3q1xg/szeproanK22fun1P/hUdij+pm5nOpndqKHKKOCZu7vLX3
+	TcWt0zChBSDAULJlte4tBpv/m2S6dQlfNEhXCfzJqbzie1mR1Oy5Mnx1+nb3BxG2s3zfog
+	EkAJ5ssLYlMIGQLbexYRphW104PeQeEgvNTWC9YzqWVV+h+l/9Gsu2DPFWCM2t5WODYsDc
+	f6kjzU/Tr5K+q4YVGJcH6Y095Nj2jZtUkKIoYEQ8QpAm2wgTaqAjhQYB9wLOhlaqXMkehf
+	D4ETZhDijFWnBwqyS7gANgJH4Tf73kUb3RwrUV0lFTWRuYHamuXJlq3fRfG0RA==
+ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=lahtoruutu; cv=none; t=1789475553;
+	b=K+goZCTycWcC1eg5lT1DekiN2WGp0IrNF/F9bJ/ye3+Jd3Ernq/QruqtodLo/p0jYqLaRO
+	NilKt1WQN5nJITeq66XaamrLr9vB+mzEt8qWmoZBy3EbhhHViTZRZkRAfLY7kk6a9yHYP6
+	N1WmNj+hTpQ0NAaq7q3rIe1Q0zR75F65Go3DpASUnaYtl/6Kq8ni8l9c1W3IeyXpVTsM+P
+	iVdBu36FREV5rLDO724Kexh14a3XpdjENfQ8fb2su94+ubzqIAsVxysJpxADgBnD9dLYqY
+	lS2kmhLTm50gpCiqA+n8nI2Pg0ytvc+4TOTxy9ScwYDWFH2W4wryX9Tmd4271Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
+	s=lahtoruutu; t=1789475553;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=lulhfXdBZ8IlWRG8McqTlzoi9Lws1M12SFhrapzdGsk=;
+	b=Hl51J7INfgYXyzNXizEqHcx/H+vfkYGe6kKlwQEzn7TKhzXKobBu4vvdOtoStrx6ni4uIZ
+	n5mFB6r17BVWsKAzSspLUYKQcGaUAjj1g6sntDi05kwizqDWOnDjCF4lzwqTYzrhdIV1b3
+	xXvShx0pPGGKgkBZb2ZECKR8ef4d8krKc5p+Bl4ks9S7BhE+xbG72TayreN+Cf0tWXq7kY
+	+KskfZzdqLUNRDbJ28HqqZ8DUA4CWkd05W18pLZuy2mBCoDigLhPmMyz3oldZ4F0c8wx0f
+	wOKu57BxXsshat8iwdo7j8Faes7IyPBmq0vgkJ0FzY7qoNU9EEIuMoOufooeHQ==
+ARC-Authentication-Results: i=1;
+	ORIGINATING;
+	auth=pass smtp.auth=jmtilli smtp.mailfrom=juha-matti.tilli@iki.fi
+Received: from ams-compute-02.internal (ams-compute-02.internal [10.64.2.62])
+	by mailfauth.ams.internal (Postfix) with ESMTP id 78E24198003A;
+	Tue, 15 Sep 2026 08:32:30 -0400 (EDT)
+Received: from ams-imap-13 ([10.64.2.33])
+  by ams-compute-02.internal (MEProxy); Tue, 15 Sep 2026 08:32:30 -0400
+X-ME-Sender: <xms:2jqpak0bJ0YRiWQiNx_2y0ZIftizHOz3eY2-gSxBctN2xImZgQhApQ>
+    <xme:2jqpap6huM2Q017AzlPLLoZRbJhikx6bUeMaJUZYNcaXA3XmKkiaoYCPNU_M7rhMQ
+    1urF-vkH2lw4lgvr3sdCSleFNK_8FLKRMUWKGeUraFr1y1Ssl7F6eEf>
+X-ME-Proxy-Cause: dmFkZTEFymrOVPWK+MQ4UXejtvxyh+l6dc5IFIgY4jnDXoWEvKpMjB051KQpVtX+K4gQ75
+    kUfcjqqxEf3p9FzEJAN0QsyR1bZY+KS7rL4N8A4Zr61S146jEPyD/UHZtYNPbKCo7DWY+p
+    s4x6/sThfkRdNZV+RL7rVbK4RWJVMo2nLKKITqNAjCmiDkIBD7hROe4coNhKbitLSzCJy1
+    mAo4Jiq8udQVkdUsueh/WGbRTj3wyUMHAM3AzJ4Zsl37M2RLv7LzWwPXgdFKPs7S2lGFUB
+    N55+wUYvrw9L20LzbwhmmQ7s+ErG8LKT9ccLLa7hDRnuwVBbqSX0SoHf9niz2A/OvVcQJu
+    zDSpJNLDB8FGblXKsvXis1Iw1zZnBPxoRM36BrN+C9kLGA7xPSnQPINWIPv5mdN8QIiI1p
+    1iyL1odL+MY43Qw8n7/v7B8fAy3L/Dnaw3ErMoe4s/6ijKtZI8gtjJEkd569lumsEghzaT
+    xB8Wx+Kk4MdnciVvLwlRy44HQ9mbyqsiV/AveldrPTVxiFmtJj9ulds+wF+AJlupbeBwak
+    QmCAv9s8K7PnZb5Mw0JBxK1rc/jvSSeP9q5oBJEr2Caq5N7nZf5//LLecDHggeeOaN+vYl
+    hY/IZcs+h5CYej7CR3MDuymC1gvQK29r7cFct0XF6k70BPzNFzNyvXG+x8GQ
+X-ME-Proxy: <xmx:3jqpapE5fuSSiL3vJPkxhThkglAA33DNJI7cVgIdZx9U3P7PmmA3OA>
+    <xmx:3jqpana-kdrjVns9y24LBC4N2xbFW-ZwkIsAaoDLmvBLmFQaijy9gA>
+    <xmx:3jqpakN5YO46-r3Ba2vQcOGTsvQnwzBrs90AEfYwOB_WSFerGW50eA>
+    <xmx:3jqpaq1SrDBlqOKwSL1iW3o-i2bcCkjKY_QDXzxej4a5un8rmL6zyw>
+    <xmx:3jqpaomo-h_ZFFWWaFEAnIyOOr5e18WpSkI8FBLX4AagS7DwrKIqXFR_>
+Feedback-ID: i02414972:Fastmail
+Received: by mailuser.ams.internal (Postfix, from userid 501)
+	id 1540AF80089; Tue, 15 Sep 2026 08:32:26 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTE1MDExNCBTYWx0ZWRfXzOh6C/nGdi7s
- KQ3GW4J2aZSIbcpi1YC9jXH13FOkkgZVsYG+el5byurkvUgdffr0JqIbdqqWwKL+7ZzW6S84NCu
- 6IlNFBkKQXcOmTsiwqaZOrQ2ksThLyib6jf3SW55d1bEjIa603tBVZ4Rhgj7Nh5aRsNX1HKTbmp
- bqMIitIDwjAmEZky81d0SdHQhA/CPYVO3uwYs4IYilnnuL5kEtb6Y1khuVXYjm7gPUGDHjKpZyL
- CBHnzihSD7GkKwu9fd96yx75EBIlDeLmQFgieWX86HZMnoN4pO0B2ursiM+bS+NxidKr+B7SKkc
- dIkp6QNwmxPqhaLjIl6xI/JkSqBBfb7dI3Pz/gFfm4sQzYwjpdgxnIsHexrcaKveWcTlimNq2nO
- rMgE9rkMfZLb+JXeIovMnSm4N6PG1Phohz3qxahXzY/sADmNHEjZWwGJ7i0beBzG/LdZP+sTTt3
- m+Ck8sNhlUz184O5VNg==
-X-Proofpoint-GUID: B0YqGy2uYzolv8czY82kohNT-aTeOm_N
-X-Authority-Analysis: v=2.4 cv=cqQOAF4i c=1 sm=1 tr=0 ts=6aa8fb6d cx=c_pps
- a=vVfyC5vLCtgYJKYeQD43oA==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
- a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22 a=EUspDBNiAAAA:8
- a=TNMgkEEFFvq8IQPbtLIA:9 a=rl5im9kqc5Lf4LNbBjHf:22
-X-Proofpoint-ORIG-GUID: B0YqGy2uYzolv8czY82kohNT-aTeOm_N
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTE1MDExNCBTYWx0ZWRfX2Aebt6/c/4vd
- U7LMAw4SRJad73SLwOANRpiYgxI7VLU7oxGGKjxG8NMlPFTWVIPLSd2nis/+C6H9oEbDcIfBg5I
- OIw3k6amiNXAj72+rCpEptTWeVaoc0U=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-15_02,2026-09-14_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 adultscore=0 phishscore=0 priorityscore=1501 malwarescore=0
- suspectscore=0 spamscore=0 lowpriorityscore=0 impostorscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609150114
+X-ThreadId: AfrYmASNsTfZ
+Date: Tue, 15 Sep 2026 15:30:26 +0300
+From: "Juha-Matti Tilli" <juha-matti.tilli@iki.fi>
+To: "Arthur Crepin Leblond" <arthur@marmottus.net>
+Cc: "Manivannan Sadhasivam" <mani@kernel.org>, linux-arm-msm@vger.kernel.org,
+ "Jeff Hugo" <jeff.hugo@oss.qualcomm.com>,
+ "Jeff Johnson" <jjohnson@kernel.org>,
+ "Bjorn Andersson" <andersson@kernel.org>,
+ "Konrad Dybcio" <konradybcio@kernel.org>,
+ "Eric Dumazet" <edumazet@google.com>,
+ "Kuniyuki Iwashima" <kuniyu@google.com>, "Paolo Abeni" <pabeni@redhat.com>,
+ "Willem de Bruijn" <willemb@google.com>,
+ "David S . Miller" <davem@davemloft.net>, "Jakub Kicinski" <kuba@kernel.org>,
+ "Simon Horman" <horms@kernel.org>, "Mihai Moldovan" <ionic@ionic.de>,
+ "Denis Kenzior" <denkenz@gmail.com>, "Marcel Holtmann" <marcel@holtmann.org>,
+ "Andy Gross" <agross@kernel.org>, linux-kernel@vger.kernel.org,
+ mhi@lists.linux.dev, linux-wireless@vger.kernel.org,
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+ netdev@vger.kernel.org
+Message-Id: <c4a033ee-b71f-4548-8be9-0a43f31c8d42@app.fastmail.com>
+In-Reply-To: <20260915071131.GA30612@marmottus.net>
+References: <20260915054207.2513877-1-juha-matti.tilli@iki.fi>
+ <20260915054207.2513877-13-juha-matti.tilli@iki.fi>
+ <20260915071131.GA30612@marmottus.net>
+Subject: Re: [PATCH v7 12/15] net: qrtr: mhi: Report endpoint id in sysfs
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260915_010150_321007_348CEEDF 
-X-CRM114-Status: GOOD (  14.26  )
+X-CRM114-CacheID: sfid-20260915_053243_405825_A0B145DB 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,70 +140,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-In ath12k_mac_op_sta_state(), when transitioning an MLO station from
-IEEE80211_STA_NOTEXIST to IEEE80211_STA_NONE, after ath12k_dp_peer_create()
-succeeds, on is_sta_assoc_link verification failure, it takes the
-'goto exit' path instead of 'goto peer_delete', leaving a stale dp_peer on
-the dp_peers_list.
+On Tue, Sep 15, 2026, at 10:11, Arthur Crepin Leblond wrote:
+> On Tue, Sep 15, 2026 at 08:42:04AM +0300, Juha-Matti Tilli wrote:
+> >+static ssize_t endpoint_show(struct device *dev,
+> >+      struct device_attribute *attr, char *buf)
+> >+{
+> >+ struct qrtr_mhi_dev *qdev = dev_get_drvdata(dev);
+> >+
+> >+ return sprintf(buf, "%u\n", qdev->ep.id);
+> >+}
+> >+
+> >+static DEVICE_ATTR_RO(endpoint);
+> 
+> I think you could use sysfs_emit instead of sprintf.
 
-On the next connection attempt, ath12k_dp_peer_create() finds the stale
-entry and returns -EEXIST (-17):
+Thank you for the commentary. I tested sysfs_emit and it compiles and:
 
-    wlP4p1s0: failed to insert STA entry for the AP (error -17)
+cat /sys/devices/platform/soc/*.pcie/pci*/*/*/mhi0/*/endpoint
 
-Fix it by changing 'goto exit' to 'goto free_unassign_link'.
+...prints 2, as it should, so it seems to work too.
 
-Also, there is another error path in ath12k_mac_op_sta_state() that
-jumps to peer_delete after ath12k_mac_assign_link_sta() succeeds, without
-undoing the assignment through ath12k_mac_free_unassign_link_sta().
-As a result, the link RCU pointer remains assigned and a stale bit is
-left in ahsta->links_map, which can trigger the same -EEXIST failure
-on subsequent reconnect attempts. Fix this by redirecting that error
-path to free_unassign_link instead.
+The next patchset version will use sysfs_emit here.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
-
-Fixes: 0cd46d1f36ce ("wifi: ath12k: identify assoc link vif in station mode")
-Fixes: ee16dcf573d5 ("wifi: ath12k: Define ath12k_dp_peer structure & APIs for create & delete")
-Signed-off-by: Miaoqing Pan <miaoqing.pan@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index d4116ba0da08..57861003c15b 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7845,7 +7845,7 @@ int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
- 				ath12k_hw_warn(ah, "failed to verify assoc link setting with link id %u\n",
- 					       link_id);
- 				ret = -EINVAL;
--				goto exit;
-+				goto free_unassign_link;
- 			}
- 
- 			arsta->is_assoc_link = true;
-@@ -7903,7 +7903,7 @@ int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
- 
- 			if (old_state == IEEE80211_STA_NOTEXIST &&
- 			    new_state == IEEE80211_STA_NONE)
--				goto peer_delete;
-+				goto free_unassign_link;
- 			else
- 				goto exit;
- 		}
-@@ -7943,6 +7943,8 @@ int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
- 	ret = 0;
- 	goto exit;
- 
-+free_unassign_link:
-+	ath12k_mac_free_unassign_link_sta(ah, ahsta, link_id);
- peer_delete:
- 	ath12k_dp_peer_delete(&ah->dp_hw, sta->addr, sta);
- ml_peer_id_clear:
-
-base-commit: 91b552fe898e2c46edb363390211fac47b329308
--- 
-2.34.1
-
+BR, Juha-Matti
 
