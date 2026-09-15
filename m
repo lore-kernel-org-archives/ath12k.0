@@ -4,59 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BF04C88E53
-	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 07:43:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 608D3C88E73
+	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 07:44:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bPA7RZq69BQzFDIgq2/jKxXiYvSrAjNW2sfY7vkWUj8=; b=ryR5BpZPjDVUHvkq5Mz0BnvTrJ
-	de22DWQrfcsNDiA6nk2g7JhdAltDrcQSFmWU+26sgB2Cd+7Gr/Oml8lDj50jU98fPxdsSoefm9bKS
-	9v9G7qC6yKr/f8MEU8tvm/Sijus5oX3gbpdR6I2rKQnXUm8zy/f+Z0w2iKjFST/gtMrvsuPQjCP6/
-	b0GGyPBAWevb1ePdhpMJbffRM7NfieLcGnIx1KGt0DZcV1y6ZZOK2qQ7TJywX9pI1y1gdgY4v2ebM
-	w/b4uISeXCyKp+MS7bDkKDrWDBADap1PBs86MhSTn0vXZAD3w/uLbpVs5dWUKUA3I5K5u686vKBbE
-	s/FS9f9A==;
+	bh=UskWr+boRdHCKqvgiQhgiQCmhJi2c28VCTFGVe919rE=; b=KeefQpL1vo7+9qmxK2c9TzDoKm
+	dSqUR07rJByah9Xg9T3r2S9Rgor/oCHQijjixqqMEcDjxRJnZDrSR69HdWtioUuS7lZHPMzORqdXZ
+	WKSkSaQS1qw9uY/JxhHzHRkjhcd8MFUNWChGcl/V0E6WBPbAgNYVxuiwd+/Xz8OojK0BGqxBTxQ2z
+	5oOOhPaX99oyuJGOnf/EtSlSnF4jNsN6Or8qJSlJtq0laoqSWy4fTGJGSm9yvE7yhnztjRyjzEzGF
+	I4i0r5i67K3odrjCTN9LFlqayRKKvusdvIe9ft60zRQUXvAEmombRBZLSQUXkkA9/fb8N3x+DiSD3
+	rXG2tO4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6NpI-00000005VLM-3ctk;
-	Tue, 15 Sep 2026 07:43:36 +0000
-Received: from meesny.iki.fi ([2001:67c:2b0:1c1::201])
+	id 1x6Npj-00000005VUy-0KIC;
+	Tue, 15 Sep 2026 07:44:03 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6NpF-00000005VJJ-3PVL;
-	Tue, 15 Sep 2026 07:43:35 +0000
+	id 1x6Nph-00000005VTw-34OW;
+	Tue, 15 Sep 2026 07:44:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=UskWr+boRdHCKqvgiQhgiQCmhJi2c28VCTFGVe919rE=; b=i7uViAGuH1EbEJQp89UpjmJZ6I
+	zI4PMRbjVkM6SKHtpZNIV9q27RkjEAeTX0C1eGUMc6hzioxH3S9k0yuYJwz0WdEf6vDU8Q8YBD9yH
+	kzqrM4+qfzlGuKax6SOrPEjyI3bl9VAnnFnl6w3YNmL4zYQ5M1K8avlVgb9RrXVO3lWUElTzwnYsZ
+	lHoiKzPBo8/v+XntQXBkPDEHVvlctO9Fu3/xxi+L8B3lnSiRT3q9+KQEdj+TU7YuCf/iZZ16KIDN5
+	xvgK+JC+smJtjN772S+W9stqy6DMlt8+e1lyEF5voU8Y+bxakOKnseDJgx3nIiabapODCHZaXsVH0
+	dDUuvOSA==;
+Received: from meesny.iki.fi ([2001:67c:2b0:1c1::201])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1x6NpV-00000006NwT-3ugR;
+	Tue, 15 Sep 2026 07:43:56 +0000
 Received: from mandelbrot.. (xdsl-83-150-90-33.nebulazone.fi [83.150.90.33])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: jmtilli)
-	by meesny.iki.fi (Postfix) with ESMTPSA id 4hkYsm0xH2z10gQ;
-	Tue, 15 Sep 2026 10:43:23 +0300 (EEST)
+	by meesny.iki.fi (Postfix) with ESMTPSA id 4hkYt63SM6z10gQ;
+	Tue, 15 Sep 2026 10:43:42 +0300 (EEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=meesny;
-	t=1789458205;
+	t=1789458222;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=bPA7RZq69BQzFDIgq2/jKxXiYvSrAjNW2sfY7vkWUj8=;
-	b=sQZTsgijT5BJPzxeZO6a9ZD4L3yEQZfcJc+delxOjkxJtlJvP/ZaJVNl+U4yimEaa9scc+
-	AlXqhZlE4t5Bc97/t4/F0D8Z9Uf+TIFtCqe45o7sdOPTpsrfjzQNXnNCjONqxSIXVsbTql
-	BuCvONLnSnl/rDE7CehWZFKJG7QJSRM=
-ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=meesny; cv=none; t=1789458205;
-	b=Np7ktd9E+ATajFhlNmOegyVEOIRnF+yuzqOt7VjvpA4ON23pYgN8MjulJh9qcuZ94rSz47
-	BK+RiFQ7f1CflCLZXg8xtQ9e9LxqiS1b3lslbYoJwxNMlvA4pwWMJROKCzTFu0SqSFknwn
-	DmcvlTvnJoUH+t8XRwupXETtyZFFwaU=
+	bh=UskWr+boRdHCKqvgiQhgiQCmhJi2c28VCTFGVe919rE=;
+	b=uF2UudJQi1HbWTVWqlG2rGygix9dZkMlXzhFxDVNOWn1GEO1CGNETZL/WFeh/y2rnEciQR
+	09BjyeA8nmcs4NRAHgL+zNywuC54OHD8yGBf8QetE6MpRSlKwtdSkhwOFdRMEwwD8SuPJv
+	wjs4RE034uc0kWuAhKaCWzpyH8mX4vo=
+ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=meesny; cv=none; t=1789458222;
+	b=py988pwZ3T9FKk43ST1Ebl7nq7c/K0VxGb3Cbu06lS7T5CmVcgiq9I4774d7ry3EzjBYWq
+	pCtMn+WJCuOKhyjyVmE2YAysF42Yy/jP7y5Xq9fqhwlQVnysCNxz2k9969v7XUuMGDH02x
+	Otw+D7Ybps9pU4U1sEP/dajRHI7fyfE=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
-	s=meesny; t=1789458205;
+	s=meesny; t=1789458222;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=bPA7RZq69BQzFDIgq2/jKxXiYvSrAjNW2sfY7vkWUj8=;
-	b=bxUEYZTBusqXVe4YFqWSk95FDQRd8s+cctXMDt7lUJy5Xl1m2HPVF/sWn4AhitzBuPY3aj
-	q1qyNZC+2R93bwJwS2/pdXjL1E6i6F55wnNarF6UUlP0jYhcNzokR4HTFlzT8JLYV9Y40T
-	T4Ves6Q913O+2mDxm3cWC0QOCdwv35E=
+	bh=UskWr+boRdHCKqvgiQhgiQCmhJi2c28VCTFGVe919rE=;
+	b=BG/gyx31xY1cSmGwyq0CvB/kiH2sNTbQoOTr5eBZ6rrMlZ2vr7R5sdFm0JvTBy3CzaTBC1
+	rKrIpaVl8zxdr2ypZin7K29K1L+jgbpQiIOQUveopa65i2WfWjbUsNoU2nF20ht7/V5jsn
+	yEX99xQUr1irBsRn4DEXA4/rtA62giU=
 ARC-Authentication-Results: i=1;
 	ORIGINATING;
 	auth=pass smtp.auth=jmtilli smtp.mailfrom=juha-matti.tilli@iki.fi
@@ -83,18 +97,17 @@ Cc: Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
 	Juha-Matti Tilli <juha-matti.tilli@iki.fi>,
 	Mihai Moldovan <ionic@ionic.de>,
 	Denis Kenzior <denkenz@gmail.com>
-Subject: [PATCH v4 04/12] soc: qcom: qmi_helpers: add QRTR endpoint ID to qmi_handle
-Date: Tue, 15 Sep 2026 10:41:27 +0300
-Message-Id: <20260915074135.2567411-5-juha-matti.tilli@iki.fi>
+Subject: [PATCH v4 05/12] soc: qcom: qmi_helpers: optionally bind to QRTR endpoint ID in qmi_sock_create
+Date: Tue, 15 Sep 2026 10:41:28 +0300
+Message-Id: <20260915074135.2567411-6-juha-matti.tilli@iki.fi>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260915074135.2567411-1-juha-matti.tilli@iki.fi>
 References: <20260915074135.2567411-1-juha-matti.tilli@iki.fi>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260915_004334_025201_87FBB96F 
-X-CRM114-Status: UNSURE (   9.02  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260915_084354_611064_B4C65F69 
+X-CRM114-Status: GOOD (  12.43  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,36 +124,65 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Mihai Moldovan <ionic@ionic.de>
 
-Adding this allows us to easily supply an endpoint ID to bind on later
-on when creating the socket.
+For clients that already know the QRTR endpoint ID before actually
+creating the QMI socket and set it in struct qmi_handle, optionally try
+to bind to this QRTR endpoint ID when creating the socket.
+
+This can fail, and qmi_sock_create will issue diagnostic messages, but
+otherwise ignore the error.
 
 Signed-off-by: Mihai Moldovan <ionic@ionic.de>
 Signed-off-by: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
 ---
- include/linux/soc/qcom/qmi.h | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/soc/qcom/qmi_interface.c | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
 
-diff --git a/include/linux/soc/qcom/qmi.h b/include/linux/soc/qcom/qmi.h
-index b9dcb437a0be5..c675d095df778 100644
---- a/include/linux/soc/qcom/qmi.h
-+++ b/include/linux/soc/qcom/qmi.h
-@@ -224,6 +224,7 @@ struct qmi_msg_handler {
-  * @txns:	outstanding transactions
-  * @txn_lock:	lock for modifications of @txns
-  * @handlers:	list of handlers for incoming messages
-+ * @endpoint_id: QRTR endpoint ID to bind on
-  */
- struct qmi_handle {
+diff --git a/drivers/soc/qcom/qmi_interface.c b/drivers/soc/qcom/qmi_interface.c
+index 16e2e24b60968..1550138a938d2 100644
+--- a/drivers/soc/qcom/qmi_interface.c
++++ b/drivers/soc/qcom/qmi_interface.c
+@@ -586,6 +586,7 @@ static struct socket *qmi_sock_create(struct qmi_handle *qmi,
+ 				      struct sockaddr_qrtr *sq)
+ {
  	struct socket *sock;
-@@ -247,6 +248,8 @@ struct qmi_handle {
- 	struct mutex txn_lock;
++	const struct proto_ops *ops = NULL;
+ 	int ret;
  
- 	const struct qmi_msg_handler *handlers;
+ 	ret = sock_create_kern(&init_net, AF_QIPCRTR, SOCK_DGRAM,
+@@ -593,6 +594,33 @@ static struct socket *qmi_sock_create(struct qmi_handle *qmi,
+ 	if (ret < 0)
+ 		return ERR_PTR(ret);
+ 
++	ops = READ_ONCE(sock->ops);
 +
-+	u32 endpoint_id;
- };
- 
- int qmi_add_lookup(struct qmi_handle *qmi, unsigned int service,
++	if (!ops) {
++		pr_warn("sock->ops not available for QMI socket\n");
++		pr_warn("will not be able to bind to endpoint ID.\n");
++		/* N.B.: this error value will not be passed out. */
++		ret = -ENXIO;
++	}
++
++	if (!ret && !ops->setsockopt) {
++		pr_warn("ops->setsockopt not available for QMI socket\n");
++		pr_warn("will not be able to bind to endpoint ID.\n");
++		/* N.B.: this error value will not be passed out. */
++		ret = -ENXIO;
++	}
++
++	/* Only bind to a specific endpoint if a valid one was provided. */
++	if (!ret && qmi->endpoint_id) {
++		ret = ops->setsockopt(sock, SOL_QRTR, QRTR_BIND_ENDPOINT,
++				      KERNEL_SOCKPTR(&qmi->endpoint_id),
++				      sizeof(qmi->endpoint_id));
++
++		if (ret < 0)
++			pr_warn("binding to QRTR endpoint ID failed: %d\n",
++				ret);
++	}
++
+ 	ret = kernel_getsockname(sock, (struct sockaddr *)sq);
+ 	if (ret < 0) {
+ 		sock_release(sock);
 -- 
 2.34.1
 
