@@ -4,102 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09AC2C982C3
-	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 15:28:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B044C88E75
+	for <ath12k@archiver.kernel.org>; Tue, 15 Sep 2026 22:36:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=33gYF2jzy1G9rIQBj+NprKHNDmK+lqFhKcN1EOQ8yF8=; b=pXjSl9fIR1Pl33oXEwC3l0X3VX
-	V1K82go6euDTOYjZut2zpbnOPxVrmh/NRvDp5B1unPqzSVpIhHjXPYc6yFXXfj7tszN8O+CyZBTKU
-	1ogDOZ1TjRQ30FBzb20rscmMvbxz2nioBa7IxwrnQ8Hs0En02brBbhcBVE3fGLsN0uIz7tTMnbT8I
-	6s/l22rKCmWWPaSehb0h3IKdJQx4woWdJj3NyUTz/wyZjvpruhN/Ni9XP8zc+2i88Xw+MyiZ0F0r6
-	SY+snL5XY5BHRAXF8fBv3o0lFX6bwxMKquFHuAyn4J+IIejLDYuEerzB+R/1/bSQZUDB9zRodkYUG
-	EoXc+cpw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=tJB/ynB1O6KFhhQUE3+H7FzZgaFEBZ+R06nzHlwMLRU=; b=g3i2btbqNb+uqI
+	gIuVBhN+dxlKhV72c4ad44fj3lBrv2gkZ3Hd4Mif5Ej2wsOruEv4US9fehd4d9YmTj/cIOIYu7MhP
+	y05mFbrzXd85PIYlG9Y5nEIk7+5uqXMHYZkB/s5bbmqAqt+drgZNHgq5kie+5XzXSCcNgI6EecMFs
+	FfAe1JEZL0g3lAGAoXHyrS4xY9cMxwAFtkJ7ZnjO9i71N18jOchiJJ5VtJee4mwjXEGPcZsjntCC5
+	qIWPs/NxED6Y7uPVFrvy+T8NXZTxscn07QJark8Xse5QWFAYksVRutKEpoxaOw8apg0jfDlGUxXGI
+	gxOqv58dgivTSB7+XeFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6V5F-00000007A0e-2enJ;
-	Tue, 15 Sep 2026 15:28:33 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1x6blX-000000081Wr-0zID;
+	Tue, 15 Sep 2026 22:36:39 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6V5D-00000007A0B-3dYG
-	for ath12k@bombadil.infradead.org;
-	Tue, 15 Sep 2026 15:28:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=33gYF2jzy1G9rIQBj+NprKHNDmK+lqFhKcN1EOQ8yF8=; b=GvMj/Rpo8e3pqLsgMy1UbeJMOZ
-	IBSmel5tKRLbiIFAIk3GdVE96R8XHUGBYFYYOzUQZ7OAmpbK81vViLSKBUc8SJ9PlxnPfPk85zSoq
-	osVzL+Ca+89yClyPUfisHqSOsC9fW6uq9mYfWx9382bB5m2inlWUgTnQ8X+IoyDOWDJdpjertiz+Q
-	2F3Y7JjBUIZbIVcxqjvu7cmpAz5HA9E42ZyEoq8O87NN9o9mX5qys5KBPTs1qYodQsuVqZtWAtfaY
-	dxRxk+G0hdUKHQWmJPcLmY9xUzQVyE+mbixTBCrNvK1K2Mn2RrT9XnI12C2gqQLarn7gb08e3g5NN
-	oLFbSBSg==;
-Received: from mail-wm2-x11.google.com ([2a00:1450:4864:31::11])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x6V5A-00000006wJD-3D7A
-	for ath12k@lists.infradead.org;
-	Tue, 15 Sep 2026 15:28:30 +0000
-Received: by mail-wm2-x11.google.com with SMTP id 5b1f17b1804b1-49e8185e037so3819135e9.3
-        for <ath12k@lists.infradead.org>; Tue, 15 Sep 2026 08:28:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1789486106; x=1790090906; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=33gYF2jzy1G9rIQBj+NprKHNDmK+lqFhKcN1EOQ8yF8=;
-        b=gXIQuiTOkUG2aW5olSXKgTqkmm4ahHnzuOJFRJypiL43CX9KBjt155W4r9iKg9mfdu
-         79hKUGoHpx8D+hPWxhGGhLTT7xQtRJnKbUbMUWeO3Q6EpJrD7o6hXi+PiR1B74vtSzvL
-         /gv0RHZQKlPwSvT5BAsY5+RsQLhxyx+ytCxw5ybWisXvxqevSjf/CoNb9B3hq6zKc481
-         LO3P1yiPtgoOxB6Q2Oj40VjuPJfXLLo59BqHH7chXdC3h/kDEFjuvVjb/gIb6ZZstvwv
-         WZRhVqIezgYVBMHE9Yu6XxuBq86lUv+ZzUcxdtlxOY12FiQqGZek8GRCNAj9H0uxAyJz
-         Vwzw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789486106; x=1790090906;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=33gYF2jzy1G9rIQBj+NprKHNDmK+lqFhKcN1EOQ8yF8=;
-        b=SJhOQcK/FS+9uzmpaoHSW7jGS4uUgcVNSjeDOQdhpokXNMcWXwVq00d7oxzkFpDjyS
-         6a+1ri8vzAYEFvQUgsPh80SpH97WgGD8Ruqx/VgM7M3C6aRCBiVEmXCzOJomqp1mc6w+
-         w4sxhnPb35FZ36RYNZgT6V/q3RTrYthiDu6Z9B6KRAMtkrvyjD6SIjIOrCaOAS4eZ43f
-         BbGy7vq/akSGPa+jv5C6BO/1Yv/cVHRqWhK8sO7K87KTVjX4Del8GQcKoeFKJdH9szCb
-         skTUIq89K0+KoSrwgo5UMPBHKSLPz4rkb+CzijFIkjJ8Zp0V06zA6v0NO9RFOh8PSwXV
-         dHKw==
-X-Forwarded-Encrypted: i=1; AKwUvBzzhHVV8vUL8VaE3NSUPR7+awkuA5tCOU35HahBF0whbEzFiOM/Q/5qlpgGiLdbcMxusL9xfbk=@lists.infradead.org
-X-Gm-Message-State: AFuF++mVt9eJmKQ6L0z5ubLbjP7TOUAIGRHqPAogeR+3llNelU85kgyS
-	p+/MQtfvtUjLiXh0tih9/W9zcHxhqBAmzJtqRatnaJ1eC1rov+HXaGWo
-X-Gm-Gg: AYBFou1DaE52lbR2Di965Sm4io9u/YfU6oCkdzZaESB2XGdg4RYzq5e+H8Pqx9ghuik
-	moUfZd1ucBSPR0QjeQNt6v+rf6i3cmRRN5BTuxRjQ5M/uQVxff+gR7Z9veMp8TbXHeDg+HwkG/o
-	ydu+pQha4GRK52ZPTx9+ssfyx1GzlOJWP1p4TGHW1tZFUCsl8BOCZ93GGrZlHHJdvqh4sh9eGiG
-	RmQtFU8D7iDxjKUoz9i3OWTKqAgY333Vhwyn4Pu1OUsitX2VB352raOAQhJpC5bYr4D3NCW2INp
-	NT+tZpdIHk4gVzsHNWpNfx92gfgplHKQ/8Nm/hPDFwM5eI0KmxQsHbEiv5DStk9PbysX/GZGyzH
-	EQpdR9eVCP8Bbz9P3orA2vqnzmck3tWG11ODoYhYx96aXp44d5cqNZjPPLx2YlsPHD9kFrXDGLu
-	5UUHspMr4vPzj6HSDQwoGCPDy1BJP71QsodHngz1X/W4mbFIBSAx75cvAxiiL3yEA=
-X-Received: by 2002:a05:600c:a47:b0:49d:16f1:94a5 with SMTP id 5b1f17b1804b1-49e7a677980mr92009675e9.25.1789486106257;
-        Tue, 15 Sep 2026 08:28:26 -0700 (PDT)
-Received: from vitor-nb ([2001:8a0:c4c6:f00:a903:f291:2714:83e1])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-486eb2ecf23sm36312931f8f.5.2026.09.15.08.28.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 15 Sep 2026 08:28:25 -0700 (PDT)
-From: Vitor Soares <ivitro@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Vitor Soares <vitor.soares@toradex.com>,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	baochen.qiang@oss.qualcomm.com,
-	kang.yang@oss.qualcomm.com
-Subject: [PATCH ath-next v2] wifi: ath12k: provide MAC address list for single-radio wiphys
-Date: Tue, 15 Sep 2026 16:28:15 +0100
-Message-ID: <20260915152815.254016-2-ivitro@gmail.com>
-X-Mailer: git-send-email 2.55.0
+	id 1x6blV-000000081Wb-0TB9;
+	Tue, 15 Sep 2026 22:36:37 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 4D5BA60008;
+	Tue, 15 Sep 2026 22:36:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C60271F000FF;
+	Tue, 15 Sep 2026 22:36:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1789511796;
+	bh=tJB/ynB1O6KFhhQUE3+H7FzZgaFEBZ+R06nzHlwMLRU=;
+	h=Date:From:To:Cc:Subject:In-Reply-To;
+	b=mRuXfIMcpol2kF15SSXYqqHbP3nEguGhNBHCQlSGidP8Vu0MwfV6uRZFAtKjEZEYP
+	 TF5zzhSytWTBkeMNPzDdtvmrhhSs2BYLICHsNF1FJC+tm1YYqNmIfxQA4aQPFnsKEM
+	 pLxiKfsOyB3ZRiZiAWr2z1y6qlfBlz2Ui1wr9W6ydGjgtN0uxOCjPtayYu07TM68TQ
+	 lAp07odWWNmPSLkSc5G+CznsforeETweVDvvMMkaXeF1siiVdqcqWLpCXTPh0Opx6A
+	 xJzA8QB5gsEMB1CqYzthziEcNzXPvCdNtoy2Xq/knpihK26z/F9UwMdEjC4PCBQ6h1
+	 cnR0dcefKSY/g==
+Date: Tue, 15 Sep 2026 17:36:34 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+Cc: bhelgaas@google.com, alex@shazbot.org, mani@kernel.org,
+	jjohnson@kernel.org, linux-pci@vger.kernel.org,
+	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org, mhi@lists.linux.dev,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v13] PCI: Add device-specific reset for Qualcomm devices
+Message-ID: <20260915223634.GA878346@bhelgaas>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260915_162828_913933_9C834524 
-X-CRM114-Status: GOOD (  18.32  )
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20260721081301.205374-1-jtornosm@redhat.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,199 +69,233 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Vitor Soares <vitor.soares@toradex.com>
+On Tue, Jul 21, 2026 at 10:13:01AM +0200, Jose Ignacio Tornos Martinez wrote:
+> Some Qualcomm PCIe devices (WCN6855/WCN7850 WLAN cards, SDX62/SDX65 modems)
+> lack working reset methods for VFIO passthrough scenarios. These devices
+> have no FLR capability, advertise NoSoftRst+ (blocking PM reset), and have
+> broken bus reset.
+> 
+> The problem manifests in VFIO passthrough scenarios:
+> 
+> - WCN6855 (17cb:1103) and WCN7850 (17cb:1107) WLAN devices:
+>   Normal VM operation works fine, including clean shutdown/reboot.
+>   However, when the VM terminates uncleanly (crash, force-off), VFIO
+>   attempts to reset the device before it can be assigned to another VM.
+>   Without a working reset method, the device remains in an undefined state,
+>   preventing reuse.
 
-ath12k supports creating vdevs with addresses provided by mac80211.
-Userspace can already make concurrent interfaces work by explicitly
-assigning different locally administered addresses.
+Just to clarify the commit log, I asked earlier about why this says
+"when the VM terminates *uncleanly*", since VFIO resets the device on
+every reassignment regardless of whether the VM termination was clean
+or unclean.
 
-However, ath12k does not advertise an address list, so when a second
-interface is created without an explicit address, mac80211 has nothing
-to pick from and falls back to the permanent address. If the first
-interface is already running with that address, bringing up the second
-one fails with -ENOTUNIQ.
+But I didn't understand the answer (here's the question/answer from
+https://lore.kernel.org/all/20260612142638.1243895-1-jtornosm@redhat.com/t/#m853c96910f7c842dca597f5c0a0f2fcc90d98be1):
 
-As in ath11k, provide a list of usable addresses so
-ieee80211_assign_perm_addr() can hand each new interface an unused one.
-Keep the first entry as the radio's own MAC address. Generate the
-remaining entries as locally administered variants by changing only the
-upper nibble of the first octet, which naturally limits the pool to 16
-unique addresses.
+>>> I don't know enough about VFIO, but I sort of expected that VFIO
+>>> would reset devices between reassignment regardless of how a VM
+>>> terminates.  I guess that's not true?
 
-The wiphy->addresses semantics are hardware-specific in ath12k: some
-platforms use it as an interface MAC address pool, while others use it
-for firmware-provided per-radio addresses. Gate host-generated addresses
-behind host_alloc_iface_mac and enable it for WCN7850.
+> VFIO does attempt reset on every reassignment. Without a working
+> reset method, the attempt fails and the device remains in undefined
+> state. With this quirk, D3hot successfully resets the device
+> allowing reassignment.
 
-Handle only single-radio WCN7850 wiphys. Wiphys with more than one radio
-and other hardware families behave exactly as before.
+I guess you are saying that some kind of reset *does* work fine in
+normal, clean VM termination?  If reset works fine for normal VM
+termination but not for VM crash, do we have any idea why they are
+different?
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
+> - SDX62/SDX65 (17cb:0308) 5G modems: Never successfully initialize even
+>   on first VM assignment without proper reset capability.
+> 
+> Add device-specific reset methods using BAR-space hardware reset registers
+> that exist in these devices:
+> 
+> - WCN6855/WCN7850 WLAN devices use SoC global reset via BAR0 (sequence from
+>   ath11k/ath12k driver: ath11k_pci_soc_global_reset(), ath11k_pci_sw_reset(),
+>   ath11k_mhi_set_mhictrl_reset()):
+>   - Write/clear reset bit at offset 0x3008
+>   - Wait for PCIe link recovery (up to 5 seconds)
+>   - Clear MHI controller SYSERR status at offset 0x38
+> 
+> - SDX62/SDX65 modem devices use MHI SoC reset via BAR0 (sequence from MHI
+>   driver: mhi_soc_reset(), mhi_pci_reset_prepare()):
+>   - Write reset request to offset 0xb0
+>   - Wait 2 seconds for reset completion
 
-Assisted-by: LLM
-Signed-off-by: Vitor Soares <vitor.soares@toradex.com>
----
-v2:
-- Gate generated interface MAC address list behind hw_params
-  host_alloc_iface_mac, as suggested by Kang Yang.
-- Enable it only for WCN7850, the only part available for testing here.
-- Add Assisted-by: tag.
-- Link for v1: https://lore.kernel.org/all/20260902082219.3010793-2-ivitro@gmail.com/
----
- drivers/net/wireless/ath/ath12k/hw.h       |  1 +
- drivers/net/wireless/ath/ath12k/mac.c      | 52 ++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wifi7/hw.c |  6 +++
- 3 files changed, 59 insertions(+)
+Since these basically copy code from other drivers, is there an
+opportunity to remove it from those drivers and use this instead?
+I see that the maintainers for drivers/net/wireless/ath/ath11k/pci.c
+and drivers/bus/mhi/host/main.c are already cc'd, so this is something
+that could be done later (if it's possible); doesn't need to be done
+before merging this patch.
 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index 011bb22e21c7..03cb35071e0b 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -238,6 +238,7 @@ struct ath12k_hw_params {
- 	} client;
- 
- 	bool host_alloc_ml_id;
-+	bool host_alloc_iface_mac;
- };
- 
- struct ath12k_hw_ops {
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index d4116ba0da08..45be5b08aa40 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -14743,6 +14743,54 @@ static void ath12k_mac_cleanup_unregister(struct ath12k *ar)
- 	kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
- }
- 
-+static void ath12k_mac_cleanup_mac_address_list(struct ath12k_hw *ah)
-+{
-+	kfree(ah->hw->wiphy->addresses);
-+}
-+
-+static void ath12k_mac_setup_mac_address_list(struct ath12k_hw *ah,
-+					      const u8 *mac_addr)
-+{
-+	struct mac_address *addresses;
-+	struct ath12k *ar;
-+	u16 n_addresses;
-+	int i;
-+
-+	/* The pool is derived from one base address, so it can describe only a
-+	 * single-radio wiphy: with more radios each radio has its own base
-+	 * address, possibly from a different ath12k_base.
-+	 */
-+	if (ah->num_radio != 1)
-+		return;
-+
-+	ar = ath12k_ah_to_ar(ah, 0);
-+	if (!ar->ab->hw_params->host_alloc_iface_mac)
-+		return;
-+
-+	/* Only the upper nibble of the first octet is varied, so at most 16
-+	 * addresses can be derived from one base.
-+	 */
-+	n_addresses = min_t(u16, TARGET_NUM_VDEVS(ar->ab), 16);
-+	if (n_addresses <= 1)
-+		return;
-+
-+	addresses = kzalloc_objs(*addresses, n_addresses);
-+	if (!addresses)
-+		return;
-+
-+	ether_addr_copy(addresses[0].addr, mac_addr);
-+	for (i = 1; i < n_addresses; i++) {
-+		ether_addr_copy(addresses[i].addr, mac_addr);
-+		/* set Local Administered Address bit */
-+		addresses[i].addr[0] |= 0x2;
-+
-+		addresses[i].addr[0] += i << 4;
-+	}
-+
-+	ah->hw->wiphy->addresses = addresses;
-+	ah->hw->wiphy->n_addresses = n_addresses;
-+}
-+
- static void ath12k_mac_hw_unregister(struct ath12k_hw *ah)
- {
- 	struct ieee80211_hw *hw = ah->hw;
-@@ -14762,6 +14810,7 @@ static void ath12k_mac_hw_unregister(struct ath12k_hw *ah)
- 		ath12k_mac_cleanup_unregister(ar);
- 
- 	ath12k_mac_cleanup_iface_combinations(ah);
-+	ath12k_mac_cleanup_mac_address_list(ah);
- 
- 	SET_IEEE80211_DEV(hw, NULL);
- }
-@@ -14878,6 +14927,7 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 	wiphy->available_antennas_tx = antennas_tx;
- 
- 	SET_IEEE80211_PERM_ADDR(hw, mac_addr);
-+	ath12k_mac_setup_mac_address_list(ah, mac_addr);
- 	SET_IEEE80211_DEV(hw, ab->dev);
- 
- 	ret = ath12k_mac_setup_iface_combinations(ah);
-@@ -15120,6 +15170,8 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 		ath12k_mac_cleanup_unregister(ar);
- 	}
- 
-+	ath12k_mac_cleanup_mac_address_list(ah);
-+
- 	SET_IEEE80211_DEV(hw, NULL);
- 
- 	return ret;
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-index a20c21807344..8658828ea47d 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-@@ -445,6 +445,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		},
- 
- 		.host_alloc_ml_id = true,
-+		.host_alloc_iface_mac = false,
- 	},
- 	{
- 		.name = "wcn7850 hw2.0",
-@@ -539,6 +540,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		},
- 
- 		.host_alloc_ml_id = false,
-+		.host_alloc_iface_mac = true,
- 	},
- 	{
- 		.name = "qcn9274 hw2.0",
-@@ -629,6 +631,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		},
- 
- 		.host_alloc_ml_id = true,
-+		.host_alloc_iface_mac = false,
- 	},
- 	{
- 		.name = "ipq5332 hw1.0",
-@@ -713,6 +716,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		},
- 
- 		.host_alloc_ml_id = true,
-+		.host_alloc_iface_mac = false,
- 	},
- 	{
- 		.name = "qcc2072 hw1.0",
-@@ -808,6 +812,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		},
- 
- 		.host_alloc_ml_id = false,
-+		.host_alloc_iface_mac = false,
- 	},
- 	{
- 		.name = "ipq5424 hw1.0",
-@@ -895,6 +900,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		},
- 
- 		.host_alloc_ml_id = true,
-+		.host_alloc_iface_mac = false,
- 	},
- };
- 
--- 
-2.55.0
+This looks like two patches squashed together.  If there's any other
+reason to touch this patch, I would split them apart.
 
+> These are true hardware reset mechanisms (not power management or firmware
+> error recovery), providing proper device reset for VFIO scenarios.
+> 
+> Testing was performed on desktop platforms with M.2 WLAN and modem cards
+> using M.2-to-PCIe adapters, including extensive force-reset cycling to
+> verify stability.
+> 
+> Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+> ---
+> v13: Address Alex Williamson feedback:
+>   - Validate initial ioread32() with PCI_POSSIBLE_ERROR() before
+>     read-modify-write to avoid writing error response back to device
+>     on platforms with APEI/GHES error escalation
+>   - Replace time_before()/msleep() polling loop with read_poll_timeout()
+>     for robustness against scheduling delays and code simplification
+> v12: https://lore.kernel.org/all/20260630065815.199693-1-jtornosm@redhat.com/
+> 
+>  drivers/pci/quirks.c | 116 +++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 116 insertions(+)
+> 
+> diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+> index 431c021d7414..bd1e0742052e 100644
+> --- a/drivers/pci/quirks.c
+> +++ b/drivers/pci/quirks.c
+> @@ -22,6 +22,7 @@
+>  #include <linux/isa-dma.h> /* isa_dma_bridge_buggy */
+>  #include <linux/init.h>
+>  #include <linux/iommu.h>
+> +#include <linux/iopoll.h>
+>  #include <linux/delay.h>
+>  #include <linux/acpi.h>
+>  #include <linux/dmi.h>
+> @@ -4240,6 +4241,118 @@ static int reset_hinic_vf_dev(struct pci_dev *pdev, bool probe)
+>  	return 0;
+>  }
+>  
+> +#define QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET	0x3008
+> +#define QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET_V	BIT(0)
+> +#define QUALCOMM_WLAN_MHICTRL			0x38
+> +#define QUALCOMM_WLAN_MHICTRL_RESET_MASK	0x2
+> +
+> +/*
+> + * Qualcomm WLAN device-specific reset using SoC global reset via BAR0
+> + * registers.
+> + */
+> +static int reset_qualcomm_wlan(struct pci_dev *pdev, bool probe)
+> +{
+> +	void __iomem *bar;
+> +	u32 val;
+> +	u16 cmd;
+> +	int ret;
+> +
+> +	if (probe)
+> +		return 0;
+> +
+> +	if (pdev->current_state != PCI_D0)
+> +		return -EINVAL;
+> +
+> +	pci_read_config_word(pdev, PCI_COMMAND, &cmd);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd | PCI_COMMAND_MEMORY);
+> +
+> +	bar = pci_iomap(pdev, 0, 0);
+> +	if (!bar) {
+> +		pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +		return -ENODEV;
+> +	}
+> +
+> +	val = ioread32(bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +	if (PCI_POSSIBLE_ERROR(val)) {
+> +		ret = -ENODEV;
+> +		goto out_restore;
+> +	}
+> +	val |= QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET_V;
+> +	iowrite32(val, bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +	ioread32(bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +
+> +	msleep(10);
+> +
+> +	val &= ~QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET_V;
+> +	iowrite32(val, bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +	ioread32(bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +
+> +	msleep(10);
+> +
+> +	ret = read_poll_timeout(ioread32, val,
+> +				!PCI_POSSIBLE_ERROR(val),
+> +				20 * USEC_PER_MSEC,
+> +				5 * USEC_PER_SEC, false,
+> +				bar + QUALCOMM_WLAN_PCIE_SOC_GLOBAL_RESET);
+> +	if (ret) {
+> +		pci_err(pdev, "PCIe link failed to recover after reset\n");
+> +		goto out_restore;
+> +	}
+> +
+> +	/* After SOC_GLOBAL_RESET, MHISTATUS may still have SYSERR bit set
+> +	 * and thus need to set MHICTRL_RESET to clear SYSERR.
+> +	 */
+> +	iowrite32(QUALCOMM_WLAN_MHICTRL_RESET_MASK, bar + QUALCOMM_WLAN_MHICTRL);
+> +	ioread32(bar + QUALCOMM_WLAN_MHICTRL);
+> +
+> +	msleep(10);
+> +
+> +out_restore:
+> +	pci_iounmap(pdev, bar);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +
+> +	return ret;
+> +}
+> +
+> +#define MHI_SOC_RESET_REQ_OFFSET		0xb0
+> +#define MHI_SOC_RESET_REQ			BIT(0)
+> +
+> +/*
+> + * Qualcomm modem device-specific reset using MHI SoC reset via BAR0
+> + * register.
+> + */
+> +static int reset_qualcomm_modem(struct pci_dev *pdev, bool probe)
+> +{
+> +	void __iomem *bar;
+> +	u16 cmd;
+> +
+> +	if (probe)
+> +		return 0;
+> +
+> +	if (pdev->current_state != PCI_D0)
+> +		return -EINVAL;
+> +
+> +	pci_read_config_word(pdev, PCI_COMMAND, &cmd);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd | PCI_COMMAND_MEMORY);
+> +
+> +	bar = pci_iomap(pdev, 0, 0);
+> +	if (!bar) {
+> +		pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +		return -ENODEV;
+> +	}
+> +
+> +	iowrite32(MHI_SOC_RESET_REQ, bar + MHI_SOC_RESET_REQ_OFFSET);
+> +	ioread32(bar + MHI_SOC_RESET_REQ_OFFSET);
+> +
+> +	/* Be sure device reset has been executed */
+> +	msleep(2000);
+> +
+> +	pci_iounmap(pdev, bar);
+> +	pci_write_config_word(pdev, PCI_COMMAND, cmd);
+> +
+> +	return 0;
+> +}
+> +
+>  static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
+>  	{ PCI_VENDOR_ID_INTEL, PCI_DEVICE_ID_INTEL_82599_SFP_VF,
+>  		 reset_intel_82599_sfp_virtfn },
+> @@ -4255,6 +4368,9 @@ static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
+>  		reset_chelsio_generic_dev },
+>  	{ PCI_VENDOR_ID_HUAWEI, PCI_DEVICE_ID_HINIC_VF,
+>  		reset_hinic_vf_dev },
+> +	{ PCI_VENDOR_ID_QCOM, 0x0308, reset_qualcomm_modem }, /* SDX62/SDX65 modems */
+> +	{ PCI_VENDOR_ID_QCOM, 0x1103, reset_qualcomm_wlan },  /* WCN6855 WLAN */
+> +	{ PCI_VENDOR_ID_QCOM, 0x1107, reset_qualcomm_wlan },  /* WCN7850 WLAN */
+>  	{ 0 }
+>  };
+>  
+> -- 
+> 2.54.0
+> 
 
