@@ -4,127 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 193CEC88E77
-	for <ath12k@archiver.kernel.org>; Wed, 16 Sep 2026 09:17:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E273EC88E5C
+	for <ath12k@archiver.kernel.org>; Wed, 16 Sep 2026 09:36:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Subject:References:In-Reply-To:Message-Id:Cc:To:From:Date:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9ZXpwDz6DoWWBmQ6vDNVRxdpcZSSALaEWv74i0upVdU=; b=1PX6K/ph8qaoJAdlzUAjiX4Klc
-	WfaTROwG5BsnkFPc6jCdo8ZacuVHX4KSOtrJQR4vdd7yVz7KyqYM8TPPBqtJBBkm5LjyBU7Z1NOk3
-	4C4d9tWVXXYhew0K2ns8HL3OVY+jvjTTM+jayiY9ybGFZTvw/OgtmdxXzwwlNuU/GUsEqKoHj6/ee
-	t1CdJNP0MRJq9ix6Ny0FuzphGeyyfgqN2ZGlO50M0x3Ncoc17x1/25+OQFjP/B+488NvGNjOuviPS
-	TuGzwllZmiEU2sKHwnYL/GSLJDF8Dzp7NElfRmCMfG57dcRrB7ZPuVo1OKtxV7ml/NrhU48rzxMHF
-	2XSICIug==;
+	bh=CMq/YNGa1+TOcrYHKO6ao+3OCpqGRAp5HUDvzdUoNIw=; b=DSKANjam3PUEQBP6y2sruNb1qA
+	ELH/jh3xImojxAvi1SAkRtD9ksSdwj5Rv9Mk89E+T/1qTaB5ng1twMhkB+dIGKx6Iyjkc+Wdg9l4F
+	PmWD5LWhSxssMYsoK9IYKlOGJe+NxryqmaZ2Kj8P5MGJDdhY7pH5hkry9WFMEv87+Fm0p20rfk/ap
+	aKOZNF4bGoQGrgGIiI8eN3VCeoPdVTLG43wh/u5jyDgibd+5Kk/RfjQEjURRBamNOVVmEKL1f8wqE
+	28Hb7lrfC1BmEPwQOPBzn/LBnexwA3EtPj0K8JYwWdPARbJtiCkeO7j40+oNurWmeL4rUFfnQGhNp
+	j5DBfkFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6llT-00000008oVk-34ab;
-	Wed, 16 Sep 2026 09:17:15 +0000
-Received: from lahtoruutu.iki.fi ([2a0b:5c81:1c1::37])
+	id 1x6m47-00000008rHQ-0aq7;
+	Wed, 16 Sep 2026 09:36:31 +0000
+Received: from relay.yourmailgateway.de ([188.68.63.174])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6llR-00000008oUe-06xI
-	for ath12k@lists.infradead.org;
-	Wed, 16 Sep 2026 09:17:14 +0000
-Received: from fauth-c2-smtp.messagingengine.com (fauth-c2-smtp.messagingengine.com [204.75.18.201])
+	id 1x6m3x-00000008rFf-22yu;
+	Wed, 16 Sep 2026 09:36:26 +0000
+Received: from mors-relay8204.netcup.net (localhost [127.0.0.1])
+	by mors-relay8204.netcup.net (Postfix) with ESMTPS id 4hlDKX1HLYz8k2q;
+	Wed, 16 Sep 2026 09:36:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=leemhuis.info;
+	s=key2; t=1789551376;
+	bh=Tv8q4KRhHYd6df+3R2bPg1gJXfFzLEsuAAmD8hbaHmc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=FrwusAfmP8YMMj2RRVKzKx+h6Vnq/gUqUyIL0fiEsTBtUtA8ux+7RXO7FUh2Fy7tU
+	 xuqFroAZtyTtHK5sbkPfhGC+YvK0yheoK2kD4R3EuXGVVKKHgzlZ0hvPWYTctk2rL7
+	 8a4v0wkVlyM0xHvIT1HTRkxPZ91l06OSep+OwFMcVcjKd4t+WEDnLVX1SnprlOuePB
+	 m9yB4U6f1y9kdx80cbBBCkeWX7qbuzfJw27J4IBt1dBZ7lBH81avFzdx0g9RrHo9AS
+	 vuNL+T10TiR67NOyMP6HowEhbB9z8NSt++6/nfrhSW6/0qYfeA0OeRFJtsG+lAEoLc
+	 5fcOuqX0ELSNQ==
+Received: from policy02-mors.netcup.net (unknown [46.38.225.35])
+	by mors-relay8204.netcup.net (Postfix) with ESMTPS id 4hlDKV4WRXz8jp0;
+	Wed, 16 Sep 2026 09:36:14 +0000 (UTC)
+Received: from mxe9fb.netcup.net (unknown [10.243.12.53])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	 key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
-	(Authenticated sender: jmtilli)
-	by lahtoruutu.iki.fi (Postfix) with ESMTPSA id 4hlCvL4YHpz49Q5T;
-	Wed, 16 Sep 2026 12:17:02 +0300 (EEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=lahtoruutu;
-	t=1789550224;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=9ZXpwDz6DoWWBmQ6vDNVRxdpcZSSALaEWv74i0upVdU=;
-	b=LOgzLAs4BikP/sgnQAfLugwVmoLTCaaR6pBGXA1afPjrpCv8xZ/XnHqdolLosB9Z928jgz
-	gUC1WbzWA3saYj/NlMXzY9Fx2IsiRZ+G1d/NRMZsLjMl6mixZRfJxp4/HOFQvH0OX9fr5M
-	fIExVqAoITO+kWu0iRMKXxdqsywyX0yt4e4HeIfupMcULbcornYNcOAeF53fr4xae0tZOi
-	cogbMyXpR/kYZ+yd1EWN0o65wR6CWx3xqmJnwO1aTVTv7yozoIYp+Omz6mQxHSKPmqL/CW
-	Hf2JQUn0Revkw1uCxFo+keDNbJ8/sbDMdgSv+FcoEwNk+Q/+ZjNME7Pae+ENEA==
-ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=lahtoruutu; cv=none; t=1789550224;
-	b=NGsvDT5a/D5ir8PsCu1YTvoejFwVxfILAw8mbusf8jcy0Befo7S6EgbCGn2XYE5e3NUEdq
-	kvgfjp4IsId7XRwGXOfaW0XGlS+RVtTO/xfLLlaTvN3yWoizUDYa7FKexRFFDuVwQYlBSb
-	kE3qEYw9DUxj8JcdEqiJghgJ3YpQGsjpo4dIuUnc4k+/i0jGkxyBLl5BpOdbkdO3CvXAQl
-	loqkxHgAtHbnqwGU4ZOjlO8+VTx2lrjcgCe8DKlx/OLWzFsLBzMse2BncHy9xV7iitf99+
-	56uvEQlqXRy6s8kAOcLVijWW2z5Mai/pMMYpJ9Z/ma/fuP5spzz+kVgHJ/qmYA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
-	s=lahtoruutu; t=1789550224;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=9ZXpwDz6DoWWBmQ6vDNVRxdpcZSSALaEWv74i0upVdU=;
-	b=QaZDi5PRFHJw2YLEriC+I9FJuecvdYIKGxF2MwFomYnNj/WiyC04XmYLvrQR9TT1YrMnBW
-	XvM5KBxSJftPOuuDw48YeC0bvLzaRjRThXIUIg1RC2ihUI6eqVVp0zLe0C4rQyKqvXn2EQ
-	tG/jrxZT5asy1ZPaZ3OQxbdDWuUS0jotYa/kv7LLO5xfkhTJ4vMp7J1iz6zEJR6GmWtdSz
-	pmQOvF+SQ1AWYwyXTY0kb0H6JT7v2FXyDNsXL5s/ybHq9rHdH6BAnvKTcqJfwJD5ICGkp6
-	O/uNL1xpjDFaQzOUPayvoSjgNagiqCR1WE+Pyr5oLwyA5jWTwfW8koJ7rKsL5Q==
-ARC-Authentication-Results: i=1;
-	ORIGINATING;
-	auth=pass smtp.auth=jmtilli smtp.mailfrom=juha-matti.tilli@iki.fi
-Received: from ams-compute-02.internal (ams-compute-02.internal [10.64.2.62])
-	by mailfauth.ams.internal (Postfix) with ESMTP id 8E28B198003A;
-	Wed, 16 Sep 2026 05:17:01 -0400 (EDT)
-Received: from ams-imap-13 ([10.64.2.33])
-  by ams-compute-02.internal (MEProxy); Wed, 16 Sep 2026 05:17:01 -0400
-X-ME-Sender: <xms:iV6qag3fwJZVElS11KOnACeO3JGDmX_uwUJvl8TgfoB81E3A3vBJTg>
-    <xme:iV6qal56Dzqp_NRsS9Es8Vuey_S8mDBuDqKiHnugv7udTKHByS_h2x7KhaWC9KEU3
-    ZFj6u_mUwXrGGZgRvLUvPqFAckzru_7RfuhLscUhqlA1JtFSH91NSE>
-X-ME-Proxy-Cause: dmFkZTGNFtvyF6MZNYMeLjLWJ41+we1JJ2Ix4Ro8hXfbflboz9ZBw6ovM/eey9Gijq0/Iq
-    aPwhDw8Qs0gEeTKSlITUHQSLt0dbFE5HrptM2obUWfKKcjNRHWOJjELo9P5f3QEsYpsE6d
-    hrW5Y+e/1UX012oUQk2r8ajWj1yE2k4hnhEzGiUXQ2NZpcbroifSXrsO8hYkY4GZvOPXW5
-    babRbJSvfgsF0DJ+bk/amnon7PS+3s261lu//dm2pq9kX+yE0j/XwQTCgkJ5QWBcdzXRyp
-    IvmjBKmjAjCc36wGn77wxm/mB3uS0XnN641PdGPuNW6NRJnwXoV5AaGiTKSGXWUb2sv2kW
-    srTKTE258K+d/Dwk2y/m0SKBTkVT7iUPkU1kdUtkFDK9au+RML61NpjAQSvMuS2QklOCAT
-    UAE0Hclbs+lQFAMq3R/mv2I+geAjMoF/L4gApGDO6Ok4deMGQcUNbcrZ2rTidFmHrHZzx/
-    gQMgSOeBNDvD9iy9e0dl1J5ZBX04VAXhXHLTuesqaH0VHp1GqpyU+6RzZ9I6Vnu/y6GVaA
-    BUHGfOrmUhAdNu0TKM/MpcKO7bndP+Kp/1Gmkn31I3yzIkbIc5y04Ohkm3zMV2cLZp4SOD
-    mE6ShLsWg4EeG8xoB2+/E/2wMsc/KbkcfJAiIpiyOo86TfLmsaLXCTMeEgZg
-X-ME-Proxy: <xmx:jV6qag_xAfBF4b7JfLUzVt_CTM_U8mWr7A_Fmw2jJJINzbR-C7OltQ>
-    <xmx:jV6qakIvhColpei7gd9PzH58eLkXDhYxtHsZOf4mSPorf1AdaldRnA>
-    <xmx:jV6qakuRhvl58_-z8GXRpFgARl3MkEUjJMCJkpvj-5fzdjVRb-5nDw>
-    <xmx:jV6qatltm3i7OvXc1xh20Y-yn0KjYy3bt86NYaMQOUa0ni1awM2SLg>
-    <xmx:jV6qarkHNZlZSzvbVHQJBCQkSeFEKTwE3m9W_toSFDjvBi2RYo-4MH1r>
-Feedback-ID: i02414972:Fastmail
-Received: by mailuser.ams.internal (Postfix, from userid 501)
-	id C76DFF80089; Wed, 16 Sep 2026 05:16:57 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
+	by policy02-mors.netcup.net (Postfix) with ESMTPS id 4hlDKS1lcwz8sbH;
+	Wed, 16 Sep 2026 11:36:11 +0200 (CEST)
+Received: from [IPV6:2a02:8108:8984:1d00:a0cf:1912:4be:477f] (unknown [IPv6:2a02:8108:8984:1d00:a0cf:1912:4be:477f])
+	by mxe9fb.netcup.net (Postfix) with ESMTPSA id 25E5E5F9C8;
+	Wed, 16 Sep 2026 11:36:06 +0200 (CEST)
+Authentication-Results: mxe9fb;
+        spf=pass (sender IP is 2a02:8108:8984:1d00:a0cf:1912:4be:477f) smtp.mailfrom=regressions@leemhuis.info smtp.helo=[IPV6:2a02:8108:8984:1d00:a0cf:1912:4be:477f]
+Received-SPF: pass (mxe9fb: connection is authenticated)
+Message-ID: <6e1aa91c-3749-4d8f-ae77-a7180d7ff84d@leemhuis.info>
+Date: Wed, 16 Sep 2026 11:36:04 +0200
 MIME-Version: 1.0
-X-ThreadId: AaJBIn-uFwMB
-Date: Wed, 16 Sep 2026 12:16:37 +0300
-From: "Juha-Matti Tilli" <juha-matti.tilli@iki.fi>
-To: "Manivannan Sadhasivam" <mani@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, "Jeff Hugo" <jeff.hugo@oss.qualcomm.com>,
- "Jeff Johnson" <jjohnson@kernel.org>,
- "Bjorn Andersson" <andersson@kernel.org>,
- "Konrad Dybcio" <konradybcio@kernel.org>,
- "Eric Dumazet" <edumazet@google.com>,
- "Kuniyuki Iwashima" <kuniyu@google.com>, "Paolo Abeni" <pabeni@redhat.com>,
- "Willem de Bruijn" <willemb@google.com>,
- "David S . Miller" <davem@davemloft.net>, "Jakub Kicinski" <kuba@kernel.org>,
- "Simon Horman" <horms@kernel.org>, "Mihai Moldovan" <ionic@ionic.de>,
- "Denis Kenzior" <denkenz@gmail.com>, "Marcel Holtmann" <marcel@holtmann.org>,
- "Andy Gross" <agross@kernel.org>, linux-kernel@vger.kernel.org,
- mhi@lists.linux.dev, linux-wireless@vger.kernel.org,
- ath11k@lists.infradead.org, ath12k@lists.infradead.org,
- netdev@vger.kernel.org
-Message-Id: <9ffaeae1-3768-408b-8434-9f1704412fbe@app.fastmail.com>
-In-Reply-To: <bjfwy4usrfbrabmcp4xsr65nqwdpuryvmrb6tzp6k2ckmdx27h@kvf7idvsugsm>
-References: <20260915054207.2513877-1-juha-matti.tilli@iki.fi>
- <20260915054207.2513877-4-juha-matti.tilli@iki.fi>
- <bjfwy4usrfbrabmcp4xsr65nqwdpuryvmrb6tzp6k2ckmdx27h@kvf7idvsugsm>
-Subject: Re: [PATCH v7 03/15] net: qrtr: fit node ID + port number combination into
- unsigned long
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] net: qrtr: resend HELLO on MHI resume
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+ Vlastimil Babka <vbabka@suse.com>, Manivannan Sadhasivam <mani@kernel.org>,
+ Daniel J Blueman <daniel@quora.org>,
+ Linux regressions mailing list <regressions@lists.linux.dev>,
+ Takashi Iwai <tiwai@suse.de>
+Cc: "David S. Miller" <davem@davemloft.net>,
+ Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+ Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>,
+ Chris Lew <christopher.lew@oss.qualcomm.com>,
+ Pranav Mahesh Phansalkar <pranav.phansalkar@oss.qualcomm.com>,
+ Deepak Kumar Singh <deepak.singh@oss.qualcomm.com>,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ "ath11k@lists.infradead.org" <ath11k@lists.infradead.org>,
+ "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>,
+ netdev <netdev@vger.kernel.org>
+References: <20260909055846.16539-1-daniel@quora.org>
+ <hcr4woicsnz3pbhzlguuwjlego7yli3znhjmsx4cdz66xa74zd@wjtle2yslc4b>
+ <c99d9feb-0a19-4f8d-915b-c2ece401e3fa@suse.com>
+ <6257c447-788d-4362-851e-0d552bcf7c56@oss.qualcomm.com>
+From: Thorsten Leemhuis <regressions@leemhuis.info>
+Content-Language: de-DE, en-US
+In-Reply-To: <6257c447-788d-4362-851e-0d552bcf7c56@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
+X-PPP-Message-ID: <178955136698.941304.16981546198776007441@mxe9fb.netcup.net>
+X-Rspamd-Server: rspamd-worker-8404
+X-Rspamd-Queue-Id: 25E5E5F9C8
+X-NC-CID: CUZg8elczhzvougDh6PJ0vtRzakfTbjPRF8VlS48Dsn0b8J++jc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260916_021713_219970_D2560C19 
-X-CRM114-Status: GOOD (  22.89  )
+X-CRM114-CacheID: sfid-20260916_023624_933292_8F099EAE 
+X-CRM114-Status: GOOD (  19.63  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,53 +105,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 16, 2026, at 10:01, Manivannan Sadhasivam wrote:
-> On Tue, Sep 15, 2026 at 08:41:55AM +0300, Juha-Matti Tilli wrote:
-> > From: Mihai Moldovan <ionic@ionic.de>
-> > 
-> > The flow control implementation uses a radix tree to store node ID and
-> > port number combinations and the key length is hardcoded to unsigned
-> > long.
-> > 
-> > The original implementation shifted the node ID up by 32 bits and added
-> > the port number to the lower 32 bits of the unsigned long value to
-> > create a key.
-> > 
-> > Unfortunately, since both node IDs and port numbers are defined as u32,
-> > this will overflow on platforms where sizeof(unsigned long) < 8 (which
-> > are most 32 bit platforms) and essentially just drop the node ID part.
-> > 
-> > To fix this, build the key in a generic way, using half of the unsigned
-> > long space for the node ID and the other half for the port number.
-> > 
-> > This will be transparent to platforms where sizeof(unsigned long) >= 8
-> > and fix overflow issues otherwise.
-> > 
-> > The caveat, of course, is that, for platforms where
-> > sizeof(unsigned long) < 8, the supported amount of node IDs and port
-> > numbers will be severely limited - to half of sizeof(unsigned long),
-> > which typically will be 16 bits. Needless to say, we have to check if
-> > both values fit into this limit.
-> > 
-> > This limitation is probably not going to be an issue in real-world
-> > scenarios, but if it turns out to be one after all, we could switch from
-> > a radix tree implementation to an XArray implementation.
-> > 
+On 9/16/26 05:09, Jeff Johnson wrote:
+> On 9/15/2026 3:48 AM, Vlastimil Babka wrote:
+>> On 9/11/26 12:44, Manivannan Sadhasivam wrote:
+>>> On Wed, Sep 09, 2026 at 01:58:44PM +0800, Daniel J Blueman wrote:
+>>>> Since the MHI HELLO exchange was relocated, it is sent only at device
+>>>> registration. During a suspend-resume cycle, the firmware in WiFi
+>>>> cards such as WCN7850 indefinitely waits for another HELLO,
+>>>> triggering:
+>>>> [...]
+>>>> Fixes: 544d85de4dc2 ("net: qrtr: Send HELLO message on endpoint register")
+>>>> Signed-off-by: Daniel J Blueman <daniel@quora.org>
+>>>> [...]
+>>>> diff --git a/net/qrtr/af_qrtr.c b/net/qrtr/af_qrtr.c
+>>>> index 78347c937af7..2ffcfc2fdb4a 100644
+>>>> --- a/net/qrtr/af_qrtr.c
+>>>> +++ b/net/qrtr/af_qrtr.c
+>>>> @@ -623,6 +623,19 @@ static void qrtr_hello_work(struct work_struct *work)
+>>>>  	qrtr_port_put(ctrl);
+>>>>  }
+>>>>  
+>>>> +/* Trigger the HELLO handshake after the remote has been reset, eg on resume */
+>>>
+>>> Use proper kernel-doc please.
+>
+>> Please prioritize merging this sooner than later (it's a regression from
+>> 7.3-rc2 that would hit people if it made it to 7.3 final) even if it means
+>> fixing up non-critical aspects later, or by maintainer upon merging.
 > 
-> Documentation/core-api/xarray.rst says:
+> Concur. I recently fast-forwarded my ath tree and picked up the buggy commit,
+> so everyone using my tree is now affected.
+
+I wonder if we need somebody (Daniel?) to repost this patch to at least
+have a chance to get it into the next -rc, as I didn't find the fix in
+netdev's patchwork when I just looked -- maybe I missed something, but I
+guess that's because the patch wasn't CCed to netdev.
+
+Ciao, Thorsten
+
+> And just want to point out that many of the function comments in this file do
+> not use kernel-doc format, so I would not consider that a blocker. But it also
+> would be trivial for the maintainer to add.
 > 
-> "If your index can be larger than ``ULONG_MAX`` then the XArray is not the data
-> type for you."
+> I've tested this on my HP ZBook 14 where I've replaced the OEM Wi-Fi adapter
+> with WCN7850...
 > 
-> So the fix is to not make XArray work, but switch over to some other storage
-> mechanism instead of XArray, like hashtable.
+> Tested-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+> 
+> /jeff
+> 
 
-I think I will drop this along with patch 04/15 from the next series,
-as it fixes one bug but introduces another, and those bugs should
-probably be irrelevant for this patch series.
-
-Indeed, that commit message by Mihai wasn't entirely correct: XArray
-will not work here.
-
-BR, Juha-Matti
 
