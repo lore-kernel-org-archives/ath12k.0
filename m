@@ -4,79 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 706A8C982C1
-	for <ath12k@archiver.kernel.org>; Thu, 17 Sep 2026 06:40:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0AC6C982C1
+	for <ath12k@archiver.kernel.org>; Thu, 17 Sep 2026 06:48:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YlcSCaOgVWAQsVp/37r62Fp85wjLzCNshdQoQFfZFUk=; b=QefMnjOx8RHe3wyTUz/tqae9Lf
-	cj0M6Bm4Dr+EVtDhrf0jqckQeyYiSPTiasVHaiq7gw1Vn8hltswMun1LLliWsvSvlreoZqcuFn8LD
-	LOB825I3I5Dr5F6+4v886UmghWMlzASuYDDa/o5nBQjjC9vLdU6n2+70gIfUU++1A8sH2SQVIjuWA
-	TYz9FIyLjBp03/ZED2Rgv+f2w4Vfj5WRY3/4Y6Lw2MDIhHzFfLepLIarokW0QvJWDboJBkAwjfCWF
-	BYubcYewsvJJ62ELiOAAJEU2QEyUtwSqMumDF4YEz3BBrRpbWCfqlbxZXMkZZrhFgE5CvOOCqkSqr
-	ptjfORww==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=38XCC3pzzBeGcbj7BSYYe61HHKXklyzXx0gZrWcUPq4=; b=nnjdcNNqCUzkiyFw/g0Qv/9Uk/
+	/a9ll4hwmJzizmSCLziIXAMRJ44H5H72+Y9RehsUMQwWFjb+mhCpJS+l1v5Pl9ANJzKsY60uNgmar
+	rb8+jxevI9XfSKvpvuSrmU4k909gg7pg4D/cJFttAvOseAhVysMoUOUv0fsOm6JF2T8mn7yADCW9l
+	+iI+Y2zPLUCWoDIrGf4JM2HLuXfU11EeiYVTteaFkIm99iJPYGoBcTKL0wH7OLIpTRLxcriDBd390
+	rztGgoIxUv4yrAvgshE4CVwnChp8WAzY8A+Ybj6XHWE9wUUDFwvWjUQGi5zdKEhQA7QS4M1Z515ce
+	PYYnApnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x75nR-0000000AgHB-0Vib;
-	Thu, 17 Sep 2026 06:40:37 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1x75vK-0000000AhGl-2Kqo;
+	Thu, 17 Sep 2026 06:48:46 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x75nO-0000000AgGR-2pJL
+	id 1x75vH-0000000AhFC-1DNF
 	for ath12k@lists.infradead.org;
-	Thu, 17 Sep 2026 06:40:36 +0000
+	Thu, 17 Sep 2026 06:48:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1789627233;
+	s=mimecast20190719; t=1789627722;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=YlcSCaOgVWAQsVp/37r62Fp85wjLzCNshdQoQFfZFUk=;
-	b=Z7hdh2OTZS0u59NhRrdWAUtNtrR/dlXGUGnZql9++dLSmFA9AfJjivc//sSLT7Lh3OKyEG
-	oWUDvv/E+qVEUPxh0rl2i23DN+B2e8aVICa1eaMBESE/Yp5pVdrwQgL5lak4FrlQRyEvku
-	fMS/4hs//UvuWtYuhzN0BEU3kep6p9Q=
-Received: from mx-prod-mc-01.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=38XCC3pzzBeGcbj7BSYYe61HHKXklyzXx0gZrWcUPq4=;
+	b=Ux4E/UFtg6kO4KEkgdt7kIKy3z5KasPZ2DLYQsv6Lmp84JA6cUE+A5zu1wIrRqumPzoRm+
+	ExtBeTgKIKPwjoTNe4bn0wn0L2fJe90OL07wYbjiucdupHlojWD1CWSkvyMvTUa4+73/YE
+	uwU5j2Ky/7siOMRgrGM3ZeVbvhiqd5E=
+Received: from mx-prod-mc-08.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-35-165-154-97.us-west-2.compute.amazonaws.com [35.165.154.97]) by
  relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-222-KKCv_-iXOf-U2idK-TwV8w-1; Thu,
- 17 Sep 2026 02:40:31 -0400
-X-MC-Unique: KKCv_-iXOf-U2idK-TwV8w-1
-X-Mimecast-MFC-AGG-ID: KKCv_-iXOf-U2idK-TwV8w_1789627229
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-623-L0mNYR8MM02UZed6OsDEtA-1; Thu,
+ 17 Sep 2026 02:48:38 -0400
+X-MC-Unique: L0mNYR8MM02UZed6OsDEtA-1
+X-Mimecast-MFC-AGG-ID: L0mNYR8MM02UZed6OsDEtA_1789627717
 Received: from mx-prod-int-01.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-01.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.4])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mx-prod-mc-01.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id E3C9C1954122;
-	Thu, 17 Sep 2026 06:40:28 +0000 (UTC)
+	by mx-prod-mc-08.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id F405E18CD2FA;
+	Thu, 17 Sep 2026 06:48:30 +0000 (UTC)
 Received: from fedora.redhat.corp (headnet05.pony-001.prod.iad2.dc.redhat.com [10.2.32.117])
-	by mx-prod-int-01.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id DB82B3003EED;
-	Thu, 17 Sep 2026 06:40:25 +0000 (UTC)
+	by mx-prod-int-01.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id B8AA23003EED;
+	Thu, 17 Sep 2026 06:48:28 +0000 (UTC)
 From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-To: jeff.johnson@oss.qualcomm.com
+To: jjohnson@kernel.org
 Cc: ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
-	dolinux.peng@gmail.com,
-	jjohnson@kernel.org,
-	jtornosm@redhat.com,
-	linux-kernel@vger.kernel.org,
 	linux-wireless@vger.kernel.org,
-	toke@toke.dk
-Subject: Re: [PATCH v5 4/4] wifi: ath12k: implement custom wake_tx_queue with flow control
-Date: Thu, 17 Sep 2026 08:40:23 +0200
-Message-ID: <20260917064024.12175-1-jtornosm@redhat.com>
-In-Reply-To: <0bac4c07-6c78-478c-b3ec-1d897cdd8acf@oss.qualcomm.com>
-References: <0bac4c07-6c78-478c-b3ec-1d897cdd8acf@oss.qualcomm.com>
+	linux-kernel@vger.kernel.org,
+	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+Subject: [PATCH v7 0/4] ath11k/ath12k: implement TX flow control
+Date: Thu, 17 Sep 2026 08:48:21 +0200
+Message-ID: <20260917064825.12747-1-jtornosm@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.4
-X-Mimecast-MFC-PROC-ID: Vd_gbF2iDe-Jihmo4dzXnop5dnxPl6-HwSiUlA1qTFc_1789627229
+X-Mimecast-MFC-PROC-ID: 8mOLhSiROVudeVWLyVsijnujY8kEA8jp8MBDYisGdxs_1789627717
 X-Mimecast-Originator: redhat.com
-Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
+content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260916_234034_785528_1630C578 
-X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-CacheID: sfid-20260916_234843_398216_BDBA083A 
+X-CRM114-Status: UNSURE (   5.63  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,32 +86,35 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello Jeff,
+This series implements custom wake_tx_queue operations for ath11k and
+ath12k drivers to prevent hardware ring overflow issues under heavy
+traffic.
 
-Sorry for the late reply, I was on leave as noted in the v6 cover letter.
+Without proper flow control, both drivers experience -ENOMEM errors
+("failed to transmit frame -12") when the hardware TCL ring fills up.
+Additionally, ath12k can hang under sustained high throughput. These
+issues are more commonly observed in VMs with PCIe passthrough but
+also occur on bare metal systems.
 
-> I have a fixup for ath9k which does:
->       171 -  ratetbl = rcu_dereference(sta->rates);
->       171 +  ratetbl = rcu_dereference_bh(sta->rates);
->
-> Should ath12k also use rcu_dereference_bh()?
-I think the ath9k and ath12k situations are different. 
+The implementation follows the pattern used in the iwlwifi driver,
+adapted for ath11k/ath12k hardware ring architecture, checking
+hardware ring space before dequeuing packets from mac80211.
 
-In ath9k, the rcu_dereference(sta->rates) is already inside the
-spin_lock_bh(&sc->chan_lock) section, so BH is disabled and switching to
-rcu_dereference_bh() directly satisfies lockdep without needing
-rcu_read_lock().
+Testing shows stable operation with eliminated -ENOMEM errors, no hangs,
+and improved throughput under heavy traffic conditions.
 
-In ath12k, narrowing the rcu_read_lock() scope would require changing the 4
-existing rcu_dereference() calls inside ath12k_wifi7_mac_op_tx() to
-rcu_dereference_bh(), since that function has an existing contract
-(/* Note: called under rcu_read_lock() */) and is called from wake_tx_queue.
-That is modifying working code beyond the scope of this series. Happy to do
-it as a follow-up if you prefer.
+Jose Ignacio Tornos Martinez (4):
+  wifi: ath11k: use queue mapping for WCN6750 ring selection
+  wifi: ath11k/ath12k: remove skb parameter from get_ring_selector
+  wifi: ath11k: implement custom wake_tx_queue with flow control
+  wifi: ath12k: implement custom wake_tx_queue with flow control
 
-Thanks
-
-Best regards
-José Ignacio
+v7: No modification in patches 1 and 2
+    Address comments from Jeff Johnson:
+      Patch 3: Add the defensive pattern _bh in both spinlocks (ath11k)
+      Patch 4: Add the defensive pattern _bh in both spinlocks (ath12k)
+v6: https://lore.kernel.org/all/20260811172435.616200-1-jtornosm@redhat.com/
+--
+2.49.0
 
 
