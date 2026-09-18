@@ -4,58 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EFB3C982DF
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A60EC982E4
 	for <ath12k@archiver.kernel.org>; Fri, 18 Sep 2026 16:28:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
-	From:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=rDMpIdvBXzn+vCf17mZbvyDE8a3kbb4k9xJTrPsVR5c=; b=lo6bgWgIBxJ1jtN9mfOwLCad+q
-	GXJfiqEzGjBGUb/QZbjSqiWRKrrA23h1eAtHoAnzzlcdKwpu2iQFsZFYHk/yCE0ieZ9ckPrNgBvr0
-	firM8t+eAnf/CNCYk4uQ5Bo2IU1GWwF9bwCDsAnA3S4s52KrxKPh14Di8UioGZ6G0pDtB5phVG2xl
-	GQbNxSkiFFBTJZinEbuK1IJSXiPvkuJu+ZeuCn/ySUifWxN+8QvOhNFSBf8fcJBKneNWiq6v7puNr
-	kGLoUo5hn2h2ckrwiw8XfXjA7gnKkMwS6DTLxZoXa/QeaIFfi7nOTW3pV+mkAWfX5hEHndNAueWOu
-	DR2yN5TA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:
+	References:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:
+	Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=pCxHADbcgyLTbXfi9iyc0uCiMV1lSTRqtXaGJZUcBU4=; b=I3TlPMQZpU5/QiZb3f22elgNud
+	kBQ5iL21N3xLoIrKa5ulGLkfjBEz6wMtjEUuYn4u3uKZ15ndO5nGAH6BQZmKQI96qsmP3a0U445aC
+	2fk0ae/iKJemUN2AhVpKILMsJeeIaPaadoy1C/jRee50owJPvTm5K5BtcBtukPemy10QUlHmcM6nY
+	RniHI2Pp/op6kWDyCYsYQlEZUOTfDS+l1Vf/qzqSO4lIijXhNgXFKcqNqSxIO3vQ6mIuaLzdt5GFo
+	fF7yxaLC6OYldRBveZkHn7oGYZw85wnub+0KtJdaGmlWrjw2bzAq1ThMtiB4vXl1dMRwHj3vqubqQ
+	yIi6/9JQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7bRm-0000000F1bO-31zL;
+	id 1x7bRm-0000000F1bl-40bX;
 	Fri, 18 Sep 2026 16:28:22 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7bRi-0000000F1Xm-3WtG;
-	Fri, 18 Sep 2026 16:28:18 +0000
+	id 1x7bRj-0000000F1Xp-0BGv;
+	Fri, 18 Sep 2026 16:28:19 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 24B906053B;
+	by tor.source.kernel.org (Postfix) with ESMTP id 3A1EC6057A;
 	Fri, 18 Sep 2026 16:28:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id BCFC9C2BCF5;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id CB1F1C2BCF6;
 	Fri, 18 Sep 2026 16:28:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1789748897;
-	bh=6Z8qKohBjG+nYdXMxSIz7GwXcSnl7h3FDD5QcnwlKuY=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=UB+YS1UsxCALsNwNH0jSBd7fW29V3RBvgybAQ4h/xGNdUH/X3IfqjYN8WdmgjfUB3
-	 A//A3CjxLTkRhlJA5ehoK03Lii1bxtQend0rG8TZ16NIEvS5JoRZkaQFsZWNbp18A/
-	 7CKgtAFNV9FjigLPhMQnQr6UxSr68hIbLTgUhVX27qM4AEjcFSW2oTLG6PKXhBXyTP
-	 JyHcm6IOKNzCKAEH7kO6H8xzm6C+jNRqRj8qXEarbrhIhghjCrZiloEq0phxz2yRD1
-	 pHtBIAa8t1f59BWhVVUSxWxh7EHNDVgHodvfTapYuVHhfF0hjKQaKDUzCbLFzX5y0Q
-	 Ly2l/SGGIUbBw==
+	bh=kgdfmuz91IKgYnHgaBlL+u6+Oxrtj0RHPEZmDVb08iM=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=my3ol6diPdZXiMpX6J75k6YIoWCF+zEO/ORqEDzNZkO64T3DgoR+Y0fDtuq3d3A76
+	 xGMXAtrrLe+B3JPAXXUmVsUuyrkxqk3GhfBla5j8CJ4tIhve4d4LJkktSvPG3uMwZO
+	 TrpQVDax9evDrtPl3YjvOl8OiDdk+xYlpJFIUyCvBp53BexaPb0gYs+2dx8f4c2oqv
+	 F6E69fCi8t5ct/36NAxZeeLBKDyg6cnHwcrejwGlbGFxOuxNNEkVgzLPrcmckyCEP/
+	 le5ouEnF0myQGtRwgQG/bce/0UYlvQvrASI0vnEMuJ/lzPkruwUUra3y+RrpxHqEEK
+	 WKSNvOqM7/q0A==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 98C0CC982D7;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id AA47BC982D8;
 	Fri, 18 Sep 2026 16:28:17 +0000 (UTC)
 From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
-Subject: [PATCH 0/4] net: qrtr: Add support for using identical MHI
- endpoint devices
-Date: Fri, 18 Sep 2026 18:28:12 +0200
-Message-Id: <20260918-qrtr-multi-ep-v1-0-8a06caa368d3@oss.qualcomm.com>
+Date: Fri, 18 Sep 2026 18:28:13 +0200
+Subject: [PATCH 1/4] net: qrtr: Allow the host QRTR to assign a unique node
+ id
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 8bit
-X-B4-Tracking: v=1; b=H4sIAJxmrWoC/yXMQQ6CQAxG4auQrm3CTECFqxgXUH61BhA7AyEh3
- N1Rl9/ivY0CTBGozjYyLBr0NSa4Q0byaMY7WLtk8rk/5pU789ui8TD3URkTiz+Jb6UsAEepmQw
- 3XX+/y/XvMLdPSPxOaN8/x3mQHnEAAAA=
-X-Change-ID: 20260918-qrtr-multi-ep-c27c2bc54ee1
+Content-Transfer-Encoding: 7bit
+Message-Id: <20260918-qrtr-multi-ep-v1-1-8a06caa368d3@oss.qualcomm.com>
+References: <20260918-qrtr-multi-ep-v1-0-8a06caa368d3@oss.qualcomm.com>
+In-Reply-To: <20260918-qrtr-multi-ep-v1-0-8a06caa368d3@oss.qualcomm.com>
 To: Manivannan Sadhasivam <mani@kernel.org>, 
  "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
  Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
@@ -71,16 +69,16 @@ Cc: linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org,
  Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
  Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2798;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=5649;
  i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
- bh=6Z8qKohBjG+nYdXMxSIz7GwXcSnl7h3FDD5QcnwlKuY=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBqrWad4ZoZAEk0cQeZgtJ6b+1eEpkYMcmutGWLA
- bVHEQdUHwSJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaq1mnQAKCRBVnxHm/pHO
- 9ajuB/9glk15Vu0tJD0QCmDRJJUz3pwSef4SYXyEyq4KwQWyU8SLii0UBPrZAO8Qc0i91NTNI6o
- U43q/76VuAhZFJW60hvtqrjwOgMelpnds+dpqZER0h26ie9F9MKmgRJLfNhW7Mp8JYMzYSsMBE7
- zSydfaCl33EE+Paw/sQMO1ktG35sGcQSi6pIvTaWBL4pLDRfG2oQHqPkwIrNGXZZ3xNB82jh6aX
- 9xv42TRFy9qRwDQ0/7M/1BpSV4WZ32GfSxzXFKAZoH4BITmySewHu92P1NeI0dsRitKiXZlk016
- Z+Fbq1Hr4crb5FBljkXN4jfcjzVhgEmR4VWmIWBenBt0UcZP
+ bh=VlK8aLzhoboE7auu5vYc1UuZbxZZJt/VIyCXXZoWGMk=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBqrWae+4cO2dbojgbEw83G/jkwSyTeYs2aVPunn
+ bpu4T/cpOSJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaq1mngAKCRBVnxHm/pHO
+ 9dvxB/sEml7y3srDVsxk3N612+SBuPaMFgE7x7K16pMdyiONxuSfXJZuZQvbZ4dZ4ELLXK2jV6E
+ tyhC640BsDeUh+ACPb6PIjnsRTJpA2sUUhhVoIxxSR+y/T+xEuf5UpOruLCEAXVRQ1KbvJ5i96x
+ skU+8FvFo42HyZCSKCDUTonQ8DwE9SpGBD/Tuj25fJBcvuUkjAxK9sTP+IWtV09Fwoyjq0nzfHm
+ n3oH6SnGLZh+kRe3neeowx+5+QaUBbjBrV1zHPbYNJNAEDQOTIbujWV/Oi7vYAXIdTn+SEIcmWg
+ MaNTLsS4wuyjeTWxPqSuVv9gPSfQhXxqaLpXgUhLZfZ60279
 X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-Endpoint-Received: by B4 Relay for
@@ -101,70 +99,161 @@ Reply-To: manivannan.sadhasivam@oss.qualcomm.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
+From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
-This series reworks the QRTR driver to add support for using identical MHI
-endpoint devices at the same time. Currently, QRTR driver has a limitation on
-using more than one identical MHI endpoint devices like QCS6490 or any Qcom
-Endpoint device making use of QRTR at the same time. Because of the fact that
-these devices will have the identical QRTR node id, they cannot be used at the
-same time, on the same host machine.
+Currently, QRTR identifies each remote node by the value of the
+'src_node_id' field in the received packet and uses the node id as the key
+to store the node to the internal 'qrtr_nodes' radix tree.
 
-This limitation is a blocker for running upstream kernel on devices like Qcom
-based routers as they often have multiple identical WLAN Endpoint devices
-connected to the Router SoC.
+But this approach comes with a limitation. When more than one remote node
+share the same id, then QRTR can only add the first node to the radix tree
+and has to drop the successive nodes with the same node id as the 'key' in
+radix tree has to be unique. This prevents connecting identical Qcom PCIe
+WLAN devices to a single host at the same time.
 
-This series supersedes the following 2 series from Juha:
-https://lore.kernel.org/all/20260915054207.2513877-1-juha-matti.tilli@iki.fi
-https://lore.kernel.org/all/20260915074135.2567411-1-juha-matti.tilli@iki.fi
+To fix this limitation, allow the host QRTR to use the node id (nid)
+received from the endpoint driver during qrtr_endpoint_register() as the
+unique node id and use it as the 'key' for the internal radix tree. Also,
+store the received 'src_id' in a new 'qrtr_node->ep_nid' field and replace
+the 'ep_nid' with the unique 'nid' in the QRTR control packets if both
+differ i.e., an endpoint driver has passed a unique 'nid' during
+qrtr_endpoint_register(). To maintain symmetry, replace the 'nid' with the
+'ep_nid' while sending the packet back to the remote node if both differ.
 
-Compared to the series from Juha, this series simplifies the multi-endpoint
-support by computing a unique node id for each MHI endpoint and uses it for the
-internal QRTR book keeping. This ensures that even if the MHI endpoint devices
-have same node ids, the host QRTR will always use a unique node id for each one
-of them.
-
-More details can be found in the individual patches.
-
-Testing
-=======
-
-Juha tested this series on multi ath11k setup by backporting this series to
-6.6.156 kernel. I'd appreciate a formal tested-by tag from Juha and other folks
-CCed to this series.
-
-Merge Strategy
-==============
-
-Since both QRTR and ath drivers are falling under the networking tree, the whole
-series can be merged through netdev tree.
+Currently, all QRTR endpoint drivers pass 'QRTR_EP_NID_AUTO' as the 'nid'
+during qrtr_endpoint_register(). So 'ep_nid' and 'nid' are same and the
+functionality is not changed.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 ---
-Manivannan Sadhasivam (4):
-      net: qrtr: Allow the host QRTR to assign a unique node id
-      net: qrtr: Assign unique node id for MHI endpoints
-      wifi: ath11k: Connect to the QMI server belonging to the device owned by this driver
-      wifi: ath12k: Connect to the QMI server belonging to the device owned by this driver
+ net/qrtr/af_qrtr.c | 61 +++++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 file changed, 54 insertions(+), 7 deletions(-)
 
- MAINTAINERS                           |  1 +
- drivers/net/wireless/ath/ath11k/hif.h |  9 ++++++
- drivers/net/wireless/ath/ath11k/pci.c |  9 ++++++
- drivers/net/wireless/ath/ath11k/qmi.c | 10 ++++++
- drivers/net/wireless/ath/ath12k/hif.h |  9 ++++++
- drivers/net/wireless/ath/ath12k/pci.c |  9 ++++++
- drivers/net/wireless/ath/ath12k/qmi.c | 11 +++++++
- include/net/qrtr.h                    | 21 ++++++++++++
- net/qrtr/af_qrtr.c                    | 61 +++++++++++++++++++++++++++++++----
- net/qrtr/mhi.c                        |  4 ++-
- 10 files changed, 136 insertions(+), 8 deletions(-)
----
-base-commit: cee9395acd8043be0644b25c34bfa86623f2b935
-change-id: 20260918-qrtr-multi-ep-c27c2bc54ee1
+diff --git a/net/qrtr/af_qrtr.c b/net/qrtr/af_qrtr.c
+index a30fa56e6aa3..af8ca65a7027 100644
+--- a/net/qrtr/af_qrtr.c
++++ b/net/qrtr/af_qrtr.c
+@@ -117,7 +117,8 @@ static DEFINE_XARRAY_ALLOC(qrtr_ports);
+  * @ep_lock: lock for endpoint management and callbacks
+  * @ep: endpoint
+  * @ref: reference count for node
+- * @nid: node id
++ * @nid: node id assigned by the host QRTR
++ * @ep_nid: endpoint's own node id as received
+  * @qrtr_tx_flow: xarray of qrtr_tx_flow, keyed by node << 32 | port
+  * @qrtr_tx_lock: lock for qrtr_tx_flow inserts
+  * @rx_queue: receive queue
+@@ -128,6 +129,7 @@ struct qrtr_node {
+ 	struct qrtr_endpoint *ep;
+ 	struct kref ref;
+ 	unsigned int nid;
++	unsigned int ep_nid;
+ 
+ 	struct xarray qrtr_tx_flow;
+ 	struct mutex qrtr_tx_lock; /* for qrtr_tx_flow */
+@@ -339,6 +341,7 @@ static int qrtr_node_enqueue(struct qrtr_node *node, struct sk_buff *skb,
+ {
+ 	struct qrtr_hdr_v1 *hdr;
+ 	size_t len = skb->len;
++	unsigned int dst_node;
+ 	int rc, confirm_rx;
+ 
+ 	confirm_rx = qrtr_tx_wait(node, to->sq_node, to->sq_port, type);
+@@ -353,10 +356,14 @@ static int qrtr_node_enqueue(struct qrtr_node *node, struct sk_buff *skb,
+ 	hdr->src_node_id = cpu_to_le32(from->sq_node);
+ 	hdr->src_port_id = cpu_to_le32(from->sq_port);
+ 	if (to->sq_port == QRTR_PORT_CTRL) {
+-		hdr->dst_node_id = cpu_to_le32(node->nid);
++		hdr->dst_node_id = cpu_to_le32(node->ep_nid);
+ 		hdr->dst_port_id = cpu_to_le32(QRTR_PORT_CTRL);
+ 	} else {
+-		hdr->dst_node_id = cpu_to_le32(to->sq_node);
++		/* Put back the endpoint's own node id */
++		dst_node = to->sq_node;
++		if (dst_node == node->nid)
++			dst_node = node->ep_nid;
++		hdr->dst_node_id = cpu_to_le32(dst_node);
+ 		hdr->dst_port_id = cpu_to_le32(to->sq_port);
+ 	}
+ 
+@@ -420,6 +427,32 @@ static void qrtr_node_assign(struct qrtr_node *node, unsigned int nid)
+ 	spin_unlock_irqrestore(&qrtr_nodes_lock, flags);
+ }
+ 
++/* Replace the node id in the control packet with 'node->nid', if both are
++ * different.
++ */
++static void qrtr_node_rewrite_ctrl(struct qrtr_node *node, unsigned int type,
++				   struct sk_buff *skb)
++{
++	struct qrtr_ctrl_pkt *pkt;
++	__le32 *nid;
++
++	if (node->nid == node->ep_nid)
++		return;
++
++	if (skb->len < sizeof(*pkt))
++		return;
++
++	pkt = (struct qrtr_ctrl_pkt *)skb->data;
++	if (type == QRTR_TYPE_DEL_CLIENT)
++		nid = &pkt->client.node;
++	else
++		nid = &pkt->server.node;
++
++	/* Rewrite only the endpoint's node id, not those of bridged nodes */
++	if (le32_to_cpu(*nid) == node->ep_nid)
++		*nid = cpu_to_le32(node->nid);
++}
++
+ /**
+  * qrtr_endpoint_post() - post incoming data
+  * @ep: endpoint handle
+@@ -510,16 +543,29 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
+ 
+ 	skb_put_data(skb, data + hdrlen, size);
+ 
+-	qrtr_node_assign(node, cb->src_node);
++	if (node->ep_nid == QRTR_EP_NID_AUTO)
++		node->ep_nid = cb->src_node;
++
++	if (node->nid == QRTR_EP_NID_AUTO || node->nid == cb->src_node)
++		qrtr_node_assign(node, cb->src_node);
+ 
+ 	if (cb->type == QRTR_TYPE_NEW_SERVER) {
+ 		/* Remote node endpoint can bridge other distant nodes */
+-		const struct qrtr_ctrl_pkt *pkt;
++		const struct qrtr_ctrl_pkt *pkt = data + hdrlen;
++		unsigned int server_node = le32_to_cpu(pkt->server.node);
+ 
+-		pkt = data + hdrlen;
+-		qrtr_node_assign(node, le32_to_cpu(pkt->server.node));
++		if (server_node != node->ep_nid)
++			qrtr_node_assign(node, server_node);
+ 	}
+ 
++	if (cb->src_node == node->ep_nid)
++		cb->src_node = node->nid;
++
++	if (cb->type == QRTR_TYPE_NEW_SERVER ||
++	    cb->type == QRTR_TYPE_DEL_SERVER ||
++	    cb->type == QRTR_TYPE_DEL_CLIENT)
++		qrtr_node_rewrite_ctrl(node, cb->type, skb);
++
+ 	if (cb->type == QRTR_TYPE_RESUME_TX) {
+ 		qrtr_tx_resume(node, skb);
+ 	} else {
+@@ -593,6 +639,7 @@ int qrtr_endpoint_register(struct qrtr_endpoint *ep, unsigned int nid)
+ 	mutex_init(&node->ep_lock);
+ 	skb_queue_head_init(&node->rx_queue);
+ 	node->nid = QRTR_EP_NID_AUTO;
++	node->ep_nid = QRTR_EP_NID_AUTO;
+ 	node->ep = ep;
+ 
+ 	xa_init(&node->qrtr_tx_flow);
 
-Best regards,
---  
-மணிவண்ணன் சதாசிவம்
+-- 
+2.43.0
 
 
 
