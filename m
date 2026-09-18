@@ -4,135 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6319C982D8
-	for <ath12k@archiver.kernel.org>; Fri, 18 Sep 2026 14:19:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CE51C982D7
+	for <ath12k@archiver.kernel.org>; Fri, 18 Sep 2026 16:28:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:From:Subject:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=UVIKTbOX8P65rHjj6Gpe9jHcXhIM+KLdiyQqTjwwzPQ=; b=0wWQUl2gYa3WWp5tE57MxuwGIe
-	+MkSaw22fYqKZi66rDcUgulxU8n6xna1KL+11Ud6A+/Ao29spdTBH0lSZwx2vcQCAzE85g1OYA0VZ
-	fSGdg3By43QBfGN3ezenEu2Mde07itTlyjpd8VLjEZcdBMeEyurU8HDfi+593gKkbspf7fHHwYqGr
-	WFdyOMzaGRaiEI7LfNdWqgm3HwzsHMgy8/xJa2+a4XRMXr9eLWTJ8pw//TKT+r/8Xax+KKlp6MNUT
-	fKvHjiubNSgW0L2dhizMu6oK1wJWkF1N0kmYSa87sdeYUERW79qdauvcVax3zb/Yzfun8BV8Ae9Jt
-	+aPDYDNg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:
+	References:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:
+	Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=h9HmFE8M8FVmfoRuMAoaSF0csxpiXa3WmozdtYcL+zs=; b=RRqc+o4I25PqEA1bs1jeQLFOh9
+	fytiZTby6EhgO1h77BiUf3dmuE5zDMlfAqzlwpLF4XQt7Kv4TuiFPI7UcTkN8vAaO1AwG2C/zqBnZ
+	l+eFZ+RptKAJEwokW6uroAuUfZwxeUXT0miANmSC4E9ZTxJmPkevRN9tF4bxaQFh7jHLZxtl/bZMR
+	RnfwYvOl805ckH7+qtQfzz6yqhAvfDE8/KIAHxNxqwK61jURy4WVV34MWQOUUmGvMZB2C0MD05nN3
+	kBuW2fFvhqM6yyiC1EcaIXcqzoR/zbdHgUzOqIZrqf0fRRs9mC9GoQl/VsDEpwkyccmStWolM90mR
+	o7S69wNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7ZRP-0000000Eh9K-1nKp;
-	Fri, 18 Sep 2026 14:19:51 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1x7bRm-0000000F1aB-0bjK;
+	Fri, 18 Sep 2026 16:28:22 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7ZRI-0000000Eh5F-48Ii
-	for ath12k@lists.infradead.org;
-	Fri, 18 Sep 2026 14:19:47 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68IDOd6I1353860
-	for <ath12k@lists.infradead.org>; Fri, 18 Sep 2026 14:19:37 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=UVIKTbOX8P65rHjj6Gpe9j
-	HcXhIM+KLdiyQqTjwwzPQ=; b=DobeeqdU60kdMGy3DWDXi/byxGfySY6l20JjUM
-	iMDRkWre2xMXVhmLSxpBdCvBMDKYgGsggnLMEd/BrUiY8ed6rD+rYpjL4e9GE7Ko
-	Byt32oiN+dqu3SW/hskLiG6vob2vuFnhY6LBVchwAfVg87e4v9Pe2javI6yB7/sk
-	DMGiwZMSvka98KyaWIbT/TcFOMKTfNz/Wd6lHw7gyZH1hqkjponf/9Hzr3Du3SZ6
-	uHpkTgm/+X+vQlIzNPZdhFpWeASTkfklOqvYvFzaoGN0+MO/Ne5Kh4Z2/1uwoghd
-	wOf2d2O6PQLWwzMTqly24/pRUzaSzsP0s8t5aVR/k3kk5ETw==
-Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gs2hv93yb-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 18 Sep 2026 14:19:36 +0000 (GMT)
-Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-cc51591102fso1124572a12.1
-        for <ath12k@lists.infradead.org>; Fri, 18 Sep 2026 07:19:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1789741176; x=1790345976; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:from:content-language
-         :subject:cc:to:user-agent:mime-version:date:message-id:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=UVIKTbOX8P65rHjj6Gpe9jHcXhIM+KLdiyQqTjwwzPQ=;
-        b=F9l6BYGqCCyjMKgV+uvWhxuJY767yd/MVRotN2iXkWXBJyyKwFzonpsU0zhAfj22HG
-         76Sb27HyeqUnEGfMUKVoGeJyCb1FSQ9BpFAMUKGPs9tynu5siTH8A/NhaH3EgUHjT/MT
-         m6AuPgKCTnNMiOr7SMLritzZ5l7UriN5PntzyDXM0CWeXXCPJfW5GkLlRsvwS8QEY8Mu
-         bE7+pspFvyJWBLkU3OYUrwjnN3ApPWGXWDD/BhvYFHENZqdmH2UuNeFILGS/V2U2sxou
-         ANNIx4XAGI/SmzXBYUyPznzI66O4yqrHuu5Lp0G/FWU7CBExp4Fi5A6bZhFM7kZi7j9i
-         fn+g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789741176; x=1790345976;
-        h=content-transfer-encoding:content-type:from:content-language
-         :subject:cc:to:user-agent:mime-version:date:message-id:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=UVIKTbOX8P65rHjj6Gpe9jHcXhIM+KLdiyQqTjwwzPQ=;
-        b=z3lvQiWOcizt74kBAgnBFemEe8+n+xWWNdfd/qj96HrZvYL4alNgms7QVd0uGXDRLJ
-         ZEUb6KdOHD0qjn3n9tq+ddinsvLuGQk4wMVVkkFIsIEwgUMRPkESyMDfD6CbFMmg2uq7
-         7NaPMziFDeuxBU117UiTVFoo1dwFd/XPaDLmhpK7fwMoN2W14+WeL6CiiH7FNMBgofjx
-         WN5RaUBTyajmpTruO5KzbPIz7qaf+KmkHo/SEh/3iSIaEA4vu4AEGk491XE8/v3XPxxY
-         ox5yy7XwYlS38TyCacU2ESTmQU0tu+odsBRxekPJ21CN6zDBiQGL7dqVEfYfa4hY51xq
-         0fmg==
-X-Forwarded-Encrypted: i=1; AKwUvByNd4ZWwQ3uFX2RRj8TGlwsX4YZncs4RZ5IXbXaDvgNcjOkPOq25FwEpeP0ua/enSOqr8SUgi8=@lists.infradead.org
-X-Gm-Message-State: AFuF++mCpBY68iNS2QUJpLsgCFBYeLpIJFCBqMOwW3Xa9bsdVHe1e0vn
-	OS4XYsrKy4pL4VvVtlgWMche/zwQBpDIHKRASUuw5put3OpctO5OEUsRnZ3ANkAOnxszdSlvnwF
-	ED43FrXT+NCCVr3o+U68WrbdApRRmh/H0IyOj9Hv4Ln6jpUZoSRcaJe7iM+ssQMevLld5Nhhi
-X-Gm-Gg: AYBFou1kz17YMucyVFVadt5upvCfMbHzVaIwcs3rzhmmxF3d3XTsS1Tse/ClDWiR6xm
-	mDAJDXb1ptjdcgHymqFoawAkXFp8/mQS6vp3Zd1N1b1wgSAvcTVuLhFOn9XiLlgvEfjfRmX1COw
-	u00EBunmG8MS1gnrfrn5M0xuPb1JC514boO/TXITcJhc44DZClRJ+JBSy4OxTrmBVBs65THCpyu
-	yZ88411/RdTOb2qTk1IW0GNMwnyxbtK2bjyowb9rBXmeQRafAU79lchjY1K/x4sc5NXNw7Mxtx4
-	j+kX3tb2JB0OXZWbP3W+vOcstubufgOakma+WhE9E+simi/ajcc3CpVhHPdR9wVBV8fAHRR1fMj
-	etZrxNFEfJuOsfuyrwwSEouDg9OB0aZctrlr9
-X-Received: by 2002:a05:6a20:eec3:20b0:3dd:a006:ed9a with SMTP id adf61e73a8af0-3dda006ee10mr109629637.48.1789741175767;
-        Fri, 18 Sep 2026 07:19:35 -0700 (PDT)
-X-Received: by 2002:a05:6a20:eec3:20b0:3dd:a006:ed9a with SMTP id adf61e73a8af0-3dda006ee10mr109582637.48.1789741175140;
-        Fri, 18 Sep 2026 07:19:35 -0700 (PDT)
-Received: from [10.81.91.45] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cc5c50c821bsm1100001a12.22.2026.09.18.07.19.32
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 18 Sep 2026 07:19:32 -0700 (PDT)
-Message-ID: <bb9ea6c5-67ee-402c-a007-46c9c7727632@oss.qualcomm.com>
-Date: Fri, 18 Sep 2026 07:19:31 -0700
+	id 1x7bRi-0000000F1Xl-39r5;
+	Fri, 18 Sep 2026 16:28:18 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 2709B44543;
+	Fri, 18 Sep 2026 16:28:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id DAF86C2BCFA;
+	Fri, 18 Sep 2026 16:28:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1789748897;
+	bh=dANEiTIv6WX9Ahf5Kk+KOtXwhtRjgal+FWoz9aBW1fc=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=fonPAfuvAgIi4VeFMRXeaKlB6BMFGa7mzclKgKceCK03Ab2WzHNlbVzqYzpaYFZSi
+	 oahdUs5zEdCToOwOsOQQRTWm+9zkMvIxJVkAOQniw6Hsm0BYYbsRJw+jI1P+EGq/js
+	 fGsSTdqiy72mVrCP+2LFJepCidL/6KjhR/Bx7ozMuNw/R66HwSrWusJcseJl9Pnu4Z
+	 zOd/BLOFxnFaKGjbu8QDLiz7hKWGmL7iKoDVVqVWXP1ETncPfwbzh7QtsGNcYPdbYO
+	 0SNwMKBQ7d/Su58gZA/AR8cPNRNp3/XYXSNrtJxbaecR4lUWn2rhCw02a+3MIjSsL0
+	 TxfUrxzAhmRkg==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BA4E3C982DA;
+	Fri, 18 Sep 2026 16:28:17 +0000 (UTC)
+From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
+Date: Fri, 18 Sep 2026 18:28:14 +0200
+Subject: [PATCH 2/4] net: qrtr: Assign unique node id for MHI endpoints
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: linux-firmware@kernel.org
-Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
-        ath11k@lists.infradead.org, ath12k@lists.infradead.org,
-        jjohnson@kernel.org, Troels Vognbjerg <hekatombe@gmail.com>
-Subject: [PULL linux-firmware] ath10k, ath11k and ath12k firmware ath-20260918
-Content-Language: en-US
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTE4MDIwNCBTYWx0ZWRfXxMOqDPDeNp+8
- nXlnKuJfXsiwAy7dwYMJWddyPprBP2zbv6laifOAhyD5ttYVXeWZnPiftkcG3ADCDFjmwNQb1U3
- CLVlfFpew22ogdCM9zWyzKuZxcoPvrc=
-X-Authority-Analysis: v=2.4 cv=IOWXmQvG c=1 sm=1 tr=0 ts=6aad4878 cx=c_pps
- a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=VwQbUJbxAAAA:8 a=pGLkceISAAAA:8 a=Q1qRzZT12ma5ygSj1D0A:9 a=QEXdDO2ut3YA:10
- a=3WC7DwWrALyhR5TkjVHa:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTE4MDIwNCBTYWx0ZWRfX0SynRN+t5lLD
- jFSoL3O+aH3Orq07Qn/ZQFWboPV+/RLTJQiEQjcDS5L+snB4+9DmpgGDEl/xrOJVKTlGeh2FHpS
- mcwpM2BpeojIS7cUPFPVyHJHuTREazOvb6YvisdkMMl4gV5ZQgI8VYB5U9FnN2VP8HmLVw9lZN7
- BF2mCNq0f9pHb0EtIgfwcFKgLzOsE54srSkA/sevr4dMfmFZPDcWurxMbhYHWcvRPlpzaRaQsEO
- SaSbE+aSx54syUEaGQBm6FnM1xgV8Eu3fgHqlusQKeXiAlltPqbxRo7FABAMdClk17Jrkg4Qu/e
- w7xS489XOBfNtmrF94R4/9k8XLS+d/1jZrx11Ft/ZdP+ESEk5OJGUP6gHlB81dlb6Sm3fG1y1jb
- oRfiV9WeG6wQSmLyS5fMSWL4P3yqueUEDyg1CefabQMfZHb+1eUYlcxNCClc5bYtxMqtm7OWaTi
- viYASapeOv+ZyIj6q9w==
-X-Proofpoint-ORIG-GUID: pDz-AnGyw-sqoPozHQkt0QNq3xVSxwbG
-X-Proofpoint-GUID: pDz-AnGyw-sqoPozHQkt0QNq3xVSxwbG
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-18_04,2026-09-16_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 adultscore=0 malwarescore=0 bulkscore=0 spamscore=0
- suspectscore=0 phishscore=0 clxscore=1015 lowpriorityscore=0
- priorityscore=1501 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2609040000
- definitions=main-2609180204
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260918_071946_305423_2AA823F8 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+Message-Id: <20260918-qrtr-multi-ep-v1-2-8a06caa368d3@oss.qualcomm.com>
+References: <20260918-qrtr-multi-ep-v1-0-8a06caa368d3@oss.qualcomm.com>
+In-Reply-To: <20260918-qrtr-multi-ep-v1-0-8a06caa368d3@oss.qualcomm.com>
+To: Manivannan Sadhasivam <mani@kernel.org>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Simon Horman <horms@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, 
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Chris Lew <christopher.lew@oss.qualcomm.com>, 
+ Deepak Kumar Singh <deepak.singh@oss.qualcomm.com>, 
+ Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>, 
+ Juha-Matti Tilli <juha-matti.tilli@iki.fi>, 
+ Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2620;
+ i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
+ bh=uOYu1U8wIC2RDVexAi1abQkUbN13SL1t/kCkWYPYdoU=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBqrWaeF6Y6uwvyLe36Rr5ay4I2MYWQOIJL3dVs1
+ jNepmU7vnOJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaq1mngAKCRBVnxHm/pHO
+ 9V4QB/9kPI0g4gGHMb3I5Vi2hxhCo0kEQntSmTve/Ue2kyHg9KUVLEW0zCa8hVLz6PnxAVHjAVA
+ ylXCIxMiSZ1zKUtacpBbNWVX/s9aOZ4ssYRRpL1mestEhvCm7DeyUj2J8BaHtmoUOg/+4MiVgIx
+ rtW29lzRhqyQ/KjmlziBLmWQCeO4qiHisKkHMfv8slVhRLBF17FYKFeBcXs1QnpMkzwM+0hDFKh
+ ng90uQj02fm/GCTwNSgv5ajUHuZ5wzD+PJpivaSQrx/vtdIzZ/bo6lqEQi8k7rx8+l6bxSXFz4X
+ jh/fhii/LHuvp7URaJdAmNt4Na3pqqrg+XH77+DLNk2iv2PX
+X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
+ fpr=C668AEC3C3188E4C611465E7488550E901166008
+X-Endpoint-Received: by B4 Relay for
+ manivannan.sadhasivam@oss.qualcomm.com/default with auth_id=461
+X-Original-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,66 +94,95 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: manivannan.sadhasivam@oss.qualcomm.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
-Here's a new pull request for ath10k, ath11k and ath12k firmware.
+From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
-There are no changes for ath10k or ath12k.
+Now that the QRTR driver allows using the unique node id for each device,
+which is different from the node id received from the remote node, compute
+a unique node id using a new API, qrtr_host_node_id().
 
-For ath11k there is a single change that adds four records to the WCN6855
-hw2.0 board-2.bin that cover the following devices:
+This API takes the 'index' parameter and adds it to QRTR_NODE_HOST_BASE,
+whose value is outside of the node id range used by the remote nodes (0 to
+0xffff).
 
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=910a,qmi-chip-id=18,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=910a,qmi-chip-id=2,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=940a,qmi-chip-id=18,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=940a,qmi-chip-id=2,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=950a,qmi-chip-id=18,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=950a,qmi-chip-id=18,qmi-board-id=255,variant=UX3407Q
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=950a,qmi-chip-id=2,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=950a,qmi-chip-id=2,qmi-board-id=255,variant=UX3407Q
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=960a,qmi-chip-id=18,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=960a,qmi-chip-id=2,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=970a,qmi-chip-id=18,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=970a,qmi-chip-id=2,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=980a,qmi-chip-id=18,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=980a,qmi-chip-id=2,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=9f0a,qmi-chip-id=18,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=14cd,subsystem-device=9f0a,qmi-chip-id=2,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=17aa,subsystem-device=930a,qmi-chip-id=18,qmi-board-id=255
-bus=pci,vendor=17cb,device=1103,subsystem-vendor=17aa,subsystem-device=930a,qmi-chip-id=2,qmi-board-id=255
+Finally, call the new API from MHI endpoint driver by passing the MHI
+controller index as the parameter. The MHI controller index is unique for
+each controller, thereby for each MHI endpoint device.
 
-For the ASUS Zenbook A14 UX3407Q records the following tags apply.
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+---
+ MAINTAINERS        |  1 +
+ include/net/qrtr.h | 21 +++++++++++++++++++++
+ net/qrtr/mhi.c     |  4 +++-
+ 3 files changed, 25 insertions(+), 1 deletion(-)
 
-Reported-by: Troels Vognbjerg <hekatombe@gmail.com>
-Closes: https://lore.kernel.org/all/CAPMyOuCk7SEhPvcNNQ3ZMUf=uH=e3Pp0NHf6zLoakrSvL4qEoA@mail.gmail.com/
-Reported-by: Mohamed N. <private bugzilla e-mail redacted>
-Closes: https://bugzilla.kernel.org/show_bug.cgi?id=221853
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 3a19da74d00c..bc1af0cd8a8b 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -22504,6 +22504,7 @@ QUALCOMM IPC ROUTER (QRTR) DRIVER
+ M:	Manivannan Sadhasivam <mani@kernel.org>
+ L:	linux-arm-msm@vger.kernel.org
+ S:	Maintained
++F:	include/net/qrtr.h
+ F:	include/trace/events/qrtr.h
+ F:	include/uapi/linux/qrtr.h
+ F:	net/qrtr/
+diff --git a/include/net/qrtr.h b/include/net/qrtr.h
+new file mode 100644
+index 000000000000..745d51b4a6ba
+--- /dev/null
++++ b/include/net/qrtr.h
+@@ -0,0 +1,21 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++
++#ifndef _NET_QRTR_H
++#define _NET_QRTR_H
++
++#include <linux/types.h>
++
++/* The offset is chosen carefully to not collide with the node ids allocated by
++ * the remote nodes. All the remote nodes use node ids in range 0 to 0xffff.
++ */
++#define QRTR_NODE_HOST_BASE 0x10000u
++
++/* Compute host node id from a per-device index. The index must be unique
++ * among the host assigned endpoints and smaller than QRTR_NODE_HOST_BASE.
++ */
++static inline unsigned int qrtr_host_node_id(unsigned int index)
++{
++	return QRTR_NODE_HOST_BASE + index;
++}
++
++#endif /* _NET_QRTR_H */
+diff --git a/net/qrtr/mhi.c b/net/qrtr/mhi.c
+index 3990da1a65dc..c920ab61f848 100644
+--- a/net/qrtr/mhi.c
++++ b/net/qrtr/mhi.c
+@@ -6,6 +6,7 @@
+ #include <linux/mhi.h>
+ #include <linux/module.h>
+ #include <linux/skbuff.h>
++#include <net/qrtr.h>
+ #include <net/sock.h>
+ 
+ #include "qrtr.h"
+@@ -127,7 +128,8 @@ static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
+ 	if (rc)
+ 		return rc;
+ 
+-	rc = qrtr_endpoint_register(&qdev->ep, QRTR_EP_NID_AUTO);
++	rc = qrtr_endpoint_register(&qdev->ep,
++				    qrtr_host_node_id(mhi_dev->mhi_cntrl->index));
+ 	if (rc)
+ 		goto err_unprepare;
+ 
 
-Please let me know if there are any problems.
+-- 
+2.43.0
 
-Thanks,
-/jeff
 
-----------------------------------------------------------------
-
-The following changes since commit c9f6fc67b4833a0e4d0aee2554d637c49f997329:
-
-  Merge branch 'eec-eef' into 'main' (2026-09-17 14:57:59 +0000)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/ath/linux-firmware.git ath-20260918
-
-for you to fetch changes up to f8d2ffa59894c9f8858585eecc968d63aee6f46e:
-
-  ath11k: WCN6855 hw2.0: update board-2.bin (2026-09-18 06:42:58 -0700)
-
-----------------------------------------------------------------
-Jeff Johnson (1):
-      ath11k: WCN6855 hw2.0: update board-2.bin
-
- ath11k/WCN6855/hw2.0/board-2.bin | Bin 7237392 -> 7479440 bytes
- 1 file changed, 0 insertions(+), 0 deletions(-)
 
