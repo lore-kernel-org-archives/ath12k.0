@@ -4,68 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22A74C982D7
-	for <ath12k@archiver.kernel.org>; Sat, 19 Sep 2026 21:27:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75313C982D7
+	for <ath12k@archiver.kernel.org>; Sun, 20 Sep 2026 00:41:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
+	:Date:Message-Id:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=AO/Eu04UJkHc6pSrEXmXrNXJ1w9izsPoCjtzx+eKB7k=; b=btYOxWXmRszO1ZlKqZjRKDS7xP
-	AB5wB1Y8rK8tpkIrEvNarJxGs/AnlIKz+tKgTh3x+p2oQzkjLODVrn+fBeFEafxnKkQOc+naXPsRU
-	7b5I9VK6TuP1sRXYtkgpflpXZNRRMMIDkLTekbigPkc41xO/4CKNl/PkUt3NSrUvyVATBF0XFnJXI
-	QAdXxLD47KHokQJ+tVSFsH0tK4Yp9AiBiQ9xqRmNnGJ2yy/HBZ0BOTqqaDT+up0sXaEEJXTyQ+E7l
-	0aKyQuoJzUN0q1Dq5bGF7MeK9XPia98CKIzAHNyY+RUMxsJ1s/CFrK+YlvnkM7NRMRCmVaaEUvVhc
-	/cu1tDIg==;
+	bh=pldEBeieoNLIMuf3xzY7/FQ4h1jOVkgeRGPmSStpAeg=; b=oeiClG8sWlMdkdx7werqSL1a0F
+	1O5RXlBzc+WDAtgPNJKaPBqT8r+j6K1sYyFYrBHyzXYZSkMv61mhdoCmEpan/yZ1nqQjxLi4/lw8A
+	J0EiZwyj3Z07St0n0awF4t6QMEijNeoH0jqhz+SJkhVcVj7+W0VnbLKNOiVGHrtVSxuhSYrGJ3+10
+	CUGcT1AlCRP7XO2kLinfCJs7QhINInxo3PVCE3h+LdoO7DtIvtap+8brWcvsz+uxx7lJdXlvV9bN4
+	RWEN7FVsbOk7mPDtLHwX5zHEDcNK1yUyctapPoV18FWMBe8syDXnysuO709PvXZ0qknW1CXdlTUl1
+	g0GQTRtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x82b8-0000000GdaW-29AU;
-	Sat, 19 Sep 2026 21:27:50 +0000
+	id 1x85cK-0000000GhwQ-0Clq;
+	Sun, 20 Sep 2026 00:41:16 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x82b6-0000000GdZo-3iRu;
-	Sat, 19 Sep 2026 21:27:48 +0000
+	id 1x85cI-0000000Ghvz-3AeX;
+	Sun, 20 Sep 2026 00:41:14 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 14665601FB;
-	Sat, 19 Sep 2026 21:27:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 229FE1F000FF;
-	Sat, 19 Sep 2026 21:27:45 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 8A3A760136;
+	Sun, 20 Sep 2026 00:41:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3674D1F000FF;
+	Sun, 20 Sep 2026 00:41:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789853265;
-	bh=AO/Eu04UJkHc6pSrEXmXrNXJ1w9izsPoCjtzx+eKB7k=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References;
-	b=eXn5UcrPIov2YLgAUEs+GRTC+8uCr5IM1DP0vyBA2qlxh4fQK5tnoOvoWEaWgR4r2
-	 U/3B5j/NxoS4SYFOzCfZ+gtTKqk9+7Op29pUVISKgjWk7qCuorDXWhZnVkkLH9CKW0
-	 uoDNfzqFSVDROb47QsFnROg++blphKnKeKjHxk8IpvXIH1xDAHaCs+0r/KK0qBKkV2
-	 /G5qb4/iOsUX/fkIj5XRMtJViPm7MtNpC+IOLqu1m+8naqg0UyOrjJRAap4wX5AyvO
-	 /kcQ1jMEovLfvEO4ebv0Pl48VmcHlPV3WWjwyC5oLd6RwjYKnecyeqXxM4EMLRGvlL
-	 REvYJP39Ig8zg==
-Date: Sat, 19 Sep 2026 14:27:44 -0700
-From: Jakub Kicinski <kuba@kernel.org>
-To: "Juha-Matti Tilli" <juha-matti.tilli@iki.fi>
-Cc: "Manivannan Sadhasivam" <mani@kernel.org>,
- linux-arm-msm@vger.kernel.org, "Jeff Hugo" <jeff.hugo@oss.qualcomm.com>,
- "Jeff Johnson" <jjohnson@kernel.org>, "Bjorn Andersson"
- <andersson@kernel.org>, "Konrad Dybcio" <konradybcio@kernel.org>, "Eric
- Dumazet" <edumazet@google.com>, "Kuniyuki Iwashima" <kuniyu@google.com>,
- "Paolo Abeni" <pabeni@redhat.com>, "Willem de Bruijn" <willemb@google.com>,
- "David S . Miller" <davem@davemloft.net>, "Simon Horman"
- <horms@kernel.org>, "Mihai Moldovan" <ionic@ionic.de>, "Denis Kenzior"
- <denkenz@gmail.com>, "Marcel Holtmann" <marcel@holtmann.org>, "Andy Gross"
- <agross@kernel.org>, linux-kernel@vger.kernel.org, mhi@lists.linux.dev,
- linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
- ath12k@lists.infradead.org, netdev@vger.kernel.org
-Subject: Re: [PATCH v7 00/15] QRTR Multi-endpoint support
-Message-ID: <20260919142744.12982b1d@kernel.org>
-In-Reply-To: <9837273a-c62f-456e-9aa0-567b0d3a6f29@app.fastmail.com>
-References: <20260915054207.2513877-1-juha-matti.tilli@iki.fi>
-	<20260915154705.67cfb94f@kernel.org>
-	<da6003cf-515b-4d97-8059-3f4553d0251d@app.fastmail.com>
-	<9837273a-c62f-456e-9aa0-567b0d3a6f29@app.fastmail.com>
+	s=k20260515; t=1789864873;
+	bh=pldEBeieoNLIMuf3xzY7/FQ4h1jOVkgeRGPmSStpAeg=;
+	h=Subject:From:Date:References:In-Reply-To:To:Cc;
+	b=iw/RZudZflo07UepdUsNoLomL9kP8U+VcGoZH1lq76C7Hi6ussDP5UikNkB734d86
+	 l3B3MXE5Zc7X7RrjX4TpJIVdmp/B3hGBn5+ZoNnGUV16nkbz6djLrRfGZgSK9b7Enm
+	 gchOvlQQEkrWuL68TjyzJkaen9d+CWC+y/TaudYfUfOsfnP6A5a8nn88+hT9HlwImb
+	 if2KRi6q6JiM2P91F1pzMDq5Y+ZZUtdNoccrqEYktkMLHKKJBRRUSBAm8gVDEgH3Tz
+	 kBc4bE9D5vNj04GIXeQv6WWh7sKCjulMMhiHqND2hgZk+WOQ9dGwWDXk0XNVH5JPrS
+	 bScvF10iYHNnw==
+Received: from [10.30.226.235] (localhost [IPv6:::1])
+	by aws-us-west-2-korg-oddjob-rhel9-1.codeaurora.org (Postfix) with ESMTP id D0BAE3924A49;
+	Sun, 20 Sep 2026 00:40:06 +0000 (UTC)
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+Subject: Re: [PATCH net-next] net: use assign_bit() where applicable
+From: patchwork-bot+netdevbpf@kernel.org
+Message-Id: <178986480565.1504357.13555480327800349461.git-patchwork-notify@kernel.org>
+Date: Sun, 20 Sep 2026 00:40:05 +0000
+References: <20260917-net-assign-bit-v1-1-e9c97965e080@nxp.com>
+In-Reply-To: <20260917-net-assign-bit-v1-1-e9c97965e080@nxp.com>
+To: Peng Fan (OSS) <peng.fan@oss.nxp.com>
+Cc: dario.binacchi@amarulasolutions.com, mkl@pengutronix.de,
+ mailhol@kernel.org, Raju.Rangoju@amd.com, PrashanthKumar.K.R@amd.com,
+ andrew+netdev@lunn.ch, davem@davemloft.net, edumazet@google.com,
+ kuba@kernel.org, pabeni@redhat.com, sukhdeeps@marvell.com,
+ skalluru@marvell.com, manishc@marvell.com, claudiu.manoil@nxp.com,
+ vladimir.oltean@nxp.com, wei.fang@nxp.com, xiaoning.wang@nxp.com,
+ shenjian15@huawei.com, shaojijie@huawei.com, anthony.l.nguyen@intel.com,
+ przemyslaw.kitszel@intel.com, sgoutham@marvell.com, rkannoth@marvell.com,
+ gakula@marvell.com, sbhatta@marvell.com, saeedm@nvidia.com,
+ tariqt@nvidia.com, mbloch@nvidia.com, leon@kernel.org, alexanderduyck@fb.com,
+ kernel-team@meta.com, brett.creeley@amd.com, GR-Linux-NIC-Dev@marvell.com,
+ shshaikh@marvell.com, jiawenwu@trustnetic.com, mengyuanlou@net-swift.com,
+ daniel@makrotopia.org, dqfext@gmail.com, SkyLake.Huang@mediatek.com,
+ hkallweit1@gmail.com, linux@armlinux.org.uk, matthias.bgg@gmail.com,
+ angelogioacchino.delregno@collabora.com, jjohnson@kernel.org, toke@toke.dk,
+ nbd@nbd.name, lorenzo@kernel.org, ryder.lee@mediatek.com,
+ shayne.chen@mediatek.com, sean.wang@mediatek.com, pkshih@realtek.com,
+ richardcochran@gmail.com, linux-can@vger.kernel.org,
+ linux-kernel@vger.kernel.org, netdev@vger.kernel.org, imx@lists.linux.dev,
+ intel-wired-lan@lists.osuosl.org, linux-rdma@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org, peng.fan@nxp.com
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,14 +91,31 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, 18 Sep 2026 09:22:40 +0300 Juha-Matti Tilli wrote:
-> Some positive news. There will be no next version, as Qualcomm is going
-> to provide a superior patchset that I tested. It's easier to backport,
-> cleaner design, fewer lines changed, has 1 author as opposed to 3, and
-> most importantly, it worked just fine on my 2x card setup. 
-> 
-> Thus, I'm going to abandon this patchset.
+Hello:
 
-Man, "superior" and "Qualcomm" in one sentence is really testing 
-my resolution to be less sarcastic.
+This patch was applied to netdev/net-next.git (main)
+by Jakub Kicinski <kuba@kernel.org>:
+
+On Thu, 17 Sep 2026 20:39:52 +0800 you wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+> 
+> Convert open-coded if/else with set_bit/clear_bit and their
+> non-atomic __set_bit/__clear_bit variants to the assign_bit/__assign_bit
+> API.
+> 
+> Done with Coccinelle semantic patch:
+>     // set_bit -> clear_bit => assign_bit
+> 
+> [...]
+
+Here is the summary with links:
+  - [net-next] net: use assign_bit() where applicable
+    https://git.kernel.org/netdev/net-next/c/8830e65ed46d
+
+You are awesome, thank you!
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/patchwork/pwbot.html
+
+
 
