@@ -4,55 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A3A3C982E1
-	for <ath12k@archiver.kernel.org>; Mon, 21 Sep 2026 11:23:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1E1EC982ED
+	for <ath12k@archiver.kernel.org>; Mon, 21 Sep 2026 11:23:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:
-	References:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:
-	Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=kwLNkIrkhdQ/kMkGRWBdrd7ez6xVgaJzQSYTiKWtrww=; b=bF0FmnQg0sPI+VsVqQOWpN6oKJ
-	oXF75gT3HUVJu48JaTg+5jHtsYfq21fZHqjNL1nwCQEmdRr6U8rJztRpiFbLkmXBcmx3Qqg4WsDlD
-	mDXZeKDJQCl0Gu7veLMWxWRLf8OJWtelVHOo3WkkziWv6UW6on8ehrI28XyfH+yb8G8FS+Fd1wo0J
-	uHz6TrXbSlV92/cLnauvyns8OFRypmR4D1uWRrb2QL6Dk1Zy6m7M+BeIDlwm+e+/XvEf/g+7InHjB
-	k+QFQQwv5Nzok00g09RkAgBbNEj3ba0BN9A/Ant6ydW/MgCgkJWGOo4a1oKpR80M21WuM4SpFuTIu
-	LUv1wlZw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
+	From:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=fl511Gja7Jg/ZrN+/u2KfiPIkbK79EDCuXqXbALWNZM=; b=BD85Pk2l7In8rq2IyGWRclj6/1
+	RhO3rQNSkZrGVVEoBJxrepPswTHHpejRexeeEOaFg9exjYdNH5szstOhHYkHgZuNTHZyBVJhxTOjO
+	4zsMSYhIDeIcJcwZR/pltv5ol1APf3Zws0aBwdI2n8J114z7bUJyP2+u830NwmfZNMtVWLjWuJbhQ
+	QOFiJZdXRLzWmKNpCIxjlaWt93/TVP4S8QEBBQfbEA75JYyfDWpRNVsJoilgS+NqeVa6f44jsZAXM
+	/ZHMsasNqlTECU4bjjx+RHg9bk77LmR6paw1hGEh3rD1vfCphm4LVF5cbKsF51j55W86TN3q8Y1VR
+	Gc1ldLDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8c7T-00000001tO6-0jSo;
-	Mon, 21 Sep 2026 11:23:35 +0000
+	id 1x8c7W-00000001tQY-1lks;
+	Mon, 21 Sep 2026 11:23:38 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8c7R-00000001tN3-1KiM;
+	id 1x8c7R-00000001tN0-0zu6;
 	Mon, 21 Sep 2026 11:23:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 13741448C1;
-	Mon, 21 Sep 2026 11:23:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id E44D3C2BCFF;
+	by sea.source.kernel.org (Postfix) with ESMTP id E9A4843F68;
+	Mon, 21 Sep 2026 11:23:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id BD23CC2BCB3;
 	Mon, 21 Sep 2026 11:23:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1789989813;
-	bh=vyCcA7tnPPht7PT85axNJlbH910qapPAZZT/pgWHgoY=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=lxUMBD5G54nJgHXI6SATEKvH+MU27PmJquDxCTRuAt2KHEsTl3dFWkAp4asflXij4
-	 ZC6lxjFQoNsOAFSXA8G5Vnqtil3yGS83Uh4gZaAhKguvC6KuMwlUkPnj+Kvk26RsOz
-	 6cLxkCpCYpY7xNFXNpnLpU5vzsIgla9cRTwYU2PxiPDXd7EWwqLFV3oJspeZrNQHO5
-	 UDSdYJ4mdmpMZo7hnV/3cH7mhpYmKIAVnafCzlv3TIdeV6L2jNS62TW0IShD4tJshR
-	 /VQaVhUH3oiokuGJ1kKi6YAFL6uumPI351xv9a+6XT3Tpwa6dgkphQexnam+1kEHsh
-	 CkclvWQccpP5g==
+	s=k20201202; t=1789989812;
+	bh=zbfIARE/0F5vsVHko59MjRV3EbTh6ByKy9mPflxIfb8=;
+	h=From:Subject:Date:To:Cc:Reply-To:From;
+	b=T0L8P++i5Xu0C1oZodj+jm1Ba2rFjENdqDqcyDradbj3n/WpOB0GLOkZ6woVFcbop
+	 yw1fb0YLiWZy+8a5QnBH1A7jzbVg9DYvW+Del9Lb0UBj8ZyxjJ+Tr1Yuiy0JtVDT8L
+	 b7cuIDZuz3KTOU94zJ/VPeSdLqcrrKcaPJG3EDz+KcYqk3Vl4qG+zTVKMlb3rGFXC6
+	 Fady9ZsirBL538ToCfTBujLhBCu3FhHue+6vToDFXz7pEMZTG6RsL6jah1wY9Zok9c
+	 4awzS525NbVQ9yawkwm9QlfyUn1zsDRPoo6e8AmuqGzGiGO27zOFhWeMFVjtM57LwE
+	 BtyYYebcgM74Q==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id CC475C982ED;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A3893C982EE;
 	Mon, 21 Sep 2026 11:23:32 +0000 (UTC)
 From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
-Date: Mon, 21 Sep 2026 13:23:28 +0200
-Subject: [PATCH v2 2/4] net: qrtr: Assign unique node id for MHI endpoints
+Subject: [PATCH v2 0/4] net: qrtr: Add support for using identical MHI
+ endpoint devices
+Date: Mon, 21 Sep 2026 13:23:26 +0200
+Message-Id: <20260921-qrtr-multi-ep-v2-0-27dd80d841a0@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20260921-qrtr-multi-ep-v2-2-27dd80d841a0@oss.qualcomm.com>
-References: <20260921-qrtr-multi-ep-v2-0-27dd80d841a0@oss.qualcomm.com>
-In-Reply-To: <20260921-qrtr-multi-ep-v2-0-27dd80d841a0@oss.qualcomm.com>
+Content-Transfer-Encoding: 8bit
+X-B4-Tracking: v=1; b=H4sIAK4TsWoC/3WNwQ6CMBBEf4X0bElbFNGT/2E4lGWVNUChW4iG8
+ O8WPHuZ5CUzbxbB6AlZXJNFeJyJyfURzCER0Nj+iZLqyMIok6uLLuTog5fd1AaSOEgwZzAVnI6
+ IWsTN4PFB7913L3/MU/VCCJtkazTEwfnPfjjrrffPPWupZGFVDtZmeVFnN8ecjpNtwXVdGkOU6
+ 7p+AclqACnDAAAA
+X-Change-ID: 20260918-qrtr-multi-ep-c27c2bc54ee1
 To: Manivannan Sadhasivam <mani@kernel.org>, 
  "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
  Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
@@ -68,16 +72,16 @@ Cc: linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org,
  Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
  Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2620;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3005;
  i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
- bh=KeQEnANlAXYlpqTacuONKxeWxAocy2Ur191CkncsK00=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBqsROxhF+92CDxgS35185SmgsprWtjBnV+oBe9+
- 3ZJfi9jfeGJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCarETsQAKCRBVnxHm/pHO
- 9bWtB/9lgpiwXH/3Z6Hr5+ZWeqKn/0lH6dSmm0rphk3SVc+Hhlf7vO8JtsKzrhlyR5mpZ1P1LeE
- dS/xq4GhKbLzLPKBKw1YAA0UqqVP4u/Vrs7zG1KAfLxNrffNp15doNYvMFxV+ni8xGCKxtLXps0
- mfEgPOO/e/2Zm8ALCSnuOjftKWt+RxFdRfkfBJHVvCGXUZANRebV6+cYOKxBEWNuKgU4oLP74Ie
- o6RIpe7QGFlKsmHqPd91v/pL0IZGnuB5l8b+mcRGZbnHpi8EuhQYrif79Ct20IRcXWBPCUv9UK0
- LR/92bLY8nWvHesLT/9ibgy6BPwa4LjxRwrOJ0tBsvANvIMk
+ bh=zbfIARE/0F5vsVHko59MjRV3EbTh6ByKy9mPflxIfb8=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBqsROx46KQNzfqnlBNIgv5L/g7bgKhMB1swq5zm
+ 1leCwZ1N0OJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCarETsQAKCRBVnxHm/pHO
+ 9aYBB/9p3RKn1hbFArnz1cbC3pqkRV0A9LLEZmR5i1farX/9cVPaQsptgEFoZ6S9OSy+lKw3EOV
+ 2GX4e28zmHgM55NGIGUA6YfVTSzdTeNNSck/RiX3somRHwinsGVrQrXV3JE3OQti7/upf9A6LDH
+ /1JIbon8V0jrKJMQNwSuRmtU4Ef4gQTz3b3DduUfxK1xnoDEkMMuYtYo5w366Y0rg4hnnaxUEgI
+ JZBc+QbYRGU6KhHVyZJT8N9mfr67arCocxTtC9/vrRh7+NeFusx2sGXHPYXAdhgA/4uhsu7auFm
+ nOCqVh9JwlfnkfZOpwa0IzXhDlqgRtU9tDorjWSC1XDy0zaj
 X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-Endpoint-Received: by B4 Relay for
@@ -98,91 +102,76 @@ Reply-To: manivannan.sadhasivam@oss.qualcomm.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Hi,
 
-Now that the QRTR driver allows using the unique node id for each device,
-which is different from the node id received from the remote node, compute
-a unique node id using a new API, qrtr_host_node_id().
+This series reworks the QRTR driver to add support for using identical MHI
+endpoint devices at the same time. Currently, QRTR driver has a limitation on
+using more than one identical MHI endpoint devices like QCS6490 or any Qcom
+Endpoint device making use of QRTR at the same time. Because of the fact that
+these devices will have the identical QRTR node id, they cannot be used at the
+same time, on the same host machine.
 
-This API takes the 'index' parameter and adds it to QRTR_NODE_HOST_BASE,
-whose value is outside of the node id range used by the remote nodes (0 to
-0xffff).
+This limitation is a blocker for running upstream kernel on devices like Qcom
+based routers as they often have multiple identical WLAN Endpoint devices
+connected to the Router SoC.
 
-Finally, call the new API from MHI endpoint driver by passing the MHI
-controller index as the parameter. The MHI controller index is unique for
-each controller, thereby for each MHI endpoint device.
+This series supersedes the following 2 series from Juha:
+https://lore.kernel.org/all/20260915054207.2513877-1-juha-matti.tilli@iki.fi
+https://lore.kernel.org/all/20260915074135.2567411-1-juha-matti.tilli@iki.fi
+
+Compared to the series from Juha, this series simplifies the multi-endpoint
+support by computing a unique node id for each MHI endpoint and uses it for the
+internal QRTR book keeping. This ensures that even if the MHI endpoint devices
+have same node ids, the host QRTR will always use a unique node id for each one
+of them.
+
+More details can be found in the individual patches.
+
+Testing
+=======
+
+Juha tested this series on multi ath11k setup by backporting this series to
+6.6.156 kernel. I'd appreciate a formal tested-by tag from Juha and other folks
+CCed to this series.
+
+Merge Strategy
+==============
+
+Since both QRTR and ath drivers are falling under the networking tree, the whole
+series can be merged through netdev tree.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 ---
- MAINTAINERS        |  1 +
- include/net/qrtr.h | 21 +++++++++++++++++++++
- net/qrtr/mhi.c     |  4 +++-
- 3 files changed, 25 insertions(+), 1 deletion(-)
+Changes in v2:
+- Rebased on top of net-next/main
+- Used READ/WRITE_ONCE for reading/writing ep_nid
+- Link to v1: https://patch.msgid.link/20260918-qrtr-multi-ep-v1-0-8a06caa368d3@oss.qualcomm.com
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index df8ab9b82402..9c8bb086be28 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -22511,6 +22511,7 @@ QUALCOMM IPC ROUTER (QRTR) DRIVER
- M:	Manivannan Sadhasivam <mani@kernel.org>
- L:	linux-arm-msm@vger.kernel.org
- S:	Maintained
-+F:	include/net/qrtr.h
- F:	include/trace/events/qrtr.h
- F:	include/uapi/linux/qrtr.h
- F:	net/qrtr/
-diff --git a/include/net/qrtr.h b/include/net/qrtr.h
-new file mode 100644
-index 000000000000..745d51b4a6ba
---- /dev/null
-+++ b/include/net/qrtr.h
-@@ -0,0 +1,21 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+
-+#ifndef _NET_QRTR_H
-+#define _NET_QRTR_H
-+
-+#include <linux/types.h>
-+
-+/* The offset is chosen carefully to not collide with the node ids allocated by
-+ * the remote nodes. All the remote nodes use node ids in range 0 to 0xffff.
-+ */
-+#define QRTR_NODE_HOST_BASE 0x10000u
-+
-+/* Compute host node id from a per-device index. The index must be unique
-+ * among the host assigned endpoints and smaller than QRTR_NODE_HOST_BASE.
-+ */
-+static inline unsigned int qrtr_host_node_id(unsigned int index)
-+{
-+	return QRTR_NODE_HOST_BASE + index;
-+}
-+
-+#endif /* _NET_QRTR_H */
-diff --git a/net/qrtr/mhi.c b/net/qrtr/mhi.c
-index 3990da1a65dc..c920ab61f848 100644
---- a/net/qrtr/mhi.c
-+++ b/net/qrtr/mhi.c
-@@ -6,6 +6,7 @@
- #include <linux/mhi.h>
- #include <linux/module.h>
- #include <linux/skbuff.h>
-+#include <net/qrtr.h>
- #include <net/sock.h>
- 
- #include "qrtr.h"
-@@ -127,7 +128,8 @@ static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
- 	if (rc)
- 		return rc;
- 
--	rc = qrtr_endpoint_register(&qdev->ep, QRTR_EP_NID_AUTO);
-+	rc = qrtr_endpoint_register(&qdev->ep,
-+				    qrtr_host_node_id(mhi_dev->mhi_cntrl->index));
- 	if (rc)
- 		goto err_unprepare;
- 
+---
+Manivannan Sadhasivam (4):
+      net: qrtr: Allow the host QRTR to assign a unique node id
+      net: qrtr: Assign unique node id for MHI endpoints
+      wifi: ath11k: Connect to the QMI server belonging to the device owned by this driver
+      wifi: ath12k: Connect to the QMI server belonging to the device owned by this driver
 
--- 
-2.43.0
+ MAINTAINERS                           |  1 +
+ drivers/net/wireless/ath/ath11k/hif.h |  9 ++++++
+ drivers/net/wireless/ath/ath11k/pci.c |  9 ++++++
+ drivers/net/wireless/ath/ath11k/qmi.c | 10 ++++++
+ drivers/net/wireless/ath/ath12k/hif.h |  9 ++++++
+ drivers/net/wireless/ath/ath12k/pci.c |  9 ++++++
+ drivers/net/wireless/ath/ath12k/qmi.c | 11 +++++++
+ include/net/qrtr.h                    | 21 ++++++++++++
+ net/qrtr/af_qrtr.c                    | 61 +++++++++++++++++++++++++++++++----
+ net/qrtr/mhi.c                        |  4 ++-
+ 10 files changed, 136 insertions(+), 8 deletions(-)
+---
+base-commit: 8830e65ed46de41f849eefb8ba227d4852c460f6
+change-id: 20260918-qrtr-multi-ep-c27c2bc54ee1
+
+Best regards,
+--  
+மணிவண்ணன் சதாசிவம்
 
 
 
