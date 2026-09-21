@@ -4,65 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A85EC982E1
-	for <ath12k@archiver.kernel.org>; Mon, 21 Sep 2026 11:25:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5576CC982ED
+	for <ath12k@archiver.kernel.org>; Mon, 21 Sep 2026 11:51:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+IU8t1JRfWrIGINdVDCgScYXPyiqDlZ/6ergXEl1tFY=; b=FAJoGw4q9iK8XixWXBdXIMtTqM
-	AjijmKdogqEJIixxUg4hT6EqD8kfVCIg1yOSspPrsVBQJJq3pRWuTjPWCaoDns2CoD+qrja+3g4DB
-	iuOlEBel/3joOJAUPt7LI0rIgownq2RwV/6t5u3eXXOiO0g+PrAYudsA8+wbAKh1F/Zoo2hlKdKKr
-	efywNi3SM7aKzSILcyPtCzb9b7N6dQcJG7toUPmQfwvwSTRMGbtdsbX/dYdg8eOzJUBepAVfOSqir
-	dmGd5D89PKZXSccHqpkvJ9OFQFgPj7luuZ7GZziBHMQjCCrd3URKhYeAM68RgcbOQzJdErvousXhm
-	A5tLCZsw==;
+	bh=PYeJW5bTcHcFyRqoD8LOZOnJMT3bFUMUhzn24qlPg2Y=; b=sa3dntDELZHtXulPk3Vo0fvQos
+	XW5vUZIA/Yu5LRQn0bAzY6QN6wnEELWx14eVvEWcELp+0Wq4MtKe1bTfJba3HkDeSthVtT9LnwHcm
+	gsYQ+HN4m1+fBuh2qs7BhBJ3Hfll8HzXTDIod7Tb4ZWpb/EFoq8CxgLjLbTXDEcr4p/xoVHiI/wvq
+	FLDptbuepnkUxieAl8iX5x1/MBEkAKSDF9amS7b86nLHiFGLvVbhbCqt3Q2TJO455CKfF2s/l/y0l
+	kzIcmHAgCEevxCnAJhzapcjL4tMxTymAzTxEJsOtJbd8mVMyMdBWnrE750Fqj57LpkMVbG/50npnY
+	nA23nM7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8c9k-00000001uQX-3x0d;
-	Mon, 21 Sep 2026 11:25:56 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x8cYo-00000001yKv-2dAw;
+	Mon, 21 Sep 2026 11:51:50 +0000
+Received: from s3.sipsolutions.net ([168.119.38.16] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8c9j-00000001uQE-3P6x;
-	Mon, 21 Sep 2026 11:25:55 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5119243695;
-	Mon, 21 Sep 2026 11:25:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E571F1F00893;
-	Mon, 21 Sep 2026 11:25:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789989955;
-	bh=+IU8t1JRfWrIGINdVDCgScYXPyiqDlZ/6ergXEl1tFY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=k9sz3N4GdpeJEzRzX4jMR2FXUFXpxSvoIQYfMv+R2t1GqT2//p4GZwP/X/5+lve4P
-	 yJIZfXwQFM7SRsc7dIWr4GDAzOp5hKtW56b2FfiEkEaAom6R0zXFsILi5cqa0nwAeB
-	 Ipbk3eVN87PthYRWyyCgEO1rsbq8CtAlwQcy3yW8u3YYfLOpzs5/aPSC6AgpZ53slR
-	 YdAvUqqm2cODG7VtK1Pe/zJm31JPk0KQgaJqFDbVat+Ci38dXlb5HDZRJ497kPDFWT
-	 bHMJ8ad+byfEUFK0AMK/xQxgqrqIFfK1246dPIBxqRILgKDGmereFtay3nJ2aZt5mr
-	 9a6T/QpCBEeWw==
-Date: Mon, 21 Sep 2026 13:25:45 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
-Cc: "David S . Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
-	Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>, 
-	Jeff Johnson <jjohnson@kernel.org>, linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
-	ath12k@lists.infradead.org, Bjorn Andersson <andersson@kernel.org>, 
-	Chris Lew <christopher.lew@oss.qualcomm.com>, Deepak Kumar Singh <deepak.singh@oss.qualcomm.com>, 
-	Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>, Jeff Hugo <jeff.hugo@oss.qualcomm.com>
-Subject: Re: [PATCH 3/4] wifi: ath11k: Connect to the QMI server belonging to
- the device owned by this driver
-Message-ID: <zozo7e42rvf4evl2q5ugrb2ccvkb6l3um56yuqfgi7ghx5rfou@57b4pqg7fpfk>
-References: <20260918-qrtr-multi-ep-v1-0-8a06caa368d3@oss.qualcomm.com>
- <20260918-qrtr-multi-ep-v1-3-8a06caa368d3@oss.qualcomm.com>
- <da0421b8-bf31-43d1-8d71-520753c8344c@app.fastmail.com>
+	id 1x8cYl-00000001yJE-3Rrj
+	for ath12k@lists.infradead.org;
+	Mon, 21 Sep 2026 11:51:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=PYeJW5bTcHcFyRqoD8LOZOnJMT3bFUMUhzn24qlPg2Y=;
+	t=1789991507; x=1791201107; b=LudeHORO3fz+gwtiRqPpFvtG87JspnRgmxLrE9l1eCLa5kH
+	dNzuxzwz48dFik3K2idVSE+yNWnEFXPatgWMdIFSsChuCfXr3pNplO0oNjd/RcuM/uYdSTu25oaIE
+	x6Hm0fd+d5eX+UHT18kdbgE814wlKIeuZu/iX7J3OqxFRdxhIrpV/nmvI4Ig5IURp3VVf8lSMFYI+
+	sMfRKUf5p2msK8NkzEYxy71l1y/yGDfiyg7U47+cvi9yBKAVfphMtsaAZ/KO3sqf7o19KqRQRM/dV
+	G3B/KWfOwbzZVsQQOoGcqpAm6SC6PFhFi9vvbUVbE6GfB8VSLG9KJ3KtUOVMhMEg==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1x8cYf-00000005n3v-1GiB;
+	Mon, 21 Sep 2026 13:51:41 +0200
+Message-ID: <48ebf25d157b8c12dff724fb1f6a97a0b45849e0.camel@sipsolutions.net>
+Subject: Re: [PATCH wireless-next v2] wifi: mac80211: Report parent AP BSS
+ parameters for AP_VLAN
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>, 
+	ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Ganesh Kariganuru Mahabalesh
+	 <quic_gkarigan@quicinc.com>
+Date: Mon, 21 Sep 2026 13:51:40 +0200
+In-Reply-To: <20260915052923.3300269-1-aaradhana.sahu@oss.qualcomm.com>
+References: <20260915052923.3300269-1-aaradhana.sahu@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.60.2 (3.60.2-2.fc44) 
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <da0421b8-bf31-43d1-8d71-520753c8344c@app.fastmail.com>
+X-malware-bazaar: not-scanned
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260921_045147_860188_AE36546E 
+X-CRM114-Status: GOOD (  12.95  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,37 +75,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 18, 2026 at 07:39:09PM +0300, Juha-Matti Tilli wrote:
-> On Fri, Sep 18, 2026, at 19:28, Manivannan Sadhasivam via B4 Relay wrote:
-> > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-> > 
-> > When two identical ath11k PCIe devices are connected to the same host, both
-> > advertise the WLFW service with the same service and instance id. The QMI
-> > lookup reports both servers to each device, so a device may connect to the
-> > firmware running on the other device.
-> > 
-> > But now, QRTR provides each MHI endpoint a unique node id which is
-> > different from the node id announced by the device. So use the same id to
-> > pick the correct server. Add a get_qrtr_node_id() HIF callback that returns
-> > the node id derived from the MHI controller index and zero for transports
-> > that do not assign one. In the new_server callback, skip any service whose
-> > node id does not match. A node id of zero disables the check, so transports
-> > that do not assign one keep their current behavior.
-> > 
-> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-> 
-> Tested-by: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
-> Tested-on: 2x WCN6855 hw2.1 PCI WLAN.HSP.1.1-04685-QCAHSPSWPL_V1_V2_SILICONZ_IOE-1
-> 
-> (assuming the patch is the same and hasn't been updated since 17.9:
-> https://github.com/Mani-Sadhasivam/linux/commits/qrtr-multi-ep/ )
-> 
+On Tue, 2026-09-15 at 10:59 +0530, Aaradhana Sahu wrote:
+> AP_VLAN interfaces do not maintain independent BSS configuration.
+> When station information is reported for a 4-address station, BSS
+> parameters are read from the AP_VLAN interface, causing beacon interval,
+> DTIM period and BSS capability flags to be reported incorrectly.
+>=20
+> Read the BSS configuration from the parent AP when populating station
+> information for AP_VLAN interfaces. This ensures that beacon interval,
+> DTIM period, CTS protection, short preamble and short slot time reflect
+> the parent AP configuration for both legacy and MLO station dumps.
+>=20
+> For MLO, the per-link BSS configuration is used so that CTS protection,
+> short preamble and short slot time reflect the configuration of the
+> corresponding parent AP link.
+>=20
+> Only advertise NL80211_STA_INFO_BSS_PARAM when a valid BSS
+> configuration is available. This avoids reporting zero-valued BSS
+> parameters when corresponding BSS configuration is unavailable.
 
-I just sent v2. Could you please test this version? I had made some changes
-while rebasing to net-next/main, so making sure I didn't regress, thanks!
+So ... I guess I can't disagree with that - but is it worth reporting
+any of these parameters at all? They're entirely under control of
+hostapd, so it already _knows_ - is there a separate tool that really
+needs to get them via the station info?
 
-- Mani
+I'd be tempted to just _remove_ these on the AP side rather than making
+the code more complex to report them correctly, in particular since
+basically nobody could actually be using them right now since they're
+just broken ...
 
--- 
-மணிவண்ணன் சதாசிவம்
+johannes
 
