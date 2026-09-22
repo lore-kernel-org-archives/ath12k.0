@@ -4,65 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7E42C982FA
-	for <ath12k@archiver.kernel.org>; Tue, 22 Sep 2026 13:31:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B9E2C98302
+	for <ath12k@archiver.kernel.org>; Tue, 22 Sep 2026 13:42:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=eZbT6bofTdrcKmONlOQZmDhDpogwkRooaTcmH+dj7Ik=; b=k4+iFNTQ303m0E6J5wjzaEajSS
-	PX4lKYmDPFUxnwxLRrHXQgXrC8AZqIh8CK+Goa3DMb/X+HuVyWlaquiY/OgrG5vLbM0yNgwbGAdOk
-	8pPqh6CdZUiRpmYltBu08sz2F6Y3FUk9ywr6NYp00HvqR1HEDjUmfHi1/jLtohpIlpjT0+M6Y3YfK
-	WwGKXE1aMs8ID4mblR3cb23xJTdFfd15shCnYVvgDG4tKCXqZAEtPFwnpu5/bSvu2uOHGiank5f4V
-	KuQLxNbRm05fZ1/mKuFG/QmEDOqXtJljegnQUl4ZLoKF0Zc3HjnCdtPLP891hcuU+4lI8pap1lN04
-	HW6vOLcQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:
+	References:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:
+	Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=kwLNkIrkhdQ/kMkGRWBdrd7ez6xVgaJzQSYTiKWtrww=; b=f6mPRmDhLXY/g1thTFFPtI6vcQ
+	t5Cb61DIzYwXaV/YIlKNGiFGSeA4Rv7Ul8RH9N9jq09/oitkTqnCMNOaLNGrwS321mQPXCYSjHL27
+	dZRepki0RhxjSj9VQ2YP+W94S3UWBJdbeG7tKRotQEh4MRb4cv31lmyJslOxvLIr8T936ynCoTdhi
+	NErOI/RCm/bpGZfHgnzfOzp8hGt/Y4zPHjOE1UQy3CBJBuGyKxoGCc5x/uxDk11dN+zpENeMbfNm4
+	lFioEUVRSA1AJR7pNS+k9PjhVtq3m3382ZRgvUQmR1hXp1JQQM/JHSgAOxx+d61U6oowYZ8Dk4eUN
+	rxCO7DVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x90aK-00000005X1R-2OFu;
-	Tue, 22 Sep 2026 13:31:00 +0000
+	id 1x90l5-00000005ZAk-0fdK;
+	Tue, 22 Sep 2026 13:42:07 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x90aJ-00000005X10-0BmP;
-	Tue, 22 Sep 2026 13:30:59 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0667C41F9D;
-	Tue, 22 Sep 2026 13:30:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 88BF61F000FF;
-	Tue, 22 Sep 2026 13:30:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790083857;
-	bh=eZbT6bofTdrcKmONlOQZmDhDpogwkRooaTcmH+dj7Ik=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=WsFWXUnP8NJVnX0eK28aiT7KS95kdrLG0pScdcm5eDf+dFcDv4a1g8FAVTo5Wm5Eq
-	 GEwbruXLERl1GXQQcnd2h4mpiYdxVI6/a/JbLc7htw7f53T9A85W2+3XYlm/Co090L
-	 glSGKATH79oJe1Fw69eI+zPzntl9rpUaCEfRLMHbCdERSkSiXbi2uXpJW7yg/J7o0H
-	 Lv68lAtn/8dCIDvbRKMAgdaKO7IeF0HRZH670xonOyBPVynsbW3Ek3E7vCWHh/ZLC5
-	 0bRxs/2CfZ1UTKv+MrnbfOSlFVSi4T3jsqZh8WM8ucork6iOamSVE8Wb5jrZIivjbe
-	 q65xIIOZaiqUQ==
-Date: Tue, 22 Sep 2026 15:30:48 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
-Cc: "David S . Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
-	Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>, 
-	Jeff Johnson <jjohnson@kernel.org>, linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
-	ath12k@lists.infradead.org, Bjorn Andersson <andersson@kernel.org>, 
-	Chris Lew <christopher.lew@oss.qualcomm.com>, Deepak Kumar Singh <deepak.singh@oss.qualcomm.com>, 
-	Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>, Jeff Hugo <jeff.hugo@oss.qualcomm.com>
-Subject: Re: [PATCH v2 4/4] wifi: ath12k: Connect to the QMI server belonging
- to the device owned by this driver
-Message-ID: <g63vg7ho5al6f2hfxbgssrisnjl5ui6isxlrv3265ocatvdmay@anmhz3vcxcbo>
-References: <20260921-qrtr-multi-ep-v2-0-27dd80d841a0@oss.qualcomm.com>
- <20260921-qrtr-multi-ep-v2-4-27dd80d841a0@oss.qualcomm.com>
- <e7e8a499-9e89-4efa-a99f-18ce7dc37ab5@app.fastmail.com>
+	id 1x90l3-00000005Z9Y-0ufE;
+	Tue, 22 Sep 2026 13:42:05 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id DAC9943E23;
+	Tue, 22 Sep 2026 13:42:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id B2B20C2BCF6;
+	Tue, 22 Sep 2026 13:42:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1790084524;
+	bh=vyCcA7tnPPht7PT85axNJlbH910qapPAZZT/pgWHgoY=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=Ftj2INYG8GNVpLoH9Cxl3gEMwp+EMg9skHSOyg8V5T/unxWjWUMYXJHsdxcLJe2XZ
+	 ZVvKKIUfQwO3Q3Ie9EVAoeYiWvL2NdC/s9bOSvpTwXe3mlk7wUQKc01atGzlYi1C3I
+	 fVi76ZfY6+8WRRciZSmcXL4gSWK2k/LrsD5B2/nbgQnQpGvsMc321Ui6tOTVRHnk+8
+	 XieRzbAHM748fHAkfsApZIRIeHMkEVg9rKsXjpjyzegsL7NBE7uTUM7aE6a+0CEIVx
+	 oS75Zwkh/0Uh6EKmVk4J1pvQSrc5hhRIc4cmY64cGWE68a43LYbX+39bUFLG8utgUN
+	 /17GFTT8IKAHw==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 946DCC98302;
+	Tue, 22 Sep 2026 13:42:04 +0000 (UTC)
+From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
+Date: Tue, 22 Sep 2026 15:41:46 +0200
+Subject: [PATCH v3 2/4] net: qrtr: Assign unique node id for MHI endpoints
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <e7e8a499-9e89-4efa-a99f-18ce7dc37ab5@app.fastmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20260922-qrtr-multi-ep-v3-2-c00831e88957@oss.qualcomm.com>
+References: <20260922-qrtr-multi-ep-v3-0-c00831e88957@oss.qualcomm.com>
+In-Reply-To: <20260922-qrtr-multi-ep-v3-0-c00831e88957@oss.qualcomm.com>
+To: Manivannan Sadhasivam <mani@kernel.org>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Simon Horman <horms@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, 
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Chris Lew <christopher.lew@oss.qualcomm.com>, 
+ Deepak Kumar Singh <deepak.singh@oss.qualcomm.com>, 
+ Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>, 
+ Juha-Matti Tilli <juha-matti.tilli@iki.fi>, 
+ Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2620;
+ i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
+ bh=KeQEnANlAXYlpqTacuONKxeWxAocy2Ur191CkncsK00=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBqsoWpgF1ERmKKFgRfllMWMhlPIpcG3nOoB3HYz
+ G0vgm16ZU6JATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCarKFqQAKCRBVnxHm/pHO
+ 9R96B/9ZauGHrvlwTacRyUaFmAzfIhB8j9LS0NGFuRQ4iW7kU/8U0SVsOt9F//gBDbzw/1x/I8/
+ hqcWkSKXhmhiJ7Voi5UWakubMitFRKDVWwNOMf3arS8MRk4ukg/MZcl+jhbnoQCDEraGvW9eaGA
+ SjLs7Il6xXA8Zh6XDN3shDJPBp4dU1fyQG5ILVNjxrerjjURcq0XKXiSeEgFS11qSvMn3vfErF3
+ Xnzt1tXqBnqHnlM80pKf40sK1VHDoQxGedJ0SGNOY+od1QZvJrRDZlzDAbRA37oAbie2d7mea1a
+ vvEiBOlNOeQsu+53uiXQ7IkYWXdGW1VCe2aFjrugemfeT4so
+X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
+ fpr=C668AEC3C3188E4C611465E7488550E901166008
+X-Endpoint-Received: by B4 Relay for
+ manivannan.sadhasivam@oss.qualcomm.com/default with auth_id=461
+X-Original-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,77 +94,95 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: manivannan.sadhasivam@oss.qualcomm.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 22, 2026 at 02:43:05PM +0300, Juha-Matti Tilli wrote:
-> On Mon, Sep 21, 2026, at 14:23, Manivannan Sadhasivam via B4 Relay wrote:
-> > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-> > 
-> > When two identical ath12k PCIe devices are connected to the same host, both
-> > advertise the WLFW service with the same service and instance id. The QMI
-> > lookup reports both servers to each device, so a device may connect to the
-> > firmware running on the other device.
-> > 
-> > But now, QRTR provides each MHI endpoint a unique node id which is
-> > different from the node id announced by the device. So use the same id to
-> > pick the correct server. Add a get_qrtr_node_id() HIF callback that returns
-> > the node id derived from the MHI controller index and zero for transports
-> > that do not assign one. In the new_server callback, skip any service whose
-> > node id does not match. A node id of zero disables the check, so transports
-> > that do not assign one keep their current behavior.
-> 
-> Tested-by: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
-> Tested-on: 2x WCN7850 hw2.0 WLAN.IOE_HMT.1.1-00018-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
-> Tested-on: 1x WCN6855 ath11k + 1x WCN7850 ath12k
-> 
-> I'm having some issues with regdb on ath12k cards so I had to test using
-> the low-frequency 2.4GHz channels. I tried updating linux-firmware to
-> 20260810 to match my 6.12.110+multi-QRTR kernel, didn't help. The error
-> is:
-> 
-> ath12k_pci 0001:01:00.0: No reg rules available
-> ath12k_pci 0001:01:00.0: failed to extract regulatory info from received event
-> ------------[ cut here ]------------
-> WARNING: CPU: 0 PID: 12 at /drivers/net/wireless/ath/ath12k/wmi.c:5841 ath12k_reg_chan_list_event+0x171/0x1e0 [ath12k]
-> Modules linked in: xt_gmmark(O) xt_bemark(O) w24e2identificator(O) qrtr_mhi ath12k mhi qmi_helpers mac80211 libarc4 cfg80211
-> CPU: 0 UID: 0 PID: 12 Comm: kworker/u8:0 Tainted: G           O       6.12.110-yocto-standard-gec77603762c7 #1
-> Tainted: [O]=OOT_MODULE
-> Hardware name: Freescale LS1021A
-> Workqueue: ath12k_qmi_driver_event ath12k_qmi_driver_event_work [ath12k]
-> Call trace: 
->  unwind_backtrace from show_stack+0xb/0xc
->  show_stack from dump_stack_lvl+0x35/0x40
->  dump_stack_lvl from __warn+0xaf/0xb0
->  __warn from warn_slowpath_fmt+0xe5/0xe8
->  warn_slowpath_fmt from ath12k_reg_chan_list_event+0x171/0x1e0 [ath12k]
->  ath12k_reg_chan_list_event [ath12k] from ath12k_wmi_op_rx+0x219/0xc08 [ath12k]
->  ath12k_wmi_op_rx [ath12k] from ath12k_htc_rx_completion_handler+0x215/0x2d4 [ath12k]
->  ath12k_htc_rx_completion_handler [ath12k] from ath12k_ce_recv_process_cb+0x149/0x198 [ath12k]
->  ath12k_ce_recv_process_cb [ath12k] from ath12k_pci_ce_tasklet+0x13/0x28 [ath12k]
->  ath12k_pci_ce_tasklet [ath12k] from tasklet_action_common+0x87/0xa8
->  tasklet_action_common from handle_softirqs+0xbf/0x1b4
->  handle_softirqs from irq_exit+0x55/0x78
->  irq_exit from call_with_stack+0xd/0x10
-> ---[ end trace 0000000000000000 ]---
-> 
-> This error happens with 2x ath12k and 1x ath12k 1x ath11k too.
-> 
-> But, the dual ath12k setup works, and the errors are entirely different
-> than what QRTR node id clash does.
-> 
-> So, I believe the patch works.
-> 
+From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
-Thanks a lot for testing. I asked our WLAN team member to test this series on
-multi-ath12k setup and found one issue with QRTR_TYPE_RESUME_TX. After fixing
-it, multi-ath12k setup works fine.
+Now that the QRTR driver allows using the unique node id for each device,
+which is different from the node id received from the remote node, compute
+a unique node id using a new API, qrtr_host_node_id().
 
-I'll submit v3 with that fix. Please give it a shot on this setup, one final
-time :) Appreciate your help here.
+This API takes the 'index' parameter and adds it to QRTR_NODE_HOST_BASE,
+whose value is outside of the node id range used by the remote nodes (0 to
+0xffff).
 
-- Mani
+Finally, call the new API from MHI endpoint driver by passing the MHI
+controller index as the parameter. The MHI controller index is unique for
+each controller, thereby for each MHI endpoint device.
+
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+---
+ MAINTAINERS        |  1 +
+ include/net/qrtr.h | 21 +++++++++++++++++++++
+ net/qrtr/mhi.c     |  4 +++-
+ 3 files changed, 25 insertions(+), 1 deletion(-)
+
+diff --git a/MAINTAINERS b/MAINTAINERS
+index df8ab9b82402..9c8bb086be28 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -22511,6 +22511,7 @@ QUALCOMM IPC ROUTER (QRTR) DRIVER
+ M:	Manivannan Sadhasivam <mani@kernel.org>
+ L:	linux-arm-msm@vger.kernel.org
+ S:	Maintained
++F:	include/net/qrtr.h
+ F:	include/trace/events/qrtr.h
+ F:	include/uapi/linux/qrtr.h
+ F:	net/qrtr/
+diff --git a/include/net/qrtr.h b/include/net/qrtr.h
+new file mode 100644
+index 000000000000..745d51b4a6ba
+--- /dev/null
++++ b/include/net/qrtr.h
+@@ -0,0 +1,21 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++
++#ifndef _NET_QRTR_H
++#define _NET_QRTR_H
++
++#include <linux/types.h>
++
++/* The offset is chosen carefully to not collide with the node ids allocated by
++ * the remote nodes. All the remote nodes use node ids in range 0 to 0xffff.
++ */
++#define QRTR_NODE_HOST_BASE 0x10000u
++
++/* Compute host node id from a per-device index. The index must be unique
++ * among the host assigned endpoints and smaller than QRTR_NODE_HOST_BASE.
++ */
++static inline unsigned int qrtr_host_node_id(unsigned int index)
++{
++	return QRTR_NODE_HOST_BASE + index;
++}
++
++#endif /* _NET_QRTR_H */
+diff --git a/net/qrtr/mhi.c b/net/qrtr/mhi.c
+index 3990da1a65dc..c920ab61f848 100644
+--- a/net/qrtr/mhi.c
++++ b/net/qrtr/mhi.c
+@@ -6,6 +6,7 @@
+ #include <linux/mhi.h>
+ #include <linux/module.h>
+ #include <linux/skbuff.h>
++#include <net/qrtr.h>
+ #include <net/sock.h>
+ 
+ #include "qrtr.h"
+@@ -127,7 +128,8 @@ static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
+ 	if (rc)
+ 		return rc;
+ 
+-	rc = qrtr_endpoint_register(&qdev->ep, QRTR_EP_NID_AUTO);
++	rc = qrtr_endpoint_register(&qdev->ep,
++				    qrtr_host_node_id(mhi_dev->mhi_cntrl->index));
+ 	if (rc)
+ 		goto err_unprepare;
+ 
 
 -- 
-மணிவண்ணன் சதாசிவம்
+2.43.0
+
+
 
