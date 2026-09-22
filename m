@@ -4,90 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97088C9830E
-	for <ath12k@archiver.kernel.org>; Tue, 22 Sep 2026 13:42:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EEF0AC982FE
+	for <ath12k@archiver.kernel.org>; Tue, 22 Sep 2026 14:54:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
-	From:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=6d/AhrifUYHA3V2tpUROu6IS0J2DvSc9j933wK/Q5fw=; b=CEM0DAZ30NTVugvTZstui37Xyl
-	Y96KpHZVlz+WyCJQwBm6LjIwztnST3N0qMehBGmFBgLvoliIj1Lh8znCOeBAFklUG3VYCWliR0DFW
-	Sk6wClLtg0s10zyXuIO/CcNo9bbo4tHRRbn/pEYRu5ns7X/8xtfCldbFWcxN4woB9UunEJZs00DZJ
-	pkYSqoi88v489sapUqmFyW8crZAfcdhdcoxLa0G3z4Tj+ksigD9T7jyg+QLNcfAjh4v0t0fmqTIE9
-	6ocQAegm3NmlYag0W4ekx0YbCDey0A/yGAh/t/t10tCHTYV3S47UbBYx5o7K7urth3MbqX17G/Cg2
-	djayo0pA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Subject:References:In-Reply-To:Message-Id:Cc:To:From:Date:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Z0GiNNz7mvXA6xuheXPBRxDg0LpQpCzQPfazm+MFnlQ=; b=gDuYoSaq1Svy9R/47K1uhuVYq2
+	KIcU6/nxcqxvsfLuDe75ZIQnwhLcP98KIxw1bduXxsFVIWFJxcDE4l8+vtH94E9lXm7Y+LIvuqi/3
+	joScDGXZRB3E14I4PjHzIN2xD87/6y0rzJQDHZI/vaFI8WUz1t0+WmgP635fQHxeJ1GCb1pPlRuof
+	DThYcN3+KXsxMPcPh7QZtK/gMgCZMgan8u7w0cb0v9e9nYpCFH62C0D2CZhHydQjzrd65tuNaU6ut
+	6ckaXHLq4ndajga5DchKrrriYSqRcjIFgb4+b0hXsUOM2r+EsO52JSdekA4Jt2u8A83Cbt63e09YS
+	SvAy63hw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x90l7-00000005ZDi-18Rw;
-	Tue, 22 Sep 2026 13:42:09 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x91tC-00000005knw-2gMj;
+	Tue, 22 Sep 2026 14:54:34 +0000
+Received: from meesny.iki.fi ([2001:67c:2b0:1c1::201])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x90l3-00000005Z9a-3Cn6;
-	Tue, 22 Sep 2026 13:42:05 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id D77AB60A82;
-	Tue, 22 Sep 2026 13:42:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 7B120C2BCB8;
-	Tue, 22 Sep 2026 13:42:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1790084524;
-	bh=+7hgMzH+bUETBpciyveHW9m+55rtTRhGRMMDzVczHHs=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=gTJp68GIBHw7Hj1+3ocx2rgbB6/o1d5+XU9iBp5CuVNMSnfFbMtpYl4qZ5IiPVhXW
-	 DbdzY52WY/yZmuhcH6+4WB7CoTomgQoiY/UxmBWnemGTBonl0zMj5kD+kNSnX4I9BL
-	 0EXYDcBLaeCtPprQ7O3cCL+yabXShrS7PwCyu3HhfxC/wmjykleHCddAqbvgj2hgmN
-	 xjfgm4APbiHRWmWlPYSDcvrgYJ6vyT/BGpYNGjEsNOgg9wLOVuWWvsQUPiC8pWtwEQ
-	 bXMBLluKRY9J9YW8x7h3G1MxMn8xh605Me0WcOVmguwIF7rXJd99lgInEJFvGlhJj3
-	 UcJWyi5+yB4zg==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5B70FC98307;
-	Tue, 22 Sep 2026 13:42:04 +0000 (UTC)
-From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
-Subject: [PATCH v3 0/4] net: qrtr: Add support for using identical MHI
- endpoint devices
-Date: Tue, 22 Sep 2026 15:41:44 +0200
-Message-Id: <20260922-qrtr-multi-ep-v3-0-c00831e88957@oss.qualcomm.com>
+	id 1x91tA-00000005kmj-03HU
+	for ath12k@lists.infradead.org;
+	Tue, 22 Sep 2026 14:54:33 +0000
+Received: from fauth-c1-smtp.messagingengine.com (fauth-c1-smtp.messagingengine.com [204.75.18.200])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: jmtilli)
+	by meesny.iki.fi (Postfix) with ESMTPSA id 4hq35q39fczyQq;
+	Tue, 22 Sep 2026 17:54:23 +0300 (EEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=meesny;
+	t=1790088864;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=Z0GiNNz7mvXA6xuheXPBRxDg0LpQpCzQPfazm+MFnlQ=;
+	b=hQpCmRBRPkO1lnjRQbCSLsOAIeVHDbpzroswlW0jjY9Pwu/2we1ykG7q8xbKGSVnAfdsBD
+	GfltrlWKkzkPfuXkvuUdtVI8sfKUWct9fPlly+cXoE4UZoJeEr06SiLziXrw+wx4bjEwYb
+	OHNlEzi1pE5Uj2+EmISmCmHe8YQKKE8=
+ARC-Seal: i=1; a=rsa-sha256; d=iki.fi; s=meesny; cv=none; t=1790088864;
+	b=OzIp9i+y6MKmaCKay58FEkapWMtaKXCAh+p5pZYaxAXFhVfwBtHLpa6FQchxsOUnQWk1dc
+	4kZ6ewtyFi1sE3piBjPoC2yX2YoAJMqZfs+ETG1NvCITaxy2m9GoMqQXqK7eW8PANaF8IK
+	a6vTItxAVTACgkDIq/T69QzkES3wY8I=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
+	s=meesny; t=1790088864;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=Z0GiNNz7mvXA6xuheXPBRxDg0LpQpCzQPfazm+MFnlQ=;
+	b=bKkwHvlOPzrWTnxsmzfxfjGrv+kdeoWQO7DFfIFPEh9tEr1jTkp6Ybh4k3Oji8jSM5nLkb
+	m+E5foQE7LPHFfUT3+02Y9GiABNA9ZsICriyPTtoJKIhq5tWzEY37p0OquxZnlHwFl2Lzu
+	H2J/jarebpztIGyz3fTtiB3tFdf0jP0=
+ARC-Authentication-Results: i=1;
+	ORIGINATING;
+	auth=pass smtp.auth=jmtilli smtp.mailfrom=juha-matti.tilli@iki.fi
+Received: from ams-compute-02.internal (ams-compute-02.internal [10.64.2.62])
+	by mailfauth.ams.internal (Postfix) with ESMTP id 9A38A1980047;
+	Tue, 22 Sep 2026 10:54:22 -0400 (EDT)
+Received: from ams-imap-13 ([10.64.2.33])
+  by ams-compute-02.internal (MEProxy); Tue, 22 Sep 2026 10:54:22 -0400
+X-ME-Sender: <xms:nJayahOoafvGRBHnapWIyTJk6EhrmhVJY0GvCoTm60wkzaZGn_c4Iw>
+    <xme:nJayaux1EEDSx5z2uUL6LKtq4wLmKBLayvDqdFnN2fvuYW7VX5N1W3mRdMLdoiZ40
+    OIEyOIr8gKynWfvbkndsLOzu5snXRJ_tVMVWXru4eGmJOA5ANdBzRz8>
+X-ME-Proxy-Cause: dmFkZTFHpedGAVLKiQnrNYraarc+m8y6pLFP5Ws5yDrx6JiPDe99pKJ36EE4458D8owMzI
+    CVyo4xyRD/1B3H7QMoDwJozOc+q/Qd0uLw0fzgf+wNbXR7DBV6y68OpQi/yydjLyfs3u2j
+    9ub+qnoI5s1SO7rmds48axDjne3beJ7ZSCdGoucQ9oqMX9AhRyd/5Wk1qRDJAg6SYH6B78
+    ynBy9qOdx+4dqAHjn76/cFsXf0dY9JupyHdpSRkc2JRH65rRxREBrIRGKsa0HaQZ+1ya2m
+    j8Ryquurp9LnkGsEOIW9eTjSLyAN2uq5fOFQxiRf//ZisjfE8+ttENVOKUvTh8JumdRSLj
+    p+V2YKSBbxHflVNgbuG3pGSsvZ1uhHJkUn8Vxqq+zjf82EI7Cjz8tLP0s5ZvPlJUHwSGCh
+    pfN9xT0fgl+poHmSbIdOAtNVsuUpuFyxhLaM2/BfsltmkEo/IUZVYBkaHk0+y9F9UBlpEg
+    qV4CTCisVOl6Ujz6Lzo+kwyBYVLuCDgMWyLRw05vlu3cRzm6QYkkIRuqkU9LFGpkAz+2Hc
+    Qye07P78PbHmTjNdIeyyX/peVk1yqCmoAl3ZWNsVld/58+wdy3AHFb2YAba32HcCuB71xH
+    MHNmIHKRQpdAJmfJTPH/Ni9E8t4LZeQCIkDzRBIMyePRFtGu60aNXJg6zGYw
+X-ME-Proxy: <xmx:npayapTb__p_DydNxb3WN6NoMrFnM88L_Fnpa3c2v7WL4lxTvMZUcQ>
+    <xmx:npayahJgGtZlTJtQfoOd0qA9wiKp3saf9VLhoRc9mB5Mx4fVdgd_hQ>
+    <xmx:npayaq3MjoMpyT20e6fEpDiQmW5LN-38-EYKJuRpisdiWp6JT7lkUw>
+    <xmx:npayakIqiMXo49KaBxMDixyAp9w5j9_CtFWIg4-oXLOh9XwbihIPXQ>
+    <xmx:npayaqlrk6tNoyC_B_CpQ4aBKPvFqbLV33GpgSXznrmb2MXaV7Y0l7ic>
+Feedback-ID: i02414972:Fastmail
+Received: by mailuser.ams.internal (Postfix, from userid 501)
+	id 1BF8BF80089; Tue, 22 Sep 2026 10:54:20 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 8bit
-X-B4-Tracking: v=1; b=H4sIAJiFsmoC/3XN0Q6CIBQG4FdxXIcDNKWueo/WBcIpaSoKyGrOd
- w/sprW6Odu//ef7F+TAanDomC3IQtBOmyGGYpch2YrhBlirmBEjrCIHyvFkvcX93HmNYcSS1ZI
- 1cl8CUBR/RgtX/di88+Wd3dzcQfqEpEarnTf2uQ0Gmnr/7EAxwVyQSgpRVFwVJ+NcPs2ik6bv8
- 3hQmgjsA2H0G2ERYbVSnCheUkF+IOu6vgBOaOD4CAEAAA==
-X-Change-ID: 20260918-qrtr-multi-ep-c27c2bc54ee1
-To: Manivannan Sadhasivam <mani@kernel.org>, 
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
- Simon Horman <horms@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, 
- ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
- Bjorn Andersson <andersson@kernel.org>, 
- Chris Lew <christopher.lew@oss.qualcomm.com>, 
- Deepak Kumar Singh <deepak.singh@oss.qualcomm.com>, 
- Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>, 
- Juha-Matti Tilli <juha-matti.tilli@iki.fi>, 
- Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
- Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3240;
- i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
- bh=+7hgMzH+bUETBpciyveHW9m+55rtTRhGRMMDzVczHHs=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBqsoWhJbkRU/X1+Ad7kGtYbrJVhlsIhCOo64Xp8
- 6JUHKH95qSJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCarKFoQAKCRBVnxHm/pHO
- 9ZFHB/sHbFtYkUxenvI3tCEX7PFWivliqXjghO3lpuXBSqbZOY+ZVTdQ1LiS1Q7auKj/53jTl5f
- 7FXtPZ6Q7UPs2KRSPizAV2uJL3txPrqvnKmvhFhntiTk8KUYOpDvqCVXXGrlIZYSkShGaOW/Aqa
- a7boMPoCYttyFnTwMbWWPHojaKAp5Jj7LddPpsnGpMAWqiiWLLV9KDFILZcklHNwEvf1RBPNLmm
- dlqOsBeLHJUXnXuqwKiYvHHLGWRD7IfQ+g8L4ReQHG18JjTcKFRXLF5sb03SVrhgf8Z5+ywieGt
- kk2B25NOZwR0C+m6jCBuFQl3QGKL35KE0BS8mpSsmpw/P8le
-X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
- fpr=C668AEC3C3188E4C611465E7488550E901166008
-X-Endpoint-Received: by B4 Relay for
- manivannan.sadhasivam@oss.qualcomm.com/default with auth_id=461
-X-Original-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+X-ThreadId: AtmlxWozq_rN
+Date: Tue, 22 Sep 2026 17:53:59 +0300
+From: "Juha-Matti Tilli" <juha-matti.tilli@iki.fi>
+To: "Manivannan Sadhasivam" <mani@kernel.org>
+Cc: "David S . Miller" <davem@davemloft.net>,
+ "Eric Dumazet" <edumazet@google.com>, "Jakub Kicinski" <kuba@kernel.org>,
+ "Paolo Abeni" <pabeni@redhat.com>, "Simon Horman" <horms@kernel.org>,
+ "Jeff Johnson" <jjohnson@kernel.org>, linux-arm-msm@vger.kernel.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+ ath12k@lists.infradead.org, "Bjorn Andersson" <andersson@kernel.org>,
+ "Chris Lew" <christopher.lew@oss.qualcomm.com>,
+ "Deepak Kumar Singh" <deepak.singh@oss.qualcomm.com>,
+ "Raj Kumar Bhagat" <raj.bhagat@oss.qualcomm.com>,
+ "Jeff Hugo" <jeff.hugo@oss.qualcomm.com>
+Message-Id: <ce12d73a-ca7d-4e89-9c88-53029d58260a@app.fastmail.com>
+In-Reply-To: <g63vg7ho5al6f2hfxbgssrisnjl5ui6isxlrv3265ocatvdmay@anmhz3vcxcbo>
+References: <20260921-qrtr-multi-ep-v2-0-27dd80d841a0@oss.qualcomm.com>
+ <20260921-qrtr-multi-ep-v2-4-27dd80d841a0@oss.qualcomm.com>
+ <e7e8a499-9e89-4efa-a99f-18ce7dc37ab5@app.fastmail.com>
+ <g63vg7ho5al6f2hfxbgssrisnjl5ui6isxlrv3265ocatvdmay@anmhz3vcxcbo>
+Subject: Re: [PATCH v2 4/4] wifi: ath12k: Connect to the QMI server belonging to the
+ device owned by this driver
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260922_075432_263635_A1079DCF 
+X-CRM114-Status: GOOD (  12.81  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,86 +128,35 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Reply-To: manivannan.sadhasivam@oss.qualcomm.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On Tue, Sep 22, 2026, at 16:30, Manivannan Sadhasivam wrote:
+> On Tue, Sep 22, 2026 at 02:43:05PM +0300, Juha-Matti Tilli wrote:
+> > So, I believe the patch works.
+> 
+> Thanks a lot for testing. I asked our WLAN team member to test this series on
+> multi-ath12k setup and found one issue with QRTR_TYPE_RESUME_TX. After fixing
+> it, multi-ath12k setup works fine.
+> 
+> I'll submit v3 with that fix. Please give it a shot on this setup, one final
+> time :) Appreciate your help here.
 
-This series reworks the QRTR driver to add support for using identical MHI
-endpoint devices at the same time. Currently, QRTR driver has a limitation on
-using more than one identical MHI endpoint devices like QCS6490 or any Qcom
-Endpoint device making use of QRTR at the same time. Because of the fact that
-these devices will have the identical QRTR node id, they cannot be used at the
-same time, on the same host machine.
+Is this issue perhaps related to this (2x ath12k):
 
-This limitation is a blocker for running upstream kernel on devices like Qcom
-based routers as they often have multiple identical WLAN Endpoint devices
-connected to the Router SoC.
+ath12k_pci 0001:01:00.0: dp_tx: failed to find the peer with peer_id 2
 
-This series supersedes the following 2 series from Juha:
-https://lore.kernel.org/all/20260915054207.2513877-1-juha-matti.tilli@iki.fi
-https://lore.kernel.org/all/20260915074135.2567411-1-juha-matti.tilli@iki.fi
+I managed to switch to 6.18.53 kernel and now the regulatory DB issue
+is gone, but I'm getting this repeatedly to dmesg.
 
-Compared to the series from Juha, this series simplifies the multi-endpoint
-support by computing a unique node id for each MHI endpoint and uses it for the
-internal QRTR book keeping. This ensures that even if the MHI endpoint devices
-have same node ids, the host QRTR will always use a unique node id for each one
-of them.
+Yet, despite this issue, I see the network and data flows (with v2).
 
-More details can be found in the individual patches.
+Also the other card gives:
 
-Testing
-=======
+ath12k_pci 0000:01:00.0: failed to pull fw stats: -71
+ath12k_pci 0000:01:00.0: time out while waiting for get fw stats
 
-Juha tested this series on multi ath11k/12k setup by backporting this series to
-6.6 kernel. 
+...but it's lacking antennas so could be related to that.
 
-Merge Strategy
-==============
-
-Since both QRTR and ath drivers are falling under the networking tree, the whole
-series can be merged through netdev tree.
-
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
----
-Changes in v3:
-- Added missing qrtr_node_rewrite_ctrl() for QRTR_TYPE_RESUME_TX
-- Fixed the types of ath{11k/12k}_pci_get_qrtr_node_id() and helpers to use
-  'unsigned int' to match qrtr_host_node_id()
-- Collected tags
-- Link to v2: https://patch.msgid.link/20260921-qrtr-multi-ep-v2-0-27dd80d841a0@oss.qualcomm.com
-
-Changes in v2:
-- Rebased on top of net-next/main
-- Used READ/WRITE_ONCE for reading/writing ep_nid
-- Link to v1: https://patch.msgid.link/20260918-qrtr-multi-ep-v1-0-8a06caa368d3@oss.qualcomm.com
-
----
-Manivannan Sadhasivam (4):
-      net: qrtr: Allow the host QRTR to assign a unique node id
-      net: qrtr: Assign unique node id for MHI endpoints
-      wifi: ath11k: Connect to the QMI server belonging to the device owned by this driver
-      wifi: ath12k: Connect to the QMI server belonging to the device owned by this driver
-
- MAINTAINERS                           |  1 +
- drivers/net/wireless/ath/ath11k/hif.h |  9 +++++
- drivers/net/wireless/ath/ath11k/pci.c |  9 +++++
- drivers/net/wireless/ath/ath11k/qmi.c | 10 ++++++
- drivers/net/wireless/ath/ath12k/hif.h |  9 +++++
- drivers/net/wireless/ath/ath12k/pci.c |  9 +++++
- drivers/net/wireless/ath/ath12k/qmi.c | 11 +++++++
- include/net/qrtr.h                    | 21 ++++++++++++
- net/qrtr/af_qrtr.c                    | 62 +++++++++++++++++++++++++++++++----
- net/qrtr/mhi.c                        |  4 ++-
- 10 files changed, 137 insertions(+), 8 deletions(-)
----
-base-commit: 8830e65ed46de41f849eefb8ba227d4852c460f6
-change-id: 20260918-qrtr-multi-ep-c27c2bc54ee1
-
-Best regards,
---  
-மணிவண்ணன் சதாசிவம்
-
-
+BR, Juha-Matti
 
