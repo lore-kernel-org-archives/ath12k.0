@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D07A4C982FA
-	for <ath12k@archiver.kernel.org>; Tue, 22 Sep 2026 13:42:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35EB8C98308
+	for <ath12k@archiver.kernel.org>; Tue, 22 Sep 2026 13:42:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:
 	References:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:
 	Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=RyrVBQB0L2KZKj5kTqBGVxwXnBqupeDM9DdN6sMV1KI=; b=wpf4C/RbCXsy2fFuR6Wg6u7Zr8
-	FP8jy5B2ZgpoGZ3GeUyN/prJBSAYhYlkLcvaBzZPjHwU8YRocRLtBOHzA/GO90eaonj1SmFBkffgk
-	fKLVglalyz5vph884F0zlYQOeidFeFzc2GTTAE1dFWECXO7m93HybmKCad1ESKu7pikuM47+Yx4kC
-	QlgJu/G71X8QbhxWzpPcL9SLP2x/Iol6qET4mqzwpNC4mA/H5QLj0PSkDXAvXwz5Ubi9ml9TyrR09
-	EPUVeGH1y1moUTu4OyWf3DZUzOXsqlowTO4/oszGxSSk1zo8dPYzx+VZrJfwV91MUY8Rs/dlDbCzk
-	1fJM/SeQ==;
+	bh=ZyMfFKs13NBIbRrUO0iG5h7b0cNxN3JFur1XPbojwj8=; b=oreYjila1rICeEg7x2E8zdZ9me
+	htQW7u1wzqiLgiLyYSYHetw2KWYUEq4TRInAPTiPZ5wShSv8QoTE7NzM3R6zCtPgOxJTJTe10oynT
+	obKQnSMNjPKypI1tyo9cjC/PmUyfETFMo0b/TCcvQLpwPLWNr8+umhDdAJapBEg2HtMMZzzBBhPkL
+	GolsXyqyHlzJDjs5qGj7tABawPoFJlWK6BP13e8rI7i1jZ9I3nozNCLxT4ehVJlzuMjFWOcv+iqKE
+	hmaBja73fLiMYjrL4HCEmQ6kwyUypxEu4d2EifpBYS8RI9vzX5Na6JP5WsohF+JXg7VpN71lSvraj
+	8yNX5jCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x90l5-00000005ZB9-27JS;
+	id 1x90l5-00000005ZBm-3I7j;
 	Tue, 22 Sep 2026 13:42:07 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x90l3-00000005Z9b-18GF;
+	id 1x90l3-00000005Z9X-1hc4;
 	Tue, 22 Sep 2026 13:42:05 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0AAC0449EC;
-	Tue, 22 Sep 2026 13:42:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id DFF12C2BD00;
+	by sea.source.kernel.org (Postfix) with ESMTP id CBF7143DF9;
+	Tue, 22 Sep 2026 13:42:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id A14E2C2BCFA;
 	Tue, 22 Sep 2026 13:42:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1790084524;
-	bh=0yAMb2WceSkQwRVCdI/kD46D4CZ0XgiL71tsE1aY1zI=;
+	bh=ui+TXvwrceC03rroE/Q4o0li/haNQJon38ShWlc2EVE=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=CSkAAEkIcnK9VMdpmi/pwPOb9cpaccEZz2q14HWav0mRZcmCg3iBLCtXJQ44ucN9o
-	 4Iq1GrvC+28CeMetPKhZKdpetOj6clhz17qKWklyQYt1mPwm6F5T05Y3irTF1jUp0v
-	 Dtiv79tf2d59DpLg+nNKzhrf1X2CoF4O8/HR8mHOgy9X+9sE8MSu7yd4E9R0R8+poK
-	 WjP7vMaQD8AO2WsTT3AR9zQpj+cQ/T2KigMFLr9juAHWWAuE68qI6A7CJ/Scmmp803
-	 9wzR2G274uvM6khvRZlNjauMh7LVW3f/QUTlAvtYhKEkAMLEmp94F0Tda8jXhtQHyg
-	 uyuM5fh+b1M+Q==
+	b=G6K2V3hfxV8r+6ZtFmtnLu4ih7IPQs+y1XyytoQWBKS6m600IsltVrhtwrCBheq2I
+	 qUGX4r7XtKZKalpluawZjWH4qA3vmSnhGjF07qGWXHxxzqq+bWPFAo5w11YxWj9gmQ
+	 uVUHXJPfNrIYjD/bYxui47zSYqInlcy0a8E7EEfWVgb/kBd9Xd0qExY+zTai3lC8O/
+	 BQcccDntbL7pixs++cJwDag5HVo1kBLwt1kGxcBwc9PZ35i6y/zulJcz8UtvS4WrNU
+	 gTv0XqFIwh/tQftlYhAb2IHmr5qkEUf3RlNKgIQFgLbYkTGZ1uyS0QTBB9xj7TAp1w
+	 j9122tpLF1C3w==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C8232C98304;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7A37CC98304;
 	Tue, 22 Sep 2026 13:42:04 +0000 (UTC)
 From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
-Date: Tue, 22 Sep 2026 15:41:48 +0200
-Subject: [PATCH v3 4/4] wifi: ath12k: Connect to the QMI server belonging
- to the device owned by this driver
+Date: Tue, 22 Sep 2026 15:41:45 +0200
+Subject: [PATCH v3 1/4] net: qrtr: Allow the host QRTR to assign a unique
+ node id
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20260922-qrtr-multi-ep-v3-4-c00831e88957@oss.qualcomm.com>
+Message-Id: <20260922-qrtr-multi-ep-v3-1-c00831e88957@oss.qualcomm.com>
 References: <20260922-qrtr-multi-ep-v3-0-c00831e88957@oss.qualcomm.com>
 In-Reply-To: <20260922-qrtr-multi-ep-v3-0-c00831e88957@oss.qualcomm.com>
 To: Manivannan Sadhasivam <mani@kernel.org>, 
@@ -67,19 +67,18 @@ Cc: linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org,
  Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>, 
  Juha-Matti Tilli <juha-matti.tilli@iki.fi>, 
  Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
- Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=4571;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=5742;
  i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
- bh=DT5YD9KTy297qpxKLqV6vZHXShu1pl5/Yf8kTL/Z9m0=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBqsoWqqaEGmIX1e1MOg+bhi/qVVyOX76+2krCmI
- ggELmaZBu6JATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCarKFqgAKCRBVnxHm/pHO
- 9fnSCACPxOdLmSmSN7FrB/o4IzSO5N+EKMM6HAibXYNODm5gQjXEjcGJL9rvwR29v1pY8JSOOb0
- 1TXJ2gowJHdaVJ6ufYFuO2yQmEmxu46Y2+643i1fX5UHXN795Grkm3UQ7VIJgA70FX668yHYM25
- 7HfC2tkXqOlVQKbmIEDRkj/NItVJ8dSx1Ttq6l7AFoph2u6ebEGESJh3mtjizT/DZZMn/YRHFKb
- UmjCC7IEsUKf8C4vt17Ndd+IQ1roaQ+hzeJWNgmnwYOfs3MylAtqsQbwYht293L2CKT3vSWL1iM
- slsOmXX5PgCaKNCwOmw09wE3BUt9A8vqjlaGEjbSiGdSUnAX
+ bh=SBSrI+qlLmBFZ+dE+vFKRI0DdSkol2nyOzoeOTlj9jg=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBqsoWpbuOyoQKV02+GoxJrFYPlSGJH68jOs7wMr
+ CDEg/wp0rSJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCarKFqQAKCRBVnxHm/pHO
+ 9RcNB/9Imo5XHaW0CoxAo1arRjZkVC9Pi5NdmD5TJnnRtZtHPqJukKAgUq+T1QMDJODb9T4jQRI
+ l1HYvNzc0DY5/RtMUbmyhv8150KdgqfHDZgSL5laDLOLSitqRXvR+Xu9PeND9KOdMb75JY1H7cn
+ ix7DaTI9v/5ViUY39bUs3cpiLeEaSBRxU68SJieioxEzQBp4PqX6Se/r7FC+qBHZNpesj+l+ZWJ
+ Nuc15UcBm3gzpQ05Nr3X3T9nQc06uVuyyOYxBlL9Tt4uxtVnDRmNmAg4/tugcW/dTC2EauUEuNI
+ 4u72wA8v1E398uOzTvT0FwX1FyGRVXBYLyIPMS6fzA/4EkBs
 X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-Endpoint-Received: by B4 Relay for
@@ -102,121 +101,157 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
-When two identical ath12k PCIe devices are connected to the same host, both
-advertise the WLFW service with the same service and instance id. The QMI
-lookup reports both servers to each device, so a device may connect to the
-firmware running on the other device.
+Currently, QRTR identifies each remote node by the value of the
+'src_node_id' field in the received packet and uses the node id as the key
+to store the node to the internal 'qrtr_nodes' radix tree.
 
-But now, QRTR provides each MHI endpoint a unique node id which is
-different from the node id announced by the device. So use the same id to
-pick the correct server. Add a get_qrtr_node_id() HIF callback that returns
-the node id derived from the MHI controller index and zero for transports
-that do not assign one. In the new_server callback, skip any service whose
-node id does not match. A node id of zero disables the check, so transports
-that do not assign one keep their current behavior.
+But this approach comes with a limitation. When more than one remote node
+share the same id, then QRTR can only add the first node to the radix tree
+and has to drop the successive nodes with the same node id as the 'key' in
+radix tree has to be unique. This prevents connecting identical Qcom PCIe
+WLAN devices to a single host at the same time.
 
-Tested-on: 2x WCN7850 hw2.0 WLAN.IOE_HMT.1.1-00018-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
-Tested-on: 1x WCN6855 ath11k + 1x WCN7850 ath12k
+To fix this limitation, allow the host QRTR to use the node id (nid)
+received from the endpoint driver during qrtr_endpoint_register() as the
+unique node id and use it as the 'key' for the internal radix tree. Also,
+store the received 'src_id' in a new 'qrtr_node->ep_nid' field and replace
+the 'ep_nid' with the unique 'nid' in the QRTR control packets if both
+differ i.e., an endpoint driver has passed a unique 'nid' during
+qrtr_endpoint_register(). To maintain symmetry, replace the 'nid' with the
+'ep_nid' while sending the packet back to the remote node if both differ.
 
-Tested-by: Juha-Matti Tilli <juha-matti.tilli@iki.fi>
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Currently, all QRTR endpoint drivers pass 'QRTR_EP_NID_AUTO' as the 'nid'
+during qrtr_endpoint_register(). So 'ep_nid' and 'nid' are same and the
+functionality is not changed.
+
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/hif.h |  9 +++++++++
- drivers/net/wireless/ath/ath12k/pci.c |  9 +++++++++
- drivers/net/wireless/ath/ath12k/qmi.c | 11 +++++++++++
- 3 files changed, 29 insertions(+)
+ net/qrtr/af_qrtr.c | 62 ++++++++++++++++++++++++++++++++++++++++++++++++------
+ 1 file changed, 55 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hif.h b/drivers/net/wireless/ath/ath12k/hif.h
-index 4de8667690e9..b8592c3d84e7 100644
---- a/drivers/net/wireless/ath/ath12k/hif.h
-+++ b/drivers/net/wireless/ath/ath12k/hif.h
-@@ -32,6 +32,7 @@ struct ath12k_hif_ops {
- 	void (*get_ce_msi_idx)(struct ath12k_base *ab, u32 ce_id, u32 *msi_idx);
- 	int (*panic_handler)(struct ath12k_base *ab);
- 	void (*coredump_download)(struct ath12k_base *ab);
-+	unsigned int (*get_qrtr_node_id)(struct ath12k_base *ab);
- };
+diff --git a/net/qrtr/af_qrtr.c b/net/qrtr/af_qrtr.c
+index 78347c937af7..6387b85a7a2c 100644
+--- a/net/qrtr/af_qrtr.c
++++ b/net/qrtr/af_qrtr.c
+@@ -118,7 +118,8 @@ static DEFINE_XARRAY_ALLOC(qrtr_ports);
+  * @ep_lock: lock for endpoint management and callbacks
+  * @ep: endpoint
+  * @ref: reference count for node
+- * @nid: node id
++ * @nid: node id assigned by the host QRTR
++ * @ep_nid: endpoint's own node id as received
+  * @qrtr_tx_flow: xarray of qrtr_tx_flow, keyed by node << 32 | port
+  * @qrtr_tx_lock: lock for qrtr_tx_flow inserts
+  * @hello_sent: hello packet send successful
+@@ -131,6 +132,7 @@ struct qrtr_node {
+ 	struct qrtr_endpoint *ep;
+ 	struct kref ref;
+ 	unsigned int nid;
++	unsigned int ep_nid;
  
- static inline int ath12k_hif_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
-@@ -162,4 +163,12 @@ static inline void ath12k_hif_coredump_download(struct ath12k_base *ab)
- 	if (ab->hif.ops->coredump_download)
- 		ab->hif.ops->coredump_download(ab);
+ 	struct xarray qrtr_tx_flow;
+ 	struct mutex qrtr_tx_lock; /* for qrtr_tx_flow */
+@@ -347,6 +349,7 @@ static int qrtr_node_enqueue(struct qrtr_node *node, struct sk_buff *skb,
+ {
+ 	struct qrtr_hdr_v1 *hdr;
+ 	size_t len = skb->len;
++	unsigned int dst_node;
+ 	int rc, confirm_rx;
+ 
+ 	mutex_lock(&node->ep_lock);
+@@ -369,10 +372,14 @@ static int qrtr_node_enqueue(struct qrtr_node *node, struct sk_buff *skb,
+ 	hdr->src_node_id = cpu_to_le32(from->sq_node);
+ 	hdr->src_port_id = cpu_to_le32(from->sq_port);
+ 	if (to->sq_port == QRTR_PORT_CTRL) {
+-		hdr->dst_node_id = cpu_to_le32(READ_ONCE(node->nid));
++		hdr->dst_node_id = cpu_to_le32(READ_ONCE(node->ep_nid));
+ 		hdr->dst_port_id = cpu_to_le32(QRTR_PORT_CTRL);
+ 	} else {
+-		hdr->dst_node_id = cpu_to_le32(to->sq_node);
++		/* Put back the endpoint's own node id */
++		dst_node = to->sq_node;
++		if (dst_node == READ_ONCE(node->nid))
++			dst_node = node->ep_nid;
++		hdr->dst_node_id = cpu_to_le32(dst_node);
+ 		hdr->dst_port_id = cpu_to_le32(to->sq_port);
+ 	}
+ 
+@@ -441,6 +448,32 @@ static void qrtr_node_assign(struct qrtr_node *node, unsigned int nid)
+ 	spin_unlock_irqrestore(&qrtr_nodes_lock, flags);
  }
-+
-+static inline unsigned int ath12k_hif_get_qrtr_node_id(struct ath12k_base *ab)
-+{
-+	if (!ab->hif.ops->get_qrtr_node_id)
-+		return 0;
-+
-+	return ab->hif.ops->get_qrtr_node_id(ab);
-+}
- #endif /* ATH12K_HIF_H */
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 6441927b5382..9b6108c1abdc 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -10,6 +10,7 @@
- #include <linux/pci.h>
- #include <linux/time.h>
- #include <linux/vmalloc.h>
-+#include <net/qrtr.h>
  
- #include "pci.h"
- #include "core.h"
-@@ -1491,6 +1492,13 @@ static int ath12k_pci_panic_handler(struct ath12k_base *ab)
- 	return NOTIFY_OK;
- }
- 
-+static unsigned int ath12k_pci_get_qrtr_node_id(struct ath12k_base *ab)
++/* Replace the node id in the control packet with 'node->nid', if both are
++ * different.
++ */
++static void qrtr_node_rewrite_ctrl(struct qrtr_node *node, unsigned int type,
++				   struct sk_buff *skb)
 +{
-+	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
++	struct qrtr_ctrl_pkt *pkt;
++	__le32 *nid;
 +
-+	return qrtr_host_node_id(ab_pci->mhi_ctrl->index);
++	if (node->nid == node->ep_nid)
++		return;
++
++	if (skb->len < sizeof(*pkt))
++		return;
++
++	pkt = (struct qrtr_ctrl_pkt *)skb->data;
++	if (type == QRTR_TYPE_DEL_CLIENT || type == QRTR_TYPE_RESUME_TX)
++		nid = &pkt->client.node;
++	else
++		nid = &pkt->server.node;
++
++	/* Rewrite only the endpoint's node id, not those of bridged nodes */
++	if (le32_to_cpu(*nid) == node->ep_nid)
++		*nid = cpu_to_le32(node->nid);
 +}
 +
- static const struct ath12k_hif_ops ath12k_pci_hif_ops = {
- 	.start = ath12k_pci_start,
- 	.stop = ath12k_pci_stop,
-@@ -1512,6 +1520,7 @@ static const struct ath12k_hif_ops ath12k_pci_hif_ops = {
- #ifdef CONFIG_ATH12K_COREDUMP
- 	.coredump_download = ath12k_pci_coredump_download,
- #endif
-+	.get_qrtr_node_id = ath12k_pci_get_qrtr_node_id,
- };
+ /**
+  * qrtr_endpoint_post() - post incoming data
+  * @ep: endpoint handle
+@@ -531,16 +564,30 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
  
- static enum ath12k_device_family
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 280e50a1f31d..e1e75cc9d144 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -9,6 +9,7 @@
- #include "qmi.h"
- #include "core.h"
- #include "debug.h"
-+#include "hif.h"
- #include <linux/of.h>
- #include <linux/firmware.h>
- #include <linux/of_address.h>
-@@ -3940,8 +3941,18 @@ static int ath12k_qmi_ops_new_server(struct qmi_handle *qmi_hdl,
- 	struct ath12k_qmi *qmi = container_of(qmi_hdl, struct ath12k_qmi, handle);
- 	struct ath12k_base *ab = qmi->ab;
- 	struct sockaddr_qrtr *sq = &qmi->sq;
-+	unsigned int node_id;
- 	int ret;
+ 	skb_put_data(skb, data + hdrlen, size);
  
-+	/* Identical devices advertise the same QMI services, so connect only to
-+	 * the QMI server on this device's node. A node id of 0 means the
-+	 * transport has not assigned a unique node id, so accept the server
-+	 * unfiltered.
-+	 */
-+	node_id = ath12k_hif_get_qrtr_node_id(ab);
-+	if (node_id && service->node != node_id)
-+		return 0;
+-	qrtr_node_assign(node, cb->src_node);
++	if (node->ep_nid == QRTR_EP_NID_AUTO)
++		WRITE_ONCE(node->ep_nid, cb->src_node);
 +
- 	sq->sq_family = AF_QIPCRTR;
- 	sq->sq_node = service->node;
- 	sq->sq_port = service->port;
++	if (node->nid == QRTR_EP_NID_AUTO || node->nid == cb->src_node)
++		qrtr_node_assign(node, cb->src_node);
+ 
+ 	if (cb->type == QRTR_TYPE_NEW_SERVER) {
+ 		/* Remote node endpoint can bridge other distant nodes */
+-		const struct qrtr_ctrl_pkt *pkt;
++		const struct qrtr_ctrl_pkt *pkt = data + hdrlen;
++		unsigned int server_node = le32_to_cpu(pkt->server.node);
+ 
+-		pkt = data + hdrlen;
+-		qrtr_node_assign(node, le32_to_cpu(pkt->server.node));
++		if (server_node != node->ep_nid)
++			qrtr_node_assign(node, server_node);
+ 	}
+ 
++	if (cb->src_node == node->ep_nid)
++		cb->src_node = node->nid;
++
++	if (cb->type == QRTR_TYPE_NEW_SERVER ||
++	    cb->type == QRTR_TYPE_DEL_SERVER ||
++	    cb->type == QRTR_TYPE_DEL_CLIENT ||
++	    cb->type == QRTR_TYPE_RESUME_TX)
++		qrtr_node_rewrite_ctrl(node, cb->type, skb);
++
+ 	if (cb->type == QRTR_TYPE_RESUME_TX) {
+ 		qrtr_tx_resume(node, skb);
+ 	} else {
+@@ -646,6 +693,7 @@ int qrtr_endpoint_register(struct qrtr_endpoint *ep, unsigned int nid)
+ 	mutex_init(&node->ep_lock);
+ 	skb_queue_head_init(&node->rx_queue);
+ 	node->nid = QRTR_EP_NID_AUTO;
++	node->ep_nid = QRTR_EP_NID_AUTO;
+ 	node->ep = ep;
+ 
+ 	node->hello_sent = false;
 
 -- 
 2.43.0
