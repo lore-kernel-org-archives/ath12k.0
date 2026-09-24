@@ -4,149 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 939E0C98304
-	for <ath12k@archiver.kernel.org>; Wed, 23 Sep 2026 20:46:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3215CC98304
+	for <ath12k@archiver.kernel.org>; Thu, 24 Sep 2026 05:26:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3Tutc0NA5XTcWaNPOzmZQGJ2sl+cDnPgadEfH3Im0nE=; b=rYV6skGMggrdwJS7OU+sePUfS5
-	FSNWy6/f8lq25bQliJbR+i/agxYehDwRf5HO7S4YQDysa5taQOCH0BA/Iyi2ISscyz5m/AKf8FQ7Q
-	CQIa4cPvxsrpdMxZF0xzoMAVgiuJCjpTmymf3Xx7tu0wo1d88gokckBJ8C7/Oloo4DlbSrzU2YVrX
-	KMvntmaSJe8PF5ELysGUxkKJGV/gOS+IwA55N7q7VlF5PZbGFjXwVgm36cVOiYfBfbTQ9A7szyCVs
-	3/6xTqDuXweh92C8Q+uZo/D+kfg7jI+QMvrwk3EwnIeMKJIlj6dysXSLWTbdJ1uz43Ax388ZNvDVP
-	GjSAoA1w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Message-ID:Date
+	:Cc:To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=9aa+X7OW5Qo3QiXoTwB67lDNGuw71uFdUI3jhShzYbc=; b=1iqij03zz5mMV8sBzAgM0BVBVA
+	QEqG4+jgV9RBrDo6cxxwwSPaWH78KhZ9PNfCMQIZyWdzKs5YkP2eBxvdEilZfKCPYrgYCRanDO8fN
+	eNq5r8W6xbGFYNYqNLAby2ojYDQ+MhsL6pDP2XmqMWFt82T3SI8hvjt4Vqk+meybzOXJ939Sx9+6c
+	03e6G634LD2JEVGZBRAT7wcw37rG6PgiWd5aPLdzp7WpU/Bq98b51+FjIop7pOLPG0OwyfgwVeWBl
+	dLZQyVAYO5mAOJygtw4A3GP8/Lg4KliLuBocxImCto0LvPpDjosze2vSDfKw50BNrNpeGIIE2/BeY
+	w9fSHxYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9Tqs-00000009UzT-0DAC;
-	Wed, 23 Sep 2026 20:46:02 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1x9byG-0000000A2jL-1pqF;
+	Thu, 24 Sep 2026 05:26:12 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9Tqq-00000009UyU-3cT8
-	for ath12k@bombadil.infradead.org;
-	Wed, 23 Sep 2026 20:46:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=3Tutc0NA5XTcWaNPOzmZQGJ2sl+cDnPgadEfH3Im0nE=; b=K9C4empOdZwl3/o8AI+16NTy1b
-	rK3ZxYyqFyJb5sKjZ/OB7MVTU8fxwa1r49kKho90HzUUGpjjuCwvsCG4aFJ4M0hUQdsdpdePHA3Ho
-	b8fu6Ld9SlSD0OhXLonhSyFI3v3wG8QSJ8k3TgrhP/W4G8M7tXCsSvAGWDOFjHXXqzqqhGMasOH2n
-	7BEe6n3207I58Z/SAQUriLfgahTtSrAVRc/JpEg+TWRmng0YbU3Cu0516LjtAWgX3bpgH1s6VeksP
-	AGiqzFRh78RoJCnzcMO1OtpYMZbIZ1ScSH2XSX0H9pRbtyQ94tgnno7rB1fuyP93/gNb7Zl5x1zwm
-	pfT6yfmQ==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x9Tqj-0000000FGej-13Fu
-	for ath12k@lists.infradead.org;
-	Wed, 23 Sep 2026 20:45:59 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68NJlGPB1027038
-	for <ath12k@lists.infradead.org>; Wed, 23 Sep 2026 20:45:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	3Tutc0NA5XTcWaNPOzmZQGJ2sl+cDnPgadEfH3Im0nE=; b=Qjq9375tWyx1Azbw
-	pU7nAiRp64qGgqWV/dF0paH4QDVPMhpy6LlVbXNHuWulmKxVPnmQAczVmvy4O3ZW
-	R5Ysm/A46KGAJy8hcre18XqkK74J0Lti77PTQCsaPbFadKYHGEaso74fcakI7tAw
-	6clam6mkIV2YoJhIqCYoeHEqNbz5C9i5Nr9gVwjD4PSRk7jarvzybt8DMjo836Fg
-	PkWSQ6QFR7CePx/wqjadkWXqZ+CCFiEJw+nund31xllW3eZiY8F6JelTx0VxjsLy
-	2T4mDERgjh1pi6+hUTZddVfTlHeDNzERre0NdqPOK6sE+D7Iacd4EAKwYMoY2N4P
-	3AkBDA==
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gvfjxsxay-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 23 Sep 2026 20:45:50 +0000 (GMT)
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-3284bbaa89dso862229eec.0
-        for <ath12k@lists.infradead.org>; Wed, 23 Sep 2026 13:45:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1790196350; x=1790801150; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=3Tutc0NA5XTcWaNPOzmZQGJ2sl+cDnPgadEfH3Im0nE=;
-        b=Ryutd/spgS+b2Nt6V8cgi9PWnt+3Oe9qnHF8fPTVY9Y4JYsuNk/gfqdVoUTEzky5KQ
-         WP4NwlYAZ9UBfLP6//MYGx/crVrpHAcSaTnFYYbiBbsbIOVv/szXye2+sr2UJv5lyXz5
-         dFAgBwjVEhMvNCzmxhDJfENdJWwPL7ap2YglD6WSjo4wd8KXwg0v8w0iC07AcRT61Zmm
-         xwmgwfDov+T9tZ5qmEXdU6qKR4q5daGXrS7IYwNcCOS/0OGUFzSzq1VyxY8HM86Cl4ps
-         XyqdxEV2bMlQjCAf/L4AzIfKUTv3cXn37dcnkkfqwLB425o4WBUGfRqTA/RCCOtm/k9Q
-         Fy5w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790196350; x=1790801150;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=3Tutc0NA5XTcWaNPOzmZQGJ2sl+cDnPgadEfH3Im0nE=;
-        b=v9D2A4+LehuMHqTrOgcrM+i9/fq+9jrTUOxqSi4Lm1ajUgVsSZUtONHkC5ZxYB/h1z
-         43gAFcGkRLhU7R0b4sV9Du/xLQ2OvskJiC/1sw68PrveKokhHoglKtikfxyhiiYUxNWY
-         ZdLMuh8mMfeUD6c86e80cg44ThkJkFLdzpmJJKfyahwTacCY2MdY+Ac7aWSmpoSU1JCk
-         fnMhWuLp6RVsLL9ktLR4reVF/GGahCt3B6d0m632qve0XJOiVgz6JwJIUl3NIu3tFPew
-         mHMbq+Y4aTiWtQVROqwDvzNCnhFQSKqdcA0DLDBulfpwxYhPz/wtnu0kZS8fgpwS2xlB
-         wg3Q==
-X-Forwarded-Encrypted: i=1; AKwUvBw5wtxKXQaCBajoFgmWWZuEPXJvreyKs77oYxJFiOnXBmBFNi4cCxvijMeiKt+ekn5PwdKOA18=@lists.infradead.org
-X-Gm-Message-State: AFuF++l1WIHrTFPb+yMNpZItJTkECdUEdFNtaAS7nqsesa/RHXE4Szyk
-	kGl+8LHSLKgedRbU2H5cnXP4jF7g6Fd8R9984WqmH8YADc9Gpshiq8uW2ijLF5eRnZefdkztdON
-	x83FhkoP8HFBgVEzeHAG4VGzEuLbEPFidUzVYoJ60IzQlGSKnpszJ1n9gQ49Nls7n+kDOOXFM
-X-Gm-Gg: AYBFou1SpeG6R1rHCrOGaGLG0qMMGDom45IbHxmFIAmFz8XtrhHnZztgDfnuGvgJgij
-	9uYsoC3O10kS+EdH+8jJUYzy++5gZ0ym72yuEC5vFC8g3n2JTBliIJYDIq9JGHk8/SHyxoZnIH8
-	Mwnx2YRkFfh7hLXr3x+3+K8iHNcTI5GrP4Yi0PDzwCRgrdF/FOSRCc0KCl/AXAtJFe+JKHaWfKB
-	WvIANqaJLtUtOTeI/fLy2F511Jr2iNwI3BozcRBoO2e93o5r1N3p3oE77a/CPAc0vOT4XoCEwNf
-	0idbL1hp9Y6UCORIDbAvBdWJhiEBldPE3ReKVphbKGojQY2NQQI+p/6fy1ig0gMSiRKXpTYNXt8
-	HZNKABjefl8AqoRRSArN9lvh7/TBOv7aEokMXxgzDzsY=
-X-Received: by 2002:a05:7300:f588:b0:33b:ae91:1e62 with SMTP id 5a478bee46e88-3400459996bmr221970eec.41.1790196349738;
-        Wed, 23 Sep 2026 13:45:49 -0700 (PDT)
-X-Received: by 2002:a05:7300:f588:b0:33b:ae91:1e62 with SMTP id 5a478bee46e88-3400459996bmr221954eec.41.1790196349075;
-        Wed, 23 Sep 2026 13:45:49 -0700 (PDT)
-Received: from [192.168.1.20] (33.sub-75-218-193.myvzw.com. [75.218.193.33])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-33e96e498f0sm7469110eec.27.2026.09.23.13.45.47
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 23 Sep 2026 13:45:48 -0700 (PDT)
-Message-ID: <8340ba71-cc37-4dbe-a82a-b88d27c0703c@oss.qualcomm.com>
-Date: Wed, 23 Sep 2026 13:45:46 -0700
+	id 1x9byE-0000000A2ip-3KTZ;
+	Thu, 24 Sep 2026 05:26:10 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 2EE1B41942;
+	Thu, 24 Sep 2026 05:26:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F404E1F00893;
+	Thu, 24 Sep 2026 05:26:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1790227570;
+	bh=9aa+X7OW5Qo3QiXoTwB67lDNGuw71uFdUI3jhShzYbc=;
+	h=Subject:From:To:Cc:Date:In-Reply-To:References;
+	b=JeQ8LM1R+8wSwiy5ilLkr6kJ9ENAQzecTY+o53tO1R1EK20yWpWKhkVpjrz7QErzs
+	 OhCasWIWxCFPLKWhqAaxgSspyoZvwTKUnLTJieSFagk/9EyQaI68gDoX0m8/VE4xCd
+	 E6/yyxAn8rcNsBRHgBDdWMr8O5n60rchNNt5yJU/IdMk9JS+k6mPSYf41OygD68tUO
+	 7dq12UAT0zFqXqX4nENy6j+VFGzhuX41TGs+ZxZQQ8JpbmnEUqrymxeTV0E+r4jhdm
+	 4dp6nEMwmqMw2aDlUdXRfLP+SXLOxgJOp0Ggjus3D7lEjD8sKYw+ZCewnLx/BRsFzC
+	 Fe6f/yfMkHWvQ==
+Subject: Re: [PATCH v2 1/4] net: qrtr: Allow the host QRTR to assign a unique node id
+From: netdev-bot+sashiko@kernel.org
+To: manivannan.sadhasivam@oss.qualcomm.com
+Cc: mani@kernel.org, davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
+ pabeni@redhat.com, horms@kernel.org, jjohnson@kernel.org,
+ linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org,
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org, andersson@kernel.org,
+ christopher.lew@oss.qualcomm.com, deepak.singh@oss.qualcomm.com,
+ raj.bhagat@oss.qualcomm.com, juha-matti.tilli@iki.fi,
+ jeff.hugo@oss.qualcomm.com
+Date: Thu, 24 Sep 2026 05:26:08 +0000
+Message-ID: <179022756849.2160803.17145163366235218595@kernel.org>
+In-Reply-To: <20260921-qrtr-multi-ep-v2-1-27dd80d841a0@oss.qualcomm.com>
+References: <20260921-qrtr-multi-ep-v2-1-27dd80d841a0@oss.qualcomm.com>
+X-sashiko-severity: High
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: remove duplicated STA state
- from link peers
-To: Aishwarya R <aishwarya.r@oss.qualcomm.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20260901085616.2959268-1-aishwarya.r@oss.qualcomm.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20260901085616.2959268-1-aishwarya.r@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: NY58hhQmxifSlZ23YOCQeWuiXpNz4MzA
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTIzMDA4MiBTYWx0ZWRfX0gLu1/IjqEL8
- Krtn3ea40LWWbxeI5LhR0NDRKqHkTlYGIGgsZR3vLN6qeCDcN4mJ77NhSzhjjt6F7Q2t8BOPgQ5
- hFrhAnPQseRKwEygnLWLs8faRpgnBA8cYoOXmwb+8Nz4IAfCyxfop2+tRBnOaJzXRaDQLCdWlTs
- 3Qg7n3woLQ0jCo7+S/pMzgq8IdLSfT2f1luFjKTQk86H2cO0+B/X0t6NmtKlEUZSxvLCi+xOwiO
- sUV6XLp/MmzPrqM6inD0TyglVwEWwYcObejFLSCjldWWLOx+EaIRATe8tEk/eSU/n9SkOdSYPdo
- nLxudY2v1m4HYytvP09FXnJ11yJl7xgyxAeg6dpsLDW696ZdSqFYiRl2P46lEBqzxpFylm53jFW
- eILR9bkTqOE6mUCuT2n855TjVuL41kY1rwuNv4MDp0LnNp31hyyMpjIzFdjuhlSZc2FvSiIlzBk
- JL/JgE3JfgRQ/WLI1pA==
-X-Proofpoint-GUID: NY58hhQmxifSlZ23YOCQeWuiXpNz4MzA
-X-Authority-Analysis: v=2.4 cv=NLpAaE6g c=1 sm=1 tr=0 ts=6ab43a7e cx=c_pps
- a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=AnolQpdaNwb4XK4FG+QP+g==:17
- a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
- a=bDFmln8m-5B1oVUy_N0A:9 a=QEXdDO2ut3YA:10 a=bBxd6f-gb0O0v-kibOvt:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTIzMDA4MiBTYWx0ZWRfX3LSFU3EtU8Kl
- VE3lIGmGBffQ4Y2Vh9SAHo7+BpTwoWP7/Y8HnASKUJwzAHV05KxCeoCZpxOIfBaI09SNfvz2PbH
- cDKxMgnpyxMc7UMg4LgH1fpGXMMHPc0=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-23_07,2026-09-21_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 bulkscore=0 adultscore=0 suspectscore=0 priorityscore=1501
- impostorscore=0 clxscore=1015 lowpriorityscore=0 malwarescore=0 phishscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609230082
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260923_214557_630415_5802488D 
-X-CRM114-Status: GOOD (  14.36  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,67 +74,342 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/1/2026 1:56 AM, Aishwarya R wrote:
-> ath12k_dp_link_peer currently carries state that is not inherently
-> link-specific. Both the station pointer and authorization state are
-> shared across the links belonging to the same logical peer or station,
-> yet are stored separately in each link peer.
-> 
-> This series moves ownership of these fields to structures matching their
-> actual scope:
-> 
->   * Store the station pointer only in ath12k_dp_peer.
->   * Store authorization state only in ath12k_sta.
-> 
-> Doing so eliminates duplicated state, reduces bookkeeping required when
-> the state changes, and makes the ownership model clearer.
-> 
-> Patch 1 removes the duplicate sta pointer from ath12k_dp_link_peer and
-> updates users to retrieve it through ath12k_dp_peer.
-> 
-> Patch 2 moves is_authorized from ath12k_dp_link_peer to ath12k_sta and
-> updates authorization handling accordingly.
-> 
-> Aishwarya R (2):
->   wifi: ath12k: store station pointer only in dp_peer
->   wifi: ath12k: move is_authorized flag to ath12k_sta
-> 
->  drivers/net/wireless/ath/ath12k/core.h        |  2 +
->  drivers/net/wireless/ath/ath12k/dp_htt.c      |  2 +-
->  drivers/net/wireless/ath/ath12k/dp_peer.c     | 29 ------------
->  drivers/net/wireless/ath/ath12k/dp_peer.h     | 17 +++++--
->  drivers/net/wireless/ath/ath12k/dp_rx.c       |  2 +-
->  drivers/net/wireless/ath/ath12k/mac.c         | 47 ++++---------------
->  drivers/net/wireless/ath/ath12k/peer.c        |  2 -
->  .../net/wireless/ath/ath12k/wifi7/dp_mon.c    |  2 +-
->  drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c | 15 +++---
->  drivers/net/wireless/ath/ath12k/wmi.c         |  2 +-
->  10 files changed, 36 insertions(+), 84 deletions(-)
-> 
-> base-commit: e07447e654476262558bee570f4cf456e2b32565
+Thank you for your contribution! Sashiko AI review found 6 potential
+issue(s) to consider.
 
-This series no longer applies, can you please rebase?
-If the conflict resolution is trivial make sure to carry forward the
-Reviewed-by tags.
+Critical: 0 · High: 3 · Medium: 3 · Low: 0 (1)
 
-Applying: wifi: ath12k: store station pointer only in dp_peer
-Using index info to reconstruct a base tree...
-M       drivers/net/wireless/ath/ath12k/dp_rx.c
-M       drivers/net/wireless/ath/ath12k/mac.c
-M       drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c
-M       drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-M       drivers/net/wireless/ath/ath12k/wmi.c
-Falling back to patching base and 3-way merge...
-Auto-merging drivers/net/wireless/ath/ath12k/wmi.c
-CONFLICT (content): Merge conflict in drivers/net/wireless/ath/ath12k/wmi.c
-Auto-merging drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-Auto-merging drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c
-Auto-merging drivers/net/wireless/ath/ath12k/mac.c
-Auto-merging drivers/net/wireless/ath/ath12k/dp_rx.c
-Recorded preimage for 'drivers/net/wireless/ath/ath12k/wmi.c'
-error: Failed to merge in the changes.
-Patch failed at 0001 wifi: ath12k: store station pointer only in dp_peer
+If you believe none of the issues are legitimate, please reply to each
+issue of Medium severity or higher and explain why the AI is wrong.
+If any of them are legitimate and you plan to respin, please let patchwork
+know by including "pw-bot: cr" as a separate line at the end of your reply
+(one such reply per series is enough).
 
+- [High] Incomplete node-id translation: QRTR_TYPE_RESUME_TX payloads are
+  not translated, so flow-control credits returned by the remote are…
+- [High] Lost routing entries for bridged (distant) nodes.
+- [High] The host-assigned node id is not validated and the
+  radix_tree_insert() failure is ignored, so the very failure mode the…
+- [Medium] node->ep_nid is latched unconditionally from the first
+  accepted packet's src_node (af_qrtr.c:567-568) with no requirement…
+- [Medium] The QRTR_EP_NID_AUTO sentinel ((-1) == 0xffffffff, which
+  include/uapi/linux/qrtr.h defines as QRTR_NODE_BCAST) can be…
+- [Medium] Unsynchronized one-time initialization of node->ep_nid.
 
+Pre-existing issues:
+- [Low] (Assessed as a false positive / hardening note only.)
+  qrtr_node_rewrite_ctrl() returns without rewriting when skb->len <…
 
+--
+
+net: qrtr: Allow the host QRTR to assign a unique node id
+
+This patch lets the host assign a unique node id at
+qrtr_endpoint_register() time and uses it as the qrtr_nodes radix tree key,
+while the id reported by the remote is kept separately in the new
+qrtr_node->ep_nid field. Received control packets and headers are rewritten
+to translate between the two ids when they differ.
+
+A few questions below about the translation and the routing changes.
+
+> diff --git a/net/qrtr/af_qrtr.c b/net/qrtr/af_qrtr.c
+> index 78347c937af76..ad62f3caede8b 100644
+> --- a/net/qrtr/af_qrtr.c
+> +++ b/net/qrtr/af_qrtr.c
+
+[ ... ]
+
+> @@ -347,6 +349,7 @@ static int qrtr_node_enqueue(struct qrtr_node *node, struct sk_buff *skb,
+>  {
+>  	struct qrtr_hdr_v1 *hdr;
+>  	size_t len = skb->len;
+> +	unsigned int dst_node;
+>  	int rc, confirm_rx;
+>  
+>  	mutex_lock(&node->ep_lock);
+> @@ -369,10 +372,14 @@ static int qrtr_node_enqueue(struct qrtr_node *node, struct sk_buff *skb,
+>  	hdr->src_node_id = cpu_to_le32(from->sq_node);
+>  	hdr->src_port_id = cpu_to_le32(from->sq_port);
+>  	if (to->sq_port == QRTR_PORT_CTRL) {
+> -		hdr->dst_node_id = cpu_to_le32(READ_ONCE(node->nid));
+> +		hdr->dst_node_id = cpu_to_le32(READ_ONCE(node->ep_nid));
+>  		hdr->dst_port_id = cpu_to_le32(QRTR_PORT_CTRL);
+>  	} else {
+> -		hdr->dst_node_id = cpu_to_le32(to->sq_node);
+> +		/* Put back the endpoint's own node id */
+> +		dst_node = to->sq_node;
+> +		if (dst_node == READ_ONCE(node->nid))
+> +			dst_node = node->ep_nid;
+> +		hdr->dst_node_id = cpu_to_le32(dst_node);
+>  		hdr->dst_port_id = cpu_to_le32(to->sq_port);
+>  	}
+
+[Severity: Medium]
+Can the QRTR_EP_NID_AUTO sentinel end up on the wire as a unicast
+destination here?
+
+qrtr_endpoint_register() sets node->ep_nid = QRTR_EP_NID_AUTO and inserts
+node->nid into qrtr_nodes right away for an explicit-nid endpoint, then
+schedules the HELLO work. node->ep_nid is only filled in later, by the
+first inbound packet in qrtr_endpoint_post().
+
+In that window a local sendmsg() to sq_node == node->nid reaches the data
+branch above, matches dst_node == READ_ONCE(node->nid) and emits ep_nid,
+which is still (-1). net/qrtr/qrtr.h has:
+
+    #define QRTR_EP_NID_AUTO (-1)
+
+and include/uapi/linux/qrtr.h has:
+
+    #define QRTR_NODE_BCAST		0xffffffffu
+
+so the destination node id transmitted is the broadcast id. Should both
+branches skip transmission (or defer) while ep_nid is still the sentinel?
+
+Also, node->ep_nid is read here with a plain load in the data branch while
+qrtr_endpoint_post() publishes it with WRITE_ONCE(). Was the missing
+READ_ONCE() on this read intentional, given the CTRL branch just above uses
+one?
+
+> @@ -441,6 +448,32 @@ static void qrtr_node_assign(struct qrtr_node *node, unsigned int nid)
+>  	spin_unlock_irqrestore(&qrtr_nodes_lock, flags);
+>  }
+>  
+> +/* Replace the node id in the control packet with 'node->nid', if both are
+> + * different.
+> + */
+> +static void qrtr_node_rewrite_ctrl(struct qrtr_node *node, unsigned int type,
+> +				   struct sk_buff *skb)
+> +{
+> +	struct qrtr_ctrl_pkt *pkt;
+> +	__le32 *nid;
+> +
+> +	if (node->nid == node->ep_nid)
+> +		return;
+> +
+> +	if (skb->len < sizeof(*pkt))
+> +		return;
+
+[Severity: Low]
+This isn't a bug introduced by this patch, but the minimum-size check in
+qrtr_endpoint_post() only covers two types:
+
+	if ((cb->type == QRTR_TYPE_NEW_SERVER ||
+	     cb->type == QRTR_TYPE_RESUME_TX) &&
+	    size < sizeof(struct qrtr_ctrl_pkt))
+		goto err;
+
+so an undersized QRTR_TYPE_DEL_SERVER or QRTR_TYPE_DEL_CLIENT takes the
+early return above and skips the rewrite while still being delivered.
+The truncated payload fields read as zero in qrtr_ns_worker(), so the
+outcome matches the pre-patch behaviour, but would it be worth rejecting
+undersized DEL_SERVER/DEL_CLIENT the same way NEW_SERVER already is?
+
+> +
+> +	pkt = (struct qrtr_ctrl_pkt *)skb->data;
+> +	if (type == QRTR_TYPE_DEL_CLIENT)
+> +		nid = &pkt->client.node;
+> +	else
+> +		nid = &pkt->server.node;
+> +
+> +	/* Rewrite only the endpoint's node id, not those of bridged nodes */
+> +	if (le32_to_cpu(*nid) == node->ep_nid)
+> +		*nid = cpu_to_le32(node->nid);
+> +}
+> +
+>  /**
+>   * qrtr_endpoint_post() - post incoming data
+>   * @ep: endpoint handle
+> @@ -531,16 +564,29 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
+>  
+>  	skb_put_data(skb, data + hdrlen, size);
+>  
+> -	qrtr_node_assign(node, cb->src_node);
+> +	if (node->ep_nid == QRTR_EP_NID_AUTO)
+> +		WRITE_ONCE(node->ep_nid, cb->src_node);
+
+[Severity: Medium]
+Is there anything here that ties this first packet's src_node to the
+endpoint's own node, rather than to a bridged node the endpoint carries?
+
+If the first accepted packet has a bridged source B, ep_nid becomes B for
+the lifetime of the link, and no later path corrects it. After that,
+qrtr_node_enqueue() addresses control packets to B, data addressed to
+node->nid is rewritten to B, and packets from the endpoint's real id E are
+neither translated (E != ep_nid) nor inserted into qrtr_nodes by the new
+guard below. Should this latch only accept the id seen in the remote's own
+HELLO?
+
+[Severity: Medium]
+This is a check-then-set outside any lock, while the sibling field is
+written under qrtr_nodes_lock in qrtr_node_assign():
+
+	spin_lock_irqsave(&qrtr_nodes_lock, flags);
+	radix_tree_insert(&qrtr_nodes, nid, node);
+	if (node->nid == QRTR_EP_NID_AUTO)
+		WRITE_ONCE(node->nid, nid);
+
+qrtr_endpoint_post() is entered without serialization from
+net/qrtr/tun.c:qrtr_tun_write_iter():
+
+	ret = qrtr_endpoint_post(&tun->ep, kbuf, len);
+
+Two concurrent writes to the same /dev/qrtr-tun fd can both observe the
+sentinel and both store, with different src_node values.
+
+There is a second ordering question: ep_nid is published before
+qrtr_node_assign() sets node->nid, so can a concurrent caller see
+ep_nid == E while node->nid is still QRTR_EP_NID_AUTO and then execute
+
+	if (cb->src_node == node->ep_nid)
+		cb->src_node = node->nid;
+
+delivering src_node 0xffffffff, or have qrtr_node_rewrite_ctrl() stamp
+0xffffffff into a NEW_SERVER/DEL_SERVER/DEL_CLIENT payload?
+
+> +
+> +	if (node->nid == QRTR_EP_NID_AUTO || node->nid == cb->src_node)
+> +		qrtr_node_assign(node, cb->src_node);
+
+[Severity: High]
+Does this stop learning routes to bridged (distant) nodes?
+
+Previously every src_node was inserted into qrtr_nodes unconditionally, and
+qrtr_node_assign() inserts the key regardless of node->nid:
+
+	spin_lock_irqsave(&qrtr_nodes_lock, flags);
+	radix_tree_insert(&qrtr_nodes, nid, node);
+	if (node->nid == QRTR_EP_NID_AUTO)
+		WRITE_ONCE(node->nid, nid);
+
+With the new guard, once node->nid == E a packet with src_node == B
+(B != E) inserts nothing unless it happens to be QRTR_TYPE_NEW_SERVER. Then:
+
+  - qrtr_sendmsg() replying to sq_node == B hits the
+    qrtr_node_lookup() failure path and returns -ECONNRESET
+  - qrtr_send_resume_tx() for confirm_rx data received from B does:
+
+	node = qrtr_node_lookup(remote.sq_node);
+	if (!node)
+		return -EINVAL;
+
+    so the bridged sender never gets its credit back
+
+  - the name service cannot answer NEW_LOOKUP/DEL_* traffic from B
+
+This path is reached with the existing endpoint drivers that all pass
+QRTR_EP_NID_AUTO, since node->nid is set from the first packet. Does that
+match the commit message statement?
+
+    Currently, all QRTR endpoint drivers pass 'QRTR_EP_NID_AUTO' as the
+    'nid' during qrtr_endpoint_register(). So 'ep_nid' and 'nid' are same
+    and the functionality is not changed.
+
+>  
+>  	if (cb->type == QRTR_TYPE_NEW_SERVER) {
+>  		/* Remote node endpoint can bridge other distant nodes */
+> -		const struct qrtr_ctrl_pkt *pkt;
+> +		const struct qrtr_ctrl_pkt *pkt = data + hdrlen;
+> +		unsigned int server_node = le32_to_cpu(pkt->server.node);
+>  
+> -		pkt = data + hdrlen;
+> -		qrtr_node_assign(node, le32_to_cpu(pkt->server.node));
+> +		if (server_node != node->ep_nid)
+> +			qrtr_node_assign(node, server_node);
+>  	}
+>  
+> +	if (cb->src_node == node->ep_nid)
+> +		cb->src_node = node->nid;
+> +
+> +	if (cb->type == QRTR_TYPE_NEW_SERVER ||
+> +	    cb->type == QRTR_TYPE_DEL_SERVER ||
+> +	    cb->type == QRTR_TYPE_DEL_CLIENT)
+> +		qrtr_node_rewrite_ctrl(node, cb->type, skb);
+> +
+>  	if (cb->type == QRTR_TYPE_RESUME_TX) {
+>  		qrtr_tx_resume(node, skb);
+>  	} else {
+
+[Severity: High]
+Should QRTR_TYPE_RESUME_TX also be translated here?
+
+qrtr_node_enqueue() keys the flow on to->sq_node, i.e. the host assigned
+node->nid:
+
+qrtr_tx_wait():
+	unsigned long key = (u64)dest_node << 32 | dest_port;
+
+but it puts node->ep_nid on the wire as hdr->dst_node_id. The remote echoes
+its own view of the destination back in RESUME_TX, which is ep_nid; the
+host does the same thing in qrtr_send_resume_tx():
+
+	pkt->cmd = cpu_to_le32(QRTR_TYPE_RESUME_TX);
+	pkt->client.node = cpu_to_le32(cb->dst_node);
+
+RESUME_TX is not in the list above, and qrtr_tx_resume() consumes the raw
+payload:
+
+	u64 remote_node = le32_to_cpu(pkt->client.node);
+	u32 remote_port = le32_to_cpu(pkt->client.port);
+	...
+	key = remote_node << 32 | remote_port;
+	flow = xa_load(&node->qrtr_tx_flow, key);
+
+With node->nid != node->ep_nid the lookup uses ep_nid << 32 | port while
+the flow was stored under nid << 32 | port, so flow->pending is never
+reset. Once QRTR_TX_FLOW_HIGH messages are outstanding, does every further
+send then block indefinitely in qrtr_tx_wait()?
+
+	ret = wait_event_interruptible_locked_irq(flow->resume_tx,
+						  flow->pending < QRTR_TX_FLOW_HIGH ||
+						  flow->tx_failed ||
+						  !node->ep);
+
+There is no timeout, and flow->tx_failed is only set on transmit failure.
+This would be hit by ordinary QMI bring-up traffic to an MHI endpoint once
+that endpoint registers with a host assigned nid.
+
+> @@ -646,6 +692,7 @@ int qrtr_endpoint_register(struct qrtr_endpoint *ep, unsigned int nid)
+>  	mutex_init(&node->ep_lock);
+>  	skb_queue_head_init(&node->rx_queue);
+>  	node->nid = QRTR_EP_NID_AUTO;
+> +	node->ep_nid = QRTR_EP_NID_AUTO;
+>  	node->ep = ep;
+
+[Severity: High]
+Now that the host supplied nid is authoritative, should the insertion
+failure be propagated out of qrtr_endpoint_register()?
+
+qrtr_node_assign() drops the return value and commits node->nid anyway:
+
+	spin_lock_irqsave(&qrtr_nodes_lock, flags);
+	radix_tree_insert(&qrtr_nodes, nid, node);
+	if (node->nid == QRTR_EP_NID_AUTO)
+		WRITE_ONCE(node->nid, nid);
+	spin_unlock_irqrestore(&qrtr_nodes_lock, flags);
+
+radix_tree_insert() does not overwrite, so on -EEXIST the key keeps
+pointing at a different node while the new node believes it owns nid;
+-ENOMEM behaves the same. qrtr_endpoint_register() then returns 0 and the
+driver is never told its requested id was rejected.
+
+The colliding key can come from the remote: a packet with a matching
+src_node while node->nid is still AUTO, or a NEW_SERVER payload whose
+server.node matches, both of which are full 32-bit values from the v1
+header:
+
+	if (server_node != node->ep_nid)
+		qrtr_node_assign(node, server_node);
+
+After that, the new guard
+
+	if (node->nid == QRTR_EP_NID_AUTO || node->nid == cb->src_node)
+		qrtr_node_assign(node, cb->src_node);
+
+prevents any later recovery insertion, so qrtr_node_lookup(nid) keeps
+resolving to the wrong node for the endpoint's lifetime. Isn't that the
+same silent-drop failure mode the commit message says this change removes?
+
+-- 
+Sashiko AI review · https://netdev-ai.bots.linux.dev/sashiko/#/patchset/20260921-qrtr-multi-ep-v2-0-27dd80d841a0%40oss.qualcomm.com
 
