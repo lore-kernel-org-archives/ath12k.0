@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AE06C98306
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19DADC9830D
 	for <ath12k@archiver.kernel.org>; Fri, 25 Sep 2026 05:11:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,122 +12,123 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=z5+0mAmKxUM1XeRLsm139VMveExpHBAiGp2IilLfPQE=; b=VgWjrJqCscLkcVqhB7AooDv4v+
-	FMNtbAv2hKMRLKSl47Gu5H4Y6emIOFQ/U0PZyk/ls1jXXeFVXVTLelAVqAvUTSP1gR0+dxu8vZHgJ
-	jdz31dWO/vYe75FW3zJnyQyVlqGpOMwRVGC0qdi8+eGQZiuZb23oXFzyAImeyeue+VoPxa+1ksm3L
-	xjFr1q+E4fBPPFklvrqjgMV9Ozeuw9vSw6NiIuDapmiiNeTepAa5rA2rwAMkwmRypO4LoUfBQfhob
-	aGWbf+DZR3OLzRhiWYT9Km3DWTqK1t6+2dJfDeIA7+6oiu1yQ0Bo9dbmuEWQB7SUJqqGkDC8CWAlG
-	hIWg1vtA==;
+	bh=wVHTqP8zfo0aIiUJzfx87sJgU+I1m7auf3WAygPSkaI=; b=lXnvzpxg9djiESryI9BeutR0Me
+	RTBEPlz5ZO5l4z2pyPhdkpxj38o9SGuJnzrCeBoGlx6AeB2mq3RMkAbrvESzXbDeTby0itflNpF9h
+	XGzd0mhRQWZx9Cx2S/yrgFmaLhjOsEeiGbuurVzOYkyYIW+N2eUFeBsdfORslYcAmjUHgu80YE8Th
+	bZBWA525ScKx9xcrNajfw3sx44sBEOzXltYDAwicHChIw13KguZAoit6igHK15h+zHp7Cp0buUEeq
+	I3FZAP8NO/5ekjmacMd70QfFfiCv75I0p45AYG+qNZr9Fj+U/WrXgbee0AX/STK3WIdj0BNsGD7/B
+	OHLLIOmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9yD5-0000000Cfpq-3afa;
+	id 1x9yD5-0000000Cfpi-3Eub;
 	Fri, 25 Sep 2026 05:10:59 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9yD3-0000000Cfon-24DV
+	id 1x9yD3-0000000Cfof-1pUo
 	for ath12k@lists.infradead.org;
-	Fri, 25 Sep 2026 05:10:59 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68P4YTg23736784
+	Fri, 25 Sep 2026 05:10:58 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68P4Z3GK1194765
 	for <ath12k@lists.infradead.org>; Fri, 25 Sep 2026 05:10:57 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=z5+0mAmKxUM
-	1XeRLsm139VMveExpHBAiGp2IilLfPQE=; b=htmiuO7BQRoqlLcpux8G5+qV0LU
-	3GsGtNbAuwWkUvyvsTYaAgnPanCHyBGo/ulJQpY7a1boW7AwpotEIKKC6G2/IgMp
-	3/TaXIjt212ymbilfcUBC2iURnsUggXFYnMswVC1r4/AiWoElMiQrE5J22ckRXLA
-	xll7++/GZE/cS2TgW9eyjhNyoUc+kkJuA3v2TVZLIcvDp1HwBXkkBZcKfjV8tRXk
-	QmEmIUvHKMjeYDDVK3h1KhiDG6mvCrsjcauLl4pcu+MwOiDAglcY8qEc/1gO0xJX
-	uWpeOEMr43O09AGVx+jdU7wWItFdcckTvNOKXmw7miF7irTNMLsguOwLcqQ==
-Received: from mail-dl1-f69.google.com (mail-dl1-f69.google.com [74.125.82.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gw68e2s2a-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=wVHTqP8zfo0
+	aIiUJzfx87sJgU+I1m7auf3WAygPSkaI=; b=fCIB1si8FDu+06SeCamYHf0lbe/
+	NgbW3vFl+uJ2dN/xO2WXZsg13gA6+hDhME7lLPGReDWd1SELQLF8G9bakIvJdYHL
+	L0WqkkqUeKAcnyx0LtNFkGMStHkQTI85Yb+IF/h+zf/veJjoB5gCJNGj9aajCXgk
+	IZbr+3m2opJ3C1yWzrPAIZnN4FeEk9/tKQwiDe9/mMCK6hPTD/4SEflGU3VH4Wsu
+	E9mYdngnr9Tl7TVxeIn1F3v1dmBvZSBcTM017Kwg3EctOSHJpq1qSmaChBcRYeLu
+	M/XQU+1YDn4U0gcK1D62mLeOSOnHM3FLU613djmbEIoMAb5d9qy/ARkSn+g==
+Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gw874j3cf-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
 	for <ath12k@lists.infradead.org>; Fri, 25 Sep 2026 05:10:56 +0000 (GMT)
-Received: by mail-dl1-f69.google.com with SMTP id a92af1059eb24-1438719cc1eso759489c88.0
+Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-32b8c2b30c4so848691eec.1
         for <ath12k@lists.infradead.org>; Thu, 24 Sep 2026 22:10:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=oss.qualcomm.com; s=google; t=1790313056; x=1790917856; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=z5+0mAmKxUM1XeRLsm139VMveExpHBAiGp2IilLfPQE=;
-        b=aTInVMHnDhYx5LUkb3JhIUhgpRg5Zob5GzVZaQBXZlcdSE7LfmI0HGDQS1q6/ZHFd/
-         Vb/zRz4YDFzhrykNi4HAqFDCYbDfCw2F9TXzkQtjA577Bbx0ZSBYkLeWdoH8mOhX0XBB
-         Y8aRAQEtzAX9WLPr5Rt21Ku4u3coidpFvx/l9ZYW18VByRXbOu1Tm1obzb14kZ2XO+7P
-         td5gKbPT3KWjp7+6SwWqgz7cPceNJGHGMvc2O4sxgmy9TEaU+w2dHrIh47dRgJmhg2J1
-         il1HgpE36bs+nTO+2S2Kba5fxz2Gqe8Nm8UHHDvsVgmWYD8PxEtO09RPeqR1iW4N5539
-         o1ZQ==
+        bh=wVHTqP8zfo0aIiUJzfx87sJgU+I1m7auf3WAygPSkaI=;
+        b=LnTz5JW1SiezxVF9utEHTVlZRH1c1n1WwB7kLhq2C35qUr2e5GeWILOr3bB3AY4sGo
+         /BPWmNm/VKg3oVGncahvEwD4tGTcqAuy+oWaOvskGBTwKx8DTv/0B7tsB5cc58wQOGWE
+         0lU+9mMYtxyzrKGV7Dr1IdXP2UUFYRJcT/p4sa4QJk/khJB60jxLoF3GQh+3dDaF+cIP
+         n4k9ZmmuNIhYjf5pUh0h1gEQJN0BLJxx60kkS3L7TcbfZxn40Ty4al0mwqhYwQB+uXZg
+         g88rx/rMYVxTHbz8H89C6uEXDeEb+sCWrOLPsX2MbFgwugBUbcXV695d7YxZFxgjfm0z
+         CGpg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20260707; t=1790313056; x=1790917856;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=z5+0mAmKxUM1XeRLsm139VMveExpHBAiGp2IilLfPQE=;
-        b=XgRRmZK1aIi3Llds6zNgQZKuq1UFcED/Hchayne+bHeBo5CFERmJHgbdr96uKTF3sC
-         Mjgy97y3sV6hDjf5WfdmOoAQ9cLm1Ff75pbOLWzw1WSBvztPYQVQBlPIQSitpZdRMPuO
-         9uo/oeODWzdQhNfFB1ucKMdFHXB45Zl/nBIYt6/0K94fsrtD6EGE/g66MIyTl56j5LqA
-         Oku1aL36ep6qt4rBfsaOuJRwa+oQwFxVeDdvoYGRPNG/etQevaqE1nSVq1C+ouFh4Eqg
-         IQ2fguwsRHGcbq4NxODVGZ53TjslZgPkrfFvVO06OtJ5DX+PJ8XsbcZS/S1yAJ0Y4gAA
-         +qcA==
-X-Gm-Message-State: AFuF++kGSHsIe+YZefyloqGLbXw8TQDKK8GwuHRnS43PaQi7UgWez3wz
-	kpLm/Q4F6qLsRMuVazH+p07uUiWjYzj4AFaDTkQoClV0BUbDOoKT2WrWE02Frrcs8k8dbH/hMWe
-	BqZDAZUQ1is0tchswYUQHUmv1QEqvdjHg9qmcjHIlg3/rfmKzswZHnuVWZs4B1F6b83N+jiJw
-X-Gm-Gg: AYBFou09+sY6nXSFLGASKTJL8yLHH3d7zarfG3OB5PhP0eOJAsPJK7WrBUxX+s286XX
-	Fe0DOcEz9D7lvbBTlvl8lGjSRoIhVBF+zKoaknXeenAjRXF4R7VmfTt9mPDhX9yHoAfX5W/ZQWO
-	gX6k0n82bwUUSYwAi3UjvCENZf+RS2dVw/6vJpIDtQnwzmslpBP4W4jEST2m8XN9vB3a8kKDsZD
-	kZ5LJrC0hFfsAvI+IEZ5PlmxDQ3QNSWEHAo94w+bpkhIqrjrJT7u+OhZ7eFJshJxLjRmty7R5Gi
-	NcGHRKAb8Ey+ft3EcfTGiwsksX4Amd02LQtPMRVOVGezzhK1kOYAXqANhd97osU+2z9XuzhRHI9
-	6mbtQcqsTH+bRVbE4ucrDgGqKsS85vfrEiBZKRKIAjgn9HjdYQD973XUTjIzGtjmWxupBWbZdaG
-	4YQUk4s5dsdn6VHQ==
-X-Received: by 2002:a05:7022:b042:20b0:143:8829:5fbf with SMTP id a92af1059eb24-14503fdf3b2mr3682101c88.28.1790313055961;
-        Thu, 24 Sep 2026 22:10:55 -0700 (PDT)
-X-Received: by 2002:a05:7022:b042:20b0:143:8829:5fbf with SMTP id a92af1059eb24-14503fdf3b2mr3682077c88.28.1790313055203;
-        Thu, 24 Sep 2026 22:10:55 -0700 (PDT)
+        bh=wVHTqP8zfo0aIiUJzfx87sJgU+I1m7auf3WAygPSkaI=;
+        b=i9LXCI9XPgurg4eVgIWPj5aRBEFKH65rcoIj+YED5RGnmbLS3lpFIaggTryd+SjivE
+         w7wtyR4+bXedA9jF6PQjsJeLPWIGHtGABwcFQSkgN5/abnWmBdDMNFJbwLdhWOx0vgPs
+         h1q0W5TBzsiFCCkwn2nDsqM5vpW2WkFAzQKyyjCApWJL4QKNIKnsuhgHjqHWlXs7UyZD
+         TZIQOQAOgsrDI3UNeZCQqFi5aebNjtWhzxYWg6tJH1Q6JdTaSUT1HZ0MKhj1EodUQ/TN
+         UC6OXzh3nVw9/wvBzCoCfOqszNPcIxR0a5xwggYX+pYhAkEHBVVStUBn2GWlenkV1Fxs
+         YGwg==
+X-Gm-Message-State: AFuF++lPIT56KPK4qWakM4u7xvvbhTSP6BXuZnrjoI02EjkgXKwbMo2k
+	SzlK/Md+afjyxTNyPh2oHIn7/JLg36nCFzN087FKm6NOm1DmawSCXjxlws9f4iv2NgT9NUzvr76
+	QrLgW6ByzaPiifDEI3gh+adXYe1TFW7qnvkpcEi/4mqrDMa/wtHemivnzThd1kFN/9ZKOjhPQ
+X-Gm-Gg: AYBFou1LHDxT2q/V3vpL4GdGD3hR5hBhQ22vr2Oa9yeomD0pj+MoJGzEuRSUSjMHoYo
+	whdqOLv3se9fEWF4DHSXoXPQy3NkPOq3ewFhSlCGbjR/d4NEGgT3Q3RdViKzeJftel8ZCO5KUMh
+	8BJnOL4gWn8ma/CS56Te4QHrW3EFHHqFOktbhmvlegPDmmEyM3KQFNQZ5tirBhxciLh/t2s9Z03
+	noBWTuqG6Tf/pPpAffLMoBmAa+TOjoEiuTRPPQGEAl2lty41IPnLFNqrBvJxooBNP24b0N22bWz
+	w9jqhaS7V25xTOW8a2C6EQ4CQnmskzuaC9jJM/Mm9kz3YFCM3pcCUuyGXEmCps1fif6CzGXhZ7H
+	hBxVjhYL5LP3H9jer2PyMnYrDAE+nHUBuII1KS5PHhEr8F4q/GZS4GgIwV6ba11xcJTrZkvET36
+	8z3n7sz1VxWzpsLg==
+X-Received: by 2002:a05:701b:4286:10b0:143:2968:564d with SMTP id a92af1059eb24-14503fde4dcmr3781998c88.27.1790313053927;
+        Thu, 24 Sep 2026 22:10:53 -0700 (PDT)
+X-Received: by 2002:a05:701b:4286:10b0:143:2968:564d with SMTP id a92af1059eb24-14503fde4dcmr3781901c88.27.1790313051374;
+        Thu, 24 Sep 2026 22:10:51 -0700 (PDT)
 Received: from hu-aisr-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-145ac67c505sm2955163c88.5.2026.09.24.22.10.53
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-145ac67c505sm2955163c88.5.2026.09.24.22.10.47
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 24 Sep 2026 22:10:54 -0700 (PDT)
+        Thu, 24 Sep 2026 22:10:49 -0700 (PDT)
 From: Aishwarya R <aishwarya.r@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Aishwarya R <aishwarya.r@oss.qualcomm.com>
-Subject: [PATCH ath-next v2 2/2] wifi: ath12k: move is_authorized flag to ath12k_sta
-Date: Fri, 25 Sep 2026 10:40:36 +0530
-Message-Id: <20260925051036.2838210-3-aishwarya.r@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, Aishwarya R <aishwarya.r@oss.qualcomm.com>,
+        Harsh Kumar Bijlani <harsh.bijlani@oss.qualcomm.com>
+Subject: [PATCH ath-next v2 1/2] wifi: ath12k: store station pointer only in dp_peer
+Date: Fri, 25 Sep 2026 10:40:35 +0530
+Message-Id: <20260925051036.2838210-2-aishwarya.r@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260925051036.2838210-1-aishwarya.r@oss.qualcomm.com>
 References: <20260925051036.2838210-1-aishwarya.r@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTI1MDAyMCBTYWx0ZWRfX1eh1gdm9tgG2
- mZr0+vjSHvvN8D0kN3uYiXEdFkULS4Ho+xfAGreT9LEVGKwUm+qyn2f5mcq5HLHDoQd54IQ89nj
- zsAxgApUbFTKOQplR50knJuiMKADoEYQDIVrIpsfN+vx4+mexZtrsxBCZ2Kpyu42W/0ckJvfkHe
- lyaGFUckmbTd0ee/XuCpRkt/Y7FQpWgejsVr5K5Gvp2cljP15l4hcWV6mjYOTBMKj0zG1qJ+gxn
- rkExYVRLMIj0y2jrPzVKbEVDcRmj/ix53GLJzI3CRB1Dt1yZxaSDx8vzjA5Qd35/RVT3HNCAOtH
- RFK7U04+if2+tKF6nMmrlJJ6GZBG4Evj0nocJL6umcTBLAAKqK//Q2f8WHf9t6QIJpjeUB6ScvE
- pfE1hLU2t8PFNC6/SHuSvXrad0fJUYUc5Qz6nguvCtdAjHg7Xu1z1OBqt8Rt59AI4/WNUxMi8Dz
- Fp/NAM92fvaLyZspVmQ==
-X-Proofpoint-GUID: N7I1KezEa3u2IEHg-64zAAMYrGLK9nsk
-X-Proofpoint-ORIG-GUID: N7I1KezEa3u2IEHg-64zAAMYrGLK9nsk
-X-Authority-Analysis: v=2.4 cv=XawcX455 c=1 sm=1 tr=0 ts=6ab60260 cx=c_pps
- a=kVLUcbK0zfr7ocalXnG1qA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Proofpoint-ORIG-GUID: NCak4TC5XgjX_mP74TESdJhE8-29Bi_Q
+X-Authority-Analysis: v=2.4 cv=MI71C8Zl c=1 sm=1 tr=0 ts=6ab60260 cx=c_pps
+ a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22 a=EUspDBNiAAAA:8
- a=P8DYBBCEK76YGRFjgHgA:9 a=vr4QvYf-bLy2KjpDp97w:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTI1MDAyMCBTYWx0ZWRfXwt0X1hc+e49R
- xq2tzR2WpN2xsDzUhB8di8bPXbhNqud8TA8pg/fm+lyOsHujwaDodQw08JGX9f5o7uWYkgwQ4RU
- 6Ki8AGcdQkRTsQ6AMNrE+1J6VpXwKAw=
+ a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8
+ a=5RRWBY4WAAAA:8 a=cu01E5ucpjk0LvgyI4cA:9 a=6Ab_bkdmUrQuMsNx7PHu:22
+ a=drtMOSl5Q_Tsf-UZi3mY:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTI1MDAyMCBTYWx0ZWRfXxgbA9l1pj54F
+ +zQZI7D2KWaFyJYDvxexl21mpyQ80//Ctw1VILtRaUXaU9cbyfGVfcF4Ja1tZtx6tKYxLdh4CDd
+ 5t15/z1SXI81P41WFTKvjQRuGXBTKbsWE/aZgT/b77m+OloxTnkfQk4CjBWRAQWFTKhXNdU9XhC
+ Vp204GUCr9BGT4c8u1rGycDh6rQs1vK3GoILIDULt+2FTxfbwR9xWHjZ5z0beBNt4xc2Q0fLn84
+ HPOnaVLejjJjFt5b0q9P3zQVDjsQVtfxq3QNMvOSJe0p9fpNU+i/+WiAaDvjOzS/3IDjQ0QnzS6
+ zC2iEDMvjUAidOPUBUtMPYZVU71fvM0IRIuiPSyyMaXhM6PBrfzOPtWLixpbQbismHQqWzMvDfU
+ 4VX3HcWQ93+H1GZ+Yt9ErFapIxWYkSGvPyNcgARnF+ZwiUeWi1/guTpLwmCT21gZiA+g+YoAv23
+ J4pwH2vnkTEr6ljxvOg==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTI1MDAyMCBTYWx0ZWRfX5n4qiuqlt3ku
+ MEtyJP2pfdrf0UB4Ts0xbSX4Q7EX6mg+zOD8v5yOt7DnAGO/PDgltnHfR54zh/tDlJTDfkkaejX
+ ln3oj9ZJMMgWz0OApD4A9JMZn6EWs90=
+X-Proofpoint-GUID: NCak4TC5XgjX_mP74TESdJhE8-29Bi_Q
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-09-25_02,2026-09-21_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 suspectscore=0 spamscore=0 impostorscore=0 bulkscore=0
- phishscore=0 priorityscore=1501 malwarescore=0 adultscore=0
- lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2609040000
- definitions=main-2609250020
+ suspectscore=0 malwarescore=0 clxscore=1015 spamscore=0 priorityscore=1501
+ impostorscore=0 phishscore=0 lowpriorityscore=0 adultscore=0 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609250020
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260924_221057_541402_05F4A3C9 
-X-CRM114-Status: GOOD (  18.44  )
+X-CRM114-CacheID: sfid-20260924_221057_496702_162360C5 
+X-CRM114-Status: GOOD (  18.59  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,135 +143,276 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Authorization state is shared across all link peers that belong to the
-station level property. Storing is_authorized in struct
-ath12k_dp_link_peer duplicates the same state for every link and
-requires all copies to be updated whenever the authorization state
-changes.
+The station pointer is currently stored in both ath12k_dp_peer and
+ath12k_dp_link_peer. Since the station association is peer-wide rather
+than link-specific, keeping a copy in the link peer duplicates state
+without providing additional value.
 
-Move is_authorized to ath12k_sta and update the authorize/unauthorize
-handlers to set it there directly. ath12k_bss_assoc() only reads the
-flag to decide whether to re-authorize the BSS peer after vdev up, so
-read it from ahsta instead of looking up the dp_peer.
+Remove the duplicate pointer from ath12k_dp_link_peer and access the
+station through the dp_peer instead. Add helper accessors and
+update the remaining users accordingly. Remove the unused
+ath12k_dp_link_peer_to_link_sta() helper as well.
 
-Previously, is_authorized was protected by dp_lock. After moving it to
-ath12k_sta, all accesses are serialized by the wiphy mutex, so the flag
-is now protected by the wiphy lock instead.
+This consolidates peer ownership information in a single location and
+avoids maintaining duplicate state.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
 
+Co-developed-by: Harsh Kumar Bijlani <harsh.bijlani@oss.qualcomm.com>
+Signed-off-by: Harsh Kumar Bijlani <harsh.bijlani@oss.qualcomm.com>
 Signed-off-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h    |  2 ++
- drivers/net/wireless/ath/ath12k/dp_peer.h |  1 -
- drivers/net/wireless/ath/ath12k/mac.c     | 36 ++---------------------
- 3 files changed, 5 insertions(+), 34 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_htt.c      |  2 +-
+ drivers/net/wireless/ath/ath12k/dp_peer.c     | 29 -------------------
+ drivers/net/wireless/ath/ath12k/dp_peer.h     | 16 ++++++++--
+ drivers/net/wireless/ath/ath12k/dp_rx.c       |  2 +-
+ drivers/net/wireless/ath/ath12k/mac.c         | 11 +++----
+ drivers/net/wireless/ath/ath12k/peer.c        |  2 --
+ .../net/wireless/ath/ath12k/wifi7/dp_mon.c    |  2 +-
+ drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c | 15 +++++-----
+ 8 files changed, 30 insertions(+), 49 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index a98fc6e0699d..a04757a038f2 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -529,6 +529,8 @@ struct ath12k_sta {
- 	enum ieee80211_sta_state state;
+diff --git a/drivers/net/wireless/ath/ath12k/dp_htt.c b/drivers/net/wireless/ath/ath12k/dp_htt.c
+index 68968f96b4f1..72069640bd38 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_htt.c
++++ b/drivers/net/wireless/ath/ath12k/dp_htt.c
+@@ -276,7 +276,7 @@ ath12k_update_per_peer_tx_stats(struct ath12k_pdev_dp *dp_pdev,
+ 	rcu_read_lock();
+ 	peer = ath12k_dp_link_peer_find_by_peerid(dp_pdev, usr_stats->peer_id);
  
- 	bool enable_4addr;
-+
-+	bool is_authorized;
- };
+-	if (!peer || !peer->sta) {
++	if (!ath12k_dp_link_peer_get_sta(peer)) {
+ 		rcu_read_unlock();
+ 		return;
+ 	}
+diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.c b/drivers/net/wireless/ath/ath12k/dp_peer.c
+index bb5341b4251a..06f6eccfb574 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_peer.c
++++ b/drivers/net/wireless/ath/ath12k/dp_peer.c
+@@ -195,35 +195,6 @@ void ath12k_dp_link_peer_map_event(struct ath12k_base *ab, u8 vdev_id, u16 peer_
+ 	spin_unlock_bh(&dp->dp_lock);
+ }
  
- #define ATH12K_HALF_20MHZ_BW	10
+-struct ath12k_link_sta *ath12k_dp_link_peer_to_link_sta(struct ath12k_base *ab,
+-							struct ath12k_dp_link_peer *peer)
+-{
+-	struct ath12k_sta *ahsta;
+-	struct ath12k_link_sta *arsta;
+-
+-	RCU_LOCKDEP_WARN(!rcu_read_lock_held(),
+-			 "ath12k_dp_link_peer to ath12k_link_sta called without rcu lock");
+-
+-	if (!peer->sta)
+-		return NULL;
+-
+-	ahsta = ath12k_sta_to_ahsta(peer->sta);
+-	if (peer->ml_id & ATH12K_PEER_ML_ID_VALID) {
+-		if (!(ahsta->links_map & BIT(peer->link_id))) {
+-			ath12k_warn(ab, "peer %pM id %d link_id %d can't found in STA link_map 0x%x\n",
+-				    peer->addr, peer->peer_id, peer->link_id,
+-				    ahsta->links_map);
+-			return NULL;
+-		}
+-		arsta = rcu_dereference(ahsta->link[peer->link_id]);
+-		if (!arsta)
+-			return NULL;
+-	} else {
+-		arsta =  &ahsta->deflink;
+-	}
+-	return arsta;
+-}
+-
+ static int ath12k_dp_link_peer_rhash_addr_tbl_init(struct ath12k_dp *dp)
+ {
+ 	struct ath12k_base *ab = dp->ab;
 diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.h b/drivers/net/wireless/ath/ath12k/dp_peer.h
-index 256fc79d714e..d01ef1aea48b 100644
+index 3503840b0329..256fc79d714e 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_peer.h
 +++ b/drivers/net/wireless/ath/ath12k/dp_peer.h
-@@ -80,7 +80,6 @@ struct ath12k_dp_link_peer {
+@@ -70,7 +70,6 @@ DECLARE_EWMA(avg_rssi, 10, 8)
  
- 	struct ppdu_user_delayba ppdu_stats_delayba;
- 	bool delayba_flag;
--	bool is_authorized;
- 	bool mlo;
- 	/* protected by ab->data_lock */
+ struct ath12k_dp_link_peer {
+ 	struct list_head list;
+-	struct ieee80211_sta *sta;
+ 	struct ath12k_dp_peer *dp_peer;
+ 	int vdev_id;
+ 	u8 addr[ETH_ALEN];
+@@ -159,8 +158,6 @@ ath12k_dp_link_peer_find_by_ast(struct ath12k_dp *dp, int ast_hash);
+ struct ath12k_dp_link_peer *
+ ath12k_dp_link_peer_find_by_pdev_and_addr(struct ath12k_dp *dp, u8 pdev_idx,
+ 					  const u8 *addr);
+-struct ath12k_link_sta *ath12k_dp_link_peer_to_link_sta(struct ath12k_base *ab,
+-							struct ath12k_dp_link_peer *peer);
+ int ath12k_dp_link_peer_rhash_tbl_init(struct ath12k_dp *dp);
+ void ath12k_dp_link_peer_rhash_tbl_destroy(struct ath12k_dp *dp);
+ int ath12k_dp_link_peer_rhash_add(struct ath12k_dp *dp,
+@@ -183,4 +180,17 @@ ath12k_dp_link_peer_find_by_peerid(struct ath12k_pdev_dp *dp_pdev, u16 peer_id);
+ void ath12k_dp_link_peer_free(struct ath12k_dp_link_peer *peer);
+ int ath12k_dp_peer_fixup_peer_id(struct ath12k_base *ab, const u8 *peer_addr,
+ 				 u16 peer_id);
++
++static inline struct ieee80211_sta *__must_check
++ath12k_dp_peer_get_sta(const struct ath12k_dp_peer *peer)
++{
++	return peer ? peer->sta : NULL;
++}
++
++static inline struct ieee80211_sta *__must_check
++ath12k_dp_link_peer_get_sta(const struct ath12k_dp_link_peer *link_peer)
++{
++	return link_peer && link_peer->dp_peer ?
++		link_peer->dp_peer->sta : NULL;
++}
+ #endif
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 41ac0a4072ae..af3b861aae02 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -1383,7 +1383,7 @@ void ath12k_dp_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev, struct napi_struc
  
+ 	peer = ath12k_dp_peer_find_by_peerid(dp_pdev, rxcb->peer_id);
+ 
+-	pubsta = peer ? peer->sta : NULL;
++	pubsta = ath12k_dp_peer_get_sta(peer);
+ 
+ 	if (pubsta) {
+ 		if (pubsta->valid_links) {
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index c04b4e2709b3..8de3c2421738 100644
+index d4116ba0da08..c04b4e2709b3 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3921,11 +3921,8 @@ static void ath12k_bss_assoc(struct ath12k *ar,
- 	struct ath12k_link_sta *arsta;
- 	struct ieee80211_sta *ap_sta;
- 	struct ath12k_sta *ahsta;
--	struct ath12k_dp_link_peer *peer;
--	bool is_auth = false;
- 	u32 hemode = 0;
+@@ -1232,7 +1232,7 @@ void ath12k_mac_peer_cleanup_all(struct ath12k *ar)
+ 	spin_lock_bh(&dp->dp_lock);
+ 	list_for_each_entry_safe(peer, tmp, &dp->peers, list) {
+ 		/* Skip Rx TID cleanup for self peer */
+-		if (peer->sta && peer->dp_peer)
++		if (ath12k_dp_link_peer_get_sta(peer))
+ 			ath12k_dp_rx_peer_tid_cleanup(ar, peer);
+ 
+ 		/* cleanup dp peer */
+@@ -7012,10 +7012,9 @@ static void ath12k_mac_station_post_remove(struct ath12k *ar,
+ 
+ 	peer = ath12k_dp_link_peer_find_by_vdev_and_addr(dp, arvif->vdev_id,
+ 							 arsta->addr);
+-	if (peer && peer->sta == sta) {
++	if (peer && ath12k_dp_link_peer_get_sta(peer) == sta) {
+ 		ath12k_warn(ar->ab, "Found peer entry %pM n vdev %i after it was supposedly removed\n",
+ 			    vif->addr, arvif->vdev_id);
+-		peer->sta = NULL;
+ 
+ 		ath12k_dp_link_peer_free(peer);
+ 		ar->num_peers--;
+@@ -13299,6 +13298,7 @@ ath12k_mac_validate_fixed_rate_settings(struct ath12k *ar, enum nl80211_band ban
+ 	bool eht_fixed_rate = false, he_fixed_rate = false, vht_fixed_rate = false;
+ 	const u16 *vht_mcs_mask, *he_mcs_mask, *eht_mcs_mask;
+ 	struct ieee80211_link_sta *link_sta;
++	struct ieee80211_sta *sta;
+ 	struct ath12k_dp_link_peer *peer, *tmp;
+ 	u8 vht_nss, he_nss, eht_nss;
+ 	int ret = true;
+@@ -13328,8 +13328,9 @@ ath12k_mac_validate_fixed_rate_settings(struct ath12k *ar, enum nl80211_band ban
+ 	rcu_read_lock();
+ 	spin_lock_bh(&dp->dp_lock);
+ 	list_for_each_entry_safe(peer, tmp, &dp->peers, list) {
+-		if (peer->sta) {
+-			link_sta = rcu_dereference(peer->sta->link[link_id]);
++		sta = ath12k_dp_link_peer_get_sta(peer);
++		if (sta) {
++			link_sta = rcu_dereference(sta->link[link_id]);
+ 			if (!link_sta) {
+ 				ret = false;
+ 				goto exit;
+diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
+index 80edebf0e364..0e894408e97f 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.c
++++ b/drivers/net/wireless/ath/ath12k/peer.c
+@@ -266,8 +266,6 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 	}
+ 
+ 	peer->pdev_idx = ar->pdev_idx;
+-	peer->sta = sta;
+-
+ 	if (vif->type == NL80211_IFTYPE_STATION) {
+ 		dp_link_vif->ast_hash = peer->ast_hash;
+ 		dp_link_vif->ast_idx = peer->hw_peer_id;
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c
+index ded7d56cd79b..eb69fe70c2b4 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c
+@@ -3367,7 +3367,7 @@ ath12k_wifi7_dp_mon_srng_process(struct ath12k_pdev_dp *pdev_dp, int *budget,
+ 
+ 		rcu_read_lock();
+ 		peer = ath12k_dp_link_peer_find_by_peerid(pdev_dp, ppdu_info->peer_id);
+-		if (!peer || !peer->sta) {
++		if (!ath12k_dp_link_peer_get_sta(peer)) {
+ 			ath12k_dbg(ab, ATH12K_DBG_DATA,
+ 				   "failed to find the peer with monitor peer_id %d\n",
+ 				   ppdu_info->peer_id);
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
+index 7c12dba4cc51..449984adc20a 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
+@@ -559,13 +559,12 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_dp *dp,
+ 	}
+ 
+ 	peer = ath12k_dp_link_peer_find_by_peerid(dp_pdev, peer_id);
+-	if (!peer || !peer->sta) {
++	status.sta = ath12k_dp_link_peer_get_sta(peer);
++	if (!status.sta) {
+ 		ath12k_dbg(ab, ATH12K_DBG_DATA,
+ 			   "dp_tx: failed to find the peer with peer_id %d\n", peer_id);
+ 		ieee80211_free_txskb(ath12k_pdev_dp_to_hw(dp_pdev), msdu);
+ 		goto exit;
+-	} else {
+-		status.sta = peer->sta;
+ 	}
+ 
+ 	status.info = info;
+@@ -634,7 +633,8 @@ static void ath12k_wifi7_dp_tx_update_txcompl(struct ath12k_pdev_dp *dp_pdev,
  	int ret;
--	struct ath12k_dp *dp = ath12k_ab_to_dp(ar->ab);
  
- 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+ 	peer = ath12k_dp_link_peer_find_by_peerid(dp_pdev, ts->peer_id);
+-	if (!peer || !peer->sta) {
++	sta = ath12k_dp_link_peer_get_sta(peer);
++	if (!sta) {
+ 		ath12k_dbg(dp->ab, ATH12K_DBG_DP_TX,
+ 			   "failed to find the peer by id %u\n", ts->peer_id);
+ 		return;
+@@ -642,7 +642,6 @@ static void ath12k_wifi7_dp_tx_update_txcompl(struct ath12k_pdev_dp *dp_pdev,
  
-@@ -4029,17 +4026,8 @@ static void ath12k_bss_assoc(struct ath12k *ar,
- 		   "mac vdev %d up (associated) bssid %pM aid %d\n",
- 		   arvif->vdev_id, bss_conf->bssid, vif->cfg.aid);
+ 	spin_lock_bh(&dp->dp_lock);
  
--	spin_lock_bh(&dp->dp_lock);
--
--	peer = ath12k_dp_link_peer_find_by_vdev_and_addr(dp, arvif->vdev_id,
--							 arvif->bssid);
--	if (peer && peer->is_authorized)
--		is_auth = true;
--
--	spin_unlock_bh(&dp->dp_lock);
--
- 	/* Authorize BSS Peer */
--	if (is_auth) {
-+	if (ahsta->is_authorized) {
- 		ret = ath12k_wmi_set_peer_param(ar, arvif->bssid,
- 						arvif->vdev_id,
- 						WMI_PEER_AUTHORIZE,
-@@ -7027,20 +7015,11 @@ static int ath12k_mac_station_unauthorize(struct ath12k *ar,
- 					  struct ath12k_link_vif *arvif,
- 					  struct ath12k_link_sta *arsta)
- {
--	struct ath12k_dp_link_peer *peer;
- 	int ret;
--	struct ath12k_dp *dp = ath12k_ab_to_dp(ar->ab);
+-	sta = peer->sta;
+ 	ahsta = ath12k_sta_to_ahsta(sta);
+ 	arsta = &ahsta->deflink;
  
- 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+@@ -759,6 +758,7 @@ static void ath12k_wifi7_dp_tx_complete_msdu(struct ath12k_pdev_dp *dp_pdev,
+ 	struct ieee80211_rate_status status_rate = {};
+ 	struct ath12k_dp_link_peer *peer;
+ 	struct rate_info rate;
++	struct ieee80211_sta *sta;
  
--	spin_lock_bh(&dp->dp_lock);
--
--	peer = ath12k_dp_link_peer_find_by_vdev_and_addr(dp, arvif->vdev_id,
--							 arsta->addr);
--	if (peer)
--		peer->is_authorized = false;
--
--	spin_unlock_bh(&dp->dp_lock);
-+	arsta->ahsta->is_authorized = false;
+ 	if (WARN_ON_ONCE(ts->buf_rel_source != HAL_WBM_REL_SRC_MODULE_TQM)) {
+ 		/* Must not happen */
+@@ -853,7 +853,8 @@ static void ath12k_wifi7_dp_tx_complete_msdu(struct ath12k_pdev_dp *dp_pdev,
+ 	ath12k_wifi7_dp_tx_update_txcompl(dp_pdev, ts);
  
- 	/* Driver must clear the keys during the state change from
- 	 * IEEE80211_STA_AUTHORIZED to IEEE80211_STA_ASSOC, since after
-@@ -7062,21 +7041,12 @@ static int ath12k_mac_station_authorize(struct ath12k *ar,
- 					struct ath12k_link_vif *arvif,
- 					struct ath12k_link_sta *arsta)
- {
--	struct ath12k_dp_link_peer *peer;
- 	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
- 	int ret;
--	struct ath12k_dp *dp = ath12k_ab_to_dp(ar->ab);
+ 	peer = ath12k_dp_link_peer_find_by_peerid(dp_pdev, ts->peer_id);
+-	if (!peer || !peer->sta) {
++	sta = ath12k_dp_link_peer_get_sta(peer);
++	if (!sta) {
+ 		ath12k_err(ab,
+ 			   "dp_tx: failed to find the peer with peer_id %d\n",
+ 			   ts->peer_id);
+@@ -861,7 +862,7 @@ static void ath12k_wifi7_dp_tx_complete_msdu(struct ath12k_pdev_dp *dp_pdev,
+ 		goto exit;
+ 	}
  
- 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
- 
--	spin_lock_bh(&dp->dp_lock);
--
--	peer = ath12k_dp_link_peer_find_by_vdev_and_addr(dp, arvif->vdev_id,
--							 arsta->addr);
--	if (peer)
--		peer->is_authorized = true;
--
--	spin_unlock_bh(&dp->dp_lock);
-+	arsta->ahsta->is_authorized = true;
- 
- 	if (vif->type == NL80211_IFTYPE_STATION && arvif->is_up) {
- 		ret = ath12k_wmi_set_peer_param(ar, arsta->addr,
+-	status.sta = peer->sta;
++	status.sta = sta;
+ 	status.info = info;
+ 	status.skb = msdu;
+ 	rate = peer->last_txrate;
 -- 
 2.34.1
 
