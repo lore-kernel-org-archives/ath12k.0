@@ -4,63 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33BFBC98318
-	for <ath12k@archiver.kernel.org>; Sat, 26 Sep 2026 12:13:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFEEDC98318
+	for <ath12k@archiver.kernel.org>; Sat, 26 Sep 2026 12:13:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5O5WX6Ju+BA8sTDcfWfc/DMBswAguDXrunWPXvGBFRY=; b=RS6zNKwGEyWbi5UB/uZ/r8sqmH
-	+o28evXNfDnVYGaa5Va4CDvIGlY3I3f+ER9InCu9q+jHFOid0gOJLD1SkQAg1pzyBfWBZ9CS2D2do
-	FfWao81veHy18FJWE1arHORzyPvr4Cv4RrsU4LOHP13OCVGVpm2m1NaO/wb6OHiTpjSz2RmCgg4L1
-	SV0oPFSYJMSmGVzcdgw4rw9sye19oknzOP5hSeHy+JCV/frpiEiOpE/D/+2nBUdcz1kdvJrDBl+cS
-	T9US1KLGKTZOkFYnJwB5/nxI0IrlvNhcltokPhhw2ogWqF9o8uA6Wam07P8yTLsu0lfWwbMqwwNEC
-	b7jW8y2Q==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=PfQ+eUGvS5YGA/VscR/3oNIajPr36RjH9P3BCUg6xzQ=; b=oQSwV+WEcP/FwIzFyBh+XC1ymM
+	OnqvcBhc8cKnDVqFPFlM2dsiZN+iTzwRIaZXqymqybtoZ/nY0+UC+7eQgiQVPrkZQlrRTRvcnGycl
+	bYa6tkDiUT77jsnkBMtkJ7TvLdXveQIu3vemrpt3H9hN/6q0ID0hFHaYAPPfcuIO/3tDkwmhxveei
+	YPU0P6IarmuluyJAVoffpDChQUseHj0+eVDMTBha5burfBpuZR6xKXg1TnL2M1WhEEY78/+ahPbc2
+	9JniuGJwtfOFfC1dl54B3awiQwyFcwoAkx9YMATBGdhdLfID7xA0Tp0fEYvMr8ldQZC7SqdVxQef+
+	V5a/Cg3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xARHO-0000000FMDJ-0VPp;
-	Sat, 26 Sep 2026 12:13:22 +0000
-Received: from m16.mail.163.com ([117.135.210.2])
+	id 1xARHg-0000000FMJ5-1tzO;
+	Sat, 26 Sep 2026 12:13:40 +0000
+Received: from m16.mail.163.com ([220.197.31.4])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xARHL-0000000FMCf-2FRR
-	for ath12k@lists.infradead.org;
-	Sat, 26 Sep 2026 12:13:21 +0000
+	id 1xARHa-0000000FMG9-05L6;
+	Sat, 26 Sep 2026 12:13:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:To:Subject:Date:Message-Id:MIME-Version; bh=5O
-	5WX6Ju+BA8sTDcfWfc/DMBswAguDXrunWPXvGBFRY=; b=mWshQn5aDYXgv8GStu
-	jCnazaaT+qbi8BMT0omrLuNZnKElrHKRzdVmzR8jrAvqYCiSAmFf7dwrNTX6pDgB
-	F6MJDpIeqq7F2gM9etlEW7dUROqzVscerpDgiwmzD7bZR4VxjKdv89E6i6fnT45j
-	OnJj2DS7hXdQranKalU4+x3Lg=
+	s=s110527; h=From:To:Subject:Date:Message-Id:MIME-Version; bh=Pf
+	Q+eUGvS5YGA/VscR/3oNIajPr36RjH9P3BCUg6xzQ=; b=gouEGYUUXLSogCO3Vq
+	y8PvQsp8mE/Sw0PYpK9dBT5mgoQcsgupVmByKOxj2VevlCRQl1K/ghhwE94427oB
+	XpulkpK0WtSRuG8U1YVr1fgMaUwBQZYudLHCe/45dCjKniXTQt4ociVOn1NyPR1B
+	9sEEeJ+nX90Lz1Px6p3VL7yXc=
 Received: from pc.localdomain (unknown [])
-	by gzga-smtp-mtada-g0-1 (Coremail) with SMTP id _____wD338nKtrdqfXOcAw--.9011S4;
-	Sat, 26 Sep 2026 20:13:02 +0800 (CST)
+	by gzga-smtp-mtada-g0-1 (Coremail) with SMTP id _____wD338nKtrdqfXOcAw--.9011S2;
+	Sat, 26 Sep 2026 20:12:59 +0800 (CST)
 From: Jiale Yao <yaojiale02@163.com>
-To: Jeff Johnson <jjohnson@kernel.org>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Frank Li <Frank.Li@kernel.org>,
+	Michal Simek <michal.simek@amd.com>,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Hans de Goede <hansg@kernel.org>,
+	=?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>,
+	Andres Salomon <dilinger@queued.net>,
+	Thomas Gleixner <tglx@kernel.org>,
+	Paul Fox <pgf@laptop.org>,
 	Dan Carpenter <error27@gmail.com>,
+	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+	Hyun Kwon <hyun.kwon@xilinx.com>,
+	dmaengine@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
+	platform-driver-x86@vger.kernel.org
 Cc: Jiale Yao <yaojiale02@163.com>
-Subject: [PATCH 2/3] wifi: ath12k: Reserve space for a string terminator
-Date: Sat, 26 Sep 2026 20:12:49 +0800
-Message-Id: <20260926121250.3258285-3-yaojiale02@163.com>
+Subject: [PATCH 0/3] debugfs: Reserve space for string terminators
+Date: Sat, 26 Sep 2026 20:12:47 +0800
+Message-Id: <20260926121250.3258285-1-yaojiale02@163.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260926121250.3258285-1-yaojiale02@163.com>
-References: <20260926121250.3258285-1-yaojiale02@163.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-CM-TRANSID: _____wD338nKtrdqfXOcAw--.9011S4
-X-Coremail-Antispam: 1Uf129KBjvdXoW7XrWDWFy5GF1kWry5tF4kCrg_yoWDCrbEqw
-	4rtFn7Zr4fGF4jq3yxAayavrWvkas8XF1kWrnaqrWfC3y3JrZ8Ar95ur18XrWI9ry5JrnY
-	kr9rJF15X3yq9jkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7xRKDGYDUUUUU==
-X-CM-SenderInfo: x1dryxhdohiji6rwjhhfrp/xtbC7w9po2q3ts8f1gAA3H
+X-CM-TRANSID: _____wD338nKtrdqfXOcAw--.9011S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWruFWrtw1kCF1fKw15Gw1fCrg_yoWfurg_Z3
+	s5Krn7Jwn7Xws3Za42yFnFyrWSkFWaqF18Xwn8trySqry3JFyrAFs8WwnrGw4xWFs5Ar9r
+	Gr9FqrWfZry3WjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7xRKF4EDUUUUU==
+X-CM-SenderInfo: x1dryxhdohiji6rwjhhfrp/xtbC7wtoomq3tssfmAAA3J
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260926_051320_190179_9912BA8C 
-X-CRM114-Status: UNSURE (   9.27  )
+X-CRM114-CacheID: sfid-20260926_051334_381715_4241BB37 
+X-CRM114-Status: UNSURE (   7.03  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,31 +86,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-ath12k_write_htt_stats_type() accepts count == size, which fills the
-zero-initialized buffer without a terminating NUL. sscanf() then reads
-beyond the buffer.
+The same boundary mistake appears in three debugfs write handlers. Each
+handler has a zero-initialized buffer and allows a user write to fill the
+entire buffer. That overwrites the only NUL terminator before the input
+is parsed with sscanf(), strsep(), or strcasecmp(), which can then read
+beyond the end of the buffer.
 
-Reject input that leaves no room for the trailing NUL.
+The write paths are independent, so the fixes are split by file and can
+be applied separately. Each patch reserves one byte for the terminating
+NUL while preserving the normal input size for that handler.
 
-Fixes: 8c7a5031a6b0 ("wifi: ath12k: Fix buffer overflow in debugfs")
-Signed-off-by: Jiale Yao <yaojiale02@163.com>
----
+Jiale Yao (3):
+  platform/olpc: Reserve space for a string terminator
+  wifi: ath12k: Reserve space for a string terminator
+  dmaengine: xilinx: dpdma: Reserve space for a string terminator
+
+ drivers/dma/xilinx/xilinx_dpdma.c                   | 2 +-
  drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/platform/olpc/olpc-ec.c                     | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index b772181a496e..f84f1828275a 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -6190,7 +6190,7 @@ static ssize_t ath12k_write_htt_stats_type(struct file *file,
- 	const int size = 32;
- 	int num_args;
- 
--	if (count > size)
-+	if (count >= size)
- 		return -EINVAL;
- 
- 	char *buf __free(kfree) = kzalloc(size, GFP_KERNEL);
 -- 
 2.34.1
 
