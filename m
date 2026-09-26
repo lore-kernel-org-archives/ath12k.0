@@ -4,153 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61CE8C98325
-	for <ath12k@archiver.kernel.org>; Fri, 25 Sep 2026 15:59:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33BFBC98318
+	for <ath12k@archiver.kernel.org>; Sat, 26 Sep 2026 12:13:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9+1rwJEQXq1lO/cD3GiWTUUYzCO5JaKWtBAY2RhYZaI=; b=JRqDlOpvMzkKdRbCaF4rnYXp7t
-	0K5GP47lTm/4Vlvqx3exFG9BmSTGBIVeiFriQ2xHlVrPO6iBgAqw8MFSoUGZJEit00fQYLLmgybZy
-	n+m9My/bk5dH9W5WLgk1BuEWk+a52GdsB+g/M1nu29jCBCcFzBXF00nen1ER+AbXxd9OkNPnLliS4
-	36lSjQJPz9ZPDYB0UrpsIVSItTFczYpZqtocWWS21VpncnPa9BP2jYrWvtVTZ5p3UQGf0P7pUxZvH
-	SgvwxJ+L64ZyZNqglnsHZ/66lL8/72gZKyqvDpJ0+aJukRjRFM3v/aPjH5Zi+ec3W+tF0h00i3kLC
-	xjGqkUIg==;
+	bh=5O5WX6Ju+BA8sTDcfWfc/DMBswAguDXrunWPXvGBFRY=; b=RS6zNKwGEyWbi5UB/uZ/r8sqmH
+	+o28evXNfDnVYGaa5Va4CDvIGlY3I3f+ER9InCu9q+jHFOid0gOJLD1SkQAg1pzyBfWBZ9CS2D2do
+	FfWao81veHy18FJWE1arHORzyPvr4Cv4RrsU4LOHP13OCVGVpm2m1NaO/wb6OHiTpjSz2RmCgg4L1
+	SV0oPFSYJMSmGVzcdgw4rw9sye19oknzOP5hSeHy+JCV/frpiEiOpE/D/+2nBUdcz1kdvJrDBl+cS
+	T9US1KLGKTZOkFYnJwB5/nxI0IrlvNhcltokPhhw2ogWqF9o8uA6Wam07P8yTLsu0lfWwbMqwwNEC
+	b7jW8y2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xA8Kd-0000000Dt24-0Pta;
-	Fri, 25 Sep 2026 15:59:27 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xARHO-0000000FMDJ-0VPp;
+	Sat, 26 Sep 2026 12:13:22 +0000
+Received: from m16.mail.163.com ([117.135.210.2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xA8Kb-0000000Dt0o-04Px
+	id 1xARHL-0000000FMCf-2FRR
 	for ath12k@lists.infradead.org;
-	Fri, 25 Sep 2026 15:59:26 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68PD4pFC3532115
-	for <ath12k@lists.infradead.org>; Fri, 25 Sep 2026 15:59:24 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=9+1rwJEQXq1
-	lO/cD3GiWTUUYzCO5JaKWtBAY2RhYZaI=; b=QI86Rg99O/cQBiooeAMdGH6d2qr
-	/2ApE7DEiMzD3YrXNmwz+AFIQiuSiyeU538+94tBUEGoj2itMo2gej/TfPXlqIaF
-	zZ72GNYlwbjhiqHnwtDgSSGltE9iecu43LiWKRH0DKQEAzXnXEZewprdY2FRNWfm
-	3wweR+e6s0j74nJNxeHevQQbBp3T3hxokyJL8PRt6yueJf2AFuxy/RkmsnSgBBNn
-	TXc9twwC6JYh28lCZk+wcQNgeeVN+eTQiS0oTdNHyZe+4VJlNRsnfvPoTUwC1OCN
-	6/DfLq+X7JrgAdJpeU7WAmXzD0xZrYB28w+K3rYTyvBwyJiFwLIJro0IqDg==
-Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gw94kbxeh-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 25 Sep 2026 15:59:24 +0000 (GMT)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-877ef1457aeso954723b3a.1
-        for <ath12k@lists.infradead.org>; Fri, 25 Sep 2026 08:59:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1790351964; x=1790956764; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=9+1rwJEQXq1lO/cD3GiWTUUYzCO5JaKWtBAY2RhYZaI=;
-        b=Py7j4zyzzKEnbNSq+LXGU/AXwAZqWckhaLyAuWNJChVzX62ALflnu5CT0Du6roBIQ7
-         KmZVHS9TXuqDfwymSQ2MJTby6OJpVl8XiS04Tpoxx6r4q9NCEelEzH/YyDJRWFlW6Gxf
-         oyxeRzcGpsUBCMq5FFcl6FR/V7f+KetUeqWCbDCNLCbmUie8FQCUsEYNp8/7j2fks4t/
-         qM8Ixm9Xeeh7k8iWqaBXs6PfkuWgecUeSWTD7wwm1OUHTQz6nTRiibE+WPttkG1Pshuy
-         dffBGnQspzLiQYt9RrB85qpnF4303c+TSYxYR1N3noGpk60KAwrACb7RhaCwbExRD9u2
-         a+2w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790351964; x=1790956764;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=9+1rwJEQXq1lO/cD3GiWTUUYzCO5JaKWtBAY2RhYZaI=;
-        b=HDf3RawVFBujf5U0pD1S+WuA4xRnNdG6z+g9nGSqwq0we8jPHIY8FUAlitCF3iS9w0
-         Cgw6fDVMhTsuU44zUqaE8wLE8Ws3sf7nFONf65k0+DyIMlgoijEU+QSHWuoZdtJmNbbu
-         AiEqZ76sr7diEOiwr2kNEanSH2CeOQSBWsdAVpjNtUbtpmCeYzRdxwUKpQQ965tBgxLU
-         rj3p5X4ip/rBu1ReNkcq7yTHMmKOTCqt9jlFrhaOdXrslZO4OG8LzPh9wMyigRDzpGh0
-         i3lO97anB8MDJrWpbXeazpodRXFJ2PRYw2z5SJNNKisW3qPE1A8DaZHv/vFoQ+moAwYd
-         ILNg==
-X-Forwarded-Encrypted: i=1; AKwUvBxsAhyAdO0h21a1Qvj80ZE+rCxmwbcFNSrsV3U3aZTGKD52n7nL0pxB5Dz8IBZK70C0hGMSyeY=@lists.infradead.org
-X-Gm-Message-State: AFuF++kkQvWk4Ayvv407k/DrdqkpbmNm/jS1+lSft2kD0zH8DqrUOoln
-	VCI0dTzSxytGQ2xFlu6vNbAEKYvaC3SqT/Dv7PAxT8ivR8VLeQzsXMvlHtooCA6OQH49b8MUklp
-	tH4ML3oK0E74zhtTYlUTP9r4fPeiiT8/3bDwOtmviixCzYzq8WTMjFThNdhZGV8md
-X-Gm-Gg: AYBFou0v8KlJIOAuc4zI04O0j1uJPoE35i7gDEHyMUrxh+HtQ04oofara1NrrgnwQ5b
-	ZeWIg20gm4sWk7/gsZwr/54K65r5E0vqMcAqBfhhzClrDtI55BvKgDunip7/5MqAg/HFFGTytWS
-	OpEuwc22k2mpUbd1ZDk04lX61ipPGVeiETCPXU5iDehf/dyjode+stqmr4Xn1VSFcE1imIB0HEc
-	w5QFL0prW30ByV+1Jy0UAQhzvqUJ2f1fv6XLi7eJxmpbsCdf6R5BXLxdUU6DSwQcI4FDxjjkZZH
-	n4tIeE5bXuzLCkRqG4uF2g+OpMo2Tc9uoHioNIPYxQaPU607eiTO30N5bL0joqIhZDC6foLtJ02
-	qqvwcdoMGpAk9hwLSq1/tXTAEM0Y=
-X-Received: by 2002:a05:6a00:6f12:b0:880:a842:bb06 with SMTP id d2e1a72fcca58-880a842c13cmr905911b3a.45.1790351963435;
-        Fri, 25 Sep 2026 08:59:23 -0700 (PDT)
-X-Received: by 2002:a05:6a00:6f12:b0:880:a842:bb06 with SMTP id d2e1a72fcca58-880a842c13cmr905860b3a.45.1790351962748;
-        Fri, 25 Sep 2026 08:59:22 -0700 (PDT)
-Received: from hu-mojha-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-87ff354d854sm1361299b3a.2.2026.09.25.08.59.12
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 25 Sep 2026 08:59:21 -0700 (PDT)
-From: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-To: Sumit Garg <sumit.garg@oss.qualcomm.com>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Rob Clark <robin.clark@oss.qualcomm.com>,
-        Dmitry Baryshkov <lumag@kernel.org>, David Airlie <airlied@gmail.com>,
-        Simona Vetter <simona@ffwll.ch>,
-        Vikash Garodia <vikash.garodia@oss.qualcomm.com>,
-        Dikshita Agarwal <dikshita.agarwal@oss.qualcomm.com>,
-        "Bryan O'Donoghue" <bod@kernel.org>,
-        Mauro Carvalho Chehab <mchehab@kernel.org>,
-        Alex Elder <elder@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,
-        "David S. Miller" <davem@davemloft.net>,
-        Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
-        Paolo Abeni <pabeni@redhat.com>, Jeff Johnson <jjohnson@kernel.org>,
-        Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Abel Vesa <abelvesa@kernel.org>, Sean Paul <sean@poorly.run>,
-        Akhil P Oommen <akhilpo@oss.qualcomm.com>,
-        Abhinav Kumar <abhinav.kumar@linux.dev>,
-        Jessica Zhang <jesszhan0024@gmail.com>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-        linux-media@vger.kernel.org, netdev@vger.kernel.org,
-        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-remoteproc@vger.kernel.org,
-        Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-Subject: [PATCH 8/8] firmware: qcom: pas: remove qcom_pas_auth_and_reset()
-Date: Fri, 25 Sep 2026 21:27:37 +0530
-Message-ID: <20260925155737.4161358-9-mukesh.ojha@oss.qualcomm.com>
-X-Mailer: git-send-email 2.55.0
-In-Reply-To: <20260925155737.4161358-1-mukesh.ojha@oss.qualcomm.com>
-References: <20260925155737.4161358-1-mukesh.ojha@oss.qualcomm.com>
+	Sat, 26 Sep 2026 12:13:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=From:To:Subject:Date:Message-Id:MIME-Version; bh=5O
+	5WX6Ju+BA8sTDcfWfc/DMBswAguDXrunWPXvGBFRY=; b=mWshQn5aDYXgv8GStu
+	jCnazaaT+qbi8BMT0omrLuNZnKElrHKRzdVmzR8jrAvqYCiSAmFf7dwrNTX6pDgB
+	F6MJDpIeqq7F2gM9etlEW7dUROqzVscerpDgiwmzD7bZR4VxjKdv89E6i6fnT45j
+	OnJj2DS7hXdQranKalU4+x3Lg=
+Received: from pc.localdomain (unknown [])
+	by gzga-smtp-mtada-g0-1 (Coremail) with SMTP id _____wD338nKtrdqfXOcAw--.9011S4;
+	Sat, 26 Sep 2026 20:13:02 +0800 (CST)
+From: Jiale Yao <yaojiale02@163.com>
+To: Jeff Johnson <jjohnson@kernel.org>,
+	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+	Dan Carpenter <error27@gmail.com>,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: Jiale Yao <yaojiale02@163.com>
+Subject: [PATCH 2/3] wifi: ath12k: Reserve space for a string terminator
+Date: Sat, 26 Sep 2026 20:12:49 +0800
+Message-Id: <20260926121250.3258285-3-yaojiale02@163.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20260926121250.3258285-1-yaojiale02@163.com>
+References: <20260926121250.3258285-1-yaojiale02@163.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=aaj0Dhot c=1 sm=1 tr=0 ts=6ab69a5c cx=c_pps
- a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
- a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22 a=EUspDBNiAAAA:8
- a=sV0Ut8U-cAKt8JUqj3YA:9 a=zc0IvFSfCIW2DFIPzwfm:22
-X-Proofpoint-GUID: 1d0lCwLfeMtykCGyiG8CKmCce3IQVzSR
-X-Proofpoint-ORIG-GUID: 1d0lCwLfeMtykCGyiG8CKmCce3IQVzSR
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTI1MDA2MyBTYWx0ZWRfX5s4I4ZhKP/Zl
- j03RU3zGhDgTiGYdTUiEBKBDBS3xAhe3yjoKxLaECC+YwBP4Ez2p9UYXpo+GJNTMdUV1d0J4JlK
- JQDiu2zH2mxAKCA4Gea8pJwqro7w55PbNgNPR522t6PagsJIu/OY53nDDTDrd+Es1+D/IFab5Wy
- k2IHzrvXeyfm5hWf5R+zT8+UdQvrwQlDRu09JkmoOUqksb8Ju6c//Q9IjHBFE4gmnqHdbcKqDss
- psOO26lvybos6H9kDvgcgsQahl2PhDgtOdW05mryIdi6KpEtShGbjGGpkO1mqwIYwV1zE5NhGV3
- S/cMgnsz+EdKQZGAKVAE/rB6wXPBpUZ09v97pd8CnYnvSzYh8x6T/SUQVBGZeS2X+MVgzQW71xV
- RIbTF5yNu3PEuWGcHo3na/4gTpFAHsUHyzYWBGpeT50jqk+3ATm/HN9c6hxhhKF8t3SXGZ+dU6Y
- CAxGzlO7hSUdnJsU3sw==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTI1MDA2MyBTYWx0ZWRfX3PUaq413ye/9
- pQxHiOkPsB+xKbgFvqOl2ifnk1OCaL2THHb3SZVs4F5aMUdWAof1sXlW2bHJrenKn3C20Ler3N/
- bTfXZL9gBoHsMQOiq3Uz5H1Cx7yggos=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-25_02,2026-09-21_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 malwarescore=0 priorityscore=1501 spamscore=0 bulkscore=0
- clxscore=1015 phishscore=0 impostorscore=0 adultscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609250063
+X-CM-TRANSID: _____wD338nKtrdqfXOcAw--.9011S4
+X-Coremail-Antispam: 1Uf129KBjvdXoW7XrWDWFy5GF1kWry5tF4kCrg_yoWDCrbEqw
+	4rtFn7Zr4fGF4jq3yxAayavrWvkas8XF1kWrnaqrWfC3y3JrZ8Ar95ur18XrWI9ry5JrnY
+	kr9rJF15X3yq9jkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7xRKDGYDUUUUU==
+X-CM-SenderInfo: x1dryxhdohiji6rwjhhfrp/xtbC7w9po2q3ts8f1gAA3H
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260925_085925_087393_9F95E688 
-X-CRM114-Status: GOOD (  18.08  )
+X-CRM114-CacheID: sfid-20260926_051320_190179_9912BA8C 
+X-CRM114-Status: UNSURE (   9.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -165,149 +76,32 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-All callers have been migrated to qcom_pas_prepare_and_auth_reset(),
-which additionally sets up a shmbridge over firmware memory before
-TrustZone authentication.  Remove the bare pas_id-only wrapper, its
-EXPORT_SYMBOL_GPL, the header declaration, the auth_and_reset ops slot
-from struct qcom_pas_ops and both backend implementations.
+ath12k_write_htt_stats_type() accepts count == size, which fills the
+zero-initialized buffer without a terminating NUL. sscanf() then reads
+beyond the buffer.
 
-The internal helper functions (__qcom_scm_pas_auth_and_reset,
-__qcom_pas_tee_auth_and_reset) remain as they are called directly by
-their respective prepare_and_auth_reset implementations.
+Reject input that leaves no room for the trailing NUL.
 
-Signed-off-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
+Fixes: 8c7a5031a6b0 ("wifi: ath12k: Fix buffer overflow in debugfs")
+Signed-off-by: Jiale Yao <yaojiale02@163.com>
 ---
- drivers/firmware/qcom/qcom_pas.c       | 16 ----------------
- drivers/firmware/qcom/qcom_pas.h       |  3 ---
- drivers/firmware/qcom/qcom_pas_tee.c   |  6 ------
- drivers/firmware/qcom/qcom_scm.c       |  7 +++----
- include/linux/firmware/qcom/qcom_pas.h |  1 -
- 5 files changed, 3 insertions(+), 30 deletions(-)
+ drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/firmware/qcom/qcom_pas.c b/drivers/firmware/qcom/qcom_pas.c
-index 93d78a5c1201..6de6d62adfde 100644
---- a/drivers/firmware/qcom/qcom_pas.c
-+++ b/drivers/firmware/qcom/qcom_pas.c
-@@ -166,22 +166,6 @@ struct resource_table *qcom_pas_get_rsc_table(struct qcom_pas_context *ctx,
- }
- EXPORT_SYMBOL_GPL(qcom_pas_get_rsc_table);
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+index b772181a496e..f84f1828275a 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+@@ -6190,7 +6190,7 @@ static ssize_t ath12k_write_htt_stats_type(struct file *file,
+ 	const int size = 32;
+ 	int num_args;
  
--/**
-- * qcom_pas_auth_and_reset() - Authenticate the given peripheral firmware
-- *			       and reset the remote processor
-- * @pas_id:	peripheral authentication service id
-- *
-- * Return: 0 on success.
-- */
--int qcom_pas_auth_and_reset(u32 pas_id)
--{
--	if (!ops_ptr)
--		return -ENODEV;
--
--	return ops_ptr->auth_and_reset(ops_ptr->dev, pas_id);
--}
--EXPORT_SYMBOL_GPL(qcom_pas_auth_and_reset);
--
- /**
-  * qcom_pas_prepare_and_auth_reset() - Prepare, authenticate, and reset the
-  *				       remote processor
-diff --git a/drivers/firmware/qcom/qcom_pas.h b/drivers/firmware/qcom/qcom_pas.h
-index 8643e2760602..a296be2be8c0 100644
---- a/drivers/firmware/qcom/qcom_pas.h
-+++ b/drivers/firmware/qcom/qcom_pas.h
-@@ -18,8 +18,6 @@ struct device;
-  * @get_rsc_table:		Peripheral get resource table callback.
-  * @prepare_and_auth_reset:	Peripheral prepare firmware authentication and
-  *				reset callback.
-- * @auth_and_reset:		Peripheral firmware authentication and reset
-- *				callback.
-  * @set_remote_state:		Peripheral set remote state callback.
-  * @shutdown:			Peripheral shutdown callback.
-  * @metadata_release:		Image metadata release callback.
-@@ -37,7 +35,6 @@ struct qcom_pas_ops {
- 			       size_t *output_rt_size);
- 	int (*prepare_and_auth_reset)(struct device *dev,
- 				      struct qcom_pas_context *ctx);
--	int (*auth_and_reset)(struct device *dev, u32 pas_id);
- 	int (*set_remote_state)(struct device *dev, u32 state, u32 pas_id);
- 	int (*shutdown)(struct device *dev, u32 pas_id);
- 	void (*metadata_release)(struct device *dev,
-diff --git a/drivers/firmware/qcom/qcom_pas_tee.c b/drivers/firmware/qcom/qcom_pas_tee.c
-index ac33a00687aa..dbab9a43e6ca 100644
---- a/drivers/firmware/qcom/qcom_pas_tee.c
-+++ b/drivers/firmware/qcom/qcom_pas_tee.c
-@@ -320,11 +320,6 @@ static int __qcom_pas_tee_auth_and_reset(struct device *dev, u32 pas_id,
- 	return ret;
- }
+-	if (count > size)
++	if (count >= size)
+ 		return -EINVAL;
  
--static int qcom_pas_tee_auth_and_reset(struct device *dev, u32 pas_id)
--{
--	return __qcom_pas_tee_auth_and_reset(dev, pas_id, 0, 0);
--}
--
- static int qcom_pas_tee_prepare_and_auth_reset(struct device *dev,
- 					       struct qcom_pas_context *ctx)
- {
-@@ -401,7 +396,6 @@ static struct qcom_pas_ops qcom_pas_ops_tee = {
- 	.init_image		= qcom_pas_tee_init_image,
- 	.mem_setup		= qcom_pas_tee_mem_setup,
- 	.get_rsc_table		= qcom_pas_tee_get_rsc_table,
--	.auth_and_reset		= qcom_pas_tee_auth_and_reset,
- 	.prepare_and_auth_reset	= qcom_pas_tee_prepare_and_auth_reset,
- 	.set_remote_state	= qcom_pas_tee_set_remote_state,
- 	.shutdown		= qcom_pas_tee_shutdown,
-diff --git a/drivers/firmware/qcom/qcom_scm.c b/drivers/firmware/qcom/qcom_scm.c
-index dc57c87870cf..08b9c5049dd9 100644
---- a/drivers/firmware/qcom/qcom_scm.c
-+++ b/drivers/firmware/qcom/qcom_scm.c
-@@ -845,7 +845,7 @@ static void *qcom_scm_pas_get_rsc_table(struct device *dev,
- 	return ret ? ERR_PTR(ret) : tbl_ptr;
- }
- 
--static int qcom_scm_pas_auth_and_reset(struct device *dev, u32 pas_id)
-+static int __qcom_scm_pas_auth_and_reset(struct device *dev, u32 pas_id)
- {
- 	int ret;
- 	struct qcom_scm_desc desc = {
-@@ -886,7 +886,7 @@ static int qcom_scm_pas_prepare_and_auth_reset(struct device *dev,
- 	 * memory region and then invokes a call to TrustZone to authenticate.
- 	 */
- 	if (!ctx->use_tzmem)
--		return qcom_scm_pas_auth_and_reset(dev, ctx->pas_id);
-+		return __qcom_scm_pas_auth_and_reset(dev, ctx->pas_id);
- 
- 	/*
- 	 * When Linux runs @ EL2 Linux must create the shmbridge itself and then
-@@ -896,7 +896,7 @@ static int qcom_scm_pas_prepare_and_auth_reset(struct device *dev,
- 	if (ret)
- 		return ret;
- 
--	ret = qcom_scm_pas_auth_and_reset(dev, ctx->pas_id);
-+	ret = __qcom_scm_pas_auth_and_reset(dev, ctx->pas_id);
- 	qcom_tzmem_shm_bridge_delete(handle);
- 
- 	return ret;
-@@ -977,7 +977,6 @@ static struct qcom_pas_ops qcom_pas_ops_scm = {
- 	.init_image		= qcom_scm_pas_init_image,
- 	.mem_setup		= qcom_scm_pas_mem_setup,
- 	.get_rsc_table		= qcom_scm_pas_get_rsc_table,
--	.auth_and_reset		= qcom_scm_pas_auth_and_reset,
- 	.prepare_and_auth_reset	= qcom_scm_pas_prepare_and_auth_reset,
- 	.set_remote_state	= qcom_scm_pas_set_remote_state,
- 	.shutdown		= qcom_scm_pas_shutdown,
-diff --git a/include/linux/firmware/qcom/qcom_pas.h b/include/linux/firmware/qcom/qcom_pas.h
-index 1d132e89536e..07d0f1fad85f 100644
---- a/include/linux/firmware/qcom/qcom_pas.h
-+++ b/include/linux/firmware/qcom/qcom_pas.h
-@@ -46,7 +46,6 @@ struct resource_table *qcom_pas_get_rsc_table(struct qcom_pas_context *ctx,
- 					      void *input_rt, size_t input_rt_size,
- 					      size_t *output_rt_size);
- int qcom_pas_mem_setup(u32 pas_id, phys_addr_t addr, phys_addr_t size);
--int qcom_pas_auth_and_reset(u32 pas_id);
- int qcom_pas_prepare_and_auth_reset(struct qcom_pas_context *ctx);
- int qcom_pas_set_remote_state(u32 state, u32 pas_id);
- int qcom_pas_shutdown(u32 pas_id);
+ 	char *buf __free(kfree) = kzalloc(size, GFP_KERNEL);
 -- 
-2.55.0
+2.34.1
 
 
