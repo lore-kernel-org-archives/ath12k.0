@@ -4,80 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C00FEC98332
-	for <ath12k@archiver.kernel.org>; Sat, 26 Sep 2026 15:49:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C18FDC98328
+	for <ath12k@archiver.kernel.org>; Sun, 27 Sep 2026 01:23:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IYAzUI9KJfrVAPUm+dLjsna0fsaIT2KUR47d5rbMV4Q=; b=dUqQkWziXGT3QZcoRQ4J7ji9tp
-	Illt1P/oARWcFHcq7iXxsm6Hud/nuUxVZ+wzaIh2Xia+4+ocDhbY0Yjsxus26qOwmlIz0QPv9fSUT
-	m9r206urI2kdRsyeLoUcUC4NNChO7pIbiu7lmpPfrM+pRbS8y5vI8CETqehZ9wEQ7dCxX6d1v0nYf
-	+RD2fgZnV3dyRaIXdB/kBGlzaUfuSWwVFHurZL4dgelKHCFX41gfh8OlW5IqfmcTIyXzzN8PHyT5C
-	DlINCksUJ1UNguyD6Z8NljujL0nvbUepLXL3w//KsvPESMrh7bKnp6GJO8DEYfgu4WRM/K7iTJyzS
-	N6XrGYRw==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=bxwshbrxYLFrgDXVSsiEGqJVWdpJpdakWMZ76gQ4IE0=; b=cjqxpOWWA/jfs2VVvSK7x6Hyej
+	6qLFSrduhiA7pNVhnfT9Fz50zO5v0GsaqH0CRVi9iryU95sq1qz0SGordmikR/sQBnW9cGG0ciaTV
+	6JOxUqn6dzrxsz1EERNn2dIxsupWyXUmP2jyLVpg8D/4NamBqP8g1ffes+zB4fYdPvNdZOJ5Zr3Ta
+	Q9dvvI9RKhKww5Fm2ng6umEc93LZzbib35vYMBN/2f1wCLHTo8W7uHS+bqNjxNu9g3DS7KzEPC1op
+	FkhowmZsayCG4rljiZHoq44fHUH2+8cnQFqzDHOsrxiV05wmNCyypnCn9gV5ioyNdNSPZfIcpRUrx
+	N2E+HqpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xAUe7-0000000FbhC-1gZS;
-	Sat, 26 Sep 2026 15:49:03 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xAdbt-0000000FvEL-09Cf;
+	Sun, 27 Sep 2026 01:23:21 +0000
+Received: from mail-wm2-x11.google.com ([2a00:1450:4864:31::11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xAUe5-0000000Fbfh-2zEU
-	for ath12k@bombadil.infradead.org;
-	Sat, 26 Sep 2026 15:49:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=IYAzUI9KJfrVAPUm+dLjsna0fsaIT2KUR47d5rbMV4Q=; b=pQIyrXixlcSPw80kYipa9yY4zY
-	TCykeXuPRab3EW8LXv22buBUO2U3l24XA+pk0ougAHnOG54AoXjwU5Go175xVtn/Vdee45JeVl61E
-	XenS21lOBkoC0hqd2byVQNoDo4V9IKmgNCBla4SC3dBwtCkyLCUJdN+WO1YZ/vsjAuKfx56c1p/AS
-	8KDwvCvFs5E+9MJZiUrz8AjPgcurXs7lkcvG5DIoD+5NanaIZ/rVWuSiJrvVIAHt+EgOm40nEp0wc
-	vSn5J1oJ7ko/fN9Y6MIp5kl1N9KDN90epgud+nGoSx5Gji6Odg62uXWMZ4ISIYs0nVBpVXHaVnwDD
-	K2B8fkbw==;
-Received: from m16.mail.163.com ([220.197.31.4])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1xAUe1-00000000GIL-1AjP
+	id 1xAdbq-0000000FvDw-2giY
 	for ath12k@lists.infradead.org;
-	Sat, 26 Sep 2026 15:49:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:To:Subject:Date:Message-Id:MIME-Version; bh=IY
-	AzUI9KJfrVAPUm+dLjsna0fsaIT2KUR47d5rbMV4Q=; b=ckfcvo9NElmrxtAsS7
-	Q23rowQ5H7/VENQwE0rs7LRngh+15JdAKwsEbpkOpg2HuZtX0x4Laah/W5sQct8P
-	oxRE25LyMyv3XQe7GA/sWvJbZQp9340XgqXcfJxTnhYQod0tjMNSgoMeG3BV76BZ
-	iia7kRqXauULzntjBozw/WjV8=
-Received: from pc.localdomain (unknown [])
-	by gzga-smtp-mtada-g1-4 (Coremail) with SMTP id _____wD3F4pL6bdqlpIIBA--.11355S7;
-	Sat, 26 Sep 2026 23:48:34 +0800 (CST)
-From: Jiale Yao <yaojiale02@163.com>
-To: Jeff Johnson <jjohnson@kernel.org>,
-	Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
-	Carl Huang <quic_cjhuang@quicinc.com>,
-	Ramya Gnanasekar <quic_rgnanase@quicinc.com>,
-	P Praneesh <quic_ppranees@quicinc.com>,
-	linux-wireless@vger.kernel.org,
+	Sun, 27 Sep 2026 01:23:20 +0000
+Received: by mail-wm2-x11.google.com with SMTP id 5b1f17b1804b1-49e66390995so10966515e9.2
+        for <ath12k@lists.infradead.org>; Sat, 26 Sep 2026 18:23:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1790472196; x=1791076996; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:sender:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=bxwshbrxYLFrgDXVSsiEGqJVWdpJpdakWMZ76gQ4IE0=;
+        b=NtHRz6RWlwJvq+nTqIPrrbrHqhHBtGAaTwx9e+Psgl41D4cyriH0jznMBlhbrKeTRO
+         /R8G7+GcAgUuGwYaZKiwhby7wMNEmfKuLziJamHJ6dO9oGOSD/jjbAB0jpvovle4Yihz
+         YByiShNA1mSFlLrcb5mDIRx1i3Z/KyX811Y1dulgmBvifChOwmzAEF5s4kJIq4c9rRZb
+         5lvkOsqBfUHKNPx6GUZ8syukg2AtUPoXqsyZOoAedKAc7Zq06L0S7uq2R8px+noZEizk
+         ABpLw5cjgIjP2fgYIwxfxxetiS0FuubixuvvilUh/JFLCD4w+ten5UlnARrGISXPxKZF
+         vBbg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1790472196; x=1791076996;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:sender:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=bxwshbrxYLFrgDXVSsiEGqJVWdpJpdakWMZ76gQ4IE0=;
+        b=qOw7lTllPfRm2QAk1f/BKmgCd0KSSfUOx8EC8LbgTPQqxODAwKxYQ0Vb4lYv4XkWhf
+         v04NuYFjpKxG8awz1FWsIFocqfvjK0tasFjxYauDM2XUOyiwfp4PLKhW106xB3U2vTRk
+         Kcv6GwvfwZL5KAKWnNttWpI96uC8oWyCYfDJ7JFjbXUe4+W/ab5D3gsIUt5FNFnMPLVp
+         zRXDk7j4/r63rZtgTvh3r8rvQ+XtaJ0pIvY8yT7lOI0S7GfhTKLqW0VcHyeGJc/yeWhD
+         PBOh+g7zqeCUaGDmvTSfGAGZy43dcshwH4kR5UqqMW2SBsFUdvMeNmzOB4QwiFbUIqRr
+         wIiQ==
+X-Forwarded-Encrypted: i=1; AKwUvBwdPW2tLTubES1/62V/11f00gjPSbHlYwqzD96q2P8yasWF//KeaqeV/7OmLL3WFHWrpq2HXG8=@lists.infradead.org
+X-Gm-Message-State: AFuF++l9MsZ/N4d1NH81Cs4WOeFJ7t43YmS7bkcfFzXQ7a90L2U9NQnR
+	qWn4eW0aSKFYdQxoRl2lNR0Fnvb6fSrgPQ2FZDVGtv1K/yH6QX1WyhF7
+X-Gm-Gg: AYBFou2fr6fOh/4Wxqge5pPeKierETtCjqIugjBIkRnvhlGxLKA7oXp+A7IYtS0SOt/
+	TdwCCV9lbax3xw2MjWPwN9KmuTNi0xdkemTrS6lCWeMXdYzPF53tLzy6mQm0xsA96ZM/AH3w9lM
+	tfXP5+Zajox4wCyms8BZ70963v09UdjeuxEq7GgrIIRWJu0nsWiT0HYpfFKZxZB14MbfViuJqco
+	L6RAoimN7gRwWZ2xrifvsDCBiB3++NUSQjrGcYdQkDvkFZUXqjQvcSRCTgac8ldV25uZdVqoNW2
+	3lwuph5MFQz7JhuEa4baK7ibQYIP4pn6qENENuINdafs/FfjtkSCXmvr2E/BtlmLKcUD+4CiCVI
+	+a+XQ3OlFDaPCP7aa1gvICbCOYWpxmlb4+t2/oyBRE7Ma+V/Gs7piGmHUWXDE8XoXr0no8bxvfi
+	QKXShuMMF+pakmiC8rA7hxGax+YNKU4lhd57t3u45NCJr/39XrncT+hVf/orljvn2Z2KNsTWm6b
+	t7E5fmqUosvUg4YFmmToQnPDg==
+X-Received: by 2002:a05:600c:19cd:b0:49d:2536:402e with SMTP id 5b1f17b1804b1-49ff06f7a45mr117047985e9.30.1790472195756;
+        Sat, 26 Sep 2026 18:23:15 -0700 (PDT)
+Received: from mac.lan ([2001:861:8b92:2c50:9cf6:601a:85a9:dd7f])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a0017998dbsm27530395e9.14.2026.09.26.18.23.14
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Sat, 26 Sep 2026 18:23:15 -0700 (PDT)
+From: Benoit Masson <benoitm@perenite.com>
+X-Google-Original-From: Benoit Masson <yahoo@perenite.com>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: Jiale Yao <yaojiale02@163.com>
-Subject: [PATCH 5/5] wifi: ath12k: avoid IDR mutation during vif mgmt TX cleanup
-Date: Sat, 26 Sep 2026 23:48:24 +0800
-Message-Id: <20260926154824.75224-6-yaojiale02@163.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260926154824.75224-1-yaojiale02@163.com>
-References: <20260926154824.75224-1-yaojiale02@163.com>
+	stable@vger.kernel.org,
+	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Subject: [PATCH] wifi: ath12k: order hw group devices by WSI index
+Date: Sun, 27 Sep 2026 03:23:14 +0200
+Message-ID: <20260927012314.34857-1-yahoo@perenite.com>
+X-Mailer: git-send-email 2.54.0
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-CM-TRANSID: _____wD3F4pL6bdqlpIIBA--.11355S7
-X-Coremail-Antispam: 1Uf129KBjvJXoW7WFyrKrWkWw4fKr1kAw13Jwb_yoW8tF15pF
-	47W342yFyUuF45Xrs5Jr48A3WrJ3WDGws29r4UGas5WFnxAr1agFyFvFy7ZryrtFWrGFy2
-	k3yjkr18Gw4kG3DanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x0pib4SwUUUUU=
-X-CM-SenderInfo: x1dryxhdohiji6rwjhhfrp/xtbC7xIXUWq36VK0IAAA3J
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260926_164857_960582_DB4E386A 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20260926_182318_704170_F6BB55B3 
+X-CRM114-Status: GOOD (  19.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,64 +100,85 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-ath12k_mac_vdev_delete() walks txmgmt_idr with idr_for_each(), and its
-callback removes each entry belonging to the interface. Removing the
-current entry can invalidate the radix-tree iterator retained by
-idr_for_each().
+On multi-chip (WSI/MLO) platforms the devices of a hardware group are
+added to ag->ab[] in PCI probe completion order (ab->device_id =
+ag->num_probed++). PCI probe is asynchronous, so the order in which the
+chips complete firmware bring-up is not stable across boots.
 
-Move the walk into a helper that uses idr_for_each_entry(). It performs a
-fresh lookup for every iteration, so each matching entry can be removed
-through the locked removal helper without retaining iterator state across
-the removal.
+ath12k_mac_allocate() builds the wiphy radio array directly from
+ag->ab[], and takes the wiphy device from the first entry. As a result
+both the wiphy sysfs path and the mapping of radio indices to bands
+change from boot to boot on boards such as the TP-Link Archer BE800,
+which has three single-band QCN9274/QCN9224 radios in one group. A
+persisted hostapd configuration that pins radio0 to a band then attaches
+to a random band.
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Signed-off-by: Jiale Yao <yaojiale02@163.com>
+Order the devices used to build pdev_map[] by ab->wsi_info.index, which
+is derived deterministically from the device tree WSI ring and the
+qcom,wsi-controller node. ath12k already uses wsi_info.index as the
+canonical per-device index for the firmware link IDs in
+ath12k_host_cap_hw_link_id_init().
+
+Note that ag->ab[] itself is left untouched: the unassign path indexes it
+by ab->device_id, which is the probe-order id.
+
+Fixes: 6f245ea0ec6c ("wifi: ath12k: introduce device group abstraction")
+Cc: stable@vger.kernel.org # 6.14+
+Signed-off-by: Benoit Masson <yahoo@perenite.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 21 +++++++++++----------
- 1 file changed, 11 insertions(+), 10 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 7695b21149d1..ba41b0fa728e 100644
+index 99bf5cf..6505255 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -9201,16 +9201,18 @@ int ath12k_mac_tx_mgmt_pending_free(int buf_id, void *skb, void *ctx)
- 	return 0;
- }
- 
--static int ath12k_mac_vif_txmgmt_idr_remove(int buf_id, void *skb, void *ctx)
-+static void ath12k_mac_vif_txmgmt_cleanup(struct ath12k *ar,
-+					  struct ieee80211_vif *vif)
+@@ -15444,6 +15444,7 @@ static void ath12k_mac_set_device_defaults(struct ath12k_base *ab)
+ int ath12k_mac_allocate(struct ath12k_hw_group *ag)
  {
--	struct ieee80211_vif *vif = ctx;
--	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB(skb);
--	struct ath12k *ar = skb_cb->ar;
--
--	if (skb_cb->vif == vif)
--		ath12k_mac_tx_mgmt_free(ar, buf_id);
-+	struct ath12k_skb_cb *skb_cb;
-+	struct sk_buff *skb;
-+	int buf_id;
+ 	struct ath12k_pdev_map pdev_map[ATH12K_GROUP_MAX_RADIO];
++	struct ath12k_base *ab_order[ATH12K_MAX_DEVICES] = {};
+ 	int mac_id, device_id, total_radio, num_hw;
+ 	struct ath12k_base *ab;
+ 	struct ath12k_hw *ah;
+@@ -15467,6 +15468,21 @@ int ath12k_mac_allocate(struct ath12k_hw_group *ag)
+ 	if (WARN_ON(total_radio > ATH12K_GROUP_MAX_RADIO))
+ 		return -ENOSPC;
  
--	return 0;
-+	idr_for_each_entry(&ar->txmgmt_idr, skb, buf_id) {
-+		skb_cb = ATH12K_SKB_CB(skb);
-+		if (skb_cb->vif == vif)
-+			ath12k_mac_tx_mgmt_free(ar, buf_id);
++	/*
++	 * Order the devices deterministically by WSI index instead of PCI
++	 * probe completion order, so that the wiphy and the radio index to
++	 * band mapping do not change from boot to boot.
++	 */
++	for (i = 0; i < ag->num_devices; i++) {
++		ab = ag->ab[i];
++		if (!ab)
++			continue;
++		if (WARN_ON(ab->wsi_info.index >= ATH12K_MAX_DEVICES))
++			return -EINVAL;
++
++		ab_order[ab->wsi_info.index] = ab;
 +	}
- }
++
+ 	/* All pdev get combined and register as single wiphy based on
+ 	 * hardware group which participate in multi-link operation else
+ 	 * each pdev get register separately.
+@@ -15483,12 +15499,12 @@ int ath12k_mac_allocate(struct ath12k_hw_group *ag)
+ 	mac_id = 0;
+ 	for (i = 0; i < num_hw; i++) {
+ 		for (j = 0; j < radio_per_hw; j++) {
+-			if (device_id >= ag->num_devices || !ag->ab[device_id]) {
++			if (device_id >= ag->num_devices || !ab_order[device_id]) {
+ 				ret = -ENOSPC;
+ 				goto err;
+ 			}
  
- static int ath12k_mac_mgmt_tx_wmi(struct ath12k *ar, struct ath12k_link_vif *arvif,
-@@ -10972,8 +10974,7 @@ static int ath12k_mac_vdev_delete(struct ath12k *ar, struct ath12k_link_vif *arv
- 	ath12k_peer_cleanup(ar, arvif->vdev_id);
- 	ath12k_ahvif_put_link_cache(ahvif, arvif->link_id);
+-			ab = ag->ab[device_id];
++			ab = ab_order[device_id];
  
--	idr_for_each(&ar->txmgmt_idr,
--		     ath12k_mac_vif_txmgmt_idr_remove, vif);
-+	ath12k_mac_vif_txmgmt_cleanup(ar, vif);
- 
- 	ath12k_mac_vif_unref(ath12k_ab_to_dp(ab), vif);
- 
+ 			/*
+ 			 * the assumption is all devices within an ah
 -- 
-2.34.1
+2.54.0 (Apple Git-157)
 
 
