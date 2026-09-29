@@ -4,95 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8866FCA5FA5
-	for <ath12k@archiver.kernel.org>; Tue, 29 Sep 2026 02:59:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B333CCA5FA1
+	for <ath12k@archiver.kernel.org>; Tue, 29 Sep 2026 02:59:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=UFhWeC8nK54inRKs6I+y3KfLb6ie98THlXPGgVHMi+o=; b=x9gRjkMaCZlccv7mcNCi4oom1P
-	3HFh/MP4v34B9d9gbvNPSHn+ilJxAxMLnE1bXKeyWlC/ga3Jmy9fXYY5wu03zOhi8lMv3QZyofAo4
-	gQ4ciUZhZhUsH45CDnOkm4+VPUoRbR9Vzi74pt5/WHstBFhg6A74ZAej2AYiMEi1MnDmCdMQu/bUr
-	pBIxU3YFcpUrv/VVUzh8qUxETNcsJPXBIyDDYfXZpgYX4A89R21P55rJMgfymKU8EA4LJeBFkEJoS
-	pzGvn7z7GXr6m5u7VH4oCs6skEvYVdKqtsxUvbvcLulAFG8hOlGDFNhYtuGFGz4CT+moe85JcoiJg
-	XJyL9wNQ==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=RjnvcjGV1fxpLT6EIE5odbTgRtwNmnowIubP3qX9FiY=; b=135FLJ20toZqyy51BYkqdkLRib
+	ffLbiItR3+jt4S2Jx5p0Y6I9NJXMjVRDKnsjuFsM4ROG50fAUEuHCuaS7Z6tiWAVdDR/g62IpS6hC
+	8xD65ILBh+cZagUV0/Qo02GHtR2VdKJkw0NIby+EJ1VevGG4o/4GBatzeG/C5XTleoGwNbR0unoJE
+	KRnarxup2449PrONeAP0s5elktrQYC5XReJL69dCweVJ3Tolgn3Apphbxpbdo+B6Hp4ckkrsAKLmV
+	1VHQKl4aEqTspsnPbItbP9cn/8dsksbm2BiDy0XdnPSE1owZCFNkoVCABEDH3usd+kLzrwvYaRhOd
+	ADniHXfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBO3e-00000002A5d-0Be0;
-	Tue, 29 Sep 2026 02:59:06 +0000
-Received: from mail-dy2-x0d.google.com ([2607:f8b0:4864:36::d])
+	id 1xBO3f-00000002A61-17K1;
+	Tue, 29 Sep 2026 02:59:07 +0000
+Received: from mail-dy2-x0f.google.com ([2607:f8b0:4864:36::f])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBO3b-00000002A4f-1vww
+	id 1xBO3d-00000002A5G-0DMV
 	for ath12k@lists.infradead.org;
-	Tue, 29 Sep 2026 02:59:04 +0000
-Received: by mail-dy2-x0d.google.com with SMTP id 5a478bee46e88-3468ec309afso1310319eec.3
-        for <ath12k@lists.infradead.org>; Mon, 28 Sep 2026 19:59:02 -0700 (PDT)
+	Tue, 29 Sep 2026 02:59:06 +0000
+Received: by mail-dy2-x0f.google.com with SMTP id 5a478bee46e88-3396cec93b6so4335272eec.3
+        for <ath12k@lists.infradead.org>; Mon, 28 Sep 2026 19:59:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=trailofbits.com; s=google; t=1790650742; x=1791255542; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=UFhWeC8nK54inRKs6I+y3KfLb6ie98THlXPGgVHMi+o=;
-        b=LRNleTmyIBFntZd3O8DuPNNxbo71fLWKKBUc1K2/5rF79eSXQufbcLuj31LV+MHRfF
-         gokKQcGkXMhw+rx0t80FexldYQCuZ4ytc05OvqmZEicdsPk7c1RxZuJGP0bA7x9Rr9Tt
-         c6HKlWHGnPnZyA39Of1gFe3NdVm185ZIZV1x3ZIOfL/AONKZP1lAJ816dXuPy2Ax4jyQ
-         WUuXUAMgN5Ye4EamHVhvGQvABzL5M/wePz34VbJe0044gS0wd95AsTducF8uEYdzBKcW
-         ikz0a3FtcYWr9ijqEYSIQxYNuBlrLYRx7vpKgHK+dvYN/LapBnryElwlyxNkZGms4vPm
-         u3sA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790650742; x=1791255542;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=trailofbits.com; s=google; t=1790650744; x=1791255544; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=UFhWeC8nK54inRKs6I+y3KfLb6ie98THlXPGgVHMi+o=;
-        b=i1tIDSiCcOPqYlpB+q09W111HRe7tXCSwWdWke4m4xWRnAfq3ZMst1k0JGNp0UwOc6
-         yjs8pL0Loud1LAzAivagLzgaLuq9W59VYFtYKis3qdwmi4Yo02Y7Z1jVm4hFmvXbtzLp
-         LW4AAMPdoJW5cCC4xWQFnfC8PMmhM6ZUvXV5HMw6tdJZWOdMFQVE96i5sEgdakTnF5Cy
-         8bvYh7Ve9Tiio7RzRUKeRIbbQ+40WBlLQVO5WfXLsogfS0TUemFqzol4L6wztmXcPrkK
-         lYZf/H9LOtlMDl02WqVVse861fKw+PjDcxyVulEALNWmC++eixhk/rSBZwTaWOzANUOH
-         HwCA==
-X-Forwarded-Encrypted: i=1; AKwUvByAKxg+5ZFyVb7Kjtl4qcfSH+DAvTiJqmzWZMpYB7OBh8OId9kT8wc8Fhod3hZMdVBGZe+d9js=@lists.infradead.org
-X-Gm-Message-State: AFuF++lSCjdHI4lvmipAgeoQrAuwv6Na8X/eecbxT+2K+5mtjnsoPJP0
-	23nwdbGBSaNJEX3LQDGDpF+QvwxRKkux0a0KvC89XBymIEkVXgbFkYOPUjT8leYVcIuLTEuKLL+
-	2yTGB7eY=
-X-Gm-Gg: AYBFou2MhGfRR4zOpK53U0wvEf8tTNar/wxVrBsufygp3DlRHJLvwHpwil7u7zEs4VJ
-	LoZ4cC4rXdR4aMpydnQ03yn4JiH4ukKoMPgeMyUb6s7ftAYYi73a3IQo/Jf86caxD08wY6C4f2T
-	BLn9nWhOwb8RdL+VFUat7HjWK87bImQWgIpOCiMLfIvPX11FdOpqxG3a+bsVIBF2lrr4alLbU5F
-	EVOBp3eYglw0EF95uZXO0KQtDL7OkovvpI1yqRvXWJ96VnrKb8FJwJDVE+qm2t/LKPJ+P4q6K4a
-	VDGFNFPv0wzk2s7KMXSWuQGzwxJt59w3MnBwGajFLT/19IuEvuoupSAB8lff3cuYZ4elr78FlKG
-	Vvy3cFOZc7Scejg48eD9j+8481/XGvIUcjsyti9WHY9IR+zFrYRBr9BE5Yxu+ntYPepr6c0id7W
-	b7RCS8WtkY4C5Pi4TMe7wy51OSFFO48hJ7mrhAzN9365VvEBilILz2s4dsWLLWBLswI6UPRlrHW
-	4Y6H/ElI3XFhvGIrEHTbTtQ6VkuF58p8Uz+bLrX8iGWpsFdybjo9sWjO+JXiIHSNx3NZd3maDRs
-	Q5yG8Gw=
-X-Received: by 2002:a05:7301:1f15:b0:33e:6bd8:8f1a with SMTP id 5a478bee46e88-3426cfdf68cmr15624231eec.0.1790650741745;
-        Mon, 28 Sep 2026 19:59:01 -0700 (PDT)
+        bh=RjnvcjGV1fxpLT6EIE5odbTgRtwNmnowIubP3qX9FiY=;
+        b=LFFMXsKiBcvJWUnROK3qVU930eTaxjeJu9ZhrHjrJuUlXsqIFVRIw6wEKuRaq2b8Yg
+         mkhfFOlvCwA1moQdboRNBD05L3hzw4aicxt71HTJuh3UvtYqdvvbyTIZP9oG3Z2IhRTA
+         zxie3xiBiveFXV5vbLCKFonNmqNrDAFwtOxrGd3cnLMCfHBCP900qijVB5SvhbSRO7cA
+         aMqm7/j69oTysCAM4L3e700+smoT9U3Uv1lyZH71QeYSNlilFTrYFBZx2/ks27c1vlOU
+         hnDeSdgCTQ4nleGigl/0pWCRZhVCfnO4vJHroFR8ChEp9IAbYUteHjeiFHxifwcQVfUh
+         BQRg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1790650744; x=1791255544;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=RjnvcjGV1fxpLT6EIE5odbTgRtwNmnowIubP3qX9FiY=;
+        b=bEo+uEWu1S61eQPsppt6jeALkEsVNH26ssNQJhNsJC+B5t5Mn4HtHfYLstLtjCHOYj
+         gG9OdOQFD7BvHRKI51FljW3C6KEEmFEOToZ17ba+JaIuIYZFmX6/49z7M5Ne180iQxul
+         YaYzaWD7ue5BPyvViuKGxIVL5fs2NkUjKrjngBuKZu8Sx8/h9jhcELzUlee1Dqc9dxnE
+         V2Q9PgXi6MB+bpXeWcqkalLR7qOhGwUh4j6x20o4Bb3+XTzqYsZokahXU76hZh5y9Sp0
+         jirz4oAsgIdz8M2LGt8Y+0Pc+zYRj0XL4VpeBFLmSHA5eK5L6D68DhIMS7StRcHn3rbe
+         1srA==
+X-Forwarded-Encrypted: i=1; AKwUvBwQUqLpRuJrDYsz/OFpXgGuvC/LmV5K7KDjVTkE6eR2llH0bnjeiY0u4pZX93reIGSZ2kQRRS4=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLprZ5Z+1e8oKyFYHj6O77ETMl5Cy4dyJBv4JLXmt9i70nSAy97
+	8cXNwTdolWEhM7BhjwDIdLe9kd5mjIrFdizo6Pw7UouD3KD09YfH9UiF4y6E8pKykbQ=
+X-Gm-Gg: AYBFou3IFJWj8WGUQDI8I3CS+X3gXrkeoLLpGrk1042cEwGME9hJdwaLYFIPVHnVUQS
+	87D6CcH4FIYAjFjYpEsMr9pCRuUyR+2HboDusMlSP9i5+xymoDm1z+gD5erz6HvHPcI5p/t1kdw
+	SN+Bs8sSZHqsTUPcvKqlEMgLIm3mmOPG1V//sN1xBtPrsmcWBtR7i3hvvklhMsoU0gvSKuqnWIU
+	zwMOOmSsb2GiwxDdOUDqSOSNd63tyAHgafe49vvNi7t5gLNWTJPIT/owAKA/tNBc7a4n6hB/QeL
+	5HZ9bV5dufgO86x+qa74MJwXxP2DNmZOV7Xyt0Voi2srnN/T1w8rMtVisFPHiR9dNYp9RgPxm/b
+	cX5yfsyDfRpPJuSovHk2DwDAk2T7BcC+EFQsDvWof9s2TJ4QnWRdr4/nkuRAf1HcLIGamL2hw/R
+	KFyhERI8SZ77xtgDXaI9uQj6MRcLUIf9g+XInfUG2hCY+849GHRlWkNj2qFBEb6kIA9ZQJkdiIg
+	33mR7ibpWAiXBpuuN0Z6fNJcOOPrq+2MG9UMOrirMpziaU6iM8/ZKByIJwETPBxdb0DHNk=
+X-Received: by 2002:a05:7300:e11c:b0:33e:633c:7f70 with SMTP id 5a478bee46e88-34272b3bbb7mr13637894eec.35.1790650744286;
+        Mon, 28 Sep 2026 19:59:04 -0700 (PDT)
 Received: from localhost.localdomain ([2603:8001:5f01:8bab:3481:cbb6:f339:9e4e])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-34571658054sm13111683eec.8.2026.09.28.19.59.00
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-34571658054sm13111683eec.8.2026.09.28.19.59.03
         (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Mon, 28 Sep 2026 19:59:01 -0700 (PDT)
+        Mon, 28 Sep 2026 19:59:03 -0700 (PDT)
 From: Artem Dinaburg <artem@trailofbits.com>
 To: stable@vger.kernel.org
 Cc: Artem Dinaburg <artem@trailofbits.com>,
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	Sasha Levin <sashal@kernel.org>,
 	Baochen Qiang <quic_bqiang@quicinc.com>,
-	Kalle Valo <kvalo@kernel.org>,
 	Jeff Johnson <jjohnson@kernel.org>,
+	Kalle Valo <kvalo@kernel.org>,
 	ath12k@lists.infradead.org,
 	linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	quic_jjohnson@quicinc.com
-Subject: [PATCH 6.6.y 0/2] wifi: ath12k: backport CVE-2024-40979 fixes
-Date: Mon, 28 Sep 2026 22:58:52 -0400
-Message-ID: <20260929025856.85683-1-artem@trailofbits.com>
+	quic_jjohnson@quicinc.com,
+	Kalle Valo <quic_kvalo@quicinc.com>
+Subject: [PATCH 6.6.y 2/2] wifi: ath12k: check M3 buffer size as well whey trying to reuse it
+Date: Mon, 28 Sep 2026 22:58:54 -0400
+Message-ID: <20260929025856.85683-3-artem@trailofbits.com>
 X-Mailer: git-send-email 2.55.0
+In-Reply-To: <20260929025856.85683-1-artem@trailofbits.com>
+References: <20260929025856.85683-1-artem@trailofbits.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260928_195903_514721_68099FEE 
-X-CRM114-Status: UNSURE (   8.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260928_195905_094397_61E78AD1 
+X-CRM114-Status: GOOD (  19.11  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,22 +108,130 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+
+[ Upstream commit 05090ae82f44570fefddb4e1be1d7e5770d6de40 ]
+
+Currently in recovery/resume cases, we do not free M3 buffer but
+instead will reuse it. This is done by checking m3_mem->vaddr: if it
+is not NULL we believe M3 buffer is ready and go ahead to reuse it.
+
+Note that m3_mem->size is not checked. This is safe for now because
+currently M3 reuse logic only gets executed in recovery/resume cases
+and the size keeps unchanged in either of them.
+
+However ideally the size should be checked as well, to make the code
+safer. So add the check there. Now if that check fails, free old M3
+buffer and reallocate a new one.
+
+Tested-on: WCN6855 hw2.0 PCI WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.30
+
+[ Backport to 6.6.y: mapped the M3 size validation onto the target's
+  older QMI allocation layout. ]
+
+Fixes: 303c017821d8 ("wifi: ath12k: fix kernel crash during resume")
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Link: https://msgid.link/20240425021740.29221-1-quic_bqiang@quicinc.com
+Assisted-by: LLM
+Signed-off-by: Artem Dinaburg <artem@trailofbits.com>
+---
 Hi Greg, Sasha, and wifi ath12k maintainers,
 
-These patches are a backport for CVE-2024-40979 on 6.6.y.
-The second patch depends on the first, so I kept the upstream ordering
-instead of folding either change into the other.
+I am working through the small CVE backports still missing from 6.6.y.
+This one addresses CVE-2024-40979. It also validates the reusable M3 buffer
+size and reallocates an undersized buffer.
 
-Both patches are already present in 6.12.y, 6.18.y, and 7.2.y. Could you
-please queue this series for 6.6.y?
+The fix is already present in 6.12.y, 6.18.y, and 7.2.y, but not in 6.6.y.
+The target-specific adjustment is recorded in the bracketed note above.
 
-AI assistance: An LLM helped identify, adapt, and validate these backports;
-I reviewed the resulting code and validation evidence.
+Could you please queue it for 6.6.y?
+
+CVE: CVE-2024-40979
+Upstream: 05090ae82f44570fefddb4e1be1d7e5770d6de40
+
+AI assistance: An LLM helped identify, adapt, and validate this backport; I
+reviewed the resulting code and validation evidence.
 
 Thanks,
-Artem
+Artem Dinaburg
 
-Series:
-  1. wifi: ath12k: fix kernel crash during resume
-  2. wifi: ath12k: check M3 buffer size as well whey trying to reuse it
+ drivers/net/wireless/ath/ath12k/qmi.c | 39 ++++++++++++++++-----------
+ 1 file changed, 24 insertions(+), 15 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index 7a9868dbab02d7..48d0043fcee93b 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -2511,6 +2511,19 @@ static int ath12k_qmi_load_bdf_qmi(struct ath12k_base *ab,
+ 	return ret;
+ }
+ 
++static void ath12k_qmi_m3_free(struct ath12k_base *ab)
++{
++	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
++
++	if (!m3_mem->vaddr)
++		return;
++
++	dma_free_coherent(ab->dev, m3_mem->size,
++			  m3_mem->vaddr, m3_mem->paddr);
++	m3_mem->vaddr = NULL;
++	m3_mem->size = 0;
++}
++
+ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
+ {
+ 	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
+@@ -2518,9 +2531,6 @@ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
+ 	char path[100];
+ 	int ret;
+ 
+-	if (m3_mem->vaddr || m3_mem->size)
+-		return 0;
+-
+ 	fw = ath12k_core_firmware_request(ab, ATH12K_M3_FILE);
+ 	if (IS_ERR(fw)) {
+ 		ret = PTR_ERR(fw);
+@@ -2530,6 +2540,17 @@ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
+ 		return ret;
+ 	}
+ 
++	/* In recovery/resume cases, M3 buffer is not freed, try to reuse that */
++	if (m3_mem->vaddr) {
++		if (m3_mem->size >= fw->size) {
++			release_firmware(fw);
++			return 0;
++		}
++
++		/* Old buffer is too small, free and reallocate */
++		ath12k_qmi_m3_free(ab);
++	}
++
+ 	m3_mem->vaddr = dma_alloc_coherent(ab->dev,
+ 					   fw->size, &m3_mem->paddr,
+ 					   GFP_KERNEL);
+@@ -2547,18 +2568,6 @@ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
+ 	return 0;
+ }
+ 
+-static void ath12k_qmi_m3_free(struct ath12k_base *ab)
+-{
+-	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
+-
+-	if (!m3_mem->vaddr)
+-		return;
+-
+-	dma_free_coherent(ab->dev, m3_mem->size,
+-			  m3_mem->vaddr, m3_mem->paddr);
+-	m3_mem->vaddr = NULL;
+-}
+-
+ static int ath12k_qmi_wlanfw_m3_info_send(struct ath12k_base *ab)
+ {
+ 	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
+-- 
+2.39.5
+
 
