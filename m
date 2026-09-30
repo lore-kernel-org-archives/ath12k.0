@@ -4,54 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF14ECA5FC7
-	for <ath12k@archiver.kernel.org>; Wed, 30 Sep 2026 14:11:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4A73CA5FC5
+	for <ath12k@archiver.kernel.org>; Wed, 30 Sep 2026 14:11:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=kog7asmMh6wog1adNQUGIn243OW/BEgANRMVLg38o7k=; b=t7VmyurTNv6xs8JO9s99f6CA2+
-	0Ja783GInuhfsCKWcEsjCqzZzRFVpMvyoCHpEsIkUWv9o8Kvvy7oIVel6SBBeCMK5rxP4b7JMGPqY
-	LWHlAQqcSLMJzRDdKQn01r5eAZhs23aATZwKKo5mtZfLfNpUARjtHX9NH7ZFF2Rr3VPnQmmLTHmZc
-	3hFTz4SxMCw2L3m/iOj+Qih2g3JBSr8vj1JcloP5Hsh1E01OnKW2OG2OH/vppxBMJfmsTOGYGWGrW
-	sjr2Y2JRzXEhTrLSj2w/4qlOSGUyDeC1MHPHka/x8ypmAkLib74uERLj10EV9bs+bdqU+50eyahzx
-	UTbkvoVQ==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0YVhvO5SMCN7TMiG9ZoSdhyJXNnNMq+CHd4JeeSj0hY=; b=pRVpyPcU04YNrWPEyYeCJ6Akuh
+	VuUS6MDhw8qJN5FG1FTGHpitqlOkhVmISTvp/hLDEs3QtOlB1a/w4naYFyFFgJEjMFdW+fRhV9lLD
+	ioE4YkoAKXgROkQkwT9fjXd9Kyqiqdez9UH+kdCnRIrwNCFZvYymPRRl+lSJDR3J88PChQnGsOQPT
+	yGV7n6GR1YAgYale0lZpsEHCT9X6n6xnWHxTvWdLy1/Vhd6sd+V2sytlsam3FMVjEidXO6SHhn40i
+	SQYGNfUtH8DFgymDsCBGW60suLhicjutT6ia1bL+mHR4lFkxK4bYkFGuNAdxrzh578S4D2q9xTg2Z
+	rZD83XgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBv1S-00000006F7j-1i7e;
-	Wed, 30 Sep 2026 14:11:02 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1xBv1W-00000006F9p-25W7;
+	Wed, 30 Sep 2026 14:11:06 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBv1N-00000006F5a-3Al4
+	id 1xBv1S-00000006F7E-0oRw
 	for ath12k@lists.infradead.org;
-	Wed, 30 Sep 2026 14:10:59 +0000
+	Wed, 30 Sep 2026 14:11:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1790777456;
+	s=mimecast20190719; t=1790777461;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=kog7asmMh6wog1adNQUGIn243OW/BEgANRMVLg38o7k=;
-	b=ha9U6P/5yRbPSvfKUiio+hCm+iNn5nkQRjvfEoDttctNx533AjKfJOJQzVBe6eje08f3BU
-	Qe531WJcHQMyFgRgQB2CS0ziwsAAE+HVvxvp7rSUjztCTv1ge2WYw4z3cqNJlLDz3Vp2iR
-	VHOz573M4fzJEjiOnBl1B6Q3W9PxpK4=
-Received: from mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=0YVhvO5SMCN7TMiG9ZoSdhyJXNnNMq+CHd4JeeSj0hY=;
+	b=iNDKCdjIsr+sWF4XbrMcbwIgN19rQqaKOmne8G5TOo5csLtaWn/te2QuAsm0M5zXB615oO
+	iY+QSqq4fGHh+rDjh7g/0qtmE5MrvPmxEGQAXb93kGs7okZG9m6EbRm+bt6YdM9KhoHtC1
+	HjuYZBd4V/mvQOW1qPSdvWMFL+XLPdk=
+Received: from mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-35-165-154-97.us-west-2.compute.amazonaws.com [35.165.154.97]) by
  relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-543-DJl6E92WOv2gFGzQ13y3SA-1; Wed,
- 30 Sep 2026 10:10:53 -0400
-X-MC-Unique: DJl6E92WOv2gFGzQ13y3SA-1
-X-Mimecast-MFC-AGG-ID: DJl6E92WOv2gFGzQ13y3SA_1790777451
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-610-S2DnP1ZkNd6ZrH8EgANtGw-1; Wed,
+ 30 Sep 2026 10:09:32 -0400
+X-MC-Unique: S2DnP1ZkNd6ZrH8EgANtGw-1
+X-Mimecast-MFC-AGG-ID: S2DnP1ZkNd6ZrH8EgANtGw_1790777369
 Received: from mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.12])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id EF668197700A;
-	Wed, 30 Sep 2026 14:10:50 +0000 (UTC)
+	by mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 50813180899A;
+	Wed, 30 Sep 2026 14:09:29 +0000 (UTC)
 Received: from jtornosm-thinkpadp1gen7.rmtes.csb (headnet04.pony-001.prod.iad2.dc.redhat.com [10.2.32.116])
-	by mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 18C2C1956044;
-	Wed, 30 Sep 2026 14:10:46 +0000 (UTC)
+	by mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 125A61956044;
+	Wed, 30 Sep 2026 14:09:24 +0000 (UTC)
 From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
 To: bhelgaas@google.com,
 	alex@shazbot.org,
@@ -68,20 +69,22 @@ Cc: johannes@sipsolutions.net,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH 0/7] Enable Qualcomm WiFi PCIe passthrough to VMs
-Date: Wed, 30 Sep 2026 16:10:45 +0200
-Message-ID: <20260930141045.577212-1-jtornosm@redhat.com>
+	linux-kernel@vger.kernel.org,
+	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+Subject: [PATCH 4/7] ath11k: add PCIe link recovery retry
+Date: Wed, 30 Sep 2026 16:08:30 +0200
+Message-ID: <20260930140833.576941-5-jtornosm@redhat.com>
+In-Reply-To: <20260930140833.576941-1-jtornosm@redhat.com>
+References: <20260930140833.576941-1-jtornosm@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 3.0 on 10.30.177.12
-X-Mimecast-MFC-PROC-ID: m8ZivKRdNNLI522mXh_Sobkku_1W9dfh-IGZ6mTwG2A_1790777451
+X-Mimecast-MFC-PROC-ID: N33u8tsQhLBKK0PSMrrJ-VFmLMNYKQzwNqZZUrrwtCg_1790777369
 X-Mimecast-Originator: redhat.com
 Content-Transfer-Encoding: 8bit
 content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260930_071058_450801_701C21CD 
-X-CRM114-Status: UNSURE (   8.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260930_071102_372024_E56131EC 
+X-CRM114-Status: GOOD (  14.60  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,64 +99,115 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This series enables Qualcomm ath11k/ath12k WiFi devices to work in VM
-passthrough scenarios, addressing a long-standing issue where these
-devices fail to initialize when passed through to VMs via VFIO.
+When ath11k devices are passed through to VMs via PCIe passthrough,
+the PCIe link may not stabilize immediately after global reset due to
+virtualization layer timing variations. This causes MHI initialization
+to fail with "BHI offset: 0xffffffff is out of range" errors because
+the device is read before it's ready.
 
-Qualcomm ath11k/ath12k WiFi devices have been broken in VM passthrough
-since they were introduced. The devices use an embedded interrupt
-controller that requires physical host MSI addresses programmed to
-device registers, but in VMs the driver only sees virtualized guest
-addresses. This causes firmware initialization to fail with errors like
-"BHI offset: 0xffffffff is out of range".
+Currently, ath11k_pci_soc_global_reset() just warns if the link is
+down but continues anyway, leading to inevitable MHI failures.
 
-Multiple attempts have been made to solve this over the past 2 years:
+This patch adds:
+1. A retry loop (up to 5000ms) to wait for the PCIe link to recover
+   after global reset (similar to the existing ath12k LTSSM retry logic)
+2. Proper error propagation to prevent continuing with a dead link
 
-March 2024: Workaround using module parameters [1]
-  - Required manually copying MSI values from host to VM
-  - Rejected by Johannes Berg as too manual, suggested VMM solution
+This is especially important for VM environments where timing can vary
+significantly from bare metal.
 
-August 2024: QEMU + kernel solution by Alex Williamson [2]
-  - Kernel disables MSI virtualization, QEMU intercepts config writes
-  - Uses brute force pattern matching to infer MSI data writes
-  - Stuck as RFC - no progress in 8+ months
+Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+---
+ drivers/net/wireless/ath/ath11k/pci.c | 39 ++++++++++++++++++++++-----
+ 1 file changed, 32 insertions(+), 7 deletions(-)
 
-No action from Qualcomm: Despite multiple reports, no vendor solution
-
-The solution in this series provides a clean, kernel-only solution that
-addresses the previous concerns.
-
-Architecture:
-1. qcom-vfio-pci variant driver caches physical host MSI values and
-   exposes them via extended config space with magic signature "QMSI"
-   In this way, device-specific hardware quirks belong only in kernel
-   drivers, not userspace, independent of the tools used.
-   This follows the established VFIO variant driver pattern used by
-   other drivers like mlx5-vfio-pci (netdev tree) and nvgrace-gpu (platform
-   tree).
-2. VM drivers (ath11k/ath12k) automatically discover and use cached values
-3. PCIe link recovery handles VM timing variations
-
-Thoroughly tested: 3 VMs across 2 WiFi generations, all devices successfully
-initialized and are ready for use.
-- VM1: ath11k (WCN6855)
-- VM2: ath11k (WCN6855)
-- VM3: ath12k (WCN7850)
-
-[1] https://lore.kernel.org/all/20240322104912.94811-1-jtornosm@redhat.com/
-[2] https://lore.kernel.org/kvm/20240812170014.1583783-1-alex.williamson@redhat.com/
-[3] Original problem report:
-    https://lore.kernel.org/all/fc6bd06f-d52b-4dee-ab1b-4bb845cc0b95@quicinc.com/
-
-Jose Ignacio Tornos Martinez (7):
-  PCI: Add pci_find_free_ext_cap_offset() helper
-  vfio: Add qcom_vfio.h header for MSI cache protocol
-  vfio/pci: Add qcom-vfio-pci variant driver
-  ath11k: Add PCIe link recovery retry for VMs
-  ath11k: Use VFIO MSI cache when available
-  ath12k: Add PCIe link recovery retry for VMs
-  ath12k: Use VFIO MSI cache when available
---
+diff --git a/drivers/net/wireless/ath/ath11k/pci.c b/drivers/net/wireless/ath/ath11k/pci.c
+index 7114eca8810d..4fc6aaf036c1 100644
+--- a/drivers/net/wireless/ath/ath11k/pci.c
++++ b/drivers/net/wireless/ath/ath11k/pci.c
+@@ -190,8 +190,10 @@ static void ath11k_pci_restore_window(struct ath11k_base *ab)
+ 	spin_unlock_bh(&ab_pci->window_lock);
+ }
+ 
+-static void ath11k_pci_soc_global_reset(struct ath11k_base *ab)
++static int ath11k_pci_soc_global_reset(struct ath11k_base *ab)
+ {
++	unsigned long timeout;
++	bool link_recovered = false;
+ 	u32 val, delay;
+ 
+ 	val = ath11k_pcic_read32(ab, PCIE_SOC_GLOBAL_RESET);
+@@ -211,14 +213,29 @@ static void ath11k_pci_soc_global_reset(struct ath11k_base *ab)
+ 
+ 	mdelay(delay);
+ 
+-	val = ath11k_pcic_read32(ab, PCIE_SOC_GLOBAL_RESET);
+-	if (val == 0xffffffff)
+-		ath11k_warn(ab, "link down error during global reset\n");
++	/* Wait for PCIe link to recover, especially important in VM environments
++	 * where timing can vary significantly from bare metal.
++	 */
++	timeout = jiffies + msecs_to_jiffies(5000);
++	while (time_before(jiffies, timeout)) {
++		val = ath11k_pcic_read32(ab, PCIE_SOC_GLOBAL_RESET);
++		if (val != 0xffffffff) {
++			link_recovered = true;
++			break;
++		}
++		mdelay(20);
++	}
++	if (!link_recovered) {
++		ath11k_err(ab, "PCIe link failed to recover - device may need power cycle\n");
++		return -ETIMEDOUT;
++	}
+ 
+ 	/* Restore window register as its content is cleared during
+ 	 * hardware global reset, such that it aligns with host cache.
+ 	 */
+ 	ath11k_pci_restore_window(ab);
++
++	return 0;
+ }
+ 
+ static void ath11k_pci_clear_dbg_registers(struct ath11k_base *ab)
+@@ -373,8 +390,10 @@ static void ath11k_pci_force_wake(struct ath11k_base *ab)
+ 	mdelay(5);
+ }
+ 
+-static void ath11k_pci_sw_reset(struct ath11k_base *ab, bool power_on)
++static int ath11k_pci_sw_reset(struct ath11k_base *ab, bool power_on)
+ {
++	int ret;
++
+ 	mdelay(100);
+ 
+ 	if (power_on) {
+@@ -387,8 +406,12 @@ static void ath11k_pci_sw_reset(struct ath11k_base *ab, bool power_on)
+ 
+ 	ath11k_mhi_clear_vector(ab);
+ 	ath11k_pci_clear_dbg_registers(ab);
+-	ath11k_pci_soc_global_reset(ab);
++	ret = ath11k_pci_soc_global_reset(ab);
++	if (ret)
++		return ret;
+ 	ath11k_mhi_set_mhictrl_reset(ab);
++
++	return 0;
+ }
+ 
+ static void ath11k_pci_init_qmi_ce_config(struct ath11k_base *ab)
+@@ -818,7 +841,9 @@ static int ath11k_pci_power_up(struct ath11k_base *ab)
+ 
+ 	ab_pci->register_window = 0;
+ 	clear_bit(ATH11K_FLAG_DEVICE_INIT_DONE, &ab->dev_flags);
+-	ath11k_pci_sw_reset(ab_pci->ab, true);
++	ret = ath11k_pci_sw_reset(ab_pci->ab, true);
++	if (ret)
++		return ret;
+ 
+ 	/* Disable ASPM during firmware download due to problems switching
+ 	 * to AMSS state.
+-- 
 2.53.0
 
 
