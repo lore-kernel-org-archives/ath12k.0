@@ -4,72 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D43DCA5FCE
-	for <ath12k@archiver.kernel.org>; Thu,  1 Oct 2026 20:05:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D35F0CA5FD4
+	for <ath12k@archiver.kernel.org>; Fri,  2 Oct 2026 17:10:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gFa6HvAarHDlIrjmTAUOJ7RLBY11icZwWxARmx5iXy8=; b=39ZxeYOjC2ROpytOwZJ0p4b3lN
-	rTc291p1CclGhQSO3RJYuM4cExp83NjBV62NuqokMpEYwpgZ32s0g/EH4TDqSRmT6BnG/piiEbLSz
-	HFPAItdHmaSneXB/W4YbJPPq24OUGE+9h0SH5gc0S16LpTLyZDieEu2dF28QQcANah1R9QImqkhq7
-	vjAhKVGqz8Sp/uxKIBe3buBCaEezqrvLNcI2tkk/6uwIpVbIlTA7tvRtGc+fIE1DHX8VFVVTNxZdl
-	VRoP3xoEYUNglHWAocZIjqlqYdOGQ0OdLk9V7a6mnaxU6f3Zl51szfcN40NLa/+Rb9uc8cvGxCqwa
-	Wy8L3rHQ==;
+	bh=BgakvInNsjTIuwI/HruggHJb8c52XKSKFB4qu//ilyk=; b=jmZsCFRKNSaQxponeoWg4uBRBU
+	XrlpAhv6Ge28zMMduJohfOSfOZFFNwHqB+4haukWL8jCZDgfKBx+VxVstjjkKEr9HPvKyg+4Dzu6o
+	oLW+8rgF88SrSy99mexBlfMW4XGLlc3LOyMRI2OTgCCMrVZqt5kh7Tidow93hPdUaXJvQzoolYTB3
+	/I5IHPYtAlzJiWbBCRB+C4Kz9hdSM8iR00K2hu6HW+AOl8bi0eKPzG1RnqV8fF1T/mmMcMg2PZOPy
+	9qvEVY0we1zJK7D9REuxbCWJUzzCoGsZ3aoh8PXbXYuJnU4xHy2O9AHQQQVShs4airPuTHzS/F1Fb
+	d0RknXHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCN1y-0000000A7jF-3bry;
-	Thu, 01 Oct 2026 20:05:26 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xCgmZ-0000000C7QT-1ztD;
+	Fri, 02 Oct 2026 17:10:51 +0000
+Received: from mail-dy2-x0d.google.com ([2607:f8b0:4864:36::d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCN1w-0000000A7j1-2IQi;
-	Thu, 01 Oct 2026 20:05:24 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0C20B4340A;
-	Thu,  1 Oct 2026 20:05:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D974B1F00893;
-	Thu,  1 Oct 2026 20:05:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790885123;
-	bh=gFa6HvAarHDlIrjmTAUOJ7RLBY11icZwWxARmx5iXy8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=oFkvLWac2KsZh3NfUjCP/h7/HaiDSvHH7LZO0D+Iifpk/isoYSSxhI2v3BWzn3FE3
-	 ezPWKN5dBMirfln9QwBABBts0lU4yCJGluJ9V/VhUTd+ZBBRDwsyzZLXDcKCmbvuHn
-	 weSfehPmwqdfc0w/3m30Pxs66Mivq+g5gBaMq+pOoNTzFy0lYhkbSwj3FX6Qk5MyiN
-	 SQLtwwBKnaT1X8J1Z1sMhAHSdQsrac6gpvJIlWjBeFXj4V7HwE7EL6+tumL9iaeWb/
-	 cViDa1SdbWNXvATKsmMJmiE7FSMKp018IxkjR135SkAFeLIVLA08eFdCVezKskDigm
-	 WfgD1TkfwukMw==
-Date: Thu, 1 Oct 2026 22:05:15 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Marcel Holtmann <marcel@holtmann.org>
-Cc: Juha-Matti Tilli <juha-matti.tilli@iki.fi>, 
-	Deepak Kumar Singh <deepak.singh@oss.qualcomm.com>, "David S . Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
-	Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>, 
-	Jeff Johnson <jjohnson@kernel.org>, linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
-	ath12k@lists.infradead.org, Bjorn Andersson <andersson@kernel.org>, 
-	Chris Lew <christopher.lew@oss.qualcomm.com>, Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>, 
-	Jeff Hugo <jeff.hugo@oss.qualcomm.com>
-Subject: Re: [PATCH v3 2/4] net: qrtr: Assign unique node id for MHI endpoints
-Message-ID: <6isrx67suid5qcha47ihlphxmmeiiapdl57h57hejkwchwtfdb@i3g2cwz6oavn>
-References: <20260922-qrtr-multi-ep-v3-2-c00831e88957@oss.qualcomm.com>
- <7aed969d-0868-4c9c-967e-7766dbba427e@oss.qualcomm.com>
- <13BFC5B0-77E6-48F2-B857-37686EA1DB2C@holtmann.org>
- <05e539f8-bb7c-4038-8a83-8ab0d1a5b917@app.fastmail.com>
- <m657dtesuagn7vdajsuzjb4mfysf5xabsu3s6n6lujj7yb3z4p@m2e7e3n4zyev>
- <10091679-7567-42C2-B77E-EFD95CEDD649@holtmann.org>
- <6e0ed085-07d0-46f0-97dd-b8d942842e1f@app.fastmail.com>
- <0A4EB216-06E0-4A7D-A0FD-821DD371773B@holtmann.org>
- <19433f85-4cf1-4ec1-a26f-0eab7df062df@app.fastmail.com>
- <A709172A-40F7-4986-B7D3-02A422F6584A@holtmann.org>
+	id 1xCgmX-0000000C7Pf-0NAy
+	for ath12k@lists.infradead.org;
+	Fri, 02 Oct 2026 17:10:50 +0000
+Received: by mail-dy2-x0d.google.com with SMTP id 5a478bee46e88-344447f9c3dso4748661eec.0
+        for <ath12k@lists.infradead.org>; Fri, 02 Oct 2026 10:10:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ziepe.ca; s=google; t=1790961048; x=1791565848; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=BgakvInNsjTIuwI/HruggHJb8c52XKSKFB4qu//ilyk=;
+        b=hx6TOBe8KvDe44823HfkVn/IlcY30A0RCiD0cCIQU0YlkQbvTdoN32m1/klHtxYNNm
+         iLNkiWzKMjeQ73wHnfB5sgtaAsby0NSkHsEZ5yrsktIVM4mcSpaG+dG6Iy1ZCQXs21dX
+         Yf8LtgWI12pc2v+pcrFmACK2Dr27v8vZIAt8t7vsz48V+Sp0iHT3W5hfCMtQAE7tR/g0
+         SCkLpIsH8bY0tpBiJz6VYdH9hl1CUidcmPWMQZjAn8I1++ml/ITInkyerPQyICpDOTWL
+         Ah+sX90TaY2kY1NYBd9RJpzSH366Yu8KfwHZOKbAW7vVxqnE2sGt0rlOArjzBIJ88MnW
+         tckQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1790961048; x=1791565848;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=BgakvInNsjTIuwI/HruggHJb8c52XKSKFB4qu//ilyk=;
+        b=zI0LY6tpQZMBtg299+0ZriD3aPLNk4DBNW39o/Ex9xPCSQoBdeCQ7IEC7ne4dr36iq
+         DJYHEjbYQwYnozCOqvVdRC6Ppw/+jcXkU5FdHKPVdRQu5X/G5s2r+P3kf9/Za56KkAJX
+         ZVhOur7V28pO6x2MHg9x+xJCmFDIa9KbNYXvAG9cAhD7xSIwXD06wK0LrmA0iAWuHs3u
+         RnHwlKbS88QJ4ZdY9lu/20vcc3UHLuT0Z9TfG58Nst0rCYiHWN6f6p7H3f1kid5ANiu2
+         ykBpwWO2SuzAAPO0fIQOJYbgM35ZKUOzhrZXvO/rEDa5SjfFNYrRWIkOebCsHhcy0h5C
+         fqlQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzdg9d9Ldk3sekpo1JULrqys+1iAAg65CvJSbLWqF+VrIINSkUQz6Eep9GwvvzBZxsbe6XrNTk=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLmz5mvVqhoV5a/BCcU3EMkNmdtdhHUHEuFz9rn0ykK22ANpS2o
+	DLwKXi8jzXdPNOM2KvCM9TraSNCIwwp7gir5vGFdngL84q++4pyk8HlVcb08JQOVN8w=
+X-Gm-Gg: AYBFou3XtD6WntAq9FG5AiDp+GXuuGin91TozRB8JPp62UPNfeZvTnG7+VVybdLrtoc
+	9n5IhFVS7jcJo95LiLIh95Ow1bolqW8oEY7oDPi1fRrF22qwyIHFhwv+fbrKCDjoXt6Q9hmdugg
+	bZGpGpEE0+3vdA/0riUK7gMvYj7p+llclBQFGTvnYD20q+uhGiJFHlmZ8doFPTWEoG3U2p4F6a4
+	Ej8RANWpXWX8O8cntYbtDSpSYcyQ6XzPGbYaBmjbCR7RrnZjPeyCJs8dF81YFkPXxqPuRz1i2jy
+	eANDyyQiVzfZrX0lsYYupY6IUYtkzL0l6/3QwRiccgU4vy3yOWzcNA7r7/4RcAX8jALAOmzSd6Z
+	G4deaxlF4mgT+yM7r8j1wf/J1Mf456Q8EWpGpIRs0lWcFuP7B5l0tHRPtGF4gN7ETH0w1vp01J7
+	fUW09Z2kE9hi5Zljr00UEmu3HoLpCOvXwJA8RDTTWsZay4
+X-Received: by 2002:a05:7300:e5c2:b0:34b:b410:9352 with SMTP id 5a478bee46e88-34f14f18c8cmr3725477eec.1.1790961048034;
+        Fri, 02 Oct 2026 10:10:48 -0700 (PDT)
+Received: from ziepe.ca ([130.41.10.202])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3510850f86bsm4509703eec.11.2026.10.02.10.10.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 02 Oct 2026 10:10:47 -0700 (PDT)
+Received: from jgg by wakko with local (Exim 4.97)
+	(envelope-from <jgg@ziepe.ca>)
+	id 1xCgmU-00000000BiY-09Yw;
+	Fri, 02 Oct 2026 14:10:46 -0300
+Date: Fri, 2 Oct 2026 14:10:46 -0300
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+Cc: alex@shazbot.org, ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org, bhelgaas@google.com,
+	jjohnson@kernel.org, johannes@sipsolutions.net,
+	kevin.tian@intel.com, kvm@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-wireless@vger.kernel.org,
+	mani@kernel.org, skolothumtho@nvidia.com, yishaih@nvidia.com
+Subject: Re: [PATCH 3/7] vfio/pci: Add qcom-vfio-pci variant driver
+Message-ID: <20261002171046.GA32083@ziepe.ca>
+References: <20260930151229.GR163130@ziepe.ca>
+ <20261001071945.83116-1-jtornosm@redhat.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <A709172A-40F7-4986-B7D3-02A422F6584A@holtmann.org>
+In-Reply-To: <20261001071945.83116-1-jtornosm@redhat.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261002_101049_130404_47AA8ADD 
+X-CRM114-Status: GOOD (  22.44  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,62 +109,60 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 01, 2026 at 05:39:47PM +0200, Marcel Holtmann wrote:
-> Hi Juha-Matti,
-> 
-> >>> Well, in defense of Manivannan's patchset it currently works for PCI+AHB
-> >>> setups better than the last version of that by Denis/Mihai/me (although 
-> >>> I could easily fix that), and it may be simpler for userspace to
-> >>> continue using nid than having to bind to an endpoint, which requires
-> >>> more changes in userspace code.
-> >>> 
-> >>> The userspace just needs to know the nid.
-> >> 
-> >> and existing userspace? You can _NOT_ break existing userspace.
-> >> 
-> >> Don’t you need to re-write all existing QRTRIPC packets to actually even make this work?
-> > 
-> > Well, from what I understand this rewriting is the plan.
-> > 
-> > It is true that if someone has a single card, the nid changes, thus
-> > maybe breaking userspace if the userspace has hardcoded nid.
-> > 
-> > But if someone has multiple cards, the breakage to userspace is less
-> > with this patch, since userspace can keep on using the same code and
-> > just change the nid, whereas with the endpoint_id patch, the userspace
-> > needs code changes to bind to an endpoint.
-> 
-> the general rule for Linux is to _not_ break existing userspace.
-> 
+On Thu, Oct 01, 2026 at 09:19:45AM +0200, Jose Ignacio Tornos Martinez wrote:
 
-The rule is that the kernel must not break ABI and the node id is not ABI.
+> Regarding platform_device_msi_init_and_alloc_irqs(), I agree that
+> moving the driver to device MSI domains would be cleaner on the
+> driver side. However, even with that change, I think the VM problem
+> remains exactly the same: the device MSI domain in the VM would
+> allocate virtual addr/data pairs, and the firmware's private interrupt
+> controller still needs the physical host values.
 
-Node ids are assigned dynamically and discovered at runtime through qrtr lookup.
-They are not a fixed property of a device. For an AUTO endpoint, the id is
-simply whatever the firmware advertised and nothing guarantees it stays
-constant.
+Yes, I'm not saying it fixes the problem..
 
-I internally checked with the other uses of QRTR, ModemManager and QAIC teams:
+> Also, the VFIO variant driver scheme would not fully break if the
+> driver moved to device MSI domains. The variant driver caches host
+> MSI values from the MSI descriptor, regardless of the allocation
+> method. The hook point may need adaptation, but the fundamental
+> approach (host caches physical values, VM reads them) remains valid.
 
-- ModemManager never computes or hardcodes node ids. It discovers them live over
-AF_QIPCRTR (via libqrtr-glib) and groups ports into modems by physdev_uid, not
-by node id. It is not affected by this series.
+It breaks because VFIO will only cache *actual* MSI-X table entries,
+it does not have visibility into anything that
+platform_device_msi_init_and_alloc_irqs()
 
-- The QAIC userspace queries the device's serial number over its own control
-channel and then assumes that BHI serial number is same as node id. That
-assumption is what breaks. The kernel never guaranteed it. QAIC devices just
-happened to advertise the serial as the node id, so only QAIC userspace had this
-assumption.
+The only reason this works for you at all is because the driver
+hackily copies the vectors from the real MSI-X table so it can look in
+the "cache" to find their true physical versions.
 
-So I don't agree this is an ABI break.
+Which is my general objection, I would like to see the driver to use
+platform_device_msi_init_and_alloc_irqs() and don't want to get stuck
+unable to do that because it would break this.
 
-To give QAIC a proper interface to migrate to, I will expose the assigned node
-id via sysfs entry in next version, and the QAIC team has agreed to update their
-userspace to read it from there. That sysfs attribute will become the documented
-stable ABI, the specific node id value never was.
+> Regarding the hypercall idea for device MSI domains, I think that
+> would be an interesting direction worth exploring as a generic
+> solution, but that's a multi-subsystem effort that will take time to
+> design and land.
 
-- Mani
+Yes, but it does actually solve the problem in all its forms..
 
--- 
-மணிவண்ணன் சதாசிவம்
+> I completely agree that this could theoretically affect any device
+> with private MSI registers. However, in practice, I'm only aware of
+> this specific behavior in Qualcomm ath11k/ath12k firmware, where the
+> device's interrupt controller requires the host physical MSI
+> addresses to be programmed directly. 
+
+Everyone else seems to know this stuff doesn't work for
+virtualization and doesn't try to do something like that.
+
+> It's also worth noting that the PCI reset support for these devices
+> has already landed in linux-next (commit 290153d46d1a "PCI: Add
+> device-specific reset for Qualcomm devices") [1], solving the
+> device reset path for VFIO passthrough. This MSI series is the
+> remaining piece, with both in place, these Qualcomm WiFi devices
+> would be fully operational in VMs for the first time.
+
+Why do people care so much about this? I always thought it was a bit
+odd?
+
+Jason
 
