@@ -4,97 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D35F0CA5FD4
-	for <ath12k@archiver.kernel.org>; Fri,  2 Oct 2026 17:10:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8B15CA5FDD
+	for <ath12k@archiver.kernel.org>; Fri,  2 Oct 2026 21:41:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=BgakvInNsjTIuwI/HruggHJb8c52XKSKFB4qu//ilyk=; b=jmZsCFRKNSaQxponeoWg4uBRBU
-	XrlpAhv6Ge28zMMduJohfOSfOZFFNwHqB+4haukWL8jCZDgfKBx+VxVstjjkKEr9HPvKyg+4Dzu6o
-	oLW+8rgF88SrSy99mexBlfMW4XGLlc3LOyMRI2OTgCCMrVZqt5kh7Tidow93hPdUaXJvQzoolYTB3
-	/I5IHPYtAlzJiWbBCRB+C4Kz9hdSM8iR00K2hu6HW+AOl8bi0eKPzG1RnqV8fF1T/mmMcMg2PZOPy
-	9qvEVY0we1zJK7D9REuxbCWJUzzCoGsZ3aoh8PXbXYuJnU4xHy2O9AHQQQVShs4airPuTHzS/F1Fb
-	d0RknXHw==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=61/R3wV1NWOE7HoqVebj9mBBmgNaHG+WOnm/3sC4cmQ=; b=sUDGDH23nPCPXO
+	eHTKM0D12xK8aqrEJBJxyuaZGdzlL9QNMW8edLFqMiT/kINvbNZh+k+eIcNiCRC52JNaUJaCe34M6
+	S7fuCfEL5wLjiBy1x3YUqSHR44pdKoDdoiCWbD2p9QVqxqam+jm3H3nUxgY9OPmq4wKNIXD/68rSK
+	rNo3PThRWGZJ0IcPZZUNEcdI/jfGj8Q/J43H8ZkidKMPs1pCLK7y5S6uivFaGlBkOofGTCreS7Lij
+	IjuY24UHoxKvoOYuwCTOoT3eb+8VVaPkBXuJud6sFZtN7T1wGefsiqO0kqOLh1U5aqTtERmLEHU30
+	xxkzePABjPXytS3KyyMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCgmZ-0000000C7QT-1ztD;
-	Fri, 02 Oct 2026 17:10:51 +0000
-Received: from mail-dy2-x0d.google.com ([2607:f8b0:4864:36::d])
+	id 1xCl03-0000000CXn2-1CjZ;
+	Fri, 02 Oct 2026 21:41:03 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCgmX-0000000C7Pf-0NAy
-	for ath12k@lists.infradead.org;
-	Fri, 02 Oct 2026 17:10:50 +0000
-Received: by mail-dy2-x0d.google.com with SMTP id 5a478bee46e88-344447f9c3dso4748661eec.0
-        for <ath12k@lists.infradead.org>; Fri, 02 Oct 2026 10:10:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=ziepe.ca; s=google; t=1790961048; x=1791565848; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=BgakvInNsjTIuwI/HruggHJb8c52XKSKFB4qu//ilyk=;
-        b=hx6TOBe8KvDe44823HfkVn/IlcY30A0RCiD0cCIQU0YlkQbvTdoN32m1/klHtxYNNm
-         iLNkiWzKMjeQ73wHnfB5sgtaAsby0NSkHsEZ5yrsktIVM4mcSpaG+dG6Iy1ZCQXs21dX
-         Yf8LtgWI12pc2v+pcrFmACK2Dr27v8vZIAt8t7vsz48V+Sp0iHT3W5hfCMtQAE7tR/g0
-         SCkLpIsH8bY0tpBiJz6VYdH9hl1CUidcmPWMQZjAn8I1++ml/ITInkyerPQyICpDOTWL
-         Ah+sX90TaY2kY1NYBd9RJpzSH366Yu8KfwHZOKbAW7vVxqnE2sGt0rlOArjzBIJ88MnW
-         tckQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790961048; x=1791565848;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=BgakvInNsjTIuwI/HruggHJb8c52XKSKFB4qu//ilyk=;
-        b=zI0LY6tpQZMBtg299+0ZriD3aPLNk4DBNW39o/Ex9xPCSQoBdeCQ7IEC7ne4dr36iq
-         DJYHEjbYQwYnozCOqvVdRC6Ppw/+jcXkU5FdHKPVdRQu5X/G5s2r+P3kf9/Za56KkAJX
-         ZVhOur7V28pO6x2MHg9x+xJCmFDIa9KbNYXvAG9cAhD7xSIwXD06wK0LrmA0iAWuHs3u
-         RnHwlKbS88QJ4ZdY9lu/20vcc3UHLuT0Z9TfG58Nst0rCYiHWN6f6p7H3f1kid5ANiu2
-         ykBpwWO2SuzAAPO0fIQOJYbgM35ZKUOzhrZXvO/rEDa5SjfFNYrRWIkOebCsHhcy0h5C
-         fqlQ==
-X-Forwarded-Encrypted: i=1; AKwUvBzdg9d9Ldk3sekpo1JULrqys+1iAAg65CvJSbLWqF+VrIINSkUQz6Eep9GwvvzBZxsbe6XrNTk=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLmz5mvVqhoV5a/BCcU3EMkNmdtdhHUHEuFz9rn0ykK22ANpS2o
-	DLwKXi8jzXdPNOM2KvCM9TraSNCIwwp7gir5vGFdngL84q++4pyk8HlVcb08JQOVN8w=
-X-Gm-Gg: AYBFou3XtD6WntAq9FG5AiDp+GXuuGin91TozRB8JPp62UPNfeZvTnG7+VVybdLrtoc
-	9n5IhFVS7jcJo95LiLIh95Ow1bolqW8oEY7oDPi1fRrF22qwyIHFhwv+fbrKCDjoXt6Q9hmdugg
-	bZGpGpEE0+3vdA/0riUK7gMvYj7p+llclBQFGTvnYD20q+uhGiJFHlmZ8doFPTWEoG3U2p4F6a4
-	Ej8RANWpXWX8O8cntYbtDSpSYcyQ6XzPGbYaBmjbCR7RrnZjPeyCJs8dF81YFkPXxqPuRz1i2jy
-	eANDyyQiVzfZrX0lsYYupY6IUYtkzL0l6/3QwRiccgU4vy3yOWzcNA7r7/4RcAX8jALAOmzSd6Z
-	G4deaxlF4mgT+yM7r8j1wf/J1Mf456Q8EWpGpIRs0lWcFuP7B5l0tHRPtGF4gN7ETH0w1vp01J7
-	fUW09Z2kE9hi5Zljr00UEmu3HoLpCOvXwJA8RDTTWsZay4
-X-Received: by 2002:a05:7300:e5c2:b0:34b:b410:9352 with SMTP id 5a478bee46e88-34f14f18c8cmr3725477eec.1.1790961048034;
-        Fri, 02 Oct 2026 10:10:48 -0700 (PDT)
-Received: from ziepe.ca ([130.41.10.202])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3510850f86bsm4509703eec.11.2026.10.02.10.10.47
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 02 Oct 2026 10:10:47 -0700 (PDT)
-Received: from jgg by wakko with local (Exim 4.97)
-	(envelope-from <jgg@ziepe.ca>)
-	id 1xCgmU-00000000BiY-09Yw;
-	Fri, 02 Oct 2026 14:10:46 -0300
-Date: Fri, 2 Oct 2026 14:10:46 -0300
-From: Jason Gunthorpe <jgg@ziepe.ca>
-To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Cc: alex@shazbot.org, ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org, bhelgaas@google.com,
-	jjohnson@kernel.org, johannes@sipsolutions.net,
-	kevin.tian@intel.com, kvm@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+	id 1xCl01-0000000CXmi-0jaG;
+	Fri, 02 Oct 2026 21:41:01 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 8803F44018;
+	Fri,  2 Oct 2026 21:41:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 093F71F000FF;
+	Fri,  2 Oct 2026 21:40:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1790977260;
+	bh=61/R3wV1NWOE7HoqVebj9mBBmgNaHG+WOnm/3sC4cmQ=;
+	h=Date:From:To:Cc:Subject:In-Reply-To;
+	b=QLeXmgTDJEE8p5eWTzIXSvYXsfvtao+l8O8886gPdU1izn35ejFHcWBvDWnftjgDw
+	 ZxiJvtS1vONSgMAEkyW0mOlyURTGbgSjHJmpKwbfQ5NsVblwokR3GXK5u7ff//bVL6
+	 mp9IiYPz+CmRPKkF4c754VWqF5xLjibG8VtpoQVu8Sf/BzmHHfTUukmPdmfFStm5iz
+	 4TSRk9l1CBq54U+4nwwnqkKrmG2Vef2V1GChyQjuWaJ7JxLi7JgQVxU1TI2dntf3Li
+	 tPQhO8cho59LNs5j6EegyuBt3w9L4GjFadc1h2kcML6BaiShNUh58so/5IER2kHC8N
+	 j7LQiwQDB//hg==
+Date: Fri, 2 Oct 2026 16:40:58 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>,
+	Alex Williamson <alex@shazbot.org>
+Cc: bhelgaas@google.com, mani@kernel.org, jjohnson@kernel.org,
 	linux-pci@vger.kernel.org, linux-wireless@vger.kernel.org,
-	mani@kernel.org, skolothumtho@nvidia.com, yishaih@nvidia.com
-Subject: Re: [PATCH 3/7] vfio/pci: Add qcom-vfio-pci variant driver
-Message-ID: <20261002171046.GA32083@ziepe.ca>
-References: <20260930151229.GR163130@ziepe.ca>
- <20261001071945.83116-1-jtornosm@redhat.com>
+	ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+	mhi@lists.linux.dev, linux-kernel@vger.kernel.org,
+	Jason Gunthorpe <jgg@ziepe.ca>
+Subject: Re: [PATCH v14 0/2] PCI: Add device-specific reset for Qualcomm
+ devices
+Message-ID: <20261002214058.GA284603@bhelgaas>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <20261001071945.83116-1-jtornosm@redhat.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261002_101049_130404_47AA8ADD 
-X-CRM114-Status: GOOD (  22.44  )
+In-Reply-To: <20260917071651.14174-1-jtornosm@redhat.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,60 +71,82 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 01, 2026 at 09:19:45AM +0200, Jose Ignacio Tornos Martinez wrote:
+[cc->to: Alex, +cc Jason]
 
-> Regarding platform_device_msi_init_and_alloc_irqs(), I agree that
-> moving the driver to device MSI domains would be cleaner on the
-> driver side. However, even with that change, I think the VM problem
-> remains exactly the same: the device MSI domain in the VM would
-> allocate virtual addr/data pairs, and the firmware's private interrupt
-> controller still needs the physical host values.
+On Thu, Sep 17, 2026 at 09:16:49AM +0200, Jose Ignacio Tornos Martinez wrote:
+> Some Qualcomm PCIe devices (WCN6855, WCN7850 WLAN; SDX62/SDX65 modems)
+> lack working reset methods for VFIO passthrough scenarios. These devices
+> have no FLR capability, advertise NoSoftRst+ (blocking PM reset), and have
+> broken bus reset (addressed by quirk_no_bus_reset, merged for v7.2).
 
-Yes, I'm not saying it fixes the problem..
+Specifically, 6a4f64c3a3ad ("PCI: Avoid SBR for Qualcomm
+WCN6855/WCN7850 WiFi, SDX62/SDX65 modems").  I don't know what the
+behavior was prior to that commit.  I suppose it was something
+obvious?
 
-> Also, the VFIO variant driver scheme would not fully break if the
-> driver moved to device MSI domains. The variant driver caches host
-> MSI values from the MSI descriptor, regardless of the allocation
-> method. The hook point may need adaptation, but the fundamental
-> approach (host caches physical values, VM reads them) remains valid.
+> VFIO attempts to reset devices on every reassignment:
+> - For the listed modems, without a proper reset capability, these devices
+> never successfully initialize even on first VM assignment.
+> - For the listed WLAN devices, without a working reset method, the attempt
+> fails. On clean VM shutdown, the guest driver properly deinitializes the
+> device via .shutdown/.remove callbacks, leaving it in a usable state despite
+> the failed reset. However, on unclean VM termination (crash, force-off), the
+> guest driver callbacks are not triggered, the device remains in an undefined
+> state (DMA active, interrupts enabled, etc.), and without a working reset it
+> cannot be reused.
 
-It breaks because VFIO will only cache *actual* MSI-X table entries,
-it does not have visibility into anything that
-platform_device_msi_init_and_alloc_irqs()
+So IIUC, prior to these patches, these devices were functional when
+passed through to several successive guests as long as the guests shut
+down cleanly, but the resets done by VFIO didn't work, so the host
+couldn't enforce isolation between those guests.
 
-The only reason this works for you at all is because the driver
-hackily copies the vectors from the real MSI-X table so it can look in
-the "cache" to find their true physical versions.
+If true, I propose updating the commit logs to emphasize the lack of
+isolation and de-emphasize the VM clean shutdown vs crash behavior,
+e.g.:
 
-Which is my general objection, I would like to see the driver to use
-platform_device_msi_init_and_alloc_irqs() and don't want to get stuck
-unable to do that because it would break this.
+  Resets of this device always failed prior to this commit, so VFIO on
+  the host could not enforce isolation between successive passthrough
+  users.
 
-> Regarding the hypercall idea for device MSI domains, I think that
-> would be an interesting direction worth exploring as a generic
-> solution, but that's a multi-subsystem effort that will take time to
-> design and land.
+  If a guest driver deinitialized the device, it may have been
+  functional if passed through to a subsequent guest, despite the lack
+  of isolation.  Otherwise the device may have been left in an
+  undefined state (e.g., DMA and interrupts active) and unusable.
 
-Yes, but it does actually solve the problem in all its forms..
+It would also be great to have Alex's ack here.
 
-> I completely agree that this could theoretically affect any device
-> with private MSI registers. However, in practice, I'm only aware of
-> this specific behavior in Qualcomm ath11k/ath12k firmware, where the
-> device's interrupt controller requires the host physical MSI
-> addresses to be programmed directly. 
-
-Everyone else seems to know this stuff doesn't work for
-virtualization and doesn't try to do something like that.
-
-> It's also worth noting that the PCI reset support for these devices
-> has already landed in linux-next (commit 290153d46d1a "PCI: Add
-> device-specific reset for Qualcomm devices") [1], solving the
-> device reset path for VFIO passthrough. This MSI series is the
-> remaining piece, with both in place, these Qualcomm WiFi devices
-> would be fully operational in VMs for the first time.
-
-Why do people care so much about this? I always thought it was a bit
-odd?
-
-Jason
+> Add device-specific reset methods using BAR-space hardware reset registers
+> that exist in these devices:
+> 
+>   Patch 1: SDX62/SDX65 modem reset via MHI SoC reset
+>   Patch 2: WCN6855/WCN7850 WLAN reset via SoC global reset
+> 
+> These are true hardware reset mechanisms (not power management or firmware
+> error recovery), providing proper device reset for VFIO scenarios.
+> 
+> Testing shows stable operation over 100+ VM crash/reset cycles. Device-
+> specific reset is position #1 in the reset hierarchy, so these devices
+> will use hardware reset as their primary reset method.
+> 
+> Jose Ignacio Tornos Martinez (2):
+>   PCI: Add device-specific reset for Qualcomm SDX62/SDX65 modems
+>   PCI: Add device-specific reset for Qualcomm WCN6855/WCN7850 WLAN
+> 
+>  drivers/pci/quirks.c | 116 +++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 116 insertions(+)
+> 
+> ---
+> v14: Address Bjorn Helgaas feedback:
+>   - Split WLAN and modem resets into two separate patches
+>   - Clarify commit message for WLAN devices: VFIO resets on every
+>     reassignment, clean shutdown leaves device in usable state via
+>     driver callbacks, but unclean termination is where the lack of reset
+>     is critical
+>   - No code changes from v13, only patch split and commit message
+>     clarification (Mani's Reviewed-by retained)
+> v13: https://lore.kernel.org/all/20260915223634.GA878346@bhelgaas/
+> 
+> --
+> 2.54.0
+> 
 
