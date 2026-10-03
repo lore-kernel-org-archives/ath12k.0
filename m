@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A8B0CA5FE3
-	for <ath12k@archiver.kernel.org>; Sat,  3 Oct 2026 09:27:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2FAECA5FDD
+	for <ath12k@archiver.kernel.org>; Sat,  3 Oct 2026 09:29:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=PK5mgDi/hmv0hoOXsSnxdZfMOPmMynYPkaSJh/0UNCY=; b=ahftLUNb6SkR7j00c+tEV06zur
-	sCzgmUnBUmDv/527Lw4dnN6+0yXnqJgCpQ++RLqiMcFExfdsGaKDX/hfnBBrR7ZUKsj3QoPJAuzi0
-	ZXwjzKaQAeI4Q875sDm2MTS4lMrW5EXSDTyeXhj3YVMISJLuy7uaC5STqRgSimIKjRXMNka6+QQJC
-	YEJ9bjqv9pLQF+SkIYUDKYDDVHJk+QYeJzsBqjIKwIYZ4gLYq157TTCJ6V1ORrn8s3vrnLfAgK+9G
-	ht78DUfO6HjDcoY5hk3KCPZeawuC2l7zpBvyOXF8i1/g0+5QBuIObO8oLkh1n5tfhlb+OXCMedPa6
-	57ATrxIQ==;
+	bh=6NARaYH/kJOu/A5Fms6Mxa9yIa9KJ0pnqXM8PPqhcAs=; b=vR2ZnY3EyC3MTZgvcB97VllTsN
+	RuX/U4BCQ6rNKFtdeTUDMfShuNvhsZeYR/pywf4f4ILpEsDIhvcjSXuIZsCLRqjCH10xrEa8rrmoC
+	0UADBEO/lUJkjW0PR7PKA6uY7jZ178u3sQ9i9UeD5NDCkUv54XhiaFh+whLNlRfID14vvtqw4GGp3
+	oX3fmutmqfaXSzDzu2VRf1N0MY7z/HlRx5v9Q5FZSGmswXu5jj07NNQ7CI85Y2+Sya6nXAwbvu6OR
+	14qflcUeKHT28vDlSQ9dzspUQ0UxejO+WRYDWwN3ZdIUfgQeVIchdrmcdKlS0aS220r5WSaVlYE8E
+	I/mNyEHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCw29-0000000DH8a-1KhV;
-	Sat, 03 Oct 2026 09:27:57 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xCw3F-0000000DHMr-1xzt;
+	Sat, 03 Oct 2026 09:29:05 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCw28-0000000DH8U-1Rq4
+	id 1xCw3E-0000000DHMN-0M6e
 	for ath12k@lists.infradead.org;
-	Sat, 03 Oct 2026 09:27:56 +0000
+	Sat, 03 Oct 2026 09:29:04 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1ED0643263;
-	Sat,  3 Oct 2026 09:27:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E72671F0089B;
-	Sat,  3 Oct 2026 09:27:50 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7FA8B43C83;
+	Sat,  3 Oct 2026 09:29:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B3C0D1F0089B;
+	Sat,  3 Oct 2026 09:28:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791019676;
-	bh=PK5mgDi/hmv0hoOXsSnxdZfMOPmMynYPkaSJh/0UNCY=;
+	s=k20260515; t=1791019743;
+	bh=6NARaYH/kJOu/A5Fms6Mxa9yIa9KJ0pnqXM8PPqhcAs=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=ZfKmHovL8scKJJa/IBh6zaaajAJBvAihck0ZLkiakQ3Q5FoZ+ub2gIggTgta2ZUJM
-	 Rvf5OdQysvOToDC9tvTxD1o3NQKoW/pSdHJKYJltx3ALSjL+7RP+sGhm18wQgwxoVj
-	 RciyCsWAy94Gsy2Yeyg8bLzRMhcMiabU3yvk8HLwvDcXo26dNgROL7Z285d/4jTzd+
-	 g+sjwQ4ewaJNgPAQNuJafQWnLw7iW+0CNSWVk4+xoLMmoneX1TUT2WL1JrfYZ3h1Nl
-	 puh+yplAZxCGQbj4xbA4mNlOjn3xvsZBD96dn7lE/YbxGJbn5NQ5VaoYGhl9vQjTx7
-	 oTrcxj9VFaSLA==
-Message-ID: <608f9f6c-a405-4903-a1bb-86ca8a0999f3@kernel.org>
-Date: Sat, 3 Oct 2026 11:27:47 +0200
+	b=fKlCT8kNG2pJQhJsj01FnwsRt6fJtcaEzpAxal6pR0NeMsEnnFiNkz8O3QbYgCtKx
+	 bF1NLvwOrtmVm/gWfw2lRP+koa6oIUV6jZijVW5b0xnUc6jntAJ9PgDt865htMKPPh
+	 8A6INJnfLRuZoY3B4hPKhHZ7fxkieJCthxdpyJ00MoOLQJVAKpLd0pWOz8KWmiNP7h
+	 bidnaKnfcqvzxluIXzYdBIN97xx2c1xeN2A58BRosp+WtXiXotK8Tx5NHdHqyFxwLY
+	 VYjlwBLgZrrFheL24UK+koV6lPpih//wjmVhbIExBjt9dduAbcYyjtfNbCHa4OA/xH
+	 +aWaTBOkaGqeQ==
+Message-ID: <01b38753-d66e-48e3-a5b2-1482afd5c0c2@kernel.org>
+Date: Sat, 3 Oct 2026 11:28:56 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC 1/3] dt-bindings: net: wireless: qcom,ath12k: add
- disable-rfkill
+Subject: Re: [PATCH RFC 2/3] wifi: ath12k: honour disable-rfkill from the
+ device tree
 To: Franz <franzelfranzel@gmail.com>, Jeff Johnson <jjohnson@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
@@ -57,7 +57,7 @@ Cc: Johannes Berg <johannes@sipsolutions.net>, Abel Vesa
  linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20261003091509.4822-1-franzelfranzel@gmail.com>
- <20261003091509.4822-2-franzelfranzel@gmail.com>
+ <20261003091509.4822-3-franzelfranzel@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -103,7 +103,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <20261003091509.4822-2-franzelfranzel@gmail.com>
+In-Reply-To: <20261003091509.4822-3-franzelfranzel@gmail.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-BeenThere: ath12k@lists.infradead.org
@@ -121,24 +121,31 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 03/10/2026 11:15, Franz wrote:
-> Some boards do not wire the WCN7850 hardware rfkill input, or wire it so
-> that it always reads as "radio off". On the Microsoft Surface Pro 11
-> (X1E80100), ath12k enables hardware rfkill handling and the interface
-> ends up hard-blocked for good.
+> ath12k_core_rfkill_config() skips the hardware rfkill setup only when
+> ACPI says so. DT-based boards have no equivalent. On the Microsoft
+> Surface Pro 11 (X1E80100), the WCN7850 rfkill input reads as "radio
+> off", so the interface is hard-blocked:
 > 
-> ACPI platforms can already turn this off through a firmware setting
-> that ath12k reads (ath12k_acpi_get_disable_rfkill()). Add a boolean
-> property so that DT-based boards can describe the same thing.
+>   iwd: Error bringing interface 4 up: Operation not possible due to RF-kill
+> 
+> Also skip the setup when the device's DT node has "disable-rfkill". The
+> PCI core attaches the node to the pci_dev, so ab->dev->of_node sees it.
+> 
+> Tested on a Surface Pro 11 with next-20260929 and the matching DT
+> change: the interface comes up and connects (5 GHz, 160 MHz).
 > 
 > Assisted-by: Claude:claude-opus-5-5
+
+LLM, see docs.
+
+
 > Signed-off-by: Franz <franzelfranzel@gmail.com>
 
-Please do not duplicate work but build on top or reference previous
-discussions.
+Please read submitting patches document carefully to understand what is
+needed when sending patch, e.g. what you need to certify with your full
+name.
 
-https://lore.kernel.org/all/20251220-surface-sp11-for-next-v5-3-16065bef8ef3@gmail.com/
-https://lore.kernel.org/all/20251201011457.17422-7-daleyo@gmail.com/
-and some more
+Your LLM cannot certify anything.
 
 Best regards,
 Krzysztof
