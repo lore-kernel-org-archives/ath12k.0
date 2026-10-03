@@ -4,58 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB229CA5FE3
-	for <ath12k@archiver.kernel.org>; Fri,  2 Oct 2026 23:47:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70D35CA5FE3
+	for <ath12k@archiver.kernel.org>; Sat,  3 Oct 2026 09:15:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=mN4BUccomOxQP6dbLy3uvQNSnAAqcoTSVXqAPXIymNY=; b=Pl4jdOm45YId/t
-	+BaKCXHZ4jZzlzbWjE9PdiYe13gHv9+rf5frGkhgrDbJnBS4bZ3pbFAfRDfv4EFe2DJK7NmzZyJcj
-	VxsoAnXqMkhxcCYyysZrQYrRSGpIwQtQDiALygR+hI9La5UTDU//3O8wCqDWPq3KgaeBqkGgV7kq0
-	dVg1Hk0jY6N89zsXdWwWfZ0KSAq5NVCnpikbJ1z99GkFSacBojjMtnBn2L1Ff48iThWTyX+5itkj9
-	Eyqy0ob2VMgjOG8ljIk004LDXCIuYp00dbonj4SSq6e/5afm4qQYcuskWdMyOodKwXp9UYRSnOIHy
-	/S7tddHWfGpdDvXSjlVA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=L+D0wcMiZw7JqhFEXAX/EBPaHQLIVoMlrQj5WJPMGog=; b=f2DoBGJ7E+ufmM7Aio1+WIS0Qw
+	ZwReIZ2iG2Y2pP0q3ljaI93eyrjZQTq2o8MUCUTKeHN9upsnnIUbs5VOkZvezwvYGxizA+uNhOi9L
+	hOv0Gc9QlmGWTKKRcR6z5GiDC4ay6dYCXnBvlAJnml4nNhV+8QKEN05E5Qu3Osofz0mu5diBypyNx
+	6FEh7PDLpnJheQisrHWfW+jbfDSKi5Yi3CCXxJ2Px2lZATR+RBJic8Q6Y8IaeMEmXm+WYWD5mu4Bj
+	wZGHcRw9uUMOJOJXoEDLmIjfwUbHFTeLmWdVsCMama5BY7NzBvoKxZqMacCCFMt9Q+wdAiC4Krg5H
+	NTYEk7/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCmyn-0000000CkgF-0Y57;
-	Fri, 02 Oct 2026 23:47:53 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xCvpy-0000000DF7Q-0W1D;
+	Sat, 03 Oct 2026 09:15:22 +0000
+Received: from mail-wm2-x10.google.com ([2a00:1450:4864:31::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCmyl-0000000Ckfm-3SaW;
-	Fri, 02 Oct 2026 23:47:51 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5077843C52;
-	Fri,  2 Oct 2026 23:47:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0362B1F000FF;
-	Fri,  2 Oct 2026 23:47:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790984871;
-	bh=mN4BUccomOxQP6dbLy3uvQNSnAAqcoTSVXqAPXIymNY=;
-	h=Date:From:To:Cc:Subject:In-Reply-To;
-	b=PRabq4VU4ZLHFbxtawTgO6RXWIeLXb6I4LbdyVZboLOfbiCesxv0UKv8vK1UIytj1
-	 wXmTfmTN1Bu1A7mkDrT1Z8OK5IVtSYeeaYlp8UJUa/nVXBAcTTByRRI3zpknkCtAyy
-	 y7ukLW4ydY6pn1zVUQmxQkLoCJi4oNdForZ0I1xz1dVX1L+rX1k7cmYd21/4KLwjkg
-	 /uaZ54lo+pyKodDxeYdvVbzeC5NCiEr2EBkxGlHTsSP7pbRhpjEsWEdg1S39TiNziT
-	 JmYpQP8SbG/27yiI1AP8MMJ7YKil7aeLBo+xEpAiBy1sYi16BcGx3oOdwvHOocSYsI
-	 vy3G8KKEPXPmQ==
-Date: Fri, 2 Oct 2026 18:47:49 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Alex Williamson <alex@shazbot.org>
-Cc: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>, bhelgaas@google.com,
-	mani@kernel.org, jjohnson@kernel.org, linux-pci@vger.kernel.org,
-	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org, mhi@lists.linux.dev,
-	linux-kernel@vger.kernel.org, Jason Gunthorpe <jgg@ziepe.ca>
-Subject: Re: [PATCH v14 0/2] PCI: Add device-specific reset for Qualcomm
- devices
-Message-ID: <20261002234749.GA411439@bhelgaas>
+	id 1xCvpv-0000000DF6N-1NmT
+	for ath12k@lists.infradead.org;
+	Sat, 03 Oct 2026 09:15:20 +0000
+Received: by mail-wm2-x10.google.com with SMTP id 5b1f17b1804b1-49ffde3cec6so2964155e9.3
+        for <ath12k@lists.infradead.org>; Sat, 03 Oct 2026 02:15:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1791018917; x=1791623717; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=L+D0wcMiZw7JqhFEXAX/EBPaHQLIVoMlrQj5WJPMGog=;
+        b=ERLR1jiFIVukXS6fn/EaOL29ecx3djGArKw/FHTClbaXbra4TJ511ubeiTQkol1yv/
+         P/78MGlq0NZ3FHbD99Zdnn4E6/yP0n+Zya3zeui4jmdftMGf19Z2RhMm1UJgV3F93OlZ
+         WC7lyKYVibJZp1UZir4S63erT1QSNNCaLoYuopP8fIxdB08DFtrqYp+Iwpu7O8X6Xvq8
+         4kChf1m08yv2njbvJ372N0nskHm6MAah6YjnkpURXoO2vj+QL6hLcNMhC4u1YtauIYjl
+         3NMnPU1HKFXwEH0erVU2Z5ZahoGJKhrW1tbahoG9Lvmj4ApKlqCPNwZF6hYuXwIgikig
+         PHcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791018917; x=1791623717;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=L+D0wcMiZw7JqhFEXAX/EBPaHQLIVoMlrQj5WJPMGog=;
+        b=evXWFjgW3xY6yINHfvduyPLqQJqlX5Lovrexfk03YTxTrtX6MOCGa/mfqHmRqxOeVb
+         QM/NQtsNeBdotky/5Vcu7j5YWOOPRALP13t82OmtnMN1WvCoujsc9EHtTSepjuO6Emho
+         9X+oK26+fD4WKY5zgODK8jl7yVelEubYmHjiTnY+Q4XJWZBIbRBKm+/AoW5q/7kGufDZ
+         Cti64Puj4lZZuomsG23mlA5jWOzuGyR5WMb6Rbok1XsU1qe8v3OmNaK9r46tjB3l6Xkn
+         7gBainNmuUqquWn1E0llIIKmBOuCh7nsJUJgZqu5QIzkp+znVVHNbGCjsAaQOZla09dC
+         EAoQ==
+X-Forwarded-Encrypted: i=1; AKwUvByflfAeHtkuMy+icp7wl5hQuga32iGhxM2oL93JoW9kHmpW/qPba6mzEHi831s57h5JsSKXTp8=@lists.infradead.org
+X-Gm-Message-State: AFuF++nC1Fa78b9wF/BbKcx7T2Cdy3VNLp20orYiAhrrPvVVgwvCzsTh
+	OCbcZbvvFGnWpHvaFrdO1vASZTpeQWVKfE0bpN19+AUMeniuP/uSmac6
+X-Gm-Gg: AYBFou16NEO3UJruDyntYqkoBy6t+eOw5v2VP47xGXxeQrVaNWcGi7++OCrqefxqCIF
+	PMFzyS8QpMenTwgQ1UXQlfHHCmFdFMH9Sh4x7dACkOUX3zyoYBiNyx8OZUNNt/LupZUJvXXEqTt
+	eOxP068yqtEuf+ILSB2u7I0NwzssLZnjjha5ztOijP+jF/x4VLRvzaOUDpepCNrF+HEFKdD89MO
+	sQ28PipxppdN7F/jSSg1gU0QBkSyQ33xi/0vjPw4Qi7Es0dJj27p5YnLkgn7roJSoW6U0QUDbX4
+	YJk0TAQK0TPjtA4yCcuaDFXjMkML2rNmyLuCp6CQPDw/jfJUSO7hO5kT4VJu08aVOvaIHk4/iE5
+	a7Ks9iwBeOgiueQNF2mGw4jIdd6cCWIayfmGiMGc/n5nT3z9Mpzmd3DFIVYwOJJI4Y6vQ6HrIO7
+	79c9LJe1cYLk4StfJugnat0mAgmeo8PMWddDmDhEwdPz8WH7zh9rR9d4MIbZgdv+9dsjJCpsBa6
+	DeO+igZpgHNVf1pd2hz5g==
+X-Received: by 2002:a05:600c:8710:b0:49f:ce73:5e96 with SMTP id 5b1f17b1804b1-4a02759555dmr75369925e9.34.1791018916839;
+        Sat, 03 Oct 2026 02:15:16 -0700 (PDT)
+Received: from FranzSP11.fritz.box ([31.31.60.25])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48b82253dc9sm11336161f8f.3.2026.10.03.02.15.15
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 03 Oct 2026 02:15:16 -0700 (PDT)
+From: Franz <franzelfranzel@gmail.com>
+To: Jeff Johnson <jjohnson@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>
+Cc: Johannes Berg <johannes@sipsolutions.net>,
+	Abel Vesa <abelvesa@kernel.org>,
+	ath12k@lists.infradead.org,
+	linux-wireless@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH RFC 0/3] Allow DT boards to disable WCN7850 hardware rfkill
+Date: Sat,  3 Oct 2026 11:15:06 +0200
+Message-ID: <20261003091509.4822-1-franzelfranzel@gmail.com>
+X-Mailer: git-send-email 2.56.0
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20261002170949.59c3d47a@shazbot.org>
+Content-Transfer-Encoding: 8bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261003_021519_389991_D0218A0D 
+X-CRM114-Status: GOOD (  10.88  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,68 +106,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 02, 2026 at 05:09:49PM -0600, Alex Williamson wrote:
-> On Fri, 2 Oct 2026 16:40:58 -0500
-> Bjorn Helgaas <helgaas@kernel.org> wrote:
-> 
-> > [cc->to: Alex, +cc Jason]
-> > 
-> > On Thu, Sep 17, 2026 at 09:16:49AM +0200, Jose Ignacio Tornos Martinez wrote:
-> > > Some Qualcomm PCIe devices (WCN6855, WCN7850 WLAN; SDX62/SDX65 modems)
-> > > lack working reset methods for VFIO passthrough scenarios. These devices
-> > > have no FLR capability, advertise NoSoftRst+ (blocking PM reset), and have
-> > > broken bus reset (addressed by quirk_no_bus_reset, merged for v7.2).  
-> > 
-> > Specifically, 6a4f64c3a3ad ("PCI: Avoid SBR for Qualcomm
-> > WCN6855/WCN7850 WiFi, SDX62/SDX65 modems").  I don't know what the
-> > behavior was prior to that commit.  I suppose it was something
-> > obvious?
-> > 
-> > > VFIO attempts to reset devices on every reassignment:
-> > > - For the listed modems, without a proper reset capability, these devices
-> > > never successfully initialize even on first VM assignment.
-> > > - For the listed WLAN devices, without a working reset method, the attempt
-> > > fails. On clean VM shutdown, the guest driver properly deinitializes the
-> > > device via .shutdown/.remove callbacks, leaving it in a usable state despite
-> > > the failed reset. However, on unclean VM termination (crash, force-off), the
-> > > guest driver callbacks are not triggered, the device remains in an undefined
-> > > state (DMA active, interrupts enabled, etc.), and without a working reset it
-> > > cannot be reused.  
-> > 
-> > So IIUC, prior to these patches, these devices were functional when
-> > passed through to several successive guests as long as the guests shut
-> > down cleanly, but the resets done by VFIO didn't work, so the host
-> > couldn't enforce isolation between those guests.
-> > 
-> > If true, I propose updating the commit logs to emphasize the lack of
-> > isolation and de-emphasize the VM clean shutdown vs crash behavior,
-> > e.g.:
-> > 
-> >   Resets of this device always failed prior to this commit, so VFIO on
-> >   the host could not enforce isolation between successive passthrough
-> >   users.
-> > 
-> >   If a guest driver deinitialized the device, it may have been
-> >   functional if passed through to a subsequent guest, despite the lack
-> >   of isolation.  Otherwise the device may have been left in an
-> >   undefined state (e.g., DMA and interrupts active) and unusable.
-> > 
-> > It would also be great to have Alex's ack here.
-> 
-> Yes, aiui it's an isolation and repeatability issue.  In fact, without
-> knowing what's actually stored in the hardware, I'd suspect it's more
-> the latter and the testing proves that.  Mani is really the one
-> vouching for it from the hardware, isolation perspective.
-> 
-> Standard reset methods have never worked on these devices and that's
-> now evident by the quirks that disable them for these devices.  This
-> fills the remaining gap by providing device specific resets for the same
-> hardware.
-> 
-> Both patches should properly reference the quirk_no_bus_reset commit,
-> but otherwise these look correct, afaict.
-> 
-> Acked-by: Alex Williamson <alex@shazbot.org>
+On the Microsoft Surface Pro 11 (X1E80100, board "denali"), the WCN7850
+hardware rfkill input reads as "radio off". ath12k turns on hardware
+rfkill handling, so Wi-Fi stays hard-blocked:
 
-Thanks, Alex!
+  iwd: Error bringing interface 4 up: Operation not possible due to RF-kill
+
+ACPI platforms can already turn this off (ath12k_acpi_get_disable_rfkill()),
+but DT-based boards have no way to. This series adds a boolean
+"disable-rfkill" property to the ath12k binding, makes ath12k honour
+it, and sets it on the Surface Pro 11. Out-of-tree Surface Pro 11
+kernels already ship an equivalent change.
+
+This is an RFC mainly because of the property itself. Is a generic
+"disable-rfkill" acceptable, or would you prefer a vendor-prefixed
+name, or a different way to describe a board whose rfkill line is not
+usable?
+
+Testing: next-20260929 on a Surface Pro 11, with the ath12k change and
+the property added to the installed DTB with fdtput. The interface
+comes up and connects (5 GHz, 160 MHz). The DTS change builds, and the
+built DTB carries the property. dt_binding_check / dtbs_check were not
+run, because dtschema is not installed here.
+
+On this machine the endpoint is only enumerated with "power: sequencing:
+qcom-wcn: power off WLAN at probe", sent separately as a fix for
+b921aa3f8dec.
+
+This series was prepared with the help of an AI coding assistant
+(Claude): finding the cause, writing the code and the changelogs. I
+reviewed it and tested it on the hardware.
+
+Franz (3):
+  dt-bindings: net: wireless: qcom,ath12k: add disable-rfkill
+  wifi: ath12k: honour disable-rfkill from the device tree
+  arm64: dts: qcom: x1-microsoft-denali: disable WCN7850 hardware rfkill
+
+ .../devicetree/bindings/net/wireless/qcom,ath12k.yaml      | 7 +++++++
+ arch/arm64/boot/dts/qcom/x1-microsoft-denali.dtsi          | 2 ++
+ drivers/net/wireless/ath/ath12k/core.c                     | 3 +++
+ 3 files changed, 12 insertions(+)
+
+
+base-commit: 6474fa070f2b8013b4b87350b775b8c3be6e8aac
+prerequisite-patch-id: aafe3fac38f4020441979665509928f8cc832095
+-- 
+2.56.0
+
 
