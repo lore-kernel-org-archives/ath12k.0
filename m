@@ -4,83 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12B2BCA5FDD
-	for <ath12k@archiver.kernel.org>; Sat,  3 Oct 2026 09:24:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A8B0CA5FE3
+	for <ath12k@archiver.kernel.org>; Sat,  3 Oct 2026 09:27:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:
-	Content-Type:Content-Transfer-Encoding:References:In-Reply-To:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=t7+b9RGY9B2xgmRAdzgwC0iX58AfMLrIAj6jYe4r+8w=; b=isu1NdLQzjiofqa7VuFxWbijjO
-	3fuLr2AOXuffAJTtG+jHw0ygULOdES6+eZL8tI5S2utQKcMZNzV8WxtvH45nFfWuF1eLvkrmkZgbv
-	sA4B+rZZ+Olv8tsQDeWPAQR3TJVkNkXTfBY2fBbum7UXmJmQe/cG11Vd/vAnBYrlq3TEMn8jC5Xy0
-	2tWVr+9CtTZmBsDE3BXszEI3MdJMgkLSRMkgX27/N1sft6x9RYE5YKbGfXUykkM8Yy5uNLC+58IFo
-	oL6+LFNVrBXm05byfEOPUUE4292LcgJ9IYApDD32WFcyKYIeFT1eob4SlI9d22ZkN1YqlJN9iIrXN
-	+gyKhKCQ==;
+	bh=PK5mgDi/hmv0hoOXsSnxdZfMOPmMynYPkaSJh/0UNCY=; b=ahftLUNb6SkR7j00c+tEV06zur
+	sCzgmUnBUmDv/527Lw4dnN6+0yXnqJgCpQ++RLqiMcFExfdsGaKDX/hfnBBrR7ZUKsj3QoPJAuzi0
+	ZXwjzKaQAeI4Q875sDm2MTS4lMrW5EXSDTyeXhj3YVMISJLuy7uaC5STqRgSimIKjRXMNka6+QQJC
+	YEJ9bjqv9pLQF+SkIYUDKYDDVHJk+QYeJzsBqjIKwIYZ4gLYq157TTCJ6V1ORrn8s3vrnLfAgK+9G
+	ht78DUfO6HjDcoY5hk3KCPZeawuC2l7zpBvyOXF8i1/g0+5QBuIObO8oLkh1n5tfhlb+OXCMedPa6
+	57ATrxIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCvyg-0000000DGrQ-3E06;
-	Sat, 03 Oct 2026 09:24:22 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xCw29-0000000DH8a-1KhV;
+	Sat, 03 Oct 2026 09:27:57 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCvyf-0000000DGrG-0JJs
-	for ath12k@bombadil.infradead.org;
-	Sat, 03 Oct 2026 09:24:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Message-ID:MIME-Version:Content-Type:
-	Content-Transfer-Encoding:References:In-Reply-To:Subject:Cc:To:From:Date:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=t7+b9RGY9B2xgmRAdzgwC0iX58AfMLrIAj6jYe4r+8w=; b=I5xZoolvQWOv7RqKSxXtoIDJ54
-	Wu4whyatVsmB28hP99nrwf1VPPv1f0YTFHUvGXZjdMMgK5eXHqsuUgXzXD9dW0iBsW8j33ByMQjbA
-	F/aZsJmN32XY6XzOVQNHW4kFXS77DXCUvDTBt+s7M1Uhvxd4/Dc9q7DYpIGUltyBOCAkpX46nJptU
-	mzbwoMP7ZjoLfn1/IP3Zf2NLgqttMuCXbAqTLFtYydVJ1lhGJQ6XccvoXCIh06lTSlLKPLmzgj1/p
-	a+FBypu8cE715BltHf9mOfRR+yZjc3NST8/Z3urnvEum9x7kk9ewpXdLTtapzyhvfReQHgrWDYSul
-	M9n1/Zew==;
-Received: from m16.mail.163.com ([220.197.31.2])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1xCvya-00000006eIJ-1UUH
+	id 1xCw28-0000000DH8U-1Rq4
 	for ath12k@lists.infradead.org;
-	Sat, 03 Oct 2026 09:24:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=Date:From:To:Subject:Content-Type:MIME-Version:
-	Message-ID; bh=t7+b9RGY9B2xgmRAdzgwC0iX58AfMLrIAj6jYe4r+8w=; b=A
-	VPVjtmG7JKd2zPI+as26lkclMlzJKHfebKmCFNZ7VqHHPEN8juWCAAt24kV0ZV02
-	ul7LMtd2X36TEri/z90aAaClxUSmdYtilendwisnx3vhYNy/Z366yKs4apLKt8eN
-	D4gjl9mXzy1w7ygeFDDm0rrxexdezf8JmGzrQMczzc=
-Date: Sat, 3 Oct 2026 17:23:57 +0800 (CST)
-From: "jiale yao" <19888972804@163.com>
-To: "Rameshkumar Sundaram" <rameshkumar.sundaram@oss.qualcomm.com>
-Cc: "Jeff Johnson" <jjohnson@kernel.org>,
-	"Bhagavathi Perumal S" <quic_bperumal@quicinc.com>,
-	"Balamurugan Selvarajan" <quic_bselvara@quicinc.com>,
-	"Baochen Qiang" <quic_bqiang@quicinc.com>,
-	"Wen Gong" <quic_wgong@quicinc.com>,
-	"Carl Huang" <quic_cjhuang@quicinc.com>,
-	linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re:Re:Re: [PATCH 4/5] wifi: ath12k: avoid IDR mutation during
- pending mgmt TX cleanup
-X-Priority: 3
-X-Mailer: Coremail Webmail Server Version 2023.4-cmXT build
- 20260511(2e539873) Copyright (c) 2002-2026 www.mailtech.cn 163com
-In-Reply-To: <77a815e.77f1.1a0e71f6167.Coremail.19888972804@163.com>
-References: <20260926154824.75224-1-yaojiale02@163.com>
- <20260926154824.75224-5-yaojiale02@163.com>
- <773e57da-a9d3-41dc-805c-cb38b38b1dc4@oss.qualcomm.com>
- <77a815e.77f1.1a0e71f6167.Coremail.19888972804@163.com>
-X-NTES-SC: AL_Qu2SA/yatkwo4SKZbekdmE8Uges8WcC0svki1YJUc+4GhzHBwiABbHpeBEnt4NmlFwSNnAm9ShFy8/5qb6BZe/A9UfNxBrVm0ZRiXauR+g==
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset=GBK
+	Sat, 03 Oct 2026 09:27:56 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 1ED0643263;
+	Sat,  3 Oct 2026 09:27:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E72671F0089B;
+	Sat,  3 Oct 2026 09:27:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791019676;
+	bh=PK5mgDi/hmv0hoOXsSnxdZfMOPmMynYPkaSJh/0UNCY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=ZfKmHovL8scKJJa/IBh6zaaajAJBvAihck0ZLkiakQ3Q5FoZ+ub2gIggTgta2ZUJM
+	 Rvf5OdQysvOToDC9tvTxD1o3NQKoW/pSdHJKYJltx3ALSjL+7RP+sGhm18wQgwxoVj
+	 RciyCsWAy94Gsy2Yeyg8bLzRMhcMiabU3yvk8HLwvDcXo26dNgROL7Z285d/4jTzd+
+	 g+sjwQ4ewaJNgPAQNuJafQWnLw7iW+0CNSWVk4+xoLMmoneX1TUT2WL1JrfYZ3h1Nl
+	 puh+yplAZxCGQbj4xbA4mNlOjn3xvsZBD96dn7lE/YbxGJbn5NQ5VaoYGhl9vQjTx7
+	 oTrcxj9VFaSLA==
+Message-ID: <608f9f6c-a405-4903-a1bb-86ca8a0999f3@kernel.org>
+Date: Sat, 3 Oct 2026 11:27:47 +0200
 MIME-Version: 1.0
-Message-ID: <5fb79006.12d7.1a10113cca9.Coremail.19888972804@163.com>
-X-Coremail-Locale: zh_CN
-X-CM-TRANSID: jygvCgD3v1KtycBqfEUHAA--.63341W
-X-CM-SenderInfo: x1dryxhdohiji6rwjhhfrp/xtbC8A1oomrAya0powAA3z
-X-Coremail-Antispam: 1U5529EdanIXcx71UUUUU7vcSsGvfC2KfnxnUU==
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261003_102417_497138_3CC8CBF5 
-X-CRM114-Status: GOOD (  14.51  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH RFC 1/3] dt-bindings: net: wireless: qcom,ath12k: add
+ disable-rfkill
+To: Franz <franzelfranzel@gmail.com>, Jeff Johnson <jjohnson@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>
+Cc: Johannes Berg <johannes@sipsolutions.net>, Abel Vesa
+ <abelvesa@kernel.org>, ath12k@lists.infradead.org,
+ linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20261003091509.4822-1-franzelfranzel@gmail.com>
+ <20261003091509.4822-2-franzelfranzel@gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <20261003091509.4822-2-franzelfranzel@gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,69 +120,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-QXQgMjAyNi0wOS0yOCAxNjoyNjoyOCwgImppYWxlIHlhbyIgPDE5ODg4OTcyODA0QDE2My5jb20+
-IHdyb3RlOgo+QXQgMjAyNi0wOS0yOCAxMzo0OTo1NCwgIlJhbWVzaGt1bWFyIFN1bmRhcmFtIiA8
-cmFtZXNoa3VtYXIuc3VuZGFyYW1Ab3NzLnF1YWxjb21tLmNvbT4gd3JvdGU6Cj4+T24gOS8yNi8y
-MDI2IDk6MTggUE0sIEppYWxlIFlhbyB3cm90ZToKPj4+IGF0aDEya19tYWNfdHhfbWdtdF9wZW5k
-aW5nX2ZyZWUoKSBpcyBwYXNzZWQgYXMgYW4gaWRyX2Zvcl9lYWNoKCkKPj4+IGNhbGxiYWNrIGFu
-ZCByZW1vdmVzIHRoZSBjdXJyZW50IGVudHJ5IGZyb20gdHhtZ210X2lkci4gVGhpcyBjYW4KPj4+
-IGludmFsaWRhdGUgdGhlIHJhZGl4LXRyZWUgaXRlcmF0b3IgcmV0YWluZWQgYnkgaWRyX2Zvcl9l
-YWNoKCkuCj4+PiAKPj4+IEJvdGggY2FsbGVycyBkZXN0cm95IHRoZSBJRFIgaW1tZWRpYXRlbHkg
-YWZ0ZXIgdGhlIHdhbGssIHNvIHJlbW92aW5nCj4+PiBlYWNoIGVudHJ5IGluIHRoZSBjYWxsYmFj
-ayBpcyB1bm5lY2Vzc2FyeS4gU3BsaXQgc2tiIHJlbGVhc2UgZnJvbSBJRFIKPj4+IHJlbW92YWwg
-YW5kIGxldCB0aGUgY2FsbGJhY2sgcmVsZWFzZSB0aGUgc3VwcGxpZWQgc2tiIHdpdGhvdXQgdXBk
-YXRpbmcKPj4+IHRoZSBJRFIuIFRoZSBmb2xsb3dpbmcgaWRyX2Rlc3Ryb3koKSB0ZWFycyBkb3du
-IHRoZSBJRFIgaXRzZWxmLgo+Pj4gCj4+PiBGaXhlczogZDg4OTkxMzIwNWNmICgid2lmaTogYXRo
-MTJrOiBkcml2ZXIgZm9yIFF1YWxjb21tIFdpLUZpIDcgZGV2aWNlcyIpCj4+PiBTaWduZWQtb2Zm
-LWJ5OiBKaWFsZSBZYW8gPHlhb2ppYWxlMDJAMTYzLmNvbT4KPj4+IC0tLQo+Pj4gICBkcml2ZXJz
-L25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL21hYy5jIHwgMjUgKysrKysrKysrKysrKysrLS0tLS0t
-LS0tLQo+Pj4gICAxIGZpbGUgY2hhbmdlZCwgMTUgaW5zZXJ0aW9ucygrKSwgMTAgZGVsZXRpb25z
-KC0pCj4+PiAKPj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJr
-L21hYy5jIGIvZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay9tYWMuYwo+Pj4gaW5kZXgg
-OTliZjVjZjc5ZDEwLi43Njk1YjIxMTQ5ZDEgMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL25ldC93
-aXJlbGVzcy9hdGgvYXRoMTJrL21hYy5jCj4+PiArKysgYi9kcml2ZXJzL25ldC93aXJlbGVzcy9h
-dGgvYXRoMTJrL21hYy5jCj4+PiBAQCAtOTE2NiwxOCArOTE2NiwxMSBAQCBzdGF0aWMgdm9pZCBh
-dGgxMmtfbWdtdF9vdmVyX3dtaV90eF9kcm9wKHN0cnVjdCBhdGgxMmsgKmFyLCBzdHJ1Y3Qgc2tf
-YnVmZiAqc2tiKQo+Pj4gICAJCXdha2VfdXAoJmFyLT50eG1nbXRfZW1wdHlfd2FpdHEpOwo+Pj4g
-ICB9Cj4+PiAgIAo+Pj4gLXN0YXRpYyB2b2lkIGF0aDEya19tYWNfdHhfbWdtdF9mcmVlKHN0cnVj
-dCBhdGgxMmsgKmFyLCBpbnQgYnVmX2lkKQo+Pj4gK3N0YXRpYyB2b2lkIGF0aDEya19tYWNfdHhf
-bWdtdF9mcmVlX3NrYihzdHJ1Y3QgYXRoMTJrICphciwKPj4+ICsJCQkJCXN0cnVjdCBza19idWZm
-ICptc2R1KQo+Pj4gICB7Cj4+PiAtCXN0cnVjdCBza19idWZmICptc2R1Owo+Pj4gICAJc3RydWN0
-IGllZWU4MDIxMV90eF9pbmZvICppbmZvOwo+Pj4gICAKPj4+IC0Jc3Bpbl9sb2NrX2JoKCZhci0+
-dHhtZ210X2lkcl9sb2NrKTsKPj4+IC0JbXNkdSA9IGlkcl9yZW1vdmUoJmFyLT50eG1nbXRfaWRy
-LCBidWZfaWQpOwo+Pj4gLQlzcGluX3VubG9ja19iaCgmYXItPnR4bWdtdF9pZHJfbG9jayk7Cj4+
-PiAtCj4+PiAtCWlmICghbXNkdSkKPj4+IC0JCXJldHVybjsKPj4+IC0KPj4+ICAgCWRtYV91bm1h
-cF9zaW5nbGUoYXItPmFiLT5kZXYsIEFUSDEyS19TS0JfQ0IobXNkdSktPnBhZGRyLCBtc2R1LT5s
-ZW4sCj4+PiAgIAkJCSBETUFfVE9fREVWSUNFKTsKPj4+ICAgCj4+PiBAQCAtOTE4NywxMSArOTE4
-MCwyMyBAQCBzdGF0aWMgdm9pZCBhdGgxMmtfbWFjX3R4X21nbXRfZnJlZShzdHJ1Y3QgYXRoMTJr
-ICphciwgaW50IGJ1Zl9pZCkKPj4+ICAgCWF0aDEya19tZ210X292ZXJfd21pX3R4X2Ryb3AoYXIs
-IG1zZHUpOwo+Pj4gICB9Cj4+PiAgIAo+Pj4gK3N0YXRpYyB2b2lkIGF0aDEya19tYWNfdHhfbWdt
-dF9mcmVlKHN0cnVjdCBhdGgxMmsgKmFyLCBpbnQgYnVmX2lkKQo+Pj4gK3sKPj4+ICsJc3RydWN0
-IHNrX2J1ZmYgKm1zZHU7Cj4+PiArCj4+PiArCXNwaW5fbG9ja19iaCgmYXItPnR4bWdtdF9pZHJf
-bG9jayk7Cj4+PiArCW1zZHUgPSBpZHJfcmVtb3ZlKCZhci0+dHhtZ210X2lkciwgYnVmX2lkKTsK
-Pj4+ICsJc3Bpbl91bmxvY2tfYmgoJmFyLT50eG1nbXRfaWRyX2xvY2spOwo+Pj4gKwo+Pj4gKwlp
-ZiAobXNkdSkKPj4+ICsJCWF0aDEya19tYWNfdHhfbWdtdF9mcmVlX3NrYihhciwgbXNkdSk7Cj4+
-PiArfQo+Pj4gKwo+Pj4gICBpbnQgYXRoMTJrX21hY190eF9tZ210X3BlbmRpbmdfZnJlZShpbnQg
-YnVmX2lkLCB2b2lkICpza2IsIHZvaWQgKmN0eCkKPj4+ICAgewo+Pj4gICAJc3RydWN0IGF0aDEy
-ayAqYXIgPSBjdHg7Cj4+PiAgIAo+Pj4gLQlhdGgxMmtfbWFjX3R4X21nbXRfZnJlZShhciwgYnVm
-X2lkKTsKPj4+ICsJYXRoMTJrX21hY190eF9tZ210X2ZyZWVfc2tiKGFyLCBza2IpOwo+Pgo+PnRo
-aXMgbm93IGtlZXBzIHRoZSBmcmVlZCBza2JzIGluIHRoZSBpZHIgZm9yIHRoZSB3aG9sZSB0aW1l
-IAo+Pmlkcl9mb3JfZWFjaCgpIHJ1bnMgYXMgb3Bwb3NlZCB0byBwcmV2aW91cyBpbXBsZW1lbnRh
-dGlvbiB3aGljaCByZW1vdmVkIAo+PnRoZSBpZHIgZW50cnkgYXMgd2VsbCB3aGljaCBsb29rZWQg
-c2FmZS4KPgo+VGhhbmtzIGZvciB0aGUgcmV2aWV3Lgo+Cj5UaGUgb3JpZ2luYWwgaXNzdWUgaXMg
-dGhlIHNhbWUgYXMgdGhlIG9uZSBmaXhlZCBieSBjb21taXQgYzM4YjFlMTk0ODVhCj4oImZpcm13
-YXJlOiBhcm1fc2NtaTogQXZvaWQgSURSIHVwZGF0ZXMgd2hpbGUgY2xlYW5pbmcgY2hhbm5lbHMi
-KS4KPmF0aDEya19tYWNfdHhfbWdtdF9wZW5kaW5nX2ZyZWUoKSBpcyBjYWxsZWQgZnJvbSBpZHJf
-Zm9yX2VhY2goKSwgYW5kCj5hdGgxMmtfbWFjX3R4X21nbXRfZnJlZSgpIHJlbW92ZXMgdGhlIGN1
-cnJlbnQgZW50cnkgZnJvbSB0aGF0IHNhbWUgSURSCj5iZWZvcmUgdGhlIGl0ZXJhdG9yIGFkdmFu
-Y2VzLiBUaGlzIGNhbiBpbnZhbGlkYXRlIHRoZSBpdGVyYXRvciBzdGF0ZS4KPgo+WW91IGFyZSBy
-aWdodCB0aGF0IG15IHBhdGNoIGxlYXZlcyBmcmVlZCBza2IgcG9pbnRlcnMgaW4gdGhlIElEUiB1
-bnRpbAo+aWRyX2Rlc3Ryb3koKSwgd2hpY2ggaXMgdW5kZXNpcmFibGUuCj4KPkkgd2lsbCBzZW5k
-IGEgdjIgdXNpbmcgaWRyX2Zvcl9lYWNoX2VudHJ5KCksIHdoaWNoIHBlcmZvcm1zIGEgZnJlc2gK
-Pmlkcl9nZXRfbmV4dCgpIGxvb2t1cCBmb3IgZWFjaCBpdGVyYXRpb24uIFRoZSBlbnRyeSB3aWxs
-IHRoZW4gYmUgcmVtb3ZlZAo+ZnJvbSB0aGUgSURSIGJlZm9yZSBpdHMgc2tiIGlzIGZyZWVkLCBh
-dm9pZGluZyBib3RoIHRoZSBpbnZhbGlkIGl0ZXJhdG9yCj5zdGF0ZSBhbmQgc3RhbGUgc2tiIHBv
-aW50ZXJzLgp2MiBpbiBodHRwczovL2xvcmUua2VybmVsLm9yZy9hbGwvMjAyNjEwMDMwOTIxMDQu
-NTIwMTM1LTEteWFvamlhbGUwMkAxNjMuY29tLwo+Cj5UaGFua3MsCj5KaWFsZQo+Cj4KPj4KPj4K
-Pj4+ICAgCj4+PiAgIAlyZXR1cm4gMDsKPj4+ICAgfQo+Pgo+Pgo+Pi0tIAo+PlJhbWVzaAo=
+On 03/10/2026 11:15, Franz wrote:
+> Some boards do not wire the WCN7850 hardware rfkill input, or wire it so
+> that it always reads as "radio off". On the Microsoft Surface Pro 11
+> (X1E80100), ath12k enables hardware rfkill handling and the interface
+> ends up hard-blocked for good.
+> 
+> ACPI platforms can already turn this off through a firmware setting
+> that ath12k reads (ath12k_acpi_get_disable_rfkill()). Add a boolean
+> property so that DT-based boards can describe the same thing.
+> 
+> Assisted-by: Claude:claude-opus-5-5
+> Signed-off-by: Franz <franzelfranzel@gmail.com>
+
+Please do not duplicate work but build on top or reference previous
+discussions.
+
+https://lore.kernel.org/all/20251220-surface-sp11-for-next-v5-3-16065bef8ef3@gmail.com/
+https://lore.kernel.org/all/20251201011457.17422-7-daleyo@gmail.com/
+and some more
+
+Best regards,
+Krzysztof
 
