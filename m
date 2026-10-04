@@ -4,103 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62E82CA5FE6
-	for <ath12k@archiver.kernel.org>; Sun,  4 Oct 2026 16:51:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3F52CA5FE6
+	for <ath12k@archiver.kernel.org>; Sun,  4 Oct 2026 16:51:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=B1NQoDPcpD7pDGtYHOkFZsvr7R+guI6V8OnUcMpSaOk=; b=DdwKuEVwyYBiIh7F9EqIbaVZO0
-	qLGjuS8r85Woz4zFUJrXkjC0JMveGj/WBbK2uFhWJupFfOrG5a/7Bu4foQ7mlJoBJ6pxZI0Ab0XIw
-	7mp9+63JAPGyW0GiOGjfLmF5vvLKeaFgLfd39IrFMSA67ODaa94IxYQOZFW/H8jU95IQRKzexmHyv
-	53zr9nBS4a4xw6OmkMOFH1/RiNv6duyIh5ejRxokh6QrW6Ekbs84vw1d6fjukU3bVDzFFZ1eQmRdL
-	Ep82roY4fnD+dsKQlRI0VCb0BczTf7NuO09oWupcvauXJWNytrhUE3z6F4WlHONkjDWiBbxcRC1gf
-	PapU79hw==;
+	Content-Type:MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=5kZgL2+cYaxBr/D7kAopy+ikvsQSWrTTQUGKjBNRtaQ=; b=mOhSRNwZ3CNF09+QP4V+GZh07c
+	hK1fzJAvpJNQdzHgiVPMfD6ouV8adKYJf50GBkk1AE5+ytwnfcdvO2GW+wPf0Rlqyo46gMk8BX7Xy
+	BKcRUH2vcrRAKoIVcstpoCcJEOWBkbQOggRaN+uP8kdgS9UNiCoaZTxL/E4i9WaINK0enuUMRRy98
+	Aoom7q1Z4OwMTpQS/auwFMzGyOz7RuUEUclRxWGDEeZtvWBavJcce3jsee7Va3xll9kScSV7ftXrT
+	kAiO/R5R6mPOKilh/lvsuNincWPyU1H+NOC6Dne1xGMtCJE+RePpyoIfJG8kYaB+uvCakXoT1+vLZ
+	KQKoONqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDPQw-0000000F31P-0EZI;
-	Sun, 04 Oct 2026 16:51:30 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1xDPRD-0000000F37B-1PZv;
+	Sun, 04 Oct 2026 16:51:47 +0000
+Received: from mail-wr2-x0d.google.com ([2a00:1450:4864:30::d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDPQs-0000000F2zl-2WBm
+	id 1xDPR6-0000000F34k-0r5J
 	for ath12k@lists.infradead.org;
-	Sun, 04 Oct 2026 16:51:29 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-4a140e7405dso11869665e9.3
-        for <ath12k@lists.infradead.org>; Sun, 04 Oct 2026 09:51:25 -0700 (PDT)
+	Sun, 04 Oct 2026 16:51:42 +0000
+Received: by mail-wr2-x0d.google.com with SMTP id ffacd0b85a97d-48b0fc598f8so543295f8f.2
+        for <ath12k@lists.infradead.org>; Sun, 04 Oct 2026 09:51:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791132684; x=1791737484; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=B1NQoDPcpD7pDGtYHOkFZsvr7R+guI6V8OnUcMpSaOk=;
-        b=QcLnA38azQXO1rNkx2/JoKh1zQJIouGpzF7eDzempXsJDG5FF7iv62S55JHDpT4D37
-         Mj6ICn5i4WyJxU7n2am23mu5sEdGLxLGuEni3cgNPBoK20i1k8f91V9SUDYwSs4Ryzzs
-         YV9yMmQDDPS+JrjOHwl50Q0PMZd3q9Nh1QVSYgI2JPz11D0uKLxFyIdhdk8Wk4/0Ooub
-         i7I0g0mK9ZWGHe05gEgIGe60mCrJkxSeKiWqppqL5AVJYjot9kAt1oc1i2FLRg6s6HD8
-         sPJD05tT1GxRH27fVRgfqqTbApdjr4U84WOkapEmlZHYLhd6f25O2r+cqLxGHnJENvLk
-         I9ew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791132684; x=1791737484;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+        d=gmail.com; s=20251104; t=1791132698; x=1791737498; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=B1NQoDPcpD7pDGtYHOkFZsvr7R+guI6V8OnUcMpSaOk=;
-        b=lfoCK0rn6t4gbZgkjJ2zQzEbgBs3wcP9/JbcaDCfTCqB3ixijXie6Yb6OWRwFchu6p
-         qcb+TD4Hz5ZspmFT2U9jnWSrxqtMtQSNMySyv7jExLTr1+jwJI6GTd990lH4Pt6sj+t5
-         gaxygfOfo13dg+usGUDbIZmZL4N240MnsPsYbhnARa9q32KtMjaJWRMKQF2qkPVQdxps
-         TST+RfBkqSkNG1cRpW0mObLlBGcDiwb0t6tdc1jf3vfSTsJqiR4ON9qTFvhul3nKIZjW
-         YEjBlJjEk154kc0q3p8ToyV+lI3PcvWNoWd6dxQq41aWA4UYez2uEW9/KEqyGwdZJxAI
-         EUqg==
-X-Forwarded-Encrypted: i=1; AKwUvBwBNlJsrEkUxdaEgbnzEyI4wjg73sy3khhJVG1kDixbp3+nN3KcAgkMNxIoDIUV/gfS3NeNx/M=@lists.infradead.org
-X-Gm-Message-State: AFuF++lX0gnshoQu0KKj1ZZoFbM+MJ3HrciR80YYlYc46S/S5FYJLTtO
-	ZOReguke2udd8PfDO8IX8jYajrEtZOxFAFlhKDc5RuKgAoIEtywcJenA
-X-Gm-Gg: AYBFou1y8byWgP6ZS/4OrJTJjGSwfCJdiEGskFMaGFuHIQTfOTqZ4AAkO+Y3jsY7az5
-	bp6hDI1RVzu8fXrg1iilgkedh20r2BjxjDqrZYSncY+4WeyvrXL55jL56/MZXPKgY2SKtpXHqzj
-	TdARbvDJnDdkDD1lCf6g/++UR1jtACTBzflfJcGt78cGJCSS5iQiTN8NktNt9O2/0//rFUpOuvr
-	oq4dE6Faq9ep6cKsBp5IwZLEJer0n/ZdcRq9YXxryY1OGP+Dxng+5eI48J3vmZLGRQoP6uW4Ndf
-	V4RdrOoRfBStFDZBWtW0g4+Hu3dSfmEzjlSV72E4d4kODQhCI4IhTTQBMV5aOUqA9jxqH0qXdND
-	sE36/p9FSd0Khvbq9DJjFqMjXR84DGM1u2ij9Qo18jwScGmaNVn9NZGhQVaC3qVebZ1X/HRWss6
-	rury84Qp3fT+gBKxRNl8/cnJ2VJajrLni5IqSegAJsV98CNWqJsjjmVrC5bimzdZK3KANkZ58rW
-	jf1M6QgAiOsbxCMhQtRbw==
-X-Received: by 2002:a05:600c:4594:b0:4a0:22d5:908c with SMTP id 5b1f17b1804b1-4a1680eee54mr65008155e9.12.1791132684137;
-        Sun, 04 Oct 2026 09:51:24 -0700 (PDT)
+        bh=5kZgL2+cYaxBr/D7kAopy+ikvsQSWrTTQUGKjBNRtaQ=;
+        b=AFI7YITl9CAn3+QEzwhqGRppT4E8W1nv1MyVyCjvx6PJMCqpg6esaCNHqEAaoi4vUf
+         Y2jdKAptMEWrb5EC+H+H5k/+75ZGtGEdegdQ7VsZ47SaXiwDwnoAt1unTy1nuy/agq3l
+         30abvLl/A+78/I5B6PCM73VNnpAgWmLbHg7F8vxO/iuWJ6vC5XEwhfwg4GlEXhaajLuY
+         OjN7JYd+vwPNHrJXjLKofx743EsI49RnWjlQIT3c+/gPqOIkxiJeCEKVrHX6i5WdboW1
+         iSzSRwOorIc2m6xOlf6Ds3G1t8xX43PCH5IBnj4ZLs1NuXIn2HVE7hAre06D9T6rDsUB
+         SIbA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791132698; x=1791737498;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=5kZgL2+cYaxBr/D7kAopy+ikvsQSWrTTQUGKjBNRtaQ=;
+        b=hoBye1lejznNRuSp0eIN8+dUj65foOOx5/kGUMjwSia8x0wUvsk78EENU6+HJVjSEV
+         gWJzQ27mWkwmA5no+GuO08mj7GU+PIinpQqhIve6YjnW5NaI/71z/eFRbfmx2T0uaXey
+         6qJOwcNxXtTzQmhmC32Jdbol9PKv1fLUN+w7rEb/h9J9Xh1Buo+qYuK4HjjdY16CVPMx
+         IVU2PJWSgpISRIFDkIkGmm1nCqYTcyHbg5DGW0Z/19aVCIAdJv1shxg3QILnmch2P0nT
+         j5dIBRYwSWuBczDCQqfIz6cPce2DKTXMC8xs30TJSDE41V2GkpdspuMnCH8JlMuKnuxw
+         rXIw==
+X-Forwarded-Encrypted: i=1; AKwUvByVNouvzwRVmjpODHJP0YrJjzbmdc3c+g42+BRHRZEFLuEmGp+y6GoYZWhIgJ+IRbIQPt4Wmyg=@lists.infradead.org
+X-Gm-Message-State: AFq9FYIJOEAR2PZB+WyZzMmvPnDtNgsoAZENZqgBq6neI1EfQ3j9N/m4
+	6MHDZfvmoaf0TR/FglY8miWr0B6eBkkw4U6VuegHmgd32t9f3CtVo2kh
+X-Gm-Gg: AYBFou10pQKU5WUa/SoPTk5s3Qf4va3dlRhYTjQ6Z8iaf6VXwoet5pJJ5fBB6xhyjRx
+	0Wnd49fn4H15BT78OJ//5c5TzIwZTcSPZiLKqzLThxKGtCj+atfHFyUfgD9NYWYheyAIwb8+eT3
+	xjaaVUiBpG7xLyM9hDwcrapy4InCL9rxbOWReqWWMpbg7bSEfNYTuvmQYBKQjQ2ZcQjDE1PU/X9
+	gkPdkXHK+YPVHlSWW8ltuTll9C+be9Fsaud9DjMjjzJ56wBlymjdYwNKPciAi/uNbPOWlF5Q3o2
+	6fh+rXmNfgxj2wnNuhlmiAhMHdoryUIjBNXuw9K5QvhVi9Hxi95/k5lTKTAfRebIrxt/1QkNF1T
+	PYCwskd8lDyW1qzrs67y+9eq/v7OKytq1USKd+WNvJHw5XFSLKnND6l7dAegVS0mbsV0Rv8A9WS
+	dur+11D0Nh5dT4UtWsGcQYekBh46vQDvn76A2cYtcpyW1xgJaGTje+arbqoPbTLYvroF2p4e4b4
+	9vSdbQjc/ZF
+X-Received: by 2002:a5d:5d13:0:b0:487:8b9:526a with SMTP id ffacd0b85a97d-48b12763357mr18047204f8f.36.1791132698112;
+        Sun, 04 Oct 2026 09:51:38 -0700 (PDT)
 Received: from FranzSP11.fritz.box ([31.31.60.25])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a027f2a4cfsm233973165e9.1.2026.10.04.09.51.22
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48b383065a4sm18144545f8f.44.2026.10.04.09.51.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 04 Oct 2026 09:51:23 -0700 (PDT)
+        Sun, 04 Oct 2026 09:51:37 -0700 (PDT)
 From: =?UTF-8?q?Fran=C3=A7ois=20Roux?= <franzelfranzel@gmail.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Jeff Johnson <jjohnson@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: Manivannan Sadhasivam <mani@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
 	Konrad Dybcio <konradybcio@kernel.org>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Abel Vesa <abelvesa@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
 	=?UTF-8?q?J=C3=A9r=C3=B4me=20de=20Bretagne?= <jerome.debretagne@gmail.com>,
 	Dale Whinham <daleyo@gmail.com>,
 	ath12k@lists.infradead.org,
 	linux-wireless@vger.kernel.org,
-	devicetree@vger.kernel.org,
 	linux-arm-msm@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RFC 1/3] dt-bindings: net: wireless: qcom,ath12k: add disable-rfkill
-Date: Sun,  4 Oct 2026 18:50:49 +0200
-Message-ID: <20261004165049.4174-1-franzelfranzel@gmail.com>
+Subject: [PATCH] wifi: ath12k: skip hardware rfkill setup on Microsoft Surface Pro 11
+Date: Sun,  4 Oct 2026 18:51:32 +0200
+Message-ID: <20261004165132.4313-1-franzelfranzel@gmail.com>
 X-Mailer: git-send-email 2.56.0
-In-Reply-To: <608f9f6c-a405-4903-a1bb-86ca8a0999f3@kernel.org>
-References: <20261003091509.4822-1-franzelfranzel@gmail.com> <20261003091509.4822-2-franzelfranzel@gmail.com> <608f9f6c-a405-4903-a1bb-86ca8a0999f3@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261004_095126_646899_8A5DC9A1 
-X-CRM114-Status: UNSURE (   6.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261004_095141_729857_822BE03C 
+X-CRM114-Status: GOOD (  15.32  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,21 +106,68 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 03/10/2026 11:27, Krzysztof Kozlowski wrote:
-> Please do not duplicate work but build on top or reference previous
-> discussions.
+On the Microsoft Surface Pro 11 (X1E80100, "microsoft,denali"), the
+WCN7850 hardware rfkill input reads as "radio off" and the OS has no
+way to control it. ath12k enables hardware rfkill handling, so Wi-Fi
+stays hard-blocked:
 
-Sorry, I missed those threads. Having read them now: a DT property for
-this was already rejected there, so please disregard this RFC series.
+  iwd: Error bringing interface 4 up: Operation not possible due to RF-kill
 
-I will instead send a single ath12k patch following Manivannan's
-suggestion from that discussion (board compatible plus device ID,
-handled in the driver), with Jérôme and Dale in Cc.
+ACPI platforms can opt out through ath12k_acpi_get_disable_rfkill(),
+but DT platforms cannot. A DT property was proposed for this and
+rejected, because it describes what the OS should do rather than the
+hardware. The suggested alternative was to handle this machine in the
+driver, keyed on the board compatible and the device ID, until a
+connector binding can describe a broken rfkill line. Do that.
 
-On the tags in 2/3: understood. From now on I sign off with my full
-name, and I use the Assisted-by format from
-Documentation/process/coding-assistants.rst.
+Tested on a Surface Pro 11 with next-20260929, booted with the
+unmodified mainline DTB: the interface is no longer blocked and
+connects.
 
-Thanks,
-François Roux
+Link: https://lore.kernel.org/all/2ixwny6hzumlqmok5cjwutvtk7nzmx4t3dhxc44ao4l2u755pj@n6m7jyxf2o62/
+Suggested-by: Manivannan Sadhasivam <mani@kernel.org>
+Assisted-by: LLM
+Signed-off-by: François Roux <franzelfranzel@gmail.com>
+---
+This replaces my RFC series "Allow DT boards to disable WCN7850 hardware
+rfkill", which duplicated the disable-rfkill DT property already proposed
+and rejected in the Surface Pro 11 series:
+
+https://lore.kernel.org/all/20261003091509.4822-1-franzelfranzel@gmail.com/
+https://lore.kernel.org/all/20251220-surface-sp11-for-next-v5-2-16065bef8ef3@gmail.com/
+
+The code is Manivannan's suggestion from that thread. Jérôme reported
+there that the Surface Laptop 7 (microsoft,romulus13/15) has the same
+problem. I left it out because I cannot test it.
+
+ drivers/net/wireless/ath/ath12k/core.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 0c72948f3..dc41a2a7d 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -83,6 +83,16 @@ static int ath12k_core_rfkill_config(struct ath12k_base *ab)
+ 	if (ath12k_acpi_get_disable_rfkill(ab))
+ 		return 0;
+ 
++	/*
++	 * TODO: On the Microsoft Surface Pro 11, the OS cannot control the
++	 * WCN7850 hardware rfkill input, which reads as "radio off". Keep
++	 * hardware rfkill disabled there. Ideally this would come from the
++	 * connector node of the board DT, but that binding does not exist
++	 * yet, so handle it in the driver for now.
++	 */
++	if (of_machine_is_compatible("microsoft,denali") && ab->id.device == 0x1107)
++		return 0;
++
+ 	for (i = 0; i < ab->num_radios; i++) {
+ 		ar = ab->pdevs[i].ar;
+ 
+
+base-commit: 6474fa070f2b8013b4b87350b775b8c3be6e8aac
+prerequisite-patch-id: aafe3fac38f4020441979665509928f8cc832095
+-- 
+2.56.0
+
 
