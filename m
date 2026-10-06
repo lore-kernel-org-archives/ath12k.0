@@ -4,134 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75005CA5FFC
-	for <ath12k@archiver.kernel.org>; Tue,  6 Oct 2026 12:02:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48BF2CA5FED
+	for <ath12k@archiver.kernel.org>; Tue,  6 Oct 2026 13:44:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=LnWIFVH7MtC1BufK84r37hUKPcu2nCWBjQY0FtW6tXY=; b=e8OSMH6w6zuUgCuB29yasQsXz9
-	pDR/TXlfdn7hlC6yO8OkQ68AbWh2X3XlB3LgZte+66KTB75jtCntHsujkShiefU95BJTiGIHNkEE+
-	1i0DAigk7/GwiefsknXPAjrMljfmWxBxLqy2M8d4bMOwIBhR9ugnyZys8H1Dkt/TgzE+JP5+DB2fB
-	qnrAzZ0BPOUIy8S/rCE+8j/teFGarXpEhPd10E+6ebVFBpYl6d/aEex6ESJmvtmjpgTNKHNbGuHVQ
-	nwRg5I5b3B6FTQPXbkWe/Rrj6sxso4KIfsUWccHpPe2vGIOBttq6zooELkL7QhNtqJHR2hp+c6PL5
-	zjMMatVQ==;
+	bh=rYh0A2WV89qELVCG9L3F7Oo0b5oCSOSM4UplqqLuF+4=; b=G7UIXgUqkXXJ7CNaqmdjmIqco5
+	N8V8tLoKgUTEuVGZXSoS7mwYFahJgqja1CbW4FCcAoAN7VWP9bF76eEY2EXjkGhyvwRxBw/IFhKyB
+	3WFNUkLthrrDF9gJppwk/96x1IQCtUUmzXw+PAFjhQi4cogQQ3+IYxZfhcSd1sWDz2YicWgFXxbGJ
+	TFPMOJrdsof89qh/0je47dTaMT4m+dz7eTFtjrQapclvCBGSuCnJox6ppnGVRQp8v47xchHIsqGrs
+	8gCHAoF8tuGjTtG992+ZPL+HGrnPQvdw2M1eMZsMK/hhwbHzLPk4VVK5zeu6lIsswBKvXWDSHek47
+	EvuqKDCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xE3sm-00000000hMh-2HQq;
-	Tue, 06 Oct 2026 12:02:56 +0000
+	id 1xE5T3-00000000swx-1sTe;
+	Tue, 06 Oct 2026 13:44:29 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xE3sj-00000000hLj-3Cm7
+	id 1xE5T1-00000000swV-2yAg
 	for ath12k@lists.infradead.org;
-	Tue, 06 Oct 2026 12:02:54 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 696BPGlT717717
-	for <ath12k@lists.infradead.org>; Tue, 6 Oct 2026 12:02:53 GMT
+	Tue, 06 Oct 2026 13:44:28 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 696DUcKm1944145
+	for <ath12k@lists.infradead.org>; Tue, 6 Oct 2026 13:44:27 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	LnWIFVH7MtC1BufK84r37hUKPcu2nCWBjQY0FtW6tXY=; b=VC1ibpACVcIULulG
-	7gd6TeT5B4hrarAk0zbbEFTrllDvaYlQ7nWDJWCRpY2rix8BJQS6NmtB3BqenqVh
-	FA1jJxl5RqOqmMu18zULY7Z/pbaoal+plAF05V26akjy1ASt0jb042m+YUJ1J5kZ
-	dwPf9AC4cLgAsbRcfW6x3RDlb1jme30A/H1xnk1/rFXbG5ytoT5dwlC5PBxHnELt
-	/+WRf+tIlwePAQx+AJD0H1ycmR5OmY2YKo03RUhJj67rn2c57kxj1gp7jqxTqq4F
-	NTc6eZ67mLWS9+v08BGnA8NEwJjEQfmuXpwF3hyB6u4ih/oWoE+muPDcKc4xEh0N
-	7wAXfw==
-Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h4gr3kehq-1
+	rYh0A2WV89qELVCG9L3F7Oo0b5oCSOSM4UplqqLuF+4=; b=HuCKxunx7gm17XRU
+	92U+DCWGL//CulSXeQMUSjYLw9wfVxlasuL0soNT9B7CZDZBoc8U9yCRTex1326l
+	sXC0oIVUdZT7su8LsP+E8vK1Qan/PXHrgzPdLkWY25WVFAWMj0VXJZW1wldYNg+z
+	yNX7VtejEE8dNdnodhbLVLrtDIhiB49QtOIRJd3HufXWmj4w9nBcg5xQcvE2FWIn
+	mbBZ1vA0/gB7WFjx/98kgE2QiIrAicO7oufwAwo6G7GNIV+J3MyDrQXS8ZXNCbKt
+	Xx34V9ugSUfnzokxDhmyP7BTOMzWKas9+CW/FYEwu1kbXBYSijkwOmRNQuAdyt2R
+	Tpyw3A==
+Received: from mail-dl1-f70.google.com (mail-dl1-f70.google.com [74.125.82.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h4uy4henn-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 06 Oct 2026 12:02:52 +0000 (GMT)
-Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-3510d0baf63so5606142eec.1
-        for <ath12k@lists.infradead.org>; Tue, 06 Oct 2026 05:02:52 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 06 Oct 2026 13:44:27 +0000 (GMT)
+Received: by mail-dl1-f70.google.com with SMTP id a92af1059eb24-143826c4a13so1636488c88.1
+        for <ath12k@lists.infradead.org>; Tue, 06 Oct 2026 06:44:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1791288172; x=1791892972; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=LnWIFVH7MtC1BufK84r37hUKPcu2nCWBjQY0FtW6tXY=;
-        b=fN2kJSpq03FfebKTdo90d0bXdGIY29b2mFHNykfKjisYOb6jWXRZ69xMAi96gDXX1q
-         XUYZoGWCZqm5DrnMIZ8baceJdrFZqAMuW6RNBXieCGKcoGsbEoXpPRfvwxYp69PHcIbX
-         Hf9R8nJYH8urEk6NrsCgLOwKVb+OxuzyWgKjKF4etn/IvwumxDPXhRFl/rs0jVse9exw
-         6Ad4QfFvvDwe5QicaizPq0hYW8KkwxxOcPe1H8st+9ORThrW1mBz8wx4pRlayILbCsYx
-         qipRFG5euF27XrUa6ZcI0z1SS9rwB7sK8orfdS57oSWhTCvg5TZLkdyV3cyXUHEnT9Gi
-         DUUQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791288172; x=1791892972;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=oss.qualcomm.com; s=google; t=1791294266; x=1791899066; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:mime-version:date:message-id
+         :subject:references:in-reply-to:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=LnWIFVH7MtC1BufK84r37hUKPcu2nCWBjQY0FtW6tXY=;
-        b=DpD9hpBHrYQWq14A8Jj8epA71DtNo72u9FDtKjvmViOpaTJJUm5bBEmF83WF9S6Gi7
-         zXYMxbZJ8tl9aexzwrXGGSXYwnzHgOWy22dmVgRpvd/bLEUH8FW1toYotMja17uWBrg1
-         21+KuNsvyuqfOF3XW+EOGOtjWnYxpfMPILLEMfnewTU1cEX9dhyy9b3i0RqVhBBoZmJc
-         rm8+8zcGvxCJQUsyXil77CjCZGHa54zfyV3I+1tDf9RztyJM/5hvMHePknXCCskbeXTs
-         x/5PjgZ9bDGZlBNZ7Ck/iYqJSKluhIEoHvdACPBb07MNWL5DtiA/IZKIET5iRTZ18qEu
-         rkIQ==
-X-Forwarded-Encrypted: i=1; AKwUvBwiC3RGzrkviI+qYps4lSGpZztdVkNKGK2q6eNe7wumNFVDNGRcw6PTBaMJeiFk7A7k/uFGlNw=@lists.infradead.org
-X-Gm-Message-State: AFq9FYJffPggAhr8t4TncTaBl8X7CQG1kvp4AR6GWQdF0Ypzb41SIOeP
-	f6fAEForxr0g6v3ohAQlBX6Z6eEqCj4fX96UaW/ICF76jA62u9gtfKQ9JEzgnlCi6HsFFhuFwZT
-	2l/WTyiRkEVbQRDvTHja9hZH2G7cMiwAGumalPA1OGDANJgH6nY+iWsPQQpC02Ae0
-X-Gm-Gg: AYBFou3d4SorNNNYoeGTKbpHJhLqnEDVGOUC85pyAReck3g0NDCSR3ciwT9dNNla30n
-	CAF5eCW35jr+cHE+5IJYIlPrgTY0h/jK0coABw0Ni66R0Fdl5jcn4g6EItyMMboFyrb//FrO/TJ
-	wnSzgo5gx/GyfuUi4DGMIB4LihNUxm4fTzjPqwxhBcAePcQxS8hcwJ0uQfxwDIUrmrl4VLJB1aL
-	anpXs7xuB521t/6I0HxghL2lSZT8H3eji5gz7UuWXLj2819O7/q20449yALfkSYvCVxhG7lpjt5
-	Epx6OaiwPhndd7CLnYKp0OfZXRYpHBv8PbqcRFFRi+LiFxu6lJLbUWmP9Gpv2UjDDEgEvi5LBg/
-	UA8nL5K9O1Rw7oYmnYOwv2ttGnRKoAH+C2qL7fbcbCf0=
-X-Received: by 2002:a05:7300:55a2:b0:34c:fb30:3e30 with SMTP id 5a478bee46e88-3514df98487mr1472308eec.7.1791288171574;
-        Tue, 06 Oct 2026 05:02:51 -0700 (PDT)
-X-Received: by 2002:a05:7300:55a2:b0:34c:fb30:3e30 with SMTP id 5a478bee46e88-3514df98487mr1471398eec.7.1791288152612;
-        Tue, 06 Oct 2026 05:02:32 -0700 (PDT)
-Received: from [192.168.11.105] ([124.123.80.135])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-35146a2add7sm7298163eec.13.2026.10.06.05.02.30
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 06 Oct 2026 05:02:32 -0700 (PDT)
-Message-ID: <c3e204b2-47c2-4368-adf4-4f3f9d30e790@oss.qualcomm.com>
-Date: Tue, 6 Oct 2026 17:32:28 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next] Revert "wifi: ath12k: add panic handler"
-To: Yingying Tang <yingying.tang@oss.qualcomm.com>, ath12k@lists.infradead.org
+        bh=rYh0A2WV89qELVCG9L3F7Oo0b5oCSOSM4UplqqLuF+4=;
+        b=fqnoRfoMoNi/7zn7dIKhqPvbLIrIgJyocyOVXhy/0a49oeedYcnJMBragnO2yLAd7N
+         rEPg9iqiOMFilKTXkzS+UQgUVnaKpFbVQ7S0dFlyiwCZ8Em0Nyt6l+D0E3xOhhxP9l/T
+         k8WOMDAU8akAQ+YtlH3vExv5d6ZErrbQ/Hf7dZXTiKD7BGliIj0qN1UNF+v+uy+kftDB
+         jOatvmBCpATRfy3WH545u1aY0vO346swtCMIZEkecsOq6aDYx/fLKVJXXEL+kQB3IDQr
+         06z5e7KN8zrqGEuhz5eoRGGXPRwxwHearkXHlPBR26uRz7ghtunltQ5Zb7SW5D4hPp1M
+         wztQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791294266; x=1791899066;
+        h=content-transfer-encoding:content-type:mime-version:date:message-id
+         :subject:references:in-reply-to:cc:to:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=rYh0A2WV89qELVCG9L3F7Oo0b5oCSOSM4UplqqLuF+4=;
+        b=Hjh0xqsEf+jYCaJ9ZNImMmieCk730lubO9/PsxCyKTZZi+9Ov6H6t0S1yahMWr7IBI
+         0AbEEfIeAPtv8bD+RANGq03A1etNC80vuq6RF3fhA5uw4KHQjm16bz/qskP0HN2Q2m/e
+         qx47yBp/JbcUozCF4JK/mHleKTbSwZSHjGaOnekozWCCFKtAQZiX7gVU+HxDt+2i4fpw
+         5tJHzvZiSJiZ3iuC5q5RNX45WWXXxUgXxjrt1gGuZrO5k935ez7Hhcz0PY4JonnyPVcd
+         ApYbInr16hGccSDemXhsRCcRUYteHkW8QuG1tC/iyTafjT8PJl3ZJtvR6siSpYrenEwT
+         smaQ==
+X-Gm-Message-State: AFuF++mgv3M73SN4cFWRmQC9LDwWKUUgziuIxXZ+LyowEnn0KKhIf3QS
+	8VkmQWtH6QAr14zhzIMKOVNrM7FxR/63CHwBLtEwOw9tjFg7A/NLpuQYGoQHgG7wtLhcV9Km7f1
+	g4P15Bmnpcmajdt0tXmR/ZFiQSjeDlzIvYAqOdWP0C8u7y6NyIOS8VoDbMp84XZQx
+X-Gm-Gg: AYBFou3DeW8Fb7D1Ou+9vxua/cjLTdsuiqzP4zkxPS7F8MN4on7JhhC45zNxp5R1VFW
+	fagIaKC4ngZ7qPbYHfrCd/+UO3CNQ5KS28qQgz2TsgKL+qmMSJm7vqu7xoBDMuinF9Cnlx+T/JU
+	6K1sP1XRIKjtT8z6kbPlJlVBQzUAGJ31BUu6h5oQpgolWQC2C0Tgt8Pjd2VfX8ysLo8TYuAu/4/
+	FjP8LYADNcy6Pu/2hBJjLKoA7q8cL99O5rnfn3L0YZO0YSmkMl0JPmG5PeztBpBfcIB0EGGhylS
+	tvih+99gS7yg6MNAKQrwZzGNnjyEWrVKH9w0oE2TSvTaeZ0JeYdGXXPDmEGMXfyFdCDbQmYnl7Q
+	P3nbHVBdsfAMi/NLOuE+b9yowrrSAoT8JRBRuVvKl057uhFWnuX5lgw==
+X-Received: by 2002:a05:701b:4204:20b0:144:c128:4c4b with SMTP id a92af1059eb24-15ecbb6b400mr1884823c88.36.1791294266244;
+        Tue, 06 Oct 2026 06:44:26 -0700 (PDT)
+X-Received: by 2002:a05:701b:4204:20b0:144:c128:4c4b with SMTP id a92af1059eb24-15ecbb6b400mr1884761c88.36.1791294265151;
+        Tue, 06 Oct 2026 06:44:25 -0700 (PDT)
+Received: from hu-jjohnson-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-15d84ec510dsm10148527c88.13.2026.10.06.06.44.24
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 06 Oct 2026 06:44:24 -0700 (PDT)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: ath12k@lists.infradead.org, Yingying Tang <yingying.tang@oss.qualcomm.com>
 Cc: linux-wireless@vger.kernel.org, yintang@qti.qualcomm.com
-References: <20260612032332.2278338-1-yingying.tang@oss.qualcomm.com>
-From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Content-Language: en-US
 In-Reply-To: <20260612032332.2278338-1-yingying.tang@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
+References: <20260612032332.2278338-1-yingying.tang@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next] Revert "wifi: ath12k: add panic handler"
+Message-Id: <179129426438.4034642.2830752698143137972.b4-ty@oss.qualcomm.com>
+Date: Tue, 06 Oct 2026 06:44:24 -0700
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: 2KDVsRpUV_QCTaqRODtYXtYQL2K9VjrV
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA2MDA0NyBTYWx0ZWRfX0q7G2KXxgsiD
- YKVHDdRctsRlQ32IP9o1ZX2JorJSJZKaOtxSMpYKHBe4vDrYAn2cMyYy+eko2MAZI7XnsUe7krY
- PNTUe3f6MX2x11yr3eYxdadQiNNMhOw=
-X-Authority-Analysis: v=2.4 cv=PNWaavqC c=1 sm=1 tr=0 ts=6ac4e36c cx=c_pps
- a=cFYjgdjTJScbgFmBucgdfQ==:117 a=kllYWVK2JqQtNyhMtAlpJw==:17
+X-Mailer: b4 0.14.3
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA2MDA1NCBTYWx0ZWRfX0Rn07kWrgXFz
+ kQLPPTwrjBBLhUs9Id9rb96UiISphd+VvdaHKm91NaIaS1EQVjk2xwmyO+gTXIIj6j54QaWyBPU
+ NchjuxLKjWORZceIyuu5deBzo8SLnz0+9bwrN5ZZDcP/neDMP1yPO+YhLcwbFpPKXWoNbFDG1wl
+ 9TsHN7wwMfIH0onsi4PVTN11glqeams9PG7VI6oBk26od7WwsVTF/g96dchnlAgpJcQ3LSpJv0C
+ bnP9OYJkogpEYXY/TmIpOlC0A25nQvTGXI2cktoDxZNFiU9JF4bhfAkp0SlV+ncFgZgHjE+jqGk
+ Kfk3zvHpQ/cFUVnHj0OI0ZVHa6VOvszhLaqFd/A3Q/bZ00vb0T5c7FWHluFczm+dUhS2jcDvusv
+ 7D7tVihCSNWgzpEwIgLBKZuVIxsN+5sMeu9b6ExGAitye17oGryWQyXuNiqOazl9bYDrkVOWzPo
+ PFv92KpBAosJnfAE0Mw==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA2MDA1NCBTYWx0ZWRfXwAC18D+vjGId
+ 6IUxcb0DwqbmHIeMfGbwqy+eF9F0lfgZKG0BlCG+i+/418AijiO8to23nBR3vLLY7Cf0GyIwwo+
+ nNlAwiM/bFxzwr3co4e2vFy6TLXA7Ss=
+X-Authority-Analysis: v=2.4 cv=F97C5ahN c=1 sm=1 tr=0 ts=6ac4fb3b cx=c_pps
+ a=SvEPeNj+VMjHSW//kvnxuw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=EUspDBNiAAAA:8 a=nb6wtAQdZFIURrQIQuUA:9 a=QEXdDO2ut3YA:10
- a=scEy_gLbYbu1JhEsrz4S:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA2MDA0NyBTYWx0ZWRfX4s8vtcg+/5pa
- bo3VyeXm8E0u1WX9cyV/fzkGM/sRZKoUXiIxQuGDhRwRoSNiRnV+q5/xeDhcyuO3MUJqSb+KFkG
- VVLFvrzq9OVVvEohTcr5Twg3ljsDJZEnVoBsmLXfnsbeU+WRk+KrrOB8CMRxN567YcVw8oaPlWB
- K5LE1fbxceixu1LHUKWwNc49DrUW48wmfN6bahT65m4GdIWEYQ+1X+nxIgbMu+xKbQ6cowiDabO
- 21tZkPYq9BjBWkf8MjLPR2t5+caMjggzRFfeX4kUVGloDU3GnQUTCp0+j2KKisqACq5ILplQJen
- OTRTv1VYn+vFyYSDu6MCB2ZUNAJ5V+Utu9g8A0x9aIsOK02KewoBEaHM3s2/hBNK+NRhhI+2KOk
- wxIz9UWfUJIaIaLl3PUcXzD2NJJLCvnY89p3Xir+UvxGAPvx3hsHttpRCHfmmUt+cf3DBRmVWPn
- FK1pNAiOn82SsHmwQFQ==
-X-Proofpoint-GUID: 2KDVsRpUV_QCTaqRODtYXtYQL2K9VjrV
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=EUspDBNiAAAA:8 a=hNcc2shypapaRV4aqP4A:9 a=QEXdDO2ut3YA:10
+ a=Kq8ClHjjuc5pcCNDwlU0:22
+X-Proofpoint-ORIG-GUID: IZh8nhwMSGd38lbVRt3MdeHVxu9g-00K
+X-Proofpoint-GUID: IZh8nhwMSGd38lbVRt3MdeHVxu9g-00K
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-10-06_03,2026-10-06_01,2025-10-01_01
+ definitions=2026-10-06_04,2026-10-06_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 priorityscore=1501 phishscore=0 clxscore=1015 adultscore=0
- malwarescore=0 spamscore=0 suspectscore=0 bulkscore=0 lowpriorityscore=0
+ suspectscore=0 phishscore=0 clxscore=1015 impostorscore=0 malwarescore=0
+ bulkscore=0 priorityscore=1501 lowpriorityscore=0 adultscore=0 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2610060047
+ reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2610060054
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261006_050253_831770_70FBAB2C 
-X-CRM114-Status: GOOD (  20.85  )
+X-CRM114-CacheID: sfid-20261006_064427_754559_B2436861 
+X-CRM114-Status: UNSURE (   6.93  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,7 +145,8 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/12/2026 8:53 AM, Yingying Tang wrote:
+
+On Thu, 11 Jun 2026 20:23:32 -0700, Yingying Tang wrote:
 > This reverts commit 809055628bce824b7fe18331abb65e44d02b0ecf.
 > 
 > Call trace:
@@ -163,172 +163,15 @@ On 6/12/2026 8:53 AM, Yingying Tang wrote:
 > notifier_call_chain+0x78/0x1c0
 > atomic_notifier_call_chain+0x3c/0x5c
 > 
-> ath12k_core_panic_handler() is invoked via atomic_notifier_call_chain(),
-> which runs inside an RCU read-side critical section. The current code calls
-> ath12k_pci_sw_reset() synchronously from this context, which eventually
-> reaches mhi_device_get_sync() and schedule_timeout(), triggering a voluntary
-> context switch within RCU.
-> 
-> Revert change "wifi: ath12k: add panic handler" to avoid this issue.
-> 
-> Tested-on: WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
-> 
-> Signed-off-by: Yingying Tang <yingying.tang@oss.qualcomm.com>
-> ---
->   drivers/net/wireless/ath/ath12k/core.c | 33 +-------------------------
->   drivers/net/wireless/ath/ath12k/core.h |  3 ---
->   drivers/net/wireless/ath/ath12k/hif.h  |  9 -------
->   drivers/net/wireless/ath/ath12k/pci.c  |  8 -------
->   4 files changed, 1 insertion(+), 52 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-> index 1a9866061f82..6705a8a73de1 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.c
-> +++ b/drivers/net/wireless/ath/ath12k/core.c
-> @@ -1793,29 +1793,6 @@ int ath12k_core_pre_init(struct ath12k_base *ab)
->   	return 0;
->   }
->   
-> -static int ath12k_core_panic_handler(struct notifier_block *nb,
-> -				     unsigned long action, void *data)
-> -{
-> -	struct ath12k_base *ab = container_of(nb, struct ath12k_base,
-> -					      panic_nb);
-> -
-> -	return ath12k_hif_panic_handler(ab);
-> -}
-> -
-> -static int ath12k_core_panic_notifier_register(struct ath12k_base *ab)
-> -{
-> -	ab->panic_nb.notifier_call = ath12k_core_panic_handler;
-> -
-> -	return atomic_notifier_chain_register(&panic_notifier_list,
-> -					      &ab->panic_nb);
-> -}
-> -
-> -static void ath12k_core_panic_notifier_unregister(struct ath12k_base *ab)
-> -{
-> -	atomic_notifier_chain_unregister(&panic_notifier_list,
-> -					 &ab->panic_nb);
-> -}
-> -
->   static inline
->   bool ath12k_core_hw_group_create_ready(struct ath12k_hw_group *ag)
->   {
-> @@ -2212,18 +2189,13 @@ int ath12k_core_init(struct ath12k_base *ab)
->   	struct ath12k_hw_group *ag;
->   	int ret;
->   
-> -	ret = ath12k_core_panic_notifier_register(ab);
-> -	if (ret)
-> -		ath12k_warn(ab, "failed to register panic handler: %d\n", ret);
-> -
->   	mutex_lock(&ath12k_hw_group_mutex);
->   
->   	ag = ath12k_core_hw_group_assign(ab);
->   	if (!ag) {
->   		mutex_unlock(&ath12k_hw_group_mutex);
->   		ath12k_warn(ab, "unable to get hw group\n");
-> -		ret = -ENODEV;
-> -		goto err_unregister_notifier;
-> +		return -ENODEV;
->   	}
->   
->   	mutex_unlock(&ath12k_hw_group_mutex);
-> @@ -2248,8 +2220,6 @@ int ath12k_core_init(struct ath12k_base *ab)
->   
->   err_unassign_hw_group:
->   	ath12k_core_hw_group_unassign(ab);
-> -err_unregister_notifier:
-> -	ath12k_core_panic_notifier_unregister(ab);
->   
->   	return ret;
->   }
-> @@ -2258,7 +2228,6 @@ void ath12k_core_deinit(struct ath12k_base *ab)
->   {
->   	ath12k_core_hw_group_destroy(ab->ag);
->   	ath12k_core_hw_group_unassign(ab);
-> -	ath12k_core_panic_notifier_unregister(ab);
->   }
->   
->   void ath12k_core_free(struct ath12k_base *ab)
-> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index 4edc8f4e0cb5..a81cb3032145 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.h
-> +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -15,7 +15,6 @@
->   #include <linux/ctype.h>
->   #include <linux/firmware.h>
->   #include <linux/of_reserved_mem.h>
-> -#include <linux/panic_notifier.h>
->   #include <linux/average.h>
->   #include <linux/of.h>
->   #include <linux/rhashtable.h>
-> @@ -1121,8 +1120,6 @@ struct ath12k_base {
->   
->   #endif /* CONFIG_ACPI */
->   
-> -	struct notifier_block panic_nb;
-> -
->   	struct ath12k_hw_group *ag;
->   	struct ath12k_wsi_info wsi_info;
->   	enum ath12k_firmware_mode fw_mode;
-> diff --git a/drivers/net/wireless/ath/ath12k/hif.h b/drivers/net/wireless/ath/ath12k/hif.h
-> index e8840fab6061..42bb00c13ef3 100644
-> --- a/drivers/net/wireless/ath/ath12k/hif.h
-> +++ b/drivers/net/wireless/ath/ath12k/hif.h
-> @@ -30,7 +30,6 @@ struct ath12k_hif_ops {
->   	void (*ce_irq_enable)(struct ath12k_base *ab);
->   	void (*ce_irq_disable)(struct ath12k_base *ab);
->   	void (*get_ce_msi_idx)(struct ath12k_base *ab, u32 ce_id, u32 *msi_idx);
-> -	int (*panic_handler)(struct ath12k_base *ab);
->   	void (*coredump_download)(struct ath12k_base *ab);
->   };
->   
-> @@ -149,14 +148,6 @@ static inline void ath12k_hif_power_down(struct ath12k_base *ab, bool is_suspend
->   	ab->hif.ops->power_down(ab, is_suspend);
->   }
->   
-> -static inline int ath12k_hif_panic_handler(struct ath12k_base *ab)
-> -{
-> -	if (!ab->hif.ops->panic_handler)
-> -		return NOTIFY_DONE;
-> -
-> -	return ab->hif.ops->panic_handler(ab);
-> -}
-> -
->   static inline void ath12k_hif_coredump_download(struct ath12k_base *ab)
->   {
->   	if (ab->hif.ops->coredump_download)
-> diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-> index 375277ca2b89..65a780e74d01 100644
-> --- a/drivers/net/wireless/ath/ath12k/pci.c
-> +++ b/drivers/net/wireless/ath/ath12k/pci.c
-> @@ -1469,13 +1469,6 @@ void ath12k_pci_power_down(struct ath12k_base *ab, bool is_suspend)
->   	ath12k_pci_sw_reset(ab_pci->ab, false);
->   }
->   
-> -static int ath12k_pci_panic_handler(struct ath12k_base *ab)
-> -{
-> -	ath12k_pci_sw_reset(ab, false);
-> -
-> -	return NOTIFY_OK;
-> -}
-> -
->   static const struct ath12k_hif_ops ath12k_pci_hif_ops = {
->   	.start = ath12k_pci_start,
->   	.stop = ath12k_pci_stop,
-> @@ -1493,7 +1486,6 @@ static const struct ath12k_hif_ops ath12k_pci_hif_ops = {
->   	.ce_irq_enable = ath12k_pci_hif_ce_irq_enable,
->   	.ce_irq_disable = ath12k_pci_hif_ce_irq_disable,
->   	.get_ce_msi_idx = ath12k_pci_get_ce_msi_idx,
-> -	.panic_handler = ath12k_pci_panic_handler,
->   #ifdef CONFIG_ATH12K_COREDUMP
->   	.coredump_download = ath12k_pci_coredump_download,
->   #endif
+> [...]
 
+Applied, thanks!
 
-the commit in pending looks good
+[1/1] Revert "wifi: ath12k: add panic handler"
+      commit: 05165f7b3b9ab6817fe216c24f90755b7c5e15f3
 
-Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Best regards,
+-- 
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+
 
