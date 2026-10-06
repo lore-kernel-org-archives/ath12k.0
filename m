@@ -4,86 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AF58CA5FF0
-	for <ath12k@archiver.kernel.org>; Tue,  6 Oct 2026 09:43:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38EA9CA5FED
+	for <ath12k@archiver.kernel.org>; Tue,  6 Oct 2026 09:43:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=w1Pwz4NjkdSqfWaloOa4OtuYhXBcLt6Eb4swx56Ymeo=; b=uw3dpvT+31TrtSfrXqnb1CMgx6
-	MFqrpYOFaW1Kn+VFu8EP08d3BIYr3zV2oIIdsIZhEdIh1PoRRpLnxqzPzb7VWP2ggwB4bPk8YURNM
-	HewbLj5d+QorCokzQm4vPLHVNWGL/GaoQsFK+Onstpl5yWZnyDPA0pBLIDcz1cZbyWw6KWLv40E+m
-	ODq0JSt7YHo0J4+xfBrVrsh5J9Rl8p/izaNODf8xMjy9Zd+N1FOF7MB9OKypD+QmMx3sRpx1UsE8s
-	t6MSfy3gT6096DbAHB0GMMnpYvq7vvR6CkKceRub6O15mnDb1LFbNDX+FAwlIBz+fIFbA3F8fAiPg
-	jqQAVbOQ==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=HL50aAuTc7iXXkRUx082+O87VcrVi0CqO+VpMmcaNUY=; b=5Amdo0nA7XExQp2vaszY14Mt03
+	2RT2C1pjnvn9IxIqST+JtX0wWtloBHUIZAChjYYN6wh55gQmU6iqLsTBYjszkXsvdIfRcr7D0cgRv
+	2qZiyqJkRiiC1KVFOetVdeM/6u4DSagnxkL5XG6T0sU8/S5yuIrD+9sOKQmb2cc5HCrVeLgKyG/L1
+	kfXdS3KSgkfnbNa+XD/B+YAokgn2YHzVs0AzlxK4hAS4URajanTCtD3jlDTFfXA1rkNTRzjX64NSl
+	g5fq6AWJtmYO2NHxLyk4c0NeCRbmzXnCdvrz3R1D8wq1UOZa5ctq+nFj/RgmiszwnH6XfubzVxN9Z
+	abzIj+Ng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xE1hO-00000000PWN-3NYV;
-	Tue, 06 Oct 2026 09:43:02 +0000
+	id 1xE1ha-00000000PZO-3rdb;
+	Tue, 06 Oct 2026 09:43:14 +0000
 Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xE1hK-00000000PVi-0joH
+	id 1xE1hX-00000000PYn-2tH3
 	for ath12k@lists.infradead.org;
-	Tue, 06 Oct 2026 09:43:01 +0000
-Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-c2a4e013a44so395468066b.2
-        for <ath12k@lists.infradead.org>; Tue, 06 Oct 2026 02:42:57 -0700 (PDT)
+	Tue, 06 Oct 2026 09:43:14 +0000
+Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-c2533d83e3bso55815266b.2
+        for <ath12k@lists.infradead.org>; Tue, 06 Oct 2026 02:43:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791279776; x=1791884576; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=w1Pwz4NjkdSqfWaloOa4OtuYhXBcLt6Eb4swx56Ymeo=;
-        b=qhZCk97Tt4V5i/gCiVrfD4FB9NhxDjMBlSXitlLHeV4F7tbr1NqDYIfJs4tQsm818v
-         UfUpTlZJ4vD2uAcp5GyVj/nmoWkRlRSK6jTluISUrpxFNEGNsY76ZDTzrBXt8poNosQF
-         BSMU9V9Nnd5KRAEvSqgj8LnaeD7qEuY4sfIxD6wp1R0jSHZoRkjIyBSfCNVkuOP6roH+
-         Ky3GqbVSF0M2w4Zg3vUiBkiUC8ztjHTU+RsRqK9A5J3GnQGpFYuoelBeMMXdG+REOiuP
-         zdO7gP9GiURyotcrCIgtE+YKkk+/qmix0H/qNDFuGnRIq8b09fGveqZHWHj+GA1XWnx3
-         br2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791279776; x=1791884576;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20251104; t=1791279790; x=1791884590; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=w1Pwz4NjkdSqfWaloOa4OtuYhXBcLt6Eb4swx56Ymeo=;
-        b=b7g3RJFIrYVzzQwg6B22U2slpfn1wziu54IB3ZrsnjsT9r1iPVQk9foN2XwV9Em7Zv
-         YLYt7bsUFKeiNZDS0iYOh0i29sIQl4Fiyv5fp0CiXTINDYDZRBtm4+nHd5I71jFlKPCD
-         KtSDl7LiRku9eubEdfTYh7qFhqedWv5diD/BDklL1w8In1pt4YOShdIcbB4EPYCzbOCM
-         ORKCvoupvNPvsFMThBPGgNXWCCmgya0s6dH5C8bFhWyGvaePcL5F/wKdSgbkJjEk5Lzt
-         AC3rM+4B8j29xJWrNoDN60+fGxZyF4IRmHOW/r+Y/8BzXhREph/8cR7ktON+T/U4OJFJ
-         PlZQ==
-X-Gm-Message-State: AFuF++mT6S60pNZg+r5RM9sIKvQwhG38P8n64neAQmEhHb9/p7QT0rb9
-	Eno9iOcM0NMYjQKmsjWQ16wXF7boGSq5kRgKetj+qLqE9YGc9Gi/lqcdvPj+o23iabISi1L49wc
+        bh=HL50aAuTc7iXXkRUx082+O87VcrVi0CqO+VpMmcaNUY=;
+        b=JaPSdtBaIcKT9QlK/wWBjDuyhU6oyandIb98/x04HBwTgpFBT59Ej6Da6e9Ewfr7m3
+         vw4osiX/hqRGpRA0pnnDdNV98aYpPk3iEG3ZhzaR8vKCzzBFauP0eEcdwG9MxZCGRWr+
+         9HEPgCsKh5HjnPgTkIztEJF/wrTzUJJrloGrE3N75hH6dxM33gki+I5olbPg8dycdhIn
+         jmwWo5kXiKr1HqWV82Gr+dObKB/AfAK7j+7by45Oniocjqk+/SqDVixOueKBTJBknl+6
+         9Eq3MCkjQTu17UQ8mt4CugOVe9/KWFtKDrjayVD4fhohRDTOzl1KBf4QCtrC667M3aph
+         MocA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791279790; x=1791884590;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=HL50aAuTc7iXXkRUx082+O87VcrVi0CqO+VpMmcaNUY=;
+        b=1oB1s4+zOdS3FjP827/Ld9+dlcmM+D2Gz4OYZSypL0MWTzNtU5Yj25c9/gsPcdzcCh
+         VtVLWUGgBywPXAq/yuQ7hhTl9k37+ofB7OnLPEtVcmyv4irw9sHK+IMS4xGbObroshc1
+         jq1p7kPCyoudashRN2Anc+oqUhsDTQf3jnDbVNby5hjVIWl75J0WI7odFHJ9/pRXmUHv
+         6TlNxYI3LJ1TZseD44PHCTejZRvdglK6gvKfb9G7ELyGkzcDizNyfzUlCJHdA402vgb9
+         Hp++kba+u8UgCuAcTILCwQYB7tyatenOONd/qZlMHg/25WZOZpXNzK3yAnDtTxQxOSxn
+         9eQg==
+X-Gm-Message-State: AFq9FYINRytXkeKGfiOFPG33im/QXvqgHRp2i4m/toBe74v7dwTHVXGL
+	3lm+Fzb3whnojVvQA8cHfsDEdQpEYGQ4zwDBh8fLBVu1KQSkPgHQ/ma47hGvcVWJzwypvKZuR5E
 	=
-X-Gm-Gg: AYBFou3QCyntxoWrR9m2PAAZj+wQ9o2+q1CxhqDy+4lkQJtX2gRIdMVC9YA71wMJZmA
-	VfdkeA6Bpz4o0CH1un+FXmMIBf7myMFg0o8xHi3Gczo2PIEEvQ/AJiEIac4RETdzAaNVHr1FB0C
-	uPDUq/pfLEx+PLSrJyZZpzESSExZ7yVyDTeSzshjHMq1zKYih8okIfUtVOUWm55gh2mSePKHIub
-	sAM7lhPK2LpAOuXDAaxCgUmWGrwUjU/OiN2EZCjhHo8XhVoRXOSaesHQ+rjWerwk64A0HBz2c86
-	htkD7uuyJQ+0WvmtI2+G3ksirICBZKe7pM5TTh33dyf36pjcu2eLvBRewhwVE8xjNChhvtstebt
-	B5qU7ibb6YWuqPy9SsWGmBLsU9ZxiDygQdfgh4WYD2r5Qo0SxMsYoPS6Ed3helprFG4MICRA6q8
-	dULcSsAeb2y51Z0cZvH8xxbHMVJ8l1pjjhsbnUhUt7Ft2le+gqsL1Aetrip7bV/o5p8vIdZnIGV
-	So=
-X-Received: by 2002:a17:907:e102:b0:c2e:7df5:cda7 with SMTP id a640c23a62f3a-c2e7df5d380mr445606866b.33.1791279775699;
-        Tue, 06 Oct 2026 02:42:55 -0700 (PDT)
+X-Gm-Gg: AYBFou3IjMgutQXio5v8tIacNt5R1Irgji6M03Whbj3Q36r8W88YICGH7Ond2mshcjk
+	7UDFZuvwVWUw8gG6ytvCNqEfZAwzDJgFSyYG/G+ic3DQj84/2MAdBXP1Axo6eCs6XJXcmJJpGZS
+	gdOEzU0uyTpyufJ/S/xJErQvSUHgpmgmQ0BQO+EWpU+sT7aObEVa5bUMQog5HOxnx2d4I3rfCgF
+	R2HLzN5wfPJ0+QhhKXDNqWhcbsVGVel3wIrjVhqeDe/MjdEZK3tzDUf7rfm8l9Jky5P4nYtMu4R
+	w6/q4gYYEe7o11B4RBXlsZ4qYqJUDKXKrAIovcnF8/E+w0j0zSuoms3vi3miOlGSsdwZt3nhEZR
+	jDempJWoo/TCvLvwdVHbEWaMhSGmCx7chIG47o7tE9gkpcntekIGlcY76l0bzNdouPpxyHliIkW
+	UVdcUvctZkAPaKymiqe72X76ivXDSIY/4Mkd98SEwDeELcMsgh9PJgYyEEzR2o7uwXUWPvz6JtY
+	dE=
+X-Received: by 2002:a17:907:971d:b0:c29:53ba:a4cd with SMTP id a640c23a62f3a-c3169fc69b9mr80144466b.11.1791279789844;
+        Tue, 06 Oct 2026 02:43:09 -0700 (PDT)
 Received: from Quarx2k-PC.lan ([92.124.138.168])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c31562da31esm183753966b.38.2026.10.06.02.42.54
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c31562da31esm183753966b.38.2026.10.06.02.43.08
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 06 Oct 2026 02:42:55 -0700 (PDT)
+        Tue, 06 Oct 2026 02:43:08 -0700 (PDT)
 From: Nikolai Semendiaev <agent00791@gmail.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
 	jjohnson@kernel.org,
 	wabsie@gmail.com
-Subject: [PATCH 0/2] wifi: ath12k: isolate RXDMA page-fragment caches
-Date: Tue,  6 Oct 2026 15:41:45 +0600
-Message-ID: <cover.1791233788.git.agent00791@gmail.com>
+Subject: [PATCH 1/2] wifi: ath12k: make external IRQ control idempotent
+Date: Tue,  6 Oct 2026 15:41:46 +0600
+Message-ID: <ccca0d5d087b862c3b41ab4d3c5849ca0dc2d32b.1791279304.git.agent00791@gmail.com>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <cover.1791233788.git.agent00791@gmail.com>
+References: <cover.1791233788.git.agent00791@gmail.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261006_024258_229026_42C97F58 
-X-CRM114-Status: UNSURE (   5.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261006_024311_745085_C4422D58 
+X-CRM114-Status: GOOD (  11.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,55 +100,77 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
+The AHB external IRQ helpers change the hardware IRQ state even when
+NAPI is already in the requested state. PCI has a device-wide enabled
+bit guard, but also changes each group's IRQ state outside its NAPI
+state check.
 
-This series adapts Mark Ruvald Pedersen's ath11k page-fragment cache
-changes to ath12k. On QCN9274, sustained WAN traffic
-can exhaust memory when Ethernet and Wi-Fi run on the same CPU.
-Long-lived RXDMA buffers share per-CPU page-fragment caches with other
-network users and can pin mostly unused 32-KiB backing pages.
+Tie each group's hardware IRQ transition to its NAPI state transition.
+Mask IRQs before disabling NAPI and enable NAPI before unmasking IRQs.
+This permits an extra IRQ disable before crash-recovery RXDMA teardown
+without increasing the IRQ disable depth.
 
-Patch 1 makes external IRQ transitions follow the NAPI state so that
-crash recovery can safely quiesce RXDMA before teardown. Patch 2 gives
-regular and monitor RXDMA rings private caches and drains them after
-their buffers have been released. It also fixes alignment of empty
-skbs and preserves monitor status buffer capacity after alignment.
+Based on Mark Ruvald Pedersen's ath11k IRQ lifecycle fix.
 
-The series is based on ath.git main at:
-388d3c42e8aba1cfc3c6d2c52877a46d8cf740db (Linux 7.3-rc5).
-Runtime measurements were made on Linux 6.18.54, with Ethernet and
-Wi-Fi IRQs on CPU0:
+Link: https://lore.kernel.org/linux-wireless/20260719215817.2468580-3-wabsie@gmail.com/
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
 
-  Hardware: QCN9274 hw2.0 PCI
-  Firmware: WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+Signed-off-by: Nikolai Semendiaev <agent00791@gmail.com>
+---
+ drivers/net/wireless/ath/ath12k/ahb.c | 4 ++--
+ drivers/net/wireless/ath/ath12k/pci.c | 6 ++----
+ 2 files changed, 4 insertions(+), 6 deletions(-)
 
-Two 45-second downloads showed peak order-3 memory growth of 54 and
-68 MiB. An earlier unpatched 45-second test grew by 187 MiB, and longer
-unpatched downloads reached OOM.
-
-A five-minute download at about 660 Mbps transferred 24.8 GB without
-OOM. Peak growth was 105 MiB, falling to 35 MiB above baseline after
-one minute idle.
-
-Thanks,
-Nikolai
-
-Nikolai Semendiaev (2):
-  wifi: ath12k: make external IRQ control idempotent
-  wifi: ath12k: use private page-frag caches for RXDMA rings
-
- drivers/net/wireless/ath/ath12k/ahb.c    |  4 +--
- drivers/net/wireless/ath/ath12k/core.c   |  3 ++
- drivers/net/wireless/ath/ath12k/dp.c     |  3 ++
- drivers/net/wireless/ath/ath12k/dp.h     |  3 ++
- drivers/net/wireless/ath/ath12k/dp_mon.c | 29 +++++++++------
- drivers/net/wireless/ath/ath12k/dp_rx.c  | 45 +++++++++++++++++++++---
- drivers/net/wireless/ath/ath12k/dp_rx.h  |  2 ++
- drivers/net/wireless/ath/ath12k/pci.c    |  6 ++--
- 8 files changed, 73 insertions(+), 22 deletions(-)
-
-
-base-commit: 388d3c42e8aba1cfc3c6d2c52877a46d8cf740db
+diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
+index 85360365a..a5eaf5bf5 100644
+--- a/drivers/net/wireless/ath/ath12k/ahb.c
++++ b/drivers/net/wireless/ath/ath12k/ahb.c
+@@ -182,8 +182,8 @@ static void __ath12k_ahb_ext_irq_disable(struct ath12k_base *ab)
+ 	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
+ 		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
+ 
+-		ath12k_ahb_ext_grp_disable(irq_grp);
+ 		if (irq_grp->napi_enabled) {
++			ath12k_ahb_ext_grp_disable(irq_grp);
+ 			napi_synchronize(&irq_grp->napi);
+ 			napi_disable(&irq_grp->napi);
+ 			irq_grp->napi_enabled = false;
+@@ -326,8 +326,8 @@ static void ath12k_ahb_ext_irq_enable(struct ath12k_base *ab)
+ 		if (!irq_grp->napi_enabled) {
+ 			napi_enable(&irq_grp->napi);
+ 			irq_grp->napi_enabled = true;
++			ath12k_ahb_ext_grp_enable(irq_grp);
+ 		}
+-		ath12k_ahb_ext_grp_enable(irq_grp);
+ 	}
+ }
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index af0e882fd..d2a7b6719 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -458,9 +458,8 @@ static void __ath12k_pci_ext_irq_disable(struct ath12k_base *ab)
+ 	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
+ 		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
+ 
+-		ath12k_pci_ext_grp_disable(irq_grp);
+-
+ 		if (irq_grp->napi_enabled) {
++			ath12k_pci_ext_grp_disable(irq_grp);
+ 			napi_synchronize(&irq_grp->napi);
+ 			napi_disable(&irq_grp->napi);
+ 			irq_grp->napi_enabled = false;
+@@ -1108,9 +1107,8 @@ void ath12k_pci_ext_irq_enable(struct ath12k_base *ab)
+ 		if (!irq_grp->napi_enabled) {
+ 			napi_enable(&irq_grp->napi);
+ 			irq_grp->napi_enabled = true;
++			ath12k_pci_ext_grp_enable(irq_grp);
+ 		}
+-
+-		ath12k_pci_ext_grp_enable(irq_grp);
+ 	}
+ 
+ 	set_bit(ATH12K_FLAG_EXT_IRQ_ENABLED, &ab->dev_flags);
 -- 
 2.43.0
 
