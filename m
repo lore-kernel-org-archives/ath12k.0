@@ -4,135 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14460CA5FFD
-	for <ath12k@archiver.kernel.org>; Tue,  6 Oct 2026 02:16:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 354C7CA5FED
+	for <ath12k@archiver.kernel.org>; Tue,  6 Oct 2026 06:27:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YhucmCh5FxYyQPtDcrrIyrj+mpj18kkTGljq3E1yG1Q=; b=PpovgATqJsnhLPgkDIrIw9zBHt
-	g6vyBCegrMEtcTerwiJTcueuSlGsoaGbmS98P67cLtOmdjjL1rQZiN364gIE4rfMfOpa6D6lHxNES
-	sFXszCqUxVxvc0wtuuCbJvrfnyUV3NWGrqOuxyDSB3nrHkyobr5zi48K69gOkWjDuIZ1DHXXM9IFC
-	AMxmt1g0amNkdNQ/uvBZjSguNz/LFS5FExXsTWecRIcWEIUwpUWCJNmq/qAKFDZcmjUqsre6bGFkX
-	Pce2RDqq8dYfvlm7a2R96g8NVxn7iYM4jvYmVFhbdlt6TKZeOtUJf/yK3uPQfCYUsbRr+BWvKwfbk
-	ebezrBDw==;
+	Content-Type:MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=NN3uyFX5MgblzC6BFihyJF+3HDagHt+ljw1Qjp2+odc=; b=Gro4HEAJTrKtdi/Fd4eoTA6nJg
+	FlWbQ5dNZdPVTaWRXZYsmDZqXp/C2Purd89C1SI2pVxxIfFmLFQuG4QAaDkUNKnDapcELUBeJ/zNe
+	QqO6o12TF1PI6bnu393fPo0hKaIsF1HXDJHOrOW9H0efk4JVr/9zdwRoHfyE9xLJwKbewHZBoN2Vc
+	kbLTrpqEDbrk9TpBEO4wrw4L2xXNPZUTG4j+zBuGwIiv6K6/elmdmIvqNRPZTi7tv7YDEaWd7PPM6
+	MERl2FaUdd2h5nXeCvTTJS6E+FReOLdRu8ezlKQ7J91KYrSgpu8ipwayYQ7HeeT3bVrdinEqyl4tl
+	66UAW44g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDuin-0000000HUaN-32x1;
-	Tue, 06 Oct 2026 02:16:01 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xDyeK-000000007ay-3aac;
+	Tue, 06 Oct 2026 06:27:40 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDuil-0000000HUZp-0BGD
+	id 1xDyeH-000000007aW-43qB
 	for ath12k@lists.infradead.org;
-	Tue, 06 Oct 2026 02:16:00 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 695KOTTQ3434906
-	for <ath12k@lists.infradead.org>; Tue, 6 Oct 2026 02:15:57 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	YhucmCh5FxYyQPtDcrrIyrj+mpj18kkTGljq3E1yG1Q=; b=gsIJgmiOypuR2sDJ
-	SXT5AQXx6sANhNgMD+Z6HQ3ZekiQXF9xMUEw/NgWZrbzw4/OymMGlAKWTMvtZewJ
-	Zl1ZVUCSV586BrvqQ79mQUi3qWgPq7k3Po9lfu5646d3Cugd6cyA/wFmsKtfwHOp
-	f9zlgiZ0LhWKGAfuBL0a4syi1gPgKHL3P8oV7zm/AZDiznpHbUROyvEpGaPl7fVI
-	14r3AXAk7SBMajP8wssi7oWBIx25UpGYuivq5XGOVC0+K85dY/nox4q8LhH3ptPJ
-	9asLHBprjPui82RvxlNojhA3lHT01Z2kHk1dH9kDRPUWQJ4IK0jLibVvQWF7rlp2
-	5tAWCA==
-Received: from mail-dl1-f69.google.com (mail-dl1-f69.google.com [74.125.82.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h49tvu6j6-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 06 Oct 2026 02:15:57 +0000 (GMT)
-Received: by mail-dl1-f69.google.com with SMTP id a92af1059eb24-1384427c3efso3361984c88.0
-        for <ath12k@lists.infradead.org>; Mon, 05 Oct 2026 19:15:57 -0700 (PDT)
+	Tue, 06 Oct 2026 06:27:39 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-49d05d51553so17534495e9.2
+        for <ath12k@lists.infradead.org>; Mon, 05 Oct 2026 23:27:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1791252956; x=1791857756; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=YhucmCh5FxYyQPtDcrrIyrj+mpj18kkTGljq3E1yG1Q=;
-        b=YVMrIFD+T1BbuLbAhryC6LsCuTnbTEov4fWGp/1xpO2CnUUDA76NKbrd+yCdVu248+
-         R6C6sIe/7b6B8FPQt+Ofaz9RjQ7SX9Z2ywQ77lbNx7gwkBwpOAGhDJXY/ZO/pdtrnfts
-         GBUqRbsx3el8Fz/IH61M8BtaWnGGSrxJS2rKTNPnc68hcFYsUGaVqzaji8uaFVKDX4Ux
-         NmoDXYRsARGu6R6Jomu9evayOqaXAbVFwaL1/kwlFhKNuK2jbMDKRyfoAR0zqoJBsSVk
-         y8qqtwXA9rO61SkUy5QWYtcdmzcNm1dp48fWJZdp+SOig314svbkMBJpvXyQvmERIt6M
-         KRLg==
+        d=gmail.com; s=20251104; t=1791268056; x=1791872856; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=NN3uyFX5MgblzC6BFihyJF+3HDagHt+ljw1Qjp2+odc=;
+        b=c5i5mo0CZeM009UpLBEe2XtGQGpVeXPuyb7U66YLHskDWwplM174BqHP8yyiQMhEQx
+         RU/pt16txbFiiLoiQhp+ZOBuI1bosbltm+OVMSVqK1sH9IhD6IcRGGQ6uOLBywq4Uu/V
+         9Ks7Bbseo8HKifadsSmbYs16HMIew+EQaCX0zowbrmvCxNqLf099BRb2DuCBGJ6Uya8g
+         C16D63ZN8x7Z06/GDFa2KtA0QzyG8ZsPi7nliieiI2tfkTOXVH/6dv2SiYiN6LJLQek3
+         FqQeEusHGHwFcxL42u04LnzsM+Agx5xuEqyP8hBx2FvlnGww3AcktqLYUghvr4HOuC3Z
+         ZVSQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791252956; x=1791857756;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=YhucmCh5FxYyQPtDcrrIyrj+mpj18kkTGljq3E1yG1Q=;
-        b=Kj+TKS5sN7tLbcMWTh9909NolSXSy5Um71J0ta6m4DgOPQF0nNjtw5Gdym4xy/fSub
-         vvNEDKb43A6d6M4OjuzfvY/Uq3nbHNsG4xceeUbRtIh/j0sC6EhONUMeE6lF8ulXLnG2
-         vUNiE4Qal/cfSHABiV4HQ8nkpIDJ2cqiBjcRYSLCZtdKE+u7LFdcBQPqS0uCe5zJgmzD
-         Nx+C85f3+6Ylho4RHvkeO0SFPRhrWwJYdgi3gCWLJGu/QvrG291dkkOLCgy7gX8m1LzW
-         tgyu/GSqlwuT2kPwf7cP6Wi2qAr3HCcwud8tZpF9OnqLEN38ftqhj37yIF7GV0di4nYg
-         T1GA==
-X-Forwarded-Encrypted: i=1; AKwUvByTnpvldW1aW8GOSoKCkx43+BkGaN3jle5tsE+fnWsdSRpJ059DR8mDQYqEzDLKLQXqEwknzs4=@lists.infradead.org
-X-Gm-Message-State: AFuF++nqvVtba+CeO1y8g3DebOPweLl6WErf9w33xk47tlQUUMguCUbQ
-	Xc2wXgghRU9Ga1ts0wCdijdKrxxlX7YbRMP1cCbc+SFrBtTaitTE+rIZQa0BTAz/TAtxiS+U+uv
-	mdPGoTs68ureG8GTws4CI8nUZlI0oOtY0vVgBom7BJYcNFYaZHH67fK8Xs9MgHnqT
-X-Gm-Gg: AYBFou1cyAdV9dtN+9PC5/Q+5N1mkUk3UyHPSUKLzYsywTvQnhQ48ma1NkTP0150QyG
-	aq3Wo4w4Brv6yDGNlfze/+XIBHaHcVVVuVJr13uEUyrKi1cYS9RZv7RvcvGuiFGSRHj3he2XOvO
-	LokQM6bGzOqpnY8ftKPVK3dB5YmZalo8D75t4pOilRDevUDCQ0VHlzKLvqdzMNInThUQQaJf5hI
-	JC/GFNGpAqg01YyVrf428KtBftVvfmCqL4Le9dklktbdAiDZiOEwNIhGhgDA7eLGUsmD8LapZdn
-	FKK+eM0cTb4ncDJeITS5q16H6x7Z4hFNF3v8Uet0bp0dvh/CZ9Xs7bEp9RzqthEGZmTJhG8r0XO
-	auNqqEvw6hgAmU3ZG6pp2BOEmVPm9BSPaQ9JoAMtlg3PjCUEOWC4qt8KKjw==
-X-Received: by 2002:a05:7022:5f02:b0:15c:1679:1ce8 with SMTP id a92af1059eb24-15ecb4afc11mr102598c88.31.1791252956294;
-        Mon, 05 Oct 2026 19:15:56 -0700 (PDT)
-X-Received: by 2002:a05:7022:5f02:b0:15c:1679:1ce8 with SMTP id a92af1059eb24-15ecb4afc11mr102513c88.31.1791252953653;
-        Mon, 05 Oct 2026 19:15:53 -0700 (PDT)
-Received: from [192.168.1.20] (33.sub-75-218-193.myvzw.com. [75.218.193.33])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-15d852a56bfsm2299440c88.15.2026.10.05.19.15.52
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 05 Oct 2026 19:15:53 -0700 (PDT)
-Message-ID: <d9eb2d99-79f5-4e18-8c6d-4877c73cd5c6@oss.qualcomm.com>
-Date: Mon, 5 Oct 2026 19:15:52 -0700
+        d=1e100.net; s=20260707; t=1791268056; x=1791872856;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=NN3uyFX5MgblzC6BFihyJF+3HDagHt+ljw1Qjp2+odc=;
+        b=pVrx7o0kaMLzMavQii4k6Q70wsRvph6Tq0ZPpbIZGLlsnaf4kORAJQATwn2kTSB2zw
+         NfCx99Q+GRkhZMj+F7C79hzFIxiPoA/YvI0tLn6qyvGFmC4JpJAHMugw2kQRlkixgZkR
+         CvCUeCFZOzSbbpOwXQiWfJ6P28kLze7qX85wqervomocNN5zyo2GTXP6e1o75DAXXMIX
+         Ctn+UgNJ2crm68oCFpNt8wMVhRVfEFmOzvXktimEvXFOArId+D3t+E5qcYmsm7gvdtJQ
+         dZaLNPByM12Fl20fLRQ7b+Ic1s5V5sMwJZ330bLCD8AuEVZ/kvysx6xVqFgsxL/2PcDh
+         F+ow==
+X-Forwarded-Encrypted: i=1; AKwUvByl0C3cOFZ5Yz87K+NoDJhu6gj/6dk+otUD979fcyyrICRbdVrEdgOvSgU/6gMsj6Ljwe3eUgM=@lists.infradead.org
+X-Gm-Message-State: AFuF++kuWiXRy8yE1ZmzqsMOxrBALOO6o6CPSqWWLQAdvFP+xcSeXcRy
+	fNDy+SacpNiZ4WIHsgvRKJW2b7pDzsziMjhTxju+GsiApfycYNvVSniV
+X-Gm-Gg: AYBFou1sZTN2VWOgrq2qCxd8rs9Fl/MqonEjB/SyoYOABsduvH+BNL85QNn665Qccce
+	tKpUR1kjLb/vdsVwe7R3LXT/on3ibS89NqNf6jbiiAF9A2aSHWENp7/ajlTRXzQKZ0U5DsS33vw
+	vMyipqOCP53iqRJEbTmHET6FxwUrAhtcrei1yMFsWo5N2mFW14Q8wjKWqHd2tXKud7lLWIoTLiz
+	StrW+mMqtfIiRK+2u1nBRPhMS1Uya35F3CjxTNY4YipkjChA0M0xMXVl4m2rm6uI6DZNQyL+1mO
+	n19oczQQgJawv6r0tv8GFkpBB5hRwaJbXDWsZcC9dYqqq5pjdvNxcoY+n61+uVliETZJ7mw0Jcj
+	6bubR669Skl38GAvEVx7AasWRG6dnXJeQrnpEVirQ/GaoZIDVXpCu1trMRihYP3my3v4r2UbgWa
+	BbwPCpvygo+trb9SAYkbiL7kLdGpQoSc7o2Ezaa49cnDRSBLE62eiTbBsmAzZvjOZ4qb2HhKfaL
+	ytw6PqNjDvR/GF0mQwcOw==
+X-Received: by 2002:a05:600c:a116:b0:4a0:1a7f:2abb with SMTP id 5b1f17b1804b1-4a1680e94e3mr115543345e9.11.1791268055657;
+        Mon, 05 Oct 2026 23:27:35 -0700 (PDT)
+Received: from FranzSP11.tail2d6612.ts.net ([31.31.60.25])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a0394e6c5asm311830615e9.2.2026.10.05.23.27.34
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 05 Oct 2026 23:27:34 -0700 (PDT)
+From: =?UTF-8?q?Fran=C3=A7ois=20Roux?= <franzelfranzel@gmail.com>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	=?UTF-8?q?J=C3=A9r=C3=B4me=20de=20Bretagne?= <jerome.debretagne@gmail.com>,
+	Dale Whinham <daleyo@gmail.com>,
+	ath12k@lists.infradead.org,
+	linux-wireless@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2] wifi: ath12k: skip hardware rfkill setup on Microsoft Surface devices
+Date: Tue,  6 Oct 2026 08:27:28 +0200
+Message-ID: <20261006062728.45007-1-franzelfranzel@gmail.com>
+X-Mailer: git-send-email 2.56.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH] wifi: ath12k: service all RX rings in an interrupt
- group
-To: John <dencity7@gmail.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <CA+KzPsr13czsH=k_UWJqj48C4Vsb-diQ-tiCh7W4XW31E8WzHg@mail.gmail.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <CA+KzPsr13czsH=k_UWJqj48C4Vsb-diQ-tiCh7W4XW31E8WzHg@mail.gmail.com>
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=aN9lOr9m c=1 sm=1 tr=0 ts=6ac459dd cx=c_pps
- a=kVLUcbK0zfr7ocalXnG1qA==:117 a=AnolQpdaNwb4XK4FG+QP+g==:17
- a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=VwQbUJbxAAAA:8 a=pGLkceISAAAA:8 a=_95Yl18s_qG07WKI7q4A:9 a=QEXdDO2ut3YA:10
- a=vr4QvYf-bLy2KjpDp97w:22
-X-Proofpoint-GUID: UCfXFPaBZP7t8ga0pbBoLdMClypRacFg
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA2MDAwOCBTYWx0ZWRfX6amI/kur2tJ/
- OwMXEtY7Fwjmd8x3h03j/SpiegWJshc2am+SOeJRxWFBFl3mqd4GyUiI0chj+VKHNC0H0sUMF97
- z6ohD8HKoSW4EsnugzeVbC0w7j+mLmJYxsWlcge8EBvySW/T4T7cDKUTWDHGYVlOy82w1QU3GPz
- SdsL6GiFGnufiEf+a0jAQ8MUcHZLk9coh6SoiWQSD1F8ze3on3/AeiJTC7ibVN/HDFN+D8ERMmz
- bl5yJ/890mPbujAISyNB9JMqzMVsCTUoxvc6z4CPfNViBagUfWSKq/yBuzhFk3KK5B72QeG3Ojs
- gRe1sg99dloTa0uLNzckZAZGfKYbFATnYv4DWJsUALo0P/3AoJWceUqnhqFPxntRTeVfSY06c+b
- SXYkt+Usq+buZqxvt9JDt3pk55R4NTNser4YPQhFT+ZCMZwF8dEhS/phfOjo+2sfhkdSNU4OQ1u
- lDhHGDtD1LX6qZfoRng==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA2MDAwOCBTYWx0ZWRfX6c8bt7M29xaZ
- KDyCu/edmV7SEjh1GzExXasASPVJaLRPHHydI7YNVDw9l7m4/sKyUxN6MGJJ3uQLLW2NtSjZIZ4
- 8I77ossW6XikGK7C1OdAIC8D60sb1Hc=
-X-Proofpoint-ORIG-GUID: UCfXFPaBZP7t8ga0pbBoLdMClypRacFg
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-10-05_05,2026-10-05_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 suspectscore=0 clxscore=1015 spamscore=0 phishscore=0
- malwarescore=0 priorityscore=1501 adultscore=0 lowpriorityscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2610060008
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261005_191559_206645_B058D8D8 
-X-CRM114-Status: GOOD (  17.07  )
+X-CRM114-CacheID: sfid-20261005_232738_067248_417CA9BF 
+X-CRM114-Status: GOOD (  17.73  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,65 +107,101 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/5/2026 5:48 PM, John wrote:
-> An RX interrupt group may select multiple receive rings. The Wi-Fi 7
-> handler currently services only the highest set bit, even when the NAPI
-> budget has room for work from another selected ring. Walk all selected
-> bits and retain the shared budget and existing early-exit behavior.
-> 
-> On a locally adapted GL-BE3600/QCN6432, group 5 selects bits 2 and 3. A
-> host regression built from the actual RX block completes 3 of 6 queued
-> packets before the fix and 6 of 6 after it. Single-ring, empty-mask and
-> two-poll budget cases pass. Descending priority is unchanged; this does
-> not establish fairness under sustained traffic.
+On the Microsoft Surface Pro 11 and Surface Laptop 7 (X1E80100), the
+WCN7850 hardware rfkill input reads as "radio off" and the OS has no
+way to control it. ath12k enables hardware rfkill handling, so Wi-Fi
+stays hard-blocked:
 
-see:
-https://wireless.docs.kernel.org/en/latest/en/users/drivers/ath12k/submittingpatches.html#tested-on-tag
+  iwd: Error bringing interface 4 up: Operation not possible due to RF-kill
 
-For a datapath change I'd need Tested-on: tags from both WCN and
-QCN chipsets since they have different requirements.
+ACPI platforms can opt out through ath12k_acpi_get_disable_rfkill(),
+but DT platforms cannot. A DT property was proposed for this and
+rejected, because it describes what the OS should do rather than the
+hardware. The suggested alternative was to handle these machines in
+the driver until a connector binding can describe a broken rfkill line.
 
-> 
-> Signed-off-by: John <dencity7@gmail.com>
+Add a table of board compatibles and hardware revisions on which
+hardware rfkill is known to be unusable, and skip the rfkill setup
+there. Other affected machines then only need a new table entry.
 
-See:
-https://www.kernel.org/doc/html/latest/process/submitting-patches.html#sign-your-work-the-developer-s-certificate-of-origin
+Tested on a Surface Pro 11 (microsoft,denali) with next-20260929,
+booted with the unmodified mainline DTB: the interface is no longer
+blocked and connects. The Surface Laptop 7 entries (microsoft,romulus13
+and microsoft,romulus15) are based on reports from Jérôme de Bretagne
+and Dale Whinham. I have not tested them.
 
-> 
-> ---
-> RFC validation and limits:
-> 
-> Source applicability and the host regression were checked against
-> backports 7.2 plus the 230 wireless patches from perceival/openwrt-flint3
-> commit 2365932733ca8ec3b346621d9cec2eb3df3b2cf3. The new patch applies
-> with zero fuzz. The same source-block regression and exact patch
-> application also pass against official ath.git main at
-> 388d3c42e8aba1cfc3c6d2c52877a46d8cf740db (zero fuzz). No full module
-> build or hardware test was performed against either current revision.
-> 
-> Historical tests on Linux 6.18.39 with local backports 7.2-rc4/QCN6432
-> changes passed DHCP, DNS, 32 UDP flows and about 181 seconds of traffic
-> after reboot. These are bounded observations, not throughput or long-term
-> stability qualification. The contribution was developed with AI assistance.
+Link: https://lore.kernel.org/all/2ixwny6hzumlqmok5cjwutvtk7nzmx4t3dhxc44ao4l2u755pj@n6m7jyxf2o62/
+Suggested-by: Manivannan Sadhasivam <mani@kernel.org>
+Assisted-by: LLM
+Signed-off-by: François Roux <franzelfranzel@gmail.com>
+---
+Changes in v2:
+- Use a table of board compatibles and hardware revisions, as suggested
+  by Jeff, so that other affected machines only need a new entry.
+- Add the Surface Laptop 7 (microsoft,romulus13/15), which Dale and
+  Jérôme report as affected too. These entries are untested by me;
+  a Tested-by from someone with that machine would be welcome.
+- Retested on the Surface Pro 11.
 
-see:
-https://docs.kernel.org/process/coding-assistants.html#attribution
+v1: https://lore.kernel.org/all/20261004165132.4313-1-franzelfranzel@gmail.com/
 
-> 
-> --- a/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-> +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-> @@ -52,8 +52,10 @@
->  			goto done;
->  	}
-> 
-> -	if (dp->hw_params->ring_mask->rx[grp_id]) {
-> -		i = fls(dp->hw_params->ring_mask->rx[grp_id]) - 1;
-> +	ring_mask = dp->hw_params->ring_mask->rx[grp_id];
-> +	while (ring_mask) {
-> +		i = fls(ring_mask) - 1;
-> +		ring_mask &= ~BIT(i);
->  		work_done = ath12k_wifi7_dp_rx_process(dp, i, napi, budget);
->  		budget -= work_done;
->  		tot_work_done += work_done;
+ drivers/net/wireless/ath/ath12k/core.c | 32 ++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 0c72948f3..67d4c98fb 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -72,6 +72,35 @@ ath12k_mem_profile_based_param ath12k_mem_profile_based_param[] = {
+ 	},
+ };
+ 
++/*
++ * On these machines the OS cannot control the WCN7850 hardware rfkill
++ * input, which reads as "radio off", so hardware rfkill must stay
++ * disabled. Ideally this would come from the connector node of the board
++ * DT, but that binding does not exist yet.
++ */
++static const struct ath12k_core_broken_rfkill_table {
++	enum ath12k_hw_rev hw_rev;
++	const char *compatible;
++} ath12k_core_broken_rfkill_table[] = {
++	{ ATH12K_HW_WCN7850_HW20, "microsoft,denali" },
++	{ ATH12K_HW_WCN7850_HW20, "microsoft,romulus13" },
++	{ ATH12K_HW_WCN7850_HW20, "microsoft,romulus15" },
++	{ /* Sentinel */ }
++};
++
++static bool ath12k_core_rfkill_is_broken(struct ath12k_base *ab)
++{
++	const struct ath12k_core_broken_rfkill_table *entry;
++
++	for (entry = ath12k_core_broken_rfkill_table; entry->compatible; entry++) {
++		if (ab->hw_rev == entry->hw_rev &&
++		    of_machine_is_compatible(entry->compatible))
++			return true;
++	}
++
++	return false;
++}
++
+ static int ath12k_core_rfkill_config(struct ath12k_base *ab)
+ {
+ 	struct ath12k *ar;
+@@ -83,6 +112,9 @@ static int ath12k_core_rfkill_config(struct ath12k_base *ab)
+ 	if (ath12k_acpi_get_disable_rfkill(ab))
+ 		return 0;
+ 
++	if (ath12k_core_rfkill_is_broken(ab))
++		return 0;
++
+ 	for (i = 0; i < ab->num_radios; i++) {
+ 		ar = ab->pdevs[i].ar;
+ 
+
+base-commit: 6474fa070f2b8013b4b87350b775b8c3be6e8aac
+prerequisite-patch-id: aafe3fac38f4020441979665509928f8cc832095
+-- 
+2.56.0
 
 
