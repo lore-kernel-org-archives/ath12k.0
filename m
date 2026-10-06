@@ -4,102 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 222BACA5FF0
-	for <ath12k@archiver.kernel.org>; Tue,  6 Oct 2026 00:48:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61D85CA5FFE
+	for <ath12k@archiver.kernel.org>; Tue,  6 Oct 2026 02:05:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
-	Message-ID:Date:From:MIME-Version:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=yDjkbz5Ffu37NcoZjmNPGwdYZSoz7x9/XIZnhgKJqto=; b=OSkk8nNd7Us1BEpnP3ufCda1yT
-	EvMLPS22GAglHDKIY1LxQrmhA3/mnqQW7ikH2KiNY0uRnNwnc8OSfIA6vPfu2vW23b3XX8HG2eC51
-	hQuQ5ACZheN0xC+bifWhj6Bk2ByAbbejJSB4b5TKYPyPLV+FW3MkD3mUVa6I7uZhjO5XuyG+qOPEV
-	MA6rwKPsWvujma9KKxazQxTqCJh7VNu/NwJQ4cedupU9DngQpsN64g7r+lvXjFhvBUBOj3Ao/KO60
-	6ndiHgVCRbIBVvIFFbEqeq5YGenJwNjuWM8dq5GhY1I5pGRUcRjNrg22J5ZM4IETHfKQatrNi7PF5
-	D8G2TSPw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:Cc:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=WNxjXpkyaL0SakgY6wB+Mhgiw6lt5SjM6SRsBvtmBUE=; b=RHbPWqD0eKK0pexT5/ZYAi6zzB
+	4UqWN6WjLauV2mE4WMOc7ZHiGP7IOMFZQKbkfDMAvqULKOL3wH9qj+4bmHAqR15xc4hWBTQPX0aTw
+	jdlIrN5s94dcxeMVNkA7zn2CQOv8eApi9Rgxx/JXCmHSGZqHuN2cYu5Bm1+p6HwrPXuXVRNrGUurb
+	RoHkNa59L3wmJvNLHoOF/Z1xiSDzUqMwFZJnHw7lIeOl5qhRQx6iEDbhHUFCSltKu+fYzOjI6TvO3
+	pzZSdR/2bK6OfAjJLUO6CE4LG+4vAGKGVWTX1+Bcdv+FdX8ljzdJ3oxwxXWpJOU/h4zZALNR1T2Mh
+	htKUU+kw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDtMU-0000000HQPy-3CZE;
-	Tue, 06 Oct 2026 00:48:54 +0000
-Received: from mail-ed2-x0c.google.com ([2a00:1450:4864:33::c])
+	id 1xDuYs-0000000HU3h-2Enp;
+	Tue, 06 Oct 2026 02:05:46 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDtMR-0000000HQPZ-2aJd
+	id 1xDuYq-0000000HU3K-11g9
 	for ath12k@lists.infradead.org;
-	Tue, 06 Oct 2026 00:48:52 +0000
-Received: by mail-ed2-x0c.google.com with SMTP id 4fb4d7f45d1cf-6acb8b78d6cso3448619a12.2
-        for <ath12k@lists.infradead.org>; Mon, 05 Oct 2026 17:48:50 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1791247725; cv=none;
-        d=google.com; s=arc-20260327;
-        b=Bi6A+G3zIxrSAC+x4hLS0XO2ThcicDHFcxukQUg09M4uaMVDkMzBRayokEjsJA1Txz
-         2IKCIixhzqZmNFreAHre18Z4EpuJooMxmnLUwHqbEvxJg8yFHAiqJgAMS7sKlk7NlKzN
-         CTxEaEe5y72XKzPf/RtH0w16BsA+0eWBciS8vAEwsY9jz1f+5rKKBPQIaKQFr7pnJhpI
-         SaYFOXr56uV37B+4qR1bltcVStddLCQZPJouofbwtMdGLe/H62o0HsFXFuOrc9tAmbEx
-         Bnir+5baWpRIzAzpeAgroGWCBbEfU4CBFu+9KCo7V6rxMljFkLNMod9LbMpTgASHs1lN
-         ObnA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
-        bh=yDjkbz5Ffu37NcoZjmNPGwdYZSoz7x9/XIZnhgKJqto=;
-        fh=unOd+iR/s4g3ccNRscfqoIvCvfbfQt24cpkffWnNbx8=;
-        b=q/ev4zAzeDC9FFbfVPU63G/AlBa/WzBfcjg9xaVeWWlN65KIBFR8Aej+JLRxV9Bt4B
-         cozLOO+f7z1Umt2Z7GdNLkmBkU9ud2AnVHPaW7f9dxOcoyTwD2DAimRATL+tZdlr+uG6
-         8jSt2xbBsiWKLG1d++TcJZZVz56pW9jxEbbb7Anuruui+CiMpuuiTZQ2s1NUSeh7ay8M
-         xPXbezlC2GgRzuL2yCYOCTFlAw4PXZzoojLTw4dXopbhKNxkSpvQ1CfggB8zb80ornPd
-         mTZuKgdgMGhKmc80g3urFdDZPjZrs/C2z2hLbL6CrXwMetoxktByCZrya7ez7eSJOEmh
-         MINg==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Tue, 06 Oct 2026 02:05:45 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 695KMpf02359910
+	for <ath12k@lists.infradead.org>; Tue, 6 Oct 2026 02:05:43 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	WNxjXpkyaL0SakgY6wB+Mhgiw6lt5SjM6SRsBvtmBUE=; b=J1IqsO3g2C6N0AMv
+	iKgK7ACfmSQEdpDdDbnENbzGWHhc0nLBrrt9KdOvSAbje7QFpoD9s2kC5OhuxTFz
+	NukD0yvHazO3gZDzFcsPpUxSyt/ffxf0TyHzhVdlXQITSa5dRcoOM3LucWzzXCgJ
+	Ta4Q//sQsasArmQpXKlqCHXDkcrCfmM/pOFbVbo62E+1XgUDMWYm0pxXTnSih4xE
+	QLZZiAXz3RqKupDQfQ+xd+pVlLd1yhM6AI5cqSjQLDOC+Ix2pSRuRwjcjVhMk5zE
+	7UY2psnlKY69c4EQNZxz29tOfRCp2RmjAYI6ExVP5auIswipcntNeXrTxmwxkhe2
+	dTPJGA==
+Received: from mail-dy1-f197.google.com (mail-dy1-f197.google.com [74.125.82.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h4j1ns5qy-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 06 Oct 2026 02:05:43 +0000 (GMT)
+Received: by mail-dy1-f197.google.com with SMTP id 5a478bee46e88-34ef0362d95so4467815eec.1
+        for <ath12k@lists.infradead.org>; Mon, 05 Oct 2026 19:05:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791247725; x=1791852525; darn=lists.infradead.org;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=yDjkbz5Ffu37NcoZjmNPGwdYZSoz7x9/XIZnhgKJqto=;
-        b=SfSgjhUqk70f5BMLkEIyB0B6AoE+zXrs90u2J/ESp54m8tMeui95RwUxMhcxEQbSoq
-         e9FVX/W6KdGBZofOviIrXwOomzGheb4NNbHQqnkozMmuA5Oyig7MZjl4KD9pn+HjjwMn
-         d5QjApt0l8ecRGQTumiCUwbbG4JwMgN101i9J+nqLZ5tAeaV88WH+Rl/kLdTKF8kW4R1
-         3B9AnUObQtorfBSPl3CTcWZEzJYiKurkMByOo/Bl/IIWksgdMTwZotkvNc14xqYCtqgV
-         aBC7t816YOzBpGimSZUOds6j7NXqJNdVAXEi6jemZCtd4VbMKryvBMySr6XsAN/kSt//
-         OeiQ==
+        d=oss.qualcomm.com; s=google; t=1791252343; x=1791857143; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:cc
+         :content-language:from:references:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=WNxjXpkyaL0SakgY6wB+Mhgiw6lt5SjM6SRsBvtmBUE=;
+        b=MFqD8YlWGZ1UqK31pZPonBozr8dp7rVtxdU19xInpa2/9u6cjoU59908hj3GguWZS8
+         7wFDWPNdL35WkKkcPztT8asWrm+urBofSkYb3OPCWoZ3aXvIJL1OsPouExKU26xbBdtI
+         R4rZ+726ToHI8+OQqXW87jwArV0n1Q4QnJGnjLKKuVEOhTqqiRnor8BSiVsLBA/IObsa
+         Wk9b0WBSEBlqT3mY6hYotbT7nr09TjrJw1mwQFhhdLbLq7M1NUaMT5Ycp5FPRXfzstlG
+         5BNANw8NWBSVsUZrg0SWX3SIa5tKjLDOmXATkmlfwtyVAHPMTYhIew4cAl7tfhVzNtFB
+         5LYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791247725; x=1791852525;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=yDjkbz5Ffu37NcoZjmNPGwdYZSoz7x9/XIZnhgKJqto=;
-        b=Uiu07ZRgK8ht4ihX+xmQCtcKvpIjUCYZ/0PAWReShpxF1D+zHB2JJm2c8vyeEVMDZp
-         DjTDsJxkWNR3ZiQeukAkGdzeyIdDg2YOsgpXaI1YYawN6sS26elnR+MCyswP7eLgOlnE
-         Fs3ULk9tcvui4fYY8xXZkXAACG8Vt1msOHM121zvNRR39yyUJVKLF4qc5LO7SpPszuxe
-         sbGcJpq26TRr9Fg/l+aDUmkSl0NUrCUa5wlDezGp2ihvwVEmK3bt3/0v+wmoOqz3bPJt
-         cZJMa//1duJASEFvS08hkBUkgKF+0oqk0GItydulJg2OKIAvWQwAOzWL7mWGMJRwr5g6
-         3oHA==
-X-Gm-Message-State: AFq9FYJ1o7FZXuLOtfP57QMhzi9wGUsIfKlR5fybueg2JmTTN37pvUAc
-	B+ZkJNTB63wcMZxeqJeak9rPxltkbb94AZVxPByXKsWo9RzP0HvAqImymk8n5vs6Vb2PcrlRpcT
-	llZDwjYgbZuTkgyPxM0KPvafRR4thdwJn/g==
-X-Gm-Gg: AYBFou2pjcHm2hvT26pgpWLacKdNNOSH2ERJVJFTtd4rkVc2jqh3WzHApyEPMIPjwdb
-	3ZlhdDsADbpnfvf/tMsVrMQ7HpaWr77pwrSCvlx7ej6Vqx+5UivQUvCKjhJQHc86/EhgARba+uI
-	zDj7k8IMwOricBI564jBJNqIe6NJ91gJAn2rD8wFgDGOYDP1qiqe4rxnEJFIwU2kbrWk7STkEDH
-	Slb/FmoiornSTsBlTHkmSRLeaups2FHFMY8xOpfOLAe+2SOrgu5L2nx+smJB/AIR8hhtuoQ1oEs
-	T+gr+EV0Kh3jvJoXK74TKfzAxKmrVnPqERoY7H4iObKnYLq9ffW2Kw==
-X-Received: by 2002:a05:6402:52c1:b0:6ae:550e:59ee with SMTP id
- 4fb4d7f45d1cf-6af9e30f5a0mr8429990a12.36.1791247725128; Mon, 05 Oct 2026
- 17:48:45 -0700 (PDT)
-Received: from 77377267392 named unknown by gmailapi.google.com with HTTPREST;
- Mon, 5 Oct 2026 19:48:43 -0500
-Received: from 77377267392 named unknown by gmailapi.google.com with HTTPREST;
- Mon, 5 Oct 2026 19:48:43 -0500
+        d=1e100.net; s=20260707; t=1791252343; x=1791857143;
+        h=content-transfer-encoding:content-type:in-reply-to:cc
+         :content-language:from:references:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=WNxjXpkyaL0SakgY6wB+Mhgiw6lt5SjM6SRsBvtmBUE=;
+        b=zPKu/qB4swnlXwoxTH6lKJBUyDhZuxtVYef2XiRnyQEndQ4bvlWuOWBeHvMwTFcZbx
+         syyYahy7g64+AreJAs1mJcaYlhjxrMUpoJcEdTwtQ8cGH+X98FuGroeHmJztlk8ucSUh
+         dtFbbONuWBVk7K714nG8+0RMwzEqiCi+DbY3nPZuQmsH4AAqVR8fmsgW1Utprm2s8s0b
+         OuAY5fgat0/Hx6tkgUPCJsE+X8FWPaoiQxYi0mjc+5x6lwwvTyG5HqtfvL0kLb6X41Jl
+         bHqEyy16XuL9JiDQkzwXdUScpzJ25CFPOjMAR7Iuhr6mrrSfrgkz3WiJGLgEPYdBjgMS
+         Zrmg==
+X-Gm-Message-State: AFq9FYImAsOLf6BQPY9FnjxaZnBMQMBBCmwLuMcxTr14yBYslZT8qqPF
+	1aalyhvOFzsdhySex1wKjCW2JuuhvpSEyoNKEctmiOU8A6aD6fYEQZ/YoBkPL85YU3F8Jc0S2bA
+	z2e8cm4Aq4rYaqizrkGQ95j2BKx3qeOQobYU19gYBKb/nwejsBuBzbRSeBjWckxF+NAjLlGLE
+X-Gm-Gg: AYBFou21tx8M4OXGe5sgmOy0paiOtYA2h5WZ0hpSvLSvzz6101w/CueoeNWJMmDkycu
+	JgeeT8cr7oHqtu7U+XSN8e19Ku+0hJNKCvHY2jgxiKX4/32l3yq2KPPExB9XzSxLtWc3EHwNbUT
+	Yunc7hSplkKfkSgewS6n4HU8mUuaMPvBe4I4xn1p1Pjv2ZOy8BD6akPidAl9l3i+0KwN5s1YQUe
+	f2lokeFIh72WDbIiEwXX1aRTSrzwR9xYPPl22hWRtVqn+9ThDOehiu9ObKqQqG6R+KB+u4tyf9M
+	nNQ39tctVMn9hBJXsebh6phOIGxal6rJSj0psicRhQkAN3Alg4ZAjNWcS22oXcBVTuUfTjwrYTk
+	b+XezRAwFqaj82F2fVYV5Rvw5PzRj/eVf41Y3Xvn1M7BFAVkkAShxlv/jXA==
+X-Received: by 2002:a05:693c:638f:10b0:34b:dde6:29c7 with SMTP id 5a478bee46e88-351114568a1mr11781800eec.19.1791252342337;
+        Mon, 05 Oct 2026 19:05:42 -0700 (PDT)
+X-Received: by 2002:a05:693c:638f:10b0:34b:dde6:29c7 with SMTP id 5a478bee46e88-351114568a1mr11781765eec.19.1791252341505;
+        Mon, 05 Oct 2026 19:05:41 -0700 (PDT)
+Received: from [192.168.1.20] (33.sub-75-218-193.myvzw.com. [75.218.193.33])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-35146a299cdsm2360672eec.12.2026.10.05.19.05.40
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 05 Oct 2026 19:05:40 -0700 (PDT)
+Message-ID: <3db68884-f6b5-499c-9959-7eec59ba40cd@oss.qualcomm.com>
+Date: Mon, 5 Oct 2026 19:05:39 -0700
 MIME-Version: 1.0
-From: John <dencity7@gmail.com>
-Date: Mon, 5 Oct 2026 19:48:43 -0500
-X-Gm-Features: AclHuK_Vy8K4gIsWI-19h33_M_T_ZH88YlsvURlXGiTBf8wG93VYcI5ALVd6YmU
-Message-ID: <CA+KzPsr13czsH=k_UWJqj48C4Vsb-diQ-tiCh7W4XW31E8WzHg@mail.gmail.com>
-Subject: [RFC PATCH] wifi: ath12k: service all RX rings in an interrupt group
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Content-Type: multipart/mixed; boundary="0000000000005ca053065d215c6e"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC PATCH 00/12] wifi: AP side locking improvements
+To: Johannes Berg <johannes@sipsolutions.net>, linux-wireless@vger.kernel.org
+References: <20261004214504.1636783-14-johannes@sipsolutions.net>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+Cc: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
+In-Reply-To: <20261004214504.1636783-14-johannes@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA2MDAwOCBTYWx0ZWRfX0NUXmfj4yZCm
+ oXa9H1p3vYnv8yS1qoQUAcC3ChaGPjK68fFcDhLI/gW7A7XiqUQYJQgjsN20Yaytv6dvmWfutGW
+ N37tGolxlFgBB8IQtcCd6kyS10jX/dw=
+X-Proofpoint-ORIG-GUID: 2bdbBzQc8y2yJziGdQ9AUquMQaIZh6Db
+X-Proofpoint-GUID: 2bdbBzQc8y2yJziGdQ9AUquMQaIZh6Db
+X-Authority-Analysis: v=2.4 cv=F4fC5ahN c=1 sm=1 tr=0 ts=6ac45777 cx=c_pps
+ a=Uww141gWH0fZj/3QKPojxA==:117 a=AnolQpdaNwb4XK4FG+QP+g==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
+ a=bb0DoZlYktw9nqMOHAQA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=PxkB5W3o20Ba91AHUih5:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA2MDAwOCBTYWx0ZWRfX+nLoPF/iCdZG
+ HuzLPLaN9LPaOAoRJXBdwf3EtCEpvh7tCrh1ebtYcY++BAh1Z5+SVELVKbBJAhKtpIhv6WdtORx
+ PntpBJHPG1AypI2078QuCu/FHnpAVX2CA5oZ4t9K7rvR7vO5HRM/IssCtH+j12yDXx9rJ1CWQlg
+ XvDcZ6QdzPG8/TygLEdWpfbVY3E7XkwUJ6jpdybvSgqVLFVRUmTns0qmn1Fnfo1nXjca40AbrgG
+ 3IOifxr5NcwUXQVIckW0pMLQhwcndaybeuF8kVMZwq/9+2R8UXtmRqn9+RPblQY15UaPofsNLI4
+ f1duSD0oP1EDRsCdeoDx0zKR2WQeJvnHPQrqa2rlUbiiOe7FRYvRd2/TK9ndGHC6VFFWYOAQFxL
+ sy6XUp8cf8YvXGdWVtQvYEYLaTQ5rIYhroSwUZSVUR90OLtlcKyYk7v78GIO8QLyYYOrkNAyGiM
+ qKypeRd1LhK4LhLrrRQ==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-05_05,2026-10-05_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 bulkscore=0 priorityscore=1501 malwarescore=0 spamscore=0
+ phishscore=0 clxscore=1015 suspectscore=0 lowpriorityscore=0 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2610060008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261005_174851_854528_45DBA5F8 
-X-CRM114-Status: UNSURE (   6.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261005_190544_329607_84136D24 
+X-CRM114-Status: GOOD (  24.69  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,100 +146,94 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
---0000000000005ca053065d215c6e
-Content-Type: text/plain; charset="UTF-8"
+On 10/4/2026 2:40 PM, Johannes Berg wrote:
+> This obviously goes on top of my (fixed) RTNL redux series.
+> 
+> The idea here is that wiphy mutex can be held for quite a bit
+> of time (e.g. waiting for firmware), but beacon updates (e.g.
+> with the critical update design I had proposed a long while
+> back) and other things should be fast.
+> 
+> So with this not all things require wiphy mutex. These are:
+> 
+>  - beacon and related template updates
+>    (this one needs driver opt-in),
+>  - mgmt frame TX,
+>  - control port TX, and
+>  - peer probe.
+> 
+> This does make the implementation slightly more complex, but
+> the added complexity is almost entirely in mac80211 (and some
+> in cfg80211), unless a driver wants to opt in to unlocked
+> beacon/template updates, which it has to implement itself for
+> obvious reasons.
+> 
+> I think we probably want this even without the critical update
+> design we're still debating, but I thought I'd throw this out
+> here because a lot of the discussion has been focused on the
+> latencies throughout the stack, and I never thought they were
+> fundamental. QED ;-)
+> 
+> johannes
 
-An RX interrupt group may select multiple receive rings. The Wi-Fi 7
-handler currently services only the highest set bit, even when the NAPI
-budget has room for work from another selected ring. Walk all selected
-bits and retain the shared budget and existing early-exit behavior.
+With both the redux and this series applied, I prompted my review agent:
+prior to the 2 patchsets (18 patches and 12 patches) ath12k relied upon the
+wiphy mutex to serialize many of the mac80211 operations. are any ath12k
+object references now subject to new race conditions with this entire set of
+30 patches applied?
 
-On a locally adapted GL-BE3600/QCN6432, group 5 selects bits 2 and 3. A
-host regression built from the actual RX block completes 3 of 6 queued
-packets before the fix and 6 of 6 after it. Single-ring, empty-mask and
-two-poll budget cases pass. Descending priority is unchanged; this does
-not establish fairness under sustained traffic.
+The reply:
+<LLM>
+New Race: ath12k_reg_notifier vs ath12k_mac_op_start/ath12k_mac_op_stop on
+ah->state
 
-Signed-off-by: John <dencity7@gmail.com>
+Before the series: ath12k_reg_notifier was called from
+notify_self_managed_wiphys(), which ran inside reg_todo() under RTNL.
+ath12k_mac_op_start() and ath12k_mac_op_stop() both assert
+lockdep_assert_wiphy() at entry — and mac80211 calls them holding the wiphy
+lock. The wiphy lock was acquired under RTNL (rtnl_lock() → wiphy_lock()), so
+RTNL serialized the notifier against start/stop.
 
----
-RFC validation and limits:
+After the series (patch 18, 7fccd0f981b5): reg_todo() now holds cfg80211_mutex
+instead of RTNL. notify_self_managed_wiphys() calls ath12k_reg_notifier()
+holding only cfg80211_mutex — no wiphy lock, no RTNL.
+ath12k_mac_op_start()/ath12k_mac_op_stop() hold only the wiphy lock — no
+cfg80211_mutex. These two locks are disjoint.
 
-Source applicability and the host regression were checked against
-backports 7.2 plus the 230 wireless patches from perceival/openwrt-flint3
-commit 2365932733ca8ec3b346621d9cec2eb3df3b2cf3. The new patch applies
-with zero fuzz. The same source-block regression and exact patch
-application also pass against official ath.git main at
-388d3c42e8aba1cfc3c6d2c52877a46d8cf740db (zero fuzz). No full module
-build or hardware test was performed against either current revision.
+Inside ath12k_reg_notifier(), the first thing it does is read ah->state
+without holding ah->hw_mutex:
 
-Historical tests on Linux 6.18.39 with local backports 7.2-rc4/QCN6432
-changes passed DHCP, DNS, 32 UDP flows and about 181 seconds of traffic
-after reboot. These are bounded observations, not throughput or long-term
-stability qualification. The contribution was developed with AI assistance.
+if (ah->state != ATH12K_HW_STATE_ON)   /* plain read, no hw_mutex */
+    return;
 
---- a/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-@@ -52,8 +52,10 @@
- 			goto done;
- 	}
+ah->state is written exclusively under ah->hw_mutex (in ath12k_mac_op_start(),
+ath12k_mac_op_stop(), and ath12k_mac_op_reconfig_complete()), none of which
+hold cfg80211_mutex. The reg notifier (on CPU A, holding cfg80211_mutex) and
+mac_op_stop (on CPU B, holding wiphy lock + hw_mutex) can now execute
+concurrently. The ah->state read in the notifier and the ah->state =
+ATH12K_HW_STATE_OFF write in stop share no common lock. This is a new data
+race.
 
--	if (dp->hw_params->ring_mask->rx[grp_id]) {
--		i = fls(dp->hw_params->ring_mask->rx[grp_id]) - 1;
-+	ring_mask = dp->hw_params->ring_mask->rx[grp_id];
-+	while (ring_mask) {
-+		i = fls(ring_mask) - 1;
-+		ring_mask &= ~BIT(i);
- 		work_done = ath12k_wifi7_dp_rx_process(dp, i, napi, budget);
- 		budget -= work_done;
- 		tot_work_done += work_done;
+The same applies to the ah->regd_updated = false write further down in the
+notifier and the ah->regd_updated = true write in ath12k_regd_update() (called
+from a workqueue with no lock), and the ah->regd_updated read in
+ath12k_regd_update() — none of these are serialized.
 
---0000000000005ca053065d215c6e
-Content-Type: text/plain; charset="utf-8"; name="0001-ath12k-service-all-rx-rings.patch"
-Content-Disposition: attachment; 
-	filename="0001-ath12k-service-all-rx-rings.patch"
-Content-Transfer-Encoding: base64
-X-Attachment-Id: 4c74fd0121bf6498_0.1
+Before the series, RTNL acting as a global serializer masked all of this.
 
-RnJvbTogSm9obiA8ZGVuY2l0eTdAZ21haWwuY29tPg0KVG86IGF0aDEya0BsaXN0cy5pbmZyYWRl
-YWQub3JnDQpDYzogbGludXgtd2lyZWxlc3NAdmdlci5rZXJuZWwub3JnDQpTdWJqZWN0OiBbUkZD
-IFBBVENIXSB3aWZpOiBhdGgxMms6IHNlcnZpY2UgYWxsIFJYIHJpbmdzIGluIGFuIGludGVycnVw
-dCBncm91cA0KWC1VbnNlbnQ6IDENCk1JTUUtVmVyc2lvbjogMS4wDQpDb250ZW50LVR5cGU6IHRl
-eHQvcGxhaW47IGNoYXJzZXQ9InV0Zi04Ig0KQ29udGVudC1UcmFuc2Zlci1FbmNvZGluZzogOGJp
-dA0KDQpBbiBSWCBpbnRlcnJ1cHQgZ3JvdXAgbWF5IHNlbGVjdCBtdWx0aXBsZSByZWNlaXZlIHJp
-bmdzLiBUaGUgV2ktRmkgNw0KaGFuZGxlciBjdXJyZW50bHkgc2VydmljZXMgb25seSB0aGUgaGln
-aGVzdCBzZXQgYml0LCBldmVuIHdoZW4gdGhlIE5BUEkNCmJ1ZGdldCBoYXMgcm9vbSBmb3Igd29y
-ayBmcm9tIGFub3RoZXIgc2VsZWN0ZWQgcmluZy4gV2FsayBhbGwgc2VsZWN0ZWQNCmJpdHMgYW5k
-IHJldGFpbiB0aGUgc2hhcmVkIGJ1ZGdldCBhbmQgZXhpc3RpbmcgZWFybHktZXhpdCBiZWhhdmlv
-ci4NCg0KT24gYSBsb2NhbGx5IGFkYXB0ZWQgR0wtQkUzNjAwL1FDTjY0MzIsIGdyb3VwIDUgc2Vs
-ZWN0cyBiaXRzIDIgYW5kIDMuIEENCmhvc3QgcmVncmVzc2lvbiBidWlsdCBmcm9tIHRoZSBhY3R1
-YWwgUlggYmxvY2sgY29tcGxldGVzIDMgb2YgNiBxdWV1ZWQNCnBhY2tldHMgYmVmb3JlIHRoZSBm
-aXggYW5kIDYgb2YgNiBhZnRlciBpdC4gU2luZ2xlLXJpbmcsIGVtcHR5LW1hc2sgYW5kDQp0d28t
-cG9sbCBidWRnZXQgY2FzZXMgcGFzcy4gRGVzY2VuZGluZyBwcmlvcml0eSBpcyB1bmNoYW5nZWQ7
-IHRoaXMgZG9lcw0Kbm90IGVzdGFibGlzaCBmYWlybmVzcyB1bmRlciBzdXN0YWluZWQgdHJhZmZp
-Yy4NCg0KU2lnbmVkLW9mZi1ieTogSm9obiA8ZGVuY2l0eTdAZ21haWwuY29tPg0KDQotLS0NClJG
-QyB2YWxpZGF0aW9uIGFuZCBsaW1pdHM6DQoNClNvdXJjZSBhcHBsaWNhYmlsaXR5IGFuZCB0aGUg
-aG9zdCByZWdyZXNzaW9uIHdlcmUgY2hlY2tlZCBhZ2FpbnN0DQpiYWNrcG9ydHMgNy4yIHBsdXMg
-dGhlIDIzMCB3aXJlbGVzcyBwYXRjaGVzIGZyb20gcGVyY2VpdmFsL29wZW53cnQtZmxpbnQzDQpj
-b21taXQgMjM2NTkzMjczM2NhOGVjM2IzNDY2MjFkOWNlYzJlYjNkZjNiMmNmMy4gVGhlIG5ldyBw
-YXRjaCBhcHBsaWVzDQp3aXRoIHplcm8gZnV6ei4gVGhlIHNhbWUgc291cmNlLWJsb2NrIHJlZ3Jl
-c3Npb24gYW5kIGV4YWN0IHBhdGNoDQphcHBsaWNhdGlvbiBhbHNvIHBhc3MgYWdhaW5zdCBvZmZp
-Y2lhbCBhdGguZ2l0IG1haW4gYXQNCjM4OGQzYzQyZThhYmExY2ZjM2M2ZDJjNTI4NzdhNDZkOGNm
-NzQwZGIgKHplcm8gZnV6eikuIE5vIGZ1bGwgbW9kdWxlDQpidWlsZCBvciBoYXJkd2FyZSB0ZXN0
-IHdhcyBwZXJmb3JtZWQgYWdhaW5zdCBlaXRoZXIgY3VycmVudCByZXZpc2lvbi4NCg0KSGlzdG9y
-aWNhbCB0ZXN0cyBvbiBMaW51eCA2LjE4LjM5IHdpdGggbG9jYWwgYmFja3BvcnRzIDcuMi1yYzQv
-UUNONjQzMg0KY2hhbmdlcyBwYXNzZWQgREhDUCwgRE5TLCAzMiBVRFAgZmxvd3MgYW5kIGFib3V0
-IDE4MSBzZWNvbmRzIG9mIHRyYWZmaWMNCmFmdGVyIHJlYm9vdC4gVGhlc2UgYXJlIGJvdW5kZWQg
-b2JzZXJ2YXRpb25zLCBub3QgdGhyb3VnaHB1dCBvciBsb25nLXRlcm0NCnN0YWJpbGl0eSBxdWFs
-aWZpY2F0aW9uLiBUaGUgY29udHJpYnV0aW9uIHdhcyBkZXZlbG9wZWQgd2l0aCBBSSBhc3Npc3Rh
-bmNlLg0KDQotLS0gYS9kcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL3dpZmk3L2RwLmMN
-CisrKyBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvd2lmaTcvZHAuYw0KQEAgLTUy
-LDggKzUyLDEwIEBADQogCQkJZ290byBkb25lOw0KIAl9DQogDQotCWlmIChkcC0+aHdfcGFyYW1z
-LT5yaW5nX21hc2stPnJ4W2dycF9pZF0pIHsNCi0JCWkgPSBmbHMoZHAtPmh3X3BhcmFtcy0+cmlu
-Z19tYXNrLT5yeFtncnBfaWRdKSAtIDE7DQorCXJpbmdfbWFzayA9IGRwLT5od19wYXJhbXMtPnJp
-bmdfbWFzay0+cnhbZ3JwX2lkXTsNCisJd2hpbGUgKHJpbmdfbWFzaykgew0KKwkJaSA9IGZscyhy
-aW5nX21hc2spIC0gMTsNCisJCXJpbmdfbWFzayAmPSB+QklUKGkpOw0KIAkJd29ya19kb25lID0g
-YXRoMTJrX3dpZmk3X2RwX3J4X3Byb2Nlc3MoZHAsIGksIG5hcGksIGJ1ZGdldCk7DQogCQlidWRn
-ZXQgLT0gd29ya19kb25lOw0KIAkJdG90X3dvcmtfZG9uZSArPSB3b3JrX2RvbmU7DQo=
---0000000000005ca053065d215c6e--
+Pre-existing but Newly Exposed: ath12k_regd_update vs ath12k_reg_notifier on
+ah->regd_updated
+
+ath12k_regd_update() is called from ath12k_regd_update_work (a workqueue) and
+reads then writes ah->regd_updated with no lock at all. ath12k_reg_notifier()
+writes ah->regd_updated = false also with no lock. These two were already
+concurrent before the series — workqueue items are not serialized by RTNL — so
+this is not a new problem introduced by the patches. However, RTNL previously
+prevented the reg notifier from being called while a mac op was running,
+which reduced the window. That window is now wider.
+</LLM>
+
+So we'll probably need to address those issue.
+
+/jeff
 
