@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57D7ECA600B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84EEDCA6007
 	for <ath12k@archiver.kernel.org>; Thu,  8 Oct 2026 10:25:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,107 +12,107 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ngNckdozDSqu9shJTPGYVZ5aTGzTKRVmfGVeYRVpnzw=; b=qh6md/YLLdKon8MKplGvNCUaba
-	JVlx/iXfVPCZrXWxK3ku3W7KcZrjeC1r+xqL8YY8yJ+wzXkAt8VKDnrIb12/21xlo8QExvKozzGWt
-	jC4EORwuW0Q/ylfsSj8EUZYVCfTiuYjZPqSzC+DkGTZvxkhQ3FO81FTKwvlDZ6/sj9rkapLAKAzwl
-	sWSiTT8LGyIF0QWW7mjfIY0PqDR7AakpD5umG/Xecz2Zh59tuvHA0rziV/XsV9u3aiw4My2IaDQ3S
-	+GJERDPJU7yju1xg01JGl/MJKtMRK9iABZ4ALXgN5xc1GZJM9vY1v5/4qlgKxRqMBPZ5ECPd+gBG1
-	NNTWbi1g==;
+	bh=BPtAgPGyDX4LIJj5+VGGoUZSUG3Qs2DKqEGaZSXoIRo=; b=Cq9guU1GyAaoFfi04syJuIJUYH
+	jPgBw/Z/gdRPGApCl56irn9GkLcKSiTEGbXunFmKT4YVfCSjHRDT4+/ccpQi+jaxYC0BaLcPws47z
+	nrpadiJbYcphkAni70cLdo1S5iQhfntuVnj5RNew8O2HVWGsBhf5DC8t0ZbMJVAjN4Tnwr6/u8S98
+	W7KNXwNpIebXX38aU3zOjVk51lphicdLFtVmsurP1SH3G4l6zot+qYtoHZSShkTd64Ovrht7IzIMW
+	4bA/yxoP5kcnJ9EEvX4kaiCzefFh1D+MokLCGzQSvKZGPpKBT3hyoSXK6jhyh5pGosDBlyi5SRp6d
+	W0M1JS6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xElJQ-000000046sE-076i;
+	id 1xElJQ-000000046sU-0gzP;
 	Thu, 08 Oct 2026 10:25:20 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xElJO-000000046qu-47yj
+	id 1xElJO-000000046qj-3nOv
 	for ath12k@bombadil.infradead.org;
 	Thu, 08 Oct 2026 10:25:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=ngNckdozDSqu9shJTPGYVZ5aTGzTKRVmfGVeYRVpnzw=; b=UIjS9JmVdWurrQAuQcJ67YNyce
-	Hs0J0KvDLNfwQkNO8hyI/nbg9rHLxcgBQ0UJR1Oq7FUvXirDF6LgyQ4zodsD3h6g1krIixxj/dOq0
-	+E7LupYBvyq9TzZwejmEVzvRxq4PgJxEOIQ3QDJV6rzPGW64NCWLfd6vFQFwu0uuwKVDnSyAZ5r6I
-	XreGUITnhgH+G225pNoFmmBPPO+f4f1GxGTVQe5Ut0PaaXwytkhHTzcArm0QusAh2vQDPGP+sY2k1
-	87KtvQvmVb7yXWB4hY/CaVectxxlO1kNEMRQQ1mVNBrOQvYA3fzTFOmg95zh+QNOyYVJd13Qqcwtb
-	XLtU0jCQ==;
+	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
+	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
+	:Reply-To:Content-ID:Content-Description;
+	bh=BPtAgPGyDX4LIJj5+VGGoUZSUG3Qs2DKqEGaZSXoIRo=; b=P+2vXPIv284hBc+h4LteFdJ32T
+	SOSBmWncFzwLahxnL1csDizuqdYAUcRdZCIvBH2roLs2A77vfT4TqWKF+0WMuxi2bq8He/oWb1HtI
+	ByD9R6dmDC9tGwjmUrtISdOtDxaL2V6944feQJpHeTwjO+GrMj5fQQkQbOsFFURqConruNxqqBLf2
+	bWSK8WsZYxy+tMFkctD7pVqUtIlvVr2XvhlzeV7prBVshpYkOEG5PztubBiXaBO1K6bt/iiL+S3Tl
+	7RwTg6vyu2LpiQNTjF438Ukwe9H4HtGlNz0tn4un728QCEeshGrLYEHoMoe+pJ/aBHS+hkPgITFlw
+	BPEtaPuA==;
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1xElJJ-0000000AHpB-2SoH
+	by casper.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1xElJI-0000000741P-1JGo
 	for ath12k@lists.infradead.org;
-	Thu, 08 Oct 2026 10:25:16 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6987K3G92189750
-	for <ath12k@lists.infradead.org>; Thu, 8 Oct 2026 10:25:12 GMT
+	Thu, 08 Oct 2026 10:25:17 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6987KAQT3191018
+	for <ath12k@lists.infradead.org>; Thu, 8 Oct 2026 10:25:07 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ngNckdozDSqu9shJTPGYVZ5aTGzTKRVmfGVeYRVpnzw=; b=WY6Pfn/0VtHVQSd4
-	HSsygYMOlACdEpl2Yk8BtYF9QnbiDvPgFKV/3Wca1RoTJufr7kbGkGJ9lEnJaNm6
-	w0LJP7QxQwEEPpDE2PwYjX2VLJzYIZhGR1cVNF+uM2aOEs3Cfw6dh+zuCI0hJAe2
-	mzOtTT6K+GT0l3oIXqubsT12OaL+bJxGGv8QcpwAzijxPhHBbacO/CsixpxfbjMR
-	3eYaj1IWUMnc5kZx0aXQGZL26X8cZdTvP0H9kXi3DwdWFhEBJCHdQTDcZ6mrLjsq
-	25duVrjgV6toHkHAX+ATzi2sxddRZ2wttpYe1/+Rv9QAA63QR+FHqmSIDtAV/2JF
-	BxMEgw==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h5xe3add2-1
+	BPtAgPGyDX4LIJj5+VGGoUZSUG3Qs2DKqEGaZSXoIRo=; b=p2b9QZDXX7ZDbeFy
+	ebmcmmol5rEQN0jZIN6IPEv9yA8H8+80VdrIUWyN25+DtpTjev10eLrDYUQEoliP
+	rauE0BfamkHR7EwsaSn0i9678zjSz3MblSHFRv9japULJ3ouBZ3NGVWHlV4xkeY6
+	gRPul9SpSzdWmrn5bj2xNufHRXLTpa5i/ky3IKOqawD5QsyBtMte+mYTr0xUKGEi
+	bvACm8ZSCao3B7NhjnyT1vFon7myGfPxRsF4fdaPtyEYFbdbffjWep91jtDKsjYA
+	Uy0w+1kQ5F557CvDrkUwHADtkplRK1gLB0AE1AB2YFCzR5exC23R+6iLRLvK6H78
+	RtflbQ==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h5xe6afr8-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 10:25:11 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2df8d1e91c9so91657145ad.0
-        for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 03:25:11 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 10:25:07 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2d02df2bf09so41068905ad.0
+        for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 03:25:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1791455111; x=1792059911; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1791455107; x=1792059907; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=ngNckdozDSqu9shJTPGYVZ5aTGzTKRVmfGVeYRVpnzw=;
-        b=PG1kb8pBg6ypUKqihB9tFw2ql0RgiMLB2GDb9e2sUXOyZqTuQxHw5XlrE6bBUFr1BC
-         yhSeDRPXD3PnJZlvfYzrkjq52AqB1lbZkWS3GtxuftscWmcbb/vrdzdNYRcTJOuOWjww
-         7pjfbLwPQ3V8HCgJdX3xwZLKQBbnNtp9OoftaaWNa1P6D9PXu+buAHiDlZuaSoL9FQ10
-         6tJ1VjJoFN0wOg+8gY3ANLI1bQcT8/NXENaLtDNtzkt4X+yQBQtwlYxLxm1FJKCX61Hj
-         W3EkDMLRjaPoCtHyglU6ZL1L1FilkqzGUJuM+l1tFGwKU6cUoprfXDEYE/V9KhQ78+g9
-         +xqQ==
+        bh=BPtAgPGyDX4LIJj5+VGGoUZSUG3Qs2DKqEGaZSXoIRo=;
+        b=Fv6N+jx519SX0N0LM0H8w718UVvDh6GXW2NAQ52Q3B+CUTWV4UnztHT7fvhrC2rO2j
+         gyFNCI8gAccOJnUlF9YvCzDgz+cXI3M3PyoXP02LmN7eG+4yaDK3ixqiReg92xp6L7Tn
+         n4LYgXgah2xlWzMnlbx9guupC/7qgjQLHzPYjN5nCwvTNk1jFQACFXjgH5mUiY37YtAT
+         DcjJkkfutbA7njlacaC1nacKvpAnLfLIXU9kKwMMuBOmLbZdosSOGpU+gbxMqxOwQ/BF
+         qpfhX23aOWi1/E7twQ0FFq8JFKr31p9YaJcf0NQ7fuyB5Igj6Eflx0uGAL5j7TK46WFC
+         bJwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791455111; x=1792059911;
+        d=1e100.net; s=20260707; t=1791455107; x=1792059907;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=ngNckdozDSqu9shJTPGYVZ5aTGzTKRVmfGVeYRVpnzw=;
-        b=lRIWsbISrK0jrzMpGr1vwxEQDlaQEPnS+dtGcH+jtmgYn3dgCF4XPntHi/qmqa786x
-         Na0ob2ol3Cq9egsQLGzL2AhOU/dT8yuI2e2od7hj7Nd7568SX924HUhw+aL0WR1jVnzj
-         uHoywEiCdYM5BoVFthmOEoPO9hBPeKIgPNbhZ+93Hgk5i+pWq3mcroJo2pml8Us3laGb
-         6DLMGMxxuF9Uzx5i7QJ6xssTVwwHMbQWJPz7LD/+GNAwu7vvcZZcRQ7leS7E8AIz20vB
-         eGM/lEzFZfmxOJB0Mf74NzA56C+AwUWIN52x3AXH/sHrAssLf16b3d+dqk7JXF6KRVZf
-         RMOg==
-X-Forwarded-Encrypted: i=1; AKwUvBykpHLOpnFVlJGJT1lQHXsazwSeKZDOsw9p0++6pSxqw0R7+CsCoVq5vXR4ZDjvKS0gp6D7Fz4=@lists.infradead.org
-X-Gm-Message-State: AFq9FYInA7gfSRerj5mEt6Qjo72xZuPm50ny9JeKq/Jb+H82Mtnuuoz+
-	jftZqYjPR9T8PZ+5YyFkqqzXLKq0vvIIkq6sEjWOaW/UGMWUV+gRpStJs63FAIPapI5AT7FFeFj
-	a+2g0+2HTk/FMQmZN02cii7OWdMG1kN3y/W3C/CgYgl0lwsxWfX8Gqv1LhSkHl/m8
-X-Gm-Gg: AYBFou0nY1ui6fYRxKolzkjN+jKFl7EpN0kWfebCh62nOni5HsTyauXCYXE/S3MfEzv
-	aSzkk15RO35/Z7Dtmcfd3syaJ+liOYus+UMB7qqSwG7YHM/bDjiUbjlXqiZ2ih2KyVgv5t4kcjN
-	3DCYtHZUF1vcg2s9QBU3qTzzCWQH74RTaJXZTD6ah3Of1ZA2HG5ik9uVJ6jPO7nFlRlKDT50Pk7
-	TJUnQ/qpfXMqCUUfTbyXuJ1fsGvqJXs/FKYc9i6THRCgHR0BAoTdbFvV4CKnXavgwQ1+I4y8fsX
-	O7+maPNLmn9iXyQ4KpnOXbggm4n52dcTiv3zSOdcSO/UAqfkzaFVfFIG1S5Tu0RvfAYWP5/z0To
-	RLJq8H4fiVFAY4tqgcxuqWdIY2OfLOQxaYFgDMLARC0bbH5dAmpTB2gYaWCm/Z6+V6Qwg4dwRvH
-	zM2AAT1Kj56K1drsepVlWuow==
-X-Received: by 2002:a17:903:2b0b:b0:2dd:ad73:c93e with SMTP id d9443c01a7336-2e6003c0633mr43801735ad.31.1791455111184;
-        Thu, 08 Oct 2026 03:25:11 -0700 (PDT)
-X-Received: by 2002:a17:903:2b0b:b0:2dd:ad73:c93e with SMTP id d9443c01a7336-2e6003c0633mr43801505ad.31.1791455110634;
-        Thu, 08 Oct 2026 03:25:10 -0700 (PDT)
+        bh=BPtAgPGyDX4LIJj5+VGGoUZSUG3Qs2DKqEGaZSXoIRo=;
+        b=aV/cHRBzGX3wGb9hE1R8BVQlnDBwon0Ujh32HB3aTFZdgO4oA4Rv7fKa8W87OnUGn8
+         iZQXQPL9K+Vs7sMfAyXOm2CSdMh8S/y0xwLsZa/3xb4jCNBt3V8B0TvyRIi9ZPfpkHuW
+         1PMzhw16+lPnqBIyAtkD0hveig6bgR9z899UTiHN0QKM0F7p69E+873yOP4KKm/RXeP0
+         EhOUAypPr8r2kxbS2sPHeqFLUMHZuQ9XbeCmqG2WpojaVtcn8UgYnyz4MEdadPBSsxJ/
+         nRJQJ4rpVZinRDy+hs1ZHcpKBY1e9SRyHRfXwRlXxtjo1wMOVIV/2Z1EUPU/wroAOh2U
+         omHQ==
+X-Forwarded-Encrypted: i=1; AKwUvBxg7KDwFGQ8GVGXhAggZ1RkKee91ACogmurv7UjEnVbLwE6PnrpVcczkkmzqjscKJeLqm60mlk=@lists.infradead.org
+X-Gm-Message-State: AFq9FYKswY8Mdf70GPU0EgaTQr7+p5WRnNaN81/c3ygO0RwzDYiCeC7s
+	p2tRa3dI3LLBLEdE9/z9yG461OtqSJOEXrcpJXlsZxLX8ZLryAAeZ7cuaBiutI1yRt4mYY92VpU
+	BXqVOH4PJBgdsKbPRzaBORPjbWZkCP02Nrbcvw9XO1Hg6BaswLf3IdPa6FEhsBbuS
+X-Gm-Gg: AYBFou3XB8yONPLvb3xW2R90FDqtanxuWsZ0SbAvAhruFmPqnmUc1AyrDJIQ0Jxyj6Y
+	/Q3eu03VSSe5x3EXf/b+7pC9L4bM/HHmlkf4ERTUMFSzSW8O2wRmApOkoyOX4RBZqgGPCOLXQcV
+	hR/EpzmYQ4PvpcbxJieU/+uicVpUCdvs49lzBYO/6SQKVdVx2XoN78Z2mRb9cKgK4B4rWxeTcLX
+	WljfPQcEU7KbicmjJ6Bq0GUWVHttnKdI4KajiwLQBRej92We/vlrrEA9W3vmAZHZELtDoGDkSHd
+	RiW9RD/Z+mO1xqpVVB6G5D5u98a35GV4HSD8mRijKmU1RaGscFe1diJTDeqmdnu6v9aaL/ZVzO6
+	lNwktLy+gW0JQL376npx+hKDgfydUk3K9fWm079r7jNhQeHD8ax6GglBnZShqdGAf2gd/ZJ8KEf
+	0kvc7BebmcYdgJnRJcYYWMUQ==
+X-Received: by 2002:a17:903:4b24:b0:2e2:ffcb:87a9 with SMTP id d9443c01a7336-2e6003891d5mr41561925ad.24.1791455106985;
+        Thu, 08 Oct 2026 03:25:06 -0700 (PDT)
+X-Received: by 2002:a17:903:4b24:b0:2e2:ffcb:87a9 with SMTP id d9443c01a7336-2e6003891d5mr41561715ad.24.1791455106508;
+        Thu, 08 Oct 2026 03:25:06 -0700 (PDT)
 Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e6046fe39csm22081655ad.16.2026.10.08.03.25.06
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e6046fe39csm22081655ad.16.2026.10.08.03.25.02
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 08 Oct 2026 03:25:10 -0700 (PDT)
+        Thu, 08 Oct 2026 03:25:05 -0700 (PDT)
 From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Date: Thu, 08 Oct 2026 15:54:09 +0530
-Subject: [PATCH ath-next 13/17] wifi: ath12k: use CMEM write for PPT on
- hybrid bus devices
+Date: Thu, 08 Oct 2026 15:54:08 +0530
+Subject: [PATCH ath-next 12/17] wifi: ath12k: Enable MSI interrupt support
+ for DP interrupt
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261008-mpp_bringup-v1-13-2c5797b5e4ac@oss.qualcomm.com>
+Message-Id: <20261008-mpp_bringup-v1-12-2c5797b5e4ac@oss.qualcomm.com>
 References: <20261008-mpp_bringup-v1-0-2c5797b5e4ac@oss.qualcomm.com>
 In-Reply-To: <20261008-mpp_bringup-v1-0-2c5797b5e4ac@oss.qualcomm.com>
 To: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -120,38 +120,40 @@ To: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
-        Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+        Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>,
+        Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 X-Mailer: b4 0.15.2
-X-Authority-Analysis: v=2.4 cv=J4s/fwnS c=1 sm=1 tr=0 ts=6ac76f87 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Proofpoint-ORIG-GUID: KZKV04GQwL7zEZD_OjAd943UdVZR8TtZ
+X-Authority-Analysis: v=2.4 cv=HcWB3SE8 c=1 sm=1 tr=0 ts=6ac76f83 cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=EUspDBNiAAAA:8 a=HzkBA2_z9QidxsSae0AA:9 a=QEXdDO2ut3YA:10
- a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfXzPJ1BszVECgE
- m4NKKpHa+0a1XHxh8hFOZOBxXpGIxDtnXt1NOjx5TLuU5UZJ46s4I1OpGuFVHjB7lEd2ILM83HQ
- Pn3/YektWMj2esuKlxW2NVDrEX9JtKQ=
-X-Proofpoint-GUID: xUObQFus95se061qCYRSdLacyUpSrHWp
-X-Proofpoint-ORIG-GUID: xUObQFus95se061qCYRSdLacyUpSrHWp
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfX0rILEFONOULf
- 2xn64Wf+pfIMxYIZ8P9Z63DwM/YZ/+FAhtM57qB5nf0m9WV2eZwtM3RQsrjSWKYggYdvA6wyHUL
- +vhSCGvfB4qgJBIN1xeNuKCJQwSAkYAUdNXaJwkmWwY4oLjcJXDkzkrmZ6J6EAtTxsFZACyd4zu
- JyodZ6aE/hkPRSkqKtdFsN5+CW5hWRaHXqyBh9IROW4qIO93C/6GfB/p3FN3eiExJMPG4pnkxrj
- b48WLynIZMMASRHhWMy/+nsRKGmOuNrJevCUutke/CIn47cwc1eQA+UXRodm1AQHnfgi4zt7VYY
- au47vYu5X2L0uVFLjJ5KNDHvTkn2cTC9EmwjWgqO8dFb0qpDHNTRpEfl4xHSW0Xc0xDtIrNvmLt
- YJJH84R+rXBL7ZufZmOtxQ+mIvt7NgoOdiidg/KtnCBEaddHTzgQsCtdMgTi1hFRhcTPSpXVmvc
- 5L6yFRqSc2jSDGENPvQ==
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=3HAlypJ90nm0-WewFtkA:9 a=QEXdDO2ut3YA:10
+ a=324X-CrmTo6CU4MGRt3R:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: KZKV04GQwL7zEZD_OjAd943UdVZR8TtZ
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfX/gvUesiWurIM
+ VoRxmbpYIvOMP8ArgWNrt4SxI8rBEJR9SW6jOe1RQYxszIR4HG5xSUPAuHPkHCCxbm55gA43gxK
+ NyrxpbYPypfBPtd2QiNfkDI6jpM5GPW/9VqHwRcj9F0iBf1K31ww/KoSoTBk7DwuzW5L5BvcQYY
+ Lr4ln6JpPYQmWj2Spq39usGq16V3HRxnAZ2SsAXKYjRRYD87y1W94Z40zFnvretxE3RxZl16EVE
+ zD3C2FjmJxxq5C9//bRqcAmrhomAsEBrLjhh07sIG6vJ4Fzx2JeI7/oVA90nFbnZiwasjSxZC0K
+ yYm8au9s9p9UOjisPaGo8srmJnBV7ZUaLdNoLeF8kCXvecOazWzID4m8iD7lW98PpgRTcciX0Kz
+ CwGRNAsX7S/zTtczeFPPOSWA0ld/S+GzYhRY4bS9opU3lUAvdT1ABeD4WLyE2lLu8jEkwGg/iXQ
+ ihkqB1WrB9YLiCMomtw==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfX3VIrbK8nv1B4
+ mpkcEsTfh3kn1LeXY641wm1XNsCY4zHJj4CunIyZzqKf1jZi6hekDN8Rm6xfXh4eY7ZMb2BHgaa
+ YywpQneadVALXpO56YtuYppSNihGrok=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-08_03,2026-10-06_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 spamscore=0 phishscore=0 clxscore=1015 lowpriorityscore=0
- adultscore=0 priorityscore=1501 suspectscore=0 bulkscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2610020000 definitions=main-2610080041
+ clxscore=1015 malwarescore=0 spamscore=0 bulkscore=0 adultscore=0
+ priorityscore=1501 impostorscore=0 suspectscore=0 phishscore=0
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610020000
+ definitions=main-2610080041
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261008_112514_254777_4B87AF3B 
-X-CRM114-Status: GOOD (  19.04  )
+X-CRM114-CacheID: sfid-20261008_112512_659233_AF31B3FB 
+X-CRM114-Status: GOOD (  20.14  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,116 +168,241 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Use CMEM-specific write operations for Primary Page Table (PPT)
-initialization on hybrid bus devices, which require special CMEM
-access handling.
+From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 
-Propagate errors from CMEM writes during PPT initialization and
-partner copy cache initialization. Abort MLO setup and perform
-teardown if partner copy cache initialization fails.
+Configure and request external MSI interrupts for DP ring groups on the
+QCN6432 platform.
+Create a NAPI context for each active external interrupt group and
+disable the corresponding IRQs while NAPI polling is in progress.
+Re-enable the IRQs after completing the NAPI poll.
+
+Handle allocation and cleanup of NAPI contexts and external IRQs during
+configuration failure and driver removal. Also disable external DP
+interrupts from the AHB IRQ disable path.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01322-QCAHKSWPL_SILICONZ-1
 Tested-on: QCN6432 hw1.0 AHB WLAN.WBE.1.6-01322-QCAHKSWPL_SILICONZ-1
 
+Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+Co-developed-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c |  7 +++++--
- drivers/net/wireless/ath/ath12k/dp.c   | 30 ++++++++++++++++++++++--------
- drivers/net/wireless/ath/ath12k/dp.h   |  2 +-
- 3 files changed, 28 insertions(+), 11 deletions(-)
+ drivers/net/wireless/ath/ath12k/ahb.c  |   1 +
+ drivers/net/wireless/ath/ath12k/core.h |   2 +
+ drivers/net/wireless/ath/ath12k/pci.c  |   6 +-
+ drivers/net/wireless/ath/ath12k/pcic.c | 121 +++++++++++++++++++++++++++++++++
+ 4 files changed, 129 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index cc1c31e216bb..e9caa9216f77 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1140,8 +1140,11 @@ static int ath12k_core_mlo_setup(struct ath12k_hw_group *ag)
- 	if (ret)
- 		return ret;
- 
--	for (i = 0; i < ag->num_devices; i++)
--		ath12k_dp_partner_cc_init(ag->ab[i]);
-+	for (i = 0; i < ag->num_devices; i++) {
-+		ret = ath12k_dp_partner_cc_init(ag->ab[i]);
-+		if (ret)
-+			goto err_mlo_teardown;
-+	}
- 
- 	ret = ath12k_mac_mlo_ready(ag);
- 	if (ret)
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 83f9edfabf69..6cf254b2d2a7 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -1307,8 +1307,8 @@ static int ath12k_dp_cmem_init(struct ath12k_base *ab,
- 			       enum ath12k_dp_desc_type type)
- {
- 	const struct ath12k_dp_profile_params *dp_params = &ab->profile_param->dp_params;
--	u32 cmem_base;
--	int i, start, end;
-+	u32 cmem_base, val, addr;
-+	int i, start, end, ret;
- 
- 	cmem_base = ab->qmi.dev_mem[ATH12K_QMI_DEVMEM_CMEM_INDEX].start;
- 
-@@ -1328,24 +1328,38 @@ static int ath12k_dp_cmem_init(struct ath12k_base *ab,
+diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
+index 78367126f49f..892872f70b2f 100644
+--- a/drivers/net/wireless/ath/ath12k/ahb.c
++++ b/drivers/net/wireless/ath/ath12k/ahb.c
+@@ -558,6 +558,7 @@ static void ath12k_ahb_disable_irq(struct ath12k_base *ab)
  	}
  
- 	/* Write to PPT in CMEM */
--	for (i = start; i < end; i++)
--		ath12k_hif_write32(ab, cmem_base + ATH12K_PPT_ADDR_OFFSET(i),
--				   dp->spt_info[i].paddr >> ATH12K_SPT_4K_ALIGN_OFFSET);
-+	for (i = start; i < end; i++) {
-+		addr = cmem_base + ATH12K_PPT_ADDR_OFFSET(i);
-+		val = dp->spt_info[i].paddr >> ATH12K_SPT_4K_ALIGN_OFFSET;
-+
-+		if (ab->hw_params->hybrid_bus_type) {
-+			ret = ath12k_hif_cmem_write32(ab, addr, val);
-+			if (ret)
-+				return ret;
-+		} else {
-+			ath12k_hif_write32(ab, addr, val);
-+		}
-+	}
- 
- 	return 0;
+ 	ath12k_ahb_ce_irqs_disable(ab);
++	ath12k_ahb_ext_irq_disable(ab);
  }
  
--void ath12k_dp_partner_cc_init(struct ath12k_base *ab)
-+int ath12k_dp_partner_cc_init(struct ath12k_base *ab)
- {
- 	struct ath12k_hw_group *ag = ab->ag;
--	int i;
-+	int i, ret;
+ static void ath12k_ahb_ce_workqueue(struct work_struct *work)
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 21332aeb0c22..bbbde9f05ea9 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -165,6 +165,7 @@ enum ath12k_hw_rev {
+ #define ATH12K_EXT_IRQ_NUM_MAX	16
+ #define ATH12K_MAX_TCL_RING_NUM	3
+ #define ATH12K_MAX_MSI_VECTOR	32
++#define ATH12K_EXT_IRQ_NAME_LEN	32
  
- 	for (i = 0; i < ag->num_devices; i++) {
- 		if (ag->ab[i] == ab)
- 			continue;
+ struct ath12k_ext_irq_grp {
+ 	struct ath12k_base *ab;
+@@ -175,6 +176,7 @@ struct ath12k_ext_irq_grp {
+ 	bool napi_enabled;
+ 	struct napi_struct napi;
+ 	struct net_device *napi_ndev;
++	char irq_name[ATH12K_EXT_IRQ_NAME_LEN];
+ };
  
--		ath12k_dp_cmem_init(ab, ath12k_ab_to_dp(ag->ab[i]), ATH12K_DP_RX_DESC);
-+		ret = ath12k_dp_cmem_init(ab, ath12k_ab_to_dp(ag->ab[i]),
-+					  ATH12K_DP_RX_DESC);
-+		if (ret)
-+			return ret;
+ enum ath12k_smbios_cc_type {
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index a26fdb3c0ad2..4bb14a95aec9 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -348,11 +348,15 @@ void ath12k_pci_free_ext_irq(struct ath12k_base *ab, int num_ext_irq_grp)
+ 	for (i = 0; i < num_ext_irq_grp; i++) {
+ 		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
+ 
++		if (!irq_grp->napi_ndev)
++			continue;
++
+ 		for (j = 0; j < irq_grp->num_irq; j++)
+ 			free_irq(ab->irq_num[irq_grp->irqs[j]], irq_grp);
+ 
+ 		netif_napi_del(&irq_grp->napi);
+ 		free_netdev(irq_grp->napi_ndev);
++		irq_grp->napi_ndev = NULL;
  	}
+ }
+ 
+@@ -1118,7 +1122,7 @@ void ath12k_pci_ext_irq_enable(struct ath12k_base *ab)
+ 	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
+ 		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
+ 
+-		if (!irq_grp->napi_enabled) {
++		if (irq_grp->napi_ndev && !irq_grp->napi_enabled) {
+ 			napi_enable(&irq_grp->napi);
+ 			irq_grp->napi_enabled = true;
+ 		}
+diff --git a/drivers/net/wireless/ath/ath12k/pcic.c b/drivers/net/wireless/ath/ath12k/pcic.c
+index fea284c3707b..06178b4f20d1 100644
+--- a/drivers/net/wireless/ath/ath12k/pcic.c
++++ b/drivers/net/wireless/ath/ath12k/pcic.c
+@@ -181,6 +181,112 @@ static irqreturn_t ath12k_pcic_ce_interrupt_handler(int irq, void *arg)
+ 	return IRQ_HANDLED;
+ }
+ 
++static void ath12k_pcic_ext_grp_enable(struct ath12k_ext_irq_grp *irq_grp)
++{
++	int i;
++
++	for (i = 0; i < irq_grp->num_irq; i++)
++		enable_irq(irq_grp->ab->irq_num[irq_grp->irqs[i]]);
++}
++
++static int ath12k_pcic_ext_grp_napi_poll(struct napi_struct *napi, int budget)
++{
++	struct ath12k_ext_irq_grp *irq_grp = container_of(napi,
++						struct ath12k_ext_irq_grp,
++						napi);
++	struct ath12k_base *ab = irq_grp->ab;
++	int work_done;
++
++	work_done = ath12k_dp_service_srng(ab->dp, irq_grp, budget);
++	if (work_done < budget) {
++		if (likely(napi_complete_done(napi, work_done)))
++			ath12k_pcic_ext_grp_enable(irq_grp);
++	}
++
++	if (work_done > budget)
++		work_done = budget;
++
++	return work_done;
++}
++
++static int ath12k_pcic_ext_irq_config(struct ath12k_base *ab,
++				      struct msi_desc **msi_desc, int num_msi)
++{
++	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
++	struct ath12k_ext_irq_grp *irq_grp;
++	int j, i, k, vec_idx = 0, ret = 0;
++	u8 userpd_id = ab_ahb->userpd_id;
++	u32 num_irq, base_idx;
++	struct msi_desc *desc;
++
++	base_idx = ATH12K_MSI_IRQ_CE0_OFFSET + CE_COUNT_MAX;
++
++	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
++		num_irq = 0;
++		desc = msi_desc[vec_idx];
++		irq_grp = &ab->ext_irq_grp[i];
++		irq_grp->ab = ab;
++		irq_grp->grp_id = i;
++
++		if (ab->hw_params->ring_mask->tx[i] ||
++		    ab->hw_params->ring_mask->rx[i] ||
++		    ab->hw_params->ring_mask->rx_err[i] ||
++		    ab->hw_params->ring_mask->rx_wbm_rel[i] ||
++		    ab->hw_params->ring_mask->reo_status[i] ||
++		    ab->hw_params->ring_mask->host2rxdma[i] ||
++		    ab->hw_params->ring_mask->rx_mon_dest[i]) {
++			num_irq = 1;
++		}
++
++		if (!num_irq)
++			continue;
++
++		irq_grp->napi_ndev = alloc_netdev_dummy(0);
++		if (!irq_grp->napi_ndev) {
++			ret = -ENOMEM;
++			goto fail_allocate;
++		}
++
++		netif_napi_add(irq_grp->napi_ndev, &irq_grp->napi,
++			       ath12k_pcic_ext_grp_napi_poll);
++		irq_grp->num_irq = num_irq;
++		irq_grp->irqs[0] = base_idx + i;
++
++		for (j = 0; j < irq_grp->num_irq; j++) {
++			int irq_idx = irq_grp->irqs[j];
++
++			scnprintf(irq_grp->irq_name, sizeof(irq_grp->irq_name),
++				  "pcic%u_wlan_dp_%u", userpd_id, i);
++			irq_set_status_flags(desc->irq, IRQ_DISABLE_UNLAZY);
++			ret = request_irq(desc->irq, ath12k_pci_ext_interrupt_handler,
++					  IRQF_SHARED, irq_grp->irq_name, irq_grp);
++			if (ret) {
++				ath12k_err(ab, "failed request irq %d, for group %d : %d\n",
++					   desc->irq, irq_grp->grp_id, ret);
++
++				for (k = 0; k < j; k++)
++					free_irq(ab->irq_num[irq_grp->irqs[k]], irq_grp);
++
++				netif_napi_del(&irq_grp->napi);
++				free_netdev(irq_grp->napi_ndev);
++				irq_grp->napi_ndev = NULL;
++				goto fail_allocate;
++			}
++
++			ab->irq_num[irq_idx] = desc->irq;
++			disable_irq_nosync(ab->irq_num[irq_idx]);
++		}
++
++		vec_idx = (vec_idx + 1) % num_msi;
++	}
 +
 +	return 0;
- }
++
++fail_allocate:
++	ath12k_pci_free_ext_irq(ab, i);
++	return ret;
++}
++
+ static int ath12k_pcic_ce_irq_config(struct ath12k_base *ab,
+ 				     struct msi_desc **msi_desc, int num_msi)
+ {
+@@ -294,9 +400,23 @@ int ath12k_pcic_config_irq(struct ath12k_base *ab)
+ 		goto free_msi;
+ 	}
  
- static u32 ath12k_dp_get_num_spt_pages(struct ath12k_base *ab)
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index c53eac20b989..b3a00e7dbf56 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -731,7 +731,7 @@ ath12k_dp_rx_release_ring_size(const struct ath12k_dp_profile_params *p)
- }
++	ret = ath12k_pci_get_user_msi_assignment(ab, "DP", &num_vectors,
++						 &user_base_data, &base_vector);
++	if (ret)
++		goto free_ce_irq;
++
++	ret = ath12k_pcic_request_msi_irqs(ab, base_vector, num_vectors,
++					   ath12k_pcic_ext_irq_config);
++	if (ret) {
++		ath12k_err(ab, "failed to config DP irq\n");
++		goto free_ce_irq;
++	}
++
+ 	set_bit(ATH12K_FLAG_MULTI_MSI_VECTORS, &ab->dev_flags);
+ 	return 0;
  
- void ath12k_dp_vdev_tx_attach(struct ath12k *ar, struct ath12k_link_vif *arvif);
--void ath12k_dp_partner_cc_init(struct ath12k_base *ab);
-+int ath12k_dp_partner_cc_init(struct ath12k_base *ab);
- int ath12k_dp_pdev_alloc(struct ath12k_base *ab);
- void ath12k_dp_pdev_pre_alloc(struct ath12k *ar);
- void ath12k_dp_pdev_free(struct ath12k_base *ab);
++free_ce_irq:
++	ath12k_pci_free_ce_irq(ab, ab->hw_params->ce_count);
+ free_msi:
+ 	platform_device_msi_free_irqs_all(&pdev->dev);
+ 	return ret;
+@@ -307,5 +427,6 @@ void ath12k_pcic_free_irq(struct ath12k_base *ab)
+ 	struct platform_device *pdev = ab->pdev;
+ 
+ 	ath12k_pci_free_ce_irq(ab, ab->hw_params->ce_count);
++	ath12k_pci_free_ext_irq(ab, ATH12K_EXT_IRQ_GRP_NUM_MAX);
+ 	platform_device_msi_free_irqs_all(&pdev->dev);
+ }
 
 -- 
 2.34.1
