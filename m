@@ -4,115 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E123DCA600B
-	for <ath12k@archiver.kernel.org>; Thu,  8 Oct 2026 10:25:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1DFACA600B
+	for <ath12k@archiver.kernel.org>; Thu,  8 Oct 2026 10:25:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5kUQdOW24c5jNgScPxlXh4VzOb4yzLmXbjVCRfz9C3I=; b=xjpaeyph6FFeHc3TSMA/lIfnZ8
-	FcxSLEaBpuXGbWYlZtWqFZJT6Us9z39TC/bfV9AEvPhACSlkJWF5pknVy/VPJ94aR+DAU7nQhrLh5
-	RPz/2p4EQArF3Ot6+nnvxK4Dbdi2UaV+wd+QYDceYKRzQep+B875uaHmWsa1lQmvmw+2DTQyi6mg5
-	BtAu7ZlRsKH5SRBRGWSXei6amKCPyQgxr5NQGb7Qf0IrY0RO5iWq6oUpRB1xAA5phf4Bb297hBFPt
-	YsOCK2Ch5IvAoUFJGW4tO3Rc28mPCvuYiKOu/nj7d/BkuLyc2bY2rO7i7sabjn+kwM6rX7DW/VpJt
-	4D9rbd4Q==;
+	bh=7QPZlqB6JbLBBQy1E+Vaf4lakspSDZfLvql5vmZjMlk=; b=KxytphrkT8zah/00rXv7V9Mko3
+	Qj7mjgX4NbQOlvhQKjnKzSJu0/NzxcQEkumUtXZEV24EM4EQNUUUDdxioywIHKc7mUKjWXwxEevcf
+	y2SGKmz0CfKwgPGrsYGnNbqKRKqkkIURTENmruHlzmgwztmP7BwrzVlhKHcOB5LOtS2jIoB6Q12sW
+	Gy/meEmI8zAd7z8K9uxPhbSD105skmijjHP2U6NboBmpnzGpDSLijnW6M1IM9MRWt7v2YO4Oiv14q
+	/cDYDh1HCmSI04k72baN7zt2iRTQruhE7aWKUQO4LXeMKuHbts7tfkxpAh+nXpkxNaXIUKGn9OT7Q
+	0kTgbDEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xElJ7-000000046cx-2GiE;
-	Thu, 08 Oct 2026 10:25:01 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xElJA-000000046fh-2nxR;
+	Thu, 08 Oct 2026 10:25:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xElJ6-000000046ap-0YSd
-	for ath12k@bombadil.infradead.org;
-	Thu, 08 Oct 2026 10:25:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=5kUQdOW24c5jNgScPxlXh4VzOb4yzLmXbjVCRfz9C3I=; b=NwdDQF+hBAjqKyw6jfhlS2/Blf
-	E54m0YWz7TPaYMIeV2w8qQxRDKvCjlyyKQPkX/57rXpW9qdf8O92rgOKeHC3MyRnYfAO9Jxb6QK50
-	b8ClJLNVTQMrrQ34KwIzj1B4s+P9z39dEc7xNynmJOfHwsNaBI8hUjS02NtAtjIRIpxK+EXe/935Z
-	vfTtivqtn2R090SQYKOP2AuO6kpkMttvW38DzqDlqcZ9fr8Orw0N+GUub+e/4MdfQjLFWjMILdjf8
-	u69pfGHCBBUs1YTqwddZ/jlBfJ/6rGKVI6x+bY+AVRzrUwnDJBrYdtsXEIl4Cmn7qx/LLFwjekaQU
-	PAs4cMrQ==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1xElJ2-0000000AHkQ-0duY
+	id 1xElJ5-000000046aE-0ToH
 	for ath12k@lists.infradead.org;
-	Thu, 08 Oct 2026 10:24:58 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6987KEGJ2560191
-	for <ath12k@lists.infradead.org>; Thu, 8 Oct 2026 10:24:54 GMT
+	Thu, 08 Oct 2026 10:25:03 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6987KPYp3308217
+	for <ath12k@lists.infradead.org>; Thu, 8 Oct 2026 10:24:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	5kUQdOW24c5jNgScPxlXh4VzOb4yzLmXbjVCRfz9C3I=; b=UgVSjH5TIZ5O3VV4
-	Cjg7kD9hVCWT8y6IlLtWe71Pgz8ZI0/sHyk+yk29dw00hTzLR4Aye9pX5XGh0dQ5
-	LgyWd9txO7fhuWsFGCFnTIu0U9xUGYsU5K9RAIhdfIry5uT3o53RP9sWDVdBRuRV
-	0qPdlfcRMr4mY1gsm3wun0pqB5VZ4QvInvo2DYBVcaS5x9AXqjSxoqAxt3U09H9X
-	dKBaltTvehieFA0D1XZlTRzWd0SfMjqibl7zA1Kq4s4gdgCDz+jMlIRqLBHqydDH
-	kUuow9PYjVvEgiKuvvW4MBVxs2A7ia1XVqmuXPB5AJrPF4UBP1ZBKlgSRhPjWIrM
-	O3YK/Q==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h5xe82ctq-1
+	7QPZlqB6JbLBBQy1E+Vaf4lakspSDZfLvql5vmZjMlk=; b=UMjrj6v8hNX7CWat
+	WiTLVS5mNV8efyUwlvmvzdcz/YL1iP9+pSaAwsfXotPoh9V7eJRffcYBT7tzC4F7
+	8lK4nXymRYzSl1UjhtQDpnVXhr4z5Na9J0yKUcJlpuflu6GecNvN0Pp8Pp+WCLmR
+	OmFq4wOosynl9yJbO/PpqugU20Cdi15KGT7a7vknQlhEHIb2cDgPviQf7fsn7ie5
+	M8w0OaapkK8Nt+4kDSa6r6VZ27ZRfix1EV/rn6b9dfo1PAfLgCF77ZfQxykbyMAl
+	mrpgB97y916qSDxCsfFf5JOW46xAm100Z0nOpZod019ereT/VnIIxXHHm/s7GGmd
+	sjTvZw==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h60sga16b-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 10:24:54 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2d02df2bf09so41067925ad.0
-        for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 03:24:54 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 10:24:58 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2df7bc60df6so35904505ad.3
+        for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 03:24:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1791455094; x=1792059894; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1791455098; x=1792059898; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=5kUQdOW24c5jNgScPxlXh4VzOb4yzLmXbjVCRfz9C3I=;
-        b=DN1HdutANyckaclO53zVEc8lPQHhGCXyUi8aN6/BX3yKDZTrK0TZPGXqQd0JQ4goQt
-         eHuf9ZquyxlpD/kQV4tuBE6MyfYW7pGgmIEj9eq6AnSF1b274pVPdK6uT2/QshrGrfcj
-         8xYxvVWmnzYgFveK6+vhq+R1412dATftiRuX6vBR7NFO89BaSszv8s6v1JumaRHMJqTC
-         ZblqO9X/xvgVN9RROdcjodoZa8PKsCgY6M2jQDywQTuA3cs9V6b4v8efenwCagw3mu0r
-         Dt1+2TfMOBq1v4UTpxhN7Qado7URbTUQbKCjVouVJUCnos3GRnUrdvNS0s7NKjSsskrJ
-         miKg==
+        bh=7QPZlqB6JbLBBQy1E+Vaf4lakspSDZfLvql5vmZjMlk=;
+        b=Tr0uDxKgdRmCchv2ssnQmZETOrWyzYndpN1//iw0lzO8BzxPY9QmrH2cVg4rXbx2+3
+         Hv3HBd8eP6E/bhvcNFACdrw0vmK/tB1mqMVhnhSQNkiu4JraWVGqgUSoayV/G96Y+767
+         mYwV/uLr1BRRe/3a9ZB44y0P+YpOs9OteAoUg/TC8TC2V40PPuKBU2m7sU7/x5Lgziy/
+         VKd2MT84PHLe5mc83OE9xUwZGT7lqiQucB8OfFkJqFSlSx9vjTVwJhKaKwgbLUjqOnL0
+         D1PV1TkU96T+VyFW23PTWNV6BeJlrwhHYm22sGZM6eR68E+oNUroipv7DkZgDl2NoSP5
+         sSXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791455094; x=1792059894;
+        d=1e100.net; s=20260707; t=1791455098; x=1792059898;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=5kUQdOW24c5jNgScPxlXh4VzOb4yzLmXbjVCRfz9C3I=;
-        b=eyz9ZUSdOe1ic1oJkmlp12wEXZOxxIWFlOAWYwOgTDKw1e2Z93OAzfVmfMBZizYbyh
-         GMvXtRcgfW05ptwbiGYwCdWgJfyb6IOOkO/+ty2Zf6hobmhVqZEwOHfATHg+31zXOdDX
-         Zv9l0os3kvTJleVpx3SAxm1u6opEdNLiIoZoo/dIuXoooNm2V2rwL3AC8bN7/LYrihTE
-         5Spxdu5gZes6tegnRswMMG7JAKIBYSr1qUQqsFg8S3WgEmIgV7b9hZymA2JK9m8lOIqX
-         tsUR98o+0LL3pquqCmVRg0r+CXV95jJ/p+YJcKX21sytHpVbjUcfR9GEqiutAhiD4W5W
-         GSgQ==
-X-Forwarded-Encrypted: i=1; AKwUvBzh7R+u9FzupRR1PGCSpMdX9i4oHKpDVAEEsvym3imK72Npo+EYEPIliwicd3cam/Rmxug1OHY=@lists.infradead.org
-X-Gm-Message-State: AFq9FYKVK+1io0lHF7eMTafaDSvmo6C7ab3BTfrZxxJ6IuCtZNU+0d1Q
-	zULfkalmRkw86EGoAXwUe6jLB3s9dC2Ncc+I1nWKFX65H3TWk81g69DbJBHMD8jU/nOOLtgBdh8
-	+FbP1ALZVY2iqojhjq3S4m8G1y9nxVLwbjjfsJevq1Z9aMCiWm9TMQU9FqIkGQXjA
-X-Gm-Gg: AYBFou00VJUHzbeqJO0AbHWKmdXDVKkALVw1qQRsOP/cTu4k9GJy3/nfS0CiqoDRzF8
-	9P4SNmKyqgBEkg6QgrhiSPJOL/vqhGEm2mcnFYBVGndxRzIhHjy2mF7ON3OaVaESE1QqMTOm/W/
-	/FkFe+uLtHy+keQjQlUnbU/aAU74mRTdB3982dXwCxrxlXh7ixvM2suhsSISP8SWYmhk/3vghTu
-	KMQSVSrwCCCZqoCoyWeYAiAgz35IJi2b3q+lIE9RCeJyMjaVCY9YiakZyTjuC1a8V8LrVpqK+tk
-	ILasTtRSydqhlNTjHMHn/ZXTM1SANF6c73MdX5jLbKij4OpDMHwbHXpiW5hAhloeD6cIR//TWwv
-	lIRhDmZOvU0EQnPcD/DnJnnSp8VKcdcdWH/bJiWvc80RrXIFpMK2J+epsYGP109khswdmiUDuFp
-	KAMDTM+Fp9dK9+cAIeDgEe8A==
-X-Received: by 2002:a17:902:fd86:b0:2dd:c0ff:e728 with SMTP id d9443c01a7336-2e600545a2bmr41630415ad.58.1791455093635;
-        Thu, 08 Oct 2026 03:24:53 -0700 (PDT)
-X-Received: by 2002:a17:902:fd86:b0:2dd:c0ff:e728 with SMTP id d9443c01a7336-2e600545a2bmr41630255ad.58.1791455093163;
-        Thu, 08 Oct 2026 03:24:53 -0700 (PDT)
+        bh=7QPZlqB6JbLBBQy1E+Vaf4lakspSDZfLvql5vmZjMlk=;
+        b=2pzn7LK8qi+lmBQU0shd1r6wxS6xvIpn067P1U8BtpeVkzHuRUeK+WrHWn32cJtau8
+         o33zpzHP0bYGwLBlFQyRtHIu6KwT7I+DMvujBoPN9YwafnMrlRNlLhd9lZPvwV7xg8eL
+         PfHg7TABIcTw2fmS2TvUDHON8U5Cvw1IhzXVSheX9n2HV6CjAYFHEWnPHXJZtXLriFGt
+         L5vBzKz/vBj8T1eH//S4e+93H6bJcBIviokfqOU21XyKfiSLxE+W2QKsN7xPTlppz7QA
+         yOIpjkq9ZLiqudZKUZxmgdm6Qw5ZR/7uCTF02CrUoxdz9vLjzmEFy9MNKPVWsKLNmwSv
+         4h3g==
+X-Forwarded-Encrypted: i=1; AKwUvBxbF70EbvUS0ch1OqrqZbR56VAN/iU+4asYLbFJ5F8sj2xem2G66il7Y++9cCejgu56iH84e9U=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJ2R87NqLTd8PO+ypH9cylQUmzgaet3n3Bz5IWpOnbPbssezlqk
+	fI4d+18QTLQtss5ZCx8ycJ6z6MOZ4Fsr1S07QHsXPE+nXBK2szvRuIPnolHHELJRlNN2Qg3icWc
+	1++0C7SralOzyQtN8UC1YdlDH83avAJOmCljkBR3VoIBo2gio3vW67y0SsrE7ai7O
+X-Gm-Gg: AYBFou0GtLLWJ9VDRxHfAld/Y+vQmsT/hd0K5QGIKoSVEyRVvMpINpXfBUIS5cbcxJW
+	DpdUfpFFjmmqJZYJ1GKg3vRDN2FIk7LICN0R9dsE1XLtVzyvSisbKP7grYPcNYyvJ+f0kCBT2Ah
+	HHA0h1skN1cKdJyvwdTDHkbrK6hYbj2zzXZGmWjqkpR1o2q9nnDYdzbDelPLspmWgJIklgGlw7T
+	kJWteASaBUMlnL1jlWSpviArcm2k/rKJKUe/ydso9aw8kbKVze2oypqFPrFx5SA1I57e6gr5q00
+	9xCmc3p304IRI3pKoxAFGlpH8OiDF086fVJ6uj83S8c0YV/sxqjeA2YyE0myWYLqLv2ev76ap1d
+	zwzUPkQ7PWWqJfmdhWCfLGJZGIvSYpDkLeGDFMbutd/ogCrZTKLvb5yIckemch1grW8H0H9ZNwp
+	J+eJduvD0oxQr0ZSZ/l4+aeA==
+X-Received: by 2002:a17:903:acc:b0:2e4:beef:9039 with SMTP id d9443c01a7336-2e5ffabe9femr40299725ad.1.1791455097919;
+        Thu, 08 Oct 2026 03:24:57 -0700 (PDT)
+X-Received: by 2002:a17:903:acc:b0:2e4:beef:9039 with SMTP id d9443c01a7336-2e5ffabe9femr40299505ad.1.1791455097428;
+        Thu, 08 Oct 2026 03:24:57 -0700 (PDT)
 Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e6046fe39csm22081655ad.16.2026.10.08.03.24.48
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e6046fe39csm22081655ad.16.2026.10.08.03.24.53
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 08 Oct 2026 03:24:52 -0700 (PDT)
+        Thu, 08 Oct 2026 03:24:56 -0700 (PDT)
 From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Date: Thu, 08 Oct 2026 15:54:05 +0530
-Subject: [PATCH ath-next 09/17] wifi: ath12k: add support for unified
- data-region memory allocation
+Date: Thu, 08 Oct 2026 15:54:06 +0530
+Subject: [PATCH ath-next 10/17] wifi: ath12k: move MSI config to pci.c
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261008-mpp_bringup-v1-9-2c5797b5e4ac@oss.qualcomm.com>
+Message-Id: <20261008-mpp_bringup-v1-10-2c5797b5e4ac@oss.qualcomm.com>
 References: <20261008-mpp_bringup-v1-0-2c5797b5e4ac@oss.qualcomm.com>
 In-Reply-To: <20261008-mpp_bringup-v1-0-2c5797b5e4ac@oss.qualcomm.com>
 To: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -122,36 +106,36 @@ Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
         Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfX1RsczUtky2Nr
- 5Rd08NkeIpLVlnoC4sMP6F5vvPYpEXaSlUgfKpoWhOl2qf3SY2wNgkSH5qBiNFsCpOsNTX2swSf
- 5fv/H3f+oeXrIeblF4riv7yDr/nBBOSL6DFhGFpIWS5DKXhkgktQugg3YRE8qmtFuXGh9hynwSt
- 16zeW1XPzJapXNgkqs7jU2e7pYh02zK/+N+0YNekqVPQmdS9h387oT4HgREWAO8CZN+OAvgsWj/
- XyDsvO/q+d0X4UNlafHRyRUZ2gN8XNe0xoNZ3oLYeAXkDS4gYsnR8iyxka9JoDFX0hi1KnXTpSp
- yzWtWIhRVEVBV0/jbxZ/TYJV1sBzjsjk2uLHpsR5HeA0q1ARquxW0st6fMPFczQ0PRzh515UxP2
- LWuJBurUA1n1nMlmM91+FZsvvL5BXtakGrXYC1VqrPWTmaAPZK2eAyXvqdov2di794G7qiOcKbY
- zWwBw67hk4vtGJNpAaw==
-X-Proofpoint-GUID: U08W0sjC18Dm9yUxC4_l6Qt2SNLbrgLp
-X-Proofpoint-ORIG-GUID: U08W0sjC18Dm9yUxC4_l6Qt2SNLbrgLp
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfX2ibNObP5eCAx
- qaS4KHMn3s09wGkGSt2TV6lujXFK0pO5NHHfVVa52rvCBIyPrBNbsUwgF2Emf2EhQkBU+WHtUFb
- WO5ArJWGfd/cGODQSR7XvMEKQ0bIoRg=
-X-Authority-Analysis: v=2.4 cv=MPT1C8Zl c=1 sm=1 tr=0 ts=6ac76f76 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Proofpoint-GUID: m7fTUR8kEinLnbHynnzWmRDdGSQpB5zj
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfX+iXx2bEYgSBW
+ QmF8gMLQqBTwacHMmnSSLvdYH+NohX2RMOvrucyUNCIAyixB7aQOuRMJBGpiOWKRkn63ARr17M9
+ yI0UOFXB4rci8/x+zCnmV1T0t1T9gQA=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfX4k7yHkoRS1pC
+ OTUcdEG9QtgT4XXQ17goFRzd6tcbZ/Af6LYGnE7FCazAONs7hnuE88OxrwwzbsBo/iKBbY7cJlr
+ SWsw7rR98PflkDWq71y/Dr9vuiTUJ7LUxRPaQfGlIoNFDMDW0fruPOu6fGFvSuLRMoKmOyvYFmS
+ yFIvPJky6Q5Chzq+MhLk9htNF8JbL3KbnBQfUgeIn8gH0+QfsslzZdUH61B9k/gEIaGzJvyfIRv
+ ic8PELUAnjW4Kf3fFopKEbTpql6CbA9VBuhIxpc6d+I+9U1PctlmnsT2XjJ8g3PzqNcjz9DX2ot
+ IuJWuti45lpw0mwVr7uP9oTA9l57l/XNFG35soSLmOW9cBUmSGGYfrUNORQ7MaLSp8KADkLCQ4A
+ qnPIGB2jXD0X6TNET1loiKTMCq5EDW79ENDGHn4J8WaKn5G/IqwTetoH00JZO32UJxw0Mh5RdpQ
+ rRn61JyWaJWQu8Vpf/Q==
+X-Authority-Analysis: v=2.4 cv=DfWCOftW c=1 sm=1 tr=0 ts=6ac76f7a cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=EUspDBNiAAAA:8 a=iclRB15sEzZHjfpwsoEA:9 a=QEXdDO2ut3YA:10
- a=1OuFwYUASf3TG4hYMiVC:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
+ a=EUspDBNiAAAA:8 a=qUmDSaCxm7SoV8805q0A:9 a=QEXdDO2ut3YA:10
+ a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-ORIG-GUID: m7fTUR8kEinLnbHynnzWmRDdGSQpB5zj
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-08_03,2026-10-06_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 bulkscore=0 adultscore=0 priorityscore=1501 suspectscore=0
- malwarescore=0 phishscore=0 lowpriorityscore=0 clxscore=1015 impostorscore=0
+ lowpriorityscore=0 malwarescore=0 bulkscore=0 phishscore=0 clxscore=1015
+ priorityscore=1501 suspectscore=0 spamscore=0 impostorscore=0 adultscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2610020000 definitions=main-2610080041
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261008_112456_878848_C3C1CA3B 
-X-CRM114-Status: GOOD (  21.81  )
+X-CRM114-CacheID: sfid-20261008_032459_175898_19FB0DC5 
+X-CRM114-Status: GOOD (  15.01  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,22 +150,9 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add support for devices such as QCN6432 that provide the M3 and
-calibration memory through a unified data-region reserved-memory
-node. The QCN6432 device tree continues to provide separate
-q6-region and mlo-global-mem regions, while the memory types
-mapped to M3 and calibration memory are allocated sequentially from
-data-region.
-
-Track the allocated space using an offset and allocate each required
-memory chunk from the unified region.
-
-If the data-region lookup does not return a reserved-memory region,
-fall back to the existing per-memory-type allocation scheme using the
-named memory regions such as q6-region, m3-dump, and q6-caldb.
-
-Introduce a helper ath12k_qmi_map_target_mem() to initialize and map QMI
-target memory chunks.
+Move the ath12k_wifi7_msi_config array from wifi7/pci.c to pci.c
+so it can be shared between QCN9274 and QCN6432 devices. Rename it to
+ath12k_msi_config.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01322-QCAHKSWPL_SILICONZ-1
@@ -189,125 +160,100 @@ Tested-on: QCN6432 hw1.0 AHB WLAN.WBE.1.6-01322-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/qmi.c | 83 +++++++++++++++++++++++++++++------
- 1 file changed, 70 insertions(+), 13 deletions(-)
+ drivers/net/wireless/ath/ath12k/pci.c       | 14 ++++++++++++++
+ drivers/net/wireless/ath/ath12k/pci.h       |  2 ++
+ drivers/net/wireless/ath/ath12k/wifi7/pci.c | 19 +++----------------
+ 3 files changed, 19 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 817bd820623d..cc488cfe2b2f 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -2842,6 +2842,26 @@ static const char *ath12k_qmi_get_mem_reg_name(int mem_type)
- 	}
- }
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index e6fe891e58b1..fe0939ca890c 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -40,6 +40,20 @@ static const struct ath12k_msi_config msi_config_one_msi = {
+ 	},
+ };
  
-+static int ath12k_qmi_map_target_mem(struct ath12k_base *ab, int idx,
-+				     phys_addr_t paddr, u32 size, u32 type)
-+{
-+	ab->qmi.target_mem[idx].paddr = paddr;
++/* TODO: revisit IRQ mapping for new SRNGs */
++const struct ath12k_msi_config ath12k_msi_config[] = {
++	{
++		.total_vectors = 16,
++		.total_users = 3,
++		.users = (const struct ath12k_msi_user[]) {
++			{ .name = "MHI", .num_vectors = 3, .base_vector = 0 },
++			{ .name = "CE", .num_vectors = 5, .base_vector = 3 },
++			{ .name = "DP", .num_vectors = 8, .base_vector = 8 },
++		},
++	},
++};
++EXPORT_SYMBOL(ath12k_msi_config);
 +
-+	if (paddr) {
-+		ab->qmi.target_mem[idx].v.ioaddr =
-+			ioremap(ab->qmi.target_mem[idx].paddr, size);
-+		if (!ab->qmi.target_mem[idx].v.ioaddr)
-+			return -EIO;
-+	} else {
-+		ab->qmi.target_mem[idx].v.ioaddr = NULL;
-+	}
-+
-+	ab->qmi.target_mem[idx].size = size;
-+	ab->qmi.target_mem[idx].type = type;
-+
-+	return 0;
-+}
-+
- static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
- {
- 	struct device_node *np = ab->dev->of_node;
-@@ -2851,6 +2871,48 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
- 	const char *rname;
- 	int i, idx, ret;
+ static const char *irq_name[ATH12K_IRQ_NUM_MAX] = {
+ 	"bhi",
+ 	"mhi-er0",
+diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
+index 3097afb03432..55cc875f9ce0 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.h
++++ b/drivers/net/wireless/ath/ath12k/pci.h
+@@ -96,6 +96,8 @@ struct ath12k_msi_config {
+ 	const struct ath12k_msi_user *users;
+ };
  
-+	ret = of_reserved_mem_region_to_resource_byname(np, "data-region", &res);
-+	if (ret && ret != -ENODATA)
-+		return ret;
++extern const struct ath12k_msi_config ath12k_msi_config[];
 +
-+	if (!ret) {
-+		avail_rmem_size = resource_size(&res);
-+		for (i = 0, idx = 0; i < ab->qmi.mem_seg_count; i++) {
-+			chunk = &ab->qmi.target_mem[i];
-+
-+			if (chunk->type == CALDB_MEM_REGION_TYPE) {
-+				ret = ath12k_qmi_map_target_mem(ab, idx, 0, chunk->size,
-+								chunk->type);
-+				if (ret)
-+					goto out;
-+
-+				idx++;
-+				continue;
-+			}
-+
-+			if (offset > avail_rmem_size ||
-+			    avail_rmem_size - offset < chunk->size) {
-+				ath12k_err(ab, "failed to assign mem type %u req size %u avail size %zu\n",
-+					   chunk->type, chunk->size,
-+					   offset > avail_rmem_size ? 0 :
-+					   avail_rmem_size - offset);
-+				ret = -EINVAL;
-+				goto out;
-+			}
-+
-+			ret = ath12k_qmi_map_target_mem(ab, idx, res.start + offset,
-+							chunk->size, chunk->type);
-+			if (ret)
-+				goto out;
-+
-+			offset += chunk->size;
-+			idx++;
-+		}
-+
-+		ab->qmi.mem_seg_count = idx;
-+		return 0;
-+	}
-+
- 	for (i = 0, idx = 0; i < ab->qmi.mem_seg_count; i++) {
- 		chunk = &ab->qmi.target_mem[i];
- 		if (chunk->type == CALDB_MEM_REGION_TYPE) {
-@@ -2860,10 +2922,11 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
- 			 * Once cold boot calibration is enabled add support to
- 			 * assign reserved memory from DT.
- 			 */
--			ab->qmi.target_mem[idx].paddr = 0;
--			ab->qmi.target_mem[idx].v.ioaddr = NULL;
--			ab->qmi.target_mem[idx].size = chunk->size;
--			ab->qmi.target_mem[idx].type = chunk->type;
-+			ret = ath12k_qmi_map_target_mem(ab, idx, 0, chunk->size,
-+							chunk->type);
-+			if (ret)
-+				goto out;
-+
- 			idx++;
- 			continue;
- 		}
-@@ -2904,16 +2967,10 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
- 			goto out;
- 		}
+ enum ath12k_pci_flags {
+ 	ATH12K_PCI_FLAG_INIT_DONE,
+ 	ATH12K_PCI_FLAG_IS_MSI_64,
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/pci.c b/drivers/net/wireless/ath/ath12k/wifi7/pci.c
+index bb617bb6b71a..783c5d020f07 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/pci.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/pci.c
+@@ -37,19 +37,6 @@ static const struct pci_device_id ath12k_wifi7_pci_id_table[] = {
  
--		ab->qmi.target_mem[idx].paddr = res.start;
--		ab->qmi.target_mem[idx].v.ioaddr = ioremap(ab->qmi.target_mem[idx].paddr,
--							   chunk->size);
--		if (!ab->qmi.target_mem[idx].v.ioaddr) {
--			ret = -EIO;
-+		ret = ath12k_qmi_map_target_mem(ab, idx, res.start, chunk->size,
-+						chunk->type);
-+		if (ret)
- 			goto out;
--		}
+ MODULE_DEVICE_TABLE(pci, ath12k_wifi7_pci_id_table);
+ 
+-/* TODO: revisit IRQ mapping for new SRNG's */
+-static const struct ath12k_msi_config ath12k_wifi7_msi_config[] = {
+-	{
+-		.total_vectors = 16,
+-		.total_users = 3,
+-		.users = (struct ath12k_msi_user[]) {
+-			{ .name = "MHI", .num_vectors = 3, .base_vector = 0 },
+-			{ .name = "CE", .num_vectors = 5, .base_vector = 3 },
+-			{ .name = "DP", .num_vectors = 8, .base_vector = 8 },
+-		},
+-	},
+-};
 -
--		ab->qmi.target_mem[idx].size = chunk->size;
--		ab->qmi.target_mem[idx].type = chunk->type;
- 		idx++;
- 	}
- 	ab->qmi.mem_seg_count = idx;
+ static const struct ath12k_pci_ops ath12k_wifi7_pci_ops_qcn9274 = {
+ 	.wakeup = NULL,
+ 	.release = NULL,
+@@ -103,7 +90,7 @@ static int ath12k_wifi7_pci_probe(struct pci_dev *pdev,
+ 
+ 	switch (pci_dev->device) {
+ 	case QCN9274_DEVICE_ID:
+-		ab->msi.config = &ath12k_wifi7_msi_config[ATH12K_MSI_CONFIG_PCI];
++		ab->msi.config = &ath12k_msi_config[ATH12K_MSI_CONFIG_PCI];
+ 		ab->static_window_map = true;
+ 		ab_pci->pci_ops = &ath12k_wifi7_pci_ops_qcn9274;
+ 		/*
+@@ -130,7 +117,7 @@ static int ath12k_wifi7_pci_probe(struct pci_dev *pdev,
+ 		break;
+ 	case WCN7850_DEVICE_ID:
+ 		ab->id.bdf_search = ATH12K_BDF_SEARCH_BUS_AND_BOARD;
+-		ab->msi.config = &ath12k_wifi7_msi_config[ATH12K_MSI_CONFIG_PCI];
++		ab->msi.config = &ath12k_msi_config[ATH12K_MSI_CONFIG_PCI];
+ 		ab->static_window_map = false;
+ 		ab_pci->pci_ops = &ath12k_wifi7_pci_ops_wcn7850;
+ 		/*
+@@ -154,7 +141,7 @@ static int ath12k_wifi7_pci_probe(struct pci_dev *pdev,
+ 		break;
+ 	case QCC2072_DEVICE_ID:
+ 		ab->id.bdf_search = ATH12K_BDF_SEARCH_BUS_AND_BOARD;
+-		ab->msi.config = &ath12k_wifi7_msi_config[ATH12K_MSI_CONFIG_PCI];
++		ab->msi.config = &ath12k_msi_config[ATH12K_MSI_CONFIG_PCI];
+ 		ab->static_window_map = false;
+ 		ab_pci->pci_ops = &ath12k_wifi7_pci_ops_wcn7850;
+ 		ab_pci->window_reg_addr = WINDOW_REG_ADDRESS_QCC2072;
 
 -- 
 2.34.1
