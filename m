@@ -4,79 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCF29CA600D
-	for <ath12k@archiver.kernel.org>; Thu,  8 Oct 2026 17:38:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F53BCA600D
+	for <ath12k@archiver.kernel.org>; Thu,  8 Oct 2026 19:58:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=X6hPxpHc+iRxO8pwwK1MgBKqJXYkCI7uIoX2LKQBJPI=; b=XGf0V78aLvJGYFRhWqHAR2oTAB
-	Y3OL6vXsr/REb4Lgr8NIBhLKxQ4F2eqPY6sUu541nwsbjiI3+WTKVksRzyJ2NuxApFi0p+KoXtyC0
-	lid/8JOqmif03l9qhbUIv3ntgOj0MtQUGYPXh4zULnXtkVOk3/fEuUOUofkhlV/UQGi/JDLfAoQHD
-	zV8P8/eC/TF0+/yOc1XzkKbZpKO4sedD9HVN1bSVj/IV1N5YFvoUjHEFqyNpmUDxWwPMv5y0k4dyk
-	EuAG8taYFguAvNuJOA0SWEx6nO1wzjWhK72qSAdal6xAzDDlNJp/JxuY2kSICteEcBKbSNDnHAUA+
-	KYO/RIFQ==;
+	Content-Type:From:Subject:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Ebm5pPz/0g/tl4YeJ3Jr8z4GlCJlRVCE4c+RayxNGYo=; b=c99aElaAapSMM+1hwGLAtXu4at
+	r6hZnqPVltpn6CnbzXkgu4XWbMvuFKf93FJbcrUREeQL5EMOIIofdczwUrwfD9P3IooLjqSw0UGJo
+	1vLxQOZ5jxcDggIeJ7p8t49mPiY8oUbb+lm014S9S/eOpiUrkq+0iPgA7Lhz6yPvWQZggK2ZKm4Hz
+	Q5XpTp+A7gJaLKKMwrsYA7kxoEuxc+/TjiiVAMKrlk6qcV8Jp/X8BdeWCr7KKye9gukLFe+tICs0N
+	5u2Ou2EfdebSaqkMARZBnJaTF924jyQbwHzYXEYo7NJ5DeoP0yi4HDRnumbmoZ/2WZyvKUPFsZe4P
+	tx8rh3CA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEs4T-00000004nWU-1woM;
-	Thu, 08 Oct 2026 17:38:21 +0000
-Received: from mgamail.intel.com ([192.198.163.17])
+	id 1xEuGV-00000004yvo-1iYR;
+	Thu, 08 Oct 2026 19:58:55 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEs4Q-00000004nVq-3R3m;
-	Thu, 08 Oct 2026 17:38:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1791481099; x=1823017099;
-  h=from:to:in-reply-to:references:subject:message-id:date:
-   mime-version:content-transfer-encoding;
-  bh=qYtHttXAHlR0qS19Rqv1FhyQJd4hcKVSBJQ7u9dNS94=;
-  b=WPLVC1RY08Gm+dsRAlKmSwcFrxkmRu7i0IXdSjNXG+MtPH1lWYx1jpRa
-   gReaQBlXxZtYPdx3lRniNe90/kJRI6YCGaisRPd1mhpl1Wv/IR/NphBwD
-   5+cVSZncN/kbjPh5x4lf1+FQ4MGmK7U8w0ml9C/7I8c77fCCEnoio5byE
-   10HGDBVkKSQlnHLacnlXtC0/B9KbMDDhYnsP6qE9eD+R1sd7Kr2x1qfMY
-   NbtWEpEW6TwO45ep+GgLtjhESmUxfm6HzPlyFpfKVtSG2ryObbK0L2Z4c
-   zbHfPb+2jSZk616l7O6V/D08sK2aPqBc4JzCXXso5t0OtH+lmgLnSS0sH
-   A==;
-X-CSE-ConnectionGUID: YRKlv2FFQz+IGMb6vVXU1w==
-X-CSE-MsgGUID: xf3QGNJ0Q+6RWPLpKRI2Bg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11928"; a="279889"
-X-IronPort-AV: E=Sophos;i="6.27,146,1787036400"; 
-   d="scan'208";a="279889"
-Received: from fmviesa011.fm.intel.com ([10.60.135.151])
-  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Oct 2026 10:38:17 -0700
-X-CSE-ConnectionGUID: 2nk0g4G0RWmUVNn9tDP8Ow==
-X-CSE-MsgGUID: ohFYAAIaTWeXIUq4TpcjJg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,146,1787036400"; 
-   d="scan'208";a="1919313"
-Received: from ijarvine-mobl1.ger.corp.intel.com (HELO localhost) ([10.245.245.140])
-  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Oct 2026 10:38:11 -0700
-From: =?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
- Vinod Koul <vkoul@kernel.org>, Frank Li <Frank.Li@kernel.org>, 
- Michal Simek <michal.simek@amd.com>, Jeff Johnson <jjohnson@kernel.org>, 
- Hans de Goede <hansg@kernel.org>, Andres Salomon <dilinger@queued.net>, 
- Thomas Gleixner <tglx@kernel.org>, Paul Fox <pgf@laptop.org>, 
- Dan Carpenter <error27@gmail.com>, 
- Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>, 
- Hyun Kwon <hyun.kwon@xilinx.com>, dmaengine@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, 
- platform-driver-x86@vger.kernel.org, Jiale Yao <yaojiale02@163.com>
-In-Reply-To: <20260926121250.3258285-1-yaojiale02@163.com>
-References: <20260926121250.3258285-1-yaojiale02@163.com>
-Subject: Re: [PATCH 0/3] debugfs: Reserve space for string terminators
-Message-Id: <179148108715.29028.11629364722583143417.b4-ty@b4>
-Date: Thu, 08 Oct 2026 20:38:07 +0300
+	id 1xEuGR-00000004yuV-43Sm
+	for ath12k@lists.infradead.org;
+	Thu, 08 Oct 2026 19:58:54 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 698HVd7c3197317
+	for <ath12k@lists.infradead.org>; Thu, 8 Oct 2026 19:58:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=Ebm5pPz/0g/tl4YeJ3Jr8z
+	4GlCJlRVCE4c+RayxNGYo=; b=TSh9G+OsXhfm89ob9xVjQRWC/oY/KUteaDdiiL
+	nPGfiBycxAbaJSuvQ7GyZ4IeiO1mqqgjlukzObzRDj2EXmEaEXHmfl1kaQO0shHs
+	qb+yI/j1GsJxLe0zBc0exsG9Dg0hVgYfkwduqOMHT0cWFYqECMYIWBHytMd85R9B
+	6/P2b0xlkjPw54p2Kx6hgRSIywmsPIFaocA4wFlBjzvdIHRLoaebYyHLJQIwSrc2
+	lP8HDjYHxLKZQJyoMgoAwH+6AD9svbgk8H8ziHwldNsXXR2x64aHuqCgVyjzcOCn
+	E/afPiJPcrVFlxHRhjk+JDNx8IjwcCFzohn2ZjxC83PJH1fQ==
+Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h6fmqrgxh-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 19:58:51 +0000 (GMT)
+Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-34ef5fd7934so15120870eec.0
+        for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 12:58:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1791489530; x=1792094330; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:from:content-language
+         :subject:cc:to:user-agent:mime-version:date:message-id:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=Ebm5pPz/0g/tl4YeJ3Jr8z4GlCJlRVCE4c+RayxNGYo=;
+        b=RftPXkNeoF2Y71XbnyitqBq2GCvzSAQV9hLL9/DnbH5Is6CGEdqcBcQ1X62iw9L6hF
+         90+1WECixevNuwOYlvvMuVHH8l89r54olcSbb/xLW2DxunjUnU4erWBa74APYCrGprSY
+         6ZGQL8a6RPnodH+WpykNtQB7ZFsWYUP9WgHnBDv5YiPuduDMcXRXgaDdNJtGnBew20x0
+         twGgRVz4kL4KFZtZXYw8kqSPAgTJx8nBENgScoAvxWQ4i37uFNt5+be8tzjEBqkEeucy
+         FV3SrzKK+66JRqJ8JaquOsR4zm3Lt54QaKwGM6wNP/X1y7nXU4uKPKtcTiGdopIkMaH2
+         3zOA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791489530; x=1792094330;
+        h=content-transfer-encoding:content-type:from:content-language
+         :subject:cc:to:user-agent:mime-version:date:message-id:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=Ebm5pPz/0g/tl4YeJ3Jr8z4GlCJlRVCE4c+RayxNGYo=;
+        b=JdQwVxgFYifow8xUGK31InNd5JuD0pN/ahQ61TSErXQ0Ed7INHYs+3Y56w8G9DIvu6
+         MBA+JJL6AWlSdtzdhadmdjVPvt/Oc1qtrgqQJyAt9PSf+Vl7FTfXBV1xgtg57cODJVwl
+         ojPQgOmCGygGZYxE0L3KVAl1QNA+HOWOx4JR5yJoIlB+NOziUSlRmihL+/cV/IWC0oQb
+         6TY3w8OqT+2a2FcrMU78szp6Z8+eJlX8skkwsmofCCgvIzntHKcFWoad34eunPmHq9w+
+         bkQqM1JsxaQliLTW2GwnGxcNJLc9dY0+kNN93NW//FCVvoJMEnZyySBgO+c6Nx7ZEl8T
+         2Eaw==
+X-Forwarded-Encrypted: i=1; AKwUvBxN2tg4fVxjBQoUZvMV3Nebe4Gmh+Rg23MbeKgJbB9bPpwtY4/6PnViF0H08Z9eqasvLVkc6s4=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLiLpXFINNN5BHRjs5vgGvSlfcZJxYiOY+wbnVhXPJjOV4/7cHo
+	TqCQV7mKU3YQkyiGzhyCsIFlvtDWu5DlpSt7NvzEROeb3rbNxzNMAvMz8jj+FmKeuTcVK8RmW6i
+	NUDHZhTL3dhbXTmUZPAUqUdoiQdoAVJROvmJFwldME+WY3XAggzXmiRb2ZBlvJA4+
+X-Gm-Gg: AYBFou3UZlpkfLrFA180KXK4U92T9TRjN0pHELQE3zHdnLDIPpKiCtjbn0caucnATlT
+	2b9xj6/oDKVxMRTcUGPrYwtrP+Ya2G9sL9gDMtbwIXUhJw6x9jeTmqo6Vs186n8LE69EPxaa1AY
+	PeR6DJuJzls4bb+J85dv3xY7anmXmUk/PDAAEUY5ciCnCOb5vJXOAOpaBVwt1CU+seAi6MEC8wz
+	MSJfOP1kbNrvEb8oEdtyi0PO8hlNphPlPWxz8ORiuEwyw6l/dgi7D7bNoFtxounpFS1+JNFCAlP
+	vlNXhEA6B8+gFWDmvutouPxC8F6fRAP08tdujQnwRgn4vOl+AAH6+ruiO8QnhvxYFnTEadTmmAJ
+	Yc+Bd4HpsgEmFlMjlzYqHWwJFU1uDIQoXOTw=
+X-Received: by 2002:a05:7300:560d:b0:351:165a:baec with SMTP id 5a478bee46e88-3515e0030d5mr7053373eec.37.1791489529776;
+        Thu, 08 Oct 2026 12:58:49 -0700 (PDT)
+X-Received: by 2002:a05:7300:560d:b0:351:165a:baec with SMTP id 5a478bee46e88-3515e0030d5mr7053339eec.37.1791489529022;
+        Thu, 08 Oct 2026 12:58:49 -0700 (PDT)
+Received: from [10.81.91.45] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3537cb6a2afsm231759eec.31.2026.10.08.12.58.47
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 08 Oct 2026 12:58:47 -0700 (PDT)
+Message-ID: <5ca444cd-9d83-4805-88ba-f551576961cc@oss.qualcomm.com>
+Date: Thu, 8 Oct 2026 12:58:46 -0700
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+To: linux-firmware@kernel.org
+Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
+        ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+        jjohnson@kernel.org
+Subject: [PULL linux-firmware] ath10k, ath11k and ath12k firmware ath-20261008
+Content-Language: en-US
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.15.2
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA4MDA3OSBTYWx0ZWRfXwWE9koO0r6aW
+ z8WeGU9GKc/XwNp3/VbBHw1d6BR0AHKdJKeg6Mptj+09afTEjvpTn6UVlH54NxRl0wlWpKE5c58
+ wWiYN/1F9BjOaKECkPYnMtDfALfeePY=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA4MDA3OSBTYWx0ZWRfXxL53OMTk/frf
+ xxEwd7RHNmWBMGce0qVi2AWEJjFsL3w4DBJBrFXLTi4kALHjCjZ6kcGLu8P4IvYACB62EQ9FzwG
+ FgBLat78DBiE02WhHSgpphF0IFEbX/34lxLmEe/HSmSVYlBrHQmellE70gyf44My8Y5M3pHLivo
+ 5uRfOX6Hp9az+WqyUWqcplmIV9pu+Sdm2CBXDwVkaj3+jk9lvAdtt2g/YqUVMj3dEXCrVA46EiF
+ nURggGf3hg7peQhLevbnH/5cVsqiRWKqpqMBlUhKtgsYJgE0cFg0RBB4TlY6PKoNEz1V7FTiBWB
+ g0Gc6PbZXkpjE37kiq3CfC16wHIPL6VbIrMSG/IkrLcBhCCPERl21oBbOY5UtsYhE8GuO1DMxvH
+ SwstLoAx1KoHGQbCzqgOisUCaOBBrnjW6NfLjO+fIfFucTZr3cISNWrT1xShHP0YS2tFwM/ew0e
+ HhC/2kc4gdFibgb7WPA==
+X-Proofpoint-GUID: 7ffZCvRF3t9qpOv6baMIePw_YBdZm8c9
+X-Proofpoint-ORIG-GUID: 7ffZCvRF3t9qpOv6baMIePw_YBdZm8c9
+X-Authority-Analysis: v=2.4 cv=IqCL47/g c=1 sm=1 tr=0 ts=6ac7f5fb cx=c_pps
+ a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=VwQbUJbxAAAA:8 a=WKo8ZlZ-uQDsbn5PVaAA:9 a=QEXdDO2ut3YA:10
+ a=bBxd6f-gb0O0v-kibOvt:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-08_06,2026-10-08_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 phishscore=0 bulkscore=0 clxscore=1015 suspectscore=0
+ adultscore=0 impostorscore=0 priorityscore=1501 lowpriorityscore=0
+ spamscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2610020000
+ definitions=main-2610080079
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261008_103818_876959_CE18EFE2 
-X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-CacheID: sfid-20261008_125852_119790_7E120269 
+X-CRM114-Status: UNSURE (   9.42  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,39 +147,37 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Sat, 26 Sep 2026 20:12:47 +0800, Jiale Yao wrote:
+Hi,
+Here's a new pull request for ath10k, ath11k and ath12k firmware.
 
-> The same boundary mistake appears in three debugfs write handlers. Each
-> handler has a zero-initialized buffer and allows a user write to fill the
-> entire buffer. That overwrites the only NUL terminator before the input
-> is parsed with sscanf(), strsep(), or strcasecmp(), which can then read
-> beyond the end of the buffer.
-> 
-> The write paths are independent, so the fixes are split by file and can
-> be applied separately. Each patch reserves one byte for the terminating
-> NUL while preserving the normal input size for that handler.
-> 
-> [...]
+For ath10k and ath11k there are no changes.
 
-Thank you for your contribution, it has been applied to my local
-review-ilpo-next branch. Note it will show up in the public
-platform-drivers-x86/review-ilpo-next branch only once I've pushed my
-local branch there, which might take a while.
+For ath12k there is one board update:
+WCN7850 hw2.0: Add support for the Samsung Galaxy Book4 Edge
 
-FYI [if applicable to your patch], as per Linus' policy change, also
-fixes are mostly routed through for-next unless the fix is for a
-commit introduced in the most recent cycle or is clearly a regression
-fix.
+Please let me know if there are any problems.
 
-The list of commits applied:
-[1/3] platform/olpc: Reserve space for a string terminator
-      commit: 4ef563af57cc48d5a9662d7c69aa4447c2cc1b2c
-[2/3] wifi: ath12k: Reserve space for a string terminator
-      (no commit info)
-[3/3] dmaengine: xilinx: dpdma: Reserve space for a string terminator
-      (no commit info)
+Thanks,
+/jeff
 
---
- i.
+----------------------------------------------------------------
 
+The following changes since commit 24247053afda2bab6b4ace42402dbf9f3b1305d6:
+
+  Merge branch 'arch14-8' into 'main' (2026-10-07 12:01:52 +0000)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/ath/linux-firmware.git ath-20261008
+
+for you to fetch changes up to 575bbe3f83565d18caa73e9b9458f754dd286f48:
+
+  ath12k: WCN7850 hw2.0: update board-2.bin (2026-10-08 12:37:22 -0700)
+
+----------------------------------------------------------------
+Jeff Johnson (1):
+      ath12k: WCN7850 hw2.0: update board-2.bin
+
+ ath12k/WCN7850/hw2.0/board-2.bin | Bin 2431852 -> 2431968 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
 
