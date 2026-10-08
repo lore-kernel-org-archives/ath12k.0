@@ -4,115 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84EEDCA6007
-	for <ath12k@archiver.kernel.org>; Thu,  8 Oct 2026 10:25:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB630CA6007
+	for <ath12k@archiver.kernel.org>; Thu,  8 Oct 2026 10:25:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=BPtAgPGyDX4LIJj5+VGGoUZSUG3Qs2DKqEGaZSXoIRo=; b=Cq9guU1GyAaoFfi04syJuIJUYH
-	jPgBw/Z/gdRPGApCl56irn9GkLcKSiTEGbXunFmKT4YVfCSjHRDT4+/ccpQi+jaxYC0BaLcPws47z
-	nrpadiJbYcphkAni70cLdo1S5iQhfntuVnj5RNew8O2HVWGsBhf5DC8t0ZbMJVAjN4Tnwr6/u8S98
-	W7KNXwNpIebXX38aU3zOjVk51lphicdLFtVmsurP1SH3G4l6zot+qYtoHZSShkTd64Ovrht7IzIMW
-	4bA/yxoP5kcnJ9EEvX4kaiCzefFh1D+MokLCGzQSvKZGPpKBT3hyoSXK6jhyh5pGosDBlyi5SRp6d
-	W0M1JS6w==;
+	bh=aMm5VSqiHcH9DwnpPnRIkeDas/kbOfg9nUPZTTqULnA=; b=G2V0hM0QIjC8YboqWtrKO/yL+E
+	BP5us2ZZzfUKlYqEXpKwZ5uM8pzVri7O1w7mbn0eaxioQBZQYJlLDoWz9AuGh7g4cS9ejOkUXVy3Y
+	MJV4/Y2LeBDWkU4K1Xpt8NUev9kRW+U7VZZfEOcTRcFwvDZLK4fY5eZ4CRdfF9Tt3MMFvmFDU4Jwr
+	RkQy7tDoFOYCUkyS82Z+pnI1xCD7WkNpSEcFkgCQQmSSCYMzgzWl1IqVWsdmhUXYRgAqa4cA2YjdT
+	uY0Z2cVOHkvUUjIuYyOVC4+rD2nl4LCjGqtfcMP95eTLv+b0nRAUiLAciLRsY7vHd/nyNnjzFVfO5
+	zzt5hjhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xElJQ-000000046sU-0gzP;
-	Thu, 08 Oct 2026 10:25:20 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1xElJV-000000046xO-25T6;
+	Thu, 08 Oct 2026 10:25:25 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xElJO-000000046qj-3nOv
+	id 1xElJT-000000046vI-1w4F
 	for ath12k@bombadil.infradead.org;
-	Thu, 08 Oct 2026 10:25:19 +0000
+	Thu, 08 Oct 2026 10:25:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
-	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
-	:Reply-To:Content-ID:Content-Description;
-	bh=BPtAgPGyDX4LIJj5+VGGoUZSUG3Qs2DKqEGaZSXoIRo=; b=P+2vXPIv284hBc+h4LteFdJ32T
-	SOSBmWncFzwLahxnL1csDizuqdYAUcRdZCIvBH2roLs2A77vfT4TqWKF+0WMuxi2bq8He/oWb1HtI
-	ByD9R6dmDC9tGwjmUrtISdOtDxaL2V6944feQJpHeTwjO+GrMj5fQQkQbOsFFURqConruNxqqBLf2
-	bWSK8WsZYxy+tMFkctD7pVqUtIlvVr2XvhlzeV7prBVshpYkOEG5PztubBiXaBO1K6bt/iiL+S3Tl
-	7RwTg6vyu2LpiQNTjF438Ukwe9H4HtGlNz0tn4un728QCEeshGrLYEHoMoe+pJ/aBHS+hkPgITFlw
-	BPEtaPuA==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by casper.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xElJI-0000000741P-1JGo
+	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
+	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=aMm5VSqiHcH9DwnpPnRIkeDas/kbOfg9nUPZTTqULnA=; b=Dp0eDcJz4iZr+EGFObSNO09mkZ
+	Q7vnxkPbdLLxwWg3yiqYCrR1THHzqFC9Fh/n1orpD7F83+J3VL2+BMvh7Meoug2zySKMiMQ16hf0H
+	7XBthe0+o8/qq9eNIpsdJ32Ke3oaqzrn1sLnOFiMEZNtMiMONM4sPZgz2wg9kR1HAm4vRkCQdAkvb
+	XxuvLHo3z/4EVopomiEzeIDH6vTrhIPdIs6rwWbeM5/18XrA2jnmz+p4rQvaBSDJN7akV6ZTYRrXE
+	DMILmgtPzSCmpxA0jdaLEHl4g+PDBC3Mh+jNvEu79nDY1wnlrHsuNg+NkmfHZpPdlWA2iLo8E6CdI
+	0aRKQmEw==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1xElJP-0000000AHrP-1a3e
 	for ath12k@lists.infradead.org;
-	Thu, 08 Oct 2026 10:25:17 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6987KAQT3191018
-	for <ath12k@lists.infradead.org>; Thu, 8 Oct 2026 10:25:07 GMT
+	Thu, 08 Oct 2026 10:25:22 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6987K97v2560095
+	for <ath12k@lists.infradead.org>; Thu, 8 Oct 2026 10:25:18 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	BPtAgPGyDX4LIJj5+VGGoUZSUG3Qs2DKqEGaZSXoIRo=; b=p2b9QZDXX7ZDbeFy
-	ebmcmmol5rEQN0jZIN6IPEv9yA8H8+80VdrIUWyN25+DtpTjev10eLrDYUQEoliP
-	rauE0BfamkHR7EwsaSn0i9678zjSz3MblSHFRv9japULJ3ouBZ3NGVWHlV4xkeY6
-	gRPul9SpSzdWmrn5bj2xNufHRXLTpa5i/ky3IKOqawD5QsyBtMte+mYTr0xUKGEi
-	bvACm8ZSCao3B7NhjnyT1vFon7myGfPxRsF4fdaPtyEYFbdbffjWep91jtDKsjYA
-	Uy0w+1kQ5F557CvDrkUwHADtkplRK1gLB0AE1AB2YFCzR5exC23R+6iLRLvK6H78
-	RtflbQ==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h5xe6afr8-1
+	aMm5VSqiHcH9DwnpPnRIkeDas/kbOfg9nUPZTTqULnA=; b=VqqNyFXN1L7IKuJ2
+	z8zc5sue5Gos/U6fGcNuwIfIBOIDAyNnNUcJdxHkr4UcYWFzXSeBbQR8EOoKCtQm
+	G25jQviSLzuHCHkNvfHl04IxFnzxsvSMP18zDwt9hXX7UJ6UsJz0XxIham7PnOte
+	awyTOwGc5V8p6c1sBHcUvZB+wUIemNRbu6QuKLQkFKCyoYzTIm3qhROn4rLKQXbF
+	YGbVDqnlpEc8PLczRpWOgsUmXt4FIh9t9xzlxa0bMaH/A/Kvx5EuRse3bXJ/UgOF
+	XXD1qxCW3WQ+Kw2Q7zICxx4fkY14E0ifXJJxVrz6i5CLO8D3khnCyRKwBU8x2bQS
+	furcyg==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h5xe82cwt-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 10:25:07 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2d02df2bf09so41068905ad.0
-        for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 03:25:07 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 10:25:17 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2df5a65671eso7204525ad.1
+        for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 03:25:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1791455107; x=1792059907; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1791455116; x=1792059916; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=BPtAgPGyDX4LIJj5+VGGoUZSUG3Qs2DKqEGaZSXoIRo=;
-        b=Fv6N+jx519SX0N0LM0H8w718UVvDh6GXW2NAQ52Q3B+CUTWV4UnztHT7fvhrC2rO2j
-         gyFNCI8gAccOJnUlF9YvCzDgz+cXI3M3PyoXP02LmN7eG+4yaDK3ixqiReg92xp6L7Tn
-         n4LYgXgah2xlWzMnlbx9guupC/7qgjQLHzPYjN5nCwvTNk1jFQACFXjgH5mUiY37YtAT
-         DcjJkkfutbA7njlacaC1nacKvpAnLfLIXU9kKwMMuBOmLbZdosSOGpU+gbxMqxOwQ/BF
-         qpfhX23aOWi1/E7twQ0FFq8JFKr31p9YaJcf0NQ7fuyB5Igj6Eflx0uGAL5j7TK46WFC
-         bJwQ==
+        bh=aMm5VSqiHcH9DwnpPnRIkeDas/kbOfg9nUPZTTqULnA=;
+        b=LJtzjJg2YX2XXJt1QCeNCKSZ+wvplzN+qKElUrNcOZ5U9/Ujwtqgjt/ydWMrtAHmSz
+         cPB3ZVoBTDuAVIERhityEEj95dowPKX8SfaC3Vj9MBXldlgxJFY3P+fzISmFnkZhyAWP
+         TfUHSJIn6sRgNR/Z5C0NJVusVGjxcUbK2VXMJ8WEDQM/rc2wXaE4pf6II1dqWlqpB/zb
+         TQ9+hVTl5hnfMt4D8QnKVSORYE+k6qzOyyIBis2F2wsNhu7irCaww1RoP9Y5WPBpMuYW
+         gKqPdZwNdNpL5k2cBiVuWWNenKlfOF7aGUghaHuO7U99u64l6DNKHevP6pou97j9QWNT
+         xo4Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791455107; x=1792059907;
+        d=1e100.net; s=20260707; t=1791455116; x=1792059916;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=BPtAgPGyDX4LIJj5+VGGoUZSUG3Qs2DKqEGaZSXoIRo=;
-        b=aV/cHRBzGX3wGb9hE1R8BVQlnDBwon0Ujh32HB3aTFZdgO4oA4Rv7fKa8W87OnUGn8
-         iZQXQPL9K+Vs7sMfAyXOm2CSdMh8S/y0xwLsZa/3xb4jCNBt3V8B0TvyRIi9ZPfpkHuW
-         1PMzhw16+lPnqBIyAtkD0hveig6bgR9z899UTiHN0QKM0F7p69E+873yOP4KKm/RXeP0
-         EhOUAypPr8r2kxbS2sPHeqFLUMHZuQ9XbeCmqG2WpojaVtcn8UgYnyz4MEdadPBSsxJ/
-         nRJQJ4rpVZinRDy+hs1ZHcpKBY1e9SRyHRfXwRlXxtjo1wMOVIV/2Z1EUPU/wroAOh2U
-         omHQ==
-X-Forwarded-Encrypted: i=1; AKwUvBxg7KDwFGQ8GVGXhAggZ1RkKee91ACogmurv7UjEnVbLwE6PnrpVcczkkmzqjscKJeLqm60mlk=@lists.infradead.org
-X-Gm-Message-State: AFq9FYKswY8Mdf70GPU0EgaTQr7+p5WRnNaN81/c3ygO0RwzDYiCeC7s
-	p2tRa3dI3LLBLEdE9/z9yG461OtqSJOEXrcpJXlsZxLX8ZLryAAeZ7cuaBiutI1yRt4mYY92VpU
-	BXqVOH4PJBgdsKbPRzaBORPjbWZkCP02Nrbcvw9XO1Hg6BaswLf3IdPa6FEhsBbuS
-X-Gm-Gg: AYBFou3XB8yONPLvb3xW2R90FDqtanxuWsZ0SbAvAhruFmPqnmUc1AyrDJIQ0Jxyj6Y
-	/Q3eu03VSSe5x3EXf/b+7pC9L4bM/HHmlkf4ERTUMFSzSW8O2wRmApOkoyOX4RBZqgGPCOLXQcV
-	hR/EpzmYQ4PvpcbxJieU/+uicVpUCdvs49lzBYO/6SQKVdVx2XoN78Z2mRb9cKgK4B4rWxeTcLX
-	WljfPQcEU7KbicmjJ6Bq0GUWVHttnKdI4KajiwLQBRej92We/vlrrEA9W3vmAZHZELtDoGDkSHd
-	RiW9RD/Z+mO1xqpVVB6G5D5u98a35GV4HSD8mRijKmU1RaGscFe1diJTDeqmdnu6v9aaL/ZVzO6
-	lNwktLy+gW0JQL376npx+hKDgfydUk3K9fWm079r7jNhQeHD8ax6GglBnZShqdGAf2gd/ZJ8KEf
-	0kvc7BebmcYdgJnRJcYYWMUQ==
-X-Received: by 2002:a17:903:4b24:b0:2e2:ffcb:87a9 with SMTP id d9443c01a7336-2e6003891d5mr41561925ad.24.1791455106985;
-        Thu, 08 Oct 2026 03:25:06 -0700 (PDT)
-X-Received: by 2002:a17:903:4b24:b0:2e2:ffcb:87a9 with SMTP id d9443c01a7336-2e6003891d5mr41561715ad.24.1791455106508;
-        Thu, 08 Oct 2026 03:25:06 -0700 (PDT)
+        bh=aMm5VSqiHcH9DwnpPnRIkeDas/kbOfg9nUPZTTqULnA=;
+        b=jj7WnEl1QpvyOOYMBy3F9w0TeesJYoMKdbrHwFJyEF6xthB3KT2Hx9XBkdcman9ST6
+         Gxn4I39lBZBmTYve1SlIf9fRVeOZ6TKHsXquyy1KpEHt9KDx6Sh509Gm2IKaqoHot7I3
+         +PrWwZz6+nqUqb3ubT1R/ZtDPmbH3xD+5EU4lMx2abplz1ORr1xKTNl8XXOcZmavv8kX
+         EdgzQCLo6VadtJowIXsp14z8R2fi1S7UkTjk61PZFOgjszl7ooH05f8CCnvBeAQD8ubl
+         m3LXpThHOVLGzcb2CEOK2s4vcNgimZjEpwH/UNxyzVQxkBuUVFZ9FDZI4lqcVqlwWBnP
+         WXJA==
+X-Forwarded-Encrypted: i=1; AKwUvBwCzsgjqdq40hx/UNdrvejkAL47ALeM1kTY0cxFnSg4D2GAXJAy2gOjaYH82DuRLb0TDKG1K7k=@lists.infradead.org
+X-Gm-Message-State: AFq9FYL6RPbBorLAjHd/wJ2UUU4MaL0H3mlgjDA8TKJ0f40eX5VoKBKe
+	S518B3RiI8l+Ysf9xtJJIHq9lEuULKOA/OhA4uujc6z3JH4n7jRDcem7n8irW5p6mHMEeIIUmmc
+	4usX3m4uVwJ8DD6pFaRExwWocNCa7URDpeJTXhQ7M3vsu+9APHTURdrT+GRCR6hcy
+X-Gm-Gg: AYBFou1JYWxaXahA+4Lsy+4TUsYvbEzThl+b+IqozF/cIifE/oUlLEodPneoUq04/t+
+	tebtWOgm1bnQpGaYke5tBuT5pGs3ZYSX9C3kj+sUslvkZFpDZoN6BAwAFzYNQtqcgclmuu4gMq5
+	FkmVWLmuh49rOOcaKE/ZeWb8uj0OhbpM6RH3zd1uXEXNA61gtK8R6IGSkur3j6kz0b1p29EfLSX
+	NCPJhBa3QOO35Z6gEsATMHseqp4FoqhN4qMs6HMez1u00K5UC4hduvqMmideiBF5ZEwfRcLPkVP
+	37wCZ5O1A1cuqUgQx+x3e75S57CmWlCVmHQ5BTfaX8m8gV+pjfEzBKHbvjNHxlNQsSJTLw/xfaD
+	7geOCdgguFZ59iBoF3bvESmaEMQMygA8xstiGOOnN23+l9fbvekeTtDKlmMa74/xf+6iB/nq8Xd
+	tWVUr+80mHdvwWkzE3RIfGBg==
+X-Received: by 2002:a17:902:ef01:b0:2e6:e9a:eb48 with SMTP id d9443c01a7336-2e7ffe98eabmr15026175ad.41.1791455116350;
+        Thu, 08 Oct 2026 03:25:16 -0700 (PDT)
+X-Received: by 2002:a17:902:ef01:b0:2e6:e9a:eb48 with SMTP id d9443c01a7336-2e7ffe98eabmr15025765ad.41.1791455115576;
+        Thu, 08 Oct 2026 03:25:15 -0700 (PDT)
 Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e6046fe39csm22081655ad.16.2026.10.08.03.25.02
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e6046fe39csm22081655ad.16.2026.10.08.03.25.11
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 08 Oct 2026 03:25:05 -0700 (PDT)
+        Thu, 08 Oct 2026 03:25:14 -0700 (PDT)
 From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Date: Thu, 08 Oct 2026 15:54:08 +0530
-Subject: [PATCH ath-next 12/17] wifi: ath12k: Enable MSI interrupt support
- for DP interrupt
+Date: Thu, 08 Oct 2026 15:54:10 +0530
+Subject: [PATCH ath-next 14/17] wifi: ath12k: store and use MSI data per CE
+ and DP interrupt group for QCN6432
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261008-mpp_bringup-v1-12-2c5797b5e4ac@oss.qualcomm.com>
+Message-Id: <20261008-mpp_bringup-v1-14-2c5797b5e4ac@oss.qualcomm.com>
 References: <20261008-mpp_bringup-v1-0-2c5797b5e4ac@oss.qualcomm.com>
 In-Reply-To: <20261008-mpp_bringup-v1-0-2c5797b5e4ac@oss.qualcomm.com>
 To: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -123,37 +123,36 @@ Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
         Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>,
         Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 X-Mailer: b4 0.15.2
-X-Proofpoint-ORIG-GUID: KZKV04GQwL7zEZD_OjAd943UdVZR8TtZ
-X-Authority-Analysis: v=2.4 cv=HcWB3SE8 c=1 sm=1 tr=0 ts=6ac76f83 cx=c_pps
- a=JL+w9abYAAE89/QcEU+0QA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfXxarfhElm+TrX
+ kmI2pCdl9zNzpzNkCm2YSIMFXJ21MgZSp9Zw8GsETvemAJqVUpjoqEaIbCfDHwy2PYMQgwgUqSG
+ mYpuLrkWcZmrm4/jZ5pSaWx2qjTtAQoSQAb7rTfkaZ328yWcFiWUUqx5NCHC5d240jPeqCeldvb
+ X2Duw6hnOdSlwHVvMEINGCcUHS8egiG0ijGBrAKgP6dm2F4kB5kLg+gMjdEb73Fe+IOGrghmGFw
+ vuSYsgiE7hI6j22UcoISX7jyGbIpJMVOGUI2njR0Kh8DjCxg2M83aB0KYK266qE4/BIBZobR9E5
+ Go+wR/bNXwRnm+5azRpnTgQvq72buOLYqJx6ZqX5OMPmYJx8CfMcPzH9SkuFauQsnwCFu2ztONf
+ G+8QeHB3ubfcTHDv+Mw8oVHJXMEuTU5riVuR5qQwPPCQRA6fltYV4ulRqI8CRUYiaK3cB8KPuFI
+ ttq72vvIeEHLb73vIwA==
+X-Proofpoint-GUID: qPwHG8BswZrFl-NMyEZNIowveM1kUtbA
+X-Proofpoint-ORIG-GUID: qPwHG8BswZrFl-NMyEZNIowveM1kUtbA
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfX4v2WXApFBEkt
+ mq+SyZi6dZJ4tnjFrlSybHGijGUMH3/OMTJsgbcJarjrs6j29svKe+ruo6OXKmi1R5tinf4fGOs
+ 4JbKGflCXw0oPOXrV6phllaCGPuSUAM=
+X-Authority-Analysis: v=2.4 cv=MPT1C8Zl c=1 sm=1 tr=0 ts=6ac76f8d cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
- a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=3HAlypJ90nm0-WewFtkA:9 a=QEXdDO2ut3YA:10
- a=324X-CrmTo6CU4MGRt3R:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: KZKV04GQwL7zEZD_OjAd943UdVZR8TtZ
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfX/gvUesiWurIM
- VoRxmbpYIvOMP8ArgWNrt4SxI8rBEJR9SW6jOe1RQYxszIR4HG5xSUPAuHPkHCCxbm55gA43gxK
- NyrxpbYPypfBPtd2QiNfkDI6jpM5GPW/9VqHwRcj9F0iBf1K31ww/KoSoTBk7DwuzW5L5BvcQYY
- Lr4ln6JpPYQmWj2Spq39usGq16V3HRxnAZ2SsAXKYjRRYD87y1W94Z40zFnvretxE3RxZl16EVE
- zD3C2FjmJxxq5C9//bRqcAmrhomAsEBrLjhh07sIG6vJ4Fzx2JeI7/oVA90nFbnZiwasjSxZC0K
- yYm8au9s9p9UOjisPaGo8srmJnBV7ZUaLdNoLeF8kCXvecOazWzID4m8iD7lW98PpgRTcciX0Kz
- CwGRNAsX7S/zTtczeFPPOSWA0ld/S+GzYhRY4bS9opU3lUAvdT1ABeD4WLyE2lLu8jEkwGg/iXQ
- ihkqB1WrB9YLiCMomtw==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA4MDA0MSBTYWx0ZWRfX3VIrbK8nv1B4
- mpkcEsTfh3kn1LeXY641wm1XNsCY4zHJj4CunIyZzqKf1jZi6hekDN8Rm6xfXh4eY7ZMb2BHgaa
- YywpQneadVALXpO56YtuYppSNihGrok=
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
+ a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=JOiqKhmsGJDeROXOrEsA:9 a=QEXdDO2ut3YA:10
+ a=uG9DUKGECoFWVXl0Dc02:22 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-08_03,2026-10-06_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 malwarescore=0 spamscore=0 bulkscore=0 adultscore=0
- priorityscore=1501 impostorscore=0 suspectscore=0 phishscore=0
- lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610020000
- definitions=main-2610080041
+ spamscore=0 bulkscore=0 adultscore=0 priorityscore=1501 suspectscore=0
+ malwarescore=0 phishscore=0 lowpriorityscore=0 clxscore=1015 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2610020000 definitions=main-2610080041
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261008_112512_659233_AF31B3FB 
-X-CRM114-Status: GOOD (  20.14  )
+X-CRM114-CacheID: sfid-20261008_112520_136706_99D8648E 
+X-CRM114-Status: GOOD (  14.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -170,15 +169,13 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 
-Configure and request external MSI interrupts for DP ring groups on the
-QCN6432 platform.
-Create a NAPI context for each active external interrupt group and
-disable the corresponding IRQs while NAPI polling is in progress.
-Re-enable the IRQs after completing the NAPI poll.
+Store MSI data values for each interrupt vector during configuration
+and use them for ring setup on hybrid devices. Hybrid devices require
+explicit MSI data values rather than calculated offsets.
 
-Handle allocation and cleanup of NAPI contexts and external IRQs during
-configuration failure and driver removal. Also disable external DP
-interrupts from the AHB IRQ disable path.
+Add ce_msi_data and dp_msi_data arrays to store values captured from
+MSI descriptors. Use stored values for ring configuration on QCN6432,
+ensuring hardware uses exact platform MSI allocated values.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01322-QCAHKSWPL_SILICONZ-1
@@ -188,221 +185,83 @@ Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 Co-developed-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/ahb.c  |   1 +
- drivers/net/wireless/ath/ath12k/core.h |   2 +
- drivers/net/wireless/ath/ath12k/pci.c  |   6 +-
- drivers/net/wireless/ath/ath12k/pcic.c | 121 +++++++++++++++++++++++++++++++++
- 4 files changed, 129 insertions(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/ce.c   | 7 ++++++-
+ drivers/net/wireless/ath/ath12k/core.h | 2 ++
+ drivers/net/wireless/ath/ath12k/dp.c   | 9 +++++++--
+ drivers/net/wireless/ath/ath12k/pcic.c | 2 ++
+ 4 files changed, 17 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-index 78367126f49f..892872f70b2f 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.c
-+++ b/drivers/net/wireless/ath/ath12k/ahb.c
-@@ -558,6 +558,7 @@ static void ath12k_ahb_disable_irq(struct ath12k_base *ab)
- 	}
+diff --git a/drivers/net/wireless/ath/ath12k/ce.c b/drivers/net/wireless/ath/ath12k/ce.c
+index c99e915e3885..cc8ed8451a2f 100644
+--- a/drivers/net/wireless/ath/ath12k/ce.c
++++ b/drivers/net/wireless/ath/ath12k/ce.c
+@@ -270,7 +270,12 @@ static void ath12k_ce_srng_msi_ring_params_setup(struct ath12k_base *ab, u32 ce_
  
- 	ath12k_ahb_ce_irqs_disable(ab);
-+	ath12k_ahb_ext_irq_disable(ab);
+ 	ring_params->msi_addr = addr_lo;
+ 	ring_params->msi_addr |= (dma_addr_t)(((u64)addr_hi) << 32);
+-	ring_params->msi_data = (msi_data_idx % msi_data_count) + msi_data_start;
++
++	if (ab->hw_params->hybrid_bus_type)
++		ring_params->msi_data = ab->msi.ce_msi_data[ce_id];
++	else
++		ring_params->msi_data = (msi_data_idx % msi_data_count) + msi_data_start;
++
+ 	ring_params->flags |= HAL_SRNG_FLAGS_MSI_INTR;
  }
  
- static void ath12k_ahb_ce_workqueue(struct work_struct *work)
 diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 21332aeb0c22..bbbde9f05ea9 100644
+index bbbde9f05ea9..575139555dd7 100644
 --- a/drivers/net/wireless/ath/ath12k/core.h
 +++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -165,6 +165,7 @@ enum ath12k_hw_rev {
- #define ATH12K_EXT_IRQ_NUM_MAX	16
- #define ATH12K_MAX_TCL_RING_NUM	3
- #define ATH12K_MAX_MSI_VECTOR	32
-+#define ATH12K_EXT_IRQ_NAME_LEN	32
+@@ -1172,6 +1172,8 @@ struct ath12k_base {
+ 		u32 ep_base_data;
+ 		u32 addr_lo;
+ 		u32 addr_hi;
++		u32 ce_msi_data[CE_COUNT_MAX];
++		u32 dp_msi_data[ATH12K_EXT_IRQ_GRP_NUM_MAX];
+ 	} msi;
  
- struct ath12k_ext_irq_grp {
- 	struct ath12k_base *ab;
-@@ -175,6 +176,7 @@ struct ath12k_ext_irq_grp {
- 	bool napi_enabled;
- 	struct napi_struct napi;
- 	struct net_device *napi_ndev;
-+	char irq_name[ATH12K_EXT_IRQ_NAME_LEN];
- };
+ 	/* must be last */
+diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+index 6cf254b2d2a7..0f0800388935 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.c
++++ b/drivers/net/wireless/ath/ath12k/dp.c
+@@ -225,8 +225,13 @@ static void ath12k_dp_srng_msi_setup(struct ath12k_base *ab,
  
- enum ath12k_smbios_cc_type {
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index a26fdb3c0ad2..4bb14a95aec9 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -348,11 +348,15 @@ void ath12k_pci_free_ext_irq(struct ath12k_base *ab, int num_ext_irq_grp)
- 	for (i = 0; i < num_ext_irq_grp; i++) {
- 		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
- 
-+		if (!irq_grp->napi_ndev)
-+			continue;
+ 	ring_params->msi_addr = addr_lo;
+ 	ring_params->msi_addr |= (dma_addr_t)(((u64)addr_hi) << 32);
+-	ring_params->msi_data = (msi_group_number % msi_data_count)
+-		+ msi_data_start;
 +
- 		for (j = 0; j < irq_grp->num_irq; j++)
- 			free_irq(ab->irq_num[irq_grp->irqs[j]], irq_grp);
- 
- 		netif_napi_del(&irq_grp->napi);
- 		free_netdev(irq_grp->napi_ndev);
-+		irq_grp->napi_ndev = NULL;
- 	}
++	if (ab->hw_params->hybrid_bus_type)
++		ring_params->msi_data = ab->msi.dp_msi_data[msi_group_number];
++	else
++		ring_params->msi_data = (msi_group_number % msi_data_count)
++			+ msi_data_start;
++
+ 	ring_params->flags |= HAL_SRNG_FLAGS_MSI_INTR;
  }
  
-@@ -1118,7 +1122,7 @@ void ath12k_pci_ext_irq_enable(struct ath12k_base *ab)
- 	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
- 		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
- 
--		if (!irq_grp->napi_enabled) {
-+		if (irq_grp->napi_ndev && !irq_grp->napi_enabled) {
- 			napi_enable(&irq_grp->napi);
- 			irq_grp->napi_enabled = true;
- 		}
 diff --git a/drivers/net/wireless/ath/ath12k/pcic.c b/drivers/net/wireless/ath/ath12k/pcic.c
-index fea284c3707b..06178b4f20d1 100644
+index 06178b4f20d1..9fa727115f8d 100644
 --- a/drivers/net/wireless/ath/ath12k/pcic.c
 +++ b/drivers/net/wireless/ath/ath12k/pcic.c
-@@ -181,6 +181,112 @@ static irqreturn_t ath12k_pcic_ce_interrupt_handler(int irq, void *arg)
- 	return IRQ_HANDLED;
- }
+@@ -274,6 +274,7 @@ static int ath12k_pcic_ext_irq_config(struct ath12k_base *ab,
+ 			}
  
-+static void ath12k_pcic_ext_grp_enable(struct ath12k_ext_irq_grp *irq_grp)
-+{
-+	int i;
-+
-+	for (i = 0; i < irq_grp->num_irq; i++)
-+		enable_irq(irq_grp->ab->irq_num[irq_grp->irqs[i]]);
-+}
-+
-+static int ath12k_pcic_ext_grp_napi_poll(struct napi_struct *napi, int budget)
-+{
-+	struct ath12k_ext_irq_grp *irq_grp = container_of(napi,
-+						struct ath12k_ext_irq_grp,
-+						napi);
-+	struct ath12k_base *ab = irq_grp->ab;
-+	int work_done;
-+
-+	work_done = ath12k_dp_service_srng(ab->dp, irq_grp, budget);
-+	if (work_done < budget) {
-+		if (likely(napi_complete_done(napi, work_done)))
-+			ath12k_pcic_ext_grp_enable(irq_grp);
-+	}
-+
-+	if (work_done > budget)
-+		work_done = budget;
-+
-+	return work_done;
-+}
-+
-+static int ath12k_pcic_ext_irq_config(struct ath12k_base *ab,
-+				      struct msi_desc **msi_desc, int num_msi)
-+{
-+	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
-+	struct ath12k_ext_irq_grp *irq_grp;
-+	int j, i, k, vec_idx = 0, ret = 0;
-+	u8 userpd_id = ab_ahb->userpd_id;
-+	u32 num_irq, base_idx;
-+	struct msi_desc *desc;
-+
-+	base_idx = ATH12K_MSI_IRQ_CE0_OFFSET + CE_COUNT_MAX;
-+
-+	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
-+		num_irq = 0;
-+		desc = msi_desc[vec_idx];
-+		irq_grp = &ab->ext_irq_grp[i];
-+		irq_grp->ab = ab;
-+		irq_grp->grp_id = i;
-+
-+		if (ab->hw_params->ring_mask->tx[i] ||
-+		    ab->hw_params->ring_mask->rx[i] ||
-+		    ab->hw_params->ring_mask->rx_err[i] ||
-+		    ab->hw_params->ring_mask->rx_wbm_rel[i] ||
-+		    ab->hw_params->ring_mask->reo_status[i] ||
-+		    ab->hw_params->ring_mask->host2rxdma[i] ||
-+		    ab->hw_params->ring_mask->rx_mon_dest[i]) {
-+			num_irq = 1;
-+		}
-+
-+		if (!num_irq)
-+			continue;
-+
-+		irq_grp->napi_ndev = alloc_netdev_dummy(0);
-+		if (!irq_grp->napi_ndev) {
-+			ret = -ENOMEM;
-+			goto fail_allocate;
-+		}
-+
-+		netif_napi_add(irq_grp->napi_ndev, &irq_grp->napi,
-+			       ath12k_pcic_ext_grp_napi_poll);
-+		irq_grp->num_irq = num_irq;
-+		irq_grp->irqs[0] = base_idx + i;
-+
-+		for (j = 0; j < irq_grp->num_irq; j++) {
-+			int irq_idx = irq_grp->irqs[j];
-+
-+			scnprintf(irq_grp->irq_name, sizeof(irq_grp->irq_name),
-+				  "pcic%u_wlan_dp_%u", userpd_id, i);
-+			irq_set_status_flags(desc->irq, IRQ_DISABLE_UNLAZY);
-+			ret = request_irq(desc->irq, ath12k_pci_ext_interrupt_handler,
-+					  IRQF_SHARED, irq_grp->irq_name, irq_grp);
-+			if (ret) {
-+				ath12k_err(ab, "failed request irq %d, for group %d : %d\n",
-+					   desc->irq, irq_grp->grp_id, ret);
-+
-+				for (k = 0; k < j; k++)
-+					free_irq(ab->irq_num[irq_grp->irqs[k]], irq_grp);
-+
-+				netif_napi_del(&irq_grp->napi);
-+				free_netdev(irq_grp->napi_ndev);
-+				irq_grp->napi_ndev = NULL;
-+				goto fail_allocate;
-+			}
-+
-+			ab->irq_num[irq_idx] = desc->irq;
-+			disable_irq_nosync(ab->irq_num[irq_idx]);
-+		}
-+
-+		vec_idx = (vec_idx + 1) % num_msi;
-+	}
-+
-+	return 0;
-+
-+fail_allocate:
-+	ath12k_pci_free_ext_irq(ab, i);
-+	return ret;
-+}
-+
- static int ath12k_pcic_ce_irq_config(struct ath12k_base *ab,
- 				     struct msi_desc **msi_desc, int num_msi)
- {
-@@ -294,9 +400,23 @@ int ath12k_pcic_config_irq(struct ath12k_base *ab)
- 		goto free_msi;
- 	}
+ 			ab->irq_num[irq_idx] = desc->irq;
++			ab->msi.dp_msi_data[i] = desc->msg.data;
+ 			disable_irq_nosync(ab->irq_num[irq_idx]);
+ 		}
  
-+	ret = ath12k_pci_get_user_msi_assignment(ab, "DP", &num_vectors,
-+						 &user_base_data, &base_vector);
-+	if (ret)
-+		goto free_ce_irq;
-+
-+	ret = ath12k_pcic_request_msi_irqs(ab, base_vector, num_vectors,
-+					   ath12k_pcic_ext_irq_config);
-+	if (ret) {
-+		ath12k_err(ab, "failed to config DP irq\n");
-+		goto free_ce_irq;
-+	}
-+
- 	set_bit(ATH12K_FLAG_MULTI_MSI_VECTORS, &ab->dev_flags);
- 	return 0;
+@@ -317,6 +318,7 @@ static int ath12k_pcic_ce_irq_config(struct ath12k_base *ab,
+ 		}
  
-+free_ce_irq:
-+	ath12k_pci_free_ce_irq(ab, ab->hw_params->ce_count);
- free_msi:
- 	platform_device_msi_free_irqs_all(&pdev->dev);
- 	return ret;
-@@ -307,5 +427,6 @@ void ath12k_pcic_free_irq(struct ath12k_base *ab)
- 	struct platform_device *pdev = ab->pdev;
+ 		ab->irq_num[irq_idx] = desc->irq;
++		ab->msi.ce_msi_data[i] = desc->msg.data;
+ 		ath12k_pcic_ce_irq_disable(ab, i);
+ 		vec_idx = (vec_idx + 1) % num_msi;
  
- 	ath12k_pci_free_ce_irq(ab, ab->hw_params->ce_count);
-+	ath12k_pci_free_ext_irq(ab, ATH12K_EXT_IRQ_GRP_NUM_MAX);
- 	platform_device_msi_free_irqs_all(&pdev->dev);
- }
 
 -- 
 2.34.1
