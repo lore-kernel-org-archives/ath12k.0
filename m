@@ -4,88 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 138E4CA5FFF
-	for <ath12k@archiver.kernel.org>; Wed,  7 Oct 2026 21:39:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2EE1CA600B
+	for <ath12k@archiver.kernel.org>; Thu,  8 Oct 2026 06:49:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nbFKDiOR41JSs82+WBXfytOmE7iZvhjEFmB4K0h8AvM=; b=K4tGmMOth+gG93l4CfP3ibMbwt
-	u6RKiqnCJuKGVpQIaOXFk1AU+RbyK/lblTreZrgjfm5sB6YDFD6N1ehvJ5b3ocgaMivR4JH0xOZ8s
-	Y8psyrU7R8QaBqyhW+n9ZdsrzwqbsaVYiMyJr1SR0RuDQ3IompziqpcAPcjqrm1qJn1SvLuSgrdJV
-	NNu8WBzfYpISdhaVgjoQhw9qMlQA/Lyw+yiZN9JrRM17BLTBaU0gHfN9MWSaHhDeW+KnWV84rsKQf
-	GET3cMcl4UgOy4yrVoF+FyKlvJsxeDatGO0cbPId0L65+YU/Fzy3GROCzJNvydwW03lRIehoi0ZmH
-	YVLcB5Eg==;
+	bh=/thxqmSGXCGdxA0ka/F92mAeNv7Z/Yh5f4+3MKsC4Es=; b=a85FORPpCeWuAAySzC10uq7YCE
+	Com4wcWJ2xrUKiC0ZPBGNbgZnqDfKFtvFtEng4A6FvFEAkYtQk54Lz9k0FZGSiX5p/Ys7ckaS/qnM
+	FubryqS/N56CVoCIiRBlaHnkeoj2SluvqIQOefeObg44y/nh7gWlwt9hm5fuitv96FZ//Q13LIlrr
+	4h00sdKW3NxdOUwS1ZgJvtN+5JmQEFi/jzU7YvZf59ze5B42ruXuwVkaQV1QMtRn8+8xfEvkif+Tl
+	Ll6316kzIZ/OqYS23JOdLP+sdLps+s3Yq8Ts8UevDwcdvYXT2LUBIRkF7O6YiWFTirfN8Y+4bt1CH
+	mwHgZckg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEZMI-00000003CpN-2NnI;
-	Wed, 07 Oct 2026 21:39:30 +0000
-Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
+	id 1xEhwI-00000003fh5-1cIM;
+	Thu, 08 Oct 2026 06:49:14 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEZMG-00000003Cng-10zD
+	id 1xEhwF-00000003ffq-1ygj
 	for ath12k@lists.infradead.org;
-	Wed, 07 Oct 2026 21:39:29 +0000
-Received: by mail-lj1-x234.google.com with SMTP id 38308e7fff4ca-3a777d4f321so20422751fa.0
-        for <ath12k@lists.infradead.org>; Wed, 07 Oct 2026 14:39:27 -0700 (PDT)
+	Thu, 08 Oct 2026 06:49:12 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6984CKMV1435328
+	for <ath12k@lists.infradead.org>; Thu, 8 Oct 2026 06:49:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	/thxqmSGXCGdxA0ka/F92mAeNv7Z/Yh5f4+3MKsC4Es=; b=Kc6kdFcN81smkTc5
+	skQNvg0P4jBmpKtFgj3UYdoG7PF8j4K9I0mNYgd9FDGK9SsaHCpTlX063CSLTcfY
+	rTsBJLTroHIUL+yvDjSK/BG1DF4bPMWUpiLo256r2FvBuLNxkg4M/uVZEO76GZOx
+	sNdNLiISe+cRJhFLWeBCUdQqeeHsjxah/7kpxa6bxta9bc071wNYE+ceboxqu5zS
+	XGMfYsMCswnzJd/4djH2ZZkwkqKRGRrOI2svWGTS2riZB0PnIc40sTuCefyakSUo
+	aNUNVpTDvAO5Wvho69fMa9LrzwHtD+i7lJfTgmNLyMx9niy07urjSrcCqGEPrp0A
+	cCnHmA==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h5xe3hmm9-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 08 Oct 2026 06:49:09 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2df8484f12cso52366455ad.3
+        for <ath12k@lists.infradead.org>; Wed, 07 Oct 2026 23:49:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791409166; x=1792013966; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=nbFKDiOR41JSs82+WBXfytOmE7iZvhjEFmB4K0h8AvM=;
-        b=LqHCLkjzJxyP5m1UBznsepTiauVtihRoMB/gjoic6dNJwD5hF2P/2aa9WY3wIualM5
-         GMeCoZe92O04EICi/rN/f8aAL4xBtvqb/JJotDilKrj+/1wO6/G4Q4ZaFKBnoaqHfDw9
-         hyEJUI7yEcNe8QDXXLFrKOOpgmnaL1JsU3z4HSyFNrQoAgEAMwNi62mIiI4WKJYwW3Og
-         uqv8U/Ayt1r8IpKUuzEvSkj0pBXUei9Y0/gEyD+ARdi3LgUKr2TBSFTnEUPdrz7kNeFO
-         d2N0FGaj1KehtMDTjgRQwkvlt44rIdLBrbj7Sdo/T4Lf5jvjI8N4WeAUFFcJN85ScY61
-         CuEA==
+        d=oss.qualcomm.com; s=google; t=1791442148; x=1792046948; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=/thxqmSGXCGdxA0ka/F92mAeNv7Z/Yh5f4+3MKsC4Es=;
+        b=Zc7B1zyPOpmRZmC37vPhVdrpDLPgIA/DaTlSL6DkSKlLzyr5R8HkzK2TuIFucndX3o
+         NSpdXgZf3wcUdUDNm6UB8E0TJieDIk+944E3M9KJ8jjVcbVOQwvK1cry/rmUh/iWXuY9
+         nzcX2/CFPuMLZvSuokDfbguCF8rQIAPjug1Undva5GUC+DWevO72nB/C91AvYWBB/DRx
+         SDMF4m4HE0ly899JzEOnRd5L8MRakTJ+ScqrfG3Djvxwm3Sid0o/D9X0/ej4RtFAIy4R
+         uVG0jmAps8+h9uVNLA+ZpsOI7k5HRMotEnnPWJQrBpq60GBIUa8uJfG0u28nOr/SWQjG
+         SxKg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791409166; x=1792013966;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=nbFKDiOR41JSs82+WBXfytOmE7iZvhjEFmB4K0h8AvM=;
-        b=b8fAyIR0mpt2NvpDshUCIm1q0Pial6QRCGgbswrF38hXoeTJNW0w0FhIre+RiXqqKS
-         PUVCUMqppL1tml6hTX44DsbEMQjGkatpYm8eyWWgcAzE8756MXU3EBmvHPXQMJIUtZri
-         JHlx1ai6xNuLoKD6n2EDOqyn3GEP+uaiGCiNV9YA35bP/bKLihYMakZSiq3mkEHLCAkq
-         oFOL7Oa+5EyjQtyFhtEkcR95T1TgLLllc5w+I4gydIf4NFdxEHd3L29LOx7N2g2qr6im
-         J0KV1JW9aX9dcyl/DDW+SSbRX2bfD4ZODQlvGGJglex3h7EQJ3m2dtN2mr5RcuH+NVMc
-         wIZw==
-X-Gm-Message-State: AFq9FYLJcdpcLmm8d8rwfirqhkQ0G0BpW56iNRjg16qGW67wXI2vBNS6
-	ZYJQ+/VLIP45mjPAgnJIo6HAr6IHN741wh11paMvfMlYvY5hlNtW/uwJotYKcV3REWqmL3ejrJQ
-	=
-X-Gm-Gg: AYBFou3jtQ2LWW0pcVrZOkcN8a8nMm6wE+pICSzWQVReGmHeAncjt1U/HaL2YlQikBC
-	IbMMWVzh4IFZ7Xb4mrL2pWXiBnNmGBTX9kiLWrRx9rH8eifJ6C4jGJMb3gMHxERZ2FXCtAHJL8w
-	ii59D0FkimDWD1b9pb+GKjV5+OEi1UK2kCBSJrrvGs0eSaJNT38aFE4gs0FVjcYKKC1hxe/KBr4
-	wAWUiweVf23BMi3eSBCkCHoycJ4g9wazI5xtpNnz+4kQX8Waj4kBpZHiqHoLCDSDP0gkvIdUATU
-	YxBIhl9yP51vu5Zr/j/nUEAHczKPqLymi6s+4yCIjRuhzG38LyHgGyKvvrvEojmLgGXhOfx6i70
-	tvrk4Pp/7IKRZ01WcxpwntWimAUySaWgFFrLYF33Ww9AcO6YjElDa6kPF71lo2Wdt+S+2wPZPTQ
-	OlKHb55k9HvWYZpBIQ5fpKUPNF0/P1Ccf3POEwz0non8938IRbVget7TzphlOxrX6Xk/Qt2q99e
-	QE=
-X-Received: by 2002:a2e:bc2a:0:b0:3a3:74b7:fc03 with SMTP id 38308e7fff4ca-3a9ac61053cmr3436821fa.15.1791409165827;
-        Wed, 07 Oct 2026 14:39:25 -0700 (PDT)
-Received: from Quarx2k-PC.lan ([92.124.138.168])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3a9ae563df4sm1241411fa.30.2026.10.07.14.39.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 07 Oct 2026 14:39:24 -0700 (PDT)
-From: Nikolai Semendiaev <agent00791@gmail.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-	jjohnson@kernel.org,
-	wabsie@gmail.com
-Subject: [PATCH v2 2/2] wifi: ath12k: use private page-frag caches for RXDMA rings
-Date: Thu,  8 Oct 2026 03:38:29 +0600
-Message-ID: <bd52182ca4916b55632a710be2f5c9cfd25f07a2.1791408913.git.agent00791@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <cover.1791408913.git.agent00791@gmail.com>
-References: <cover.1791408913.git.agent00791@gmail.com>
+        d=1e100.net; s=20260707; t=1791442148; x=1792046948;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=/thxqmSGXCGdxA0ka/F92mAeNv7Z/Yh5f4+3MKsC4Es=;
+        b=K7o99hZ8KgjLQbr9wTHxgLwKfYVZfeZ15NWCMdNM8ckbm01tsdRvSlabYOksIABh2m
+         ezIeM5RAIx2J77Ft1U+BkY3MHkDKMtsRRlBZChgE+DLYC5JQeCkyViK61+BwIrA7cCar
+         iPyecDQ8DvcZbDC5RTP8ADcG46KwL/0EoCAs/VVrq5owTlKyxSIzCiEBPcvKQ12yQOgU
+         D0B9S8Z/hAvpuSJJs0LIh73c51FuRgBUokQ8HX0KL3jXENJ0QagHND5aKpO8jUXQT2oq
+         6zg2Ls1b8mJhSIsF4nd9w9SVn/FLNTuTXC+iqV0AXRm2/efckB90m6gWQXXMo7wf6frI
+         xI7g==
+X-Forwarded-Encrypted: i=1; AKwUvBx3d4Edpg5la3sIIz+qRFJ2I57/g858rYEZF6eVhTJJp4lQOGFDCIh6Ymgmr6FrWjNlF6pw4EE=@lists.infradead.org
+X-Gm-Message-State: AFq9FYKFPinIYlUOrB1VI7otMUrKNT2+QRidDJZJQfl+syDiE2bGTqTf
+	KE5drE6dpj/+zAsMrumXxXpf0g66Mfuuu0Gx8rQrGqhuQj9wMVfZ7hUrEcTMHNsTEU7ZjG1POMb
+	IJ4HdBLzNkbJQ5Vb7/gmvCGxLshoy2/xH8oNy7opFPBvxl0BgfwGNoS7PjNiRO4zt
+X-Gm-Gg: AYBFou3FvTxXwqjbaSj9EhuCj8hWzh/r16FJLZ/+shva/VAG35Ov5rH4Osxx8HsfF2s
+	xr6HspxUXfY9WUKJS8hlHIwYEQav6r0LSR1Gecybk0VJ827gXhCISCav++rSLmXy9kDq6ckzovM
+	mX6yJZxgVQJqj/yLfeVzmA9l+DD+eL3ZwSyFlBtWrqm3NfsIKhrLmHvQgjYBilqX61qlMB6+73m
+	sLrSlniWg8thKKAKm279A9FtbdxRAz19cYhcJiff1SLE4EVMA1UaFn0CXLXSTb9DX5/bMYLfu3R
+	KoirH2zI4G7yPQsZ45gYvyFUQpJCNrB1AO5Naj/S7jn5G3WiyPeUuVgmJhgrMnhZ07WAgtLCTFK
+	lNr29RvhAZg6s8U54a2phuF6SrBQFVRIb2EHr8aSolik6u6psJyIWuaDR89f4POEv4k3yxOCQ
+X-Received: by 2002:a17:90b:3b4a:b0:3a4:adf9:5d38 with SMTP id 98e67ed59e1d1-3a89f674ce1mr3494810a91.4.1791442148482;
+        Wed, 07 Oct 2026 23:49:08 -0700 (PDT)
+X-Received: by 2002:a17:90b:3b4a:b0:3a4:adf9:5d38 with SMTP id 98e67ed59e1d1-3a89f674ce1mr3494804a91.4.1791442148021;
+        Wed, 07 Oct 2026 23:49:08 -0700 (PDT)
+Received: from [10.133.33.26] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3a9ff8d5896sm2860608a91.12.2026.10.07.23.49.04
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 07 Oct 2026 23:49:06 -0700 (PDT)
+Message-ID: <2689b288-05fa-4a51-be5d-c65fdee22ea6@oss.qualcomm.com>
+Date: Thu, 8 Oct 2026 14:49:03 +0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] wifi: ath12k: validate MAC/PHY capability count before
+ saving
+To: Jiale Yao <yaojiale02@163.com>, Jeff Johnson <jjohnson@kernel.org>,
+        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+        Baochen Qiang <quic_bqiang@quicinc.com>,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+Cc: stable@vger.kernel.org
+References: <20261003101944.596546-1-yaojiale02@163.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20261003101944.596546-1-yaojiale02@163.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA4MDAyNiBTYWx0ZWRfXziGQCZqeTukh
+ xcI2tR3zasVzsTb3CRy3gJPwDgsmLjvfZGW/Tea28HeSa+/cjGx1QPHFvBGrcjbmPTnBOr+MM3E
+ 2MUDUce/lfgsAZcoogT+jinxk0Gw794=
+X-Proofpoint-ORIG-GUID: 96QwrUrcz-cp-54WUHfM86X-60PzLQWu
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA4MDAyNiBTYWx0ZWRfX7uasB9iY21HX
+ 4k4l7VQcTNpXEiJkKmp8IflgjMK1LD8fiFh9QqKvXd6hBWU6xxapJC6tmSkGifMYoZ4wcF4x9sT
+ 9EHD6eUhJMZXZkivBGYIGAfej51T2KHXYzeX3EzuY+iWx2BFIIcK8H7oFpylH6TMxB1u6XY7BBn
+ JsIpERRXbriPY/GeHLMWzWuzR/CK1OHt5jw6355HL36HYjEaAEj9TzMWyMB13HnFLCKH7JQgJmS
+ wCnk5AYUbmwAJnma0zqsL4JFpTt4D74RJQxJA28KMEVAaEUFUea5eJPwZ+nQAEiJdxBHB5Dh730
+ 75nhHD0mSCrY5bzu2HX/WXcce8B601e0pW717exFvvgHjnZ5xbKgGL+cJrPffN8qJSrVaOvZNtS
+ kjMq/y7Vpbj3uAsJj0aBJjRn9rPFkpHIGUh7UWd21UQQkC6cXMoqNVs+y1LkaF9053tIpLtCjIj
+ HGqH2Z5SlHbz8l2E5OA==
+X-Authority-Analysis: v=2.4 cv=IIuXmQvG c=1 sm=1 tr=0 ts=6ac73ce5 cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=VwQbUJbxAAAA:8 a=Byx-y9mGAAAA:8 a=EUspDBNiAAAA:8 a=CgAF95LDYrE-zO_MwBMA:9
+ a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-GUID: 96QwrUrcz-cp-54WUHfM86X-60PzLQWu
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-08_02,2026-10-06_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 lowpriorityscore=0 impostorscore=0 bulkscore=0 adultscore=0
+ priorityscore=1501 malwarescore=0 suspectscore=0 clxscore=1015 phishscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2610020000 definitions=main-2610080026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261007_143928_372350_56319135 
-X-CRM114-Status: GOOD (  16.09  )
+X-CRM114-CacheID: sfid-20261007_234911_634638_219117EB 
+X-CRM114-Status: GOOD (  10.98  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,279 +151,28 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-RXDMA buffers allocated with dev_alloc_skb() share per-CPU page-fragment
-caches with other network users. Long-lived ring buffers can pin mostly
-unused 32-KiB backing pages as short-lived network allocations cycle
-through those caches. On QCN9274, OOM was observed during sustained WAN
-downloads when Ethernet and ath12k processing shared a CPU.
 
-Give regular and monitor RXDMA rings private page-fragment caches. The
-existing refill SRNG locks serialize cache access. Preserve NET_SKB_PAD,
-allocation flags and the DMA mapping and unmapping operations.
 
-Drain each monitor cache after releasing its IDR-owned buffers, and the
-regular RX cache after releasing its cookie-conversion descriptors.
-Disable external IRQ/NAPI processing before non-reset crash teardown;
-the reset worker already does so.
-
-Use skb_reserve() for DMA alignment because skb_pull() cannot advance
-an empty skb. Allocate extra alignment space for monitor status buffers
-to preserve at least RX_MON_STATUS_BUF_SIZE of DMA capacity.
-
-Based on Mark Ruvald Pedersen's ath11k per-ring page-fragment isolation.
-
-Link: https://lore.kernel.org/linux-wireless/20260719215817.2468580-4-wabsie@gmail.com/
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Nikolai Semendiaev <agent00791@gmail.com>
----
- drivers/net/wireless/ath/ath12k/core.c   |  3 ++
- drivers/net/wireless/ath/ath12k/dp.c     |  4 +++
- drivers/net/wireless/ath/ath12k/dp.h     |  3 ++
- drivers/net/wireless/ath/ath12k/dp_mon.c | 29 +++++++++------
- drivers/net/wireless/ath/ath12k/dp_rx.c  | 45 +++++++++++++++++++++---
- drivers/net/wireless/ath/ath12k/dp_rx.h  |  2 ++
- 6 files changed, 70 insertions(+), 16 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 0c72948f3..8216f344e 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1390,6 +1390,9 @@ static int ath12k_core_reconfigure_on_crash(struct ath12k_base *ab)
- {
- 	int ret, total_vdev;
- 
-+	if (!ab->is_reset)
-+		ath12k_hif_irq_disable(ab);
-+
- 	mutex_lock(&ab->core_lock);
- 	ath12k_link_sta_rhash_tbl_destroy(ab);
- 	ath12k_thermal_unregister(ab);
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 83f9edfab..2f45ade5a 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -4,6 +4,8 @@
-  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  */
- 
-+#include <linux/bug.h>
-+#include <linux/page_frag_cache.h>
- #include "core.h"
- #include "dp_tx.h"
- #include "hif.h"
-@@ -1020,6 +1022,8 @@ static void ath12k_dp_cc_cleanup(struct ath12k_base *ab)
- 
- 	spin_unlock_bh(&dp->rx_desc_lock);
- 
-+	page_frag_cache_drain(&dp->rx_refill_buf_ring.frag_cache);
-+
- 	/* TX Descriptor cleanup */
- 	for (i = 0; i < ATH12K_HW_MAX_QUEUES; i++) {
- 		spin_lock_bh(&dp->tx_desc_lock[i]);
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index c53eac20b..0b68bd8ba 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -11,6 +11,7 @@
- #include "hw.h"
- #include "dp_htt.h"
- #include "dp_cmn.h"
-+#include <linux/mm_types.h>
- #include <linux/rhashtable.h>
- 
- #define MAX_RXDMA_PER_PDEV     2
-@@ -51,6 +52,7 @@ struct dp_srng {
- 
- struct dp_rxdma_mon_ring {
- 	struct dp_srng refill_buf_ring;
-+	struct page_frag_cache frag_cache;
- 	struct idr bufs_idr;
- 	/* Protects bufs_idr */
- 	spinlock_t idr_lock;
-@@ -59,6 +61,7 @@ struct dp_rxdma_mon_ring {
- 
- struct dp_rxdma_ring {
- 	struct dp_srng refill_buf_ring;
-+	struct page_frag_cache frag_cache;
- 	int bufs_max;
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 709507d44..8b2b81b46 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -5,6 +5,7 @@
-  */
- 
- #include "dp_mon.h"
-+#include "dp_rx.h"
- #include "debug.h"
- #include "dp_tx.h"
- #include "peer.h"
-@@ -44,15 +45,17 @@ struct sk_buff
- 	struct sk_buff *skb;
- 	dma_addr_t paddr;
- 
--	skb = dev_alloc_skb(RX_MON_STATUS_BUF_SIZE);
-+	skb = ath12k_dp_rx_alloc_skb(&rx_ring->frag_cache,
-+				     RX_MON_STATUS_BUF_SIZE +
-+				     RX_MON_STATUS_BUF_ALIGN);
- 
- 	if (!skb)
- 		goto fail_alloc_skb;
- 
- 	if (!IS_ALIGNED((unsigned long)skb->data,
- 			RX_MON_STATUS_BUF_ALIGN)) {
--		skb_pull(skb, PTR_ALIGN(skb->data, RX_MON_STATUS_BUF_ALIGN) -
--			 skb->data);
-+		skb_reserve(skb, PTR_ALIGN(skb->data, RX_MON_STATUS_BUF_ALIGN) -
-+			    skb->data);
- 	}
- 
- 	paddr = dma_map_single(ab->dev, skb->data,
-@@ -598,14 +601,16 @@ int ath12k_dp_mon_buf_replenish(struct ath12k_base *ab,
- 	ath12k_hal_srng_access_begin(ab, srng);
- 
- 	while (req_entries > 0) {
--		skb = dev_alloc_skb(DP_RX_BUFFER_SIZE + DP_RX_BUFFER_ALIGN_SIZE);
-+		skb = ath12k_dp_rx_alloc_skb(&buf_ring->frag_cache,
-+					     DP_RX_BUFFER_SIZE +
-+					     DP_RX_BUFFER_ALIGN_SIZE);
- 		if (unlikely(!skb))
- 			goto fail_alloc_skb;
- 
- 		if (!IS_ALIGNED((unsigned long)skb->data, DP_RX_BUFFER_ALIGN_SIZE)) {
--			skb_pull(skb,
--				 PTR_ALIGN(skb->data, DP_RX_BUFFER_ALIGN_SIZE) -
--				 skb->data);
-+			skb_reserve(skb,
-+				    PTR_ALIGN(skb->data, DP_RX_BUFFER_ALIGN_SIZE) -
-+				    skb->data);
- 		}
- 
- 		paddr = dma_map_single(ab->dev, skb->data,
-@@ -687,15 +692,17 @@ int ath12k_dp_mon_status_bufs_replenish(struct ath12k_base *ab,
- 	num_remain = req_entries;
- 
- 	while (num_remain > 0) {
--		skb = dev_alloc_skb(RX_MON_STATUS_BUF_SIZE);
-+		skb = ath12k_dp_rx_alloc_skb(&rx_ring->frag_cache,
-+					     RX_MON_STATUS_BUF_SIZE +
-+					     RX_MON_STATUS_BUF_ALIGN);
- 		if (!skb)
- 			break;
- 
- 		if (!IS_ALIGNED((unsigned long)skb->data,
- 				RX_MON_STATUS_BUF_ALIGN)) {
--			skb_pull(skb,
--				 PTR_ALIGN(skb->data, RX_MON_STATUS_BUF_ALIGN) -
--				 skb->data);
-+			skb_reserve(skb,
-+				    PTR_ALIGN(skb->data, RX_MON_STATUS_BUF_ALIGN) -
-+				    skb->data);
- 		}
- 
- 		paddr = dma_map_single(ab->dev, skb->data,
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index cfaf26ae2..a0ea0d51e 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -5,9 +5,12 @@
-  */
- 
- #include <linux/fips.h>
-+#include <linux/gfp.h>
- #include <linux/ieee80211.h>
- #include <linux/kernel.h>
-+#include <linux/page_frag_cache.h>
- #include <linux/skbuff.h>
-+#include <net/sock.h>
- #include "core.h"
- #include "debug.h"
- #include "hw.h"
-@@ -68,6 +71,35 @@ static void ath12k_dp_rx_enqueue_free(struct ath12k_dp *dp,
- 	spin_unlock_bh(&dp->rx_desc_lock);
- }
- 
-+struct sk_buff *ath12k_dp_rx_alloc_skb(struct page_frag_cache *cache,
-+				       unsigned int len)
-+{
-+	gfp_t gfp_mask = GFP_ATOMIC | __GFP_NOWARN;
-+	struct sk_buff *skb;
-+	void *data;
-+
-+	len += NET_SKB_PAD;
-+	len = SKB_HEAD_ALIGN(len);
-+
-+	if (sk_memalloc_socks())
-+		gfp_mask |= __GFP_MEMALLOC;
-+
-+	/* Refill paths serialize the per-ring cache with the SRNG lock. */
-+	data = page_frag_alloc(cache, len, gfp_mask);
-+	if (!data)
-+		return NULL;
-+
-+	skb = build_skb(data, len);
-+	if (!skb) {
-+		page_frag_free(data);
-+		return NULL;
-+	}
-+
-+	skb_reserve(skb, NET_SKB_PAD);
-+
-+	return skb;
-+}
-+
- /* Returns number of Rx buffers replenished */
- int ath12k_dp_rx_bufs_replenish(struct ath12k_dp *dp,
- 				struct dp_rxdma_ring *rx_ring,
-@@ -114,16 +146,17 @@ int ath12k_dp_rx_bufs_replenish(struct ath12k_dp *dp,
- 	}
- 
- 	while (num_remain > 0) {
--		skb = dev_alloc_skb(DP_RX_BUFFER_SIZE +
--				    DP_RX_BUFFER_ALIGN_SIZE);
-+		skb = ath12k_dp_rx_alloc_skb(&rx_ring->frag_cache,
-+					     DP_RX_BUFFER_SIZE +
-+					     DP_RX_BUFFER_ALIGN_SIZE);
- 		if (!skb)
- 			break;
- 
- 		if (!IS_ALIGNED((unsigned long)skb->data,
- 				DP_RX_BUFFER_ALIGN_SIZE)) {
--			skb_pull(skb,
--				 PTR_ALIGN(skb->data, DP_RX_BUFFER_ALIGN_SIZE) -
--				 skb->data);
-+			skb_reserve(skb,
-+				    PTR_ALIGN(skb->data, DP_RX_BUFFER_ALIGN_SIZE) -
-+				    skb->data);
- 		}
- 
- 		paddr = dma_map_single(dp->dev, skb->data,
-@@ -193,6 +226,8 @@ static int ath12k_dp_rxdma_mon_buf_ring_free(struct ath12k_base *ab,
- 	idr_destroy(&rx_ring->bufs_idr);
- 	spin_unlock_bh(&rx_ring->idr_lock);
- 
-+	page_frag_cache_drain(&rx_ring->frag_cache);
-+
- 	return 0;
- }
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.h b/drivers/net/wireless/ath/ath12k/dp_rx.h
-index 827004745..99b989b69 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.h
-@@ -232,6 +232,8 @@ int ath12k_dp_rx_bufs_replenish(struct ath12k_dp *dp,
- 				struct dp_rxdma_ring *rx_ring,
- 				struct list_head *used_list,
- 				int req_entries);
-+struct sk_buff *ath12k_dp_rx_alloc_skb(struct page_frag_cache *cache,
-+				       unsigned int len);
- int ath12k_dp_rx_pdev_mon_attach(struct ath12k *ar);
- int ath12k_dp_rx_peer_frag_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_id);
- 
--- 
-2.43.0
-
+On 10/3/2026 6:19 PM, Jiale Yao wrote:
+> Firmware supplies the hardware mode count and the PHY bitmap for each
+> mode in the service-ready-ext event. ath12k_wmi_save_all_mac_phy_info()
+> uses those bitmaps to populate svc_ext_info->mac_phy_info, but the
+> destination is a fixed array of ATH12K_MAX_MAC_PHY_CAP elements.
+> 
+> If the total number of advertised PHY entries exceeds that limit, the
+> loop writes beyond mac_phy_info and corrupts adjacent memory.
+> 
+> ath12k_wmi_mac_phy_caps_parse() allocates the source array for
+> tot_phy_id entries and rejects excess capability TLVs. However, if the
+> event contains fewer capability TLVs than advertised, the remaining
+> allocated entries stay zeroed and are saved as invalid PHY information.
+> 
+> After parsing the MAC/PHY capability TLVs, validate the destination
+> capacity and reject an incomplete capability list before saving any
+> entries.
+> 
+> Fixes: 062ade23991e ("wifi: ath12k: parse and save hardware mode info from WMI_SERVICE_READY_EXT_EVENTID event for later use")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Jiale Yao <yaojiale02@163.com>
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
