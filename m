@@ -4,137 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 020E5CA6012
-	for <ath12k@archiver.kernel.org>; Fri,  9 Oct 2026 09:36:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6A69CA6019
+	for <ath12k@archiver.kernel.org>; Fri,  9 Oct 2026 09:55:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=85qlNPdEkcYw8yOFY5LRdai4t8d5MyM6OvjxC0Qsdug=; b=XzBhgWWxIXSFJAjQznp/fG8Fgw
-	iyFnVcykMcbtamTuOTpzcYHZ+viNSw93ly1Yy99QtaxwU13ek7yNDWeFLp2k2x2gvyjR8k52jG2fK
-	UqKr1g7kPjonSAxLZNlcKIZvR63gLIgBaiv0paoNovaMLhiTIX/RWXgEpksUA555gTKKEab9JkefM
-	wwt+rCEWexcfa2C2hyES5wZsZHpFM70vfbR1CmRSNiazTYVYwrSvy9ql7wpHPOsOIqaDtkiW5HVKW
-	+gHvINnozFYK2mMqcDsMU/fG5faEPd2idtcun5rupV0U+WLQbSru/9uXrnFBB+BIg3jj2hU+IrJkJ
-	sGnGnb4Q==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=6kyBbhVI0aFnvZ+fhobKvUuLqPpG3VNsDxhNg/2+xIc=; b=d3fwSe5vNsEJ6SSWi5kKCaNJ2+
+	AL4PC4n3L9IfWKGqYD7DxrrtXrWfjQMcqtgMBfQPkyepXN6s1WLRPLVl6GZuCORmCO5SL5v71gpU1
+	pbQJ2V/7rpXBTujiQr0ngcg9SSeV4k2qFExeEHo6EqHQ1UZYdE51drxP9nGQEGdYYsuUOXEWIsYoR
+	SXmRfGHrct6wQKE1D/ZlYZyeQZjWOiCdvjSuutP8z//z1qfl3hjPN3hrhRbJTuSgiyRs+LoVfWte8
+	mTYZHLeQYs1jXHbSwfezthp/dDWYvIsZBMQD7yg6WK3yFiEADvyRuUPkvT0X5y9PlrjdpYU2iV6Be
+	RZB+N1XQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xF71R-00000005vuF-1SOG;
-	Fri, 09 Oct 2026 09:36:13 +0000
+	id 1xF7KR-00000005xX3-1GIZ;
+	Fri, 09 Oct 2026 09:55:51 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xF71O-00000005vtt-2XqX
+	id 1xF7KM-00000005xWd-31lH
 	for ath12k@lists.infradead.org;
-	Fri, 09 Oct 2026 09:36:12 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6998KIO8404357
-	for <ath12k@lists.infradead.org>; Fri, 9 Oct 2026 09:36:09 GMT
+	Fri, 09 Oct 2026 09:55:47 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6998KL132369617
+	for <ath12k@lists.infradead.org>; Fri, 9 Oct 2026 09:55:45 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	85qlNPdEkcYw8yOFY5LRdai4t8d5MyM6OvjxC0Qsdug=; b=eu8AIJwPvLjTmR6M
-	xNWZl5w6mNhU0iZInYiIkylr0WMcnC+5+9zvY+it1UI4VbBUQ9lHllZRb2LJdFrg
-	DgQrijrOb/+HAq+xejf0B1tfXiRmzW4VjRalGTbf+lIfSwG9eXpVkTO4k5JFwMGv
-	PWTkfO4AdF/fiINg2kaiGoLdqIVLX7yB+6ldbp9e4QxMDNFejjfMObfVHFX6kRGt
-	oXg/H061y7Ht7YieKyCBkAWwaz/OPfM/e/Ug9Mc9mGHv5hB2C3hFJw0F57e6WWCo
-	hsMhSt1d4jAtAlVJdloeq8pNZNDJeiDFIXJOFGPrlLNc64qh02JCcgSjqCXTYfm4
-	n+KIeQ==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h6fxk2xp4-1
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=6kyBbhVI0aFnvZ+fhobKvUuLqPpG3VNsDxh
+	Ng/2+xIc=; b=ikkLQRZVgvtnLWpgh+IOfNYp1bTk14EFVFvKStYQ7OUMoitBUOP
+	/G7vspCJAGQgKHVt7PbkGKZU6dDhznQyZ1NzmnPWhjyN4eW474j9bodo2o1YdN/C
+	MkMZAsgzedrZWvtAPKJO1nknAOae+1iAnzU1fosM9HFAjgssR6Yxo0zbj/RAARUA
+	NqsSfLau5KDHmz3B5KOfkoOu6aXW0SLCvFxiDJ15pukjNzmNFcn0paAxRETmg76o
+	/JDRO76c09YLKBEaqa6b7klvXvUkcEOliJt356hjXzPNN/EOCqSiqQGHNKaInFB4
+	3TEx3XvE/A0KPwqtWLneMAAC37YNMa1DU+Q==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h6fxwb0kb-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 09 Oct 2026 09:36:09 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2cec4226c70so60611595ad.1
-        for <ath12k@lists.infradead.org>; Fri, 09 Oct 2026 02:36:09 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 09 Oct 2026 09:55:45 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-30bcb065bfdso11959313eec.0
+        for <ath12k@lists.infradead.org>; Fri, 09 Oct 2026 02:55:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1791538569; x=1792143369; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=85qlNPdEkcYw8yOFY5LRdai4t8d5MyM6OvjxC0Qsdug=;
-        b=j0Wer4pTtHqVvW/ENu4MqSwKVQhiGAiZ59kb6XB+K+x/Bqu4NPDgWHqGCQI8l4501m
-         LUgOJJM3mbv429qi4Dm9Kfi4NF6M2WZPetMp/2Z9zf0BHvAud1RwwYJpx3IvuB7Y9RM+
-         GyeVZx4lMFy1J24WU22SyG3eRzq73pQwNpVge6IPcjqU0MYwbG7dj9/saLQZ8axgb7Dh
-         RIAg0amd8h+Afnn5myPzJNb07CeJ9XmTajGpHwP6nACsYhS8ZwlPuc0wJ97AbDHl49uj
-         zWJXQ+v+IlF5UNP2gDK32CwVTZXNEBEjXgiQqmePZ5V5k7KFQCgtxOZU4ch/kBVx4vhw
-         /xyw==
+        d=oss.qualcomm.com; s=google; t=1791539745; x=1792144545; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=6kyBbhVI0aFnvZ+fhobKvUuLqPpG3VNsDxhNg/2+xIc=;
+        b=eswA2c6bGNsY6KaKsl9BmXhELcRifMojFOm1UVzaIrc86gkRAZFCh5gm7sBM5Ki3Yb
+         y2P+HMuTvo9iE7RC2hLOODaAW70t9pq5YqiOu6yquKrNOMuJqo/dqkPV4IFPu4OfcaOX
+         7N6aaxUy6/xPDzHlEivUHK5rbV4mloatW7AcwYvnTOd6dC9e95X9kJVeRc2flVH/pJLm
+         fdJyHGA1ZizqQRuJfLcVfrPH49hq16HIaXcr0Wwf2u7gJEgBndfuCo+nNPq1ECGRWQFf
+         r19wiy8NLYPQKXM8TpejP8PwsZvudch/wqk0s4tQEx+/dzk03xZE/YpMDsJdB65beN7o
+         1DYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791538569; x=1792143369;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20260707; t=1791539745; x=1792144545;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=85qlNPdEkcYw8yOFY5LRdai4t8d5MyM6OvjxC0Qsdug=;
-        b=RZXxBq9mM4vrx1Sx+GhPMmZgz7g3Nd9ybxQ0r2+imu4wHtDlnBWL7WZ3FvMy5TYA36
-         qBM05wwN+cSsNdRigrR6gVBcsexrmVahjHeqJyLwiXBZ84qK3ta9YGdPVb61elHwxoup
-         zllwWjG+4G0o5EpdECTgLHJ+ODcim0xw4JO/+XqE72mugp/JIJ1sAXhj4pSucNPCu0JN
-         +lg6mMV/IPPOpmKnBvx8GK1G193Ieyz+Cb7YAIxqiN+L52W8Hr1d11AGNhEzmCbyhM1b
-         4B1z1mTw9aT9cbVrFbjQWeb9wG5xwurYsjuy+pBBLQ5ho2upLpSvUJ5EWxjbgfZxUN4k
-         AyFA==
-X-Forwarded-Encrypted: i=1; AKwUvBykw0fCCHfx0uS8Vpx5uSJ/l8HKF0Efjf2s57ZqQWQaFLTjDV1HPni1XHcxuAQeJiAB0XhPfa0=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLG/oTMnh/S4qbE/t8ezv0E4OAn/2quJeS5hUhU0PFqOPqpsPvh
-	FLk/6ZvyQhr8crTN7BTywNMLwe726SgGefRGyxcfJCuDPkckO89BrpBPIZqk25IC4sxMb2redkr
-	+Maned2nGN0Sy2574Hzod5WwtHVH+KSwJ3vJT1ylFqZRxmHqwJkQaXV3ke36OHlDZ
-X-Gm-Gg: AYBFou3ZCPYds1OA2zqP9UwwLH1jEybnp08UmPYXAaAqE2fw6p2qNASq9DiluYgsZW3
-	e1P4kZfVnVUUtO+g6mf/RtADA4d6rF+aJdu1Q4ZSclmUtdCfS2tqv8mZKGavIt826Y4NCdSGboz
-	HIEGjxzLi+CpYvgt70mSrFtb9tv6y+WVLg0MY1HJJaCJMnFFaU4NUAOh2Q5iJhMPAi8DnvTFK7A
-	uI3gfI/IO+bDIUnPYNoUJO8BP+58dWTPsqcG75KgJhYfUz+3MUxe4SWQq0QUN28WRTMOOERWnUR
-	winJ5wbMdqqa/sdORYWd2Nf9jnduRbuyspDljqnB04Y5cF5rMz9gVpe8jFEgnRvqR40rMSrMzio
-	+NzfgMFwL65xZXR9iKYoew1k0mYzYKjoX0Q==
-X-Received: by 2002:a17:902:e545:b0:2e7:f0ba:244d with SMTP id d9443c01a7336-2e842bcd14dmr10477875ad.36.1791538568911;
-        Fri, 09 Oct 2026 02:36:08 -0700 (PDT)
-X-Received: by 2002:a17:902:e545:b0:2e7:f0ba:244d with SMTP id d9443c01a7336-2e842bcd14dmr10477695ad.36.1791538568346;
-        Fri, 09 Oct 2026 02:36:08 -0700 (PDT)
-Received: from [10.152.202.233] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e8421a1de9sm5869695ad.26.2026.10.09.02.36.06
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 09 Oct 2026 02:36:07 -0700 (PDT)
-Message-ID: <443818dc-5555-4f65-88d3-6876505baae6@oss.qualcomm.com>
-Date: Fri, 9 Oct 2026 15:06:04 +0530
+        bh=6kyBbhVI0aFnvZ+fhobKvUuLqPpG3VNsDxhNg/2+xIc=;
+        b=psBBeRWGF2vl7a+QC+v63szEjQgvCpz61CsGVG4B7sV5EJ3WKacwyxhgoIyrXpkjkU
+         9Mv5CPpIShtXTV78fV8dVgl/m5ltraDGb/dctHTB4BpRKKL1jPpKhfij4guNshEzoyqU
+         dRpskaWPZIcH3k3nki4jNgro6exTDtQfyoqdpZwEwYM3b94BBPuCex8VTz3I9mXqfl8p
+         ZCIlbB7B8M3znedP9555kIcZcghq+kcBoU2UGOU8GWtdtuoowEnKWiuaNLIhr30WhzDF
+         srbr9C5gpvYK8kISsLYSbUcQn4bRI5DME7vzWPBj1b46sN7lXhJ7Y49J40bNTuifRs3t
+         YoMw==
+X-Gm-Message-State: AFuF++nXMIWI+SOWSp3kiLHwko9J7WJtDT+wOffWEwxVdxJHzPysvI2g
+	Bwzzln6jaKix/Hjwa1qwdxGdAIyIk6zalDGFprjkQb4cjVFofqCLz1QTjZ8gyu16KlO3HEpiAZ5
+	JlnpCtquy7J9nVwMgkaTQuKuT0c7Ln6ebNTHPQupi0jBfOsfEtGQ2nSHlr8EB0QtgFBq+angr
+X-Gm-Gg: AYBFou2oAs5kjMRsC6KJeWWv7Yay9vYn8hotjmTpB7vxL2lqlzOeoxyd4akKbXsdnXc
+	eQhX36k9+NLEqZoz96LlBVGlkoGsmQIyh5Yafs4qa8desJw/J6/eTH4HjtIMfruF+5wJx1POihR
+	LzRxvESmToo9Ls3+nZt6rgXkKK285V7Y0NbNGl3q469HlJE2AZQUeTIgWnvjNZzs/M18D168dV1
+	Xp+g0HfhzT9cR5duoLj1UR0+fIvb3NuRYlkwxbn6V6pRRRwuYWPoazcIhZGK0ZSKTtGVSzM8ve+
+	V0AFAEipTgLzLz42PhBld0sBStLYEv99EaXkTB/ioQ3dBnscor4ils0XYV88uwqbikbZrw5UaP4
+	ABc7ZZX4TodzH1FzU6WN1IdZKWrJ9GxDOdkd6FwpTYa4sulLq7F7dVVDC
+X-Received: by 2002:a05:7022:1581:b0:14a:583a:8ddb with SMTP id a92af1059eb24-16a6043cbf1mr2238659c88.31.1791539744540;
+        Fri, 09 Oct 2026 02:55:44 -0700 (PDT)
+X-Received: by 2002:a05:7022:1581:b0:14a:583a:8ddb with SMTP id a92af1059eb24-16a6043cbf1mr2238612c88.31.1791539743734;
+        Fri, 09 Oct 2026 02:55:43 -0700 (PDT)
+Received: from sdciot-sh03-lnx.qualcomm.com (i-global052.qualcomm.com. [199.106.103.52])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-169a32eb7ebsm6479076c88.12.2026.10.09.02.55.40
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 09 Oct 2026 02:55:43 -0700 (PDT)
+From: Gaole Zhang <gaole.zhang@oss.qualcomm.com>
+To: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+        jeff.johnson@oss.qualcomm.com, baochen.qiang@oss.qualcomm.com,
+        rameshkumar.sundaram@oss.qualcomm.com
+Cc: gaole.zhang@oss.qualcomm.com, gaolez@qti.qualcomm.com,
+        miaoqing.pan@oss.qualcomm.com, hangtian.zhu@oss.qualcomm.com
+Subject: [PATCH v3 ath-next] wifi: ath12k: Add EHT capabilities to scan probe frame
+Date: Fri,  9 Oct 2026 17:55:38 +0800
+Message-Id: <20261009095538.2718979-1-gaole.zhang@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: ath12k: inconsistent regdb for QCN9274
-To: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org,
-        linux-firmware@kernel.org
-References: <ap-vTGZiqGaodxKE@FUE-ALEWI-WINX>
- <70e4a7fa-6595-46da-8465-38906a41a6f3@oss.qualcomm.com>
- <art3FqNHatt7zjLZ@FUE-ALEWI-WINX>
-Content-Language: en-US
-From: Thirusenthil Kumaran J <thirusenthil.j@oss.qualcomm.com>
-In-Reply-To: <art3FqNHatt7zjLZ@FUE-ALEWI-WINX>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=fKesTpae c=1 sm=1 tr=0 ts=6ac8b589 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
- a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=KmqpvK4wijeBTWolkK4A:9 a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-GUID: ChmOGax2IabvGqwgCEqMocqGPmsII_TS
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA5MDAzOCBTYWx0ZWRfXx/kE59emEJw9
- X3jqwXgsOmRlV2okrb9qt4NCYCTJ46dhRraW1bP+gi4/ocP0nYlDLMYX3zchwpNvlB0/6SfIW6a
- LFag3Yj2ImZQTHXYqg6SqTxLcKEK/xs=
-X-Proofpoint-ORIG-GUID: ChmOGax2IabvGqwgCEqMocqGPmsII_TS
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA5MDAzOCBTYWx0ZWRfX4nfEKmCfPGio
- loT8LcicMzgPP8kE2m66unOktUTfXPi5L2bq12b+ge7d9C96VojG59N5iwBA6RbtBprPKDndPdO
- 4Ai+fSj1ycCc0Q9FZJWY7/FspjiDYpQEyzepYwncTr3hpF+3ZmLbkzxhOToTMrlh+DQxt4UuewO
- cJqCYzXfJo76Qm4Bo4QjHlnZYaZgCMHiCf54zaWWi8ibtW3/y3zb+BtOFH30pJyaBkq4Sw+AXuG
- eM8KvykAwiFKrI4xZBI0h1dPfiIObWVmOJ7zpIVdewLxPtyQp0NbugHdev04VDoAZAHyVW3+FdY
- o2adrhNPzrASmS9+N+kKmfvxt6is+6AMTi+99nSzEOsdUzTiZQMRWGNjLntYNXdsVcCyPi2RgjE
- SkNtq+1LCjl95+YUfO5m/c/cDM0AcjCxF0OZbLcqjQQOhLysMpNHJb5D7o4Gquq3j0sL2FWwf3H
- cpCAx2WTkF2fYeSryvA==
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA5MDAzOSBTYWx0ZWRfXz8VjYoggSF3P
+ yfzgYP017kS1/hS9m5X0Cd/vHgP4F4vOnDByt2RaFXjVJ7gPmIVC8GiVxEQZ3n8WBD9sZ0ZaK+M
+ y07ayEG2MQg0yA7WdFqDtHUdbLI2ewKRnscN9Vzu0QR+e7LdfxcB+K4s0x6yYpnl2uRwoOcVeLA
+ 5vh+/nwHJUzjhdnTFJWsYty/jDxO3+KhxY6fsBVppZAvdPWd9RE/kgLUH3zHjRW5kl4K/1j/5A1
+ 3H1wI9yBAuLkHuAuq8rjSli0QdZy5HC5uinyGbk5UfascfPSUVXyHkVBJIEHFHMOzBcxR8TOJeo
+ z+HI1rn0hMll1ot0nURuS53tDmf6yOHfDDdHnqQehZvXfgGycQeB5H339A/Mg3kvhoVBslRjt9+
+ 6DMWTGYS/XeGioGNpI+abWxldvggQYM3MWuCNZngWfjVUpFAwJbfLl8CtysGr9QCCcKzdMZEoW6
+ fywKf34nf+VEs6zP9mA==
+X-Proofpoint-GUID: Rw56Thn8n6DLo9SFEEsR7OJ1TvwxgUYo
+X-Authority-Analysis: v=2.4 cv=cMB1IVeN c=1 sm=1 tr=0 ts=6ac8ba21 cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
+ a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8
+ a=VPXuAqNVT2ewv9QJR4oA:9 a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA5MDAzOSBTYWx0ZWRfX1+juX1+lZs6s
+ cf7Q7l8JDow694lLQAskQx1jfNd+zI0ZpGLVtA5bKQHMpTqBkNRyZaThovT1IUtMGZRtkOezk00
+ Q9lBcQou8axTSvB/wrvk2QD4qsth3Lo=
+X-Proofpoint-ORIG-GUID: Rw56Thn8n6DLo9SFEEsR7OJ1TvwxgUYo
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-09_03,2026-10-08_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 malwarescore=0 clxscore=1015 suspectscore=0 adultscore=0
- priorityscore=1501 impostorscore=0 bulkscore=0 lowpriorityscore=0 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2610020000 definitions=main-2610090038
+ priorityscore=1501 suspectscore=0 spamscore=0 lowpriorityscore=0
+ malwarescore=0 adultscore=0 bulkscore=0 impostorscore=0 phishscore=0
+ clxscore=1015 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610020000
+ definitions=main-2610090039
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261009_023610_667386_E6D59A52 
-X-CRM114-Status: GOOD (  31.64  )
+X-CRM114-CacheID: sfid-20261009_025546_776279_1BB30B47 
+X-CRM114-Status: GOOD (  22.20  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,135 +141,279 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/29/2026 2:00 PM, Alexander Wilhelm wrote:
-> On Fri, Sep 25, 2026 at 01:36:39PM +0530, Thirusenthil Kumaran J wrote:
->> On 9/8/2026 12:16 PM, Alexander Wilhelm wrote:
->>>
->>> Hello Developers,
->>>
->>> I am using QCN9274 chipsets with the `ath12k` driver on my devices. As far as I
->>> can tell, the driver uses the regulatory database from the `board-2.bin` file.
->>> However, some country definitions do not appear to be fully implemented, as the
->>> values differ from those in Linux's standard `wireless-regdb` repository. I even
->>> downloaded the latest `linux-firmware-20260810.tar.xz` and do not see any
->>> related changes there.
->>>
->>> For example, when switching to DE, I see the following values:
->>> * Channels 52-64: 23 dBm; I would expect 20.0 dBm
->>> * Channels 100-140: 30.0 dBm; I would expect 26.0 dBm
->>> * Channels 144-173: (disabled); I would expect 13.0 dBm
->>>
->>> US also appears to be inconsistent:
->>> * Channels 36-48: 30.0 dBm; I would expect 23.0 dBm
->>> * Channels 169-173: (disabled); I would expect 30.0 dBm
->>>
->>> I am aware that `wireless-regdb` is intentionally restrictive in some cases. For
->>> example, there are rules where 26.0 dBm is used instead of 30.0 dBm because it
->>> is implicitly assumed that TPC is not supported. Therefore, some differences may
->>> be expected.
->>>
->>> However, the values above still appear to be incorrect. Could someone at
->>> Qualcomm please investigate this and fix the regulatory information if it is
->>> indeed wrong? If the current behavior is intentional, I would appreciate an
->>> explanation of how these limits are derived, as they do not seem to match either
->>> the `wireless-regdb` entries or the applicable regulatory requirements. Thank
->>> you in advance.
->>>
->>>
->>> Best regards
->>> Alexander Wilhelm
->>>
->>
->> Hi Alexander,
->>
->> Our internal regulatory team is reviewing the source and rationale for
->> these values. We would also like to confirm which BDF was selected on
->> your platform during boot.
-> 
-> Hi Thirusenthil,
-> 
-> Thank you for your response. I am using a WLE7002Exx cards from "Compex Systems"
-> and have also received the corresponding custom BDFs. I then added them to
-> board-2.bin using qca-swiss-army-knife. For the regdb, I am using the default
-> version that comes with the kernel (the one with ID 255).
-> 
->> Could you please share the following details from the affected platform?
->> - The exact platform/board model, or RDP number if applicable which is
->> used with the QCN9274.
->> - The complete dmesg output from the affected boot.
->>
->> In particular, please include the ath12k QMI target-capability messages
->> containing information similar to:
->>
->> chip_id, chip_family, board_id, soc_id, fw_version,
->>
->> These messages are printed from the 'ath12k_qmi_request_target_cap()'
->> function. They will help us identify the chipset, board ID, SoC, and
->> firmware version, and correlate the selected BDF with the regulatory data.
->>
->> For a quick filtered view, you may also run:
->>
->> dmesg | grep -i -E 'ath12k|board|bdf|chip_id|fw_version|fw_build|soc_id'
->>
->> With these details, we can verify whether the reported channels are
->> included in the selected BDF and continue investigating the regulatory
->> limits.
-> 
-> The wireless modules are running on our in-house board based on a PowerPC64
-> T1023 platform. I am using OpenWrt v25.12.5 with wireless driver backports from
-> v6.18.26. The board-2.bin currently originates from v6.12.94. The dmesg output
-> (without debug messages) is provided below:
-> 
->     user@host-A:~# logread -e ath12k
->     ath12k_pci 0001:01:00.0: BAR 0 [mem 0xc00000000-0xc001fffff 64bit]: assigned
->     ath12k_pci 0001:01:00.0: MSI vectors: 1
->     ath12k_pci 0001:01:00.0: Hardware name: qcn9274 hw2.0
->     ath12k_pci 0002:01:00.0: BAR 0 [mem 0xc10000000-0xc101fffff 64bit]: assigned
->     ath12k_pci 0002:01:00.0: MSI vectors: 1
->     ath12k_pci 0002:01:00.0: Hardware name: qcn9274 hw2.0
->     ath12k_pci 0001:01:00.0: qmi dma allocation failed (29360128 B type 1), will try later with small size
->     ath12k_pci 0001:01:00.0: memory type 10 not supported
->     ath12k_pci 0001:01:00.0: chip_id 0x0 chip_family 0xb board_id 0x1005 soc_id 0x401a2200
->     ath12k_pci 0001:01:00.0: fw_version 0x160484db fw_build_timestamp 2025-12-09 20:09 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
->     ath12k_pci 0002:01:00.0: qmi dma allocation failed (29360128 B type 1), will try later with small size
->     ath12k_pci 0002:01:00.0: memory type 10 not supported
->     ath12k_pci 0002:01:00.0: chip_id 0x0 chip_family 0xb board_id 0x1008 soc_id 0x401a2200
->     ath12k_pci 0002:01:00.0: fw_version 0x160484db fw_build_timestamp 2025-12-09 20:09 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
->     ath12k_pci 0001:01:00.0: leaving PCI ASPM disabled to avoid MHI M2 problems
->     debugfs: File 'ath12k' in directory 'phy0' already present!
->     ath12k_pci 0002:01:00.0: leaving PCI ASPM disabled to avoid MHI M2 problems
->     debugfs: File 'ath12k' in directory 'phy1' already present!
-> 
-> 
-> Best regards
-> Alexander Wilhelm
+ath12k hardware scan Probe Request frames do not include the EHT
+Capabilities element. Without this element, an AP cannot identify the
+STA as EHT-capable during active scanning and may omit EHT-related
+information from its Probe Response. This can result in incomplete scan
+information and prevent userspace from correctly determining the AP's
+EHT capabilities.
 
+For firmware to include the EHT Capabilities element in scan Probe
+Request frames, two conditions are required:
 
-Hi Alexander,
+  - The scan channel must have WMI_CHAN_INFO_ALLOW_EHT set, which allows
+    firmware to add the EHT Capabilities element to Probe Request frames.
+  - The EHT Capabilities element must be configured on the vdev through
+    WMI_VDEV_SET_IE_CMDID, so firmware can use it when building Probe
+    Request frames.
 
-Thank you for providing the platform details and dmesg output.
-The logs help us identify the two QCN9274 devices and their reported
-board IDs. They also confirm the firmware being used.
+Set WMI_CHAN_INFO_ALLOW_EHT for channels when 11be is supported by
+firmware and not disabled by ACPI. Also configure the EHT Capabilities
+element before each hardware scan when the element is present in the
+mac80211 scan IE buffer.
 
-As mentioned earlier, our internal regulatory team is checking the
-reported TX power restrictions against the regulatory database and
-reviewing the source and rationale for the DE and US entries.
+Firmware retains the configured element in the vdev context until it is
+replaced or the vdev is deleted. However, ath12k scans may either reuse
+an already started vdev or create a temporary scan vdev that is cleaned
+up after scan completion. Sending WMI_VDEV_SET_IE_CMDID for each scan
+request ensures correct behavior in both cases.
 
-Since you mentioned that you are using custom BDFs from Compex Systems
-and added them to board-2.bin, having the exact final board-2.bin or the
-corresponding custom BDF files would be very helpful. This would allow
-us to inspect the hardware-specific frequency and channel limits and
-rule out any issue specific to the custom BDF.
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 
-If possible, could you also let us know whether the same behavior is
-observed with the unmodified default BDF? If so, we can continue the
-analysis from our side without requiring the custom BDF.
+Signed-off-by: Gaole Zhang <gaole.zhang@oss.qualcomm.com>
+---
+v3:
+ - Make EHT Capabilities IE programming best-effort during hardware scan
+   setup. Log WMI_VDEV_SET_IE_CMDID failures and continue the scan instead
+   of aborting it.
+ - Move allow_eht next to the other allow_* channel capability flags in
+   struct ath12k_wmi_channel_arg.
 
-Please share the dmesg output from the default-BDF run as well,
-including the board_id and firmware-information messages.
+v2:
+ - Clarify the firmware requirements for adding the EHT Capabilities
+   element to scan Probe Request frames.
+ - Explain why the EHT Capabilities element is configured before each
+   hardware scan, covering both reused vdevs and temporary scan vdevs.
+ - No code changes.
 
-Best regards,
-Thirusenthil
+ drivers/net/wireless/ath/ath12k/core.h |  6 ++++
+ drivers/net/wireless/ath/ath12k/mac.c  | 27 ++++++++++++--
+ drivers/net/wireless/ath/ath12k/reg.c  |  4 +++
+ drivers/net/wireless/ath/ath12k/wmi.c  | 50 ++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h  | 21 +++++++++++
+ 5 files changed, 106 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index a98fc6e0699d..e7373a523dc3 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -1394,6 +1394,12 @@ static inline struct ath12k *ath12k_ah_to_ar(struct ath12k_hw *ah, u8 radio_idx)
+ 	return &ah->radio[radio_idx];
+ }
+ 
++static inline bool ath12k_is_11be_enabled(struct ath12k_base *ab)
++{
++	return test_bit(WMI_TLV_SERVICE_11BE, ab->wmi_ab.svc_map) &&
++	       !ath12k_acpi_get_disable_11be(ab);
++}
++
+ static inline struct ath12k_hw *ath12k_ar_to_ah(struct ath12k *ar)
+ {
+ 	return ar->ah;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index d4116ba0da08..37293083babe 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -5602,6 +5602,25 @@ ath12k_mac_find_link_id_by_ar(struct ath12k_vif *ahvif, struct ath12k *ar)
+ 	return ATH12K_FIRST_SCAN_LINK;
+ }
+ 
++static int ath12k_mac_set_scan_eht_cap_ie(struct ath12k *ar,
++					  struct ath12k_link_vif *arvif,
++					  const u8 *ies, size_t ies_len)
++{
++	const struct element *eht_cap;
++
++	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
++
++	eht_cap = cfg80211_find_ext_elem(WLAN_EID_EXT_EHT_CAPABILITY, ies,
++					 ies_len);
++	if (!eht_cap || eht_cap->datalen <= 1)
++		return 0;
++
++	return ath12k_wmi_vdev_set_ie(ar, arvif->vdev_id,
++				      WLAN_EID_EXTENSION,
++				      eht_cap->data, eht_cap->datalen,
++				      WMI_SET_VDEV_IE_BAND_ALL);
++}
++
+ static int ath12k_mac_initiate_hw_scan(struct ieee80211_hw *hw,
+ 				       struct ieee80211_vif *vif,
+ 				       struct ieee80211_scan_request *hw_req,
+@@ -5718,6 +5737,11 @@ static int ath12k_mac_initiate_hw_scan(struct ieee80211_hw *hw,
+ 			goto exit;
+ 		}
+ 		arg->extraie.len = req->ie_len;
++		ret = ath12k_mac_set_scan_eht_cap_ie(ar, arvif, req->ie,
++						     req->ie_len);
++		if (ret)
++			ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
++				   "failed to set eht cap ie, ret %d\n", ret);
+ 	}
+ 
+ 	if (req->n_ssids) {
+@@ -8983,8 +9007,7 @@ static void ath12k_mac_copy_eht_cap(struct ath12k *ar,
+ 
+ 	memset(eht_cap, 0, sizeof(struct ieee80211_sta_eht_cap));
+ 
+-	if (!(test_bit(WMI_TLV_SERVICE_11BE, ar->ab->wmi_ab.svc_map)) ||
+-	    ath12k_acpi_get_disable_11be(ar->ab))
++	if (!ath12k_is_11be_enabled(ar->ab))
+ 		return;
+ 
+ 	eht_cap->has_eht = true;
+diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+index 89abf2e87ad1..0aba1e74a3e9 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.c
++++ b/drivers/net/wireless/ath/ath12k/reg.c
+@@ -140,6 +140,7 @@ int ath12k_reg_update_chan_list(struct ath12k *ar, bool wait)
+ 	enum nl80211_band band;
+ 	int num_channels = 0;
+ 	int i, ret = 0;
++	bool has_eht;
+ 
+ 	if (ar->ah->state == ATH12K_HW_STATE_RESTARTING)
+ 		return 0;
+@@ -180,6 +181,8 @@ int ath12k_reg_update_chan_list(struct ath12k *ar, bool wait)
+ 
+ 	ch = arg->channel;
+ 
++	has_eht = ath12k_is_11be_enabled(ar->ab);
++
+ 	for (band = 0; band < NUM_NL80211_BANDS; band++) {
+ 		if (!(ar->mac.sbands[band].channels && bands[band]))
+ 			continue;
+@@ -201,6 +204,7 @@ int ath12k_reg_update_chan_list(struct ath12k *ar, bool wait)
+ 			ch->allow_ht = true;
+ 			ch->allow_vht = true;
+ 			ch->allow_he = true;
++			ch->allow_eht = has_eht;
+ 
+ 			ch->dfs_set =
+ 				!!(channel->flags & IEEE80211_CHAN_RADAR);
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index a63bbda0219c..5fe7af731a4e 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -2005,6 +2005,54 @@ int ath12k_wmi_p2p_go_bcn_ie(struct ath12k *ar, u32 vdev_id,
+ 	return ret;
+ }
+ 
++int ath12k_wmi_vdev_set_ie(struct ath12k *ar, u32 vdev_id, u32 ie_id,
++			   const u8 *ie, size_t ie_len, u32 band)
++{
++	struct ath12k_wmi_pdev *wmi = ar->wmi;
++	struct wmi_vdev_set_ie_cmd *cmd;
++	struct sk_buff *skb;
++	struct wmi_tlv *tlv;
++	size_t aligned_len;
++	int ret, len;
++	void *ptr;
++
++	aligned_len = roundup(ie_len, sizeof(u32));
++	len = sizeof(*cmd) + TLV_HDR_SIZE + aligned_len;
++
++	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
++	if (!skb)
++		return -ENOMEM;
++
++	ptr = skb->data;
++	cmd = ptr;
++	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_VDEV_SET_IE_CMD,
++						 sizeof(*cmd));
++	cmd->vdev_id = cpu_to_le32(vdev_id);
++	cmd->ie_id = cpu_to_le32(ie_id);
++	cmd->ie_len = cpu_to_le32(ie_len);
++	cmd->ie_source = cpu_to_le32(WMI_SET_VDEV_IE_SOURCE_HOST);
++	cmd->band = cpu_to_le32(band);
++
++	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
++		   "WMI set ie vdev_id %u ie_id %u ie_len %zu band %u\n",
++		   vdev_id, ie_id, ie_len, band);
++
++	ptr += sizeof(*cmd);
++	tlv = ptr;
++	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, aligned_len);
++	memcpy(tlv->value, ie, ie_len);
++
++	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_VDEV_SET_IE_CMDID);
++	if (ret) {
++		ath12k_warn(ar->ab,
++			    "failed to send WMI_VDEV_SET_IE_CMDID for vdev %u ie %u: %d\n",
++			    vdev_id, ie_id, ret);
++		dev_kfree_skb(skb);
++	}
++
++	return ret;
++}
++
+ int ath12k_wmi_bcn_tmpl(struct ath12k_link_vif *arvif,
+ 			struct ieee80211_mutable_offsets *offs,
+ 			struct sk_buff *bcn,
+@@ -2946,6 +2994,8 @@ int ath12k_wmi_send_scan_chan_list_cmd(struct ath12k *ar,
+ 				chan_info->info |= cpu_to_le32(WMI_CHAN_INFO_ALLOW_VHT);
+ 			else if (channel_arg->allow_ht)
+ 				chan_info->info |= cpu_to_le32(WMI_CHAN_INFO_ALLOW_HT);
++			if (channel_arg->allow_eht)
++				chan_info->info |= cpu_to_le32(WMI_CHAN_INFO_ALLOW_EHT);
+ 			if (channel_arg->half_rate)
+ 				chan_info->info |= cpu_to_le32(WMI_CHAN_INFO_HALF_RATE);
+ 			if (channel_arg->quarter_rate)
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index b508aa759bd8..5d0afbf0bd0c 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -3074,6 +3074,7 @@ struct ath12k_wmi_channel_arg {
+ 	    allow_ht:1,
+ 	    allow_vht:1,
+ 	    allow_he:1,
++	    allow_eht:1,
+ 	    set_agile:1,
+ 	    psc_channel:1;
+ 	u32 phy_mode;
+@@ -3694,6 +3695,7 @@ struct ath12k_wmi_scan_cancel_arg {
+ #define WMI_CHAN_INFO_DFS_FREQ2		BIT(16)
+ #define WMI_CHAN_INFO_ALLOW_HE		BIT(17)
+ #define WMI_CHAN_INFO_PSC		BIT(18)
++#define WMI_CHAN_INFO_ALLOW_EHT		BIT(21)
+ 
+ #define WMI_CHAN_REG_INFO1_MIN_PWR	GENMASK(7, 0)
+ #define WMI_CHAN_REG_INFO1_MAX_PWR	GENMASK(15, 8)
+@@ -3845,6 +3847,23 @@ struct wmi_p2p_go_set_beacon_ie_cmd {
+ 	__le32 ie_buf_len;
+ } __packed;
+ 
++#define WMI_SET_VDEV_IE_SOURCE_HOST	0
++
++enum wmi_set_vdev_ie_band {
++	WMI_SET_VDEV_IE_BAND_ALL,
++	WMI_SET_VDEV_IE_BAND_2_4GHZ,
++	WMI_SET_VDEV_IE_BAND_5GHZ,
++};
++
++struct wmi_vdev_set_ie_cmd {
++	__le32 tlv_header;
++	__le32 vdev_id;
++	__le32 ie_id;
++	__le32 ie_len;
++	__le32 ie_source;
++	__le32 band;
++} __packed;
++
+ struct wmi_vdev_install_key_cmd {
+ 	__le32 tlv_header;
+ 	__le32 vdev_id;
+@@ -6583,6 +6602,8 @@ int ath12k_wmi_pdev_resume(struct ath12k *ar, u32 pdev_id);
+ 
+ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
+ 				   struct ath12k_wmi_peer_assoc_arg *arg);
++int ath12k_wmi_vdev_set_ie(struct ath12k *ar, u32 vdev_id, u32 ie_id,
++			   const u8 *ie, size_t ie_len, u32 band);
+ int ath12k_wmi_vdev_install_key(struct ath12k *ar,
+ 				struct wmi_vdev_install_key_arg *arg);
+ int ath12k_wmi_pdev_bss_chan_info_request(struct ath12k *ar,
 
+base-commit: c3bace8584ca707e34ba837f65c2e9d566af4c2c
+-- 
+2.34.1
 
