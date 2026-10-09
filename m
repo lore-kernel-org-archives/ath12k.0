@@ -4,98 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EA00CA6019
-	for <ath12k@archiver.kernel.org>; Fri,  9 Oct 2026 16:16:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A216CA601D
+	for <ath12k@archiver.kernel.org>; Fri,  9 Oct 2026 16:36:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=sxWelmSlH2JHhp90EwkFGP9vd1R+MewtWKi268DULMk=; b=bHCI3kkBZOxHoObgtzZtVMd0v6
-	3WWB1KigJLy1KzR7YzVRzJ0X3/3oeJGENDYwQGy4Zuhm4duKZd6qPUtm31J4g5F26DjGCJCiDd+Dg
-	Nz0g2x6RTSAyeS1/347HNjN//DLo5O7Iw9e7LuEQ/AQDQJiOPYrHXdVrcrfJ+IH2curjMBVH68kfY
-	wbEUmD21Ix+Gn/HHZ5HxbSmXTL53MZDZ3TViSZBqdndT3k8n4s6AYstTj4uWjT/7IA82vQ1zcxJ85
-	JOMa1GWHwoT7tbGNOV+/4iriUI/0hvfeXh1LduCXnv1lkxpmZarX9ZpsqE8eV/Q12Rp0/tbatjWCd
-	lMirVymQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=DObaq6Nb/58jUtIY5nWlM2D34IXl0uCF6VmogrMWqoM=; b=yYm6Nco/4cWe6na7V+Ct0fSM9U
+	KFGlAeUlqH5A70XW39zTI1AqR0yDxCPU/fZJ1QWygIEO/D+uCaxqw01PqcghosL9k0QSMOiBC2hUh
+	V/vCQ7+IvVyksxXleiIlNOr4AAeo5ZhJyLxpYxe4ld5a9EzXJ9BKmJrdkBF3NxrIIe8hQup+F4j3F
+	3f9FLn4KXEf7XTsOcjpi0AEF9wVKNDTfQEJPtQMLYrvg6yPyYSSxvEXih+L3DAyFYD2OORSOkNrDT
+	R7hVkrZ3dhCReldFLOxJFoXV6zU5Wxks96rHtq+mJRl/0z/o+4A721PwkOTs4Mk3GA6XuBi659y0t
+	Y1C1dvqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFDGq-00000006ddG-38eR;
-	Fri, 09 Oct 2026 16:16:32 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1xFDZg-00000006fLf-1c3h;
+	Fri, 09 Oct 2026 16:36:00 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFDGo-00000006dcj-3A7B
+	id 1xFDZd-00000006fK0-37kA
 	for ath12k@lists.infradead.org;
-	Fri, 09 Oct 2026 16:16:32 +0000
-Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-4a1698ea378so98305e9.2
-        for <ath12k@lists.infradead.org>; Fri, 09 Oct 2026 09:16:29 -0700 (PDT)
+	Fri, 09 Oct 2026 16:35:59 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 699GHD9R2798816
+	for <ath12k@lists.infradead.org>; Fri, 9 Oct 2026 16:35:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=DObaq6Nb/58jUtIY5nWlM2D3
+	4IXl0uCF6VmogrMWqoM=; b=agO31pXRIqFKIObPsE7A9dd/HaNlDYbKRj8RZhqr
+	PalWJ9+eJO53bLKhwm8gcU02xPqxk/VHrb2OTAgEFvglkPiGXUWucWY6yVENceTz
+	xLlytE2n2iqAgrXBOiI4iLDCCSckkv1FwirAkUTGNNI4TGjFAvQDCnAMBLDBHgFv
+	0lu01GoCxIpxOzUOI1kX+zjzslylIxZ2yxtzIuiDlZHl9gjqcp1Mh0hBX57xpNF+
+	q9zvk3jKTUtBlK2LZIZ2MDqocRiAsOKU8WkV+e3SKGHHFHWCQfraMTlVzd70vtW9
+	XDAyS9YXeds9e0uMw4+bs5spOWEz8XQZ+GMvnTLRigPESA==
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h72ty0ajt-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Fri, 09 Oct 2026 16:35:55 +0000 (GMT)
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-934963b2bc0so1251204985a.3
+        for <ath12k@lists.infradead.org>; Fri, 09 Oct 2026 09:35:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791562588; x=1792167388; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=sxWelmSlH2JHhp90EwkFGP9vd1R+MewtWKi268DULMk=;
-        b=UyB/UXjEXCSKlVL5fi3LPTFtSacqJ7GapiiNaHzFNdtaRiyc0c5DFT5K/5m0K4aS91
-         KQTp3cijhcqSX/oS03+CpvVKCrKIrtFCUV7jG5mN362EMMafM7N6M9G70nHh9Cy4sR+F
-         iLYFGYaP6xROQuOC4Nx0UuuEJZ1uXfHzguWisiEbWl82MrZlEwbWfs49UY0gDo4FLZYc
-         FjtoRFRSUPxietUw/aYDTDX9MIPxBIzkibaGTrsbVOwnmH2q7Qtxfw7AdDWG6RigdXIu
-         5KOlhR4QBLGV+VtlW91oDxmO8ubevUjS8J79OZJgiB0L4QiCeZ1gTYbiniig3z+IstIB
-         c+lw==
+        d=oss.qualcomm.com; s=google; t=1791563755; x=1792168555; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=DObaq6Nb/58jUtIY5nWlM2D34IXl0uCF6VmogrMWqoM=;
+        b=jIavN8ZcUVT3tho1BclVeuXWzvw95PHOT3eUYCCfSHd7GycsyRlUC2tXOztfbYQvk6
+         WUiT0Kw74n8/bNovQs+gd4+8q0hfaoEaFVcYW4C7hwpMpx8wG3gfb6/Xg6YvMGKftMDx
+         92SxkFtQXGHNvFQasIlNTbr0IYuC/RH+jfqa260whLsTHjPGe1x8sNPGeEiCr2lq5NIB
+         aTYFT+CkVuNcg8tPRK4gMn3aeJR8HOVTNCNuxeFBSLxDA+bDzXTT/KmnpEawl3f67aqY
+         wX02yRY7H7lxS33NZ12ZUBdy+YhQWY7SbNz5xtNfinMEjlI8pmNBYgEovbLl73Kvfsra
+         KkJQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791562588; x=1792167388;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=sxWelmSlH2JHhp90EwkFGP9vd1R+MewtWKi268DULMk=;
-        b=hcwKx2vjBpRtYnllEcGiCDObWciRt89uMQS0dENdPqkmDvFZsWKXXRW+o5l1dqpbUa
-         wib9JeakrtVFVC/ni07+3d/pkBsv8QTDKIuPVEmG3HJrs/KmFfkrCgcrQPHDsrFHVTDm
-         TzooEU1qrKWQGczJsU4YX8jJ2te+aRwwl8YLfS3MnrWruoRnZzbG/+ZjtFK+k4ZvxToM
-         5hjeteRd6rdw1qjDzdlj6eKgO6sTLPrBbb7RN4RHttt8GL1RmijyHYAqqB46+1sWWfgK
-         D9UEAM5jiNxmjHPJ164RF2ARuwenDYnEWVGuas0LWTFAdghQjhJ0MlbrpQwj+i1mf40g
-         goeg==
-X-Forwarded-Encrypted: i=1; AKwUvByRsHdBZQ9I464MMaghxjD1ihf3ikD4/sfDekNc+GFtxnZnweuXJGCg25wwk3hnmfk/bU8AukM=@lists.infradead.org
-X-Gm-Message-State: AFuF++m8JOx4551p+0yOc/Vm3FVQRJG2/H+l8I6oCWMBW6rlTjJu4X+P
-	MPhxrP0poO3JJ0cytKgktZeT1rV6Api4t5AUU4shYOgmkL4zi1Rha2gm
-X-Gm-Gg: AYBFou3uU1IPtdvqHWbIv4gHJ3afMp6sQ1fMEqBKGcqwC71yqi4P4eAcoFovAQ+6AvO
-	4VjrDvWDsGgoaKcSeRk5Q9WCfo6OLqSsNwslT8yHN3YrKavFRQzSFmvtm0fzK/3r1fab2UTM8t3
-	faeTxebyVY43l2Oo18i714ozcEOfHOLBgN/4f0UaC/tCWMo88r1/o0v9yEQtQ4uthONdRqkbSO9
-	Aox85INqg3XBOkPYb5yZQ/FwvJd5YpMe8ianxLvcAQv7ndIjtohQbEU8nEhnTXSOIWmLkg4wogd
-	5i1sISZQnQjDRqMo9cLqpJ0ALvof3zZtMhJTd7OABtaPJliAgLu6D6DbRYnYyYs+pV6sJAZbuze
-	KvMc8U9VlQI/oyn3MXzq0VGOfC2n0Fgbprde+zVyxksH4y/JMb9egCkQ0ou64DRE5DeI1HdeuxO
-	PkI7rv+dS0dgJ32BxVUe+cETt2FBC8rr3tqUpOepCvhPLx7C6lGsSGwC61lvZzybr0x1cTMCpQR
-	C9d6f9vfM2m/ZWOD/ecdPYfW3nnYg==
-X-Received: by 2002:a05:600c:3510:b0:4a1:7703:e549 with SMTP id 5b1f17b1804b1-4a18e4c3fe4mr53443415e9.26.1791562586570;
-        Fri, 09 Oct 2026 09:16:26 -0700 (PDT)
-Received: from [10.147.33.44] ([135.136.51.219])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a18e481993sm52116525e9.2.2026.10.09.09.16.21
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 09 Oct 2026 09:16:25 -0700 (PDT)
-Message-ID: <aea18e6a-b831-4336-a647-e87228fc46b1@gmail.com>
-Date: Fri, 9 Oct 2026 17:16:18 +0100
+        d=1e100.net; s=20260707; t=1791563755; x=1792168555;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=DObaq6Nb/58jUtIY5nWlM2D34IXl0uCF6VmogrMWqoM=;
+        b=yaQLaWe2TmL+qwxErspSdOcJvC3yp7O3DbvQwcwEvM8+BlxOLsKmpM8f8utR84nJgr
+         xaRXK2CsGkaUbSVh6GiOZzb9hU+jseEFpfUOlkP3blNyIis8yPLftzfZYjj9VhPx1U0I
+         rFJxzQm9aFhMZjoFoEjZM60nuNLsFZUDBZJRlAPT5O8u7QkUdLwTWRMAkzxWsOV6Unsc
+         Itm5zWSkgkmU/5WbLBrPT7SrY8eXAYpXjeE75z0V+7FKSKkB5zP4MfCQISr+VXhhc/8N
+         KTUzgsG2gjz5UiB/2oYV7MKhLyKECBSgpMhDS8YaQIkFQ7qryH8WOzRjOHrOXeFLMZLJ
+         SkyA==
+X-Forwarded-Encrypted: i=1; AKwUvBzcMdLjOWdguOipAOHN8WRNUJVfM3JNqdJrTea9htm9UvN5KxZcECN1KQYOb6OHako53KFDUYw=@lists.infradead.org
+X-Gm-Message-State: AFuF++nBmuDuCCbZBHfS+OE87rSu59c1H8AVGRuCau55BHMpsEecAjkJ
+	OtxHKcMdQ5trIud8191HsAacG3NcWmBGgSgt3/OwxuN7dfDRADyYbvNT/PNoTnPWlyFGprbNd9O
+	df+koU3fxBk5v76pyWljIPV+M69GfFGAtanwucNtMc2tQPJyVepYO8qAFHwGGCHQc
+X-Gm-Gg: AYBFou3+IY0x0o3SMs5UViR7Xfydah7EgCYd9RHZBRV+ITgfOxHxyq7cjMGqMqUqSug
+	YUbt88fJw/uu439JrbZBa9nBsvpQsKXvKWF7tMuki8x64WlXlXILiCRJApkQoCWgpyr91hpfsko
+	Y+pQV1mTnCxF3WDh9+38/ARg7BO6FFHIe4GsdkKeziF9hJZ4JHxHFpB+hxLSlFEt2QCIzLY1IUc
+	i/Sudq+w9n2QSwsR2klEXFjKwQ3ePsxgiycd0ViWVm8gXv3ECyPOgHzM/MbQDm/o5w9s4f6pYta
+	l26Jt/8PpeBiBeQfmm1i8uVOb1nimqLBHKgwyGyRhNDuVmebdCkZJixqKIrA0j+p+MP/PI8RfzM
+	unkdumu4vQXaIQA==
+X-Received: by 2002:a05:620a:40d5:b0:93a:f9:614a with SMTP id af79cd13be357-93ebd21ffc4mr360473085a.34.1791563755112;
+        Fri, 09 Oct 2026 09:35:55 -0700 (PDT)
+X-Received: by 2002:a05:620a:40d5:b0:93a:f9:614a with SMTP id af79cd13be357-93ebd21ffc4mr360466885a.34.1791563754373;
+        Fri, 09 Oct 2026 09:35:54 -0700 (PDT)
+Received: from localhost ([188.216.77.92])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a18beabbd0sm79141685e9.12.2026.10.09.09.35.53
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 09 Oct 2026 09:35:53 -0700 (PDT)
+Date: Fri, 9 Oct 2026 18:35:52 +0200
+From: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
+To: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>,
+        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+        Ripan Deuri <quic_rdeuri@quicinc.com>,
+        P Praneesh <quic_ppranees@quicinc.com>, Kalle Valo <kvalo@kernel.org>,
+        Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+Subject: Re: [PATCH 3/3] wifi: ath12k: rely on page_pool APIs for buffer
+ allocation
+Message-ID: <askX6OVi1grqRgL7@lore-desk>
+References: <20261008-ath12k-pp-v1-0-68f888cd7eec@oss.qualcomm.com>
+ <20261008-ath12k-pp-v1-3-68f888cd7eec@oss.qualcomm.com>
+ <934b1a06-48ee-47d7-b985-c3e7221d7880@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] wifi: ath12k: skip hardware rfkill setup on Microsoft
- Surface devices
-To: =?UTF-8?Q?Fran=C3=A7ois_Roux?= <franzelfranzel@gmail.com>,
- Jeff Johnson <jjohnson@kernel.org>
-Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Konrad Dybcio
- <konradybcio@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- =?UTF-8?Q?J=C3=A9r=C3=B4me_de_Bretagne?= <jerome.debretagne@gmail.com>,
- ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20261006062728.45007-1-franzelfranzel@gmail.com>
-Content-Language: en-US
-From: Dale Whinham <daleyo@gmail.com>
-In-Reply-To: <20261006062728.45007-1-franzelfranzel@gmail.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="l3vmZ+iRSMM9VSjr"
+Content-Disposition: inline
+In-Reply-To: <934b1a06-48ee-47d7-b985-c3e7221d7880@oss.qualcomm.com>
+X-Proofpoint-ORIG-GUID: BtsGwEIBQ9kujIhpKDC7z-xCqGaqrFB6
+X-Authority-Analysis: v=2.4 cv=Zvd4uN7G c=1 sm=1 tr=0 ts=6ac917eb cx=c_pps
+ a=50t2pK5VMbmlHzFWWp8p/g==:117 a=WpTaRW6qxYHRGzLzQsVYzg==:17
+ a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=NEAV23lmAAAA:8
+ a=VF8GH8uOMsmr12UB0xUA:9 a=CjuIK1q_8ugA:10 a=v5oEB8NXsXvYOpEHCQgA:9
+ a=IoWCM6iH3mJn3m4BftBB:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA5MDA2NiBTYWx0ZWRfXwDH290fhj/8D
+ L1UGa2x74lvcccArhclYCdVQLalVfyB6L42RKE2VnpwqvOU0Qz8LCm1LVLQq5S/CZHgMh7NZp1z
+ hlstdj6lkqv0bZaR/j1vhrMkTFCCvxQ=
+X-Proofpoint-GUID: BtsGwEIBQ9kujIhpKDC7z-xCqGaqrFB6
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA5MDA2NiBTYWx0ZWRfXwboC7dUcoHVm
+ FZRnJVfvsjMocLZQuz+0h47WhVXPaaYLfPonmj3nFvxh45CF1vPCdnKYTQ+aqVfopXJ7AhbGejz
+ 3SFQCuFp4qhwK0qRDNH2O4E8tWTABln5lnvw2ulJN0quCx+xG7UhtUQtNjuMQJrQDWjybtZYvii
+ o0fkH9O075G5XPH6hyoaYyfdWCKOpWIdSsOvMrahcEiKeUXP42HIzO63G7VoocJtTymzJEqNX14
+ BypnE6ytyRQtaQ5zUp0TZmQDqV0MNQJEVHmFI0q4GCdyEsVYgwC+8UJIzgwL8J/AoaKiB+YAQfM
+ xEfzGh30Lt0UEt7bnaBXEyPbg5eNjIFYfl+QK+NNkBrKlRyYWn6+VSwhfITvskKDNgfz5M1adJJ
+ DiKH8QZD3LVqhPLX2DWIjo1/Hy9pmDz6ngXeozb8JkAEt074Bi66swpzdwo6DwJmQDzlY7V5Pab
+ dfrR13I15wb7BcHuSKQ==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-09_04,2026-10-09_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 priorityscore=1501 spamscore=0 clxscore=1015 impostorscore=0
+ bulkscore=0 lowpriorityscore=0 malwarescore=0 phishscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2610020000 definitions=main-2610090066
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261009_091630_821575_34469DA8 
-X-CRM114-Status: GOOD (  29.47  )
+X-CRM114-CacheID: sfid-20261009_093557_912622_9940D0C3 
+X-CRM114-Status: GOOD (  22.57  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,104 +152,71 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 06/10/2026 07:27, François Roux wrote:
-> On the Microsoft Surface Pro 11 and Surface Laptop 7 (X1E80100), the
-> WCN7850 hardware rfkill input reads as "radio off" and the OS has no
-> way to control it. ath12k enables hardware rfkill handling, so Wi-Fi
-> stays hard-blocked:
-> 
->    iwd: Error bringing interface 4 up: Operation not possible due to RF-kill
-> 
-> ACPI platforms can opt out through ath12k_acpi_get_disable_rfkill(),
-> but DT platforms cannot. A DT property was proposed for this and
-> rejected, because it describes what the OS should do rather than the
-> hardware. The suggested alternative was to handle these machines in
-> the driver until a connector binding can describe a broken rfkill line.
-> 
-> Add a table of board compatibles and hardware revisions on which
-> hardware rfkill is known to be unusable, and skip the rfkill setup
-> there. Other affected machines then only need a new table entry.
-> 
-> Tested on a Surface Pro 11 (microsoft,denali) with next-20260929,
-> booted with the unmodified mainline DTB: the interface is no longer
-> blocked and connects. The Surface Laptop 7 entries (microsoft,romulus13
-> and microsoft,romulus15) are based on reports from Jérôme de Bretagne
-> and Dale Whinham. I have not tested them.
-> 
-> Link: https://lore.kernel.org/all/2ixwny6hzumlqmok5cjwutvtk7nzmx4t3dhxc44ao4l2u755pj@n6m7jyxf2o62/
-> Suggested-by: Manivannan Sadhasivam <mani@kernel.org>
-> Assisted-by: LLM
-> Signed-off-by: François Roux <franzelfranzel@gmail.com>
-> ---
-> Changes in v2:
-> - Use a table of board compatibles and hardware revisions, as suggested
->    by Jeff, so that other affected machines only need a new entry.
-> - Add the Surface Laptop 7 (microsoft,romulus13/15), which Dale and
->    Jérôme report as affected too. These entries are untested by me;
->    a Tested-by from someone with that machine would be welcome.
-> - Retested on the Surface Pro 11.
-> 
-> v1: https://lore.kernel.org/all/20261004165132.4313-1-franzelfranzel@gmail.com/
-> 
->   drivers/net/wireless/ath/ath12k/core.c | 32 ++++++++++++++++++++++++++
->   1 file changed, 32 insertions(+)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-> index 0c72948f3..67d4c98fb 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.c
-> +++ b/drivers/net/wireless/ath/ath12k/core.c
-> @@ -72,6 +72,35 @@ ath12k_mem_profile_based_param ath12k_mem_profile_based_param[] = {
->   	},
->   };
->   
-> +/*
-> + * On these machines the OS cannot control the WCN7850 hardware rfkill
-> + * input, which reads as "radio off", so hardware rfkill must stay
-> + * disabled. Ideally this would come from the connector node of the board
-> + * DT, but that binding does not exist yet.
-> + */
-> +static const struct ath12k_core_broken_rfkill_table {
-> +	enum ath12k_hw_rev hw_rev;
-> +	const char *compatible;
-> +} ath12k_core_broken_rfkill_table[] = {
-> +	{ ATH12K_HW_WCN7850_HW20, "microsoft,denali" },
-> +	{ ATH12K_HW_WCN7850_HW20, "microsoft,romulus13" },
-> +	{ ATH12K_HW_WCN7850_HW20, "microsoft,romulus15" },
-> +	{ /* Sentinel */ }
-> +};
-> +
-> +static bool ath12k_core_rfkill_is_broken(struct ath12k_base *ab)
-> +{
-> +	const struct ath12k_core_broken_rfkill_table *entry;
-> +
-> +	for (entry = ath12k_core_broken_rfkill_table; entry->compatible; entry++) {
-> +		if (ab->hw_rev == entry->hw_rev &&
-> +		    of_machine_is_compatible(entry->compatible))
-> +			return true;
-> +	}
-> +
-> +	return false;
-> +}
-> +
->   static int ath12k_core_rfkill_config(struct ath12k_base *ab)
->   {
->   	struct ath12k *ar;
-> @@ -83,6 +112,9 @@ static int ath12k_core_rfkill_config(struct ath12k_base *ab)
->   	if (ath12k_acpi_get_disable_rfkill(ab))
->   		return 0;
->   
-> +	if (ath12k_core_rfkill_is_broken(ab))
-> +		return 0;
-> +
->   	for (i = 0; i < ab->num_radios; i++) {
->   		ar = ab->pdevs[i].ar;
->   
-> 
-> base-commit: 6474fa070f2b8013b4b87350b775b8c3be6e8aac
-> prerequisite-patch-id: aafe3fac38f4020441979665509928f8cc832095
+--l3vmZ+iRSMM9VSjr
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Tested successfully on Surface Pro 11 X1E/OLED/WiFi model.
+>=20
+>=20
+> On 10/8/2026 9:16 PM, Lorenzo Bianconi wrote:
+> > Convert the Rx refill buffers to the page_pool API instead of allocating
+> > an skb with dev_alloc_skb() and mapping it with dma_map_single(). The p=
+ool
+> > handles the DMA mapping and buffer recycling.
+> >=20
+> > Add a page_pool to struct dp_rxdma_ring, created in
+> > ath12k_dp_rxdma_ring_buf_setup() and destroyed in
+> > ath12k_dp_rxdma_ring_buf_cleanup().
+> >=20
+> > Update ath12k_dp_unmap_rx_buf() to sync page_pool buffers for the CPU
+> > instead of unmapping them, and guard the teardown paths
+> > (ath12k_dp_cc_cleanup(), ath12k_dp_h_msdu_buffer_type()) against
+> > page_pool buffers. In the re-inject path, sync an already mapped
+> > page_pool buffer for the device instead of mapping it again, and fill t=
+he
+> > descriptor with the DMA address stored in the rxcb.
+> >=20
+> > The monitor, CE and TX paths are left unchanged.
+> >=20
+> > This is just preliminary support: the goal is to use a single page to m=
+ap
+> > two separated fragments of 2048B.
+>=20
+> why? please always justify your motivation in detail when the change is n=
+ot trival.
 
-Tested-by: Dale Whinham <daleyo@gmail.com>
+my main goal here would be to avoid running dev_alloc_skb()/dma_{map,unmap}=
+() on every
+rx packets but rely on page_pool APIs in order to recycles and keep pages D=
+MA
+mapped. I guess this way we will have even a smaller memory footprint.
 
+>=20
+> Besides, instead of preliminary patches, why not just send the full suppo=
+rt in a single
+> series?
+>=20
+
+I would like to implement it incrementally (you can find the code here [0])=
+ but
+I am fine to squash patches in the next iteration.
+
+Regards,
+Lorenzo
+
+[0] https://github.com/LorenzoBianconi/wireless-next/tree/b4/ath12k-pp-dev
+
+--l3vmZ+iRSMM9VSjr
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCaskX6AAKCRA6cBh0uS2t
+rAjgAP9+/vCFXrWVv8wk90HKCBooT91BNHMFIuDkxFDsi1KL1QD8D7PLpUa4QlHm
+5Km0lZSSNj/IuFwXW5yPH5ao+pRBAAE=
+=gbSU
+-----END PGP SIGNATURE-----
+
+--l3vmZ+iRSMM9VSjr--
 
