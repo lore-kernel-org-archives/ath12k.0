@@ -4,92 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4061CA6004
-	for <ath12k@archiver.kernel.org>; Sat, 10 Oct 2026 05:11:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32A2BCA9EBE
+	for <ath12k@archiver.kernel.org>; Sat, 10 Oct 2026 14:48:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=EPzUTBNIsG1vnWSfHU0KClPEm42wHLDDcUKF5FSqaVc=; b=yjvqJZTshbzlZ+iEsEvJWKiqp7
-	WoR2u4h7qTKZ2KQS2S31D8Wb5EzJQPV26Ki46wPP3Z1livBScrwrqojUwRsxz6wWgu49LmDyfkWg/
-	evqcldSMUBodHnil5/jkQbYI1M5RIK4ryJV5DCSCTNWU0GXXhTSZnN41LjGw6j3KaqJxBKvczRcyO
-	PeaeaAF25TAm5K5q/yvXzZzouO2wjb4g378WnMG+vx/CtTaPFRVKdrr/fsT7Y2HDX9wUbmEiLfmSU
-	8nKnSL3OKk/b8bU5Ha4u3QhAzRKaqYzMwHGcJ0vJOwn+NWYrmYnKtd2m1zQND9jDb/4p01KrS0MHn
-	yJWhX+VQ==;
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=hcsVVrQTy9+oPzMIs3wmnifLrbzfhME2W7FHzOhUhMw=; b=WY8IncgXRfExQKfeZKb5Rzmdki
+	nfn3/k2rakO9OZpmBYyb0tf2TPibXvkGc5c5y5dRKoXd3RXgbfazEuUs5OEKI2zj+Uw3ztakL2LU8
+	ybWDH9nTZ/0FMpWM5YlRBmyoDv2jqjdije7sNM/5hb1LvCH6e9gNWsbCzwF1wZAx8FrXHji1zrNvg
+	D2mbG1HUXEd6hvnc7Og0C9zF8+CQdxujcWjRF2anQXKd8JH5+TSI7wF8RgZRTo5WiDy7fVxZrjL5R
+	jwtqKwpDHPzy4KMu1C9q1gCzkOwYZuaNnGTXxhghLwlDSSfLD44o5y2KZS8ClygTihbfZTKwBXnpE
+	n3PE9GPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFPMx-00000007XDA-0vpq;
-	Sat, 10 Oct 2026 05:11:39 +0000
-Received: from mail-dl1-x1232.google.com ([2607:f8b0:4864:20::1232])
+	id 1xFYNU-00000008Bmh-26fr;
+	Sat, 10 Oct 2026 14:48:48 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFPMu-00000007XCg-2Nwt
+	id 1xFYNS-00000008Blb-0GqG
 	for ath12k@lists.infradead.org;
-	Sat, 10 Oct 2026 05:11:38 +0000
-Received: by mail-dl1-x1232.google.com with SMTP id a92af1059eb24-15168a20b47so291304c88.1
-        for <ath12k@lists.infradead.org>; Fri, 09 Oct 2026 22:11:35 -0700 (PDT)
+	Sat, 10 Oct 2026 14:48:48 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69ACVJaM1021591
+	for <ath12k@lists.infradead.org>; Sat, 10 Oct 2026 14:48:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	hcsVVrQTy9+oPzMIs3wmnifLrbzfhME2W7FHzOhUhMw=; b=OyRdPm+y16ElOoNT
+	YxVLDNn0CxeULMGVfzgONvVKk2MwRS1h18xKrUH9dQ7FkhnM90G+7fJShgMNDFuV
+	inbFcytPbprA+Wzo5ZtG6NqoVz+B2SCq4wNk8aSirz7Kox15AJE9UtYMiwYTpMLo
+	MwE2qae9kHPUp0BxnzcDIJ0A8uGyABTXdDC3BmSYuahtoWB/4nxjkhJvTlYhYQvv
+	04LOayrENCzXSNvn/MX4uEPbZolfZXKLxWD0LYeAjxkq8XyqmoveUaAIEaFBl6GA
+	7YQ95QF5WMpEEMmHbqh02du0EVKN242IteSvkVXu/1hT3BdVtshltHkvaWlYqMgT
+	5B8Mcg==
+Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h7cc69c47-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Sat, 10 Oct 2026 14:48:44 +0000 (GMT)
+Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-34e676375d9so794269eec.0
+        for <ath12k@lists.infradead.org>; Sat, 10 Oct 2026 07:48:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=trailofbits.com; s=google; t=1791609095; x=1792213895; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=EPzUTBNIsG1vnWSfHU0KClPEm42wHLDDcUKF5FSqaVc=;
-        b=SqGwlv52qrb5tflr4+8iUImSqjCeomdqAiJZWpqUywJX8ABJf83/M66fEFuTzrBpy0
-         z1a99tvpTegUj+BQjhNCvdbgOPrJ+7XQzcaZQM7fO0s17gD2LGeZbGo3SRQCXC0C938g
-         BbYwhw1oMcLBW+FjDpDxJ5aUiJoVO8N+ygLgMwnOW+5kMzAa6gDVDSko1wNRqkuyxBqr
-         nRfAHmgTOEYs3gjr1SLf1VpuPc2NZgI0gIg368yt0AJbT3kr8k0v/3rUExjkqPWL2e9L
-         xpAR3kHQ3oyqvfXj+jF1vnaJGpvf2LRrv0eniEZ99Z000hSO9NM4u0wcUNkWwm0cmYd0
-         v3aQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791609095; x=1792213895;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=oss.qualcomm.com; s=google; t=1791643723; x=1792248523; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:mime-version:date:message-id
+         :subject:references:in-reply-to:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=EPzUTBNIsG1vnWSfHU0KClPEm42wHLDDcUKF5FSqaVc=;
-        b=0dNhJpAvc9xZdFCBnpsDF83COUx7gtLGRkhGI7HEhd2WeUoLZ6VOmfYjWyh6lmqoG8
-         wB2qu8MDETsBSrNE88qeskI2JTGBOfifZJTxt8wlG6/lknw6rGzof+fW4ijPp2KLIqbk
-         xdXAI5VH2/P/Zlid07NFbznJ4XTqwrNFrpIDC3eRMbLmg9V1WXm61mAqCuDg8RKiAvEC
-         gn+Ii+RgAKzKGXDJ9ud1TKUy8M55DXMmORvdu9OtH1Zc0WdUP0ck6Kbs4yg7JBzf6LL2
-         Mj0beuqALeIO9tM4k8KtSf8gRf1zp7hr/Kr/5QX8HFVFjmhqUx93ncHgCWL2z4LZVh4m
-         o1eQ==
-X-Forwarded-Encrypted: i=1; AKwUvByilZpKSpIeExnfTqHUFRiWb1kaEAiqhN2VENFlW+ySQ9lpvfohxXJWOSE7bIWXCpxTWScj58g=@lists.infradead.org
-X-Gm-Message-State: AFq9FYIUiWw8UFM8ZvzikGSjzYz1+ozu3yQWGLkcjjxtL0Koxdhp9Opx
-	8vI9y9TGrhEd7h1sPermxdh1yYr2foUF2vvRMagEFptCXZOT6S8HV2HEVsCNuRm4B0M=
-X-Gm-Gg: AYBFou3SczeGhjdFPwCDnQe+ZYtxJ/dHV5Vuj7KDyh8ZwJLir8b2redN8tRAa/nvxom
-	wVmNc1WV4uXVlGXScErFCmfPTFMnLoA5UPSfy8nv1YZpQ8M31/OC9XkU4QT83w4a/oJcEQH75T7
-	YH7q6Rdx5WWBTX81IGTsoUEerGnQXIg1rnCeGSP9pZH78YswXgxyPrafTrvpyXmiN6PdUkj1Ydi
-	sqv/H89YA0MmixTfryZRTIa4VbWiqbTRWMOuEvAHmlm1bkfTUeMQN85CKVyUyqoYmtBijSjvkYU
-	zDgsXAxChNUp83Fhd6LREy6pWWtS94xstkiCyV5IQ0qvXjdcAw5neGVChTJSTz/2LSQ0+WIjikt
-	vY9VJ4H7T3LbV+LH06IHTAvs4xmD0dClbD7glX5m7W+w+fBDwMzlQ6o1z2fZWWMtMQ9zKn8YJlj
-	76Vbpa88X1yunro+9hGm7KTe5tLHpoEYXW/LcR5IxeHwgCOPOb8d0lDgB9O3N4i3acqYTi6alC2
-	VWUlmVon8m2gF0knA+HKhK/3RdR5NmXhNCQspSCdxG+zbaeUZZhxo5m5G6dcO9c8rzc34k=
-X-Received: by 2002:a05:7022:7f0b:b0:14f:4b01:40a1 with SMTP id a92af1059eb24-16a4f627a7cmr5226042c88.0.1791609094685;
-        Fri, 09 Oct 2026 22:11:34 -0700 (PDT)
-Received: from localhost.localdomain ([2603:8001:5f01:8bab:fc0d:3183:3e45:a830])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-169a1becf08sm11181963c88.5.2026.10.09.22.11.33
-        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Fri, 09 Oct 2026 22:11:34 -0700 (PDT)
-From: Artem Dinaburg <artem@trailofbits.com>
-To: stable@vger.kernel.org
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Sasha Levin <sashal@kernel.org>,
-	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-	Kalle Valo <kvalo@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-	ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH 6.12.y] wifi: ath12k: fix reusing m3 memory
-Date: Sat, 10 Oct 2026 01:11:29 -0400
-Message-ID: <20261010051129.14918-1-artem@trailofbits.com>
-X-Mailer: git-send-email 2.55.0
+        bh=hcsVVrQTy9+oPzMIs3wmnifLrbzfhME2W7FHzOhUhMw=;
+        b=Ijo2AMTir2wKOrjC7dVALPRnUrjqhGQprhaUV+v/KJ/BEN7HVEES0DB6IBcl0ymbjR
+         uAyM4DcyughIEKWgaakgd5/VbN79lzf9+rP8mjJlLjMvkVg/blq7Ym7MYF+E5kIXnz+Y
+         VF5sTB8BDI1O6ZnBpuzVogvJM2ly9oFKAnmI/qFFBk+3aervPE1fH+06c7Nnj6MvT55M
+         DCAWeUdgtD5E5/ZyIqr7tyz34XNN2jJ//rQijoF6fkOr3wzxQu+9c0VYz3UKgq6UviSZ
+         tYHJVg4G9flYae2/Y2GNYMpYtVov6rvMposhTd2UmNGN+9axbh2NEi5wG1OzrByjurHQ
+         0Eqw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791643723; x=1792248523;
+        h=content-transfer-encoding:content-type:mime-version:date:message-id
+         :subject:references:in-reply-to:cc:to:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=hcsVVrQTy9+oPzMIs3wmnifLrbzfhME2W7FHzOhUhMw=;
+        b=lVTfB8CjY7OWqisfMvundsxqjfZ1n6wMCGCgM/mx46O6km4Ke4adD/8xp3hA9RyAKr
+         bMC5OWimYDJmOWF6Vd7i/LdBWWZpzvxVJyc9UqQtE0OqWy4QeW7jWSHaacBoDMnv5jOw
+         zNy6S+Swi/TFDR7m1+O4p/n2y+KnCEkH7GLDgBlrple2xRkzKvMN/RkYJcRpZp9VHV5Q
+         RJcofcTkq7chBIeR9ak+LUrWogzsFViA7M4MnQJOKSEDjKV7EBAT5CL8uLJ1Y+BTJotS
+         ABYh2Wa+5f9Sv30d5iBr/GvzOdkmEEJP15XAQVyqnX5Z6IHR22M5+L5T4QvYeOU5aO5o
+         LHUQ==
+X-Forwarded-Encrypted: i=1; AKwUvBx8rUIUuBsqvfz5dzMCOq7Ns2UuHa+Zo1b6bqxUT/P7VF+h5sgJPPuWQQNFx/gN3ugbrXpIYGg=@lists.infradead.org
+X-Gm-Message-State: AFq9FYK9nh5IRAD7afbtnpF2ce31XfvA1pAYU8UY+Uw3pfRugYsSGFi2
+	/ap2tPZvQhCKVGt0rJzWa1XfFRQFi6aFC+3Xzmw6Hs2o8/rQrmIWrfXYuTOh0+pZb9/Y0XsPt1X
+	ffwH0+Dg4N7GEEjdDsGa/+CYKBZQxTTBrPO8IVcpGrpGa0ti4i6ppuqaw71UiAWrjpo0cM2q6
+X-Gm-Gg: AYBFou2Obr+xDCWm+NePj1Ijvqj0qbRgKPqGxYwIfGwV1B3ZXaJcWQVS7qb6z3omvzu
+	dEac/4Dk/igCInSORuWKlHd0da5cnbmz5FtQh6Ex+nai0nYvFxYgYKZRwFccNR7Sj6bqQlvnmkh
+	lsiux8zDiNbtVaOmorUu+V9MJfPLA0Wfi66EQl6hFBZDb7adY7Y9xo1HMk05v/TeUXidCrsBrAc
+	24ipUQsug+lWvyMH+IyA4GVQAciyLSjIv7ilpUOcgQqnhxGUtYQiV1+sxcfhlUkIVN08576lau3
+	Np8KdIXXfxfml6LphTkuQR9J8Ot8KxN4Km+0QMYHGua2hziSNv3wN4akAa0y9eOy0BhN0lpktr7
+	92JrPvyNnnbtDAmaGx+73ADUTh2fy6tFiKzqbMGOGp5QMuWq7BkxaqA==
+X-Received: by 2002:a05:693c:821a:b0:357:ee3a:267a with SMTP id 5a478bee46e88-357ee3a2dd9mr3597875eec.2.1791643723156;
+        Sat, 10 Oct 2026 07:48:43 -0700 (PDT)
+X-Received: by 2002:a05:693c:821a:b0:357:ee3a:267a with SMTP id 5a478bee46e88-357ee3a2dd9mr3597828eec.2.1791643722385;
+        Sat, 10 Oct 2026 07:48:42 -0700 (PDT)
+Received: from hu-jjohnson-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3537ca7133asm19713287eec.14.2026.10.10.07.48.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 10 Oct 2026 07:48:41 -0700 (PDT)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: Jeff Johnson <jjohnson@kernel.org>,
+        Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org,
+        Pavankumar Nandeshwar <pavankumar.nandeshwar@oss.qualcomm.com>
+In-Reply-To: <20261007-mpp_ws-v1-0-739b1fb87d24@oss.qualcomm.com>
+References: <20261007-mpp_ws-v1-0-739b1fb87d24@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: Configure RXDMA buffer ring
+ size per memory profile
+Message-Id: <179164372163.2359474.12323997868750930117.b4-ty@oss.qualcomm.com>
+Date: Sat, 10 Oct 2026 07:48:41 -0700
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.3
+X-Proofpoint-GUID: HyYGkvmclZ7U6-dFgGyQrpl5iEYR0Av-
+X-Authority-Analysis: v=2.4 cv=XdQcX455 c=1 sm=1 tr=0 ts=6aca504c cx=c_pps
+ a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
+ a=EUspDBNiAAAA:8 a=O8DM5gnZE03VXxh4g-wA:9 a=QEXdDO2ut3YA:10
+ a=bBxd6f-gb0O0v-kibOvt:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDEwMDA1OCBTYWx0ZWRfX4uuTj79rJoI/
+ et8Pdu+FsWnwkOcILyhqWu76BhracG39ZXXKv+WlMYawM5ULbkXnLaNZ9at+b/bPH8Ft+Q2vXPQ
+ xcnNYAYOoE0j+SpSDQRXK45kZ7772z4p3aOkp0sAR3h4XNw00erGXU0AoYz7VtA+XSNGwHPSfZq
+ QbTaaIp52FSWyQ68i6NCbaPDyuDWe6+wu0w4lycI+NbBUZWpgZXtkcCeAWY4A7nWxtxsEfu71ZT
+ H5EOoTXyx9lRqxuKT+sz5BEVXddoPjW3J5ZS46nyVijrDWFc14jVvxp0gHndgi9qnqPdPtNSy/W
+ oyp7xplmGmUTcNNtA8hczxzolCuBezg9zAvM1GKeRVgNXZpttFkFVhGC/KQbDjavWCZRAbbbstd
+ t4aTJsCaPjNwt6rZ3ZfgDG7s/8zDDj12gqe5eHg/0C8YeLnRyW7Hd8/NP8g1FUFefEWxt8BO2bw
+ +vhfKiLtnsE5HmMSM9g==
+X-Proofpoint-ORIG-GUID: HyYGkvmclZ7U6-dFgGyQrpl5iEYR0Av-
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDEwMDA1OCBTYWx0ZWRfX9xDzUZYMJYJd
+ /HmoFKZ4v2oNjziTNFSWVtvS+KcPzhL4KZOe2qTHYHXgCVGcrnm9pY+HDht2dZf+fV6irKo8ppU
+ m4UbM4ye0Gs/4LcRf0tilGgX6lbyRmc=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-10_02,2026-10-09_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 malwarescore=0 spamscore=0 adultscore=0 phishscore=0
+ bulkscore=0 lowpriorityscore=0 suspectscore=0 impostorscore=0
+ priorityscore=1501 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610080000
+ definitions=main-2610100058
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261009_221136_623224_5DE0168B 
-X-CRM114-Status: GOOD (  22.38  )
+X-CRM114-CacheID: sfid-20261010_074846_220970_93F86495 
+X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,114 +151,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
-[ Upstream commit 00575bb44b2c2aa53d0a768de2b80c9c1af0174d ]
+On Wed, 07 Oct 2026 14:53:31 +0530, Aaradhana Sahu wrote:
+> The RXDMA buffer ring size is currently hardcoded and shared across all
+> memory profiles. This makes it difficult to tune the ring size based on
+> the requirements of individual profiles.
+> 
+> This series first makes the RXDMA buffer ring size configurable through
+> the memory profile configuration and then increases the ring size for
+> the default profile to improve RX traffic handling.
+> 
+> [...]
 
-During firmware recovery or suspend/resume, m3 memory could be reused if
-the size of the new m3 binary is equal to or less than that of the
-existing memory. There will be issues for the latter case, since
-m3_mem->size will be updated with a smaller value and this value is
-eventually used in the free path, where the original total size should be
-used instead.
+Applied, thanks!
 
-To fix it, add a new member in m3_mem_region structure to track the original
-memory size and use it in free path.
+[1/2] wifi: ath12k: Make RXDMA buffer ring size configurable per memory profile
+      commit: 643f0bf936176c114d5631da7547e991b5d99f10
+[2/2] wifi: ath12k: Increase RXDMA buffer ring size for default memory profile
+      commit: 15f7603b69a83a0acc7fcc8992ecbea6110f9424
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
+Best regards,
+-- 
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
-[ Backport to 6.12.y: drop the copyright-line hunks, which do not apply
-  to 6.12.y. The code changes are the same as upstream. ]
-
-Fixes: 05090ae82f44 ("wifi: ath12k: check M3 buffer size as well whey trying to reuse it")
-Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Link: https://patch.msgid.link/20251029-ath12k-fix-m3-reuse-v1-1-69225bacfc5d@oss.qualcomm.com
-Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Assisted-by: LLM
-Signed-off-by: Artem Dinaburg <artem@trailofbits.com>
----
-Hi Greg, Sasha, and ath12k maintainers,
-
-Please queue this for 6.12.y.
-
-6.12.y has the bug this fixes. When a smaller M3 image is loaded into a
-reused buffer, m3_mem->size shrinks to the new image length, and that
-length is later passed to dma_free_coherent() instead of the size that
-was allocated. The patch also fixes the allocation-failure message, which
-reads fw->size even though fw is NULL when the M3 image comes from
-firmware-N.bin.
-
-The fix is already in 6.18.y and 7.2.y.
-
-Testing: applies to v6.12.112 and on top of the current 6.12 stable
-queue. An x86_64 allmodconfig build with CONFIG_WERROR=y is clean, and
-ath12k also builds cleanly with W=1. I tested the M3 load and free
-functions in userspace with firmware and DMA stubs under ASan/UBSan. I
-did not test on ath12k hardware.
-
-An LLM helped prepare, build, and test this backport. I reviewed the
-results.
-
-Thanks,
-Artem Dinaburg
-
- drivers/net/wireless/ath/ath12k/qmi.c | 9 ++++++---
- drivers/net/wireless/ath/ath12k/qmi.h | 3 +++
- 2 files changed, 9 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index b93ce9f87f61..5b02d1d76a36 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -2724,9 +2724,10 @@ static void ath12k_qmi_m3_free(struct ath12k_base *ab)
- 	if (!m3_mem->vaddr)
- 		return;
- 
--	dma_free_coherent(ab->dev, m3_mem->size,
-+	dma_free_coherent(ab->dev, m3_mem->total_size,
- 			  m3_mem->vaddr, m3_mem->paddr);
- 	m3_mem->vaddr = NULL;
-+	m3_mem->total_size = 0;
- 	m3_mem->size = 0;
- }
- 
-@@ -2762,7 +2763,7 @@ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
- 
- 	/* In recovery/resume cases, M3 buffer is not freed, try to reuse that */
- 	if (m3_mem->vaddr) {
--		if (m3_mem->size >= m3_len)
-+		if (m3_mem->total_size >= m3_len)
- 			goto skip_m3_alloc;
- 
- 		/* Old buffer is too small, free and reallocate */
-@@ -2774,11 +2775,13 @@ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
- 					   GFP_KERNEL);
- 	if (!m3_mem->vaddr) {
- 		ath12k_err(ab, "failed to allocate memory for M3 with size %zu\n",
--			   fw->size);
-+			   m3_len);
- 		ret = -ENOMEM;
- 		goto out;
- 	}
- 
-+	m3_mem->total_size = m3_len;
-+
- skip_m3_alloc:
- 	memcpy(m3_mem->vaddr, m3_data, m3_len);
- 	m3_mem->size = m3_len;
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
-index 0dfcbd8cb59b..e9eb186441cc 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.h
-+++ b/drivers/net/wireless/ath/ath12k/qmi.h
-@@ -118,6 +118,9 @@ struct target_info {
- };
- 
- struct m3_mem_region {
-+	/* total memory allocated */
-+	u32 total_size;
-+	/* actual memory being used */
- 	u32 size;
- 	dma_addr_t paddr;
- 	void *vaddr;
 
