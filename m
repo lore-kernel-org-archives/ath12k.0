@@ -4,54 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61873CA9EC9
-	for <ath12k@archiver.kernel.org>; Sun, 11 Oct 2026 07:45:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19356CA9EC9
+	for <ath12k@archiver.kernel.org>; Sun, 11 Oct 2026 07:45:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=SDmCcuBy6PXbhLYIXrgXx2iBVfVCPr/Ovdrgh7KTbnw=; b=nzp5Y4cv+ZnJvmOYpzQmHAyGh/
-	e0EIBM+HcP3veVeFpD/h+9onyARu2wQq3IdKsQtbHJAypMDI1DyqpPTm0W7rmCy4PI6eqeers3tkH
-	+ogyehSNlZUGCwNV52/9jwWlab+BMqMVNoByWuxZRIUNi2IZDMcgsPNwvz2PzHK+8PU2PTprHP+e9
-	aG5Mt9muPX+BzTRpOGkQN4bh8vtzYwjjq5arPeqUWQCqiITEfpwRzBOcEGWlDLifqdeqCWMFcpBiV
-	8cqU5vCSs9ZIRuwwjHOGCzqVWm7dOIDfjAGSbzsXEMgLEokLCHaO7hwBYgq0O6r7JyIOrkLynNGUa
-	UIo0fWtg==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=sh45bfH6uhfT3Ksu8Vh+24tRbIBlwKOVnSGn6jCmHg4=; b=yeFV5/SRQbc1OO9ZLAqgLR+PYI
+	kEUY+nbwU6OeaqKAJvP65qFgQtppjuFxJfEY6lpo5nQ3xD12pv32Oz0mrwb34lcOt2NbmyN53JX8p
+	fYcaFSJzalGXqYNXc8+O+WHlZEuyiJ2UOXo0Dvu68oz4Np8z9ezDZ59eIOzQl08tlwPASQM+L9IGb
+	petQ+6Lvd4guw4I47RQ/IQAwGc891N6pdD7PsKLBW9Fq8q9yMyQscgDlCvkv8wNuGmVuMU0WkUVRy
+	72Cb+Nje3ygjTxo7l/RhiQtrdBLaNihaVRAhfUZolMRWHXd40Low/5FPtfJvcf/qTk8GQeovpp06C
+	mR5UG1SQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFoFY-00000008oU0-0qMr;
-	Sun, 11 Oct 2026 07:45:40 +0000
+	id 1xFoFk-00000008oWi-17V5;
+	Sun, 11 Oct 2026 07:45:52 +0000
 Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFoFV-00000008oSo-0N7P
+	id 1xFoFa-00000008oUO-153v
 	for ath12k@lists.infradead.org;
-	Sun, 11 Oct 2026 07:45:38 +0000
+	Sun, 11 Oct 2026 07:45:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1791704734;
+	s=mimecast20190719; t=1791704741;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=SDmCcuBy6PXbhLYIXrgXx2iBVfVCPr/Ovdrgh7KTbnw=;
-	b=f2dwyy9SWzTuH9TkqyyL1mZpyzB2xd/D/mO7epQM3Q6FC8Od9fp1cvO+JfuOnCl1QzbcsK
-	CMcxvPinPEdtTr1zVIb9eXW+sXvhbskwjySHxjkcY4HaiJqYtVNbJhSZ129QGSd68QgfJn
-	JypDxidnHfQUG2qsoeH3oA3RW/WEV+I=
-Received: from mx-prod-mc-08.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-35-165-154-97.us-west-2.compute.amazonaws.com [35.165.154.97]) by
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=sh45bfH6uhfT3Ksu8Vh+24tRbIBlwKOVnSGn6jCmHg4=;
+	b=Un/JRxLr6lu2VALXdC/Fr4e9gaWCuN4BuNQ0rfggugm5lo2ONBM5gSQf3cYmfQbjCKXyNi
+	NVxdqnuveKex877d7b8TcQO81G/7ZUzuEZwVTUBqA2aol9CN1nPU9GOy6D8lpT/cEq+CZB
+	dZEq8nQCWzJp5ScNaMa4URq2a+T0atU=
+Received: from mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
  relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-557-owIeNwFMNXmEhA74ktZlIA-1; Sun,
- 11 Oct 2026 07:45:30 +0000
-X-MC-Unique: owIeNwFMNXmEhA74ktZlIA-1
-X-Mimecast-MFC-AGG-ID: owIeNwFMNXmEhA74ktZlIA_1791704728
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-113-zjclJS8vPteu2r2wac3_Jg-1; Sun,
+ 11 Oct 2026 07:45:37 +0000
+X-MC-Unique: zjclJS8vPteu2r2wac3_Jg-1
+X-Mimecast-MFC-AGG-ID: zjclJS8vPteu2r2wac3_Jg_1791704735
 Received: from mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.12])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mx-prod-mc-08.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 175E218011EA;
-	Sun, 11 Oct 2026 07:45:27 +0000 (UTC)
+	by mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 50ADD1954ACF;
+	Sun, 11 Oct 2026 07:45:34 +0000 (UTC)
 Received: from jtornosm-thinkpadp1gen7.rmtes.csb (headnet03.pony-001.prod.iad2.dc.redhat.com [10.2.32.114])
-	by mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 9A48F1956041;
-	Sun, 11 Oct 2026 07:45:21 +0000 (UTC)
+	by mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 9DB8E1956041;
+	Sun, 11 Oct 2026 07:45:29 +0000 (UTC)
 From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
 To: jgg@ziepe.ca,
 	alex@shazbot.org,
@@ -70,18 +71,20 @@ Cc: johannes@sipsolutions.net,
 	linux-arm-msm@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Subject: [PATCH v2 0/7] Enable Qualcomm WiFi PCIe passthrough to VMs
-Date: Sun, 11 Oct 2026 09:45:07 +0200
-Message-ID: <20261011074514.515894-1-jtornosm@redhat.com>
+Subject: [PATCH v2 1/7] PCI: Add pci_find_free_ext_cap_offset() helper
+Date: Sun, 11 Oct 2026 09:45:08 +0200
+Message-ID: <20261011074514.515894-2-jtornosm@redhat.com>
+In-Reply-To: <20261011074514.515894-1-jtornosm@redhat.com>
+References: <20261011074514.515894-1-jtornosm@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 3.0 on 10.30.177.12
-X-Mimecast-MFC-PROC-ID: PLPPIBLMOv_HHhIuUTUJKX5m8rUVuZI6rNmSVhY9sdk_1791704728
+X-Mimecast-MFC-PROC-ID: dj9A79kS2cXQqp378PV2_6jTQNQcwqEvCukVwZwPb18_1791704735
 X-Mimecast-Originator: redhat.com
 Content-Transfer-Encoding: 8bit
 content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261011_004537_201717_D6F4E325 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20261011_004543_454158_0E8A9021 
+X-CRM114-Status: GOOD (  18.07  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,99 +99,140 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This series enables Qualcomm ath11k/ath12k WiFi devices to work in VM
-passthrough scenarios, addressing a long-standing issue where these
-devices fail to initialize when passed through to VMs via VFIO.
+Add helper function to find free space in PCI extended configuration
+space. This is needed by VFIO variant drivers that need to use unused
+extended config space for device-specific purposes, such as passing
+metadata to VMs.
 
-Qualcomm ath11k/ath12k WiFi devices have been broken in VM passthrough
-since they were introduced. The Qualcomm firmware has its own interrupt
-controller with private registers that need to be programmed with MSI
-addr/data. The driver extracts the addr/data from the MSI descriptor
-and programs the firmware's private registers. In a VM, the driver
-only sees virtual (IOVA) addr/data, but the firmware's private writes
-bypass the IOMMU, so they need the physical host values. This causes
-firmware initialization to fail with errors like "BHI offset:
-0xffffffff is out of range".
+The function walks the extended capability chain (with TTL to prevent
+infinite loops on malformed chains), then scans for a contiguous region
+of zeroed space of at least the requested size. This avoids hardcoding
+capability sizes and correctly handles capabilities of any length.
 
-Multiple attempts have been made to solve this over the past 2 years:
+Use case: The qcom-vfio-pci variant driver uses this to find space for
+caching host MSI addresses that need to be passed to Qualcomm device
+firmware in VMs.
 
-March 2024: Workaround using module parameters [1]
-  - Required manually copying MSI values from host to VM
-  - Rejected by Johannes Berg as too manual, suggested VMM solution
-
-August 2024: QEMU + kernel solution by Alex Williamson [2]
-  - Kernel disables MSI virtualization, QEMU intercepts config writes
-  - Uses brute force pattern matching to infer MSI data writes
-  - Stuck as RFC - no progress in 8+ months
-
-No action from Qualcomm: Despite multiple reports, no vendor solution
-
-The solution in this series provides a clean, kernel-only approach that
-addresses the previous concerns. The PCI reset support for these devices
-has already landed in linux-next (commit f8522a518e59 "PCI: Add device-
-specific reset for Qualcomm WCN6855/WCN7850 WLAN") [3], solving the device
-reset path for VFIO passthrough. This MSI series is the remaining
-piece, with both in place, these Qualcomm WiFi devices would be fully
-operational in VMs for the first time.
-
-In practice, this specific behavior (firmware requiring physical host
-MSI addresses in private registers, bypassing the IOMMU) has only
-been observed in Qualcomm ath11k/ath12k devices. A device-specific
-approach seems appropriate, and the VFIO variant driver pattern fits
-well for this, following the same established pattern as mlx5-vfio-pci
-and nvgrace-gpu for their own device-specific needs.
-
-Architecture:
-1. qcom-vfio-pci variant driver caches physical host MSI values and
-   exposes them via extended config space with magic signature "QMSI".
-   Device-specific hardware quirks belong only in kernel drivers, not
-   userspace, independent of the tools used.
-2. VM drivers (ath11k/ath12k) automatically discover and use cached values
-3. PCIe link recovery handles VM timing variations
-
-Thoroughly tested: 3 VMs across 2 WiFi generations, all devices
-successfully initialized and are ready for use.
-- VM1: ath11k (WCN6855)
-- VM2: ath11k (WCN6855)
-- VM3: ath12k (WCN7850)
-
-Series structure:
-  Patch 1/7: PCI helper to find free space in extended config space
-    for device-specific data exchange between host and VM drivers
-  Patch 2/7: Shared header defining the MSI cache protocol between
-    the host variant driver and VM drivers
-  Patch 3/7: qcom-vfio-pci variant driver that caches host physical
-    MSI address/data and exposes them to VMs through extended config
-    space
-  Patch 4/7: ath11k PCIe link recovery retry to handle initialization
-    timing variations in VM environments
-  Patch 5/7: ath11k support to read cached host MSI values and
-    configure firmware with correct physical addresses, making the
-    device operational in VMs
-  Patch 6/7: ath12k PCIe link recovery retry to handle initialization
-    timing variations in VM environments
-  Patch 7/7: ath12k support to read cached host MSI values and
-    configure firmware with correct physical addresses, making the
-    device operational in VMs
-
-[1] https://lore.kernel.org/all/20240322104912.94811-1-jtornosm@redhat.com/
-[2] https://lore.kernel.org/kvm/20240812170014.1583783-1-alex.williamson@redhat.com/
-[3] https://lore.kernel.org/all/20261005105436.83962-1-jtornosm@redhat.com/
-[4] Original problem report:
-    https://lore.kernel.org/all/fc6bd06f-d52b-4dee-ab1b-4bb845cc0b95@quicinc.com/
-
+Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
 ---
-v2: Complete cover letter with more information
-    Address Sashiko comments
-v1: https://lore.kernel.org/all/20260930140833.576941-1-jtornosm@redhat.com/
+v2: Address Sashiko comments:
+    - Add TTL to capability chain walk to prevent infinite loops on
+      malformed capability chains (matching pci_find_next_ext_capability)
+    - Replace hardcoded 64-byte offset with zero-scan approach to
+      correctly handle capabilities of any size
+    - Fix potential integer underflow in size comparison
+    - Add cfg_size and size parameter validation
+v1: https://lore.kernel.org/all/20260930140833.576941-2-jtornosm@redhat.com/
 
-Jose Ignacio Tornos Martinez (7):
-  PCI: Add pci_find_free_ext_cap_offset() helper
-  vfio: Add qcom_vfio.h header for MSI cache protocol
-  vfio/pci: Add qcom-vfio-pci variant driver
-  ath11k: Add PCIe link recovery retry for VMs
-  ath11k: Use VFIO MSI cache when available
-  ath12k: Add PCIe link recovery retry for VMs
-  ath12k: Use VFIO MSI cache when available
+ drivers/pci/pci.c   | 72 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ include/linux/pci.h |  3 +++
+ 2 files changed, 75 insertions(+)
+
+diff --git a/drivers/pci/pci.c b/drivers/pci/pci.c
+index 8f7cfcc00090..7fa261140457 100644
+--- a/drivers/pci/pci.c
++++ b/drivers/pci/pci.c
+@@ -552,6 +552,78 @@ u16 pci_find_ext_capability(struct pci_dev *dev, int cap)
+ }
+ EXPORT_SYMBOL_GPL(pci_find_ext_capability);
+ 
++/**
++ * pci_find_free_ext_cap_offset - Find free space in extended config
++ * @dev: PCI device to query
++ * @size: Minimum size needed (in bytes)
++ *
++ * Scans the extended capability chain and then searches for a contiguous
++ * region of zeroed space of at least @size bytes in the extended
++ * configuration space (0x100-0xFFF). This can be used by drivers that
++ * need to use unused extended config space for device-specific purposes
++ * (e.g., VFIO quirks for VM passthrough).
++ *
++ * Returns the offset to free space, or 0 if no suitable gap found.
++ */
++int pci_find_free_ext_cap_offset(struct pci_dev *dev, size_t size)
++{
++	int ttl = (PCI_CFG_SPACE_EXP_SIZE - PCI_CFG_SPACE_SIZE) / 8;
++	int pos = PCI_CFG_SPACE_SIZE;
++	int start = 0, run = 0;
++	int highest_pos = 0;
++	u32 header;
++	int offset;
++
++	if (!pci_is_pcie(dev) || dev->cfg_size <= PCI_CFG_SPACE_SIZE)
++		return 0;
++
++	if (size == 0 || size > PCI_CFG_SPACE_EXP_SIZE - PCI_CFG_SPACE_SIZE)
++		return 0;
++
++	if (pci_read_config_dword(dev, pos, &header))
++		return 0;
++	if (header == 0 || header == 0xffffffff)
++		return 0;
++
++	while (ttl-- > 0) {
++		if (pos > highest_pos)
++			highest_pos = pos;
++
++		pos = PCI_EXT_CAP_NEXT(header);
++		if (!pos || pos < PCI_CFG_SPACE_SIZE)
++			break;
++
++		if (pci_read_config_dword(dev, pos, &header))
++			break;
++		if (header == 0 || header == 0xffffffff)
++			break;
++	}
++
++	if (!highest_pos)
++		return 0;
++
++	for (offset = highest_pos; offset <= (int)PCI_CFG_SPACE_EXP_SIZE - 4;
++	     offset += 4) {
++		u32 val;
++
++		if (pci_read_config_dword(dev, offset, &val))
++			break;
++
++		if (val == 0) {
++			if (run == 0)
++				start = offset;
++			run += 4;
++			if (run >= (int)size)
++				return start;
++		} else {
++			run = 0;
++		}
++	}
++
++	return 0;
++}
++EXPORT_SYMBOL_GPL(pci_find_free_ext_cap_offset);
++
+ /**
+  * pci_get_dsn - Read and return the 8-byte Device Serial Number
+  * @dev: PCI device to query
+diff --git a/include/linux/pci.h b/include/linux/pci.h
+index 2c4454583c11..5d1ccbb2ed29 100644
+--- a/include/linux/pci.h
++++ b/include/linux/pci.h
+@@ -1287,6 +1287,7 @@ u8 pci_find_ht_capability(struct pci_dev *dev, int ht_cap);
+ u8 pci_find_next_ht_capability(struct pci_dev *dev, u8 pos, int ht_cap);
+ u16 pci_find_ext_capability(struct pci_dev *dev, int cap);
+ u16 pci_find_next_ext_capability(struct pci_dev *dev, u16 pos, int cap);
++int pci_find_free_ext_cap_offset(struct pci_dev *dev, size_t size);
+ struct pci_bus *pci_find_next_bus(const struct pci_bus *from);
+ u16 pci_find_vsec_capability(struct pci_dev *dev, u16 vendor, int cap);
+ u16 pci_find_dvsec_capability(struct pci_dev *dev, u16 vendor, u16 dvsec);
+@@ -2160,6 +2161,8 @@ static inline u8 pci_find_next_capability(struct pci_dev *dev, u8 post, int cap)
+ { return 0; }
+ static inline u16 pci_find_ext_capability(struct pci_dev *dev, int cap)
+ { return 0; }
++static inline int pci_find_free_ext_cap_offset(struct pci_dev *dev, size_t size)
++{ return 0; }
+ 
+ static inline u64 pci_get_dsn(struct pci_dev *dev)
+ { return 0; }
+--
+2.53.0
 
 
