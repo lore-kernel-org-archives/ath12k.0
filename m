@@ -4,139 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1488ECA9ED0
-	for <ath12k@archiver.kernel.org>; Mon, 12 Oct 2026 08:59:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40598CA9ED0
+	for <ath12k@archiver.kernel.org>; Mon, 12 Oct 2026 09:19:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ll0qihtjv0p7a6Ls/L2RxJXgO9wEDOARy2uDIpE3nF0=; b=zdAoBSRBK2a4BGEl4xjl7IOG20
-	08zidHWDKOrU+3hxP83VAZQNpbdqavrW7/jiXalNVkDxw+4TC7nvdKOvLaXvWRtlnh8epqLbWSAus
-	xfWHsqVt1GZUGp12RR7g/Xs4/3uVrwc0jpZd0ZHmJ1iSIylioj6ssFz+T1IwRl9ZAXDcWBFSdWBOH
-	C4kLefqMBzkhbqCiQrbOITqml13Ny9DS1ncx+PjXl2JfdrGnpaqbZhEwMLuHLDQfbRV+h4C/Gf1WO
-	Ycb1Eu3i9xQi2Eq67S+onHFpUoBNX2ehxr8kjS1VbGNFyZp4az7uEs7LmQP2PAltt/WmCC7YmTtpg
-	qDl1Y0Tg==;
+	bh=MSynGqQTU/luENBZy9D+KhOkObSWqGqhy0Au8QslHf4=; b=p2eQH2JFMZnVPexI9FXPkmPgDu
+	YRjCZZ5tub973WI1d5tnHc7V0+vjihnCbVV9UGlnmYyufUORAVZJaRxL0cvJufjHkw5VMWiiVfO6w
+	wh0wjQTyYPGvg4U0Eqt3FSZtYhf+v9eCqAFJBKx9m+nbhFugtzBQvByXlfhumKXImHL9nVn3hYNl7
+	ezam0M54B0nzW2/Szo9BPaqKUSPqbakVlr/+MC79Bvf23PWUlpJagIjDjv7jlbq6eUmdqFzmw0h0S
+	5uFQg1nwSvU7RZOhBW/Y4LS2Ow0TV7HgW/nM+Lu+gqIVXsEvl22Mf2ZnIBIpoBFwl453wzsFh/4/4
+	/V5Rft+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGBsF-0000000A0mJ-2m0Y;
-	Mon, 12 Oct 2026 08:59:11 +0000
+	id 1xGCBo-0000000A2QY-3siP;
+	Mon, 12 Oct 2026 09:19:24 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGBsD-0000000A0lK-197X
+	id 1xGCBm-0000000A2Pc-2icZ
 	for ath12k@lists.infradead.org;
-	Mon, 12 Oct 2026 08:59:10 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69C8K7iA2796108
-	for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 08:59:09 GMT
+	Mon, 12 Oct 2026 09:19:23 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69C8KFxU1779391
+	for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 09:19:22 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Ll0qihtjv0p7a6Ls/L2RxJXgO9wEDOARy2uDIpE3nF0=; b=Ri8kbeykUzzNe7wT
-	ayRtyxjHpxjuLf66mqUnXMzGqDpa/rgp+TvSnjD+coQW1STKdXIsFe280Fsp/C/R
-	/zQ7YFlnWh3Ma4mDZ98lRoSRSANynikZpqCpJ0inyUZnH89GU7EJbyRDvLHSFhKx
-	Ghf9UbVg4p2H1V12c+EnY8NDXSPr9tN1urhShguKaSgj5dfyCIbccHO6uYHPoov3
-	tCzgxSQPXhzf+CzJpyljYDGQOcPWFSb9oFaA2dqeThKVtC9VeY9vo5Y+/skZq4V2
-	rxg6svBO3VrAQd0e7N23xfnAz7wxXiEVen1iseHyb4uhu7LZ546Jde/PJ0veoCPD
-	vxmIXA==
-Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h8uh3ga0s-1
+	MSynGqQTU/luENBZy9D+KhOkObSWqGqhy0Au8QslHf4=; b=FDF8cyaL9gi0JgXW
+	Fqm3EJd1ooGWC2vkCABgBM2h5pvPRzaTMIlBff+aUAihrmfd0Z7KpfMJelvom3qx
+	MEWZptF0ogtNSfsDUHc/hVHEyBZL2OJT2JsKTaQmRGWeDWKb/Z1Oq+uY7ug1m/uV
+	R0gkgw4kaw34sR7LrZbrm56u6nSrSFT2j6+UcsqgO4DYlcRSmWHeObkOl+r4xzAl
+	d8WZ3lLvTJe0Av+e+q/f4Rbqdp0Sf1vjEmhwpuxPSo6MvX01Vrc6lNPl4G4lqDjX
+	rK9J2wcBD+4yt0I7skg2S/fWZe9bcDIST35gmfXu/P8UiybZgmUWivQmN6vaPqwp
+	BDLbrw==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h8udq0d7p-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 08:59:08 +0000 (GMT)
-Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-359d11365bfso3162668eec.1
-        for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 01:59:08 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 09:19:21 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3ab27eb38d6so1660239a91.2
+        for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 02:19:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1791795548; x=1792400348; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Ll0qihtjv0p7a6Ls/L2RxJXgO9wEDOARy2uDIpE3nF0=;
-        b=gAjkjd+dfAq0rGtIegQE5BWS5MdSCvizJaZRpvuUjLxQ0I3WlSO2gUy049d54bOjRJ
-         dOURry62eqsS6mrEHme9Bsjsz5mWNqzXdhiZjoppV96z627TxADjFIv4ip7lYYTQ5DKu
-         4HXeRpA8TspYrQ04rgO1FzBAi22AtdkMQK+qdbxEImETI7KY/+eFDvk+IIt33ScrMaxe
-         6fK5bV6qETYge3KRQsPM8cYByOUCAHZ3YUTZMdNO5dPI7v6sKhYcN7OJQKChx2hzJmuN
-         /stfff/35JcqkssribmmMPg1m3koMhw0iS9NgRR0wDAAlaEXoGfv8vxPf/ucfTgA24c3
-         wRyQ==
+        d=oss.qualcomm.com; s=google; t=1791796761; x=1792401561; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=MSynGqQTU/luENBZy9D+KhOkObSWqGqhy0Au8QslHf4=;
+        b=KxklXwcaNSLLaV2AOEe8VyHfECT/YDiihXZgStO1uIV+ofGctv8DuiQ1PlGtzh4q0a
+         ZsPmuJF7IqLB1ZJiYNOn1BFFvVPA2HC5ket0nCk02JEIPblZu7zJ/yB4NiemqE02+bLA
+         pmpCoteIXyMMI+eVipt4Cl2lHQNdKHPX1x5NuW9qnXBxPXV9zUpXjGsx+1crrWM4KuAA
+         hjElSwMJZbMjIekNqfjQEZf4dtq5jNq50sQGEjC6Hen6t2hkI/T0yyLSaIemHjE1Mp3R
+         CAROfGJFKSQR/n2DNltzt2tXA+Ixu+WfvUPwfiUIv4/s0Dt5whp9DeO/iTgCRmb55VJU
+         XAuA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791795548; x=1792400348;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20260707; t=1791796761; x=1792401561;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Ll0qihtjv0p7a6Ls/L2RxJXgO9wEDOARy2uDIpE3nF0=;
-        b=e6nil7sWN8NzITSTS9DIKOjsXcmloMyy7y19E474+rL0Dq6dVeJ6mDr7h6ZvzaQ2Rb
-         tWUtUHCwg5mKkBYes8cZx0nf8Fb3yuYWQ/slxi3kGh452U0OI5+rCVN2x5GVTD7n35l0
-         TxwZZoAbYfVKPjnCPBs6f+tSDS/X5taEolK6tm5j1A0yo5Eb4TLIiqaRzjC4idyl/Z2S
-         HYoVMT+mWJIUvgMiAuVxMwC2kdqgHIjAUc1u7S5/hOdK9G86TadDtbkOLh6HHakWic5P
-         zYB81l2eowIelqnbETl/DRKUJvX5pbCOwAafFIDwnkj5cCDUxtRKP9wmdmBpYnBg7C4e
-         5w0A==
-X-Forwarded-Encrypted: i=1; AKwUvBzf/QmWjzygTGqbm0lsr0cJMh0FcqG4o3cafuvKh15p5sqW+UYqmRMTnc3dWIvKax8SH/NlLBQ=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLh9qraHJdHcV7wy5r1Q14xksvQtVZQ1RJZLyJEix2sUEXDpMgI
-	uVTxOJtVKIzQCagDkFW81QqVc8+NMUPTEXP8lr/DxzfF3PdXsk1IKPS+PNfDQfvNzB7fa3h2J+y
-	Jw9zTt5lqyQ1hGsBUSwaLkP31q8p9LwxBKmpUpdaO8aBBiFB2d4sySB0nc1mijzeX
-X-Gm-Gg: AYBFou3IV+ovy23PJYGatIYk9dfi8Nsr4QdDTcFrYUzljygFtD4rm8tk2Ame0+l0Gml
-	vMVSGh1bUOyzXa/t5gIpUAecJiP4vsxbU5hTYqYJjgOgagP7ZSj7kuCsjOsnJGBlrcjl1x4keaI
-	nywPQB5eEjHiO2Yxa3gAZAZ4CL8pImBtji+d25W6scYclFnmW9gfWT1gTc2FyXwRK5rH8Foxqqa
-	Y19PLc87M+wGk8ZTxQ/iMu6C0BvPUr1jDAhMcXl73czvqn/ioZlkGW9QjHI+Ee08TG2SH5vuVkV
-	grhOWFQ/uYjDbiOcPLWsEcqNNem13PqexPMENmCPthkzJ2to/ePIC04zbotbT5MFBpGqIhAkdrq
-	GfbaxzhIUSaCWrC74aoZPEyUkTdKpXZj9bO21DZmX
-X-Received: by 2002:a05:693c:6390:20b0:35a:6a7d:a0f8 with SMTP id 5a478bee46e88-35a6a7da650mr3600150eec.7.1791795547958;
-        Mon, 12 Oct 2026 01:59:07 -0700 (PDT)
-X-Received: by 2002:a05:693c:6390:20b0:35a:6a7d:a0f8 with SMTP id 5a478bee46e88-35a6a7da650mr3600133eec.7.1791795547386;
-        Mon, 12 Oct 2026 01:59:07 -0700 (PDT)
-Received: from [10.152.199.23] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-35b19c6c7b4sm4978814eec.24.2026.10.12.01.59.04
+        bh=MSynGqQTU/luENBZy9D+KhOkObSWqGqhy0Au8QslHf4=;
+        b=yr2tD6f68vnIvLrpiP0ycDMabr+FXCtEj2hhkoK59P+M3pbfPjUH3A89NRVpQ2iDv2
+         /MOvaV5fMWFTNl5a+WVY7vezh1/TCW+zemk71/44PbQN3149xVeIZzD9mJ/U0Ywm1549
+         Hu/IIlbMPYT1W7m1LlRNplHcmkclWQAcxS6e65kqMFX2IPv6ojy+uQEMfHg1dzJufolx
+         CdkWi6wKyMwWup6wTNZPU+GD7KRyVOC7/8GT/yIHx/iGD8+1NlxcXsJkRB+a+n8gfiRD
+         t8IH7LSDugKFBzJYYTQXiUaz6V6QTvsG4hUDJ40/wc4PD2mC/wB4+sKAQfZt8CG5UH0I
+         5OVg==
+X-Forwarded-Encrypted: i=1; AKwUvBwYtkkbdlSUnik2keI26QKqFrReks2l4ugparfXFf2mzfElFEFiog/RzHRMEwc4xsDH0/Exg1Q=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJgJ4uxcHCIMSCrkweT4uDVoRnwGjjbe9Y1mMnCaRjYrC5rSgb2
+	CwJMcRL0P1EYpOJncOmbi0zRZYHo/wHmhbBksKPIGV4NcHr2VD5GxcRmQWk2d/ntHceqjdwzuwp
+	We11n7n8wXltovQPIYSKX4QqL6QD0lGa2f+GMxm46V2ARWbWR6rr6qnM+VkE5U7KL
+X-Gm-Gg: AYBFou1fT8tT8+M4eNl9o5EnTzDekTg7JlGbvy01PrV0rB0WCDsz90DbcsbSstu43qi
+	lQbiP8D8UTPe60UPD6EjKQcOhlWq6uwCPVFIjp7Mp0SxGcapmSaRQ2CJkKUPndtMQdZhRBcdlQB
+	zJ7Axs28/UHTKGb+xoeRyzck+IPieYu9kD3jf5Lz8Dz8/mnLDaIuyDVbOG2Kf7VuuJnF0JRUNFd
+	42nwHvM6NStw9xKPYDwGgXiwT5jwfrou8xGAea3QrT7qJf7eTD0ghw4vU0B0IWx7gtTjm3QrSfg
+	VpOaOAoi4hgLUuHEWH57oChXPBiP6vHhIe2or5MBbCwhPVYopRh/2PxyvUMWj3ZeZO5nxz+vvZT
+	QC+4XKzSHm7fzcummDENjDyT1e6/nZjHAsA==
+X-Received: by 2002:a17:90b:2681:b0:3ab:189b:6981 with SMTP id 98e67ed59e1d1-3ab3a92f9f3mr6893543a91.48.1791796760925;
+        Mon, 12 Oct 2026 02:19:20 -0700 (PDT)
+X-Received: by 2002:a17:90b:2681:b0:3ab:189b:6981 with SMTP id 98e67ed59e1d1-3ab3a92f9f3mr6893528a91.48.1791796760309;
+        Mon, 12 Oct 2026 02:19:20 -0700 (PDT)
+Received: from [10.152.193.243] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3ab38b9633fsm19721794a91.6.2026.10.12.02.19.17
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 12 Oct 2026 01:59:07 -0700 (PDT)
-Message-ID: <2e594004-fea0-4814-814d-6a716de018a9@oss.qualcomm.com>
-Date: Mon, 12 Oct 2026 14:29:02 +0530
+        Mon, 12 Oct 2026 02:19:19 -0700 (PDT)
+Message-ID: <154151a7-f999-4ab7-b1b2-628f56ac3fff@oss.qualcomm.com>
+Date: Mon, 12 Oct 2026 14:49:15 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH ath-next v2] wifi: ath12k: Fix NAPI resource leaks in AHB
  external IRQ paths
-To: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>,
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
         ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org, jjohnson@kernel.org,
         baochen.qiang@oss.qualcomm.com,
         vasanthakumar.thiagarajan@oss.qualcomm.com
 References: <20261001045423.493121-1-aaradhana.sahu@oss.qualcomm.com>
-From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+ <ad47c905-7865-4283-99ba-e246ae44d25b@oss.qualcomm.com>
+ <2d52c324-59e3-411a-8012-e530426eed3a@oss.qualcomm.com>
+ <a3b513c2-24e1-4f4f-bf40-6494ebf2bb99@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20261001045423.493121-1-aaradhana.sahu@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDEyMDAzNSBTYWx0ZWRfX4TcQG8a8hPto
- wDTai6fn805DCntd2PgkES/9+OsuW++qWmytmZiH30qcpoyxclAOUnnHABQ9/BsuvG10E4cIRGy
- PZw0tFujV+kiryPshE/H1P8jTmtxVnWo1qudtRaXdJ1/+dNw8O1h0jr6X2NJ/IcX0iXqfQg1cvj
- FEdfpsSDFeWoRBcDyFuLT8Jf07XVRDDT4i0DMfyMSU0k+eCs/dadqeNyrCXiPdWiNkzo4RAHBmg
- KS4Bgsr2r2TbKpboQsQx7rD9pzLVsYDEGrbEbAYkCpiH+ssUta64NesKFCcTp+DHEFwT16x0cbJ
- +FkzPDqFoUAG5mO2NRUsJk/ttNECerzWijkmxrVim0L8UxdRvodgBHRysTWBLDdhS/4sXxUU5mo
- M5sSrgMlJvoXXKhy9yGKz7+CH9MD54PrqB4/q0HHk1sdfM/7P+fW+2FFku6RnvHRT4xxoP6eVyY
- hrdvlu09qLnc1fYY2Ag==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDEyMDAzNSBTYWx0ZWRfX465eWG3O6DMH
- FPx5BV/aTwI6U9W5sAxI7RZZFlxpBpcT+/KGxa0GfyW/9Kl7R4w/qDAIe2TdW876uh6O8FHfxhF
- xm7QsrSZIBK2Lpye4AHJQamPo3feGNo=
-X-Authority-Analysis: v=2.4 cv=QO391QLL c=1 sm=1 tr=0 ts=6acca15c cx=c_pps
- a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+In-Reply-To: <a3b513c2-24e1-4f4f-bf40-6494ebf2bb99@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Authority-Analysis: v=2.4 cv=evJKXYpX c=1 sm=1 tr=0 ts=6acca619 cx=c_pps
+ a=0uOsjrqzRL749jD1oC5vDA==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
- a=EUspDBNiAAAA:8 a=3Kn9n7x3DtEw6PE7aXgA:9 a=QEXdDO2ut3YA:10
- a=6Ab_bkdmUrQuMsNx7PHu:22
-X-Proofpoint-ORIG-GUID: 2eQXn3AcVqze5iYNFDeKWmfBxnkQoTml
-X-Proofpoint-GUID: 2eQXn3AcVqze5iYNFDeKWmfBxnkQoTml
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=qnt-ocGMDwAMB1C66_4A:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=mQ_c8vxmzFEMiUWkPHU9:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDEyMDAzNiBTYWx0ZWRfX6vAoncLDaBPA
+ 5xXiMHVjfIlQTpQ5yhaBZPOf2On2CRvdOtaDz5CGwa8Lb19Ay6mJNAEBeDMJ47de2yHaZZ8k03I
+ cG4cNKvR72rJxF2QUzYzDkWN57nRRBw=
+X-Proofpoint-GUID: bMF-dfSJeWQ3AcAvp1Yj7rmidd8c2A1e
+X-Proofpoint-ORIG-GUID: bMF-dfSJeWQ3AcAvp1Yj7rmidd8c2A1e
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDEyMDAzNiBTYWx0ZWRfX0q8VdAwmWhNM
+ udXLHdpOnEjU1d7RWG0QsVhSOwR2UWzOzt+WdiENbPWeENEYkRHEhehbEmEP+pRjxfn14xujemW
+ OOecFAQGWx32i+i2eb1D6eKH4k+gO/C9Tn3hxz+FOW65KeHFYiw0G0saZK1EKfY8jl2BWuG3mEW
+ vBSGd/sQr03hqXg1BVFgekMTAXnciEaat33Q9CPgtpsVkArgRKuer8DwBpnrydJe721sD1dAtpd
+ ULn7YnRcb7eZU7a9faqavsH7jEme/vjQYxuV2LdXqtzg4xES7hylNtygnyX3RJ9hmaLNDvO/m3O
+ bgrrRyDxrS1huIxwDbZRO3M/XgAtissi/AvXHRXEIp60CHgRSGYKd3c8wOqIavK377F9z/6Yd9Q
+ wnSAsyw919/HozTS4TpQBvy911OCZDDTii6xzAjLhSMfWgepoth7d/vlSn25GAurfgxFdz5bUAk
+ L8bBC9z0TmGx7o2VmfA==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-12_03,2026-10-09_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 bulkscore=0 spamscore=0 malwarescore=0 suspectscore=0
- priorityscore=1501 impostorscore=0 phishscore=0 adultscore=0 clxscore=1015
+ spamscore=0 clxscore=1015 impostorscore=0 lowpriorityscore=0 bulkscore=0
+ phishscore=0 adultscore=0 suspectscore=0 malwarescore=0 priorityscore=1501
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2610080000 definitions=main-2610120035
+ reason=mlx scancount=1 engine=8.22.0-2610080000 definitions=main-2610120036
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261012_015909_319355_F396C005 
-X-CRM114-Status: UNSURE (   9.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261012_021922_700578_9C13B3EB 
+X-CRM114-Status: GOOD (  22.86  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,21 +155,105 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/1/2026 10:24 AM, Aaradhana Sahu wrote:
-> Currently, NAPI instances and their associated netdevs allocated for AHB
-> external IRQ groups are not released when external IRQ configuration
-> fails. They are also not freed when arch_init() fails after
-> ath12k_ahb_config_irq() succeeds during probe, or when the driver is
-> unloaded.
+
+
+On 10/10/2026 2:11 AM, Jeff Johnson wrote:
+> On 10/8/2026 8:38 PM, Aaradhana Sahu wrote:
+>> On 10/8/2026 10:46 PM, Rameshkumar Sundaram wrote:
+>>> On 10/1/2026 10:24 AM, Aaradhana Sahu wrote:
 > 
-> Fix this by adding a common cleanup helper to release the NAPI instances
-> and associated netdevs. Call it from the external IRQ configuration error
-> path, probe error path, and driver cleanup path.
+>>>> @@ -622,8 +642,10 @@ static int ath12k_ahb_config_ext_irq(struct ath12k_base *ab)
+>>>>           irq_grp->grp_id = i;
+>>>>             irq_grp->napi_ndev = alloc_netdev_dummy(0);
+>>>> -        if (!irq_grp->napi_ndev)
+>>>> -            return -ENOMEM;
+>>>> +        if (!irq_grp->napi_ndev) {
+>>>> +            ret = -ENOMEM;
+>>>> +            goto free_napi_ndev;
+>>>> +        }
+>>>>             netif_napi_add(irq_grp->napi_ndev, &irq_grp->napi,
+>>>>                      ath12k_ahb_ext_grp_napi_poll);
+>>>> @@ -675,12 +697,19 @@ static int ath12k_ahb_config_ext_irq(struct ath12k_base *ab)
+>>>
+>>>
+>>> platform_get_irq_byname() can return a negative error code. Should we handle that explicitly before calling devm_request_irq()?
+>>>
+>>> Something like:
+>>>
+>>>  irq = platform_get_irq_byname(ab->pdev, irq_name[irq_idx]);
+>>>   if (irq < 0) {
+>>>     ath12k_warn(ab, "failed to retrieve irq number for %s\n", irq_name[irq_idx]);
+>>>         ret = irq;
+>>>         ath12k_ahb_free_napi_for_group(irq_grp);
+>>>         goto free_napi_ndev;
+>>>   }
+>>>
+>>
+>> You're right, thanks for pointing this out. This patch focuses on fixing the NAPI resource leaks.
+>> Since handling the IRQ retrieval error is an existing issue, would it be okay to address it in a
+>> separate patch?
 > 
-> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
+> Yes, please handle as a separate patch.
 > 
-> Fixes: 6cee30f0da75 ("wifi: ath12k: add AHB driver support for IPQ5332")
-> Fixes: 614c23e24ee8 ("wifi: ath12k: Support arch-specific DP device allocation")
-> Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+> My review agent notes:
+> 
+> There are three platform_get_irq_byname() call sites in ahb.c:
+> 
+>   ┌──────┬────────────────────────────────┬─────────────────────────────────┐
+>   │ Line │            Location            │      Checks return value?       │
+>   ├──────┼────────────────────────────────┼─────────────────────────────────┤
+>   │ 692  │ ext IRQ loop                   │ No                              │
+>   │      │ (ath12k_ahb_config_ext_irq)    │                                 │
+>   ├──────┼────────────────────────────────┼─────────────────────────────────┤
+>   │ 730  │ CE IRQ loop                    │ No                              │
+>   │      │ (ath12k_ahb_config_irq)        │                                 │
+>   ├──────┼────────────────────────────────┼─────────────────────────────────┤
+>   │      │                                │ Yes — if                        │
+>   │ 819  │ userpd IRQ                     │ (ab_ahb->userpd_irq_num[i] < 0) │
+>   │      │                                │  return ...                     │
+>   └──────┴────────────────────────────────┴─────────────────────────────────┘
+> 
+> So the driver is already inconsistent: userpd checks, CE and ext don't.
+> 
+> That said, the ext and CE sites aren't silently broken — devm_request_irq()
+> with a negative IRQ number hits irq_to_desc(), gets NULL, and returns -EINVAL,
+> which the existing if (ret) check catches. The practical impact is a
+> confusing error message ("failed request_irq") when the real failure was
+> platform_get_irq_byname() itself.
+> 
+> And further suggest it should be a separate patch. The reasons:
+> 
+> 1. This bug is pre-existing at both line 692 and line 730 — it wasn't
+> introduced by the NAPI leak patch. Adding the check to only line 692 (as the
+> reviewer suggests) leaves line 730 unfixed and makes the code more
+> inconsistent than before.
+> 2. A correct fix needs to cover both sites together, with a consistent error
+> message and error-path handling.
+> 3. This patch already has a well-defined scope (NAPI cleanup). Adding
+> unrelated error-handling hygiene muddies the Fixes: attribution and makes it
+> harder to backport.
+
+Thanks for the clarification. I'll address the IRQ retrieval error handling in a
+separate patch.
+>>
+>>>
+>>>>                              ath12k_ahb_ext_interrupt_handler,
+>>>>                              IRQF_TRIGGER_RISING,
+>>>>                              irq_name[irq_idx], irq_grp);
+>>>> -            if (ret)
+>>>> +            if (ret) {
+>>>>                   ath12k_warn(ab, "failed request_irq for %d\n", irq);
+>>>> +                ath12k_ahb_free_napi_for_group(irq_grp);
+>>>> +                goto free_napi_ndev;
+>>>> +            }
+>>>>           }
+>>>>       }
+>>>>         return 0;
+>>>> +
+>>>> +free_napi_ndev:
+>>>> +    ath12k_ahb_free_napi(ab, i);
+>>>> +    return ret;
+>>>>   }
+>>>>     static int ath12k_ahb_config_irq(struct ath12k_base *ab)
+
 
