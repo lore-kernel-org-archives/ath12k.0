@@ -4,144 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B413BCA9ED1
-	for <ath12k@archiver.kernel.org>; Mon, 12 Oct 2026 05:30:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAC4DCA9ED1
+	for <ath12k@archiver.kernel.org>; Mon, 12 Oct 2026 05:50:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zSZjEhlxbRcj3QUVbZ7iwR9kQWOUQNpT+xsX/Nm3vFA=; b=flOpTief88MYAZNERbE0OWzPrT
-	4hutZZdym0DcfFPkerzj71JNMOcx+EVdXQWBYsh9V/2Fnh0HERpF+GExLrL6Fj2GtU9gLsBnJVOUP
-	0wJBHdlkAL6yRRFeis3jQoFXfTWQMegiKi+VBIBeU103z+8/X59NFjvblbYU3q/4DsqnQHjJO0VkK
-	mee9kuB5kEi7vYNj754q4PjwKGltJa0FkywOrYyNB414lZf895DE1vhsJ9/nRuhTqrBu9BAkfLDD2
-	A1d7aMKrudibefx67RpsyIqSPc2c8qgG5z9hN3ZnEWcQpr6l1svYHbEiHA3J7OuolEnLtNRsJ2JDU
-	Gd7oXAmQ==;
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=1pPPLwjmVufFsK6SDXsEs5dgYISVMn+cFpVZ28+JrPU=; b=4AMATJExfGAvh57rfJ/t0LkPgx
+	wNx/vEdrr/wYDCmPp95tP9sXXAj6/dwonHDe4yhD1djZTo1OBhtb0WNwKe/P2SQxQYMOgDOblMe56
+	BAVlx/FGNU5Y0MHJ7BtvW/8IAYNf9SnYIvK4e6KJF3azfquXcDv6CzRBOSKSHj7lewVBhU7KuTlbJ
+	45VWtafmqyJy3PsECywxTa438Ry7fngXeSvuV/RPSWy5hDfqSJhutzAriLviMAGtd5S9EiTLYTeAT
+	MbfZN+HIogYhn/aGFcZ2j1ow0BYGVy6UXy4umPeY14ctqPtR3FoLR70L0lpIqk6gXDomBW+G3NEqX
+	1VBLb94w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xG8bp-00000009gG8-1DNf;
-	Mon, 12 Oct 2026 05:30:01 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xG8vB-00000009hAa-16cC;
+	Mon, 12 Oct 2026 05:50:01 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xG8bl-00000009gEn-3EXu
+	id 1xG8v8-00000009h9u-1znk
 	for ath12k@lists.infradead.org;
-	Mon, 12 Oct 2026 05:29:59 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69C565bT1002371
-	for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 05:29:55 GMT
+	Mon, 12 Oct 2026 05:49:59 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69C55qbb1339465
+	for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 05:49:57 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	zSZjEhlxbRcj3QUVbZ7iwR9kQWOUQNpT+xsX/Nm3vFA=; b=H1vQINFX3P8+fun8
-	9jdru3hI4pQYT27qYUBkB4m9EFQo+eDE2tlE9b+S8MiorSDWSh9pBWcQDIjdZkyc
-	IhWKKXMHB6mZMZLYeM5hpwL2KmMgiV/tH1X3XwOPlUl0eAWqIOrjCK0Ix8Zg7AbC
-	EWpWzdsSXusMv+Aossir0oIDj+ckbv4dTMmFj9IHoAjv8fk2RpBhG00Aypms7/Nf
-	4FFG1C9jz0RqzUKR+zPGhNRjEhh3Oc11d5Ehg/AyT9p1VFPaht621tj/Djf4KZJt
-	xI5RCdm4fyTZiInQiAITkXQnPUHJtbQwu6h3Dk97FiqTL2PxV8j2v8PsgI5JPBeb
-	0ItC+g==
+	1pPPLwjmVufFsK6SDXsEs5dgYISVMn+cFpVZ28+JrPU=; b=KNwi3vaFD3SQfj1a
+	o/nqZfjagrL2NX5VhMo6lbcNEGaP8yTkgyerpQb8sm9IehuBoL9qMJszqbmSLie4
+	WhsJezbS3i+1n6ZP0PZJ4JJ6PXwlfC3zlRI2R9xLxV5oyXWs+7+wsrgGpWsUXQzI
+	FIJxeI0pQFnYhJsOAyhiHcTDVTzrl6qjOsLVXAsOniQlmH0M1C7SbrBMOVxpPJR9
+	6phyiEj3tRjf0RBL1Y/ADtZGScd49q+j8PPGeLev6X8zDf6Jtor1nzD68fAgKpuw
+	PR5efBLge/4Tx+OUg8p9vclBerTopImzHXtkLLpbiuVpJfRHVJtYv0ZuEmfSmFCO
+	ZTWlJg==
 Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h8qtkga1u-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h7dk24wvp-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 05:29:55 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2e86af936fdso14769935ad.3
-        for <ath12k@lists.infradead.org>; Sun, 11 Oct 2026 22:29:55 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 05:49:57 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2e8ba4757baso5411855ad.0
+        for <ath12k@lists.infradead.org>; Sun, 11 Oct 2026 22:49:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1791782995; x=1792387795; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=zSZjEhlxbRcj3QUVbZ7iwR9kQWOUQNpT+xsX/Nm3vFA=;
-        b=EFbSXGHWn4lL4MJcblF4+QtFMfj7wRbypauBDEQazHMl9PAkWpRAcBLCgUSWbuojRR
-         vGSm75b5Yho6mMHFn1v96jp+ze1CioEqMn0eCPTf2b+sE8pOgF5iM/DXocqt0xIUAIuj
-         jvdPRUmIA3IYLsB3dUlwOPE67E9NY3WjIBRv6WmsTR+qthHopzoGwtqXXP4BVt5m1Mtc
-         QhlLH00nXXVik8pgXKQdoWplCHsm7Hoad77wbWwqP0lW9wVaszqJ1ct8FYckKzVLlQ+N
-         VsioccNI/rQUQHNgjvEcvVMXyMzy2PUurMVxvgCyfn5f64Hw4tVR5PGMdSxwLwI5+i50
-         xU7w==
+        d=oss.qualcomm.com; s=google; t=1791784196; x=1792388996; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=1pPPLwjmVufFsK6SDXsEs5dgYISVMn+cFpVZ28+JrPU=;
+        b=WI9R/JU4GVbYQgNf5GyayWhQfnfNXuM7Q55rlPTg0EmICD1xkaZqtOcgSfphSDjVes
+         hI0PHoJuAoXfcF1p94MdDO+NciqUkqdkEn2Po8LsKRqH9VdVahlt62kB+hGgjUZZilWW
+         kRm/Z8s/Lms5WbwDF0SL7eOScVYXrAlvi1E2Obz0jfbc5Mm92+Z6UAxXEMJeqV/zMSGu
+         e6x6GEyJyPZIczuwmrUk83QP373hzC3vZKYidf4EcR4dmVscezsim42aEO6awMW8bklV
+         Lsjn7qZfzT1zE6AOLv3uweLwK8YTUkRivrxfaax2H0f6uWyUmoM1gDDBTJY5D1lE8HO2
+         Kouw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791782995; x=1792387795;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=zSZjEhlxbRcj3QUVbZ7iwR9kQWOUQNpT+xsX/Nm3vFA=;
-        b=LADrEFlQXUscWPEDlOXRGNjYYlHr4ngOOsy5qQ3ix73Mn5d/ZeILP8hEHlfh4LhWXS
-         RaPVHLrRL+uALwFfJyyIdI2lUAagTHEWRgSqFJHQtcEqczBd3dt0058SaoKhz2eBG6iv
-         0BJGAgCYd1h//4hJWiPGq+rp9159wXgdhd5iQ3SGDHcoHtBqzrNHdHej92Mu1Vn0IcIB
-         oBj2qMz2PEaiASE5QafUWJToY8xy24Ew3h0MED4LUbL2Md8H0BQwl8LsLvfZt0f9UcoE
-         LTjg1JAYDhEupe64FL8UwDOeadiev4H89Kl02WccebYmmj/c9DjskDUJha4OSYZYqwS9
-         fOGg==
-X-Forwarded-Encrypted: i=1; AKwUvBynWoLuOg95Lw8GEad/KInOSK8VxmXaZZgwJprwqzwSGUIuuNx7ElXQF1vTbyo4i2PEHpkaubw=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLNFF6wWj9M71C9kO415JOJd6ON0txP21wTTIygAqd8xB3tRoEz
-	uA9b2RzxuA1bDDqVj9aTsPBS7fSsFSaJ9AfcPYbqDHCSuvBP3g/AR/pQ97BdanA5llmZumIaonY
-	gdbDGkqa21bNyrVfghJAgcHNT5+IryGu9FBI9wvahQ6l3l2MCai8juQhdtgutvLiP
-X-Gm-Gg: AYBFou1XZTP5eKefhPkRYoMZCu12Hswgshul0ICD84ZXiQhHp3AUOpGF2CYRoBiqXLQ
-	Gxe6e3aB9uEllHkWn1XsVfQSMLEVuMHMUCW77nnJ1B2ueHilkdt/q5y+dmIGaIqKMNkg+rvYV8S
-	bPXx3t+mkhDCw2ihk3w0JK28/fKxwlJ0Msg/kSSkenThzQ4jrBNrI6ZUlo/vtzu5U3fy18bvfW5
-	J7opOX7fc04fdT4+XcQaWiWZXTO/nU7eiEgzs58JmRt3M+PukwalBiDGbBp8QJyFtxaEOgCnN1l
-	xJGCLd/4DXJS54NCF80Hfz/M0rexsPnw0Utwju8bZ9Kf0ERhQG1iE6p5LIEES8GYDqieOUxzacm
-	ZqVnKP5cN4CyMq8/ZFSX9gaX1rSWxCwJevA==
-X-Received: by 2002:a17:903:2309:b0:2df:3b0c:a6a5 with SMTP id d9443c01a7336-2e8427f7723mr67059865ad.9.1791782994658;
-        Sun, 11 Oct 2026 22:29:54 -0700 (PDT)
-X-Received: by 2002:a17:903:2309:b0:2df:3b0c:a6a5 with SMTP id d9443c01a7336-2e8427f7723mr67059825ad.9.1791782994200;
-        Sun, 11 Oct 2026 22:29:54 -0700 (PDT)
-Received: from [10.152.193.243] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e8422e171bsm38699445ad.73.2026.10.11.22.29.50
+        d=1e100.net; s=20260707; t=1791784196; x=1792388996;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=1pPPLwjmVufFsK6SDXsEs5dgYISVMn+cFpVZ28+JrPU=;
+        b=P47N42k2zA9tXO4Vn0wVVk+L65vGv9KSOsr9h+xfBWQGwaYndTBv1R6FnotH2UIet5
+         GF7sfbyh9QtJ3VcJtA3rBC4FDQBKc5+beFGZQK+xGhsSteUFCK13KyZFE9f4NjdO//Kz
+         uxNtwoTXO6N2B9Vj77J2otxZuWxoT/mRYhGvAKRsIlispR+QEmzwz7ckhQ9CYkrbI/BP
+         LDDy18nM4jgWKkqV9INC5qml7ua1iYtVAgZ+xS/LDlbuf/xVlvTqhywSi5hBirHzBpB4
+         RTnK9+dTXDfA9k3mmnnH2jbYWwxvffe+JGdmf+/S2JfL8DY2QzcrXzKTM19coRi75E/e
+         gvOQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzAXwi+WQxgAEUCR/WAPQNg5+5whIWO9CIFq52UfgTJqdukaBjzfZZrmH/cqbAsuxdKlgTQoC4=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJBtBnYX1jllCaxSYhTBWj+xPbrSLiOFF4nw/TbsTMswlaMTd7H
+	2E1VAkIJ15pO1QD/5HT0spGo9otHML8afNWaeRox4ANui5ycZqpoNIuPL3XKm+lOAamcxQwaQx/
+	nryLVO+1fdW8rB5hjmjfw9n80iDmt2mjarHFtPliUF0wr133rMcZfFxd/roBSwSc6
+X-Gm-Gg: AYBFou3bqj4FyKxkM+UM60LDwN5w8RoHMn/+nnx7lb4tHgd6UCsyG4DVVRj8l8Iypyu
+	KrEthrHvgt2RUKDF3CWvkm/Rg2Tu5x41yAJSDuJwpIuCCrnvMCu+KLPSYQf1jC5Tbfv8/SIc8pm
+	O8O+cr60NWu9qWbgtCG2WAqBhQQANWHu17oMyc63a/U+imJ0T3CLxGmgUUp9MBcipf9Ea7iqWAq
+	qAUf1gjZBPr5Ybc8Ycl3tKlB7LOUKhifKtDRfbhIaV+2e66XUXbGDFzMuNC+uSi96FiquhlRcFb
+	Ec8wTtC3uCmmsvXRFb2r3OZLu8aFsyg6qgpC979hc/GqE38gRQj7JokS8z6x43MbwaXPi+PGA0h
+	xp+enB2t2YXqT2nfua7+s68y6m7LnzIk=
+X-Received: by 2002:a17:903:244e:b0:2e5:d33a:88dc with SMTP id d9443c01a7336-2e842aadef1mr75953445ad.17.1791784196452;
+        Sun, 11 Oct 2026 22:49:56 -0700 (PDT)
+X-Received: by 2002:a17:903:244e:b0:2e5:d33a:88dc with SMTP id d9443c01a7336-2e842aadef1mr75953085ad.17.1791784195337;
+        Sun, 11 Oct 2026 22:49:55 -0700 (PDT)
+Received: from [10.231.194.200] ([114.94.8.21])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e8422e4cf3sm37758925ad.72.2026.10.11.22.49.52
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 11 Oct 2026 22:29:53 -0700 (PDT)
-Message-ID: <fb81a042-82b5-4565-9a5c-1a3c038a0d14@oss.qualcomm.com>
-Date: Mon, 12 Oct 2026 10:59:48 +0530
+        Sun, 11 Oct 2026 22:49:54 -0700 (PDT)
+Message-ID: <8ec100c6-e8c9-45a1-9bc8-e4cef580af86@oss.qualcomm.com>
+Date: Mon, 12 Oct 2026 13:49:50 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next 01/17] dt-bindings: net: wireless: Add QCN6432
- device tree binding documentation
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        ath12k@lists.infradead.org
-References: <20261008-mpp_bringup-v1-0-2c5797b5e4ac@oss.qualcomm.com>
- <20261008-mpp_bringup-v1-1-2c5797b5e4ac@oss.qualcomm.com>
- <20261009-brainy-alpaca-of-focus-31fbbd@quoll>
+Subject: Re: [PATCH v2 5/5] wifi: ath12k: avoid IDR mutation during vif mgmt
+ TX cleanup
+To: Jiale Yao <yaojiale02@163.com>, Jeff Johnson <jjohnson@kernel.org>,
+        Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
+        Balamurugan Selvarajan <quic_bselvara@quicinc.com>,
+        Sriram R <quic_srirrama@quicinc.com>,
+        Carl Huang <quic_cjhuang@quicinc.com>, linux-wireless@vger.kernel.org,
+        ath12k@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20261003092104.520135-1-yaojiale02@163.com>
+ <20261003092104.520135-6-yaojiale02@163.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 Content-Language: en-US
-From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-In-Reply-To: <20261009-brainy-alpaca-of-focus-31fbbd@quoll>
+In-Reply-To: <20261003092104.520135-6-yaojiale02@163.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDEyMDAyMSBTYWx0ZWRfX5tSLFLc38BLr
- nsqpLHV743SBA4Sa7e3felX8LEdcRGvzWh27tLQ9OCa9TJDZHBsyCRxaMLG5hn1Iv/MM/A4uUuL
- AAyQHNXfSP9XKlXOibDlHMOWKwCbb9qfksLdn279lX49yx0u50v1z+wc5v1LkLHeRyHahm1hd7S
- ytcqWccrL0YxL1ivWLmEoT46LrrB1nfGlLDJq1+GUo3I0eoV7gHyvck34+YieCso31kcWqMzCf3
- vVklQliJD7Prhfj0An8YK9weXj4jUlWYWZam0HX1mRzmdPtUrWDngdNFQHeNVTpS9JysU+BMSlp
- /dO2pRybz/LU4H6t8XZegbeZdHCgYa3y2Wsb5sxbY9lRovHivlNj/LuXcbUWL7YeqFkN54ocUz8
- U9J7m9XY//W9GdmIBnTniQs4iKGji7kzxLH5MsNIjf7ODErSVPZiTbRBz/CR8IVDGOWcp+rZ4n7
- 0h5riK/ge6priliPxUA==
-X-Authority-Analysis: v=2.4 cv=c8U+0h9l c=1 sm=1 tr=0 ts=6acc7053 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+X-Proofpoint-ORIG-GUID: yYruV9HCkkbjMtLDcefsba1C9EE2yXzH
+X-Proofpoint-GUID: yYruV9HCkkbjMtLDcefsba1C9EE2yXzH
+X-Authority-Analysis: v=2.4 cv=E6hYNqdl c=1 sm=1 tr=0 ts=6acc7505 cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=Uz3yg00KUFJ2y2WijEJ4bw==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=gEfo2CItAAAA:8 a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8 a=WLwc7mworHJoPNN1NUUA:9
- a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22 a=sptkURWiP4Gy88Gu7hUp:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDEyMDAyMSBTYWx0ZWRfXyvCrrVLUv1pS
- SMqtNGg8/pPykEhpIZR79kWdbb0YOUTm4yGuT1Idir4555SFk2R7WRXf5Ko96f/8UlTajM8ACX/
- cTTREik2lKNljUAPMd8+VDWf2pjO/74=
-X-Proofpoint-ORIG-GUID: JBeSEjArfuwSqlbLMQzv6wJ44XPnT8VQ
-X-Proofpoint-GUID: JBeSEjArfuwSqlbLMQzv6wJ44XPnT8VQ
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=Byx-y9mGAAAA:8 a=YGf98eWBf9nrUm2w2I4A:9 a=QEXdDO2ut3YA:10
+ a=GvdueXVYPmCkWapjIL-Q:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDEyMDAyMyBTYWx0ZWRfX4cuMluL8V/Y2
+ CFdlYKey7EdjvlyqNQH3OrUf77bXPcHglSysHKZu35s7yI7zWVnuGsVZ8JwBQIAPcagbBrtFV6G
+ 2yANwsuhowROlgkqPcNWL46krqpavK45OWYnlvjDfCINS6oZp7AjfZOzyqTnDaK6XuRFHo7z6tU
+ 9/+idSq8s72J/dgfmoh2HdDzguWDnSHEh1Q+P0aVgBADN3Kvixk3XJYBtHlQ8Hf2rYhDxHKmYDh
+ LNaqeC2kRaGorpg7y6N8DqIV43HFLd3+FnfuSG3jAjNM2O5ThvXutfgY95z2thH42FPEQ7HsLgf
+ 0BDUvyS7CTlMCTeGnbF4WhY+0Ei+3JsAciyFNkz5CuZibN1le8EnWYyfqEN6R1qRbx1FO6Ljf0z
+ +OLB8ZSE0jvgLWyQUREL3BCQdCIIlPSKq/oPok+uFNIYai9DP78xFYZkVMqHlBL/d8dTAGYCjRe
+ 6PPVu9FF1BxAQfJWH6Q==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDEyMDAyMyBTYWx0ZWRfX+PIRJFc+v09p
+ sU2DoYBEwUhf89onKRVt5zcRCIjLs0pcNoY4rK2dDfSbzOEAFCMC+8NQuQX80sFjvQ2cbINfJiW
+ aGqDbILgZOUNsReIEjj9uBAepF8N8kA=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-12_02,2026-10-09_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 adultscore=0 lowpriorityscore=0 bulkscore=0 malwarescore=0
- priorityscore=1501 spamscore=0 impostorscore=0 clxscore=1015 suspectscore=0
+ lowpriorityscore=0 malwarescore=0 suspectscore=0 impostorscore=0 phishscore=0
+ bulkscore=0 spamscore=0 adultscore=0 priorityscore=1501 clxscore=1015
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2610080000 definitions=main-2610120021
+ reason=mlx scancount=1 engine=8.22.0-2610080000 definitions=main-2610120023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261011_222957_933891_4E9C2C1D 
-X-CRM114-Status: GOOD (  19.11  )
+X-CRM114-CacheID: sfid-20261011_224958_548965_291FE287 
+X-CRM114-Status: GOOD (  18.30  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,65 +154,66 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 10/9/2026 4:00 PM, Krzysztof Kozlowski wrote:
-> On Thu, Oct 08, 2026 at 03:53:57PM +0530, Aaradhana Sahu wrote:
->> Add Devicetree binding documentation for the Qualcomm QCN6432 IEEE 802.11be
->> wireless device.
->>
->> QCN6432 is attached to the WCSS Q6 subsystem and is represented as an AHB
->> platform device, even though the Wi-Fi hardware interfaces over PCIe.
->> Document the compatible string and the resources, including the Q6 remote
->> processor phandle, MSI interrupts, SMEM states and memory regions.
->>
->> Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
->> ---
->>  .../bindings/net/wireless/qcom,qcn6432-wifi.yaml   | 149 +++++++++++++++++++++
->>  1 file changed, 149 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,qcn6432-wifi.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,qcn6432-wifi.yaml
->> new file mode 100644
->> index 000000000000..97d8885333fa
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,qcn6432-wifi.yaml
->> @@ -0,0 +1,149 @@
->> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->> +# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/net/wireless/qcom,qcn6432-wifi.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Qualcomm Technologies QCN6432 wireless device
->> +
->> +maintainers:
->> +  - Jeff Johnson <jjohnson@kernel.org>
->> +
->> +description: |
+On 10/3/2026 5:21 PM, Jiale Yao wrote:
+> ath12k_mac_vdev_delete() walks txmgmt_idr with idr_for_each(), and its
+> callback removes each entry belonging to the interface. Removing the
+> current entry can invalidate the radix-tree iterator retained by
+> idr_for_each().
 > 
-> Do not need '|' unless you need to preserve formatting.
+> Move the walk into a helper that uses idr_for_each_entry(). It performs a
+> fresh lookup for every iteration, so each matching entry can be removed
+> through the locked removal helper without retaining iterator state across
+> the removal.
 > 
+> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+> Signed-off-by: Jiale Yao <yaojiale02@163.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/mac.c | 21 +++++++++++----------
+>  1 file changed, 11 insertions(+), 10 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index c0acb92b7320..108ace48cc97 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -9196,16 +9196,18 @@ void ath12k_mac_tx_mgmt_pending_free(struct ath12k *ar)
+>  		ath12k_mac_tx_mgmt_free(ar, buf_id);
+>  }
+>  
+> -static int ath12k_mac_vif_txmgmt_idr_remove(int buf_id, void *skb, void *ctx)
+> +static void ath12k_mac_vif_txmgmt_cleanup(struct ath12k *ar,
+> +					  struct ieee80211_vif *vif)
+>  {
+> -	struct ieee80211_vif *vif = ctx;
+> -	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB(skb);
+> -	struct ath12k *ar = skb_cb->ar;
+> -
+> -	if (skb_cb->vif == vif)
+> -		ath12k_mac_tx_mgmt_free(ar, buf_id);
+> +	struct ath12k_skb_cb *skb_cb;
+> +	struct sk_buff *skb;
+> +	int buf_id;
+>  
+> -	return 0;
+> +	idr_for_each_entry(&ar->txmgmt_idr, skb, buf_id) {
+> +		skb_cb = ATH12K_SKB_CB(skb);
 
-Thanks for the review. I'll remove the unnecessary | from the description.
+this has the same UAF risk as Ramesh pointed in ath11k patch (patch 3/5).
 
->> +  Qualcomm Technologies QCN6432 is an IEEE 802.11be Wi-Fi device
->> +  associated with the WCSS Q6 subsystem. The device is represented
->> +  as a platform device and uses MSI interrupts for its Copy Engine
->> +  (CE) and Data Path (DP) rings.
->> +
->> +properties:
->> +  compatible:
->> +    enum:
->> +      - qcom,qcn6432-wifi
-> 
-> Is there qcn6432-something-else as well? Neither commit msg nor
-> description explain that.
-> 
-> Best regards,
-> Krzysztof
-> 
-
-QCN6432 is a Wi-Fi device supported by the ath12k driver, and there are no
-other variants requiring a separate compatible string.
-Hence, qcom,qcn6432-wifi is used to identify this device.
+> +		if (skb_cb->vif == vif)
+> +			ath12k_mac_tx_mgmt_free(ar, buf_id);
+> +	}
+>  }
+>  
+>  static int ath12k_mac_mgmt_tx_wmi(struct ath12k *ar, struct ath12k_link_vif *arvif,
+> @@ -10967,8 +10969,7 @@ static int ath12k_mac_vdev_delete(struct ath12k *ar, struct ath12k_link_vif *arv
+>  	ath12k_peer_cleanup(ar, arvif->vdev_id);
+>  	ath12k_ahvif_put_link_cache(ahvif, arvif->link_id);
+>  
+> -	idr_for_each(&ar->txmgmt_idr,
+> -		     ath12k_mac_vif_txmgmt_idr_remove, vif);
+> +	ath12k_mac_vif_txmgmt_cleanup(ar, vif);
+>  
+>  	ath12k_mac_vif_unref(ath12k_ab_to_dp(ab), vif);
+>  
 
 
