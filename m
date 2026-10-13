@@ -4,99 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EFF6CC6B0F
-	for <ath12k@archiver.kernel.org>; Tue, 13 Oct 2026 14:03:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0588CCC6B16
+	for <ath12k@archiver.kernel.org>; Tue, 13 Oct 2026 15:42:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=sxRXmPGGOdI1+4/8LW6E01BCp/MjtS9NyfOV1SrhfSY=; b=umLTsCONxb39VUuzKoJqMSUauH
-	dFHwoxbeiQGpyvwH29PH2IwfW/+HrES0/NV486/j1ru8e6nnQI+3/fPXDSlbbtZQyjab9xVtm3w+z
-	xP1xh+1H8HScctnvg0tt9GJ0bCaurgZeDWCociT72BRs2jgbjkyxr1R+Q5aQ2dAJxtZWLtNYGul/B
-	sRE7XBVJcIUTN+t3A0hGRR4AUNk32vV/k5DrwL16WL1xR+2l66huf6Bu2ovp67xVmrgmGJqHYBBU6
-	g+uYcTx0r+Wm+TyWgw2V9KqDBChyEF9UYCcRmVIlY3jbW+fjsd10IAfblbenP8ghSRDohIJJmwAdH
-	Fu488y3A==;
+	bh=HyjwC2WBuD3zNw2RX08XNRIFsnb2jRmWsy8BXsOZxS8=; b=yKjE1/CRMfxC8wKrN1BCj8K4WO
+	dNCDdP0PkA2syZ2M66y8fzUJ/F+GqrRS3hh+ypKD1pYSuZAn3EDwPToGoljX9KhbIgUH1B/tCAoIw
+	eopUe5KXTJuK3+Z8FKN2YV7PsOuga/xvchvZdeJMol05VwFT02nYVKkRKeV2FtyJRAbEgXqfi4DHw
+	J5D+2P3eAb2iTGOPCsxleyTgpssOQztaulw1agZ8jM/9viMuYyz1secMMrraXJpJpgBrXeBd1wAHx
+	gI+HnEjhUXJi5JM3cFBacwQFXyEtj5shs+ZloG7Nyhg9NoMt3S2V99v50/lNEV3CrKCRKHo7PNavx
+	D1zZw29g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGd6g-0000000D208-09jY;
-	Tue, 13 Oct 2026 14:03:54 +0000
-Received: from mail-ua1-x933.google.com ([2607:f8b0:4864:20::933])
+	id 1xGeeP-0000000DOSx-2iL1;
+	Tue, 13 Oct 2026 15:42:49 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGd6c-0000000D1yl-02Qz
+	id 1xGeeM-0000000DORv-3ndk
 	for ath12k@lists.infradead.org;
-	Tue, 13 Oct 2026 14:03:52 +0000
-Received: by mail-ua1-x933.google.com with SMTP id a1e0cc1a2514c-988c7371716so712256241.1
-        for <ath12k@lists.infradead.org>; Tue, 13 Oct 2026 07:03:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=ziepe.ca; s=google; t=1791900229; x=1792505029; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :content-type:mime-version:references:message-id:subject:cc:to:from
-         :date:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=sxRXmPGGOdI1+4/8LW6E01BCp/MjtS9NyfOV1SrhfSY=;
-        b=BgTG3MB7k+nAbiRCbEWRFc3S8TSOo5DdcuhDUkwt/lxiOUzJhx/Yvj5ski+gTkzXVE
-         vep7AcC0WTVWzRZKQVZhWbwfIuG/cWZJZr5sSUyxPsNgqpWlG2f2IBcT3MbUyDn6O0nv
-         iMRHmm9H9OLtcJkJ/6IZXmDbhzYNB/pYYdTTzoYgUUFV3ot8+28qeLLtsp7d4KZRQOCU
-         cKJcH2NiC/WbuIgpvF45Ujb4EZgb5lLU6scvX0ZXxbVfsgJJKZ0FxJU6kskJBpGtYNoX
-         OUl1POTeBhSSnAEP4icuxS25IhQMrqudqjE8tFZBqWXy/5ut0I8rha6dXPJjxz5JwfkI
-         bpJQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791900229; x=1792505029;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :content-type:mime-version:references:message-id:subject:cc:to:from
-         :date:x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=sxRXmPGGOdI1+4/8LW6E01BCp/MjtS9NyfOV1SrhfSY=;
-        b=u4vXyoG9TM03mSp71B5+PlHuUM+c3L2kasfCB7EN0zfk57RIm7EQClLzE7pj4p6XrS
-         r8MTl+MnpmZsKyhO7MGL5+S02CW9v1sIufTlBGq7ms4LlgKwU5aL4FKeqv4pdFLGvMK1
-         RW6Zx4PLyGetB4RKwgdJ0NSj23vE+728cg3g35kyVaxVM5QvGGKv8w3UuYH6e3/cuYtY
-         El8T4qEg/RDtWH4GTmq3hzoS49SsjTrjC1qHmeQ9y7KVnZ+Iaoa5BlA/l0sgfb048SvA
-         zeZ1JtPJhXviCL9QIrOEkbqMhg4uwDOhSbowYru0OtcRbrZoN1sTT7KNh+ZamAGki7aR
-         VbGg==
-X-Forwarded-Encrypted: i=1; AKwUvBxKp2llN1nBt4t/TnK8KmEy1dRkMC9bol+X8SsZX4g8HhYmhyIvoHF2J9b+POiyVxjx7IwR6u0=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLcUV097JS3Lg5yd89wu44dP6b2xCHMuWSqBgyLNkZooVk7rsP8
-	8dfz/gso/bTjepEjnazqU+7OKKIkPfsdluIZGxlk3iZ06ji7h0h1K5PGimgwJ2e3Hgs=
-X-Gm-Gg: AYBFou1Q6gXdjeE6Mn6+IewvmjUKXVEzeObGFnzl6Ajed3Qdmk4OT4Cx1nEAS5Au9i9
-	wADFGHyAqp+zSt9Ii6gsVq5XX474EIbatjwxiC1F+vhi/7sE7FWyYV2VOjvNoyMtYwmaQxQ73kn
-	mbaf8orB6x8DqZofqeknaVi9j4j/I77RaZmN2Fs4fCfyvY5IPIGBc6MxTUMob0paar9OzSqnSiC
-	KcUaQ7uAyHtmOJ5JepgNkdNStchgkTcqUmW1G1MA6tCkfoVSvG+vaWmWsbHKWkgAAVLSJr8JboL
-	XHQUZhLEYp3El++TJA2aaxmdTrf8Xs/xyc0eW+T6Ff4O032zDkIYbtgIpOwizpelAgOi9bTKTA4
-	5LOlTPcXzQViEoZfKSaLJPxft4/J3cZsvdCXiCSOQJEvPXQ6Cwm4quIWk9ezmYJQA+hrX0S2w61
-	qltU+8hv2bvefxcsLx4ioza1cMfyzGgH2w2z9r7HY3SoUPSullkao8FFFrKASZ7q+32fomfWRoH
-	gxqw/15WkaCH5CBr+beCBWmEHy11nSkluybyKCTHRtm9GmRqAM8EOW+ZQ==
-X-Received: by 2002:a05:6102:a48:b0:7c3:875e:593b with SMTP id ada2fe7eead31-7cb373fae29mr3183710137.32.1791900228555;
-        Tue, 13 Oct 2026 07:03:48 -0700 (PDT)
-Received: from ziepe.ca (hlfxns010zw-159-2-239-150.pppoe-dynamic.high-speed.ns.bellaliant.net. [159.2.239.150])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91b97bdfb89sm25903626d6.40.2026.10.13.07.03.46
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 13 Oct 2026 07:03:47 -0700 (PDT)
-Received: from jgg by wakko with local (Exim 4.97)
-	(envelope-from <jgg@ziepe.ca>)
-	id 1xGd6X-00000009i6J-387e;
-	Tue, 13 Oct 2026 11:03:45 -0300
-Date: Tue, 13 Oct 2026 11:03:45 -0300
-From: Jason Gunthorpe <jgg@ziepe.ca>
-To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Cc: alex@shazbot.org, ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org, bhelgaas@google.com,
-	jjohnson@kernel.org, johannes@sipsolutions.net,
-	kevin.tian@intel.com, kvm@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-wireless@vger.kernel.org,
-	mani@kernel.org, skolothumtho@nvidia.com, yishaih@nvidia.com
+	Tue, 13 Oct 2026 15:42:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1791906165;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=HyjwC2WBuD3zNw2RX08XNRIFsnb2jRmWsy8BXsOZxS8=;
+	b=UWLTpmmr+XVVOq/XRiyMg9zDECTlZKgsroEd6xJTNyTf6HHkYhJdN6NS/ONefsECHmtWzI
+	l2Zxa9Y+QMsUUXZVP9OFyFVVDK+H6MMq3wMrd6nbtGzpStDwPE6vHSst4AqY8hB5iR4V7l
+	7CukXkjlUiZ+4nH5cl2bDR8qZWFnqU4=
+Received: from mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-557-iy-R_dc5MQuOD1Wh1XsSUw-1; Tue,
+ 13 Oct 2026 15:42:35 +0000
+X-MC-Unique: iy-R_dc5MQuOD1Wh1XsSUw-1
+X-Mimecast-MFC-AGG-ID: iy-R_dc5MQuOD1Wh1XsSUw_1791906153
+Received: from mx-prod-int-05.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-05.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.17])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 31E421964CEF;
+	Tue, 13 Oct 2026 15:42:32 +0000 (UTC)
+Received: from jtornosm-thinkpadp1gen7.rmtes.csb (headnet04.pony-001.prod.iad2.dc.redhat.com [10.2.32.116])
+	by mx-prod-int-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id C209B1956041;
+	Tue, 13 Oct 2026 15:42:26 +0000 (UTC)
+From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+To: jgg@ziepe.ca
+Cc: alex@shazbot.org,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	bhelgaas@google.com,
+	jjohnson@kernel.org,
+	johannes@sipsolutions.net,
+	jtornosm@redhat.com,
+	kevin.tian@intel.com,
+	kvm@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	mani@kernel.org,
+	skolothumtho@nvidia.com,
+	yishaih@nvidia.com
 Subject: Re: [PATCH 0/7] Enable Qualcomm WiFi PCIe passthrough to VMs
-Message-ID: <20261013140345.GK14213@ziepe.ca>
-References: <20261011132558.GD14213@ziepe.ca>
- <20261013134317.174234-1-jtornosm@redhat.com>
+Date: Tue, 13 Oct 2026 17:42:25 +0200
+Message-ID: <20261013154225.214531-1-jtornosm@redhat.com>
+In-Reply-To: <20261013140345.GK14213@ziepe.ca>
+References: <20261013140345.GK14213@ziepe.ca>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
+X-Scanned-By: MIMEDefang 3.0 on 10.30.177.17
+X-Mimecast-MFC-PROC-ID: C6FvFrheTld3yO2OYO-eFxwEo7Iw30PZwjteWCgqqfA_1791906153
+X-Mimecast-Originator: redhat.com
 Content-Transfer-Encoding: 8bit
-In-Reply-To: <20261013134317.174234-1-jtornosm@redhat.com>
+content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_070350_503715_C9D4B1AF 
-X-CRM114-Status: GOOD (  21.83  )
+X-CRM114-CacheID: sfid-20261013_084247_019038_8A709439 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,52 +100,18 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Oct 13, 2026 at 03:43:13PM +0200, Jose Ignacio Tornos Martinez wrote:
-> Hi Jason,
-> 
-> I understand the concern about compatibility implications, but to
-> clarify, my intention is not to create an ABI or a "MSI caching
-> concept". 
+Thank you for the direction on device MSI domains. The Hyper-V
+reference is difficult for me to follow for this case. Could
+you point me to some existing KVM/VFIO equivalent, or similar
+example for my use case? Any pointers to relevant code,
+documentation, or previous discussions on this topic would be
+very helpful to get started in the right direction.
 
-It very much is an ABI, you defined a new ABI in the config space a
-layout between guest and host that we have to maintain forever.
+Also, where would this need to be implemented? Kernel only
+because it is already supported in QEMU in a general way, or
+kernel and QEMU for some specifics?
 
-Just for a hacky solution, it is not so nice.
+Best regards
+Jose Ignacio
 
-> I can explore converting ath11k/ath12k to
-> platform_device_msi_init_and_alloc_irqs(). However, if I understood
-> correctly, the VM problem remains identical after that change — the
-> firmware still needs physical host addresses, and device MSI domains
-> in the VM would still provide virtual ones.
-
-Yes, but it removes the solution of copying data from the existing
-MSI-X table from consideration, which is the primary hacky thing here.
-
-> I'm happy to do this refactoring if it opens a path to get these
-> devices working in VMs. What VM mechanism would you accept for
-> exposing physical MSI values through device MSI domains?
-
-Once you have a MSI domain you just need a driver wired into it that
-can request and get the physical addresses from the hypervisor. Then
-when that domain is in use the guest will always see true physical.
-
-That part is easy enough, it already exists and you don't need any
-driver changes.
-
-The bit that isn't clear is how you get the domain in the first
-place. I suppose something like a virtio-msi is a good starting point,
-but I don't know enough about ACPI/etc to imagine how to wire it into
-the flow.
-
-IIRC hyperv does this, so maybe there is something to follow there..
-
-> Jeff is escalating to Qualcomm engineering again (thank you for
-> that), but users with deployed hardware need something working in a
-> reasonable timeframe.
-
-Yes, but it has already been years, and Qualcomm doesn't seem to care
-about these uses cases, so I'm not sure I see the urgency to do a bad
-ABI hack..
-
-Jason
 
