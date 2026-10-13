@@ -4,88 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0588CCC6B16
-	for <ath12k@archiver.kernel.org>; Tue, 13 Oct 2026 15:42:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC376CC6B19
+	for <ath12k@archiver.kernel.org>; Tue, 13 Oct 2026 16:31:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=HyjwC2WBuD3zNw2RX08XNRIFsnb2jRmWsy8BXsOZxS8=; b=yKjE1/CRMfxC8wKrN1BCj8K4WO
-	dNCDdP0PkA2syZ2M66y8fzUJ/F+GqrRS3hh+ypKD1pYSuZAn3EDwPToGoljX9KhbIgUH1B/tCAoIw
-	eopUe5KXTJuK3+Z8FKN2YV7PsOuga/xvchvZdeJMol05VwFT02nYVKkRKeV2FtyJRAbEgXqfi4DHw
-	J5D+2P3eAb2iTGOPCsxleyTgpssOQztaulw1agZ8jM/9viMuYyz1secMMrraXJpJpgBrXeBd1wAHx
-	gI+HnEjhUXJi5JM3cFBacwQFXyEtj5shs+ZloG7Nyhg9NoMt3S2V99v50/lNEV3CrKCRKHo7PNavx
-	D1zZw29g==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
+	bh=OKaeHoDMxbcRdhaEWBqicGHaLuwHpHXnx6ahTNQjleE=; b=Go8xTvGSpIyMHpUpBCoogqqNxN
+	yCU2kl5PxDeh36/zmN5BTJEmlOzYhRLRyD9JXtsKM6OGBfaQl73KP8K4Q8wdUqrO7fe65mISvIP1c
+	O4cNWtFTLjd+1QYX+/9bWxIg13A3ii9WeNK/RQ6fAagJiy57JpkLlVqwjLV9hW1Xa+zDzgwEgRHd0
+	vS8FUMfmg1MRdl26wkCsYk6NiukJ6jsR1qWp1FGfUXmabPKlcKqf2Q6NWSQ/2JYZA6RwrsqzrRoeT
+	GPgrGuseBTFgHq5O3yWG9gfNbGrs/sIjRZCXehBC5e0EJKUs/8usf9EJwJhkdiy0rp/3ZtuNxHIFh
+	l+cCtyBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGeeP-0000000DOSx-2iL1;
-	Tue, 13 Oct 2026 15:42:49 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1xGfPE-0000000DW6e-2SVA;
+	Tue, 13 Oct 2026 16:31:12 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGeeM-0000000DORv-3ndk
-	for ath12k@lists.infradead.org;
-	Tue, 13 Oct 2026 15:42:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1791906165;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=HyjwC2WBuD3zNw2RX08XNRIFsnb2jRmWsy8BXsOZxS8=;
-	b=UWLTpmmr+XVVOq/XRiyMg9zDECTlZKgsroEd6xJTNyTf6HHkYhJdN6NS/ONefsECHmtWzI
-	l2Zxa9Y+QMsUUXZVP9OFyFVVDK+H6MMq3wMrd6nbtGzpStDwPE6vHSst4AqY8hB5iR4V7l
-	7CukXkjlUiZ+4nH5cl2bDR8qZWFnqU4=
-Received: from mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
- relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-557-iy-R_dc5MQuOD1Wh1XsSUw-1; Tue,
- 13 Oct 2026 15:42:35 +0000
-X-MC-Unique: iy-R_dc5MQuOD1Wh1XsSUw-1
-X-Mimecast-MFC-AGG-ID: iy-R_dc5MQuOD1Wh1XsSUw_1791906153
-Received: from mx-prod-int-05.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-05.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.17])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 31E421964CEF;
-	Tue, 13 Oct 2026 15:42:32 +0000 (UTC)
-Received: from jtornosm-thinkpadp1gen7.rmtes.csb (headnet04.pony-001.prod.iad2.dc.redhat.com [10.2.32.116])
-	by mx-prod-int-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id C209B1956041;
-	Tue, 13 Oct 2026 15:42:26 +0000 (UTC)
-From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-To: jgg@ziepe.ca
-Cc: alex@shazbot.org,
-	ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org,
-	bhelgaas@google.com,
-	jjohnson@kernel.org,
-	johannes@sipsolutions.net,
-	jtornosm@redhat.com,
-	kevin.tian@intel.com,
-	kvm@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-wireless@vger.kernel.org,
-	mani@kernel.org,
-	skolothumtho@nvidia.com,
-	yishaih@nvidia.com
-Subject: Re: [PATCH 0/7] Enable Qualcomm WiFi PCIe passthrough to VMs
-Date: Tue, 13 Oct 2026 17:42:25 +0200
-Message-ID: <20261013154225.214531-1-jtornosm@redhat.com>
-In-Reply-To: <20261013140345.GK14213@ziepe.ca>
-References: <20261013140345.GK14213@ziepe.ca>
+	id 1xGfPC-0000000DW62-0ifK;
+	Tue, 13 Oct 2026 16:31:10 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 3C8D9602C3;
+	Tue, 13 Oct 2026 16:31:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9B351F00893;
+	Tue, 13 Oct 2026 16:31:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791909068;
+	bh=OKaeHoDMxbcRdhaEWBqicGHaLuwHpHXnx6ahTNQjleE=;
+	h=Date:From:To:Cc:Subject:In-Reply-To;
+	b=ngPdDnNjKhLyQT2N6RhyXzNbBJDw86DCky0DDkFZybGOWOVKgXN/ad/0sBCVkayei
+	 HNYj9hrjWpWtBFX/UYrVuXDu9Nm7T92X1bPsmBFtk4Y//+tnDFq0hvpgYtRGyFnd2P
+	 c30Gm7kdg0sOrDiIM+eseypQum5fGKkqjPdbpcWGVdosSz8LpVBEl5UHRwM88GzhMF
+	 LxJV4rIAovtRgv9XNXWPgotqgnhY5XjoeljLa9b9heAjpcpggcX2vRtxecvBr3LGzE
+	 e4URZupBZVLhzqUcLPkBuj4YCM0EBklpXxFGlAABFL+uXuGY4FJty1HMPPxJ406n+g
+	 bQsk8Di+vLpcw==
+Date: Tue, 13 Oct 2026 11:31:07 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Ilpo =?utf-8?B?SsOkcnZpbmVu?= <ilpo.jarvinen@linux.intel.com>
+Cc: Manivannan Sadhasivam <mani@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Nirmal Patel <nirmal.patel@linux.intel.com>,
+	Jonathan Derrick <jonathan.derrick@linux.dev>,
+	Jeff Johnson <jjohnson@kernel.org>, linux-pci@vger.kernel.org,
+	LKML <linux-kernel@vger.kernel.org>, linux-arm-msm@vger.kernel.org,
+	linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+	ath11k@lists.infradead.org, ath10k@lists.infradead.org,
+	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+	Qiang Yu <qiang.yu@oss.qualcomm.com>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Subject: Re: [PATCH v3 2/8] PCI/ASPM: Add pci_force_enable_link_state() API
+Message-ID: <20261013163107.GA1522779@bhelgaas>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 3.0 on 10.30.177.17
-X-Mimecast-MFC-PROC-ID: C6FvFrheTld3yO2OYO-eFxwEo7Iw30PZwjteWCgqqfA_1791906153
-X-Mimecast-Originator: redhat.com
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
 Content-Transfer-Encoding: 8bit
-content-type: text/plain; charset="US-ASCII"; x-default=true
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_084247_019038_8A709439 
-X-CRM114-Status: UNSURE (   7.39  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <f1390db8-2369-9ab7-49a9-b7f09ef7b1ea@linux.intel.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,18 +79,100 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Thank you for the direction on device MSI domains. The Hyper-V
-reference is difficult for me to follow for this case. Could
-you point me to some existing KVM/VFIO equivalent, or similar
-example for my use case? Any pointers to relevant code,
-documentation, or previous discussions on this topic would be
-very helpful to get started in the right direction.
+On Tue, Oct 13, 2026 at 02:41:32PM +0300, Ilpo Järvinen wrote:
+> On Mon, 12 Oct 2026, Bjorn Helgaas wrote:
+> > On Wed, Jul 08, 2026 at 04:30:16PM +0200, Manivannan Sadhasivam wrote:
+> > > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> > > 
+> > > pci_enable_link_state() and pci_enable_link_state_locked() APIs only enable
+> > > the ASPM states that were not previously disabled via
+> > > pci_disable_link_state*() API or blacklisted during init (e.g. the pre-1.1
+> > > device blacklist, which is only meant to be overridden with
+> > > 'pcie_aspm=force'). This is an intentional behavior as these APIs must not
+> > > silently re-enable states that were deliberately disabled, since doing so
+> > > could enable ASPM on a link where it is known to be unsafe.
+> > 
+> > I think this is saying that many uses of pci_disable_link_state() are
+> > to avoid hardware errata, i.e., these are basically quirks, and we
+> > should *never* enable those ASPM states.
+> > 
+> > > However, some drivers (e.g. the atheros WLAN drivers) save the currently
+> > > enabled ASPM states, disable all ASPM states before firmware download, and
+> > > then try to restore exactly the states that were enabled before. Restoring
+> > > those states requires re-enabling states that were just disabled via
+> > > pci_disable_link_state() API. But, this cannot be achieved using the
+> > > existing APIs.
+> > 
+> > This sounds like it's also for hardware errata: if ASPM works
+> > correctly, there's no need to disable it during firmware download.  I
+> > think this is *only* the atheros drivers, isn't it?  I didn't see any
+> > others.
+> 
+> There are more that should use disable/enable API. In addition ath*, I had 
+> also these in my unfinished series:
+> 
+>   brcmfmac
+>   ib-hfi1
+>   rtlwifi
+>   rtsx
+>   r8169
 
-Also, where would this need to be implemented? Kernel only
-because it is already supported in QEMU in a general way, or
-kernel and QEMU for some specifics?
+Thanks for those pointers!
 
-Best regards
-Jose Ignacio
+> > > Hence, add pci_force_enable_link_state() API for such callers. Unlike
+> > > pci_enable_link_state(), it re-enables the requested states even if they
+> > > were previously disabled via pci_disable_link_state() or disabled during
+> > > init. The caller is therefore responsible for only enabling states the
+> > > device actually supports, typically the ones previously reported by
+> > > pcie_aspm_enabled().
+> > 
+> > The problem is that pci_enable_link_state() cannot enable things that
+> > were disabled by pci_disable_link_state().  They're not symmetric,
+> > which violates the caller's expectation.
+> 
+> Yes.
+> 
+> This patch seems to come with my Suggested-by but what I suggested (and 
+> had a patch for) was to make disable/enable proper symmetric pairs because 
+> it is very trappy otherwise. If something else is needed in addition, that 
+> should be named differently like Bjorn also seems to suggest (however see 
+> my alternative suggestion below).
+> 
+> I renamed the current pci_enable_link_state() to 
+> pci_set_default_link_state() in my own attempt to get room for adding the 
+> symmetric pair.
 
+We might need new names for pci_enable_link_state(),
+pci_disable_link_state(), and the quirk thing.  If we keep the same
+names, I think it will be pretty complicated to manage the changing
+semantics when backporting driver changes that use them.
+
+> > Instead of adding pci_force_enable_link_state(), I think we should add
+> > a new interface for the *quirk* behavior that permanently disables
+> > states.  Then pci_enable_link_state() and pci_disable_link_state()
+> > could be made symmetric.
+> 
+> My suggestion is to make the disables/enables counted per state which 
+> would allow parallel sources of disables to function without clashing.
+
+By parallel sources, are you thinking of sysfs and driver calls?  If
+locking would be sufficient I think that would end up being simpler.
+
+But maybe the issue is these devices where we think ASPM breakage only
+happens in certain circumstances, e.g., firmware download, so we want
+to keep states disabled for that period.  Then I guess locking inside
+the enable/disable doesn't prevent sysfs from enabling those states
+during that period.
+
+> Disable quirks could simply not have the pairing enable, no special 
+> interface needed.
+
+I'm not sure what this looks like to the caller.  A parameter that
+says whether to count the disable?
+
+I think having a different function name would be helpfully
+descriptive because permanently removing an advertised capability is
+different from temporarily disabling a feature.
+
+Bjorn
 
