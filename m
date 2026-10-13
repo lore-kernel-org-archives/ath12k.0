@@ -4,120 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95376CA9ED0
-	for <ath12k@archiver.kernel.org>; Tue, 13 Oct 2026 05:57:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32DB7CC6B08
+	for <ath12k@archiver.kernel.org>; Tue, 13 Oct 2026 11:41:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=duWW+J+3q2G2PB4vrDlcQCQsUySglfzAQl26U9d2r8I=; b=rfRZ9tjr/N/S9SXFiF8Ee7Gk+J
-	kaJAfUMmEwAgb7t/dfDIDYcLzfeuPZ0uXYaosspQHxkKLq76seM6v0R45+KGuukf3bhq2JeRdsgT2
-	k201EdH0U+HW5vprdhVXh32T6726YvW+SdEd9mzG/xgnnJ6LWOY2va0ktzTMU2SA5Iu81vAOEO41J
-	VulbEarQb9Fu1hF4ypnApzjyfFPpwmFr3i1lfWiecYz+vAEqGUuSSZ3V3UR1u+q4aUGo5QGaA2CRr
-	x+2B8Vvlvda5cLnYgP+iUMCKsK+K4jx3qVr7hhmS6BZ5Nu3ZCl7RII7JCKK8VAI8icCSbY03FEhwm
-	TsC2/bPw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-ID:Content-Type:
+	MIME-Version:References:Message-ID:In-Reply-To:Subject:cc:To:Date:From:
+	Reply-To:Content-Transfer-Encoding:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=CKHgPqu2Azg7/nNri0RDYdQFf19RQLzbv3/NH2TS2ck=; b=ZZuCZMpwCGXWTQAUHWMdMUvxL8
+	U87CqT+glcdrzNhYfxcb+CxRV4gR7tC/GMPB6amiPqzA+XHeL49cKFNiu8I6rAiaU6vjptStmUwez
+	orSTyLh1Zl8VPo+XLKTAUMjip6Jwo2KvL44UHqotbUvyY9eX/a7Ti4ymKMzG2GYxsm7r0OwOpiiii
+	YkeQkJDbrHJLwx3jqLfFzxejLm3YnAFjBhizkI9gJL/z3dQjDLB6dBRYMN3c/KJcnq1DBKU2hd/Cv
+	8vohQhbSjReZ9FNqQfWCj66XCJkTXzo8301jo7J7Q831wMF8Sff+f+kiAjmhsXBrDJMeKlXkyzxqu
+	ANuegtvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGVW3-0000000C3xZ-182N;
-	Tue, 13 Oct 2026 05:57:35 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xGatE-0000000Cj6V-34V5;
+	Tue, 13 Oct 2026 11:41:52 +0000
+Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGVW1-0000000C3xM-0huX
-	for ath12k@lists.infradead.org;
-	Tue, 13 Oct 2026 05:57:33 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 392F1600D1;
-	Tue, 13 Oct 2026 05:57:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4C8281F000FF;
-	Tue, 13 Oct 2026 05:57:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791871051;
-	bh=duWW+J+3q2G2PB4vrDlcQCQsUySglfzAQl26U9d2r8I=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=XTqusC3IYIZsglHNrukfA/WcC0Ucu+9Iy2XxaM8LgbGyNQ77Kdssa3kywBCO7tb2H
-	 3IYqBesQnX6UwuvEmzaIyBAtc1IGfjX/MRK91YEATkmh0p+d+gGl4c/8tAmIVrtJxu
-	 bnIhPM65b4MbRGfX5feA4GU4K95qsNoyD9WUsrLBsiEaxDrdtmnCMiFLDMysqFn1rw
-	 wKMDCSlMiIrE3kR9+QPg28YdzYedgSvvZTnDunWx6PWrwi/UYvlsH5qJzJjDluKgaQ
-	 ecxDoO/68kTeqdMjwWo/MDDJKkMx+6k7Hy0oFLjMOVLG5I5r+itawHJimN923Io+AA
-	 v51QRzzTb8QJA==
-Message-ID: <1bde2004-734e-42b0-9ba9-f7c085eab69b@kernel.org>
-Date: Tue, 13 Oct 2026 07:57:22 +0200
+	id 1xGat7-0000000Cj5l-3Zw0;
+	Tue, 13 Oct 2026 11:41:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1791891706; x=1823427706;
+  h=from:date:to:cc:subject:in-reply-to:message-id:
+   references:mime-version:content-id;
+  bh=YAJaHA3FL843BSgj3aVZh2SzSmUdAo8/w5ok0jPj4ro=;
+  b=npu+QCRdxHDeQ+hopmntH8gv6i/ESNlGJk1TX/xF3RNfXOAl+Qx6VW/h
+   ubozrqrGhDTvFDvekO4D98ycDLQ2C/iivUEewR1ALAGOKmuXV/wgKrrGN
+   q4GGAQ0cCtAdY3Xh8vKpwa9Jrvfv6dzYzmW0UPegyiPOpTQwJn+p3ixBF
+   OLmqjkZzKg2ILDlvCWEVfauYx/Jh94j7DXMdO22yYX0K/Cd6pR+L9EjVx
+   3KVnZhFqL2dI0URDrp5Br1i3kRX7biWO87qs97NUAiJuVG3d+ELPZMXlT
+   LqpF60TCsWHuatdhsx2k5f+r50vDiKblsHbwxssCungEOt2Wh+mN+4/d6
+   w==;
+X-CSE-ConnectionGUID: j22tdh1JQvipLTeF40PYvA==
+X-CSE-MsgGUID: QgY6QZ3FSQ6AEGGKP+VH0A==
+X-IronPort-AV: E=McAfee;i="6800,10657,11933"; a="515084"
+X-IronPort-AV: E=Sophos;i="6.27,155,1787036400"; 
+   d="scan'208";a="515084"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Oct 2026 04:41:45 -0700
+X-CSE-ConnectionGUID: b8gYIYLoRdyjmsQDQ/nStQ==
+X-CSE-MsgGUID: JaGIfAB3QKqpSXdMgk+ecQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,155,1787036400"; 
+   d="scan'208";a="1501815"
+Received: from ijarvine-mobl1.ger.corp.intel.com (HELO localhost) ([10.245.245.106])
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Oct 2026 04:41:39 -0700
+From: =?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>
+Date: Tue, 13 Oct 2026 14:41:32 +0300 (EEST)
+To: Bjorn Helgaas <helgaas@kernel.org>
+cc: Manivannan Sadhasivam <mani@kernel.org>, 
+    Bjorn Helgaas <bhelgaas@google.com>, 
+    Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+    =?ISO-8859-2?Q?Krzysztof_Wilczy=F1ski?= <kwilczynski@kernel.org>, 
+    Rob Herring <robh@kernel.org>, Nirmal Patel <nirmal.patel@linux.intel.com>, 
+    Jonathan Derrick <jonathan.derrick@linux.dev>, 
+    Jeff Johnson <jjohnson@kernel.org>, linux-pci@vger.kernel.org, 
+    LKML <linux-kernel@vger.kernel.org>, linux-arm-msm@vger.kernel.org, 
+    linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, 
+    ath11k@lists.infradead.org, ath10k@lists.infradead.org, 
+    Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, 
+    Qiang Yu <qiang.yu@oss.qualcomm.com>, 
+    Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Subject: Re: [PATCH v3 2/8] PCI/ASPM: Add pci_force_enable_link_state() API
+In-Reply-To: <20261012225832.GA1415301@bhelgaas>
+Message-ID: <f1390db8-2369-9ab7-49a9-b7f09ef7b1ea@linux.intel.com>
+References: <20261012225832.GA1415301@bhelgaas>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 2/7] dt-bindings: wireless: ieee80211: Add
- disable-rfkill property
-To: =?UTF-8?Q?J=C3=A9r=C3=B4me_de_Bretagne?= <jerome.debretagne@gmail.com>
-Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Bryan O'Donoghue <bod.linux@nxsw.ie>, Bjorn Andersson
- <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Johannes Berg
- <johannes@sipsolutions.net>, Lorenzo Bianconi <lorenzo@kernel.org>,
- Maximilian Luz <luzmaximilian@gmail.com>, Hans de Goede <hansg@kernel.org>,
- =?UTF-8?Q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>,
- Jeff Johnson <jjohnson@kernel.org>, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-wireless@vger.kernel.org, platform-driver-x86@vger.kernel.org,
- ath12k@lists.infradead.org, Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
- Dale Whinham <daleyo@gmail.com>
-References: <20251220-surface-sp11-for-next-v5-0-16065bef8ef3@gmail.com>
- <M7kfFb5fz-WB43U_xCUwgxpmBJ4TNdp4jE6yFu6HmemIcDx5tXO6H4xnW_pEQz6DMkKm-3POdB9hIdB092zhGQ==@protonmail.internalid>
- <20251220-surface-sp11-for-next-v5-2-16065bef8ef3@gmail.com>
- <e0e9e690-c56e-4b56-90f9-2af46a7feaf3@nxsw.ie>
- <20251220-fervent-mamba-of-sunshine-f680a8@quoll>
- <571681d6-67f3-47fe-9a42-dce5aca13c99@oss.qualcomm.com>
- <6a90eb12-87c7-4942-9f18-6490a91cb0b7@kernel.org>
- <CA+kEDGEBqMh8X=q54EkQNutxTpqutQ11QdkUr7bvJO8_iFy5JA@mail.gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGPBBMBCgA5AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJp2mE8AAoJEBuTQ307QWKbeaIP
- /ihHTkTW4KsN/DQ945JJbyu5tI0J80Wue7QyyLPglyKfhgb5cLLNPpOC8cCIJsc7+W3i2P38
- s2c1cOH6CYGE7E9ur3Vfme8NW2S2I/Z8VC7bZnzyS23wT17LrsdS/qCpx4o8U+pt/xdXDKph
- EGRYrIEmMpUWvyYzyYKGIe25FtaayIIKpq8eZYyFcp2f/sG5IkOW5uZzHPMPdcm87jU7fyuQ
- rAU2vx9r+ulUfQ/q9Z2roC/ode3l7t2pN7BCBCsUDp6JCrUyZrtT1e7EbA0ZRP3aOBNk2P2E
- DQOgJGjGdO5Yx2Y9LFtltu6JbsBJHi1syGRX3AtQYOMc4Y1WGoeZJmMlvKj2ZqqXNkcWi2DS
- IQEWB0uW6CqFsBBIMGDa+6OzdaVO/uAVXWDWml02Men3CILdI1MbVjoh8ECqYUY7OQ+JJvNN
- vnliuq5WM3Ghd3jg/LZZrxXjdIginRHFQCjIJYLKpLZWm1/iDFedcfzqRNYmTtqscdCNHW41
- oT3Z7BmO9xwdjuwBS6nmS6JJwkbf5Ot2QR4pB/DRU7ZwjT1qHe+9r9gF32wXVQatHNGK/VVu
- sfwOnkdxCWkp/qb2gdQRmZh+SedStWshigH6sNfuHBloF/q+hjMRc8b2m326OZdrbSHwY1Sz
- vti8Hn7n8NjdHO9LKB7BIdjkA9DA5WsqOuVCzsFNBFVDXDQBEADNkrQYSREUL4D3Gws46JEo
- Z9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLueMNsWLJBv
- BaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6eiOMheesVS
- 5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wAGldWsRxb
- f3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA6z6lBZn0
- WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9YegxWKvX
- XHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt91pFzBSO
- IpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gUBLHFTg2h
- YnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/JoFzZ4B0
- p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu4vXVFBYI
- GmpyNPYzRm0QPwARAQABwsF2BBgBCgAgAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtBYpsFAmna
- YUkACgkQG5NDfTtBYptX+BAApg32CkxwNucNEi8WfWA8oKkW0y8YDuY6ORMo9FWNGiT/OTy0
- vyJrLocrpn86zwfjVp+eCrssPYh8eqJfnWqmYv6ACQtHPYzPZQ3mSo8H97Z01oUxITzCxpXm
- ZkLgPIqtDPcC2E3dPM/fVxcyowM8XsaMA9wcsaUYrta8toOq2b9tKcjleKMfMrm0gQ9u7wUc
- QbLkwj6TCLOwucb07GXzLTNF9PZmaDUpKAZjMjmrW+le+SFvQbhamx0rxLWPR0NWntXpbCn+
- +ACch03p/JyTBVktxFsFyCt7pTPE1kEaeuXBTe/a2D9iQvRxRW19LvuO2e59/u1wYUiH/orz
- wbIC2S4dBsPAPihL3ztOU1yE86GPyQtSE0kU+/7snnLt4QGi6PChf3t5gnNjAzjUUovO8rgI
- c+5yN5heq5loYHgK6OQ9OlHzsPHO9e9MOQcKlFycs1pyijFGzDwdNUm/SchK8iWT2QApTx4A
- K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
- n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
- qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <CA+kEDGEBqMh8X=q54EkQNutxTpqutQ11QdkUr7bvJO8_iFy5JA@mail.gmail.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+Content-Type: multipart/mixed; BOUNDARY="8323328-2110680251-1791890800=:1237"
+Content-ID: <eb4da7c3-6b95-7dae-87b6-bb3fda24da91@linux.intel.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261013_044145_910615_3F87716A 
+X-CRM114-Status: GOOD (  39.68  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,55 +93,240 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 12/10/2026 20:56, Jérôme de Bretagne wrote:
-> Le lun. 12 oct. 2026 à 18:53, Krzysztof Kozlowski <krzk@kernel.org> a écrit :
->>
->> On 12/10/2026 18:38, Konrad Dybcio wrote:
->>> On 12/20/25 10:12 AM, Krzysztof Kozlowski wrote:
->>>> On Sat, Dec 20, 2025 at 06:04:00AM +0000, Bryan O'Donoghue wrote:
->>>>> On 20/12/2025 00:21, Jérôme de Bretagne via B4 Relay wrote:
->>>>>> From: Jérôme de Bretagne <jerome.debretagne@gmail.com>
->>>>>>
->>>>>> For some devices, Wi-Fi is entirely hard blocked by default making
->>>>>> the Wi-Fi radio unusable, except if rfkill is disabled as expected
->>>>>> on those models.
->>>
->>> [...]
->>>
->>>>> Is this really a hardware description though ?
->>>>>
->>>>> Its really more of a logical/functional description. It tells the runtime
->>>>> what todo, not what the hardware is.
->>>>>
->>>>> You could also have a list of quirks in ath12k for this or have a user-space
->>>>> utility look for the appropriate platform device string name and disable
->>>>> rfkill.
->>>>>
->>>>> I think this logic belongs in drivers/net/wireless/ath/ath12k/ triggering on
->>>>> a compat string.
->>>>
->>>> This is good point. Either this could be deducible from the compatible
->>>> or this should actually describe the hardware and whatever is there
->>>> wired/configured, not what OS should do.
->>>
->>> Sorry for digging up an old thread. The board-compatible change is now
->>
->> I don't get why exactly the board-compatible option was chosen, except
->> of course finding workaround which did not need digging out the root of
->> the problem. I suggested the compatible of this device or proper
->> hardware description.
-> 
-> Could someone give an example of what a "proper hardware description"
-> would be in this case, to move the needle a bit? It is quite abstract for me.
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
 
-qcom,wl-disable-pin-grounded
-qcom,firmware-needs-hw-reset
-qcom,firmware-reset-bug
-qcom,mismatched-disable-polarity
+--8323328-2110680251-1791890800=:1237
+Content-Type: text/plain; CHARSET=ISO-8859-15
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+Content-ID: <6e83485e-223f-0f0c-17ad-c73df48cefdf@linux.intel.com>
 
-etc.
+On Mon, 12 Oct 2026, Bjorn Helgaas wrote:
 
+> On Wed, Jul 08, 2026 at 04:30:16PM +0200, Manivannan Sadhasivam wrote:
+> > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> >=20
+> > pci_enable_link_state() and pci_enable_link_state_locked() APIs only en=
+able
+> > the ASPM states that were not previously disabled via
+> > pci_disable_link_state*() API or blacklisted during init (e.g. the pre-=
+1.1
+> > device blacklist, which is only meant to be overridden with
+> > 'pcie_aspm=3Dforce'). This is an intentional behavior as these APIs mus=
+t not
+> > silently re-enable states that were deliberately disabled, since doing =
+so
+> > could enable ASPM on a link where it is known to be unsafe.
+>=20
+> I think this is saying that many uses of pci_disable_link_state() are
+> to avoid hardware errata, i.e., these are basically quirks, and we
+> should *never* enable those ASPM states.
+>=20
+> > However, some drivers (e.g. the atheros WLAN drivers) save the currentl=
+y
+> > enabled ASPM states, disable all ASPM states before firmware download, =
+and
+> > then try to restore exactly the states that were enabled before. Restor=
+ing
+> > those states requires re-enabling states that were just disabled via
+> > pci_disable_link_state() API. But, this cannot be achieved using the
+> > existing APIs.
+>=20
+> This sounds like it's also for hardware errata: if ASPM works
+> correctly, there's no need to disable it during firmware download.  I
+> think this is *only* the atheros drivers, isn't it?  I didn't see any
+> others.
 
-Best regards,
-Krzysztof
+Hi,
+
+There are more that should use disable/enable API. In addition ath*, I had=
+=20
+also these in my unfinished series:
+
+  brcmfmac
+  ib-hfi1
+  rtlwifi
+  rtsx
+  r8169
+
+> > Hence, add pci_force_enable_link_state() API for such callers. Unlike
+> > pci_enable_link_state(), it re-enables the requested states even if the=
+y
+> > were previously disabled via pci_disable_link_state() or disabled durin=
+g
+> > init. The caller is therefore responsible for only enabling states the
+> > device actually supports, typically the ones previously reported by
+> > pcie_aspm_enabled().
+>=20
+> The problem is that pci_enable_link_state() cannot enable things that
+> were disabled by pci_disable_link_state().  They're not symmetric,
+> which violates the caller's expectation.
+
+Yes.
+
+This patch seems to come with my Suggested-by but what I suggested (and=20
+had a patch for) was to make disable/enable proper symmetric pairs because=
+=20
+it is very trappy otherwise. If something else is needed in addition, that=
+=20
+should be named differently like Bjorn also seems to suggest (however see=
+=20
+my alternative suggestion below).
+
+I renamed the current pci_enable_link_state() to=20
+pci_set_default_link_state() in my own attempt to get room for adding the=
+=20
+symmetric pair.
+
+> Instead of adding pci_force_enable_link_state(), I think we should add
+> a new interface for the *quirk* behavior that permanently disables
+> states.  Then pci_enable_link_state() and pci_disable_link_state()
+> could be made symmetric.
+
+My suggestion is to make the disables/enables counted per state which=20
+would allow parallel sources of disables to function without clashing.
+
+Disable quirks could simply not have the pairing enable, no special=20
+interface needed.
+
+And the lane margining proposal would also just fit in with that approach=
+=20
+as well.
+
+--
+ i.
+
+> > This API is implemented by adding a 'force' parameter to the shared
+> > __pci_enable_link_state() helper. When 'force' is true, the requested
+> > states are cleared from 'link->aspm_disable' before enabling.
+> >=20
+> > Suggested-by: Ilpo J=E4rvinen <ilpo.jarvinen@linux.intel.com>
+> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcom=
+m.com>
+> > ---
+> >  drivers/pci/pcie/aspm.c | 37 ++++++++++++++++++++++++++++++++++---
+> >  include/linux/pci.h     |  3 +++
+> >  2 files changed, 37 insertions(+), 3 deletions(-)
+> >=20
+> > diff --git a/drivers/pci/pcie/aspm.c b/drivers/pci/pcie/aspm.c
+> > index 1c15a14718e8..c04fb71de91c 100644
+> > --- a/drivers/pci/pcie/aspm.c
+> > +++ b/drivers/pci/pcie/aspm.c
+> > @@ -1506,7 +1506,8 @@ int pci_disable_link_state(struct pci_dev *pdev, =
+int state)
+> >  }
+> >  EXPORT_SYMBOL(pci_disable_link_state);
+> > =20
+> > -static int __pci_enable_link_state(struct pci_dev *pdev, int state, bo=
+ol locked)
+> > +static int __pci_enable_link_state(struct pci_dev *pdev, int state, bo=
+ol locked,
+> > +=09=09=09=09   bool force)
+> >  {
+> >  =09struct pcie_link_state *link =3D pcie_aspm_get_link(pdev);
+> > =20
+> > @@ -1527,6 +1528,10 @@ static int __pci_enable_link_state(struct pci_de=
+v *pdev, int state, bool locked)
+> >  =09=09down_read(&pci_bus_sem);
+> >  =09mutex_lock(&aspm_lock);
+> >  =09link->aspm_default =3D pci_calc_aspm_enable_mask(state);
+> > +
+> > +=09/* Force enable states that were previously disabled */
+> > +=09if (force)
+> > +=09=09link->aspm_disable &=3D ~link->aspm_default;
+> >  =09pcie_config_aspm_link(link, policy_to_aspm_state(link));
+> > =20
+> >  =09link->clkpm_default =3D (state & PCIE_LINK_STATE_CLKPM) ? 1 : 0;
+> > @@ -1553,7 +1558,7 @@ static int __pci_enable_link_state(struct pci_dev=
+ *pdev, int state, bool locked)
+> >   */
+> >  int pci_enable_link_state(struct pci_dev *pdev, int state)
+> >  {
+> > -=09return __pci_enable_link_state(pdev, state, false);
+> > +=09return __pci_enable_link_state(pdev, state, false, false);
+> >  }
+> >  EXPORT_SYMBOL(pci_enable_link_state);
+> > =20
+> > @@ -1576,10 +1581,36 @@ int pci_enable_link_state_locked(struct pci_dev=
+ *pdev, int state)
+> >  {
+> >  =09lockdep_assert_held_read(&pci_bus_sem);
+> > =20
+> > -=09return __pci_enable_link_state(pdev, state, true);
+> > +=09return __pci_enable_link_state(pdev, state, true, false);
+> >  }
+> >  EXPORT_SYMBOL(pci_enable_link_state_locked);
+> > =20
+> > +/**
+> > + * pci_force_enable_link_state - Force enable device link state
+> > + * @pdev: PCI device
+> > + * @state: Mask of ASPM link states to enable
+> > + *
+> > + * Enable device link state, so the link will enter the specified stat=
+es.
+> > + * Unlike pci_enable_link_state(), this also re-enables states previou=
+sly
+> > + * disabled by pci_disable_link_state() and overrides the ASPM states =
+disabled
+> > + * during init (e.g., the pre-1.1 device blacklist). The caller is the=
+refore
+> > + * responsible for only enabling states the device supports, typically=
+ the ones
+> > + * previously reported by pcie_aspm_enabled().
+> > + *
+> > + * Note that if the BIOS didn't grant ASPM control to the OS, this doe=
+s nothing
+> > + * because we can't touch the LNKCTL register.
+> > + *
+> > + * Note: Ensure devices are in D0 before enabling PCI-PM L1 PM Substat=
+es, per
+> > + * PCIe r6.0, sec 5.5.4.
+> > + *
+> > + * Return: 0 on success, a negative errno otherwise.
+> > + */
+> > +int pci_force_enable_link_state(struct pci_dev *pdev, int state)
+> > +{
+> > +=09return __pci_enable_link_state(pdev, state, false, true);
+> > +}
+> > +EXPORT_SYMBOL(pci_force_enable_link_state);
+> > +
+> >  void pcie_aspm_remove_cap(struct pci_dev *pdev, u32 lnkcap)
+> >  {
+> >  =09if (lnkcap & PCI_EXP_LNKCAP_ASPM_L0S)
+> > diff --git a/include/linux/pci.h b/include/linux/pci.h
+> > index ebb5b9d76360..be6719626c8f 100644
+> > --- a/include/linux/pci.h
+> > +++ b/include/linux/pci.h
+> > @@ -1918,6 +1918,7 @@ int pci_disable_link_state(struct pci_dev *pdev, =
+int state);
+> >  int pci_disable_link_state_locked(struct pci_dev *pdev, int state);
+> >  int pci_enable_link_state(struct pci_dev *pdev, int state);
+> >  int pci_enable_link_state_locked(struct pci_dev *pdev, int state);
+> > +int pci_force_enable_link_state(struct pci_dev *pdev, int state);
+> >  void pcie_no_aspm(void);
+> >  bool pcie_aspm_support_enabled(void);
+> >  bool pcie_aspm_enabled(struct pci_dev *pdev);
+> > @@ -1930,6 +1931,8 @@ static inline int pci_enable_link_state(struct pc=
+i_dev *pdev, int state)
+> >  { return 0; }
+> >  static inline int pci_enable_link_state_locked(struct pci_dev *pdev, i=
+nt state)
+> >  { return 0; }
+> > +static inline int pci_force_enable_link_state(struct pci_dev *pdev, in=
+t state)
+> > +{ return 0; }
+> >  static inline void pcie_no_aspm(void) { }
+> >  static inline bool pcie_aspm_support_enabled(void) { return false; }
+> >  static inline bool pcie_aspm_enabled(struct pci_dev *pdev) { return fa=
+lse; }
+> >=20
+> > --=20
+> > 2.43.0
+> >=20
+> >=20
+>=20
+
+--=20
+ i.
+--8323328-2110680251-1791890800=:1237--
 
