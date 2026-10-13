@@ -4,136 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B65E8CC6B03
-	for <ath12k@archiver.kernel.org>; Tue, 13 Oct 2026 05:23:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95376CA9ED0
+	for <ath12k@archiver.kernel.org>; Tue, 13 Oct 2026 05:57:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/SZN17hFW4GC9KUw1ogcVV38VClSXT6eMgRXyiGOLGY=; b=F/JAwgrqGTUu6kxw8qK5bjEKRN
-	LgmM8kn9ZXe2jgfo80U0R35hjA0UfdHEA3J//2dJepF/btMe0aFvaUPI4vBEomFpJ3ZXQ9qHZviWZ
-	bgTPPCzkfM/dhyhE7grgfKkUKnbmV46u3ufIsaXcm8VPZmHIBMq2W+3WxRx5HYV6HezOQtZpXhPO0
-	hv/dFAP9j2BkhOkhUP1kc4n9k7TchnvCMyJ+jGTJCvvDzBx1z7tK3SCRQIzue69lhk6c2mKgpvDcT
-	3gOhR4WidZP+KQxw2be5Non2QX0lY5yTdWNZr1tMihC+O7jr5xSecazz87q0EhzstT+oZSenfrcZ2
-	N9N6UpoQ==;
+	bh=duWW+J+3q2G2PB4vrDlcQCQsUySglfzAQl26U9d2r8I=; b=rfRZ9tjr/N/S9SXFiF8Ee7Gk+J
+	kaJAfUMmEwAgb7t/dfDIDYcLzfeuPZ0uXYaosspQHxkKLq76seM6v0R45+KGuukf3bhq2JeRdsgT2
+	k201EdH0U+HW5vprdhVXh32T6726YvW+SdEd9mzG/xgnnJ6LWOY2va0ktzTMU2SA5Iu81vAOEO41J
+	VulbEarQb9Fu1hF4ypnApzjyfFPpwmFr3i1lfWiecYz+vAEqGUuSSZ3V3UR1u+q4aUGo5QGaA2CRr
+	x+2B8Vvlvda5cLnYgP+iUMCKsK+K4jx3qVr7hhmS6BZ5Nu3ZCl7RII7JCKK8VAI8icCSbY03FEhwm
+	TsC2/bPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGUz7-0000000C0qr-3B5L;
-	Tue, 13 Oct 2026 05:23:33 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xGVW3-0000000C3xZ-182N;
+	Tue, 13 Oct 2026 05:57:35 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGUz6-0000000C0qV-04Ah
+	id 1xGVW1-0000000C3xM-0huX
 	for ath12k@lists.infradead.org;
-	Tue, 13 Oct 2026 05:23:33 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69D20vXU988971
-	for <ath12k@lists.infradead.org>; Tue, 13 Oct 2026 05:23:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	/SZN17hFW4GC9KUw1ogcVV38VClSXT6eMgRXyiGOLGY=; b=UecfDA5h0NXv0cGv
-	x2XEaFlRXrOoK+82wOwqjLVebQ8tclsDFd3EW0P9rQ9SOaJbDgxN3+BQ8jrfV+uK
-	lZNYZ+Wk0WQU/CI/dJLjUEhWwlM23hr4ul1KcF++WkLqEASlUluVxx9ima3e4GHV
-	2EaLtBr6uP1Wc5xAowGZLct1AiilGHovkwWvS9P4Xa963xz5WbHE4GtKjbnXtSUE
-	C9nvI5eefGMS9l5bpy8KVGSzdPVb0ME+vv7/l/l68Lu5o3zIqHilAmk97V2MaA3G
-	Kv9OZW9lACSuS9pLUcJi7tcJv+Q174w9TRRLI7JFmTprljWdKMD6N4eOhNTgTj4Z
-	UMyHPQ==
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h98hc96sf-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 13 Oct 2026 05:23:30 +0000 (GMT)
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-3552883bd19so1701275eec.1
-        for <ath12k@lists.infradead.org>; Mon, 12 Oct 2026 22:23:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1791869010; x=1792473810; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=/SZN17hFW4GC9KUw1ogcVV38VClSXT6eMgRXyiGOLGY=;
-        b=S7Qv+XCd3M98haxzc0Y7pTO0ZJiI/PFMmV+viGZdwmS35v5xsFaKIkFZ/sqjkVrKqX
-         waFkf9cpH8yhSvXWagafYzvAyLG7C1Ufaaxl8uJ8n8HOMw8DK6V0ZdgZSgaGPi9ElwRU
-         4gEpzcpDwTjR2L+Btb+q6wGM8u4rFce67z8StuIt59ZT16erp3BAFVEQIJcE8SGV29vE
-         BndCNMKzhkrdMcA3ArjnI8C4F0X/afnrieKfqJLfGTya5mAIdAWJ8BOnEATKMd7948H7
-         bN8Eu0htx+ztciRHMGB+intj8HAGG/bTRbq6BKa+MMRUAQ4CBF25CBctOtdRYM26LoMf
-         8DIg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791869010; x=1792473810;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=/SZN17hFW4GC9KUw1ogcVV38VClSXT6eMgRXyiGOLGY=;
-        b=OP35oXigVGsOM2rQDbM/TPzoksd43DSWf69nDyovzqfDJNLSwedXu9z6o4pDTj4y7c
-         KqWhzzhvLi5sSfdfLBBp4PpcQgkQaIIysDVo46BqoRkSGNj58MF7UDEfEoBZAJsFY3NG
-         STIprzNKnEzqh6+pLxfrBFmr8+2ml3jP01qFSxqXlr0HuuvJXtOyBVKGR5y8CEMaFnS9
-         OvpC4wvRlds72WloKgZmnzZfoRFiI9EQFSpURlMCNazZPH5Wlfvw0WVofngAFFbY/OzI
-         lsgo05RW/fd3AREWwPH7Nr+fIgy6fWybC4jmB23vLfp9nQ1B9OvFvrvqNqCDH+CqgPdb
-         6Wow==
-X-Forwarded-Encrypted: i=1; AKwUvByYEWyaEwqfWfjbTdWpCexidHU5AN+X+MvmPxpDwMfkkVCUn3Gc33wxw+FFx6kUPTNGKFzh324=@lists.infradead.org
-X-Gm-Message-State: AFq9FYK+CH3tl29gtlyBxt6WblfSc+9O6xMMFopsY8wOr1EBi2KIrQV/
-	UMlegmWP3ttLmqb2cpWDAN2H1uix1iGhQydx8PZzq4CGx+PXbvMz/pYtW+fQMFkJxZRTKTVtncE
-	CbRc0R/awrL6gBVZncnk4/Y0rVDncsCrmlj8Qi2/kpvgNNcjoqVA+zE2s7jNiULTe
-X-Gm-Gg: AYBFou12JGSlRf3Nu+eiK274yxFFhdCIrzDWGmVwOPMC9lkbL3fbhuu3weHk7wHKYV5
-	1E4F2PsMEcCI+TQbNb+XbcmnnhMNYt7pSYwm9x3nodtu+hObbDk6tfgrxkCeWyavOQGCexttgAE
-	rGXvutzqcJdHm4bnJMBk2DnXK2iuuU3kr50IosJ53VwafEiwWA0huh4I8yVivPwcmEPl4JJam0Y
-	pks/FMM3PhODdaAg0djH/bqkmJQiZlMhtSIKIKo8RZdzGlyJAavU1OgDUkpjHpGvyO/yS69ZO+N
-	I09Ub5WXlhufeP/Ms9HJMZwCnuuhELcwq6fN0AZqPv97qCFuYfGP6mTt0ZzgxLvHPREMZwi86kb
-	6N0Vm/iswvNFRo91S8JZOccBjO8LPaUXrqK+St0iZ
-X-Received: by 2002:a05:693c:87c4:10b0:356:4b46:9393 with SMTP id 5a478bee46e88-3564b46940amr13288199eec.24.1791869010107;
-        Mon, 12 Oct 2026 22:23:30 -0700 (PDT)
-X-Received: by 2002:a05:693c:87c4:10b0:356:4b46:9393 with SMTP id 5a478bee46e88-3564b46940amr13288167eec.24.1791869009486;
-        Mon, 12 Oct 2026 22:23:29 -0700 (PDT)
-Received: from [10.152.199.23] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3537c841648sm44915106eec.3.2026.10.12.22.23.26
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 12 Oct 2026 22:23:29 -0700 (PDT)
-Message-ID: <657ebc48-0faa-46cf-9cac-7fd06b2547c9@oss.qualcomm.com>
-Date: Tue, 13 Oct 2026 10:53:24 +0530
+	Tue, 13 Oct 2026 05:57:33 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 392F1600D1;
+	Tue, 13 Oct 2026 05:57:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4C8281F000FF;
+	Tue, 13 Oct 2026 05:57:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791871051;
+	bh=duWW+J+3q2G2PB4vrDlcQCQsUySglfzAQl26U9d2r8I=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=XTqusC3IYIZsglHNrukfA/WcC0Ucu+9Iy2XxaM8LgbGyNQ77Kdssa3kywBCO7tb2H
+	 3IYqBesQnX6UwuvEmzaIyBAtc1IGfjX/MRK91YEATkmh0p+d+gGl4c/8tAmIVrtJxu
+	 bnIhPM65b4MbRGfX5feA4GU4K95qsNoyD9WUsrLBsiEaxDrdtmnCMiFLDMysqFn1rw
+	 wKMDCSlMiIrE3kR9+QPg28YdzYedgSvvZTnDunWx6PWrwi/UYvlsH5qJzJjDluKgaQ
+	 ecxDoO/68kTeqdMjwWo/MDDJKkMx+6k7Hy0oFLjMOVLG5I5r+itawHJimN923Io+AA
+	 v51QRzzTb8QJA==
+Message-ID: <1bde2004-734e-42b0-9ba9-f7c085eab69b@kernel.org>
+Date: Tue, 13 Oct 2026 07:57:22 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3] wifi: ath12k: assign device id from the WSI index
-To: Benoit Masson <yahoo@perenite.com>, Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        stable@vger.kernel.org,
-        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-References: <20260928213322.98949-1-yahoo@perenite.com>
-From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Subject: Re: [PATCH v5 2/7] dt-bindings: wireless: ieee80211: Add
+ disable-rfkill property
+To: =?UTF-8?Q?J=C3=A9r=C3=B4me_de_Bretagne?= <jerome.debretagne@gmail.com>
+Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+ Bryan O'Donoghue <bod.linux@nxsw.ie>, Bjorn Andersson
+ <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Johannes Berg
+ <johannes@sipsolutions.net>, Lorenzo Bianconi <lorenzo@kernel.org>,
+ Maximilian Luz <luzmaximilian@gmail.com>, Hans de Goede <hansg@kernel.org>,
+ =?UTF-8?Q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>,
+ Jeff Johnson <jjohnson@kernel.org>, linux-arm-msm@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-wireless@vger.kernel.org, platform-driver-x86@vger.kernel.org,
+ ath12k@lists.infradead.org, Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+ Dale Whinham <daleyo@gmail.com>
+References: <20251220-surface-sp11-for-next-v5-0-16065bef8ef3@gmail.com>
+ <M7kfFb5fz-WB43U_xCUwgxpmBJ4TNdp4jE6yFu6HmemIcDx5tXO6H4xnW_pEQz6DMkKm-3POdB9hIdB092zhGQ==@protonmail.internalid>
+ <20251220-surface-sp11-for-next-v5-2-16065bef8ef3@gmail.com>
+ <e0e9e690-c56e-4b56-90f9-2af46a7feaf3@nxsw.ie>
+ <20251220-fervent-mamba-of-sunshine-f680a8@quoll>
+ <571681d6-67f3-47fe-9a42-dce5aca13c99@oss.qualcomm.com>
+ <6a90eb12-87c7-4942-9f18-6490a91cb0b7@kernel.org>
+ <CA+kEDGEBqMh8X=q54EkQNutxTpqutQ11QdkUr7bvJO8_iFy5JA@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-In-Reply-To: <20260928213322.98949-1-yahoo@perenite.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDEzMDAyMSBTYWx0ZWRfX9ypEyTQXCj0g
- vkgGsamp3zYS3A988PI+gawr99PpkVlqzLea79Ag5Ap1s2NLl0zrawJ5cjrsdgTh3hfbHDwIrEq
- kbXuA25F8uznEIlhVsPYrTWaLf8iOE49uJcXo3LFqPYYp41fd4uIb0W+DFIl7gfWhMa5nE8+DVL
- zcNPpWQqh1sSwG/eSUnrUEnDv+0cXecPQQiSl3dXQWuvrO3hg+bD3mxAIy3EksF7VbLgHhFDmZQ
- 4htpqvztvs+M65788LjeBZKEwjr0o58AvYi+FpDNnd8Wxe4aDe3dbb7WB91GvgEqcymIG9SHt4b
- JYYOBj/zWW/IVoilful8zdAlJQHyfSBZIOxuf450Mj7LKSPyvj4rbxmp+3pQf15dakfMF+MmHiq
- g1QApm8eSNTdx+MueaLYl4j9ZV7bHYiZW/m6LS7YSDfG9hifXzY7FyALmymgTfST6QF2Eu8G9HF
- muw/eFn5vQCj7dv4Wyw==
-X-Authority-Analysis: v=2.4 cv=VPVIDNPX c=1 sm=1 tr=0 ts=6acdc052 cx=c_pps
- a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
- a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
- a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8 a=LV5C8B2hAAAA:8 a=33sO1Vo68oqyLtPrM3MA:9
- a=QEXdDO2ut3YA:10 a=bBxd6f-gb0O0v-kibOvt:22 a=uiVh3g-rw18WZz7NjXbe:22
-X-Proofpoint-ORIG-GUID: wqpusnz6vdGYMkfHvTms5YPn0aadGEQu
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDEzMDAyMSBTYWx0ZWRfX3xBfXhNVztqT
- Sjfr8PjuWFJwAsvs1sl/GpYb43NNXs/Bu6ZN8ZWivNJv7+PqOAl2LnZfUoqABaakPITV9ycV7eN
- flwtc8whX/Z9MASxVO3N++inruLypHM=
-X-Proofpoint-GUID: wqpusnz6vdGYMkfHvTms5YPn0aadGEQu
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-10-13_01,2026-10-09_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 priorityscore=1501 malwarescore=0 impostorscore=0 spamscore=0
- suspectscore=0 lowpriorityscore=0 adultscore=0 phishscore=0 clxscore=1015
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2610080000 definitions=main-2610130021
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261012_222332_086199_95B56420 
-X-CRM114-Status: GOOD (  13.04  )
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <CA+kEDGEBqMh8X=q54EkQNutxTpqutQ11QdkUr7bvJO8_iFy5JA@mail.gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,27 +132,55 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/29/2026 3:03 AM, Benoit Masson wrote:
-> Devices of a hardware group are added to ag->ab[] in PCI probe
-> completion order (ab->device_id = ag->num_probed++), which is not
-> stable across boots. The wiphy radio array is built from ag->ab[] and
-> the wiphy device is taken from its first entry, so the wiphy sysfs
-> path and the mapping of radio indices to bands change on every boot.
+On 12/10/2026 20:56, Jérôme de Bretagne wrote:
+> Le lun. 12 oct. 2026 à 18:53, Krzysztof Kozlowski <krzk@kernel.org> a écrit :
+>>
+>> On 12/10/2026 18:38, Konrad Dybcio wrote:
+>>> On 12/20/25 10:12 AM, Krzysztof Kozlowski wrote:
+>>>> On Sat, Dec 20, 2025 at 06:04:00AM +0000, Bryan O'Donoghue wrote:
+>>>>> On 20/12/2025 00:21, Jérôme de Bretagne via B4 Relay wrote:
+>>>>>> From: Jérôme de Bretagne <jerome.debretagne@gmail.com>
+>>>>>>
+>>>>>> For some devices, Wi-Fi is entirely hard blocked by default making
+>>>>>> the Wi-Fi radio unusable, except if rfkill is disabled as expected
+>>>>>> on those models.
+>>>
+>>> [...]
+>>>
+>>>>> Is this really a hardware description though ?
+>>>>>
+>>>>> Its really more of a logical/functional description. It tells the runtime
+>>>>> what todo, not what the hardware is.
+>>>>>
+>>>>> You could also have a list of quirks in ath12k for this or have a user-space
+>>>>> utility look for the appropriate platform device string name and disable
+>>>>> rfkill.
+>>>>>
+>>>>> I think this logic belongs in drivers/net/wireless/ath/ath12k/ triggering on
+>>>>> a compat string.
+>>>>
+>>>> This is good point. Either this could be deducible from the compatible
+>>>> or this should actually describe the hardware and whatever is there
+>>>> wired/configured, not what OS should do.
+>>>
+>>> Sorry for digging up an old thread. The board-compatible change is now
+>>
+>> I don't get why exactly the board-compatible option was chosen, except
+>> of course finding workaround which did not need digging out the root of
+>> the problem. I suggested the compatible of this device or proper
+>> hardware description.
 > 
-> Persisted wireless configurations reference radios by index (e.g.
-> OpenWrt/hostapd "radio0"), so such a configuration attaches to a
-> random band at each boot. This affects any multi-chip group with
-> single-band radios, e.g. TP-Link Archer BE800 (three QCN9274/QCN9224
-> radios in one group).
-> 
-> Store each ab in ag->ab[] at its wsi_info.index, which is derived from
-> the device tree WSI ring and is therefore deterministic.
-> ag->num_probed remains the group device counter. The unassign path is
-> unchanged, it already indexes ag->ab[] by ab->device_id.
-> 
-> Suggested-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-> Fixes: 6f245ea0ec6c ("wifi: ath12k: introduce device group abstraction")
-> Cc: stable@vger.kernel.org # 6.14+
-> Signed-off-by: Benoit Masson <yahoo@perenite.com>
-Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+> Could someone give an example of what a "proper hardware description"
+> would be in this case, to move the needle a bit? It is quite abstract for me.
+
+qcom,wl-disable-pin-grounded
+qcom,firmware-needs-hw-reset
+qcom,firmware-reset-bug
+qcom,mismatched-disable-polarity
+
+etc.
+
+
+Best regards,
+Krzysztof
 
