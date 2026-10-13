@@ -4,81 +4,141 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32DB7CC6B08
-	for <ath12k@archiver.kernel.org>; Tue, 13 Oct 2026 11:41:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82462CC6B03
+	for <ath12k@archiver.kernel.org>; Tue, 13 Oct 2026 13:30:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-ID:Content-Type:
-	MIME-Version:References:Message-ID:In-Reply-To:Subject:cc:To:Date:From:
-	Reply-To:Content-Transfer-Encoding:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=CKHgPqu2Azg7/nNri0RDYdQFf19RQLzbv3/NH2TS2ck=; b=ZZuCZMpwCGXWTQAUHWMdMUvxL8
-	U87CqT+glcdrzNhYfxcb+CxRV4gR7tC/GMPB6amiPqzA+XHeL49cKFNiu8I6rAiaU6vjptStmUwez
-	orSTyLh1Zl8VPo+XLKTAUMjip6Jwo2KvL44UHqotbUvyY9eX/a7Ti4ymKMzG2GYxsm7r0OwOpiiii
-	YkeQkJDbrHJLwx3jqLfFzxejLm3YnAFjBhizkI9gJL/z3dQjDLB6dBRYMN3c/KJcnq1DBKU2hd/Cv
-	8vohQhbSjReZ9FNqQfWCj66XCJkTXzo8301jo7J7Q831wMF8Sff+f+kiAjmhsXBrDJMeKlXkyzxqu
-	ANuegtvQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=p9ShrRG5zS8l+PwwehzQXgIOF7eyLATLXxjmQkLn458=; b=UuJVQUJplcZWQ+qhiLlRpvJ/Tf
+	dm2eXtyesnJQ3x1KURMN8r8Tqc8vZYWH/yqQ/wB8HcSZamoV5ynMbgFQ/Tk+HVbcAn/lZZB1Gff5L
+	VC5rRNr+4oZZGgSYDIZtuh+0s5SHZt4nF63LbRrFqcJ3TIhIRdkVH/rGOsdAQhMH079aKD/wAs1+p
+	KfW8rVgKnhouEMfJRQTv2dmZHWdkiR/V/pDfTk84H+/HLqxT26B92+IwEwPuvDmI9auShM+pRPh2K
+	eICw+/0eL+y4ijMc3jeX2O20T5IP7HVzJpXh5BJUcPhn12KOV1+Sl9DCBVzwU/TzD47FC6l31/nyR
+	MSt3k74A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGatE-0000000Cj6V-34V5;
-	Tue, 13 Oct 2026 11:41:52 +0000
-Received: from mgamail.intel.com ([192.198.163.11])
+	id 1xGca2-0000000Cx5v-0GLA;
+	Tue, 13 Oct 2026 13:30:10 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGat7-0000000Cj5l-3Zw0;
-	Tue, 13 Oct 2026 11:41:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1791891706; x=1823427706;
-  h=from:date:to:cc:subject:in-reply-to:message-id:
-   references:mime-version:content-id;
-  bh=YAJaHA3FL843BSgj3aVZh2SzSmUdAo8/w5ok0jPj4ro=;
-  b=npu+QCRdxHDeQ+hopmntH8gv6i/ESNlGJk1TX/xF3RNfXOAl+Qx6VW/h
-   ubozrqrGhDTvFDvekO4D98ycDLQ2C/iivUEewR1ALAGOKmuXV/wgKrrGN
-   q4GGAQ0cCtAdY3Xh8vKpwa9Jrvfv6dzYzmW0UPegyiPOpTQwJn+p3ixBF
-   OLmqjkZzKg2ILDlvCWEVfauYx/Jh94j7DXMdO22yYX0K/Cd6pR+L9EjVx
-   3KVnZhFqL2dI0URDrp5Br1i3kRX7biWO87qs97NUAiJuVG3d+ELPZMXlT
-   LqpF60TCsWHuatdhsx2k5f+r50vDiKblsHbwxssCungEOt2Wh+mN+4/d6
-   w==;
-X-CSE-ConnectionGUID: j22tdh1JQvipLTeF40PYvA==
-X-CSE-MsgGUID: QgY6QZ3FSQ6AEGGKP+VH0A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11933"; a="515084"
-X-IronPort-AV: E=Sophos;i="6.27,155,1787036400"; 
-   d="scan'208";a="515084"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Oct 2026 04:41:45 -0700
-X-CSE-ConnectionGUID: b8gYIYLoRdyjmsQDQ/nStQ==
-X-CSE-MsgGUID: JaGIfAB3QKqpSXdMgk+ecQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,155,1787036400"; 
-   d="scan'208";a="1501815"
-Received: from ijarvine-mobl1.ger.corp.intel.com (HELO localhost) ([10.245.245.106])
-  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Oct 2026 04:41:39 -0700
-From: =?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>
-Date: Tue, 13 Oct 2026 14:41:32 +0300 (EEST)
-To: Bjorn Helgaas <helgaas@kernel.org>
-cc: Manivannan Sadhasivam <mani@kernel.org>, 
-    Bjorn Helgaas <bhelgaas@google.com>, 
-    Lorenzo Pieralisi <lpieralisi@kernel.org>, 
-    =?ISO-8859-2?Q?Krzysztof_Wilczy=F1ski?= <kwilczynski@kernel.org>, 
-    Rob Herring <robh@kernel.org>, Nirmal Patel <nirmal.patel@linux.intel.com>, 
-    Jonathan Derrick <jonathan.derrick@linux.dev>, 
-    Jeff Johnson <jjohnson@kernel.org>, linux-pci@vger.kernel.org, 
-    LKML <linux-kernel@vger.kernel.org>, linux-arm-msm@vger.kernel.org, 
-    linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, 
-    ath11k@lists.infradead.org, ath10k@lists.infradead.org, 
-    Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, 
-    Qiang Yu <qiang.yu@oss.qualcomm.com>, 
-    Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Subject: Re: [PATCH v3 2/8] PCI/ASPM: Add pci_force_enable_link_state() API
-In-Reply-To: <20261012225832.GA1415301@bhelgaas>
-Message-ID: <f1390db8-2369-9ab7-49a9-b7f09ef7b1ea@linux.intel.com>
-References: <20261012225832.GA1415301@bhelgaas>
+	id 1xGcZz-0000000Cx5M-3x51
+	for ath12k@lists.infradead.org;
+	Tue, 13 Oct 2026 13:30:09 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69D9Xvu2173444
+	for <ath12k@lists.infradead.org>; Tue, 13 Oct 2026 13:30:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=p9ShrRG5zS8l+PwwehzQXg
+	IOF7eyLATLXxjmQkLn458=; b=coGzJh7VyRjliMXmDiCyBWXe0fFuMJNDPZhFJ9
+	pTtmUXjhfp2Aa5tfUKKq2ypJdJqa9+7yZ8//uBbDrXC7n2mf26C5JuuNsK0+tOsO
+	ZUMEc7a5QaNTkZHTT6/iql48NLAmmfdf7LePSH4rBRiqovANRAfsso9iuiaSHKD/
+	RiQ/KnYbESrVzO6kj8jjIy5dd1DanjRXaZy4j8aorV9tYoUQAOIicVIZjthQxFET
+	ZGdazM8MKyLO2ltOaDgBSu0JUddWIOvIMVdU0tz2dqr0hGzcszNO2Z/5/8MFQLZe
+	zNDJTPl34Ny8rGDhrjUtLsMHEifQrS7KrQKF+tXBujrPTGow==
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h9daqt7m1-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 13 Oct 2026 13:30:07 +0000 (GMT)
+Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-93909014c85so598596785a.0
+        for <ath12k@lists.infradead.org>; Tue, 13 Oct 2026 06:30:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1791898206; x=1792503006; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:content-type
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=p9ShrRG5zS8l+PwwehzQXgIOF7eyLATLXxjmQkLn458=;
+        b=Z7H+/TU/lOR5ZyDGhUmgKWCaA6HYaqLgFMvlUinYqMKG5iAg6Q2yUwNjS3uRDtnOfy
+         rQ+0mOUd9VLCkI9ONP8OUdML+1mk9iHstf5LYXCqwOdvn8MYU5ht++6NFiwIXgkIDgC8
+         RevflCDJzfzh4mSAILF4FIN30vW0F1hkPfJecCW2n05Q/Ak2IEP0pgGSDhw+uAUXOafg
+         87DKVthf7KEWVQDHDz3ampvVA5U99XlEKS0HMc11A94U6syNg4vvUK1IA89ngDawlsoE
+         pSdDwcpvwGiirk5hUTErus6e7rmnT1vcHO2IyFMzhnKxrAx79tcScoffS78BwFsm5sWD
+         w0qA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791898206; x=1792503006;
+        h=cc:to:message-id:content-transfer-encoding:content-type
+         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=p9ShrRG5zS8l+PwwehzQXgIOF7eyLATLXxjmQkLn458=;
+        b=iRE6D2bQuYrMwe3ma+t8/mOzrlIO2+k4IQY1mMuvTm81Am1+UY53gkL5kNJsCrQrBB
+         QiF+w9uiwTxcXbIoEqx/2VGIEmNJ4O7ioAMT79WMr8Yq/L2T7p3z2eJKv+Pb0rZLLQ5z
+         RgEEpRpys3VqFfMZHlMR2WgNZ7pNzdgH9MtWZhONap5TOeZSB3oSZZp6aiaCCTB9yFQB
+         PQTly8PTW+BVdrzB5GY0poA1kagCNMS+VOItx+9zc8OOzlxSoY9pddphNVHI019tNVVV
+         lMxP0kNwTwgmnJHLMVSHQa6l8EkMFhNDQFom25WCOlmSYJzpSTgcFSVm3oo/YBLV0Pyz
+         64WQ==
+X-Forwarded-Encrypted: i=1; AKwUvBw33tEEQDUaZ3RMJWb0diM/cIGmV0GLWA07/MMGzlMxUYQRIzr2uek3wBrhDUvrnEG6VTzy+Mw=@lists.infradead.org
+X-Gm-Message-State: AFq9FYInWH58h2q118iMXkLsOiM0Hvb7TB5SDT1tNoqQStd0EQcgqqXP
+	DSL9ryysEBSEc5WXQ71tktFeo/aReNv9CcSIIYc5Q1zLZShowwXlr//jhnG0VjkvN13wUFPFZ5t
+	2Ai4blFRahgwZfEcv70BkKB1shdyK7iDxbPnLj0Mf/U7REU3utPGVauRnrJREaN7d
+X-Gm-Gg: AYBFou1uBkBXKq6XkwVEBjMnk08pqm63KKMKdkb82PCveb8S0Dqf0FAtufdtiOb74Yj
+	NmA+DEsrRs2gfxenDkadFuC+xAqGNqDtXxQMRhNlb3YBVStIIwth/rrszRZE0x56TigvATgqtgw
+	8QeIW0OIK1UyYaTFFbHZNf6Gou+ppISVkeyehORjFW8WbjDNUfvpXI0VJoZWpqKIvHe43ebuw3z
+	I6rgVjtVaBeoizbKIUfNvojyt+KyjuKozsZYo+tcwh+ugl7afSCmoiVN/OJVFKvs4PnG9w4pF5T
+	x8ChteBxp8INL6PmHqdLBU1ciNZFMwpEI1ZMa4/Eiq9mJPXrVFlzEpoDZUtFedlgokErivDt0ii
+	pTeOJwTDEJfnUug==
+X-Received: by 2002:a05:620a:6cc3:b0:93e:f4f4:346 with SMTP id af79cd13be357-93ef4f405e9mr434851085a.39.1791898204412;
+        Tue, 13 Oct 2026 06:30:04 -0700 (PDT)
+X-Received: by 2002:a05:620a:6cc3:b0:93e:f4f4:346 with SMTP id af79cd13be357-93ef4f405e9mr434843585a.39.1791898203625;
+        Tue, 13 Oct 2026 06:30:03 -0700 (PDT)
+Received: from localhost ([188.216.77.92])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48de09693c7sm6386843f8f.4.2026.10.13.06.30.02
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 13 Oct 2026 06:30:02 -0700 (PDT)
+From: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
+Date: Tue, 13 Oct 2026 15:29:41 +0200
+Subject: [PATCH ath-current] wifi: ath12k: fix decap of MSDUs spanning
+ multiple RX buffers
 MIME-Version: 1.0
-Content-Type: multipart/mixed; BOUNDARY="8323328-2110680251-1791890800=:1237"
-Content-ID: <eb4da7c3-6b95-7dae-87b6-bb3fda24da91@linux.intel.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20261013-ath12k-fix-descap-multiple-rx-buf-v1-1-5f3a10c4d8b7@oss.qualcomm.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/x2NQQrCMBBFr1Jm7UASaVGvIi7SZGIHawyTRAqld
+ 3dw+eC//3aoJEwVbsMOQl+u/MkK9jRAWHx+EnJUBmfcZI09o2+LdS9MvGGkGnzBd18bl5VQNpx
+ 7wjRe5itNZoyOQH+KkK7/jTuojqGLUG7wOI4fJ4+Du4AAAAA=
+X-Change-ID: 20261013-ath12k-fix-descap-multiple-rx-buf-f58b9e605d2e
+To: Jeff Johnson <jjohnson@kernel.org>,
+        Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+        Pavankumar Nandeshwar <quic_pnandesh@quicinc.com>,
+        Ripan Deuri <quic_rdeuri@quicinc.com>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
+X-Mailer: b4 0.14.3
+X-Proofpoint-GUID: Bz5fni_7-06l6shMvO7_dLkfgXk97Brh
+X-Authority-Analysis: v=2.4 cv=FZuiV5+6 c=1 sm=1 tr=0 ts=6ace325f cx=c_pps
+ a=qKBjSQ1v91RyAK45QCPf5w==:117 a=WpTaRW6qxYHRGzLzQsVYzg==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=EUspDBNiAAAA:8 a=30pSA2KbGxZrRlviRsUA:9 a=QEXdDO2ut3YA:10
+ a=NFOGd7dJGGMPyQGDc5-O:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDEzMDA1MyBTYWx0ZWRfX0Du5IoI0RlH6
+ 3dLsEbJvvLYfV5wponiby9YdujNW164pCCg2QsKtdAmqdJq9iiwiMBy/V94kRgi33UVA5WdGeuY
+ 6apTTgodnE7WPhP4fkvcGU+6hmkxJWA=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDEzMDA1MyBTYWx0ZWRfXzmgd1Qg777jV
+ 14nSJOw2Zyz9XzqR4ZzuqF0j5Xl0C8JYv1vsh3W7r7gQr+npKWlySAB71boSvoBq5JGwaq8b+Gr
+ jqzAJnPNCi05Y2x64fwc3OWIQs4JyRhF9o+o5ENGLND13Y9b4iV+9f11z4hSWWJrB1Aka7Ox/G5
+ IDrNOQF0PmUM1ngz9n6xhb2eTo9SpNkvu3SFhBGlZKL1vNiVOprk7ewtqiJROvJh34tJEE3QEi/
+ 99hXeJpEFtDyMJpaxCP/fG0/1QpbkDgYc45TXonWu8DOczh8ZLP+EZ5FN8teRXoEIc2mooRToAm
+ kNwVeuz35yWtvFWsHQl38ch4eSFOi+1LyFfygEO1ZEBtlCjQVHFgWSnmiHfhGljSzWdJQWoZk8t
+ MbhgD+ilZ80HlcRyhZy7m4ZmTplXfyuxT9oBDsVK0o3YRi5xXTkYq/6eWIpMAuydwJ9+xwhOaVT
+ gGnEIeTBfw2jOJLs32g==
+X-Proofpoint-ORIG-GUID: Bz5fni_7-06l6shMvO7_dLkfgXk97Brh
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-13_01,2026-10-09_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 lowpriorityscore=0 clxscore=1015 impostorscore=0
+ adultscore=0 bulkscore=0 spamscore=0 malwarescore=0 phishscore=0
+ suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610080000
+ definitions=main-2610130053
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_044145_910615_3F87716A 
-X-CRM114-Status: GOOD (  39.68  )
+X-CRM114-CacheID: sfid-20261013_063008_002418_92AF3FB2 
+X-CRM114-Status: GOOD (  14.20  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,240 +153,201 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-  This message is in MIME format.  The first part should be readable text,
-  while the remaining parts are likely unreadable without MIME-aware tools.
+When a MSDU is split across multiple RX buffers, the msdu_end TLV is
+populated only in the last buffer. Since commit e8a1e49c6328
+("wifi: ath12k: Add new infra for the rx path"), the RX info
+extraction in ath12k_hal_extract_rx_desc_data_*() helpers runs before
+the MSDU is coalesced, so the msdu_end-derived fields (decap_type,
+mesh_ctrl_present, is_from_ds, is_to_ds, is_mcbc, is_decrypted, sgi,
+rate_mcs, bw, phy_meta_data, pkt_type, nss, checksum flags and
+err_bitmap) were read from the first buffer, where that TLV is not
+valid.
 
---8323328-2110680251-1791890800=:1237
-Content-Type: text/plain; CHARSET=ISO-8859-15
-Content-Transfer-Encoding: QUOTED-PRINTABLE
-Content-ID: <6e83485e-223f-0f0c-17ad-c73df48cefdf@linux.intel.com>
+As a result decap_type was reported as DP_RX_DECAP_TYPE_RAW and the
+frame was handed to mac80211 with a raw 802.11 header instead of being
+converted to an ethernet frame, breaking reception of any frame larger
+than the single RX buffer.
 
-On Mon, 12 Oct 2026, Bjorn Helgaas wrote:
+Fix it by parsing the msdu_end fields from the last buffer (ldesc) in
+ath12k_hal_extract_rx_desc_data_{wcn7850,qcn9274,qcc2072}(), keeping the
+mpdu_start fields (enctype, seq_no, peer_id, tid, addr2) on the first
+buffer (rx_desc). For single-buffer MSDUs rx_desc and ldesc point to the
+same descriptor so the behavior is unchanged.
 
-> On Wed, Jul 08, 2026 at 04:30:16PM +0200, Manivannan Sadhasivam wrote:
-> > From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-> >=20
-> > pci_enable_link_state() and pci_enable_link_state_locked() APIs only en=
-able
-> > the ASPM states that were not previously disabled via
-> > pci_disable_link_state*() API or blacklisted during init (e.g. the pre-=
-1.1
-> > device blacklist, which is only meant to be overridden with
-> > 'pcie_aspm=3Dforce'). This is an intentional behavior as these APIs mus=
-t not
-> > silently re-enable states that were deliberately disabled, since doing =
-so
-> > could enable ASPM on a link where it is known to be unsafe.
->=20
-> I think this is saying that many uses of pci_disable_link_state() are
-> to avoid hardware errata, i.e., these are basically quirks, and we
-> should *never* enable those ASPM states.
->=20
-> > However, some drivers (e.g. the atheros WLAN drivers) save the currentl=
-y
-> > enabled ASPM states, disable all ASPM states before firmware download, =
-and
-> > then try to restore exactly the states that were enabled before. Restor=
-ing
-> > those states requires re-enabling states that were just disabled via
-> > pci_disable_link_state() API. But, this cannot be achieved using the
-> > existing APIs.
->=20
-> This sounds like it's also for hardware errata: if ASPM works
-> correctly, there's no need to disable it during firmware download.  I
-> think this is *only* the atheros drivers, isn't it?  I didn't see any
-> others.
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 
-Hi,
+Fixes: e8a1e49c6328 ("wifi: ath12k: Add new infra for the rx path")
+Signed-off-by: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
+---
+ .../net/wireless/ath/ath12k/wifi7/hal_qcc2072.c    | 30 ++++++++++----------
+ .../net/wireless/ath/ath12k/wifi7/hal_qcn9274.c    | 32 +++++++++++-----------
+ .../net/wireless/ath/ath12k/wifi7/hal_wcn7850.c    | 30 ++++++++++----------
+ 3 files changed, 46 insertions(+), 46 deletions(-)
 
-There are more that should use disable/enable API. In addition ath*, I had=
-=20
-also these in my unfinished series:
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c
+index 7cf00fda996f..7ea7559e882c 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c
+@@ -402,32 +402,32 @@ static void ath12k_hal_extract_rx_desc_data_qcc2072(struct hal_rx_desc_data *rx_
+ 	rx_desc_data->is_last_msdu = ath12k_hal_rx_desc_get_last_msdu_qcc2072(ldesc);
+ 	rx_desc_data->l3_pad_bytes = ath12k_hal_rx_desc_get_l3_pad_bytes_qcc2072(ldesc);
+ 	rx_desc_data->enctype = ath12k_hal_rx_desc_get_encrypt_type_qcc2072(rx_desc);
+-	rx_desc_data->decap_type = ath12k_hal_rx_desc_get_decap_type_qcc2072(rx_desc);
++	rx_desc_data->decap_type = ath12k_hal_rx_desc_get_decap_type_qcc2072(ldesc);
+ 	rx_desc_data->mesh_ctrl_present =
+-				ath12k_hal_rx_desc_get_mesh_ctl_qcc2072(rx_desc);
++				ath12k_hal_rx_desc_get_mesh_ctl_qcc2072(ldesc);
+ 	rx_desc_data->seq_ctl_valid =
+ 				ath12k_hal_rx_desc_get_mpdu_seq_ctl_vld_qcc2072(rx_desc);
+ 	rx_desc_data->fc_valid = ath12k_hal_rx_desc_get_mpdu_fc_valid_qcc2072(rx_desc);
+ 	rx_desc_data->seq_no = ath12k_hal_rx_desc_get_mpdu_start_seq_no_qcc2072(rx_desc);
+ 	rx_desc_data->msdu_len = ath12k_hal_rx_desc_get_msdu_len_qcc2072(ldesc);
+-	rx_desc_data->sgi = ath12k_hal_rx_desc_get_msdu_sgi_qcc2072(rx_desc);
+-	rx_desc_data->is_from_ds = ath12k_wifi7_hal_rx_h_from_ds_qcc2072(rx_desc);
+-	rx_desc_data->is_to_ds = ath12k_wifi7_hal_rx_h_to_ds_qcc2072(rx_desc);
+-	rx_desc_data->rate_mcs = ath12k_hal_rx_desc_get_msdu_rate_mcs_qcc2072(rx_desc);
+-	rx_desc_data->bw = ath12k_hal_rx_desc_get_msdu_rx_bw_qcc2072(rx_desc);
+-	rx_desc_data->phy_meta_data = ath12k_hal_rx_desc_get_msdu_freq_qcc2072(rx_desc);
+-	rx_desc_data->pkt_type = ath12k_hal_rx_desc_get_msdu_pkt_type_qcc2072(rx_desc);
+-	rx_desc_data->nss = hweight8(ath12k_hal_rx_desc_get_msdu_nss_qcc2072(rx_desc));
++	rx_desc_data->sgi = ath12k_hal_rx_desc_get_msdu_sgi_qcc2072(ldesc);
++	rx_desc_data->is_from_ds = ath12k_wifi7_hal_rx_h_from_ds_qcc2072(ldesc);
++	rx_desc_data->is_to_ds = ath12k_wifi7_hal_rx_h_to_ds_qcc2072(ldesc);
++	rx_desc_data->rate_mcs = ath12k_hal_rx_desc_get_msdu_rate_mcs_qcc2072(ldesc);
++	rx_desc_data->bw = ath12k_hal_rx_desc_get_msdu_rx_bw_qcc2072(ldesc);
++	rx_desc_data->phy_meta_data = ath12k_hal_rx_desc_get_msdu_freq_qcc2072(ldesc);
++	rx_desc_data->pkt_type = ath12k_hal_rx_desc_get_msdu_pkt_type_qcc2072(ldesc);
++	rx_desc_data->nss = hweight8(ath12k_hal_rx_desc_get_msdu_nss_qcc2072(ldesc));
+ 	rx_desc_data->tid = ath12k_hal_rx_desc_get_mpdu_tid_qcc2072(rx_desc);
+ 	rx_desc_data->peer_id = ath12k_hal_rx_desc_get_mpdu_peer_id_qcc2072(rx_desc);
+ 	rx_desc_data->addr2_present = ath12k_hal_rx_desc_mac_addr2_valid_qcc2072(rx_desc);
+ 	rx_desc_data->addr2 = ath12k_hal_rx_desc_mpdu_start_addr2_qcc2072(rx_desc);
+-	rx_desc_data->is_mcbc = ath12k_hal_rx_desc_is_da_mcbc_qcc2072(rx_desc);
++	rx_desc_data->is_mcbc = ath12k_hal_rx_desc_is_da_mcbc_qcc2072(ldesc);
+ 	rx_desc_data->msdu_done = ath12k_hal_rx_h_msdu_done_qcc2072(ldesc);
+-	rx_desc_data->l4_csum_fail = ath12k_hal_rx_h_l4_cksum_fail_qcc2072(rx_desc);
+-	rx_desc_data->ip_csum_fail = ath12k_hal_rx_h_ip_cksum_fail_qcc2072(rx_desc);
+-	rx_desc_data->is_decrypted = ath12k_hal_rx_h_is_decrypted_qcc2072(rx_desc);
+-	rx_desc_data->err_bitmap = ath12k_hal_rx_h_mpdu_err_qcc2072(rx_desc);
++	rx_desc_data->l4_csum_fail = ath12k_hal_rx_h_l4_cksum_fail_qcc2072(ldesc);
++	rx_desc_data->ip_csum_fail = ath12k_hal_rx_h_ip_cksum_fail_qcc2072(ldesc);
++	rx_desc_data->is_decrypted = ath12k_hal_rx_h_is_decrypted_qcc2072(ldesc);
++	rx_desc_data->err_bitmap = ath12k_hal_rx_h_mpdu_err_qcc2072(ldesc);
+ }
+ 
+ static int ath12k_hal_srng_create_config_qcc2072(struct ath12k_hal *hal)
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
+index 052b59265af8..355cf50d2785 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
+@@ -922,32 +922,32 @@ void ath12k_hal_extract_rx_desc_data_qcn9274(struct hal_rx_desc_data *rx_desc_da
+ 	rx_desc_data->is_last_msdu = ath12k_hal_rx_desc_get_last_msdu_qcn9274(ldesc);
+ 	rx_desc_data->l3_pad_bytes = ath12k_hal_rx_desc_get_l3_pad_bytes_qcn9274(ldesc);
+ 	rx_desc_data->enctype = ath12k_hal_rx_desc_get_encrypt_type_qcn9274(rx_desc);
+-	rx_desc_data->decap_type = ath12k_hal_rx_desc_get_decap_type_qcn9274(rx_desc);
++	rx_desc_data->decap_type = ath12k_hal_rx_desc_get_decap_type_qcn9274(ldesc);
+ 	rx_desc_data->mesh_ctrl_present =
+-		ath12k_hal_rx_desc_get_mesh_ctl_qcn9274(rx_desc);
++		ath12k_hal_rx_desc_get_mesh_ctl_qcn9274(ldesc);
+ 	rx_desc_data->seq_ctl_valid =
+ 		ath12k_hal_rx_desc_get_mpdu_seq_ctl_vld_qcn9274(rx_desc);
+ 	rx_desc_data->fc_valid = ath12k_hal_rx_desc_get_mpdu_fc_valid_qcn9274(rx_desc);
+-	rx_desc_data->is_from_ds = ath12k_wifi7_hal_rx_h_from_ds_qcn9274(rx_desc);
+-	rx_desc_data->is_to_ds = ath12k_wifi7_hal_rx_h_to_ds_qcn9274(rx_desc);
++	rx_desc_data->is_from_ds = ath12k_wifi7_hal_rx_h_from_ds_qcn9274(ldesc);
++	rx_desc_data->is_to_ds = ath12k_wifi7_hal_rx_h_to_ds_qcn9274(ldesc);
+ 	rx_desc_data->seq_no = ath12k_hal_rx_desc_get_mpdu_start_seq_no_qcn9274(rx_desc);
+ 	rx_desc_data->msdu_len = ath12k_hal_rx_desc_get_msdu_len_qcn9274(ldesc);
+-	rx_desc_data->sgi = ath12k_hal_rx_desc_get_msdu_sgi_qcn9274(rx_desc);
+-	rx_desc_data->rate_mcs = ath12k_hal_rx_desc_get_msdu_rate_mcs_qcn9274(rx_desc);
+-	rx_desc_data->bw = ath12k_hal_rx_desc_get_msdu_rx_bw_qcn9274(rx_desc);
+-	rx_desc_data->phy_meta_data = ath12k_hal_rx_desc_get_msdu_freq_qcn9274(rx_desc);
+-	rx_desc_data->pkt_type = ath12k_hal_rx_desc_get_msdu_pkt_type_qcn9274(rx_desc);
+-	rx_desc_data->nss = hweight8(ath12k_hal_rx_desc_get_msdu_nss_qcn9274(rx_desc));
+-	rx_desc_data->tid = ath12k_hal_rx_desc_get_mpdu_tid_qcn9274(rx_desc);
++	rx_desc_data->sgi = ath12k_hal_rx_desc_get_msdu_sgi_qcn9274(ldesc);
++	rx_desc_data->rate_mcs = ath12k_hal_rx_desc_get_msdu_rate_mcs_qcn9274(ldesc);
++	rx_desc_data->bw = ath12k_hal_rx_desc_get_msdu_rx_bw_qcn9274(ldesc);
++	rx_desc_data->phy_meta_data = ath12k_hal_rx_desc_get_msdu_freq_qcn9274(ldesc);
++	rx_desc_data->pkt_type = ath12k_hal_rx_desc_get_msdu_pkt_type_qcn9274(ldesc);
++	rx_desc_data->nss = hweight8(ath12k_hal_rx_desc_get_msdu_nss_qcn9274(ldesc));
++	rx_desc_data->tid = ath12k_hal_rx_desc_get_mpdu_tid_qcn9274(ldesc);
+ 	rx_desc_data->peer_id = ath12k_hal_rx_desc_get_mpdu_peer_id_qcn9274(rx_desc);
+ 	rx_desc_data->addr2_present = ath12k_hal_rx_desc_mac_addr2_valid_qcn9274(rx_desc);
+ 	rx_desc_data->addr2 = ath12k_hal_rx_desc_mpdu_start_addr2_qcn9274(rx_desc);
+-	rx_desc_data->is_mcbc = ath12k_hal_rx_desc_is_da_mcbc_qcn9274(rx_desc);
++	rx_desc_data->is_mcbc = ath12k_hal_rx_desc_is_da_mcbc_qcn9274(ldesc);
+ 	rx_desc_data->msdu_done = ath12k_hal_rx_h_msdu_done_qcn9274(ldesc);
+-	rx_desc_data->l4_csum_fail = ath12k_hal_rx_h_l4_cksum_fail_qcn9274(rx_desc);
+-	rx_desc_data->ip_csum_fail = ath12k_hal_rx_h_ip_cksum_fail_qcn9274(rx_desc);
+-	rx_desc_data->is_decrypted = ath12k_hal_rx_h_is_decrypted_qcn9274(rx_desc);
+-	rx_desc_data->err_bitmap = ath12k_hal_rx_h_mpdu_err_qcn9274(rx_desc);
++	rx_desc_data->l4_csum_fail = ath12k_hal_rx_h_l4_cksum_fail_qcn9274(ldesc);
++	rx_desc_data->ip_csum_fail = ath12k_hal_rx_h_ip_cksum_fail_qcn9274(ldesc);
++	rx_desc_data->is_decrypted = ath12k_hal_rx_h_is_decrypted_qcn9274(ldesc);
++	rx_desc_data->err_bitmap = ath12k_hal_rx_h_mpdu_err_qcn9274(ldesc);
+ }
+ 
+ static u16 ath12k_hal_reo_status_dec_tlv_hdr_qcn9274(void *tlv, void **desc)
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
+index 61be8443e46e..abe982faeb2b 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
+@@ -604,32 +604,32 @@ void ath12k_hal_extract_rx_desc_data_wcn7850(struct hal_rx_desc_data *rx_desc_da
+ 	rx_desc_data->is_last_msdu = ath12k_hal_rx_desc_get_last_msdu_wcn7850(ldesc);
+ 	rx_desc_data->l3_pad_bytes = ath12k_hal_rx_desc_get_l3_pad_bytes_wcn7850(ldesc);
+ 	rx_desc_data->enctype = ath12k_hal_rx_desc_get_encrypt_type_wcn7850(rx_desc);
+-	rx_desc_data->decap_type = ath12k_hal_rx_desc_get_decap_type_wcn7850(rx_desc);
++	rx_desc_data->decap_type = ath12k_hal_rx_desc_get_decap_type_wcn7850(ldesc);
+ 	rx_desc_data->mesh_ctrl_present =
+-		ath12k_hal_rx_desc_get_mesh_ctl_wcn7850(rx_desc);
++		ath12k_hal_rx_desc_get_mesh_ctl_wcn7850(ldesc);
+ 	rx_desc_data->seq_ctl_valid =
+ 		ath12k_hal_rx_desc_get_mpdu_seq_ctl_vld_wcn7850(rx_desc);
+ 	rx_desc_data->fc_valid = ath12k_hal_rx_desc_get_mpdu_fc_valid_wcn7850(rx_desc);
+ 	rx_desc_data->seq_no = ath12k_hal_rx_desc_get_mpdu_start_seq_no_wcn7850(rx_desc);
+ 	rx_desc_data->msdu_len = ath12k_hal_rx_desc_get_msdu_len_wcn7850(ldesc);
+-	rx_desc_data->sgi = ath12k_hal_rx_desc_get_msdu_sgi_wcn7850(rx_desc);
+-	rx_desc_data->is_from_ds = ath12k_wifi7_hal_rx_h_from_ds_wcn7850(rx_desc);
+-	rx_desc_data->is_to_ds = ath12k_wifi7_hal_rx_h_to_ds_wcn7850(rx_desc);
+-	rx_desc_data->rate_mcs = ath12k_hal_rx_desc_get_msdu_rate_mcs_wcn7850(rx_desc);
+-	rx_desc_data->bw = ath12k_hal_rx_desc_get_msdu_rx_bw_wcn7850(rx_desc);
+-	rx_desc_data->phy_meta_data = ath12k_hal_rx_desc_get_msdu_freq_wcn7850(rx_desc);
+-	rx_desc_data->pkt_type = ath12k_hal_rx_desc_get_msdu_pkt_type_wcn7850(rx_desc);
+-	rx_desc_data->nss = hweight8(ath12k_hal_rx_desc_get_msdu_nss_wcn7850(rx_desc));
++	rx_desc_data->sgi = ath12k_hal_rx_desc_get_msdu_sgi_wcn7850(ldesc);
++	rx_desc_data->is_from_ds = ath12k_wifi7_hal_rx_h_from_ds_wcn7850(ldesc);
++	rx_desc_data->is_to_ds = ath12k_wifi7_hal_rx_h_to_ds_wcn7850(ldesc);
++	rx_desc_data->rate_mcs = ath12k_hal_rx_desc_get_msdu_rate_mcs_wcn7850(ldesc);
++	rx_desc_data->bw = ath12k_hal_rx_desc_get_msdu_rx_bw_wcn7850(ldesc);
++	rx_desc_data->phy_meta_data = ath12k_hal_rx_desc_get_msdu_freq_wcn7850(ldesc);
++	rx_desc_data->pkt_type = ath12k_hal_rx_desc_get_msdu_pkt_type_wcn7850(ldesc);
++	rx_desc_data->nss = hweight8(ath12k_hal_rx_desc_get_msdu_nss_wcn7850(ldesc));
+ 	rx_desc_data->tid = ath12k_hal_rx_desc_get_mpdu_tid_wcn7850(rx_desc);
+ 	rx_desc_data->peer_id = ath12k_hal_rx_desc_get_mpdu_peer_id_wcn7850(rx_desc);
+ 	rx_desc_data->addr2_present = ath12k_hal_rx_desc_mac_addr2_valid_wcn7850(rx_desc);
+ 	rx_desc_data->addr2 = ath12k_hal_rx_desc_mpdu_start_addr2_wcn7850(rx_desc);
+-	rx_desc_data->is_mcbc = ath12k_hal_rx_desc_is_da_mcbc_wcn7850(rx_desc);
++	rx_desc_data->is_mcbc = ath12k_hal_rx_desc_is_da_mcbc_wcn7850(ldesc);
+ 	rx_desc_data->msdu_done = ath12k_hal_rx_h_msdu_done_wcn7850(ldesc);
+-	rx_desc_data->l4_csum_fail = ath12k_hal_rx_h_l4_cksum_fail_wcn7850(rx_desc);
+-	rx_desc_data->ip_csum_fail = ath12k_hal_rx_h_ip_cksum_fail_wcn7850(rx_desc);
+-	rx_desc_data->is_decrypted = ath12k_hal_rx_h_is_decrypted_wcn7850(rx_desc);
+-	rx_desc_data->err_bitmap = ath12k_hal_rx_h_mpdu_err_wcn7850(rx_desc);
++	rx_desc_data->l4_csum_fail = ath12k_hal_rx_h_l4_cksum_fail_wcn7850(ldesc);
++	rx_desc_data->ip_csum_fail = ath12k_hal_rx_h_ip_cksum_fail_wcn7850(ldesc);
++	rx_desc_data->is_decrypted = ath12k_hal_rx_h_is_decrypted_wcn7850(ldesc);
++	rx_desc_data->err_bitmap = ath12k_hal_rx_h_mpdu_err_wcn7850(ldesc);
+ }
+ 
+ int ath12k_hal_srng_create_config_wcn7850(struct ath12k_hal *hal)
 
-  brcmfmac
-  ib-hfi1
-  rtlwifi
-  rtsx
-  r8169
+---
+base-commit: 08a3f02fea636e97a7422d1512f76dacdb5b0887
+change-id: 20261013-ath12k-fix-descap-multiple-rx-buf-f58b9e605d2e
 
-> > Hence, add pci_force_enable_link_state() API for such callers. Unlike
-> > pci_enable_link_state(), it re-enables the requested states even if the=
-y
-> > were previously disabled via pci_disable_link_state() or disabled durin=
-g
-> > init. The caller is therefore responsible for only enabling states the
-> > device actually supports, typically the ones previously reported by
-> > pcie_aspm_enabled().
->=20
-> The problem is that pci_enable_link_state() cannot enable things that
-> were disabled by pci_disable_link_state().  They're not symmetric,
-> which violates the caller's expectation.
+Best regards,
+-- 
+Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
 
-Yes.
-
-This patch seems to come with my Suggested-by but what I suggested (and=20
-had a patch for) was to make disable/enable proper symmetric pairs because=
-=20
-it is very trappy otherwise. If something else is needed in addition, that=
-=20
-should be named differently like Bjorn also seems to suggest (however see=
-=20
-my alternative suggestion below).
-
-I renamed the current pci_enable_link_state() to=20
-pci_set_default_link_state() in my own attempt to get room for adding the=
-=20
-symmetric pair.
-
-> Instead of adding pci_force_enable_link_state(), I think we should add
-> a new interface for the *quirk* behavior that permanently disables
-> states.  Then pci_enable_link_state() and pci_disable_link_state()
-> could be made symmetric.
-
-My suggestion is to make the disables/enables counted per state which=20
-would allow parallel sources of disables to function without clashing.
-
-Disable quirks could simply not have the pairing enable, no special=20
-interface needed.
-
-And the lane margining proposal would also just fit in with that approach=
-=20
-as well.
-
---
- i.
-
-> > This API is implemented by adding a 'force' parameter to the shared
-> > __pci_enable_link_state() helper. When 'force' is true, the requested
-> > states are cleared from 'link->aspm_disable' before enabling.
-> >=20
-> > Suggested-by: Ilpo J=E4rvinen <ilpo.jarvinen@linux.intel.com>
-> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcom=
-m.com>
-> > ---
-> >  drivers/pci/pcie/aspm.c | 37 ++++++++++++++++++++++++++++++++++---
-> >  include/linux/pci.h     |  3 +++
-> >  2 files changed, 37 insertions(+), 3 deletions(-)
-> >=20
-> > diff --git a/drivers/pci/pcie/aspm.c b/drivers/pci/pcie/aspm.c
-> > index 1c15a14718e8..c04fb71de91c 100644
-> > --- a/drivers/pci/pcie/aspm.c
-> > +++ b/drivers/pci/pcie/aspm.c
-> > @@ -1506,7 +1506,8 @@ int pci_disable_link_state(struct pci_dev *pdev, =
-int state)
-> >  }
-> >  EXPORT_SYMBOL(pci_disable_link_state);
-> > =20
-> > -static int __pci_enable_link_state(struct pci_dev *pdev, int state, bo=
-ol locked)
-> > +static int __pci_enable_link_state(struct pci_dev *pdev, int state, bo=
-ol locked,
-> > +=09=09=09=09   bool force)
-> >  {
-> >  =09struct pcie_link_state *link =3D pcie_aspm_get_link(pdev);
-> > =20
-> > @@ -1527,6 +1528,10 @@ static int __pci_enable_link_state(struct pci_de=
-v *pdev, int state, bool locked)
-> >  =09=09down_read(&pci_bus_sem);
-> >  =09mutex_lock(&aspm_lock);
-> >  =09link->aspm_default =3D pci_calc_aspm_enable_mask(state);
-> > +
-> > +=09/* Force enable states that were previously disabled */
-> > +=09if (force)
-> > +=09=09link->aspm_disable &=3D ~link->aspm_default;
-> >  =09pcie_config_aspm_link(link, policy_to_aspm_state(link));
-> > =20
-> >  =09link->clkpm_default =3D (state & PCIE_LINK_STATE_CLKPM) ? 1 : 0;
-> > @@ -1553,7 +1558,7 @@ static int __pci_enable_link_state(struct pci_dev=
- *pdev, int state, bool locked)
-> >   */
-> >  int pci_enable_link_state(struct pci_dev *pdev, int state)
-> >  {
-> > -=09return __pci_enable_link_state(pdev, state, false);
-> > +=09return __pci_enable_link_state(pdev, state, false, false);
-> >  }
-> >  EXPORT_SYMBOL(pci_enable_link_state);
-> > =20
-> > @@ -1576,10 +1581,36 @@ int pci_enable_link_state_locked(struct pci_dev=
- *pdev, int state)
-> >  {
-> >  =09lockdep_assert_held_read(&pci_bus_sem);
-> > =20
-> > -=09return __pci_enable_link_state(pdev, state, true);
-> > +=09return __pci_enable_link_state(pdev, state, true, false);
-> >  }
-> >  EXPORT_SYMBOL(pci_enable_link_state_locked);
-> > =20
-> > +/**
-> > + * pci_force_enable_link_state - Force enable device link state
-> > + * @pdev: PCI device
-> > + * @state: Mask of ASPM link states to enable
-> > + *
-> > + * Enable device link state, so the link will enter the specified stat=
-es.
-> > + * Unlike pci_enable_link_state(), this also re-enables states previou=
-sly
-> > + * disabled by pci_disable_link_state() and overrides the ASPM states =
-disabled
-> > + * during init (e.g., the pre-1.1 device blacklist). The caller is the=
-refore
-> > + * responsible for only enabling states the device supports, typically=
- the ones
-> > + * previously reported by pcie_aspm_enabled().
-> > + *
-> > + * Note that if the BIOS didn't grant ASPM control to the OS, this doe=
-s nothing
-> > + * because we can't touch the LNKCTL register.
-> > + *
-> > + * Note: Ensure devices are in D0 before enabling PCI-PM L1 PM Substat=
-es, per
-> > + * PCIe r6.0, sec 5.5.4.
-> > + *
-> > + * Return: 0 on success, a negative errno otherwise.
-> > + */
-> > +int pci_force_enable_link_state(struct pci_dev *pdev, int state)
-> > +{
-> > +=09return __pci_enable_link_state(pdev, state, false, true);
-> > +}
-> > +EXPORT_SYMBOL(pci_force_enable_link_state);
-> > +
-> >  void pcie_aspm_remove_cap(struct pci_dev *pdev, u32 lnkcap)
-> >  {
-> >  =09if (lnkcap & PCI_EXP_LNKCAP_ASPM_L0S)
-> > diff --git a/include/linux/pci.h b/include/linux/pci.h
-> > index ebb5b9d76360..be6719626c8f 100644
-> > --- a/include/linux/pci.h
-> > +++ b/include/linux/pci.h
-> > @@ -1918,6 +1918,7 @@ int pci_disable_link_state(struct pci_dev *pdev, =
-int state);
-> >  int pci_disable_link_state_locked(struct pci_dev *pdev, int state);
-> >  int pci_enable_link_state(struct pci_dev *pdev, int state);
-> >  int pci_enable_link_state_locked(struct pci_dev *pdev, int state);
-> > +int pci_force_enable_link_state(struct pci_dev *pdev, int state);
-> >  void pcie_no_aspm(void);
-> >  bool pcie_aspm_support_enabled(void);
-> >  bool pcie_aspm_enabled(struct pci_dev *pdev);
-> > @@ -1930,6 +1931,8 @@ static inline int pci_enable_link_state(struct pc=
-i_dev *pdev, int state)
-> >  { return 0; }
-> >  static inline int pci_enable_link_state_locked(struct pci_dev *pdev, i=
-nt state)
-> >  { return 0; }
-> > +static inline int pci_force_enable_link_state(struct pci_dev *pdev, in=
-t state)
-> > +{ return 0; }
-> >  static inline void pcie_no_aspm(void) { }
-> >  static inline bool pcie_aspm_support_enabled(void) { return false; }
-> >  static inline bool pcie_aspm_enabled(struct pci_dev *pdev) { return fa=
-lse; }
-> >=20
-> > --=20
-> > 2.43.0
-> >=20
-> >=20
->=20
-
---=20
- i.
---8323328-2110680251-1791890800=:1237--
 
