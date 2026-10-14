@@ -4,115 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B2A6CC6B1D
-	for <ath12k@archiver.kernel.org>; Wed, 14 Oct 2026 13:03:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19DDACC6B2C
+	for <ath12k@archiver.kernel.org>; Wed, 14 Oct 2026 13:03:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
+	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ux7RAlOhQfXB+vgOyaQ7PaZBU7B8R90Yjj4MScRSDv4=; b=ZGEsxJKdLXCbJs
-	YeniQqG4BbQ21haCM5KNr+MuPCtt4m3uvp8TGwWXy7kCYYaLLmIm64yLLMj9yFZZEprxmc3OlPPG5
-	NR5E7qV+hl00DFliDgXjkF5c2ploJmID+S306InSNMEEA7F80r8wCtwAx45VzpeZKFuEhA2QFjK0K
-	5cuZOu0ZQ486DXe8rVAQkFEg94zs/tdxAhz7nG5yHCq+iltZchJOZeUlFxMISI9TtUckrGMA+XRKc
-	mcnIZ72fq1M15j1bregHgYfZ54EFoFz2KfpWUO4VKnor4zDI4EIsLpWIfk28YWGnUrFEXbSzrUQgP
-	26vLELj/V7Bw/ePyEcmQ==;
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=HDwwf2nnDOaoIDpnBdokHTTm2gc9B8Cwgq888y5WJ0A=; b=JMVYBzqcspmk1R7NceLOC8dwQq
+	Y9oxAhVpC3AVG6i+wlgYNEDJ+ZjrhUoSE9g1hvn3rPVB06TAZN4EzfiA+5mu6Ce2rt8WEltHqQTi3
+	sqis33tgGGdA7F9GYM8N7/a7aQnALoMEF+RXMA0FrQy0Xpflv/siJ9DIhv1fPFBrtQu12QtH+qfXV
+	KYEBv6ecoarMpstvO2GvcMY0TdBcWANrUGSNngUX16PF1k0jjXtXCXN13aGhZc0AUXLRwLx8FMxM3
+	YJaRZh98U6llPLlfIhocSNwynFeYdOPN2Xqgi77Dqz+jeiotydeW/fz/Uk0C2sqyT1u/Nbjjho1sG
+	aubm3tTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGydU-0000000FWPI-1IyI;
-	Wed, 14 Oct 2026 13:03:12 +0000
+	id 1xGydV-0000000FWPi-3D5K;
+	Wed, 14 Oct 2026 13:03:13 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGydQ-0000000FWOZ-1JAm
+	id 1xGydU-0000000FWPG-3KYf
 	for ath12k@bombadil.infradead.org;
-	Wed, 14 Oct 2026 13:03:10 +0000
+	Wed, 14 Oct 2026 13:03:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-Id:Date:Subject:From:Sender:Reply-To:
-	Content-ID:Content-Description:In-Reply-To:References;
-	bh=ux7RAlOhQfXB+vgOyaQ7PaZBU7B8R90Yjj4MScRSDv4=; b=Fkyw7dAOMhFn32HKy4kFZbC18F
-	0gkj9cEACnnaKaIEvHSqLovwTN+Oddk768jemUk6vtfSw41W06P+jgGzo7Bbv3IS8mj+lZ6SgHZYn
-	vqxx3ro4O7HQhGRM0zzbATwquzyRPXRgskTgzMIfJ27iDLB/2jwgtgSsvgS9GUpl0aE88azfWhuNq
-	JSg0dQ3G6Aqa6CcFqqLHKA8sQ0Nn6LxNyYTpwTEmGj6bKm2+s96AtfnYV87jDCKV3n7binitG1nXJ
-	NkoB9ENL5aeCWBc4aX+bgZ5JXaHqWQcSpY2uzaObaki4riZtJgK+b0q5p6pl/iJ/RBEWjpnVnkbij
-	cUJB4agg==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
+	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=HDwwf2nnDOaoIDpnBdokHTTm2gc9B8Cwgq888y5WJ0A=; b=KlTlsr/VM0AvHOo3I5dZBzPT8G
+	yJyOqgWZxYTr1SBal22NKG6gGn/deWDB49/f8v8MnG8Spww4ohiagl4yj2iQluPv0EKXIRqReSwki
+	dMTz9HDCBJwsgk7OlKB3hBhn4BJni5EN0OjpDOirmFeDQ+tmq3fpfv/5kie5iipabRH0BYq+l433h
+	/idlQe0AoVE0abqxU80JJ50ObPUsnUYWzAA2fY+rwL0PaAkN5W3Q88WGreuIbrbnA8kWcPThCNcdq
+	bKpk1eHAExzKW3gTUTonud6HE/10H5W0FNPBbi54+kq+Qjz4JjY+u4A32e0AG589oLoZ+LWr+HKZa
+	e9rMK+Dw==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
-	id 1xGydL-0000000GmmB-3aO5
+	id 1xGydP-0000000Gmn5-3Fdw
 	for ath12k@lists.infradead.org;
-	Wed, 14 Oct 2026 13:03:05 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69ECJQRL2088171
-	for <ath12k@lists.infradead.org>; Wed, 14 Oct 2026 13:03:00 GMT
+	Wed, 14 Oct 2026 13:03:11 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69EBZupC2515943
+	for <ath12k@lists.infradead.org>; Wed, 14 Oct 2026 13:03:06 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=ux7RAlOhQfXB+vgOyaQ7Pa
-	ZBU7B8R90Yjj4MScRSDv4=; b=MjdQ1aBk5jFMTJ8Q9zDgopnG+1X6urbIQkCsfD
-	NU/8nrsPFfSv5ZWPsIynz/thLByYZrTiks22vFPVI8PuQ+lp9GsLqlmwOPsS0tBr
-	14DaMWndKiRSRj2uC0y7mqEAVRJaTUL6uE4KMAREY2VBgfaxYeuXBPuNmg+ge5vr
-	P4wa20uNROToDVVzctdUF7xgrcwfOLe9iuKxB4QdEHPtQKLBNiIDttBi4aOHLWz3
-	pIt10zgm7V5l7sZjPu4HeJ6E+vhbmfpv9Ajk3FR6ik8/HWBGJU/SWXpTuJmWhoUV
-	klKV+0MWV8EGHtHBS2weBaui+xm+Ay8//ZADY0dIqcwY7vwg==
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	HDwwf2nnDOaoIDpnBdokHTTm2gc9B8Cwgq888y5WJ0A=; b=kFx36s338qO6e7pE
+	GKWQhHpV1WwW2PUWaVNWiJaGszUnYv+PPw/btR4wbwwT27k69Kgwkdug5rAvNmmo
+	3UOyrAzi3y6bKwBwhx9g5uFUAgCKrK/77od0sfSCfyCAtgUHWSxyC3F/8kLAZNfH
+	LRoNdQdrHzV+dXEZ9LVdHT7U/lsJq0RFTLvEN6/Uv7uvwzj+IXMGTbGdZzmse36f
+	LHWPNrL4VpShSh6KGv14ME5G78fcCOV6mMRBggg0PT++ZWjd1c/UP1A/Jdwl8ZUj
+	E1hcEP/Wis/DybvzUYPq7SPauE6elkG3K2GGh+K06+ih9S962pD1mFufkkld6zyh
+	pMoqhA==
 Received: from mail-vk1-f198.google.com (mail-vk1-f198.google.com [209.85.221.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h9x49jxrk-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ha4709n0e-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 14 Oct 2026 13:02:59 +0000 (GMT)
-Received: by mail-vk1-f198.google.com with SMTP id 71dfb90a1353d-5e0a8f73addso4606626e0c.3
-        for <ath12k@lists.infradead.org>; Wed, 14 Oct 2026 06:02:59 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 14 Oct 2026 13:03:05 +0000 (GMT)
+Received: by mail-vk1-f198.google.com with SMTP id 71dfb90a1353d-5e96da6516bso250810e0c.1
+        for <ath12k@lists.infradead.org>; Wed, 14 Oct 2026 06:03:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1791982979; x=1792587779; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:content-type:mime-version
-         :message-id:date:subject:from:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=ux7RAlOhQfXB+vgOyaQ7PaZBU7B8R90Yjj4MScRSDv4=;
-        b=YoqbYmQMCT4YD17wd1ZvQn8bPe6TgQtl5jwQGdY0+rlsuxgy/WZ5/BBb7M5UzMBeOO
-         boBnZ38kVLeGg/ofmUoe9solkcL2Okh8N3pUSmygo5rQOMeIjQ8aYRYBZ2Ts7FqN/P8l
-         YXOFhnDclh7kgY1D/htitVqKIbwIAQNBL7GRwFvr1Quw/dcCTOTgU0oYOkBsxQwC3Exz
-         0336cLMpnIp+LaLRH+bXP2hqDjTWd2wXs/t1wykXB0YwUzfPvC3xq3r5NhJw3Er8UOXG
-         FeeB7ghwVG5eoi/s/H8Rv12OirU9jXYTy2lR9moS5JFsWudHz4ZDGIh4twnj5A2s5Bbn
-         8r+w==
+        d=oss.qualcomm.com; s=google; t=1791982985; x=1792587785; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=HDwwf2nnDOaoIDpnBdokHTTm2gc9B8Cwgq888y5WJ0A=;
+        b=dR2kTJzB+kKbotKQwB4iNG4bjrx78R42Oo986nQP1qmBBp0KSY9VyrDKugBH+yK/Re
+         UJnfshWLQ/rFMVdELEtBf8OtfJCuZiIElJnFxy0usHafHvt/sJ9fL0tpGRvaCGbGOpex
+         kxUIUUQAjMPe0PwHxVQFV+VPrwRxtMyI38NS5wMLwQX1B8YVgu+I3T5HSEIiyE4eNKOU
+         j9NWl5amCXY+Fv+igIWabpSTgtjBPIDorSz/GhIv9B8ahJme2rWyrN9kUdk8o5gEFDQM
+         JVjslDxB2cKt8OdlTOF0RmFDWF7U1ri3jrMMcWhAlpkhJJvAFhV765yMIAGUXmv93Wlk
+         AmfA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791982979; x=1792587779;
-        h=cc:to:content-transfer-encoding:content-type:mime-version
-         :message-id:date:subject:from:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=ux7RAlOhQfXB+vgOyaQ7PaZBU7B8R90Yjj4MScRSDv4=;
-        b=jz5DqOalTXz3HgaDOzHCLGLYoe51B0+lMKjCJ6uavjbIvHKGiYJ06yVNLWRW/xc2to
-         hsIIuNtgpLZP2Q/vEoOa1CsfigoaiVpkksRbosNxqdSmDl5a0ngCONKq/rf9zZIKI8Q5
-         Ib30KOtiuKc7V5IETLBWYNjdKGrWeiaeesOLi/FZyXrQIMNIE0U7Tg+I7I0hYfuv7qkc
-         ZbKensKPbqcdEluYbsnJp8bf0lY0W6gDhfoFU+oZe4QLvc71PGzaZJvWmT7P0AQHuqLm
-         +9rMqsO98jqXqocT+ei0IgziS1rslzBLGm8kqCX4rY4vzQgGaWkUtO/RLqTIvhAs6JHh
-         uPEA==
-X-Forwarded-Encrypted: i=1; AKwUvBy91ldEtmZLANp2ZcyLXX8VzFhujZnp+zkeDPVDFxnZpFgo0Ka/EQJuHC+Kog/wSVEvTAlrhvc=@lists.infradead.org
-X-Gm-Message-State: AFq9FYJ6CfO5nGrSCVT8Q/1AYNNxjCNUtd69LPzoBgUIAxoOVsDiRg3D
-	9YHxDH1fS9Hj056+8r6yfcPPYecd2E1PwbWeVug7B2Ia7oSOXKsxbQUYRySBMMwbd+plaQ0n69e
-	gSf1znytHzwxqtVOi6pFUQAc5DM32M9xaThYX0QWBtsCbSL0+mJK/XWSf5QzaPl0v
-X-Gm-Gg: AYBFou0A5vOfKzNkNCMyY7MBZ//owYDIWmcA0tNiuz3t7JNN3WtOhcnL0LQWrX90wCs
-	HMhxw2g5CjzA4PUJFx7z7viwAVtUQl0fYLHJnhpElgdrFwDMWx8dT9JzspZB49EqImp5xzBToG4
-	jsAHx+9yQVPyLP/1ApMtq7Hb2IJKMaOIJmVTKTi7FOg2Oz/IPwLN9JKzsjt6pOGiKKuNPRpyxp2
-	/Nx2AYgqa9Vrt8trZ/amE1hf+ZIJ33XAIrZgrlrBCFg161JAN2z7wQB6kqsknPOU3YzDizigJfl
-	FRVYa1ujG83O641iYKKR5LFqV5CoCpZTtNHhPOTNDKg9rWfl559PJvrutWJJcm1UvYvCRyEUWzM
-	XzjoLL9cWbQ==
-X-Received: by 2002:a05:6122:32c8:b0:5c9:b444:7afc with SMTP id 71dfb90a1353d-5e91f26d597mr5314166e0c.1.1791982978550;
-        Wed, 14 Oct 2026 06:02:58 -0700 (PDT)
-X-Received: by 2002:a05:6122:32c8:b0:5c9:b444:7afc with SMTP id 71dfb90a1353d-5e91f26d597mr5314129e0c.1.1791982976482;
-        Wed, 14 Oct 2026 06:02:56 -0700 (PDT)
+        d=1e100.net; s=20260707; t=1791982985; x=1792587785;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=HDwwf2nnDOaoIDpnBdokHTTm2gc9B8Cwgq888y5WJ0A=;
+        b=KqOJIq9BV1i/MTsZWEtnFEx32p7AA/zMAGBsmJPa4nkfui73Dki9W8mTdIkkarc6ll
+         QIsR9hDYRqj2QikoWBb7Mwowdx/oG+CJCtM5MHa2W6Alr06nyhh7gINjl6/yCAPpdIf2
+         4M1890zDy3cziVSqfnkacdgtCLE7Uou0lgXM4T9Fw2m/BOZuzWFqsHRFzm3FFncpp5ME
+         jeMB4IvPuDrdF48+rKgsTwamaDS8w7O475N+cnWGKyoBue/oSenDQUMAiNvBjRw8+90Q
+         pdP0y3l4rREo+YhoyOqhyg2stiuqe2qGU9xzlYlP/njsGnWgPffA+xl3tz4nApKYbL7v
+         xVvQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzII8vyYZ4RqUkpP+MoCO8sWL3oo8SCNbPf0DZ7nmPhLAwOgYEm5UtLflHvkfDKROxlxx4v2Bc=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJ+ad0vafvVWfdBDKTRQbO6Sq9OtvE9pWt0cNp1pjw8muJKbPJi
+	RSKYxACqpBp5R1qIJNSsFdc3YrZKxs0sNX/0eqzCJT5t4UdDENBDUDpqtsp+wKvUDOAiu+mPDX4
+	mYase5vcjKvaS1d/1PuNF/da6ggF72+0zUqstwg0AcNijARd/SjJ/jSVm1H9Fxon8
+X-Gm-Gg: AYBFou20iKeQUEWED+VlW33RbwnppvTygpzPAp8MR+gpFlJAMmAa8ShFy+IMjhllT0D
+	djXfbh6NdCoJd7NG4o7qFL68FdhwbVC0QzRmygrXjLvUnqg7RpMWutdnxp11TUMckQdqH3/LWZz
+	uCE9AvBTuC7fruHqCICNGwjMxY+6jxTqDZZXFpUv0vzKdkRD16p6dmWat2lDBhnDq2BbB12OhUs
+	qY4vA6cs7LhbfC1tbk9u9QX7W8DEZJ/SPKOOmbAXFLn8ipfi+OQf9b1IPN7MoJhNnJqTq8ABV6L
+	Hz9P4kiJeFUZcRN7/vAW8xM4Uxt0nBtBxNzbFV/D+6uiuGv7ndzHhfjA6I9jB+3nmBCs5zSOFwb
+	72p6Gs5RrJw==
+X-Received: by 2002:a05:6122:3c4e:b0:5d3:9fc0:7885 with SMTP id 71dfb90a1353d-5e91efb3a55mr5467830e0c.0.1791982983598;
+        Wed, 14 Oct 2026 06:03:03 -0700 (PDT)
+X-Received: by 2002:a05:6122:3c4e:b0:5d3:9fc0:7885 with SMTP id 71dfb90a1353d-5e91efb3a55mr5467671e0c.0.1791982981490;
+        Wed, 14 Oct 2026 06:03:01 -0700 (PDT)
 Received: from [127.0.1.1] ([86.121.170.215])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a1bcece106sm567795e9.9.2026.10.14.06.02.54
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a1bcece106sm567795e9.9.2026.10.14.06.02.59
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 14 Oct 2026 06:02:55 -0700 (PDT)
+        Wed, 14 Oct 2026 06:03:00 -0700 (PDT)
 From: Abel Vesa <abel.vesa@oss.qualcomm.com>
-Subject: [PATCH RFC 0/5] nvmem: Add a UEFI variable backed NVMEM provider
-Date: Wed, 14 Oct 2026 16:02:38 +0300
-Message-Id: <20261014-b4-nvmem-efivar-v1-0-187c85f65018@oss.qualcomm.com>
+Date: Wed, 14 Oct 2026 16:02:39 +0300
+Subject: [PATCH RFC 1/5] dt-bindings: nvmem: Add UEFI variable NVMEM
+ provider
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-B4-Tracking: v=1; b=H4sIAG59z2oC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDIzNDA0MT3SQT3byy3NRc3dS0zLLEIt201GTj5MQkA1NzU1MloK6CIqBEBdj
- EaKUgN2elWIhgcWlSVmpyCcgspdpaAOHta6h4AAAA
-X-Change-ID: 20261014-b4-nvmem-efivar-fec3cab05755
+Message-Id: <20261014-b4-nvmem-efivar-v1-1-187c85f65018@oss.qualcomm.com>
+References: <20261014-b4-nvmem-efivar-v1-0-187c85f65018@oss.qualcomm.com>
+In-Reply-To: <20261014-b4-nvmem-efivar-v1-0-187c85f65018@oss.qualcomm.com>
 To: Srinivas Kandagatla <srini@kernel.org>, Rob Herring <robh@kernel.org>,
         Krzysztof Kozlowski <krzk+dt@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>,
@@ -130,53 +131,53 @@ Cc: Bjorn Andersson <andersson@kernel.org>,
         linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         Abel Vesa <abel.vesa@oss.qualcomm.com>
 X-Mailer: b4 0.15.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2683;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2957;
  i=abel.vesa@oss.qualcomm.com; h=from:subject:message-id;
- bh=gAIkzzbj+i1WmP6eC8YcuDBzKhsL6Sj8KUpou2Ontc8=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBqz310HD0lY/yh7SQXr+ouDyDiI+jw0Q581NH+F
- JEam2z2hIyJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCas99dAAKCRAbX0TJAJUV
- Vq15D/0QVlTJir+agRbJm7HC5e0xE3vUhkeQLvsNriJkdZ1tqKjcyQ+n0YkwbN9hLa0QYWFZZyY
- OqYitq5DGIO0suxwwX/XOw2o+Ow+l3k28aLpit/w0QPwOjKzvRjHk83542VZAuhjxyFqJLKLUx+
- K9dMFA12PjhKgsuntHrs1uYt/Inj7Jkl3DQJ3j9twBTgHg09NHJtwzIWGXwbkeh6tbQDVLp8HES
- KaOrAs4GriNIjx+vz9xdpcX4Hb4/RcDSDcD4ByaJ8zXZy4TT5Q6y4SlqEkHTKE3FS9jpIt8VuxW
- fDMly3YtPOJRiL5/FyVez4F/rivUHkGfWeaQECiUUt5lYvqP8e5u9i+Yjglvac6bybOEvn6mFFl
- ILYkJH1xyrcIQ/xDMwzeEYU/QEaYnGA567CBIEN3YRuMHG6g1NdI3Jnb2K36TFdyJcaoWFeiiVj
- oDM1bLYAN2ZxwRykR3gouXB7AMcsVK+7JPYtie1nI5ktBkEvTHUqRWeQmKw0gPdFbk2rXh+mLDc
- wYISR4d9Hkwgoc6C9C/T1UZbM1MpYLDMFB2rczHTTmBXlHrvi1hLGQ52IbHDKQmgEyV/RSJzUfG
- PIlLey0I27FkXIMhY1T/nLodKHy0vr6oS6ELYmznE91cSCPq0WkwdeTZwnx0brjBoGrgLDeChzA
- O+eeON62CtBFnDA==
+ bh=ASWIqLah/uFWvhZywA6+lXlXr9BhgVdBiskjUcy96bM=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBqz315K2FLP6WGMZnegKPCWuqzDd6D0ByEMRQej
+ ElIqj4tpuGJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCas99eQAKCRAbX0TJAJUV
+ VnNREACdYf4Y+MuvkYiPeu9661Rm1nFDv4WC9VsnQ2JyiHsKSkNFgewOd29zaZAI+oGnufkrwux
+ 4q20TvzLeLe/3ozRF/ewkO1jTitV+irbQiLIWhFWxwgxr8N9w3aOgS6GGhTms/7K8HaILwEzDUH
+ J51l2sflhfQN7E+Rr0ag/mkF1MH6j5TJ7vgT1lPQyiJr/p0xkKhVwdPA6bxituaJ3yvuIod4Sav
+ oEhYmLeM1NoO9XyIqM52YqVC5BOhjphdMUnKrAcmdwEmG0eghPzp9DmlJ/wm+N/7lzmWxwABcYN
+ Y1fGMYkMBh0ocx1JgAFsXwzxeThIyQWecP6O6tbuMQLx1LJOJDEjNT0OdmDMqWORWNbDzG/CW+8
+ 0/iKIXL/1+K95KzogmOLoZN4M70UC+IrceawLhmvBCPf6QMQRueJColiSzpwN3M+wPSkeIokodg
+ 5Um34B2se0rms/Zi+cqCHDyPX7c3wtXkgA1dl0DcKyR+M4J1pJAWYg2a0KlYXUaT5fsLR5DX2sT
+ U1WSvL3ZUPGVL98WQWAIltw90CLW0nkJErc/4YWg9vwlOmo/nmgECdOjlcvVsNyw6PAL1wtr/9x
+ 8++nDWbqmg8oM7ymG/zp+Fbjgawn5hW7lHwor2LUfNf6N624O84hSOvFqgNkxaAly3BpgO6rmHw
+ jv+lYCtivt/cgLg==
 X-Developer-Key: i=abel.vesa@oss.qualcomm.com; a=openpgp;
  fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
-X-Authority-Analysis: v=2.4 cv=YJcKWhGx c=1 sm=1 tr=0 ts=6acf7d83 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE0MDA1MSBTYWx0ZWRfXwQLj1rtMAdSB
+ utcABa92hLGpGCnbO1r9In+3XMPDqqVjpu2z83XdmUyAlSwxznggywSWb5WjUbDfFobvhbquEMz
+ y4HMSf7vpwcxuYJsLxB4OxKcLWdrprFAAe/CDnrk/OoqlF+4viVIg2PU1UWHW3+Al8zWAFQ1Zz/
+ zyXZSoLCfBy/DjY17bGFcqv5Av89RIT3psSrTv9o+WDnT63kEf3P1B3FCpNgHZqLGy+uswalitL
+ J5QFkZY6yJnJ+blKUOMiNsE0vtFaPVtq5BwLJRyGwGmcX6/0uBjz7GmcaJN5cJbTAu/hzvA45Tm
+ xvj1vTtxHMZXsl1A5iVO7/ibXNq6UUcYjHYnuo6Fst1FiFvfmpTRQSn27IT6xVmpSW30yLS1Vkn
+ 8E0Gc0e41vAuqZhgHhQE60H89jXuGsWNU1AgO9iw+FdBVFVxIj31kvfcZmXyE2nOGtYBTg2pcp9
+ IZ0MRCVzjTYLJPcBINw==
+X-Proofpoint-GUID: N5ktgktH9Pm7fLrRiiIHGJ1wd68ijiOs
+X-Authority-Analysis: v=2.4 cv=P6avFSAu c=1 sm=1 tr=0 ts=6acf7d89 cx=c_pps
  a=1Os3MKEOqt8YzSjcPV0cFA==:117 a=Rt3kCFFBWhWisHNmluDamg==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=EUspDBNiAAAA:8 a=5qUZDwqhos4Me9Bi-QgA:9 a=QEXdDO2ut3YA:10
- a=hhpmQAJR8DioWGSBphRh:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE0MDA1MSBTYWx0ZWRfX3hDHEi++P7CD
- AxX6HlW/ZjuKCNkQtoAZRaHJ/XayTcZ+OwBKFd4b41On6t3rnglpDXQq9z/trCfVg7ilf8Ac+Ks
- 6k18q/54X9lTseAPgcCBzTk/Le6UfBHFJI2u2z60onqVDd2OdjKaGOb/Gw+LrhaPuzA1w7hsjkx
- 0d9jDxMzMxjH8ibV7k2kjSCPAg8AglWp1QifPaf3s0e32yyQP0hrUFf1EzcC4buG6xPngvq7WjX
- rtF/jvqwzbkWiF4uvLrTQFkKD/H1s9ca8rZK0LFvluJB/xeuH703YkRt9QvWd95tFH7M6BajZ8Z
- Ya8DnpUyXVGZCQ4X1w5na3Zpi3JxOxnUssQPc0anskJPV5DVYr2DIXg0l2penvX+J2I0tX2kMvl
- QLBcMptkbwZom0y2bBS8GrNaByWjKIUsEVEP9E7PJ0l02LAQ/X+SXNOYvU53Rhd6YECwNTPUQoM
- ZiujhOeGhniMC9QJQ/Q==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE0MDA1MSBTYWx0ZWRfX5Fv+bx7Hhl4S
- obqX/k0b7aKSnLVb4HA9DIHyIxQqXQLcnNCHuAm7R1g6718lky1QWUQ5qe19KuU6rowh2cxmVrT
- TLfWzgVTtMG819eIepF7CdnmvY7QFyQ=
-X-Proofpoint-GUID: ZCjRbXQoOuMvyLsG7E8OwY8TiJ6_1WF7
-X-Proofpoint-ORIG-GUID: ZCjRbXQoOuMvyLsG7E8OwY8TiJ6_1WF7
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=gEfo2CItAAAA:8 a=EUspDBNiAAAA:8 a=t4Q5Td2Vxm9WVIIx0qwA:9 a=QEXdDO2ut3YA:10
+ a=hhpmQAJR8DioWGSBphRh:22 a=sptkURWiP4Gy88Gu7hUp:22
+X-Proofpoint-ORIG-GUID: N5ktgktH9Pm7fLrRiiIHGJ1wd68ijiOs
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE0MDA1MSBTYWx0ZWRfXx2ns+iNxy+lb
+ v/KfN+gq9E5ds2fwsW6QcgC5rL8pJciz5iE46B+BFs0vNlGuz5XUJkUhzAsGKSf23USUCSjXhMF
+ 1Nk8tHi6BBZ4f57a0GbS34zwfCcGNrc=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-13_01,2026-10-09_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 phishscore=0 clxscore=1011 impostorscore=0 malwarescore=0
- spamscore=0 suspectscore=0 adultscore=0 lowpriorityscore=0 bulkscore=0
+ phishscore=0 bulkscore=0 lowpriorityscore=0 priorityscore=1501 adultscore=0
+ suspectscore=0 clxscore=1011 impostorscore=0 malwarescore=0 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2610080000 definitions=main-2610140051
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261014_140304_300277_452C368C 
-X-CRM114-Status: GOOD (  18.11  )
+X-CRM114-CacheID: sfid-20261014_140308_066007_011CB536 
+X-CRM114-Status: GOOD (  17.02  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -191,66 +192,100 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This is an RFC: I do not expect it to be merged as-is, it is sent to get
-feedback on the approach.
-
-Some values a platform needs (for example the WLAN and Bluetooth MAC
-addresses on the Qualcomm laptops) are not always available to the kernel
-in a convenient form. They may live in firmware-owned SPI-NOR storage
-(e.g. a DPP partition) for which there is no straightforward, universally
-working way to read them from the non-secure world.
-
-As an alternative, this series allows such values to be provisioned once
-into a UEFI variable and consumed in the kernel. It adds a generic NVMEM
-provider that exposes the contents of a UEFI variable as an NVMEM device,
-so the data can be consumed through the standard nvmem-cells bindings.
-MAC addresses are just the motivating use case; the provider itself is
-generic.
-
-The first two patches are the actual proposal:
-
-  - dt-bindings: nvmem: Add UEFI variable NVMEM provider
-  - nvmem: Add UEFI variable NVMEM provider
-
-The remaining three patches are included only to illustrate how a
-consumer would use the provider; they are not meant for merging as part
-of this series:
-
-  - Bluetooth: hci_qca: consume a "bd-address" nvmem cell
-  - wifi: ath12k: consume a "mac-address" cell
-  - arm64: dts: qcom: glymur-crd: wire both to a "MacAddresses" variable
-
-glymur-crd is used here only as a convenient example for the consumer
-patches.
-
-Feedback on the provider, and on whether sourcing such values from a UEFI
-variable is a reasonable approach when they cannot be read from the
-SPI-NOR directly, is very welcome.
+Describe a provider that exposes the contents of a UEFI variable as an
+NVMEM device, so data provisioned in a UEFI variable can be consumed
+through the standard nvmem-cells bindings. The vendor GUID is optional;
+when omitted the variable is looked up by name across the whole variable
+store. If the variable has not been provisioned, the cells read as
+zeroes.
 
 Assisted-by: LLM
 Signed-off-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
 ---
-Abel Vesa (5):
-      dt-bindings: nvmem: Add UEFI variable NVMEM provider
-      nvmem: Add UEFI variable NVMEM provider
-      Bluetooth: hci_qca: Support BD address from an nvmem cell
-      wifi: ath12k: Support MAC address from the firmware node
-      arm64: dts: qcom: glymur-crd: Source MAC addresses from a UEFI variable
+ .../devicetree/bindings/nvmem/nvmem-efivar.yaml    | 73 ++++++++++++++++++++++
+ 1 file changed, 73 insertions(+)
 
- .../devicetree/bindings/nvmem/nvmem-efivar.yaml    |  73 ++++++
- arch/arm64/boot/dts/qcom/glymur-crd.dtsi           |  22 ++
- drivers/bluetooth/hci_qca.c                        |  48 ++++
- drivers/net/wireless/ath/ath12k/mac.c              |  14 +-
- drivers/nvmem/Kconfig                              |  12 +
- drivers/nvmem/Makefile                             |   2 +
- drivers/nvmem/efivar.c                             | 273 +++++++++++++++++++++
- 7 files changed, 443 insertions(+), 1 deletion(-)
----
-base-commit: 1fffefb00cc0b0da1f2ae24e3d33364530ea6515
-change-id: 20261014-b4-nvmem-efivar-fec3cab05755
+diff --git a/Documentation/devicetree/bindings/nvmem/nvmem-efivar.yaml b/Documentation/devicetree/bindings/nvmem/nvmem-efivar.yaml
+new file mode 100644
+index 000000000000..cdc10bee3c6f
+--- /dev/null
++++ b/Documentation/devicetree/bindings/nvmem/nvmem-efivar.yaml
+@@ -0,0 +1,73 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/nvmem/nvmem-efivar.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: UEFI Variable Based nvmem Device
++
++maintainers:
++  - Abel Vesa <abel.vesa@oss.qualcomm.com>
++
++description: |
++  Exposes the contents of a UEFI variable as an NVMEM device, so that data
++  provisioned in a UEFI variable can be consumed through the standard
++  "nvmem-cells" / "nvmem-cell-names" bindings.
++
++  The variable is read via the EFI runtime GetVariable service, which keeps
++  working even on platforms where that service is emulated by firmware (for
++  example the Qualcomm uefisecapp backend) and where direct flash access is not
++  available to the non-secure world. If the variable has not been provisioned,
++  the cells read as zeroes.
++
++allOf:
++  - $ref: nvmem.yaml#
++  - $ref: nvmem-deprecated-cells.yaml#
++
++properties:
++  compatible:
++    const: nvmem-efivar
++
++  efivar-name:
++    $ref: /schemas/types.yaml#/definitions/string
++    description:
++      Name of the UEFI variable to read.
++
++  efivar-guid:
++    $ref: /schemas/types.yaml#/definitions/string
++    description:
++      Vendor GUID of the UEFI variable, in the canonical
++      "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" form. Optional; when omitted
++      the variable is looked up by name across the whole variable store.
++
++required:
++  - compatible
++  - efivar-name
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    nvmem-efivar {
++        compatible = "nvmem-efivar";
++        efivar-name = "ConfigData";
++        #address-cells = <1>;
++        #size-cells = <1>;
++
++        cell_a: cell@0 {
++            reg = <0x0 0x6>;
++        };
++
++        cell_b: cell@6 {
++            reg = <0x6 0x6>;
++        };
++    };
++
++    /* A consumer references a cell through the standard nvmem bindings:
++     *
++     * &some_device {
++     *     nvmem-cells = <&cell_a>;
++     *     nvmem-cell-names = "some-value";
++     * };
++     */
++...
 
-Best regards,
---  
-Abel Vesa <abel.vesa@oss.qualcomm.com>
+-- 
+2.54.0
 
 
