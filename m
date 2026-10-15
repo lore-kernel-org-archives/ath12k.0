@@ -4,78 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 188C2CCA460
-	for <ath12k@archiver.kernel.org>; Thu, 15 Oct 2026 12:22:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6705CC6B33
+	for <ath12k@archiver.kernel.org>; Thu, 15 Oct 2026 13:22:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Subject:References:Message-ID:To:From:Date:Reply-To:Cc:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
+	Message-ID:Date:References:MIME-Version:In-Reply-To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=c1yAHa+qx7nhhUqyByJ9CxUowIRdlz8voCKPMlxDfeM=; b=12PRnkMT/gMhPn
-	lVY/tojxMiMqt0XSwsxprvhLZni+/7fv3XOOkpP69Y4QmmemaVG0x2cu0+zb+41B8tlE3IDHU8bjW
-	qBszYqGi2kOeh9Y3yivYEzNJ/SV+8w3S8KLhAThVCSMCY8zostu+z8qfEN9CaYSJhUV2yrbnY8Ep/
-	Pw7PYXvSE3ms7dDIqmkK7IxHqEG3giRj3AcxzFT7OZAFsgfW2LLjTUZ1m7qkig9Dh+QP0winhyDho
-	BL2fo60zz/pSaJL6EWdzgeB9RXDWucQWpPC75pBkomOX3vnHGQTGbT9ALLdhBG1PwapljkCc0rG88
-	Ag6yhp8l/xkNbArnZlxg==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=PtakM2rq+ivjR0e7DosmM9joh8D3XX6lnOGvhtqu8Yc=; b=0V3/R7PBSxa9pt2879q7kSSleE
+	iBUF3klf9EyjUqXz9IloGT8vzY7GjWBv+V+ao9VYepmFBPkWeIw4/6tNVRoCTNub3BpaT2mzdBje9
+	LEEpMertm3IWcmI2nqBnfXuJxlQFAlkPaaY/IAptYy97SqzOaE7KlG9apXAxRY8N8TU+AGQaAlcs8
+	lzoFzQmG92SsKgWbWVQ62q8YhveizgCQwSjZ6wMnD9mUk/kBGxOwLmP2YOyku0ctlAhbWEBeH27kJ
+	UAWZGuI9Oio21F2FD+LEiTU9A5xRDxhtZlajxejoUyYmRHDc/LnLDE/Tl3YliGr5ArmaQRRsTBKut
+	kYdijfWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHKTC-0000000069j-3GuT;
-	Thu, 15 Oct 2026 12:22:02 +0000
-Received: from sonic-usea4-0032.asd.mail.yahoo.com ([34.2.68.31] helo=sonic.asd.mail.yahoo.com)
+	id 1xHLPV-00000000EqB-11Rb;
+	Thu, 15 Oct 2026 13:22:17 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHKT8-0000000068d-3bOR
+	id 1xHLPU-00000000Eq4-1749
 	for ath12k@lists.infradead.org;
-	Thu, 15 Oct 2026 12:22:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1792066917; bh=c1yAHa+qx7nhhUqyByJ9CxUowIRdlz8voCKPMlxDfeM=; h=Date:From:To:References:Subject:From:Subject:Reply-To; b=DjAYtCp89S7gyGu1zL3cboW11pB/6VhDQEmukd5/2ynqoTgwa1gS0qneW1Tynt/3W6GfZQ93iYa6Rt0j70UICDVGEtidxbYWekO6KmjiNoUT3Ev/fWW9c+6CnfcqKTibxzTPmFwaPjpSy1l0ksPNNUwbfDIqDuVNkoPoCHYj5T5U2BTLNVqba+/kVEVrUo3vCyV9tfwLqsKUqPyoAl/0UaEWAu6YQ9/yCIbfNk8yUxIqSZYEf8cIaF8G1LT3a5b0f3ol5L5Gpv7SyZBOSXPEsBXZGhu7Wo4TEtBj2VQTN4t8ENIn1oKAVmQSoIJ1ldOgUtJe0l7YnBm4T7c3EymHUQ==
-X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1792066917; bh=5+PZ9RLF/sRiSnSy2eQgDVDlCoDLHkFZnTko1FORzr2=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=NXMJqTvjAscQNmyq0hzv83XcreBzkEaGY+TB9vr2h6yJRakcXvEGCOrnoVWNe7Tu226Rel9HA93OGK5ITin1CfQoMce1sIfNFHBBUdzAunPbrc9D4+SFrEvk1OCDJXT2isDpIKv9lh1mOUxAlLf1/OC5eepsz4q0zaTJONOZMEcLuxc8hPe2ykUxnxPVcKVVVaEBEvqB0rEEOWUujbT0Bjl6yvMqDUjmjP6fygPPKUOvcnGfesRVj6Ojc3KJpg2mc447UljpnTyaXBYUONNfRxnIkfuQfw6RLcW4EkMD+3cRYjDuM02qWrCDh97j6C+u/rBC6U8GI2qnBPXQEoBg0A==
-X-YMail-OSG: jCF8rZAVM1msg6rcSyACEFZy0SyYOUAKPYNSV.SPa19KQ_Y3FNwdY6OuSJ78c5w
- _v0u2iakWTi7X7FvsCc.TCZyvJ43bIwZw2136DDLzUS25TnQatw12MUy2iWRaCh_e.6hXG_zpzQQ
- 9NCgYo87cTLIGIrkd4O0CkPXnbSiW3dba_xKdc8ideN0c.kl2exI1qLhls598EJcu29KCR8Pl6w_
- aHaZWtWlQD_TbZYhFutsmdJ5nwVaQ9bAcUHArH8VvGn1usWeRu8C2aro1mBrxL_DL6aRCl1o09L.
- 0zAUAjCjHp61stP9EO0olkzZoTB47qduLUhE.mjic4xvDFnZxso6B5EeLhfmK4qfJu.T3FbXl.Ms
- Fxz3LDT54_XmzRvNQG13u.zTMOTRLXR6dimiaHiTXFfk3ffuJEhVM9ne_Ic_v.PtN2UlpGymfWON
- oI1Jxf8Ec6bA4VprNAr2dmUX52qNoTFEGhSoSD_enUI5fUGqVslFYyn26Xxr0Zen6HJRZox8k91Q
- mLvV.kJgVAXWAxpD4rTwCryC8g24xLZzOJ3LrqZGBeCg5r..XwXuSavnaFxcUe8sLH1ZUX.9spoy
- CuhXFJhA5Binruta8n8hBjpqs2KK2hvWVfkzw6R6H1bBbLg6K9bw88XWwMm4z5GjKtY1LfXrJBa5
- 1qrdlRC9B7Hjy538cmavvrUb_dAmxx5aokGR9JnMpkuAVlcaXzEHswLF_r0HjFh99YALkxUlPqUR
- zu0Dp5ssfVtCXk5NddZfTP35Qf3MLYBqjTYsUX8CDPfjc3kkk_BcR7pztmxER_FHY19UnHP66nCw
- 5AyKwHEA7M67uRQhRmYiVwg5FP6fHgKBFtGJS9790V.ml5yQLFj_7oJaiue1NNbtnNA_cU6zQliH
- 7VIM5whLc.iDBhAeyrHRLgYvJvbMwnGLdu8ZNI6spGlK_rnp7FEyPvpjs3.EahET8AfPw53BFVTY
- 1Z7BnX15CtG3u.qD_koKAWtbMQ_TWBqGz43wHH79VCQ2bHDNps6hfSSlEoXm0wvsMrLtkb2eXcgd
- GZYhVPC2.HONl3Le9EuFTQWToRGjc3ehiUAoN2hr4NRhwePi411rScXoIBiC6vG5c7pdJe6Wfjbx
- ksPcGYXanLLVh4fgKOl9wIVlNjx657tMizpg0rmnNH9n37mlSrDMAAVfdOaFVNVlte1poOJKohLh
- zDpYLU.B_PRKSZfMh8qboUZTUciL7JBUA0tHln8QkXy8AxFP8tEog6cvwMwxFlxETx7soweRwHb.
- jsk_ro8y3LDG0diMD6TQNuwT38Wn45tOk83i9SERpRP7Vbz4QjBMax6pjh0Ge9vfw0C8aUuyeCES
- J95GuahtgXTtd_0u.j1CrjRfbafi.qqtt60W0G7ZL6hyHtl65PPWCp5dLFo6U0R5xInF0jTUB0gH
- _TVQIdTMxpRBac0yE43hXmYZqVrsAJpvxl5k58yU9.K8uSskg7cihevjB1Xcyc5ALpcvXrsMG70H
- Vzd13s5cYrOVk19OKK8zJ.cmoQYDOhQEiy8Rxbg1f7QDCiMTZadSdRO87YRah0u1LLR.t7SnSREl
- rM1gTGp7Aw6At8oV8HlyGgkJ.wHcxX8w0MYMVBQwzdis9lOVIr8jn8uh.2dAC3E_aVT2PfNQKVKm
- FGsdnmaoUu_M2eYvE2uN_rYQ.ILVR01rBu4s42aH8URepED4dyU3QAEUzWCBKKUfnlMhzt9vYb3v
- 8S3UVpivG6mkyEcB3RFRfDpxgixv6PG5ySCyhqxOJG5CxI5tBwRK3JUmx9FxSrhqnlGlN8mbiU7o
- arqnl3J2RRZ0DgBKx19ibUl4zGTqSoZGfBP3A2GWU3VbpYBhyV3.Xo0INAlEOfP3PSPXo1DxfT.3
- .MgTZ3ZtmaqyRd0tnPyjSR.LM10T9LUDeRDDFy3LdV1yHjNQoEw1XL8Kjz98V1tQf91FCAgt3CuF
- 2kTqc22isTiUGi9vwQ.jUfhg7j_wqCbWm3vAp5.qvr63UehzpK5_4o8NAsJCU0fOTqj5QvwTu_q2
- o_8O2YgvnfeLv_xJCHfE3KJMAXiAbNBXukV1LGqcaFiva2dxiUdojmgFlOZ32WL3AALj2sKqU5Cg
- Jfn9.lM3ksIJ3D8X2zxQjzPOCZOkR3KZ.W2FmWINEO1AQ
-X-Sonic-MF: <bdthomas84@yahoo.com>
-X-Sonic-ID: b491283b-d9a2-4876-adca-59c97146d7b6
-Received: from sonic.gate.mail.ne1.yahoo.com by mail-asdoutdeli-p-cin-usea4-prod-sonicconsumer-svc-101 with HTTP; Thu, 15 Oct 2026 12:21:57 +0000
-Date: Thu, 15 Oct 2026 12:21:51 +0000 (UTC)
-From: brian thomas <bdthomas84@yahoo.com>
-To: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
-Message-ID: <1180896080.87244.1792066911984@mail.yahoo.com>
-References: <1180896080.87244.1792066911984.ref@mail.yahoo.com>
-Subject: Surface Pro Wifi Issue
+	Thu, 15 Oct 2026 13:22:16 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id A628460A6A
+	for <ath12k@lists.infradead.org>; Thu, 15 Oct 2026 13:22:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 46B851F000C7
+	for <ath12k@lists.infradead.org>; Thu, 15 Oct 2026 13:22:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1792070535;
+	bh=PtakM2rq+ivjR0e7DosmM9joh8D3XX6lnOGvhtqu8Yc=;
+	h=From:In-Reply-To:References:Date:Subject:To:Cc;
+	b=jvGKIciEueQGGCVpxvxDNWq25lUom4brJTJxQKGaWt2s0mCC0H2VC8KvrJ6CHU05Y
+	 Y3i0DSCcNUIZpSmWx+dA9MiIg2dzpM+h81xrqYLNkdALJqiEI59r55mnBGCUDOn1Fc
+	 SAFzZFw+g2kaH/4ZS1MuhVhcW+hcX5aArcf3ojFAIQwGMkw+13A3IBJmzTXL2PYBOz
+	 I5a8f+AMrdlQERHcbAn5hQDZ12SX4+76MvLwPCQJoa+XHefU0m0QF4ebwvWVerb+B8
+	 Wi0i8LRRd+4fGEo3oWIk2R7d44rbs8J+V71pNNtxGT627RD02Apb80dF/VPlSAej28
+	 mYbBq2bCoT4eg==
+Received: by mail-lj1-f175.google.com with SMTP id 38308e7fff4ca-3a980c01033so16040131fa.3
+        for <ath12k@lists.infradead.org>; Thu, 15 Oct 2026 06:22:15 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AKwUvBwiiC6TU52b/pG/E5dFwk8nEuXm7yl5d8dKawxA/4In2FwfSvHdFdeQ8CsQLPXVDh54TLvun5A=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLsl55tfJ0UAB05BLLAtO7i+VSRfsEaep2OohC9FU7a0OiUgAGC
+	E/2CZdkbcCYZ+NjeLyyVncMNU6pwFhkjLPA8PHnmMUbBd72cmuHnTNBatcOeqVyqYgJXc9v8PlU
+	rrXgWOysqhRgRcwgqHmnTdOokeIPgubq6BTx7UCl2vQ==
+X-Received: by 2002:a2e:b888:0:b0:3a9:82c2:ec1e with SMTP id
+ 38308e7fff4ca-3a9c537ed07mr41696771fa.15.1792070533876; Thu, 15 Oct 2026
+ 06:22:13 -0700 (PDT)
+Received: from 969154062570 named unknown by gmailapi.google.com with
+ HTTPREST; Thu, 15 Oct 2026 13:22:12 +0000
+Received: from 969154062570 named unknown by gmailapi.google.com with
+ HTTPREST; Thu, 15 Oct 2026 13:22:12 +0000
+From: Bartosz Golaszewski <brgl@kernel.org>
+In-Reply-To: <20261014-b4-nvmem-efivar-v1-2-187c85f65018@oss.qualcomm.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; 
-	boundary="----=_Part_87243_229712955.1792066911984"
-X-Mailer: WebService/1.1.26740 YMailCLDNovation
-X-Bad-Reply: References but no 'Re:' in Subject.
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261015_052159_064231_D1D14CA6 
-X-CRM114-Status: UNSURE (   4.59  )
-X-CRM114-Notice: Please train this message.
+References: <20261014-b4-nvmem-efivar-v1-0-187c85f65018@oss.qualcomm.com> <20261014-b4-nvmem-efivar-v1-2-187c85f65018@oss.qualcomm.com>
+Date: Thu, 15 Oct 2026 13:22:12 +0000
+X-Gmail-Original-Message-ID: <CAMRc=McDsv0k0bD2LoaXfOh7uyFo=HRyO098H=N=QeMFDXsLKQ@mail.gmail.com>
+X-Gm-Features: AclHuK_mQfEq7d5o6k5CJtNKj-nIhBiWJK67TxDvSr-imzKrws_f6xRwLeLZhi8
+Message-ID: <CAMRc=McDsv0k0bD2LoaXfOh7uyFo=HRyO098H=N=QeMFDXsLKQ@mail.gmail.com>
+Subject: Re: [PATCH RFC 2/5] nvmem: Add UEFI variable NVMEM provider
+To: Abel Vesa <abel.vesa@oss.qualcomm.com>
+Cc: Bjorn Andersson <andersson@kernel.org>, 
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
+	linux-bluetooth@vger.kernel.org, linux-wireless@vger.kernel.org, 
+	ath12k@lists.infradead.org, Srinivas Kandagatla <srini@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Bartosz Golaszewski <brgl@kernel.org>, Marcel Holtmann <marcel@holtmann.org>, 
+	Luiz Augusto von Dentz <luiz.dentz@gmail.com>, Jeff Johnson <jjohnson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,68 +90,392 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-------=_Part_87243_229712955.1792066911984
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+On Wed, 14 Oct 2026 15:02:40 +0200, Abel Vesa <abel.vesa@oss.qualcomm.com> said:
+> Add a provider that reads a UEFI variable via the EFI runtime
+> GetVariable service and publishes its bytes as a read-only NVMEM device.
+> NVMEM cells are described as device-tree child nodes and can be
+> referenced by consumers through nvmem-cells / nvmem-cell-names.
+>
+> The vendor GUID is optional: when it is not provided, the variable is
+> located by name by enumerating the variable store. This keeps working
+> on platforms where GetVariable is emulated by firmware (e.g. the
+> Qualcomm uefisecapp backend) and where direct flash access is
+> unavailable to the non-secure world, in particular when Linux boots at
+> EL2.
+>
+> If the variable has not been provisioned yet, the device is still
+> registered, sized to cover the described cells and filled with zeroes,
+> the same way an erased EEPROM would read. This keeps consumers probing
+> and falling back to their default addresses.
+>
+> Assisted-by: LLM
+> Signed-off-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
+> ---
+>  drivers/nvmem/Kconfig  |  12 +++
+>  drivers/nvmem/Makefile |   2 +
+>  drivers/nvmem/efivar.c | 273 +++++++++++++++++++++++++++++++++++++++++++++++++
+>  3 files changed, 287 insertions(+)
+>
+> diff --git a/drivers/nvmem/Kconfig b/drivers/nvmem/Kconfig
+> index 083a5e528960..3f619dfa1cf7 100644
+> --- a/drivers/nvmem/Kconfig
+> +++ b/drivers/nvmem/Kconfig
+> @@ -185,6 +185,18 @@ config NVMEM_BRCM_NVRAM
+>  	  This driver provides support for Broadcom's NVRAM that can be accessed
+>  	  using I/O mapping.
+>
+> +config NVMEM_EFIVAR
+> +	tristate "UEFI variable NVMEM provider"
+> +	depends on EFI || COMPILE_TEST
+> +	help
+> +	  Say y here to expose the contents of a UEFI variable as an NVMEM
+> +	  device. This allows the kernel to consume data provisioned in a UEFI
+> +	  variable, referenced from consumers via the standard nvmem-cells
+> +	  bindings.
+> +
+> +	  This driver can also be built as a module. If so, the module will
+> +	  be called nvmem-efivar.
+> +
+>  config NVMEM_IMX_IIM
+>  	tristate "i.MX IC Identification Module support"
+>  	depends on ARCH_MXC || COMPILE_TEST
+> diff --git a/drivers/nvmem/Makefile b/drivers/nvmem/Makefile
+> index 5e70bad9f0f9..038d3d9ee95c 100644
+> --- a/drivers/nvmem/Makefile
+> +++ b/drivers/nvmem/Makefile
+> @@ -27,6 +27,8 @@ obj-$(CONFIG_NVMEM_BCM_OCOTP)		+= nvmem-bcm-ocotp.o
+>  nvmem-bcm-ocotp-y			:= bcm-ocotp.o
+>  obj-$(CONFIG_NVMEM_BRCM_NVRAM)		+= nvmem_brcm_nvram.o
+>  nvmem_brcm_nvram-y			:= brcm_nvram.o
+> +obj-$(CONFIG_NVMEM_EFIVAR)		+= nvmem-efivar.o
+> +nvmem-efivar-y			:= efivar.o
+>  obj-$(CONFIG_NVMEM_IMX_IIM)		+= nvmem-imx-iim.o
+>  nvmem-imx-iim-y				:= imx-iim.o
+>  obj-$(CONFIG_NVMEM_IMX_OCOTP)		+= nvmem-imx-ocotp.o
+> diff --git a/drivers/nvmem/efivar.c b/drivers/nvmem/efivar.c
+> new file mode 100644
+> index 000000000000..699b1d67aea4
+> --- /dev/null
+> +++ b/drivers/nvmem/efivar.c
+> @@ -0,0 +1,273 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * nvmem-efivar - expose the contents of a UEFI variable as an NVMEM device
+> + *
+> + * Lets the kernel consume data provisioned in a UEFI variable through the
+> + * standard NVMEM cell bindings.  The variable is read at probe time through
+> + * the EFI runtime GetVariable service, which also works on platforms where
+> + * the variable store is emulated by firmware (for example the Qualcomm
+> + * uefisecapp backend) and where direct flash access is not available to the
+> + * non-secure world.  The variable contents are published as a read-only
+> + * NVMEM device, with cells described as child nodes in the device tree and
+> + * referenced by consumers through the standard "nvmem-cells" /
+> + * "nvmem-cell-names" properties.
+> + *
+> + * If the variable has not been provisioned yet, the device is still
+> + * registered, sized to cover the described cells and filled with zeroes,
+> + * the same way an erased EEPROM would read.  Consumers are expected to
+> + * validate the data they read so such systems keep working with their
+> + * defaults.
+> + *
+> + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 
-Hello,
-I'm trying to get the built-in Qualcomm WCN7850 Wi-Fi 7 adapter working under Linux on a Microsoft Surface Pro 5G for Business, 13-inch 12th Edition Intel.
-System details
-* Distribution: CachyOS x86_64
-* Kernel: 7.2.9-2-cachyos
-* BIOS: 12.15
-* Wi-Fi PCI ID: 17cb:1107
-* PCI subsystem: 00ac:1414
-* Kernel module: ath12k_wifi7
-* Hardware: WCN7850 hw2.0
-* QMI chip ID: 2
-* QMI board ID: 255
-The Wi-Fi device is detected, but it fails to initialize because the installed board-2.bin doesn't contain a matching entry.
-The requested board identifier is:
-bus=pci,vendor=17cb,device=1107,subsystem-vendor=00ac,subsystem-device=1414,qmi-chip-id=2,qmi-board-id=255
-With the standard Linux firmware (WLAN.HMT.1.1.c7-00108), initialization fails with:
-qmi failed to load board data file:-2
-I extracted the official Microsoft Windows Qualcomm driver package, which explicitly includes this PCI subsystem ID and supplies a default bdwlan.elf alongside several numbered bdwlan01 variants.
-I tested the default Microsoft board image as a standalone board.bin, both with Linux c7-00108 firmware and older c5-00302 firmware. In both cases, the board-data transfer timed out with error -110.
-I restored the original Linux firmware afterward.
-Could you advise how to identify or obtain the correct Linux board-data image for this Surface model, and whether support for subsystem 00ac:1414 could be added to the official WCN7850 board-data bundle?
-I'm happy to provide additional logs or test a validated firmware or board-data update.
-Thank you.
-------=_Part_87243_229712955.1792066911984
-Content-Type: text/plain
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment;
- filename="=?UTF-8?b?c3VyZmFjZS1hdGgxMmstbG9nLnR4dA==?="
-Content-ID: <ef8af4eb-d044-3fe4-3052-21d18549e797@yahoo.com>
+This should immediately follow the SPFX header I think.
 
-T2N0IDE1IDAxOjU0OjQ2IGNhY2h5b3MteDg2NjQga2VybmVsOiBhdGgxMmtfd2lmaTdfcGNpIDAw
-MDA6YTI6MDAuMDogQkFSIDAgW21lbSAweGEwMjAwMDAwLTB4YTAzZmZmZmYgNjRiaXRdOiBhc3Np
-Z25lZApPY3QgMTUgMDE6NTQ6NDYgY2FjaHlvcy14ODY2NCBrZXJuZWw6IGF0aDEya193aWZpN19w
-Y2kgMDAwMDphMjowMC4wOiBlbmFibGluZyBkZXZpY2UgKDAwMDAgLT4gMDAwMikKT2N0IDE1IDAx
-OjU0OjQ2IGNhY2h5b3MteDg2NjQga2VybmVsOiBhdGgxMmtfd2lmaTdfcGNpIDAwMDA6YTI6MDAu
-MDogV2ktRmkgNyBIYXJkd2FyZSBuYW1lOiB3Y243ODUwIGh3Mi4wCk9jdCAxNSAwMTo1NDo0NiBj
-YWNoeW9zLXg4NjY0IGtlcm5lbDogYXRoMTJrX3dpZmk3X3BjaSAwMDAwOmEyOjAwLjA6IE1TSSB2
-ZWN0b3JzOiAxNgpPY3QgMTUgMDE6NTQ6NDcgY2FjaHlvcy14ODY2NCBrZXJuZWw6IGF0aDEya193
-aWZpN19wY2kgMDAwMDphMjowMC4wOiBxbWkgZG1hIGFsbG9jYXRpb24gZmFpbGVkICg3Mjc0NDk2
-IEIgdHlwZSAxKSwgd2lsbCB0cnkgbGF0ZXIgd2l0aCBzbWFsbCBzaXplCk9jdCAxNSAwMTo1NDo0
-NyBjYWNoeW9zLXg4NjY0IGtlcm5lbDogYXRoMTJrX3dpZmk3X3BjaSAwMDAwOmEyOjAwLjA6IGNo
-aXBfaWQgMHgyIGNoaXBfZmFtaWx5IDB4NCBib2FyZF9pZCAweGZmIHNvY19pZCAweDQwMTcwMjAw
-Ck9jdCAxNSAwMTo1NDo0NyBjYWNoeW9zLXg4NjY0IGtlcm5lbDogYXRoMTJrX3dpZmk3X3BjaSAw
-MDAwOmEyOjAwLjA6IGZ3X3ZlcnNpb24gMHgxMTAzMDA2YyBmd19idWlsZF90aW1lc3RhbXAgMjAy
-Ni0wMy0wNiAwOToxMCBmd19idWlsZF9pZCBRQ19JTUFHRV9WRVJTSU9OX1NUUklORz1XTEFOLkhN
-VC4xLjEuYzctMDAxMDgtUUNBSE1UU1dQTF9WMS4wX1YyLjBfU0lMSUNPTlpfVVBTVFJFQU0tMwpP
-Y3QgMTUgMDE6NTQ6NDcgY2FjaHlvcy14ODY2NCBrZXJuZWw6IGF0aDEya193aWZpN19wY2kgMDAw
-MDphMjowMC4wOiBmYWlsZWQgdG8gZ2V0IEFDUEkgQkRGIEVYVDogMApPY3QgMTUgMDE6NTQ6NDcg
-Y2FjaHlvcy14ODY2NCBrZXJuZWw6IGF0aDEya193aWZpN19wY2kgMDAwMDphMjowMC4wOiBmYWls
-ZWQgdG8gZmV0Y2ggYm9hcmQgZGF0YSBmb3IgYnVzPXBjaSx2ZW5kb3I9MTdjYixkZXZpY2U9MTEw
-NyxzdWJzeXN0ZW0tdmVuZG9yPTAwYWMsc3Vic3lzdGVtLWRldmljZT0xNDE0LHFtaS1jaGlwLWlk
-PTIscW1pLWJvYXJkLWlkPTI1NSBmcm9tIGF0aDEyay9XQ043ODUwL2h3Mi4wL2JvYXJkLTIuYmlu
-Ck9jdCAxNSAwMTo1NDo0NyBjYWNoeW9zLXg4NjY0IGtlcm5lbDogYXRoMTJrX3dpZmk3X3BjaSAw
-MDAwOmEyOjAwLjA6IGZhaWxlZCB0byBmZXRjaCBib2FyZC5iaW4gZnJvbSBXQ043ODUwL2h3Mi4w
-Ck9jdCAxNSAwMTo1NDo0NyBjYWNoeW9zLXg4NjY0IGtlcm5lbDogYXRoMTJrX3dpZmk3X3BjaSAw
-MDAwOmEyOjAwLjA6IHFtaSBmYWlsZWQgdG8gbG9hZCBiZGY6Ck9jdCAxNSAwMTo1NDo0NyBjYWNo
-eW9zLXg4NjY0IGtlcm5lbDogYXRoMTJrX3dpZmk3X3BjaSAwMDAwOmEyOjAwLjA6IHFtaSBmYWls
-ZWQgdG8gbG9hZCBib2FyZCBkYXRhIGZpbGU6LTIK
+> + */
+> +
+> +#include <linux/efi.h>
+> +#include <linux/module.h>
+> +#include <linux/mod_devicetable.h>
+> +#include <linux/nvmem-provider.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/property.h>
+> +#include <linux/slab.h>
+> +#include <linux/ucs2_string.h>
+> +#include <linux/uuid.h>
+> +
+> +struct efivar_nvmem {
+> +	void	*data;
+> +	size_t	size;
+> +};
 
-------=_Part_87243_229712955.1792066911984--
+I would have preferred it without tabs but whatever.
+
+> +
+> +static int efivar_nvmem_reg_read(void *priv, unsigned int offset,
+> +				 void *val, size_t bytes)
+> +{
+> +	struct efivar_nvmem *p = priv;
+> +
+> +	if (offset >= p->size || offset + bytes > p->size)
+> +		return -EINVAL;
+> +
+> +	memcpy(val, p->data + offset, bytes);
+> +	return 0;
+> +}
+> +
+> +/* Size needed to cover all cells described as child nodes. */
+> +static size_t efivar_nvmem_cells_extent(struct device *dev)
+> +{
+> +	struct device_node *child;
+> +	size_t extent = 0;
+> +	u32 reg[2];
+> +
+> +	for_each_child_of_node(dev->of_node, child) {
+
+You're leaking the reference to the child node. You also probably don't need
+the OF variant, use device_for_each_child_node_scoped() instead.
+
+> +		if (of_property_read_u32_array(child, "reg", reg, 2))
+> +			continue;
+> +		extent = max_t(size_t, extent, (size_t)reg[0] + reg[1]);
+> +	}
+> +
+> +	return extent;
+> +}
+> +
+> +/*
+> + * Find the vendor GUID of a variable given only its (UCS-2) name, by
+> + * enumerating the variable store.  Used when no 'efivar-guid' is provided.
+> + */
+> +static int efivar_nvmem_find_guid(const efi_char16_t *want, efi_guid_t *out)
+> +{
+> +	unsigned long max = 512; /* in UCS-2 chars; variable names are short */
+> +	efi_char16_t *name;
+> +	efi_guid_t vendor = {};
+> +	efi_status_t status;
+> +	int ret = -ENODEV;
+> +
+> +	name = kcalloc(max, sizeof(*name), GFP_KERNEL);
+
+efi_char_16t *name __free(kfree) = kcalloc(...);
+
+> +	if (!name)
+> +		return -ENOMEM;
+> +	name[0] = 0;
+
+Doesn't kcalloc() imply it?
+
+> +
+> +	for (;;) {
+> +		unsigned long name_size = max * sizeof(*name);
+> +
+> +		status = efivar_get_next_variable(&name_size, name, &vendor);
+> +		if (status == EFI_BUFFER_TOO_SMALL) {
+> +			efi_char16_t *tmp;
+> +
+> +			max = name_size / sizeof(*name) + 1;
+> +			tmp = krealloc_array(name, max, sizeof(*name), GFP_KERNEL);
+> +			if (!tmp) {
+> +				ret = -ENOMEM;
+> +				break;
+> +			}
+> +			name = tmp;
+> +			continue;
+> +		}
+> +		if (status != EFI_SUCCESS) /* EFI_NOT_FOUND ends the walk */
+> +			break;
+> +
+> +		if (!ucs2_strncmp(name, want, ucs2_strlen(want) + 1)) {
+> +			*out = vendor;
+> +			ret = 0;
+> +			break;
+> +		}
+> +	}
+> +
+> +	kfree(name);
+> +	return ret;
+> +}
+> +
+> +static int efivar_nvmem_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	const char *name, *guid_str;
+> +	struct nvmem_config cfg = {};
+> +	struct efivar_nvmem *priv;
+> +	struct nvmem_device *nvmem;
+> +	efi_char16_t *name16;
+> +	efi_guid_t guid;
+> +	guid_t g;
+> +	unsigned long size;
+> +	efi_status_t status;
+> +	u32 attr;
+> +	int i, len, ret;
+> +	void *buf;
+> +
+> +	/*
+> +	 * The EFI variable service may not be a native EFI runtime service;
+> +	 * backends such as the Qualcomm uefisecapp driver register the
+> +	 * efivars operations asynchronously.  Wait for them.
+> +	 */
+> +	if (!efivar_is_available())
+> +		return -EPROBE_DEFER;
+> +
+> +	ret = device_property_read_string(dev, "efivar-name", &name);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "missing 'efivar-name'\n");
+> +
+> +	/* ASCII variable name -> UCS-2 as expected by the EFI service */
+> +	len = strlen(name);
+> +	name16 = kcalloc(len + 1, sizeof(*name16), GFP_KERNEL);
+
+efi_char_16t name16 __free(kfree) = kcalloc(...);
+
+> +	if (!name16)
+> +		return -ENOMEM;
+> +	for (i = 0; i < len; i++)
+> +		name16[i] = name[i];
+> +
+> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv) {
+> +		kfree(name16);
+> +		return -ENOMEM;
+> +	}
+> +
+> +	/*
+> +	 * The vendor GUID is optional: if it is not provided, look the
+> +	 * variable up by name across the whole store.  A variable that has
+> +	 * not been provisioned yet is reported as not found and handled
+> +	 * below like an erased EEPROM.
+> +	 */
+> +	if (!device_property_read_string(dev, "efivar-guid", &guid_str)) {
+> +		ret = guid_parse(guid_str, &g);
+> +		if (ret) {
+> +			kfree(name16);
+> +			return dev_err_probe(dev, ret, "invalid 'efivar-guid'\n");
+> +		}
+> +		memcpy(&guid, &g, sizeof(guid));
+> +		status = EFI_SUCCESS;
+> +	} else {
+> +		ret = efivar_nvmem_find_guid(name16, &guid);
+> +		if (ret && ret != -ENODEV) {
+> +			kfree(name16);
+> +			return dev_err_probe(dev, ret,
+> +					     "failed to look up variable '%s'\n",
+> +					     name);
+> +		}
+> +		status = ret ? EFI_NOT_FOUND : EFI_SUCCESS;
+> +	}
+> +
+> +	/* First attempt with a modest buffer; grow if the firmware asks. */
+> +	size = 512;
+> +	buf = kzalloc(size, GFP_KERNEL);
+
+void *buf __free(kfree) = kzalloc(size, GFP_KERNEL);	
+
+> +	if (!buf) {
+> +		kfree(name16);
+> +		return -ENOMEM;
+> +	}
+> +
+> +	if (status == EFI_SUCCESS) {
+> +		status = efivar_get_variable(name16, &guid, &attr, &size, buf);
+> +		if (status == EFI_BUFFER_TOO_SMALL) {
+> +			kfree(buf);
+> +			buf = kzalloc(size, GFP_KERNEL);
+
+krealloc()?
+
+> +			if (!buf) {
+> +				kfree(name16);
+> +				return -ENOMEM;
+> +			}
+> +			status = efivar_get_variable(name16, &guid, &attr,
+> +						     &size, buf);
+> +		}
+> +	}
+> +	kfree(name16);
+> +
+> +	if (status == EFI_NOT_FOUND) {
+> +		/*
+> +		 * Variable not provisioned yet: behave like an erased
+> +		 * EEPROM so that consumers still probe and fall back to
+> +		 * their defaults.
+> +		 */
+> +		kfree(buf);
+> +		size = efivar_nvmem_cells_extent(dev);
+> +		if (!size)
+> +			return dev_err_probe(dev, -ENODEV,
+> +					     "variable '%s' not found and no cells described\n",
+> +					     name);
+> +		buf = kzalloc(size, GFP_KERNEL);
+> +		if (!buf)
+> +			return -ENOMEM;
+
+Sprinkle in some newlines after return for better readability here and
+elsewhere.
+
+> +		dev_info(dev, "variable '%s' not provisioned, reading as zeroes\n",
+> +			 name);
+> +	} else if (status != EFI_SUCCESS) {
+> +		kfree(buf);
+> +		return dev_err_probe(dev, -ENODEV,
+> +				     "GetVariable('%s') failed: 0x%lx\n",
+> +				     name, status);
+> +	} else {
+> +		dev_dbg(dev, "variable '%s' attr=0x%x size=%lu\n",
+> +			name, attr, size);
+> +	}
+> +
+> +	priv->data = devm_kmemdup(dev, buf, size, GFP_KERNEL);
+> +	kfree(buf);
+> +	if (!priv->data)
+> +		return -ENOMEM;
+> +	priv->size = size;
+> +
+> +	cfg.dev			= dev;
+> +	cfg.name		= "efivar";
+> +	cfg.id			= NVMEM_DEVID_AUTO;
+> +	cfg.owner		= THIS_MODULE;
+> +	cfg.type		= NVMEM_TYPE_OTP;
+> +	cfg.read_only		= true;
+> +	cfg.word_size		= 1;
+> +	cfg.stride		= 1;
+> +	cfg.size		= priv->size;
+> +	cfg.reg_read		= efivar_nvmem_reg_read;
+> +	cfg.priv		= priv;
+> +	cfg.of_node		= dev->of_node;
+> +	cfg.add_legacy_fixed_of_cells = true;
+
+I think it looks better without tabs. Better yet, use compound literal:
+
+	cfg = (struct nvmem_config){
+		.dev = dev,
+		...
+	};
+
+> +
+> +	nvmem = devm_nvmem_register(dev, &cfg);
+> +	return PTR_ERR_OR_ZERO(nvmem);
+
+return PTR_ERR_OR_ZERO(devm_nvmem_register(dev, &cfg)); ?
+
+> +}
+> +
+> +static const struct of_device_id efivar_nvmem_of_match[] = {
+> +	{ .compatible = "nvmem-efivar" },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, efivar_nvmem_of_match);
+> +
+> +static struct platform_driver efivar_nvmem_driver = {
+> +	.probe = efivar_nvmem_probe,
+> +	.driver = {
+> +		.name = "nvmem-efivar",
+> +		.of_match_table = efivar_nvmem_of_match,
+> +	},
+> +};
+> +module_platform_driver(efivar_nvmem_driver);
+> +
+> +MODULE_DESCRIPTION("NVMEM provider backed by a UEFI variable");
+> +MODULE_IMPORT_NS("EFIVAR");
+> +MODULE_LICENSE("GPL");
+>
+> --
+> 2.54.0
+>
+>
+
+Bart
 
