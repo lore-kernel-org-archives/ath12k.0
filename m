@@ -4,142 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 569C5CCA462
-	for <ath12k@archiver.kernel.org>; Fri, 16 Oct 2026 11:24:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0586CCA464
+	for <ath12k@archiver.kernel.org>; Fri, 16 Oct 2026 12:46:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Sue0K1r/0IfYxGQ4qyY1WgHNHZN4Dy5KY+31i3C02Gg=; b=DtoiZc8OZaQMBgb8r5jrZ4k4t8
-	50ajBcrOXjrWm1aKfY5mWvyP6oewte9wG1E4CLK0A7YyNJpJiCIE1Y+9jBqPllV7dcBmaT1uLoSw0
-	QYFGn9CEZe1PdgSt9kRHtRAsQmc7IoHfLSenj67jplkCIaf68kiJ7hnmnB13TjCxQWxD6vHhwkGvC
-	7F9SgTkEZGXjsPGiXINV6FYOTBY/nn47VqZn2i0OM9HaSGDKvnBoGcWiKcqYgansCVwjXP6qRsB4p
-	Gc8XUTnG8L2E89gM7kLCHnDOKAmtqqUxkSfsWGFrBFQlvrOYlNteJ9srrGVbIOWiPjHqJhXn5gITS
-	X5LdOV9g==;
+	bh=q5zj2v/4C3FbTFOf3UZNW27yR4URj0zj3Unt3ZSOPsY=; b=Wdy4lNgnJbp3rN3yNvPncE7SoV
+	QilzwKxQIH2ZZ7m6zR+kYqYcPP7ThCksq8qgUZlwfoKB21o9Y58U8mXBGpzjO+nhcASviLtnkaMwt
+	FZNNp4+SP2HQykiM/iL9TlzhmMXCznrIwZkFFCyvy1OvmwFtI4OqSIj6iIFsWAG4bPHLGYH+j2iED
+	Nh37JGLNItwyfNaVDSD5tEHGW6ydyFnAP0OitILX/RUiPqIZ//WgMMt+YkPKZHDh6vUYfaa+DqA5c
+	HXdUsJf/MHw0ReSvrwer7lO/DYphon6N6zRWLBLHAnN10+5PoZfp2ozjV8dFjWc3nmsiETdPawa8H
+	k4ynW9eQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHg2l-00000002lEc-06d2;
-	Fri, 16 Oct 2026 11:24:11 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xHhKO-00000002x3O-2C88;
+	Fri, 16 Oct 2026 12:46:28 +0000
+Received: from mail-pj1-x1031.google.com ([2607:f8b0:4864:20::1031])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHg2j-00000002lEO-21fa
-	for ath12k@bombadil.infradead.org;
-	Fri, 16 Oct 2026 11:24:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=Sue0K1r/0IfYxGQ4qyY1WgHNHZN4Dy5KY+31i3C02Gg=; b=DXbbP9gTX+Mts0a5qZ6NHe+KJj
-	On3mbe7+fQ2p84xq8Ek6j1gth57CYjUPV6uFrEnAumGTyWMXKfUJdiLne/SV72YBIQw+jyGITuQ5v
-	8Fkg7N0OcGNwW41ssVWB1Z6RAPPG39QEp6uYl54kGpa36FKc1RFemxjDSykZnhfLKwb3j/6qrE6E3
-	KgtRJ+p7g0zQlwdIt17VWb+lrW+nEHB/Fxo1bLTFrl6snDf+pau2dcHRiOH7GNC9KAE4BTuU8ZXGD
-	cxKBtdRPY+AMf3UhoYo272dmEijnsu2E+t5v4FRBPCBeAX1LFUgN57Nus+OoIqbasPeGO9Uv1rcZK
-	XmFHFF4Q==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
-	id 1xHg2g-00000001RRf-0JWU
+	id 1xHhKM-00000002x2w-0jX6
 	for ath12k@lists.infradead.org;
-	Fri, 16 Oct 2026 11:24:08 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69GAAI4B943302
-	for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 11:24:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=Sue0K1r/0IfYxGQ4qyY1WgHNHZN4Dy5KY+3
-	1i3C02Gg=; b=gBXGqNbz6FgTYmO33eYcO4uwEUf3iDWcuvgw5j8vb2n5pJX39n5
-	BXgz59pOw/EXoopI2TeVGfWKDr14b9W1cVI8t4mI3SYmQjd+ahMoJY8fCOp2PRPV
-	MOfJbCj2icfA2nW2CVCuav7AyUbCj0lR7kIQivBP+gZWClAHFB1ipMKgpsFbzeTf
-	dwARh/ec2NImfrMdjuPBaS4N7od/dNr8ql3wIT61hlsemcgK78Xv4NQbMJvVqHnm
-	lUzPMbX1EzlV6/nm2iwZUwrClkIQH8U9Bmke9yvUOlrEFEpK7KMM/r+29QpEyILJ
-	eK9Tdmt5KfxbUyum/mNELP24mQzycTHe8sA==
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hbhur08y7-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 11:24:01 +0000 (GMT)
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-3592749a017so845585eec.1
-        for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 04:24:01 -0700 (PDT)
+	Fri, 16 Oct 2026 12:46:27 +0000
+Received: by mail-pj1-x1031.google.com with SMTP id 98e67ed59e1d1-3ab752f6244so2055970a91.2
+        for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 05:46:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1792149840; x=1792754640; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1792154785; x=1792759585; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Sue0K1r/0IfYxGQ4qyY1WgHNHZN4Dy5KY+31i3C02Gg=;
-        b=SSaoJ/Kbo2RBq8G6kXqw9xbWS7GDDcrMTBHNAehJY8QfK1iV6NB6v/xCQx5c0xm8Fh
-         wXm6iDNKX/nZt8H0Xyg67IW0WqLmCtFeC6ajsGM56ttbjQPwRB9exOjqWErVoO8L7yVj
-         QpBhWVHW0n7a3+VDrrCDR/J4PYXs5+pYraMiPwwg/NHGB37cEnS3COHcCKpaixAEUi/6
-         M4zdmIWOTCKrNWoWDaY/FH/glbIO0/YNOL+ZyOCMG7d6LRrEIkh7ZlvvsQM26PAky2BU
-         hx5+mWp0FouOAcq3MIu6SXZdMNh0EDhnPl3Zfh+MBox/StVx56aiO+qbTJTGaZzOUxoY
-         /F2A==
+        bh=q5zj2v/4C3FbTFOf3UZNW27yR4URj0zj3Unt3ZSOPsY=;
+        b=qqkDwKXxf1YdFEh92TejPxtYEuDLfDiVPq/clHpO417tfJoiSTVnNIjUvgdEMC043G
+         +bHX0i27Md60IDO7xRy/G+XZB/RqV+iaTlxVr2EDd21yRvT7y/ZtiU4yq4QVRvmi8Au9
+         8MSOPTTwUK85ZvUsOV3PdHbC/Eowoiy7Qh8d+ohngymvL9iNT2/5rMgjRlXsB+RI839z
+         FR9BKoyU/iQaEZEOUfpv+1H7Qv9xL94lht022M5SFpfbjBcMx3zw+w+a0U+2iVg5lrn3
+         RmVbVlEa0g6mYOKyDbCIJtJDx3iOhvUHreunPG8KgqXk3fFxU6HSoEsd2yEmSikMF+OZ
+         Aq0g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792149840; x=1792754640;
+        d=1e100.net; s=20260707; t=1792154785; x=1792759585;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Sue0K1r/0IfYxGQ4qyY1WgHNHZN4Dy5KY+31i3C02Gg=;
-        b=Wyt4murBgdKyM2E+SFt+v07NjRP0wBV129MtFjY0ctLevey6S/ule1fvbsKRtnyQYr
-         VEyr+On6JD/Upnyh8O/VXLXI8sGcZIbhY6Cy74J4eHDf9vILSSZuVs8qFKaRtSUwMFmR
-         co9vInVZDOnvRluxjFI7yPHI5bSXVJkacC9nSgjIZhMJ+p9TAKI0JZzf/FiVLtoBlmap
-         9honeoLVpXAcaDGGyY1a2yVGQ6agMwuIrQIxg8ZvZ5W0FNOD2/ETsBEiM1vrSAffYfpC
-         WVmPMtk35mcsGb+tWHFuHZIM8EFQblH8Xkzu8i4uuQOqCChuMJk2HxBZLt7mok197J35
-         Zo/A==
-X-Forwarded-Encrypted: i=1; AKwUvByC4KKpcqAZXNYzzC+9WhVpftgbHsj5HAZCCCr8gl1mh3HJ+oA7Ibwh0Q/jIhJt/tURQ9aKGSM=@lists.infradead.org
-X-Gm-Message-State: AFq9FYJT7f9yeqoogQm1PM7mAmScS5eAxchEYWTT6yMmdWcQ2z6kFCBg
-	0mrXP7Kycc0o0LxFCj2vpAqj7VjdV0moFcKvFCzzC3QWO3nbVfcmE1iIFIqYbKlJdTwT0Qb7R+E
-	jdVWcd2pviXcz/1SEZoYM9gK0TB3LWtHaVRK01N6q3DHMEy56tvaJWIQlFcGVKZTZJKax9orG
-X-Gm-Gg: AYBFou11sjG1TT6Y0znso60FymkLnrs8b12VJZsQ8YiH8yCcgHK2CKuKQECF5L3/uaR
-	uPghXNcGJhKEq2LBIyCY/RU3gbrJnuCryszuxmDZU1pgEeYi5/tN51jbeyiTxJ99H2H3lEgvKp8
-	JY4khUEASWXxWKsd0BVuN6j7tQOCpW6vkpA48Ie0qeeJ+yDZNfp403XKrNu2rnelHz4LGy+32HN
-	Pa4fVo8R4OiF8L0KHTiWGln6bhRKxX+GJdD908M4wEWTNVz/3aH1GbGP3NzRMx+H3/OKjvEswJg
-	2FkW5Bgm5jKzlbiwAQe5mMr1XVbPBFShNGVMrP5LF1Q6BEuZ4UHAusKJwBz16X0wF/96lIQcaQ2
-	HaMlkrqKYLrCYz8uwoVUpBxavyPKBPN3e
-X-Received: by 2002:a05:701b:4504:10b0:182:c472:b123 with SMTP id a92af1059eb24-182c472d135mr2637385c88.1.1792149840339;
-        Fri, 16 Oct 2026 04:24:00 -0700 (PDT)
-X-Received: by 2002:a05:701b:4504:10b0:182:c472:b123 with SMTP id a92af1059eb24-182c472d135mr2637343c88.1.1792149839634;
-        Fri, 16 Oct 2026 04:23:59 -0700 (PDT)
-Received: from hu-daizhuan-sha.qualcomm.com ([114.94.8.21])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1831b859142sm5190104c88.18.2026.10.16.04.23.57
+        bh=q5zj2v/4C3FbTFOf3UZNW27yR4URj0zj3Unt3ZSOPsY=;
+        b=FepEq/8/tS67b3/bWsNulY8cjVdzfGK18AypgB1HY7mqh33Pu0fhwodUpOEDjoaddv
+         uVpnjJiUYYFG0aWefmlPI+NsrYqDXFu/2Yz9nCKC3J2MTRp0Q6HxXwO83JzVIWvrC8A9
+         jZTJc88Z3FEZdar7y0aRqW1c3EBaQExFLLHEirZzy89ow6h/o2T7NgWdcn2LFrEM6VYI
+         6470dMY80NBk3T1J9nWRjDrdROORDZHEkp2YXXgyuyeApEor5R2Y+/Ko1AdqdXTB5n2I
+         x0dBpzc7t5gDtCXR0bgN0zbdMZ6hdwmbChx9j1TjUnwDPbF3DywJYhNQ0dRFpfIiMEOo
+         Ss8Q==
+X-Forwarded-Encrypted: i=1; AKwUvBzJT+TOp3rr9YuIs0yHAl4lEW3CLU19J8YO3aNeEJXPFETN5zuHSdZA9AwZMheRIjWak/kBxcs=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLI1hedj2gLniD5esDoMmbQ1HJLg6sAg5QzV1T11a32T06ydExn
+	E9Q2PXJ7J3UwrfbfSz6FSGg3QnUmHoJEnEGCi2W4yJojs2ULGVbHaBIM
+X-Gm-Gg: AYBFou0Po479OotXktuUjr79I1nqD9rCDM7xtrVryWBA3Nt/t2Ged9zNSFLDsEOBrxR
+	Ys7xNdSU6109p9tNKIWtSUBnbf1sTVNXQxO/j7qfKu5jl0UT/HRnAyvqgIb0/c/pNieGhRZ7Bse
+	kCLFxA7cRaCcQoHyb2Jerl/+t3S6o1Getcv6Ti9WSR1Wb56Ur2kCnG6K7S5R7IpMfiXOjVEdU1O
+	OWgcGC2sCEWs5jZrnYASPrxJfFznlznJQxwkf85RSSKJvhrIr/ONxkzuzgGyY9y/9GhFYXwT6MS
+	pu2pMMo13JnWmXSj6lGvBXtwISZcITY5qsondEXzYJClzF9kc5tXzRbvo0lbGnkzD26J9fN95q5
+	V4riyCZMqNPbvRE1xnbCTvY+NhcRfUqnTlTDTPEBMy6oHwGJPhCG3wgOW2Axunu1aLCzZvscE+1
+	SHBlZa+suZZLtu6P+35LunrLoW2c4Dy8EFOmrfVjQrfJmN80BudSAJiDqzBkLjGh1iCPwJIlTy8
+	+bMbn5tMh7RUQ==
+X-Received: by 2002:a17:90b:384d:b0:3ac:97bc:4c7b with SMTP id 98e67ed59e1d1-3ac97bc59f6mr5804257a91.14.1792154784685;
+        Fri, 16 Oct 2026 05:46:24 -0700 (PDT)
+Received: from DESKTOP-NM9EKIA ([125.134.240.130])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3acc4991b8asm4073508a91.16.2026.10.16.05.46.22
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 16 Oct 2026 04:23:59 -0700 (PDT)
-From: Daizhuang Bai <daizhuang.bai@oss.qualcomm.com>
+        Fri, 16 Oct 2026 05:46:24 -0700 (PDT)
+From: Joonhoe Kim <26rote@gmail.com>
 To: jjohnson@kernel.org
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-Subject: [PATCH] ath12k: pci: encode qmi_instance using QRTR NID bit layout
-Date: Fri, 16 Oct 2026 16:53:55 +0530
-Message-ID: <20261016112355.1108488-1-daizhuang.bai@oss.qualcomm.com>
-X-Mailer: git-send-email 2.43.0
+Cc: kvalo@kernel.org,
+	baochen.qiang@oss.qualcomm.com,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH ath-next] wifi: ath12k: replenish the RX buffers reaped without a complete MSDU
+Date: Fri, 16 Oct 2026 21:46:20 +0900
+Message-ID: <20261016124620.76-1-26rote@gmail.com>
+X-Mailer: git-send-email 2.55.0.windows.5
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE2MDA0NSBTYWx0ZWRfXwKlxbkkB+bVj
- bpEen+EXfijNMPmRfzzyWS3NicbHXOGaT8kxPbX00Q2DH6uz/j2Ys9gONKXNjCj95l2MwNQN06P
- 24SETq2rrF3PGZtnWowui3Ax+eZkc8FSY4KIsx8NZ2Mw79a6+/B7CNoxqImeDMm37ZXWBVQJ8wn
- CI0P6i3/hw1kaiN1wPqCbOhnjtpjtrFgrfoj9ZDZKsaKsElDT9HazenqO7E7JG7y5mOslYCjDo5
- IShMa4B7MUtIBbZ/NqaQLgr03lkfNpCqlwsk8W+u+V/VgTcAvnlwyR8CDRTjxZio6GIM7psfIno
- Wt3Q5dgnvxDJdqlinwD3iro8kAP3lSH0QCFtNoKkMAzGILc+c1zQru/yTSie96Q1t1pBcIWwRfj
- NbZwhx2R06GtP1PHLU2fZYn9HBxMg8OXPR5qimXn491WDlSNJY/4mMXzstpLBEIWx+IWEot7ns7
- 6AR3pyWYT3Cry6r7hLA==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE2MDA0NSBTYWx0ZWRfX2nYqXIW401Og
- gKBZLlwX4lYZpaN9g7nxUzapN98rxrx/RIonGYO2OTZTElgGxBkdeHzy2PaOQR43Jmiq7TAAikb
- Rs78sWf8mK5Lecv3YMy1BQvpBJp5hAo=
-X-Authority-Analysis: v=2.4 cv=PqsG/AM3 c=1 sm=1 tr=0 ts=6ad20951 cx=c_pps
- a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=Uz3yg00KUFJ2y2WijEJ4bw==:17
- a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22 a=EUspDBNiAAAA:8
- a=1poW-r593qKSufNXtKQA:9 a=bBxd6f-gb0O0v-kibOvt:22
-X-Proofpoint-ORIG-GUID: ElgN3wxVPyWujOOerVpmRIhGB9JKsO2r
-X-Proofpoint-GUID: ElgN3wxVPyWujOOerVpmRIhGB9JKsO2r
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-10-16_01,2026-10-14_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 bulkscore=0 priorityscore=1501 lowpriorityscore=0 impostorscore=0
- phishscore=0 clxscore=1011 malwarescore=0 suspectscore=0 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2610080000 definitions=main-2610160045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_122406_633687_0C28FE5F 
-X-CRM114-Status: GOOD (  14.10  )
+X-CRM114-CacheID: sfid-20261016_054626_236894_308CE198 
+X-CRM114-Status: GOOD (  11.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -154,80 +99,52 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-With ATH12K_FW_FEATURE_MULTI_QRTR_ID enabled, firmware derives the WLAN
-QRTR node ID as:
-  NID = IPC_ROUTER_DEFAULT_PROCESSOR_ID + PCIE_LOCAL_RSV0[15:0]
+ath12k_wifi7_dp_rx_process() returns early when none of the buffers
+reaped from the REO destination ring ends an MSDU, for example when
+they are all error pushes or continuation buffers whose last part has
+not arrived yet. The reaped descriptors are then neither posted back
+to the refill ring nor freed, and their skbs leak, so the refill ring
+loses those buffers for good.
 
-The host programs qmi_instance into PCIE_LOCAL_RSV0. Using an
-incompatible bit placement can overlap node IDs used by other
-processors and cause QRTR node registration conflicts.
+Replenish the reaped buffers before checking for complete MSDUs, and
+free the incomplete ones.
 
-Encode qmi_instance using the WLAN QRTR NID bit layout:
-  bits [9:6]   PCI bus number
-  bits [12:10] PCI domain number
+Found by code review while debugging RX stalls on WCN7860.
 
-The proc_id bits [5:0] are fixed to WLAN (7) in firmware and are not
-encoded by the host.
-
-Update QRTR_PCI_* masks to match these bit ranges and remove duplicate
-mask definitions.
-
-Tested-on: QCC2072 hw1.0 PCI CI_WLAN.COL.1.0.c2-00229.1-QCACOLSWPL_V1_TO_SILICON-1
-
-Signed-off-by: Daizhuang Bai <daizhuang.bai@oss.qualcomm.com>
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Signed-off-by: Joonhoe Kim <26rote@gmail.com>
 ---
- drivers/net/wireless/ath/ath12k/pci.c | 9 +++++++--
- drivers/net/wireless/ath/ath12k/pci.h | 6 ++----
- 2 files changed, 9 insertions(+), 6 deletions(-)
+WCN7860 runs here with out-of-tree enablement patches. This path did
+not trigger in about 105 minutes of TCP soak runs on it, so the fix
+comes from reading the code.
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 12bbb75570f1..ac4bfd5b247d 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -711,9 +711,14 @@ static void ath12k_pci_init_qmi_ce_config(struct ath12k_base *ab)
- 	ab->qmi.service_ins_id = ab->hw_params->qmi_service_ins_id;
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+index a32c804403e8..abd262d58a97 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
+@@ -801,9 +801,6 @@ int ath12k_wifi7_dp_rx_process(struct ath12k_dp *dp, int ring_id,
  
- 	if (ath12k_fw_feature_supported(ab, ATH12K_FW_FEATURE_MULTI_QRTR_ID)) {
-+		/*
-+		 * QRTR NID layout: [12:10] domain, [9:6] bus, [5:0] proc_id.
-+		 * proc_id is fixed for WLAN and is not encoded into qmi_instance.
-+		 */
- 		ab_pci->qmi_instance =
--			u32_encode_bits(pci_domain_nr(bus), DOMAIN_NUMBER_MASK) |
--			u32_encode_bits(bus->number, BUS_NUMBER_MASK);
-+			u32_encode_bits(bus->number, QRTR_PCI_BUS_NUMBER_MASK) |
-+			u32_encode_bits(pci_domain_nr(bus),
-+					QRTR_PCI_DOMAIN_NR_MASK);
- 		ab->qmi.service_ins_id += ab_pci->qmi_instance;
+ 	spin_unlock_bh(&srng->lock);
+ 
+-	if (!total_msdu_reaped)
+-		goto exit;
+-
+ 	for (device_id = 0; device_id < ATH12K_MAX_DEVICES; device_id++) {
+ 		if (!num_buffs_reaped[device_id])
+ 			continue;
+@@ -816,6 +813,11 @@ int ath12k_wifi7_dp_rx_process(struct ath12k_dp *dp, int ring_id,
+ 					    num_buffs_reaped[device_id]);
  	}
- }
-diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-index 0e0e2020c6ae..35e8e0fe15cd 100644
---- a/drivers/net/wireless/ath/ath12k/pci.h
-+++ b/drivers/net/wireless/ath/ath12k/pci.h
-@@ -61,8 +61,6 @@
  
- #define PCIE_LOCAL_REG_QRTR_NODE_ID(ab) \
- 	((ab)->hal.regs->qrtr_node_id)
--#define DOMAIN_NUMBER_MASK			GENMASK(7, 4)
--#define BUS_NUMBER_MASK				GENMASK(3, 0)
++	if (!total_msdu_reaped) {
++		__skb_queue_purge(&msdu_list);
++		goto exit;
++	}
++
+ 	ath12k_wifi7_dp_rx_process_received_packets(dp, napi, &msdu_list,
+ 						    ring_id);
  
- #define PCI_BAR_WINDOW0_BASE	0x1E00000
- #define PCI_BAR_WINDOW0_END	0x1E7FFFC
-@@ -73,8 +71,8 @@
- #define PCI_PARF_END		0x1E0BFFC
- #define PCI_MHIREGLEN_REG	0x1E0E100
- #define PCI_MHI_REGION_END	0x1E0EFFC
--#define QRTR_PCI_DOMAIN_NR_MASK		GENMASK(7, 4)
--#define QRTR_PCI_BUS_NUMBER_MASK	GENMASK(3, 0)
-+#define QRTR_PCI_BUS_NUMBER_MASK	GENMASK(9, 6)
-+#define QRTR_PCI_DOMAIN_NR_MASK		GENMASK(12, 10)
- 
- struct ath12k_msi_user {
- 	const char *name;
-
-base-commit: cd026e68fdbf88b9cc522b76c7a9d92c9a41f709
--- 
-2.43.0
-
 
