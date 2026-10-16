@@ -4,115 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AA29CCA462
-	for <ath12k@archiver.kernel.org>; Fri, 16 Oct 2026 03:22:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73717CCA466
+	for <ath12k@archiver.kernel.org>; Fri, 16 Oct 2026 03:22:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=rFSUrf52fZeZMeoppAayxkZehctWo1nANACcjlXP9pA=; b=GYv56IDsFYqylHMaCSw2ATsNP0
-	svI1Xu/u/7aHOYPiR9SZxXqGjctyAzdrZRVeCjemQRVEK75Ml1CU7VgVAKKKTqw7e9NRx3VQMTOti
-	p4j7KhrmiK2Lc0/fIkT6SVt3gH13MLy1c0x58or3HcZ09BMglGpP3j4a90FbGPqUQxnqVfWchj3oS
-	ogqRXC8l6BGdYNkor6ZcsCr8N3fM4mG/vmJIhOVJWaG2NLn+/lUnq/PS/ARFlTZkZsq0VzdPQ+oSV
-	QdnYx+zA9bnHFnH6Qz8oH6K9JqLg9JtX8v0VSPSK7UNyMeeV0x1uDr6wWhuokCTbI6tLjeCA+WlAx
-	8Fe+rLxw==;
+	bh=5kUQdOW24c5jNgScPxlXh4VzOb4yzLmXbjVCRfz9C3I=; b=xNjRyzZHelslMYgdrc1YWZeRJ9
+	Xn5rNKHuY1lYmTu7cLmtTtSOjhatq5XxXMWJTnXCCu8dbJY2g8iiQCNLctZ5jV+j0/yE6edUeefD1
+	BSKoOTN4Ey5gegfhjyuZVVznG3/b7DlqqglJzSqSgadwE+K3Laoj+yWJ8uS7KIwMsAEFnvS4Qpdi9
+	G7AT+3GohZeuKv1FY8i7s8ha/Diy0QOXjoESekQzNe+ZXLYDHTryWM51s7kHGHEqcOgzS+/L/4KaG
+	mSKatApgLpX0G5YJKeEuH0pUCEIaIageR2lPdgOdgDtOf4w5RTapUAeF3VWfm1uAkKad3JnLj1d9e
+	YQjiCjyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHYWi-00000001pek-39wU;
-	Fri, 16 Oct 2026 03:22:36 +0000
+	id 1xHYWm-00000001piO-3zKI;
+	Fri, 16 Oct 2026 03:22:40 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHYWh-00000001pdP-10HN
+	id 1xHYWl-00000001pgO-0AUu
 	for ath12k@bombadil.infradead.org;
-	Fri, 16 Oct 2026 03:22:35 +0000
+	Fri, 16 Oct 2026 03:22:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=rFSUrf52fZeZMeoppAayxkZehctWo1nANACcjlXP9pA=; b=KSq2+W6Fi43x9+KRmHPvtTKzvB
-	CGJpCdfzqKZAw6wi9so2rwo5AA4WPhUTlUvQhWK68/MUPMxDp24bdyv6q8U83cu1f/bdRtDYCov4w
-	F+/a3H4aIoFYhniWH56Nt0cfgnFr2GnvrXAZnQ+7srebmqzgTPtgCnUF4paklDL38mj7gwY7rDoY3
-	dQdhztJBp9vfSErinfnUt3LYXYOUDBVtd+tK2Bh2FjzQYpOocpMpi1CI8D3Ph6613i7NZxKcJuOYW
-	CQCS+z5lgUkFJGO3Dit8CTZdiyXKxBWZG0u/H3ybKAHJpcL9gT3UjL2cPVvpdtCzoHWanrmHPxSge
-	XssYifpg==;
+	bh=5kUQdOW24c5jNgScPxlXh4VzOb4yzLmXbjVCRfz9C3I=; b=dHAvgmSSDUpgb1L1ToqkU7wEag
+	CTQ8RH0yZWSQNxRjWtzb+98cICiwkMxHdouZXssuMOHdT6yKFhbRLFDJco9y+lYAHRb3Y0P79C+qN
+	U7LwqErFHI25MHBrOE8JRIyGNqmOVSUHRNGx9rC9B0ysODo57A7Gytggp5qt+0GggbHLMoD1LJ7Sm
+	w3vsu1zhjlgM7CYy6KWR41K9MczqwqQndCdrqpUeK51qtbmmfLJxXsIbC/K0pYGC3AS9cH8Ir+0Pi
+	H+Zlp+26TiBKP+b/a9auXTGPR1J95GMcJGDpADZVliQp0iCqch4IA8wcbQ1w7AGLs/RKP+San8Ii+
+	u1LXszJQ==;
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
-	id 1xHYWb-000000012VP-0jsN
+	id 1xHYWf-000000012Wo-0pQX
 	for ath12k@lists.infradead.org;
-	Fri, 16 Oct 2026 03:22:33 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69FKKCTp3800043
-	for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 03:22:27 GMT
+	Fri, 16 Oct 2026 03:22:37 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69FNCh5c557562
+	for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 03:22:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	rFSUrf52fZeZMeoppAayxkZehctWo1nANACcjlXP9pA=; b=IhzZtxuwPqElPCY7
-	WhGPCOTJ/drqiHBzvNTTuMOvIdlPyY83jY4LOR0XE5KfeGx6bQ72ZlTeWHE01Wp8
-	nBruy41A6zmfThknvOivMwuqgWqS9K1MmpiEqb76U58NV+jkO90fJW+vtXWTh9NF
-	edaFRvz+7w2bTufdFIAF7VIaQw1bEZfxy9PZPjuKPMhKy3WjCBVyqi6u59ilRMdE
-	Krugt3DoOcBSBMj9FOMSK73JIVvHoi4CZMbDaDYXBXpxJmWYHWWeZ6SMB7VOIsnI
-	OvTu1+67KvV2KE+zZZrrKVQoMXs5zacjFGdBy/OkEmFJ/WgKll7IFNna83uWJB9v
-	0BB9Ag==
+	5kUQdOW24c5jNgScPxlXh4VzOb4yzLmXbjVCRfz9C3I=; b=Hs6xo075deQa5g+J
+	HbNwJvBoKM6xiougM26CaneMWkgjJoqHoMdBsr/3z0ikWuAFVu8dFmenBqSLZtfa
+	Cm4CidWmYQmdo2+2q5WwgCCeDN3cjY1XdNZtHW3itl0gaTucns7zo/QipzE+zXoM
+	Ns2frhBo33vh33I7aeuSStJ6zr2OoHE2KYoJPFDBTecyCEi0CW2dAc1NFyGvrw5n
+	PPPGTKwwPCwK7RKnOtThYGYO5yJJpA5vx67gMuydrpVx6v8UspcLk1gaefxuvdKx
+	GF01L4+75etKT7YMKa8OEfeOry1ykHEHDsdzyL+vzN+tDpMxASf11i6w7Ig29Zjz
+	3gUr9Q==
 Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hb5se99r3-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hb8a88p5y-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 03:22:26 +0000 (GMT)
-Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-30c0d568830so12130037eec.1
-        for <ath12k@lists.infradead.org>; Thu, 15 Oct 2026 20:22:26 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 03:22:30 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-30bcb065bfdso10584831eec.0
+        for <ath12k@lists.infradead.org>; Thu, 15 Oct 2026 20:22:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1792120946; x=1792725746; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1792120950; x=1792725750; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=rFSUrf52fZeZMeoppAayxkZehctWo1nANACcjlXP9pA=;
-        b=B2N71/gzucgH0PTl5DR9qNYnqgv3/rip1+WtLNiI8Dw1uD9tEx4COAh5FsAKZv/pbX
-         /RCctgKTySac2EPOPjDG8aCYsYn6giBrLISNI5USSYdYVyg4Xe7+XaMVCrg3oz9tcmgR
-         IIOftUSSihJ2SV7pjS/McKo9FcpIRpMIXHef9Y3qAsCzoDH/3ySs4Zoc1lGXO+rhut4p
-         MCvcqP6Yeqw2NqOjaP61hcWVBPqCVwb+7Ci+4KSUsHHu8iSG+ashVlvo3kIE6EbdQfnN
-         JVom1mWycEaNoneIeyMzMVlhEGQjHALYprdt12YqwUAb7y2BmG+Tz7ITeZSSgQDcYwDJ
-         smVw==
+        bh=5kUQdOW24c5jNgScPxlXh4VzOb4yzLmXbjVCRfz9C3I=;
+        b=XQhsuKONf+V2B+0ey1Oh1W3hD4vGj001lB2PCqwqsVDkenx/BX37RWnqj9ZnepHCtJ
+         2HZ73Ly2yM7wPmC9rHtP8tZ4GcD6EiMtBq66AtAz788Wmu0ye5DQZMQdPeo8tnoHYxmt
+         tlHnMJlGFy7stkgyLKtn1bMK6iey/ddUEG8hR5NAkXAovmdlBWAODtYmf3BpsaVhrJjZ
+         +NEWr0B6sxozaWM+VXly9YzULWblsx5GFTx95ZbFy17Gi9QxhsKZ3YMaT9iIK8apiJGB
+         vNycUZXt/S563WF3a50PhMo/s+xXB9HKkxcNalwia7d19TbWw+6IjSvAqOHszuTxfwvI
+         YSAA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792120946; x=1792725746;
+        d=1e100.net; s=20260707; t=1792120950; x=1792725750;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=rFSUrf52fZeZMeoppAayxkZehctWo1nANACcjlXP9pA=;
-        b=0w2YxFQhzrW0j+dE+8mfRT6Qr/x8B1SwrpMkxa5jApYEeVp1veWuHBE3fCpf1kEp9p
-         xfx0NnGwCpL2G6q52UHcvV9jWQ6XWEvNdvhLpAo0/C68fYlNlr4+Vy/qowrLGzXIPDld
-         znLIATcs/EDXqbKxdogwGn3jGni930TfQyzhvE9RZkQo7KsZ2+U2QuttXo3UhDOf5SaO
-         S2h0LHb2gKqowXITvcwa3/LlJX98DHAj7lLALD1IhUerTRA7ARkMfG294agspgviHXtr
-         q3jA/OL/HsIE23NbnTVQSWmtK2k4abLLME8Pj/eZVI8j9TIvN6s6OULbN6HmEJ4uMFxN
-         crPA==
-X-Forwarded-Encrypted: i=1; AKwUvBwGwlpitIx1zLRruOUWz/R3VaXAbo3MLEEgCoAVdbF+/DJp7BMkyUMes/9McXI2Q+87KperzcA=@lists.infradead.org
-X-Gm-Message-State: AFq9FYJxiWpKQGg8q0HAer+CkQNJZMlmaO+SaGWmNTuivx7VPetZAFXK
-	FuZxDi9MPDKgZqG+E3++c4Hf0uV8uizR4HgxF97k8yNwOPMbBZRqhyTkYcmLTXpYNiBMpkGpm7h
-	j4dvqL4kjhrHbLkd7XMiSTUWskyPD3O+y2dOB4C4UgApDuT02mUbxFzd0eQFn4j4D
-X-Gm-Gg: AYBFou0v07w5moZ320V0e+rYsvaxsMf1iNqRsut7cMFeIwiFCbBhVZQT0y1Cb8VeZoG
-	+9U5jQj/SOrRjsjBIbXiObV08A4fyeDHuNAGPNagJI2mkrzZWEupjPv6UqtSAJVi/1QrjL61bZM
-	NdF307ewqfq50iiW2zmzbZzMHOjXzGZZ7RdRdAvt92s+NNIS/HJRuYbd0egFG1JhfNsLPup/5+o
-	31bHgL0vzfwC2+ED5dTnYLDHkE+nfcUPGb5bAgYX9cWYMh2Fji/pO50lvKTTq+/4ZHvAIiXBDLB
-	llgxnlz4xC5aV628nVZHWsDKveGJ/qi8VsrnyBmOZ54HWT5CcYxpZoKGNLRLPYC1DrVmUzBvqPQ
-	DT8aNjg/wBeumeRk3bxrlqIhd/MGZa8ROWjMhgJrTjI1NMstdiDUyl6loms7F+jq4zqOcINrLcj
-	NID70etA4HGbzBP4VaG5nwFw==
-X-Received: by 2002:a05:693c:2806:b0:353:7f17:4358 with SMTP id 5a478bee46e88-3537f174c08mr25480182eec.24.1792120945919;
-        Thu, 15 Oct 2026 20:22:25 -0700 (PDT)
-X-Received: by 2002:a05:693c:2806:b0:353:7f17:4358 with SMTP id 5a478bee46e88-3537f174c08mr25480152eec.24.1792120945315;
-        Thu, 15 Oct 2026 20:22:25 -0700 (PDT)
+        bh=5kUQdOW24c5jNgScPxlXh4VzOb4yzLmXbjVCRfz9C3I=;
+        b=N/QC4JF8t9uuCuLrg4Jz/MTfl7847EeQ7+Zm4qnVnfLS9sFMTAaj6Mmfo4fbvrUblR
+         xWG+mJjErC8oIJCYw4PPKLZy1l4tYqVAckR5vzJeU0pB1GXo/0KJlGFdzNfklLwXtyY/
+         IUePGLqjUWSGLeRX9KBRYnP53A/7a3Unz8MTU0JSBLcndJ5fNCdZrCXyDi3EInUVgIkQ
+         oB8gIJUERPLvK53sD6TT65amf55+T+mQgSlkT7DVBTRemmoRHwj3rDOaLhKO76W+Nux+
+         J+2kk0KFfezh/deTzLTZUEwloG3eye7CvHTHbRBVJHHbOdz45TRjds/7VzHwiBtx1prJ
+         x73A==
+X-Forwarded-Encrypted: i=1; AKwUvBwtY3RbM3P6KhKZZ8UmImP3wpaazU7fcEefqhuWDYlLHaBoedQZZx7m22uJRVkf+rR+4NjtieE=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJbCapkT6nDCPnIv7ysVPZwuHqrSPevqoqxYEjUcqT/XokdPcaO
+	gJFcTgdq1G4OHArdbm/BUypfFtqsiISQnGra8ZmejEJcyiBWaiT+mJcmzlzGmVj543KOD7FBkqB
+	iVybShmRrO62YHZvqwh5EG3Z/nvwYpuXlmE844nnDEPNW56AU96nvLaMbBLn72/2T
+X-Gm-Gg: AYBFou29sS1/3aCEJJB37G0xNsC5gZgBJ6FrSS4/gPc7t//j+dkWQF9evYteQ6zWNVi
+	gMXteFck++tjvqgF3yiYCZ4Aj5yjvPJmjvER7K8xPNZpEXYrgCljYWJd0aEYkJiTAi3kc6YWG6R
+	mN7UUUB1yEavn/evEOMJuDikDWM73VRQzD025Yq18LLTapkduAU3RiWCllq72MCtFtHKPLjHS8p
+	GWN7itFzbmx4ESu4TdDuTpeT95U+k9dX8GpH045BaZ9hEYJ9LKOftmy16zaNzexHIc6q4BqLRQV
+	xjV1epG2md/pFpwX1tQWeENZL2hdNysoYsLB5bDGfUtVySL0sPaI/3x2zf4BP2+/aOSdmByRP01
+	QnkXHuuUi+dEBwe5uJ+nHQJ/412+i5shrQXztByV0JxEMbECkA9CBDoD8as4yJQ/9jKqdvXvWT5
+	QY0DMAoeTDTlPcXdLghGq6hw==
+X-Received: by 2002:a05:7300:cd91:b0:351:dbc:b663 with SMTP id 5a478bee46e88-3537e13248cmr40625988eec.31.1792120950150;
+        Thu, 15 Oct 2026 20:22:30 -0700 (PDT)
+X-Received: by 2002:a05:7300:cd91:b0:351:dbc:b663 with SMTP id 5a478bee46e88-3537e13248cmr40625950eec.31.1792120949655;
+        Thu, 15 Oct 2026 20:22:29 -0700 (PDT)
 Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-360819be413sm2256698eec.13.2026.10.15.20.22.21
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-360819be413sm2256698eec.13.2026.10.15.20.22.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 15 Oct 2026 20:22:24 -0700 (PDT)
+        Thu, 15 Oct 2026 20:22:29 -0700 (PDT)
 From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Date: Fri, 16 Oct 2026 08:51:45 +0530
-Subject: [PATCH ath-next v2 08/17] wifi: ath12k: Add hif operation support
- for QCN6432
+Date: Fri, 16 Oct 2026 08:51:46 +0530
+Subject: [PATCH ath-next v2 09/17] wifi: ath12k: add support for unified
+ data-region memory allocation
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261016-mpp-bringup-v2-8-f510c33bfcf5@oss.qualcomm.com>
+Message-Id: <20261016-mpp-bringup-v2-9-f510c33bfcf5@oss.qualcomm.com>
 References: <20261016-mpp-bringup-v2-0-f510c33bfcf5@oss.qualcomm.com>
 In-Reply-To: <20261016-mpp-bringup-v2-0-f510c33bfcf5@oss.qualcomm.com>
 To: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -120,39 +120,38 @@ To: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
-        Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>,
         Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE2MDAxMiBTYWx0ZWRfXz04lAByFyeh+
- Qt2XXRtGsHPi9IfxsrGuGMlnAvJXRy4R46VCEy6UYuG27eaJ44l7LZ2dwHBo0RfB42f3qDJRr26
- CyZ97mVQiXRIT4fmpmdF/AaRoDOc1Ao=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE2MDAxMiBTYWx0ZWRfX65LNLOZb83/i
- Ec8RvICG3YjMKw8uMaczBeNAnMyb44UlQDnM0Jrd6BT9iu9xeHw1rSuSsAnzPM57Q1TpRMelbuR
- C6aZvAtsASMrDyFSnJRUDL+Gtf2UrFipf/oxVwv0n/MU5dRNlKFktIq0be+Uce9KSBdhYqCxpg/
- x9/FBo2gTu/om49YET2u7O/C68+NXz1ccOR3/VaSEHJ0vCSkndsEnbTNqs1n6+CtQcMSNweMWDC
- ec+9BYcillvOXosBwpU7G7GyRBvCcj0PdT6kX83ii323IdVPiFuF6OCCot8xE64kyOjKo/1l80Y
- 1ICp5NzTBA3+EkNr1hXA4tYJDiXRU8i1Jyto+JuuVeJ8fYZUm9c9MEhRR7zk6+kCnJQJWxa8pUH
- CJsNzLIG7adw6NDEBAnoyBeDtiY3xHHLootLE/pOBWmyWrvvfrZexVq3ywbLIyBkxR+afkswoah
- JptewsUKxoPYKokxeDQ==
-X-Authority-Analysis: v=2.4 cv=P4yvFSAu c=1 sm=1 tr=0 ts=6ad19872 cx=c_pps
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE2MDAxMiBTYWx0ZWRfX2JINMdnBaQEt
+ tBK2hLTiA4YjCtt7PM6QEXHQxtTMe5UcBER0V0eLVTWo74/qfsgABsRjLAbo8BNjfwGJO5tQktd
+ t1Da7IbrAtFJAkiPwN0UeE9hu1DX3Qk=
+X-Proofpoint-ORIG-GUID: HnEa3aSNVzyLCVazlyri58IR_DJb9X_5
+X-Authority-Analysis: v=2.4 cv=GJadgeNK c=1 sm=1 tr=0 ts=6ad19876 cx=c_pps
  a=cFYjgdjTJScbgFmBucgdfQ==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=KhQMAEluCXMSMqz3IAgA:9 a=QEXdDO2ut3YA:10
- a=scEy_gLbYbu1JhEsrz4S:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: PiPnYvgn0XnJTpLFtPtWVSOwgW-Fn300
-X-Proofpoint-GUID: PiPnYvgn0XnJTpLFtPtWVSOwgW-Fn300
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=EUspDBNiAAAA:8 a=iclRB15sEzZHjfpwsoEA:9 a=QEXdDO2ut3YA:10
+ a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE2MDAxMiBTYWx0ZWRfX56r7ZA6MMFs1
+ YMolwMLmAmP1+daL14S1QaYVxR6bGal/sCu/p8Whnd8JN9OCVpw4ENZr0DUxavN701jRKnTTPIb
+ mftHGXtvSURXbqGY2E48pJxuSwdcIEDW0X9WZYXI2YnZbAT19EwubZucZBWWASn3c7LJrLQtu/m
+ A1kmLnlair3okGeG2U6k2b7emswgWy9YZ/Sh7EecoWzvsoscIbLDEirxyCFsnrQ+9vJOmFeR5k9
+ RR2Gg8VTOpwxZ3kAZ9YQlp8YJ4Rst8clQ/bw/0cKxMFXcnqPayD9PrE+8K7wL4/oNJSUbcMrZIe
+ hAVEeOy48KgUYm5YSSRNJtkDppgyBCGu+lntdBpAwZW//xmLLAlJndjBqGYA1gj2YSZXe9osctC
+ iNo647KlFieoPVma2TZX3HC4xwqOSz4MgnGeeT1vgbUWeZG+yESrUC6YIhn61vJfjRl99N8z/WM
+ UmqtBBG8XgxK0GvX/Tg==
+X-Proofpoint-GUID: HnEa3aSNVzyLCVazlyri58IR_DJb9X_5
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-14_01,2026-10-14_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 spamscore=0 suspectscore=0 lowpriorityscore=0 clxscore=1015
- malwarescore=0 impostorscore=0 bulkscore=0 priorityscore=1501 phishscore=0
+ clxscore=1015 impostorscore=0 spamscore=0 malwarescore=0 lowpriorityscore=0
+ bulkscore=0 priorityscore=1501 phishscore=0 adultscore=0 suspectscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2610080000 definitions=main-2610160012
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_042231_007804_CF61E61A 
-X-CRM114-Status: GOOD (  24.26  )
+X-CRM114-CacheID: sfid-20261016_042234_366926_5E548F61 
+X-CRM114-Status: GOOD (  21.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,445 +166,148 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+Add support for devices such as QCN6432 that provide the M3 and
+calibration memory through a unified data-region reserved-memory
+node. The QCN6432 device tree continues to provide separate
+q6-region and mlo-global-mem regions, while the memory types
+mapped to M3 and calibration memory are allocated sequentially from
+data-region.
 
-Add hif operations (ath12k_hif_ops) for the QCN6432 Wi-Fi driver.
+Track the allocated space using an offset and allocate each required
+memory chunk from the unified region.
 
-Reuse existing hif operations such as power_up and power_down from
-IPQ5332, as they are identical on QCN6432. Similarly, reuse operations
-like irq_enable, irq_disable, get_user_msi_vector, and
-map_service_to_pipe from QCN9274, since their behavior matches on
-QCN6432.
+If the data-region lookup does not return a reserved-memory region,
+fall back to the existing per-memory-type allocation scheme using the
+named memory regions such as q6-region, m3-dump, and q6-caldb.
 
-Implement QCN6432-specific operations such as start, stop,
-cmem_read32, cmem_write32, read32, write32, get_msi_address, and
-config_static_window in a new pcic.c file.
+Introduce a helper ath12k_qmi_map_target_mem() to initialize and map QMI
+target memory chunks.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01322-QCAHKSWPL_SILICONZ-1
 Tested-on: QCN6432 hw1.0 AHB WLAN.WBE.1.6-01322-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
-Co-developed-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/Makefile    |   2 +-
- drivers/net/wireless/ath/ath12k/ahb.c       |  23 ++++
- drivers/net/wireless/ath/ath12k/ahb.h       |   9 ++
- drivers/net/wireless/ath/ath12k/core.c      |   3 +
- drivers/net/wireless/ath/ath12k/core.h      |   2 +
- drivers/net/wireless/ath/ath12k/hif.h       |  30 ++++++
- drivers/net/wireless/ath/ath12k/pcic.c      | 156 ++++++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/pcic.h      |  22 ++++
- drivers/net/wireless/ath/ath12k/wifi7/ahb.c |   7 ++
- 9 files changed, 253 insertions(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/qmi.c | 83 +++++++++++++++++++++++++++++------
+ 1 file changed, 70 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
-index 3b39b2c33307..861ec85eebed 100644
---- a/drivers/net/wireless/ath/ath12k/Makefile
-+++ b/drivers/net/wireless/ath/ath12k/Makefile
-@@ -22,7 +22,7 @@ ath12k-y += core.o \
- 	    fw.o \
- 	    p2p.o
- 
--ath12k-$(CONFIG_ATH12K_AHB) += ahb.o
-+ath12k-$(CONFIG_ATH12K_AHB) += ahb.o pcic.o
- 
- obj-$(CONFIG_ATH12K) += wifi7/
- 
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-index 2c55aae06dd0..bcb49ff07aa8 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.c
-+++ b/drivers/net/wireless/ath/ath12k/ahb.c
-@@ -16,6 +16,8 @@
- #include "ahb.h"
- #include "debug.h"
- #include "hif.h"
-+#include "pci.h"
-+#include "pcic.h"
- 
- #define ATH12K_IRQ_CE0_OFFSET 4
- #define ATH12K_UPD_IRQ_WRD_LEN  18
-@@ -790,6 +792,26 @@ const struct ath12k_hif_ops ath12k_ahb_hif_ops = {
- };
- EXPORT_SYMBOL(ath12k_ahb_hif_ops);
- 
-+const struct ath12k_hif_ops ath12k_ahb_hif_ops_qcn6432 = {
-+	.start = ath12k_pcic_start,
-+	.stop = ath12k_pcic_stop,
-+	.cmem_read32 = ath12k_pcic_cmem_read32,
-+	.cmem_write32 = ath12k_pcic_cmem_write32,
-+	.power_down = ath12k_ahb_power_down,
-+	.power_up = ath12k_ahb_power_up,
-+	.read32 = ath12k_pcic_read32,
-+	.write32 = ath12k_pcic_write32,
-+	.irq_enable = ath12k_pci_ext_irq_enable,
-+	.irq_disable = ath12k_pci_ext_irq_disable,
-+	.get_msi_address = ath12k_pcic_get_msi_address,
-+	.get_user_msi_vector = ath12k_pci_get_user_msi_assignment,
-+	.map_service_to_pipe = ath12k_pci_map_service_to_pipe,
-+	.ce_irq_enable = ath12k_pci_ce_irqs_enable,
-+	.ce_irq_disable = ath12k_pci_ce_irq_disable_sync,
-+	.config_static_window = ath12k_pcic_config_static_window,
-+};
-+EXPORT_SYMBOL(ath12k_ahb_hif_ops_qcn6432);
-+
- static irqreturn_t ath12k_userpd_irq_handler(int irq, void *data)
- {
- 	struct ath12k_base *ab = data;
-@@ -1324,6 +1346,7 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
- 	ath12k_dbg(ab, ATH12K_DBG_AHB, "AHB device family id: %d\n", device_id);
- 
- 	ab_ahb->device_family_ops = &ath12k_ahb_family_drivers[device_id]->ops;
-+	ab_ahb->reg_base = ath12k_ahb_family_drivers[device_id]->reg_base;
- 
- 	/* Call device specific probe. This is the callback that can
- 	 * be used to override any ops in future
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.h b/drivers/net/wireless/ath/ath12k/ahb.h
-index ecc4054f8742..373dc3b92728 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.h
-+++ b/drivers/net/wireless/ath/ath12k/ahb.h
-@@ -11,6 +11,11 @@
- #include <linux/platform_device.h>
- #include "core.h"
- 
-+struct ath12k_ahb_reg_base {
-+	u32 umac_base;
-+	u32 ce_reg_base;
-+};
-+
- #define ATH12K_AHB_RECOVERY_TIMEOUT (3 * HZ)
- 
- #define ATH12K_AHB_SMP2P_SMEM_MSG		GENMASK(15, 0)
-@@ -65,6 +70,7 @@ enum ath12k_ahb_userpd_irq {
- 
- struct ath12k_base;
- extern const struct ath12k_hif_ops ath12k_ahb_hif_ops;
-+extern const struct ath12k_hif_ops ath12k_ahb_hif_ops_qcn6432;
- 
- struct ath12k_ahb_device_family_ops {
- 	int (*probe)(struct platform_device *pdev);
-@@ -103,12 +109,15 @@ struct ath12k_ahb {
- 	bool scm_auth_enabled;
- 	struct ath12k_ahb_rproc_info *rproc_info;
- 	bool supports_multipd;
-+	u32 static_window_reg;
-+	const struct ath12k_ahb_reg_base *reg_base;
- };
- 
- struct ath12k_ahb_driver {
- 	const char *name;
- 	const struct of_device_id *id_table;
- 	struct ath12k_ahb_device_family_ops ops;
-+	const struct ath12k_ahb_reg_base *reg_base;
- 	struct platform_driver driver;
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 25987bc58556..d2ce01e0d7ac 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1350,6 +1350,9 @@ int ath12k_core_qmi_firmware_ready(struct ath12k_base *ab)
- 	struct ath12k_hw_group *ag = ath12k_ab_to_ag(ab);
- 	int ret, i;
- 
-+	if (ab->hw_params->hybrid_bus_type)
-+		ath12k_hif_config_static_window(ab);
-+
- 	ret = ath12k_core_start_firmware(ab, ab->fw_mode);
- 	if (ret) {
- 		ath12k_err(ab, "failed to start firmware: %d\n", ret);
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index eaea601ab32d..293c7561b27a 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -1161,6 +1161,8 @@ struct ath12k_base {
- 	struct {
- 		const struct ath12k_msi_config *config;
- 		u32 ep_base_data;
-+		u32 addr_lo;
-+		u32 addr_hi;
- 	} msi;
- 
- 	/* must be last */
-diff --git a/drivers/net/wireless/ath/ath12k/hif.h b/drivers/net/wireless/ath/ath12k/hif.h
-index aecdb0c5f285..faeabd2c3d2a 100644
---- a/drivers/net/wireless/ath/ath12k/hif.h
-+++ b/drivers/net/wireless/ath/ath12k/hif.h
-@@ -12,6 +12,8 @@
- struct ath12k_hif_ops {
- 	u32 (*read32)(struct ath12k_base *ab, u32 address);
- 	void (*write32)(struct ath12k_base *ab, u32 address, u32 data);
-+	int (*cmem_read32)(struct ath12k_base *ab, u32 address, u32 *value);
-+	int (*cmem_write32)(struct ath12k_base *ab, u32 address, u32 data);
- 	void (*irq_enable)(struct ath12k_base *ab);
- 	void (*irq_disable)(struct ath12k_base *ab);
- 	int (*start)(struct ath12k_base *ab);
-@@ -31,6 +33,7 @@ struct ath12k_hif_ops {
- 	void (*ce_irq_disable)(struct ath12k_base *ab);
- 	void (*get_ce_msi_idx)(struct ath12k_base *ab, u32 ce_id, u32 *msi_idx);
- 	void (*coredump_download)(struct ath12k_base *ab);
-+	void (*config_static_window)(struct ath12k_base *ab);
- };
- 
- static inline int ath12k_hif_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
-@@ -126,6 +129,24 @@ static inline u32 ath12k_hif_read32(struct ath12k_base *ab, u32 address)
- 	return ab->hif.ops->read32(ab, address);
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index 817bd820623d..cc488cfe2b2f 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -2842,6 +2842,26 @@ static const char *ath12k_qmi_get_mem_reg_name(int mem_type)
+ 	}
  }
  
-+static inline int ath12k_hif_cmem_read32(struct ath12k_base *ab, u32 address,
-+					 u32 *value)
++static int ath12k_qmi_map_target_mem(struct ath12k_base *ab, int idx,
++				     phys_addr_t paddr, u32 size, u32 type)
 +{
-+	if (!ab->hif.ops->cmem_read32)
-+		return -EOPNOTSUPP;
++	ab->qmi.target_mem[idx].paddr = paddr;
 +
-+	return ab->hif.ops->cmem_read32(ab, address, value);
++	if (paddr) {
++		ab->qmi.target_mem[idx].v.ioaddr =
++			ioremap(ab->qmi.target_mem[idx].paddr, size);
++		if (!ab->qmi.target_mem[idx].v.ioaddr)
++			return -EIO;
++	} else {
++		ab->qmi.target_mem[idx].v.ioaddr = NULL;
++	}
++
++	ab->qmi.target_mem[idx].size = size;
++	ab->qmi.target_mem[idx].type = type;
++
++	return 0;
 +}
 +
-+static inline int ath12k_hif_cmem_write32(struct ath12k_base *ab, u32 address,
-+					  u32 data)
-+{
-+	if (!ab->hif.ops->cmem_write32)
-+		return -EOPNOTSUPP;
-+
-+	return ab->hif.ops->cmem_write32(ab, address, data);
-+}
-+
- static inline void ath12k_hif_write32(struct ath12k_base *ab, u32 address,
- 				      u32 data)
+ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
  {
-@@ -153,4 +174,13 @@ static inline void ath12k_hif_coredump_download(struct ath12k_base *ab)
- 	if (ab->hif.ops->coredump_download)
- 		ab->hif.ops->coredump_download(ab);
- }
+ 	struct device_node *np = ab->dev->of_node;
+@@ -2851,6 +2871,48 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
+ 	const char *rname;
+ 	int i, idx, ret;
+ 
++	ret = of_reserved_mem_region_to_resource_byname(np, "data-region", &res);
++	if (ret && ret != -ENODATA)
++		return ret;
 +
-+static inline void ath12k_hif_config_static_window(struct ath12k_base *ab)
-+{
-+	if (!ab->hif.ops->config_static_window)
-+		return;
++	if (!ret) {
++		avail_rmem_size = resource_size(&res);
++		for (i = 0, idx = 0; i < ab->qmi.mem_seg_count; i++) {
++			chunk = &ab->qmi.target_mem[i];
 +
-+	ab->hif.ops->config_static_window(ab);
-+}
++			if (chunk->type == CALDB_MEM_REGION_TYPE) {
++				ret = ath12k_qmi_map_target_mem(ab, idx, 0, chunk->size,
++								chunk->type);
++				if (ret)
++					goto out;
 +
- #endif /* ATH12K_HIF_H */
-diff --git a/drivers/net/wireless/ath/ath12k/pcic.c b/drivers/net/wireless/ath/ath12k/pcic.c
-new file mode 100644
-index 000000000000..e3c8476af459
---- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/pcic.c
-@@ -0,0 +1,156 @@
-+// SPDX-License-Identifier: BSD-3-Clause-Clear
-+/*
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-+ */
-+#include <linux/module.h>
-+#include "ahb.h"
-+#include "core.h"
-+#include "debug.h"
-+#include "hif.h"
-+#include "hw.h"
-+#include "pci.h"
-+#include "pcic.h"
++				idx++;
++				continue;
++			}
 +
-+void ath12k_pcic_config_static_window(struct ath12k_base *ab)
-+{
-+	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
-+	u32 umac_window = u32_get_bits(ab_ahb->reg_base->umac_base, WINDOW_VALUE_MASK);
-+	u32 ce_window = u32_get_bits(ab_ahb->reg_base->ce_reg_base, WINDOW_VALUE_MASK);
-+	u32 window;
++			if (offset > avail_rmem_size ||
++			    avail_rmem_size - offset < chunk->size) {
++				ath12k_err(ab, "failed to assign mem type %u req size %u avail size %zu\n",
++					   chunk->type, chunk->size,
++					   offset > avail_rmem_size ? 0 :
++					   avail_rmem_size - offset);
++				ret = -EINVAL;
++				goto out;
++			}
 +
-+	window = (umac_window << 12) | (ce_window << 6);
-+	writel_relaxed(WINDOW_ENABLE_BIT | window, ab->mem + WINDOW_REG_ADDRESS);
-+	ab_ahb->static_window_reg = readl_relaxed(ab->mem + WINDOW_REG_ADDRESS);
-+}
++			ret = ath12k_qmi_map_target_mem(ab, idx, res.start + offset,
++							chunk->size, chunk->type);
++			if (ret)
++				goto out;
 +
-+static int ath12k_pcic_select_static_window(struct ath12k_base *ab, u32 addr)
-+{
-+	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
-+
-+	u32 window_bits, new_window, reg_value;
-+	const int max_retries = 10;
-+	int i;
-+
-+	window_bits = u32_get_bits(addr, WINDOW_VALUE_MASK);
-+
-+	/* Update window bits [5:0], preserving other bits */
-+	new_window = u32_replace_bits(ab_ahb->static_window_reg, window_bits, 0x3f);
-+
-+	if (new_window == ab_ahb->static_window_reg)
-+		return 0;
-+
-+	reg_value = WINDOW_ENABLE_BIT | new_window;
-+	writel_relaxed(reg_value, ab->mem + WINDOW_REG_ADDRESS);
-+
-+	/* Wait for the write to take effect */
-+	for (i = 0; i < max_retries; i++) {
-+		if (readl_relaxed(ab->mem + WINDOW_REG_ADDRESS) == reg_value) {
-+			ab_ahb->static_window_reg = reg_value;
-+			return 0;
++			offset += chunk->size;
++			idx++;
 +		}
 +
-+		usleep_range(1000, 2000);
-+	}
-+
-+	ath12k_warn(ab, "failed to set static window for cmem init\n");
-+	return -ETIMEDOUT;
-+}
-+
-+int ath12k_pcic_cmem_read32(struct ath12k_base *ab, u32 addr, u32 *value)
-+{
-+	int ret;
-+
-+	if (!value)
-+		return -EINVAL;
-+
-+	if (addr < WINDOW_START) {
-+		*value = readl_relaxed(ab->mem + addr);
++		ab->qmi.mem_seg_count = idx;
 +		return 0;
 +	}
 +
-+	ret = ath12k_pcic_select_static_window(ab, addr);
-+	if (ret)
-+		return ret;
+ 	for (i = 0, idx = 0; i < ab->qmi.mem_seg_count; i++) {
+ 		chunk = &ab->qmi.target_mem[i];
+ 		if (chunk->type == CALDB_MEM_REGION_TYPE) {
+@@ -2860,10 +2922,11 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
+ 			 * Once cold boot calibration is enabled add support to
+ 			 * assign reserved memory from DT.
+ 			 */
+-			ab->qmi.target_mem[idx].paddr = 0;
+-			ab->qmi.target_mem[idx].v.ioaddr = NULL;
+-			ab->qmi.target_mem[idx].size = chunk->size;
+-			ab->qmi.target_mem[idx].type = chunk->type;
++			ret = ath12k_qmi_map_target_mem(ab, idx, 0, chunk->size,
++							chunk->type);
++			if (ret)
++				goto out;
 +
-+	*value = readl_relaxed(ab->mem + WINDOW_START + (addr & WINDOW_RANGE_MASK));
-+	return 0;
-+}
-+
-+int ath12k_pcic_cmem_write32(struct ath12k_base *ab, u32 addr, u32 value)
-+{
-+	int ret;
-+
-+	if (addr < WINDOW_START) {
-+		writel_relaxed(value, ab->mem + addr);
-+		return 0;
-+	}
-+
-+	ret = ath12k_pcic_select_static_window(ab, addr);
-+	if (ret)
-+		return ret;
-+
-+	writel_relaxed(value, ab->mem + WINDOW_START + (addr & WINDOW_RANGE_MASK));
-+	return 0;
-+}
-+
-+static u32 ath12k_pcic_get_window_start(struct ath12k_base *ab, u32 offset)
-+{
-+	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
-+	u32 window_start;
-+
-+	/* If offset lies within DP register range, use 3rd window */
-+	if ((offset ^ ab_ahb->reg_base->umac_base) <= WINDOW_RANGE_MASK)
-+		window_start = 3 * WINDOW_START;
-+	/* If offset lies within CE register range, use 2nd window */
-+	else if ((offset ^ ab_ahb->reg_base->ce_reg_base) <= WINDOW_RANGE_MASK)
-+		window_start = 2 * WINDOW_START;
-+	else
-+		window_start = WINDOW_START;
-+
-+	return window_start;
-+}
-+
-+void ath12k_pcic_get_msi_address(struct ath12k_base *ab, u32 *msi_addr_lo,
-+				 u32 *msi_addr_hi)
-+{
-+	*msi_addr_lo = ab->msi.addr_lo;
-+	*msi_addr_hi = ab->msi.addr_hi;
-+}
-+
-+void ath12k_pcic_stop(struct ath12k_base *ab)
-+{
-+	ath12k_pci_ce_irq_disable_sync(ab);
-+	timer_delete_sync(&ab->rx_replenish_retry);
-+	ath12k_ce_cleanup_pipes(ab);
-+}
-+
-+int ath12k_pcic_start(struct ath12k_base *ab)
-+{
-+	ath12k_pci_ce_irqs_enable(ab);
-+	ath12k_ce_rx_post_buf(ab);
-+	return 0;
-+}
-+
-+u32 ath12k_pcic_read32(struct ath12k_base *ab, u32 offset)
-+{
-+	u32 window_start;
-+
-+	if (offset < WINDOW_START)
-+		return readl_relaxed(ab->mem + offset);
-+
-+	window_start = ath12k_pcic_get_window_start(ab, offset);
-+	return readl_relaxed(ab->mem + window_start + (offset & WINDOW_RANGE_MASK));
-+}
-+
-+void ath12k_pcic_write32(struct ath12k_base *ab, u32 offset, u32 value)
-+{
-+	u32 window_start;
-+
-+	if (offset < WINDOW_START) {
-+		writel_relaxed(value, ab->mem + offset);
-+		return;
-+	}
-+
-+	window_start = ath12k_pcic_get_window_start(ab, offset);
-+	writel_relaxed(value, ab->mem + window_start + (offset & WINDOW_RANGE_MASK));
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/pcic.h b/drivers/net/wireless/ath/ath12k/pcic.h
-new file mode 100644
-index 000000000000..f77091927039
---- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/pcic.h
-@@ -0,0 +1,22 @@
-+/* SPDX-License-Identifier: BSD-3-Clause-Clear */
-+/*
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-+ */
-+#ifndef _ATH12K_PCIC_H
-+#define _ATH12K_PCIC_H
-+
-+#include <linux/types.h>
-+
-+struct ath12k_base;
-+
-+int ath12k_pcic_start(struct ath12k_base *ab);
-+void ath12k_pcic_stop(struct ath12k_base *ab);
-+void ath12k_pcic_write32(struct ath12k_base *ab, u32 offset, u32 value);
-+u32 ath12k_pcic_read32(struct ath12k_base *ab, u32 offset);
-+void ath12k_pcic_get_msi_address(struct ath12k_base *ab, u32 *msi_addr_lo,
-+				 u32 *msi_addr_hi);
-+int ath12k_pcic_cmem_write32(struct ath12k_base *ab, u32 addr,
-+			     u32 value);
-+int ath12k_pcic_cmem_read32(struct ath12k_base *ab, u32 addr, u32 *value);
-+void ath12k_pcic_config_static_window(struct ath12k_base *ab);
-+#endif /* _ATH12K_PCIC_H */
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/ahb.c b/drivers/net/wireless/ath/ath12k/wifi7/ahb.c
-index 70372db6abae..bff48b2fe124 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/ahb.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/ahb.c
-@@ -14,6 +14,7 @@
- #include "hw.h"
- #include "dp.h"
- #include "core.h"
-+#include "hal.h"
+ 			idx++;
+ 			continue;
+ 		}
+@@ -2904,16 +2967,10 @@ static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
+ 			goto out;
+ 		}
  
- static const struct ath12k_ahb_desc ath12k_wifi7_ahb_desc[] = {
- 	[ATH12K_HW_IPQ5332_HW10] = {
-@@ -72,9 +73,15 @@ static int ath12k_wifi7_ahb_probe(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static const struct ath12k_ahb_reg_base ath12k_wifi7_ahb_reg_base = {
-+	.umac_base = HAL_SEQ_WCSS_UMAC_OFFSET,
-+	.ce_reg_base = HAL_CE_WFSS_CE_REG_BASE,
-+};
-+
- static struct ath12k_ahb_driver ath12k_wifi7_ahb_driver = {
- 	.name = "ath12k_wifi7_ahb",
- 	.id_table = ath12k_wifi7_ahb_of_match,
-+	.reg_base = &ath12k_wifi7_ahb_reg_base,
- 	.ops.probe = ath12k_wifi7_ahb_probe,
- 	.ops.arch_init = ath12k_wifi7_arch_init,
- 	.ops.arch_deinit = ath12k_wifi7_arch_deinit,
+-		ab->qmi.target_mem[idx].paddr = res.start;
+-		ab->qmi.target_mem[idx].v.ioaddr = ioremap(ab->qmi.target_mem[idx].paddr,
+-							   chunk->size);
+-		if (!ab->qmi.target_mem[idx].v.ioaddr) {
+-			ret = -EIO;
++		ret = ath12k_qmi_map_target_mem(ab, idx, res.start, chunk->size,
++						chunk->type);
++		if (ret)
+ 			goto out;
+-		}
+-
+-		ab->qmi.target_mem[idx].size = chunk->size;
+-		ab->qmi.target_mem[idx].type = chunk->type;
+ 		idx++;
+ 	}
+ 	ab->qmi.mem_seg_count = idx;
 
 -- 
 2.34.1
