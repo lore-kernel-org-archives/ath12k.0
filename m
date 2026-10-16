@@ -4,99 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08D70CCA46C
-	for <ath12k@archiver.kernel.org>; Fri, 16 Oct 2026 15:16:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 232C3CCF2C2
+	for <ath12k@archiver.kernel.org>; Fri, 16 Oct 2026 15:16:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TvlsO4IkbfxIuqs+Ah0LND1CtNRV3rUqrYscG6HajvA=; b=OdBl0cbkg7ixvVK7Ms2bNn1adt
-	OTVqcMZ++NkiYd1jK+E9/QsmsVoPk/55DvIno5AbLk5cHU9HT6aga6Ch+31m7VVxFDVlpqcCxQV2F
-	wfNMVlwHqCjFqIaPv7WSer9EQGC+A8dGDM3tBiw6kTZPxv+B3YLU/C7EBarW6hvrj1n9+WD0WICqZ
-	2NgmdeStc62ATj4JkzzrKCxdGEPqY7BbzUeKG1kFUvXsecig4RZHv5NKsj/qtmvTXIXV4CjM1J9/R
-	GrdxBOSbMKWLXbFwfgOgV6Mkp3bLCC6ziyi95rH0mHh0i3TKsJrYdONipzoiFwSQHHZn4em/SYlV0
-	C8aDDKMg==;
+	bh=7dIcYYNbbNBmX1h2umAdFtEG3Abe69vs2ikA3rzQFT4=; b=BMHgG3omK46gkAtnHI3dktXxtx
+	Yh1niq/fQShfooLZtIIyHSpAbc+HjVuONeXlms916VeYW6FdSseiPV5DbHUPr4iVKOUB0G4+ZuCRp
+	xDreOwePT/IUVVJzjltjIk2RK/WZgPEVK/h+Dh/OSW///+PhWdYLnjDFs4XGAu4h79rmmzARPIqfJ
+	Mv30OHvhiwUaCYGQE6Bz87yil8XVmJYe0Hq3J/ZTlUdzg8FAzMIfAKTqkrx7TsqtTbjS2uV39KU/J
+	guFSVdqvzOdRt2sIO9BLC1B7Ehg5H2SM56kqcttxVT1zmhWuhriM9LQ5swP8pgcGKjZMRdrqD+J/1
+	f5awMZuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHjfw-00000003Fng-2FdM;
-	Fri, 16 Oct 2026 15:16:52 +0000
+	id 1xHjfy-00000003Fpe-3aIo;
+	Fri, 16 Oct 2026 15:16:54 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHjft-00000003FmL-3tsc
+	id 1xHjfv-00000003Fn1-3lMP
 	for ath12k@lists.infradead.org;
-	Fri, 16 Oct 2026 15:16:51 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69GE6D0J3006460
-	for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 15:16:49 GMT
+	Fri, 16 Oct 2026 15:16:53 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69GE5p762153847
+	for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 15:16:51 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	TvlsO4IkbfxIuqs+Ah0LND1CtNRV3rUqrYscG6HajvA=; b=ITMp8O85jJEpC9Df
-	CAl586fG2YeQZ+PzTh8faDIaxaYu54lEIIMoDYpd+woxrht6W2eHDPZc81cnaW5S
-	ZBLs1HkRExWq5KhYeW2mevy34Z+0oyP1k61NG5nl8TttLShchie6R2hQc6gUUZlP
-	PT4Y2JGltvejd9JHyRP/HORYcPslMF0H8F1756sKfcw0h59eI098eqFpBx89vY3z
-	GXrlhC5I91xPUvFGNW/QA/x0IoKj8/OrDpQ0igpUotgUgUoChyTUbSJ4ovqOTFtR
-	TXHYmcplmnRGK629ArX06aRqfAxedyqd2KK6HiS6suVKHSNMcg0gumxX5pUbhC/y
-	dYD6gQ==
-Received: from mail-ua1-f69.google.com (mail-ua1-f69.google.com [209.85.222.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hb3sa4at1-1
+	7dIcYYNbbNBmX1h2umAdFtEG3Abe69vs2ikA3rzQFT4=; b=asZmEHnisd6tfqtL
+	Kk811rpkt4TAnQvOVEwceft6ohcgbqXdCtrRh9ILu9dd4QLVlonFNDzvDX8cV9SH
+	IU602QUtHRNRi9bqJ4InYnPojP6ubkNZ7bw8S5IP/TvzNLDdcjLmPWTSe91uyiAb
+	eR1tKmuTWyZ1VMLZeHcwXtGJYEi7aiA17xf3xOq9S4SHJwHqxhAT5DGoetM2rdwt
+	sHUdkg15O8/j0krjFoIaVASpwQlaB0cEBbuU13YgTEXvUnJWQxx6hhABdbXSWQld
+	gTrLYVitQK3raeBToCx5kh2mOG0HhOZhIhJOy0S/20aKsEkqnupga3cdfjzLmo5c
+	Dimwyg==
+Received: from mail-vk1-f197.google.com (mail-vk1-f197.google.com [209.85.221.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hbhums38q-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 15:16:48 +0000 (GMT)
-Received: by mail-ua1-f69.google.com with SMTP id a1e0cc1a2514c-990885654b4so7854241.2
-        for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 08:16:48 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 15:16:50 +0000 (GMT)
+Received: by mail-vk1-f197.google.com with SMTP id 71dfb90a1353d-5e8078ac577so2000216e0c.3
+        for <ath12k@lists.infradead.org>; Fri, 16 Oct 2026 08:16:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1792163808; x=1792768608; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1792163810; x=1792768610; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=TvlsO4IkbfxIuqs+Ah0LND1CtNRV3rUqrYscG6HajvA=;
-        b=ZZPOF6UESZay7hB+dmq+UUjsVlgMDru1H7OHnrkfVlIF2V00o14QUIADMe4tStWBjG
-         +i1OVi//BY5QB01CLU8yV23hutpBGtVYZNtwB0bHQgLEF2i/5iN4jLsRrXmJhDvSmDzt
-         RZmmZ/Yu9Z00fY5lMgvCAoeGY5AhWX6aCBrw+AS0KJ1Y+RZa6m0ifZ/GYtXMsDEi0hwx
-         J9pCCTmLLkonX9IqPizcEKrdn6iG40JT1ls6HD2FUxrJvqB8mucsL4ZNllUzMXmzndV4
-         faWR6lrRlTh1B5xgIMkBEn7hiyu1c2IHZqfwJBDJmF5Ew8tJPNQZbSIw4vVfVOCuhzak
-         ZyIw==
+        bh=7dIcYYNbbNBmX1h2umAdFtEG3Abe69vs2ikA3rzQFT4=;
+        b=B/oRe6toeMsCZ+BKrdTARz3Yni765CiKrEHN/+BVgiLOTsyAHlGAf7SE1hA/wzqy26
+         thexs/Jju8D4g9vvI2yrawTok6Sl2iC4klDmimrFRdjx0uQrGkpJ/8c79MNAdSKRwCeh
+         kwTz6gy8O5SPRy/4xi+6wz3d+sYBEGisTlWSiQenLa+Jemi2+VQwNr5Sw/zWUCS6PYfX
+         lW//JJy7qWE4wuXZBSZxfU6yzlfhQRZ7JwJHAO3dr3WI8o2PbapLiCgI5HKBSU/Jz1Iz
+         vYqK4kj2plB5UWER1yX6ldz08aRTPkUbSZdZfENtZ0WCb51e/CX9XHfOc9qkCH87iQ6B
+         T0qw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792163808; x=1792768608;
+        d=1e100.net; s=20260707; t=1792163810; x=1792768610;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=TvlsO4IkbfxIuqs+Ah0LND1CtNRV3rUqrYscG6HajvA=;
-        b=xG3YRgl2rzdNi+Kf8eGpYOMIe9bu3yhLDMZ0s66MYui2u5NAdU65LYGq/BSILEB9FR
-         hNpq1pZt6tv2W6C6kjA6wvuJvIxcjQvlvrwPwW0YwD00aQgM61zhUYMzeumQWYcrHC2K
-         H0qKAfv23kD0qrRTseyFXuv3FMnkxZ5lAtAEdr9F6Mku9Kvioz9Ht280gYk9Jy7luzH0
-         iaTenap4mRP8lrdekaJzAobmbYWi4kcfxl+tNULhisKFWuB/h8CIMsHOPj7IS9SqzxXH
-         xireQmAmJKivWiKILTnEjRrXbsdLeSVV642wh6I7FpJfk0ycfZauPhlAqI662Y94o0Yl
-         XCRQ==
-X-Forwarded-Encrypted: i=1; AKwUvBzqT3ip+z4C/kz0XLurkOPL67LxRonr0irEg5SsNVUqHZhXfnxAEqWVqPcQh/e4UVqg70nW/HY=@lists.infradead.org
-X-Gm-Message-State: AFq9FYK1N0ugv0bus+AAxdXDpR8G2k5qkOTjHlHInEq6bmsUy+Y/5IFx
-	PiZPA7qBJug6COgQpiBdrKIg8GdGTo4Grn6IhQZrCyfJc5ND4ZZ5Bhu3bcONey4PRXLr481jker
-	M40sBZ2piiszjQhPiLZLBie88o/GgQLBgVICXk2pxB6jCbjUMz0/PyyKc42KGBiVGq6bZrRgp
-X-Gm-Gg: AYBFou0xUrucpOqnAVc5S+pkBLw37FI0nSRgQV9nqDSOesH2197VzceSKxnR2v5Cces
-	//wOtCWmL1F5KO5ij9gIcqNvDazqQfNEpUYzTZLlW9qQWmomh6Hplbp4i3XbDg5Zh5M3LPWg9is
-	D1s0IcZgEHp+dE6jgeZ+yIWpTzLZRoXQxrzG7ECQa8zFOj3Dg74zej5GtZk477E7iWYKwcs811A
-	Ai+fPMUNfdOvKHuT3lU60fiMWfNK0Yx8lM/ihSERuWeU4lA6FJJQxdydyfndrwX6rE0mpGpIklQ
-	rPCyUFQKtS+bixkXgYLu4BB2639tZdQ2MEdOODj5ecOAMWvsdoRB43uWurvTRJceFzOhr92KZ5H
-	EfXXpnwfLwzSQ8Q==
-X-Received: by 2002:a05:6102:418c:b0:7bd:b263:14c8 with SMTP id ada2fe7eead31-7cb37506fb1mr5596445137.30.1792163807224;
-        Fri, 16 Oct 2026 08:16:47 -0700 (PDT)
-X-Received: by 2002:a05:6102:418c:b0:7bd:b263:14c8 with SMTP id ada2fe7eead31-7cb37506fb1mr5596393137.30.1792163805766;
-        Fri, 16 Oct 2026 08:16:45 -0700 (PDT)
+        bh=7dIcYYNbbNBmX1h2umAdFtEG3Abe69vs2ikA3rzQFT4=;
+        b=rqX42wM4ggw7kW1PP6NT98rJhsYGYAwYSQ4MV1oR1PNKq8ZhIyocx3Z+4czR8O4YPg
+         TW0j4ynnxiz0lBYlpLbFqqDZlzIjydR9E2R32abUMEdbcP4WTBTjcEltW8ZQCObGPcXb
+         1h43z+tM8M4RE+YFuIjOBJIjaYg1ntt5ewVF2d6sepH2oYiAIlIFVzRImgvmW5/mPBXD
+         KsmUBvLf8OvQGikdEy44CLvZ/lOuyDGZI7vfXXP7PDKtNPIXUVj6mJ/INrIhD+DhpTth
+         zZc6YBOq3l9bnEsfVIazoAxadYLxlLebEN0DSBI93Kf/cMbSyctk4e3lzGoY+EYSecX4
+         uBtg==
+X-Forwarded-Encrypted: i=1; AKwUvBxv3KxkwWQHwwCDpK8lBRMjaMNo7tT87Gvq4ePWSDwHRgCUgU3vgKurS+nym4VTzcSnWhj3Dw4=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJ4EglYbd3A5GZag3Eh6yWblb/RcMbt7Sl6iXa7do7xowqE2u2/
+	hkfPfhlfx6MRPqySOjCL/fao3DV7XfqkNDXCqgb5G8/wTiajYNyhzhoz2k+KSwhYhzCxVZVwCOw
+	hxOXgFWsGBd/E2j5SHGdEGfR5OdCQJVXr8G6Y4SJYnIRJwgLXAtrKUkzA/ZO68vi+
+X-Gm-Gg: AYBFou1n6GlamEzSdXTYFnym7C48yCaeLHWF1Na0uBLOZx6oDn4ebCPq0oMmk2ZZu9Q
+	+USKdKfkJuJV6+Bnf5bgsOLeREVyNiiUiZy6+DmT0oSHZ2BqiNyYktDZ2bSPN5vpR8K1s7zUsSD
+	KZLHCxOlKMt87Tvd+WogA9BsmOq9WzwHnS6lzDs2DVgNdauB9xXol2FSQaJYK5GpRsKcCp7oRDP
+	wFcZboQKWP7vVMPn3aYE1PDzllqBFKOk4ymjVl9l/MXBrlmmQsRFpVUuAtfGLcoWFIkYNp3ij23
+	VCjE46TAeGF0dp+jLPPqed6lVlTivfGS0myhjEVJH1MPdVH4buZgJGZQWNwmBN7DvShpz4vTmWc
+	9B61jwo6zqszQ3Q==
+X-Received: by 2002:a05:6122:5101:b0:5c9:ef0d:155d with SMTP id 71dfb90a1353d-5eaaa409039mr142464e0c.10.1792163809886;
+        Fri, 16 Oct 2026 08:16:49 -0700 (PDT)
+X-Received: by 2002:a05:6122:5101:b0:5c9:ef0d:155d with SMTP id 71dfb90a1353d-5eaaa409039mr142411e0c.10.1792163809223;
+        Fri, 16 Oct 2026 08:16:49 -0700 (PDT)
 Received: from localhost ([188.216.77.92])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a1cca30aa4sm24924245e9.2.2026.10.16.08.16.44
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48dfd471a1fsm4939352f8f.3.2026.10.16.08.16.48
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 16 Oct 2026 08:16:44 -0700 (PDT)
+        Fri, 16 Oct 2026 08:16:48 -0700 (PDT)
 From: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
-Date: Fri, 16 Oct 2026 17:16:27 +0200
-Subject: [PATCH ath-next 1/3] wifi: ath12k: validate RX frame length before
- undecapsulation
+Date: Fri, 16 Oct 2026 17:16:29 +0200
+Subject: [PATCH ath-next 3/3] wifi: ath12k: use ieee80211_rx_list() to
+ deliver packets to mac80211
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261016-ath12k-rx-avoid-realloc-v1-1-0ce6cd99dd5f@oss.qualcomm.com>
+Message-Id: <20261016-ath12k-rx-avoid-realloc-v1-3-0ce6cd99dd5f@oss.qualcomm.com>
 References: <20261016-ath12k-rx-avoid-realloc-v1-0-0ce6cd99dd5f@oss.qualcomm.com>
 In-Reply-To: <20261016-ath12k-rx-avoid-realloc-v1-0-0ce6cd99dd5f@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>,
@@ -111,36 +111,36 @@ Cc: Wen Gong <quic_wgong@quicinc.com>, P Praneesh <quic_ppranees@quicinc.com>,
         ath12k@lists.infradead.org,
         Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE2MDA2MCBTYWx0ZWRfXx0QtU1deDpP5
- 9uVHd3RN9/EZeyXZ7EoYeIcQ6x9bgB09BNWEN1QBlr8SpP8ATd5wU9xb3zSHsWqEroWJmYpODD8
- wN0Zdj55dLxAXB4ebgXUuwHgqxQVfyg=
-X-Proofpoint-ORIG-GUID: VhxAWssoOXNrCuzRMukZbm91YC5iL9a8
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE2MDA2MCBTYWx0ZWRfX49vcl8ePLZBK
- imrqR6eirgnns4AbEZGzC4JJYOlGXY/t+s+NSngQMWO7TXGsnvR0sTwYeB7mqDJtCaw5jgQaXjG
- +uiWNn6JSXnJ8KtTc8/Rus7nrpXTwkjqW8rKkFqbN2squLi86jU8/xK2EI0fhjaPefd/vcdQUgb
- gaY76U/C54U5N3QKwT8Fjaoqs/cVMYSPWdDvau8nSqDbwbBSX28oko/YfEhWEDWtelcd4+Hf6VJ
- 6BWeZxTuuct0wJRLeru97naxdJ232yQNyLxSkRlMi8y8yFihnpIA/Wry6kNHr5NHsI4Fx8pZrXs
- Efmp344DQBSGYcyfJydDD+0n8H5b1bnYfCK0011+qnBE4xy7joZQ0Fq6wZgNq9U5japgDkyB/2b
- YPIaOhMpP1g1HmSNN6XJSu+S88RzkH65/2krC9HazLrhPJc1fKQS/BkIaizkoctzmAFlWKNOA+w
- L6I7J8rvwPZp6r3iG9g==
-X-Proofpoint-GUID: VhxAWssoOXNrCuzRMukZbm91YC5iL9a8
-X-Authority-Analysis: v=2.4 cv=AN0XGc5Z c=1 sm=1 tr=0 ts=6ad23fe0 cx=c_pps
- a=UbhLPJ621ZpgOD2l3yZY1w==:117 a=WpTaRW6qxYHRGzLzQsVYzg==:17
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE2MDA2MCBTYWx0ZWRfXz17QR2uxBG6N
+ bwqvOcCGUqquqZU+s/JVoCHnNje53rnihG7WEzmnuFPaRCUOINd9sS09Ue7VWs4FJhg418moo8u
+ /RnU0lDm+ZIEzoTSvktmiSyy3tS6NaE=
+X-Authority-Analysis: v=2.4 cv=H+BOUOYi c=1 sm=1 tr=0 ts=6ad23fe2 cx=c_pps
+ a=JIY1xp/sjQ9K5JH4t62bdg==:117 a=WpTaRW6qxYHRGzLzQsVYzg==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=EUspDBNiAAAA:8 a=9DfpywYCbWix7F2gzjsA:9 a=QEXdDO2ut3YA:10
- a=TOPH6uDL9cOC6tEoww4z:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=EUspDBNiAAAA:8 a=6kEX7mH1gwqfXXxvQscA:9 a=QEXdDO2ut3YA:10
+ a=tNoRWFLymzeba-QzToBc:22
+X-Proofpoint-GUID: jhPseLaqG82NIJqx8PIRWzigw2k9pxWu
+X-Proofpoint-ORIG-GUID: jhPseLaqG82NIJqx8PIRWzigw2k9pxWu
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE2MDA2MCBTYWx0ZWRfXwKDaLb9KAkVU
+ iShTDggVh57YCVqptGIHZbSKXsTywcYD+iRp7TfXSZ3zFX6SEUkhsMkSJx9OXhs6xIRW1fhg1wc
+ xbs+pKTWKMvgmmc9UdhQ95rztMapHTchGladPi+pVnMekEROPV4S0+S8QAscTTdbuvzQIHTuZj1
+ fAYtbm5x8kURkGiN76gXClWHc4SRKS3Ugc8diToipX/n3B+/g7ZfHUcNjMKsATlcioA2IlP9ji5
+ Hw9NWIKsmWc+12shmDN6IKIjEAURFxCaWsmIstb8B0gE8RXFGPySF2wx+c6wibYUS8Cm9VTO7Ba
+ Gm1IQd988MqUtGH3aq8nsjA4zeZrFU7xZxp1ErUQqu2Oep6VbMxzgDcgGXno7XQ7MaEiDzcv8Y6
+ T+TUk1oB6pnnluZA2xSS6VPDwlaLzMWCBc2HtzvSzOfJE+WFFpC+RoGzzNF0ia+9cYpZ4tVfi9v
+ dO6UAdZ+T30cJYq40nQ==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-16_02,2026-10-14_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 suspectscore=0 phishscore=0 malwarescore=0 spamscore=0
- clxscore=1015 bulkscore=0 priorityscore=1501 adultscore=0 impostorscore=0
+ spamscore=0 malwarescore=0 bulkscore=0 phishscore=0 priorityscore=1501
+ adultscore=0 clxscore=1015 lowpriorityscore=0 impostorscore=0 suspectscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2610080000 definitions=main-2610160060
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_081650_113218_D6411689 
-X-CRM114-Status: GOOD (  16.24  )
+X-CRM114-CacheID: sfid-20261016_081652_071013_00B60D4C 
+X-CRM114-Status: GOOD (  24.39  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,200 +155,367 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Reject truncated raw frames before removing the FCS trailer. Without this
-check, subtracting FCS_LEN from a shorter skb underflows and leaves the
-FCS untrimmed.
+Currently the regular rx path hands MSDUs to mac80211 one by one through
+ieee80211_rx_napi(), and MSDUs spread over multiple rx buffers
+(MSDU_CONTINUATION) are first linearized by
+ath12k_wifi7_dp_rx_msdu_coalesce(), which may require a
+pskb_expand_head() reallocation.
 
-Also verify that the frame contains enough data for the 802.11 header and
-the crypto header before moving the header to make room for the crypto
-parameters.
+Rework the receive path to collect processed frames on a list and
+deliver them to mac80211 as a batch with ieee80211_rx_list(), feeding
+the result to napi_gro_receive() at the end of the NAPI poll. Delivering
+frames in batches improves the icache footprint and lets GRO process
+more frames together.
+
+While at it, drop the linearization for multi-buffer MSDUs: chain the
+continuation buffers on the head skb with frag_list and deliver a single
+(possibly non-linear) skb per MSDU, running the per-frame processing
+(h_ppdu, h_mpdu, link station lookup and rx_status copy) only on the
+head.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 Signed-off-by: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_rx.c       | 46 ++++++++++++++++++---------
- drivers/net/wireless/ath/ath12k/dp_rx.h       | 10 +++---
- drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 22 +++++++++----
- 3 files changed, 51 insertions(+), 27 deletions(-)
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 259 +++++++++++++-------------
+ 1 file changed, 128 insertions(+), 131 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 36be543b7c50..40b8da34268f 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -999,11 +999,11 @@ static void ath12k_dp_rx_h_undecap_nwifi(struct ath12k_pdev_dp *dp_pdev,
- 	memcpy(skb_push(msdu, hdr_len), decap_hdr, hdr_len);
- }
- 
--static void ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
--				       struct sk_buff *msdu,
--				       enum hal_encrypt_type enctype,
--				       struct ieee80211_rx_status *status,
--				       bool decrypted)
-+static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
-+				      struct sk_buff *msdu,
-+				      enum hal_encrypt_type enctype,
-+				      struct ieee80211_rx_status *status,
-+				      bool decrypted)
- {
- 	struct ath12k_dp *dp = dp_pdev->dp;
- 	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
-@@ -1014,13 +1014,16 @@ static void ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
- 	if (!rxcb->is_first_msdu ||
- 	    !(rxcb->is_first_msdu && rxcb->is_last_msdu)) {
- 		WARN_ON_ONCE(1);
--		return;
-+		return 0;
- 	}
- 
-+	if (msdu->len < FCS_LEN)
-+		return -EINVAL;
-+
- 	skb_trim(msdu, msdu->len - FCS_LEN);
- 
- 	if (!decrypted)
--		return;
-+		return 0;
- 
- 	hdr = (void *)msdu->data;
- 
-@@ -1054,9 +1057,14 @@ static void ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
- 		hdr_len = ieee80211_hdrlen(hdr->frame_control);
- 		crypto_len = ath12k_dp_rx_crypto_param_len(dp_pdev, enctype);
- 
-+		if (msdu->len < hdr_len + crypto_len)
-+			return -EINVAL;
-+
- 		memmove(msdu->data + crypto_len, msdu->data, hdr_len);
- 		skb_pull(msdu, crypto_len);
- 	}
-+
-+	return 0;
- }
- 
- static void ath12k_get_dot11_hdr_from_rx_desc(struct ath12k_pdev_dp *dp_pdev,
-@@ -1143,11 +1151,11 @@ static void ath12k_dp_rx_h_undecap_eth(struct ath12k_pdev_dp *dp_pdev,
- 	ether_addr_copy(ieee80211_get_SA(hdr), sa);
- }
- 
--void ath12k_dp_rx_h_undecap(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu,
--			    enum hal_encrypt_type enctype,
--			    bool decrypted,
--			    struct hal_rx_desc_data *rx_info,
--			    struct ath12k_dp_peer *peer)
-+int ath12k_dp_rx_h_undecap(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu,
-+			   enum hal_encrypt_type enctype,
-+			   bool decrypted,
-+			   struct hal_rx_desc_data *rx_info,
-+			   struct ath12k_dp_peer *peer)
- {
- 	enum ath12k_dp_rx_decap_type decap_type = rx_info->decap_type;
- 	struct ethhdr *ehdr;
-@@ -1156,10 +1164,16 @@ void ath12k_dp_rx_h_undecap(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu
- 	case DP_RX_DECAP_TYPE_NATIVE_WIFI:
- 		ath12k_dp_rx_h_undecap_nwifi(dp_pdev, msdu, enctype, rx_info);
- 		break;
--	case DP_RX_DECAP_TYPE_RAW:
--		ath12k_dp_rx_h_undecap_raw(dp_pdev, msdu, enctype, rx_info->rx_status,
--					   decrypted);
-+	case DP_RX_DECAP_TYPE_RAW: {
-+		int err;
-+
-+		err = ath12k_dp_rx_h_undecap_raw(dp_pdev, msdu, enctype,
-+						 rx_info->rx_status,
-+						 decrypted);
-+		if (err)
-+			return err;
- 		break;
-+	}
- 	case DP_RX_DECAP_TYPE_ETHERNET2_DIX:
- 		ehdr = (struct ethhdr *)msdu->data;
- 
-@@ -1201,6 +1215,8 @@ void ath12k_dp_rx_h_undecap(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu
- 		}
- 		rx_info->rx_status->flag |= RX_FLAG_8023;
- 	}
-+
-+	return 0;
- }
- EXPORT_SYMBOL(ath12k_dp_rx_h_undecap);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.h b/drivers/net/wireless/ath/ath12k/dp_rx.h
-index 82700474548a..68b80932e046 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.h
-@@ -187,11 +187,11 @@ void ath12k_dp_extract_rx_desc_data(struct ath12k_hal *hal,
- 	hal->ops->extract_rx_desc_data(rx_info, rx_desc, ldesc);
- }
- 
--void ath12k_dp_rx_h_undecap(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu,
--			    enum hal_encrypt_type enctype,
--			    bool decrypted,
--			    struct hal_rx_desc_data *rx_info,
--			    struct ath12k_dp_peer *peer);
-+int ath12k_dp_rx_h_undecap(struct ath12k_pdev_dp *dp_pdev, struct sk_buff *msdu,
-+			   enum hal_encrypt_type enctype,
-+			   bool decrypted,
-+			   struct hal_rx_desc_data *rx_info,
-+			   struct ath12k_dp_peer *peer);
- void ath12k_dp_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev, struct napi_struct *napi,
- 			       struct sk_buff *msdu,
- 			       struct hal_rx_desc_data *rx_info);
 diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-index a32c804403e8..e7afadf2bf2c 100644
+index e7afadf2bf2c..af5333663603 100644
 --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-@@ -344,6 +344,7 @@ static int ath12k_wifi7_dp_rx_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
- 	struct ath12k_dp_peer *peer;
- 	struct ieee80211_rx_status *rx_status = rx_info->rx_status;
- 	u32 err_bitmap = rx_info->err_bitmap;
-+	int err;
+@@ -426,114 +426,28 @@ static int ath12k_wifi7_dp_rx_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
+ 	return 0;
+ }
  
- 	RCU_LOCKDEP_WARN(!rcu_read_lock_held(),
- 			 "dp_rx_h_mpdu called without rcu lock");
-@@ -409,8 +410,10 @@ static int ath12k_wifi7_dp_rx_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
+-static int ath12k_wifi7_dp_rx_msdu_coalesce(struct ath12k_hal *hal,
+-					    struct sk_buff_head *msdu_list,
+-					    struct sk_buff *first, struct sk_buff *last,
+-					    u8 l3pad_bytes, int msdu_len,
+-					    struct hal_rx_desc_data *rx_info)
+-{
+-	struct sk_buff *skb;
+-	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(first);
+-	int buf_first_hdr_len, buf_first_len;
+-	struct hal_rx_desc *ldesc;
+-	int space_extra, rem_len, buf_len;
+-	u32 hal_rx_desc_sz = hal->hal_desc_sz;
+-	bool is_continuation;
+-
+-	/* As the msdu is spread across multiple rx buffers,
+-	 * find the offset to the start of msdu for computing
+-	 * the length of the msdu in the first buffer.
+-	 */
+-	buf_first_hdr_len = hal_rx_desc_sz + l3pad_bytes;
+-	buf_first_len = DP_RX_BUFFER_SIZE - buf_first_hdr_len;
+-
+-	if (WARN_ON_ONCE(msdu_len <= buf_first_len)) {
+-		skb_put(first, buf_first_hdr_len + msdu_len);
+-		skb_pull(first, buf_first_hdr_len);
+-		return 0;
+-	}
+-
+-	ldesc = (struct hal_rx_desc *)last->data;
+-	rxcb->is_first_msdu = rx_info->is_first_msdu;
+-	rxcb->is_last_msdu = rx_info->is_last_msdu;
+-
+-	/* MSDU spans over multiple buffers because the length of the MSDU
+-	 * exceeds DP_RX_BUFFER_SIZE - HAL_RX_DESC_SIZE. So assume the data
+-	 * in the first buf is of length DP_RX_BUFFER_SIZE - HAL_RX_DESC_SIZE.
+-	 */
+-	skb_put(first, DP_RX_BUFFER_SIZE);
+-	skb_pull(first, buf_first_hdr_len);
+-
+-	/* When an MSDU spread over multiple buffers MSDU_END
+-	 * tlvs are valid only in the last buffer. Copy those tlvs.
+-	 */
+-	ath12k_dp_rx_desc_end_tlv_copy(hal, rxcb->rx_desc, ldesc);
+-
+-	space_extra = msdu_len - (buf_first_len + skb_tailroom(first));
+-	if (space_extra > 0 &&
+-	    (pskb_expand_head(first, 0, space_extra, GFP_ATOMIC) < 0)) {
+-		/* Free up all buffers of the MSDU */
+-		while ((skb = __skb_dequeue(msdu_list)) != NULL) {
+-			rxcb = ATH12K_SKB_RXCB(skb);
+-			if (!rxcb->is_continuation) {
+-				dev_kfree_skb_any(skb);
+-				break;
+-			}
+-			dev_kfree_skb_any(skb);
+-		}
+-		return -ENOMEM;
+-	}
+-
+-	rem_len = msdu_len - buf_first_len;
+-	while ((skb = __skb_dequeue(msdu_list)) != NULL && rem_len > 0) {
+-		rxcb = ATH12K_SKB_RXCB(skb);
+-		is_continuation = rxcb->is_continuation;
+-		if (is_continuation)
+-			buf_len = DP_RX_BUFFER_SIZE - hal_rx_desc_sz;
+-		else
+-			buf_len = rem_len;
+-
+-		if (buf_len > (DP_RX_BUFFER_SIZE - hal_rx_desc_sz)) {
+-			WARN_ON_ONCE(1);
+-			dev_kfree_skb_any(skb);
+-			return -EINVAL;
+-		}
+-
+-		skb_put(skb, buf_len + hal_rx_desc_sz);
+-		skb_pull(skb, hal_rx_desc_sz);
+-		skb_copy_from_linear_data(skb, skb_put(first, buf_len),
+-					  buf_len);
+-		dev_kfree_skb_any(skb);
+-
+-		rem_len -= buf_len;
+-		if (!is_continuation)
+-			break;
+-	}
+-
+-	return 0;
+-}
+-
+ static int ath12k_wifi7_dp_rx_process_msdu(struct ath12k_pdev_dp *dp_pdev,
+ 					   struct sk_buff *msdu,
+ 					   struct sk_buff_head *msdu_list,
+-					   struct hal_rx_desc_data *rx_info)
++					   struct hal_rx_desc_data *rx_info,
++					   struct list_head *list)
+ {
+-	struct ath12k_dp *dp = dp_pdev->dp;
++	struct ieee80211_rx_status *rx_status = IEEE80211_SKB_RXCB(msdu);
++	struct ieee80211_rx_status *status = rx_info->rx_status;
++	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
++	struct sk_buff *last_buf, *frag_list = NULL;
++	struct ieee80211_link_sta *link_sta = NULL;
+ 	struct hal_rx_desc *rx_desc, *lrx_desc;
+-	struct ath12k_skb_rxcb *rxcb;
+-	struct sk_buff *last_buf;
++	int ret, msdu_len, rx_desc_headroom;
++	struct ath12k_dp *dp = dp_pdev->dp;
+ 	struct ath12k_hal *hal = dp->hal;
+-	u8 l3_pad_bytes;
+-	u16 msdu_len;
+-	int ret;
+-	u32 hal_rx_desc_sz = hal->hal_desc_sz;
++	struct ath12k_dp_peer *peer;
+ 
+ 	last_buf = ath12k_dp_rx_get_msdu_last_buf(msdu_list, msdu);
+ 	if (!last_buf) {
+ 		ath12k_warn(dp->ab,
+ 			    "No valid Rx buffer to access MSDU_END tlv\n");
+-		ret = -EIO;
+-		goto free_out;
++		return -EIO;
  	}
  
- 	ath12k_wifi7_dp_rx_h_csum_offload(msdu, rx_info);
--	ath12k_dp_rx_h_undecap(dp_pdev, msdu, enctype, is_decrypted, rx_info,
--			       peer);
-+	err = ath12k_dp_rx_h_undecap(dp_pdev, msdu, enctype, is_decrypted,
-+				     rx_info, peer);
-+	if (err)
-+		return err;
- 
- 	if (!is_decrypted || rx_info->is_mcbc)
- 		return 0;
-@@ -1064,9 +1067,12 @@ static int ath12k_wifi7_dp_rx_h_verify_tkip_mic(struct ath12k_pdev_dp *dp_pdev,
+ 	rx_desc = (struct hal_rx_desc *)msdu->data;
+@@ -542,56 +456,133 @@ static int ath12k_wifi7_dp_rx_process_msdu(struct ath12k_pdev_dp *dp_pdev,
+ 	ath12k_dp_extract_rx_desc_data(hal, rx_info, rx_desc, lrx_desc);
+ 	if (!rx_info->msdu_done) {
+ 		ath12k_warn(dp->ab, "msdu_done bit in msdu_end is not set\n");
+-		ret = -EIO;
+-		goto free_out;
++		return -EIO;
  	}
  
+-	rxcb = ATH12K_SKB_RXCB(msdu);
+ 	rxcb->rx_desc = rx_desc;
++	rxcb->is_first_msdu = rx_info->is_first_msdu;
++	rxcb->is_last_msdu = rx_info->is_last_msdu;
+ 	msdu_len = rx_info->msdu_len;
+-	l3_pad_bytes = rx_info->l3_pad_bytes;
++	rx_desc_headroom = hal->hal_desc_sz + rx_info->l3_pad_bytes;
++	/* When an MSDU spread over multiple buffers MSDU_END
++	 * tlvs are valid only in the last buffer. Copy those tlvs.
++	 */
++	ath12k_dp_rx_desc_end_tlv_copy(hal, rxcb->rx_desc, lrx_desc);
+ 
+ 	if (rxcb->is_frag) {
+-		skb_pull(msdu, hal_rx_desc_sz);
+-	} else if (!rxcb->is_continuation) {
+-		if ((msdu_len + hal_rx_desc_sz) > DP_RX_BUFFER_SIZE) {
+-			ret = -EINVAL;
+-			ath12k_warn(dp->ab, "invalid msdu len %u\n", msdu_len);
+-			ath12k_dbg_dump(dp->ab, ATH12K_DBG_DATA, NULL, "", rx_desc,
+-					sizeof(*rx_desc));
+-			goto free_out;
+-		}
+-		skb_put(msdu, hal_rx_desc_sz + l3_pad_bytes + msdu_len);
+-		skb_pull(msdu, hal_rx_desc_sz + l3_pad_bytes);
++		skb_pull(msdu, hal->hal_desc_sz);
+ 	} else {
+-		ret = ath12k_wifi7_dp_rx_msdu_coalesce(hal, msdu_list,
+-						       msdu, last_buf,
+-						       l3_pad_bytes, msdu_len,
+-						       rx_info);
+-		if (ret) {
+-			ath12k_warn(dp->ab,
+-				    "failed to coalesce msdu rx buffer%d\n", ret);
+-			goto free_out;
++		if (!rxcb->is_continuation &&
++		    msdu_len + hal->hal_desc_sz > DP_RX_BUFFER_SIZE) {
++			ath12k_warn(dp->ab, "invalid msdu len %u\n", msdu_len);
++			ath12k_dbg_dump(dp->ab, ATH12K_DBG_DATA, NULL, "",
++					rx_desc, sizeof(*rx_desc));
++			return -EINVAL;
+ 		}
++
++		if (!rxcb->is_continuation ||
++		    msdu_len <= DP_RX_BUFFER_SIZE - rx_desc_headroom)
++			skb_put(msdu, rx_desc_headroom + msdu_len);
++		else
++			skb_put(msdu, DP_RX_BUFFER_SIZE);
++		skb_pull(msdu, rx_desc_headroom);
+ 	}
+ 
+-	if (unlikely(!ath12k_dp_rx_check_nwifi_hdr_len_valid(dp, msdu,
+-							     rx_info))) {
+-		ret = -EINVAL;
+-		goto free_out;
++	if (!rxcb->is_frag && rxcb->is_continuation) {
++		unsigned int frag_len = 0, truesize = 0;
++		struct sk_buff *skb, *last_frag;
++
++		/* The MSDU is spread across multiple rx buffers */
++		msdu_len -= (DP_RX_BUFFER_SIZE - rx_desc_headroom);
++
++		while (msdu_len > 0) {
++			struct ath12k_skb_rxcb *cb;
++			int len;
++
++			skb = __skb_dequeue(msdu_list);
++			if (!skb) {
++				WARN_ON_ONCE(msdu_len > 0);
++				goto free_frag_list;
++			}
++
++			cb = ATH12K_SKB_RXCB(skb);
++			if (cb->is_continuation)
++				len = DP_RX_BUFFER_SIZE - hal->hal_desc_sz;
++			else
++				len = msdu_len;
++
++			if (len > DP_RX_BUFFER_SIZE - hal->hal_desc_sz) {
++				dev_kfree_skb_any(skb);
++				goto free_frag_list;
++			}
++
++			skb_put(skb, len + hal->hal_desc_sz);
++			skb_pull(skb, hal->hal_desc_sz);
++
++			if (!frag_list)
++				frag_list = skb;
++			else
++				last_frag->next = skb;
++
++			skb->next = NULL;
++			last_frag = skb;
++
++			msdu_len -= len;
++			frag_len += skb->len;
++			truesize += skb->truesize;
++			if (!cb->is_continuation)
++				break;
++		}
++
++		if (frag_list) {
++			skb_shinfo(msdu)->frag_list = frag_list;
++			msdu->data_len = frag_len;
++			msdu->len += frag_len;
++			msdu->truesize += truesize;
++			msdu->next = NULL;
++		}
+ 	}
+ 
++	if (!ath12k_dp_rx_check_nwifi_hdr_len_valid(dp, msdu, rx_info))
++		return -EINVAL;
++
  	ath12k_dp_rx_h_ppdu(dp_pdev, rx_info);
--	ath12k_dp_rx_h_undecap(dp_pdev, msdu, HAL_ENCRYPT_TYPE_TKIP_MIC, true,
--			       rx_info, NULL);
--	ieee80211_rx(ath12k_pdev_dp_to_hw(dp_pdev), msdu);
-+	if (!ath12k_dp_rx_h_undecap(dp_pdev, msdu, HAL_ENCRYPT_TYPE_TKIP_MIC,
-+				    true, rx_info, NULL))
-+		ieee80211_rx(ath12k_pdev_dp_to_hw(dp_pdev), msdu);
-+	else
-+		dev_kfree_skb_any(msdu);
+ 	ret = ath12k_wifi7_dp_rx_h_mpdu(dp_pdev, msdu, rx_info);
+ 	if (ret)
+-		goto free_out;
++		return ret;
 +
- 	return -EINVAL;
++	peer = ath12k_dp_peer_find_by_peerid(dp_pdev, rxcb->peer_id);
++	if (peer) {
++		struct ieee80211_sta *sta = peer->sta;
++
++		if (sta && sta->valid_links) {
++			int link_id;
+ 
+-	rx_info->rx_status->flag |= RX_FLAG_SKIP_MONITOR | RX_FLAG_DUP_VALIDATED;
++			link_id = ath12k_hw_get_rx_link_id(dp->hw_params,
++							   peer, rxcb, status);
++			if (link_id >= 0 && link_id < ARRAY_SIZE(sta->link))
++				link_sta = rcu_dereference(sta->link[link_id]);
++		} else if (sta) {
++			link_sta = &sta->deflink;
++		}
++	}
++
++	status->flag |= RX_FLAG_SKIP_MONITOR | RX_FLAG_DUP_VALIDATED;
++	*rx_status = *status;
++
++	ieee80211_rx_list(ath12k_pdev_dp_to_hw(dp_pdev), link_sta, msdu, list);
+ 
+ 	return 0;
+ 
+-free_out:
+-	return ret;
++free_frag_list:
++	while (frag_list) {
++		struct sk_buff *skb = frag_list;
++
++		frag_list = frag_list->next;
++		dev_kfree_skb_any(skb);
++	}
++
++	return -EINVAL;
  }
  
-@@ -1715,8 +1721,10 @@ static bool ath12k_wifi7_dp_rx_h_tkip_mic_err(struct ath12k_pdev_dp *dp_pdev,
- 	rx_info->rx_status->flag |= (RX_FLAG_MMIC_STRIPPED | RX_FLAG_MMIC_ERROR |
- 				     RX_FLAG_DECRYPTED);
+ static void
+@@ -603,8 +594,8 @@ ath12k_wifi7_dp_rx_process_received_packets(struct ath12k_dp *dp,
+ 	struct ath12k_hw_group *ag = dp->ag;
+ 	struct ath12k_dp_hw_group *dp_hw_grp = &ag->dp_hw_grp;
+ 	struct ieee80211_rx_status rx_status = {};
++	struct sk_buff *msdu, *skb, *tmp;
+ 	struct ath12k_skb_rxcb *rxcb;
+-	struct sk_buff *msdu;
+ 	struct ath12k *ar;
+ 	struct ath12k_pdev_dp *dp_pdev;
+ 	struct ath12k_hw_link *hw_links = ag->hw_links;
+@@ -612,6 +603,7 @@ ath12k_wifi7_dp_rx_process_received_packets(struct ath12k_dp *dp,
+ 	struct hal_rx_desc_data rx_info;
+ 	struct ath12k_dp *partner_dp;
+ 	u8 hw_link_id, pdev_idx;
++	LIST_HEAD(list);
+ 	int ret;
  
--	ath12k_dp_rx_h_undecap(dp_pdev, msdu, HAL_ENCRYPT_TYPE_TKIP_MIC, false,
--			       rx_info, NULL);
-+	if (ath12k_dp_rx_h_undecap(dp_pdev, msdu, HAL_ENCRYPT_TYPE_TKIP_MIC,
-+				   false, rx_info, NULL))
-+		return true;
+ 	if (skb_queue_empty(msdu_list))
+@@ -647,7 +639,8 @@ ath12k_wifi7_dp_rx_process_received_packets(struct ath12k_dp *dp,
+ 			continue;
+ 		}
+ 
+-		ret = ath12k_wifi7_dp_rx_process_msdu(dp_pdev, msdu, msdu_list, &rx_info);
++		ret = ath12k_wifi7_dp_rx_process_msdu(dp_pdev, msdu, msdu_list,
++						      &rx_info, &list);
+ 		if (ret) {
+ 			ath12k_dbg(dp->ab, ATH12K_DBG_DATA,
+ 				   "Unable to process msdu %d", ret);
+@@ -658,7 +651,11 @@ ath12k_wifi7_dp_rx_process_received_packets(struct ath12k_dp *dp,
+ 			dp->device_stats.sent_to_stack[ring_id][partner_dp->device_id]++;
+ 		else
+ 			WARN_ON_ONCE(1);
+-		ath12k_dp_rx_deliver_msdu(dp_pdev, napi, msdu, &rx_info);
++	}
 +
- 	return false;
- }
++	list_for_each_entry_safe(skb, tmp, &list, list) {
++		skb_list_del_init(skb);
++		napi_gro_receive(napi, skb);
+ 	}
  
+ 	rcu_read_unlock();
 
 -- 
 2.56.0
