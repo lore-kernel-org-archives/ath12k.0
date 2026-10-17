@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDF3FCCF2C4
-	for <ath12k@archiver.kernel.org>; Sat, 17 Oct 2026 17:00:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31930CCF2C4
+	for <ath12k@archiver.kernel.org>; Sat, 17 Oct 2026 17:01:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
 	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YbnWqV/aiXz31EkDcm+H/Bo/C7Kw7PfSJHeX/JxezG4=; b=zcu9ZObsX/XJFQqWdOoRzeRpTW
-	X2N9cwOdeGjdsGOHKL7bllW+QqU16S9TmHPS+pTIA/AEUHLTPkKPC01iTOl7C0B46akVX8Mcj8fnj
-	W+4wtz/MuXPxuJiJ+t/nFRSO0L2AnOGbLtl5e/aRW+vT/pa8MVeMCwpL2GFxoc1lZntheICc3CKl2
-	I37OUpXBETea924R73X/QjkMk9EF977ThfCoh+eHUKr2uFOH16+UVPz5u2azhAF8HmXQ3UoJZOUrv
-	daNJrbG8QK6VBAgXZpInwuddA8Aw1wDfBP/Po7Q1devswwPARxR64LzhGDZF65uKYvAb3S8FmUECL
-	9h+kromA==;
+	bh=0DmjvHLfi4rX4oDVLRHrraRfixBiGRCaeJVcON71fCc=; b=gfeGSMKTEB5bKBVg5bTBRcZ1uD
+	JCDwK3d7zqqJHj18t2uG9RwZmzXXHFhCdnMinMXuV5lf1Xeu0EO1VOewp3ppRaAZLEHSibSe39BjN
+	yNYy8kwo+jIspMz1yN9M6DUaRW3Nr51XpEae6J53n014EuH75SUPd34NueTkx28352tvjHn8XZJ47
+	1BqkGLm9vpOnTGPwvCViZYCC2yKd8NMWKf8fwWz59VVD9yyyvGAm73sn8pBN79so9X7O+S4pA9kVF
+	KYtHdPBPCOkAD/wDmBCXULMYm/TtnHolypQDbf5tZjr4csg3rlQQvLv3pToCIalP6UtK1NxW1Wm5N
+	ltURmupA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xI7lr-00000004yDu-4607;
-	Sat, 17 Oct 2026 17:00:35 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xI7mX-00000004yIe-3AsE;
+	Sat, 17 Oct 2026 17:01:17 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xI7lr-00000004yDo-1dRI
+	id 1xI7mO-00000004yHv-3XoD
 	for ath12k@lists.infradead.org;
-	Sat, 17 Oct 2026 17:00:35 +0000
+	Sat, 17 Oct 2026 17:01:13 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6CCA560AA1;
-	Sat, 17 Oct 2026 17:00:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C9FB1F000C4;
-	Sat, 17 Oct 2026 17:00:33 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 57D7142A1D;
+	Sat, 17 Oct 2026 17:01:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 77B221F000C5;
+	Sat, 17 Oct 2026 17:01:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792256434;
-	bh=YbnWqV/aiXz31EkDcm+H/Bo/C7Kw7PfSJHeX/JxezG4=;
+	s=k20260515; t=1792256468;
+	bh=0DmjvHLfi4rX4oDVLRHrraRfixBiGRCaeJVcON71fCc=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=fHl8fu12MEq0ZiRcm8ewBLNR6wUle1ev1Br/rpaZ9WxMTl2UdqdTcPtYsdailFWcf
-	 xGepDOTzbHztmstTDezxwyWHKCejEr6haUE+1gDAc/NzpralHcSyIwl4MIGV7jmlQB
-	 r1RAdSLjHCHB0cPuxuoHq0nHFn9AQ1zYpTKdk0tk/l5MqUrTJ1qvAerQ1VAyiyvFje
-	 Qp63tZQIZsUR7lUmBXCe+FZNVmaJ2CeQR97fCkrdtThPryDxxFNP0BbY5+FYQ4H2Zi
-	 u3LenPURx78+aG+UnDvMdbYXOa/unq9L2QkL035ecQfCb4XgaiotoE7EWqNsqlA4ct
-	 5x1ITTNkbWR4Q==
-Date: Sat, 17 Oct 2026 19:00:31 +0200
+	b=Gl5h4+21xkTA9HLQn4DCTs3dAc+/A/QPpnLU1SnPGP/SZuZwzQCZD5wRkLZ4x+0Fn
+	 ZsBaGWHLcbySiBu4SZ9zF53I31dkjHvaWTBp3QpuFWsoYrB9BHHE9W+ebxm/ty2NVe
+	 0jIxPi2ImaHKinHaFjyFC/DONvjUn6MPiid98ZGRVf8qnrS2XMEKKEocbZ83bAqPC4
+	 zHhZ5u0AukVJbeIWN2H+a0rOoYwY/Ta8jN9R13lJOPzzZt3VoRy63G5OK4qKBmetZ6
+	 hnhXxWpl9yuKL1IdMUm0B44RlTcKbwXlMIbcddd7uJrTp6x7CD1So2qvWmEHTwY27C
+	 bGSiGeyptPOEA==
+Date: Sat, 17 Oct 2026 19:01:05 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 Cc: Johannes Berg <johannes@sipsolutions.net>, 
@@ -52,7 +52,7 @@ Cc: Johannes Berg <johannes@sipsolutions.net>,
 	ath12k@lists.infradead.org
 Subject: Re: [PATCH ath-next v2 01/17] dt-bindings: net: wireless: Add
  QCN6432 device tree binding documentation
-Message-ID: <20261017-little-fanatic-bulldog-e84f9d@quoll>
+Message-ID: <20261017-exuberant-benevolent-gibbon-86a45b@quoll>
 References: <20261016-mpp-bringup-v2-0-f510c33bfcf5@oss.qualcomm.com>
  <20261016-mpp-bringup-v2-1-f510c33bfcf5@oss.qualcomm.com>
 MIME-Version: 1.0
@@ -83,19 +83,12 @@ On Fri, Oct 16, 2026 at 08:51:38AM +0530, Aaradhana Sahu wrote:
 > processor phandle, MSI interrupts, SMEM states and memory regions.
 > 
 > Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+> ---
+>  .../bindings/net/wireless/qcom,qcn6432-wifi.yaml   | 149 +++++++++++++++++++++
 
-I missed during previous review - you almost hit combo. If you added
-YAML or schema it would be the most redundant information ever. Well,
-pity, no combo.
+Heh, unfortunately need to retract my review.
 
-A nit, subject: drop second/last, redundant "device tree binding documentation". The
-"dt-bindings" prefix is already stating these.
-See also:
-https://elixir.bootlin.com/linux/v7.1-rc7/source/Documentation/devicetree/bindings/submitting-patches.rst#L23
-
-With subject fixed:
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Filename must match compatible.
 
 Best regards,
 Krzysztof
