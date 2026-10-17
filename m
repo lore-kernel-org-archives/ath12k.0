@@ -4,69 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84DCDCCF2C1
-	for <ath12k@archiver.kernel.org>; Fri, 16 Oct 2026 22:09:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38AF8CCA463
+	for <ath12k@archiver.kernel.org>; Sat, 17 Oct 2026 07:40:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
-	bh=N+IfVEDNy7weUr9N7uxvL6jLCprKtx2WdtJneeQTuEA=; b=Z23DDsi08oWXg3RjAFChd+9wFk
-	AoFDfFAqXABFwnKbhKyiKIvddRXzz0QByLiX0dazHNqAkf9rbfDHe7tIzjbD64HF5BqjyZOJu7mAU
-	DS35nJltj8BAgUOeIyWlerLvj7ylrB6RYasLKxhzAmN811gXDs/p7/LaX25uy761QVAYOujb4MxTx
-	kDPbNwWvWwrPnc5tdEhbXgHn2KTIwhkcrNU7/MGjFKNGC709n6lMs5LOFFkKl8i0mNnZr3tz36RGQ
-	FhsKkm0kTgjhlBNoQ5QCQp7y+XbuztcFaQSQ0fAGTnTZ+LVJO5Fcud/QT2F1XigTiMMW0+kaY0PXI
-	p9WtFptA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=32ROnbLRGK5yQqWv4zvyzIZU4X+Kno5K7VF1XhhIYHQ=; b=gxR1/bADlIWlC3aY4Rg7UkEhrh
+	+v0Kh28Jkl0wWCvaFzmaVL4h27WU0E8u9EwxQ5Ej89aF1FRgsRrmIEi9QwSnZFbbidxxg/ICzcOj9
+	sN+oZlXSu+NKPR0mLTpolun9wsRg0kR7fjRmJHJ3csqzhq37IXQXrjM3WSGCWVW6enEVPt2+12vEl
+	qmQm4DypC33Z1z/39Zy7numKHEP6mHuv/jEff5Fk2t52dZRcHvoYG/m+XHsRlK9IuV5Hd5cFk6Bde
+	6as1xZ/IANBL70m48G3bN7PBLiS4xjI7xrf/P3s3goqsdnEYVlHWTgTEl2GgchD6Ky2v/ABPYLgiV
+	IVBiWb8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHq6t-0000000492p-2Aee;
-	Fri, 16 Oct 2026 22:09:07 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xHz1s-00000004XJO-3W37;
+	Sat, 17 Oct 2026 07:40:32 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHq6q-0000000492E-2ymt;
-	Fri, 16 Oct 2026 22:09:04 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id AE2C36022E;
-	Fri, 16 Oct 2026 22:09:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2DCA71F000C4;
-	Fri, 16 Oct 2026 22:09:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792188542;
-	bh=N+IfVEDNy7weUr9N7uxvL6jLCprKtx2WdtJneeQTuEA=;
-	h=Date:From:To:Cc:Subject:In-Reply-To;
-	b=EojSRKfdAM9oDuZ9jF49SMiBF3zj2wdWEu49eIsy3J6zDbtd5vPg2v/7x6ZxGZLnr
-	 M19eONTst4yrehj4leYPBDh/0lSll7/t5ZLf4sN5sCARPjoFdCe22YtDn3o0ux2ImM
-	 6wRzpjWENrr5zssGC8fwJ/t3RTxGutllXA7KxfBobVmcxIPmDtuA48p0xITxIMuV/q
-	 q5WBy1j/xLSy/sDeH16G5ErFv8zmjbftYoLSj0V9IZF2Zr9vx2clPHCDnK/qru0FQN
-	 2YdalWq3HyVVbzfalQuO1mSwrNVrhywb0ANPS53LvRbNfQUztrTkzcrnuesvkYiXa7
-	 /CAlgq5HndODw==
-Date: Fri, 16 Oct 2026 17:09:00 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: Bjorn Helgaas <bhelgaas@google.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Nirmal Patel <nirmal.patel@linux.intel.com>,
-	Jonathan Derrick <jonathan.derrick@linux.dev>,
-	Jeff Johnson <jjohnson@kernel.org>, linux-pci@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-	ath11k@lists.infradead.org, ath10k@lists.infradead.org,
-	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-	Qiang Yu <qiang.yu@oss.qualcomm.com>,
-	Ilpo =?utf-8?B?SsOkcnZpbmVu?= <ilpo.jarvinen@linux.intel.com>,
-	Emmanuel Grumbach <egrumbach@gmail.com>,
-	Matthew Garrett <mjg59@srcf.ucam.org>
-Subject: Re: [PATCH v3 0/8] PCI/ASPM: Add pci_force_enable_link_state() API
- and convert Atheros drivers
-Message-ID: <20261016220900.GA2020355@bhelgaas>
+	id 1xHz1o-00000004XIG-2pwd
+	for ath12k@lists.infradead.org;
+	Sat, 17 Oct 2026 07:40:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1792222823;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=32ROnbLRGK5yQqWv4zvyzIZU4X+Kno5K7VF1XhhIYHQ=;
+	b=ccTBmje1lDGXxOKWMwuV0VAjuRG7TkUxOYu2gL2X4XbkfocSfAVQ+Ce1VGOOgcnl5sShkF
+	pCMk7lMNpgX/wA41Y59KABa4snp9Y0O2Lz6w5MPMZ2Tuj06ltDPFSAa1lgyocOCAjh2e9J
+	qTuGKDsZyP+wphDdwGWiD+ratZL6nxU=
+Received: from mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-651-n-lOljHTMkm4dNjJEocrPQ-1; Sat,
+ 17 Oct 2026 07:40:20 +0000
+X-MC-Unique: n-lOljHTMkm4dNjJEocrPQ-1
+X-Mimecast-MFC-AGG-ID: n-lOljHTMkm4dNjJEocrPQ_1792222818
+Received: from mx-prod-int-01.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-01.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.4])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id C424F1956074;
+	Sat, 17 Oct 2026 07:40:17 +0000 (UTC)
+Received: from jtornosm-thinkpadp1gen7.rmtes.csb (headnet05.pony-001.prod.iad2.dc.redhat.com [10.2.32.117])
+	by mx-prod-int-01.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 672B53000735;
+	Sat, 17 Oct 2026 07:40:14 +0000 (UTC)
+From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+To: tamizh.raja@oss.qualcomm.com
+Cc: julius@bairaktaris.de,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	jjohnson@kernel.org,
+	jtornosm@redhat.com,
+	linux-kernel@vger.kernel.org,
+	linux-wireless@vger.kernel.org
+Subject: Re: [PATCH v7 0/4] ath11k/ath12k: implement TX flow control
+Date: Sat, 17 Oct 2026 09:40:11 +0200
+Message-ID: <20261017074012.35602-1-jtornosm@redhat.com>
+In-Reply-To: <CABkEBKbHhxNsx5ZpYCSDEKtC2UpR+PD4hSF1CeUOwUBkTq2XKw@mail.gmail.com>
+References: <CABkEBKbHhxNsx5ZpYCSDEKtC2UpR+PD4hSF1CeUOwUBkTq2XKw@mail.gmail.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
+X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.4
+X-Mimecast-MFC-PROC-ID: 14d9UwP8Z_KRlNqRLmZFQOtrhAnPDW4iyvskgQoPo6I_1792222818
+X-Mimecast-Originator: redhat.com
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-In-Reply-To: <atG61oicHbsLKiib@debian>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261017_004028_795774_58A62E31 
+X-CRM114-Status: UNSURE (   5.71  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,130 +91,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 16, 2026 at 11:28:03AM +0530, Manivannan Sadhasivam wrote:
-> On Wed, Oct 14, 2026 at 03:51:17PM -0500, Bjorn Helgaas wrote:
-> > [+cc Emmanuel, Matthew]
-> > 
-> > On Wed, Jul 08, 2026 at 04:30:14PM +0200, Manivannan Sadhasivam wrote:
-> > > Hi,
-> > > 
-> > > This series converts the atheros WLAN drivers (ath10k/ath11k/ath12k) to
-> > > use the PCI core ASPM APIs for enabling/disabling ASPM instead of writing
-> > > to the LNKCTL register directly. Touching LNKCTL behind the PCI core's
-> > > back leaves the ASPM service driver's view of the link state out of sync
-> > > with the hardware, which is not nice.
-> > > 
-> > > The catch is that these drivers save the currently enabled ASPM states,
-> > > disable ASPM before firmware download, and restore the saved states
-> > > afterwards. pci_enable_link_state() cannot restore states that were
-> > > disabled via pci_disable_link_state() or blacklisted during init (like
-> > > the pre-1.1 device blacklist, which is only meant to be overridden with
-> > > pcie_aspm=force), and that is intentional. So the save/restore sequence
-> > > cannot be expressed with the existing APIs.
-> > > 
-> > > In v2 I tried to fix this by making pci_enable_link_state*() symmetric
-> > > with the disable APIs, but as pointed out during review, that also ends
-> > > up overriding the init-time blacklist for every caller (including VMD),
-> > > which is not something we want. So instead, this version adds a separate
-> > > pci_force_enable_link_state() API (patch 2) that re-enables the requested
-> > > states unconditionally. The caller is responsible for only asking for
-> > > states the device actually supports, and the ath drivers do this by
-> > > restoring exactly what pcie_aspm_enabled() reported earlier.
-> > > 
-> > > The first five patches touch the PCI core: patch 1 (from Ilpo) makes
-> > > pci_disable_link_state() disable ASPM unconditionally, patch 2 adds the
-> > > new API, patch 3 moves the D0 transition needed before enabling PCI-PM
-> > > L1 PM Substates (PCIe r6.0, sec 5.5.4) into the shared helper and drops
-> > > it from the vmd and pcie-qcom callers, patch 4 cleans up the kernel-doc,
-> > > and patch 5 makes pcie_aspm_enabled() return the enabled state mask so it
-> > > can be used for save/restore. The last three patches convert the ath
-> > > drivers.
-> > > 
-> > > Testing
-> > > =======
-> > > 
-> > > I've tested this series on a Lenovo Thinkpad T14s with WCN7850 (so that's
-> > > just the ath12k driver). Rest of the drivers are compile tested only.
-> > > 
-> > > Merging Strategy
-> > > ================
-> > > 
-> > > Even though there is no build dependency between the PCI core and atheros
-> > > patches, there is a functional dependency. So I'd recommend creating an
-> > > immutable branch with the PCI patches and merging that branch into both
-> > > the PCI and linux-wireless trees, and finally merging the atheros patches
-> > > into the linux-wireless tree.
-> > > 
-> > > If the immutable branch seems like a hassle, then the PCI core patches
-> > > could get merged first and the atheros patches can wait for the next
-> > > cycle.
-> > > 
-> > > - Mani
-> > > 
-> > > Changes in v3:
-> > > * Dropped the change that made pci_enable_link_state*() symmetric with the
-> > >   disable APIs. Instead added a new pci_force_enable_link_state() API used
-> > >   only by the ath drivers, so the init-time blacklist stays overridable
-> > >   only via pcie_aspm=force and existing callers like VMD are left
-> > >   untouched.
-> > > * Fixed the locked path to use pci_set_power_state_locked() for the D0
-> > >   transition. The previous version called the non-locked variant, which
-> > >   re-acquires pci_bus_sem.
-> > > * ath drivers now disable PCIE_LINK_STATE_ASPM_ALL instead of
-> > >   PCIE_LINK_STATE_ALL so that CLKPM is preserved and can be restored
-> > >   (pcie_aspm_enabled() doesn't report CLKPM).
-> > > * Reworked the kernel-doc patch to cover both the enable and disable APIs
-> > >   and reference the new API.
-> > > * Rebased on top of v7.2-rc1.
-> > > 
-> > > Changes in v2:
-> > > * Reworked the pcie_aspm_enabled() API to return the enabled states
-> > >   instead of bool and used it to save/restore the ASPM states in ath
-> > >   drivers.
-> > > * Added a patch from Ilpo to disable ASPM even if BIOS didn't grant
-> > >   permission.
-> > > * Added the CONFIG_PCIEASPM dependency to ath{10/11/12}k drivers.
-> > > * Rebased on top of v6.17-rc1.
-> > > 
-> > > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-> > > ---
-> > > Ilpo Järvinen (1):
-> > >       PCI/ASPM: Always disable ASPM when driver requests it
-> > 
-> > I put this first patch on pci/aspm for v7.4 because there seems to
-> > be a consensus that it's better to have the ASPM core disable
-> > things even if it doesn't technically have control of ASPM,
-> > because the alternative is that drivers just do it themselves,
-> > also ignoring ASPM ownership concerns.  Having the drivers do it
-> > just means the PCI core ASPM support doesn't know what's
-> > happening.
-> > 
-> > I think we should defer the rest of these because I think there's
-> > a little room to make the enable/disable/force-enable dance more
-> > intuitive for the drivers.  As far as I know, the rest of the
-> > series is definite cleanups but doesn't fix any actual functional
-> > issues.
-> 
-> I wouldn't just categorize the rest of the patches as mere cleanups.
-> They are indeed fixing an obvious race between PCI core and the
-> driver doing ASPM dance at the same time. But for sure, even after
-> these patches, one can trigger the same race between sysfs 'config'
-> and the driver/PCI core, but that's more of an user trying to
-> perform an action to trigger a race vs race happening within the
-> kernel without user intervention (which is too bad).
+Hi Tamizh,
 
-You're right, using "cleanup" glosses over important fixes.  It's a
-significant consistency problem for PCI core ASPM code as well as
-racing.
+Thanks for the heads-up about Julius's series.
 
-Although I'm not sure there is actually a race between the driver and
-the PCI core *except* for sysfs.  In what non-sysfs case might the
-core ASPM code touch the device at the same time as the driver?  I
-guess maybe lane margining and bwctrl?  Can those happen autonomously,
-without being kicked via sysfs?
+I have reviewed it. Both series replace .wake_tx_queue in ath11k, so
+they conflict textually there, but they solve different problems:
+mine stops -ENOMEM by checking the ring space before dequeue, his adds
+AQL, airtime fairness and a full deficit round-robin scheduler. The
+two are complementary.
 
-> I'd really like to see a way forward for these patches, even with a
-> new API and not let them fall through the cracks.
+For ath11k, my series is smaller (4 patches, 7 review cycles) and has
+no external dependencies, so it may be simpler to land first. Julius
+already offered to rebase onto it in his cover letter [1] and move the
+ring check into his scheduling round.
 
-Absolutely!
+Since there is no conflict in ath12k (Julius's series is ath11k only),
+I could split ath11k and ath12k into separate series to try to unblock
+both. By the way, any more feedback on the ath12k patches? WDYT?
+
+[1] https://lore.kernel.org/all/20260908135319.754140-1-julius@bairaktaris.de/
+
+Thanks
+
+Best regards
+José Ignacio
+
 
