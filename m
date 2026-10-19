@@ -1,500 +1,200 @@
-Return-Path: <ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org>
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
-	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E48B9CCF2DE
-	for <ath12k@archiver.kernel.org>; Mon, 19 Oct 2026 14:03:10 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C6D7E606A324
+	for <ath12k@archiver.kernel.org>; Mon, 19 Oct 2026 16:47:02 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=mxOCy0vZ;
+	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=nfWXGEn2;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=WPgvEkUq
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hX+ZzV2E0bDSJBMzRqTbAutJVLZEfQz4z2BU1s2/mpE=; b=HG0h6VkL9q+ptc6OnqW/91k7/p
-	m3PhKOpKrHizvUKmiol0EAdHWzwVw2t9ZqNJaf/JLRkvSE9HPuKHnS2Up6WjQ4GwX7/3vr3CBybJn
-	OCReIE3UQ2Zg6OxXkjd89PJuRTn54TWg6uMUI7W75zPbaQB9OORFVQAR2eVb9jbXKUC6al4M9Y7OJ
-	dRw78Jdh1DE8fkkyMRvI9lmjGxFTpfqB7qHeKmcmO8NKMn48GQGHQDu/ZsQwZ3tarRHV6TdIp+ajJ
-	ioyCbfKtxaTaKtRZ+v3jE0eSG4455KVdvlk5ksE3m5FcPJTVxFjHhQQ8zrTih/F59igwfLR4bYqpd
-	vBvpBacQ==;
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=DrHjVs3K5knpICGJJRURjLir0JgH6n3UDboXHBkcEBg=; b=mxOCy0vZH7XaXt9bNf9hPprA4Q
+	9CyeXZJsA3LlWLwdnSVSHa2rBQrioEB6eUvzFT5p35ti3I4GYVM/Mfv5yEYhN356rzTpkpWpIhHbm
+	Ler9C+yJvRRhA36EvdcQXq3j+ZWU82YY+BWR8bEbV5Qu/jAXBEIMCAGL44zzJZ/h7bQ3bQDoZBdGP
+	GE6aEuNSMnzEncT+7/jF6SaePRR6TapSKPXhcwJatkSSNDUkrugKA7G9bi8SWuSJWTm4eEemK2ErI
+	zFFkH4hBVRIZ6qQLe1kB5rvNbPB1+9LCUZt+BSv18JB6lbZFl4MDfYxtkwO3U3D8Wnx3Lr4LSEQQ2
+	+lOrN/jA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xInxG-00000007ebk-2Jpl;
-	Mon, 19 Oct 2026 14:03:10 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xIqVn-000000081OM-3zy4;
+	Mon, 19 Oct 2026 16:46:59 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xInxF-00000007ebD-37AS
+	id 1xIqVl-000000081Mr-1UOj
 	for ath12k@lists.infradead.org;
-	Mon, 19 Oct 2026 14:03:09 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 712D2414B0;
-	Mon, 19 Oct 2026 14:03:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3F3D61F000CA;
-	Mon, 19 Oct 2026 14:03:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792418589;
-	bh=hX+ZzV2E0bDSJBMzRqTbAutJVLZEfQz4z2BU1s2/mpE=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=N+G2BdjQEXXoOL2/KtEfyenEBfNYcNOe4E1Z0mr+Ob0MD6g62ii6pTZUt5XH7UWuu
-	 T2nqx+OnlCkTcBPM2PBJpHPhY5APWXaq3FTLLnU0h6k/C6yLih3e9ovxYNHDqS3AKn
-	 2cb9roLIWpeFl4FDgs48Fx2dj/76X4G2p5yOG+CZOkuPpBLtsDLVljY/WcaevKY4yT
-	 Si+mhBensFd/2sloPS5swF7BtdZ1mMJlT3m4gbYZO32YC0fehk9fSmsrNI+wTnmg7G
-	 Y3WA8V7wMFX4YgRMRsyobaYTGwvSi/HovWvwhcvnyojLHadvnSccR5YlFSYMkLZNuh
-	 0X/E1kNXg085w==
-From: Sasha Levin <sashal@kernel.org>
-To: patches@lists.linux.dev,
-	stable@vger.kernel.org
-Cc: Nicolas Escande <nico.escande@gmail.com>,
-	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	Sasha Levin <sashal@kernel.org>,
-	jjohnson@kernel.org,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH AUTOSEL 6.18-6.12] wifi: ath12k: avoid setting 320MHz support on non 6GHz band
-Date: Mon, 19 Oct 2026 09:50:46 -0400
-Message-ID: <20261019135441.1420968-355-sashal@kernel.org>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261019135441.1420968-1-sashal@kernel.org>
-References: <20261019135441.1420968-1-sashal@kernel.org>
+	Mon, 19 Oct 2026 16:46:58 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69JFPMYi2816666
+	for <ath12k@lists.infradead.org>; Mon, 19 Oct 2026 16:46:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	DrHjVs3K5knpICGJJRURjLir0JgH6n3UDboXHBkcEBg=; b=nfWXGEn2NkcNVPpA
+	Sapb6Al6dKB6XBK/E7Wc91YrpmFkKXGO6OidMfRTzWW0xmPq3nrdhsKdgyrlEsjt
+	8XcTKHuYqy5FHI3vermFeKBj0SCDdpxGyQbasIr7oeeuabDeBVVV7RD/6czWALvA
+	kea82WILN2a96XvK3mCrgJye36wgVWic902BlxvJcPZOarHUuvx/CuWWPgEJLo7O
+	btWw1tscYss9RtGlfejcDaNkkW7/wKHMh39LBXHtXHK+JVB5mTNBS79sAtAdGuy9
+	Lk3Vxq6IqiLAjOPZ/TAyuQ0uS320TXv7b089hyCVGfmYfbkdChj6UqF6gC28olhq
+	D4fEEw==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hdkmfh1r0-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 19 Oct 2026 16:46:55 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-35c902e0da2so4349481eec.1
+        for <ath12k@lists.infradead.org>; Mon, 19 Oct 2026 09:46:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1792428414; x=1793033214; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=DrHjVs3K5knpICGJJRURjLir0JgH6n3UDboXHBkcEBg=;
+        b=WPgvEkUqmDf4r4QMH2NjwxEDArUGU5HH8RJ394V9aPdzRQ9Abu0MwxZhJQy/DuflDo
+         org9XbktLF4NodVUpe6E1rwH2I/M0Tt8i5yOuOTlPEB9Az6jKAD6aTLMkRdZlHyEDFLU
+         UI87uDrPt/BEBpEqxmjU2cIIST9/NQi+h8PrLPQiPOv43UR4y23vE5fs+ixBJYd83Tt1
+         yGZ2HLA52yPm6/qEvXxJlk92krQaPvI75SqoT/9e3VZUlJFbG0wLiWWqJgFUTgWzGmbc
+         +ZwdSwcQ+m8Pj21Cu7TsoWuwGLPaLZQ05BQhXPg1HtpR5oR/ikoOC1tkEaSvKQhydLaX
+         eNKg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1792428414; x=1793033214;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=DrHjVs3K5knpICGJJRURjLir0JgH6n3UDboXHBkcEBg=;
+        b=sbVMIPUuZl7b7qqy91khhsmr0yn7qj+XGKZvtRjOKhAXJWMKfs3KPCh2m1GbbLffNS
+         qvI7Omvn6Tu67coBrGeoKOvd2aKi+q1fm1Jwl33rUGGqkI4SrcCim0r9NYmd6Z6GJbzY
+         uA4ivQTvoDGrnQ4N3Aw812gYfLmJQn82G6DPdXGJnsijV/973WeX1O/CwCw0FKdwEhRY
+         RmZpa30ac5T0YeCdjwWt5atQ+alIsytnvwMA2nhwdfFjjLL1mYECZk4HnY2jI94r5GdI
+         +WxnrcnpvDzE52rYa2D6SmYLs/HcbNhiCEsIVWDY0/dZMP5ng9i2PxnRy1XGTFzSa8it
+         sQrQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzGjEhR2Opudd8SQzcOW75YlppHtLLjPhD9/w6eDu5xgV9er1X9V0soitVZTml3qC1tpboIFJg=@lists.infradead.org
+X-Gm-Message-State: AFq9FYIAZRb9Fd59odptyS0vrvZGredS+eWxBCdKokMrb6qW08e9nUr4
+	+Ngt+3wty8lGkvWHRMFFDZH3ZJrrGG0eJ8DwGdRuJISjrYLaNLwb/y8z2cNicCbjrWvjzsdKqva
+	vk15lI0F1PyV+4gUkYa+/J8WJZgWR53JBfUyCRhmmGgKTI1x1J31jJwQeCaUxZrVaHAFUj3T0
+X-Gm-Gg: AYBFou1S0iwB1n39af6mgxr+Idh4P/qDm+tNDiJYTPRUESRHlRcqJQh00CcJ6R7+1Zb
+	wK17FpgU2YZREghsjuVOqHdmL0YgceT5pMF0JC/+xP3TEezRCIXeoRYKalLuym3ohSoFza0zlde
+	p+QPmNWuydiydTfIyYeq1kCe8fffwrP48ZcMAKKw5VyXeqoPOZ3WbdMgtNU5EtMVX1IW4kKe24J
+	VXwWAmEbNWmBD9O061/DYKjQEafE9lOGtu4CyMXAmKn88rFXTadSPy2xpGr6wrjyEaJrEbMxULl
+	fEdL8YBuV98EUGbDEY1TpO91nzy8PFsC2bBg8lSf+jw6FCxdybfCyNfphZFbaNx53610LolOqiq
+	ZT98la/TQU8IX/HJg9ggWyXMRVaB9g8diNMpN+s4SPaURxqkisiUmlo8Skg==
+X-Received: by 2002:a05:701b:220e:b0:159:d448:dd1c with SMTP id a92af1059eb24-1825a67565cmr13293195c88.19.1792428414348;
+        Mon, 19 Oct 2026 09:46:54 -0700 (PDT)
+X-Received: by 2002:a05:701b:220e:b0:159:d448:dd1c with SMTP id a92af1059eb24-1825a67565cmr13293157c88.19.1792428413560;
+        Mon, 19 Oct 2026 09:46:53 -0700 (PDT)
+Received: from [192.168.1.20] (33.sub-75-218-193.myvzw.com. [75.218.193.33])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1831b75ac0fsm29699093c88.15.2026.10.19.09.46.52
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 19 Oct 2026 09:46:52 -0700 (PDT)
+Message-ID: <e98854af-f5a8-4c8b-98ad-9af673384f57@oss.qualcomm.com>
+Date: Mon, 19 Oct 2026 09:46:51 -0700
+X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.18.57
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/4] wifi: ath11k/ath12k: validate firmware array lengths
+To: Jiale Yao <yaojiale02@163.com>, Jeff Johnson <jjohnson@kernel.org>,
+        Shashidhar Lakkavalli <slakkavalli@datto.com>,
+        kbuild test robot <lkp@intel.com>, Julia Lawall <julia.lawall@lip6.fr>,
+        linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+        linux-kernel@vger.kernel.org, ath12k@lists.infradead.org
+References: <20261019100506.1915181-1-yaojiale02@163.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20261019100506.1915181-1-yaojiale02@163.com>
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: n4s9iOwu2P2wEsHDLQ3WZHjEsd2Lfeij
+X-Authority-Analysis: v=2.4 cv=O+isLx9W c=1 sm=1 tr=0 ts=6ad6497f cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=AnolQpdaNwb4XK4FG+QP+g==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=VwQbUJbxAAAA:8 a=SGwW7hRdeZfZbUOxcl4A:9 a=QEXdDO2ut3YA:10
+ a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE5MDA2NiBTYWx0ZWRfX9imT1YNb2DEA
+ XnVq/yDH4t1+mqIkGK+suL9nGkKv6Lpe+ywyNVVZNWeBmU3OWOEN1CrR90ES2HdYNh+DZ+ciqgy
+ BpvHRT4E+KvOUcP9BViZXE3++SlTpsQeRFcP0khOfvV0VxbpU0uP0q0s3BA++qadYPzSY0ksc+V
+ kGa6qKbKDC8K88Z8vTGQj3BmJoxcivl2GcSl+O27hnwCB170eqay1AXstlS0SzxY5VtUi7B7t9U
+ Rfnuqs1aI4+5J1FFHNI7eV2u8ArLy/hvi5bgd0b/3WXmuQ9wEd72A8bkEDw2QW73m7MUhK6jkGB
+ JYk1wM8DrLtp4qf80b5vE27ZwmZw6uE68u9KWVbiSQNli2kAPvyZcPty/kzvHCfFUdvj7WloPgT
+ G/fCgMZa0uQmzJjASyN0KZfBE7bHy3GP948yL1PKJDwf4Gw6yULKIc7n92FtVPrLDH8N36+nz0L
+ lryt9vKSOjU59OnirUw==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE5MDA2NiBTYWx0ZWRfX7biQTlLl0wam
+ /3tecNXCKEpAKEYcIRPKEtXf1WeOp71UAuEHmTnOWvLnfsNdDrnYlZVo1FWP1nd2pM3a3j606o7
+ NkUK3Mfmq4yWBSCZwlllJ8AiJLOeBGk=
+X-Proofpoint-ORIG-GUID: n4s9iOwu2P2wEsHDLQ3WZHjEsd2Lfeij
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-19_05,2026-10-14_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 impostorscore=0 malwarescore=0 lowpriorityscore=0
+ bulkscore=0 suspectscore=0 spamscore=0 clxscore=1015 adultscore=0
+ phishscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610080000
+ definitions=main-2610190066
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261019_094657_506775_B3F12358 
+X-CRM114-Status: GOOD (  14.77  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
 List-Id: <ath12k.lists.infradead.org>
-List-Unsubscribe: <https://lists.infradead.org/mailman/options/ath12k>,
- <mailto:ath12k-request@lists.infradead.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/ath12k/>
 List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
-
-From: Nicolas Escande <nico.escande@gmail.com>
-
-[ Upstream commit eaf478b3ea68e1b5df659acd24c4df5850e12325 ]
-
-On a split phy qcn9274 (2.4GHz + 5GHz low), "iw phy" reports 320MHz
-related features on the 5GHz band while it should not:
-
-    Wiphy phy1
-    [...]
-        Band 2:
-    [...]
-            EHT Iftypes: managed
-    [...]
-                EHT PHY Capabilities: (0xe2ffdbe018778000):
-                    320MHz in 6GHz Supported
-    [...]
-                    Beamformee SS (320MHz): 7
-    [...]
-                    Number Of Sounding Dimensions (320MHz): 3
-    [...]
-                EHT MCS/NSS: (0x22222222222222222200000000):
-
-This is also reflected in the beacons sent by a mesh interface started on
-that band. They erroneously advertise 320MHz support too.
-
-This should not happen as IEEE Std 802.11-2024, subclause 9.4.2.323.3 says
-we should not set the 320MHz related fields when not operating on a 6GHz
-band. For example it says about Bit 0 "Support For 320 MHz In 6 GHz"
-
-  "Reserved if the EHT Capabilities element is indicating capabilities for
-   the 2.4 GHz or 5 GHz bands."
-
-Fix this by clearing the related bits when converting from WMI eht phy
-capabilities to mac80211 phy capabilities, for bands other than 6GHz.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00218-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Link: https://patch.msgid.link/20260623151613.72113-1-nico.escande@gmail.com
-Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
-
-LLM Generated explanations, may be completely bogus:
-
-This is a 6.18.y tree (`v6.18.53`). The patch is a small ath12k
-firmware-workaround that stops 5 GHz/2.4 GHz from advertising 6 GHz-only
-320 MHz EHT bits, including in mesh beacons.
-
-## PHASE 1: COMMIT MESSAGE FORENSICS
-
-**Step 1.1: PARSE THE SUBJECT LINE**
-- Record: `[ath12k / wifi] [avoid] [do not advertise 320 MHz EHT
-  capabilities on non-6 GHz bands]`
-
-**Step 1.2: PARSE ALL COMMIT MESSAGE TAGS**
-- Record:
-  - No `Fixes:` tag (expected for this review; Qualcomm review of v2
-    asked for one because the bug is user-visible, and v3 still omitted
-    it)
-  - No `Reported-by:`, `Tested-by:`, `Cc: stable`
-  - `Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>`
-  - `Reviewed-by: Rameshkumar Sundaram
-    <rameshkumar.sundaram@oss.qualcomm.com>`
-  - `Link: https://patch.msgid.link/20260623151613.72113-1-
-    nico.escande@gmail.com`
-  - `Signed-off-by: Nicolas Escande` (author)
-  - `Signed-off-by: Jeff Johnson` (ath maintainer; applied to ath-next)
-  - `Tested-on: QCN9274 hw2.0 PCI ...` (hardware test, not a tag)
-  - Ignore `[Upstream commit eaf478b3ea68...]` and `Signed-off-by: Sasha
-    Levin` (pipeline)
-
-**Step 1.3: ANALYZE THE COMMIT BODY TEXT**
-- Record: On split-phy QCN9274 (2.4 GHz + 5 GHz low), firmware-reported
-  EHT PHY caps are copied onto the 5 GHz band, so `iw phy` shows “320MHz
-  in 6GHz Supported”, beamformee SS 320 MHz, and 320 MHz sounding
-  dimensions. Mesh beacons on that band advertise the same. IEEE
-  802.11-2024 9.4.2.323.3 marks those fields reserved off 6 GHz.
-- Symptom: wrong userspace capability dump and wrong over-the-air EHT
-  Capabilities IE.
-- Root cause: WMI EHT PHY caps are copied as-is; 320 MHz/6 GHz bits are
-  not cleared for 2.4/5 GHz.
-- Version info: none beyond QCN9274 test hardware.
-
-**Step 1.4: DETECT HIDDEN BUG FIXES**
-- Record: Not a disguised cleanup. It is an explicit correctness/spec
-  fix (firmware workaround). “Avoid setting” here means “stop
-  advertising reserved bits.”
-
-## PHASE 2: DIFF ANALYSIS
-
-**Step 2.1: INVENTORY THE CHANGES**
-- Record: Single file `drivers/net/wireless/ath/ath12k/wmi.c`, +16/−1.
-  Function: `ath12k_wmi_eht_caps_parse()`. Surgical, one-driver.
-
-**Step 2.2: UNDERSTAND THE CODE FLOW CHANGE**
-- Before: after `le32_to_cpu()` of firmware PHY caps, only the 6 GHz
-  path ORs back a saved 320 MHz bit. 2.4/5 GHz keep whatever firmware
-  sent, including 320 MHz/6 GHz bits.
-- After: 6 GHz path unchanged; non-6 GHz path clears eight reserved 320
-  MHz/6 GHz fields in the byte view of `eht_cap_phy_info[]`.
-- Path: capability parse at firmware ready / MAC-PHY caps-ext, not a hot
-  datapath.
-
-**Step 2.3: IDENTIFY THE BUG MECHANISM**
-- Record: Category (h) firmware workaround + (g) protocol correctness.
-- Mechanism: firmware reports 6 GHz/320 MHz caps on the 5 GHz WMI blob.
-  Those bits are memcpy’d into mac80211 `ieee80211_sta_eht_cap`
-  (`ath12k_mac_copy_eht_cap()`). `ieee80211_eht_mcs_nss_size()` adds 3
-  MCS/NSS bytes when `IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ` is set, so
-  5 GHz beacons can carry a longer EHT Capabilities IE than a spec-
-  compliant peer expects. cfg80211 still refuses 320 MHz off 6 GHz
-  (`net/wireless/chan.c`), so the kernel will not actually operate at
-  320 MHz on 5 GHz.
-
-**Step 2.4: ASSESS THE FIX QUALITY**
-- Record: Obviously correct. Masks match
-  `include/linux/ieee80211-eht.h`. `WMI_MAX_EHTCAP_PHY_SIZE` is 3 u32s
-  (12 bytes); `phy_cap[7]` is in range. u8 overlay of a host-endian u32
-  array matches existing ath12k memcpy of the same array into
-  `phy_cap_info[]` (little-endian hosts, which is where QCN9274 runs).
-  No API/lock/alloc change. Regression risk is low: only reserved bits
-  on non-6 GHz are cleared. Review expanded v1’s incomplete mask set; v3
-  clears the full set Qualcomm asked for.
-
-## PHASE 3: GIT HISTORY INVESTIGATION
-
-**Step 3.1: BLAME THE CHANGED LINES**
-- Record: Function added in `1476014fadb662` (“wifi: ath12k: WMI support
-  to process EHT capabilities”), contained in `v6.6-rc1`. 320 MHz
-  preserve/OR logic added in `d4e244c85e45df` (“enable 320 MHz bandwidth
-  for 6 GHz… WCN7850”), in v6.7. Buggy “copy firmware bits onto 5 GHz
-  unchanged” behavior is as old as EHT parse in this driver (~v6.6).
-  Present throughout 6.18.
-
-**Step 3.2: FOLLOW THE FIXES: TAG**
-- Record: No `Fixes:` tag. Closest introducing commits are
-  `1476014fadb662` and `d4e244c85e45df`; both are ancestors of `v6.18`.
-  No later follow-up on this file after the upstream commit.
-
-**Step 3.3: CHECK FILE HISTORY**
-- Record: Nearby `wmi.c` work is unrelated (endianness, TLV length,
-  scan). Standalone; not patch X/Y.
-
-**Step 3.4: CHECK THE AUTHOR'S OTHER COMMITS**
-- Record: Nicolas Escande is a regular ath11k/ath12k contributor
-  (Freebox/Iliad), not the subsystem maintainer. Jeff Johnson applied
-  it. Qualcomm (Baochen Qiang, Rameshkumar Sundaram) reviewed.
-
-**Step 3.5: CHECK FOR DEPENDENT/PREREQUISITE COMMITS**
-- Record: None. Uses existing `NL80211_BAND_*` and
-  `IEEE80211_EHT_PHY_CAP*` symbols already in this tree. Applies
-  standalone.
-
-## PHASE 4: MAILING LIST AND EXTERNAL RESEARCH
-
-**Step 4.1: FIND THE ORIGINAL PATCH DISCUSSION**
-- Record: `b4 dig -c eaf478b3ea68` →
-  https://patch.msgid.link/20260623151613.72113-1-nico.escande@gmail.com
-- Series: v1 (2026-01-23) → v2 (2026-06-11) → v3 (2026-06-23, applied).
-  v1 incomplete masks; v2/v3 clear remaining 320 MHz/6 GHz fields after
-  Qualcomm/Pablo feedback. v3 vs v2 is comment/typo/spec-citation
-  cleanup.
-- No NAKs. Jeff Johnson: “Applied, thanks!”
-- No reviewer `Cc: stable` on v3.
-
-**Step 4.2: CHECK WHO REVIEWED THE PATCH**
-- Record (`b4 dig -w`): To/Cc `ath12k@lists.infradead.org`, `linux-
-  wireless@vger.kernel.org`. Reviewers: Rameshkumar Sundaram, Baochen
-  Qiang (Qualcomm). Johannes Berg (mac80211) on v1: this is a firmware
-  workaround and belongs in the driver, not mac80211. Pablo MARTIN-GOMEZ
-  (Freebox) pointed out missing CAP7 bits.
-
-**Step 4.3: SEARCH FOR THE BUG REPORT**
-- Record: No syzbot/bugzilla. Author reproduced on QCN9274 split-phy;
-  `iw phy` dump and mesh beacons in the message. Real hardware, not
-  theoretical.
-
-**Step 4.4: CHECK FOR RELATED PATCHES AND SERIES**
-- Record: Single-patch series. v1→v3 only refined which reserved bits to
-  clear. No hidden dependency.
-
-**Step 4.5: CHECK STABLE MAILING LIST HISTORY**
-- Record: No useful stable-list discussion of this subject. WebSearch of
-  lore stable did not turn up this patch. UNVERIFIED beyond that (lore
-  HTTP 403 on direct fetch; thread recovered via `b4`).
-
-## PHASE 5: CODE SEMANTIC ANALYSIS
-
-**Step 5.1: KEY FUNCTIONS**
-- Record: `ath12k_wmi_eht_caps_parse()` only.
-
-**Step 5.2: TRACE CALLERS**
-- Record: Only from `ath12k_wmi_tlv_mac_phy_caps_ext_parse()` for 2.4 /
-  5 / 6 GHz. That is called from `ath12k_wmi_tlv_mac_phy_caps_ext()`,
-  registered as the WMI TLV parser for
-  `WMI_TAG_MAC_PHY_CAPABILITIES_EXT` during service-ready. Device bring-
-  up, not IRQ/hot path.
-
-**Step 5.3: TRACE CALLEES**
-- Record: `le32_to_cpu()` and bit clears only. No alloc/lock/IO.
-
-**Step 5.4: FOLLOW THE CALL CHAIN**
-- Record: firmware ready → WMI caps-ext → `ath12k_mac_copy_eht_cap()` →
-  mac80211 sband iftype data → `iw phy`, association, and beacon IEs.
-  Reachable for any ath12k user with 11be firmware (QCN9274, WCN7850,
-  etc.). Unprivileged users cannot trigger a crash; they do
-  see/advertise wrong caps. Mesh/AP beacons go over the air.
-
-**Step 5.5: SEARCH FOR SIMILAR PATTERNS**
-- Record: rtw89 and mt76 only *set* 320 MHz bits when `band ==
-  NL80211_BAND_6GHZ`. mac80211 strips 320 MHz bits when `bw_limit <
-  320`. ath12k was the outlier that trusted firmware on 5 GHz.
-
-## PHASE 6: CROSS-REFERENCING AGAINST THE LOCAL TREE
-
-**Step 6.1: DOES THE BUGGY CODE EXIST IN THIS TREE?**
-- Record: Yes. Tree is `v6.18.53` (`VERSION=6 PATCHLEVEL=18
-  SUBLEVEL=53`). `git merge-base --is-ancestor eaf478b3ea68 v6.18.53` is
-  false — the fix is not in 6.18.53. Parent of the candidate still has
-  the old if-only-6 GHz OR. `1476014fadb662` and `d4e244c85e45df` *are*
-  in v6.18. Bug exists here.
-
-**Step 6.2: CHECK FOR BACKPORT COMPLICATIONS**
-- Record: Clean apply. Context in this tree matches (function at ~4937).
-  All masks exist in `include/linux/ieee80211-eht.h`. Expected
-  difficulty: clean apply.
-
-**Step 6.3: CHECK IF RELATED FIXES ARE ALREADY HERE**
-- Record: No other commit in this tree clears these bits in
-  `ath12k_wmi_eht_caps_parse()`. `ath12k_mac_filter_eht_cap_mesh()` only
-  strips some CAP7 bits for mesh iftypes, not CAP0 320 MHz-in-6 GHz, so
-  it does not replace this fix.
-
-## PHASE 7: SUBSYSTEM AND MAINTAINER CONTEXT
-
-**Step 7.1: SUBSYSTEM AND CRITICALITY**
-- Record: `drivers/net/wireless/ath/ath12k` — Qualcomm Wi-Fi 7.
-  Criticality: IMPORTANT (production Wi-Fi 7, not core mm/net).
-  `CONFIG_ATH12K`.
-
-**Step 7.2: SUBSYSTEM ACTIVITY**
-- Record: Active (many 2026 ath12k WMI commits). This bug is old (v6.6),
-  not a regression from brand-new code.
-
-## PHASE 8: IMPACT AND RISK ASSESSMENT
-
-**Step 8.1: WHO IS AFFECTED**
-- Record: ath12k users, especially split-phy QCN9274 5 GHz (author’s
-  case) and any firmware that sets 320 MHz bits in the 2.4/5 GHz WMI
-  blob. Not universal.
-
-**Step 8.2: TRIGGER CONDITIONS**
-- Record: Device probe / cap parse whenever firmware reports those bits.
-  Common on affected SKUs. Unprivileged users do not get a kernel
-  exploit; they get wrong `iw` output and wrong beacon IEs. Not a race.
-
-**Step 8.3: FAILURE MODE SEVERITY**
-- Record: Not a panic/UAF/deadlock. Kernel will not run 320 MHz on 5 GHz
-  (`chan.c` requires 6 GHz; MLME 320 MHz limit is `is_6ghz && cap bit`).
-  User impact is (1) wrong `iw phy`, (2) reserved bits in beacons, (3)
-  extra 3-byte 320 MHz MCS/NSS field in the EHT Capabilities IE, which
-  can confuse spec-compliant peers. Severity: MEDIUM (protocol/interop),
-  not CRITICAL.
-
-**Step 8.4: RISK-BENEFIT RATIO**
-- Benefit: medium for QCN9274/mesh/AP users; stops malformed EHT IEs.
-  Risk: very low (~15 lines, reserved-bit clears, reviewed, tested).
-  Ratio: favorable.
-
-## PHASE 9: FINAL SYNTHESIS
-
-**Step 9.1: EVIDENCE**
-
-FOR:
-- Real hardware bug (QCN9274), user-visible `iw phy` and mesh beacons
-- Malformed EHT Capabilities IE (reserved bit + extra MCS/NSS bytes) —
-  interoperability, not just cosmetics
-- Small, obviously correct, constants and function exist in 6.18
-- Reviewed by Qualcomm; applied by Jeff Johnson; Johannes agrees it is a
-  driver firmware workaround
-- No new API; no prerequisites missing in this tree
-- Analogous to a hardware/firmware quirk
-
-AGAINST:
-- Not a crash, leak, UAF, deadlock, or CVE
-- Johannes noted most extra 320 MHz bits are unused at runtime; cfg80211
-  already blocks 320 MHz off 6 GHz
-- Author never added `Fixes:` even after Rameshkumar asked
-- Affects one driver / specific firmware behavior
-
-UNRESOLVED:
-- Direct lore.kernel.org HTTP fetch returned 403; discussion recovered
-  via `b4` mbox
-- No stable-list thread found
-
-**Step 9.2: STABLE RULES CHECKLIST**
-1. Obviously correct and tested? **PASS** — masks match the spec;
-   Tested-on QCN9274; two Qualcomm Reviewed-by
-2. Fixes a real bug that affects users? **PASS** — observed wrong caps
-   and wrong beacons
-3. Important issue? **PASS** (medium) — OTA IE malformation/interop on
-   Wi-Fi 7 APs/mesh, not a crash. Within “etc.” for driver protocol bugs
-   / firmware quirks
-4. Small and contained? **PASS** — 16 insertions, one function
-5. No new features or APIs? **PASS**
-6. Can apply to the local tree? **PASS** — code and symbols present;
-   clean apply
-
-**Step 9.3: EXCEPTION CATEGORIES**
-- Record: Firmware/hardware workaround (quirk-like). Not a new device
-  ID, DT, or build fix.
-
-**Step 9.4: DECISION**
-Backport to this 6.18.y tree. The bug is in 6.18, the fix is surgical,
-and wrong EHT IEs on 5 GHz are a real user-visible protocol defect on
-shipping QCN9274 hardware.
-
----
-
-Verification:
-- [Phase 1] Parsed tags: Reviewed-by Baochen Qiang, Rameshkumar
-  Sundaram; Link msgid; Tested-on QCN9274; no Fixes/Reported-
-  by/Cc:stable
-- [Phase 1] Body: split-phy QCN9274 `iw phy` + mesh beacons advertise
-  320 MHz on 5 GHz; IEEE 802.11-2024 9.4.2.323.3 reserved-bit citation
-- [Phase 2] Diff: `ath12k_wmi_eht_caps_parse()` +16/−1; else-branch
-  clears 8 reserved PHY bits
-- [Phase 2] `WMI_MAX_EHTCAP_PHY_SIZE == 3` (12 bytes); `phy_cap[7]` in
-  bounds (`wmi.h:2767`)
-- [Phase 2] Masks verified in `include/linux/ieee80211-eht.h` (CAP0
-  0x02, CAP1 0xe0, CAP2 0xc0, CAP3 0x01, CAP6 MCS15 0x40 / DUP 0x80,
-  CAP7 0x08 / 0x40)
-- [Phase 3] `git blame`: function `1476014fadb662` (v6.6-rc1); 320 MHz
-  OR `d4e244c85e45df` (v6.7)
-- [Phase 3] `git merge-base --is-ancestor 1476014fadb662 v6.18` and
-  `d4e244c85e45df v6.18`: both true
-- [Phase 3] No `Fixes:` tag; no follow-up on `wmi.c` after upstream
-  `eaf478b3ea68`
-- [Phase 4] `b4 dig -c eaf478b3ea68`: lore URL; v1/v2/v3; v3 applied as
-  `eaf478b3ea68`
-- [Phase 4] `b4 dig -w`: ath12k + linux-wireless lists
-- [Phase 4] v1 mbox: Johannes — firmware workaround, belongs in driver;
-  Pablo — missing CAP7; Rameshkumar — also clear CAP3/CAP6 DUP/CAP7
-- [Phase 4] v2 mbox: Rameshkumar asked for `Fixes:` because it is user-
-  visible; author did not add it in v3
-- [Phase 4] v3 mbox: both Qualcomm Reviewed-by; Jeff Johnson applied; no
-  NAK; no Cc:stable
-- [Phase 4] lore WebFetch 403; thread read from `b4 dig -m` / `b4 mbox`
-- [Phase 5] Callers: only `ath12k_wmi_tlv_mac_phy_caps_ext_parse` → WMI
-  service-ready. Impact via `ath12k_mac_copy_eht_cap` /
-  `ath12k_mac_copy_eht_mcs_nss` (320 MHz MCS copy gated on CAP0 bit)
-- [Phase 5] `ieee80211_eht_mcs_nss_size()` adds 3 bytes when CAP0 320
-  MHz bit is set — IE length bug on 5 GHz
-- [Phase 5] `net/wireless/chan.c`: 320 MHz rejected unless band is 6 GHz
-  — no local 320 MHz operation on 5 GHz
-- [Phase 6] `git describe HEAD`: `v6.18.53-5049-g0f0bdc2b0dffb`; `make
-  kernelversion`: 6.18.53
-- [Phase 6] `git merge-base --is-ancestor eaf478b3ea68 v6.18.53`: false
-  — fix not in 6.18.53
-- [Phase 6] Parent of candidate still has old if-only-6 GHz code;
-  constants present
-- [Phase 7] Subsystem ath12k, CONFIG_ATH12K, important Wi-Fi 7 driver
-- [Phase 8] Failure mode: wrong IEs / interop, not oops; severity
-  MEDIUM; backport risk very low
-- UNVERIFIED: no independent user bugzilla beyond the author’s QCN9274
-  report; stable@ lore search did not find this patch
-
-The fix is small, already reviewed, and addresses a real over-the-air
-capability bug that exists in this 6.18 tree.
-
-**YES**
-
- drivers/net/wireless/ath/ath12k/wmi.c | 17 ++++++++++++++++-
- 1 file changed, 16 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index ade14ba6703f3..39d5110eca901 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -4939,6 +4939,7 @@ static void ath12k_wmi_eht_caps_parse(struct ath12k_pdev *pdev, u32 band,
- 				       __le32 cap_info_internal)
- {
- 	struct ath12k_band_cap *cap_band = &pdev->cap.band[band];
-+	u8 *phy_cap = (u8 *)&cap_band->eht_cap_phy_info[0];
- 	u32 support_320mhz;
- 	u8 i;
- 
-@@ -4952,8 +4953,22 @@ static void ath12k_wmi_eht_caps_parse(struct ath12k_pdev *pdev, u32 band,
- 	for (i = 0; i < WMI_MAX_EHTCAP_PHY_SIZE; i++)
- 		cap_band->eht_cap_phy_info[i] = le32_to_cpu(cap_phy_info[i]);
- 
--	if (band == NL80211_BAND_6GHZ)
-+	if (band == NL80211_BAND_6GHZ) {
- 		cap_band->eht_cap_phy_info[0] |= support_320mhz;
-+	} else {
-+		/*
-+		 * Firmware may report 6 GHz/320 MHz specific capabilities for
-+		 * non-6 GHz bands, so explicitly clear them.
-+		 */
-+		phy_cap[0] &= ~IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ;
-+		phy_cap[1] &= ~IEEE80211_EHT_PHY_CAP1_BEAMFORMEE_SS_320MHZ_MASK;
-+		phy_cap[2] &= ~IEEE80211_EHT_PHY_CAP2_SOUNDING_DIM_320MHZ_MASK;
-+		phy_cap[3] &= ~IEEE80211_EHT_PHY_CAP3_SOUNDING_DIM_320MHZ_MASK;
-+		phy_cap[6] &= ~IEEE80211_EHT_PHY_CAP6_MCS15_SUPP_320MHZ;
-+		phy_cap[6] &= ~IEEE80211_EHT_PHY_CAP6_EHT_DUP_6GHZ_SUPP;
-+		phy_cap[7] &= ~IEEE80211_EHT_PHY_CAP7_NON_OFDMA_UL_MU_MIMO_320MHZ;
-+		phy_cap[7] &= ~IEEE80211_EHT_PHY_CAP7_MU_BEAMFORMER_320MHZ;
-+	}
- 
- 	cap_band->eht_mcs_20_only = le32_to_cpu(supp_mcs[0]);
- 	cap_band->eht_mcs_80 = le32_to_cpu(supp_mcs[1]);
--- 
-2.53.0
-
+X-Spam-Status: No, score=-12.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	RCVD_IN_DNSWL_BLOCKED,RCVD_IN_ZEN_BLOCKED_OPENDNS,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
+X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
+	aws-us-west-2-korg-listserv-alma10-1
+
+On 10/19/2026 3:05 AM, Jiale Yao wrote:
+> ath11k and ath12k consume two firmware-provided arrays without fully
+> validating their lengths. The service-ready-ext parser accepts fewer
+> extended regulatory capability entries than the separately reported PHY
+> count, while the ready-event parser trusts the reported extra MAC address
+> count without checking the fixed-structure array length.
+> 
+> Malformed firmware data can therefore make both drivers read beyond the
+> corresponding TLV arrays. Add matching validation to each driver before
+> the arrays are indexed.
+> 
+> The four patches are independent and each addresses one parsing path in
+> one driver.
+> 
+> Jiale Yao (4):
+>   wifi: ath11k: validate extended regulatory capability count
+>   wifi: ath12k: validate extended regulatory capability count
+>   wifi: ath11k: validate ready event MAC address array length
+>   wifi: ath12k: validate ready event MAC address array length
+> 
+>  drivers/net/wireless/ath/ath11k/wmi.c | 10 ++++++++++
+>  drivers/net/wireless/ath/ath12k/wmi.c | 10 ++++++++++
+>  2 files changed, 20 insertions(+)
+> 
+
+(dropping obsolete codeaurora and quicinc addresses)
+
+You seem to have sent two separate series. Which is the correct one to review?
+
+And more importantly, where are the Tested-on: tags which indicate you
+actually tested these changes on real hardware? There have been numerous LLM
+inspired code changes lately, and some of them have caused regressions, so you
+must test your changes on real hardware to be considered.
+
+https://wireless.docs.kernel.org/en/latest/en/users/drivers/ath11k/submittingpatches.html#tested-on-tag
+https://wireless.docs.kernel.org/en/latest/en/users/drivers/ath12k/submittingpatches.html#tested-on-tag
+
+/jeff
 
