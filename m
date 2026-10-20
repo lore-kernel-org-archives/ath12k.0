@@ -2,139 +2,143 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 42C8E606A31A
-	for <ath12k@archiver.kernel.org>; Tue, 20 Oct 2026 08:53:15 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6579A606A31E
+	for <ath12k@archiver.kernel.org>; Tue, 20 Oct 2026 13:54:04 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=D2WBrEmv;
-	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=MKuSlqOr;
-	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=QX6IVmPT
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bhO++VK5;
+	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=PxIRm7mb;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=X0W66Q/0
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WlvSUhy9NQS9KPGPiYSnQtbj1YWbn4EqiF+2amxYei8=; b=D2WBrEmvVfUs7APwOy9tsJoeDi
-	7jULGOiSMspoF+gt9vjBOJnZfEBeIO3Cwwa/pmDhUU43VNWnbBwIBYm5s2GpXzCu60oQb1xd5RzDz
-	LP57Q4EE46AqYk2nzAE1hGQpX6qwTehRV/TbOz2K2MiGV0/R40YnZBJYevD1N6skyayRGj1lizO45
-	f9HX2IPU+LBNyfesv41IvrXXySLpAZi9HTS0wxGTA+58DmxxZ9v3DCwXBJYZlOGB4eeUOKu34x8We
-	o8UQ/w6xsCD4IVca+dyVrTz9NxOGDuAYBJalDumhyhVM2SmTPG0s37xNkhgtenN/vSVTYYXsInLia
-	6/E+eqBw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=98h+uohlvwBVcGjNEa2NGd5iaB9mYxaSn10D70Q384o=; b=bhO++VK5/M1BAWOROdoKNF2f0D
+	PcG3jZfaC7/tQcyGXe0cpUKDeVlaEpgs1wm+JXZSUHoiCENGmKeoMxMueXo7xKfzJiaYFO/ZWwWgq
+	Umh3asP2w3/YIOz8TvXspTkJWYxH/0E3jcdRHo3A/p+DMexuW7fu4hHRRFyD51wV69iLGVF5MOd5l
+	2pcZtCk6QmoWX0+C8yHpmQsayaSgwl0bJQlxY0nKWxXLAEGoDiEuxzOCoOD/HtqHKc+ELyBiV5WRq
+	baFlQ6I1kih4UJkKLMIjGRblVFz71R5UBTmWEE5RhDmTuZaVvl5mO0Up5zHKEGEjPS+3lQf2MtDfd
+	/Iu0YEaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ5ar-00000009ERF-0skw;
-	Tue, 20 Oct 2026 08:53:13 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xJAHy-00000009q88-16pF;
+	Tue, 20 Oct 2026 13:54:02 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ5ao-00000009EQG-2jLX
+	id 1xJAHv-00000009q6p-1XTw
 	for ath12k@lists.infradead.org;
-	Tue, 20 Oct 2026 08:53:11 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69K8XVTV1211310
-	for <ath12k@lists.infradead.org>; Tue, 20 Oct 2026 08:53:09 GMT
+	Tue, 20 Oct 2026 13:54:00 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69KDL5K31754710
+	for <ath12k@lists.infradead.org>; Tue, 20 Oct 2026 13:53:48 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=WlvSUhy9NQS9KPGPiYSnQtbj
-	1YWbn4EqiF+2amxYei8=; b=MKuSlqOr1MM+K2c3lV9aBkreZDdS+7X4gg6fZ7xQ
-	A3gWp1J04TcSKHo+Cqivfr9CyaNl/XGsYxZtmGs74g/OSbe2DmeTqV6mDHWMrV1h
-	6rHKhKDpWzlJ5VTfc862Lf72+YY/0DRjkyx7KsgCUPOu3gyNk1UBxe9dX53rHZRS
-	z9YYngdReEEG0BInhvyP0dFVSToeL056kSdQ7EGcd2gb3jP2hkDqcvnudKi+LJ0i
-	OyC/Sd8oXiNVqohNxM86OyNWZ9mhzbyQN8+U192dhoXlAoByYewQ7FQ7NQIPNTge
-	UtrOthe5bkp+PLTtilB1lsM7q7qr1Hd5qkg+3Dp9mYVuFg==
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hdw5p1qf5-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	98h+uohlvwBVcGjNEa2NGd5iaB9mYxaSn10D70Q384o=; b=PxIRm7mbp3RunCyZ
+	yBQ1a8W6CcivEoLinHJu4jxi4YCf4nX1u8FfjVDxCla5njVtR2UGPJEWFjyP0G7s
+	wVdktf/kpjXXR7O/FvMozK+QXcBAnFRvv5H3urG+pn81R6zp5Kl/qEt2cSOz7Tac
+	5qHZ2GlLxsUFdwZMSO1oAiU98qlx+adlRUHN1qeiadKVRKb7TzcsrkVwc2UBt2ux
+	Q8jncPMnfIU+RRnBXJ+igfWHeoR84h1h5JWIaQuNUzL+uBBgri9qXhrJAVT00Ixa
+	qCXTji0qUnjizfBlCCrqEqQXSs3FpWVgQRJOAjqav4mNKhdwi1uwe7gOPIiqFFAk
+	aA0Uhg==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hdw5n2rr2-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 20 Oct 2026 08:53:09 +0000 (GMT)
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-3552883bd19so8498680eec.1
-        for <ath12k@lists.infradead.org>; Tue, 20 Oct 2026 01:53:09 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 20 Oct 2026 13:53:48 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-3662e7a9299so3164110eec.1
+        for <ath12k@lists.infradead.org>; Tue, 20 Oct 2026 06:53:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1792486389; x=1793091189; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=WlvSUhy9NQS9KPGPiYSnQtbj1YWbn4EqiF+2amxYei8=;
-        b=QX6IVmPTX/Qj320uXQLP8U9fsL1yebvaKD/IawDhsX4eI/3ykHts1BQusoiO75RA9n
-         Mz+9/IAUxs/7cXrVJzxDS5LHWlS8FRap+2lxZ7qEpEmU0wL+tXnmiSDXPPRvGKPrXaFc
-         5jd36K6N//yzr2uQQo9vSYZOsq3+IumWilX9VoZXmysjdokFOJUSjNtj61BsR1ye+CK/
-         QiwvJlCIMclHlmclUi/2oGkaa3u6f+htyZW9rzBDPpykmAY3MnxVjtVWFmjFFnga5hje
-         sT0drbJMGpKq1clXn5gpxijSN+KQcbb8637EPXUhTcoUnNhk6hmlaSPrGMkHeU1PFFZ1
-         hUvA==
+        d=oss.qualcomm.com; s=google; t=1792504427; x=1793109227; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=98h+uohlvwBVcGjNEa2NGd5iaB9mYxaSn10D70Q384o=;
+        b=X0W66Q/0GesOeUEkEq2zOQ8XtPw052DKS2H3IW3LLCHweEJJmcr0Ju4GSN4PKK8egB
+         qxKkaQOf6NgYiEVN1TJaemHzAY4rZ3OzpiC76eJhanGhoUUrC0fNjcdNE+/UUkJNnybG
+         +Ss6/XfTpdmoTRQkjYCXjElq+jpvOYkpU7+X4Zn+sMdlOuaHI9zsXiGryWVdDFB/kvTW
+         lMk7oEIVZ60n6HIu2D14IcbRWRs0ipATJP5IKhkjSdwA6DPv37qDBD+KJ6WUEkEopE3j
+         x6z36dLD2jMrpSWio/QC2fAWGWBwRClNjQV/1BU1SxuO3KiMuRLlD8Miyg4DoRTlkk5p
+         313w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792486389; x=1793091189;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=WlvSUhy9NQS9KPGPiYSnQtbj1YWbn4EqiF+2amxYei8=;
-        b=vEfmtOZL8Gl5rs4dptWBHSqJAAp2VMCgGEVn/FVNCsOxrkveiaZRWNql8Xv8guQMWl
-         CyOIM9ms3siOYBNDMBWweWA5ApdffOlQQ5wVJxyOBwH0nKoe7gRipDuIBI8989InY63+
-         iENIyH8Qx/hoDqcnOwDXcibgtLV2bVtvY7gEGNw3HWf2IdIkcjfUAehXDRFninsWC2kq
-         spwBc6sge/7Dc41jaHyGN4SnlT1UWdzSRjztW1LEuIr/fn30mUW2Tz6XthnUTVRjEVJg
-         U518/IWZZygFFZy5E5Z31Mv+cASHDMH/aRFMDz5HJnPQPvmDV1erTBlA0iXH9QX108Jf
-         owYA==
-X-Gm-Message-State: AFq9FYLrg1Qzrv55R3f5WnBWcJrN2RcIA1ld6vBnaSugP7MA02EeJlx4
-	jSUt7mcN55AYwSuRBrpSy4/TQldHMUHrjCwTxV1ci712txzj8/8fOCvZB6cLTzSM9BnTBwXVVSn
-	ja1CkGjmKyir5VAnBPXdh5qjD+VNeGs856Cm9PqvYXBsrhd2baf6sT5jTefEHgPix
-X-Gm-Gg: AYBFou0D7vIFbDmj/2U754tHzpdeRFUuXCjcpqN1QlazLbqeIMOsHDC7jTeWQHiBtVl
-	qkss7x5nDMSds7th62w4mA+w2DlQUpIi7lNNJimTpjXBkI4k0P7XjFwdZU7xCFMJLKluy52mIhZ
-	VjdS5VDBV18RyaSQ/3D/IGV5REbav6XwA4daaLpxqUSHdrmu7iTRoS7DkQbiLsj9KOaqYxx4u7n
-	o0dKftan6QUi9vQ+v/MwFYTWOXrIHG9VHSGnBtjEHxfEz5/6v1membhS343s39tZpBxeQ1xxDll
-	kfSI8Vn4l5s0oDy6EkfFjTqhqF2/le2qCN6D3l/NifB9gfto1kUerxAZWZTZL5ri6AN59a7OGtB
-	rVKu5H30dI6MRDHztMjzT9fLgN4SmCSvYE3PXme62Wg==
-X-Received: by 2002:a05:693c:6081:b0:35c:4800:4da with SMTP id 5a478bee46e88-361a2c36c2bmr15915710eec.41.1792486388789;
-        Tue, 20 Oct 2026 01:53:08 -0700 (PDT)
-X-Received: by 2002:a05:693c:6081:b0:35c:4800:4da with SMTP id 5a478bee46e88-361a2c36c2bmr15915675eec.41.1792486388216;
-        Tue, 20 Oct 2026 01:53:08 -0700 (PDT)
-Received: from QCOM-aGQu4IUr3Y (i-global052.qualcomm.com. [199.106.103.52])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-36082f7f6e0sm44011807eec.27.2026.10.20.01.53.05
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 20 Oct 2026 01:53:07 -0700 (PDT)
-Date: Tue, 20 Oct 2026 16:53:03 +0800
-From: Shawn Guo <shengchao.guo@oss.qualcomm.com>
-To: Yingying Tang <yingying.tang@oss.qualcomm.com>,
-        linux-arm-msm@vger.kernel.org
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
-        yintang@qti.qualcomm.com
-Subject: Re: [PATCH ath-next] wifi: ath12k: change MAC buffer ring size to
- 4096
-Message-ID: <atcr70WFLxp8zreK@QCOM-aGQu4IUr3Y>
-References: <20260610031358.2043716-1-yingying.tang@oss.qualcomm.com>
+        d=1e100.net; s=20260707; t=1792504427; x=1793109227;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=98h+uohlvwBVcGjNEa2NGd5iaB9mYxaSn10D70Q384o=;
+        b=y0bm60Xsf76Xw+aJ0sn/vRbWjHWjPleWAV8tL8Ps1qdwcNEOGrRcT0OGYh4h7b7Au4
+         TSyLelBVDatCJgu1nZ4Ly59pp4vD4zLIrCabFLZ9UEV34L4FWQZ+yeZqeTbPClM7Xkvj
+         Y5N+qThJgy6Pb6Ixgiy/jzWDPFZd59s83cbNpMYhMl2XiVe1m+DKryOvFCz/sqF4YY7x
+         wzco4n12XpRC3WHStrIRVHvPgZZc/ID/HBWNg/p2ErvBgK1yvM1rKUBOnlD3bi6usqqP
+         Ep5FsqGICGdyYr77yJRx++aAYCeRTRmjpKBUaWt+Pd1N1zkdBkjTsWDp61DtruuXUFQV
+         KMIg==
+X-Forwarded-Encrypted: i=1; AKwUvBxreRMeymGuzNzaZqL7HZ0vk1T6Izxr6z2uGHFzBev7O2wEt5gScqkFN/qDIX2qe6DgjnGhmDI=@lists.infradead.org
+X-Gm-Message-State: AFq9FYKyjHAm641wsn0kEGaNuvaZOcXTyvJuWO3xl9yETD0/INVqfOng
+	XhullblQXYbGTh0qi/n99cYVlgWo6X8v8zIiXSdThgYuclZXs6U7aQEU5BjzqoweIZ0FWvx3yMA
+	shDdSuJfCnO3DjARRoY7UV6oSS+i7NYewHpzx3Rp/MU+edZHVxsHDDuJcF3DET8l8
+X-Gm-Gg: AYBFou0kWcm650ooArXkKIr54r8qdYxAzcSqMWrtRW7xZAfuUeJ7iVQ2PYxVxRDmqdA
+	iz/GS4a9BXv1ilAFidxGzDyHkeRg5KABbmUDu0Z+IubLfURfUjVhapli3WFzDxq81knhrrl8pIm
+	KbNfc6ZEAnZlk4ZInbGnwJ19nK5wP9LECfZtF8ChayWjN+eBvRFgEDpbOqQ0cOdmTXWF/e9uW7k
+	MCwhem9f8p3NZdittssQ1Z6S4qw3qKvqHFp1QYRvodnL39G1XVblFpE7/bSM/YJnPycF1/4eHmN
+	BKFyibJwW066GxFacFNtXiIW+cghA5h+u1+p1BVHMPmhVzL1BqsSv2lRJj3qcPhvfV9HPriKc6l
+	3ROo/pHvuB0bbY1EFs9f1cV4SQKXMDnRa6CGqDbqH2cOPWvuXH0yQ1hbBrg==
+X-Received: by 2002:a05:701b:2319:b0:151:2e62:fe8d with SMTP id a92af1059eb24-1851238b627mr14278884c88.9.1792504427028;
+        Tue, 20 Oct 2026 06:53:47 -0700 (PDT)
+X-Received: by 2002:a05:701b:2319:b0:151:2e62:fe8d with SMTP id a92af1059eb24-1851238b627mr14278842c88.9.1792504426205;
+        Tue, 20 Oct 2026 06:53:46 -0700 (PDT)
+Received: from [192.168.1.20] (33.sub-75-218-193.myvzw.com. [75.218.193.33])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1831acba710sm49618023c88.13.2026.10.20.06.53.45
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 20 Oct 2026 06:53:45 -0700 (PDT)
+Message-ID: <520e2454-a0bb-45f7-b604-62492eb15a1d@oss.qualcomm.com>
+Date: Tue, 20 Oct 2026 06:53:44 -0700
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20260610031358.2043716-1-yingying.tang@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: 0l9_aEYidSIac48szo8vqDwANX0Sg0n9
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDIwMDAzNSBTYWx0ZWRfX9XX6vvzsC6KV
- eKjSmqOtRmuKg/rJ7TiM/K5KFKCQe5Syux7JJAu2c9QIpQrhzFOvSP/ddWCJ9jlk1gdHXEAfFnh
- zrc+u8HbQuLBEKTjRl6QaV6NC+oFm0U=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDIwMDAzNSBTYWx0ZWRfX5U6pNX2jf1WJ
- 5jD+1TbMbwkg7KKWq1NPetkHoENSich6T6K5o8BK063ThYkJ2xp/oiOFaNSaVSsXkZy/gEOEKOK
- yelfrO4McBRPWpN0aus8b72BpDhA4GzqCM1iU6K0Q5LgHYEm+En0E7ydetLEa4T5AX4Bl81z8+D
- gN7ewC6/3MAz0IfUzqrG6r5Pf5axCsJLFudC1PXcP26BwATSuq5D46ohEOPlLC/kVL/KERA+4+7
- TzV7EbuvK9nNtw+RHst/LQP5XeBjUjT0YQjkx2R1j0WOG7ZvRBlScTKKQKUG6XJPRHY0eIi8YfQ
- o0V86FOBUOJm7tLIZFM2GGjCxg6ZHxgFXa21p5E4Bvgv1eqtzpnyKRd3rXm0Np/BAEiBA5YVXBo
- MehgKY/anBWAGkyv1RsWO4Vntz03PSCaVxEYiKTdYDPVaMsSo4FjZ+2ZQYvK/YiJNpFeG2RKR/+
- +qNF8Fegm0QouhKu8uQ==
-X-Proofpoint-GUID: 0l9_aEYidSIac48szo8vqDwANX0Sg0n9
-X-Authority-Analysis: v=2.4 cv=crUOAF4i c=1 sm=1 tr=0 ts=6ad72bf5 cx=c_pps
- a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
- a=kj9zAlcOel0A:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
- a=EUspDBNiAAAA:8 a=2JoaeQ_52KTGIJA8Ts4A:9 a=CjuIK1q_8ugA:10
- a=bBxd6f-gb0O0v-kibOvt:22
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/4] wifi: ath11k/ath12k: validate firmware array lengths
+To: jiale yao <19888972804@163.com>, Jeff Johnson <jjohnson@kernel.org>,
+        John Crispin <john@phrozen.org>, linux-wireless@vger.kernel.org,
+        ath11k@lists.infradead.org, linux-kernel@vger.kernel.org,
+        ath12k@lists.infradead.org
+Cc: Jiale Yao <jiale.yao@example.com>
+References: <20261019100029.1908660-1-yaojiale02@163.com>
+ <b573b6f.2196.1a1571bc45e.Coremail.19888972804@163.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <b573b6f.2196.1a1571bc45e.Coremail.19888972804@163.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-GUID: hk_qwLnWAyhiz78gzrO2b9e7BvOsTeKp
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDIwMDA1NSBTYWx0ZWRfX5WZUfnptK08A
+ O2VoOizU7Z7W8uP8YwAPLdG6jdS4EFNJ1dJQWTKNTkQUZCSxFR8HzvYFZ1W/gOVztCmJlDpYhfe
+ hSi90qAQ2MmSx4vLn+qYeOwvaipomE4=
+X-Proofpoint-ORIG-GUID: hk_qwLnWAyhiz78gzrO2b9e7BvOsTeKp
+X-Authority-Analysis: v=2.4 cv=A5z5rKWG c=1 sm=1 tr=0 ts=6ad7726c cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=AnolQpdaNwb4XK4FG+QP+g==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
+ a=VwQbUJbxAAAA:8 a=Byx-y9mGAAAA:8 a=A1X0JdhQAAAA:8 a=FdzspUwgXfhqtPi2OHsA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDIwMDA1NSBTYWx0ZWRfX1b/sS4x2RIbw
+ vvh2zLByHcTNezc4qL2U31cfKfxmmNn9Fv++BvqXDEhWiCylaJxlRNGqQ/j2BIKELOMEE8OJSnn
+ vtp6Bq9KEHx00MDXK8qQNbQKgQn6AaMqUXulYoeDbZVU7nOhquenktdt2mV4GfPBZbNnEm9Pwth
+ XXBQtGEWhIvojaVptRAcE6eMDzyfBCaZKod8GKVx+Op7rcwInogU39EJ/7O72L3vKPz819KZ0ck
+ OSavrI3J3BzuXO2S3VROwv+S2VvYGb0IG+uuV4nOwrQGrorTJwIgWJ5KpJrDF7fKc9PDO2Atg00
+ d9MFbt0GZBGPdgHFkwDXJovprmyGpLYRIuixULiwUktjSCRp8cqvdnhCY/98DBytKC/Bdu9MlB7
+ PmPYnM/BYSOjQ1vQig8W+kX53ZYBo2IO+coy1DsYO13l4ht903PBBW0vhlgdm2tfscn1zeLGHH5
+ wH8AdNpYKp0fGOrHkng==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-10-20_01,2026-10-19_02,2025-10-01_01
+ definitions=2026-10-20_02,2026-10-19_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1011 suspectscore=0 malwarescore=0 bulkscore=0 adultscore=0
- impostorscore=0 priorityscore=1501 phishscore=0 spamscore=0
- lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610190000
- definitions=main-2610200035
+ clxscore=1015 malwarescore=0 adultscore=0 priorityscore=1501 suspectscore=0
+ phishscore=0 spamscore=0 bulkscore=0 impostorscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2610190000 definitions=main-2610200055
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261020_015310_705702_5BCEB8EA 
-X-CRM114-Status: GOOD (  22.30  )
+X-CRM114-CacheID: sfid-20261020_065359_530798_02674E8A 
+X-CRM114-Status: GOOD (  13.58  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -146,82 +150,51 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-12.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=ham
 	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-+ linux-arm-msm
+On 10/19/2026 7:19 PM, jiale yao wrote:
+> This patch series is superseded — please ignore it due to the incorrect sender name.
+> New one is https://lore.kernel.org/lkml/20261019100506.1915181-1-yaojiale02@163.com
 
-On Tue, Jun 09, 2026 at 08:13:58PM -0700, Yingying Tang wrote:
-> For WCN7850, MAC buffer ring size is updated to 2048 in
-> 955df16f2a4c3 ("wifi: ath12k: change MAC buffer ring size to 2048")
-> to increase peak throughput.
-> 
-> But during the RX process, a phenomenon can still be observed where
-> the throughput drops by about 30% from its peak value and then recovers,
-> and this behavior repeats during RX.
-> 
-> After increasing MAC buffer ring size to 4096, the data rate drop has
-> gone.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
-> 
-> Signed-off-by: Yingying Tang <yingying.tang@oss.qualcomm.com>
+Please do not top post and don't send HTML e-mail since it is rejected by the
+mailing lists. Please make sure you understand Linux Kernel e-mail etiquette.
 
-FYI, in case someone else runs into this: with this change (merged in
-v7.3), WiFi on my Lenovo Yoga Slim 7x (X1E80100, WCN7850 hw2.0) stopped
-working with the older firmware that Debian trixie still ships
-(firmware-atheros 20250410-2):
+You are close to going on my ignore list...
 
-  WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+/jeff
+> At 2026-10-19 18:00:25, "Jiale Yao" <yaojiale02@163.com> wrote:
+>> From: Jiale Yao <jiale.yao@example.com>
+>>
+>> ath11k and ath12k consume two firmware-provided arrays without fully
+>> validating their lengths. The service-ready-ext parser accepts fewer
+>> extended regulatory capability entries than the separately reported PHY
+>> count, while the ready-event parser trusts the reported extra MAC address
+>> count without checking the fixed-structure array length.
+>>
+>> Malformed firmware data can therefore make both drivers read beyond the
+>> corresponding TLV arrays. Add matching validation to each driver before
+>> the arrays are indexed.
+>>
+>> The four patches are independent and each addresses one parsing path in
+>> one driver.
+>>
+>> Jiale Yao (4):
+>>  wifi: ath11k: validate extended regulatory capability count
+>>  wifi: ath12k: validate extended regulatory capability count
+>>  wifi: ath11k: validate ready event MAC address array length
+>>  wifi: ath12k: validate ready event MAC address array length
+>>
+>> drivers/net/wireless/ath/ath11k/wmi.c | 10 ++++++++++
+>> drivers/net/wireless/ath/ath12k/wmi.c | 10 ++++++++++
+>> 2 files changed, 20 insertions(+)
+>>
+>> -- 
+>> 2.34.1
 
-Probe and firmware download succeed, but every WMI command times out
-once the interface is brought up:
-
-  ath12k_wifi7_pci 0004:01:00.0: wmi command 16387 timeout
-  ath12k_wifi7_pci 0004:01:00.0: failed to send WMI_PDEV_SET_PARAM cmd
-  ath12k_wifi7_pci 0004:01:00.0: failed to enable PMF QOS: -11
-  ath12k_wifi7_pci 0004:01:00.0: fail to start mac operations in pdev idx 0 ret -11
-
-Bisecting ath12k between v7.2 and v7.3 lands on this commit, and
-reverting it on v7.3 brings WiFi back with the old firmware.
-
-Unmodified v7.3 works fine after updating to the current linux-firmware
-image:
-
-  WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
-
-On Debian trixie that one is available from trixie-backports
-(firmware-atheros 20260916-1~bpo13+1).
-
-So nothing needs fixing on the driver side. I'm just leaving this here
-so that anyone who sees "wmi command ... timeout" on WCN7850 after a
-kernel upgrade knows to update the firmware first.
-
-Thanks,
-Shawn
-
-> ---
->  drivers/net/wireless/ath/ath12k/dp.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-> index f8cfc7bb29dd..6596089d4168 100644
-> --- a/drivers/net/wireless/ath/ath12k/dp.h
-> +++ b/drivers/net/wireless/ath/ath12k/dp.h
-> @@ -205,7 +205,7 @@ struct ath12k_pdev_dp {
->  #define DP_REO_CMD_RING_SIZE		256
->  #define DP_REO_STATUS_RING_SIZE		2048
->  #define DP_RXDMA_BUF_RING_SIZE		4096
-> -#define DP_RX_MAC_BUF_RING_SIZE		2048
-> +#define DP_RX_MAC_BUF_RING_SIZE		4096
->  #define DP_RXDMA_REFILL_RING_SIZE	2048
->  #define DP_RXDMA_ERR_DST_RING_SIZE	1024
->  #define DP_RXDMA_MON_STATUS_RING_SIZE	1024
-> -- 
-> base-commit: ff49eba595df500e4ddccc593088c8a4ab5f2c27
 
