@@ -2,115 +2,60 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7E954606A31C
-	for <ath12k@archiver.kernel.org>; Tue, 20 Oct 2026 16:22:14 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 699F9606A31C
+	for <ath12k@archiver.kernel.org>; Tue, 20 Oct 2026 21:35:26 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=LbHqhDJF;
-	dkim=pass (2048-bit key, unprotected) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=hgnUhU9H
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=LqYl7xNT;
+	dkim=pass (2048-bit key, unprotected) header.d=pm.me header.i=@pm.me header.a=rsa-sha256 header.s=protonmail3 header.b=j4cJPCA9
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
-	Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=DnTw02OnMjOZAuZ9GRe6dL799zVWgxYPWHjHUsZLswA=; b=LbHqhDJFWe4PsloXoiND8m5gNC
-	ydxeNP9h4M99KIraWvTWv+2Do7WZOr5FF7/hN4/rqcOklBxAa/sHUzkoPLGfohUfRTXQPBebr7+pE
-	ZbXfQbYo80KolInrOUMz68ksu686IhcQOgEkuThFMPlQ4Jmf2QUlEBDx5tDC2anxUXbE59BoyHWfz
-	Pc9jxi+DN3v8hnzkPxpXOeOE1hzyKg17PPVnBUg+Z9lYzszvJLl8VUTCUmEVL5nCcYri44+E5FA3h
-	eY9AoWKNON33mShkRWhBl42DGAZNn7COYrSUdCTMSImheGMKkUqJoRJoQ4inTmHlWuuad2l2DEclg
-	OVnyF6AQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Message-ID:Subject:Cc:From:To:Date:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=JnNQriX6Bbstn8TepnqDJgRRLBsCHc7/Dcoc4OhbyCI=; b=LqYl7xNTZEp/PxT1rc+kR9Zv/Q
+	zTg2l7xRypg5JkpKdUVxxHdjIlF7yCZbmWU02JMSMCaknQ1HD5KmDE14ybP41/7dRqztz38/bEfpK
+	S5PP+bbFbKtiKkrlhfeR70p7F2rZKmrcdCIMvICLt8ZV3Vl2ZwXVoU2q8KeUdRb+sPVnBwIRtcryb
+	Zeb82BTIywiVsqJJwT719/hvHn8w7j4ahES/TyiiPRcCCRNm1ylrZUY1DtSeGlOTpKaxWVftPhvjX
+	59g+dVj75DRy7rAMJ9sqxtidi0Yil+TmSnohYYW7A/7P4tTJJ3QHR8+C0uj/Ji+uFTQ1sGM6dldpZ
+	JVak05GQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJCbL-0000000A9Rc-2y1F;
-	Tue, 20 Oct 2026 16:22:11 +0000
-Received: from mail-yw1-x1129.google.com ([2607:f8b0:4864:20::1129])
+	id 1xJHUS-0000000AgDV-0jf5;
+	Tue, 20 Oct 2026 21:35:24 +0000
+Received: from mail-24418.protonmail.ch ([109.224.244.18])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJCbJ-0000000A9Ps-1Pll
+	id 1xJHUP-0000000AgCv-2vVC
 	for ath12k@lists.infradead.org;
-	Tue, 20 Oct 2026 16:22:10 +0000
-Received: by mail-yw1-x1129.google.com with SMTP id 00721157ae682-8b0e21048f8so27238457b3.0
-        for <ath12k@lists.infradead.org>; Tue, 20 Oct 2026 09:22:08 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1792513328; cv=none;
-        d=google.com; s=arc-20260327;
-        b=Uv34wUUr6+Pzv/029t48almHNa1sIYqU0SvCfkOsePeKqHPT/Ayl7uF8MGj6X9XcDG
-         vy83neiN5HS6gIjHbVj2zoQBbMlYGIplfBZDcFVJi8iAWeqlB11FxPOI9rdJWkGHBVnv
-         06CjyHdNqq6gUcHaA8Noxc0FydNqmtDyf4+fTLDis/Q2AoRZrpXWcq0gE8gJ3W016TEg
-         BiFvu9NiNmKnb94oVuUQCxl7Y5+aCQlvxhRGgSWw33Uz43mEIAiQoZ0J1xlW/Q33G8os
-         lLEdJDE92ACkmNBqxkO/PyQ0485HLVzv2IqRjpYsyoQ+MRCg6XxNA6efGLcxmczGZCvy
-         pjfQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=DnTw02OnMjOZAuZ9GRe6dL799zVWgxYPWHjHUsZLswA=;
-        fh=UZaKYbKTkiy3H91IL/Q52uNatH/yPpEE+tHI8UiYEAU=;
-        b=MIGP7zGFyudM7NzSkTqp7MORfVr77gNS1fZ7EBEbUow2f+WNgxHSY3lWfS9tnLa5+X
-         HR8k+9uy7a2PI4I7hw4G2tR2lAgOfS8r4RGV/YXtwdUnAeVMep8+lCzrEKyVHszIKIUN
-         ijLcRuBLRS4K/Vh0GZ6sPgB+Z29/IfroXb53g3SmJtlpr7VEpHOFCoPMjvqjI/5wOun/
-         yRMZXYhFIpQukXthjtKEKcLNrPh5gba/pnShc0yeNi0oDufh5TZVc/vlnoHYJyqz71lF
-         25YGNnJz/d51R7+t7ltIQ/ztO911JBnEx7u8gFxB7vLruDU+qyqevjKm95Z9icZYGuez
-         GzXg==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1792513328; x=1793118128; darn=lists.infradead.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=DnTw02OnMjOZAuZ9GRe6dL799zVWgxYPWHjHUsZLswA=;
-        b=hgnUhU9HEBeMXm+Jtzx6ObruafaDhgc/IkkEBnku60VGFHxfaS1/OLHajQ7wYP7hjW
-         faVx3/Rs3oNBhqnur8YLLBP2FDOG3hD0ACxcviviI4TNhRVOFgS7MJdSk9ep6hpr0zFc
-         b6Vic2Xbx07vACWsTsEqc0nkSFRK2BPLSNAFeUx2icEV/dNrffhG210/+4GH12AUaYGV
-         EnNN/G5fEzP0ONlHu3CZWeEu5p8NJFtMhuOHLVM8TDcNxSIZYa5QmnA90uw1EM7dcMZH
-         AqeQLlpnx5F1MQBIKFycpmvZDhA2XBTYys/VDDP9rk4GLFS5iVnxVrs++g1cMBvUMr3l
-         6Q0g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792513328; x=1793118128;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=DnTw02OnMjOZAuZ9GRe6dL799zVWgxYPWHjHUsZLswA=;
-        b=XpnW8lhe2Tit+ZREtJBY7ur+7SpldCYze8gKYsZQ9MdcgGk6uhxgCe8QVsbWJ9ofdt
-         BtcMPXdPCTo1+29mQ5xTEup4ZHVJtdYaoQgYorF4Zs3iGbba4ZDZJzF5yWSfmHjE371J
-         r0+LwoeqU9L/MGkvOd07jyzklDC/VHY0VT1rNF8gbf5QwNl8iSYEmrg/3kMfSGQ050tc
-         DpZnR+jZ4ZmUelZtOpN2Py9T/ejpFFKFKoP5sYN3DJfpMsN1c5RjjEfjauTSx1vLWTQO
-         SKx0XSbdWiHQvfnBTTAc6PQ7fEL4dN3MZ7gkWGO1RNFWeRQZREqTtIhvrRtb8fakTkut
-         6G1Q==
-X-Forwarded-Encrypted: i=1; AKwUvBxTjL1PWC6kzBm358AC6fcLzGmuKMiOUWrMzRtkLyjBmP0Abd4paZyr17JxpaLOu/8FIhNmdc8=@lists.infradead.org
-X-Gm-Message-State: AFq9FYKgT1oWKRajhcIdMQvC2QiksOOsh6ITuh7MVnTIv+1N0/6bOvcN
-	X5+H5GttAL6cJoFTQ0R4zC/0ihSfSFSsGMchUe1q0pk9lx5YIp2sVfbOkIdTqU2MIRM1pbF7mYb
-	mVR6SuiO+AqJSojcl4b4gSxYRPoBlTrc7DDxb6wYH
-X-Gm-Gg: AYBFou0Q4Gaw2sTqW2kWindo8GFGakX/C5pfz7uoqg7FNR+wiuq74n1jswcdyVG+Ahv
-	qyCjoqgRRZWtmKroEoOmR4HdJCb5kuSC7N0FYUyUmyFDkGeMzUzvUNXG3xNiE58FQ/fwQq+RpWm
-	pQ++fwXBwd6reMpmRB1+8SPOidpwtQ/25OHw070hZvsW2aLvyxXwacgXvb2FatXYSmtQI/BHmr9
-	MgGrsAQ3PnX96pqtZ51yVrccqKLhsh6ncJ+ARx2yL8DkkzxEphuFrGM2eQK+/8Q3U8lqo903URX
-	aOpErP2BFsmIO761zeTONA1k3mwVpZXdit02eEPrY+0BVTd9KyYNl2ofC1kMPvI7+ER7omgXqDK
-	IyqUrdXUz4LgKnXwWt+BuLkdDC4U5DWWr744T478nbg1m/k0SsvNbazq0B83oWhLX9Qw1UCwRm2
-	m21LaNa4n1RETFTdQL2QIJ2B1WD/26vob7NdffdEzTG1mzI4egBa8ebzr5ydeI4Mm5b9fJb3nWB
-	t/XEPK4PPJgRuHsFne8Fo7DEcSpFPPwowhw9vpZ0nHUOO06g5IpBowBLA==
-X-Received: by 2002:a05:690c:298:b0:8b0:cfe6:29c5 with SMTP id
- 00721157ae682-8b0f2189609mr42132047b3.37.1792513323232; Tue, 20 Oct 2026
- 09:22:03 -0700 (PDT)
+	Tue, 20 Oct 2026 21:35:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pm.me;
+	s=protonmail3; t=1792532116; x=1792791316;
+	bh=JnNQriX6Bbstn8TepnqDJgRRLBsCHc7/Dcoc4OhbyCI=;
+	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
+	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
+	b=j4cJPCA9d2Q0bYz+NFNw/w3qEevfZtiXBUd2zYrgh3LGSW/OkGlUG7ig/y4pMrPwm
+	 BR6aSw8c+ukHeczXLJXgN0BEpoJ16vGOJWKj8WFpKOTvJQwMZe6pk3YTFXr3eCOuvR
+	 2wojWD/YFOldiUZIS9CP+aNVco+oIsmKCAdodnGpmpyiENg4fPWYaOuJ494miBAjSC
+	 kFJUMkqE8cgSRezyWm4YIzzLxN81qNSoff6wtms95HA30v8tgraFYl+fzjCztJv6FV
+	 TTcgU8BevMfZI+r+Kr5xm/lP+fffwOl9acjiginj7tvtCWwnebD9AXAh3e7jh0/xOS
+	 PRXDfLy3U2eDA==
+Date: Tue, 20 Oct 2026 21:35:09 +0000
+To: Jeff Johnson <jjohnson@kernel.org>
+From: Birk Skyum <birk.skyum@pm.me>
+Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>, Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>, linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] wifi: ath12k: don't count a vdev restart as a started vdev
+Message-ID: <20261020213505.31624-1-birk.skyum@pm.me>
+Feedback-ID: 21326998:user:proton
+X-Pm-Message-ID: 0691d706ead9bfd175647fe90f64433c99c5156e
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-References: <20261018131930.1116724-1-julius@bairaktaris.de> <20261020160831.2133912-1-jtornosm@redhat.com>
-In-Reply-To: <20261020160831.2133912-1-jtornosm@redhat.com>
-From: Julius Bairaktaris <julius@bairaktaris.de>
-Date: Tue, 20 Oct 2026 16:21:27 +0000
-X-Gm-Features: AclHuK-kc3kyc5GKqkjHU7MJ9W5xa_vMhwo9wWG2suT1Jp0haBr3CNyjEmQ0QHc
-Message-ID: <CAC1t37JurQdWm7+kvBRuAafTY88DudtmG_Y=oLp1zk6FKxSkBQ@mail.gmail.com>
-Subject: Re: [PATCH v7 0/4] ath11k/ath12k: implement TX flow control
-To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Cc: ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
-	baochen.qiang@oss.qualcomm.com, hujy652@gmail.com, 
-	jeff.johnson@oss.qualcomm.com, jjohnson@kernel.org, 
-	linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, 
-	tamizh.raja@oss.qualcomm.com
-Content-Type: text/plain; charset="UTF-8"
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261020_092209_372803_B8098D13 
-X-CRM114-Status: UNSURE (   3.41  )
+X-CRM114-CacheID: sfid-20261020_143521_898278_246621FC 
+X-CRM114-Status: UNSURE (   8.54  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,14 +66,69 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-6.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Sounds good. Looking forward to it.
+ath12k_mac_vdev_start_restart() increments ar->num_started_vdevs for a
+restart as well as for a start. A restart is not paired with a stop, so
+each one leaves the count one too high until the driver is restarted.
+ath12k_mac_update_vif_chan() restarts every vdev that is up when its
+channel context changes, for example when the AP changes the bandwidth
+of the link.
 
-Julius
+Since commit 18ae7d0cdd76 ("wifi: ath12k: Avoid CPU busy-wait by
+handling VDEV_STAT and BCN_STAT"), ath12k_wmi_fw_stats_process()
+completes a WMI_REQUEST_VDEV_STAT request only after as many vdev stats
+events as there are started vdevs. With the count too high that never
+happens, so from then on every station statistics request waits the
+full 3 seconds in ath12k_mac_get_fw_stats(), with the wiphy lock held,
+and logs "time out while waiting for fw stats done".
+
+On a Lenovo Yoga Slim 7x connected to an MLO AP, the timeouts start a
+few seconds after the AP narrows its 5 GHz link from 160 to 80 MHz and
+repeat every 3 seconds until the driver is reloaded. While they last,
+channel switches take minutes to complete, transmits fail in bursts and
+group rekeys end in a deauthentication.
+
+Count only vdev starts, as ath11k does.
+
+With this change the Yoga went through the AP's next switch of that
+link, from channel 128 to channel 36 at 80 MHz, without a single
+timeout, and the switch completed in under two seconds.
+
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SIL=
+ICONZ_UPSTREAM-3
+
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Signed-off-by: Birk Skyum <birk.skyum@pm.me>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/a=
+th/ath12k/mac.c
+index 01f8c65..1b46723 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -11472,7 +11472,8 @@ ath12k_mac_vdev_start_restart(struct ath12k_link_vi=
+f *arvif,
+ =09=09=09=09=09=09   &arvif->reg_tpc_info);
+ =09}
+=20
+-=09ar->num_started_vdevs++;
++=09if (!restart)
++=09=09ar->num_started_vdevs++;
+ =09ath12k_dbg(ab, ATH12K_DBG_MAC,  "vdev %pM started, vdev_id %d\n",
+ =09=09   ahvif->vif->addr, arvif->vdev_id);
+=20
+base-commit: cd026e68fdbf88b9cc522b76c7a9d92c9a41f709
+--=20
+2.53.0
+
+
 
