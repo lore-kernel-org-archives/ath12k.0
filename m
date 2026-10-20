@@ -2,86 +2,115 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 67DCE606A31A
-	for <ath12k@archiver.kernel.org>; Tue, 20 Oct 2026 16:09:16 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7E954606A31C
+	for <ath12k@archiver.kernel.org>; Tue, 20 Oct 2026 16:22:14 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=BAPmO13m;
-	dkim=pass (1024-bit key, unprotected) header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=VwWYW3JI
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=LbHqhDJF;
+	dkim=pass (2048-bit key, unprotected) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=hgnUhU9H
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JZGvSJ/T2lFQAZNU+lUoUCnDcDPrtpGrw0LMffwgz3o=; b=BAPmO13mVNrwZtg847VdQKkmYY
-	9I9D+yhh2H82zlDMMHd9WYu9sRRs5OmAmE40qlGPIK7Nw2fNw/jEar9+bsVgaoZ/Ugw93AFzEs+gs
-	8frN+iWYJNHhj+NrMmgxPcWPZn451ChYnfh5TkicXR6BH8u3wVZHk4KU5s1fEQxnmSPbsfKbbJHl9
-	1tl8JAREGGKG/K+CNeZkML6Bn1BcJw0jAPApb4eDhkW74RoeqzSmf+T4AUVOe/0FNr29NaaMWkUjY
-	feFz2qv0k+NrkJyxVsfbQxDSIXYA4LniCbZloL3nMaAQOpIMMKgAL3UBj0pr890yk8CAQDBlo2ENA
-	bz20ryBg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
+	Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=DnTw02OnMjOZAuZ9GRe6dL799zVWgxYPWHjHUsZLswA=; b=LbHqhDJFWe4PsloXoiND8m5gNC
+	ydxeNP9h4M99KIraWvTWv+2Do7WZOr5FF7/hN4/rqcOklBxAa/sHUzkoPLGfohUfRTXQPBebr7+pE
+	ZbXfQbYo80KolInrOUMz68ksu686IhcQOgEkuThFMPlQ4Jmf2QUlEBDx5tDC2anxUXbE59BoyHWfz
+	Pc9jxi+DN3v8hnzkPxpXOeOE1hzyKg17PPVnBUg+Z9lYzszvJLl8VUTCUmEVL5nCcYri44+E5FA3h
+	eY9AoWKNON33mShkRWhBl42DGAZNn7COYrSUdCTMSImheGMKkUqJoRJoQ4inTmHlWuuad2l2DEclg
+	OVnyF6AQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJCOo-0000000A7t7-1lnn;
-	Tue, 20 Oct 2026 16:09:14 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1xJCbL-0000000A9Rc-2y1F;
+	Tue, 20 Oct 2026 16:22:11 +0000
+Received: from mail-yw1-x1129.google.com ([2607:f8b0:4864:20::1129])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJCOZ-0000000A7re-1zT2
+	id 1xJCbJ-0000000A9Ps-1Pll
 	for ath12k@lists.infradead.org;
-	Tue, 20 Oct 2026 16:09:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1792512523;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=JZGvSJ/T2lFQAZNU+lUoUCnDcDPrtpGrw0LMffwgz3o=;
-	b=VwWYW3JIFF2TGB4sO0AN5b4BADapfxMRyLBp9qOz3aeo3Yd5A3GnYwCATs89PCYcwa+pmJ
-	/R9yMf9GcG5at1FIe9CvM2TmPcxnQtBEsMjlqg7up+qzY1JuI/Tjn0kjeT+2RPD5I5IYHK
-	hnIaDkQUh7Bupp4cuIG1B3yWRUR52nU=
-Received: from mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
- relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-686-PrNzLbbOMWmkiqW3IDyx1g-1; Tue,
- 20 Oct 2026 16:08:40 +0000
-X-MC-Unique: PrNzLbbOMWmkiqW3IDyx1g-1
-X-Mimecast-MFC-AGG-ID: PrNzLbbOMWmkiqW3IDyx1g_1792512517
-Received: from mx-prod-int-08.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-08.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.111])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id BB3F7195E915;
-	Tue, 20 Oct 2026 16:08:36 +0000 (UTC)
-Received: from jtornosm-thinkpadp1gen7.rmtes.csb (headnet04.pony-001.prod.iad2.dc.redhat.com [10.2.32.116])
-	by mx-prod-int-08.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id DF6651800495;
-	Tue, 20 Oct 2026 16:08:32 +0000 (UTC)
-From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-To: julius@bairaktaris.de
-Cc: ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org,
-	baochen.qiang@oss.qualcomm.com,
-	hujy652@gmail.com,
-	jeff.johnson@oss.qualcomm.com,
-	jjohnson@kernel.org,
-	jtornosm@redhat.com,
-	linux-kernel@vger.kernel.org,
-	linux-wireless@vger.kernel.org,
-	tamizh.raja@oss.qualcomm.com
-Subject: Re: [PATCH v7 0/4] ath11k/ath12k: implement TX flow control
-Date: Tue, 20 Oct 2026 18:08:30 +0200
-Message-ID: <20261020160831.2133912-1-jtornosm@redhat.com>
-In-Reply-To: <20261018131930.1116724-1-julius@bairaktaris.de>
-References: <20261018131930.1116724-1-julius@bairaktaris.de>
+	Tue, 20 Oct 2026 16:22:10 +0000
+Received: by mail-yw1-x1129.google.com with SMTP id 00721157ae682-8b0e21048f8so27238457b3.0
+        for <ath12k@lists.infradead.org>; Tue, 20 Oct 2026 09:22:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1792513328; cv=none;
+        d=google.com; s=arc-20260327;
+        b=Uv34wUUr6+Pzv/029t48almHNa1sIYqU0SvCfkOsePeKqHPT/Ayl7uF8MGj6X9XcDG
+         vy83neiN5HS6gIjHbVj2zoQBbMlYGIplfBZDcFVJi8iAWeqlB11FxPOI9rdJWkGHBVnv
+         06CjyHdNqq6gUcHaA8Noxc0FydNqmtDyf4+fTLDis/Q2AoRZrpXWcq0gE8gJ3W016TEg
+         BiFvu9NiNmKnb94oVuUQCxl7Y5+aCQlvxhRGgSWw33Uz43mEIAiQoZ0J1xlW/Q33G8os
+         lLEdJDE92ACkmNBqxkO/PyQ0485HLVzv2IqRjpYsyoQ+MRCg6XxNA6efGLcxmczGZCvy
+         pjfQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=DnTw02OnMjOZAuZ9GRe6dL799zVWgxYPWHjHUsZLswA=;
+        fh=UZaKYbKTkiy3H91IL/Q52uNatH/yPpEE+tHI8UiYEAU=;
+        b=MIGP7zGFyudM7NzSkTqp7MORfVr77gNS1fZ7EBEbUow2f+WNgxHSY3lWfS9tnLa5+X
+         HR8k+9uy7a2PI4I7hw4G2tR2lAgOfS8r4RGV/YXtwdUnAeVMep8+lCzrEKyVHszIKIUN
+         ijLcRuBLRS4K/Vh0GZ6sPgB+Z29/IfroXb53g3SmJtlpr7VEpHOFCoPMjvqjI/5wOun/
+         yRMZXYhFIpQukXthjtKEKcLNrPh5gba/pnShc0yeNi0oDufh5TZVc/vlnoHYJyqz71lF
+         25YGNnJz/d51R7+t7ltIQ/ztO911JBnEx7u8gFxB7vLruDU+qyqevjKm95Z9icZYGuez
+         GzXg==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=bairaktaris.de; s=google; t=1792513328; x=1793118128; darn=lists.infradead.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=DnTw02OnMjOZAuZ9GRe6dL799zVWgxYPWHjHUsZLswA=;
+        b=hgnUhU9HEBeMXm+Jtzx6ObruafaDhgc/IkkEBnku60VGFHxfaS1/OLHajQ7wYP7hjW
+         faVx3/Rs3oNBhqnur8YLLBP2FDOG3hD0ACxcviviI4TNhRVOFgS7MJdSk9ep6hpr0zFc
+         b6Vic2Xbx07vACWsTsEqc0nkSFRK2BPLSNAFeUx2icEV/dNrffhG210/+4GH12AUaYGV
+         EnNN/G5fEzP0ONlHu3CZWeEu5p8NJFtMhuOHLVM8TDcNxSIZYa5QmnA90uw1EM7dcMZH
+         AqeQLlpnx5F1MQBIKFycpmvZDhA2XBTYys/VDDP9rk4GLFS5iVnxVrs++g1cMBvUMr3l
+         6Q0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1792513328; x=1793118128;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=DnTw02OnMjOZAuZ9GRe6dL799zVWgxYPWHjHUsZLswA=;
+        b=XpnW8lhe2Tit+ZREtJBY7ur+7SpldCYze8gKYsZQ9MdcgGk6uhxgCe8QVsbWJ9ofdt
+         BtcMPXdPCTo1+29mQ5xTEup4ZHVJtdYaoQgYorF4Zs3iGbba4ZDZJzF5yWSfmHjE371J
+         r0+LwoeqU9L/MGkvOd07jyzklDC/VHY0VT1rNF8gbf5QwNl8iSYEmrg/3kMfSGQ050tc
+         DpZnR+jZ4ZmUelZtOpN2Py9T/ejpFFKFKoP5sYN3DJfpMsN1c5RjjEfjauTSx1vLWTQO
+         SKx0XSbdWiHQvfnBTTAc6PQ7fEL4dN3MZ7gkWGO1RNFWeRQZREqTtIhvrRtb8fakTkut
+         6G1Q==
+X-Forwarded-Encrypted: i=1; AKwUvBxTjL1PWC6kzBm358AC6fcLzGmuKMiOUWrMzRtkLyjBmP0Abd4paZyr17JxpaLOu/8FIhNmdc8=@lists.infradead.org
+X-Gm-Message-State: AFq9FYKgT1oWKRajhcIdMQvC2QiksOOsh6ITuh7MVnTIv+1N0/6bOvcN
+	X5+H5GttAL6cJoFTQ0R4zC/0ihSfSFSsGMchUe1q0pk9lx5YIp2sVfbOkIdTqU2MIRM1pbF7mYb
+	mVR6SuiO+AqJSojcl4b4gSxYRPoBlTrc7DDxb6wYH
+X-Gm-Gg: AYBFou0Q4Gaw2sTqW2kWindo8GFGakX/C5pfz7uoqg7FNR+wiuq74n1jswcdyVG+Ahv
+	qyCjoqgRRZWtmKroEoOmR4HdJCb5kuSC7N0FYUyUmyFDkGeMzUzvUNXG3xNiE58FQ/fwQq+RpWm
+	pQ++fwXBwd6reMpmRB1+8SPOidpwtQ/25OHw070hZvsW2aLvyxXwacgXvb2FatXYSmtQI/BHmr9
+	MgGrsAQ3PnX96pqtZ51yVrccqKLhsh6ncJ+ARx2yL8DkkzxEphuFrGM2eQK+/8Q3U8lqo903URX
+	aOpErP2BFsmIO761zeTONA1k3mwVpZXdit02eEPrY+0BVTd9KyYNl2ofC1kMPvI7+ER7omgXqDK
+	IyqUrdXUz4LgKnXwWt+BuLkdDC4U5DWWr744T478nbg1m/k0SsvNbazq0B83oWhLX9Qw1UCwRm2
+	m21LaNa4n1RETFTdQL2QIJ2B1WD/26vob7NdffdEzTG1mzI4egBa8ebzr5ydeI4Mm5b9fJb3nWB
+	t/XEPK4PPJgRuHsFne8Fo7DEcSpFPPwowhw9vpZ0nHUOO06g5IpBowBLA==
+X-Received: by 2002:a05:690c:298:b0:8b0:cfe6:29c5 with SMTP id
+ 00721157ae682-8b0f2189609mr42132047b3.37.1792513323232; Tue, 20 Oct 2026
+ 09:22:03 -0700 (PDT)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.111
-X-Mimecast-MFC-PROC-ID: 7cJVazNvmPrSo2_xIgglN259CENo9T6qLJBIf-aqqEM_1792512517
-X-Mimecast-Originator: redhat.com
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+References: <20261018131930.1116724-1-julius@bairaktaris.de> <20261020160831.2133912-1-jtornosm@redhat.com>
+In-Reply-To: <20261020160831.2133912-1-jtornosm@redhat.com>
+From: Julius Bairaktaris <julius@bairaktaris.de>
+Date: Tue, 20 Oct 2026 16:21:27 +0000
+X-Gm-Features: AclHuK-kc3kyc5GKqkjHU7MJ9W5xa_vMhwo9wWG2suT1Jp0haBr3CNyjEmQ0QHc
+Message-ID: <CAC1t37JurQdWm7+kvBRuAafTY88DudtmG_Y=oLp1zk6FKxSkBQ@mail.gmail.com>
+Subject: Re: [PATCH v7 0/4] ath11k/ath12k: implement TX flow control
+To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+Cc: ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
+	baochen.qiang@oss.qualcomm.com, hujy652@gmail.com, 
+	jeff.johnson@oss.qualcomm.com, jjohnson@kernel.org, 
+	linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, 
+	tamizh.raja@oss.qualcomm.com
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261020_090906_202881_3E4C6D20 
-X-CRM114-Status: GOOD (  11.94  )
-X-Spam-Score: 1.2 (+)
+X-CRM114-CacheID: sfid-20261020_092209_372803_B8098D13 
+X-CRM114-Status: UNSURE (   3.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,35 +128,7 @@ X-Spam-Status: No, score=-6.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Julius,
+Sounds good. Looking forward to it.
 
-Thanks for the review and the Tested-by.
-
-> One thing on patch 3, from reading the code:
->
->> +             if (num_free == 0) {
->> +                     spin_unlock_bh(&tx_ring->wake_tx_lock);
->> +                     break;
->> +             }
->
-> When this breaks, the frames stay in the txq and nothing restarts it
-> until mac80211 queues the next frame for that txq. A sender waiting for
-> ACKs then stalls until its retransmit timeout. With AQL I measured this
-> in v4: one download in three stalled, max RTT 347 ms. A restart from
-> ath11k_dp_tx_completion_handler() fixes it.
-
-Good point. The break when the ring is full is intentional, it keeps
-the frames safe in the txq instead of the current -ENOMEM drop. Your
-TX completion restart (patch 6) would make the recovery from that
-stall faster, which is a nice improvement on top. Another reason for
-both series to land.
-
-Since we agree, I am going to split ath11k and ath12k into separate
-series to try to unblock both.
-
-Thanks
-
-Best regards
-José Ignacio
-
+Julius
 
