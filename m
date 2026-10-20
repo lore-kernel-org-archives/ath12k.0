@@ -2,84 +2,86 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A2E0F606A31F
-	for <ath12k@archiver.kernel.org>; Tue, 20 Oct 2026 15:45:12 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 67DCE606A31A
+	for <ath12k@archiver.kernel.org>; Tue, 20 Oct 2026 16:09:16 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Sb4s+G+5;
-	dkim=pass (1024-bit key, unprotected) header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=L0ezWE83
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=BAPmO13m;
+	dkim=pass (1024-bit key, unprotected) header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=VwWYW3JI
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=i1mO6MuWQfpqagLYjVpfTRaUcgdVFipQ47H+IkmGB/Q=; b=Sb4s+G+5E0MOWpbsMFX49EaMK2
-	H4eXRDu0rwyKbjtRg7MvtNtN9q+eSPJzqHos6G2rSpB5054V/F4pVsqxkr7d/XTU6TIcS7QFcfNfy
-	MVmchmjbxvJJKLfibaUZt7889RY/khHypzXTCGgAFs1mUJ5aG9dgduMkpe9xXP1N3CACmULFJb+0z
-	rjHpHhM+x0UZV2uFxvGV5SWE3pB2i8ipIXVPsPO6rD8si++5L32Id8xZse9db3ozRXMytAZeqos+B
-	MSo47UHbrU1t1vwV/6prOFlz1HWDozNhpVzvV80kF9QjAPq7USliTz5oRNCdzevU0C0EadHekY2dW
-	ddLiEmlQ==;
+	bh=JZGvSJ/T2lFQAZNU+lUoUCnDcDPrtpGrw0LMffwgz3o=; b=BAPmO13mVNrwZtg847VdQKkmYY
+	9I9D+yhh2H82zlDMMHd9WYu9sRRs5OmAmE40qlGPIK7Nw2fNw/jEar9+bsVgaoZ/Ugw93AFzEs+gs
+	8frN+iWYJNHhj+NrMmgxPcWPZn451ChYnfh5TkicXR6BH8u3wVZHk4KU5s1fEQxnmSPbsfKbbJHl9
+	1tl8JAREGGKG/K+CNeZkML6Bn1BcJw0jAPApb4eDhkW74RoeqzSmf+T4AUVOe/0FNr29NaaMWkUjY
+	feFz2qv0k+NrkJyxVsfbQxDSIXYA4LniCbZloL3nMaAQOpIMMKgAL3UBj0pr890yk8CAQDBlo2ENA
+	bz20ryBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJC1W-0000000A5Pq-2BiS;
-	Tue, 20 Oct 2026 15:45:10 +0000
+	id 1xJCOo-0000000A7t7-1lnn;
+	Tue, 20 Oct 2026 16:09:14 +0000
 Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJC1M-0000000A5Mp-3rIA
+	id 1xJCOZ-0000000A7re-1zT2
 	for ath12k@lists.infradead.org;
-	Tue, 20 Oct 2026 15:45:09 +0000
+	Tue, 20 Oct 2026 16:09:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1792511096;
+	s=mimecast20190719; t=1792512523;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=i1mO6MuWQfpqagLYjVpfTRaUcgdVFipQ47H+IkmGB/Q=;
-	b=L0ezWE83MAGBlKT+xHwjsFwAlaf/lwC/CidT9ZNVQwcm8ks6xS2dyhHMMCglPlAyNcjOVh
-	mPFaon8QboBoIOGKZzd9zPXwsMRgEeM9Ikw3ixDir+fhDaQY3EwjTNqsBxfoQxZmqbxuk8
-	JvlNv1z4TJcfgphXqdOk2pwXPxTSQIY=
-Received: from mx-prod-mc-08.mail-002.prod.us-west-2.aws.redhat.com
- (ec2-35-165-154-97.us-west-2.compute.amazonaws.com [35.165.154.97]) by
+	bh=JZGvSJ/T2lFQAZNU+lUoUCnDcDPrtpGrw0LMffwgz3o=;
+	b=VwWYW3JIFF2TGB4sO0AN5b4BADapfxMRyLBp9qOz3aeo3Yd5A3GnYwCATs89PCYcwa+pmJ
+	/R9yMf9GcG5at1FIe9CvM2TmPcxnQtBEsMjlqg7up+qzY1JuI/Tjn0kjeT+2RPD5I5IYHK
+	hnIaDkQUh7Bupp4cuIG1B3yWRUR52nU=
+Received: from mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
  relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-164-wZzDOMMSMDSlMPLuSJEkog-1; Tue,
- 20 Oct 2026 11:44:53 -0400
-X-MC-Unique: wZzDOMMSMDSlMPLuSJEkog-1
-X-Mimecast-MFC-AGG-ID: wZzDOMMSMDSlMPLuSJEkog_1792511092
-Received: from mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.95])
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-686-PrNzLbbOMWmkiqW3IDyx1g-1; Tue,
+ 20 Oct 2026 16:08:40 +0000
+X-MC-Unique: PrNzLbbOMWmkiqW3IDyx1g-1
+X-Mimecast-MFC-AGG-ID: PrNzLbbOMWmkiqW3IDyx1g_1792512517
+Received: from mx-prod-int-08.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-08.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.111])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mx-prod-mc-08.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id B98B618003FD;
-	Tue, 20 Oct 2026 15:44:51 +0000 (UTC)
+	by mx-prod-mc-05.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id BB3F7195E915;
+	Tue, 20 Oct 2026 16:08:36 +0000 (UTC)
 Received: from jtornosm-thinkpadp1gen7.rmtes.csb (headnet04.pony-001.prod.iad2.dc.redhat.com [10.2.32.116])
-	by mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 0E8315BC;
-	Tue, 20 Oct 2026 15:44:47 +0000 (UTC)
+	by mx-prod-int-08.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id DF6651800495;
+	Tue, 20 Oct 2026 16:08:32 +0000 (UTC)
 From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-To: baochen.qiang@oss.qualcomm.com
+To: julius@bairaktaris.de
 Cc: ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
+	baochen.qiang@oss.qualcomm.com,
+	hujy652@gmail.com,
+	jeff.johnson@oss.qualcomm.com,
 	jjohnson@kernel.org,
-	johannes@sipsolutions.net,
 	jtornosm@redhat.com,
 	linux-kernel@vger.kernel.org,
-	linux-wireless@vger.kernel.org
-Subject: Re: [PATCH v2 1/3] wifi: ath12k: fix MLO station firmware crash recovery
-Date: Tue, 20 Oct 2026 17:44:45 +0200
-Message-ID: <20261020154446.2131752-1-jtornosm@redhat.com>
-In-Reply-To: <4f2a06f4-601b-4e96-826b-a5453bc03ec9@oss.qualcomm.com>
-References: <4f2a06f4-601b-4e96-826b-a5453bc03ec9@oss.qualcomm.com>
+	linux-wireless@vger.kernel.org,
+	tamizh.raja@oss.qualcomm.com
+Subject: Re: [PATCH v7 0/4] ath11k/ath12k: implement TX flow control
+Date: Tue, 20 Oct 2026 18:08:30 +0200
+Message-ID: <20261020160831.2133912-1-jtornosm@redhat.com>
+In-Reply-To: <20261018131930.1116724-1-julius@bairaktaris.de>
+References: <20261018131930.1116724-1-julius@bairaktaris.de>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 3.6 on 10.30.177.95
-X-Mimecast-MFC-PROC-ID: xT0Cy2pKkKyQ_hjEus7MzYS_09V8ZEaaSxyoBPnV3jg_1792511092
+X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.111
+X-Mimecast-MFC-PROC-ID: 7cJVazNvmPrSo2_xIgglN259CENo9T6qLJBIf-aqqEM_1792512517
 X-Mimecast-Originator: redhat.com
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261020_084501_081276_6980562A 
-X-CRM114-Status: UNSURE (   9.28  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20261020_090906_202881_3E4C6D20 
+X-CRM114-Status: GOOD (  11.94  )
+X-Spam-Score: 1.2 (+)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,25 +99,31 @@ X-Spam-Status: No, score=-6.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Baochen,
+Hi Julius,
 
-> Johannes doesn't like option 2, let's forget it now. Instead, are you interested in
-> (working on) option 1?
+Thanks for the review and the Tested-by.
 
-I can study option 1, but I think Johannes pointed out that taking
-rtnl only around cfg80211_shutdown_all_interfaces() could not work,
-so it would mean holding rtnl for the full recovery (~1.3s). It could
-be a significant rearchitecture of the recovery path to not take a
-lot of time with no response.
+> One thing on patch 3, from reading the code:
+>
+>> +             if (num_free == 0) {
+>> +                     spin_unlock_bh(&tx_ring->wake_tx_lock);
+>> +                     break;
+>> +             }
+>
+> When this breaks, the frames stay in the txq and nothing restarts it
+> until mac80211 queues the next frame for that txq. A sender waiting for
+> ACKs then stalls until its retransmit timeout. With AQL I measured this
+> in v4: one download in three stalled, max RTT 347 ms. A restart from
+> ath11k_dp_tx_completion_handler() fixes it.
 
->> sense for you to land this series as an interim fix while that is
->> worked out as a follow-up?
+Good point. The break when the ring is full is intentional, it keeps
+the frames safe in the txq instead of the current -ENOMEM drop. Your
+TX completion restart (patch 6) would make the recovery from that
+stall faster, which is a nice improvement on top. Another reason for
+both series to land.
 
-> Jeff can make the call.
-
-Jeff and Baochen, in order to get some fix, would you be open to
-landing this series while option 1 is worked out as a follow-up?
-Happy to continue with this.
+Since we agree, I am going to split ath11k and ath12k into separate
+series to try to unblock both.
 
 Thanks
 
