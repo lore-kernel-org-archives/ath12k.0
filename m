@@ -2,93 +2,92 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4FD75606A31A
-	for <ath12k@archiver.kernel.org>; Wed, 21 Oct 2026 16:51:46 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 90A13606A319
+	for <ath12k@archiver.kernel.org>; Wed, 21 Oct 2026 16:51:47 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VwNNrWUw;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=eCLwWbS2;
-	dkim=pass (2048-bit key, unprotected) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=MjwD6rc5
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=CaGgnQ10;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=IwbZjB1q;
+	dkim=pass (2048-bit key, unprotected) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=CoVwSnVu
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JXmyT257j9HWX6yMLjeKjbshvliT1svS1XMIFan8Qm4=; b=VwNNrWUwlhLCAvEKHQja1Fvr9n
-	vqOP3OcBgC1kdXOivBXqvJQkRvrbG/cllkoBaKW6ew0dOuPoO1ocCCwtEr7RPsu8Jv1TXyzHLNyNN
-	fvLb9p8EhN8aiXhe3x+3xc7vOaTEBd6pqG/QFt26FwOTSs0ObuG8go01EllHDbMszWlAJnHLeigIk
-	qxVQnjRaegDhetUL6nmcqA1/DfWrUM/SetNdBFOOyoKZXE8yc6dr5H8xh+ccGounXWdRtfUWTPs6j
-	+qUp2QqWDLhvdfNRHS69NliVh5PqVlVvrYq39rcHFsNFOB8T3vPQHITaxVNbesQ3sg0SmU7pRmvte
-	U1iBop/A==;
+	bh=iGiZR7+p414GrEXSM/2Y69GcPywVjK77Fx5SS5X50mI=; b=CaGgnQ10YewucVk4hCQWMk5/G7
+	mJ6orVT8Ib87iLMuaTDi0h4Iaz9pAhreatwk0LeOvkjs5tU+qeXg4X/v6HHK4Een60w1P4bzmMlZi
+	9WZq23j+jlqDeYiAO/YnkgL09tHv2C41v124+5cwIOklnAHpfR8dxUmWn2QOVrHvX2ic8fEYJLa9w
+	dRUca1dUZrvDliRTj3GrZw/CM7DGmvG4ThS6WkvOEGvgJl4Rk8kcWRDYYGHsWa0e33j5M8/iqzscr
+	h+bLAySp21DnieNu5TP3cv2/q56ULJeJ3IAeYcQoYGa2Xely936ZbYyI7gJe1oxKG8SNAxUXeArDa
+	UsUnBWvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJZXW-0000000CTIo-0C2O;
-	Wed, 21 Oct 2026 16:51:46 +0000
+	id 1xJZXX-0000000CTKS-17KN;
+	Wed, 21 Oct 2026 16:51:47 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJZXU-0000000CTHM-3BQK
+	id 1xJZXW-0000000CTIc-2fbV
 	for ath12k@bombadil.infradead.org;
-	Wed, 21 Oct 2026 16:51:44 +0000
+	Wed, 21 Oct 2026 16:51:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=JXmyT257j9HWX6yMLjeKjbshvliT1svS1XMIFan8Qm4=; b=eCLwWbS2c6ut7xOpPDjpJ7YT1/
-	U7O+nf9PIbigMlg5aPBDUZ4SLMawv793jy+GMrLnlfkSjeV9ikmRkic52n1KjIlL6mfrAKYp/+HRL
-	M5JDe1BYDkdafL7PI2ght25zi5foiFLWzBje82/3UNcigPUh0o/WwF8eZoKtRlWEV8FJ61p3ZHidI
-	5wqSEqNnt4gTvZSbAZWqzrhMtGh7x1ygds8nq/WFA3lldKh+DEARqVyFswjwM7GZjQilmED4h2u76
-	4cUWn8e9i8iwFuiP6LZOBqhoudMeWcVxAIwZ8GgJdWBKtaG6yOHSbGc2ggUGoDhQ8ozRtpYNv3tDm
-	DlvPgH2w==;
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+	bh=iGiZR7+p414GrEXSM/2Y69GcPywVjK77Fx5SS5X50mI=; b=IwbZjB1qc5ldCMgoNwI8NpiNAq
+	xPVT8YkIjV0bM/idXPQnqj4HD9rmCqdANX27XIQBnrI7G/FhH/HWQnD+xGGHxi2y4UZjeEaabaHGm
+	NyzKuVnPilQ9OojGKCpVUZ4MbR/x1/qJLr/xik5JS6AHwWGVkQ6lIbCvWTX6ZKgHNj1C4nes82tga
+	rEeAdyo4oySGzyttLlEF+akvclKIdrjnuFZsdmWJgg60k07pRP2PZgl6fazfAYZASDgSC6nyC2ABa
+	/RbcDcyfVm2oSGLYDBa20bJ0YLig9LnTFvXcI3rP73NjttBjbwdkLbGs8438e8PED+2EaJHKk6Fwh
+	AbnpJX1Q==;
+Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
 	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
-	id 1xJZXR-000000062SE-3Qwo
+	id 1xJZXS-000000062SI-0xtE
 	for ath12k@lists.infradead.org;
-	Wed, 21 Oct 2026 16:51:43 +0000
-Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-c468bd799ecso10682966b.1
-        for <ath12k@lists.infradead.org>; Wed, 21 Oct 2026 09:51:40 -0700 (PDT)
+	Wed, 21 Oct 2026 16:51:45 +0000
+Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-c4086e892a4so123255266b.2
+        for <ath12k@lists.infradead.org>; Wed, 21 Oct 2026 09:51:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1792601499; x=1793206299; darn=lists.infradead.org;
+        d=bairaktaris.de; s=google; t=1792601500; x=1793206300; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=JXmyT257j9HWX6yMLjeKjbshvliT1svS1XMIFan8Qm4=;
-        b=MjwD6rc576RWWQn+qU/etbZqaTpYE7fDnxP+hhEg5ubqBpdDOAvi4a3NB7y57vY9Pu
-         Z8FRaUJoibhoWybucjG7GlLcPor7xtHDTpABZLbs9eUMj+rUHw1ddzz6jNDWqvae4VxW
-         aX6Q7jiin/PvtZHuZDsNi5bo+x7Yl+JcfsTuVryjc1JXIFJtlYUZ3dFBYLUjq9Y3ieaT
-         3E48RcHxkzoVDX/aV+C9SngMyDn9ujrR7bLNKSMszuGixFrIAqzjNIqg4HDpNxK8Z0+H
-         BMVkPkgbj1QAy44DFZYGBE733cbzSdFI7ow1DYTrENRIh6EL1spze+pCqRjA6NZDODrt
-         MlfA==
+        bh=iGiZR7+p414GrEXSM/2Y69GcPywVjK77Fx5SS5X50mI=;
+        b=CoVwSnVuaAtGwvYE1AFPXtShzCFHngi9SrvTfGeNtFGEK5mE5BK0mtHj6U9vTtBag6
+         QOMNFpVo89BPGlWQMCSERkE875DPvsW8peadHQKId7Zz6agB8BkcubTQMTxC+cbqm7fL
+         d8Dnnkl8IoyuU+LOPgPRmXdPiALwOwZQmN9fAdFGP2IgIXDnUqhIRgYE6EoWqwHUEnLt
+         uNPpxNMQf9I9jsR62bHoUFw9i7rTnFt+Nnq1Wc1YQ2EoFjuveCdwHTaocbz+5XNcedCm
+         xTN0gAtDKQCMhBVPQfapNjFkf3RlzKUl9bWkL4Y1gRG4N+6TqeG+4FjkmrY6shMqEOXA
+         8BOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792601499; x=1793206299;
+        d=1e100.net; s=20260707; t=1792601500; x=1793206300;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=JXmyT257j9HWX6yMLjeKjbshvliT1svS1XMIFan8Qm4=;
-        b=D5YwNzonJ/lusNmJf5ryDVBUqArko7vaMsDfIwftFmi/Q2bf3q2JI2b+K/tDzznkk7
-         sfAyr9/MUGFKABOOv3UndtdAvIkt+5hSxulugLxyKuaKugwhSNU0cDKA2z5wksg2+pnS
-         dDC7pyRvSa0RzzPq9ypgRNA3IBfCAdFOOP5MkbGjtZLRF/QvG4vjS0JJCGPN9W6oY2nQ
-         LQwL+SGsfSlMPXLijNiVop8VFl7bAdF5618zJfGjHgv53+sqmvGMY9u8J/tZQLmauNq5
-         WUISfcfGtDMyUojxMAZJF6gUXfwPjEdniiEs2gd3ED3fvhv9Gi+2CD751QQoXWggcVIC
-         yowQ==
-X-Forwarded-Encrypted: i=1; AKwUvBzSwS303TWTdMSCjUjgqRmaeFIa8ulTuwbk9Iihs9Bb777ywSfvMdY8ES06jsCOk3DufNXMPfs=@lists.infradead.org
-X-Gm-Message-State: AFq9FYIJRxmb//xhkl7onGukVe+kDbns3KtwFE5WInj5TLpE/ymKhM4B
-	KEuUrAk5Zld5WcgfQavzw5AB1GVYJG5Q/fyfXNtRy2KqEVEZ1G4AWfVKOdx1qcyVgV6l4X2YZBK
-	T1+16flfd
-X-Gm-Gg: AYBFou0+KAxIeWGpSIIqvqFzowHiOOpR0G0WbdNisTMwau+nMG4J6q2nHEpJsKNpvu1
-	4cepOQns2QKUD2jgpggxahdszFukpadsdxmI0T6QNbAvK53aI7cxfok2j61yQCVU9F3M9BMxT7/
-	3IUGAMq8DYiJyvOgP48D4lNDcqzN3cS1hpeMuoueMjSWn7p3CZWGnhOkzg5ITBvcIAyBdmej0aa
-	OSjxbMj/ff1FUyKzdVo+KTMvAAjfGsTzj8M9p2bD4s7hW3HAVkDYNPyp3qSb8INnTOTgDNAwJKt
-	aajkBGVD6nVUdXOwOJOInKHzx+BvWJ69Wtj1EbDCim/1MZi56t2pnCFZSSIIeeehDD9A45sv0zz
-	F/Rta5q8dTNUa1bZFmnjEbiHGTJ08EgZYeaz3dnEZn2IM6EdwcVkK6yziefftpkWrPsJSqPyG7F
-	O9Z1rtLjSECjiG1LerCJlyGAJxV8GXcRjV9G7q5De1OnYc0h3LS4s+7H3qnHhKwpB65l2jyMglF
-	ojtkkifR+tsvWkPdg/LPksYYiMIFEQ2gaiq1jAenh4gbEaQQ4hJrlneRqukQf2Fdf1N3BYWzyjd
-	7OoOzzddNYI9f8ya3nwgefcDh534bij/cVG0jvr1H0sQDTUe7TcoCm4c5rdnuH+9XnX9Thd1Pk5
-	MWCy+bJDmeZzyVELDWcuSnosFYUmqxW7utC34o38hgS1i8i4OdtSVCnDmcAxByUW4b4sJU0ADSC
-	muPrTGCUVLai0S7pXFHUzXEu7eO+LDqkTmfyJGbhbUjE5aHqhmeniggaejoN2Uz6yB
-X-Received: by 2002:a17:907:9604:b0:c29:555e:bf2 with SMTP id a640c23a62f3a-c46799c8dc9mr242364766b.41.1792601499598;
-        Wed, 21 Oct 2026 09:51:39 -0700 (PDT)
+        bh=iGiZR7+p414GrEXSM/2Y69GcPywVjK77Fx5SS5X50mI=;
+        b=Hiq8rNVdUj1d/nzO1Ig1Lb6Q0O1jMz0eAeM+gJWnYyr/omGa0jD0W/iBa4FUarAXnN
+         zA6N6j73TGuj08SaNP37T8d+5dfiKK3gbF3fMZNTSxqWGABvvmCsdNlrgLE6ilCTIojX
+         J9A8xxNWZ4Uhl2St+h5oRshm9CRaaVyQEqDfZ8OzYYUAv8Pa8TIecjh6f+UTmmdGaHLG
+         7zDAjP4Wsja30qQtjkwcpDXUWNicGnR4pTZ+7DpToTEshvgT55sI/bD2IgeA8gV3gAUO
+         Va7mCphEJ69CWO9NL8jtW2vHB453ziKQumtDCAqJZnhDDl3Bp23d2ZtMenRNRULje88b
+         rJ8Q==
+X-Forwarded-Encrypted: i=1; AKwUvBz/cWrhrtwRICrPMpwy3/MJHPju12GfMOdmDzFYNohNsN9z5FKsJqhLtwm71BNg/89Xh9Am9PM=@lists.infradead.org
+X-Gm-Message-State: AFq9FYKZSVyyWICowZt1aQDKCwSzQZe/vHfEYJDYXZ6NiER9TZp3Xib2
+	4mPryQ+1PYseyR9UJHikUDahooQy4hEN5qm4VOTBkEqGK4nWqCLOb8WuZGHgHfM/LA==
+X-Gm-Gg: AYBFou3uTQKp3eE1hKm33X2SlNAMvU3nC8+XCx3FNHzGbVdKWuO3SHqhosBfdo+zIO1
+	HiNOiVdMP2O33jXB6XK0/Rmj0czWqgGDp2NR4rXTtrXFSpjoyUbnGG3J8COszrt7CO/C99hWkk3
+	jR3w7lJPLbjP7CjGdiJMP5tn+27vSMqIPA3bZT0U6RnfntKQDjbv5piNMmhu8DSsPzPfD0wXeqf
+	wGw/0xvfeU1vJ8Kw4lvL/MmE3fvEKBTPDBvNRkXg6pSeKZ5sX+LMUICMn8yI2LcfJ/ye2DofK4X
+	E0Gyt5PjHh7/dDuzAxcMlTWutkrQgLHZn3t6LP49ElVDN++8RJPaPapkHSc6p1VLzpWTH3RIq5j
+	Ornlr75Ig9UsSFTlKe7tOynmZe0/+01CEHl3tp+hZEoaIMaZ4zwa6h41JocBS/0mQlz8nOGyiHC
+	dX0I4j7oLxuj7kXIhrItfHsBwk42Q9u6fSnxphOy9q1box1/bW12imLJKnMVhI/Y3hK6i+W2eX+
+	6dogUuNJRBubO7W7hKbzD85VOFcMAZwl16hV9RwUXV53Y83a5hjiTKLHvoBjaYKvCq6tPVc7ceh
+	FfnCd8owFvznpBKzLkXJx4klPy5KtsVz6OzcFtr3UJViyoHGjn9+BRHg6vu3/4vTZ1tloRzHANT
+	vI5qQk9/6XoGAZV62hi+pWeD9n6cZx5dczL9Wi0GBydiZimMHBIEX22O24iYgpHntA+0ENjb5Qm
+	azHiNsiNM5L3iYGcMJWsMLTRW0QNk/X01BtLy0eoW+NQKL2Xkw62cWcTdZZ3H7ezpE
+X-Received: by 2002:a17:907:3e89:b0:c31:8c48:e18b with SMTP id a640c23a62f3a-c46795e8833mr224387366b.14.1792601500405;
+        Wed, 21 Oct 2026 09:51:40 -0700 (PDT)
 Received: from Desktop.fritz.box ([113.30.223.169])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c468a5de48esm20782466b.66.2026.10.21.09.51.38
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c468a5de48esm20782466b.66.2026.10.21.09.51.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
         Wed, 21 Oct 2026 09:51:39 -0700 (PDT)
 From: Julius Bairaktaris <julius@bairaktaris.de>
@@ -97,9 +96,9 @@ Cc: rameshkumar.sundaram@oss.qualcomm.com,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	linux-wireless@vger.kernel.org
-Subject: [PATCH v2 1/2] wifi: ath11k: apply the 160 MHz NSS ratio to the radio
-Date: Wed, 21 Oct 2026 18:51:37 +0200
-Message-ID: <20261021165138.388593-2-julius@bairaktaris.de>
+Subject: [PATCH v2 2/2] wifi: ath12k: apply the 160 MHz NSS ratio to the radio for VHT
+Date: Wed, 21 Oct 2026 18:51:38 +0200
+Message-ID: <20261021165138.388593-3-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261021165138.388593-1-julius@bairaktaris.de>
 References: <20261021165138.388593-1-julius@bairaktaris.de>
@@ -107,8 +106,8 @@ X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261021_175141_970274_70D6519A 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20261021_175142_330648_DE154D9B 
+X-CRM114-Status: GOOD (  11.66  )
 X-Spam-Score: -0.2 (/)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -129,90 +128,34 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 The firmware reports the NSS a radio supports at 160 MHz as a ratio of
-its 80 MHz NSS. Peer assoc applies that ratio to the peer's NSS instead,
-so on a radio with a 1:2 ratio a two-stream peer is sent one stream at
-160 MHz. The HE 160 and 80+80 MCS maps copy the 80 MHz map, so a
-4-chain radio with that ratio offers 4 streams at 160 MHz where it
-supports 2.
+its 80 MHz NSS. VHT peer assoc applies that ratio to the peer's NSS, so
+on a radio with a 1:2 ratio a two-stream VHT peer is sent one stream at
+160 MHz. Commit a82ce08775bc ("wifi: ath12k: add extended NSS bandwidth
+support for 160 MHz") fixed the HE path; take the VHT 160 MHz NSS from
+the radio's TX chains the same way.
 
-Take the 160 MHz NSS from the radio's TX chains, as ath12k does since
-commit a82ce08775bc ("wifi: ath12k: add extended NSS bandwidth support
-for 160 MHz"), and limit the 160 and 80+80 MCS maps to the ratio when
-the firmware reports one.
+Compile tested only.
 
-Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.9.0.1-02146-QCAHKSWPL_SILICONZ-1
-
-Fixes: f552d6fd2f27 ("ath11k: add support for 80P80 and 160 MHz bandwidth")
+Fixes: 18ab9d038fad ("wifi: ath12k: add support for 160 MHz bandwidth")
 Assisted-by: LLM
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
- drivers/net/wireless/ath/ath11k/mac.c | 24 +++++++++++++++++-------
- 1 file changed, 17 insertions(+), 7 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
-index 1a237adaa37d1..a842306d65d9c 100644
---- a/drivers/net/wireless/ath/ath11k/mac.c
-+++ b/drivers/net/wireless/ath/ath11k/mac.c
-@@ -2278,7 +2278,7 @@ static void ath11k_peer_assoc_h_vht(struct ath11k *ar,
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 01f8c6572f657..2c2753ce5df0c 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -2510,7 +2510,7 @@ static void ath12k_peer_assoc_h_vht(struct ath12k *ar,
+ 	arg->tx_max_mcs_nss = 0xFF;
  
- 	if (arg->peer_phymode == MODE_11AC_VHT160 ||
- 	    arg->peer_phymode == MODE_11AC_VHT80_80) {
--		tx_nss = ath11k_get_nss_160mhz(ar, max_nss);
-+		tx_nss = ath11k_get_nss_160mhz(ar, ar->num_tx_chains);
+ 	if (arg->peer_phymode == MODE_11AC_VHT160) {
+-		tx_nss = ath12k_get_nss_160mhz(ar, max_nss);
++		tx_nss = ath12k_get_nss_160mhz(ar, ar->num_tx_chains);
  		rx_nss = min(arg->peer_nss, tx_nss);
- 		arg->peer_bw_rxnss_override = ATH11K_BW_NSS_MAP_ENABLE;
+ 		arg->peer_bw_rxnss_override = ATH12K_BW_NSS_MAP_ENABLE;
  
-@@ -2588,7 +2588,7 @@ static void ath11k_peer_assoc_h_he(struct ath11k *ar,
- 
- 	if (arg->peer_phymode == MODE_11AX_HE160 ||
- 	    arg->peer_phymode == MODE_11AX_HE80_80) {
--		tx_nss = ath11k_get_nss_160mhz(ar, max_nss);
-+		tx_nss = ath11k_get_nss_160mhz(ar, ar->num_tx_chains);
- 		rx_nss = min(arg->peer_nss, tx_nss);
- 		arg->peer_bw_rxnss_override = ATH11K_BW_NSS_MAP_ENABLE;
- 
-@@ -5940,7 +5940,7 @@ static void ath11k_mac_set_hemcsmap(struct ath11k *ar,
- 				    struct ieee80211_sta_he_cap *he_cap,
- 				    int band)
- {
--	u16 txmcs_map, rxmcs_map;
-+	u16 txmcs_map, rxmcs_map, txmcs_map_160, rxmcs_map_160;
- 	u32 i;
- 
- 	rxmcs_map = 0;
-@@ -5958,18 +5958,28 @@ static void ath11k_mac_set_hemcsmap(struct ath11k *ar,
- 		else
- 			rxmcs_map |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
- 	}
-+
-+	txmcs_map_160 = txmcs_map;
-+	rxmcs_map_160 = rxmcs_map;
-+	if (cap->nss_ratio_enabled) {
-+		for (i = ath11k_get_nss_160mhz(ar, ar->num_tx_chains); i < 8; i++)
-+			txmcs_map_160 |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
-+		for (i = ath11k_get_nss_160mhz(ar, ar->num_rx_chains); i < 8; i++)
-+			rxmcs_map_160 |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
-+	}
-+
- 	he_cap->he_mcs_nss_supp.rx_mcs_80 =
- 		cpu_to_le16(rxmcs_map & 0xffff);
- 	he_cap->he_mcs_nss_supp.tx_mcs_80 =
- 		cpu_to_le16(txmcs_map & 0xffff);
- 	he_cap->he_mcs_nss_supp.rx_mcs_160 =
--		cpu_to_le16(rxmcs_map & 0xffff);
-+		cpu_to_le16(rxmcs_map_160);
- 	he_cap->he_mcs_nss_supp.tx_mcs_160 =
--		cpu_to_le16(txmcs_map & 0xffff);
-+		cpu_to_le16(txmcs_map_160);
- 	he_cap->he_mcs_nss_supp.rx_mcs_80p80 =
--		cpu_to_le16(rxmcs_map & 0xffff);
-+		cpu_to_le16(rxmcs_map_160);
- 	he_cap->he_mcs_nss_supp.tx_mcs_80p80 =
--		cpu_to_le16(txmcs_map & 0xffff);
-+		cpu_to_le16(txmcs_map_160);
- }
- 
- static int ath11k_mac_copy_he_cap(struct ath11k *ar,
 -- 
 2.53.0
 
