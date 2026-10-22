@@ -2,111 +2,104 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 19C76606A319
-	for <ath12k@archiver.kernel.org>; Thu, 22 Oct 2026 06:08:12 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D1930606A322
+	for <ath12k@archiver.kernel.org>; Thu, 22 Oct 2026 06:42:45 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=XHpWqf0B;
-	dkim=pass (1024-bit key, unprotected) header.d=leica-geosystems.com header.i=@leica-geosystems.com header.a=rsa-sha256 header.s=selector1 header.b=tTNxSY4s
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=PtP4aofC;
+	dkim=pass (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=kfQjMjbR
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=YFthrKfKmSAcUSyW22/xyDsvmiE466rfFMP+jKjZ0Dc=; b=XHpWqf0Bqyy8R+Rav2pxFHQSqc
-	k3Gu3hZy09eCzRGm3uESPRDxsbAwALnGoVy0B1CFmPN1YO/K+OwAL7Kw5fqDLhHmzgBSX7EkQNnKz
-	DVDD/Lgvh+AVZ2JWH9fFzv+A2I/G3ESx2mv2d3ZTxobG0066OglZYDz12irk4n6753oLgiq84Eae5
-	Kc0kP6rZfHA6EscudPty7ealG51PqIrcEs3ek2pftC/adOL5xSdkgKYncrjDBmAWjyCkJA+rXeAZY
-	WlZ5o288HwJHgsjMVkCBVaIhyYWM5kjLAU1xMKJCkwJ7i35SupA1/4NnOKvkwOFso0XHBpAJ1aAeR
-	uJQ7C9aA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
+	From:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=InOhwMgahGJyb6tOkMeBMHX6+1D9KY8fWjWr1Ll22Rw=; b=PtP4aofCyPLQaNUq/OXy3ixMP2
+	9K0q3ZZGXhelb57LimbOW5C1XUI8F0VkwOuBzcG7JSHBYo6zRPN4dGKgn0idqdyy4tMMflDP+XtIV
+	1SiWaBC9E9nIMvXoebDa5yGCqQhy3QDrt8HMShfP0DDVvnKJQVAkh8wlzuugVPpyY9b+ku5cypYeh
+	kVcH7ym352z1Qy8mhGSUT6hMIRcmjjAIKa8aZXUJsJlA1oSek9vElkOx3fkLW6c3og9hP9Fu2Tucw
+	JhmetrO2F0ZcG5CAnG3zN4VlWQtkDZWM4DH751mOaO54u8/8+LpgsdM8v2sYCbL9mVQBgDfKPA3w7
+	HBNCyufg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJlyD-0000000DRyQ-3ijc;
-	Thu, 22 Oct 2026 06:08:09 +0000
-Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1xJmVe-0000000DUTI-2nDj;
+	Thu, 22 Oct 2026 06:42:42 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJlyA-0000000DRxn-2xAs
-	for ath12k@lists.infradead.org;
-	Thu, 22 Oct 2026 06:08:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=M/65QGMTILYwsTzRUbTXv5WXgBxlfmoZ5HBMLJRGeC2GMYIoquIvJvGtIdExXmrvqpsDIHKACO+BhB/vNvinpNz8BBxoXyKR76m1HLp0SLwqwGhzszqfyFN0sylLGvfWG9hCAiysTolbQ4ja7N5nNZ33K9KX3ZGzXXoQftf9MAQu9Ee2sdj7iBWfyeLO60oE11Glk93wNzS/Hn8mP7VkxX99KyuLRpT/V+4nESbZgKxKCZo26i4/KGQkQCaxruDZOvXhjsRSRSrYNuyP9+jPlRZYPSwnTGEQx0Yi+bb6UwyZ4F81GGUDIvbXoPGW7BLVSCRtJm8yWU1FKhNodCiKxg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=YFthrKfKmSAcUSyW22/xyDsvmiE466rfFMP+jKjZ0Dc=;
- b=U7ghqlZgWMjon1eCXylr+JH8uCg7Qdhh+iEWEECBaL4kEmgH3RdQpbuSHtqAd9f5vj37T5lqwgbaCYsecm6Z0NobAAZtzpVJ/Gd5mfvnnczHciY5tW5fBn4t+AUY+o7Fea3p3uIBU1b8QzcZf4RtdOlBYfhDxvJ84h3DUJYkfAyV3qyU/XRSmEJr04AFNM+qu/+pL9d8Nx3nV0cmLAvyGA6JoknrbZlSZEr+ZOJaajlekbVhWDoYMHZnmzcdqG6Mq1FoUUKXaPb7365mGipY5Ll03cq1+s0X4+y9wJuZPCUzqH09Yl79bhpR+M9+OxggykfqDkC8wyal2/VSC6J9ag==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 193.8.40.99) smtp.rcpttodomain=lists.infradead.org
- smtp.mailfrom=leica-geosystems.com; dmarc=pass (p=reject sp=reject pct=100)
- action=none header.from=leica-geosystems.com; dkim=none (message not signed);
- arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=leica-geosystems.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YFthrKfKmSAcUSyW22/xyDsvmiE466rfFMP+jKjZ0Dc=;
- b=tTNxSY4s0gCNE5Wm0J7+dJwjg9R7R/YoDXXGCXxOeoUtmzTtOEnD0FxJIua3GyVls8E5XRKWNNlB1l/LB/a4Kfa0aB8wWBE2JX2Wv3AUeh0g0RlZl2CSnJ6k7rHWcbd1TYlBKdcap1Z+SiNJAFIfAWo/RNX+8sDMfY8vVlBTVMQ=
-Received: from AM8P190CA0022.EURP190.PROD.OUTLOOK.COM (2603:10a6:20b:219::27)
- by DB8PR06MB6540.eurprd06.prod.outlook.com (2603:10a6:10:12a::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.522.19; Thu, 22 Oct
- 2026 06:07:59 +0000
-Received: from AMS1EPF0000008F.eurprd05.prod.outlook.com
- (2603:10a6:20b:219:cafe::70) by AM8P190CA0022.outlook.office365.com
- (2603:10a6:20b:219::27) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.546.16 via Frontend Transport; Thu,
- 22 Oct 2026 06:07:59 +0000
-X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
- is 193.8.40.99) smtp.mailfrom=leica-geosystems.com; dkim=none (message not
- signed) header.d=none;dmarc=pass action=none
- header.from=leica-geosystems.com;
-Received-SPF: Pass (protection.outlook.com: domain of leica-geosystems.com
- designates 193.8.40.99 as permitted sender) receiver=protection.outlook.com;
- client-ip=193.8.40.99; helo=hexagon.com; pr=C
-Received: from hexagon.com (193.8.40.99) by
- AMS1EPF0000008F.mail.protection.outlook.com (10.167.242.86) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.546.15 via Frontend Transport; Thu, 22 Oct 2026 06:07:58 +0000
-Received: from aherlnxbspsrv01.lgs-net.com ([10.61.228.61]) by hexagon.com with Microsoft SMTPSVC(10.0.17763.1697);
-	 Thu, 22 Oct 2026 08:07:58 +0200
-From: Johannes Schneider <johannes.schneider@leica-geosystems.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org
-Subject: ath12k: WCN7850: PTP hardware clock and time stamping - which timer and offset registers may the driver use?
-Date: Thu, 22 Oct 2026 06:07:41 +0000
-Message-ID: <20261022060744.1385839-1-johannes.schneider@leica-geosystems.com>
-X-Mailer: git-send-email 2.43.0
+	id 1xJmVd-0000000DUSd-3joM;
+	Thu, 22 Oct 2026 06:42:42 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 15BF2601F1;
+	Thu, 22 Oct 2026 06:42:41 +0000 (UTC)
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1792651360;
+	b=wG4eV1eJY9bxsFDzF5oOiU+7yGLpZHjZD4F6X2E2wz+k2hC9li8iamZtLzTk8nqetVuL
+	 UxKZsFYvhk81LeecQHboeHI0hxd1rj2fhGiGRG3TgfDlQXr61pZKiuUdzGParH1V78zEm
+	 2jiFT6SaQ233g/rgdU3NxS0vEoUDB4ffGNzXrzo3uL+xrtiBsu1+qxo9S/Bh1cjibhYwH
+	 nB2717UZ8RkK8xAW6fb953pZAqpWKgIa7Tjy1L5C9ifoGu3Kd/gFi91SyEF/oixnpaWP5
+	 8Y2zt56HVFfywYaa/8r8RIozbOhEmHZV9Sfd1VblzKeVJE7zwenMPENnoguKG5jrv4A==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1792651360;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=InOhwMgahGJyb6tOkMeBMHX6+1D9KY8fWjWr1Ll22Rw=;
+	b=j4YBUvK3fO2yvzzZi0YNlvezFLKlADr5cQt7//YynEGavqFMSBFNIcTRSjL1UVvn0mSQ
+	 SqP3mH10Kl9RB3P6KMqRAfvhgUxwefVDJqk7/LhzstW3hp5vePJ+3vwh19dHALr0MTFe3
+	 Ga1ej6/jfBqSwZPqoYg829YiOcArs5siL3gzxFJ55vLam2uOcaVprNIFLuPErZDHjE/P3
+	 Khkt74uMQw1y5MYm7L1VvhjweW4XMzn+kjaaTdrrMKq3mJijWj1GubWDK9aNVxSKuXWFA
+	 BEfTbS5jPHKupjFW+QxafEWVbzBaBlsZBazTCDj75amZqAFXJrVPk5Fh36BIYoyShIQ==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.kernel.org (Postfix) with ESMTPS id 354DA1F000C1;
+	Thu, 22 Oct 2026 06:42:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1792651360;
+	bh=InOhwMgahGJyb6tOkMeBMHX6+1D9KY8fWjWr1Ll22Rw=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=kfQjMjbRE+fWIWapQF5rODqSkaos6NNzbGi9VaXr5sq6eZYp7EGb3ZZdnNFwt/Tf/
+	 5NV2TlkR+AbwH+HmVIjFDf3wZUEgBj+7gHDGu2udu2FM3X4euULZH5p9HU5iXb5/xG
+	 mCDzHymNDkJxghUyhlttWsJ2T36VedGSPni4j7nKw9F6mt9ers/p4Kn8k07H7TTOgQ
+	 R0vqJgICC25zli96bOfDY/s9lFb1qMCmB248YkZYzUC54b8ATPOIS3W976Av2fdDQu
+	 3F6JsA59Vvx91ZkldnakMFx6K1Kojs1yg0ZG4erwht24oH6hFffhGQgpKbcQoOTuXL
+	 3QaU7iFrjCgmw==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id B99C14349D;
+	Thu, 22 Oct 2026 06:42:39 +0000 (UTC)
+From: John Macias via B4 Relay <devnull+dencity7.gmail.com@kernel.org>
+Subject: [PATCH ath-next v2 0/2] wifi: ath11k/ath12k: bound READY MAC
+ address array reads
+Date: Wed, 21 Oct 2026 23:42:36 -0700
+Message-Id: <20261021-rdy-mac-array-bounds-v2-0-cf7f45f868dd@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-OriginalArrivalTime: 22 Oct 2026 06:07:58.0559 (UTC) FILETIME=[AFCC3EF0:01DD61EB]
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AMS1EPF0000008F:EE_|DB8PR06MB6540:EE_
-Content-Type: text/plain
-X-MS-Office365-Filtering-Correlation-Id: 413c2144-28e2-4511-3efc-08df3002d25a
-X-SET-LOWER-SCL-SCANNER: YES
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|36860700016|1800799024|30052699003|376014|23010399003|6133799003|18002099003|261021123027099003|11063799006|56012099006|10067099003|261009223027099003|261021121427099003;
-X-Microsoft-Antispam-Message-Info: f/LZjbeMUbiBKzT7v2pzpGv8xm5fTFiVlHZEOBCFgLU+h0munktUMq/n0TVlz1uwvLlBkX6mvSNLwoLp4j19Ol71Et6lxgp/77IO6moxGN5PT0t8fwnKdKyduFUWlF1avonH0w1iwXB7k8nLmiD/S1QDAisUmFA//EXhxcveD2bkd8BvEEm9AvHaCAUSz5wEJLB8gd+i/PY5EAnEdZSCbYVK72Qs4HF2h3N4MYItnUVogAFCIy0Lv0dlunbjJYhMLUgGntv1cRXlGKXaJp1T+h7wArlu1ZQ5Qso+JKLdtz+cDrO2gBhvEQAdfne0EMR2rr0CNpgp8oAGsWYENpCX6GeNo6iaG/tVFCaYokDx+UlY98Yz7mCVl4yB5OLzn3orCO7GOyzoqGbuI4f7vf8tfIqMw9IEDcxcmSNwfxcB5C90P+IY01q74BDOKtk3TuTFZzEOAdgcMKEQJN1vzz9jO4LJBlBCY0L0Z+zzLIpurcqgHsMe26BDqSy8Keh8qzZeMf7Cc2qz0HEYEmfYZoVDZEuzBO5tkSEEc6LtnoQvy/WbTkN6xHRuXchco05cewQf5zOQjPS0wuDw/upbr8pFqqyMGOptLnSwKJG1h8/hsMg2O7eO/yaTQ7EvGnV6IwZVlsmWLW+bNguNPti/Hj4vYCJ165LzWzPMfAvvShwgPZOcKRUAgb7wCTBzGZ2OFnhHPDYyjxRVhDSzo6inE1w3QA==
-X-Forefront-Antispam-Report: CIP:193.8.40.99;CTRY:CH;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:hexagon.com;PTR:ahersrvdom51.leica-geosystems.com;CAT:NONE;SFS:(13230040)(82310400026)(36860700016)(1800799024)(30052699003)(376014)(23010399003)(6133799003)(18002099003)(261021123027099003)(11063799006)(56012099006)(10067099003)(261009223027099003)(261021121427099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: gcdw2g8KFaF9aUor7tJ//xKuTh8o7oEEl/+oGo0Xd97dycR9Y+dgg1Vc6/r7yKbLSos/YaKV6zr9rxWdDv/ye9vt/713STQrawMN2VQnUrJKtiwoYGDRrkBQxOHv1Q10H4UVtG7iXPH5I20JQICB5gUq898fiO4VqgAdd95W6LcZ8T7O7tEghRZbjD4N97tcLgSnlt6fheD75lT+3HljBhHFth053C9DoJq3oXFeYW/x1kmaXXAivPsoP589Cdr5HFnSpwtEB6kVPTHggkaftklmiM+whsBX09s0MxwPI88ZelDVsbcPSkw61I9E/PbnFxt+Q3KlX0wjcsWbDpYWqrxBpakrxcp8wY+2VtH3juO0+qS3PcawMX7Qia1AbJB5UyyHo4rHd6PaWOomCtjSMlgcU73BQv9ETWgYe/jMNGkkinn7PZwAbXH63vRcOwqP
-X-OriginatorOrg: leica-geosystems.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Oct 2026 06:07:58.6724
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 413c2144-28e2-4511-3efc-08df3002d25a
-X-MS-Exchange-CrossTenant-Id: 1b16ab3e-b8f6-4fe3-9f3e-2db7fe549f6a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=1b16ab3e-b8f6-4fe3-9f3e-2db7fe549f6a;Ip=[193.8.40.99];Helo=[hexagon.com]
-X-MS-Exchange-CrossTenant-AuthSource: AMS1EPF0000008F.eurprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR06MB6540
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261021_230806_802642_A780ACFA 
-X-CRM114-Status: GOOD (  12.71  )
-X-Spam-Score: -1.9 (-)
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIAFyw2WoC/32OwQ6CMBBEf8Xs2TVtTWniyf8wHEq7Qo20ZlsIh
+ PDvAt49TmbezCyQiQNluJ0WYBpDDiluQp1P4DobW8LgNw1KqEoKqZH9jL11aJntjE0aos/oyQh
+ njBZKGtjQD9MzTEftA2zpMNJUoP45eWhe5Mreume7kEvi+XgwyoP4PzZKFKg9KVM1Rit7vbe9D
+ e+LSz3U67p+AcxXqDnUAAAA
+X-Change-ID: 20261015-rdy-mac-array-bounds-de70c7750217
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, ath12k@lists.infradead.org, 
+ John Macias <dencity7@gmail.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792651359; l=1870;
+ i=dencity7@gmail.com; s=20261015; h=from:subject:message-id;
+ bh=x634za5mpA5H7Frs7sJ8rHx/6pRCwtwzuVGuauUUndo=;
+ b=yaLCM504EmJZP6hNt0Myf5YCfZ1kgaq5TM0OZFN40E16PNsE/PADW/nPDvEmFiNMFcHI0nUoy
+ Zddlo9Wx0AuBQV544WoGKR0KpxRpo+LvEDRx9GlO+z2AjEbrcDfMVNj
+X-Developer-Key: i=dencity7@gmail.com; a=ed25519;
+ pk=z7cMHA0B6NULvJzsST/bbOOegMB6xCo9+/ytQure7B8=
+X-Endpoint-Received: by B4 Relay for dencity7@gmail.com/20261015 with
+ auth_id=1198
+X-Original-From: John Macias <dencity7@gmail.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,71 +109,60 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: dencity7@gmail.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	PP_MIME_FAKE_ASCII_TEXT,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=4.0.1
+	FREEMAIL_REPLYTO_END_DIGIT,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hoi Jeff, all,
+ath11k_wmi_tlv_rdy_parse() and ath12k_wmi_rdy_parse() copy one MAC
+address per radio from the READY event's fixed-struct array after
+checking only the count advertised in the fixed record, not the array
+TLV length. A firmware READY event with a short array makes the copy
+read past the end of the TLV value.
+
+These patches check the array length first and fall back to the
+driver's default per-radio addresses when it is too short.
+
+Found while bringing up an IPQ8074 v1 device with older firmware; the
+issue is not specific to that hardware. Verified with a userspace harness
+around the unmodified parsers under AddressSanitizer. Compile tested
+on ath-next (W=1). The ath11k change has also run on an IPQ8074 hw1.0
+board on every boot since 16 Oct; its firmware sends a well-formed
+array, so that covers the normal path only. The ath12k change is
+compile tested only. Neither has been tested on hardware with a
+malformed event.
+
+Jeff, following your pointers on my earlier ath12k RX-ring RFC, these
+carry a full-name sign-off, an Assisted-by tag, and state the testing
+explicitly. This work was developed with AI assistance.
+
+---
+Changes in v2:
+- Drop RFC.
+- ath11k: note the hardware run and add a Tested-on tag; no code change.
+- v1 was accidentally sent twice; apologies for the duplicate.
+- Link to v1: https://patch.msgid.link/20261015-rdy-mac-array-bounds-v1-0-5de276b752a3@gmail.com
+
+---
+John Macias (2):
+      wifi: ath11k: bound READY MAC address array reads
+      wifi: ath12k: bound READY MAC address array reads
+
+ drivers/net/wireless/ath/ath11k/wmi.c | 6 ++++++
+ drivers/net/wireless/ath/ath12k/wmi.c | 6 ++++++
+ 2 files changed, 12 insertions(+)
+---
+base-commit: cd026e68fdbf88b9cc522b76c7a9d92c9a41f709
+change-id: 20261015-rdy-mac-array-bounds-de70c7750217
+
+Best regards,
+--  
+John Macias <dencity7@gmail.com>
 
 
-we have hardware time stamping and a PTP hardware clock working on
-WCN7850 (hw2.0, firmware WLAN.HMT.1.1.c7-00108) with mainline ath12k
-(v6.16), so linuxptp and chrony can synchronize the system clock over
-Wi-Fi. Between two WCN7850 M.2 cards on i.MX8M Mini EVKs, one AP and
-one STA, the client PHC stays within 0.95 us SD (p99 3.45 us) of the
-master over 6 h, measured against an independent Ethernet PTP
-reference.
-
-Before posting the series as an RFC, we would like to know whether
-the pieces it relies on are acceptable in ath12k, or whether there is
-a supported alternative.
-
-What the series uses:
-
-- PHC: the free-running Qtimer, read at MHI_TIME (0xa28/0xa2c),
-  19.2 MHz.
-- TX stamp: the TSF in the TX completion (rate_stats.tsf).
-- RX stamp: the RXPCU_PPDU_END_INFO TSF minus rx_duration, from the RX
-  monitor status ring running beside the STA/AP vdev (no monitor
-  vdev), matched to the frame by phy_ppdu_id; MPDU_START (retry bit,
-  sequence number, addr2) to detect retransmissions.
-- Both stamps are mapped onto the Qtimer with the PMM global offset
-  (0xb500fc/0xb50100), read under the UMAC awake handshake (write
-  0x3004 = 1, poll 0x1e04040 for 0x2), as qca-wifi-host-cmn does for
-  Kiwi (hal/wifi3.0/kiwi/hal_kiwi.c, hif/src/pcie/if_pci.h, public on
-  CodeLinaro, branch wlan-cmn.driver.lnx.2.0).
-- mac80211: a driver op to report the time stamping capabilities
-  (get_ts_info), so ethtool -T and ptp4l see them.
-
-Questions:
-
-1. The Qtimer at MHI_TIME and the PMM offsets: stable across WCN7850
-   firmware releases and chip revisions, and acceptable for the
-   driver to read? Does the same hold for the other ath12k chips?
-2. The UMAC awake handshake: is it the right way to make the PMM read
-   safe from the driver (without it the firmware crashes), and is
-   releasing it (0x3004 = 0) safe?
-3. WMI_VDEV_TSF_TSTAMP_ACTION with a Qtimer capture request: the TSF
-   report returns a global TSF of 0 on WCN7850, in AP and STA mode.
-   Should it carry the global time? That would replace the PMM read.
-4. The RX monitor status ring beside a STA/AP vdev, without a monitor
-   vdev: a supported configuration? Is there a lighter way to get the
-   PPDU TSF of a received frame? rx_msdu_end.ppdu_start_timestamp is
-   empty on WCN7850.
-5. Which instant do the TX completion TSF and the RXPCU_PPDU_END TSF
-   mark? We see a constant ~16 us TX/RX asymmetry, and the mean offset
-   moves by up to ~2.6 us between associations with the same spread.
-6. Multicast and broadcast frames sent by an AP get no TX completion
-   stamp. Is there a way to get one?
-7. Would a series along these lines be welcome in ath12k, and is
-   anyone already working on PTP for ath12k?
-
-
-thanks and 'Gruß',
-Johannes Schneider
 
