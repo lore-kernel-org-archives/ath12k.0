@@ -2,104 +2,105 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6BB3B60A382F
-	for <ath12k@archiver.kernel.org>; Fri, 23 Oct 2026 07:01:33 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 172B0606A328
+	for <ath12k@archiver.kernel.org>; Fri, 23 Oct 2026 07:01:35 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=mWZmEEKD;
-	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=C6Pg3Mau;
-	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=WRKGXjk+
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=BaDvCYG7;
+	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=hKQbarb1;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=NoeGyNFN
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=AACcgwhYkC3KUc2WR3EDrO9YGPVQuZ9/nNSNkiIADP0=; b=mWZmEEKDWLyFYc
-	V6f681R5YVF6u1eEU7LhEonfnNCXg6RnXfOPni7Oo/RhaXqXM0fUXcK5hwa295quRq68uvsLZl5Xg
-	Bgw+HvPQ98Yk1jDFMpHua3hebydsE9mv4DLo2mJHshKsfVk8J4v/sJS/LviMXJ/sJAPy31sRAmqhl
-	ensS3UYe/IPCUVL7xiJhW8mWTp8LyP/8f+bHw/AGQfKCCYqnjDGKSIUiAHDbJmASFm/CKqBKTS2OJ
-	qRteFpPKT7NK52lAJKGQpcTq49PukqjsAxy17nP6MvZhVG9b8eRtBcROjrNzixAQblc7DEGWsVHPo
-	Uf6mvggE5Kqu8SOp/cRQ==;
+	List-Owner; bh=+vOE8sL9t6xNjcUysD0wOX3Qs2fD0W5uM0CzKej9jTQ=; b=BaDvCYG7UqgcbO
+	D3fmqLK3Izawsb+XAK5oYgs4A0SXglhMjlDbisjdo3fBqzGYMVcPnGciLI5itI22FCv03oXxpUzmd
+	pduPrUpVM1xdrVTdaHh2zpiop/Q2eP99gH6IIeVAdZgrWkfUwf42IY70Gm5UDI/J1SkGHkGbuyT1y
+	QQ2C+3ezpqyxAeUeQ+voHdm1h12MV7jL8x1NH+HLh/K0KClilUhMQfL0oxx0NveBkRE7pt79zpPwb
+	tqhxneWGm/pSeySwOSgPqvTxvhuEHxUcNyYKfUaKQirUkse9jc1Uch+bEvtCpdjwMGKlkZdx4NUc2
+	ZDO2Y/HOBwXC+sCsJkPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xK9HP-0000000FfsY-0tU3;
-	Fri, 23 Oct 2026 07:01:31 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xK9HS-0000000FfxN-3Qci;
+	Fri, 23 Oct 2026 07:01:34 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xK9HF-0000000FfoE-2PkP
+	id 1xK9HQ-0000000Ffu8-30gj
 	for ath12k@lists.infradead.org;
-	Fri, 23 Oct 2026 07:01:25 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69N1F9lW1792135
-	for <ath12k@lists.infradead.org>; Fri, 23 Oct 2026 07:01:20 GMT
+	Fri, 23 Oct 2026 07:01:33 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69N1FrMs429249
+	for <ath12k@lists.infradead.org>; Fri, 23 Oct 2026 07:01:32 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	AACcgwhYkC3KUc2WR3EDrO9YGPVQuZ9/nNSNkiIADP0=; b=C6Pg3MauuJR9m3Rg
-	nM7VfMaqEJnktOK9ECURmTXmZwy1qnTPK/9EPKAV1PD13LVVc/Phq8BW8a6P1z79
-	1uqInJF79LacbA+H0OqSa1r2RlRE34e0ZYyUPNcvnE4cIBo/Rpmu4urJhiu+eHBV
-	Uw2GQvx5DdasfZmtwgDWEOI53T1yOO5b/nE656qItGg45sfQsCu+JDIsRg8h0pnP
-	qe00nF7XqO9EM1Q7LmpO2QAYnpoaJRYIKuFbb+rpD4Xf+iBLEvi+TbNXobD2hv5K
-	74Bh78hlIxnofyin7/AUFPbRX1GzPBTGTR/PCrM/81eIFsRV18TSbC7rpVRasjHc
-	j9bxpg==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hfnq0jwda-1
+	+vOE8sL9t6xNjcUysD0wOX3Qs2fD0W5uM0CzKej9jTQ=; b=hKQbarb1BYVCgfgx
+	WS/Joh4mAyMiwZ+731RXvNT5GoeO+DnRvJPZCjaDWqav7xWvyXBSnAnsxiBd0CwB
+	ETcvfgUrr4SxmD2LArtCpzPKqy+Gj9TNydj9Au+PZYMtiYHD0Pd8IlgxBTeSUX4y
+	0KY/aoPUDqOaZB33uIFi0KlfXcdyyk7XN2u9NvPK5XYbQVaLoq+Gch+FUl7GGhNv
+	EEm6g+YBCSuc3wqf37qD+r/y/lBc/e8LzRPWKsZJBmMTvcfqrZhFpTLFp1GcPgIj
+	/IXihBPgO/NyjMUysbnHPIzSj8s6LnOZ4+9lIdG8asbHKuFvB5EdVrm/4MRFX8EB
+	3wYDgw==
+Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hfqms2bcf-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 23 Oct 2026 07:01:20 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-3ab7f1efe5dso1117347a91.1
-        for <ath12k@lists.infradead.org>; Fri, 23 Oct 2026 00:01:20 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 23 Oct 2026 07:01:32 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-cc1ca15334cso705009a12.1
+        for <ath12k@lists.infradead.org>; Fri, 23 Oct 2026 00:01:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1792738879; x=1793343679; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1792738891; x=1793343691; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=AACcgwhYkC3KUc2WR3EDrO9YGPVQuZ9/nNSNkiIADP0=;
-        b=WRKGXjk+fivQ/n1TAUPoExNKla0bKD8xxyO+E90+BA783uqdfztLwgHx8pJk3pFrC6
-         4Ss1cuYs0UEx8hHw/s35DcB/NNeAcNM6TlAyVZw0ZhFZs45XojN3omPTnrjT6ROOGyUM
-         ls4NrfJlKxINFriJ35OzZQdqt5LPSQerPDfMBbzdGdnjdXDDXHS9uJFpuxkaAG2oXJ2d
-         cwfeASbX43ecq4lenWYr/w9Hk/0rs0yR0qIUAS25+KgPfq2EG5EPTXDF6wlThsWPvbLf
-         LUdT5rXz04wjbBay6hgZwrYEA152peXtooDkr0lTMAUuyr2RkehVK/cq/abOqFCrr4uq
-         trhw==
+        bh=+vOE8sL9t6xNjcUysD0wOX3Qs2fD0W5uM0CzKej9jTQ=;
+        b=NoeGyNFN+A4DoiCRqVREKCQOxuyA14yWEj+mfDZJ6dyKryRNBOV3Ht1PDRHEuOjcCI
+         tR3KE5E0pKDNLYptFdgNUqEif9r2bf0+OELCxTw+RIdZVr/x4oP/Cxjb0PjieCmwPerQ
+         gC1r5eCLlYPAeWTAJPKhw26p2tHtlA/IeoylisrM4irGjNt3IE340o8q3PdI0bqnr1r7
+         t0P7j6mEhhzQ7VMzmKK4pfY6bt/IbyiYWMAySUlYUNp9gQRxvlpVYaJhUSqTHd9Glgkw
+         JHFaleg/sORVFtp2nCKf7qISDAsUu8D+p5j44pz12pFd60GbL/c6lJ2HR4UGugrd8FOO
+         Wi0g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792738879; x=1793343679;
+        d=1e100.net; s=20260707; t=1792738891; x=1793343691;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=AACcgwhYkC3KUc2WR3EDrO9YGPVQuZ9/nNSNkiIADP0=;
-        b=r2wFE8Uwev+3KQOf+XrzFETj/d2AUeZGF2v8CpTyBamOk5vTpMz0ULyn9wQpEXs4aG
-         uwJanfXeDq4KP9BBtb7jcrCfgO5Wtbq8TOU3nt4IY395GyhIPkR+sIcyJbTVmYUP33T7
-         IyqXrjW9Lx+uFbwDvqfter2O2rEUOH8G5+5hSdI3sG+WFtLLMcNOJ7a352e/q8UG6HdC
-         Jllr7DX3SGcZwZLsqkO7ZHPeD6iHAA4+3L5ouYmJJ49z7ZfG3w9WXtxdrC9eIpvtK6QL
-         BtTqI2V9/y/SWHpO5tPIzNt7sQmVUWG/eY7bZYilSBQCwuQcVjpD+Ig/jya2v08ijAgz
-         /Uvg==
-X-Forwarded-Encrypted: i=1; AKwUvByNLRHVcBKbhRUF4ZG2I4cMVrkwbmtmeAuKHtgrlKUxE97zU8q9Z8At3OWgzcIXJCZPyZI2t/4=@lists.infradead.org
-X-Gm-Message-State: AFq9FYKPEE3lEQ+QRO09Dtyfw1KUbcUQWGyzbGd2XvuYeU+tAZ78aO16
-	NF2nbDE+z8/kV6e4RbrMJCiVTwe+S5qdHC2/9mMXm9CyJ4zWUuBq1tDIL5JmaXO/7+GOjmK5CZP
-	6YuvRByvL4LFMi6w9wx950pkFel3g7nDmNz7PfwDiCc4NTTjWzMkhHnIsQrDWCloX
-X-Gm-Gg: AYBFou0TalRPZYZO17X5k+tB1s57c8c/qs2wW5cWJhEsdxp9kGytSPHM29fpRl3sAvQ
-	c9xOynxv3Ak9CDiNlIRpMVXqTnKoH6JwE28Gth4WaiMILRGDSeVHba1hjmNRZgATztAsRWDIj/K
-	HnEGuCo0ZMVq9Xn3lO4iHrFpg4G94A3IB0188Dnnk6XJvu6100Ty/gBBqpREWx0vcJMA4/Dt6iZ
-	CuwU8CsbrWfcSK6Zu8Stb+UnKg4EI39p1Z6kR9NttABVQca/JTh1wdOiOnRs2xevmH6eOnILgLK
-	CnoGaOuKs4dovjzsGqGtMg7EQFar2mTA70vqVZAKPDEyDxazi8Zqr/roOZRwgS9wZedY38KnnY0
-	qmNkXTOGgEzYpE01Wtz46BHJS6iMZlrwI55YD4TuV30nDAVezCZco7LTfAGzMO67pQKpK1Tg643
-	mKo1rnMhf/UM+fimKGvowDTw==
-X-Received: by 2002:a17:90b:17c5:b0:3ac:86a0:5766 with SMTP id 98e67ed59e1d1-3adce0cfd32mr1195277a91.63.1792738879039;
-        Fri, 23 Oct 2026 00:01:19 -0700 (PDT)
-X-Received: by 2002:a17:90b:17c5:b0:3ac:86a0:5766 with SMTP id 98e67ed59e1d1-3adce0cfd32mr1195233a91.63.1792738878394;
-        Fri, 23 Oct 2026 00:01:18 -0700 (PDT)
+        bh=+vOE8sL9t6xNjcUysD0wOX3Qs2fD0W5uM0CzKej9jTQ=;
+        b=gojUKqLP31p5y7Fn1q+8hZX6Cv4fMzwGlrUCNW/WfKwqKK86ohZ+sddjOc05DvIgyY
+         GAYBwWp+sqSGpnbzgxnI5h6w5Yq6PHe9xvAXuLwqX5LxzAvFNNghBAlW6qB80TWSO1ra
+         +Zjm6nVoMHP/tAuSZHkLLSEcZUp3xu+AkZu6qvXieEW3zA0YsebGrEH6Yy5lUBfmqVdy
+         63Yb19KVpu8gA3wpBMtbHVmnmMRJ2+ByCwRK68mzdZAMhVvHYsBMibIHctNBF5CkhVTK
+         6MMwCPkItJie5XUb1rP3qBWCzKuYbb5m/S/xF+kkeSaW5TeBQuoj/gSmw9RLogI7XgaQ
+         eN8Q==
+X-Forwarded-Encrypted: i=1; AKwUvBxrVAMs12vM2HXWeLzuXJmsWPt3gY7oeM8zoYboa+CXziNyWydY1254Okofyn5UlS2/f+6dhEQ=@lists.infradead.org
+X-Gm-Message-State: AFq9FYIxNT3qkS/SuXc5aP84zFN7irakBNmcofoJZ4Btr5q5Uy5+HpIL
+	jZvd480faSHSg/h1dfuF2hlZkHiJPsIZSzDFnqHFdvERb5HzEbsrFnHqlzYwmcOXjk+myWa8laJ
+	sZ4pREplikIzDmg6yGet0GEEVdxp0kLCOWlQY1PlfJIfkWQamB9dMEHciFcJSlUwI
+X-Gm-Gg: AYBFou1NiX/MXV0YHTEVbSw1E4gZKYLxWP7TLfk6C1/AIhpMDQk7yEENv5jn+fgFe7A
+	Xo/R6EGWw5Tn0bissxWQj8cGz+zRT5rhwMk/H7YNTNOiO3n9loJMsAECBnseHrh1PbpgZRLk9Ua
+	oxMMIBL1dBgXrnnuTJYokqTUT8TOyMWsiffUT22BSVup/lQkDo0mnpCLVCXYyhjEfv1ICHFHsIZ
+	7jK/MSMogIeIdvu/FHSEfPrbYos4orsypLAIkWWasHGQ3mEF4CSESQ8yoT3mDWuochZ7IMCUS2E
+	EeNEogG6Z6fEu9fvyuV8ygq81d6zohfU/B1clU1NFMOrmnsZQVR/44fbye7EgiwCGr3R50mWd87
+	ttomZu5blo5/KQ1n6IPcNVRq3DilulWBeNjqg/UEiNhnrtcelHGTeQRNizj3pHwIGqW5Vmfy0wG
+	/yengBJhQeA3NgicL2RBaGAA==
+X-Received: by 2002:a05:6a21:7e8e:b0:3de:48e4:c37d with SMTP id adf61e73a8af0-3e3693502dbmr832385637.26.1792738891428;
+        Fri, 23 Oct 2026 00:01:31 -0700 (PDT)
+X-Received: by 2002:a05:6a21:7e8e:b0:3de:48e4:c37d with SMTP id adf61e73a8af0-3e3693502dbmr832359637.26.1792738890923;
+        Fri, 23 Oct 2026 00:01:30 -0700 (PDT)
 Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cd8ba8a6dcdsm399751a12.18.2026.10.23.00.01.14
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cd8ba8a6dcdsm399751a12.18.2026.10.23.00.01.27
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 23 Oct 2026 00:01:17 -0700 (PDT)
+        Fri, 23 Oct 2026 00:01:30 -0700 (PDT)
 From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Date: Fri, 23 Oct 2026 12:31:04 +0530
-Subject: [PATCH ath-next v3 01/17] dt-bindings: net: wireless: Add QCN6432
+Date: Fri, 23 Oct 2026 12:31:07 +0530
+Subject: [PATCH ath-next v3 04/17] wifi: ath12k: Add hardware ring mask for
+ QCN6432
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261023-mpp-bringup-v3-1-19f3fcbf7b5f@oss.qualcomm.com>
+Message-Id: <20261023-mpp-bringup-v3-4-19f3fcbf7b5f@oss.qualcomm.com>
 References: <20261023-mpp-bringup-v3-0-19f3fcbf7b5f@oss.qualcomm.com>
 In-Reply-To: <20261023-mpp-bringup-v3-0-19f3fcbf7b5f@oss.qualcomm.com>
 To: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -107,38 +108,40 @@ To: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
+        Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>,
         Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Proofpoint-ORIG-GUID: S3hJGhbPzy14ziotPVG0JsiIrSONqFiA
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDIzMDAyNyBTYWx0ZWRfX0piI1e/Ufni6
- 2DI7h3rWrsAxRXh71ddNmdrSxvXAbM1IxXR2hQTEzvlCHE2tnKodSBNagm8T5Y1uYdUfHXhF/cG
- L7/VsDPd3PVCafPXv4pOVf4iuOgqOJSCSCV0YkG8iGPpPfDPNWJLFZnyE6EkdEOTfZtI4mIMpGA
- OZXbbx3hfFq2e55+2GWlgvE4IfH/u4AhiUtt2A7uyxgjM1Kp4bAtRMmG+7CYokZRrigqHiNukBQ
- NHTDEbtHBfF5lo4g7VR2VWQjYdSBGBmqe1+gv1tBPEQQtWwXAM18Tmr1DW6MCCaFY1ppvYHRm4+
- mV6+oo+kUpLMtqv1+SLlgLfj2FAmVJjXWQGmyCnSYninb9lID+lz66f3LsoCCKSg5IHgya+jFY1
- twOfwoKMPBqZO0UACH1sU2wgcqa8U9mL6DN1PYD+FlrPyi2Qx/E3zjYaHzs1avVutZov3AkyvVo
- VA8yM05tIPJto/mHAYw==
-X-Proofpoint-GUID: S3hJGhbPzy14ziotPVG0JsiIrSONqFiA
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDIzMDAyNyBTYWx0ZWRfX3HypkggwaKhR
- vhMxEPDz1FIWgun070PmZQB4kn7PiT/IGFvu3+iPgnU1ooVY0V4tZZqQQcledi2geuQaSY/4/L/
- 0o1bWtYp/nmE+FVT+xO/yspgR6E/vjI=
-X-Authority-Analysis: v=2.4 cv=UaHE26SN c=1 sm=1 tr=0 ts=6adb0640 cx=c_pps
- a=vVfyC5vLCtgYJKYeQD43oA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDIzMDAyNyBTYWx0ZWRfX+UM+88mwALhu
+ a8BT+L7Samz0zdJn4AKagdSAx7Gn70DYsEfRe1khyLU4Kj1AVbk4lEO6fK+7U0GFT8bImJf7ODu
+ 3ks6PSnFbL+Dk8QG3Ls3vJr1YokNbkhzdfV1+Kh2Xuq6bQGytFLlddvLKG+cbmQWzb9bHDOqh4e
+ edsVKDev9MmmlHWYQeJPrnQv6WONst4WI/uT4aNQNI7Itxclg9gFhXxvA35fW6ob+PEUYO1R2wB
+ A9IN4zPqoNVVdpHY4acUdkujgtDEwi/jX7twx/ljEphbgLDmGFchcB7z0wIAqZN9fk/cxeWRIuU
+ 5NEWVxGbvkJru/8yq41xjxo4YpZF3yJrUW7ib79vttoYVHp9UUQe3+1PyAhkx+xeJTomavEGm/7
+ jgKeKvaZGBZ4AtdGRVCn2y836gcJmObnPTW9pdBMQk88HYiooISj6ifpq1pZLPX5Se4h5LiYf2T
+ /qwxHl6isr28bFD5ccQ==
+X-Proofpoint-GUID: YwgpSDiHo3nmzzJZG3OxxQFwAX63t3Lp
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDIzMDAyNyBTYWx0ZWRfX3CYTTsA8LB3e
+ LVL5WyR2hfGVAiGMYE7iSgEh+cJtysDKMVOS2kLOWRgv1yutVahm9P0xFMhf00/b1NUyUtv8QPD
+ s+Dul71seaXvHDsiXUMkX4WO1OY4xbs=
+X-Authority-Analysis: v=2.4 cv=UdbE26SN c=1 sm=1 tr=0 ts=6adb064c cx=c_pps
+ a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=gEfo2CItAAAA:8 a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8 a=Zbx1xPUqErz4vskW_SEA:9
- a=QEXdDO2ut3YA:10 a=rl5im9kqc5Lf4LNbBjHf:22 a=sptkURWiP4Gy88Gu7hUp:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
+ a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=qBdOBzyLVJzNEwNtDhoA:9 a=QEXdDO2ut3YA:10
+ a=_Vgx9l1VpLgwpw_dHYaR:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: YwgpSDiHo3nmzzJZG3OxxQFwAX63t3Lp
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-10-23_01,2026-10-21_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 priorityscore=1501 bulkscore=0 clxscore=1015 spamscore=0
- malwarescore=0 lowpriorityscore=0 suspectscore=0 impostorscore=0 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2610190000 definitions=main-2610230027
+ malwarescore=0 phishscore=0 bulkscore=0 clxscore=1015 adultscore=0
+ priorityscore=1501 suspectscore=0 lowpriorityscore=0 spamscore=0
+ impostorscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610190000
+ definitions=main-2610230027
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261023_000121_778646_D69FD2EF 
-X-CRM114-Status: GOOD (  16.67  )
+X-CRM114-CacheID: sfid-20261023_000132_839742_43A286AB 
+X-CRM114-Status: GOOD (  14.06  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -158,174 +161,112 @@ X-Spam-Status: No, score=-19.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add Devicetree binding documentation for the Qualcomm QCN6432 IEEE 802.11be
-wireless device.
+From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 
-QCN6432 is attached to the WCSS Q6 subsystem and is represented as an AHB
-platform device, even though the Wi-Fi hardware interfaces over PCIe.
-Document the compatible string and the resources, including the Q6 remote
-processor phandle, MSI interrupts, SMEM states and memory regions.
+Add hardware ring mask configuration for QCN6432 to support interrupt group
+mappings for various hardware rings.
 
+The QCN6432 requires a different ring mask configuration compared to
+IPQ5332 and QCN9274, with support for up to 12 external IRQ groups
+instead of the previous maximum of 11. Hence add a dedicated ring mask
+structure that defines the interrupt group assignments for TX rings,
+RX rings, RX monitor destination, RX error handling, RX WBM release,
+REO status, Host2RXDMA communication, and TX monitor destination.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.6-01322-QCAHKSWPL_SILICONZ-1
+Tested-on: QCN6432 hw1.0 AHB WLAN.WBE.1.6-01322-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
 ---
- .../bindings/net/wireless/qcom,qcn6432.yaml        | 149 +++++++++++++++++++++
- 1 file changed, 149 insertions(+)
+ drivers/net/wireless/ath/ath12k/hw.h       |  2 +-
+ drivers/net/wireless/ath/ath12k/wifi7/hw.c | 52 +++++++++++++++++++++++++++++-
+ 2 files changed, 52 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,qcn6432.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,qcn6432.yaml
-new file mode 100644
-index 000000000000..96e164620574
---- /dev/null
-+++ b/Documentation/devicetree/bindings/net/wireless/qcom,qcn6432.yaml
-@@ -0,0 +1,149 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/net/wireless/qcom,qcn6432.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
+index 52558dd126a0..833aa6d43ce4 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.h
++++ b/drivers/net/wireless/ath/ath12k/hw.h
+@@ -127,7 +127,7 @@ enum ath12k_bus {
+ 	ATH12K_BUS_AHB,
+ };
+ 
+-#define ATH12K_EXT_IRQ_GRP_NUM_MAX 11
++#define ATH12K_EXT_IRQ_GRP_NUM_MAX 12
+ 
+ struct hal_rx_desc;
+ struct hal_tcl_data_cmd;
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+index 643c95c9bccd..acc4eabcf2bc 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+@@ -332,6 +332,56 @@ static const struct ath12k_hw_ring_mask ath12k_wifi7_hw_ring_mask_wcn7850 = {
+ 	},
+ };
+ 
++static const struct ath12k_hw_ring_mask ath12k_wifi7_hw_ring_mask_qcn6432 = {
++	.tx  = {
++		ATH12K_TX_RING_MASK_0,
++		ATH12K_TX_RING_MASK_1,
++		ATH12K_TX_RING_MASK_2,
++		0, 0, 0, 0, 0, 0, 0, 0,
++		ATH12K_TX_RING_MASK_3
++	},
++	.rx_mon_dest = {
++		0, 0, 0, 0, 0, 0, 0, 0,
++		ATH12K_RX_MON_RING_MASK_0,
++		ATH12K_RX_MON_RING_MASK_1,
++		ATH12K_RX_MON_RING_MASK_2,
++		0
++	},
++	.rx = {
++		0, 0, 0, 0,
++		ATH12K_RX_RING_MASK_0,
++		ATH12K_RX_RING_MASK_1,
++		ATH12K_RX_RING_MASK_2,
++		ATH12K_RX_RING_MASK_3,
++		0, 0, 0, 0
++	},
++	.rx_err = {
++		0, 0, 0,
++		ATH12K_RX_ERR_RING_MASK_0,
++		0, 0, 0, 0, 0, 0, 0, 0
++	},
++	.rx_wbm_rel = {
++		0, 0, 0,
++		ATH12K_RX_WBM_REL_RING_MASK_0,
++		0, 0, 0, 0, 0, 0, 0, 0
++	},
++	.reo_status = {
++		0, 0, 0,
++		ATH12K_REO_STATUS_RING_MASK_0,
++		0, 0, 0, 0, 0, 0, 0, 0
++	},
++	.host2rxdma = {
++		0, 0,
++		ATH12K_HOST2RXDMA_RING_MASK_0,
++		0, 0, 0, 0, 0, 0, 0, 0, 0
++	},
++	.tx_mon_dest = {
++		ATH12K_TX_MON_RING_MASK_0,
++		0, 0, 0, 0, 0, 0, 0, 0, 0,
++		0, 0
++	},
++};
 +
-+title: Qualcomm Technologies QCN6432 wireless device
-+
-+maintainers:
-+  - Jeff Johnson <jjohnson@kernel.org>
-+
-+description:
-+  Qualcomm Technologies QCN6432 is an IEEE 802.11be Wi-Fi device
-+  associated with the WCSS Q6 subsystem. The device is represented
-+  as a platform device and uses MSI interrupts for its Copy Engine
-+  (CE) and Data Path (DP) rings.
-+
-+properties:
-+  compatible:
-+    enum:
-+      - qcom,qcn6432
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    items:
-+      - description: Fatal interrupt
-+      - description: Ready interrupt
-+      - description: Spawn acknowledge interrupt
-+      - description: Stop acknowledge interrupt
-+      - description: UMAC reset interrupt
-+
-+  interrupt-names:
-+    items:
-+      - const: fatal
-+      - const: ready
-+      - const: spawn
-+      - const: stop-ack
-+      - const: umac-reset
-+
-+  memory-region:
-+    items:
-+      - description: Q6 memory region
-+      - description: Combined firmware data memory region
-+      - description: Multi Link Operation (MLO) Global memory region
-+
-+  memory-region-names:
-+    items:
-+      - const: q6-region
-+      - const: data-region
-+      - const: mlo-global-mem
-+
-+  msi-parent:
-+    description: Phandle to the MSI controller.
-+    maxItems: 1
-+
-+  qcom,calibration-variant:
-+    $ref: /schemas/types.yaml#/definitions/string
-+    description:
-+      String to uniquely identify variant of the calibration data for designs
-+      with colliding bus and device ids
-+
-+  qcom,rproc:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Phandle to the Qualcomm Hexagon DSP (Q6 remote processor), which is
-+      utilized for offloading Wi-Fi processing tasks. This Q6 remote processor
-+      operates in conjunction with Wi-Fi.
-+
-+  qcom,smem-states:
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+    description: States used by the AP to signal the remote processor
-+    items:
-+      - description: Shutdown WCSS PD
-+        items:
-+          - description: Phandle to the Shared Memory Point 2 Point device
-+              handling the communication with a remote processor
-+          - description: Single bit index to toggle in the value sent to
-+              the remote processor
-+            maximum: 31
-+      - description: Stop WCSS PD
-+        items:
-+          - description: Phandle to the Shared Memory Point 2 Point device
-+              handling the communication with a remote processor
-+          - description: Single bit index to toggle in the value sent to
-+              the remote processor
-+            maximum: 31
-+      - description: Spawn WCSS PD
-+        items:
-+          - description: Phandle to the Shared Memory Point 2 Point device
-+              handling the communication with a remote processor
-+          - description: Single bit index to toggle in the value sent to
-+              the remote processor
-+            maximum: 31
-+
-+  qcom,smem-state-names:
-+    description:
-+      Names of the states used by the AP to signal the remote processor
-+    items:
-+      - const: shutdown
-+      - const: stop
-+      - const: spawn
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - interrupt-names
-+  - memory-region
-+  - memory-region-names
-+  - msi-parent
-+  - qcom,rproc
-+  - qcom,smem-states
-+  - qcom,smem-state-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+
-+    wifi@21e00000 {
-+        compatible = "qcom,qcn6432";
-+        reg = <0x21e00000 0x200000>;
-+        interrupts-extended = <&smp2p_wcss_in 16 IRQ_TYPE_NONE>,
-+                              <&smp2p_wcss_in 17 IRQ_TYPE_NONE>,
-+                              <&smp2p_wcss_in 20 IRQ_TYPE_NONE>,
-+                              <&smp2p_wcss_in 19 IRQ_TYPE_NONE>,
-+                              <&intc GIC_SPI 33 IRQ_TYPE_EDGE_RISING>;
-+        interrupt-names = "fatal",
-+                          "ready",
-+                          "spawn",
-+                          "stop-ack",
-+                          "umac-reset";
-+        memory-region = <&q6_region>, <&data_region>, <&mlo_mem>;
-+        memory-region-names = "q6-region", "data-region", "mlo-global-mem";
-+        msi-parent = <&v2m0>;
-+        qcom,calibration-variant = "RDP442_1";
-+        qcom,rproc = <&q6v5_wcss>;
-+        qcom,smem-states = <&smp2p_wcss_out 16>,
-+                           <&smp2p_wcss_out 17>,
-+                           <&smp2p_wcss_out 18>;
-+        qcom,smem-state-names = "shutdown",
-+                                "stop",
-+                                "spawn";
-+    };
+ static const struct ce_ie_addr ath12k_wifi7_ce_ie_addr_ipq5332 = {
+ 	.ie1_reg_addr = CE_HOST_IPQ5332_IE_ADDRESS - HAL_IPQ5332_CE_WFSS_REG_BASE,
+ 	.ie2_reg_addr = CE_HOST_IPQ5332_IE_2_ADDRESS - HAL_IPQ5332_CE_WFSS_REG_BASE,
+@@ -926,7 +976,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+ 		.internal_sleep_clock = false,
+ 
+ 		.hw_ops = &qcn9274_ops,
+-		.ring_mask = &ath12k_wifi7_hw_ring_mask_ipq5332,
++		.ring_mask = &ath12k_wifi7_hw_ring_mask_qcn6432,
+ 
+ 		.host_ce_config = ath12k_wifi7_host_ce_config_ipq5332,
+ 		.ce_count = 12,
 
 -- 
 2.34.1
