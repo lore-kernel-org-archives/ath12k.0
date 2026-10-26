@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3887B606A32F
-	for <ath12k@archiver.kernel.org>; Mon, 26 Oct 2026 17:25:59 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8FF2460A260E
+	for <ath12k@archiver.kernel.org>; Mon, 26 Oct 2026 17:26:22 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=m/8BsOA5;
-	dkim=pass (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=do/DnN1s
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=a/lz7oFH;
+	dkim=pass (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=bIwrq3jc
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=4flWI2WVnwFI/fTrvl/y9DbpMdHilW4fazMAT/2C8K4=; b=m/8BsOA5jH58y54hq1gz4X4DFP
-	mCgbtotJfZj65bhqya4jqivegq+VJSvGxxfjvJHl4Cz52C8iWlxnB3i1aB+V2Fkup/EMs9Iwkiut6
-	HSVZLEuGSz2X8WXN6joqs47h1O4LDzTcbj41uGCAHe7oJNT1b2whfylz5oUdA8lo7ej+UsZKa0l0H
-	iqQ4Zg/rZXtzA6eivl1uIxiYr59YKsCU2/Q1BXhQAWG0sm7GyTDu9DJ+ZYLEdAV9lRmBSZeyZrKbb
-	bIUUFBZ43OYh3ufFUmCSURe1irtznx5PZA7xDt46dBXu7FYIpys5tZkecGMH52Xo3nrzR9B8rRUmu
-	XQbHYWEg==;
+	bh=Y7fieeF7CmqetCmDW/QKoeVOfYtQRHVfDW9OzlsY0n4=; b=a/lz7oFHjQJC9mLJVRCHyd5pSw
+	7PRsq1Ue8TbYNKnTJERMuh+PoCk0qgoayDL0k95xEmVXEdb2+twH3lr/X760HYq7RHBOpRF92DAiy
+	QevbSO/AlpLI7jwhtxoOEMTG1ln9EHz2/duebUVXET0l1wTmLPyLp0oFqsLg6XpWxHHva+N066anM
+	mSESv2gHvzTB4twbqIzPvPxnDdoC+vrUVAVS3QMHskyYMQvNuTPm3VHRnoujMlXUvzHEVosMbpzo4
+	EYiGpQ1lXFaiDOljh+GLUu7OMWiY7JZHwJz5nsJXjIULBc2ZSWSChfKL+q/+VGIyTg76GS0QZ8TzB
+	KQKbuLtQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLOSM-00000002z9S-3igA;
-	Mon, 26 Oct 2026 17:25:58 +0000
+	id 1xLOSk-00000002zSv-1C65;
+	Mon, 26 Oct 2026 17:26:22 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLOSK-00000002z7r-3fas;
-	Mon, 26 Oct 2026 17:25:56 +0000
+	id 1xLOSj-00000002zRl-0UMt;
+	Mon, 26 Oct 2026 17:26:21 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 3D3D743E64;
-	Mon, 26 Oct 2026 17:25:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA8AA1F031E1;
-	Mon, 26 Oct 2026 17:25:52 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id DB2A244047;
+	Mon, 26 Oct 2026 17:26:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 893661F01825;
+	Mon, 26 Oct 2026 17:26:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793035556;
-	bh=4flWI2WVnwFI/fTrvl/y9DbpMdHilW4fazMAT/2C8K4=;
+	s=k20260515; t=1793035580;
+	bh=Y7fieeF7CmqetCmDW/QKoeVOfYtQRHVfDW9OzlsY0n4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=do/DnN1sS/BFglJXOVc3eSqMWCTulTWj7p+/8C3vlAjiIZXkLfkFq6Swf3Uyn1IUU
-	 Sj1q08ywy4L7I4hshh4mggb81RpchiYROxIIos+HPKXxZmsJ6WcqSD+8S3CZOOTE9g
-	 qjvHFXmXB9W2eRZQ9Jogkt8laFHm4/M19aEW2a/HErOn2EIkWygQkWrYrUSW4IStr4
-	 EMsE9KAHgg9TF3Vtb88B8eqVr1iH0YB3LV9tnrFmp8odKW4wOjD7ovpWx49ulxtBmA
-	 9X+Qvsz7hDgthb4wgYZRcfYNPc8g60Spyim+kDi2YZ3E5HhzAyp9dei5iTrZqY+deG
-	 jA0LRiGwZaZBA==
-Date: Mon, 26 Oct 2026 17:25:50 +0000
+	b=bIwrq3jcWrVWlKY8Ol4vI8+yt/qdkIhJvzjUsFnJcQWz3XJYeEXX2S4C0ZhimFzof
+	 goBbek1dQU+wXfkoaPDg3K54VH/pP38R+714tMnt48sRGhzCxeYts7CkqGlCj5V+wM
+	 MUvhfO4sZkf1zfcxsOHV016bxGhPv5P1SLg6l3H7T/dqml1fDcfdtBSNE8RYo8yXya
+	 RxLGizVb2O5ZJry4Es3MXd/uAUOEio8S58XVeog9qr3kNNdiZLowA2thGEVkKW0iVF
+	 2xmF4MLCyvZ3pC7/5uFhf/hgxEa94yrglFs/C+j2WjAPs3Cms7mHnWh/ClX/km5DZo
+	 N20jrkg72XU4w==
+Date: Mon, 26 Oct 2026 17:26:15 +0000
 From: Simon Horman <horms@kernel.org>
 To: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 Cc: Manivannan Sadhasivam <mani@kernel.org>,
@@ -59,16 +59,16 @@ Cc: Manivannan Sadhasivam <mani@kernel.org>,
 	Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>,
 	Juha-Matti Tilli <juha-matti.tilli@iki.fi>,
 	Jeff Hugo <jeff.hugo@oss.qualcomm.com>
-Subject: Re: [PATCH v4 3/4] wifi: ath11k: Connect to the QMI server belonging
+Subject: Re: [PATCH v4 4/4] wifi: ath12k: Connect to the QMI server belonging
  to the device owned by this driver
-Message-ID: <20261026172550.GJ257209@horms.kernel.org>
+Message-ID: <20261026172615.GK257209@horms.kernel.org>
 References: <20261022-qrtr-multi-ep-v4-0-c6fdb75fcd3e@oss.qualcomm.com>
- <20261022-qrtr-multi-ep-v4-3-c6fdb75fcd3e@oss.qualcomm.com>
+ <20261022-qrtr-multi-ep-v4-4-c6fdb75fcd3e@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <20261022-qrtr-multi-ep-v4-3-c6fdb75fcd3e@oss.qualcomm.com>
+In-Reply-To: <20261022-qrtr-multi-ep-v4-4-c6fdb75fcd3e@oss.qualcomm.com>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,8 +87,8 @@ X-Spam-Status: No, score=-11.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Thu, Oct 22, 2026 at 07:43:09PM +0200, Manivannan Sadhasivam wrote:
-> When two identical ath11k PCIe devices are connected to the same host, both
+On Thu, Oct 22, 2026 at 07:43:10PM +0200, Manivannan Sadhasivam wrote:
+> When two identical ath12k PCIe devices are connected to the same host, both
 > advertise the WLFW service with the same service and instance id. The QMI
 > lookup reports both servers to each device, so a device may connect to the
 > firmware running on the other device.
