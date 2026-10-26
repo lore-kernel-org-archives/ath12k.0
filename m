@@ -2,90 +2,145 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 08C3C606A31A
-	for <ath12k@archiver.kernel.org>; Sun, 25 Oct 2026 18:20:28 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 66451606A31A
+	for <ath12k@archiver.kernel.org>; Mon, 26 Oct 2026 02:48:50 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=s8VKjARC;
-	dkim=pass (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20251104 header.b=bZeRLdAg
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=N8i6AHrw;
+	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=HLRZDSJP;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=hiRn882y
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Unsubscribe-Post:List-Owner;
-	bh=6dNyV3fpMybpXNc3EAQIMokM6V/kPapL6dCc89nw+uc=; b=s8VKjARCxMX70oX6RXVkyIDYo3
-	8yXQ58kliAsL8YIbsj5L4wSFhmwF5IfLYLv+mlJ9bcceuejaQT8JwodFX6WSEYouF3R8sauTyL6CV
-	ELFeECWQIQH9KV//E6Hk1AVKgbuRBAz5xctmM2I7sTqcCmxMxtv6PZudY4h4rBCO6PnjYu6FHBZjh
-	PhrrEyYTbKXiECrVk9nwULitRzsbeZhD6xCR7vjAdscsU3OoPcdYpUy7JICG4f5O7eSQwGinvWWhb
-	XbkvB6rbmXay4ewpXSp3FFnMPlikXH5na9UEq6xUn+3ZaDgevO9vlcehQ+Oj+kAT8zufuADpyuX5J
-	R/Hfcklw==;
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
+	List-Owner; bh=SZAyvfk7E0t0sVIdE9M1d2Ep4UXPxvDDvaeVcSnvHyc=; b=N8i6AHrwSgyTND
+	QMN4rqnTk0VkmMR7EtG1vEFyBXUffC6JWctZDp6dpfTQUaybwbeFJgQbY1L0HLdp5yzjGODo+2cqw
+	+H84E1ZhBaScyABzE/wNn/K1oQQwbZ0y6wJiAIGrWy3gKhZXZE5vrg9RV1SxgJ1zlUrIjBfv9PlkX
+	UxX1FOugisfaOScU5ze9gSUeovS09O7S3ntIrj7HlZqV6fbRd0ycYiYCcOIlOCnyhAkVFPOMyKKa5
+	ZO3VZT9cFUXvqglYGKRRTO9lQMu8Jf9trcJ1Yoqvrukh9jO9uV52gCvbts3F5XF5fmRx4H43DhQlk
+	UnduWn1kv3pFKxNuLRjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xL2pV-00000001HpC-1ZJ0;
-	Sun, 25 Oct 2026 18:20:25 +0000
-Received: from mail-dy1-x1335.google.com ([2607:f8b0:4864:20::1335])
+	id 1xLAlU-00000001d6g-2FZS;
+	Mon, 26 Oct 2026 02:48:48 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xL2pS-00000001Hor-3HMb
+	id 1xLAlS-00000001d6I-2UD0
 	for ath12k@lists.infradead.org;
-	Sun, 25 Oct 2026 18:20:23 +0000
-Received: by mail-dy1-x1335.google.com with SMTP id 5a478bee46e88-35f1f76ea84so3954838eec.1
-        for <ath12k@lists.infradead.org>; Sun, 25 Oct 2026 11:20:22 -0700 (PDT)
+	Mon, 26 Oct 2026 02:48:47 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69Q2KpL41620403
+	for <ath12k@lists.infradead.org>; Mon, 26 Oct 2026 02:48:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	SZAyvfk7E0t0sVIdE9M1d2Ep4UXPxvDDvaeVcSnvHyc=; b=HLRZDSJPIy2LtPVQ
+	EE4W9SLDrqNMi9EC6VvlrZMlaTpDA6UUh2HunGtO8NyXa5EkndAEwrgO8sWw7/Ql
+	hultZPO/5f910B6PLToIE9iVnDNOPeBw6DpWZmPNkWa0Q69eBsst88vO0Mt1nZZu
+	c+bsji0b4wcgo+mwI08rF836ZzX8tuFYJusVaHRgf0mKeueVQjkcweoScbJ1X9Ju
+	VCN+BO7vymLTew54lPX+uvdwjGBofpxKhUGzR9AB1zOlBE33kruPZ6f8Vh3bKf1n
+	zi1Q1nyqE7t9A9j1Zzqvdk0NOXXo19htzzu0Y9X2tv6VAYm/M8tpCEfNkiaDkqvL
+	w9ckng==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hgm0gmjkc-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 26 Oct 2026 02:48:44 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-3ac8f449d1bso2346722a91.3
+        for <ath12k@lists.infradead.org>; Sun, 25 Oct 2026 19:48:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1792952422; x=1793557222; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=6dNyV3fpMybpXNc3EAQIMokM6V/kPapL6dCc89nw+uc=;
-        b=bZeRLdAgYcc72CU0hmHxMuRINxJA2IrAVDsRbSPWccjxmFTFVoHqcLwjZpcymt8dvY
-         LDkIWnNompkrGWG7J3JpU+LIoqsEK/hBL4pp3eHhsBrkWPGJ5GqsouR7dA0kXjx78jiO
-         WDbjTakpm4OioEtBUK5BQ5p5sxSlHjRGw7tNAK5kabfsrHE9+mf9WCPZUG0RraS8Savg
-         KX+p+Ftpa1v1zpkOvOrL7S5+iJBsbzyjo6V3BejWEs70dxQ4n5wH1PepKNRTavzqnXXn
-         Qze47lzs6jFzcktrBmB9Qfw4bZ7LeHbKSJnqdiwD29xXQuzKq3Wz5tANRBEgwmsFghmj
-         bubQ==
+        d=oss.qualcomm.com; s=google; t=1792982923; x=1793587723; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=SZAyvfk7E0t0sVIdE9M1d2Ep4UXPxvDDvaeVcSnvHyc=;
+        b=hiRn882ySWUbtn5RbBdO63FfHB6t/Iq7/Bs4fMmu5naaQ5OrXF5mjpJfyTmIeir+Ui
+         Z9vWDHVV6xV0tXuJquYqabew4G2pWRJlCxpKbvjsprxRCqPMMM8DMXY6nqlGVb+9zQJI
+         SIMdy2GHy/Yrw36SfShG9pjDGc2ag01HLmcoPYfsftaijKPnQyKM2F7vX2RX377xEZHW
+         yoPWsUaH74EzU1PMzYA/mKFW6IYau2v86YxMSC1STpHx7zaLoRdgOKMj291x5hJpyjd+
+         H1TMOXh9pcOmekhlJ9yVeG1Zubn9/onVKTPEPXEq5MCJztBxqH4Y97Skw2TWiTbj2eCx
+         D6YA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792952422; x=1793557222;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20260707; t=1792982923; x=1793587723;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=6dNyV3fpMybpXNc3EAQIMokM6V/kPapL6dCc89nw+uc=;
-        b=F372SMIRPe/20pBneHr4qwZSi5xETLO9KsdfRntO766aaYkVfOL5+4kDdNq1NckAqV
-         gSMKcwLBCVGOP62SO5X22vJzL6TKdMa3BPSquEswQoTRcO2Yw69qMu5qf3af9qErzuDO
-         b/qKpivXdtYmf5bgGloQIbuXkbLmZ9M8Vf0hPRxu/IQLigJVM8gd6BBd7NjXWNEXEhhf
-         +/sg1Vw4Qqz0lFt4R7WsPDDwob2MfCLlrSy6N6b5z1/mVlvrGpuAhG7lpL+28RR2IIzN
-         /V9QSs4+VIwzt4EgjBV1UuFT1B4nMayVqCK0JzFbcBfzJvNpI9x/yn9cC8U9L8zKO81m
-         5D9w==
-X-Gm-Message-State: AFq9FYLil7sNfJJp1j3tMWuOBnltbVGhTF22QKgEuz+UUosjaFpw/cHg
-	EISnj86SK/P/zJtbJ3mbDKWm30+z/JF9/eaFdGYAJHaOdlfVL4LKv6KP9Qnhd7nMibo=
-X-Gm-Gg: AYBFou2MNxxA8RsPoxN55Tj/yP9S+7ptu2HHSLczOaCUMpNO0IeabI+G4XPK5rbRWLw
-	4za3DadDBBd2q/WH67pZ2nPSDlSwg7THo3SOLFKrjQPiHOuHMhhhFkpDq10ZY7BXa6zgRZ5KD53
-	7X/QX9E1IxVVqCzUnU/nsFslRdwdsfubzKxw1LOJfU2xf1O2CUW0D181IAG657+OIQIfzAFSx1b
-	Jr7ydlu6DRR5g+bFsT5WTtkoXc6dtZpiMYbhxmKQdccuBdm0kPB5fApbU05TFzG0iTpayvwQJ0i
-	YyoSxqJcthvGwafj5TZggoIWyMQy2IxHU6XjBnwk4FA0TVOk2UgMZQ/qw8whWEurhFBPTXJfJnj
-	zKn90cmyWRiGrTiA733ANJsqippnhMBhFmfarK57FB3bjbQdhYOWoslp084bcgRXiEim1zjvNq5
-	6LFBfuHN1IiXIpqj4Q/NBF0YUA/VWOLuSQJC0VffkcQUZztR9UVRqxd/fB4X0QE1GtFjxEiYW9t
-	/4gDYgOlgslEi08ZZI2n17RIouyaJTLBErW7yxpCCprXkCB+XXuhYmijO1oWhpO0pVRZQaLE8/0
-	EoM/W/g4JOUgKx5VM+SaQg==
-X-Received: by 2002:a05:693c:8642:20b0:35e:9c54:d41b with SMTP id 5a478bee46e88-369e85004b7mr9067107eec.21.1792952421588;
-        Sun, 25 Oct 2026 11:20:21 -0700 (PDT)
-Received: from ZephyrLabServer.internal ([165.162.64.148])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-369e8d93663sm21226162eec.13.2026.10.25.11.20.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 25 Oct 2026 11:20:21 -0700 (PDT)
-From: John Macias <dencity7@gmail.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-	Jeff Johnson <jjohnson@kernel.org>
-Subject: [RFC PATCH v2] wifi: ath12k: service all RX rings in an interrupt group
-Date: Sun, 25 Oct 2026 11:19:55 -0700
-Message-ID: <20261025181955.2089498-1-dencity7@gmail.com>
-X-Mailer: git-send-email 2.47.3
+        bh=SZAyvfk7E0t0sVIdE9M1d2Ep4UXPxvDDvaeVcSnvHyc=;
+        b=M6zLhga0UJVuBtOk+tVQ85WG1QRDGZ/dPu3fXsXFMeRMxvtOKtPrSB1TonliVtB5ZN
+         TTKI6pUnH2JCFkh/ic/Yh5egLo3dmVT94RD5PqSt0Qc0JhWP7592WmYG2grSJhIDS1TZ
+         0vK/E9a/XrDNO6+i1yBf8j2NIraLtObaDg2Ymfl+HzzdwkJc/dU5VQK13nAbUsP2iNuZ
+         k3GzR7u/PxftusKx0dmGHSXH/+UEfkxwXBOwtFxw0sJabSoHLYBNAbs2GsVlCkbY/mka
+         wS+3BLtpdJi5PYKqPzu/r1emoVpfjnh8hCQiCfDwJRaHz1dwBnFGiqnAAdsCeBZmCelL
+         MAUA==
+X-Forwarded-Encrypted: i=1; AKwUvBx/b69eWUI/ZYWZttZzGKqHeyIeRpwyITPDLCZ3wpKUE4nsyxuv+oG7z1LLXAaLbIlCDox+Swk=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLi9dLknS2aBTriZPR4c0qoGJS/nhpIhdaVY0k9HpY49K0fQcXC
+	p/acSUhwsfMbjkKN59dNgckVFVi8Kt2xKfAGiNGGdrt5LEnfn7otjS5pUqrQbXnOPHoUAx6LIwO
+	YJnk8JucTinw/bgDEYXONhcGpio74SNWMD1ljRK+QbqxTOQCYuzSj2hR4iuxH/CFy
+X-Gm-Gg: AYBFou1Q8g/R1J7F2MsRI0jTFpSYO01wri5EMrDA2oPsv80bTWj8E83gbmFN35MXXXu
+	s6wKILhQeaoji67MxS+jCNoze5ZejbDcpQsGdGoy5otU1JMi29Jnd/5VFAFwkU4qXr7rSzw8r6y
+	VcAf0TNfP2VInq5x2AdU5uuPKmq0foK4wuSjlfClsl5nLUSZ1BO+jcCxbw6atydj0i5RsqEpm5w
+	fVwkgrr5c3Kqr7t71Mszck/OaalUov/3iLqs1WF45DLOoAWWiw5QOoHcKwUkGUdYodEMTindf3f
+	AzBzOtC2MqTW4EI3eR0+mbSXCu4WJFN8jY6hlJXqeFAaivInHX1KOmz0ElUGltvP8zmK9MlLcJ0
+	wN9QOwAMqS3MEG2wmv72ic9DAieRVlNyQqgBcuUQee4Zucgc7KxJspyytjoN1/r0cP5y/h+FGMg
+	==
+X-Received: by 2002:a17:90b:5286:b0:3a7:a463:54c2 with SMTP id 98e67ed59e1d1-3adeae763d7mr4770870a91.35.1792982923350;
+        Sun, 25 Oct 2026 19:48:43 -0700 (PDT)
+X-Received: by 2002:a17:90b:5286:b0:3a7:a463:54c2 with SMTP id 98e67ed59e1d1-3adeae763d7mr4770855a91.35.1792982922807;
+        Sun, 25 Oct 2026 19:48:42 -0700 (PDT)
+Received: from [10.133.33.143] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3adebfa4102sm6430090a91.12.2026.10.25.19.48.40
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 25 Oct 2026 19:48:42 -0700 (PDT)
+Message-ID: <99323a63-01a1-4c7c-be68-516b3c1ca65d@oss.qualcomm.com>
+Date: Mon, 26 Oct 2026 10:48:39 +0800
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-current v3] wifi: ath12k: fix DMA direction for
+ re-injected Rx buffers
+To: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>,
+        Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
+        Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+References: <20261023-ath12k-fix-dma-mapping-for-reinject-packets-v3-1-443f9e13bbc9@oss.qualcomm.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20261023-ath12k-fix-dma-mapping-for-reinject-packets-v3-1-443f9e13bbc9@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: rn1MkgT1y9x8gK-lEJLKZW6W373z6Zvo
+X-Authority-Analysis: v=2.4 cv=UfTE26SN c=1 sm=1 tr=0 ts=6adebf8c cx=c_pps
+ a=RP+M6JBNLl+fLTcSJhASfg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=EUspDBNiAAAA:8 a=gzkGQ6Wf24K-XPQJ27AA:9 a=QEXdDO2ut3YA:10
+ a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-GUID: rn1MkgT1y9x8gK-lEJLKZW6W373z6Zvo
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDI2MDAxMCBTYWx0ZWRfX2LF9r+kFH9fj
+ HzlxdhPM1BzOJsUD+u5jEKPafaqLbuyd7Lg9PNxR67GmUL9I/xeNdm/kZlNRDYk1K48UFAHs+Cr
+ 8b3nU282IwSoxiLk8PTQ2m9fcWYm68TBLmArPFlsDfTlgMjWRUKJNRNmQIyfTT/kSbkZIVVljmh
+ vgczleBrFlM+Fh5bmnTd/81WhRMk2RyZlF+NHdzCH9sIp4tFtBve0y+9QQt5atepLHZuG8awilJ
+ 6JsCaxOC4NOfYKT7CEc9uKVHV1J7Em0LzZJXBOn79S5luPNDCrVfT77qepa05HRJwbnodoR8fLT
+ k2020t9+mU8kM6NJLRgo5CxseRBzgT8R4VasihCpYzKQytoAJV7i8TGzUTLUO5/kG9t48ICWKHe
+ zms8gixL/HeP4Bc93wnzgXv2YxinMpgD3vR86AsowgFGJ/r5aPLv01SsuDuo0QNyd19xiRyppjg
+ RCh+HuicbpWNmJgsxCw==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDI2MDAxMCBTYWx0ZWRfXxNjzi+2WqYqN
+ 7HIm05m7iCtYNN8kDcr5WayXSaR26wH3pSAoWgEmWnro7LteQ5Tpan4xFab0bb12908Zwb64sop
+ kgujxvQ1Fzt8zxjVOjHvpoGHnczX40s=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-10-26_01,2026-10-21_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 lowpriorityscore=0 malwarescore=0 spamscore=0 bulkscore=0
+ suspectscore=0 impostorscore=0 phishscore=0 adultscore=0 clxscore=1015
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2610190000 definitions=main-2610260010
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261025_112022_847953_9151D865 
-X-CRM114-Status: GOOD (  19.46  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20261025_194846_792333_CAB7E2AE 
+X-CRM114-Status: GOOD (  16.40  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,135 +151,49 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-15.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-12.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-ath12k_wifi7_dp_service_srng() services only the highest REO destination
-ring selected by ring_mask->rx[grp_id]. If a group selects more than one
-ring, the other rings in that group are never reaped, and the flows
-hashed to them stall.
 
-Every in-tree ring mask selects one REO ring per group today, so this is
-latent upstream. It is hit by the QCN6432 ring mask from the vendor's
-downstream tree, which puts REO rings 2 and 3 in one group. On a
-GL-BE3600 using that mask, 7 of 16 single-flow TCP downloads stalled or
-failed, and ring 2 reaped no packets at all.
 
-Walking every ring with the full budget is not enough: under load the
-first ring can use the whole budget on every poll and starve the others.
-With that approach ring 2 reaped under 1% of ring 3's packets, and the
-flows on it ran at 0.2-4.4 Mb/s while the others ran at 100-360 Mb/s.
+On 10/24/2026 12:49 AM, Lorenzo Bianconi wrote:
+> Defragmented MPDUs that are re-injected into the REO are mapped with
+> DMA_TO_DEVICE, but all the Rx reap and teardown paths unmap them with
+> DMA_FROM_DEVICE. The DMA API requires the unmap direction to match the
+> map direction, so this violates the contract.
+> 
+> The mapping actually spans both directions, since the host has written
+> the buffer before the REO reads it and the buffer is read back by the
+> host afterwards, so DMA_BIDIRECTIONAL is the correct choice.
+> 
+> Add a common ath12k_dp_unmap_rx_buf() helper that selects
+> DMA_BIDIRECTIONAL for re-injected buffers, identified by the existing
+> ath12k_skb_rxcb::is_frag flag, and DMA_FROM_DEVICE otherwise, then use it
+> in all the Rx reap and cleanup paths. Map and unmap the re-injected buffer
+> with DMA_BIDIRECTIONAL consistently.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
+> 
+> Fixes: 33322e3ef074 ("wifi: ath12k: change DMA direction while mapping reinjected packets")
+> Signed-off-by: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
 
-Instead, give each ring in the group an equal share of the budget first,
-then hand any budget left over back to the rings in a second pass. A
-group with a single ring still gets the whole budget in one pass, so
-current hardware behaves as before.
+Back in the ath11k days I tested the DMA_TO_DEVICE change (86a03dad0f5a) and
+did not see any DMA API warning about the direction mismatch on unmap, but
+most likely CONFIG_DMA_API_DEBUG was simply not enabled in my build.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+Functionally, re-injection on ath11k has been working fine with
+DMA_TO_DEVICE, so my guess is that hardware/firmware does not touch the frame
+payload after the re-injection, which is why DMA_TO_DEVICE happens to work.
 
-Assisted-by: LLM
-Signed-off-by: John Macias <dencity7@gmail.com>
----
-Changes in v2:
-- Share the budget between the rings of a group. v1 walked the rings
-  with the full budget, which starved the lower ring under load (see
-  below).
-- Rebased on ath-next.
-- Added a Tested-on tag, full name in the sign-off and an Assisted-by
-  tag, as Jeff asked.
-- Link to v1: https://lore.kernel.org/ath12k/CA+KzPsr13czsH=k_UWJqj48C4Vsb-diQ-tiCh7W4XW31E8WzHg@mail.gmail.com/
+Still, the buffer is written by the host before the REO reads it and read
+back by the host afterwards, and map/unmap must use the same direction, so
+DMA_BIDIRECTIONAL is the right fix here.
 
-This is still an RFC because I have no WCN hardware, so the WCN side is
-untested. Since every in-tree mask has one ring per group, the change
-should be a no-op there, but I would be grateful if someone with a
-WCN7850 could test it and reply with a Tested-on tag.
-
-Testing. Both radios ran OpenWrt (Linux 6.18, backports 7.2), and only
-the ath12k_wifi7 module was swapped between runs. Rebuilding the
-unmodified sources reproduced the installed modules byte for byte, so
-each test module differed only in this handler. The QCN9274 build also
-carries an unrelated local REO fix, as installed. The QCN6432 is a
-GL-BE3600 using the downstream QCN6432 support (not upstream yet), as a
-5 GHz client of a GL-BE9300 with QCN9274. iperf3 over that link:
-
-                              before    v1           v2
-  16 single TCP flows done     9/16     16/16        16/16
-  slowest of 8 TCP streams     stall    0.2-4.4      70-83 Mb/s
-  ring 2 vs ring 3 packets     0 vs -   3k-8k vs     about equal
-                                        0.7M-1M
-  QCN9274 RX, 8 TCP streams    1012     1048         1034-1042 Mb/s
-  UDP loss, 8 x 50 Mb/s        -        <= 0.02%     0.00%
-
-No warnings or errors appeared in the kernel log on either side. The
-QCN9274 groups are single-ring, so that tag shows no regression rather
-than the fix itself. The hardware runs used a variant that differs only
-in cosmetics (left-- was inside max(), and the comment sat inside the
-loop). The patch as sent builds without warnings with W=1 on x86_64.
-
-This work was assisted by an LLM (Claude), which helped analyse the
-handler, write the test scripts and draft this patch. I reviewed the
-change and the test results, and take responsibility for them.
-
- drivers/net/wireless/ath/ath12k/wifi7/dp.c | 31 +++++++++++++++++-----
- 1 file changed, 24 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp.c b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-index 397da016b..67a347362 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp.c
-@@ -27,6 +27,7 @@ static int ath12k_wifi7_dp_service_srng(struct ath12k_dp *dp,
- 	int tot_work_done = 0;
- 	enum dp_monitor_mode monitor_mode;
- 	u8 ring_mask;
-+	int rx_rings, pass, quota;
- 
- 	if (dp->hw_params->ring_mask->tx[grp_id]) {
- 		i = fls(dp->hw_params->ring_mask->tx[grp_id]) - 1;
-@@ -50,13 +51,29 @@ static int ath12k_wifi7_dp_service_srng(struct ath12k_dp *dp,
- 			goto done;
- 	}
- 
--	if (dp->hw_params->ring_mask->rx[grp_id]) {
--		i = fls(dp->hw_params->ring_mask->rx[grp_id]) - 1;
--		work_done = ath12k_wifi7_dp_rx_process(dp, i, napi, budget);
--		budget -= work_done;
--		tot_work_done += work_done;
--		if (budget <= 0)
--			goto done;
-+	/* A group may select more than one REO ring. Give each ring an equal
-+	 * share of the budget first, so a busy ring cannot starve the others,
-+	 * then hand any budget left over back to the rings in a second pass.
-+	 */
-+	ring_mask = dp->hw_params->ring_mask->rx[grp_id];
-+	rx_rings = hweight8(ring_mask);
-+	for (pass = 0; ring_mask && pass < 2; pass++) {
-+		u8 mask = ring_mask;
-+		int left = rx_rings;
-+
-+		while (mask) {
-+			i = fls(mask) - 1;
-+			mask &= ~BIT(i);
-+			quota = pass ? budget : max(budget / left, 1);
-+			left--;
-+			work_done = ath12k_wifi7_dp_rx_process(dp, i, napi, quota);
-+			budget -= work_done;
-+			tot_work_done += work_done;
-+			if (budget <= 0)
-+				goto done;
-+		}
-+		if (rx_rings == 1)
-+			break;
- 	}
- 
- 	if (dp->hw_params->ring_mask->rx_mon_status[grp_id]) {
-
-base-commit: 734bef548a96e8774d6eef5dfa2026c6edc4e80b
--- 
-2.47.3
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
 
