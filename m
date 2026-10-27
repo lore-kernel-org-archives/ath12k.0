@@ -2,99 +2,147 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F315D606A31A
-	for <ath12k@archiver.kernel.org>; Tue, 27 Oct 2026 01:59:38 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CD1D8606A32A
+	for <ath12k@archiver.kernel.org>; Tue, 27 Oct 2026 08:34:38 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=BB2nGnPH;
-	dkim=pass (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20251104 header.b=QGXmBstU
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=zcaXVSe3;
+	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=kF5My7A2;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=RQo3Rlaq
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=MyKz2NnZLm4vS/6MNncCEBuMsPdw/vfPh4W80n8BBIU=; b=BB2nGnPHz4j+QK
-	BwQmk9eWNy4vBgdKo33mc/vbgXCX7xLk14bAjUMa8kQut81i9Jfkv69TTwcomNrBIsEKV/PmR7gZj
-	MIc9uO33Gl2hbgR4AM1OpXR9PaOfb0iEWTNNGOwXAd45z3gOVewvT8g+ONQqjHal+1zJdC5Lhnw6I
-	HqcjiOaGInrkAxoFWiTqQQPrPaMTjJzRC4Ut7QKGd9FaegGZSvCoY6+tBxNpad2GmATrT7WPtnOBi
-	++KQU+8xevGQ40PDjRBeYEij0QBkPLhM5oi46rT9tnTOu6WvBSFYvoAEL0wh/Yw9HHjOVWVLtyvM7
-	vrcwP+NZo8fTO9QML/YA==;
+	List-Owner; bh=4wrQkMaK+dW/8z6fl3qfa+S+gShoibCmJmmER0g7vrM=; b=zcaXVSe3L9Mu8U
+	uSVMS75OoDKrdfd088NgCuMx6+mzkceXeS7rXQjOlB/ULK0OSbdyH8TE71tTv8oCDHO+m71O9czs4
+	3cOIaetUr/lpLhKsgMrmINiZgJD/CVlvOjHXst01Duj0Vcke8X5Lw+cnwvh3scTKlkNlrKsa8CbWc
+	HDXlKiwaPrjl3H3ttRICWLTx80EW2ePWw/BJvDKJye0UxDljn4QrnFhYiOmboCbRMUKFccODoR624
+	juts+OtWI9v5EPpPEyR4VUmQkqiS0VEoFuk1GDk+XN9K6KaodsnLJPqeEMBf6sz6Cebsb7vXlEPeH
+	PTlahANdwu5X3DiJNtJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLWTQ-00000003caV-3j3g;
-	Tue, 27 Oct 2026 01:59:36 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1xLcdg-000000042Ad-2jE5;
+	Tue, 27 Oct 2026 08:34:36 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLWTO-00000003ca8-0Jga
+	id 1xLcde-000000042AD-09YJ
 	for ath12k@lists.infradead.org;
-	Tue, 27 Oct 2026 01:59:35 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-4a4dc547987so8892425e9.0
-        for <ath12k@lists.infradead.org>; Mon, 26 Oct 2026 18:59:32 -0700 (PDT)
+	Tue, 27 Oct 2026 08:34:35 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69R5YvRn752075
+	for <ath12k@lists.infradead.org>; Tue, 27 Oct 2026 08:34:32 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	4wrQkMaK+dW/8z6fl3qfa+S+gShoibCmJmmER0g7vrM=; b=kF5My7A2IRd6QUBi
+	LDTYgdiZ/J3U/lZ/GtNQZpoNmIiPeD/WZfJ2vEo+v5WVHLqxlGvePKQH8aOLYeB/
+	JNQ7aOJzzqefKSquofAmkbedrb5n2jlEQvZSxXa9tkajc+Ku2+BqMjz9IkEb/9tP
+	CjgoVSDwqgLw1/H/4j6gu45p5MUH/4XoiH4djvxfGAhaZ+txFJ6DRxcLm0wmE8Pz
+	Ii0eD6WaM92n9RQdEqhrgpBocvY90oLPn1OX5k0n/AzxtGukDq8xYvipujlZrbnw
+	F1Owy/Qb1vLiVqIARITwyXQvCI33laY3SizEWol549pAazrsgAN0gBvGIN67KjM0
+	eAWY5g==
+Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hjbmmapcf-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 27 Oct 2026 08:34:32 +0000 (GMT)
+Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-8a05bfa6af5so2922275b3a.2
+        for <ath12k@lists.infradead.org>; Tue, 27 Oct 2026 01:34:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1793066371; x=1793671171; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=MyKz2NnZLm4vS/6MNncCEBuMsPdw/vfPh4W80n8BBIU=;
-        b=QGXmBstUoGbUt0oIt8TjKITU11CZIHjjiCIP5oswS31IbZek3hq72DHCZtgAoySPaK
-         lg33DYwka40t6dFrZWTFSZFmAMq+YmrpuiLjuALURXxv33uG/6mIw63BOM+k2fe4WJRA
-         2hiKGNXXgoiQaQRwushcMeJ7G1KzPePoXR05qZSiBopiirmi/LR3kkk9mc/Lfox1nrVJ
-         DVRNP4DldpAiyAwLz1cnvEbDycmYl9EVXHiCp3FDX/zL69DLPtDihbetfn9oQspXN2zI
-         8cS+gJ4wc9L07rxh2nU1KW/xksYXSNXOXfAiZOXESKYm4XT8b5gfIlwqTsloB+GGPI+G
-         pw4A==
+        d=oss.qualcomm.com; s=google; t=1793090072; x=1793694872; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=4wrQkMaK+dW/8z6fl3qfa+S+gShoibCmJmmER0g7vrM=;
+        b=RQo3RlaqDxJOIYS8EnsfzKUgmFPWoTDhTsH9dkx3oUdPWVbmlk1fjPaT3CDtMNYafo
+         89tJZFm69h7ezpa84shUIOqclFyJ8VEb5gO5xuLZbAHTCFhIxZIWt0CZfzp7uO/hawVy
+         p6FP0gt1vKWHicD44vB6pYSZjJOuutxdE/ogqo1Tguxx7Zt9gu3YvaLP3hXsc8583z/3
+         t9uaIkeb7ycYHKim8uKweLMds5eiQwPnkg0qeiCr08a7K1QhZEk44qdbc/jR+jyUqHiy
+         m1Qm9ECy69uQTOyoUoE5l17fmLbcjetEPcY7k7g/D+wXy7PU5M2Un3QRH6nwZ1yKqBMT
+         gRhg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793066371; x=1793671171;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=MyKz2NnZLm4vS/6MNncCEBuMsPdw/vfPh4W80n8BBIU=;
-        b=OI2iMqGopaLfqxAiOSuNkHSGSRCZv2iFJkIABJpllSBScvMBKuKgEJq/SrQdCoglfh
-         dSPDqHADbXRfS43kA24NCJO4heTsHwMsiBbKIRZQOVDGj26FW7GY+7puj0BNgpXldRGh
-         r6vpgAYxEX8k14ZjvDBtiJe/bbNKLQg8pPbSjth9S4nQU06yA/rnVFcNBAvs8s0lzNlW
-         sgCslOAyVJD5ZsPnBjs9GX6nF2Wm+rP6ucCyGh0VdiK6gTB+Va/YPvNupFcPctaoudVM
-         eG0Hdc+hqTCDlPmQ+g62w6Ug1BrIoJnw8GGdbtYQZZOKejkYFAm0aTgZZOjgDAN8twot
-         Jzjw==
-X-Forwarded-Encrypted: i=1; AKwUvBxNSNrf3OWCC7qFWWhQcNjBnxtO9JcHQMZDOAItXXZn1/Q5HsCmdLB98NWZvWHHFJU7at8KF/U=@lists.infradead.org
-X-Gm-Message-State: AFq9FYI1xYXf5Vo5cobRto4/U8oOCuX+1jAHfSBmbGusv2pWBIATATW+
-	TmqpOcHBsj8FgZXZpIrWfym7z7qY9sKRj1lCS3SJZW6NDWkf3hWKUVxK
-X-Gm-Gg: AYBFou30S4JTlIZ+gSCaNLbaDX4cWPJgjQX1tMi6d3eaZrzLKFLlZ6UttbEmN56+u6R
-	FKBvegej+0Vrfn1vzbNlbhGcW3v5DhIpT0VmirezIOsU8u7YJr94lcadIK4cj7Y6sCnddneIIt1
-	ycxuGPfp8A3iUjEYEWwmycQHy90LO/xTzB5SEUuH2mysxJeYMnqVu4M/xGKdIioc/iBMttLSwSB
-	+VWOV9G3OQNkVWo6WXyBsk8F9WNuBSvVOVeo9TLhVDMPuVb+/uAsF+k9s81ZLW+PUjLWUFfbCZC
-	C1a5upIWuOhFgWnu5KZ9p8k03lu4dQmryJKdwg2sWBl/Fpm5h7cU7RFDsJCQWEoFPC6k7ppo8hA
-	cdhfnypBXVXuFi+23SuWWMTifwtVDzQJL23tLc37PcPBh3UGBySPdToPr3aKehUi9ahn8Mn7D+g
-	OmH+xz0Vlx8P22Oz4L1BZqemQeiIED2oZ6un8qN71ThQCMx7ysi80XsUCywU59E+SbdjioOoLAK
-	NJgeImB8JUeaIOyMsQUUkUwLtoL/7PVjPSgnIEKi8mBav9nD76qHcTlHzwF6q8xXCr2gs289w==
-X-Received: by 2002:a05:600c:19d4:b0:4a2:c2b:a91b with SMTP id 5b1f17b1804b1-4a35ac9114dmr145090405e9.10.1793066370786;
-        Mon, 26 Oct 2026 18:59:30 -0700 (PDT)
-Received: from etherl ([41.239.147.33])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a35a0bb112sm251096485e9.8.2026.10.26.18.59.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 26 Oct 2026 18:59:30 -0700 (PDT)
-From: Ahmed Essam <mrmrmidoessam@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Ahmed Essam <mrmrmidoessam@gmail.com>,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-	Shenghan Gao <gsh20040816@gmail.com>,
-	Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-	stable@vger.kernel.org
-Subject: [PATCH ath-current] wifi: ath12k: fix lost 5 GHz range by tracking reg ranges per radio
-Date: Tue, 27 Oct 2026 04:59:03 +0300
-Message-ID: <20261027015919.277156-1-mrmrmidoessam@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <bbd65b93-816b-427b-8abe-1d1fd1cf4e70@oss.qualcomm.com>
-References: <bbd65b93-816b-427b-8abe-1d1fd1cf4e70@oss.qualcomm.com>
+        d=1e100.net; s=20260707; t=1793090072; x=1793694872;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=4wrQkMaK+dW/8z6fl3qfa+S+gShoibCmJmmER0g7vrM=;
+        b=zlc3EbcjGPZ2WTITexD6D9NnbIQwGMLyPp5FCCT75gE9lbGtoV/qCShzfXlMKdmq0S
+         MEXnWZvWoIuJsLeIoJPdcYNp3VidAz7+eL0hu5JpuJAAWYV/+kQU3QBHZvCFHkj4EmD7
+         y9DTr4wSTYSgo9A0qfZzypzqKv1q9clOXib/jgMY3gj/aZ/obo1T1c763Y1kvTk8lurX
+         RXCgXj/CLa2WbHd8ImnvNaHEDhPGcwi5wwf8m5ydUIqUGIBfijd0DNtH2irq4QwflLMg
+         lV45VDrWLYLByxt8+sa4lpRTf+ix86TpUzA3w3Uxcf/kytoQ5t2qJVkcC5O7W7RSAGHf
+         DSNQ==
+X-Forwarded-Encrypted: i=1; AKwUvBxWb0aZRcu9zg20Le9WIA678ob8krSzfpJywsYNLlvS8F/fV1+KZFfqaAoGmehnmAGyM7+g5tE=@lists.infradead.org
+X-Gm-Message-State: AFq9FYINutkAfC3R0iPavaKsNRA+RfirfkTsIOQyZO7z+5moaOpbbaN+
+	B7UdotR3S2uQu+WaocS2ijXwnqCp19pbGyPXfqVZ4mtxbk6+q9eIrbYccd5ewUPjMbrDdwL/kHw
+	RolcLIsDWgXkU4gNwbvmMH2TmK+C+KyTBasgxbK/caK4Qy5q0PqosxR1SwLqwQ2a5
+X-Gm-Gg: AYBFou3NI5OZXdnzjXQ4Orkl9GYOjTkSudv/+vmchZilioNDljexwnsTDHpB0wzouwY
+	tjPXF8A3zy8VavHAfEdTQaw/nHaPODLRo4u5BDs6+0gYgU/OWXqzm1l2kepgrnUceFWnjD+b108
+	L9etfxYVYrzzxrKb5SmkJx4rPg7B7VTox6oqM9wlkko195yGP7+Yrswd4jFz7edkCKRARUAa1YN
+	0COgN1jdKGE4adEXQO1F3+k3KwW39o9FM3Gl4TiujpjvmOoU7RsThWQI8Vm8APxSO61FSeRhKlt
+	SU9EsksvId906Lt47TetjiFxMPdoS8nQb040JjRSqMkPjqHfPY0uawxHT0b4gVCmqbMd4hF/9Of
+	iH/0KkOwU98iz8ujtRhwxL9TJ35RAjwJ7OGwVPRy/I4sTJa90dO9tek+vNBp8k2WmWJI1ljJ+sA
+	==
+X-Received: by 2002:a05:6a00:1889:b0:89e:7bfa:f884 with SMTP id d2e1a72fcca58-8a367a3cf01mr7107760b3a.18.1793090071572;
+        Tue, 27 Oct 2026 01:34:31 -0700 (PDT)
+X-Received: by 2002:a05:6a00:1889:b0:89e:7bfa:f884 with SMTP id d2e1a72fcca58-8a367a3cf01mr7107751b3a.18.1793090071132;
+        Tue, 27 Oct 2026 01:34:31 -0700 (PDT)
+Received: from [10.133.33.161] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8a368d87afasm2119266b3a.7.2026.10.27.01.34.28
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 27 Oct 2026 01:34:30 -0700 (PDT)
+Message-ID: <87eb6978-74fe-4ec6-b76a-b09210ceea7a@oss.qualcomm.com>
+Date: Tue, 27 Oct 2026 16:34:27 +0800
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-current] wifi: ath12k: fix lost 5 GHz range by
+ tracking reg ranges per radio
+To: Ahmed Essam <mrmrmidoessam@gmail.com>, Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org, Shenghan Gao <gsh20040816@gmail.com>,
+        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
+        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+        stable@vger.kernel.org
+References: <bbd65b93-816b-427b-8abe-1d1fd1cf4e70@oss.qualcomm.com>
+ <20261027015919.277156-1-mrmrmidoessam@gmail.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20261027015919.277156-1-mrmrmidoessam@gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDI3MDAzMyBTYWx0ZWRfXwSinMxu7QqKf
+ P7sVdX4/Epd3H2HE41ZEIPVFkG+Tc9ZdWoHDgEGz0dGAfc8jOm8oq1Sj3FAAmkev1JUJvFBxHQP
+ GVbORlhB7rnqMlMMJprSy0bAIHCfEpA=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDI3MDAzMyBTYWx0ZWRfXw65FfwMZGYQF
+ bAv5C2QfOjIPeZKZDk7xGYwsz1GXc3e1nvhEjqf6Qkw/Cpv0Ss4JuyIfglQRL71fxD4jG9icA+X
+ ZNIxbFbOFQzheSp3qwT60eh/zavwsgbLw6BGTeN8NtrR7LWWrY1NMDf4qr4kHPpWpQ+a9yTnR+9
+ DUPuN4XSEs0lxg97NPRS/remOQUYOAbCechijQbd5c5wsSrh8Rpd0y0HQwBKzkrtBqlNfTe2+UU
+ CpuUZf3ZSAWLpkHxcwWl2u28FxZrT+GENWFk49vQCC16BLN0lSYFPoLBW5XcTUTJYJo3nJRHfxd
+ XXhPclKPKIkYXSyLpnA0LhvySJx8PfCvO3m7YfYCjUZX+tmBLMRjPR9XtgrUfhWYjF+f7NyE9cq
+ ALYjxucTSh++jl6dfvbrCeYq3MpgVizDYW2zaaNmCaijFZkiN6t42xJLzgHBdmDiFDf9QmlL9HE
+ DUHkt0ztbWzyvR/F2YA==
+X-Authority-Analysis: v=2.4 cv=PrkG/AM3 c=1 sm=1 tr=0 ts=6ae06218 cx=c_pps
+ a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
+ a=VwQbUJbxAAAA:8 a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8 a=JLF8xD7Yat_ry6Ihdo8A:9
+ a=QEXdDO2ut3YA:10 a=OpyuDcXvxspvyRM73sMx:22
+X-Proofpoint-ORIG-GUID: UD8-q8t78Y6t4Y2GneeLVN-Th8y60i8g
+X-Proofpoint-GUID: UD8-q8t78Y6t4Y2GneeLVN-Th8y60i8g
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-10-27_02,2026-10-21_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 spamscore=0 priorityscore=1501 phishscore=0 suspectscore=0
+ impostorscore=0 clxscore=1015 adultscore=0 bulkscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2610190000 definitions=main-2610270033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261026_185934_277314_EF03B074 
-X-CRM114-Status: GOOD (  26.59  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20261027_013434_317491_A4AB81C6 
+X-CRM114-Status: GOOD (  20.87  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,358 +153,80 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-14.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,HK_RANDOM_FROM,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-12.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,
+	SPF_PASS,T_SPF_HELO_TEMPERROR,USER_AGENT_SANE_1 autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-ath12k_reg_build_regd() records the frequency span covered by the
-received reg rules in ab->reg_freq_{2,5,6}ghz. Those fields live in
-struct ath12k_base, but firmware sends WMI_REG_CHAN_LIST_CC_EXT per
-radio, and ath12k_regd_update() uses them to compute the frequency
-range of a single radio (ar->freq_range). This causes two problems.
 
-First, ath12k_regd_update() cannot tell which bands a radio received
-rules for, so it uses ar->supports_6ghz as a proxy: the 5 GHz range is
-skipped for any radio that supports 6 GHz. That is only valid for
-split-pdev devices. On single-pdev devices such as WCN7850 one radio
-covers 2 GHz, 5 GHz and 6 GHz. When firmware switches to a country
-without 6 GHz rules, for example after an 11d update to CN or EG,
-ar->freq_range collapses to 2402-2482 MHz and
-ath12k_reg_update_chan_list() drops every 5 GHz channel from the list
-sent to firmware. From then on firmware no longer scans 5 GHz, a
-5 GHz-only scan request fails ("received scan start failure event"),
-and 5 GHz networks disappear from scan results, typically shortly after
-boot. They stay gone until the driver is reloaded or firmware moves to
-a country that has 6 GHz rules.
 
-Second, by code inspection, build_regd() resets all three per-device
-ranges on every event, so on multi-radio devices an event for one radio
-can wipe the range of another radio whose regd_update_work has not run
-yet, silently dropping a band.
+On 10/27/2026 9:59 AM, Ahmed Essam wrote:
+> ath12k_reg_build_regd() records the frequency span covered by the
+> received reg rules in ab->reg_freq_{2,5,6}ghz. Those fields live in
+> struct ath12k_base, but firmware sends WMI_REG_CHAN_LIST_CC_EXT per
+> radio, and ath12k_regd_update() uses them to compute the frequency
+> range of a single radio (ar->freq_range). This causes two problems.
+> 
+> First, ath12k_regd_update() cannot tell which bands a radio received
+> rules for, so it uses ar->supports_6ghz as a proxy: the 5 GHz range is
+> skipped for any radio that supports 6 GHz. That is only valid for
+> split-pdev devices. On single-pdev devices such as WCN7850 one radio
+> covers 2 GHz, 5 GHz and 6 GHz. When firmware switches to a country
+> without 6 GHz rules, for example after an 11d update to CN or EG,
+> ar->freq_range collapses to 2402-2482 MHz and
+> ath12k_reg_update_chan_list() drops every 5 GHz channel from the list
+> sent to firmware. From then on firmware no longer scans 5 GHz, a
+> 5 GHz-only scan request fails ("received scan start failure event"),
+> and 5 GHz networks disappear from scan results, typically shortly after
+> boot. They stay gone until the driver is reloaded or firmware moves to
+> a country that has 6 GHz rules.
+> 
+> Second, by code inspection, build_regd() resets all three per-device
+> ranges on every event, so on multi-radio devices an event for one radio
+> can wipe the range of another radio whose regd_update_work has not run
+> yet, silently dropping a band.
+> 
+> Move reg_freq_{2,5,6}ghz into struct ath12k_pdev and fill them for the
+> radio identified by reg_info->phy_id. In ath12k_regd_update(), include
+> a band only if this radio registered that band and received reg rules
+> for it, instead of guessing from ar->supports_6ghz. Checking the
+> registered band is needed because a radio can receive rules for bands
+> it does not operate on, e.g. the 6 GHz radio of a split-pdev device.
+> 
+> Also fix the reg_cap lookup for single-pdev devices: pdev->cap.band[]
+> is indexed by enum nl80211_band, but was indexed with the
+> WMI_HOST_WLAN_*_CAP bit flags, so the 2 GHz lookup used the 5 GHz
+> entry and the 5 GHz lookup used the unset 60 GHz entry. Refresh
+> reg_cap for the 6 GHz band as well, as is done for 2 GHz and 5 GHz.
+> 
+> With ATH12K_DBG_MAC enabled on WCN7850 and the firmware switching to
+> EG, the range before this change is:
+> 
+>   mac pdev 0 freq limit updated. New range 2402->2482 MHz
+> 
+> and after it:
+> 
+>   mac pdev 0 freq limit updated. New range 2402->2482 MHz
+>   mac pdev 0 freq limit updated. New range 2402->5330 MHz
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
+> 
+> Fixes: 657b0c72c4ad ("wifi: ath12k: Fix frequency range in driver")
+> Fixes: 13324cecbb2c ("wifi: ath12k: Update frequency range if reg rules changes")
+> Fixes: 0d777aa2ca77 ("wifi: ath12k: fix mac pdev frequency range update")
+> Cc: stable@vger.kernel.org
+> Reported-by: Shenghan Gao <gsh20040816@gmail.com>
+> Closes: https://lore.kernel.org/all/20260715065218.41232-1-gsh20040816@gmail.com/
+> Suggested-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+> Assisted-by: Claude:claude-opus-5-5 sparse
+> Signed-off-by: Ahmed Essam <mrmrmidoessam@gmail.com>
 
-Move reg_freq_{2,5,6}ghz into struct ath12k_pdev and fill them for the
-radio identified by reg_info->phy_id. In ath12k_regd_update(), include
-a band only if this radio registered that band and received reg rules
-for it, instead of guessing from ar->supports_6ghz. Checking the
-registered band is needed because a radio can receive rules for bands
-it does not operate on, e.g. the 6 GHz radio of a split-pdev device.
+Ah, I have an almost-identical fix pending internal review, but I think yours is better.
+Thanks.
 
-Also fix the reg_cap lookup for single-pdev devices: pdev->cap.band[]
-is indexed by enum nl80211_band, but was indexed with the
-WMI_HOST_WLAN_*_CAP bit flags, so the 2 GHz lookup used the 5 GHz
-entry and the 5 GHz lookup used the unset 60 GHz entry. Refresh
-reg_cap for the 6 GHz band as well, as is done for 2 GHz and 5 GHz.
-
-With ATH12K_DBG_MAC enabled on WCN7850 and the firmware switching to
-EG, the range before this change is:
-
-  mac pdev 0 freq limit updated. New range 2402->2482 MHz
-
-and after it:
-
-  mac pdev 0 freq limit updated. New range 2402->2482 MHz
-  mac pdev 0 freq limit updated. New range 2402->5330 MHz
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
-
-Fixes: 657b0c72c4ad ("wifi: ath12k: Fix frequency range in driver")
-Fixes: 13324cecbb2c ("wifi: ath12k: Update frequency range if reg rules changes")
-Fixes: 0d777aa2ca77 ("wifi: ath12k: fix mac pdev frequency range update")
-Cc: stable@vger.kernel.org
-Reported-by: Shenghan Gao <gsh20040816@gmail.com>
-Closes: https://lore.kernel.org/all/20260715065218.41232-1-gsh20040816@gmail.com/
-Suggested-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Assisted-by: Claude:claude-opus-5-5 sparse
-Signed-off-by: Ahmed Essam <mrmrmidoessam@gmail.com>
----
-
-Notes:
-    Jeff, sorry for the duplicate: a test send reached you a few minutes
-    ago without the lists.
-    
-    This picks up Shenghan Gao's patch "wifi: ath12k: fix frequency range
-    for single-pdev devices" [1], reworked as Baochen suggested in review
-    [2]: reg_freq_* are now per radio, and each band is gated on whether
-    the radio received rules for it instead of on ar->supports_6ghz. On top
-    of that suggestion, the band must also be registered on the radio,
-    since the 6 GHz pdev of a split-pdev device receives rules for all
-    bands.
-    
-    Shenghan, I hope you don't mind me picking this up after the thread
-    went quiet. I kept your band-index fix and credited your report.
-    
-    Testing:
-    - WCN7850 (single-pdev) with the firmware above. Firmware sets the
-      country to EG via 11d about 7 s after the driver loads.
-      Before: freq_range drops to 2402->2482 MHz after the EG update, a
-      5 GHz-only scan is rejected ("received scan start failure event"),
-      and all 5 GHz networks are gone from scan results after about a
-      minute.
-      After: the range is 2402->5330 MHz, a 5 GHz-only scan returns 26 BSSes,
-      5 GHz networks stayed visible for the whole 26 minute run while
-      associated on 2.4 GHz, and association to a 5 GHz AP works.
-    - Built for x86_64 with W=1; checkpatch --strict and sparse report
-      nothing new.
-    
-    Not tested: split-pdev devices such as QCN9274, and 6 GHz operation (EG
-    has no 6 GHz rules). The split-pdev handling is based on reading the
-    code only.
-    
-    AI assistance: I used Claude (claude-opus-5-5) to investigate the
-    problem on my machine, write the patch following Baochen's suggestion,
-    draft this message and run the tests above. I reviewed the change and
-    tested it on my hardware.
-    
-    [1] https://lore.kernel.org/all/20260715065218.41232-1-gsh20040816@gmail.com/
-    [2] https://lore.kernel.org/all/9dd4e992-5810-429f-bc54-036c4eb276a7@oss.qualcomm.com/
-
- drivers/net/wireless/ath/ath12k/core.h | 20 +++++----
- drivers/net/wireless/ath/ath12k/mac.c  | 12 ++---
- drivers/net/wireless/ath/ath12k/reg.c  | 61 ++++++++++++++++----------
- 3 files changed, 56 insertions(+), 37 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 93fd227b4d19..b48d39c5db5c 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -850,6 +850,11 @@ struct mlo_timestamp {
- 	u32 mlo_comp_timer;
- };
- 
-+struct ath12k_reg_freq {
-+	u32 start_freq;
-+	u32 end_freq;
-+};
-+
- struct ath12k_pdev {
- 	struct ath12k *ar;
- 	u32 pdev_id;
-@@ -857,6 +862,13 @@ struct ath12k_pdev {
- 	struct ath12k_pdev_cap cap;
- 	u8 mac_addr[ETH_ALEN];
- 	struct mlo_timestamp timestamp;
-+
-+	/* Frequency ranges covered by the reg rules last received for
-+	 * this radio, per band. end_freq is 0 if no rules were received.
-+	 */
-+	struct ath12k_reg_freq reg_freq_2ghz;
-+	struct ath12k_reg_freq reg_freq_5ghz;
-+	struct ath12k_reg_freq reg_freq_6ghz;
- };
- 
- struct ath12k_fw_pdev {
-@@ -871,11 +883,6 @@ struct ath12k_board_data {
- 	size_t len;
- };
- 
--struct ath12k_reg_freq {
--	u32 start_freq;
--	u32 end_freq;
--};
--
- struct ath12k_mlo_memory {
- 	struct target_mem_chunk chunk[ATH12K_QMI_WLANFW_MAX_NUM_MEM_SEG_V01];
- 	int mlo_mem_size;
-@@ -1147,9 +1154,6 @@ struct ath12k_base {
- 	/* Denote whether MLO is possible within the device */
- 	bool single_chip_mlo_support;
- 
--	struct ath12k_reg_freq reg_freq_2ghz;
--	struct ath12k_reg_freq reg_freq_5ghz;
--	struct ath12k_reg_freq reg_freq_6ghz;
- 	const struct ath12k_mem_profile_based_param *profile_param;
- 	enum ath12k_qmi_mem_mode target_mem_mode;
- 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index da2ba1f39244..a11eb3e2a593 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -14263,9 +14263,9 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
- 		}
- 
- 		freq_low = max(reg_cap->low_2ghz_chan,
--			       ab->reg_freq_2ghz.start_freq);
-+			       ar->pdev->reg_freq_2ghz.start_freq);
- 		freq_high = min(reg_cap->high_2ghz_chan,
--				ab->reg_freq_2ghz.end_freq);
-+				ar->pdev->reg_freq_2ghz.end_freq);
- 
- 		ath12k_mac_update_ch_list(ar, band,
- 					  reg_cap->low_2ghz_chan,
-@@ -14308,9 +14308,9 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
- 			band->bitrates = ath12k_a_rates;
- 
- 			freq_low = max(reg_cap->low_5ghz_chan,
--				       ab->reg_freq_6ghz.start_freq);
-+				       ar->pdev->reg_freq_6ghz.start_freq);
- 			freq_high = min(reg_cap->high_5ghz_chan,
--					ab->reg_freq_6ghz.end_freq);
-+					ar->pdev->reg_freq_6ghz.end_freq);
- 
- 			ath12k_mac_update_ch_list(ar, band,
- 						  reg_cap->low_5ghz_chan,
-@@ -14365,9 +14365,9 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
- 			}
- 
- 			freq_low = max(reg_cap->low_5ghz_chan,
--				       ab->reg_freq_5ghz.start_freq);
-+				       ar->pdev->reg_freq_5ghz.start_freq);
- 			freq_high = min(reg_cap->high_5ghz_chan,
--					ab->reg_freq_5ghz.end_freq);
-+					ar->pdev->reg_freq_5ghz.end_freq);
- 
- 			ath12k_mac_update_ch_list(ar, band,
- 						  reg_cap->low_5ghz_chan,
-diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index 89abf2e87ad1..17232392071a 100644
---- a/drivers/net/wireless/ath/ath12k/reg.c
-+++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -269,10 +269,11 @@ static void ath12k_copy_regd(struct ieee80211_regdomain *regd_orig,
- int ath12k_regd_update(struct ath12k *ar, bool init)
- {
- 	struct ath12k_wmi_hal_reg_capabilities_ext_arg *reg_cap;
--	u32 phy_id, freq_low, freq_high, supported_bands;
-+	u32 phy_id, freq_low, freq_high;
- 	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
- 	struct ieee80211_hw *hw = ah->hw;
- 	struct ieee80211_regdomain *regd, *regd_copy = NULL;
-+	struct ath12k_pdev *pdev = ar->pdev;
- 	int ret, regd_len, pdev_id;
- 	struct ath12k_base *ab;
- 	long time_left;
-@@ -288,43 +289,55 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 		 */
- 	}
- 
--	supported_bands = ar->pdev->cap.supported_bands;
- 	reg_cap = &ab->hal_reg_cap[ar->pdev_idx];
- 
- 	/* Possible that due to reg change, current limits for supported
- 	 * frequency changed. Update it. As a first step, reset the
- 	 * previous values and then compute and set the new values.
-+	 *
-+	 * Only bands that this radio operates on and received reg rules
-+	 * for contribute. A radio may receive rules for bands it does not
-+	 * operate on, e.g. the 6 GHz radio of a split-pdev device.
- 	 */
- 	ar->freq_range.start_freq = 0;
- 	ar->freq_range.end_freq = 0;
- 
--	if (supported_bands & WMI_HOST_WLAN_2GHZ_CAP) {
-+	if (ar->mac.sbands[NL80211_BAND_2GHZ].channels &&
-+	    pdev->reg_freq_2ghz.end_freq) {
- 		if (ab->hw_params->single_pdev_only) {
--			phy_id = ar->pdev->cap.band[WMI_HOST_WLAN_2GHZ_CAP].phy_id;
-+			phy_id = pdev->cap.band[NL80211_BAND_2GHZ].phy_id;
- 			reg_cap = &ab->hal_reg_cap[phy_id];
- 		}
- 
--		freq_low = max(reg_cap->low_2ghz_chan, ab->reg_freq_2ghz.start_freq);
--		freq_high = min(reg_cap->high_2ghz_chan, ab->reg_freq_2ghz.end_freq);
-+		freq_low = max(reg_cap->low_2ghz_chan, pdev->reg_freq_2ghz.start_freq);
-+		freq_high = min(reg_cap->high_2ghz_chan, pdev->reg_freq_2ghz.end_freq);
- 
- 		ath12k_mac_update_freq_range(ar, freq_low, freq_high);
- 	}
- 
--	if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && !ar->supports_6ghz) {
-+	if (ar->mac.sbands[NL80211_BAND_5GHZ].channels &&
-+	    pdev->reg_freq_5ghz.end_freq) {
- 		if (ab->hw_params->single_pdev_only) {
--			phy_id = ar->pdev->cap.band[WMI_HOST_WLAN_5GHZ_CAP].phy_id;
-+			phy_id = pdev->cap.band[NL80211_BAND_5GHZ].phy_id;
- 			reg_cap = &ab->hal_reg_cap[phy_id];
- 		}
- 
--		freq_low = max(reg_cap->low_5ghz_chan, ab->reg_freq_5ghz.start_freq);
--		freq_high = min(reg_cap->high_5ghz_chan, ab->reg_freq_5ghz.end_freq);
-+		freq_low = max(reg_cap->low_5ghz_chan, pdev->reg_freq_5ghz.start_freq);
-+		freq_high = min(reg_cap->high_5ghz_chan, pdev->reg_freq_5ghz.end_freq);
- 
- 		ath12k_mac_update_freq_range(ar, freq_low, freq_high);
- 	}
- 
--	if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
--		freq_low = max(reg_cap->low_5ghz_chan, ab->reg_freq_6ghz.start_freq);
--		freq_high = min(reg_cap->high_5ghz_chan, ab->reg_freq_6ghz.end_freq);
-+	if (ar->mac.sbands[NL80211_BAND_6GHZ].channels &&
-+	    pdev->reg_freq_6ghz.end_freq) {
-+		/* 6 GHz is reported as part of the 5 GHz band capability */
-+		if (ab->hw_params->single_pdev_only) {
-+			phy_id = pdev->cap.band[NL80211_BAND_5GHZ].phy_id;
-+			reg_cap = &ab->hal_reg_cap[phy_id];
-+		}
-+
-+		freq_low = max(reg_cap->low_5ghz_chan, pdev->reg_freq_6ghz.start_freq);
-+		freq_high = min(reg_cap->high_5ghz_chan, pdev->reg_freq_6ghz.end_freq);
- 
- 		ath12k_mac_update_freq_range(ar, freq_low, freq_high);
- 	}
-@@ -645,6 +658,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
- 		      enum wmi_vdev_type vdev_type,
- 		      enum ieee80211_ap_reg_power power_type)
- {
-+	struct ath12k_pdev *pdev = &ab->pdevs[reg_info->phy_id];
- 	struct ieee80211_regdomain *new_regd = NULL;
- 	struct ath12k_reg_rule *reg_rule, *reg_rule_6ghz;
- 	u32 flags, reg_6ghz_number, max_bw_6ghz;
-@@ -709,14 +723,15 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
- 		   alpha2, ath12k_reg_get_regdom_str(new_regd->dfs_region),
- 		   reg_info->dfs_region, num_rules);
- 
--	/* Reset start and end frequency for each band
-+	/* Reset start and end frequency for each band of the radio this
-+	 * event belongs to. reg_info->phy_id has already been validated.
- 	 */
--	ab->reg_freq_5ghz.start_freq = INT_MAX;
--	ab->reg_freq_5ghz.end_freq = 0;
--	ab->reg_freq_2ghz.start_freq = INT_MAX;
--	ab->reg_freq_2ghz.end_freq = 0;
--	ab->reg_freq_6ghz.start_freq = INT_MAX;
--	ab->reg_freq_6ghz.end_freq = 0;
-+	pdev->reg_freq_5ghz.start_freq = INT_MAX;
-+	pdev->reg_freq_5ghz.end_freq = 0;
-+	pdev->reg_freq_2ghz.start_freq = INT_MAX;
-+	pdev->reg_freq_2ghz.end_freq = 0;
-+	pdev->reg_freq_6ghz.start_freq = INT_MAX;
-+	pdev->reg_freq_6ghz.end_freq = 0;
- 
- 	/* Update reg_rules[] below. Firmware is expected to
- 	 * send these rules in order(2G rules first and then 5G)
-@@ -728,7 +743,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
- 			max_bw = min_t(u16, reg_rule->max_bw,
- 				       reg_info->max_bw_2g);
- 			flags = ath12k_get_bw_reg_flags(reg_info->max_bw_2g);
--			ath12k_reg_update_freq_range(&ab->reg_freq_2ghz, reg_rule);
-+			ath12k_reg_update_freq_range(&pdev->reg_freq_2ghz, reg_rule);
- 		} else if (reg_info->num_5g_reg_rules &&
- 			   (j < reg_info->num_5g_reg_rules)) {
- 			reg_rule = reg_info->reg_rules_5g_ptr + j++;
-@@ -743,7 +758,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
- 			 */
- 			flags = NL80211_RRF_AUTO_BW |
- 				ath12k_get_bw_reg_flags(reg_info->max_bw_5g);
--			ath12k_reg_update_freq_range(&ab->reg_freq_5ghz, reg_rule);
-+			ath12k_reg_update_freq_range(&pdev->reg_freq_5ghz, reg_rule);
- 		} else if (reg_info->is_ext_reg_event && reg_6ghz_number &&
- 			   (k < reg_6ghz_number)) {
- 			reg_rule = reg_rule_6ghz + k++;
-@@ -752,7 +767,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
- 				ath12k_get_bw_reg_flags(max_bw_6ghz);
- 			if (reg_rule->psd_flag)
- 				flags |= NL80211_RRF_PSD;
--			ath12k_reg_update_freq_range(&ab->reg_freq_6ghz, reg_rule);
-+			ath12k_reg_update_freq_range(&pdev->reg_freq_6ghz, reg_rule);
- 		} else {
- 			break;
- 		}
-
-base-commit: 9f0fe5ad0c9af369400bb87143bc936ebb741391
--- 
-2.56.0
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
 
