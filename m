@@ -2,95 +2,105 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0FD7E606A31D
-	for <ath12k@archiver.kernel.org>; Thu, 29 Oct 2026 16:51:25 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4A728606A322
+	for <ath12k@archiver.kernel.org>; Thu, 29 Oct 2026 16:58:56 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Sz2WhBzV;
-	dkim=pass (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Tst0smVk
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=2nKhjDpA;
+	dkim=pass (2048-bit key, unprotected) header.d=ziepe.ca header.i=@ziepe.ca header.a=rsa-sha256 header.s=google header.b=UwIl5Shz
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=q7E9UfoWQWnqho2nQB011oITjH0OZoiCPBc9CYnDpQE=; b=Sz2WhBzVyoIZnYEIVxa024tnIp
-	cYv+Sk5p2Isjc2IjAYZR9yGfgl50UzpPRRf7rFnev4gQfEHDYO4gwd63dEP4zLOh7Ghv0C0jV3H+K
-	1DXH6xkduxu7GT1YPEaR/XE8toWCYkAPzthIwWtTl4oAd7DvrEYbycqBOfcz3RoZ6LvjKNFw5WCoc
-	933+cHKIYZBcOnk1BqvntsRCqDRgZY7xT+khHTSyoRz+tt+jqIO119RGKa4wgATQhDFk+69dM+wg6
-	dDU5o6I/c+REaIm41Qcz2Me9NxIyv/ik3nNNLZDLzvs7xqgAJmNibuf1Oh04uq66iOHBhqJRepWW1
-	z5NibCxQ==;
+	bh=6bXwD83MIjcipNSA+r7WlJ6caQoTXebpCKMfW1alQus=; b=2nKhjDpANLOX5tTrlA/gQiqhrK
+	Qys8PKVIfgHKYRvbkqLT1aL7mSULhAUv0SdLh4UUS/69eMhfiTBnCTxCGUk0UhNMsF9I0JA7uMUqm
+	XBBKJsw/xHpNLIdeRtFhDH4GBGkPpwA+XEtrM1B45AoJlmUFIcwITqrenMDNoRBqzdwZM1I0XE6DS
+	YECACFj8QzsM4BkG6EMe1vRYIJcWejdVmY5zFnlywLXR3/xKbP+5KViLTC4wikK4adM+Jv2vdog8M
+	inJMhqckeTWQkqwwGqXexsyjOGMgX++MgeXieJtM5fB52cIrVPLziryLrtWtL+mCcQvqgw7qAUlt8
+	zTG7FegA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMTLW-00000009ro6-3BDx;
-	Thu, 29 Oct 2026 16:51:22 +0000
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+	id 1xMTSo-00000009uS5-3bCy;
+	Thu, 29 Oct 2026 16:58:54 +0000
+Received: from mail-qk1-x72c.google.com ([2607:f8b0:4864:20::72c])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMTLT-00000009rmx-3OBc
+	id 1xMTSj-00000009uPV-0pGD
 	for ath12k@lists.infradead.org;
-	Thu, 29 Oct 2026 16:51:21 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-48df54150dfso1337240f8f.0
-        for <ath12k@lists.infradead.org>; Thu, 29 Oct 2026 09:51:18 -0700 (PDT)
+	Thu, 29 Oct 2026 16:58:53 +0000
+Received: by mail-qk1-x72c.google.com with SMTP id af79cd13be357-93f1e5d7450so198164985a.2
+        for <ath12k@lists.infradead.org>; Thu, 29 Oct 2026 09:58:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1793292677; x=1793897477; darn=lists.infradead.org;
-        h=mime-version:user-agent:content-transfer-encoding:content-type
-         :references:in-reply-to:date:cc:to:from:subject:message-id:from:to
-         :cc:subject:date:message-id:reply-to:content-type;
-        bh=q7E9UfoWQWnqho2nQB011oITjH0OZoiCPBc9CYnDpQE=;
-        b=Tst0smVksKCCjKgqBJ648tnF6ZREOYPJL6KZwSTNoI9uwaQM2GGmudJMjlCe5c6zSM
-         ig83i+FIg39LYfp5FIflXzfDIziS85W4u3QBr8g3vFXgt/ypbQzbjUiyLx34zt7LwZIu
-         4vvvfhpHhowB5ldcEdycoBC+Bpp0BZqlVPpICzbO3GzC5P0ilTB2U+cOJ3IisgEYPaY/
-         ASqrBj1Xk8GOJ9t330vTDW3YAbc32D+qMLa9+L4F3xi8WHxqXvOUOv17uTYBensrsHIp
-         MFpA8HNU+0QlJHvVpi4nFbx80xZLo/13p0jfRBdcFDQ0sk4cukvMx2d6alccFPin+PF4
-         TKzQ==
+        d=ziepe.ca; s=google; t=1793293127; x=1793897927; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=6bXwD83MIjcipNSA+r7WlJ6caQoTXebpCKMfW1alQus=;
+        b=UwIl5ShzOGS5JSEuaSEPajc53tD/YAenvAczr4mn7MvaMurwAXQuaY7OXkW8QzHP7C
+         20n0DlruLDUqlfiEVPtMzfBCG2usQlsnCWKsgShz/bCPdWkYbUTab3hzqdwjdOWA4W3V
+         +qBN0nHmOzajK/jgLYKMyVLdgS/GuYNh6aXrLqpUBCmFWsQPPeSiGvLdocSrCO4KDwTX
+         EDA0ToArubk51/BByfKP6q/Xnk1+WjkMB8iibeNQ+Si+NJi10L9+8WDlISX27b2ehpal
+         orks30mQh7tlQzrGJGUPAWIS6iXRVWPnHJSrQ6y9M1AniiIgKvN5CsgpoTaNRmLxX+Cr
+         TVVQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793292677; x=1793897477;
-        h=mime-version:user-agent:content-transfer-encoding:content-type
-         :references:in-reply-to:date:cc:to:from:subject:message-id:x-gm-gg
+        d=1e100.net; s=20260707; t=1793293127; x=1793897927;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=q7E9UfoWQWnqho2nQB011oITjH0OZoiCPBc9CYnDpQE=;
-        b=wzIoj+yuyZVQIjJTm6FEvlkOktf8MFDJu2SsC5owf+qS+OvdIsD51sNd8QYNgCZ69H
-         PESX8TPK2LpwDTbDxvJaePiZloKMq22yh8xpDLUgLEYlG2WVAnID4GMhuH/VdwqGe+nJ
-         8WoQC1Ik4uuwrsG72a0gQ4Gt9bqDISrRe9OUwtDL3vfVTm8iu0raYknmRr4IDhN5hnjB
-         Z0QZTtz6gG+QK3YVel/RO0NkacijJv1e+e6DdaDMUfta1GUUrdRdyZmPr0s8HCsbWsys
-         yADR3Z7GNxuUcd2TZufqtBHAKbmet/ipqYxrrGhW9frRze9X6uy/TZQrZGbbxrQtj2c6
-         htPw==
-X-Gm-Message-State: AFq9FYLaCYJc1+/CA67yYoYxYACQXiTgaIV3/bviIUFA9sWNVH/J34B2
-	c44PKnK2JJigZq4kkt/HRMoTTm3Z8CKWfYYfx+IqfCA0VbyGMELKlnTx
-X-Gm-Gg: AYBFou3gXzzj09O6BqpnMhxYxmMpTxaPMV3+24nD+ZZajzG6GHXoj8gXJYfkNCjmQ9d
-	xJExOyTYdL0XBgGLbYGooFLhJRWxSHkV2pcB/XAAJkZkYEk80NxzaYb6jD/39/vbIw4dT4Yo29R
-	poqlSosOrxgD1RRMnrW3G8bHW0NMerbGzL0YKxVFKUZCHFua2y638aO+DgVtybztkaa9knylCwr
-	Oz64LKa1GMG9wWBVpQxhKBWfiHrHSlaNRRKD7Cwv4RwiwEyklku6Xb/GjFT3IqfYXZObpF/tBDb
-	AdHMtp+WdJ1VkU8GfelGYRqQefUWXDJlpbvBU3HMzwkXrlh+fepU/HPbw4z0ZIAhf0aqN07qxa/
-	xGUwna9GabOh+wVXhqXvSb4VaFeGQ9LR7G/Z5FvfzwNuZr2SO6lpQPeIWT3C/KgCBhfHQFPFwN8
-	wPeqq/PfG6tHpUFMPC3epj/71IoStNyUYlyNPTniq9zXpMj3YG5cFAH5KAAru+7ITUPnuwtsdS6
-	5/sU49xjlzs07+ugQTLSaCv1mFE9R5aX+ejdchGBAqlRw3IE3iciQcbo+CTc9rgB1s1lUrFzWKW
-	bXJy2GO/MVSWscaPChvQCiZmn3Sa4wWEusAKKWunKaLbuVYQibxraZIq66DAA3bKHgJUw7E=
-X-Received: by 2002:a05:6000:716:b0:48b:a21:87f7 with SMTP id ffacd0b85a97d-48e5d5c9c95mr13396446f8f.44.1793292676786;
-        Thu, 29 Oct 2026 09:51:16 -0700 (PDT)
-Received: from ?IPv6:2001:8a0:c4c6:f00:e9da:bea7:ee57:4c6d? ([2001:8a0:c4c6:f00:e9da:bea7:ee57:4c6d])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48e6dfa0605sm264471f8f.32.2026.10.29.09.51.15
+        bh=6bXwD83MIjcipNSA+r7WlJ6caQoTXebpCKMfW1alQus=;
+        b=fIio/l1gINjjWeF+Opg2Fp2M2k1UlmVGQ2kqQPixjB1EE2IcAHcMoj3jQ9Mi/4pRMr
+         t7Fx4adWuOQYwpis9X0eA5kmAgOcfav1JgSpAUcmn8bJDw4hDaMi4S2o9EiUKdVT4cjW
+         N8IPPt8pKLeF0WRNhsjDGVbypgsZD2hsden+zBx3v/vhO7soa2gwnk2V9kyD04X1EmZG
+         n2ztoyM8/LbFEhYLM6dFLg/a+c9TOOHC4bQiOj1LiTrIIJhJ5qQ8nXcGiO2c/zm+JTZ/
+         A6RejpBS3yJ2T39d/vwGK0tXpPs+a22fcqFmvUQMZq/G3HUmHiE3Sa+ybA0rN9Gr9jCP
+         +0RA==
+X-Forwarded-Encrypted: i=1; AKwUvBxwbyDKBZywiSTPL/DKtsoh1W6pAX30+mRwtz+DnxF0O1BeOzYOhAY0jCXY8AF/7Q1wDLER6/4=@lists.infradead.org
+X-Gm-Message-State: AFq9FYKfkuMglCTeqeKbSlNh4ZaN/2pp6aHgLVELCNeC7hVlcgw2yR0w
+	qhe4qWhOaJWiya55wXT4AdGT88H+YHVGlGG340W9ArucQG8DQaTSC3AW+7Ig7R0Ubbk=
+X-Gm-Gg: AYBFou1pEjgcjnF5d2ndzsi/u+olrxTzjEWq+ScCJ/0Pb6hMZVw/gyFtO8KDnmJLAbm
+	COVJpXfMFBX8WIa8llUJZPUSYkkz6fLNJBMgjcQXOvSMlbYI9gM8nzMujWKHEhQ2YVvj4+cITDr
+	sI9v3aD/VNrtbk4VNcD8qzMdtfqUe3CIVDkB7s6Rg/uNRGCOaXsRKNGPaG+Hot62JYbfFzP4VrF
+	O6gvys6D3cyYZjqnf+2NUQwKxKfwvAAOnu5RCTf9RVHfD76YbUPtp1uUFcDvCBufJojb37Gl/L6
+	cZgb76QuNwPPqHrwhFMPpZRF+/6TUy4nXGr0IZXkHKw+Awq1VUM/7tW2OMcrHTxdFjovakPsBVJ
+	3h2X1cSrA7aEd3Ot0eLtygSj6JO2rcxxnlRACZHluSDemTfDhANemz/tmKpo5m2r9QuWXXuj1RX
+	KF8zVKeL54BIUD81Y16D05A4CdctMMgXBBs2nG+PHjKFblnkmaNDYd0kuCDPCynD6MVE78cP03S
+	dnYtEMSGwRKh6VEzwCbZAWdF9mv7Mlldvep1HA8KynR0zukYj0NfAZZ+0gUZkJWZt4UuoawnSUS
+	C01DBegiPPGkIEUBdZGEtRZ5Y2dYcl05uyC3aru581io2llZX9B6uLcqZud4lxSmnZ2zOQXn+p+
+	EzdYvLw93Bdcm3aeYekBWttdb2b/jkwQm
+X-Received: by 2002:a05:620a:298c:b0:93f:38c7:70f4 with SMTP id af79cd13be357-94408aa100cmr927645385a.26.1793293126718;
+        Thu, 29 Oct 2026 09:58:46 -0700 (PDT)
+Received: from ziepe.ca (hlfxns010zw-159-2-239-150.pppoe-dynamic.high-speed.ns.bellaliant.net. [159.2.239.150])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-944209818c7sm8131885a.3.2026.10.29.09.58.45
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 29 Oct 2026 09:51:16 -0700 (PDT)
-Message-ID: <03564cc2f89c64f9dd06624dae01d6575a202bad.camel@gmail.com>
-Subject: Re: ath12k: recommended regulatory country source for embedded AP
- products?
-From: vitor <ivitro@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>, Wen Gong <quic_wgong@quicinc.com>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org, Kalle Valo
-	 <kvalo@kernel.org>, francesco.dolcini@toradex.com, lxluxo23@gmail.com
-Date: Thu, 29 Oct 2026 16:51:14 +0000
-In-Reply-To: <3ac168e7dfe22133daf09adc3f6587098ec85619.camel@gmail.com>
-References: <3ac168e7dfe22133daf09adc3f6587098ec85619.camel@gmail.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.56.2-9 
+        Thu, 29 Oct 2026 09:58:46 -0700 (PDT)
+Received: from jgg by wakko with local (Exim 4.97)
+	(envelope-from <jgg@ziepe.ca>)
+	id 1xMTSf-0000000G2uI-1sK7;
+	Thu, 29 Oct 2026 13:58:45 -0300
+Date: Thu, 29 Oct 2026 13:58:45 -0300
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+Cc: alex@shazbot.org, pbonzini@redhat.com, seanjc@google.com,
+	bhelgaas@google.com, jjohnson@kernel.org, johannes@sipsolutions.net,
+	mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+	robh@kernel.org, vkuznets@redhat.com, kevin.tian@intel.com,
+	linux-pci@vger.kernel.org, kvm@vger.kernel.org,
+	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 2/8] KVM: add PCI MSI hypercall for VFIO passthrough
+Message-ID: <20261029165845.GQ1685504@ziepe.ca>
+References: <20261029163713.1366077-1-jtornosm@redhat.com>
+ <20261029163713.1366077-3-jtornosm@redhat.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20261029163713.1366077-3-jtornosm@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261029_095119_864043_97508360 
-X-CRM114-Status: GOOD (  20.89  )
+X-CRM114-CacheID: sfid-20261029_095849_267127_7200DF3D 
+X-CRM114-Status: GOOD (  23.67  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,106 +112,92 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-2.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-5.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+On Thu, Oct 29, 2026 at 05:37:07PM +0100, Jose Ignacio Tornos Martinez wrote:
+> Some PCI devices (e.g. Qualcomm WiFi adapters) have firmware that
+> programs MSI addresses directly into device BAR registers, bypassing
+> the standard PCI config MSI path. When these devices are passed
+> through to VMs via VFIO, the firmware programs the guest virtual MSI
+> address instead of the host physical IRTE address, causing DMAR faults
+> and non-functional interrupts.
+> 
+> Add a KVM hypercall (KVM_HC_PCI_MSI_ALLOC) that allows a guest to
+> request the host's physical MSI address/data for a VFIO-assigned PCI
+> device. The hypercall is dispatched from the x86 hypercall handler to
+> a VFIO backend that:
+> 
+> 1. Finds the host PCI device matching the guest's vendor:device ID
+>    using vfio_file_find_pci_device() (introduced in a previous patch)
+> 2. Reads the host MSI address/data from the device's msi_desc or
+>    by walking the IRQ domain compose chain
+> 3. Returns the result to the guest via a GPA response buffer
 
-Hi,
+This is not quite what I suggested, this still relies on the host
+setting up the msi using the trapped MSI emulation, which is the
+primary hack..
 
+Was it too hard to make this an 'allocate msi' operation?
 
-On Wed, 2026-07-29 at 10:29 +0100, Vitor Soares wrote:
-> Hello,
->=20
-> I'm integrationg the=C2=A0Silex SX-PCEBE module (Qualcomm WCN7850, ath12k=
-) on the
-> ARM-based Toradex Aquila SoM family, using a recent mainline kernel (7.2-=
-rc).
->=20
-> Hardware/firmware: wcn7850 hw2.0 (PCI),
-> WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
-> (fw_version 0x1103006c).
->=20
-> I'm trying to understand the intended way to set the regulatory country f=
-or
-> ath12k on embedded products where the country is configured by the integr=
-ator of
-> our SoM or at deployment time by the end user.
->=20
-> My current understanding is that ath12k registers the wiphy as self-manag=
-ed, but
-> userspace regulatory hints, e.g. "iw reg", are ignored in ath12k_reg_noti=
-fier()
-> unless CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS=3Dy, which in turn depends o=
-n
-> CONFIG_CFG80211_CERTIFICATION_ONUS.
->=20
-> The SMBIOS coounty-code path, looks intended for fixed regional SKUs, How=
-ever,
-> it is not available on our ARM platform.
->=20
-> So, I have 2 related questions:
->=20
-> 1 - Is the expected ath12k model for this type of product to enable=20
-> ATH_REG_DYNAMIC_USER_REG_HINTS and use userspace regulatory hints before
-> starting hostapd, with the regulatory responsibility on the product/integ=
-rator?
->=20
->=20
-> Or is there another mechanism you would recomment for this use case?
->=20
-> 2 - Since ath12k is a self-managed regulatory device and the firmware own=
-s and
-> enforces the regulatory database, is the CFG80211_CERTIFICATION_ONUS gate
-> intended to apply to this case as well?
->=20
-> In other words, should a userspace-selected country for a self-managed at=
-h12k
-> device be treated the same as dynamic user regulatory hints for non-self-=
-managed
-> devices, or is this dependency inherited from the common ath regulatory m=
-odel?
->=20
-> Without a country, the ath12k falls back to world "00", where 5 GHz AP op=
-eration
-> is blocked by NO_IR.
->=20
-> Thanks,
-> Vitor Soares
+> The VFIO handler is connected to the KVM instance via a function
+> pointer (pci_msi_alloc) in struct kvm, set when the VFIO device is
+> created and cleared on release. This avoids a hard dependency between
+> KVM and VFIO subsystems.
 
+I feel like VFIO shouldn't be involved here, for the purpose of MSI
+all we need is to inform KVM what struct pci_device * is at a vBDF and
+then KVM can do the interrupt bits. Maybe this is already happening?
 
-A follow-up with some new information, as this now blocks 5/6 GHz AP
-support for our customers.
+> +	case KVM_HC_PCI_MSI_ALLOC: {
+> +		struct msi_msg msg = {};
+> +		struct {
+> +			u32 address_lo;
+> +			u32 address_hi;
+> +			u32 data;
+> +			u32 reserved;
+> +		} resp;
+> +
+> +		if (vcpu->kvm->pci_msi_alloc == NULL) {
+> +			ret = -KVM_ENOSYS;
+> +			break;
+> +		}
 
-I checked the Qualcomm Linux kernel (linux-qcom), used by meta-qcom:
-it enables both CONFIG_CFG80211_CERTIFICATION_ONUS and
-CONFIG_ATH_REG_DYNAMIC_USER_REG_HINTS by default for all arm64
-machines, in arch/arm64/configs/qcom.config.
+Yet here it is called alloc?
 
-General-purpose distributions, on the other hand, keep
-CFG80211_CERTIFICATION_ONUS disabled. Some of our customers run Debian
-on our modules: with the Debian kernel, the WCN7850 stays in the world
-domain whatever country is configured in hostapd, so it cannot start
-an AP on 5 GHz or 6 GHz.
+Nothing should use vendor/device ID either, it should all be drive on
+vBDF.
 
-I understand that ATH_REG_DYNAMIC_USER_REG_HINTS was added in commit
-94e7876daa43 ("ath: add support for proper dynamic regulatory hints")
-to keep user regulatory changes behind CFG80211_CERTIFICATION_ONUS.
+> +	irq = pci_irq_vector(pdev, vector);
+> +	if (irq <= 0) {
+> +		memset(msg, 0, sizeof(*msg));
+> +		return 0;
+> +	}
+> +
+> +	irqd = irq_get_irq_data(irq);
+> +	if (!irqd) {
+> +		memset(msg, 0, sizeof(*msg));
+> +		return 0;
+> +	}
+> +
+> +	desc = irq_get_msi_desc(irq);
+> +	if (desc) {
+> +		*msg = desc->msg;
 
-Would it be acceptable to update the Kconfig dependency or help text,
-or to add an ath12k specific option, so that distributions can enable
-it?
+And this isn't alloc, it is some query..
 
-Alternatively, Luis sent a patch for the same problem that allows user
-hints only while the firmware reports the world domain:
-https://lore.kernel.org/all/20260228201023.116947-1-lxluxo23@gmail.com/
+I think kvm maintainers would insist on a complete API here if this is
+the direction.
 
-Either approach would unblock us. Any guidance on how to proceed
-would be much appreciated, and I'm happy to help with the patch.
+I probably would not have selected this, it is why I suggested
+virtio-msi or something that could be optional and seperate from the
+core KVM guest ABI.
 
-Thanks,
-Vitor
+But maybe there is interest in doing it this way?
+
+Jason
 
