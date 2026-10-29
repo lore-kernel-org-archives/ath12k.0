@@ -2,76 +2,93 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 23C60606A31A
-	for <ath12k@archiver.kernel.org>; Thu, 29 Oct 2026 16:18:36 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 45056606A329
+	for <ath12k@archiver.kernel.org>; Thu, 29 Oct 2026 16:37:38 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bl84Io6/;
-	dkim=pass (2048-bit key, unprotected) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=Nd+oDQpt
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jogKQcA1;
+	dkim=pass (1024-bit key, unprotected) header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=bxKp1chy
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=I8Xqd/OGVAQohtsuPomRpHEIAcIDTsLm5Pet+Eff+os=; b=bl84Io6/QFLGe5FqeOJPitsdl1
-	hVNz7OnoJD6kaSfGFAMw890POdPXBBiykwhGazSgln1aPGlEJWoryk9f6YSUaAm6lf3thoWj3WRXo
-	cJS/IelE0aNEKYuU/g8u8gFiSrm1MM0s5tHHgy3Ra6bw79GbjFJi4VrzfDktXJDYZUxp/4Ti8fPqa
-	aIxojilcYwJzt4iwhXLBe8/uPIP3MOFmjiiWIfP1klEkImyp6M7l4y4cESwk28vkVgnobdn2qNfCH
-	ny+8gfBIOydlArTmqtxxdkk+RmG6fjNMPt23P6cCIhPyB//cVmM058kiEl/fyQ36qVuX599r4qPPo
-	xUpYdBwQ==;
+	bh=60oBdK7pSBMfkj8btrUeLXs/eWEM8pNj/zNxGpSWBnU=; b=jogKQcA1Mn1Xfejofj880Af2MZ
+	cqreI7UXgJBW6W1BdbdofHKjvN3sGMkjVXl0V0dpl5uLezAJRDlhHhxCffTO/IWe4ybpYs2Jm/gOq
+	OnDCrNHLkJhxrtjm380VPXeuYfaOgwhums0NL4LD9EDGBjq9wXL9ItTBxiLR75G13bFARlxC7KFVv
+	ih70c2vLioe76BicAYpjcAb9U4bN3AHRDtLX4+lR/R5MBq9Gn+8tg5eYt6rAiwz6WpGk4SgToThXW
+	z4O7ErvlVzicv+ArKocrw3vISETvRRLO+dU4T2aXklmxcxDxhD3325SHZMEJa2umE4+fSRDzzKDxP
+	a/fYbQQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMSpm-00000009mYy-3eSs;
-	Thu, 29 Oct 2026 16:18:34 +0000
-Received: from mgamail.intel.com ([192.198.163.8])
+	id 1xMT8C-00000009p2y-2ZY5;
+	Thu, 29 Oct 2026 16:37:36 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMSpk-00000009mYU-1dG6
+	id 1xMT89-00000009p1y-1RmS
 	for ath12k@lists.infradead.org;
-	Thu, 29 Oct 2026 16:18:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1793290713; x=1824826713;
-  h=date:from:to:cc:subject:message-id;
-  bh=lfHe7cS4zIp766+ek4o4bZripdvD79AJ0IIZbyqmjdA=;
-  b=Nd+oDQptUW9zjRmkmBzSl8xiQ7X8dkhEphk8qGDU0F2Rc6ziGmaJB1QR
-   YqMbg6ypgprc1Dj/VXmTaBxQKbWY7Ho+GFQhxjdApPx9n/XXUa/gQuldj
-   4EBnLnsiOWlOKbLYdoTpEZcIzx+qwfLeasRhu3nEvMNwEqK7ZYpAYsCBe
-   X+RoRwqpHpO2muU3Fhz2+vjFMHEdd9E9QBGBzIjDb4UhaFKqRTNP/AFeR
-   dxOA6nUvNWQFaTdFn8fmUWBTqTyG6r1laFwcuiO8w1qtwXVF7EUOBXNFt
-   WD2yRm/sj0rHd8CUQ80gZJULfadO7IM+OZgEiZPk0tcqMoiXPQdt2AiIe
-   A==;
-X-CSE-ConnectionGUID: DY88KaHcSua3TTeXIPpevA==
-X-CSE-MsgGUID: bMP4JP2aSrWCXyPVMGxDdw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11950"; a="1934327"
-X-IronPort-AV: E=Sophos;i="6.27,184,1787036400"; 
-   d="scan'208";a="1934327"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 29 Oct 2026 09:18:31 -0700
-X-CSE-ConnectionGUID: oT1TA1RLRo+3vFvkjs2hwQ==
-X-CSE-MsgGUID: gXP8z6wqQimnfOgHeedV5w==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,184,1787036400"; 
-   d="scan'208";a="5557043"
-Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
-  by fmviesa006.fm.intel.com with ESMTP; 29 Oct 2026 09:18:30 -0700
-Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1xMSpf-00000000aMm-2Nd4;
-	Thu, 29 Oct 2026 16:18:27 +0000
-Date: Fri, 30 Oct 2026 00:18:24 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: ath12k@lists.infradead.org
-Subject: [ath:ath-next] BUILD SUCCESS
- 7b14c8f4a9615579b09cbcdc4515b65ae6124753
-Message-ID: <202610300021.NiftRnO2-lkp@intel.com>
-User-Agent: s-nail v14.9.25
+	Thu, 29 Oct 2026 16:37:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1793291850;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=60oBdK7pSBMfkj8btrUeLXs/eWEM8pNj/zNxGpSWBnU=;
+	b=bxKp1chy1rmIGpEU3WZMueFB4zG2bl1m0IvwWTTo7wXMQkmIHYE4jyfT4fQvoQT4gMzA+m
+	EVnMoxdl9ITvCYv0pwJB8hS3/aJpQGdRLRHylu+zZ718D596P4xHEKQD3jTbsFbj6N3vMG
+	U936Hd17hlaz1ECeJvi96nRFmA8keFE=
+Received: from mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-35-165-154-97.us-west-2.compute.amazonaws.com [35.165.154.97]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-517-93ymQZXkP_6lq8rkYhGv0A-1; Thu,
+ 29 Oct 2026 12:37:26 -0400
+X-MC-Unique: 93ymQZXkP_6lq8rkYhGv0A-1
+X-Mimecast-MFC-AGG-ID: 93ymQZXkP_6lq8rkYhGv0A_1793291844
+Received: from mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.12])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 0B424180AEBD;
+	Thu, 29 Oct 2026 16:37:24 +0000 (UTC)
+Received: from jtornosm-thinkpadp1gen7.rmtes.csb (headnet04.pony-001.prod.iad2.dc.redhat.com [10.2.32.116])
+	by mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 0BAD91956088;
+	Thu, 29 Oct 2026 16:37:17 +0000 (UTC)
+From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+To: jgg@ziepe.ca,
+	alex@shazbot.org,
+	pbonzini@redhat.com,
+	seanjc@google.com,
+	bhelgaas@google.com,
+	jjohnson@kernel.org
+Cc: johannes@sipsolutions.net,
+	mani@kernel.org,
+	lpieralisi@kernel.org,
+	kwilczynski@kernel.org,
+	robh@kernel.org,
+	vkuznets@redhat.com,
+	kevin.tian@intel.com,
+	linux-pci@vger.kernel.org,
+	kvm@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
+Subject: [PATCH v3 0/8] PCI/KVM/VFIO: MSI address passthrough for Qualcomm WiFi devices
+Date: Thu, 29 Oct 2026 17:37:05 +0100
+Message-ID: <20261029163713.1366077-1-jtornosm@redhat.com>
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 3.0 on 10.30.177.12
+X-Mimecast-MFC-PROC-ID: 7tWhQNLOWF8--O4ot_oOqhr6Abchpl-Xt6xXJfJrbI8_1793291844
+X-Mimecast-Originator: redhat.com
+Content-Transfer-Encoding: 8bit
+content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261029_091832_648864_E4171AAF 
-X-CRM114-Status: UNSURE (   4.09  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -4.4 (----)
+X-CRM114-CacheID: sfid-20261029_093733_461015_C97184A8 
+X-CRM114-Status: GOOD (  11.54  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,340 +99,118 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-5.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
-	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
-X-Archived-By: <archiver.kernel.org>
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath-next
-branch HEAD: 7b14c8f4a9615579b09cbcdc4515b65ae6124753  wifi: ath9k_htc: derive the PHY error filter bits from software state
+This series enables Qualcomm ath11k/ath12k WiFi devices to work in VM
+passthrough scenarios, addressing a long-standing issue where these
+devices fail to initialize when passed through to VMs via VFIO.
 
-elapsed time: 2480m
+Qualcomm ath11k/ath12k WiFi devices have been broken in VM passthrough
+since they were introduced. These devices have embedded firmware that
+programs MSI target addresses directly into device BAR registers,
+bypassing the standard PCI config MSI path. The driver extracts the
+addr/data from the MSI descriptor and programs the firmware's private
+registers. In a VM, the driver only sees the guest's virtual APIC
+address instead of the host's physical IRTE address. The firmware
+programs the guest address into the BAR registers, and the resulting
+MSI writes hit a stale or invalid IRTE in the host's interrupt
+remapping table, causing DMAR faults:
 
-configs tested: 312
-configs skipped: 21
+  DMAR: DRHD: ... INTR-REMAP
+  DMAR: [INTR-REMAP] ... Present field in the IRTE entry is clear
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+Standard VFIO MSI virtualization handles PCI config space MSI
+correctly (MHI interrupts work fine), but has no visibility into
+firmware-managed BAR-level MSI programming.
 
-tested configs:
-alpha                              allnoconfig    gcc-16.2.0
-alpha                             allyesconfig    gcc-16.2.0
-alpha                                defconfig    gcc-16.2.0
-arc                               allmodconfig    clang-24
-arc                                allnoconfig    gcc-16.2.0
-arc                               allyesconfig    clang-19
-arc                               allyesconfig    clang-24
-arc                               allyesconfig    gcc-16.2.0
-arc                                  defconfig    gcc-16.2.0
-arc                             hsdk_defconfig    clang-24
-arc                      nsimosci_hs_defconfig    gcc-16.2.0
-arc                   randconfig-1000-20261028    gcc-8.5.0
-arc                   randconfig-1000-20261029    clang-24
-arc                   randconfig-1001-20261028    gcc-8.5.0
-arc                   randconfig-1001-20261029    clang-24
-arm                                allnoconfig    gcc-16.2.0
-arm                               allyesconfig    clang-24
-arm                          assabet_defconfig    clang-24
-arm                                  defconfig    gcc-16.2.0
-arm                       footbridge_defconfig    gcc-16.2.0
-arm                            h3600_defconfig    clang-24
-arm                            imxrt_defconfig    gcc-16.2.0
-arm                    milbeaut_m10v_defconfig    gcc-16.2.0
-arm                             mps2_defconfig    clang-24
-arm                         multi_v5_defconfig    clang-24
-arm                          nhk8815_defconfig    clang-24
-arm                   randconfig-1000-20261028    gcc-8.5.0
-arm                   randconfig-1000-20261029    clang-24
-arm                   randconfig-1001-20261028    gcc-8.5.0
-arm                   randconfig-1001-20261029    clang-24
-arm                   randconfig-1002-20261028    gcc-8.5.0
-arm                   randconfig-1002-20261029    clang-24
-arm                   randconfig-1003-20261028    gcc-8.5.0
-arm                   randconfig-1003-20261029    clang-24
-arm                        spear13xx_defconfig    clang-24
-arm                         spear3xx_defconfig    gcc-16.2.0
-arm                     vt8500_v6_v7_defconfig    gcc-16.2.0
-arm64                             allmodconfig    clang-24
-arm64                              allnoconfig    gcc-16.2.0
-arm64                                defconfig    gcc-16.2.0
-arm64                 randconfig-1000-20261028    clang-22
-arm64                 randconfig-1000-20261029    gcc-8.5.0
-arm64                 randconfig-1001-20261028    clang-22
-arm64                 randconfig-1001-20261029    gcc-8.5.0
-arm64                 randconfig-1002-20261028    clang-22
-arm64                 randconfig-1002-20261029    gcc-8.5.0
-arm64                 randconfig-1003-20261028    clang-22
-arm64                 randconfig-1003-20261029    gcc-8.5.0
-csky                              allmodconfig    gcc-16.2.0
-csky                               allnoconfig    gcc-16.2.0
-csky                                 defconfig    gcc-16.2.0
-csky                  randconfig-1000-20261028    clang-22
-csky                  randconfig-1000-20261029    gcc-8.5.0
-csky                  randconfig-1001-20261028    clang-22
-csky                  randconfig-1001-20261029    gcc-8.5.0
-hexagon                           allmodconfig    gcc-16.2.0
-hexagon                            allnoconfig    gcc-16.2.0
-hexagon                              defconfig    gcc-16.2.0
-hexagon               randconfig-1000-20261028    clang-17
-hexagon               randconfig-1000-20261029    clang-24
-hexagon               randconfig-1001-20261028    clang-17
-hexagon               randconfig-1001-20261029    clang-24
-i386                              allmodconfig    clang-22
-i386                               allnoconfig    gcc-16.2.0
-i386                              allyesconfig    clang-22
-i386        buildonly-randconfig-1000-20261028    clang-22
-i386        buildonly-randconfig-1000-20261029    gcc-14
-i386        buildonly-randconfig-1001-20261028    clang-22
-i386        buildonly-randconfig-1001-20261029    gcc-14
-i386        buildonly-randconfig-1002-20261028    clang-22
-i386        buildonly-randconfig-1002-20261029    gcc-14
-i386        buildonly-randconfig-1003-20261028    clang-22
-i386        buildonly-randconfig-1003-20261029    gcc-14
-i386        buildonly-randconfig-1004-20261028    clang-22
-i386        buildonly-randconfig-1004-20261029    gcc-14
-i386        buildonly-randconfig-1005-20261028    clang-22
-i386        buildonly-randconfig-1005-20261029    gcc-14
-i386                                 defconfig    gcc-16.2.0
-i386                  randconfig-1000-20261028    gcc-14
-i386                  randconfig-1000-20261029    clang-22
-i386                  randconfig-1001-20261028    gcc-14
-i386                  randconfig-1001-20261029    clang-22
-i386                  randconfig-1002-20261028    gcc-14
-i386                  randconfig-1002-20261029    clang-22
-i386                  randconfig-1003-20261028    gcc-14
-i386                  randconfig-1003-20261029    clang-22
-i386                  randconfig-1004-20261028    gcc-14
-i386                  randconfig-1004-20261029    clang-22
-i386                  randconfig-1005-20261028    gcc-14
-i386                  randconfig-1005-20261029    clang-22
-i386                  randconfig-1006-20261028    gcc-14
-i386                  randconfig-1006-20261029    clang-22
-i386                  randconfig-1007-20261028    clang-22
-i386                  randconfig-1007-20261029    clang-22
-i386                  randconfig-1008-20261028    clang-22
-i386                  randconfig-1008-20261029    clang-22
-i386                  randconfig-1009-20261028    clang-22
-i386                  randconfig-1009-20261029    clang-22
-i386                  randconfig-1010-20261028    clang-22
-i386                  randconfig-1010-20261029    clang-22
-i386                  randconfig-1011-20261028    clang-22
-i386                  randconfig-1011-20261029    clang-22
-i386                  randconfig-1012-20261028    clang-22
-i386                  randconfig-1012-20261029    clang-22
-i386                  randconfig-1013-20261028    clang-22
-i386                  randconfig-1013-20261029    clang-22
-loongarch                         allmodconfig    clang-19
-loongarch                         allmodconfig    clang-24
-loongarch                          allnoconfig    gcc-16.2.0
-loongarch                            defconfig    clang-24
-loongarch             randconfig-1000-20261028    clang-17
-loongarch             randconfig-1000-20261029    clang-24
-loongarch             randconfig-1001-20261028    clang-17
-loongarch             randconfig-1001-20261029    clang-24
-m68k                              allmodconfig    gcc-16.2.0
-m68k                               allnoconfig    gcc-16.2.0
-m68k                              allyesconfig    clang-24
-m68k                           amiga_defconfig    clang-22
-m68k                        bvme6000_defconfig    gcc-16.2.0
-m68k                                 defconfig    clang-24
-m68k                         m5272c3_defconfig    clang-24
-m68k                        m5275evb_defconfig    clang-22
-m68k                        m5282evb_defconfig    clang-24
-m68k                         stmark2_defconfig    clang-24
-microblaze                         allnoconfig    gcc-16.2.0
-microblaze                        allyesconfig    gcc-16.2.0
-microblaze                           defconfig    clang-24
-mips                              allmodconfig    gcc-16.2.0
-mips                               allnoconfig    gcc-16.2.0
-mips                              allyesconfig    gcc-16.2.0
-mips                            ip32_defconfig    gcc-16.2.0
-mips                        lemote2f_defconfig    clang-22
-mips                            mtx1_defconfig    gcc-16.2.0
-mips                           rm200_defconfig    clang-24
-nios2                             allmodconfig    clang-20
-nios2                              allnoconfig    clang-24
-nios2                                defconfig    clang-24
-nios2                 randconfig-1000-20261028    clang-17
-nios2                 randconfig-1000-20261029    clang-24
-nios2                 randconfig-1001-20261028    clang-17
-nios2                 randconfig-1001-20261029    clang-24
-openrisc                          allmodconfig    clang-20
-openrisc                           allnoconfig    clang-24
-openrisc                             defconfig    gcc-16.2.0
-openrisc                     or1ksim_defconfig    clang-24
-parisc                            allmodconfig    gcc-16.2.0
-parisc                             allnoconfig    clang-24
-parisc                            allyesconfig    clang-17
-parisc                               defconfig    gcc-16.2.0
-parisc                randconfig-1000-20261028    clang-19
-parisc                randconfig-1000-20261029    clang-17
-parisc                randconfig-1001-20261028    clang-19
-parisc                randconfig-1001-20261029    clang-17
-parisc64                             defconfig    clang-24
-powerpc                           allmodconfig    gcc-16.2.0
-powerpc                            allnoconfig    clang-24
-powerpc                      asp8347_defconfig    clang-24
-powerpc                       bamboo_defconfig    clang-24
-powerpc                       bamboo_defconfig    gcc-16.2.0
-powerpc                  canyonlands_defconfig    clang-22
-powerpc                       cm5200_defconfig    clang-24
-powerpc                      ep8248e_defconfig    clang-22
-powerpc                           g5_defconfig    clang-24
-powerpc                     ge_imp3a_defconfig    clang-24
-powerpc                         icon_defconfig    gcc-16.2.0
-powerpc                   iss476-smp_defconfig    gcc-16.2.0
-powerpc                    motionpro_defconfig    clang-24
-powerpc                  mpc8315_rdb_defconfig    gcc-16.2.0
-powerpc                  mpc834x_itx_defconfig    clang-24
-powerpc                       pasemi_defconfig    clang-24
-powerpc                       ppc44x_defconfig    clang-24
-powerpc               randconfig-1000-20261028    clang-19
-powerpc               randconfig-1000-20261029    clang-17
-powerpc               randconfig-1001-20261028    clang-19
-powerpc               randconfig-1001-20261029    clang-17
-powerpc                     sam440ep_defconfig    clang-22
-powerpc                     socrates_defconfig    gcc-16.2.0
-powerpc                   storcenter_defconfig    clang-24
-powerpc                         warp_defconfig    gcc-16.2.0
-powerpc64             randconfig-1000-20261028    clang-19
-powerpc64             randconfig-1000-20261029    clang-17
-powerpc64             randconfig-1001-20261028    clang-19
-powerpc64             randconfig-1001-20261029    clang-17
-riscv                             allmodconfig    clang-24
-riscv                              allnoconfig    clang-24
-riscv                             allyesconfig    clang-24
-riscv                                defconfig    gcc-16.2.0
-riscv                 randconfig-1000-20261028    gcc-11.5.0
-riscv                 randconfig-1000-20261029    gcc-10.5.0
-riscv                 randconfig-1001-20261028    gcc-11.5.0
-riscv                 randconfig-1001-20261029    gcc-10.5.0
-s390                              allmodconfig    clang-17
-s390                               allnoconfig    clang-24
-s390                              allyesconfig    gcc-16.2.0
-s390                                 defconfig    gcc-16.2.0
-s390                  randconfig-1000-20261028    gcc-11.5.0
-s390                  randconfig-1000-20261029    gcc-10.5.0
-s390                  randconfig-1001-20261028    gcc-11.5.0
-s390                  randconfig-1001-20261029    gcc-10.5.0
-sh                                allmodconfig    gcc-16.2.0
-sh                                 allnoconfig    clang-24
-sh                                allyesconfig    clang-17
-sh                                allyesconfig    gcc-16.2.0
-sh                          ap325rxa_defconfig    gcc-16.2.0
-sh                                   defconfig    gcc-14
-sh                         dreamcast_defconfig    clang-22
-sh                             hp6xx_defconfig    clang-24
-sh                                j2_defconfig    clang-24
-sh                           polaris_defconfig    gcc-16.2.0
-sh                    randconfig-1000-20261028    gcc-11.5.0
-sh                    randconfig-1000-20261029    gcc-10.5.0
-sh                    randconfig-1001-20261028    gcc-11.5.0
-sh                    randconfig-1001-20261029    gcc-10.5.0
-sh                           rsk7201_defconfig    clang-22
-sh                            se7619_defconfig    clang-24
-sh                            se7721_defconfig    gcc-16.2.0
-sh                            se7751_defconfig    gcc-16.2.0
-sh                    sh7724_generic_defconfig    gcc-16.2.0
-sh                         sh7785lcr_defconfig    gcc-16.2.0
-sh                             titan_defconfig    clang-24
-sparc                             alldefconfig    gcc-16.2.0
-sparc                              allnoconfig    clang-24
-sparc                                defconfig    gcc-16.2.0
-sparc                 randconfig-1000-20261028    gcc-12
-sparc                 randconfig-1000-20261029    clang-24
-sparc                 randconfig-1001-20261028    gcc-12
-sparc                 randconfig-1001-20261029    clang-24
-sparc                        sparc64_defconfig    clang-24
-sparc64                           allmodconfig    clang-20
-sparc64                              defconfig    gcc-14
-sparc64               randconfig-1000-20261028    gcc-12
-sparc64               randconfig-1000-20261029    clang-24
-sparc64               randconfig-1001-20261028    gcc-12
-sparc64               randconfig-1001-20261029    clang-24
-um                                alldefconfig    gcc-16.2.0
-um                                allmodconfig    clang-17
-um                                 allnoconfig    clang-24
-um                                allyesconfig    gcc-16.2.0
-um                                   defconfig    gcc-14
-um                              i386_defconfig    gcc-14
-um                    randconfig-1000-20261028    gcc-12
-um                    randconfig-1000-20261029    clang-24
-um                    randconfig-1001-20261028    gcc-12
-um                    randconfig-1001-20261029    clang-24
-um                            x86_64_defconfig    gcc-14
-x86_64                            allmodconfig    clang-22
-x86_64                             allnoconfig    clang-24
-x86_64                            allyesconfig    clang-22
-x86_64      buildonly-randconfig-1000-20261028    clang-22
-x86_64      buildonly-randconfig-1000-20261029    gcc-14
-x86_64      buildonly-randconfig-1001-20261028    clang-22
-x86_64      buildonly-randconfig-1001-20261029    gcc-14
-x86_64      buildonly-randconfig-1002-20261028    clang-22
-x86_64      buildonly-randconfig-1002-20261029    gcc-14
-x86_64      buildonly-randconfig-1003-20261028    clang-22
-x86_64      buildonly-randconfig-1003-20261029    gcc-14
-x86_64      buildonly-randconfig-1004-20261028    clang-22
-x86_64      buildonly-randconfig-1004-20261029    gcc-14
-x86_64      buildonly-randconfig-1005-20261028    clang-22
-x86_64      buildonly-randconfig-1005-20261029    gcc-14
-x86_64                               defconfig    gcc-14
-x86_64                                   kexec    clang-22
-x86_64                randconfig-1000-20261028    clang-22
-x86_64                randconfig-1000-20261029    clang-22
-x86_64                randconfig-1001-20261028    clang-22
-x86_64                randconfig-1001-20261029    clang-22
-x86_64                randconfig-1002-20261028    clang-22
-x86_64                randconfig-1002-20261029    clang-22
-x86_64                randconfig-1003-20261028    clang-22
-x86_64                randconfig-1003-20261029    clang-22
-x86_64                randconfig-1004-20261028    clang-22
-x86_64                randconfig-1004-20261029    clang-22
-x86_64                randconfig-1005-20261028    clang-22
-x86_64                randconfig-1005-20261029    clang-22
-x86_64                randconfig-1006-20261028    gcc-14
-x86_64                randconfig-1006-20261029    gcc-14
-x86_64                randconfig-1007-20261028    gcc-14
-x86_64                randconfig-1007-20261029    gcc-14
-x86_64                randconfig-1008-20261028    gcc-14
-x86_64                randconfig-1008-20261029    gcc-14
-x86_64                randconfig-1009-20261028    gcc-14
-x86_64                randconfig-1009-20261029    gcc-14
-x86_64                randconfig-1010-20261028    gcc-14
-x86_64                randconfig-1010-20261029    gcc-14
-x86_64                randconfig-1011-20261028    gcc-14
-x86_64                randconfig-1011-20261029    gcc-14
-x86_64                randconfig-1012-20261028    gcc-12
-x86_64                randconfig-1012-20261029    clang-22
-x86_64                randconfig-1013-20261028    gcc-12
-x86_64                randconfig-1013-20261029    clang-22
-x86_64                randconfig-1014-20261028    gcc-12
-x86_64                randconfig-1014-20261029    clang-22
-x86_64                randconfig-1015-20261028    gcc-12
-x86_64                randconfig-1015-20261029    clang-22
-x86_64                randconfig-1016-20261028    gcc-12
-x86_64                randconfig-1016-20261029    clang-22
-x86_64                randconfig-1017-20261028    gcc-12
-x86_64                randconfig-1017-20261029    clang-22
-x86_64                                rhel-9.4    clang-22
-x86_64                            rhel-9.4-bpf    gcc-14
-x86_64                           rhel-9.4-func    clang-22
-x86_64                     rhel-9.4-kselftests    clang-22
-x86_64                          rhel-9.4-kunit    gcc-14
-x86_64                            rhel-9.4-ltp    gcc-14
-x86_64                           rhel-9.4-rust    clang-22
-xtensa                             allnoconfig    clang-24
-xtensa                            allyesconfig    clang-20
-xtensa                   cadence_csp_defconfig    clang-24
-xtensa                randconfig-1000-20261028    gcc-12
-xtensa                randconfig-1000-20261029    clang-24
-xtensa                randconfig-1001-20261028    gcc-12
-xtensa                randconfig-1001-20261029    clang-24
+Multiple attempts have been made to solve this over the past 2 years:
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+March 2024: Workaround using module parameters [1]
+  - Required manually copying MSI values from host to VM
+  - Rejected by Johannes Berg as too manual, suggested VMM solution
+
+August 2024: QEMU + kernel solution by Alex Williamson [2]
+  - Kernel disables MSI virtualization, QEMU intercepts config writes
+  - Uses brute force pattern matching to infer MSI data writes
+  - Stuck as RFC - no progress in 14+ months
+
+No action from Qualcomm: Despite multiple reports [4], no vendor
+solution.
+
+The PCI reset support for these devices has already landed in mainline
+(commit f8522a518e59 "PCI: Add device-specific reset for Qualcomm
+WCN6855/WCN7850 WLAN") [3], solving the device reset path for VFIO
+passthrough. This MSI series is the remaining piece, with both in
+place, these Qualcomm WiFi devices would be fully operational in VMs
+for the first time.
+
+v1/v2 explored passing the host MSI address through VFIO extended
+config space. Jason Gunthorpe pointed out [5] that a guest-initiated
+approach via KVM paravirtualization would be cleaner, avoid VFIO
+internal coupling, and generalize better to other devices with
+similar firmware behavior. The proposal here is a new guest module
+that tries to address this by creating a custom MSI domain that
+provides the physical host values instead.
+
+v3 implements this as a 3-piece kernel-only solution:
+
+  1. Host side (KVM + VFIO): A new KVM hypercall
+     (KVM_HC_PCI_MSI_ALLOC) dispatches to a VFIO handler that reads
+     the host's physical MSI address/data for the passthrough device.
+     Connected via function pointer in struct kvm to avoid hard
+     subsystem dependencies.
+
+  2. Guest side (PCI controller): A new MSI IRQ domain module
+     (pci-kvm-msi, taking pci-hyperv.c as a reference as Jason
+     suggested) that intercepts MSI composition for matched devices.
+     In order to sync host initialization with the guest driver, it
+     provides kvm_pci_msi_wait_ready() to poll the hypercall until the
+     host MSI is configured, and kvm_pci_msi_get_address() to read
+     cached values.
+
+  3. Driver changes (ath11k, ath12k): Guarded with
+     IS_ENABLED(CONFIG_PCI_KVM_MSI_DOMAIN). Call wait_ready after
+     msi_enable in power_up, then use get_address where needed.
+     Zero overhead on baremetal (kvm_para_available() returns false).
+
+The solution requires no QEMU changes. Tested with WCN6855 (ath11k),
+WCN7850 (ath12k), and QCN9274 (ath12k) on host with KVM/VFIO
+passthrough, all three create fully working WiFi interfaces in
+the guest VM.
+
+Patches:
+  1-3: Core infrastructure (VFIO helpers, KVM handler, guest module)
+  4-5: ath11k support (link retry + KVM MSI integration)
+  6-7: ath12k support (link retry + KVM MSI integration)
+    8: QCN9274 device support (reset quirks + KVM MSI ID)
+
+[1] https://lore.kernel.org/all/20240322104912.94811-1-jtornosm@redhat.com/
+[2] https://lore.kernel.org/kvm/20240812170014.1583783-1-alex.williamson@redhat.com/
+[3] https://lore.kernel.org/all/20261005105436.83962-1-jtornosm@redhat.com/
+[4] https://lore.kernel.org/all/fc6bd06f-d52b-4dee-ab1b-4bb845cc0b95@quicinc.com/
+[5] https://lore.kernel.org/all/20261014150047.GO14213@ziepe.ca/
+
+---
+v3: KVM paravirtualization approach based on Jason Gunthorpe feedback.
+    New hypercall + guest MSI domain module replaces VFIO variant
+    driver.
+    Added QCN9274 support.
+v2: https://lore.kernel.org/all/20261014142606.418972-1-jtornosm@redhat.com/
+v1: https://lore.kernel.org/all/20260930140833.576941-1-jtornosm@redhat.com/
+
+Jose Ignacio Tornos Martinez (8):
+  vfio: add helper to find PCI device by vendor/device ID
+  KVM: add PCI MSI hypercall for VFIO passthrough
+  PCI: add KVM MSI domain guest module
+  ath11k: add PCIe link recovery retry
+  ath11k: use KVM MSI domain for VM passthrough
+  ath12k: add PCIe link recovery retry
+  ath12k: use KVM MSI domain for VM passthrough
+  PCI: add QCN9274 to reset quirks and KVM MSI domain
+
 
