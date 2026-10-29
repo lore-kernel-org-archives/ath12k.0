@@ -2,14 +2,14 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3BF3B606A31A
-	for <ath12k@archiver.kernel.org>; Thu, 29 Oct 2026 16:38:55 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EA41D606A325
+	for <ath12k@archiver.kernel.org>; Thu, 29 Oct 2026 16:39:03 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ky3SWI2R;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=kCNdqA3m;
-	dkim=pass (1024-bit key, unprotected) header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=VLjBCXnt;
-	dkim=neutral header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=eKRjPkAT;
-	dkim=neutral header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=VLjBCXnt
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=llXWBqp4;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=oloUDt64;
+	dkim=pass (1024-bit key, unprotected) header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=hLwF+uYk;
+	dkim=neutral header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=hLwF+uYk;
+	dkim=neutral header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=hLwF+uYk
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:content-type:
@@ -17,82 +17,82 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=4UgMdOKrtB64nXpcXBIKe/cthT0pJUT9b78xEaySiIs=; b=ky3SWI2RSJpERkw7RKNKgvD7/p
-	EHniKpgpw+e+4Lim8X5wQle7JQfufLA7T+qfN0eenNgUOTEgazZi2jKf0hHeayyoJeexifMv6uiXC
-	H++7FN5d1SuvefqosqcwD6N/5QxEMVTTiLChZXnc3+TlFilOxejwXQz6gOJ5tQCEq9nIaZgLIWh0i
-	uoFA0rT3SCtdWBnZ9SGdeHBTsphBiz3WaAT/yuULdqqTADPEh2o2WJoldiRyfF5ZRQ9kOcR2xuQ8s
-	exQwA58z6n1ePokIren7FhnS7InA+zupuE/wQted+5Yik4qdn8OkG1T1BEpdtuT6IOEeraYp2Sl8j
-	hpgA4qxg==;
+	bh=bNMG+lIhxZcEUu3kzAXgyCfzh9SPkmetdc8XLLC9LrM=; b=llXWBqp4zghiyNPNqEEIoIhKp4
+	5b9+lVXXNOXkeSyi6W+F7hi254oe6SyW3pdEIWpbdPRGtdQ9Gbh7ndUqDcfVB3vXzrp8IPe+JFUuR
+	JrBBTrhyVa38x9DOQjItVxuC1lfFT6n29FsvgAbFlEG06RETcNO2SHZVxCDGSL2WIscJ8UwGn1aT8
+	LFoK6Wdbsyp/3YkduvGbyO0IOezXgdMjbLEm8sxqHVQnp4BhftoEQKj9A2IKqPn366cX5K3YFz+GX
+	mZmdpt3t/IZwgESIi5NCqRcdsp0nf5QFCXLJ8j6Lm1WzxhGyx9zdy0Pu05nEoimi3/CIFkh+AS59A
+	RDQNOjeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMT9S-00000009q2W-3t7T;
-	Thu, 29 Oct 2026 16:38:54 +0000
+	id 1xMT9b-00000009q9u-2d3n;
+	Thu, 29 Oct 2026 16:39:03 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMT9R-00000009q1P-2vy0
+	id 1xMT9a-00000009q7k-0rep
 	for ath12k@bombadil.infradead.org;
-	Thu, 29 Oct 2026 16:38:53 +0000
+	Thu, 29 Oct 2026 16:39:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=content-type:Content-Transfer-Encoding
 	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Sender:Reply-To:Content-ID:Content-Description;
-	bh=4UgMdOKrtB64nXpcXBIKe/cthT0pJUT9b78xEaySiIs=; b=kCNdqA3mYIDhZvoe3CaCZIX5+2
-	Z2HD2z3gb6srOKDr57CcUGAWJyNbz8CVn1pR+fRWjYL5YKAxT7EL6qjrVvwMKBeYGgmNpE14A/JGr
-	nYtjfT7hpfqDhCnkICmW5daktHFsxDzheE+buMid1SrRyDdaBVJ38xmb1/qV5ssmFT8y9vF0B7Ljm
-	70is7PAqsNHPNA+csLlX9AGzD5YqkB/T4M6qVC2T/ltJP3s9ZIV49ORVYMcmcpuMGE6stZENrcZvE
-	TW+WVkqLyfkOqIUt5fWaYBvdDlx06LQYr4A7VlpK3Ku77isgwRwvRPWfLua2OyuLURyfJQI5+Nd0M
-	k5yM3FNw==;
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	bh=bNMG+lIhxZcEUu3kzAXgyCfzh9SPkmetdc8XLLC9LrM=; b=oloUDt64PPirtpRbPYXPrXtWOJ
+	BvnBOXxFVj3682G2VVskkTk+ByzQL9KS6GabHzBhqyOIaXLZ7LTriMjaP6lr8w+7Z5oHIpGjj+Jdc
+	HdmNcbVOTR20bDY8l4iuGNVMRfFeKYjSVf19qUS8812ljjawh0zwKS2TO2DQ+8QwmDHRYjFkj9Mh+
+	K56cXe6r+wnYfBXWbtRYg0KDuV3AcxB/HRUvhZ6x+GsUxvwW6g55qs3o1WwW0VhtsqNu37IqvttDJ
+	E6f0bo+tnR20Wbif5OhaGSuWn39SpxokWTINtBDi3CsXgYqdmYcVIvq2z3D45AZj/RngHEdqVkTUF
+	K9b1g1TA==;
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by desiato.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMT9O-0000000HChX-2GHz
+	id 1xMT9V-0000000HCiv-2XJB
 	for ath12k@lists.infradead.org;
-	Thu, 29 Oct 2026 16:38:52 +0000
+	Thu, 29 Oct 2026 16:39:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1793291928;
+	s=mimecast20190719; t=1793291936;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=4UgMdOKrtB64nXpcXBIKe/cthT0pJUT9b78xEaySiIs=;
-	b=VLjBCXntv6LaWoJ4uKFfWREfOfqgYrVOF8EexioL9NW4w+APQNvZDkPFRt8N2mRsnZpAo+
-	vifVL96zTf2WWnqlyM/KoEpACRlJTuLnzZ+iazqMXGJc2ZiWMMHHAcnsUMbadR7kOHkmwM
-	kYs43bvKWD5XSOVAVDTtSfuNU+Nt/zo=
+	bh=bNMG+lIhxZcEUu3kzAXgyCfzh9SPkmetdc8XLLC9LrM=;
+	b=hLwF+uYkcqocREQd88lP3tfl4rvjIdTZj8Icd0fbl13c58LLDobsOCAuohshOo9XluvVk/
+	qM9tE9D8dZZzbPJwLXIXe2GJBV253/9ExhYcFnOCEIIP76F5y2hMmLIUI6ZUgfMz0nMByz
+	hIS1ZHmUZ10JuVckynoPhacRXIIfQZ4=
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1793291929;
+	s=mimecast20190719; t=1793291936;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=4UgMdOKrtB64nXpcXBIKe/cthT0pJUT9b78xEaySiIs=;
-	b=eKRjPkAT5m+b34PiIlnXEBjVyyBsLehtvfnGmebmHqFML8+XSI5Ot5SVb29VMJKTSbvv2Z
-	ngw1+BRN6qldvFQbhzchuJyR+JoMtkwZkM5Gdsy5Zge0Tnd7ziYICwqZRb8g+hah3yFAf+
-	1Xpowzj8ytVJGXtNQbDlje5KlVoyqfU=
+	bh=bNMG+lIhxZcEUu3kzAXgyCfzh9SPkmetdc8XLLC9LrM=;
+	b=hLwF+uYkcqocREQd88lP3tfl4rvjIdTZj8Icd0fbl13c58LLDobsOCAuohshOo9XluvVk/
+	qM9tE9D8dZZzbPJwLXIXe2GJBV253/9ExhYcFnOCEIIP76F5y2hMmLIUI6ZUgfMz0nMByz
+	hIS1ZHmUZ10JuVckynoPhacRXIIfQZ4=
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1793291928;
+	s=mimecast20190719; t=1793291936;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=4UgMdOKrtB64nXpcXBIKe/cthT0pJUT9b78xEaySiIs=;
-	b=VLjBCXntv6LaWoJ4uKFfWREfOfqgYrVOF8EexioL9NW4w+APQNvZDkPFRt8N2mRsnZpAo+
-	vifVL96zTf2WWnqlyM/KoEpACRlJTuLnzZ+iazqMXGJc2ZiWMMHHAcnsUMbadR7kOHkmwM
-	kYs43bvKWD5XSOVAVDTtSfuNU+Nt/zo=
-Received: from mx-prod-mc-08.mail-002.prod.us-west-2.aws.redhat.com
+	bh=bNMG+lIhxZcEUu3kzAXgyCfzh9SPkmetdc8XLLC9LrM=;
+	b=hLwF+uYkcqocREQd88lP3tfl4rvjIdTZj8Icd0fbl13c58LLDobsOCAuohshOo9XluvVk/
+	qM9tE9D8dZZzbPJwLXIXe2GJBV253/9ExhYcFnOCEIIP76F5y2hMmLIUI6ZUgfMz0nMByz
+	hIS1ZHmUZ10JuVckynoPhacRXIIfQZ4=
+Received: from mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com
  (ec2-35-165-154-97.us-west-2.compute.amazonaws.com [35.165.154.97]) by
  relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
- cipher=TLS_AES_256_GCM_SHA384) id us-mta-573-3zgHXh3SP9WTJ94dViTHCQ-1; Thu,
- 29 Oct 2026 12:38:43 -0400
-X-MC-Unique: 3zgHXh3SP9WTJ94dViTHCQ-1
-X-Mimecast-MFC-AGG-ID: 3zgHXh3SP9WTJ94dViTHCQ_1793291921
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-428-eg23MM3yOHGLfjy1yaOlzQ-1; Thu,
+ 29 Oct 2026 12:38:53 -0400
+X-MC-Unique: eg23MM3yOHGLfjy1yaOlzQ-1
+X-Mimecast-MFC-AGG-ID: eg23MM3yOHGLfjy1yaOlzQ_1793291930
 Received: from mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.12])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mx-prod-mc-08.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 613891809C8F;
-	Thu, 29 Oct 2026 16:38:41 +0000 (UTC)
+	by mx-prod-mc-06.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 999A9180B5F2;
+	Thu, 29 Oct 2026 16:38:50 +0000 (UTC)
 Received: from jtornosm-thinkpadp1gen7.rmtes.csb (headnet04.pony-001.prod.iad2.dc.redhat.com [10.2.32.116])
-	by mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 30FD81955F0A;
-	Thu, 29 Oct 2026 16:38:37 +0000 (UTC)
+	by mx-prod-int-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 57B161955F0A;
+	Thu, 29 Oct 2026 16:38:46 +0000 (UTC)
 From: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
 To: jgg@ziepe.ca,
 	alex@shazbot.org,
@@ -114,21 +114,21 @@ Cc: johannes@sipsolutions.net,
 	ath12k@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
-Subject: [PATCH v3 7/8] ath12k: use KVM MSI domain for VM passthrough
-Date: Thu, 29 Oct 2026 17:37:12 +0100
-Message-ID: <20261029163713.1366077-8-jtornosm@redhat.com>
+Subject: [PATCH v3 8/8] PCI: add QCN9274 to reset quirks and KVM MSI domain
+Date: Thu, 29 Oct 2026 17:37:13 +0100
+Message-ID: <20261029163713.1366077-9-jtornosm@redhat.com>
 In-Reply-To: <20261029163713.1366077-1-jtornosm@redhat.com>
 References: <20261029163713.1366077-1-jtornosm@redhat.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 3.0 on 10.30.177.12
-X-Mimecast-MFC-PROC-ID: gZOpybCR-xOk8DSKSu1poWb_eZFzefmc8LIRE8XTPI0_1793291921
+X-Mimecast-MFC-PROC-ID: R-XQzqka5zpbqVAB0Nrw8gYzuiAdODqcdSqz3KQO91c_1793291930
 X-Mimecast-Originator: redhat.com
 Content-Transfer-Encoding: 8bit
 content-type: text/plain; charset="US-ASCII"; x-default=true
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261029_163850_838339_BFD5ACA8 
-X-CRM114-Status: GOOD (  12.46  )
+X-CRM114-CacheID: sfid-20261029_163858_195493_2A07B8BF 
+X-CRM114-Status: GOOD (  10.84  )
 X-Spam-Score: -0.9 (/)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -148,85 +148,60 @@ X-Spam-Status: No, score=-15.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The Qualcomm ath12k firmware programs MSI addresses directly into
-device BAR registers for CE/SRNG ring interrupt delivery, bypassing
-the standard PCI config MSI path managed by QEMU/VFIO. In a VM, the
-firmware receives the guest virtual APIC address instead of the host
-IRTE address, causing DMAR faults and non-functional interrupts.
+In order to have Qualcomm QCN9274 (PCI ID 17cb:1109) completely
+operational from VM environments, add to:
 
-When CONFIG_PCI_KVM_MSI_DOMAIN is enabled, use the KVM PCI MSI domain
-synchronization functions:
+1. quirk_no_bus_reset: Disable broken bus reset, as with WCN6855 and
+   WCN7850.
 
-1. In power_up, after msi_enable, call kvm_pci_msi_wait_ready() to
-   retrieve and cache the host physical MSI address via KVM hypercall.
+2. pci_dev_specific_reset_methods: Use the existing
+   reset_qualcomm_wlan function. Unlike WCN7850, the QCN9274 is not
+   initialized at all without a valid device-specific reset method.
 
-2. In ath12k_pci_get_msi_address(), call kvm_pci_msi_get_address() to
-   return the cached host MSI address instead of reading from PCI
-   config (which contains the guest virtual address in a VM).
-
-Unlike ath11k which caches MSI address once during power_up, ath12k
-reads MSI address on-the-fly via get_msi_address() each time rings
-are configured. The kvm_pci_msi_get_address() function provides the
-cached host values from a previous successful wait_ready call.
-
-On baremetal, if CONFIG_PCI_KVM_MSI_DOMAIN is not enabled the code is
-compiled out and the behavior is identical to the original. If
-CONFIG_PCI_KVM_MSI_DOMAIN is enabled (e.g. distribution kernels), the
-KVM MSI functions detect baremetal at runtime and return immediately,
-preserving the original behavior with no side effects.
+3. kvm_msi_devids in pci-kvm-msi: Enable KVM MSI domain support for
+   VFIO passthrough to VMs.
 
 Signed-off-by: Jose Ignacio Tornos Martinez <jtornosm@redhat.com>
 ---
 v3: new
 v2: https://lore.kernel.org/all/20261011074514.515894-1-jtornosm@redhat.com/
 
- drivers/net/wireless/ath/ath12k/pci.c | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ drivers/pci/controller/pci-kvm-msi.c | 1 +
+ drivers/pci/quirks.c                 | 2 ++
+ 2 files changed, 3 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index f7879fb48d32..dbd960f88d38 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -8,6 +8,9 @@
- #include <linux/interrupt.h>
- #include <linux/msi.h>
- #include <linux/pci.h>
-+#if IS_ENABLED(CONFIG_PCI_KVM_MSI_DOMAIN)
-+#include <linux/pci-kvm-msi.h>
-+#endif
- #include <linux/time.h>
- #include <linux/vmalloc.h>
+diff --git a/drivers/pci/controller/pci-kvm-msi.c b/drivers/pci/controller/pci-kvm-msi.c
+index e935e5d9846d..b008e73fedce 100644
+--- a/drivers/pci/controller/pci-kvm-msi.c
++++ b/drivers/pci/controller/pci-kvm-msi.c
+@@ -336,6 +336,7 @@ static int kvm_msi_create_domain(struct pci_dev *ref_dev)
+ static const struct pci_device_id kvm_msi_devids[] = {
+ 	{ PCI_DEVICE(PCI_VENDOR_ID_QCOM, 0x1103) },	/* WCN6855 */
+ 	{ PCI_DEVICE(PCI_VENDOR_ID_QCOM, 0x1107) },	/* WCN7850 */
++	{ PCI_DEVICE(PCI_VENDOR_ID_QCOM, 0x1109) },	/* QCN9274 */
+ 	{ }
+ };
  
-@@ -1082,6 +1085,11 @@ void ath12k_pci_get_msi_address(struct ath12k_base *ab, u32 *msi_addr_lo,
- 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
- 	struct pci_dev *pci_dev = to_pci_dev(ab->dev);
+diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+index 7f1f47ea2ee4..89d82675a76c 100644
+--- a/drivers/pci/quirks.c
++++ b/drivers/pci/quirks.c
+@@ -3818,6 +3818,7 @@ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_ATHEROS, 0x0034, quirk_no_bus_reset);
+ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_ATHEROS, 0x003e, quirk_no_bus_reset);
+ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_QCOM, 0x1103, quirk_no_bus_reset); /* WCN6855 */
+ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_QCOM, 0x1107, quirk_no_bus_reset); /* WCN7850 */
++DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_QCOM, 0x1109, quirk_no_bus_reset); /* QCN9274 */
+ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_QCOM, 0x0308, quirk_no_bus_reset); /* SDX62/SDX65 */
  
-+#if IS_ENABLED(CONFIG_PCI_KVM_MSI_DOMAIN)
-+	if (kvm_pci_msi_get_address(pci_dev, msi_addr_lo, msi_addr_hi, NULL))
-+		return;
-+#endif
-+
- 	pci_read_config_dword(pci_dev, pci_dev->msi_cap + PCI_MSI_ADDRESS_LO,
- 			      msi_addr_lo);
+ /*
+@@ -4398,6 +4399,7 @@ static const struct pci_dev_reset_methods pci_dev_reset_methods[] = {
+ 	{ PCI_VENDOR_ID_QCOM, 0x0308, reset_qualcomm_modem }, /* SDX62/SDX65 modems */
+ 	{ PCI_VENDOR_ID_QCOM, 0x1103, reset_qualcomm_wlan },  /* WCN6855 WLAN */
+ 	{ PCI_VENDOR_ID_QCOM, 0x1107, reset_qualcomm_wlan },  /* WCN7850 WLAN */
++	{ PCI_VENDOR_ID_QCOM, 0x1109, reset_qualcomm_wlan },  /* QCN9274 WLAN */
+ 	{ 0 }
+ };
  
-@@ -1485,6 +1493,10 @@ int ath12k_pci_power_up(struct ath12k_base *ab)
- 
- 	ath12k_pci_msi_enable(ab_pci);
- 
-+#if IS_ENABLED(CONFIG_PCI_KVM_MSI_DOMAIN)
-+	kvm_pci_msi_wait_ready(ab_pci->pdev, 500);
-+#endif
-+
- 	if (ath12k_fw_feature_supported(ab, ATH12K_FW_FEATURE_MULTI_QRTR_ID))
- 		ath12k_pci_update_qrtr_node_id(ab);
- 
-@@ -1886,3 +1898,6 @@ EXPORT_SYMBOL(ath12k_pci_unregister_driver);
- /* firmware files */
- MODULE_FIRMWARE(ATH12K_FW_DIR "/QCN9274/hw2.0/*");
- MODULE_FIRMWARE(ATH12K_FW_DIR "/WCN7850/hw2.0/*");
-+#if IS_ENABLED(CONFIG_PCI_KVM_MSI_DOMAIN)
-+MODULE_SOFTDEP("pre: pci-kvm-msi");
-+#endif
 -- 
 2.56.0
 
