@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7277B606A324
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 756BD606A326
 	for <ath12k@archiver.kernel.org>; Sun,  1 Nov 2026 18:38:08 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=5DFPIbUm;
-	dkim=pass (2048-bit key, unprotected) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=M/ICWCRt
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=b7Rs6HeJ;
+	dkim=pass (2048-bit key, unprotected) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=dspmhVuL
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
@@ -14,61 +14,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=kMLoBvUKTcXy4bbLhXLiP54e/Vqd6DZTNTdW+ZuAGtY=; b=5DFPIbUm+5IlZ6xBDgupmO4NQ3
-	V6gQJ5B52mO6xGYRHoWcY8Qt01z4fRyEe8AsXNdwpuZrZ3Ju6FldnjUCDS8uxUHBsCIr8gTx4SInD
-	fJQaqGkaeoBZYBgmrRKX06wWqQQIdeBZSp5jXxT0KxJc+7M9hrBjdzs/YK9gx4X4IHrPYCri8AoLP
-	MzdFSHxsORgm3BjJ/dIHGRBGY00wy72TwsoUxTkUyhm9lMXoUBwFQ5An+j/xd8SPtDHZ8Eh8li7JI
-	HU9Kic9abLWM9nqQSJ/kXDOdUXxRqt5YKEoDrOU5C65oaDrZcUTxI9TF6F8fiSZ6pIVBa8lpEwNsP
-	5Qdu9RVA==;
+	bh=MmIrKfADcuFDTd1bOoj+PqBcqYM9G4aR2aVABUg4OWw=; b=b7Rs6HeJV8oGlpr0kiL8fYYVow
+	m6RXSCbuOhbdkN5aAW0RRnufopd/cSnWLkBUIg7Y/VOrBD/Dlp8v4cLonaSfi16PznhP519AS4oTe
+	ATr4I3PGPsjcOGvVUfG3yNWpJoQHzSuEubMQx9wRKH2JKgDdRxsUk3UjdK44fBkBI5f5ZPNxBvEhO
+	xgtERG52mhbikfwEgLFUeRdBmtgbUMJVfv1RuA9u3lcRF6SY3GEyt71Cm/i8DKOkSB6WHZYx57U7X
+	joYs2bEgyYpFXXDCz3jdiXN09izS949TsL0gQaQgkf8fy27mIwTrNqmWiwkl12u/7m0i9c1Hoexu9
+	V0sSuhVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNaRT-0000000ElS0-1k5o;
-	Sun, 01 Nov 2026 18:38:07 +0000
+	id 1xNaRS-0000000ElRo-1RFQ;
+	Sun, 01 Nov 2026 18:38:06 +0000
 Received: from mgamail.intel.com ([198.175.65.12])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNaRR-0000000ElQx-1G2K
+	id 1xNaRP-0000000ElQx-3iM2
 	for ath12k@lists.infradead.org;
-	Sun, 01 Nov 2026 18:38:06 +0000
+	Sun, 01 Nov 2026 18:38:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1793558285; x=1825094285;
+  t=1793558284; x=1825094284;
   h=date:from:to:cc:subject:message-id;
-  bh=shk1Kc+rOuqd1RlVBB/5A+vzm7emwdZZtox2qJcT7UU=;
-  b=M/ICWCRtMKVqfpTV0TWZnaQFpVrS+YlO+O7jmOZ2wak5bLbCUQCaQLld
-   TYaOTbEfx0kK7VRbKjYs1Gs3/jEN3y2eso8DB84XGCEVZMgQ60AhWLHTj
-   JE5cRz/BpPccQmdmKDI8gkLVssT5rv7vkAL+Og3NusLPoFCrd1qX7yvQt
-   i210hV+LjYvZZQjNdLVAPjeQXnPAYM/9y3lQIrDveBrXm93ssfr+caHwJ
-   9Rw6LUmCIsibfzr23Ovv61IhXDsr8tEfgMLI5BJzwXREVoeRCRLX5YS9y
-   NjyC9ggrJuwDdLB4YmUGa6wnHUB/GtfBalhQNZI3SJHA2g/NUF/+AhwWM
-   w==;
-X-CSE-ConnectionGUID: 0awnRK3aRoiChSqTpBhjGQ==
-X-CSE-MsgGUID: 91WN5f0bTTaoMnzXnLqZsg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11953"; a="2128253"
+  bh=5dBGjefX5tQWeWA0ORKRFgiQ5VueMrBbOzc+yaEa8Sk=;
+  b=dspmhVuLs7qlxX7d3cHN1RQUp01ur2/CM6m3xjxy+70VL9rCefaOjImK
+   /evpsQyHLg+HO1GKNI/2TN1vCTfwPmEiPabuOyljZZO+aznxNwUNgHfUf
+   dgxNmbnJ9NQzO4uOqoX44krMug9h3Am87+cUYQaOSlnQ2XUeBAS7Zf32i
+   XSam7dRNRLW5J9GiyZ0FL0mBziL/wipzd7A4X1UpSJGgYuPDbRFMXZo+I
+   7MGY/6bX0JSHPG8wgZSij1NAkPXKFMTLMiGYyQWu0l7f+nfzhBnLx2S6S
+   DdGDkwPblr4AgL1tt92vylFc/ajW4mCxCwNM+rS9jEvrQml1js2v+Sd7+
+   g==;
+X-CSE-ConnectionGUID: w2myyY3FRiqA61ojsxUQQg==
+X-CSE-MsgGUID: 49pkpvp8TyepvQ3Z0dbBWA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11953"; a="2128251"
 X-IronPort-AV: E=Sophos;i="6.27,190,1787036400"; 
-   d="scan'208";a="2128253"
+   d="scan'208";a="2128251"
 Received: from fmviesa002.fm.intel.com ([10.60.135.142])
   by orvoesa104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Nov 2026 10:38:03 -0800
-X-CSE-ConnectionGUID: dIMlY4MSRReHH/V4Cunj/w==
-X-CSE-MsgGUID: Mo+UWVOOQ3e/p7KiLtaKUg==
+X-CSE-ConnectionGUID: X3TIqKokRQ2Q3YynQZt0uA==
+X-CSE-MsgGUID: ybAO8KNfRyivWIHvA+JNsw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.27,190,1787036400"; 
-   d="scan'208";a="6070909"
+   d="scan'208";a="6070907"
 Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
   by fmviesa002.fm.intel.com with ESMTP; 01 Nov 2026 10:38:01 -0800
 Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
 	(envelope-from <lkp@intel.com>)
-	id 1xNaRL-00000000fBA-131g;
+	id 1xNaRL-00000000fB6-0tNh;
 	Sun, 01 Nov 2026 18:37:59 +0000
-Date: Mon, 02 Nov 2026 02:37:50 +0800
+Date: Mon, 02 Nov 2026 02:37:53 +0800
 From: kernel test robot <lkp@intel.com>
 To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Cc: ath12k@lists.infradead.org
-Subject: [ath:main] BUILD SUCCESS
- 090ef659b1f31fe852e956b0ebf274cc7d967cb7
-Message-ID: <20261102023750.gXuF16rw-lkp@intel.com>
+Subject: [ath:main-pending] BUILD SUCCESS
+ 9b5dc6d146502dfb40f8bd994064da4fdbf054e8
+Message-ID: <20261102023753.02awntxW-lkp@intel.com>
 User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261101_103805_394188_0467F37F 
+X-CRM114-CacheID: sfid-20261101_103803_980091_28BD5E57 
 X-CRM114-Status: UNSURE (   4.52  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -4.4 (----)
@@ -90,8 +90,8 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 X-Archived-By: <archiver.kernel.org>
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git main
-branch HEAD: 090ef659b1f31fe852e956b0ebf274cc7d967cb7  MIPS: generic: Remove undefined image 'ramdisk'
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git main-pending
+branch HEAD: 9b5dc6d146502dfb40f8bd994064da4fdbf054e8  Merge branch 'pending' into main-pending
 
 elapsed time: 2555m
 
