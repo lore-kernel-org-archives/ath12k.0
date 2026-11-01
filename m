@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 756BD606A326
-	for <ath12k@archiver.kernel.org>; Sun,  1 Nov 2026 18:38:08 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EE671606A32C
+	for <ath12k@archiver.kernel.org>; Sun,  1 Nov 2026 18:39:06 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=b7Rs6HeJ;
-	dkim=pass (2048-bit key, unprotected) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=dspmhVuL
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=K6m95+ny;
+	dkim=pass (2048-bit key, unprotected) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=fZu7qx1o
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
@@ -14,62 +14,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=MmIrKfADcuFDTd1bOoj+PqBcqYM9G4aR2aVABUg4OWw=; b=b7Rs6HeJV8oGlpr0kiL8fYYVow
-	m6RXSCbuOhbdkN5aAW0RRnufopd/cSnWLkBUIg7Y/VOrBD/Dlp8v4cLonaSfi16PznhP519AS4oTe
-	ATr4I3PGPsjcOGvVUfG3yNWpJoQHzSuEubMQx9wRKH2JKgDdRxsUk3UjdK44fBkBI5f5ZPNxBvEhO
-	xgtERG52mhbikfwEgLFUeRdBmtgbUMJVfv1RuA9u3lcRF6SY3GEyt71Cm/i8DKOkSB6WHZYx57U7X
-	joYs2bEgyYpFXXDCz3jdiXN09izS949TsL0gQaQgkf8fy27mIwTrNqmWiwkl12u/7m0i9c1Hoexu9
-	V0sSuhVw==;
+	bh=EqPT1u98rQOXP6iUhWVVdvChd8mjCupahiqOfX9Wzrw=; b=K6m95+nyVPM7IkpFEmnNeWENXZ
+	jcvWxq/HyDhNbMCGqitK//OGTWiVfHlQ9tzvV5MfYZZWqmvxOX3hbswoSbpfUnyRINLCvhA9TPMbR
+	vo3ySovrQGcMCvxpAOiIX2DYik/y1omHPc0EpfJWjLYb6JVXLFahGHTWm0sbYqx83KsIjy+w3JJil
+	wZkMNCJpcOB7hyu6inq0UP+PsJI/YKjrduowOQkzRaKoEUOUTx91DGspxs+80Mnae/XxDdMcM7MCT
+	j0n3shMp/ISrkonTelGkLOqdti6t8YoHxE1RgTRi7hjuj6gUyy9Q2BwsxfxLjdUepe/zTtGsuIUv7
+	4UUYQDSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNaRS-0000000ElRo-1RFQ;
-	Sun, 01 Nov 2026 18:38:06 +0000
-Received: from mgamail.intel.com ([198.175.65.12])
+	id 1xNaSQ-0000000Eln0-2wj9;
+	Sun, 01 Nov 2026 18:39:06 +0000
+Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNaRP-0000000ElQx-3iM2
+	id 1xNaSO-0000000Elmg-13GV
 	for ath12k@lists.infradead.org;
-	Sun, 01 Nov 2026 18:38:05 +0000
+	Sun, 01 Nov 2026 18:39:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1793558284; x=1825094284;
+  t=1793558344; x=1825094344;
   h=date:from:to:cc:subject:message-id;
-  bh=5dBGjefX5tQWeWA0ORKRFgiQ5VueMrBbOzc+yaEa8Sk=;
-  b=dspmhVuLs7qlxX7d3cHN1RQUp01ur2/CM6m3xjxy+70VL9rCefaOjImK
-   /evpsQyHLg+HO1GKNI/2TN1vCTfwPmEiPabuOyljZZO+aznxNwUNgHfUf
-   dgxNmbnJ9NQzO4uOqoX44krMug9h3Am87+cUYQaOSlnQ2XUeBAS7Zf32i
-   XSam7dRNRLW5J9GiyZ0FL0mBziL/wipzd7A4X1UpSJGgYuPDbRFMXZo+I
-   7MGY/6bX0JSHPG8wgZSij1NAkPXKFMTLMiGYyQWu0l7f+nfzhBnLx2S6S
-   DdGDkwPblr4AgL1tt92vylFc/ajW4mCxCwNM+rS9jEvrQml1js2v+Sd7+
-   g==;
-X-CSE-ConnectionGUID: w2myyY3FRiqA61ojsxUQQg==
-X-CSE-MsgGUID: 49pkpvp8TyepvQ3Z0dbBWA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11953"; a="2128251"
+  bh=7ATknA5++79GR5SUOzrkETQZFgLMJ/9cZbh0GgEIKYY=;
+  b=fZu7qx1omwTY3I6aXjPZrH5by17NpurpFqQIFrsAU1DS9p7V+zCcLb7J
+   8DD9uCHHN6zQFb/OLf0llTZr3KBNoi8GvQ6J9s9QKH3wHQHYFn1+wcZer
+   +mhAxnXPKBsFZGBc1ywkuRqZvBHre9M+QwlhATaL6sq3y8Orvjx+R4Trw
+   rYSzVclQxGrYAsJZ90SbshttnqSMuD9KPITnN/YADYioyl7GvpNt7yOKI
+   oud0nE5UebpStCnii5j/UjViuapucXHTE34R/whXAS2XTvGSKI73mjAC3
+   oyiy8ThSW+6ITcoH6YcU3NMIJLgYxtNX0vonNki06HUxgsIebZ2hM1vDR
+   A==;
+X-CSE-ConnectionGUID: vayAQeznTuuW3aZTld3b8A==
+X-CSE-MsgGUID: 3yLkhmmZQ7Ca+q3kyBQ1pw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11953"; a="2164886"
 X-IronPort-AV: E=Sophos;i="6.27,190,1787036400"; 
-   d="scan'208";a="2128251"
-Received: from fmviesa002.fm.intel.com ([10.60.135.142])
-  by orvoesa104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Nov 2026 10:38:03 -0800
-X-CSE-ConnectionGUID: X3TIqKokRQ2Q3YynQZt0uA==
-X-CSE-MsgGUID: ybAO8KNfRyivWIHvA+JNsw==
+   d="scan'208";a="2164886"
+Received: from fmviesa012.fm.intel.com ([10.60.135.152])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Nov 2026 10:39:04 -0800
+X-CSE-ConnectionGUID: 52KdOjIqRyW+/k9AsvsTXg==
+X-CSE-MsgGUID: /cT9WcXjTn6jdScN59+yaQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.27,190,1787036400"; 
-   d="scan'208";a="6070907"
+   d="scan'208";a="7692598"
 Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
-  by fmviesa002.fm.intel.com with ESMTP; 01 Nov 2026 10:38:01 -0800
+  by fmviesa012.fm.intel.com with ESMTP; 01 Nov 2026 10:39:03 -0800
 Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
 	(envelope-from <lkp@intel.com>)
-	id 1xNaRL-00000000fB6-0tNh;
-	Sun, 01 Nov 2026 18:37:59 +0000
-Date: Mon, 02 Nov 2026 02:37:53 +0800
+	id 1xNaSJ-00000000fBg-2DV8;
+	Sun, 01 Nov 2026 18:38:59 +0000
+Date: Mon, 02 Nov 2026 02:37:59 +0800
 From: kernel test robot <lkp@intel.com>
 To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Cc: ath12k@lists.infradead.org
-Subject: [ath:main-pending] BUILD SUCCESS
- 9b5dc6d146502dfb40f8bd994064da4fdbf054e8
-Message-ID: <20261102023753.02awntxW-lkp@intel.com>
+Subject: [ath:pending] BUILD SUCCESS
+ 2dedef94130a0744f48fcdf37de204191c207ecc
+Message-ID: <20261102023759.6pAQostG-lkp@intel.com>
 User-Agent: s-nail v14.9.25
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261101_103803_980091_28BD5E57 
-X-CRM114-Status: UNSURE (   4.52  )
+X-CRM114-CacheID: sfid-20261101_103904_316259_21DF8E42 
+X-CRM114-Status: UNSURE (   4.90  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -4.4 (----)
 X-BeenThere: ath12k@lists.infradead.org
@@ -90,10 +90,10 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 X-Archived-By: <archiver.kernel.org>
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git main-pending
-branch HEAD: 9b5dc6d146502dfb40f8bd994064da4fdbf054e8  Merge branch 'pending' into main-pending
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: 2dedef94130a0744f48fcdf37de204191c207ecc  wifi: ath12k: don't advertise EHT-MCS15 to firmware unless we support it
 
-elapsed time: 2555m
+elapsed time: 2554m
 
 configs tested: 248
 configs skipped: 5
