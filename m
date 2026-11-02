@@ -2,130 +2,130 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A13EE606A329
-	for <ath12k@archiver.kernel.org>; Mon,  2 Nov 2026 06:38:57 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E04D1606A326
+	for <ath12k@archiver.kernel.org>; Mon,  2 Nov 2026 06:38:53 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=D+3kheU6;
-	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=OUMIVqh7;
-	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=HWOaQrlO
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Ns9mjuh+;
+	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=FN4Q6ibA;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=gTcl/L7v
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=zS6kutx/WsJidhWhliY3FrWRH4DgTRb0PEAupbAX4Q0=; b=D+3kheU6YRaaKp
-	TRh6a5PULEijFPYoBTr9rhWKtP58O9m5cvta2P0EotDTaE2hcrXAFHQY5JOh9hHSeqF4ZssvU2uPR
-	Fmh3N7o7VY0saFT3Omb1wbKefoslZdGtIm0PcT47HxV8qvFDCioptzbbljfkUbBG2hktaieRxn5Wr
-	Wk75UYwvzYQLZcrZQBYzhuMTuLTY+SVVO7CMjVZR+FyVLF+l3VNt+EGDM7EQ7SXWBa0jUXDSVKGHj
-	KRZ1js8b8IOQ8n+9BQHS8jAMlYwjYadSZ9FdRPcRs2f34nKyjXzbugN6hHEWioTJopU+r82qiY+Pm
-	oTYJmdX3AM1eq1sYaTyQ==;
+	List-Owner; bh=OkDJiKq9UvkXpx5tpZc8Vu+HkAF1n11aZGZbN4YtcU8=; b=Ns9mjuh+rjzvZN
+	FZMycPulZa43CziZsB74S3v2r7SiwC8VcPNtavV+nDoDD5zqah6FiHWsYoup0JMV2pAAb7AVjyna3
+	sAdRy0hmuo51tePBsUWkIkNRCozs1yeZkajsI8PxV/UbYwtl6uG+mKn7B0TltcJfeXYJIf9QXP4mH
+	2imbNccYnoUqld7c1h/vx6X1ExeVeC2KtzxBF7PYC8M6VMTZfUkESrszl+h96MTcJwt7p6k3xJVES
+	VvTsVOeWkH+uiyVlE/8EbXP7SBVtcFMnMMyqpediOVQncUYRFs+HQrXPEkGkv2p6ea9K/96nIpK9J
+	Mn7Z+0UymwblQIs7tDeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNlh3-0000000Fer6-1ZNP;
-	Mon, 02 Nov 2026 06:38:57 +0000
+	id 1xNlgz-0000000Feo5-0f0j;
+	Mon, 02 Nov 2026 06:38:53 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNlh0-0000000Feok-2cW3
+	id 1xNlgx-0000000FenD-13Hk
 	for ath12k@lists.infradead.org;
-	Mon, 02 Nov 2026 06:38:55 +0000
+	Mon, 02 Nov 2026 06:38:52 +0000
 Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A23vESo3348756
-	for <ath12k@lists.infradead.org>; Mon, 2 Nov 2026 06:38:53 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A23vF5O3348776
+	for <ath12k@lists.infradead.org>; Mon, 2 Nov 2026 06:38:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	zS6kutx/WsJidhWhliY3FrWRH4DgTRb0PEAupbAX4Q0=; b=OUMIVqh7gqSBzHt9
-	7lIdLuOSFRs2AbQyYdGUxpL11ebjMo9er+UY1Cyhq2qocJrSfW4IoTLKe4eFrG72
-	8Pq8pqP5cWUXLpEXVs1r+JmcRsGrwro+W/D4xclPYjUTwQZVWRzaGMo8YVLA0BbA
-	z2Ng+zDPlgr4paDA6RaQpLzkU36mKz0es+GvX8DireWZ/ZF5bXT9ZN7tGhR3acGm
-	iQ8bg0c8T/lEW6Ld+dG5tdwuVpRUd3+KQYKPp1ILRyn1+t6lw5vSEr0ABoeJ4uJw
-	TdK3WEXiFA+aCnsXsTNsMXz2Lhvv4NySypUUUunFm21L0rHRhx6BZbSMEMShIiDp
-	3xp20Q==
-Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hn7wxnhyn-1
+	OkDJiKq9UvkXpx5tpZc8Vu+HkAF1n11aZGZbN4YtcU8=; b=FN4Q6ibAvCLEdo7Y
+	hBU4SZ4bB2e5KS+k0ZeYW17NNK8TQqCGGgHfPqpUKrYpB4ORb1XML9+L1/weS1Fp
+	blE8EuTFUFr8NjL2XfZzn6OiG6ef78ZFBdBgTsAvEy78XrdCXuX8SE/r0w8DzGvT
+	FHem23oD2/k3hT0f+NMCZLgy16TAq2G9Zqn14w5mOgo4RhA4tQGTvpEgamsuVqMc
+	TqHFsr1gVTn+Em2qY9HB799FEcC9eIU/KPS2ZHF3gT2+8RjlOIwEeCLploj788th
+	lX5uXswy3xTfZLpemKEigxF04I5ddERz61q4WnmRIFJl45LUneEyBjqrhHm0j58k
+	mHx6Jw==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hn7wxnhyb-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 02 Nov 2026 06:38:53 +0000 (GMT)
-Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-cd65285537aso1122647a12.1
-        for <ath12k@lists.infradead.org>; Sun, 01 Nov 2026 22:38:53 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Mon, 02 Nov 2026 06:38:50 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-3ab2cb8d5dbso2083938a91.1
+        for <ath12k@lists.infradead.org>; Sun, 01 Nov 2026 22:38:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793601533; x=1794206333; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1793601529; x=1794206329; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=zS6kutx/WsJidhWhliY3FrWRH4DgTRb0PEAupbAX4Q0=;
-        b=HWOaQrlO5XXVhNfxFwR83sdu6PMslgZi3V0fF5gRvUX6O4TDwbAEVp2dOZS4KGA7gu
-         /3d1fK/hyZed0PuHAnQ2szS24153dT64mCAP1rLIweEjOK/I/rd3YQ63WPfV+Wk2OnIE
-         B4ghSkbpRCl8DFJKNmB3CtRLQC5E3JoLfIA4hgh3sB7upNjxZKUtMz7WfIRWIuBWIN5a
-         baJif3bvh3Y3ICxTiiARx119qmy1zfLJXmBdtA6vnd/5k96dbWxtpW5WMm6bSFrZeSjj
-         WnJQ90IfqO3kasQGhshsFBd0w4edoFxn4JpalAIBjU1F+5ahZsrg9MbEbuGqi+Nha5Hc
-         mRIg==
+        bh=OkDJiKq9UvkXpx5tpZc8Vu+HkAF1n11aZGZbN4YtcU8=;
+        b=gTcl/L7vmeI6GOQdY+PaS628QGhByO3GYPYWG6AZ/xwHG2hl5sicYCSTZO5dJUcZ3Q
+         jtahITNA826eDr3gbw8Fm1+617Fhnd6t7P0ob55sfL8L8F010fR11st7dR/gNQWNh9ut
+         1v3Kmlwt2bhyAUaBEvoaE+mWrwmBG2XczHVBer5aJrV+p3ya7Vd27sAE5UhhOWuyWgOQ
+         BwXmwijXHlUtnZaGmM9u+qo4Phoy5WOTg1w7V11hF9ng2LrwpCC9jfDemANEgqKhpIDY
+         LXbkQIDuGtmqPvtNSJCG2RhXB+IocAwrwpzLyek9P+2B+6v809V8mEKyGubzZrLwVaHM
+         iJiQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793601533; x=1794206333;
+        d=1e100.net; s=20260707; t=1793601529; x=1794206329;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=zS6kutx/WsJidhWhliY3FrWRH4DgTRb0PEAupbAX4Q0=;
-        b=IYdttl9G/9eWemK5fitFXpaPKK0tEb15xDpEXnDni3Ro+l9MoeLTEX2Bz6vUh9+52R
-         3bI+pKjlkLtPNHHlpZ8QMHXwwpmc0Ouit1vQnOKyDKTIrAI6KQKk4Nj1/jO56cntU6Bw
-         79m2nup7CwglsX5JorjXy+tMmy9SYXnJGGZFb7ZWBu1cNI9t9nXOIT0VR3anKETEO+zE
-         GtLFMfN7rTxOBdMA/Ff4+p0Xt3860vRcSd4sagZvEUG8493OuFebHMcKXCO+5pj6gJ6Y
-         1m9UhZLxUsPOpWN2pKKgh6XC9laQJqkrkzYxkm161N634yIPF8ojkXheM/RdwpOSKjHH
-         A3gA==
-X-Forwarded-Encrypted: i=1; AKwUvBxQ+DWDIOj4gE2c+sBmIim3FDAJOy8sCMiuEq9dYN/xLAmveVHBbO39bferglqwy/mp2okLo2M=@lists.infradead.org
-X-Gm-Message-State: APuU4Z8AA2LKhPY1cBvmcQThlZdw8FKiG3H8GVIQLzfCUuuw3DM7K5FS
-	lX4Qbac1ThoagD4eQSBPh1q+eTwrs/3o3dwg02uPBj6uR0VPOFQhE0t191rNSA5koGgMcebps3Q
-	QdDF8BMKAGln5RurLSxHvHFMQPDNTLaghyP0PS64aoHBti3GLdDQfRXJo6lOGVmnhfR5HZ5UU
-X-Gm-Gg: AYBFou26oPalYPdYOySmU21kERe5hb0tcuV7X9vQkYCmkM8UZLQOrewhpbZhBmKQygP
-	Z/EWYUHmkFARUnzKdE6lfJQEixjUlPHpgOqReEc6Mn0IeyvJ67B/frMXcmHcSwOUErqdgo+TSsd
-	rcRNQkPT3mURP8OAfcP/llt06jMtynNw3wiam4UWUvXdIgGrrs3VOror1yapzhExjcD2NlEblRN
-	C8RaUX9RKX3vup8XuFUj+2zAMmBjk67kxf7A04ffg9FOHnOvpAa03e7g23KuV2HX/xnAy5J9B5e
-	+ECGOedzi4aJMeqEfWYdttl48Ns397M4D8Ib12IIE/IJr0KsXCgqQY+7n5IE4su/fF7hgRCyTr8
-	mrqqOdYBJ5CCX+XWQWNfbZzS9eRcnXFiU5PGzRPXEDWYXjr8scXwu//Ij4+EEgHak4HqYSFzdSG
-	IIFceoLu8MB1EBnzogdAP4lFyIUi8e
-X-Received: by 2002:a17:90b:2711:b0:3ac:bc3d:6fe8 with SMTP id 98e67ed59e1d1-3ae89819919mr7210314a91.34.1793601532654;
-        Sun, 01 Nov 2026 22:38:52 -0800 (PST)
-X-Received: by 2002:a17:90b:2711:b0:3ac:bc3d:6fe8 with SMTP id 98e67ed59e1d1-3ae89819919mr7210306a91.34.1793601532161;
-        Sun, 01 Nov 2026 22:38:52 -0800 (PST)
+        bh=OkDJiKq9UvkXpx5tpZc8Vu+HkAF1n11aZGZbN4YtcU8=;
+        b=eKUB5rZMKwQ8sqzs8dxNLA2ZvCqb+UC2xYCNrr3cvpMxyNZHzEQ0SOKAbM58rFtn0m
+         U9rAXPtVOEItbovKkCecOZ4AAFIN6paIeyDssz5IbffTwEcLdhwbC5KvOEHIB6a9xNHo
+         dqDyOdwGrjQ6UddFKEno3b016+aCJZ+MO0EBvQ+1FFYihtWvdhEkKCwbgXEdhktb/MGc
+         jYsOeSMfRxJGMCpJYU/aQDQL7Uq4lAaF+YCYzu22MjMfaSktSXjKjPGDe/GIrYZKlCoN
+         0BtzXoz7Oy59vtby1LoS5K8EmrTneOwWzkimfyv4MpaWlsGH1TW856XlIjBHr2aGLY5l
+         Y+Zg==
+X-Forwarded-Encrypted: i=1; AKwUvBxCc8BNbb20gBgrL66IDgetMjwDoUAlGppqi40pQ+wwC3eR1ObfELpU+IZlFxERJ7i9DZ7WPLQ=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+wFXTesPFhs687zU2GoQKLD0QqQrHmWq078ryq47Y8FPnqVpVs
+	BsaHpTEooK0TLtn502sfct6EplMDC8bduK0yv0w+SrjiMAZ0Nsov9tlj/9uR8A5GTtkuMw31Mi/
+	St43jWp05BDCCeo5jCPVUIaIJMQBGQR1wRw9QMOCOigFG84pYMhYVchnZc+lz8RnC
+X-Gm-Gg: AYBFou0n3ArQU1VHI1MxtT78wErpZAmOBDbXOOdwjdOHl3T6vAUpZjBxRsv+MPG0Fx+
+	KDTHEdXzHPvNUcam2vSEy1S0WRVz/NEsuoV145QuOk9HCj+WwIjlSMZcQRVD+aMQVq6oKUt+qNV
+	uJIiL7XqvRQMhgcKjpvjyBwxqDaqLGhumtQtwZE6pBFL0u55+REiRYETm3ZDV+Onq2V+PsnmwOf
+	gMOQmRySzXIo/Ml1wl7VmFaAuLw4susRPutg+x0vBYa2+l/8C01jqWy0tU39xSvXZ1sTimXyWOn
+	CrHY7TZypEWtZlYMR3k0F50073J6VZViTF9DuYu92FKnavEac1/PIfU5CEbgdJZhektGhhroAD3
+	wY3zep1mX/eo4JDuwrhydcjNgsDFclS8/BlUtfnmFwmVt9smTz96QfofHI67f32K34UR/Ue8XkO
+	92wraKdhP34QY28LSk3D2sRClPdlis
+X-Received: by 2002:a17:90b:4c04:b0:3ad:8a14:bc73 with SMTP id 98e67ed59e1d1-3ae897b519bmr6563024a91.50.1793601529171;
+        Sun, 01 Nov 2026 22:38:49 -0800 (PST)
+X-Received: by 2002:a17:90b:4c04:b0:3ad:8a14:bc73 with SMTP id 98e67ed59e1d1-3ae897b519bmr6563009a91.50.1793601528635;
+        Sun, 01 Nov 2026 22:38:48 -0800 (PST)
 Received: from [127.0.1.1] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3ae6e949077sm17313475a91.9.2026.11.01.22.38.50
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3ae6e949077sm17313475a91.9.2026.11.01.22.38.47
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 01 Nov 2026 22:38:51 -0800 (PST)
+        Sun, 01 Nov 2026 22:38:48 -0800 (PST)
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Date: Mon, 02 Nov 2026 14:38:12 +0800
-Subject: [PATCH ath-next v4 03/11] wifi: ath12k: rename
- ath12k_dp_peer::hw_links to link_id_map
+Date: Mon, 02 Nov 2026 14:38:10 +0800
+Subject: [PATCH ath-next v4 01/11] wifi: ath12k: fix potential OOB access
+ due to unverified hardware link id
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261102-ath12k-logical-link-id-v4-3-f4c7807c299b@oss.qualcomm.com>
+Message-Id: <20261102-ath12k-logical-link-id-v4-1-f4c7807c299b@oss.qualcomm.com>
 References: <20261102-ath12k-logical-link-id-v4-0-f4c7807c299b@oss.qualcomm.com>
 In-Reply-To: <20261102-ath12k-logical-link-id-v4-0-f4c7807c299b@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Proofpoint-GUID: g0cBiOiLWF5C7aVxk4GYT-pcPx0-8JBD
-X-Proofpoint-ORIG-GUID: g0cBiOiLWF5C7aVxk4GYT-pcPx0-8JBD
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTAyMDAyNiBTYWx0ZWRfXyGoYR47unp85
- ZO83X5NjWF0Gsvgo/ILLzp/XZm0tZa18se5ToxU48ygEEpxZTmKyt7b/BHwQx8AfB1Bh5HBSHIF
- s72rYffXBErNNsZ6iY2OrOZLr3ePH6U=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTAyMDAyNiBTYWx0ZWRfXxBeu47Kf/cSo
- i5EmZxxQ6G4wi90Sc7I5OlaVE/2hGCE4dnquBDEJwshKpaU9R2mj8EVDJYUSzReFVVasi1msYMQ
- K5MHhbdDjgGuQ+OISDeRckuEbyyr1vEdNzxNr/xnEbsLaTQFMIYbu4Vb4GCFPy5HCCIqVruMjU4
- 4olW0jCprTcRWDz5eCEQDzTc6IV/5VbfI9qnVQUN6l4A2M+k6vmL++izkK/4tQmN/+PUgGxR07t
- yQlDPNWID4YJ+WwRm3Sdud+WyghH7Nnx8jgVhLizYX39/QBiNTFpkO+LGejiHpdLhQ4CO8GtUcz
- 90HM7D8shv97kNL6KBq2ig6RqVM1bHYGi0HZRWdrG4C7A50i4dQcaViped7hQSTQe5WQtOqlN3q
- v5SwvGoPPNANAD+taFLtP8YDef0KDethBPtmBNsDEn/L65uDkkER9LPhVfS2i0B8gnUkMzhkFFZ
- V4aG+UYzCVLGq+d6MCA==
-X-Authority-Analysis: v=2.4 cv=JLquIMKb c=1 sm=1 tr=0 ts=6ae82ffd cx=c_pps
- a=rz3CxIlbcmazkYymdCej/Q==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-GUID: GsyTAE_uTI5ss0IVBI9_KThyT8Tx9A9Q
+X-Proofpoint-ORIG-GUID: GsyTAE_uTI5ss0IVBI9_KThyT8Tx9A9Q
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTAyMDAyNiBTYWx0ZWRfXwba6PKLfr7cB
+ QdpqvwDA58iMHtAU9uXJBOnDYq12gGZGCuCwrKAUpHOkm3QaN+twIaeX9L6crBEFosYJFSbYjws
+ +aaSeAPLR7wu4Kp/Xs68bWudeMnOtY4=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTAyMDAyNiBTYWx0ZWRfX4Te+xQwYxMX7
+ VaKL+1JCIYhTCgotuieM/NdvmmvmRcSDnR1TFcFkhd4vGPIW8UaSx2T4juMyCXC6sYLdRTHN10c
+ NRhioK7T4W+oYloWVcA1dFQ0RPbqJlbzO368wdpCL3jTZX/pOwrfsX1Y4z+7sxZTGr6aEPQCGyB
+ qGq0eUl+oPNomTU0gJYBt2BNfvmD5X7CrFCG6iWiqV/FSydxUDie5nohWF0Dh8tJ9/yiN9HW/7q
+ NJyNjoaDWZWvRsD+UQp9VXd1nWxZxoCh2TF1sb5nD5TjlS1yF2mxrEdx9aJOTd69NULsJzWNrbF
+ NuRlWBmKz4uTmrT3WSJC6lSfKNRHziVk6kB8qwKzPxtJlHFIt6Y/XYTAVcPxk5HA1mxl1baYKSC
+ eAMaC2M+dRbH6htqx8wNcsk9oVCU2brkSB8m+FyTEUNfFnZzSm+u8SyACCW8WxJ9x+LP6HEY2Sj
+ YbuntE47tOg/tQt9tng==
+X-Authority-Analysis: v=2.4 cv=JLquIMKb c=1 sm=1 tr=0 ts=6ae82ffa cx=c_pps
+ a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
  a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=EUspDBNiAAAA:8 a=niLHlN7IhEeuoKN5US8A:9 a=QEXdDO2ut3YA:10
- a=bFCP_H2QrGi7Okbo017w:22
+ a=EUspDBNiAAAA:8 a=qtqQsJB7fzTjSEb7W4QA:9 a=QEXdDO2ut3YA:10
+ a=uKXjsCUrEbL0IQVhDsJ9:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-02_02,2026-10-21_02,2025-10-01_01
@@ -135,8 +135,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2610300000 definitions=main-2611020026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261101_223854_807151_AAD9AAEF 
-X-CRM114-Status: GOOD (  16.47  )
+X-CRM114-CacheID: sfid-20261101_223851_412651_D144A9CC 
+X-CRM114-Status: GOOD (  14.42  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -156,86 +156,69 @@ X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The name hw_links is not clear about what this array actually holds.
-It maps a driver link index to the IEEE80211 link id, where the index
-is the hw_link_id for QCN9274. For WCN7850/QCC2072 it will be the
-logical_link_id, which will be introduced in a later change.
+In ath12k_wifi7_dp_rx_process(), hw_link_id is extracted from
+hardware/firmware descriptor and directly used here (and also stored in
+rxcb->hw_link_id which is used later in other functions) to index
+ag->hw_links. ag->hw_links is an array with size ATH12K_GROUP_MAX_RADIO,
+unverified hw_link_id could lead to out-of-bounds access.
 
-Rename it to link_id_map to better reflect its purpose. No functional
-change intended.
+Add the boundary check before using it. If the check fails, continue to
+process next descriptor.
+
+The same applies to ath12k_wifi7_dp_rx_process_err(), fix it as well.
+
+This is found during code review.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 Tested-on: QCC2072 hw1.0 PCI WLAN.COL.1.0.c2-00068-QCACOLSWPL_V1_TO_SILICONZ-1
 
 Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_peer.c     | 6 +++---
- drivers/net/wireless/ath/ath12k/dp_peer.h     | 7 ++++++-
- drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 2 +-
- 3 files changed, 10 insertions(+), 5 deletions(-)
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 20 +++++++++++++++++---
+ 1 file changed, 17 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.c b/drivers/net/wireless/ath/ath12k/dp_peer.c
-index 8dcb07773bd1..2826d6016ce8 100644
---- a/drivers/net/wireless/ath/ath12k/dp_peer.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_peer.c
-@@ -418,7 +418,7 @@ ath12k_dp_link_peer_find_by_peerid(struct ath12k_pdev_dp *dp_pdev, u16 peer_id)
- 	if (!dp_peer)
- 		return NULL;
- 
--	link_id = dp_peer->hw_links[dp_pdev->hw_link_id];
-+	link_id = dp_peer->link_id_map[dp_pdev->hw_link_id];
- 
- 	return rcu_dereference(dp_peer->link_peers[link_id]);
- }
-@@ -546,7 +546,7 @@ int ath12k_dp_link_peer_assign(struct ath12k_dp *dp, struct ath12k_dp_hw *dp_hw,
- 	peer->dp_peer = dp_peer;
- 	peer->hw_link_id = hw_link_id;
- 
--	dp_peer->hw_links[peer->hw_link_id] = link_id;
-+	dp_peer->link_id_map[peer->hw_link_id] = link_id;
- 
- 	peerid_index = ath12k_dp_peer_get_peerid_index(dp, peer->peer_id);
- 
-@@ -614,7 +614,7 @@ void ath12k_dp_link_peer_unassign(struct ath12k_dp *dp, struct ath12k_dp_hw *dp_
- 	spin_lock_bh(&dp_hw->peer_lock);
- 
- 	dp_peer = peer->dp_peer;
--	dp_peer->hw_links[peer->hw_link_id] = 0;
-+	dp_peer->link_id_map[peer->hw_link_id] = 0;
- 
- 	peerid_index = ath12k_dp_peer_get_peerid_index(dp, peer->peer_id);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.h b/drivers/net/wireless/ath/ath12k/dp_peer.h
-index d01ef1aea48b..b9c94d6366fa 100644
---- a/drivers/net/wireless/ath/ath12k/dp_peer.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_peer.h
-@@ -131,7 +131,12 @@ struct ath12k_dp_peer {
- 	int peer_id;
- 	struct ieee80211_sta *sta;
- 
--	u8 hw_links[ATH12K_GROUP_MAX_RADIO];
-+	/*
-+	 * Maps a driver link index to the IEEE80211 link id. The index is
-+	 * the hw_link_id for QCN9274 and the logical_link_id for
-+	 * WCN7850/QCC2072.
-+	 */
-+	u8 link_id_map[ATH12K_GROUP_MAX_RADIO];
- 
- 	u16 sec_type_grp;
- 	u16 sec_type;
 diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-index c8e590e5e250..2a0141157426 100644
+index a32c804403e8..c8e590e5e250 100644
 --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-@@ -2368,7 +2368,7 @@ ath12k_wifi7_dp_rx_get_link_id_qcn9274(struct ath12k_dp_peer *dp_peer,
- 				       struct ath12k_skb_rxcb *rxcb,
- 				       struct ieee80211_rx_status *status)
- {
--	return dp_peer->hw_links[rxcb->hw_link_id];
-+	return dp_peer->link_id_map[rxcb->hw_link_id];
- }
+@@ -705,13 +705,22 @@ int ath12k_wifi7_dp_rx_process(struct ath12k_dp *dp, int ring_id,
+ 		cookie = le32_get_bits(desc->buf_addr_info.info1,
+ 				       BUFFER_ADDR_INFO1_SW_COOKIE);
  
- int
+-		hw_link_id = le32_get_bits(desc->info0,
+-					   HAL_REO_DEST_RING_INFO0_SRC_LINK_ID);
+-
+ 		desc_va = ((u64)le32_to_cpu(desc->buf_va_hi) << 32 |
+ 			   le32_to_cpu(desc->buf_va_lo));
+ 		desc_info = (struct ath12k_rx_desc_info *)((unsigned long)desc_va);
+ 
++		hw_link_id = le32_get_bits(desc->info0,
++					   HAL_REO_DEST_RING_INFO0_SRC_LINK_ID);
++		if (unlikely(hw_link_id >= ATH12K_GROUP_MAX_RADIO)) {
++			if (desc_info && desc_info->skb) {
++				dev_kfree_skb_any(desc_info->skb);
++				desc_info->skb = NULL;
++			}
++
++			ath12k_warn(ab, "invalid HW link id %u\n", hw_link_id);
++			continue;
++		}
++
+ 		device_id = hw_links[hw_link_id].device_id;
+ 		partner_dp = ath12k_dp_hw_grp_to_dp(dp_hw_grp, device_id);
+ 		if (unlikely(!partner_dp)) {
+@@ -1469,6 +1478,11 @@ int ath12k_wifi7_dp_rx_process_err(struct ath12k_dp *dp, struct napi_struct *nap
+ 
+ 		hw_link_id = le32_get_bits(reo_desc->info0,
+ 					   HAL_REO_DEST_RING_INFO0_SRC_LINK_ID);
++		if (unlikely(hw_link_id >= ATH12K_GROUP_MAX_RADIO)) {
++			ath12k_warn(ab, "invalid HW link id %u\n", hw_link_id);
++			continue;
++		}
++
+ 		device_id = hw_links[hw_link_id].device_id;
+ 		partner_dp = ath12k_dp_hw_grp_to_dp(dp_hw_grp, device_id);
+ 
 
 -- 
 2.25.1
