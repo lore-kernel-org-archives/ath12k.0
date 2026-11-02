@@ -2,141 +2,141 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 44C69606A331
-	for <ath12k@archiver.kernel.org>; Mon,  2 Nov 2026 06:39:07 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6F949606A32E
+	for <ath12k@archiver.kernel.org>; Mon,  2 Nov 2026 06:39:08 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VCJiI2gG;
-	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=LqyDMNdJ;
-	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=glKAaGxq
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=xfsBnFzl;
+	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Nhn4QyER;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=TZIPSCXP
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=FZkud3UiFxyI+if5VP4Cl4Ikk8rGXzgRnA5iU5yHVK8=; b=VCJiI2gG/09SG9
-	bKzUzW6W/jbKLLrRiQUZ1KF5Ej6U+ZQB9QVNX7HtXePKr9eTsMSo4bDmySPmpsS4TLhJfb0Z+jcGJ
-	DtFTaba/j0ac4LdMcmRg7rVdpnddZhxMijjZbKWjsyKm59Uhk1G+Kv0FcWj+e9MVWZb3/z7vN6Xdd
-	moTAYopZV6Ze4UPh8/F1r2eZlHIad+hp0SEpPGPmDY1igjBhv377BQFtporqu0FQhp6oYY6y0vWlD
-	HT524vfu/+pCt4Qp21Kuk6ymnhM2ez7HZxWGRozf0jEzVM263Md/8K0ZZ+ZvlGDv5OfZqFh1vMmOA
-	Jx/ULbM9POVCQonHikZg==;
+	List-Owner; bh=XipYPlgLEWzVCTMCmQlUGdyQWvwcpjxbalStCmOPiu4=; b=xfsBnFzlYU/2bX
+	FzUbFTebamber3hV/Jveh07Se+t19owywz8AW8R7aDZZvmLGcLTE4mgau508kjZo1Mvnyye5q3AXS
+	vuHwJ6eRlKXhNd4paC5YxdYYrdFvfATAI5Z4fG3IUOJ1WANj8t1uz5T1nZkgY40RzpWclrmPa+E+e
+	7mJmDxpsWsTaeET/t3mNEoZ6zC81/qrm6brX37KaLXK9LFXeobA7rVexKMTrgqtmqCWPOvMSExrzw
+	MncJxUGTE+mpiRW/W3PWZusz3HJ8cpDL4y5nlltxoMe96mXPP/Kr9OSnj3M0Trex+IHg/jXyrWXlI
+	ZJq8E10/o7pzZ0a06E1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNlhC-0000000Ff1D-3yUo;
-	Mon, 02 Nov 2026 06:39:06 +0000
+	id 1xNlhE-0000000Ff3E-0b4t;
+	Mon, 02 Nov 2026 06:39:08 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNlh9-0000000Fev2-0Kpq
+	id 1xNlh9-0000000Few2-38k6
 	for ath12k@lists.infradead.org;
 	Mon, 02 Nov 2026 06:39:06 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A23vH3c3324636
-	for <ath12k@lists.infradead.org>; Mon, 2 Nov 2026 06:39:02 GMT
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A23v1JP2752042
+	for <ath12k@lists.infradead.org>; Mon, 2 Nov 2026 06:39:03 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	FZkud3UiFxyI+if5VP4Cl4Ikk8rGXzgRnA5iU5yHVK8=; b=LqyDMNdJrvL+mFOX
-	c48fmaZ9KbhDpeT9kSfS/k/dhwYyoNjMZCAJ5MShX7sEoHJQv/zchuZ5yVnEurYv
-	DTugfOrKatZK2mvvtfQ+Ra3N0xkGDI1jTHblRepha0x50Qpb0cs48HX6XYwdSnaI
-	XayzFyFNT2jnYSIXpn3l5S/KU4zhEEzTLZh7/ql782vQYo2eBmNYBDPCxLg+H5qe
-	0a06gLMO24rknrV7OCJ9gZLxgwv/4+wpptiZoCLrKHKRNa0w/A91Lq5E3sDQcPbL
-	ebpO9+qRHwVhHXgFCKKFPtvWp2E/zecy7sPgYLwJD0zsu7UP931rA7zi06kzxwWq
-	f7OKow==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hn7b6nmuc-1
+	XipYPlgLEWzVCTMCmQlUGdyQWvwcpjxbalStCmOPiu4=; b=Nhn4QyERbz5Kg11S
+	BVsk3zlVQQzWyBr1xDITgVwR+bnW9CCykcSRuwoDE8jn7gYuo9EMJnpqOnnqhSPp
+	/KvCSfEuvMjJrYnCDbQtwnwqiwW79FXYEqh/Dk9FoGq6glt6s80A9nSneppSrUQh
+	bEvTHh+wg6YjcddgdIdBODhBjjbWzMhaLTmm2+r0SLZ17C4iyLh2fFjV7eihmy2r
+	v/gmcC92KL5trNvKzQ4YCxX1OD/JhOxyJErvY8FYMF6w4PZp/ol3AyiOviXhlivx
+	NhTWnxmHZey94TmgrYZejiVPhN+ME0Gt3TEKUnX3aQ9G5ELARM/BvAiACXf9ZhBp
+	dJYTqg==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hpg200yjt-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 02 Nov 2026 06:39:01 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2e8ba4757baso25482955ad.0
-        for <ath12k@lists.infradead.org>; Sun, 01 Nov 2026 22:39:01 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Mon, 02 Nov 2026 06:39:02 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-3ae7faf4ff7so3752962a91.3
+        for <ath12k@lists.infradead.org>; Sun, 01 Nov 2026 22:39:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793601541; x=1794206341; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1793601542; x=1794206342; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=FZkud3UiFxyI+if5VP4Cl4Ikk8rGXzgRnA5iU5yHVK8=;
-        b=glKAaGxqSR0J8DF+wZrhTxJrlUu2C2sv7NsFnr+hmpnxjFEGwYbHNs3JHqnlOv9yns
-         0aOniZIhmpSZ0KfNjAMsNNYpmlOVtOi2LBWHDyuvNh3cOYFgh44HVJR6sG9jHKGj3Uvo
-         +XFNxqnCuhY76bBpaK4V0PvsGz164/u42ARovuWAxTcNytP8zepbuoGphhUl7+dHXwvs
-         YpyuJG50NFyZ9eu9RfQfM1p362QIxcg79MDehRUqwurpwxzOAnEXzSvDGXri0GK+oyz2
-         442FIpbLQbZCm2Q9/aEiLyaL+dGYuhxmwWAftDHFRKQzOiCSw/FDU83Dtwg1MiCNsHxz
-         qVNQ==
+        bh=XipYPlgLEWzVCTMCmQlUGdyQWvwcpjxbalStCmOPiu4=;
+        b=TZIPSCXPT2okgM/Kx/VO66Vd919nxsMPQF2qcWfT5PqEOJAsP3hhp17R1ZxaY/jo8C
+         ZovR2rOyKYW6PiBM7zwvQ/L5EcBXcTVR1RN1PTm1Z1oOqI3gT8Fq3uLbbXHxO7FEMYi2
+         gPAB66l5tLWD8LKtTPOxGkJ5/vb3YBAD7O24YWaRTJgtcE0o5TIQipaLMSdRwsH2Npyo
+         iyKufw/jQG/iEEYMJv/15Clmc0qUsL1ckkIWWSJyvIyocuaW3qwr4hfj9xIp8zuSFEXR
+         ATK0XKFTvq4gsNxhuWedxITIY5qpQKO52t7N8H7RRZGAiBm1GlPX6pvQ2byNbHLVczm0
+         Q2Pw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793601541; x=1794206341;
+        d=1e100.net; s=20260707; t=1793601542; x=1794206342;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=FZkud3UiFxyI+if5VP4Cl4Ikk8rGXzgRnA5iU5yHVK8=;
-        b=t4ztGB2UYJ+DFn9BmX0/GG7MCXlH5pbf+ipTnIQnY8yRcVjc9lXEGzu8RzG8I03PAP
-         ToStVcC4zl1H9IvjTJznAKWMaA1cV6hxklKLcl8jX6j0fYoSM/iMdnxeSg4c1dPh3Dls
-         BeKEcEWeuT2q2kor6zU592T7wtJeAUVFBEwf2KIu9Yw6Ll9wfypEDK6MGFTIVs58ohNU
-         WUSQAwO+IOqXKSWCy9Psu+2f6aB6zuAmFm1+JqvrWb4qgkd9vp8QXiW2QBema0CN+a5k
-         spS9VyNXfZmESHyfw2SwC2p0c0wwwWzTJX6TUIGymGPqEBm3rFIsOsRPoHlLGIIk6nv/
-         TCtQ==
-X-Forwarded-Encrypted: i=1; AKwUvBygi3qOERYwdzlj91tvJj2Qh2JM1/daW0k5GjI9C0Q8iJOEv5+PUxB6hJl4vOPPIRx0E/dgFi0=@lists.infradead.org
-X-Gm-Message-State: APuU4Z93Rt2J+fIwzo/um61iNmlc/TPmC/a2dAinUNsnF3iBoxYCnfYg
-	OIjwqMYoJ66pNMJrSxMulu8Qq4V6FW0w68LXV9dndZgAIHWncyZ8NOjW6ROORCYxWR9h3pV8Haa
-	/v25A+T4zqs7Nb+gFxFOEk9JQCANMMwfvPS9sxTXTuHjZ9MTro4TyEzEUkPPIqHfc
-X-Gm-Gg: AYBFou1pnaJBjmiOtRkf47z77zHpUuFEk1UtLhuGmhSz48d5dcHpuC8hlWWMtb6ZrNy
-	JGWLeGGCy79n5009pNwDYxUHlGaSkZykc86ZGnS1MfIXi7/VTsVlFsv9Pg4UZdrTidCEKXlwTcn
-	A/4p6bXVnzrvMlhtFbCxshCeN3cUcjqjyymWtV0dUBk9yrR063V2dLwas8tkx4wlGueYrLx2BIs
-	R/KcYsCZS9sVpokxB5Yetn5t7EZKivzPyMKVoFrxcLpotjdyBZWue0ZbpQOvQ3UvZg8bZsUAl4X
-	49MH5nGfbIKpSLGTzOU+iUm0sbvTdydDzC5bFTUAUU/YvrS7us3QZlannII0l9tEE3FcCkbv6Df
-	M2ZnY9PEMhrLHr5Tc06+8mfAQH+q9g180xSASR0TlAHXlvlgdgauq/NHX8Zexb3wnKBZRPjZI6M
-	7IV2lbLj/rH6ZqYMikrMWllXf22iih
-X-Received: by 2002:a17:90b:2d04:b0:3a7:82ef:bcdd with SMTP id 98e67ed59e1d1-3ae898392c2mr7471864a91.41.1793601540532;
+        bh=XipYPlgLEWzVCTMCmQlUGdyQWvwcpjxbalStCmOPiu4=;
+        b=uMo5m8BBNpl+0QOaVvm0JgMZllv5bVs5gWwqlmLkKAS1UyUsR13Q01LPSh3KGDwf5v
+         Pa8FbalfNXZNUE24IZAoE6A2B0jROqCqVd53vdjmhBvtIGH2nnNVRW8n0ZNgQRFesI+s
+         cm5lELdlZd0B3eUQteRtx6grW8PRIPXM3YsbPCFWm4Pklndk32eHgIoO412uvmQL/cff
+         xxd51EWG6IN36f1IABz8GEAXpFHOtn6oA2kRNLZQB9uNS0u7rCQFYpaI9sH/oVLnmQRp
+         L/H8/VdE1XsAUIoujj2h256UuWumIjDSE3PkJ+mr2sSs6jhq5EU/ZxXOmOMvAQ61vgV9
+         Yr9w==
+X-Forwarded-Encrypted: i=1; AKwUvBwmPs9xMURA0RRg5dHqOagLp5m4QjTQcjVoYCiGhzdeUX5Qjmab1+vVK+RAGJfFpS1VO0rol1Q=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+1mA8hvbnz43bPCQCq29eh3iZY1o58wGu3FYQPgp2xHuyoMGbA
+	q8UuERRMMi5kxaRyEflKIL9ZqOsloKOsU5ZeAX1YG1QKCDYai2XvFZiigO6PLQhQI+Xi6/dU8Ax
+	e6rKvzhibfJFI07dhEkWsL7wgWsDnfEJLhbH5DwGFUIjy2vSeuy3pD6KyKXyetxAN
+X-Gm-Gg: AYBFou0BFqfSo527gvRbb+BS+qqbdPPkMOTvcvrmy8zoTgN+iKJROul/GZH/6pnGfIw
+	v0P7RPNIlwQXpFxkWGc+g0y461sb9gSKKKc8EvR5vC49Vj9afl5cKqivmOcoGWlprILqVfzP4QJ
+	XgY7KP6+9qhBMlXYOO73IooWUULISVpevhGh7Oz2KbHkaJzwjzdYPkC89GEDG2jb4D3OZB6nGKJ
+	746Q5QAf7l10KLiwbSWs47pyMaGw3vfCFoe+W0XBaztm5+T0VWPTV2Jqutt4na8lrVHJzG23Wxs
+	yvLQGlfvSWLiza9ZY5TRKjQOk455v7deHz2nHqvHliW8kX50gevyMLDNqtbVS9Jl4fOqnIEq6gg
+	WjqhbH6NPON+K3LFVbnif5KHiRHSuwN4kLU7dQhIvv9DUo+QzcybW5TCm0N/V7f6CC2IRoqGKPA
+	oBJGNuoP3yi0vDLodnC7dRRnREyys4
+X-Received: by 2002:a17:90b:268d:b0:3a5:147a:3b63 with SMTP id 98e67ed59e1d1-3ae895a5bdemr6953231a91.8.1793601541438;
+        Sun, 01 Nov 2026 22:39:01 -0800 (PST)
+X-Received: by 2002:a17:90b:268d:b0:3a5:147a:3b63 with SMTP id 98e67ed59e1d1-3ae895a5bdemr6953220a91.8.1793601540889;
         Sun, 01 Nov 2026 22:39:00 -0800 (PST)
-X-Received: by 2002:a17:90b:2d04:b0:3a7:82ef:bcdd with SMTP id 98e67ed59e1d1-3ae898392c2mr7471839a91.41.1793601539133;
-        Sun, 01 Nov 2026 22:38:59 -0800 (PST)
 Received: from [127.0.1.1] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3ae6e949077sm17313475a91.9.2026.11.01.22.38.57
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3ae6e949077sm17313475a91.9.2026.11.01.22.38.59
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 01 Nov 2026 22:38:58 -0800 (PST)
+        Sun, 01 Nov 2026 22:39:00 -0800 (PST)
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Date: Mon, 02 Nov 2026 14:38:16 +0800
-Subject: [PATCH ath-next v4 07/11] wifi: ath12k: add support for
- HTT_T2H_MSG_TYPE_PEER_EXTENDED event
+Date: Mon, 02 Nov 2026 14:38:17 +0800
+Subject: [PATCH ath-next v4 08/11] wifi: ath12k: allocate logical link id
+ on host when firmware does not report it
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261102-ath12k-logical-link-id-v4-7-f4c7807c299b@oss.qualcomm.com>
+Message-Id: <20261102-ath12k-logical-link-id-v4-8-f4c7807c299b@oss.qualcomm.com>
 References: <20261102-ath12k-logical-link-id-v4-0-f4c7807c299b@oss.qualcomm.com>
 In-Reply-To: <20261102-ath12k-logical-link-id-v4-0-f4c7807c299b@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Proofpoint-ORIG-GUID: WpGgPk3GzcBR8iMABuRLCeBwD6Cuf9uP
-X-Authority-Analysis: v=2.4 cv=QuvLTlyd c=1 sm=1 tr=0 ts=6ae83005 cx=c_pps
- a=JL+w9abYAAE89/QcEU+0QA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-GUID: cTHvmt8sZvHgKFTa1igW-GkDwi_4lwme
+X-Authority-Analysis: v=2.4 cv=fZY4WEQF c=1 sm=1 tr=0 ts=6ae83006 cx=c_pps
+ a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=EUspDBNiAAAA:8 a=FAGSEp2nAAAA:8 a=EBqVsfUuMMxUAKVxpnoA:9 a=QEXdDO2ut3YA:10
- a=324X-CrmTo6CU4MGRt3R:22 a=Lh16BCjgaU6qELXH5G7V:22
-X-Proofpoint-GUID: WpGgPk3GzcBR8iMABuRLCeBwD6Cuf9uP
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTAyMDAyNiBTYWx0ZWRfXyuQmylfcrPow
- DaKfqxYoL84UJQEXVszRkGe0FgMUHW69Qa5bHtTvmwtqMd+n6QEYalgZnz9l4QSXvmYwe62h8YM
- HX+PyQvx7W4BKbfDrOHVeGTQ94YKcLY=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTAyMDAyNiBTYWx0ZWRfX7EA3NotaKmYf
- 3fazWF5Tgre+qMXozK+ypf+XYSZ42SQR2fp4jZzhTi3an3G2DqYvj96LIWt6hpEXbBTCVHahCP8
- NoKNj6VX6umDal7ZdJusvBLNRlX6MKRRFBLC93gqod1YEwI5OdqiSBgZy+rx0w0h5sjLTsl1Kf7
- /slxESxQVB9w9Dyf07b8GMCviS+jLyCvny9o7UtSkk8MVg8DQG2nBkQYikxhmszGGjEmU+NH9FM
- GjDhyDksfZdXbhlmNOv4UoQ6aHyN1JeC/DA+IBK32kp4StRAqMddYtHKYKf/gqrr50vWXX+68Oa
- 0Eo6mwv5arU5yypZ4c+U1OcGYr17C8SK+zsrQ/REcqVJljL+kHX934MIFGk0JKYQZy1yiIv1HYF
- y34PrCrkcJD77DhOMI1/mvdQBr+nWMT9jm2AUZRlnLWcVPkTTPROLmYeR5yMhOPqxuMeleKls2b
- q68jKkTApZ57rXMkHZA==
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=2FDiJZU-w7-vk6pY0YkA:9 a=QEXdDO2ut3YA:10
+ a=uKXjsCUrEbL0IQVhDsJ9:22
+X-Proofpoint-ORIG-GUID: cTHvmt8sZvHgKFTa1igW-GkDwi_4lwme
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTAyMDAyNiBTYWx0ZWRfX5llfYi8U94Rj
+ aBtPVaCjWRnKkZcofUWuRflowN5pc2Yo18xTw2/wFnRTDHJ4HGymCoqdqUBi/QUq0lebDzHGR2d
+ 52TdY/iQKkSa06cjpPHPeQbqKcB2NWdndtuZSRfg/RITjaQ2bxuVGnA1sNt3xaIhCVoKNcQUjUO
+ ubSK5gjIX6BEd3Hh/qs1/QFGfB1HzeM+YFFVP9jqkZZo+cLyVlTNCD+6H+WroRfnzwtrN0sbXeJ
+ /Ya3g5qVh8TFx1RsW7JCYaj4d8hcsSDmSCAVBMQ0BB2M9vofe+rW64yeePUIQFgxVHEAt7C3rYO
+ yJv6BfEMVFXKnffnjCqj+AuILJUCnR2NgA9q48CaK1xnSq/4iRiB7l/6ObDxNupKMeN9bWUVP+3
+ WJjMbuBaOKS7V4vmOA1wcCEPtvi2lgksAqxukDm+YfSkBlu7+fLDMU8FX4JKpPn37Ch06T7C+CG
+ X1eGo+hBU/dFYeNXRyA==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTAyMDAyNiBTYWx0ZWRfXzliRfUD7RE29
+ DpLbzZO4kBNCnqCQoD5jsdXU1FD5EbVwnEt2+Nukw/DphhqVYx5yYqkCu1697xxdskyW8l0dtm9
+ 0kGq7pnHTImCpVFh1Cd4QeQHZYTylWY=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-02_02,2026-10-21_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 phishscore=0 lowpriorityscore=0 adultscore=0 clxscore=1015
- impostorscore=0 priorityscore=1501 malwarescore=0 spamscore=0 suspectscore=0
+ priorityscore=1501 spamscore=0 impostorscore=0 adultscore=0 phishscore=0
+ clxscore=1015 malwarescore=0 lowpriorityscore=0 bulkscore=0 suspectscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2610300000 definitions=main-2611020026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261101_223903_257696_B2E0D60D 
-X-CRM114-Status: GOOD (  22.69  )
+X-CRM114-CacheID: sfid-20261101_223903_948573_7EBA16D6 
+X-CRM114-Status: GOOD (  24.91  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -156,291 +156,215 @@ X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-WCN7850/QCC2072 hardware/firmware report only the logical link id to
-identify the link on which a packet is received. The host, however,
-needs the IEEE80211 link id. So a mapping between them needs to
-be established.
+For devices that do not support hw_link_id (WCN7850/QCC2072), the driver
+link id used to index ath12k_dp_peer::link_id_map is the logical link id.
+When the firmware advertises WMI_TLV_SERVICE_PER_LINK_STATS_SUPPORT it
+reports this id in the PEER_EXTENDED HTT event, and the host waits for
+that event to fill link_id_map.
 
-Add support for the HTT_T2H_MSG_TYPE_PEER_EXTENDED event, which reports
-the logical link id for a given link peer. Find the link peer and
-populate ath12k_dp_peer::link_id_map, mapping the logical link id to the
-IEEE80211 link id. This map is later used in the data path to derive the
-IEEE80211 link id.
-
-The firmware sends this event after each peer assoc, but only when it
-advertises WMI_TLV_SERVICE_PER_LINK_STATS_SUPPORT. On such devices, block
-in ath12k_mac_peer_assoc() until the event arrives. The event arrives
-before the MLO_RX_PEER_MAP event, so wait for it first.
+However some old firmwares don't advertise it, and no such event is sent.
+In that case allocate the logical link id on the host, mirroring the
+firmware scheme: pick the lowest free slot from a per peer bitmap
+(ath12k_dp_peer::free_slot_map) at peer assoc, after the peer assoc
+command has been sent. This matches the firmware, which allocates the id
+while handling the peer assoc command.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 Tested-on: QCC2072 hw1.0 PCI WLAN.COL.1.0.c2-00068-QCACOLSWPL_V1_TO_SILICONZ-1
 
 Signed-off-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c    |  1 +
- drivers/net/wireless/ath/ath12k/core.h    |  1 +
- drivers/net/wireless/ath/ath12k/dp_htt.c  | 17 ++++++++
- drivers/net/wireless/ath/ath12k/dp_htt.h  | 15 +++++++
- drivers/net/wireless/ath/ath12k/dp_peer.c | 66 ++++++++++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/dp_peer.h |  3 ++
- drivers/net/wireless/ath/ath12k/mac.c     | 13 ++++++
- drivers/net/wireless/ath/ath12k/wmi.h     |  1 +
- 8 files changed, 115 insertions(+), 2 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_cmn.h  |  3 ++
+ drivers/net/wireless/ath/ath12k/dp_peer.c | 49 ++++++++++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/dp_peer.h |  8 +++++
+ drivers/net/wireless/ath/ath12k/mac.c     | 52 ++++++++++++++++++++++++++-----
+ 4 files changed, 104 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 353fb9c5a69d..1bd26e82a6ec 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1562,6 +1562,7 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
- 			complete_all(&ar->scan.completed);
- 			complete(&ar->scan.on_channel);
- 			complete(&ar->peer_assoc_done);
-+			complete(&ar->peer_ext_event_done);
- 			ath12k_peer_delete_wait_flush(ar);
- 			complete(&ar->install_key_done);
- 			complete(&ar->vdev_setup_done);
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index f1929997a35a..478b51ea1f7c 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -682,6 +682,7 @@ struct ath12k {
- 	u8 radio_idx;
+diff --git a/drivers/net/wireless/ath/ath12k/dp_cmn.h b/drivers/net/wireless/ath/ath12k/dp_cmn.h
+index e17f044ff812..88abe90767eb 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_cmn.h
++++ b/drivers/net/wireless/ath/ath12k/dp_cmn.h
+@@ -9,6 +9,7 @@
+ #include "cmn_defs.h"
  
- 	struct completion peer_assoc_done;
-+	struct completion peer_ext_event_done;
- 	struct list_head peer_delete_waits;
+ struct ath12k_hw_group;
++struct ath12k_dp_link_peer;
  
- 	int install_key_status;
-diff --git a/drivers/net/wireless/ath/ath12k/dp_htt.c b/drivers/net/wireless/ath/ath12k/dp_htt.c
-index 72069640bd38..25c1f915defd 100644
---- a/drivers/net/wireless/ath/ath12k/dp_htt.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_htt.c
-@@ -627,6 +627,7 @@ void ath12k_dp_htt_htc_t2h_msg_handler(struct ath12k_base *ab,
- 	struct ath12k_dp *dp = ath12k_ab_to_dp(ab);
- 	struct htt_resp_msg *resp = (struct htt_resp_msg *)skb->data;
- 	enum htt_t2h_msg_type type;
-+	u8 logical_link_id, valid;
- 	u16 peer_id;
- 	u8 vdev_id;
- 	u8 mac_addr[ETH_ALEN];
-@@ -708,6 +709,22 @@ void ath12k_dp_htt_htc_t2h_msg_handler(struct ath12k_base *ab,
- 	case HTT_T2H_MSG_TYPE_MLO_RX_PEER_MAP:
- 		ath12k_dp_htt_mlo_peer_map_handler(ab, skb);
- 		break;
-+	case HTT_T2H_MSG_TYPE_PEER_EXTENDED:
-+		peer_id = le32_get_bits(resp->peer_extended_ev.info,
-+					HTT_T2H_PEER_EXT_INFO_PEER_ID);
-+		vdev_id = le32_get_bits(resp->peer_extended_ev.info,
-+					HTT_T2H_PEER_EXT_INFO_VDEV_ID);
-+		peer_mac_h16 = le32_get_bits(resp->peer_extended_ev.info1,
-+					     HTT_T2H_PEER_EXT_INFO1_MAC_ADDR_H16);
-+		ath12k_dp_get_mac_addr(le32_to_cpu(resp->peer_extended_ev.mac_addr_l32),
-+				       peer_mac_h16, mac_addr);
-+		logical_link_id = le32_get_bits(resp->peer_extended_ev.info1,
-+						HTT_T2H_PEER_EXT_INFO1_LOGICAL_LINK_ID);
-+		valid = le32_get_bits(resp->peer_extended_ev.info1,
-+				      HTT_T2H_PEER_EXT_INFO1_LOGICAL_LINK_ID_VALID);
-+		ath12k_dp_link_peer_extended_event(ab, vdev_id, peer_id, mac_addr,
-+						   logical_link_id, valid);
-+		break;
- 	default:
- 		ath12k_dbg(ab, ATH12K_DBG_DP_HTT, "dp_htt event %d not handled\n",
- 			   type);
-diff --git a/drivers/net/wireless/ath/ath12k/dp_htt.h b/drivers/net/wireless/ath/ath12k/dp_htt.h
-index 2db7fb27c036..1d192bde0c29 100644
---- a/drivers/net/wireless/ath/ath12k/dp_htt.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_htt.h
-@@ -933,6 +933,7 @@ enum htt_t2h_msg_type {
- 	HTT_T2H_MSG_TYPE_MLO_RX_PEER_MAP = 0x29,
- 	HTT_T2H_MSG_TYPE_PEER_MAP3	= 0x2b,
- 	HTT_T2H_MSG_TYPE_VDEV_TXRX_STATS_PERIODIC_IND = 0x2c,
-+	HTT_T2H_MSG_TYPE_PEER_EXTENDED	= 0x39,
- };
- 
- #define HTT_TARGET_VERSION_MAJOR 3
-@@ -985,12 +986,26 @@ struct htt_t2h_mlo_peer_map_event {
- 	__le32 reserved[5];
- } __packed;
- 
-+#define HTT_T2H_PEER_EXT_INFO_PEER_ID		GENMASK(23, 8)
-+#define HTT_T2H_PEER_EXT_INFO_VDEV_ID		GENMASK(31, 24)
-+#define HTT_T2H_PEER_EXT_INFO1_MAC_ADDR_H16	GENMASK(15, 0)
-+#define HTT_T2H_PEER_EXT_INFO1_LOGICAL_LINK_ID	GENMASK(18, 16)
-+#define HTT_T2H_PEER_EXT_INFO1_LOGICAL_LINK_ID_VALID	BIT(19)
-+
-+struct htt_t2h_peer_extended_event {
-+	__le32 info;
-+	__le32 mac_addr_l32;
-+	__le32 info1;
-+	__le32 info2;
-+} __packed;
-+
- struct htt_resp_msg {
- 	union {
- 		struct htt_t2h_version_conf_msg version_msg;
- 		struct htt_t2h_peer_map_event peer_map_ev;
- 		struct htt_t2h_peer_unmap_event peer_unmap_ev;
- 		struct htt_t2h_mlo_peer_map_event mlo_peer_map_ev;
-+		struct htt_t2h_peer_extended_event peer_extended_ev;
- 	};
- } __packed;
- 
+ /*
+  * ML Peer IDs start from 8192, assuming max SLO clients count 1536,
+@@ -97,6 +98,8 @@ void ath12k_dp_cmn_hw_group_assign(struct ath12k_dp *dp,
+ int ath12k_dp_link_peer_assign(struct ath12k_dp *dp, struct ath12k_dp_hw *dp_hw,
+ 			       u8 vdev_id, struct ieee80211_sta *sta, u8 *addr,
+ 			       u8 link_id, u32 hw_link_id);
++int ath12k_dp_peer_alloc_logical_link_id(struct ath12k_dp *dp,
++					 struct ath12k_dp_link_peer *peer);
+ void ath12k_dp_link_peer_unassign(struct ath12k_dp *dp, struct ath12k_dp_hw *dp_hw,
+ 				  u8 vdev_id, u8 *addr, u32 hw_link_id);
+ void
 diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.c b/drivers/net/wireless/ath/ath12k/dp_peer.c
-index f73dad49e42b..1e84b9b817f3 100644
+index 1e84b9b817f3..ee3cdd7ca460 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_peer.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_peer.c
-@@ -8,6 +8,7 @@
- #include "dp_peer.h"
- #include "debug.h"
- #include "debugfs.h"
-+#include "mac.h"
+@@ -513,6 +513,7 @@ int ath12k_dp_peer_create(struct ath12k_dp_hw *dp_hw, u8 *addr,
+ 	dp_peer->sec_type = HAL_ENCRYPT_TYPE_OPEN;
+ 	dp_peer->sec_type_grp = HAL_ENCRYPT_TYPE_OPEN;
+ 	dp_peer->ucast_ra_only = params->ucast_ra_only;
++	dp_peer->free_slot_map = U16_MAX;
  
- void ath12k_dp_link_peer_free(struct ath12k_dp_link_peer *peer)
- {
-@@ -195,6 +196,60 @@ void ath12k_dp_link_peer_map_event(struct ath12k_base *ab, u8 vdev_id, u16 peer_
- 	spin_unlock_bh(&dp->dp_lock);
+ 	spin_lock_bh(&dp_hw->peer_lock);
+ 
+@@ -562,6 +563,49 @@ void ath12k_dp_peer_delete(struct ath12k_dp_hw *dp_hw, u8 *addr,
+ 	kfree(dp_peer);
  }
  
-+void ath12k_dp_link_peer_extended_event(struct ath12k_base *ab, u8 vdev_id,
-+					u16 peer_id, u8 *mac_addr,
-+					u8 logical_link_id, u8 valid)
++int ath12k_dp_peer_alloc_logical_link_id(struct ath12k_dp *dp,
++					 struct ath12k_dp_link_peer *peer)
 +{
-+	struct ath12k_dp *dp = ath12k_ab_to_dp(ab);
-+	struct ath12k_dp_link_peer *peer;
-+	struct ath12k_dp_peer *dp_peer;
-+	struct ath12k *ar;
++	struct ath12k_dp_peer *dp_peer = peer->dp_peer;
++	u8 slot;
 +
-+	if (!valid || logical_link_id >= ATH12K_GROUP_MAX_RADIO) {
-+		ath12k_warn(ab, "invalid logical link id %u valid %u\n",
-+			    logical_link_id, valid);
-+		goto exit;
-+	}
++	lockdep_assert_held(&dp->dp_lock);
 +
-+	spin_lock_bh(&dp->dp_lock);
++	if (dp->hw_params->support_hw_link_id)
++		return 0;
 +
-+	peer = ath12k_dp_link_peer_find_by_vdev_and_addr(dp, vdev_id, mac_addr);
-+	if (!peer) {
-+		ath12k_warn(ab, "failed to find link peer with vdev id %u addr %pM\n",
-+			    vdev_id, mac_addr);
-+		goto unlock;
-+	}
++	if (test_bit(WMI_TLV_SERVICE_PER_LINK_STATS_SUPPORT,
++		     dp->ab->wmi_ab.svc_map))
++		return 0;
 +
-+	if (peer->peer_id != peer_id) {
-+		ath12k_warn(ab, "link peer id mismatch, expected %u got %u\n",
-+			    peer->peer_id, peer_id);
-+		goto unlock;
-+	}
++	slot = __ffs(dp_peer->free_slot_map);
++	if (slot >= ARRAY_SIZE(dp_peer->link_id_map))
++		return -ENOSPC;
 +
-+	dp_peer = peer->dp_peer;
++	dp_peer->free_slot_map &= ~BIT(slot);
++	peer->drv_link_id = slot;
++	dp_peer->link_id_map[slot] = peer->link_id;
 +
-+	peer->drv_link_id = logical_link_id;
-+	dp_peer->link_id_map[peer->drv_link_id] = peer->link_id;
-+
-+	ath12k_dbg(ab, ATH12K_DBG_DP_HTT,
-+		   "htt peer extended vdev %d peer %pM id %d logical_link_id %u link_id %u\n",
-+		   vdev_id, mac_addr, peer_id, logical_link_id, peer->link_id);
-+
-+unlock:
-+	spin_unlock_bh(&dp->dp_lock);
-+
-+exit:
-+	rcu_read_lock();
-+
-+	ar = ath12k_mac_get_ar_by_vdev_id(ab, vdev_id);
-+	if (ar)
-+		complete(&ar->peer_ext_event_done);
-+	else
-+		ath12k_warn(ab, "failed to get ar with vdev id %u\n", vdev_id);
-+
-+	rcu_read_unlock();
++	return 0;
 +}
 +
- static int ath12k_dp_link_peer_rhash_addr_tbl_init(struct ath12k_dp *dp)
- {
- 	struct ath12k_base *ab = dp->ab;
-@@ -544,9 +599,16 @@ int ath12k_dp_link_peer_assign(struct ath12k_dp *dp, struct ath12k_dp_hw *dp_hw,
- 		dp_peer->peer_id = peer->peer_id;
++static void ath12k_dp_peer_free_logical_link_id(struct ath12k_dp *dp,
++						struct ath12k_dp_link_peer *peer)
++{
++	struct ath12k_dp_peer *dp_peer = peer->dp_peer;
++
++	lockdep_assert_held(&dp->dp_lock);
++
++	if (dp->hw_params->support_hw_link_id)
++		return;
++
++	if (test_bit(WMI_TLV_SERVICE_PER_LINK_STATS_SUPPORT,
++		     dp->ab->wmi_ab.svc_map))
++		return;
++
++	dp_peer->free_slot_map |= BIT(peer->drv_link_id);
++}
++
+ int ath12k_dp_link_peer_assign(struct ath12k_dp *dp, struct ath12k_dp_hw *dp_hw,
+ 			       u8 vdev_id, struct ieee80211_sta *sta, u8 *addr,
+ 			       u8 link_id, u32 hw_link_id)
+@@ -603,7 +647,8 @@ int ath12k_dp_link_peer_assign(struct ath12k_dp *dp, struct ath12k_dp_hw *dp_hw,
+ 	/*
+ 	 * Only devices that use hw_link_id can map it to the IEEE80211
+ 	 * link id here. Devices that do not support hw_link_id fill
+-	 * link_id_map later from the PEER_EXTENDED HTT event.
++	 * link_id_map later, either from the PEER_EXTENDED HTT event or
++	 * from the logical link id allocated at peer assoc.
+ 	 */
+ 	if (dp->hw_params->support_hw_link_id) {
+ 		peer->drv_link_id = hw_link_id;
+@@ -678,6 +723,8 @@ void ath12k_dp_link_peer_unassign(struct ath12k_dp *dp, struct ath12k_dp_hw *dp_
+ 	dp_peer = peer->dp_peer;
+ 	dp_peer->link_id_map[peer->drv_link_id] = 0;
  
- 	peer->dp_peer = dp_peer;
--	peer->drv_link_id = hw_link_id;
- 
--	dp_peer->link_id_map[peer->drv_link_id] = link_id;
-+	/*
-+	 * Only devices that use hw_link_id can map it to the IEEE80211
-+	 * link id here. Devices that do not support hw_link_id fill
-+	 * link_id_map later from the PEER_EXTENDED HTT event.
-+	 */
-+	if (dp->hw_params->support_hw_link_id) {
-+		peer->drv_link_id = hw_link_id;
-+		dp_peer->link_id_map[peer->drv_link_id] = link_id;
-+	}
- 
++	ath12k_dp_peer_free_logical_link_id(dp, peer);
++
  	peerid_index = ath12k_dp_peer_get_peerid_index(dp, peer->peer_id);
  
+ 	rcu_assign_pointer(dp_peer->link_peers[peer->link_id], NULL);
 diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.h b/drivers/net/wireless/ath/ath12k/dp_peer.h
-index d2752b35ba0f..ea36947d1707 100644
+index ea36947d1707..c2d060de88ea 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_peer.h
 +++ b/drivers/net/wireless/ath/ath12k/dp_peer.h
-@@ -122,6 +122,9 @@ struct ath12k_dp_link_peer {
- void ath12k_dp_link_peer_unmap_event(struct ath12k_base *ab, u16 peer_id);
- void ath12k_dp_link_peer_map_event(struct ath12k_base *ab, u8 vdev_id, u16 peer_id,
- 				   u8 *mac_addr, u16 ast_hash, u16 hw_peer_id);
-+void ath12k_dp_link_peer_extended_event(struct ath12k_base *ab, u8 vdev_id,
-+					u16 peer_id, u8 *mac_addr,
-+					u8 logical_link_id, u8 valid);
+@@ -145,6 +145,14 @@ struct ath12k_dp_peer {
+ 	 * WCN7850/QCC2072.
+ 	 */
+ 	u8 link_id_map[ATH12K_GROUP_MAX_RADIO];
++	/*
++	 * Tracks which link_id_map slots are free for devices that do not
++	 * support hw_link_id and do not report per-link stats. A set bit
++	 * means the slot is free. Mirrors the firmware logical link id
++	 * allocation: the lowest free slot is assigned at peer assoc and
++	 * released when the link peer is removed.
++	 */
++	u16 free_slot_map;
  
- struct ath12k_dp_peer {
- 	struct list_head list;
+ 	u16 sec_type_grp;
+ 	u16 sec_type;
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 87c52ddfe279..1e539388c003 100644
+index 1e539388c003..01c048046290 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3864,6 +3864,7 @@ static int ath12k_mac_peer_assoc(struct ath12k *ar,
- 	int ret;
- 
- 	reinit_completion(&ar->peer_assoc_done);
-+	reinit_completion(&ar->peer_ext_event_done);
- 	reinit_completion(&ah->peer_ml_id_done);
- 
- 	ret = ath12k_wmi_send_peer_assoc_cmd(ar, peer_arg);
-@@ -3879,6 +3880,17 @@ static int ath12k_mac_peer_assoc(struct ath12k *ar,
- 		return -ETIMEDOUT;
+@@ -3881,14 +3881,52 @@ static int ath12k_mac_peer_assoc(struct ath12k *ar,
  	}
  
-+	if (!ar->ab->hw_params->support_hw_link_id &&
-+	    test_bit(WMI_TLV_SERVICE_PER_LINK_STATS_SUPPORT,
-+		     ar->ab->wmi_ab.svc_map) &&
-+	    peer_arg->ml.enabled &&
-+	    peer_arg->is_assoc &&
-+	    !wait_for_completion_timeout(&ar->peer_ext_event_done, 1 * HZ)) {
-+		ath12k_warn(ar->ab, "failed to get peer extended event for %pM vdev %u\n",
-+			    peer_arg->peer_mac, peer_arg->vdev_id);
-+		return -ETIMEDOUT;
-+	}
+ 	if (!ar->ab->hw_params->support_hw_link_id &&
+-	    test_bit(WMI_TLV_SERVICE_PER_LINK_STATS_SUPPORT,
+-		     ar->ab->wmi_ab.svc_map) &&
+ 	    peer_arg->ml.enabled &&
+-	    peer_arg->is_assoc &&
+-	    !wait_for_completion_timeout(&ar->peer_ext_event_done, 1 * HZ)) {
+-		ath12k_warn(ar->ab, "failed to get peer extended event for %pM vdev %u\n",
+-			    peer_arg->peer_mac, peer_arg->vdev_id);
+-		return -ETIMEDOUT;
++	    peer_arg->is_assoc) {
++		const u8 *addr = peer_arg->peer_mac;
++		u32 vdev_id = peer_arg->vdev_id;
 +
- 	/*
- 	 * For devices where the firmware allocates the MLD peer ID, the host
- 	 * learns the real ID only from the MLO_RX_PEER_MAP HTT event, which is
-@@ -15203,6 +15215,7 @@ static void ath12k_mac_setup(struct ath12k *ar)
- 	init_completion(&ar->vdev_setup_done);
- 	init_completion(&ar->vdev_delete_done);
- 	init_completion(&ar->peer_assoc_done);
-+	init_completion(&ar->peer_ext_event_done);
- 	init_completion(&ar->install_key_done);
- 	init_completion(&ar->bss_survey_done);
- 	init_completion(&ar->scan.started);
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 5d0afbf0bd0c..94c5def03137 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2278,6 +2278,7 @@ enum wmi_tlv_service {
- 	WMI_TLV_SERVICE_WMSK_COMPACTION_RX_TLVS = 361,
++		if (test_bit(WMI_TLV_SERVICE_PER_LINK_STATS_SUPPORT,
++			     ar->ab->wmi_ab.svc_map)) {
++			/*
++			 * The firmware reports the logical link id of this peer
++			 * in the PEER_EXTENDED event, which fills link_id_map.
++			 * Wait for it before returning.
++			 */
++			if (!wait_for_completion_timeout(&ar->peer_ext_event_done,
++							 1 * HZ)) {
++				ath12k_warn(ar->ab,
++					    "failed to get peer extended event for %pM vdev %u\n",
++					    addr, vdev_id);
++				return -ETIMEDOUT;
++			}
++		} else {
++			/*
++			 * The firmware does not report the logical link id, so
++			 * allocate it on the host by mirroring the firmware
++			 * scheme: assign the lowest free slot.
++			 */
++			struct ath12k_dp *dp = ath12k_ab_to_dp(ar->ab);
++			struct ath12k_dp_link_peer *peer;
++
++			guard(spinlock_bh)(&dp->dp_lock);
++
++			peer = ath12k_dp_link_peer_find_by_vdev_and_addr(dp, vdev_id,
++									 addr);
++			if (!peer) {
++				ath12k_warn(ar->ab, "failed to find dp_link_peer with mac %pM vdev %u\n",
++					    addr, vdev_id);
++				return -ENOENT;
++			}
++
++			ret = ath12k_dp_peer_alloc_logical_link_id(dp, peer);
++			if (ret) {
++				ath12k_warn(ar->ab,
++					    "failed to allocate logical link id for %pM: %d\n",
++					    addr, ret);
++				return ret;
++			}
++		}
+ 	}
  
- 	WMI_TLV_SERVICE_PEER_METADATA_V1A_V1B_SUPPORT = 365,
-+	WMI_TLV_SERVICE_PER_LINK_STATS_SUPPORT = 380,
- 	WMI_TLV_SERVICE_THERM_THROT_POUT_REDUCTION = 410,
- 	WMI_TLV_SERVICE_WDS_NULL_FRAME_SUPPORT = 421,
- 	WMI_TLV_SERVICE_IS_TARGET_IPA = 425,
+ 	/*
 
 -- 
 2.25.1
