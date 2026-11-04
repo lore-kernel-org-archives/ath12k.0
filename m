@@ -2,119 +2,61 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5D56E606D814
-	for <ath12k@archiver.kernel.org>; Wed,  4 Nov 2026 16:46:19 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1EF0D606D807
+	for <ath12k@archiver.kernel.org>; Wed,  4 Nov 2026 17:01:14 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=AU8YgScu;
-	dkim=pass (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=WV9EWSqQ
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=LiRjbn5W;
+	dkim=pass (2048-bit key, unprotected) header.d=pm.me header.i=@pm.me header.a=rsa-sha256 header.s=protonmail3 header.b=eWQ7mfrz
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Cc:To:In-Reply-To:References:Message-Id:
-	Content-Type:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Message-ID:Subject:Cc:From:To:Date:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=JfRW0SPoALVVWDl2xAXTfh37dfRQmby6sb8WYvVZUog=; b=AU8YgScuIhNOQ5RHqW2UJIEChM
-	yOhkISTnZnmejdyHnRcQLm1hc5aozFem9A85D4+XkscgmI/q2ov5a8hVHpIOk6wFickG0pj1w1JC5
-	/yGUNSjazM7krJQHnqqT+P8PMvHIbBjtxliHyaAZ5lUfJ06/HNfU3lgdeQznP0x1EGc9mPcScc+H2
-	860pvh/ofMeTuyfChoOgtizujS3akLAk99xkoJ85rPBZ673okqHDEpz02XBWAKN874IQeIykaLkdp
-	sEIYhD8bceTmPXARzqvcqPoFw8p/wAkwL4gexfKz09siEF7lFTmUFt+QM8DQJ2fHDV2MvVn0lNEeQ
-	Ebh+BRZw==;
+	bh=bxDqAKgTAkYSPEQNYEQWZWkEe4Zni/C9MJY8rPfAnEk=; b=LiRjbn5W4BW2LajoCh8Tuhg6Wq
+	7NJFXMhGH5HIBx+sgPw2Nu1LSXpXK64M/UQv9CXv9xboHhzITTIkUeoomN5UU40Y/daKkQj7q2Gdh
+	Au1cQOS+tWmUAGu301ex+0gloXQKemKKkKw5COtlBHanS3nh4VjbBZe5+Hu3eHkOoXTvX/YUlPmZa
+	A854ZhzE8ivcfoXhvY/r/OWm48NhrQkBhNaKXeEsFeOwBy/QQCV2E2bza3XzpBLV3qWu2kqTeHCvf
+	GaVFh2iRY5FFlh6p9H0UQeHX4CSox7NHWPtHEa1qz7kUReqFpEk4ja6Ruf29LB9YkZtWsAUeOdeQk
+	kkBUBTfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOe7u-000000063d0-4BsJ;
-	Wed, 04 Nov 2026 16:46:19 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xOeMG-000000067pZ-3Z5G;
+	Wed, 04 Nov 2026 17:01:08 +0000
+Received: from mail-10630.protonmail.ch ([79.135.106.30])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOe7p-000000063TS-0Q5M;
-	Wed, 04 Nov 2026 16:46:13 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 83FBD60D7A;
-	Wed,  4 Nov 2026 16:46:12 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1793810772;
-	b=oX4qZQ0X/LEZpGiGsTad+R+lcXXEDZWouBoS3l5mbcOOX6XK2hZXXoc6U7SQdSKa3ZOs
-	 Mt3W7EmwwJ5iUQ0E5XAS15xpatC4V84T87ZsDWbTXcjJcF1YgBI12g6RSNKXrdtEDfXFD
-	 dibho8BNkb59sObmY1ORzmTViUkASmgb9D+8nDgy5V2u5An93LjptChBrCtVkcqdzkF7u
-	 0kWNGJGHFrfvUr/M07+m/ddN5GeUB0YWURz6momw21L2gZlpRkfy/bxZp4YEeoX286Key
-	 yXEg7FEGtbkeRNMfEdEYsFMNY2oNlKK3if1dMwq1jdYHN6Sm+DQ39630wHYMj/p3C2w==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1793810772;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=JfRW0SPoALVVWDl2xAXTfh37dfRQmby6sb8WYvVZUog=;
-	b=mG3qJWzHM+oE6KeOzg/+3REXCv/7hZrdpr1keji4ZT/vHlgxM9hIoazDgOuXL8BcKtbM
-	 vvDzX54d3s4Nw9JO2PtLZX7AYV7qmX3AFNiYRbAtwm218NKC9cRdP0dQzAjduqAv/xIBS
-	 o5sRgKAorOBv/EWcTp1V+c8M+CLuTW5YN9TRtXZOfUFWELh5E16Mfc1kY6AOpdmR/fjVV
-	 ghaz0r37byly4r4Wd8fdzAF/P8FIkJZ++0/swPFO/1mKe7GkJOdxfU7BoJ33RUx3t96S+
-	 JhEwLL7MOdcyeB+ye+fKA8SXgq3jmuAoe1gr16fyEmizKrFnLlcP1yNoFQubgwSkt0g==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id F0AD11F00A21;
-	Wed,  4 Nov 2026 16:46:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793810772;
-	bh=JfRW0SPoALVVWDl2xAXTfh37dfRQmby6sb8WYvVZUog=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=WV9EWSqQrxTLVYIztlmELVMVh85LejnCzBIC/5HM5n2zKwdA0gfrXRjWfoF++o0TO
-	 bl91mJb7fEVI0JbWMBszqwbTfU14LXei3zPpLRQVF7I2pti/yOu4LMd/qz6iwCMssi
-	 cAjPa2ZJxWP85xi2ZGVDsHLMKxQKPdj2PGy/MJ35LvWa/lSVPQ8+GftpI1YaDw7JYu
-	 OLFq5Agow/jaHVmgR23ZCg9uvZCqetjCGX5G4PnYn+y7nazs9eUiiE7dyTXk7LuAUh
-	 0wWofSEUX+MsN/nceCi8NuWRmkXPkd7h/rslsP8V38vIlpRElE6vL595Srh1DzZrIc
-	 Gw0rBmvp+f2hg==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 7BA4946ED2;
-	Wed,  4 Nov 2026 16:46:09 +0000 (UTC)
-From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
-Date: Wed, 04 Nov 2026 08:46:03 -0800
-Subject: [PATCH net-next v5 3/4] wifi: ath11k: Connect to the QMI server
- belonging to the device owned by this driver
+	id 1xOeME-000000067oS-3FVA
+	for ath12k@lists.infradead.org;
+	Wed, 04 Nov 2026 17:01:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pm.me;
+	s=protonmail3; t=1793811661; x=1794070861;
+	bh=bxDqAKgTAkYSPEQNYEQWZWkEe4Zni/C9MJY8rPfAnEk=;
+	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
+	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
+	b=eWQ7mfrzLmdGTkpMhVNvt9mmweLIEwQJPa8STQ6I/XIjSuhEcHLp12WGCmPn9eeww
+	 yr1JmqrKM3VPXKjgNYvo0dHq+xmRi1kZ4dOAlJRoAg7c8PEJCz3rj81vHJuTD0ZxoP
+	 ypvq4VyFbaRfsuHs6mrBoFHN9rTXWnRZZ7DTJlQwEXnHHmBc701aUwMleV53nyDWso
+	 2pKWVdW8Ezw0d8bw8mavQi8UYIFXji9I1odGJpJfOGqgu849x6VUyWWsXlkSaS5raF
+	 /xNATqC7tbS1NlUXiErvjkW0uyqsMQa3fY1cxUDsd2XKwKFKKgoy3rApzM7NcBr33J
+	 k9tNvClFGjf/Q==
+Date: Wed, 04 Nov 2026 17:00:55 +0000
+To: ath12k@lists.infradead.org
+From: Birk Skyum <birk.skyum@pm.me>
+Cc: Jeff Johnson <jjohnson@kernel.org>
+Subject: ath12k: board-2.bin entries for 12 QCC2072 and WCN7850 cards
+Message-ID: <179381165259.84724.9229191626653570162@pm.me>
+Feedback-ID: 21326998:user:proton
+X-Pm-Message-ID: b99f16b365988d846cf6a3f7cefc0304deae972d
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261104-qrtr-multi-ep-v5-3-4cdb2b4f1920@oss.qualcomm.com>
-References: <20261104-qrtr-multi-ep-v5-0-4cdb2b4f1920@oss.qualcomm.com>
-In-Reply-To: <20261104-qrtr-multi-ep-v5-0-4cdb2b4f1920@oss.qualcomm.com>
-To: Manivannan Sadhasivam <mani@kernel.org>, 
- "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>, 
- Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>, 
- Jeff Johnson <jjohnson@kernel.org>, Eric Dumazet <edumazet@kernel.org>, 
- Eric Dumazet <edumazet@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, 
- ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
- Bjorn Andersson <andersson@kernel.org>, 
- Chris Lew <christopher.lew@oss.qualcomm.com>, 
- Deepak Kumar Singh <deepak.singh@oss.qualcomm.com>, 
- Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>, 
- Juha-Matti Tilli <juha-matti.tilli@iki.fi>, 
- Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
- Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=4200;
- i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
- bh=8jdd/IxbkpdXzxb0pbbCtVyl0Xl30Xp8Q0D9LtdyvhY=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq62FPbjDf/0qWzmhZRJGSlPc5ilpfYhrma+JkR
- fdrQ7uP0XWJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCauthTwAKCRBVnxHm/pHO
- 9R8BCACidy14HAjJGZYhBuvH+k52nwAL23/DmWX1dAWwekfv4MDQF8Mdj64fv2T9mMtH8wOaQUM
- dT470wVrTKQAKkfzzLMPschxkhU9Y7BdbFAI2dE+Wjv0mHTCjKUnB5EIFtJzZxQRtJm0zCOwpiQ
- PB1RyQdwiruDc/o/OIEOR3zgTZROTIejzZ6JxdFEjJx2TG0fByWWvRU8FqNWrZNl1+VmJZ2o30S
- vbL84l3K8MHy1yjWWauqzT15iT44TJc09Jmh6uAJTZhzQWIDo6PT1GvU8pspoUQn+vaegVLO57w
- 7XQUlbm8TLs0+WSDQsdhSf91VgQvDYzqpoZpGMhuVwntwryg
-X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
- fpr=C668AEC3C3188E4C611465E7488550E901166008
-X-Endpoint-Received: by B4 Relay for
- manivannan.sadhasivam@oss.qualcomm.com/default with auth_id=461
-X-Original-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261104_090106_978212_857690BD 
+X-CRM114-Status: UNSURE (   4.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.7 (-)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,126 +66,48 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Reply-To: manivannan.sadhasivam@oss.qualcomm.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-4.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=unavailable autolearn_force=no version=4.0.1
+	HEADER_FROM_DIFFERENT_DOMAINS,LOCALPART_IN_SUBJECT,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Hi Jeff,
 
-When two identical ath11k PCIe devices are connected to the same host, both
-advertise the WLFW service with the same service and instance id. The QMI
-lookup reports both servers to each device, so a device may connect to the
-firmware running on the other device.
+The ASUS Zenbook A16 (Snapdragon X2) comes up without Wi-Fi because its
+QCC2072 card, 105b:e14f, has no board-2.bin entry. Qualcomm's Windows
+drivers list eleven more QCC2072 and WCN7850 cards that linux-firmware
+has no entry for. For each of them, the driver's INF sets the same
+BDFileName as for cards linux-firmware already lists, and those cards
+share one record in board-2.bin. Could these cards get entries
+pointing at those records?
 
-But now, QRTR provides each MHI endpoint a unique node id which is
-different from the node id announced by the device. So use the same id to
-pick the correct server. Add a get_qrtr_node_id() HIF callback that returns
-the node id derived from the MHI controller index and zero for transports
-that do not assign one. In the new_server callback, reject any service
-whose node id does not match. A node id of zero disables the check, so
-transports that do not assign one keep their current behavior.
+QCC2072 (17cb:1112), bdwlan_qcc2072_1p0_ncm820A.elf, the record
+linux-firmware has for 105b:e15a (qmi-board-id 24):
 
-Reviewed-by: Simon Horman <horms@kernel.org>
-Acked-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath11k/hif.h |  9 +++++++++
- drivers/net/wireless/ath/ath11k/pci.c |  9 +++++++++
- drivers/net/wireless/ath/ath11k/qmi.c | 11 +++++++++++
- 3 files changed, 29 insertions(+)
+  105b:e14b, 105b:e14c, 105b:e14f, 105b:e159, 17aa:e14e, 103c:8ef3
 
-diff --git a/drivers/net/wireless/ath/ath11k/hif.h b/drivers/net/wireless/ath/ath11k/hif.h
-index 017fed1b4bd1..f432fa4890be 100644
---- a/drivers/net/wireless/ath/ath11k/hif.h
-+++ b/drivers/net/wireless/ath/ath11k/hif.h
-@@ -32,6 +32,7 @@ struct ath11k_hif_ops {
- 	void (*ce_irq_disable)(struct ath11k_base *ab);
- 	void (*get_ce_msi_idx)(struct ath11k_base *ab, u32 ce_id, u32 *msi_idx);
- 	void (*coredump_download)(struct ath11k_base *ab);
-+	unsigned int (*get_qrtr_node_id)(struct ath11k_base *ab);
- };
- 
- static inline void ath11k_hif_ce_irq_enable(struct ath11k_base *ab)
-@@ -159,4 +160,12 @@ static inline void ath11k_hif_coredump_download(struct ath11k_base *ab)
- 		ab->hif.ops->coredump_download(ab);
- }
- 
-+static inline unsigned int ath11k_hif_get_qrtr_node_id(struct ath11k_base *ab)
-+{
-+	if (!ab->hif.ops->get_qrtr_node_id)
-+		return 0;
-+
-+	return ab->hif.ops->get_qrtr_node_id(ab);
-+}
-+
- #endif /* _HIF_H_ */
-diff --git a/drivers/net/wireless/ath/ath11k/pci.c b/drivers/net/wireless/ath/ath11k/pci.c
-index a163168f3617..d40c057e130c 100644
---- a/drivers/net/wireless/ath/ath11k/pci.c
-+++ b/drivers/net/wireless/ath/ath11k/pci.c
-@@ -10,6 +10,7 @@
- #include <linux/of.h>
- #include <linux/time.h>
- #include <linux/vmalloc.h>
-+#include <net/qrtr.h>
- 
- #include "pci.h"
- #include "core.h"
-@@ -900,6 +901,13 @@ static int ath11k_pci_start(struct ath11k_base *ab)
- 	return 0;
- }
- 
-+static unsigned int ath11k_pci_get_qrtr_node_id(struct ath11k_base *ab)
-+{
-+	struct ath11k_pci *ab_pci = ath11k_pci_priv(ab);
-+
-+	return qrtr_host_node_id(ab_pci->mhi_ctrl->index);
-+}
-+
- static const struct ath11k_hif_ops ath11k_pci_hif_ops = {
- 	.start = ath11k_pci_start,
- 	.stop = ath11k_pcic_stop,
-@@ -921,6 +929,7 @@ static const struct ath11k_hif_ops ath11k_pci_hif_ops = {
- #ifdef CONFIG_DEV_COREDUMP
- 	.coredump_download = ath11k_pci_coredump_download,
- #endif
-+	.get_qrtr_node_id = ath11k_pci_get_qrtr_node_id,
- };
- 
- static void ath11k_pci_read_hw_version(struct ath11k_base *ab, u32 *major, u32 *minor)
-diff --git a/drivers/net/wireless/ath/ath11k/qmi.c b/drivers/net/wireless/ath/ath11k/qmi.c
-index 7dc07339b957..09c23ddffb38 100644
---- a/drivers/net/wireless/ath/ath11k/qmi.c
-+++ b/drivers/net/wireless/ath/ath11k/qmi.c
-@@ -3170,8 +3170,19 @@ static int ath11k_qmi_ops_new_server(struct qmi_handle *qmi_hdl,
- 	struct ath11k_qmi *qmi = container_of(qmi_hdl, struct ath11k_qmi, handle);
- 	struct ath11k_base *ab = qmi->ab;
- 	struct sockaddr_qrtr *sq = &qmi->sq;
-+	unsigned int node_id;
- 	int ret;
- 
-+	/*
-+	 * Identical devices advertise the same QMI services, so connect only
-+	 * to the QMI server on this device's node. A node id of 0 means the
-+	 * transport has not assigned a unique node id, so accept the server
-+	 * unfiltered.
-+	 */
-+	node_id = ath11k_hif_get_qrtr_node_id(ab);
-+	if (node_id && service->node != node_id)
-+		return -EINVAL;
-+
- 	sq->sq_family = AF_QIPCRTR;
- 	sq->sq_node = service->node;
- 	sq->sq_port = service->port;
+WCN7850 (17cb:1107), bdwlan_wcn785x_2p0_ncm865a.elf, the record for
+105b:e0eb, 105b:e129, 17aa:e115 and 1eac:8001 (qmi-board-id 255):
 
--- 
-2.43.0
+  105b:e13d, 1a3b:6570, 1a3b:6571, 1a3b:6572
 
+WCN7850 (17cb:1107), bdwlan_wcn785x_2p0_ncm825.elf, the record for
+14cd:9618, 105b:e0f3 and most other NCM825A cards (qmi-board-id 255):
+
+  1a3b:6580, 1a3b:6581
+
+The INFs are from qcwlancol8480 00685.13804.00110 and qcwlanhmt8480
+00685.13804.00060 (X2), and qcwlancol8380 and qcwlanhmt8380
+1.0.4516.4000 (X1), in ASUS's driver packages for the Zenbook A16
+(UX3607OA) and the Zenbook A14 (UX3407QA). The board IDs are the ones
+linux-firmware's entries for each family use, since I haven't seen these
+cards' own logs. You'll know better whether the modules report the same,
+and I can get the A16's log if that helps.
+
+Thanks,
+Birk
 
 
