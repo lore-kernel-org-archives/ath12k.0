@@ -2,105 +2,105 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1D239606EE8E
-	for <ath12k@archiver.kernel.org>; Wed,  4 Nov 2026 01:11:00 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AD568606D82F
+	for <ath12k@archiver.kernel.org>; Wed,  4 Nov 2026 01:11:11 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DL/jgezU;
-	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=SJgNINCo;
-	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=jGXZGKYM
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=oa0XeRP1;
+	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=OoxFEsAN;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=d4Ttv62G
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=mL14LNWehxCuNae9DlFtHdzgIir7uUJx/MZpih9Df48=; b=DL/jgezUpII+jO
-	Kq0uoxCMLqfV7v3gELEsrNns3juUslIcflz42HV7XrhB3a9jMfcFbkpY1ig3gdHQir6bp5ZRSFxI8
-	HCExzTOs+1ZAeDPlIz014wIzdi1i3WCT3h8JEZM4bDYFdxXxzBpGTl+aW6bQi9FOSrXudaH6Juw06
-	JT1Qi5iR7x9RekMRaSeGaTzcRN+TufKDSm+6ZEFACPBfo+3kjmb2aRnIPEaWiJLsKM1QWqzA4Kkey
-	orC9UFvif527dZAIyYDS020YIN032vWOSK4QtDT1GqozH8Q+XW5sF79E0ngrWWJXiQqHylcwsV0E9
-	rJ7XwC+ZGb6C2unfNuDQ==;
+	List-Owner; bh=mdMqrqYmZYMbZHP7GOIz5k4MhWocLVLSTzSlsjp6QQQ=; b=oa0XeRP1nKtAe3
+	hNciKrOSWUBz9mh+aQRS/mxafJzwGFNq29e1Z2jjYuCMDsQMSB2kJ+D/ufiP32LTMz9uYZ1xGsZi6
+	pzPR94UnTZkFUtPeGsuXxFFcWv6X/FFSm6PRkAj5A/kHGLqPW+HaKP6swx6AsjEk90VyiFsBt1l3d
+	LHG0D8u+c/2yQM/5rue5Nk8Pq2GoB43D6a0ui+/KAaTn3LpZrETEITQX0CJkh49ja44KJTGQtKxR3
+	ok4RA7IevfuDC/GT6ExVFuUhIxUCgNJjmSyVAo2qIZeLdP/9avhE6Op3WwzoEzLTa0eG0gpa3JNyS
+	WZ4IWwvm3YkebT+rPHeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOPWl-000000042yY-3EaK;
-	Wed, 04 Nov 2026 01:10:59 +0000
+	id 1xOPWw-000000043AD-2cf2;
+	Wed, 04 Nov 2026 01:11:10 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOPWg-000000042rv-3r70
+	id 1xOPWn-0000000430w-1ymU
 	for ath12k@lists.infradead.org;
-	Wed, 04 Nov 2026 01:10:56 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A40RQvv809416
-	for <ath12k@lists.infradead.org>; Wed, 4 Nov 2026 01:10:54 GMT
+	Wed, 04 Nov 2026 01:11:07 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A40RCvq3335229
+	for <ath12k@lists.infradead.org>; Wed, 4 Nov 2026 01:11:00 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	mL14LNWehxCuNae9DlFtHdzgIir7uUJx/MZpih9Df48=; b=SJgNINCozTDPpQNL
-	a9SOujbC0xWVYYR2PXU1t/In1wFnzAu/LXIciLYTVh+kUhpZhq3aQalEjM6pYQCM
-	GwD5P5qOwzocTpA6FVey5meSWz58SrQefh8vuh0jBOBxDDdUwNVqY6xIkLlWborv
-	1ww1NF4GmyJZbc2qZqBunAGErS1PrGFomcV3KvtmCIDk55/n4aQcpiJNbJbz5GiD
-	sPyV3v3jJIZq3Xi9A16vf4e3M7WMmPS1kIS9odnIKx7WqVhe0LUmKga2DQg42Jqj
-	ndkNSUhRWi6vN7aO8Rba9MTqMqcfAtQKc90GrDm6ZuSYs/1dATVrgZ2YTKlnnP8E
-	HvhDWA==
-Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hqkgp9vr2-1
+	mdMqrqYmZYMbZHP7GOIz5k4MhWocLVLSTzSlsjp6QQQ=; b=OoxFEsANc5Oaa+sw
+	kmCqmm0LIE1twR/DNSv5P4Uh3KP9DHbkQlhcj3sxyN0tULNk20vLQ+V0lIjC1Sgh
+	/8bBTPHs30D+183dXKeryEU8Co9sQvqbP++SFWGMNjvKwuax0Jw8qba9jD7OzHAS
+	LyEjRpknFdhXnEn/B9csrTpJrsCAIwf24f5EcnBoiOPxKRUdbcl9Jgri/O2KBfQN
+	ZApFCQQiryzhU5buTaTQCos7yuLSFwchciHDtyZjKftytWXplGCR4k+8p58mYcK6
+	VjSxRb1MXLrN+EG92t5ApRp3hBkdh7quAPzFBMtuItNH2Wp9WcJv3qP2AkmkUgmb
+	4bG1SQ==
+Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hqmjbsfad-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 04 Nov 2026 01:10:53 +0000 (GMT)
-Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-36a1e2485fdso261766eec.1
-        for <ath12k@lists.infradead.org>; Tue, 03 Nov 2026 17:10:53 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Wed, 04 Nov 2026 01:11:00 +0000 (GMT)
+Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-341eff9e381so283882eec.1
+        for <ath12k@lists.infradead.org>; Tue, 03 Nov 2026 17:11:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793754653; x=1794359453; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1793754659; x=1794359459; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=mL14LNWehxCuNae9DlFtHdzgIir7uUJx/MZpih9Df48=;
-        b=jGXZGKYMZxPoRBAkTG2OuI34bP5zrQDeWEo21v0K+LB35FT6Hcb/WjUAyP2rXEDbWv
-         im9KSHCEqheHjmzvDgl5xEX9uUz/CWzwUB1jdtdYlesKSEIquUV+e8gxLzTZfIC2wOOF
-         ZMQnULGkCMoqmLKEsnneV3OJBxF9AW7iHWUY1TY9l6nkaSV88gkTTTE3AvaKuDmDExfH
-         DaRJq7CRcXExs8p4NgewL16IwpWh1DOxt7uqKfX267HGVbRLsErwGHy+ig+2PiVU5KS2
-         CJA2nK7VDKuZNLL7cPcTglGnXWQwrh1inDN76ZWzfzRlXPkSaSrIL6ZzSb/+7qtJPqCx
-         i5oA==
+        bh=mdMqrqYmZYMbZHP7GOIz5k4MhWocLVLSTzSlsjp6QQQ=;
+        b=d4Ttv62GpDAJ77yoTrAvN3ygjQ1WQumufYEbgMvrTrmgqWNs8NJDdhdkeP6rZlE9gz
+         46SbQMcKdyXp4wLjEkHDK00qb47uwHeM5WtvNnRh4Lhri3FaPw3Ah2qhdw8LgHnEQXvu
+         lLjh2tBimCNF4oB7ZJc8Zl+khpAia+zQ7N+0VBcPvFjVZ5mgkp4fORy1+rEZVBBPfFXV
+         Evda/OphnFvFk2qy5z5JNsfrEs4cEfxaeetdN5sZxfLTxvAeLw8IV3cbj/UY/FkC35eN
+         2rc75gfV9YAZJxcpx6EToZbLSR6I1BV6pSla3OusgygJAzlxq4jDa3CQ/PhYdrA0QNp3
+         r0Eg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793754653; x=1794359453;
+        d=1e100.net; s=20260707; t=1793754659; x=1794359459;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=mL14LNWehxCuNae9DlFtHdzgIir7uUJx/MZpih9Df48=;
-        b=EdxKjckQjSZ7xMXitV8gZU5gTjqZs9SrAp8vj58nqd6ff1r1O7ANabP8EJuhCom9+9
-         gU4pkUrMBA2Qha15my4HDtSU5d+uiXerQRZ3DT8izrwFs9+avFHAQZX2WfBrRDrGbK9s
-         h9JPEXo5iLErslPeqlDkCrj2p807IyzP9SufvF12cCzxwNBghwTq27bhvnQJOtep10op
-         Fq3lfB+WxCWOSw80J6y1Jl7lLHRlDByOF3HHQ9l+/kKPUNC6ua32M6Uf4tZSZ7F3VStR
-         UJaORp9NN6JLagpPlMLCIrWJZgY/dWEQE3mygur0JSMI4uD4mkpAxx4zPV3RgF98YaRg
-         pXCQ==
-X-Forwarded-Encrypted: i=1; AKwUvBzyBDlljC5AvFKQLqBjB/5N3fi8+n/M0UQxdpS5qpjEkInb5Tfyb+pLcS/nq1AgDgujdYhe7IM=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9XkGwiIYWPf3WsKiPqeYBFbgWYdg6gr6y5n7xgyWKsogbW9b3K
-	81fCGJsrTMclQ58LTq7La8DJPAO6TAOaTF/tTed8/bFoHJwvZcnVved3b27rKOM9MG1866m7kUs
-	qJFuRW8fskVEeoCXzh4asmfdtUQF8SYv4hSkeQQfnyJAnoTq/5RsxB5gNciiVaUZx
-X-Gm-Gg: AYBFou14BiX0dSxpiCDpbp8mKDUB361C+8b3Bta1CdyHCE/I80LZvbXFhUGbibCga4Q
-	KWxpWO5T6ajvcxNtWyTmTrgOWvXfjHJrqBMcMBabHoDy/x/yBlM+lC8NgbLnjbk9MsDFbxqjvX/
-	7xhw2SEkJeCMjTadzz7KXYlSn50aPrVTCQE6F2/b0jkwnZ8Fs+s9m9V6VlxyBHqSlNcbCfUkjTX
-	cll+d3VOaR68G9vio7lOSzTCPKwkMhyDSjbNSLULjHd3y3VnZYhif/wqu9rx5I3vyQeLXpAcwXG
-	VjCmTt1xdxsIIovy/ZJbFQbNTcGeIVAI4yvuJEp4PikcbKMxk5icEmJ5EQXYacmzrDS1FpOtyvd
-	tr7nteC9FIkZQ0mhH1iTFyJ5/O+sxUNGcbhrBU13ohRT/YDpqT9SLAdsfbSKN+ZJ5bHtThISDHf
-	X3635tQGoFxwJmVMDUMcQ/o6LGhtzpi3QS4ASV
-X-Received: by 2002:a05:7300:4719:b0:368:6f29:f26c with SMTP id 5a478bee46e88-36a4221aa0dmr20176237eec.4.1793754652822;
-        Tue, 03 Nov 2026 17:10:52 -0800 (PST)
-X-Received: by 2002:a05:7300:4719:b0:368:6f29:f26c with SMTP id 5a478bee46e88-36a4221aa0dmr20176178eec.4.1793754652061;
-        Tue, 03 Nov 2026 17:10:52 -0800 (PST)
+        bh=mdMqrqYmZYMbZHP7GOIz5k4MhWocLVLSTzSlsjp6QQQ=;
+        b=tdmfnFlWla4rPV3oMeMaehph/1X9f/EZJTKW6L49ZiyXqnsQVZg0gPnEVNNlRIve2l
+         s8HulNEeHMRWvHzQ07ZQnkB1u9/oC9RA/x9L5eNc/1scY5j1+NvjDGRCzlLiyPag0MZF
+         4xpWQ4CWFcUir6ZrnZD/qzjBJkP4H9IWmDK6SaQGihPYXUNlVxs6zNK/TEleaNTE0+5T
+         hwaShycDKYUkQY+BIntua+5Vrr3/gpwN0e9iYdjZ4icPJtZyk5Ikd1g9DfAisym2K2DO
+         PM+oM5cMifswoBkyfNGmpct5PB+rf7Topjg2QDl22cY3tFK0mZUR62cPeNRfy0SDvGqq
+         5HIA==
+X-Forwarded-Encrypted: i=1; AKwUvBxzAg0o66AnVg03/ubIhAvgttVw1UFeZvbmg1wpL5sZYBjZj2SaRHyMERQwaJWK6DnSVNxEX0g=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+vX2YlnorugJd4FAKnPbnLFoUdoqv40oIs0Afs7IUYEctZAr6I
+	d49lI39toyg1Er4l+n4kn8xGq/yyRiZK1WEVWBAXj6GSwVNlWTM95cFDbMLu4xA77BwBAB+ZSAR
+	JVG9TW3kXjiPNWqfT8Ffr+0dsZiHktkPfW/DrXRsTZ7PsOcufGRMC2nNUTTeEGucn
+X-Gm-Gg: AYBFou1Npgz+tBeRdzfeGK0MBtsIboRVmxvvRT8OoFB2vqsWmLFfpBHnD1Z7aqS5Y1Q
+	QbcE2SRSaY72AEZgtUI/WNyi2QxCfldSF5MOuDk1DTKO0dTRbIem9a94HQ9AZIAYGD7kmJuiOre
+	u7qzxXXDRpvSmO4HIstDSbuARQ/PVbfqtfiZh92xKG31b1yKQjQpHn/QJAU3L1Lj3Q+WRIV4WKq
+	4d/i/Z8WgCMLRmbmlaObIguK95QMJbZZJyTpLMObkSO0smfQ99OzYTwg1s06lF5CMhEvooqomN1
+	B0+K+IZqh7SCBzAHjK1WnseXI8sYJoZCSvRAv0Ph0MNOjH80FfuG7j2TRLo0IECT+UnMemVvqZe
+	ijR0HKWXUYX+rEr8J2paTXI1qpJKwZjgCKGTGi8p6KX1GXOPUoGbSzoSD2/bUUYQ8xo7xjrFwNk
+	qmDSvQ47Wtys0eS0j5j5NogSjIl/pJl+7+qYJp
+X-Received: by 2002:a05:7301:6492:b0:360:34e4:39d2 with SMTP id 5a478bee46e88-36a423312fbmr20105944eec.10.1793754659476;
+        Tue, 03 Nov 2026 17:10:59 -0800 (PST)
+X-Received: by 2002:a05:7301:6492:b0:360:34e4:39d2 with SMTP id 5a478bee46e88-36a423312fbmr20105905eec.10.1793754658842;
+        Tue, 03 Nov 2026 17:10:58 -0800 (PST)
 Received: from ath12k-linux2.qualcomm.com (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-36ca38a54ccsm2288670eec.4.2026.11.03.17.10.51
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-36ca38a54ccsm2288670eec.4.2026.11.03.17.10.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 03 Nov 2026 17:10:51 -0800 (PST)
+        Tue, 03 Nov 2026 17:10:58 -0800 (PST)
 From: Pradeep Kumar Chitrapu <pradeep.chitrapu@oss.qualcomm.com>
-Date: Tue, 03 Nov 2026 17:10:49 -0800
-Subject: [PATCH ath-next v3 06/13] wifi: ath12k: ng: parse 1K REO queue
- statistics
+Date: Tue, 03 Nov 2026 17:10:55 -0800
+Subject: [PATCH ath-next v3 12/13] wifi: ath12k: ng: wire RX TID REO
+ operations
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261103-reo-cmd-b4-posting-v3-6-861adf04b516@oss.qualcomm.com>
+Message-Id: <20261103-reo-cmd-b4-posting-v3-12-861adf04b516@oss.qualcomm.com>
 References: <20261103-reo-cmd-b4-posting-v3-0-861adf04b516@oss.qualcomm.com>
 In-Reply-To: <20261103-reo-cmd-b4-posting-v3-0-861adf04b516@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>, Ripan Deuri <quic_rdeuri@quicinc.com>,
@@ -113,37 +113,37 @@ Cc: Pradeep Kumar Chitrapu <pradeep.chitrapu@oss.qualcomm.com>,
         linux-kernel@vger.kernel.org,
         Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 X-Mailer: b4 0.16.0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA0MDAwNCBTYWx0ZWRfX+sV3T8GQJ5vr
- gXGsB0Ax44RHfepJS5j3/0NDT1PWsBRFMJfveOy3iCGmK7dnsnxVNZBQsIdpChA2CXRkA5NJ6H3
- KlivwFLcAW7uRUZfHjoZoWj8NyYC3asGjA8Bg92bRonxDY7AOV0+Mu9pdUBx8Gh1LAJ7Y4ocJvn
- bhUNR/obPYfVo0ia02ndIl6J9iwWtTGBwBxO2pbv8frkhB9E15b8+NLNRJSb3ADSFDcqtpgYUU5
- Q3oPV9NLs7qPQoRPoBb8LB5j39JqTEgywLaC3Rxzw6kEaqIybV/r5bfYMaZwEpWcOOetr1icxpS
- 2kaaa0A6dywJ5PqMZlMTiRc/4uOm6MbL9XzYdswVKdT1q/6fg35wLI/+m8ARwaWKtj9JkR/x9C4
- KfRHUixbEkuXYhziLLv2ioa9ZBNGuRx9Q+7UJoVcMaUY2EaG7c8rgr6muqAOaNkeXYuP81L4zjP
- Rg42Y3PCFng7dVWpUvA==
-X-Proofpoint-GUID: SCXWrOKXFSc6qmlm7Qglpfm1Z43uD46a
-X-Authority-Analysis: v=2.4 cv=Yoya1IYX c=1 sm=1 tr=0 ts=6aea861d cx=c_pps
- a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+X-Proofpoint-GUID: 1PJLbWO5aVWN7HRvaT9dr3v7qgZT08xG
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA0MDAwNCBTYWx0ZWRfXwxBXFBa81K68
+ 561QzNAahmE9PWB8SxmoGq8MGmk03EyK7m1VGJnjhjR0WTRj5MGobEZdzA37QCsiEP24faellO/
+ q70b3iYlAzPNJjmh390logY01NtMPeuDQ1ldUe+hW0LQZ0QG/1Wudv63h4njuI3yQ+pulwhIFNn
+ qRfR/4cA740gQuSmXy0kaYMClYte77Se3kOOdI6DDfM9NGoQT35owvcd1tRUrveXFt5nn3CuW6o
+ X5z7BZrAmLwYrH5AbjBIf6QWgSeT1YLlSgV8QRGr2HEY0t2eXhJCc4+IR0k2GV57Vwrlg4LdXH3
+ G93waCF2tQm+9Br0bRun4fPDhomEXz5lTInJbrfyYJpxnWkQzUSUXVLHUMRkcOSRLz2Bo0uITRH
+ 6eWQisALyt27TJtwMqCmPcN+Cbwz2UYduaorLKONfrl5y46bvtqD06RJ2khYx8lLanGryeLlg31
+ bDL4X4ytNPMLVH1oppQ==
+X-Proofpoint-ORIG-GUID: 1PJLbWO5aVWN7HRvaT9dr3v7qgZT08xG
+X-Authority-Analysis: v=2.4 cv=NMhAaE6g c=1 sm=1 tr=0 ts=6aea8624 cx=c_pps
+ a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=EUspDBNiAAAA:8 a=jlw-gz1d5bKLCbeaqcMA:9 a=QEXdDO2ut3YA:10
- a=6Ab_bkdmUrQuMsNx7PHu:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA0MDAwNCBTYWx0ZWRfX3IZmqRvUJdCa
- aQake+A1a63h5ociGh356EqqMDwYgb/22FUGVQpz7VaS57TBB7KVG9s8s5V4OP0r1Rv8oKztFTU
- mSwt6pgJAdboXgH946EUiQicJ/CtE5s=
-X-Proofpoint-ORIG-GUID: SCXWrOKXFSc6qmlm7Qglpfm1Z43uD46a
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=EUspDBNiAAAA:8 a=bm8WxbACC0oYRj511PUA:9 a=QEXdDO2ut3YA:10
+ a=bBxd6f-gb0O0v-kibOvt:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA0MDAwNCBTYWx0ZWRfX34/gByd+/iS+
+ rIM229rHXBTx+agKR5CEVyqF1yEWoyuZ8tnrrU+ymw4nXEDqXky+xJQWid7L5JEYCkVGNzWmY9R
+ xSw7Iob9q/HXpqm0yDK8ayBRHBQGlTg=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-04_01,2026-11-03_04,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 bulkscore=0 clxscore=1011 suspectscore=0 spamscore=0
- phishscore=0 impostorscore=0 priorityscore=1501 lowpriorityscore=0
- adultscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610300000
+ priorityscore=1501 spamscore=0 lowpriorityscore=0 clxscore=1015
+ impostorscore=0 suspectscore=0 phishscore=0 adultscore=0 malwarescore=0
+ bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2610300000
  definitions=main-2611040004
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261103_171055_092665_C341DA5C 
-X-CRM114-Status: GOOD (  17.34  )
+X-CRM114-CacheID: sfid-20261103_171105_873050_2015A953 
+X-CRM114-Status: GOOD (  13.51  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -155,170 +155,85 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-18.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
 	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,T_SPF_TEMPERROR,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-A normal REO queue-statistics status contains the first 288 bits of the
-reorder bitmap. For a receive queue with a larger BlockAck window, the
-hardware sets a follow-up flag and returns bits 288 through 1023 in a
-second status TLV.
+RX TID setup fails on Wi-Fi 8 while the architecture hooks are empty,
+so common peer setup falls back to paths that cannot program QCN9625 REO
+queue descriptors.
 
-Define the 1K queue-statistics status descriptor and decode its 23
-additional bitmap words. Extend the common queue status with the PN
-encoding, follow-up indication, and wider counters, and store the TLV tag
-so a follow-on datapath patch can distinguish both responses for one
-command number.
-
-This commit only extends Wi-Fi 8 status representation and parsing. It
-does not submit commands or change the Wi-Fi 7 descriptor path.
+Install the Wi-Fi 8 RX TID hooks, initialize the REO command/list locks
+used by those paths, and enable REO queue LUT support for QCN9625. Expose
+the single Wi-Fi 8 REO LUT through the expected ML pointer so common qref
+programming can use the same address table.
 
 Tested-on: Compilation only, M=drivers/net/wireless/ath/ath12k
-
 Signed-off-by: Pradeep Kumar Chitrapu <pradeep.chitrapu@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/hal.h            | 15 +++++++++---
- drivers/net/wireless/ath/ath12k/wifi8/hal_desc.h | 10 ++++++++
- drivers/net/wireless/ath/ath12k/wifi8/hal_rx.c   | 30 ++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wifi8/hal_rx.h   |  3 +++
- 4 files changed, 55 insertions(+), 3 deletions(-)
+ drivers/net/wireless/ath/ath12k/wifi8/dp.c | 18 ++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wifi8/hw.c |  1 +
+ 2 files changed, 19 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 9c0d1dfac8d3..6534e11a3378 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -1173,6 +1173,9 @@ struct hal_reo_status_queue_stats {
- 	u16 ssn;
- 	u16 curr_idx;
- 	u32 pn[4];
-+	u8 pn_len;
-+	u8 pn_127_48_info;
-+	bool to_follow_1k;
- 	u32 last_rx_queue_ts;
- 	u32 last_rx_dequeue_ts;
- 	u32 rx_bitmap[9];
-@@ -1186,9 +1189,13 @@ struct hal_reo_status_queue_stats {
- 	u32 total_num_processed_byte_cnt;
- 	u32 late_rx_mpdu_cnt;
- 	u32 reorder_hole_cnt;
--	u8 timeout_cnt;
--	u8 bar_rx_cnt;
--	u8 num_window_2k_jump_cnt;
-+	u32 timeout_cnt;
-+	u32 bar_rx_cnt;
-+	u32 num_window_2k_jump_cnt;
-+};
-+
-+struct hal_reo_status_queue_1k_stats {
-+	u32 rx_bitmap[23];
- };
+diff --git a/drivers/net/wireless/ath/ath12k/wifi8/dp.c b/drivers/net/wireless/ath/ath12k/wifi8/dp.c
+index e89826f33206..1e636e79fc32 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi8/dp.c
++++ b/drivers/net/wireless/ath/ath12k/wifi8/dp.c
+@@ -197,6 +197,9 @@ static int ath12k_wifi8_dp_reoq_lut_setup(struct ath12k_base *ab)
+ 	ath12k_hal_write_reoq_lut_addr(ab, dp->reoq_lut.paddr >> 8);
+ 	ath12k_hal_write_ml_reoq_lut_addr(ab, dp->reoq_lut.paddr >> 8);
  
- struct hal_reo_status_flush_queue {
-@@ -1246,8 +1253,10 @@ struct hal_reo_status_desc_thresh_reached {
- struct hal_reo_status {
- 	struct hal_reo_status_header uniform_hdr;
- 	u8 loop_cnt;
-+	u16 tag;
- 	union {
- 		struct hal_reo_status_queue_stats queue_stats;
-+		struct hal_reo_status_queue_1k_stats queue_1k_stats;
- 		struct hal_reo_status_flush_queue flush_queue;
- 		struct hal_reo_status_flush_cache flush_cache;
- 		struct hal_reo_status_unblock_cache unblock_cache;
-diff --git a/drivers/net/wireless/ath/ath12k/wifi8/hal_desc.h b/drivers/net/wireless/ath/ath12k/wifi8/hal_desc.h
-index 691c9866522f..e2947dd112ce 100644
---- a/drivers/net/wireless/ath/ath12k/wifi8/hal_desc.h
-+++ b/drivers/net/wireless/ath/ath12k/wifi8/hal_desc.h
-@@ -536,6 +536,15 @@ struct hal_reo_get_queue_stats_status {
- 	__le16 info6;
- } __packed;
- 
-+#define HAL_REO_GET_Q_1K_STATS_STATUS_INFO0_LOOPING_COUNT	GENMASK(15, 12)
++	dp->ml_reoq_lut.vaddr = dp->reoq_lut.vaddr;
++	dp->ml_reoq_lut.paddr = dp->reoq_lut.paddr;
 +
-+struct hal_reo_get_queue_1k_stats_status {
-+	struct hal_reo_status_hdr hdr;
-+	__le32 rx_bitmap1023_288[23];
-+	__le16 rsvd0;
-+	__le16 info0;
-+} __packed;
-+
- /* REO command TLV tags */
- #define HAL_REO_GET_QUEUE_STATS			313
- #define HAL_REO_FLUSH_QUEUE			314
-@@ -549,6 +558,7 @@ struct hal_reo_get_queue_stats_status {
- #define HAL_REO_FLUSH_TIMEOUT_LIST_STATUS	338
- #define HAL_REO_DESCRIPTOR_THRESHOLD_REACHED_STATUS	339
- #define HAL_REO_UPDATE_RX_REO_QUEUE		371
-+#define HAL_REO_GET_QUEUE_1K_STATS_STATUS	451
- #define HAL_REO_UPDATE_RX_REO_QUEUE_STATUS	204
+ 	ath12k_hal_reoq_lut_addr_read_enable(ab);
+ 	ath12k_hal_reoq_lut_set_max_peerid(ab);
  
- #define HAL_REO_FLUSH_QUEUE_INFO0_DESC_ADDR_HI		GENMASK(7, 0)
-diff --git a/drivers/net/wireless/ath/ath12k/wifi8/hal_rx.c b/drivers/net/wireless/ath/ath12k/wifi8/hal_rx.c
-index 80c2f1202233..d78c178cc70d 100644
---- a/drivers/net/wireless/ath/ath12k/wifi8/hal_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi8/hal_rx.c
-@@ -470,6 +470,29 @@ ath12k_wifi8_hal_reo_cmd_update_rx_queue(struct hal_tlv_64_hdr *tlv,
- 	return le16_to_cpu(desc->cmd.reo_cmd_number);
+@@ -215,6 +218,10 @@ static void ath12k_wifi8_dp_reoq_lut_cleanup(struct ath12k_base *ab)
+ 				  dp->reoq_lut.vaddr_unaligned,
+ 				  dp->reoq_lut.paddr_unaligned);
+ 		dp->reoq_lut.vaddr_unaligned = NULL;
++		dp->reoq_lut.vaddr = NULL;
++		dp->reoq_lut.paddr = 0;
++		dp->ml_reoq_lut.vaddr = NULL;
++		dp->ml_reoq_lut.paddr = 0;
+ 	}
  }
  
-+void ath12k_wifi8_hal_reo_status_queue_1k_stats(struct ath12k_base *ab,
-+						struct hal_tlv_64_hdr *tlv,
-+						struct hal_reo_status *status)
-+{
-+	struct hal_reo_get_queue_1k_stats_status *desc =
-+		(struct hal_reo_get_queue_1k_stats_status *)tlv->value;
-+	u32 *dst = status->u.queue_1k_stats.rx_bitmap;
-+	int i;
-+
-+	status->uniform_hdr.cmd_num = le16_to_cpu(desc->hdr.reo_status_number);
-+	status->uniform_hdr.cmd_status =
-+		le16_get_bits(desc->hdr.info0,
-+			      HAL_REO_STATUS_HDR_INFO0_EXEC_STATUS);
-+	status->uniform_hdr.timestamp = le32_to_cpu(desc->hdr.timestamp);
-+
-+	for (i = 0; i < ARRAY_SIZE(desc->rx_bitmap1023_288); i++)
-+		dst[i] = le32_to_cpu(desc->rx_bitmap1023_288[i]);
-+
-+	status->loop_cnt =
-+		le16_get_bits(desc->info0,
-+			      HAL_REO_GET_Q_1K_STATS_STATUS_INFO0_LOOPING_COUNT);
-+}
-+
- static int ath12k_hal_reo_cmd_flush_queue(struct hal_tlv_64_hdr *tlv,
- 					  struct ath12k_hal_reo_cmd *cmd)
- {
-@@ -596,6 +619,13 @@ void ath12k_wifi8_hal_reo_status_queue_stats(struct ath12k_base *ab,
- 		le32_get_bits(desc->info0, HAL_REO_GET_Q_STATS_STATUS_INFO0_CURRENT_INDEX);
- 	status->u.queue_stats.pn[0] = le32_to_cpu(desc->pn_31_0);
- 	status->u.queue_stats.pn[1] = le16_to_cpu(desc->pn_47_32);
-+	status->u.queue_stats.pn_127_48_info =
-+		le16_get_bits(desc->info1, HAL_REO_GET_Q_STATS_STATUS_INFO1_PN_127_48_INFO);
-+	status->u.queue_stats.to_follow_1k =
-+		le32_get_bits(desc->info5,
-+			      HAL_REO_GET_Q_STATS_STATUS_INFO5_GET_Q_1K_SSTAT_FOLLOW);
-+	status->u.queue_stats.pn_len =
-+		(status->u.queue_stats.pn_127_48_info == 0) ? 6 : 16;
- 	status->u.queue_stats.last_rx_queue_ts =
- 		le32_to_cpu(desc->last_rx_enqueue_timestamp);
- 	status->u.queue_stats.last_rx_dequeue_ts =
-diff --git a/drivers/net/wireless/ath/ath12k/wifi8/hal_rx.h b/drivers/net/wireless/ath/ath12k/wifi8/hal_rx.h
-index d61ca0823b5f..357839c7d9e3 100644
---- a/drivers/net/wireless/ath/ath12k/wifi8/hal_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/wifi8/hal_rx.h
-@@ -112,6 +112,9 @@ void ath12k_wifi8_hal_reo_hw_setup(struct ath12k_base *ab);
- void ath12k_wifi8_hal_reo_status_queue_stats(struct ath12k_base *ab,
- 					     struct hal_tlv_64_hdr *tlv,
- 					     struct hal_reo_status *status);
-+void ath12k_wifi8_hal_reo_status_queue_1k_stats(struct ath12k_base *ab,
-+						struct hal_tlv_64_hdr *tlv,
-+						struct hal_reo_status *status);
- void ath12k_wifi8_hal_reo_flush_queue_status(struct ath12k_base *ab,
- 					     struct hal_tlv_64_hdr *tlv,
- 					     struct hal_reo_status *status);
+@@ -519,6 +526,17 @@ static struct ath12k_dp_arch_ops ath12k_wifi8_dp_arch_ops = {
+ 	.dp_op_mlo_init = ath12k_wifi8_dp_op_mlo_init,
+ 	.dp_op_mlo_deinit = ath12k_wifi8_dp_op_mlo_deinit,
+ 	.service_srng = ath12k_wifi8_dp_service_srng,
++	.reo_cmd_send = ath12k_wifi8_dp_reo_cmd_send,
++	.setup_pn_check_reo_cmd = ath12k_wifi8_dp_setup_pn_check_reo_cmd,
++	.rx_peer_tid_delete = ath12k_wifi8_dp_rx_peer_tid_delete,
++	.reo_cache_flush = ath12k_wifi8_dp_reo_cache_flush,
++	.rx_link_desc_return = ath12k_wifi8_dp_rx_link_desc_return,
++	.rx_frags_cleanup = ath12k_wifi8_dp_rx_frags_cleanup,
++	.peer_rx_tid_reo_update = ath12k_wifi8_peer_rx_tid_reo_update,
++	.rx_assign_reoq = ath12k_wifi8_dp_rx_assign_reoq,
++	.peer_rx_tid_qref_setup = ath12k_wifi8_peer_rx_tid_qref_setup,
++	.peer_rx_tid_qref_reset = ath12k_wifi8_peer_rx_tid_qref_reset,
++	.rx_tid_delete_handler = ath12k_wifi8_dp_rx_tid_delete_handler,
+ 	.dp_peer_create = ath12k_wifi8_dp_peer_create,
+ 	.dp_peer_delete = ath12k_wifi8_dp_peer_delete,
+ 	.dp_link_peer_create = ath12k_wifi8_dp_link_peer_create,
+diff --git a/drivers/net/wireless/ath/ath12k/wifi8/hw.c b/drivers/net/wireless/ath/ath12k/wifi8/hw.c
+index ed3ac770e754..a7da8b3a44cd 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi8/hw.c
++++ b/drivers/net/wireless/ath/ath12k/wifi8/hw.c
+@@ -211,6 +211,7 @@ static const struct ath12k_hw_params ath12k_wifi8_hw_params[] = {
+ 
+ 		.current_cc_support = false,
+ 		.ring_mask = &ath12k_wifi8_hw_ring_mask_qcn9625,
++		.reoq_lut_support = true,
+ 		.num_tcl_banks = 128,
+ 	},
+ };
 
 -- 
 2.43.0
