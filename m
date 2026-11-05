@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C4CE6606A326
-	for <ath12k@archiver.kernel.org>; Thu,  5 Nov 2026 18:13:16 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D133E606A328
+	for <ath12k@archiver.kernel.org>; Thu,  5 Nov 2026 18:13:21 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1CX1y5wx;
-	dkim=pass (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=emGD02vN
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=yTwvWcJA;
+	dkim=pass (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=fRz82+d1
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
@@ -14,72 +14,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Type:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=RBmIUHu80SKW/VRZZOQILzfNjSh0opGCQpCY4Xr/Iro=; b=1CX1y5wxTQODb2uGXiWxwFePVg
-	DtIDz5sAbZtDyGs/4w3mkEihqJFc7RnBOzA/JsD0/1KhW9b9ISBYtiPtPnasjE2K544Jpi1CpAoHJ
-	fyNOnPGmuO3MPD8WHeJ7DKJgKWG73aZCkZfX1miMsVfaSmqghB/CurUQpCgUZDMmJSjSfC5IMikh2
-	pC4hfFmJWurGS33dG3UVMDr9s3DqBw2e+8WlFXXnteocc1QANcbK99zwn0loIdrX6j9BMlEx4gaA7
-	MWEaPAGSN5MfxpuSD2fZ2T0AkZ/6nUVDVQtZIdckQniANfVf8AxZR4B0Nd+UGfrcdyNGrR8ea1i9R
-	rLrHjimw==;
+	bh=+VXh5wNmEMtDJf22hNJBMQBn0m2NV1zkl2tOQQX0J8U=; b=yTwvWcJA8MS2cEZQUE5HTozFze
+	YarEkd8UeKyGwsGpS5I4uOp/cJV25q10XYjrqez6j47UMm77yWuhC/RlPCRwxqIK7N8GuUHeN5CCJ
+	9jxS3bsJ/SWIeRO3a8JWNMxgYkKQkjnJKL5cggrs9LYOt0dOOjuS71n6sk+QyqrC18tVAuG73+1Pk
+	RYx7HIBGErlhTojjjG3VAAc26gDnMtkm1XfHl5ePDHWPM5jgQaURINnFQdyw7dJRgW/FSREBkyQcV
+	4Vc5MsUhcHbVjqKh6NACERGMuR8jBZvD17jdWc1RaqGC+AFB5iHgzNibR/V79ZpmIosOJE/ZQzbQq
+	62Vb/kDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xP1xc-0000000A5iW-1SUs;
-	Thu, 05 Nov 2026 18:13:16 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xP1xg-0000000A5oy-2IkO;
+	Thu, 05 Nov 2026 18:13:20 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xP1wp-0000000A5Ov-1d0Y;
+	id 1xP1wp-0000000A5QP-3Nm7;
 	Thu, 05 Nov 2026 18:12:27 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 884866015B;
-	Thu,  5 Nov 2026 18:12:26 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 8D55841B1C;
+	Thu,  5 Nov 2026 18:12:27 +0000 (UTC)
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1793902346;
-	b=kpIdHWFLN3BaiGkRhCD0ULSGc4ACkhLVLRmOP7nHivfUTm1SZfNzDjmW4zJx4AG71+Wx
-	 cIF+BbxaxhxOxMTWPlMTuufLAZRacOyw1t9vONxLxg4Av9GIpFXtSaVEdKalGc5Z5jYQf
-	 u4ZhGWDqoHx+foc0syKuCPhfSlwfoT+O78YWDaYZFAk+TD+AzPE6N/gSmvI43JeAwsa4v
-	 y5f6rXx2KlhxFrq8v9UM1osDwLKivAMiFj8GoItFqsLr3XGCMwqS/j0vcXBZnxNJUpZCo
-	 L03epXk+SR15pbvAVbITmRXRMAPBRlAJTQMqBUwz8eA27TMJAIYGntmBYtu+ASSIBmA==
+	t=1793902347;
+	b=jeQGh6vZ/wnXt951fWbVCPhuSCR/Hi6KyU4UFngqyo8SntalDxqNegI65ex46B4t2FLH
+	 eHb8gT/luMxF/fCje63Ngr7I+LRmrA41l8ig0WEztDd1WhAHJ6kSYhpp0ffv42DWiOYHK
+	 eBvXFh9Lo6QZLtgx7njq36WJGTUBgRe8mIlikjeqc1H7t45Amc1lqsP198HtTf0O+n7/i
+	 G8cxoHYejaBL9CxojSvdKGVXwfWNIsqBfIpkuLvM0fZCGBy563rXqeQMOfktXofplfsli
+	 jUDxdhVbcQPUK9+xlHRrvbWwjvnYlzXU8LcOvwM+s2vVxFXnyBRd4U69VrVFQRzCvyg==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1793902346;
+	c=relaxed/relaxed; t=1793902347;
 	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
 	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
 	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
 	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=RBmIUHu80SKW/VRZZOQILzfNjSh0opGCQpCY4Xr/Iro=;
-	b=Gq+hJZgu6kmk6ZrcmXnHJXSdK4sw5AAaDcBJpv2YBOV9WdGIQXrSjV143Au689YRH2qf
-	 h0ZsbMJ3Aflm3SSgLBBvEUJnIZa+3uauO4IPZWBoWXETiZLsNy1+Ey4xsX8ZOVPVwpv8v
-	 Hpg6ERrnq4o8trcUloazOAgpD2sk7noexK9wRu/K5dpucNIk8fLLOJ7g3p13hZ3A8TmKP
-	 lN9ML2Ckbc4Lh0ZX1Qyq2wKvGEmPRdNd+E2XU7xgtnRAtGomVtsBwCUTfAtDFxleGlrZN
-	 gykovnEM05ZxADLAk54x4E0Abw3E8eAedrvn66WIGjK2zeXAg9/73qrk5pLTfTPvnfQ==
+	bh=+VXh5wNmEMtDJf22hNJBMQBn0m2NV1zkl2tOQQX0J8U=;
+	b=sJBrddYaYR5CAjG58Oqxyu+oG99PXJzvLu9a3MYyOFinjd9i6/ydcBEd+VxO1MbJEWtC
+	 TDz2bZmoI8R53S9uKP31LP5W2svsg8L4DniU+oo8njwepxKuHKREAb+rPTgelpDb47FXk
+	 sFTAdhCZ+Znn9brdNJsdzs8vzv5ZHtz7VNwYzU9n9Xewu21DYLDYvXj1gBzw7qinlbBpk
+	 xodgZDSCyTiBMG+pcZZgT+GK+6gKsUhyGSewHHLJmi4WSBZlOSO4iDU05FhNY117QvCpk
+	 0ZNS8c1Wi0VK02YJY6mZpI++GyWOi8RhJxhoRHJWJ29n52SQYJmZMGdH3S8PMxEKHPw==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 5596F1F00A02;
+	by smtp.kernel.org (Postfix) with ESMTPS id 44BD61F00919;
 	Thu,  5 Nov 2026 18:12:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793902346;
-	bh=RBmIUHu80SKW/VRZZOQILzfNjSh0opGCQpCY4Xr/Iro=;
+	s=k20260515; t=1793902347;
+	bh=+VXh5wNmEMtDJf22hNJBMQBn0m2NV1zkl2tOQQX0J8U=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=emGD02vNyJCJzMnOiHyU/utHrxC8U1zW81e6NyQwwo707uthChZ7oN7HOReNfOEMQ
-	 qox7ko5uygsPSWunmnseSvz+Yp7znq+HLqVY30PR0kZzmfz6CUi7KjUYL+KvwzT7so
-	 wmU3MO1uOCN9FvALHbeiWxDU2/2byoJI8DxLugS8DJvmIX27Lg3z02jg2JX/pEa/24
-	 MmhSK7AJCQaugefeNBfRk6RIDyf+lRe7RG2nOC0nHgbUZ5LVDXE/v6O3hGCxw6UbKJ
-	 /5Gt62GYfBCTZPGoB/nzxl/yTORFVmxKiS6Vazu9zCmOcCU5MoRuJ++MHZCP6fOoow
-	 T8S5yuIeUboHw==
+	b=fRz82+d1S0T995/t22eUM5vljIQ7eg7fPCSXqprJd49dY3UwSRutsEJO9qlzyiY2X
+	 n1Bo7TedAAc3TlkKMNoDi+48hDHxorRr1UflsHgiel/Ab32wdK3O3eP3ueAcRv3ZsO
+	 f4bq0bh/lL32uXlQYMoVGpbcwPmY3urHMLf9U8bPTd9thAN5xYi1oZkc0wODncK2oy
+	 JtpHuA2rLOE3+9WSaHmTyiEYx9dbwJK+GBCzHRh2GqqJ+Cd4plxuqxA5833P4yJgBM
+	 bo7LjnsZScYW8O4iG2Dy8A/4OECjeZAi7TSS24mG9514yN11W1x6m9GAFa4UpbKKMa
+	 ptM/9iNOLNfkw==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id DDFA4473C8;
+	by lkml.kernel.org (Postfix) with ESMTP id CD1F6473BD;
 	Thu,  5 Nov 2026 18:12:24 +0000 (UTC)
 From: Christopher Griffin via B4 Relay <devnull+christophergriffin05.gmail.com@kernel.org>
-Date: Thu, 05 Nov 2026 12:12:23 -0600
-Subject: [PATCH 2/2] wifi: ath12k: don't leave a monitor link started when
+Date: Thu, 05 Nov 2026 12:12:22 -0600
+Subject: [PATCH 1/2] wifi: ath11k: don't leave a monitor vif started when
  its stop fails
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261105-ath-monitor-unassign-v1-2-277f0fbadb91@gmail.com>
+Message-Id: <20261105-ath-monitor-unassign-v1-1-277f0fbadb91@gmail.com>
 References: <20261105-ath-monitor-unassign-v1-0-277f0fbadb91@gmail.com>
 In-Reply-To: <20261105-ath-monitor-unassign-v1-0-277f0fbadb91@gmail.com>
 To: Jeff Johnson <jjohnson@kernel.org>, 
@@ -96,11 +96,11 @@ Cc: linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
  ath12k@lists.infradead.org, 
  Christopher Griffin <christophergriffin05@gmail.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1793902344; l=1783;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1793902344; l=2565;
  i=christophergriffin05@gmail.com; s=20261024; h=from:subject:message-id;
- bh=yJliLnA52UPk6OOcZziqgLXylvHUHFJud+o6Dahzovo=;
- b=RtI+6f08VIMKSgrwalriN0ZtZkc2Iu2Qe8TRHTrgj/6k40N7JIbH5s21SSzcD4HAbUzPEHa4p
- VaHljDdHCQgAdHgfZS9xoqenVGZJOZd07I55M5njTRLZWP7jChamzqJ
+ bh=1R7oAGbBN78/oVWlhCPSGL7JqxfEoXYdSJISg6BkmUs=;
+ b=TPfNd1rwEb1IAORwzaVwKydgTWq9y85ofF0dnxUxsONH+KfMDevRtnzxDbtsB6PGwVN6ME/y0
+ jYIA7dJ3kDFAneU9+97YW99sbcrvw1DOYHUKbEhDvc7OksKHkKLF0b/
 X-Developer-Key: i=christophergriffin05@gmail.com; a=ed25519;
  pk=oa9tkTNpiGoFWdGvpDHXLSobApmsh9BfrJRJrRJAvWA=
 X-Endpoint-Received: by B4 Relay for
@@ -129,51 +129,63 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: Christopher Griffin <christophergriffin05@gmail.com>
 
-ath12k_mac_op_unassign_vif_chanctx() returns early, with
-arvif->is_started still set, when ath12k_mac_monitor_stop() fails.
-mac80211 can't fail an unassignment and considers the channel context
-released, so the link's next assignment hits WARN_ON(arvif->is_started)
-in ath12k_mac_op_assign_vif_chanctx() and fails with -EBUSY. A firmware
-crash during a monitor channel change is enough: the vdev stop times
-out.
+ath11k_mac_op_unassign_vif_chanctx() returns early, with
+arvif->is_started still set, when ath11k_mac_monitor_stop() fails for a
+monitor vif. mac80211 can't fail an unassignment and considers the
+channel context released, so the vif's next assignment, e.g. the next
+channel change of the monitor interface, hits WARN_ON(arvif->is_started)
+in ath11k_mac_op_assign_vif_chanctx() and fails with -EBUSY.
 
-ath11k has the same flow and shows the warning that way on a QCN9074.
+A firmware crash during a monitor channel change does it. On a QCN9074
+with a monitor interface that changes channel every few hundred
+milliseconds, after simulate_fw_crash:
 
-Fall through to the common path, which clears is_started.
-ath12k_mac_monitor_stop() already warns on failure.
+  failed to stop monitor vdev: -110
+  failed to stop monitor during vif channel context unassignment: -110
+  WARNING: CPU: 2 PID: 15367 at drivers/net/wireless/ath/ath11k/mac.c:8499 ath11k_mac_op_assign_vif_chanctx+0x304/0x3e0 [ath11k]
+  Call trace:
+   ath11k_mac_op_assign_vif_chanctx+0x304/0x3e0 [ath11k] (P)
+   drv_assign_vif_chanctx+0xac/0x144 [mac80211]
+   ieee80211_recalc_smps_chanctx+0x278/0x940 [mac80211]
+   _ieee80211_link_use_channel+0x158/0x210 [mac80211]
+   ieee80211_set_monitor_channel+0xa4/0x860 [mac80211]
+   cfg80211_set_monitor_channel+0x3c/0x60 [cfg80211]
+   nl80211_set_wiphy+0x2cc/0x7d8 [cfg80211]
 
-Compile-tested only.
+Recovery resets the vif afterwards, but without a crash the vif would
+refuse every later channel context, with a warning each time.
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Clear is_started even when the stop fails, as the non-monitor path in
+the same function does.
+
+Tested-on: QCN9074 hw1.0 PCI WLAN.HK.2.5.r4-00683-QCAHKSWPL_SILICONZ-1
+
+Fixes: 689a5e6fff75 ("ath11k: monitor mode clean up to use separate APIs")
 Assisted-by: Claude:claude-opus-5-5
 Signed-off-by: Christopher Griffin <christophergriffin05@gmail.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 12 +++++-------
- 1 file changed, 5 insertions(+), 7 deletions(-)
+ drivers/net/wireless/ath/ath11k/mac.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 9fd3841f71b71..7d04f16f99e37 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -12422,13 +12422,11 @@ ath12k_mac_op_unassign_vif_chanctx(struct ieee80211_hw *hw,
+diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
+index 1a237adaa37d1..fc6c374c787fd 100644
+--- a/drivers/net/wireless/ath/ath11k/mac.c
++++ b/drivers/net/wireless/ath/ath11k/mac.c
+@@ -8514,12 +8514,10 @@ ath11k_mac_op_unassign_vif_chanctx(struct ieee80211_hw *hw,
  
- 	WARN_ON(!arvif->is_started);
- 
--	if (ahvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
--		ret = ath12k_mac_monitor_stop(ar);
--		if (ret)
+ 	if (arvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
+ 		ret = ath11k_mac_monitor_stop(ar);
+-		if (ret) {
++		if (ret)
++			/* continue: mac80211 has unassigned the context anyway */
+ 			ath11k_warn(ar->ab, "failed to stop monitor during vif channel context unassignment: %d",
+ 				    ret);
+-			mutex_unlock(&ar->conf_mutex);
 -			return;
--
--		arvif->is_started = false;
--	}
-+	/* mac80211 can't fail an unassignment, so the link counts as stopped
-+	 * below even if the monitor stop fails (that warns on its own).
-+	 */
-+	if (ahvif->vdev_type == WMI_VDEV_TYPE_MONITOR)
-+		ath12k_mac_monitor_stop(ar);
+-		}
  
- 	if (ahvif->vdev_type != WMI_VDEV_TYPE_STA &&
- 	    ahvif->vdev_type != WMI_VDEV_TYPE_MONITOR) {
+ 		arvif->is_started = false;
+ 		mutex_unlock(&ar->conf_mutex);
 
 -- 
 2.43.0
