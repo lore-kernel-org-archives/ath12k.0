@@ -2,97 +2,91 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 392BE606A8AA
-	for <ath12k@archiver.kernel.org>; Wed, 11 Nov 2026 20:48:44 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9443360A3838
+	for <ath12k@archiver.kernel.org>; Wed, 11 Nov 2026 21:59:07 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=GoUhkdMA;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=kG6xBFgf
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nMA9gAQH;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=dtoSifKS
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=RIiTR5H2OWjhZVQ9401qUUhteZRrStfHsUs8Xa39Rxs=; b=GoUhkdMAY0pBWN
-	rQ7GPXNmfTOaRhUoJaciqRejyC8t8AbnwvBVSOMTI5E0MIZ3dsr7uBO0eT8Vus8U+g/CnkdHBDl8j
-	MwhXvtomIIe/mO0TOV41NOF5ref8SPbczoB0RsPL/AP+t3OAfn3CRmV3dWYhXYAGO2M9zQTV5sjDM
-	wd49jKkZFY2R2/UXtUQNQm7AZ0iD8vfDMpbGbmmHhqhsumkYVmKfYBBRmeKH7vtSbR0DajhcNW4zT
-	BB4Kh+Ha/MF7LLXvIlGMVFitWGbACB2bMQffWU7vy9fRcE9rifIsnv3Qzhs4QnAvtaQszHOdVdzMW
-	iN02Ccc/V207hXIlz0yw==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Unsubscribe-Post:List-Owner;
+	bh=JyrI5c1CwAeizeSx3dYvL2iX6nP8MVXXZ8SSttkgR4Q=; b=nMA9gAQHJCObKsAuPVDau/oy96
+	idFVtbJkSLlXIGoRnsSClretwE5rI82x8pWyko9O+HU9aVhY1/Le9hjSmKhdy2Tz871yK/CODdEoY
+	yARfwMGPJjxjDRH7sRruc2lrORbJmdhW2huqlTZ1ihAIv0ZKond5eXNv6bon2Nh1ZBT+bI5fZjBRi
+	vSEYHC46+t8L/WCCFhfICRtW3I8fLhInZ96tCC9lVy5+80VQGPEBtAgYJiPoR0+jwLXR3g6MSFlrq
+	J1TUEDLOPmcgLSpE87xKTGfcjgm81tRAA/wMygmpvbP0kMIOBgEnpb9Yk4hKQHuD8u9oKjvDz1s5J
+	1WhqhKZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRFFL-00000007gLV-0Yng;
-	Wed, 11 Nov 2026 20:48:43 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1xRGLR-00000007smC-2lXu;
+	Wed, 11 Nov 2026 21:59:05 +0000
+Received: from mail-yw1-x1135.google.com ([2607:f8b0:4864:20::1135])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRFFJ-00000007gKk-1OvH
+	id 1xRGLO-00000007slp-00BR
 	for ath12k@lists.infradead.org;
-	Wed, 11 Nov 2026 20:48:42 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-4a35ac4475dso25034135e9.2
-        for <ath12k@lists.infradead.org>; Wed, 11 Nov 2026 12:48:40 -0800 (PST)
+	Wed, 11 Nov 2026 21:59:04 +0000
+Received: by mail-yw1-x1135.google.com with SMTP id 00721157ae682-8b0d63f60bcso48793557b3.3
+        for <ath12k@lists.infradead.org>; Wed, 11 Nov 2026 13:59:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794430119; x=1795034919; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=RIiTR5H2OWjhZVQ9401qUUhteZRrStfHsUs8Xa39Rxs=;
-        b=kG6xBFgf8QjNhwXLyU5DsXpnpvBSSstFihZA8/afShh8RLkaFcM04CcILmSwQb+MV8
-         44h3EUOHJiviCa11C/7YBVcS8MtjAlhu6y2B3KGwYrXGKPwyZnY/pE46mJDQ9KQeoaC8
-         mtIWrm5CQ9cm5DNVulq0OgrGEljFpyav+zVZw1TbiSDKz/1wGhJ0oRd2slp/6K9QsALO
-         KQmZfY4G50SaPsA1s4vFiBnvXyD3kZa6oMCkvTMrWt37+KmI5ZHE3OsA/gowTsDpmO7s
-         AfsOpM6U+BlaWVCdkkEBY2721hShj8NThFVMAYHYu4UwJyR7BU/isiE3qHX/0XiLLOPK
-         Wp5Q==
+        d=gmail.com; s=20260707; t=1794434340; x=1795039140; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=JyrI5c1CwAeizeSx3dYvL2iX6nP8MVXXZ8SSttkgR4Q=;
+        b=dtoSifKSinNDVl0Z62pirTwch5FuEDTy+S+wtwI2Qk80kHVJkoCN68vzbgzKUEMhBm
+         hpMeeJtFcmaZbozAnZQZHJLiWS7+WThgww5U35KGq35wtr2TvKz3a0hTIAlShM7xrng/
+         q/HPcooxUmBtQYlRyulSF3OrsiErgBobj3R+9BWsZ6940Pk2WOP6Ai290E+VU3XmXHB0
+         q+5wvpRxzK7fZ92SeEfd8Id1M/TaRQml+wU5XTtzFWnlKLCLx/4cTEjnam65OmeNOyO9
+         iJ5sCoL4Yj5AMgeUyAtaD0ZJL4RGDQ2tjoxf/0qYRXgxZY4TiteMclv0I3E7nM3IYVf8
+         FiBA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794430119; x=1795034919;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=RIiTR5H2OWjhZVQ9401qUUhteZRrStfHsUs8Xa39Rxs=;
-        b=dT9jopciVumxxS5hDbMhtp+CbG5hbu24lbxhiN21LrmR0ycREyBEKyM/xeNpox+HDe
-         QQpNX/8m0E6r3zx81UH+EYeE7wHCf7lKtrdyS0rVzdPltYH06CdzN9LCU3ET0cuN2k4z
-         h+chXCGKUUNLXDhwGsGPkDpUwNUzviChq9q0EfUuukKwGhbpLbhJrysrIypGh0SDTiNy
-         wVJ3DgqFB6Zm0phBvvteOHL3tiuGZlMtpSwb5J0cySkkfN7WT4DGYahQM0ntgDbWSZF6
-         iuFamk9KvLE3WtUQOmIUpgfUx7xFkwoHk8/0zvnknnv4VrWsJROtlmoZKcG2vlROPnVm
-         hkLA==
-X-Forwarded-Encrypted: i=1; AL+hErGajMWHHhtrmpIQDOtTkI2bbUnNUSUO4PRfKmmuP1t9LYHzwnQwYvpxo6QU5WWkihqdYEV828Q=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9qb3tChofjeEWpKba6fAU8yRobgOM8uynODe5wkY+sq/kj82LU
-	X06meqhbGRWEqrbW1ToQvVAqjlpvm2KE+Y/2wtEGPANgC1SJLTSwrNOy
-X-Gm-Gg: AYBFou32jQJoPSrxU+/5vo83EX89G3gECaZfIGP0w0luIZH/nh5fu09vS33HexX3Tt7
-	97kqwwwTr9onxzQJsnEzcpCb3T4/mnnvYVfDvcGQpQO+l+5Jm8yMVfaUJ5Uw4A/l+v3byffdPPD
-	ubjIyTfzhXWUi7Z+Osqe6LzoGFxYokRJey3xsU+ScnOx4mq1yt3t6IbwBgDl5UWyqU4qT3e2DIa
-	sGvPbem6oj1w9FE7YXyeWt3X4aa0L+sTugbaikh/cYfULwCcACoTSk3NRfITgm9+J21BeJexCEa
-	2vAhIcvYqOErnSdT8zzzl2BalL7J7x4UXJcRQ1fG3yleFttvjLggV/bP21m2f7hg9zdvdL+VtIp
-	Wlwn1+6CvmbsvHoM2tlPIcJ9eOenc5bqZnHETl892zSpU/2vks1buD3GhhMAoJKImSb3nUxTVMG
-	LSjmMOmmxjluBgoCRPwT36WsWGKkEFcvvEZPUW41OmqZKdTW/qJ+tgcTbQ5y2KvNyRN26m1Gdxi
-	328Hc/f1ix5qGSSSel+8drN1vD1ZC8eOAMPOD1cexKsZOU/evuvitQMXSdSdFKLNs4Cd5IoKxc/
-	L/Rh+FRlkRk3xHP7lTKTIFuTaUDheiVSZod2TpgVH9VUIChbn2HOPEthIx+2uyzQC4ysCFARm+A
-	Tq2bMnueOjtOvkX46A5itr3vMXJ42vdEdL2GRylUYfaojB93/3KU5KeALCYmw78DjHhgBS1+2UW
-	eMufg=
-X-Received: by 2002:a05:600c:8b2a:b0:49f:fd2d:23c7 with SMTP id 5b1f17b1804b1-4ba093921f6mr66956865e9.27.1794430119321;
-        Wed, 11 Nov 2026 12:48:39 -0800 (PST)
-Received: from ADM-D9YH122JTV.home.lan (58-119.dsl.iskon.hr. [89.164.58.119])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb4e2842e6sm15063795e9.4.2026.11.11.12.48.37
-        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Wed, 11 Nov 2026 12:48:38 -0800 (PST)
-From: Goran Sustek <gsustek@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Kalle Valo <kvalo@kernel.org>,
-	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH ath-next v2 RESEND 2/2] wifi: ath12k: use all HTT_PPDU_STATS_MAX_USERS slots for PPDU users
-Date: Wed, 11 Nov 2026 21:48:23 +0100
-Message-ID: <20261111204823.88785-3-gsustek@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <20261111204823.88785-1-gsustek@gmail.com>
-References: <20261111204823.88785-1-gsustek@gmail.com>
+        d=1e100.net; s=20260707; t=1794434340; x=1795039140;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=JyrI5c1CwAeizeSx3dYvL2iX6nP8MVXXZ8SSttkgR4Q=;
+        b=PcKd3c1uqOm/HLsjyUeeTL2+NTS7Hg7XrI9TbmcM4KvvxFTYs9OLSnjflOGRtE3hVh
+         Ok0l0GFaS+WMRrg2OdAIg8Gc2gnjX9EPjaCfrXQzXeUMDcZlKmCvY6V3ypkzhDnEIHST
+         QiiHJMEh1+ZMqEcAWo4oTWim8glqJFGo52cVIG0fLGp2fgBJyc686+UsxnTWfOyURPY5
+         QI/umQ7aGcRfuyTI5yUW7Bs4ZnPuI6nSeZMe0xzfedLBTCTw7joT34oho01UMVk4BYNf
+         47ygZQE1FvAccByo85rUCQJoJBVyf1rO+Tn/fsCS0MUfjROqW4J8FPW2lSqYutPMc0Yn
+         QI/Q==
+X-Gm-Message-State: APuU4Z8RPhDCv3PgO9WKH51Eu6M2lTUDv/MDUPn0xTxlLp1AbtlzWkpY
+	VQMmmY3Ws0rVYHa2kfQMZOezLPvPDEIBcqxDkvsa2wmUjG3mFr2UUhCkycIA/wua
+X-Gm-Gg: AYBFou1y0pOxDvG0CHQ7vmkcnlud9jZ4hHtSLL+tLMUIsKw6gWV7uPRAskXsRSDawio
+	AjHHJhdnAGO2PXOYy/BosLFpQBkL098t5q3pQdJnjuvsOJWOiBjSylgMEfpDfPyOJfjQxwtPBLk
+	9Ck+JM5hsV8ldC6kVdCRJ9jbq++k63dODwyu9AqD4iZWjD44iDrKVjkkgay3Z/ZtEFMBi6WOxWf
+	1WhW1+LlwyGfcct774J1TSL7p215EJNdPpBr3B1GfsrQ8Zpwzv5SS/23UfOiriw5vP6TFWnFO+a
+	5fpmjiA+q1YST8ermLFEVVj9TDgiQ60aGr3L0hWtkfP2vvOMpDgebhc2OgGbYY9IRCkz+NEhQCP
+	XiwXB9iep+ju5FXoOQZ+a9NZjNDidYkQUCNX83Gd9hzp2lWt1gx+ZkeCP3AAu31vxC5+EmL+MH9
+	YSrdpbxwVdjA8qnZW2WV7QPcIyBrBpGAtLeFWiZDwegMpI7wPlUeFh8aUHrqD/R7tnLLeAAX6KE
+	Rxx6d9aDBxGoDSxDKJXJEmnM6MEdOaJSzRYgvvd0rnmDUk6wOVYHd5g6XB+pJjxq6N0LeTpgyw9
+	84DKZH47zfarBVN11h/u0lrxWV+sZtTiPusJrvxrFT2v1A0Yh+oKXN20GsXrJ1ixV892DF1rGyG
+	Vpz3/6gbUtIY/B3+rZ1vkbMFJhRvzFZSF4gkKRCxBYGdk4nqnmJ2sXf8PIAtaRNIUuLKhqb48zs
+	LiWULoRQ==
+X-Received: by 2002:a05:690c:d87:b0:8b0:ab62:c636 with SMTP id 00721157ae682-8b3a8188200mr30390687b3.45.1794434340531;
+        Wed, 11 Nov 2026 13:59:00 -0800 (PST)
+Received: from localhost.localdomain ([2600:1700:9771:d7f:1e99:8362:7799:8e00])
+        by smtp.gmail.com with ESMTPSA id 00721157ae682-8b39340e374sm54959677b3.28.2026.11.11.13.58.59
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 11 Nov 2026 13:59:00 -0800 (PST)
+From: Ronald Ouyang <repaxan@gmail.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+	Ronald Ouyang <repaxan@gmail.com>
+Subject: [PATCH] wifi: ath12k: set OFFLOAD_ENCAP_4ADDR on interface bringup
+Date: Wed, 11 Nov 2026 13:58:45 -0800
+Message-ID: <20261111215845.814490-1-repaxan@gmail.com>
+X-Mailer: git-send-email 2.56.1
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261111_124841_384123_143454F2 
-X-CRM114-Status: GOOD (  15.52  )
+X-CRM114-CacheID: sfid-20261111_135902_055606_ECBF0295 
+X-CRM114-Status: GOOD (  13.80  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -112,51 +106,54 @@ X-Spam-Status: No, score=-15.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-user_stats[] in struct htt_ppdu_stats has HTT_PPDU_STATS_MAX_USERS
-entries, but ath12k_get_ppdu_user_index() searches only the first
-HTT_PPDU_STATS_MAX_USERS - 1 of them for a peer's slot, and
-ath12k_htt_update_ppdu_stats() applies only the first
-HTT_PPDU_STATS_MAX_USERS - 1 slots to the per-peer TX statistics. The
-last slot is never used: a message with HTT_PPDU_STATS_MAX_USERS
-distinct peers has the statistics of one of them dropped, and the
-remaining slot is dead memory. Both loops have had the "- 1" since the
-initial driver.
+I tried the WDS support added in https://lists.infradead.org/pipermail/ath12k/2026-May/009382.html.
+With a ath12k WDS client, the frames received by the WDS AP had some extra bytes in the beginning of the frame.
 
-Iterate over all HTT_PPDU_STATS_MAX_USERS slots in both functions.
+My understanding of the problem:
+1 - this is a WDS client, 4 address mode.
+2 - on interface bringup (ath12k_mac_op_add_interface), it has OFFLOAD_ENCAP_ENABLED but not OFFLOAD_ENCAP_4ADDR.
+    so it software encaps the ethernet frames and sends the resulting wifi frames to the vdev
+3 - on vdev bringup (ath12k_mac_vdev_create -> ath12k_mac_update_vif_offload), it has OFFLOAD_ENCAP_ENABLED.
+    so it expects to receive ethernet or "native wifi" frames.
+    it also sets OFFLOAD_ENCAP_4ADDR but it's too late here
+4 - the wifi frame from (2) gets passed to the vdev marked as "native wifi".
+    it already had a QOS field in it, the vdev adds an extra one when doing the hardware encap
 
-The messages with num_users 8 seen on a QCN9274 AP carry user TLVs for
-two peers, so this case has not been observed in the field; the fix
-follows from the array size.
+This fixes it by setting OFFLOAD_ENCAP_4ADDR during interface bringup.
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Signed-off-by: Goran Sustek <gsustek@gmail.com>
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+Fixes: 729cad3c3c9e ("wifi: ath12k: Add 4-address mode support for eth offload")
+
+Signed-off-by: Ronald Ouyang <repaxan@gmail.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_htt.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_htt.c b/drivers/net/wireless/ath/ath12k/dp_htt.c
-index f5c526bf82d8..a0f98259ee64 100644
---- a/drivers/net/wireless/ath/ath12k/dp_htt.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_htt.c
-@@ -46,7 +46,7 @@ static int ath12k_get_ppdu_user_index(struct htt_ppdu_stats *ppdu_stats,
- {
- 	int i;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index afa3556480d3..1b1c3f738590 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -10275,7 +10275,8 @@ static void ath12k_mac_update_vif_offload(struct ath12k_link_vif *arvif)
+ 	if (ret) {
+ 		ath12k_warn(ab, "failed to set vdev %d tx encap mode: %d\n",
+ 			    arvif->vdev_id, ret);
+-		vif->offload_flags &= ~IEEE80211_OFFLOAD_ENCAP_ENABLED;
++		vif->offload_flags &= ~(IEEE80211_OFFLOAD_ENCAP_ENABLED |
++					IEEE80211_OFFLOAD_ENCAP_4ADDR);
+ 	}
  
--	for (i = 0; i < HTT_PPDU_STATS_MAX_USERS - 1; i++) {
-+	for (i = 0; i < HTT_PPDU_STATS_MAX_USERS; i++) {
- 		if (ppdu_stats->user_stats[i].is_valid_peer_id) {
- 			if (peer_id == ppdu_stats->user_stats[i].peer_id)
- 				return i;
-@@ -362,7 +362,7 @@ static void ath12k_htt_update_ppdu_stats(struct ath12k_pdev_dp *dp_pdev,
- {
- 	u8 user;
+ 	if (vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED)
+@@ -10939,6 +10940,9 @@ int ath12k_mac_op_add_interface(struct ieee80211_hw *hw,
  
--	for (user = 0; user < HTT_PPDU_STATS_MAX_USERS - 1; user++)
-+	for (user = 0; user < HTT_PPDU_STATS_MAX_USERS; user++)
- 		ath12k_update_per_peer_tx_stats(dp_pdev, ppdu_stats, user);
- }
+ 	vif->driver_flags |= IEEE80211_VIF_SUPPORTS_UAPSD;
  
++	if (vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED)
++		vif->offload_flags |= IEEE80211_OFFLOAD_ENCAP_4ADDR;
++
+ 	ath12k_mac_determine_vdev_type(vif, ahvif);
+ 
+ 	for_each_ar(ah, ar, i) {
 -- 
-2.56.0
+2.56.1
 
 
