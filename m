@@ -2,80 +2,96 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D2A0F60A260D
-	for <ath12k@archiver.kernel.org>; Wed, 11 Nov 2026 08:06:40 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 112FA60A2616
+	for <ath12k@archiver.kernel.org>; Wed, 11 Nov 2026 08:06:43 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hYrlDl1/;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=SoUG0BXk
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=n0R8szLa;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=KSRTxqsk;
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=FCD+Sooi
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=r5QHJOclG6lenrzuLdLFBV3oe5/4KSdk6d52zk+Yb/c=; b=hYrlDl1/eoQKfB
-	3jxNF7/MylD5JrKY7wTYWwNknGS9UqwlWWzbLcNGWcxzF4bewDvvYyITxqF7JQzN5qoESFH/Rzw7T
-	gy8ELGFiZG0SEZ1pJAYqPtNgfP8fBQTRrEGNps6lscpkBzbPM1MApUe+/31KgGbNFJxCbfDPviC9E
-	yfEQU/DqeMraPylc+UXD6ylrhIx7ldOzGTwMDXw9cGsSivRnGa+mvvBFMYYYQKoSIfHjTyqWRpaFA
-	wZDUusPfgd/kUcy6Saj4mtJxARLV6XHczMznHzkSja3xBWLd/67Wj4oDPAPMwFIsnFTh2VkygIwn+
-	Cw9vNUju/DavlNuwoQjQ==;
+	List-Owner; bh=bUvokNlCeYm9onJ5oM1T8ZQNs1QR3modjs0guNDfzJk=; b=n0R8szLaint0v7
+	QVOjJ7KRZ/UXbLGFVmgggXkJa0wiM3/rMGblB0RTLizxrbGvurNE8aRy3xZWFbXtEmxQI7aD8cSFa
+	ZNaRVrGOLqSegjK7Ux0sOQFsLG9xy+siu+VMtLcX7PatJWwYGdTqLd7IMLSICYu9ZKHfP53aQLgOQ
+	N0mvskH76BHHAY2Ok813g6QrPyvV9tsrBWqSTrEmCFds9OmRw3P5+xABB/yGrfcAW95mGAAKhh8/3
+	SejKdYEhF+2ipI7RoIGAkZk4S2NJE3cANf224XiMoS5Q7QVeyKdw87KfIC9ZKFdobHp+QBeOR9GUR
+	Eh771H9pqUZkc7JGel/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR3Ls-00000005zTQ-20Lo;
-	Wed, 11 Nov 2026 08:06:40 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1xR3Lu-00000005zXZ-2p7j;
+	Wed, 11 Nov 2026 08:06:42 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR3Lo-00000005zLn-1xM8
+	id 1xR3Lt-00000005zTF-0Iet
+	for ath12k@bombadil.infradead.org;
+	Wed, 11 Nov 2026 08:06:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=bUvokNlCeYm9onJ5oM1T8ZQNs1QR3modjs0guNDfzJk=; b=KSRTxqskYaNjeXyyMsV7RZAkAP
+	cgoacApbhsCyXRgoqjQNrpHZc8zeYUCkX9GB0ciVpekRfzU0yP4UIy+NqBgGmZmjTRZDzTHI7/xr8
+	b/rpnX/oID453nFED5mG/313VjDFrWdEJK74Eua0qcKsEZmJ7KHwv8g+3d24V226kWJqZjmjQaNOi
+	R9ckhgTzAlCaEZCGhU4jtIWpeKytkixUN8hm92C2TV46ylLmEB6RQJ4cKsRtjMdlUXfxHDD95S7xX
+	eckltKf0Hx4m/OeuYbswXUXm9BZf4BVCbK3tsu8B/6ewWbkEK1pItJbwqkhblZAuUh7b0wqfCEtbI
+	h7qf6EgA==;
+Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
+	by desiato.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xR3Lp-00000008t6n-380O
 	for ath12k@lists.infradead.org;
 	Wed, 11 Nov 2026 08:06:39 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-c4c9abc1824so408434366b.1
-        for <ath12k@lists.infradead.org>; Wed, 11 Nov 2026 00:06:35 -0800 (PST)
+Received: by mail-ej1-x636.google.com with SMTP id a640c23a62f3a-c4395d31228so386009366b.1
+        for <ath12k@lists.infradead.org>; Wed, 11 Nov 2026 00:06:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1794384394; x=1794989194; darn=lists.infradead.org;
+        d=bairaktaris.de; s=google; t=1794384395; x=1794989195; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=r5QHJOclG6lenrzuLdLFBV3oe5/4KSdk6d52zk+Yb/c=;
-        b=SoUG0BXkKCVMc4MESwu3jI7xEe+84mJYxv14UnHBQV0R55hgzS+G0odWtmMlk6XP75
-         fr2JQ1ySflxvPC8L5uDXVyoFGV+UykrA51PsXt48xZobY6PUb2I3Ajh77oM9oVuVFkK6
-         S0ivP7JlijfgHjZmx79pjD/iTKulPiHTUShJdhjcD8sP1MTdUcz03hRcrsBP9JjdNp8v
-         Lly7zY1gmIG/BISd0hIA6TBocWeFQt9WTAGY5Rrpd7EsGCGdPNVa0KzQkeBcukuLeP4t
-         vAw6XY18LlOaJumzBy/O9gK6WdzA+qtIU3OgpUCU5VhoIu14ba8qnXjzxrtK20cRD7Tk
-         5KIw==
+        bh=bUvokNlCeYm9onJ5oM1T8ZQNs1QR3modjs0guNDfzJk=;
+        b=FCD+Sooiu0OiGaONm0kBPganakH8RiYAgXTEvgWgqWIEjsf7FZ2mi125yRSVJWntFs
+         itgtfCZy0LWu+HMxfMmztEIhznxvXD+b8pVOGK6hd5Rxe1e589YWzs8d4H/IGsos3szR
+         qycGz0meft24YSCJcLDwK0Q6GczGVYRdsyJ1GotXTgbN3CPPiR+RoN1Aby0JF71sNqQC
+         2fKxR4B2W/r8xIBshDoWfx7wfwbX6atpfzvtKzjNMsMzzy8HoFysMu8P8UFOZf1NZLxE
+         Nbz5cL3eInePVTZIcuOCM4T5CuokB87JFkfvQ0iOjtZ7KVl2p2GWH1ebUi6wGyKM2gwb
+         6b3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794384394; x=1794989194;
+        d=1e100.net; s=20260707; t=1794384395; x=1794989195;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=r5QHJOclG6lenrzuLdLFBV3oe5/4KSdk6d52zk+Yb/c=;
-        b=nh705W7ghzPE2DcFx3Ltj/+oQxgszIdqvPr2U3507iZ2Wq8E6/IR2uY8f6XlHQOB1K
-         Y9p5g/UEWNjgmmQMbEFGlr2PlVRwj307pM4wLjr7Cc+YBy7eBDXDYovfoWe7SRjkYy81
-         h8Mxt6iUtFD/3xIg2emcsAzILvm4IgX0LnBmPKrtB3peFcu458xaEPg9jzpWoiXFKwU+
-         09J9SiIyRASb9BXmw23eTkuPPdS2lUMXzW+E2xZ0tTZpsWJ9BY+P97HfWGL0aL3nANvX
-         YoMXcZF1Ikuqt/UODwuE7t94ib/PVBle75Q7mzK7lHq/SYs0VPWU4dYT9SnCLXmu3ETW
-         WGlA==
-X-Forwarded-Encrypted: i=1; AL+hErFSvm3pKVpQJeg68jrFYn6EeMluY9Su8J3MibtgD6O4nJvlF6QiQLOrssY6XF16g9SCJIxdD4U=@lists.infradead.org
-X-Gm-Message-State: APuU4Z8q5GuhXs+RTSdKs5gDZc/9a4wOVDr9ywJuTXgus4BJDzRsf3Ld
-	RFd2ELKWsj+1x15KSHIrxp9CBQFBvCRA+bK79AVDzWD4kEpU4HUCIoBWf9vUtEQh3A==
-X-Gm-Gg: AYBFou1KSLD2ThWrsxJ7QEYuccxdGOUfju0WXxs4LJUsb1ah5YXp3bJ8yGr/lE3WjwH
-	Y/5xkBHodr5viqSmq2C1ZgKbkm//kRdM0Q5z9UxcY5KOBF8Zb0agnp6p+VRVHNcfVXY/0u+REXd
-	yXudVdnuB9Nvo7djBq0L9akXMvqIFlQ0nKJp0GCJnljsT423FcW0lc9a3Bq/tJ6tLpXUJ4d4dpH
-	4to9kyFhNal9OIQaJtM206fgikPctrbYJ4O4Q6j98cUPJpUO0KZE7TpHvoErN/rD+eqD3JVl/CQ
-	VVvp6G3Gig7EN++EUzVKMHHIoe6rZeJDGQSnNKnMmeew/U/Z+wphx4dE+iKVOk+ggzYHzLdMJLD
-	+aWGZAtsyGRrWEVPy906XLxDjr3+DgX8JGIDRbpCszwum8ox+Ku1VcvSheNK4GfO/t+/l9wkjJN
-	5Tvxjr20KqLk4/7H6qI4+HZLVwrr5fc9nX5XrtRVCwyqOIVHW15Vkc2T0Nnaudrv1NtShZrL+fw
-	KS2JUx3YdSBhamWhgVQ54q1oivjw/uaP18xO5j4Twf/fJLYyeq21Uu3dfqUa/qqqB2vY4VTGVUc
-	huhcKJcbU3qUv5D95k4UeRfOLp5kIh9x7IHoB46A9gIQFLDtC7gOszc2N8YAT7r87ctuBpyPt8+
-	R2Vobjg5F7RZJiiaoxQ9kRhTd2AO0PR41vbh+fWpi+DpDRqpRGfOxnHpo8adPvfQGSTXfQgPdyb
-	fSYwN3ED61PIXXtVZfj0jgequRMapONE5eWW5VF79a2cQ0bXTHedqPMlmleMZ8wzrlQTZ6GCPeL
-	W4TmiPRSBZ/EwznwT/XDI7CM/C1S4ndzPl9ZEIF7wiedQenJlEHJ1ACykdZ920AzKRsBsk1u8go
-	7YTXZW09UN40m0wOKzk=
-X-Received: by 2002:a17:907:1ca6:b0:c41:960c:8c62 with SMTP id a640c23a62f3a-c5066b338dbmr122198366b.30.1794384394508;
-        Wed, 11 Nov 2026 00:06:34 -0800 (PST)
+        bh=bUvokNlCeYm9onJ5oM1T8ZQNs1QR3modjs0guNDfzJk=;
+        b=ioVjPuGQkwlNe05p7vLuJpMJP7BmLulepa+t8RnSTVYjRSCDRg6Pc17XgFU4c6opsw
+         1lrU4VgxsrunTyYp8zrL3EZiMlvrVqf13EZoKdTcBWAUUoSL6wyhOe2OaNM1lOinfwrv
+         ulnizZJHQyaDkcvZ3Jf41/cls5t3P7/ma4K5+QmxORHZX72kDXBWPoq4jhCV9/FsAeS/
+         rARc5tj1Jo0jcu41kOteQAP5Z2GuGxw7j9fX8Iv+t0BnFNohd161/jIxL59Jxay9cmCu
+         oKo/PosH9rDEybPvtaBLwKhtE4Nzz7ZAzSzuqvPZbtFuir7PQMD8S900y6vvNIKa/oYo
+         hZQg==
+X-Forwarded-Encrypted: i=1; AL+hErEbpFMgmtkVILgUPUGCtBNHVYY7Ju4zmytuI1xuZxx+AHsEbBFeNKZydy3aBrWF2Hys7Tm9IuE=@lists.infradead.org
+X-Gm-Message-State: APuU4Z884DEDbCAAyTvbDNYjTBpCWxgAa83C0gmAcjFDFUkUz6ciNH9m
+	SvzMy/bTlxS5M4yTWtzEmrUhvesqsh5RTBNjSDSY6Q6VO5VGj6tNPceJYZiZFn3hbA==
+X-Gm-Gg: AYBFou0EtBH0pD4L7ZqeSLeteNCImQxZxBBoLoRGSPIllvuYhrJe//eOKVldAFC32y3
+	IV0FhDq95pEjUYTxclK67t7dmUg9xkU1AgnOTBLRK5rI58Ee7NXxd2Yb28tFsSAfzf1zaLZA+DR
+	wLpGKLO8wZDHaVhzd126pTNzC691FDyqUkz3+HUuDXVyrEEeqvRANBuywsKMPFR9Fwq4GEmdzco
+	nnUBmpjJoaN7q0Yvv6P9UmMKJ0sG8dDlasJR3fXUuFILA2oSA8UhRp3gSnVUNk0t0BzCgMN8MLi
+	ZtiROlsH1rNifKwfyrkeJUh7msesv+7sARnf6fNmAmbwxfMZB2rg/qdsWDfm0yvWryXDIwF4sSt
+	91pPv9urCkqC1B0n2NMayTQfWilaOHYtC/IFssXFoGeXmDT0TPcSY5EMkFWxKBkh5DnTEjhamRp
+	c+JisIiNw49EgoOhVK+gKFP5qgjj5LBfXBloNL0nkAgWU5QPXF+E5I6neuFok4m4ZVIfFFWfGb0
+	T0ozV8Nvn7cdcBu70MZHdlh76SOyuQaMCGSWdyFH7pcg8BAEQJ9KqiCJmi4PB1Pxiw6FZjk6jHz
+	9vQIh1RyTGspjFUFcC5pkeqB6aNTZYOIn158eiW/ZED/lZpDmEgE2adCRTZu7lIgPTeEohzlBEh
+	DkUKkyzYsVOOgksZdIYPUArw/OLZ8BwTGiJwWx92vL1FBWpg/sVK3DimBwr6lOce65ww9gnEdFH
+	Roc8wh6RMck9UdvHgL6zr3Z7esi4XiVi7nKI6JqIA9DEE8LsC6ka5ED39W0YkvQexFKjADSsxxO
+	xDstDFWJ1yh0O1a2VI7pWm7/jEmdLBIb6e0ZFjX0pUMM13Xt7MaBhJ7fJPLCEVSmgn5SqohJgZi
+	avM8blxfP+nzaZB0eVQ=
+X-Received: by 2002:a17:907:3d0e:b0:c49:d1c5:431a with SMTP id a640c23a62f3a-c5066d58e34mr133683366b.38.1794384395369;
+        Wed, 11 Nov 2026 00:06:35 -0800 (PST)
 Received: from Desktop (p54aff574.dip0.t-ipconnect.de. [84.175.245.116])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c504a6af519sm203722266b.87.2026.11.11.00.06.33
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c504a6af519sm203722266b.87.2026.11.11.00.06.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 11 Nov 2026 00:06:33 -0800 (PST)
+        Wed, 11 Nov 2026 00:06:34 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konradybcio@kernel.org>,
@@ -93,9 +109,9 @@ Cc: Abel Vesa <abelvesa@kernel.org>,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 1/3] soc: qcom: qmi: Take responses and indications only from looked-up servers
-Date: Wed, 11 Nov 2026 09:06:28 +0100
-Message-ID: <20261111080630.244427-2-julius@bairaktaris.de>
+Subject: [PATCH 2/3] wifi: ath11k: ignore WLFW servers on the local node
+Date: Wed, 11 Nov 2026 09:06:29 +0100
+Message-ID: <20261111080630.244427-3-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261111080630.244427-1-julius@bairaktaris.de>
 References: <20261111080630.244427-1-julius@bairaktaris.de>
@@ -103,10 +119,9 @@ X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261111_000636_537865_23DB28EA 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20261111_080638_284924_C0CD8D30 
+X-CRM114-Status: GOOD (  11.90  )
+X-Spam-Score: -0.2 (/)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,67 +135,43 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
 	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=unavailable autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Any local process can open an AF_QIPCRTR socket and send a datagram to
-the port of a kernel QMI client. qrtr_local_enqueue() queues it no
-matter which server the client socket is connected to, and
-qmi_handle_message() passes responses and indications to the client's
-handlers without looking at the sender. The ath11k and ath12k
-REQUEST_MEM indication handlers, for one, then free the DMA memory that
-the running firmware writes into.
+Any local process can publish a server for the WLFW service through the
+QRTR name service, which records it on the local node.
+ath11k_qmi_ops_new_server() connects to every server the lookup reports
+and starts the QMI handshake with it, so that process takes the place of
+the firmware, including the REQUEST_MEM indication whose handler frees
+the DMA memory that the running firmware writes into.
 
-A client handle learns its servers from the lookups it registered, and
-qmi_recv_new_server() keeps them in lookup_results. Drop responses and
-indications from any other address. Handles without a new_server
-callback keep no lookup results and are left as they are.
+The WLFW service is provided by the firmware on a remote QRTR node.
+Ignore servers on the local node.
 
-Fixes: 3830d0771ef6 ("soc: qcom: Introduce QMI helpers")
+Fixes: d5c65159f289 ("ath11k: driver for Qualcomm IEEE 802.11ax devices")
 Cc: stable@vger.kernel.org
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
- drivers/soc/qcom/qmi_interface.c | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ drivers/net/wireless/ath/ath11k/qmi.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/drivers/soc/qcom/qmi_interface.c b/drivers/soc/qcom/qmi_interface.c
-index 16e2e24b60968..ba9d973279145 100644
---- a/drivers/soc/qcom/qmi_interface.c
-+++ b/drivers/soc/qcom/qmi_interface.c
-@@ -469,6 +469,19 @@ static void qmi_handle_net_reset(struct qmi_handle *qmi)
- 		qmi_send_new_server(qmi, svc);
- }
+diff --git a/drivers/net/wireless/ath/ath11k/qmi.c b/drivers/net/wireless/ath/ath11k/qmi.c
+index 7dc07339b9579..c4e4b9c5ec0da 100644
+--- a/drivers/net/wireless/ath/ath11k/qmi.c
++++ b/drivers/net/wireless/ath/ath11k/qmi.c
+@@ -3172,6 +3172,10 @@ static int ath11k_qmi_ops_new_server(struct qmi_handle *qmi_hdl,
+ 	struct sockaddr_qrtr *sq = &qmi->sq;
+ 	int ret;
  
-+static bool qmi_is_lookup_result(struct qmi_handle *qmi,
-+				 struct sockaddr_qrtr *sq)
-+{
-+	struct qmi_service *svc;
++	/* WLFW is served by the firmware, never by the local node */
++	if (service->node == qmi_hdl->sq.sq_node)
++		return -EINVAL;
 +
-+	list_for_each_entry(svc, &qmi->lookup_results, list_node) {
-+		if (svc->node == sq->sq_node && svc->port == sq->sq_port)
-+			return true;
-+	}
-+
-+	return false;
-+}
-+
- static void qmi_handle_message(struct qmi_handle *qmi,
- 			       struct sockaddr_qrtr *sq,
- 			       const void *buf, size_t len)
-@@ -485,6 +498,11 @@ static void qmi_handle_message(struct qmi_handle *qmi,
- 
- 	hdr = buf;
- 
-+	/* A client takes responses and indications only from its servers */
-+	if (qmi->ops.new_server && hdr->type != QMI_REQUEST &&
-+	    !qmi_is_lookup_result(qmi, sq))
-+		return;
-+
- 	/* If this is a response, find the matching transaction handle */
- 	if (hdr->type == QMI_RESPONSE) {
- 		mutex_lock(&qmi->txn_lock);
+ 	sq->sq_family = AF_QIPCRTR;
+ 	sq->sq_node = service->node;
+ 	sq->sq_port = service->port;
 -- 
 2.53.0
 
