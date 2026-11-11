@@ -2,78 +2,78 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3E024606A8AE
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 392BE606A8AA
 	for <ath12k@archiver.kernel.org>; Wed, 11 Nov 2026 20:48:44 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0K2ROEah;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=QOUh5vk2
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=GoUhkdMA;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=kG6xBFgf
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Unsubscribe-Post:List-Owner;
-	bh=IZYnbqYkHqkELVkKDLojhWjQ3BIxvmQ0PHO33MEnp+4=; b=0K2ROEahCRCWCITcutiN9sFJLk
-	uHTKV+gvofuJMvS0NF8hia1SZWtcG+PDpeIHxN4IjWNjBEfmVbmrKJJsFQVKXGo9t1V4UlUziT9YS
-	CcAHgRHr1Zt6fkixI35wlPVe0TTdl97inBdopei26AUKOgakW8FG3Q2WjskeW2Zhea1MU0ywnzhBT
-	IAkq3dTuzXbcFkQbo2HHb50mA1kTKnlAyXOIkD9yQu+1giQ6SLmUA/hj3z7l7MDNli9N3gpriMlJ9
-	k2AQiBBta8S0I2x79NbCEBVMAG8f4H5dEnz0P1NdVFfy5/Cl8U8qjMEIVFCjnA2MRMf/HdY8G+3EH
-	fNLgI6IQ==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
+	List-Owner; bh=RIiTR5H2OWjhZVQ9401qUUhteZRrStfHsUs8Xa39Rxs=; b=GoUhkdMAY0pBWN
+	rQ7GPXNmfTOaRhUoJaciqRejyC8t8AbnwvBVSOMTI5E0MIZ3dsr7uBO0eT8Vus8U+g/CnkdHBDl8j
+	MwhXvtomIIe/mO0TOV41NOF5ref8SPbczoB0RsPL/AP+t3OAfn3CRmV3dWYhXYAGO2M9zQTV5sjDM
+	wd49jKkZFY2R2/UXtUQNQm7AZ0iD8vfDMpbGbmmHhqhsumkYVmKfYBBRmeKH7vtSbR0DajhcNW4zT
+	BB4Kh+Ha/MF7LLXvIlGMVFitWGbACB2bMQffWU7vy9fRcE9rifIsnv3Qzhs4QnAvtaQszHOdVdzMW
+	iN02Ccc/V207hXIlz0yw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRFFJ-00000007gLC-42gp;
-	Wed, 11 Nov 2026 20:48:41 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1xRFFL-00000007gLV-0Yng;
+	Wed, 11 Nov 2026 20:48:43 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRFFG-00000007gKD-2ddx
+	id 1xRFFJ-00000007gKk-1OvH
 	for ath12k@lists.infradead.org;
-	Wed, 11 Nov 2026 20:48:40 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-4a214af2076so27129435e9.0
-        for <ath12k@lists.infradead.org>; Wed, 11 Nov 2026 12:48:37 -0800 (PST)
+	Wed, 11 Nov 2026 20:48:42 +0000
+Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-4a35ac4475dso25034135e9.2
+        for <ath12k@lists.infradead.org>; Wed, 11 Nov 2026 12:48:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794430116; x=1795034916; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=IZYnbqYkHqkELVkKDLojhWjQ3BIxvmQ0PHO33MEnp+4=;
-        b=QOUh5vk2XALK8UUhtxU3VVmmIzj9bSOJFw+oTjQIE4oMmhxUXlxp5j7O39QzMIbvrx
-         N4iHMkaHcVphiusNAT7RodkKwZFppEOhCu0VvG4CNb13wMDcfoOFp3bmFPdxwbqook/E
-         XEDd9vkS49pSjbG1l+ICIklDPWRExzS91B2PahlA8o9b4QLeTVyFTyCk5C+1pRbaeh/R
-         axetcRxTQIuQv3hXu3bEX50ozOud3lU9nZzCZ7cD+LyZ8HDzZ1v7IvkuhMHH5La8q53N
-         acXHOhDo49Igm1db/rsb1AGyLicvlgsV8vLmMeg00nE/uG0UAAoVJhcRyiMp8NUFQUIm
-         Nelw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794430116; x=1795034916;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20260707; t=1794430119; x=1795034919; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=IZYnbqYkHqkELVkKDLojhWjQ3BIxvmQ0PHO33MEnp+4=;
-        b=z4ZlygbY/NW8HJtEkDxGcRWGFypPFGjBM5KebFoKzW+hbJG6VRV94h+z5rVXjOyf8V
-         n97gCRQdxaXdU0ew00P1kXo/krkLfxZQaVmCQ7saDfhdxNSIow4I6TQVI17N06Mdh43P
-         g1xdx2aAGiszHAibCi4ugXpHG/vXZCy9c19ovBUoshJ+4/U/dxk0j9ae5Us/mbcze5de
-         JM5KHd1LDegcBnTxhjfbL/w3U8d9a8vVsgUI/F17WeJhuDaRRuDdfdPtfg1W9SwCl4G6
-         jBSLfXWq+lTbCEKMgw5iMZiX0XEkwl046aZM53tmJDKa7NXaVdm7uJVYRK5gdpZ0lgtK
-         j8zg==
-X-Forwarded-Encrypted: i=1; AL+hErEvIoa1jyBmEawbHjm8vMR68au1uE6xWpooZu4JsE4n5gSz3NukdpCfwxmeO/QSw7Y184tKk8I=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+2W11AIumG1cen5HRyTCQalZKsuaJ4I5insrU+cJ3GsaPZxoMa
-	L9dfaY7lr72TOtsJ9OHQO5/5BrmKaniTa56O/qActaaDoFm00YcD3gkO9xkqxO/D3sU=
-X-Gm-Gg: AYBFou241Fzy8n5cY5yG93amV35Ib6v/LCiGn4uK4ikoBvWIPW9OC0TRt4Dgis2OMWQ
-	KJ2lJlxzeupIfPeKEXBJetMBae6BO/tQge1r/e4bKtK90yiZ8uC2RFu5UV5jOmjgkdXV+klQnag
-	IpaT23M+D22TG9EvCTxM97MZrXuxBcwdc3WwSeVCs0FHEJuJ+pWUOpFuuonaNOcntrfPAxquaxH
-	szIKI9d+lNZ67MkE+CWKM69p8H7t4msERORnisFYVl/KY7ysUfMl8xh7xZ6/Lfyjr7a6ZyT1P87
-	fUL+CADzbgIOwJ3aTNkToP3TlG5H31WxQHUTBjwiIi3FO/1+xR2Q828lqi5dDnzCuD72y2EMOqQ
-	ZjnYUx3zglalsR3FiT4xTwIyw5Q6JFmk9DujXio9c12V6m/wzsG01F2+TvsTH5CUlaQtFEuB8Yj
-	T8cBdE8mY5J1RM6FdHDgQUmDpyxqKhEwJMcyQkkx5hAYEk6cFWu+XvEBB8/gb8R4qKSyn1npMUN
-	TliKTUEgR9NV9j3DTpmL4JI7v2NbUgM5ol0Giy32PRVvfqLL3fh0JN47nc7BD+4iY4o7yiDCk2C
-	1EGXhTgV8QN5uA7ZiXFAbBasjGuqwqNIAr8JJjG0GJZbWdXi5+zlT7OIMx5rNgIzeY+L2dDs+Zw
-	KI17qHGPWyZGgqutmBOTlcD01D6MSPIHwFn8mne2IF4n5PPT+XEf/3p5bmyBeHHJxV0PacQZ4YS
-	m4Md7pJhe+Dd9xC30iJaR9NDQf
-X-Received: by 2002:a05:600c:3551:b0:4a6:b49f:9ae5 with SMTP id 5b1f17b1804b1-4ba0938b879mr61055775e9.34.1794430115719;
-        Wed, 11 Nov 2026 12:48:35 -0800 (PST)
+        bh=RIiTR5H2OWjhZVQ9401qUUhteZRrStfHsUs8Xa39Rxs=;
+        b=kG6xBFgf8QjNhwXLyU5DsXpnpvBSSstFihZA8/afShh8RLkaFcM04CcILmSwQb+MV8
+         44h3EUOHJiviCa11C/7YBVcS8MtjAlhu6y2B3KGwYrXGKPwyZnY/pE46mJDQ9KQeoaC8
+         mtIWrm5CQ9cm5DNVulq0OgrGEljFpyav+zVZw1TbiSDKz/1wGhJ0oRd2slp/6K9QsALO
+         KQmZfY4G50SaPsA1s4vFiBnvXyD3kZa6oMCkvTMrWt37+KmI5ZHE3OsA/gowTsDpmO7s
+         AfsOpM6U+BlaWVCdkkEBY2721hShj8NThFVMAYHYu4UwJyR7BU/isiE3qHX/0XiLLOPK
+         Wp5Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794430119; x=1795034919;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=RIiTR5H2OWjhZVQ9401qUUhteZRrStfHsUs8Xa39Rxs=;
+        b=dT9jopciVumxxS5hDbMhtp+CbG5hbu24lbxhiN21LrmR0ycREyBEKyM/xeNpox+HDe
+         QQpNX/8m0E6r3zx81UH+EYeE7wHCf7lKtrdyS0rVzdPltYH06CdzN9LCU3ET0cuN2k4z
+         h+chXCGKUUNLXDhwGsGPkDpUwNUzviChq9q0EfUuukKwGhbpLbhJrysrIypGh0SDTiNy
+         wVJ3DgqFB6Zm0phBvvteOHL3tiuGZlMtpSwb5J0cySkkfN7WT4DGYahQM0ntgDbWSZF6
+         iuFamk9KvLE3WtUQOmIUpgfUx7xFkwoHk8/0zvnknnv4VrWsJROtlmoZKcG2vlROPnVm
+         hkLA==
+X-Forwarded-Encrypted: i=1; AL+hErGajMWHHhtrmpIQDOtTkI2bbUnNUSUO4PRfKmmuP1t9LYHzwnQwYvpxo6QU5WWkihqdYEV828Q=@lists.infradead.org
+X-Gm-Message-State: APuU4Z9qb3tChofjeEWpKba6fAU8yRobgOM8uynODe5wkY+sq/kj82LU
+	X06meqhbGRWEqrbW1ToQvVAqjlpvm2KE+Y/2wtEGPANgC1SJLTSwrNOy
+X-Gm-Gg: AYBFou32jQJoPSrxU+/5vo83EX89G3gECaZfIGP0w0luIZH/nh5fu09vS33HexX3Tt7
+	97kqwwwTr9onxzQJsnEzcpCb3T4/mnnvYVfDvcGQpQO+l+5Jm8yMVfaUJ5Uw4A/l+v3byffdPPD
+	ubjIyTfzhXWUi7Z+Osqe6LzoGFxYokRJey3xsU+ScnOx4mq1yt3t6IbwBgDl5UWyqU4qT3e2DIa
+	sGvPbem6oj1w9FE7YXyeWt3X4aa0L+sTugbaikh/cYfULwCcACoTSk3NRfITgm9+J21BeJexCEa
+	2vAhIcvYqOErnSdT8zzzl2BalL7J7x4UXJcRQ1fG3yleFttvjLggV/bP21m2f7hg9zdvdL+VtIp
+	Wlwn1+6CvmbsvHoM2tlPIcJ9eOenc5bqZnHETl892zSpU/2vks1buD3GhhMAoJKImSb3nUxTVMG
+	LSjmMOmmxjluBgoCRPwT36WsWGKkEFcvvEZPUW41OmqZKdTW/qJ+tgcTbQ5y2KvNyRN26m1Gdxi
+	328Hc/f1ix5qGSSSel+8drN1vD1ZC8eOAMPOD1cexKsZOU/evuvitQMXSdSdFKLNs4Cd5IoKxc/
+	L/Rh+FRlkRk3xHP7lTKTIFuTaUDheiVSZod2TpgVH9VUIChbn2HOPEthIx+2uyzQC4ysCFARm+A
+	Tq2bMnueOjtOvkX46A5itr3vMXJ42vdEdL2GRylUYfaojB93/3KU5KeALCYmw78DjHhgBS1+2UW
+	eMufg=
+X-Received: by 2002:a05:600c:8b2a:b0:49f:fd2d:23c7 with SMTP id 5b1f17b1804b1-4ba093921f6mr66956865e9.27.1794430119321;
+        Wed, 11 Nov 2026 12:48:39 -0800 (PST)
 Received: from ADM-D9YH122JTV.home.lan (58-119.dsl.iskon.hr. [89.164.58.119])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb4e2842e6sm15063795e9.4.2026.11.11.12.48.32
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb4e2842e6sm15063795e9.4.2026.11.11.12.48.37
         (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Wed, 11 Nov 2026 12:48:34 -0800 (PST)
+        Wed, 11 Nov 2026 12:48:38 -0800 (PST)
 From: Goran Sustek <gsustek@gmail.com>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: Kalle Valo <kvalo@kernel.org>,
@@ -81,16 +81,18 @@ Cc: Kalle Valo <kvalo@kernel.org>,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH ath-next v2 RESEND 0/2] wifi: ath12k: PPDU stats user count fixes
-Date: Wed, 11 Nov 2026 21:48:21 +0100
-Message-ID: <20261111204823.88785-1-gsustek@gmail.com>
+Subject: [PATCH ath-next v2 RESEND 2/2] wifi: ath12k: use all HTT_PPDU_STATS_MAX_USERS slots for PPDU users
+Date: Wed, 11 Nov 2026 21:48:23 +0100
+Message-ID: <20261111204823.88785-3-gsustek@gmail.com>
 X-Mailer: git-send-email 2.56.0
+In-Reply-To: <20261111204823.88785-1-gsustek@gmail.com>
+References: <20261111204823.88785-1-gsustek@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261111_124838_724999_0B79D54E 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20261111_124841_384123_143454F2 
+X-CRM114-Status: GOOD (  15.52  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,61 +104,58 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
+X-Spam-Status: No, score=-15.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
 	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=4.0.1
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-This is a resend of v2 without changes. The first posting [1] reached the
-lists on 2026-11-09 but never showed up in patchwork.
+user_stats[] in struct htt_ppdu_stats has HTT_PPDU_STATS_MAX_USERS
+entries, but ath12k_get_ppdu_user_index() searches only the first
+HTT_PPDU_STATS_MAX_USERS - 1 of them for a peer's slot, and
+ath12k_htt_update_ppdu_stats() applies only the first
+HTT_PPDU_STATS_MAX_USERS - 1 slots to the per-peer TX statistics. The
+last slot is never used: a message with HTT_PPDU_STATS_MAX_USERS
+distinct peers has the statistics of one of them dropped, and the
+remaining slot is dead memory. Both loops have had the "- 1" since the
+initial driver.
 
-[1] https://lore.kernel.org/r/20261109225355.23161-1-gsustek@gmail.com
+Iterate over all HTT_PPDU_STATS_MAX_USERS slots in both functions.
 
-ath12k_htt_pull_ppdu_stats() rejects PPDU stats messages whose common
-TLV reports num_users == HTT_PPDU_STATS_MAX_USERS, although that value
-is in bounds for the loop the check protects. QCN9274 firmware
-WLAN.WBE.1.6-01243 sends it in BE MU BSRP trigger messages addressed to
-two Wi-Fi 7 clients, which makes the warning fire on every such trigger
-and fill the log on a two-client AP.
+The messages with num_users 8 seen on a QCN9274 AP carry user TLVs for
+two peers, so this case has not been observed in the field; the fix
+follows from the array size.
 
-Patch 1 corrects the bound and keeps the warning for larger values.
-Patch 2 fixes a related off-by-one: the per-user slot finder and the
-per-user statistics update skip the last user_stats[] slot.
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Signed-off-by: Goran Sustek <gsustek@gmail.com>
+---
+ drivers/net/wireless/ath/ath12k/dp_htt.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-What the data shows (diagnostic build on an AP MLD, 5 and 6 GHz, two
-Wi-Fi 7 clients, 2026-11-02 to 2026-11-09):
-
-- Every message with num_users 7 or 8 was frame type 25
-  (HTT_STATS_FTYPE_SGEN_BE_MU_BSRP) and carried user TLVs for exactly
-  two stations, with up to four user records per station. num_users
-  equals the number of user records, not the number of stations.
-
-- The same firmware advertises max_user_per_ppdu_ofdma of 8 in
-  WMI_SERVICE_READY_EXT2, so 8 is the largest value it produces.
-
-- Rejecting a message has no functional effect beyond the warning: the
-  user TLVs are already stored when the check runs, and the per-peer
-  statistics are applied when the entry leaves the list.
-
-Changes in v2:
-- Keep ath12k_warn() (Jeff Johnson); only the bound and the text change.
-- Add patch 2 for the slot finder and update loop.
-- Base on current ath-next.
-
-v1: https://lore.kernel.org/r/20261101203718.60679-1-gsustek@gmail.com
-
-Goran Sustek (2):
-  wifi: ath12k: accept num_users equal to HTT_PPDU_STATS_MAX_USERS
-  wifi: ath12k: use all HTT_PPDU_STATS_MAX_USERS slots for PPDU users
-
- drivers/net/wireless/ath/ath12k/dp_htt.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-
-base-commit: d0fbb39d65dc9dcb4175fa6b23e473dec3670f4d
+diff --git a/drivers/net/wireless/ath/ath12k/dp_htt.c b/drivers/net/wireless/ath/ath12k/dp_htt.c
+index f5c526bf82d8..a0f98259ee64 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_htt.c
++++ b/drivers/net/wireless/ath/ath12k/dp_htt.c
+@@ -46,7 +46,7 @@ static int ath12k_get_ppdu_user_index(struct htt_ppdu_stats *ppdu_stats,
+ {
+ 	int i;
+ 
+-	for (i = 0; i < HTT_PPDU_STATS_MAX_USERS - 1; i++) {
++	for (i = 0; i < HTT_PPDU_STATS_MAX_USERS; i++) {
+ 		if (ppdu_stats->user_stats[i].is_valid_peer_id) {
+ 			if (peer_id == ppdu_stats->user_stats[i].peer_id)
+ 				return i;
+@@ -362,7 +362,7 @@ static void ath12k_htt_update_ppdu_stats(struct ath12k_pdev_dp *dp_pdev,
+ {
+ 	u8 user;
+ 
+-	for (user = 0; user < HTT_PPDU_STATS_MAX_USERS - 1; user++)
++	for (user = 0; user < HTT_PPDU_STATS_MAX_USERS; user++)
+ 		ath12k_update_per_peer_tx_stats(dp_pdev, ppdu_stats, user);
+ }
+ 
 -- 
 2.56.0
 
