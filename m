@@ -2,85 +2,85 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B0453606A31C
-	for <ath12k@archiver.kernel.org>; Thu, 12 Nov 2026 11:02:09 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3C563606A327
+	for <ath12k@archiver.kernel.org>; Thu, 12 Nov 2026 11:02:44 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Fvmj/ldH;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=zCMlejc1
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=P3BCM5kr;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=NnTckwwD
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=uSUy1vY1eFE30aKfLNhqOPUvCuItfxCfRy/wTy6x1VY=; b=Fvmj/ldHTNgG7a
-	0R5/DNfNo+GpJ2LiAbj3M75eKquVHhScmwgqRGdkONnNHOJS6iShLTAUKeNJ+CBzUpsy+WAEzmcxT
-	LMiMvBpOHNe3ObhEnj2hlfb2MQ2yaht7GZ3qmZMUXeB0CYCmdbCU1eKpKPtlCOg6e/QfSYbzOPO4e
-	2gLkEcekNp4tDGQTALWSsc4CYrKp8WImv3xJuGrMEJLlWWxfeFQ2McbWZBW2s6kkee/SN1BR5/xrN
-	hpZINRkVZEMV9VC72fnX/y6r4FcHuAyjS1UGnjlZvNPNjxQlF/pY+yplSVQ8FgJYSqSsSbSV/azbt
-	/SpyiJCQrUDtf4/bR5jw==;
+	List-Owner; bh=Sn2Z7LutKRGw9FfthfDc/nbX7YvwhkUABQURsLZyMdk=; b=P3BCM5krmkJy6W
+	r8VZ4mSTJbLStRU7YnybXVur2ga79uKAliKh+Xp3p6VIQtRtHE4CqQ3hG9odDjCiQKK+H0xNSmNhN
+	G+ay+VtIbmuQ3uyfsF0hiP57ebpV4ES3upPOy83v4DMfRRx5Udszkue1HYOuztM2Lzer7FYCbRY8U
+	BFqjv16UxIdjHJgTK5qWPUXMXyfWZ0iPG96egN/cINhyBHHjZtRlhGgYwEkS9n9gICO5EVx5ASVRZ
+	peLG+r0wzaYEQOqXR91mtVlZ6O17GBbKoZGO/rmZkNuXRBO1x3mhH4jgP9iLMZpGL6J4D9+VkBI3d
+	ZhGblIwDvn8l7f701k2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRSZF-00000009bhn-1mta;
-	Thu, 12 Nov 2026 11:02:09 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1xRSZn-00000009bsD-3UWZ;
+	Thu, 12 Nov 2026 11:02:43 +0000
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRSZ5-00000009bdL-3Cvk
+	id 1xRSZb-00000009bpu-3iDh
 	for ath12k@lists.infradead.org;
-	Thu, 12 Nov 2026 11:02:08 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-4a5177d78c7so36147145e9.2
-        for <ath12k@lists.infradead.org>; Thu, 12 Nov 2026 03:01:59 -0800 (PST)
+	Thu, 12 Nov 2026 11:02:41 +0000
+Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-5c14f3dab09so2509928e87.0
+        for <ath12k@lists.infradead.org>; Thu, 12 Nov 2026 03:02:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794481318; x=1795086118; darn=lists.infradead.org;
+        d=gmail.com; s=20260707; t=1794481350; x=1795086150; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=uSUy1vY1eFE30aKfLNhqOPUvCuItfxCfRy/wTy6x1VY=;
-        b=zCMlejc1Hv+hBCZ29mE4/n4AclyLRpzgULcP4zzrAwMqdJ4+PzSfZzI+gYcV+L/Xw4
-         z49tGB0z9lPnYlsKMM82ps+ou4DhA6At82KVPP7lMyJHBoyv83VNdzJwonw+QaVAs7SQ
-         RCHNGMn682YmyHUIZiw4pZda7KkF6nl8+KuWQFh9phshwlwdUbjq5Okx9U5Qa9DgQ4Zz
-         9foyjuRJOqezVhRcviR23fXV/nELSI385dnw6XpepABFYxtuEZM46e5yF5uvTxQgW3tN
-         pa5Kvzc9kymzGsRkctJlzxM20e1ttt98n85SZ9TuHiZ8vpbCl/0JlY/8ijn1G+0F/1lc
-         ENMA==
+        bh=Sn2Z7LutKRGw9FfthfDc/nbX7YvwhkUABQURsLZyMdk=;
+        b=NnTckwwDg4ZW+kjawDck/3h3BpJGmgACHZGKLB0QMJMrHsjDISEL24/DpZjYxbJANr
+         CB/Hferx0rnu01URzbIvdHTtDqujts+ogeHosOKazlGWL2boDb6CmOOY0oLwB3NcCM/5
+         IBjpnjU4qwSPn53fNl4g5bhLR2bPTgUYDbfhVzd30BABoXlI7Mt5pMqIZagW+dBKt6g2
+         ioFDoJhxkNUbwFaykx/4rOGIcbp6vqmT8fu8uvWC2ccZ0peogJ7OFBVRCn9KAXmCDJz5
+         jeZ5pRszn1E8PbAt0L4k1qWi83Dqb08DmceyfeLSxxfamnY9WotxvPHBvTxo8sWLaRvD
+         2cVg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794481318; x=1795086118;
+        d=1e100.net; s=20260707; t=1794481350; x=1795086150;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=uSUy1vY1eFE30aKfLNhqOPUvCuItfxCfRy/wTy6x1VY=;
-        b=jN6/LoALqomfr4UVMcYZL3naIjNTCvaTCcYlfJgcS5LnYNeM461kVKqzJYmBn+DhWJ
-         jHqt7yYoGqUya1CWuMi5mZ3OQaQGJo0R6jB4OfZpK1NQcveGGa0wgDppQOHrhIfF2Hum
-         Wj55GSOk77Wcc1e1U1Sl+xIEg4xhpR/zU0GAukFUIFcnFc3rIeVRsrH0kf/aUDaIuYH4
-         3WU4t3SP03zp+5QXC6LFbFu/sZbg8ZaJIXUtFuvk6WYZURWPVaLPBo0XcRFE5IIj+Lwt
-         N2Vo7c8yj0zEvJlspCD0XPxxC167tLhLl0mq+jQ8JiZDziXGV4gYb8q3W65CDjiK3jW3
-         qL5A==
-X-Forwarded-Encrypted: i=1; AL+hErFriRoRWeRbKNGvKDerP5ltVYAmCR/6qyApy8cUfpUyowl8VaIzRfnPBdR6gLt973Gv0uJ9Mgo=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/opxpnCfxskjUvEffskfBMhrzdN2Of58+zIviooX4l5sxp2MtM
-	irIQj5FuTkrFek3r7F9Ywym2LiKNYmtpjnrblNCl8u28llxG7pke1+pE
-X-Gm-Gg: AYBFou0i4x6amUWEBEfFOoK3rd9wmy26S7sIoKY+jPHm/y3nTgebHwF8sleLIIN9k6J
-	UmfEH3icBqH4RHqEm0WiZ4hZu7c2i9jpB4IZpHY7pahehwtrmwhuqVmN8O8SUp87JeljwwEWXVz
-	cGElir5R4tT15dvtYJzl1HBMh/qMkqECa5Y0JrJw+xwZ4CphKwgpH4sJQNmTM0fEOqoEXYG8kpi
-	CK5KJSPSJRH3tmMw3sQgu3yhSc6HYYadAoWfCjKzPcC+8wYPEZnoBTNJtwPTmoA6u/zzGRNxqO6
-	kH1P2yxvVYxT/Y3OOEGuZgkIlEfcMWI+vlx95AhzrKrj5JQ4Sdh2ZJNeXKEJUmBJyj6n3bY1DpP
-	e7ioU55yPlI977IIaDKQljuPRWe2Pe3TefmCMMw13gYnj2isRNVbW45j5VYNCZHRkHV1KgC8h6e
-	atlE+3LQh9twf98CQUTCMerkyUjO88sruQEWMjiVtsY6FSdFdZy20Wfv+LIA6i/nmWsADiWxJcA
-	1O2umQ0stGpalY5DpYosgSRgiPMHlXLNCGC2BKZDf2QsfVKOPEr5ZUEXQdwDpiCkqHbUS+Adp2o
-	QO7WjZrvS7yYY72XsvLR5QM0p27Z6+naZyLoeVkdeFVOVsPpHAi4uxOa
-X-Received: by 2002:a05:600c:e554:b0:4bb:534b:ada4 with SMTP id 5b1f17b1804b1-4bb534badf0mr5110835e9.33.1794481317703;
-        Thu, 12 Nov 2026 03:01:57 -0800 (PST)
+        bh=Sn2Z7LutKRGw9FfthfDc/nbX7YvwhkUABQURsLZyMdk=;
+        b=DuJ03AFFgSpp8UmWPclAJ1NmCiAVJ45QDTmcS62VmjNNPmPgg2/N82bPMYnQ/F0mqY
+         XDNptFxlkzwgzGs7Qo4Sqy7npz+78neXN2C+YBbx1uMyk6s9EPyd8XGHElBZTeJ5wjr+
+         e0Xr5NMDpM47zSD+BxIbLOYUDB0EWFzaXzGEWMRpksRZPdkskHmelplZf+KUxr6Cilyt
+         2BszDLhYjPR7vMqpj3iJ8Ik8daZ6EBCMOdkvTY+RG/rORPnP/aGMhosRY5BXkocIKNb+
+         2HEv3lO34U4PfoHoP2wGtwil7nw5wOkk4T4+bLpDMq1aLRQmI3MyiKl1jJ4PXknONgq/
+         oD8Q==
+X-Forwarded-Encrypted: i=1; AL+hErHehBzeZO9iJGZu1UUp9ms88epNavhdmrhSFMHIxkLeO6FHLs9F6404BphlxJL5ml+5GCWflm8=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+0arPjN/EGOgTMO4gQbIuCvQzA9X/ehT/lbLE+wTkjg8zRQWU9
+	j9DpOSeey5yK4/853tbeK04q+EPZ5smb/O9F7xYwwSXkvOZXxzAjNKPL
+X-Gm-Gg: AYBFou2Ns7LQjH2ybMVvFgyIsmtNklV0qG+QumBypd/o2pd0zhIJHnOzTbLhvBqV7rk
+	FH+xpipAgGVmP6XXsFkwQf9Mg8sLyIkILjSjlmKf24pDJdN5gVtu2enDnMa33nAaUJVGrOUZUkl
+	94n4aZfr2L4HJ9y887jAgBxcUetSFwUFUcJCIY45ItB0lNKIYKCXtxqkaHV+bLcKYi4vMjgFKb0
+	B67Audb9U3+r8C2KNagipZuTU43SMF/nd75NfAU78zRWw4SZ+qSLJOA/uoMEn9akT1UmPJNNan0
+	fWrsCXrvrbh1eKsJgnUQC93KDXO3IBLnQYazMNkB5hpHN6qJ9d4Nl8YsJecQHUY5dFXju+bcA2D
+	Ldz5XbouJhouFz4l9aaPaP5Rl2vDT0qKfXHvPz8L3/mPvBlf3rT/JfctuLvNlv2l8O9wvu4+LMh
+	htYaQeM3ylnogy2WZvmWQgoPJBaMwi5dxbWmGy8Jrpjw8UCzceHoYf+naSylDBZQex+vEfnFbHp
+	qqnvyjEtiAvsWLO26kTEj4hLeJXFT4TU7SVp9BgtseGtTpkU9pSocDV9OcscK6iF3EK+QgOcyl6
+	aUCN9HFfwtnvYStJAn5Ko27IoE3Pa4GEzp4aLiJTxFrNUEYtFGgTu5jY
+X-Received: by 2002:a05:6512:3e27:b0:5c1:563f:ff23 with SMTP id 2adb3069b0e04-5c15d601ad7mr2222508e87.61.1794481349384;
+        Thu, 12 Nov 2026 03:02:29 -0800 (PST)
 Received: from localhost.localdomain ([188.190.249.216])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb4e2acf81sm58579815e9.14.2026.11.12.03.01.57
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49835d2c05dsm15814046f8f.25.2026.11.12.03.02.28
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Nov 2026 03:01:57 -0800 (PST)
+        Thu, 12 Nov 2026 03:02:29 -0800 (PST)
 From: Vladyslav Tymoshchuk <tvlad744@gmail.com>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 3/4] wifi: ath12k: unregister the thermal devices of a radio only once
-Date: Thu, 12 Nov 2026 13:00:07 +0200
-Message-ID: <20261112110008.1229-4-tvlad744@gmail.com>
+Subject: [PATCH 4/4] wifi: ath12k: skip the links without a radio when a scan fails
+Date: Thu, 12 Nov 2026 13:00:08 +0200
+Message-ID: <20261112110008.1229-5-tvlad744@gmail.com>
 X-Mailer: git-send-email 2.45.1.windows.1
 In-Reply-To: <20261112110008.1229-1-tvlad744@gmail.com>
 References: <20261112110008.1229-1-tvlad744@gmail.com>
@@ -88,8 +88,8 @@ X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261112_030159_903249_70157BFA 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20261112_030231_964924_D04D5979 
+X-CRM114-Status: GOOD (  11.51  )
 X-Spam-Score: -1.9 (-)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -109,42 +109,51 @@ X-Spam-Status: No, score=-15.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-ath12k_core_reconfigure_on_crash() calls ath12k_thermal_unregister(),
-and the devices are registered again only when the start that follows
-reaches ath12k_core_pdev_create(). If it does not, because the firmware
-crashes again or the start fails earlier, the next restart unregisters
-the devices a second time:
+ath12k_mac_vdev_create() clears arvif->ar when the vdev creation fails,
+and the link stays in ahvif->links_map. When a scan fails after that,
+ath12k_mac_op_hw_scan() walks all the links of the vif to clean up and
+dereferences the NULL radio:
 
-  Unable to handle kernel NULL pointer dereference at virtual address 0000000000000050
-  Workqueue: ath12k_wq ath12k_core_restart [ath12k]
-  pc : hwmon_device_unregister+0x24/0x90
-  lr : ath12k_thermal_unregister+0x7c/0xf4 [ath12k]
+  ath12k_wifi7_pci 0000:01:00.0: failed to create WMI vdev 1: -108
+  ath12k_wifi7_pci 0000:01:00.0: failed to create vdev 00:03:7f:12:34:56 ret -108
+  Unable to handle kernel paging request at virtual address 0000000000001508
+  pc : ath12k_mac_op_hw_scan+0x9cc/0xb28 [ath12k]
   Call trace:
-   hwmon_device_unregister+0x24/0x90 (P)
-   ath12k_thermal_unregister+0x7c/0xf4 [ath12k]
-   ath12k_core_restart+0x3c/0x210 [ath12k]
+   ath12k_mac_op_hw_scan+0x9cc/0xb28 [ath12k] (P)
+   __ieee80211_start_scan+0x4e8/0x6e0 [mac80211]
+   ieee80211_request_scan+0x10/0x1c [mac80211]
+   ieee80211_scan+0x98/0x14c [mac80211]
+   cfg80211_scan+0x50/0x1f4 [cfg80211]
+   nl80211_trigger_scan+0x694/0x6cc [cfg80211]
 
-Skip the radios that have nothing registered.
+This happens when the firmware crashes a second time while mac80211 is
+reconfiguring the device after a first crash: the WMI commands fail
+with -ESHUTDOWN, and so do the vdev creation of the station link and
+the scan that wpa_supplicant requests next. The oops leaves the wiphy
+mutex locked, and everything that needs it hangs.
 
-Fixes: 151322bccdbd ("wifi: ath12k: add basic hwmon temperature reporting")
+Such a link has neither a scan to stop nor a vdev to remove.
+
+Fixes: feed05f1526e ("wifi: ath12k: Split scan request for split band device")
 Signed-off-by: Vladyslav Tymoshchuk <tvlad744@gmail.com>
 ---
- drivers/net/wireless/ath/ath12k/thermal.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/thermal.c b/drivers/net/wireless/ath/ath12k/thermal.c
-index 97fc49c40ac1..7707ae4eb683 100644
---- a/drivers/net/wireless/ath/ath12k/thermal.c
-+++ b/drivers/net/wireless/ath/ath12k/thermal.c
-@@ -257,7 +257,7 @@ static void ath12k_thermal_cleanup_radio(struct ath12k_base *ab, int i)
- 	struct ath12k *ar;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 4cb41b8b1d3b..49cb9bd8dda1 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -5889,6 +5889,9 @@ int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+ 				continue;
  
- 	ar = ab->pdevs[i].ar;
--	if (!ar)
-+	if (!ar || !ar->thermal.cdev)
- 		return;
- 
- 	hwmon_device_unregister(ar->thermal.hwmon_dev);
+ 			ar = arvif->ar;
++			if (!ar)
++				continue;
++
+ 			if (ar->scan.arvif == arvif) {
+ 				wiphy_work_cancel(hw->wiphy, &ar->scan.vdev_clean_wk);
+ 				spin_lock_bh(&ar->data_lock);
 -- 
 2.43.0
 
