@@ -2,94 +2,94 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 99AE060A3818
-	for <ath12k@archiver.kernel.org>; Fri, 13 Nov 2026 18:53:56 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D05A0606A8A5
+	for <ath12k@archiver.kernel.org>; Fri, 13 Nov 2026 18:54:05 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=yuqs5ng1;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=FlQglaKa;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=TY3nFkQt
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=AK5vG/HB;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=HkPJt1Mn;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=AdWgxSDO
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=ZiJ2cGdx8A1D88FHZg9zdVy/kI37kSxx0OtiuBRrPMQ=; b=yuqs5ng1ftKUqI
-	G+2ybiK5seVh+RerceDmOw/8gE1yQXftAY3eFCCuIHL9W36s6JIMFhkrP0DnESZFLVC8Ymmd5AwPy
-	3Me5HrlB7rZrpHTcAWPGrU+zwi7Q9Z3uKnr/09m13ZyZYjSynNzxL7ssPi7LJboWNxDrLPw94Pvj9
-	G1mJuY5HKJAqgsIM1FXE4sxeBmI2BZyUTkBagfyUw57ys/jXrrA+Ssx2kF00y60bMlzHskXrvFnRU
-	0Lwq8WSxGzTyP8xx0NNtRcvJQ4h557N20mfKLgKcwSmhxFQOS1INSJxZXCIIv/kW8HRNh55/KXViY
-	GN1K2fbE9UYFXddh0iLg==;
+	List-Owner; bh=Kz3mFGDHm3YL3jNa7eKBXnIcdFzL2ogUPI5D76TH/G0=; b=AK5vG/HByH5EUs
+	/L5JyqVNI6m/3U5jcES7ZlJCbAu6ER65JM1INM6yOg6YwQVNlhDkf+yA1IWNF7riWzsW7ZQBFRzUk
+	4UzNL2rp2r93hMn9Cyq2m1QiPjhH5WsFJw2DX/RIrXB+b2ewpyTF3UhjRhvUg6iUInGIce5LFLkbz
+	C8ZI2zsuOoc2y2REOGRJKoVts01l4cqMWqFN9j0dcdYmiNnsunllEu8weFsj3mtcEtAa0yGctJO4u
+	s9ejJcfvG6Kv+/X+6zHlKxBkxBr+hkiBmFOZkrfjZShA+XkmjPylkxlOy+AkEnA4NsF0eyUAsc4kA
+	VJ5d+mEdCE1+34vY8QXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRwPM-0000000E1Ew-15CM;
-	Fri, 13 Nov 2026 18:53:56 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xRwPV-0000000E1Jd-2M03;
+	Fri, 13 Nov 2026 18:54:05 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRwP8-0000000E15b-0qaX
+	id 1xRwP7-0000000E15Y-13Zj
 	for ath12k@lists.infradead.org;
-	Fri, 13 Nov 2026 18:53:50 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ADGXJq12808699
+	Fri, 13 Nov 2026 18:53:56 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ADH3gTw3868366
 	for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 18:53:41 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=ZiJ2cGdx8A1
-	D88FHZg9zdVy/kI37kSxx0OtiuBRrPMQ=; b=FlQglaKagUpZEUdwHsKRxWfwJTd
-	uDYB+0aAyNZzPFH175mwxz3BJqPwv5s2jMDIFqyuCzk3yachMUCiXbgEJ8jtK8en
-	njaYIweUasFR54cbpGpZQBUFocRLz5s8kh9dpZYuugDu/kcjgbAi+oQVJXzVSX10
-	m3ep0d3TrgIe2Ztc+DhhBlZYS7NN/Eoxj5PGFiBZULVvCKa61/dejSnLQoxSXft0
-	GG3q/5uQUXai64IwiZHQl+me8mZPlbGXgWhwqw6OT81Hbq+YIncYXXQrvet+58p2
-	c2+dE+wG4tVng2F+RpmLExIqlyKqq/nP1sCVOfettrpnJ++qfwdiICCWSgA==
-Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hx662rgf8-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=Kz3mFGDHm3Y
+	L3jNa7eKBXnIcdFzL2ogUPI5D76TH/G0=; b=HkPJt1Mnex7OSeyub8dctliLFSn
+	urMff/xho4+9KuVSN2Bo+BeIoscTfRbdl9rpqLpsaeHb+gQ6IvqcFvUOAdD9mM3S
+	dQSIXqAfcnTtLccXZz63HzodmTRDoMvuLDElNxh25ME5na/vFTfEm+PiSDmMFXFl
+	doT07fDHnAEC+0dUKnq4D/AFKZ46uJQis49y35PuJyDKpgtbuH5BhTfMcGXNHd+v
+	lyDVfQky/EpgemZtLok45+BYeqfExpyEeP+UzDB45iogzvx5G53QzM6d3tD32bU6
+	/aSkyLD3Qg0ZSPFwCt9jUDxnWL/nkGkd1bcHx/bN8LOPK31STXQiBacWdng==
+Received: from mail-dl1-f70.google.com (mail-dl1-f70.google.com [74.125.82.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hx6ma8d9q-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 18:53:41 +0000 (GMT)
-Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-1a71dd190b0so643420c88.1
-        for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 10:53:41 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 18:53:38 +0000 (GMT)
+Received: by mail-dl1-f70.google.com with SMTP id a92af1059eb24-1af203073e0so1171668c88.1
+        for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 10:53:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794596020; x=1795200820; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1794596000; x=1795200800; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=ZiJ2cGdx8A1D88FHZg9zdVy/kI37kSxx0OtiuBRrPMQ=;
-        b=TY3nFkQttnfrSXrSH5F82nfB2tGjcwoJwH4hezck2sdkfY9uHZAi9hopiPE2RkMpGF
-         CM/lA5uZ8uBv6L7JUw6k84tnm8siys7uzo/cPiIZoKgCYz+PGwSvin/dpyqiO1eUuzEx
-         qb3i441XNYL2dp49XUIYYzbxeR06epQw0HzoobjPLAu/Jgh2lvFS0Eswp8hCDbKGU2qc
-         OXX5zuuynzWRvpCLGJHGScEgPmGBBmBFOmSji0kmhaRxSxb1gNCiP74Z49KvHY/Pp+r3
-         12yQSCU931dEPdCzK70r4spC+iwrqr7dw0VAKhZd6p8OffwBbwOLmJBatKxXcATlwInY
-         /afQ==
+        bh=Kz3mFGDHm3YL3jNa7eKBXnIcdFzL2ogUPI5D76TH/G0=;
+        b=AdWgxSDOPLv5KPEHJyzoOijR26CWlwXAJK+8bXxLH3LBW9lkuX0xc9BI3V1sKuobCG
+         Mwxbbg+6Z9zYpb3ulOg7+cSbMYxwAWlql0m3R/EBZ+nDsPoHm6Kt6Jcl0rO4sYr7pTZR
+         esE2xhmdVC50amR9aLILPewVDlsRM26cV+JTAQ03PnUQDfK1DkP6ukZPC2vi4YAhFDb7
+         qBhk6N8EcLakTjYvxGnq3pgzavmnmsJ39yFtd/FVrI2AuDRccM2eLP8j4Q+Ntlcwv9yh
+         PdklDHPomjIAB+nPf2cznfTKLmgNfGLF3gC6EXrsBxJlhpekr2prG0OuT5Xa3/Jai08v
+         qE+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794596020; x=1795200820;
+        d=1e100.net; s=20260707; t=1794596000; x=1795200800;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=ZiJ2cGdx8A1D88FHZg9zdVy/kI37kSxx0OtiuBRrPMQ=;
-        b=SqyOy1ozofas7OeKWP436Jdl/YcC1r6TbDn+FL9xulUlQYCT8eT8Bu+I+9TpESt9un
-         xZpoNqxZHkCVV+M4bx1B4d2Ha9bpIzYi1M2NE6zAFi25+MSCtv1BPU1LZj1xTNxNPKbe
-         gmGwTebMH7XtUZW6wgr29I8ALpJGrbtpLyT7o/bSh4yqifThcXVvvynM8lPVqQp/MUIC
-         8KIwgRbCS3XoMeMOT6QIDSXdn+u5U9Q++4ADtyurD+LXZSXEERbpoYXyM9eiWSwyfjHj
-         DMDQbQunoitUaIixyMG8PNF8FBsvzVOiySZo1JSsSe/X9ieSZCaSp44yHnKMddkT3+rM
-         YVcA==
-X-Forwarded-Encrypted: i=1; AL+hErGaI9PRrj7rp31cGlG9GxpJv3BFycM2Duryw5/Z/OY1SOKE74myQf1Z/e0Do/K8lz0pids3Tjo=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+WGA5xFBPqBYnSezyoyIIfKuchUBAszapJ7ebejL6jzhyOF8l0
-	p7lTcs337nJPZW834wz2q+csdzcQxLa9rO694+jgslAFxsJqUbAZGFgsCHTWwkVHnCLV1VlZ2Yk
-	1BtHRkjYT3g+aAodl9owphdwmNs7iEBsYWoW/hIZkiiCFqz3PWMutni8L0xtu32Xa
-X-Gm-Gg: AYBFou19p1abtsCdEt1ri7LzPIP5/od6qoFpDWU5vHBkMNFTnUmd6WOyToaQZR6yM1k
-	qelob+R8cmw89GCMF3dyu5VPqBfM8ASLp0KAswWy/HsUEx38TiLX8Tq0Cu81As3lmRj1htaW7s/
-	UY+DM5LU4bfQbY1HpHOY15veX3weQ4EfgylVT67kSHa1SE1bUGrlcEyRpVmOug9lZ6vD1EM04LZ
-	XGa7rXT2gW+6sebBJ1XopzPL0aaqnErPDbNwL15YPP6P8BAasYAEL3dVaJXjQzanLizzj0vmMeH
-	f/Vsl90/3VodfpU3x6EjGt1/7dPWY3McD+Lxc9lEA1YB5/We9UDdMZ5hC8AMzaJZNG0yjPK/ueQ
-	phQMeH5XRVocdj++RpJVLZqr7Yj6xuTV0lgCfNnX7IjFLk7PQ79pF8HInvNByV7e5G1Cx0j25AO
-	k=
-X-Received: by 2002:a05:7022:b054:20b0:1b3:b6d3:b91c with SMTP id a92af1059eb24-1b50314c8b1mr3584827c88.7.1794596020006;
-        Fri, 13 Nov 2026 10:53:40 -0800 (PST)
-X-Received: by 2002:a05:7022:b054:20b0:1b3:b6d3:b91c with SMTP id a92af1059eb24-1b50314c8b1mr3584783c88.7.1794596019294;
-        Fri, 13 Nov 2026 10:53:39 -0800 (PST)
+        bh=Kz3mFGDHm3YL3jNa7eKBXnIcdFzL2ogUPI5D76TH/G0=;
+        b=ECEV/6yydA+pOvsBfPCFe0Yp1v9eXpkZnNmOiPFkGRKU6FgdUezMf9sc7mAZpapbwz
+         maXzLtdsCIZ0pckR8EiBeYVP81Q2SXcnNT43+FeK0e5hwsJSrLAze/IkVPhn72n5PDIl
+         3xHsFkZjMeAXuvUEDN64EPfMM37Y81lxKzvdRCemDHMVXBzQ1m+sofjnXunJ++wmHsXo
+         lOK9bSiV+6q3mJlYpAof40bExmNOl/kEXxtkv0kQjlHK4Q9WCtUVoo9GA+m/w+48q3tY
+         mAI+tZ5pePBi3uoHpI+UQ/sP8UGPJdVpFW72CCgMJO5EUJ7t8gaColllmV4peXjiJdru
+         0upQ==
+X-Forwarded-Encrypted: i=1; AL+hErEn4mLsm0/BLZspCZo/ZjhCcSMzZi2aPdpUT3S0BjPw8V96JAbmHtv6VEarvbdicx6a+e8iymc=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/ZO9K96HincuUsSkBchL07cicoQQpJpSAnmoEjqn8BRijt32Nt
+	1n8csi68zirbsG7jnE46SphyJeXFFz9zF8oHKzmH8d+41uZfoQglmxj7/FG/rklHSaPULtf9Ne+
+	QFjVFvsRUC92z1BElerQXwP9jJo0wUi2+9RJq31haOEtxAH1q+jHSYwB1eSR/Sthw
+X-Gm-Gg: AYBFou26B4flASDuzHNI58CDg8Zv0KWwaDLjE2WZ6rR07QeLHx8YiTnV0WK8VaOnzn1
+	IuznxHBOMXHnOFIpcldEenKwCHGI87eLwNNGBoxzL6urStPR6ijMvSkC1xgY++WPz5gZtCYqlry
+	q83yPEeZ/PBeJsRtBwE1p2cEkNZA7tfJZH7gbbNb6Z0asyiyEvw/JvIUTWMYk0W6xqIxDmmKEIf
+	0y6SImzW/eQXNZ3VWcdBYHdWn6zpGS2+iZuN4dgOaC9kPmnRiQnWInWg+36B/KINCMeB6lzl912
+	7yGv5XyHwJStW9xKGjOoyzwbgUfRGyjQkiXb3BdvTlwP34X4nyKlQOrwQMQI2ME7Hy9t4HP8R6h
+	8PhVUeW//7rVlwtiHGvuvALE2SRdUsfj6U2KdE4dTwZp/+2HmRz1RPZGnaG28oXGkxIu0N3Rgrm
+	Y=
+X-Received: by 2002:a05:701b:4504:10b0:15c:1679:1cc7 with SMTP id a92af1059eb24-1b50313d80bmr2955484c88.37.1794595999682;
+        Fri, 13 Nov 2026 10:53:19 -0800 (PST)
+X-Received: by 2002:a05:701b:4504:10b0:15c:1679:1cc7 with SMTP id a92af1059eb24-1b50313d80bmr2955427c88.37.1794595998965;
+        Fri, 13 Nov 2026 10:53:18 -0800 (PST)
 Received: from hu-mojha-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-379563e6b6dsm15547667eec.21.2026.11.13.10.53.29
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-379563e6b6dsm15547667eec.21.2026.11.13.10.53.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Nov 2026 10:53:38 -0800 (PST)
+        Fri, 13 Nov 2026 10:53:18 -0800 (PST)
 From: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 To: Sumit Garg <sumit.garg@oss.qualcomm.com>,
         Bjorn Andersson <andersson@kernel.org>,
@@ -117,44 +117,44 @@ Cc: Abel Vesa <abelvesa@kernel.org>, Sean Paul <sean@poorly.run>,
         linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         linux-remoteproc@vger.kernel.org,
         Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-Subject: [PATCH v2 3/9] drm/msm/adreno: migrate zap shader loading to qcom_mdt_pas_load() and qcom_pas_prepare_and_auth_reset()
-Date: Sat, 14 Nov 2026 00:20:03 +0530
-Message-ID: <20261113185009.157893-4-mukesh.ojha@oss.qualcomm.com>
+Subject: [PATCH v2 1/9] firmware: qcom: pas: add qcom_pas_context_init() for pre-allocated context
+Date: Sat, 14 Nov 2026 00:20:01 +0530
+Message-ID: <20261113185009.157893-2-mukesh.ojha@oss.qualcomm.com>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20261113185009.157893-1-mukesh.ojha@oss.qualcomm.com>
 References: <20261113185009.157893-1-mukesh.ojha@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: -2WulmNAGWykyOyspYYKI4i2WGOhmLAj
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEzMDA3NSBTYWx0ZWRfXyY8sPY3brGUI
- 53tUf+DPfxS9Bfs0Me3EOFhJi8pHjc7KGEFcPOGB4rRbb+DwibOptz7ifn0oVG9yp4yjRnxsef0
- 2aYRH9ezU0V6jlE9HvW+KOErceE6xQ3c4myQi0zH7I1HOfd/BwCE7SPIDw1Ax1/rFiAqhBWkrLH
- FZOc26qvU5f4xPH8rCV5KaWy3t3G24zzWUPBXXsSIWuaFGj/mzC93rBhEm113KuMMRPQWN6IPWf
- 1hUUq1ReKaVNAmSJsR8fHikuCfKBeMZlWxJDhgwReP+hRUoKqnATGO4mefyqsW8Ar5GA5xwKU+q
- CE7bV45WHwnXJiKqiBpekvLob1lEku52kabmZHMzxNr8VHaJdgvc1dXq+gekBTHiE7FA5dnxJk4
- 2Ajm7Y1Y8B9UYbPmO4hdwyPHc4DZLsKkT4Z6NkfDFByAjirYO472HhdZKpLWdNLV33xdZvgfKVU
- +X9vb5Z9alzrLsd9WlQ==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEzMDA3NSBTYWx0ZWRfX7xTldoQL1ilZ
- den9M+YyN9DSLQC0xtOPCLY0pUAStOPrem6XsqDrJU4nzGhTX54qwxabcV8UpS+mi7XaPVYthGF
- VhKdfSXFe3NOlKNQeq/aIEmV4LaNUys=
-X-Proofpoint-GUID: -2WulmNAGWykyOyspYYKI4i2WGOhmLAj
-X-Authority-Analysis: v=2.4 cv=M/nYuCws c=1 sm=1 tr=0 ts=6af75cb5 cx=c_pps
- a=JYo30EpNSr/tUYqK9jHPoA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+X-Proofpoint-GUID: LeXejpMXS71D7XDOSV7JoAiWqf5fjwaQ
+X-Authority-Analysis: v=2.4 cv=RbcFmFtv c=1 sm=1 tr=0 ts=6af75cb2 cx=c_pps
+ a=SvEPeNj+VMjHSW//kvnxuw==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=EUspDBNiAAAA:8
- a=zg618T-2U28-L6wfSYIA:9 a=Fk4IpSoW4aLDllm1B1p-:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22 a=EUspDBNiAAAA:8
+ a=O747SXQATtv6IwqlEkcA:9 a=Kq8ClHjjuc5pcCNDwlU0:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEzMDA3NSBTYWx0ZWRfXwxz2p+ZfdmSP
+ q4Xz7DptnHv0ZHuab6cJvlIsXq0g+k24ZShE3IQ1IEXU5w5PaVCYvxURm8GRbX5NWf1a4DOSciS
+ ud7/EEKzfVKa5YqIraL4CeaAD7U3bnDhqDsN5LdCPIqw5NIDZr6mNb1ZF6CSNs47nqxexCXjdpO
+ sWc9RviR/LHTRKeosNJbUsaeN/VW9Dwss9Job+zDPfShl1CPe3MiV7I6hidNN5b6/oddcxYwKJD
+ zoCP67n+5PyAa9bIcoSrbsLDdYwdlVfk1lHk0gcbdmf8tKzpbytgS3DfYQ+TDwgPN/oGORS44h2
+ /ZR3X9RQQ5ZWgqBP5UokQSlD5TvIwryUgRyIu04yLgUbTDJ6GwsPabjWD6r8UJ4ne8aqGQJvb4N
+ jVjSfY1QdwfzHkLTu6OHLsWSIpc6CDn41laAC4DbYVxmu8FYIwMnnY9Brc2J+zJfXpsaCgGu+gY
+ FVI1L3scbsOqEb5ipfQ==
+X-Proofpoint-ORIG-GUID: LeXejpMXS71D7XDOSV7JoAiWqf5fjwaQ
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEzMDA3NSBTYWx0ZWRfX5uWNmpL+Zuq5
+ Se2wRjgc3+ijyY8l9yked94ESFYffnHrMQDfyeypp4EbKUj8FMAYwzKfU0kxt1IA+eLoxSURNDi
+ 2Qg/eOOJoEttf/RKRZ02K+WDBq881W0=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-13_05,2026-11-11_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 adultscore=0 priorityscore=1501 spamscore=0 suspectscore=0
- bulkscore=0 malwarescore=0 clxscore=1015 lowpriorityscore=0 impostorscore=0
+ priorityscore=1501 impostorscore=0 phishscore=0 adultscore=0 suspectscore=0
+ clxscore=1015 lowpriorityscore=0 bulkscore=0 malwarescore=0 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611130075
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261113_105343_939583_B9B16632 
-X-CRM114-Status: GOOD (  21.83  )
+X-CRM114-CacheID: sfid-20261113_105343_969573_9E87C379 
+X-CRM114-Status: GOOD (  18.34  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -174,101 +174,103 @@ X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-zap_shader_load_mdt() calls qcom_mdt_load(), which bundles metadata
-initialization, memory setup, and segment loading into a single API that
-does not expose a PAS context.  zap_shader_load_mdt() also calls
-qcom_pas_auth_and_reset() for TrustZone authentication, which is the
-intended behaviour.  However, a new qcom_mdt_pas_load() has recently been
-introduced that works with a PAS context and can handle everything
-qcom_mdt_load() provides, along with additional functionality such as
-shmbridge creation and retrieving memory from the shmbridge buffer when the
-same remote processor needs to run while Linux runs at EL2.
+devm_qcom_pas_context_alloc() allocates and initializes a struct
+qcom_pas_context using devres.  Several callers, however, either live
+entirely on the stack (short-lived helper functions) or embed the
+context in a larger structure that is already managed by other means.
+Forcing those callers through the devm allocation path is wasteful and,
+in the case of functions called on every power cycle, causes a devres
+entry to accumulate on every invocation.
 
-Replace both with qcom_mdt_pas_load() and qcom_pas_prepare_and_auth_reset()
-using a stack-allocated struct qcom_pas_context initialized by
-qcom_pas_context_init().  zap_shader_load_mdt() is guarded by a
-'static bool loaded' flag so it only runs once; the stack allocation is
-sufficient and avoids any heap overhead.  The manual memremap/memunmap
-pair is removed because qcom_mdt_pas_load() handles memory mapping
-internally.
+Add qcom_pas_context_init() that initializes a caller-supplied struct
+qcom_pas_context in place using memset + field assignment, with no
+allocation at all.  Rework devm_qcom_pas_context_alloc() to delegate
+to qcom_pas_context_init() after the kzalloc, so both helpers share
+the same initialization logic.
+
+Update the kernel-doc for qcom_mdt_pas_load() to reflect that the PAS
+context may now be initialized by either qcom_pas_context_init() or
+devm_qcom_pas_context_alloc().
 
 Signed-off-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 ---
- drivers/gpu/drm/msm/adreno/adreno_gpu.c | 22 ++++++----------------
- 1 file changed, 6 insertions(+), 16 deletions(-)
+ drivers/firmware/qcom/qcom_pas.c       | 26 ++++++++++++++++++++++----
+ drivers/soc/qcom/mdt_loader.c          |  4 ++--
+ include/linux/firmware/qcom/qcom_pas.h |  2 ++
+ 3 files changed, 26 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/gpu/drm/msm/adreno/adreno_gpu.c b/drivers/gpu/drm/msm/adreno/adreno_gpu.c
-index 54f337475231..8e4aa8e22108 100644
---- a/drivers/gpu/drm/msm/adreno/adreno_gpu.c
-+++ b/drivers/gpu/drm/msm/adreno/adreno_gpu.c
-@@ -34,11 +34,11 @@ static int zap_shader_load_mdt(struct msm_gpu *gpu, const char *fwname,
- 	struct device *dev = &gpu->pdev->dev;
- 	const struct firmware *fw;
- 	const char *signed_fwname = NULL;
-+	struct qcom_pas_context ctx;
- 	struct device_node *np;
- 	struct resource r;
- 	phys_addr_t mem_phys;
- 	ssize_t mem_size;
--	void *mem_region = NULL;
- 	int ret;
+diff --git a/drivers/firmware/qcom/qcom_pas.c b/drivers/firmware/qcom/qcom_pas.c
+index d74dd7b4f332..fdf62003fbf1 100644
+--- a/drivers/firmware/qcom/qcom_pas.c
++++ b/drivers/firmware/qcom/qcom_pas.c
+@@ -14,6 +14,27 @@
  
- 	if (!IS_ENABLED(CONFIG_ARCH_QCOM)) {
-@@ -121,39 +121,32 @@ static int zap_shader_load_mdt(struct msm_gpu *gpu, const char *fwname,
- 		goto out;
- 	}
+ static struct qcom_pas_ops *ops_ptr;
  
--	/* Allocate memory for the firmware image */
--	mem_region = memremap(mem_phys, mem_size,  MEMREMAP_WC);
--	if (!mem_region) {
--		ret = -ENOMEM;
--		goto out;
--	}
-+	qcom_pas_context_init(&ctx, dev, pasid, mem_phys, mem_size);
++/**
++ * qcom_pas_context_init() - Initialize a peripheral authentication service
++ *			     context for a given peripheral
++ *
++ * @ctx:	  Caller-provided PAS context to initialize
++ * @dev:	  PAS firmware device
++ * @pas_id:	  peripheral authentication service id
++ * @mem_phys:	  Subsystem reserve memory start address
++ * @mem_size:	  Subsystem reserve memory size
++ */
++void qcom_pas_context_init(struct qcom_pas_context *ctx, struct device *dev,
++			   u32 pas_id, phys_addr_t mem_phys, size_t mem_size)
++{
++	memset(ctx, 0, sizeof(*ctx));
++	ctx->dev = dev;
++	ctx->pas_id = pas_id;
++	ctx->mem_phys = mem_phys;
++	ctx->mem_size = mem_size;
++}
++EXPORT_SYMBOL_GPL(qcom_pas_context_init);
++
+ /**
+  * devm_qcom_pas_context_alloc() - Allocate peripheral authentication service
+  *				   context for a given peripheral
+@@ -39,10 +60,7 @@ struct qcom_pas_context *devm_qcom_pas_context_alloc(struct device *dev,
+ 	if (!ctx)
+ 		return ERR_PTR(-ENOMEM);
  
- 	/*
- 	 * Load the rest of the MDT
- 	 *
- 	 * Note that we could be dealing with two different paths, since
- 	 * with upstream linux-firmware it would be in a qcom/ subdir..
--	 * adreno_request_fw() handles this, but qcom_mdt_load() does
-+	 * adreno_request_fw() handles this, but qcom_mdt_pas_load() does
- 	 * not.  But since we've already gotten through adreno_request_fw()
- 	 * we know which of the two cases it is:
- 	 */
- 	if (signed_fwname || (to_adreno_gpu(gpu)->fwloc == FW_LOCATION_LEGACY)) {
--		ret = qcom_mdt_load(dev, fw, fwname, pasid,
--				mem_region, mem_phys, mem_size, NULL);
-+		ret = qcom_mdt_pas_load(&ctx, fw, fwname, NULL);
- 	} else {
- 		char *newname;
+-	ctx->dev = dev;
+-	ctx->pas_id = pas_id;
+-	ctx->mem_phys = mem_phys;
+-	ctx->mem_size = mem_size;
++	qcom_pas_context_init(ctx, dev, pas_id, mem_phys, mem_size);
  
- 		newname = kasprintf(GFP_KERNEL, "qcom/%s", fwname);
+ 	return ctx;
+ }
+diff --git a/drivers/soc/qcom/mdt_loader.c b/drivers/soc/qcom/mdt_loader.c
+index 0d55e9e0af3f..c6ec67e1da09 100644
+--- a/drivers/soc/qcom/mdt_loader.c
++++ b/drivers/soc/qcom/mdt_loader.c
+@@ -476,8 +476,8 @@ EXPORT_SYMBOL_GPL(qcom_mdt_load);
+  * firmware segments (e.g., .bXX files). Authentication of the segments done
+  * by a separate call.
+  *
+- * The PAS context must be initialized using devm_qcom_pas_context_alloc()
+- * prior to invoking this function.
++ * The PAS context must be initialized using qcom_pas_context_init() or
++ * devm_qcom_pas_context_alloc() prior to invoking this function.
+  *
+  * @ctx:        Pointer to the PAS (Peripheral Authentication Service) context
+  * @fw:         Firmware object representing the .mdt file
+diff --git a/include/linux/firmware/qcom/qcom_pas.h b/include/linux/firmware/qcom/qcom_pas.h
+index 1d132e89536e..458075868bf5 100644
+--- a/include/linux/firmware/qcom/qcom_pas.h
++++ b/include/linux/firmware/qcom/qcom_pas.h
+@@ -36,6 +36,8 @@ static inline void __iomem *qcom_pas_ctx_map(struct qcom_pas_context *ctx)
+ }
  
--		ret = qcom_mdt_load(dev, fw, newname, pasid,
--				mem_region, mem_phys, mem_size, NULL);
-+		ret = qcom_mdt_pas_load(&ctx, fw, newname, NULL);
- 		kfree(newname);
- 	}
- 	if (ret)
- 		goto out;
- 
- 	/* Send the image to the secure world */
--	ret = qcom_pas_auth_and_reset(pasid);
-+	ret = qcom_pas_prepare_and_auth_reset(&ctx);
- 
- 	/*
- 	 * If the pas call returns -EOPNOTSUPP we assume that this target
-@@ -165,9 +158,6 @@ static int zap_shader_load_mdt(struct msm_gpu *gpu, const char *fwname,
- 		DRM_DEV_ERROR(dev, "Unable to authorize the image\n");
- 
- out:
--	if (mem_region)
--		memunmap(mem_region);
--
- 	release_firmware(fw);
- 
- 	return ret;
+ bool qcom_pas_is_available(void);
++void qcom_pas_context_init(struct qcom_pas_context *ctx, struct device *dev,
++			   u32 pas_id, phys_addr_t mem_phys, size_t mem_size);
+ struct qcom_pas_context *devm_qcom_pas_context_alloc(struct device *dev,
+ 						     u32 pas_id,
+ 						     phys_addr_t mem_phys,
 -- 
 2.55.0
 
