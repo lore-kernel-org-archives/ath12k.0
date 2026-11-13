@@ -2,104 +2,104 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 40FBB606A337
-	for <ath12k@archiver.kernel.org>; Fri, 13 Nov 2026 14:52:11 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5AE72606A883
+	for <ath12k@archiver.kernel.org>; Fri, 13 Nov 2026 14:52:13 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=CHH5LYkW;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=BG11Lvkv;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=ZFh2loas
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=G+5ap9GK;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=YcX0Acdj;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=CtdB8pIb
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=ae1jFPmauZcNjp+7tAYNxzWKn+SEejkwLzjwEcl8gow=; b=CHH5LYkWr6ipfy
-	mz/WsBQrBbg2BLnskgcWwD4ELYm8mxCW5LMRQw5T3g+wn3hDW3oJBC8qCXKeaq1IViWBUGQxmddH7
-	AmU93V2HNA5KvARXTe59JzqBDbJR9N2vNYguvCU799YGG3sKi66KyZVC6t92UzSLGobiRmjOEpquz
-	PW11ymDjZkoYS4m99E3xasgJEZGkqIoZysTL9wYfiM0NmWvaO/cgLlBnH1zINIQTSe9uh+k6QoUjh
-	1S0x0+T0tXu34HU3xvGeDfGLRhEoTRzKTUh874oW3eIjIIH7O2agnMNDQazaGmV7vyV50ID4aX721
-	WROyrdqrej38vrkZTAyQ==;
+	List-Owner; bh=b98aLYZY43BuAq3tdafwcAEgTbX2vEpfIRzzDU5rgR0=; b=G+5ap9GKgGgNf0
+	E+CJEDtE4S5KcpYacyZ/hgOB77XlJbHj8JTzmV2WlvP7pKdnfh+frOaFV7hibgzY7nUldOhA8YGJA
+	OlIaueLUTiBoG3YV62Im5uYIy/LIb81/vDyNmpt0OqHvl9cDQ05lreMqiXKsxcnSj+tMkU3DcUelb
+	Ngqzjj6jZEwPr1d5TDfW0qhSBI8e9n8wb9y2FHd4D15wHsyDn8j6xEI1eAiuyLNb+i1d+mzyGzspP
+	Mt8b8+XXvbhY6xSeBuqzg18xlJCleOfZvuCiZwrHXUVz0ugHRx39xycgOe6h7iRx0tkVP+UQgjkQ+
+	vuzWOejzMgr1HRJSnoEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRsdO-0000000DEpY-479s;
-	Fri, 13 Nov 2026 14:52:10 +0000
+	id 1xRsdR-0000000DErI-0NSm;
+	Fri, 13 Nov 2026 14:52:13 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRsdL-0000000DEnC-2wmB
+	id 1xRsdN-0000000DEnz-18Ys
 	for ath12k@lists.infradead.org;
-	Fri, 13 Nov 2026 14:52:10 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ADCJbeB688697
-	for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 14:52:07 GMT
+	Fri, 13 Nov 2026 14:52:11 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ADCKQMx3126274
+	for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 14:52:09 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ae1jFPmauZcNjp+7tAYNxzWKn+SEejkwLzjwEcl8gow=; b=BG11Lvkvef19u0Rz
-	1GQPPC03OvDsda8fBN4ImfLeqSnXMCqpuApWWV/pMYQ2LEmJe75k9r0gGqzJP18A
-	DMdyyomem9mkeNbCcKH2sx3HX3ujTjkXu7Y9tLhDv1tgs8sQ1lGc7t1QZ5fpe/3m
-	taRliXG6PhyQgA5OtojVnzaM8uu4F8VViSg1VW/Zx5M6LiUEwGIxkfiOGxyY0BCU
-	yihPX9hH/cgc1m+db/ecAqjdR4XUjvb1jtpsjYnPSN9h1zQyiA2G+N+62yZQNUyq
-	uVDq3pNF9Suxx4TTAjXyZWMI4zcFfJb/KaR40Lew3c5G7ZX/SLcfUFC5XenLboU3
-	LK5rJw==
-Received: from mail-ua1-f71.google.com (mail-ua1-f71.google.com [209.85.222.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hwqufju0n-1
+	b98aLYZY43BuAq3tdafwcAEgTbX2vEpfIRzzDU5rgR0=; b=YcX0AcdjdfwPtCy+
+	RVqptHAIcvexn0EXhWGA3Cu8tyGcqhdNsnO3sQVq29Z+1DQiBEyl9p/u0/mh4Kq+
+	Huxf92+6w+u/CM7TfKBwp7jlkg35Iv7tt2UJP4zsX5Bik9XMSvhnuDL1b7KeIdgC
+	jFCsX6jLwRYepVQG/Ey4RIAxv6HUn7yQPwvqumqdOb3NB3fQuHXWsSO/p/+QK2zK
+	g19jObeuo+bjQP1UpYmlO4KQJMG+259tCtxk4voFA9ivJa+83bQzyxou4jqdDtfY
+	I+xbijAB+kSzzv7Et82iWfIPPp26pIUreklixNbMfAt7L7fVJoL9Vt4ZRmMSylTl
+	+VO3tg==
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hwg1bcgjf-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 14:52:06 +0000 (GMT)
-Received: by mail-ua1-f71.google.com with SMTP id a1e0cc1a2514c-999bc06bfd0so999633241.3
-        for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 06:52:06 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 14:52:08 +0000 (GMT)
+Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-947a607ec40so103581585a.3
+        for <ath12k@lists.infradead.org>; Fri, 13 Nov 2026 06:52:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794581526; x=1795186326; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1794581528; x=1795186328; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=ae1jFPmauZcNjp+7tAYNxzWKn+SEejkwLzjwEcl8gow=;
-        b=ZFh2loasbDeWGhSwwa7B6I2Czujt4y+YzsrGm6hK5ycJyKyUmTUWmsvPwEe1My6DVw
-         t4fu0uCT2xIWdzFcJwjy2mIQB9LGqK0vtiEtHvkEoBNz+XdMrb5ileKcz0Dgn9m3hcxb
-         39Vf4B2xQt8WnMZuPxDuoDCJhsqn4XGzw6bg9pjAG4kAXvMl9OkvCQ4CN1fJ7eWDLiEV
-         OrftHiIkxyQJAwD7G07ajszeyKd5dSCYX0ixRjEzUehgf13bKmSz14xmHRxdxaionLvm
-         MF/pa49h6X9REQSLwfUpFNjf9DwKg/4CXznC12o2AsaasS93MYpHf3boup5xWQSR2qI5
-         mXSQ==
+        bh=b98aLYZY43BuAq3tdafwcAEgTbX2vEpfIRzzDU5rgR0=;
+        b=CtdB8pIbGIFmoE6bjB4OdHSu+dgzX54XMMmWk3Ss3KDuAas/OgWWB7jO21BorO+XgY
+         gYJNu2XRkG59+Dp2zHwLHuj2N8oROuZnQVoqrloozLuZIhKp+h6bXgptpUGZfSNbWbg7
+         RYkqr/sZvrfZULjjH9XdQSU4u4D9a/aLRQp48eldLdXixNX+IafUMhUPdFt0VqRfJ7A8
+         KwrzHbYGK8cFRO3fK9qfFkKt3N061jaH5aZ+/0ozfVkMyxe1Ckg/cWQ/ilogNSgHB0yD
+         pf5N1hHBTKjCZYT8VmFAkXhTL4MRXd6xURMz7i10JUhacaqbw4CslKQwkyNl56zt3wJu
+         lwkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794581526; x=1795186326;
+        d=1e100.net; s=20260707; t=1794581528; x=1795186328;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=ae1jFPmauZcNjp+7tAYNxzWKn+SEejkwLzjwEcl8gow=;
-        b=bOcaSmPd+ToXj+gT5lul2CblVeHOAxtjrodH4z+D645itxHegm9t1VxlKXDI536suS
-         mUMwllLzDUCRpy977w/NkGB6ul1nCvVO2e7MLdjGTSxPJJENcA3wmC6+ILq6lHEwUQ83
-         bTwitu47sp8yf1uqxWiOFi6nhscWKJMiPb4YjNQuoHQtpAKBIpboxc44kfSyhp7fVNaL
-         6zJpKXNbYWm0+qhZgm9KH0kp0s5k7j1fFdnkcto9lpu3tvdPxX1THel0A+84Ml3b3XB7
-         UOSkxAay8k2uM+28x1A5nmfUkSfova/pqLZcJF2xkDGMQ9n8TV0Nyb59w5IBYdD8ziXU
-         dQ1g==
-X-Forwarded-Encrypted: i=1; AL+hErHPuCSfuLBy3SBODkrSlY3yjpXYE67FmTGeAjJhj+RN4StyytWZx0sFSUvnELuky/qwzRJk7bI=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/nKDS8f8DR56JXKFocBT/mJNeYgVh/lHsTU8OFFCm2MFTa6z7Y
-	lg3X9EQRq5Oeot64zxcOEW/7up7xdNC4unWYOayDHBFQT8iKZJ9KKS4Aa7JgXADtBNl9g2+0cI/
-	X0O4OJLaQkmzfQKiGzPYtq+owaF8po0391kDg05I/5c8hML/FmYYbaS8y4Jubksfy
-X-Gm-Gg: AYBFou2S8L+HVAhzNZMuSXaoBb289p9Cv3oHoEBYEncmjJ8DycqSIA5v88LKX0nOX0B
-	vXm+pjuhi46AkNigtyd8pymetWfMicjMVs8ogO4Fw5fhPOq5VFkB0QTh5pOWJ6ltp2ZgfezKcVa
-	CVsK9VF8maEHLbb4suyDBuPeBykhhi3D9Q/kLRUy6VIE91sNbWu3J/kj9svypsTzQ9gC2N6LshJ
-	YyViXRRG4LKAcIbOSvmpsjycfer9luGqdo+CJmV1MB48RwmzYghvqgqEpYUVX7cei4ot0994ryA
-	LLXm0wuGR9PlvBTGeGcfzfCSFqW1vefITRHkYbXCutEbyMi2jHIEdYGDgMgkk8BJnJenk6dlmTf
-	34m3Wan6dnUYVCWTuLv6EqXuPOfSpB3PsKJaBohWD9KQwMGw0YYOsQyyWVv5XyA==
-X-Received: by 2002:a05:6102:441c:b0:7cc:115:ddf4 with SMTP id ada2fe7eead31-7d64d847dabmr962764137.25.1794581525715;
-        Fri, 13 Nov 2026 06:52:05 -0800 (PST)
-X-Received: by 2002:a05:6102:441c:b0:7cc:115:ddf4 with SMTP id ada2fe7eead31-7d64d847dabmr962750137.25.1794581525207;
-        Fri, 13 Nov 2026 06:52:05 -0800 (PST)
+        bh=b98aLYZY43BuAq3tdafwcAEgTbX2vEpfIRzzDU5rgR0=;
+        b=uBdizBdTeLl6v8AL8MhcTCHAuDqjnCynt7CrHcUAILjg+AAdDN1EyC8C1usLYL1ZHE
+         ZFjbdDzpoNLUrAEqCbGQkbvQO0/Sjjt3j/HhtiSk3xJhdTTAL4BNuUq7XGYgWY9fRcM1
+         XJJLWBaoR9pvx/p9IXnxKxTm/GoWGh02FvqpQfbq3iZ7g2bECMrZjxJSnJkNHdMBm4Xe
+         MmVhyICvaOJH1HrHO1HaJRn1hBgEJga7NqhcQ6CrLwUKpVu9M5s+Dc+97rkzEXMjua7P
+         CJ8QDeBt/l7USau8Y9ROiiWfLBMv5gMe94wEC4R38NQJDThKwafBkvbHgy1tdaOp7yfD
+         2oTA==
+X-Forwarded-Encrypted: i=1; AL+hErF1U+ziHUx5zzIZhzLxav0p0AStX6eV5fp/TkeF+HHHJ+f6X6dsjTvUdb5buizINlgPtsPv4xE=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8NwFiwHCWEoYBYHhntch2bq/B1WJAeuX/HROzaq9f8fJMIj+TD
+	f+rDzoVCU9+ntBugRobbZGY7OI5VcGfWIXidU4F5W1oEZNrjcSdXEcIvnHCg426ZTwt2rd/3JKW
+	tZED469wMwAUZgiH7QRp6mFPeBtB4MLsIu7eYCvnImn+u5/VKXwpnJ9bMiqhGEC0y
+X-Gm-Gg: AYBFou2O1AP7hVOVEpJRGk/be5uK2SBZK+Yn7q7NQ+W6THrhYSK6cdhKjpVvFAKbKHL
+	sfyv8gVWcXrR/51zhskFhuRbNqsPZ8UYgs2RWMqB2IAL1mWdfZ0/wGwAZAg3n9wkrZ9/3rS252j
+	zbUHntV45kPWTe2HK13N/AC9Ydkca6QoWkvdeiA488BQTRnKmk5cPFfRkm0vHGk1Lq1VXL6jM6u
+	+7BUTiJA75atIrUP6BOVS8BYh+vkGZln9mBDscUfS48SqvF06Uzlzfd8yA8/lR7OwhfZcGpaj7S
+	PQOLuYmARrC2UYKmlsd9MeW3/QDtGmFLLqD5yNq/cpJ9TUVV8KKSSLyvnfeaf0IVAkwgSyQIG+S
+	gKO0GKOomvRjjSKRQtQJrb/COHxIba1kqcF+ztXcbJbnYFTHxuvKcCDfQF2jCFQ==
+X-Received: by 2002:a05:620a:8904:b0:93c:c2f4:9182 with SMTP id af79cd13be357-9494bb8ab63mr407281685a.20.1794581527506;
+        Fri, 13 Nov 2026 06:52:07 -0800 (PST)
+X-Received: by 2002:a05:620a:8904:b0:93c:c2f4:9182 with SMTP id af79cd13be357-9494bb8ab63mr407276885a.20.1794581526838;
+        Fri, 13 Nov 2026 06:52:06 -0800 (PST)
 Received: from localhost ([93.66.91.126])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb4e28d0b2sm127575275e9.7.2026.11.13.06.52.04
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c7da37b19sm5163364f8f.5.2026.11.13.06.52.05
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Nov 2026 06:52:04 -0800 (PST)
+        Fri, 13 Nov 2026 06:52:06 -0800 (PST)
 From: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
-Date: Fri, 13 Nov 2026 15:51:43 +0100
-Subject: [PATCH ath-next v2 2/4] wifi: ath12k: use MICHAEL_MIC_LEN for the
- TKIP Michael MIC
+Date: Fri, 13 Nov 2026 15:51:44 +0100
+Subject: [PATCH ath-next v2 3/4] wifi: ath12k: rely on pskb_trim() to trim
+ the received skb
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261113-ath12k-rx-avoid-realloc-v2-2-46d186f8688b@oss.qualcomm.com>
+Message-Id: <20261113-ath12k-rx-avoid-realloc-v2-3-46d186f8688b@oss.qualcomm.com>
 References: <20261113-ath12k-rx-avoid-realloc-v2-0-46d186f8688b@oss.qualcomm.com>
 In-Reply-To: <20261113-ath12k-rx-avoid-realloc-v2-0-46d186f8688b@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>,
@@ -117,36 +117,36 @@ Cc: Wen Gong <quic_wgong@quicinc.com>, P Praneesh <quic_ppranees@quicinc.com>,
         Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
         Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Proofpoint-GUID: v9gJp3zQTama7HskrQ8Hcln1xgfuc932
-X-Proofpoint-ORIG-GUID: v9gJp3zQTama7HskrQ8Hcln1xgfuc932
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEzMDA1OSBTYWx0ZWRfX1d5rFs3ObsW2
- t/bmH65nkk9YXWwU5+S9Npl/0eSfQYRkWU1kahzflCE2bBhmDt277CcNGZ0Vs/vqvVLpHz/pP4N
- 2hZgixVV7irvBQ3GyKJnUpJSOFZBwdFmVplrjDddKbE+RMtr2EZoyodoO/YXHCtkUMzaNw2HLX8
- MxFcPlL7T6z5IcMAfBmZg0hcPT9KlibZNPpiFxGjiX0ZlA7K29s+90xEoVqBI+9N9Vomci5qpZB
- ddCLl5sZJAVIt9yHDHWASo4gVr+EWnUlDbtdpBe3GcYdFW8NQPpZhJWXX6GGj2ORTdL7VNdKOZQ
- 8MU7CMzLZ6UQXusQyHMycGNLiNa/6YxrbpAhrDKac8puJmK6bcb3Uo+LHiT3gErkygj1GpQ0OWH
- GwVKYoLrg3hCJtuXz/Usm6rhY8ntzpDYHQh7gnA5l5xaGnJ2L4Zj0RkrPKrO56mg7h97ue7NCeV
- tVdjSrHnNbmXtUXXkow==
-X-Authority-Analysis: v=2.4 cv=XZocX455 c=1 sm=1 tr=0 ts=6af72416 cx=c_pps
- a=KB4UBwrhAZV1kjiGHFQexw==:117 a=vJIuTH4p0ATK6gluz4evpA==:17
+X-Authority-Analysis: v=2.4 cv=c6Q+0h9l c=1 sm=1 tr=0 ts=6af72418 cx=c_pps
+ a=qKBjSQ1v91RyAK45QCPf5w==:117 a=vJIuTH4p0ATK6gluz4evpA==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
- a=EUspDBNiAAAA:8 a=TY0F2RvhvldOZ2O7BigA:9 a=QEXdDO2ut3YA:10
- a=o1xkdb1NAhiiM49bd1HK:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEzMDA1OSBTYWx0ZWRfX7Y2NNvyYViS0
- 68AEjLp5/OTFR27C2Klm7Wa7MORbKcSjlF4W4/FllWqVlFT1DOVNhkzB36fxBuV280X6wleMJgx
- I+BolYuBz3d3AN2zFl/Ek3WxZUha3no=
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=EUspDBNiAAAA:8 a=GhD-aHKe0MmzFVZlnzIA:9 a=QEXdDO2ut3YA:10
+ a=NFOGd7dJGGMPyQGDc5-O:22
+X-Proofpoint-GUID: RoGokZT-9XzESGXNdR9uzfRsZfgqNq_Z
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEzMDA1OSBTYWx0ZWRfX13MpmKElzp1u
+ 7DQiv5iQxJEsd2L7MO8LWn6pn6dWfOzdbSptA+lIcKCDB18Vj1QI2vzfB6oQhU4TYD4oJR7w8Sv
+ aBMuOr+O9tOkAWk3YCTFhhEFVEIzRuYWdNwZ6KHVRko0fKpWT6Z9mhtSpgO9C97+SC1uYcEG+FT
+ yk2rajpD+BtWn8XYlhLolDvX1mDSO+GYn6fZHrnwhxbDigeaH/8N+2Kfc0lo+qzrOx9qI3vvPhb
+ k2iaNfykckUgMpzkNcuA9Y1GrJCdOAEvaihextbmSWV+3WKz3915vjZnQEZFGzhOpKl4wchufD2
+ CH/81oYvBMP4CJD5h5AkCXwe1em+HPvMdXBDknooTBWp0tOJxns66qpu52YEasxW8a4Vw2R3g2z
+ nPlPrin8EL0evr9HzhRSYAntVdAY5D4sClkjmYaAKuM9sacy+jO4BJn+K2X/PX1q2hFYM/elGDr
+ jCUBKKHHlsHgZYuqL3Q==
+X-Proofpoint-ORIG-GUID: RoGokZT-9XzESGXNdR9uzfRsZfgqNq_Z
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEzMDA1OSBTYWx0ZWRfX2fmLV4RCRtYO
+ GTxlLEjFUDuW70dFCpY4cVUcrcEkku+mmW6gWJnfDCWq1fUA6oTQzbNXdB8NGHz0mqvOKyoY2Ab
+ Seybm0T9zTOmbNFnebpRbf4O5TaCvVY=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-13_04,2026-11-11_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 clxscore=1015 malwarescore=0 priorityscore=1501 spamscore=0
- lowpriorityscore=0 bulkscore=0 adultscore=0 phishscore=0 suspectscore=0
+ adultscore=0 bulkscore=0 suspectscore=0 priorityscore=1501 phishscore=0
+ impostorscore=0 malwarescore=0 clxscore=1015 spamscore=0 lowpriorityscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611130059
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261113_065207_756751_8D7D517B 
-X-CRM114-Status: GOOD (  14.87  )
+X-CRM114-CacheID: sfid-20261113_065210_278151_B8F99FA1 
+X-CRM114-Status: GOOD (  17.24  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -166,67 +166,116 @@ X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The Michael MIC length is 8 bytes, same as the CCMP MIC, but use
-MICHAEL_MIC_LEN for the TKIP MIC trailers and MIC buffer so the intent
-is clear.
-No functional change.
+Prepare the RX path for handling non-linear SKBs introduced by the
+following RX batching change. skb_trim() cannot trim non-linear SKBs
+(__skb_set_length() warns and leaves the length unchanged), so use
+pskb_trim() instead.
+
+pskb_trim() can fail if it needs to allocate while removing data, so
+return its error from ath12k_dp_rx_h_undecap_raw(). The existing callers
+then drop the frame instead of delivering it with an untrimmed FCS, MIC,
+or ICV trailer.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 
 Signed-off-by: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_rx.c       | 4 ++--
- drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 6 +++---
- 2 files changed, 5 insertions(+), 5 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 39 ++++++++++++++++++++++-----------
+ 1 file changed, 26 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 6003ca901208..063bc3e58236 100644
+index 063bc3e58236..74c2d2affb0d 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -1064,10 +1064,10 @@ static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
- 	if ((status->flag & RX_FLAG_MMIC_STRIPPED) &&
- 	    !ieee80211_has_morefrags(hdr->frame_control) &&
- 	    enctype == HAL_ENCRYPT_TYPE_TKIP_MIC) {
--		if (msdu->len < IEEE80211_CCMP_MIC_LEN)
-+		if (msdu->len < MICHAEL_MIC_LEN)
+@@ -1007,9 +1007,9 @@ static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
+ {
+ 	struct ath12k_dp *dp = dp_pdev->dp;
+ 	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
+-	struct ieee80211_hdr *hdr;
+ 	size_t hdr_len;
+ 	size_t crypto_len;
++	int err;
+ 
+ 	if (!rxcb->is_first_msdu ||
+ 	    !(rxcb->is_first_msdu && rxcb->is_last_msdu)) {
+@@ -1020,13 +1020,13 @@ static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
+ 	if (msdu->len <= FCS_LEN)
+ 		return -EINVAL;
+ 
+-	skb_trim(msdu, msdu->len - FCS_LEN);
++	err = pskb_trim(msdu, msdu->len - FCS_LEN);
++	if (err)
++		return err;
+ 
+ 	if (!decrypted)
+ 		return 0;
+ 
+-	hdr = (void *)msdu->data;
+-
+ 	/* Tail */
+ 	if (status->flag & RX_FLAG_IV_STRIPPED) {
+ 		int icv_len = ath12k_dp_rx_crypto_icv_len(dp_pdev, enctype);
+@@ -1035,7 +1035,9 @@ static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
+ 		if (msdu->len < mic_len + icv_len)
  			return -EINVAL;
  
--		skb_trim(msdu, msdu->len - IEEE80211_CCMP_MIC_LEN);
-+		skb_trim(msdu, msdu->len - MICHAEL_MIC_LEN);
+-		skb_trim(msdu, msdu->len - (mic_len + icv_len));
++		err = pskb_trim(msdu, msdu->len - (mic_len + icv_len));
++		if (err)
++			return err;
+ 	} else {
+ 		/* MIC */
+ 		if (status->flag & RX_FLAG_MIC_STRIPPED) {
+@@ -1044,7 +1046,9 @@ static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
+ 			if (msdu->len < mic_len)
+ 				return -EINVAL;
+ 
+-			skb_trim(msdu, msdu->len - mic_len);
++			err = pskb_trim(msdu, msdu->len - mic_len);
++			if (err)
++				return err;
+ 		}
+ 
+ 		/* ICV */
+@@ -1056,22 +1060,31 @@ static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
+ 			if (msdu->len < icv_len)
+ 				return -EINVAL;
+ 
+-			skb_trim(msdu, msdu->len - icv_len);
++			err = pskb_trim(msdu, msdu->len - icv_len);
++			if (err)
++				return err;
+ 		}
+ 	}
+ 
+ 	/* MMIC */
+-	if ((status->flag & RX_FLAG_MMIC_STRIPPED) &&
+-	    !ieee80211_has_morefrags(hdr->frame_control) &&
+-	    enctype == HAL_ENCRYPT_TYPE_TKIP_MIC) {
+-		if (msdu->len < MICHAEL_MIC_LEN)
+-			return -EINVAL;
++	if (status->flag & RX_FLAG_MMIC_STRIPPED) {
++		struct ieee80211_hdr *hdr = (void *)msdu->data;
+ 
+-		skb_trim(msdu, msdu->len - MICHAEL_MIC_LEN);
++		if (enctype == HAL_ENCRYPT_TYPE_TKIP_MIC &&
++		    !ieee80211_has_morefrags(hdr->frame_control)) {
++			if (msdu->len < MICHAEL_MIC_LEN)
++				return -EINVAL;
++
++			err = pskb_trim(msdu, msdu->len - MICHAEL_MIC_LEN);
++			if (err)
++				return err;
++		}
  	}
  
  	/* Head */
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-index 429f826923b2..f151f7de5554 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-@@ -1037,7 +1037,7 @@ static int ath12k_wifi7_dp_rx_h_verify_tkip_mic(struct ath12k_pdev_dp *dp_pdev,
- 	struct ieee80211_rx_status *rxs = IEEE80211_SKB_RXCB(msdu);
- 	struct ieee80211_key_conf *key_conf;
- 	struct ieee80211_hdr *hdr;
--	u8 mic[IEEE80211_CCMP_MIC_LEN];
-+	u8 mic[MICHAEL_MIC_LEN];
- 	int head_len, tail_len;
- 	size_t data_len;
- 	u32 hdr_len, hal_rx_desc_sz = hal->hal_desc_sz;
-@@ -1053,7 +1053,7 @@ static int ath12k_wifi7_dp_rx_h_verify_tkip_mic(struct ath12k_pdev_dp *dp_pdev,
- 	hdr = (struct ieee80211_hdr *)(msdu->data + hal_rx_desc_sz);
- 	hdr_len = ieee80211_hdrlen(hdr->frame_control);
- 	head_len = hdr_len + hal_rx_desc_sz + IEEE80211_TKIP_IV_LEN;
--	tail_len = IEEE80211_CCMP_MIC_LEN + IEEE80211_TKIP_ICV_LEN + FCS_LEN;
-+	tail_len = MICHAEL_MIC_LEN + IEEE80211_TKIP_ICV_LEN + FCS_LEN;
+ 	if (status->flag & RX_FLAG_IV_STRIPPED) {
++		struct ieee80211_hdr *hdr = (void *)msdu->data;
++
+ 		hdr_len = ieee80211_hdrlen(hdr->frame_control);
+ 		crypto_len = ath12k_dp_rx_crypto_param_len(dp_pdev, enctype);
  
- 	if (!is_multicast_ether_addr(hdr->addr1))
- 		key_idx = peer->ucast_keyidx;
-@@ -1072,7 +1072,7 @@ static int ath12k_wifi7_dp_rx_h_verify_tkip_mic(struct ath12k_pdev_dp *dp_pdev,
- 	key = &key_conf->key[NL80211_TKIP_DATA_OFFSET_RX_MIC_KEY];
- 
- 	michael_mic(key, hdr, data, data_len, mic);
--	if (memcmp(mic, data + data_len, IEEE80211_CCMP_MIC_LEN))
-+	if (memcmp(mic, data + data_len, MICHAEL_MIC_LEN))
- 		goto mic_fail;
- 
- 	return 0;
 
 -- 
 2.56.0
