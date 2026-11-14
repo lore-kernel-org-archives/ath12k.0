@@ -2,76 +2,118 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 43C13606A329
-	for <ath12k@archiver.kernel.org>; Sat, 14 Nov 2026 04:37:31 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 846B660A2617
+	for <ath12k@archiver.kernel.org>; Sat, 14 Nov 2026 14:26:28 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Y4Kd3Js4;
-	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=PbeSipLP
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bi/6idtt;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=cSHX7OCo
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Cc:To:In-Reply-To:References:Message-Id:
+	Content-Type:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=JR718vhYaRS1/rYpgpj/FY0EuHBOoF0fo5dDC2WAe0c=; b=Y4Kd3Js4kWq+q1cb5gz6Jegk1R
-	4Rr4dXl0i1k55kV+1LwkefQIhvQ/Br6hdUnZ3DbVPwLTGYz93xqtTberM6aT5eWGrColCJlwdNxDn
-	/dBqY1vKXcejQBennXtQmiBqUb55IKK651hWCeWSQA/sQ5BlSomuB6xSdVwJla3DwjdPhcA2m3Pw0
-	wtYPsUNdEY7gTBmJH9b0Ib8JMIJW07KjNyYPXnCSGQa3c/L+g/gRG5CZQC2itmXO1oW1Eb+UdKPFR
-	t2XaT+G1uZZqJvJ1hZCopsO0WSFaXustEFN9pdEnX979Z6KusSd6vUPZtwYZr6zMSfvrF8NRCU6Pr
-	BkH6QpxA==;
+	bh=c5hLouU63MKf0S+VRKxiE981wQdchdO7ZcCZzt70ziY=; b=bi/6idttfXZHWBxQ/LLJdAuuiA
+	nb0JmL4EfJd4XNyd0aNnNEjrTC//hG+w61iSifAXNimKyCDU1xCDb+bf/v3s0cPKZolcIcEgyvwTL
+	s0V9T1KPZE4XK+o82k8FVwujKibgJntOW/6VUiiaiXG/0ec6cNCwLiUanZGSkpYX4sDvQg2gvsNLY
+	psohnWtv/c2EzeYr+JU9X9Xex7ApPig2d7Gf5Tsg1wOzMiOI6/k0IGDmnsqW7yZm1PBC3paV8zn1R
+	XB9+wUF0j26PXUQI98ErkMpHmk2oBhDAMIggD9J7622LeAgSrqrQzZk7g5UbQHDCgtQqA4nYfmZB+
+	XDHTVRJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xS5W6-0000000FOff-1eE7;
-	Sat, 14 Nov 2026 04:37:30 +0000
-Received: from mgamail.intel.com ([198.175.65.11])
+	id 1xSEi1-0000000GFpj-2zdm;
+	Sat, 14 Nov 2026 14:26:25 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xS5W0-0000000FOeM-2Lvs
-	for ath12k@lists.infradead.org;
-	Sat, 14 Nov 2026 04:37:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1794631045; x=1826167045;
-  h=date:from:to:cc:subject:message-id;
-  bh=L1jZV1RyQhBgAFn5XG5P4bjb5i4TgKaXNQbxne6M4Iw=;
-  b=PbeSipLPL0VUbaX9moxuSGkkShcd9KK0EDUJZZ++E74lLb1AhSmiwPmx
-   X3n+mUinwrgvX6qz+9FciWRPN+TQq/NljGkg6p9EQWdvhp2XpDuOag/rw
-   MGVei8Pz7UNNfEY/V8JEzAYX+tr9SrCR82m5iYAsAsEbTS3Ro4WGmXCRk
-   XZYtbwP2BKfThCmWho1ZZQ/B7n9UFgnzFZZeaTpaXNC1NoF6tg9ll8tpr
-   9J2lqHnAUsKml9hCKLBCv8Ze43iy8pmEmeDrLlxQhtP339u07Fs8Ft1q/
-   hOdWiCSIkNJdIdvkPbniq00LiW8yhMQ3m7yYuZeTK9pndlr3EsgT5wYZi
-   Q==;
-X-CSE-ConnectionGUID: NpbGqbhJQaqaV88I5pUijQ==
-X-CSE-MsgGUID: qHKOibdrRlunwiq0eiTpzQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11965"; a="3339338"
-X-IronPort-AV: E=Sophos;i="6.27,212,1787036400"; 
-   d="scan'208";a="3339338"
-Received: from fmviesa009.fm.intel.com ([10.60.135.149])
-  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Nov 2026 20:37:23 -0800
-X-CSE-ConnectionGUID: WRLGMNDDT3uEYi4fEBgYGg==
-X-CSE-MsgGUID: 7m6SpthjTCuzWTCjbiroEw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,212,1787036400"; 
-   d="scan'208";a="9427335"
-Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
-  by fmviesa009.fm.intel.com with ESMTP; 13 Nov 2026 20:37:22 -0800
-Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1xS5Vv-000000014sB-29yY;
-	Sat, 14 Nov 2026 04:37:19 +0000
-Date: Sat, 14 Nov 2026 12:36:39 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: ath12k@lists.infradead.org
-Subject: [ath:main-pending] BUILD SUCCESS
- bab658b42bcc1a680827ff4554cf210002c8363b
-Message-ID: <20261114123639.Si2i8FCh-lkp@intel.com>
-User-Agent: s-nail v14.9.25
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261113_203724_667822_6518158C 
-X-CRM114-Status: UNSURE (   3.59  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -4.4 (----)
+	id 1xSEi0-0000000GFon-3zRk;
+	Sat, 14 Nov 2026 14:26:24 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 569484594A;
+	Sat, 14 Nov 2026 14:26:24 +0000 (UTC)
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1794666384;
+	b=Ni9pWeetlRoIbVu++EoUYDLoC3dqPczDVK/O+UENFmOmrxAs8qQliiR1DXoOZbvcXzcd
+	 qKsL6mDFgGbPMOecYGHPROxFT1ym2o6kf0m2OSrcvoXf6YZRagibVY6wXUmafWiazzsaJ
+	 ykiPwQm5b1hcYWGQeJi5ed8m3cEB2XPTxZ7wwvzouHWot6uF2D8hMe42V7m0d1TCjBkNX
+	 nk974RlsFxMZ1myAsLHhHidCXisT6sxHxmaD18ZvFgQ8wEVkJp4j2vT60UIQwtDvrRTHU
+	 WEesgxji2jzL+SuBezQWleF5XhtcmGoTzOlkD7qP+YG7TATR0jcFlko47Ldg9TxGKqw==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1794666384;
+	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
+	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=c5hLouU63MKf0S+VRKxiE981wQdchdO7ZcCZzt70ziY=;
+	b=I1mbt+3kbGLwdubseCPLltPhGpXi6N/+xqWwRaplHG3tVZKEBeRtzW+4flWc5EtqhftQ
+	 Je1KKn6bzeGTIhNviaB+Wd/QqOwvFuAFhj3NHaaHI2PqC1VLJ4jeYEm8VRdxhhBpxYvWP
+	 pAMM8GZwFYntLSQdnXFIr/AhRN3t9uw+K42QFjZ6qXO5MuIMN5OyInud/90P3RyXyxcqE
+	 rCw5Qx+16/iQmD8EAHNbLBkyIjp0yPeCDSk71sxWEFVFOZVXjSqjrirWrkswso3ZM1UtU
+	 yT7khSayskSpqIcQP6EACBmf8bRNcfchAvaJltkFXFguxpBN/pkxCwRr24sB/RggOVw==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.kernel.org (Postfix) with ESMTPS id F1ED41F000C4;
+	Sat, 14 Nov 2026 14:26:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794666384;
+	bh=c5hLouU63MKf0S+VRKxiE981wQdchdO7ZcCZzt70ziY=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
+	b=cSHX7OCoEIhz3ZIVbAETmk2CGkxkSe2ImUmA5TAKiGZ10zxRF4qv4N97Ih5TeegTD
+	 j/2mtjb752evoELy+CV2dQJ7NQN+6lk7ZuOqulg0DqSoN/1ShDPTD5YarHDGm2HZCz
+	 6tUN1iiIPb/WqDChYpiFjeb5+M70oaoPrVz8kO6pYvu4Q99A3+aS93JHekkYCw/Ytq
+	 vuwtBKNwRi4j169QL8CCOayfC9YWYIa/dTQ0YUAFbmDLy4ya7L7o8Kt/Mav1cYvpU2
+	 IpZFwcU22OSlLnF4EQxuy/xrstmWi+4C5vOOEi5Qiow1Byi0xYKmTgOPlVlENIQSZc
+	 7DQu2TaEGZfqw==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 6BDE549E0A;
+	Sat, 14 Nov 2026 14:26:22 +0000 (UTC)
+From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
+Date: Sat, 14 Nov 2026 06:26:13 -0800
+Subject: [PATCH net-next v6 1/4] net: qrtr: Allow the host QRTR to assign a
+ unique node id
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Message-Id: <20261114-qrtr-multi-ep-v6-1-2eb9885659e2@oss.qualcomm.com>
+References: <20261114-qrtr-multi-ep-v6-0-2eb9885659e2@oss.qualcomm.com>
+In-Reply-To: <20261114-qrtr-multi-ep-v6-0-2eb9885659e2@oss.qualcomm.com>
+To: Manivannan Sadhasivam <mani@kernel.org>, 
+ "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>, 
+ Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>, 
+ Jeff Johnson <jjohnson@kernel.org>, Eric Dumazet <edumazet@kernel.org>, 
+ Eric Dumazet <edumazet@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, 
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Chris Lew <christopher.lew@oss.qualcomm.com>, 
+ Deepak Kumar Singh <deepak.singh@oss.qualcomm.com>, 
+ Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>, 
+ Juha-Matti Tilli <juha-matti.tilli@iki.fi>, 
+ Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=9753;
+ i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
+ bh=itpNcDJIBJ3puJEbvOx8X3vEbV1CcVXXyMZImRMrqBY=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq+G+Lqsf7WRyyALsoiiLhgISSH7S/iaH0G+EJG
+ zXj0BDWJnmJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCavhviwAKCRBVnxHm/pHO
+ 9R0dCACYgNDnM8HvDJandAjPcrDCUimBm2MNIfoh11meyuHyMIfKfPIbA5dHCiQ50V+zzzaCIsE
+ vc4I6kSb9afW8Qeq3YWHp4sCD1vhi6qYPjwujzpKFxK65ouz1H7F1gDmXkUzjpGVPcIbdokWBzl
+ p0mtrhFH1X450PYkHBQJswYG7N3/cdUDt+GfM3Rl+lWyGjW+grU8qnYk6LyLrdv+midKUev2/dC
+ S3HYnWEkXZobmDfvxxnf7G0APL5bRVkhQND369wVSh9+BAixq7YhH3+nVXywZjCIBxzaZ4qFwBo
+ rPVNRQFBAq4X+QotK2ClGUwtxO/3uEqA6pAvrQ58EVwvdRYa
+X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
+ fpr=C668AEC3C3188E4C611465E7488550E901166008
+X-Endpoint-Received: by B4 Relay for
+ manivannan.sadhasivam@oss.qualcomm.com/default with auth_id=461
+X-Original-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Content-Transfer-Encoding: 7bit
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,223 +123,310 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: manivannan.sadhasivam@oss.qualcomm.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
-	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=unavailable autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
-X-Archived-By: <archiver.kernel.org>
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git main-pending
-branch HEAD: bab658b42bcc1a680827ff4554cf210002c8363b  Merge branch 'pending' into main-pending
+From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
-elapsed time: 1306m
+Currently, QRTR identifies each remote node by the value of the
+'src_node_id' field in the received packet and uses the node id as the key
+to store the node to the internal 'qrtr_nodes' radix tree.
 
-configs tested: 194
-configs skipped: 4
+But this approach comes with a limitation. When more than one remote node
+share the same id, then QRTR can only add the first node to the radix tree
+and has to drop the successive nodes with the same node id as the 'key' in
+radix tree has to be unique. This prevents connecting identical Qcom PCIe
+WLAN devices to a single host at the same time.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+To fix this limitation, allow the host QRTR to use the node id (nid)
+received from the endpoint driver during qrtr_endpoint_register() as the
+unique node id and use it as the 'key' for the internal radix tree. Also,
+store the received 'src_id' in a new 'qrtr_node->ep_nid' field and replace
+the 'ep_nid' with the unique 'nid' in the QRTR control packets if both
+differ i.e., an endpoint driver has passed a unique 'nid' during
+qrtr_endpoint_register(). To maintain symmetry, replace the 'nid' with the
+'ep_nid' while sending the packet back to the remote node if both differ.
 
-tested configs:
-alpha                              allnoconfig    gcc-16.2.0
-alpha                             allyesconfig    gcc-16.2.0
-alpha                                defconfig    gcc-16.2.0
-arc                               allmodconfig    clang-24
-arc                                allnoconfig    gcc-16.2.0
-arc                               allyesconfig    clang-24
-arc                                  defconfig    gcc-16.2.0
-arc                   randconfig-1000-20261113    gcc-10.5.0
-arc                   randconfig-1000-20261114    clang-24
-arc                   randconfig-1001-20261113    gcc-10.5.0
-arc                   randconfig-1001-20261114    clang-24
-arm                               alldefconfig    gcc-16.2.0
-arm                                allnoconfig    gcc-16.2.0
-arm                               allyesconfig    clang-24
-arm                      am200epdkit_defconfig    gcc-16.2.0
-arm                                  defconfig    gcc-16.2.0
-arm                   randconfig-1000-20261113    gcc-10.5.0
-arm                   randconfig-1000-20261114    clang-24
-arm                   randconfig-1001-20261113    gcc-10.5.0
-arm                   randconfig-1001-20261114    clang-24
-arm                   randconfig-1002-20261113    gcc-10.5.0
-arm                   randconfig-1002-20261114    clang-24
-arm                   randconfig-1003-20261113    gcc-10.5.0
-arm                   randconfig-1003-20261114    clang-24
-arm                            sama7_defconfig    gcc-16.2.0
-arm                            stm32_defconfig    gcc-16.2.0
-arm64                             allmodconfig    clang-24
-arm64                              allnoconfig    gcc-16.2.0
-arm64                                defconfig    gcc-16.2.0
-csky                              allmodconfig    gcc-16.2.0
-csky                               allnoconfig    gcc-16.2.0
-csky                                 defconfig    gcc-16.2.0
-hexagon                           allmodconfig    gcc-16.2.0
-hexagon                            allnoconfig    gcc-16.2.0
-hexagon                              defconfig    gcc-16.2.0
-hexagon               randconfig-1000-20261114    clang-24
-hexagon               randconfig-1001-20261114    clang-24
-i386                              allmodconfig    clang-22
-i386                               allnoconfig    gcc-16.2.0
-i386                              allyesconfig    clang-22
-i386        buildonly-randconfig-1000-20261114    gcc-14
-i386        buildonly-randconfig-1001-20261114    gcc-14
-i386        buildonly-randconfig-1002-20261114    gcc-14
-i386        buildonly-randconfig-1003-20261114    gcc-14
-i386        buildonly-randconfig-1004-20261114    gcc-14
-i386        buildonly-randconfig-1005-20261114    gcc-14
-i386                                 defconfig    gcc-16.2.0
-i386                  randconfig-1000-20261113    clang-22
-i386                  randconfig-1000-20261114    gcc-12
-i386                  randconfig-1001-20261113    clang-22
-i386                  randconfig-1001-20261114    gcc-12
-i386                  randconfig-1002-20261113    clang-22
-i386                  randconfig-1002-20261114    gcc-12
-i386                  randconfig-1003-20261113    clang-22
-i386                  randconfig-1003-20261114    gcc-12
-i386                  randconfig-1004-20261113    clang-22
-i386                  randconfig-1004-20261114    gcc-12
-i386                  randconfig-1005-20261113    clang-22
-i386                  randconfig-1005-20261114    gcc-12
-i386                  randconfig-1006-20261113    clang-22
-i386                  randconfig-1006-20261114    gcc-12
-i386                  randconfig-1007-20261114    clang-22
-i386                  randconfig-1008-20261114    clang-22
-i386                  randconfig-1009-20261114    clang-22
-i386                  randconfig-1010-20261114    clang-22
-i386                  randconfig-1011-20261114    clang-22
-i386                  randconfig-1012-20261114    clang-22
-i386                  randconfig-1013-20261114    clang-22
-loongarch                         allmodconfig    clang-24
-loongarch                          allnoconfig    gcc-16.2.0
-loongarch                            defconfig    clang-24
-loongarch             randconfig-1000-20261114    clang-24
-loongarch             randconfig-1001-20261114    clang-24
-m68k                              allmodconfig    gcc-16.2.0
-m68k                               allnoconfig    gcc-16.2.0
-m68k                              allyesconfig    clang-24
-m68k                          amcore_defconfig    gcc-16.2.0
-m68k                                 defconfig    clang-24
-m68k                        m5475evb_defconfig    gcc-16.2.0
-microblaze                         allnoconfig    gcc-16.2.0
-microblaze                        allyesconfig    gcc-16.2.0
-microblaze                           defconfig    clang-24
-mips                              allmodconfig    gcc-16.2.0
-mips                               allnoconfig    gcc-16.2.0
-mips                              allyesconfig    gcc-16.2.0
-mips                           ath79_defconfig    gcc-16.2.0
-mips                   decstation_64_defconfig    gcc-16.2.0
-mips                       malta_kvm_defconfig    gcc-16.2.0
-mips                         qi_lb60_defconfig    gcc-16.2.0
-nios2                             allmodconfig    clang-20
-nios2                              allnoconfig    clang-24
-nios2                                defconfig    clang-24
-nios2                 randconfig-1000-20261114    clang-24
-nios2                 randconfig-1001-20261114    clang-24
-openrisc                          alldefconfig    gcc-16.2.0
-openrisc                          allmodconfig    clang-20
-openrisc                           allnoconfig    clang-24
-openrisc                             defconfig    gcc-16.2.0
-openrisc                   or1klitex_defconfig    gcc-16.2.0
-parisc                            allmodconfig    gcc-16.2.0
-parisc                             allnoconfig    clang-24
-parisc                            allyesconfig    clang-17
-parisc                               defconfig    gcc-16.2.0
-parisc                randconfig-1000-20261114    gcc-8.5.0
-parisc                randconfig-1001-20261114    gcc-8.5.0
-parisc64                             defconfig    clang-24
-powerpc                           allmodconfig    gcc-16.2.0
-powerpc                            allnoconfig    clang-24
-powerpc                  mpc8313_rdb_defconfig    gcc-16.2.0
-powerpc               randconfig-1000-20261114    gcc-8.5.0
-powerpc               randconfig-1001-20261114    gcc-8.5.0
-powerpc                   storcenter_defconfig    gcc-16.2.0
-powerpc                  xes_mpc85xx_defconfig    gcc-16.2.0
-powerpc64             randconfig-1000-20261114    gcc-8.5.0
-powerpc64             randconfig-1001-20261114    gcc-8.5.0
-riscv                             allmodconfig    clang-24
-riscv                              allnoconfig    clang-24
-riscv                             allyesconfig    clang-24
-riscv                                defconfig    gcc-16.2.0
-riscv                 randconfig-1000-20261114    gcc-15.3.0
-riscv                 randconfig-1001-20261114    gcc-15.3.0
-s390                              allmodconfig    clang-17
-s390                               allnoconfig    clang-24
-s390                              allyesconfig    gcc-16.2.0
-s390                                 defconfig    gcc-16.2.0
-s390                  randconfig-1000-20261114    gcc-15.3.0
-s390                  randconfig-1001-20261114    gcc-15.3.0
-sh                                allmodconfig    gcc-16.2.0
-sh                                 allnoconfig    clang-24
-sh                                allyesconfig    clang-17
-sh                                   defconfig    gcc-14
-sh                           r7780mp_defconfig    gcc-16.2.0
-sh                    randconfig-1000-20261114    gcc-15.3.0
-sh                    randconfig-1001-20261114    gcc-15.3.0
-sparc                              allnoconfig    clang-24
-sparc                                defconfig    gcc-16.2.0
-sparc                 randconfig-1000-20261114    gcc-12.5.0
-sparc                 randconfig-1001-20261114    gcc-12.5.0
-sparc64                           allmodconfig    clang-20
-sparc64                              defconfig    gcc-14
-sparc64               randconfig-1000-20261114    gcc-12.5.0
-sparc64               randconfig-1001-20261114    gcc-12.5.0
-um                                allmodconfig    clang-17
-um                                 allnoconfig    clang-24
-um                                allyesconfig    gcc-16.2.0
-um                                   defconfig    gcc-14
-um                              i386_defconfig    gcc-14
-um                    randconfig-1000-20261114    gcc-12.5.0
-um                    randconfig-1001-20261114    gcc-12.5.0
-um                            x86_64_defconfig    gcc-14
-x86_64                             allnoconfig    clang-24
-x86_64      buildonly-randconfig-1000-20261114    gcc-14
-x86_64      buildonly-randconfig-1001-20261114    gcc-14
-x86_64      buildonly-randconfig-1002-20261114    gcc-14
-x86_64      buildonly-randconfig-1003-20261114    gcc-14
-x86_64      buildonly-randconfig-1004-20261114    gcc-14
-x86_64      buildonly-randconfig-1005-20261114    gcc-14
-x86_64                               defconfig    gcc-14
-x86_64                                   kexec    clang-22
-x86_64                randconfig-1000-20261114    gcc-14
-x86_64                randconfig-1001-20261114    gcc-14
-x86_64                randconfig-1002-20261114    gcc-14
-x86_64                randconfig-1003-20261114    gcc-14
-x86_64                randconfig-1004-20261114    gcc-14
-x86_64                randconfig-1005-20261114    gcc-14
-x86_64                randconfig-1006-20261114    gcc-14
-x86_64                randconfig-1007-20261114    gcc-14
-x86_64                randconfig-1008-20261114    gcc-14
-x86_64                randconfig-1009-20261114    gcc-14
-x86_64                randconfig-1010-20261114    gcc-14
-x86_64                randconfig-1011-20261114    gcc-14
-x86_64                randconfig-1012-20261113    gcc-14
-x86_64                randconfig-1012-20261114    clang-22
-x86_64                randconfig-1013-20261113    gcc-14
-x86_64                randconfig-1013-20261114    clang-22
-x86_64                randconfig-1014-20261113    gcc-14
-x86_64                randconfig-1014-20261114    clang-22
-x86_64                randconfig-1015-20261113    gcc-14
-x86_64                randconfig-1015-20261114    clang-22
-x86_64                randconfig-1016-20261113    gcc-14
-x86_64                randconfig-1016-20261114    clang-22
-x86_64                randconfig-1017-20261113    gcc-14
-x86_64                randconfig-1017-20261114    clang-22
-x86_64                                rhel-9.4    clang-22
-x86_64                            rhel-9.4-bpf    gcc-14
-x86_64                           rhel-9.4-func    clang-22
-x86_64                     rhel-9.4-kselftests    clang-22
-x86_64                          rhel-9.4-kunit    gcc-14
-x86_64                            rhel-9.4-ltp    gcc-14
-x86_64                           rhel-9.4-rust    clang-22
-xtensa                             allnoconfig    clang-24
-xtensa                            allyesconfig    clang-20
-xtensa                randconfig-1000-20261114    gcc-12.5.0
-xtensa                randconfig-1001-20261114    gcc-12.5.0
+A node can also bridge other distant nodes, so the source id of an
+incoming packet is not always the id the endpoint advertises for itself.
+Keep adding such ids to the radix tree as additional keys for the same
+node, as it was done before this change. Otherwise the bridged nodes would
+lose their route and qrtr_sendmsg() would start failing with -ECONNRESET
+for them.
+
+Currently, all QRTR endpoint drivers pass 'QRTR_EP_NID_AUTO' as the 'nid'
+during qrtr_endpoint_register(). So 'ep_nid' and 'nid' are same and the
+routing behavior is not changed.
+
+Finally, since qrtr_node_rewrite_ctrl() dereferences the control packet for
+DEL_SERVER and DEL_CLIENT as well, extend the existing length check in
+qrtr_endpoint_post() to cover both types.
+
+Reviewed-by: Simon Horman <horms@kernel.org>
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+---
+ net/qrtr/af_qrtr.c | 136 ++++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 file changed, 120 insertions(+), 16 deletions(-)
+
+diff --git a/net/qrtr/af_qrtr.c b/net/qrtr/af_qrtr.c
+index 45cb8e8c36ca..fff1d70fd8bf 100644
+--- a/net/qrtr/af_qrtr.c
++++ b/net/qrtr/af_qrtr.c
+@@ -118,7 +118,8 @@ static DEFINE_XARRAY_ALLOC(qrtr_ports);
+  * @ep_lock: lock for endpoint management and callbacks
+  * @ep: endpoint
+  * @ref: reference count for node
+- * @nid: node id
++ * @nid: node id assigned by the host QRTR
++ * @ep_nid: endpoint's own node id as received
+  * @qrtr_tx_flow: xarray of qrtr_tx_flow, keyed by node << 32 | port
+  * @qrtr_tx_lock: lock for qrtr_tx_flow inserts
+  * @hello_sent: hello packet send successful
+@@ -132,6 +133,7 @@ struct qrtr_node {
+ 	struct qrtr_endpoint *ep;
+ 	struct kref ref;
+ 	unsigned int nid;
++	unsigned int ep_nid;
+ 
+ 	struct xarray qrtr_tx_flow;
+ 	struct mutex qrtr_tx_lock; /* for qrtr_tx_flow */
+@@ -349,6 +351,7 @@ static int qrtr_node_enqueue(struct qrtr_node *node, struct sk_buff *skb,
+ {
+ 	struct qrtr_hdr_v1 *hdr;
+ 	size_t len = skb->len;
++	unsigned int dst_node;
+ 	int rc, confirm_rx;
+ 
+ 	mutex_lock(&node->ep_lock);
+@@ -371,10 +374,14 @@ static int qrtr_node_enqueue(struct qrtr_node *node, struct sk_buff *skb,
+ 	hdr->src_node_id = cpu_to_le32(from->sq_node);
+ 	hdr->src_port_id = cpu_to_le32(from->sq_port);
+ 	if (to->sq_port == QRTR_PORT_CTRL) {
+-		hdr->dst_node_id = cpu_to_le32(READ_ONCE(node->nid));
++		hdr->dst_node_id = cpu_to_le32(READ_ONCE(node->ep_nid));
+ 		hdr->dst_port_id = cpu_to_le32(QRTR_PORT_CTRL);
+ 	} else {
+-		hdr->dst_node_id = cpu_to_le32(to->sq_node);
++		/* Put back the endpoint's own node id */
++		dst_node = to->sq_node;
++		if (dst_node == READ_ONCE(node->nid))
++			dst_node = READ_ONCE(node->ep_nid);
++		hdr->dst_node_id = cpu_to_le32(dst_node);
+ 		hdr->dst_port_id = cpu_to_le32(to->sq_port);
+ 	}
+ 
+@@ -424,23 +431,75 @@ static struct qrtr_node *qrtr_node_lookup(unsigned int nid)
+ 	return node;
+ }
+ 
+-/* Assign node id to node.
++/*
++ * Add 'nid' as a lookup key for 'node', and adopt it as the node's own id if
++ * the node does not have one yet.
++ *
++ * Callers must hold 'qrtr_nodes_lock'.
+  *
+- * This is mostly useful for automatic node id assignment, based on
+- * the source id in the incoming packet.
++ * Return: 0 on success; negative error code on failure
+  */
+-static void qrtr_node_assign(struct qrtr_node *node, unsigned int nid)
++static int __qrtr_node_assign(struct qrtr_node *node, unsigned int nid)
+ {
+-	unsigned long flags;
++	int rc;
+ 
+ 	if (nid == QRTR_EP_NID_AUTO)
+-		return;
++		return 0;
++
++	if (radix_tree_lookup(&qrtr_nodes, nid) == node)
++		return 0;
++
++	rc = radix_tree_insert(&qrtr_nodes, nid, node);
++	if (rc)
++		return rc;
+ 
+-	spin_lock_irqsave(&qrtr_nodes_lock, flags);
+-	radix_tree_insert(&qrtr_nodes, nid, node);
+ 	if (node->nid == QRTR_EP_NID_AUTO)
+ 		WRITE_ONCE(node->nid, nid);
++
++	return 0;
++}
++
++/*
++ * Assign node id to node.
++ *
++ * Return: 0 on success; negative error code on failure
++ */
++static int qrtr_node_assign(struct qrtr_node *node, unsigned int nid)
++{
++	unsigned long flags;
++	int rc;
++
++	spin_lock_irqsave(&qrtr_nodes_lock, flags);
++	rc = __qrtr_node_assign(node, nid);
+ 	spin_unlock_irqrestore(&qrtr_nodes_lock, flags);
++
++	return rc;
++}
++
++/*
++ * Replace the node id in the control packet with 'node->nid', if both are
++ * different.
++ */
++static void qrtr_node_rewrite_ctrl(struct qrtr_node *node, unsigned int type,
++				   struct sk_buff *skb)
++{
++	unsigned int ep_nid = READ_ONCE(node->ep_nid);
++	unsigned int host_nid = READ_ONCE(node->nid);
++	struct qrtr_ctrl_pkt *pkt;
++	__le32 *nid;
++
++	if (host_nid == ep_nid)
++		return;
++
++	pkt = (struct qrtr_ctrl_pkt *)skb->data;
++	if (type == QRTR_TYPE_DEL_CLIENT || type == QRTR_TYPE_RESUME_TX)
++		nid = &pkt->client.node;
++	else
++		nid = &pkt->server.node;
++
++	/* Rewrite only the endpoint's node id, not those of bridged nodes */
++	if (le32_to_cpu(*nid) == ep_nid)
++		*nid = cpu_to_le32(host_nid);
+ }
+ 
+ /**
+@@ -459,9 +518,12 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
+ 	struct qrtr_sock *ipc;
+ 	struct sk_buff *skb;
+ 	struct qrtr_cb *cb;
++	unsigned long flags;
+ 	size_t size;
+ 	unsigned int ver;
++	unsigned int nid;
+ 	size_t hdrlen;
++	int rc = 0;
+ 
+ 	if (len == 0 || len & 3)
+ 		return -EINVAL;
+@@ -523,6 +585,8 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
+ 		goto err;
+ 
+ 	if ((cb->type == QRTR_TYPE_NEW_SERVER ||
++	     cb->type == QRTR_TYPE_DEL_SERVER ||
++	     cb->type == QRTR_TYPE_DEL_CLIENT ||
+ 	     cb->type == QRTR_TYPE_RESUME_TX) &&
+ 	    size < sizeof(struct qrtr_ctrl_pkt))
+ 		goto err;
+@@ -533,14 +597,36 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
+ 
+ 	skb_put_data(skb, data + hdrlen, size);
+ 
+-	qrtr_node_assign(node, cb->src_node);
++	nid = cb->src_node;
++
++	spin_lock_irqsave(&qrtr_nodes_lock, flags);
++
++	if (node->ep_nid == QRTR_EP_NID_AUTO)
++		WRITE_ONCE(node->ep_nid, nid);
++
++	/*
++	 * Add the source id to the lookup table only if 'node->nid' is auto
++	 * assigned or the packet came from a bridged node.
++	 */
++	if (node->nid == QRTR_EP_NID_AUTO || nid != node->ep_nid)
++		rc = __qrtr_node_assign(node, nid);
++
++	spin_unlock_irqrestore(&qrtr_nodes_lock, flags);
++
++	if (rc)
++		goto err_nid;
+ 
+ 	if (cb->type == QRTR_TYPE_NEW_SERVER) {
+ 		/* Remote node endpoint can bridge other distant nodes */
+-		const struct qrtr_ctrl_pkt *pkt;
++		const struct qrtr_ctrl_pkt *pkt = data + hdrlen;
++
++		nid = le32_to_cpu(pkt->server.node);
+ 
+-		pkt = data + hdrlen;
+-		qrtr_node_assign(node, le32_to_cpu(pkt->server.node));
++		if (nid != READ_ONCE(node->ep_nid)) {
++			rc = qrtr_node_assign(node, nid);
++			if (rc)
++				goto err_nid;
++		}
+ 	}
+ 
+ 	if (cb->type == QRTR_TYPE_HELLO) {
+@@ -548,6 +634,15 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
+ 		smp_store_release(&node->hello_rcvd, true);
+ 	}
+ 
++	if (cb->src_node == READ_ONCE(node->ep_nid))
++		cb->src_node = READ_ONCE(node->nid);
++
++	if (cb->type == QRTR_TYPE_NEW_SERVER ||
++	    cb->type == QRTR_TYPE_DEL_SERVER ||
++	    cb->type == QRTR_TYPE_DEL_CLIENT ||
++	    cb->type == QRTR_TYPE_RESUME_TX)
++		qrtr_node_rewrite_ctrl(node, cb->type, skb);
++
+ 	if (cb->type == QRTR_TYPE_RESUME_TX) {
+ 		qrtr_tx_resume(node, skb);
+ 	} else {
+@@ -565,6 +660,8 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
+ 
+ 	return 0;
+ 
++err_nid:
++	pr_err_ratelimited("qrtr: cannot route node id %u: %d\n", nid, rc);
+ err:
+ 	kfree_skb(skb);
+ 	return -EINVAL;
+@@ -684,6 +781,7 @@ EXPORT_SYMBOL_GPL(qrtr_endpoint_hello);
+ int qrtr_endpoint_register(struct qrtr_endpoint *ep, unsigned int nid)
+ {
+ 	struct qrtr_node *node;
++	int rc;
+ 
+ 	if (!ep || !ep->xmit)
+ 		return -EINVAL;
+@@ -696,6 +794,7 @@ int qrtr_endpoint_register(struct qrtr_endpoint *ep, unsigned int nid)
+ 	mutex_init(&node->ep_lock);
+ 	skb_queue_head_init(&node->rx_queue);
+ 	node->nid = QRTR_EP_NID_AUTO;
++	node->ep_nid = QRTR_EP_NID_AUTO;
+ 	node->ep = ep;
+ 
+ 	node->hello_sent = false;
+@@ -704,7 +803,12 @@ int qrtr_endpoint_register(struct qrtr_endpoint *ep, unsigned int nid)
+ 	xa_init(&node->qrtr_tx_flow);
+ 	mutex_init(&node->qrtr_tx_lock);
+ 
+-	qrtr_node_assign(node, nid);
++	rc = qrtr_node_assign(node, nid);
++	if (rc) {
++		pr_err("qrtr: cannot assign node id %u: %d\n", nid, rc);
++		kfree(node);
++		return rc;
++	}
+ 
+ 	mutex_lock(&qrtr_node_lock);
+ 	list_add(&node->item, &qrtr_all_nodes);
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.43.0
+
+
 
