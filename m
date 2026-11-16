@@ -2,94 +2,94 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F2C2B606A339
-	for <ath12k@archiver.kernel.org>; Mon, 16 Nov 2026 16:22:28 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 27206606A8A4
+	for <ath12k@archiver.kernel.org>; Mon, 16 Nov 2026 16:22:39 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jdikY+If;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Q1P5lJvN;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=jtibmUDv
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=a3M3ekit;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=KKVB/IqJ;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=FusCC7Vk
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=uySENDl4qHKLED5Y781UpPB/TLSVGsjWluRr5p+nyD0=; b=jdikY+IffntokG
-	GCPK3p/N6IbEvWlc29WRLzMWsrVWrjTbkPEwwxxyIckbzUyWYH0BxGwvhqFDUmcfQT8ZDJFS1wKxJ
-	mX14CExj+wVCWhLSVxJsLXm6/qAq7NLWNPSN2QjpUJnu35blPaGotSZIB8W8SSzDboninWjA6a5uN
-	9QPHOR4MfbsLYMIUI3ONJPdLtTwQ1goo82+BbwNJ6VJldbF4xsnWlaxhpEZEDJFDgcI4rSVdb5eEf
-	ruaP7R7JSbIf4wW2y6nJX7UsHzUbLPrD9VPE5eGAe7VTO4vohfuBtyHIPBr9IhVXp6ODT0UhcnuxV
-	elCDZ4u9nGShwzCZ4H9w==;
+	List-Owner; bh=ZiJ2cGdx8A1D88FHZg9zdVy/kI37kSxx0OtiuBRrPMQ=; b=a3M3ekit6+wWI/
+	na9auG1AxDlLQm1ISwc4uSlCy8lz/poniZv/sFWD+6WaYcxLZVe5MasiUAnBrToUZ6srtyYgzwy5W
+	2aPLK0Bc1tOcNS8CKTkA41JsVg3qZFHJuFPS6VKf6Y4odOeNSoVEtSssAnL6+ME18ha6tYaCVw/ms
+	8Kr0P6XeDH8OWN6Tkobs3sMg0IzAR1TrubSncgnaHkttUhMKb+8qD7FCq4DsFf3NN/9EjbTMAB0cF
+	2ZsBk6MHfY6BbYq0ymK7ceM8ZGvKxyKJCMfC28KKgi19+zclWk1b9IVyzmYBkrFvlN6WQ9wsK6qdq
+	qLZ33d69j3hsV0A2zgCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSzTQ-00000003C5J-2xkT;
-	Mon, 16 Nov 2026 16:22:28 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xSzTa-00000003CAV-3iTh;
+	Mon, 16 Nov 2026 16:22:38 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSzTN-00000003C3q-3Ak2
+	id 1xSzTX-00000003C8n-0TeT
 	for ath12k@lists.infradead.org;
-	Mon, 16 Nov 2026 16:22:27 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AGGITx52790105
-	for <ath12k@lists.infradead.org>; Mon, 16 Nov 2026 16:22:24 GMT
+	Mon, 16 Nov 2026 16:22:37 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AGGIRCV451747
+	for <ath12k@lists.infradead.org>; Mon, 16 Nov 2026 16:22:34 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=uySENDl4qHK
-	LED5Y781UpPB/TLSVGsjWluRr5p+nyD0=; b=Q1P5lJvNIeKfL56TfRIjIR9jsbt
-	77bTCWfZSMMnZXthPUTgZCdXpi4O2Zen0smhOrBw2karVbUu/j3OLL7aN8MglY0P
-	bGJvdD4H3Xu0ByqdwaJVvWSdqOKH41uHf3VhbLRtzbMKAGEFaCkemwzQjUw8ao3l
-	G/Sd6Iu4A7qRqNEwx/uhcR+aDj1Db70ZP1ARRIeLTctUDqzGwpb+fbl7kKjxxiFF
-	NMBrW3TMolw/qsJAgwxAN2B3Z625QLgJCPte4FneviTa73W5lH1TVWNjC+j2wOKV
-	cHQH4ip5qU2JKos01EIjcSpvU2+6j7Tre8SmYWS9yvw9okcMylQgj1en7gA==
-Received: from mail-dl1-f70.google.com (mail-dl1-f70.google.com [74.125.82.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j00nfh7se-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=ZiJ2cGdx8A1
+	D88FHZg9zdVy/kI37kSxx0OtiuBRrPMQ=; b=KKVB/IqJmIHW43Y5iX/SbkcNv6M
+	4wqpIJ0CiEte9tqfaDQrZ9zzJqnYBCXMghfBaExOruMjXJ8ySaPDeUAOikyeXHjA
+	IDIh23CX+6N9Hv+dhZ9XUPvO9G+2D63QvC76GObIDhBkOXCjyJ7NW1Il6rL0i1gK
+	et8Hi2v5ywKSBGtMzY/ChlxUx3+cmrJHZlDrf1LZubrqw1mnJ7X31N5/Lrr7zIUE
+	YSTuEFj5Zes9LFQH/0eCVzIvvr+A/Lqhx4SlG8pg2z3t4ZKjG68W26dfQfbW8Eit
+	IHcgJZ0bUc2vLc731T4bAv1gXUjt3SzEzSYm/1aVm+lW9kc+w4K+Nh4UR5w==
+Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j034y0m04-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 16 Nov 2026 16:22:24 +0000 (GMT)
-Received: by mail-dl1-f70.google.com with SMTP id a92af1059eb24-1aa0fb7f157so4355390c88.0
-        for <ath12k@lists.infradead.org>; Mon, 16 Nov 2026 08:22:24 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Mon, 16 Nov 2026 16:22:34 +0000 (GMT)
+Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-36f479b9819so1942137eec.1
+        for <ath12k@lists.infradead.org>; Mon, 16 Nov 2026 08:22:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794846144; x=1795450944; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1794846154; x=1795450954; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=uySENDl4qHKLED5Y781UpPB/TLSVGsjWluRr5p+nyD0=;
-        b=jtibmUDvKHENjeo1jBYqvNY2jBF1DduSNMSCyy4LJOAeYQhil+i5jprC9k5NJ7rVC8
-         JlrPl6jN9NC1Bp+BLu8ju1LhewqIfh/vGwDCpg239xi+mzeyoMFM3bBqLoQnjkHDdiyv
-         X/O05HA7+lNp67Lr15Iy1o8zDTppnXilpC8syv/uK8K6FzCi0nxavIx6WJQilNupsGm/
-         26f6oYIJNRgmW4xxtw2qiT/DMqKwrJk+LfHzkyYwzMfHeo87lNqhV9KOUMJuB8NLeh0w
-         QUmnKk4BUeQ53xtroztFR66aQDZ/F71hRJ7TecjMuzzkKHmwp8j75XY2fmUmrSf9CaoZ
-         eh+g==
+        bh=ZiJ2cGdx8A1D88FHZg9zdVy/kI37kSxx0OtiuBRrPMQ=;
+        b=FusCC7VkVw9HtrmP/3ma2CjUXDNscaxoS2fDNLLk5IMell+Km6nk6SpZSQA1hkKkoB
+         o89TAH2eGidPEnFs6isARM2Wc1/nywPnioCay1MN4rkwgRYgaU/gIL3yGVlzPHzOFfpW
+         EwQ7gm+YDm5S5RViWQEtEITZQpZ92ORm6AJQCM/qDWRZvSiN4dkelHJZDluJUiLOaFlu
+         ZusB0ujwOwG8UtXq2Ti0zWd/C9zdwxPZ3/Au2CtVSMH+Ys1YXEqnWpUYJ04f4RBZHHgG
+         U/YUDyS/f3OuaKCO6xradcV91sotJhOICNeB/9j/6538lH2hejXmSeonH3W/VuVkVK16
+         0D6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794846144; x=1795450944;
+        d=1e100.net; s=20260707; t=1794846154; x=1795450954;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=uySENDl4qHKLED5Y781UpPB/TLSVGsjWluRr5p+nyD0=;
-        b=ScN7bALsSI2vlZnRsMP1rHMRbHCbWRVtQ7nB05WX+jhBf446wfKrl2/iNXxImGuYtJ
-         qlXJ60ro7wmbxBeWFpiv78hkbTeXDB9isQ3HEsICVdz79MTodfWMemH8afcof43Bhc1V
-         bIrjGBDFvTMBUO2380Fm9C3XeIVJHzCl/+7f+xeF7MwEZ4+MuGd4AbvYKAs8Lwl0UO5i
-         vx0+u9OivUKi4n1ilApDZWZHZnDuU9lejf6v0JB99YY8nbe9v0rqmz8iWcMwjBYwNQkP
-         HAc8mgrrNr6ol3z7bBv+N4Xgcw92zTQrUYvNsdhS+nyKzi3bykTzgiACsiV/nl2sB/Ia
-         EeRA==
-X-Forwarded-Encrypted: i=1; AL+hErE2ZlyLgriP1gN7oAktC7AmJCfkYHtUBqI/9ghdpeTzzYVwEFLEBpuVaiM6cVEUYl5urXkgCZ8=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/zZDCRDoTQr+RxTfc3JTNB0PZFUqEeMaRsi9BYOq46hBe5Cn+D
-	0Ew8vgFGWeI9YLadrPQH0m7QZvBe8PUiP2m6TdehWz3f864O8ji1BQWlnXtvzPWrsSODcQmrUkO
-	J8/k5EVYftbUHXC9yQj0t5Zb+Oo561xx5cVHK+rYJmQxsBbfcitO+gMQnJhAeHBMq
-X-Gm-Gg: AYBFou1QpGDKBeHgavqR4Pfj2UVbEdAKBsQH2U941vaueDG/QnQbaCKLyAhjXcsSN2G
-	EVNOaE5y00TpGH8oHfsgRhaOQSuw04ZETNQe3vwOlWjA2otbcxn24ZhGeTh+VoV4lWBJtsdZzdF
-	ukMZjimWN6llXXMKWJJ+qCeAUNSlsBiEeGu54uS4kjA0i1sRNcuO/xXxSbuqqdsQnQWmytw/kqi
-	TnkxbSTz1EFt2p3XjwHD5y1EECF5ks/ZMy4upgBcC1PtHXy8XReVqlDsNQpleIC8SF27yfP8STx
-	P+kCH1kezWmV4lGRrUtiAQuTPi9XqpAv+eKkHShTTTyJODy1zkAmXptom/SQihO+3erIrGaXgXz
-	4tJKIOgO/UVCDELZ8ZXtnThrGsThqEKFZ4ltDsNJvd0ScYOkYQ4RLjLaNfxigY0Bwp9oDOv/mb2
-	s9
-X-Received: by 2002:a05:7022:7f1a:b0:1b5:23e7:3387 with SMTP id a92af1059eb24-1b523e75033mr5758267c88.19.1794846143428;
-        Mon, 16 Nov 2026 08:22:23 -0800 (PST)
-X-Received: by 2002:a05:7022:7f1a:b0:1b5:23e7:3387 with SMTP id a92af1059eb24-1b523e75033mr5758228c88.19.1794846142809;
-        Mon, 16 Nov 2026 08:22:22 -0800 (PST)
+        bh=ZiJ2cGdx8A1D88FHZg9zdVy/kI37kSxx0OtiuBRrPMQ=;
+        b=RLVoUUYHraynlNYAF6nPoM1emOGoHDs1pRQ/F7rTnNoayT9IALBQteK+A2Pwnc9qS5
+         qpM9q5bx+NiGpP9w+sm/FrEmzZczFau0WLZl5cCN7Hr6OsFvqnR2C7m9SnsNFttx2Et0
+         kq6kaSF01sQ0xsBzzH+/Xz7FStvnzwUPDwQXjVf6n6Mu1pE12iSi6iQstFTbH/QNLYtf
+         Iu43CEKqSYoDhPR/0ebVZbe7t8WRedfkH8Jrn2/5rMJwZAjGQxs7oiPhyDu09In/T4HV
+         O9YUH0ehRO0A4a/2qLM6Rqc3v9mgXScxfEXHadTrmnaVC0BKepff8ZyMzJeeTI2iyvcD
+         Hdpg==
+X-Forwarded-Encrypted: i=1; AL+hErE7T6lVUz5iDgbmvOqCVUy8AZ5UIjYI1iQb7Q5xCedmZzDmePYh9wa5xUiZc2fNPKHG6wh0KlA=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8a9n4EWtz535WvaUU3D5FpL7/6/YUyhAKeWiyC55DnWixqBWJ2
+	TXH+Q5s5vzK0kJyT45lzQYIE0XJ2XXu6/c4+Z7Ew6C0UcrFPmQAkdmLv1Bn4jp3jt+h0xNQyRZW
+	786S1BDK0/D21/BJXyYRpi2BLV7IV/mps2XwjHMNJoXkxjWqUYzd+NUtN8IsSk3sq
+X-Gm-Gg: AYBFou1FCdrxDbLWnrtjLJwkE4+4maTf1UmmMvpk8mHvIPcVANHctgaMMiByGatXSEl
+	rvNPjhNtKoqcbXJJrGF6mTAmVbMwpTs22BPrz01UjgEkd6SsiVN4MENxqoptFUJgszLiemw+q4j
+	hdcw4ZCssbZQkPE0bIAhxFEDV5a3N3tJrQVo5EsNGjYTQieX6TChY2umu2REVY0CixnOLvPRmhf
+	MxJcgCATQ0VancAGFf1iJCKTKmFYP2f5qv3qHMl9/AKFS2i1phdcxizJLluzDl4NC6Ifa6A1LZO
+	3QUEWCQeDQCRcoAuXV2fPB55PwsBq+gk0AuXjMQ0C/5qUU01wwenNjnwT1xA1K/PtumfG4xmxWM
+	rYcrxPnPjggA8IPIBucFdVModgFClhoSCtqpeZLLXL0cSTwPjRfgLysq9s/yRb6CrjXoNjWuGo9
+	3W
+X-Received: by 2002:a05:701b:450d:20b0:149:49c:233 with SMTP id a92af1059eb24-1b5030bb598mr10533738c88.27.1794846153730;
+        Mon, 16 Nov 2026 08:22:33 -0800 (PST)
+X-Received: by 2002:a05:701b:450d:20b0:149:49c:233 with SMTP id a92af1059eb24-1b5030bb598mr10533694c88.27.1794846153043;
+        Mon, 16 Nov 2026 08:22:33 -0800 (PST)
 Received: from hu-mojha-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5031468b7sm38623826c88.5.2026.11.16.08.22.13
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5031468b7sm38623826c88.5.2026.11.16.08.22.23
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 08:22:22 -0800 (PST)
+        Mon, 16 Nov 2026 08:22:32 -0800 (PST)
 From: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 To: Sumit Garg <sumit.garg@oss.qualcomm.com>,
         Bjorn Andersson <andersson@kernel.org>,
@@ -117,44 +117,45 @@ Cc: Abel Vesa <abelvesa@kernel.org>, Sean Paul <sean@poorly.run>,
         linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         linux-remoteproc@vger.kernel.org,
         Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-Subject: [PATCH v3 2/9] remoteproc: qcom_wcnss: migrate to qcom_mdt_pas_load() and qcom_pas_prepare_and_auth_reset()
-Date: Mon, 16 Nov 2026 21:51:41 +0530
-Message-ID: <20261116162148.2864501-3-mukesh.ojha@oss.qualcomm.com>
+Subject: [PATCH v3 3/9] drm/msm/adreno: migrate zap shader loading to qcom_mdt_pas_load() and qcom_pas_prepare_and_auth_reset()
+Date: Mon, 16 Nov 2026 21:51:42 +0530
+Message-ID: <20261116162148.2864501-4-mukesh.ojha@oss.qualcomm.com>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20261116162148.2864501-1-mukesh.ojha@oss.qualcomm.com>
 References: <20261116162148.2864501-1-mukesh.ojha@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=BrEIUoX5 c=1 sm=1 tr=0 ts=6afb2dc0 cx=c_pps
- a=SvEPeNj+VMjHSW//kvnxuw==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+X-Proofpoint-GUID: DdGlXTYEDx2saQsK81Du7mNugfVEGyGk
+X-Authority-Analysis: v=2.4 cv=aNZlOr9m c=1 sm=1 tr=0 ts=6afb2dca cx=c_pps
+ a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22 a=EUspDBNiAAAA:8
- a=BENypEIf3hN4rM3MEzYA:9 a=Kq8ClHjjuc5pcCNDwlU0:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE2MDA2NCBTYWx0ZWRfX6Pl2kEdJDTFD
- 1l9Kd/ifskVFdIN0yvW5PkeOMwlOc83WrH5ZniGm+VAM236nJ8VuSxlec6Wv+7DuNz62S3nbdvf
- O4voHohtKZsqK3weB7XwOkXcRoak6U4=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE2MDA2NCBTYWx0ZWRfX8swvlEchWSHq
- UixeAx8EUwzLLU1h9euP5clPWQOD7zEui+w31PeaYzqXRGxbc52wAhbu2s6vXkwO0/4a36kR5XO
- oQMXLrLh/QKRVzcwuIfYqohsYqkPFYf+9JfsMSMxjVk9MgtRv/GswHk+G3ITjn1DiBlLdICfmYx
- k9mvC2RXspppoKlgFwJ8iuYskhiDzuQfyklTOiHGIMLDA6cqBGTJTsAaOBi0jvcz1lsitoasib1
- rvaYlloOGxHK3C0mmXA3WpI1/VhIDvlkc5Ox5YQ+YN8t0fGPc2ICGwdM0+c7Nypq4L7gm10hX3D
- h3mLesUc7Cpmr+9dmhM0ZCZNt53uBnWmPxlptjIEllBv9FHw8BTSGNOnL6Roc7qf8uLhioWwYHs
- BJLxlSDlZHclWABjMf1guYZhowB6xCTGTfmDIqjs/cQ+kRsEihbqKI/slzVSVAdI5rsbHIHZY8S
- kHBsRFUsHLBLCGus7fA==
-X-Proofpoint-ORIG-GUID: cUg373UnKP-XlJbfc2TzDuzkWDPH30D7
-X-Proofpoint-GUID: cUg373UnKP-XlJbfc2TzDuzkWDPH30D7
+ a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22 a=EUspDBNiAAAA:8
+ a=zg618T-2U28-L6wfSYIA:9 a=6Ab_bkdmUrQuMsNx7PHu:22
+X-Proofpoint-ORIG-GUID: DdGlXTYEDx2saQsK81Du7mNugfVEGyGk
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE2MDA2NCBTYWx0ZWRfX69WP52Ar79Hb
+ eGh2GF8KgEMfnY5EnTaAyFuI72QMkcDHZWZ1Rq/I8wcDO77IB5vacHCNFa4dMXcGOcMfj0Jk0BJ
+ 6MRacuE9lfdyEtnQKuubb8yZgG68Neo=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE2MDA2NCBTYWx0ZWRfX6Sxdt04xPa8G
+ ZdI+NZgbxwhvsEVMHN3iUnTAhgoavOLsn/DGrOGbTxdiuhCiNaFKJ2+KZFbCtfsyqg+7qxoaDJP
+ 3LQelR7N1Z/KN/Dg0YsRjug4IytYcomEH5VVw4sLeef0Ns5gaVhm0xVqRxpW3uwhsjgMWjPV+EJ
+ x3xEgxMWmkrP605c7malPsN+v+NIsjBYv3dgO0WLpVL7P8KSX6fEMnC9whj1hXJxFZyjpWF25QU
+ Mu6UWxOoL/Po+CmsbNaAK3IZewI5/e3W6eYVgSLDyPba/8mCFh2XHCKp8flsVGH5yPbkf5EZMdE
+ R/5UPYKKMWEBJKWVO+WschYs9qpz4KAKB0CrvX4XaZSUfGJQ3/fjwD6iFopxx0a83YgqemnbR5X
+ s4kQMOcmz0vPoa2I2z3/aKH8VSS58xcnow7WB12CPBAk8eBZ3wm786q87TcUiLHNgWsiZT0EgBf
+ 1bN4ZGbvkpitZNEoTzg==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-16_05,2026-11-16_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 impostorscore=0 spamscore=0 phishscore=0 priorityscore=1501
- suspectscore=0 adultscore=0 bulkscore=0 malwarescore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611160064
+ suspectscore=0 lowpriorityscore=0 phishscore=0 adultscore=0
+ priorityscore=1501 impostorscore=0 malwarescore=0 spamscore=0 clxscore=1015
+ bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
+ definitions=main-2611160064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261116_082226_189624_A6241AD8 
-X-CRM114-Status: GOOD (  17.35  )
+X-CRM114-CacheID: sfid-20261116_082235_157824_DB1235CD 
+X-CRM114-Status: GOOD (  22.41  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -174,74 +175,101 @@ X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-wcnss_load() calls qcom_mdt_load(), which bundles metadata init,
-memory setup, and segment loading into a single API that does not
-expose a PAS context, and wcnss_start() calls
-qcom_pas_auth_and_reset() for TrustZone authentication, which is
-the intended behaviour. However, a new qcom_mdt_pas_load() has
-recently been introduced that works with a PAS context and can
-handle everything qcom_mdt_load() provides, along with additional
-functionality such as shmbridge creation and retrieving memory
-from the shmbridge buffer when the same remote processor needs to
-run while Linux runs at EL2.
+zap_shader_load_mdt() calls qcom_mdt_load(), which bundles metadata
+initialization, memory setup, and segment loading into a single API that
+does not expose a PAS context.  zap_shader_load_mdt() also calls
+qcom_pas_auth_and_reset() for TrustZone authentication, which is the
+intended behaviour.  However, a new qcom_mdt_pas_load() has recently been
+introduced that works with a PAS context and can handle everything
+qcom_mdt_load() provides, along with additional functionality such as
+shmbridge creation and retrieving memory from the shmbridge buffer when the
+same remote processor needs to run while Linux runs at EL2.
 
-Allocate a qcom_pas_context in wcnss_probe() via
-devm_qcom_pas_context_alloc() and store it in struct qcom_wcnss.
-Replace qcom_mdt_load() with qcom_mdt_pas_load() in wcnss_load()
-and replace qcom_pas_auth_and_reset() with
-qcom_pas_prepare_and_auth_reset() in wcnss_start(). The existing
-devm_ioremap_wc() mapping is retained for wcnss_da_to_va()
-address translation.
+Replace both with qcom_mdt_pas_load() and qcom_pas_prepare_and_auth_reset()
+using a stack-allocated struct qcom_pas_context initialized by
+qcom_pas_context_init().  zap_shader_load_mdt() is guarded by a
+'static bool loaded' flag so it only runs once; the stack allocation is
+sufficient and avoids any heap overhead.  The manual memremap/memunmap
+pair is removed because qcom_mdt_pas_load() handles memory mapping
+internally.
 
 Signed-off-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 ---
- drivers/remoteproc/qcom_wcnss.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
+ drivers/gpu/drm/msm/adreno/adreno_gpu.c | 22 ++++++----------------
+ 1 file changed, 6 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/remoteproc/qcom_wcnss.c b/drivers/remoteproc/qcom_wcnss.c
-index 02f38fe29f20..840fa67a6928 100644
---- a/drivers/remoteproc/qcom_wcnss.c
-+++ b/drivers/remoteproc/qcom_wcnss.c
-@@ -96,6 +96,7 @@ struct qcom_wcnss {
- 	phys_addr_t mem_reloc;
- 	void __iomem *mem_region;
- 	size_t mem_size;
-+	struct qcom_pas_context *pas_ctx;
- 
- 	struct qcom_rproc_subdev smd_subdev;
- 	struct qcom_sysmon *sysmon;
-@@ -157,9 +158,7 @@ static int wcnss_load(struct rproc *rproc, const struct firmware *fw)
- 	struct qcom_wcnss *wcnss = rproc->priv;
+diff --git a/drivers/gpu/drm/msm/adreno/adreno_gpu.c b/drivers/gpu/drm/msm/adreno/adreno_gpu.c
+index 54f337475231..8e4aa8e22108 100644
+--- a/drivers/gpu/drm/msm/adreno/adreno_gpu.c
++++ b/drivers/gpu/drm/msm/adreno/adreno_gpu.c
+@@ -34,11 +34,11 @@ static int zap_shader_load_mdt(struct msm_gpu *gpu, const char *fwname,
+ 	struct device *dev = &gpu->pdev->dev;
+ 	const struct firmware *fw;
+ 	const char *signed_fwname = NULL;
++	struct qcom_pas_context ctx;
+ 	struct device_node *np;
+ 	struct resource r;
+ 	phys_addr_t mem_phys;
+ 	ssize_t mem_size;
+-	void *mem_region = NULL;
  	int ret;
  
--	ret = qcom_mdt_load(wcnss->dev, fw, rproc->firmware, WCNSS_PAS_ID,
--			    (__force void *)wcnss->mem_region, wcnss->mem_phys,
--			    wcnss->mem_size, &wcnss->mem_reloc);
-+	ret = qcom_mdt_pas_load(wcnss->pas_ctx, fw, rproc->firmware, &wcnss->mem_reloc);
+ 	if (!IS_ENABLED(CONFIG_ARCH_QCOM)) {
+@@ -121,39 +121,32 @@ static int zap_shader_load_mdt(struct msm_gpu *gpu, const char *fwname,
+ 		goto out;
+ 	}
+ 
+-	/* Allocate memory for the firmware image */
+-	mem_region = memremap(mem_phys, mem_size,  MEMREMAP_WC);
+-	if (!mem_region) {
+-		ret = -ENOMEM;
+-		goto out;
+-	}
++	qcom_pas_context_init(&ctx, dev, pasid, mem_phys, mem_size);
+ 
+ 	/*
+ 	 * Load the rest of the MDT
+ 	 *
+ 	 * Note that we could be dealing with two different paths, since
+ 	 * with upstream linux-firmware it would be in a qcom/ subdir..
+-	 * adreno_request_fw() handles this, but qcom_mdt_load() does
++	 * adreno_request_fw() handles this, but qcom_mdt_pas_load() does
+ 	 * not.  But since we've already gotten through adreno_request_fw()
+ 	 * we know which of the two cases it is:
+ 	 */
+ 	if (signed_fwname || (to_adreno_gpu(gpu)->fwloc == FW_LOCATION_LEGACY)) {
+-		ret = qcom_mdt_load(dev, fw, fwname, pasid,
+-				mem_region, mem_phys, mem_size, NULL);
++		ret = qcom_mdt_pas_load(&ctx, fw, fwname, NULL);
+ 	} else {
+ 		char *newname;
+ 
+ 		newname = kasprintf(GFP_KERNEL, "qcom/%s", fwname);
+ 
+-		ret = qcom_mdt_load(dev, fw, newname, pasid,
+-				mem_region, mem_phys, mem_size, NULL);
++		ret = qcom_mdt_pas_load(&ctx, fw, newname, NULL);
+ 		kfree(newname);
+ 	}
  	if (ret)
- 		return ret;
+ 		goto out;
  
-@@ -257,7 +256,7 @@ static int wcnss_start(struct rproc *rproc)
- 	wcnss_indicate_nv_download(wcnss);
- 	wcnss_configure_iris(wcnss);
+ 	/* Send the image to the secure world */
+-	ret = qcom_pas_auth_and_reset(pasid);
++	ret = qcom_pas_prepare_and_auth_reset(&ctx);
  
--	ret = qcom_pas_auth_and_reset(WCNSS_PAS_ID);
-+	ret = qcom_pas_prepare_and_auth_reset(wcnss->pas_ctx);
- 	if (ret) {
- 		dev_err(wcnss->dev,
- 			"failed to authenticate image and release reset\n");
-@@ -599,6 +598,11 @@ static int wcnss_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
+ 	/*
+ 	 * If the pas call returns -EOPNOTSUPP we assume that this target
+@@ -165,9 +158,6 @@ static int zap_shader_load_mdt(struct msm_gpu *gpu, const char *fwname,
+ 		DRM_DEV_ERROR(dev, "Unable to authorize the image\n");
  
-+	wcnss->pas_ctx = devm_qcom_pas_context_alloc(wcnss->dev, WCNSS_PAS_ID,
-+						     wcnss->mem_phys, wcnss->mem_size);
-+	if (IS_ERR(wcnss->pas_ctx))
-+		return PTR_ERR(wcnss->pas_ctx);
-+
- 	wcnss->pmu_cfg = mmio + data->pmu_offset;
- 	wcnss->spare_out = mmio + data->spare_offset;
+ out:
+-	if (mem_region)
+-		memunmap(mem_region);
+-
+ 	release_firmware(fw);
  
+ 	return ret;
 -- 
 2.55.0
 
