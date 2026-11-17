@@ -2,104 +2,101 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4BB2D606A8A0
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4A343606A885
 	for <ath12k@archiver.kernel.org>; Tue, 17 Nov 2026 17:42:13 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hBOQBoR1;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=u4ODO9RF
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=iqJdxSl2;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Jt7UtO/c
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Unsubscribe-Post:List-Owner;
-	bh=Mk0QZKmfgNlcLXfZLYxQ0YCEj7H/gNwx+nyoD+NSv8U=; b=hBOQBoR1yzeCdS8tIyNn3H/Wsg
-	IqU1gVMNztrJhVTpwOPh2GjjuROBTRjPcGqPePqW4hDvUQQJ22+0TaN2dNmjMj4ab9IcTEGkzXc4D
-	nlXs6i3NKwVrwnfsSKR/StMzvNkMth9EsOfr6kUCeG3UR5zF4d6IUUBV/gCFs2r8Z0rBoyX5I0QyG
-	kt4ZEF37WyNSMWHHgS2sL8TBhO3wRscenBwjuEZttC3h9MG7K0sHV/EyxAyPwlJYwnYiepPun9I/8
-	ZKYovFZgr3tSVROvABKGSm4UQzzb47K3nID5MnBo3YSUQnmZFgZAeT70/DEurKtFGa3U/PmJjT7RQ
-	PGVccV+g==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
+	List-Owner; bh=eS8A6I+JbYZ0P//SqMb5gbJ5IMT5Lxzbqv3mJYgvIAw=; b=iqJdxSl2+MdvVz
+	gLvHqVhAxgswraKEo0vVCY4XYbWeQ9jN8nflIe2cSz9+CrBpWFYk7PMRbT9i7mfEo1Rs6mfmedTEN
+	jZP0r4WJeqUSiifL6fGGGwIs42wz43DFsRJP4tbQtpVHGpFti/jHLpuVhOB/EIWY6sH1lydmva0aA
+	yGYWothakL1HT1jc9kB1f+8r81gW3Vl7pgAY7rigKACk38zkWtnHHD9urD/F+W90/zd1yAAZFVZnt
+	5stSlDx9Hu2fkl0RR5f36/RAQt+uUFCYfO9JuQ+Ri9C2i6BL3cFysl5pHg9sjElXRuCXkJrcwyDGO
+	oCYTHhczCSDpvLYaRFew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTNC7-00000006d5M-2rku;
+	id 1xTNC7-00000006d5T-3GUD;
 	Tue, 17 Nov 2026 17:42:11 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTNC4-00000006d3s-1jhM
+	id 1xTNC5-00000006d3y-0aQi
 	for ath12k@lists.infradead.org;
 	Tue, 17 Nov 2026 17:42:10 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4a3517554f7so1428295e9.2
-        for <ath12k@lists.infradead.org>; Tue, 17 Nov 2026 09:42:07 -0800 (PST)
+Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-4a32576da88so14476f8f.3
+        for <ath12k@lists.infradead.org>; Tue, 17 Nov 2026 09:42:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794937326; x=1795542126; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Mk0QZKmfgNlcLXfZLYxQ0YCEj7H/gNwx+nyoD+NSv8U=;
-        b=u4ODO9RFPdry83oh6/HP4oUP38T8iJFzHZxESu6uZc6kes6sze9twYOIpmJHkwZ6EO
-         jdjaelmVuhedcCW4pGPth1J+kMLSVJWDmwqcXaO416oqU6DcIe5eNMVF54ogmSyd0Sv+
-         W+P9EtkGNpL3m+17e11Je5I9Hneq4O+Jpq3ceYtCKIcQjoGrmhcE8RJjv12+fmaDY+a2
-         6FNCn1bsguuyzOxgzryrUNriGbNjPdFpxGPpTnmxDubgAFy4U6CY7cekGLckllXwfEdy
-         /zOnxSKvLNSm2dX3HHCR3F5Yem+YqWku37zRN5Ic2bmTB7uUeZP1i7LXmDD8IyBfh93O
-         OEUA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794937326; x=1795542126;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20260707; t=1794937327; x=1795542127; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Mk0QZKmfgNlcLXfZLYxQ0YCEj7H/gNwx+nyoD+NSv8U=;
-        b=n0MOYOkxhHQ8BsH8YWjGCE6tXaFsXiKztlTtcxa0e50P9EoOYsDsszwjGAIWb98OA2
-         ITIXVVzLPjJVKJyesFb+ZaAtWwL8zITi/4Z9/j0MRJZgdrXlr59PBe0yzzur0KGrR0uW
-         YOPPm3sGGfeMVLEfm26WCnSd/3xn5ci7CmcJp6lu0KvDq6tJNA/z+qiKXwqxWT/ZNhit
-         mvawPzubGnvD7uiGG1SOlaPw6TCYXIJ4CmENHBze+T0EO+kokdb+WFdyhCa2LK40E+sl
-         ROFz+Uwms9ixBeqlHFJUhz94DRPB4U6DK21nTWRgEZ533im5O3//chUS3P+6Wtk5Pl0+
-         /D/g==
-X-Forwarded-Encrypted: i=1; AL+hErEQt4DQ/OoLyJuKvWZpBmzOHuHGbi0MURL/eh5sYPHBzlZKIzkK1eOXLAXYFAtmUUq39ZIETCI=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+WCqnmbNGSXapJGb/GXIcpi5Y2fCPsaHAJNZYd9w2/omjUdI07
-	mJ+l6bscauR1sGpx3U4vEtBxaoc60wSIHbR8xDjw8ZOKS2YSF0Odewmy
-X-Gm-Gg: AYBFou0qKACWd+udsIwvcyA2ILML1wWmQzIItpUCOfM++isw4bhGMRSqgw8QfsAFqlU
-	LTBxrqA5jD3fCT0PxI1X6kqULgjoVQALVYkCMkeYtL8l7zO2lkE0BOc3U+vg1mSVnq7mdLpIGgb
-	5dY+npjJVpOzzJ4hj/i6k7nXhwjs+7s2+bBPZ9H38G2tef70Qk9mZPWIVmR8uTlVmQgzwEWtrdh
-	EGWUEvqii6tuqieFUjr5JEI8cpndgTmWiS35hKKBpcgol1GGJdc4Jz38bINmUPaCvm4peeRVHee
-	wOdEtmqR5GLQr1U0Cl1NBychPkRxmW85sutaEGheRMCBXACjIAh9MlNZ17zF9GvFchqy1+FYRU+
-	a835+4j43hdUNZVVG5VtaewUcjUgI0Ub4Id8Qja464T9qky2YHOjUDsLdTObye9FyXH1qAla1nD
-	JA4428uXaPTtpJAn6iJrR9PBuhjtdH+5QSbyxumeHG9j6wNyADYPt1TPPVSI8YkF03bzm8k7JcG
-	cpJZOTFDexVPH1trtCXWmJB/LHJLMBJytyupOxxkHP8eilzyEtNVh02/UFjPM2JJ8mm+hEy/tdP
-	7f7yawcEENi5261g6JAeXxLc5bFfXeejdRKgU6R2/Ef6I0/ltMjBLJWBXP88FntX5laZV4D6E4n
-	GvyAL
-X-Received: by 2002:a05:600c:a0b:b0:4bb:685e:cc41 with SMTP id 5b1f17b1804b1-4bb685eccc8mr207958615e9.8.1794937325497;
-        Tue, 17 Nov 2026 09:42:05 -0800 (PST)
+        bh=eS8A6I+JbYZ0P//SqMb5gbJ5IMT5Lxzbqv3mJYgvIAw=;
+        b=Jt7UtO/cHbLk5sVyVWTSuPUzgLQePeUkjuqhx0KUokQVXY/ycarOFzWCtMAuY7knKS
+         FIXwHtNFMvUYamyoXzGQ6RbMFCN+puImEO4A1VZ29iz0nSetF4JU/fuRhc3HDlinOtD/
+         SxniVVqMaFCybHNGzGzgkCgw400wx4rt3IkS4YB++2wugMY1qWoL123NJ2ZNaie+8vpc
+         s+qG4NbXae3QmhR5aq8yGQY49TtWaaLi75NVMfDLwT/fFQpr6+d3NFP/MoxOSVH76I7T
+         PAuWnj2qb5GITSDo3aCuKEiUCE7zlnPc23+cuEsu7Xm9icnWRiHgVpNg+j+ldL+/CTJt
+         1yBA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794937327; x=1795542127;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=eS8A6I+JbYZ0P//SqMb5gbJ5IMT5Lxzbqv3mJYgvIAw=;
+        b=B49V/IiK3/yvxPN0QJogWabneknP/FpZX1ImkDHGHs2o09hJIuW2qaxNwXn+LM0lID
+         h2ioFJ4RdDl8Gd4KEP0yB52Zykqpcygjl0rRoXXOpWLN002mn+0t1G4/8JmUYGPExjPL
+         d+Pp6I72rvYL+8ueXaLoFlV364HKJPKo5BZDNYHN3Aym7I+G153V4AUeTyTk/yRB0z9G
+         H9hD6lxB93oW6jcr6KZsB3mz3NZ76mksOqhs7q6/GpZUAmiFaQ/ADMYRDwc7mS0YlxI0
+         /fGTFRGD/Sa0sSjEtx3mJsAhlTJ45nLfg93TJrzX1lATf0dKh1IZeKaxT3YRWN6tQRxQ
+         v8Rw==
+X-Forwarded-Encrypted: i=1; AL+hErEvkNF7163xBop0NVplx5aNqNfirue4RhxL+BPcsWA1dxE8x5r9iM7ahI/6iLCHo8KVvmPIJ8I=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+VAp0VJ2aTNIRofDrxMwNvxKSb9oCZEhtompCJ/IBk1QgsFIPN
+	GTw7mCaxh2u4LCb7thqav2hItXWnQNjzBsGprRA/UkuS3kX8BOAhKDI1
+X-Gm-Gg: AZFdTZcd0jWMZi8uHs7VvBreaFjAy3Eac4H3xnV8oKSo+KJuKX5V5zbXyxFuYz8armu
+	jBXUq5ihCgeQHzar4jgFipL45SVgdqtWqmzOLTyWT1RvT06WPCQNuM4ZInVdO0HgZJqoF9p2/IG
+	/j0P6jYqJN4cSukNnmLRTeFKohjz2tcTZ1YzVieDZIS2r+S8bHahGQt7J9ijhIqGmpY1X+ZzjJl
+	BhZkOj+qEevQIh+997dED5lF1L/t79BNfUMmjGXoofOI779M5t9nJL+A8Ox3ZjKotmttCeDxQaU
+	ZUGoJG3HojEuev63RJLfdNN+BNAumyIkRNlT0TI3RkHDLZaJ23V2FnyKvdH5Mxp7u4FBJFptHkS
+	BOytptSJfNBZAdRQqAymtQuisAH3/Jz8K8n6DYv7J4iWufeOnVYsxDhhaqzC96rcReNV4CGv7/6
+	kxb2rGzcP+mcPkq+33Nx6QKJsHCqnYBTob/Z7IeGPxvmU6BUfRJfvnUMWbDgfbjG8+u/Nu63h8z
+	t+h6gTAxZe20RRz9XsNT3YlG3z8TqMvNfGvGjPkHlJR35lWHTqNAVX9oBZzP7+rgF0mO/QhRIeF
+	RQj1sYZh52sCniUWYUUDX70hF0FQoUFuwF1cIhDR38oXhwHESEKjhkW55Q==
+X-Received: by 2002:a5d:64ed:0:b0:4a4:14db:233b with SMTP id ffacd0b85a97d-4a638ae26abmr362462f8f.12.1794937327122;
+        Tue, 17 Nov 2026 09:42:07 -0800 (PST)
 Received: from vitor-21h1cto1ww (dsl-30-199.bl27.telepac.pt. [176.79.30.199])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c7390fe82sm30962552f8f.17.2026.11.17.09.42.03
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c7390fe82sm30962552f8f.17.2026.11.17.09.42.05
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Nov 2026 09:42:04 -0800 (PST)
+        Tue, 17 Nov 2026 09:42:06 -0800 (PST)
 From: Vitor Soares <ivitro@gmail.com>
 To: Johannes Berg <johannes@sipsolutions.net>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Nishanth Menon <nm@ti.com>,
-	Vignesh Raghavendra <vigneshr@ti.com>,
-	Tero Kristo <kristo@kernel.org>
+	Jeff Johnson <jjohnson@kernel.org>
 Cc: Vitor Soares <vitor.soares@toradex.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	linux-wireless@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/2] Add ath12k calibration variant for Silex SX-PCEBE on Aquila AM69
-Date: Tue, 17 Nov 2026 17:41:54 +0000
-Message-ID: <20261117174154.549590-4-ivitro@gmail.com>
+	linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] dt-bindings: wireless: ath12k: Make WCN7850 supplies optional
+Date: Tue, 17 Nov 2026 17:41:55 +0000
+Message-ID: <20261117174154.549590-5-ivitro@gmail.com>
 X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20261117174154.549590-4-ivitro@gmail.com>
+References: <20261117174154.549590-4-ivitro@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261117_094208_460308_EBCAF8DC 
-X-CRM114-Status: GOOD (  10.75  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20261117_094209_214603_FBA0F515 
+X-CRM114-Status: GOOD (  10.76  )
+X-Spam-Score: -1.1 (-)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,45 +107,81 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-14.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FORGED_GMAIL_RCVD,
+	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 From: Vitor Soares <vitor.soares@toradex.com>
 
-The Aquila AM69 has a Silex SX-PCEBE Wi-Fi module (WCN7850). The module
-reports the same PCI and QMI IDs as other WCN7850 designs, and its board
-data also comes in variants for different regulatory domains. The IDs
-alone therefore cannot identify the right board data. Patch 2 describes
-the Wi-Fi device and sets qcom,calibration-variant to select it.
+The binding requires all nine WCN7850 power inputs. This matches designs
+where the chip is placed on the board and its rails come from the
+WCN7850 PMU described in DT.
 
-The qcom,ath12k binding requires all nine WCN7850 supplies, which only
-fits designs with the chip on the board and its PMU described in DT. On
-modules like the SX-PCEBE, the PMU is on the module and powered from the
-slot, so there are no supplies to describe. Patch 1 makes them optional.
+WCN7850 is also used in modules, such as the Silex SX-PCEBE, where the
+PMU and its rails are on the module and powered from the slot. None of
+these supplies are connected to the host, so there is nothing to
+describe. The DT node is still needed to set qcom,calibration-variant.
 
-Patch 1 is for ath-next, patch 2 for ti-k3-dts-next. Patch 2 also relies
-on commit 75bc725cd92b ("dt-bindings: wireless: ath12k: allow calibration
-variant for WCN7850"), already in ath-next. There is no build dependency;
-until both binding changes are merged, dtbs_check reports the missing
-supplies and qcom,calibration-variant for the AM69 Wi-Fi node.
+When the binding was introduced, it was agreed that the supplies can
+be made optional for cases such as M.2 boards once the need arises [1].
 
-Based on ath/ath-next.
+Make the supplies optional. Keep requiring all of them once any is
+present, so designs using the PMU are validated as before.
 
-Vitor Soares (2):
-  dt-bindings: wireless: ath12k: Make WCN7850 supplies optional
-  arm64: dts: ti: k3-am69-aquila: Add ath12k calibration variant
-
+Link: https://lore.kernel.org/all/87ikyenx5c.fsf@kernel.org/ [1]
+Signed-off-by: Vitor Soares <vitor.soares@toradex.com>
+---
  .../bindings/net/wireless/qcom,ath12k.yaml    | 33 ++++++++++++++-----
- arch/arm64/boot/dts/ti/k3-am69-aquila.dtsi    | 15 +++++++++
- 2 files changed, 39 insertions(+), 9 deletions(-)
+ 1 file changed, 24 insertions(+), 9 deletions(-)
 
-
-base-commit: 1be6c8d3027d4a421dc46b93a89a196c61945614
+diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+index cf3e1fd99c12..27f443bbc401 100644
+--- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
++++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+@@ -63,15 +63,30 @@ properties:
+ required:
+   - compatible
+   - reg
+-  - vddaon-supply
+-  - vddwlcx-supply
+-  - vddwlmx-supply
+-  - vddrfacmn-supply
+-  - vddrfa0p8-supply
+-  - vddrfa1p2-supply
+-  - vddrfa1p8-supply
+-  - vddpcie0p9-supply
+-  - vddpcie1p8-supply
++
++allOf:
++  - if:
++      anyOf:
++        - required: [vddaon-supply]
++        - required: [vddwlcx-supply]
++        - required: [vddwlmx-supply]
++        - required: [vddrfacmn-supply]
++        - required: [vddrfa0p8-supply]
++        - required: [vddrfa1p2-supply]
++        - required: [vddrfa1p8-supply]
++        - required: [vddpcie0p9-supply]
++        - required: [vddpcie1p8-supply]
++    then:
++      required:
++        - vddaon-supply
++        - vddwlcx-supply
++        - vddwlmx-supply
++        - vddrfacmn-supply
++        - vddrfa0p8-supply
++        - vddrfa1p2-supply
++        - vddrfa1p8-supply
++        - vddpcie0p9-supply
++        - vddpcie1p8-supply
+ 
+ additionalProperties: false
+ 
 -- 
 2.53.0
 
