@@ -2,106 +2,106 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 46042606A332
-	for <ath12k@archiver.kernel.org>; Wed, 18 Nov 2026 08:15:58 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9FD3E606A325
+	for <ath12k@archiver.kernel.org>; Wed, 18 Nov 2026 08:16:04 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=cbvYQMDJ;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=PGoxbEp4;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=hhuJwH6w
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qe2YozOQ;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=kdvNyEWi;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=WfJpg6CP
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=mkOhL9GpadxVeBKAKpXR0Dex6fDsvsaYvLqLFsa0ym0=; b=cbvYQMDJil3pXR
-	0Or1xHwLm4O3Ksbf8U3EvM4ZBj4a3DOmDHSOS9w3B7jUIwm9WyXmSrqF75zASxwJpLT/+MpRlcuRj
-	/JEgqrsR8Sp0Sg+0ZPwY4fLhpTGBW1fdOKpckajdVZyRHF+i4U9+DlzNw6miGsyk2t94ZDsl18NLB
-	mP2Cj12Bp/xtaCRrPQb2vizmVZGxu2Qnv7ABzof8S4q2LBmVqu9ONZ40VVUWezJO7mElGy6awev2A
-	x9sDAqN8l8j1cTYY2jJDNmzjL3lVNnlsm2W3IGKqcPNtdpG+2MBafptz6037DaIOmxHvI6K/o1Z5P
-	6oGte8vXZoJO9+IqcJIw==;
+	List-Owner; bh=GWx0aVWngVCT03NNmotvkbFgmOVbHYzPWzQqFjJs7B8=; b=qe2YozOQhywWIp
+	7gHZCCpUqW5H9hw2SqbMrKvtXrBf7kWvejigFSBhm/f/QD9eX43HbWoZaHrJ0l/WFUdm39efJtRlO
+	fTB6Czi37YJb0pSoIaDywyvdfQeaYmsewSDJvJFxr9rCK4kE+AokAYpk2OE9BCgECpjQD+DZIuFHO
+	oRLBQVnAppODOLoWk8gEie8/Pi1eoJzUo+hXrzXvgOtCQwEHX7T0URDzsD16F0fdN5WQWUQYZB8Y/
+	laMQv6TSDEFzxdDLETU5U4v41/56DViw+5bhC2BU4LkUudbJcOPkhEr7EWvM2u9qCC33FwKgIhWUA
+	9QIwjwHvP2Wb3U0Zolyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTaph-00000008835-469r;
-	Wed, 18 Nov 2026 08:15:57 +0000
+	id 1xTapo-0000000889d-1TjB;
+	Wed, 18 Nov 2026 08:16:04 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTapf-0000000881G-0Cvc
+	id 1xTapj-0000000884f-2m6G
 	for ath12k@lists.infradead.org;
-	Wed, 18 Nov 2026 08:15:56 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AI2V3wI764123
-	for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 08:15:54 GMT
+	Wed, 18 Nov 2026 08:16:02 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AI8FKFr1430569
+	for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 08:15:59 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	mkOhL9GpadxVeBKAKpXR0Dex6fDsvsaYvLqLFsa0ym0=; b=PGoxbEp4mkgdwZmx
-	6yMScu5thiWSkpDrJa6o5tWFQ78ysWEmCCAAhO+eQplDiqJbl0q0OYob+KUKgYDW
-	W2GFfuZf/305S9abw7N12E4CxpJk1nAMWYSVyPDJg7cUu4xLRr5NjsY/shaoD6sm
-	G4T9X+6GQC2mjeijx7radAcZdDiDe/OkOfu3xf+3Iw9Sumuh/3Bg451i489QaL5W
-	oJHFvjeZUdjgjXtCuHxX2cJpDf5fMO5e/bSsJPD9sVEK+83rk6kWGmSeamipZs8/
-	wL4xoi63a2H0ZePZziXd4bleOuq522sugjxKrkIxbHJnHjdwydIpjr5hWDlnP4PA
-	Q+RsYg==
+	GWx0aVWngVCT03NNmotvkbFgmOVbHYzPWzQqFjJs7B8=; b=kdvNyEWi/U/p+6+M
+	V6KYr8FfRVflyAMRZndqMoFsRh9Jb8IFHGO59POUAAQ+AQwXw0v27Y6M/BPxQciv
+	kHEFNWT6V0FJAS0w7vrHuwjU22dwrmR5A+08r+ajss/Uisw3zqqm1/DaqdoeXraX
+	67fpFcYFyIHz4wu3H2SZ0rJgybsXhIHbDDBfEMrAy+Bc1mbWmr9gS9FhuEGY2kA/
+	p1hjkNdRCVmxHXztf672tTfCt4c5Yf/1NeJzGtQIbqcrBAtyJ8upjxzn1vB4bUfk
+	jOSvqAbWINAvTR3xXdw7EgS7VW4Wb5j27Ve+9pMAdgVt+1Ga5hm6mToY0gDn0kxy
+	ihwaLg==
 Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j0yvba08u-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j0yv91yux-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 08:15:54 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-3b3b4208826so445254a91.1
-        for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 00:15:54 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 08:15:59 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-3b3a9ee822fso949035a91.0
+        for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 00:15:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794989754; x=1795594554; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1794989758; x=1795594558; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=mkOhL9GpadxVeBKAKpXR0Dex6fDsvsaYvLqLFsa0ym0=;
-        b=hhuJwH6wzpfqwzom+ekrHPVJfQz3s2uJPU/7W99kL2j1CuLgb9ZyRAHt5UZyRVj1ZK
-         oNrWazqjmGoAvu6luv2jD6UujJt0sXqLrSHSl5t5j1j8vuwuaP+K6DBRAXJvaTno0nK3
-         PB7zTjT4frRQv08zWHP/Ls41XHcMQrcl9cy/AlPVz9CuPKLHFVnmHtnvsmGMcyO96Oal
-         bB20WDnQ80nx+MIHJ6Z4WtGLjsIiEUZL7W4nv4b28UGvPT9t34FrBiwuCbnnz1U03gIM
-         Mw9E2Lw+yl42+D484sOEbLGbEStwDBzR3PWsplsc1TNJvfa03NQoXPI9UUvXktsWOgPg
-         tKFg==
+        bh=GWx0aVWngVCT03NNmotvkbFgmOVbHYzPWzQqFjJs7B8=;
+        b=WfJpg6CPOL/wuwpj1PGL2BG8mcLXaODiZg6GuSD/WfTd561muRp8coK5tWAUb9WYsk
+         KpN+cCnwPNzci72TEjZzOTT4E77hlhiH/uK9xINCoY0hx2NDbvC9wSfA8bAQuuEZTt5C
+         gfbhDZoJJ2Cvxk5bySqv01WC37rj7ThJdS0BceVU6RzlBrDXsNdYNx/JUfrgb0gwVrib
+         LEOPg4aP3VEM9QiKzo1O+Bsht/7QrdvDPVTCECAnE603p7xX8hCOPekg0DLaux3HChDt
+         DjUSVEdFrbeaS575dmTNQVZxNoxTHCmuraiVW3Z3OD8S9HgBqAee+a6vRrsRs37EEpSR
+         DxHg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794989754; x=1795594554;
+        d=1e100.net; s=20260707; t=1794989758; x=1795594558;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=mkOhL9GpadxVeBKAKpXR0Dex6fDsvsaYvLqLFsa0ym0=;
-        b=ThBnj/4EciNAym7JriTuZNijENhfH504HT0dKd64AooOgvkEKvH7gGW0UF29ybTErD
-         l7KNGbBQfwp6WBFNDiWygXMcRHd6w3S2eUmfrDmpeptiwefbcJqd6KZVwrMktep6nxeT
-         G7eJWXpP4GHDzIUFaYblu/qatnai+o/sQRIa7LsyGW/vlYs1aSEZ2r+MmOUSICYN4/lU
-         5XU6c5ytfqRdK9jdAMZ2AjVlbemnc+uSJlQYMgz2BKFe+KB8vt56oCKiFfkofV6eWFau
-         bECYXIs09SxRlWY8jJGnbwYZN8u08rjvYPRwbE/iLe7gDcGAzXvbiVi9h41nzGzCtLVq
-         Qp8A==
-X-Forwarded-Encrypted: i=1; AL+hErFcOT19wgmTUksiRa3IO6NQkUMEdk5erFzS525veIgFPtS7gXWaEFX1D65DeU+7hLxqG3I/0CA=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9xhS8t8AAYfwhMdGANHUJZ7oKtnNoiH3W9ydvWL+qIDBRL/p4k
-	JEVvOneUz0DmoUjEBZZERxIxzy3gobqZLywTw/kjNrprbkIkj7C9DXe6Sy3kSiAAkVyB8x6GOh8
-	j+5Zv9KjIu4yuVKL2CKzBvFh11SkbjcR7WnsW0mQaQMgQ+e/gc5HHnL2btbsqgIy3c594aGzX
-X-Gm-Gg: AZFdTZdLXxgrfCHQqKA1SP1D7an/A3lmwh4EY9NsnGRCr+KR/PzoTYUrEQH1xTDPMHx
-	KTYrJup8PBRWk2FwfQ6HS/WciXkHCWxRtCxKFQJM9SkEFz+2pLF7D5Yy9X+Sy8feGwAC7mGVNdL
-	IoTTu8JEYvwWG2vhPB6S+7e8WVgNx4UUyTbAKrxD/845xkMxtci6GJ6jWd3zmu43pnRoKrUq9SD
-	lUwxntE6dJv2ySB2dS0g6CJoSRxS/u1H070p1ViO/yWx158m7Bvwz28HoE3mFrQSAhALsycyUGb
-	4nyMV7WLacid1aaZ+yk+I9zfjUtzR8FEA40YOYM93FEUhE9tQCQEIEYkosH9Hxdw0rgxxI2bCTI
-	Br6f4jcqV0x0WPhrWBJozTtTEIFTO4PKrmPQfhCJkgrNoUpE7DqfSVtxAKfYVBFoRhg1isZNlVz
-	cymR0GEG76DC7raXJ9dimOFNH+eZz0XO5bwqk/hDq0o1/F01V5nTu2dILVJKvvCbYKkC4HDvK09
-	w==
-X-Received: by 2002:a17:90b:3f46:b0:3ac:b6eb:e0de with SMTP id 98e67ed59e1d1-3b3d063d722mr1391072a91.4.1794989753170;
-        Wed, 18 Nov 2026 00:15:53 -0800 (PST)
-X-Received: by 2002:a17:90b:3f46:b0:3ac:b6eb:e0de with SMTP id 98e67ed59e1d1-3b3d063d722mr1391046a91.4.1794989752517;
-        Wed, 18 Nov 2026 00:15:52 -0800 (PST)
+        bh=GWx0aVWngVCT03NNmotvkbFgmOVbHYzPWzQqFjJs7B8=;
+        b=qFI/xAY27H7UXCJYFtrBCddoDRYqFDr8lSWZXifFSMQg2vAk4hGDpMvKvJM1XD7h8B
+         6XIQBvu0a0LFaqf1vPNgivK4XwEo4D8aynQd6g6eSTIa7Yub9IRqP3DvLYx8kc+6Nb5H
+         Q0NiTu2msBBQtd+vd43FbiKfvZ3WHD/tlaIiMfF0lLAxv9yCKOsky25LivM0YEPOHj6W
+         4JS69qgWE2eruGzogwAdDnn7Nr9X9iA1bvWFtWYNwTepXAVvHWmcfknXVEZ+fLzqc9s8
+         Dti015dTsLWra+9k5OSb5fI2JdeMXOl98hpkX9bZEHnd4y3eln4W5V2aYkKr7TRTQQHe
+         Mc4Q==
+X-Forwarded-Encrypted: i=1; AL+hErG5caSgPjFxb/udLs+QHjjIlYrUhwtx6obN4FTjnVY2ZUFra1UFLbMTx7JRT27qnVvYP6Tty3A=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+NVlfXoXvmdwMooA0U1rYIsJVO8x4vBdXP8/tnixN3nUYJH05v
+	zEqAwsHeq+rYEKQTHd6wNe01VEu0sVJ0Mtd/shWlzhFpeXSuldKQEZayXcVOucVL4LYXjKon712
+	8XoC5a1fre9RIveY8DlaOB6bK4hCjn46MdN4+3Yn68YO+tRS5kXxJ6GB2afElTXah0o1uje/R
+X-Gm-Gg: AZFdTZfoBCPvN6+zCMgFShG0abVXrOBgFudQqCnOuEMGdeZBanZp4+zVq/3UT8yFihw
+	HHPw4SRh5n9RXj3efurDJE/CTCBTKK6zZKVKlsDxxvveT+TSniqlMUhhWgYK997OWTVmRC6/Dhh
+	1EFnGiwSUqnGZGyQEBB9yculMcB00MXXtVtGfGdGwRUvvHio9LYILB86CkbbJ9kSDgD++7DonXO
+	ZhR741q9Q3sisE0IasTHuvKcG53A95yyggXVzTd2ynHCxhxHRtg7CsrqMcbelF0VW7yWHDzGFnN
+	Ckorouxi5wf/ZK9rPJEOkiVcyzc727wlVLdf0zE2T0fUXN2PC3MHsEALubCGalKg/yUsPBlcf9a
+	SUnclEs+S69c6TCHzmNia6AhC6ppRkAjvkBLnNHJz7TMuLcddR+V9RUetlHLwnPziEZS5jzGrlq
+	gl9v1lDHwJSld8gsnesVpUGkrs4hpul6zAL9+6wNNKJGjgT5jywQsa64ti2R09b20kJrTRAbPAs
+	g==
+X-Received: by 2002:a17:90b:518c:b0:3ac:adce:60be with SMTP id 98e67ed59e1d1-3b3d07a24f6mr2014452a91.21.1794989758308;
+        Wed, 18 Nov 2026 00:15:58 -0800 (PST)
+X-Received: by 2002:a17:90b:518c:b0:3ac:adce:60be with SMTP id 98e67ed59e1d1-3b3d07a24f6mr2014405a91.21.1794989757579;
+        Wed, 18 Nov 2026 00:15:57 -0800 (PST)
 Received: from hu-madhgane-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b3d19b5e8asm3369181a91.8.2026.11.18.00.15.47
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b3d19b5e8asm3369181a91.8.2026.11.18.00.15.52
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 18 Nov 2026 00:15:52 -0800 (PST)
+        Wed, 18 Nov 2026 00:15:57 -0800 (PST)
 From: Madhavan Ganesan <madhavan.ganesan@oss.qualcomm.com>
-Date: Wed, 18 Nov 2026 13:45:27 +0530
-Subject: [PATCH ath-next v3 04/15] wifi: ath12k: add QMI support for
- extended firmware binary download
+Date: Wed, 18 Nov 2026 13:45:28 +0530
+Subject: [PATCH ath-next v3 05/15] wifi: ath12k: add Wi-Fi 8 directory and
+ base module scaffolding
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261118-wifi8_qcn9575_bringup-v3-4-9875d2a3953f@oss.qualcomm.com>
+Message-Id: <20261118-wifi8_qcn9575_bringup-v3-5-9875d2a3953f@oss.qualcomm.com>
 References: <20261118-wifi8_qcn9575_bringup-v3-0-9875d2a3953f@oss.qualcomm.com>
 In-Reply-To: <20261118-wifi8_qcn9575_bringup-v3-0-9875d2a3953f@oss.qualcomm.com>
 To: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -116,36 +116,36 @@ Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
         llvm@lists.linux.dev,
         Madhavan Ganesan <madhavan.ganesan@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Proofpoint-GUID: QSXferBY2aL-n6MC0rFZfsG-Tu-oxRbR
-X-Proofpoint-ORIG-GUID: QSXferBY2aL-n6MC0rFZfsG-Tu-oxRbR
-X-Authority-Analysis: v=2.4 cv=YfgodARf c=1 sm=1 tr=0 ts=6afd5eba cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE4MDAzMiBTYWx0ZWRfX/BdIKDm5Mdgi
+ rif2H7Gj+23ApJbHtDau2INyoNG/7C1sJx7wwoHRvGyHgUeHHH5KuhX3QTNXFqC3jnFgDhZmhnz
+ lYj8cmidXl4c7W68CL62Rsice7omv5OV6DrhWR/L4cykk60d/o9oabL+AvE1bvEUddpNjdoRel4
+ yAyUoshchvcnLcoOVWYJ318js1DURu4abQWa+Qk6VKdDpkGt64QtxLK2AGyASMjfgf7x/1PVmCE
+ Qk1MAuqemYnY2NZZJb3Zsu1+Aj+t/ACF5v5ZBnEYJpPAfHcUrYjQd+Zg1vbQK4d1t9VhMP4GJOP
+ D6a2c7dc6W/98lsoptnE9wQlf0C90AkJTzTMok/UTn7hXSNm6lUah4OaEeMbUhVPlZK5p1KEpUi
+ fzAfury4hTGfzCT28dkIc1B0KbZ5ZvOdiA+Q0Q9nb797p0HXpDasjjA3DQ5llXBs7/VSZylL5kx
+ CAtijqS8uNRDiQWNlYA==
+X-Proofpoint-GUID: 0o6fsPWCKjVWr8zyIFeHz0ibJwX0gmKS
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE4MDAzMiBTYWx0ZWRfX6qPXq0BNsfz4
+ uNU3UGcU1A43A8Xmlx7OREkr8/G3mQvhtWhJlQEczehjBMFmMT7m5WNiccsygl5qXLtap6B2kGk
+ 1ewYBA2y2A0BuXX0OStVSJwRGkyDFnw=
+X-Authority-Analysis: v=2.4 cv=LuQHWXdc c=1 sm=1 tr=0 ts=6afd5ebf cx=c_pps
  a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=EUspDBNiAAAA:8 a=3JWo-c6HkdcVygKZMrcA:9 a=QEXdDO2ut3YA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
+ a=EUspDBNiAAAA:8 a=7WpiGM8nEZjQw5yEjS0A:9 a=QEXdDO2ut3YA:10
  a=uKXjsCUrEbL0IQVhDsJ9:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE4MDAzMiBTYWx0ZWRfX/W/ySkQ8gGVj
- hodGiiKTXvv3JM5YmbldrQn73sL8kI8HH+nmEBmaCQQILvjQZigCx5lmp6vbPJWQLkaoG20H3FR
- JUTQRRpw+/FvprdWoTOXIN8ErfvMQpo=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE4MDAzMiBTYWx0ZWRfX4V1j3tHT8LmS
- gh9w288/5Bsk8n+7u4KEJTv/U7oHcDwR37AVdQgsiGbxJKQcZriWUj2s4Yf2WoyFboOcOfDC/lf
- H85ulD+YHGZgx2QDeQ4vS2k2R/ggOglB1s0rMWLvdywZ67bcDHIThpIJZcp/0/zPq3hhdGiZvYJ
- +shPTcHVRLwE6qpBe2kBDCywQ/r9l4UqUCGX4FK5VscrCaV36YwkqBsn12Ysq7MPqUOWoN5xVre
- ZXerP2RvhFIqpAbdbyQWmhxLmMAFs+A1ifsLku2zJZM6vjjfcmfVqhhVXZuTmHqXIYoRVaVlx6u
- QbQXf9mjXKIs4+4CP4gc6dmLp50fnDvVzrdtgrGtYdZPrVIKLC3j6dkF+LwPjsN5Ae3FmipjL3l
- 0oFB9sdGVRYPcuFDybHM8wYmLRwR9fULnZJtena/YLZEwHOVd3pXachAE7VvaVsxrUwPhMG3aNM
- R5LkWFgmjalHBtl0JUQ==
+X-Proofpoint-ORIG-GUID: 0o6fsPWCKjVWr8zyIFeHz0ibJwX0gmKS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-18_01,2026-11-16_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 lowpriorityscore=0 phishscore=0 impostorscore=0 malwarescore=0
- adultscore=0 priorityscore=1501 spamscore=0 bulkscore=0 suspectscore=0
+ phishscore=0 impostorscore=0 malwarescore=0 suspectscore=0 clxscore=1015
+ adultscore=0 lowpriorityscore=0 spamscore=0 priorityscore=1501 bulkscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611180032
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261118_001555_093719_0E9CFFD0 
-X-CRM114-Status: GOOD (  20.84  )
+X-CRM114-CacheID: sfid-20261118_001559_718329_6A795583 
+X-CRM114-Status: GOOD (  16.99  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -165,664 +165,140 @@ X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-ath12k uses separate per-image QMI messages to download firmware
-binaries (M3, AUX uC). QCN9575 advertises support for
-QMI_WLANFW_EXT_FW_BIN_DOWNLOAD_REQ_V01 (0x0065), which carries multiple
-firmware blobs in a single combined request. The existing download path
-does not handle this mode and cannot bring up QCN9575.
-
-QCN9575 introduces a new microcode image, mcss_ucode.bin, which is
-required by its new hardware architecture. The host is only
-responsible for downloading the image; initialization is handled by
-the firmware.
-
-Parse ext_fw_bin_download_support and ext_fw_bin_download_bitmap from
-the target capability response and validate the bitmap in
-ath12k_qmi_request_target_cap(). The bitmap tells the host which
-images (M3, AUX uC, MCSS uC) the firmware expects the host to provide
-in the combined extended download request; each set bit is one
-qmi_wlanfw_ext_fw_bin_type_enum_v01 value.
-
-QMI_WLANFW_EXT_FW_BIN_TYPE_HOST_SUPPORTED_MASK limits that validation
-to the three types the host can actually load (M3, AUX uC, MCSS uC)
-rather than the full qmi_wlanfw_ext_fw_bin_type_enum_v01 range,
-because firmware defines four BDF sub-types and a QDSS config type
-that this driver does not implement a loader for. Without this,
-a bitmap that requires one of those unimplemented types would pass
-the earlier range check and only be caught per-bit, inside the load
-loop, where it would abort the download the same way a mandatory
-M3/AUX uC/MCSS uC load failure now does, instead of being rejected up
-front with a clear "unsupported type" error.
-
-Add ath12k_qmi_ext_fw_bin_load() to source each bit's image the same
-way the existing M3 and AUX uC loaders do: from the corresponding IE
-embedded in firmware-N.bin, or a standalone binary (m3.bin,
-aux_ucode.bin, or mcss_ucode.bin) if that IE is absent. M3, AUX uC, and
-MCSS uC are all mandatory for QCN9575 firmware boot, so a load failure
-for any of them aborts ath12k_qmi_wlanfw_ext_fw_bin_mem_info_send()
-and fails BDF load.
-
-A device only ever uses one of the two download modes, so m3_mem and
-aux_uc_mem are placed in a union with ext_fw_bin_mem[] rather than as
-separate fields, saving the space of whichever set is unused. Since
-ext_fw_bin_download_support never changes once set, add
-ath12k_qmi_free_fw_bin_mem() to free only the union member that device's
-own download path populated, rather than unconditionally freeing all
-three and risking an aliased buffer being interpreted and freed twice.
-Call it from both ath12k_qmi_deinit_service() and
-ath12k_qmi_free_resource().
-
-Define the extended firmware binary request/response QMI message
-structures and element-info tables needed to carry per-binary DMA
-address and size. When extended download support is advertised, use the
-new combined request path in ath12k_qmi_event_load_bdf(); otherwise keep
-the legacy M3 and AUX uC download messages. Release extended firmware
-DMA buffers during QMI deinit.
+QCN9575 is a Wi-Fi 8 target with a distinct hardware family that cannot
+share the Wi-Fi 7 module. Add a dedicated wifi8/ subdirectory to host
+QCN9575-specific code. Introduce Wi-Fi 8 build rules, base module source
+files (wifi8/core.c, wifi8/pci.c, wifi8/pci.h), and add
+ATH12K_DEVICE_FAMILY_WIFI8 to ath12k_device_family. Keep Wi-Fi 8 PCI
+init/exit as stubs so the module builds cleanly and remains bisect-safe;
+actual PCI driver registration and hardware support come in follow-up
+patches.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 
 Signed-off-by: Madhavan Ganesan <madhavan.ganesan@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h |   2 +
- drivers/net/wireless/ath/ath12k/fw.c   |   8 +
- drivers/net/wireless/ath/ath12k/fw.h   |   1 +
- drivers/net/wireless/ath/ath12k/hw.h   |   1 +
- drivers/net/wireless/ath/ath12k/qmi.c  | 360 +++++++++++++++++++++++++++++++--
- drivers/net/wireless/ath/ath12k/qmi.h  |  60 +++++-
- 6 files changed, 418 insertions(+), 14 deletions(-)
+ drivers/net/wireless/ath/ath12k/Makefile       |  1 +
+ drivers/net/wireless/ath/ath12k/core.h         |  1 +
+ drivers/net/wireless/ath/ath12k/wifi8/Makefile |  4 ++++
+ drivers/net/wireless/ath/ath12k/wifi8/core.c   | 31 ++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wifi8/pci.c    | 18 +++++++++++++++
+ drivers/net/wireless/ath/ath12k/wifi8/pci.h    | 11 +++++++++
+ 6 files changed, 66 insertions(+)
 
+diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
+index 861ec85eebed..332110d72a1d 100644
+--- a/drivers/net/wireless/ath/ath12k/Makefile
++++ b/drivers/net/wireless/ath/ath12k/Makefile
+@@ -25,6 +25,7 @@ ath12k-y += core.o \
+ ath12k-$(CONFIG_ATH12K_AHB) += ahb.o pcic.o
+ 
+ obj-$(CONFIG_ATH12K) += wifi7/
++obj-$(CONFIG_ATH12K) += wifi8/
+ 
+ ath12k-$(CONFIG_ATH12K_DEBUGFS) += debugfs.o debugfs_htt_stats.o debugfs_sta.o
+ ath12k-$(CONFIG_ACPI) += acpi.o
 diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 3a92a4b03359..a8e8a55aa718 100644
+index a8e8a55aa718..2a4b5e5e1af3 100644
 --- a/drivers/net/wireless/ath/ath12k/core.h
 +++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -1116,6 +1116,8 @@ struct ath12k_base {
- 		size_t m3_len;
- 		const u8 *aux_uc_data;
- 		size_t aux_uc_len;
-+		const u8 *mcss_uc_data;
-+		size_t mcss_uc_len;
- 
- 		DECLARE_BITMAP(fw_features, ATH12K_FW_FEATURE_COUNT);
- 		bool fw_features_valid;
-diff --git a/drivers/net/wireless/ath/ath12k/fw.c b/drivers/net/wireless/ath/ath12k/fw.c
-index 22074653cbb8..0e413ae7062e 100644
---- a/drivers/net/wireless/ath/ath12k/fw.c
-+++ b/drivers/net/wireless/ath/ath12k/fw.c
-@@ -129,6 +129,14 @@ static int ath12k_fw_request_firmware_api_n(struct ath12k_base *ab,
- 			ab->fw.aux_uc_data = data;
- 			ab->fw.aux_uc_len = ie_len;
- 			break;
-+		case ATH12K_FW_IE_MCSS_UC_IMAGE:
-+			ath12k_dbg(ab, ATH12K_DBG_BOOT,
-+				   "found mcss_uc image ie (%zd B)\n",
-+				   ie_len);
-+
-+			ab->fw.mcss_uc_data = data;
-+			ab->fw.mcss_uc_len = ie_len;
-+			break;
- 		case ATH12K_FW_IE_AMSS_DUALMAC_IMAGE:
- 			ath12k_dbg(ab, ATH12K_DBG_BOOT,
- 				   "found dualmac fw image ie (%zd B)\n",
-diff --git a/drivers/net/wireless/ath/ath12k/fw.h b/drivers/net/wireless/ath/ath12k/fw.h
-index e146d24dfea4..f9edc7d336be 100644
---- a/drivers/net/wireless/ath/ath12k/fw.h
-+++ b/drivers/net/wireless/ath/ath12k/fw.h
-@@ -16,6 +16,7 @@ enum ath12k_fw_ie_type {
- 	ATH12K_FW_IE_M3_IMAGE = 3,
- 	ATH12K_FW_IE_AMSS_DUALMAC_IMAGE = 4,
- 	ATH12K_FW_IE_AUX_UC_IMAGE = 5,
-+	ATH12K_FW_IE_MCSS_UC_IMAGE = 6,
+@@ -956,6 +956,7 @@ struct ath12k_mem_profile_based_param {
+ enum ath12k_device_family {
+ 	ATH12K_DEVICE_FAMILY_START,
+ 	ATH12K_DEVICE_FAMILY_WIFI7 = ATH12K_DEVICE_FAMILY_START,
++	ATH12K_DEVICE_FAMILY_WIFI8,
+ 	ATH12K_DEVICE_FAMILY_MAX,
  };
  
- enum ath12k_fw_features {
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index 138e556ac679..6fd87482425a 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -93,6 +93,7 @@
- #define ATH12K_AMSS_FILE		"amss.bin"
- #define ATH12K_M3_FILE			"m3.bin"
- #define ATH12K_AUX_UC_FILE		"aux_ucode.bin"
-+#define ATH12K_MCSS_UC_FILE		"mcss_ucode.bin"
- #define ATH12K_REGDB_FILE_NAME		"regdb.bin"
- 
- #define ATH12K_PCIE_MAX_PAYLOAD_SIZE	128
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 69512b82aa3b..3b60d624b0aa 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -639,6 +639,42 @@ static const struct qmi_elem_info qmi_wlanfw_phy_cap_resp_msg_v01_ei[] = {
- 		.offset		= offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
- 					   dynamic_ddr_support),
- 	},
-+	{
-+		.data_type	= QMI_OPT_FLAG,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x15,
-+		.offset		= offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
-+					   aux_uc_support_valid),
-+	},
-+	{
-+		.data_type	= QMI_UNSIGNED_1_BYTE,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x15,
-+		.offset		= offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
-+					   aux_uc_support),
-+	},
-+	{
-+		.data_type	= QMI_OPT_FLAG,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x16,
-+		.offset		= offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
-+					   mcss_uc_support_valid),
-+	},
-+	{
-+		.data_type	= QMI_UNSIGNED_1_BYTE,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x16,
-+		.offset		= offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
-+					   mcss_uc_support),
-+	},
- 	{
- 		.data_type	= QMI_EOTI,
- 		.array_type	= NO_ARRAY,
-@@ -1459,6 +1495,42 @@ static const struct qmi_elem_info qmi_wlanfw_cap_resp_msg_v01_ei[] = {
- 		.offset		= offsetof(struct qmi_wlanfw_cap_resp_msg_v01, dev_mem),
- 		.ei_array	= qmi_wlanfw_dev_mem_info_s_v01_ei,
- 	},
-+	{
-+		.data_type	= QMI_OPT_FLAG,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x2B,
-+		.offset		= offsetof(struct qmi_wlanfw_cap_resp_msg_v01,
-+					   ext_fw_bin_download_support_valid),
-+	},
-+	{
-+		.data_type	= QMI_UNSIGNED_1_BYTE,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x2B,
-+		.offset		= offsetof(struct qmi_wlanfw_cap_resp_msg_v01,
-+					   ext_fw_bin_download_support),
-+	},
-+	{
-+		.data_type	= QMI_OPT_FLAG,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x2C,
-+		.offset		= offsetof(struct qmi_wlanfw_cap_resp_msg_v01,
-+					   ext_fw_bin_download_bitmap_valid),
-+	},
-+	{
-+		.data_type	= QMI_UNSIGNED_4_BYTE,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u32),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x2C,
-+		.offset		= offsetof(struct qmi_wlanfw_cap_resp_msg_v01,
-+					   ext_fw_bin_download_bitmap),
-+	},
- 	{
- 		.data_type	= QMI_EOTI,
- 		.array_type	= NO_ARRAY,
-@@ -1704,6 +1776,104 @@ static const struct qmi_elem_info qmi_wlanfw_aux_uc_info_resp_msg_v01_ei[] = {
- 	},
- };
- 
-+static const struct qmi_elem_info qmi_wlanfw_ext_fw_bin_mem_info_s_v01_ei[] = {
-+	{
-+		.data_type	= QMI_SIGNED_4_BYTE_ENUM,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(enum qmi_wlanfw_ext_fw_bin_type_enum_v01),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0,
-+		.offset		= offsetof(struct qmi_wlanfw_ext_fw_bin_mem_info_s_v01,
-+					   type),
-+	},
-+	{
-+		.data_type	= QMI_UNSIGNED_8_BYTE,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u64),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0,
-+		.offset		= offsetof(struct qmi_wlanfw_ext_fw_bin_mem_info_s_v01,
-+					   addr),
-+	},
-+	{
-+		.data_type	= QMI_UNSIGNED_4_BYTE,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u32),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0,
-+		.offset		= offsetof(struct qmi_wlanfw_ext_fw_bin_mem_info_s_v01,
-+					   size),
-+	},
-+	{
-+		.data_type	= QMI_UNSIGNED_4_BYTE,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u32),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0,
-+		.offset		= offsetof(struct qmi_wlanfw_ext_fw_bin_mem_info_s_v01,
-+					   reserved1),
-+	},
-+	{
-+		.data_type	= QMI_UNSIGNED_4_BYTE,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u32),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0,
-+		.offset		= offsetof(struct qmi_wlanfw_ext_fw_bin_mem_info_s_v01,
-+					   reserved2),
-+	},
-+	{
-+		.data_type	= QMI_EOTI,
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= QMI_COMMON_TLV_TYPE,
-+	},
-+};
+diff --git a/drivers/net/wireless/ath/ath12k/wifi8/Makefile b/drivers/net/wireless/ath/ath12k/wifi8/Makefile
+new file mode 100644
+index 000000000000..b8c5b6d3a7bd
+--- /dev/null
++++ b/drivers/net/wireless/ath/ath12k/wifi8/Makefile
+@@ -0,0 +1,4 @@
++# SPDX-License-Identifier: BSD-3-Clause-Clear
++obj-$(CONFIG_ATH12K) += ath12k_wifi8.o
++ath12k_wifi8-y += core.o \
++		  pci.o
+diff --git a/drivers/net/wireless/ath/ath12k/wifi8/core.c b/drivers/net/wireless/ath/ath12k/wifi8/core.c
+new file mode 100644
+index 000000000000..9253ef9d9cf5
+--- /dev/null
++++ b/drivers/net/wireless/ath/ath12k/wifi8/core.c
+@@ -0,0 +1,31 @@
++// SPDX-License-Identifier: BSD-3-Clause-Clear
++/*
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
++ */
 +
-+static const struct qmi_elem_info qmi_wlanfw_ext_fw_bin_download_req_msg_v01_ei[] = {
-+	{
-+		.data_type	= QMI_DATA_LEN,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(u8),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x01,
-+		.offset		= offsetof(struct qmi_wlanfw_ext_fw_bin_download_req_msg_v01,
-+					   ext_bin_mem_info_len),
-+	},
-+	{
-+		.data_type	= QMI_STRUCT,
-+		.elem_len	= QMI_WLANFW_MAX_NUM_EXT_FW_BIN_DOWNLOAD_V01,
-+		.elem_size	= sizeof(struct qmi_wlanfw_ext_fw_bin_mem_info_s_v01),
-+		.array_type	= VAR_LEN_ARRAY,
-+		.tlv_type	= 0x01,
-+		.offset		= offsetof(struct qmi_wlanfw_ext_fw_bin_download_req_msg_v01,
-+					   ext_bin_mem_info),
-+		.ei_array	= qmi_wlanfw_ext_fw_bin_mem_info_s_v01_ei,
-+	},
-+	{
-+		.data_type	= QMI_EOTI,
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= QMI_COMMON_TLV_TYPE,
-+	},
-+};
++#include <linux/module.h>
++#include "../pci.h"
++#include "pci.h"
 +
-+static const struct qmi_elem_info qmi_wlanfw_ext_fw_bin_download_resp_msg_v01_ei[] = {
-+	{
-+		.data_type	= QMI_STRUCT,
-+		.elem_len	= 1,
-+		.elem_size	= sizeof(struct qmi_response_type_v01),
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= 0x02,
-+		.offset		= offsetof(struct qmi_wlanfw_ext_fw_bin_download_resp_msg_v01,
-+					   resp),
-+		.ei_array	= qmi_response_type_v01_ei,
-+	},
-+	{
-+		.data_type	= QMI_EOTI,
-+		.array_type	= NO_ARRAY,
-+		.tlv_type	= QMI_COMMON_TLV_TYPE,
-+	},
-+};
-+
- static const struct qmi_elem_info qmi_wlanfw_ce_tgt_pipe_cfg_s_v01_ei[] = {
- 	{
- 		.data_type	= QMI_UNSIGNED_4_BYTE,
-@@ -2430,8 +2600,12 @@ static void ath12k_qmi_phy_cap_send(struct ath12k_base *ab)
- 		   "phy capability resp valid %u single_chip_mlo_support %u valid %u num_phy %u valid %u board_id %u dynamic_ddr_valid %u dynamic_ddr_support %u\n",
- 		   resp.single_chip_mlo_support_valid, resp.single_chip_mlo_support,
- 		   resp.num_phy_valid, resp.num_phy,
--		   resp.board_id_valid, resp.board_id, resp.dynamic_ddr_support_valid,
--		   resp.dynamic_ddr_support);
-+		   resp.board_id_valid, resp.board_id,
-+		   resp.dynamic_ddr_support_valid, resp.dynamic_ddr_support);
-+	ath12k_dbg(ab, ATH12K_DBG_QMI,
-+		   "phy capability aux support valid %u aux_uc_support %u mcss support valid %u mcss_uc_support %u\n",
-+		   resp.aux_uc_support_valid, resp.aux_uc_support,
-+		   resp.mcss_uc_support_valid, resp.mcss_uc_support);
- 
- 	return;
- 
-@@ -3115,6 +3289,27 @@ int ath12k_qmi_request_target_cap(struct ath12k_base *ab)
- 		}
- 	}
- 
-+	if (resp.ext_fw_bin_download_support_valid &&
-+	    resp.ext_fw_bin_download_bitmap_valid) {
-+		ab->qmi.ext_fw_bin_download_bitmap =
-+			resp.ext_fw_bin_download_bitmap;
-+		ath12k_dbg(ab, ATH12K_DBG_QMI, "qmi extended firmware bin download bitmap 0x%x\n",
-+			   resp.ext_fw_bin_download_bitmap);
-+
-+		if (ab->qmi.ext_fw_bin_download_bitmap &
-+		    ~QMI_WLANFW_EXT_FW_BIN_TYPE_HOST_SUPPORTED_MASK) {
-+			ath12k_warn(ab, "Invalid ext_fw_bin_download_bitmap 0x%x, host-unsupported bits set\n",
-+				    ab->qmi.ext_fw_bin_download_bitmap);
-+			ret = -EINVAL;
-+			goto out;
-+		}
-+		ab->qmi.ext_fw_bin_download_support = !!resp.ext_fw_bin_download_support;
-+		ath12k_dbg(ab, ATH12K_DBG_QMI, "qmi extended firmware bin download supported\n");
-+	} else {
-+		ab->qmi.ext_fw_bin_download_support = false;
-+		ab->qmi.ext_fw_bin_download_bitmap = 0;
-+	}
-+
- 	if (resp.eeprom_caldata_read_timeout_valid) {
- 		ab->qmi.target.eeprom_caldata = resp.eeprom_caldata_read_timeout;
- 		ath12k_dbg(ab, ATH12K_DBG_QMI, "qmi cal data supported from eeprom\n");
-@@ -3425,6 +3620,129 @@ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
- 				      ATH12K_M3_FILE);
- }
- 
-+static void ath12k_qmi_ext_fw_bin_free_all(struct ath12k_base *ab)
++static int ath12k_wifi8_init(void)
 +{
-+	int type;
++	int ret;
 +
-+	for (type = 0; type < QMI_WLANFW_EXT_FW_MAX_BIN_TYPE; type++)
-+		ath12k_qmi_free_mem_region(ab, &ab->qmi.ext_fw_bin_mem[type]);
-+}
++	ret = ath12k_wifi8_pci_init();
++	if (ret)
++		pr_warn("Failed to register ath12k Wi-Fi 8 PCI driver: %d\n",
++			ret);
 +
-+static int ath12k_qmi_ext_fw_bin_load(struct ath12k_base *ab,
-+				      enum qmi_wlanfw_ext_fw_bin_type_enum_v01 type)
-+{
-+	const u8 *embedded_data;
-+	size_t embedded_len;
-+	const char *filename;
-+
-+	switch (type) {
-+	case QMI_WLANFW_EXT_FW_BIN_TYPE_M3_V01:
-+		embedded_data = ab->fw.m3_data;
-+		embedded_len = ab->fw.m3_len;
-+		filename = ATH12K_M3_FILE;
-+		break;
-+	case QMI_WLANFW_EXT_FW_BIN_TYPE_AUX_UC_V01:
-+		embedded_data = ab->fw.aux_uc_data;
-+		embedded_len = ab->fw.aux_uc_len;
-+		filename = ATH12K_AUX_UC_FILE;
-+		break;
-+	case QMI_WLANFW_EXT_FW_BIN_TYPE_MCSS_UC_V01:
-+		embedded_data = ab->fw.mcss_uc_data;
-+		embedded_len = ab->fw.mcss_uc_len;
-+		filename = ATH12K_MCSS_UC_FILE;
-+		break;
-+	default:
-+		ath12k_err(ab, "firmware bin type %d not supported\n", type);
-+		return -EINVAL;
-+	}
-+
-+	return ath12k_qmi_fw_mem_load(ab, &ab->qmi.ext_fw_bin_mem[type],
-+				      embedded_data, embedded_len, filename);
-+}
-+
-+/* clang stack usage explodes if this is inlined */
-+static noinline_for_stack
-+int ath12k_qmi_wlanfw_ext_fw_bin_mem_info_send(struct ath12k_base *ab)
-+{
-+	struct qmi_wlanfw_ext_fw_bin_download_resp_msg_v01 resp = {};
-+	struct qmi_wlanfw_ext_fw_bin_download_req_msg_v01 *req;
-+	struct ath12k_fw_mem_region *ext_fw_bin_mem;
-+	int num_ext_fw_bin = 0;
-+	struct qmi_txn txn;
-+	int type = 0;
-+	int ret = 0;
-+
-+	req = kzalloc_obj(*req);
-+	if (!req)
-+		return -ENOMEM;
-+
-+	for (type = 0; type < QMI_WLANFW_EXT_FW_MAX_BIN_TYPE; type++) {
-+		if (!(ab->qmi.ext_fw_bin_download_bitmap & BIT(type)))
-+			continue;
-+
-+		if (num_ext_fw_bin >= QMI_WLANFW_MAX_NUM_EXT_FW_BIN_DOWNLOAD_V01) {
-+			ath12k_warn(ab, "Too many firmware binaries to download, skipping types from %d\n",
-+				    type);
-+			break;
-+		}
-+
-+		ret = ath12k_qmi_ext_fw_bin_load(ab, type);
-+		if (ret) {
-+			ath12k_err(ab, "failed to load extended firmware bin type %d ret %d\n",
-+				   type, ret);
-+			goto out;
-+		}
-+
-+		ext_fw_bin_mem = &ab->qmi.ext_fw_bin_mem[type];
-+		req->ext_bin_mem_info[num_ext_fw_bin].addr = ext_fw_bin_mem->paddr;
-+		req->ext_bin_mem_info[num_ext_fw_bin].size = ext_fw_bin_mem->size;
-+		req->ext_bin_mem_info[num_ext_fw_bin].type = type;
-+		num_ext_fw_bin++;
-+	}
-+
-+	if (!num_ext_fw_bin) {
-+		ath12k_err(ab, "No extended firmware bins found for ext_fw_bin_download_bitmap 0x%x\n",
-+			   ab->qmi.ext_fw_bin_download_bitmap);
-+		ret = -EINVAL;
-+		goto out;
-+	}
-+	req->ext_bin_mem_info_len = num_ext_fw_bin;
-+
-+	ret = qmi_txn_init(&ab->qmi.handle, &txn,
-+			   qmi_wlanfw_ext_fw_bin_download_resp_msg_v01_ei, &resp);
-+	if (ret < 0)
-+		goto out;
-+
-+	ret = qmi_send_request(&ab->qmi.handle, NULL, &txn,
-+			       QMI_WLANFW_EXT_FW_BIN_DOWNLOAD_REQ_V01,
-+			       QMI_WLANFW_EXT_FW_BIN_DOWNLOAD_REQ_MSG_V01_MAX_MSG_LEN,
-+			       qmi_wlanfw_ext_fw_bin_download_req_msg_v01_ei, req);
-+	if (ret < 0) {
-+		qmi_txn_cancel(&txn);
-+		ath12k_warn(ab, "qmi failed to download extended firmware bin request, err = %d\n",
-+			    ret);
-+		goto out;
-+	}
-+
-+	ret = qmi_txn_wait(&txn, msecs_to_jiffies(ATH12K_QMI_WLANFW_TIMEOUT_MS));
-+	if (ret < 0) {
-+		ath12k_warn(ab, "qmi wait failed to download extended firmware bin %d\n",
-+			    ret);
-+		goto out;
-+	}
-+
-+	if (resp.resp.result != QMI_RESULT_SUCCESS_V01) {
-+		ath12k_warn(ab, "qmi extended firmware bin info request failed, result: %d, err: %d\n",
-+			    resp.resp.result, resp.resp.error);
-+		ret = -EINVAL;
-+		goto out;
-+	}
-+
-+out:
-+	kfree(req);
 +	return ret;
 +}
 +
- /* clang stack usage explodes if this is inlined */
- static noinline_for_stack
- int ath12k_qmi_wlanfw_m3_info_send(struct ath12k_base *ab)
-@@ -3990,13 +4308,23 @@ int ath12k_qmi_event_load_bdf(struct ath12k_qmi *qmi)
- 			ath12k_warn(ab, "qmi failed to load calibrated data :%d\n", ret);
- 	}
- 
--	ret = ath12k_qmi_wlanfw_m3_info_send(ab);
--	if (ret < 0) {
--		ath12k_warn(ab, "qmi failed to send m3 info req:%d\n", ret);
--		return ret;
--	}
-+	if (ab->qmi.ext_fw_bin_download_support) {
-+		ret = ath12k_qmi_wlanfw_ext_fw_bin_mem_info_send(ab);
-+		if (ret < 0) {
-+			ath12k_warn(ab, "qmi failed to send firmware bin info req:%d\n",
-+				    ret);
-+			return ret;
-+		}
-+	} else {
-+		ret = ath12k_qmi_wlanfw_m3_info_send(ab);
-+		if (ret < 0) {
-+			ath12k_warn(ab, "qmi failed to send m3 info req:%d\n", ret);
-+			return ret;
-+		}
-+
-+		if (!hw_params->fw.download_aux_ucode)
-+			return ret;
- 
--	if (hw_params->fw.download_aux_ucode) {
- 		ret = ath12k_qmi_wlanfw_aux_uc_info_send(ab);
- 		if (ret < 0) {
- 			ath12k_warn(ab, "qmi failed to send aux_uc info req: %d\n", ret);
-@@ -4269,6 +4597,16 @@ int ath12k_qmi_init_service(struct ath12k_base *ab)
- 	return ret;
- }
- 
-+static void ath12k_qmi_free_fw_bin_mem(struct ath12k_base *ab)
++static void ath12k_wifi8_exit(void)
 +{
-+	if (ab->qmi.ext_fw_bin_download_support) {
-+		ath12k_qmi_ext_fw_bin_free_all(ab);
-+	} else {
-+		ath12k_qmi_aux_uc_free(ab);
-+		ath12k_qmi_m3_free(ab);
-+	}
++	ath12k_wifi8_pci_exit();
 +}
 +
- void ath12k_qmi_deinit_service(struct ath12k_base *ab)
- {
- 	if (!ab->qmi.ab)
-@@ -4277,8 +4615,7 @@ void ath12k_qmi_deinit_service(struct ath12k_base *ab)
- 	qmi_handle_release(&ab->qmi.handle);
- 	cancel_work_sync(&ab->qmi.event_work);
- 	destroy_workqueue(ab->qmi.event_wq);
--	ath12k_qmi_aux_uc_free(ab);
--	ath12k_qmi_m3_free(ab);
-+	ath12k_qmi_free_fw_bin_mem(ab);
- 	ath12k_qmi_free_target_mem_chunk(ab);
- 	ab->qmi.ab = NULL;
- }
-@@ -4286,6 +4623,5 @@ void ath12k_qmi_deinit_service(struct ath12k_base *ab)
- void ath12k_qmi_free_resource(struct ath12k_base *ab)
- {
- 	ath12k_qmi_free_target_mem_chunk(ab);
--	ath12k_qmi_aux_uc_free(ab);
--	ath12k_qmi_m3_free(ab);
-+	ath12k_qmi_free_fw_bin_mem(ab);
- }
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
-index 7879f439a5ff..fc68ff649352 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.h
-+++ b/drivers/net/wireless/ath/ath12k/qmi.h
-@@ -69,6 +69,20 @@ enum ath12k_qmi_event_type {
- 	ATH12K_QMI_EVENT_MAX,
- };
- 
-+#define QMI_WLANFW_MAX_NUM_EXT_FW_BIN_DOWNLOAD_V01 32
-+enum qmi_wlanfw_ext_fw_bin_type_enum_v01 {
-+	QMI_WLANFW_EXT_FW_BIN_TYPE_START,
-+	QMI_WLANFW_EXT_FW_BIN_TYPE_BDF_REGDB_V01 = QMI_WLANFW_EXT_FW_BIN_TYPE_START,
-+	QMI_WLANFW_EXT_FW_BIN_TYPE_BDF_GOLDEN_V01 = 1,
-+	QMI_WLANFW_EXT_FW_BIN_TYPE_BDF_RXGAIN_V01 = 2,
-+	QMI_WLANFW_EXT_FW_BIN_TYPE_BDF_CALDATA_V01 = 3,
-+	QMI_WLANFW_EXT_FW_BIN_TYPE_M3_V01 = 4,
-+	QMI_WLANFW_EXT_FW_BIN_TYPE_AUX_UC_V01 = 5,
-+	QMI_WLANFW_EXT_FW_BIN_TYPE_MCSS_UC_V01 = 6,
-+	QMI_WLANFW_EXT_FW_BIN_TYPE_QDSS_CFG_V01 = 7,
-+	QMI_WLANFW_EXT_FW_MAX_BIN_TYPE,
-+};
++module_init(ath12k_wifi8_init);
++module_exit(ath12k_wifi8_exit);
 +
- struct ath12k_qmi_driver_event {
- 	struct list_head list;
- 	enum ath12k_qmi_event_type type;
-@@ -153,11 +167,19 @@ struct ath12k_qmi {
- 
- 	u8 num_radios;
- 	struct target_info target;
--	struct ath12k_fw_mem_region m3_mem;
--	struct ath12k_fw_mem_region aux_uc_mem;
-+	union {
-+		struct {
-+			struct ath12k_fw_mem_region m3_mem;
-+			struct ath12k_fw_mem_region aux_uc_mem;
-+		};
-+		struct ath12k_fw_mem_region
-+			ext_fw_bin_mem[QMI_WLANFW_EXT_FW_MAX_BIN_TYPE];
-+	};
- 	unsigned int service_ins_id;
- 	struct dev_mem_info dev_mem[ATH12K_QMI_WLFW_MAX_DEV_MEM_NUM_V01];
- 	u8 dynamic_ddr_support;
-+	u8 ext_fw_bin_download_support;
-+	u32 ext_fw_bin_download_bitmap;
- };
- 
- #define QMI_WLANFW_HOST_CAP_REQ_MSG_V01_MAX_LEN		265
-@@ -282,6 +304,10 @@ struct qmi_wlanfw_phy_cap_resp_msg_v01 {
- 	u8 single_chip_mlo_support;
- 	u8 dynamic_ddr_support_valid;
- 	u8 dynamic_ddr_support;
-+	u8 aux_uc_support_valid;
-+	u8 aux_uc_support;
-+	u8 mcss_uc_support_valid;
-+	u8 mcss_uc_support;
- };
- 
- #define QMI_WLANFW_IND_REGISTER_REQ_MSG_V01_MAX_LEN		54
-@@ -486,6 +512,10 @@ struct qmi_wlanfw_cap_resp_msg_v01 {
- 	enum qmi_wlanfw_rd_card_chain_cap_v01 rd_card_chain_cap;
- 	u8 dev_mem_info_valid;
- 	struct qmi_wlanfw_dev_mem_info_s_v01 dev_mem[ATH12K_QMI_WLFW_MAX_DEV_MEM_NUM_V01];
-+	u8 ext_fw_bin_download_support_valid;
-+	u8 ext_fw_bin_download_support;
-+	u8 ext_fw_bin_download_bitmap_valid;
-+	u32 ext_fw_bin_download_bitmap;
- };
- 
- struct qmi_wlanfw_cap_req_msg_v01 {
-@@ -641,6 +671,32 @@ static inline bool ath12k_qmi_get_event_block(struct ath12k_qmi *qmi)
- 	return qmi->block_event;
- }
- 
-+#define QMI_WLANFW_EXT_FW_BIN_TYPE_HOST_SUPPORTED_MASK \
-+	(BIT(QMI_WLANFW_EXT_FW_BIN_TYPE_M3_V01) | \
-+	 BIT(QMI_WLANFW_EXT_FW_BIN_TYPE_AUX_UC_V01) | \
-+	 BIT(QMI_WLANFW_EXT_FW_BIN_TYPE_MCSS_UC_V01))
++MODULE_DESCRIPTION("Driver support for Qualcomm Technologies 802.11bn WLAN devices");
++MODULE_LICENSE("Dual BSD/GPL");
+diff --git a/drivers/net/wireless/ath/ath12k/wifi8/pci.c b/drivers/net/wireless/ath/ath12k/wifi8/pci.c
+new file mode 100644
+index 000000000000..3975081d167b
+--- /dev/null
++++ b/drivers/net/wireless/ath/ath12k/wifi8/pci.c
+@@ -0,0 +1,18 @@
++// SPDX-License-Identifier: BSD-3-Clause-Clear
++/*
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
++ */
 +
-+#define QMI_WLANFW_EXT_FW_BIN_DOWNLOAD_REQ_MSG_V01_MAX_MSG_LEN 772
-+#define QMI_WLANFW_EXT_FW_BIN_DOWNLOAD_REQ_V01 0x0065
++#include <linux/pci.h>
 +
-+struct qmi_wlanfw_ext_fw_bin_mem_info_s_v01 {
-+	enum qmi_wlanfw_ext_fw_bin_type_enum_v01 type;
-+	u64 addr;
-+	u32 size;
-+	u32 reserved1;
-+	u32 reserved2;
-+};
++#include "pci.h"
 +
-+struct qmi_wlanfw_ext_fw_bin_download_req_msg_v01 {
-+	u32 ext_bin_mem_info_len;
-+	struct qmi_wlanfw_ext_fw_bin_mem_info_s_v01
-+		ext_bin_mem_info[QMI_WLANFW_MAX_NUM_EXT_FW_BIN_DOWNLOAD_V01];
-+};
++int ath12k_wifi8_pci_init(void)
++{
++	/* Wi-Fi 8 PCI driver registration will be added in follow-up patches. */
++	return 0;
++}
 +
-+struct qmi_wlanfw_ext_fw_bin_download_resp_msg_v01 {
-+	struct qmi_response_type_v01 resp;
-+};
++void ath12k_wifi8_pci_exit(void)
++{
++}
+diff --git a/drivers/net/wireless/ath/ath12k/wifi8/pci.h b/drivers/net/wireless/ath/ath12k/wifi8/pci.h
+new file mode 100644
+index 000000000000..efe02721e470
+--- /dev/null
++++ b/drivers/net/wireless/ath/ath12k/wifi8/pci.h
+@@ -0,0 +1,11 @@
++/* SPDX-License-Identifier: BSD-3-Clause-Clear */
++/*
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
++ */
++#ifndef ATH12K_WIFI8_PCI_H
++#define ATH12K_WIFI8_PCI_H
 +
- int ath12k_qmi_firmware_start(struct ath12k_base *ab,
- 			      enum ath12k_qmi_firmware_mode mode);
- void ath12k_qmi_firmware_stop(struct ath12k_base *ab);
++int ath12k_wifi8_pci_init(void);
++void ath12k_wifi8_pci_exit(void);
++
++#endif /* ATH12K_WIFI8_PCI_H */
 
 -- 
 2.34.1
