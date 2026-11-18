@@ -2,136 +2,149 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0C3DE606A31C
-	for <ath12k@archiver.kernel.org>; Wed, 18 Nov 2026 07:38:41 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6D8C7606A339
+	for <ath12k@archiver.kernel.org>; Wed, 18 Nov 2026 08:02:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hZ0tgRwe;
-	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=nCDYWxVs;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=DlWr84w8
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Zigc2+s2;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=LsamRRBf;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=E7rWpsxd
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=9Ys7ckJ0NiXYC8rabs2qOxb21BW3bN6Bd8NpzgbWrXs=; b=hZ0tgRweDz870y+bk1Xx09R6bg
-	//uepbgSdDAvTsHo67DfP+M47FTx1wGM885j5Qh00tM9uL/qxJJevmK8kCs4Y6eS4Yn9NcIiBPFnj
-	YOYapm+4HDlpjpKG1r1psiNxs1oh0gVx5+QG9fA1zO5xK+nLJOLBDT6lZAiiooMpxTuVnxPQ7xAl0
-	nPg0WPBnM8C/bzYJiItE4wTFTifEZv6Rk4PEl07ihqqDRRaPJTG41tYPIMSyA1XfoLVhQPt275HAj
-	CX/5SvMGO+pmLYxopMpyCwV5SyKIGd042a24xngj17E2WBcUaVvR+8Hojy02JHp+dhMsT5TtTepqP
-	Eg4Aq31w==;
+	bh=DrledQ7asg/l1mmrglnd/iAJEwcVyja1FuRFpnl9nSc=; b=Zigc2+s27DFqPxbjk84Rl6dnGu
+	A+RTYleCXtESr5GIodcmjnXWDNbvgy0FVEWdhd+zHnL1SFje+0uXAKdykDit+dg5Q2lBfwZTQ6vOu
+	GzZH+9ugfdkhpp8bkj5rlewHNb/e3b7p2vwwnKLlm5yBDFObwH5a/XiOH1dYoO4Z3LGFwznpx1pjb
+	1x6clV15goli4GbRZ2+7BuvvYcuMq9rZmGtScj6QTjjGTL+QrX5xVXdB1z83dvrS+9MHo8Z/K/voH
+	lpukF8B378l2INPyJ9XyYHmfG9o2wKRw04po5AOwBSxEFx5UPz0YaXt0m6GJqX9edMkBcQqu1ZM4R
+	lrVNRW9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTaFb-000000082Xf-01LI;
-	Wed, 18 Nov 2026 07:38:39 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xTacq-000000085IZ-3RgT;
+	Wed, 18 Nov 2026 08:02:40 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTaFY-000000082Ub-0j4i
+	id 1xTacm-000000085IF-0kow
 	for ath12k@lists.infradead.org;
-	Wed, 18 Nov 2026 07:38:37 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AI2Uoq72382984
-	for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 07:38:35 GMT
+	Wed, 18 Nov 2026 08:02:38 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AI2UuwV2453536
+	for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 08:02:34 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=9Ys7ckJ0NiXYC8rabs2qOxb21BW3bN6Bd8N
-	pzgbWrXs=; b=nCDYWxVs9Ajq7t2exrCqWkXh1k260JMWiKzp4Nqc4xvjgs0Jkx5
-	iMc5yZ1a65ciY8vxX3CCp78NboSkHFTPSFVbnb3ZT0c9PJv4etpFP0ft7qLMU0Wo
-	7JYex6HUd24h7yMXz2NqI5QuFxG36FpWtRyavkbLL/9G6Nr42iEffn+dMK4np3IY
-	nPD9JLY1viS7VwPu5C+QEz5VmWjFazbXN46zcxg6uiVIjUq6mk//gSL+QVy8pPoe
-	X/8IuMZecpM8heHJ+awKAZiaOx3bEvRdKsH1GXg79NZExFSlFjGBcnBhu6srCD+X
-	adJ9PYCFWUGv3SeGKCmaHbbGOemyx3pW7jg==
-Received: from mail-oi1-f197.google.com (mail-oi1-f197.google.com [209.85.167.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j0yvasv2w-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=DrledQ7asg/l1mmrglnd/i
+	AJEwcVyja1FuRFpnl9nSc=; b=LsamRRBftHbtS/cOyz+Ycz+GDLKyHOm4bl2aGY
+	McXYe7IZ7rihpK/bQRRm6Wasz8TKAVAnS22Y+ei7wFpM4gdyCSezHMVSM/sL59dD
+	dFEJmp92XIS4tAYSgGYGouvBCO/DW1Cpx8UzR6T5PxiylA8yDK40n5aMmLD0p00W
+	is8v9TFRuVuryA2uYRPHXWIdvap2DTCAWP7jk+8iKcGIbxQk0q7v1x32/Tp41toY
+	mjAuvXpgutTxBvoiZGoxrJveDF9DUU56x2dtkKCjyYOIaSgrE8hqCR4tal0WXhqM
+	FoMDonLV8k6nZiJ144pLKKdRZ5KwUseqwzPnspaurwI7MCng==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j0yv99wd3-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 07:38:35 +0000 (GMT)
-Received: by mail-oi1-f197.google.com with SMTP id 5614622812f47-4eb0b989f0eso805277b6e.0
-        for <ath12k@lists.infradead.org>; Tue, 17 Nov 2026 23:38:35 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 08:02:34 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-cdd4dafdcf3so706921a12.2
+        for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 00:02:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794987514; x=1795592314; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:to
-         :from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=9Ys7ckJ0NiXYC8rabs2qOxb21BW3bN6Bd8NpzgbWrXs=;
-        b=DlWr84w8sXv3/xpBjKch7wRsms3/oYcnE3BfQVCCT9xX9kAWHKvpaqpnjCdLV0p5zp
-         uJjzlZNUwn17cARJl34V0Tv6L5krRwgsP3+/e9EMecnbdjqy5hrKpfeGdMTVBPOUvzZI
-         qlAF4RE7FmFkMK8s5Eh58we8A3e/8KSzdrluHfMU86JmF0jFIOMTu2uAt+OFbjCixEJX
-         H+YZv/KwrWxxJZUw5OW7RtpngHA7+FQhH8paOEZdP/Iedg6D76ay/f0huTlYfAfUpAJw
-         6P5CnkpW+p7xSeldMcBalX1j/Pz8KaFjJoUxsmYAcDXY72sK1+Fneg9EG1V6hdVhj0rw
-         CdTQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794987514; x=1795592314;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:to
-         :from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=oss.qualcomm.com; s=google; t=1794988953; x=1795593753; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:content-type
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to:content-type;
-        bh=9Ys7ckJ0NiXYC8rabs2qOxb21BW3bN6Bd8NpzgbWrXs=;
-        b=1fEUBpOQ4fKLITSFO19Nxi2mbPAFxYkPYB1mbEE5qvp1VK6tV3+jgIYUFIl0IUqoUb
-         PAaalaIAKrxfq7jqHDxezJTE9Zqqs2sQz93mN9ds6xS7Ktwn5sUjc7ln2yMiCLxYo9J5
-         L067yOXm8Vt1vx/JHZ3qAPhXpydz4u8tCej8NLy13ykida8eQbPqThB/TlLRosuev72c
-         YmVISW2aaHDHxromrVVgvxNkucgmDk58SkWDusBxdinitqyUB/Ir74GYcfqtlUjTH4sj
-         j76xMoG3gG3v1toRCHbLAjhXfjMeXuOjsNVs6PrIbYCe3GOSHjenjGlf96BYh4Xy8BZS
-         DXzw==
-X-Forwarded-Encrypted: i=1; AL+hErGvR1Z+MfO4coRikam+1HejUpp3xQK9ER7dbvkwNCdja9z5eL0RJwHmaynOWdoV3ogXfRYkycc=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+CgGL98ZqYFrCtM8flwIqDW1Xbxtah3fFrx9qKUI7Qx1LE3VS3
-	gUoGGAZYKqi4KgRK3fAXfex4CkxAziUB1c0PYH+xDM0kKer7t0nmrSmsCerLWK0peznyZMJe3dg
-	i26AgBhTbNF09JSmIG4qqC2Ibhx3CFOAqWVd8J1bYk/WXZ9AKDkrGMdzONOndVUVg
-X-Gm-Gg: AYBFou0JtF29tzQACOpHqe1z5neKtLixe1sBC7TzgiTwzXB+mSqNXvrzCV8iAErfuTQ
-	LDl4r+OPDv/hUgQeu8/60Kun9WnXRqut++OQ3ZsQndp+1HXChmUUx8QQI+6itlD2UMfasRD1HOw
-	88SqPoaj0BsRpHzC2QHxrvxO8iwqp+wDeVydqMnM8UhEoyKoWo64AnnJ8RQfzx7/fBrNdm21iSS
-	el8LvzfD3Ary8Xp6xPU96O3P9CcVHtIXnIYhOgfIsJ6HOGhjZ41zm0SsWzckAXV7DZXns3U31S0
-	yjM9jv2hIT+X0JCSaAxJsDDTlMXdc/DoIdeMPFloii62HLa397as0hXuujtOfSwaod8lNbJAUad
-	CcuzdKDPrakXJZC2dQq5u3FicwFidaRyqpRrVv5RkaRBbHytea7l+5BMnOeWECwFkw68V0tM2Ul
-	t2rq+SAON5X2hh7IXYkQ==
-X-Received: by 2002:a05:6808:c2fc:b0:571:a186:d69c with SMTP id 5614622812f47-5773b4330a4mr1554002b6e.3.1794987514568;
-        Tue, 17 Nov 2026 23:38:34 -0800 (PST)
-X-Received: by 2002:a05:6808:c2fc:b0:571:a186:d69c with SMTP id 5614622812f47-5773b4330a4mr1553994b6e.3.1794987514103;
-        Tue, 17 Nov 2026 23:38:34 -0800 (PST)
-Received: from hu-yuzha-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 5614622812f47-5777ad9b78csm1006995b6e.13.2026.11.17.23.38.33
+        bh=DrledQ7asg/l1mmrglnd/iAJEwcVyja1FuRFpnl9nSc=;
+        b=E7rWpsxdKYd7B/dRK7rAJLRKOHnRdnnE428lQtWX2uApZaB0QI1hClaFMd5Dm3DqkE
+         utiAn5XW0g18wUORH36WuN1UWID4rQXqVdWZQf/8RdCEKekxc3P0gIMvCdBNs3A6UmPz
+         kBDEQ7u8N6WmLpfD/HmncPcBIB8yJTJC+JbyLO9RTknYu6pz438zoL8vkwYd8u16kHAP
+         rMCA/5fYb6Syd6AbPXiOAWZr73hzBNYtnfei/H5Nv6ymYTUgRzpGYh8MryHv/EsSNzcx
+         xM5xYNVH0ntQd9QZyMk+mJTf1kG5qgHYRr5G2NWKyTgu6zgN4WSEdKKyye8sZ+R7iizv
+         OT1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794988953; x=1795593753;
+        h=cc:to:message-id:content-transfer-encoding:content-type
+         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=DrledQ7asg/l1mmrglnd/iAJEwcVyja1FuRFpnl9nSc=;
+        b=lPV10gYaXaGYibzFTenkPvGvJ+0W2FqqMW7v28kutjNpiWAg7ZndAOuB1nvR9R7V1t
+         7Hfs8ihIt/Ktg00GYoF8PuQdZgo/kQ/i1NjgbVfniniq8U/TNxlfYWLFtWSrrMjiYP7H
+         uMPyAZXpjEazWv4nt07i7OC+66lIh86P8zasCtP4lCAIRCIDWHnvvUklWNKNb8rxtp5+
+         kLkMyt2cd/NvuPLB5lyy45O5+U3gLqOhsio4/vSPAoWF+Htp4fA+IGNX5gk8lAVZZDEQ
+         S0xZfjBrSwa1AjicxIe4APKLiO3K23BT6qEEcQ8k0E88b7OHtMQ2pRR9Ur9dB2LOm9vB
+         hw3A==
+X-Gm-Message-State: APuU4Z+/F+CQs37yU7duSB0Fg6tBdFFSRyngeq05N2VRZKrfJ4O33rCr
+	SilcK3KGcizOwUG7SNwhIHkrdUMf9YH9fS9jFgXKrEeWCAKlPcmVQIsH+a37AEvXmfpNCWycBXz
+	mAHBbsE9m6PzPJv9NWwhq74WPzNwkHleU7jjaUNsXZe9bL1xSLqdV84BOPHnqcds+353WKLhp
+X-Gm-Gg: AZFdTZfRPb47NzctMxJq2Xeh6Ri4GDRwtviLFqWNIMvzCXOO7Kndb2onY9RFzFCIE12
+	UOTVfrnUszFWWabNjgLTptuGm4fNoKwN7UkDVycrKcSnhFSZjgWhlxrMkYXHUl6DnHvEmRqoHtv
+	L708pJWuRQ+yDl5JnkDOl+MPH/sQgx1exfCsZMq6IESV0/yUHG1ZxEp5UKWFCZg2WE7TmgrhwjN
+	9ye6NlnRPDqkhmuyyLW14zIOK5HpJZwpxOxpDfRPvWjXRS2yK2okdfUhhmiBpFb+hNgtPUpTS4i
+	sAMtISbUpFT8ED42qaSXXrmKlmyiSsvZ9DEpDBz6eKcEE4b6CQUvHt+dEuR1WzEZJMicSqBhYwM
+	rywZgY3CCfyt81NZ/ahm1AdD2XvYSysuWgDpg1gYU3BB90W3l+XRA0Lx/kIKGUA5nLafyx4tWm/
+	Q=
+X-Received: by 2002:a17:90b:2684:b0:3ab:3384:1a44 with SMTP id 98e67ed59e1d1-3b3d07a24b9mr1884374a91.12.1794988953278;
+        Wed, 18 Nov 2026 00:02:33 -0800 (PST)
+X-Received: by 2002:a17:90b:2684:b0:3ab:3384:1a44 with SMTP id 98e67ed59e1d1-3b3d07a24b9mr1884333a91.12.1794988952551;
+        Wed, 18 Nov 2026 00:02:32 -0800 (PST)
+Received: from hu-sumk-hyd.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b3d1acde45sm3022173a91.11.2026.11.18.00.02.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Nov 2026 23:38:33 -0800 (PST)
-From: "Yu Zhang(Yuriy)" <yu.zhang@oss.qualcomm.com>
-To: jeff.johnson@oss.qualcomm.com, ath12k@lists.infradead.org
-Subject: [PATCH] .mailmap: add entry for Yu Zhang(Yuriy)
-Date: Tue, 17 Nov 2026 23:38:32 -0800
-Message-Id: <20261118073832.1261471-1-yu.zhang@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+        Wed, 18 Nov 2026 00:02:32 -0800 (PST)
+From: Sumit Kumar <sumit.kumar@oss.qualcomm.com>
+Date: Wed, 18 Nov 2026 13:32:25 +0530
+Subject: [PATCH] mailmap: add entry for Sumit Kumar
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=SMzXx+vH c=1 sm=1 tr=0 ts=6afd55fb cx=c_pps
- a=WJcna6AvsNCxL/DJwPP1KA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22 a=EUspDBNiAAAA:8
- a=VwQbUJbxAAAA:8 a=7mOBRU54AAAA:8 a=BY5PBP3jAAAA:8 a=1XWaLZrsAAAA:8
- a=COk6AnOGAAAA:8 a=n9Sqmae0AAAA:8 a=pGLkceISAAAA:8 a=yC-0_ovQAAAA:8
- a=Q-fNiiVtAAAA:8 a=eh1Yez-EAAAA:8 a=OVitEytcRwG1oHMu9lAA:9
- a=_Y9Zt4tPzoBS9L09Snn2:22 a=wa9RWnbW_A1YIeRBVszw:22 a=gQW0MTutLl7eKD3OLfcZ:22
- a=TjNXssC_j7lpFel5tvFf:22 a=UmAUUZEt6-oIqEbegvw9:22
-X-Proofpoint-GUID: CfZIkcrd1qa8igZMphU88usSDGoMrsGY
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE4MDAyOSBTYWx0ZWRfX7QjnasjehEFb
- ibSf8uLao5eKgSbo4VuMLIGeb2k0giKdQrCsxBnG9pmWjD0Qejhh1Esvihin8/x1d7M+sK+NHwJ
- mfWtLvl0xIHtm0rbeeDdUFXQktO9FvLgsEYGluxUJCEArkBVarLc0vS0pqsfzbBwKMNqNw+4Ad3
- /60QUYJp9XxU/IjlOS684M42oaKCj6YCCCcLexAtctFk4CWi85jf2k1uaHSctp3UhPtCPbbgt6f
- l9ua3KFHg7O/nG1UNKWZVZe/7qvwvfYJ/rgUcfi1CrsH6Utf4E3XTNgcTbOPz7mMF2spB0RjRzB
- oZW3bbw8gh0yEfAajq1SiqusZq048K1FL5E4+s60WeIzv1YVwvASSsGZL4aO5CzZmC4vVvZiBvt
- OhgJv5Z+V06tD1okYAgWGsmDAn/uamcrRpgMbtjhZ/8SM5VUsyqrfK0ADTO3z1QLbZaur77OaA1
- UO/4cOoCyBofAlP1x8w==
-X-Proofpoint-ORIG-GUID: CfZIkcrd1qa8igZMphU88usSDGoMrsGY
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE4MDAyOSBTYWx0ZWRfXx95HBEQPdMHW
- nGAiunagkJH8CBkc4FI/BnDtbJkN/OPsa+2OvDQXhvgOPLwBSqxe2byggmTyf8LBWJ2UrIm3c48
- ChSLYNih80X8BgXEDhE7RtEJcTnMSlk=
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20261118-mailmap-sumit-v1-1-0c674178495e@oss.qualcomm.com>
+X-B4-Tracking: v=1; b=H4sIAJBb/WoC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDIzNDQ0ML3dzEzJzcxALd4tLczBLdJHNzkxQzy5RkCwMLJaCegqLUtMwKsHn
+ RsbW1AE7ONQZfAAAA
+X-Change-ID: 20261118-mailmap-sumit-b774d69dc808
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org, Sumit Kumar <sumit.kumar@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794988950; l=1164;
+ i=sumit.kumar@oss.qualcomm.com; s=20250409; h=from:subject:message-id;
+ bh=Xnn1LtxRhz23+8IMlgCLqST9EfapZNPN/wW0BQZ/t40=;
+ b=gr9AQeM+IO4e5v+ZtmaJhyb3YJ8c5resaTpzy1tPoWNb1ldihmVLmu7gzn7iRk4p4CVtFxf1+
+ Dgti4LD0dfgC9KF60IyO76BEKujMyu75t3nUxor/l7Ih2adJSgHe1pG
+X-Developer-Key: i=sumit.kumar@oss.qualcomm.com; a=ed25519;
+ pk=3cys6srXqLACgA68n7n7KjDeM9JiMK1w6VxzMxr0dnM=
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE4MDAzMSBTYWx0ZWRfX7qqIlgNNKyOG
+ nCBbRk8zaTa5itoTSp8iiZQFd6HIny7HPNO82v8uO3vnk//pRdc/NZNOljNsYqczzh9X5LbHQBE
+ 3qfHKEy/ifU7CTAohIDKCvkVkvROeRM=
+X-Authority-Analysis: v=2.4 cv=acT0Dhot c=1 sm=1 tr=0 ts=6afd5b9a cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
+ a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=LpQP-O61AAAA:8 a=VwQbUJbxAAAA:8
+ a=7CQSdrXTAAAA:8 a=KKAkSRfTAAAA:8 a=sozttTNsAAAA:8 a=svCTMBYCAAAA:8
+ a=PxZ3Jr3rAAAA:8 a=5WfTPKJtL--BJYubPpwA:9 a=QEXdDO2ut3YA:10
+ a=bFCP_H2QrGi7Okbo017w:22 a=TjNXssC_j7lpFel5tvFf:22 a=pioyyrs4ZptJ924tMmac:22
+ a=a-qgeE7W1pNrGK8U0ZQC:22 a=cvBusfyB2V15izCimMoJ:22 a=lbQUARmhvTNeubMQCRFT:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE4MDAzMSBTYWx0ZWRfX/3ivJCNgSOTL
+ RnvcNA3wuT7K72DTPXCMz4wGY8almxxZMtLvDfzyW6EZsvPik5F2QpHNqzCxF5SmQkLAruO13Vu
+ jag90tj7o++RJAz7IbKG+nxmOwFZo/HMjzzP/X4i/BvEoLGkZxp9Zi7InH5YPLQKZN0xnMAQg9H
+ oJKj1jeYkaPuZOwbIdrefgK3L3rIjf0y1R2CJsUF/+m6KqvxPj54RyynI+ps/Cvq3NcP5HgTwOC
+ uKETTrxEmRX85nSMyj/k9qXTpr8Kf6l7nT/7isPCVG6+yZMta/lyV9WAc8XVRy6lEORQJ5Fw9B1
+ 8Bi5QB8oUl2i1X0OGaGQmjzTDN2JtClcx5+BCMFmHU6fW9yn6fLWR5LJ50aYGZ31NqoiZCz0PIT
+ lxK4tJ0unPtpmLYDnroxU1BykY0tAWIg/Bmo2XEqu0i7d3NHtibDCaTvmHb6yS3ffpOjN2VTHDV
+ i/Hrx1vuW1CVevhr5YA==
+X-Proofpoint-ORIG-GUID: O_GGZtDvzAUiG4Khg5njB1l7iOTdCLbY
+X-Proofpoint-GUID: O_GGZtDvzAUiG4Khg5njB1l7iOTdCLbY
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-18_01,2026-11-16_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1011 malwarescore=0 lowpriorityscore=0 impostorscore=0 phishscore=0
- priorityscore=1501 suspectscore=0 bulkscore=0 adultscore=0 spamscore=0
+ lowpriorityscore=0 suspectscore=0 phishscore=0 impostorscore=0 bulkscore=0
+ malwarescore=0 priorityscore=1501 spamscore=0 clxscore=1011 adultscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611180029
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611180031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261117_233836_229849_A7C40688 
-X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-CacheID: sfid-20261118_000236_350539_8FB80D1B 
+X-CRM114-Status: UNSURE (   9.28  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
@@ -152,26 +165,34 @@ X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Map past iterations of my e-mail addresses to the current one.
+Map my old quic_sumk@quicinc.com address to my current
+sumit.kumar@oss.qualcomm.com address, since the quicinc.com mailbox is
+no longer accessible.
 
-Signed-off-by: Yu Zhang(Yuriy) <yu.zhang@oss.qualcomm.com>
+Signed-off-by: Sumit Kumar <sumit.kumar@oss.qualcomm.com>
 ---
  .mailmap | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/.mailmap b/.mailmap
-index d73ec73e5ba9..d5979b95b530 100644
+index 0d05be949eff9aab8cb02ad6064ada796988fab3..60d64d14c8d36dbc2856426eba6cac6a9d655c36 100644
 --- a/.mailmap
 +++ b/.mailmap
-@@ -1008,6 +1008,7 @@ Yixun Lan <dlan@kernel.org> <dlan@gentoo.org>
- Yixun Lan <dlan@kernel.org> <yixun.lan@amlogic.com>
- Yosry Ahmed <yosry@kernel.org> <yosryahmed@google.com>
- Yosry Ahmed <yosry@kernel.org> <yosry.ahmed@linux.dev>
-+Yu Zhang(Yuriy) <yu.zhang@oss.qualcomm.com> <quic_yuzha@quicinc.com>
- Yu-Chun Lin <eleanor.lin@realtek.com> <eleanor15x@gmail.com>
- Yusuke Goda <goda.yusuke@renesas.com>
- Zack Rusin <zack.rusin@broadcom.com> <zackr@vmware.com>
+@@ -909,6 +909,7 @@ Sudarshan Rajagopalan <quic_sudaraja@quicinc.com> <sudaraja@codeaurora.org>
+ Sudeep Holla <sudeep.holla@kernel.org> Sudeep KarkadaNagesha <sudeep.karkadanagesha@arm.com>
+ Sudeep Holla <sudeep.holla@kernel.org> <sudeep.holla@arm.com>
+ Sumit Garg <sumit.garg@kernel.org> <sumit.garg@linaro.org>
++Sumit Kumar <sumit.kumar@oss.qualcomm.com> <quic_sumk@quicinc.com>
+ Sumit Semwal <sumit.semwal@ti.com>
+ Surabhi Vishnoi <quic_svishnoi@quicinc.com> <svishnoi@codeaurora.org>
+ Sven Eckelmann <sven@narfation.org> <seckelmann@datto.com>
+
+---
+base-commit: 05441d697f7f9a927264f4058cbbc6a03dfcac9d
+change-id: 20261118-mailmap-sumit-b774d69dc808
+
+Best regards,
 -- 
-2.34.1
+Sumit Kumar <sumit.kumar@oss.qualcomm.com>
 
 
