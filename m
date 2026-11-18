@@ -2,103 +2,115 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 66AB4606A31C
-	for <ath12k@archiver.kernel.org>; Wed, 18 Nov 2026 12:38:56 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4AB5F606A31C
+	for <ath12k@archiver.kernel.org>; Wed, 18 Nov 2026 14:13:57 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VppOUvT7;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=TIHKyRTJ
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=RkhsfQx6;
+	dkim=pass (4096-bit key, unprotected) header.d=canonical.com header.i=@canonical.com header.a=rsa-sha256 header.s=20251003 header.b=eawyZez8
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
+	Message-ID:Date:From:MIME-Version:Reply-To:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=PCeTG5B3FnqoW+qGoo1FXEjHCoH6J7aBegNAVVKMa/Q=; b=VppOUvT7ckTuuyNfQgTGmHv8Bc
-	e51d9Yz6VdfFEVz4nHRGLMk3MNA7L8OOaVsZPP7TaJIik2pVGPO6mbC1Wdm2fBmmRe1BDEsK/EYrq
-	OvuZtYEXRTGmRMZtUjwsJrE7zwNOv+7tgk6zxN8MWydS9GmgkoBcf5q7ZK0ftjkLO3RHejIgl1EVn
-	2TNT8KT+RfGkPXNh5mID1amY4n8vJadIAhVpDs/EbP38bW0d8loMjsvVJf82BBbIJ4NaWYMHsAgqG
-	BeOrvlPPe/Lv9vyLNpkz/WpkCH4+33uFOM281zLjt/pE4WhwxQ7X4fctof1fkUz3Xsu2LHyV/ufXT
-	Z/w65rDg==;
+	bh=KtJsCQtB4slLzmfLD0s11tSr8dU3d9fsZniscQImFmA=; b=RkhsfQx6EzPnDOM+S3ZirKRn1u
+	IXUgO3b0SRc2KtLPkSEXw8Zkvu95xIbmI0LvRvFysyCVCKNO+idmlvX3QCiPbh1h1KL9ypEb6mYRE
+	4WoEIlJi4ogMd90NnRTWgtWpLFCSLzWEFFuqMZ6njVNHaFSZmp6pe4in7tilzhM5NsqxPBsw1qZti
+	cu56TNzX3tYWazcKFYn+CR6Q/qj5p+6xKe7//HGCWx/dJONnFN62m1rWn2OxsvV3Unp78oJRujJwV
+	7FZlcALtL39jzuzF6ZV2X4fd6hIwKEc6vrcbJjN/EZdXeBZMwgTfp10ap4JX1akoGdSvTOtyBShsI
+	iX60IIfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTew9-00000008sIi-2LZ8;
-	Wed, 18 Nov 2026 12:38:53 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1xTgQ7-000000094VH-1VRF;
+	Wed, 18 Nov 2026 14:13:55 +0000
+Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTew7-00000008sHQ-1DGu
+	id 1xTgQ4-000000094U5-3Iyh
 	for ath12k@lists.infradead.org;
-	Wed, 18 Nov 2026 12:38:52 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-4a33359c1b3so591446f8f.3
-        for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 04:38:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795005529; x=1795610329; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=PCeTG5B3FnqoW+qGoo1FXEjHCoH6J7aBegNAVVKMa/Q=;
-        b=TIHKyRTJFFSpMXS+HquANL69a/DVeDiZ+0AZeJb1WF9FPzWpPgqUzt691Tf22H/aVb
-         r4S4flu5T8HOuoskZDxFQuJEJAXuBvn68RWcoRQWt/jeJ7LgVa4WiY6OMikGS31S0X2d
-         vWNpUnNN/WqRCMK3Lvb8L2BXF9NBH/kjXJ0v9zdma9tA9NNh+UfMuvKLt50Yp/Np/5fK
-         cMMfIS9EFtyweGo7ILDh6mxvhDM8Mcd/GJH7JicAFTpyoZIk15bvVko+vhV8AiGwTSkC
-         u8lRtsZnorjMq4G7P/m6eaEl+6syGjCXS9fnh2/OkCyCnjbOxu2/pDtoXhsOY8um1/tH
-         6rNw==
+	Wed, 18 Nov 2026 14:13:54 +0000
+Received: from mail-ej1-f71.google.com (mail-ej1-f71.google.com [209.85.218.71])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id 8AB753F51A
+	for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 14:13:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+	s=20251003; t=1795011227;
+	bh=KtJsCQtB4slLzmfLD0s11tSr8dU3d9fsZniscQImFmA=;
+	h=MIME-Version:From:Date:Message-ID:Subject:To:Cc:Content-Type;
+	b=eawyZez81rU5yJF1wXuX5dbkaNAwO++19D0aBZIvXwHWFkxkQPGfw7Ohl8g1LE8Di
+	 tmslF4ljvEjOpYpEGkdm3T4M/k0KHd4KMbldqbh+gndMtE5ghg/fW/cdAMccDXKD2L
+	 0WaPvRRRw2YP3yLWE5Q8/7Jl9dhgsSFjDG+Vx5cdmM7pCM9fv++UsunP619b9ugZFO
+	 ItW2pjs5PLyVtjSlepFXweCy8VMbh76rs7eTwjPI0YCnDk6WPIMDTrLaFKpbu//RZ+
+	 2Jfdfd1X0+jO/xbQ7NLkxlgavaGr6LK4v0QtBFNpFJbCcw7v1rQ2qUEIPAxH4HTnbf
+	 akMF79sS4Gjb3FXIAIvi0NyIrzZK6C8ToEngr9fNw/jnAib6oiV2gVaoJZ5wDlR15B
+	 f3KJXyAkvxGzWMhKraBRGMrE3Vn9xNjQtRieryx43FUJ4qb8bra5sfmwGoFGuFA7N2
+	 McytTnS/sRngRcefJcFudkhx35sBjIxv6KO9TsqDYH/uLjieeDgh8AdHGSBg+RUO4e
+	 6XeFWnRk0RHV7Sy758JlG+Q2P9j1Glt7SvCLW0xdITwv9/zli0B0MfLfJ8zQaXuAG/
+	 DNAMKCbkT9tmuiB+0HcYqKmq7oMNd+6244lVIvSz/gFXcl6V8DGpPMadylItRw8qaL
+	 NuJbPDfLZlobpB2tWJnaeLjo=
+Received: by mail-ej1-f71.google.com with SMTP id a640c23a62f3a-c4d288b67ccso71720966b.0
+        for <ath12k@lists.infradead.org>; Wed, 18 Nov 2026 06:13:47 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795011227; cv=none;
+        d=google.com; s=arc-20260327;
+        b=BzJRZVnhj/gLkkbpvFyPOq0FAMKpxNDy6/DYyIIAlQ9eAv4Z9/lL0Ja66saj7/UdaJ
+         yvD2DeChIT72n4CuGIRhQVe6tA4zT4blbLoDKHYiVngIahJgUKFPCDe61mjVsjDOWiM1
+         4sOgkj15jl3dI07Qn8v8T6bsCAYIJLWKYd4MFvCAfZFdWBYLJCfnzP8q+WhcQLf/J5z/
+         03Vizbsg/frFOr8JGBudnxDH8yBkX9HkXSrpJ7e+Zr6XXxmZj5+lcO9QpNkEfoFC5p52
+         NTI2RzxiXNMM7vxoMmkzluz1f39lJgmAj3Sbcj0OlhpNeqbhRQGRGXer7eqKSIQpEjq2
+         wInw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:mime-version;
+        bh=KtJsCQtB4slLzmfLD0s11tSr8dU3d9fsZniscQImFmA=;
+        fh=TWDsSRgyohn4tqBl1K27wbdYEFgnq/cRJ7k6iWPjWxs=;
+        b=aE6FWdSdhgLCVEvJWsN2kri2MH17GJGE3Gc11aGoH3FpyNo0pQGmZXV2+l3SUoOgw0
+         0ghROnuKc1Sxe7f/AYUhf5c6lBIDfijDNtEITZo09KGQGNsABGfpm7S+wAr4Ro106xZO
+         RJPyv1bKYqyWWDYBFXjCvT3ZgjL3O2Gs4YTzDtMHYw5VWRzVi9R39n1fQkQ5wN4K22i3
+         xgluc9KC5enfQP/01E8yzBchYwhIwyZp4CeSeJ2G8cdkE8c4fT0kn9m4J7jdg8ZSej+Z
+         aW5SZhHycjtQ4dlmhyi73Jt0m+wcGGxOdgbXmsDLtvHhmedkGCessGEZPlsycBDBxCJZ
+         ELjg==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795005529; x=1795610329;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=PCeTG5B3FnqoW+qGoo1FXEjHCoH6J7aBegNAVVKMa/Q=;
-        b=Wtcm3tXEv6WU3/KMUWYAMkaJ5Qfn2hC6v+yUF1HziAoui0rBY6mr5aNaUBIStrQxPp
-         2K+DNud/TVyZDk0pPka3iJTUBnyKEBkq2idn05USUTQazOLY9d1EnIEJVAAt1VUHjAWP
-         tbrO6CZQ4Guppx3/E8bdWw5jhf8V5TfwLUCzfV2NG0L2Gdn+E2Ui8Sxhp0r3KtVeEC5M
-         Q9f7tNNrokwGeEVBV9pcGo3HSngM5T82P4J9+q3AKecNz8eFXG82b+1P3F4ZQXyZnGXj
-         KS9ir+efezDC7rfd+Fc+sfKWhYvAQSRq/MvWJj7/Lr+iUTuHMU4x+kaMt6hWYRjqbxQZ
-         PpgQ==
-X-Forwarded-Encrypted: i=1; AL+hErFJLe6yDfYWbXouWcD2+zK4WjEnZvGDoXjyh7vUtBFdh8o6Fk3XRPaWN6VfUtfwFX25dK5kQQo=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/4pSo9yHsLqKcEN8cnr+D0G3jnHRForDRqXKvzuimSzQ7iH776
-	fRCZZ3b07zbKYMkv4YFqMhZv/dzAu6DlyPK/1cOXn/+pK1o6UXt3XnqN
-X-Gm-Gg: AZFdTZfoqqo8HgovcDqqjLXa5omZeBBOsebMVROr/hze4MVE0tfJ+vik9r5vmrH/0K4
-	7cP2zmuQC1sm6EkaF8zJAN0YacjsgG1CTglOf4tEuuKlQ9e4aXKIxQ2W7X9B/TA+VLZrc9Ffopz
-	Cu4boJNL+6+opzIdrt24oFk2RJLrvUTm7O91lDiKZApZGX3XTRYDqyxMdTrCrcauvBvZU9371TZ
-	UwFRqoNsETrVDvRZBXFIqJRQUbA9hkjStOgMhjHU8bRtq08+P2qtJ+2a7WrJcs+e/4BX0cfFcSY
-	/pCXiBWakCXQPttGQNVxxvI3AmCHLtkpqhpGqHMJ1MkfDAUQ9V0oulfhYsvArEZjqMrTGA90gsD
-	/xGEI0+GB06Un8eFNLC/CJGqhFU06X/3mG9JMERFH+6jwjtP36QLxI0ApMUK7RvK2rN4xa8oDhu
-	hOudpDkuXuRcy17JU22c/OyTtRULvkMdBSM7kCvModvKnlGXtH/qVJAHCvs/+4wFZGMeiS6syY8
-	04qY6iSJIypQ/wpSF/1y7E8QVB504kKG8UJSA6XHSThmP5CEvpT7pWkuzZSpmBMmcX6fTvXw0T6
-	7BxzPtKzZCIaZNZAzMOeoSR6UPH/2axezQ==
-X-Received: by 2002:a05:6000:1a85:b0:4a7:ed95:7c9f with SMTP id ffacd0b85a97d-4a7ed957d61mr1616041f8f.22.1795005529035;
-        Wed, 18 Nov 2026 04:38:49 -0800 (PST)
-Received: from vitor-21h1cto1ww ([2001:8a0:c4c6:f00:370f:e244:9816:c590])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4a650d2efcdsm4539201f8f.5.2026.11.18.04.38.47
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 18 Nov 2026 04:38:48 -0800 (PST)
-From: Vitor Soares <ivitro@gmail.com>
-To: Francesco Dolcini <francesco.dolcini@toradex.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Frank Li <Frank.Li@nxp.com>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>
-Cc: Vitor Soares <vitor.soares@toradex.com>,
-	linux-bsp@toradex.com,
-	devicetree@vger.kernel.org,
-	imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	ath12k@lists.infradead.org
-Subject: [PATCH] arm64: dts: freescale: imx95-aquila: Add ath12k calibration variant
-Date: Wed, 18 Nov 2026 12:38:37 +0000
-Message-ID: <20261118123837.651915-2-ivitro@gmail.com>
-X-Mailer: git-send-email 2.53.0
+        d=1e100.net; s=20260707; t=1795011227; x=1795616027;
+        h=content-type:cc:to:subject:message-id:date:from:mime-version
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=KtJsCQtB4slLzmfLD0s11tSr8dU3d9fsZniscQImFmA=;
+        b=HJmjLXYB34Wpo+Vdh7d4R4aXxdOpdGejIEVZNpiY5g7aW3p2bMiOQ+H5Lfn7opCH2N
+         tc93UthM0JuIvCzXhK4dsIU4nmvZa2x4cus5SyIQd/UXvDy2Uyq3AW5OMEiXvcdhFRJt
+         CbBxbZoSD5Yh9oVmmjd6vqVuWY30gjmR0/NADLbbwdMOG5uzj4n4Hqq1sJfsPAbcewt6
+         D6qQ105MonhMGbKl3jX7IpApSCXWLuPFMRsBWtoUKIWxrf5UNLRmj0gnSDn3Moy6VCzg
+         LJwrDhc265YqaOWmJRFjfDnbWzNU31RVNrOB0fVvXDF4AvQgKzq0q+8La0SSURwixJSU
+         r0wQ==
+X-Gm-Message-State: APuU4Z8l7TEL6tlcqXfQ5FFEQ7mYrTh9xahGpy1bhO7+4ygoqANAP8VB
+	/Pate9Hjej4aFL4wBpt0ziJBVetdtU+QBe87O9wlEKubeHc8+HJI4trIUPAQKUccBlBY2kJLyVL
+	QbsE40sbeFEIqOsRLfuRTgxpqEWUjrGHIfaO7ZR6iVabJ9KpTq5U6gN7BzrBExhV/kRQFEelunA
+	7o7+6mAkntOrYgemFTbGZWyD/e2Y9mnx8F2jl1Q4Wl1deCw0C2sg8pv1ydvzZSou6MBYg=
+X-Gm-Gg: AYBFou0vtvdDamUwQmGM7u2OPGstxll3UDkZcuVAGlYaqo0gs2vnPgRFIuf4al47U2y
+	3zdE9QCjNLnzCIC5kYbiaDQ5MKb8Vw9hUxLFC0YmrmOUWpKBzyf+t8VZ8fkgmFrpeAYC8ejcrUK
+	NPr36Y1B22UjAzq5j/IxGGc5+yH3dSj7eSCdHH3ZXae8gajQ5AlrJ3V4kY
+X-Received: by 2002:a17:907:ea94:b0:c4c:b4fe:c9f1 with SMTP id a640c23a62f3a-c510e518e67mr260745866b.35.1795011227148;
+        Wed, 18 Nov 2026 06:13:47 -0800 (PST)
+X-Received: by 2002:a17:907:ea94:b0:c4c:b4fe:c9f1 with SMTP id
+ a640c23a62f3a-c510e518e67mr260742866b.35.1795011226779; Wed, 18 Nov 2026
+ 06:13:46 -0800 (PST)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+From: Tobias Heider <tobias.heider@canonical.com>
+Date: Wed, 18 Nov 2026 15:13:34 +0100
+X-Gm-Features: AclHuK9HfFywsV5OnifLmbEOwb2bUF_IOO00_nvD-rPve7wXsTyjzkFR6oG_6yU
+Message-ID: <CAARv3RRwnmtaC7ZJVD0tEc3VVOWh8AaTpp+TuNzR+D1M-fQF-w@mail.gmail.com>
+Subject: ath12k: WCN7850: Missing board data for HP EliteBook X G2q
+To: ath12k@lists.infradead.org
+Cc: Jason Pettit <jason.pettit@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261118_043851_350478_506DB188 
-X-CRM114-Status: GOOD (  10.65  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20261118_061353_259046_FC1DF876 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -3.3 (---)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,60 +121,60 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-15.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-9.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,LOCALPART_IN_SUBJECT,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Vitor Soares <vitor.soares@toradex.com>
+Hi,
 
-The Aquila iMX95 has a Silex SX-PCEBE Wi-Fi module (WCN7850). The
-module reports the same PCI and QMI IDs as other WCN7850 designs, and
-its board data also comes in variants for different regulatory domains
-(US/EU/JP, UK/CA low and high). The IDs alone therefore cannot identify
-the right board data.
+I'm working on getting Linux working on a HP EliteBook X G2q Glymur
+laptop which is using a WCN7850 card.
+With the latest git linux-firmware I get:
 
-Describe the Wi-Fi device behind the PCIe1 root port and set
-qcom,calibration-variant to the US/EU/JP board data.
+[    4.939104] ath12k_wifi7_pci 0004:01:00.0: chip_id 0x2 chip_family
+0x4 board_id 0xff soc_id 0x40170200
+[    4.939109] ath12k_wifi7_pci 0004:01:00.0: fw_version 0x1103006c
+fw_build_timestamp 2026-03-06 09:10 fw_build_id
+QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
+[    4.958280] ath12k_wifi7_pci 0004:01:00.0: failed to fetch board
+data for bus=pci,vendor=17cb,device=1107,subsystem-vendor=103c,subsystem-device=8e64,qmi-chip-id=2,qmi-board-id=255
+from ath12k/WCN7850/hw2.0/board-2.bin
+[    4.958283] ath12k_wifi7_pci 0004:01:00.0: failed to fetch
+board.bin from WCN7850/hw2.0
+[    4.958285] ath12k_wifi7_pci 0004:01:00.0: qmi failed to load bdf:
+[    4.958286] ath12k_wifi7_pci 0004:01:00.0: qmi failed to load board
+data file:-2
 
-Signed-off-by: Vitor Soares <vitor.soares@toradex.com>
----
-Depends on the qcom,ath12k binding changes in ath-next:
-- 75bc725cd92b ("dt-bindings: wireless: ath12k: allow calibration variant for WCN7850")
-- "dt-bindings: wireless: ath12k: Make WCN7850 supplies optional"
-  https://lore.kernel.org/all/20261117174154.549590-5-ivitro@gmail.com/
+I added my IDs to the existing e0ee entry as we did for similar
+devices like this:
 
-Until they are merged, dtbs_check reports the missing supplies and
-qcom,calibration-variant for this node.
----
- arch/arm64/boot/dts/freescale/imx95-aquila.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+--- board-2.json 2026-11-18 15:02:25.041598035 +0100
++++ board-2.json 2026-11-18 15:03:11.825069089 +0100
+@@ -68,7 +68,8 @@
 
-diff --git a/arch/arm64/boot/dts/freescale/imx95-aquila.dtsi b/arch/arm64/boot/dts/freescale/imx95-aquila.dtsi
-index a1870f7b2eca..a73d137af2c4 100644
---- a/arch/arm64/boot/dts/freescale/imx95-aquila.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx95-aquila.dtsi
-@@ -621,6 +621,14 @@ &pcie1 {
- 	status = "okay";
- };
- 
-+&pcie1_port0 {
-+	wifi@0 {
-+		compatible = "pci17cb,1107";
-+		reg = <0x10000 0x0 0x0 0x0 0x0>;
-+		qcom,calibration-variant = "Silex_SX-PCEBE_US_EU_JP";
-+	};
-+};
+"bus=pci,vendor=17cb,device=1107,subsystem-vendor=105b,subsystem-device=e114,qmi-chip-id=2,qmi-board-id=255",
+
+"bus=pci,vendor=17cb,device=1107,subsystem-vendor=105b,subsystem-device=e122,qmi-chip-id=2,qmi-board-id=255",
+
+"bus=pci,vendor=17cb,device=1107,subsystem-vendor=105b,subsystem-device=e125,qmi-chip-id=2,qmi-board-id=255",
+-
+"bus=pci,vendor=17cb,device=1107,subsystem-vendor=1eac,subsystem-device=8004,qmi-chip-id=2,qmi-board-id=255"
 +
- /* Aquila I2S_1 */
- &sai2 {
- 	pinctrl-names = "default";
+"bus=pci,vendor=17cb,device=1107,subsystem-vendor=1eac,subsystem-device=8004,qmi-chip-id=2,qmi-board-id=255",
++
+"bus=pci,vendor=17cb,device=1107,subsystem-vendor=103c,subsystem-device=8e64,qmi-chip-id=2,qmi-board-id=255"
+                 ],
+                 "data":
+"bus=pci,vendor=17cb,device=1107,subsystem-vendor=105b,subsystem-device=e0ee,qmi-chip-id=2,qmi-board-id=255.bin"
+             },
 
-base-commit: 33adc96ac217d6e95b7c44ac383c19ca4ae2ff52
--- 
-2.53.0
+This is enough to get the card working on my machine, I hope we can
+get it added to the offical boards-2.bin
 
+Regards,
+Tobias
 
