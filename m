@@ -2,135 +2,145 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9CCAB606A320
-	for <ath12k@archiver.kernel.org>; Fri, 20 Nov 2026 07:09:19 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 67FEB606A33D
+	for <ath12k@archiver.kernel.org>; Fri, 20 Nov 2026 13:26:38 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nN/HSKWl;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=D9um5Vz/;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=JaJ63WfV
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qKT43azX;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=CwQDXvg0;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=job7rDcZ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Unsubscribe-Post:List-Owner;
-	bh=UuIMgIXaNSGyfL1Y4Rh63ojF60kjSTFpeR+uZHJN5Yw=; b=nN/HSKWlX+z/xmrmtkoCo5H1cg
-	hXwAV7hX17APN+Tg73B4dsn3bqBA399jPOzaFJsQdCd4f26r/ICLmE5Xt0KuLx4eMS6Q/cha/OPz7
-	kvqIfoeNvgUngzsTMgq7PMcJZyd8jH1ooQZELAJAA2ZoSfU7HdmHkFLftpxrmIGlflPsnL+Qiaj88
-	i5dznCqvZ7yA3yy0SGc4yrmVq3SYHQq5xxVZjEyJyQrw0A/8gE6V9L2nR0dUYmv6En/kr7NZH8RlP
-	cFFBjIhJq8zETTK+RCGFDKD7OU+9nOMr9tHHHvR4bGI1kNRKQruzPq3UE+5+e2pmyzrIY5sM7JM0y
-	fx80RNww==;
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
+	List-Owner; bh=guyr94lwtT4HUWbL32yj9P2Kvwo+CvFhkMLt90cotQw=; b=qKT43azXzZANtN
+	XNmUCeeptva6QR5UPmrKscMkSDCGItTgyqPRioBbNwrPgANA0k63yemK0cGptmAng93TVi6t7XiV+
+	xQkBRZT5SWxWJcRu98jZ5Q+rA3g3+UMvTFf3iIWoLP2UgcFNk9FQrXMy+rh+8iE09SJ/r0qIJQxgp
+	FzgX8Oll9v3nK/3FR1n+cu8UQ8e7b1FD1j9H7pBQF2GygBFwVHTAkVXBhxnOJ08tzRgfjWmRLD0n1
+	Dzx8KHEUCPMlcKRim0XkB9CghTWKw2CNxh3BVGwcfk2P7BNnQ1SdWKY8yVJh+Oek3nI1Fak5kuhVY
+	f066QZo8rk+t5URpn0jg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUIkH-0000000ECin-1Dwu;
-	Fri, 20 Nov 2026 07:09:17 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xUOdP-0000000F5oF-39Fa;
+	Fri, 20 Nov 2026 13:26:35 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUIkB-0000000ECiF-1pyY
+	id 1xUOdM-0000000F5nd-2X2n
 	for ath12k@lists.infradead.org;
-	Fri, 20 Nov 2026 07:09:13 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AK3VFaj2143534
-	for <ath12k@lists.infradead.org>; Fri, 20 Nov 2026 07:09:10 GMT
+	Fri, 20 Nov 2026 13:26:33 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AKAjolG1462867
+	for <ath12k@lists.infradead.org>; Fri, 20 Nov 2026 13:26:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=UuIMgIXaNSGyfL1Y4Rh63ojF60kjSTFpeR+
-	uZHJN5Yw=; b=D9um5Vz/DrHjtqSblFGAn8XcTP3F+Qyo7KmGzcPT++sQ1tPdGNc
-	pdjO+UdQcPDhEjVpW2pOOzEJEA5UV/C1cw4SkZqxeJmnoCouuVdJYYTkJzaVp6oV
-	vMJIF6cl4KQZqLWxGVaI0O2lD/Uk3QFFFXedx+U+b+cEQAMvD0psGnzWBjGPW1QH
-	b+/B3bPrqWCQaaFGJEPFuKOFa7vzHZu1SEh8H8C3/w+9xO23Wa64v8mlnpmuvzwV
-	I2JGVv4vDQlk0U+S2njku5iz79BfneMt0ZmZ9ojR5F2mv8+4Rl3hZ7DIjqnLlsep
-	9IP8KBif/ETzQlA8U2U81Uf6UgloZF4EKAQ==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j27au2cwn-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	guyr94lwtT4HUWbL32yj9P2Kvwo+CvFhkMLt90cotQw=; b=CwQDXvg0LyggqihZ
+	EyN2KmQUQhw66VZ49OxeSUVN/TqOt0ZcSx1f4gw0PY0q/82LuDcuVE8jqPBvul0b
+	uiQcuGiqbpfRauwwMXlrUw2SkkRLVsG4sorz7h4dkXE61+eRxRPAHqNJYrGR0J27
+	d+5Yu67PRZB9GCq61m1Z4iaGbS3IFPDSolYr4FGizg25R94HAHf+aGInvtNklSUX
+	wLELFTcMXE3CUv/b9bPYsXpZiKmFsPlJ7YZ8nDvFxyum02NxmPB0cdBXJ7JaiVBd
+	EhHvwRlyEIxinHhX2NPr74fyN324/jh+Pb714TwlMqUSUEeyKjfGIW7P0KE3WxRm
+	0dEFQQ==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j2guahpw5-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 20 Nov 2026 07:09:10 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3b4139b7abcso763406a91.3
-        for <ath12k@lists.infradead.org>; Thu, 19 Nov 2026 23:09:09 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Fri, 20 Nov 2026 13:26:30 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-384c78aa0dbso1158156eec.0
+        for <ath12k@lists.infradead.org>; Fri, 20 Nov 2026 05:26:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795158549; x=1795763349; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=UuIMgIXaNSGyfL1Y4Rh63ojF60kjSTFpeR+uZHJN5Yw=;
-        b=JaJ63WfVoLfrt9npkTid4D4zOA4q6gSjFdqRrsOv3cwcSh7or4KqobqREQSqMgOv63
-         f1gPeQKWO8UhFu0X9G0wU7slI9WeIgOo8sIdh9Qp5uVCqiLyLQsjQtgdoOSk/7u8ICtC
-         ODo+V/hPSz5aoYlVmPQ3ItDCFRBooiKKFO9Difoj+6zpcD+IhtA1K6zXiPZRIFXVy8Q/
-         ZlVnVUuvGeN1rn3QkivQtom8nL3/3DlRFtCR0RYYIQXk/Eazfuy6t95ELm0BIyESNftX
-         5bEwV5uJe6k7miD5N1zOPY7kSLtwLEbuY6joe6jywc0bwuyAmAW8OF+A3xa9L2wIP9jg
-         D8Gw==
+        d=oss.qualcomm.com; s=google; t=1795181190; x=1795785990; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=guyr94lwtT4HUWbL32yj9P2Kvwo+CvFhkMLt90cotQw=;
+        b=job7rDcZxF108G+lWgYtl/gDeXKH4IGlFpbA21THfvQE6RSJSttEP4JZna+HWiMUqu
+         kQna6aW2OA4YLFIviv2Qa7mOzGmyvNCoavPNJn6kBvjSEMqWmgcVpehdEZ2e2Du4uSQ4
+         o5IywSOihTynSjk5Wty2QGyjj3HnBPCSw/8MOV1zpo9Uk0vARCFV4Bpg0NeAbgxn1Hju
+         elYCVKVcLxIGvsq0vPSFsEpvzN+1smYQl4sLMN9F97qn2jD9oiwibvXZu85L579rLLKu
+         zA90nLz0M7uYG5eHcTEF005RLbwFT4TLy8ve03TDzVTk3BxPoO6Y2+4YNtun23Ib//nP
+         3Ldg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795158549; x=1795763349;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20260707; t=1795181190; x=1795785990;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=UuIMgIXaNSGyfL1Y4Rh63ojF60kjSTFpeR+uZHJN5Yw=;
-        b=sKrISNdlmILUjA4RzATtks7yI2kkPePuEdO/RKZILAQV3KPVNvxutKNkmxRgDItmuw
-         IJEpCJhzLsIlFvgI7wHyjEpnHMLrnbjvpGkFjxRKLNp/IdVZsPYn2aTnOjRedO24EsMT
-         Gjqe3vFQss/XENNW6HRrKiZkDOEhLJGO0RJfGz2NNaTLJ8xKVE36v/RFw3k3xXYQUxPL
-         SfxdjfJY1f8wGYD8QkcMo23FC/54QYgW3I0V7YLvjXQ12Q/BAS/czQAZgV2/fjHi64rg
-         zpPXyYdzlnzfWRMWAjTJSvoX71V+9XrE4LxNA5mVlgcBqri7Thnsd4eYxsnQUhi0lHY2
-         +e1A==
-X-Gm-Message-State: APuU4Z8oLHgLTy9P0zOjVgLkJSXTLjG8uvObigpmXw5kZvjojWE6V0Su
-	N3LMd7gQ3MXSKv8wH9N8w5PyuJKWbQcKc3nBRXESAReatWSWTnPE6jV4nChGNU5UIildilD9Qzj
-	lr8cAtg+kWWqYdbYG8zBxbMnX50Ptjaf3FbBR32ECLBQpajchScXFiu7BPVKLTd0miKrLsIOr
-X-Gm-Gg: AZFdTZfs/JQIGOef9w3MsvBJv3jk/vteMD54AILKA4pdqlWkchvPsEO/LrIgRpxdraP
-	IMaRS1azGHT10pCo0/moYBeiTF/UqgGLTV+ja6Ay+C5kpEbPhUQfdMKIyvefDsYZBUaeejjqKc9
-	zdZKepsYEaks1atp4VcrEFoxM/TjEkgaaZc5MrIAimXo9FXXlUQg6/DW5WUjAdrgRslU+MRcBHX
-	csX3Bb7pYqEZ3OGUjo1rH8C57egYaDTFVbUWPzW4GsNrlxp9j1pL5N1fh1/2bjy6SIiaHzvcH5+
-	+8kXTUNvu4ffhed5lAaiv+8xniILSjXjyGw+Z3zqHk3Olrk6EVCgvlmNyhMPnwBDAvJn7iBTp8L
-	j5LAwNqV5Y8DTXVJ/tX68hvV7H0dCHFty6MMw+/sm62bGbUbCzfpNC5L2ynMIeytyxZEBGMiIFH
-	iewqYeaJfjJ0FTFY3E+J6FSakJjsIQuQLzNr3vTH9eJOqdwa9JMTT7P5jkGy9wuw0=
-X-Received: by 2002:a17:90b:388b:b0:3b4:574:3bd6 with SMTP id 98e67ed59e1d1-3b41c982e09mr1817118a91.66.1795158548845;
-        Thu, 19 Nov 2026 23:09:08 -0800 (PST)
-X-Received: by 2002:a17:90b:388b:b0:3b4:574:3bd6 with SMTP id 98e67ed59e1d1-3b41c982e09mr1817090a91.66.1795158548235;
-        Thu, 19 Nov 2026 23:09:08 -0800 (PST)
-Received: from hu-aisr-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b41d22aaeesm1057062a91.3.2026.11.19.23.09.05
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 19 Nov 2026 23:09:07 -0800 (PST)
-From: Aishwarya R <aishwarya.r@oss.qualcomm.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Aishwarya R <aishwarya.r@oss.qualcomm.com>,
-        Harsh Kumar Bijlani <harsh.bijlani@oss.qualcomm.com>,
-        Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Subject: [PATCH ath-next v2] wifi: ath12k: add hash table for peer lookup in struct  ath12k_dp_hw
-Date: Fri, 20 Nov 2026 12:39:00 +0530
-Message-Id: <20261120070900.541279-1-aishwarya.r@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+        bh=guyr94lwtT4HUWbL32yj9P2Kvwo+CvFhkMLt90cotQw=;
+        b=20SdYOQUJse9hXH/d2IOyu1Qjm2B5vb4iew2NppEvfJMEG5eDPY8ANyK/LHdE2E7yp
+         B+Hb7apk1gIodCp7M5tNuaMiAARzVN9kQ+8yLhlkssz/munp3IHjDB/ptW04IkvkLPTJ
+         CjHRAJi7rNf5pgLGG4bLtmGmNpUG7AgT105ej7oE6bgSaa39kUc6J5FYKoJ/exerzAEc
+         A5Hc6BTdBZykThHLM9xq+YBgob5BuclDZYFozceXG8OY2BzN/6R9AwPSRRZnU/VOZ2C0
+         Psw/8IMO8bzMdxWI2vd9iR9w9W4tVZwIUa4snW5GAU0d6v0d3aNRqSVVEJuM2fuHNlPu
+         q+EA==
+X-Forwarded-Encrypted: i=1; AL+hErGlJ/+oH3VvhlzWJZMecv3FJ4XtIcXsD5J3RHMCRh9ZB0PxyjZx5aO/F2d2LX1FhtEX1G5mr98=@lists.infradead.org
+X-Gm-Message-State: APuU4Z9az/q24ZtlLbsmiU7oHHO1KzCdtxmjvwlaVflkpR76kaNz7z+w
+	3ghtCEyMe75CH+fW3Z2vKhEXwOUeSh0WCZDnmCSTucGd3M+JCUX1zFvSyMk/WxhtdQ2H7E0Ugft
+	WgfiYxVfG54+mDWDyfByUhxVMx2fiW/qHXa+ShWc2dAzeoiQdi1pRd1QXX8QkbGXJFXB70pZo
+X-Gm-Gg: AZFdTZf3STNP6RHw0azzGtMrD6rdoL1cpVZV0fNdW7vLzX5KtIAfEWQJfPDlJkoj4au
+	AvHD0gMlmPg3Vda/qfFixGKz63UwC+mUBCWKG14rjWLrxTHI028OxCp6kbJ1lDCozca2vpu1T7z
+	Rw+E6f89OPW2l9HxahMjDDKn+aT+53lXtc0Ah0bNVCjeN8/eWTpHOF/Gsoc0WxJe6oR2NJXzTiO
+	4jM7oCVecPJWDelQEQOzQipekEhRlgZ0MXHjlU+zxxx/0oQ4PtcjV3bb3mDHb+zr51EdHogK8GK
+	Gx2nMmPnGMI5yPWGs5YZ9xKIxATXzcSaUbcjubVvo3k68tGY3v1Z9aj6ccvE30nky3ngIJNygqh
+	BtZIGBUKxX9xwH8ATwbabBm9RzhcXCv+czXFNVfPOup5JV9NnEnRCisMO41c+ymhxVMZMutwmBe
+	0JZtS9MnoWgV/dmCBD
+X-Received: by 2002:a05:7301:929:b0:376:37a2:87f3 with SMTP id 5a478bee46e88-38570f25262mr2562922eec.31.1795181190023;
+        Fri, 20 Nov 2026 05:26:30 -0800 (PST)
+X-Received: by 2002:a05:7301:929:b0:376:37a2:87f3 with SMTP id 5a478bee46e88-38570f25262mr2562890eec.31.1795181189475;
+        Fri, 20 Nov 2026 05:26:29 -0800 (PST)
+Received: from [192.168.11.103] ([124.123.81.254])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-38567daaf70sm9479753eec.28.2026.11.20.05.26.26
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 20 Nov 2026 05:26:29 -0800 (PST)
+Message-ID: <6c91ec31-d17b-4ab1-9031-f61932c57dfa@oss.qualcomm.com>
+Date: Fri, 20 Nov 2026 18:56:24 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTIwMDAyOCBTYWx0ZWRfXyrDopSJyvuhL
- Flf4Mfs35mHAkCzjxzxYD0UORXcgSbHpJXfdACmMYlq3EwfywWXgqF8aZeeD+Mdgd7QP97N5CyV
- 36HMKTDhnV692JFPVlnocRlUj4T6R1HdsQfuWXNUArvBtg9+MvjzTwQKU737krOpd+zkLZlcQHz
- 8wKvc40FpF4n15kf6TZlU1k+jiWi8SGA4VDHZ3R6QxL1sj13d1yPpdFKSfEDTe2vD5ZA6CM/Mmq
- /ZGQqO/94K4loqRCNeYJh15qfIhNON4p1cS8Kck2/4MXTvJBsO4weOMVn4PyIjWJ8Ylq0NxRuRl
- kY6E1+vbcmdl7puIf/H9jXMqbBisPPACY4tgKjJGBfIjbMCX5of8SC3TZXGz2JIPrHm0JITSKcD
- h5AZpp276nva+2EyFUuyn2dFJf3GmYKM8HX/+G2ySMROU9zJdB8AZfsuxSmaG3y4EqllxBtFTZ4
- 1aG4ePoFyeK/8dzWH/Q==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTIwMDAyOCBTYWx0ZWRfXwAi6l3hJgr5m
- HHZS9hHQz/8IE4+tS75oS9FTW31nyI3c7rVGa1MBt2DjnAYtZZ8YvxC7QnGQskKExdbexX15hH7
- aftLrONkH/DIxOmAZSEECldE5bcXTsk=
-X-Proofpoint-ORIG-GUID: HeNjVEC1zElZzyqIJCs9CD4ecQ1dYe9x
-X-Proofpoint-GUID: HeNjVEC1zElZzyqIJCs9CD4ecQ1dYe9x
-X-Authority-Analysis: v=2.4 cv=KuHYSmWN c=1 sm=1 tr=0 ts=6afff216 cx=c_pps
- a=0uOsjrqzRL749jD1oC5vDA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=EUspDBNiAAAA:8
- a=e0xTfCGfjV48Ql1BNNoA:9 a=mQ_c8vxmzFEMiUWkPHU9:22
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-current] wifi: ath12k: report TX status for broadcast
+ and multicast frames
+To: Vitor Soares <ivitro@gmail.com>, Jeff Johnson <jjohnson@kernel.org>
+Cc: Vitor Soares <vitor.soares@toradex.com>, linux-wireless@vger.kernel.org,
+        ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
+        Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>,
+        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+References: <20261116230250.369383-2-ivitro@gmail.com>
+From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20261116230250.369383-2-ivitro@gmail.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTIwMDA1MyBTYWx0ZWRfXwzNRKqAdLBrE
+ YIwfeYB076CDw+g7RMBh1nnqyFOCV9krzNyMjN1OIrZczot3of4FI2DHs6zmGMXXVpXzz6O1GAC
+ IzUij7O7M9COABGkLcr6QA5Di4vhT5V6vyFZ24DhLM3JZa0elL07v44hXt7G4mhfvOAqNWf11Iw
+ G/aSoyBgzeZCrWKfZ9sqpGOVRZ/fU86AH/R53u17WS33gZKihcfveY5HRy3+pGaUXzHwcSzuDfW
+ DjAodguOXWLgUjWGmfAxcgp/KDrvscunXZ0WnvJn5zrrfc/Bng4m2s07w5yn2OtqZ7T/fgqrcim
+ L/DyzB/oBerO8jxqzWrtXc1jGl/lBgZnU2Z/1hXvzlFu17cDB0+o+L99u5ovRt/IEzFaX7hfPyJ
+ U1EVQRV0+8tkBvlnZoGNkZVnyDBOzdIYFA0+clE9ALxn7VeWoW3C4Nedw1SPFSD41uWAIY2H2Mj
+ q04tL3Yv/RZD6bBVvxg==
+X-Proofpoint-ORIG-GUID: 7cSAaXga9gkdezBm2u20czh7HusyEo3c
+X-Authority-Analysis: v=2.4 cv=BIYmP1QG c=1 sm=1 tr=0 ts=6b004a86 cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=WcLwt0pvHDAIUQ3iVSLIEw==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=m8ToADvmAAAA:8 a=5RRWBY4WAAAA:8 a=bIduEeDIxUt9zr8lqoUA:9 a=QEXdDO2ut3YA:10
+ a=scEy_gLbYbu1JhEsrz4S:22 a=kCrBFHLFDAq2jDEeoMj9:22 a=drtMOSl5Q_Tsf-UZi3mY:22
+X-Proofpoint-GUID: 7cSAaXga9gkdezBm2u20czh7HusyEo3c
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTIwMDA1MyBTYWx0ZWRfX5iAtBUJGBMgH
+ +ctHGsN11h4EOijj3ltAA9E+CY4pJM8gq7DfHKghaSDRCpsA0eV/YhlQQRabVGCzeX3Adu9zebg
+ dP2NORepc7TuzwGix0ws4WgxVWmD9xo=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-20_02,2026-11-19_01,2025-10-01_01
+ definitions=2026-11-20_04,2026-11-19_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 phishscore=0 lowpriorityscore=0 impostorscore=0
- priorityscore=1501 bulkscore=0 adultscore=0 spamscore=0 suspectscore=0
- malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ spamscore=0 phishscore=0 malwarescore=0 adultscore=0 clxscore=1015
+ bulkscore=0 priorityscore=1501 impostorscore=0 suspectscore=0
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
- definitions=main-2611200028
+ definitions=main-2611200053
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261119_230911_815108_8815ED41 
-X-CRM114-Status: GOOD (  24.43  )
+X-CRM114-CacheID: sfid-20261120_052632_684642_13D3E66F 
+X-CRM114-Status: GOOD (  20.91  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -142,380 +152,94 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
 	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Peer lookup by MAC address in struct ath12k_dp_hw is currently performed by
-walking the dp_peers_list, resulting in O(n) lookup complexity. As the
-driver supports up to 1536 clients, frequent lookups on critical paths
-such as TX/RX processing, peer management, control operations and
-debug/statistics handling can incur noticeable overhead in dense
-deployment scenarios.
+On 11/17/2026 4:32 AM, Vitor Soares wrote:
+> From: Vitor Soares <vitor.soares@toradex.com>
+> 
+> In AP mode, once a station is associated, broadcast and multicast frames
+> sent by the AP log:
+> 
+>    ath12k_wifi7_pci 0003:01:00.0: dp_tx: failed to find the peer with peer_id 2
+> 
+> These frames complete against the AP's own peer. That peer has no
+> station, and since commit 981050b918fc ("wifi: ath12k: Fix TX status
+> reporting to mac80211 when offload is enabled") a missing station is
+> treated as a missing peer: the frame is dropped and an error is logged.
+> Before that commit, the TX status of these frames was reported without a
+> station.
+> 
+> Report the TX status without a station when the peer has none, and add
+> rate information only when a station is present. Only drop the frame
+> when the peer is not found, and log that case at debug level, as the
+> HTT completion path does.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
+> 
+> Fixes: 981050b918fc ("wifi: ath12k: Fix TX status reporting to mac80211 when offload is enabled")
+> Signed-off-by: Vitor Soares <vitor.soares@toradex.com>
+> ---
+> This conflicts with c752394249f8 ("wifi: ath12k: store station pointer
+> only in dp_peer") in ath-next; the resolution uses
+> ath12k_dp_link_peer_get_sta(peer) in place of peer->sta.
+> 
+>   drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c | 23 +++++++++++--------
+>   1 file changed, 13 insertions(+), 10 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
+> index 41abf1865702..794d85d9dbaf 100644
+> --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
+> +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
+> @@ -856,24 +856,27 @@ static void ath12k_wifi7_dp_tx_complete_msdu(struct ath12k_pdev_dp *dp_pdev,
+>   	ath12k_wifi7_dp_tx_update_txcompl(dp_pdev, ts);
+>   
+>   	peer = ath12k_dp_link_peer_find_by_peerid(dp_pdev, ts->peer_id);
+> -	if (!peer || !peer->sta) {
+> -		ath12k_err(ab,
+> +	if (!peer) {
+> +		ath12k_dbg(ab, ATH12K_DBG_DATA,
+>   			   "dp_tx: failed to find the peer with peer_id %d\n",
+>   			   ts->peer_id);
 
-Replace the peer list with a generic kernel hash table for MAC address
-based peer management and lookup, providing O(1) average-case lookup
-performance. The hash table is implemented using DECLARE_HASHTABLE()
-with 2048 buckets (2^11), derived from
-order_base_2(ATH12K_MAX_DEVICES * ATH12K_MAX_CLIENTS), and uses jhash()
-over the peer MAC address as the hash key.
+I'd still keep this in ath12k_err to catch the frames that get TX 
+completion without a valid peer.
 
-The hash table is used both for address-based lookups and peer
-traversal operations, eliminating the need for maintaining a separate
-peer list.
+>   		ieee80211_free_txskb(ath12k_pdev_dp_to_hw(dp_pdev), msdu);
+>   		goto exit;
+>   	}
+>   
+> -	status.sta = peer->sta;
+> -	status.info = info;
+> -	status.skb = msdu;
+> -	rate = peer->last_txrate;
+> +	if (peer->sta) {
+> +		status.sta = peer->sta;
+> +		rate = peer->last_txrate;
+>   
+> -	status_rate.rate_idx = rate;
+> -	status_rate.try_count = 1;
+> +		status_rate.rate_idx = rate;
+> +		status_rate.try_count = 1;
+>   
+> -	status.rates = &status_rate;
+> -	status.n_rates = 1;
+> +		status.rates = &status_rate;
+> +		status.n_rates = 1;
+> +	}
+> +
+> +	status.info = info;
+> +	status.skb = msdu;
+>   	ieee80211_tx_status_ext(ath12k_pdev_dp_to_hw(dp_pdev), &status);
+>   
+>   exit:
 
-The maximum single-radio client limit is defined as
-ATH12K_MAX_CLIENTS and reused by the memory profile and hardware
-params. This keeps the peer hash sizing aligned with the per-device
-client limit and the maximum number of devices in a hardware group.
 
-Key changes:
-- Add peer_hash table to ath12k_dp_hw and initialize it during
-  hardware allocation.
-- Add hash_node to ath12k_dp_peer for hash table membership.
-- Introduce helper APIs for hash computation, insertion, deletion and
-  lookup.
-- Convert MAC-address-based peer searches from list traversal to
-  hash-table lookup.
-- Replace peer list traversal with hash table iteration.
-
-Peer creation inserts the peer into the hash table, while deletion
-removes it from the hash table. Peer cleanup paths are updated to
-iterate over the hash table and safely free peer objects.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-
-Co-developed-by: Harsh Kumar Bijlani <harsh.bijlani@oss.qualcomm.com>
-Signed-off-by: Harsh Kumar Bijlani <harsh.bijlani@oss.qualcomm.com>
-Signed-off-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
----
-Changes in v2:
-- Rebased the changes
----
- drivers/net/wireless/ath/ath12k/cmn_defs.h |  2 +
- drivers/net/wireless/ath/ath12k/core.c     |  2 +-
- drivers/net/wireless/ath/ath12k/dp_cmn.h   | 14 ++++++-
- drivers/net/wireless/ath/ath12k/dp_peer.c  | 47 ++++++++++++++++++----
- drivers/net/wireless/ath/ath12k/dp_peer.h  |  7 +++-
- drivers/net/wireless/ath/ath12k/mac.c      | 20 ++++-----
- drivers/net/wireless/ath/ath12k/wifi7/hw.c | 10 ++---
- 7 files changed, 76 insertions(+), 26 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/cmn_defs.h b/drivers/net/wireless/ath/ath12k/cmn_defs.h
-index 20208ffea1c9..15c5e8d11afc 100644
---- a/drivers/net/wireless/ath/ath12k/cmn_defs.h
-+++ b/drivers/net/wireless/ath/ath12k/cmn_defs.h
-@@ -10,6 +10,8 @@
- 
- #define MAX_RADIOS 2
- #define ATH12K_MAX_DEVICES 3
-+#define ATH12K_MAX_CLIENTS 512
-+
- #define ATH12K_GROUP_MAX_RADIO (ATH12K_MAX_DEVICES * MAX_RADIOS)
- 
- #define ATH12K_SCAN_MAX_LINKS	ATH12K_GROUP_MAX_RADIO
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 719200759ca0..6e0bb1fecc09 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -44,7 +44,7 @@ static const struct
- ath12k_mem_profile_based_param ath12k_mem_profile_based_param[] = {
- [ATH12K_QMI_MEMORY_MODE_DEFAULT] = {
- 		.num_vdevs = 17,
--		.max_client_single = 512,
-+		.max_client_single = ATH12K_MAX_CLIENTS,
- 		.max_client_dbs = 128,
- 		.max_client_dbs_sbs = 128,
- 		.dp_params = {
-diff --git a/drivers/net/wireless/ath/ath12k/dp_cmn.h b/drivers/net/wireless/ath/ath12k/dp_cmn.h
-index 88abe90767eb..ff011fafc175 100644
---- a/drivers/net/wireless/ath/ath12k/dp_cmn.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_cmn.h
-@@ -6,6 +6,7 @@
- #ifndef ATH12K_DP_CMN_H
- #define ATH12K_DP_CMN_H
- 
-+#include <linux/hashtable.h>
- #include "cmn_defs.h"
- 
- struct ath12k_hw_group;
-@@ -18,12 +19,21 @@ struct ath12k_dp_link_peer;
-  */
- #define MAX_DP_PEER_LIST_SIZE  16384
- 
-+/*
-+ * The hash table supports ATH12K_MAX_DEVICES * ATH12K_MAX_CLIENTS clients;
-+ * order_base_2() gives 2048 hash buckets.
-+ */
-+#define ATH12K_DP_PEER_HASH_BITS \
-+	order_base_2(ATH12K_MAX_DEVICES * ATH12K_MAX_CLIENTS)
-+
- struct ath12k_dp_hw {
- 	struct ath12k_dp_peer __rcu *dp_peers[MAX_DP_PEER_LIST_SIZE];
- 
--	/* Lock for protection of dp_peer_list and peers */
-+	/* Lock for protection of dp_peers[] and peer_hash */
- 	spinlock_t peer_lock;
--	struct list_head dp_peers_list;
-+
-+	/* Generic hash table for fast MAC address lookup */
-+	DECLARE_HASHTABLE(peer_hash, ATH12K_DP_PEER_HASH_BITS);
- };
- 
- struct ath12k_dp_hw_group {
-diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.c b/drivers/net/wireless/ath/ath12k/dp_peer.c
-index 4e753e6abe3a..5dc7f08e6292 100644
---- a/drivers/net/wireless/ath/ath12k/dp_peer.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_peer.c
-@@ -4,6 +4,7 @@
-  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  */
- 
-+#include <linux/jhash.h>
- #include "core.h"
- #include "dp_peer.h"
- #include "debug.h"
-@@ -371,30 +372,58 @@ void ath12k_dp_link_peer_rhash_delete(struct ath12k_dp *dp,
- 			    peer->addr, peer->peer_id, ret);
- }
- 
-+static u32 ath12k_dp_peer_addr_hash(const u8 *addr)
-+{
-+	return jhash(addr, ETH_ALEN, 0);
-+}
-+
- struct ath12k_dp_peer *ath12k_dp_peer_find_by_addr(struct ath12k_dp_hw *dp_hw, u8 *addr)
- {
--	struct ath12k_dp_peer *peer;
-+	struct ath12k_dp_peer *dp_peer;
-+	u32 hash;
- 
- 	lockdep_assert_held(&dp_hw->peer_lock);
- 
--	list_for_each_entry(peer, &dp_hw->dp_peers_list, list) {
--		if (ether_addr_equal(peer->addr, addr))
--			return peer;
-+	hash = ath12k_dp_peer_addr_hash(addr);
-+	hash_for_each_possible(dp_hw->peer_hash, dp_peer, hash_node, hash) {
-+		if (ether_addr_equal(dp_peer->addr, addr))
-+			return dp_peer;
- 	}
- 
- 	return NULL;
- }
- EXPORT_SYMBOL(ath12k_dp_peer_find_by_addr);
- 
-+static void ath12k_dp_peer_hash_table_add(struct ath12k_dp_hw *dp_hw,
-+					  struct ath12k_dp_peer *dp_peer)
-+{
-+	u32 hash;
-+
-+	lockdep_assert_held(&dp_hw->peer_lock);
-+
-+	hash = ath12k_dp_peer_addr_hash(dp_peer->addr);
-+	hash_add(dp_hw->peer_hash, &dp_peer->hash_node, hash);
-+}
-+
-+void ath12k_dp_peer_hash_table_delete(struct ath12k_dp_hw *dp_hw,
-+				      struct ath12k_dp_peer *dp_peer)
-+{
-+	lockdep_assert_held(&dp_hw->peer_lock);
-+
-+	hash_del(&dp_peer->hash_node);
-+}
-+
- struct ath12k_dp_peer *ath12k_dp_peer_find_by_addr_and_sta(struct ath12k_dp_hw *dp_hw,
- 							   u8 *addr,
- 							   struct ieee80211_sta *sta)
- {
- 	struct ath12k_dp_peer *dp_peer;
-+	u32 hash;
- 
- 	lockdep_assert_held(&dp_hw->peer_lock);
- 
--	list_for_each_entry(dp_peer, &dp_hw->dp_peers_list, list) {
-+	hash = ath12k_dp_peer_addr_hash(addr);
-+	hash_for_each_possible(dp_hw->peer_hash, dp_peer, hash_node, hash) {
- 		if (ether_addr_equal(dp_peer->addr, addr) && (dp_peer->sta == sta))
- 			return dp_peer;
- 	}
-@@ -408,10 +437,12 @@ static struct ath12k_dp_peer *ath12k_dp_peer_create_find(struct ath12k_dp_hw *dp
- 							 bool mlo_peer)
- {
- 	struct ath12k_dp_peer *dp_peer;
-+	u32 hash;
- 
- 	lockdep_assert_held(&dp_hw->peer_lock);
- 
--	list_for_each_entry(dp_peer, &dp_hw->dp_peers_list, list) {
-+	hash = ath12k_dp_peer_addr_hash(addr);
-+	hash_for_each_possible(dp_hw->peer_hash, dp_peer, hash_node, hash) {
- 		if (ether_addr_equal(dp_peer->addr, addr)) {
- 			if (!sta || mlo_peer || dp_peer->is_mlo ||
- 			    dp_peer->sta == sta)
-@@ -517,7 +548,7 @@ int ath12k_dp_peer_create(struct ath12k_dp_hw *dp_hw, u8 *addr,
- 
- 	spin_lock_bh(&dp_hw->peer_lock);
- 
--	list_add(&dp_peer->list, &dp_hw->dp_peers_list);
-+	ath12k_dp_peer_hash_table_add(dp_hw, dp_peer);
- 
- 	/*
- 	 * For an MLO client whose ML peer ID is allocated by the host, the
-@@ -555,7 +586,7 @@ void ath12k_dp_peer_delete(struct ath12k_dp_hw *dp_hw, u8 *addr,
- 	    dp_peer->peer_id != ATH12K_MLO_PEER_ID_PENDING)
- 		rcu_assign_pointer(dp_hw->dp_peers[dp_peer->peer_id], NULL);
- 
--	list_del(&dp_peer->list);
-+	ath12k_dp_peer_hash_table_delete(dp_hw, dp_peer);
- 
- 	spin_unlock_bh(&dp_hw->peer_lock);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.h b/drivers/net/wireless/ath/ath12k/dp_peer.h
-index 2ac4c6c6d535..0a2b9d1814a5 100644
---- a/drivers/net/wireless/ath/ath12k/dp_peer.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_peer.h
-@@ -127,7 +127,6 @@ void ath12k_dp_link_peer_extended_event(struct ath12k_base *ab, u8 vdev_id,
- 					u8 logical_link_id, u8 valid);
- 
- struct ath12k_dp_peer {
--	struct list_head list;
- 	bool is_mlo;
- 	bool dp_setup_done;
- 
-@@ -164,6 +163,9 @@ struct ath12k_dp_peer {
- 	struct ath12k_dp_rx_tid rx_tid[IEEE80211_NUM_TIDS + 1];
- 
- 	bool use_4addr;
-+
-+	/* Hash table node for MAC address lookup */
-+	struct hlist_node hash_node;
- };
- 
- struct ath12k_dp_link_peer *
-@@ -212,4 +214,7 @@ ath12k_dp_link_peer_get_sta(const struct ath12k_dp_link_peer *link_peer)
- 	return link_peer && link_peer->dp_peer ?
- 		link_peer->dp_peer->sta : NULL;
- }
-+
-+void ath12k_dp_peer_hash_table_delete(struct ath12k_dp_hw *dp_hw,
-+				      struct ath12k_dp_peer *dp_peer);
- #endif
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index a247dcf387de..51ee44e72abf 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -1277,16 +1277,20 @@ void ath12k_mac_peer_cleanup_all(struct ath12k *ar)
- 
- void ath12k_mac_dp_peer_cleanup(struct ath12k_hw *ah)
- {
--	struct list_head peers;
--	struct ath12k_dp_peer *dp_peer, *tmp;
- 	struct ath12k_dp_hw *dp_hw = &ah->dp_hw;
-+	struct ath12k_dp_peer *dp_peer;
-+	struct hlist_head free_list;
-+	struct hlist_node *tmp;
-+	int bkt;
- 
- 	lockdep_assert_wiphy(ah->hw->wiphy);
- 
--	INIT_LIST_HEAD(&peers);
-+	INIT_HLIST_HEAD(&free_list);
- 
- 	spin_lock_bh(&dp_hw->peer_lock);
--	list_for_each_entry_safe(dp_peer, tmp, &dp_hw->dp_peers_list, list) {
-+	hash_for_each_safe(dp_hw->peer_hash, bkt, tmp, dp_peer, hash_node) {
-+		ath12k_dp_peer_hash_table_delete(dp_hw, dp_peer);
-+
- 		if (dp_peer->is_mlo) {
- 			if (dp_peer->peer_id != ATH12K_MLO_PEER_ID_PENDING)
- 				rcu_assign_pointer(dp_hw->dp_peers[dp_peer->peer_id],
-@@ -1294,17 +1298,15 @@ void ath12k_mac_dp_peer_cleanup(struct ath12k_hw *ah)
- 			ath12k_peer_ml_free(ah, ath12k_sta_to_ahsta(dp_peer->sta));
- 		}
- 
--		list_move(&dp_peer->list, &peers);
-+		hlist_add_head(&dp_peer->hash_node, &free_list);
- 	}
- 
- 	spin_unlock_bh(&dp_hw->peer_lock);
- 
- 	synchronize_rcu();
- 
--	list_for_each_entry_safe(dp_peer, tmp, &peers, list) {
--		list_del(&dp_peer->list);
-+	hlist_for_each_entry_safe(dp_peer, tmp, &free_list, hash_node)
- 		kfree(dp_peer);
--	}
- }
- 
- static int ath12k_mac_vdev_setup_sync(struct ath12k *ar)
-@@ -15530,7 +15532,7 @@ static struct ath12k_hw *ath12k_mac_hw_allocate(struct ath12k_hw_group *ag,
- 
- 	spin_lock_init(&ah->survey_lock);
- 	spin_lock_init(&ah->dp_hw.peer_lock);
--	INIT_LIST_HEAD(&ah->dp_hw.dp_peers_list);
-+	hash_init(ah->dp_hw.peer_hash);
- 
- 	for (i = 0; i < num_pdev_map; i++) {
- 		ab = pdev_map[i].ab;
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-index 48a2f6da16ef..9f2b1dddfdb4 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-@@ -488,7 +488,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 
- 		.dp_primary_link_only = true,
- 		.client = {
--			.max_client_single = 512,
-+			.max_client_single = ATH12K_MAX_CLIENTS,
- 			.max_client_dbs = 128,
- 			.max_client_dbs_sbs = 128,
- 		},
-@@ -587,7 +587,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 
- 		.dp_primary_link_only = false,
- 		.client = {
--			.max_client_single = 512,
-+			.max_client_single = ATH12K_MAX_CLIENTS,
- 			.max_client_dbs = 128,
- 			.max_client_dbs_sbs = 128,
- 		},
-@@ -682,7 +682,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 
- 		.dp_primary_link_only = true,
- 		.client = {
--			.max_client_single = 512,
-+			.max_client_single = ATH12K_MAX_CLIENTS,
- 			.max_client_dbs = 128,
- 			.max_client_dbs_sbs = 128,
- 		},
-@@ -871,7 +871,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 
- 		.dp_primary_link_only = false,
- 		.client = {
--			.max_client_single = 512,
-+			.max_client_single = ATH12K_MAX_CLIENTS,
- 			.max_client_dbs = 128,
- 			.max_client_dbs_sbs = 128,
- 		},
-@@ -963,7 +963,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 
- 		.dp_primary_link_only = true,
- 		.client = {
--			.max_client_single = 512,
-+			.max_client_single = ATH12K_MAX_CLIENTS,
- 			.max_client_dbs = 128,
- 			.max_client_dbs_sbs = 128,
- 		},
-
-base-commit: 03b7c601b6e314115015a57061f5b377afe13190
 -- 
-2.34.1
-
+Ramesh
 
