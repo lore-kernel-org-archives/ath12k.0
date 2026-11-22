@@ -2,81 +2,81 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 30318606A6A8
-	for <ath12k@archiver.kernel.org>; Sun, 22 Nov 2026 21:05:34 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E61E8606A33E
+	for <ath12k@archiver.kernel.org>; Sun, 22 Nov 2026 21:05:33 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=44ehPcA0;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=iNMcBNGG
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=P2i1YOIR;
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=GwXCTBe3
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=RhXLVgSRZBr+TZ8HYB6abPUQ+n+l05u+js/LeXBMczM=; b=44ehPcA0yESOFy
-	i6mINZl9zSyGizn+p8hLPVb5s0B620YA3jcmxwLUnXIJfolXFsoEffI7zRZ1R8IHFcqdEZG/Fl7kp
-	p7sD1Kx23qvehDfJ/xQ2AS1LL2EMt5MnqaYoWYtHvQ0LaRfipHX56zuVqCZH/mKVFRB7TIuTrwGUI
-	aR+YdEko5G1zh9hfi8kd8K1VRrwX/McM2PVWlbY7R5qUWIVTfVK2GSIGxAmgle2aMNu2NjUdU5TPs
-	9FkIKehcUOEYVM+J7reABnVY1tU+L270E0jX3QURqPVtRgn4qD5i+Rd/8PVQO81OB+SZxpKSsJYvU
-	xpuX/Pws0cpNp38xg7jQ==;
+	List-Owner; bh=iY7hP57Ks22ZQX6VPKHgfCkwRw7bMvU+dJUsFxLR+Wk=; b=P2i1YOIRGzW3wv
+	hmqnAND2fjdhs5N7vyQ4PTeWuODu723+rkNCYNhF9PcOTQIFwLgU7Ruk8S9zZUM/5+W7vIVehXn8b
+	aA1oTRTSkrzt4DHIE1wlg8+4Fr4gNTRtxbMcrwVwXa+2LYOZsShaEOcyBRBEfW5Wru54NwP5Qil84
+	HjnWLUKd67+qJ/AlWSGB5wMmzBGnJAD9MQwpHeNB9+3ZBlN5FATegI+vx6iaNpzYoITsmRPF9xuRx
+	fCsI1jkGdWXpG7IGla1GjIWYxsuvwF3Ff4Uu387QefKrRGN3o8zA16xO+IeaxsknmZhtlzdT1s9tx
+	DEZ6TliRRCca+dV2XLuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVEkf-00000001kpq-3lUo;
+	id 1xVEkf-00000001kpB-2osS;
 	Sun, 22 Nov 2026 21:05:33 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVEkd-00000001kk9-3Rdr
+	id 1xVEkc-00000001kiC-1gWR
 	for ath12k@lists.infradead.org;
-	Sun, 22 Nov 2026 21:05:33 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-c516a160d24so87629966b.2
-        for <ath12k@lists.infradead.org>; Sun, 22 Nov 2026 13:05:31 -0800 (PST)
+	Sun, 22 Nov 2026 21:05:31 +0000
+Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-c511c0e2826so308968966b.0
+        for <ath12k@lists.infradead.org>; Sun, 22 Nov 2026 13:05:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795381530; x=1795986330; darn=lists.infradead.org;
+        d=bairaktaris.de; s=google; t=1795381528; x=1795986328; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=RhXLVgSRZBr+TZ8HYB6abPUQ+n+l05u+js/LeXBMczM=;
-        b=iNMcBNGG+NkT7CJbw6bMiqOTYptNsjuVh+SAeAfg/0P+ynoWAy/J58mQ7ljeQtwzBP
-         OVrsbNA5U3RlLQjeoHIXkZkCgRuBlkAq+Ozp0JbObZgo03l9OnUK8IfQ25H9uM/BZTic
-         FPgiHsxGNIP9r7n+9blkDUjBuotjBFWhjzjo8qgREnqbIWJb5iHAzr63fVdsjmYAf4ha
-         WzPTQMwy+GSaQRqrq7BKxunuNg8Zr9XgUStIL3Qwj3FwQRdT80krefRntEmB3hNRSmjA
-         EQ5j5av/qTdFCtiqFNKxzWRBujb6EDM3fELjV//poSWqy0eOtN+6XTGSqTU2TIJRSdJc
-         ZbmQ==
+        bh=iY7hP57Ks22ZQX6VPKHgfCkwRw7bMvU+dJUsFxLR+Wk=;
+        b=GwXCTBe3xPSgCQ+gJasMl6SqgZpc3NQ2JVBBiCG67v8eO2kG7Uk4r/DiauW5Igcy7x
+         pUfVURVb2S9tWpCvx4ndQS6OXWtIQMJuCHFe92Zw3L9OQi3BxaILRdCDn+L2kxuljW4O
+         gl/0r7cdlC4kliTEGNKPh/6/EhFSyvOA8ENw2GS8QrXJDZmKJifGPh4OeoU1m6FXYog+
+         pblgbIAd2HuNax1ifO+xEossCyNyTjyfT8b18csIkEddUVhnsmdZCsOpLCl8ICv6IyHM
+         U5wW1hM8zBVB4MuX8SXgVGHvVG9TY7q+awgoHZ2qXrg0mW3AsaArLseOzG4dSE1xN7Pm
+         BrKg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795381530; x=1795986330;
+        d=1e100.net; s=20260707; t=1795381528; x=1795986328;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=RhXLVgSRZBr+TZ8HYB6abPUQ+n+l05u+js/LeXBMczM=;
-        b=12yxj5gpxaJ4TspHNlDoFDQ3iYu5iTQIFznMZLFBbI1ZK30IICD7+B1baVQfxTWQWg
-         PTnqvlhWmv9eqYu9DoKsmR9w2guBT9kiCAqBD1hGk/zhu3aECoHyL9MCZEPXQfz8KN6r
-         GOUC0vfQGT+O84Nuq27cJlvZ5u/LBLXyKqjRZYLjZat05yw7k906Ba1jJQ/XGexp3pI3
-         Nkc/cnxniFEqy7x0VD1PmYSsbTKv3eMD86hb4NxsZWpEbJ/qMd1s42F+pabfMcT4x5C9
-         dyWMnADelU2N2Rdy/CeqKinjBpat4YSVTup5VRDNXe1F7IRIe28HTqW9O0GPsKUNj/Wo
-         WKMQ==
-X-Forwarded-Encrypted: i=1; AL+hErH/2GzXlYvC36dNmSQ/98krGWMhlINR0uQOUcx6GxhsWy8Nngg52wG9mKi0TXqeyDtFE9PPaE4=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/F7Gf/7zGe8PHyfSgctL5MQmj2P9oQUq6zgpVrqjzixB9DHqRH
-	h0OL2ePw0j67V+Q5w60/wbVi3koagHLagcJQHwoxWrIzT+TRHn58S/HrXUmXrAw74Q==
-X-Gm-Gg: AZFdTZezrSMyPXNcRJbUmsGMt5C7FiIzXEgrmAW0/RqXc/wt4Lf/gTaAUHg8hECdReN
-	5Z+csNkekftoPL8Eng1Q3xX2QDadusgNgFVwvRnTmNp3XfcOa7Sfj5LS615MuuRoNtatSJmucjg
-	uV6R3nEHH3qgZh4I/7W7VOCSeAvI4UdV96QtbMUaZjL7T4kkYXMN0f0n36kw8+jqHQCOJMSqBWu
-	FDKxC1XdMb5waQU021bnIVCy53umW5a0kcYHJ8bnBQrF2/e3ssAAoaO7KTAU8fGnLFEFVtYVKmG
-	TQtViHDocM1rCWIV8a+mMSEr0YTv5+2Qr4TaWKI/qRVOHkYAVpecumxWtjam7Qj82z2yIwvcqHA
-	VkUQGdgfZlE59rAHgI63ZGDHZF7bLlQOvmxXeD8Ncf6jW2zgz3hztXA7cAcPCwnLM3aLqlfQ+a4
-	VI9SCpOie7Sa2LuitWoj7poHIjI2cSCWHDuLL2HXETbUDiJE1m94YyuS8hI3Cmp6xtiq2dRzYI6
-	6/I1Cbla4MIgStE5DW2DY/X8eT1PFc/lOHtr+gNBO95XhCgpT3Wm3384TlYty/YCNrcvw5VGVT7
-	UYCbVWYRF6+/bIVMWQBCQC9HAdvDDs/oDzvmmxgCVsBIKnDjoFJLxd/PpnFkxHLy+91vI6vodrA
-	kSqDIyx59QGyfG3SgP9PJ6iK2vllub9toP2I6Qj97sh6Hg9ofuA/0FcMrgby8KsSwKwlwGDI26h
-	sNBCqiUnVL9pgZlmIWKBPWRKzSC0dRcRd/4tfHsMihpFvOWYrekO7WFS1Dkla6GkWttwauKRd10
-	K0Cxzejamz/R8mOnMvyfO7xvmhGCzcdKjG9vr2pXRra1hoK7Rz8UJb5zRqK9AZmY0xA0wXoOzBU
-	f4wWjsGWaequp2iD73cV5cGcu60uBVpk2y8VGS+l2gEZj24xWNLYqmMqt483B/rPdgAsPZFYxQ=
+        bh=iY7hP57Ks22ZQX6VPKHgfCkwRw7bMvU+dJUsFxLR+Wk=;
+        b=0KD86LoI5Ua6er+UWZMku4aUJmEm9BCGwp9Ow+JCvPAWFBKGulEVOkvno363JfeGdc
+         MF/5DY9W0OTX/d7zQWfS0O8A3g3DCvkdlK3mliIQVrQMoRQPzNIc47dR0CxgRJfjTPlw
+         96hUEIBUN6pp7yruQLHtlB4RQxx6/2w/jpANzxOwBTGpO/Nms6nBQhlKXpT6p0UQC3v5
+         cV8Ag0804vpYWJSxi24plb2gOqY7YPqwq0LaKww5PRd6t+/dpva8x4TI6nOLsZqofIUI
+         nBq4bUJTOSw3uHjp7XaGw6AsXJR4r4IW9QxhQkjIWL0pFe798vCVV2ZLIMWYb+d98Fte
+         MF1g==
+X-Forwarded-Encrypted: i=1; AL+hErHf00iPwt6drYiUzxLdlF6YCcR0LD194WGgkcX8qASMngFTwk016AgFXV+s2paukYXVE/izWS4=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+Dai8Adl2GfdzKqzUkIjjSWGhSlmKAJLpZ64dCyupSM4az+U06
+	/RkJ60bZX/KdFgeZ+E9aytNT2S1AvCPhEb17TnyR1fNAxLlj/J/MGA9R8GHG6j3H2w==
+X-Gm-Gg: AZFdTZd1RmmgiPN4gBM0tIw59AW7hdiqf3SSg8rAxgTIx0foFv5fU/sfPvjrcd0Cm1e
+	4EWflQpayJGrUGEmhskZi8VJoaIEe9NnbMdQIsMk+VvdnlsSZVJqTZY3EjlMh+04v+wEEO6trZt
+	kzGBVRBptSkkyGJUrKsdccpcKXlDWE+KIS6pL/tvoP7ZDD/Agcv+4CgHQpO9vVn0mDc98fjclab
+	HhDD3I53M1AD4Xr7cv3LTmeJ2NUg+jU82zoIa4bcU0y0N6dhNi3/RDZszngoZhJ9+0i9PsZQa7q
+	fUt3YPNxC73SfNwqOX8r2uM2f35iWqrURq/B0/qX1lobnDx6fdVqrFo4HT/jX6RsxIys/uB5Vu4
+	5HTeOnY1/112fR3gleCgZRercMwTXsTmEsjx2O1OObwbdHdt9cwKrBH9A+Ln93XGamUlhPRMZ/t
+	/bLiPHgSgPAc3Y2xKC84NJ/1q1SZgXLCJD0Oz/SW6O0psuwaYgIADbUbGJ8/LxCdwdz/bMt5tax
+	nLnteqIhHECUcGM9mUZTQP6vN4hOiBPIL8nfmOduLq+rX3OtBWtYMUnksqC3dZZsZqY0preUmDC
+	qrJZa/UuR7w9U3fuEGVQlQhc128gqlqXr1ynJx+OxRbFnTvV9y00B1o0oLO4zfqjEcDcJScF3Qs
+	ET7OcJPft6tmbraLvkQayuah74lO2tRllkHjKSPe9LBys+vobSrn9yawDz065AKu08eT6TRAGA4
+	ceBJ2u3JQ9ZNO15vbVOi+pKxqSWCbro01ntxGa/1Bks7HuG4oiTy8tLqBnCWrQqjCJtf6AjoBio
+	91AY4VD/+YLTcWpFFLigJ8fdoTjowOmmWz+yxaiki1PBY/QP1JB2IKZNyjr/3OWvEvGC8vL1pWt
+	mK4myFtu0K4cY7KUMsA+GqlCUT7WMuMiSrd6gVV9cvLSOTqXFQlKLLpLPB6M/PEWQ6cUddQtIA=
 	=
-X-Received: by 2002:a17:906:af85:b0:c3f:dce3:20c5 with SMTP id a640c23a62f3a-c513ac496d8mr571307066b.44.1795381530146;
-        Sun, 22 Nov 2026 13:05:30 -0800 (PST)
+X-Received: by 2002:a17:907:e00b:20b0:c4d:22e2:1a2b with SMTP id a640c23a62f3a-c513a47e2ffmr509115366b.1.1795381528414;
+        Sun, 22 Nov 2026 13:05:28 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net (p200300f24713d300ad8e04c1718a6e78.dip0.t-ipconnect.de. [2003:f2:4713:d300:ad8e:4c1:718a:6e78])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc2455sm339935766b.57.2026.11.22.13.05.28
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc2455sm339935766b.57.2026.11.22.13.05.26
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Nov 2026 13:05:29 -0800 (PST)
+        Sun, 22 Nov 2026 13:05:27 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org,
@@ -106,9 +106,9 @@ Cc: linux-wireless@vger.kernel.org,
 	Carl Huang <quic_cjhuang@quicinc.com>,
 	Maharaja Kennadyrajan <quic_mkenna@quicinc.com>,
 	Govindaraj Saminathan <quic_gsamin@quicinc.com>
-Subject: [PATCH ath-next 4/6] wifi: ath11k: clear the crypto flags of the receive status for each MSDU
-Date: Sun, 22 Nov 2026 22:05:23 +0100
-Message-ID: <20261122210525.2076058-5-julius@bairaktaris.de>
+Subject: [PATCH ath-next 3/6] wifi: ath11k: drop decapped frames with a source other than the station
+Date: Sun, 22 Nov 2026 22:05:22 +0100
+Message-ID: <20261122210525.2076058-4-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261122210525.2076058-1-julius@bairaktaris.de>
 References: <20261122210525.2076058-1-julius@bairaktaris.de>
@@ -116,8 +116,8 @@ X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261122_130531_930918_11A301E5 
-X-CRM114-Status: GOOD (  12.68  )
+X-CRM114-CacheID: sfid-20261122_130530_480016_ED827C8D 
+X-CRM114-Status: GOOD (  18.76  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -132,65 +132,158 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
 	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=unavailable autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-ath11k_dp_rx_process_received_packets() keeps one ieee80211_rx_status
-for all MSDUs of a radio that a REO reap returns, and
-ath11k_dp_rx_h_mpdu() fills it for each of them. It clears
-RX_FLAG_DECRYPTED, RX_FLAG_IV_STRIPPED and RX_FLAG_MMIC_STRIPPED of the
-MSDU before, but not the other flags it sets for a decrypted MSDU:
-RX_FLAG_MIC_STRIPPED and RX_FLAG_ICV_STRIPPED for a group-addressed
-one, RX_FLAG_PN_VALIDATED for a unicast one.
+With Ethernet decap (frame_mode=2), ath11k hands mac80211 the Ethernet
+source address of a decapped MSDU without comparing it with the address
+of the station that sent it. ieee80211_rx_8023() delivers the frame
+under that source, and for EAPOL and decrypted group frames
+ath11k_dp_rx_h_undecap_eth() writes it into the 802.11 header it
+rebuilds. mac80211 compares the source with the station only for the
+A-MSDU subframes it deaggregates itself (check_sa in
+__ieee80211_rx_h_amsdu()).
 
-A decrypted group-addressed MSDU that follows a decrypted unicast MSDU
-of the same radio in one reap would therefore reach mac80211 with
-RX_FLAG_PN_VALIDATED, although the hardware checks the PN of unicast
-frames only. ieee80211_crypto_ccmp_decrypt() and
-ieee80211_crypto_gcmp_decrypt() then skip the replay check of the
-group key.
+On IPQ8074 hw2.0 with firmware WLAN.HK.2.12-01460, the firmware passes
+the fourth address of a 4-address data frame through as the Ethernet
+source, also from a station the AP has not set up for 4-address use. A
+station associated to the AP can therefore turn on 4-address mode on
+its own side and send frames under any source address, and a bridge on
+the AP learns that address on the Wi-Fi port. An ath10k station sent
+200 broadcasts with a forged source this way, and all 200 reached the
+AP's bridge.
 
-On IPQ8074 hw2.0 with WLAN.HK.2.12-01460 this is not reachable: the
-firmware releases group-addressed MSDUs through the REO error path,
-with error code DESC_ADDR_ZERO, and ath11k_dp_rx_wbm_err() gives each
-of them a receive status of its own, so no reap carries the flags of a
-unicast MSDU into a group-addressed one. An ath11k station under
-unicast load received 29011 group-addressed MSDUs there, and none of
-them entered ath11k_dp_rx_h_mpdu() with RX_FLAG_PN_VALIDATED already
-set. If a chip or firmware delivers group-addressed MSDUs through the
-REO destination ring, a radio in range that recorded a group-addressed
-data frame of the network could send it again, without any key, while
-the receiver gets unicast data, and the station or mesh point would
-accept the copy.
+On an AP vdev, drop an Ethernet II frame from a peer that does not use
+four addresses when its source is not the peer's address. Frames of a
+4-address station keep their path, as do frames on a station vdev,
+whose sources are the hosts behind the access point.
+ath11k_dp_rx_h_mpdu() looks the peer up under base_lock already; it now
+returns an error for such a frame and both callers free it. ath12k
+already hands such 4-address frames to mac80211 as 802.11 frames
+(ath12k_dp_rx_h_undecap()), and mac80211 drops them on an AP interface.
 
-Clear the three flags with the other per-MPDU flags.
-
-Found by reading the code with an AI review tool.
+Found by reading the code with an AI review tool; the trigger above was
+then reproduced on hardware.
 
 Fixes: 2167fa606c0f ("ath11k: Add support for RX decapsulation offload")
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
- drivers/net/wireless/ath/ath11k/dp_rx.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath11k/dp_rx.c | 58 ++++++++++++++++++++++---
+ 1 file changed, 51 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath11k/dp_rx.c b/drivers/net/wireless/ath/ath11k/dp_rx.c
-index f8c08b8b6b08..6fdcd2aed7dc 100644
+index 93425ee02774..f8c08b8b6b08 100644
 --- a/drivers/net/wireless/ath/ath11k/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath11k/dp_rx.c
-@@ -2338,7 +2338,10 @@ static int ath11k_dp_rx_h_mpdu(struct ath11k *ar,
- 			     RX_FLAG_MMIC_ERROR |
- 			     RX_FLAG_DECRYPTED |
- 			     RX_FLAG_IV_STRIPPED |
--			     RX_FLAG_MMIC_STRIPPED);
-+			     RX_FLAG_MMIC_STRIPPED |
-+			     RX_FLAG_MIC_STRIPPED |
-+			     RX_FLAG_ICV_STRIPPED |
-+			     RX_FLAG_PN_VALIDATED);
+@@ -2253,13 +2253,47 @@ ath11k_dp_rx_h_find_peer(struct ath11k_base *ab, struct sk_buff *msdu)
+ 	return peer;
+ }
  
- 	if (err_bitmap & DP_RX_MPDU_ERR_FCS)
- 		rx_status->flag |= RX_FLAG_FAILED_FCS_CRC;
+-static void ath11k_dp_rx_h_mpdu(struct ath11k *ar,
+-				struct sk_buff *msdu,
+-				struct hal_rx_desc *rx_desc,
+-				struct ieee80211_rx_status *rx_status)
++/*
++ * With Ethernet decap the hardware takes the source address from the frame,
++ * for a four-address frame from address 4, which a station can send although
++ * the access point did not set it up for four addresses, and mac80211's 802.3
++ * path and ath11k_dp_rx_h_undecap_eth() take it as the address of the station.
++ * An access point takes no other source from a station that does not use four
++ * addresses.
++ */
++static bool ath11k_dp_rx_h_eth_sa_valid(struct ath11k_base *ab,
++					struct ath11k_peer *peer,
++					struct hal_rx_desc *rx_desc,
++					struct sk_buff *msdu)
++{
++	struct ath11k_sta *arsta;
++	struct ethhdr *eth;
++
++	lockdep_assert_held(&ab->base_lock);
++
++	if (ath11k_dp_rx_h_msdu_start_decap_type(ab, rx_desc) !=
++	    DP_RX_DECAP_TYPE_ETHERNET2_DIX || !peer->sta)
++		return true;
++
++	arsta = ath11k_sta_to_arsta(peer->sta);
++	if (arsta->arvif->vdev_type != WMI_VDEV_TYPE_AP || arsta->use_4addr_set)
++		return true;
++
++	if (msdu->len < ETH_HLEN)
++		return false;
++
++	eth = (struct ethhdr *)msdu->data;
++	return ether_addr_equal(eth->h_source, peer->addr);
++}
++
++static int ath11k_dp_rx_h_mpdu(struct ath11k *ar,
++			       struct sk_buff *msdu,
++			       struct hal_rx_desc *rx_desc,
++			       struct ieee80211_rx_status *rx_status)
+ {
+ 	bool  fill_crypto_hdr;
+ 	enum hal_encrypt_type enctype;
++	bool sa_valid = true;
+ 	bool is_decrypted = false;
+ 	struct ath11k_skb_rxcb *rxcb;
+ 	struct ieee80211_hdr *hdr;
+@@ -2284,11 +2318,16 @@ static void ath11k_dp_rx_h_mpdu(struct ath11k *ar,
+ 			enctype = peer->sec_type_grp;
+ 		else
+ 			enctype = peer->sec_type;
++		sa_valid = ath11k_dp_rx_h_eth_sa_valid(ar->ab, peer, rx_desc,
++						       msdu);
+ 	} else {
+ 		enctype = ath11k_dp_rx_h_mpdu_start_enctype(ar->ab, rx_desc);
+ 	}
+ 	spin_unlock_bh(&ar->ab->base_lock);
+ 
++	if (!sa_valid)
++		return -EINVAL;
++
+ 	rx_attention = ath11k_dp_rx_get_attention(ar->ab, rx_desc);
+ 	err_bitmap = ath11k_dp_rx_h_attn_mpdu_err(rx_attention);
+ 	if (enctype != HAL_ENCRYPT_TYPE_OPEN && !err_bitmap)
+@@ -2322,13 +2361,15 @@ static void ath11k_dp_rx_h_mpdu(struct ath11k *ar,
+ 			       enctype, rx_status, is_decrypted);
+ 
+ 	if (!is_decrypted || fill_crypto_hdr)
+-		return;
++		return 0;
+ 
+ 	if (ath11k_dp_rx_h_msdu_start_decap_type(ar->ab, rx_desc) !=
+ 	    DP_RX_DECAP_TYPE_ETHERNET2_DIX) {
+ 		hdr = (void *)msdu->data;
+ 		hdr->frame_control &= ~__cpu_to_le16(IEEE80211_FCTL_PROTECTED);
+ 	}
++
++	return 0;
+ }
+ 
+ static void ath11k_dp_rx_h_rate(struct ath11k *ar, struct hal_rx_desc *rx_desc,
+@@ -2626,7 +2667,9 @@ static int ath11k_dp_rx_process_msdu(struct ath11k *ar,
+ 	}
+ 
+ 	ath11k_dp_rx_h_ppdu(ar, rx_desc, rx_status);
+-	ath11k_dp_rx_h_mpdu(ar, msdu, rx_desc, rx_status);
++	ret = ath11k_dp_rx_h_mpdu(ar, msdu, rx_desc, rx_status);
++	if (ret)
++		goto free_out;
+ 
+ 	rx_status->flag |= RX_FLAG_SKIP_MONITOR | RX_FLAG_DUP_VALIDATED;
+ 
+@@ -4018,7 +4061,8 @@ static int ath11k_dp_rx_h_null_q_desc(struct ath11k *ar, struct sk_buff *msdu,
+ 
+ 	ath11k_dp_rx_h_ppdu(ar, desc, status);
+ 
+-	ath11k_dp_rx_h_mpdu(ar, msdu, desc, status);
++	if (ath11k_dp_rx_h_mpdu(ar, msdu, desc, status))
++		return -EINVAL;
+ 
+ 	rxcb->tid = ath11k_dp_rx_h_mpdu_start_tid(ar->ab, desc);
+ 
 -- 
 2.53.0
 
