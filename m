@@ -2,118 +2,144 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9BCB0606A31A
-	for <ath12k@archiver.kernel.org>; Mon, 23 Nov 2026 13:50:22 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BA2C8606A31A
+	for <ath12k@archiver.kernel.org>; Mon, 23 Nov 2026 14:34:26 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nj/Nfbj0;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=LZ7bVsG5
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=uR50H2On;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=A2RfhsbF;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=U0WeaEqB
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=kZAWfOVV6szfbsnxGNpL1TPV/6g7LyK5WV+tYnXzkHs=; b=nj/Nfbj0L8+aad
-	4RL6Zy3vHpuSKMDseyAALCbWLeFYZ7BWfxUjONT3WcPoPSvS7Qr/dKWC7EgjDIXJE1Ivi0W11iVvg
-	N1MZSUHr6Kz5CwHhWgM80hMOABdAhjvoqg+mHILFVcPyzrB9ucpm/TF8TtrzBrPEQu+4G8Z8pXWJI
-	K1xEOXO7AnRzGCPLBBZ3oWAjwlbS6z3PfCay1XPxBaZqd0Tu4WpFXHd1ADhF9GSavTOsOx9j9Hhse
-	tzf/15uVIXA+DvQ72B3lhELQ8VenIvnkE/qb81mjbTCC593et9RGOjUJcgEFMhUygXRo/hm3yc197
-	TgRe7dWVMizYar6NI4ZA==;
+	List-Owner; bh=Smi7DyyjRxVYoicH7J6jG7b7447tQ0E7x3DcOOVFtuk=; b=uR50H2On/96LYH
+	DVmYVqqPdILdAXuTV1ZUZNSnawz2BMBizIaL/J8pUbnHbSkl/8pF0PGT62K1sQeqP0MZfQWnWVKny
+	wgSXeQJX3LM5sKtSGs2q5eXYdITLY+/orXnYuIRihbBsLzVinG9Tn0n0E8mY9U6LDSH5DFJPem1Kk
+	EtvnutCj8GnTMr1TBVA5BP3HhAZ7tV3QLs5txOTH1CVCmLGOSk26tUXwluWKsuRsT8Mcr55hz/14e
+	4pSu8Ic7CMowT4qgS+eQNyLKcY/B7qAs2PCCA+lDIoh2E9pThuBMzGiA+FY0W/3xXJn5J9Fa2IhTJ
+	Z/uzeEu6LLcVIV7qgQ2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVUR2-00000003dMU-3djP;
-	Mon, 23 Nov 2026 13:50:20 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1xVV7f-00000003ktS-0wLG;
+	Mon, 23 Nov 2026 14:34:23 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVUQy-00000003dI1-2OsX
+	id 1xVV7c-00000003kt8-42CR
 	for ath12k@lists.infradead.org;
-	Mon, 23 Nov 2026 13:50:19 +0000
-Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-6b88bc47e23so4047534a12.2
-        for <ath12k@lists.infradead.org>; Mon, 23 Nov 2026 05:50:16 -0800 (PST)
+	Mon, 23 Nov 2026 14:34:22 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ANDL1KT2086051
+	for <ath12k@lists.infradead.org>; Mon, 23 Nov 2026 14:34:19 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Smi7DyyjRxVYoicH7J6jG7b7447tQ0E7x3DcOOVFtuk=; b=A2RfhsbFTZ2+HTle
+	sLG+m/K8OrvRA9VXTgH77D9x25c9JWolKsMsguUulP4g5zXbRscSws2nJ6cXD9Oe
+	cUI4Us34XskMW9E9bj63kvdcWOV5exFG+stnQX6SzzJGsXQ9HxCQvblyLqjmpElE
+	l3RKlV9Bjaoz3R9UKzYrMuwUe2UesbFNRLFdqwsj7pHZHSchq0eejKwvsAuDsnEu
+	mFvpPuZuaYziaXVGG16WfU0M8tV2SJbOkVUHMPkm2fFVOi4YTuKeSuC6L5aToTNU
+	Mc+tXKXOeY6zxsc7ApVRYjxNYHw81RlrKaSAk9w9ukw892/3eHB4S8A03IOIb0cd
+	7U9mqw==
+Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j4fy01u3x-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 23 Nov 2026 14:34:19 +0000 (GMT)
+Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-3869accaac2so1749595eec.1
+        for <ath12k@lists.infradead.org>; Mon, 23 Nov 2026 06:34:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795441815; x=1796046615; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=kZAWfOVV6szfbsnxGNpL1TPV/6g7LyK5WV+tYnXzkHs=;
-        b=LZ7bVsG5U+yphhK5LmR8uj5F8Si8C9TZvMrhkN0Qdz4DkNw1J8JPfRVpGpxeKSummu
-         BUPZGodNZN/pI0Jc0m64aDe5c5GnI630DKOLdKXVyWmA6pdEGTn/KgHyi6p1vL/4k99q
-         HF5cdWwmDHGwnyaUpdWuEznJGZL17DyWqQ7c3lNw55ryd3RoYalxyWrd/NJbDdmwNpRf
-         bf+9oI6JrwqRDC/+L35ZEh0GRObRn0aCZ2L24UkN5IbYJwv5FcJI5Eh5M/gbyAfv8kBm
-         8MkMSVnkq0V/dx6ILcdluDaEEfcguzuMraADQBCVmPGPtOWRbB7UNG4Ht/vL66mqp6AC
-         KLsA==
+        d=oss.qualcomm.com; s=google; t=1795444458; x=1796049258; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Smi7DyyjRxVYoicH7J6jG7b7447tQ0E7x3DcOOVFtuk=;
+        b=U0WeaEqBpgfi7lUwm9/UlLym5RBa55U9VwQqexm4GZigDVKleXowhsl7dSn1N3lLAt
+         vRAXRuWUhOnRxO5ciZbrO2GOZ1AMNVMDxhC3Yosn4Az2LYa2BkuNWEvUYogY4WtTT/76
+         Vpfy1/9NEw8geriSRRKNJKU9wcD4yng7UFqkWTdnzbTkMe1gMEr6trLiqH5u9lPH1oSW
+         RE4c6eNf+hI+p4Cq+y4GOsKS/0YdBlN9K9y3/PJ9GA1H2jnXa+bh3+x05owjCyDfUJZs
+         6JPkqXMtI2/5VQ+FQGfTL2kdpY3NJmmChWRVP+tgPFohspETl00YbqVbR5aoSTc4AJgO
+         odBA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795441815; x=1796046615;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=kZAWfOVV6szfbsnxGNpL1TPV/6g7LyK5WV+tYnXzkHs=;
-        b=L8Ji4Nbqq4CBzZ7c8M0C/5n5SH9ZGd8NU8XEQWx+7sZYRjicSz9X4dPAbRuuDJuUU1
-         Sd59NzPR416yvc9LZQbALZfWmofW/yTznnc+r9EGG9V/zxoTZh3rE9Q87KcqtcitwSpQ
-         Hcroh2j6V8JHOcjaZWgdT6IijeQM+YNGW2L3rHgu+nZLz8aMnbdrIxc7OftpnqBmrVQ6
-         Ya40T8hIfW900D3N2uaRHA0BZi+LeKwyU/oRd0NUDVeZqLU+ShwtaCfNfQy+pNRsm4Jr
-         HIBGSkmgQ42vBfAe+O+CfI9NXotgBsKkEWf8y05RGHxSbvqfOpx0mUsoRsKThsJSl7B0
-         CmCA==
-X-Forwarded-Encrypted: i=1; AL+hErHLO56O9MLQOP1YTF79ZU0ELJ3O2K3B1/VzbkcTUucfh/qZlNuxU2olpAw9vmR9B12f7yQ+rkA=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/NbQwCTvQIcnxaboRnYPBpB195woZfBxb30palg6MZJf9US4wk
-	hN/kxGlPQ9yMZGBQ1XSt3/vZsekXEhKKuu9jUopSpA3y3acxN1BMZHYRHKFT+OxJBA==
-X-Gm-Gg: AZFdTZcRKHUN1Wn2Rr2u05ya7dP2De5rZWNFRtZX46xs086zN3IgJioJXxAeeyqH6Mv
-	rvq5fV+F0hpzQT9+EhoGETBPLFR7WBFzcpNPWtylH54N7U62sok8FNWK6WgRDWhUjxen/rI1U/X
-	zJStZGnii4fSkRtvHMt3vappEQ6+OPpKGXbjSpUBP9dc4TUOh655chZOjUzdmep0Gm707xTrLU+
-	PkjojjqEHVJM12Lac3t6jRfjBk+J9XzIj1W62sW4ot8dagtKfQoz+9kotRbDrbY/TVMUlcwoTAz
-	IByUb/URf00Pb4P0litYDkay8K3ERuY8Kiff2/p+hVjj0x1Ut18tBDbuY8gvYQo3NWVxP/j0+qM
-	fVtzXkkWgq4iVIDSEvM2Sufbspxn+4yo8l1gpnc/Pz2qUectGSNGqHZ0roxiZ+SIsqFpl3N5SZ8
-	3e4hm5tL4DnDmSvOj0gO5YyxuWYvjG+XjWIq6AQeSD1+fgPGnC1PM3LyrcUJVYMexl94I5wJkRU
-	lJ5EhEBD1gZuR4SY1eWTw00z2Rt25PL53U7F43hyuXE/Ksa4Ly0ixqzyRmbZGrGetNi3OHdJSOk
-	cyB7kKBRRhnJWKZmEAmbv99t8gq7Ib4Mj1IeWo9LWxFCczh3IZKnUVG0MiH2pzD2zv2ZI7jYG4X
-	uv8yX0tw8sNO4JMPcib4fiJ3KPKk+N8vR920uaRL7ujVkkPVl79gKZh/7PlCDgQh5VlgnnzAWqJ
-	GN5QP+r0fCU67IvzozW+CuSPOmw97b3sdzZ1n2z81qiVSsemrivS3Ylhgyj/iXb5OQpw49nnhA1
-	w39vRpP2++lZQ31Hd8qPUSheJ+37DqWw/25Bn2yilW+lBhg+saAL2UBvZU+fPAX4wjk+pXa/+8Y
-	zrk9DYRetCDSKmKH3Y01mtNGhEqPRPCbTI5nHLkUyfvFCOLhEj9eOWog1217MmGvjGscDSCOCym
-	4bED2koPiyW9/vByb5Ds=
-X-Received: by 2002:a05:6402:1941:b0:6ba:7bee:e0b0 with SMTP id 4fb4d7f45d1cf-6ba7beee4dfmr4339768a12.8.1795441814619;
-        Mon, 23 Nov 2026 05:50:14 -0800 (PST)
-Received: from Desktop.tail070c67.ts.net (p200300f247012000e9a6b19fb24a0d13.dip0.t-ipconnect.de. [2003:f2:4701:2000:e9a6:b19f:b24a:d13])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6ba370fa8a4sm5357732a12.21.2026.11.23.05.50.13
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Nov 2026 05:50:14 -0800 (PST)
-From: Julius Bairaktaris <julius@bairaktaris.de>
-To: Jeff Johnson <jjohnson@kernel.org>,
-	Johannes Berg <johannes@sipsolutions.net>
-Cc: ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-	P Praneesh <praneesh.p@oss.qualcomm.com>,
-	Sriram R <sriram.ramachandran@oss.qualcomm.com>,
-	Karthikeyan Periyasamy <karthikeyan.periyasamy@oss.qualcomm.com>,
-	Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>,
-	Sathishkumar Muruganandam <quic_murugana@quicinc.com>,
-	Maharaja Kennadyrajan <quic_mkenna@quicinc.com>,
-	Balamurugan Selvarajan <quic_bselvara@quicinc.com>,
-	Venkateswara Naralasetty <quic_vnaralas@quicinc.com>,
-	Govindaraj Saminathan <quic_gsamin@quicinc.com>,
-	Wen Gong <quic_wgong@quicinc.com>,
-	Carl Huang <quic_cjhuang@quicinc.com>,
-	John Crispin <john@phrozen.org>,
-	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
-	Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Subject: [RFC PATCH ath-next 3/3] wifi: ath11k: merge the TCP segments of a station in a REO reap
-Date: Mon, 23 Nov 2026 14:50:10 +0100
-Message-ID: <20261123135010.721107-4-julius@bairaktaris.de>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261123135010.721107-1-julius@bairaktaris.de>
-References: <20261123135010.721107-1-julius@bairaktaris.de>
+        d=1e100.net; s=20260707; t=1795444458; x=1796049258;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=Smi7DyyjRxVYoicH7J6jG7b7447tQ0E7x3DcOOVFtuk=;
+        b=mK6hUY1gidfGXKmYOdYdcIS8O53dXXOiByuU/4uRRiAd5kPh6f1zxtkYxpkY6WLPgU
+         /pBMD4Ad1bNAhP+jaKIYK9xQSsC9EPhLnyBsjU1tyQRpjxJPtGuaCNDV/EJIvWAA3rJR
+         7wK0xwnesXsAVyMmDR25ISe/2lRpZYMt7rOBwktXbX1Z4wU5SaJaftQQRSFiV0e3/a+1
+         jH1F1EGUF++bUa2fEq+z8siHUATU4qaDJ7LZqJYio+yU8OzbhTS43KE0pWGn+puVkOla
+         SEddYxuSAf5dPVY28aYHB6VyYOhCEwE9X5hDYsmPQIcvTlY529RbX2RvxcXsRzn7ePfg
+         ACyg==
+X-Forwarded-Encrypted: i=1; AL+hErGZbUht0fRsbJrfXtN2kDivcgNJGWPJPB5wUdy2ppgKvJB2a4BqZhO7E92aoas09qFWqfGfMQU=@lists.infradead.org
+X-Gm-Message-State: APuU4Z9PKtAmHxQSs+v6N7BwF+eEKFDp0bBXQpOrlG9caIz2TBmSBCUB
+	vXI4InBJTvIuly+IAy2eR++jhyHg+9MZphiBp5wUKDRW9ksv8gtO7IICOjAA5e5xG9eDLYOj/fZ
+	Hm0SqLXchlHvdGqucWMTm1hFEgG8u7elIoBW7VurVnF/76VswkF56G/v9AXDBLVlU
+X-Gm-Gg: AZFdTZcPUGqfWFC3KLTubeEwdahCfWyuoSdbub9XAD92O+1nrYet7yO4LVLKwr8sHBL
+	O/P5TsNmCdFPk8DIsogfeX9+lXwRiefHOHIvvctw30Qh/CyJ+q5oA343rp8/OmhYic96kDKC8xj
+	PSnukani9O9RbZ93gQT8GvHXfxSJduwwv9VkOV3zO5HrK1GsTmxWpW2jlfNsyvaMAOSjsUe3MGs
+	00jyfKUnrihvyfdEFdhgkgDROVjLA7XY3xojUKi0E+86iiADY1YQPTBzGvdeFjhzxS/BsdDETWB
+	7zjgWU8cOf7vgg5iG62Mh8BiyZyH1lBZ3Ry/Gs44Jbk+ubjh15I5WMlP51ZoPAX8MUNCEwkq7Ze
+	TC6Zlgw/4RO9Ekj914RiPDJMxhxm7AYmPRTpFYdIoexm1YESR1RoG/r9OUrLGU7VhZPAvRRewvu
+	ldfoeSQ3yB6RPWdBhR
+X-Received: by 2002:a05:7301:2b5:b0:386:b8a7:a195 with SMTP id 5a478bee46e88-386b8a7a885mr1173722eec.2.1795444457775;
+        Mon, 23 Nov 2026 06:34:17 -0800 (PST)
+X-Received: by 2002:a05:7301:2b5:b0:386:b8a7:a195 with SMTP id 5a478bee46e88-386b8a7a885mr1173687eec.2.1795444456713;
+        Mon, 23 Nov 2026 06:34:16 -0800 (PST)
+Received: from [192.168.11.103] ([124.123.81.254])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385677c0c1dsm40049875eec.21.2026.11.23.06.34.14
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 23 Nov 2026 06:34:16 -0800 (PST)
+Message-ID: <99ed1f21-2c87-4673-8d4a-45f20899b3ef@oss.qualcomm.com>
+Date: Mon, 23 Nov 2026 20:04:12 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next v2] wifi: ath12k: add hash table for peer lookup
+ in struct ath12k_dp_hw
+To: Aishwarya R <aishwarya.r@oss.qualcomm.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Harsh Kumar Bijlani <harsh.bijlani@oss.qualcomm.com>,
+        Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+References: <20261120070900.541279-1-aishwarya.r@oss.qualcomm.com>
+From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20261120070900.541279-1-aishwarya.r@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTIzMDA1NyBTYWx0ZWRfX8ctdSKh4RIlV
+ xQVP0RNevbOfWt1WzknNK8YYCoZQvqiQ8K5X6Xiq22xdtMXYw8e/RN5mvpcyuiVCeeLCIT60kzq
+ 82mckXa5WJUPfCjt5yyXSTc4IVxUs428y6dX9HtpnXpdUruVD6VXAI6PKsJBETUZx49fViDiSl/
+ 2e9ak5sukztzM/H2Al9lPWuXoLqGPy/iI8+XvG2O06GovN8PKw2BDtp3/4HuuJ6gshbof8GncwV
+ WiIq5oQTqRCjBFziLP1dhL+yJkK+6JVB6OM4yOwtjyFSrHR6XrocPueDh+Bw8X+WI0EJIDyJJRy
+ FgcmK40LCnqO60ULVBOrOP8t3vYKVC55XFFr0II8Z0GRHZKeR94wt/LpiZ/fnPtJWpR2ba8LgnJ
+ 8oMJqQTvvwZQum9+p947RwDSHfEHBQ37t9hXfdYtmm997jGxWygrKjwUCAusOGzuEjMghYsbBsi
+ 16t4zmNN1G8gSvSYeQg==
+X-Proofpoint-ORIG-GUID: yegWRSf65HCD1uyd3x3t0Fr7pq9Lb2Tc
+X-Authority-Analysis: v=2.4 cv=QrXLTlyd c=1 sm=1 tr=0 ts=6b044eeb cx=c_pps
+ a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=WcLwt0pvHDAIUQ3iVSLIEw==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=EUspDBNiAAAA:8 a=xdo4dnPfHygUjUsX-2sA:9 a=QEXdDO2ut3YA:10
+ a=6Ab_bkdmUrQuMsNx7PHu:22
+X-Proofpoint-GUID: yegWRSf65HCD1uyd3x3t0Fr7pq9Lb2Tc
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTIzMDA1NyBTYWx0ZWRfX9TG+8JhfW4Gu
+ AsrLOLm74Gh3y8pDm3iMpCv7rJqn6b3G/4F2vnmB7SW51kXn9shTzz8QCZLFyVjIsddDHR7hnbj
+ GwtRXBr2F1mP84/xZcL+BB1EN7zjcls=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-23_03,2026-11-23_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 impostorscore=0 suspectscore=0 phishscore=0 spamscore=0
+ lowpriorityscore=0 adultscore=0 clxscore=1015 malwarescore=0 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611230057
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261123_055018_038807_F65C8477 
-X-CRM114-Status: GOOD (  27.76  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20261123_063421_127456_A05355CD 
+X-CRM114-Status: GOOD (  32.82  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,586 +150,381 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
 	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=unavailable autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Every MSDU the REO ring hands over goes to mac80211 on its own:
-ieee80211_rx_napi() runs the 802.3 receive path for it (the station and
-its fast_rx, the station and netdev counters, the control port check,
-the internal forward lookup) and passes it to napi_gro_receive(), where
-the TCP GRO of the netdev parses it again and merges it into the
-aggregate it was building. For a TCP upload of one station at
-850 Mbit/s that is about 70,000 frames a second through all of it. In a
-profile of such an upload routed by an IPQ8074 (one run), the GRO
-functions (dev_gro_receive(), tcp_gro_receive(), inet_gro_receive(),
-tcp4_gro_receive() and their helpers) take 7.9 % of all samples and the
-mac80211 802.3 receive path 5.2 %.
+On 11/20/2026 12:39 PM, Aishwarya R wrote:
+> Peer lookup by MAC address in struct ath12k_dp_hw is currently performed by
+> walking the dp_peers_list, resulting in O(n) lookup complexity. As the
+> driver supports up to 1536 clients, frequent lookups on critical paths
+> such as TX/RX processing, peer management, control operations and
+> debug/statistics handling can incur noticeable overhead in dense
+> deployment scenarios.
+> 
+> Replace the peer list with a generic kernel hash table for MAC address
+> based peer management and lookup, providing O(1) average-case lookup
+> performance. The hash table is implemented using DECLARE_HASHTABLE()
+> with 2048 buckets (2^11), derived from
+> order_base_2(ATH12K_MAX_DEVICES * ATH12K_MAX_CLIENTS), and uses jhash()
+> over the peer MAC address as the hash key.
+> 
+> The hash table is used both for address-based lookups and peer
+> traversal operations, eliminating the need for maintaining a separate
+> peer list.
+> 
+> The maximum single-radio client limit is defined as
+> ATH12K_MAX_CLIENTS and reused by the memory profile and hardware
+> params. This keeps the peer hash sizing aligned with the per-device
+> client limit and the maximum number of devices in a hardware group.
+> 
+> Key changes:
+> - Add peer_hash table to ath12k_dp_hw and initialize it during
+>    hardware allocation.
+> - Add hash_node to ath12k_dp_peer for hash table membership.
+> - Introduce helper APIs for hash computation, insertion, deletion and
+>    lookup.
+> - Convert MAC-address-based peer searches from list traversal to
+>    hash-table lookup.
+> - Replace peer list traversal with hash table iteration.
+> 
+> Peer creation inserts the peer into the hash table, while deletion
+> removes it from the hash table. Peer cleanup paths are updated to
+> iterate over the hash table and safely free peer objects.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+> 
+> Co-developed-by: Harsh Kumar Bijlani <harsh.bijlani@oss.qualcomm.com>
+> Signed-off-by: Harsh Kumar Bijlani <harsh.bijlani@oss.qualcomm.com>
+> Signed-off-by: Aishwarya R <aishwarya.r@oss.qualcomm.com>
+> Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+> ---
+> Changes in v2:
+> - Rebased the changes
+> ---
+>   drivers/net/wireless/ath/ath12k/cmn_defs.h |  2 +
+>   drivers/net/wireless/ath/ath12k/core.c     |  2 +-
+>   drivers/net/wireless/ath/ath12k/dp_cmn.h   | 14 ++++++-
+>   drivers/net/wireless/ath/ath12k/dp_peer.c  | 47 ++++++++++++++++++----
+>   drivers/net/wireless/ath/ath12k/dp_peer.h  |  7 +++-
+>   drivers/net/wireless/ath/ath12k/mac.c      | 20 ++++-----
+>   drivers/net/wireless/ath/ath12k/wifi7/hw.c | 10 ++---
+>   7 files changed, 76 insertions(+), 26 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/cmn_defs.h b/drivers/net/wireless/ath/ath12k/cmn_defs.h
+> index 20208ffea1c9..15c5e8d11afc 100644
+> --- a/drivers/net/wireless/ath/ath12k/cmn_defs.h
+> +++ b/drivers/net/wireless/ath/ath12k/cmn_defs.h
+> @@ -10,6 +10,8 @@
+>   
+>   #define MAX_RADIOS 2
+>   #define ATH12K_MAX_DEVICES 3
+> +#define ATH12K_MAX_CLIENTS 512
+> +
+>   #define ATH12K_GROUP_MAX_RADIO (ATH12K_MAX_DEVICES * MAX_RADIOS)
+>   
+>   #define ATH12K_SCAN_MAX_LINKS	ATH12K_GROUP_MAX_RADIO
+> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+> index 719200759ca0..6e0bb1fecc09 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.c
+> +++ b/drivers/net/wireless/ath/ath12k/core.c
+> @@ -44,7 +44,7 @@ static const struct
+>   ath12k_mem_profile_based_param ath12k_mem_profile_based_param[] = {
+>   [ATH12K_QMI_MEMORY_MODE_DEFAULT] = {
+>   		.num_vdevs = 17,
+> -		.max_client_single = 512,
+> +		.max_client_single = ATH12K_MAX_CLIENTS,
+>   		.max_client_dbs = 128,
+>   		.max_client_dbs_sbs = 128,
+>   		.dp_params = {
+> diff --git a/drivers/net/wireless/ath/ath12k/dp_cmn.h b/drivers/net/wireless/ath/ath12k/dp_cmn.h
+> index 88abe90767eb..ff011fafc175 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp_cmn.h
+> +++ b/drivers/net/wireless/ath/ath12k/dp_cmn.h
+> @@ -6,6 +6,7 @@
+>   #ifndef ATH12K_DP_CMN_H
+>   #define ATH12K_DP_CMN_H
+>   
+> +#include <linux/hashtable.h>
+>   #include "cmn_defs.h"
+>   
+>   struct ath12k_hw_group;
+> @@ -18,12 +19,21 @@ struct ath12k_dp_link_peer;
+>    */
+>   #define MAX_DP_PEER_LIST_SIZE  16384
+>   
+> +/*
+> + * The hash table supports ATH12K_MAX_DEVICES * ATH12K_MAX_CLIENTS clients;
+> + * order_base_2() gives 2048 hash buckets.
+> + */
+> +#define ATH12K_DP_PEER_HASH_BITS \
+> +	order_base_2(ATH12K_MAX_DEVICES * ATH12K_MAX_CLIENTS)
+> +
+>   struct ath12k_dp_hw {
+>   	struct ath12k_dp_peer __rcu *dp_peers[MAX_DP_PEER_LIST_SIZE];
+>   
+> -	/* Lock for protection of dp_peer_list and peers */
+> +	/* Lock for protection of dp_peers[] and peer_hash */
+>   	spinlock_t peer_lock;
+> -	struct list_head dp_peers_list;
+> +
+> +	/* Generic hash table for fast MAC address lookup */
+> +	DECLARE_HASHTABLE(peer_hash, ATH12K_DP_PEER_HASH_BITS);
+>   };
+>   
+>   struct ath12k_dp_hw_group {
+> diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.c b/drivers/net/wireless/ath/ath12k/dp_peer.c
+> index 4e753e6abe3a..5dc7f08e6292 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp_peer.c
+> +++ b/drivers/net/wireless/ath/ath12k/dp_peer.c
+> @@ -4,6 +4,7 @@
+>    * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+>    */
+>   
+> +#include <linux/jhash.h>
+>   #include "core.h"
+>   #include "dp_peer.h"
+>   #include "debug.h"
+> @@ -371,30 +372,58 @@ void ath12k_dp_link_peer_rhash_delete(struct ath12k_dp *dp,
+>   			    peer->addr, peer->peer_id, ret);
+>   }
+>   
+> +static u32 ath12k_dp_peer_addr_hash(const u8 *addr)
+> +{
+> +	return jhash(addr, ETH_ALEN, 0);
+> +}
+> +
+>   struct ath12k_dp_peer *ath12k_dp_peer_find_by_addr(struct ath12k_dp_hw *dp_hw, u8 *addr)
+>   {
+> -	struct ath12k_dp_peer *peer;
+> +	struct ath12k_dp_peer *dp_peer;
+> +	u32 hash;
+>   
+>   	lockdep_assert_held(&dp_hw->peer_lock);
+>   
+> -	list_for_each_entry(peer, &dp_hw->dp_peers_list, list) {
+> -		if (ether_addr_equal(peer->addr, addr))
+> -			return peer;
+> +	hash = ath12k_dp_peer_addr_hash(addr);
+> +	hash_for_each_possible(dp_hw->peer_hash, dp_peer, hash_node, hash) {
+> +		if (ether_addr_equal(dp_peer->addr, addr))
+> +			return dp_peer;
+>   	}
+>   
+>   	return NULL;
+>   }
+>   EXPORT_SYMBOL(ath12k_dp_peer_find_by_addr);
+>   
+> +static void ath12k_dp_peer_hash_table_add(struct ath12k_dp_hw *dp_hw,
+> +					  struct ath12k_dp_peer *dp_peer)
+> +{
+> +	u32 hash;
+> +
+> +	lockdep_assert_held(&dp_hw->peer_lock);
+> +
+> +	hash = ath12k_dp_peer_addr_hash(dp_peer->addr);
+> +	hash_add(dp_hw->peer_hash, &dp_peer->hash_node, hash);
+> +}
+> +
+> +void ath12k_dp_peer_hash_table_delete(struct ath12k_dp_hw *dp_hw,
+> +				      struct ath12k_dp_peer *dp_peer)
+> +{
+> +	lockdep_assert_held(&dp_hw->peer_lock);
+> +
+> +	hash_del(&dp_peer->hash_node);
+> +}
+> +
+>   struct ath12k_dp_peer *ath12k_dp_peer_find_by_addr_and_sta(struct ath12k_dp_hw *dp_hw,
+>   							   u8 *addr,
+>   							   struct ieee80211_sta *sta)
+>   {
+>   	struct ath12k_dp_peer *dp_peer;
+> +	u32 hash;
+>   
+>   	lockdep_assert_held(&dp_hw->peer_lock);
+>   
+> -	list_for_each_entry(dp_peer, &dp_hw->dp_peers_list, list) {
+> +	hash = ath12k_dp_peer_addr_hash(addr);
+> +	hash_for_each_possible(dp_hw->peer_hash, dp_peer, hash_node, hash) {
+>   		if (ether_addr_equal(dp_peer->addr, addr) && (dp_peer->sta == sta))
+>   			return dp_peer;
+>   	}
+> @@ -408,10 +437,12 @@ static struct ath12k_dp_peer *ath12k_dp_peer_create_find(struct ath12k_dp_hw *dp
+>   							 bool mlo_peer)
+>   {
+>   	struct ath12k_dp_peer *dp_peer;
+> +	u32 hash;
+>   
+>   	lockdep_assert_held(&dp_hw->peer_lock);
+>   
+> -	list_for_each_entry(dp_peer, &dp_hw->dp_peers_list, list) {
+> +	hash = ath12k_dp_peer_addr_hash(addr);
+> +	hash_for_each_possible(dp_hw->peer_hash, dp_peer, hash_node, hash) {
+>   		if (ether_addr_equal(dp_peer->addr, addr)) {
+>   			if (!sta || mlo_peer || dp_peer->is_mlo ||
+>   			    dp_peer->sta == sta)
+> @@ -517,7 +548,7 @@ int ath12k_dp_peer_create(struct ath12k_dp_hw *dp_hw, u8 *addr,
+>   
+>   	spin_lock_bh(&dp_hw->peer_lock);
+>   
+> -	list_add(&dp_peer->list, &dp_hw->dp_peers_list);
+> +	ath12k_dp_peer_hash_table_add(dp_hw, dp_peer);
+>   
+>   	/*
+>   	 * For an MLO client whose ML peer ID is allocated by the host, the
+> @@ -555,7 +586,7 @@ void ath12k_dp_peer_delete(struct ath12k_dp_hw *dp_hw, u8 *addr,
+>   	    dp_peer->peer_id != ATH12K_MLO_PEER_ID_PENDING)
+>   		rcu_assign_pointer(dp_hw->dp_peers[dp_peer->peer_id], NULL);
+>   
+> -	list_del(&dp_peer->list);
+> +	ath12k_dp_peer_hash_table_delete(dp_hw, dp_peer);
+>   
+>   	spin_unlock_bh(&dp_hw->peer_lock);
+>   
+> diff --git a/drivers/net/wireless/ath/ath12k/dp_peer.h b/drivers/net/wireless/ath/ath12k/dp_peer.h
+> index 2ac4c6c6d535..0a2b9d1814a5 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp_peer.h
+> +++ b/drivers/net/wireless/ath/ath12k/dp_peer.h
+> @@ -127,7 +127,6 @@ void ath12k_dp_link_peer_extended_event(struct ath12k_base *ab, u8 vdev_id,
+>   					u8 logical_link_id, u8 valid);
+>   
+>   struct ath12k_dp_peer {
+> -	struct list_head list;
+>   	bool is_mlo;
+>   	bool dp_setup_done;
+>   
+> @@ -164,6 +163,9 @@ struct ath12k_dp_peer {
+>   	struct ath12k_dp_rx_tid rx_tid[IEEE80211_NUM_TIDS + 1];
+>   
+>   	bool use_4addr;
+> +
+> +	/* Hash table node for MAC address lookup */
+> +	struct hlist_node hash_node;
+>   };
+>   
+>   struct ath12k_dp_link_peer *
+> @@ -212,4 +214,7 @@ ath12k_dp_link_peer_get_sta(const struct ath12k_dp_link_peer *link_peer)
+>   	return link_peer && link_peer->dp_peer ?
+>   		link_peer->dp_peer->sta : NULL;
+>   }
+> +
+> +void ath12k_dp_peer_hash_table_delete(struct ath12k_dp_hw *dp_hw,
+> +				      struct ath12k_dp_peer *dp_peer);
+>   #endif
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index a247dcf387de..51ee44e72abf 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -1277,16 +1277,20 @@ void ath12k_mac_peer_cleanup_all(struct ath12k *ar)
+>   
+>   void ath12k_mac_dp_peer_cleanup(struct ath12k_hw *ah)
+>   {
+> -	struct list_head peers;
+> -	struct ath12k_dp_peer *dp_peer, *tmp;
+>   	struct ath12k_dp_hw *dp_hw = &ah->dp_hw;
+> +	struct ath12k_dp_peer *dp_peer;
+> +	struct hlist_head free_list;
+> +	struct hlist_node *tmp;
+> +	int bkt;
+>   
+>   	lockdep_assert_wiphy(ah->hw->wiphy);
+>   
+> -	INIT_LIST_HEAD(&peers);
+> +	INIT_HLIST_HEAD(&free_list);
+>   
+>   	spin_lock_bh(&dp_hw->peer_lock);
+> -	list_for_each_entry_safe(dp_peer, tmp, &dp_hw->dp_peers_list, list) {
+> +	hash_for_each_safe(dp_hw->peer_hash, bkt, tmp, dp_peer, hash_node) {
+> +		ath12k_dp_peer_hash_table_delete(dp_hw, dp_peer);
+> +
+>   		if (dp_peer->is_mlo) {
+>   			if (dp_peer->peer_id != ATH12K_MLO_PEER_ID_PENDING)
+>   				rcu_assign_pointer(dp_hw->dp_peers[dp_peer->peer_id],
+> @@ -1294,17 +1298,15 @@ void ath12k_mac_dp_peer_cleanup(struct ath12k_hw *ah)
+>   			ath12k_peer_ml_free(ah, ath12k_sta_to_ahsta(dp_peer->sta));
+>   		}
+>   
+> -		list_move(&dp_peer->list, &peers);
+> +		hlist_add_head(&dp_peer->hash_node, &free_list);
+>   	}
+>   
+>   	spin_unlock_bh(&dp_hw->peer_lock);
+>   
+>   	synchronize_rcu();
+>   
+> -	list_for_each_entry_safe(dp_peer, tmp, &peers, list) {
+> -		list_del(&dp_peer->list);
+> +	hlist_for_each_entry_safe(dp_peer, tmp, &free_list, hash_node)
+>   		kfree(dp_peer);
+> -	}
+>   }
+>   
+>   static int ath12k_mac_vdev_setup_sync(struct ath12k *ar)
+> @@ -15530,7 +15532,7 @@ static struct ath12k_hw *ath12k_mac_hw_allocate(struct ath12k_hw_group *ag,
+>   
+>   	spin_lock_init(&ah->survey_lock);
+>   	spin_lock_init(&ah->dp_hw.peer_lock);
+> -	INIT_LIST_HEAD(&ah->dp_hw.dp_peers_list);
+> +	hash_init(ah->dp_hw.peer_hash);
+>   
+>   	for (i = 0; i < num_pdev_map; i++) {
+>   		ab = pdev_map[i].ab;
+> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+> index 48a2f6da16ef..9f2b1dddfdb4 100644
+> --- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+> +++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+> @@ -488,7 +488,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+>   
+>   		.dp_primary_link_only = true,
+>   		.client = {
+> -			.max_client_single = 512,
+> +			.max_client_single = ATH12K_MAX_CLIENTS,
+>   			.max_client_dbs = 128,
+>   			.max_client_dbs_sbs = 128,
+>   		},
+> @@ -587,7 +587,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+>   
+>   		.dp_primary_link_only = false,
+>   		.client = {
+> -			.max_client_single = 512,
+> +			.max_client_single = ATH12K_MAX_CLIENTS,
+>   			.max_client_dbs = 128,
+>   			.max_client_dbs_sbs = 128,
+>   		},
+> @@ -682,7 +682,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+>   
+>   		.dp_primary_link_only = true,
+>   		.client = {
+> -			.max_client_single = 512,
+> +			.max_client_single = ATH12K_MAX_CLIENTS,
+>   			.max_client_dbs = 128,
+>   			.max_client_dbs_sbs = 128,
+>   		},
+> @@ -871,7 +871,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+>   
+>   		.dp_primary_link_only = false,
+>   		.client = {
+> -			.max_client_single = 512,
+> +			.max_client_single = ATH12K_MAX_CLIENTS,
+>   			.max_client_dbs = 128,
+>   			.max_client_dbs_sbs = 128,
+>   		},
+> @@ -963,7 +963,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+>   
+>   		.dp_primary_link_only = true,
+>   		.client = {
+> -			.max_client_single = 512,
+> +			.max_client_single = ATH12K_MAX_CLIENTS,
+>   			.max_client_dbs = 128,
+>   			.max_client_dbs_sbs = 128,
+>   		},
+> 
+> base-commit: 03b7c601b6e314115015a57061f5b377afe13190
 
-Merge the consecutive segments of one TCP stream of one station and TID
-of a reap in the driver, as GRO on the netdev would merge them, and
-hand the run to mac80211 as one GSO frame. A run is opened by a plain
-ACK segment, and joined by the next segment of the same stream with the
-same receive status, Ethernet header, IP and TCP headers but for the
-ID, sequence and checksum; any other frame ends the run before it is
-handled itself, so the frames of a stream keep their order and no frame
-waits behind another stream's. The run ends at a segment that pushes, a
-short one, the GRO size of the netdev and its segment bound, and at the
-end of the reap; nothing is held across reaps.
 
-The checks that decide how mac80211 takes a frame stay per MSDU, since
-the run is built from MSDUs after ath11k_dp_rx_process_msdu() and
-ath11k_dp_rx_h_mpdu(): only a frame that goes the 802.3 path to a
-station on its own merges (Ethernet decap, unicast, a peer with a
-station, not EAPOL, not of a 4-address station, one buffer, a checksum
-the hardware verified, no FCS or MIC error), and the PN and decryption
-status every segment had is the one of the run, which is the same for
-all of them. Every segment has the Ethernet header of the run, so the
-source address mac80211 sees is the one each segment carried. A mesh
-interface has no decap offload in ath11k and is not merged. mac80211
-counts a GSO frame as its segments.
-
-The form is the one GRO on the netdev the station's frames reach would
-build, so nothing after it changes: none with GRO off or an XDP program
-there; a frame list when the netdev has rx-gro-list and no socket of
-the host takes the stream, as tcp4_check_fraglist_gro() and
-tcp6_check_fraglist_gro() decide; else a frame with fragments, whose
-segments give their buffer to the head through skb_try_coalesce() and
-free their skb. GRO takes a frame list it is handed whole and a TCP GSO
-frame as its segment count.
-
-The station of a run is used within the NAPI poll that looked it up,
-as ath11k_dp_rx_deliver_msdu() uses the station of its frame. Frames
-take the 802.3 path only with Ethernet decap, the frame_mode=2 module
-parameter; with the native Wi-Fi default nothing is merged.
-
-Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
----
- drivers/net/wireless/ath/ath11k/core.h    |   3 +
- drivers/net/wireless/ath/ath11k/debugfs.c |   4 +
- drivers/net/wireless/ath/ath11k/dp_rx.c   | 444 +++++++++++++++++++++-
- 3 files changed, 450 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath11k/core.h b/drivers/net/wireless/ath/ath11k/core.h
-index 6b05b2e4d926..d1fdc0593d38 100644
---- a/drivers/net/wireless/ath/ath11k/core.h
-+++ b/drivers/net/wireless/ath/ath11k/core.h
-@@ -903,6 +903,9 @@ struct ath11k_soc_dp_stats {
- 	u32 rxdma_error[HAL_REO_ENTR_RING_RXDMA_ECODE_MAX];
- 	u32 reo_error[HAL_REO_DEST_RING_ERROR_CODE_MAX];
- 	u32 hal_reo_error[DP_REO_DST_RING_MAX];
-+	/* runs of received TCP segments merged into one frame, their segments */
-+	u32 rx_merge_aggs;
-+	u32 rx_merge_segs;
- 	struct ath11k_soc_dp_tx_err_stats tx_err;
- 	struct ath11k_dp_ring_bp_stats bp_stats;
- };
-diff --git a/drivers/net/wireless/ath/ath11k/debugfs.c b/drivers/net/wireless/ath/ath11k/debugfs.c
-index b936101d6fa5..870e00ec7569 100644
---- a/drivers/net/wireless/ath/ath11k/debugfs.c
-+++ b/drivers/net/wireless/ath/ath11k/debugfs.c
-@@ -705,6 +705,10 @@ static ssize_t ath11k_debugfs_dump_soc_dp_stats(struct file *file,
- 			 soc_stats->hal_reo_error[2],
- 			 soc_stats->hal_reo_error[3]);
- 
-+	len += scnprintf(buf + len, size - len,
-+			 "\nReceived TCP runs merged into one frame: %u, their segments: %u\n",
-+			 soc_stats->rx_merge_aggs, soc_stats->rx_merge_segs);
-+
- 	len += scnprintf(buf + len, size - len, "\nSOC TX STATS:\n");
- 	len += scnprintf(buf + len, size - len, "\nTCL Ring Full Failures:\n");
- 
-diff --git a/drivers/net/wireless/ath/ath11k/dp_rx.c b/drivers/net/wireless/ath/ath11k/dp_rx.c
-index a85edaf19bfb..062281dfbae6 100644
---- a/drivers/net/wireless/ath/ath11k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath11k/dp_rx.c
-@@ -10,6 +10,8 @@
- #include <linux/kernel.h>
- #include <linux/net.h>
- #include <linux/skbuff.h>
-+#include <net/inet6_hashtables.h>
-+#include <net/inet_hashtables.h>
- #include <net/page_pool/helpers.h>
- #include "core.h"
- #include "debug.h"
-@@ -2854,8 +2856,9 @@ static void ath11k_dp_rx_deliver_msdu(struct ath11k *ar, struct napi_struct *nap
- 		   !!(status->flag & RX_FLAG_MMIC_ERROR),
- 		   !!(status->flag & RX_FLAG_AMSDU_MORE));
- 
-+	/* a merged frame has only its first segment's bytes in its head */
- 	ath11k_dbg_dump(ar->ab, ATH11K_DBG_DP_RX, NULL, "dp rx msdu: ",
--			msdu->data, msdu->len);
-+			msdu->data, skb_headlen(msdu));
- 
- 	rx_status = IEEE80211_SKB_RXCB(msdu);
- 	*rx_status = *status;
-@@ -2987,6 +2990,439 @@ static int ath11k_dp_rx_process_msdu(struct ath11k *ar,
- 	return ret;
- }
- 
-+/* The headers of a TCP segment in an Ethernet frame. */
-+struct ath11k_dp_rx_tcp {
-+	struct ethhdr *eth;
-+	union {
-+		struct iphdr *ip4;
-+		struct ipv6hdr *ip6;
-+	};
-+	struct tcphdr *th;
-+	u16 hdr_len;
-+	u16 payload;
-+	bool v6;
-+};
-+
-+/*
-+ * A run of consecutive segments of one TCP stream of one station, merged
-+ * into the first one's skb as its fragments, or chained on its frag_list
-+ * with their headers when @flist, and what the next segment has to be to
-+ * join it: @status is the receive status every segment of it had, and a
-+ * segment that does not join ends the run before it is handled itself.
-+ */
-+struct ath11k_dp_rx_merge {
-+	struct sk_buff *head;
-+	struct sk_buff *last;
-+	struct ieee80211_rx_status status;
-+	struct ath11k_dp_rx_tcp t;
-+	u32 next_seq;
-+	u32 max_size;
-+	u16 last_id;
-+	u16 mss;
-+	u16 segs;
-+	u16 max_segs;
-+	bool fixedid;
-+	bool flist;
-+};
-+
-+/*
-+ * Whether @msdu takes the 802.3 path of ath11k_dp_rx_deliver_msdu() to a
-+ * station of its own, on its own: a unicast frame of the Ethernet decap type,
-+ * of a peer whose station ath11k_dp_rx_h_mpdu() found, not EAPOL, not of a
-+ * 4-address station, in one buffer.
-+ */
-+static bool ath11k_dp_rx_merge_ok(struct ath11k *ar, struct sk_buff *msdu)
-+{
-+	struct ath11k_skb_rxcb *rxcb = ATH11K_SKB_RXCB(msdu);
-+
-+	if (!rxcb->sta_valid || !rxcb->sta || rxcb->is_mcbc ||
-+	    rxcb->is_eapol || rxcb->is_frag || rxcb->is_continuation)
-+		return false;
-+
-+	if (ath11k_dp_rx_h_msdu_start_decap_type(ar->ab, rxcb->rx_desc) !=
-+	    DP_RX_DECAP_TYPE_ETHERNET2_DIX)
-+		return false;
-+
-+	return !READ_ONCE(ath11k_sta_to_arsta(rxcb->sta)->use_4addr_set);
-+}
-+
-+/*
-+ * The headers of @msdu when it is a TCP data segment of an IPv4 or IPv6
-+ * frame that carries nothing a merge would lose: one buffer, a checksum the
-+ * hardware verified, no VLAN tag, IP options, extension headers or fragment,
-+ * a length that is the frame's, a unicast destination, and the flags of a
-+ * plain acknowledgment that may push.
-+ */
-+static bool ath11k_dp_rx_merge_parse(struct sk_buff *msdu,
-+				     struct ath11k_dp_rx_tcp *t)
-+{
-+	unsigned int len = msdu->len, thoff, thlen;
-+	u8 *d = msdu->data;
-+	struct tcphdr *th;
-+
-+	if (skb_is_nonlinear(msdu) || msdu->ip_summed != CHECKSUM_UNNECESSARY ||
-+	    len < ETH_HLEN + sizeof(struct iphdr) + sizeof(*th))
-+		return false;
-+
-+	t->eth = (struct ethhdr *)d;
-+	if (is_multicast_ether_addr(t->eth->h_dest))
-+		return false;
-+
-+	if (t->eth->h_proto == htons(ETH_P_IP)) {
-+		struct iphdr *iph = (struct iphdr *)(d + ETH_HLEN);
-+
-+		if (*(u8 *)iph != 0x45 || iph->protocol != IPPROTO_TCP ||
-+		    (iph->frag_off & htons(IP_MF | IP_OFFSET)) ||
-+		    ETH_HLEN + ntohs(iph->tot_len) != len)
-+			return false;
-+		t->ip4 = iph;
-+		t->v6 = false;
-+		thoff = ETH_HLEN + sizeof(*iph);
-+	} else if (t->eth->h_proto == htons(ETH_P_IPV6)) {
-+		struct ipv6hdr *ip6h = (struct ipv6hdr *)(d + ETH_HLEN);
-+
-+		if (len < ETH_HLEN + sizeof(*ip6h) + sizeof(*th) ||
-+		    ip6h->version != 6 || ip6h->nexthdr != IPPROTO_TCP ||
-+		    ETH_HLEN + sizeof(*ip6h) + ntohs(ip6h->payload_len) != len)
-+			return false;
-+		t->ip6 = ip6h;
-+		t->v6 = true;
-+		thoff = ETH_HLEN + sizeof(*ip6h);
-+	} else {
-+		return false;
-+	}
-+
-+	th = (struct tcphdr *)(d + thoff);
-+	thlen = th->doff * 4;
-+	if (thlen < sizeof(*th) || thoff + thlen >= len)
-+		return false;
-+
-+	if (!th->ack || th->fin || th->syn || th->rst || th->urg ||
-+	    th->ece || th->cwr || th->urg_ptr)
-+		return false;
-+
-+	t->th = th;
-+	t->hdr_len = thoff + thlen;
-+	t->payload = len - t->hdr_len;
-+
-+	return true;
-+}
-+
-+/*
-+ * Whether segment @t of @msdu, received with @status, follows the run's last
-+ * one as GRO on the netdev would take it: the same station, TID and receive
-+ * status, the same Ethernet header, IP header but for the ID, ports,
-+ * acknowledgment, window and options, the next sequence number, an IP ID
-+ * that goes up by one or stays with DF set, and room under the size GRO
-+ * stops at. A frame list takes no segment that pushes, as GRO's does not.
-+ */
-+static bool ath11k_dp_rx_merge_fits(const struct ath11k_dp_rx_merge *g,
-+				    struct sk_buff *msdu,
-+				    const struct ieee80211_rx_status *status,
-+				    const struct ath11k_dp_rx_tcp *t,
-+				    bool *fixed)
-+{
-+	const struct ath11k_skb_rxcb *rxcb = ATH11K_SKB_RXCB(msdu);
-+	const struct ath11k_skb_rxcb *hcb = ATH11K_SKB_RXCB(g->head);
-+	const struct ath11k_dp_rx_tcp *h = &g->t;
-+	unsigned int optlen;
-+
-+	if (g->flist && t->th->psh)
-+		return false;
-+
-+	if (rxcb->sta != hcb->sta || rxcb->tid != hcb->tid ||
-+	    memcmp(status, &g->status, sizeof(*status)))
-+		return false;
-+
-+	if (t->v6 != h->v6 || t->hdr_len != h->hdr_len ||
-+	    t->payload > g->mss || ntohl(t->th->seq) != g->next_seq ||
-+	    g->head->len + t->payload >= g->max_size ||
-+	    memcmp(t->eth, h->eth, ETH_HLEN) ||
-+	    memcmp(&t->th->source, &h->th->source, sizeof(__be32)) ||
-+	    t->th->ack_seq != h->th->ack_seq || t->th->window != h->th->window)
-+		return false;
-+
-+	optlen = t->hdr_len - ((u8 *)t->th - (u8 *)t->eth) - sizeof(*t->th);
-+	if (memcmp(t->th + 1, h->th + 1, optlen))
-+		return false;
-+
-+	if (t->v6)
-+		return *(__be32 *)t->ip6 == *(__be32 *)h->ip6 &&
-+		       t->ip6->hop_limit == h->ip6->hop_limit &&
-+		       !memcmp(&t->ip6->saddr, &h->ip6->saddr,
-+			       2 * sizeof(t->ip6->saddr));
-+
-+	if (t->ip4->tos != h->ip4->tos || t->ip4->ttl != h->ip4->ttl ||
-+	    t->ip4->frag_off != h->ip4->frag_off ||
-+	    memcmp(&t->ip4->saddr, &h->ip4->saddr, 2 * sizeof(__be32)))
-+		return false;
-+
-+	if (g->segs > 1)
-+		*fixed = g->fixedid;
-+	else
-+		*fixed = ntohs(t->ip4->id) == g->last_id;
-+	if (*fixed)
-+		return !!(t->ip4->frag_off & htons(IP_DF));
-+
-+	return ntohs(t->ip4->id) == (u16)(g->last_id + 1);
-+}
-+
-+/*
-+ * Gives the run what the TCP GRO of the stack gives its own aggregate: the
-+ * length of the IP packet, and the size and number of its segments; for
-+ * one with fragments the pseudo-header sum its checksum is finished from by
-+ * whoever segments it, while a frame list keeps the checksum of each segment,
-+ * which the hardware verified.
-+ */
-+static void ath11k_dp_rx_merge_complete(struct ath11k_dp_rx_merge *g)
-+{
-+	struct sk_buff *skb = g->head;
-+	struct ath11k_dp_rx_tcp *t = &g->t;
-+	struct skb_shared_info *shinfo = skb_shinfo(skb);
-+	unsigned int thoff = (u8 *)t->th - skb->data;
-+	unsigned int l4len = skb->len - thoff;
-+
-+	if (t->v6) {
-+		t->ip6->payload_len = htons(skb->len - ETH_HLEN -
-+					    sizeof(*t->ip6));
-+		shinfo->gso_type = SKB_GSO_TCPV6;
-+	} else {
-+		__be16 len = htons(skb->len - ETH_HLEN);
-+
-+		csum_replace2(&t->ip4->check, t->ip4->tot_len, len);
-+		t->ip4->tot_len = len;
-+		shinfo->gso_type = SKB_GSO_TCPV4;
-+	}
-+
-+	skb_set_network_header(skb, ETH_HLEN);
-+	skb_set_transport_header(skb, thoff);
-+	shinfo->gso_size = g->mss;
-+	shinfo->gso_segs = g->segs;
-+
-+	if (g->flist) {
-+		shinfo->gso_type |= SKB_GSO_FRAGLIST;
-+		skb->ip_summed = CHECKSUM_UNNECESSARY;
-+		skb->csum_level = 0;
-+		return;
-+	}
-+
-+	if (t->v6) {
-+		t->th->check = ~csum_ipv6_magic(&t->ip6->saddr, &t->ip6->daddr,
-+						l4len, IPPROTO_TCP, 0);
-+	} else {
-+		t->th->check = ~csum_tcpudp_magic(t->ip4->saddr, t->ip4->daddr,
-+						  l4len, IPPROTO_TCP, 0);
-+		if (g->fixedid)
-+			shinfo->gso_type |= SKB_GSO_TCP_FIXEDID;
-+	}
-+	skb->csum_start = (u8 *)t->th - skb->head;
-+	skb->csum_offset = offsetof(struct tcphdr, check);
-+	skb->ip_summed = CHECKSUM_PARTIAL;
-+}
-+
-+/*
-+ * Hands the run to mac80211 as one frame with the receive status of its
-+ * segments; one of several segments as a GSO frame, which mac80211 counts
-+ * as those segments.
-+ */
-+static void ath11k_dp_rx_merge_flush(struct ath11k *ar,
-+				     struct napi_struct *napi,
-+				     struct ath11k_dp_rx_merge *g)
-+{
-+	struct sk_buff *skb = g->head;
-+
-+	if (!skb)
-+		return;
-+
-+	/* complete before the run is let go: it reads g->head */
-+	if (g->segs > 1) {
-+		ath11k_dp_rx_merge_complete(g);
-+		ar->ab->soc_stats.rx_merge_aggs++;
-+		ar->ab->soc_stats.rx_merge_segs += g->segs;
-+	}
-+	g->head = NULL;
-+
-+	ath11k_dp_rx_deliver_msdu(ar, napi, skb, &g->status);
-+}
-+
-+/*
-+ * Appends segment @t of @msdu to the run: its payload as a fragment of the
-+ * head, which takes the buffer it was received in and frees the segment's
-+ * skb, or the segment whole to the frame list. A segment that cannot be taken
-+ * is left as it was.
-+ */
-+static bool ath11k_dp_rx_merge_join(struct ath11k *ar,
-+				    struct napi_struct *napi,
-+				    struct ath11k_dp_rx_merge *g,
-+				    struct sk_buff *msdu,
-+				    const struct ath11k_dp_rx_tcp *t, bool fixed)
-+{
-+	u16 payload = t->payload, id = t->v6 ? 0 : ntohs(t->ip4->id);
-+	u16 hdr_len = t->hdr_len;
-+	bool push = t->th->psh, fragstolen;
-+	int delta;
-+
-+	if (g->flist) {
-+		/*
-+		 * Chained as skb_gro_receive_list() chains a segment: its
-+		 * headers stay in front of its payload, where the network
-+		 * header names them for whoever cuts the list.
-+		 */
-+		skb_set_network_header(msdu, ETH_HLEN);
-+		skb_set_transport_header(msdu, (u8 *)t->th - msdu->data);
-+		__skb_pull(msdu, hdr_len);
-+		if (g->last == g->head)
-+			skb_shinfo(g->head)->frag_list = msdu;
-+		else
-+			g->last->next = msdu;
-+		msdu->next = NULL;
-+		g->last = msdu;
-+		g->head->data_len += msdu->len;
-+		g->head->len += msdu->len;
-+		g->head->truesize += msdu->truesize;
-+	} else {
-+		__skb_pull(msdu, hdr_len);
-+		if (!skb_try_coalesce(g->head, msdu, &fragstolen, &delta)) {
-+			__skb_push(msdu, hdr_len);
-+			return false;
-+		}
-+		kfree_skb_partial(msdu, fragstolen);
-+	}
-+
-+	if (g->segs == 1)
-+		g->fixedid = fixed;
-+	g->segs++;
-+	g->next_seq += payload;
-+	g->last_id = id;
-+	if (push)
-+		g->t.th->psh = 1;
-+
-+	/*
-+	 * A segment that ends a write ends the run, as does a short one, and
-+	 * the bound on its size.
-+	 */
-+	if (push || payload < g->mss || g->segs >= g->max_segs)
-+		ath11k_dp_rx_merge_flush(ar, napi, g);
-+
-+	return true;
-+}
-+
-+/*
-+ * Starts a run with @msdu, unless GRO on the netdev its frames reach is off
-+ * or has an XDP program there, which see every frame alone. The run takes the
-+ * form GRO on the netdev would give it: with frame lists on a frame list,
-+ * unless a socket of the host takes the stream, as tcp4_check_fraglist_gro()
-+ * and tcp6_check_fraglist_gro() decide, else a frame with fragments; either up
-+ * to the netdev's GRO size.
-+ */
-+static bool ath11k_dp_rx_merge_open(struct ath11k_dp_rx_merge *g,
-+				    struct sk_buff *msdu,
-+				    const struct ieee80211_rx_status *status,
-+				    const struct ath11k_dp_rx_tcp *t)
-+{
-+	struct ieee80211_sta *sta = ATH11K_SKB_RXCB(msdu)->sta;
-+	struct net_device *dev;
-+	struct sock *sk = NULL;
-+	int iif, sdif = 0;
-+	bool flist;
-+
-+	rcu_read_lock();
-+	dev = ieee80211_sta_rx_netdev(sta);
-+	if (!dev || netif_elide_gro(dev)) {
-+		rcu_read_unlock();
-+		return false;
-+	}
-+
-+	g->max_size = min_t(u32, t->v6 ? READ_ONCE(dev->gro_max_size) :
-+				  READ_ONCE(dev->gro_ipv4_max_size),
-+			    GRO_LEGACY_MAX_SIZE);
-+	flist = dev->features & NETIF_F_GRO_FRAGLIST;
-+	if (flist) {
-+		iif = dev->ifindex;
-+#if IS_ENABLED(CONFIG_NET_L3_MASTER_DEV)
-+		if (netif_is_l3_slave(dev)) {
-+			struct net_device *master;
-+
-+			master = netdev_master_upper_dev_get_rcu(dev);
-+			sdif = iif;
-+			iif = master ? master->ifindex : 0;
-+		}
-+#endif
-+		if (!t->v6)
-+			sk = __inet_lookup_established(dev_net_rcu(dev),
-+						       t->ip4->saddr,
-+						       t->th->source,
-+						       t->ip4->daddr,
-+						       ntohs(t->th->dest),
-+						       iif, sdif);
-+#if IS_ENABLED(CONFIG_IPV6)
-+		else
-+			sk = __inet6_lookup_established(dev_net_rcu(dev),
-+							&t->ip6->saddr,
-+							t->th->source,
-+							&t->ip6->daddr,
-+							ntohs(t->th->dest),
-+							iif, sdif);
-+#endif
-+	}
-+	rcu_read_unlock();
-+
-+	if (sk) {
-+		sock_gen_put(sk);
-+		flist = false;
-+	}
-+
-+	g->head = msdu;
-+	g->last = msdu;
-+	g->flist = flist;
-+	memcpy(&g->status, status, sizeof(*status));
-+	g->t = *t;
-+	g->mss = t->payload;
-+	g->next_seq = ntohl(t->th->seq) + t->payload;
-+	g->last_id = t->v6 ? 0 : ntohs(t->ip4->id);
-+	g->segs = 1;
-+	g->fixedid = false;
-+	/*
-+	 * GRO ends a frame list at 64 segments, and a frame with fragments
-+	 * takes one per segment but the first.
-+	 */
-+	g->max_segs = flist ? 64 : MAX_SKB_FRAGS + 1;
-+
-+	return true;
-+}
-+
-+/*
-+ * A frame ath11k_dp_rx_process_msdu() has made ready for mac80211, with its
-+ * receive status @status: merged into the run when it is the next segment of
-+ * it, else the run is sent and the frame starts one, or is left to be sent
-+ * alone. The frames of a stream leave in the order they came in, and a frame
-+ * never waits behind another one's: a frame that does not join ends the run
-+ * before it is handled.
-+ *
-+ * Return: true when the frame is the run's.
-+ */
-+static bool ath11k_dp_rx_merge_rx(struct ath11k *ar, struct napi_struct *napi,
-+				  struct ath11k_dp_rx_merge *g,
-+				  struct sk_buff *msdu,
-+				  const struct ieee80211_rx_status *status)
-+{
-+	struct ath11k_dp_rx_tcp t;
-+	bool fixed = false, ok;
-+
-+	ok = !(status->flag & (RX_FLAG_FAILED_FCS_CRC | RX_FLAG_MMIC_ERROR)) &&
-+	     ath11k_dp_rx_merge_ok(ar, msdu) &&
-+	     ath11k_dp_rx_merge_parse(msdu, &t);
-+
-+	if (g->head) {
-+		if (ok && ath11k_dp_rx_merge_fits(g, msdu, status, &t, &fixed) &&
-+		    ath11k_dp_rx_merge_join(ar, napi, g, msdu, &t, fixed))
-+			return true;
-+		ath11k_dp_rx_merge_flush(ar, napi, g);
-+	}
-+
-+	return ok && !t.th->psh && ath11k_dp_rx_merge_open(g, msdu, status, &t);
-+}
-+
- static void ath11k_dp_rx_process_received_packets(struct ath11k_base *ab,
- 						  struct napi_struct *napi,
- 						  struct sk_buff_head *msdu_list,
-@@ -2995,6 +3431,7 @@ static void ath11k_dp_rx_process_received_packets(struct ath11k_base *ab,
- 	struct sk_buff *msdu;
- 	struct ath11k *ar;
- 	struct ieee80211_rx_status rx_status = {};
-+	struct ath11k_dp_rx_merge merge = {};
- 	int ret;
- 
- 	if (skb_queue_empty(msdu_list))
-@@ -3020,8 +3457,13 @@ static void ath11k_dp_rx_process_received_packets(struct ath11k_base *ab,
- 			continue;
- 		}
- 
-+		if (ath11k_dp_rx_merge_rx(ar, napi, &merge, msdu, &rx_status))
-+			continue;
-+
- 		ath11k_dp_rx_deliver_msdu(ar, napi, msdu, &rx_status);
- 	}
-+
-+	ath11k_dp_rx_merge_flush(ar, napi, &merge);
- }
- 
- /*
--- 
-2.53.0
-
+Reviewed-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
 
