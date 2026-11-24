@@ -2,138 +2,156 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AEA52606A327
-	for <ath12k@archiver.kernel.org>; Tue, 24 Nov 2026 16:34:18 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3C9AF606A332
+	for <ath12k@archiver.kernel.org>; Tue, 24 Nov 2026 16:43:46 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=dTSiqwtd;
-	dkim=pass (2048-bit key) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=RCdfRKIx
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qqMtxksP;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=FCffZGIP;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=ZNNHbuM4
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:
-	Content-Type:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
+	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=vyuvxOuBJsTERVLJjR5Yjixnm/Sr4YBfU6CkxxxfmoA=; b=dTSiqwtdUWkA0KD2a4vXaA8EKd
-	juX/c41O39Pr2gZDHUJxzXUyBTdyq/o0bSgYV0SebDOIPQvOieoZcGHyFK9HwDHYauCzaF5DGPYUM
-	Hdpfm/tVrBoGIsrW1JsaAXFEWvYfwbctYk/w5vAXLpfENHnNbBIjTk6VDCzp2WiVdR7YhDBVDBTTZ
-	kSBj9keEXNnG37XzQ4664gsUNOovcA14q7npSi5yl0SNuR7zQY2MYuIlwUMiJdml7BbE8EEvjc72s
-	izZDzz9t4JZVDqK6QxzsPFDJUBec8T9DdYmOIh0eFexmZ3sPhQmG3AdCDX9HHdqq0dPNPgEJHpNYp
-	SaI0gN8g==;
+	bh=onk3fnlRkqPUVq1zB+A0rGhSVLK080Q/lQHOHP69pa0=; b=qqMtxksPHSUiT/tok4K9V13qrd
+	SHKcyVU0mh1kHlqapVlllS4Nh0SANY3D3r3QDdASkvCDIZ6QvehIit6bBzNZ3WtQ9Mt/aTYvs7Qoq
+	uRF2Cgb7UPMMbzlZ1jgrklUCITRV+dbnSqRzQvofGniHasIOAmCvB/R6ZvK/826FToN+KPqGQZDcz
+	nQfX4v6xP6TrASs4S2A/fAUR2vTkVPIigidkUzq/umlw06OWBeVZrGyjpALX6h/o+dYNxVhRqj+dK
+	4kr7I40TG26NSgrkdyP8PxLwqitHUS3QJ3QT5pSwmYAcwSTa4imBl8yO+igi36iCmSsex/Y35IguO
+	yR46RenQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVtTD-000000077zx-3Cm3;
-	Tue, 24 Nov 2026 16:34:15 +0000
-Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1xVtcN-000000079Ld-2pb1;
+	Tue, 24 Nov 2026 16:43:43 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVtT0-000000077xM-3wBz;
-	Tue, 24 Nov 2026 16:34:04 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=hJaLRlf/LmYZl1XUq4v4dGbVzVoKoawltNkWq8NnDUhGDA72f45lK2wGVRT3tLNTz1enPeC638Vb+7k95VcnO5NGUM5tZtxNZrDugB8CiTwKPW8Bqz0/NQMNZNgysJfeAOg1YiElTnXPwPNNVU3oWpso3UacYONAqGYw1UKJiKf5U5PwIvaTKamxbr7IfOD/wMggwJvXQ0Njph0u+Iu5jMt+IPanrC6qjixEwkb2Cp/6aGVxgfZWUrfsVaqd7pZ1yNwzJ0fBRCArHn44rDAzkQKFAXeY+Di1XCJgwfRWMpUfUHOBpxGm3wnE3PKiF9AaWEFb5fWnxTG/YG8KwgH3fQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=vyuvxOuBJsTERVLJjR5Yjixnm/Sr4YBfU6CkxxxfmoA=;
- b=WN8LY3CekGux/COuw3Fcq4ogM6lHQw0xGk+h1qQRn5st96wWSr+DssKaZNxjOtOnf5ty6aB5fijD5AdaPPVwbwBCDOzDtqM5Qya//Fbwv/s6+PVSmOeGq7dvICSRQEVqy3qbuyu6QnCTZNWu/nsGVSfJJyjDKgNZnyKhY2vRe93rd02jJMvcWYhg6QrQ0hcSYQNxG/tPAEOFE9Gn78/TTuqRmG0UIaMlvt3d1Bg5Bol6Dq6qjxsLdayvbCpiSDZW0u0YYwtCS4jeKiMKF4yClmPuJAFakBElbE/HxgFd1od5kEBkR7oX9nKPX2FRXB0amtCnYw5FfT4ai+UMXmzrbw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vyuvxOuBJsTERVLJjR5Yjixnm/Sr4YBfU6CkxxxfmoA=;
- b=RCdfRKIxD05ZXavp0JaD/CH8dbghRzrEvPeov5IGzsLxCWpwvONGIsnyUUXFsFEaTs5ppEwTHCJhFw1DpeXl5WQp+pdQK4fkmW9PXzA+Vw7wEXszM0nz1+Az676lJjJxNLY2CvcSS7fdhKbKCTbYH2o0fQ/3RWlG61P5ykc7BtkVy3ZoPx927JWgBrwzAddQk/VKANxo1yLZwNmjaMpgezGBwZ34GY4yztRVvsx4BjXMwPcf9V/dbWluT1Mzugp1vIDeawKgwQDQ6iIbR0UTv4B2OPbCCPJsf57GPjkUluoCPyl8iFcEYUONBLiy+plSzyy6qADO5tYBM0VHkOYp6g==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from AMBPR04MB12445.eurprd04.prod.outlook.com
- (2603:10a6:20b:75e::21) by PA4PR04MB7583.eurprd04.prod.outlook.com
- (2603:10a6:102:e2::5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.14; Tue, 24 Nov
- 2026 16:33:58 +0000
-Received: from AMBPR04MB12445.eurprd04.prod.outlook.com
- ([fe80::ba23:1fa4:ce58:ff06]) by AMBPR04MB12445.eurprd04.prod.outlook.com
- ([fe80::ba23:1fa4:ce58:ff06%3]) with mapi id 15.21.0639.012; Tue, 24 Nov 2026
- 16:33:58 +0000
-Date: Tue, 24 Nov 2026 11:33:52 -0500
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Francesco Dolcini <francesco.dolcini@toradex.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Vitor Soares <ivitro@gmail.com>
-Cc: Frank Li <Frank.Li@nxp.com>, Vitor Soares <vitor.soares@toradex.com>,
-	linux-bsp@toradex.com, devicetree@vger.kernel.org,
-	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org, ath12k@lists.infradead.org
-Subject: Re: [PATCH] arm64: dts: freescale: imx95-aquila: Add ath12k
- calibration variant
-Message-ID: <awW8cNGZOb-yx7Cd@lizhi-Precision-Tower-5810>
-References: <20261118123837.651915-2-ivitro@gmail.com>
- <179546967140.2966585.2831171429960186619.b4-ty@b4>
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <179546967140.2966585.2831171429960186619.b4-ty@b4>
-X-ClientProxiedBy: CPCP307CA0006.DNKP307.PROD.OUTLOOK.COM (2603:10a6:380::8)
- To AMBPR04MB12445.eurprd04.prod.outlook.com (2603:10a6:20b:75e::21)
+	id 1xVtcK-000000079LA-3WZz
+	for ath12k@lists.infradead.org;
+	Tue, 24 Nov 2026 16:43:42 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AOFLX7o1331889
+	for <ath12k@lists.infradead.org>; Tue, 24 Nov 2026 16:43:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=onk3fnlRkqPUVq1zB+A0rG
+	hSVLK080Q/lQHOHP69pa0=; b=FCffZGIPNmMaGIz+paV1W7WNWouMZLBRWaJ3u8
+	EpB2rjC/hL/TNtfZRCuQ0ZwuAtQNEyW3AwY5PJfxhyXdkUXeKszoh0U94/soAi/l
+	cqqTVAEZTLSn3vWm2TptPqPFrqxEXJXEjiCQcsbSE2n3D3a6ks6MEK9radxq5UWH
+	wu4fg6wp6CeBo1fP6yE+kB7fHE+9m/LvmZDDPzoyqrrPA5Z0P/XWj3ZsKZSkN4S8
+	sCbiexbKX0LxQBcX6xoFvL7rv3/QGSRJFUkDmvZCmjb3XaVlIdj3kfHIEvRi0V9j
+	6FWX8pT/uE6lpkJAQo/0K1OVNiqx8BI6iVFZvW/ROgiTHzXg==
+Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j4yvb3v0p-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 24 Nov 2026 16:43:39 +0000 (GMT)
+Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-3869865a304so4145208eec.0
+        for <ath12k@lists.infradead.org>; Tue, 24 Nov 2026 08:43:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1795538618; x=1796143418; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=onk3fnlRkqPUVq1zB+A0rGhSVLK080Q/lQHOHP69pa0=;
+        b=ZNNHbuM43zvkSF4ORtiJp95PHGDZbOapWyzPz07VLMSUnIKIa8n00YST1JnI4hbjjk
+         5I6VFJ+TfCVmmLP0oPJRGVwOy2Php0w5HCbQULjcoW6eguBQbteD5jrGHuWxhMct/gnK
+         Csf3Ck5O7FGEt43pCqPfoYB18tjiJi7/Ad/jmNWn5P5VUdMFDNdXFM+UavKn6zxb4tTo
+         gdbcHnBS1t12/7JRKv8stf1JBdwOzFK1livnq/s+hkL6akpTykyrWt5MkyrBNIDwPA3n
+         yAIi7VX2TyrkzU0qbz1KuHmWJOIn26hwtXM9QYL921blwuBXXMjYAXc924tVQUCZ6PoU
+         MSag==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795538618; x=1796143418;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=onk3fnlRkqPUVq1zB+A0rGhSVLK080Q/lQHOHP69pa0=;
+        b=blHCI36lRg3RtK1DzM+NOSQx8JngVYrCrX2XXvECgdBep8S9HaNiwyHfr2SgGuuB0j
+         g9mE7CVe/wO+7jJ+wj1wi0P6doYJiifgeeNrmvjZD5CQAeihu/M8O4GpvaZI7s1ZynlU
+         rBxBFSAPVA9WFdmbCpAqGK8rCq0vHH9xROoJccZlhd1zm+UybOhrhGS/iTGc6RciV7hB
+         rMsfEZQ5bqdh6hR+Z2xkFPo3KNfsLyA8wAIgLVKlDXWVammqxavIK51IO16rkstakQkI
+         XYOgeaOI1v4uaTTlukmEPnARL7R6oRArLTfwO5Nm1DBQv51ZlB88T7pKJYrqvzlKUU2b
+         /i8g==
+X-Forwarded-Encrypted: i=1; AL+hErGVBqpVAy/Zv/RnwecdjXWmIalUNM3z8Paupfyh/RKdLHXRpiFCsL4Df5iYV9aH0Ay5BjZlTMg=@lists.infradead.org
+X-Gm-Message-State: APuU4Z9FsY1ETivSYRgXy7ETtEoC4V0wzFXQBYs7WVDnxgupZIfpubrS
+	WbtmYkPszMw9gHyx92zCvTrrc5LusXIMbPTNN+/mMWz/Ihqh0mdsk21Xr/cI4JvWdsFfs7LYM7g
+	R0WbHBrxb/WGTMfEAUAx1E09eIRFC0KviGmhY2KjB334uXystHtUhm9xu7j777804u0wubUmp
+X-Gm-Gg: AZFdTZcQWeJep9TidAo+daxjVmWJKZoEBGHuHyVjZSULZf+3L+rmNG0o3p8aKs0mxjs
+	QjCnkHIQq/2GIY+ln+R5N4DbEKY6iNigWlJLHLt7SJ7p9S70XazjDWX7klY/kMEvOjfKYHlLyNg
+	ThR7JfZY8IOkAcbF0fBqwguOQ3Bt8QKr8nTh2ruSZuD3JWMua2CX5P7uaq7xhXI1xZHL+eyZU6S
+	P7SPPVFfgbrNMVomTfyJoTg6ziu/HTFFcZLv22kTqHorXWhbLi0uieKRgSrWLPNA900dY89OU0v
+	EOqTPJ2pp6RJpaiAL8i5dEJ5ZxS9OBeEHuHW/fm6pqz+dFXniXZUxHiPdgMnbJ57MAHSCi36aRQ
+	RgI1UAxHaLIpsLv9RJ8dRw7aj9ox3rb+igvX04QVbXT7vifaWW49WE+wMPWxM6HpGukJIOe865x
+	+8zD8xoTMFaH55+AAF0no2TycIyrpZiu5T4SEY3ZWZ1iKFddO2/MuzfCSuRnmKM4X2oo833scCA
+	Fw=
+X-Received: by 2002:a05:7300:bf27:b0:36d:3c0f:cc6f with SMTP id 5a478bee46e88-3856c9a7dd1mr18228338eec.3.1795538618097;
+        Tue, 24 Nov 2026 08:43:38 -0800 (PST)
+X-Received: by 2002:a05:7300:bf27:b0:36d:3c0f:cc6f with SMTP id 5a478bee46e88-3856c9a7dd1mr18228310eec.3.1795538617552;
+        Tue, 24 Nov 2026 08:43:37 -0800 (PST)
+Received: from hu-madhgane-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385677c349csm49093900eec.22.2026.11.24.08.43.32
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 24 Nov 2026 08:43:37 -0800 (PST)
+From: Madhavan Ganesan <madhavan.ganesan@oss.qualcomm.com>
+Subject: [PATCH ath-next v4 00/14] wifi: ath12k: add initial Wi-Fi 8
+ support for QCN9575
+Date: Tue, 24 Nov 2026 22:13:26 +0530
+Message-Id: <20261124-wifi8_qcn9575_bringup-v4-0-1f5b87ece6a3@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AMBPR04MB12445:EE_|PA4PR04MB7583:EE_
-X-MS-Office365-Filtering-Correlation-Id: 61608de2-4527-499e-e331-08df4a48bd4e
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|366016|23010399003|1800799024|19092799006|10067099003|11063799006|4143699003|56012099006|261026121527099003|261021121427099003|261022075727099003|261022105027099003|261026140227099003|261009223027099003|261102123227099003|261028144727099003|6133799003|22082099003|18002099003|13003099007|3023799007;
-X-Microsoft-Antispam-Message-Info: PxyP69o+kuC5/RKh629dCyI0tbRqHTPSqVQQYDMbQt/7+xn9BDal8yeVzqgMyeQYTd6C/VOQ2roT9uaJlBWxhETr+qaYmcqL+bvBE+TfOCRF6Uv/kRLF8GInms1eVbEauwtN5Uz9tl0j6OfZF+GpRgTJyUPqtHxL890z8B4m02P2b6jU7lpGuHLKS49ucJrMhd3fVSe6uqxgiQYk0CGFvsGKgZf5dnuLEvGuuEXcwHjLdRmxgSCGZy5HPLK99aFl31Hn92rEY6wKSqIdHsaAAMqpQD1TKLqj+F/f8YHeUAjxITiFGqHOpUT8Zvfa0R0w1+ZGRtcfJNI3CWfZZzTcfF3LfytnAbeOAZrlHrR6Ch8HmvhV3nu6pj6CtoYlB2kGv7EWKQ5zt40MPeqG/1cCy/e9blVWE2nywxA9c/gbDcxC852tYbguCMEDzgSvdwqKpqSQCjy5EBxSmmveQOZdti2OwTkUC2qj/+uXFA/b/ByIqPSY4Sb0CiQ9RYgaoIdfzLgEgVmATscFI2ObCvcYpz7/4D1ybsQljjtkPIHDy15L7pLxwV8OBBXFNKexs3KLltV4gm8FA7pBVXf1/L2+IaOo2eDg9Jvmya1TuRKYYG4=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AMBPR04MB12445.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(366016)(23010399003)(1800799024)(19092799006)(10067099003)(11063799006)(4143699003)(56012099006)(261026121527099003)(261021121427099003)(261022075727099003)(261022105027099003)(261026140227099003)(261009223027099003)(261102123227099003)(261028144727099003)(6133799003)(22082099003)(18002099003)(13003099007)(3023799007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?0ZSaFaaWVn7mwR5hSA1o3x18kPGcJT48Qhx2PmW7CBue8XvO64Uthdx6JZsA?=
- =?us-ascii?Q?iSII3tLuowbSTVrJ6lSsFKSl4KhSfS6s7DDoGm/hqVnUHASoK/ZaQXhiGnzm?=
- =?us-ascii?Q?qXtKisYyCkrssfFLlU+BT9D+HEVnjLZvy4qCReVoKH9qEyOsdjcRm3yypjoU?=
- =?us-ascii?Q?u2zI/mKiKcjlxZSQsGJjEwPesemvAduTiWQPX7tpyZAre9lRvA5G4ERFT4cP?=
- =?us-ascii?Q?s2Pj9pR+sbxN7JWXjzX6299G3yYvSRFEzDdEquWFFOzAlTVVr8SyyOZGI5J4?=
- =?us-ascii?Q?h0JKSEpqhW0fc9a4OAnRv2DxaYjW8KOduk51yhq2P//E7H+4oXGKJH9M8/Ni?=
- =?us-ascii?Q?m2OXCFzkGEMUPe++mCKZiYIypRPT4uOhjjt3ymWPF8hzBFMcYZAnod/qKhO9?=
- =?us-ascii?Q?OQuJbkStAAAza5ounKyhotDSNivUtBYiEXQlj5yyHNP+GFXUnhSZLNAG5L76?=
- =?us-ascii?Q?VgesQMfQ9Ndg4wLssu2z5vcS03hr3PSFz8MNBwc5ymRC/EItIP5ZUKtGvS7P?=
- =?us-ascii?Q?hx4E2E2bVW0YgcKhVDfLDyawQwKbORErSj4HXMHPx3zjsPSVP6fAGJRBn5se?=
- =?us-ascii?Q?Z7upuwFBZiejtBLcYoHdON02+xIM2rqOMhi8Er2zAIcnOPwmRgHKeJi7SGBo?=
- =?us-ascii?Q?1VvAx5z8rLEg4psgI9ig+knv9JXSBpoZyZtrVWNJaihJVuGfr/4bpkydsKJ5?=
- =?us-ascii?Q?T2TzwmZqQ0IfkQ8URyiI0Se6u08401u+sP5He58pGW6o7tM0wuKZO7vbrjWW?=
- =?us-ascii?Q?YhIv9l758NwW2dTY6ZEKgKU2zj36GVME4jS/VuPoHtM8BgB0czIKa1OKj4cx?=
- =?us-ascii?Q?sPUbwKlPXwPOp6BxxDOo+jk9VN6uuyEjGYsmKunRNFTOAJjIlCgyypcdkCyO?=
- =?us-ascii?Q?pUQbvF6dvOSgqOPR9l+53fKfzmtyD61BVA6jLAfYF8wo2LuVgEkIw3BrKuCv?=
- =?us-ascii?Q?/mZMgT67hsltOElaFJJxyz6VqTxw2JP218MbvJ5OQUY2i+eO28Q2LEvGKC0r?=
- =?us-ascii?Q?zWNF/oK780ZA2GnR4F1NlBxkYXjj26IW3rMEtsmizm+TqAqhx4AK/alECkQV?=
- =?us-ascii?Q?GaiHbll91UO9prp47FJOlyXIozw5VWhBBfDoU1Iv0KlraZBR2VL2sZqPumac?=
- =?us-ascii?Q?T/K1Fh+jv/3VRoFBsfT6Hlj8SeAsugHmcnPMDEMztQUolB63eZddAzVtAvsn?=
- =?us-ascii?Q?3uNeFbYyfn30vDYWtPjNXfL226a9adwWAt9GA2U44GA/JOAm61Q89DXbkU27?=
- =?us-ascii?Q?sCOmJdoGxSjP34XvmbBeUl3uuvOyenSQTwAfD5bs5i/IWZGpdlFS+yCypH7v?=
- =?us-ascii?Q?VWFCn6D9JtLmHE8EsrPtgpP58GQNlTwsEc9qHmqACTdPGpmI1Tv15nWCKEkN?=
- =?us-ascii?Q?/ysOGbx9CLOhv/Ft/cyI3a68idib+B9MJ0nDWJldAASs3+YxhkoEDZvQUgY6?=
- =?us-ascii?Q?JhAd9SZse5BPe12xJEycQH54P+8l6xnPKeHG0CpA7pYazQ3QT1AuFF0kgxVZ?=
- =?us-ascii?Q?lzOutFNM2exKaTkqGPZ7bTVAbDnaNku+lzdZ3WUWTbvWdyBhp6hhPIt4iKNO?=
- =?us-ascii?Q?zRs6i3N664JmSrsAStIyON53izq3qWZ7Hwb/3aSQXkdVTwyADs8UpVRvfIsk?=
- =?us-ascii?Q?A10bkG/NAX0l78wrSupnNrOmIDkihtEZ5MyTaQ1ijE+JsVFtJ8Hctq5CUubG?=
- =?us-ascii?Q?l2+c5eGXpTE+cF2hjvSmDFMDkCCoRFcl2MHKN1JilmfIvXvBjY3tcC2ilBKI?=
- =?us-ascii?Q?2OfbLTcScYVjA23EFxc1o3areDxzjL5Ov/pe3HR9jHn5mB5Uf+qD?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 61608de2-4527-499e-e331-08df4a48bd4e
-X-MS-Exchange-CrossTenant-AuthSource: AMBPR04MB12445.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Nov 2026 16:33:58.5048
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 3iRrUDKjs7yub69Y4CV5gOKAcB1uOVJLyOXoVzbu5ye/QsG/y1KrpP/G73BrA6U0dGzd7WnkQ0YSOjDWKQi/qj0NDjdefWV8tpDRrL9TZFY6DDhfa3eQHaFBDoW/b4Em
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB7583
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIAK6+BWsC/43OzW7CMAwH8FdBOROUD5o2nHgPNFVJ6lBPNIWk7
+ TqhvvtCuXAY2i6WLPv/s+8kQURI5LC5kwgTJuxDbvbbDXGtCWeg2OSeCCYU51zQL/RY1TcXdFE
+ WtY0YzuOVmlJBqQyXigPJ2WsEj/PqnogZWhpgHsjHc5JG+wlueLCP3RbT0Mfv9YWJr4k/rk2cM
+ iq9ZN46Ya3Sxz6l3W00F9d33S6X9dQkXrHqHSYy1lTcSLZXQjN4g8l/YTJjuiqLRhipC+l/wZZ
+ l+QFXArPhdwEAAA==
+X-Change-ID: 20261112-wifi8_qcn9575_bringup-a76e76a1361e
+To: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+        Nathan Chancellor <nathan@kernel.org>,
+        Nick Desaulniers <ndesaulniers@google.com>,
+        Bill Wendling <morbo@google.com>,
+        Justin Stitt <justinstitt@google.com>
+Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
+        ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
+        llvm@lists.linux.dev,
+        Madhavan Ganesan <madhavan.ganesan@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Authority-Analysis: v=2.4 cv=aJ1lOr9m c=1 sm=1 tr=0 ts=6b05bebb cx=c_pps
+ a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=bC-a23v3AAAA:8 a=EUspDBNiAAAA:8 a=stkexhm8AAAA:8 a=VwQbUJbxAAAA:8
+ a=1XWaLZrsAAAA:8 a=JfrnYn6hAAAA:8 a=IFHodnDJ-pNzQd9Po4MA:9 a=QEXdDO2ut3YA:10
+ a=6Ab_bkdmUrQuMsNx7PHu:22 a=FO4_E8m0qiDe52t0p3_H:22 a=pIW3pCRaVxJDc-hWtpF8:22
+ a=1CNFftbPRP8L7MoqJWF3:22
+X-Proofpoint-ORIG-GUID: USWKLJSyAGeJSoZfB75r1sOaaAjc_0h9
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI0MDA2NSBTYWx0ZWRfX736S0dEwPOKR
+ LiwdpixVXMDXJKMdVzy3u1HWGLRMlBBZWsvLVd2cUsUZb4MvsYc7X/St4QggpoImsZUVncuF9Lk
+ xm2vnY07OpU+MHC6qyCEUzqWwessFI0=
+X-Proofpoint-GUID: USWKLJSyAGeJSoZfB75r1sOaaAjc_0h9
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI0MDA2NSBTYWx0ZWRfX1IUUuT7UVwm8
+ MUA2aDTwMeKLdNfHpywhqVaZ/ua8Q5hH7k3/KYznuuZypzatrHTWtr3tlStsstpws6r1v73iB+f
+ E1POpdpfTVh8lRlBb0cECm7ZZr/1jV5Mx3yJXjfV7FqD6u8eqBG3ITmS/2Z+cdChDp6cIxIOkaK
+ vtD/GK3sQsm+aIcNMMN5ltZkFkgBXk5lmj8raovKqoFvYz5dD17/YSPfKQ7HjiF5RhXSO2AGnWR
+ TSOMXN7+ziIX44Ix8GuD8NTTjzPpvbmTevbFnU7vt7oLLBujutWITzJ8+lblycbAGGFDdgoRGB6
+ rarnniC3uY9Zz0gs4c+Flz7zMT3ZufAl3AzcG4f7xRB0gMPw29WL4LivHx0KcWjq8mXwIOd8s9+
+ td7lNdgkmxK3j5pBQPRlcrRLGXGinUUnC9/uNGIiQsUExkI0jYnoVOF8O50JynFx/1YeaRGGLLk
+ 0Ps97srbYX962/5lC4w==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-24_04,2026-11-23_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 phishscore=0 clxscore=1015 priorityscore=1501 malwarescore=0
+ adultscore=0 bulkscore=0 suspectscore=0 impostorscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611240065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261124_083402_983732_E00120BF 
-X-CRM114-Status: GOOD (  13.15  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20261124_084341_036821_577A43B5 
+X-CRM114-Status: GOOD (  22.15  )
+X-Spam-Score: -2.7 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,60 +162,147 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,TRACKER_ID,USER_AGENT_GIT autolearn=ham
 	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Nov 23, 2026 at 04:34:34PM -0500, Frank.Li@oss.nxp.com wrote:
-> From: Frank Li <Frank.Li@nxp.com>
->
->
-> On Wed, 18 Nov 2026 12:38:37 +0000, Vitor Soares wrote:
-> > The Aquila iMX95 has a Silex SX-PCEBE Wi-Fi module (WCN7850). The
-> > module reports the same PCI and QMI IDs as other WCN7850 designs, and
-> > its board data also comes in variants for different regulatory domains
-> > (US/EU/JP, UK/CA low and high). The IDs alone therefore cannot identify
-> > the right board data.
-> >
-> > Describe the Wi-Fi device behind the PCIe1 root port and set
-> > qcom,calibration-variant to the US/EU/JP board data.
-> >
-> > [...]
->
-> Applied, thanks!
->
-> [1/1] arm64: dts: freescale: imx95-aquila: Add ath12k calibration variant
->       commit: 8a03967da41f55b803d31a6c5b5052bc35346eb6
+QCN9575 is a Wi-Fi 8 (802.11bn) PCIe target that represents a new
+hardware family distinct from the existing Wi-Fi 7 devices (QCN9274,
+IPQ5424). It supports 2.4 GHz, 5 GHz, and 6 GHz bands across upto two
+radios.
 
-I have to drop this patch because
+This series adds the initial bring-up scaffolding needed to register
+QCN9575 with the ath12k driver. No protocol-level 802.11bn features are
+enabled yet; the goal is to establish a functional base with the new
+ATH12K_DEVICE_FAMILY_WIFI8 family tag and a dedicated wifi8/ subdirectory
+that follow-up series can build on.
 
-arch/arm64/boot/dts/freescale/imx95-aquila-clover.dtb: wifi@0 (pci17cb,1107): 'vddaon-supply' is a required property
-        from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
-arch/arm64/boot/dts/freescale/imx95-aquila-clover.dtb: wifi@0 (pci17cb,1107): 'vddwlcx-supply' is a required property
-        from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
-arch/arm64/boot/dts/freescale/imx95-aquila-clover.dtb: wifi@0 (pci17cb,1107): 'vddwlmx-supply' is a required property
-        from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
-arch/arm64/boot/dts/freescale/imx95-aquila-clover.dtb: wifi@0 (pci17cb,1107): 'vddrfacmn-supply' is a required property
-        from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
-arch/arm64/boot/dts/freescale/imx95-aquila-clover.dtb: wifi@0 (pci17cb,1107): 'vddrfa0p8-supply' is a required property
-        from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
-arch/arm64/boot/dts/freescale/imx95-aquila-clover.dtb: wifi@0 (pci17cb,1107): 'vddrfa1p2-supply' is a required property
-        from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
-arch/arm64/boot/dts/freescale/imx95-aquila-clover.dtb: wifi@0 (pci17cb,1107): 'vddrfa1p8-supply' is a required property
-        from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
-arch/arm64/boot/dts/freescale/imx95-aquila-clover.dtb: wifi@0 (pci17cb,1107): 'vddpcie0p9-supply' is a required property
-        from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
-arch/arm64/boot/dts/freescale/imx95-aquila-clover.dtb: wifi@0 (pci17cb,1107): 'vddpcie1p8-supply' is a required property
-        from schema $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml
+Patch 1 moves the PCI window register constants from pci.c into
+per-device structures, so Wi-Fi 7 and Wi-Fi 8 can each define
+independent window layouts instead of sharing one fixed set of
+constants.
 
+Patches 2 and 3 extend the shared QMI layer: a larger WLAN config
+message to describe the CE and service pipe count QCN9575 requires,
+and support for downloading an extended firmware binary.
 
-Frank
+Patches 4 through 12 introduce the wifi8/ subdirectory with its own
+Makefile, followed by the hardware scaffolding: hw_params, HAL
+register table, HAL ops and descriptors, unified firmware image
+support, MHI channel/event config, CE and service pipe map, WMI
+resource config, and hw ops.
 
->
-> Best regards,
-> --
-> Frank Li <Frank.Li@nxp.com>
+The final two patches integrate QCN9575 into the driver: a mac80211
+ops skeleton is added and hooked in, and the series closes with the
+Wi-Fi 8 PCI driver scaffolding. QCN9575's device ID is intentionally
+left out of the PCI id table in this series, so the module builds and
+links cleanly but no physical device can match and probe; the id
+table entry lands in the follow-up CP/DP series once the device is
+actually functional.
+
+Each patch compiles and links cleanly on its own; where follow-up
+patches fill in callbacks, stubs are used to keep the tree
+bisect-safe.
+
+This series has been boot-validated on internal firmware version
+WLAN.WBO.1.0-01410-QCAHKSWPL_SILICONZ-1 together with the remaining
+Wi-Fi 8 enablement patches (CP, DP setup, MAC datapath) that complete
+device bring-up; those patches will be posted as a follow-up series.
+
+In addition, each ath12k driver patch contains Tested-on: tags for
+existing platforms where it was verified that there are no
+regressions.
+
+---
+Changes in v4:
+- Dropped patch "dt-bindings: net: wireless: add ath12k wifi device
+  QCN9575" per Krzysztof's review comment.
+- Link to v3: https://patch.msgid.link/20261118-wifi8_qcn9575_bringup-v3-0-9875d2a3953f@oss.qualcomm.com
+
+Changes in v3:
+- Replaced u32_replace_bits() with a plain AND/OR in "refactor PCI window selection to per-device layout" to fix a build failure.
+- Link to v2: https://patch.msgid.link/20261118-wifi8_qcn9575_bringup-v2-0-d81a3046290e@oss.qualcomm.com
+
+Changes in v2:
+- Addressed sashiko's review comments in patch "refactor PCI window selection to per-device layout"
+- Link to v1: https://patch.msgid.link/20261112-wifi8_qcn9575_bringup-v1-0-3f30fbc2bb69@oss.qualcomm.com
+
+To: Johannes Berg <johannes@sipsolutions.net>
+To: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk+dt@kernel.org>
+To: Conor Dooley <conor+dt@kernel.org>
+To: Jeff Johnson <jjohnson@kernel.org>
+To: Nathan Chancellor <nathan@kernel.org>
+To: Nick Desaulniers <ndesaulniers@google.com>
+To: Bill Wendling <morbo@google.com>
+To: Justin Stitt <justinstitt@google.com>
+Cc: linux-wireless@vger.kernel.org
+Cc: devicetree@vger.kernel.org
+Cc: ath12k@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Cc: llvm@lists.linux.dev
+ 
+---
+Madhavan Ganesan (14):
+      wifi: ath12k: refactor PCI window selection to per-device layout
+      wifi: ath12k: add extended QMI WLAN cfg for CE and service pipes
+      wifi: ath12k: add QMI support for extended firmware binary download
+      wifi: ath12k: add Wi-Fi 8 directory and base module scaffolding
+      wifi: ath12k: add initial Wi-Fi 8 hw params and init helper for QCN9575
+      wifi: ath12k: add Wi-Fi 8 HAL register table and hal init hook for QCN9575
+      wifi: ath12k: add Wi-Fi 8 HAL ops and descriptor definitions for QCN9575
+      wifi: ath12k: add unified firmware image support for QCN9575
+      wifi: ath12k: add Wi-Fi 8 MHI config for QCN9575
+      wifi: ath12k: add Wi-Fi 8 CE config and service pipe map for QCN9575
+      wifi: ath12k: add Wi-Fi 8 WMI init for QCN9575
+      wifi: ath12k: add Wi-Fi 8 hw ops for QCN9575
+      wifi: ath12k: add and hook Wi-Fi 8 mac80211 ops skeleton for QCN9575
+      wifi: ath12k: add Wi-Fi 8 PCI driver scaffolding for QCN9575
+ 
+ drivers/net/wireless/ath/ath12k/Makefile           |   1 +
+ drivers/net/wireless/ath/ath12k/ahb.h              |   6 +
+ drivers/net/wireless/ath/ath12k/core.h             |   4 +
+ drivers/net/wireless/ath/ath12k/fw.c               |   8 +
+ drivers/net/wireless/ath/ath12k/fw.h               |   1 +
+ drivers/net/wireless/ath/ath12k/hal.h              |  10 +
+ drivers/net/wireless/ath/ath12k/htc.c              |  18 +-
+ drivers/net/wireless/ath/ath12k/htc.h              |   8 +
+ drivers/net/wireless/ath/ath12k/hw.h               |   5 +
+ drivers/net/wireless/ath/ath12k/mhi.c              |   4 +-
+ drivers/net/wireless/ath/ath12k/pci.c              |  46 +-
+ drivers/net/wireless/ath/ath12k/pci.h              |  11 +-
+ drivers/net/wireless/ath/ath12k/pcic.c             |  27 +-
+ drivers/net/wireless/ath/ath12k/qmi.c              | 484 ++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/qmi.h              |  73 +++-
+ drivers/net/wireless/ath/ath12k/wifi7/ahb.c        |   6 +
+ drivers/net/wireless/ath/ath12k/wifi7/hal.h        |   9 -
+ drivers/net/wireless/ath/ath12k/wifi7/hw.c         |  14 +
+ drivers/net/wireless/ath/ath12k/wifi7/pci.c        |   4 +
+ drivers/net/wireless/ath/ath12k/wifi7/pci.h        |   8 +
+ drivers/net/wireless/ath/ath12k/wifi8/Makefile     |  10 +
+ drivers/net/wireless/ath/ath12k/wifi8/ce.c         | 404 +++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wifi8/ce.h         |  13 +
+ drivers/net/wireless/ath/ath12k/wifi8/core.c       |  31 ++
+ drivers/net/wireless/ath/ath12k/wifi8/hal.c        | 434 ++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wifi8/hal.h        | 171 ++++++++
+ drivers/net/wireless/ath/ath12k/wifi8/hal_desc.h   |  88 ++++
+ .../net/wireless/ath/ath12k/wifi8/hal_qcn9575.c    | 124 ++++++
+ .../net/wireless/ath/ath12k/wifi8/hal_qcn9575.h    |  15 +
+ drivers/net/wireless/ath/ath12k/wifi8/hw.c         | 250 +++++++++++
+ drivers/net/wireless/ath/ath12k/wifi8/hw.h         |  14 +
+ drivers/net/wireless/ath/ath12k/wifi8/mhi.c        |  70 +++
+ drivers/net/wireless/ath/ath12k/wifi8/mhi.h        |  10 +
+ drivers/net/wireless/ath/ath12k/wifi8/pci.c        | 105 +++++
+ drivers/net/wireless/ath/ath12k/wifi8/pci.h        |  11 +
+ drivers/net/wireless/ath/ath12k/wifi8/wmi.c        |  57 +++
+ drivers/net/wireless/ath/ath12k/wifi8/wmi.h        |  13 +
+ 37 files changed, 2510 insertions(+), 57 deletions(-)
+---
+base-commit: 03b7c601b6e314115015a57061f5b377afe13190
+change-id: 20261112-wifi8_qcn9575_bringup-a76e76a1361e
+
 
