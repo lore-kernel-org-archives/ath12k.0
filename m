@@ -2,134 +2,136 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A6823606A683
-	for <ath12k@archiver.kernel.org>; Thu, 26 Nov 2026 02:07:42 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F00E9606A33D
+	for <ath12k@archiver.kernel.org>; Thu, 26 Nov 2026 02:07:46 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3HUmd+oX;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=LovfT7uQ;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=DUj+L9eQ
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=JJImYkJO;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=RvfnQzc5;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=QpN6dG+9
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Unsubscribe-Post:List-Owner;
-	bh=ZmqZqvY75C/Qa9RTExYxl08ldl1aSuBOrCYiSbLV6r4=; b=3HUmd+oXqxKVcUIUGciRg9D+YM
-	BDOipKowOfCdL1boKY33hK6B5HeD9QFOxdKw+80ueJdHhpksSwvteisnQQGVPk0/F5Wzd2OzHMgP1
-	b5s3AAOA+rDK3OA/+9mYitNOW4d4RUGruizqvV7tM7zYqXsmEuGixCIgivlIZ/iFolHOgHSaVvbf3
-	G3UjHD6MzoQA+UMf8CA9o+oLD8GSlJaNqHKjAGd0JoNnr7omcfE7Ap1BnqpNpgoK67jrAKsmgBMMB
-	enbjZPlbi1HfCLt+6Ij/WVeY4+1+WPeOxpOo0Ry50lWdfh2F6f3GQhXKcr5KVBYldHypR5S85dyP0
-	n5KlSCRw==;
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
+	List-Owner; bh=Z2t65+X6bE5g+Fc6Tg7IbK2g1t2NNkQ7zYkTkIeL4DU=; b=JJImYkJOFtgEaU
+	9cWbrb8njagP8uzhP6/WP7Ta9oSpJIczBUUa3/7eE9xej1lq+TyYt8/Fp/cYb2lW0aMf1HYVOxGd7
+	QeaQll9kuKGHyRz1XPjxCARGcos+LG+0cQRCQvNYcPc4pRym6gu965SgtUVIA4d8gazuZFvxKfOow
+	56FGWFCWTzFacN9+4qAnZm/sVDxuiz5WZbzSQyK/a6OKv5GXM86VJQujEH2cq9FwRdHJlUC7tc5/m
+	WmOEtFZvz7XPbY/UY6JBrJu69uVW5KmuGuR16vRYzgdQpuO31+XvZcl2r5l6p6Mg8MzJL8XF1Cx0y
+	L+DHFjVgM/2wgAIH8pbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWOtf-0000000Br1a-1Z3U;
-	Thu, 26 Nov 2026 02:07:39 +0000
+	id 1xWOtm-0000000Br5Y-2uwF;
+	Thu, 26 Nov 2026 02:07:46 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWOta-0000000Br0b-2dAH
+	id 1xWOth-0000000Br2a-3ZJ0
 	for ath12k@lists.infradead.org;
-	Thu, 26 Nov 2026 02:07:35 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6APJAtPN648271
-	for <ath12k@lists.infradead.org>; Thu, 26 Nov 2026 02:07:34 GMT
+	Thu, 26 Nov 2026 02:07:45 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6APJgWD91138012
+	for <ath12k@lists.infradead.org>; Thu, 26 Nov 2026 02:07:41 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=ZmqZqvY75C/Qa9RTExYxl08ldl1aSuBOrCY
-	iSbLV6r4=; b=LovfT7uQsKT8VXLQAB0TvvzbY4t+NUadE6hcBMpPoukagIZ/z+V
-	Fd6/aahUmozlYab/03LVqO1+4s6pSDFpOFxcu/9R1ycLiI5/ejPUxjqaBbt1fxW5
-	7uwz92aqbCQecoakXhI6qvaOdtPsHgcEBRHfutd+Yzr+nepmLhtu2mnOmNHn91fB
-	fmNmQ77uLKcp5S/PlCtj+e9mLex0dckMMBSDNQ95pdyZBsHN8hplCOqer9Cym4VE
-	s89R55EFWBM3aZvymatPleqQET4Ovnxve5dkYx8lsuJKrfvEp04+/Sq6WN8Vj1EC
-	/dq2dg+li+XlZIBG5XfdhPs4Hh0AjBnuhXw==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j61aht9m3-1
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=Z2t65+X6bE5
+	g+Fc6Tg7IbK2g1t2NNkQ7zYkTkIeL4DU=; b=RvfnQzc5PTyXzRIxb60sbMdeVYx
+	vgOwpaaCkax6zHTH3+bth5WtsxaugXvhqyTom1/yX3jNBQzZK7NGCIVzmHKvgZE6
+	+2iqFDQm+u36/uhBTL/KcnCFVF4EOSMFkiDfOCrkXPXAvugrXb7qd2QFtblDtX57
+	TblLmrMF7pad/Q2Uazihfiob1iXZQtElPQpSp2Q2uZHVf5smxY8VdbeklS0/Il4m
+	ibAyJaffNQZ3ytC3cxr+qo8h4DwrvyLjgibsZXk0f3iCwH4lJed84KA3l2sYfwRk
+	ZEZpHdXd/POVjpX1j8vEQptAaJG7YycUc1WQgI0xkxXEpIwJ5JhXKr/5jMQ==
+Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j662s8yw2-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 26 Nov 2026 02:07:33 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-3ae7faf4ff7so7662306a91.3
-        for <ath12k@lists.infradead.org>; Wed, 25 Nov 2026 18:07:33 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Thu, 26 Nov 2026 02:07:41 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-cde75c957a7so3299034a12.0
+        for <ath12k@lists.infradead.org>; Wed, 25 Nov 2026 18:07:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795658853; x=1796263653; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=ZmqZqvY75C/Qa9RTExYxl08ldl1aSuBOrCYiSbLV6r4=;
-        b=DUj+L9eQmD/LmVYRFLZVKlzALwdOsmLZgY3MWAxdVIc6IA+/P32BbmrbsEGbIGqeyL
-         lFSEJSsM4OQw2FLbx+CttXJE2uW6V8TN1mcEtOZXVn7sdNv5RVm7ssHFAOw8XDWgyODb
-         XpL9bI2qvERBCk3WcEwzuOqQiR7MJhZdFSBPzXjy5TBCRLxmD7aX3D86n1l6iqIS03+E
-         LzTqEtH48TPcbppjMi/vHdrC5AtqY150jeHwiQTIsScBpLbq//OGJrWtY1W6P1eVQYVQ
-         Siw3Aci58pmJOhn/DL81cRKpN9aK/u9OHK9GeMTy7ONG69DaLzYmlC1GYsm36tLF/ZeW
-         qWtg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795658853; x=1796263653;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=oss.qualcomm.com; s=google; t=1795658861; x=1796263661; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=ZmqZqvY75C/Qa9RTExYxl08ldl1aSuBOrCYiSbLV6r4=;
-        b=nPTJHYkDU+5ezla5puyNuOx35EuRhP72EQbyUrJ/iAwElTmo+pEzzn7vzBH379pQyW
-         +Pa/dOpiTnTxcsYAbBkv0pMmZRQeYlCvgmhgDAuDJyXIa/mDIBt9xJmNjP5B953f8uD2
-         kA+iTfFbv+Zt/PoSp7r0TLUmjrw9W2sx9zY5hV8zYhxoDRG3eySzJHcBHi9vBzJPlP+5
-         zp7avbAsyEiK7eH6T5IcZiqik1G/Y30N8SXDpQCAbvobCHKkZRIr9fUPxJxvkeGW8jVV
-         a5cpN2uk/EcPPhczUShBjXp/KWwm4QSDWg+E9FPM7k89bIWghlQNDcpdQgyum1e8mHwQ
-         Tilg==
-X-Gm-Message-State: APuU4Z9WZYFqmsnOrFCQmRmcDAR6wRISH9vXUhuG8KQy+2lm6FqqODgv
-	GrDX1H6SUcMjRzeo+uBMb7wTLn9iyTc+qaVHyEDXuxs2D8i2dxwDo2ZIjO/Br5XrEVH4SFS0Gjg
-	kNDi1h5fJ4ic7dAgeV97xhutW8/6UT3LNcg44V1wbcgKsoQhQFFelRl/ra3D76QFC
-X-Gm-Gg: AZFdTZfR2hHIY0LkkvvZEJDR1+dELz6htYGF2Tt8ObaAC2xNCRL6ueW13+oHCGBonzF
-	N9XfsEjHfbJpasYHpIaaKXi1cXjXwTr8yP4ylPdpCN9Yh4y6ISR2vGAAbMnn8QmI9Fmh++n2g7h
-	oHbALKCT3yvktGpTPvgh24iLqGy6xnt+cvXmB2RWTQCAJcZPwoTsG/PA7A7IGuC04W4w9dB7Scv
-	ofr0wQaGCmX5zBjtyXJsSXjAg9+8pewRIFkaLff+vrmeBNV/EsHDiyrm9Tg/OO3UUXzHMNcaYsB
-	9rz8K/XWAgQE22iNBNApBjAGddA6oo9J1uny/pWeTtWHLA3Ge7BWhhSzYVxWgpl+3s1/2XvpvyS
-	Bk2HNOo1R+NsVw7mFrbmqzB3YPlP79USWtH2vy0ZlVroqBbiMrMRJri3fG3zXO/ZYR/6ErYIQZy
-	qw1DiyHiwzF1Di0/LAWD/k/OHufT7VK+oPjDCZ
-X-Received: by 2002:a17:90b:2c87:b0:3ab:f2a9:cacd with SMTP id 98e67ed59e1d1-3b41c94df73mr19245896a91.49.1795658852757;
-        Wed, 25 Nov 2026 18:07:32 -0800 (PST)
-X-Received: by 2002:a17:90b:2c87:b0:3ab:f2a9:cacd with SMTP id 98e67ed59e1d1-3b41c94df73mr19245863a91.49.1795658852068;
-        Wed, 25 Nov 2026 18:07:32 -0800 (PST)
+        bh=Z2t65+X6bE5g+Fc6Tg7IbK2g1t2NNkQ7zYkTkIeL4DU=;
+        b=QpN6dG+9x3mvV0+iG4EZpDr8u9S8aQK8KgXFT/Fm4R98zfhhijcbNC6lYTSrmwceb9
+         +EyDoHT4orHbTLAu+HPQgBoCpaSZeYANDwtVmKJWe+0d37Y09sLFeQ2r43HuC87wD9mn
+         P+p8lA76NQ9xF+scrDOWSgZnGMsn9+h3ubovVKWYZHNeMtwrW+0VNEzGD8e7tyqLD6mz
+         +S2TuDMdrBPgY+Nxlie5YyeIQTbpOZ+IafxfBs6Qnnml4GjZtp/jYa1bSrU9r9SQM5JI
+         71uhPUgyltkidFD7kxjqlFzSKvxGwrS+l7Gu9Rcvzs5IwndA8uFXCoopYaX2DRy47zrO
+         btew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795658861; x=1796263661;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Z2t65+X6bE5g+Fc6Tg7IbK2g1t2NNkQ7zYkTkIeL4DU=;
+        b=ID193LuOQrbuJPRodW3P1pxAOd9IDJ0SuD3rrGQ+QM0U/YPcjYaiAbJWtdZ/9ZIkKT
+         9Jb6AHpclqjNwHxbQSCgziirH+KahDDOQvRdIzgA7BC5+/4bFKcZnSCot1zBXyOLRjH6
+         eilebeoFwiJxtEIpBI1tJmOvxtuHjI99Nfk8QRIhmIGmEbB+GcyHIY1s0HS3OxOuFTIn
+         DdqnwQAwOZDu/Y86dVc24gChPkRp2LaGN9ISq7P84+1nauaTRzvFnoM8X6nn35zW66k6
+         TBYdeaIHDslQ/ub+WHu/2lK/tfg88mCr5XWw0ajRMymXQa1+5IIBhz1e0NpTPvP6Qznx
+         HK3g==
+X-Gm-Message-State: APuU4Z+KoeAjzoYQBBq2RIEGutAoI6shXpRaaWce82S46mAWCY2c9y4n
+	2LfaRYsTxAJRcHCjFbRyOtbiFhJhjt8LGdHfLvkDn/bEL9OtteCKxA+eThAtAefgEkBLhZCATRs
+	e8qF/PwhEGr8WR5DseqpRVjQAd6f4D5241W0IbunPspCTW9jrOwzZ0lVKHrLUTR7+
+X-Gm-Gg: AZFdTZcTMCZ7GPC3/5BljJizfpNLS0pf5YmCNsmZMrSfBRnRTo5a7L4PZ5mYTH3OSJl
+	2G4g623aK42y6P/yO7oEq6bN8Jihzfpf7r9zvlec0eRIO0uHQATDU7nWpNsUHf/umYN0y0fDqLu
+	tvFwziOFmY0XtbgBhrUs/D41ksjY/LkCosFMZI+4Wwkr+5HOAFyDQeszfWW0gTHMOuU/EXJoig1
+	a2SV6XWd4NLjGY1jsxqcp034lqFNpOfceGoKXsFHc5PyhdAUVO6moQgXYqbrWhscflNKHllHKxf
+	8oyr2Riedu+Kx0RfESJy5RyeFBLUu1UqvWNXcqPLNt2KeKlxkAocfUHsYXG5vw6FQdYZLT7b/q5
+	evB6WsGe28BYm2J+FGKvyd/apczSCA4JlXyZqlQZ8fMNUQgolVDV/GdELIjxnqWE/Qsp51PgxW+
+	92DZmfPZY7mtd53jrOrh9Fa++Qjq8BihU1Q98+
+X-Received: by 2002:a17:90b:442c:b0:3ab:8288:b8ce with SMTP id 98e67ed59e1d1-3b41c92c161mr13102296a91.24.1795658860374;
+        Wed, 25 Nov 2026 18:07:40 -0800 (PST)
+X-Received: by 2002:a17:90b:442c:b0:3ab:8288:b8ce with SMTP id 98e67ed59e1d1-3b41c92c161mr13102266a91.24.1795658859644;
+        Wed, 25 Nov 2026 18:07:39 -0800 (PST)
 Received: from hangtian-z2-2004.ap.qualcomm.com (i-global052.qualcomm.com. [199.106.103.52])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b41ad0a34asm29626356a91.3.2026.11.25.18.07.29
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b41ad0a34asm29626356a91.3.2026.11.25.18.07.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Nov 2026 18:07:31 -0800 (PST)
+        Wed, 25 Nov 2026 18:07:39 -0800 (PST)
 From: Hangtian Zhu <hangtian.zhu@oss.qualcomm.com>
 To: jjohnson@kernel.org, baochen.qiang@oss.qualcomm.com,
         rameshkumar.sundaram@oss.qualcomm.com
 Cc: ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
         linux-wireless@vger.kernel.org
-Subject: [PATCH ath-next 0/6] wifi: ath12k: fix MLO capability advertisement and peer association
-Date: Thu, 26 Nov 2026 10:07:21 +0800
-Message-Id: <20261126020727.3273337-1-hangtian.zhu@oss.qualcomm.com>
+Subject: [PATCH ath-next 3/6] wifi: ath12k: initialize per-wiphy MLO iftype ext capabilities
+Date: Thu, 26 Nov 2026 10:07:24 +0800
+Message-Id: <20261126020727.3273337-4-hangtian.zhu@oss.qualcomm.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20261126020727.3273337-1-hangtian.zhu@oss.qualcomm.com>
+References: <20261126020727.3273337-1-hangtian.zhu@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-GUID: R2xhs1EUq0e2qqRSJPuOjedvGpK0TrYW
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI2MDAwNyBTYWx0ZWRfX2F7Xw9LBBn/N
- VVjtG5uwG+hPTVw0TKVxrS3cUvCEmPa8vijAtBy1BriIqV24kHUHEitTTOIfrfPaRXXGuYUbRG3
- sat3Mgz4BbvqMDiXGS4ZC1Yht7IX0d8=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI2MDAwNyBTYWx0ZWRfX9qKKAWJkLvlE
- WjqFtdvnZHd9ndTEsQLJZn24CxF0tdrAnAG1mq/dNVXG9EQJqwl4zigfhgCc3NqTgz2Dzzyi2Dq
- rNcHIEbyFhfol3C9JBi4Met8rN2p9QgNi1ihksj3UXbHFWpb9p3oAQI4DwG5D250zaJTtQn4Rn3
- OOXviOyQJEYTqmLlkQswCNlcCY7xHWiQMZAc1CmL8yiBdjVRZT9kHWrK8UYUIwCTdufeYI0vrFY
- YRB/FHsNIxKHZm9QSp2CfP4phWvs0h1HtjwLc6YCGciC6gSaKswnQ1oyj87AuKZ6QicHGJeY5Qe
- bq361Xi260MDh8J+sacuR/lnye/R5sMVsyl+o2AJJCN2Axcoo2/+1B3w1saXy+mZ0+dKXMKdPUU
- 1hjpj57Wr5YDIzBUhmteQUMjmZyAm9zVQ+hYyzeBshwUu947ibNgxR2yH+cgXJegruCogtVszip
- iHxp9si+Qet27i6xUfg==
-X-Proofpoint-ORIG-GUID: R2xhs1EUq0e2qqRSJPuOjedvGpK0TrYW
-X-Authority-Analysis: v=2.4 cv=BbxNQbt2 c=1 sm=1 tr=0 ts=6b079465 cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
+X-Authority-Analysis: v=2.4 cv=B54sQ+tM c=1 sm=1 tr=0 ts=6b07946d cx=c_pps
+ a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
  a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22 a=jwRwtn7Mt9YKnGwaeNoA:9
- a=uKXjsCUrEbL0IQVhDsJ9:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22 a=EUspDBNiAAAA:8
+ a=PHNU0lTNFGNsHSJflXwA:9 a=_Vgx9l1VpLgwpw_dHYaR:22
+X-Proofpoint-GUID: ZigOwTRcPO7XJuk09RYWgJ0Iww2LWyT5
+X-Proofpoint-ORIG-GUID: ZigOwTRcPO7XJuk09RYWgJ0Iww2LWyT5
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI2MDAwNyBTYWx0ZWRfX/0nnyRzIpVY8
+ rMACurNopSVWhzZqO2hqb/rWZoDqLwBD7QozWuOCLm6ItweXw6iEwMd/j1MSEl9Gu4Tiqt7YFoI
+ 636DxwH/chIdOLXhuns5tUagOXCs22h7+2iS8a0lAgNX1IWgiUNSYs063v+cEF/0YBixHVIawpt
+ mpUGO5V/tgE5a7SMwnbQA+asgsd7cCZeDyVc06E4FcbW0MsUkLkdllwMX8p+r0j8Q20yWTzHuZ3
+ 2M61proAGX3nP+hXUBC8Hq87lT9znt1fZF95mTEGb+uulQMY/qcCFq4xaCHYr1Fm0PegRGfE2Ci
+ l2+san6LRY5XWX62t218DV8sWWvW3W7ZfmAcG4Bh5lWas/Z8Nc7LxtXdS2akmv9KsvfWLyeFm9O
+ TKrrtTg9VQ/OAN1G2pAM4aLYbcqntvbIEneIMk5bJW8KKbMTIJiQ3IpknQF4h76yDTw8N6WL0UU
+ 42Y2Hx2xXn1L9Pr/Eww==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI2MDAwNyBTYWx0ZWRfX9v4l8T3ktMQX
+ HtnEgD6PMPIUTsT9Pg5MD+/pGjRfKXQTbFSam9BuV5Xv8E3AbwMM0Aeom9DSV2c/Omvg+N1YKZZ
+ af21URr+BUAPsrb7u2xLA/9BmM3h5So=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-25_05,2026-11-25_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1011 bulkscore=0 adultscore=0 suspectscore=0 impostorscore=0
- priorityscore=1501 malwarescore=0 spamscore=0 phishscore=0 lowpriorityscore=0
+ suspectscore=0 spamscore=0 lowpriorityscore=0 priorityscore=1501 bulkscore=0
+ phishscore=0 clxscore=1015 malwarescore=0 adultscore=0 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611260007
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261125_180734_675159_9F58421C 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20261125_180742_088827_3728153E 
+X-CRM114-Status: GOOD (  19.66  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -141,80 +143,123 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no
-	version=4.0.1
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi,
+MLO iftype extended capabilities are currently stored in a single global
+array ath12k_iftypes_ext_capa, shared by all ath12k_hw instances.
+When more than one wiphy is registered, ath12k_mac_hw_register() on a
+later wiphy overwrites firmware-derived EML/MLD capability fields used by
+earlier wiphys, because mac80211 points all of them at the same storage.
 
-This series fixes ath12k MLO simultaneous-link capability advertisement
-and populates the maximum and recommended simultaneous-link counts in
-station-mode WMI peer association.
+Fix this by keeping iftype ext capability state per ath12k_hw/wiphy:
+copy a read-only template into ah->iftypes_ext_capa during registration
+and point mac80211 at the per-wiphy array.
 
-Firmware reports the maximum simultaneous-link count as raw N, while
-the MLD Capabilities and Operations field advertises N-1. Normalize the
-value during WMI service-ready capability parsing, then convert the
-advertised value back to raw N when preparing peer association. For
-infrastructure-focused chipsets, derive the advertised maximum from
-the available radios rather than the firmware field.
+Rename ath12k_iftypes_ext_capa to ath12k_iftypes_ext_capa_template to
+make the data flow explicit: the table is immutable source data, while
+ah->iftypes_ext_capa is per-wiphy capability storage.
 
-The series also replaces the shared global iftype capability table with
-per-wiphy storage, avoiding capability overwrites between hardware
-instances. Initialize STA/AP entries from the normalized firmware
-capabilities for MLO-capable hardware groups.
+ATH12K_WIPHY_IFTYPE_EXT_CAPA_MAX is set to 3 to represent the per-wiphy
+entries ath12k publishes and updates: one generic entry
+(NL80211_IFTYPE_UNSPECIFIED / iftype 0) and two role-specific entries
+(STA and AP).
 
-Use the AP recommendation already tracked in sta->ext_mld_capa_ops.
-No mac80211 changes are needed. Recommendations are raw counts; values
-0 (no recommendation), 1 (reserved), or above the local maximum fall
-back to that maximum. In AP mode, leave the new peer-association fields
-zero because the current station API does not expose the non-AP peer's
-maximum simultaneous-link capability.
+For MLO-capable wiphys, initialize station and AP entries from the
+normalized firmware capabilities, preserving the existing capability
+source.
 
-The series adds per-radio ath12k debugfs controls for the advertised
-maximum simultaneous-link count and EMLSR support on MLO-capable hardware
-groups. The mlo_max_simultaneous_links and eml_capa_present entries are
-accessible under /sys/kernel/debug/ieee80211/phy0/ath12k/ through the
-existing ath12k symlink. Writes from any radio update the shared per-wiphy
-STA/AP capability entries. These allow validation of host-side capability
-advertisement without firmware changes.
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 
-Series summary
-Patch 1 normalizes firmware-reported maximum simultaneous links to N-1.
-Patch 2 selects firmware-count conversion or radio-count derivation
-according to hardware policy.
-Patch 3 initializes STA/AP MLO iftype capabilities in per-wiphy storage.
-Patch 4 fills station-mode WMI peer-association link counts using the
-advertised local maximum and the existing AP recommendation.
-Patch 5 adds debugfs control for the advertised simultaneous-link count.
-Patch 6 adds debugfs control for advertised EMLSR support.
+Fixes: d33bc467e832 ("wifi: ath12k: advertise MLO support and capabilities")
+Signed-off-by: Hangtian Zhu <hangtian.zhu@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/core.h |  4 ++++
+ drivers/net/wireless/ath/ath12k/mac.c  | 28 +++++++++++++++++++-------
+ 2 files changed, 25 insertions(+), 7 deletions(-)
 
-Thanks for the review.
-
-Hangtian Zhu
-
-Hangtian Zhu (6):
-  wifi: ath12k: encode MLD max simultaneous links as N-1
-  wifi: ath12k: derive MLD max simultaneous links by hw policy
-  wifi: ath12k: initialize per-wiphy MLO iftype ext capabilities
-  wifi: ath12k: fill MLO simultaneous-link fields in peer assoc WMI
-  wifi: ath12k: add debugfs control for MLO simultaneous links
-  wifi: ath12k: add debugfs control for EMLSR support advertisement
-
- drivers/net/wireless/ath/ath12k/core.h     |   4 +
- drivers/net/wireless/ath/ath12k/debugfs.c  | 168 +++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/hw.h       |   1 +
- drivers/net/wireless/ath/ath12k/mac.c      |  57 ++++++-
- drivers/net/wireless/ath/ath12k/wifi7/hw.c |   7 +
- drivers/net/wireless/ath/ath12k/wmi.c      |  74 ++++++++-
- drivers/net/wireless/ath/ath12k/wmi.h      |   9 ++
- 7 files changed, 312 insertions(+), 8 deletions(-)
-
-
-base-commit: ff4c7359e310744a7abe53cf66d921fa2969eb19
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 3a92a4b03359..82aead52fcaf 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -42,6 +42,8 @@
+ #define ATH12K_TX_MGMT_NUM_PENDING_MAX	512
+ 
+ #define ATH12K_TX_MGMT_TARGET_MAX_SUPPORT_WMI 64
++/* Generic, station, and AP entries in ath12k_iftypes_ext_capa_template. */
++#define ATH12K_WIPHY_IFTYPE_EXT_CAPA_MAX 3
+ 
+ /* Pending management packets threshold for dropping probe responses */
+ #define ATH12K_PRB_RSP_DROP_THRESHOLD ((ATH12K_TX_MGMT_TARGET_MAX_SUPPORT_WMI * 3) / 4)
+@@ -812,6 +814,8 @@ struct ath12k_hw {
+ 	struct completion peer_ml_id_done;
+ 
+ 	u8 num_radio;
++	struct wiphy_iftype_ext_capab
++		iftypes_ext_capa[ATH12K_WIPHY_IFTYPE_EXT_CAPA_MAX];
+ 
+ 	DECLARE_BITMAP(free_ml_peer_id_map, ATH12K_MAX_MLO_PEERS);
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 4cb41b8b1d3b..e78c711b7832 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -14758,7 +14758,8 @@ static const u8 ath12k_if_types_ext_capa_ap[] = {
+ 	[10] = WLAN_EXT_CAPA11_EMA_SUPPORT,
+ };
+ 
+-static struct wiphy_iftype_ext_capab ath12k_iftypes_ext_capa[] = {
++static const struct wiphy_iftype_ext_capab
++ath12k_iftypes_ext_capa_template[ATH12K_WIPHY_IFTYPE_EXT_CAPA_MAX] = {
+ 	{
+ 		.extended_capabilities = ath12k_if_types_ext_capa,
+ 		.extended_capabilities_mask = ath12k_if_types_ext_capa,
+@@ -15051,12 +15052,25 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 
+ 	wiphy->features |= NL80211_FEATURE_TX_POWER_INSERTION;
+ 
+-	/* Copy over MLO related capabilities received from
+-	 * WMI_SERVICE_READY_EXT2_EVENT if single_chip_mlo_supp is set.
++	memcpy(ah->iftypes_ext_capa, ath12k_iftypes_ext_capa_template,
++	       sizeof(ah->iftypes_ext_capa));
++
++	/*
++	 * Copy over MLO related capabilities received from
++	 * WMI_SERVICE_READY_EXT2_EVENT if mlo_capable is set.
+ 	 */
+ 	if (ab->ag->mlo_capable) {
+-		ath12k_iftypes_ext_capa[2].eml_capabilities = cap->eml_cap;
+-		ath12k_iftypes_ext_capa[2].mld_capa_and_ops = cap->mld_cap;
++		for (i = 0; i < ARRAY_SIZE(ah->iftypes_ext_capa); i++) {
++			enum nl80211_iftype iftype = ah->iftypes_ext_capa[i].iftype;
++
++			if (iftype != NL80211_IFTYPE_STATION &&
++			    iftype != NL80211_IFTYPE_AP)
++				continue;
++
++			ah->iftypes_ext_capa[i].eml_capabilities = cap->eml_cap;
++			ah->iftypes_ext_capa[i].mld_capa_and_ops = cap->mld_cap;
++		}
++
+ 		wiphy->flags |= WIPHY_FLAG_SUPPORTS_MLO;
+ 
+ 		ieee80211_hw_set(hw, MLO_MCAST_MULTI_LINK_TX);
+@@ -15083,8 +15097,8 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 	wiphy->cipher_suites = cipher_suites;
+ 	wiphy->n_cipher_suites = ARRAY_SIZE(cipher_suites);
+ 
+-	wiphy->iftype_ext_capab = ath12k_iftypes_ext_capa;
+-	wiphy->num_iftype_ext_capab = ARRAY_SIZE(ath12k_iftypes_ext_capa);
++	wiphy->iftype_ext_capab = ah->iftypes_ext_capa;
++	wiphy->num_iftype_ext_capab = ARRAY_SIZE(ah->iftypes_ext_capa);
+ 
+ 	wiphy->mbssid_max_interfaces = mbssid_max_interfaces;
+ 	wiphy->ema_max_profile_periodicity = TARGET_EMA_MAX_PROFILE_PERIOD;
 -- 
 2.25.1
 
