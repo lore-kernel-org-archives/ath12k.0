@@ -2,80 +2,80 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6DC9860A2639
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E2E89606A681
 	for <ath12k@archiver.kernel.org>; Sat, 28 Nov 2026 16:03:41 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3flXBXE3;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=R5QDyezQ
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=D1mFvE4O;
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=TB17o/ce
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=deA78sky0Ow8MosCfCjSBlFQwGcUdxjZjP/csRIUIIA=; b=3flXBXE3mSP6Ah
-	2LNWSldPLeG0WWE1qoSq+zwsUO4/SVlzJZhpRURYqZE62G2+qSiqh54FEnOD3UOmtmclWdZn0ODwY
-	lccw55IESZDWVMInLsk5DgmMyh1LQzbmRTb6fAgtUvAHTwpY0qAgUhkQ8u4hzzIjCiXHNNtDGsJct
-	xpvnk4EOQ9QRPhXzIilB3Lw9c0pRyZecaITmxj28No6gOnlUfZ6mJhyazn+Yaqp4NS+Q0RZ/sjEBX
-	RFGD9l7jieQvaZUa32vq57NGMET2AdBCejlqOUNO/Mz/eupwseHcyVAtWnms1TWo9dMddwW6UOepM
-	hbagFZwpoEz08+neOrxw==;
+	List-Owner; bh=Ez9P23rCLelSTv6DxW8GiHH5VAlo6UYqYVY9WzMcC88=; b=D1mFvE4OoMbz2m
+	LTqDoqCc0QIvnGJl7aKeeg4PJEXxbsqmoKZHvoclYSllcc14qq8qpZn0DEG2YlhEj5tojcbsL/5Wb
+	mLEmapiSHOC2hQGMdotufeuxz3fNaESipd8akymiBnTIBBfAKoigHH90aw7yjA+LeWVYd4xSRRxxG
+	vG9oLPOZZfopxI6L/kkBfRgw4aXTmpzOSeapWX+fOHH2Ynth3/7mz2t3fZUmRPK5Osxh2uKPkC7CM
+	8l7Ma4LD5BjQkaHx5QSIFJAAeqUsnuG9LA0RvGsIpjwTxA8VHhrSMRG4nu/wH/huzmrtKuz5tmW6w
+	pFed3XRJdVlPk3HutKfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xXKtp-00000000wPM-0NvQ;
+	id 1xXKtp-00000000wQ6-2Rnl;
 	Sat, 28 Nov 2026 16:03:41 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xXKtk-00000000wIY-3mfN
+	id 1xXKtl-00000000wJ1-2Wjc
 	for ath12k@lists.infradead.org;
 	Sat, 28 Nov 2026 16:03:38 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-c50e26763a4so533847366b.1
-        for <ath12k@lists.infradead.org>; Sat, 28 Nov 2026 08:03:36 -0800 (PST)
+Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-c516a1623d0so1065380766b.2
+        for <ath12k@lists.infradead.org>; Sat, 28 Nov 2026 08:03:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795881815; x=1796486615; darn=lists.infradead.org;
+        d=bairaktaris.de; s=google; t=1795881816; x=1796486616; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=deA78sky0Ow8MosCfCjSBlFQwGcUdxjZjP/csRIUIIA=;
-        b=R5QDyezQVQFXQM4cz7Bp3IK0ov0Nn58v4OqYGJqzQFg7MPh9hVmNVaR9CqIeltUtWp
-         f/7lts+aoGt0IBeeP5NANKvejDOhRQmhF8ULrZ/vqW2tsbqkhyM0VNpHtDtIpjyTicSJ
-         XvKAmD/MFBBn71/4Dq/ktTtEaS6meKyj08ACHgqhsLpHpotOyllfTViyX41xp67ifDtv
-         wW++yrgVNUcjpBArbMJ5vuIHM58La6T2xOjH8tmUIAcYkPynV4orFHW3TMWUI+XxFVzL
-         qkf4yIk90j7xU87QLAKoFNZpTe0U7kYlCf4P0y9RPOflbthiSAiVrNbEakc8UAVApDqx
-         4g0g==
+        bh=Ez9P23rCLelSTv6DxW8GiHH5VAlo6UYqYVY9WzMcC88=;
+        b=TB17o/ceUvjX5BSbP2iqR1sHm2RGuv8rjIYrjlm0kkEuNo2qMT9YPaw9g80kekIUn8
+         ftYvmpjXwOUzn0pjpMrazxkJBNv31VDA912FuaXKWjB7rX/rcu7endoIbm+NyzeylSxB
+         bZUR6jlCcPWCSUpuepFdFaLZ9OMC7qbHxihfsbcKRwnRK6TC7xFku/oTGpIrYOmBKvaB
+         GfjlUngUfOSGfjJZ9OD6D0upCfaqf25QY2Ugl6c4vQNJGSUxl4VVU8KauhzgH8xRfnD/
+         /0lK/Y2ajyNs6KQd/K0NSEURkXcF8517OEeNwbMVISRxGfXoDXagO6C8dsPznd0t+6dt
+         iK4w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795881815; x=1796486615;
+        d=1e100.net; s=20260707; t=1795881816; x=1796486616;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=deA78sky0Ow8MosCfCjSBlFQwGcUdxjZjP/csRIUIIA=;
-        b=o22jU+ISyrCpOXpuAh9OT7yVTa8PlBuxZi2ND+abGrqyyObwvaHiW6j8uU+k12bUxr
-         A4PgESDW6MRttpR4VVOk/nJwShDKwHUJ5lEBkfAKhklNAWyE9ImrxIRmh5z2uB51PQY9
-         cTEin0JZ8rVJru4Rk/h906fwelHfEnEy0rMFq0+IanmIlgPnDfqGHEm3peTuHmRx1lXm
-         tIR4uNZ/3xp6FYITqXEr+nM8QTdYyI/ChQ7qsbPd4xwLwipo5APBdiopUsg3t43IbY1D
-         9/WF4WxBHWJwGcpM8CGhb1gjeLNjNG4mPKTOpM7e0wP5Fjh8LVcU8nwQt+G9LF+sx+6Z
-         v0+g==
-X-Forwarded-Encrypted: i=1; AL+hErHp3CAjYy8dUoK3rBrV98ZtEznp2xGe+SxvAwzW1kHixlGPwOh/v+Yib+KIWEreDtQNvEmaTvA=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+HMu0NQu9PAJbmPA8dtdtUVNsoEYIEDUH3TiBlSzO/VKfUa0TQ
-	sq/Hlj8eI8PnlAbBqHoM/MPKR/Pzs1fpuo3iT0jCWoNwU2nNCB74ADiuiYJhC62fIA==
-X-Gm-Gg: AZFdTZflYt2zjEWmlPk1R4iI7mOzVLtoWiv3coxvBwNStjCbEberOu+TocSBx+o9KsN
-	aaa3ij4QzKNVk3yVHqzrxkKdy/fr+ROWVrMW1ljUhrdRjI6hj54efHg/BIAC+kpRrBKMG0g42+x
-	/DT30lmWOYy/JD/CGtxMnPTW7qzcrQPyvEEgJP/k06IIctRaaN0jsdnpuxFH/JxOkRbLsAK4jFg
-	NxEhGE1DF/iNfFzlXVF9GxFiMiIA6N40uo4xtCCXQb0vf0hLKS8etQ2qQNRcXWDycY4URyZxgtl
-	uQ5+RLaBX2fDpTZea0jz9Ju7Wt9/OPxuU1+W+xxK7ZZfa6QMUShjA7e+a7MchOeBFDn+WoYFM9/
-	oWutKrTTYE/71rsV5c6OMac41/641Ek1r7JOnzayKfwVADz3oDW4l3sKLZBEX83M6uRR3fy0C48
-	0MskH3pklQOqdp/11FnjSdfrwsdmJSKgfMnWHVAGxrKDg4NHI9zpNeV9A26soJHHmcrCfOcj12l
-	cB4Jr417p3psUMSRJL1guw0g7iw2awKlamLG12cHDw6dtovhVOAcLms8KqEgh547ZIJkxFhpHhZ
-	A27tLp9hYCAATUwx32JzF3JxVgrr8JWniqi8dk5zZdMJIZ4pfZgZNHSZMI2FtZk0fRAHiQAIecj
-	PtER9UpBewYZ8Wfy30ic+76mCIynKUDwc0cVVfj+XPvuOvdeVO3BytrTmJGdO/S9Da5DZx18+V+
-	N5V0HMkOHGmQd3uCQvc/MOYKcuH/2PiSm3peNLVcjux+CJ/Rqcc0L/TFxELcELJeIhajomUdnQd
-	+OfpzoHaiXxU458Pscoia/LjJ1KxTYRmUGGvAJmD8Ky8N+VldZHF9bvwioe/rkyDnsPRooqMHVa
-	5ySuOhChKSZACg==
-X-Received: by 2002:a17:906:bcfb:b0:c40:b59:1b with SMTP id a640c23a62f3a-c513aca41b9mr1650900866b.44.1795881814994;
-        Sat, 28 Nov 2026 08:03:34 -0800 (PST)
+        bh=Ez9P23rCLelSTv6DxW8GiHH5VAlo6UYqYVY9WzMcC88=;
+        b=sPr1eWkD4yS5FltxCeAKwDuOuYrJ3n3Qi+BfI4/pwOZgJ7FQDM1+Hf1ZNY4EpgrFWE
+         jMt7v+cd6TgjNuI6wqfL1vOqqRVkVrdEgH2KS6bV5Cq1xstecxnofHapx1PKRB0Ryg8+
+         UGFGid6NPqWrfHcKpkNfeKJhTgqGW4Kew8xNPhN3VE2yw+PB9NfqgPPZTsZ6udw/cB/0
+         vf874KXElyT/rqapCJj8LZXLWanDyztdTPqaOC0RWAwwMC7WmFu+GbQ5qn9mNHtCN51i
+         hEqjLXJWDhEZ7tjRTO8xpdxtaTSTx5vbJjqzVUNgtMmDHX7XOv6Ft4hPRTelRNzjXaDI
+         bBNw==
+X-Forwarded-Encrypted: i=1; AL+hErFwWzFWdAmf5JNUsiLckw/DHLaRUkX4csDFQh87fAMS7crRoHSy4sfSUiJPL3YpUmcjhQExNOQ=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8mrX+7zd7WTKUm9DSvoM5OWdn6bm5zGP+6efw0Y6i6YClCTwOD
+	6tC4wvWv8s7GJnSQRIdHH+3NJaHF2rGOy6aK8eJkNul6nQneXhPlnFJUrGwSsumn0Q==
+X-Gm-Gg: AZFdTZemm1kmf+n72Jl+vId5pBntRSY10JvBrplJ24VDrY3y/iDvX8h/yUUGAdT8OTl
+	l1jlYMmliguTeCEr2iN8cBX16RvA2ldvN4h4AN72WxScHQo7W7hPBflmQdQveMaXy4pDMZEZwtX
+	AEqJifgS1mTfLd/Vem+OyAjYEXGzdXGZ0G+rXfgHnrF+v5JrrSX1AroYx3+4OpnYKf71ffi3RGg
+	VLjI1nVz80QTMdlXTsmBSNkm3rGh+Ybe72kTJadHvSA/A/e+VhSDl/lriXh13osvZeRUP42/o3O
+	YBkE39muq4yL4xwpaTV/xkS+82YjJKfp2N++Ug7cwFSKg+hUC8rvnOvCm0JoNvBloQvPVPBCW66
+	WHNlNBb3q4e1xljXDPu1llQJ/rF0tmrprCa0cfQ3OZqHmYjNYTMwaIfiI1xbhhCDoaoCx3ZT9fG
+	yqKSn2UPCBKG7bURRQG5/oRn7W2jAaftPjZknzpPa4Iukf2NxYleCZ9Vrme23HO99jvnmcKxJ8+
+	Ygy/aOMkANnEHPmMbMZPaLBP4RSt1R1Ur6ZaYLeGScAi7vqI/9IYDJo5Leu3IBT4M5ky8QGdN88
+	ooUwBdDyuWZxKHfOQKtf+cNd7fAZdDuhsgNyYxJ2Uk9geBHtfQOpOorwYQWBjWeXJoM+5ZJOy5e
+	i/OVXN6TxpuArARXFkFzOTcz+3oLOtuPVoaAoxI3YipO0A29QEIDqOgfqtEtfcx+dLqAF3RSTr+
+	Bi0UllPaqngC2DvTHuWmt3wRvtl6hmMoJuZFq3AyDB595K2bWM078uplbHVNVxAy++2Y+0Xgnif
+	JS8vHj+93wnSAUVqW/1xuIhF95MAMa4hVPIGuFpmNbdUmtmb1g98X4aAaC8kiyNcge17CWf84WD
+	PZuHaLOk4k4f5wplN+5OzyjBP2FP8VXOpVU=
+X-Received: by 2002:a17:906:27cb:b0:c51:3acc:9f86 with SMTP id a640c23a62f3a-c513acca092mr1932323666b.39.1795881815705;
+        Sat, 28 Nov 2026 08:03:35 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net ([185.152.145.248])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513b022e84sm990389566b.84.2026.11.28.08.03.33
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513b022e84sm990389566b.84.2026.11.28.08.03.35
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 28 Nov 2026 08:03:33 -0800 (PST)
+        Sat, 28 Nov 2026 08:03:35 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Johannes Berg <johannes@sipsolutions.net>
 Cc: linux-wireless@vger.kernel.org,
@@ -87,9 +87,9 @@ Cc: linux-wireless@vger.kernel.org,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH wireless-next v2 2/7] wifi: mac80211: use the ampdu argument of ieee80211_calc_expected_tx_airtime()
-Date: Sat, 28 Nov 2026 17:03:30 +0100
-Message-ID: <20261128160335.1815537-3-julius@bairaktaris.de>
+Subject: [PATCH wireless-next v2 3/7] wifi: mac80211: clamp the AQL airtime estimate before narrowing it
+Date: Sat, 28 Nov 2026 17:03:31 +0100
+Message-ID: <20261128160335.1815537-4-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261128160335.1815537-1-julius@bairaktaris.de>
 References: <20261128160335.1815537-1-julius@bairaktaris.de>
@@ -97,8 +97,8 @@ X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261128_080336_989901_549C7096 
-X-CRM114-Status: UNSURE (   8.95  )
+X-CRM114-CacheID: sfid-20261128_080337_674189_2818BD38 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: ath12k@lists.infradead.org
@@ -119,38 +119,43 @@ X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Since ieee80211_rate_expected_tx_airtime() was split out,
-ieee80211_calc_expected_tx_airtime() passes true to it and ignores its
-own ampdu argument. ieee80211_tx_dequeue() passes false for a frame on
-the VO queue, which AQL is then charged as part of an A-MPDU: its PHY
-overhead is divided by 2 to 64 instead of charged in full.
+ieee80211_info_set_tx_time_est() takes the estimate as u16 and clamps it
+to 4095 us, but ieee80211_tx_dequeue() passes a u32. An estimate of
+65536 us or more loses its upper bits before the clamp: 65540 us is
+charged as 4 us.
 
-Pass ampdu on.
+Take the estimate as u32.
 
 Found by an LLM review (Claude) of the airtime code.
 
-Fixes: 094dc1619cb0 ("wifi: mac80211: factor out part of ieee80211_calc_expected_tx_airtime")
+Fixes: 7a89233ac504 ("mac80211: Use Airtime-based Queue Limits (AQL) on packet dequeue")
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
 v2:
 - New.
 
- net/mac80211/airtime.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ include/net/mac80211.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/net/mac80211/airtime.c b/net/mac80211/airtime.c
-index 55bc451d4a9d..d3b911fb711a 100644
---- a/net/mac80211/airtime.c
-+++ b/net/mac80211/airtime.c
-@@ -843,7 +843,7 @@ u32 ieee80211_calc_expected_tx_airtime(struct ieee80211_hw *hw,
- 		u32 duration;
+diff --git a/include/net/mac80211.h b/include/net/mac80211.h
+index f768ef9184eb..ba16096fea3a 100644
+--- a/include/net/mac80211.h
++++ b/include/net/mac80211.h
+@@ -1425,12 +1425,12 @@ struct ieee80211_tx_info {
+ };
  
- 		duration = ieee80211_rate_expected_tx_airtime(hw, tx_rate, ri,
--							      band, true, len);
-+							      band, ampdu, len);
- 		duration /= 1024;
+ static inline u16
+-ieee80211_info_set_tx_time_est(struct ieee80211_tx_info *info, u16 tx_time_est)
++ieee80211_info_set_tx_time_est(struct ieee80211_tx_info *info, u32 tx_time_est)
+ {
+ 	/* We only have 10 bits in tx_time_est, so store airtime
+ 	 * in increments of 4us and clamp the maximum to 2**12-1
+ 	 */
+-	info->tx_time_est = min_t(u16, tx_time_est, 4095) >> 2;
++	info->tx_time_est = min_t(u32, tx_time_est, 4095) >> 2;
+ 	return info->tx_time_est << 2;
+ }
  
- 		return max_t(u32, duration, 4);
 -- 
 2.53.0
 
