@@ -2,150 +2,102 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DCE75606A327
-	for <ath12k@archiver.kernel.org>; Sat, 28 Nov 2026 13:24:25 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8F11460A261D
+	for <ath12k@archiver.kernel.org>; Sat, 28 Nov 2026 16:03:40 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=HhtcuQkL;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Wp+lF8yh;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=YZP3qeOQ
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VixEUAPB;
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=zO/rdoX2
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:Cc:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=ACwliXaCJJD7FrV5x6q3pmOUcm99a/XLmBi1r3FE8HI=; b=HhtcuQkLXpWI0q
-	EaZPLJ+ppcIYdxMhRkUyZcDNqp3YTIxYE1mlxJKYFDUfWYYqOf45OwtLZPEce5wTd/cQU/K8EBMuK
-	Q1V8s/eTRc7/AAjdiaYgpN4TArOAEi+vrfV2ZQDQxA5E19deRpvUptgxZaP3pSpmbm5ECc2LVxpdA
-	ps9tyyxlpf4ckiqnfc3C5zmCh7eCnKGZhK2HkBsMkjECUYYpoRa5jLGAnPEFg1NwhPyrSQCo5cVFB
-	uwHDbNg30suJwLgEM8Qdo24PffxGyje3rBtKrJCk0Lakege4aXsRcAg5WoQIZceKBZqAlJcou8zBO
-	I1fNQoyDPlwXRZVljo8w==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Unsubscribe-Post:List-Owner;
+	bh=QG5bqvH6G2ts5z7jK3nFh/E6bD7F3feukNvD23/Zfk0=; b=VixEUAPBt7NboeCWIiVCOcSqRh
+	XN3Tavj4aigb689xSR3a76uvdtYcrDb4cJL2qQ0F0U0KR9JwxjoFICzxiysCMwGyr/gt/IBC97Is/
+	Y+CqDUPJLb4bMSKjXyanGz80dE8uHIzo6LTv9l/I4EjaXG6X19V7SjhsU8NCqE9QuY2qjrGBKuo6e
+	YY9AHgNiN4j1F+Ts9G+egtP6W8F4hCWvXAxvOkTtJ5zEor/bOAVOityT+xXCnGJwMJiMgwa7nLt2j
+	Bx1KdJZ+rmMaaXEv6hfxuQCSJcGiXB9oFHPKp3gVoFTT/WE1L+qwVTLONUeJHNZLoDnyeYEJ14xEO
+	Q5asrG+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xXIPd-00000000msH-40zX;
-	Sat, 28 Nov 2026 13:24:21 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xXKtm-00000000wKJ-15Fl;
+	Sat, 28 Nov 2026 16:03:38 +0000
+Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xXIPb-00000000mqh-0TYf
+	id 1xXKti-00000000wHq-3Ec8
 	for ath12k@lists.infradead.org;
-	Sat, 28 Nov 2026 13:24:20 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ASD7Qwr1125606
-	for <ath12k@lists.infradead.org>; Sat, 28 Nov 2026 13:24:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ACwliXaCJJD7FrV5x6q3pmOUcm99a/XLmBi1r3FE8HI=; b=Wp+lF8yhgd5EagvZ
-	ZlGochIrvz1wwGt2IFybyBygUZLyxb1s5Z9tL29R9F8xYL0jjJvPMvpSgwZixvwr
-	K+YsVPDZiSgBIg8eyaJECboDT8pLKLN/J8NmGNTXCRCRSDqVHf6TvyhJwvqEPwuz
-	BftIJlqseFFJcHGD5/aEqfMWTejPGPBM88iqXG35/t9ZGX9qI1+siL5nkYoWZS9p
-	4dZyaDSm5rt3jksBn3slUfXoKvvEh3QOlj4S1GFfPjk+HHFUyRsAr2chCeb+JbsB
-	iqDLAMbJ2uM7SBylGs7Lm8R/5KDUvrAiJ4geFq2rkjJVbBNFM1jckn5eU7f9il74
-	zmxp6g==
-Received: from mail-dl1-f69.google.com (mail-dl1-f69.google.com [74.125.82.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j7q1u0xyc-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Sat, 28 Nov 2026 13:24:17 +0000 (GMT)
-Received: by mail-dl1-f69.google.com with SMTP id a92af1059eb24-1b3b45597c7so879449c88.1
-        for <ath12k@lists.infradead.org>; Sat, 28 Nov 2026 05:24:17 -0800 (PST)
+	Sat, 28 Nov 2026 16:03:36 +0000
+Received: by mail-ej1-x62e.google.com with SMTP id a640c23a62f3a-c4d21051042so526389366b.0
+        for <ath12k@lists.infradead.org>; Sat, 28 Nov 2026 08:03:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795872256; x=1796477056; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:to:subject:cc:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=ACwliXaCJJD7FrV5x6q3pmOUcm99a/XLmBi1r3FE8HI=;
-        b=YZP3qeOQNuJYBnR3cyda0F2AD//ZRMkecPgKU1vVKU6253448sQTuB+2gZHAnXmDTt
-         rbNi3Fj7VHWediN2GaMVVLXishXJv6vVCCrWK9Q7DOMqDeTR7uv92v7ivmdH0iNMZh+o
-         59Dq1EkRLgBlb+IRC5viMns7w9SKmsNmVJoAc3bcOtb7FJDC4S0Nqny9WpJYQ3j2ICpc
-         y+uqbEkLicRvEAnjgINUSgyECxCLV5MyeIjDtBdpEz9oMLm2V6gKC5arSRmZ9kNuHrJ3
-         HeN7TxEqX9HhrI+tfhlDtmsyv/uOR5NR5YRqQGIGZMAsF1AFDroJEWSxrfWIlnqPT9mc
-         HOYQ==
+        d=bairaktaris.de; s=google; t=1795881813; x=1796486613; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=QG5bqvH6G2ts5z7jK3nFh/E6bD7F3feukNvD23/Zfk0=;
+        b=zO/rdoX2Mos2rsO3bPb2J677Ha5JDzQm6rH8hcWLPfTzFSPZXTlTHMS9id+5R+BVR0
+         rGFxR6ay86FsNjX257UL+XP9/qpIRFkDVwFK3Z3GmPzbGSpsIFcxpQS5UcIZNrVo8+/9
+         Eqv5auzppJHpXTl/I5f30XVPnTNcxsvCGCSEuOEWcns5wlNg3CNtEIkK3wuMIbIo/Uot
+         CLvPOQ8C32L4OR0episZO0BsXdSuX0mPGMtetKm4gxXqDkWKaU9zjM9MVuM5D9fQTAzg
+         V9X10NY/c3QhGZcsQxVTzOcxCi0Oi0ctC+tGxyfOxMUBUEjSuctHku46lidrCKwJHPMP
+         t39g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795872256; x=1796477056;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:to:subject:cc:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20260707; t=1795881813; x=1796486613;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=ACwliXaCJJD7FrV5x6q3pmOUcm99a/XLmBi1r3FE8HI=;
-        b=C/aVsCCG4h2oKCvA15eYV5g4PhuoxQCqozEORqMjbHkyxj9E0uqjVIOml2L8k5xI+j
-         ThRwCEBbgJY9QxBEB88hjM1k8PYsVJ6W7qScotdl7mFBZZ6rkC2zq/VxT5d9z6hH+ssi
-         1YJ+Dvvb6H7f4wDTJNFSdrGFPVGEPIRorXqmf1wgVvpmyajSRijY3AwIP2mjBwZuzpjq
-         g2SVGFaofICNwwFVHG6c239tvIEA71Zp3nGQdo1t3O/z4BuQwjhsRmv8/D7Rx57EL4qN
-         TK6BVUGulbdX25C8WMHiiiOAqFOoW7TBb94+U2UPrOoC5tAT3BlQyUlvhBLvWHJtpkzv
-         k4Uw==
-X-Forwarded-Encrypted: i=1; AL+hErGl0uPL9Kmm4IXMmCfwjcpx8EN7deJVCPdtw+zR9BoeClISXg2zP78O3MYkqZZcnuB5tvgCg6c=@lists.infradead.org
-X-Gm-Message-State: APuU4Z8+tUsZ0UJ2kPvAdfB/bCH0fObeAjdFW6kDcFWg4QuL3QAPaoz/
-	VNmxRzTxCje9IHU0rPjNFU+AkApkKpXnwUkE+GqA9J5gCcuwKERW9I6eK6FQfooBt7T/kXIZk1u
-	NmgtoXkvEujfjmm/pM/2VdgMdnH3G/bQwxDGjcwRTZ/JyFOeADvUl9rScFQRrcrOZ
-X-Gm-Gg: AZFdTZd0k63CCWw8rbWtC0aGnmGyW7l43a/U+ix2BerMFs2iZOArlixAYJe+zHOrAIy
-	0guQCEhl4RBWbWF0XS4dkp5N+sm7XkGQlZH/ON8Y7AxsA2q+ORS5MH+bKqOPXTC2viUSo+BnDNo
-	+byNdhsrt1HglywwjY7QrBernoLGL1K5YosSdkLRYPRQAhZkUXuv+wf7ENmZ/uPbf9AosQFZFPH
-	WTXKgWVe0KOHirxQxQNDFk1b3wgZNuTFXFCldp9Dx9bo9Ilj4Cfb713wBB93TvuCbID7dL4vrYM
-	ijVXOxjnJCirIVzxHxDHFx38KGGWz4rIrn9lqzOzojpHQu+f7RNLEJQEYZgk8xCR374s5Eb/Wuu
-	E8MZzCDH6f4aCsw0WoP5dAOXU57tUusLdO522ZsYv57vHflFYFzbldp1nmajUdF1OqrxrmTDCCm
-	DiHyjw4retk5/37kDkzA==
-X-Received: by 2002:a05:693c:42c2:b0:386:bc8f:b603 with SMTP id 5a478bee46e88-386bc8fbce1mr15633675eec.38.1795872256510;
-        Sat, 28 Nov 2026 05:24:16 -0800 (PST)
-X-Received: by 2002:a05:693c:42c2:b0:386:bc8f:b603 with SMTP id 5a478bee46e88-386bc8fbce1mr15633653eec.38.1795872256027;
-        Sat, 28 Nov 2026 05:24:16 -0800 (PST)
-Received: from [192.168.29.140] ([49.47.242.76])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-386ffc4ab65sm269036eec.22.2026.11.28.05.24.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 28 Nov 2026 05:24:15 -0800 (PST)
-Message-ID: <bb9e02e9-6738-4aa3-94b5-817d01c3a747@oss.qualcomm.com>
-Date: Sat, 28 Nov 2026 18:54:08 +0530
+        bh=QG5bqvH6G2ts5z7jK3nFh/E6bD7F3feukNvD23/Zfk0=;
+        b=vsOS9g5FGNHBEkq6ORlM6n3GBPiWJl0+dxtKrcIuE+rvUjUmXrfcdqjhOC8BBRWigH
+         X2wgB51/jTjgFRJAWuwo7Oqo3CFBT+if2DyAL6HZKTG5R0Lin/O6CrOcNIEMGOfQVs6v
+         GbfPvQw4hGT7C1asrCTZmFYkbfnkMwhS8AG1Gi32RBWHVQX8MS5mLl0akEf/hkXKsMnA
+         fw1K1s3MNG+tfGufEi+Gywz2imzBDADsmR745paHrcAr9ljxqLLkukjTxOGvuiXz5bmw
+         YPGYjZWgVpZapWiyIZ1nvbvS4W3dxTBOnczHXglaPysADlQ841zq2hdQ+2Fthk46CO9D
+         PdLg==
+X-Forwarded-Encrypted: i=1; AL+hErFnun16ND+jV9yynS3p+FQ4RbcOqO/w/Nj0Zm57RHNiyXDYuj5j+X1jALcQfgMfbpZ1O1xfDxE=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/PFe4X9muZ0IFMpwCQUTdpYJXkvr6Vn3H4l9s91N2+qv36Z6rX
+	o6YIIn4J+8uNdbKRtuA6LCPzB4CxCi+16iUol0IP1SkT/FdEjHSGkg5PqhXokrtdXA==
+X-Gm-Gg: AZFdTZfYJ0FiZ1oAblV2Ov6DN2J3NYRBOZbwohl3wlcTEGW/eNfyHvkeEgYZLFsUCut
+	DF8bpbVuWJNAXn5pUBO0WBwpy80FeJlNrhdVYqQBO2ATGwCvGlu52hAg1NeGWtumI4UTqyTYiS+
+	PtmFL1lFD0qycm+EDx1PhSX5PSqsE1lrmfgLN0BZUWeFxFzVcTi2nSbZaSvoP1Xcm1/LSOEMbEv
+	bC/O6+xbtxz99XN8Wbvhc7mj0HAk957fMY+E78WeBqbbnET9wB13SLvlIdexvvmIz4LCYY1ERZB
+	mhhpBfRTNj1f4izszHgClY3DWDXj7OEmQsHcXIye+P6eP21DsOpgutGe6+ZX0tetgXcpSVP/pJD
+	T41iisHr8+jR5x3eATyVvrkyeQ32CsQ+VK3jxX55R+HOHPj9C4Q0fj3crHAjIw2g7X79VZluLld
+	IpLOKp7MZcmhpX6GdEDzi39gkJf0NRFRyH+m0OOheVJZB3O9hVk6xm654OfRxCoWqqJKgqY+uCb
+	4MVEdzcErARNtHhyXbtrdLM/yZfJ4fUIPee+LW1uvbcJeYjNnleAJLY8jR4268B4o1LCPFhHzCp
+	JqfzHjHDzOqJEvd+PDqESRaDk5aJyLPgQVlrUk41ExW/+vS9CTTWoDBg2gNcmJXB56GJZd1e8lJ
+	wbNEiqjwX/xTCYS5DbkKSU774KFUmCAp3p7/JVYIRxwjoLk4y1I81VzgGVKr77tnNNw+XSYj5+H
+	9ahEhbc9yofwjUDRzfItXbjbtoG7XdqV7LaqpxZujPue3f1Ek4g/AKROsYx7rDfhtX75KNn5xUV
+	mjwgufRkxfHKYCpiYNrX9hyeCF0l/YypFSNDpFhVjNi2X1hHVfyEQRvpTWaPLN3LbvFrXZntjBT
+	7hHi5eZHrtnWjw==
+X-Received: by 2002:a17:907:2d0e:b0:c51:e820:661b with SMTP id a640c23a62f3a-c51e8209357mr203301766b.27.1795881812763;
+        Sat, 28 Nov 2026 08:03:32 -0800 (PST)
+Received: from Desktop.tail070c67.ts.net ([185.152.145.248])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513b022e84sm990389566b.84.2026.11.28.08.03.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 28 Nov 2026 08:03:32 -0800 (PST)
+From: Julius Bairaktaris <julius@bairaktaris.de>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+	Felix Fietkau <nbd@nbd.name>,
+	=?UTF-8?q?Toke=20H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>,
+	=?UTF-8?q?Toke=20H=C3=B8iland-J=C3=B8rgensen?= <toke@redhat.com>,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH wireless-next v2 0/7] wifi: mac80211: TSO and SG for encap offload, and the TID of 802.3 RX frames
+Date: Sat, 28 Nov 2026 17:03:28 +0100
+Message-ID: <20261128160335.1815537-1-julius@bairaktaris.de>
+X-Mailer: git-send-email 2.53.0
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Cc: karthikeyan.periyasamy@oss.qualcomm.com, jjohnson@kernel.org,
-        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org, rameshkumar.sundaram@oss.qualcomm.com,
-        baochen.qiang@oss.qualcomm.com, quic_cjhuang@quicinc.com,
-        vasanthakumar.thiagarajan@oss.qualcomm.com, quic_bperumal@quicinc.com,
-        kvalo@kernel.org, quic_pradeepc@quicinc.com
-Subject: Re: [PATCH ath-next] wifi: ath12k: drop decapped frames with a source
- other than the station
-To: Julius Bairaktaris <julius@bairaktaris.de>
-References: <20261122210809.2087836-1-julius@bairaktaris.de>
- <e019d2d7-de8d-44aa-8fdb-e6770938c409@oss.qualcomm.com>
- <20261128115312.428133-1-julius@bairaktaris.de>
-Content-Language: en-US
-From: Karthikeyan Periyasamy <karthikeyan.periyasamy@oss.qualcomm.com>
-In-Reply-To: <20261128115312.428133-1-julius@bairaktaris.de>
-Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI4MDA1MyBTYWx0ZWRfXw40QlqA6xGDF
- 2IPqX5P2kk9o5X4uV5LTmq4+mG7WtNhiNPQIf3870NOKtBqfQQRfYr/o9VCR/39Nb/KdAHgBQGV
- cShgv++CttQKru918UYRmoByPTNRwd/BAV4PkXjsVlEV4wTgblsB7aOTHMZnjYZBbroKhHJCZRd
- nN5pfjUGSex16UYlkjLrSAxp5LbQ2C/mMPpeoppC6pXcVSP8x+Q2CC1Cp62QZz/ahz1E0hHg1m+
- Ao/QpGALNoR5FC7rJnosvhABfG3CpCIY/5g8JlRjHBTsyf37wky20sXRp6LWnozuOItN91mrIz8
- HnBD+yx1PWokiljdLILLVQLBW06NKoHKmnDkJa7kbBwRH0YLht+46JYgHwxLgGHuGL/l3263DP8
- ezyE3zZQurh1iaSVxEFjEWvizxOIRYhrW+W8chTR/AgLQltr6Gpo0wu5r0B4KO8G7sgchae/ZlS
- HsPsUdUyNcAeDJLgBVg==
-X-Authority-Analysis: v=2.4 cv=Dv3Da2/+ c=1 sm=1 tr=0 ts=6b0ad601 cx=c_pps
- a=kVLUcbK0zfr7ocalXnG1qA==:117 a=gdHwamPtuzoUoDSM7zGmJg==:17
- a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
- a=f3ww0dcz35mcA5LW8GUA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=vr4QvYf-bLy2KjpDp97w:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI4MDA1MyBTYWx0ZWRfX/vQPjPVAPoqi
- 4vFDNWblcovnkuKWe/zkO0hoE5bpY1padfHMNg2F+DihQbZtxkH6L8SGW5o4Sa2Sxh4o20yFWQC
- x9ASZSvL/34gy0fUbbGPMewKY8CnAYY=
-X-Proofpoint-GUID: fLVbyZxtKp7A8rAMWiTRivDjiBzzuylc
-X-Proofpoint-ORIG-GUID: fLVbyZxtKp7A8rAMWiTRivDjiBzzuylc
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-28_03,2026-11-27_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 spamscore=0 malwarescore=0 adultscore=0 bulkscore=0
- phishscore=0 clxscore=1015 lowpriorityscore=0 impostorscore=0 suspectscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611280053
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261128_052419_303624_D971E87B 
-X-CRM114-Status: GOOD (  13.20  )
-X-Spam-Score: -2.8 (--)
+X-CRM114-CacheID: sfid-20261128_080334_843651_5706AB49 
+X-CRM114-Status: GOOD (  14.74  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,41 +108,109 @@ List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-7.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_SANE_1 autolearn=no autolearn_force=no
-	version=4.0.1
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=unavailable
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+Patch 4 lets a driver offer TSO and scatter-gather on the netdevs that
+send with 802.3 encap offload, without offering them on the 802.11
+path. ath11k uses it in a series for ath-next that lets the TCL segment
+TCP batches, which depends on this patch. Patches 1 to 3 fix the AQL
+airtime estimate, which patch 4 uses to segment a GSO frame for a slow
+station.
+
+Patches 5 to 7 count frames received in 802.3 format on their TID: the
+802.3 receive path counted all of them on TID 0. Patch 5 adds the field,
+6 and 7 fill it in ath11k and ath12k.
+
+What the fixes for released code change:
+
+- Patch 1: a station that sends at a low rate to an mt76x0, mt76x2 or
+  mt7603 radio, which compute RX airtime over a whole A-MPDU, is
+  charged a fraction of its airtime and gets more than its share under
+  airtime fairness. CVSS 3.1 3.5 (AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L).
+  Found by the hosted Sashiko review of v1.
+- Patch 2: every VO frame an AQL driver (mt76, ath10k) sends at an HT
+  or later rate is charged less than its airtime, so the VO queue holds
+  more than the AQL limit. CVSS 3.1 0.0, queue accounting only. Found
+  by an LLM review (Claude).
+- Patch 3: an estimate of 65536 us or more is charged modulo 65536 us.
+  Without patch 4 that takes an A-MSDU of about 8 KB to a station whose
+  last rate is 1 Mbit/s. CVSS 3.1 0.0, queue accounting only. Found by
+  an LLM review (Claude).
+- Patch 5: the per-TID RX MSDU counters of a station count every 802.3
+  frame on TID 0. CVSS 3.1 0.0, statistics only. Found reading the
+  802.3 receive path.
+
+None of them touches memory safety, and nothing short of the patches
+avoids them.
+
+Tests, on x86_64:
+- A KUnit test of airtime.c (not part of this series), HT MCS0 20 MHz.
+  wireless-next fails all 5 cases: 65536 bytes come out as 2834 us
+  instead of 80658 us, the VO and A-MPDU estimates of 1500 bytes are
+  both 1912 us, and 65540 us is stored as 4 us. With patch 1, 3 cases
+  pass; with patch 2, 4 (VO 1932 us); with patch 3, all 5. One run
+  each.
+- mac80211_hwsim in QEMU with a local change that sets encap offload
+  and encap_netdev_features (not part of this series): a netdev created
+  as station, changed to mesh point and joined to a mesh, TCP for 5 s.
+  v1 handed GSO frames to its ndo_start_xmit and skb_checksum_help()
+  warned, in 2 of 2 runs; this version hands it none and nothing warns,
+  in 2 of 2 runs. A P2P client netdev has TSO and SG with this version
+  and had neither with v1.
+- W=1 builds of each patch for x86_64 (gcc) and arm64 (clang 21), with
+  no warnings.
+
+Changes in v2:
+- New patches 1 to 3.
+- Patch 4 (v1 1/4): the encap features are taken away per frame on the
+  non-encap netdev ops, the AQL fallback keeps SG, a station without a
+  usable rate gets its GSO frames segmented, kernel-doc for an
+  encap_gso_max_segs of 0.
+- Patches 6 and 7 (v1 3/4 and 4/4): read the TID before the copy of the
+  rx status overwrites it, and report frames without QoS control as
+  such.
+- Rebased onto wireless-next 18d0bedbb5f0.
+Details below the --- of each patch.
+
+v1: https://lore.kernel.org/all/20261122134228.956044-1-julius@bairaktaris.de/
+
+I used Claude (Anthropic) to help write these patches.
+
+Julius Bairaktaris (7):
+  wifi: mac80211: compute the airtime estimate in 64 bits
+  wifi: mac80211: use the ampdu argument of
+    ieee80211_calc_expected_tx_airtime()
+  wifi: mac80211: clamp the AQL airtime estimate before narrowing it
+  wifi: mac80211: advertise TSO and SG for encap offloaded frames
+  wifi: mac80211: take the TID of an 802.3 frame from the driver
+  wifi: ath11k: pass the TID of a received 802.3 frame to mac80211
+  wifi: ath12k: pass the TID of a received 802.3 frame to mac80211
+
+ drivers/net/wireless/ath/ath11k/dp_rx.c       | 14 +++-
+ drivers/net/wireless/ath/ath11k/hw.c          | 25 +++++++
+ drivers/net/wireless/ath/ath11k/hw.h          |  1 +
+ drivers/net/wireless/ath/ath12k/dp_rx.c       |  2 +
+ drivers/net/wireless/ath/ath12k/hal.h         |  1 +
+ .../wireless/ath/ath12k/wifi7/hal_qcc2072.c   |  8 +++
+ .../wireless/ath/ath12k/wifi7/hal_qcn9274.c   |  9 +++
+ .../wireless/ath/ath12k/wifi7/hal_wcn7850.c   |  9 +++
+ include/net/mac80211.h                        | 23 ++++++-
+ net/mac80211/airtime.c                        |  9 +--
+ net/mac80211/iface.c                          | 28 ++++++++
+ net/mac80211/main.c                           |  3 +-
+ net/mac80211/rx.c                             |  3 +
+ net/mac80211/tx.c                             | 65 ++++++++++++++++++-
+ 14 files changed, 188 insertions(+), 12 deletions(-)
 
 
-On 11/28/2026 5:23 PM, Julius Bairaktaris wrote:
-> On 11/25/2026 2:26 PM, Karthikeyan Periyasamy wrote:
->> Can you explain the test scenario ?
-> 
-> There is none: I have no ath12k hardware to test with.
-> Found by an LLM review (Claude) of the code, comparing the decap path
-> with ieee80211_amsdu_to_8023s(), which drops such a subframe.
-> 
->> How the user trigger this issue ?
-> 
-> A station associated to an ath12k AP with Ethernet decap, without
-> 4-address mode, sends a 3-address A-MSDU whose subframe header carries
-> another host's MAC address as source. If the hardware writes that
-> address into the decapped header, ath12k_dp_rx_h_undecap() sets
-> RX_FLAG_8023, ieee80211_rx_8023() delivers the frame under it, and the
-> bridge learns the other host on the Wi-Fi port (br_handle_frame_finish()),
-> so traffic for that host goes to the station.
-> 
-This frame report as address mismatch error 
-"HAL_REO_ENTR_RING_RXDMA_ECODE_AMSDU_MISMATCH_ERR" in the WBM error Rx 
-data path. So no need this code change in the regular Rx data path.
-
+base-commit: 18d0bedbb5f0538396cb7f763ed9cd1dd69c5b23
 -- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+2.53.0
 
 
